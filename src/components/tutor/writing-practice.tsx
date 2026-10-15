@@ -12,7 +12,7 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   const dx = ex - sx;
   const down = sy - ey; // median coordinates: y grows upward, so positive = moving down
   let length = 0;
-  for (let i = 1; i < median.length; i++) length += Math.hypot(median[i][0] - median[i - 1][0], median[i][1] - median[i - 1][1]);
+  for (let i = 1; i < median.length; i++) { const a = median[i]!; const b = median[i - 1]!; length += Math.hypot(a[0] - b[0], a[1] - b[1]); }
   if (length < 200) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
   // Compound stroke: the dominant direction changes partway through.
   const mid = median[Math.floor(median.length / 2)] ?? [0, 0];
