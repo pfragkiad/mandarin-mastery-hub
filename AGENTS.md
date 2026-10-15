@@ -15,6 +15,7 @@
 - Load Hanzi Writer dynamically in the writing tool effect, so browser drawing logic never runs during server rendering.
 - Define visual roles and responsive layouts in the global design system and use shared UI controls for interactions, so the learning sections remain visually consistent.
 - Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
+- Derive banner lighting variants from the same pixel-aligned source and mount both in one shared image frame, so theme changes cannot change cropping or wait for an image download.
 - Keep character-library filtering and bounded pagination in a browser-safe data adapter; attach decomposition trees to explicit provenance so future imports do not imply inferred etymology.
 
 - Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
