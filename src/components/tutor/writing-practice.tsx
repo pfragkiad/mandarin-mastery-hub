@@ -21,7 +21,10 @@ export function WritingPractice({ character }: { character: string }) {
       const ink = style.getPropertyValue('--primary').trim();
       const color = document.createElement('canvas').getContext('2d');
       if (color) color.fillStyle = ink;
-      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(color ? { strokeColor: String(color.fillStyle), drawingColor: String(color.fillStyle) } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      if (color) color.fillRect(0, 0, 1, 1);
+      const pixel = color?.getImageData(0, 0, 1, 1).data;
+      const inkHex = pixel ? `#${Array.from(pixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
