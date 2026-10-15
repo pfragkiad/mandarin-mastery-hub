@@ -5,20 +5,17 @@ import type HanziWriter from 'hanzi-writer';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
 
-function nameStroke(path: string): { name: string; pinyin: string; direction: string } {
-  const nums = (path.match(/-?\d+\.?\d*/g) ?? []).map(Number);
-  const points: Array<[number, number]> = [];
-  for (let i = 0; i + 1 < nums.length; i += 2) points.push([nums[i], nums[i + 1]]);
-  if (points.length < 2) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
-  const [sx, sy] = points[0];
-  const [ex, ey] = points[points.length - 1];
+function nameStroke(median: Array<[number, number]>): { name: string; pinyin: string; direction: string } {
+  if (median.length < 2) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
+  const [sx, sy] = median[0];
+  const [ex, ey] = median[median.length - 1];
   const dx = ex - sx;
   const dy = ey - sy; // data coordinates: y grows downward
   let length = 0;
-  for (let i = 1; i < points.length; i++) length += Math.hypot(points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]);
+  for (let i = 1; i < median.length; i++) length += Math.hypot(median[i][0] - median[i - 1][0], median[i][1] - median[i - 1][1]);
   if (length < 110) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
   // Compound stroke: the dominant direction changes partway through.
-  const mid = points[Math.floor(points.length / 2)];
+  const mid = median[Math.floor(median.length / 2)];
   const h1 = mid[0] - sx, v1 = mid[1] - sy;
   const h2 = ex - mid[0], v2 = ey - mid[1];
   const dom1 = Math.abs(h1) > Math.abs(v1) * 1.6 ? 'h' : Math.abs(v1) > Math.abs(h1) * 1.6 ? 'v' : 'd';
@@ -90,8 +87,8 @@ export function WritingPractice({ character }: { character: string }) {
     import('hanzi-writer').then(({ default: Writer }) => {
       fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(character)}.json`)
         .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
-        .then((data: { strokes: string[] }) => {
-          if (active) setStrokes(data.strokes.map((path: string) => ({ path, ...nameStroke(path) })));
+        .then((data: { strokes: string[]; medians: Array<Array<[number, number]>> }) => {
+          if (active) setStrokes(data.strokes.map((path: string, i: number) => ({ path, ...nameStroke(data.medians[i] ?? []) })));
         })
         .catch(() => {});
       if (!active || !target.current) return;
