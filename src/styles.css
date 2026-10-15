@@ -102,3 +102,10 @@
 .character-tile:hover { border-color: var(--primary); background: var(--secondary); transform: translateY(-2px); }
 .character-picker.compact .character-tile { width: 32px; height: 32px; font-size: 17px; }
 .stroke-reference .library-note { display: flex; align-items: center; gap: 6px; margin-top: 14px; }
+
+/* Character style toggle in the top bar */
+.font-toggle { display: flex; align-items: center; gap: 2px; padding: 2px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); }
+.font-toggle button { width: 34px; height: 30px; border: none; border-radius: 999px; background: transparent; color: var(--muted-foreground); font-size: 16px; line-height: 1; padding: 0; cursor: pointer; display: grid; place-items: center; transition: background .2s, color .2s; }
+.font-toggle button:hover { color: var(--foreground); }
+.font-toggle button.active { background: var(--secondary); color: var(--primary); }
+@media(max-width:850px) { .font-toggle button { width: 30px; height: 28px; font-size: 14px; } }
