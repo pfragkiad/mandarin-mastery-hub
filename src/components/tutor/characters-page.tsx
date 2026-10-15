@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpen, Columns2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -33,15 +33,22 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   const hasPinyin = Boolean(entry.pinyin);
   const hasMeaning = Boolean(entry.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
-  const lift = (event: React.PointerEvent | React.FocusEvent) => {
-    const tile = event.currentTarget as HTMLElement;
-    const grid = tile.closest('.catalog-entry-grid');
-    const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0];
-    setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top');
-  };
+  const tileRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const tile = tileRef.current;
+    if (!tile) return;
+    const lift = () => {
+      const grid = tile.closest('.catalog-entry-grid');
+      const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0];
+      setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top');
+    };
+    tile.addEventListener('pointerenter', lift);
+    tile.addEventListener('focus', lift);
+    return () => { tile.removeEventListener('pointerenter', lift); tile.removeEventListener('focus', lift); };
+  }, []);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
-  return <Tooltip><TooltipTrigger asChild onPointerEnter={lift} onFocus={lift}>
-    <Button variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
+  return <Tooltip><TooltipTrigger asChild>
+    <Button ref={tileRef} variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
       <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
       {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
       {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
