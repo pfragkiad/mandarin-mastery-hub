@@ -5,9 +5,9 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { useWorkspace } from './workspace';
 import { WordCard } from './word-card';
 import { collections, filterWords } from '@/lib/mandarin';
-export function VocabularyPage() {
+export function VocabularyPage({ initialQuery = '' }: { initialQuery?: string } = {}) {
   const { items, saved, addWord } = useWorkspace();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(initialQuery);
   const [collection, setCollection] = useState('All collections');
   const [level, setLevel] = useState('All levels');
   const [status, setStatus] = useState('All words');
