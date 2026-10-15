@@ -214,5 +214,5 @@
 .decomposition-glyph strong { font-size: 32px; font-weight: 400; text-decoration: underline dotted var(--border); text-underline-offset: 7px; text-decoration-thickness: 1.5px; transition: color .15s ease, text-decoration-color .15s ease; }
 .decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
 
-.decomposition-part { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-.decomposition-facts { font-size: 0.72rem; color: var(--muted-foreground); line-height: 1.3; max-width: 140px; }
+.decomposition-part { display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; }
+.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }
