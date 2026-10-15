@@ -1,5 +1,7 @@
 import type { CharacterScript } from './learning-preferences';
-export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; script?: CharacterScript };
+import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from './audio';
+import type { Entry } from './data-contract';
+export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; script?: CharacterScript; audio?: AudioAttachment | null; entry?: Entry };
 export const words: Word[] = [
   { id: 'xuexi', hanzi: '学习', pinyin: 'xué xí', meaning: 'To learn', type: 'Verb', collection: 'School & learning', level: 'Sample', sentence: '学无止境。', translation: 'Learning never ends.', script: 'Simplified' },
   { id: 'wo', hanzi: '我', pinyin: 'wǒ', meaning: 'I · me', type: 'Pronoun', collection: 'Everyday essentials', level: 'Sample', sentence: '我是学生。', translation: 'I am a student.' },
@@ -21,15 +23,8 @@ export function filterWords(items: Word[], query: string, collection = 'All coll
   const q = normalize(query.trim());
   return items.filter(w => normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q) && (collection === 'All collections' || w.collection === collection) && (level === 'All levels' || w.level === level) && (status === 'All words' || saved.includes(w.id)));
 }
+/** Browser TTS only (last fallback); validated Mandarin voice. Prefer playPronunciation from ./audio. */
 export function speak(text: string, slow = false) {
-  if (!('speechSynthesis' in window)) return false;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'zh-CN';
-  utterance.rate = slow ? 0.55 : 0.8;
-  const voice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('zh'));
-  if (voice) utterance.voice = voice;
-  window.speechSynthesis.speak(utterance);
-  return true;
+  return speakTts(text, slow ? SLOW_RATE : NORMAL_RATE).ok;
 }
 export const pageHead = (title: string, description: string) => ({ meta: [{ title: `${title} · Mandarin Tutor` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} · Mandarin Tutor` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] });
