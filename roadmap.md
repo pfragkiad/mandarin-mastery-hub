@@ -15,4 +15,5 @@
 
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
-- [ ] Consistent generated audio instead of the browser's own Chinese voice.
+- [ ] Consistent generated audio instead of the browser's own Chinese voice.- [x] Audio priority order + source labels; API contract adapter with fixtures
+- [ ] Connect adapter to the local API (/api/vocabulary etc.) — needs a reachable API
