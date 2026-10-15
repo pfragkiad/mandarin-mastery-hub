@@ -64,7 +64,6 @@ export function CharactersPage({ initialGlyph }: { initialGlyph?: string } = {})
   const catalogReady = catalogVersion > 0;
   const [kind, setKind] = useState<LibraryKind>('Characters');
   const [query, setQuery] = useState('');
-  const constQuery = query;
   const [strokeCount, setStrokeCount] = useState('');
   const [sourceOnly, setSourceOnly] = useState(false);
   const [page, setPage] = useState(1);
