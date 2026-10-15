@@ -1,0 +1,42 @@
+import { useEffect, useRef, useState } from 'react';
+import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import type HanziWriter from 'hanzi-writer';
+export function WritingPractice({ character }: { character: string }) {
+  const target = useRef<HTMLDivElement>(null);
+  const writer = useRef<HanziWriter | null>(null);
+  const [ready, setReady] = useState(false);
+  const [message, setMessage] = useState('Loading stroke order…');
+  const [playing, setPlaying] = useState(false);
+  const [guide, setGuide] = useState(true);
+  const [speed, setSpeed] = useState('1');
+  const [retry, setRetry] = useState(0);
+  useEffect(() => {
+    let active = true;
+    setReady(false); setPlaying(false); setMessage('Loading stroke order…');
+    if (target.current) target.current.innerHTML = '';
+    import('hanzi-writer').then(({ default: Writer }) => {
+      if (!active || !target.current) return;
+      const style = getComputedStyle(document.documentElement);
+      const ink = style.getPropertyValue('--primary').trim();
+      const color = document.createElement('canvas').getContext('2d');
+      if (color) color.fillStyle = ink;
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(color ? { strokeColor: String(color.fillStyle), drawingColor: String(color.fillStyle) } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      writer.current = instance;
+    }).catch(() => { if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
+    return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
+  }, [character, speed, retry]);
+  const play = () => {
+    const instance = writer.current; if (!instance) return;
+    instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
+    instance.animateCharacter({ onComplete: () => { setPlaying(false); setMessage('Your turn. Ready to write it from memory?'); } });
+  };
+  const quiz = () => { if (!writer.current) return; setPlaying(false); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
+  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? () => { writer.current?.pauseAnimation(); setPlaying(false); setMessage('Paused. Play to start again.'); } : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={() => { writer.current?.cancelQuiz(); writer.current?.showCharacter(); setPlaying(false); setMessage('Ready for a fresh start.'); }}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0.5" max="2" step="0.5" value={speed} onChange={e => setSpeed(e.target.value)}/><span>{speed}×</span></label></section>;
+}
+const characterDetails: Record<string, { pinyin: string; meaning: string; strokes: number; radical: string }> = { '我': { pinyin: 'wǒ', meaning: 'I · me', strokes: 7, radical: '戈' }, '你': { pinyin: 'nǐ', meaning: 'You', strokes: 7, radical: '亻' }, '好': { pinyin: 'hǎo', meaning: 'Good · well', strokes: 6, radical: '女' }, '学': { pinyin: 'xué', meaning: 'To learn', strokes: 8, radical: '子' }, '永': { pinyin: 'yǒng', meaning: 'Forever · eternal', strokes: 5, radical: '水' }, '水': { pinyin: 'shuǐ', meaning: 'Water', strokes: 4, radical: '水' }, '人': { pinyin: 'rén', meaning: 'Person', strokes: 2, radical: '人' }, '爱': { pinyin: 'ài', meaning: 'Love', strokes: 10, radical: '爫' } };
+export function StrokesPage({ initialCharacter = '我' }: { initialCharacter?: string }) {
+  const [character, setCharacter] = useState(initialCharacter);
+  const detail = characterDetails[character];
+  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout"><WritingPractice character={character}/><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span><h2>Get to know <span lang="zh-CN">{character}</span></h2><p><span className="pinyin">{detail?.pinyin}</span> {detail ? `· ${detail.meaning}` : '· Character practice'}</p><div className="character-picker" aria-label="Choose a character">{Object.keys(characterDetails).map(c => <Button key={c} variant="outline" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div><p>Every character has a natural order. Watch how it takes shape, then practice tracing it yourself.</p><div className="character-facts"><div><strong>{detail?.strokes ?? '—'}</strong><span>Strokes</span></div><div><strong>{detail?.radical ?? '—'}</strong><span>Radical</span></div><div><strong>简体</strong><span>Simplified</span></div></div><div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Start at the top and work your way down. Horizontal strokes usually come before vertical ones. Let each movement have a little room to breathe.</p></div><p className="library-note">Stroke order powered by Hanzi Writer. Character data loads online.</p></section></div><section className="stroke-reference"><div className="section-heading"><div><div className="eyebrow">THE BUILDING BLOCKS</div><h2>Meet the basic strokes</h2></div><span className="text-xs text-muted-foreground">6 basic forms</span></div><div className="stroke-grid">{[['丶','diǎn','Dot'],['一','héng','Horizontal'],['丨','shù','Vertical'],['丿','piě','Left-falling'],['㇏','nà','Right-falling'],['㇀','tí','Rising']].map(([shape,pinyin,name]) => <article key={name} className="stroke-tile"><strong lang="zh-CN">{shape}</strong><span>{pinyin}</span><small>{name}</small></article>)}</div></section></div>;
+}

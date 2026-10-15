@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep each primary learning section in its own TanStack leaf route, with shared navigation and session state in the root shell, so navigation preserves the current workspace.
+- Use the browser-safe Mandarin data module for starter content and filtering; explicitly label sample content and session-only edits rather than implying imported records or durable storage.
+- Load Hanzi Writer dynamically in the writing tool effect, so browser drawing logic never runs during server rendering.
+- Define visual roles and responsive layouts in the global design system and use shared UI controls for interactions, so the learning sections remain visually consistent.
