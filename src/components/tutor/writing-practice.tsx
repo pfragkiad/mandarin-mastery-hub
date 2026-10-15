@@ -16,13 +16,17 @@ function nameStroke(path: string): { name: string; pinyin: string; direction: st
   const dy = ey - sy; // data coordinates: y grows downward
   let length = 0;
   for (let i = 1; i < points.length; i++) length += Math.hypot(points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]);
-  const xs = points.map(p => p[0]);
-  const ys = points.map(p => p[1]);
-  const spanX = Math.max(...xs) - Math.min(...xs);
-  const spanY = Math.max(...ys) - Math.min(...ys);
-  if (length < 130) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
-  if (spanX > 220 && spanY > 220) return { name: '折', pinyin: 'zhé', direction: 'A compound stroke with a turn — one continuous movement.' };
-  if (dy < -60 && dx > 40) return { name: '提', pinyin: 'tí', direction: 'Rising from lower left to upper right.' };
+  if (length < 110) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
+  // Compound stroke: the dominant direction changes partway through.
+  const mid = points[Math.floor(points.length / 2)];
+  const h1 = mid[0] - sx, v1 = mid[1] - sy;
+  const h2 = ex - mid[0], v2 = ey - mid[1];
+  const dom1 = Math.abs(h1) > Math.abs(v1) * 1.6 ? 'h' : Math.abs(v1) > Math.abs(h1) * 1.6 ? 'v' : 'd';
+  const dom2 = Math.abs(h2) > Math.abs(v2) * 1.6 ? 'h' : Math.abs(v2) > Math.abs(h2) * 1.6 ? 'v' : 'd';
+  if (dom1 !== 'd' && dom2 !== 'd' && dom1 !== dom2 && Math.min(Math.hypot(h1, v1), Math.hypot(h2, v2)) > 120) {
+    return { name: '折', pinyin: 'zhé', direction: 'A compound stroke with a turn — one continuous movement.' };
+  }
+  if (dy < -40 && dx > 40) return { name: '提', pinyin: 'tí', direction: 'Rising from lower left to upper right.' };
   if (Math.abs(dy) < 90 && dx > 0) return { name: '横', pinyin: 'héng', direction: 'Horizontal, left to right.' };
   if (Math.abs(dx) < 90 && dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Vertical, top to bottom.' };
   if (dx < -40 && dy > 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
