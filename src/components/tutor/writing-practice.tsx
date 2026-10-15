@@ -155,8 +155,8 @@ const charFacts: Record<string, CharFact> = (() => {
 
 // Sourced decomposition trees, indexed by character so the practice page can show the
 // same provenance-attached structure the Characters page shows — without inferring any.
-const decompositions: Record<string, NonNullable<import('@/lib/character-library').LibraryEntry['decomposition']>> = (() => {
-  const index: Record<string, NonNullable<import('@/lib/character-library').LibraryEntry['decomposition']>> = {};
+const decompositions: Record<string, NonNullable<LibraryEntry['decomposition']>> = (() => {
+  const index: Record<string, NonNullable<LibraryEntry['decomposition']>> = {};
   for (const kind of ['Characters', 'Radicals', 'Components'] as const) {
     for (const entry of libraryEntries(kind)) if (entry.decomposition) index[entry.hanzi] = entry.decomposition;
   }
