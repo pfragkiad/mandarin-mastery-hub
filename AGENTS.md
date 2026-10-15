@@ -16,3 +16,6 @@
 - Define visual roles and responsive layouts in the global design system and use shared UI controls for interactions, so the learning sections remain visually consistent.
 - Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
 - Keep character-library filtering and bounded pagination in a browser-safe data adapter; attach decomposition trees to explicit provenance so future imports do not imply inferred etymology.
+
+- Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
+- Use the vocabulary word search parameter to open a real dictionary entry on arrival; featured words must exist in starter data so links never land on empty results.
