@@ -166,13 +166,14 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 }
 
 
-export function StrokesPage({ initialCharacter = '我' }: { initialCharacter?: string }) {
+export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCharacter?: string; focus?: number }) {
   const wordChars = Array.from(initialCharacter);
   const isWord = wordChars.length > 1;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
-  const [character, setCharacter] = useState(wordChars[0] ?? '我');
+  const character = wordChars[focus] ?? wordChars[0] ?? '我';
+  const setCharacter = (c: string) => { const i = wordChars.indexOf(c); navigate({ to: '/strokes', search: { character: initialCharacter, ...(i > 0 ? { focus: i } : {}) } }); };
   const [liveStrokes, setLiveStrokes] = useState<number | null>(null);
   const [audioError, setAudioError] = useState(false);
   useWorkspace().catalogVersion;
