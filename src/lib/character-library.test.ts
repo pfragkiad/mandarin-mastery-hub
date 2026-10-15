@@ -3,8 +3,8 @@ import { defaultPreferences } from './learning-preferences';
 import { filterLibrary, libraryEntries, libraryPage } from './character-library';
 describe('Catalogue requirements', () => {
   it('imports all 38 stroke types', () => expect(libraryEntries('Strokes')).toHaveLength(38));
-  it('plans for all 214 radicals', () => expect(plannedCounts.Radicals).toBe(214));
-  it('plans for all 1843 components', () => expect(plannedCounts.Components).toBe(1843));
+  it('imports all 214 radicals', () => expect(libraryEntries('Radicals')).toHaveLength(214));
+  it('imports all 1843 components', () => expect(libraryEntries('Components')).toHaveLength(1843));
   it('imports all 9575 characters', () => expect(libraryEntries('Characters')).toHaveLength(9575));
   it('excludes traditional characters by default', () => {
     expect(defaultPreferences.includeTraditional).toBe(false);
