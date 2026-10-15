@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpen, Columns2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Switch } from '@/components/ui/switch';
 import { libraryEntries, filterLibrary, libraryPage, plannedCounts, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter } from '@/lib/catalog-store';
@@ -28,6 +29,21 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     </div><p className="library-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
+function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selected: boolean; onSelect: (id: string) => void }) {
+  const hasPinyin = Boolean(entry.pinyin);
+  const hasMeaning = Boolean(entry.meaning);
+  const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
+  return <Tooltip><TooltipTrigger asChild>
+    <Button variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
+      <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
+      {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
+      {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
+      {entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}
+      {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
+    </Button>
+  </TooltipTrigger><TooltipContent side="top" className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
+}
+
 export function CharactersPage() {
   const { preferences, catalogVersion } = useWorkspace();
   const catalogReady = catalogVersion > 0;
@@ -47,7 +63,7 @@ export function CharactersPage() {
       {kinds.map(k => <TabsContent value={k} key={k}>
         <div className="catalog-import-note"><span>{catalogReady ? `${entries.length.toLocaleString('en-US')} imported records` : `Loading ${plannedCounts[k].toLocaleString('en-US')} records…`}</span><span>{k === 'Characters' ? 'Traditional forms marked from Unihan variant data' : k === 'Strokes' ? 'Unicode 18.0 stroke inventory' : k === 'Radicals' ? 'Kangxi radicals · Unihan 17.0.0' : 'Make Me a Hanzi components'}</span></div>
         <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => { setQuery(e.target.value); setPage(1); }}/></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => { setStrokeCount(e.target.value); setPage(1); }}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{k === 'Characters' && <label className="catalog-source-toggle"><Switch checked={sourceOnly} onCheckedChange={value => { setSourceOnly(value); setPage(1); }}/>With decomposition</label>}</div>
-        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{filtered.length} {k.toLowerCase()}</span><span>{k === 'Strokes' ? 'BASIC STROKE FORMS' : 'STARTER RECORDS'}</span></div><div className="catalog-entry-grid">{paged.entries.map(entry => <Button key={entry.id} variant="ghost" className={`catalog-entry ${selected?.id === entry.id ? 'selected' : ''}`} aria-label={`View ${entry.hanzi}`} aria-pressed={selected?.id === entry.id} onClick={() => setSelectedId(entry.id)}><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin tile-missing" title="Pinyin not recorded" aria-label="Pinyin not recorded">—</span>}{entry.meaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="catalog-entry-meaning tile-missing" title="Meaning not recorded" aria-label="Meaning not recorded">—</span>}{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}{entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}</Button>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => { setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); }}>Clear filters</Button></div>}
+        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{filtered.length} {k.toLowerCase()}</span><span>{k === 'Strokes' ? 'BASIC STROKE FORMS' : 'STARTER RECORDS'}</span></div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => { setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); }}>Clear filters</Button></div>}
           <div className="catalog-pagination"><span>{filtered.length ? `${(paged.current - 1) * 24 + 1}–${Math.min(paged.current * 24, filtered.length)} of ${filtered.length}` : '0 records'}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => { setPage(paged.current - 1); setSelectedId(''); }}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => { setPage(paged.current + 1); setSelectedId(''); }}><ChevronRight/></Button></div></div>
         </section>{selected ? <CharacterDetails key={selected.id} entry={selected} kind={k}/> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
       </TabsContent>)}
