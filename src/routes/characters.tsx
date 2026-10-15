@@ -12,7 +12,6 @@ export const Route = createFileRoute('/characters')({
     const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
-    if (search['decomp'] === true || search['decomp'] === 'true') out.decomp = true;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
     const id = str(search['id']); if (id) out.id = id;
     return out;

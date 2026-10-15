@@ -35,4 +35,11 @@ describe('Catalogue requirements', () => {
     expect(libraryEntries('Characters').find(e => e.hanzi === '我')?.decomposition?.root.glyph).toBe('⿰');
     expect(libraryEntries('Characters').filter(e => e.decomposition).length).toBe(9504);
   });
+  it('lists records with and without a sourced decomposition together', () => {
+    const entries = [
+      { id: 'a', hanzi: '我', pinyin: 'wǒ', meaning: 'I', note: '', decomposition: { root: { glyph: '⿰', position: 'root', children: [] }, source: 'Make Me a Hanzi IDS', status: 'Imported graphical structure' } },
+      { id: 'b', hanzi: '一', pinyin: 'yī', meaning: 'one', note: '' },
+    ];
+    expect(filterLibrary(entries, '').map(e => e.hanzi)).toEqual(['我', '一']);
+  });
 });

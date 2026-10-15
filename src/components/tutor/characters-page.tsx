@@ -4,7 +4,6 @@ import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpe
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
-import { Switch } from '@/components/ui/switch';
 import { libraryEntries, filterLibrary, libraryPage, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
@@ -30,7 +29,7 @@ function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry;
     <p className="catalog-record-note">{entry.note}</p>
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
-      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root} onGlyph={onGlyphSelect}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>Source files pending. No structure or component roles inferred.</small>}</div>}
+      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root} onGlyph={onGlyphSelect}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="library-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
@@ -72,7 +71,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   </Tooltip>;
 }
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; decomp?: boolean; page?: number; id?: string };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; page?: number; id?: string };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -82,19 +81,17 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const kind: LibraryKind = search.tab ?? glyphHit?.kind ?? 'Characters';
   const query = search.q ?? '';
   const strokeCount = search.strokes ?? '';
-  const sourceOnly = Boolean(search.decomp);
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
-  const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && v !== false && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, decomp: sourceOnly, page, id: selectedId };
+  const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
+  const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, page, id: selectedId };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
   const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
   const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
-  const setSourceOnly = (decomp: boolean) => set({ decomp, page: 1, id: '' });
   const setPage = (p: number) => set({ page: p, id: '' });
   const setSelectedId = (id: string) => set({ id });
   const entries = libraryEntries(kind);
-  const filtered = filterLibrary(entries, query, strokeCount, sourceOnly, preferences.includeTraditional);
+  const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional);
   const paged = libraryPage(filtered, page);
   const selected = filtered.find(entry => entry.id === selectedId) ?? paged.entries[0];
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch(next === 'Characters' ? {} : { tab: next }); };
@@ -108,8 +105,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <div className="catalog-import-note"><span>{catalogReady ? `${entries.length.toLocaleString('en-US')} imported records` : `Loading ${plannedCounts[k].toLocaleString('en-US')} records…`}</span><span>{k === 'Characters' ? 'Traditional forms marked from Unihan variant data' : k === 'Strokes' ? 'Unicode 18.0 stroke inventory' : k === 'Radicals' ? 'Kangxi radicals · Unihan 17.0.0' : 'Make Me a Hanzi components'}</span></div>
-        <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => setQuery(e.target.value)}/></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => setStrokeCount(e.target.value)}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{k === 'Characters' && <label className="catalog-source-toggle"><Switch checked={sourceOnly} onCheckedChange={value => setSourceOnly(value)}/>With decomposition</label>}</div>
-        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{filtered.length} {k.toLowerCase()}</span><span>{k === 'Strokes' ? 'BASIC STROKE FORMS' : 'STARTER RECORDS'}</span></div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => set({ q: '', strokes: '', decomp: false, page: 1, id: '' })}>Clear filters</Button></div>}
+        <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => setQuery(e.target.value)}/></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => setStrokeCount(e.target.value)}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}</div>
+        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{filtered.length} {k.toLowerCase()}</span><span>{k === 'Strokes' ? 'BASIC STROKE FORMS' : 'STARTER RECORDS'}</span></div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => set({ q: '', strokes: '', page: 1, id: '' })}>Clear filters</Button></div>}
           <div className="catalog-pagination"><span>{filtered.length ? `${(paged.current - 1) * 24 + 1}–${Math.min(paged.current * 24, filtered.length)} of ${filtered.length}` : '0 records'}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => setPage(paged.current - 1)}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => setPage(paged.current + 1)}><ChevronRight/></Button></div></div>
         </section>{selected ? <CharacterDetails key={selected.id} entry={selected} kind={k} onGlyphSelect={openGlyph}/> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
       </TabsContent>)}
