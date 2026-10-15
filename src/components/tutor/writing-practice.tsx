@@ -7,15 +7,15 @@ type StrokeInfo = { path: string; name: string; pinyin: string; direction: strin
 
 function nameStroke(median: Array<[number, number]>): { name: string; pinyin: string; direction: string } {
   if (median.length < 2) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
-  const [sx, sy] = median[0];
-  const [ex, ey] = median[median.length - 1];
+  const [sx, sy] = median[0] ?? [0, 0];
+  const [ex, ey] = median[median.length - 1] ?? [0, 0];
   const dx = ex - sx;
   const down = sy - ey; // median coordinates: y grows upward, so positive = moving down
   let length = 0;
   for (let i = 1; i < median.length; i++) length += Math.hypot(median[i][0] - median[i - 1][0], median[i][1] - median[i - 1][1]);
   if (length < 200) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
   // Compound stroke: the dominant direction changes partway through.
-  const mid = median[Math.floor(median.length / 2)];
+  const mid = median[Math.floor(median.length / 2)] ?? [0, 0];
   const h1 = mid[0] - sx, v1 = mid[1] - sy;
   const h2 = ex - mid[0], v2 = ey - mid[1];
   const dom1 = Math.abs(h1) > Math.abs(v1) * 1.6 ? 'h' : Math.abs(v1) > Math.abs(h1) * 1.6 ? 'v' : 'd';
