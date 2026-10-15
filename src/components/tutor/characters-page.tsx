@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpen } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpen, Columns2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Switch } from '@/components/ui/switch';
@@ -10,7 +10,7 @@ import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 function DecompositionTree({ node }: { node: DecompositionNode }) {
-  return <li><div className="decomposition-node"><span>{node.position}</span><strong lang="zh-CN">{node.glyph}</strong></div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{node.glyph === '⿰' ? <div className="decomposition-layout" aria-label="Left–right structure"><Columns2 aria-hidden="true"/><small>Left–right</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
 function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences } = useWorkspace();
