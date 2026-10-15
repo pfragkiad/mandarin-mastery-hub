@@ -123,6 +123,8 @@
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
 .journey-banner { background: var(--banner-surface); }
+.search-field input { color: var(--foreground); }
+.search-field input::placeholder { color: var(--muted-foreground); opacity: 1; }
 .banner-seal { color: var(--banner-accent); border-color: var(--banner-accent); }
 .font-toggle button[data-font='sans'] { font-family: 'Noto Sans SC', sans-serif; }
 .font-toggle button[data-font='handwritten'] { font-family: 'KaiTi', 'STKaiti', 'Ma Shan Zheng', serif; }
