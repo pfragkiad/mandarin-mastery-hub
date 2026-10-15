@@ -3,11 +3,12 @@ import { RotateCcw, Shuffle, Volume2, Check, X, Play } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
 import { collections, speak } from '@/lib/mandarin';
 import { referenceCatalog } from './references';
 import { useWorkspace } from './workspace';
 
-type Card = { hanzi: string; pinyin: string; meaning: string };
+type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
 export function FlashcardsPage() {
@@ -28,10 +29,10 @@ export function FlashcardsPage() {
   const pool = useMemo<Card[]>(() => {
     if (isReference) {
       const kind = category.slice(4);
-      return (referenceCatalog.find(c => c.kind === kind)?.entries ?? []).map(([hanzi, pinyin, meaning]) => ({ hanzi, pinyin, meaning }));
+      return (referenceCatalog.find(c => c.kind === kind)?.entries ?? []).filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
     }
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
-  }, [items, category, level, isReference]);
+  }, [items, category, level, isReference, preferences.includeTraditional]);
 
   const start = (cards: Card[], next = false) => { setRound(r => next ? r + 1 : 1); if (!next) setTotal(cards.length); setDeck(shuffle(cards)); setIndex(0); setFlipped(false); setMissed([]); };
   const answer = (known: boolean) => {
@@ -61,7 +62,7 @@ export function FlashcardsPage() {
 
     {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? 'Press Start to shuffle the deck. Tap a card to flip it.' : 'Try another category or level.'}</p></div>}
 
-    {card && !done && <div className="flash-stage">
+    {card && !done && <div className={`flash-stage ${card.script === 'Traditional' ? 'is-traditional' : ''}`}>
       <div className="flash-meta"><span>Card {index + 1} of {deck!.length}{round > 1 ? ` · round ${round}` : ''}</span><span>{missed.length} to review</span></div>
       <div className="flash-progress"><span style={{ width: `${(index / deck!.length) * 100}%` }} /></div>
       <button className={`flash-card ${flipped ? 'is-flipped' : ''}`} onClick={() => setFlipped(f => !f)} aria-label="Flip card">
