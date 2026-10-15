@@ -9,7 +9,7 @@ import { speak } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
-function DecompositionTree({ node }: { node: DecompositionNode }) {
+export function DecompositionTree({ node }: { node: DecompositionNode }) {
   return <li><div className="decomposition-node"><span>{node.position}</span>{node.glyph === '⿰' ? <div className="decomposition-layout" aria-label="Left–right structure"><Columns2 aria-hidden="true"/><small>Left–right</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
 function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
