@@ -44,23 +44,27 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
       </div>
       {visible && (
         <>
-          <p className="stroke-guide-note">{strokes.length} ordered strokes · local teaching labels · draft</p>
-          <ol className="stroke-guide-list">
+          <ol className="stroke-guide-strip">
             {strokes.map((stroke, i) => (
-              <li key={i} className={activeStroke === i ? 'active' : ''}>
-                <span className="stroke-index">{i + 1}</span>
-                <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
-                  <g transform="scale(1, -1) translate(0, -900)">
-                    <path d={stroke.path} />
-                  </g>
-                </svg>
-                <span className="stroke-name"><span className="stroke-pinyin">{stroke.pinyin}</span><span lang="zh-CN">{stroke.name}</span></span>
-                <span className="stroke-direction">{stroke.direction}</span>
-                <Button variant="outline" size="icon" title={`Play stroke ${i + 1}`} aria-label={`Play stroke ${i + 1}`} onClick={() => onPlay(i)}><Play /></Button>
+              <li key={i}>
+                <button
+                  type="button"
+                  className={`stroke-chip${activeStroke === i ? ' active' : ''}`}
+                  title={`Play stroke ${i + 1}`}
+                  aria-label={`Play stroke ${i + 1}`}
+                  onClick={() => onPlay(i)}
+                >
+                  <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
+                    <g transform="scale(1, -1) translate(0, -900)">
+                      <path d={stroke.path} />
+                    </g>
+                  </svg>
+                  <span className="stroke-index">{i + 1}</span>
+                </button>
               </li>
             ))}
           </ol>
-          <p className="stroke-guide-note">Local editorial teaching labels mapped to Hanzi Writer data; draft, not official stroke-name metadata. Names are separate teaching annotations, not supplied by the animation dataset.</p>
+          <p className="stroke-guide-note">{strokes.length} strokes in writing order — tap one to watch it drawn.</p>
         </>
       )}
     </div>
