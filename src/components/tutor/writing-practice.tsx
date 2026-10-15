@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered } from 'lucide-react';
+import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, ArrowRight } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { words } from '@/lib/mandarin';
 import { referenceCatalog, type ReferenceKind } from './references';
