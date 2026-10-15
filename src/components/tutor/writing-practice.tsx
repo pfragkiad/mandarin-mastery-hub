@@ -146,11 +146,6 @@ const charFacts: Record<string, CharFact> = (() => {
   return index;
 })();
 
-const groupHanzi = (kind: ReferenceKind) => referenceCatalog.find(group => group.kind === kind)?.entries.map(entry => entry[0]) ?? [];
-const pickerGroups = [
-  { label: 'Characters', hanzi: groupHanzi('Character'), compact: false },
-  { label: 'Radicals & components', hanzi: [...groupHanzi('Radical'), ...groupHanzi('Component')], compact: true },
-];
 
 export function StrokesPage({ initialCharacter = '我' }: { initialCharacter?: string }) {
   const wordChars = Array.from(initialCharacter);
