@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StrokesRouteImport } from './routes/strokes'
@@ -18,6 +19,11 @@ import { Route as VocabularyRouteImport } from './routes/vocabulary'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlashcardsRoute = FlashcardsRouteImport.update({
+  id: '/flashcards',
+  path: '/flashcards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReferencesRoute = ReferencesRouteImport.update({
@@ -43,6 +49,7 @@ const VocabularyRoute = VocabularyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -65,15 +74,34 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/references' | '/settings' | '/strokes' | '/vocabulary'
+  fullPaths:
+    | '/'
+    | '/flashcards'
+    | '/references'
+    | '/settings'
+    | '/strokes'
+    | '/vocabulary'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/references' | '/settings' | '/strokes' | '/vocabulary'
+  to:
+    | '/'
+    | '/flashcards'
+    | '/references'
+    | '/settings'
+    | '/strokes'
+    | '/vocabulary'
   id:
-    '__root__' | '/' | '/references' | '/settings' | '/strokes' | '/vocabulary'
+    | '__root__'
+    | '/'
+    | '/flashcards'
+    | '/references'
+    | '/settings'
+    | '/strokes'
+    | '/vocabulary'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FlashcardsRoute: typeof FlashcardsRoute
   ReferencesRoute: typeof ReferencesRoute
   SettingsRoute: typeof SettingsRoute
   StrokesRoute: typeof StrokesRoute
@@ -87,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flashcards': {
+      id: '/flashcards'
+      path: '/flashcards'
+      fullPath: '/flashcards'
+      preLoaderRoute: typeof FlashcardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/references': {
@@ -122,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FlashcardsRoute: FlashcardsRoute,
   ReferencesRoute: ReferencesRoute,
   SettingsRoute: SettingsRoute,
   StrokesRoute: StrokesRoute,
