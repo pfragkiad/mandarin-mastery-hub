@@ -11,3 +11,7 @@
 - [x] Add default-off traditional-character preference, script markers and update the planned count to 9,574.
 - [x] Verify the requested flows.
 - [ ] Import full catalogues and sourced decompositions — waiting for the user's source files.
+
+## Deferred, asked about for later (do not start unless the user asks)
+- [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
+- [ ] Consistent generated audio instead of the browser's own Chinese voice.
