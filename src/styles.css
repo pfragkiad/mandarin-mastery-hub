@@ -201,3 +201,4 @@
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
 .reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
 .ids-operator { font-size: 18px; line-height: 1; }
+.tile-missing { color: var(--muted-foreground) !important; opacity: .55; white-space: nowrap; }
