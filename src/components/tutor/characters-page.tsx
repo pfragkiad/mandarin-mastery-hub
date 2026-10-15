@@ -87,7 +87,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && v !== false && !(v === 1))) as CharactersSearch;
   const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, decomp: sourceOnly, page, id: selectedId };
-  const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch, character: undefined } as CharactersSearch), replace);
+  const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
   const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
   const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
   const setSourceOnly = (decomp: boolean) => set({ decomp, page: 1, id: '' });
