@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2 } from 'lucide-react';
+import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, GitBranch, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { speak, words } from '@/lib/mandarin';
+import { libraryEntries } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 import { referenceCatalog, type ReferenceKind } from './references';
+import { DecompositionTree } from './characters-page';
 import type HanziWriter from 'hanzi-writer';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
