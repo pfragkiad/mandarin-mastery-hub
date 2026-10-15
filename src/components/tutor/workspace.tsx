@@ -7,6 +7,9 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState(words);
   const [saved, setSaved] = useState<string[]>([]);
   const [preferences, setPreferences] = useState<Preferences>({ pinyin: true, meaning: true, slow: false, font: 'Sans' });
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => { try { const raw = localStorage.getItem('tutor-preferences'); if (raw) setPreferences(p => ({ ...p, ...JSON.parse(raw) })); } catch { /* ignore */ } setLoaded(true); }, []);
+  useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
   return <WorkspaceContext.Provider value={{ items, addWord: w => setItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences }}>{children}</WorkspaceContext.Provider>;
 }
