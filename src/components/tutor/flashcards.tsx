@@ -47,7 +47,7 @@ export function FlashcardsPage() {
       </select></label>
       <label>LEVEL<select className="filter-select" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select></label>
       <label>CARD FRONT<select className="filter-select" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select></label>
-      <label>&nbsp;<Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></label>
+      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></div>
     </div>
 
     {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? 'Press Start to shuffle the deck. Tap a card to flip it.' : 'Try another category or level.'}</p></div>}
