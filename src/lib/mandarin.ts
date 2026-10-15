@@ -1,5 +1,7 @@
-export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string };
+import type { CharacterScript } from './learning-preferences';
+export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; script?: CharacterScript };
 export const words: Word[] = [
+  { id: 'xuexi', hanzi: '学习', pinyin: 'xué xí', meaning: 'To learn', type: 'Verb', collection: 'School & learning', level: 'Sample', sentence: '学无止境。', translation: 'Learning never ends.', script: 'Simplified' },
   { id: 'wo', hanzi: '我', pinyin: 'wǒ', meaning: 'I · me', type: 'Pronoun', collection: 'Everyday essentials', level: 'Sample', sentence: '我是学生。', translation: 'I am a student.' },
   { id: 'nihao', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'Hello', type: 'Greeting', collection: 'Everyday essentials', level: 'Sample', sentence: '你好，很高兴认识你。', translation: 'Hello, nice to meet you.' },
   { id: 'zhongguo', hanzi: '中国', pinyin: 'Zhōng guó', meaning: 'China', type: 'Proper noun', collection: 'Places & travel', level: 'Sample', sentence: '我想去中国。', translation: 'I want to go to China.' },
