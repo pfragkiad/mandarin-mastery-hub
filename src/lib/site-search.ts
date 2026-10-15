@@ -13,7 +13,9 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   if (!q) return [];
   const wordHits: SearchHit[] = items
     .filter(w => includeScript(w.script, includeTraditional) && normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`).includes(q))
-    .map(word => ({ kind: 'Word' as const, word }));
+    .map(word => ({ word, rank: normalize(word.hanzi) === q ? 0 : normalize(word.meaning).split(/[^a-z]+/).includes(q) ? 1 : normalize(`${word.hanzi} ${word.pinyin} ${word.meaning}`).includes(q) ? 2 : 3 }))
+    .sort((a, b) => a.rank - b.rank)
+    .map(({ word }) => ({ kind: 'Word' as const, word }));
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && normalize(`${hanzi} ${pinyin} ${meaning} ${note}`).includes(q))

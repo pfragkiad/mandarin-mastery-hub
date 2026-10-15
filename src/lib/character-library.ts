@@ -1,16 +1,25 @@
-import { referenceCatalog } from '@/components/tutor/references';
+import { catalog } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
 export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
-export const plannedCounts: Record<LibraryKind, number> = { Strokes: 18, Radicals: 214, Components: 1843, Characters: 9574 };
+export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9575 };
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
+const cache = new Map<LibraryKind, { version: number; entries: LibraryEntry[] }>();
+const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d) via Mandarin Tutor import';
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
-  const rows = kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : referenceCatalog.find(group => `${group.kind}s` === kind)?.entries ?? [];
-  return rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => ({ id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
-    ...(kind === 'Characters' && hanzi === '我' ? { decomposition: { root: { glyph: '⿰', position: 'root', children: [{ glyph: '才', position: 'left' }, { glyph: '戈', position: 'right' }] }, source: 'Provided reference screenshot', status: 'Illustrative reference only · source file pending' } } : {}),
-  }));
+  const hit = cache.get(kind);
+  if (hit && hit.version === catalog.version) return hit.entries;
+  const source = kind === 'Strokes' ? catalog.strokes : kind === 'Radicals' ? catalog.radicals : kind === 'Components' ? catalog.components : catalog.characters;
+  const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
+  const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
+    const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+      ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
+  });
+  cache.set(kind, { version: catalog.version, entries });
+  return entries;
 }
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false) {

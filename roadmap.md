@@ -11,9 +11,12 @@
 - [x] Add default-off traditional-character preference, script markers and update the planned count to 9,574.
 - [x] Verify the requested flows.
 - [x] Turn the header magnifier into a real library-wide search (words, characters, radicals, components) with ⌘K / Ctrl K.
-- [ ] Import full catalogues and sourced decompositions — waiting for the user's source files.
+- [x] Import full catalogues and sourced decompositions.
 
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
-- [ ] Consistent generated audio instead of the browser's own Chinese voice.- [x] Audio priority order + source labels; API contract adapter with fixtures
-- [ ] Connect adapter to the local API (/api/vocabulary etc.) — needs a reachable API
+- [ ] Consistent generated audio instead of the browser's own Chinese voice.
+- [x] Audio priority order + source labels; API contract adapter with fixtures
+- [x] Import real data from backup: 305 words, full character catalogue, decompositions, traditional markers
+- [x] Upload referenced recordings (1,486) and attach to words/characters
+- [ ] Optional: upload the remaining ~4,700 unreferenced recordings

@@ -2,6 +2,7 @@
 // Hosted preview uses the fixtures below; a local deployment can fetch the same shape from /api/vocabulary.
 import type { AudioAttachment } from './audio';
 import type { Word } from './mandarin';
+import vocabularyJson from '@/data/vocabulary.json';
 
 export type TextToken = { kind: 'hanzi' | 'punctuation' | 'space'; text: string; pinyin: string | null; reviewed: boolean };
 export type SourceRef = { sourceName: string; sourceVersion: string; sourceId: string };
@@ -19,11 +20,17 @@ export type Page<T> = { items: T[]; total: number; page: number; pageSize: numbe
 export const levelLabel = (e: Pick<Entry, 'hskLevel' | 'hskVersion'>) => (e.hskLevel && e.hskVersion ? `HSK ${e.hskVersion} · ${e.hskLevel}` : 'Unclassified');
 export const posLabel = (pos: string | null) => pos?.trim() || 'Unspecified';
 
+/** Display name without the database's sort prefix ("01 Numbers & quantities" → "Numbers & quantities"). */
+export const categoryName = (name: string) => name.replace(/^\d+\s+/, '');
+
+/** Imported vocabulary (exported from the Mandarin Tutor SQLite database in exact API shape). */
+export const vocabularyData = vocabularyJson as unknown as { categories: Category[]; entries: Entry[] };
+
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = e.examples[0];
   return {
     id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
-    collection: categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized', level: levelLabel(e),
+    collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
     sentence: first?.simplified ?? '', translation: first?.english ?? '', audio: e.audio, entry: e,
   };
 }
