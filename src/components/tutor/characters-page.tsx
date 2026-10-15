@@ -64,7 +64,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
       {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
       {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
-      {entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}
+      {entry.script === 'Traditional' && <span className="traditional-label tile-traditional-badge">Traditional</span>}
       {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
     </Button>;
   return <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
