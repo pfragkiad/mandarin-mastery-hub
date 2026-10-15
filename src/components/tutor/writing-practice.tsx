@@ -21,7 +21,7 @@ export function WritingPractice({ character }: { character: string }) {
       const ink = style.getPropertyValue('--primary').trim();
       const color = document.createElement('canvas').getContext('2d');
       if (color) color.fillStyle = ink;
-      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, strokeColor: color ? String(color.fillStyle) : undefined, drawingColor: color ? String(color.fillStyle) : undefined, strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(color ? { strokeColor: String(color.fillStyle), drawingColor: String(color.fillStyle) } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
