@@ -82,7 +82,7 @@ export function FlashcardsPage() {
       {repeat ? <><strong>All {new Set(deck!.map(c => c.hanzi)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
         : <><strong>{deck!.length - uniqueMissed.length} / {deck!.length}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
       {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => isReference || !items.some(w => w.hanzi === m.hanzi)
-        ? <Link key={m.hanzi} to="/strokes" search={{ character: Array.from(m.hanzi)[0] ?? m.hanzi }} title={`${m.pinyin} · ${m.meaning} — practise writing`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
+        ? <Link key={m.hanzi} to="/strokes" search={{ character: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — practise writing`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
         : <Link key={m.hanzi} to="/vocabulary" search={{ q: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
       <div className="flex gap-2 flex-wrap justify-center">
         {uniqueMissed.length > 0 && <Button onClick={() => start(uniqueMissed, true)}><RotateCcw />New round with {uniqueMissed.length} missed</Button>}
