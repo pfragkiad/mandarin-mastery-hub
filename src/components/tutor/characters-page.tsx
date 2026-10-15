@@ -41,7 +41,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
     if (!tile) return;
     const measure = () => {
       const spans = [tile.querySelector<HTMLElement>('.pinyin'), tile.querySelector<HTMLElement>('.catalog-entry-meaning')];
-      const hit = spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 : false); console.log('[tile-measure]', tile.getAttribute('aria-label'), hit, spans.map(el => el && [el.scrollWidth, el.clientWidth])); setClipped(hit);
+      const hit = spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 : false); console.log('[tile-measure]', tile.getAttribute('aria-label'), hit, spans.map(el => el && el.scrollWidth + '/' + el.clientWidth).join(' ')); setClipped(hit);
     };
     measure();
     const ro = new ResizeObserver(measure);
