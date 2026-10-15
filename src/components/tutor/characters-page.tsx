@@ -5,16 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Switch } from '@/components/ui/switch';
-import { libraryEntries, filterLibrary, libraryPage, plannedCounts, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, libraryPage, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
-export function DecompositionTree({ node }: { node: DecompositionNode }) {
-  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
+export function DecompositionTree({ node, onGlyph }: { node: DecompositionNode; onGlyph?: (glyph: string) => void }) {
+  const card = onGlyph ? glyphIndex()[node.glyph] : undefined;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : card && onGlyph ? <button type="button" className="decomposition-glyph" lang="zh-CN" title={`Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`} onClick={() => onGlyph(node.glyph)}><strong>{node.glyph}</strong></button> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child} onGlyph={onGlyph}/> )}</ul> : null}</li>;
 }
-function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
+function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry; kind: LibraryKind; onGlyphSelect?: (glyph: string) => void }) {
   const { preferences } = useWorkspace();
   const [audioError, setAudioError] = useState<string | null>(null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>

@@ -30,3 +30,17 @@ export function libraryPage(entries: LibraryEntry[], page: number, size = 24) {
   const current = Math.max(1, Math.min(page, pages));
   return { entries: entries.slice((current - 1) * size, current * size), pages, current };
 }
+
+const glyphCache = { version: -1, index: null as null | Record<string, { kind: LibraryKind; id: string }> };
+// Glyphs inside a sourced tree point at real library records. This resolves a glyph to
+// its card; when a glyph exists as several records, the radical card wins.
+export function glyphIndex(): Record<string, { kind: LibraryKind; id: string }> {
+  if (glyphCache.version === catalog.version && glyphCache.index) return glyphCache.index;
+  const index: Record<string, { kind: LibraryKind; id: string }> = {};
+  for (const kind of ['Radicals', 'Components', 'Characters'] as LibraryKind[]) {
+    for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id };
+  }
+  glyphCache.version = catalog.version;
+  glyphCache.index = index;
+  return index;
+}
