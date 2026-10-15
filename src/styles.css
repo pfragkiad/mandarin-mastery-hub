@@ -199,3 +199,4 @@
 .global-search-hint, .global-search .hero-search-empty { margin: 0; font-size: 11px; color: var(--muted-foreground); }
 .global-search-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--muted-foreground); }
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
+.reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
