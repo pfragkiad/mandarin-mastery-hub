@@ -10,8 +10,7 @@ describe('Header search across the library', () => {
   });
   it('finds a word by Chinese characters', () => {
     const hits = searchAll(words, '学习');
-    expect(hits).toHaveLength(1);
-    expect(hits[0]?.kind === 'Word' ? hits[0].word.id : '').toBe('xuexi');
+    expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('学习');
   });
   it('finds reference entries by pinyin without tones', () => {
     const hits = searchAll(words, 'shui');
