@@ -6,7 +6,7 @@ import { referenceCatalog } from './references';
 import { useWorkspace } from './workspace';
 
 type Card = { hanzi: string; pinyin: string; meaning: string };
-const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
 export function FlashcardsPage() {
   const { items, preferences } = useWorkspace();
