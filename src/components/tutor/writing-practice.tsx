@@ -73,12 +73,18 @@ export function WritingPractice({ character }: { character: string }) {
   const [guide, setGuide] = useState(true);
   const [speed, setSpeed] = useState('1');
   const [retry, setRetry] = useState(0);
+  const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
+  const [activeStroke, setActiveStroke] = useState<number | null>(null);
   useEffect(() => {
     let active = true;
     animationRun.current += 1;
     setReady(false); setPlaying(false); setMessage('Loading stroke order…');
+    setStrokes([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
     import('hanzi-writer').then(({ default: Writer }) => {
+      Writer.loadCharData(character).then(data => {
+        if (active) setStrokes(data.strokes.map(path => ({ path, ...nameStroke(path) })));
+      }).catch(() => {});
       if (!active || !target.current) return;
       const style = getComputedStyle(document.documentElement);
       const ink = style.getPropertyValue('--primary').trim();
