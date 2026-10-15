@@ -35,6 +35,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   const hasMeaning = Boolean(entry.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
   const [clipped, setClipped] = useState(false);
+  const [engaged, setEngaged] = useState(false);
   const tileRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const tile = tileRef.current;
