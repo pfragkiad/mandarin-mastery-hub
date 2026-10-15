@@ -32,8 +32,13 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
 function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selected: boolean; onSelect: (id: string) => void }) {
   const hasPinyin = Boolean(entry.pinyin);
   const hasMeaning = Boolean(entry.meaning);
+  const [side, setSide] = useState<'top' | 'bottom'>('top');
+  const lift = (event: React.PointerEvent | React.FocusEvent) => {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    setSide(rect.top < 200 ? 'bottom' : 'top');
+  };
   const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
-  return <Tooltip><TooltipTrigger asChild>
+  return <Tooltip><TooltipTrigger asChild onPointerEnter={lift} onFocus={lift}>
     <Button variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
       <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
       {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
@@ -41,7 +46,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       {entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}
       {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
     </Button>
-  </TooltipTrigger><TooltipContent side="top" className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
+  </TooltipTrigger><TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
 }
 
 export function CharactersPage() {
