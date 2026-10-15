@@ -27,7 +27,9 @@ function nameStroke(path: string): { name: string; pinyin: string; direction: st
   if (Math.abs(dx) < 90 && dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Vertical, top to bottom.' };
   if (dx < -40 && dy > 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
   if (dx > 40 && dy > 0) return { name: '捺', pinyin: 'nà', direction: 'Falling to the right.' };
-  return { name: '钩', pinyin: 'gōu', direction: 'Ending with a hook.' };
+  if (dx < 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
+  if (dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Top to bottom.' };
+  return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
 function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null }) {
