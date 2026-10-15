@@ -7,7 +7,7 @@ import { playPronunciation, audioMessage, type AudioAttachment, type AudioReques
 import type { DecompositionNode } from './character-library';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
-type CatalogFile = {
+export type CatalogFile = {
   version: number; source: string;
   characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[]; strokes: CatalogRow[];
   trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
@@ -19,14 +19,16 @@ export const catalog = {
   trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'],
 };
 
+export function hydrateCatalog(data: CatalogFile) {
+  for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
+  catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source;
+  catalog.loaded = true; catalog.version += 1;
+}
+
 let pending: Promise<void> | null = null;
 export function loadCatalog(): Promise<void> {
   if (catalog.loaded || typeof window === 'undefined') return Promise.resolve();
-  pending ??= fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }).then(data => {
-    for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
-    catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source;
-    catalog.loaded = true; catalog.version += 1;
-  }).catch(err => { pending = null; throw err; });
+  pending ??= fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }).then(hydrateCatalog).catch(err => { pending = null; throw err; });
   return pending;
 }
 

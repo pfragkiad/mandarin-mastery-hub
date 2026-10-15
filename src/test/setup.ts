@@ -18,3 +18,8 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+// Tests read the same imported catalogue the browser fetches from /data/catalog.json.
+import { readFileSync } from 'node:fs';
+import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
+hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile);
