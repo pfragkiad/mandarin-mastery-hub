@@ -1,15 +1,28 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { CharactersPage } from '@/components/tutor/characters-page';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { CharactersPage, type CharactersSearch } from '@/components/tutor/characters-page';
 import { pageHead } from '@/lib/mandarin';
 
+const kindValues = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
+const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
+
 export const Route = createFileRoute('/characters')({
-  validateSearch: (search: Record<string, unknown>) => {
-    const character = typeof search['character'] === 'string' && search['character'] ? search['character'] : undefined;
-    return { ...(character ? { character } : {}) };
+  validateSearch: (search: Record<string, unknown>): CharactersSearch => {
+    const out: CharactersSearch = {};
+    const character = str(search['character']); if (character) out.character = character;
+    const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
+    const q = str(search['q']); if (q) out.q = q;
+    const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
+    if (search['decomp'] === true || search['decomp'] === 'true') out.decomp = true;
+    const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
+    const id = str(search['id']); if (id) out.id = id;
+    return out;
   },
   head: () => pageHead('Characters', 'Browse every character, radical and component, then open one to practise writing it stroke by stroke.'),
-  component: () => {
-    const { character } = Route.useSearch();
-    return <CharactersPage {...(character ? { initialGlyph: character } : {})} />;
-  },
+  component: CharactersRoute,
 });
+
+function CharactersRoute() {
+  const search = Route.useSearch();
+  const navigate = useNavigate({ from: '/characters' });
+  return <CharactersPage search={search} onSearch={(next, replace) => navigate({ search: next, replace: Boolean(replace) })} />;
+}

@@ -72,30 +72,38 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   </Tooltip>;
 }
 
-export function CharactersPage({ initialGlyph }: { initialGlyph?: string | undefined } = {}) {
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; decomp?: boolean; page?: number; id?: string };
+
+/** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
+export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
   const { preferences, catalogVersion } = useWorkspace();
   const catalogReady = catalogVersion > 0;
-  const [kind, setKind] = useState<LibraryKind>('Characters');
-  const [query, setQuery] = useState('');
-  const [strokeCount, setStrokeCount] = useState('');
-  const [sourceOnly, setSourceOnly] = useState(false);
-  const [page, setPage] = useState(1);
-  const [selectedId, setSelectedId] = useState('');
+  const glyphHit = search.character && !search.id ? glyphIndex()[search.character] : undefined;
+  const kind: LibraryKind = search.tab ?? glyphHit?.kind ?? 'Characters';
+  const query = search.q ?? '';
+  const strokeCount = search.strokes ?? '';
+  const sourceOnly = Boolean(search.decomp);
+  const page = search.page ?? 1;
+  const selectedId = search.id ?? glyphHit?.id ?? '';
+  const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && v !== false && !(v === 1))) as CharactersSearch;
+  const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, decomp: sourceOnly, page, id: selectedId };
+  const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch, character: undefined } as CharactersSearch), replace);
+  const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
+  const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
+  const setSourceOnly = (decomp: boolean) => set({ decomp, page: 1, id: '' });
+  const setPage = (p: number) => set({ page: p, id: '' });
+  const setSelectedId = (id: string) => set({ id });
   const entries = libraryEntries(kind);
   const filtered = filterLibrary(entries, query, strokeCount, sourceOnly, preferences.includeTraditional);
   const paged = libraryPage(filtered, page);
   const selected = filtered.find(entry => entry.id === selectedId) ?? paged.entries[0];
-  const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; setKind(next); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(''); };
+  const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch(next === 'Characters' ? {} : { tab: next }); };
   const openGlyph = (glyph: string) => {
     const hit = glyphIndex()[glyph];
     if (!hit) return;
-    setKind(hit.kind); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(hit.id);
+    onSearch(clean({ tab: hit.kind, id: hit.id }));
   };
-  useEffect(() => {
-    if (!initialGlyph) return;
-    const hit = glyphIndex()[initialGlyph];
-    if (hit) { setKind(hit.kind); setSelectedId(hit.id); }
-  }, [initialGlyph, catalogVersion]);
+  void catalogVersion;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE CHARACTER LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
       {kinds.map(k => <TabsContent value={k} key={k}>
