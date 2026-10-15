@@ -208,3 +208,6 @@
 .tile-tooltip-head .pinyin { font-size: 11px; }
 .tile-tooltip-meaning { font-size: 11px; line-height: 1.5; color: var(--foreground); white-space: normal; }
 .tile-tooltip .traditional-label { font-size: 9px; }
+.decomposition-glyph { background: none; border: none; padding: 0 2px; margin: 0 -2px; cursor: pointer; border-radius: 8px; line-height: 1; }
+.decomposition-glyph strong { font-size: 32px; font-weight: 400; text-decoration: underline dotted var(--border); text-underline-offset: 7px; text-decoration-thickness: 1.5px; transition: color .15s ease, text-decoration-color .15s ease; }
+.decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
