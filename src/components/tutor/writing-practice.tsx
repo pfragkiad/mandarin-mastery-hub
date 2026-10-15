@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { words } from '@/lib/mandarin';
+import { referenceCatalog, type ReferenceKind } from './references';
 import type HanziWriter from 'hanzi-writer';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
@@ -71,7 +73,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
     </div>
   );
 }
-export function WritingPractice({ character }: { character: string }) {
+export function WritingPractice({ character, onStrokeCount }: { character: string; onStrokeCount?: (count: number) => void }) {
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const animationRun = useRef(0);
@@ -94,6 +96,7 @@ export function WritingPractice({ character }: { character: string }) {
         .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
         .then((data: { strokes: string[]; medians: Array<Array<[number, number]>> }) => {
           if (active) setStrokes(data.strokes.map((path: string, i: number) => ({ path, ...nameStroke(data.medians[i] ?? []) })));
+          if (active) onStrokeCount?.(data.strokes.length);
         })
         .catch(() => {});
       if (!active || !target.current) return;
