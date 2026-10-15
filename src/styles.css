@@ -201,4 +201,10 @@
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
 .reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
 .ids-operator { font-size: 18px; line-height: 1; }
-.tile-missing { color: var(--muted-foreground) !important; opacity: .55; white-space: nowrap; }
+.tile-absent { font-size: 10px; font-style: italic; color: color-mix(in oklab, var(--muted-foreground) 72%, var(--foreground)); letter-spacing: .01em; white-space: nowrap; }
+.tile-tooltip { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; max-width: 290px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); box-shadow: var(--shadow-popover); color: var(--foreground); text-align: left; }
+.tile-tooltip-head { display: flex; align-items: baseline; gap: 9px; }
+.tile-tooltip-head strong { font-family: var(--font-hanzi); font-size: 21px; font-weight: 400; line-height: 1.2; }
+.tile-tooltip-head .pinyin { font-size: 11px; }
+.tile-tooltip-meaning { font-size: 11px; line-height: 1.5; color: var(--foreground); white-space: normal; }
+.tile-tooltip .traditional-label { font-size: 9px; }

@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { TutorShell } from "@/components/tutor/shell";
 import { WorkspaceProvider } from "@/components/tutor/workspace";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 function NotFoundComponent() {
   return (
@@ -123,7 +124,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider>
+      <TooltipProvider delayDuration={160} skipDelayDuration={300} disableHoverableContent><WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider></TooltipProvider>
     </QueryClientProvider>
   );
 }
