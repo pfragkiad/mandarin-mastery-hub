@@ -1,12 +1,37 @@
+import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, BookOpen, Layers, PenLine, Type, Volume2, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Layers, PenLine, Type, Volume2, ArrowUpRight, Sparkles, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { WordCard } from './word-card';
-import { speak } from '@/lib/mandarin';
+import { referenceCatalog, type ReferenceKind } from './references';
+import { speak, type Word } from '@/lib/mandarin';
 import mountain from '@/assets/mountain-study.jpg';
+
+const normalize = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+type SearchHit =
+  | { kind: 'Word'; word: Word }
+  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string };
+
+function searchAll(items: Word[], query: string): SearchHit[] {
+  const q = normalize(query.trim());
+  if (!q) return [];
+  const wordHits: SearchHit[] = items
+    .filter(w => normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`).includes(q))
+    .map(word => ({ kind: 'Word' as const, word }));
+  const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
+    entries
+      .filter(([hanzi, pinyin, meaning, note]) => normalize(`${hanzi} ${pinyin} ${meaning} ${note}`).includes(q))
+      .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning, note }))
+  );
+  return [...wordHits, ...refHits].slice(0, 8);
+}
+
 export function OverviewPage() {
   const { items, preferences } = useWorkspace();
+  const [query, setQuery] = useState('');
+  const hits = searchAll(items, query);
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">YOUR DAILY DOSE OF MANDARIN</div><h1>Your Mandarin journey</h1><p>A little curiosity. A little practice. A little closer.</p></div><span className="heading-hanzi" lang="zh-CN">你好<span>nǐ hǎo</span></span></div>
     <section className="journey-banner"><img src={mountain} width={1536} height={640} alt="Misty green mountains and a quiet Chinese pavilion beside a river"/><div className="banner-copy"><span className="banner-eyebrow">学无止境 · LEARNING NEVER ENDS</span><h2>Small steps.<br/><em>A world of meaning.</em></h2><p>Discover the words. Hear the tones.<br/>Make the language your own.</p><Button asChild><Link to="/vocabulary">Explore vocabulary <ArrowRight/></Link></Button></div><span className="banner-seal" lang="zh-CN">一步<br/>一步</span></section>
     <section className="stats-row" aria-label="Learning library statistics">{[{ icon: BookOpen, number: items.length, label: 'Words & phrases', note: 'Ready to explore' }, { icon: Layers, number: 4, label: 'Collections', note: 'For everyday life' }, { icon: PenLine, number: 18, label: 'Stroke types', note: 'Build your foundation' }, { icon: Type, number: 3, label: 'Character styles', note: 'Find your way to read' }].map(s => <div className="stat" key={s.label}><span className="stat-icon"><s.icon size={19}/></span><div><div className="stat-top"><strong>{s.number}</strong><span>{s.label}</span></div><span className="stat-note">{s.note}</span></div></div>)}</section>
