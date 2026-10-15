@@ -4,31 +4,10 @@ import { ArrowRight, BookOpen, Layers, PenLine, Type, Volume2, ArrowUpRight, Spa
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { WordCard } from './word-card';
-import { referenceCatalog, type ReferenceKind } from './references';
-import { speak, type Word } from '@/lib/mandarin';
+import { speak } from '@/lib/mandarin';
 import mountain from '@/assets/mountain-study.jpg';
-import { includeScript } from '@/lib/learning-preferences';
+import { searchAll } from '@/lib/site-search';
 import mountainNight from '@/assets/mountain-study-night.jpg';
-
-const normalize = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-
-type SearchHit =
-  | { kind: 'Word'; word: Word }
-  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string };
-
-function searchAll(items: Word[], query: string, includeTraditional = false): SearchHit[] {
-  const q = normalize(query.trim());
-  if (!q) return [];
-  const wordHits: SearchHit[] = items
-    .filter(w => normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`).includes(q))
-    .map(word => ({ kind: 'Word' as const, word }));
-  const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
-    entries
-      .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && normalize(`${hanzi} ${pinyin} ${meaning} ${note}`).includes(q))
-      .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning, note }))
-  );
-  return [...wordHits, ...refHits].slice(0, 8);
-}
 
 export function OverviewPage() {
   const { items, preferences } = useWorkspace();
