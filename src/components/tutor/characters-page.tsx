@@ -5,20 +5,21 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Switch } from '@/components/ui/switch';
 import { libraryEntries, filterLibrary, libraryPage, plannedCounts, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
-import { speak } from '@/lib/mandarin';
+import { playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
+const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
 export function DecompositionTree({ node }: { node: DecompositionNode }) {
-  return <li><div className="decomposition-node"><span>{node.position}</span>{node.glyph === '⿰' ? <div className="decomposition-layout" aria-label="Left–right structure"><Columns2 aria-hidden="true"/><small>Left–right</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
 function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences } = useWorkspace();
-  const [audioError, setAudioError] = useState(false);
+  const [audioError, setAudioError] = useState<string | null>(null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{kind === 'Strokes' ? 'STROKE REFERENCE' : 'CHARACTER REFERENCE'}</div>
-    <div className="catalog-detail-title"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2>{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div><Button variant="ghost" size="icon" aria-label={`Listen to ${entry.hanzi}`} title="Listen to pronunciation" onClick={() => setAudioError(!speak(entry.hanzi, preferences.slow))}><Volume2/></Button></div>
-    {audioError && <p role="status" className="library-note">Audio isn’t available in this browser.</p>}
+    <div className="catalog-detail-title"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2>{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div><Button variant="ghost" size="icon" aria-label={`Listen to ${entry.hanzi}`} title="Listen to pronunciation" onClick={async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow))}><Volume2/></Button></div>
+    {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd>{kind.slice(0, -1)}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}

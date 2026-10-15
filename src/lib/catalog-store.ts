@@ -3,7 +3,7 @@
 // ~2 MB file never sits in the page bundle. Rows are mutated in place so existing
 // synchronous readers see the data after the workspace bumps its catalogue version.
 import type { CharacterScript } from './learning-preferences';
-import type { AudioAttachment, AudioRequest } from './audio';
+import { playPronunciation, audioMessage, type AudioAttachment, type AudioRequest } from './audio';
 import type { DecompositionNode } from './character-library';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
@@ -36,4 +36,9 @@ export function characterAudioRequest(glyph: string, reading?: string | null): A
   const chosen = reading ?? Object.keys(readings)[0] ?? null;
   const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
   return { text: glyph, reading: chosen, characterAudio };
+}
+
+/** Plays a character (exact-reading recording first, then validated Mandarin TTS); returns an error message or null. */
+export async function playCharacter(glyph: string, slow = false, reading?: string | null) {
+  return audioMessage(await playPronunciation(characterAudioRequest(glyph, reading), slow));
 }
