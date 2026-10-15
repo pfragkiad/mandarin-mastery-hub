@@ -1,7 +1,68 @@
 import { useEffect, useRef, useState } from 'react';
-import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb } from 'lucide-react';
+import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type HanziWriter from 'hanzi-writer';
+
+type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
+
+function nameStroke(path: string): { name: string; pinyin: string; direction: string } {
+  const nums = (path.match(/-?\d+\.?\d*/g) ?? []).map(Number);
+  const points: Array<[number, number]> = [];
+  for (let i = 0; i + 1 < nums.length; i += 2) points.push([nums[i], nums[i + 1]]);
+  if (points.length < 2) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
+  const [sx, sy] = points[0];
+  const [ex, ey] = points[points.length - 1];
+  const dx = ex - sx;
+  const dy = ey - sy; // data coordinates: y grows downward
+  let length = 0;
+  for (let i = 1; i < points.length; i++) length += Math.hypot(points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]);
+  const xs = points.map(p => p[0]);
+  const ys = points.map(p => p[1]);
+  const spanX = Math.max(...xs) - Math.min(...xs);
+  const spanY = Math.max(...ys) - Math.min(...ys);
+  if (length < 130) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
+  if (spanX > 220 && spanY > 220) return { name: '折', pinyin: 'zhé', direction: 'A compound stroke with a turn — one continuous movement.' };
+  if (dy < -60 && dx > 40) return { name: '提', pinyin: 'tí', direction: 'Rising from lower left to upper right.' };
+  if (Math.abs(dy) < 90 && dx > 0) return { name: '横', pinyin: 'héng', direction: 'Horizontal, left to right.' };
+  if (Math.abs(dx) < 90 && dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Vertical, top to bottom.' };
+  if (dx < -40 && dy > 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
+  if (dx > 40 && dy > 0) return { name: '捺', pinyin: 'nà', direction: 'Falling to the right.' };
+  return { name: '钩', pinyin: 'gōu', direction: 'Ending with a hook.' };
+}
+
+function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null }) {
+  const [visible, setVisible] = useState(true);
+  if (!strokes.length) return null;
+  return (
+    <div className="stroke-guide">
+      <div className="stroke-guide-top">
+        <h3><ListOrdered size={16} />Strokes in this character</h3>
+        <Button variant="ghost" size="sm" onClick={() => setVisible(v => !v)}>{visible ? 'Hide stroke guide' : 'Show stroke guide'}</Button>
+      </div>
+      {visible && (
+        <>
+          <p className="stroke-guide-note">{strokes.length} ordered strokes · local teaching labels · draft</p>
+          <ol className="stroke-guide-list">
+            {strokes.map((stroke, i) => (
+              <li key={i} className={activeStroke === i ? 'active' : ''}>
+                <span className="stroke-index">{i + 1}</span>
+                <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
+                  <g transform="scale(1, -1) translate(0, -900)">
+                    <path d={stroke.path} />
+                  </g>
+                </svg>
+                <span className="stroke-name"><span className="stroke-pinyin">{stroke.pinyin}</span><span lang="zh-CN">{stroke.name}</span></span>
+                <span className="stroke-direction">{stroke.direction}</span>
+                <Button variant="outline" size="icon" title={`Play stroke ${i + 1}`} aria-label={`Play stroke ${i + 1}`} onClick={() => onPlay(i)}><Play /></Button>
+              </li>
+            ))}
+          </ol>
+          <p className="stroke-guide-note">Local editorial teaching labels mapped to Hanzi Writer data; draft, not official stroke-name metadata. Names are separate teaching annotations, not supplied by the animation dataset.</p>
+        </>
+      )}
+    </div>
+  );
+}
 export function WritingPractice({ character }: { character: string }) {
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
