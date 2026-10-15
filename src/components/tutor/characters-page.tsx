@@ -5,16 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Switch } from '@/components/ui/switch';
-import { libraryEntries, filterLibrary, libraryPage, plannedCounts, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, libraryPage, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
-export function DecompositionTree({ node }: { node: DecompositionNode }) {
-  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
+export function DecompositionTree({ node, onGlyph }: { node: DecompositionNode; onGlyph?: ((glyph: string) => void) | undefined }) {
+  const card = onGlyph ? glyphIndex()[node.glyph] : undefined;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : card && onGlyph ? <button type="button" className="decomposition-glyph" lang="zh-CN" title={`Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`} onClick={() => onGlyph(node.glyph)}><strong>{node.glyph}</strong></button> : <strong lang="zh-CN">{node.glyph}</strong>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child} onGlyph={onGlyph}/> )}</ul> : null}</li>;
 }
-function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
+function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry; kind: LibraryKind; onGlyphSelect?: ((glyph: string) => void) | undefined }) {
   const { preferences } = useWorkspace();
   const [audioError, setAudioError] = useState<string | null>(null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
@@ -25,7 +26,7 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     <p className="catalog-record-note">{entry.note}</p>
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
-      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>Source files pending. No structure or component roles inferred.</small>}</div>}
+      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root} onGlyph={onGlyphSelect}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>Source files pending. No structure or component roles inferred.</small>}</div>}
     </div><p className="library-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
@@ -58,7 +59,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   </TooltipTrigger><TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
 }
 
-export function CharactersPage() {
+export function CharactersPage({ initialGlyph }: { initialGlyph?: string | undefined } = {}) {
   const { preferences, catalogVersion } = useWorkspace();
   const catalogReady = catalogVersion > 0;
   const [kind, setKind] = useState<LibraryKind>('Characters');
@@ -72,6 +73,16 @@ export function CharactersPage() {
   const paged = libraryPage(filtered, page);
   const selected = filtered.find(entry => entry.id === selectedId) ?? paged.entries[0];
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; setKind(next); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(''); };
+  const openGlyph = (glyph: string) => {
+    const hit = glyphIndex()[glyph];
+    if (!hit) return;
+    setKind(hit.kind); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(hit.id);
+  };
+  useEffect(() => {
+    if (!initialGlyph) return;
+    const hit = glyphIndex()[initialGlyph];
+    if (hit) { setKind(hit.kind); setSelectedId(hit.id); }
+  }, [initialGlyph, catalogVersion]);
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE CHARACTER LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
       {kinds.map(k => <TabsContent value={k} key={k}>
@@ -79,7 +90,7 @@ export function CharactersPage() {
         <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => { setQuery(e.target.value); setPage(1); }}/></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => { setStrokeCount(e.target.value); setPage(1); }}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{k === 'Characters' && <label className="catalog-source-toggle"><Switch checked={sourceOnly} onCheckedChange={value => { setSourceOnly(value); setPage(1); }}/>With decomposition</label>}</div>
         <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{filtered.length} {k.toLowerCase()}</span><span>{k === 'Strokes' ? 'BASIC STROKE FORMS' : 'STARTER RECORDS'}</span></div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => { setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); }}>Clear filters</Button></div>}
           <div className="catalog-pagination"><span>{filtered.length ? `${(paged.current - 1) * 24 + 1}–${Math.min(paged.current * 24, filtered.length)} of ${filtered.length}` : '0 records'}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => { setPage(paged.current - 1); setSelectedId(''); }}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => { setPage(paged.current + 1); setSelectedId(''); }}><ChevronRight/></Button></div></div>
-        </section>{selected ? <CharacterDetails key={selected.id} entry={selected} kind={k}/> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
+        </section>{selected ? <CharacterDetails key={selected.id} entry={selected} kind={k} onGlyphSelect={openGlyph}/> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
       </TabsContent>)}
     </Tabs>
   </div>;
