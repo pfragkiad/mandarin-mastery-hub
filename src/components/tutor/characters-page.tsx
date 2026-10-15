@@ -44,7 +44,6 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 : false));
     };
     measure();
-    measure();
     const ro = new ResizeObserver(measure);
     ro.observe(tile);
     tile.querySelectorAll<HTMLElement>('.pinyin, .catalog-entry-meaning').forEach(el => ro.observe(el));
