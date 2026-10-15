@@ -10,10 +10,10 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   const [sx, sy] = median[0];
   const [ex, ey] = median[median.length - 1];
   const dx = ex - sx;
-  const dy = ey - sy; // data coordinates: y grows downward
+  const down = sy - ey; // median coordinates: y grows upward, so positive = moving down
   let length = 0;
   for (let i = 1; i < median.length; i++) length += Math.hypot(median[i][0] - median[i - 1][0], median[i][1] - median[i - 1][1]);
-  if (length < 110) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
+  if (length < 200) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
   // Compound stroke: the dominant direction changes partway through.
   const mid = median[Math.floor(median.length / 2)];
   const h1 = mid[0] - sx, v1 = mid[1] - sy;
@@ -23,13 +23,13 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   if (dom1 !== 'd' && dom2 !== 'd' && dom1 !== dom2 && Math.min(Math.hypot(h1, v1), Math.hypot(h2, v2)) > 120) {
     return { name: '折', pinyin: 'zhé', direction: 'A compound stroke with a turn — one continuous movement.' };
   }
-  if (dy < -40 && dx > 40) return { name: '提', pinyin: 'tí', direction: 'Rising from lower left to upper right.' };
-  if (Math.abs(dy) < 90 && dx > 0) return { name: '横', pinyin: 'héng', direction: 'Horizontal, left to right.' };
-  if (Math.abs(dx) < 90 && dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Vertical, top to bottom.' };
-  if (dx < -40 && dy > 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
-  if (dx > 40 && dy > 0) return { name: '捺', pinyin: 'nà', direction: 'Falling to the right.' };
+  if (down < -40 && dx > 40) return { name: '提', pinyin: 'tí', direction: 'Rising from lower left to upper right.' };
+  if (Math.abs(down) < 120 && dx > 0) return { name: '横', pinyin: 'héng', direction: 'Horizontal, left to right.' };
+  if (Math.abs(dx) < 90 && down > 0) return { name: '竖', pinyin: 'shù', direction: 'Vertical, top to bottom.' };
+  if (dx < -40 && down > 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
+  if (dx > 40 && down > 0) return { name: '捺', pinyin: 'nà', direction: 'Falling to the right.' };
   if (dx < 0) return { name: '撇', pinyin: 'piě', direction: 'Falling to the left.' };
-  if (dy > 0) return { name: '竖', pinyin: 'shù', direction: 'Top to bottom.' };
+  if (down > 0) return { name: '竖', pinyin: 'shù', direction: 'Top to bottom.' };
   return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
