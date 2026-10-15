@@ -124,7 +124,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider delayDuration={160} skipDelayDuration={300}><WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider></TooltipProvider>
+      <TooltipProvider delayDuration={160} skipDelayDuration={300} disableHoverableContent><WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider></TooltipProvider>
     </QueryClientProvider>
   );
 }
