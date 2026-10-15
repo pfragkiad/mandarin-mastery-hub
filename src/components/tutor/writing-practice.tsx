@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from '@tanstack/react-router';
 import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, GitBranch, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { words } from '@/lib/mandarin';
