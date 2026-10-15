@@ -1,9 +1,9 @@
 import { Link, useRouterState } from '@tanstack/react-router';
 import { useState } from 'react';
-import { LayoutGrid, BookOpen, PenLine, Library, Settings, Layers, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight } from 'lucide-react';
+import { LayoutGrid, BookOpen, PenLine, Library, Settings, Layers, Languages, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-const navigation = [{ to: '/' as const, name: 'Overview', icon: LayoutGrid }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/strokes' as const, name: 'Strokes', icon: PenLine }, { to: '/references' as const, name: 'References', icon: Library }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Overview', icon: LayoutGrid }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/strokes' as const, name: 'Strokes', icon: PenLine }, { to: '/characters' as const, name: 'Characters', icon: Languages }, { to: '/references' as const, name: 'References', icon: Library }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
   const current = navigation.find(n => n.to === path)?.name ?? 'Overview';

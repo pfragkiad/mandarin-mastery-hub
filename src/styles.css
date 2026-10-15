@@ -89,3 +89,16 @@
   font-size: 12px;
   color: var(--muted-foreground);
 }
+
+/* Characters library page */
+.characters-library { margin-bottom: 34px; }
+.character-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--card); font-family: var(--font-hanzi); font-size: 22px;
+  color: var(--foreground); text-decoration: none;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.character-tile:hover { border-color: var(--primary); background: var(--secondary); transform: translateY(-2px); }
+.character-picker.compact .character-tile { width: 32px; height: 32px; font-size: 17px; }
+.stroke-reference .library-note { display: flex; align-items: center; gap: 6px; margin-top: 14px; }
