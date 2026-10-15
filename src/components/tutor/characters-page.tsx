@@ -34,10 +34,21 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   const hasPinyin = Boolean(entry.pinyin);
   const hasMeaning = Boolean(entry.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
+  const [clipped, setClipped] = useState(false);
   const tileRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const tile = tileRef.current;
     if (!tile) return;
+    const measure = () => {
+      const spans = [tile.querySelector<HTMLElement>('.pinyin'), tile.querySelector<HTMLElement>('.catalog-entry-meaning')];
+      setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 : false));
+    };
+    measure();
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(tile);
+    tile.querySelectorAll<HTMLElement>('.pinyin, .catalog-entry-meaning').forEach(el => ro.observe(el));
+    document.fonts?.ready.then(measure).catch(() => undefined);
     const lift = () => {
       const grid = tile.closest('.catalog-entry-grid');
       const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0];
@@ -45,18 +56,18 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
     };
     tile.addEventListener('pointerenter', lift);
     tile.addEventListener('focus', lift);
-    return () => { tile.removeEventListener('pointerenter', lift); tile.removeEventListener('focus', lift); };
-  }, []);
+    return () => { ro.disconnect(); tile.removeEventListener('pointerenter', lift); tile.removeEventListener('focus', lift); };
+  }, [entry.id]);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
-  return <Tooltip><TooltipTrigger asChild>
-    <Button ref={tileRef} variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
+  const tile = <Button ref={tileRef} variant="ghost" className={`catalog-entry ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onClick={() => onSelect(entry.id)}>
       <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
       {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
       {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
       {entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}
       {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
-    </Button>
-  </TooltipTrigger><TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
+    </Button>;
+  if (!clipped) return tile;
+  return <Tooltip><TooltipTrigger asChild>{tile}</TooltipTrigger><TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
 }
 
 export function CharactersPage({ initialGlyph }: { initialGlyph?: string | undefined } = {}) {
