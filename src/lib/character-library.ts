@@ -8,7 +8,7 @@ export const plannedCounts: Record<LibraryKind, number> = { Strokes: 18, Radical
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const rows = kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : referenceCatalog.find(group => `${group.kind}s` === kind)?.entries ?? [];
-  return rows.map(([hanzi = '', pinyin = '', meaning = '', note = '']) => ({ id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+  return rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => ({ id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
     ...(kind === 'Characters' && hanzi === '我' ? { decomposition: { root: { glyph: '⿰', position: 'root', children: [{ glyph: '才', position: 'left' }, { glyph: '戈', position: 'right' }] }, source: 'Provided reference screenshot', status: 'Illustrative reference only · source file pending' } } : {}),
   }));
 }
