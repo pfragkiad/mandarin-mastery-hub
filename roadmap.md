@@ -6,8 +6,8 @@
 - [x] Add persistent light/dark theme switching and verify contrast.
 - [x] Replace the Characters tiles with searchable, paginated category browsing and decomposition details.
 - [x] Verify library interactions and theme persistence.
-- [ ] Add theme-matched day/night banner images.
-- [ ] Open the daily word directly in the dictionary.
-- [ ] Add default-off traditional-character preference, script markers and update the planned count to 9,574.
-- [ ] Verify the requested flows.
+- [x] Add theme-matched day/night banner images.
+- [x] Open the daily word directly in the dictionary.
+- [x] Add default-off traditional-character preference, script markers and update the planned count to 9,574.
+- [x] Verify the requested flows.
 - [ ] Import full catalogues and sourced decompositions — waiting for the user's source files.
