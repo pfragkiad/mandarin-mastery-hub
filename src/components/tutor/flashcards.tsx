@@ -31,7 +31,7 @@ export function FlashcardsPage() {
   const start = (cards: Card[]) => { setDeck(shuffle(cards)); setIndex(0); setFlipped(false); setMissed([]); };
   const answer = (known: boolean) => {
     if (!deck) return;
-    if (!known) setMissed(m => [...m, deck[index]]);
+    const current = deck[index]; if (!known && current) setMissed(m => [...m, current]);
     setFlipped(false);
     setTimeout(() => setIndex(i => i + 1), 150);
   };
