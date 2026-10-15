@@ -34,8 +34,10 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   const hasMeaning = Boolean(entry.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
   const lift = (event: React.PointerEvent | React.FocusEvent) => {
-    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
-    setSide(rect.top < 200 ? 'bottom' : 'top');
+    const tile = event.currentTarget as HTMLElement;
+    const grid = tile.closest('.catalog-entry-grid');
+    const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0];
+    setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top');
   };
   const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
   return <Tooltip><TooltipTrigger asChild onPointerEnter={lift} onFocus={lift}>
