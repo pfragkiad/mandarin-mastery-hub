@@ -1,23 +1,10 @@
 import type { CharacterScript } from './learning-preferences';
 import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from './audio';
-import type { Entry } from './data-contract';
+import { entryToWord, categoryName, vocabularyData, type Entry } from './data-contract';
 export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; script?: CharacterScript; audio?: AudioAttachment | null; entry?: Entry };
-export const words: Word[] = [
-  { id: 'xuexi', hanzi: '学习', pinyin: 'xué xí', meaning: 'To learn', type: 'Verb', collection: 'School & learning', level: 'Sample', sentence: '学无止境。', translation: 'Learning never ends.', script: 'Simplified' },
-  { id: 'wo', hanzi: '我', pinyin: 'wǒ', meaning: 'I · me', type: 'Pronoun', collection: 'Everyday essentials', level: 'Sample', sentence: '我是学生。', translation: 'I am a student.' },
-  { id: 'nihao', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'Hello', type: 'Greeting', collection: 'Everyday essentials', level: 'Sample', sentence: '你好，很高兴认识你。', translation: 'Hello, nice to meet you.' },
-  { id: 'zhongguo', hanzi: '中国', pinyin: 'Zhōng guó', meaning: 'China', type: 'Proper noun', collection: 'Places & travel', level: 'Sample', sentence: '我想去中国。', translation: 'I want to go to China.' },
-  { id: 'xuesheng', hanzi: '学生', pinyin: 'xué sheng', meaning: 'Student', type: 'Noun', collection: 'School & learning', level: 'Sample', sentence: '她是学生。', translation: 'She is a student.' },
-  { id: 'ai', hanzi: '爱', pinyin: 'ài', meaning: 'Love', type: 'Verb', collection: 'Everyday essentials', level: 'HSK 1', sentence: '我爱我的家。', translation: 'I love my family.' },
-  { id: 'ba', hanzi: '八', pinyin: 'bā', meaning: 'Eight', type: 'Number', collection: 'Numbers & time', level: 'HSK 1', sentence: '现在八点。', translation: 'It is eight o’clock now.' },
-  { id: 'xiexie', hanzi: '谢谢', pinyin: 'xiè xie', meaning: 'Thank you', type: 'Expression', collection: 'Everyday essentials', level: 'HSK 1', sentence: '谢谢你的帮助。', translation: 'Thank you for your help.' },
-  { id: 'shui', hanzi: '水', pinyin: 'shuǐ', meaning: 'Water', type: 'Noun', collection: 'Everyday essentials', level: 'HSK 1', sentence: '我想喝水。', translation: 'I would like to drink water.' },
-  { id: 'mingtian', hanzi: '明天', pinyin: 'míng tiān', meaning: 'Tomorrow', type: 'Noun', collection: 'Numbers & time', level: 'HSK 1', sentence: '明天见！', translation: 'See you tomorrow!' },
-  { id: 'laoshi', hanzi: '老师', pinyin: 'lǎo shī', meaning: 'Teacher', type: 'Noun', collection: 'School & learning', level: 'HSK 1', sentence: '我的老师很好。', translation: 'My teacher is very nice.' },
-  { id: 'beijing', hanzi: '北京', pinyin: 'Běi jīng', meaning: 'Beijing', type: 'Proper noun', collection: 'Places & travel', level: 'HSK 1', sentence: '我住在北京。', translation: 'I live in Beijing.' },
-  { id: 'jin', hanzi: '今天', pinyin: 'jīn tiān', meaning: 'Today', type: 'Noun', collection: 'Numbers & time', level: 'HSK 1', sentence: '今天天气很好。', translation: 'The weather is lovely today.' },
-];
-export const collections = ['Everyday essentials', 'School & learning', 'Places & travel', 'Numbers & time'];
+// Real vocabulary imported from the Mandarin Tutor database, adapted through the API contract.
+export const words: Word[] = vocabularyData.entries.map(e => entryToWord(e, vocabularyData.categories));
+export const collections = vocabularyData.categories.map(c => categoryName(c.name)).filter(name => words.some(w => w.collection === name));
 export function filterWords(items: Word[], query: string, collection = 'All collections', level = 'All levels', status = 'All words', saved: string[] = []) {
   const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const q = normalize(query.trim());
