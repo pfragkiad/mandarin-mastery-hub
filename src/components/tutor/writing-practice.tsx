@@ -5,6 +5,7 @@ import type HanziWriter from 'hanzi-writer';
 export function WritingPractice({ character }: { character: string }) {
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
+  const animationRun = useRef(0);
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
@@ -13,6 +14,7 @@ export function WritingPractice({ character }: { character: string }) {
   const [retry, setRetry] = useState(0);
   useEffect(() => {
     let active = true;
+    animationRun.current += 1;
     setReady(false); setPlaying(false); setMessage('Loading stroke order…');
     if (target.current) target.current.innerHTML = '';
     import('hanzi-writer').then(({ default: Writer }) => {
@@ -31,10 +33,11 @@ export function WritingPractice({ character }: { character: string }) {
   }, [character, speed, retry]);
   const play = () => {
     const instance = writer.current; if (!instance) return;
+    const run = ++animationRun.current;
     instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
-    instance.animateCharacter({ onComplete: () => { setPlaying(false); setMessage('Your turn. Ready to write it from memory?'); } });
+    instance.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setMessage('Your turn. Ready to write it from memory?'); } });
   };
-  const quiz = () => { if (!writer.current) return; setPlaying(false); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
+  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
   return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? () => { writer.current?.pauseAnimation(); setPlaying(false); setMessage('Paused. Play to start again.'); } : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={() => { writer.current?.cancelQuiz(); writer.current?.showCharacter(); setPlaying(false); setMessage('Ready for a fresh start.'); }}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0.5" max="2" step="0.5" value={speed} onChange={e => setSpeed(e.target.value)}/><span>{speed}×</span></label></section>;
 }
 const characterDetails: Record<string, { pinyin: string; meaning: string; strokes: number; radical: string }> = { '我': { pinyin: 'wǒ', meaning: 'I · me', strokes: 7, radical: '戈' }, '你': { pinyin: 'nǐ', meaning: 'You', strokes: 7, radical: '亻' }, '好': { pinyin: 'hǎo', meaning: 'Good · well', strokes: 6, radical: '女' }, '学': { pinyin: 'xué', meaning: 'To learn', strokes: 8, radical: '子' }, '永': { pinyin: 'yǒng', meaning: 'Forever · eternal', strokes: 5, radical: '水' }, '水': { pinyin: 'shuǐ', meaning: 'Water', strokes: 4, radical: '水' }, '人': { pinyin: 'rén', meaning: 'Person', strokes: 2, radical: '人' }, '爱': { pinyin: 'ài', meaning: 'Love', strokes: 10, radical: '爫' } };
