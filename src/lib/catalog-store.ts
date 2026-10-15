@@ -1,0 +1,39 @@
+// Imported reference catalogue (characters, radicals, components, strokes, decompositions,
+// character-reading audio). Fetched once in the browser from /data/catalog.json so the
+// ~2 MB file never sits in the page bundle. Rows are mutated in place so existing
+// synchronous readers see the data after the workspace bumps its catalogue version.
+import type { CharacterScript } from './learning-preferences';
+import type { AudioAttachment, AudioRequest } from './audio';
+import type { DecompositionNode } from './character-library';
+
+export type CatalogRow = [string, string, string, string, CharacterScript?];
+type CatalogFile = {
+  version: number; source: string;
+  characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[]; strokes: CatalogRow[];
+  trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
+};
+
+export const catalog = {
+  loaded: false, version: 0, source: '',
+  characters: [] as CatalogRow[], radicals: [] as CatalogRow[], components: [] as CatalogRow[], strokes: [] as CatalogRow[],
+  trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'],
+};
+
+let pending: Promise<void> | null = null;
+export function loadCatalog(): Promise<void> {
+  if (catalog.loaded || typeof window === 'undefined') return Promise.resolve();
+  pending ??= fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }).then(data => {
+    for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
+    catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source;
+    catalog.loaded = true; catalog.version += 1;
+  }).catch(err => { pending = null; throw err; });
+  return pending;
+}
+
+/** Audio request for a single character, offering its exact-reading recording when one exists. */
+export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
+  const readings = catalog.readingAudio[glyph] ?? {};
+  const chosen = reading ?? Object.keys(readings)[0] ?? null;
+  const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
+  return { text: glyph, reading: chosen, characterAudio };
+}
