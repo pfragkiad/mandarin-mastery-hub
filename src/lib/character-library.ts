@@ -2,7 +2,7 @@ import { referenceCatalog } from '@/components/tutor/references';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
-export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; strokes?: number; decomposition?: { root: DecompositionNode; source: string; status: string } };
+export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 18, Radicals: 214, Components: 1843, Characters: 9564 };
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {

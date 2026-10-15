@@ -17,7 +17,7 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
   const [audioError, setAudioError] = useState(false);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{kind === 'Strokes' ? 'STROKE REFERENCE' : 'CHARACTER REFERENCE'}</div>
-    <div className="catalog-detail-title"><strong lang="zh-CN">{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2></div><Button variant="ghost" size="icon" aria-label={`Listen to ${entry.hanzi}`} title="Listen to pronunciation" onClick={() => { setAudioError(false); speak(entry.hanzi, preferences.slow).catch(() => setAudioError(true)); }}><Volume2/></Button></div>
+    <div className="catalog-detail-title"><strong lang="zh-CN">{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2></div><Button variant="ghost" size="icon" aria-label={`Listen to ${entry.hanzi}`} title="Listen to pronunciation" onClick={() => setAudioError(!speak(entry.hanzi, preferences.slow))}><Volume2/></Button></div>
     {audioError && <p role="status" className="library-note">Audio isn’t available in this browser.</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd>{kind.slice(0, -1)}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>

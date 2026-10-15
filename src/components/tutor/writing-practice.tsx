@@ -75,6 +75,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
   );
 }
 export function WritingPractice({ character, onStrokeCount }: { character: string; onStrokeCount?: (count: number) => void }) {
+  const { theme } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const animationRun = useRef(0);
@@ -108,11 +109,14 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
       if (color) color.fillRect(0, 0, 1, 1);
       const pixel = color?.getImageData(0, 0, 1, 1).data;
       const inkHex = pixel ? `#${Array.from(pixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
+      const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
+      const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
-  }, [character, speed, retry]);
+  }, [character, speed, retry, theme]);
   const play = () => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
