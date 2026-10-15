@@ -153,7 +153,10 @@ const pickerGroups = [
 ];
 
 export function StrokesPage({ initialCharacter = '我' }: { initialCharacter?: string }) {
-  const [character, setCharacter] = useState(initialCharacter);
+  const wordChars = Array.from(initialCharacter);
+  const isWord = wordChars.length > 1;
+  const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
+  const [character, setCharacter] = useState(wordChars[0] ?? '我');
   const [liveStrokes, setLiveStrokes] = useState<number | null>(null);
   const fact = charFacts[character];
   const notedStrokes = Number(fact?.note.match(/^(\d+) strokes?/)?.[1]) || null;
