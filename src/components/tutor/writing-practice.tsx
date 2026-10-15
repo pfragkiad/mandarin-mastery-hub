@@ -82,9 +82,12 @@ export function WritingPractice({ character }: { character: string }) {
     setStrokes([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
     import('hanzi-writer').then(({ default: Writer }) => {
-      Writer.loadCharData(character).then((data: { strokes: string[] }) => {
-        if (active) setStrokes(data.strokes.map((path: string) => ({ path, ...nameStroke(path) })));
-      }).catch(() => {});
+      fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(character)}.json`)
+        .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
+        .then((data: { strokes: string[] }) => {
+          if (active) setStrokes(data.strokes.map((path: string) => ({ path, ...nameStroke(path) })));
+        })
+        .catch(() => {});
       if (!active || !target.current) return;
       const style = getComputedStyle(document.documentElement);
       const ink = style.getPropertyValue('--primary').trim();
