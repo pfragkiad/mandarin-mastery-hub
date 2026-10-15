@@ -16,4 +16,6 @@
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
 - [ ] Consistent generated audio instead of the browser's own Chinese voice.- [x] Audio priority order + source labels; API contract adapter with fixtures
-- [ ] Connect adapter to the local API (/api/vocabulary etc.) — needs a reachable API
+- [x] Import real data from backup: 305 words, full character catalogue, decompositions, traditional markers
+- [ ] Upload referenced recordings (1,486) and attach to words/characters
+- [ ] Optional: upload the remaining ~4,700 unreferenced recordings
