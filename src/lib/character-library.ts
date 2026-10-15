@@ -37,7 +37,7 @@ const glyphCache = { version: -1, index: null as null | Record<string, { kind: L
 export function glyphIndex(): Record<string, { kind: LibraryKind; id: string }> {
   if (glyphCache.version === catalog.version && glyphCache.index) return glyphCache.index;
   const index: Record<string, { kind: LibraryKind; id: string }> = {};
-  for (const kind of ['Radicals', 'Components', 'Characters'] as LibraryKind[]) {
+  for (const kind of ['Radicals', 'Characters', 'Components'] as LibraryKind[]) {
     for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id };
   }
   glyphCache.version = catalog.version;
