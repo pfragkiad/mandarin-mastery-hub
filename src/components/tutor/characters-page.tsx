@@ -26,7 +26,7 @@ function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry;
     <p className="catalog-record-note">{entry.note}</p>
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
-      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>Source files pending. No structure or component roles inferred.</small>}</div>}
+      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root} onGlyph={onGlyphSelect}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{entry.decomposition.source}</dd><dt>Verification</dt><dd>{entry.decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>Source files pending. No structure or component roles inferred.</small>}</div>}
     </div><p className="library-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
@@ -59,11 +59,12 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   </TooltipTrigger><TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent></Tooltip>;
 }
 
-export function CharactersPage() {
+export function CharactersPage({ initialGlyph }: { initialGlyph?: string } = {}) {
   const { preferences, catalogVersion } = useWorkspace();
   const catalogReady = catalogVersion > 0;
   const [kind, setKind] = useState<LibraryKind>('Characters');
   const [query, setQuery] = useState('');
+  const constQuery = query;
   const [strokeCount, setStrokeCount] = useState('');
   const [sourceOnly, setSourceOnly] = useState(false);
   const [page, setPage] = useState(1);
@@ -73,6 +74,16 @@ export function CharactersPage() {
   const paged = libraryPage(filtered, page);
   const selected = filtered.find(entry => entry.id === selectedId) ?? paged.entries[0];
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; setKind(next); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(''); };
+  const openGlyph = (glyph: string) => {
+    const hit = glyphIndex()[glyph];
+    if (!hit) return;
+    setKind(hit.kind); setQuery(''); setStrokeCount(''); setSourceOnly(false); setPage(1); setSelectedId(hit.id);
+  };
+  useEffect(() => {
+    if (!initialGlyph) return;
+    const hit = glyphIndex()[initialGlyph];
+    if (hit) { setKind(hit.kind); setSelectedId(hit.id); }
+  }, [initialGlyph, catalogVersion]);
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE CHARACTER LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
       {kinds.map(k => <TabsContent value={k} key={k}>
