@@ -14,3 +14,5 @@
 - Use the browser-safe Mandarin data module for starter content and filtering; explicitly label sample content and session-only edits rather than implying imported records or durable storage.
 - Load Hanzi Writer dynamically in the writing tool effect, so browser drawing logic never runs during server rendering.
 - Define visual roles and responsive layouts in the global design system and use shared UI controls for interactions, so the learning sections remain visually consistent.
+- Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
+- Keep character-library filtering and bounded pagination in a browser-safe data adapter; attach decomposition trees to explicit provenance so future imports do not imply inferred etymology.
