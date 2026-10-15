@@ -10,6 +10,7 @@
 - [x] Open the daily word directly in the dictionary.
 - [x] Add default-off traditional-character preference, script markers and update the planned count to 9,574.
 - [x] Verify the requested flows.
+- [x] Turn the header magnifier into a real library-wide search (words, characters, radicals, components) with ⌘K / Ctrl K.
 - [ ] Import full catalogues and sourced decompositions — waiting for the user's source files.
 
 ## Deferred, asked about for later (do not start unless the user asks)

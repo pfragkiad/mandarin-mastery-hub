@@ -186,3 +186,15 @@
 .daily-word-content:hover h3 { color: var(--primary); text-decoration: underline; }
 .traditional-character, .is-traditional [lang="zh-CN"], .is-traditional .word-level { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
+.search-trigger { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-size: 11px; }
+.search-trigger:hover { color: var(--foreground); border-color: var(--primary); }
+.search-trigger>svg { width: 14px; }
+.search-trigger kbd { font-family: inherit; font-size: 9px; letter-spacing: .4px; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: var(--muted-foreground); }
+.global-search { max-width: 560px; gap: 13px; }
+.global-search .search-field input { height: 46px; font-size: 13px; }
+.global-search-results { max-height: 316px; overflow-y: auto; border: 1px solid var(--border); border-radius: 7px; }
+.global-search-results .hero-search-hit { width: 100%; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; cursor: pointer; text-align: left; }
+.global-search-results .hero-search-hit:last-child { border-bottom: 0; }
+.global-search-hint, .global-search .hero-search-empty { margin: 0; font-size: 11px; color: var(--muted-foreground); }
+.global-search-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--muted-foreground); }
+@media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
