@@ -24,3 +24,4 @@
 - Mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts and adapt entries to the UI Word shape there, so screens never depend on whether data comes from fixtures or the local API.
 - Imported data is regenerated from the source SQLite by an export script into src/data/vocabulary.json (bundled, API Entry shape) and public/data/catalog.json (fetched once by src/lib/catalog-store.ts), so the large character catalogue never enters the page bundle.
 - Recordings live on the Lovable CDN; exported data stores only their CDN URLs plus source/speaker/license, so the repo stays free of media binaries.
+- Keep page selections and filters (Characters tab/filters/page/selection, Practice word focus) in URL search params, pushing history for selections and replacing for typing, so browser back/forward restores them without cookies.
