@@ -24,7 +24,9 @@ def import_phrases(workbook_path, vocabulary_path):
     identity = lambda key: str(uuid.uuid5(namespace, f'mandarin-tutor:unofficial-hsk1:{key}'))
     existing = {entry['id']: entry for entry in data['entries']}
     categories = {category['id']: category for category in data['categories']}
-    for internal_id, topic, chinese, pinyin, english, entry_type, matches, review_notes, status in rows:
+    for row in rows:
+        internal_id, topic, chinese, pinyin, english, entry_type, matches, review_notes, status = row[:9]
+        linguistic_status, out_of_level_detail, editorial_correction = (list(row[9:12]) + [None] * 3)[:3]
         category_id = identity(f'topic:{topic}')
         if category_id not in categories:
             category = {'id': category_id, 'name': f'{topic} · L1 practice phrases'}
@@ -39,8 +41,9 @@ def import_phrases(workbook_path, vocabulary_path):
             'entryKind': 'phrase', 'hskLevel': 1, 'hskVersion': '3.0', 'hsk_index': None, 'hskSource': None,
             'categoryId': category_id, 'partOfSpeech': entry_type, 'contentStatus': 'draft', 'audio': None, 'examples': [],
             'phraseMetadata': {'internalId': internal_id, 'syllabusStatus': status, 'entryType': entry_type,
-                               'matchedVocabularyIds': [int(value.strip()) for value in str(matches or '').split(',') if value.strip()],
-                               'reviewNotes': review_notes},
+                                'matchedVocabularyIds': [int(value.strip()) for value in str(matches or '').split(',') if value.strip()],
+                                'reviewNotes': review_notes, 'linguisticStatus': linguistic_status,
+                                'outOfLevelDetail': out_of_level_detail, 'editorialCorrection': editorial_correction},
             'createdAt': '2026-10-16T00:00:00Z', 'updatedAt': '2026-10-16T00:00:00Z',
         }
         previous = existing.get(entry['id'])
