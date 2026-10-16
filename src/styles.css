@@ -224,13 +224,13 @@
 .vocabulary-saved-filter .selected { background: var(--secondary); color: var(--primary); }
 .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; }
 .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fill,minmax(340px,1fr)); gap: 16px; }
+.vocab-grid:not(.list-view) .word-card { display: flex; flex-direction: column; }
 .vocab-grid:not(.list-view) .word-card-top { padding: 10px 12px 0 16px; }
-.vocab-grid:not(.list-view) .word-open { height: 150px; padding: 12px 16px 16px; gap: 12px; align-items: flex-start; justify-content: space-between; white-space: normal; }
+.vocab-grid:not(.list-view) .word-open { height: auto; min-height: 0; flex: 1; padding: 12px 16px 16px; gap: 12px; align-items: flex-start; justify-content: space-between; white-space: normal; }
 .vocab-grid .word-character { max-width: 100%; min-width: 0; }
 .vocab-grid .word-character > [lang] { overflow-wrap: anywhere; white-space: normal; text-align: left; }
 .vocab-grid .pinyin { white-space: normal; text-align: left; overflow-wrap: anywhere; }
 .vocab-grid:not(.list-view) .word-character { font-size: 36px; }
-.vocab-phrase-grid:not(.list-view) .word-open { height: 176px; }
 .vocab-phrase-grid:not(.list-view) .word-character { font-size: 38px; }
 .vocab-grid .word-meaning { white-space: normal; text-align: left; overflow-wrap: anywhere; }
 .vocab-grid:not(.list-view) .word-meaning { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -247,7 +247,7 @@
   .vocabulary-saved-filter button { padding: 0 7px; font-size: 10px; gap: 4px; }
   .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .vocab-phrase-grid:not(.list-view) { grid-template-columns: minmax(0,1fr); }
-  .vocab-word-grid:not(.list-view) .word-open { height: 158px; padding: 10px 12px 14px; }
+  .vocab-word-grid:not(.list-view) .word-open { padding: 10px 12px 14px; min-height: 128px; }
   .vocab-word-grid:not(.list-view) .word-character { font-size: 30px; }
   .vocab-grid:not(.list-view) .word-card-top { padding-left: 12px; }
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
