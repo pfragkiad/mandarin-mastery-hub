@@ -1,6 +1,6 @@
 # Mandarin tutor interface
-- [ ] Import supplied unofficial Level 1 phrases with pinyin and translations, retaining internal IDs without official HSK IDs.
-- [ ] Verify phrase search, details, and import rules.
+- [x] Import supplied unofficial Level 1 phrases with pinyin and translations, retaining internal IDs without official HSK IDs.
+- [x] Verify phrase search, details, and import rules.
 - [x] Update existing HSK 1 parts of speech from the supplied spreadsheet without changing other imported fields.
 - [x] Match sentence pinyin styling to other pinyin and verify word details.
 - [x] Establish a cohesive green learning workspace and navigation.
