@@ -14,6 +14,7 @@ export type Entry = {
   entryKind: 'word' | 'phrase'; hskLevel: number | null; hskVersion: '3.0' | null; hsk_index: number | null; hskSource: SourceRef | null;
   categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; partOfSpeechSource?: SourceRef; tags?: string[]; contentStatus: 'draft' | 'reviewed';
   audio: AudioAttachment | null; examples: Example[]; createdAt: string; updatedAt: string;
+  phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null };
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };
 
