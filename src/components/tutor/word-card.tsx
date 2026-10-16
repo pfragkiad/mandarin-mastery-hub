@@ -13,6 +13,7 @@ export function WordCard({ word, list = false, initiallyOpen = false }: { word: 
   const [canTts, setCanTts] = useState(false);
   const request = { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null };
   const source = audioCandidates(request)[0]?.label ?? 'Browser TTS';
+  const hasRecording = audioCandidates(request).some(c => c.kind === 'recording');
   const { saved, toggleSaved, preferences } = useWorkspace();
   const bookmarked = saved.includes(word.id);
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };

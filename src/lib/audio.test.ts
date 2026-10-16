@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE } from './audio';
+import { characterRecording, hydrateCatalog } from './catalog-store';
 const rec = { url: '/api/media/a.mp3', source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
 const char = { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0', recordingKind: 'syllable', glyph: '中', reading: 'zhōng' };
 describe('Audio fallback order', () => {
@@ -17,4 +18,14 @@ describe('Mandarin voice selection', () => {
 });
 describe('Rates', () => {
   it('clamps to 0.5–1.2 and slow is 0.65', () => { expect([clampRate(0.1), clampRate(2)]).toEqual([0.5, 1.2]); expect(SLOW_RATE).toBe(0.65); });
+});
+
+describe('Character recording lookup', () => {
+  hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], strokes: [], trees: {}, readingAudio: { '中': { 'zhōng': 'zhong1' } }, audio: { zhong1: { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+  it('returns the exact-reading recording only when the reading is known', () => {
+    expect(characterRecording('中', 'zhōng')?.url).toBe('/api/media/zhong1.mp3');
+    expect(characterRecording('中', 'zhòng')).toBeNull();
+    expect(characterRecording('中')).toBeNull();
+    expect(characterRecording('水', 'shuǐ')).toBeNull();
+  });
 });

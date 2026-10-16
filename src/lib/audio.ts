@@ -28,6 +28,11 @@ export function audioCandidates(req: AudioRequest): AudioCandidate[] {
   return list;
 }
 
+/** Recordings only (no TTS fallback) — used to style buttons honestly when nothing is recorded. */
+export function recordingCandidates(req: AudioRequest): Extract<AudioCandidate, { kind: 'recording' }>[] {
+  return audioCandidates(req).filter((c): c is Extract<AudioCandidate, { kind: 'recording' }> => c.kind === 'recording');
+}
+
 // Mandarin locales only: Cantonese (zh-HK, yue) and unknown zh variants are rejected; zh-CN preferred.
 const MANDARIN = /^(zh-(cn|tw|sg|hans|hant|hans-cn|hant-tw)|cmn)(-|_|$)/i;
 export function isMandarinVoice(v: Pick<SpeechSynthesisVoice, 'lang'>) {
@@ -43,6 +48,13 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   const refresh = () => { voices = window.speechSynthesis.getVoices(); };
   refresh();
   window.speechSynthesis.addEventListener?.('voiceschanged', refresh);
+}
+
+/** Whether this browser has a validated Mandarin voice (the recording-less last fallback). */
+export function ttsAvailable(): boolean {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return false;
+  if (!voices.length) voices = window.speechSynthesis.getVoices();
+  return Boolean(pickMandarinVoice(voices));
 }
 
 export function speakTts(text: string, rate = NORMAL_RATE): PlayResult {

@@ -4,7 +4,8 @@ import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, V
 import { Button } from '@/components/ui/button';
 import { words } from '@/lib/mandarin';
 import { type LibraryEntry } from '@/lib/character-library';
-import { catalog, playCharacter } from '@/lib/catalog-store';
+import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
+import { ttsAvailable } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { referenceCatalog, type ReferenceKind } from '@/lib/character-library';
 import { DecompositionTree } from './characters-page';
@@ -176,12 +177,16 @@ export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCh
   const setCharacter = (c: string) => { const i = wordChars.indexOf(c); navigate({ to: '/strokes', search: { character: initialCharacter, ...(i > 0 ? { focus: i } : {}) } }); };
   const [liveStrokes, setLiveStrokes] = useState<number | null>(null);
   const [audioError, setAudioError] = useState(false);
+  const [ttsOk, setTtsOk] = useState<boolean | null>(null);
+  useEffect(() => setTtsOk(ttsAvailable()), []);
   useWorkspace().catalogVersion;
   const fact = charFacts()[character];
   const decomposition = decompositionFor(character);
   const notedStrokes = Number(fact?.note.match(/^(\d+) strokes?/)?.[1]) || null;
   const radical = fact?.note.match(/· (\S+) radical/)?.[1] ?? null;
   const strokeCount = liveStrokes ?? notedStrokes;
-  const listen = async () => setAudioError(Boolean(await playCharacter(character, preferences.slow, fact?.pinyin?.split(' / ')[0] ?? null)));
+  const reading = fact?.pinyin?.split(' / ')[0] ?? null;
+  const recording = characterRecording(character, reading);
+  const listen = async () => setAudioError(Boolean(await playCharacter(character, preferences.slow, reading)));
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout"><WritingPractice character={character} onStrokeCount={setLiveStrokes}/><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}<h2>Get to know <span lang="zh-CN">{character}</span></h2><p className="practice-meaning"><span className="practice-text">{fact?.pinyin ? <span className="pinyin">{fact.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}{fact?.meaning ? <span className="practice-translation">{fact.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><Button variant="ghost" size="icon" className="practice-listen" title="Listen to pronunciation" aria-label={`Listen to ${character}`} onClick={listen}><Volume2/></Button><span className="practice-kind">{fact?.kind ?? 'Character'}</span></p>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}<p>Every character has a natural order. Watch how it takes shape, then practice tracing it yourself.</p><div className="character-facts"><div><strong>{strokeCount ?? '—'}</strong><span>Strokes</span></div><div><strong lang="zh-CN">{radical ?? '—'}</strong><span>Radical</span></div><div><strong>简体</strong><span>Simplified</span></div></div><div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>{decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={decomposition.root} onGlyph={glyph => navigate({ to: '/characters', search: { character: glyph } })}/></ul><dl className="decomposition-source"><dt>Source</dt><dd>{decomposition.source}</dd><dt>Verification</dt><dd>{decomposition.status}</dd></dl><p className="library-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>No sourced decomposition available yet.</p><small>Source files pending. No structure or component roles inferred.</small></div>}</div><div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Start at the top and work your way down. Horizontal strokes usually come before vertical ones. Let each movement have a little room to breathe.</p></div><p className="library-note">Stroke order powered by Hanzi Writer. Character data loads online.</p></section></div></div>;
 }
