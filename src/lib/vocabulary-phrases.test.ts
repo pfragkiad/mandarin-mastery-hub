@@ -48,6 +48,6 @@ describe('Unofficial Level 1 phrase import', () => {
     expect([...counts.values()]).toEqual(Array(12).fill(20));
     expect(phrases.find(e => e.phraseMetadata?.internalId === 'L1-P020')?.phraseMetadata?.reviewNotes).toContain('Welcome');
     expect(phrases.every(e => e.secondarySources?.[0]?.sourceName === 'HSK3_Level1_240_Phrases_Pinyin_Translations-2.xlsx')).toBe(true);
-    expect(phrases.filter(e => e.phraseMetadata?.editorialCorrection)).toHaveLength(27);
+    expect(phrases.filter(e => e.phraseMetadata?.editorialCorrection)).toHaveLength(24);
   });
 });
