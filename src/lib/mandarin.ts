@@ -1,7 +1,7 @@
 import type { CharacterScript } from './learning-preferences';
 import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from './audio';
 import { entryToWord, categoryName, vocabularyData, type Entry } from './data-contract';
-export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; sentencePinyin?: string; script?: CharacterScript; audio?: AudioAttachment | null; entry?: Entry; entryKind?: 'word' | 'phrase' };
+export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; sentencePinyin?: string; hskId?: number | null; script?: CharacterScript; audio?: AudioAttachment | null; entry?: Entry; entryKind?: 'word' | 'phrase' };
 export const vocabularyKind = (word: Word): 'word' | 'phrase' => word.entry?.entryKind ?? word.entryKind ?? 'word';
 // Real vocabulary imported from the Mandarin Tutor database, adapted through the API contract.
 export const words: Word[] = vocabularyData.entries.map(e => entryToWord(e, vocabularyData.categories));
