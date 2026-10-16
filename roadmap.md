@@ -1,6 +1,6 @@
 # Mandarin tutor interface
-- [ ] Open exact decomposition records with consistent browser back/forward history.
-- [ ] Expand library pages to 48 records (eight rows at six columns) and verify navigation.
+- [x] Open exact decomposition records with consistent browser back/forward history.
+- [x] Expand library pages to 48 records (eight rows at six columns) and verify navigation.
 - [x] Import supplied unofficial Level 1 phrases with pinyin and translations, retaining internal IDs without official HSK IDs.
 - [x] Verify phrase search, details, and import rules.
 - [x] Update existing HSK 1 parts of speech from the supplied spreadsheet without changing other imported fields.
