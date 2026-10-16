@@ -140,7 +140,6 @@
 .catalog-tabs [role='tab'] { gap: 12px; min-height: 42px; flex-shrink: 0; font-size: 13px; border: 1px solid transparent; box-shadow: none; }
 .catalog-tabs [role='tab'][data-state='active'] { background: var(--secondary); color: var(--primary); border-color: var(--border); }
 .catalog-tab-count { font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
-.catalog-import-note { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 0 0; color: var(--muted-foreground); font-size: 11px; }
 .catalog-workspace { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,1fr); gap: 32px; align-items: start; }
 .catalog-results { min-width: 0; }
 .catalog-results .result-row { margin-top: 0; }
