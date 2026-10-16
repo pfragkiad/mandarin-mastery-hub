@@ -32,7 +32,7 @@ describe('Unofficial Level 1 phrase import', () => {
     expect(phrases[0]?.simplified).toBe('你好！');
     expect(phrases[0]?.pinyinDisplay).toBe('Nǐ hǎo!');
     expect(phrases[0]?.meanings).toEqual(['Hello!']);
-    expect(phrases[239]?.pinyinDisplay).toBe('Wǒ xǐhuan gǒu, yě xǐhuan māo.');
+    expect(phrases[239]?.pinyinDisplay).toBe('Nǐ gèng xǐhuan māo háishi gǒu?');
     for (const entry of phrases) {
       expect(entry.audio).toBeNull();
       expect(entry.pinyinDisplay).not.toMatch(/[。？！]/);
@@ -46,6 +46,7 @@ describe('Unofficial Level 1 phrase import', () => {
     expect(counts.size).toBe(12);
     expect([...counts.values()]).toEqual(Array(12).fill(20));
     expect(phrases.find(e => e.phraseMetadata?.reviewNotes?.includes('欢迎'))?.contentStatus).toBe('draft');
-    expect(phrases.every(e => e.secondarySources?.[0]?.sourceName === 'HSK3_Level1_240_Phrases_Pinyin_Translations.xlsx')).toBe(true);
+    expect(phrases.every(e => e.secondarySources?.[0]?.sourceName === 'HSK3_Level1_240_Phrases_Pinyin_Translations-2.xlsx')).toBe(true);
+    expect(phrases.filter(e => e.phraseMetadata?.editorialCorrection)).toHaveLength(27);
   });
 });
