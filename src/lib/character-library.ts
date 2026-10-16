@@ -1,10 +1,17 @@
-import { catalog } from './catalog-store';
+import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
 export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9575 };
+// Catalogue rows as raw tuples, grouped for search, flashcard decks and practice facts.
+export type ReferenceKind = 'Radical' | 'Component' | 'Character';
+export const referenceCatalog: { kind: ReferenceKind; entries: CatalogRow[] }[] = [
+  { kind: 'Radical', entries: catalog.radicals },
+  { kind: 'Component', entries: catalog.components },
+  { kind: 'Character', entries: catalog.characters },
+];
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
 const cache = new Map<LibraryKind, { version: number; entries: LibraryEntry[] }>();
 const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d) via Mandarin Tutor import';

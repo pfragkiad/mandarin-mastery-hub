@@ -1,4 +1,4 @@
-import { referenceCatalog, type ReferenceKind } from '@/components/tutor/references';
+import { referenceCatalog, type ReferenceKind } from './character-library';
 import { includeScript } from './learning-preferences';
 import type { Word } from './mandarin';
 

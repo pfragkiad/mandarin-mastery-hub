@@ -1,4 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { ReferencesPage } from '@/components/tutor/references';
-import { pageHead } from '@/lib/mandarin';
-export const Route = createFileRoute('/references')({ head: () => pageHead('Character references', 'Explore Chinese radicals, components, and characters with readings, meanings, and writing practice.'), component: ReferencesPage });
+import { createFileRoute, redirect } from '@tanstack/react-router';
+// The old References page duplicated the Characters catalogue; keep its address working.
+export const Route = createFileRoute('/references')({
+  beforeLoad: () => { throw redirect({ to: '/characters', replace: true }); },
+});
