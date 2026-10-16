@@ -6,7 +6,7 @@ import { words } from '@/lib/mandarin';
 import { type LibraryEntry } from '@/lib/character-library';
 import { catalog, playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
-import { referenceCatalog, type ReferenceKind } from './references';
+import { referenceCatalog, type ReferenceKind } from '@/lib/character-library';
 import { DecompositionTree } from './characters-page';
 import type HanziWriter from 'hanzi-writer';
 

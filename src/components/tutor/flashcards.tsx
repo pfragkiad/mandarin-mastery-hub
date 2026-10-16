@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
 import { collections, speak } from '@/lib/mandarin';
-import { referenceCatalog } from './references';
+import { referenceCatalog } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 
 type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript };
@@ -52,7 +52,7 @@ export function FlashcardsPage() {
     <div className="flash-setup">
       <label>CATEGORY<select className="filter-select" value={category} onChange={e => { setCategory(e.target.value); setDeck(null); }}>
         <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
-        <optgroup label="References">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
+        <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
       </select></label>
       <label>LEVEL<select className="filter-select" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select></label>
       <label>CARD FRONT<select className="filter-select" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select></label>
