@@ -219,7 +219,7 @@
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
-.vocabulary-tabs .vocabulary-category-row > [role='tablist'] { flex: 1; width: auto; border: 0; padding: 0; }
+.vocabulary-tabs .vocabulary-category-row > [role='tablist'] { display: flex; justify-content: flex-start; flex: 1; width: auto; height: auto; gap: 8px; background: transparent; border-radius: 0; border: 0; padding: 0; }
 .vocabulary-saved-filter { display: flex; gap: 4px; flex-shrink: 0; }
 .vocabulary-saved-filter button { font-size: 11px; height: 33px; }
 .vocabulary-saved-filter .selected { background: var(--secondary); color: var(--primary); }
