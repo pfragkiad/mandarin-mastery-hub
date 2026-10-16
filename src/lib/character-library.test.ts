@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
-import { filterLibrary, libraryEntries, libraryPage } from './character-library';
+import { filterLibrary, libraryEntries, libraryPage, libraryDestination } from './character-library';
 describe('Catalogue requirements', () => {
   it('imports all 38 stroke types', () => expect(libraryEntries('Strokes')).toHaveLength(38));
   it('imports all 214 radicals', () => expect(libraryEntries('Radicals')).toHaveLength(214));
@@ -27,9 +27,26 @@ describe('Catalogue requirements', () => {
   });
   it('keeps large catalogues bounded to one page', () => {
     const entries = Array.from({ length: 9564 }, (_, i) => ({ id: String(i), hanzi: String(i), pinyin: '', meaning: '', note: '' }));
-    expect(libraryPage(entries, 2).entries[0]?.id).toBe('24');
-    expect(libraryPage(entries, 2).entries).toHaveLength(24);
-    expect(libraryPage(entries, 500).current).toBe(399);
+    expect(libraryPage(entries, 2).entries[0]?.id).toBe('48');
+    expect(libraryPage(entries, 2).entries).toHaveLength(48);
+    expect(libraryPage(entries, 500).current).toBe(200);
+  });
+  it('opens a radical on the page containing its exact record', () => {
+    const destination = libraryDestination('水');
+    expect(destination?.tab).toBe('Radicals');
+    expect(destination?.id).toBe('Radicals:水');
+    const entries = filterLibrary(libraryEntries('Radicals'), '');
+    expect(libraryPage(entries, destination?.page ?? 1).entries.map(entry => entry.id)).toContain('Radicals:水');
+  });
+  it('links character-only and component-only glyphs to their own categories', () => {
+    expect(libraryDestination('你')?.id).toBe('Characters:你');
+    const component = libraryEntries('Components').find(entry => libraryDestination(entry.hanzi)?.tab === 'Components');
+    expect(component).toBeDefined();
+    expect(libraryDestination(component?.hanzi ?? '')?.id).toBe(component?.id);
+  });
+  it('retains an explicitly linked traditional record while traditional browsing is off', () => {
+    expect(libraryDestination('學')?.id).toBe('Characters:學');
+    expect(libraryDestination('學')?.tab).toBe('Characters');
   });
   it('attaches decompositions only from the imported trees', () => {
     expect(libraryEntries('Characters').find(e => e.hanzi === '我')?.decomposition?.root.glyph).toBe('⿰');

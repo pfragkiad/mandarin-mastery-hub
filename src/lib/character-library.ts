@@ -32,7 +32,8 @@ const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u0
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false) {
   return entries.filter(entry => includeScript(entry.script, includeTraditional) && normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)));
 }
-export function libraryPage(entries: LibraryEntry[], page: number, size = 24) {
+export const LIBRARY_PAGE_SIZE = 48;
+export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE) {
   const pages = Math.max(1, Math.ceil(entries.length / size));
   const current = Math.max(1, Math.min(page, pages));
   return { entries: entries.slice((current - 1) * size, current * size), pages, current };
@@ -50,4 +51,14 @@ export function glyphIndex(): Record<string, { kind: LibraryKind; id: string; pi
   glyphCache.version = catalog.version;
   glyphCache.index = index;
   return index;
+}
+
+/** Open the exact sourced record on its visible page, without carrying unrelated filters. */
+export function libraryDestination(glyph: string, includeTraditional = false) {
+  const hit = glyphIndex()[glyph];
+  if (!hit) return undefined;
+  const entries = filterLibrary(libraryEntries(hit.kind), '', '', false, includeTraditional);
+  const index = entries.findIndex(entry => entry.id === hit.id);
+  const page = index < 0 ? 1 : Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
+  return { tab: hit.kind, id: hit.id, ...(page > 1 ? { page } : {}) };
 }
