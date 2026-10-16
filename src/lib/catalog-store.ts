@@ -3,7 +3,7 @@
 // ~2 MB file never sits in the page bundle. Rows are mutated in place so existing
 // synchronous readers see the data after the workspace bumps its catalogue version.
 import type { CharacterScript } from './learning-preferences';
-import { playPronunciation, audioMessage, type AudioAttachment, type AudioRequest } from './audio';
+import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest } from './audio';
 import type { DecompositionNode } from './character-library';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
@@ -32,12 +32,18 @@ export function loadCatalog(): Promise<void> {
   return pending;
 }
 
-/** Audio request for a single character, offering its exact-reading recording when one exists. */
+/** Audio request for a single character, offering its exact-reading recording when one exists.
+ * With no pinyin recorded, no tone is guessed — the entry falls through to browser TTS only. */
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
-  const chosen = reading ?? Object.keys(readings)[0] ?? null;
+  const chosen = reading ?? null;
   const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
   return { text: glyph, reading: chosen, characterAudio };
+}
+
+/** Exact-reading recording for a glyph, or null when only browser TTS could speak it. */
+export function characterRecording(glyph: string, reading?: string | null): AudioAttachment | null {
+  return recordingCandidates(characterAudioRequest(glyph, reading))[0]?.attachment ?? null;
 }
 
 /** Plays a character (exact-reading recording first, then validated Mandarin TTS); returns an error message or null. */

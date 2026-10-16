@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { libraryEntries, filterLibrary, libraryPage, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
-import { playCharacter } from '@/lib/catalog-store';
+import { playCharacter, characterRecording } from '@/lib/catalog-store';
+import { ttsAvailable } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
@@ -22,9 +23,14 @@ export function DecompositionTree({ node, onGlyph }: { node: DecompositionNode; 
 function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry; kind: LibraryKind; onGlyphSelect?: ((glyph: string) => void) | undefined }) {
   const { preferences } = useWorkspace();
   const [audioError, setAudioError] = useState<string | null>(null);
+  const [ttsOk, setTtsOk] = useState<boolean | null>(null);
+  useEffect(() => setTtsOk(ttsAvailable()), []);
+  const reading = entry.pinyin || null;
+  const recording = characterRecording(entry.hanzi, reading);
+  const listen = async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow, reading));
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{kind === 'Strokes' ? 'STROKE REFERENCE' : 'CHARACTER REFERENCE'}</div>
-    <div className="catalog-detail-title"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2>{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div><Button variant="ghost" size="icon" aria-label={`Listen to ${entry.hanzi}`} title="Listen to pronunciation" onClick={async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow))}><Volume2/></Button></div>
+    <div className="catalog-detail-title"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2>{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div><Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!recording && ttsOk === false} aria-label={`Listen to ${entry.hanzi}`} title={recording ? 'Listen to pronunciation' : ttsOk === false ? 'No audio available for this character' : 'Browser speech · no recording for this character'} onClick={listen}><Volume2/></Button></div>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd>{kind.slice(0, -1)}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
