@@ -26,13 +26,22 @@ export const categoryName = (name: string) => name.replace(/^\d+\s+/, '');
 /** Imported vocabulary (exported from the Mandarin Tutor SQLite database in exact API shape). */
 export const vocabularyData = vocabularyJson as unknown as { categories: Category[]; entries: Entry[] };
 
+/** Full-width sentence punctuation becomes its standard (Latin) equivalent in pinyin text. */
+const LATIN_PUNCTUATION: Record<string, string> = {
+  '。': '.', '？': '?', '！': '!', '，': ',', '、': ',', '；': ';', '：': ':', '（': '(', '）': ')', '《': '«', '》': '»',
+};
+
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = e.examples[0];
   return {
     id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
     sentence: first?.simplified ?? '', translation: first?.english ?? '',
-    sentencePinyin: first ? first.tokens.map(tok => tok.pinyin ?? tok.text).join(' ').replace(/\s+([,.!?;:%，。！？；：、])/g, '$1') : '',
+    sentencePinyin: first
+      ? first.tokens.map(tok => tok.pinyin ?? tok.text).join(' ')
+          .replace(/\s+([,.!?;:%，。！？；：、])/g, '$1')
+          .replace(/[。！？，、；：()]/g, c => LATIN_PUNCTUATION[c] ?? c)
+      : '',
     audio: e.audio, entry: e,
   };
 }
