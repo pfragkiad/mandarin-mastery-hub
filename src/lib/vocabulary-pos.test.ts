@@ -7,7 +7,7 @@ describe('HSK spreadsheet parts of speech', () => {
   it('enriches all 300 HSK 1 and 200 HSK 2 entries without adding duplicates', () => {
     expect(l1).toHaveLength(300);
     expect(l2).toHaveLength(200);
-    expect(vocabularyData.entries).toHaveLength(505);
+    expect(vocabularyData.entries.filter(e => !e.phraseMetadata)).toHaveLength(505);
     expect(l1.every(e => e.hskLevel === 1 && e.hskVersion === '3.0' && e.partOfSpeechSource?.sourceId === String(e.hsk_index))).toBe(true);
     expect(l2.every(e => e.hskLevel === 2 && e.hskVersion === '3.0' && e.partOfSpeechSource?.sourceId === String(e.hsk_index))).toBe(true);
   });

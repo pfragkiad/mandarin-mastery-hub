@@ -8,7 +8,7 @@ describe('Official HSK syllabus id on word cards', () => {
     expect(adapted.every(w => w.hskId === (vocabularyData.entries.find(e => e.id === w.id)?.hsk_index ?? null))).toBe(true);
     expect(adapted.filter(w => w.hskId != null)).toHaveLength(500);
     // Entries without an official id must stay empty, never show a placeholder.
-    expect(adapted.filter(w => w.hskId == null)).toHaveLength(5);
+    expect(adapted.filter(w => w.hskId == null)).toHaveLength(245);
     expect(words.every(w => w.hskId === (w.entry?.hsk_index ?? null))).toBe(true);
   });
   it('keeps the id a positive syllabus index and the fixture id intact', () => {

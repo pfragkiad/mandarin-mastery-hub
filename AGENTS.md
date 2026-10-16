@@ -28,3 +28,4 @@
 - Recordings live on the Lovable CDN; exported data stores only their CDN URLs plus source/speaker/license, so the repo stays free of media binaries.
 - Keep page selections and filters (Characters tab/filters/page/selection, Practice word focus) in URL search params, pushing history for selections and replacing for typing, so browser back/forward restores them without cookies.
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
+- Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
