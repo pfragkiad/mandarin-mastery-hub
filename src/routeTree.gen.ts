@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CharactersRouteImport } from './routes/characters'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
-import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StrokesRouteImport } from './routes/strokes'
 import { Route as VocabularyRouteImport } from './routes/vocabulary'
@@ -30,11 +29,6 @@ const CharactersRoute = CharactersRouteImport.update({
 const FlashcardsRoute = FlashcardsRouteImport.update({
   id: '/flashcards',
   path: '/flashcards',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReferencesRoute = ReferencesRouteImport.update({
-  id: '/references',
-  path: '/references',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SettingsRoute = SettingsRouteImport.update({
@@ -57,7 +51,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/flashcards': typeof FlashcardsRoute
-  '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
@@ -66,7 +59,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/flashcards': typeof FlashcardsRoute
-  '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
@@ -76,7 +68,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/flashcards': typeof FlashcardsRoute
-  '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
@@ -87,7 +78,6 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/flashcards'
-    | '/references'
     | '/settings'
     | '/strokes'
     | '/vocabulary'
@@ -96,7 +86,6 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/flashcards'
-    | '/references'
     | '/settings'
     | '/strokes'
     | '/vocabulary'
@@ -105,7 +94,6 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/flashcards'
-    | '/references'
     | '/settings'
     | '/strokes'
     | '/vocabulary'
@@ -115,7 +103,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CharactersRoute: typeof CharactersRoute
   FlashcardsRoute: typeof FlashcardsRoute
-  ReferencesRoute: typeof ReferencesRoute
   SettingsRoute: typeof SettingsRoute
   StrokesRoute: typeof StrokesRoute
   VocabularyRoute: typeof VocabularyRoute
@@ -142,13 +129,6 @@ declare module '@tanstack/react-router' {
       path: '/flashcards'
       fullPath: '/flashcards'
       preLoaderRoute: typeof FlashcardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/references': {
-      id: '/references'
-      path: '/references'
-      fullPath: '/references'
-      preLoaderRoute: typeof ReferencesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/settings': {
@@ -179,7 +159,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CharactersRoute: CharactersRoute,
   FlashcardsRoute: FlashcardsRoute,
-  ReferencesRoute: ReferencesRoute,
   SettingsRoute: SettingsRoute,
   StrokesRoute: StrokesRoute,
   VocabularyRoute: VocabularyRoute,
