@@ -1,7 +1,7 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
-import { LayoutGrid, BookOpen, PenLine, Library, Settings, Layers, Languages, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
+import { LayoutGrid, BookOpen, PenLine, Settings, Layers, Languages, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
