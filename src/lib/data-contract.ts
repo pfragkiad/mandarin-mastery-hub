@@ -31,7 +31,9 @@ export function entryToWord(e: Entry, categories: Category[]): Word {
   return {
     id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
-    sentence: first?.simplified ?? '', translation: first?.english ?? '', audio: e.audio, entry: e,
+    sentence: first?.simplified ?? '', translation: first?.english ?? '',
+    sentencePinyin: first ? first.tokens.map(tok => tok.pinyin ?? tok.text).join(' ').replace(/\s+([,.!?;:%，。！？；：、])/g, '$1') : '',
+    audio: e.audio, entry: e,
   };
 }
 
