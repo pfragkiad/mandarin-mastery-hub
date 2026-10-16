@@ -12,7 +12,7 @@ export type Entry = {
   id: string; sourceId: string | null; sourceName: string | null; sourceVersion: string | null; secondarySources?: SourceRef[];
   simplified: string; traditional: string | null; tokens: TextToken[]; pinyinDisplay: string; meanings: string[];
   entryKind: 'word' | 'phrase'; hskLevel: number | null; hskVersion: '3.0' | null; hsk_index: number | null; hskSource: SourceRef | null;
-  categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; tags?: string[]; contentStatus: 'draft' | 'reviewed';
+  categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; partOfSpeechSource?: SourceRef; tags?: string[]; contentStatus: 'draft' | 'reviewed';
   audio: AudioAttachment | null; examples: Example[]; createdAt: string; updatedAt: string;
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };
