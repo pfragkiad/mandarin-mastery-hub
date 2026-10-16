@@ -12,6 +12,8 @@
 - [x] Verify the requested flows.
 - [x] Turn the header magnifier into a real library-wide search (words, characters, radicals, components) with ⌘K / Ctrl K.
 - [x] Import full catalogues and sourced decompositions.
+- [ ] Separate Vocabulary into Words and Phrases tabs with compact word cards and wider phrase cards.
+- [ ] Verify vocabulary tabs, entry links, and card layouts.
 
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
