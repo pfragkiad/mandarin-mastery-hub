@@ -4,7 +4,7 @@ import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpe
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
-import { libraryEntries, filterLibrary, libraryPage, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, libraryPage, libraryDestination, LIBRARY_PAGE_SIZE, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
@@ -12,15 +12,17 @@ import { useWorkspace } from './workspace';
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
-export function DecompositionTree({ node, onGlyph }: { node: DecompositionNode; onGlyph?: ((glyph: string) => void) | undefined }) {
+export function DecompositionTree({ node }: { node: DecompositionNode }) {
+  const { preferences } = useWorkspace();
   const card = glyphIndex()[node.glyph];
+  const destination = libraryDestination(node.glyph, preferences.includeTraditional);
   const facts = card && (card.pinyin || card.meaning) ? [card.pinyin, card.meaning].filter(Boolean).join(' · ') : '';
-  const glyph = card && onGlyph
-    ? <button type="button" className="decomposition-glyph" lang="zh-CN" title={`Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`} onClick={() => onGlyph(node.glyph)}><strong>{node.glyph}</strong></button>
+  const glyph = card && destination
+    ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={`Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
     : <strong lang="zh-CN">{node.glyph}</strong>;
-  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child} onGlyph={onGlyph}/> )}</ul> : null}</li>;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
-function CharacterDetails({ entry, kind, onGlyphSelect }: { entry: LibraryEntry; kind: LibraryKind; onGlyphSelect?: ((glyph: string) => void) | undefined }) {
+function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences } = useWorkspace();
   const [audioError, setAudioError] = useState<string | null>(null);
   const reading = entry.pinyin || null;
@@ -99,13 +101,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const entries = libraryEntries(kind);
   const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional);
   const paged = libraryPage(filtered, page);
-  const selected = filtered.find(entry => entry.id === selectedId) ?? paged.entries[0];
+  const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch(next === 'Characters' ? {} : { tab: next }); };
-  const openGlyph = (glyph: string) => {
-    const hit = glyphIndex()[glyph];
-    if (!hit) return;
-    onSearch(clean({ tab: hit.kind, id: hit.id }));
-  };
   void catalogVersion;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE CHARACTER LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
