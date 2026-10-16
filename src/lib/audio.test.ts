@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE } from './audio';
+import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE, pronunciationAvailable } from './audio';
 import { characterRecording, hydrateCatalog } from './catalog-store';
 const rec = { url: '/api/media/a.mp3', source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
 const char = { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0', recordingKind: 'syllable', glyph: '中', reading: 'zhōng' };
@@ -15,6 +15,20 @@ describe('Audio fallback order', () => {
 describe('Mandarin voice selection', () => {
   it('rejects Cantonese voices', () => { expect(pickMandarinVoice([{ lang: 'zh-HK' }, { lang: 'yue-HK' }])).toBeUndefined(); });
   it('prefers zh-CN', () => { expect(pickMandarinVoice([{ lang: 'zh-TW' }, { lang: 'zh-CN' }])?.lang).toBe('zh-CN'); });
+});
+describe('Pronunciation availability', () => {
+  it('disables a component without pinyin even when browser speech exists', () => {
+    expect(pronunciationAvailable(false, null, true)).toBe(false);
+  });
+  it('disables unrecorded pronunciation until a Mandarin voice is confirmed', () => {
+    expect(pronunciationAvailable(false, 'shuǐ', false)).toBe(false);
+  });
+  it('enables browser speech for a known reading and Mandarin voice', () => {
+    expect(pronunciationAvailable(false, 'shuǐ', true)).toBe(true);
+  });
+  it('keeps attached recordings playable without browser speech or pinyin', () => {
+    expect(pronunciationAvailable(true, null, false)).toBe(true);
+  });
 });
 describe('Rates', () => {
   it('clamps to 0.5–1.2 and slow is 0.65', () => { expect([clampRate(0.1), clampRate(2)]).toEqual([0.5, 1.2]); expect(SLOW_RATE).toBe(0.65); });

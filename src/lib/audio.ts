@@ -33,6 +33,11 @@ export function recordingCandidates(req: AudioRequest): Extract<AudioCandidate, 
   return audioCandidates(req).filter((c): c is Extract<AudioCandidate, { kind: 'recording' }> => c.kind === 'recording');
 }
 
+/** A missing reading must not make a component look pronounceable through TTS. */
+export function pronunciationAvailable(hasRecording: boolean, reading: string | null | undefined, hasMandarinVoice: boolean): boolean {
+  return hasRecording || (Boolean(reading?.trim()) && hasMandarinVoice);
+}
+
 // Mandarin locales only: Cantonese (zh-HK, yue) and unknown zh variants are rejected; zh-CN preferred.
 const MANDARIN = /^(zh-(cn|tw|sg|hans|hant|hans-cn|hant-tw)|cmn)(-|_|$)/i;
 export function isMandarinVoice(v: Pick<SpeechSynthesisVoice, 'lang'>) {
