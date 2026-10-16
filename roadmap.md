@@ -1,6 +1,6 @@
 # Mandarin tutor interface
-- [ ] Update existing HSK 1 parts of speech from the supplied spreadsheet without changing other imported fields.
-- [ ] Match sentence pinyin styling to other pinyin and verify word details.
+- [x] Update existing HSK 1 parts of speech from the supplied spreadsheet without changing other imported fields.
+- [x] Match sentence pinyin styling to other pinyin and verify word details.
 - [x] Establish a cohesive green learning workspace and navigation.
 - [x] Build overview, searchable vocabulary and word details.
 - [x] Build stroke practice, reference browsing and settings.
