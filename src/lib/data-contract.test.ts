@@ -10,7 +10,7 @@ describe('Entry adapter', () => {
     const withExample = vocabularyData.entries.filter(e => e.examples[0]?.tokens.some(tok => tok.text === '。'));
     expect(withExample.length).toBeGreaterThan(0);
     for (const e of withExample.slice(0, 50)) {
-      const pinyin = entryToWord(e, vocabularyData.categories).sentencePinyin;
+      const pinyin = entryToWord(e, vocabularyData.categories).sentencePinyin ?? '';
       expect(pinyin, `${e.simplified} pinyin "${pinyin}"`).not.toMatch(/[。！？，、；：]/);
       expect(pinyin.endsWith('.')).toBe(true);
     }
