@@ -5,6 +5,7 @@ import { LayoutGrid, BookOpen, Settings, Layers, Library, ArrowUpRight, Chevrons
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
+import { vocabularyKind } from '@/lib/mandarin';
 const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
@@ -17,6 +18,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const [query, setQuery] = useState('');
   const [shortcut, setShortcut] = useState('Ctrl K');
   const { preferences, setPreferences, theme, setTheme, items } = useWorkspace();
+  const firstWordId = items.find(w => vocabularyKind(w) === 'word')?.id;
   const hits = searchAll(items, query, preferences.includeTraditional);
   useEffect(() => { if (/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent)) setShortcut('⌘K'); }, []);
   useEffect(() => {
