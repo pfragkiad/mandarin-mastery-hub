@@ -3,7 +3,7 @@ import { Bookmark, Volume2, PenLine, Check } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { type Word } from '@/lib/mandarin';
+import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -39,7 +39,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
   return <>
-    <div className="eyebrow">{word.entryKind === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}</div>
+    <div className="eyebrow">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}</div>
     <div className="catalog-detail-title">
       <strong lang="zh-CN" className={word.script === 'Traditional' ? 'traditional-character' : ''}>{word.hanzi}</strong>
       <div><span className="pinyin">{word.pinyin || 'Pinyin not recorded'}</span><h2>{word.meaning}</h2>{word.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div>
