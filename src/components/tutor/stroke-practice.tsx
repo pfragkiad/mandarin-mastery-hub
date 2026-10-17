@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Eye, EyeOff, Lightbulb, Pause, PenLine, Play, Printer, RotateCcw } from 'lucide-react';
+import { Eye, EyeOff, Lightbulb, Pause, PenLine, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { strokeExamples } from '@/lib/stroke-examples';
+import { characterRecording, playCharacter } from '@/lib/catalog-store';
+import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { PracticeSheet } from './practice-sheet';
 import { SPEEDS, DEFAULT_SPEED_INDEX } from './writing-practice';
@@ -18,8 +20,15 @@ const toHex = (value: string) => {
 
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
 export function StrokePractice({ glyph }: { glyph: string }) {
-  const { catalogVersion, theme } = useWorkspace();
+  const { catalogVersion, theme, preferences } = useWorkspace();
   const entry = libraryEntries('Strokes').find(item => item.hanzi === glyph);
+  // A stroke glyph (㇐) has no sound of its own — the stroke's Chinese name (横) is what a voice can say.
+  const strokeName = entry?.note.split(' · ')[0] || null;
+  const reading = strokeName ? entry?.pinyin?.split(' / ')[0] ?? null : null;
+  const recording = strokeName ? characterRecording(strokeName, reading) : null;
+  const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
+  const [audioError, setAudioError] = useState(false);
+  const listen = async () => setAudioError(strokeName ? Boolean(await playCharacter(strokeName, preferences.slow, reading)) : true);
   const example = strokeExamples[glyph];
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
