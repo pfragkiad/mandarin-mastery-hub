@@ -8,6 +8,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
+import { strokeSpeech } from './stroke-practice';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { glyphUsage } from '@/lib/glyph-usage';
@@ -24,14 +25,20 @@ function ReuseLabel({ count, compact = false, radical = false }: { count: number
   const group = reuseGroup(count);
   return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
 }
+/** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
+function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
+  if (kind !== 'Strokes') return { text: entry.hanzi as string | null, reading: entry.pinyin || null };
+  const { name, reading } = strokeSpeech(entry);
+  return { text: name, reading };
+}
 export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences, saved, toggleSaved } = useWorkspace();
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
-  const reading = entry.pinyin || null;
-  const recording = characterRecording(entry.hanzi, reading);
+  const { text: spoken, reading } = speechTarget(entry, kind);
+  const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
-  const listen = async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow, reading));
+  const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{kind === 'Strokes' ? 'STROKE REFERENCE' : 'CHARACTER REFERENCE'}</div>
     <RecordDetailTitle hanzi={entry.hanzi} pinyin={entry.pinyin} meaning={entry.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${entry.hanzi}` : `No audio available for ${entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
@@ -48,8 +55,9 @@ export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: L
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const recording = characterRecording(entry.hanzi, entry.pinyin || null);
-  const audioAvailable = usePronunciationAvailability(Boolean(recording), entry.pinyin || null);
+  const { text: spoken, reading } = speechTarget(entry, kind);
+  const recording = spoken ? characterRecording(spoken, reading) : null;
+  const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState<string | null>(null);
   const hasPinyin = Boolean(entry.pinyin);
   const hasMeaning = Boolean(entry.meaning);
@@ -85,7 +93,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
-    <RecordCardFooter metadata={entry.reuseCount !== undefined ? <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/> : entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Stroke form'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow, entry.pinyin || null))}/>
+    <RecordCardFooter metadata={entry.reuseCount !== undefined ? <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/> : entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Stroke form'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>
     {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}
   </article>;
 }
