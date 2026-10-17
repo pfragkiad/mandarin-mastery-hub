@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Show sourced official Kangxi indices on radical cards in the HSK index style; verify numbering and paginated cards.
+- [x] Show sourced official Kangxi indices on radical cards in the HSK index style; verified all 214 numbers, paginated selection and phone cards.
 - [x] Remove repeated sidebar/footer copy and align both header edges with the main content; verified desktop, collapsed navigation, phones and guidance access.
 - [x] Match Glyphs to the shared IN A SENTENCE formatting and restrict to one existing example; verify.
 - [x] Move vocabulary sentences above Decomposition; add up to three existing Glyph usage examples and verify links and matching.
