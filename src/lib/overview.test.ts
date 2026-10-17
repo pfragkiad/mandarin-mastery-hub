@@ -41,6 +41,15 @@ describe('Overview featured words', () => {
     }
     expect(randomOverviewWord([traditional, base], undefined, () => 0)?.id).toBe(base.id);
   });
+  it('phrase picks return only phrases', () => {
+    for (const value of [0, 0.2, 0.5, 0.999]) {
+      const phrase = randomOverviewWord(words, undefined, () => value, 'phrase');
+      expect(phrase).toBeDefined();
+      if (!phrase) throw new Error('Expected imported phrase');
+      expect(vocabularyKind(phrase)).toBe('phrase');
+      expect(overviewWordDestination(phrase)).toEqual({ word: phrase.id, tab: 'phrase' });
+    }
+  });
 });
 describe('First visit defaults', () => {
   it('starts in dark theme without a saved choice', () => { expect(restoredTheme(null)).toBe('dark'); });
