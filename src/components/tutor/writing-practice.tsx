@@ -127,6 +127,8 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   }, [character, retry, theme]);
   // Hanzi Writer has no public speed setter; update the live options before each run.
   const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = Number(speedRef.current); };
+  // One wording for "which stroke is happening now", shared by full playback and single-stroke playback.
+  const strokeMessage = (i: number) => `Stroke ${i + 1} of ${strokes.length}: ${strokes[i]?.pinyin ?? ''} — ${strokes[i]?.direction ?? ''}`;
   const play = () => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
@@ -138,6 +140,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
       if (animationRun.current !== run) return;
       if (i >= strokes.length) { setPlaying(false); setActiveStroke(null); setMessage('Your turn. Ready to write it from memory?'); return; }
       setActiveStroke(i);
+      setMessage(strokeMessage(i));
       instance.animateStroke(i, { onComplete: () => step(i + 1) });
     };
     step(0);
@@ -148,7 +151,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
     const run = ++animationRun.current;
     applySpeed(instance);
     instance.cancelQuiz(); setPlaying(false); setActiveStroke(index);
-    setMessage(`Stroke ${index + 1} of ${strokes.length}: ${strokes[index]?.pinyin ?? ''} — ${strokes[index]?.direction ?? ''}`);
+    setMessage(strokeMessage(index));
     instance.showCharacter();
     instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setActiveStroke(null); } });
   };
