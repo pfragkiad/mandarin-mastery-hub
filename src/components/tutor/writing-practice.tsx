@@ -89,7 +89,9 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
   const [guide, setGuide] = useState(true);
-  const [speed, setSpeed] = useState('1');
+  // The slider picks one of the fixed speeds below; 0.5× (index 1) is the default.
+  const [speedIndex, setSpeedIndex] = useState(1);
+  const speed = SPEEDS[speedIndex] ?? 1;
   const speedRef = useRef(speed);
   speedRef.current = speed;
   const [retry, setRetry] = useState(0);
