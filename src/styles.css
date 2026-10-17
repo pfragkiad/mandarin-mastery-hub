@@ -261,39 +261,26 @@
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
 }
 
-/* Overview: glyph shortcuts and independent discovery cards. */
-:root { --overview-glyph: oklch(.31 .045 158); --overview-glyph-shadow: 0 1px 8px oklch(.99 .01 140 / .8); }
-:root.dark { --overview-glyph: oklch(.95 .05 85); --overview-glyph-shadow: 0 2px 10px oklch(.12 .01 155 / .85); }
-.overview-page .journey-banner { min-height: 270px; display: flex; align-items: center; }
-.overview-page .banner-copy { padding-block: 32px; width: 48%; }
-.overview-page .banner-copy h2 { font-size: 38px; }
-.overview-glyph-shortcuts { position: absolute; inset: 18px 32px 18px 48%; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 24px; }
-.overview-page .overview-glyph-link { display: flex; flex-direction: column; justify-content: center; gap: 5px; height: 100%; min-width: 0; padding: 8px; border: 0; background: transparent; color: var(--overview-glyph); text-shadow: var(--overview-glyph-shadow); }
-.overview-glyph-link > strong { font-size: 48px; font-weight: 400; line-height: 1.1; transition: transform .2s; }
-.overview-glyph-link > span { font-size: 13px; font-weight: 600; background: transparent; border: 0; }
-.overview-page .overview-glyph-link:hover { background: transparent; color: var(--overview-glyph); }
-.overview-glyph-link:hover > strong { transform: translateY(-3px); }
+/* Overview: compact independent discovery cards. */
+.overview-page .stats-row { grid-template-columns: repeat(5,minmax(0,1fr)); margin: 20px 0 28px; }
 .overview-page .stat { height: auto; justify-content: flex-start; text-align: left; white-space: normal; color: var(--foreground); border-radius: 0; }
 .overview-page .stat:hover .stat-top { color: var(--primary); }
 .overview-page .stat-top { flex-wrap: wrap; }
 .overview-page .stat-top > span { white-space: normal; }
 .overview-page .stat-note { line-height: 1.5; }
 .overview-study-row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-bottom: 36px; }
-.overview-featured.daily-word { border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; min-width: 0; display: flex; flex-direction: column; }
+.overview-featured.daily-word { border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 16px 18px; min-width: 0; display: flex; flex-direction: column; }
 .overview-featured .daily-word-top .eyebrow { font-size: 9px; letter-spacing: 0; }
 .overview-featured .daily-word-top { min-height: 32px; }
 .overview-featured .daily-word-top button { width: 32px; height: 32px; }
-.overview-featured-word { margin-top: 14px; flex: 1; }
-.overview-featured .word-level { font-size: 10px; letter-spacing: 0; }
-.overview-featured .word-hsk-id { font-size: 9px; letter-spacing: 0; }
-.overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 18px; color: var(--foreground); }
+.overview-featured-word { margin-top: 4px; flex: 1; }
+.overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 8px; margin: 0; color: var(--foreground); }
 .overview-featured .daily-word-content > div { min-width: 0; }
 .overview-featured .daily-word-content > div:first-child { max-width: 100%; }
-.overview-featured .daily-word-content strong { font-size: 50px; line-height: 1.35; overflow-wrap: anywhere; }
+.overview-featured .daily-word-content strong { font-size: 46px; line-height: 1.2; overflow-wrap: anywhere; }
 .overview-featured .daily-word-content .pinyin { font-size: 14px; }
-.overview-featured .daily-word-content h3 { font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
-.overview-featured .daily-word-content p { font-size: 11px; line-height: 1.7; }
-.overview-featured-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 20px; }
+.overview-featured .daily-word-content h3 { font-size: 15px; line-height: 1.4; margin-bottom: 0; overflow-wrap: anywhere; }
+.overview-featured-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
 .overview-featured-actions > a { font-size: 11px; }
 .overview-library-search { position: relative; z-index: 21; margin: 0 0 24px; }
 .overview-library-search .hero-search { width: 100%; max-width: none; margin: 0; }
@@ -313,25 +300,23 @@
 .flashcard-fan > svg { position: absolute; right: 0; top: 0; width: 20px; color: var(--terracotta); }
 @media (max-width:1100px) {
   .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 18px; }
-  .overview-featured.daily-word { padding: 20px; }
-  .overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .overview-page .banner-copy h2 { font-size: 32px; }
-  .overview-glyph-shortcuts { right: 12px; left: 47%; gap: 8px; }
+  .overview-featured.daily-word { padding: 16px 18px; }
+  .overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .overview-page .stats-row { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px 0; }
+  .overview-page .stat:nth-child(3) { border-right: 0; }
+  .overview-page .stat:nth-child(4) { padding-left: 0; }
   .overview-flashcards { flex-wrap: wrap; gap: 20px; }
   .overview-play { margin-left: 120px; }
 }
 @media (max-width:580px) {
-  .overview-page .journey-banner { min-height: 410px; align-items: flex-start; }
-  .overview-page .banner-copy { padding: 24px 22px; width: 100%; }
-  .overview-page .banner-copy h2 { font-size: 30px; }
-  .overview-page .banner-copy p { margin-bottom: 0; }
-  .overview-glyph-shortcuts { inset: 182px 18px 18px; }
-  .overview-glyph-link > strong { font-size: 40px; }
   .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 25px; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
-  .overview-featured.daily-word { padding: 20px; }
+  .overview-featured.daily-word { padding: 16px 18px; }
   .overview-featured-word { min-height: 0; }
-  .overview-featured .daily-word-content { gap: 14px; }
+  .overview-featured .daily-word-content { gap: 8px; }
+  .overview-page .stats-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .overview-page .stat:nth-child(3) { border-right: 1px solid var(--border); }
+  .overview-page .stat:nth-child(4) { padding-left: 15px; }
   .overview-featured .daily-word-content strong { font-size: 46px; }
   .overview-featured .daily-word-content h3 { font-size: 15px; }
   .overview-flashcards { gap: 16px; }
