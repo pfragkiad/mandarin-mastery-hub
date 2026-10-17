@@ -24,7 +24,7 @@ function ReuseLabel({ count, compact = false, radical = false }: { count: number
   const group = reuseGroup(count);
   return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
 }
-function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
+export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences, saved, toggleSaved } = useWorkspace();
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
