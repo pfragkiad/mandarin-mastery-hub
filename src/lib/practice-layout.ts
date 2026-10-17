@@ -11,7 +11,9 @@ export const SINGLE_CHARACTER_ROWS = 8;
 
 export function buildPracticePages(tokens: PracticeToken[], rows: 1 | 2): PracticePage[] {
   const unique = new Map<string, PracticeToken>();
-  for (const token of tokens) unique.set(JSON.stringify([token.text, token.pinyin]), token);
+  // Dedupe by glyph only: a repeated character (爸爸) gets one practice block,
+  // keeping the first reading, not one block per occurrence.
+  for (const token of tokens) { if (!unique.has(token.text)) unique.set(token.text, token); }
   // A single character gets a dedicated full page of graduated rows; a "write the
   // whole text" block would just repeat the same glyph, so it is omitted.
   if (unique.size === 1) {
