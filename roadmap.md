@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Match all Glyphs cards to word sizing and shared footer controls; add session bookmarks and URL-backed All/Saved filtering, retain decomposition symbols and verify navigation/audio.
+- [x] Match all Glyphs cards to word sizing and shared footer controls; add session bookmarks and URL-backed All/Saved filtering, retain decomposition symbols and verify navigation/audio.
 - [x] Match Words and Phrases to the Glyphs source/count row for all entries, filters and empty results.
 - [x] Unify the source labels and shown/filtered count row across Characters, Radicals, Components and Strokes; remove redundant stroke caption.
 - [x] Paginate Words and Phrases with matching Glyphs controls, exact linked selections, filter resets and browser history; verify desktop and phones.
