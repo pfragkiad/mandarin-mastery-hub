@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Bookmark, Volume2, ArrowRight, Check } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Volume2, PenLine, Check } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
