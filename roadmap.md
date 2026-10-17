@@ -49,6 +49,7 @@
 - [x] Verify vocabulary tabs, entry links, and card layouts.
 
 ## Done this session
+- [ ] Ensure selected cards are rendered on their containing page and visible after selection from any place, including history and all vocabulary/Glyphs categories; verify.
 - [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
 
 ## Deferred, asked about for later (do not start unless the user asks)
