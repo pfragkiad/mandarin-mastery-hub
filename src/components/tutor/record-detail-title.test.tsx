@@ -19,7 +19,7 @@ describe('Record detail heading', () => {
     const children = [...row.children].map(node => node.className || node.tagName);
     expect(children[0]).toBe('pinyin');
     expect(row.querySelector('button[aria-label="Listen to 我"]')).not.toBeNull();
-    expect(row).toHaveStyle({ alignItems: 'center' });
+    expect(row.className).toBe('catalog-detail-pinyin-row');
   });
 
   it('tells the layout how many glyphs to fit so a long phrase keeps its translation readable', () => {
