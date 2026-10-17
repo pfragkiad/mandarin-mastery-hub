@@ -19,6 +19,8 @@ import { DecompositionTree } from './decomposition-tree';
 import { GlyphUsageExamples } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
 import { CharacterEnrichmentNotes } from './character-enrichment';
+import { RadicalIdentityNote } from './radical-identity';
+import { radicalIdentity } from '@/lib/radical-identities';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
@@ -46,6 +48,7 @@ export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: L
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{kind.slice(0, -1)}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
+    {(kind === 'Radicals' || kind === 'Components' || radicalIdentity(entry.hanzi).radicals.length > 0) && kind !== 'Strokes' && <RadicalIdentityNote glyph={entry.hanzi}/>}
     <div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
     <GlyphUsageExamples entry={entry} kind={kind}/>
     <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>

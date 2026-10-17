@@ -1,7 +1,7 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
-import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
+import { radicalSearchGlyphs } from './radical-identities';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
