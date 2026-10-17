@@ -18,13 +18,21 @@ const toHex = (value: string) => {
   return `#${Array.from(ctx.getImageData(0, 0, 1, 1).data).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 };
 
+/** The word a voice can say for a stroke: the Chinese name the source records (横).
+ * A stroke glyph (㇐) has no sound of its own and an English note is not a pronunciation,
+ * so anything that isn't Chinese leaves the control with nothing to speak. */
+export function strokeSpeech(entry?: { note: string; pinyin: string }) {
+  const name = entry?.note.split(' · ')[0]?.trim() ?? '';
+  const reading = entry?.pinyin.split(' / ')[0] || null;
+  return { name: /^[㐀-鿿]+$/.test(name) ? name : null, reading: /^[㐀-鿿]+$/.test(name) ? reading : null };
+}
+
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
 export function StrokePractice({ glyph }: { glyph: string }) {
   const { catalogVersion, theme, preferences } = useWorkspace();
   const entry = libraryEntries('Strokes').find(item => item.hanzi === glyph);
   // A stroke glyph (㇐) has no sound of its own — the stroke's Chinese name (横) is what a voice can say.
-  const strokeName = entry?.note.split(' · ')[0] || null;
-  const reading = strokeName ? entry?.pinyin?.split(' / ')[0] ?? null : null;
+  const { name: strokeName, reading } = strokeSpeech(entry);
   const recording = strokeName ? characterRecording(strokeName, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState(false);
@@ -109,7 +117,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
       <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button><span className="practice-kind">Stroke</span></p>
       {audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}
       <p>Every stroke has a starting point and a direction. Watch how it moves, then practice tracing it yourself.</p>
-      <div className="character-facts"><div><strong>1</strong><span>Stroke</span></div><div><strong lang="zh-CN">{entry.note.split(' · ')[0] || '—'}</strong><span>Name</span></div><div>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}<span>{example ? `Example · stroke ${example.strokeIndex + 1}` : 'Example'}</span></div></div>
+      <div className="character-facts"><div><strong>1</strong><span>Stroke</span></div><div><strong lang="zh-CN">{strokeName ?? '—'}</strong><span>Name</span></div><div>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}<span>{example ? `Example · stroke ${example.strokeIndex + 1}` : 'Example'}</span></div></div>
       <Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button>
       <div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Find the starting point first, then keep one smooth movement until the stroke ends. Press a little at the start and ease off where it tapers.</p></div>
       <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
