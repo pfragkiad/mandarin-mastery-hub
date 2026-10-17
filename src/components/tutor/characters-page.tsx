@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen, MessageSquareText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -10,6 +10,7 @@ import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIn
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
+import { glyphUsage } from '@/lib/glyph-usage';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
@@ -38,13 +39,14 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     <p className="catalog-record-note">{entry.note}</p>
     <div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
     <GlyphUsageExamples entry={entry} kind={kind}/>
-    <div className="decomposition-section"><h3><GitBranch size={17}/>Decomposition</h3>
+    <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>
       {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="source-note">Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
-function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selected: boolean; onSelect: (id: string) => void }) {
-  const { preferences, saved, toggleSaved } = useWorkspace();
+function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
+  const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
+  const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const recording = characterRecording(entry.hanzi, entry.pinyin || null);
   const audioAvailable = usePronunciationAvailability(Boolean(recording), entry.pinyin || null);
   const [audioError, setAudioError] = useState<string | null>(null);
@@ -78,7 +80,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
-    <div className="word-card-top"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : (entry.id.split(':')[0] ?? 'Glyphs').slice(0, -1).toUpperCase()}</span>{entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}</div>
+    <div className="word-card-top"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : (entry.id.split(':')[0] ?? 'Glyphs').slice(0, -1).toUpperCase()}</span><span className="catalog-card-indicators">{hasExample && <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>}{entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
