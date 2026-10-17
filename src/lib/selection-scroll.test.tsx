@@ -16,6 +16,7 @@ describe('useRecordScroll', () => {
 
   beforeEach(() => {
     scrolled = [];
+    scrollIntoView.mockClear();
     Element.prototype.scrollIntoView = scrollIntoView as unknown as typeof Element.prototype.scrollIntoView;
   });
   afterEach(() => {
