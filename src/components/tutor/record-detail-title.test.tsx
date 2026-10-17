@@ -8,7 +8,7 @@ describe('Record detail heading', () => {
   it('stacks pinyin above the characters and the meaning below', () => {
     const { container } = render(<RecordDetailTitle hanzi="今天天气怎么样？" pinyin="Jīntiān tiānqì zěnmeyàng?" meaning="How is the weather today?"/>);
     const order = [...head(container).children].map(node => node.className);
-    expect(order).toEqual(['pinyin', '', '', '']);
+    expect(order).toEqual(['pinyin', '', '']);
     expect(head(container).querySelector('strong')?.textContent).toBe('今天天气怎么样？');
     expect(head(container).querySelector('h2')?.textContent).toBe('How is the weather today?');
   });
