@@ -14,9 +14,9 @@ export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: R
 function VocabularyRoute() {
   const search = Route.useSearch();
   const navigate = Route.useNavigate();
-  return <VocabularyPage initialQuery={search.q ?? ''} initialWordId={search.word ?? ''} tab={search.tab} page={search.page} collection={search.collection} level={search.level} status={search.status}
+  return <VocabularyPage {...search} initialQuery={search.q ?? ''} initialWordId={search.word ?? ''}
     onTabChange={tab => navigate({ search: { tab }, resetScroll: false })}
-    onFiltersChange={(patch, replace = false) => navigate({ search: prev => ({ ...prev, ...patch, page: 1, word: undefined }), resetScroll: false, replace })}
-    onPageChange={page => navigate({ search: prev => ({ ...prev, page, word: undefined }), resetScroll: false })}
-    onWordOpen={(id, page) => navigate({ search: prev => ({ ...prev, word: id ?? undefined, ...(page ? { page } : {}) }), resetScroll: false, replace: !id })} />;
+    onFiltersChange={(patch, replace = false) => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, ...patch, page: 1 }; }, resetScroll: false, replace })}
+    onPageChange={page => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, page }; }, resetScroll: false })}
+    onWordOpen={(id, page) => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, ...(id ? { word: id } : {}), ...(page ? { page } : {}) }; }, resetScroll: false, replace: !id })} />;
 }
