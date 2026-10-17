@@ -12,7 +12,7 @@
 ## Application architecture
 - Keep each primary learning section in its own TanStack leaf route, with shared navigation and session state in the root shell, so navigation preserves the current workspace.
 - Use the browser-safe Mandarin data module for starter content and filtering; explicitly label sample content and session-only edits rather than implying imported records or durable storage.
-- Load Hanzi Writer dynamically in the writing tool effect, so browser drawing logic never runs during server rendering.
+- Load Hanzi Writer dynamically for characters; explicit stroke search parameters use freehand canvas tracing of catalogue glyphs, not Hanzi Writer or automatic grading, because stroke paths are unavailable.
 - Define visual roles and responsive layouts in the global design system and use shared UI controls for interactions, so the learning sections remain visually consistent.
 - Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
 - Derive banner lighting variants from the same pixel-aligned source and mount both in one shared image frame, so theme changes cannot change cropping or wait for an image download.
