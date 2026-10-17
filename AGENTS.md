@@ -17,6 +17,7 @@
 - Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
 - Derive banner lighting variants from the same pixel-aligned source and mount both in one shared image frame, so theme changes cannot change cropping or wait for an image download.
 - Keep character-library filtering and bounded pagination in a browser-safe data adapter; attach decomposition trees to explicit provenance so future imports do not imply inferred etymology.
+- Derive component reuse once per catalogue version from distinct parent-character decomposition trees, with URL-backed filtering; this avoids duplicate-edge inflation and keeps structural counts independent of browsing filters.
 
 - Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
 - Use the vocabulary word search parameter to open a real dictionary entry on arrival; featured words must exist in starter data so links never land on empty results.
