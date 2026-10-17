@@ -34,3 +34,5 @@
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
 - Keep vocabulary/Glyphs selection in URL search; shared helpers prioritize exact records over tab/filter/page hints and reveal offscreen cards after navigation and history updates, without moving visible cards.
 - Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
+
+- Preserve Hanzi Writer animation runs across Pause/Resume using its native APIs; invalidate runs only on replacement, reset, practice or teardown, so in-flight stroke progress and guide highlights survive pausing.
