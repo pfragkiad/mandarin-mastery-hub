@@ -2,6 +2,20 @@ import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
 import { filterLibrary, libraryEntries, libraryPage, libraryDestination } from './character-library';
 describe('Catalogue requirements', () => {
+  for (const kind of ['Characters', 'Radicals', 'Components', 'Strokes'] as const) {
+    it(`shows only bookmarked ${kind.toLowerCase()} in Saved`, () => {
+      const entries = libraryEntries(kind);
+      const first = entries[0];
+      expect(first).toBeDefined();
+      if (!first) return;
+      expect(filterLibrary(entries, '', '', false, true, undefined, [first.id, 'unrelated-word']).map(entry => entry.id)).toEqual([first.id]);
+      expect(filterLibrary(entries, '', '', false, true, undefined, [])).toEqual([]);
+    });
+  }
+  it('combines Saved with search rather than showing every bookmark', () => {
+    const entries = libraryEntries('Radicals');
+    expect(filterLibrary(entries, 'water', '', false, true, undefined, ['Radicals:水', 'Radicals:口']).map(entry => entry.id)).toEqual(['Radicals:水']);
+  });
   it('imports all 38 stroke types', () => expect(libraryEntries('Strokes')).toHaveLength(38));
   it('imports all 214 radicals', () => expect(libraryEntries('Radicals')).toHaveLength(214));
   it('imports all 1843 components', () => expect(libraryEntries('Components')).toHaveLength(1843));

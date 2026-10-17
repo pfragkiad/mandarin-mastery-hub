@@ -9,6 +9,7 @@ import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { libraryDestination } from '@/lib/character-library';
+import { RecordCardFooter } from './record-card-footer';
 
 const isCjk = (ch: string) => /[㐀-鿿豈-﫿]/.test(ch);
 
@@ -72,6 +73,6 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   return <><article className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{word.script === 'Traditional' ? 'TRADITIONAL' : word.level.toUpperCase()}</span>{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</span><Button variant="ghost" size="icon" aria-label={`Open ${word.meaning}`} title={`Open ${word.meaning}`} onClick={() => setOpen(true)}><ArrowUpRight/></Button></div>
     <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin">{word.pinyin}</span>}<span lang="zh-CN">{word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}>{word.meaning}</span>}</Button>
-    <div className="word-card-bottom"><span>{word.type}</span><div className="word-actions"><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} onClick={() => listen()}><Volume2/></Button><Button variant="ghost" size="icon" title={bookmarked ? 'Remove bookmark' : 'Bookmark word'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${word.hanzi}`} onClick={() => toggleSaved(word.id)}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button></div></div>
+    <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} audioAvailable={audioAvailable} audioTitle={`Listen · ${source}`} onListen={() => listen()}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
