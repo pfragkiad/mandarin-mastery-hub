@@ -79,3 +79,18 @@ it('individual strokes also resume the same correct-writing animation', async ()
   expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
   expect(fake.animateCharacter).toHaveBeenCalledTimes(1);
 });
+
+it('selecting occurrence strokes while paused does not replace or resume the animation', async () => {
+  const { container, rerender } = render(<WritingPractice character="河"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
+  rerender(<WritingPractice character="河" component={{ glyph: '氵', path: [0], strokeIndices: [0, 1, 2], noncontiguous: false, standaloneFit: 'fits-current-geometry-guards', standaloneReuseAllowed: true }}/>);
+  expect(container.querySelectorAll('.component-stroke-overlay path')).toHaveLength(3);
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+  expect(fake.resumeAnimation).not.toHaveBeenCalled();
+  expect(screen.getByRole('button', { name: 'Play stroke 1' })).toHaveAttribute('aria-current', 'step');
+  fireEvent.click(screen.getByRole('button', { name: 'Resume' }));
+  expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+});

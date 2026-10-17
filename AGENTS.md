@@ -13,8 +13,7 @@
 - Give each learning section a TanStack leaf route; share navigation and session state in the root shell to preserve the workspace.
 - Use the browser-safe Mandarin data module for starter content and filtering; explicitly label sample content and session-only edits rather than implying imported records or durable storage.
 - Dynamically load Hanzi Writer for characters and sourced representative stroke outlines; never infer missing paths, so practice follows recorded brush data.
-- Define visual roles and responsive layouts globally; use shared UI controls to keep learning sections consistent.
-- Keep theme state in the root workspace and apply semantic dark tokens globally so navigation, controls and writing ink share one theme.
+- Define visual roles/layouts globally with shared controls and root theme state, so navigation, controls and writing ink stay consistent.
 - Share sentence rendering in vocabulary and glyph details; match usage through existing text, radical assignments and component trees, never inferred stroke shapes.
 - Keep library filtering/pagination browser-safe, decompositions provenance-attached, and Kangxi IDs extracted from explicit source metadata (never row order), to preserve source identity without inferred etymology.
 - Derive component reuse from distinct parent-character decomposition trees and radical usage from imported dictionary-radical assignments once per catalogue version; share URL-backed usage groups while keeping counts independent of browsing filters and their provenance distinct.
@@ -28,7 +27,7 @@
 - Preserve field-level source references for spreadsheet-enriched parts of speech, matching existing entries by HSK identity and headword, so enrichment never replaces audio, examples, or entry identities and remains distinguishable from the original import.
 - Imported data is regenerated from the source SQLite by an export script into src/data/vocabulary.json (bundled, API Entry shape) and public/data/catalog.json (fetched once by src/lib/catalog-store.ts), so the large character catalogue never enters the page bundle.
 - Recordings live on the Lovable CDN; exported data stores only their CDN URLs plus source/speaker/license, so the repo stays free of media binaries.
-- Keep learning selections, filters, tabs, pages and Practice focus in URL search; push selections and replace typing so Back/Forward restores the workspace.
+- Keep selections, filters, tabs, pages and Practice focus in URL search; push selections and replace typing to restore history.
 - Share the record-card footer between vocabulary and glyph cards, and keep namespaced glyph bookmarks in the existing session workspace with URL-backed Saved filtering, so audio/bookmark controls and history behave identically without implying durable account storage.
 - Use shared library destinations and real router links for decomposition glyphs; resolve explicit selections independently of browsing filters so linked records and browser history never silently show a different record.
 - Share the browser-safe decomposition tree renderer across Glyphs, Practice and vocabulary details; preserve contextual character readings and match phrase text to real vocabulary records without implying verified grammar or etymology.
@@ -37,3 +36,4 @@
 - Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
 
 - Preserve Hanzi Writer animation runs across Pause/Resume using its native APIs; invalidate runs only on replacement, reset, practice or teardown, so in-flight stroke progress and guide highlights survive pausing.
+- Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match, so annotations preserve canonical data and unknowns. Overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
