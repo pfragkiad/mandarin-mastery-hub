@@ -54,7 +54,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
     </div>
     {word.sentence && <div className="sentence"><span className="eyebrow">IN A SENTENCE</span>{preferences.pinyin && word.sentencePinyin && <span className="pinyin sentence-pinyin">{word.sentencePinyin}</span>}<SentenceCharacters sentence={word.sentence} onNavigate={close} /><span>{word.translation}</span></div>}
-    <p className="detail-footnote">{word.entry?.sourceName ?? 'Mandarin Tutor database'} · {source}</p>
+    <p className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</p>
   </>;
 }
 

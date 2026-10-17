@@ -7,7 +7,7 @@ import { type LibraryEntry } from '@/lib/character-library';
 import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { referenceCatalog, type ReferenceKind } from '@/lib/character-library';
+import { referenceCatalog, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
 import { DecompositionTree } from './characters-page';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
@@ -164,7 +164,7 @@ function charFacts(): Record<string, CharFact> {
 // same provenance-attached structure the Characters page shows — without inferring any.
 function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
   const root = catalog.trees[glyph];
-  return root ? { root, source: 'Make Me a Hanzi IDS (bddc96d) via Mandarin Tutor import', status: 'Imported graphical structure · not verified etymology' } : undefined;
+  return root ? { root, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } : undefined;
 }
 
 
