@@ -19,10 +19,21 @@ export function radicalIdentity(glyph: string): RadicalIdentity {
   return catalog.radicalIdentities.identities[glyph] ?? { glyph, kind: 'unmapped', radicals: [], equivalentGlyphs: [], sourceIds: [] };
 }
 
+let searchVersion = -1;
+let searchIndex: Record<string, string[]> = {};
 export function radicalSearchGlyphs(glyph: string): string[] {
-  const identity = radicalIdentity(glyph);
-  if (identity.kind !== 'canonical') return identity.equivalentGlyphs;
-  return Object.values(catalog.radicalIdentities.identities)
-    .filter(item => item.radicals.some(radical => radical.glyph === glyph))
-    .map(item => item.glyph);
+  if (searchVersion !== catalog.version) {
+    searchIndex = {};
+    for (const item of Object.values(catalog.radicalIdentities.identities)) {
+      searchIndex[item.glyph] ??= [];
+      searchIndex[item.glyph].push(...item.equivalentGlyphs);
+      for (const radical of item.radicals) {
+        searchIndex[radical.glyph] ??= [];
+        searchIndex[radical.glyph].push(item.glyph);
+      }
+    }
+    for (const key of Object.keys(searchIndex)) searchIndex[key] = [...new Set(searchIndex[key])];
+    searchVersion = catalog.version;
+  }
+  return searchIndex[glyph] ?? [];
 }

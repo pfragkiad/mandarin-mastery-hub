@@ -19,12 +19,12 @@
 - Derive component reuse from distinct parent-character decomposition trees and radical usage from imported dictionary-radical assignments once per catalogue version; share URL-backed usage groups while keeping counts independent of browsing filters and their provenance distinct.
 
 - Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
-- Share browser-safe Overview random discovery and exact paginated links respecting script preferences, so links select real records, not filtered lists.
+- Share browser-safe Overview discovery and exact paginated links respecting script preferences.
 - Route all pronunciation through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin browser TTS, never auto-switching after a failed recording), so the external data plan's audio priority stays in one place.
 - Share pronunciation availability: unrecorded speech requires a known reading and confirmed Mandarin voice, so disabled controls never promise playable audio.
 - Separate flashcard flip targets from pronunciation and make hidden faces inert, so listening never flips cards or exposes hidden answers to keyboard navigation.
 - Mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts and adapt entries to the UI Word shape there, so screens never depend on whether data comes from fixtures or the local API.
-- Preserve field-level source references for spreadsheet-enriched parts of speech, matching existing entries by HSK identity and headword, so enrichment never replaces audio, examples, or entry identities and remains distinguishable from the original import.
+- Preserve field-level spreadsheet provenance; match by HSK identity/headword without replacing audio, examples or entry IDs.
 - Fetch the catalogue and repeatably imported radical-identity sidecar together through catalog-store; keep large reference data out of page bundles and preserve original tuples.
 - Recordings live on the Lovable CDN; exported data stores only their CDN URLs plus source/speaker/license, so the repo stays free of media binaries.
 - Keep selections, filters, tabs, pages and Practice focus in URL search; push selections and replace typing to restore history.
@@ -33,7 +33,7 @@
 - Share decomposition rendering across Glyphs, Practice and Vocabulary; preserve contextual readings and textual phrase matches, never imply verified grammar/etymology. Parse BabelStone prefix IDS into separate trees; keep unsupported notation raw and numbered components opaque to avoid invented parts.
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
 - URL selections override browsing hints; reveal offscreen cards after navigation/history, without moving visible cards.
-- Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
+- Repeatably import unofficial phrases; keep local IDs/matches/review in phraseMetadata and hsk_index/hskSource empty so local numbering never implies syllabus provenance.
 
 - Preserve Hanzi Writer animation runs across Pause/Resume using its native APIs; invalidate runs only on replacement, reset, practice or teardown, so in-flight stroke progress and guide highlights survive pausing.
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match, so annotations preserve canonical data and unknowns. Overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
