@@ -165,8 +165,9 @@
 .catalog-entry-meaning { font-size: 11px; color: var(--muted-foreground); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; text-align: left; }
 .catalog-source-icon { position: absolute; top: 9px; right: 9px; color: var(--primary); }
 .catalog-detail { border-left: 1px solid var(--border); padding: 0 0 24px 30px; min-width: 0; position: sticky; top: 24px; }
-.catalog-detail-title { display: flex; align-items: flex-start; gap: 14px; margin: 18px 0 24px; }
-.catalog-detail-title > button { flex-shrink: 0; }
+.catalog-detail-title { margin: 18px 0 24px; }
+.catalog-detail-pinyin-row { display: flex; align-items: center; gap: 9px; width: 100%; min-width: 0; }
+.catalog-detail-pinyin-row > button { flex-shrink: 0; }
 .catalog-detail-head { container-type: inline-size; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
 .catalog-detail-head strong, .catalog-detail-title .overview-record-link > strong { font-size: min(64px, calc(100cqi / var(--detail-chars, 1))); line-height: 1.3; font-weight: 400; }
 .catalog-detail-head .pinyin { font-size: 15px; }
