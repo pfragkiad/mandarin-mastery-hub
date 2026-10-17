@@ -5,16 +5,19 @@ import { useEffect } from 'react';
 export function useRecordScroll(id: string, ready = true) {
   useEffect(() => {
     if (!ready || !id) return;
+    const reveal = () => {
+      const card = document.querySelector<HTMLElement>(`[data-entry-id="${CSS.escape(id)}"]`);
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      if (rect.top < 0 || rect.bottom > window.innerHeight || rect.left < 0 || rect.right > window.innerWidth) {
+        card.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+      }
+    };
     let frame = requestAnimationFrame(() => {
-      frame = requestAnimationFrame(() => {
-        const card = document.querySelector<HTMLElement>(`[data-entry-id="${CSS.escape(id)}"]`);
-        if (!card) return;
-        const rect = card.getBoundingClientRect();
-        if (rect.top < 0 || rect.bottom > window.innerHeight || rect.left < 0 || rect.right > window.innerWidth) {
-          card.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
-        }
-      });
+      frame = requestAnimationFrame(reveal);
     });
-    return () => cancelAnimationFrame(frame);
+    // Router history restoration runs after rendering; verify again once it settles.
+    const settled = window.setTimeout(reveal, 200);
+    return () => { cancelAnimationFrame(frame); window.clearTimeout(settled); };
   });
 }
