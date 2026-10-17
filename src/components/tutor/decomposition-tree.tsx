@@ -1,11 +1,27 @@
 import { Link } from '@tanstack/react-router';
-import { Columns2 } from 'lucide-react';
+import { Columns2, Columns3, Rows2, Rows3, FlipHorizontal2, RotateCw, Layers2, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { glyphIndex, libraryDestination, type DecompositionNode } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 import { radicalIdentity } from '@/lib/radical-identities';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
+
+const layoutIcons = { '⿰': Columns2, '⿱': Rows2, '⿲': Columns3, '⿳': Rows3, '⿻': Layers2, '⿾': FlipHorizontal2, '⿿': RotateCw, '㇯': Minus };
+const enclosurePaths: Record<string, string> = {
+  '⿵': 'M3 21V3H21V21', '⿶': 'M3 3V21H21V3',
+  '⿷': 'M21 3H3V21H21', '⿼': 'M3 3H21V21H3',
+  '⿸': 'M3 21V3H21', '⿹': 'M3 3H21V21',
+  '⿺': 'M3 3V21H21', '⿽': 'M21 3V21H3',
+};
+function LayoutIcon({ operator }: { operator: string }) {
+  const LucideIcon = layoutIcons[operator as keyof typeof layoutIcons];
+  if (LucideIcon) return <LucideIcon aria-hidden="true"/>;
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {operator === '⿴' ? <rect x="3" y="3" width="18" height="18" rx="2"/> : <path d={enclosurePaths[operator]}/>}
+    <rect x="9" y="9" width="6" height="6" rx="1"/>
+  </svg>;
+}
 
 export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const { preferences } = useWorkspace();
@@ -19,5 +35,5 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const glyph = card && destination
     ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={exactRecord ? `Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}` : `Open the sourced Kangxi radical for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
     : <strong lang="zh-CN">{node.glyph}</strong>;
-  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
+  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}><LayoutIcon operator={node.glyph}/><small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }

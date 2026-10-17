@@ -200,7 +200,7 @@
 .decomposition-node span { width: 36px; font-size: 11px; color: var(--muted-foreground); }
 .decomposition-node strong { font-size: 32px; font-weight: 400; }
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
-.decomposition-layout svg { width: 28px; height: 28px; }
+.decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; }
 .decomposition-layout small { font-size: 12px; }
 .enrichment-note .decomposition-node > span { flex-shrink: 0; }
 .enrichment-note .decomposition-layout { min-width: 0; flex-wrap: wrap; }
@@ -259,7 +259,6 @@
 .global-search-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--muted-foreground); }
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
 .reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
-.ids-operator { font-size: 18px; line-height: 1; }
 .tile-absent { font-size: 10px; font-style: italic; color: color-mix(in oklab, var(--muted-foreground) 72%, var(--foreground)); letter-spacing: .01em; white-space: nowrap; }
 .tile-tooltip { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; max-width: 290px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); box-shadow: var(--shadow-popover); color: var(--foreground); text-align: left; }
 .tile-tooltip-head { display: flex; align-items: baseline; gap: 9px; }
