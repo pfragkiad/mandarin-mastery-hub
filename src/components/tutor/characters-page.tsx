@@ -14,9 +14,9 @@ import { useWorkspace } from './workspace';
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
-function ReuseLabel({ count, compact = false }: { count: number; compact?: boolean }) {
+function ReuseLabel({ count, compact = false, radical = false }: { count: number; compact?: boolean; radical?: boolean }) {
   const group = reuseGroup(count);
-  return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters in recorded breakdowns, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
+  return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
 }
 export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const { preferences } = useWorkspace();
@@ -39,7 +39,7 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     <div className="eyebrow">{kind === 'Strokes' ? 'STROKE REFERENCE' : 'CHARACTER REFERENCE'}</div>
     <div className="catalog-detail-title"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong><div><span className="pinyin">{entry.pinyin || 'Pinyin not recorded'}</span><h2>{entry.meaning || 'No English meaning recorded yet'}</h2>{entry.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${entry.hanzi}` : `No audio available for ${entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></div>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
-    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{kind.slice(0, -1)}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount}/>}</dd></div></dl>
+    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{kind.slice(0, -1)}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
@@ -77,7 +77,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
       {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
       {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
-      {entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} compact/>}
+      {entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/>}
       {entry.script === 'Traditional' && <span className="traditional-label tile-traditional-badge">Traditional</span>}
       {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
     </Button>;
@@ -96,7 +96,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const kind: LibraryKind = search.tab ?? glyphHit?.kind ?? 'Characters';
   const query = search.q ?? '';
   const strokeCount = search.strokes ?? '';
-  const reuse = kind === 'Components' ? search.reuse : undefined;
+  const hasUsage = kind === 'Components' || kind === 'Radicals';
+  const reuse = hasUsage ? search.reuse : undefined;
+  const hasFilter = Boolean(query.trim() || strokeCount || reuse);
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;

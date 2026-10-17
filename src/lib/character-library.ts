@@ -1,6 +1,6 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import { countComponentReuse, reuseGroup, type ReuseGroup } from './component-reuse';
+import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -21,7 +21,7 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   if (hit && hit.version === catalog.version) return hit.entries;
   const source = kind === 'Strokes' ? catalog.strokes : kind === 'Radicals' ? catalog.radicals : kind === 'Components' ? catalog.components : catalog.characters;
   const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
-  const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : undefined;
+  const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
     return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
