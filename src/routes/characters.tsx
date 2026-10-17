@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { CharactersPage, type CharactersSearch } from '@/components/tutor/characters-page';
 import { pageHead } from '@/lib/mandarin';
+import { reuseGroups } from '@/lib/component-reuse';
 
 const kindValues = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
@@ -10,6 +11,7 @@ export const Route = createFileRoute('/characters')({
     const out: CharactersSearch = {};
     const character = str(search['character']); if (character) out.character = character;
     const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
+    const reuse = reuseGroups.find(group => group.value === search['reuse']); if (reuse) out.reuse = reuse.value;
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
