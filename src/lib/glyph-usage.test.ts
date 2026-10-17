@@ -7,9 +7,9 @@ const glyph = (hanzi: string, note = ''): LibraryEntry => ({ id: `Characters:${h
 const word = (id: string, sentence: string): Word => ({ id, hanzi: id, sentence, pinyin: '', meaning: '', type: '', collection: '', level: '', translation: '' });
 
 describe('Existing glyph usage', () => {
-  it('limits existing usage to three distinct examples', () => {
+  it('limits existing glyph usage to a single example', () => {
     const rows = [word('a', '你一'), word('b', '你二'), word('c', '你三'), word('d', '你四')];
-    expect(glyphUsage(glyph('你'), 'Characters', rows, []).map(row => row.word.id)).toEqual(['a', 'b', 'c']);
+    expect(glyphUsage(glyph('你'), 'Characters', rows, []).map(row => row.word.id)).toEqual(['a']);
   });
   it('does not duplicate the same recorded sentence', () => {
     expect(glyphUsage(glyph('你'), 'Characters', [word('a', '你好'), word('b', '你好')], []).map(row => row.word.id)).toEqual(['a']);

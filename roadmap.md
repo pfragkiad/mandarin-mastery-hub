@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Match Glyphs to the shared IN A SENTENCE formatting and restrict to one existing example; verify.
 - [x] Move vocabulary sentences above Decomposition; add up to three existing Glyph usage examples and verify links and matching.
 - [x] Remove the unclear reference metadata prefix, compact flashcard setup, and add a front-card pinyin switch; verify toggling and card directions.
 - [x] Add individual-stroke writing practice and verify drawing, reset and browser history.
