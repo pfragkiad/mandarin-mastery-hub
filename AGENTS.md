@@ -20,9 +20,10 @@
 - Derive component reuse from distinct parent-character decomposition trees and radical usage from imported dictionary-radical assignments once per catalogue version; share URL-backed usage groups while keeping counts independent of browsing filters and their provenance distinct.
 
 - Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
-- Keep Overview random word/character/component selection and exact paginated destinations in a browser-safe helper, sharing the library discovery card with independent controls respecting script preferences, so links select real records rather than merely filtering lists.
+- Share browser-safe Overview random discovery and exact paginated links respecting script preferences, so links select real records, not filtered lists.
 - Route all pronunciation through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin browser TTS, never auto-switching after a failed recording), so the external data plan's audio priority stays in one place.
-- Share pronunciation-control availability across learning screens, requiring a known reading and confirmed Mandarin voice for unrecorded speech, so grey controls never advertise playable audio.
+- Share pronunciation availability: unrecorded speech requires a known reading and confirmed Mandarin voice, so disabled controls never promise playable audio.
+- Separate flashcard flip targets from pronunciation and make hidden faces inert, so listening never flips cards or exposes hidden answers to keyboard navigation.
 - Mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts and adapt entries to the UI Word shape there, so screens never depend on whether data comes from fixtures or the local API.
 - Preserve field-level source references for spreadsheet-enriched parts of speech, matching existing entries by HSK identity and headword, so enrichment never replaces audio, examples, or entry identities and remains distinguishable from the original import.
 - Imported data is regenerated from the source SQLite by an export script into src/data/vocabulary.json (bundled, API Entry shape) and public/data/catalog.json (fetched once by src/lib/catalog-store.ts), so the large character catalogue never enters the page bundle.
