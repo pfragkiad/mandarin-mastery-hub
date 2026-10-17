@@ -93,7 +93,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
   </article>;
 }
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
