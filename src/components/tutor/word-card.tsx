@@ -8,21 +8,9 @@ import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { libraryDestination } from '@/lib/character-library';
 import { RecordCardFooter } from './record-card-footer';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
-
-const isCjk = (ch: string) => /[㐀-鿿豈-﫿]/.test(ch);
-
-function SentenceCharacters({ sentence, onNavigate }: { sentence: string; onNavigate: () => void }) {
-  const { preferences } = useWorkspace();
-  return <p lang="zh-CN">{Array.from(sentence).map((ch, i) => {
-    if (!isCjk(ch)) return <span key={i}>{ch}</span>;
-    const dest = libraryDestination(ch, preferences.includeTraditional);
-    if (!dest) return <span key={i}>{ch}</span>;
-    return <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Characters`} onClick={onNavigate}>{ch}</Link>;
-  })}</p>;
-}
+import { SentenceExample } from './sentence-example';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
@@ -55,8 +43,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
       <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
     </div>
+    {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} />}
     <VocabularyDecomposition word={word}/>
-    {word.sentence && <div className="sentence"><span className="eyebrow">IN A SENTENCE</span>{preferences.pinyin && word.sentencePinyin && <span className="pinyin sentence-pinyin">{word.sentencePinyin}</span>}<SentenceCharacters sentence={word.sentence} onNavigate={close} /><span>{word.translation}</span></div>}
     <p className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</p>
   </>;
 }

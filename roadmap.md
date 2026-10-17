@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Move vocabulary sentences above Decomposition; add up to three existing Glyph usage examples and verify links and matching.
 - [x] Remove the unclear reference metadata prefix, compact flashcard setup, and add a front-card pinyin switch; verify toggling and card directions.
 - [x] Add individual-stroke writing practice and verify drawing, reset and browser history.
 - [x] Remove redundant word/phrase card arrows, add character and vocabulary breakdowns to detail panels, unify Decomposition titles, and verify linked records/history.
