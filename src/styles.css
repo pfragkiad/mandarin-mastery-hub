@@ -261,6 +261,61 @@
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
 }
 
+/* Overview: an open learning workspace, with one real featured record. */
+.overview-page .journey-banner { min-height: 250px; display: flex; align-items: center; }
+.overview-page .banner-copy { padding-block: 32px; }
+.overview-page .banner-copy h2 { font-size: 38px; }
+.overview-banner-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.overview-banner-actions > a { height: 38px; }
+.overview-page .stat-top { flex-wrap: wrap; }
+.overview-page .stat-top > span { white-space: normal; }
+.overview-page .stat-note { line-height: 1.5; }
+.overview-study-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 40px; margin-bottom: 36px; }
+.overview-featured.daily-word { border: 0; border-right: 1px solid var(--border); padding: 0 40px 0 0; min-width: 0; }
+.overview-featured .daily-word-top { min-height: 32px; }
+.overview-featured .daily-word-top button { width: 32px; height: 32px; }
+.overview-featured-word { margin-top: 20px; min-height: 160px; }
+.overview-featured .word-level { font-size: 10px; letter-spacing: 0; }
+.overview-featured .word-hsk-id { font-size: 9px; letter-spacing: 0; }
+.overview-featured .daily-word-content { align-items: center; gap: 24px; margin-top: 18px; color: var(--foreground); }
+.overview-featured .daily-word-content > div { min-width: 0; }
+.overview-featured .daily-word-content > div:first-child { flex-shrink: 0; }
+.overview-featured .daily-word-content strong { font-size: 58px; line-height: 1.35; }
+.overview-featured .daily-word-content .pinyin { font-size: 14px; }
+.overview-featured .daily-word-content h3 { font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
+.overview-featured .daily-word-content p { font-size: 11px; line-height: 1.7; }
+.overview-featured-actions { display: flex; gap: 10px; align-items: center; margin-top: 20px; }
+.overview-paths { min-width: 0; }
+.overview-paths h2, .overview-library-search h2 { font-family: var(--font-display); font-weight: 400; font-size: 23px; margin: 10px 0 18px; }
+.overview-path { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--border); color: var(--foreground); }
+.overview-path:last-child { border-bottom: 0; }
+.overview-path > div { flex: 1; min-width: 0; }
+.overview-path h3 { font-size: 13px; font-weight: 500; }
+.overview-path p { color: var(--muted-foreground); font-size: 11px; margin-top: 5px; line-height: 1.6; }
+.overview-path > svg { width: 16px; flex-shrink: 0; color: var(--muted-foreground); }
+.overview-path:hover h3, .overview-path:hover > svg { color: var(--primary); }
+.overview-library-search { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: 40px; padding: 25px 0; border-block: 1px solid var(--border); }
+.overview-library-search h2 { margin-bottom: 0; }
+.overview-library-search .hero-search { width: 100%; max-width: none; margin: 0; }
+.overview-library-search .hero-search-hit { flex-wrap: wrap; }
+@media (max-width:850px) {
+  .overview-study-row { gap: 26px; }
+  .overview-featured.daily-word { padding-right: 26px; }
+  .overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .overview-page .banner-copy h2 { font-size: 32px; }
+}
+@media (max-width:580px) {
+  .overview-page .journey-banner { min-height: 250px; }
+  .overview-page .banner-copy { padding: 25px 22px; }
+  .overview-page .banner-copy h2 { font-size: 30px; }
+  .overview-study-row, .overview-library-search { grid-template-columns: minmax(0,1fr); gap: 25px; }
+  .overview-featured.daily-word { border-right: 0; border-bottom: 1px solid var(--border); padding: 0 0 25px; }
+  .overview-featured-word { min-height: 130px; }
+  .overview-featured .daily-word-content { flex-direction: row; gap: 18px; align-items: center; }
+  .overview-featured .daily-word-content strong { font-size: 46px; }
+  .overview-featured .daily-word-content h3 { font-size: 15px; }
+}
+
 /* Printable handwriting practice sheet */
 .practice-print-button { margin-top: 18px; }
 /* Paper roles stay light in both themes, matching the printed output. */
