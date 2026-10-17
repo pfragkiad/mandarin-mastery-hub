@@ -55,13 +55,17 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
           {pinyin && block.token.pinyin && <span className="pinyin">{block.token.pinyin}</span>}
         </div>
         <div>
-          {Array.from({ length: block.rows }, (_, r) => (
-            <div className="writing-row" key={r}>
-              {Array.from({ length: 8 }, (_, i) => (
-                <WritingCell key={i} token={block.token} kind={r === 0 && i === 0 ? 'model' : i < (r === 0 ? 3 : 2) ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
-              ))}
-            </div>
-          ))}
+          {Array.from({ length: block.rows }, (_, r) => {
+            // Graduated difficulty: model first, then tracing, then copying, last rows from memory.
+            const traceCells = r === 0 ? 2 : r < Math.ceil(block.rows / 2) ? 2 : 0;
+            return (
+              <div className="writing-row" key={r}>
+                {Array.from({ length: 8 }, (_, i) => (
+                  <WritingCell key={i} token={block.token} kind={r === 0 && i === 0 ? 'model' : i < (r === 0 ? 3 : traceCells) ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
+                ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     );
