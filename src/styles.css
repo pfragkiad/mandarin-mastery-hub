@@ -281,13 +281,8 @@
 .discovery-tile > .library-note { margin: 0; font-size: 10px; }
 .overview-record-link { display: flex; align-items: center; gap: 18px; color: var(--foreground); flex: 1; min-width: 0; }
 .overview-record-link > div { flex: 1; min-width: 0; }
-.overview-record-title .overview-record-link > strong { max-width: 48%; overflow-wrap: anywhere; }
-.overview-record-title > button { flex-shrink: 0; width: 28px; height: 28px; }
-.overview-record-title h2 { line-height: 1.4; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
 .overview-record-link:hover strong,.overview-record-link:hover h2,.overview-record-link:focus-visible strong,.overview-record-link:focus-visible h2 { color: var(--primary); }
-.overview-featured-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
-.overview-featured-actions > a { font-size: 11px; }
 .overview-library-search { position: relative; z-index: 21; margin: 0 0 24px; }
 .overview-library-search .hero-search { width: 100%; max-width: none; margin: 0; }
 .overview-library-search .search-field input { height: 56px; font-size: 14px; padding-left: 48px; border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); box-shadow: var(--shadow-soft); }
@@ -305,22 +300,13 @@
 .flashcard-fan > span:nth-child(2) { left: 35px; top: 10px; transform: rotate(12deg); background: var(--card); }
 .flashcard-fan > svg { position: absolute; right: 0; top: 0; width: 20px; color: var(--terracotta); }
 @media (max-width:1100px) {
-  .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 18px; }
-  .overview-featured.daily-word { padding: 16px 18px; }
-  .overview-page .stats-row { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px 0; }
-  .overview-page .stat:nth-child(3) { border-right: 0; }
-  .overview-page .stat:nth-child(4) { padding-left: 0; }
+  .overview-discovery-row { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
   .overview-flashcards { flex-wrap: wrap; gap: 20px; }
   .overview-play { margin-left: 120px; }
 }
 @media (max-width:580px) {
-  .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 25px; }
+  .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
-  .overview-featured.daily-word { padding: 16px 18px; }
-  .overview-featured-word { min-height: 0; }
-  .overview-page .stats-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .overview-page .stat:nth-child(3) { border-right: 1px solid var(--border); }
-  .overview-page .stat:nth-child(4) { padding-left: 15px; }
   .overview-flashcards { gap: 16px; }
   .flashcard-fan { width: 78px; }
   .flashcard-fan > span { left: 2px; }
