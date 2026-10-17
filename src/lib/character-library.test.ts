@@ -52,6 +52,14 @@ describe('Catalogue requirements', () => {
     const entries = filterLibrary(libraryEntries('Radicals'), '');
     expect(libraryPage(entries, destination?.page ?? 1).entries.map(entry => entry.id)).toContain('Radicals:水');
   });
+  for (const kind of ['Characters', 'Radicals', 'Components', 'Strokes'] as const) {
+    it(`renders the selected ${kind} record regardless of the supplied page`, () => {
+      const entries = libraryEntries(kind);
+      const target = entries.at(-1);
+      if (!target) throw new Error('Missing catalogue record');
+      expect(libraryPage(entries, 1, 12, target.id).entries).toContain(target);
+    });
+  }
   it('links character-only and component-only glyphs to their own categories', () => {
     expect(libraryDestination('你')?.id).toBe('Characters:你');
     const component = libraryEntries('Components').find(entry => libraryDestination(entry.hanzi)?.tab === 'Components');

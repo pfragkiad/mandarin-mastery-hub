@@ -27,4 +27,12 @@ describe('vocabulary pagination', () => {
     expect(vocabularyPage(wordEntries.slice(0, 2), 'word', 100).current).toBe(1);
     expect(vocabularyPage([], 'phrase', 4)).toMatchObject({ current: 1, pages: 1, entries: [] });
   });
+  for (const kind of ['word', 'phrase'] as const) {
+    it(`keeps a selected ${kind} visible despite an outdated explicit page`, () => {
+      const entries = kind === 'word' ? wordEntries : phraseEntries;
+      const target = entries[70];
+      if (!target) throw new Error('Missing imported entry');
+      expect(vocabularyPage(entries, kind, 1, target.id).entries).toContain(target);
+    });
+  }
 });
