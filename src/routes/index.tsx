@@ -1,4 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { OverviewPage } from '@/components/tutor/overview';
 import { pageHead } from '@/lib/mandarin';
-export const Route = createFileRoute('/')({ head: () => pageHead('Your Mandarin journey', 'A calmer way to learn Mandarin. Explore vocabulary, discover characters, and practice writing one stroke at a time.'), component: OverviewPage });
+export const Route = createFileRoute('/')({ head: () => pageHead('Overview', 'Explore imported HSK words, practice phrases and the Mandarin character library. Discover a new word, study its details and build your recall.'), component: OverviewPage });
