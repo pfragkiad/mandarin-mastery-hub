@@ -1,4 +1,6 @@
 # Mandarin tutor interface
+- [ ] Promote Overview search, add an independent random character, and verify exact record navigation.
+- [ ] Add theme-aware magical banner shortcuts and a prominent Flashcards invitation, replacing the next-steps list.
 - [x] Refresh Overview with current library content, useful guidance, and random words linking to exact details.
 - [x] Default new visitors to dark theme and handwritten Kai; preserve saved settings and verify flows.
 - [x] Unify radical/component usage filters and show filtered totals directly above the cards; verify history and counts.
