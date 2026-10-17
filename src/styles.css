@@ -260,3 +260,57 @@
   .vocab-grid:not(.list-view) .word-card-top { padding-left: 12px; }
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
 }
+
+/* Printable handwriting practice sheet */
+.practice-print-button { margin-top: 18px; }
+.practice-sheet-root { position: fixed; inset: 0; z-index: 60; overflow-y: auto; background: var(--background); padding: 32px clamp(16px, 4vw, 48px) 64px; }
+.practice-preview-controls { max-width: 820px; margin: 0 auto 32px; display: flex; flex-direction: column; gap: 16px; }
+.practice-controls-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.practice-controls-top h1 { font-family: var(--font-display); font-size: 30px; }
+.practice-preview-controls .muted { color: var(--muted-foreground); }
+.practice-preview-controls .text-sm { font-size: 12px; }
+.practice-preview-controls .filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--card); }
+.practice-preview-controls .filters label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted-foreground); }
+.practice-preview-controls .filters select { height: 38px; padding: 0 10px; background: var(--background); border: 1px solid var(--border); border-radius: 6px; color: var(--foreground); }
+.practice-preview-controls .filters .checkbox { flex-direction: row; align-items: center; gap: 8px; height: 38px; }
+.practice-pages { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.practice-page { width: min(100%, 794px); aspect-ratio: 210 / 287; background: #fff; color: #1a1f1a; border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 10px 34px rgb(0 0 0 / .18); padding: 34px 38px; display: flex; flex-direction: column; }
+.practice-paper-heading { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1a1f1a; padding-bottom: 8px; }
+.practice-paper-heading h2 { font-size: 15px; margin: 0; }
+.practice-paper-heading span { font-size: 11px; color: #5a635a; }
+.practice-name-date { display: flex; justify-content: space-between; font-size: 11px; color: #5a635a; margin-top: 8px; }
+.practice-reference { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
+.practice-reference [lang="zh-CN"] { font-size: 26px; }
+.practice-reference .pinyin { font-size: 13px; }
+.practice-translation { font-size: 12px; color: #5a635a; margin: 4px 0 0; }
+.practice-instruction { font-size: 10.5px; color: #8a938a; margin: 6px 0 0; }
+.practice-blocks { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.character-practice-block { display: flex; gap: 12px; align-items: flex-start; }
+.practice-row-label { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 34px; padding-top: 4px; }
+.practice-row-glyph { font-size: 24px; }
+.practice-row-label .pinyin { font-size: 10px; }
+.writing-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; flex: 1; }
+.character-practice-block > div:last-child { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.writing-cell { width: 100%; height: auto; color: #919991; }
+.writing-cell .cell-cross { color: #b9c0b9; }
+.writing-cell .cell-diagonal { color: #c3c9c3; }
+.writing-cell .writing-glyph path { fill: #1a1f1a; }
+.writing-cell.trace .writing-glyph path { fill: #c8cfc8; }
+.writing-cell .writing-font-fallback { fill: #1a1f1a; font-family: var(--font-hanzi); }
+.writing-cell.trace .writing-font-fallback { fill: #c8cfc8; }
+.whole-text-block h3 { font-size: 12px; margin: 0 0 4px; }
+.whole-text-reference { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 2px; }
+.whole-text-token { display: flex; flex-direction: column; align-items: center; }
+.whole-text-token [lang="zh-CN"] { font-size: 18px; }
+.whole-text-token .pinyin { font-size: 9px; }
+.whole-text-row { margin-top: 4px; }
+.practice-paper-footer { border-top: 1px solid #dde2dd; margin-top: 10px; padding-top: 6px; }
+.practice-paper-footer p { font-size: 9px; color: #8a938a; margin: 0; }
+@media print {
+  @page { size: A4; margin: 0; }
+  body.practice-printing * { visibility: hidden; }
+  body.practice-printing .practice-pages, body.practice-printing .practice-pages * { visibility: visible; }
+  body.practice-printing .practice-sheet-root { position: absolute; inset: 0; overflow: visible; padding: 0; background: #fff; }
+  body.practice-printing .practice-pages { gap: 0; }
+  body.practice-printing .practice-page { width: 210mm; height: 296mm; aspect-ratio: auto; border: none; border-radius: 0; box-shadow: none; page-break-after: always; padding: 12mm 14mm; }
+}
