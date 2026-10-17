@@ -9,6 +9,7 @@ import { collections, filterWords, vocabularyKind } from '@/lib/mandarin';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
 import { useRecordScroll } from '@/lib/selection-scroll';
+import { includeSelectedRecord } from '@/lib/record-selection';
 type Filters = { q?: string; collection?: string; level?: string; status?: string };
 export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord } = useWorkspace();
@@ -21,14 +22,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const [adding, setAdding] = useState(false);
   const isMobile = useIsMobile();
   const linkedWord = items.find(w => w.id === initialWordId);
-  const kind = tab ?? (linkedWord ? vocabularyKind(linkedWord) : 'word');
+  const kind = linkedWord ? vocabularyKind(linkedWord) : tab ?? 'word';
   const categoryItems = items.filter(w => vocabularyKind(w) === kind);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   const levels = [...new Set(items.map(w => w.level))].sort();
-  const filtered = filterWords(categoryItems, query, collection, level, status, saved);
+  const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved), initialWordId);
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
-  useRecordScroll(initialWordId, items.length > 0);
+  useRecordScroll(selectedWord?.id ?? '', items.length > 0);
   const hasFilter = Boolean(query.trim() || collection !== 'All collections' || level !== 'All levels' || status !== 'All words');
   const reset = () => onFiltersChange?.({ q: '', collection: 'All collections', level: 'All levels', status: 'All words' });
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">YOUR PERSONAL WORD COLLECTION</div><h1>Words worth knowing.</h1><p>A new word. A new connection. Make it yours.</p></div><Button onClick={() => setAdding(true)}><Plus/>Add word</Button></div>

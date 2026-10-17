@@ -36,9 +36,11 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
 }
 export const LIBRARY_PAGE_SIZE = 48;
-export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE) {
+export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE, selectedId = '') {
   const pages = Math.max(1, Math.ceil(entries.length / size));
-  const current = Math.max(1, Math.min(page, pages));
+  const selectedIndex = entries.findIndex(entry => entry.id === selectedId);
+  const target = selectedIndex >= 0 ? Math.floor(selectedIndex / size) + 1 : page;
+  const current = Math.max(1, Math.min(Number.isFinite(target) ? Math.floor(target) : 1, pages));
   return { entries: entries.slice((current - 1) * size, current * size), pages, current };
 }
 

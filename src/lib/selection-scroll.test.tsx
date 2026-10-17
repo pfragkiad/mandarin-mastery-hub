@@ -17,10 +17,12 @@ describe('useRecordScroll', () => {
   beforeEach(() => {
     scrolled = [];
     scrollIntoView.mockClear();
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockReturnValue({ top: 1000, bottom: 1224, left: 0, right: 200, width: 200, height: 224, x: 0, y: 1000, toJSON: () => ({}) });
     Element.prototype.scrollIntoView = scrollIntoView as unknown as typeof Element.prototype.scrollIntoView;
   });
   afterEach(() => {
     cleanup();
+    vi.restoreAllMocks();
     delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView;
   });
 
@@ -32,12 +34,30 @@ describe('useRecordScroll', () => {
     expect(scrolled.at(-1)).toHaveAttribute('data-entry-id', 'Characters:水');
   });
 
-  it('does not scroll when the selection is unchanged (same-page clicks keep scroll position)', async () => {
+  it('reveals an offscreen card even when the same record is selected again', async () => {
     const { rerender } = render(<Harness id="Characters:喝" />);
     await vi.waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(1));
     rerender(<Harness id="Characters:喝" />);
+    await vi.waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(2));
+  });
+
+  it('does not move a fully visible card on selections or restored history', async () => {
+    vi.mocked(Element.prototype.getBoundingClientRect).mockReturnValue({ top: 100, bottom: 324, left: 0, right: 200, width: 200, height: 224, x: 0, y: 100, toJSON: () => ({}) });
+    const { rerender } = render(<Harness id="Characters:喝" />);
+    await new Promise(resolve => setTimeout(resolve, 60));
+    rerender(<Harness id="Characters:水" />);
+    await new Promise(resolve => setTimeout(resolve, 60));
+    expect(scrollIntoView).not.toHaveBeenCalled();
+  });
+
+  it('reveals the previous selected card when history returns to it', async () => {
+    const { rerender } = render(<Harness id="Characters:喝" />);
+    await vi.waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(1));
+    rerender(<Harness id="Characters:水" />);
+    await vi.waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(2));
     rerender(<Harness id="Characters:喝" />);
-    expect(scrollIntoView).toHaveBeenCalledTimes(1);
+    await vi.waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(3));
+    expect(scrolled.at(-1)).toHaveAttribute('data-entry-id', 'Characters:喝');
   });
 
   it('does nothing for an empty selection', () => {
