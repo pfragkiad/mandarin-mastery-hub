@@ -72,8 +72,9 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
       {component && <span className="daily-hero-ghost" aria-hidden="true" lang="zh-CN">{component}</span>}
       <div className="eyebrow daily-hero-label">CHARACTER OF THE DAY</div>
       {entry ? <>
+        <DailyPinyin entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin}/>
         <StrokeReveal hanzi={entry.hanzi}/>
-        <DailyMeta entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin}/>
+        <h2 className="daily-hero-meaning" title={entry.meaning}>{entry.meaning}</h2>
         <div className="daily-hero-actions">
           {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><Library/>Open in Glyphs</Link></Button>}
           <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>
@@ -84,11 +85,12 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
   </section>;
 }
 
-function DailyMeta({ entry, slow, showPinyin }: { entry: LibraryEntry; slow: boolean; showPinyin: boolean }) {
+/** The reading and its audio control on one line, above the character. */
+function DailyPinyin({ entry, slow, showPinyin }: { entry: LibraryEntry; slow: boolean; showPinyin: boolean }) {
   const [error, setError] = useState<string | null>(null);
   const available = usePronunciationAvailability(Boolean(characterRecording(entry.hanzi, entry.pinyin)), entry.pinyin);
-  return <div className="daily-hero-meta">
-    <div>{showPinyin && <span className="pinyin">{entry.pinyin}</span>}<h2 title={entry.meaning}>{entry.meaning}</h2></div>
+  return <div className="daily-hero-pinyin">
+    {showPinyin && <span className="pinyin">{entry.pinyin}</span>}
     <Button variant="ghost" size="icon" disabled={!available} aria-label={available ? `Listen to ${entry.hanzi}` : `No audio available for ${entry.hanzi}`} onClick={async () => setError(await playCharacter(entry.hanzi, slow, entry.pinyin))}><Volume2/></Button>
     {error && <p className="library-note" role="status">{error}</p>}
   </div>;
@@ -111,6 +113,6 @@ export function SavedStrip() {
   if (!records.length) return null;
   return <section className="saved-strip" aria-label="Pick up where you left off">
     <div className="eyebrow"><Bookmark size={13} aria-hidden="true"/>PICK UP WHERE YOU LEFT OFF</div>
-    <div className="saved-strip-row">{records.map(r => <Link key={r.id} to={r.to} search={r.search as never} className="saved-chip"><strong lang="zh-CN">{r.hanzi}</strong>{preferences.pinyin && r.pinyin && <span className="pinyin">{r.pinyin}</span>}</Link>)}</div>
+    <div className="saved-strip-row">{records.map(r => <Link key={r.id} to={r.to} search={r.search as never} className="saved-chip">{preferences.pinyin && r.pinyin && <span className="pinyin">{r.pinyin}</span>}<strong lang="zh-CN">{r.hanzi}</strong></Link>)}</div>
   </section>;
 }

@@ -93,14 +93,14 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       </div>
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
+          <div className="discovery-record-pinyin">
+            {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
+            <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
+          </div>
           <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" aria-label={`Open ${hanzi}`}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
-            <div>
-              {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
-              {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
-            </div>
+            {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
           </Link>
-          <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
         </div>
       ) : (
         <p className="library-note">Loading {meta.label.toLowerCase()}…</p>
