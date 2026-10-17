@@ -4,6 +4,8 @@ import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpe
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, LIBRARY_PAGE_SIZE, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';

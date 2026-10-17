@@ -1,9 +1,10 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
+import { countComponentReuse, reuseGroup, type ReuseGroup } from './component-reuse';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
-export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
+export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; reuseCount?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9575 };
 // Catalogue rows as raw tuples, grouped for search, flashcard decks and practice facts.
 export type ReferenceKind = 'Radical' | 'Component' | 'Character';
@@ -20,17 +21,18 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   if (hit && hit.version === catalog.version) return hit.entries;
   const source = kind === 'Strokes' ? catalog.strokes : kind === 'Radicals' ? catalog.radicals : kind === 'Components' ? catalog.components : catalog.characters;
   const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
+  const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
-    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
       ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
   });
   cache.set(kind, { version: catalog.version, entries });
   return entries;
 }
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false) {
-  return entries.filter(entry => includeScript(entry.script, includeTraditional) && normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)));
+export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, reuse?: ReuseGroup) {
+  return entries.filter(entry => includeScript(entry.script, includeTraditional) && normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
 }
 export const LIBRARY_PAGE_SIZE = 48;
 export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE) {
