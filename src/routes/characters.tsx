@@ -13,6 +13,7 @@ export const Route = createFileRoute('/characters')({
     const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
     const reuse = reuseGroups.find(group => group.value === search['reuse']); if (reuse) out.reuse = reuse.value;
     if (search['status'] === 'saved') out.status = 'saved';
+    if (search['py'] === 'pinyin') out.py = 'pinyin';
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
