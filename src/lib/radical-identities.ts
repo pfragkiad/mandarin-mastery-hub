@@ -25,11 +25,13 @@ export function radicalSearchGlyphs(glyph: string): string[] {
   if (searchVersion !== catalog.version) {
     searchIndex = {};
     for (const item of Object.values(catalog.radicalIdentities.identities)) {
-      searchIndex[item.glyph] ??= [];
-      searchIndex[item.glyph].push(...item.equivalentGlyphs);
+      const equivalents = searchIndex[item.glyph] ?? [];
+      equivalents.push(...item.equivalentGlyphs);
+      searchIndex[item.glyph] = equivalents;
       for (const radical of item.radicals) {
-        searchIndex[radical.glyph] ??= [];
-        searchIndex[radical.glyph].push(item.glyph);
+        const forms = searchIndex[radical.glyph] ?? [];
+        forms.push(item.glyph);
+        searchIndex[radical.glyph] = forms;
       }
     }
     for (const key of Object.keys(searchIndex)) searchIndex[key] = [...new Set(searchIndex[key])];

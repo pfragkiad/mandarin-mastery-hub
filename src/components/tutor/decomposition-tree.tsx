@@ -13,7 +13,7 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const destination = libraryDestination(node.glyph, preferences.includeTraditional);
   const identity = radicalIdentity(node.glyph);
   const exactRecord = card?.id.split(':').slice(1).join(':') === node.glyph;
-  const classification = identity.radicals.length ? `${identity.kind === 'canonical' ? 'Kangxi radical' : 'Kangxi radical form'} ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : 'Graphical component · no sourced Kangxi identity';
+  const classification = identity.radicals.length ? `${identity.kind === 'canonical' ? 'Kangxi radical' : 'Kangxi radical form'} ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : /^[?？]$/.test(node.glyph) ? 'Unknown or missing part' : /^\{\d+\}$/.test(node.glyph) ? 'Unencoded source component' : 'Graphical component · no sourced Kangxi identity';
   const dictionary = exactRecord && card?.meaning ? `Dictionary meaning: ${card.meaning}` : '';
   const facts = [classification, exactRecord ? card?.pinyin : '', dictionary].filter(Boolean).join(' · ');
   const glyph = card && destination

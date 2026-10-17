@@ -18,7 +18,7 @@
 - Keep filtering/pagination browser-safe and decompositions provenance-attached. Resolve Kangxi identities through exact sourced glyph/symbol mappings, never shape, normalization, dictionary text or containing-character assignments; preserve exact cards and link missing symbols only to unique canonical identities.
 - Derive component reuse from distinct parent-character decomposition trees and radical usage from imported dictionary-radical assignments once per catalogue version; share URL-backed usage groups while keeping counts independent of browsing filters and their provenance distinct.
 
-- Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
+- Share browser-safe preferences and explicit script metadata; never guess script from glyphs.
 - Share browser-safe Overview discovery and exact paginated links respecting script preferences.
 - Route all pronunciation through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin browser TTS, never auto-switching after a failed recording), so the external data plan's audio priority stays in one place.
 - Share pronunciation availability: unrecorded speech requires a known reading and confirmed Mandarin voice, so disabled controls never promise playable audio.
