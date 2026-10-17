@@ -27,3 +27,24 @@ export function overviewCharacterDestination(entry: LibraryEntry, entries: Libra
   const page = index < 0 ? 1 : Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
   return { tab, id: entry.id, ...(page > 1 ? { page } : {}) };
 }
+
+/** Day number in the learner's local calendar, so everyone sees the same pick on a given date. */
+export function localDayNumber(date: Date) {
+  return Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000);
+}
+
+/** Character of the day: a real simplified catalogue character that appears in imported vocabulary, chosen deterministically by date. */
+export function dailyCharacter(entries: LibraryEntry[], vocabulary: Word[], date: Date) {
+  const used = new Set(vocabulary.filter(word => word.script !== 'Traditional').flatMap(word => Array.from(word.hanzi)));
+  const pool = filterLibrary(entries, '', '', false, false).filter(entry => used.has(entry.hanzi) && entry.pinyin && entry.meaning);
+  const fallback = pool.length ? pool : filterLibrary(entries, '', '', false, false);
+  if (!fallback.length) return undefined;
+  const day = localDayNumber(date);
+  return fallback[((day * 2654435761) >>> 0) % fallback.length];
+}
+
+export function greeting(hour: number) {
+  if (hour >= 5 && hour < 12) return { hanzi: '早上好', pinyin: 'zǎoshang hǎo', english: 'Good morning' };
+  if (hour >= 12 && hour < 18) return { hanzi: '下午好', pinyin: 'xiàwǔ hǎo', english: 'Good afternoon' };
+  return { hanzi: '晚上好', pinyin: 'wǎnshang hǎo', english: 'Good evening' };
+}
