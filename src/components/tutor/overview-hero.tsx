@@ -45,12 +45,18 @@ function StrokeReveal({ hanzi }: { hanzi: string }) {
   </div>;
 }
 
-export function DailyCharacterHero({ children }: { children: React.ReactNode }) {
-  const { items, preferences, catalogVersion } = useWorkspace();
+export function useDailyCharacter() {
+  const { items, catalogVersion } = useWorkspace();
   const [now, setNow] = useState<Date>();
   useEffect(() => setNow(new Date()), []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const entries = useMemo(() => libraryEntries('Characters'), [catalogVersion]);
-  const entry = now ? dailyCharacter(entries, items, now) : undefined;
+  return { now, entry: now ? dailyCharacter(entries, items, now) : undefined };
+}
+
+export function DailyCharacterHero({ children }: { children: React.ReactNode }) {
+  const { preferences } = useWorkspace();
+  const { now, entry } = useDailyCharacter();
   const hello = greeting(now?.getHours() ?? 9);
   const component = entry?.decomposition?.root.children?.find(child => child.glyph && child.glyph !== entry.hanzi)?.glyph;
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;

@@ -7,6 +7,7 @@ import { vocabularyKind } from '@/lib/mandarin';
 import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { searchAll } from '@/lib/site-search';
+import { DailyCharacterHero, SavedStrip, useDailyCharacter } from './overview-hero';
 import { DiscoveryTile, type DiscoveryCategory } from './overview-discovery';
 
 const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['word', 'phrase', 'Characters', 'Components', 'Radicals'];
@@ -15,13 +16,14 @@ export function OverviewPage() {
   const { items, preferences } = useWorkspace();
   const [query, setQuery] = useState('');
   const hits = searchAll(items, query, preferences.includeTraditional);
+  const daily = useDailyCharacter().entry?.hanzi;
   return <div className="page-enter overview-page">
-    <div className="page-heading overview-heading"><h1>Your Mandarin workspace</h1></div>
-    <OverviewSearch query={query} setQuery={setQuery} hits={hits} includeTraditional={preferences.includeTraditional}/>
+    <DailyCharacterHero><OverviewSearch query={query} setQuery={setQuery} hits={hits} includeTraditional={preferences.includeTraditional}/></DailyCharacterHero>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
     </section>
-    <section className="overview-flashcards" aria-label="Play flashcards"><div className="flashcard-fan" aria-hidden="true"><span lang="zh-CN">学</span><span lang="zh-CN">习</span><Sparkles/></div><div><div className="eyebrow">A LITTLE CHALLENGE</div><h2>How much will you remember?</h2><p>A fresh round. A second chance at the ones you miss.</p></div><Button asChild className="overview-play"><Link to="/flashcards"><Play/>Play flashcards now <ArrowRight/></Link></Button></section>
+    <SavedStrip/>
+    <section className="overview-flashcards" aria-label="Play flashcards"><div className="flashcard-fan" aria-hidden="true"><span lang="zh-CN">学</span><span lang="zh-CN">{daily ?? '习'}</span><Sparkles/></div><div><div className="eyebrow">A LITTLE CHALLENGE</div><h2>How much will you remember?</h2><p>A fresh round. A second chance at the ones you miss.</p></div><Button asChild className="overview-play"><Link to="/flashcards"><Play/>Play flashcards now <ArrowRight/></Link></Button></section>
   </div>;
 }
 
