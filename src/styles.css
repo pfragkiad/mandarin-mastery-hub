@@ -309,6 +309,7 @@
 @media print {
   @page { size: A4; margin: 0; }
   body.practice-printing > *:not(.practice-sheet-root) { display: none !important; }
+  body.practice-printing .no-print { display: none !important; }
   body.practice-printing .practice-sheet-root { position: static; inset: auto; overflow: visible; padding: 0; background: #fff; }
   body.practice-printing .practice-pages { gap: 0; }
   body.practice-printing .practice-page { width: 210mm; height: 296mm; aspect-ratio: auto; border: none; border-radius: 0; box-shadow: none; page-break-after: always; padding: 12mm 14mm; }
