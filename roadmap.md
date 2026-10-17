@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Add optional per-character enrichment with checksum-gated source comparisons, teaching notes and component stroke highlighting; preserve catalogue and playback behavior.
+- [x] Add optional per-character enrichment with checksum-gated source comparisons, teaching notes and component stroke highlighting; verified 河/裹, incompatible 丁 fallback, mobile controls and paused playback; 153 tests pass. Upstream audit regeneration remains unavailable without its original scripts/inputs.
 - [x] Center flashcards in pinyin/audio → hanzi → translation order with back-only audio; verified long radical answers on desktop/phones and flip/listen/next-card behavior.
 - [x] Make writing playback pause/resume in place with the current stroke highlighted; verified frozen/resumed drawing, sequential continuation and fresh Reset for characters/radicals, plus individual-stroke playback.
 - [x] Show sourced official Kangxi indices on radical cards in the HSK index style; verified all 214 numbers, paginated selection and phone cards.
