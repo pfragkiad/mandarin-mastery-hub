@@ -90,6 +90,8 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const [playing, setPlaying] = useState(false);
   const [guide, setGuide] = useState(true);
   const [speed, setSpeed] = useState('1');
+  const speedRef = useRef(speed);
+  speedRef.current = speed;
   const [retry, setRetry] = useState(0);
   const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
   const [activeStroke, setActiveStroke] = useState<number | null>(null);
@@ -118,14 +120,17 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: Number(speed), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: Number(speedRef.current), delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
-  }, [character, speed, retry, theme]);
+  }, [character, retry, theme]);
+  // Hanzi Writer has no public speed setter; update the live options before each run.
+  const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = Number(speedRef.current); };
   const play = () => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
+    applySpeed(instance);
     instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
     // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
     instance.hideCharacter();
@@ -141,6 +146,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
+    applySpeed(instance);
     instance.cancelQuiz(); setPlaying(false); setActiveStroke(index);
     setMessage(`Stroke ${index + 1} of ${strokes.length}: ${strokes[index]?.pinyin ?? ''} — ${strokes[index]?.direction ?? ''}`);
     instance.showCharacter();
