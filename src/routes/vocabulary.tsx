@@ -1,5 +1,22 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): { q?: string; word?: string; tab?: 'word' | 'phrase' } => ({ ...(search['tab'] === 'word' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}), ...(typeof search['q'] === 'string' && search['q'] ? { q: search['q'] } : {}), ...(typeof search['word'] === 'string' && search['word'] ? { word: search['word'] } : {}) }), head: () => pageHead('Vocabulary', 'Discover Mandarin words and phrases, listen to pronunciation, and collect vocabulary for everyday life.'), component: VocabularyRoute });
-function VocabularyRoute() { const { q, word, tab } = Route.useSearch(); const navigate = Route.useNavigate(); return <VocabularyPage key={q ?? ''} {...(tab ? { tab } : {})} onTabChange={next => navigate({ search: prev => ({ ...prev, tab: next }), resetScroll: false })} onWordOpen={id => navigate({ search: prev => { const { word: _word, ...rest } = prev; return id ? { ...rest, word: id } : rest; }, resetScroll: false, ...(id ? {} : { replace: true }) })} initialQuery={q ?? ''} initialWordId={word ?? ''} />; }
+export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string };
+export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
+  ...(search['tab'] === 'word' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}),
+  ...(typeof search['q'] === 'string' && search['q'] ? { q: search['q'] } : {}),
+  ...(typeof search['word'] === 'string' && search['word'] ? { word: search['word'] } : {}),
+  ...(typeof search['page'] === 'number' ? { page: search['page'] } : {}),
+  ...(typeof search['collection'] === 'string' ? { collection: search['collection'] } : {}),
+  ...(typeof search['level'] === 'string' ? { level: search['level'] } : {}),
+  ...(typeof search['status'] === 'string' ? { status: search['status'] } : {}),
+}), head: () => pageHead('Vocabulary', 'Discover Mandarin words and phrases, listen to pronunciation, and collect vocabulary for everyday life.'), component: VocabularyRoute });
+function VocabularyRoute() {
+  const search = Route.useSearch();
+  const navigate = Route.useNavigate();
+  return <VocabularyPage initialQuery={search.q ?? ''} initialWordId={search.word ?? ''} tab={search.tab} page={search.page} collection={search.collection} level={search.level} status={search.status}
+    onTabChange={tab => navigate({ search: { tab }, resetScroll: false })}
+    onFiltersChange={(patch, replace = false) => navigate({ search: prev => ({ ...prev, ...patch, page: 1, word: undefined }), resetScroll: false, replace })}
+    onPageChange={page => navigate({ search: prev => ({ ...prev, page, word: undefined }), resetScroll: false })}
+    onWordOpen={(id, page) => navigate({ search: prev => ({ ...prev, word: id ?? undefined, ...(page ? { page } : {}) }), resetScroll: false, replace: !id })} />;
+}
