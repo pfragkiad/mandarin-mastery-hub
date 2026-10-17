@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Eye, EyeOff, Pause, PenLine, Play, RotateCcw } from 'lucide-react';
+import { Eye, EyeOff, Lightbulb, Pause, PenLine, Play, Printer, RotateCcw } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { strokeExamples } from '@/lib/stroke-examples';
 import { useWorkspace } from './workspace';
-import { RecordDetailTitle } from './record-detail-title';
+import { PracticeSheet } from './practice-sheet';
 import { SPEEDS, DEFAULT_SPEED_INDEX } from './writing-practice';
 
 const toHex = (value: string) => {
@@ -26,6 +26,8 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   const [ready, setReady] = useState(false);
   const [mode, setMode] = useState<'idle' | 'watch' | 'trace' | 'memory'>('idle');
   const [message, setMessage] = useState('Loading stroke…');
+  const [sheet, setSheet] = useState(false);
+  const [outline, setOutline] = useState<string | null>(null);
   const [guide, setGuide] = useState(true);
   const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
   const speedRef = useRef(SPEEDS[speedIndex] ?? 0.5);
@@ -51,6 +53,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
             .then((data: { strokes: string[]; medians: number[][][] }) => {
               const path = data.strokes[example.strokeIndex]; const median = data.medians[example.strokeIndex];
               if (!path || !median) throw new Error('missing stroke');
+              if (active) setOutline(path);
               onLoad({ strokes: [path], medians: [median] } as never);
             })
             .catch(err => onError(err));
@@ -80,7 +83,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   const reset = () => { const w = writer.current; if (!w) return; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
-  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · STROKE PRACTICE</div><h1>Practice a stroke.</h1></div></div><div className="practice-layout">
+  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
     <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div>
       {example ? <>
         <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/></div>
@@ -92,8 +95,15 @@ export function StrokePractice({ glyph }: { glyph: string }) {
         </div>
         <label className="writer-speed">Animation speed<input type="range" min={0} max={SPEEDS.length - 1} step={1} value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{SPEEDS[speedIndex]}×</span></label>
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
-    </section><section className="practice-info"><span className="eyebrow">STROKE REFERENCE</span><RecordDetailTitle hanzi={glyph} pinyin={entry.pinyin} meaning={entry.meaning} pinyinFallback="—"/><p className="catalog-record-note">{entry.note.split(' · ')[0]}</p>
-      {example && <p className="catalog-record-note">Shown as stroke {example.strokeIndex + 1} of <Link to="/strokes" search={{ character: example.character }} lang="zh-CN">{example.character}</Link>.</p>}
-      <p className="detail-footnote">Source · Unicode 18.0 Appendix F{example ? <><br/>Outline · Hanzi Writer Data 2.0.1 (Make Me a Hanzi)</> : null}</p></section>
+    </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>
+      <h2>Get to know <span lang="zh-CN">{glyph}</span></h2>
+      <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">Stroke</span></p>
+      <p>Every stroke has a starting point and a direction. Watch how it moves, then practice tracing it yourself.</p>
+      <div className="character-facts"><div><strong>1</strong><span>Stroke</span></div><div><strong lang="zh-CN">{entry.note.split(' · ')[0] || '—'}</strong><span>Name</span></div><div>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}<span>{example ? `Stroke ${example.strokeIndex + 1} of` : 'Example'}</span></div></div>
+      <Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button>
+      <div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Find the starting point first, then keep one smooth movement until the stroke ends. Press a little at the start and ease off where it tapers.</p></div>
+      <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
+    </section>
+    {sheet && outline && <PracticeSheet text={glyph} pinyin={entry.pinyin || undefined} meaning={entry.meaning || undefined} outlines={{ [glyph]: { strokes: [outline] } }} onClose={() => setSheet(false)}/>}
   </div></div>;
 }
