@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
@@ -123,7 +124,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
     } finally { setPrinting(false); }
   };
   const fallback = Object.values(models.assets).some(asset => asset === null);
-  return (
+  return createPortal(
     <div className="practice-sheet-root" role="dialog" aria-modal="true" aria-label="Printable handwriting practice sheet">
       <div className="practice-preview-controls no-print">
         <div className="practice-controls-top">
@@ -193,6 +194,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
           </article>
         ))}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
