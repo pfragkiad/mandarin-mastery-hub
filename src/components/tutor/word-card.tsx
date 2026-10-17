@@ -21,8 +21,10 @@ function SentenceCharacters({ sentence, onNavigate }: { sentence: string; onNavi
     return <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Characters`} onClick={onNavigate}>{ch}</Link>;
   })}</p>;
 }
-export function WordCard({ word, list = false, initiallyOpen = false }: { word: Word; list?: boolean; initiallyOpen?: boolean }) {
-  const [open, setOpen] = useState(initiallyOpen);
+export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void }) {
+  const [internalOpen, setInternalOpen] = useState(initiallyOpen);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = onOpenChange ?? setInternalOpen;
   const [audioError, setAudioError] = useState<string | null>(null);
   const [canTts, setCanTts] = useState(false);
   const request = { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null };
