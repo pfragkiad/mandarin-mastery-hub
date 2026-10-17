@@ -59,4 +59,12 @@ describe('Overview random characters', () => {
   it('handles an empty catalogue without inventing a character', () => {
     expect(randomOverviewCharacter([])).toBeUndefined();
   });
+  it('selects a component independently and opens its exact component page', () => {
+    const components = entries.map((entry, i) => ({ ...entry, id: `Components:${i}` }));
+    const component = randomOverviewCharacter(components, false, 'Components:1', () => 0);
+    expect(component?.id).toBe('Components:2');
+    const last = components[49];
+    if (!last) throw new Error('Expected component');
+    expect(overviewCharacterDestination(last, components, false, 'Components')).toEqual({ tab: 'Components', id: 'Components:49', page: 2 });
+  });
 });
