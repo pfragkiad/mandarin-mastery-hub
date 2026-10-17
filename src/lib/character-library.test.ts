@@ -39,6 +39,10 @@ describe('Catalogue requirements', () => {
     expect(filterLibrary(libraryEntries('Characters'), 'wo').map(e => e.hanzi)).toContain('我');
     expect(filterLibrary(libraryEntries('Radicals'), 'water').map(e => e.hanzi)).toContain('水');
   });
+  it('can restrict the search to pinyin only', () => {
+    expect(filterLibrary(libraryEntries('Radicals'), 'shui', '', false, false, undefined, undefined, true).map(e => e.hanzi)).toContain('水');
+    expect(filterLibrary(libraryEntries('Radicals'), 'water', '', false, false, undefined, undefined, true).map(e => e.hanzi)).not.toContain('水');
+  });
   it('keeps large catalogues bounded to one page', () => {
     const entries = Array.from({ length: 9564 }, (_, i) => ({ id: String(i), hanzi: String(i), pinyin: '', meaning: '', note: '' }));
     expect(libraryPage(entries, 2).entries[0]?.id).toBe('48');

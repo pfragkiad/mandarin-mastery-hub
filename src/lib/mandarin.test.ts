@@ -3,6 +3,10 @@ import { words, filterWords, collections } from './mandarin';
 describe('Vocabulary filtering', () => {
  it('loads all 745 imported vocabulary entries', () => { expect(words).toHaveLength(745); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
+ it('can restrict the search to pinyin only', () => {
+   expect(filterWords(words, 'shui', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).toContain('水');
+   expect(filterWords(words, 'water', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).not.toContain('水');
+ });
  it('restricts results to saved words', () => { const id = words[0]!.id; expect(filterWords(words,'','All collections','All levels','Saved words',[id]).map(w => w.id)).toEqual([id]); });
  it('shows category names without the sort prefix', () => { expect(collections).toContain('Numbers & quantities'); });
 });
