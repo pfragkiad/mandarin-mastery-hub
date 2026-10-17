@@ -18,11 +18,13 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
   const headStyle = { '--detail-chars': String(hanzi.length || 1) } as CSSProperties;
   return <div className="catalog-detail-title">
     <div className="catalog-detail-head" style={headStyle}>
-      <span className="pinyin">{pinyin || pinyinFallback}</span>
+      <div className="catalog-detail-pinyin-row">
+        <span className="pinyin">{pinyin || pinyinFallback}</span>
+        {audio}
+      </div>
       <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>
       <h2>{meaning || meaningFallback}</h2>
       {traditional && <span className="traditional-label">Traditional</span>}
     </div>
-    {audio}
   </div>;
 }
