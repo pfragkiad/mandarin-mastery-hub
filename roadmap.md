@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Colour the Chinese character and meaning in the accent green when hovering or keyboard-focusing a random card; verify in both themes.
 - [x] Exclude traditional forms from all Overview random picks (word, character, component) regardless of the browsing preference; verify with tests and live shuffles.
 - [x] Remove Overview banner, compact random cards without metadata/detail lines, and add clickable Components total; verify desktop and phone navigation.
 - [x] Replace banner stars/wand with glyph shortcuts, link totals, and show three bordered random cards; verify navigation and layouts.
