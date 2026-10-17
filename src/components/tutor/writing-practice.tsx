@@ -61,6 +61,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
                   className={`stroke-chip${activeStroke === i ? ' active' : ''}`}
                   title={`Play stroke ${i + 1}`}
                   aria-label={`Play stroke ${i + 1}`}
+                  aria-current={activeStroke === i ? 'step' : undefined}
                   onClick={() => onPlay(i)}
                 >
                   <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
@@ -92,6 +93,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
+  const [paused, setPaused] = useState(false);
   const [guide, setGuide] = useState(true);
   // The slider picks one of the fixed speeds below; 0.5× (index 1) is the default.
   const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
@@ -104,7 +106,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   useEffect(() => {
     let active = true;
     animationRun.current += 1;
-    setReady(false); setPlaying(false); setMessage('Loading stroke order…');
+    setReady(false); setPlaying(false); setPaused(false); setMessage('Loading stroke order…');
     setStrokes([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
     import('hanzi-writer').then(({ default: Writer }) => {
@@ -129,7 +131,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
       const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
-    return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
+    return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; };
   }, [character, retry, theme]);
   // Hanzi Writer has no public speed setter; update the live options before each run.
   const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
@@ -137,31 +139,46 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const strokeMessage = (i: number) => `Stroke ${i + 1} of ${strokes.length}: ${strokes[i]?.pinyin ?? ''} — ${strokes[i]?.direction ?? ''}`;
   const play = () => {
     const instance = writer.current; if (!instance) return;
+    if (paused) {
+      applySpeed(instance); setPaused(false); setPlaying(true);
+      if (activeStroke !== null) setMessage(strokeMessage(activeStroke));
+      void instance.resumeAnimation();
+      return;
+    }
     const run = ++animationRun.current;
     applySpeed(instance);
-    instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
+    instance.cancelQuiz(); setPaused(false); setPlaying(true); setMessage('Follow each stroke in order.');
     // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
     instance.hideCharacter();
     const step = (i: number) => {
       if (animationRun.current !== run) return;
-      if (i >= strokes.length) { setPlaying(false); setActiveStroke(null); setMessage('Your turn. Ready to write it from memory?'); return; }
+      if (i >= strokes.length) { setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Your turn. Ready to write it from memory?'); return; }
       setActiveStroke(i);
       setMessage(strokeMessage(i));
       instance.animateStroke(i, { onComplete: () => step(i + 1) });
     };
     step(0);
   };
-  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
+  const pause = () => {
+    if (!writer.current) return;
+    void writer.current.pauseAnimation(); setPlaying(false); setPaused(true);
+    setMessage(`Paused. ${activeStroke !== null ? strokeMessage(activeStroke) : ''}`);
+  };
+  const reset = () => {
+    animationRun.current += 1; writer.current?.cancelQuiz(); void writer.current?.showCharacter();
+    setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Ready for a fresh start.');
+  };
+  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
     applySpeed(instance);
-    instance.cancelQuiz(); setPlaying(false); setActiveStroke(index);
+    instance.cancelQuiz(); setPlaying(true); setPaused(false); setActiveStroke(index);
     setMessage(strokeMessage(index));
     instance.showCharacter();
-    instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setActiveStroke(null); } });
+    instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setPaused(false); setActiveStroke(null); } });
   };
-  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? () => { animationRun.current += 1; writer.current?.pauseAnimation(); setPlaying(false); setActiveStroke(null); setMessage('Paused. Play to start again.'); } : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={() => { animationRun.current += 1; writer.current?.cancelQuiz(); writer.current?.showCharacter(); setPlaying(false); setActiveStroke(null); setMessage('Ready for a fresh start.'); }}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke}/></section>;
+  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 

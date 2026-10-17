@@ -41,7 +41,8 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const [ready, setReady] = useState(false);
-  const [mode, setMode] = useState<'idle' | 'watch' | 'trace' | 'memory'>('idle');
+  const [mode, setMode] = useState<'idle' | 'watch' | 'paused' | 'trace' | 'memory'>('idle');
+  const animationRun = useRef(0);
   const [message, setMessage] = useState('Loading stroke…');
   const [sheet, setSheet] = useState(false);
   const [outline, setOutline] = useState<string | null>(null);
@@ -53,6 +54,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   useEffect(() => {
     if (!example || !target.current) return;
     let active = true;
+    animationRun.current += 1;
     const node = target.current;
     node.innerHTML = ''; setReady(false); setMode('idle'); setMessage('Loading stroke…');
     import('hanzi-writer').then(({ default: Writer }) => {
@@ -79,17 +81,23 @@ export function StrokePractice({ glyph }: { glyph: string }) {
         onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); },
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
-    return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; node.innerHTML = ''; };
+    return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; node.innerHTML = ''; };
   }, [example, theme, Boolean(entry)]);
 
   const setSpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
   const watch = () => {
     const w = writer.current; if (!w) return;
+    if (mode === 'paused') {
+      setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
+      void w.resumeAnimation(); return;
+    }
+    const run = ++animationRun.current;
     w.cancelQuiz(); setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
-    void w.animateCharacter({ onComplete: () => { setMode('idle'); setMessage('Now trace it yourself, or watch again.'); } });
+    void w.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setMode('idle'); setMessage('Now trace it yourself, or watch again.'); } });
   };
   const practice = () => {
     const w = writer.current; if (!w) return;
+    animationRun.current += 1;
     setMode('trace'); setMessage(guide ? 'Trace the stroke over the guide.' : 'Write the stroke from memory.');
     void w.quiz({
       showHintAfterMisses: 2,
@@ -97,7 +105,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
       onComplete: () => { setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
-  const reset = () => { const w = writer.current; if (!w) return; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
+  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
@@ -106,7 +114,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
         <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/></div>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls">
-          <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('idle'); setMessage('Paused. Play to start again.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : 'Play stroke'}</Button>
+          <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
           <Button disabled={!ready} variant="outline" size="icon" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/></Button>
           <Button disabled={!ready} variant="outline" onClick={practice}><PenLine/>Practice</Button>
         </div>
