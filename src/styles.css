@@ -182,6 +182,13 @@
 .decomposition-layout small { font-size: 12px; }
 .decomposition-note { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
+.vocabulary-parts > li + li { margin-top: 18px; }
+.vocabulary-parts > li > .decomposition-part { min-height: 46px; }
+.vocabulary-part-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.vocabulary-part-facts .pinyin { width: auto; font-size: 12px; }
+.vocabulary-part-facts small { color: var(--foreground); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.vocabulary-parts .decomposition-glyph { height: auto; flex-shrink: 0; white-space: normal; }
+.vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 .decomposition-pending { padding: 24px 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.8; }
 .decomposition-pending svg { margin-bottom: 12px; }
 .decomposition-pending small { display: block; font-size: 11px; margin-top: 6px; }
