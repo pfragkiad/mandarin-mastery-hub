@@ -61,6 +61,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
                   className={`stroke-chip${activeStroke === i ? ' active' : ''}`}
                   title={`Play stroke ${i + 1}`}
                   aria-label={`Play stroke ${i + 1}`}
+                  aria-current={activeStroke === i ? 'step' : undefined}
                   onClick={() => onPlay(i)}
                 >
                   <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
