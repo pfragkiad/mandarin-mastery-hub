@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Replace the Overview category icons with representative Chinese glyphs (词 句 字 口 氵) that follow the font and theme; verify both themes, all fonts, links and phones.
 - [x] Colour the Chinese character and meaning in the accent green when hovering or keyboard-focusing a random card; verify in both themes.
 - [x] Exclude traditional forms from all Overview random picks (word, character, component) regardless of the browsing preference; verify with tests and live shuffles.
 - [x] Remove Overview banner, compact random cards without metadata/detail lines, and add clickable Components total; verify desktop and phone navigation.
