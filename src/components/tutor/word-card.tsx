@@ -28,11 +28,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const close = onNavigate ?? (() => {});
   return <>
     <div className="eyebrow">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}</div>
-    <div className="catalog-detail-title">
-      <strong lang="zh-CN" className={word.script === 'Traditional' ? 'traditional-character' : ''}>{word.hanzi}</strong>
-      <div><span className="pinyin">{word.pinyin || 'Pinyin not recorded'}</span><h2>{word.meaning}</h2>{word.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div>
-      <Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>
-    </div>
+    <RecordDetailTitle hanzi={word.hanzi} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
+
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
