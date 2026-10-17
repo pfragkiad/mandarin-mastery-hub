@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Unify radical/component usage filters and show filtered totals directly above the cards; verify history and counts.
 - [x] Add component reuse filter and compact labels; verify category rules and browser history.
 - [x] Open exact decomposition records with consistent browser back/forward history.
 - [x] Expand library pages to 48 records (eight rows at six columns) and verify navigation.
