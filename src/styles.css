@@ -403,5 +403,5 @@
 }
 
 /* Shared mini-footer provenance line: same small capitals treatment as .detail-footnote. */
-.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7; letter-spacing: .04em; text-transform: uppercase; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 18px; }
-.decomposition-section:has(.detail-footnote) + .source-note { border-top: 0; padding-top: 0; margin-top: 10px; }
+p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7; letter-spacing: .04em; text-transform: uppercase; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 18px; }
+.decomposition-section:has(.detail-footnote) + p.source-note { border-top: 0; padding-top: 0; margin-top: 10px; }
