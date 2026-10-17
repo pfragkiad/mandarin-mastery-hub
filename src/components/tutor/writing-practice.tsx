@@ -80,8 +80,9 @@ function StrokeGuide({ strokes, onPlay, activeStroke }: { strokes: StrokeInfo[];
     </div>
   );
 }
-// Animation speeds offered by the slider, slowest to fastest. Index 1 (0.5×) is the default.
-const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
+// Animation speeds offered by the slider, slowest to fastest.
+export const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
+export const DEFAULT_SPEED_INDEX = 1; // 0.5×
 
 export function WritingPractice({ character, onStrokeCount }: { character: string; onStrokeCount?: (count: number) => void }) {
   const { theme } = useWorkspace();
@@ -93,7 +94,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const [playing, setPlaying] = useState(false);
   const [guide, setGuide] = useState(true);
   // The slider picks one of the fixed speeds below; 0.5× (index 1) is the default.
-  const [speedIndex, setSpeedIndex] = useState(1);
+  const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
   const speed = SPEEDS[speedIndex] ?? 1;
   const speedRef = useRef(speed);
   speedRef.current = speed;
