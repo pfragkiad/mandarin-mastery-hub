@@ -28,7 +28,7 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
   return <div className="enrichment-notes">
     <div className="enrichment-note"><h4 className="eyebrow">SOURCE CHECK</h4>
       <p>{comparisonNotes[record.comparison.status]}</p>
-      {record.comparison.status === 'different-G-expression' && record.comparison.alternatives.map((alternative, index) =>
+      {(record.comparison.status === 'different-G-expression' || record.comparison.status === 'current-incomplete' || record.comparison.status === 'G-incomplete-or-unparseable') && record.comparison.alternatives.map((alternative, index) =>
         <p className="enrichment-expression" key={index}><span lang="zh-CN">{alternative.expression}</span><small>{alternative.qualifiers || 'Unqualified'} · {alternative.directG ? 'Direct G' : alternative.virtualG ? 'Virtual G' : 'Other regional expression'}</small></p>)}
       <p className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</p>
     </div>
