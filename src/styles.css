@@ -272,7 +272,8 @@
 .practice-preview-controls .filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--card); }
 .practice-preview-controls .filters label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted-foreground); }
 .practice-preview-controls .filters select { height: 38px; padding: 0 10px; background: var(--background); border: 1px solid var(--border); border-radius: 6px; color: var(--foreground); }
-.practice-preview-controls .filters .checkbox { flex-direction: row; align-items: center; gap: 8px; height: 38px; }
+.practice-preview-controls .filters .toggle { display: flex; flex-direction: row; align-items: center; gap: 10px; height: 38px; font-size: 12px; color: var(--foreground); }
+.practice-preview-controls .filters .toggle label { display: inline; font-size: 12px; color: var(--foreground); cursor: pointer; }
 .practice-pages { display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .practice-page { width: min(100%, 794px); aspect-ratio: 210 / 287; background: #fff; color: #1a1f1a; border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 10px 34px rgb(0 0 0 / .18); padding: 34px 38px; display: flex; flex-direction: column; }
 .practice-paper-heading { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1a1f1a; padding-bottom: 8px; }
