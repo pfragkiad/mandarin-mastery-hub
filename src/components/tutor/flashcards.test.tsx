@@ -1,12 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { FlashcardsPage } from './flashcards';
+import { playPronunciation } from '@/lib/audio';
 
-vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'Level 1' }], preferences: { includeTraditional: false } }) }));
+vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'Level 1', audio: { url: 'https://example.com/hello.mp3', source: 'Test', license: 'Test' } }], preferences: { includeTraditional: false } }) }));
+vi.mock('@/lib/audio', async importOriginal => ({ ...await importOriginal<typeof import('@/lib/audio')>(), playPronunciation: vi.fn() }));
 vi.mock('@/lib/mandarin', () => ({ collections: ['Greetings'], speak: vi.fn() }));
 vi.mock('@/lib/character-library', () => ({ referenceCatalog: [] }));
 
 describe('Flashcard front pinyin', () => {
+  it('offers audio only on the back and plays the attached recording without flipping', () => {
+    render(<FlashcardsPage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
+    expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Listen to 你好' }));
+    expect(playPronunciation).toHaveBeenCalledWith(expect.objectContaining({ text: '你好', reading: 'nǐ hǎo', audio: expect.objectContaining({ url: 'https://example.com/hello.mp3' }) }), undefined);
+    expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
+  });
   it('can reveal and hide pinyin on the Chinese front without restarting the deck', () => {
     render(<FlashcardsPage />);
     fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
