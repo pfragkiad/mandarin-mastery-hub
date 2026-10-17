@@ -1,6 +1,7 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
+import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -35,7 +36,7 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, reuse?: ReuseGroup, savedIds?: readonly string[], pinyinOnly = false) {
   const saved = savedIds ? new Set(savedIds) : undefined;
-  return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
+  return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi)].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
 }
 export const LIBRARY_PAGE_SIZE = 48;
 export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE, selectedId = '') {
@@ -54,6 +55,14 @@ export function glyphIndex(): Record<string, { kind: LibraryKind; id: string; pi
   const index: Record<string, { kind: LibraryKind; id: string; pinyin: string; meaning: string }> = {};
   for (const kind of ['Radicals', 'Characters', 'Components'] as LibraryKind[]) {
     for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id, pinyin: entry.pinyin, meaning: entry.meaning };
+  }
+  // Missing symbol records may link to a unique sourced canonical identity.
+  // Existing exact records remain intact; ambiguous identities never pick a radical.
+  for (const identity of Object.values(catalog.radicalIdentities.identities)) {
+    if (identity.glyph in index || identity.radicals.length !== 1) continue;
+    const radical = identity.radicals[0];
+    const target = radical ? index[radical.glyph] : undefined;
+    if (target?.kind === 'Radicals') index[identity.glyph] = target;
   }
   glyphCache.version = catalog.version;
   glyphCache.index = index;
