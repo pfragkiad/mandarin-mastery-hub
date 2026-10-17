@@ -308,6 +308,7 @@
   .overview-page .journey-banner { min-height: 250px; }
   .overview-page .banner-copy { padding: 25px 22px; }
   .overview-page .banner-copy h2 { font-size: 30px; }
+  .overview-page .banner-seal { top: 16px; right: 16px; bottom: auto; }
   .overview-study-row, .overview-library-search { grid-template-columns: minmax(0,1fr); gap: 25px; }
   .overview-featured.daily-word { border-right: 0; border-bottom: 1px solid var(--border); padding: 0 0 25px; }
   .overview-featured-word { min-height: 130px; }
