@@ -11,6 +11,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { RecordCardFooter } from './record-card-footer';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
 import { SentenceExample } from './sentence-example';
+import { RecordDetailTitle } from './record-detail-title';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side

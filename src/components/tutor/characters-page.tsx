@@ -16,6 +16,7 @@ import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
 import { DecompositionTree } from './decomposition-tree';
 import { GlyphUsageExamples } from './glyph-usage';
+import { RecordDetailTitle } from './record-detail-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
