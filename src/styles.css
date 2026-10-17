@@ -418,7 +418,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Glyphs reuse the word-card body, grid tracks and footer. */
 .catalog-entry-grid { grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; }
 .catalog-card { display: flex; flex-direction: column; }
-.catalog-card .word-card-top { min-height: 33px; padding: 10px 12px 0 16px; }
+.catalog-card .word-card-top { padding: 10px 12px 0 16px; }
 .catalog-card .catalog-source-icon { position: static; width: 13px; height: 13px; flex-shrink: 0; }
 .catalog-card .catalog-entry { width: 100%; height: auto; min-height: 0; flex: 1; padding: 12px 16px 16px; gap: 12px; border: 0; background: transparent; border-radius: 0; box-shadow: none; align-items: flex-start; justify-content: space-between; }
 .catalog-card .word-character { font-size: 36px; min-width: 0; max-width: 100%; }
@@ -438,8 +438,19 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:580px) {
   .catalog-entry-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .catalog-card .word-card-top { padding-left: 12px; }
-  .catalog-card .catalog-entry { padding: 10px 12px 14px; min-height: 128px; }
+  .catalog-card .catalog-entry { padding: 10px 12px 14px; }
   .catalog-card .word-character { font-size: 30px; }
   .catalog-card .word-card-bottom { margin: 0 12px; }
   .glyph-category-row > [role='tablist'] { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); flex-basis: 100%; overflow: visible; }
 }
+
+/* One stable frame for compact word and glyph cards; phrases remain content-sized. */
+.vocab-word-grid:not(.list-view) .word-card, .catalog-card {
+  --record-card-height: 224px;
+  display: grid;
+  grid-template-rows: 33px minmax(0, 1fr) 40px;
+  height: var(--record-card-height);
+}
+.vocab-word-grid:not(.list-view) .word-card-top, .catalog-card .word-card-top { min-height: 0; }
+.vocab-word-grid:not(.list-view) .word-open, .catalog-card .catalog-entry { min-height: 0; height: 100%; }
+.vocab-word-grid:not(.list-view) .word-card-bottom, .catalog-card .word-card-bottom { min-height: 0; height: 40px; }
