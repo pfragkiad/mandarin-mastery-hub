@@ -27,7 +27,7 @@ function useStrokeModels(tokens: PracticeToken[]) {
   return { assets: state.key === key ? state.assets : {}, loading: state.key !== key || state.loading };
 }
 
-function WritingCell({ token, kind, diagonal, assets }: { token?: PracticeToken; kind: 'model' | 'trace' | 'blank'; diagonal: boolean; assets: Record<string, StrokeModel> }) {
+function WritingCell({ token, kind, diagonal, assets }: { token?: PracticeToken | undefined; kind: 'model' | 'trace' | 'blank'; diagonal: boolean; assets: Record<string, StrokeModel> }) {
   const model = token ? assets[token.text] : null;
   const glyph = kind === 'blank' ? '' : (token?.text ?? '');
   return (
@@ -55,13 +55,17 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
           {pinyin && block.token.pinyin && <span className="pinyin">{block.token.pinyin}</span>}
         </div>
         <div>
-          {Array.from({ length: block.rows }, (_, r) => (
-            <div className="writing-row" key={r}>
-              {Array.from({ length: 8 }, (_, i) => (
-                <WritingCell key={i} token={block.token} kind={r === 0 && i === 0 ? 'model' : i < (r === 0 ? 3 : 2) ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
-              ))}
-            </div>
-          ))}
+          {Array.from({ length: block.rows }, (_, r) => {
+            // Graduated difficulty: model first, then tracing, then copying, last rows from memory.
+            const traceCells = r === 0 ? 2 : r < Math.ceil(block.rows / 2) ? 2 : 0;
+            return (
+              <div className="writing-row" key={r}>
+                {Array.from({ length: 8 }, (_, i) => (
+                  <WritingCell key={i} token={block.token} kind={r === 0 && i === 0 ? 'model' : i < (r === 0 ? 3 : traceCells) ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
+                ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -84,7 +88,7 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
 }
 
 /** Printable A4 handwriting sheet for a character, word or phrase. Rendered as an overlay; printing hides the app. */
-export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string; meaning?: string; onClose: () => void }) {
+export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string | undefined; meaning?: string | undefined; onClose: () => void }) {
   const readings = pinyin?.trim().split(/\s+/) ?? [];
   const tokens = useMemo<PracticeToken[]>(() => {
     const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿]/.test(ch));
@@ -97,6 +101,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
   const [printing, setPrinting] = useState(false);
   const models = useStrokeModels(tokens);
   const pages = useMemo(() => buildPracticePages(tokens, rows), [tokens, rows]);
+  const singleCharacter = new Set(tokens.map(t => t.text)).size === 1;
   useEffect(() => {
     document.body.classList.add('practice-printing');
     const previous = document.title;
@@ -129,13 +134,15 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
         </div>
         <div className="filters panel">
-          <label>
-            Rows per character
-            <select value={rows} onChange={e => setRows(Number(e.target.value) as 1 | 2)}>
-              <option value="1">1 row</option>
-              <option value="2">2 rows</option>
-            </select>
-          </label>
+          {!singleCharacter && (
+            <label>
+              Rows per character
+              <select value={rows} onChange={e => setRows(Number(e.target.value) as 1 | 2)}>
+                <option value="1">1 row</option>
+                <option value="2">2 rows</option>
+              </select>
+            </label>
+          )}
           <label>
             Writing guides
             <select value={diagonal ? 'diagonal' : 'cross'} onChange={e => setDiagonal(e.target.value === 'diagonal')}>
@@ -175,7 +182,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
                 {showPinyin && pinyin && <span className="pinyin">{pinyin}</span>}
               </div>
               {showMeaning && meaning && <p className="practice-translation">{meaning}</p>}
-              <p className="practice-instruction">Read the model. Trace the light characters. Write in the empty squares.</p>
+              <p className="practice-instruction">{singleCharacter ? 'Read the model. Trace the light characters, copy them, then write the last rows from memory.' : 'Read the model. Trace the light characters. Write in the empty squares.'}</p>
             </header>
             <div className="practice-blocks">
               {page.blocks.map((block, j) => <PracticeRows key={j} block={block} diagonal={diagonal} pinyin={showPinyin} assets={models.assets} />)}
