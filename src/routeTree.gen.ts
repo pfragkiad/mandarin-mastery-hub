@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CharactersRouteImport } from './routes/characters'
+import { Route as DrawingRouteImport } from './routes/drawing'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const CharactersRoute = CharactersRouteImport.update({
   id: '/characters',
   path: '/characters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DrawingRoute = DrawingRouteImport.update({
+  id: '/drawing',
+  path: '/drawing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FlashcardsRoute = FlashcardsRouteImport.update({
@@ -56,6 +62,7 @@ const VocabularyRoute = VocabularyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
+  '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
+  '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
+  '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/characters'
+    | '/drawing'
     | '/flashcards'
     | '/references'
     | '/settings'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/characters'
+    | '/drawing'
     | '/flashcards'
     | '/references'
     | '/settings'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/characters'
+    | '/drawing'
     | '/flashcards'
     | '/references'
     | '/settings'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CharactersRoute: typeof CharactersRoute
+  DrawingRoute: typeof DrawingRoute
   FlashcardsRoute: typeof FlashcardsRoute
   ReferencesRoute: typeof ReferencesRoute
   SettingsRoute: typeof SettingsRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/characters'
       fullPath: '/characters'
       preLoaderRoute: typeof CharactersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drawing': {
+      id: '/drawing'
+      path: '/drawing'
+      fullPath: '/drawing'
+      preLoaderRoute: typeof DrawingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/flashcards': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CharactersRoute: CharactersRoute,
+  DrawingRoute: DrawingRoute,
   FlashcardsRoute: FlashcardsRoute,
   ReferencesRoute: ReferencesRoute,
   SettingsRoute: SettingsRoute,
