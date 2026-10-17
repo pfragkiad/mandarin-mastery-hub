@@ -18,6 +18,16 @@ describe('Catalogue requirements', () => {
   });
   it('imports all 38 stroke types', () => expect(libraryEntries('Strokes')).toHaveLength(38));
   it('imports all 214 radicals', () => expect(libraryEntries('Radicals')).toHaveLength(214));
+  it('preserves the official Kangxi indices for all 214 radicals', () => {
+    const radicals = libraryEntries('Radicals');
+    expect(radicals.find(entry => entry.hanzi === '一')?.kangxiIndex).toBe(1);
+    expect(radicals.find(entry => entry.hanzi === '水')?.kangxiIndex).toBe(85);
+    expect(radicals.find(entry => entry.hanzi === '龠')?.kangxiIndex).toBe(214);
+    expect(radicals.map(entry => entry.kangxiIndex).sort((a, b) => (a ?? 0) - (b ?? 0))).toEqual(Array.from({ length: 214 }, (_, i) => i + 1));
+    for (const kind of ['Characters', 'Components', 'Strokes'] as const) {
+      expect(libraryEntries(kind).some(entry => entry.kangxiIndex !== undefined)).toBe(false);
+    }
+  });
   it('imports all 1843 components', () => expect(libraryEntries('Components')).toHaveLength(1843));
   it('imports all 9575 characters', () => expect(libraryEntries('Characters')).toHaveLength(9575));
   it('excludes traditional characters by default', () => {

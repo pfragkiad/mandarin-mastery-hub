@@ -4,7 +4,7 @@ import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } f
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
-export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; reuseCount?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
+export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; reuseCount?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9575 };
 // Catalogue rows as raw tuples, grouped for search, flashcard decks and practice facts.
 export type ReferenceKind = 'Radical' | 'Component' | 'Character';
@@ -24,7 +24,9 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
-    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+    // Read the source's explicit number, never the row position or a glyph guess.
+    const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
       ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
   });
   cache.set(kind, { version: catalog.version, entries });
