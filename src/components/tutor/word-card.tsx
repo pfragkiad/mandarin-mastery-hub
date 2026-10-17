@@ -22,7 +22,9 @@ function SentenceCharacters({ sentence, onNavigate }: { sentence: string; onNavi
   })}</p>;
 }
 
-/** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop). */
+/** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
+ *  Mirrors the catalog-detail structure used on the Characters page so both side
+ *  columns read the same way. */
 export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate?: () => void }) {
   const [audioError, setAudioError] = useState<string | null>(null);
   const [canTts, setCanTts] = useState(false);
@@ -35,14 +37,23 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
   return <>
-    <div className="eyebrow">{word.collection}</div>
-    <h2 className="font-display text-3xl">{word.meaning}</h2>
-    <p className="word-detail-sub">{word.level} · {word.type} · {word.script === 'Traditional' ? 'Traditional Chinese' : 'Simplified Chinese'}</p>
-    <div className={`word-detail-character ${word.script === 'Traditional' ? 'is-traditional' : ''}`}><span className="pinyin">{preferences.pinyin && word.pinyin}</span><span lang="zh-CN">{word.hanzi}</span></div>
-    <div className="flex justify-center gap-3"><Button disabled={!audioAvailable} onClick={() => listen()}><Volume2/>Listen</Button><Button variant="outline" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button></div>
-    {audioError && <p role="status" className="text-sm text-destructive">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
+    <div className="eyebrow">{word.entryKind === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}</div>
+    <div className="catalog-detail-title">
+      <strong lang="zh-CN" className={word.script === 'Traditional' ? 'traditional-character' : ''}>{word.hanzi}</strong>
+      <div><span className="pinyin">{word.pinyin || 'Pinyin not recorded'}</span><h2>{word.meaning}</h2>{word.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div>
+      <Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>
+    </div>
+    {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
+    <dl className="catalog-facts">
+      <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
+      <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
+    </dl>
+    <p className="catalog-record-note">{word.collection} · {word.script === 'Traditional' ? 'Traditional Chinese' : 'Simplified Chinese'}</p>
+    <div className="word-detail-actions">
+      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
+      <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
+    </div>
     {word.sentence && <div className="sentence"><span className="eyebrow">IN A SENTENCE</span>{preferences.pinyin && word.sentencePinyin && <span className="pinyin sentence-pinyin">{word.sentencePinyin}</span>}<SentenceCharacters sentence={word.sentence} onNavigate={close} /><span>{word.translation}</span></div>}
-    <Button variant="secondary" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}>Practice writing <ArrowRight/></Link></Button>
     <p className="detail-footnote">{word.entry?.sourceName ?? 'Mandarin Tutor database'} · {source}</p>
   </>;
 }
