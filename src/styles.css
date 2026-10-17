@@ -106,7 +106,7 @@
 .glyph-usage-reference:hover { text-decoration: underline; }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
 .glyph-usage-example .detail-footnote { margin-top: 10px; padding-top: 8px; text-align: left; }
-.glyph-usage-section .library-note { margin-top: 0; }
+.glyph-usage-empty { border-top: 1px solid var(--border); padding-top: 22px; margin-top: 14px; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
   display: inline-flex; align-items: center; justify-content: center;
