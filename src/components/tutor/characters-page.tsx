@@ -75,7 +75,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       <span className="word-character">{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}<strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
-  return <article className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
+  return <article data-entry-id={entry.id} className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : (entry.id.split(':')[0] ?? 'Glyphs').slice(0, -1).toUpperCase()}</span>{entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}</div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}

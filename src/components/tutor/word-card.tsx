@@ -60,7 +60,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const { saved, toggleSaved, preferences } = useWorkspace();
   const bookmarked = saved.includes(word.id);
   const listen = async () => { await playPronunciation(request, preferences.slow); };
-  return <><article className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''}`}>
+  return <><article data-entry-id={word.id} className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{word.script === 'Traditional' ? 'TRADITIONAL' : word.level.toUpperCase()}</span>{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</span></div>
     <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin">{word.pinyin}</span>}<span lang="zh-CN">{word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}>{word.meaning}</span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} audioAvailable={audioAvailable} audioTitle={`Listen · ${source}`} onListen={() => listen()}/>
