@@ -9,7 +9,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
   hanzi: string;
   pinyin?: string | null;
   meaning?: string | null;
-  script?: CharacterScript;
+  script?: CharacterScript | undefined;
   audio?: ReactNode;
   pinyinFallback?: string;
   meaningFallback?: string;
