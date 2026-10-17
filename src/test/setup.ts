@@ -22,4 +22,5 @@ Object.defineProperty(window, "matchMedia", {
 // Tests read the same imported catalogue the browser fetches from /data/catalog.json.
 import { readFileSync } from 'node:fs';
 import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
-hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile);
+import type { RadicalIdentityFile } from '@/lib/radical-identities';
+hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile, JSON.parse(readFileSync('public/data/radical-identities.json', 'utf8')) as RadicalIdentityFile);
