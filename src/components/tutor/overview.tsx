@@ -4,7 +4,6 @@ import { ArrowRight, BookOpen, Layers, Languages, Volume2, ArrowUpRight, Sparkle
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { words, vocabularyKind } from '@/lib/mandarin';
-import { includeScript } from '@/lib/learning-preferences';
 import { randomOverviewWord, overviewWordDestination } from '@/lib/overview';
 import { catalog, characterAudioRequest } from '@/lib/catalog-store';
 import { libraryDestination } from '@/lib/character-library';
@@ -19,9 +18,9 @@ export function OverviewPage() {
   const [featuredId, setFeaturedId] = useState<string>();
   const [audioError, setAudioError] = useState<string | null>(null);
   useEffect(() => {
-    setFeaturedId(randomOverviewWord(words.filter(word => includeScript(word.script, preferences.includeTraditional)))?.id);
-  }, [preferences.includeTraditional]);
-  const featured = items.find(word => word.id === featuredId) ?? items.find(word => vocabularyKind(word) === 'word');
+    setFeaturedId(randomOverviewWord(words)?.id);
+  }, []);
+  const featured = items.find(word => word.id === featuredId) ?? items.find(word => vocabularyKind(word) === 'word' && word.script !== 'Traditional');
   const request = featured ? { ...characterAudioRequest(featured.hanzi, featured.pinyin), audio: featured.audio ?? null } : { text: '', reading: null };
   const candidates = audioCandidates(request);
   const hasRecording = candidates.some(candidate => candidate.kind === 'recording');
@@ -29,7 +28,7 @@ export function OverviewPage() {
   const hits = searchAll(items, query, preferences.includeTraditional);
   const wordCount = items.filter(word => vocabularyKind(word) === 'word').length;
   const phraseCount = items.filter(word => vocabularyKind(word) === 'phrase').length;
-  const nextWord = () => { setFeaturedId(randomOverviewWord(items.filter(word => includeScript(word.script, preferences.includeTraditional)), featured?.id)?.id); setAudioError(null); };
+  const nextWord = () => { setFeaturedId(randomOverviewWord(items, featured?.id)?.id); setAudioError(null); };
   const listen = async (preferTts = false) => {
     const result = await playPronunciation(request, preferences.slow, preferTts);
     setAudioError(audioMessage(result));
@@ -46,7 +45,7 @@ export function OverviewPage() {
     ] as const).map(stat => <Button asChild variant="ghost" className="stat" key={stat.label}><Link to={stat.to} search={stat.search} aria-label={`Browse ${stat.label.toLowerCase()}`}><span className="stat-icon"><stat.icon size={19}/></span><div><div className="stat-top"><strong>{stat.number}</strong><span>{stat.label}</span></div><span className="stat-note">{stat.note}</span></div></Link></Button>)}</section>
     <div className="overview-study-row">
       <section className="daily-word overview-featured" aria-label="A word to take with you"><div className="daily-word-top"><span className="eyebrow"><Sparkles size={14}/> A WORD TO TAKE WITH YOU</span><Button variant="ghost" size="icon" title="Show another random word" aria-label="Show another random word" onClick={nextWord} disabled={wordCount < 2}><Shuffle/></Button></div>
-        {featured && <><div className="overview-featured-word" aria-live="polite"><div className="catalog-detail-title overview-record-title"><Link to="/vocabulary" search={overviewWordDestination(featured)} className="overview-record-link" aria-label={`Open ${featured.hanzi} in dictionary`}><strong lang="zh-CN" className={featured.script === 'Traditional' ? 'traditional-character' : ''}>{featured.hanzi}</strong><div>{preferences.pinyin && <span className="pinyin">{featured.pinyin}</span>}{preferences.meaning && <h2>{featured.meaning}</h2>}{featured.script === 'Traditional' && <span className="traditional-label">Traditional</span>}</div></Link><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label={audioAvailable ? `Listen to ${featured.hanzi}` : `No audio available for ${featured.hanzi}`} title={audioAvailable ? `Listen · ${candidates[0]?.label ?? 'Browser TTS'}` : undefined} onClick={() => listen()}><Volume2/></Button></div></div><div className="overview-featured-actions"><Button asChild variant="outline" size="sm"><Link to="/vocabulary" search={overviewWordDestination(featured)}>Open in dictionary <ArrowUpRight/></Link></Button></div>{audioError && <p className="library-note" role="status">{audioError}</p>}</>}
+        {featured && <><div className="overview-featured-word" aria-live="polite"><div className="catalog-detail-title overview-record-title"><Link to="/vocabulary" search={overviewWordDestination(featured)} className="overview-record-link" aria-label={`Open ${featured.hanzi} in dictionary`}><strong lang="zh-CN">{featured.hanzi}</strong><div>{preferences.pinyin && <span className="pinyin">{featured.pinyin}</span>}{preferences.meaning && <h2>{featured.meaning}</h2>}</div></Link><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label={audioAvailable ? `Listen to ${featured.hanzi}` : `No audio available for ${featured.hanzi}`} title={audioAvailable ? `Listen · ${candidates[0]?.label ?? 'Browser TTS'}` : undefined} onClick={() => listen()}><Volume2/></Button></div></div><div className="overview-featured-actions"><Button asChild variant="outline" size="sm"><Link to="/vocabulary" search={overviewWordDestination(featured)}>Open in dictionary <ArrowUpRight/></Link></Button></div>{audioError && <p className="library-note" role="status">{audioError}</p>}</>}
       </section>
       <OverviewCharacter/>
       <OverviewCharacter tab="Components"/>
