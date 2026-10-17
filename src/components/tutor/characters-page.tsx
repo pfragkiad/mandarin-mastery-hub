@@ -44,7 +44,7 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
       {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
-    </div><p className="library-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
+    </div><p className="source-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
 function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selected: boolean; onSelect: (id: string) => void }) {
