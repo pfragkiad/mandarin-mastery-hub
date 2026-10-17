@@ -32,5 +32,5 @@
 - Use shared library destinations and real router links for decomposition glyphs; resolve explicit selections independently of browsing filters so linked records and browser history never silently show a different record.
 - Share the browser-safe decomposition tree renderer across Glyphs, Practice and vocabulary details; preserve contextual character readings and match phrase text to real vocabulary records without implying verified grammar or etymology.
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
-- Keep vocabulary pagination and browsing filters in URL search, resolving exact linked entries to their containing page when no page is specified, so history and dictionary destinations preserve the selected record.
+- Keep vocabulary/Glyphs selection in URL search; shared helpers prioritize exact records over tab/filter/page hints and reveal offscreen cards after navigation and history updates, without moving visible cards.
 - Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
