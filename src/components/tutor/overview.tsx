@@ -16,7 +16,7 @@ export function OverviewPage() {
   const [query, setQuery] = useState('');
   const hits = searchAll(items, query, preferences.includeTraditional);
   return <div className="page-enter overview-page">
-    <div className="page-heading"><div><div className="eyebrow">一步一步 · ONE STEP AT A TIME</div><h1>Your Mandarin workspace</h1><p>A word to discover. A character to understand. A little more each day.</p></div><span className="heading-hanzi" lang="zh-CN">学<span>xué · learn</span></span></div>
+    <div className="page-heading overview-heading"><h1>Your Mandarin workspace</h1></div>
     <OverviewSearch query={query} setQuery={setQuery} hits={hits} includeTraditional={preferences.includeTraditional}/>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
