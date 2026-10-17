@@ -125,9 +125,12 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
   }, [character, retry, theme]);
+  // Hanzi Writer has no public speed setter; update the live options before each run.
+  const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = Number(speedRef.current); };
   const play = () => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
+    applySpeed(instance);
     instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
     // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
     instance.hideCharacter();
@@ -143,6 +146,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
+    applySpeed(instance);
     instance.cancelQuiz(); setPlaying(false); setActiveStroke(index);
     setMessage(`Stroke ${index + 1} of ${strokes.length}: ${strokes[index]?.pinyin ?? ''} — ${strokes[index]?.direction ?? ''}`);
     instance.showCharacter();
