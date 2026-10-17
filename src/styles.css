@@ -275,7 +275,7 @@
 .discovery-tile-count span { font-size: 10px; color: var(--muted-foreground); white-space: nowrap; }
 .discovery-tile-heading:hover .stat-icon,.discovery-tile-heading:focus-visible .stat-icon { background: color-mix(in oklab, var(--primary) 18%, var(--secondary)); transform: translateY(-2px); }
 .discovery-tile-heading:hover .discovery-tile-count,.discovery-tile-heading:focus-visible .discovery-tile-count { color: var(--primary); }
-.discovery-tile-record { display: flex; align-items: center; gap: 10px; }
+.discovery-tile-record { display: flex; align-items: center; gap: 10px; flex: 1; min-height: 0; }
 .discovery-tile-record .overview-record-link > strong { font-size: 34px; line-height: 1.25; font-weight: 400; max-width: 46%; overflow-wrap: anywhere; }
 .discovery-tile-record .overview-record-link > strong.is-long { font-size: 22px; line-height: 1.35; }
 .discovery-tile-record .overview-record-link .pinyin { font-size: 11px; }
