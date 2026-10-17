@@ -51,6 +51,7 @@
 - [x] Verify vocabulary tabs, entry links, and card layouts.
 
 ## Done this session
+- [x] Put the speaker beside the pinyin on the single-stroke practice panel (speaking the stroke’s recorded Chinese name) and on the character practice panel; verified position, alignment and that the click plays the recording.
 - [x] Restore random phrase alignment with neighbouring tiles and enlarge the daily pinyin/audio row with less space above its character; verified five phrase shuffles, desktop and phones.
 - [x] Ensure selected cards are rendered on their containing page and visible after selection from any place, including history and all vocabulary/Glyphs categories; verify.
 - [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
