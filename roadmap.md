@@ -1,4 +1,6 @@
 # Mandarin tutor interface
+- [ ] Refresh Overview with current library content, useful guidance, and random words linking to exact details.
+- [ ] Default new visitors to dark theme and handwritten Kai; preserve saved settings and verify flows.
 - [x] Unify radical/component usage filters and show filtered totals directly above the cards; verify history and counts.
 - [x] Add component reuse filter and compact labels; verify category rules and browser history.
 - [x] Open exact decomposition records with consistent browser back/forward history.
