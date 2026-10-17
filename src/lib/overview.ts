@@ -20,9 +20,9 @@ export function randomOverviewCharacter(entries: LibraryEntry[], includeTraditio
   return pool[Math.floor(random() * pool.length)];
 }
 
-export function overviewCharacterDestination(entry: LibraryEntry, entries: LibraryEntry[], includeTraditional = false) {
+export function overviewCharacterDestination(entry: LibraryEntry, entries: LibraryEntry[], includeTraditional = false, tab: 'Characters' | 'Components' = 'Characters') {
   const visible = filterLibrary(entries, '', '', false, includeTraditional);
   const index = visible.findIndex(candidate => candidate.id === entry.id);
   const page = index < 0 ? 1 : Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
-  return { tab: 'Characters' as const, id: entry.id, ...(page > 1 ? { page } : {}) };
+  return { tab, id: entry.id, ...(page > 1 ? { page } : {}) };
 }

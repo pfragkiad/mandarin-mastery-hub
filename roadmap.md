@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Replace banner stars/wand with glyph shortcuts, link totals, and show three bordered random cards; verify navigation and layouts.
 - [x] Promote Overview search, add an independent random character, and verify exact record navigation.
 - [x] Add theme-aware magical banner shortcuts and a prominent Flashcards invitation, replacing the next-steps list.
 - [x] Refresh Overview with current library content, useful guidance, and random words linking to exact details.
