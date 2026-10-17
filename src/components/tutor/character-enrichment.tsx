@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
 import { resolveEnrichment, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { Button } from '@/components/ui/button';
 
 export function useCharacterEnrichment(character: string, tree?: DecompositionNode) {
   const [result, setResult] = useState<{ character: string; tree: DecompositionNode; record: CharacterEnrichment } | null>(null);
@@ -41,4 +42,13 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
 export function CharacterEnrichmentNotes({ character, tree }: { character: string; tree: DecompositionNode }) {
   const record = useCharacterEnrichment(character, tree);
   return <EnrichmentNotes record={record}/>;
+}
+export function ComponentPicker({ record, selected, onSelect }: { record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
+  return <div className="enrichment-note"><h4 className="eyebrow">COMPONENT STROKES</h4>
+    {record.mapping.groups.length ? <><div className="component-picker">{record.mapping.groups.map(group => {
+      const path = JSON.stringify(group.path);
+      return <Button key={path} variant="outline" size="sm" aria-pressed={selected === path} aria-label={`Highlight ${group.glyph} strokes ${group.strokeIndices.map(i => i + 1).join(', ')}`} onClick={() => onSelect(selected === path ? '' : path)}><span lang="zh-CN">{group.glyph}</span><span>{group.strokeIndices.map(i => i + 1).join(', ')}</span></Button>;
+    })}</div>{record.mapping.unknownStrokeIndices.length > 0 && <p>{record.mapping.unknownStrokeIndices.length} source strokes remain unassigned.</p>}</> : <div className="record-gap"><p>No recorded stroke-to-component mapping is available.</p></div>}
+    <p className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</p>
+  </div>;
 }

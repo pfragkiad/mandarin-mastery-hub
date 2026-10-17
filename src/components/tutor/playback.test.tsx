@@ -15,6 +15,12 @@ vi.mock('hanzi-writer', () => ({ default: { create: (_node: unknown, _char: stri
   return fake;
 } } }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'light', catalogVersion: 1, preferences: { slow: false } }) }));
+vi.mock('@/lib/character-enrichment', async importOriginal => ({
+  ...await importOriginal<typeof import('@/lib/character-enrichment')>(),
+  loadStrokeGeometry: async () => ({ checksum: 'test', data: {
+    strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
+  } }),
+}));
 vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ children }: { children: React.ReactNode }) => <a>{children}</a> }));
 
 beforeEach(() => {

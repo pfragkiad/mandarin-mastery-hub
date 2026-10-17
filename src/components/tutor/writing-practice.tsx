@@ -12,7 +12,7 @@ import { DecompositionTree } from './decomposition-tree';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
-import { useCharacterEnrichment, EnrichmentNotes } from './character-enrichment';
+import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
 
@@ -220,6 +220,10 @@ export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCh
   useWorkspace().catalogVersion;
   const fact = charFacts()[character];
   const decomposition = decompositionFor(character);
+  const enrichment = useCharacterEnrichment(character, decomposition?.root);
+  const [componentSelection, setComponentSelection] = useState({ character, path: '' });
+  const selectedPath = componentSelection.character === character ? componentSelection.path : '';
+  const component = enrichment?.mapping.groups.find(group => JSON.stringify(group.path) === selectedPath) ?? null;
   const notedStrokes = Number(fact?.note.match(/^(\d+) strokes?/)?.[1]) || null;
   const radical = fact?.note.match(/· (\S+) radical/)?.[1] ?? null;
   const strokeCount = liveStrokes ?? notedStrokes;
