@@ -1,14 +1,14 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
-import { LayoutGrid, BookOpen, PenLine, Settings, Layers, Languages, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Layers, Languages, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Sprout, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
 const navigation = [{ to: '/' as const, name: 'Overview', icon: LayoutGrid }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/characters' as const, name: 'Characters', icon: Languages }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
-  const current = navigation.find(n => n.to === path)?.name ?? 'Overview';
+  const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Overview');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
