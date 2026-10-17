@@ -10,8 +10,8 @@
 <!-- LOVABLE:END -->
 
 ## Application architecture
-- Give each learning section a TanStack leaf route; share navigation and session state in the root shell to preserve the workspace.
-- Use the browser-safe Mandarin data module for starter content and filtering; explicitly label sample content and session-only edits rather than implying imported records or durable storage.
+- Use TanStack leaf routes and shared root navigation/state to preserve the workspace.
+- Keep Mandarin data browser-safe; label samples and session-only edits so they never imply imported or durable records.
 - Dynamically load Hanzi Writer for characters and sourced representative stroke outlines; never infer missing paths, so practice follows recorded brush data.
 - Define visual roles/layouts globally with shared controls and root theme state, so navigation, controls and writing ink stay consistent.
 - Share sentence rendering in vocabulary and glyph details; match usage through existing text, radical assignments and component trees, never inferred stroke shapes.
@@ -30,7 +30,7 @@
 - Keep selections, filters, tabs, pages and Practice focus in URL search; push selections and replace typing to restore history.
 - Share the record-card footer between vocabulary and glyph cards, and keep namespaced glyph bookmarks in the existing session workspace with URL-backed Saved filtering, so audio/bookmark controls and history behave identically without implying durable account storage.
 - Use shared library destinations and real router links for decomposition glyphs; resolve explicit selections independently of browsing filters so linked records and browser history never silently show a different record.
-- Share the browser-safe decomposition tree renderer across Glyphs, Practice and vocabulary details; preserve contextual character readings and match phrase text to real vocabulary records without implying verified grammar or etymology.
+- Share decomposition rendering across Glyphs, Practice and Vocabulary; preserve contextual readings and textual phrase matches, never imply verified grammar/etymology. Parse BabelStone prefix IDS into separate trees; keep unsupported notation raw and numbered components opaque to avoid invented parts.
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
 - Keep vocabulary/Glyphs selection in URL search; shared helpers prioritize exact records over tab/filter/page hints and reveal offscreen cards after navigation and history updates, without moving visible cards.
 - Import unofficial spreadsheet phrases with the repeatable scripts/import-hsk-phrases.py adapter; retain local IDs, textual vocabulary matches, and review notes in phraseMetadata while leaving hsk_index and hskSource empty, so local numbering never becomes syllabus provenance.
