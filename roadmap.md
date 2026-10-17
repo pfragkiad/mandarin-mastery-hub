@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Trim the Overview title block to a single line — remove the slogan eyebrow, the subtitle and the decorative 学; verify other pages keep their headings and both themes/phones.
 - [x] Rename the sidebar "Characters" entry to "Library" (it covers characters, radicals, components and strokes) and replace the Overview category hover with a soft tinted badge instead of a hard rectangle; verify both themes and phones.
 - [x] Replace the Overview category icons with representative Chinese glyphs (词 句 字 口 氵) that follow the font and theme; verify both themes, all fonts, links and phones.
 - [x] Colour the Chinese character and meaning in the accent green when hovering or keyboard-focusing a random card; verify in both themes.
