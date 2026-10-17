@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Brain, PenLine, Play, RotateCcw } from 'lucide-react';
+import { Eye, EyeOff, Pause, PenLine, Play, RotateCcw } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
@@ -26,6 +26,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   const [ready, setReady] = useState(false);
   const [mode, setMode] = useState<'idle' | 'watch' | 'trace' | 'memory'>('idle');
   const [message, setMessage] = useState('Loading stroke…');
+  const [guide, setGuide] = useState(true);
   const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
   const speedRef = useRef(SPEEDS[speedIndex] ?? 0.5);
   speedRef.current = SPEEDS[speedIndex] ?? 0.5;
@@ -42,7 +43,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
       const outline = toHex(style.getPropertyValue('--writer-outline').trim());
       const accent = toHex(style.getPropertyValue('--terracotta').trim());
       writer.current = Writer.create(node, example.character, {
-        width: 300, height: 300, padding: 22, strokeAnimationSpeed: speedRef.current, drawingWidth: 6,
+        width: 300, height: 300, padding: 22, showOutline: guide, strokeAnimationSpeed: speedRef.current, drawingWidth: 6,
         ...(ink ? { strokeColor: ink } : {}), ...(outline ? { outlineColor: outline } : {}), ...(accent ? { drawingColor: accent, highlightColor: accent } : {}),
         charDataLoader: (char, onLoad, onError) => {
           fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(char)}.json`)
@@ -54,7 +55,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
             })
             .catch(err => onError(err));
         },
-        onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the stroke, then trace it in one movement.'); } },
+        onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the stroke, then try it yourself.'); } },
         onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); },
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
@@ -67,30 +68,27 @@ export function StrokePractice({ glyph }: { glyph: string }) {
     w.cancelQuiz(); setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
     void w.animateCharacter({ onComplete: () => { setMode('idle'); setMessage('Now trace it yourself, or watch again.'); } });
   };
-  const practice = (memory: boolean) => {
+  const practice = () => {
     const w = writer.current; if (!w) return;
-    setMode(memory ? 'memory' : 'trace');
-    if (memory) void w.hideOutline({ duration: 0 }); else void w.showOutline({ duration: 0 });
-    setMessage(memory ? 'Write the stroke from memory.' : 'Trace the stroke over the outline.');
+    setMode('trace'); setMessage(guide ? 'Trace the stroke over the guide.' : 'Write the stroke from memory.');
     void w.quiz({
       showHintAfterMisses: 2,
       onMistake: () => setMessage('Try again — check the starting point, direction and shape.'),
-      onComplete: () => { setMode('idle'); void w.showOutline({ duration: 0 }); setMessage('Stroke complete! Trace again or try from memory.'); },
+      onComplete: () => { setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
-  const reset = () => { const w = writer.current; if (!w) return; w.cancelQuiz(); void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
+  const reset = () => { const w = writer.current; if (!w) return; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · STROKE PRACTICE</div><h1>Practice a stroke.</h1></div></div><div className="practice-layout">
-    <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span></div>
+    <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div>
       {example ? <>
         <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/></div>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls">
-          <Button variant="outline" size="sm" disabled={!ready || mode === 'watch'} onClick={watch}><Play/>Watch stroke</Button>
-          <Button size="sm" disabled={!ready} onClick={() => practice(false)}><PenLine/>{mode === 'trace' ? 'Restart trace' : 'Trace stroke'}</Button>
-          <Button variant="outline" size="sm" disabled={!ready} onClick={() => practice(true)}><Brain/>From memory</Button>
-          <Button variant="outline" size="icon" disabled={!ready} title="Reset" aria-label="Reset" onClick={reset}><RotateCcw/></Button>
+          <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('idle'); setMessage('Paused. Play to start again.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : 'Play stroke'}</Button>
+          <Button disabled={!ready} variant="outline" size="icon" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/></Button>
+          <Button disabled={!ready} variant="outline" onClick={practice}><PenLine/>Practice</Button>
         </div>
         <label className="writer-speed">Animation speed<input type="range" min={0} max={SPEEDS.length - 1} step={1} value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{SPEEDS[speedIndex]}×</span></label>
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
