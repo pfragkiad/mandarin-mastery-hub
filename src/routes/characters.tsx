@@ -25,5 +25,5 @@ export const Route = createFileRoute('/characters')({
 function CharactersRoute() {
   const search = Route.useSearch();
   const navigate = useNavigate({ from: '/characters' });
-  return <CharactersPage search={search} onSearch={(next, replace) => navigate({ search: next, replace: Boolean(replace) })} />;
+  return <CharactersPage search={search} onSearch={(next, replace) => navigate({ search: next, replace: Boolean(replace), resetScroll: false })} />;
 }
