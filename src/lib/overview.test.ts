@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { words, vocabularyKind } from './mandarin';
-import { randomOverviewWord, overviewWordDestination } from './overview';
+import { randomOverviewWord, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from './overview';
+import { type LibraryEntry } from './character-library';
 import { defaultPreferences, restoredTheme } from './learning-preferences';
 
 describe('Overview featured words', () => {
@@ -38,5 +39,24 @@ describe('First visit defaults', () => {
   it('preserves returning visitors saved themes', () => {
     expect(restoredTheme('light')).toBe('light');
     expect(restoredTheme('dark')).toBe('dark');
+  });
+});
+
+describe('Overview random characters', () => {
+  const entries: LibraryEntry[] = Array.from({ length: 50 }, (_, i) => ({ id: `Characters:${i}`, hanzi: String(i), pinyin: '', meaning: '', note: '', script: i === 0 ? 'Traditional' : 'Common' }));
+  it('respects the traditional-character preference', () => {
+    expect(randomOverviewCharacter(entries, false, undefined, () => 0)?.id).toBe('Characters:1');
+    expect(randomOverviewCharacter(entries, true, undefined, () => 0)?.id).toBe('Characters:0');
+  });
+  it('does not repeat the previous character when alternatives exist', () => {
+    expect(randomOverviewCharacter(entries, false, 'Characters:1', () => 0)?.id).toBe('Characters:2');
+  });
+  it('opens the exact character tab, record and filtered page', () => {
+    const entry = entries[49];
+    if (!entry) throw new Error('Expected character');
+    expect(overviewCharacterDestination(entry, entries, false)).toEqual({ tab: 'Characters', id: 'Characters:49', page: 2 });
+  });
+  it('handles an empty catalogue without inventing a character', () => {
+    expect(randomOverviewCharacter([])).toBeUndefined();
   });
 });

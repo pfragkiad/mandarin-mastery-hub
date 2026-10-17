@@ -261,17 +261,35 @@
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
 }
 
-/* Overview: an open learning workspace, with one real featured record. */
+/* Overview: independent discoveries and theme-aware constellation navigation. */
+:root {
+  --magic-star: oklch(.42 .09 65); --magic-glow: oklch(.8 .13 75 / .65);
+  --magic-surface: oklch(.99 .015 90 / .88); --magic-edge: oklch(.61 .09 75 / .55);
+  --shadow-magic: 0 0 10px var(--magic-glow), 0 0 28px var(--magic-glow);
+}
+:root.dark { --magic-star: oklch(.94 .09 85); --magic-glow: oklch(.86 .14 78 / .5); --magic-surface: oklch(.19 .025 160 / .84); --magic-edge: oklch(.8 .12 80 / .6); }
 .overview-page .journey-banner { min-height: 250px; display: flex; align-items: center; }
-.overview-page .banner-copy { padding-block: 32px; }
+.overview-page .banner-copy { padding-block: 32px; width: 48%; }
 .overview-page .banner-copy h2 { font-size: 38px; }
-.overview-banner-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.overview-banner-actions > a { height: 38px; }
+.overview-constellation { position: absolute; inset: 12px 30px 12px 48%; }
+.overview-wand { position: absolute; width: 46px; height: 46px; left: calc(50% - 23px); top: calc(50% - 23px); color: var(--magic-star); filter: drop-shadow(0 0 12px var(--magic-glow)); transform: rotate(-15deg); }
+.constellation-link { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 108px; height: auto; min-height: 66px; padding: 8px; background: transparent; color: var(--magic-star); border-radius: 6px; }
+.overview-page .constellation-link { height: auto; font-size: 12px; }
+.constellation-link > svg { width: 25px; height: 25px; fill: var(--magic-star); stroke-width: 1; filter: drop-shadow(0 0 6px var(--magic-glow)); transition: transform .2s; }
+.constellation-link > span { padding: 4px 10px; border: 1px solid var(--magic-edge); border-radius: 4px; background: var(--magic-surface); color: var(--magic-star); }
+.constellation-link:hover { background: transparent; color: var(--magic-star); }
+.constellation-link:hover > svg { transform: rotate(18deg) scale(1.15); }
+.constellation-link:hover > span { box-shadow: var(--shadow-magic); }
+.constellation-words { left: 8%; top: 8%; }
+.constellation-characters { right: 4%; top: 10%; }
+.constellation-components { left: 0; bottom: 6%; }
+.constellation-strokes { right: 10%; bottom: 2%; }
 .overview-page .stat-top { flex-wrap: wrap; }
 .overview-page .stat-top > span { white-space: normal; }
 .overview-page .stat-note { line-height: 1.5; }
 .overview-study-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 40px; margin-bottom: 36px; }
 .overview-featured.daily-word { border: 0; border-right: 1px solid var(--border); padding: 0 40px 0 0; min-width: 0; }
+.overview-featured.overview-character { border-right: 0; padding-right: 0; }
 .overview-featured .daily-word-top { min-height: 32px; }
 .overview-featured .daily-word-top button { width: 32px; height: 32px; }
 .overview-featured-word { margin-top: 20px; min-height: 160px; }
@@ -285,36 +303,53 @@
 .overview-featured .daily-word-content h3 { font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
 .overview-featured .daily-word-content p { font-size: 11px; line-height: 1.7; }
 .overview-featured-actions { display: flex; gap: 10px; align-items: center; margin-top: 20px; }
-.overview-paths { min-width: 0; }
-.overview-paths h2, .overview-library-search h2 { font-family: var(--font-display); font-weight: 400; font-size: 23px; margin: 10px 0 18px; }
-.overview-path { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--border); color: var(--foreground); }
-.overview-path:last-child { border-bottom: 0; }
-.overview-path > div { flex: 1; min-width: 0; }
-.overview-path h3 { font-size: 13px; font-weight: 500; }
-.overview-path p { color: var(--muted-foreground); font-size: 11px; margin-top: 5px; line-height: 1.6; }
-.overview-path > svg { width: 16px; flex-shrink: 0; color: var(--muted-foreground); }
-.overview-path:hover h3, .overview-path:hover > svg { color: var(--primary); }
-.overview-library-search { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: 40px; padding: 25px 0; border-block: 1px solid var(--border); }
-.overview-library-search h2 { margin-bottom: 0; }
+.overview-library-search { position: relative; z-index: 21; margin: 0 0 24px; }
 .overview-library-search .hero-search { width: 100%; max-width: none; margin: 0; }
+.overview-library-search .search-field input { height: 56px; font-size: 14px; padding-left: 48px; border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); box-shadow: var(--shadow-soft); }
+.overview-library-search .search-field > svg { width: 20px; height: 20px; left: 17px; color: var(--primary); }
 .overview-library-search .hero-search-hit { flex-wrap: wrap; }
+.overview-library-search .hero-search-results { max-height: 320px; overflow-y: auto; }
+.overview-flashcards { display: flex; align-items: center; gap: 30px; padding: 26px 0; border-block: 1px solid var(--border); }
+.overview-flashcards > div:nth-child(2) { flex: 1; min-width: 0; }
+.overview-flashcards h2 { font-family: var(--font-display); font-weight: 400; font-size: 24px; margin: 10px 0 8px; }
+.overview-flashcards p { color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
+.overview-play { min-height: 48px; font-size: 14px; padding-inline: 22px; box-shadow: var(--shadow-soft); }
+.overview-play > svg:first-child { fill: currentColor; }
+.flashcard-fan { width: 100px; height: 100px; position: relative; flex-shrink: 0; }
+.flashcard-fan > span { width: 57px; height: 75px; display: grid; place-items: center; position: absolute; top: 14px; left: 12px; font-size: 35px; border: 1px solid var(--border); border-radius: 6px; background: var(--secondary); color: var(--primary); transform: rotate(-15deg); }
+.flashcard-fan > span:nth-child(2) { left: 35px; top: 10px; transform: rotate(12deg); background: var(--card); }
+.flashcard-fan > svg { position: absolute; right: 0; top: 0; width: 20px; color: var(--terracotta); }
 @media (max-width:850px) {
   .overview-study-row { gap: 26px; }
   .overview-featured.daily-word { padding-right: 26px; }
   .overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 12px; }
   .overview-page .banner-copy h2 { font-size: 32px; }
+  .overview-constellation { right: 12px; left: 47%; }
+  .constellation-words, .constellation-components { left: 0; }
+  .constellation-characters, .constellation-strokes { right: 0; }
+  .overview-flashcards { flex-wrap: wrap; gap: 20px; }
+  .overview-play { margin-left: 120px; }
 }
 @media (max-width:580px) {
-  .overview-page .journey-banner { min-height: 250px; }
-  .overview-page .banner-copy { padding: 25px 22px; }
+  .overview-page .journey-banner { min-height: 360px; align-items: flex-start; }
+  .overview-page .banner-copy { padding: 24px 22px; width: 100%; }
   .overview-page .banner-copy h2 { font-size: 30px; }
-  .overview-page .banner-seal { top: 16px; right: 16px; bottom: auto; }
-  .overview-study-row, .overview-library-search { grid-template-columns: minmax(0,1fr); gap: 25px; }
+  .overview-page .banner-copy p { margin-bottom: 0; }
+  .overview-constellation { inset: 172px 18px 12px; }
+  .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 25px; }
+  .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
   .overview-featured.daily-word { border-right: 0; border-bottom: 1px solid var(--border); padding: 0 0 25px; }
+  .overview-featured.overview-character { border-bottom: 0; padding-bottom: 0; }
   .overview-featured-word { min-height: 130px; }
   .overview-featured .daily-word-content { flex-direction: row; gap: 18px; align-items: center; }
   .overview-featured .daily-word-content strong { font-size: 46px; }
   .overview-featured .daily-word-content h3 { font-size: 15px; }
+  .overview-flashcards { gap: 16px; }
+  .flashcard-fan { width: 78px; }
+  .flashcard-fan > span { left: 2px; }
+  .flashcard-fan > span:nth-child(2) { left: 22px; }
+  .overview-flashcards h2 { font-size: 21px; }
+  .overview-play { width: 100%; margin-left: 0; }
 }
 
 /* Printable handwriting practice sheet */
