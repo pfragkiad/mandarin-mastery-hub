@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { words, type Word } from '@/lib/mandarin';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
-import { defaultPreferences, includeScript, type Preferences } from '@/lib/learning-preferences';
+import { defaultPreferences, defaultTheme, restoredTheme, includeScript, type Preferences } from '@/lib/learning-preferences';
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
 const WorkspaceContext = createContext<Workspace | null>(null);
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
@@ -9,10 +9,10 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [saved, setSaved] = useState<string[]>([]);
   const [preferences, setPreferences] = useState<Preferences>(defaultPreferences);
   const [loaded, setLoaded] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>(defaultTheme);
   const [catalogVersion, setCatalogVersion] = useState(0);
   useEffect(() => { loadCatalog().then(() => setCatalogVersion(catalog.version)).catch(() => { /* catalogue unavailable; screens show loading/empty states */ }); }, []);
-  useEffect(() => { try { const stored = localStorage.getItem('tutor-theme'); setTheme(stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); } catch { /* storage may be unavailable */ } }, []);
+  useEffect(() => { try { setTheme(restoredTheme(localStorage.getItem('tutor-theme'))); } catch { /* storage may be unavailable */ } }, []);
   useEffect(() => { document.documentElement.classList.toggle('dark', theme === 'dark'); if (loaded) { try { localStorage.setItem('tutor-theme', theme); } catch { /* storage may be unavailable */ } } }, [theme, loaded]);
   useEffect(() => { try { const raw = localStorage.getItem('tutor-preferences'); if (raw) setPreferences(p => ({ ...p, ...JSON.parse(raw) })); } catch { /* ignore */ } setLoaded(true); }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
