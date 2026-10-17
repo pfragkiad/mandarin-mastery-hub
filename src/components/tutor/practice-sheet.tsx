@@ -101,6 +101,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
   const [printing, setPrinting] = useState(false);
   const models = useStrokeModels(tokens);
   const pages = useMemo(() => buildPracticePages(tokens, rows), [tokens, rows]);
+  const singleCharacter = new Set(tokens.map(t => t.text)).size === 1;
   useEffect(() => {
     document.body.classList.add('practice-printing');
     const previous = document.title;
@@ -133,13 +134,15 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
         </div>
         <div className="filters panel">
-          <label>
-            Rows per character
-            <select value={rows} onChange={e => setRows(Number(e.target.value) as 1 | 2)}>
-              <option value="1">1 row</option>
-              <option value="2">2 rows</option>
-            </select>
-          </label>
+          {!singleCharacter && (
+            <label>
+              Rows per character
+              <select value={rows} onChange={e => setRows(Number(e.target.value) as 1 | 2)}>
+                <option value="1">1 row</option>
+                <option value="2">2 rows</option>
+              </select>
+            </label>
+          )}
           <label>
             Writing guides
             <select value={diagonal ? 'diagonal' : 'cross'} onChange={e => setDiagonal(e.target.value === 'diagonal')}>
