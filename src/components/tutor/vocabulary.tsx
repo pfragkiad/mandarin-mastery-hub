@@ -8,6 +8,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { collections, filterWords, vocabularyKind } from '@/lib/mandarin';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
+import { useRecordScroll } from '@/lib/selection-scroll';
 type Filters = { q?: string; collection?: string; level?: string; status?: string };
 export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord } = useWorkspace();
@@ -27,6 +28,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const filtered = filterWords(categoryItems, query, collection, level, status, saved);
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
+  useRecordScroll(initialWordId, items.length > 0);
   const hasFilter = Boolean(query.trim() || collection !== 'All collections' || level !== 'All levels' || status !== 'All words');
   const reset = () => onFiltersChange?.({ q: '', collection: 'All collections', level: 'All levels', status: 'All words' });
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">YOUR PERSONAL WORD COLLECTION</div><h1>Words worth knowing.</h1><p>A new word. A new connection. Make it yours.</p></div><Button onClick={() => setAdding(true)}><Plus/>Add word</Button></div>

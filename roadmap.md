@@ -48,6 +48,9 @@
 - [x] Separate Vocabulary into Words and Phrases tabs with compact word cards and wider phrase cards.
 - [x] Verify vocabulary tabs, entry links, and card layouts.
 
+## Done this session
+- [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
+
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
 - [ ] Consistent generated audio instead of the browser's own Chinese voice.

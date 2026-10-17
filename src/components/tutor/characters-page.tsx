@@ -8,6 +8,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
+import { useRecordScroll } from '@/lib/selection-scroll';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
@@ -75,7 +76,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
       <span className="word-character">{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}<strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
-  return <article className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
+  return <article data-entry-id={entry.id} className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : (entry.id.split(':')[0] ?? 'Glyphs').slice(0, -1).toUpperCase()}</span>{entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}</div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
@@ -112,6 +113,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, reuse, savedOnly ? saved : undefined);
   const paged = libraryPage(filtered, page);
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
+  useRecordScroll(selectedId, catalogReady);
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE GLYPH LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
