@@ -27,7 +27,7 @@ function useStrokeModels(tokens: PracticeToken[]) {
   return { assets: state.key === key ? state.assets : {}, loading: state.key !== key || state.loading };
 }
 
-function WritingCell({ token, kind, diagonal, assets }: { token?: PracticeToken; kind: 'model' | 'trace' | 'blank'; diagonal: boolean; assets: Record<string, StrokeModel> }) {
+function WritingCell({ token, kind, diagonal, assets }: { token?: PracticeToken | undefined; kind: 'model' | 'trace' | 'blank'; diagonal: boolean; assets: Record<string, StrokeModel> }) {
   const model = token ? assets[token.text] : null;
   const glyph = kind === 'blank' ? '' : (token?.text ?? '');
   return (
@@ -88,7 +88,7 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
 }
 
 /** Printable A4 handwriting sheet for a character, word or phrase. Rendered as an overlay; printing hides the app. */
-export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string; meaning?: string; onClose: () => void }) {
+export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string | undefined; meaning?: string | undefined; onClose: () => void }) {
   const readings = pinyin?.trim().split(/\s+/) ?? [];
   const tokens = useMemo<PracticeToken[]>(() => {
     const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿]/.test(ch));

@@ -1,6 +1,6 @@
 // A4 practice-sheet pagination, adapted from the uploaded practice-layout.ts.
 // Tokens are single hanzi glyphs with an optional per-glyph pinyin reading.
-export type PracticeToken = { text: string; pinyin?: string };
+export type PracticeToken = { text: string; pinyin?: string | undefined };
 export type PracticeBlock =
   | { kind: 'character'; token: PracticeToken; rows: number }
   | { kind: 'text'; tokens: PracticeToken[]; segment: number; segments: number };
