@@ -1,0 +1,6299 @@
+{
+  "schemaVersion": 1,
+  "scope": "Pinned source staging and isolated SQLite lookup audit; no live database writes.",
+  "sourceSha256": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+  "canonicalRadicals": 214,
+  "sourceForms": 128,
+  "checkedGlyphAndSymbolRelations": 658,
+  "missedByPreviousLookup": 316,
+  "unresolvedExpectedRelations": [],
+  "babelstoneLeavesInInstalledCharacterComparisons": {
+    "distinct": 2393,
+    "categories": {
+      "unencoded-component": 89,
+      "other-graphical-component": 2017,
+      "sourced-radical-form": 278,
+      "stroke-symbol": 8,
+      "explicit-unknown": 1
+    }
+  },
+  "matchedBabelstoneRadicalForms": {
+    "⺄": {
+      "glyph": "⺄",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-5",
+          "number": 5,
+          "glyph": "乙"
+        }
+      ],
+      "equivalentGlyphs": [
+        "乙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺆": {
+      "glyph": "⺆",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-13",
+          "number": 13,
+          "glyph": "冂"
+        }
+      ],
+      "equivalentGlyphs": [
+        "冂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺈": {
+      "glyph": "⺈",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-18",
+          "number": 18,
+          "glyph": "刀"
+        }
+      ],
+      "equivalentGlyphs": [
+        "刀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺊": {
+      "glyph": "⺊",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-25",
+          "number": 25,
+          "glyph": "卜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "卜"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺌": {
+      "glyph": "⺌",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-42",
+          "number": 42,
+          "glyph": "小"
+        }
+      ],
+      "equivalentGlyphs": [
+        "小"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺗": {
+      "glyph": "⺗",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-61",
+          "number": 61,
+          "glyph": "心"
+        }
+      ],
+      "equivalentGlyphs": [
+        "心"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺝": {
+      "glyph": "⺝",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-74",
+          "number": 74,
+          "glyph": "月"
+        }
+      ],
+      "equivalentGlyphs": [
+        "月"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺶": {
+      "glyph": "⺶",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-123",
+          "number": 123,
+          "glyph": "羊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "羊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺼": {
+      "glyph": "⺼",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-130",
+          "number": 130,
+          "glyph": "肉"
+        }
+      ],
+      "equivalentGlyphs": [
+        "肉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "一": {
+      "glyph": "一",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-1",
+          "number": 1,
+          "glyph": "一"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "丨": {
+      "glyph": "丨",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-2",
+          "number": 2,
+          "glyph": "丨"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼁"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "丬": {
+      "glyph": "丬",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-90",
+          "number": 90,
+          "glyph": "爿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺦"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "丶": {
+      "glyph": "丶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-3",
+          "number": 3,
+          "glyph": "丶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "丿": {
+      "glyph": "丿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-4",
+          "number": 4,
+          "glyph": "丿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "么": {
+      "glyph": "么",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-52",
+          "number": 52,
+          "glyph": "幺"
+        }
+      ],
+      "equivalentGlyphs": [],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "乙": {
+      "glyph": "乙",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-5",
+          "number": 5,
+          "glyph": "乙"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺄",
+        "⼄"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "乚": {
+      "glyph": "乚",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-5",
+          "number": 5,
+          "glyph": "乙"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "乛": {
+      "glyph": "乛",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-5",
+          "number": 5,
+          "glyph": "乙"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "亅": {
+      "glyph": "亅",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-6",
+          "number": 6,
+          "glyph": "亅"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "二": {
+      "glyph": "二",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-7",
+          "number": 7,
+          "glyph": "二"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼆"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "亠": {
+      "glyph": "亠",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-8",
+          "number": 8,
+          "glyph": "亠"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼇"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "人": {
+      "glyph": "人",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-9",
+          "number": 9,
+          "glyph": "人"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼈"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "亻": {
+      "glyph": "亻",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-9",
+          "number": 9,
+          "glyph": "人"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "儿": {
+      "glyph": "儿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-10",
+          "number": 10,
+          "glyph": "儿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "入": {
+      "glyph": "入",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-11",
+          "number": 11,
+          "glyph": "入"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "八": {
+      "glyph": "八",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-12",
+          "number": 12,
+          "glyph": "八"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼋"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "冂": {
+      "glyph": "冂",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-13",
+          "number": 13,
+          "glyph": "冂"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺆",
+        "⼌"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "冖": {
+      "glyph": "冖",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-14",
+          "number": 14,
+          "glyph": "冖"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼍"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "冫": {
+      "glyph": "冫",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-15",
+          "number": 15,
+          "glyph": "冫"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼎"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "几": {
+      "glyph": "几",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-16",
+          "number": 16,
+          "glyph": "几"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼏"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "凵": {
+      "glyph": "凵",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-17",
+          "number": 17,
+          "glyph": "凵"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼐"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "刀": {
+      "glyph": "刀",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-18",
+          "number": 18,
+          "glyph": "刀"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺈",
+        "⼑"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "刂": {
+      "glyph": "刂",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-18",
+          "number": 18,
+          "glyph": "刀"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "力": {
+      "glyph": "力",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-19",
+          "number": 19,
+          "glyph": "力"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "勹": {
+      "glyph": "勹",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-20",
+          "number": 20,
+          "glyph": "勹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼓"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "匕": {
+      "glyph": "匕",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-21",
+          "number": 21,
+          "glyph": "匕"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "匚": {
+      "glyph": "匚",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-22",
+          "number": 22,
+          "glyph": "匚"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼕"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "匸": {
+      "glyph": "匸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-23",
+          "number": 23,
+          "glyph": "匸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼖"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "十": {
+      "glyph": "十",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-24",
+          "number": 24,
+          "glyph": "十"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼗"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "卜": {
+      "glyph": "卜",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-25",
+          "number": 25,
+          "glyph": "卜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺊",
+        "⼘"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "卤": {
+      "glyph": "卤",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-197",
+          "number": 197,
+          "glyph": "鹵"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻧"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "卩": {
+      "glyph": "卩",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-26",
+          "number": 26,
+          "glyph": "卩"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "厂": {
+      "glyph": "厂",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-27",
+          "number": 27,
+          "glyph": "厂"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺁",
+        "⼚"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "厶": {
+      "glyph": "厶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-28",
+          "number": 28,
+          "glyph": "厶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼛"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "又": {
+      "glyph": "又",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-29",
+          "number": 29,
+          "glyph": "又"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼜"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "口": {
+      "glyph": "口",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-30",
+          "number": 30,
+          "glyph": "口"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼝"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "囗": {
+      "glyph": "囗",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-31",
+          "number": 31,
+          "glyph": "囗"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼞"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "土": {
+      "glyph": "土",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-32",
+          "number": 32,
+          "glyph": "土"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼟"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "士": {
+      "glyph": "士",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-33",
+          "number": 33,
+          "glyph": "士"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼠"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "夂": {
+      "glyph": "夂",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-34",
+          "number": 34,
+          "glyph": "夂"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼡"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "夊": {
+      "glyph": "夊",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-35",
+          "number": 35,
+          "glyph": "夊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼢"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "夕": {
+      "glyph": "夕",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-36",
+          "number": 36,
+          "glyph": "夕"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼣"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "大": {
+      "glyph": "大",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-37",
+          "number": 37,
+          "glyph": "大"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼤"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "女": {
+      "glyph": "女",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-38",
+          "number": 38,
+          "glyph": "女"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼥"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "子": {
+      "glyph": "子",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-39",
+          "number": 39,
+          "glyph": "子"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼦"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "宀": {
+      "glyph": "宀",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-40",
+          "number": 40,
+          "glyph": "宀"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼧"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "寸": {
+      "glyph": "寸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-41",
+          "number": 41,
+          "glyph": "寸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼨"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "小": {
+      "glyph": "小",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-42",
+          "number": 42,
+          "glyph": "小"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺌",
+        "⺍",
+        "⼩"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "尢": {
+      "glyph": "尢",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-43",
+          "number": 43,
+          "glyph": "尢"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺐",
+        "⼪"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "尸": {
+      "glyph": "尸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-44",
+          "number": 44,
+          "glyph": "尸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼫"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "屮": {
+      "glyph": "屮",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-45",
+          "number": 45,
+          "glyph": "屮"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼬"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "山": {
+      "glyph": "山",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-46",
+          "number": 46,
+          "glyph": "山"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼭"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "巛": {
+      "glyph": "巛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-47",
+          "number": 47,
+          "glyph": "巛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼮"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "工": {
+      "glyph": "工",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-48",
+          "number": 48,
+          "glyph": "工"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼯"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "己": {
+      "glyph": "己",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-49",
+          "number": 49,
+          "glyph": "己"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼰"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "巳": {
+      "glyph": "巳",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-49",
+          "number": 49,
+          "glyph": "己"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "巾": {
+      "glyph": "巾",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-50",
+          "number": 50,
+          "glyph": "巾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼱"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "干": {
+      "glyph": "干",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-51",
+          "number": 51,
+          "glyph": "干"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼲"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "幺": {
+      "glyph": "幺",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-52",
+          "number": 52,
+          "glyph": "幺"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺓",
+        "⼳"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "广": {
+      "glyph": "广",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-53",
+          "number": 53,
+          "glyph": "广"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼴"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "廴": {
+      "glyph": "廴",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-54",
+          "number": 54,
+          "glyph": "廴"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼵"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "廾": {
+      "glyph": "廾",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-55",
+          "number": 55,
+          "glyph": "廾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼶"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "弋": {
+      "glyph": "弋",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-56",
+          "number": 56,
+          "glyph": "弋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼷"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "弓": {
+      "glyph": "弓",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-57",
+          "number": 57,
+          "glyph": "弓"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼸"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "彑": {
+      "glyph": "彑",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-58",
+          "number": 58,
+          "glyph": "彐"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "彡": {
+      "glyph": "彡",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-59",
+          "number": 59,
+          "glyph": "彡"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼺"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "彳": {
+      "glyph": "彳",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-60",
+          "number": 60,
+          "glyph": "彳"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼻"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "心": {
+      "glyph": "心",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-61",
+          "number": 61,
+          "glyph": "心"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺗",
+        "⼼"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "忄": {
+      "glyph": "忄",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-61",
+          "number": 61,
+          "glyph": "心"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺖"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "戈": {
+      "glyph": "戈",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-62",
+          "number": 62,
+          "glyph": "戈"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼽"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "戶": {
+      "glyph": "戶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-63",
+          "number": 63,
+          "glyph": "戶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼾"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "户": {
+      "glyph": "户",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-63",
+          "number": 63,
+          "glyph": "戶"
+        }
+      ],
+      "equivalentGlyphs": [],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "手": {
+      "glyph": "手",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-64",
+          "number": 64,
+          "glyph": "手"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼿"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "扌": {
+      "glyph": "扌",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-64",
+          "number": 64,
+          "glyph": "手"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺘"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "支": {
+      "glyph": "支",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-65",
+          "number": 65,
+          "glyph": "支"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "攴": {
+      "glyph": "攴",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-66",
+          "number": 66,
+          "glyph": "攴"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽁"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "攵": {
+      "glyph": "攵",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-66",
+          "number": 66,
+          "glyph": "攴"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "文": {
+      "glyph": "文",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-67",
+          "number": 67,
+          "glyph": "文"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "斗": {
+      "glyph": "斗",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-68",
+          "number": 68,
+          "glyph": "斗"
+        },
+        {
+          "id": "kangxi-191",
+          "number": 191,
+          "glyph": "鬥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "斤": {
+      "glyph": "斤",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-69",
+          "number": 69,
+          "glyph": "斤"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽄"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "方": {
+      "glyph": "方",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-70",
+          "number": 70,
+          "glyph": "方"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "无": {
+      "glyph": "无",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-71",
+          "number": 71,
+          "glyph": "无"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽆"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "日": {
+      "glyph": "日",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-72",
+          "number": 72,
+          "glyph": "日"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺜",
+        "⽇"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "曰": {
+      "glyph": "曰",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-73",
+          "number": 73,
+          "glyph": "曰"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽈"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "月": {
+      "glyph": "月",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-74",
+          "number": 74,
+          "glyph": "月"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺝",
+        "⽉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "木": {
+      "glyph": "木",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-75",
+          "number": 75,
+          "glyph": "木"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "欠": {
+      "glyph": "欠",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-76",
+          "number": 76,
+          "glyph": "欠"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽋"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "止": {
+      "glyph": "止",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-77",
+          "number": 77,
+          "glyph": "止"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽌"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "歹": {
+      "glyph": "歹",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-78",
+          "number": 78,
+          "glyph": "歹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽍"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "殳": {
+      "glyph": "殳",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-79",
+          "number": 79,
+          "glyph": "殳"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽎"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "毋": {
+      "glyph": "毋",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-80",
+          "number": 80,
+          "glyph": "毋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽏"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "比": {
+      "glyph": "比",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-81",
+          "number": 81,
+          "glyph": "比"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽐"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "毛": {
+      "glyph": "毛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-82",
+          "number": 82,
+          "glyph": "毛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽑"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "氏": {
+      "glyph": "氏",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-83",
+          "number": 83,
+          "glyph": "氏"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "气": {
+      "glyph": "气",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-84",
+          "number": 84,
+          "glyph": "气"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽓"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "水": {
+      "glyph": "水",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-85",
+          "number": 85,
+          "glyph": "水"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "氵": {
+      "glyph": "氵",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-85",
+          "number": 85,
+          "glyph": "水"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺡"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "氺": {
+      "glyph": "氺",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-85",
+          "number": 85,
+          "glyph": "水"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺢"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "火": {
+      "glyph": "火",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-86",
+          "number": 86,
+          "glyph": "火"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽕"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "灬": {
+      "glyph": "灬",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-86",
+          "number": 86,
+          "glyph": "火"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺣"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "爪": {
+      "glyph": "爪",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-87",
+          "number": 87,
+          "glyph": "爪"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽖"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "爫": {
+      "glyph": "爫",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-87",
+          "number": 87,
+          "glyph": "爪"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺤",
+        "⺥"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "父": {
+      "glyph": "父",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-88",
+          "number": 88,
+          "glyph": "父"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽗"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "爻": {
+      "glyph": "爻",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-89",
+          "number": 89,
+          "glyph": "爻"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽘"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "爿": {
+      "glyph": "爿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-90",
+          "number": 90,
+          "glyph": "爿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "片": {
+      "glyph": "片",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-91",
+          "number": 91,
+          "glyph": "片"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽚"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "牙": {
+      "glyph": "牙",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-92",
+          "number": 92,
+          "glyph": "牙"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽛"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "牛": {
+      "glyph": "牛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-93",
+          "number": 93,
+          "glyph": "牛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺧",
+        "⽜"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "犬": {
+      "glyph": "犬",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-94",
+          "number": 94,
+          "glyph": "犬"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽝"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "犭": {
+      "glyph": "犭",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-94",
+          "number": 94,
+          "glyph": "犬"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺨"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "玄": {
+      "glyph": "玄",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-95",
+          "number": 95,
+          "glyph": "玄"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽞"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "玉": {
+      "glyph": "玉",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-96",
+          "number": 96,
+          "glyph": "玉"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽟"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "瓜": {
+      "glyph": "瓜",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-97",
+          "number": 97,
+          "glyph": "瓜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽠"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "瓦": {
+      "glyph": "瓦",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-98",
+          "number": 98,
+          "glyph": "瓦"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽡"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "甘": {
+      "glyph": "甘",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-99",
+          "number": 99,
+          "glyph": "甘"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽢"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "生": {
+      "glyph": "生",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-100",
+          "number": 100,
+          "glyph": "生"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽣"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "用": {
+      "glyph": "用",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-101",
+          "number": 101,
+          "glyph": "用"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽤"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "田": {
+      "glyph": "田",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-102",
+          "number": 102,
+          "glyph": "田"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽥"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "疋": {
+      "glyph": "疋",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-103",
+          "number": 103,
+          "glyph": "疋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽦"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "疒": {
+      "glyph": "疒",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-104",
+          "number": 104,
+          "glyph": "疒"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽧"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "癶": {
+      "glyph": "癶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-105",
+          "number": 105,
+          "glyph": "癶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽨"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "白": {
+      "glyph": "白",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-106",
+          "number": 106,
+          "glyph": "白"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽩"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "皮": {
+      "glyph": "皮",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-107",
+          "number": 107,
+          "glyph": "皮"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽪"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "皿": {
+      "glyph": "皿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-108",
+          "number": 108,
+          "glyph": "皿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽫"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "目": {
+      "glyph": "目",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-109",
+          "number": 109,
+          "glyph": "目"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺫",
+        "⽬"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "矛": {
+      "glyph": "矛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-110",
+          "number": 110,
+          "glyph": "矛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽭"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "矢": {
+      "glyph": "矢",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-111",
+          "number": 111,
+          "glyph": "矢"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽮"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "石": {
+      "glyph": "石",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-112",
+          "number": 112,
+          "glyph": "石"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽯"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "示": {
+      "glyph": "示",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-113",
+          "number": 113,
+          "glyph": "示"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺬",
+        "⽰"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "礻": {
+      "glyph": "礻",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-113",
+          "number": 113,
+          "glyph": "示"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺭"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "禸": {
+      "glyph": "禸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-114",
+          "number": 114,
+          "glyph": "禸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽱"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "禾": {
+      "glyph": "禾",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-115",
+          "number": 115,
+          "glyph": "禾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽲"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "穴": {
+      "glyph": "穴",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-116",
+          "number": 116,
+          "glyph": "穴"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽳"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "立": {
+      "glyph": "立",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-117",
+          "number": 117,
+          "glyph": "立"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽴"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "米": {
+      "glyph": "米",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-119",
+          "number": 119,
+          "glyph": "米"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽶"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "糸": {
+      "glyph": "糸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-120",
+          "number": 120,
+          "glyph": "糸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽷"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "糹": {
+      "glyph": "糹",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-120",
+          "number": 120,
+          "glyph": "糸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺯"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "纟": {
+      "glyph": "纟",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-120",
+          "number": 120,
+          "glyph": "糸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺰"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "缶": {
+      "glyph": "缶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-121",
+          "number": 121,
+          "glyph": "缶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽸"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "罒": {
+      "glyph": "罒",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-122",
+          "number": 122,
+          "glyph": "网"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺲"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "羊": {
+      "glyph": "羊",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-123",
+          "number": 123,
+          "glyph": "羊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺶",
+        "⽺"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "羽": {
+      "glyph": "羽",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-124",
+          "number": 124,
+          "glyph": "羽"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽻"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "老": {
+      "glyph": "老",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-125",
+          "number": 125,
+          "glyph": "老"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽼"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "而": {
+      "glyph": "而",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-126",
+          "number": 126,
+          "glyph": "而"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽽"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "耒": {
+      "glyph": "耒",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-127",
+          "number": 127,
+          "glyph": "耒"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽾"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "耳": {
+      "glyph": "耳",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-128",
+          "number": 128,
+          "glyph": "耳"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⽿"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "聿": {
+      "glyph": "聿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-129",
+          "number": 129,
+          "glyph": "聿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺻",
+        "⾀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "肉": {
+      "glyph": "肉",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-130",
+          "number": 130,
+          "glyph": "肉"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺼",
+        "⾁"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "臣": {
+      "glyph": "臣",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-131",
+          "number": 131,
+          "glyph": "臣"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "自": {
+      "glyph": "自",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-132",
+          "number": 132,
+          "glyph": "自"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "至": {
+      "glyph": "至",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-133",
+          "number": 133,
+          "glyph": "至"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾄"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "臼": {
+      "glyph": "臼",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-134",
+          "number": 134,
+          "glyph": "臼"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "舌": {
+      "glyph": "舌",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-135",
+          "number": 135,
+          "glyph": "舌"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾆"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "舛": {
+      "glyph": "舛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-136",
+          "number": 136,
+          "glyph": "舛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾇"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "舟": {
+      "glyph": "舟",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-137",
+          "number": 137,
+          "glyph": "舟"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾈"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "艮": {
+      "glyph": "艮",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-138",
+          "number": 138,
+          "glyph": "艮"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "色": {
+      "glyph": "色",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-139",
+          "number": 139,
+          "glyph": "色"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "艹": {
+      "glyph": "艹",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-140",
+          "number": 140,
+          "glyph": "艸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺾",
+        "⺿",
+        "⻀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "虍": {
+      "glyph": "虍",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-141",
+          "number": 141,
+          "glyph": "虍"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾌"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "虫": {
+      "glyph": "虫",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-142",
+          "number": 142,
+          "glyph": "虫"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾍"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "血": {
+      "glyph": "血",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-143",
+          "number": 143,
+          "glyph": "血"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾎"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "行": {
+      "glyph": "行",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-144",
+          "number": 144,
+          "glyph": "行"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾏"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "衣": {
+      "glyph": "衣",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-145",
+          "number": 145,
+          "glyph": "衣"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾐"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "衤": {
+      "glyph": "衤",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-145",
+          "number": 145,
+          "glyph": "衣"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "襾": {
+      "glyph": "襾",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-146",
+          "number": 146,
+          "glyph": "襾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾑"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "西": {
+      "glyph": "西",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-146",
+          "number": 146,
+          "glyph": "襾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻄"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "覀": {
+      "glyph": "覀",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-146",
+          "number": 146,
+          "glyph": "襾"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "見": {
+      "glyph": "見",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-147",
+          "number": 147,
+          "glyph": "見"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "见": {
+      "glyph": "见",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-147",
+          "number": 147,
+          "glyph": "見"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "角": {
+      "glyph": "角",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-148",
+          "number": 148,
+          "glyph": "角"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻆",
+        "⾓"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "言": {
+      "glyph": "言",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-149",
+          "number": 149,
+          "glyph": "言"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "讠": {
+      "glyph": "讠",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-149",
+          "number": 149,
+          "glyph": "言"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻈"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "谷": {
+      "glyph": "谷",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-150",
+          "number": 150,
+          "glyph": "谷"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾕"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "豆": {
+      "glyph": "豆",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-151",
+          "number": 151,
+          "glyph": "豆"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾖"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "豕": {
+      "glyph": "豕",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-152",
+          "number": 152,
+          "glyph": "豕"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾗"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "豸": {
+      "glyph": "豸",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-153",
+          "number": 153,
+          "glyph": "豸"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾘"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "貝": {
+      "glyph": "貝",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-154",
+          "number": 154,
+          "glyph": "貝"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "贝": {
+      "glyph": "贝",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-154",
+          "number": 154,
+          "glyph": "貝"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "赤": {
+      "glyph": "赤",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-155",
+          "number": 155,
+          "glyph": "赤"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾚"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "走": {
+      "glyph": "走",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-156",
+          "number": 156,
+          "glyph": "走"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾛"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "足": {
+      "glyph": "足",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-157",
+          "number": 157,
+          "glyph": "足"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾜"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "身": {
+      "glyph": "身",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-158",
+          "number": 158,
+          "glyph": "身"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾝"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "車": {
+      "glyph": "車",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-159",
+          "number": 159,
+          "glyph": "車"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾞"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "车": {
+      "glyph": "车",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-159",
+          "number": 159,
+          "glyph": "車"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻋"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "辛": {
+      "glyph": "辛",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-160",
+          "number": 160,
+          "glyph": "辛"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾟"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "辰": {
+      "glyph": "辰",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-161",
+          "number": 161,
+          "glyph": "辰"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾠"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "辶": {
+      "glyph": "辶",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-162",
+          "number": 162,
+          "glyph": "辵"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻌",
+        "⻍",
+        "⻎"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "邑": {
+      "glyph": "邑",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-163",
+          "number": 163,
+          "glyph": "邑"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻏",
+        "⾢"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "酉": {
+      "glyph": "酉",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-164",
+          "number": 164,
+          "glyph": "酉"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾣"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "釆": {
+      "glyph": "釆",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-165",
+          "number": 165,
+          "glyph": "釆"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾤"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "里": {
+      "glyph": "里",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-166",
+          "number": 166,
+          "glyph": "里"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾥"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "金": {
+      "glyph": "金",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-167",
+          "number": 167,
+          "glyph": "金"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾦"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "钅": {
+      "glyph": "钅",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-167",
+          "number": 167,
+          "glyph": "金"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻐"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "長": {
+      "glyph": "長",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-168",
+          "number": 168,
+          "glyph": "長"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻑",
+        "⾧"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "镸": {
+      "glyph": "镸",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-168",
+          "number": 168,
+          "glyph": "長"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "长": {
+      "glyph": "长",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-168",
+          "number": 168,
+          "glyph": "長"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻓"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "門": {
+      "glyph": "門",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-169",
+          "number": 169,
+          "glyph": "門"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾨"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "门": {
+      "glyph": "门",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-169",
+          "number": 169,
+          "glyph": "門"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "阜": {
+      "glyph": "阜",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-170",
+          "number": 170,
+          "glyph": "阜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾩"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "阝": {
+      "glyph": "阝",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-170",
+          "number": 170,
+          "glyph": "阜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻖"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "隶": {
+      "glyph": "隶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-171",
+          "number": 171,
+          "glyph": "隶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾪"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "隹": {
+      "glyph": "隹",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-172",
+          "number": 172,
+          "glyph": "隹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾫"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "雨": {
+      "glyph": "雨",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-173",
+          "number": 173,
+          "glyph": "雨"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻗",
+        "⾬"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "靑": {
+      "glyph": "靑",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-174",
+          "number": 174,
+          "glyph": "靑"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾭"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "青": {
+      "glyph": "青",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-174",
+          "number": 174,
+          "glyph": "靑"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻘"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "非": {
+      "glyph": "非",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-175",
+          "number": 175,
+          "glyph": "非"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾮"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "面": {
+      "glyph": "面",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-176",
+          "number": 176,
+          "glyph": "面"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾯"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "革": {
+      "glyph": "革",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-177",
+          "number": 177,
+          "glyph": "革"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾰"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "韋": {
+      "glyph": "韋",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-178",
+          "number": 178,
+          "glyph": "韋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾱"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "韦": {
+      "glyph": "韦",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-178",
+          "number": 178,
+          "glyph": "韋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻙"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "韭": {
+      "glyph": "韭",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-179",
+          "number": 179,
+          "glyph": "韭"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾲"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "音": {
+      "glyph": "音",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-180",
+          "number": 180,
+          "glyph": "音"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾳"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "頁": {
+      "glyph": "頁",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-181",
+          "number": 181,
+          "glyph": "頁"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾴"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "页": {
+      "glyph": "页",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-181",
+          "number": 181,
+          "glyph": "頁"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻚"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "風": {
+      "glyph": "風",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-182",
+          "number": 182,
+          "glyph": "風"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾵"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "风": {
+      "glyph": "风",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-182",
+          "number": 182,
+          "glyph": "風"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻛"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "食": {
+      "glyph": "食",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-184",
+          "number": 184,
+          "glyph": "食"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻝",
+        "⾷"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "飠": {
+      "glyph": "飠",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-184",
+          "number": 184,
+          "glyph": "食"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻟"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "饣": {
+      "glyph": "饣",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-184",
+          "number": 184,
+          "glyph": "食"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻠"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "首": {
+      "glyph": "首",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-185",
+          "number": 185,
+          "glyph": "首"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾸"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "香": {
+      "glyph": "香",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-186",
+          "number": 186,
+          "glyph": "香"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾹"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "馬": {
+      "glyph": "馬",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-187",
+          "number": 187,
+          "glyph": "馬"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾺"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "马": {
+      "glyph": "马",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-187",
+          "number": 187,
+          "glyph": "馬"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻢"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "骨": {
+      "glyph": "骨",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-188",
+          "number": 188,
+          "glyph": "骨"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻣",
+        "⾻"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "高": {
+      "glyph": "高",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-189",
+          "number": 189,
+          "glyph": "高"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾼"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "髟": {
+      "glyph": "髟",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-190",
+          "number": 190,
+          "glyph": "髟"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾽"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鬥": {
+      "glyph": "鬥",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-191",
+          "number": 191,
+          "glyph": "鬥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾾"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鬯": {
+      "glyph": "鬯",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-192",
+          "number": 192,
+          "glyph": "鬯"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⾿"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鬲": {
+      "glyph": "鬲",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-193",
+          "number": 193,
+          "glyph": "鬲"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿀"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鬼": {
+      "glyph": "鬼",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-194",
+          "number": 194,
+          "glyph": "鬼"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻤",
+        "⿁"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "魚": {
+      "glyph": "魚",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-195",
+          "number": 195,
+          "glyph": "魚"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鱼": {
+      "glyph": "鱼",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-195",
+          "number": 195,
+          "glyph": "魚"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻥"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鳥": {
+      "glyph": "鳥",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-196",
+          "number": 196,
+          "glyph": "鳥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿃"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鸟": {
+      "glyph": "鸟",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-196",
+          "number": 196,
+          "glyph": "鳥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻦"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鹵": {
+      "glyph": "鹵",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-197",
+          "number": 197,
+          "glyph": "鹵"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿄"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鹿": {
+      "glyph": "鹿",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-198",
+          "number": 198,
+          "glyph": "鹿"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿅"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "麥": {
+      "glyph": "麥",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-199",
+          "number": 199,
+          "glyph": "麥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿆"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "麦": {
+      "glyph": "麦",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-199",
+          "number": 199,
+          "glyph": "麥"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻨"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "麻": {
+      "glyph": "麻",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-200",
+          "number": 200,
+          "glyph": "麻"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿇"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黃": {
+      "glyph": "黃",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-201",
+          "number": 201,
+          "glyph": "黃"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿈"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黄": {
+      "glyph": "黄",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-201",
+          "number": 201,
+          "glyph": "黃"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻩"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黍": {
+      "glyph": "黍",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-202",
+          "number": 202,
+          "glyph": "黍"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黑": {
+      "glyph": "黑",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-203",
+          "number": 203,
+          "glyph": "黑"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黹": {
+      "glyph": "黹",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-204",
+          "number": 204,
+          "glyph": "黹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿋"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黽": {
+      "glyph": "黽",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-205",
+          "number": 205,
+          "glyph": "黽"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿌"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "黾": {
+      "glyph": "黾",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-205",
+          "number": 205,
+          "glyph": "黽"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻪"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鼎": {
+      "glyph": "鼎",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-206",
+          "number": 206,
+          "glyph": "鼎"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿍"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鼓": {
+      "glyph": "鼓",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-207",
+          "number": 207,
+          "glyph": "鼓"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿎"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鼠": {
+      "glyph": "鼠",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-208",
+          "number": 208,
+          "glyph": "鼠"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿏"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "鼻": {
+      "glyph": "鼻",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-209",
+          "number": 209,
+          "glyph": "鼻"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿐"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "齊": {
+      "glyph": "齊",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-210",
+          "number": 210,
+          "glyph": "齊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿑"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "齐": {
+      "glyph": "齐",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-210",
+          "number": 210,
+          "glyph": "齊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻬"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "齒": {
+      "glyph": "齒",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-211",
+          "number": 211,
+          "glyph": "齒"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿒"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "齿": {
+      "glyph": "齿",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-211",
+          "number": 211,
+          "glyph": "齒"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻮"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "龍": {
+      "glyph": "龍",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-212",
+          "number": 212,
+          "glyph": "龍"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿓"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "龙": {
+      "glyph": "龙",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-212",
+          "number": 212,
+          "glyph": "龍"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻰"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "龜": {
+      "glyph": "龜",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-213",
+          "number": 213,
+          "glyph": "龜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻱",
+        "⿔"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "龟": {
+      "glyph": "龟",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-213",
+          "number": 213,
+          "glyph": "龜"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻳"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "龠": {
+      "glyph": "龠",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-214",
+          "number": 214,
+          "glyph": "龠"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⿕"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𠘨": {
+      "glyph": "𠘨",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-16",
+          "number": 16,
+          "glyph": "几"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺇"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𤴔": {
+      "glyph": "𤴔",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-103",
+          "number": 103,
+          "glyph": "疋"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺪"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𥫗": {
+      "glyph": "𥫗",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-118",
+          "number": 118,
+          "glyph": "竹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺮"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𦉫": {
+      "glyph": "𦉫",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-122",
+          "number": 122,
+          "glyph": "网"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺵"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𦍌": {
+      "glyph": "𦍌",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-123",
+          "number": 123,
+          "glyph": "羊"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺷"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𦥑": {
+      "glyph": "𦥑",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-134",
+          "number": 134,
+          "glyph": "臼"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺽"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𧾷": {
+      "glyph": "𧾷",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-157",
+          "number": 157,
+          "glyph": "足"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻊"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𩙿": {
+      "glyph": "𩙿",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-184",
+          "number": 184,
+          "glyph": "食"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⻞"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "𫜹": {
+      "glyph": "𫜹",
+      "kind": "variant",
+      "radicals": [
+        {
+          "id": "kangxi-58",
+          "number": 58,
+          "glyph": "彐"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺕"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    }
+  },
+  "screenshotCharacter": "不",
+  "screenshotExpression": "⿸丆⿰丨丶",
+  "screenshotIdentities": {
+    "丆": {
+      "glyph": "丆",
+      "kind": "unmapped",
+      "radicals": [],
+      "equivalentGlyphs": [],
+      "source": null
+    },
+    "丨": {
+      "glyph": "丨",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-2",
+          "number": 2,
+          "glyph": "丨"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼁"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "丶": {
+      "glyph": "丶",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-3",
+          "number": 3,
+          "glyph": "丶"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⼂"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "厂": {
+      "glyph": "厂",
+      "kind": "canonical",
+      "radicals": [
+        {
+          "id": "kangxi-27",
+          "number": 27,
+          "glyph": "厂"
+        }
+      ],
+      "equivalentGlyphs": [
+        "⺁",
+        "⼚"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "〡": {
+      "glyph": "〡",
+      "kind": "unmapped",
+      "radicals": [],
+      "equivalentGlyphs": [],
+      "source": null
+    },
+    "⺮": {
+      "glyph": "⺮",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-118",
+          "number": 118,
+          "glyph": "竹"
+        }
+      ],
+      "equivalentGlyphs": [
+        "𥫗"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    },
+    "⺼": {
+      "glyph": "⺼",
+      "kind": "symbol",
+      "radicals": [
+        {
+          "id": "kangxi-130",
+          "number": 130,
+          "glyph": "肉"
+        }
+      ],
+      "equivalentGlyphs": [
+        "肉"
+      ],
+      "source": {
+        "id": "Unicode UCD/Unihan:17.0.0:93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "provider": "Unicode UCD/Unihan",
+        "version": "17.0.0",
+        "checksum": "93f921a96a9ae7e84da4060cbbffc16ef110f05c120978f37fade33ea0bbb02a",
+        "license": "Unicode License V3",
+        "source_url": "https://www.unicode.org/Public/17.0.0/ucd/"
+      }
+    }
+  }
+}
