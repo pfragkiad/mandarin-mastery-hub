@@ -93,7 +93,7 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
 export function PracticeSheet({ text, pinyin, meaning, onClose, outlines }: { text: string; pinyin?: string | undefined; meaning?: string | undefined; onClose: () => void; outlines?: Record<string, StrokeModel> | undefined }) {
   const readings = pinyin?.trim().split(/\s+/) ?? [];
   const tokens = useMemo<PracticeToken[]>(() => {
-    const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿]/.test(ch));
+    const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿\u31C0-\u31EF]/.test(ch));
     return glyphs.map((ch, i) => ({ text: ch, pinyin: readings.length === glyphs.length ? readings[i] : undefined }));
   }, [text, pinyin]); // eslint-disable-line react-hooks/exhaustive-deps
   const [rows, setRows] = useState<1 | 2>(1);
