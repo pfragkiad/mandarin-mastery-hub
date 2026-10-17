@@ -124,7 +124,7 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; };
-  }, [character, speed, retry, theme]);
+  }, [character, retry, theme]);
   const play = () => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
