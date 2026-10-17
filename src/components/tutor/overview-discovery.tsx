@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
-import { words as allWords, vocabularyKind, type Word } from '@/lib/mandarin';
+import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { randomOverviewWord, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from '@/lib/overview';
 import { catalog, characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
 import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
@@ -39,7 +39,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   const visible = useMemo(() => (entries.length ? filterLibrary(entries, '', '', false, false) : []), [entries]);
 
   useEffect(() => {
-    if (isVocabulary(category)) setSelectedId(randomOverviewWord(allWords.length ? items : items, undefined, Math.random, category)?.id);
+    if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, undefined, Math.random, category)?.id);
     else setSelectedId(randomOverviewCharacter(entries)?.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, catalogVersion]);
