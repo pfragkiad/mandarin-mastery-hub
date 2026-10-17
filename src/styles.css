@@ -142,7 +142,9 @@
 .catalog-tab-count { font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
 .catalog-workspace, .vocabulary-workspace { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,1fr); gap: 32px; align-items: start; }.word-detail-panel .sentence p { font-size: 24px; }.word-detail-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 8px; }.word-detail-panel .detail-footnote { text-align: left; }.word-card.is-selected { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
 .catalog-results { min-width: 0; }
-.catalog-results .result-row { margin-top: 0; }
+.catalog-results .result-row { margin-top: 0; gap: 12px; flex-wrap: wrap; }
+.catalog-results .result-row > span:first-child { font-size: 11px; letter-spacing: 0; line-height: 1.6; }
+.catalog-results .result-row > .catalog-results-count { font-size: 11px; font-weight: 500; letter-spacing: 0; color: var(--foreground); white-space: nowrap; margin-left: auto; font-variant-numeric: tabular-nums; }
 .catalog-entry-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(max(106px,calc((100% - 50px)/6)),1fr)); gap: 10px; }
 .catalog-entry { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 122px; padding: 12px; gap: 4px; border: 1px solid var(--border); background: var(--card); border-radius: 6px; min-width: 0; white-space: normal; }
 .catalog-entry.selected { border-color: var(--primary); background: var(--secondary); box-shadow: inset 0 0 0 1px var(--primary); }
