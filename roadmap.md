@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Paginate Words and Phrases with matching Glyphs controls, exact linked selections, filter resets and browser history; verify desktop and phones.
+- [x] Paginate Words and Phrases with matching Glyphs controls, exact linked selections, filter resets and browser history; verify desktop and phones.
 - [x] Put the page-level provenance footers ("Imported record ·", "Imported from the CLEC HSK syllabus…", "Stroke order powered by…") in the same small uppercase capitals treatment as the decomposition/word footnotes, without stacking dividers; verify Glyphs, Vocabulary and Practice.
 - [x] Drop our own product name from every source line (decomposition trees, word details, vocabulary note) and label the visitor's own entries "Added this session"; verify Glyphs, Practice and Vocabulary.
 - [x] Give the Sourced decomposition block the same split used in word details — readable IDS sentence, then source/verification as a small uppercase footnote under a thin divider — on Glyphs and Practice; verify both themes and phones.
