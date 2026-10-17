@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
 import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
 
 type StrokeModel = { strokes: string[] } | null;
@@ -151,14 +152,14 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
               <option value="cross">田字格 · cross</option>
             </select>
           </label>
-          <label className="checkbox">
-            <input type="checkbox" checked={showPinyin} onChange={e => setShowPinyin(e.target.checked)} />
-            Include pinyin
-          </label>
-          <label className="checkbox">
-            <input type="checkbox" checked={showMeaning} onChange={e => setShowMeaning(e.target.checked)} />
-            Include meaning
-          </label>
+          <div className="toggle">
+            <Switch id="sheet-pinyin" checked={showPinyin} onCheckedChange={setShowPinyin} />
+            <label htmlFor="sheet-pinyin">Include pinyin</label>
+          </div>
+          <div className="toggle">
+            <Switch id="sheet-meaning" checked={showMeaning} onCheckedChange={setShowMeaning} />
+            <label htmlFor="sheet-meaning">Include meaning</label>
+          </div>
           <Button onClick={() => void print()} disabled={models.loading || printing}>
             <Printer />{models.loading ? 'Preparing models…' : printing ? 'Opening print dialog…' : 'Print practice sheet'}
           </Button>
