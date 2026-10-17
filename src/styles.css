@@ -486,7 +486,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .daily-hero-copy .overview-library-search { margin: 0; }
 .daily-hero-card { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: radial-gradient(120% 90% at 50% 30%, color-mix(in oklab, var(--primary) 12%, var(--card)), var(--card) 70%); box-shadow: var(--shadow-soft); padding: 22px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .daily-hero-label { align-self: flex-start; position: relative; }
-.daily-hero-ghost { position: absolute; right: -6%; bottom: -12%; font-size: 360px; line-height: 1; color: var(--primary); opacity: .06; pointer-events: none; user-select: none; }
+.daily-hero-ghost { position: absolute; right: -8%; top: -10%; font-size: 340px; line-height: 1; color: var(--primary); opacity: .05; pointer-events: none; user-select: none; }
 .daily-glyph { position: relative; width: 300px; height: 300px; max-width: 100%; display: grid; place-items: center; }
 .daily-glyph.is-loading { opacity: .4; }
 .daily-glyph-writer, .daily-glyph-font { grid-area: 1 / 1; transition: opacity .7s ease; }
