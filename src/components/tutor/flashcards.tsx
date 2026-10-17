@@ -4,11 +4,14 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
-import { collections, speak } from '@/lib/mandarin';
+import { collections } from '@/lib/mandarin';
+import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/audio';
+import { characterAudioRequest } from '@/lib/catalog-store';
+import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 
-type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript };
+type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript; audio?: AudioAttachment | null };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
 export function FlashcardsPage() {
@@ -45,6 +48,9 @@ export function FlashcardsPage() {
   };
   const card = deck?.[index];
   const done = deck && index >= deck.length;
+  const request = { ...characterAudioRequest(card?.hanzi ?? '', card?.pinyin), audio: card?.audio ?? null };
+  const source = audioCandidates(request)[0]?.label;
+  const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), card?.pinyin);
 
   const uniqueMissed = [...new Map(missed.map(m => [m.hanzi, m])).values()];
   const firstTry = repeat ? deck ? new Set(deck.map(c => c.hanzi)).size - uniqueMissed.length : 0 : 0;
@@ -69,17 +75,23 @@ export function FlashcardsPage() {
     {card && !done && <div className={`flash-stage ${card.script === 'Traditional' ? 'is-traditional' : ''}`}>
       <div className="flash-meta"><span>Card {index + 1} of {deck?.length ?? 0}{round > 1 ? ` · round ${round}` : ''}</span><span>{missed.length} to review</span></div>
       <div className="flash-progress"><span style={{ width: `${(index / (deck?.length || 1)) * 100}%` }} /></div>
-      <Button variant="ghost" className={`flash-card ${flipped ? 'is-flipped' : ''}`} onClick={() => setFlipped(f => !f)} aria-label="Flip card">
+      <div className={`flash-card ${flipped ? 'is-flipped' : ''}`}>
         <div className="flash-inner">
-          <div className="flash-face" aria-hidden={flipped}>{direction === 'zh' ? <><span className="flash-big" lang="zh-CN">{card.hanzi}</span>{showFrontPinyin && <span className="pinyin flash-pinyin">{card.pinyin}</span>}</> : <span className="flash-word">{card.meaning}</span>}<span className="flash-hint">TAP TO FLIP</span></div>
-          <div className="flash-face back" aria-hidden={!flipped}><span className="flash-big" lang="zh-CN">{card.hanzi}</span><span className="pinyin flash-pinyin">{card.pinyin}</span><span className="flash-word">{card.meaning}</span></div>
+          <div className="flash-face" aria-hidden={flipped} inert={flipped}>
+            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(f => !f)} aria-label="Flip card"/>
+            {direction === 'zh' ? <>{showFrontPinyin && <span className="pinyin flash-pinyin">{card.pinyin}</span>}<span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span></> : <span className="flash-word">{card.meaning}</span>}<span className="flash-hint">TAP TO FLIP</span>
+          </div>
+          <div className="flash-face back" aria-hidden={!flipped} inert={!flipped}>
+            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(f => !f)} aria-label="Flip card"/>
+            <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></div>
+            <span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span><span className="flash-word">{card.meaning}</span>
+          </div>
         </div>
-      </Button>
+      </div>
       <div className="flash-actions">
         <Button variant="outline" onClick={() => answer(false)} disabled={!flipped}><X />Still learning</Button>
         <Button onClick={() => answer(true)} disabled={!flipped}><Check />I knew it</Button>
       </div>
-      <Button variant="ghost" onClick={() => speak(card.hanzi, preferences.slow)}><Volume2 />Listen</Button>
     </div>}
 
     {done && <div className="flash-stage"><div className="flash-result">

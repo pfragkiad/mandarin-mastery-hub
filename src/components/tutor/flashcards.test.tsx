@@ -2,7 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { FlashcardsPage } from './flashcards';
 
-vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'Level 1' }], preferences: { includeTraditional: false } }) }));
+vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'Level 1', audio: { url: 'https://example.com/hello.mp3', source: 'Test', license: 'Test' } }], preferences: { includeTraditional: false } }) }));
+vi.mock('@/lib/audio', async importOriginal => ({ ...await importOriginal<typeof import('@/lib/audio')>(), playPronunciation: vi.fn() }));
 vi.mock('@/lib/mandarin', () => ({ collections: ['Greetings'], speak: vi.fn() }));
 vi.mock('@/lib/character-library', () => ({ referenceCatalog: [] }));
 
