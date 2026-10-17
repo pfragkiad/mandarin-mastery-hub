@@ -1,4 +1,5 @@
 import type { DecompositionNode } from './character-library';
+import type { CatalogRow } from './catalog-store';
 
 export const reuseGroups = [
   { value: 'very-frequent', label: 'Very frequent', min: 100, max: Infinity },
@@ -10,6 +11,19 @@ export const reuseGroups = [
 export type ReuseGroup = typeof reuseGroups[number]['value'];
 export function reuseGroup(count: number) {
   return reuseGroups.find(group => count >= group.min && count <= group.max) ?? reuseGroups[4];
+}
+
+/** Imported Unihan dictionary assignments, not component appearances. */
+export function countRadicalUsage(radicals: string[], characters: CatalogRow[]): Record<string, number> {
+  const counts: Record<string, number> = Object.fromEntries(radicals.map(glyph => [glyph, 0]));
+  const seen = new Set<string>();
+  for (const [glyph, , , note] of characters) {
+    if (seen.has(glyph)) continue;
+    seen.add(glyph);
+    const radical = note.match(/·\s*(.+?) radical$/)?.[1];
+    if (radical && Object.hasOwn(counts, radical)) counts[radical] = (counts[radical] ?? 0) + 1;
+  }
+  return counts;
 }
 
 /** Count each component once per distinct parent character, including both scripts. */

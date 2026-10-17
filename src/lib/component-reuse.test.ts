@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { countComponentReuse, reuseGroup } from './component-reuse';
+import { countComponentReuse, countRadicalUsage, reuseGroup } from './component-reuse';
 import { filterLibrary, libraryEntries } from './character-library';
 
 describe('Component reuse', () => {
@@ -38,6 +38,29 @@ describe('Component reuse', () => {
   });
   it('keeps usage counts unchanged when traditional cards are hidden', () => {
     expect(filterLibrary(libraryEntries('Components'), '口', '', false, false, 'very-frequent').find(e => e.hanzi === '口')?.reuseCount).toBe(487);
-    expect(libraryEntries('Radicals').some(e => e.reuseCount !== undefined)).toBe(false);
+    expect(libraryEntries('Characters').some(e => e.reuseCount !== undefined)).toBe(false);
+  });
+  it('counts assigned radicals rather than decomposition appearances', () => {
+    expect(countRadicalUsage(['水', '木'], [
+      ['河', '', '', '8 strokes · 水 radical', 'Common'],
+      ['河', '', '', '8 strokes · 水 radical', 'Common'],
+      ['漢', '', '', '14 strokes · 水 radical', 'Traditional'],
+      ['⺀', '', '', 'Stroke count not recorded', 'Common'],
+    ])).toEqual({ '水': 2, '木': 0 });
+  });
+  it('attaches the verified dictionary-radical counts', () => {
+    const entries = libraryEntries('Radicals');
+    expect(entries.find(e => e.hanzi === '水')?.reuseCount).toBe(484);
+    expect(entries.find(e => e.hanzi === '艸')?.reuseCount).toBe(425);
+    expect(entries.find(e => e.hanzi === '口')?.reuseCount).toBe(425);
+    expect(entries.reduce((sum, e) => sum + (e.reuseCount ?? 0), 0)).toBe(9566);
+  });
+  it('shares all five filter categories with radicals', () => {
+    const entries = libraryEntries('Radicals');
+    expect(filterLibrary(entries, '', '', false, true, 'very-frequent')).toHaveLength(31);
+    expect(filterLibrary(entries, '', '', false, true, 'frequent')).toHaveLength(54);
+    expect(filterLibrary(entries, '', '', false, true, 'moderate')).toHaveLength(90);
+    expect(filterLibrary(entries, '', '', false, true, 'less-frequent')).toHaveLength(39);
+    expect(filterLibrary(entries, '', '', false, true, 'unrecorded')).toHaveLength(0);
   });
 });
