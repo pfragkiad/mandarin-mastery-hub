@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Match all decomposition layout icons to the left–right vector icon across current and BabelStone trees; verify shared rendering.
 - [x] Import sourced radical identities and symbol lookup without replacing exact records; preserve 214 radicals and unmapped 丆, label dictionary text separately, verify symbol search and canonical links/Back on desktop and narrow screens; 186 tests pass.
 - [x] Show BabelStone alternatives as separate root-and-branch trees using the shared decomposition renderer; verified supplied 气/不 structures, source-preserving fallbacks, linked records/history and phone layout.
 - [x] Add optional per-character enrichment with checksum-gated source comparisons, teaching notes and component stroke highlighting; verified 河/裹, incompatible 丁 fallback, mobile controls and paused playback; 153 tests pass. Upstream audit regeneration remains unavailable without its original scripts/inputs.

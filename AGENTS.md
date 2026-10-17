@@ -30,7 +30,7 @@
 - Keep selections, filters, tabs, pages and Practice focus in URL search; push selections and replace typing to restore history.
 - Share the record-card footer between vocabulary and glyph cards, and keep namespaced glyph bookmarks in the existing session workspace with URL-backed Saved filtering, so audio/bookmark controls and history behave identically without implying durable account storage.
 - Use shared library destinations and real router links for decomposition glyphs; resolve explicit selections independently of browsing filters so linked records and browser history never silently show a different record.
-- Share decomposition rendering across Glyphs, Practice and Vocabulary; preserve contextual readings and textual phrase matches, never imply verified grammar/etymology. Parse BabelStone prefix IDS into separate trees; keep unsupported notation raw and numbered components opaque to avoid invented parts.
+- Share decomposition rendering and vector layout icons across Glyphs, Practice and Vocabulary; preserve readings/textual matches without implying grammar/etymology. Parse BabelStone prefix IDS separately; keep unsupported notation raw and numbered components opaque.
 - Split vocabulary by explicit entryKind metadata, never glyph length; keep its Words/Phrases tab in URL search and infer the tab from linked entries so dictionary links still open their target.
 - URL selections override browsing hints; reveal offscreen cards after navigation/history, without moving visible cards.
 - Repeatably import unofficial phrases; keep local IDs/matches/review in phraseMetadata and hsk_index/hskSource empty so local numbering never implies syllabus provenance.
