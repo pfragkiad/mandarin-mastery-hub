@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 
-export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A SENTENCE', onNavigate }: { sentence: string; pinyin?: string; translation?: string; heading?: string; onNavigate?: () => void }) {
+export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A SENTENCE', onNavigate }: { sentence: string; pinyin?: string | undefined; translation?: string; heading?: string; onNavigate?: () => void }) {
   const { preferences } = useWorkspace();
   return <div className="sentence">
     {heading && <span className="eyebrow">{heading}</span>}

@@ -103,7 +103,7 @@
 .glyph-usage-section { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 18px; }
 .glyph-usage-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 14px; }
 .glyph-usage-example + .glyph-usage-example { margin-top: 18px; }
-.glyph-usage-reference { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: var(--primary); }
+.glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; color: var(--primary); }
 .glyph-usage-reference > span:first-child { font-size: 18px; }
 .glyph-usage-reference > span:last-child { font-size: 10px; color: var(--muted-foreground); }
 .glyph-usage-reference:hover { text-decoration: underline; }
@@ -111,7 +111,7 @@
 .glyph-usage-example .sentence { border-top: 0; padding-top: 0; margin-top: 8px; }
 .glyph-usage-example .sentence p { font-size: 22px; overflow-wrap: anywhere; }
 .glyph-usage-example .sentence-pinyin { margin-top: 0; font-size: 12px; }
-.glyph-usage-example .detail-footnote { margin-top: 10px; padding-top: 8px; }
+.glyph-usage-example .detail-footnote { margin-top: 10px; padding-top: 8px; text-align: left; }
 .glyph-usage-section .library-note { margin-top: 0; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
