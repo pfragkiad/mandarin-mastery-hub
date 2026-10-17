@@ -1,9 +1,9 @@
 import { vocabularyKind, type Word } from './mandarin';
 import { filterLibrary, LIBRARY_PAGE_SIZE, type LibraryEntry } from './character-library';
 
-/** Pick from real word records, excluding the previous pick when possible. */
+/** Pick from real word records, excluding the previous pick when possible. Traditional forms are never chosen at random. */
 export function randomOverviewWord(items: Word[], previousId?: string, random = Math.random): Word | undefined {
-  const words = items.filter(word => vocabularyKind(word) === 'word');
+  const words = items.filter(word => vocabularyKind(word) === 'word' && word.script !== 'Traditional');
   const alternatives = words.filter(word => word.id !== previousId);
   const pool = alternatives.length ? alternatives : words;
   return pool[Math.floor(random() * pool.length)];
@@ -13,8 +13,9 @@ export function overviewWordDestination(word: Word) {
   return { word: word.id, tab: vocabularyKind(word) };
 }
 
-export function randomOverviewCharacter(entries: LibraryEntry[], includeTraditional = false, previousId?: string, random = Math.random) {
-  const visible = filterLibrary(entries, '', '', false, includeTraditional);
+/** Pick a real library record at random. Traditional forms are never chosen at random. */
+export function randomOverviewCharacter(entries: LibraryEntry[], previousId?: string, random = Math.random) {
+  const visible = filterLibrary(entries, '', '', false, false);
   const alternatives = visible.filter(entry => entry.id !== previousId);
   const pool = alternatives.length ? alternatives : visible;
   return pool[Math.floor(random() * pool.length)];
