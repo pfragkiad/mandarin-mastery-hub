@@ -16,6 +16,7 @@ export function FlashcardsPage() {
   const [category, setCategory] = useState('All vocabulary');
   const [level, setLevel] = useState('All levels');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
+  const [showFrontPinyin, setShowFrontPinyin] = useState(false);
   const [deck, setDeck] = useState<Card[] | null>(null);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -56,21 +57,24 @@ export function FlashcardsPage() {
       </select></label>
       <label>LEVEL<select className="filter-select" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select></label>
       <label>CARD FRONT<select className="filter-select" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select></label>
-      <label className="flash-repeat"><span>REPEAT MISSED</span><span className="flex items-center gap-2 normal-case tracking-normal font-normal text-foreground text-sm"><Switch checked={repeat} onCheckedChange={setRepeat} aria-label="Repeat missed cards until all are known" />Until all known</span></label>
       <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></div>
+      <div className="flash-options">
+        <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={setShowFrontPinyin} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
+        <label className="flash-option"><Switch checked={repeat} onCheckedChange={setRepeat} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
+      </div>
     </div>
 
     {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? 'Press Start to shuffle the deck. Tap a card to flip it.' : 'Try another category or level.'}</p></div>}
 
     {card && !done && <div className={`flash-stage ${card.script === 'Traditional' ? 'is-traditional' : ''}`}>
-      <div className="flash-meta"><span>Card {index + 1} of {deck!.length}{round > 1 ? ` · round ${round}` : ''}</span><span>{missed.length} to review</span></div>
-      <div className="flash-progress"><span style={{ width: `${(index / deck!.length) * 100}%` }} /></div>
-      <button className={`flash-card ${flipped ? 'is-flipped' : ''}`} onClick={() => setFlipped(f => !f)} aria-label="Flip card">
+      <div className="flash-meta"><span>Card {index + 1} of {deck?.length ?? 0}{round > 1 ? ` · round ${round}` : ''}</span><span>{missed.length} to review</span></div>
+      <div className="flash-progress"><span style={{ width: `${(index / (deck?.length || 1)) * 100}%` }} /></div>
+      <Button variant="ghost" className={`flash-card ${flipped ? 'is-flipped' : ''}`} onClick={() => setFlipped(f => !f)} aria-label="Flip card">
         <div className="flash-inner">
-          <div className="flash-face">{direction === 'zh' ? <span className="flash-big" lang="zh-CN">{card.hanzi}</span> : <span className="flash-word">{card.meaning}</span>}<span className="flash-hint">TAP TO FLIP</span></div>
-          <div className="flash-face back"><span className="flash-big" lang="zh-CN">{card.hanzi}</span><span className="pinyin" style={{ fontSize: 16 }}>{card.pinyin}</span><span className="flash-word">{card.meaning}</span></div>
+          <div className="flash-face" aria-hidden={flipped}>{direction === 'zh' ? <><span className="flash-big" lang="zh-CN">{card.hanzi}</span>{showFrontPinyin && <span className="pinyin flash-pinyin">{card.pinyin}</span>}</> : <span className="flash-word">{card.meaning}</span>}<span className="flash-hint">TAP TO FLIP</span></div>
+          <div className="flash-face back" aria-hidden={!flipped}><span className="flash-big" lang="zh-CN">{card.hanzi}</span><span className="pinyin flash-pinyin">{card.pinyin}</span><span className="flash-word">{card.meaning}</span></div>
         </div>
-      </button>
+      </Button>
       <div className="flash-actions">
         <Button variant="outline" onClick={() => answer(false)} disabled={!flipped}><X />Still learning</Button>
         <Button onClick={() => answer(true)} disabled={!flipped}><Check />I knew it</Button>
@@ -80,8 +84,8 @@ export function FlashcardsPage() {
 
     {done && <div className="flash-stage"><div className="flash-result">
       <div className="eyebrow">DECK COMPLETE</div>
-      {repeat ? <><strong>All {new Set(deck!.map(c => c.hanzi)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
-        : <><strong>{deck!.length - uniqueMissed.length} / {deck!.length}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
+      {repeat ? <><strong>All {new Set(deck?.map(c => c.hanzi)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
+        : <><strong>{(deck?.length ?? 0) - uniqueMissed.length} / {deck?.length ?? 0}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
       {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => isReference || !items.some(w => w.hanzi === m.hanzi)
         ? <Link key={m.hanzi} to="/strokes" search={{ character: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — practise writing`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
         : <Link key={m.hanzi} to="/vocabulary" search={{ q: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
