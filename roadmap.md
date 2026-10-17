@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Centre each Overview tile's random record so the speaker icons sit on the same line in all five tiles regardless of content length; verify across shuffles and on phones.
 - [x] Trim the Overview title block to a single line — remove the slogan eyebrow, the subtitle and the decorative 学; verify other pages keep their headings and both themes/phones.
 - [x] Rename the sidebar "Characters" entry to "Library" (it covers characters, radicals, components and strokes) and replace the Overview category hover with a soft tinted badge instead of a hard rectangle; verify both themes and phones.
 - [x] Replace the Overview category icons with representative Chinese glyphs (词 句 字 口 氵) that follow the font and theme; verify both themes, all fonts, links and phones.
