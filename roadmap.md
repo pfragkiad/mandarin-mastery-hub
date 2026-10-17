@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Remove the unclear reference metadata prefix, compact flashcard setup, and add a front-card pinyin switch; verify toggling and card directions.
 - [x] Add individual-stroke writing practice and verify drawing, reset and browser history.
 - [x] Remove redundant word/phrase card arrows, add character and vocabulary breakdowns to detail panels, unify Decomposition titles, and verify linked records/history.
 - [x] Match all Glyphs cards to word sizing and shared footer controls; add session bookmarks and URL-backed All/Saved filtering, retain decomposition symbols and verify navigation/audio.
