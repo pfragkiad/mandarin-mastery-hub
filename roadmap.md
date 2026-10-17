@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Make writing playback pause/resume in place with the current stroke highlighted; verify characters, radicals and individual strokes.
+- [x] Make writing playback pause/resume in place with the current stroke highlighted; verified frozen/resumed drawing, sequential continuation and fresh Reset for characters/radicals, plus individual-stroke playback.
 - [x] Show sourced official Kangxi indices on radical cards in the HSK index style; verified all 214 numbers, paginated selection and phone cards.
 - [x] Remove repeated sidebar/footer copy and align both header edges with the main content; verified desktop, collapsed navigation, phones and guidance access.
 - [x] Match Glyphs to the shared IN A SENTENCE formatting and restrict to one existing example; verify.
