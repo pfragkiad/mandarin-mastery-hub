@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Give the Sourced decomposition block the same split used in word details — readable IDS sentence, then source/verification as a small uppercase footnote under a thin divider — on Glyphs and Practice; verify both themes and phones.
 - [x] Rename the sidebar entries — "Library" to "Glyphs" and "Overview" to "Start" (menu, breadcrumb, page titles, guidance copy) — and enlarge the Start title to a classic serif display line; verify desktop and phones.
 - [x] Centre each Overview tile's random record so the speaker icons sit on the same line in all five tiles regardless of content length; verify across shuffles and on phones.
 - [x] Trim the Overview title block to a single line — remove the slogan eyebrow, the subtitle and the decorative 学; verify other pages keep their headings and both themes/phones.
