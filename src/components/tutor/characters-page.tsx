@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen, MessageSquareText } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -24,7 +24,7 @@ function ReuseLabel({ count, compact = false, radical = false }: { count: number
   const group = reuseGroup(count);
   return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
 }
-function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
+export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences, saved, toggleSaved } = useWorkspace();
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
@@ -41,7 +41,7 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     <div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
     <GlyphUsageExamples entry={entry} kind={kind}/>
     <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>
-      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
+      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="record-gap"><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="source-note">Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }

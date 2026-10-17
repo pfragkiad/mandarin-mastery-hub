@@ -102,7 +102,8 @@
 .glyph-usage-reference .glyph-usage-meaning { font-size: 13px; color: var(--foreground); }
 .glyph-usage-reference:hover { text-decoration: underline; }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
-.glyph-usage-empty { border-top: 1px solid var(--border); padding-top: 22px; margin-top: 14px; }
+.glyph-usage-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
+.glyph-usage-section > .glyph-usage-example:first-child > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
   display: inline-flex; align-items: center; justify-content: center;
@@ -194,7 +195,8 @@
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; }
 .decomposition-layout small { font-size: 12px; }
-.decomposition-note { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
+/* Every "nothing here" message reads exactly like the decomposition explanation. */
+.decomposition-note, .record-gap > p { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
 .vocabulary-parts > li + li { margin-top: 18px; }
 .vocabulary-parts > li > .decomposition-part { min-height: 46px; }
@@ -203,9 +205,9 @@
 .vocabulary-part-facts small { color: var(--foreground); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
 .vocabulary-parts .decomposition-glyph { height: auto; flex-shrink: 0; white-space: normal; }
 .vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
-.decomposition-pending { padding: 24px 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.8; }
-.decomposition-pending svg { margin-bottom: 12px; }
-.decomposition-pending small { display: block; font-size: 11px; margin-top: 6px; }
+/* Shared block for absent records: sits under its section label, no extra icon or divider. */
+.record-gap { margin-top: 10px; }
+.record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; max-width: 46ch; }
 .catalog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted-foreground); }
 .catalog-pagination > div { display: flex; align-items: center; gap: 8px; }
 @media(max-width:1150px) { .catalog-workspace { grid-template-columns: minmax(0,1fr) minmax(270px,.9fr); gap: 20px; }.catalog-detail { padding-left: 20px; } }
