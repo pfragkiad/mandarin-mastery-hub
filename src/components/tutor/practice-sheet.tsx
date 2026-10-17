@@ -1,0 +1,191 @@
+import { useEffect, useMemo, useState } from 'react';
+import { Printer, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
+
+type StrokeModel = { strokes: string[] } | null;
+
+// Stroke outlines come from the same Hanzi Writer data the on-screen writer uses.
+function useStrokeModels(tokens: PracticeToken[]) {
+  const key = [...new Set(tokens.map(t => t.text))].join('');
+  const [state, setState] = useState<{ key: string; assets: Record<string, StrokeModel>; loading: boolean }>({ key: '', assets: {}, loading: true });
+  useEffect(() => {
+    let active = true;
+    const assets: Record<string, StrokeModel> = {};
+    const glyphs = Array.from(key);
+    setState({ key, assets: {}, loading: true });
+    void Promise.all(glyphs.map(async glyph => {
+      try {
+        const res = await fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(glyph)}.json`);
+        if (!res.ok) throw new Error('no data');
+        const data = (await res.json()) as { strokes?: unknown };
+        assets[glyph] = Array.isArray(data.strokes) && data.strokes.every(s => typeof s === 'string') ? { strokes: data.strokes as string[] } : null;
+      } catch { assets[glyph] = null; }
+    })).then(() => { if (active) setState({ key, assets, loading: false }); });
+    return () => { active = false; };
+  }, [key]);
+  return { assets: state.key === key ? state.assets : {}, loading: state.key !== key || state.loading };
+}
+
+function WritingCell({ token, kind, diagonal, assets }: { token?: PracticeToken; kind: 'model' | 'trace' | 'blank'; diagonal: boolean; assets: Record<string, StrokeModel> }) {
+  const model = token ? assets[token.text] : null;
+  const glyph = kind === 'blank' ? '' : (token?.text ?? '');
+  return (
+    <svg className={`writing-cell ${kind}`} viewBox="0 0 100 100" role="img" aria-label={kind === 'blank' ? 'Blank writing box' : `${kind === 'trace' ? 'Trace' : 'Model'} ${glyph}`}>
+      <rect x=".6" y=".6" width="98.8" height="98.8" fill="none" stroke="currentColor" strokeWidth="1.2" className="cell-frame" />
+      <path d="M50 1 V99 M1 50 H99" fill="none" stroke="currentColor" strokeWidth=".8" strokeDasharray="3 3" className="cell-cross" />
+      {diagonal && <path d="M1 1 L99 99 M99 1 L1 99" fill="none" stroke="currentColor" strokeWidth=".65" strokeDasharray="3 3" className="cell-diagonal" />}
+      {glyph && (model ? (
+        <g className="writing-glyph" transform="translate(5,84.1015625) scale(.087890625,-.087890625)">
+          {model.strokes.map((path, i) => <path d={path} key={i} />)}
+        </g>
+      ) : (
+        <text className="writing-glyph writing-font-fallback" x="50" y="52" dy=".33em" textAnchor="middle" fontSize="78" lang="zh-CN">{glyph}</text>
+      ))}
+    </svg>
+  );
+}
+
+function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBlock; diagonal: boolean; pinyin: boolean; assets: Record<string, StrokeModel> }) {
+  if (block.kind === 'character')
+    return (
+      <div className="character-practice-block">
+        <div className="practice-row-label">
+          <span lang="zh-CN" className="practice-row-glyph">{block.token.text}</span>
+          {pinyin && block.token.pinyin && <span className="pinyin">{block.token.pinyin}</span>}
+        </div>
+        <div>
+          {Array.from({ length: block.rows }, (_, r) => (
+            <div className="writing-row" key={r}>
+              {Array.from({ length: 8 }, (_, i) => (
+                <WritingCell key={i} token={block.token} kind={r === 0 && i === 0 ? 'model' : i < (r === 0 ? 3 : 2) ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  return (
+    <div className="whole-text-block">
+      <h3>Write the whole text{block.segments > 1 ? ` — part ${block.segment} of ${block.segments}` : ''}</h3>
+      <p className="whole-text-reference">
+        {block.tokens.map((t, i) => <span key={i} className="whole-text-token"><span lang="zh-CN">{t.text}</span>{pinyin && t.pinyin && <span className="pinyin">{t.pinyin}</span>}</span>)}
+      </p>
+      <p className="practice-instruction">Trace once, then copy into the blank rows. Try the last row from memory.</p>
+      {Array.from({ length: 3 }, (_, r) => (
+        <div className="writing-row whole-text-row" key={r}>
+          {Array.from({ length: 8 }, (_, i) => (
+            <WritingCell key={i} token={block.tokens[i]} kind={r === 0 && block.tokens[i] ? 'trace' : 'blank'} diagonal={diagonal} assets={assets} />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Printable A4 handwriting sheet for a character, word or phrase. Rendered as an overlay; printing hides the app. */
+export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string; meaning?: string; onClose: () => void }) {
+  const readings = pinyin?.trim().split(/\s+/) ?? [];
+  const tokens = useMemo<PracticeToken[]>(() => {
+    const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿]/.test(ch));
+    return glyphs.map((ch, i) => ({ text: ch, pinyin: readings.length === glyphs.length ? readings[i] : undefined }));
+  }, [text, pinyin]); // eslint-disable-line react-hooks/exhaustive-deps
+  const [rows, setRows] = useState<1 | 2>(1);
+  const [diagonal, setDiagonal] = useState(true);
+  const [showPinyin, setShowPinyin] = useState(true);
+  const [showMeaning, setShowMeaning] = useState(true);
+  const [printing, setPrinting] = useState(false);
+  const models = useStrokeModels(tokens);
+  const pages = useMemo(() => buildPracticePages(tokens, rows), [tokens, rows]);
+  useEffect(() => {
+    document.body.classList.add('practice-printing');
+    const previous = document.title;
+    document.title = 'Mandarin handwriting practice';
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.classList.remove('practice-printing');
+      document.title = previous;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [onClose]);
+  const print = async () => {
+    setPrinting(true);
+    try {
+      await document.fonts.ready;
+      await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+      window.print();
+    } finally { setPrinting(false); }
+  };
+  const fallback = Object.values(models.assets).some(asset => asset === null);
+  return (
+    <div className="practice-sheet-root" role="dialog" aria-modal="true" aria-label="Printable handwriting practice sheet">
+      <div className="practice-preview-controls no-print">
+        <div className="practice-controls-top">
+          <div>
+            <h1>Handwriting practice sheet</h1>
+            <p className="muted">Model, trace, copy, then write from memory. Preview your A4 pages below.</p>
+          </div>
+          <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
+        </div>
+        <div className="filters panel">
+          <label>
+            Rows per character
+            <select value={rows} onChange={e => setRows(Number(e.target.value) as 1 | 2)}>
+              <option value="1">1 row</option>
+              <option value="2">2 rows</option>
+            </select>
+          </label>
+          <label>
+            Writing guides
+            <select value={diagonal ? 'diagonal' : 'cross'} onChange={e => setDiagonal(e.target.value === 'diagonal')}>
+              <option value="diagonal">米字格 · cross + diagonals</option>
+              <option value="cross">田字格 · cross</option>
+            </select>
+          </label>
+          <label className="checkbox">
+            <input type="checkbox" checked={showPinyin} onChange={e => setShowPinyin(e.target.checked)} />
+            Include pinyin
+          </label>
+          <label className="checkbox">
+            <input type="checkbox" checked={showMeaning} onChange={e => setShowMeaning(e.target.checked)} />
+            Include meaning
+          </label>
+          <Button onClick={() => void print()} disabled={models.loading || printing}>
+            <Printer />{models.loading ? 'Preparing models…' : printing ? 'Opening print dialog…' : 'Print practice sheet'}
+          </Button>
+        </div>
+        <p className="muted text-sm">{pages.length} A4 {pages.length === 1 ? 'page' : 'pages'}. Use 100% scale and turn off browser headers and footers. You can also choose Save as PDF.</p>
+        {fallback && <p className="muted text-sm">Some stroke outlines are unavailable; those models use your reading font instead.</p>}
+      </div>
+      <div className="practice-pages" aria-label="Practice sheet preview" aria-busy={models.loading}>
+        {pages.map((page, i) => (
+          <article className="practice-page" key={i}>
+            <header className="practice-paper-header">
+              <div className="practice-paper-heading">
+                <h2>Mandarin handwriting practice</h2>
+                <span>Page {i + 1} / {pages.length}</span>
+              </div>
+              <div className="practice-name-date">
+                <span>Name: ____________________</span>
+                <span>Date: ______________</span>
+              </div>
+              <div className="practice-reference">
+                <span lang="zh-CN">{text}</span>
+                {showPinyin && pinyin && <span className="pinyin">{pinyin}</span>}
+              </div>
+              {showMeaning && meaning && <p className="practice-translation">{meaning}</p>}
+              <p className="practice-instruction">Read the model. Trace the light characters. Write in the empty squares.</p>
+            </header>
+            <div className="practice-blocks">
+              {page.blocks.map((block, j) => <PracticeRows key={j} block={block} diagonal={diagonal} pinyin={showPinyin} assets={models.assets} />)}
+            </div>
+            <footer className="practice-paper-footer">
+              <p>Stroke outlines: Hanzi Writer Data / Make Me a Hanzi — Arphic Public License.</p>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
