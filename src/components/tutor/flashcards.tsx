@@ -51,17 +51,17 @@ export function FlashcardsPage() {
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1><p>Pick a category and level, then flip through a shuffled deck.</p></div><span className="heading-hanzi">记<span>jì</span></span></div>
     <div className="flash-setup">
-      <label>CATEGORY<select className="filter-select" value={category} onChange={e => { setCategory(e.target.value); setDeck(null); }}>
+      <select className="filter-select" aria-label="Category" value={category} onChange={e => { setCategory(e.target.value); setDeck(null); }}>
         <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
         <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
-      </select></label>
-      <label>LEVEL<select className="filter-select" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select></label>
-      <label>CARD FRONT<select className="filter-select" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select></label>
-      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></div>
+      </select>
+      <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
+      <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <div className="flash-options">
         <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={setShowFrontPinyin} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
         <label className="flash-option"><Switch checked={repeat} onCheckedChange={setRepeat} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
       </div>
+      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></div>
     </div>
 
     {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? 'Press Start to shuffle the deck. Tap a card to flip it.' : 'Try another category or level.'}</p></div>}

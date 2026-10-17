@@ -49,16 +49,12 @@
 .stroke-guide-strip { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 14px 0 10px; }.stroke-chip { position: relative; width: 56px; height: 66px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); display: grid; place-items: center; cursor: pointer; transition: border-color .15s, background .15s; padding: 0; }.stroke-chip:hover { border-color: var(--primary); }.stroke-chip.active { border-color: var(--primary); background: var(--secondary); }.stroke-chip .stroke-shape { width: 30px; height: 30px; margin-top: -10px; fill: var(--foreground); }.stroke-chip .stroke-index { position: absolute; top: 3px; left: 6px; font-size: 8px; color: var(--muted-foreground); }.stroke-chip .stroke-pinyin { position: absolute; bottom: 3px; left: 0; right: 0; text-align: center; font-size: 8px; color: var(--muted-foreground); }.stroke-guide-note { font-size: 9px; color: var(--muted-foreground); margin: 0; }
 
 [lang="zh-CN"], .reference-card strong, .word-character, .word-detail-character, .font-preview { font-family: var(--font-hanzi); }
-.flash-setup { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; margin: 24px 0; }
-.flash-setup label { display: flex; flex-direction: column; gap: 6px; font-size: 10px; letter-spacing: 1px; color: var(--muted-foreground); font-weight: 600; }
-.flash-setup > label { flex: 0 1 200px; min-width: 0; }
-.flash-setup > label:nth-child(2) { flex-basis: 140px; }
-.flash-setup .filter-select { width: 100%; max-width: none; }
-.flash-options { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 12px 24px; padding-top: 2px; }
-.flash-setup .flash-option { flex-direction: row; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0; font-weight: 400; color: var(--foreground); }
+.flash-setup { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 29px 0 20px; }
+.flash-options { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
+.flash-option { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--foreground); cursor: pointer; }
 .flash-option.is-disabled { color: var(--muted-foreground); }
 .flash-pinyin { font-size: 16px; }
-@media(max-width:580px) { .flash-setup > label, .flash-setup > label:nth-child(2) { flex: 1 1 140px; } .flash-options { gap: 12px 18px; } }
+@media(max-width:580px) { .flash-options { gap: 12px 18px; } }
 .flash-stage { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 .flash-progress { height: 4px; background: var(--muted); border-radius: 4px; overflow: hidden; }.flash-progress>span { display: block; height: 100%; background: var(--primary); transition: width .3s; }
 .flash-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted-foreground); }
@@ -76,7 +72,7 @@
 .flash-result strong { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--primary); }
 .flash-missed { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }.flash-missed a { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; color: var(--foreground); text-decoration: none; transition: border-color .2s, background .2s; }.flash-missed a:hover { border-color: var(--primary); background: var(--secondary); }.flash-missed a span { font-family: var(--font-hanzi); font-size: 22px; }.flash-missed a small { font-size: 10px; color: var(--muted-foreground); }
 .flash-repeat { justify-content: flex-end; }.flash-repeat > span:last-child { min-height: 36px; }
-.flash-start { display: flex; align-items: flex-end; }
+.flash-start { margin-left: auto; display: flex; align-items: center; }
 :root { --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; } :root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'Ma Shan Zheng', serif; } :root[data-hanzi-font='print'] { --font-hanzi: 'Noto Serif SC', 'SimSun', 'Songti SC', serif; }
 
 .word-context {
