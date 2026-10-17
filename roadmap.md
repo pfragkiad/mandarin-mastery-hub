@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Show BabelStone alternatives as separate root-and-branch trees using the shared decomposition renderer; verified supplied 气/不 structures, source-preserving fallbacks, linked records/history and phone layout.
 - [x] Add optional per-character enrichment with checksum-gated source comparisons, teaching notes and component stroke highlighting; verified 河/裹, incompatible 丁 fallback, mobile controls and paused playback; 153 tests pass. Upstream audit regeneration remains unavailable without its original scripts/inputs.
 - [x] Center flashcards in pinyin/audio → hanzi → translation order with back-only audio; verified long radical answers on desktop/phones and flip/listen/next-card behavior.
 - [x] Make writing playback pause/resume in place with the current stroke highlighted; verified frozen/resumed drawing, sequential continuation and fresh Reset for characters/radicals, plus individual-stroke playback.
