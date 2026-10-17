@@ -66,7 +66,7 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
     const sync = () => {
       if (!tile.isConnected) return;
       const spans = [tile.querySelector<HTMLElement>('.pinyin'), tile.querySelector<HTMLElement>('.catalog-entry-meaning')];
-      setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 : false));
+      setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1 : false));
     };
     const engage = () => { sync(); const grid = tile.closest('.catalog-entry-grid'); const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0]; setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top'); };
     sync();
