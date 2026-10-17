@@ -32,7 +32,7 @@ describe('drawing game rules', () => {
     expect(drawingPool(libraryEntries('Radicals'), { kind: 'Radicals' }, false).every(entry => entry.pinyin && entry.meaning)).toBe(true);
   });
   it('respects explicit traditional preferences', () => {
-    const traditional: LibraryEntry = { id: 't', hanzi: '國', pinyin: 'guó', meaning: 'country', note: '', script: 'traditional' };
+    const traditional: LibraryEntry = { id: 't', hanzi: '國', pinyin: 'guó', meaning: 'country', note: '', script: 'Traditional' };
     expect(drawingPool([traditional], {}, false)).toEqual([]);
     expect(drawingPool([traditional], {}, true)).toEqual([traditional]);
   });
