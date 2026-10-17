@@ -6,7 +6,7 @@ import { useWorkspace } from './workspace';
 import { words as allWords, vocabularyKind, type Word } from '@/lib/mandarin';
 import { randomOverviewWord, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from '@/lib/overview';
 import { catalog, characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
-import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryTab } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 
