@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Add component reuse filter and compact labels; verify category rules and browser history.
+- [x] Add component reuse filter and compact labels; verify category rules and browser history.
 - [x] Open exact decomposition records with consistent browser back/forward history.
 - [x] Expand library pages to 48 records (eight rows at six columns) and verify navigation.
 - [x] Import supplied unofficial Level 1 phrases with pinyin and translations, retaining internal IDs without official HSK IDs.
