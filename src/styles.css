@@ -100,17 +100,11 @@
 }
 
 /* Characters library page */
-.glyph-usage-section { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 18px; }
-.glyph-usage-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 14px; }
-.glyph-usage-example + .glyph-usage-example { margin-top: 18px; }
-.glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; color: var(--primary); }
+.glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-top: 10px; color: var(--primary); }
 .glyph-usage-reference > span:first-child { font-size: 18px; }
 .glyph-usage-reference > span:last-child { font-size: 10px; color: var(--muted-foreground); }
 .glyph-usage-reference:hover { text-decoration: underline; }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
-.glyph-usage-example .sentence { border-top: 0; padding-top: 0; margin-top: 8px; }
-.glyph-usage-example .sentence p { font-size: 22px; overflow-wrap: anywhere; }
-.glyph-usage-example .sentence-pinyin { margin-top: 0; font-size: 12px; }
 .glyph-usage-example .detail-footnote { margin-top: 10px; padding-top: 8px; text-align: left; }
 .glyph-usage-section .library-note { margin-top: 0; }
 .characters-library { margin-bottom: 34px; }
@@ -162,7 +156,7 @@
 .catalog-tabs [role='tab'] { gap: 12px; min-height: 42px; flex-shrink: 0; font-size: 13px; border: 1px solid transparent; box-shadow: none; }
 .catalog-tabs [role='tab'][data-state='active'] { background: var(--secondary); color: var(--primary); border-color: var(--border); }
 .catalog-tab-count { font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
-.catalog-workspace, .vocabulary-workspace { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,1fr); gap: 32px; align-items: start; }.word-detail-panel .sentence p { font-size: 24px; }.word-detail-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 8px; }.word-detail-panel .detail-footnote { text-align: left; }.word-card.is-selected { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+.catalog-workspace, .vocabulary-workspace { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,1fr); gap: 32px; align-items: start; }.word-detail-panel .sentence p, .catalog-detail .sentence p { font-size: 24px; }.word-detail-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 8px; }.word-detail-panel .detail-footnote { text-align: left; }.word-card.is-selected { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
 .catalog-results { min-width: 0; }
 .catalog-results .result-row { margin-top: 0; gap: 12px; flex-wrap: wrap; }
 .catalog-results .result-row > span:first-child { font-size: 11px; letter-spacing: 0; line-height: 1.6; }
