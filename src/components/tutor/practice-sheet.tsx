@@ -8,13 +8,13 @@ import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/li
 type StrokeModel = { strokes: string[] } | null;
 
 // Stroke outlines come from the same Hanzi Writer data the on-screen writer uses.
-function useStrokeModels(tokens: PracticeToken[]) {
+function useStrokeModels(tokens: PracticeToken[], outlines?: Record<string, StrokeModel>) {
   const key = [...new Set(tokens.map(t => t.text))].join('');
   const [state, setState] = useState<{ key: string; assets: Record<string, StrokeModel>; loading: boolean }>({ key: '', assets: {}, loading: true });
   useEffect(() => {
     let active = true;
     const assets: Record<string, StrokeModel> = {};
-    const glyphs = Array.from(key);
+    const glyphs = Array.from(key).filter(g => { if (outlines?.[g]) { assets[g] = outlines[g]; return false; } return true; });
     setState({ key, assets: {}, loading: true });
     void Promise.all(glyphs.map(async glyph => {
       try {
@@ -25,7 +25,7 @@ function useStrokeModels(tokens: PracticeToken[]) {
       } catch { assets[glyph] = null; }
     })).then(() => { if (active) setState({ key, assets, loading: false }); });
     return () => { active = false; };
-  }, [key]);
+  }, [key, outlines]);
   return { assets: state.key === key ? state.assets : {}, loading: state.key !== key || state.loading };
 }
 
@@ -90,10 +90,10 @@ function PracticeRows({ block, diagonal, pinyin, assets }: { block: PracticeBloc
 }
 
 /** Printable A4 handwriting sheet for a character, word or phrase. Rendered as an overlay; printing hides the app. */
-export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string; pinyin?: string | undefined; meaning?: string | undefined; onClose: () => void }) {
+export function PracticeSheet({ text, pinyin, meaning, onClose, outlines }: { text: string; pinyin?: string | undefined; meaning?: string | undefined; onClose: () => void; outlines?: Record<string, StrokeModel> | undefined }) {
   const readings = pinyin?.trim().split(/\s+/) ?? [];
   const tokens = useMemo<PracticeToken[]>(() => {
-    const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿]/.test(ch));
+    const glyphs = Array.from(text).filter(ch => /[㐀-鿿豈-﫿\u31C0-\u31EF]/.test(ch));
     return glyphs.map((ch, i) => ({ text: ch, pinyin: readings.length === glyphs.length ? readings[i] : undefined }));
   }, [text, pinyin]); // eslint-disable-line react-hooks/exhaustive-deps
   const [rows, setRows] = useState<1 | 2>(1);
@@ -101,7 +101,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
   const [showPinyin, setShowPinyin] = useState(true);
   const [showMeaning, setShowMeaning] = useState(true);
   const [printing, setPrinting] = useState(false);
-  const models = useStrokeModels(tokens);
+  const models = useStrokeModels(tokens, outlines);
   const pages = useMemo(() => buildPracticePages(tokens, rows), [tokens, rows]);
   const singleCharacter = new Set(tokens.map(t => t.text)).size === 1;
   useEffect(() => {
