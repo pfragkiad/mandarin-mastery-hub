@@ -127,7 +127,15 @@ export function WritingPractice({ character, onStrokeCount }: { character: strin
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
     instance.cancelQuiz(); setPlaying(true); setMessage('Follow each stroke in order.');
-    instance.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setMessage('Your turn. Ready to write it from memory?'); } });
+    // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
+    instance.hideCharacter();
+    const step = (i: number) => {
+      if (animationRun.current !== run) return;
+      if (i >= strokes.length) { setPlaying(false); setActiveStroke(null); setMessage('Your turn. Ready to write it from memory?'); return; }
+      setActiveStroke(i);
+      instance.animateStroke(i, { onComplete: () => step(i + 1) });
+    };
+    step(0);
   };
   const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
   const playStroke = (index: number) => {
