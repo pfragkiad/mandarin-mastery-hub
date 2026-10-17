@@ -59,7 +59,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
     return () => { active = false; writer.current?.cancelQuiz(); writer.current = null; node.innerHTML = ''; };
-  }, [example, theme]);
+  }, [example, theme, Boolean(entry)]);
 
   const setSpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
   const watch = () => {
