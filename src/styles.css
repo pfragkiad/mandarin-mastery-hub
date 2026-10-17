@@ -205,6 +205,20 @@
 /* Every "nothing here" message reads exactly like the decomposition explanation. */
 .decomposition-note, .record-gap > p { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
+.enrichment-note { margin-top: 22px; min-width: 0; }
+.enrichment-note > p:not(.detail-footnote) { font-size: 13px; line-height: 1.6; color: var(--foreground); margin-top: 8px; overflow-wrap: anywhere; }
+.enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
+.enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.enrichment-expression > span { font-size: 22px; }
+.enrichment-expression > small { font-size: 10px; color: var(--muted-foreground); }
+.component-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0 10px; }
+.component-picker button { height: auto; min-height: 36px; white-space: normal; gap: 8px; }
+.component-picker [aria-pressed='true'] { color: var(--primary); background: var(--secondary); border-color: var(--primary); }
+.component-picker [lang='zh-CN'] { font-size: 24px; }
+.component-stroke-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; fill: var(--terracotta); opacity: .8; }
+.stroke-chip.component-highlighted { border-color: var(--terracotta); background: color-mix(in oklab, var(--terracotta) 12%, var(--card)); }
+.stroke-chip.component-highlighted .stroke-shape { fill: var(--terracotta); }
+.stroke-chip.component-highlighted.active { border-color: var(--primary); outline: 1px solid var(--primary); }
 .vocabulary-parts > li + li { margin-top: 18px; }
 .vocabulary-parts > li > .decomposition-part { min-height: 46px; }
 .vocabulary-part-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }

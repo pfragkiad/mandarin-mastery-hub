@@ -18,6 +18,7 @@ import { RecordCardFooter } from './record-card-footer';
 import { DecompositionTree } from './decomposition-tree';
 import { GlyphUsageExamples } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
+import { CharacterEnrichmentNotes } from './character-enrichment';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
@@ -49,6 +50,7 @@ export function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: L
     <GlyphUsageExamples entry={entry} kind={kind}/>
     <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>
       {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="record-gap"><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
+      {entry.decomposition && <CharacterEnrichmentNotes character={entry.hanzi} tree={entry.decomposition.root}/>}
     </div><p className="source-note">Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }

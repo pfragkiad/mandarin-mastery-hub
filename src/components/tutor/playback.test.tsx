@@ -15,6 +15,12 @@ vi.mock('hanzi-writer', () => ({ default: { create: (_node: unknown, _char: stri
   return fake;
 } } }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'light', catalogVersion: 1, preferences: { slow: false } }) }));
+vi.mock('@/lib/character-enrichment', async importOriginal => ({
+  ...await importOriginal<typeof import('@/lib/character-enrichment')>(),
+  loadStrokeGeometry: async () => ({ checksum: 'test', data: {
+    strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
+  } }),
+}));
 vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ children }: { children: React.ReactNode }) => <a>{children}</a> }));
 
 beforeEach(() => {
@@ -72,4 +78,19 @@ it('individual strokes also resume the same correct-writing animation', async ()
   expect(fake.pauseAnimation).toHaveBeenCalledTimes(1);
   expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
   expect(fake.animateCharacter).toHaveBeenCalledTimes(1);
+});
+
+it('selecting occurrence strokes while paused does not replace or resume the animation', async () => {
+  const { container, rerender } = render(<WritingPractice character="河"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
+  rerender(<WritingPractice character="河" component={{ glyph: '氵', path: [0], strokeIndices: [0, 1, 2], noncontiguous: false, standaloneFit: 'fits-current-geometry-guards', standaloneReuseAllowed: true }}/>);
+  expect(container.querySelectorAll('.component-stroke-overlay path')).toHaveLength(3);
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+  expect(fake.resumeAnimation).not.toHaveBeenCalled();
+  expect(screen.getByRole('button', { name: 'Play stroke 1' })).toHaveAttribute('aria-current', 'step');
+  fireEvent.click(screen.getByRole('button', { name: 'Resume' }));
+  expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
 });

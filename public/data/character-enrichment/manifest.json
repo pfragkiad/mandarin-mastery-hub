@@ -1,0 +1,85 @@
+{
+  "format": "mandarin-character-enrichment",
+  "schemaVersion": 1,
+  "generatorVersion": 1,
+  "sources": {
+    "babelstone": {
+      "filename": "babelstone-ids.txt",
+      "licenseEvidence": "Source header paragraphs 2 and Caveat Lector: maintainer permits personal/commercial use and waives presentation-format claims; preserve exact header. This is not a font license.",
+      "name": "BabelStone IDS",
+      "sha256": "cc2a0a97e6a51ed6ebe59870ef2af66e83f3c3c27387d79b4441bb2d791d78b1",
+      "url": "https://www.babelstone.co.uk/CJK/IDS.TXT",
+      "use": "Offline structural comparison only; not imported into canonical SQLite content",
+      "version": "2025-06-27 / Unicode 16.0"
+    },
+    "dictionary": {
+      "license": "LGPL-3.0-or-later",
+      "name": "Make Me a Hanzi dictionary",
+      "sha256": "744bb05d5b0742e9ee35c37791f94d56a173349b3367569e7ca11e510364d203",
+      "url": "https://github.com/skishore/makemeahanzi/tree/bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+      "version": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92"
+    },
+    "geometry": {
+      "license": "Arphic Public License",
+      "package": "hanzi-writer-data",
+      "version": "2.0.1"
+    },
+    "gf0014": {
+      "authorityUrl": "https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113090318445.pdf",
+      "filename": "gf0014-2009.pdf",
+      "licenseEvidence": "Publicly available standard inspected as an editorial reference. No permission to redistribute PDF/table artwork or a full extracted database is asserted.",
+      "name": "GF 0014-2009",
+      "sha256": "bb554d91ac39dc10470e3186555ca1140c150b678190f63624ecf6f2298dffc6",
+      "url": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+      "use": "Bounded rule-example checks transcribed from printed pages 2-3 (PDF pages 5-6); not a complete 514-component import",
+      "version": "2009"
+    }
+  },
+  "inputs": {
+    "auditPath": "output/reference-enrichment-audit.json",
+    "auditSha256": "dcf0ba3f7bdcd145550c277693a27fb5d01624921fb9d77c98fafaad393524f9",
+    "baseManifestSha256": "2cd80c07b876a55d3e52be9d99bd2c7f9fb29bdad406922f71fbbf2aa83fdc10",
+    "charactersSha256": "7ee186368e424b8564f3b8eb0f142d7d660a3e45f7d7a2e9c44387311feb486f",
+    "gfRuleChecksSha256": "f92d2111eea285ff6511f4b55cf5e19e99ebda744e21acc1710695778c5a3b7a",
+    "sourceManifestSha256": "d3c56acca57ddbfbfcbfe6f7c1f087006f26b281182175cc94a74ac5deb54a4c"
+  },
+  "consumerPolicy": {
+    "onMissingIncompatibleOrFailedEnrichment": "use-existing-resolution",
+    "preserveManualOverrides": true,
+    "requireCurrentGeometryChecksum": true,
+    "requireCurrentTreeChecksum": true,
+    "sourceAgreementDoesNotVerifyStrokeNames": true,
+    "standaloneReuseRequiresFitAndStandaloneGeometryChecksum": true
+  },
+  "licenseNotices": [
+    "THIRD_PARTY_NOTICES.md",
+    "docs/licenses/MAKE_ME_A_HANZI_COPYING.txt",
+    "docs/licenses/MAKE_ME_A_HANZI_LGPL.txt",
+    "docs/licenses/GPL_V3.txt",
+    "docs/licenses/STROKE_DATA_ARPHICPL.txt"
+  ],
+  "summary": {
+    "characters": 9574,
+    "comparisonStatus": {
+      "G-incomplete-or-unparseable": 98,
+      "absent-in-BabelStone": 9,
+      "current-incomplete": 441,
+      "different-G-expression": 1529,
+      "exact-G-agreement": 7497
+    },
+    "componentOccurrences": 19475,
+    "gfRuleExamples": 8,
+    "mappingStatus": {
+      "complete": 9091,
+      "partial": 399,
+      "unavailable": 84
+    },
+    "noncontiguousOccurrences": 212,
+    "standaloneReuseAllowed": 10614
+  },
+  "handoffSha256": "ae025d5b725a8a7d732a18a3f71b9c94002abde684c5c4927d952399a49ca56c",
+  "treeCompatibility": {
+    "compatibleTrees": 9570,
+    "incompatibleTrees": 4
+  }
+}
