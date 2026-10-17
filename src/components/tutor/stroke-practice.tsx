@@ -3,6 +3,7 @@ import { Eye, EyeOff, RotateCcw, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
+import { RecordDetailTitle } from './record-detail-title';
 type Point = { x: number; y: number };
 export function StrokePractice({ glyph }: { glyph: string }) {
   const { catalogVersion, theme } = useWorkspace();
