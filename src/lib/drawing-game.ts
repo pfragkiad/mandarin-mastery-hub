@@ -3,7 +3,7 @@ import { reuseGroups, type ReuseGroup } from './component-reuse';
 
 export const drawingKinds = ['Characters', 'Radicals', 'Components'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind; strokes?: string; usage?: ReuseGroup; errors?: boolean };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; errors?: boolean | undefined };
 export type DrawingResult = 'correct' | 'missed' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
