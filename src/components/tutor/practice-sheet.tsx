@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Printer, X } from 'lucide-react';
+import { FileText, Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
@@ -130,12 +130,12 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
       <div className="practice-preview-controls no-print">
         <div className="practice-controls-top">
           <div>
+            <span className="practice-preview-eyebrow"><FileText size={14} />WRITING PRACTICE</span>
             <h1>Handwriting practice sheet</h1>
-            <p className="muted">Model, trace, copy, then write from memory. Preview your A4 pages below.</p>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
         </div>
-        <div className="filters panel">
+        <div className="practice-options">
           {!singleCharacter && (
             <label>
               Rows per character
@@ -160,11 +160,11 @@ export function PracticeSheet({ text, pinyin, meaning, onClose }: { text: string
             <Switch id="sheet-meaning" checked={showMeaning} onCheckedChange={setShowMeaning} />
             <label htmlFor="sheet-meaning">Include meaning</label>
           </div>
-          <Button onClick={() => void print()} disabled={models.loading || printing}>
+          <Button className="practice-preview-print" onClick={() => void print()} disabled={models.loading || printing}>
             <Printer />{models.loading ? 'Preparing models…' : printing ? 'Opening print dialog…' : 'Print practice sheet'}
           </Button>
         </div>
-        <p className="muted text-sm">{pages.length} A4 {pages.length === 1 ? 'page' : 'pages'}. Use 100% scale and turn off browser headers and footers. You can also choose Save as PDF.</p>
+        <div className="practice-preview-meta"><span><FileText size={14} />{pages.length} A4 {pages.length === 1 ? 'page' : 'pages'}</span><p>Print at 100% · No headers or footers · PDF available</p></div>
         {fallback && <p className="muted text-sm">Some stroke outlines are unavailable; those models use your reading font instead.</p>}
       </div>
       <div className="practice-pages" aria-label="Practice sheet preview" aria-busy={models.loading}>
