@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, BookOpen, Layers, Languages, Volume2, ArrowUpRight, Sparkles, Search, Shuffle, PenLine, Puzzle, Play } from 'lucide-react';
+import { ArrowRight, Volume2, ArrowUpRight, Sparkles, Search, Shuffle, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { words, vocabularyKind } from '@/lib/mandarin';
@@ -37,12 +37,12 @@ export function OverviewPage() {
     <div className="page-heading"><div><div className="eyebrow">一步一步 · ONE STEP AT A TIME</div><h1>Your Mandarin workspace</h1><p>A word to discover. A character to understand. A little more each day.</p></div><span className="heading-hanzi" lang="zh-CN">学<span>xué · learn</span></span></div>
     <OverviewSearch query={query} setQuery={setQuery} hits={hits} includeTraditional={preferences.includeTraditional}/>
     <section className="stats-row" aria-label="Learning library statistics">{([
-      { icon: BookOpen, number: wordCount, label: 'Words', note: 'HSK & everyday vocabulary', to: '/vocabulary', search: { tab: 'word' } },
-      { icon: Layers, number: phraseCount, label: 'Phrases', note: 'Including unofficial practice phrases', to: '/vocabulary', search: { tab: 'phrase' } },
-      { icon: Languages, number: catalogVersion ? catalog.characters.length.toLocaleString('en-US') : '—', label: 'Characters', note: 'Full imported catalogue · all scripts', to: '/characters', search: { tab: 'Characters' } },
-      { icon: Puzzle, number: catalogVersion ? catalog.components.length.toLocaleString('en-US') : '—', label: 'Components', note: 'Structural building blocks', to: '/characters', search: { tab: 'Components' } },
-      { icon: PenLine, number: catalogVersion ? catalog.radicals.length : '—', label: 'Radicals', note: 'Dictionary reference library', to: '/characters', search: { tab: 'Radicals' } },
-    ] as const).map(stat => <Button asChild variant="ghost" className="stat" key={stat.label}><Link to={stat.to} search={stat.search} aria-label={`Browse ${stat.label.toLowerCase()}`}><span className="stat-icon"><stat.icon size={19}/></span><div><div className="stat-top"><strong>{stat.number}</strong><span>{stat.label}</span></div><span className="stat-note">{stat.note}</span></div></Link></Button>)}</section>
+      { glyph: '词', number: wordCount, label: 'Words', note: 'HSK & everyday vocabulary', to: '/vocabulary', search: { tab: 'word' } },
+      { glyph: '句', number: phraseCount, label: 'Phrases', note: 'Including unofficial practice phrases', to: '/vocabulary', search: { tab: 'phrase' } },
+      { glyph: '字', number: catalogVersion ? catalog.characters.length.toLocaleString('en-US') : '—', label: 'Characters', note: 'Full imported catalogue · all scripts', to: '/characters', search: { tab: 'Characters' } },
+      { glyph: '口', number: catalogVersion ? catalog.components.length.toLocaleString('en-US') : '—', label: 'Components', note: 'Structural building blocks', to: '/characters', search: { tab: 'Components' } },
+      { glyph: '氵', number: catalogVersion ? catalog.radicals.length : '—', label: 'Radicals', note: 'Dictionary reference library', to: '/characters', search: { tab: 'Radicals' } },
+    ] as const).map(stat => <Button asChild variant="ghost" className="stat" key={stat.label}><Link to={stat.to} search={stat.search} aria-label={`Browse ${stat.label.toLowerCase()}`}><span className="stat-icon" aria-hidden="true" lang="zh-CN">{stat.glyph}</span><div><div className="stat-top"><strong>{stat.number}</strong><span>{stat.label}</span></div><span className="stat-note">{stat.note}</span></div></Link></Button>)}</section>
     <div className="overview-study-row">
       <section className="daily-word overview-featured" aria-label="A word to take with you"><div className="daily-word-top"><span className="eyebrow"><Sparkles size={14}/> A WORD TO TAKE WITH YOU</span><Button variant="ghost" size="icon" title="Show another random word" aria-label="Show another random word" onClick={nextWord} disabled={wordCount < 2}><Shuffle/></Button></div>
         {featured && <><div className="overview-featured-word" aria-live="polite"><div className="catalog-detail-title overview-record-title"><Link to="/vocabulary" search={overviewWordDestination(featured)} className="overview-record-link" aria-label={`Open ${featured.hanzi} in dictionary`}><strong lang="zh-CN">{featured.hanzi}</strong><div>{preferences.pinyin && <span className="pinyin">{featured.pinyin}</span>}{preferences.meaning && <h2>{featured.meaning}</h2>}</div></Link><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label={audioAvailable ? `Listen to ${featured.hanzi}` : `No audio available for ${featured.hanzi}`} title={audioAvailable ? `Listen · ${candidates[0]?.label ?? 'Browser TTS'}` : undefined} onClick={() => listen()}><Volume2/></Button></div></div><div className="overview-featured-actions"><Button asChild variant="outline" size="sm"><Link to="/vocabulary" search={overviewWordDestination(featured)}>Open in dictionary <ArrowUpRight/></Link></Button></div>{audioError && <p className="library-note" role="status">{audioError}</p>}</>}
