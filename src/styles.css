@@ -157,7 +157,7 @@
 .catalog-detail-title .pinyin { font-size: 15px; }
 .catalog-detail-title h2 { font-family: var(--font-sans); font-size: 18px; font-weight: 500; margin-top: 4px; overflow-wrap: anywhere; }
 .catalog-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px 0; border-block: 1px solid var(--border); }
-.catalog-facts dt, .decomposition-source dt { color: var(--muted-foreground); font-size: 11px; }
+.catalog-facts dt { color: var(--muted-foreground); font-size: 11px; }
 .catalog-facts dd { margin: 6px 0 0; font-size: 14px; }
 .catalog-record-note { font-size: 12px; color: var(--muted-foreground); margin: 18px 0; }
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
@@ -178,8 +178,8 @@
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; }
 .decomposition-layout small { font-size: 12px; }
-.decomposition-source { display: grid; grid-template-columns: 75px minmax(0,1fr); gap: 8px; font-size: 11px; line-height: 1.7; }
-.decomposition-source dd { margin: 0; }
+.decomposition-note { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
+.decomposition-footnote { text-align: left; margin-top: 16px; }
 .decomposition-pending { padding: 24px 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.8; }
 .decomposition-pending svg { margin-bottom: 12px; }
 .decomposition-pending small { display: block; font-size: 11px; margin-top: 6px; }
