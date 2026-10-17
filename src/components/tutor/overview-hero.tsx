@@ -94,10 +94,12 @@ function DailyMeta({ entry, slow, showPinyin }: { entry: LibraryEntry; slow: boo
   </div>;
 }
 
+type SavedRecord = { id: string; hanzi: string; pinyin: string; to: '/vocabulary' | '/characters'; search: Record<string, unknown> };
+
 /** Session bookmarks as a quick row; hidden when nothing is saved. */
 export function SavedStrip() {
   const { saved, items, preferences, catalogVersion } = useWorkspace();
-  const records = useMemo(() => saved.flatMap(id => {
+  const records = useMemo(() => saved.flatMap((id): SavedRecord[] => {
     const word = items.find(w => w.id === id);
     if (word) return [{ id, hanzi: word.hanzi, pinyin: word.pinyin, to: '/vocabulary' as const, search: overviewWordDestination(word) as Record<string, unknown> }];
     const kind = id.split(':')[0] as LibraryKind;
