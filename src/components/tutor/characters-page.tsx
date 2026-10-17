@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, GitBranch, BookOpen, Columns2 } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen, Columns2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -10,6 +10,7 @@ import { libraryEntries, filterLibrary, libraryPage, libraryDestination, LIBRARY
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
+import { RecordCardFooter } from './record-card-footer';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
@@ -29,7 +30,8 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
 function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
-  const { preferences } = useWorkspace();
+  const { preferences, saved, toggleSaved } = useWorkspace();
+  const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
   const reading = entry.pinyin || null;
   const recording = characterRecording(entry.hanzi, reading);
@@ -41,13 +43,17 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{kind.slice(0, -1)}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
-    {kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}
+    <div className="word-detail-actions">{kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}<Button variant="outline" size="sm" onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
     <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
       {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="source-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
 function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selected: boolean; onSelect: (id: string) => void }) {
+  const { preferences, saved, toggleSaved } = useWorkspace();
+  const recording = characterRecording(entry.hanzi, entry.pinyin || null);
+  const audioAvailable = usePronunciationAvailability(Boolean(recording), entry.pinyin || null);
+  const [audioError, setAudioError] = useState<string | null>(null);
   const hasPinyin = Boolean(entry.pinyin);
   const hasMeaning = Boolean(entry.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
@@ -73,24 +79,25 @@ function CatalogTile({ entry, selected, onSelect }: { entry: LibraryEntry; selec
     return () => { ro.disconnect(); tile.removeEventListener('pointerenter', engage); tile.removeEventListener('focus', engage); };
   }, [entry.id]);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : ', no pinyin recorded'}${hasMeaning ? '' : ', no meaning recorded'}`;
-  const tile = <Button ref={tileRef} variant="ghost" className={`catalog-entry ${entry.reuseCount !== undefined ? 'has-reuse' : ''} ${selected ? 'selected' : ''}`} aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
-      <strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>
-      {hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}
-      {hasMeaning ? <span className="catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
-      {entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/>}
-      {entry.script === 'Traditional' && <span className="traditional-label tile-traditional-badge">Traditional</span>}
-      {entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}
+  const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
+      <span className="word-character">{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}<strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong></span>
+      {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{entry.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
-  return <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
+  return <article className={`word-card catalog-card ${selected ? 'is-selected' : ''}`}>
+    <div className="word-card-top"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : entry.id.split(':')[0].slice(0, -1).toUpperCase()}</span>{entry.decomposition && <GitBranch className="catalog-source-icon" aria-label="Decomposition available"/>}</div>
+    <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="tile-absent">no pinyin</span>}</span><p className="tile-tooltip-meaning">{entry.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
-  </Tooltip>;
+  </Tooltip>
+    <RecordCardFooter metadata={entry.reuseCount !== undefined ? <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/> : entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Stroke form'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(await playCharacter(entry.hanzi, preferences.slow, entry.pinyin || null))}/>
+    {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}
+  </article>;
 }
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
-  const { preferences, catalogVersion } = useWorkspace();
+  const { preferences, catalogVersion, saved } = useWorkspace();
   const catalogReady = catalogVersion > 0;
   const glyphHit = search.character && !search.id ? glyphIndex()[search.character] : undefined;
   const kind: LibraryKind = search.tab ?? glyphHit?.kind ?? 'Characters';
@@ -98,27 +105,28 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const strokeCount = search.strokes ?? '';
   const hasUsage = kind === 'Components' || kind === 'Radicals';
   const reuse = hasUsage ? search.reuse : undefined;
-  const hasFilter = Boolean(query.trim() || strokeCount || reuse);
+  const savedOnly = search.status === 'saved';
+  const hasFilter = Boolean(query.trim() || strokeCount || reuse || savedOnly);
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, reuse, page, id: selectedId };
+  const base: CharactersSearch = { tab: kind, q: query, strokes: strokeCount, reuse, page, id: selectedId, status: search.status };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
   const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
   const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
   const setPage = (p: number) => set({ page: p, id: '' });
   const setSelectedId = (id: string) => set({ id });
   const entries = libraryEntries(kind);
-  const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, reuse);
+  const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, reuse, savedOnly ? saved : undefined);
   const paged = libraryPage(filtered, page);
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
-  const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch(next === 'Characters' ? {} : { tab: next }); };
+  const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE GLYPH LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList>
+    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => setQuery(e.target.value)}/></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => setStrokeCount(e.target.value)}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{hasUsage && <Select value={reuse ?? 'all'} onValueChange={value => set({ reuse: reuseGroups.find(group => group.value === value)?.value, page: 1, id: '' })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by usage"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="all">All usage categories</SelectItem>{reuseGroups.map(group => <SelectItem key={group.value} value={group.value}>{group.label}{group.max ? ` · ${group.min}${group.max === Infinity ? '+' : `–${group.max}`}` : ''}</SelectItem>)}</SelectContent></Select>}</div>
-        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{catalogReady ? (k === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[k]) : `Loading ${plannedCounts[k].toLocaleString('en-US')} records…`}</span>{catalogReady && <span className="catalog-results-count">{filtered.length.toLocaleString('en-US')} {k.toLowerCase()} {hasFilter ? 'match' : 'available'}</span>}</div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => set({ q: '', strokes: '', reuse: undefined, page: 1, id: '' })}>Clear filters</Button></div>}
+        <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{catalogReady ? (k === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[k]) : `Loading ${plannedCounts[k].toLocaleString('en-US')} records…`}</span>{catalogReady && <span className="catalog-results-count">{filtered.length.toLocaleString('en-US')} {k.toLowerCase()} {hasFilter ? 'match' : 'available'}</span>}</div><div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => set({ q: '', strokes: '', reuse: undefined, status: undefined, page: 1, id: '' })}>Clear filters</Button></div>}
           <div className="catalog-pagination"><span>{filtered.length ? `${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}` : '0 records'}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => setPage(paged.current - 1)}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => setPage(paged.current + 1)}><ChevronRight/></Button></div></div>
         </section>{selected ? <CharacterDetails key={selected.id} entry={selected} kind={k} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
       </TabsContent>)}
