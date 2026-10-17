@@ -110,7 +110,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   );
 }
 
-function DiscoveryAudio({ word, entry, slow, onError }: { word?: Word; entry?: LibraryEntry; slow: boolean; onError: (message: string | null) => void }) {
+function DiscoveryAudio({ word, entry, slow, onError }: { word?: Word | undefined; entry?: LibraryEntry | undefined; slow: boolean; onError: (message: string | null) => void }) {
   const request = word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : null;
   const recording = entry ? characterRecording(entry.hanzi, entry.pinyin) : null;
   const hasRecording = word ? audioCandidates(request!).some(candidate => candidate.kind === 'recording') : Boolean(recording);
