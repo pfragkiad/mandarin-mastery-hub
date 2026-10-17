@@ -35,7 +35,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
     () => (isVocabulary(category) ? items.filter(word => vocabularyKind(word) === category && word.script !== 'Traditional') : []),
     [items, category],
   );
-  const entries = useMemo(() => (isVocabulary(category) ? [] : libraryEntries(category as LibraryTab)), [category, catalogVersion]);
+  const entries = useMemo(() => (isVocabulary(category) ? [] : libraryEntries(category as LibraryKind)), [category, catalogVersion]);
   const visible = useMemo(() => (entries.length ? filterLibrary(entries, '', '', false, false) : []), [entries]);
 
   useEffect(() => {
@@ -63,13 +63,13 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
     else setSelectedId(randomOverviewCharacter(entries, entry?.id)?.id);
   };
 
-  const browseSearch = isVocabulary(category) ? { tab: category } : { tab: category as LibraryTab };
+  const browseSearch = isVocabulary(category) ? { tab: category } : { tab: category };
   const browseTo = isVocabulary(category) ? '/vocabulary' : '/characters';
 
   const recordLink = word
     ? { to: '/vocabulary' as const, search: overviewWordDestination(word) }
     : entry
-      ? { to: '/characters' as const, search: overviewCharacterDestination(entry, entries, preferences.includeTraditional, category as LibraryTab) }
+      ? { to: '/characters' as const, search: overviewCharacterDestination(entry, entries, preferences.includeTraditional, category as LibraryKind) }
       : null;
 
   const record = word ?? entry;
