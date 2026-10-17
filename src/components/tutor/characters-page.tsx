@@ -8,6 +8,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
+import { useRecordScroll } from '@/lib/selection-scroll';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
@@ -112,6 +113,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const filtered = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, reuse, savedOnly ? saved : undefined);
   const paged = libraryPage(filtered, page);
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
+  useRecordScroll(selectedId, catalogReady);
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE GLYPH LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
