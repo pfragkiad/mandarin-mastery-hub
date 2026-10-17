@@ -474,3 +474,43 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .individual-stroke-grid { aspect-ratio: 1; }
 .individual-stroke-model { position: absolute; inset: 0; display: grid; place-items: center; font-family: 'Noto Sans SC', sans-serif; font-size: 220px; line-height: 1; color: var(--writer-outline); pointer-events: none; }
 .stroke-drawing { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+
+/* Overview: character-of-the-day hero. */
+.daily-hero { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: 40px; align-items: stretch; margin-bottom: 28px; min-height: min(60vh, 560px); }
+.daily-hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 0; position: relative; z-index: 21; }
+.daily-hero-copy h1 { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 0; font-weight: 400; }
+.daily-greeting-hanzi { font-size: clamp(56px, 6vw, 96px); line-height: 1.05; color: var(--foreground); }
+.daily-greeting-en { font-family: var(--font-display); font-size: clamp(26px, 2.4vw, 38px); line-height: 1.15; letter-spacing: -.01em; color: var(--muted-foreground); }
+.daily-greeting-pinyin { font-size: 15px; }
+.daily-hero-copy > p { color: var(--muted-foreground); font-size: 14px; line-height: 1.7; max-width: 46ch; margin-bottom: 10px; }
+.daily-hero-copy .overview-library-search { margin: 0; }
+.daily-hero-card { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: radial-gradient(120% 90% at 50% 30%, color-mix(in oklab, var(--primary) 12%, var(--card)), var(--card) 70%); box-shadow: var(--shadow-soft); padding: 22px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.daily-hero-label { align-self: flex-start; position: relative; }
+.daily-hero-ghost { position: absolute; right: -8%; top: -10%; font-size: 340px; line-height: 1; color: var(--primary); opacity: .05; pointer-events: none; user-select: none; }
+.daily-glyph { position: relative; width: 300px; height: 300px; max-width: 100%; display: grid; place-items: center; }
+.daily-glyph.is-loading { opacity: .4; }
+.daily-glyph-writer, .daily-glyph-font { grid-area: 1 / 1; transition: opacity .7s ease; }
+.daily-glyph-font { font-size: 240px; line-height: 1; font-weight: 400; color: var(--primary); opacity: 0; }
+.daily-glyph.is-done .daily-glyph-font { opacity: 1; }
+.daily-glyph.is-done .daily-glyph-writer { opacity: 0; }
+.daily-hero-meta { position: relative; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; text-align: center; }
+.daily-hero-meta .pinyin { font-size: 18px; }
+.daily-hero-meta h2 { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin: 2px 0 0; max-width: 32ch; }
+.daily-hero-meta .library-note { flex-basis: 100%; }
+.daily-hero-actions { position: relative; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: auto; }
+.saved-strip { margin: -12px 0 32px; display: flex; flex-direction: column; gap: 10px; }
+.saved-strip .eyebrow { display: inline-flex; align-items: center; gap: 6px; }
+.saved-strip-row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+.saved-chip { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--foreground); transition: color .18s ease, transform .18s ease; }
+.saved-chip strong { font-size: 26px; font-weight: 400; line-height: 1.2; }
+.saved-chip .pinyin { font-size: 11px; }
+.saved-chip:hover, .saved-chip:focus-visible { color: var(--primary); transform: translateY(-2px); }
+@media (max-width:1100px) {
+  .daily-hero { grid-template-columns: minmax(0,1fr); min-height: 0; gap: 24px; }
+}
+@media (max-width:580px) {
+  .daily-glyph { width: 220px; height: 220px; }
+  .daily-glyph-font { font-size: 176px; }
+  .daily-glyph-writer svg { width: 220px; height: 220px; }
+  .daily-hero-ghost { font-size: 240px; }
+}

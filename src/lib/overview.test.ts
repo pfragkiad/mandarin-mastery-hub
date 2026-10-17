@@ -87,3 +87,20 @@ describe('Overview random characters', () => {
     expect(overviewCharacterDestination(last, components, false, 'Components')).toEqual({ tab: 'Components', id: 'Components:49', page: 2 });
   });
 });
+import { dailyCharacter, greeting } from './overview';
+describe('Overview character of the day', () => {
+  const entry = (hanzi: string, script?: 'Traditional'): LibraryEntry => ({ id: `Characters:${hanzi}`, hanzi, pinyin: 'x', meaning: 'm', note: '', ...(script ? { script } : {}) });
+  const entries = [entry('学'), entry('习'), entry('龘'), entry('學', 'Traditional')];
+  const vocab = words.filter(w => w.script !== 'Traditional');
+  it('is stable for the same date and only picks characters used in vocabulary', () => {
+    const date = new Date(2026, 9, 17, 9);
+    const a = dailyCharacter(entries, vocab, date);
+    expect(dailyCharacter(entries, vocab, new Date(2026, 9, 17, 22))?.id).toBe(a?.id);
+    expect(['学', '习']).toContain(a?.hanzi);
+  });
+  it('greets by time of day', () => {
+    expect(greeting(8).hanzi).toBe('早上好');
+    expect(greeting(14).hanzi).toBe('下午好');
+    expect(greeting(21).hanzi).toBe('晚上好');
+  });
+});
