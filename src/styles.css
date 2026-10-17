@@ -202,6 +202,10 @@
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; }
 .decomposition-layout small { font-size: 12px; }
+.enrichment-note .decomposition-node > span { flex-shrink: 0; }
+.enrichment-note .decomposition-layout { min-width: 0; flex-wrap: wrap; }
+.enrichment-note .decomposition-part { flex-wrap: wrap; gap: 6px 12px; }
+.enrichment-note .decomposition-facts { flex-basis: 100%; overflow-wrap: anywhere; }
 /* Every "nothing here" message reads exactly like the decomposition explanation. */
 .decomposition-note, .record-gap > p { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
