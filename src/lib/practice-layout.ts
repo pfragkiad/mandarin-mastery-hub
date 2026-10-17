@@ -15,7 +15,7 @@ export function buildPracticePages(tokens: PracticeToken[], rows: 1 | 2): Practi
   // A single character gets a dedicated full page of graduated rows; a "write the
   // whole text" block would just repeat the same glyph, so it is omitted.
   if (unique.size === 1) {
-    const token = [...unique.values()][0];
+    const token = [...unique.values()][0]!;
     return [{ blocks: [{ kind: 'character', token, rows: SINGLE_CHARACTER_ROWS }] }];
   }
   const blocks: PracticeBlock[] = [...unique.values()].map((token) => ({ kind: 'character', token, rows }));
