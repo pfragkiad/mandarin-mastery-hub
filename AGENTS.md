@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Application architecture
+- Keep drawing-game filters URL-backed and rounds session-only; use native Hanzi Writer quizzes with no outline or automatic hints, so errors never substitute guessed handwriting acceptance.
 - Use TanStack leaf routes and shared root navigation/state to preserve the workspace.
 - Keep Mandarin data browser-safe; label samples and session-only edits so they never imply imported or durable records.
 - Dynamically load Hanzi Writer for characters and sourced representative stroke outlines; never infer missing paths, so practice follows recorded brush data.

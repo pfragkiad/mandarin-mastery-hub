@@ -2,6 +2,30 @@
 @import "tw-animate-css";
 @source "../src";
 @custom-variant dark (&:is(.dark *));
+.drawing-rule { font-size: 12px; color: var(--muted-foreground); margin: -5px 0 25px; line-height: 1.7; }
+.drawing-idle { border-top: 1px solid var(--border); padding: 28px 0; }
+.drawing-idle .record-gap { margin-top: 14px; }
+.drawing-board { border: 1px solid var(--border); background: var(--card); border-radius: 8px; padding: 25px; }
+.drawing-prompt { text-align: center; min-height: 85px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.drawing-prompt .flash-pinyin { font-size: 20px; }
+.drawing-prompt .flash-pinyin-row { gap: 4px; }
+.drawing-meaning { font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; max-width: 100%; }
+.drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: var(--muted-foreground); font-size: 11px; }
+.drawing-grid { touch-action: none; }
+.drawing-status { min-height: 42px; text-align: center; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
+.drawing-status.is-correct { color: var(--primary); }
+.drawing-status.is-missed { color: var(--destructive); }
+.drawing-answer { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--muted-foreground); font-size: 11px; }
+.drawing-answer [lang] { font-size: 32px; color: var(--foreground); }
+.drawing-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.drawing-progress { appearance: none; height: 4px; width: 100%; border: none; background: var(--muted); color: var(--primary); border-radius: 4px; overflow: hidden; }
+.drawing-progress::-webkit-progress-bar { background: var(--muted); }
+.drawing-progress::-webkit-progress-value { background: var(--primary); }
+.drawing-progress::-moz-progress-bar { background: var(--primary); }
+.drawing-results { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; padding: 30px 0; border-top: 1px solid var(--border); }
+.drawing-results>strong { font-size: 44px; font-weight: 400; color: var(--primary); }
+.drawing-results>p { font-size: 13px; color: var(--muted-foreground); }
+@media(max-width:580px) { .drawing-board { padding: 18px 12px; } .drawing-setup .filter-select { flex-basis: 100%; } .drawing-setup .flash-start { margin-left: 0; } .drawing-prompt .flash-pinyin { font-size: 18px; } .drawing-meaning { font-size: 17px; } }
 @theme inline {
  --font-sans: 'DM Sans', sans-serif; --font-display: 'Lora', Georgia, serif;
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
