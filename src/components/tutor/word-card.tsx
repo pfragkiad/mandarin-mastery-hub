@@ -8,6 +8,19 @@ import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
+import { libraryDestination } from '@/lib/character-library';
+
+const isCjk = (ch: string) => /[㐀-鿿豈-﫿]/.test(ch);
+
+function SentenceCharacters({ sentence, onNavigate }: { sentence: string; onNavigate: () => void }) {
+  const { preferences } = useWorkspace();
+  return <p lang="zh-CN">{Array.from(sentence).map((ch, i) => {
+    if (!isCjk(ch)) return <span key={i}>{ch}</span>;
+    const dest = libraryDestination(ch, preferences.includeTraditional);
+    if (!dest) return <span key={i}>{ch}</span>;
+    return <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Characters`} onClick={onNavigate}>{ch}</Link>;
+  })}</p>;
+}
 export function WordCard({ word, list = false, initiallyOpen = false }: { word: Word; list?: boolean; initiallyOpen?: boolean }) {
   const [open, setOpen] = useState(initiallyOpen);
   const [audioError, setAudioError] = useState<string | null>(null);
