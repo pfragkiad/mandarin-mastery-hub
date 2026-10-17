@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Remove repeated sidebar/footer copy and align both header edges with the main content; verify desktop, collapsed navigation and phones.
+- [x] Remove repeated sidebar/footer copy and align both header edges with the main content; verified desktop, collapsed navigation, phones and guidance access.
 - [x] Match Glyphs to the shared IN A SENTENCE formatting and restrict to one existing example; verify.
 - [x] Move vocabulary sentences above Decomposition; add up to three existing Glyph usage examples and verify links and matching.
 - [x] Remove the unclear reference metadata prefix, compact flashcard setup, and add a front-card pinyin switch; verify toggling and card directions.
