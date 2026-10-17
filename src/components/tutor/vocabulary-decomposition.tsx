@@ -7,6 +7,7 @@ import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { phraseParts, wordCharacters, isChineseGlyph } from '@/lib/vocabulary-decomposition';
 import { DecompositionTree } from './decomposition-tree';
 import { useWorkspace } from './workspace';
+import { CharacterEnrichmentNotes } from './character-enrichment';
 
 export function VocabularyDecomposition({ word }: { word: Word }) {
   const { items, preferences, catalogVersion } = useWorkspace();
@@ -30,7 +31,7 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
         return <li key={index}><div className="decomposition-part">
           {destination ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${part.text}`}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN">{part.text}</strong>}
           <div className="vocabulary-part-facts"><span className="pinyin">{part.pinyin || facts?.pinyin || '—'}</span><small>{facts?.meaning || 'Meaning not recorded'}</small></div>
-        </div>{tree ? <ul><DecompositionTree node={tree}/></ul> : Boolean(catalogVersion) && <p className="library-note">No recorded character breakdown.</p>}</li>;
+        </div>{tree ? <><ul><DecompositionTree node={tree}/></ul><CharacterEnrichmentNotes character={part.text} tree={tree}/></> : Boolean(catalogVersion) && <p className="library-note">No recorded character breakdown.</p>}</li>;
       })}</ul>
       <p className="detail-footnote decomposition-footnote">Source · Unicode Unihan 17.0.0{hasTrees && <> · {TREE_SOURCE}<br/>Imported graphical structure · not verified etymology</>}</p>
     </>}
