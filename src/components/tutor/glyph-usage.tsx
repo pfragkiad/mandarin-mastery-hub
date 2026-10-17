@@ -15,6 +15,6 @@ export function GlyphUsageExamples({ entry, kind }: { entry: LibraryEntry; kind:
       <Link to="/vocabulary" search={{ word: word.id, tab: vocabularyKind(word) }} className="glyph-usage-reference" title={`Open ${word.hanzi} in Vocabulary`}><span lang="zh-CN">{word.hanzi}</span><span>{word.level}</span></Link>
       {kind !== 'Characters' && <p className="glyph-usage-relation">{kind === 'Radicals' ? 'Dictionary radical of' : 'In the recorded breakdown of'} <span lang="zh-CN">{matchedGlyph}</span></p>}
       <p className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'}</p>
-    </div>) : <div className="sentence"><span className="eyebrow">IN A SENTENCE</span><p className="library-note">{kind === 'Strokes' ? 'No recorded stroke-to-character usage examples available.' : 'No existing usage examples available in the current vocabulary.'}</p></div>}
+    </div>) : <div className="glyph-usage-empty"><span className="eyebrow">IN A SENTENCE</span><p className="decomposition-note">{kind === 'Strokes' ? 'No recorded stroke-to-character usage examples available.' : 'No existing usage examples available in the current vocabulary.'}</p></div>}
   </section>;
 }
