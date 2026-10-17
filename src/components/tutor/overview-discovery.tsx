@@ -94,7 +94,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
           <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" aria-label={`Open ${hanzi}`}>
-            <strong lang="zh-CN">{hanzi}</strong>
+            <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
             <div>
               {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
               {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
