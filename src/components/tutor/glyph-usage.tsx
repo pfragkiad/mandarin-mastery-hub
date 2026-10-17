@@ -12,9 +12,8 @@ export function GlyphUsageExamples({ entry, kind }: { entry: LibraryEntry; kind:
   return <section className="glyph-usage-section" aria-label="In a sentence">
     {examples.length ? examples.map(({ word, sentence, matchedGlyph }) => <div className="glyph-usage-example" key={word.id}>
       <SentenceExample sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} />
-      <Link to="/vocabulary" search={{ word: word.id, tab: vocabularyKind(word) }} className="glyph-usage-reference" title={`Open ${word.hanzi} in Vocabulary`}><span lang="zh-CN">{word.hanzi}</span><span>{word.level}</span></Link>
+      <Link to="/vocabulary" search={{ word: word.id, tab: vocabularyKind(word) }} className="glyph-usage-reference" title={`Open ${word.hanzi} in Vocabulary`}><span lang="zh-CN">{word.hanzi}</span>{preferences.pinyin && word.pinyin && <span className="pinyin">{word.pinyin}</span>}<span className="glyph-usage-meaning">{word.meaning}</span></Link>
       {kind !== 'Characters' && <p className="glyph-usage-relation">{kind === 'Radicals' ? 'Dictionary radical of' : 'In the recorded breakdown of'} <span lang="zh-CN">{matchedGlyph}</span></p>}
-      <p className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'}</p>
     </div>) : <div className="glyph-usage-empty"><span className="eyebrow">IN A SENTENCE</span><p className="decomposition-note">{kind === 'Strokes' ? 'No recorded stroke-to-character usage examples available.' : 'No existing usage examples available in the current vocabulary.'}</p></div>}
   </section>;
 }
