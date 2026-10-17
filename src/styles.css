@@ -525,3 +525,12 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .search-field .search-toggle.on { color: var(--primary); background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
 .search-field:has(.search-toggle) input { padding-right: 80px; }
 @media(max-width:580px) { .search-field .search-toggle { right: 6px; } .search-field:has(.search-toggle) input { padding-right: 74px; } }
+
+/* Header and content share one bounded workspace, including wide screens. */
+.workspace { --workspace-width: 1510px; --workspace-gutter: 42px; }
+.main-content { max-width: var(--workspace-width); padding-inline: var(--workspace-gutter); }
+.topbar { padding-inline: max(var(--workspace-gutter), calc((100% - var(--workspace-width)) / 2 + var(--workspace-gutter))); }
+.sidebar-bottom { margin-top: auto; }
+.sidebar-bottom-row { justify-content: flex-end; }
+@media (max-width: 1150px) { .workspace { --workspace-gutter: 27px; } }
+@media (max-width: 580px) { .workspace { --workspace-gutter: 20px; } }
