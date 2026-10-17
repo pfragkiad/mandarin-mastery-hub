@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Exclude traditional forms from all Overview random picks (word, character, component) regardless of the browsing preference; verify with tests and live shuffles.
 - [x] Remove Overview banner, compact random cards without metadata/detail lines, and add clickable Components total; verify desktop and phone navigation.
 - [x] Replace banner stars/wand with glyph shortcuts, link totals, and show three bordered random cards; verify navigation and layouts.
 - [x] Promote Overview search, add an independent random character, and verify exact record navigation.

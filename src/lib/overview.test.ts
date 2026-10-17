@@ -32,6 +32,15 @@ describe('Overview featured words', () => {
     if (!word) throw new Error('Expected imported word');
     expect(overviewWordDestination(word)).toEqual({ word: word.id, tab: 'word' });
   });
+  it('never picks a traditional form at random', () => {
+    const base = words.find(word => vocabularyKind(word) === 'word');
+    if (!base) throw new Error('Expected imported word');
+    const traditional = { ...base, id: 'traditional-word', script: 'Traditional' as const };
+    for (const value of [0, 0.2, 0.5, 0.999]) {
+      expect(randomOverviewWord([traditional, ...words], undefined, () => value)?.id).not.toBe('traditional-word');
+    }
+    expect(randomOverviewWord([traditional, base], undefined, () => 0)?.id).toBe(base.id);
+  });
 });
 describe('First visit defaults', () => {
   it('starts in dark theme without a saved choice', () => { expect(restoredTheme(null)).toBe('dark'); });
@@ -44,12 +53,13 @@ describe('First visit defaults', () => {
 
 describe('Overview random characters', () => {
   const entries: LibraryEntry[] = Array.from({ length: 50 }, (_, i) => ({ id: `Characters:${i}`, hanzi: String(i), pinyin: '', meaning: '', note: '', script: i === 0 ? 'Traditional' : 'Common' }));
-  it('respects the traditional-character preference', () => {
-    expect(randomOverviewCharacter(entries, false, undefined, () => 0)?.id).toBe('Characters:1');
-    expect(randomOverviewCharacter(entries, true, undefined, () => 0)?.id).toBe('Characters:0');
+  it('never picks a traditional form, whatever the browsing preference', () => {
+    expect(randomOverviewCharacter(entries, undefined, () => 0)?.id).toBe('Characters:1');
+    expect(randomOverviewCharacter(entries, undefined, () => 0.98)?.id).toBe('Characters:49');
+    expect(randomOverviewCharacter(entries, 'Characters:1', () => 0.98)?.id).toBe('Characters:49');
   });
   it('does not repeat the previous character when alternatives exist', () => {
-    expect(randomOverviewCharacter(entries, false, 'Characters:1', () => 0)?.id).toBe('Characters:2');
+    expect(randomOverviewCharacter(entries, 'Characters:1', () => 0)?.id).toBe('Characters:2');
   });
   it('opens the exact character tab, record and filtered page', () => {
     const entry = entries[49];
@@ -61,7 +71,7 @@ describe('Overview random characters', () => {
   });
   it('selects a component independently and opens its exact component page', () => {
     const components = entries.map((entry, i) => ({ ...entry, id: `Components:${i}` }));
-    const component = randomOverviewCharacter(components, false, 'Components:1', () => 0);
+    const component = randomOverviewCharacter(components, 'Components:1', () => 0);
     expect(component?.id).toBe('Components:2');
     const last = components[49];
     if (!last) throw new Error('Expected component');
