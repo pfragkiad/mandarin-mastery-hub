@@ -20,7 +20,7 @@
 - Derive component reuse from distinct parent-character decomposition trees and radical usage from imported dictionary-radical assignments once per catalogue version; share URL-backed usage groups while keeping counts independent of browsing filters and their provenance distinct.
 
 - Keep shared learning preferences and script inclusion in a browser-safe module; imported records use explicit script metadata so filtering and traditional markers never rely on glyph guesses.
-- Use the vocabulary word search parameter to select real imported entries on arrival; Overview random selection and exact destinations live in a browser-safe helper so links never land on empty results or merely filter the list.
+- Keep Overview random word/character selection and exact paginated destinations in a browser-safe helper, with independent controls respecting script preferences, so links select real records rather than merely filtering lists.
 - Route all pronunciation through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin browser TTS, never auto-switching after a failed recording), so the external data plan's audio priority stays in one place.
 - Share pronunciation-control availability across learning screens, requiring a known reading and confirmed Mandarin voice for unrecorded speech, so grey controls never advertise playable audio.
 - Mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts and adapt entries to the UI Word shape there, so screens never depend on whether data comes from fixtures or the local API.
