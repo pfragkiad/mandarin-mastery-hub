@@ -15,7 +15,7 @@ export const referenceCatalog: { kind: ReferenceKind; entries: CatalogRow[] }[] 
 ];
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
 const cache = new Map<LibraryKind, { version: number; entries: LibraryEntry[] }>();
-const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d) via Mandarin Tutor import';
+export const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d)';
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const hit = cache.get(kind);
   if (hit && hit.version === catalog.version) return hit.entries;
