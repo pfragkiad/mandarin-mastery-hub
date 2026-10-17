@@ -1,33 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen, Columns2 } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
-import { libraryEntries, filterLibrary, libraryPage, libraryDestination, LIBRARY_PAGE_SIZE, plannedCounts, glyphIndex, type LibraryKind, type DecompositionNode, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, libraryPage, libraryDestination, LIBRARY_PAGE_SIZE, plannedCounts, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
+import { DecompositionTree } from './decomposition-tree';
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi radicals · Unihan 17.0.0', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
-const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated' };
 function ReuseLabel({ count, compact = false, radical = false }: { count: number; compact?: boolean; radical?: boolean }) {
   const group = reuseGroup(count);
   return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
-}
-export function DecompositionTree({ node }: { node: DecompositionNode }) {
-  const { preferences } = useWorkspace();
-  const card = glyphIndex()[node.glyph];
-  const destination = libraryDestination(node.glyph, preferences.includeTraditional);
-  const facts = card && (card.pinyin || card.meaning) ? [card.pinyin, card.meaning].filter(Boolean).join(' · ') : '';
-  const glyph = card && destination
-    ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={`Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
-    : <strong lang="zh-CN">{node.glyph}</strong>;
-  return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}>{node.glyph === '⿰' ? <Columns2 aria-hidden="true"/> : <span aria-hidden="true" className="ids-operator">{node.glyph}</span>}<small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}{facts ? <small className="decomposition-facts">{facts}</small> : null}</div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
 function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { preferences, saved, toggleSaved } = useWorkspace();
@@ -44,8 +34,8 @@ function CharacterDetails({ entry, kind }: { entry: LibraryEntry; kind: LibraryK
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{kind.slice(0, -1)}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
     <div className="word-detail-actions">{kind !== 'Strokes' && <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>}<Button variant="outline" size="sm" onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
-    <div className="decomposition-section"><h3><GitBranch size={17}/>Sourced decomposition</h3>
-      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No sourced decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
+    <div className="decomposition-section"><h3><GitBranch size={17}/>Decomposition</h3>
+      {entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</p></> : <div className="decomposition-pending"><BookOpen size={20}/><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="source-note">Imported record · Unicode Unihan 17.0.0 readings and meanings.</p>
   </section>;
 }
