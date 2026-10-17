@@ -152,7 +152,7 @@
 .catalog-source-icon { position: absolute; top: 9px; right: 9px; color: var(--primary); }
 .catalog-detail { border-left: 1px solid var(--border); padding: 0 0 24px 30px; min-width: 0; position: sticky; top: 24px; }
 .catalog-detail-title { display: flex; align-items: center; gap: 18px; margin: 18px 0 24px; }
-.catalog-detail-title > strong { font-size: 64px; line-height: 1.3; font-weight: 400; flex-shrink: 0; }
+.catalog-detail-title > strong, .catalog-detail-title .overview-record-link > strong { font-size: 64px; line-height: 1.3; font-weight: 400; flex-shrink: 0; }
 .catalog-detail-title > div { flex: 1; min-width: 0; }
 .catalog-detail-title .pinyin { font-size: 15px; }
 .catalog-detail-title h2 { font-family: var(--font-sans); font-size: 18px; font-weight: 500; margin-top: 4px; overflow-wrap: anywhere; }
@@ -274,12 +274,12 @@
 .overview-featured .daily-word-top { min-height: 32px; }
 .overview-featured .daily-word-top button { width: 32px; height: 32px; }
 .overview-featured-word { margin-top: 4px; flex: 1; }
-.overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 8px; margin: 0; color: var(--foreground); }
-.overview-featured .daily-word-content > div { min-width: 0; }
-.overview-featured .daily-word-content > div:first-child { max-width: 100%; }
-.overview-featured .daily-word-content strong { font-size: 46px; line-height: 1.2; overflow-wrap: anywhere; }
-.overview-featured .daily-word-content .pinyin { font-size: 14px; }
-.overview-featured .daily-word-content h3 { font-size: 15px; line-height: 1.4; margin-bottom: 0; overflow-wrap: anywhere; }
+.overview-record-title { gap: 10px; margin: 8px 0 12px; }
+.overview-record-link { display: flex; align-items: center; gap: 18px; color: var(--foreground); flex: 1; min-width: 0; }
+.overview-record-link > div { flex: 1; min-width: 0; }
+.overview-record-title .overview-record-link > strong { max-width: 48%; overflow-wrap: anywhere; }
+.overview-record-title > button { flex-shrink: 0; width: 28px; height: 28px; }
+.overview-record-title h2 { line-height: 1.4; }
 .overview-featured-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
 .overview-featured-actions > a { font-size: 11px; }
 .overview-library-search { position: relative; z-index: 21; margin: 0 0 24px; }
@@ -301,7 +301,6 @@
 @media (max-width:1100px) {
   .overview-study-row { grid-template-columns: minmax(0,1fr); gap: 18px; }
   .overview-featured.daily-word { padding: 16px 18px; }
-  .overview-featured .daily-word-content { flex-direction: column; align-items: flex-start; gap: 8px; }
   .overview-page .stats-row { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px 0; }
   .overview-page .stat:nth-child(3) { border-right: 0; }
   .overview-page .stat:nth-child(4) { padding-left: 0; }
@@ -313,12 +312,9 @@
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
   .overview-featured.daily-word { padding: 16px 18px; }
   .overview-featured-word { min-height: 0; }
-  .overview-featured .daily-word-content { gap: 8px; }
   .overview-page .stats-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .overview-page .stat:nth-child(3) { border-right: 1px solid var(--border); }
   .overview-page .stat:nth-child(4) { padding-left: 15px; }
-  .overview-featured .daily-word-content strong { font-size: 46px; }
-  .overview-featured .daily-word-content h3 { font-size: 15px; }
   .overview-flashcards { gap: 16px; }
   .flashcard-fan { width: 78px; }
   .flashcard-fan > span { left: 2px; }
