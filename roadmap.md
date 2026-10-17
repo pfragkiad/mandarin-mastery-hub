@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Rename the sidebar "Characters" entry to "Library" (it covers characters, radicals, components and strokes) and replace the Overview category hover with a soft tinted badge instead of a hard rectangle; verify both themes and phones.
 - [x] Replace the Overview category icons with representative Chinese glyphs (词 句 字 口 氵) that follow the font and theme; verify both themes, all fonts, links and phones.
 - [x] Colour the Chinese character and meaning in the accent green when hovering or keyboard-focusing a random card; verify in both themes.
 - [x] Exclude traditional forms from all Overview random picks (word, character, component) regardless of the browsing preference; verify with tests and live shuffles.

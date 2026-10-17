@@ -18,7 +18,7 @@ export const Route = createFileRoute('/characters')({
     const id = str(search['id']); if (id) out.id = id;
     return out;
   },
-  head: () => pageHead('Characters', 'Browse every character, radical and component, then open one to practise writing it stroke by stroke.'),
+  head: () => pageHead('Character Library', 'Browse characters, radicals, components and strokes, then open one to practise writing it stroke by stroke.'),
   component: CharactersRoute,
 });
 

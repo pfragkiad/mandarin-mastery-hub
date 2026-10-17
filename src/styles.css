@@ -263,8 +263,14 @@
 
 /* Overview: compact independent discovery cards. */
 .overview-page .stats-row { grid-template-columns: repeat(5,minmax(0,1fr)); margin: 20px 0 28px; }
-.overview-page .stat { height: auto; justify-content: flex-start; text-align: left; white-space: normal; color: var(--foreground); border-radius: 0; }
-.overview-page .stat:hover .stat-top { color: var(--primary); }
+.overview-page .stat { height: auto; justify-content: flex-start; text-align: left; white-space: normal; color: var(--foreground); border-radius: 8px; background: transparent; }
+.overview-page .stat:hover,.overview-page .stat:focus-visible,.overview-page .stat:active { background: transparent; box-shadow: none; }
+.overview-page .stat-icon { transition: background-color .2s ease, transform .2s ease; }
+.overview-page .stat-top { transition: color .2s ease; }
+.overview-page .stat-note { transition: color .2s ease; }
+.overview-page .stat:hover .stat-icon,.overview-page .stat:focus-visible .stat-icon { background: color-mix(in oklab, var(--primary) 18%, var(--secondary)); transform: translateY(-2px); }
+.overview-page .stat:hover .stat-top,.overview-page .stat:focus-visible .stat-top { color: var(--primary); }
+.overview-page .stat:hover .stat-note,.overview-page .stat:focus-visible .stat-note { color: var(--foreground); }
 .overview-page .stat-top { flex-wrap: wrap; }
 .overview-page .stat-top > span { white-space: normal; }
 .overview-page .stat-note { line-height: 1.5; }
