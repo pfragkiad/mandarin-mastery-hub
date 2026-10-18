@@ -14,12 +14,15 @@ import { useWorkspace } from './workspace';
 type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript; audio?: AudioAttachment | null };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
+const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
+
 export function FlashcardsPage() {
   const { items, preferences } = useWorkspace();
   const [category, setCategory] = useState('All vocabulary');
   const [level, setLevel] = useState('All levels');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
   const [showFrontPinyin, setShowFrontPinyin] = useState(false);
+  const [deckSize, setDeckSize] = useState<number | 'all'>(10);
   const [deck, setDeck] = useState<Card[] | null>(null);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -38,7 +41,16 @@ export function FlashcardsPage() {
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
   }, [items, category, level, isReference, preferences.includeTraditional]);
 
-  const start = (cards: Card[], next = false) => { setRound(r => next ? r + 1 : 1); if (!next) setTotal(cards.length); setDeck(shuffle(cards)); setIndex(0); setFlipped(false); setMissed([]); };
+  const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
+  const start = (cards: Card[], next = false) => {
+    const dealt = next ? shuffle(cards) : shuffle(cards).slice(0, deckSize === 'all' ? cards.length : deckSize);
+    setRound(r => next ? r + 1 : 1);
+    if (!next) setTotal(dealt.length);
+    setDeck(dealt);
+    setIndex(0);
+    setFlipped(false);
+    setMissed([]);
+  };
   const answer = (known: boolean) => {
     if (!deck) return;
     const current = deck[index]; if (!known && current) setMissed(m => [...m, current]);
