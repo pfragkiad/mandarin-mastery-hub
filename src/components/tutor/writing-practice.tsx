@@ -12,6 +12,7 @@ import { DecompositionTree } from './decomposition-tree';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
+import { strokeNames } from '@/lib/stroke-names';
 import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
@@ -111,9 +112,14 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     setReady(false); setPlaying(false); setPaused(false); setMessage('Loading stroke order…');
     setStrokes([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
-    Promise.all([import('hanzi-writer'), loadStrokeGeometry(character)]).then(([{ default: Writer }, { data }]) => {
+    Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data }, names]) => {
       if (!active || !target.current) return;
-      setStrokes(data.strokes.map((path, i) => ({ path, ...nameStroke(data.medians[i] ?? []) })));
+      // Names come from the recorded stroke-order table; the geometry guess is only a fallback.
+      setStrokes(data.strokes.map((path, i) => {
+        const fallback = nameStroke(data.medians[i] ?? []);
+        const recorded = names?.[i];
+        return { path, name: recorded?.name ?? fallback.name, pinyin: recorded?.pinyin ?? fallback.pinyin, direction: fallback.direction };
+      }));
       onStrokeCount?.(data.strokes.length);
       const style = getComputedStyle(document.documentElement);
       const ink = style.getPropertyValue('--primary').trim();
