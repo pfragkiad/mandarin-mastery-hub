@@ -10,9 +10,11 @@ import { DrawingBoard } from './drawing-board';
 import { useWorkspace } from './workspace';
 
 type Answer = { entry: LibraryEntry; result: DrawingResult };
+const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; onSearch: (search: DrawingSearch) => void }) {
   const { catalogVersion, preferences } = useWorkspace();
   const kind = search.kind ?? 'Characters';
+  const [deckSize, setDeckSize] = useState<number | 'all'>(10);
   const [deck, setDeck] = useState<LibraryEntry[] | null>(null);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [round, setRound] = useState(0);
@@ -22,10 +24,11 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const filtered = kind !== 'Characters';
   const card = deck?.[answers.length];
   const done = deck !== null && !card;
+  const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const review = answers.filter(answer => answer.result === 'missed' || answer.result === 'passed').map(answer => answer.entry);
   const correct = answers.filter(answer => answer.result === 'correct').length;
   const unavailable = answers.filter(answer => answer.result === 'unavailable').length;
-  const start = (records: LibraryEntry[]) => { setDeck(shuffledDrawingDeck(records)); setAnswers([]); setRound(value => value + 1); };
+  const start = (records: LibraryEntry[], next = false) => { setDeck(shuffledDrawingDeck(records, next || deckSize === 'all' ? records.length : deckSize)); setAnswers([]); setRound(value => value + 1); };
   const configure = (next: DrawingSearch) => { setDeck(null); setAnswers([]); onSearch(next); };
 
   return <div className="page-enter">
@@ -34,8 +37,12 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
       <select className="filter-select" aria-label="Drawing category" value={kind} onChange={event => { const next = drawingKinds.find(value => value === event.target.value); if (next) configure({ kind: next, errors: search.errors }); }}>{drawingKinds.map(value => <option key={value}>{value}</option>)}</select>
       {filtered && <><select className="filter-select" aria-label="Stroke count" value={search.strokes ?? ''} onChange={event => configure({ ...search, strokes: event.target.value || undefined })}><option value="">All stroke counts</option>{strokeCounts.map(value => <option key={value} value={value}>{value} {value === 1 ? 'stroke' : 'strokes'}</option>)}</select>
         <select className="filter-select" aria-label="Usage category" value={search.usage ?? ''} onChange={event => configure({ ...search, usage: reuseGroups.find(group => group.value === event.target.value)?.value })}><option value="">All usage categories</option>{reuseGroups.map(group => <option key={group.value} value={group.value}>{group.label}</option>)}</select></>}
+      <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={event => { setDeckSize(event.target.value === 'all' ? 'all' : Number(event.target.value)); setDeck(null); setAnswers([]); }}>
+        {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
+        <option value="all">All cards</option>
+      </select>
       <label className="flash-option"><Switch aria-label="Allow errors" checked={Boolean(search.errors)} onCheckedChange={value => onSearch({ ...search, errors: value || undefined })}/><span>Allow errors</span></label>
-      <div className="flash-start"><Button disabled={!pool.length} onClick={() => start(pool)}>{deck ? <RotateCcw/> : <Play/>}{deck ? 'New round' : 'Start'} · {Math.min(pool.length, 10)} cards</Button></div>
+      <div className="flash-start"><Button disabled={!pool.length} onClick={() => start(pool)}>{deck ? <RotateCcw/> : <Play/>}{deck ? 'New round' : 'Start'} · {roundSize}{roundSize < pool.length ? ` of ${pool.length}` : ''} cards</Button></div>
     </div>
     <p className="drawing-rule">{search.errors ? 'Incorrect strokes can be retried without revealing the guide.' : 'The first incorrect stroke sends the card to review.'}</p>
     {!deck && <section className="drawing-idle"><span className="eyebrow"><PenLine size={13}/>DRAW FROM MEMORY</span><div className="record-gap"><p>{!catalogVersion ? 'Loading the library…' : pool.length ? 'Ready for a new round.' : 'No cards with recorded pinyin and translation match these filters.'}</p></div></section>}
