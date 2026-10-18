@@ -73,10 +73,10 @@ export function StrokePractice({ glyph }: { glyph: string }) {
         charDataLoader: (char, onLoad, onError) => {
           fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(char)}.json`)
             .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
-            .then((data: { strokes: string[]; medians: number[][][] }) => {
+            .then((data: { strokes: string[]; medians: [number, number][][] }) => {
               const path = data.strokes[example.strokeIndex]; const median = data.medians[example.strokeIndex];
               if (!path || !median) throw new Error('missing stroke');
-              if (active) { setOutline(path); setMedian(median as MedianPoint[]); }
+              if (active) { setOutline(path); setMedian(median); }
               onLoad({ strokes: [path], medians: [median] } as never);
             })
             .catch(err => onError(err));
