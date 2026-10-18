@@ -5,7 +5,7 @@ import { strokeDirectionPoints, type MedianPoint } from '@/lib/stroke-directions
 
 export function DirectionHintsToggle({ checked, onChange, disabled }: { checked: boolean; onChange: (value: boolean) => void; disabled: boolean }) {
   const id = useId();
-  return <label className="direction-hints-toggle" htmlFor={id}><MoveUpRight size={15} aria-hidden="true"/>Stroke arrows<Switch id={id} checked={checked} onCheckedChange={onChange} disabled={disabled}/></label>;
+  return <label className="direction-hints-toggle" htmlFor={id}><MoveUpRight size={16} aria-hidden="true"/>Stroke arrows<Switch id={id} checked={checked} onCheckedChange={onChange} disabled={disabled}/></label>;
 }
 
 export function StrokeDirectionHints({ medians, activeStroke }: { medians: readonly (readonly MedianPoint[])[]; activeStroke?: number | null }) {
