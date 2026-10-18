@@ -54,7 +54,7 @@ it('a review round replays every missed card', async () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
-  expect(screen.getByText(/to review/)).toBeTruthy();
+  expect(screen.getByText('0 correct · 5 to review')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
   expect(await screen.findByText('Card 1 of 5')).toBeTruthy();
 });
