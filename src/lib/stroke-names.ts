@@ -55,3 +55,11 @@ export async function strokeNames(character: string): Promise<StrokeName[] | nul
   cache.set(character, names);
   return names;
 }
+
+/** Split a multi-syllable pinyin name into two balanced lines for the stroke chips. */
+export function splitPinyinLines(pinyin: string): string[] {
+  const words = pinyin.trim().split(/\s+/).filter(Boolean);
+  if (words.length < 2) return words;
+  const k = Math.ceil(words.length / 2);
+  return [words.slice(0, k).join(" "), words.slice(k).join(" ")];
+}

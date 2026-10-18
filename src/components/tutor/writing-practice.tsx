@@ -12,7 +12,7 @@ import { DecompositionTree } from './decomposition-tree';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
-import { strokeNames } from '@/lib/stroke-names';
+import { splitPinyinLines, strokeNames } from '@/lib/stroke-names';
 import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
@@ -73,7 +73,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [] }: {
                     </g>
                   </svg>
                   <span className="stroke-index">{i + 1}</span>
-                  <span className="stroke-pinyin">{stroke.pinyin}</span>
+                  <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
               </li>
             ))}
