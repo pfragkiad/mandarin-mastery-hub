@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Offer to bookmark unknown flashcards after completing a round and verify individual Vocabulary/Glyphs review.
 - [x] Add a separate hidden-guide drawing game for characters, radicals and components, with stroke/usage filters, Allow errors and Pass; verified real median drawing, strict/permissive errors, passing, review, URL history and narrow layout; 34 focused/regression tests pass.
 - [x] Match all decomposition layout icons to the left–right vector icon across current and BabelStone trees; verified 28px dimensions, equal line weight, clear wrap outlines, no runtime errors and passing decomposition tests.
 - [x] Import sourced radical identities and symbol lookup without replacing exact records; preserve 214 radicals and unmapped 丆, label dictionary text separately, verify symbol search and canonical links/Back on desktop and narrow screens; 186 tests pass.
