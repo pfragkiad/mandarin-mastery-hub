@@ -8,6 +8,18 @@ describe('stroke names from cnchar-order', () => {
     expect(names?.[2]?.pinyin).toBe('héng zhé gōu');
   });
 
+  it('reports 九’s second stroke as 横折弯钩, correcting cnchar-order’s conflation', async () => {
+    const names = await strokeNames('九');
+    expect(names?.map(stroke => stroke.name)).toEqual(['撇', '横折弯钩']);
+    expect(names?.[1]?.pinyin).toBe('héng zhé wān gōu');
+  });
+
+  it('keeps the true 横斜钩 for characters like 飞', async () => {
+    const names = await strokeNames('飞');
+    expect(names?.[0]?.name).toBe('横斜钩');
+    expect(names?.[0]?.pinyin).toBe('héng xié gōu');
+  });
+
   it('keeps one syllable per character in the pinyin', async () => {
     const names = await strokeNames('我');
     expect(names?.length).toBe(7);

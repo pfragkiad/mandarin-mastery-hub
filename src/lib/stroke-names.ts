@@ -26,6 +26,17 @@ function spellName(cnchar: Cnchar, name: string): string {
   return [...name].map(char => String(cnchar.spell(char, 'low', 'tone'))).join(' ');
 }
 
+// cnchar-order conflates two distinct hook strokes under one entry named 横斜钩 (shape ⺄):
+// the true 横斜钩 (飞, 气, 风…) and the 横折弯钩 (乙, 九, 几…). Standard stroke naming
+// (通用规范汉字表) records the characters below with 横折弯钩, so we correct them here.
+const HENG_ZHE_WAN_GOU = new Set([
+  '乙', '九', '乞', '亿', '丸', '几', '凡', '卂', '讯', '迅', '执', '芄', '纨',
+  '究', '仇', '轨', '艺', '忆', '屹', '疙', '叽', '饥', '肌', '机', '矶',
+  '朵', '垛', '跺', '躲', '剁', '壳', '亮', '亳', '虼', '汔', '矻',
+]);
+const HENG_XIE_GOU = '横斜钩';
+const HENG_ZHE_WAN_GOU_NAME = '横折弯钩';
+
 const cache = new Map<string, StrokeName[] | null>();
 
 /** The recorded stroke names for one character, in writing order, or null when the table has no entry. */
@@ -36,7 +47,11 @@ export async function strokeNames(character: string): Promise<StrokeName[] | nul
   const raw = cnchar.stroke(character, 'order', 'name');
   const row = Array.isArray(raw) && Array.isArray(raw[0]) ? (raw[0] as string[]) : null;
   // Some entries record accepted alternates (斜钩|卧钩); show the primary name.
-  const names = row?.length ? row.map(name => ({ name: name.split('|')[0] ?? name, pinyin: spellName(cnchar, name.split('|')[0] ?? name) })) : null;
+  const names = row?.length ? row.map(name => {
+    let primary = name.split('|')[0] ?? name;
+    if (primary === HENG_XIE_GOU && HENG_ZHE_WAN_GOU.has(character)) primary = HENG_ZHE_WAN_GOU_NAME;
+    return { name: primary, pinyin: spellName(cnchar, primary) };
+  }) : null;
   cache.set(character, names);
   return names;
 }
