@@ -9,7 +9,7 @@ const workspace = vi.hoisted(() => ({ useWorkspace: vi.fn() }));
 vi.mock('./workspace', () => ({ useWorkspace: workspace.useWorkspace }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
 vi.mock('@/lib/character-enrichment', () => ({ loadStrokeGeometry: async () => ({ data: { strokes: ['one'], medians: [[[0, 0], [400, 0]]] } }) }));
-vi.mock('@/lib/catalog-store', () => ({ characterRecording: () => null, playCharacter: async () => undefined }));
+vi.mock('@/lib/catalog-store', async importOriginal => ({ ...(await importOriginal<object>()), characterRecording: () => null, playCharacter: async () => undefined }));
 const entries = vi.hoisted(() => [] as LibraryEntry[]);
 vi.mock('@/lib/character-library', async importOriginal => ({ ...(await importOriginal<object>()), libraryEntries: () => entries }));
 
