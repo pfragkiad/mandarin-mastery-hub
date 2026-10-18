@@ -595,4 +595,4 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .direction-arrowhead { fill: var(--foreground); stroke: var(--card); stroke-width: 0.75; }
 .direction-start { fill: var(--card); stroke: var(--foreground); stroke-width: 1; }
 .direction-number { fill: var(--foreground); font-family: var(--font-sans); font-size: 8px; font-weight: 600; }
-.direction-hints-toggle { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 11px; color: var(--foreground); margin: -8px auto 16px; cursor: pointer; }
+.direction-hints-toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted-foreground); white-space: nowrap; cursor: pointer; padding: 0 6px; } .tool-top-actions { display: flex; align-items: center; gap: 2px; }
