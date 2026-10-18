@@ -47,7 +47,11 @@ export async function strokeNames(character: string): Promise<StrokeName[] | nul
   const raw = cnchar.stroke(character, 'order', 'name');
   const row = Array.isArray(raw) && Array.isArray(raw[0]) ? (raw[0] as string[]) : null;
   // Some entries record accepted alternates (斜钩|卧钩); show the primary name.
-  const names = row?.length ? row.map(name => ({ name: name.split('|')[0] ?? name, pinyin: spellName(cnchar, name.split('|')[0] ?? name) })) : null;
+  const names = row?.length ? row.map(name => {
+    let primary = name.split('|')[0] ?? name;
+    if (primary === HENG_XIE_GOU && HENG_ZHE_WAN_GOU.has(character)) primary = HENG_ZHE_WAN_GOU_NAME;
+    return { name: primary, pinyin: spellName(cnchar, primary) };
+  }) : null;
   cache.set(character, names);
   return names;
 }
