@@ -3,6 +3,8 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { DrawingGamePage } from './drawing-game';
 import type { LibraryEntry } from '@/lib/character-library';
 
+vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a> }));
+
 const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), quiz: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
 const workspace = vi.hoisted(() => ({ useWorkspace: vi.fn() }));
