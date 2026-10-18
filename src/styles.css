@@ -584,3 +584,5 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .sidebar-bottom-row { justify-content: flex-end; }
 @media (max-width: 1150px) { .workspace { --workspace-gutter: 27px; } }
 @media (max-width: 580px) { .workspace { --workspace-gutter: 20px; } }
+.stroke-chip .stroke-score { position: absolute; top: 4px; right: 6px; font-size: 8px; font-weight: 600; color: var(--primary); }
+.stroke-chip .stroke-score.imperfect { color: var(--terracotta); }

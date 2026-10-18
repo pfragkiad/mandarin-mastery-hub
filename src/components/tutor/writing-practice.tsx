@@ -1,3 +1,4 @@
+import { characterScore, strokeColor, strokeScore } from '@/lib/stroke-score';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, GitBranch, Printer } from 'lucide-react';
@@ -45,7 +46,7 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
-function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [] }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[] }) {
+function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], theme }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; theme: 'light' | 'dark' }) {
   const [visible, setVisible] = useState(true);
   if (!strokes.length) return null;
   return (
@@ -69,10 +70,11 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [] }: {
                 >
                   <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
                     <g transform="scale(1, -1) translate(0, -900)">
-                      <path d={stroke.path} />
+                      <path d={stroke.path} style={componentIndices.includes(i) ? undefined : { fill: strokeColor(i, theme) }} />
                     </g>
                   </svg>
                   <span className="stroke-index">{i + 1}</span>
+                  {scores[i] != null && <span className={`stroke-score${scores[i]! < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
                   <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
               </li>
@@ -106,6 +108,11 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
   const [retry, setRetry] = useState(0);
   const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
   const [activeStroke, setActiveStroke] = useState<number | null>(null);
+  const [scores, setScores] = useState<(number | null)[]>([]);
+  const paintStrokes = () => {
+    const groups = target.current?.querySelectorAll('svg > g > g');
+    groups?.[1]?.querySelectorAll('path').forEach((path, i) => { (path as SVGPathElement).style.stroke = strokeColor(i, theme); });
+  };
   useEffect(() => {
     let active = true;
     animationRun.current += 1;
@@ -131,7 +138,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showOutline: guide, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setScores([]); requestAnimationFrame(paintStrokes); setMessage('Watch the strokes, then try it yourself.'); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; };
@@ -171,7 +178,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     animationRun.current += 1; writer.current?.cancelQuiz(); void writer.current?.showCharacter();
     setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Ready for a fresh start.');
   };
-  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onComplete: () => setMessage('Beautifully done! You completed the character.') }); };
+  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
@@ -182,7 +189,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setPaused(false); setActiveStroke(null); } });
   };
   const highlighted = ready ? component?.strokeIndices ?? [] : [];
-  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted}/></section>;
+  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
