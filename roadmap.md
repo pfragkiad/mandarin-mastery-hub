@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [x] Move the "Stroke arrows" switch into the panel header beside "Show guide" on both character and single-stroke practice; verified one switch per page, shared vertical centre, arrows still rendering when on; 38 practice tests pass.
+- [x] Move the "Stroke arrows" switch into the panel header beside "Show guide" and give it the identical control style (12px/500 text, 16px icon, 32px height, 12px side padding, 6px radius, same hover tint and accent ink in both themes); verified computed styles match exactly on the character and single-stroke pages; 38 practice tests pass.
 
 - [x] Add optional recorded-path direction arrows inside character and individual-stroke practice; verified toggle, current-stroke playback hints, pause/resume, real drawing at 100%, both theme surfaces and narrow layout; 13 focused tests pass.
 - [x] Offer to bookmark unknown flashcards after completing a round; verified exact Vocabulary/Glyphs review, session bookmarks and existing bookmark preservation; 10 flashcard tests pass.
