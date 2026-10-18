@@ -24,6 +24,7 @@
 - Route all pronunciation through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin browser TTS, never auto-switching after a failed recording), so the external data plan's audio priority stays in one place.
 - Share pronunciation availability: unrecorded speech requires a known reading and confirmed Mandarin voice, so disabled controls never promise playable audio.
 - Separate flashcard flip targets from pronunciation and make hidden faces inert, so listening never flips cards or exposes hidden answers to keyboard navigation.
+- Preserve exact record IDs and library kinds in flashcard rounds; bookmark only unsaved missed IDs in the shared session workspace and link reviews to their exact Vocabulary/Glyphs records, so saving never removes an existing bookmark or opens a homograph instead.
 - Mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts and adapt entries to the UI Word shape there, so screens never depend on whether data comes from fixtures or the local API.
 - Preserve field-level spreadsheet provenance; match by HSK identity/headword without replacing audio, examples or entry IDs.
 - Fetch the catalogue and repeatably imported radical-identity sidecar together through catalog-store; keep large reference data out of page bundles and preserve original tuples.
