@@ -14,12 +14,15 @@ import { useWorkspace } from './workspace';
 type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript; audio?: AudioAttachment | null };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
+const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
+
 export function FlashcardsPage() {
   const { items, preferences } = useWorkspace();
   const [category, setCategory] = useState('All vocabulary');
   const [level, setLevel] = useState('All levels');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
   const [showFrontPinyin, setShowFrontPinyin] = useState(false);
+  const [deckSize, setDeckSize] = useState<number | 'all'>(10);
   const [deck, setDeck] = useState<Card[] | null>(null);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -38,7 +41,16 @@ export function FlashcardsPage() {
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
   }, [items, category, level, isReference, preferences.includeTraditional]);
 
-  const start = (cards: Card[], next = false) => { setRound(r => next ? r + 1 : 1); if (!next) setTotal(cards.length); setDeck(shuffle(cards)); setIndex(0); setFlipped(false); setMissed([]); };
+  const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
+  const start = (cards: Card[], next = false) => {
+    const dealt = next ? shuffle(cards) : shuffle(cards).slice(0, deckSize === 'all' ? cards.length : deckSize);
+    setRound(r => next ? r + 1 : 1);
+    if (!next) setTotal(dealt.length);
+    setDeck(dealt);
+    setIndex(0);
+    setFlipped(false);
+    setMissed([]);
+  };
   const answer = (known: boolean) => {
     if (!deck) return;
     const current = deck[index]; if (!known && current) setMissed(m => [...m, current]);
@@ -63,14 +75,18 @@ export function FlashcardsPage() {
       </select>
       <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
+      <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
+        {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
+        <option value="all">All cards</option>
+      </select>
       <div className="flash-options">
         <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={setShowFrontPinyin} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
         <label className="flash-option"><Switch checked={repeat} onCheckedChange={setRepeat} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
       </div>
-      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {pool.length} cards</Button></div>
+      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {roundSize}{roundSize < pool.length ? ` of ${pool.length}` : ''} cards</Button></div>
     </div>
 
-    {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? 'Press Start to shuffle the deck. Tap a card to flip it.' : 'Try another category or level.'}</p></div>}
+    {!deck && <div className="empty-state"><h3>{pool.length ? 'Ready when you are.' : 'No cards in this selection.'}</h3><p>{pool.length ? `${pool.length} cards match your filters. Press Start to shuffle ${roundSize === pool.length ? 'the whole deck' : `a deck of ${roundSize}`}. Tap a card to flip it.` : 'Try another category or level.'}</p></div>}
 
     {card && !done && <div className={`flash-stage ${card.script === 'Traditional' ? 'is-traditional' : ''}`}>
       <div className="flash-meta"><span>Card {index + 1} of {deck?.length ?? 0}{round > 1 ? ` · round ${round}` : ''}</span><span>{missed.length} to review</span></div>
