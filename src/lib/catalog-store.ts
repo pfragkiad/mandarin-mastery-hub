@@ -6,6 +6,7 @@ import type { CharacterScript } from './learning-preferences';
 import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest } from './audio';
 import type { DecompositionNode } from './character-library';
 import type { RadicalIdentityFile } from './radical-identities';
+import type { RadicalStrokeFile } from './radical-strokes';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
 export type CatalogFile = {
@@ -19,12 +20,14 @@ export const catalog = {
   characters: [] as CatalogRow[], radicals: [] as CatalogRow[], components: [] as CatalogRow[], strokes: [] as CatalogRow[],
   trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'],
   radicalIdentities: { schemaVersion: 1, sources: {}, identities: {} } as RadicalIdentityFile,
+  radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
 
-export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile) {
+export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile) {
   for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source;
   if (identities) catalog.radicalIdentities = identities;
+  if (strokes) catalog.radicalStrokes = strokes;
   catalog.loaded = true; catalog.version += 1;
 }
 
@@ -34,7 +37,8 @@ export function loadCatalog(): Promise<void> {
   pending ??= Promise.all([
     fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }),
     fetch('/data/radical-identities.json').then(r => { if (!r.ok) throw new Error(`radical identities ${r.status}`); return r.json() as Promise<RadicalIdentityFile>; }),
-  ]).then(([data, identities]) => hydrateCatalog(data, identities)).catch(err => { pending = null; throw err; });
+    fetch('/data/radical-strokes.json').then(r => { if (!r.ok) throw new Error(`radical strokes ${r.status}`); return r.json() as Promise<RadicalStrokeFile>; }),
+  ]).then(([data, identities, strokes]) => hydrateCatalog(data, identities, strokes)).catch(err => { pending = null; throw err; });
   return pending;
 }
 

@@ -24,7 +24,7 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
   const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
-    const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
+    const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
     const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
     return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
