@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { RotateCcw, Shuffle, Volume2, Check, X, Play } from 'lucide-react';
+import { RotateCcw, Shuffle, Volume2, Check, X, Play, Bookmark } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -8,16 +8,17 @@ import { collections } from '@/lib/mandarin';
 import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { referenceCatalog } from '@/lib/character-library';
+import { referenceCatalog, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 
-type Card = { hanzi: string; pinyin: string; meaning: string; script?: CharacterScript; audio?: AudioAttachment | null };
+type Card = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; script?: CharacterScript; audio?: AudioAttachment | null };
+const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
 const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 
 export function FlashcardsPage() {
-  const { items, preferences } = useWorkspace();
+  const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
   const [category, setCategory] = useState('All vocabulary');
   const [level, setLevel] = useState('All levels');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
@@ -36,10 +37,13 @@ export function FlashcardsPage() {
   const pool = useMemo<Card[]>(() => {
     if (isReference) {
       const kind = category.slice(4);
-      return (referenceCatalog.find(c => c.kind === kind)?.entries ?? []).filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
+      const reference = referenceCatalog.find(c => c.kind === kind);
+      if (!reference) return [];
+      const libraryKind = libraryKinds[reference.kind];
+      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
     }
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
-  }, [items, category, level, isReference, preferences.includeTraditional]);
+  }, [items, category, level, isReference, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const start = (cards: Card[], next = false) => {
@@ -64,8 +68,9 @@ export function FlashcardsPage() {
   const source = audioCandidates(request)[0]?.label;
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), card?.pinyin);
 
-  const uniqueMissed = [...new Map(missed.map(m => [m.hanzi, m])).values()];
-  const firstTry = repeat ? deck ? new Set(deck.map(c => c.hanzi)).size - uniqueMissed.length : 0 : 0;
+  const uniqueMissed = [...new Map(missed.map(m => [m.id, m])).values()];
+  const unsavedMissed = uniqueMissed.filter(m => !saved.includes(m.id));
+  const firstTry = repeat ? deck ? new Set(deck.map(c => c.id)).size - uniqueMissed.length : 0 : 0;
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1><p>Pick a category and level, then flip through a shuffled deck.</p></div><span className="heading-hanzi">记<span>jì</span></span></div>
     <div className="flash-setup">
@@ -112,15 +117,17 @@ export function FlashcardsPage() {
 
     {done && <div className="flash-stage"><div className="flash-result">
       <div className="eyebrow">DECK COMPLETE</div>
-      {repeat ? <><strong>All {new Set(deck?.map(c => c.hanzi)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
+      {repeat ? <><strong>All {new Set(deck?.map(c => c.id)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
         : <><strong>{(deck?.length ?? 0) - uniqueMissed.length} / {deck?.length ?? 0}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
-      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => isReference || !items.some(w => w.hanzi === m.hanzi)
-        ? <Link key={m.hanzi} to="/strokes" search={{ character: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — practise writing`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
-        : <Link key={m.hanzi} to="/vocabulary" search={{ q: m.hanzi }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
+      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => m.libraryKind
+        ? <Link key={m.id} to="/characters" search={{ tab: m.libraryKind, id: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Glyphs`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
+        : <Link key={m.id} to="/vocabulary" search={{ word: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
+      {uniqueMissed.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedMissed.length} onClick={() => unsavedMissed.forEach(m => toggleSaved(m.id))}>{unsavedMissed.length ? <Bookmark/> : <Check/>}{unsavedMissed.length ? `Save ${unsavedMissed.length} unknown ${unsavedMissed.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}
       <div className="flex gap-2 flex-wrap justify-center">
         {uniqueMissed.length > 0 && <Button onClick={() => start(uniqueMissed, true)}><RotateCcw />New round with {uniqueMissed.length} missed</Button>}
         <Button variant="outline" onClick={() => start(pool)}><Shuffle />New round</Button>
       </div>
+      {uniqueMissed.length > 0 && !unsavedMissed.length && <p role="status">Bookmarked in Saved for this session.</p>}
     </div></div>}
   </div>;
 }
