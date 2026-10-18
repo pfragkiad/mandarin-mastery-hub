@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Add optional recorded-path direction arrows inside character and individual-stroke practice; verify toggling, playback, drawing and contrast.
+- [x] Add optional recorded-path direction arrows inside character and individual-stroke practice; verified toggle, current-stroke playback hints, pause/resume, real drawing at 100%, both theme surfaces and narrow layout; 13 focused tests pass.
 - [x] Offer to bookmark unknown flashcards after completing a round; verified exact Vocabulary/Glyphs review, session bookmarks and existing bookmark preservation; 10 flashcard tests pass.
 - [x] Add a separate hidden-guide drawing game for characters, radicals and components, with stroke/usage filters, Allow errors and Pass; verified real median drawing, strict/permissive errors, passing, review, URL history and narrow layout; 34 focused/regression tests pass.
 - [x] Match all decomposition layout icons to the left–right vector icon across current and BabelStone trees; verified 28px dimensions, equal line weight, clear wrap outlines, no runtime errors and passing decomposition tests.
