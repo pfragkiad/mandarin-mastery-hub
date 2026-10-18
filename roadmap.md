@@ -63,6 +63,7 @@
 - [x] Restore random phrase alignment with neighbouring tiles and enlarge the daily pinyin/audio row with less space above its character; verified five phrase shuffles, desktop and phones.
 - [x] Ensure selected cards are rendered on their containing page and visible after selection from any place, including history and all vocabulary/Glyphs categories; verify.
 - [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
+- [x] Drawing game matches flashcards: deck-size selector (5–50 or All, default 10), Start button shows the dealt size of the filtered total, and review rounds replay all missed cards; 3 new page tests, 212 tests pass.
 
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
