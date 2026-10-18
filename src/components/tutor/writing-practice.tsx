@@ -157,7 +157,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     }
     const run = ++animationRun.current;
     applySpeed(instance);
-    instance.cancelQuiz(); setPaused(false); setPlaying(true); setMessage('Follow each stroke in order.');
+    instance.cancelQuiz(); setPaused(false); setPlaying(true); setActiveStroke(null); setScores([]); setMessage('Follow each stroke in order.');
     // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
     instance.hideCharacter();
     const step = (i: number) => {
@@ -176,7 +176,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
   };
   const reset = () => {
     animationRun.current += 1; writer.current?.cancelQuiz(); void writer.current?.showCharacter();
-    setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Ready for a fresh start.');
+    setPlaying(false); setPaused(false); setActiveStroke(null); setScores([]); setMessage('Ready for a fresh start.');
   };
   const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
   const playStroke = (index: number) => {
