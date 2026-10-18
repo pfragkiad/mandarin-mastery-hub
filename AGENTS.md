@@ -39,3 +39,4 @@
 
 - Preserve Hanzi Writer animation runs across Pause/Resume using its native APIs; invalidate runs only on replacement, reset, practice or teardown, so in-flight stroke progress and guide highlights survive pausing.
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match, so annotations preserve canonical data and unknowns. Overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
+- Stroke names come from the cnchar-order recorded stroke-order table (src/lib/stroke-names.ts, lazily loaded); the median-geometry guess in writing-practice is only a fallback for characters the table lacks.
