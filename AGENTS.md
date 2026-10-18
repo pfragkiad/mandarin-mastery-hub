@@ -25,3 +25,4 @@
 - Script metadata is explicit — never guess script from glyphs; Overview discovery and paginated links respect script preferences.
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match; overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
 - Visual roles/layouts are defined globally with shared controls and root theme state, so navigation, controls and writing ink stay consistent.
+- Practice direction hints use the shared non-intercepting SVG overlay and recorded Hanzi Writer medians in writer coordinates, never guessed endpoints; keep hints out of the hidden-guide drawing game.
