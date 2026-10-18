@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, PenLine, Play, RotateCcw } from 'lucide-react';
+import { ArrowRight, Bookmark, Check, PenLine, Play, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { libraryEntries, type LibraryEntry } from '@/lib/character-library';
@@ -12,7 +12,7 @@ import { useWorkspace } from './workspace';
 type Answer = { entry: LibraryEntry; result: DrawingResult };
 const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; onSearch: (search: DrawingSearch) => void }) {
-  const { catalogVersion, preferences } = useWorkspace();
+  const { catalogVersion, preferences, saved, toggleSaved } = useWorkspace();
   const kind = search.kind ?? 'Characters';
   const [deckSize, setDeckSize] = useState<number | 'all'>(10);
   const [deck, setDeck] = useState<LibraryEntry[] | null>(null);
@@ -26,6 +26,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const done = deck !== null && !card;
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const review = answers.filter(answer => answer.result === 'missed' || answer.result === 'passed').map(answer => answer.entry);
+  const unsavedReview = review.filter(entry => !saved.includes(entry.id));
   const correct = answers.filter(answer => answer.result === 'correct').length;
   const unavailable = answers.filter(answer => answer.result === 'unavailable').length;
   const start = (records: LibraryEntry[], next = false) => { setDeck(shuffledDrawingDeck(records, next || deckSize === 'all' ? records.length : deckSize)); setAnswers([]); setRound(value => value + 1); };
@@ -47,6 +48,6 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
     <p className="drawing-rule">{search.errors ? 'Incorrect strokes can be retried without revealing the guide.' : 'The first incorrect stroke sends the card to review.'}</p>
     {!deck && <section className="drawing-idle"><span className="eyebrow"><PenLine size={13}/>DRAW FROM MEMORY</span><div className="record-gap"><p>{!catalogVersion ? 'Loading the library…' : pool.length ? `${pool.length} cards match your filters. Press Start to shuffle ${roundSize === pool.length ? 'the whole deck' : `a deck of ${roundSize}`}.` : 'No cards with recorded pinyin and translation match these filters.'}</p></div></section>}
     {card && <div className="flash-stage drawing-stage"><div className="flash-meta"><span>Card {answers.length + 1} of {deck?.length}</span><span>{correct} correct · {review.length} to review</span></div><progress className="drawing-progress" value={answers.length} max={deck?.length ?? 1} aria-label="Round progress"/><DrawingBoard key={`${round}:${card.id}`} entry={card} allowErrors={Boolean(search.errors)} onFinish={result => setAnswers(previous => [...previous, { entry: card, result }])}/></div>}
-    {done && <div className="flash-stage"><section className="drawing-results"><span className="eyebrow">ROUND COMPLETE</span><strong>{correct} / {answers.length - unavailable}</strong><p>{correct} correct · {review.length} to review{unavailable ? ` · ${unavailable} without writing data` : ''}</p>{review.length > 0 && <div className="flash-missed">{review.map(entry => <Link key={entry.id} to="/strokes" search={{ character: entry.hanzi }} title={`Practice ${entry.pinyin} · ${entry.meaning}`}><span lang="zh-CN">{entry.hanzi}</span><small>{entry.pinyin}</small></Link>)}</div>}<div className="drawing-actions">{review.length > 0 && <Button onClick={() => start(review, true)}><RotateCcw/>Review cards</Button>}<Button variant="outline" onClick={() => start(pool)}>New round<ArrowRight/></Button></div></section></div>}
+    {done && <div className="flash-stage"><section className="drawing-results"><span className="eyebrow">ROUND COMPLETE</span><strong>{correct} / {answers.length - unavailable}</strong><p>{correct} correct · {review.length} to review{unavailable ? ` · ${unavailable} without writing data` : ''}</p>{review.length > 0 && <div className="flash-missed">{review.map(entry => <Link key={entry.id} to="/strokes" search={{ character: entry.hanzi }} title={`Practice ${entry.pinyin} · ${entry.meaning}`}><span lang="zh-CN">{entry.hanzi}</span><small>{entry.pinyin}</small></Link>)}</div>}{review.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedReview.length} onClick={() => unsavedReview.forEach(entry => toggleSaved(entry.id))}>{unsavedReview.length ? <Bookmark/> : <Check/>}{unsavedReview.length ? `Save ${unsavedReview.length} unknown ${unsavedReview.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}{review.length > 0 && !unsavedReview.length && <p className="text-center mb-4" role="status">Bookmarked in Saved for this session.</p>}<div className="drawing-actions">{review.length > 0 && <Button onClick={() => start(review, true)}><RotateCcw/>Review cards</Button>}<Button variant="outline" onClick={() => start(pool)}>New round<ArrowRight/></Button></div></section></div>}
   </div>;
 }
