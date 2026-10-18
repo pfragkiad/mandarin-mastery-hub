@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { strokeNames } from './stroke-names';
+import { splitPinyinLines, strokeNames } from './stroke-names';
 
 describe('stroke names from cnchar-order', () => {
   it('names every stroke of 门, including the compound 横折钩', async () => {
@@ -27,5 +27,11 @@ describe('stroke names from cnchar-order', () => {
       expect(stroke.name).toBeTruthy();
       expect(stroke.pinyin.split(' ').length).toBe([...stroke.name].length);
     }
+  });
+
+  it('splits compound names into two balanced lines for the stroke chips', () => {
+    expect(splitPinyinLines('héng zhé wān gōu')).toEqual(['héng zhé', 'wān gōu']);
+    expect(splitPinyinLines('héng zhé zhé zhé gōu')).toEqual(['héng zhé zhé', 'zhé gōu']);
+    expect(splitPinyinLines('piě')).toEqual(['piě']);
   });
 });
