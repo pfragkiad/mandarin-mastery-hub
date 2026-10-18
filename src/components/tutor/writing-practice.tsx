@@ -14,6 +14,8 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
 import { splitPinyinLines, strokeNames } from '@/lib/stroke-names';
+import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
+import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
@@ -74,7 +76,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                     </g>
                   </svg>
                   <span className="stroke-index">{i + 1}</span>
-                  {scores[i] != null && <span className={`stroke-score${scores[i]! < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
+                  {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
                   <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
               </li>
@@ -100,6 +102,8 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [guide, setGuide] = useState(true);
+  const [arrows, setArrows] = useState(false);
+  const [medians, setMedians] = useState<MedianPoint[][]>([]);
   // The slider picks one of the fixed speeds below; 0.5× (index 1) is the default.
   const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
   const speed = SPEEDS[speedIndex] ?? 1;
@@ -117,7 +121,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     let active = true;
     animationRun.current += 1;
     setReady(false); setPlaying(false); setPaused(false); setMessage('Loading stroke order…');
-    setStrokes([]); setActiveStroke(null);
+    setStrokes([]); setMedians([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data }, names]) => {
       if (!active || !target.current) return;
@@ -127,6 +131,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
         const recorded = names?.[i];
         return { path, name: recorded?.name ?? fallback.name, pinyin: recorded?.pinyin ?? fallback.pinyin, direction: fallback.direction };
       }));
+      setMedians(data.medians as MedianPoint[][]);
       onStrokeCount?.(data.strokes.length);
       const style = getComputedStyle(document.documentElement);
       const ink = style.getPropertyValue('--primary').trim();
@@ -189,7 +194,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setPaused(false); setActiveStroke(null); } });
   };
   const highlighted = ready ? component?.strokeIndices ?? [] : [];
-  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme}/></section>;
+  return <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) writer.current?.showOutline(); else writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || !medians.some(median => median.length > 1)}/><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls"><Button disabled={!ready} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready} variant="outline" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button><Button disabled={!ready} variant="outline" onClick={quiz}><PenLine/>Practice</Button></div><label className="writer-speed">Animation speed<input type="range" min="0" max={SPEEDS.length - 1} step="1" value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{speed}×</span></label><StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 

@@ -10,6 +10,8 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { PracticeSheet } from './practice-sheet';
 import { SPEEDS, DEFAULT_SPEED_INDEX } from './writing-practice';
+import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
+import type { MedianPoint } from '@/lib/stroke-directions';
 
 const toHex = (value: string) => {
   const ctx = document.createElement('canvas').getContext('2d');
@@ -47,6 +49,8 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   const [sheet, setSheet] = useState(false);
   const [outline, setOutline] = useState<string | null>(null);
   const [guide, setGuide] = useState(true);
+  const [arrows, setArrows] = useState(false);
+  const [median, setMedian] = useState<MedianPoint[]>([]);
   const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
   const speedRef = useRef(SPEEDS[speedIndex] ?? 0.5);
   speedRef.current = SPEEDS[speedIndex] ?? 0.5;
@@ -56,7 +60,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
     let active = true;
     animationRun.current += 1;
     const node = target.current;
-    node.innerHTML = ''; setReady(false); setMode('idle'); setMessage('Loading stroke…');
+    node.innerHTML = ''; setMedian([]); setReady(false); setMode('idle'); setMessage('Loading stroke…');
     import('hanzi-writer').then(({ default: Writer }) => {
       if (!active) return;
       const style = getComputedStyle(document.documentElement);
@@ -69,10 +73,10 @@ export function StrokePractice({ glyph }: { glyph: string }) {
         charDataLoader: (char, onLoad, onError) => {
           fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(char)}.json`)
             .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
-            .then((data: { strokes: string[]; medians: number[][][] }) => {
+            .then((data: { strokes: string[]; medians: [number, number][][] }) => {
               const path = data.strokes[example.strokeIndex]; const median = data.medians[example.strokeIndex];
               if (!path || !median) throw new Error('missing stroke');
-              if (active) setOutline(path);
+              if (active) { setOutline(path); setMedian(median); }
               onLoad({ strokes: [path], medians: [median] } as never);
             })
             .catch(err => onError(err));
@@ -111,7 +115,8 @@ export function StrokePractice({ glyph }: { glyph: string }) {
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
     <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button></div>
       {example ? <>
-        <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/></div>
+        <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div>
+        <DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls">
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
