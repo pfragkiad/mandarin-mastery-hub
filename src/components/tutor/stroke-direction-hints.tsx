@@ -11,7 +11,7 @@ export function DirectionHintsToggle({ checked, onChange, disabled }: { checked:
 export function StrokeDirectionHints({ medians, activeStroke }: { medians: readonly (readonly MedianPoint[])[]; activeStroke?: number | null }) {
   const id = `stroke-arrow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   return <svg className="stroke-direction-overlay" viewBox="0 0 300 300" role="img" aria-label="Stroke drawing directions">
-    <defs><marker id={id} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path className="direction-arrowhead" d="M 1 1 L 9 5 L 1 9 Z"/></marker></defs>
+    <defs><marker id={id} viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="11" markerHeight="11" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path className="direction-arrowhead" d="M 1 1 L 9 5 L 1 9 Z"/></marker></defs>
     {medians.map((median, index) => {
       if (activeStroke != null && index !== activeStroke) return null;
       const points = strokeDirectionPoints(median);
