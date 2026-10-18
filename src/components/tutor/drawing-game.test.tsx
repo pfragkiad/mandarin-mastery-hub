@@ -7,6 +7,7 @@ vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...pro
 
 const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), quiz: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
+const state = vi.hoisted(() => ({ saved: [] as string[], toggleSaved: vi.fn() }));
 const workspace = vi.hoisted(() => ({ useWorkspace: vi.fn() }));
 vi.mock('./workspace', () => ({ useWorkspace: workspace.useWorkspace }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
@@ -21,7 +22,9 @@ beforeEach(() => {
   vi.clearAllMocks();
   entries.length = 0;
   for (let i = 0; i < 12; i++) entries.push({ id: `Characters:${i}`, hanzi: '一', pinyin: 'yī', meaning: 'one', note: '', strokes: 1 });
-  workspace.useWorkspace.mockReturnValue({ catalogVersion: 1, theme: 'dark', saved: [], toggleSaved: vi.fn(), preferences: { slow: false, includeTraditional: false, font: 'handwritten' } });
+  state.saved = [];
+  state.toggleSaved = vi.fn((id: string) => { state.saved.push(id); });
+  workspace.useWorkspace.mockReturnValue({ catalogVersion: 1, theme: 'dark', saved: state.saved, toggleSaved: state.toggleSaved, preferences: { slow: false, includeTraditional: false, font: 'handwritten' } });
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   fake.create.mockReturnValue(fake);
 });
@@ -57,4 +60,21 @@ it('a review round replays every missed card', async () => {
   expect(screen.getByText('0 correct · 5 to review')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
   expect(await screen.findByText('Card 1 of 5')).toBeTruthy();
+});
+
+it('offers to bookmark unknown cards after a round, saving only unsaved ids', async () => {
+  const { rerender } = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.change(await screen.findByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 5 of 12 cards' }));
+  await screen.findByText('Card 1 of 5');
+  for (let i = 0; i < 5; i++) {
+    fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
+    if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
+  }
+  fireEvent.click(screen.getByRole('button', { name: 'Save 5 unknown cards' }));
+  expect(state.toggleSaved).toHaveBeenCalledTimes(5);
+  expect(new Set(state.saved).size).toBe(5);
+  rerender(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeTruthy();
+  expect(screen.getByText('Bookmarked in Saved for this session.')).toBeTruthy();
 });
