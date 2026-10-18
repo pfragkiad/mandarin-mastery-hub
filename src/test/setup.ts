@@ -23,4 +23,5 @@ Object.defineProperty(window, "matchMedia", {
 import { readFileSync } from 'node:fs';
 import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
 import type { RadicalIdentityFile } from '@/lib/radical-identities';
-hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile, JSON.parse(readFileSync('public/data/radical-identities.json', 'utf8')) as RadicalIdentityFile);
+import type { RadicalStrokeFile } from '@/lib/radical-strokes';
+hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile, JSON.parse(readFileSync('public/data/radical-identities.json', 'utf8')) as RadicalIdentityFile, JSON.parse(readFileSync('public/data/radical-strokes.json', 'utf8')) as RadicalStrokeFile);
