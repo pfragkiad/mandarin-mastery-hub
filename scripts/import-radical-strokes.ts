@@ -1,0 +1,1 @@
+// One-time radical stroke import; implementation follows the recorded cnchar-order API.
