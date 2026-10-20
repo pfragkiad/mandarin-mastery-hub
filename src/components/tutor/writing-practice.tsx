@@ -116,6 +116,12 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
   const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
   const [activeStroke, setActiveStroke] = useState<number | null>(null);
   const [scores, setScores] = useState<(number | null)[]>([]);
+  // Step-by-step playback: which stroke the next Step press draws, and whether
+  // each stroke's Chinese name is spoken aloud.
+  const [stepIndex, setStepIndex] = useState(0);
+  const [muted, setMuted] = useState(false);
+  const mutedRef = useRef(muted);
+  mutedRef.current = muted;
   const paintStrokes = () => {
     const groups = target.current?.querySelectorAll('svg > g > g');
     groups?.[1]?.querySelectorAll('path').forEach((path, i) => { (path as SVGPathElement).style.stroke = strokeColor(i, theme); });
