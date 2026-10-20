@@ -68,6 +68,7 @@
 - [x] Ensure selected cards are rendered on their containing page and visible after selection from any place, including history and all vocabulary/Glyphs categories; verify.
 - [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
 - [x] Drawing game matches flashcards: deck-size selector (5–50 or All, default 10), Start button shows the dealt size of the filtered total, review rounds replay all missed cards, and a round's unknown cards can be saved to the shared session bookmarks; verified unsaved-only saving and session status; 4 page tests, full suite passes.
+- [x] While stepping stroke by stroke, whole-character playback is disabled (no pause in that context) and reads as inactive until Reset or Practice starts a fresh run; verified live on 学 and 7 playback tests.
 
 ## Deferred, asked about for later (do not start unless the user asks)
 - [ ] Android packaging — installable web app first (icon, home-screen, full-screen), Capacitor + Play Store only if a store listing is wanted later.
