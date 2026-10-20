@@ -94,3 +94,16 @@ it('selecting occurrence strokes while paused does not replace or resume the ani
   expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
   expect(fake.animateStroke).toHaveBeenCalledTimes(1);
 });
+
+it('step mode keeps whole-character playback off until Reset or Practice', async () => {
+  render(<WritingPractice character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeDisabled();
+  const drawn = fake.animateStroke.mock.calls[0]?.[1].onComplete;
+  act(() => drawn());
+  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeDisabled();
+  expect(screen.queryByRole('button', { name: 'Pause' })).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
+  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
+});
