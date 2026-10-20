@@ -1,7 +1,7 @@
 import { characterScore, strokeColor, strokeScore } from '@/lib/stroke-score';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, GitBranch, Printer } from 'lucide-react';
+import { Play, Pause, RotateCcw, PenLine, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, VolumeX, GitBranch, Printer, StepForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { words } from '@/lib/mandarin';
 import { type LibraryEntry } from '@/lib/character-library';
@@ -15,6 +15,8 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
 import { splitPinyinLines, strokeNames } from '@/lib/stroke-names';
+import { speakTts } from '@/lib/audio';
+import { nextStepIndex } from '@/lib/step-playback';
 import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
