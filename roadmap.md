@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Switch alternative radical forms directly within Practice; verify exact strokes and browser history.
 - [x] Import revised radical families and sourced exact-form strokes; show grouped variants with URL selection and consistent Practice names. Verified 氵 selection, exact Practice target/chips, Step, Back/Forward, 宀 names and narrow family layout; 214 canonical cards preserved, ambiguous/derived records labeled and excluded from definite playback names; 239 tests passed and preview error-free.
 - [x] Derive radical-only stroke decompositions once from cnchar-order; 166 validated sequences, 47 missing records and one count disagreement remain unguessed; verified shared reference/practice display, exact stroke links/Back, 41 tests and error-free preview.
 - [x] Move the "Stroke arrows" switch into the panel header beside "Show guide" and give it the identical control style (12px/500 text, 16px icon, 32px height, 12px side padding, 6px radius, same hover tint and accent ink in both themes); verified computed styles match exactly on the character and single-stroke pages; 38 practice tests pass.
