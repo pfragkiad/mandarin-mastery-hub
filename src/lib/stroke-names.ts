@@ -1,6 +1,7 @@
 /** Per-character stroke names from cnchar-order's recorded stroke-order table.
  * Names are looked up by exact character, never inferred from stroke geometry.
  * Loaded lazily so the dictionary stays out of the page bundle. */
+import { RADICAL_STROKE_SUPPLEMENTS } from './radical-stroke-supplements';
 export type StrokeName = { name: string; pinyin: string };
 
 type Cnchar = {
