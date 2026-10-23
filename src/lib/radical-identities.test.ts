@@ -31,8 +31,9 @@ describe('Exact sourced Kangxi identities', () => {
     expect(libraryDestination('丆')).toBeUndefined();
   });
   it('preserves existing exact symbol records instead of substituting a radical', () => {
-    expect(libraryDestination('⺮')?.id).toBe('Characters:⺮');
-    expect(libraryDestination('⺼')?.id).toBe('Characters:⺼');
+    // Pure component forms exist once, in the Components tab.
+    expect(libraryDestination('⺮')?.id).toBe('Components:⺮');
+    expect(libraryDestination('⺼')?.id).toBe('Components:⺼');
   });
   for (const [query, glyph] of [['⺮', '竹'], ['⺼', '肉'], ['⼁', '丨']] as const) {
     it(`finds ${glyph} through sourced symbol ${query} in radical and shared search`, () => {
