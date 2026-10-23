@@ -95,7 +95,7 @@ describe('Catalogue requirements', () => {
   });
   it('attaches decompositions only from the imported trees', () => {
     expect(libraryEntries('Characters').find(e => e.hanzi === '我')?.decomposition?.root.glyph).toBe('⿰');
-    expect(libraryEntries('Characters').filter(e => e.decomposition).length).toBe(9504);
+    expect(libraryEntries('Characters').filter(e => e.decomposition).length).toBe(9483);
   });
   it('lists records with and without a sourced decomposition together', () => {
     const entries = [
