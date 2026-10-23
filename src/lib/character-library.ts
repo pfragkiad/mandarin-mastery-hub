@@ -3,7 +3,7 @@ import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
 import { radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily } from './radical-strokes';
-import { glyphPresentation } from './glyph-presentation';
+import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -24,6 +24,9 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   if (hit && hit.version === catalog.version) return hit.entries;
   const source = kind === 'Strokes' ? catalog.strokes : kind === 'Radicals' ? catalog.radicals : kind === 'Components' ? catalog.components : catalog.characters;
   const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
+  // Pure component forms exist once, in the Components tab; the Characters tab keeps the
+  // ordinary characters, including dual radical forms such as 门 and 马.
+  const visible = kind === 'Characters' ? rows.filter(row => !pureComponentForm(row[0] ?? '')) : rows;
   const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
