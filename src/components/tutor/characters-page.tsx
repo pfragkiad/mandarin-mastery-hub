@@ -37,11 +37,12 @@ function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
   const { name, reading } = strokeSpeech(entry);
   return { text: name, reading };
 }
-export function CharacterDetails({ entry: heading, kind, variant }: { entry: LibraryEntry; kind: LibraryKind; variant?: string }) {
+export function CharacterDetails({ entry: heading, kind, variant }: { entry: LibraryEntry; kind: LibraryKind; variant?: string | undefined }) {
   const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, variant) : undefined;
   const exact = form ? ['Radicals', 'Characters', 'Components'].flatMap(k => libraryEntries(k as LibraryKind)).find(item => item.hanzi === form.character) : undefined;
-  const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}`, reuseCount: form.character === heading.hanzi ? heading.reuseCount : undefined } : heading;
+  const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}`, ...(form.character === heading.hanzi && heading.reuseCount !== undefined ? { reuseCount: heading.reuseCount } : {}) } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
+  if (form && form.character !== heading.hanzi) delete entry.reuseCount;
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
   const { text: spoken, reading } = speechTarget(entry, kind);
@@ -111,7 +112,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   </article>;
 }
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {

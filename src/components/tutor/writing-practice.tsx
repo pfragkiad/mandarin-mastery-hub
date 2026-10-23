@@ -97,7 +97,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
 export const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
 export const DEFAULT_SPEED_INDEX = 1; // 0.5×
 
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection }: { character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm }) {
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection }: { character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
   const { theme } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
@@ -259,7 +259,7 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 }
 
 
-export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant }: { initialCharacter?: string; focus?: number; family?: number; variant?: string }) {
+export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant }: { initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
   const wordChars = Array.from(initialCharacter);
   const isWord = wordChars.length > 1;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;

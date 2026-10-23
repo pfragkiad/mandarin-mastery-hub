@@ -4,7 +4,7 @@ import { catalog } from '@/lib/catalog-store';
 import { radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { useWorkspace } from './workspace';
 
-export function RadicalStrokeDecomposition({ glyph, form }: { glyph: string; form?: RadicalForm }) {
+export function RadicalStrokeDecomposition({ glyph, form }: { glyph: string; form?: RadicalForm | undefined }) {
   useWorkspace().catalogVersion;
   const record = radicalStrokes(glyph, form);
   return <>

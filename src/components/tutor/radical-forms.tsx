@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { radicalFamily } from '@/lib/radical-strokes';
 
-export function RadicalForms({ familyId, selectedKey }: { familyId: number; selectedKey?: string }) {
+export function RadicalForms({ familyId, selectedKey }: { familyId: number; selectedKey?: string | undefined }) {
   const family = radicalFamily(familyId);
   if (!family) return null;
   return <div className="radical-family-section">
