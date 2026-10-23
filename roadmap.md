@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Correct exact component/variant labels and Component form footer; separate component names from character readings and verify ⺀ as U+2E80 CJK RADICAL REPEAT, not ice. Verified visible cards, bamboo detail → Practice → Back, 63 tests and error-free preview.
 - [x] Switch alternative radical forms directly within Practice; verified 水 → 氵, exact diǎn/diǎn/tí stroke cards and Back/Forward restoration.
 - [x] Import revised radical families and sourced exact-form strokes; show grouped variants with URL selection and consistent Practice names. Verified 氵 selection, exact Practice target/chips, Step, Back/Forward, 宀 names and narrow family layout; 214 canonical cards preserved, ambiguous/derived records labeled and excluded from definite playback names; 239 tests passed and preview error-free.
 - [x] Derive radical-only stroke decompositions once from cnchar-order; 166 validated sequences, 47 missing records and one count disagreement remain unguessed; verified shared reference/practice display, exact stroke links/Back, 41 tests and error-free preview.
