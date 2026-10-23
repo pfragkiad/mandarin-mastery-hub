@@ -3,6 +3,7 @@ import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
 import { radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily } from './radical-strokes';
+import { glyphPresentation } from './glyph-presentation';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -25,10 +26,11 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const rows = source.length ? source : kind === 'Strokes' ? strokeSamples.map(row => [...row, 'Basic stroke form']) : [];
   const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
+    const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
     const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
     const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
-    return { id: `${kind}:${hanzi}`, hanzi, pinyin, meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
       ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
   });
   cache.set(kind, { version: catalog.version, entries });
