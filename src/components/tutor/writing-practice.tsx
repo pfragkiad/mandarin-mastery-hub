@@ -200,7 +200,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     animationRun.current += 1; writer.current?.cancelQuiz(); void writer.current?.showCharacter();
     setPlaying(false); setPaused(false); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Ready for a fresh start.');
   };
-  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
+  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ onMistake: () => setMessage('Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance) return;
     const run = ++animationRun.current;
@@ -210,8 +210,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     instance.showCharacter();
     instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setPaused(false); setActiveStroke(null); } });
   };
-  // Step-by-step: each press draws exactly one stroke and speaks its Chinese
-  // name (e.g. 点 → "diǎn") unless muted. After the last stroke it starts over.
+  // Practice matches and Step playback share stroke-name speech and the live mute setting.
+  // Each Step press draws one stroke; after the last stroke it starts over.
   const speakStrokeName = (i: number) => { if (!mutedRef.current && strokes[i]?.name) speakTts(strokes[i].name); };
   const step = () => {
     const instance = writer.current; if (!instance || !strokes.length || playing) return;
