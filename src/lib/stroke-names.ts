@@ -2,6 +2,8 @@
  * Names are looked up by exact character, never inferred from stroke geometry.
  * Loaded lazily so the dictionary stays out of the page bundle. */
 import { RADICAL_STROKE_SUPPLEMENTS } from './radical-stroke-supplements';
+import { loadCatalog } from './catalog-store';
+import { radicalStrokes } from './radical-strokes';
 export type StrokeName = { name: string; pinyin: string };
 
 type Cnchar = {
@@ -42,6 +44,14 @@ const cache = new Map<string, StrokeName[] | null>();
 
 /** The recorded stroke names for one character, in writing order, or null when the table has no entry. */
 export async function strokeNames(character: string): Promise<StrokeName[] | null> {
+  await loadCatalog();
+  const exact = radicalStrokes(character);
+  if (exact) return exact.status === 'recorded' ? exact.strokes.map(({ name, pinyin }) => ({ name, pinyin })) : null;
+  return cncharStrokeNames(character);
+}
+
+/** Import-time exact cnchar lookup, independent of the generated sidecar. */
+export async function cncharStrokeNames(character: string): Promise<StrokeName[] | null> {
   const hit = cache.get(character);
   if (hit !== undefined) return hit;
   const cnchar = await loadCnchar();
