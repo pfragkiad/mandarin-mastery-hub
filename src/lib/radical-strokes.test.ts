@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog-store';
-import { libraryEntries } from './character-library';
+import { libraryEntries, filterLibrary } from './character-library';
 import { radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
 import { strokeNames } from './stroke-names';
 
@@ -42,6 +42,10 @@ describe('Radical-only stroke decompositions', () => {
   it('groups water variants under Kangxi family 85, preserving their exact glyphs', () => {
     expect(radicalFamily(85)?.forms.map(form => form.character)).toEqual(['水', '氵', '氺']);
     expect(catalog.radicalStrokes.families).toHaveLength(214);
+  });
+  it('finds water by its positional variant without adding variant cards to the canonical deck', () => {
+    expect(filterLibrary(libraryEntries('Radicals'), '氵').map(entry => entry.id)).toContain('Radicals:水');
+    expect(libraryEntries('Radicals').some(entry => entry.id === 'Radicals:氵')).toBe(false);
   });
   it('keeps the two grass sequences selectable rather than deduplicating the exact glyph', () => {
     const forms = radicalFamily(140)?.forms.filter(form => form.character === '艹');
