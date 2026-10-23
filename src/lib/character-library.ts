@@ -8,7 +8,9 @@ import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
 export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; reuseCount?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
-export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9575 };
+// Planned counts are the loading labels; the Characters tab keeps ordinary characters —
+// 9575 rows minus 37 pure component forms that exist only in the Components tab.
+export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9538 };
 // Catalogue rows as raw tuples, grouped for search, flashcard decks and practice facts.
 export type ReferenceKind = 'Radical' | 'Component' | 'Character';
 export const referenceCatalog: { kind: ReferenceKind; entries: CatalogRow[] }[] = [
@@ -28,7 +30,7 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   // ordinary characters, including dual radical forms such as 门 and 马.
   const visible = kind === 'Characters' ? rows.filter(row => !pureComponentForm(row[0] ?? '')) : rows;
   const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
-  const entries = rows.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
+  const entries = visible.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
     const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
