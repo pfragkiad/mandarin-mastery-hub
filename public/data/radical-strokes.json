@@ -486,8 +486,25 @@
       "status": "recorded"
     },
     "宀": {
-      "strokes": [],
-      "status": "unrecorded"
+      "strokes": [
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "横钩",
+          "pinyin": "héng gōu",
+          "glyph": "㇖"
+        }
+      ],
+      "status": "recorded",
+      "source": "通用规范汉字表 standard stroke naming"
     },
     "寸": {
       "strokes": [
