@@ -14,6 +14,6 @@ export function RadicalStrokeDecomposition({ glyph }: { glyph: string }) {
         <div className="vocabulary-part-facts"><span className="pinyin">{stroke.pinyin}</span><small lang="zh-CN">{stroke.name}</small></div>
       </div></div></li>)}
     </ol> : <div className="record-gap"><p>No exact stroke sequence recorded for this radical in cnchar-order.</p></div>}
-    <p className="detail-footnote decomposition-footnote">Source · {catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>Recorded writing order · no component breakdown inferred</p>
+    <p className="detail-footnote decomposition-footnote">Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>Recorded writing order · no component breakdown inferred</p>
   </>;
 }
