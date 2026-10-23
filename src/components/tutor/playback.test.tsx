@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { WritingPractice } from './writing-practice';
 import { StrokePractice } from './stroke-practice';
+import { speakTts } from '@/lib/audio';
 
 const fake = vi.hoisted(() => ({
   _options: { strokeAnimationSpeed: 0.5 },
@@ -15,6 +16,10 @@ vi.mock('hanzi-writer', () => ({ default: { create: (_node: unknown, _char: stri
   return fake;
 } } }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'light', catalogVersion: 1, preferences: { slow: false } }) }));
+vi.mock('@/lib/audio', async importOriginal => ({
+  ...await importOriginal<typeof import('@/lib/audio')>(),
+  speakTts: vi.fn(),
+}));
 vi.mock('@/lib/character-enrichment', async importOriginal => ({
   ...await importOriginal<typeof import('@/lib/character-enrichment')>(),
   loadStrokeGeometry: async () => ({ checksum: 'test', data: {
@@ -106,4 +111,33 @@ it('step mode keeps whole-character playback off until Reset or Practice', async
   expect(screen.queryByRole('button', { name: 'Pause' })).toBeNull();
   fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
   expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
+});
+
+describe('matched practice stroke speech', () => {
+  async function startPractice() {
+    render(<WritingPractice character="宀"/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Practice' })).toBeEnabled());
+    fireEvent.click(screen.getByRole('button', { name: 'Practice' }));
+    return fake.quiz.mock.calls[0]?.[0];
+  }
+
+  it('speaks each accepted stroke name, including a corrected stroke, but not mistakes', async () => {
+    const callbacks = await startPractice();
+    act(() => callbacks.onMistake());
+    expect(speakTts).not.toHaveBeenCalled();
+    act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    act(() => callbacks.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 1 }));
+    act(() => callbacks.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
+    expect(vi.mocked(speakTts).mock.calls.map(call => call[0])).toEqual(['点', '点', '横钩']);
+  });
+
+  it('uses the live Step mute control during an already-started practice attempt', async () => {
+    const callbacks = await startPractice();
+    fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+    act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    expect(speakTts).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    act(() => callbacks.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
+    expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
+  });
 });
