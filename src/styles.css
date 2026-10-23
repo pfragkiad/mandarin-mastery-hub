@@ -610,6 +610,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-form-choice strong { font-size: 32px; font-weight: 400; line-height: 1.2; }
 .radical-form-choice>span { font-size: 10px; color: var(--foreground); }
 .radical-form-choice small { font-size: 9px; line-height: 1.4; color: var(--muted-foreground); text-align: center; }
-.radical-form-choice[aria-current='true'] { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
+.radical-form-choice.is-selected { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
 .radical-family-section .detail-footnote { text-align: left; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
 .radical-family-section .detail-footnote a { color: var(--primary); text-decoration: underline; }

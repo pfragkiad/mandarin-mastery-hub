@@ -19,7 +19,8 @@ describe('Radical-only stroke decompositions', () => {
     for (const radical of radicals) {
       const row = radicalStrokes(radical.hanzi);
       expect(row).toBeDefined();
-      if (row?.status === 'recorded' && radical.hanzi !== '艹') expect(row.strokes.length).toBe(radical.strokes);
+      const form = radical.kangxiIndex ? radicalFamily(radical.kangxiIndex)?.forms.find(form => form.character === radical.hanzi) : undefined;
+      if (row?.status === 'recorded') expect(row.strokes.length).toBe(form?.strokeCount);
       if (row?.status === 'unrecorded' || row?.status === 'count-mismatch') expect(row?.strokes).toEqual([]);
     }
   });
