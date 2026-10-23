@@ -29,7 +29,16 @@ describe('Catalogue requirements', () => {
     }
   });
   it('imports all 1843 components', () => expect(libraryEntries('Components')).toHaveLength(1843));
-  it('imports all 9575 characters', () => expect(libraryEntries('Characters')).toHaveLength(9575));
+  it('imports 9538 character records after moving pure component forms to Components', () => expect(libraryEntries('Characters')).toHaveLength(9538));
+  it('keeps dual radical forms as characters and never repeats pure component forms', () => {
+    const characters = libraryEntries('Characters');
+    expect(characters.find(entry => entry.hanzi === '门')?.pinyin).toBe('mén');
+    expect(characters.find(entry => entry.hanzi === '马')?.meaning).toContain('horse');
+    for (const glyph of ['⺀', '⺮', '亻', '忄', '氵', '灬', '辶', '阝', '乛', '镸', '糹']) {
+      expect(characters.find(entry => entry.hanzi === glyph)).toBeUndefined();
+      expect(libraryEntries('Components').find(entry => entry.hanzi === glyph)).toBeDefined();
+    }
+  });
   it('excludes traditional characters by default', () => {
     expect(defaultPreferences.includeTraditional).toBe(false);
     const entries = [{ id: 'traditional', hanzi: '學', pinyin: 'xué', meaning: 'learn', note: '', script: 'Traditional' as const }, { id: 'shared', hanzi: '我', pinyin: 'wǒ', meaning: 'I', note: '', script: 'Common' as const }];
@@ -41,7 +50,7 @@ describe('Catalogue requirements', () => {
   });
   it('marks about 2,100 traditional characters from variant data', () => {
     const n = libraryEntries('Characters').filter(e => e.script === 'Traditional').length;
-    expect(n).toBe(2113);
+    expect(n).toBe(2111);
     expect(libraryEntries('Characters').find(e => e.hanzi === '學')?.script).toBe('Traditional');
     expect(libraryEntries('Characters').find(e => e.hanzi === '学')?.script).toBe('Simplified');
   });
