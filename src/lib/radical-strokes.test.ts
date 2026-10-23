@@ -27,4 +27,12 @@ describe('Radical-only stroke decompositions', () => {
     expect(radicalStrokes('丨')).toEqual({ status: 'unrecorded', strokes: [] });
     expect(radicalStrokes('氵')).toBeUndefined();
   });
+  it('records 宀 as 点, 点, 横钩 from the verified supplement, labelled with its source', () => {
+    const record = radicalStrokes('宀');
+    expect(record?.status).toBe('recorded');
+    expect(record?.strokes.map(s => s.name)).toEqual(['点', '点', '横钩']);
+    expect(record?.strokes.map(s => s.pinyin)).toEqual(['diǎn', 'diǎn', 'héng gōu']);
+    expect(record?.strokes.map(s => s.glyph)).toEqual(['㇔', '㇔', '㇖']);
+    expect(record?.source).toBeTruthy();
+  });
 });
