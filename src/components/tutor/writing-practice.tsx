@@ -15,6 +15,8 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
 import { splitPinyinLines, strokeNames } from '@/lib/stroke-names';
+import { radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
+import { RadicalForms } from './radical-forms';
 import { speakTts } from '@/lib/audio';
 import { nextStepIndex } from '@/lib/step-playback';
 import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
@@ -95,7 +97,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
 export const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
 export const DEFAULT_SPEED_INDEX = 1; // 0.5×
 
-export function WritingPractice({ character, onStrokeCount, component }: { character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null }) {
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection }: { character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm }) {
   const { theme } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
@@ -137,11 +139,13 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
     if (target.current) target.current.innerHTML = '';
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data }, names]) => {
       if (!active || !target.current) return;
-      // Names come from the recorded stroke-order table; the geometry guess is only a fallback.
+      const exact = radicalStrokes(character, radicalSelection);
+      const selectedNames = exact ? exact.status === 'recorded' && exact.strokes.length === data.strokes.length ? exact.strokes : null : names;
+      // Radical forms fail closed; never invent names from their geometry.
       setStrokes(data.strokes.map((path, i) => {
         const fallback = nameStroke(data.medians[i] ?? []);
-        const recorded = names?.[i];
-        return { path, name: recorded?.name ?? fallback.name, pinyin: recorded?.pinyin ?? fallback.pinyin, direction: fallback.direction };
+        const recorded = selectedNames?.[i];
+        return { path, name: recorded?.name ?? (exact ? '' : fallback.name), pinyin: recorded?.pinyin ?? (exact ? 'Not recorded' : fallback.pinyin), direction: fallback.direction };
       }));
       setMedians(data.medians as MedianPoint[][]);
       onStrokeCount?.(data.strokes.length);
@@ -159,7 +163,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
       writer.current = instance;
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; };
-  }, [character, retry, theme]);
+  }, [character, retry, theme, radicalSelection?.key]);
   // Hanzi Writer has no public speed setter; update the live options before each run.
   const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
   // One wording for "which stroke is happening now", shared by full playback and single-stroke playback.
@@ -207,7 +211,7 @@ export function WritingPractice({ character, onStrokeCount, component }: { chara
   };
   // Step-by-step: each press draws exactly one stroke and speaks its Chinese
   // name (e.g. 点 → "diǎn") unless muted. After the last stroke it starts over.
-  const speakStrokeName = (i: number) => { if (!mutedRef.current && strokes[i]) speakTts(strokes[i].name); };
+  const speakStrokeName = (i: number) => { if (!mutedRef.current && strokes[i]?.name) speakTts(strokes[i].name); };
   const step = () => {
     const instance = writer.current; if (!instance || !strokes.length || playing) return;
     const i = nextStepIndex(stepIndex, strokes.length);
@@ -255,7 +259,7 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 }
 
 
-export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCharacter?: string; focus?: number }) {
+export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant }: { initialCharacter?: string; focus?: number; family?: number; variant?: string }) {
   const wordChars = Array.from(initialCharacter);
   const isWord = wordChars.length > 1;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
@@ -267,6 +271,9 @@ export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCh
   const [sheet, setSheet] = useState(false);
   const [audioError, setAudioError] = useState(false);
   useWorkspace().catalogVersion;
+  const requestedForm = family ? radicalForm(family, variant) : undefined;
+  const radicalSelection = requestedForm?.character === character ? requestedForm : undefined;
+  const familyId = radicalSelection ? family : radicalForms(character).length === 1 ? radicalForms(character)[0]?.family.id : undefined;
   const fact = charFacts()[character];
   const decomposition = decompositionFor(character);
   const enrichment = useCharacterEnrichment(character, decomposition?.root);
@@ -280,5 +287,5 @@ export function StrokesPage({ initialCharacter = '我', focus = 0 }: { initialCh
   const recording = characterRecording(character, reading);
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const listen = async () => setAudioError(Boolean(await playCharacter(character, preferences.slow, reading)));
-  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout"><WritingPractice character={character} onStrokeCount={setLiveStrokes} component={component}/><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}<h2>Get to know <span lang="zh-CN">{character}</span></h2><p className="practice-meaning"><span className="practice-text">{fact?.pinyin ? <span className="pinyin">{fact.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>{fact?.meaning ? <span className="practice-translation">{fact.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">{fact?.kind ?? 'Character'}</span></p>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}<p>Every character has a natural order. Watch how it takes shape, then practice tracing it yourself.</p><div className="character-facts"><div><strong>{strokeCount ?? '—'}</strong><span>Strokes</span></div><div><strong lang="zh-CN">{radical ?? '—'}</strong><span>Radical</span></div><div><strong>简体</strong><span>Simplified</span></div></div><div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>{catalog.radicals.some(row => row[0] === character) ? <RadicalStrokeDecomposition glyph={character}/> : decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {decomposition.source}<br/>Verification · {decomposition.status}</p><EnrichmentNotes record={enrichment}/>{enrichment && <ComponentPicker record={enrichment} selected={selectedPath} onSelect={path => setComponentSelection({ character, path })}/>}</> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>Source files pending. No structure or component roles inferred.</small></div>}</div><Button variant="outline" size="sm" className="practice-print-button" onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button><div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Start at the top and work your way down. Horizontal strokes usually come before vertical ones. Let each movement have a little room to breathe.</p></div><p className="source-note">Stroke order powered by Hanzi Writer. Character data loads online.</p></section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? fact?.pinyin} meaning={wordFact?.meaning ?? fact?.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout"><WritingPractice character={character} onStrokeCount={setLiveStrokes} component={component} radicalSelection={radicalSelection}/><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}<h2>Get to know <span lang="zh-CN">{character}</span></h2><p className="practice-meaning"><span className="practice-text">{fact?.pinyin ? <span className="pinyin">{fact.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>{fact?.meaning ? <span className="practice-translation">{fact.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">{fact?.kind ?? 'Character'}</span></p>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}<p>Every character has a natural order. Watch how it takes shape, then practice tracing it yourself.</p><div className="character-facts"><div><strong>{strokeCount ?? '—'}</strong><span>Strokes</span></div><div><strong lang="zh-CN">{radical ?? '—'}</strong><span>Radical</span></div><div><strong>简体</strong><span>Simplified</span></div></div><div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION</h3>{familyId || radicalStrokes(character) ? <RadicalStrokeDecomposition glyph={character} form={radicalSelection}/> : decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={decomposition.root}/></ul><p className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</p><p className="detail-footnote decomposition-footnote">Source · {decomposition.source}<br/>Verification · {decomposition.status}</p><EnrichmentNotes record={enrichment}/>{enrichment && <ComponentPicker record={enrichment} selected={selectedPath} onSelect={path => setComponentSelection({ character, path })}/>}</> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>Source files pending. No structure or component roles inferred.</small></div>}</div>{familyId && <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key}/>}<Button variant="outline" size="sm" className="practice-print-button" onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button><div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Start at the top and work your way down. Horizontal strokes usually come before vertical ones. Let each movement have a little room to breathe.</p></div><p className="source-note">Stroke order powered by Hanzi Writer. Character data loads online.</p></section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? fact?.pinyin} meaning={wordFact?.meaning ?? fact?.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }

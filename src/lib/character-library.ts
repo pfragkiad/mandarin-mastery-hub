@@ -2,6 +2,7 @@ import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
 import { radicalSearchGlyphs } from './radical-identities';
+import { radicalFamily } from './radical-strokes';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -36,7 +37,7 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, reuse?: ReuseGroup, savedIds?: readonly string[], pinyinOnly = false) {
   const saved = savedIds ? new Set(savedIds) : undefined;
-  return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi)].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
+  return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
 }
 export const LIBRARY_PAGE_SIZE = 48;
 export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE, selectedId = '') {
