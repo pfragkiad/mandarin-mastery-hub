@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Pronounce each correctly matched practice stroke using Step's stroke-name speech and mute control; verify actual drawing and mute behavior.
 - [x] Note the existing Components tab: pure component forms (Unicode radical-block symbols and radical forms without a lexical reading) exist only in Components; the Characters tab keeps ordinary characters, including dual radical forms (门, 马…) presented as Characters there and as Component variants elsewhere. Verified counts (9538 characters, 9483 with decompositions), Components-only membership, Components dual labels and Back navigation; 256 tests pass.
 - [x] Correct exact component/variant labels and Component form footer; separate component names from character readings and verify ⺀ as U+2E80 CJK RADICAL REPEAT, not ice. Verified visible cards, bamboo detail → Practice → Back, 63 tests and error-free preview.
 - [x] Switch alternative radical forms directly within Practice; verified 水 → 氵, exact diǎn/diǎn/tí stroke cards and Back/Forward restoration.
