@@ -598,3 +598,18 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .direction-start { fill: var(--card); stroke: var(--foreground); stroke-width: 1; }
 .direction-number { fill: var(--foreground); font-family: var(--font-sans); font-size: 8px; font-weight: 600; }
 .direction-hints-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 6px; font-size: 12px; font-weight: 500; color: var(--foreground); white-space: nowrap; cursor: pointer; transition: background-color 150ms, color 150ms; } .direction-hints-toggle:hover { background: var(--accent); color: var(--color-accent-foreground); } .direction-hints-toggle svg { width: 16px; height: 16px; } .direction-hints-toggle:has(:disabled) { opacity: 0.5; cursor: not-allowed; } .tool-top-actions { display: flex; align-items: center; gap: 2px; }
+
+/* Exact radical variants remain grouped without enlarging the canonical deck. */
+.radical-family-card { position: relative; }
+.radical-tile-forms { display: flex; align-items: center; flex-wrap: nowrap; overflow: hidden; gap: 6px; height: 25px; margin: -25px 13px 0; position: relative; pointer-events: none; color: var(--muted-foreground); }
+.radical-tile-forms span { font-size: 16px; line-height: 1; }
+.radical-family-card:has(.radical-tile-forms) .catalog-entry { padding-bottom: 30px; }
+.radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
+.radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 8px; margin-top: 14px; }
+.radical-form-choice { height: 100px; min-width: 0; padding: 9px 5px; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--border); border-radius: 6px; white-space: normal; }
+.radical-form-choice strong { font-size: 32px; font-weight: 400; line-height: 1.2; }
+.radical-form-choice>span { font-size: 10px; color: var(--foreground); }
+.radical-form-choice small { font-size: 9px; line-height: 1.4; color: var(--muted-foreground); text-align: center; }
+.radical-form-choice[aria-current='true'] { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
+.radical-family-section .detail-footnote { text-align: left; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
+.radical-family-section .detail-footnote a { color: var(--primary); text-decoration: underline; }

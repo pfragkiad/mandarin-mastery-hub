@@ -17,6 +17,7 @@ export const Route = createFileRoute('/characters')({
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
+    const variant = str(search['variant']); if (variant) out.variant = variant;
     const id = str(search['id']); if (id) out.id = id;
     return out;
   },
