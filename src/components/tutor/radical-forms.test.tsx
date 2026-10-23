@@ -6,7 +6,7 @@ import { RadicalForms } from './radical-forms';
 const navigate = vi.hoisted(() => vi.fn());
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ to, search, children, ...props }: { to: string; search: Record<string, unknown>; children: React.ReactNode; 'aria-label'?: string }) =>
-    <a aria-label={props['aria-label']} onClick={() => navigate({ to, search })}>{children}</a>,
+    <a href={to} aria-label={props['aria-label']} onClick={event => { event.preventDefault(); navigate({ to, search }); }}>{children}</a>,
 }));
 afterEach(() => { cleanup(); navigate.mockClear(); });
 
