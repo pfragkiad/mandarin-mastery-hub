@@ -605,6 +605,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-tile-forms span { font-size: 16px; line-height: 1; }
 .radical-family-card:has(.radical-tile-forms) .catalog-entry { padding-bottom: 30px; }
 .radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
+.radical-family-meaning { margin: 12px 0; color: var(--foreground); font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
 .radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 8px; margin-top: 14px; }
 .radical-form-choice { height: 100px; min-width: 0; padding: 9px 5px; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--border); border-radius: 6px; white-space: normal; }
 .radical-form-choice strong { font-size: 32px; font-weight: 400; line-height: 1.2; }
