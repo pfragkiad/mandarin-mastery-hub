@@ -1,1 +1,0 @@
-Import the supplied revised radical-family data, preserve exact Kangxi headings, group variants, and share sourced sequences between reference and Practice.
