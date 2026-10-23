@@ -1,6 +1,7 @@
 /** Per-character stroke names from cnchar-order's recorded stroke-order table.
  * Names are looked up by exact character, never inferred from stroke geometry.
  * Loaded lazily so the dictionary stays out of the page bundle. */
+import { RADICAL_STROKE_SUPPLEMENTS } from './radical-stroke-supplements';
 export type StrokeName = { name: string; pinyin: string };
 
 type Cnchar = {
@@ -47,11 +48,13 @@ export async function strokeNames(character: string): Promise<StrokeName[] | nul
   const raw = cnchar.stroke(character, 'order', 'name');
   const row = Array.isArray(raw) && Array.isArray(raw[0]) ? (raw[0] as string[]) : null;
   // Some entries record accepted alternates (斜钩|卧钩); show the primary name.
-  const names = row?.length ? row.map(name => {
+  let names = row?.length ? row.map(name => {
     let primary = name.split('|')[0] ?? name;
     if (primary === HENG_XIE_GOU && HENG_ZHE_WAN_GOU.has(character)) primary = HENG_ZHE_WAN_GOU_NAME;
     return { name: primary, pinyin: spellName(cnchar, primary) };
   }) : null;
+  // Radicals cnchar-order lacks standalone fall back to the verified supplement table.
+  names ??= RADICAL_STROKE_SUPPLEMENTS[character]?.map(name => ({ name, pinyin: spellName(cnchar, name) })) ?? null;
   cache.set(character, names);
   return names;
 }

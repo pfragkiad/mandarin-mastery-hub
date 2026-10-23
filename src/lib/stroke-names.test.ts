@@ -34,4 +34,10 @@ describe('stroke names from cnchar-order', () => {
     expect(splitPinyinLines('héng zhé zhé zhé gōu')).toEqual(['héng zhé zhé', 'zhé gōu']);
     expect(splitPinyinLines('piě')).toEqual(['piě']);
   });
+
+  it('names 宀 from the verified supplement, matching the radical decomposition', async () => {
+    const names = await strokeNames('宀');
+    expect(names?.map(stroke => stroke.name)).toEqual(['点', '点', '横钩']);
+    expect(names?.map(stroke => stroke.pinyin)).toEqual(['diǎn', 'diǎn', 'héng gōu']);
+  });
 });
