@@ -47,6 +47,11 @@ export async function strokeNames(character: string): Promise<StrokeName[] | nul
   await loadCatalog();
   const exact = radicalStrokes(character);
   if (exact) return exact.status === 'recorded' ? exact.strokes.map(({ name, pinyin }) => ({ name, pinyin })) : null;
+  return cncharStrokeNames(character);
+}
+
+/** Import-time exact cnchar lookup, independent of the generated sidecar. */
+export async function cncharStrokeNames(character: string): Promise<StrokeName[] | null> {
   const hit = cache.get(character);
   if (hit !== undefined) return hit;
   const cnchar = await loadCnchar();

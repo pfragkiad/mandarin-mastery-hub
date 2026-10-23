@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog-store';
 import { libraryEntries } from './character-library';
-import { radicalStrokes } from './radical-strokes';
+import { radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
 import { strokeNames } from './stroke-names';
 
 describe('Radical-only stroke decompositions', () => {
@@ -19,20 +19,46 @@ describe('Radical-only stroke decompositions', () => {
     for (const radical of radicals) {
       const row = radicalStrokes(radical.hanzi);
       expect(row).toBeDefined();
-      if (row?.status === 'recorded') expect(row.strokes.length).toBe(radical.strokes);
-      else expect(row?.strokes).toEqual([]);
+      if (row?.status === 'recorded' && radical.hanzi !== '艹') expect(row.strokes.length).toBe(radical.strokes);
+      if (row?.status === 'unrecorded' || row?.status === 'count-mismatch') expect(row?.strokes).toEqual([]);
     }
   });
-  it('leaves exact-source gaps unrecorded instead of guessing or borrowing a variant', () => {
-    expect(radicalStrokes('丨')).toEqual({ status: 'unrecorded', strokes: [] });
-    expect(radicalStrokes('氵')).toBeUndefined();
+  it('imports direct exact-form sources without borrowing missing historical outlines or names', async () => {
+    expect(radicalStrokes('丨')?.strokes.map(stroke => stroke.name)).toEqual(['竖']);
+    expect(radicalStrokes('氵')?.strokes.map(stroke => stroke.name)).toEqual(['点', '点', '提']);
+    expect(radicalStrokes('𧢲')?.status).toBe('unrecorded');
+    expect(await strokeNames('𧢲')).toBeNull();
   });
-  it('records 宀 as 点, 点, 横钩 from the verified supplement, labelled with its source', () => {
+  it('records 宀 as 点, 点, 横钩 from the supplied direct source without claiming official verification', () => {
     const record = radicalStrokes('宀');
     expect(record?.status).toBe('recorded');
     expect(record?.strokes.map(s => s.name)).toEqual(['点', '点', '横钩']);
     expect(record?.strokes.map(s => s.pinyin)).toEqual(['diǎn', 'diǎn', 'héng gōu']);
     expect(record?.strokes.map(s => s.glyph)).toEqual(['㇔', '㇔', '㇖']);
-    expect(record?.source).toBeTruthy();
+    expect(record?.source).toBe('cjklib · C-locale strokeorder');
+    expect(record?.officiallyVerified).toBe(false);
+  });
+  it('groups water variants under Kangxi family 85, preserving their exact glyphs', () => {
+    expect(radicalFamily(85)?.forms.map(form => form.character)).toEqual(['水', '氵', '氺']);
+    expect(catalog.radicalStrokes.families).toHaveLength(214);
+  });
+  it('keeps the two grass sequences selectable rather than deduplicating the exact glyph', () => {
+    const forms = radicalFamily(140)?.forms.filter(form => form.character === '艹');
+    expect(forms?.map(form => form.strokeCount)).toEqual([3, 4]);
+    expect(new Set(forms?.map(form => form.key)).size).toBe(2);
+    expect(radicalStrokes('艹')?.status).toBe('ambiguous');
+  });
+  it('resolves variant keys only inside their own family', () => {
+    const form = radicalFamily(85)?.forms.find(form => form.character === '氵');
+    expect(form).toBeDefined();
+    expect(radicalForm(85, form?.key)?.character).toBe('氵');
+    expect(radicalForm(61, form?.key)).toBeUndefined();
+  });
+  it('never converts ambiguous or derived source sequences into definite Practice names', async () => {
+    expect(radicalStrokes('心')?.status).toBe('ambiguous');
+    expect(await strokeNames('心')).toBeNull();
+    const derived = catalog.radicalStrokes.families?.flatMap(family => family.forms).find(form => form.record.status === 'derived');
+    expect(derived).toBeDefined();
+    if (derived) expect(await strokeNames(derived.character)).toBeNull();
   });
 });

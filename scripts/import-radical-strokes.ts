@@ -1,6 +1,6 @@
 // Run with bun scripts/import-radical-strokes.ts. Exact forms only; no outline substitutions.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { strokeNames } from '../src/lib/stroke-names';
+import { cncharStrokeNames } from '../src/lib/stroke-names';
 import type { RadicalFamily, RadicalForm, RadicalStrokeRecord } from '../src/lib/radical-strokes';
 
 const data = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
@@ -10,7 +10,7 @@ const symbol = (name: string) => data.strokes.find((row: string[]) => row[3]?.sp
 const records: Record<string, RadicalStrokeRecord> = {};
 for (const [glyph, , , note] of data.radicals as string[][]) {
   const expected = Number(note?.match(/^(\d+) strokes?/)?.[1]);
-  const names = await strokeNames(glyph);
+  const names = await cncharStrokeNames(glyph);
   records[glyph] = { strokes: names?.length === expected ? names.map(stroke => ({ ...stroke, glyph: symbol(stroke.name) })) : [], status: names?.length === expected ? 'recorded' : names ? 'count-mismatch' : 'unrecorded', source: 'cnchar-order 3.2.6' };
 }
 const families: RadicalFamily[] = [];
