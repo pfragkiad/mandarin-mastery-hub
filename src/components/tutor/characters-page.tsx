@@ -25,7 +25,10 @@ import { glyphPresentation } from '@/lib/glyph-presentation';
 import { radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { RadicalStrokeDecomposition } from './radical-stroke-decomposition';
+import { measureGlyphInk, opticalMargins } from '@/lib/glyph-ink';
 
+/** Visible space kept between a radical and its variant forms on a card. */
+const FORM_GAP = 14;
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
 function ReuseLabel({ count, compact = false, radical = false }: { count: number; compact?: boolean; radical?: boolean }) {
@@ -81,6 +84,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const [side, setSide] = useState<'top' | 'bottom'>('top');
   const [clipped, setClipped] = useState(false);
   const [engaged, setEngaged] = useState(false);
+  const [formMargins, setFormMargins] = useState<number[] | null>(null);
   const tileRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const tile = tileRef.current;
@@ -91,19 +95,31 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
       setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1 : false));
     };
     const engage = () => { sync(); const grid = tile.closest('.catalog-entry-grid'); const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0]; setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top'); };
+    /** Equalises the visible gaps between the character and its variant forms from measured ink. */
+    const measure = () => {
+      const main = tile.querySelector<HTMLElement>('.tile-hanzi-row strong');
+      const group = tile.querySelector<HTMLElement>('.radical-tile-forms');
+      if (!main || !group) return;
+      const style = getComputedStyle(main);
+      const size = parseFloat(style.fontSize);
+      const glyphs = [main.textContent ?? '', ...[...group.querySelectorAll<HTMLElement>('span')].map(el => el.textContent ?? '')];
+      setFormMargins(opticalMargins(glyphs.map(glyph => measureGlyphInk(glyph, style.fontFamily, size)), FORM_GAP));
+    };
     sync();
+    measure();
     const ro = new ResizeObserver(() => { if (tile.isConnected) sync(); });
     ro.observe(tile);
     tile.querySelectorAll<HTMLElement>('.pinyin, .catalog-entry-meaning').forEach(el => ro.observe(el));
-    document.fonts?.ready.then(sync).catch(() => undefined);
+    document.fonts?.ready.then(() => { sync(); measure(); }).catch(() => undefined);
     tile.addEventListener('pointerenter', engage);
     tile.addEventListener('focus', engage);
     return () => { ro.disconnect(); tile.removeEventListener('pointerenter', engage); tile.removeEventListener('focus', engage); };
-  }, [entry.id]);
+  }, [entry.id, preferences.font]);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : `, ${info.readingFallback.toLowerCase()}`}${hasMeaning ? '' : ', no meaning recorded'}`;
   const variants = kind === 'Radicals' && entry.kangxiIndex ? [...new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character).filter(glyph => glyph !== entry.hanzi) ?? [])] : [];
+  const margins = formMargins ?? Array.from({ length: variants.length + 1 }, (_, index) => (index ? FORM_GAP : 0));
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
-      <span className="word-character">{hasPinyin ? <span className="pinyin">{info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>{variants.length > 0 && <span className="radical-tile-forms" aria-label={`Variants of ${entry.hanzi}`}>{variants.map(glyph => <span key={glyph} lang="zh-CN">{glyph}</span>)}</span>}</span></span>
+      <span className="word-character">{hasPinyin ? <span className="pinyin">{info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong>{variants.length > 0 && <span className="radical-tile-forms" aria-label={`Variants of ${entry.hanzi}`} style={{ marginLeft: margins[1] ?? 0 }}>{variants.map((glyph, index) => <span key={glyph} lang="zh-CN" style={{ marginLeft: index ? margins[index + 1] ?? 0 : 0 }}>{glyph}</span>)}</span>}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{info.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${selected ? 'is-selected' : ''}`}>
