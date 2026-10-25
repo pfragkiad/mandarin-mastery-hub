@@ -16,9 +16,13 @@ describe('opticalMargins', () => {
   it('makes every visible gap exactly the target', () => {
     const inks = [ink(1, 3), ink(12, 10), ink(4, 6), ink(9, 9)];
     const margins = opticalMargins(inks, 16);
-    inks.slice(1).forEach((glyph, index) => {
-      expect(margins[index + 1] + inks[index].right + glyph.left).toBe(16);
-    });
+    for (let index = 1; index < inks.length; index++) {
+      const previous = inks[index - 1];
+      const current = inks[index];
+      const margin = margins[index];
+      if (!previous || !current || margin === undefined) throw new Error('missing margin');
+      expect(margin + previous.right + current.left).toBe(16);
+    }
   });
 
   it('falls back to plain spacing when a glyph cannot be measured', () => {
