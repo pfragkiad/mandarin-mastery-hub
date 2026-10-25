@@ -101,6 +101,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
     return () => { ro.disconnect(); tile.removeEventListener('pointerenter', engage); tile.removeEventListener('focus', engage); };
   }, [entry.id]);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : `, ${info.readingFallback.toLowerCase()}`}${hasMeaning ? '' : ', no meaning recorded'}`;
+  const variants = kind === 'Radicals' && entry.kangxiIndex ? [...new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character).filter(glyph => glyph !== entry.hanzi) ?? [])] : [];
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin ? <span className="pinyin">{info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<strong lang="zh-CN" className={entry.script === 'Traditional' ? 'traditional-character' : ''}>{entry.hanzi}</strong></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{info.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}

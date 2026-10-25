@@ -601,9 +601,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 
 /* Exact radical variants remain grouped without enlarging the canonical deck. */
 .radical-family-card { position: relative; }
-.radical-tile-forms { display: flex; align-items: center; flex-wrap: nowrap; overflow: hidden; gap: 6px; height: 25px; margin: -25px 13px 0; position: relative; pointer-events: none; color: var(--muted-foreground); }
-.radical-tile-forms span { font-size: 16px; line-height: 1; }
-.radical-family-card:has(.radical-tile-forms) .catalog-entry { padding-bottom: 30px; }
+.tile-hanzi-row { display: flex; align-items: flex-end; gap: 10px; min-width: 0; }
+.radical-tile-forms { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; min-width: 0; padding-bottom: 6px; pointer-events: none; color: var(--muted-foreground); opacity: .7; }
+.radical-tile-forms span { font-size: 18px; line-height: 1; }
 .radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
 .radical-family-meaning { margin: 12px 0; color: var(--foreground); font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
 .radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 8px; margin-top: 14px; }
