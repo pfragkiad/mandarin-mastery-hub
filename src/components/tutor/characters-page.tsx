@@ -95,15 +95,26 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
       setClipped(spans.some(el => el ? el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1 : false));
     };
     const engage = () => { sync(); const grid = tile.closest('.catalog-entry-grid'); const tops = grid ? [...grid.children].map(cell => (cell as HTMLElement).offsetTop) : [0]; setSide(tile.offsetTop - Math.min(...tops) < 20 ? 'bottom' : 'top'); };
+    /** Equalises the visible gaps between the character and its variant forms from measured ink. */
+    const measure = () => {
+      const main = tile.querySelector<HTMLElement>('.tile-hanzi-row strong');
+      const group = tile.querySelector<HTMLElement>('.radical-tile-forms');
+      if (!main || !group) return;
+      const style = getComputedStyle(main);
+      const size = parseFloat(style.fontSize);
+      const glyphs = [main.textContent ?? '', ...[...group.querySelectorAll<HTMLElement>('span')].map(el => el.textContent ?? '')];
+      setFormMargins(opticalMargins(glyphs.map(glyph => measureGlyphInk(glyph, style.fontFamily, size)), FORM_GAP));
+    };
     sync();
+    measure();
     const ro = new ResizeObserver(() => { if (tile.isConnected) sync(); });
     ro.observe(tile);
     tile.querySelectorAll<HTMLElement>('.pinyin, .catalog-entry-meaning').forEach(el => ro.observe(el));
-    document.fonts?.ready.then(sync).catch(() => undefined);
+    document.fonts?.ready.then(() => { sync(); measure(); }).catch(() => undefined);
     tile.addEventListener('pointerenter', engage);
     tile.addEventListener('focus', engage);
     return () => { ro.disconnect(); tile.removeEventListener('pointerenter', engage); tile.removeEventListener('focus', engage); };
-  }, [entry.id]);
+  }, [entry.id, preferences.font]);
   const label = `View ${entry.hanzi}${hasPinyin ? '' : `, ${info.readingFallback.toLowerCase()}`}${hasMeaning ? '' : ', no meaning recorded'}`;
   const variants = kind === 'Radicals' && entry.kangxiIndex ? [...new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character).filter(glyph => glyph !== entry.hanzi) ?? [])] : [];
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
