@@ -17,7 +17,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, audi
 }) {
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">
     <Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? audioTitle : undefined} aria-label={audioAvailable ? `Listen to ${hanzi}` : `No audio available for ${hanzi}`} onClick={onListen}><Volume2/></Button>
-    <Button asChild variant="ghost" size="icon" title="Practice writing"><Link to="/strokes" search={practice ?? { character: hanzi }} aria-label={`Practice writing ${hanzi}`}><PenLine/></Link></Button>
+    <Button asChild variant="ghost" size="icon" title="Practice writing"><Link to="/strokes" search={practice ?? { character: hanzi }} aria-label={`Practice writing ${hanzi}`}><PenLine style={{ width: 12, height: 12 }}/></Link></Button>
     <Button variant="ghost" size="icon" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${hanzi}`} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
   </div></div>;
 }
