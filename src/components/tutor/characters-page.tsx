@@ -25,7 +25,10 @@ import { glyphPresentation } from '@/lib/glyph-presentation';
 import { radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { RadicalStrokeDecomposition } from './radical-stroke-decomposition';
+import { measureGlyphInk, opticalMargins } from '@/lib/glyph-ink';
 
+/** Visible space kept between a radical and its variant forms on a card. */
+const FORM_GAP = 14;
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
 function ReuseLabel({ count, compact = false, radical = false }: { count: number; compact?: boolean; radical?: boolean }) {
@@ -81,6 +84,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const [side, setSide] = useState<'top' | 'bottom'>('top');
   const [clipped, setClipped] = useState(false);
   const [engaged, setEngaged] = useState(false);
+  const [formMargins, setFormMargins] = useState<number[] | null>(null);
   const tileRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const tile = tileRef.current;
