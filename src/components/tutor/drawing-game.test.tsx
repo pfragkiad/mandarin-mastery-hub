@@ -41,7 +41,7 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
   expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
-  expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=Words&word=word-hello');
+  expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
   fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
   await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(2));
   expect(fake.create.mock.calls[1]?.[1]).toBe(target);
