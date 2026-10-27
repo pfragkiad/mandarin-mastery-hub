@@ -5,7 +5,7 @@ import { pageHead } from '@/lib/mandarin';
 
 export const Route = createFileRoute('/drawing')({
   validateSearch: drawingSearch,
-  head: () => pageHead('Drawing game', 'Recall Mandarin characters, radicals and components from pinyin and meaning. Write from memory with a hidden guide and review missed cards.'),
+  head: () => pageHead('Drawing game', 'Draw Mandarin characters, radicals, components or a random character from words selected by collection and HSK level. Review missed cards with a hidden writing guide.'),
   component: DrawingRoute,
 });
 function DrawingRoute() {

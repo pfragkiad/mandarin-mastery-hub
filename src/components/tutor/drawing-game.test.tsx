@@ -2,6 +2,7 @@ import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { DrawingGamePage } from './drawing-game';
 import type { LibraryEntry } from '@/lib/character-library';
+import type { Word } from '@/lib/mandarin';
 
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a> }));
 
@@ -24,11 +25,27 @@ beforeEach(() => {
   for (let i = 0; i < 12; i++) entries.push({ id: `Characters:${i}`, hanzi: '一', pinyin: 'yī', meaning: 'one', note: '', strokes: 1 });
   state.saved = [];
   state.toggleSaved = vi.fn((id: string) => { state.saved.push(id); });
-  workspace.useWorkspace.mockReturnValue({ catalogVersion: 1, theme: 'dark', saved: state.saved, toggleSaved: state.toggleSaved, preferences: { slow: false, includeTraditional: false, font: 'handwritten' } });
+  const word: Word = { id: 'word-hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '', entryKind: 'word' };
+  workspace.useWorkspace.mockReturnValue({ items: [word], catalogVersion: 1, theme: 'dark', saved: state.saved, toggleSaved: state.toggleSaved, preferences: { slow: false, includeTraditional: false, font: 'handwritten' } });
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   fake.create.mockReturnValue(fake);
 });
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+
+it('bookmarks a missed word with its vocabulary ID and reviews the same selected character', async () => {
+  render(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings', level: 'HSK 1' }} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
+  await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(1));
+  const target = fake.create.mock.calls[0]?.[1];
+  expect(['你', '好']).toContain(target);
+  fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
+  expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
+  expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
+  fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
+  await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(2));
+  expect(fake.create.mock.calls[1]?.[1]).toBe(target);
+});
 
 it('shows the filtered total and deals the selected deck size', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
