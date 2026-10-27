@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { drawingPool, drawingSearch, mistakeOutcome, shuffledDrawingDeck } from './drawing-game';
+import { drawingPool, drawingWordPool, drawingSearch, mistakeOutcome, shuffledDrawingDeck } from './drawing-game';
+import type { Word } from './mandarin';
 import { libraryEntries, type LibraryEntry } from './character-library';
 
 const entries: LibraryEntry[] = [
@@ -10,6 +11,33 @@ const entries: LibraryEntry[] = [
   { id: 'e', hanzi: '丨', pinyin: 'gǔn', meaning: 'line', note: '', strokes: 1, reuseCount: 0 },
 ];
 describe('drawing game rules', () => {
+  const word: Word = { id: 'word-hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '', entryKind: 'word' };
+  it('selects Words by collection', () => {
+    expect(drawingWordPool([word, { ...word, id: 'other', collection: 'Food' }], { kind: 'Words', collection: 'Greetings' }, false).map(card => card.id)).toEqual(['word-hello']);
+  });
+  it('selects Words by level', () => {
+    expect(drawingWordPool([word, { ...word, id: 'other', level: 'HSK 2' }], { kind: 'Words', level: 'HSK 1' }, false).map(card => card.id)).toEqual(['word-hello']);
+  });
+  it('selects a random character occurrence within a random word and retains it for review', () => {
+    const pool = drawingWordPool([word], { kind: 'Words' }, false);
+    const original = Math.random;
+    try {
+      Math.random = () => 0.99;
+      const dealt = shuffledDrawingDeck(pool, 1);
+      expect(dealt[0]).toMatchObject({ id: 'word-hello', hanzi: '好', characterIndex: 1, word });
+      Math.random = () => 0;
+      expect(shuffledDrawingDeck(dealt, 1)[0]).toEqual(dealt[0]);
+      expect(shuffledDrawingDeck(pool, 1)[0]).toMatchObject({ hanzi: '你', characterIndex: 0 });
+      expect(pool[0]?.characterIndex).toBeUndefined();
+    } finally { Math.random = original; }
+  });
+  it('keeps phrases out of Words regardless of their length', () => {
+    expect(drawingWordPool([word, { ...word, id: 'phrase', entryKind: 'phrase' }], { kind: 'Words' }, false).map(card => card.id)).toEqual(['word-hello']);
+  });
+  it('preserves word filters in the URL only in Words mode', () => {
+    expect(drawingSearch({ kind: 'Words', collection: 'Greetings', level: 'HSK 1', strokes: '2' })).toEqual({ kind: 'Words', collection: 'Greetings', level: 'HSK 1' });
+    expect(drawingSearch({ kind: 'Characters', collection: 'Greetings', level: 'HSK 1' })).toEqual({ kind: 'Characters' });
+  });
   it.each(['Radicals', 'Components'] as const)('filters %s by recorded stroke count', kind => {
     expect(drawingPool(entries, { kind, strokes: '1' }, false).map(entry => entry.id)).toEqual(['a', 'e']);
   });

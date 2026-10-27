@@ -22,6 +22,12 @@ it('starts a quiz with hidden character and outline and disables all automatic h
   expect(fake.quiz.mock.calls[0]?.[0]).toMatchObject({ showHintAfterMisses: false, markStrokeCorrectAfterMisses: false });
   expect(fake.showCharacter).not.toHaveBeenCalled();
 });
+it('quizzes only the selected word character, not the whole word', async () => {
+  const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
+  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} allowErrors onFinish={vi.fn()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  expect(fake.create.mock.calls[0]?.[1]).toBe('好');
+});
 it('allow-errors retries do not reveal the guide or end the card', async () => {
   const finish = vi.fn();
   render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
