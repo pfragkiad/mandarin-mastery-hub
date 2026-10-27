@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Add word drawing rounds with collection/level filters, a random character from each random word, and all word characters beside the board with the target highlighted; verify drawing, review, bookmarks and history.
 - [x] Give every glyph form its own equal box with a thin border so equal spacing is visible beside each other; verified identical box sizes on 刀, 乙, 人 and 小 cards, meaning rows unobstructed.
 - [x] Pronounce each correctly matched practice stroke using Step's stroke-name speech and mute control; 11 focused tests pass, actual 刂 strokes accepted at 100% with exact 竖/竖钩 speech requests and live mute/unmute verified using a test Mandarin voice.
 - [x] Note the existing Components tab: pure component forms (Unicode radical-block symbols and radical forms without a lexical reading) exist only in Components; the Characters tab keeps ordinary characters, including dual radical forms (门, 马…) presented as Characters there and as Component variants elsewhere. Verified counts (9538 characters, 9483 with decompositions), Components-only membership, Components dual labels and Back navigation; 256 tests pass.
