@@ -1,9 +1,12 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
 import { reuseGroups, type ReuseGroup } from './component-reuse';
+import { vocabularyKind, type Word } from './mandarin';
+import { includeScript } from './learning-preferences';
 
-export const drawingKinds = ['Characters', 'Radicals', 'Components'] as const;
+export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; errors?: boolean | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; errors?: boolean | undefined; collection?: string | undefined; level?: string | undefined };
+export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
 export type DrawingResult = 'correct' | 'missed' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
@@ -12,6 +15,8 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const strokes = String(search['strokes'] ?? '');
   const filtered = kind === 'Radicals' || kind === 'Components';
   return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
+    ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
+    ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
     ...(filtered && usage ? { usage } : {}), ...(search['errors'] === true || search['errors'] === 'true' ? { errors: true } : {}) };
 }
 
@@ -22,14 +27,29 @@ export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, incl
     .filter(entry => Array.from(entry.hanzi).length === 1 && entry.pinyin.trim() && entry.meaning.trim());
 }
 
-export function shuffledDrawingDeck(entries: LibraryEntry[], size = 10): LibraryEntry[] {
+const wordCharacters = (word: Word) => Array.from(word.hanzi).flatMap((hanzi, index) => /\p{Unified_Ideograph}/u.test(hanzi) ? [{ hanzi, index }] : []);
+
+/** Keep words and exact vocabulary IDs; sample words first, then character occurrences. */
+export function drawingWordPool(items: Word[], search: DrawingSearch, includeTraditional: boolean): DrawingCard[] {
+  return items.filter(word => vocabularyKind(word) === 'word' && includeScript(word.script, includeTraditional)
+    && (!search.collection || word.collection === search.collection) && (!search.level || word.level === search.level)
+    && word.pinyin.trim() && word.meaning.trim() && wordCharacters(word).length > 0)
+    .map(word => ({ id: word.id, hanzi: wordCharacters(word)[0]?.hanzi ?? '', pinyin: word.pinyin, meaning: word.meaning, note: '', word }));
+}
+
+export function shuffledDrawingDeck(entries: DrawingCard[], size = 10): DrawingCard[] {
   const deck = [...entries];
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const a = deck[i]; const b = deck[j];
     if (a && b) { deck[i] = b; deck[j] = a; }
   }
-  return deck.slice(0, size);
+  return deck.slice(0, size).map(card => {
+    if (!card.word || card.characterIndex !== undefined) return card;
+    const characters = wordCharacters(card.word);
+    const selected = characters[Math.floor(Math.random() * characters.length)];
+    return selected ? { ...card, hanzi: selected.hanzi, characterIndex: selected.index } : card;
+  });
 }
 
 export function mistakeOutcome(allowErrors: boolean): 'drawing' | 'missed' {

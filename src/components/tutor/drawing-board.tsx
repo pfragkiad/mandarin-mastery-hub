@@ -3,9 +3,9 @@ import type HanziWriter from 'hanzi-writer';
 import { ArrowRight, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
-import { characterRecording, playCharacter } from '@/lib/catalog-store';
-import type { LibraryEntry } from '@/lib/character-library';
-import { mistakeOutcome, type DrawingResult } from '@/lib/drawing-game';
+import { characterAudioRequest } from '@/lib/catalog-store';
+import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
+import { mistakeOutcome, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 
@@ -17,7 +17,7 @@ function writerColor(token: string) {
   return `#${Array.from(canvas.getImageData(0, 0, 1, 1).data).slice(0, 3).map(value => value.toString(16).padStart(2, '0')).join('')}`;
 }
 
-export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: LibraryEntry; allowErrors: boolean; onFinish: (result: DrawingResult) => void }) {
+export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingCard; allowErrors: boolean; onFinish: (result: DrawingResult) => void }) {
   const { theme, preferences } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
@@ -28,8 +28,9 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: LibraryE
   const [progress, setProgress] = useState({ completed: 0, total: 0 });
   const [retry, setRetry] = useState(0);
   const [audioError, setAudioError] = useState(false);
-  const recording = characterRecording(entry.hanzi, entry.pinyin);
-  const audioAvailable = usePronunciationAvailability(Boolean(recording), entry.pinyin);
+  const prompt = entry.word ?? entry;
+  const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
+  const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), prompt.pinyin);
 
   useEffect(() => {
     const node = target.current; if (!node) return;
@@ -78,12 +79,15 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: LibraryE
   const answered = state === 'correct' || state === 'missed';
   return <section className="drawing-board">
     <div className="drawing-prompt">
-      <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{entry.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(await playCharacter(entry.hanzi, preferences.slow, entry.pinyin)))}><Volume2/></Button></div>
-      <p className="drawing-meaning">{entry.meaning}</p>
+      <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
+      <p className="drawing-meaning">{prompt.meaning}</p>
       {audioError && <p className="meaning-missing" role="status">Audio isn’t available in this browser.</p>}
     </div>
     <div className="drawing-board-meta"><span className="eyebrow"><EyeOff size={13}/>GUIDE HIDDEN</span><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
-    <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
+    <div className={entry.word ? 'drawing-word-layout' : undefined}>
+      <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
+      {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{Array.from(entry.word.hanzi).map((glyph, index) => <li key={index} className={`drawing-word-character${index === entry.characterIndex ? ' is-selected' : ''}`} aria-current={index === entry.characterIndex ? 'true' : undefined} aria-label={`${glyph}${index === entry.characterIndex ? ' · draw this character' : ''}`}><span lang="zh-CN">{glyph}</span><small>{index + 1}</small></li>)}</ol></aside>}
+    </div>
     <p className={`drawing-status${state === 'correct' ? ' is-correct' : state === 'missed' ? ' is-missed' : ''}`} role="status">{message}</p>
     {answered && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>{state === 'correct' ? 'Correct' : 'Answer'}</span></div>}
     <div className="drawing-actions">

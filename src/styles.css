@@ -12,6 +12,14 @@
 .drawing-meaning { font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; max-width: 100%; }
 .drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: var(--muted-foreground); font-size: 11px; }
 .drawing-grid { touch-action: none; }
+.drawing-word-layout { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); align-items: center; gap: 24px; }
+.drawing-word-context { min-width: 0; border-left: 1px solid var(--border); padding-left: 24px; }
+.drawing-word-characters { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.drawing-word-character { width: 58px; height: 76px; flex: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted-foreground); background: var(--muted); }
+.drawing-word-character [lang] { font-size: 36px; line-height: 1.2; }
+.drawing-word-character small { font-size: 10px; }
+.drawing-word-character.is-selected { border: 2px solid var(--primary); color: var(--primary-foreground); background: var(--primary); }
+@media(max-width:580px) { .drawing-word-layout { grid-template-columns: minmax(0,1fr); gap: 0; } .drawing-word-context { grid-row: 1; border-left: 0; padding: 16px 0 0; } .drawing-word-characters { margin-top: 8px; } }
 .drawing-status { min-height: 42px; text-align: center; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
 .drawing-status.is-correct { color: var(--primary); }
 .drawing-status.is-missed { color: var(--destructive); }
