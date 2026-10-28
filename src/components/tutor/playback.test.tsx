@@ -231,17 +231,21 @@ it('the single-stroke panel uses the same arrow button instead of a switch', asy
   expect(screen.queryByRole('switch')).toBeNull();
 });
 
-it('tapping a stroke tile plays Step-style through the selected stroke and pauses there', async () => {
+it('tapping a stroke tile jumps straight to it: earlier strokes appear instantly, only the selected one animates', async () => {
   render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
   await screen.findByRole('button', { name: 'Play stroke 3' });
   fireEvent.click(screen.getByRole('button', { name: 'Play stroke 2' }));
   expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
+  expect(fake._options.strokeAnimationSpeed).toBe(200);
   expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
   act(() => fake.animateStroke.mock.calls[0]?.[1].onComplete());
+  expect(fake._options.strokeAnimationSpeed).toBe(0.5);
   act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
+  expect(fake._options.strokeAnimationSpeed).toBe(0.5);
   expect(document.querySelector('.writer-status')?.textContent).toContain('Drawn through stroke 2');
+  expect(fake.animateStroke.mock.calls[1]?.[1].onComplete);
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
 });
