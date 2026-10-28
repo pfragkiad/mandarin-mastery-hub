@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
-import { mistakeOutcome, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
+import { drawingWordClues, mistakeOutcome, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 
@@ -86,7 +86,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
     <div className="drawing-board-meta"><span className="eyebrow"><EyeOff size={13}/>GUIDE HIDDEN</span><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
     <div className={entry.word ? 'drawing-word-layout' : undefined}>
       <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
-      {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{Array.from(entry.word.hanzi).map((glyph, index) => <li key={index} className={`drawing-word-character${index === entry.characterIndex ? ' is-selected' : ''}`} aria-current={index === entry.characterIndex ? 'true' : undefined} aria-label={`${glyph}${index === entry.characterIndex ? ' · draw this character' : ''}`}><span lang="zh-CN">{glyph}</span><small>{index + 1}</small></li>)}</ol></aside>}
+      {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
     <p className={`drawing-status${state === 'correct' ? ' is-correct' : state === 'missed' ? ' is-missed' : ''}`} role="status">{message}</p>
     {answered && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>{state === 'correct' ? 'Correct' : 'Answer'}</span></div>}

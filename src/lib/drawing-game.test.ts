@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { drawingPool, drawingWordPool, drawingSearch, mistakeOutcome, shuffledDrawingDeck } from './drawing-game';
+import { drawingPool, drawingWordPool, drawingWordClues, drawingSearch, mistakeOutcome, shuffledDrawingDeck } from './drawing-game';
+import { words } from './mandarin';
 import type { Word } from './mandarin';
 import { libraryEntries, type LibraryEntry } from './character-library';
 
@@ -11,6 +12,17 @@ const entries: LibraryEntry[] = [
   { id: 'e', hanzi: '丨', pinyin: 'gǔn', meaning: 'line', note: '', strokes: 1, reuseCount: 0 },
 ];
 describe('drawing game rules', () => {
+  it('hides 一 while keeping 些 and both recorded word-context readings', () => {
+    const word = words.find(word => word.hanzi === '一些');
+    if (!word) throw new Error('Missing imported 一些');
+    expect(drawingWordClues({ id: word.id, hanzi: '一', pinyin: word.pinyin, meaning: word.meaning, note: '', word, characterIndex: 0 })).toEqual([
+      { glyph: '', pinyin: 'yì', selected: true, index: 0 }, { glyph: '些', pinyin: 'xiē', selected: false, index: 1 },
+    ]);
+  });
+  it('never substitutes standalone readings when word tokens are missing', () => {
+    const word: Word = { id: 'x', hanzi: '一些', pinyin: 'yì xiē', meaning: 'some', collection: '', level: '', type: '', sentence: '', translation: '' };
+    expect(drawingWordClues({ ...entries[0], id: word.id, hanzi: '一', pinyin: word.pinyin, meaning: word.meaning, note: '', word, characterIndex: 0 }).map(clue => clue.pinyin)).toEqual(['', '']);
+  });
   const word: Word = { id: 'word-hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '', entryKind: 'word' };
   it('selects Words by collection', () => {
     expect(drawingWordPool([word, { ...word, id: 'other', collection: 'Food' }], { kind: 'Words', collection: 'Greetings' }, false).map(card => card.id)).toEqual(['word-hello']);

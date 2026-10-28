@@ -29,6 +29,18 @@ export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, incl
 
 const wordCharacters = (word: Word) => Array.from(word.hanzi).flatMap((hanzi, index) => /\p{Unified_Ideograph}/u.test(hanzi) ? [{ hanzi, index }] : []);
 
+/** Mask the target even from accessible labels; pinyin comes from exact word tokens only. */
+export function drawingWordClues(card: DrawingCard) {
+  if (!card.word) return [];
+  const tokens = card.word.entry?.tokens ?? [];
+  const aligned = tokens.map(token => token.text).join('') === card.word.hanzi;
+  const readings = aligned ? tokens.flatMap(token => Array.from(token.text).map(() => Array.from(token.text).length === 1 ? token.pinyin ?? '' : '')) : [];
+  return Array.from(card.word.hanzi).map((glyph, index) => ({
+    glyph: index === card.characterIndex ? '' : glyph,
+    pinyin: readings[index] ?? '', selected: index === card.characterIndex, index,
+  }));
+}
+
 /** Keep words and exact vocabulary IDs; sample words first, then character occurrences. */
 export function drawingWordPool(items: Word[], search: DrawingSearch, includeTraditional: boolean): DrawingCard[] {
   return items.filter(word => vocabularyKind(word) === 'word' && includeScript(word.script, includeTraditional)
