@@ -11,7 +11,8 @@ import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { PracticeSheet } from './practice-sheet';
-import { SPEEDS, DEFAULT_SPEED_INDEX } from './writing-practice';
+import { AnimationSpeedControl } from './animation-speed-control';
+import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
 import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 
@@ -56,9 +57,9 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const [guide, setGuide] = useState(true);
   const [arrows, setArrows] = useState(false);
   const [median, setMedian] = useState<MedianPoint[]>([]);
-  const [speedIndex, setSpeedIndex] = useState(DEFAULT_SPEED_INDEX);
-  const speedRef = useRef(SPEEDS[speedIndex] ?? 0.5);
-  speedRef.current = SPEEDS[speedIndex] ?? 0.5;
+  const [speed, setSpeed] = useState<number>(SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
+  const speedRef = useRef(speed);
+  speedRef.current = speed;
 
   useEffect(() => {
     if (!example || !target.current) return;
@@ -135,7 +136,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
         <div className="writer-controls writer-controls-arranged">{practiceMode === 'watch' && <div className="writer-playback">
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
-<label className="writer-speed">Animation speed<input type="range" min={0} max={SPEEDS.length - 1} step={1} value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{SPEEDS[speedIndex]}×</span></label></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
+<AnimationSpeedControl speed={speed} onChange={setSpeed}/></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
