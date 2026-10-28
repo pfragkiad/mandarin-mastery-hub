@@ -404,6 +404,7 @@
   .flashcard-fan { width: 78px; }
   .flashcard-fan > span { left: 2px; }
   .flashcard-fan > span:nth-child(2) { left: 22px; }
+  .overview-flashcards h2 { font-size: 21px; }
   .drawing-badge { width: 78px; height: 78px; }
   .drawing-badge svg { width: 34px; height: 34px; }
   .overview-play { width: 100%; margin-left: 0; }
