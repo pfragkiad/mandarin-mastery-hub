@@ -59,12 +59,11 @@ const familyFile: RadicalStrokeFile = {
   }],
 };
 
-const visibleHeadingGlyphs = () => {
-  const heading = screen.getByRole('heading', { name: 'Get to know 学' });
-  return Array.from(heading.querySelectorAll('span'))
-    .filter(node => !node.classList.contains('sr-only'))
-    .map(node => node.textContent);
-};
+const practiceHeading = () => screen.getByRole('heading', { name: 'Get to know 学' });
+
+const visibleHeadingGlyphs = () => Array.from(practiceHeading().querySelectorAll('span'))
+  .filter(node => !node.classList.contains('sr-only'))
+  .map(node => node.textContent);
 
 describe('character practice sections by mode', () => {
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
@@ -75,6 +74,7 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
     expect(screen.getByText('Decomposition')).toBeInTheDocument();
     expect(screen.getByText('SOURCE CHECK')).toBeInTheDocument();
+    expect(practiceHeading()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
   });
 
@@ -93,7 +93,7 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
     expect(screen.queryByText('Decomposition')).toBeNull();
     expect(screen.queryByText('SOURCE CHECK')).toBeNull();
-    expect(visibleHeadingGlyphs()).toEqual([]);
+    expect(practiceHeading()).toHaveClass('sr-only');
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
   });
