@@ -6,7 +6,7 @@ import type { Word } from '@/lib/mandarin';
 
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a> }));
 
-const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), quiz: vi.fn() }));
+const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
 const state = vi.hoisted(() => ({ saved: [] as string[], toggleSaved: vi.fn() }));
 const workspace = vi.hoisted(() => ({ useWorkspace: vi.fn() }));
@@ -64,6 +64,18 @@ it('deals every filtered card when the deck size is All cards', async () => {
   fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: 'all' } });
   fireEvent.click(screen.getByRole('button', { name: 'Start · 12 cards' }));
   expect(await screen.findByText('Card 1 of 12')).toBeTruthy();
+});
+
+it('the guide returns to hidden on every new card and round', async () => {
+  render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Start · 10 of 12 cards' }));
+  await screen.findByText('Card 1 of 10');
+  fireEvent.click(screen.getByRole('button', { name: 'Show guide' }));
+  expect(screen.getByRole('button', { name: 'Hide guide' })).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+  await screen.findByText('Card 2 of 10');
+  expect(screen.getByRole('button', { name: 'Show guide' })).toBeTruthy();
 });
 
 it('a review round replays every missed card', async () => {
