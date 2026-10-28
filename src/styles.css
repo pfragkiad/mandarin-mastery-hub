@@ -685,37 +685,33 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .source-info-trigger:hover, .source-info-trigger:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .source-info-trigger svg { width: 15px; height: 15px; }
 
-/* Practice introduction sits above both columns on every screen. */
-.practice-page-heading { margin-bottom: 18px; }
-.practice-page-content .practice-layout { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); grid-template-rows: auto auto; margin-top: 0; gap: 26px 35px; }
-.practice-page-content .practice-intro { grid-column: 1 / -1; grid-row: 1; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); column-gap: 35px; row-gap: 10px; min-width: 0; }
+/* Practice title is one continuous line; reading belongs to the writing column. */
+.practice-page-content .practice-page-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 18px; margin-bottom: 24px; align-items: center; }
+.practice-page-heading > .eyebrow { grid-column: 1 / -1; }
+.practice-page-content .practice-heading-row { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: baseline; gap: 0 10px; margin: 0; min-width: 0; }
+.practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.4; font-weight: 400; margin: 0; }
+.practice-page-content .practice-layout { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); grid-template-rows: auto auto; margin-top: 0; gap: 22px 35px; align-items: start; }
+.practice-page-content .practice-intro { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
-.practice-page-content .practice-detail { grid-column: 2; grid-row: 2; min-width: 0; }
-.practice-page-content .practice-heading-row { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 35px; align-items: baseline; margin: 0 0 6px; }
-.practice-heading-row h1 { font-family: var(--font-display); font-size: 30px; line-height: 1.35; font-weight: 400; }
-.practice-page-content .practice-heading-row h2 { font-size: 25px; line-height: 1.35; margin: 0; }
-.practice-intro > .practice-meaning, .practice-intro > .practice-facts, .practice-intro > .meaning-missing { grid-column: 2; }
-.practice-intro > .word-context, .practice-intro > .picker-group { grid-column: 1 / -1; }
+.practice-page-content .practice-detail { grid-column: 2; grid-row: 1 / span 2; min-width: 0; }
+.practice-intro .practice-meaning { width: 100%; }
 .practice-intro .practice-meaning .pinyin { font-size: 22px; }
 .practice-intro .practice-translation { font-size: 18px; line-height: 1.6; overflow-wrap: anywhere; }
 .practice-intro .practice-text { min-width: 0; }
 .practice-intro .practice-facts { flex-wrap: wrap; gap: 10px 18px; white-space: normal; }
 .practice-detail > .decomposition-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
-.practice-decomposition-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-family: var(--font-display); font-size: 25px; font-weight: 400; line-height: 1.35; text-transform: capitalize; color: var(--foreground); }
+.practice-decomposition-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-family: var(--font-display); font-size: 20px; font-weight: 400; line-height: 1.4; text-transform: none; color: var(--foreground); }
 .practice-decomposition-heading > svg { flex-shrink: 0; }
 .practice-decomposition-heading .source-info-trigger, .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
-  .practice-page-content .practice-intro { grid-column: 1; grid-template-columns: minmax(0,1fr); }
-  .practice-page-content .practice-heading-row { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 14px; }
-  .practice-intro > .practice-meaning, .practice-intro > .practice-facts, .practice-intro > .meaning-missing { grid-column: 1; }
   .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
   .practice-page-content .practice-detail { grid-column: 1; grid-row: 3; }
 }
 @media(max-width:580px) {
-  .practice-page-content .practice-page-heading { grid-template-columns: minmax(0,1fr) auto; gap: 8px; }
+  .practice-page-content .practice-page-heading { gap: 12px 8px; }
   .practice-page-heading .eyebrow { letter-spacing: 0; line-height: 1.6; }
   .practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-size: 18px; }
-  .practice-decomposition-heading { font-size: 23px; }
+  .practice-page-heading .practice-print-button { white-space: normal; max-width: 132px; height: auto; min-height: 36px; line-height: 1.4; }
   .stroke-guide-top h3.eyebrow { font-size: 8px; letter-spacing: 1.25px; }
 }
