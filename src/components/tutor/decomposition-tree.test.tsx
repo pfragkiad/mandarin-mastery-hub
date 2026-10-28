@@ -19,8 +19,9 @@ vi.mock('@/lib/catalog-store', async importOriginal => ({
   characterRecording: () => null,
   playCharacter: vi.fn(async () => null),
 }));
-vi.mock('./use-pronunciation-availability', () => ({
-  usePronunciationAvailability: () => true,
+vi.mock('./use-pronunciation-availability', async importOriginal => ({
+  usePronunciationAvailability: (hasRecording: boolean, reading?: string | null) =>
+    (await import('@/lib/audio')).pronunciationAvailable(hasRecording, reading, true),
 }));
 
 describe('Decomposition component audio', () => {
