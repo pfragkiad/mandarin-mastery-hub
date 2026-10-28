@@ -40,24 +40,24 @@ vi.mock('./character-enrichment', async importOriginal => ({
   useCharacterEnrichment: () => enrichment,
 }));
 
-const catalogData = {
+const catalogData: CatalogFile = {
   version: 1, source: 'test',
   characters: [['学', 'xué', 'learn', '8 strokes · 子 radical']],
   radicals: [], components: [], strokes: [],
   trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] } },
   readingAudio: {}, audio: {},
-} as const;
+};
 
 hydrateCatalog(catalogData);
 
 // A one-form radical family so the page's radical-family section has something to render.
-const familyFile = {
+const familyFile: RadicalStrokeFile = {
   schemaVersion: 1, source: 'test family', records: {},
   families: [{
     id: 17, canonical: '冂', kangxiHeading: '冂', familyPinyin: 'jiōng',
     forms: [{ key: 'main', character: '冂', aliases: [], formKind: 'kangxi-heading', strokeCount: 2, record: { status: 'recorded', strokes: [] } }],
   }],
-} as const;
+};
 
 const visibleHeadingGlyphs = () => {
   const heading = screen.getByRole('heading', { name: 'Get to know 学' });
