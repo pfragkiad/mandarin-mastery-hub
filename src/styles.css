@@ -234,12 +234,7 @@
 .writer-speed-label { white-space: nowrap; }
 .writer-speed-options { flex-shrink: 0; }
 .writer-board { width: min(100%, 300px); margin: 0 auto; }
-.writer-board-actions { display: flex; align-items: flex-end; justify-content: flex-end; min-height: 30px; }
-.writer-reset { height: 26px; padding: 0 11px 0 9px; font-size: 10px; font-weight: 500; gap: 5px; color: var(--muted-foreground); }
-.writer-reset svg { width: 13px; height: 13px; }
-.writer-reset:hover:not(:disabled), .writer-reset:focus-visible { color: var(--foreground); }
-.writer-reset:disabled { opacity: .45; }
-.writer-board .writing-grid { width: 100%; margin: 8px 0 22px; }
+.writer-board .writing-grid { width: 100%; margin: 20px 0 22px; }
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .stroke-guide-heading > button { flex-shrink: 0; }
 .stroke-guide-top { flex-wrap: wrap; }

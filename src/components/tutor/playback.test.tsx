@@ -179,7 +179,20 @@ it('Recall starts without outline, component overlays or automatic hints', async
   expect(fake.hideOutline).toHaveBeenCalledWith({ duration: 0 });
   expect(fake.quiz.mock.calls[0]?.[0].showHintAfterMisses).toBe(false);
   expect(container.querySelector('.component-stroke-overlay')).toBeNull();
-  expect(container.querySelector('.stroke-guide')).toBeNull();
+  const guide = container.querySelector('.stroke-guide');
+  expect(guide).not.toBeNull();
+  expect(screen.queryByRole('button', { name: 'Hide strokes' })).toBeNull();
+  expect(screen.getByRole('button', { name: 'Show strokes' })).toBeTruthy();
+  expect(container.querySelector('.stroke-guide-strip')).toBeNull();
+});
+
+it('the Reset button sits in the playback row beside Play strokes and Step', async () => {
+  render(<WritingPractice character="我" mode="watch"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  const row = document.querySelector('.writer-playback');
+  expect(row?.textContent).toContain('Play strokes');
+  expect(row?.textContent).toContain('Step');
+  expect(row?.textContent).toContain('Reset');
 });
 
 it('Trace starts guided handwriting with a visible outline', async () => {
