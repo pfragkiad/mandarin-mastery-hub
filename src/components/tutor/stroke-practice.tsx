@@ -140,7 +140,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>
-      <h2>Get to know <span lang="zh-CN" className="sr-only">{glyph}</span></h2>
+      <h2>Get to know {practiceMode === "recall" ? <span lang="zh-CN" className="sr-only">{glyph}</span> : <span lang="zh-CN">{glyph}</span>}</h2>
       <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button>{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">Stroke</span></p>
       {audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}
       <p>Every stroke has a starting point and a direction. Watch how it moves, then practice tracing it yourself.</p>
