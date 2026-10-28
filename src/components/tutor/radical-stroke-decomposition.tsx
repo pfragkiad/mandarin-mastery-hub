@@ -1,3 +1,4 @@
+import { SourceInfo } from '@/components/tutor/source-info';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { catalog } from '@/lib/catalog-store';
@@ -14,6 +15,6 @@ export function RadicalStrokeDecomposition({ glyph, form }: { glyph: string; for
         <div className="vocabulary-part-facts"><span className="pinyin">{stroke.pinyin}</span><small lang="zh-CN">{stroke.name}</small></div>
       </div></div></li>)}
     </ol></> : <div className="record-gap"><p>No unambiguous exact stroke sequence recorded for this radical form.</p></div>}
-    <p className="detail-footnote decomposition-footnote">Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{record?.sourceStatus ?? record?.status} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</p>
+    <SourceInfo className="detail-footnote decomposition-footnote">Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{record?.sourceStatus ?? record?.status} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</SourceInfo>
   </>;
 }
