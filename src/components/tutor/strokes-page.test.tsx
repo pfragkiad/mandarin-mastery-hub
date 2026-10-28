@@ -1,8 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
 import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
+import * as catalogStore from '@/lib/catalog-store';
 
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
@@ -22,7 +23,7 @@ vi.mock('./workspace', () => ({
     catalogVersion: 1, theme: 'light',
   }),
 }));
-vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
+vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: (recording: boolean, reading: string | null) => recording || Boolean(reading) }));
 vi.mock('@/lib/character-enrichment', async importOriginal => ({
   ...(await importOriginal<object>()),
   loadStrokeGeometry: async () => ({ data: { strokes: ['path one', 'path two'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, 400]]] } }),
@@ -111,5 +112,21 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
     expect(screen.queryByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeNull();
     expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
+  });
+
+  it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
+    hydrateCatalog({ ...catalogData, radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']] }, undefined, {
+      ...familyFile,
+      families: [{ id: 5, canonical: '乙', kangxiHeading: '乙', familyPinyin: 'yǐ', forms: [
+        { key: '5-0', character: '乙', aliases: [], formKind: 'kangxi-heading', strokeCount: 1, record: { status: 'recorded', strokes: [] } },
+        { key: '5-1', character: '乚', aliases: [], formKind: 'variant', strokeCount: 1, record: { status: 'recorded', strokes: [] } },
+      ] }],
+    });
+    const play = vi.spyOn(catalogStore, 'playCharacter').mockResolvedValue(null);
+    render(<StrokesPage initialCharacter="乚" family={5} variant="5-1" mode="watch"/>);
+    expect(document.querySelector('.practice-intro .pinyin')?.textContent).toBe('yǐ');
+    fireEvent.click(screen.getByRole('button', { name: 'Listen to 乚', exact: true }));
+    expect(play).toHaveBeenCalledWith('乙', false, 'yǐ');
+    play.mockRestore();
   });
 });
