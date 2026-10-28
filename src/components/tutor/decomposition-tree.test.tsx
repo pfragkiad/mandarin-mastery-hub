@@ -7,7 +7,8 @@ import { playCharacter } from '@/lib/catalog-store';
 import { pronunciationAvailable } from '@/lib/audio';
 
 vi.mock('@tanstack/react-router', () => ({
-  Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
+  // The real Link forwards the button's classes onto its anchor, so the box styling stays observable in tests.
+  Link: ({ children, className }: { children?: ReactNode; className?: string }) => <a className={className}>{children}</a>,
 }));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
