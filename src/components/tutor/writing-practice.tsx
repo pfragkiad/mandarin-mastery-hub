@@ -30,6 +30,7 @@ import { nextStepIndex } from '@/lib/step-playback';
 import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, EnrichmentNotes } from './character-enrichment';
+import { ComponentPronunciation } from './component-pronunciation';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
 
@@ -77,7 +78,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
         <>
           <div className="stroke-component-groups">
           {strokeGroupRuns(groups, strokes.length).map((run, runIndex) => <div className="stroke-component-group" key={`${run.group.id}-${runIndex}`} data-component-group={run.group.id}>
-            <Button variant="ghost" size="sm" className="stroke-component-label" disabled={run.group.id === 'whole' || run.group.id === 'unassigned'} aria-label={`Highlight ${run.group.glyph ?? 'unassigned'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={selectedGroup === run.group.id} onClick={() => onGroupSelect(selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span>{run.indices.map(i => i + 1).join(', ')}</span></Button>
+            <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={run.group.id === 'whole' || run.group.id === 'unassigned'} aria-label={`Highlight ${run.group.glyph ?? 'unassigned'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={selectedGroup === run.group.id} onClick={() => onGroupSelect(selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}<span className="stroke-component-indices">{run.indices.map(i => i + 1).join(', ')}</span></div>
             <ol className="stroke-guide-strip">
             {run.indices.map(i => { const stroke = strokes[i]; if (!stroke) return null; return (
               <li key={i}>
