@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Always allow errors in the drawing game and remove its toggle; a wrong stroke only counts a retry, the card stays open and the URL drops the old errors option; 31 drawing tests pass and live retry-then-complete verified on a one-stroke card.
 - [x] Hide the selected word hanzi in its highlighted box and accessible label, keep other characters visible, and place exact recorded word-token pinyin above each box; 28 tests pass and real 一些 drawing verified before/after on desktop/phone.
 - [x] Add word drawing rounds with collection/level filters, a random character from each random word, and all word characters beside the board with the target highlighted; 26 tests pass, real drawing completes, review preserves targets, vocabulary bookmarks and Back restoration verified, desktop/phone layouts clear.
 - [x] Give every glyph form its own equal box with a thin border so equal spacing is visible beside each other; verified identical box sizes on 刀, 乙, 人 and 小 cards, meaning rows unobstructed.
