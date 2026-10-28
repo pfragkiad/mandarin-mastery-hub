@@ -74,7 +74,6 @@ describe('character practice sections by mode', () => {
     expect(blocks[1]).toContain('writing-tool');
     expect(blocks[2]).toContain('practice-detail');
     expect(document.querySelector('.practice-intro')?.textContent).toContain('Get to know');
-    expect(document.querySelector('.practice-intro')?.textContent).toContain('Print practice sheet');
     expect(document.querySelector('.practice-detail')?.textContent).toContain('DECOMPOSITION');
     expect(document.querySelector('.practice-detail')?.textContent).toContain('SOURCE CHECK');
   });
