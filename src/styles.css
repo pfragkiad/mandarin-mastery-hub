@@ -715,3 +715,13 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .practice-page-heading .practice-print-button { white-space: normal; max-width: 132px; height: auto; min-height: 36px; line-height: 1.4; }
   .stroke-guide-top h3.eyebrow { font-size: 8px; letter-spacing: 1.25px; }
 }
+
+/* Practice title row: heading on the left, Print practice sheet on the right, same row. */
+.practice-page-content .practice-page-heading { display: block; }
+.practice-page-content .practice-page-heading > .eyebrow { margin-bottom: 10px; }
+.practice-page-content .practice-heading-row { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: 18px; }
+.practice-page-content .practice-heading-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 10px; min-width: 0; }
+.practice-page-content .practice-heading-row .practice-print-button { margin-top: 0; flex-shrink: 0; }
+/* Reading card and Decomposition card match the writing card. */
+.practice-page-content .practice-intro, .practice-page-content .practice-detail { border: 1px solid var(--border); background: var(--card); border-radius: 7px; padding: 20px 24px; }
+.practice-page-content .practice-detail:empty { display: none; }
