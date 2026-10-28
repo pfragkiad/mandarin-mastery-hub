@@ -125,7 +125,7 @@ describe('character practice sections by mode', () => {
     const play = vi.spyOn(catalogStore, 'playCharacter').mockResolvedValue(null);
     render(<StrokesPage initialCharacter="乚" family={5} variant="5-1" mode="watch"/>);
     expect(document.querySelector('.practice-intro .pinyin')?.textContent).toBe('yǐ');
-    fireEvent.click(screen.getByRole('button', { name: 'Listen to 乚', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Listen to 乚$/ }));
     expect(play).toHaveBeenCalledWith('乙', false, 'yǐ');
     play.mockRestore();
   });
