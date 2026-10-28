@@ -111,6 +111,18 @@ describe('character practice sections by mode', () => {
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
   });
 
+  it('labels radical practice with the Radical pill instead of Character', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="乙" mode="watch"/>);
+    expect(document.querySelector('.practice-kind')?.textContent).toBe('Radical');
+  });
+
+  it('shows the Kangxi number in parentheses after the hanzi in the heading', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="乙" mode="watch"/>);
+    expect(screen.getByRole('heading', { name: 'Get to know 乙 (Kangxi #5)' })).toBeInTheDocument();
+  });
+
   it('hides the radical family and the whole detail card in recall', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
