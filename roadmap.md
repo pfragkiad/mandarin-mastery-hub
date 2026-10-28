@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Use neutral component selection colors and add exact component pinyin/audio beside stroke-group glyphs.
+- [x] Use neutral grey component selection colors and add exact component pinyin/audio beside stroke-group glyphs; verified independent audio preserves selection, neutral character/tile highlights and no phone overflow, with 27 focused tests passing.
 - [x] Consolidate component selection into Strokes, move the mapping source note there, and remove the duplicate right-column section; verified exact highlighting/toggle-off, source popover, Recall defaults and phone layout, with 34 focused tests passing.
 - [x] Remove the unusable grouping-source dropdown; keep recorded component colors and BabelStone structure comparisons intact.
 - [x] Apply matched component hues to character ink, ordered stroke-tile groups and component markers, independently of accuracy labels; verified real 学 Trace at 100%, tile jumps, pause/resume, Recall, history, radical/unmapped single-group fallback and phone/light/dark layouts; 48 unique focused tests pass. BabelStone alternatives are visible but disabled because their own source-bound stroke mappings are not supplied.
