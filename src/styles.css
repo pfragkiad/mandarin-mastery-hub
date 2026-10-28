@@ -276,6 +276,8 @@
 .enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
 .enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .enrichment-expression > span { font-size: 22px; }
+/* A hanzi quoted inside a source sentence or a raw notation expression gets the same thin box as a breakdown row. */
+.source-glyph-box { display: inline-flex; align-items: center; justify-content: center; min-width: 1.45em; height: 1.45em; padding: 0 .16em; border: 1px solid var(--border); border-radius: 6px; vertical-align: middle; }
 .enrichment-expression > small { font-size: 10px; color: var(--muted-foreground); }
 .component-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0 10px; }
 .component-picker button { height: auto; min-height: 36px; white-space: normal; gap: 8px; }
