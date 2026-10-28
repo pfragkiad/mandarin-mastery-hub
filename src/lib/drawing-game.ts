@@ -7,7 +7,7 @@ export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as
 export type DrawingKind = typeof drawingKinds[number];
 export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; errors?: boolean | undefined; collection?: string | undefined; level?: string | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
-export type DrawingResult = 'correct' | 'missed' | 'passed' | 'unavailable';
+export type DrawingResult = 'correct' | 'guided' | 'missed' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const kind = drawingKinds.find(value => value === search['kind']);
