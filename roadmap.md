@@ -80,6 +80,7 @@
 ## Done this session
 - [x] Default stroke-name audio to off on both practice panels — the speaker beside Stroke tiles (or above the square in Recall) stays crossed out until the listener turns it on; verified live in Trace, Recall and Watch, with 20 playback/practice tests.
 - [x] Remove the "Hide character outline" toggle from both practice panels — guide visibility now follows the Watch/Trace/Recall tabs alone; verified the faint outline shows in Trace and the square is empty in Recall on the character and single-stroke pages, with 60 tutor tests passing.
+- [x] Put the speaker beside the pinyin on the single-stroke practice panel (speaking the stroke’s recorded Chinese name) and on the character practice panel; verified position, alignment and that the click plays the recording.
 - [x] Restore random phrase alignment with neighbouring tiles and enlarge the daily pinyin/audio row with less space above its character; verified five phrase shuffles, desktop and phones.
 - [x] Ensure selected cards are rendered on their containing page and visible after selection from any place, including history and all vocabulary/Glyphs categories; verify.
 - [x] Scrolling to linked records: arriving at Vocabulary/Glyphs from a word, phrase or decomposition link brings the selected card into view (nearest-scroll; same-page clicks and Back/Forward keep scroll position).
