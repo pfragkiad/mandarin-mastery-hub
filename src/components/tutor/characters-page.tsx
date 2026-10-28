@@ -73,7 +73,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   </section>;
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
-export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^Kangxi radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
+export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
