@@ -29,7 +29,7 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
   if (!record) return null;
   const teaching = record.teachingCheck;
   return <div className="enrichment-notes">
-    <div className="enrichment-note"><h4 className="eyebrow">SOURCE CHECK</h4>
+    <div className="enrichment-note"><h4 className="eyebrow">SOURCE CHECK<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</SourceInfo></h4>
       <p>{comparisonNotes[record.comparison.status]}</p>
       {(record.comparison.status === 'different-G-expression' || record.comparison.status === 'current-incomplete' || record.comparison.status === 'G-incomplete-or-unparseable') && record.comparison.alternatives.map((alternative, index) => {
         const tree = parseIdsTree(alternative.expression);
@@ -38,12 +38,10 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
           {tree ? <ul className="decomposition-tree" aria-label={`BabelStone alternative ${index + 1}`}><DecompositionTree node={tree}/></ul> : <p className="enrichment-expression"><span lang="zh-CN">{alternative.expression}</span><small>Source notation retained; tree unavailable.</small></p>}
         </div>;
       })}
-      <SourceInfo className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</SourceInfo>
     </div>
-    {teaching && <div className="enrichment-note"><h4 className="eyebrow">TEACHING STANDARD</h4>
+    {teaching && <div className="enrichment-note"><h4 className="eyebrow">TEACHING STANDARD<SourceInfo inline className="detail-footnote">GF 0014-2009 · Rule {teaching.rule} · Printed page {teaching.printedPage}<br/>One of eight checked examples · not a full standard import</SourceInfo></h4>
       <p>{teaching.expectedUnsplit ? 'This example is treated as an undivided form.' : <>The teaching example groups <span lang="zh-CN">{teaching.expectedComponents?.join(' + ')}</span>.</>}
         {' '}{teaching.result === 'agrees-component-multiset' ? 'Its component multiset agrees with the recorded breakdown.' : teaching.result === 'different-stopping-rule' ? 'It uses a different stopping rule from the visual breakdown.' : 'The current breakdown is incomplete.'}</p>
-      <SourceInfo className="detail-footnote">GF 0014-2009 · Rule {teaching.rule} · Printed page {teaching.printedPage}<br/>One of eight checked examples · not a full standard import</SourceInfo>
     </div>}
   </div>;
 }
@@ -52,11 +50,10 @@ export function CharacterEnrichmentNotes({ character, tree }: { character: strin
   return <EnrichmentNotes record={record}/>;
 }
 export function ComponentPicker({ record, selected, onSelect }: { record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
-  return <div className="enrichment-note"><h4 className="eyebrow">COMPONENT STROKES</h4>
+  return <div className="enrichment-note"><h4 className="eyebrow">COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</SourceInfo></h4>
     {record.mapping.groups.length ? <><div className="component-picker">{record.mapping.groups.map(group => {
       const path = JSON.stringify(group.path);
       return <Button key={path} variant="outline" size="sm" aria-pressed={selected === path} aria-label={`Highlight ${group.glyph} strokes ${group.strokeIndices.map(i => i + 1).join(', ')}`} onClick={() => onSelect(selected === path ? '' : path)}><span lang="zh-CN">{group.glyph}</span><span>{group.strokeIndices.map(i => i + 1).join(', ')}</span></Button>;
     })}</div>{record.mapping.unknownStrokeIndices.length > 0 && <p>{record.mapping.unknownStrokeIndices.length} source strokes remain unassigned.</p>}</> : <div className="record-gap"><p>No recorded stroke-to-component mapping is available.</p></div>}
-    <SourceInfo className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</SourceInfo>
   </div>;
 }
