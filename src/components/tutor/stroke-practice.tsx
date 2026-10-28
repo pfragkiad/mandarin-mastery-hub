@@ -130,12 +130,12 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
-        <div className="writer-board"><div className="writer-board-actions"><Button disabled={!ready} variant="ghost" size="sm" className="writer-reset" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
+        <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
         <p className="writer-status" role="status">{message}</p>
-        <div className="writer-controls writer-controls-arranged">{practiceMode === 'watch' && <div className="writer-playback">
-          <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
-
-<AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}
+        <div className="writer-controls writer-controls-arranged"><div className="writer-playback">
+          {practiceMode === 'watch' && <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>}
+          <Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button>
+          {practiceMode === 'watch' && <AnimationSpeedControl speed={speed} onChange={setSpeedValue}/>}</div>
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
