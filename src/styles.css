@@ -244,6 +244,9 @@
 .decomposition-note, .record-gap > p { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
 .enrichment-note { margin-top: 22px; min-width: 0; }
+/* Practice panels stack each explanation as its own bordered block, in reading order. */
+.practice-block { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
+.practice-block > .enrichment-note:first-child, .practice-block > .enrichment-notes > .enrichment-note:first-child { margin-top: 0; }
 .enrichment-note > p:not(.detail-footnote) { font-size: 13px; line-height: 1.6; color: var(--foreground); margin-top: 8px; overflow-wrap: anywhere; }
 .enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
 .enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
