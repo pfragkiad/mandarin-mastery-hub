@@ -57,7 +57,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const [guide, setGuide] = useState(true);
   const [arrows, setArrows] = useState(false);
   const [median, setMedian] = useState<MedianPoint[]>([]);
-  const [speed, setSpeed] = useState<number>(SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
+  const [speed, setSpeedValue] = useState<number>(SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
   const speedRef = useRef(speed);
   speedRef.current = speed;
 
@@ -136,7 +136,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
         <div className="writer-controls writer-controls-arranged">{practiceMode === 'watch' && <div className="writer-playback">
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
-<AnimationSpeedControl speed={speed} onChange={setSpeed}/></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
+<AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
