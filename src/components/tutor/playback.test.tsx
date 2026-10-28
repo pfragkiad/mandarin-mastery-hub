@@ -3,6 +3,8 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { WritingPractice } from './writing-practice';
 import { StrokePractice } from './stroke-practice';
 import { speakTts } from '@/lib/audio';
+import { readFileSync } from 'node:fs';
+import type { CharacterEnrichment } from '@/lib/character-enrichment';
 
 const fake = vi.hoisted(() => ({
   _options: { strokeAnimationSpeed: 0.5 },
@@ -34,6 +36,17 @@ beforeEach(() => {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
   }) }));
+});
+it('selects exact component strokes from a group heading and toggles them off without starting playback', async () => {
+  const record = JSON.parse(readFileSync('public/data/character-enrichment/5b66.json', 'utf8')).record as CharacterEnrichment;
+  const enrichment: CharacterEnrichment = { ...record, bindings: { ...record.bindings, strokeCount: 3 }, mapping: { status: 'complete', groups: record.mapping.groups.slice(0, 1), unknownStrokeIndices: [] } };
+  const { container } = render(<WritingPractice character="学" enrichment={enrichment}/>);
+  const group = await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1, 2, 3' });
+  fireEvent.click(group);
+  expect(Array.from(container.querySelectorAll('.component-stroke-overlay path')).map(path => path.getAttribute('data-stroke-index'))).toEqual(['0', '1', '2']);
+  expect(fake.animateStroke).not.toHaveBeenCalled();
+  fireEvent.click(group);
+  expect(container.querySelector('.component-stroke-overlay')).toBeNull();
 });
 afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 

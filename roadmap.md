@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Consolidate component selection into Strokes, move the mapping source note there, and remove the duplicate right-column section; verified exact highlighting/toggle-off, source popover, Recall defaults and phone layout, with 34 focused tests passing.
 - [x] Remove the unusable grouping-source dropdown; keep recorded component colors and BabelStone structure comparisons intact.
 - [x] Apply matched component hues to character ink, ordered stroke-tile groups and component markers, independently of accuracy labels; verified real 学 Trace at 100%, tile jumps, pause/resume, Recall, history, radical/unmapped single-group fallback and phone/light/dark layouts; 48 unique focused tests pass. BabelStone alternatives are visible but disabled because their own source-bound stroke mappings are not supplied.
 - [x] Investigate component-colored stroke ink and source switching; 学 has a validated three-group current mapping but no separate BabelStone stroke assignment. Prepared the plan for review; no stroke-color changes applied yet.
