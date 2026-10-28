@@ -245,7 +245,6 @@ it('tapping a stroke tile jumps straight to it: earlier strokes appear instantly
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
   expect(fake._options.strokeAnimationSpeed).toBe(0.5);
   expect(document.querySelector('.writer-status')?.textContent).toContain('Drawn through stroke 2');
-  expect(fake.animateStroke.mock.calls[1]?.[1].onComplete);
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
 });
