@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Investigate component-colored stroke ink and source switching; 学 has a validated three-group current mapping but no separate BabelStone stroke assignment. Prepared the plan for review; no stroke-color changes applied yet.
 - [x] Tighten decomposition rows: position labels (root/top/bottom) and stroke numbers share one right-aligned column with a 10px gap, so the outline icon or glyph sits close to its label; verified uniform 10px gaps and aligned columns on 学 and the 宀 stroke sequence; 40 tests pass.
 - [x] Simplify practice controls: one global mode-aware Reset, stroke-name audio beside tiles (beside Reset in hidden-tile Recall), and Play continuation after Step; verified live on 学 with pause/resume, Reset and mute, plus 25 focused tests.
 - [x] Remove the "WATCH · TRACE · REMEMBER" eyebrow label and its writing-tip info button from both practice panels, since the Watch/Trace/Recall tabs now carry that meaning; verified the panel starts at the tabs, the old text is gone, tabs and Back still work, and 14 practice tests pass.
