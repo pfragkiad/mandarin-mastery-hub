@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Eye, EyeOff, Lightbulb, Pause, PenLine, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
+import { Eye, EyeOff, Lightbulb, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
@@ -115,7 +115,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
       onComplete: () => { setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
-  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
+  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); if (practiceMode !== 'watch') practice(); };
 
   useEffect(() => {
     if (!ready || !writer.current) return;
@@ -131,12 +131,12 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
-        <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div>
+        <div className="writer-board"><div className="writer-board-actions"><Button disabled={!ready} variant="ghost" size="icon" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/></Button></div><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls writer-controls-arranged">{practiceMode === 'watch' && <div className="writer-playback">
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
-<AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
+<AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}

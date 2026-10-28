@@ -233,12 +233,14 @@
 .writer-playback .writer-speed { flex: 1; min-width: 140px; margin-left: 0; gap: 8px; justify-content: flex-end; }
 .writer-speed-label { white-space: nowrap; }
 .writer-speed-options { flex-shrink: 0; }
-.writer-practice { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
-.writer-reset { border-left: 1px solid var(--border); padding-left: 12px; }
+.writer-board { width: min(100%, 300px); margin: 0 auto; }
+.writer-board-actions { display: flex; align-items: center; justify-content: flex-end; min-height: 36px; }
+.writer-board .writing-grid { width: 100%; margin: 8px 0 22px; }
+.stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.stroke-guide-heading > button { flex-shrink: 0; }
+.stroke-guide-top { flex-wrap: wrap; }
 .writing-tool-tabbed { align-self: start; }
 .practice-mode-tabs { margin-bottom: 18px; }
-.writing-tool-tabbed .writer-reset { border-left: 0; padding-left: 0; }
-.writing-tool-tabbed .writer-practice { min-width: 0; }
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
 
 @media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
