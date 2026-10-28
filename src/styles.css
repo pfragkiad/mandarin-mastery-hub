@@ -277,8 +277,10 @@
 .vocabulary-part-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .vocabulary-part-facts .pinyin { width: auto; font-size: 12px; }
 .vocabulary-part-facts small { color: var(--foreground); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
-.radical-stroke-sequence { list-style: none; padding-left: 0; }
-.radical-stroke-sequence .vocabulary-part-facts .pinyin { width: auto; }
+.radical-stroke-sequence .decomposition-part { display: flex; align-items: center; gap: 12px; }
+.catalog-detail .catalog-facts { border-bottom: 0; padding-bottom: 4px; }
+.catalog-detail .catalog-facts + .catalog-record-note { margin-top: 4px; }
+.catalog-detail .decomposition-section + .radical-family-section { border-top: 0; padding-top: 0; }
 .vocabulary-parts .decomposition-glyph { height: auto; flex-shrink: 0; white-space: normal; }
 .vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 /* Shared block for absent records: sits under its section label, no extra icon or divider. */

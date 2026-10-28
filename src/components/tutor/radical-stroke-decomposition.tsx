@@ -1,5 +1,7 @@
 import { SourceInfo } from '@/components/tutor/source-info';
 import { Link } from '@tanstack/react-router';
+import { Volume2 } from 'lucide-react';
+import { speakTts } from '@/lib/audio';
 import { Button } from '@/components/ui/button';
 import { catalog } from '@/lib/catalog-store';
 import { radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
@@ -20,7 +22,7 @@ export function RadicalStrokeDecomposition({ glyph, form, sourceInHeading = fals
     {record?.strokes.length ? <>{record.status !== 'recorded' && <div className="record-gap"><p>{record.status === 'derived' ? 'Source-derived sequence; not independently verified.' : 'Stroke names remain ambiguous in the source; alternatives are shown.'}</p></div>}<ol className="decomposition-tree radical-stroke-sequence" aria-label={`Stroke sequence for ${glyph}`}>
       {record.strokes.map((stroke, index) => <li key={index}><div className="decomposition-node"><span>{index + 1}</span><div className="decomposition-part">
         {stroke.glyph ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={{ tab: 'Strokes', id: `Strokes:${stroke.glyph}` }} resetScroll={false} aria-label={`Open stroke ${index + 1}: ${stroke.name}`}><strong lang="zh-CN">{stroke.glyph}</strong></Link></Button> : null}
-        <div className="vocabulary-part-facts"><span className="pinyin">{stroke.pinyin}</span><small lang="zh-CN">{stroke.name}</small></div>
+        <small className="decomposition-facts"><span className="decomposition-pronunciation">{stroke.pinyin ? <span className="pinyin">{stroke.pinyin}</span> : null}<Button variant="ghost" size="icon" className="decomposition-listen" disabled={!stroke.name} aria-label={`Listen to ${stroke.pinyin || stroke.name}`} onClick={() => speakTts(stroke.name)}><Volume2/></Button></span>{stroke.name ? <> · <span className="decomposition-meaning" lang="zh-CN">{stroke.name}</span></> : null}</small>
       </div></div></li>)}
     </ol></> : <div className="record-gap"><p>No unambiguous exact stroke sequence recorded for this radical form.</p></div>}
     {!sourceInHeading && <SourceInfo className="detail-footnote decomposition-footnote">{sourceNote(record)}</SourceInfo>}
