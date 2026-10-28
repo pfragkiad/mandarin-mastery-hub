@@ -106,7 +106,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
       {state === 'unavailable' && <Button variant="outline" onClick={() => setRetry(value => value + 1)}><RotateCcw/>Try again</Button>}
       {!answered && state !== 'unavailable' && <Button variant="outline" onClick={pass}><SkipForward/>Pass card</Button>}
-      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state)}>Next card<ArrowRight/></Button>}
+      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
     </div>
   </section>;
 }
