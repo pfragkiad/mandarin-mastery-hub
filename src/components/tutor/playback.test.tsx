@@ -8,6 +8,7 @@ import type { CharacterEnrichment } from '@/lib/character-enrichment';
 
 const fake = vi.hoisted(() => ({
   _options: { strokeAnimationSpeed: 0.5 },
+  _renderState: { updateState: vi.fn() },
   cancelQuiz: vi.fn(), hideCharacter: vi.fn(), showCharacter: vi.fn(),
   showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn(),
   animateStroke: vi.fn(), animateCharacter: vi.fn(),
@@ -286,4 +287,30 @@ it('animation speed is three grouped buttons, defaults to 0.5× and applies the 
   expect(screen.getByRole('button', { name: '0.5×' })).toHaveAttribute('aria-pressed', 'false');
   fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
   expect(fake._options.strokeAnimationSpeed).toBe(1);
+});
+
+const selectionRecord = () => {
+  const record = JSON.parse(readFileSync('public/data/character-enrichment/5b66.json', 'utf8')).record as CharacterEnrichment;
+  return { ...record, bindings: { ...record.bindings, strokeCount: 3 }, mapping: { status: 'complete' as const, groups: [
+    { ...record.mapping.groups[0], strokeIndices: [0], path: [0] },
+    { ...record.mapping.groups[1], strokeIndices: [1, 2], path: [1] },
+  ], unknownStrokeIndices: [] } } as CharacterEnrichment;
+};
+it('selecting a later component instantly draws all earlier strokes and Step continues after the group', async () => {
+  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
+  await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalledWith({ character: { main: { opacity: 1, strokes: {
+    0: { opacity: 1, displayPortion: 1 }, 1: { opacity: 1, displayPortion: 1 }, 2: { opacity: 1, displayPortion: 1 },
+  } } } }));
+  expect(fake.animateStroke).not.toHaveBeenCalled();
+});
+it('a single tile clears component selection before drawing the selected stroke', async () => {
+  const { container } = render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  const group = await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' });
+  fireEvent.click(group);
+  await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 1' }));
+  expect(group).toHaveAttribute('aria-pressed', 'false');
+  expect(container.querySelector('.component-stroke-overlay')).toBeNull();
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
 });

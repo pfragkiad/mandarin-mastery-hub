@@ -29,6 +29,7 @@
 - Share the record-card footer, sentence rendering, and namespaced session bookmarks between vocabulary and glyph cards; use shared library destinations and real router links; explicit selections resolve independently of browsing filters and offscreen selected cards scroll into view without moving visible ones.
 - Script metadata is explicit — never guess script from glyphs; Overview discovery and paginated links respect script preferences.
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match; overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
+- Component selection reveals the completed stroke prefix through the selected group using Hanzi Writer render state after native cancellation; tile playback clears group selection first, keeping Step continuation coherent.
 - Practice stroke ink, visual runs and clickable group headings in Strokes share one browser-safe component-group adapter fed only validated mappings; keep mapping provenance in that heading rather than duplicate right-column controls. Alternatives need their own bindings and never reuse another source’s mapping, preventing unsupported IDS-to-stroke inference.
 - Visual roles/layouts are defined globally with shared controls and root theme state, so navigation, controls and writing ink stay consistent.
 - Stroke-group pronunciation uses the exact glyph presentation and radical variant speech fallback, with independent audio controls to avoid changing group selection.
