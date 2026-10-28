@@ -90,11 +90,11 @@ it('a card completed after showing the guide goes to review, not correct', async
   fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
   expect(finish).toHaveBeenCalledWith('guided');
 });
-it('a passed word card offers Practice for that word focused on the drawn character', async () => {
+it('a word card always offers Practice for that word focused on the drawn character', async () => {
   const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
   render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} allowErrors onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
-  expect(screen.queryByRole('link', { name: 'Practice' })).toBeNull();
+  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
 });
