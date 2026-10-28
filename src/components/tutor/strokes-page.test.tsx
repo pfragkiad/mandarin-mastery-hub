@@ -43,8 +43,9 @@ vi.mock('./character-enrichment', async importOriginal => ({
 
 const catalogData: CatalogFile = {
   version: 1, source: 'test',
-  characters: [['学', 'xué', 'learn', '8 strokes · 子 radical']],
-  radicals: [], components: [], strokes: [],
+  characters: [['学', 'xué', 'learn', '8 strokes · 子 radical'], ['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · 乙 radical']],
+  radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']],
+  components: [], strokes: [],
   trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] } },
   readingAudio: {}, audio: {},
 };
@@ -57,6 +58,9 @@ const familyFile: RadicalStrokeFile = {
   families: [{
     id: 17, canonical: '冂', kangxiHeading: '冂', familyPinyin: 'jiōng',
     forms: [{ key: 'main', character: '冂', aliases: [], formKind: 'kangxi-heading', strokeCount: 2, record: { status: 'recorded', strokes: [] } }],
+  }, {
+    id: 5, canonical: '乙', kangxiHeading: '乙', familyPinyin: 'yǐ',
+    forms: [{ key: 'main', character: '乙', aliases: [], formKind: 'kangxi-heading', strokeCount: 1, record: { status: 'recorded', strokes: [] } }],
   }],
 };
 
