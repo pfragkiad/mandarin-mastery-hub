@@ -1,3 +1,4 @@
 # Roadmap
 
-- [open] Step with a selected component: deselect the component and move to the next stroke card; from the last component move to the first stroke card (user request 22:29 UTC)
+- [done] Stroke cards and component headings clickable only in Watch; inert reference in Trace/Recall with audio controls live (tests + live check)
+- [done] Step with a selected component deselects it and draws the next group's first stroke; after the last group it returns to stroke one (tests + live check)
