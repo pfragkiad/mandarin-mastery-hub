@@ -283,8 +283,10 @@
 .stroke-component-groups { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
 .stroke-component-group { min-width: 0; max-width: 100%; border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px 6px; }
 :root { --stroke-selection-ink: oklch(.36 .02 200); --stroke-selection-surface: oklch(.91 .01 200); --stroke-selection-border: oklch(.5 .03 200); --stroke-selection-glow: oklch(.6 .07 200 / .4); }
-.stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 32px; }
 .component-pronunciation { display: inline-flex; align-items: center; gap: 2px; }
+.stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 32px; }
+/* Pronunciation sits at the group box's right edge, so readings form one scannable column. */
+.stroke-component-heading > .component-pronunciation { margin-left: auto; }
 .stroke-component-indices { font-size: 10px; color: var(--muted-foreground); margin-left: 5px; letter-spacing: .02em; }
 .stroke-component-label { display: flex; align-items: center; gap: 7px; font-size: 10px; color: var(--muted-foreground); min-height: 24px; }
 .stroke-component-label [lang] { font-size: 19px; color: var(--foreground); }
