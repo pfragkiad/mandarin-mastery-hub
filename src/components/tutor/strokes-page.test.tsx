@@ -7,7 +7,12 @@ vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
   useNavigate: () => () => {},
 }));
-const writer = vi.hoisted(() => ({ create: vi.fn() }));
+// The writing card only needs a writer instance to exist; no stroke animation runs here.
+const writer = vi.hoisted(() => ({
+  create: vi.fn(),
+  cancelQuiz: vi.fn(), quiz: vi.fn(), showCharacter: vi.fn(), hideCharacter: vi.fn(),
+  showOutline: vi.fn(), hideOutline: vi.fn(), pauseAnimation: vi.fn(), setSpeed: vi.fn(),
+}));
 vi.mock('hanzi-writer', () => ({ default: { create: writer.create } }));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
@@ -17,9 +22,14 @@ vi.mock('./workspace', () => ({
   }),
 }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
+vi.mock('@/lib/character-enrichment', async importOriginal => ({
+  ...(await importOriginal<object>()),
+  loadStrokeGeometry: async () => ({ data: { strokes: ['path one', 'path two'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, 400]]] } }),
+}));
 // The SOURCE CHECK note is checksum-bound to a lazily loaded sidecar, so the page-level hook
 // stands in for one already-validated record; the note itself renders for real.
 const enrichment = vi.hoisted(() => ({
+  bindings: { strokeCount: 2 },
   comparison: { status: 'exact-G-agreement', alternatives: [] },
   teachingCheck: null,
   mapping: { groups: [], unknownStrokeIndices: [] },
@@ -45,6 +55,8 @@ const visibleHeadingGlyphs = () => {
 };
 
 describe('character practice sections by mode', () => {
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
+  writer.create.mockReturnValue(writer);
   afterEach(cleanup);
 
   it('shows the breakdown and the source check while watching', () => {
