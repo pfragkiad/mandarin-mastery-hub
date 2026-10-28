@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
-import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, radicalVariantFallback, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
 import { useRecordScroll } from '@/lib/selection-scroll';
@@ -47,17 +47,20 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
-  const { text: spoken, reading } = speechTarget(entry, kind);
+  const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  const base = speechTarget(entry, kind);
+  const spoken = fallback ? fallback.spoken : base.text;
+  const reading = fallback ? fallback.reading : base.reading;
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{info.label.toUpperCase()} REFERENCE</div>
-    <RecordDetailTitle hanzi={entry.hanzi} pinyin={info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={info.readingFallback} meaning={info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={entry.hanzi} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{info.label}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
-    {info.component && <p className="catalog-record-note">{info.codePoint}{info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
+    {info.component && <p className="catalog-record-note">{info.codePoint}{fallback ? ` · Name and reading follow the main form ${heading.hanzi} · ${fallback.pinyin}.` : info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Radicals' || kind === 'Components' || radicalIdentity(entry.hanzi).radicals.length > 0) && kind !== 'Strokes' && <RadicalIdentityNote glyph={entry.hanzi}/>}
     {kind === 'Radicals' && heading.kangxiIndex && <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key}/>}
     <div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" disabled={Boolean(form && form.character !== heading.hanzi)} title={form && form.character !== heading.hanzi ? 'Bookmarks belong to the Kangxi family card' : undefined} onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
@@ -71,12 +74,15 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const { text: spoken, reading } = speechTarget(entry, kind);
+  const fallback = kind === 'Radicals' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  const base = speechTarget(entry, kind);
+  const spoken = fallback ? fallback.spoken : base.text;
+  const reading = fallback ? fallback.reading : base.reading;
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState<string | null>(null);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
-  const hasPinyin = Boolean(info.reading);
+  const hasPinyin = Boolean(info.reading || fallback?.pinyin);
   const hasMeaning = Boolean(info.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
   const [clipped, setClipped] = useState(false);
@@ -103,13 +109,13 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const label = `View ${entry.hanzi}${hasPinyin ? '' : `, ${info.readingFallback.toLowerCase()}`}${hasMeaning ? '' : ', no meaning recorded'}`;
   const variants = kind === 'Radicals' && entry.kangxiIndex ? [...new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character).filter(glyph => glyph !== entry.hanzi) ?? [])] : [];
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
-      <span className="word-character">{hasPinyin ? <span className="pinyin">{info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${entry.script === 'Traditional' ? 'traditional-character' : ''}`}>{entry.hanzi}</strong>{variants.length > 0 && <span className="radical-tile-forms" aria-label={`Variants of ${entry.hanzi}`}>{variants.map(glyph => <span key={glyph} lang="zh-CN" className="tile-form">{glyph}</span>)}</span>}</span></span>
+      <span className="word-character">{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${entry.script === 'Traditional' ? 'traditional-character' : ''}`}>{entry.hanzi}</strong>{variants.length > 0 && <span className="radical-tile-forms" aria-label={`Variants of ${entry.hanzi}`}>{variants.map(glyph => <span key={glyph} lang="zh-CN" className="tile-form">{glyph}</span>)}</span>}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{info.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${selected ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : info.label.toUpperCase()}</span>{entry.kangxiIndex !== undefined && <span className="word-hsk-id" title="Official Kangxi radical index" aria-label={`Kangxi radical index ${entry.kangxiIndex}`}>ID {entry.kangxiIndex}</span>}</span><span className="catalog-card-indicators">{hasExample && <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>}{(entry.decomposition || (kind === 'Radicals' && radicalStrokes(entry.hanzi)?.status === 'recorded')) && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
-    {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{info.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
+    {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{info.meaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
     <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }} metadata={entry.reuseCount !== undefined ? <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/> : entry.strokes !== undefined ? `${entry.strokes} strokes` : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? 'Stroke' : 'Stroke count not recorded'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>
     {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}

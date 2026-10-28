@@ -2,7 +2,7 @@ import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
 import { radicalSearchGlyphs } from './radical-identities';
-import { radicalFamily } from './radical-strokes';
+import { radicalFamily, radicalForms } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
@@ -85,4 +85,18 @@ export function libraryDestination(glyph: string, includeTraditional = false) {
   const index = entries.findIndex(entry => entry.id === hit.id);
   const page = index < 0 ? 1 : Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
   return { tab: hit.kind, id: hit.id, ...(page > 1 ? { page } : {}) };
+}
+
+/** A Kangxi variant form without its own recorded component name or reading inherits the
+ * family heading's name, pronunciation and audio; forms with their own data stay untouched. */
+export function radicalVariantFallback(glyph: string, ownPinyin = ''): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null } | null {
+  const hit = radicalForms(glyph).find(item => item.form.character === glyph);
+  if (!hit) return null;
+  const own = glyphPresentation(glyph, 'Radicals', ownPinyin);
+  if (own.reading) return null;
+  const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === hit.family.id && entry.hanzi === hit.family.kangxiHeading);
+  if (!heading || heading.hanzi === glyph) return null;
+  const main = glyphPresentation(heading.hanzi, 'Radicals', heading.pinyin, heading.meaning);
+  if (!main.reading) return null;
+  return { headingGlyph: heading.hanzi, pinyin: main.reading, spoken: main.speech ?? heading.hanzi, reading: main.reading || null };
 }
