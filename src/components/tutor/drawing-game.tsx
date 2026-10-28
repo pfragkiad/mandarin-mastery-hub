@@ -30,7 +30,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const card = deck?.[answers.length];
   const done = deck !== null && !card;
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
-  const review = answers.filter(answer => answer.result === 'missed' || answer.result === 'passed').map(answer => answer.entry);
+  const review = answers.filter(answer => answer.result === 'missed' || answer.result === 'passed' || answer.result === 'guided').map(answer => answer.entry);
   const unsavedReview = review.filter(entry => !saved.includes(entry.id));
   const correct = answers.filter(answer => answer.result === 'correct').length;
   const unavailable = answers.filter(answer => answer.result === 'unavailable').length;

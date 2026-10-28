@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type HanziWriter from 'hanzi-writer';
-import { ArrowRight, Eye, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, PenLine, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -30,6 +31,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
   const [audioError, setAudioError] = useState(false);
   const [guide, setGuide] = useState(false);
   const guideRef = useRef(false); guideRef.current = guide;
+  const guideUsed = useRef(false);
   const prompt = entry.word ?? entry;
   const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), prompt.pinyin);
@@ -66,7 +68,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
         },
         onComplete: () => {
           if (!active || settled.current) return;
-          settled.current = true; setState('correct');
+          settled.current = true; setState(guideUsed.current || guideRef.current ? 'guided' : 'correct');
         },
       });
     }).catch(() => { if (active) { settled.current = true; setState('unavailable'); } });
@@ -82,13 +84,13 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
     void writer.current?.showCharacter({ duration: 0 }); setState('passed');
   };
   const toggleGuide = () => {
-    const next = !guide; setGuide(next);
+    const next = !guide; setGuide(next); if (next && !settled.current) guideUsed.current = true;
     if (next) writer.current?.showOutline(); else writer.current?.hideOutline();
   };
-  const message = state === 'loading' ? 'Loading writing data…' : state === 'correct' ? `Completed${mistakes ? ` · ${mistakes} ${mistakes === 1 ? 'retry' : 'retries'}` : ' · no errors'}.`
+  const message = state === 'loading' ? 'Loading writing data…' : state === 'guided' ? 'Completed with the guide shown — this card goes into review.' : state === 'correct' ? `Completed${mistakes ? ` · ${mistakes} ${mistakes === 1 ? 'retry' : 'retries'}` : ' · no errors'}.`
     : state === 'missed' ? 'Not quite — this card goes into review.' : state === 'passed' ? 'Card passed — here is the solution.' : state === 'unavailable' ? 'No writing data available for this form. It won’t count as a mistake.'
     : mistakes ? 'Try that stroke again.' : 'Ready.';
-  const answered = state === 'correct' || state === 'missed' || state === 'passed';
+  const answered = state === 'correct' || state === 'guided' || state === 'missed' || state === 'passed';
   return <section className="drawing-board">
     <div className="drawing-prompt">
       <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
@@ -100,12 +102,13 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
       <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
-    <p className={`drawing-status${state === 'correct' ? ' is-correct' : state === 'missed' ? ' is-missed' : ''}`} role="status">{message}</p>
-    {answered && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>{state === 'correct' ? 'Correct' : 'Answer'}</span></div>}
+    <p className={`drawing-status${state === 'correct' || state === 'guided' ? ' is-correct' : state === 'missed' ? ' is-missed' : ''}`} role="status">{message}</p>
+    {answered && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>{state === 'correct' || state === 'guided' ? 'Correct' : 'Answer'}</span></div>}
     <div className="drawing-actions">
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
       {state === 'unavailable' && <Button variant="outline" onClick={() => setRetry(value => value + 1)}><RotateCcw/>Try again</Button>}
       {!answered && state !== 'unavailable' && <Button variant="outline" onClick={pass}><SkipForward/>Pass card</Button>}
+      {state === 'passed' && <Button variant="outline" asChild><Link to="/strokes" search={entry.word ? { character: entry.word.hanzi, ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi }}><PenLine/>Practice</Link></Button>}
       {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
     </div>
   </section>;
