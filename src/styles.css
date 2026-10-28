@@ -141,7 +141,7 @@
 .glyph-usage-reference > span:first-child { font-size: 18px; }
 .glyph-usage-reference .pinyin { font-size: 13px; }
 .glyph-usage-reference .glyph-usage-meaning { font-size: 13px; color: var(--foreground); }
-.glyph-usage-reference:hover { text-decoration: underline; }
+.glyph-usage-reference:hover { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
 .glyph-usage-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
 .glyph-usage-section > .glyph-usage-example:first-child > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
@@ -324,7 +324,7 @@
 @media(max-width:580px) { .catalog-tabs > [role='tablist'] { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); overflow-x: visible; }.catalog-tabs [role='tab'] { gap: 7px; font-size: 12px; padding: 0 10px; }.catalog-entry-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }.catalog-entry { padding: 10px; }.topbar-actions { gap: 4px; }.topbar-actions > a:first-child, .topbar-actions .avatar, .breadcrumb-home { display: none; }.breadcrumbs > svg { display: none; }.catalog-detail-title { gap: 12px; }.catalog-pagination { font-size: 10px; } }
 
 .daily-word > a.daily-word-content { height: auto; padding: 0; color: var(--foreground); }
-.daily-word-content:hover h3 { color: var(--primary); text-decoration: underline; }
+.daily-word-content:hover h3 { color: var(--primary); }
 .traditional-character, .is-traditional [lang="zh-CN"], .is-traditional .word-level { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
 .tile-traditional-badge { position: absolute; top: 6px; right: 32px; font-size: 9px; line-height: 14px; padding: 0 5px; letter-spacing: .2px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent); background: var(--card); z-index: 1; }
@@ -354,8 +354,10 @@
 .decomposition-glyph { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 1px solid var(--border); padding: 0 8px; margin: 0; min-width: 46px; height: 46px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; transition: border-color .15s ease, color .15s ease; }
 .decomposition-glyph-static { cursor: default; }
 .decomposition-glyph strong { font-size: 32px; font-weight: 400; }
-.decomposition-glyph:hover, .decomposition-glyph:focus-visible { background-color: transparent; border-color: var(--primary); }
-.decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); }
+/* A clickable character says so with the link colour, never an underline; the box itself stays neutral. */
+.decomposition-glyph:not(.decomposition-glyph-static) strong { color: var(--primary); }
+.decomposition-glyph:not(.decomposition-glyph-static):hover, .decomposition-glyph:not(.decomposition-glyph-static):focus-visible { background-color: transparent; border-color: var(--primary); }
+.decomposition-glyph-static:hover, .decomposition-glyph-static:focus-visible { border-color: var(--border); }
 
 .decomposition-part { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
 /* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
@@ -683,7 +685,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-form-choice.is-selected { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
 .identity-footnote { text-align: left; line-height: 1.7; overflow-wrap: anywhere; }
 .radical-family-section .detail-footnote { text-align: left; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
-.radical-family-section .detail-footnote a { color: var(--primary); text-decoration: underline; }
+.radical-family-section .detail-footnote a { color: var(--primary); }
 /* Source metadata is always collapsed behind a small (i) button. */
 .source-info-popover { max-width: min(320px, 90vw); }
 .source-info-popover > p { margin: 0; border-top: 0; padding-top: 0; text-align: left; }
