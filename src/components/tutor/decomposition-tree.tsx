@@ -41,8 +41,8 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const destination = libraryDestination(node.glyph, preferences.includeTraditional);
   const identity = radicalIdentity(node.glyph);
   const exactRecord = card?.id.split(':').slice(1).join(':') === node.glyph;
-  const classification = identity.radicals.length ? `${identity.kind === 'canonical' ? 'Kangxi radical' : 'Kangxi radical form'} ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : /^[?？]$/.test(node.glyph) ? 'Unknown or missing part' : /^\{\d+\}$/.test(node.glyph) ? 'Unencoded source component' : 'Graphical component · no sourced Kangxi identity';
-  const dictionary = exactRecord && card?.meaning ? card.meaning.split(';').map(part => part.trim()).filter(part => part && !/^Kangxi radical\s*#?\s*\d+$/i.test(part)).join('; ') : '';
+  const classification = identity.radicals.length ? `Kangxi radical ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : /^[?？]$/.test(node.glyph) ? 'Unknown or missing part' : /^\{\d+\}$/.test(node.glyph) ? 'Unencoded source component' : 'Graphical component · no sourced Kangxi identity';
+  const dictionary = exactRecord && card?.meaning ? card.meaning.split(';').map(part => part.trim()).filter(part => part && !/^(?:Kangxi radical\s*#?|rad\.?|radical)\s*#?\s*\d+$/i.test(part)).join('; ') : '';
   const presentation = card ? glyphPresentation(node.glyph, card.kind, card.pinyin, card.meaning) : null;
   const fallback = presentation?.component ? radicalVariantFallback(node.glyph, card?.pinyin ?? '') : null;
   const spoken = fallback ? fallback.spoken : exactRecord ? presentation?.speech ?? null : null;
