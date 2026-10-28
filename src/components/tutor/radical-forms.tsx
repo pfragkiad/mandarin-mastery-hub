@@ -17,5 +17,6 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference' 
           <strong lang="zh-CN">{form.character}</strong><span>{form.strokeCount} strokes</span><small>{form.formKind === 'kangxi-heading' ? 'Kangxi heading' : form.character === family.canonical ? 'Mainland form' : 'Variant'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small>
         </Link>
       </Button>)}
+    </div>
   </div>;
 }
