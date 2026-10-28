@@ -166,7 +166,7 @@
 
 /* Theme roles: body text meets WCAG AA on every surface. */
 :root.dark {
-  --stroke-selection-ink: oklch(.92 0 0); --stroke-selection-surface: oklch(.34 0 0); --stroke-selection-border: oklch(.75 0 0);
+  --stroke-selection-ink: oklch(.95 .02 200); --stroke-selection-surface: oklch(.34 0 0); --stroke-selection-border: oklch(.75 .03 200); --stroke-selection-glow: oklch(.85 .09 200 / .55);
   --component-ink-0: oklch(.82 .115 210); --component-ink-1: oklch(.82 .115 50); --component-ink-2: oklch(.82 .115 145); --component-ink-3: oklch(.82 .115 330); --component-ink-4: oklch(.82 .115 85); --component-ink-5: oklch(.82 .115 275); --component-ink-6: oklch(.82 .115 25); --component-ink-7: oklch(.82 .115 175);
   color-scheme: dark;
   --banner-ink: oklch(.96 .009 140); --banner-surface: oklch(.19 .008 155); --banner-accent: oklch(.85 .075 65); --traditional: oklch(.81 .12 305);
@@ -282,7 +282,7 @@
 .component-color-marker { display: inline-block; width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
 .stroke-component-groups { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
 .stroke-component-group { min-width: 0; max-width: 100%; }
-:root { --stroke-selection-ink: oklch(.36 0 0); --stroke-selection-surface: oklch(.91 0 0); --stroke-selection-border: oklch(.5 0 0); }
+:root { --stroke-selection-ink: oklch(.36 .02 200); --stroke-selection-surface: oklch(.91 .01 200); --stroke-selection-border: oklch(.5 .03 200); --stroke-selection-glow: oklch(.6 .07 200 / .4); }
 .stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; min-height: 32px; }
 .component-pronunciation { display: inline-flex; align-items: center; gap: 2px; }
 .stroke-component-indices { font-size: 10px; color: var(--muted-foreground); margin-left: 4px; }
