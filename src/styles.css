@@ -379,6 +379,9 @@
 .overview-library-search .hero-search-hit { flex-wrap: wrap; }
 .overview-library-search .hero-search-results { max-height: 320px; overflow-y: auto; }
 .overview-flashcards { display: flex; align-items: center; gap: 30px; padding: 26px 0; border-block: 1px solid var(--border); }
+.overview-drawing { border-top: 0; }
+.drawing-badge { width: 100px; height: 100px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 6px; background: var(--secondary); color: var(--primary); flex-shrink: 0; }
+.drawing-badge svg { width: 44px; height: 44px; }
 .overview-flashcards > div:nth-child(2) { flex: 1; min-width: 0; }
 .overview-flashcards h2 { font-family: var(--font-display); font-weight: 400; font-size: 24px; margin: 10px 0 8px; }
 .overview-flashcards p { color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
