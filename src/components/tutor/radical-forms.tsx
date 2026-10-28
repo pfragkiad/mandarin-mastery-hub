@@ -17,6 +17,6 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference' 
         </Link>
       </Button>)}
     </div>
-    <p className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family reading · {family.familyPinyin} · not a pronunciation assigned to each variant<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></p>
+    <p className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family reading · {family.familyPinyin} · shared with variant forms that lack their own recorded name<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></p>
   </div>;
 }
