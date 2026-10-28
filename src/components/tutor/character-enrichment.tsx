@@ -6,7 +6,7 @@ import { resolveEnrichment, type CharacterEnrichment } from '@/lib/character-enr
 import { Button } from '@/components/ui/button';
 import { parseIdsTree } from '@/lib/ids-tree';
 import { DecompositionTree } from './decomposition-tree';
-import { componentInk, DEFAULT_GROUPING_SOURCE } from '@/lib/practice-stroke-groups';
+import { componentInk } from '@/lib/practice-stroke-groups';
 
 export function useCharacterEnrichment(character: string, tree?: DecompositionNode) {
   const [result, setResult] = useState<{ character: string; tree: DecompositionNode; record: CharacterEnrichment } | null>(null);
@@ -51,9 +51,8 @@ export function CharacterEnrichmentNotes({ character, tree }: { character: strin
   const record = useCharacterEnrichment(character, tree);
   return <EnrichmentNotes record={record}/>;
 }
-export function ComponentPicker({ record, selected, onSelect, groupingSource = DEFAULT_GROUPING_SOURCE, onGroupingSourceChange }: { groupingSource?: string; onGroupingSourceChange?: ((source: string) => void) | undefined; record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
+export function ComponentPicker({ record, selected, onSelect }: { groupingSource?: string; onGroupingSourceChange?: ((source: string) => void) | undefined; record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
   return <div className="enrichment-note"><h4 className="eyebrow"><SquareDashedMousePointer size={13} aria-hidden="true"/>COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines<br/>Stroke order powered by Hanzi Writer · character data loads online</SourceInfo></h4>
-    {record.comparison.alternatives.length > 0 && onGroupingSourceChange && <div className="component-source-choice"><label>Grouping source<select className="filter-select" aria-label="Component grouping source" value={groupingSource} onChange={event => onGroupingSourceChange(event.target.value)}><option value={DEFAULT_GROUPING_SOURCE}>Make Me a Hanzi</option>{record.comparison.alternatives.map((alternative, index) => <option key={index} value={`babelstone-${index}`} disabled>BabelStone · {alternative.qualifiers || alternative.expression} · no stroke mapping</option>)}</select></label><SourceInfo inline className="detail-footnote">BabelStone alternatives record graphical structure, but do not include a separate component-to-stroke assignment. Their coloring is unavailable until an exact, source-bound stroke mapping is supplied.</SourceInfo></div>}
     {record.mapping.groups.length ? <><div className="component-picker">{record.mapping.groups.map((group, palette) => {
       const path = JSON.stringify(group.path);
       return <Button key={path} variant="outline" size="sm" aria-pressed={selected === path} aria-label={`Highlight ${group.glyph} strokes ${group.strokeIndices.map(i => i + 1).join(', ')}`} onClick={() => onSelect(selected === path ? '' : path)}><span className="component-color-marker" style={{ background: componentInk(palette) }}/><span lang="zh-CN">{group.glyph}</span><span>{group.strokeIndices.map(i => i + 1).join(', ')}</span></Button>;
