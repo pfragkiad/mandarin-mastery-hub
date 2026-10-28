@@ -88,6 +88,7 @@ it('offers to bookmark unknown cards after a round, saving only unsaved ids', as
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
   fireEvent.click(screen.getByRole('button', { name: 'Save 5 unknown cards' }));
