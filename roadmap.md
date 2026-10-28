@@ -78,6 +78,7 @@
 - [x] Verify vocabulary tabs, entry links, and card layouts.
 
 ## Done this session
+- [x] Rename the stroke list group to "Strokes" and move the stroke-arrows control into it as a hide/show button beside "Hide strokes" (same style, single-stroke panel included); verified the group heading, the arrows appearing over 你, and 62 tutor tests.
 - [x] Default stroke-name audio to off on both practice panels — the speaker beside Stroke tiles (or above the square in Recall) stays crossed out until the listener turns it on; verified live in Trace, Recall and Watch, with 20 playback/practice tests.
 - [x] Remove the "Hide character outline" toggle from both practice panels — guide visibility now follows the Watch/Trace/Recall tabs alone; verified the faint outline shows in Trace and the square is empty in Recall on the character and single-stroke pages, with 60 tutor tests passing.
 - [x] Put the speaker beside the pinyin on the single-stroke practice panel (speaking the stroke’s recorded Chinese name) and on the character practice panel; verified position, alignment and that the click plays the recording.
