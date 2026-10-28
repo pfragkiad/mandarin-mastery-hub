@@ -285,6 +285,23 @@ it.each(['trace', 'recall'] as const)('%s keeps stroke tiles and component headi
   expect(screen.getByRole('button', { name: 'Show stroke arrows' })).toBeEnabled();
 });
 
+it('Step after a component selection clears the highlight and draws the next group\'s first stroke', async () => {
+  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toHaveAttribute('aria-pressed', 'false');
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
+});
+
+it('Step after the last component selection starts again from the first stroke card', async () => {
+  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' })).toHaveAttribute('aria-pressed', 'false');
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
+  expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
+});
+
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());

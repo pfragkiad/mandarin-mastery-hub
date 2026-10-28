@@ -268,6 +268,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const speakStrokeName = (i: number) => { if (!mutedRef.current && strokes[i]?.name) speakTts(strokes[i].name); };
   const step = () => {
     const instance = writer.current; if (!instance || !strokes.length || playing) return;
+    // A component highlight is a viewing aid, not a playback position: pressing
+    // Step hands control back to the stroke sequence, so the highlight clears
+    // first and the next stroke draws — the following group's first stroke, or
+    // stroke one again once the last group has been revealed.
+    if (selectedGroup) setGroupSelection({ character, id: '' });
     const i = nextStepIndex(stepIndex, strokes.length);
     const run = ++animationRun.current;
     applySpeed(instance);
