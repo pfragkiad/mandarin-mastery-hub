@@ -25,7 +25,6 @@
 @media(max-width:580px) { .drawing-word-layout { grid-template-columns: minmax(0,1fr); gap: 0; } .drawing-word-context { grid-row: 1; border-left: 0; padding: 16px 0 0; } .drawing-word-characters { margin-top: 8px; } }
 .drawing-status { min-height: 42px; text-align: center; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
 .drawing-status.is-correct { color: var(--primary); }
-.drawing-status.is-missed { color: var(--destructive); }
 .drawing-answer { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--muted-foreground); font-size: 11px; }
 .drawing-answer [lang] { font-size: 32px; color: var(--foreground); }
 .drawing-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
