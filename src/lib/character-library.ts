@@ -89,8 +89,8 @@ export function libraryDestination(glyph: string, includeTraditional = false) {
 
 /** A Kangxi variant form without its own recorded component name or reading inherits the
  * family heading's name, pronunciation and audio; forms with their own data stay untouched. */
-export function radicalVariantFallback(glyph: string, ownPinyin = ''): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null } | null {
-  const hit = radicalForms(glyph).find(item => item.form.character === glyph);
+export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null } | null {
+  const hit = radicalForms(glyph).find(item => item.form.character === glyph && (familyId === undefined || item.family.id === familyId));
   if (!hit) return null;
   const own = glyphPresentation(glyph, 'Radicals', ownPinyin);
   if (own.reading) return null;
