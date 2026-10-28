@@ -241,7 +241,7 @@ it('tapping a stroke tile plays Step-style through the selected stroke and pause
   act(() => fake.animateStroke.mock.calls[0]?.[1].onComplete());
   act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
-  expect(screen.getByRole('status').textContent).toContain('Drawn through stroke 2');
+  expect(document.querySelector('.writer-status')?.textContent).toContain('Drawn through stroke 2');
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
 });
