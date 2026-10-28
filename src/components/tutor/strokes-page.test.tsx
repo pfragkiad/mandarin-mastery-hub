@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
-import { hydrateCatalog } from '@/lib/catalog-store';
+import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
+import type { RadicalStrokeFile } from '@/lib/radical-strokes';
 
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
