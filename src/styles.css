@@ -15,8 +15,10 @@
 .drawing-word-layout { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); align-items: center; gap: 24px; }
 .drawing-word-context { min-width: 0; border-left: 1px solid var(--border); padding-left: 24px; }
 .drawing-word-characters { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.drawing-word-clue { width: 58px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.drawing-character-pinyin { width: 100%; min-height: 21px; font-size: 14px; text-align: center; overflow-wrap: anywhere; }
 .drawing-word-character { width: 58px; height: 76px; flex: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted-foreground); background: var(--muted); }
-.drawing-word-character [lang] { font-size: 36px; line-height: 1.2; }
+.drawing-word-character [lang] { font-size: 36px; line-height: 1.2; min-height: 44px; }
 .drawing-word-character small { font-size: 10px; }
 .drawing-word-character.is-selected { border: 2px solid var(--primary); color: var(--primary-foreground); background: var(--primary); }
 @media(max-width:580px) { .drawing-word-layout { grid-template-columns: minmax(0,1fr); gap: 0; } .drawing-word-context { grid-row: 1; border-left: 0; padding: 16px 0 0; } .drawing-word-characters { margin-top: 8px; } }
