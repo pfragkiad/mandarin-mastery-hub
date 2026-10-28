@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Component selection reveals the completed prefix; include stroke numbers in selection and clear the group before tile playback.
+- [x] Component selection reveals the completed prefix; include stroke numbers in selection and clear the group before tile playback. Verified on 学: selecting 冖 shows strokes 1–5; tile 2 clears the glow and Step continues at stroke 3.
 - [x] Use neutral grey component selection colors and add exact component pinyin/audio beside stroke-group glyphs; verified independent audio preserves selection, neutral character/tile highlights and no phone overflow, with 27 focused tests passing.
 - [x] Consolidate component selection into Strokes, move the mapping source note there, and remove the duplicate right-column section; verified exact highlighting/toggle-off, source popover, Recall defaults and phone layout, with 34 focused tests passing.
 - [x] Remove the unusable grouping-source dropdown; keep recorded component colors and BabelStone structure comparisons intact.

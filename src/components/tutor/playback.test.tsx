@@ -298,7 +298,15 @@ const selectionRecord = () => {
 };
 it('selecting a later component instantly draws all earlier strokes and Step continues after the group', async () => {
   render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
-  fireEvent.click(await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1' }));
+  await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalledWith({ character: { main: { opacity: 1, strokes: {
+    0: { opacity: 1, displayPortion: 1 }, 1: { opacity: 0, displayPortion: 1 }, 2: { opacity: 0, displayPortion: 1 },
+  } } } }));
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
+  act(() => fake.animateStroke.mock.calls[0]?.[1].onComplete());
+  fake.animateStroke.mockClear();
+  fireEvent.click(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
   await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalledWith({ character: { main: { opacity: 1, strokes: {
     0: { opacity: 1, displayPortion: 1 }, 1: { opacity: 1, displayPortion: 1 }, 2: { opacity: 1, displayPortion: 1 },
   } } } }));
