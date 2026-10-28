@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [ ] Add Watch, Trace and Recall tabs with mode-specific controls, URL history and hidden-guide recall; verify practice and playback.
 - [x] Apply the approved Practice control arrangement; verified desktop/phone layouts, distinct outline/tile toggles and Step/Reset behavior, with 11 playback/practice tests passing.
 - [x] Remove the Practice instructional paragraph and mute the Source check comparison message; verified on 条 with passing Practice tests.
 - [x] Review Practice controls afresh; checked live Step/Reset and proposed clearer grouping, guide naming and shared audio scope without applying a redesign.
