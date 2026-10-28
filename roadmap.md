@@ -1,5 +1,5 @@
 # Mandarin tutor interface
-- [ ] Simplify practice controls: one global Reset, stroke-name audio beside tiles, and Play continuation after Step; verify.
+- [x] Simplify practice controls: one global mode-aware Reset, stroke-name audio beside tiles (beside Reset in hidden-tile Recall), and Play continuation after Step; verified live on 学 with pause/resume, Reset and mute, plus 25 focused tests.
 - [x] Remove the "WATCH · TRACE · REMEMBER" eyebrow label and its writing-tip info button from both practice panels, since the Watch/Trace/Recall tabs now carry that meaning; verified the panel starts at the tabs, the old text is gone, tabs and Back still work, and 14 practice tests pass.
 - [x] Add Watch, Trace and Recall tabs with mode-specific controls and URL history; verified playback, Back restoration, real hidden-guide Recall drawing at 100%, and 18 focused tests.
 - [x] Apply the approved Practice control arrangement; verified desktop/phone layouts, distinct outline/tile toggles and Step/Reset behavior, with 11 playback/practice tests passing.
