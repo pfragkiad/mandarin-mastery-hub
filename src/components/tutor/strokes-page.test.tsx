@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
-import { hydrateCatalog } from '@/lib/catalog-store';
+import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
+import type { RadicalStrokeFile } from '@/lib/radical-strokes';
 
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
@@ -39,13 +40,24 @@ vi.mock('./character-enrichment', async importOriginal => ({
   useCharacterEnrichment: () => enrichment,
 }));
 
-hydrateCatalog({
+const catalogData: CatalogFile = {
   version: 1, source: 'test',
   characters: [['学', 'xué', 'learn', '8 strokes · 子 radical']],
   radicals: [], components: [], strokes: [],
   trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] } },
   readingAudio: {}, audio: {},
-});
+};
+
+hydrateCatalog(catalogData);
+
+// A one-form radical family so the page's radical-family section has something to render.
+const familyFile: RadicalStrokeFile = {
+  schemaVersion: 1, source: 'test family', records: {},
+  families: [{
+    id: 17, canonical: '冂', kangxiHeading: '冂', familyPinyin: 'jiōng',
+    forms: [{ key: 'main', character: '冂', aliases: [], formKind: 'kangxi-heading', strokeCount: 2, record: { status: 'recorded', strokes: [] } }],
+  }],
+};
 
 const visibleHeadingGlyphs = () => {
   const heading = screen.getByRole('heading', { name: 'Get to know 学' });
@@ -84,5 +96,18 @@ describe('character practice sections by mode', () => {
     expect(visibleHeadingGlyphs()).toEqual([]);
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
+  });
+
+  it('shows the radical family while watching a radical form', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="watch"/>);
+    expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
+  });
+
+  it('hides the radical family and the whole detail card in recall', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="recall"/>);
+    expect(screen.queryByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeNull();
+    expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
   });
 });
