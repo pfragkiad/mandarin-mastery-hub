@@ -38,5 +38,25 @@ describe('stroke practice pronunciation', () => {
     expect(button).toHaveClass('practice-listen');
     expect(button.closest('.practice-meaning')).not.toBeNull();
     expect(screen.queryByRole('button', { name: 'Listen to ㇐' })).toBeNull();
+});
+
+describe('stroke practice heading', () => {
+  const visibleGlyphs = (heading: HTMLElement) =>
+    Array.from(heading.querySelectorAll('span'))
+      .filter(node => !node.classList.contains('sr-only'))
+      .map(node => node.textContent);
+
+  it('shows the stroke form in the heading while watching or tracing', () => {
+    const { unmount } = render(<StrokePractice glyph="㇐" mode="watch" />);
+    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual(['㇐']);
+    unmount();
+    render(<StrokePractice glyph="㇐" mode="trace" />);
+    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual(['㇐']);
+  });
+
+  it('hides the stroke form from the heading in recall, but keeps the reading and meaning', () => {
+    render(<StrokePractice glyph="㇐" mode="recall" />);
+    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual([]);
+    expect(screen.getByText('héng')).toBeInTheDocument();
   });
 });
