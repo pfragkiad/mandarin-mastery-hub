@@ -307,7 +307,7 @@
 .decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
 
 .decomposition-part { display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; }
-.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }
+.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; vertical-align: middle; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
