@@ -211,13 +211,11 @@ it('the Strokes group holds the arrow control, and turning it on draws the direc
   await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
 });
 
-it('the single-stroke panel offers the same arrow button', async () => {
+it('the single-stroke panel uses the same arrow button instead of a switch', async () => {
   render(<StrokePractice glyph="㇐" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
-  const arrows = screen.getByRole('button', { name: 'Show stroke arrows' });
-  expect(arrows.tagName).toBe('BUTTON');
-  fireEvent.click(arrows);
-  await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
+  expect(screen.getByRole('button', { name: 'Show stroke arrows' })).toBeTruthy();
+  expect(screen.queryByRole('switch')).toBeNull();
 });
 
 it('changing mode cancels an old playback run without remounting the writer', async () => {
