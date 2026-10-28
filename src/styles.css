@@ -281,7 +281,7 @@
 :root { --component-ink-0: oklch(.44 .105 210); --component-ink-1: oklch(.44 .105 50); --component-ink-2: oklch(.44 .105 145); --component-ink-3: oklch(.44 .105 330); --component-ink-4: oklch(.44 .105 85); --component-ink-5: oklch(.44 .105 275); --component-ink-6: oklch(.44 .105 25); --component-ink-7: oklch(.44 .105 175); }
 .component-color-marker { display: inline-block; width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
 .stroke-component-groups { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
-.stroke-component-group { min-width: 0; max-width: 100%; }
+.stroke-component-group { min-width: 0; max-width: 100%; border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px 6px; }
 :root { --stroke-selection-ink: oklch(.36 .02 200); --stroke-selection-surface: oklch(.91 .01 200); --stroke-selection-border: oklch(.5 .03 200); --stroke-selection-glow: oklch(.6 .07 200 / .4); }
 .stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 32px; }
 .component-pronunciation { display: inline-flex; align-items: center; gap: 2px; }
