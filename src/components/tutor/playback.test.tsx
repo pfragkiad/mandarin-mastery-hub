@@ -231,6 +231,21 @@ it('the single-stroke panel uses the same arrow button instead of a switch', asy
   expect(screen.queryByRole('switch')).toBeNull();
 });
 
+it('tapping a stroke tile plays Step-style through the selected stroke and pauses there', async () => {
+  render(<WritingPractice character="我" mode="watch"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  await screen.findByRole('button', { name: 'Play stroke 3' });
+  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 2' }));
+  expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
+  act(() => fake.animateStroke.mock.calls[0]?.[1].onComplete());
+  act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
+  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
+  expect(screen.getByRole('status').textContent).toContain('Drawn through stroke 2');
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
+});
+
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
