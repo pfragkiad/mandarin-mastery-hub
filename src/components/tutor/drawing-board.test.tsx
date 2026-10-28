@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { DrawingBoard } from './drawing-board';
 
 const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn() }));
+vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children }: { to: string; search: Record<string, unknown>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(Object.entries(search).map(([k, v]) => [k, String(v)]))}`}>{children}</a> }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'dark', preferences: { slow: false } }) }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
@@ -78,4 +79,22 @@ it('changing Allow errors during a card preserves drawing progress', async () =>
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
   expect(fake.create).toHaveBeenCalledTimes(1);
   expect(fake.cancelQuiz).not.toHaveBeenCalled();
+});
+it('a card completed after showing the guide goes to review, not correct', async () => {
+  const finish = vi.fn();
+  render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  fireEvent.click(screen.getByRole('button', { name: 'Show guide' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Hide guide' }));
+  act(() => fake.quiz.mock.calls[0]?.[0].onComplete());
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+  expect(finish).toHaveBeenCalledWith('guided');
+});
+it('a passed word card offers Practice for that word focused on the drawn character', async () => {
+  const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
+  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} allowErrors onFinish={vi.fn()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  expect(screen.queryByRole('link', { name: 'Practice' })).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
 });
