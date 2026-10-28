@@ -72,9 +72,12 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     </div><p className="source-note">{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}</p>
   </section>;
 }
+/** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
+export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^Kangxi radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const tileMeaning = kind === 'Radicals' ? stripKangxiLabel(info.meaning) : info.meaning;
   const fallback = kind === 'Radicals' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
@@ -111,7 +114,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const variants = kind === 'Radicals' && entry.kangxiIndex ? [...new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character).filter(glyph => glyph !== entry.hanzi) ?? [])] : [];
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${entry.script === 'Traditional' ? 'traditional-character' : ''}`}>{entry.hanzi}</strong>{variants.length > 0 && <span className="radical-tile-forms" aria-label={`Variants of ${entry.hanzi}`}>{variants.map(glyph => <span key={glyph} lang="zh-CN" className="tile-form">{glyph}</span>)}</span>}</span></span>
-      {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{info.meaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
+      {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{tileMeaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${selected ? 'is-selected' : ''}`}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : info.label.toUpperCase()}</span>{entry.kangxiIndex !== undefined && <span className="word-hsk-id" title="Official Kangxi radical index" aria-label={`Kangxi radical index ${entry.kangxiIndex}`}>ID {entry.kangxiIndex}</span>}</span><span className="catalog-card-indicators">{hasExample && <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>}{(entry.decomposition || (kind === 'Radicals' && radicalStrokes(entry.hanzi)?.status === 'recorded')) && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
