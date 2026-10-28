@@ -247,8 +247,10 @@
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 .decomposition-tree { list-style: none; margin: 18px 0; padding: 0; }
 .decomposition-tree ul { list-style: none; margin: 8px 0 18px 12px; padding: 0 0 0 18px; border-left: 1px solid var(--border); }
-.decomposition-node { display: flex; align-items: center; gap: 20px; min-height: 46px; }
-.decomposition-node > span { width: 36px; flex-shrink: 0; font-size: 11px; color: var(--muted-foreground); }
+/* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
+   short distance to the right of every label (root, top, bottom, stroke numbers). */
+.decomposition-node { display: flex; align-items: center; gap: 10px; min-height: 46px; }
+.decomposition-node > span { width: 40px; flex-shrink: 0; text-align: right; font-size: 11px; color: var(--muted-foreground); }
 .decomposition-node strong { font-size: 32px; font-weight: 400; }
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; }
