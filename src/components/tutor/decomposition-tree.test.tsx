@@ -29,7 +29,7 @@ describe('Decomposition component audio', () => {
     const facts = screen.getByText(/Kangxi radical/);
     expect(facts.closest('.decomposition-facts')!.querySelector('.pinyin')).toHaveTextContent('mù');
     const button = screen.getByRole('button', { name: 'Listen to 木' });
-    await userEvent.click(button);
+    fireEvent.click(button);
     expect(playCharacter).toHaveBeenCalledWith('木', false, 'mù');
   });
 
@@ -37,7 +37,7 @@ describe('Decomposition component audio', () => {
     render(<DecompositionTree node={{ glyph: '⻗', position: '' }}/>);
     expect(screen.getByText('yǔ')).toBeInTheDocument();
     const button = screen.getByRole('button', { name: 'Listen to 雨' });
-    await userEvent.click(button);
+    fireEvent.click(button);
     expect(playCharacter).toHaveBeenCalledWith('雨', false, 'yǔ');
   });
 
