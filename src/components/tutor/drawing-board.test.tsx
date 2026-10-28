@@ -2,7 +2,7 @@ import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { DrawingBoard } from './drawing-board';
 
-const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), quiz: vi.fn() }));
+const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'dark', preferences: { slow: false } }) }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => false }));
@@ -50,13 +50,26 @@ it('strict mode ends on its first mistake and cannot later become correct', asyn
   fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
   expect(finish).toHaveBeenCalledWith('missed');
 });
-it('Pass card advances as passed, never correct', async () => {
+it('Pass card shows the solution first, then advances as passed, never correct', async () => {
   const finish = vi.fn();
   render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   expect(fake.cancelQuiz).toHaveBeenCalledTimes(1);
+  expect(fake.showCharacter).toHaveBeenCalledWith({ duration: 0 });
+  expect(finish).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
   expect(finish).toHaveBeenCalledWith('passed');
+});
+it('the guide starts hidden but can be toggled while drawing', async () => {
+  render(<DrawingBoard entry={entry} allowErrors onFinish={vi.fn()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  expect(fake.create.mock.calls[0]?.[2]).toMatchObject({ showOutline: false });
+  expect(fake.showOutline).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button', { name: 'Show guide' }));
+  expect(fake.showOutline).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Hide guide' }));
+  expect(fake.hideOutline).toHaveBeenCalledTimes(1);
 });
 it('changing Allow errors during a card preserves drawing progress', async () => {
   const { rerender } = render(<DrawingBoard entry={entry} allowErrors={false} onFinish={vi.fn()}/>);
