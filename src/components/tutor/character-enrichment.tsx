@@ -51,7 +51,7 @@ export function CharacterEnrichmentNotes({ character, tree }: { character: strin
   return <EnrichmentNotes record={record}/>;
 }
 export function ComponentPicker({ record, selected, onSelect }: { record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
-  return <div className="enrichment-note"><h4 className="eyebrow"><SquareDashedMousePointer size={13} aria-hidden="true"/>COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</SourceInfo></h4>
+  return <div className="enrichment-note"><h4 className="eyebrow"><SquareDashedMousePointer size={13} aria-hidden="true"/>COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines<br/>Stroke order powered by Hanzi Writer · character data loads online</SourceInfo></h4>
     {record.mapping.groups.length ? <><div className="component-picker">{record.mapping.groups.map(group => {
       const path = JSON.stringify(group.path);
       return <Button key={path} variant="outline" size="sm" aria-pressed={selected === path} aria-label={`Highlight ${group.glyph} strokes ${group.strokeIndices.map(i => i + 1).join(', ')}`} onClick={() => onSelect(selected === path ? '' : path)}><span lang="zh-CN">{group.glyph}</span><span>{group.strokeIndices.map(i => i + 1).join(', ')}</span></Button>;
