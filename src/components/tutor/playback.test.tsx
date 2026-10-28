@@ -226,7 +226,7 @@ it.each([['character', <WritingPractice key="a" character="我" mode="trace"/>],
 
 it('the Strokes group holds the arrow control, and turning it on draws the direction arrows', async () => {
   render(<WritingPractice character="我" mode="trace"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke 3' })).toBeEnabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke 3' })).toBeDisabled());
   const group = document.querySelector('.stroke-guide');
   expect(group).not.toBeNull();
   expect(screen.queryByText('Stroke tiles')).toBeNull();
@@ -263,22 +263,43 @@ it('tapping a stroke tile jumps straight to it: earlier strokes appear instantly
   expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
 });
 
-it.each(['trace', 'recall'] as const)('%s stroke tiles stay clickable and retarget while an animation is running', async mode => {
-  render(<WritingPractice character="我" mode={mode}/>);
+it('watch mode keeps stroke tiles and component headings clickable', async () => {
+  render(<WritingPractice character="学" mode="watch" enrichment={selectionRecord()}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke 1' })).toBeEnabled());
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeEnabled();
+  expect(document.querySelector('.stroke-guide')).not.toHaveClass('stroke-guide-readonly');
+});
+
+it.each(['trace', 'recall'] as const)('%s keeps stroke tiles and component headings inert, leaving only playback and pronunciation controls live', async mode => {
+  render(<WritingPractice character="学" mode={mode} enrichment={selectionRecord()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   if (mode === 'recall') fireEvent.click(screen.getByRole('button', { name: 'Show strokes' }));
-  await screen.findByRole('button', { name: 'Play stroke 3' });
-  expect(screen.getByRole('button', { name: 'Play stroke 2' })).toBeEnabled();
-  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 2' }));
+  const tile = await screen.findByRole('button', { name: 'Play stroke 1' });
+  expect(tile).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
+  expect(document.querySelector('.stroke-guide')).toHaveClass('stroke-guide-readonly');
+  // A tap on an inert tile must never start a writing animation.
+  fireEvent.click(tile);
+  expect(fake.animateStroke).not.toHaveBeenCalled();
+  expect(screen.getByRole('button', { name: /stroke names/ })).toBeEnabled();
+  expect(screen.getByRole('button', { name: 'Show stroke arrows' })).toBeEnabled();
+});
+
+it('Step after a component selection clears the highlight and draws the next group\'s first stroke', async () => {
+  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toHaveAttribute('aria-pressed', 'false');
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
+});
+
+it('Step after the last component selection starts again from the first stroke card', async () => {
+  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Step' }));
+  expect(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' })).toHaveAttribute('aria-pressed', 'false');
   expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
-  // A second tap before the first animation finishes retargets instead of being swallowed.
-  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 3' }));
-  expect(fake.animateStroke).toHaveBeenCalledTimes(2);
-  act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
-  act(() => fake.animateStroke.mock.calls[2]?.[1].onComplete());
-  act(() => fake.animateStroke.mock.calls[3]?.[1].onComplete());
-  act(() => fake.animateStroke.mock.calls[4]?.[1].onComplete());
-  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 0, 1, 2, 3]);
+  expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
 });
 
 it('changing mode cancels an old playback run without remounting the writer', async () => {
