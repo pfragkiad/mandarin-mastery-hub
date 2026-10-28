@@ -1,3 +1,4 @@
+import { SourceInfo } from '@/components/tutor/source-info';
 import { useState } from 'react';
 import { Bookmark, Volume2, PenLine, Check } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
@@ -43,7 +44,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </div>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} />}
     <VocabularyDecomposition word={word}/>
-    <p className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</p>
+    <SourceInfo className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo>
   </>;
 }
 
