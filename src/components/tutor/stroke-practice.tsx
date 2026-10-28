@@ -3,6 +3,8 @@ import { Link } from '@tanstack/react-router';
 import { Eye, EyeOff, Lightbulb, Pause, PenLine, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
+import { PracticeModeTabs } from './practice-mode-tabs';
+import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { libraryEntries } from '@/lib/character-library';
 import { strokeExamples } from '@/lib/stroke-examples';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
@@ -30,7 +32,10 @@ export function strokeSpeech(entry?: { note: string; pinyin: string }) {
 }
 
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
-export function StrokePractice({ glyph }: { glyph: string }) {
+export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { glyph: string; mode?: PracticeMode; onModeChange?: (mode: PracticeMode) => void }) {
+  const [localMode, setLocalMode] = useState<PracticeMode>('watch');
+  const practiceMode = selectedMode ?? localMode;
+  const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };
   const { catalogVersion, theme, preferences } = useWorkspace();
   const entry = libraryEntries('Strokes').find(item => item.hanzi === glyph);
   // A stroke glyph (㇐) has no sound of its own — the stroke's Chinese name (横) is what a voice can say.
@@ -81,7 +86,7 @@ export function StrokePractice({ glyph }: { glyph: string }) {
             })
             .catch(err => onError(err));
         },
-        onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage('Watch the stroke, then try it yourself.'); } },
+        onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage(''); } },
         onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); },
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
@@ -104,24 +109,34 @@ export function StrokePractice({ glyph }: { glyph: string }) {
     animationRun.current += 1;
     setMode('trace'); setMessage(guide ? 'Trace the stroke over the guide.' : 'Write the stroke from memory.');
     void w.quiz({
-      showHintAfterMisses: 2,
+      ...practiceModeOptions(practiceMode),
       onMistake: () => setMessage('Try again — check the starting point, direction and shape.'),
       onComplete: () => { setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
-  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); void w.showCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
+  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); };
+
+  useEffect(() => {
+    if (!ready || !writer.current) return;
+    animationRun.current += 1; writer.current.cancelQuiz(); setMode('idle');
+    const outline = practiceModeOptions(practiceMode).showOutline;
+    setGuide(outline); setArrows(false);
+    if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
+    if (practiceMode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
+    else practice();
+  }, [practiceMode, ready, glyph]);
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
-    <section className="writing-tool"><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span></div>
+    <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/><div className="tool-top"><span className="eyebrow">WATCH · TRACE · REMEMBER</span></div>
       {example ? <>
         <div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div>
         <p className="writer-status" role="status">{message}</p>
-        <div className="writer-controls writer-controls-arranged"><div className="writer-playback">
+        <div className="writer-controls writer-controls-arranged">{practiceMode === 'watch' && <div className="writer-playback">
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
-<label className="writer-speed">Animation speed<input type="range" min={0} max={SPEEDS.length - 1} step={1} value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{SPEEDS[speedIndex]}×</span></label></div><div className="writer-practice"><Button disabled={!ready} variant="outline" onClick={practice}><PenLine/>Practice</Button></div><div className="writer-reset"><Button disabled={!ready} variant="outline" size="icon" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/></Button></div>
-        </div><div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>
+<label className="writer-speed">Animation speed<input type="range" min={0} max={SPEEDS.length - 1} step={1} value={speedIndex} onChange={e => setSpeedIndex(Number(e.target.value))}/><span>{SPEEDS[speedIndex]}×</span></label></div>}<div className="writer-practice">{practiceMode !== 'watch' && <Button disabled={!ready} onClick={practice}><PenLine/>{practiceMode === 'trace' ? 'Trace again' : 'Recall again'}</Button>}</div><div className="writer-reset"><Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button></div>
+        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>
