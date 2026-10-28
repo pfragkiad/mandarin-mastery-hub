@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Correct the title to continuous, equal-style “One stroke at a time. Get to know” with printing on its row; move reading/facts above the left writing card and reduce sentence-case Decomposition. Verified desktop/phone screenshots, print opening, Recall and 10 passing tests.
 - [x] Reorganize Practice headings and reading/facts on every screen, relocate printing, promote Decomposition and align the Strokes info/label; verified desktop/400px layout, print sheet opening, Recall hiding, matching Strokes/Source check typography, 10 focused tests and clean build.
 - [x] Component selection reveals the completed prefix; include stroke numbers in selection and clear the group before tile playback. Verified on 学: selecting 冖 shows strokes 1–5; tile 2 clears the glow and Step continues at stroke 3.
 - [x] Use neutral grey component selection colors and add exact component pinyin/audio beside stroke-group glyphs; verified independent audio preserves selection, neutral character/tile highlights and no phone overflow, with 27 focused tests passing.
