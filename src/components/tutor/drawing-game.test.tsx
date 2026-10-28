@@ -66,6 +66,18 @@ it('deals every filtered card when the deck size is All cards', async () => {
   expect(await screen.findByText('Card 1 of 12')).toBeTruthy();
 });
 
+it('the guide returns to hidden on every new card and round', async () => {
+  render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(await screen.findByRole('button', { name: 'Start · 10 of 12 cards' }));
+  await screen.findByText('Card 1 of 10');
+  fireEvent.click(screen.getByRole('button', { name: 'Show guide' }));
+  expect(screen.getByRole('button', { name: 'Hide guide' })).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+  await screen.findByText('Card 2 of 10');
+  expect(screen.getByRole('button', { name: 'Show guide' })).toBeTruthy();
+});
+
 it('a review round replays every missed card', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.change(await screen.findByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
