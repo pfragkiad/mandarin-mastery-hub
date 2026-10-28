@@ -1,4 +1,4 @@
-import type { CharacterEnrichment, ComponentOccurrence } from './character-enrichment';
+import type { CharacterEnrichment } from './character-enrichment';
 
 export type PracticeStrokeGroup = { id: string; glyph: string | null; strokeIndices: number[]; palette: number };
 export const DEFAULT_GROUPING_SOURCE = 'make-me-a-hanzi';
@@ -18,10 +18,6 @@ export function practiceStrokeGroups(character: string, count: number, record: C
   const indices = groups.flatMap(group => group.strokeIndices);
   if (indices.length !== count || new Set(indices).size !== count || indices.some(i => i < 0 || i >= count)) return whole();
   return groups;
-}
-
-export function componentGroups(character: string, count: number, groups: ComponentOccurrence[]): PracticeStrokeGroup[] {
-  return practiceStrokeGroups(character, count, { bindings: { strokeCount: count }, mapping: { status: 'complete', groups, unknownStrokeIndices: [] } } as CharacterEnrichment);
 }
 
 export function strokeGroupAt(groups: PracticeStrokeGroup[], index: number) {
