@@ -100,17 +100,43 @@ it('selecting occurrence strokes while paused does not replace or resume the ani
   expect(fake.animateStroke).toHaveBeenCalledTimes(1);
 });
 
-it('step mode keeps whole-character playback off until Reset or Practice', async () => {
+it('Play after Step draws only remaining strokes and keeps pause/resume available', async () => {
   render(<WritingPractice character="我"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
-  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Pause' })).toBeDisabled();
   const drawn = fake.animateStroke.mock.calls[0]?.[1].onComplete;
   act(() => drawn());
-  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeDisabled();
-  expect(screen.queryByRole('button', { name: 'Pause' })).toBeNull();
+  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
+  expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Resume' }));
+  expect(fake.resumeAnimation).toHaveBeenCalledTimes(1);
+  act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
+  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1, 2]);
   fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
   expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1, 2, 0]);
+});
+
+it.each(['trace', 'recall'] as const)('global Reset restarts %s with cleared scores and mode-specific hints', async mode => {
+  render(<WritingPractice character="我" mode={mode}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  act(() => fake.quiz.mock.calls[0]?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 2 }));
+  fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
+  expect(fake.quiz).toHaveBeenCalledTimes(2);
+  expect(fake.quiz.mock.calls[1]?.[0].showHintAfterMisses).toBe(mode === 'recall' ? false : 2);
+});
+
+it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice', async mode => {
+  render(<StrokePractice glyph="㇐" mode={mode}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  fireEvent.click(screen.getByRole('button', { name: 'Reset stroke' }));
+  expect(fake.quiz).toHaveBeenCalledTimes(2);
+  expect(fake.quiz.mock.calls[1]?.[0].showHintAfterMisses).toBe(mode === 'recall' ? false : 2);
 });
 
 describe('matched practice stroke speech', () => {
