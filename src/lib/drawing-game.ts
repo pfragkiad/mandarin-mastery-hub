@@ -5,9 +5,9 @@ import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; errors?: boolean | undefined; collection?: string | undefined; level?: string | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
-export type DrawingResult = 'correct' | 'guided' | 'missed' | 'passed' | 'unavailable';
+export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const kind = drawingKinds.find(value => value === search['kind']);
@@ -17,7 +17,7 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
     ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
-    ...(filtered && usage ? { usage } : {}), ...(search['errors'] === true || search['errors'] === 'true' ? { errors: true } : {}) };
+    ...(filtered && usage ? { usage } : {}) };
 }
 
 /** Use actual recorded clues, explicit script flags and the library's sourced usage counts. */
@@ -62,8 +62,4 @@ export function shuffledDrawingDeck(entries: DrawingCard[], size = 10): DrawingC
     const selected = characters[Math.floor(Math.random() * characters.length)];
     return selected ? { ...card, hanzi: selected.hanzi, characterIndex: selected.index } : card;
   });
-}
-
-export function mistakeOutcome(allowErrors: boolean): 'drawing' | 'missed' {
-  return allowErrors ? 'drawing' : 'missed';
 }

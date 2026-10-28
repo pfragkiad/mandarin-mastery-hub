@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { drawingPool, drawingWordPool, drawingWordClues, drawingSearch, mistakeOutcome, shuffledDrawingDeck } from './drawing-game';
+import { drawingPool, drawingWordPool, drawingWordClues, drawingSearch, shuffledDrawingDeck } from './drawing-game';
 import { words } from './mandarin';
 import type { Word } from './mandarin';
 import { libraryEntries, type LibraryEntry } from './character-library';
@@ -75,10 +75,6 @@ describe('drawing game rules', () => {
     const traditional: LibraryEntry = { id: 't', hanzi: '國', pinyin: 'guó', meaning: 'country', note: '', script: 'Traditional' };
     expect(drawingPool([traditional], {}, false)).toEqual([]);
     expect(drawingPool([traditional], {}, true)).toEqual([traditional]);
-  });
-  it('allows errors to retry and rejects the first error when disabled', () => {
-    expect(mistakeOutcome(true)).toBe('drawing');
-    expect(mistakeOutcome(false)).toBe('missed');
   });
   it('creates nonrepeating bounded rounds without mutating the catalogue', () => {
     const before = [...entries];

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
-import { drawingWordClues, mistakeOutcome, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
+import { drawingWordClues, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 
@@ -18,11 +18,10 @@ function writerColor(token: string) {
   return `#${Array.from(canvas.getImageData(0, 0, 1, 1).data).slice(0, 3).map(value => value.toString(16).padStart(2, '0')).join('')}`;
 }
 
-export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingCard; allowErrors: boolean; onFinish: (result: DrawingResult) => void }) {
+export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void }) {
   const { theme, preferences } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
-  const allowRef = useRef(allowErrors); allowRef.current = allowErrors;
   const settled = useRef(false);
   const [state, setState] = useState<'loading' | 'drawing' | DrawingResult>('loading');
   const [mistakes, setMistakes] = useState(0);
@@ -58,10 +57,6 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
         onMistake: () => {
           if (!active || settled.current) return;
           setMistakes(count => count + 1);
-          if (mistakeOutcome(allowRef.current) === 'missed') {
-            settled.current = true; instance?.cancelQuiz();
-            void instance?.showCharacter({ duration: 0 }); setState('missed');
-          }
         },
         onCorrectStroke: stroke => {
           if (active && !settled.current) setProgress({ completed: stroke.strokeNum + 1, total: data.strokes.length });
@@ -88,9 +83,9 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
     if (next) writer.current?.showOutline(); else writer.current?.hideOutline();
   };
   const message = state === 'loading' ? 'Loading writing data…' : state === 'guided' ? 'Completed with the guide shown — this card goes into review.' : state === 'correct' ? `Completed${mistakes ? ` · ${mistakes} ${mistakes === 1 ? 'retry' : 'retries'}` : ' · no errors'}.`
-    : state === 'missed' ? 'Not quite — this card goes into review.' : state === 'passed' ? 'Card passed — here is the solution.' : state === 'unavailable' ? 'No writing data available for this form. It won’t count as a mistake.'
+    : state === 'passed' ? 'Card passed — here is the solution.' : state === 'unavailable' ? 'No writing data available for this form. It won’t count as a mistake.'
     : mistakes ? 'Try that stroke again.' : 'Ready.';
-  const answered = state === 'correct' || state === 'guided' || state === 'missed' || state === 'passed';
+  const answered = state === 'correct' || state === 'guided' || state === 'passed';
   return <section className="drawing-board">
     <div className="drawing-prompt">
       <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
@@ -102,7 +97,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
       <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
-    <p className={`drawing-status${state === 'correct' || state === 'guided' ? ' is-correct' : state === 'missed' ? ' is-missed' : ''}`} role="status">{message}</p>
+    <p className={`drawing-status${state === 'correct' || state === 'guided' ? ' is-correct' : ''}`} role="status">{message}</p>
     {answered && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>{state === 'correct' || state === 'guided' ? 'Correct' : 'Answer'}</span></div>}
     <div className="drawing-actions">
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
