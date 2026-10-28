@@ -97,4 +97,17 @@ describe('character practice sections by mode', () => {
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
   });
+
+  it('shows the radical family while watching a radical form', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="watch"/>);
+    expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
+  });
+
+  it('hides the radical family and the whole detail card in recall', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="recall"/>);
+    expect(screen.queryByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeNull();
+    expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
+  });
 });
