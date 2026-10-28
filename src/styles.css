@@ -250,10 +250,10 @@
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
    short distance to the right of every label (root, top, bottom, stroke numbers). */
 .decomposition-node { display: flex; align-items: center; gap: 10px; min-height: 46px; }
-.decomposition-node > span { min-width: 34px; flex-shrink: 0; text-align: left; font-size: 11px; color: var(--muted-foreground); }
+.decomposition-node > span { width: 42px; flex-shrink: 0; text-align: left; font-size: 11px; color: var(--muted-foreground); }
 .decomposition-node strong { font-size: 32px; font-weight: 400; }
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
-.decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; }
+.decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; margin: 0 6px; }
 .decomposition-layout small { font-size: 12px; }
 .enrichment-note .decomposition-node > span { flex-shrink: 0; }
 .enrichment-note .decomposition-layout { min-width: 0; flex-wrap: wrap; }
@@ -327,11 +327,11 @@
 .tile-tooltip-head .pinyin { font-size: 11px; }
 .tile-tooltip-meaning { font-size: 11px; line-height: 1.5; color: var(--foreground); white-space: normal; }
 .tile-tooltip .traditional-label { font-size: 9px; }
-.decomposition-glyph { background: none; border: none; padding: 0 2px; margin: 0 -2px; cursor: pointer; border-radius: 8px; line-height: 1; }
+.decomposition-glyph { background: none; border: none; padding: 0; margin: 0; min-width: 40px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; }
 .decomposition-glyph strong { font-size: 32px; font-weight: 400; text-decoration: underline dotted var(--border); text-underline-offset: 7px; text-decoration-thickness: 1.5px; transition: color .15s ease, text-decoration-color .15s ease; }
 .decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
 
-.decomposition-part { display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; }
+.decomposition-part { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
 .decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; white-space: nowrap; }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; vertical-align: middle; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
