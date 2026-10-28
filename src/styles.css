@@ -283,6 +283,7 @@
 .stroke-component-group { min-width: 0; max-width: 100%; }
 .stroke-component-label { display: flex; align-items: center; gap: 7px; font-size: 10px; color: var(--muted-foreground); min-height: 24px; }
 .stroke-component-label [lang] { font-size: 19px; color: var(--foreground); }
+.stroke-component-label[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
 .stroke-component-group .stroke-guide-strip { margin-top: 7px; }
 .component-source-choice { display: flex; align-items: center; gap: 6px; margin-top: 14px; }
 .component-source-choice label { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 10px; color: var(--muted-foreground); }
