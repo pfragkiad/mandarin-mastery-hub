@@ -38,6 +38,7 @@ describe('stroke practice pronunciation', () => {
     expect(button).toHaveClass('practice-listen');
     expect(button.closest('.practice-meaning')).not.toBeNull();
     expect(screen.queryByRole('button', { name: 'Listen to ㇐' })).toBeNull();
+  });
 });
 
 describe('stroke practice heading', () => {
