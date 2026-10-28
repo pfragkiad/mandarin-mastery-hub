@@ -189,6 +189,14 @@ it('Trace starts guided handwriting with a visible outline', async () => {
   expect(fake.quiz.mock.calls[0]?.[0].showHintAfterMisses).toBe(2);
 });
 
+it.each([['character', <WritingPractice key="a" character="我" mode="trace"/>], ['single stroke', <StrokePractice key="b" glyph="㇐" mode="trace"/>]] as const)(
+  'the %s panel keeps the outline on with no separate outline switch', async (_label, panel) => {
+    render(panel);
+    await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+    expect(screen.queryByRole('button', { name: /character outline/i })).toBeNull();
+    expect(fake.hideOutline).not.toHaveBeenCalled();
+  });
+
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());

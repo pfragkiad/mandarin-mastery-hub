@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Eye, EyeOff, Lightbulb, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
+import { Lightbulb, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
@@ -54,7 +54,6 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const [message, setMessage] = useState('Loading stroke…');
   const [sheet, setSheet] = useState(false);
   const [outline, setOutline] = useState<string | null>(null);
-  const [guide, setGuide] = useState(true);
   const [arrows, setArrows] = useState(false);
   const [median, setMedian] = useState<MedianPoint[]>([]);
   const [speed, setSpeedValue] = useState<number>(SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
@@ -74,7 +73,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
       const outline = toHex(style.getPropertyValue('--writer-outline').trim());
       const accent = toHex(style.getPropertyValue('--terracotta').trim());
       writer.current = Writer.create(node, example.character, {
-        width: 300, height: 300, padding: 22, showOutline: guide, strokeAnimationSpeed: speedRef.current, drawingWidth: 6,
+        width: 300, height: 300, padding: 22, showOutline: practiceModeOptions(practiceMode).showOutline, strokeAnimationSpeed: speedRef.current, drawingWidth: 6,
         ...(ink ? { strokeColor: ink } : {}), ...(outline ? { outlineColor: outline } : {}), ...(accent ? { drawingColor: accent, highlightColor: accent } : {}),
         charDataLoader: (char, onLoad, onError) => {
           fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(char)}.json`)
@@ -108,20 +107,20 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const practice = () => {
     const w = writer.current; if (!w) return;
     animationRun.current += 1;
-    setMode('trace'); setMessage(guide ? 'Trace the stroke over the guide.' : 'Write the stroke from memory.');
+    setMode('trace'); setMessage(practiceModeOptions(practiceMode).showOutline ? 'Trace the stroke over the guide.' : 'Write the stroke from memory.');
     void w.quiz({
       ...practiceModeOptions(practiceMode),
       onMistake: () => setMessage('Try again — check the starting point, direction and shape.'),
       onComplete: () => { setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
-  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (guide) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); if (practiceMode !== 'watch') practice(); };
+  const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (practiceModeOptions(practiceMode).showOutline) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); if (practiceMode !== 'watch') practice(); };
 
   useEffect(() => {
     if (!ready || !writer.current) return;
     animationRun.current += 1; writer.current.cancelQuiz(); setMode('idle');
     const outline = practiceModeOptions(practiceMode).showOutline;
-    setGuide(outline); setArrows(false);
+    setArrows(false);
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
     if (practiceMode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
     else practice();
@@ -137,7 +136,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
 <AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}
-        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/><Button variant="ghost" size="sm" onClick={() => { const next = !guide; setGuide(next); if (next) void writer.current?.showOutline(); else void writer.current?.hideOutline(); }}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide character outline' : 'Show character outline'}</Button></div>}
+        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>
