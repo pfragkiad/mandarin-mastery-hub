@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Remove the "WATCH · TRACE · REMEMBER" eyebrow label and its writing-tip info button from both practice panels, since the Watch/Trace/Recall tabs now carry that meaning; verified the panel starts at the tabs, the old text is gone, tabs and Back still work, and 14 practice tests pass.
 - [x] Add Watch, Trace and Recall tabs with mode-specific controls and URL history; verified playback, Back restoration, real hidden-guide Recall drawing at 100%, and 18 focused tests.
 - [x] Apply the approved Practice control arrangement; verified desktop/phone layouts, distinct outline/tile toggles and Step/Reset behavior, with 11 playback/practice tests passing.
 - [x] Remove the Practice instructional paragraph and mute the Source check comparison message; verified on 条 with passing Practice tests.
