@@ -1,3 +1,4 @@
+import { ShieldCheck, SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
@@ -29,7 +30,7 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
   if (!record) return null;
   const teaching = record.teachingCheck;
   return <div className="enrichment-notes">
-    <div className="enrichment-note"><h4 className="eyebrow">SOURCE CHECK<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</SourceInfo></h4>
+    <div className="enrichment-note"><h4 className="eyebrow"><ShieldCheck size={13} aria-hidden="true"/>SOURCE CHECK<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</SourceInfo></h4>
       <p>{comparisonNotes[record.comparison.status]}</p>
       {(record.comparison.status === 'different-G-expression' || record.comparison.status === 'current-incomplete' || record.comparison.status === 'G-incomplete-or-unparseable') && record.comparison.alternatives.map((alternative, index) => {
         const tree = parseIdsTree(alternative.expression);
@@ -50,7 +51,7 @@ export function CharacterEnrichmentNotes({ character, tree }: { character: strin
   return <EnrichmentNotes record={record}/>;
 }
 export function ComponentPicker({ record, selected, onSelect }: { record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
-  return <div className="enrichment-note"><h4 className="eyebrow">COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</SourceInfo></h4>
+  return <div className="enrichment-note"><h4 className="eyebrow"><SquareDashedMousePointer size={13} aria-hidden="true"/>COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</SourceInfo></h4>
     {record.mapping.groups.length ? <><div className="component-picker">{record.mapping.groups.map(group => {
       const path = JSON.stringify(group.path);
       return <Button key={path} variant="outline" size="sm" aria-pressed={selected === path} aria-label={`Highlight ${group.glyph} strokes ${group.strokeIndices.map(i => i + 1).join(', ')}`} onClick={() => onSelect(selected === path ? '' : path)}><span lang="zh-CN">{group.glyph}</span><span>{group.strokeIndices.map(i => i + 1).join(', ')}</span></Button>;
