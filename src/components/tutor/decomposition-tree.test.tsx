@@ -47,3 +47,23 @@ describe('Decomposition component audio', () => {
     expect(screen.getByRole('button', { name: 'No audio available for ?' })).toBeDisabled();
   });
 });
+
+describe('breakdown character boxes', () => {
+  it('keeps one character inside each bordered box, with its label outside', () => {
+    const { container } = render(<DecompositionTree node={{ glyph: '木', position: 'right' }}/>);
+    expect(container.querySelector('a.decomposition-glyph')?.textContent).toBe('木');
+  });
+
+  it('boxes a part that has no library card instead of leaving it bare', () => {
+    const { container } = render(<DecompositionTree node={{ glyph: '?', position: '' }}/>);
+    expect(container.querySelector('strong.decomposition-glyph.decomposition-glyph-static')?.textContent).toBe('?');
+  });
+});
+
+describe('hanzi quoted inside a source note', () => {
+  it('boxes every character in a raw expression and leaves the notation plain', () => {
+    const { container } = render(<SourceGlyphs text="⿵冂⿱一丨"/>);
+    expect([...container.querySelectorAll('.source-glyph-box')].map(node => node.textContent)).toEqual(['冂', '一', '丨']);
+    expect(container.textContent).toBe('⿵冂⿱一丨');
+  });
+});
