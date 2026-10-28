@@ -29,9 +29,8 @@ function LayoutIcon({ operator }: { operator: string }) {
 /** Speaker for a decomposition component's own pronunciation. A Kangxi variant form
  *  with no recorded name presents the family heading's name and reading, exactly like
  *  the radical cards; a form with nothing recorded keeps its control disabled. */
-function NodeAudio({ glyph, spoken, reading, available }: { glyph: string; spoken: string | null; reading: string | null; available: boolean }) {
+function NodeAudio({ glyph, spoken, reading, recording, available }: { glyph: string; spoken: string | null; reading: string | null; recording: boolean; available: boolean }) {
   const { preferences } = useWorkspace();
-  const recording = spoken ? characterRecording(spoken, reading) : null;
   const label = spoken ?? glyph;
   return <Button variant="ghost" size="icon" className={`decomposition-listen${recording ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${label}` : `No audio available for ${label}`} title={available ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this form' : undefined} onClick={() => { if (spoken) playCharacter(spoken, preferences.slow, reading); }}><Volume2 size={13}/></Button>;
 }
@@ -49,7 +48,8 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const spoken = fallback ? fallback.spoken : exactRecord ? presentation?.speech ?? null : null;
   const reading = fallback ? fallback.reading : exactRecord ? presentation?.reading || null : null;
   const pinyin = fallback ? fallback.pinyin : exactRecord ? presentation?.reading || '' : '';
-  const available = usePronunciationAvailability(Boolean(spoken && characterRecording(spoken, reading)), reading);
+  const recording = spoken ? characterRecording(spoken, reading) : null;
+  const available = usePronunciationAvailability(Boolean(recording), reading);
   const glyph = card && destination
     ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={exactRecord ? `Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}` : `Open the sourced Kangxi radical for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
     : <strong lang="zh-CN">{node.glyph}</strong>;
