@@ -17,7 +17,7 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
 it('starts a quiz with hidden character and outline and disables all automatic hints', async () => {
-  render(<DrawingBoard entry={entry} allowErrors onFinish={vi.fn()}/>);
+  render(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   expect(fake.create.mock.calls[0]?.[2]).toMatchObject({ showCharacter: false, showOutline: false });
   expect(fake.quiz.mock.calls[0]?.[0]).toMatchObject({ showHintAfterMisses: false, markStrokeCorrectAfterMisses: false });
@@ -25,13 +25,13 @@ it('starts a quiz with hidden character and outline and disables all automatic h
 });
 it('quizzes only the selected word character, not the whole word', async () => {
   const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
-  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} allowErrors onFinish={vi.fn()}/>);
+  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   expect(fake.create.mock.calls[0]?.[1]).toBe('好');
 });
 it('allow-errors retries do not reveal the guide or end the card', async () => {
   const finish = vi.fn();
-  render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
+  render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
   expect(fake.cancelQuiz).not.toHaveBeenCalled();
@@ -43,7 +43,7 @@ it('allow-errors retries do not reveal the guide or end the card', async () => {
 });
 it('strict mode ends on its first mistake and cannot later become correct', async () => {
   const finish = vi.fn();
-  render(<DrawingBoard entry={entry} allowErrors={false} onFinish={finish}/>);
+  render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
   expect(fake.cancelQuiz).toHaveBeenCalledTimes(1);
@@ -53,7 +53,7 @@ it('strict mode ends on its first mistake and cannot later become correct', asyn
 });
 it('Pass card shows the solution first, then advances as passed, never correct', async () => {
   const finish = vi.fn();
-  render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
+  render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   expect(fake.cancelQuiz).toHaveBeenCalledTimes(1);
@@ -63,7 +63,7 @@ it('Pass card shows the solution first, then advances as passed, never correct',
   expect(finish).toHaveBeenCalledWith('passed');
 });
 it('the guide starts hidden but can be toggled while drawing', async () => {
-  render(<DrawingBoard entry={entry} allowErrors onFinish={vi.fn()}/>);
+  render(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   expect(fake.create.mock.calls[0]?.[2]).toMatchObject({ showOutline: false });
   expect(fake.showOutline).not.toHaveBeenCalled();
@@ -73,16 +73,16 @@ it('the guide starts hidden but can be toggled while drawing', async () => {
   expect(fake.hideOutline).toHaveBeenCalledTimes(1);
 });
 it('changing Allow errors during a card preserves drawing progress', async () => {
-  const { rerender } = render(<DrawingBoard entry={entry} allowErrors={false} onFinish={vi.fn()}/>);
+  const { rerender } = render(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
-  rerender(<DrawingBoard entry={entry} allowErrors onFinish={vi.fn()}/>);
+  rerender(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
   expect(fake.create).toHaveBeenCalledTimes(1);
   expect(fake.cancelQuiz).not.toHaveBeenCalled();
 });
 it('a card completed after showing the guide goes to review, not correct', async () => {
   const finish = vi.fn();
-  render(<DrawingBoard entry={entry} allowErrors onFinish={finish}/>);
+  render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   fireEvent.click(screen.getByRole('button', { name: 'Show guide' }));
   fireEvent.click(screen.getByRole('button', { name: 'Hide guide' }));
@@ -92,7 +92,7 @@ it('a card completed after showing the guide goes to review, not correct', async
 });
 it('a word card always offers Practice for that word focused on the drawn character', async () => {
   const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
-  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} allowErrors onFinish={vi.fn()}/>);
+  render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
