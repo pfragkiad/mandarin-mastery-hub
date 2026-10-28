@@ -43,8 +43,8 @@ describe('Decomposition component audio', () => {
     expect(playCharacter).toHaveBeenCalledWith('雨', false, 'yǔ');
   });
 
-  it('keeps a form with nothing recorded unpronounceable', () => {
-    render(<DecompositionTree node={{ glyph: '⺀', position: '' }}/>);
-    expect(screen.getByRole('button', { name: 'No audio available for ⺀' })).toBeDisabled();
+  it('keeps an unknown or missing part unpronounceable', () => {
+    render(<DecompositionTree node={{ glyph: '?', position: '' }}/>);
+    expect(screen.getByRole('button', { name: 'No audio available for ?' })).toBeDisabled();
   });
 });
