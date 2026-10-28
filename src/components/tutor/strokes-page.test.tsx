@@ -66,6 +66,19 @@ describe('character practice sections by mode', () => {
     expect(visibleHeadingGlyphs()).toEqual(['学']);
   });
 
+  it('keeps the reading panel above the writing card and the breakdown below it', () => {
+    render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    const blocks = Array.from(document.querySelectorAll('.practice-layout > *')).map(node => node.className);
+    expect(blocks).toHaveLength(3);
+    expect(blocks[0]).toContain('practice-intro');
+    expect(blocks[1]).toContain('writing-tool');
+    expect(blocks[2]).toContain('practice-detail');
+    expect(document.querySelector('.practice-intro')?.textContent).toContain('Get to know');
+    expect(document.querySelector('.practice-intro')?.textContent).toContain('Print practice sheet');
+    expect(document.querySelector('.practice-detail')?.textContent).toContain('DECOMPOSITION');
+    expect(document.querySelector('.practice-detail')?.textContent).toContain('SOURCE CHECK');
+  });
+
   it('hides the breakdown and the source check in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
     expect(screen.queryByText('DECOMPOSITION')).toBeNull();
