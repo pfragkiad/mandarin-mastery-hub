@@ -166,6 +166,7 @@
 
 /* Theme roles: body text meets WCAG AA on every surface. */
 :root.dark {
+  --stroke-selection-ink: oklch(.92 0 0); --stroke-selection-surface: oklch(.34 0 0); --stroke-selection-border: oklch(.75 0 0);
   --component-ink-0: oklch(.82 .115 210); --component-ink-1: oklch(.82 .115 50); --component-ink-2: oklch(.82 .115 145); --component-ink-3: oklch(.82 .115 330); --component-ink-4: oklch(.82 .115 85); --component-ink-5: oklch(.82 .115 275); --component-ink-6: oklch(.82 .115 25); --component-ink-7: oklch(.82 .115 175);
   color-scheme: dark;
   --banner-ink: oklch(.96 .009 140); --banner-surface: oklch(.19 .008 155); --banner-accent: oklch(.85 .075 65); --traditional: oklch(.81 .12 305);
@@ -281,17 +282,20 @@
 .component-color-marker { display: inline-block; width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
 .stroke-component-groups { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
 .stroke-component-group { min-width: 0; max-width: 100%; }
+:root { --stroke-selection-ink: oklch(.36 0 0); --stroke-selection-surface: oklch(.91 0 0); --stroke-selection-border: oklch(.5 0 0); }
+.stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; min-height: 32px; }
+.component-pronunciation { display: inline-flex; align-items: center; gap: 2px; }
+.stroke-component-indices { font-size: 10px; color: var(--muted-foreground); margin-left: 4px; }
 .stroke-component-label { display: flex; align-items: center; gap: 7px; font-size: 10px; color: var(--muted-foreground); min-height: 24px; }
 .stroke-component-label [lang] { font-size: 19px; color: var(--foreground); }
-.stroke-component-label[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
+.stroke-component-label[aria-pressed='true'], .stroke-component-label[aria-pressed='true']:hover { background: var(--stroke-selection-surface); color: var(--stroke-selection-ink); }
 .stroke-component-group .stroke-guide-strip { margin-top: 7px; }
 .component-source-choice { display: flex; align-items: center; gap: 6px; margin-top: 14px; }
 .component-source-choice label { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 10px; color: var(--muted-foreground); }
 .component-source-choice select { height: 32px; max-width: 100%; }
-.component-stroke-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; fill: var(--terracotta); opacity: .8; }
-.stroke-chip.component-highlighted { border-color: var(--terracotta); background: color-mix(in oklab, var(--terracotta) 12%, var(--card)); }
-.stroke-chip.component-highlighted .stroke-shape { fill: var(--terracotta); }
-.stroke-chip.component-highlighted.active { border-color: var(--primary); outline: 1px solid var(--primary); }
+.component-stroke-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; fill: var(--stroke-selection-ink); opacity: .9; }
+.stroke-chip.component-highlighted { border-color: var(--stroke-selection-border); background: var(--stroke-selection-surface); }
+.stroke-chip.component-highlighted.active { border-color: var(--stroke-selection-border); outline: 1px solid var(--stroke-selection-border); }
 .vocabulary-parts > li + li { margin-top: 18px; }
 .vocabulary-parts > li > .decomposition-part { min-height: 46px; }
 .vocabulary-part-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
