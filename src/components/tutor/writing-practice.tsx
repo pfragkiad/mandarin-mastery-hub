@@ -127,7 +127,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [stepIndex, setStepIndex] = useState(0);
   // Retain the next undrawn stroke when switching from Step to full playback.
   const [stepMode, setStepMode] = useState(false);
-  const [muted, setMuted] = useState(false);
+  // Stroke-name speech stays silent until the listener asks for it.
+  const [muted, setMuted] = useState(true);
   const mutedRef = useRef(muted);
   mutedRef.current = muted;
   const paintStrokes = () => {

@@ -148,8 +148,9 @@ describe('matched practice stroke speech', () => {
     return fake.quiz.mock.calls[0]?.[0];
   }
 
-  it('speaks each accepted stroke name, including a corrected stroke, but not mistakes', async () => {
+  it('speaks each accepted stroke name once audio is turned on, including a corrected stroke, but not mistakes', async () => {
     const callbacks = await startPractice();
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
     act(() => callbacks.onMistake());
     expect(speakTts).not.toHaveBeenCalled();
     act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
@@ -158,13 +159,16 @@ describe('matched practice stroke speech', () => {
     expect(vi.mocked(speakTts).mock.calls.map(call => call[0])).toEqual(['点', '点', '横钩']);
   });
 
-  it('uses the live Step mute control during an already-started practice attempt', async () => {
+  it('keeps stroke names silent by default until the listener unmutes', async () => {
     const callbacks = await startPractice();
-    fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+    expect(screen.getByRole('button', { name: 'Unmute stroke names' })).toHaveAttribute('aria-pressed', 'true');
     act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
     expect(speakTts).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
     act(() => callbacks.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
+    expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
+    fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+    act(() => callbacks.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
   });
 });
