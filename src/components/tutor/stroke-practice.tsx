@@ -127,7 +127,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   }, [practiceMode, ready, glyph]);
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
-  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
+  return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><div className="eyebrow">笔画 · THE ART OF WRITING</div><Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
@@ -139,13 +139,12 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
-    </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>
-      <h2>Get to know {practiceMode === "recall" ? <span lang="zh-CN" className="sr-only">{glyph}</span> : <span lang="zh-CN">{glyph}</span>}</h2>
+    </section><section className="practice-info practice-intro">
+      <div className="practice-heading-row"><h1>One stroke at a time.</h1><h2>Get to know {practiceMode === "recall" ? <span lang="zh-CN" className="sr-only">{glyph}</span> : <span lang="zh-CN">{glyph}</span>}</h2></div>
       <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button>{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">Stroke</span></p>
       {audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}
       <p>Every stroke has a starting point and a direction. Watch how it moves, then practice tracing it yourself.</p>
       <div className="character-facts"><div><strong>1</strong><span>Stroke</span></div><div><strong lang="zh-CN">{strokeName ?? '—'}</strong><span>Name</span></div><div>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}<span>{example ? `Example · stroke ${example.strokeIndex + 1}` : 'Example'}</span></div></div>
-      <Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button>
       <div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Find the starting point first, then keep one smooth movement until the stroke ends. Press a little at the start and ease off where it tapers.</p></div>
       <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
     </section>
