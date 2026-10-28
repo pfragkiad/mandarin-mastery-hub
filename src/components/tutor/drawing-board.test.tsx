@@ -29,7 +29,7 @@ it('quizzes only the selected word character, not the whole word', async () => {
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   expect(fake.create.mock.calls[0]?.[1]).toBe('好');
 });
-it('allow-errors retries do not reveal the guide or end the card', async () => {
+it('a wrong stroke can be retried without revealing the guide or ending the card', async () => {
   const finish = vi.fn();
   render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
@@ -41,15 +41,19 @@ it('allow-errors retries do not reveal the guide or end the card', async () => {
   fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
   expect(finish).toHaveBeenCalledWith('correct');
 });
-it('strict mode ends on its first mistake and cannot later become correct', async () => {
+it('mistakes are counted in the status but never reveal the solution', async () => {
   const finish = vi.fn();
   render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
-  expect(fake.cancelQuiz).toHaveBeenCalledTimes(1);
+  act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
+  expect(screen.getByRole('status').textContent).toContain('Try that stroke again.');
+  expect(fake.showCharacter).not.toHaveBeenCalled();
+  expect(finish).not.toHaveBeenCalled();
   act(() => fake.quiz.mock.calls[0]?.[0].onComplete());
+  expect(screen.getByRole('status').textContent).toContain('Completed · 2 retries.');
   fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
-  expect(finish).toHaveBeenCalledWith('missed');
+  expect(finish).toHaveBeenCalledWith('correct');
 });
 it('Pass card shows the solution first, then advances as passed, never correct', async () => {
   const finish = vi.fn();
@@ -72,13 +76,16 @@ it('the guide starts hidden but can be toggled while drawing', async () => {
   fireEvent.click(screen.getByRole('button', { name: 'Hide guide' }));
   expect(fake.hideOutline).toHaveBeenCalledTimes(1);
 });
-it('changing Allow errors during a card preserves drawing progress', async () => {
-  const { rerender } = render(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
+it('resetting after a mistake starts a fresh attempt on the same card', async () => {
+  const finish = vi.fn();
+  render(<DrawingBoard entry={entry} onFinish={finish}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
-  rerender(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
   act(() => fake.quiz.mock.calls[0]?.[0].onMistake());
-  expect(fake.create).toHaveBeenCalledTimes(1);
-  expect(fake.cancelQuiz).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button', { name: 'Reset drawing' }));
+  await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(2));
+  expect(fake.quiz).toHaveBeenCalledTimes(2);
+  expect(finish).not.toHaveBeenCalled();
+  await waitFor(() => expect(screen.getByRole('status').textContent).toBe('Ready.'));
 });
 it('a card completed after showing the guide goes to review, not correct', async () => {
   const finish = vi.fn();
