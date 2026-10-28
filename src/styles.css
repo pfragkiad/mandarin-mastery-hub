@@ -240,7 +240,7 @@
 .writing-tool-tabbed .writer-reset { border-left: 0; padding-left: 0; }
 .writing-tool-tabbed .writer-practice { min-width: 0; }
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
-.writing-tool > .tool-top > .eyebrow { white-space: nowrap; }
+
 @media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 .decomposition-tree, .decomposition-tree ul { list-style: none; margin: 18px 0 18px 12px; padding: 0 0 0 18px; border-left: 1px solid var(--border); }
