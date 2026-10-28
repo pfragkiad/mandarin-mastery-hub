@@ -32,7 +32,7 @@ export function strokeSpeech(entry?: { note: string; pinyin: string }) {
 }
 
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
-export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { glyph: string; mode?: PracticeMode; onModeChange?: (mode: PracticeMode) => void }) {
+export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { glyph: string; mode?: PracticeMode | undefined; onModeChange?: (mode: PracticeMode) => void }) {
   const [localMode, setLocalMode] = useState<PracticeMode>('watch');
   const practiceMode = selectedMode ?? localMode;
   const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };

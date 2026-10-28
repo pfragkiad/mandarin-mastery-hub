@@ -101,7 +101,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
 export const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
 export const DEFAULT_SPEED_INDEX = 1; // 0.5×
 
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange }: { mode?: PracticeMode; onModeChange?: (mode: PracticeMode) => void; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange }: { mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
   const { theme } = useWorkspace();
   const [localMode, setLocalMode] = useState<PracticeMode>('watch');
   const mode = selectedMode ?? localMode;
@@ -277,7 +277,7 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 }
 
 
-export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant, mode = 'watch', onModeChange }: { mode?: PracticeMode; onModeChange?: (mode: PracticeMode) => void; initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
+export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant, mode = 'watch', onModeChange }: { mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
   const wordChars = Array.from(initialCharacter);
   const isWord = wordChars.length > 1;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
