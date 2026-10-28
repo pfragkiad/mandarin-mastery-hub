@@ -76,6 +76,7 @@ describe('character practice sections by mode', () => {
     expect(screen.getByText('SOURCE CHECK')).toBeInTheDocument();
     expect(practiceHeading()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
+    expect(document.querySelector('.practice-facts')).not.toHaveClass('practice-facts-hidden');
   });
 
   it('keeps the reading panel above the writing card and the breakdown below it', () => {
@@ -94,6 +95,7 @@ describe('character practice sections by mode', () => {
     expect(screen.queryByText('Decomposition')).toBeNull();
     expect(screen.queryByText('SOURCE CHECK')).toBeNull();
     expect(practiceHeading()).toHaveClass('sr-only');
+    expect(document.querySelector('.practice-facts')).toHaveClass('practice-facts-hidden');
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
   });
