@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Lightbulb, MoveUpRight, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
+import { MoveUpRight, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
@@ -143,9 +143,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
       
       <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button>{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">Stroke</span></p>
       {audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}
-      <p>Every stroke has a starting point and a direction. Watch how it moves, then practice tracing it yourself.</p>
-      <div className="character-facts"><div><strong>1</strong><span>Stroke</span></div><div><strong lang="zh-CN">{strokeName ?? '—'}</strong><span>Name</span></div><div>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}<span>{example ? `Example · stroke ${example.strokeIndex + 1}` : 'Example'}</span></div></div>
-      <div className="practice-tip"><h3><Lightbulb size={16}/>A small writing tip</h3><p>Find the starting point first, then keep one smooth movement until the stroke ends. Press a little at the start and ease off where it tapers.</p></div>
+      <div className={`practice-facts${practiceMode === 'recall' ? ' practice-facts-hidden' : ''}`}><span><strong>1</strong>stroke</span><span><strong lang="zh-CN">{strokeName ?? '—'}</strong>name</span><span>{example ? <Link to="/strokes" search={{ character: example.character }}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}{example ? `example · stroke ${example.strokeIndex + 1}` : 'example'}</span></div>
       <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
     </section>
     {sheet && outline && <PracticeSheet text={glyph} pinyin={entry.pinyin || undefined} meaning={entry.meaning || undefined} outlines={{ [glyph]: { strokes: [outline] } }} onClose={() => setSheet(false)}/>}
