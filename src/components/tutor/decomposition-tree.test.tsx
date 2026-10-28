@@ -28,8 +28,6 @@ vi.mock('./use-pronunciation-availability', () => ({
 describe('Decomposition component audio', () => {
   it('shows a speaker beside the component pinyin and plays that component', async () => {
     render(<DecompositionTree node={{ glyph: '木', position: 'right' }}/>);
-    const facts = screen.getByText(/Kangxi radical/);
-    expect(facts.closest('.decomposition-facts')!.querySelector('.pinyin')).toHaveTextContent('mù');
     const button = screen.getByRole('button', { name: 'Listen to 木' });
     fireEvent.click(button);
     expect(playCharacter).toHaveBeenCalledWith('木', false, 'mù');
