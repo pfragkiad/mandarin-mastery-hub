@@ -227,6 +227,17 @@
 .filter-bar .reuse-filter { width: 210px; flex-shrink: 0; background: var(--card); padding-right: 13px; }
 .catalog-filter-count { margin: 0 0 10px; font-size: 12px; font-weight: 500; color: var(--foreground); }
 .decomposition-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
+.writer-controls-arranged { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
+.writer-playback { grid-column: 1 / -1; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.writer-playback > button { flex: 0 0 auto; }
+.writer-playback .writer-speed { flex: 1; min-width: 140px; margin-left: 0; gap: 8px; }
+.writer-playback .writer-speed input { flex: 1; min-width: 40px; width: 80px; }
+.writer-playback .writer-speed > span { min-width: 28px; }
+.writer-practice { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.writer-reset { border-left: 1px solid var(--border); padding-left: 12px; }
+.writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
+.writing-tool > .tool-top > .eyebrow { white-space: nowrap; }
+@media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 .decomposition-tree, .decomposition-tree ul { list-style: none; margin: 18px 0 18px 12px; padding: 0 0 0 18px; border-left: 1px solid var(--border); }
 .decomposition-tree ul { margin-top: 8px; }

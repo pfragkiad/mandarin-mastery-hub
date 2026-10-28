@@ -1,4 +1,5 @@
 # Mandarin tutor interface
+- [x] Apply the approved Practice control arrangement; verified desktop/phone layouts, distinct outline/tile toggles and Step/Reset behavior, with 11 playback/practice tests passing.
 - [x] Remove the Practice instructional paragraph and mute the Source check comparison message; verified on 条 with passing Practice tests.
 - [x] Review Practice controls afresh; checked live Step/Reset and proposed clearer grouping, guide naming and shared audio scope without applying a redesign.
 - [x] Always allow errors in the drawing game and remove its toggle; a wrong stroke only counts a retry, the card stays open and the URL drops the old errors option; 31 drawing tests pass and live retry-then-complete verified on a one-stroke card.
