@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
-import { filterLibrary, libraryEntries, libraryPage, libraryDestination } from './character-library';
+import { filterLibrary, libraryEntries, libraryPage, libraryDestination, radicalVariantFallback } from './character-library';
 describe('Catalogue requirements', () => {
   for (const kind of ['Characters', 'Radicals', 'Components', 'Strokes'] as const) {
     it(`shows only bookmarked ${kind.toLowerCase()} in Saved`, () => {
@@ -103,5 +103,16 @@ describe('Catalogue requirements', () => {
       { id: 'b', hanzi: '一', pinyin: 'yī', meaning: 'one', note: '' },
     ];
     expect(filterLibrary(entries, '').map(e => e.hanzi)).toEqual(['我', '一']);
+  });
+  it('gives a Kangxi variant without its own recorded name the family heading\'s name, reading and audio', () => {
+    const fallback = radicalVariantFallback('⻗');
+    expect(fallback).not.toBeNull();
+    expect(fallback?.headingGlyph).toBe('雨');
+    expect(fallback?.pinyin).toBe('yǔ');
+    expect(fallback?.spoken).toBe('雨');
+  });
+  it('never overrides a variant form that carries its own recorded reading', () => {
+    expect(radicalVariantFallback('门', 'mén')).toBeNull();
+    expect(radicalVariantFallback('雨', 'yǔ')).toBeNull();
   });
 });
