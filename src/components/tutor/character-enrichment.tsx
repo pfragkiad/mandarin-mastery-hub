@@ -31,7 +31,7 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
   const teaching = record.teachingCheck;
   return <div className="enrichment-notes">
     <div className="enrichment-note"><h4 className="eyebrow"><ShieldCheck size={13} aria-hidden="true"/>SOURCE CHECK<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Unreviewed source annotation · not verified etymology or a regional geometry guarantee</SourceInfo></h4>
-      <p>{comparisonNotes[record.comparison.status]}</p>
+      <p className="source-check-comparison">{comparisonNotes[record.comparison.status]}</p>
       {(record.comparison.status === 'different-G-expression' || record.comparison.status === 'current-incomplete' || record.comparison.status === 'G-incomplete-or-unparseable') && record.comparison.alternatives.map((alternative, index) => {
         const tree = parseIdsTree(alternative.expression);
         return <div key={index}>

@@ -248,6 +248,7 @@
 .practice-block { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
 .practice-block > .enrichment-note:first-child, .practice-block > .enrichment-notes > .enrichment-note:first-child { margin-top: 0; }
 .enrichment-note > p:not(.detail-footnote) { font-size: 13px; line-height: 1.6; color: var(--foreground); margin-top: 8px; overflow-wrap: anywhere; }
+.enrichment-note > p.source-check-comparison { color: var(--muted-foreground); }
 .enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
 .enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .enrichment-expression > span { font-size: 22px; }
