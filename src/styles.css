@@ -635,5 +635,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .source-info-popover > p { margin: 0; border-top: 0; padding-top: 0; text-align: left; }
 .source-info-inline { display: none; }
 .source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 10px; border-radius: 999px; color: var(--muted-foreground); }
+.eyebrow .source-info-trigger { margin-top: 0; }
 .source-info-trigger:hover, .source-info-trigger:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .source-info-trigger svg { width: 15px; height: 15px; }

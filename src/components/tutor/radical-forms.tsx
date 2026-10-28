@@ -17,7 +17,5 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference' 
           <strong lang="zh-CN">{form.character}</strong><span>{form.strokeCount} strokes</span><small>{form.formKind === 'kangxi-heading' ? 'Kangxi heading' : form.character === family.canonical ? 'Mainland form' : 'Variant'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small>
         </Link>
       </Button>)}
-    </div>
-    <SourceInfo className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family reading · {family.familyPinyin} · shared with variant forms that lack their own recorded name<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo>
   </div>;
 }
