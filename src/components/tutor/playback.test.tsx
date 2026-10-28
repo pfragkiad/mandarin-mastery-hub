@@ -197,6 +197,29 @@ it.each([['character', <WritingPractice key="a" character="我" mode="trace"/>],
     expect(fake.hideOutline).not.toHaveBeenCalled();
   });
 
+it('the Strokes group holds the arrow control, and turning it on draws the direction arrows', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke 3' })).toBeEnabled());
+  const group = document.querySelector('.stroke-guide');
+  expect(group).not.toBeNull();
+  expect(screen.queryByText('Stroke tiles')).toBeNull();
+  expect(group?.textContent).toContain('Strokes');
+  const arrows = screen.getByRole('button', { name: 'Show stroke arrows' });
+  expect(group?.contains(arrows)).toBe(true);
+  expect(document.querySelector('.stroke-direction-overlay')).toBeNull();
+  fireEvent.click(arrows);
+  await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
+});
+
+it('the single-stroke panel offers the same arrow button', async () => {
+  render(<StrokePractice glyph="㇐" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const arrows = screen.getByRole('button', { name: 'Show stroke arrows' });
+  expect(arrows.tagName).toBe('BUTTON');
+  fireEvent.click(arrows);
+  await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
+});
+
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
