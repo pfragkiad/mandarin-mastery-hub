@@ -263,6 +263,24 @@ it('tapping a stroke tile jumps straight to it: earlier strokes appear instantly
   expect(fake.animateStroke.mock.calls[2]?.[0]).toBe(2);
 });
 
+it.each(['trace', 'recall'] as const)('%s stroke tiles stay clickable and retarget while an animation is running', async mode => {
+  render(<WritingPractice character="我" mode={mode}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  if (mode === 'recall') fireEvent.click(screen.getByRole('button', { name: 'Show strokes' }));
+  await screen.findByRole('button', { name: 'Play stroke 3' });
+  expect(screen.getByRole('button', { name: 'Play stroke 2' })).toBeEnabled();
+  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 2' }));
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
+  // A second tap before the first animation finishes retargets instead of being swallowed.
+  fireEvent.click(screen.getByRole('button', { name: 'Play stroke 3' }));
+  expect(fake.animateStroke).toHaveBeenCalledTimes(2);
+  act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
+  act(() => fake.animateStroke.mock.calls[2]?.[1].onComplete());
+  act(() => fake.animateStroke.mock.calls[3]?.[1].onComplete());
+  act(() => fake.animateStroke.mock.calls[4]?.[1].onComplete());
+  expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 0, 1, 2, 3]);
+});
+
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
