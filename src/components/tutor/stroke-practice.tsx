@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Lightbulb, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
+import { Lightbulb, MoveUpRight, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
@@ -13,7 +13,7 @@ import { useWorkspace } from './workspace';
 import { PracticeSheet } from './practice-sheet';
 import { AnimationSpeedControl } from './animation-speed-control';
 import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
-import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
+import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 
 const toHex = (value: string) => {
@@ -136,7 +136,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
           <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>
 
 <AnimationSpeedControl speed={speed} onChange={setSpeedValue}/></div>}
-        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || median.length < 2}/></div>}
+        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info"><span className="eyebrow">YOUR WRITING PRACTICE</span>

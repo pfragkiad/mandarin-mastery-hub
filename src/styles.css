@@ -239,6 +239,7 @@
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .stroke-guide-heading > button { flex-shrink: 0; }
 .stroke-guide-top { flex-wrap: wrap; }
+.stroke-guide-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .writing-tool-tabbed { align-self: start; }
 .practice-mode-tabs { margin-bottom: 18px; }
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
@@ -635,7 +636,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .direction-arrowhead { fill: var(--foreground); stroke: var(--card); stroke-width: 0.75; }
 .direction-start { fill: var(--card); stroke: var(--foreground); stroke-width: 1; }
 .direction-number { fill: var(--foreground); font-family: var(--font-sans); font-size: 8px; font-weight: 600; }
-.direction-hints-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 6px; font-size: 12px; font-weight: 500; color: var(--foreground); white-space: nowrap; cursor: pointer; transition: background-color 150ms, color 150ms; } .direction-hints-toggle:hover { background: var(--accent); color: var(--color-accent-foreground); } .direction-hints-toggle svg { width: 16px; height: 16px; } .direction-hints-toggle:has(:disabled) { opacity: 0.5; cursor: not-allowed; } .tool-top-actions { display: flex; align-items: center; gap: 2px; }
+.tool-top-actions { display: flex; align-items: center; gap: 2px; }
 
 /* Exact radical variants remain grouped without enlarging the canonical deck. */
 .radical-family-card { position: relative; }

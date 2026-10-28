@@ -4,7 +4,7 @@ import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeColor, strokeScore } from '@/lib/stroke-score';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import { Play, Pause, RotateCcw, Eye, EyeOff, Lightbulb, ListOrdered, Volume2, VolumeX, GitBranch, Printer, StepForward } from 'lucide-react';
+import { Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRight, Volume2, VolumeX, GitBranch, Printer, StepForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -25,7 +25,7 @@ import { RadicalForms } from './radical-forms';
 import { speakTts } from '@/lib/audio';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { nextStepIndex } from '@/lib/step-playback';
-import { DirectionHintsToggle, StrokeDirectionHints } from './stroke-direction-hints';
+import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, EnrichmentNotes, ComponentPicker } from './character-enrichment';
 
@@ -59,14 +59,17 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
-function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], theme, audioControl }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; theme: 'light' | 'dark'; audioControl: React.ReactNode }) {
+function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], theme, audioControl, arrows, onArrowsChange, arrowsDisabled }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; theme: 'light' | 'dark'; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean }) {
   const [visible, setVisible] = useState(true);
   if (!strokes.length) return null;
   return (
     <div className="stroke-guide">
       <div className="stroke-guide-top">
-        <div className="stroke-guide-heading"><h3><ListOrdered size={16} />Stroke tiles</h3>{audioControl}</div>
-        <Button variant="ghost" size="sm" onClick={() => setVisible(v => !v)}>{visible ? <EyeOff /> : <Eye />}{visible ? 'Hide stroke tiles' : 'Show stroke tiles'}</Button>
+        <div className="stroke-guide-heading"><h3><ListOrdered size={16} />Strokes</h3>{audioControl}</div>
+        <div className="stroke-guide-actions">
+          <Button variant="ghost" size="sm" aria-pressed={arrows} disabled={arrowsDisabled} onClick={() => onArrowsChange(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button>
+          <Button variant="ghost" size="sm" onClick={() => setVisible(v => !v)}>{visible ? <EyeOff /> : <Eye />}{visible ? 'Hide strokes' : 'Show strokes'}</Button>
+        </div>
       </div>
       {visible && (
         <>
@@ -245,7 +248,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   }, [mode, ready, character]);
   const highlighted = ready && mode !== 'recall' ? component?.strokeIndices ?? [] : [];
   const audioControl = <Button variant="ghost" size="icon" title={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-label={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX/> : <Volume2/>}</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writer-board-actions">{mode === 'recall' && audioControl}<Button disabled={!ready} variant="ghost" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged">{mode === 'watch' && <div className="writer-playback"><Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button><AnimationSpeedControl speed={speed} onChange={setSpeed}/></div>}</div>{mode !== 'recall' && <div className="tool-top-actions writer-display"><DirectionHintsToggle checked={arrows} onChange={setArrows} disabled={!ready || !medians.some(median => median.length > 1)}/></div>}{mode !== 'recall' && <StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme} audioControl={audioControl}/>}</section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writer-board-actions">{mode === 'recall' && audioControl}<Button disabled={!ready} variant="ghost" size="icon" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/></Button></div><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged">{mode === 'watch' && <div className="writer-playback"><Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button><AnimationSpeedControl speed={speed} onChange={setSpeed}/></div>}</div>{mode !== 'recall' && <StrokeGuide strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)}/>}</section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 

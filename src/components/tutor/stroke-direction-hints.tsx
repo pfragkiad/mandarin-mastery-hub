@@ -1,12 +1,5 @@
 import { useId } from 'react';
-import { MoveUpRight } from 'lucide-react';
-import { Switch } from '@/components/ui/switch';
 import { strokeDirectionPoints, type MedianPoint } from '@/lib/stroke-directions';
-
-export function DirectionHintsToggle({ checked, onChange, disabled }: { checked: boolean; onChange: (value: boolean) => void; disabled: boolean }) {
-  const id = useId();
-  return <label className="direction-hints-toggle" htmlFor={id}><MoveUpRight size={16} aria-hidden="true"/>Stroke arrows<Switch id={id} checked={checked} onCheckedChange={onChange} disabled={disabled}/></label>;
-}
 
 export function StrokeDirectionHints({ medians, activeStroke }: { medians: readonly (readonly MedianPoint[])[]; activeStroke?: number | null }) {
   const id = `stroke-arrow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
