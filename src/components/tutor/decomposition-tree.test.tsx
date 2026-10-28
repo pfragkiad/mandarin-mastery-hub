@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
 import { DecompositionTree } from './decomposition-tree';
+import { SourceGlyphs } from './character-enrichment';
 import { playCharacter } from '@/lib/catalog-store';
 import { pronunciationAvailable } from '@/lib/audio';
 
