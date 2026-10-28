@@ -312,7 +312,8 @@
 .catalog-detail .catalog-facts { border-bottom: 0; padding-bottom: 4px; }
 .catalog-detail .catalog-facts + .catalog-record-note { margin-top: 4px; }
 .catalog-detail .decomposition-section + .radical-family-section { border-top: 0; padding-top: 0; }
-.vocabulary-parts .decomposition-glyph { height: auto; width: auto; min-width: 46px; padding: 0 8px; flex-shrink: 0; white-space: normal; }
+/* Only a box holding more than one character grows; every single-character box stays a 46px square. */
+.decomposition-glyph-wide { width: auto; min-width: 46px; height: auto; padding: 0 8px; white-space: normal; }
 .vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 /* Shared block for absent records: sits under its section label, no extra icon or divider. */
 .record-gap { margin-top: 10px; }
