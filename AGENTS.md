@@ -31,3 +31,4 @@
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match; overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
 - Visual roles/layouts are defined globally with shared controls and root theme state, so navigation, controls and writing ink stay consistent.
 - Practice direction hints use the shared non-intercepting SVG overlay and recorded Hanzi Writer medians in writer coordinates, never guessed endpoints; keep hints out of the hidden-guide drawing game.
+- Writing modes share one mounted writer with URL-backed mode selection; mode changes cancel the previous run, and Recall disables outlines, overlays and automatic quiz hints so guided practice cannot leak into recall.
