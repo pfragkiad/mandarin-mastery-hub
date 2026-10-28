@@ -5,7 +5,15 @@ import { catalog } from '@/lib/catalog-store';
 import { radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { useWorkspace } from './workspace';
 
-export function RadicalStrokeDecomposition({ glyph, form }: { glyph: string; form?: RadicalForm | undefined }) {
+const sourceNote = (record?: { source?: string; sourceStatus?: string; status?: string } | null) => <>Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{record?.sourceStatus ?? record?.status} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</>;
+
+/** Provenance for a radical's recorded stroke sequence. `inline` tucks the button beside the section label. */
+export function RadicalStrokeSourceInfo({ glyph, form, inline = true }: { glyph: string; form?: RadicalForm | undefined; inline?: boolean }) {
+  useWorkspace().catalogVersion;
+  return <SourceInfo inline={inline} className="detail-footnote decomposition-footnote">{sourceNote(radicalStrokes(glyph, form))}</SourceInfo>;
+}
+
+export function RadicalStrokeDecomposition({ glyph, form, sourceInHeading = false }: { glyph: string; form?: RadicalForm | undefined; sourceInHeading?: boolean }) {
   useWorkspace().catalogVersion;
   const record = radicalStrokes(glyph, form);
   return <>
@@ -15,6 +23,6 @@ export function RadicalStrokeDecomposition({ glyph, form }: { glyph: string; for
         <div className="vocabulary-part-facts"><span className="pinyin">{stroke.pinyin}</span><small lang="zh-CN">{stroke.name}</small></div>
       </div></div></li>)}
     </ol></> : <div className="record-gap"><p>No unambiguous exact stroke sequence recorded for this radical form.</p></div>}
-    <SourceInfo className="detail-footnote decomposition-footnote">Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{record?.sourceStatus ?? record?.status} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</SourceInfo>
+    {!sourceInHeading && <SourceInfo className="detail-footnote decomposition-footnote">{sourceNote(record)}</SourceInfo>}
   </>;
 }
