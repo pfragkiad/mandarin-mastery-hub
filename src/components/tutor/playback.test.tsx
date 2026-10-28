@@ -116,8 +116,9 @@ it('step mode keeps whole-character playback off until Reset or Practice', async
 describe('matched practice stroke speech', () => {
   async function startPractice() {
     render(<WritingPractice character="宀"/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Practice' })).toBeEnabled());
-    fireEvent.click(screen.getByRole('button', { name: 'Practice' }));
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+    fireEvent.mouseDown(screen.getByRole('tab', { name: 'Trace' }), { button: 0, ctrlKey: false });
+    await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
     return fake.quiz.mock.calls[0]?.[0];
   }
 
@@ -140,4 +141,31 @@ describe('matched practice stroke speech', () => {
     act(() => callbacks.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
   });
+});
+
+it('Recall starts without outline, component overlays or automatic hints', async () => {
+  const { container } = render(<WritingPractice character="我" mode="recall" component={{ glyph: '扌', path: [0], strokeIndices: [0, 1], noncontiguous: false, standaloneFit: 'fits-current-geometry-guards', standaloneReuseAllowed: true }}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  expect(fake.hideOutline).toHaveBeenCalledWith({ duration: 0 });
+  expect(fake.quiz.mock.calls[0]?.[0].showHintAfterMisses).toBe(false);
+  expect(container.querySelector('.component-stroke-overlay')).toBeNull();
+  expect(container.querySelector('.stroke-guide')).toBeNull();
+});
+
+it('Trace starts guided handwriting with a visible outline', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  expect(fake.showOutline).toHaveBeenCalledWith({ duration: 0 });
+  expect(fake.quiz.mock.calls[0]?.[0].showHintAfterMisses).toBe(2);
+});
+
+it('changing mode cancels an old playback run without remounting the writer', async () => {
+  const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  const complete = fake.animateStroke.mock.calls[0]?.[1].onComplete;
+  rerender(<WritingPractice character="我" mode="recall"/>);
+  act(() => complete());
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+  expect(fake.quiz).toHaveBeenCalledTimes(1);
 });
