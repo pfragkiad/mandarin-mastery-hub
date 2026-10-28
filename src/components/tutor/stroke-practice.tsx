@@ -127,7 +127,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   }, [practiceMode, ready, glyph]);
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
-  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1><p>Find the rhythm. Build the character. Make your mark.</p></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
+  return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">笔画 · THE ART OF WRITING</div><h1>One stroke at a time.</h1></div><span className="heading-hanzi">书写<span>shū xiě</span></span></div><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
