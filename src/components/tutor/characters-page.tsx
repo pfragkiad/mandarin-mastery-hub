@@ -77,7 +77,6 @@ export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filte
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const tileMeaning = kind === 'Radicals' ? stripKangxiLabel(info.meaning) : info.meaning;
   const fallback = kind === 'Radicals' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
@@ -86,6 +85,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState<string | null>(null);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
+  const tileMeaning = kind === 'Radicals' ? stripKangxiLabel(info.meaning) : info.meaning;
   const hasPinyin = Boolean(info.reading || fallback?.pinyin);
   const hasMeaning = Boolean(info.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
