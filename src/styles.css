@@ -231,7 +231,7 @@
 .decomposition-tree, .decomposition-tree ul { list-style: none; margin: 18px 0 18px 12px; padding: 0 0 0 18px; border-left: 1px solid var(--border); }
 .decomposition-tree ul { margin-top: 8px; }
 .decomposition-node { display: flex; align-items: center; gap: 20px; min-height: 46px; }
-.decomposition-node span { width: 36px; font-size: 11px; color: var(--muted-foreground); }
+.decomposition-node > span { width: 36px; flex-shrink: 0; font-size: 11px; color: var(--muted-foreground); }
 .decomposition-node strong { font-size: 32px; font-weight: 400; }
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; }
@@ -239,7 +239,7 @@
 .enrichment-note .decomposition-node > span { flex-shrink: 0; }
 .enrichment-note .decomposition-layout { min-width: 0; flex-wrap: wrap; }
 .enrichment-note .decomposition-part { flex-wrap: wrap; gap: 6px 12px; }
-.enrichment-note .decomposition-facts { flex-basis: 100%; overflow-wrap: anywhere; }
+.enrichment-note .decomposition-facts { overflow-wrap: anywhere; }
 /* Every "nothing here" message reads exactly like the decomposition explanation. */
 .decomposition-note, .record-gap > p { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
@@ -310,7 +310,7 @@
 .decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
 
 .decomposition-part { display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; }
-.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; vertical-align: middle; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
+.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; white-space: nowrap; }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; vertical-align: middle; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
