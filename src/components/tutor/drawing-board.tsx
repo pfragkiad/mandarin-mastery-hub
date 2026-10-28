@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type HanziWriter from 'hanzi-writer';
-import { ArrowRight, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -28,6 +28,8 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
   const [progress, setProgress] = useState({ completed: 0, total: 0 });
   const [retry, setRetry] = useState(0);
   const [audioError, setAudioError] = useState(false);
+  const [guide, setGuide] = useState(false);
+  const guideRef = useRef(false); guideRef.current = guide;
   const prompt = entry.word ?? entry;
   const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), prompt.pinyin);
@@ -47,6 +49,7 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
         drawingWidth: 6, charDataLoader: (_glyph, onLoad) => onLoad(data),
       });
       writer.current = instance;
+      if (guideRef.current) instance.showOutline();
       setProgress({ completed: 0, total: data.strokes.length }); setState('drawing');
       void instance.quiz({
         showHintAfterMisses: false, markStrokeCorrectAfterMisses: false, highlightOnComplete: false,
@@ -73,17 +76,26 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
   const finish = (result: DrawingResult) => {
     settled.current = true; writer.current?.cancelQuiz(); onFinish(result);
   };
+  const pass = () => {
+    if (state === 'unavailable') { finish('unavailable'); return; }
+    settled.current = true; writer.current?.cancelQuiz();
+    void writer.current?.showCharacter({ duration: 0 }); setState('passed');
+  };
+  const toggleGuide = () => {
+    const next = !guide; setGuide(next);
+    if (next) writer.current?.showOutline(); else writer.current?.hideOutline();
+  };
   const message = state === 'loading' ? 'Loading writing data…' : state === 'correct' ? `Completed${mistakes ? ` · ${mistakes} ${mistakes === 1 ? 'retry' : 'retries'}` : ' · no errors'}.`
-    : state === 'missed' ? 'Not quite — this card goes into review.' : state === 'unavailable' ? 'No writing data available for this form. It won’t count as a mistake.'
-    : mistakes ? 'Try that stroke again. The guide stays hidden.' : 'Ready.';
-  const answered = state === 'correct' || state === 'missed';
+    : state === 'missed' ? 'Not quite — this card goes into review.' : state === 'passed' ? 'Card passed — here is the solution.' : state === 'unavailable' ? 'No writing data available for this form. It won’t count as a mistake.'
+    : mistakes ? 'Try that stroke again.' : 'Ready.';
+  const answered = state === 'correct' || state === 'missed' || state === 'passed';
   return <section className="drawing-board">
     <div className="drawing-prompt">
       <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
       <p className="drawing-meaning">{prompt.meaning}</p>
       {audioError && <p className="meaning-missing" role="status">Audio isn’t available in this browser.</p>}
     </div>
-    <div className="drawing-board-meta"><span className="eyebrow"><EyeOff size={13}/>GUIDE HIDDEN</span><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
+    <div className="drawing-board-meta"><Button variant="ghost" size="sm" disabled={state === 'loading' || state === 'unavailable'} onClick={toggleGuide}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
     <div className={entry.word ? 'drawing-word-layout' : undefined}>
       <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
@@ -93,8 +105,8 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
     <div className="drawing-actions">
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
       {state === 'unavailable' && <Button variant="outline" onClick={() => setRetry(value => value + 1)}><RotateCcw/>Try again</Button>}
-      {!answered && <Button variant="outline" onClick={() => finish(state === 'unavailable' ? 'unavailable' : 'passed')}><SkipForward/>Pass card</Button>}
-      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'correct' ? 'correct' : state === 'missed' ? 'missed' : 'unavailable')}>Next card<ArrowRight/></Button>}
+      {!answered && state !== 'unavailable' && <Button variant="outline" onClick={pass}><SkipForward/>Pass card</Button>}
+      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
     </div>
   </section>;
 }

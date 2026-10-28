@@ -39,6 +39,7 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   const target = fake.create.mock.calls[0]?.[1];
   expect(['你', '好']).toContain(target);
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
   fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
   expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
   expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
@@ -72,6 +73,7 @@ it('a review round replays every missed card', async () => {
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
   expect(screen.getByText('0 correct · 5 to review')).toBeTruthy();
@@ -86,6 +88,7 @@ it('offers to bookmark unknown cards after a round, saving only unsaved ids', as
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
   fireEvent.click(screen.getByRole('button', { name: 'Save 5 unknown cards' }));

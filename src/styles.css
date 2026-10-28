@@ -11,6 +11,7 @@
 .drawing-prompt .flash-pinyin-row { gap: 4px; }
 .drawing-meaning { font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; max-width: 100%; }
 .drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: var(--muted-foreground); font-size: 11px; }
+.drawing-board-meta button { height: 30px; padding: 0 10px; font-size: 12px; font-weight: 500; }
 .drawing-grid { touch-action: none; }
 .drawing-word-layout { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); align-items: center; gap: 24px; }
 .drawing-word-context { min-width: 0; border-left: 1px solid var(--border); padding-left: 24px; }
