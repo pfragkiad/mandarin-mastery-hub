@@ -188,6 +188,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
   // One wording for "which stroke is happening now", shared by full playback and single-stroke playback.
   const strokeMessage = (i: number) => `Stroke ${i + 1} of ${strokes.length}: ${strokes[i]?.pinyin ?? ''} — ${strokes[i]?.direction ?? ''}`;
+  // Watch offers Step for the next stroke; Trace and Recall have no Step, so
+  // they point back to Reset instead of naming a control that is not there.
+  const afterDrawMessage = (drawnTo: number) => drawnTo + 1 >= strokes.length
+    ? 'All strokes drawn. Press Reset to start over.'
+    : mode === 'watch'
+      ? `Drawn through stroke ${drawnTo + 1}. Press Step for stroke ${drawnTo + 2}.`
+      : `Drawn through stroke ${drawnTo + 1}. Press Reset to practise the whole character.`;
   const play = () => {
     const instance = writer.current; if (!instance) return;
     if (paused) {
@@ -296,7 +303,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     instance.cancelQuiz();
     setPlaying(false); setPaused(false); setActiveStroke(null);
     setStepMode(true); setStepIndex(last + 1);
-    setMessage(last + 1 >= strokes.length ? 'All strokes drawn. Press Step to start over.' : `Drawn through stroke ${last + 1}. Press Step for stroke ${last + 2}.`);
+    setMessage(afterDrawMessage(last));
     // Native showCharacter cancels old animation; reveal the exact completed
     // prefix in the writer state without replaying or inventing any paths.
     void Promise.resolve(instance.showCharacter({ duration: 0 })).then(() => {
