@@ -276,6 +276,8 @@
 .enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
 .enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .enrichment-expression > span { font-size: 22px; }
+/* A hanzi quoted inside a source sentence or a raw notation expression gets the same thin box as a breakdown row. */
+.source-glyph-box { display: inline-flex; align-items: center; justify-content: center; min-width: 1.45em; height: 1.45em; padding: 0 .16em; border: 1px solid var(--border); border-radius: 6px; vertical-align: middle; }
 .enrichment-expression > small { font-size: 10px; color: var(--muted-foreground); }
 .component-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0 10px; }
 .component-picker button { height: auto; min-height: 36px; white-space: normal; gap: 8px; }
@@ -348,11 +350,17 @@
 .tile-tooltip-head .pinyin { font-size: 11px; }
 .tile-tooltip-meaning { font-size: 11px; line-height: 1.5; color: var(--foreground); white-space: normal; }
 .tile-tooltip .traditional-label { font-size: 9px; }
-.decomposition-glyph { background: none; border: none; padding: 0; margin: 0; min-width: 40px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; }
-.decomposition-glyph strong { font-size: 32px; font-weight: 400; text-decoration: underline dotted var(--border); text-underline-offset: 7px; text-decoration-thickness: 1.5px; transition: color .15s ease, text-decoration-color .15s ease; }
-.decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); text-decoration-color: var(--primary); }
+/* Every character in a breakdown sits in its own thin-bordered box, like the form tiles on a glyph card. */
+.decomposition-glyph { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 1px solid var(--border); padding: 0 8px; margin: 0; min-width: 46px; height: 46px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; transition: border-color .15s ease, color .15s ease; }
+.decomposition-glyph-static { cursor: default; }
+.decomposition-glyph strong { font-size: 32px; font-weight: 400; }
+.decomposition-glyph:hover, .decomposition-glyph:focus-visible { background-color: transparent; border-color: var(--primary); }
+.decomposition-glyph:hover strong, .decomposition-glyph:focus-visible strong { color: var(--primary); }
 
 .decomposition-part { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+/* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
+.kangxi-identity-item { display: inline-flex; align-items: center; gap: 8px; }
+.kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
 .decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; white-space: nowrap; }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; vertical-align: middle; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */

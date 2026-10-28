@@ -8,6 +8,15 @@ import { parseIdsTree } from '@/lib/ids-tree';
 import { DecompositionTree } from './decomposition-tree';
 import { componentInk } from '@/lib/practice-stroke-groups';
 
+/** Source notation keeps its brackets, operators and separators plain; every hanzi inside it gets
+ *  the same thin box the breakdown rows use, so a raw expression reads like the tree it stands in for. */
+const HANZI = /[\u2E80-\u2FDF\u3005\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u{20000}-\u{2EBEF}]/u;
+export function SourceGlyphs({ text }: { text: string }) {
+  return <>{Array.from(text, (char, index) => HANZI.test(char)
+    ? <span key={index} lang="zh-CN" className="source-glyph-box">{char}</span>
+    : <span key={index}>{char}</span>)}</>;
+}
+
 export function useCharacterEnrichment(character: string, tree?: DecompositionNode) {
   const [result, setResult] = useState<{ character: string; tree: DecompositionNode; record: CharacterEnrichment } | null>(null);
   useEffect(() => {
@@ -37,12 +46,12 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
         const tree = parseIdsTree(alternative.expression);
         return <div key={index}>
           <p className="library-note">BabelStone · {alternative.qualifiers || 'Unqualified'} · {alternative.directG ? 'Direct G' : alternative.virtualG ? 'Virtual G' : 'Other regional expression'}</p>
-          {tree ? <ul className="decomposition-tree" aria-label={`BabelStone alternative ${index + 1}`}><DecompositionTree node={tree}/></ul> : <p className="enrichment-expression"><span lang="zh-CN">{alternative.expression}</span><small>Source notation retained; tree unavailable.</small></p>}
+          {tree ? <ul className="decomposition-tree" aria-label={`BabelStone alternative ${index + 1}`}><DecompositionTree node={tree}/></ul> : <p className="enrichment-expression"><span lang="zh-CN"><SourceGlyphs text={alternative.expression}/></span><small>Source notation retained; tree unavailable.</small></p>}
         </div>;
       })}
     </div>
     {teaching && <div className="enrichment-note"><h4 className="eyebrow">TEACHING STANDARD<SourceInfo inline className="detail-footnote">GF 0014-2009 · Rule {teaching.rule} · Printed page {teaching.printedPage}<br/>One of eight checked examples · not a full standard import</SourceInfo></h4>
-      <p>{teaching.expectedUnsplit ? 'This example is treated as an undivided form.' : <>The teaching example groups <span lang="zh-CN">{teaching.expectedComponents?.join(' + ')}</span>.</>}
+      <p>{teaching.expectedUnsplit ? 'This example is treated as an undivided form.' : <>The teaching example groups <span lang="zh-CN"><SourceGlyphs text={(teaching.expectedComponents ?? []).join(' + ')}/></span>.</>}
         {' '}{teaching.result === 'agrees-component-multiset' ? 'Its component multiset agrees with the recorded breakdown.' : teaching.result === 'different-stopping-rule' ? 'It uses a different stopping rule from the visual breakdown.' : 'The current breakdown is incomplete.'}</p>
     </div>}
   </div>;
