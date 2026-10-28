@@ -169,3 +169,18 @@ it('changing mode cancels an old playback run without remounting the writer', as
   expect(fake.animateStroke).toHaveBeenCalledTimes(1);
   expect(fake.quiz).toHaveBeenCalledTimes(1);
 });
+it('animation speed is three grouped buttons, defaults to 0.5× and applies the chosen speed', async () => {
+  const { container } = render(<WritingPractice character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  expect(container.querySelector('input[type="range"]')).toBeNull();
+  expect(screen.queryByRole('slider')).toBeNull();
+  expect(screen.getAllByRole('group', { name: 'Animation speed' })).toHaveLength(1);
+  expect(screen.getByRole('button', { name: '0.25×' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: '0.5×' })).toHaveAttribute('aria-pressed', 'true');
+  expect(screen.getByRole('button', { name: '1×' })).toHaveAttribute('aria-pressed', 'false');
+  fireEvent.click(screen.getByRole('button', { name: '1×' }));
+  expect(screen.getByRole('button', { name: '1×' })).toHaveAttribute('aria-pressed', 'true');
+  expect(screen.getByRole('button', { name: '0.5×' })).toHaveAttribute('aria-pressed', 'false');
+  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  expect(fake._options.strokeAnimationSpeed).toBe(1);
+});
