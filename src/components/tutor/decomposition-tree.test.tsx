@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
 import { DecompositionTree } from './decomposition-tree';
 import { playCharacter } from '@/lib/catalog-store';
+import { pronunciationAvailable } from '@/lib/audio';
 
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
@@ -19,9 +20,9 @@ vi.mock('@/lib/catalog-store', async importOriginal => ({
   characterRecording: () => null,
   playCharacter: vi.fn(async () => null),
 }));
-vi.mock('./use-pronunciation-availability', async importOriginal => ({
+vi.mock('./use-pronunciation-availability', () => ({
   usePronunciationAvailability: (hasRecording: boolean, reading?: string | null) =>
-    (await import('@/lib/audio')).pronunciationAvailable(hasRecording, reading, true),
+    pronunciationAvailable(hasRecording, reading, true),
 }));
 
 describe('Decomposition component audio', () => {
