@@ -76,3 +76,12 @@ export function splitPinyinLines(pinyin: string): string[] {
   const k = Math.ceil(words.length / 2);
   return [words.slice(0, k).join(" "), words.slice(k).join(" ")];
 }
+
+/** Compact stroke range for component headings: 1-based, "4–5" when contiguous, otherwise a list. */
+export function formatStrokeIndices(indices: number[]): string {
+  const oneBased = indices.map(i => i + 1).sort((a, b) => a - b);
+  if (oneBased.length > 1 && oneBased.every((n, i) => n === oneBased[0]! + i)) {
+    return `${oneBased[0]}–${oneBased[oneBased.length - 1]}`;
+  }
+  return oneBased.join(', ');
+}
