@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type HanziWriter from 'hanzi-writer';
-import { ArrowRight, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -28,6 +28,8 @@ export function DrawingBoard({ entry, allowErrors, onFinish }: { entry: DrawingC
   const [progress, setProgress] = useState({ completed: 0, total: 0 });
   const [retry, setRetry] = useState(0);
   const [audioError, setAudioError] = useState(false);
+  const [guide, setGuide] = useState(false);
+  const guideRef = useRef(false); guideRef.current = guide;
   const prompt = entry.word ?? entry;
   const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), prompt.pinyin);
