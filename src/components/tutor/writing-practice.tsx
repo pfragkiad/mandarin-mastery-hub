@@ -104,7 +104,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
             ); })}
           </ol></div>)}
           </div>
-          <p className="stroke-guide-note">{strokes.length} strokes in writing order — tap one to draw through it.</p>
+          <p className="stroke-guide-note">{strokes.length} strokes in writing order{interactive ? ' — tap one to draw through it.' : ' — draw them in the square.'}</p>
         </>
       )}
     </div>
@@ -231,8 +231,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
   // Tapping a stroke tile jumps straight to that step: earlier strokes appear
   // instantly (played at max speed) and only the selected stroke animates.
-  // A tap during a running animation retargets to the new tile instead of
-  // being ignored, so the tiles never feel dead in any mode.
+  // Tiles and component headings belong to Watch playback; Trace and Recall
+  // render them as a reference, with only the pronunciation controls live.
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance || !strokes.length) return;
     setGroupSelection({ character, id: '' });
@@ -297,7 +297,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const group = groups.find(group => group.id === id);
     setGroupSelection({ character, id });
     const instance = writer.current;
-    if (!instance || !group?.strokeIndices.length || mode === 'recall') return;
+    if (!instance || !group?.strokeIndices.length || mode !== 'watch') return;
     const last = Math.max(...group.strokeIndices);
     const run = ++animationRun.current;
     instance.cancelQuiz();
