@@ -232,6 +232,9 @@
 .writer-controls-arranged { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
 .writer-playback { grid-column: 1 / -1; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
 .writer-playback > button { flex: 0 0 auto; }
+.writer-playback > button:first-child { min-width: max-content; }
+.writer-play-label { display: inline-block; }
+.writer-play-label::before { content: 'Play strokes'; display: block; height: 0; overflow: hidden; visibility: hidden; }
 .writer-playback .writer-speed { flex: 1 0 auto; min-width: max-content; margin-left: 0; gap: 8px; justify-content: flex-end; }
 .writer-speed-label { white-space: nowrap; }
 .writer-speed-options { flex-shrink: 0; }
