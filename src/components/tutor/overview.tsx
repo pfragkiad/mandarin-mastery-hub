@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Sparkles, Search, Play } from 'lucide-react';
+import { ArrowRight, Sparkles, Search, Play, Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind } from '@/lib/mandarin';
@@ -24,6 +24,7 @@ export function OverviewPage() {
     </section>
     <SavedStrip/>
     <section className="overview-flashcards" aria-label="Play flashcards"><div className="flashcard-fan" aria-hidden="true"><span lang="zh-CN">学</span><span lang="zh-CN">{daily ?? '习'}</span><Sparkles/></div><div><div className="eyebrow">A LITTLE CHALLENGE</div><h2>How much will you remember?</h2><p>A fresh round. A second chance at the ones you miss.</p></div><Button asChild className="overview-play"><Link to="/flashcards"><Play/>Play flashcards now <ArrowRight/></Link></Button></section>
+    <section className="overview-flashcards overview-drawing" aria-label="Play the drawing game"><div className="drawing-badge" aria-hidden="true"><Pencil/></div><div><div className="eyebrow">PRACTICE YOUR HAND</div><h2>Can you write it without the guide?</h2><p>Draw characters, radicals, and words stroke by stroke.</p></div><Button asChild className="overview-play"><Link to="/drawing"><Play/>Play drawing game <ArrowRight/></Link></Button></section>
   </div>;
 }
 

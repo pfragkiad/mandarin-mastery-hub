@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Info } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
-/** Source/verification metadata: shown inline on wide screens, behind a small (i) button on phones. */
+/** Source/verification metadata: always collapsed behind a small (i) button. */
 export function SourceInfo({ className, children }: { className: string; children: ReactNode }) {
   return <>
     <p className={`${className} source-info-inline`}>{children}</p>
