@@ -47,17 +47,19 @@ describe('stroke practice heading', () => {
       .filter(node => !node.classList.contains('sr-only'))
       .map(node => node.textContent);
 
-  it('shows the stroke form in the heading while watching or tracing', () => {
+  it('shows the heading with the stroke form while watching or tracing', () => {
     const { unmount } = render(<StrokePractice glyph="㇐" mode="watch" />);
-    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual(['㇐']);
+    const watching = screen.getByRole('heading', { name: 'Get to know ㇐' });
+    expect(watching).not.toHaveClass('sr-only');
+    expect(visibleGlyphs(watching)).toEqual(['㇐']);
     unmount();
     render(<StrokePractice glyph="㇐" mode="trace" />);
-    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual(['㇐']);
+    expect(screen.getByRole('heading', { name: 'Get to know ㇐' })).not.toHaveClass('sr-only');
   });
 
-  it('hides the stroke form from the heading in recall, but keeps the reading and meaning', () => {
+  it('hides the whole heading in recall, but keeps the reading and meaning', () => {
     render(<StrokePractice glyph="㇐" mode="recall" />);
-    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Get to know ㇐' }))).toEqual([]);
+    expect(screen.getByRole('heading', { name: 'Get to know ㇐' })).toHaveClass('sr-only');
     expect(screen.getByText('héng')).toBeInTheDocument();
   });
 });
