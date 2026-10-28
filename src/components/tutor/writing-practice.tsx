@@ -59,7 +59,7 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
-function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], theme, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; theme: 'light' | 'dark'; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean }) {
+function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], theme, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true, playing = false }: { strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; theme: 'light' | 'dark'; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean; playing?: boolean }) {
   const [visible, setVisible] = useState(defaultVisible);
   if (!strokes.length) return null;
   return (
@@ -77,7 +77,8 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
             {strokes.map((stroke, i) => (
               <li key={i}>
                 <Button variant="ghost"
-                  type="button"
+                   type="button"
+                   disabled={playing}
                   className={`stroke-chip${activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}`}
                   title={`Play stroke ${i + 1}`}
                   aria-label={`Play stroke ${i + 1}`}
@@ -96,7 +97,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
               </li>
             ))}
           </ol>
-          <p className="stroke-guide-note">{strokes.length} strokes in writing order — tap one to watch it drawn.</p>
+          <p className="stroke-guide-note">{strokes.length} strokes in writing order — tap one to draw through it.</p>
         </>
       )}
     </div>
@@ -208,14 +209,28 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     if (mode !== 'watch') quiz();
   };
   const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''}`); return prev; }); } }); };
+  // Tapping a stroke tile plays in Step fashion from the current progress and pauses on the selected stroke.
   const playStroke = (index: number) => {
-    const instance = writer.current; if (!instance) return;
+    const instance = writer.current; if (!instance || !strokes.length || playing) return;
     const run = ++animationRun.current;
     applySpeed(instance);
-    instance.cancelQuiz(); setPlaying(true); setPaused(false); setActiveStroke(index);
-    setMessage(strokeMessage(index));
-    instance.showCharacter();
-    instance.animateStroke(index, { onComplete: () => { if (animationRun.current !== run) return; setPlaying(false); setPaused(false); setActiveStroke(null); } });
+    instance.cancelQuiz(); setPlaying(true); setPaused(false); setStepMode(true);
+    const start = stepMode && index >= stepIndex ? stepIndex : 0;
+    if (start === 0) instance.hideCharacter();
+    let i = start;
+    const drawNext = () => {
+      if (animationRun.current !== run) return;
+      if (i > index) {
+        setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(index + 1);
+        setMessage(index + 1 >= strokes.length ? 'All strokes drawn. Press Step to start over.' : `Drawn through stroke ${index + 1}. Press Step for stroke ${index + 2}.`);
+        return;
+      }
+      setActiveStroke(i);
+      setMessage(strokeMessage(i));
+      speakStrokeName(i);
+      instance.animateStroke(i, { onComplete: () => { if (animationRun.current !== run) return; i += 1; drawNext(); } });
+    };
+    drawNext();
   };
   // Practice matches and Step playback share stroke-name speech and the live mute setting.
   // Each Step press draws one stroke; after the last stroke it starts over.
@@ -248,7 +263,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   }, [mode, ready, character]);
   const highlighted = ready && mode !== 'recall' ? component?.strokeIndices ?? [] : [];
   const audioControl = <Button variant="ghost" size="icon" title={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-label={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX/> : <Volume2/>}</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode === 'watch' && <><Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button>{mode === 'watch' && <AnimationSpeedControl speed={speed} onChange={setSpeed}/>}</div></div><StrokeGuide key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode === 'watch' && <><Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</Button><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button>{mode === 'watch' && <AnimationSpeedControl speed={speed} onChange={setSpeed}/>}</div></div><StrokeGuide key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={highlighted} scores={scores} theme={theme} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
