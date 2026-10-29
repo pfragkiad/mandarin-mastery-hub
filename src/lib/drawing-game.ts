@@ -5,7 +5,7 @@ import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined; saved?: boolean | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
 export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
@@ -17,13 +17,14 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
     ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
-    ...(filtered && usage ? { usage } : {}) };
+    ...(filtered && usage ? { usage } : {}),
+    ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) };
 }
 
 /** Use actual recorded clues, explicit script flags and the library's sourced usage counts. */
-export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, includeTraditional: boolean) {
+export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, includeTraditional: boolean, savedIds?: readonly string[]) {
   const filtered = search.kind === 'Radicals' || search.kind === 'Components';
-  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, filtered ? search.usage : undefined)
+  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, filtered ? search.usage : undefined, search.saved ? savedIds : undefined)
     .filter(entry => Array.from(entry.hanzi).length === 1 && entry.pinyin.trim() && entry.meaning.trim());
 }
 
@@ -42,8 +43,9 @@ export function drawingWordClues(card: DrawingCard) {
 }
 
 /** Keep words and exact vocabulary IDs; sample words first, then character occurrences. */
-export function drawingWordPool(items: Word[], search: DrawingSearch, includeTraditional: boolean): DrawingCard[] {
+export function drawingWordPool(items: Word[], search: DrawingSearch, includeTraditional: boolean, savedIds?: readonly string[]): DrawingCard[] {
   return items.filter(word => vocabularyKind(word) === 'word' && includeScript(word.script, includeTraditional)
+    && (!search.saved || (savedIds ?? []).includes(word.id))
     && (!search.collection || word.collection === search.collection) && (!search.level || word.level === search.level)
     && word.pinyin.trim() && word.meaning.trim() && wordCharacters(word).length > 0)
     .map(word => ({ id: word.id, hanzi: wordCharacters(word)[0]?.hanzi ?? '', pinyin: word.pinyin, meaning: word.meaning, note: '', word }));
