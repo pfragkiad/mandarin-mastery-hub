@@ -11,6 +11,7 @@ export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: R
   ...(typeof search['collection'] === 'string' ? { collection: search['collection'] } : {}),
   ...(typeof search['level'] === 'string' ? { level: search['level'] } : {}),
   ...(typeof search['status'] === 'string' ? { status: search['status'] } : {}),
+  ...(typeof search['pos'] === 'string' && search['pos'] ? { pos: search['pos'] } : {}),
 }), head: () => pageHead('Vocabulary', 'Discover Mandarin words and phrases, listen to pronunciation, and collect vocabulary for everyday life.'), component: VocabularyRoute });
 function VocabularyRoute() {
   const search = Route.useSearch();
