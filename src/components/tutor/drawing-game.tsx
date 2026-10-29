@@ -18,12 +18,13 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const [deck, setDeck] = useState<DrawingCard[] | null>(null);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [round, setRound] = useState(0);
-  useEffect(() => { setDeck(null); setAnswers([]); }, [kind, search.collection, search.level, search.strokes, search.usage]);
+  useEffect(() => { setDeck(null); setAnswers([]); }, [kind, search.collection, search.level, search.strokes, search.usage, search.saved]);
   const entries = useMemo(() => kind === 'Words' ? [] : libraryEntries(kind), [kind, catalogVersion]);
   const words = useMemo(() => (items ?? []).filter(word => vocabularyKind(word) === 'word'), [items]);
   const collections = [...new Set(words.map(word => word.collection))];
   const levels = [...new Set(words.map(word => word.level))];
-  const pool = useMemo(() => kind === 'Words' ? drawingWordPool(words, search, preferences.includeTraditional) : drawingPool(entries, search, preferences.includeTraditional), [kind, words, entries, search, preferences.includeTraditional]);
+  const pool = useMemo(() => kind === 'Words' ? drawingWordPool(words, search, preferences.includeTraditional, saved) : drawingPool(entries, search, preferences.includeTraditional, saved), [kind, words, entries, search, preferences.includeTraditional, saved]);
+  const savedCount = useMemo(() => kind === 'Words' ? drawingWordPool(words, { ...search, saved: true }, preferences.includeTraditional, saved).length : drawingPool(entries, { ...search, saved: true }, preferences.includeTraditional, saved).length, [kind, words, entries, search, preferences.includeTraditional, saved]);
   const strokeCounts = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
   const filtered = kind === 'Radicals' || kind === 'Components';
   const card = deck?.[answers.length];
@@ -39,7 +40,8 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">RECALL · WRITE · REMEMBER</div><h1>Drawing game</h1></div><span className="heading-hanzi">写<span>xiě</span></span></div>
     <div className="flash-setup drawing-setup">
-      <select className="filter-select" aria-label="Drawing category" value={kind} onChange={event => { const next = drawingKinds.find(value => value === event.target.value); if (next) configure({ kind: next }); }}>{drawingKinds.map(value => <option key={value}>{value}</option>)}</select>
+      <select className="filter-select" aria-label="Drawing category" value={kind} onChange={event => { const next = drawingKinds.find(value => value === event.target.value); if (next) configure({ kind: next, ...(search.saved ? { saved: true } : {}) }); }}>{drawingKinds.map(value => <option key={value}>{value}</option>)}</select>
+      <Button variant="ghost" className={search.saved ? 'selected' : ''} aria-pressed={Boolean(search.saved)} onClick={() => configure({ ...search, saved: search.saved ? undefined : true })}>Saved<span className="catalog-tab-count">{savedCount}</span></Button>
       {kind === 'Words' && <><select className="filter-select" aria-label="Collection" value={search.collection ?? ''} onChange={event => configure({ ...search, collection: event.target.value || undefined })}><option value="">All collections</option>{collections.map(value => <option key={value}>{value}</option>)}</select><select className="filter-select" aria-label="HSK level" value={search.level ?? ''} onChange={event => configure({ ...search, level: event.target.value || undefined })}><option value="">All levels</option>{levels.map(value => <option key={value}>{value}</option>)}</select></>}
       {filtered && <><select className="filter-select" aria-label="Stroke count" value={search.strokes ?? ''} onChange={event => configure({ ...search, strokes: event.target.value || undefined })}><option value="">All stroke counts</option>{strokeCounts.map(value => <option key={value} value={value}>{value} {value === 1 ? 'stroke' : 'strokes'}</option>)}</select>
         <select className="filter-select" aria-label="Usage category" value={search.usage ?? ''} onChange={event => configure({ ...search, usage: reuseGroups.find(group => group.value === event.target.value)?.value })}><option value="">All usage categories</option>{reuseGroups.map(group => <option key={group.value} value={group.value}>{group.label}</option>)}</select></>}
