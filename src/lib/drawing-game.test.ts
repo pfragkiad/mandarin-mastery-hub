@@ -46,6 +46,18 @@ describe('drawing game rules', () => {
   it('keeps phrases out of Words regardless of their length', () => {
     expect(drawingWordPool([word, { ...word, id: 'phrase', entryKind: 'phrase' }], { kind: 'Words' }, false).map(card => card.id)).toEqual(['word-hello']);
   });
+  it('limits Words to saved IDs when the saved filter is on', () => {
+    expect(drawingWordPool([word, { ...word, id: 'other' }], { kind: 'Words', saved: true }, false, ['other']).map(card => card.id)).toEqual(['other']);
+    expect(drawingWordPool([word], { kind: 'Words' }, false, []).map(card => card.id)).toEqual(['word-hello']);
+  });
+  it('limits library cards to saved IDs when the saved filter is on', () => {
+    expect(drawingPool(entries, { kind: 'Characters', saved: true }, false, ['b', 'd']).map(entry => entry.id)).toEqual(['b', 'd']);
+  });
+  it('keeps the saved flag in the URL for every kind', () => {
+    expect(drawingSearch({ kind: 'Words', saved: '1' })).toEqual({ kind: 'Words', saved: true });
+    expect(drawingSearch({ kind: 'Characters', saved: true })).toEqual({ kind: 'Characters', saved: true });
+    expect(drawingSearch({ kind: 'Characters' })).toEqual({ kind: 'Characters' });
+  });
   it('preserves word filters in the URL only in Words mode', () => {
     expect(drawingSearch({ kind: 'Words', collection: 'Greetings', level: 'HSK 1', strokes: '2' })).toEqual({ kind: 'Words', collection: 'Greetings', level: 'HSK 1' });
     expect(drawingSearch({ kind: 'Characters', collection: 'Greetings', level: 'HSK 1' })).toEqual({ kind: 'Characters' });
