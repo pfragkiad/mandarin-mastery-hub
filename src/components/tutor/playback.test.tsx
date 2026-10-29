@@ -33,6 +33,7 @@ vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ 
 
 beforeEach(() => {
   vi.clearAllMocks();
+  localStorage.clear();
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
