@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined };
+export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
 export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
   ...(search['tab'] === 'word' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}),
   ...(search['py'] === 'pinyin' ? { py: 'pinyin' as const } : {}),
