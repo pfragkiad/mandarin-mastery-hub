@@ -139,10 +139,23 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [stepIndex, setStepIndex] = useState(0);
   // Retain the next undrawn stroke when switching from Step to full playback.
   const [stepMode, setStepMode] = useState(false);
-  // Stroke-name speech stays silent until the listener asks for it.
+  // Stroke-name speech stays silent until the listener asks for it; the
+  // preference is remembered across visits (muted on first load).
   const [muted, setMuted] = useState(true);
   const mutedRef = useRef(muted);
   mutedRef.current = muted;
+  const mutedLoaded = useRef(false);
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('tutor-stroke-audio');
+      if (saved !== null) setMuted(saved === 'muted');
+    } catch { /* storage may be unavailable */ }
+    mutedLoaded.current = true;
+  }, []);
+  useEffect(() => {
+    if (!mutedLoaded.current) return;
+    try { localStorage.setItem('tutor-stroke-audio', muted ? 'muted' : 'unmuted'); } catch { /* ignore */ }
+  }, [muted]);
   const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup || Boolean(radicalSelection) || Boolean(radicalStrokes(character)), groupingSource);
   const groupRef = useRef(groups);
   groupRef.current = groups;

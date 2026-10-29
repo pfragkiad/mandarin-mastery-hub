@@ -33,6 +33,7 @@ vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ 
 
 beforeEach(() => {
   vi.clearAllMocks();
+  localStorage.clear();
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
@@ -184,6 +185,19 @@ describe('matched practice stroke speech', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
     act(() => callbacks.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
+  });
+
+  it('remembers the unmuted preference across remounts', async () => {
+    const first = await startPractice();
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    cleanup();
+    expect(localStorage.getItem('tutor-stroke-audio')).toBe('unmuted');
+    await startPractice();
+    expect(screen.getByRole('button', { name: 'Mute stroke names' })).toHaveAttribute('aria-pressed', 'false');
+    act(() => first.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    expect(speakTts).toHaveBeenCalledTimes(1);
+    cleanup();
+    localStorage.clear();
   });
 });
 
