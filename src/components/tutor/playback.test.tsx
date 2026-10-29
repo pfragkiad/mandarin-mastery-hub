@@ -186,6 +186,19 @@ describe('matched practice stroke speech', () => {
     act(() => callbacks.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
   });
+
+  it('remembers the unmuted preference across remounts', async () => {
+    const first = await startPractice();
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    cleanup();
+    expect(localStorage.getItem('tutor-stroke-audio')).toBe('unmuted');
+    await startPractice();
+    expect(screen.getByRole('button', { name: 'Mute stroke names' })).toHaveAttribute('aria-pressed', 'false');
+    act(() => first.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    expect(speakTts).toHaveBeenCalledTimes(1);
+    cleanup();
+    localStorage.clear();
+  });
 });
 
 it('Recall starts without outline, component overlays or automatic hints', async () => {
