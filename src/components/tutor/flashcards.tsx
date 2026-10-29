@@ -17,9 +17,11 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 
 const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 
-export function FlashcardsPage() {
+export function FlashcardsPage({ category: controlledCategory, onCategoryChange }: { category?: string; onCategoryChange?: (category: string) => void } = {}) {
   const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
-  const [category, setCategory] = useState('All vocabulary');
+  const [categoryState, setCategoryState] = useState('All vocabulary');
+  const category = controlledCategory ?? categoryState;
+  const setCategory = (next: string) => { setCategoryState(next); onCategoryChange?.(next); };
   const [level, setLevel] = useState('All levels');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
   const [showFrontPinyin, setShowFrontPinyin] = useState(false);
@@ -33,17 +35,24 @@ export function FlashcardsPage() {
   const [total, setTotal] = useState(0);
   const levels = useMemo(() => [...new Set(items.map(w => w.level))], [items]);
   const isReference = category.startsWith('Ref:');
+  const isSaved = category === 'Saved';
 
   const pool = useMemo<Card[]>(() => {
-    if (isReference) {
-      const kind = category.slice(4);
-      const reference = referenceCatalog.find(c => c.kind === kind);
-      if (!reference) return [];
-      const libraryKind = libraryKinds[reference.kind];
-      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
+    if (isReference || isSaved) {
+      const referenceCards = (kind: ReferenceKind) => {
+        const reference = referenceCatalog.find(c => c.kind === kind);
+        if (!reference) return [];
+        const libraryKind = libraryKinds[reference.kind];
+        return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
+      };
+      if (isSaved) {
+        const kinds = Object.keys(libraryKinds) as ReferenceKind[];
+        return [...items.filter(w => saved.includes(w.id)), ...kinds.flatMap(kind => referenceCards(kind).filter(card => saved.includes(card.id)))];
+      }
+      return referenceCards(category.slice(4) as ReferenceKind);
     }
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
-  }, [items, category, level, isReference, preferences.includeTraditional, catalogVersion]);
+  }, [items, category, level, isReference, isSaved, saved, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const start = (cards: Card[], next = false) => {
@@ -77,8 +86,9 @@ export function FlashcardsPage() {
       <select className="filter-select" aria-label="Category" value={category} onChange={e => { setCategory(e.target.value); setDeck(null); }}>
         <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
         <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
+        <optgroup label="Workspace"><option>Saved</option></optgroup>
       </select>
-      <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
+      <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference || isSaved} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
