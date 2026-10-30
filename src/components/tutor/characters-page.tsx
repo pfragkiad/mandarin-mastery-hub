@@ -47,6 +47,9 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
+  const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1];
+  const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number;
+  const radicalFact = kind === 'Strokes' ? null : kind === 'Characters' && noteRadical ? <span lang="zh-CN">{noteRadical}</span> : kangxiNumber ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : noteRadical ? <span lang="zh-CN">{noteRadical}</span> : null;
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
   const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
@@ -58,10 +61,9 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
     <div className="eyebrow">{info.label.toUpperCase()} REFERENCE</div>
-    <RecordDetailTitle hanzi={entry.hanzi} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={entry.hanzi} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Components' && fallback?.meaning ? `${fallback.meaning} · ${info.meaning}` : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
-    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{info.label}{(kind === 'Characters' || kind === 'Components' || (kind === 'Radicals' && (!form || form.character === heading.hanzi))) && usageOrder.loaded && <UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/>}</dd></div></dl>
-    <p className="catalog-record-note">{entry.note}</p>
+    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div>{radicalFact && <div><dt>Radical</dt><dd>{radicalFact}</dd></div>}<div><dt>Record</dt><dd className="catalog-record-value">{info.label}{(kind === 'Characters' || kind === 'Components' || (kind === 'Radicals' && (!form || form.character === heading.hanzi))) && usageOrder.loaded && <UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/>}</dd></div></dl>
     {info.component && <p className="catalog-record-note">{info.codePoint}{fallback ? ` · Name and reading follow the main form ${fallback.headingGlyph} · ${fallback.pinyin}.` : info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Components' || (kind === 'Characters' && radicalIdentity(entry.hanzi).radicals.length > 0)) && <RadicalIdentityNote glyph={entry.hanzi}/>}
     {kind === 'Radicals' && heading.kangxiIndex && <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key}/>}
@@ -86,7 +88,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState<string | null>(null);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
-  const tileMeaning = kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning;
+  const tileMeaning = kind === 'Components' && fallback?.meaning ? `${fallback.meaning} · ${info.meaning}` : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning;
   const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : [];
   const hasPinyin = Boolean(info.reading || fallback?.pinyin);
   const hasMeaning = Boolean(info.meaning);
