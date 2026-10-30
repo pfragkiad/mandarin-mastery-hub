@@ -32,7 +32,7 @@ export function usageCumulative(glyph: string, kind: LibraryKind, includeTraditi
 export function usageGroupLabel(group: UsageGroup, kind: string, includeTraditional: boolean): string {
   if (kind !== 'Characters' && kind !== 'Components') return group.label;
   const percent = usageOrder.data?.scopes[scopeFor(includeTraditional)].groupCumulative?.[kind === 'Characters' ? 'characters' : 'components'][group.value];
-  return percent === undefined ? group.label : `${group.label} · ${percent.toFixed(2)}%`;
+  return percent === undefined ? group.label : `${group.label} · ${percent.toFixed(1)}%`;
 }
 export function usageRank(entry: Pick<LibraryEntry, 'hanzi' | 'kangxiIndex' | 'id'>, kind: LibraryKind, includeTraditional: boolean): number | null {
   const ranks = usageOrder.data?.scopes[scopeFor(includeTraditional)] ?? empty;
