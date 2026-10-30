@@ -90,7 +90,7 @@ export function libraryDestination(glyph: string, includeTraditional = false) {
 
 /** A Kangxi variant form without its own recorded component name or reading inherits the
  * family heading's name, pronunciation and audio; forms with their own data stay untouched. */
-export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null } | null {
+export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null; meaning: string } | null {
   const hit = radicalForms(glyph).find(item => item.form.character === glyph && (familyId === undefined || item.family.id === familyId));
   // Without a family form, fall back to a unique exact Kangxi identity (e.g. component 亻 → 人).
   const identity = hit || familyId !== undefined ? undefined : radicalIdentity(glyph).radicals;
@@ -102,5 +102,5 @@ export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?:
   if (!heading || heading.hanzi === glyph) return null;
   const main = glyphPresentation(heading.hanzi, 'Radicals', heading.pinyin, heading.meaning);
   if (!main.reading) return null;
-  return { headingGlyph: heading.hanzi, pinyin: main.reading, spoken: main.speech ?? heading.hanzi, reading: main.reading || null };
+  return { headingGlyph: heading.hanzi, pinyin: main.reading, spoken: main.speech ?? heading.hanzi, reading: main.reading || null, meaning: main.meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') };
 }
