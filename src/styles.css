@@ -772,3 +772,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-facts dt.catalog-rank-label + dd { display: flex; align-items: center; min-height: 1.5em; line-height: 1.5; }
 .catalog-facts dt { line-height: 1.5; }
 .catalog-facts dd { line-height: 1.5; }
+.catalog-detail .catalog-detail-title { margin-bottom: 0; }
+.catalog-detail .word-detail-actions { margin: 14px 0 20px; }
+.catalog-detail .catalog-facts { padding-top: 20px; }
