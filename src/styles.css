@@ -367,6 +367,8 @@
 /* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
 .kangxi-identity-item { display: inline-flex; align-items: center; gap: 8px; }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
+.kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
+.kangxi-identity-badge { font-size: 8px; }
 .decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline; white-space: nowrap; }.decomposition-pronunciation .decomposition-listen { transform: translateY(-1px); }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
