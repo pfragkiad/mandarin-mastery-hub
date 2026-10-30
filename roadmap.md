@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Add sourced cumulative character/component percentages and update component frequency classes across libraries and games; validated 39 tests, unchanged ranks in both scopes, and live filters/details/flashcard round.
+
 - [done] Move glyph detail actions directly below translation.
 - [done] Add sentence and word pronunciation controls to Glyphs usage examples; verify playback and layout.
 

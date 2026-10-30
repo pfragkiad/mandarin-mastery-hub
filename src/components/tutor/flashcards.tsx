@@ -10,7 +10,7 @@ import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
-import { usageGroups, usageGroupFor, usageRank, parseUsageGroup } from '@/lib/usage-frequency';
+import { usageGroupLabel, usageGroups, usageGroupFor, usageRank, parseUsageGroup } from '@/lib/usage-frequency';
 
 type Card = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; script?: CharacterScript; audio?: AudioAttachment | null };
 const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
@@ -97,7 +97,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
       </select>
       <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference || isSaved} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Part of speech" value={pos} disabled={isReference || isSaved} onChange={e => { setPos(e.target.value); setDeck(null); }}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
-      {isReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[category.slice(4) as ReferenceKind], usage) ?? ''} onChange={e => { setUsage(e.target.value); setDeck(null); }}><option value="">All frequencies</option>{usageGroups(libraryKinds[category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{group.label}</option>)}</select>}
+      {isReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[category.slice(4) as ReferenceKind], usage) ?? ''} onChange={e => { setUsage(e.target.value); setDeck(null); }}><option value="">All frequencies</option>{usageGroups(libraryKinds[category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}

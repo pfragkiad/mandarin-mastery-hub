@@ -4,7 +4,7 @@
 import type { LibraryEntry, LibraryKind } from './character-library';
 
 export type UsageScope = 'all' | 'simplified';
-type ScopeRanks = { characters: Record<string, number>; components: Record<string, number>; radicals: Record<string, number> };
+type ScopeRanks = { characters: Record<string, number>; components: Record<string, number>; radicals: Record<string, number>; cumulative?: { characters: Record<string, number>; components: Record<string, number> }; groupCumulative?: { characters: Record<string, number>; components: Record<string, number> } };
 export type UsageOrderFile = { schemaVersion: number; source: { provider: string; version: string; sourceUrl: string; license: string }; method: string; scopes: Record<UsageScope, ScopeRanks> };
 
 const empty: ScopeRanks = { characters: {}, components: {}, radicals: {} };
@@ -18,13 +18,22 @@ const unranked: UsageGroup = { value: UNRANKED, label: 'No frequency data', min:
 export const usageGroupsByKind: Record<'Characters' | 'Radicals' | 'Components', UsageGroup[]> = {
   Characters: [bin(1, 100), bin(101, 300), bin(301, 500), bin(501, 1000), bin(1001, 2000), bin(2001, 3500), bin(3501, 5000), bin(5001, 9933), unranked],
   Radicals: [bin(1, 20), bin(21, 50), bin(51, 100), bin(101, 214), unranked],
-  Components: [bin(1, 50), bin(51, 100), bin(101, 300), bin(301, 600), bin(601, Infinity), unranked],
+  Components: [bin(1, 25), bin(26, 50), bin(51, 100), bin(101, 200), bin(201, 300), bin(301, 500), bin(501, 1000), bin(1001, Infinity), unranked],
 };
 export const hasUsageGroups = (kind: string): kind is keyof typeof usageGroupsByKind => kind in usageGroupsByKind;
 export function usageGroups(kind: string): UsageGroup[] { return hasUsageGroups(kind) ? usageGroupsByKind[kind] : []; }
 export function parseUsageGroup(kind: string, value: unknown): string | undefined { return usageGroups(kind).find(group => group.value === value)?.value; }
 
 export const scopeFor = (includeTraditional: boolean): UsageScope => includeTraditional ? 'all' : 'simplified';
+export function usageCumulative(glyph: string, kind: LibraryKind, includeTraditional: boolean): number | null {
+  if (kind !== 'Characters' && kind !== 'Components') return null;
+  return usageOrder.data?.scopes[scopeFor(includeTraditional)].cumulative?.[kind === 'Characters' ? 'characters' : 'components'][glyph] ?? null;
+}
+export function usageGroupLabel(group: UsageGroup, kind: string, includeTraditional: boolean): string {
+  if (kind !== 'Characters' && kind !== 'Components') return group.label;
+  const percent = usageOrder.data?.scopes[scopeFor(includeTraditional)].groupCumulative?.[kind === 'Characters' ? 'characters' : 'components'][group.value];
+  return percent === undefined ? group.label : `${group.label} · ${percent.toFixed(2)}%`;
+}
 export function usageRank(entry: Pick<LibraryEntry, 'hanzi' | 'kangxiIndex' | 'id'>, kind: LibraryKind, includeTraditional: boolean): number | null {
   const ranks = usageOrder.data?.scopes[scopeFor(includeTraditional)] ?? empty;
   if (kind === 'Characters') return ranks.characters[entry.hanzi] ?? null;
