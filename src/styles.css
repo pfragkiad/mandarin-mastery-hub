@@ -763,3 +763,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-facts .catalog-rank-label { min-height: 14px; line-height: 14px; }
 .catalog-facts .catalog-rank-label .source-info-trigger { width: 14px; height: 14px; }
 .word-character .pinyin { margin-bottom: 6px; }
+.catalog-detail .catalog-facts { display: flex; flex-wrap: wrap; gap: 16px 28px; }
+.catalog-detail .catalog-facts > div { flex: none; }
+.catalog-facts .catalog-rank-label .source-info-trigger { margin-top: 0; width: 16px; height: 16px; }
+.catalog-facts .catalog-rank-label .source-info-trigger svg { width: 13px; height: 13px; }
