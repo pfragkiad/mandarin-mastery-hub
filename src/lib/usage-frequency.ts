@@ -25,6 +25,10 @@ export function usageGroups(kind: string): UsageGroup[] { return hasUsageGroups(
 export function parseUsageGroup(kind: string, value: unknown): string | undefined { return usageGroups(kind).find(group => group.value === value)?.value; }
 
 export const scopeFor = (includeTraditional: boolean): UsageScope => includeTraditional ? 'all' : 'simplified';
+const smallPercentage = new Intl.NumberFormat('en-US', { minimumSignificantDigits: 2, maximumSignificantDigits: 2, useGrouping: false });
+export function formatUsagePercentage(percent: number): string {
+  return `${percent > 0 && percent < 1 ? smallPercentage.format(percent) : percent.toFixed(1)}%`;
+}
 export function usagePercentage(glyph: string, kind: LibraryKind, includeTraditional: boolean): number | null {
   if (kind !== 'Characters' && kind !== 'Components') return null;
   return usageOrder.data?.scopes[scopeFor(includeTraditional)].individual?.[kind === 'Characters' ? 'characters' : 'components'][glyph] ?? null;
@@ -36,7 +40,7 @@ export function usageCumulative(glyph: string, kind: LibraryKind, includeTraditi
 export function usageGroupLabel(group: UsageGroup, kind: string, includeTraditional: boolean): string {
   if (kind !== 'Characters' && kind !== 'Components') return group.label;
   const percent = usageOrder.data?.scopes[scopeFor(includeTraditional)].groupCumulative?.[kind === 'Characters' ? 'characters' : 'components'][group.value];
-  return percent === undefined ? group.label : `${group.label} · ${percent.toFixed(1)}%`;
+  return percent === undefined ? group.label : `${group.label} · ${formatUsagePercentage(percent)}`;
 }
 export function usageRank(entry: Pick<LibraryEntry, 'hanzi' | 'kangxiIndex' | 'id'>, kind: LibraryKind, includeTraditional: boolean): number | null {
   const ranks = usageOrder.data?.scopes[scopeFor(includeTraditional)] ?? empty;

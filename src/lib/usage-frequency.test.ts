@@ -1,9 +1,22 @@
 import { describe, expect, it } from 'vitest';
 import usage from '../../public/data/usage-order.json';
-import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usagePercentage, usageGroupFor, usageRank, sortByUsage, type UsageOrderFile } from './usage-frequency';
+import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, sortByUsage, type UsageOrderFile } from './usage-frequency';
 
 hydrateUsageOrder(usage as UsageOrderFile);
 describe('frequency ranks', () => {
+  it('keeps two significant digits below one percent without scientific notation', () => {
+    expect(formatUsagePercentage(0.0374)).toBe('0.037%');
+    expect(formatUsagePercentage(0.456)).toBe('0.46%');
+    expect(formatUsagePercentage(0.4)).toBe('0.40%');
+    expect(formatUsagePercentage(0.000001234)).toBe('0.0000012%');
+    expect(formatUsagePercentage(0.999)).toBe('1.0%');
+  });
+  it('keeps one decimal place at one percent and above, and for zero', () => {
+    expect(formatUsagePercentage(1)).toBe('1.0%');
+    expect(formatUsagePercentage(1.576)).toBe('1.6%');
+    expect(formatUsagePercentage(40.09)).toBe('40.1%');
+    expect(formatUsagePercentage(0)).toBe('0.0%');
+  });
   it('uses individual entry percentages, not cumulative totals, for details', () => {
     expect(usagePercentage('一', 'Characters', true)).toBeCloseTo(1.5765677795899825);
     expect(usagePercentage('口', 'Components', true)).toBeCloseTo(3.8704786491988545);
