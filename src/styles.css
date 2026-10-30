@@ -144,7 +144,7 @@
 .glyph-usage-reference:hover { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
 .glyph-usage-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
-.glyph-usage-section > .glyph-usage-example:first-child > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
+.glyph-usage-section > .glyph-usage-example:first-of-type > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
   display: inline-flex; align-items: center; justify-content: center;
