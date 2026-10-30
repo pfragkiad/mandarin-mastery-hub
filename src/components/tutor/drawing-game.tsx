@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowRight, Bookmark, Check, PenLine, Play, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
-import { vocabularyKind } from '@/lib/mandarin';
+import { partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { reuseGroups } from '@/lib/component-reuse';
 import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingResult, type DrawingSearch } from '@/lib/drawing-game';
 import { DrawingBoard } from './drawing-board';
