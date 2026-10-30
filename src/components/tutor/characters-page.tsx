@@ -16,6 +16,7 @@ import { glyphUsage } from '@/lib/glyph-usage';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
+import { TileSpeaker } from './tile-speaker';
 import { DecompositionTree } from './decomposition-tree';
 import { GlyphUsageExamples } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
@@ -135,7 +136,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
-    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }} metadata={kind !== 'Strokes' && usageOrder.loaded ? <>{entry.strokes !== undefined && <span className="usage-strokes">{entry.strokes} strokes · </span>}<UsageLabel rank={usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/></> : entry.strokes !== undefined ? `${entry.strokes} strokes` : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? 'Stroke' : 'Stroke count not recorded'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>
+    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }} metadata={kind !== 'Strokes' && usageOrder.loaded ? <>{entry.strokes !== undefined && <span className="usage-strokes">{entry.strokes} strokes · </span>}<UsageLabel rank={usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/></> : entry.strokes !== undefined ? `${entry.strokes} strokes` : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? 'Stroke' : 'Stroke count not recorded'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)}/>
     {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}
   </article>;
 }
