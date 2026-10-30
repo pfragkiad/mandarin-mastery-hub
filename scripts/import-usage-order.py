@@ -21,6 +21,10 @@ for scope, key in (("all-forms", "all"), ("non-traditional", "simplified")):
             "characters": {r["glyph"]: r["frequency"]["cumulativePercent"] for r in chars["records"] if r.get("frequency")},
             "components": {r["glyph"]: r["cumulativeExposurePercent"] for r in comps["records"] if r.get("cumulativeExposurePercent") is not None},
         },
+        "individual": {
+            "characters": {r["glyph"]: r["frequency"]["perMillion"] / 10000 for r in chars["records"] if r.get("frequency") and r["frequency"].get("perMillion") is not None},
+            "components": {r["glyph"]: r["exposurePercent"] for r in comps["records"] if r.get("exposurePercent") is not None},
+        },
         "groupCumulative": {
             "characters": {
                 f"{lo}-{hi}": max((r["frequency"] for r in chars["records"] if r.get("frequency") and r["frequency"]["sourceRank"] <= hi), key=lambda f: f["sourceRank"])["cumulativePercent"]

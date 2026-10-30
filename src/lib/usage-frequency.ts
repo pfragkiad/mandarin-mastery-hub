@@ -4,7 +4,7 @@
 import type { LibraryEntry, LibraryKind } from './character-library';
 
 export type UsageScope = 'all' | 'simplified';
-type ScopeRanks = { characters: Record<string, number>; components: Record<string, number>; radicals: Record<string, number>; cumulative?: { characters: Record<string, number>; components: Record<string, number> }; groupCumulative?: { characters: Record<string, number>; components: Record<string, number> } };
+type ScopeRanks = { characters: Record<string, number>; components: Record<string, number>; radicals: Record<string, number>; individual?: { characters: Record<string, number>; components: Record<string, number> }; cumulative?: { characters: Record<string, number>; components: Record<string, number> }; groupCumulative?: { characters: Record<string, number>; components: Record<string, number> } };
 export type UsageOrderFile = { schemaVersion: number; source: { provider: string; version: string; sourceUrl: string; license: string }; method: string; scopes: Record<UsageScope, ScopeRanks> };
 
 const empty: ScopeRanks = { characters: {}, components: {}, radicals: {} };
@@ -25,6 +25,10 @@ export function usageGroups(kind: string): UsageGroup[] { return hasUsageGroups(
 export function parseUsageGroup(kind: string, value: unknown): string | undefined { return usageGroups(kind).find(group => group.value === value)?.value; }
 
 export const scopeFor = (includeTraditional: boolean): UsageScope => includeTraditional ? 'all' : 'simplified';
+export function usagePercentage(glyph: string, kind: LibraryKind, includeTraditional: boolean): number | null {
+  if (kind !== 'Characters' && kind !== 'Components') return null;
+  return usageOrder.data?.scopes[scopeFor(includeTraditional)].individual?.[kind === 'Characters' ? 'characters' : 'components'][glyph] ?? null;
+}
 export function usageCumulative(glyph: string, kind: LibraryKind, includeTraditional: boolean): number | null {
   if (kind !== 'Characters' && kind !== 'Components') return null;
   return usageOrder.data?.scopes[scopeFor(includeTraditional)].cumulative?.[kind === 'Characters' ? 'characters' : 'components'][glyph] ?? null;
