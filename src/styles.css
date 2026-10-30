@@ -352,6 +352,13 @@
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
 .reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
 .tile-absent { font-family: var(--font-sans); font-size: 11px; font-style: italic; font-weight: 400; line-height: 1.5; color: color-mix(in oklab, var(--terracotta) 55%, var(--muted-foreground)); letter-spacing: .01em; white-space: nowrap; }
+/* Card tiles: the speaker sits beside the pinyin inside the clickable tile. */
+.word-character .pinyin { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.word-character .pinyin-text { min-width: 0; }
+.tile-speaker { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; flex: none; border-radius: 5px; color: var(--muted-foreground); cursor: pointer; }
+.tile-speaker svg { width: 11px; height: 11px; }
+.tile-speaker:not([aria-disabled='true']):hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
+.tile-speaker:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
 .tile-tooltip { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; max-width: 290px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); box-shadow: var(--shadow-popover); color: var(--foreground); text-align: left; }
 .tile-tooltip-head { display: flex; align-items: baseline; gap: 9px; }
 .tile-tooltip-head strong { font-family: var(--font-hanzi); font-size: 21px; font-weight: 400; line-height: 1.2; }
