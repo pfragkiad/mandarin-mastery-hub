@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
-import { reuseGroup, reuseGroups, type ReuseGroup } from '@/lib/component-reuse';
+import { usageGroups, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, radicalVariantFallback, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
@@ -29,9 +29,11 @@ import { RadicalStrokeDecomposition, RadicalStrokeSourceInfo } from './radical-s
 
 const kinds: LibraryKind[] = ['Characters', 'Radicals', 'Components', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
-function ReuseLabel({ count, compact = false, radical = false }: { count: number; compact?: boolean; radical?: boolean }) {
-  const group = reuseGroup(count);
-  return <span className={`component-reuse-label reuse-${group.value}`} title={`${group.label} · ${count} distinct characters ${radical ? 'classified under this dictionary radical' : 'in recorded breakdowns'}, including simplified and traditional forms; not everyday language frequency.`}>{compact ? count ? `${count} chars` : 'Unrecorded' : `${group.label} · ${count} characters`}</span>;
+function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
+  const group = usageGroupFor(kind, rank);
+  const tier = rank === null ? 'none' : (usageGroups(kind).indexOf(group!) < 2 ? 'top' : 'mid');
+  const basis = kind === 'Characters' ? 'Corpus frequency rank' : `Estimated ${kind === 'Radicals' ? 'radical' : 'component'} exposure rank, derived from character frequencies`;
+  return <span className={`component-reuse-label usage-${tier}`} title={rank === null ? `No frequency data in ${usageOrder.data?.source.provider ?? 'the frequency list'}` : `${basis} · ${usageOrder.data?.source.provider ?? ''}`}>{rank === null ? (compact ? 'Unranked' : 'No frequency data') : compact ? `#${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
 }
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
@@ -42,9 +44,8 @@ function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
 export function CharacterDetails({ entry: heading, kind, variant }: { entry: LibraryEntry; kind: LibraryKind; variant?: string | undefined }) {
   const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, variant) : undefined;
   const exact = form ? ['Radicals', 'Characters', 'Components'].flatMap(k => libraryEntries(k as LibraryKind)).find(item => item.hanzi === form.character) : undefined;
-  const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}`, ...(form.character === heading.hanzi && heading.reuseCount !== undefined ? { reuseCount: heading.reuseCount } : {}) } : heading;
+  const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
-  if (form && form.character !== heading.hanzi) delete entry.reuseCount;
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
@@ -59,7 +60,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     <div className="eyebrow">{info.label.toUpperCase()} REFERENCE</div>
     <RecordDetailTitle hanzi={entry.hanzi} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
-    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{info.label}{entry.reuseCount !== undefined && <ReuseLabel count={entry.reuseCount} radical={kind === 'Radicals'}/>}</dd></div></dl>
+    <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{info.label}{(kind === 'Characters' || kind === 'Components' || (kind === 'Radicals' && (!form || form.character === heading.hanzi))) && usageOrder.loaded && <UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
     {info.component && <p className="catalog-record-note">{info.codePoint}{fallback ? ` · Name and reading follow the main form ${heading.hanzi} · ${fallback.pinyin}.` : info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Radicals' || kind === 'Components' || radicalIdentity(entry.hanzi).radicals.length > 0) && kind !== 'Strokes' && <RadicalIdentityNote glyph={entry.hanzi}/>}
@@ -121,12 +122,12 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
-    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }} metadata={entry.reuseCount !== undefined ? <ReuseLabel count={entry.reuseCount} compact radical={entry.id.startsWith('Radicals:')}/> : entry.strokes !== undefined ? `${entry.strokes} strokes` : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? 'Stroke' : 'Stroke count not recorded'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>
+    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi }} metadata={kind !== 'Strokes' && usageOrder.loaded ? <>{entry.strokes !== undefined && <span className="usage-strokes">{entry.strokes} strokes · </span>}<UsageLabel rank={usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/></> : entry.strokes !== undefined ? `${entry.strokes} strokes` : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? 'Stroke' : 'Stroke count not recorded'} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} audioAvailable={audioAvailable} audioTitle={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onListen={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>
     {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}
   </article>;
 }
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; reuse?: ReuseGroup | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string | undefined };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -138,21 +139,21 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const query = search.q ?? '';
   const strokeCount = search.strokes ?? '';
   const pinyinOnly = search.py === 'pinyin';
-  const hasUsage = kind === 'Components' || kind === 'Radicals';
-  const reuse = hasUsage ? search.reuse : undefined;
+  const hasUsage = kind !== 'Strokes';
+  const usage = hasUsage ? parseUsageGroup(kind, search.usage) : undefined;
   const savedOnly = search.status === 'saved';
-  const hasFilter = Boolean(query.trim() || strokeCount || reuse || savedOnly || pinyinOnly);
+  const hasFilter = Boolean(query.trim() || strokeCount || usage || savedOnly || pinyinOnly);
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, reuse, page, id: selectedId, status: search.status, py: search.py };
+  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
   const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
   const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
   const setPage = (p: number) => set({ page: p, id: '' });
   const setSelectedId = (id: string) => set({ id, variant: undefined });
   const entries = libraryEntries(kind);
-  const filtered = includeSelectedRecord(entries, filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, reuse, savedOnly ? saved : undefined, pinyinOnly), selectedId);
+  const filtered = includeSelectedRecord(entries, filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly), selectedId);
   const paged = libraryPage(filtered, page, LIBRARY_PAGE_SIZE, selectedId);
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
   useRecordScroll(selected?.id ?? '', catalogReady);
@@ -161,7 +162,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE GLYPH LIBRARY</div><h1>Get to know the characters.</h1><p>Characters, radicals, components and the strokes that bring them together.</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
-        <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => setQuery(e.target.value)}/><button type="button" className={`search-toggle${pinyinOnly ? ' on' : ''}`} aria-pressed={pinyinOnly} title="Search pinyin only" onClick={() => set({ py: pinyinOnly ? undefined : 'pinyin', page: 1, id: '' }, true)}>Pinyin</button></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => setStrokeCount(e.target.value)}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{hasUsage && <Select value={reuse ?? 'all'} onValueChange={value => set({ reuse: reuseGroups.find(group => group.value === value)?.value, page: 1, id: '' })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by usage"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="all">All usage categories</SelectItem>{reuseGroups.map(group => <SelectItem key={group.value} value={group.value}>{group.label}{group.max ? ` · ${group.min}${group.max === Infinity ? '+' : `–${group.max}`}` : ''}</SelectItem>)}</SelectContent></Select>}</div>
+        <div className="filter-bar"><div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={query} onChange={e => setQuery(e.target.value)}/><button type="button" className={`search-toggle${pinyinOnly ? ' on' : ''}`} aria-pressed={pinyinOnly} title="Search pinyin only" onClick={() => set({ py: pinyinOnly ? undefined : 'pinyin', page: 1, id: '' }, true)}>Pinyin</button></div>{k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={strokeCount} onChange={e => setStrokeCount(e.target.value)}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}{k !== 'Strokes' && hasUsage && <Select value={usage ?? 'all'} onValueChange={value => set({ usage: parseUsageGroup(kind, value), page: 1, id: '' })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="all">All frequencies</SelectItem>{usageGroups(kind).map(group => <SelectItem key={group.value} value={group.value}>{group.label}</SelectItem>)}</SelectContent></Select>}</div>
         <div className="catalog-workspace"><section className="catalog-results" aria-label={`${k} results`}><div className="result-row" aria-live="polite"><span>{catalogReady ? (k === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[k]) : `Loading ${plannedCounts[k].toLocaleString('en-US')} records…`}</span>{catalogReady && <span className="catalog-results-count">{filtered.length.toLocaleString('en-US')} {k.toLowerCase()} {hasFilter ? 'match' : 'available'}</span>}</div>{savedOnly && filtered.length > 0 && <div className="saved-actions"><Button asChild variant="outline" size="sm"><Link to="/flashcards" search={{ category: 'Saved' }}><Layers/>Flashcards</Link></Button><Button asChild variant="outline" size="sm"><Link to="/drawing" search={{ kind: k === 'Strokes' ? 'Characters' : k, saved: true }}><PenLine/>Drawing game</Link></Button></div>}<div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} kind={k} selected={selected?.id === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={() => set({ q: '', strokes: '', reuse: undefined, status: undefined, py: undefined, page: 1, id: '' })}>Clear filters</Button></div>}
           <div className="catalog-pagination"><span>{filtered.length ? `${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}` : '0 records'}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => setPage(paged.current - 1)}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => setPage(paged.current + 1)}><ChevronRight/></Button></div></div>
         </section>{selected ? <CharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
