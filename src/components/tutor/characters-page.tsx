@@ -49,7 +49,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
-  const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
   const reading = fallback ? fallback.reading : base.reading;
@@ -62,7 +62,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? 'Not recorded'}</dd></div><div><dt>Record</dt><dd className="catalog-record-value">{info.label}{(kind === 'Characters' || kind === 'Components' || (kind === 'Radicals' && (!form || form.character === heading.hanzi))) && usageOrder.loaded && <UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/>}</dd></div></dl>
     <p className="catalog-record-note">{entry.note}</p>
-    {info.component && <p className="catalog-record-note">{info.codePoint}{fallback ? ` · Name and reading follow the main form ${heading.hanzi} · ${fallback.pinyin}.` : info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
+    {info.component && <p className="catalog-record-note">{info.codePoint}{fallback ? ` · Name and reading follow the main form ${fallback.headingGlyph} · ${fallback.pinyin}.` : info.componentName ? ` · ${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? ` · Radical form that is also an ordinary character.` : ' · No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Radicals' || kind === 'Components' || radicalIdentity(entry.hanzi).radicals.length > 0) && kind !== 'Strokes' && <RadicalIdentityNote glyph={entry.hanzi}/>}
     {kind === 'Radicals' && heading.kangxiIndex && <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key}/>}
     <div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" disabled={Boolean(form && form.character !== heading.hanzi)} title={form && form.character !== heading.hanzi ? 'Bookmarks belong to the Kangxi family card' : undefined} onClick={() => toggleSaved(entry.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div>
@@ -78,7 +78,7 @@ export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filte
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const fallback = kind === 'Radicals' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
   const reading = fallback ? fallback.reading : base.reading;

@@ -1,7 +1,7 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { kindFromId, sortByUsage, usageGroupFor, usageRank } from './usage-frequency';
-import { radicalSearchGlyphs } from './radical-identities';
+import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 
@@ -92,10 +92,13 @@ export function libraryDestination(glyph: string, includeTraditional = false) {
  * family heading's name, pronunciation and audio; forms with their own data stay untouched. */
 export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null } | null {
   const hit = radicalForms(glyph).find(item => item.form.character === glyph && (familyId === undefined || item.family.id === familyId));
-  if (!hit) return null;
+  // Without a family form, fall back to a unique exact Kangxi identity (e.g. component 亻 → 人).
+  const identity = hit || familyId !== undefined ? undefined : radicalIdentity(glyph).radicals;
+  const target = hit ? { id: hit.family.id, glyph: hit.family.kangxiHeading } : identity?.length === 1 && identity[0] ? { id: identity[0].number, glyph: identity[0].glyph } : null;
+  if (!target) return null;
   const own = glyphPresentation(glyph, 'Radicals', ownPinyin);
   if (own.reading) return null;
-  const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === hit.family.id && entry.hanzi === hit.family.kangxiHeading);
+  const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === target.id && (!hit || entry.hanzi === target.glyph));
   if (!heading || heading.hanzi === glyph) return null;
   const main = glyphPresentation(heading.hanzi, 'Radicals', heading.pinyin, heading.meaning);
   if (!main.reading) return null;
