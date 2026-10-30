@@ -144,7 +144,7 @@
 .glyph-usage-reference:hover { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
 .glyph-usage-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
-.glyph-usage-section > .glyph-usage-example:first-child > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
+.glyph-usage-section > .glyph-usage-example:first-of-type > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
   display: inline-flex; align-items: center; justify-content: center;
@@ -367,6 +367,8 @@
 /* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
 .kangxi-identity-item { display: inline-flex; align-items: center; gap: 8px; }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
+.kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
+.kangxi-identity-badge { font-size: 8px; }
 .decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline; white-space: nowrap; }.decomposition-pronunciation .decomposition-listen { transform: translateY(-1px); }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
