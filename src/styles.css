@@ -222,8 +222,8 @@
 .catalog-facts dd { margin: 6px 0 0; font-size: 14px; }
 .catalog-record-note { font-size: 12px; color: var(--muted-foreground); margin: 18px 0; }
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
-.reuse-very-frequent, .reuse-frequent { color: var(--primary); }
-.reuse-moderate { color: var(--terracotta); }
+.usage-top { color: var(--primary); }
+.usage-mid { color: var(--terracotta); }
 .catalog-record-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
 .catalog-entry.has-reuse { height: 144px; gap: 3px; }
 .catalog-entry > .component-reuse-label { margin-top: 2px; }
