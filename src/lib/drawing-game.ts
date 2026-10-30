@@ -1,31 +1,31 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
-import { reuseGroups, type ReuseGroup } from './component-reuse';
+import { parseUsageGroup } from './usage-frequency';
 import { partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: string | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
 export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const kind = drawingKinds.find(value => value === search['kind']);
-  const usage = reuseGroups.find(group => group.value === search['usage'])?.value;
+  const usage = kind && kind !== 'Words' ? parseUsageGroup(kind, search['usage']) : undefined;
   const strokes = String(search['strokes'] ?? '');
   const filtered = kind === 'Radicals' || kind === 'Components';
   return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
     ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
     ...(kind === 'Words' && typeof search['pos'] === 'string' && search['pos'].trim() ? { pos: search['pos'] } : {}),
-    ...(filtered && usage ? { usage } : {}),
+    ...(usage ? { usage } : {}),
     ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) };
 }
 
-/** Use actual recorded clues, explicit script flags and the library's sourced usage counts. */
+/** Use actual recorded clues, explicit script flags and the library's corpus frequency groups. */
 export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, includeTraditional: boolean, savedIds?: readonly string[]) {
   const filtered = search.kind === 'Radicals' || search.kind === 'Components';
-  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, filtered ? search.usage : undefined, search.saved ? savedIds : undefined)
+  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, search.kind === 'Words' ? undefined : search.usage, search.saved ? savedIds : undefined)
     .filter(entry => Array.from(entry.hanzi).length === 1 && entry.pinyin.trim() && entry.meaning.trim());
 }
 
