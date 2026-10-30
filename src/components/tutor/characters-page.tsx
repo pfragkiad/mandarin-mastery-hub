@@ -49,7 +49,17 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1];
   const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number;
-  const radicalFact = kind === 'Strokes' ? null : kind === 'Characters' && noteRadical ? <span lang="zh-CN">{noteRadical}</span> : kangxiNumber ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : noteRadical ? <span lang="zh-CN">{noteRadical}</span> : null;
+  const radicalFact = (() => {
+    if (kind === 'Strokes') return null;
+    if (noteRadical) {
+      const identity = radicalIdentity(entry.hanzi).radicals.find(radical => radical.glyph === noteRadical);
+      const destination = libraryDestination(noteRadical, preferences.includeTraditional);
+      return <span className="facts-radical">{destination
+        ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={identity ? `Open Kangxi radical ${identity.number}` : `Open radical ${noteRadical}`}><strong lang="zh-CN">{noteRadical}</strong></Link></Button>
+        : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{noteRadical}</strong>}</span>;
+    }
+    return kangxiNumber ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : null;
+  })();
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
   const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
