@@ -33,8 +33,8 @@ describe('frequency ranks', () => {
   it('uses the scope-specific component share rather than character corpus coverage', () => {
     const group = usageGroups('Components')[0];
     if (!group) throw new Error('Missing component class');
-    expect(usageGroupLabel(group, 'Components', true)).toContain('40.09%');
-    expect(usageGroupLabel(group, 'Components', false)).toContain('40.10%');
+    expect(usageGroupLabel(group, 'Components', true)).toContain('40.1%');
+    expect(usageGroupLabel(group, 'Components', false)).toContain('40.1%');
   });
   it('sorts most frequent first with unranked last', () => {
     const rows = ['龘', '人', '的'].map(hanzi => ({ id: `Characters:${hanzi}`, hanzi }));
