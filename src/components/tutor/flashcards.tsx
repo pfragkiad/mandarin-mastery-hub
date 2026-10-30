@@ -56,7 +56,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
       const refKind = libraryKinds[category.slice(4) as ReferenceKind];
       const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
       const kangxi = new Map(refKind === 'Radicals' ? referenceCatalog.find(c => c.kind === 'Radical')?.entries.map(row => [row[0], Number((row[3] ?? "").match(/\bRadical #(\d+)\b/i)?.[1]) || undefined] as const) ?? [] : []);
-      return referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, kangxiIndex: kangxi.get(card.hanzi) }, refKind, preferences.includeTraditional))?.value === group);
+      return referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional))?.value === group);
     }
     return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
   }, [items, category, level, pos, isReference, isSaved, saved, usage, preferences.includeTraditional, catalogVersion]);
