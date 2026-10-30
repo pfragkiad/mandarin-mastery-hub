@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
-import { collections } from '@/lib/mandarin';
+import { collections, partOfSpeechList, partOfSpeechOptions } from '@/lib/mandarin';
 import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -23,6 +23,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
   const category = controlledCategory ?? categoryState;
   const setCategory = (next: string) => { setCategoryState(next); onCategoryChange?.(next); };
   const [level, setLevel] = useState('All levels');
+  const [pos, setPos] = useState('All types');
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
   const [showFrontPinyin, setShowFrontPinyin] = useState(false);
   const [deckSize, setDeckSize] = useState<number | 'all'>(10);
@@ -34,6 +35,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
   const [round, setRound] = useState(1);
   const [total, setTotal] = useState(0);
   const levels = useMemo(() => [...new Set(items.map(w => w.level))], [items]);
+  const posOptions = useMemo(() => partOfSpeechOptions(items), [items]);
   const isReference = category.startsWith('Ref:');
   const isSaved = category === 'Saved';
 
@@ -51,8 +53,8 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
       }
       return referenceCards(category.slice(4) as ReferenceKind);
     }
-    return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level));
-  }, [items, category, level, isReference, isSaved, saved, preferences.includeTraditional, catalogVersion]);
+    return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
+  }, [items, category, level, pos, isReference, isSaved, saved, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const start = (cards: Card[], next = false) => {
@@ -89,6 +91,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
         <optgroup label="Workspace"><option>Saved</option></optgroup>
       </select>
       <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference || isSaved} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
+      <select className="filter-select" aria-label="Part of speech" value={pos} disabled={isReference || isSaved} onChange={e => { setPos(e.target.value); setDeck(null); }}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
