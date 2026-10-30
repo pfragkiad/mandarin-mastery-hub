@@ -1,11 +1,11 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
 import { reuseGroups, type ReuseGroup } from './component-reuse';
-import { vocabularyKind, type Word } from './mandarin';
+import { partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined; saved?: boolean | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: ReuseGroup | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
 export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
@@ -17,6 +17,7 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
     ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
+    ...(kind === 'Words' && typeof search['pos'] === 'string' && search['pos'].trim() ? { pos: search['pos'] } : {}),
     ...(filtered && usage ? { usage } : {}),
     ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) };
 }
@@ -47,6 +48,7 @@ export function drawingWordPool(items: Word[], search: DrawingSearch, includeTra
   return items.filter(word => vocabularyKind(word) === 'word' && includeScript(word.script, includeTraditional)
     && (!search.saved || (savedIds ?? []).includes(word.id))
     && (!search.collection || word.collection === search.collection) && (!search.level || word.level === search.level)
+    && (!search.pos || partOfSpeechList(word).includes(search.pos))
     && word.pinyin.trim() && word.meaning.trim() && wordCharacters(word).length > 0)
     .map(word => ({ id: word.id, hanzi: wordCharacters(word)[0]?.hanzi ?? '', pinyin: word.pinyin, meaning: word.meaning, note: '', word }));
 }
