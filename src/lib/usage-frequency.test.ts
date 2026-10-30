@@ -1,9 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import usage from '../../public/data/usage-order.json';
-import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usageGroupFor, usageRank, sortByUsage, type UsageOrderFile } from './usage-frequency';
+import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usagePercentage, usageGroupFor, usageRank, sortByUsage, type UsageOrderFile } from './usage-frequency';
 
 hydrateUsageOrder(usage as UsageOrderFile);
 describe('frequency ranks', () => {
+  it('uses individual entry percentages, not cumulative totals, for details', () => {
+    expect(usagePercentage('一', 'Characters', true)).toBeCloseTo(1.5765677795899825);
+    expect(usagePercentage('口', 'Components', true)).toBeCloseTo(3.8704786491988545);
+    expect(usagePercentage('口', 'Components', true)).not.toBe(usageCumulative('口', 'Components', true));
+    expect(usagePercentage('missing', 'Characters', true)).toBeNull();
+    expect(usagePercentage('人', 'Radicals', true)).toBeNull();
+  });
   it('uses the supplied ranks: 的 first character, 人 (#9) first radical, 一 first component', () => {
     expect(usageRank({ id: 'Characters:的', hanzi: '的' }, 'Characters', false)).toBe(1);
     expect(usageRank({ id: 'Radicals:人', hanzi: '人', kangxiIndex: 9 }, 'Radicals', false)).toBe(1);
