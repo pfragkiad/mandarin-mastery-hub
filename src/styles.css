@@ -767,3 +767,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-detail .catalog-facts > div { flex: none; }
 .catalog-facts .catalog-rank-label .source-info-trigger { margin-top: 0; width: 16px; height: 16px; }
 .catalog-facts .catalog-rank-label .source-info-trigger svg { width: 13px; height: 13px; }
+.catalog-facts dt.catalog-rank-label { display: flex; height: 1.5em; line-height: 1.5; }
+.catalog-facts .catalog-rank-label .source-info-trigger { margin-block: -4px; }
+.catalog-facts dt.catalog-rank-label + dd { display: flex; align-items: center; min-height: 1.5em; line-height: 1.5; }
+.catalog-facts dt { line-height: 1.5; }
+.catalog-facts dd { line-height: 1.5; }
