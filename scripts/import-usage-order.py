@@ -12,7 +12,7 @@ for scope, key in (("all-forms", "all"), ("non-traditional", "simplified")):
         comps = json.load(open(component_root / scope / "components.json"))
         classes = json.load(open(component_root / scope / "classes.json"))
     out["source"] = {k: chars["source"][k] for k in ("provider", "version", "sourceUrl", "license")}
-    out["method"] = comps["methodology"]["status"]
+    out["method"] = comps.get("structuralMethodology", comps["methodology"])["status"]
     out["scopes"][key] = {
         "characters": {r["glyph"]: r["frequency"]["sourceRank"] for r in chars["records"] if r.get("frequency")},
         "components": {r["glyph"]: r["derivedRank"] for r in comps["records"] if r["derivedRank"]},
