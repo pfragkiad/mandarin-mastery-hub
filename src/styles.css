@@ -138,7 +138,11 @@
 
 /* Characters library page */
 .glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 10px; color: var(--primary); }
-.glyph-usage-reference > span:first-child { font-size: 18px; }
+.glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
+.example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
+.example-listen { width: 26px; height: 26px; flex: none; color: var(--primary); }
+.example-listen svg { width: 14px; height: 14px; }
+.example-audio-error { font-size: 11px; color: var(--foreground); }
 .glyph-usage-reference .pinyin { font-size: 13px; }
 .glyph-usage-reference .glyph-usage-meaning { font-size: 13px; color: var(--foreground); }
 .glyph-usage-reference:hover { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
