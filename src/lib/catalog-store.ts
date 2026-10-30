@@ -7,6 +7,7 @@ import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachm
 import type { DecompositionNode } from './character-library';
 import type { RadicalIdentityFile } from './radical-identities';
 import type { RadicalStrokeFile } from './radical-strokes';
+import { hydrateUsageOrder, type UsageOrderFile } from './usage-frequency';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
 export type CatalogFile = {
@@ -38,7 +39,8 @@ export function loadCatalog(): Promise<void> {
     fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }),
     fetch('/data/radical-identities.json').then(r => { if (!r.ok) throw new Error(`radical identities ${r.status}`); return r.json() as Promise<RadicalIdentityFile>; }),
     fetch('/data/radical-strokes.json').then(r => { if (!r.ok) throw new Error(`radical strokes ${r.status}`); return r.json() as Promise<RadicalStrokeFile>; }),
-  ]).then(([data, identities, strokes]) => hydrateCatalog(data, identities, strokes)).catch(err => { pending = null; throw err; });
+    fetch('/data/usage-order.json').then(r => { if (!r.ok) throw new Error(`usage order ${r.status}`); return r.json() as Promise<UsageOrderFile>; }),
+  ]).then(([data, identities, strokes, usage]) => { hydrateUsageOrder(usage); hydrateCatalog(data, identities, strokes); }).catch(err => { pending = null; throw err; });
   return pending;
 }
 

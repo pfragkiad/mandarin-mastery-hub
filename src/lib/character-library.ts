@@ -1,13 +1,13 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import { countComponentReuse, countRadicalUsage, reuseGroup, type ReuseGroup } from './component-reuse';
+import { kindFromId, sortByUsage, usageGroupFor, usageRank } from './usage-frequency';
 import { radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
-export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; reuseCount?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
+export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 // Planned counts are the loading labels; the Characters tab keeps ordinary characters —
 // 9575 rows minus 37 pure component forms that exist only in the Components tab.
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9538 };
@@ -29,22 +29,23 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   // Pure component forms exist once, in the Components tab; the Characters tab keeps the
   // ordinary characters, including dual radical forms such as 门 and 马.
   const visible = kind === 'Characters' ? rows.filter(row => !pureComponentForm(row[0] ?? '')) : rows;
-  const reuse = kind === 'Components' ? countComponentReuse(catalog.components.map(row => row[0]), catalog.characters.map(row => row[0]), catalog.trees) : kind === 'Radicals' ? countRadicalUsage(catalog.radicals.map(row => row[0]), catalog.characters) : undefined;
   const entries = visible.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
     const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
     const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
-    return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(reuse ? { reuseCount: reuse[hanzi] ?? 0 } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
       ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
   });
   cache.set(kind, { version: catalog.version, entries });
   return entries;
 }
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, reuse?: ReuseGroup, savedIds?: readonly string[], pinyinOnly = false) {
+export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false) {
   const saved = savedIds ? new Set(savedIds) : undefined;
-  return entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!reuse || (entry.reuseCount !== undefined && reuseGroup(entry.reuseCount).value === reuse)));
+  const kind = entries[0] ? kindFromId(entries[0].id) : undefined;
+  const matched = entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
+  return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
 }
 export const LIBRARY_PAGE_SIZE = 48;
 export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE, selectedId = '') {

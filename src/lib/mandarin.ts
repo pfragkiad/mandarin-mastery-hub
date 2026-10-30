@@ -7,7 +7,7 @@ export const vocabularyKind = (word: Word): 'word' | 'phrase' => word.entry?.ent
 export const words: Word[] = vocabularyData.entries.map(e => entryToWord(e, vocabularyData.categories));
 export const collections = vocabularyData.categories.map(c => categoryName(c.name)).filter(name => words.some(w => w.collection === name)).sort((a, b) => a.localeCompare(b));
 /** Base part-of-speech labels of a word: split recorded combos, drop "(additional sense)" notes, normalize case. */
-export const partOfSpeechList = (word: Word): string[] => word.type.split('/').map(part => part.replace(/\(additional sense\)/i, '').trim()).filter(Boolean).map(part => part.charAt(0).toUpperCase() + part.slice(1));
+export const partOfSpeechList = (word: Word): string[] => (word.type ?? "").split('/').map(part => part.replace(/\(additional sense\)/i, '').trim()).filter(Boolean).map(part => part.charAt(0).toUpperCase() + part.slice(1));
 export function partOfSpeechOptions(items: Word[]): string[] { return [...new Set(items.flatMap(partOfSpeechList))].sort((a, b) => a.localeCompare(b)); }
 export function filterWords(items: Word[], query: string, collection = 'All collections', level = 'All levels', status = 'All words', saved: string[] = [], pinyinOnly = false, pos = 'All types') {
   const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
