@@ -13,6 +13,7 @@ for scope, key in (("all-forms", "all"), ("non-traditional", "simplified")):
         classes = json.load(open(component_root / scope / "classes.json"))
     out["source"] = {k: chars["source"][k] for k in ("provider", "version", "sourceUrl", "license")}
     out["method"] = comps.get("structuralMethodology", comps["methodology"])["status"]
+    radical_total = sum(r["weightedExposure"] or 0 for r in rads["records"])
     out["scopes"][key] = {
         "characters": {r["glyph"]: r["frequency"]["sourceRank"] for r in chars["records"] if r.get("frequency")},
         "components": {r["glyph"]: r["derivedRank"] for r in comps["records"] if r["derivedRank"]},
@@ -22,10 +23,12 @@ for scope, key in (("all-forms", "all"), ("non-traditional", "simplified")):
             "components": {r["glyph"]: r["cumulativeExposurePercent"] for r in comps["records"] if r.get("cumulativeExposurePercent") is not None},
         },
         "individual": {
+            "radicals": {str(r["radicalNumber"]): r["weightedExposure"] / radical_total * 100 for r in rads["records"] if r["weightedExposure"] is not None},
             "characters": {r["glyph"]: r["frequency"]["perMillion"] / 10000 for r in chars["records"] if r.get("frequency") and r["frequency"].get("perMillion") is not None},
             "components": {r["glyph"]: r["exposurePercent"] for r in comps["records"] if r.get("exposurePercent") is not None},
         },
         "groupCumulative": {
+            "radicals": {f'{lo}-{hi if hi is not None else "plus"}': sum(r["weightedExposure"] or 0 for r in rads["records"] if r["derivedRank"] and r["derivedRank"] <= (hi or 214)) / radical_total * 100 for lo, hi in ((1, 10), (11, 25), (26, 50), (51, 100), (101, 150), (151, 200), (201, None))},
             "characters": {
                 f"{lo}-{hi}": max((r["frequency"] for r in chars["records"] if r.get("frequency") and r["frequency"]["sourceRank"] <= hi), key=lambda f: f["sourceRank"])["cumulativePercent"]
                 for lo, hi in ((1, 100), (101, 300), (301, 500), (501, 1000), (1001, 2000), (2001, 3500), (3501, 5000), (5001, 9933))
