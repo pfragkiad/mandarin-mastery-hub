@@ -757,3 +757,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-page-content .practice-detail:empty { display: none; }
 .radical-tag { font-size: 8px; vertical-align: middle; }
 .catalog-rank-label { display: inline-flex; align-items: center; gap: 4px; }
+.catalog-detail .example-listen:not(:disabled), .catalog-detail .component-pronunciation button:not(:disabled) { color: var(--foreground); }
+.catalog-detail .example-listen:disabled, .catalog-detail .component-pronunciation button:disabled { color: var(--muted-foreground); }
+.catalog-detail .catalog-facts { grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); column-gap: 40px; }
+.catalog-facts .catalog-rank-label { min-height: 14px; line-height: 14px; }
+.catalog-facts .catalog-rank-label .source-info-trigger { width: 14px; height: 14px; }
+.word-character .pinyin { margin-bottom: 6px; }
