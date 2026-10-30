@@ -30,8 +30,8 @@ describe('frequency ranks', () => {
     expect(usageRank({ id: 'Components:一', hanzi: '一' }, 'Components', true)).toBe(1);
   });
   it('keeps radical groups and uses the supplied new component classes', () => {
-    expect(usageGroupFor('Radicals', 20)?.value).toBe('1-20');
-    expect(usageGroupFor('Radicals', 21)?.value).toBe('21-50');
+    expect(usageGroupFor('Radicals', 20)?.value).toBe('11-25');
+    expect(usageGroupFor('Radicals', 26)?.value).toBe('26-50');
     expect(usageGroups('Components').map(g => g.value)).toEqual(['1-25', '26-50', '51-100', '101-200', '201-300', '301-500', '501-1000', '1001-plus', 'unranked']);
     expect(usageGroupFor('Components', 25)?.value).toBe('1-25');
     expect(usageGroupFor('Components', 26)?.value).toBe('26-50');
@@ -40,6 +40,16 @@ describe('frequency ranks', () => {
   });
   it('preserves all eight all-form component cumulative percentages from the supplied table', () => {
     expect(Object.values((usage as UsageOrderFile).scopes.all.groupCumulative?.components ?? {}).map(n => n.toFixed(2))).toEqual(['40.09', '57.16', '73.67', '87.66', '93.40', '97.90', '99.93', '100.00']);
+  });
+  it('matches all seven supplied radical cumulative classes without changing rank identities', () => {
+    expect(usageGroups('Radicals').map(g => g.value)).toEqual(['1-10', '11-25', '26-50', '51-100', '101-150', '151-200', '201-plus', 'unranked']);
+    expect(Object.values((usage as UsageOrderFile).scopes.all.groupCumulative?.radicals ?? {}).map(n => n.toFixed(2))).toEqual(['36.46', '58.32', '76.33', '92.82', '98.79', '99.99', '100.00']);
+    expect((usage as UsageOrderFile).scopes.all.groupCumulative?.radicals?.['151-200']).toBeCloseTo(99.9886, 4);
+  });
+  it('uses the selected Kangxi identity for individual radical assignment share', () => {
+    expect(usagePercentage('人', 'Radicals', true, 9)).toBeCloseTo(14237989 / 193491251 * 100);
+    expect(usagePercentage('亻', 'Radicals', true, 9)).toBe(usagePercentage('人', 'Radicals', true, 9));
+    expect(usagePercentage('人', 'Radicals', true)).toBeNull();
   });
   it('preserves all eight character corpus coverage percentages from the supplied table', () => {
     expect(Object.values((usage as UsageOrderFile).scopes.all.groupCumulative?.characters ?? {}).map(n => n.toFixed(2))).toEqual(['41.77', '64.64', '75.81', '89.14', '97.13', '99.54', '99.92', '100.00']);
