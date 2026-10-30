@@ -604,7 +604,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .glyph-category-row > [role='tablist'] [role='tab'] { flex: 0 0 auto; }
   .glyph-category-row { row-gap: 8px; }
   .glyph-category-row .vocabulary-saved-filter { margin-left: 0; }
-  .vocabulary-saved-filter button { height: 36px; }
+  .vocabulary-saved-filter { gap: 6px; }
+  .vocabulary-saved-filter button { height: 36px; padding: 0 12px; }
 }
 
 /* One stable frame for compact word and glyph cards; phrases remain content-sized. */
