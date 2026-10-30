@@ -23,7 +23,7 @@ for scope, key in (("all-forms", "all"), ("non-traditional", "simplified")):
         },
         "groupCumulative": {
             "characters": {
-                f"{lo}-{hi}": sum(r["frequency"]["count"] for r in chars["records"] if r.get("frequency") and r["frequency"]["sourceRank"] <= hi) / chars["source"]["corpusTotal"] * 100
+                f"{lo}-{hi}": max((r["frequency"] for r in chars["records"] if r.get("frequency") and r["frequency"]["sourceRank"] <= hi), key=lambda f: f["sourceRank"])["cumulativePercent"]
                 for lo, hi in ((1, 100), (101, 300), (301, 500), (501, 1000), (1001, 2000), (2001, 3500), (3501, 5000), (5001, 9933))
             },
             "components": {f'{b["minRank"]}-{b["maxRank"] if b["maxRank"] is not None else "plus"}': b["cumulativeExposurePercent"] for b in classes["bins"]} if classes else {},

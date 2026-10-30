@@ -19,10 +19,10 @@ describe('frequency ranks', () => {
     expect(usageGroupFor('Characters', null)?.value).toBe('unranked');
   });
   it('preserves all eight all-form component cumulative percentages from the supplied table', () => {
-    expect(Object.values(usage.scopes.all.groupCumulative.components).map(n => n.toFixed(2))).toEqual(['40.09', '57.16', '73.67', '87.66', '93.40', '97.90', '99.93', '100.00']);
+    expect(Object.values((usage as UsageOrderFile).scopes.all.groupCumulative?.components ?? {}).map(n => n.toFixed(2))).toEqual(['40.09', '57.16', '73.67', '87.66', '93.40', '97.90', '99.93', '100.00']);
   });
   it('preserves all eight character corpus coverage percentages from the supplied table', () => {
-    expect(Object.values(usage.scopes.all.groupCumulative.characters).map(n => n.toFixed(2))).toEqual(['41.77', '64.64', '75.81', '89.14', '97.13', '99.54', '99.92', '100.00']);
+    expect(Object.values((usage as UsageOrderFile).scopes.all.groupCumulative?.characters ?? {}).map(n => n.toFixed(2))).toEqual(['41.77', '64.64', '75.81', '89.14', '97.13', '99.54', '99.92', '100.00']);
   });
   it('uses per-record cumulative values and leaves unrecorded percentages absent', () => {
     expect(usageCumulative('的', 'Characters', true)).toBeCloseTo(4.094325317834);
