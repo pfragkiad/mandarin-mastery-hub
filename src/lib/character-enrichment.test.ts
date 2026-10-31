@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { webcrypto } from 'node:crypto';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { catalog } from './catalog-store';
-import { treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
+import { gSourceDecompositions, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
 
 beforeAll(() => { vi.stubGlobal('crypto', webcrypto); });
 function record(glyph: string): CharacterEnrichment {
@@ -17,6 +17,29 @@ function geometry(r: CharacterEnrichment): BoundGeometry {
   } };
 }
 describe('bound character enrichment', () => {
+  it('selects the recorded G-source 日 / 𤴓 structure for 是, not 疋', () => {
+    const selected = gSourceDecompositions(record('是'));
+    expect(selected.map(item => item.expression)).toEqual(['⿱日𤴓']);
+    expect(selected[0]?.tree?.children?.map(child => child.glyph)).toEqual(['日', '𤴓']);
+  });
+  it('excludes V-only and virtual-G alternatives while retaining shared direct-G expressions', () => {
+    const r = record('是');
+    r.comparison.alternatives.push({ expression: '⿱日疋', qualifiers: 'V', directG: false, virtualG: false },
+      { expression: '⿱日正', qualifiers: 'T', directG: false, virtualG: true });
+    expect(gSourceDecompositions(r).map(item => item.expression)).toEqual(['⿱日𤴓']);
+  });
+  it('keeps absent G-source empty so callers retain their original structure', () => {
+    const r = record('是');
+    r.comparison.alternatives = [{ expression: '⿱日疋', qualifiers: 'V', directG: false, virtualG: false }];
+    expect(gSourceDecompositions(r)).toEqual([]);
+    expect(gSourceDecompositions(null)).toEqual([]);
+  });
+  it('retains unsupported direct-G notation raw instead of substituting a different region', () => {
+    const r = record('是');
+    r.comparison.alternatives = [{ expression: '⿱日[unknown]', qualifiers: 'G', directG: true, virtualG: false }];
+    expect(gSourceDecompositions(r)[0]?.tree).toBeNull();
+    expect(gSourceDecompositions(r)[0]?.expression).toBe('⿱日[unknown]');
+  });
   it('fingerprints 河 using compact literal Unicode JSON and a trailing LF', async () => {
     expect(await treeChecksum(catalog.trees['河'])).toBe('553901647f9706a5a1c8662d647a422f15fcbda53a62ed524396d45feccc7167');
   });

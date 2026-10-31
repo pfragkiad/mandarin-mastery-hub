@@ -19,10 +19,9 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
-import { DecompositionTree } from './decomposition-tree';
 import { GlyphUsageExamples } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
-import { CharacterEnrichmentNotes } from './character-enrichment';
+import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphPresentation } from '@/lib/glyph-presentation';
@@ -83,9 +82,8 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     {(kind === 'Components' || (kind === 'Characters' && radicalIdentity(entry.hanzi).radicals.length > 0)) && <RadicalIdentityNote glyph={entry.hanzi}/>}
     {kind === 'Radicals' && heading.kangxiIndex && <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key}/>}
     <GlyphUsageExamples entry={entry} kind={kind}/>
-    <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{kind === 'Radicals' ? <RadicalStrokeSourceInfo glyph={entry.hanzi} form={form}/> : entry.decomposition && <><SourceInfo inline className="detail-footnote decomposition-footnote">Source · {entry.decomposition.source}<br/>Verification · {entry.decomposition.status}</SourceInfo><SourceInfo inline variant="warning" className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</SourceInfo></>}</h3>
-      {kind === 'Radicals' ? <RadicalStrokeDecomposition glyph={entry.hanzi} form={form} sourceInHeading/> : entry.decomposition ? <><ul className="decomposition-tree"><DecompositionTree node={entry.decomposition.root}/></ul></> : <div className="record-gap"><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
-      {entry.decomposition && <CharacterEnrichmentNotes character={entry.hanzi} tree={entry.decomposition.root}/>}
+    <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{kind === 'Radicals' ? <RadicalStrokeSourceInfo glyph={entry.hanzi} form={form}/> : entry.decomposition && <><SourceInfo inline className="detail-footnote decomposition-footnote">Recorded regional structure and graphical alternatives · each retains its own source</SourceInfo><SourceInfo inline variant="warning" className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</SourceInfo></>}</h3>
+      {kind === 'Radicals' ? <RadicalStrokeDecomposition glyph={entry.hanzi} form={form} sourceInHeading/> : entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>{kind === 'Strokes' ? 'Decomposition does not apply to an individual stroke.' : 'No recorded decomposition available yet.'}</p>{kind !== 'Strokes' && <small>This record has no breakdown in the imported sources. None is inferred.</small>}</div>}
     </div><p className="source-note">{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}</p>
   </section>;
 }
