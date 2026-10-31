@@ -96,7 +96,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     {kind !== 'Strokes' && <GlyphUsageExamples entry={entry} kind={kind}/>}
     {kind !== 'Strokes' && <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{kind === 'Radicals' ? <RadicalStrokeSourceInfo glyph={entry.hanzi} form={form}/> : entry.decomposition && <><SourceInfo inline className="detail-footnote decomposition-footnote">Recorded regional structure and graphical alternatives · each retains its own source</SourceInfo><SourceInfo inline variant="warning" className="decomposition-note">IDS describes graphical structure, not verified etymology or component meaning. Components link to their library card.</SourceInfo></>}</h3>
       {kind === 'Radicals' ? <RadicalStrokeDecomposition glyph={entry.hanzi} form={form} sourceInHeading/> : entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>This record has no breakdown in the imported sources. None is inferred.</small></div>}
-    </div>}<p className="source-note">{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}</p>
+    </div>}
   </section>;
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
