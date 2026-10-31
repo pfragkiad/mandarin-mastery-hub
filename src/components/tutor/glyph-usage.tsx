@@ -1,9 +1,9 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { MessageSquareText, Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { glyphUsage, glyphParentCharacters } from '@/lib/glyph-usage';
+import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource } from '@/lib/glyph-usage';
 import { vocabularyKind } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
@@ -11,10 +11,26 @@ import { SentenceExample } from './sentence-example';
 import { ExamplePronunciation } from './example-pronunciation';
 import { characterAudioRequest } from '@/lib/catalog-store';
 
+/** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
+export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
+  const [parents, setParents] = useState<LibraryEntry[] | null>(null);
+  useEffect(() => {
+    if (kind !== 'Components') { setParents(null); return; }
+    let cancelled = false;
+    setParents(null);
+    glyphParentCharactersGSource(entry, libraryEntries('Characters'), includeTraditional)
+      .then(rows => { if (!cancelled) setParents(rows); });
+    return () => { cancelled = true; };
+  }, [entry, kind, includeTraditional, catalogVersion]);
+  return parents;
+}
+
 export function GlyphUsageExamples({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const parents = useMemo(() => glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional).slice(0, 6), [entry, kind, preferences.includeTraditional, catalogVersion]);
+  const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
+  const radicalParents = useMemo(() => kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional) : [], [entry, kind, preferences.includeTraditional, catalogVersion]);
+  const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
     {parents.length ? parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
