@@ -11,6 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { collections, filterWords, partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
+import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
@@ -32,6 +33,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined) });
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
   const topPaginationRef = useRef<HTMLDivElement>(null);
