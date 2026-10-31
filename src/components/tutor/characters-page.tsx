@@ -2,6 +2,7 @@ import { DetailSheet, useNarrowLibrary } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
+import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
 import { Search, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';

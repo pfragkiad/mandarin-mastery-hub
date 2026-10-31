@@ -11,6 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { collections, filterWords, partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
+import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
