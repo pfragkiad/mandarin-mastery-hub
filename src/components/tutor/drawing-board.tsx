@@ -1,3 +1,4 @@
+import { MeaningText } from './meaning-text';
 import { useEffect, useRef, useState } from 'react';
 import type HanziWriter from 'hanzi-writer';
 import { ArrowRight, Eye, EyeOff, PenLine, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
@@ -89,7 +90,7 @@ export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish
   return <section className="drawing-board">
     <div className="drawing-prompt">
       <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
-      <p className="drawing-meaning">{prompt.meaning}</p>
+      <p className="drawing-meaning"><MeaningText text={prompt.meaning}/></p>
       {audioError && <p className="meaning-missing" role="status">Audio isn’t available in this browser.</p>}
     </div>
     <div className="drawing-board-meta"><Button variant="ghost" size="sm" disabled={state === 'loading' || state === 'unavailable'} onClick={toggleGuide}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
