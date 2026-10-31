@@ -61,7 +61,8 @@ export function savedGlyphEntry(id: string): LibraryEntry | undefined {
   return form ? radicalVariantEntry(heading, form) : undefined;
 }
 export function savedGlyphDestination(entry: LibraryEntry) {
-  return { tab: kindFromId(entry.id), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
+  const kind = kindFromId(entry.id);
+  return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
 }
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false) {
   const saved = savedIds ? new Set(savedIds) : undefined;
