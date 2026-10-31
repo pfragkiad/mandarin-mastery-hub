@@ -183,10 +183,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const setQuery = (q: string) => set({ q, page: 1, id: '' }, true);
   const setStrokeCount = (strokes: string) => set({ strokes, page: 1, id: '' });
   const setPage = (p: number) => set({ page: p, id: '' });
-  const setSelectedId = (id: string) => { const entry = savedGlyphEntry(id); set(entry ? savedGlyphDestination(entry) : { id, variant: undefined }); };
+  const setSelectedId = (id: string) => { const entry = savedGlyphEntry(id); set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); };
   const entries = libraryEntries(kind);
-  const filtered = includeSelectedRecord(entries, filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly), selectedId);
-  const paged = libraryPage(filtered, page, LIBRARY_PAGE_SIZE, selectedId);
+  const requestedHeading = entries.find(entry => entry.id === selectedId);
+  const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
+  const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
+  const browsed = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly);
+  const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
+  const paged = libraryPage(filtered, page, LIBRARY_PAGE_SIZE, savedOnly ? requestedId : selectedId);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage });
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
@@ -203,7 +207,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const narrow = useNarrowLibrary();
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
-  const sheetIndex = narrow && search.id ? filtered.findIndex(entry => entry.id === search.id) : -1;
+  const sheetIndex = narrow && search.id ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : search.id)) : -1;
   const stepTo = (index: number) => { const target = filtered[index]; if (target) set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / LIBRARY_PAGE_SIZE) + 1 }, true); };
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">汉字 · THE GLYPH LIBRARY</div><h1>Get to know the {kind.toLowerCase()}.</h1><p>{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</p></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
