@@ -1,6 +1,6 @@
 # Roadmap
 
-- [open] Confirm Components/Radicals parent examples prioritize highest recorded character frequency before the six-example limit; add regression coverage.
+- [done] Confirmed Components/Radicals parent examples already prioritize highest recorded character frequency before the six-example limit; added regression coverage for both kinds, with 21 tests passing.
 
 - [done] Italicize Component form of descriptions consistently without changing actual translations. Verified the supplied vocabulary record and mixed glyph detail live; 29 related tests passed, no page errors, preview clean.
 
