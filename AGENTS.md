@@ -44,3 +44,5 @@
 - Practice uses a continuous full-width title with the print action, then a reading intro above the writing card in the left column and a separate decomposition/detail column; shared scoped styles preserve phone reading → writing → details order.
 - Narrow-screen Vocabulary and Glyphs details share DetailSheet; its accessible handle supports tap and downward pointer-drag dismissal without intercepting body scrolling, keeping both libraries' close behaviour consistent.
 - Component dictionary radicals come only from Unihan kRSUnicode via scripts/import-component-radicals.py (catalog componentRadicals, residual>0 only), matching how Characters' radicals are sourced — never inferred from shape or IDS.
+
+- Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.

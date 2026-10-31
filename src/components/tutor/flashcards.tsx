@@ -9,12 +9,12 @@ import { collections, partOfSpeechList, partOfSpeechOptions } from '@/lib/mandar
 import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { referenceCatalog, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
+import { referenceCatalog, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
 import { displayMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
 import { usageGroupLabel, usageGroups, usageGroupFor, usageRank, parseUsageGroup } from '@/lib/usage-frequency';
 
-type Card = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; script?: CharacterScript; audio?: AudioAttachment | null };
+type Card = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; radicalVariant?: string; radicalHeadingId?: string; script?: CharacterScript; audio?: AudioAttachment | null };
 const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
@@ -53,7 +53,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
       };
       if (isSaved) {
         const kinds = Object.keys(libraryKinds) as ReferenceKind[];
-        return [...items.filter(w => saved.includes(w.id)), ...kinds.flatMap(kind => referenceCards(kind).filter(card => saved.includes(card.id)))];
+        return [...items.filter(w => saved.includes(w.id)), ...kinds.flatMap(kind => referenceCards(kind).filter(card => saved.includes(card.id))), ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
       }
       const refKind = libraryKinds[category.slice(4) as ReferenceKind];
       const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
@@ -143,7 +143,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
       {repeat ? <><strong>All {new Set(deck?.map(c => c.id)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
         : <><strong>{(deck?.length ?? 0) - uniqueMissed.length} / {deck?.length ?? 0}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
       {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => m.libraryKind
-        ? <Link key={m.id} to="/characters" search={{ tab: m.libraryKind, id: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Glyphs`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
+        ? <Link key={m.id} to="/characters" search={m.radicalVariant ? savedGlyphDestination(m as LibraryEntry) : { tab: m.libraryKind, id: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Glyphs`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
         : <Link key={m.id} to="/vocabulary" search={{ word: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
       {uniqueMissed.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedMissed.length} onClick={() => unsavedMissed.forEach(m => toggleSaved(m.id))}>{unsavedMissed.length ? <Bookmark/> : <Check/>}{unsavedMissed.length ? `Save ${unsavedMissed.length} unknown ${unsavedMissed.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}
       <div className="flex gap-2 flex-wrap justify-center">
