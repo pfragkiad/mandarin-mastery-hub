@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { MeaningText } from './meaning-text';
 import { createPortal } from 'react-dom';
 import { FileText, Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
