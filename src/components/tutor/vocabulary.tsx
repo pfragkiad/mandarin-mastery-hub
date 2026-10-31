@@ -1,6 +1,7 @@
 import { DetailSheet } from './detail-sheet';
-import { useState } from 'react';
-import { Search, Plus, LayoutGrid, List, BookOpen, X, Check, ChevronLeft, ChevronRight, Layers, PenLine } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { CatalogPagination } from './catalog-pagination';
+import { Search, Plus, LayoutGrid, List, BookOpen, X, Check, Layers, PenLine } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -34,6 +35,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
+  const topPaginationRef = useRef<HTMLDivElement>(null);
+  const lastPageRef = useRef<number | null>(null);
+  useEffect(() => {
+    const previous = lastPageRef.current;
+    lastPageRef.current = page ?? 1;
+    if (previous === null || previous === (page ?? 1) || initialWordId) return;
+    topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [page, initialWordId]);
   const hasFilter = Boolean(query.trim() || collection !== 'All collections' || level !== 'All levels' || status !== 'All words' || py === 'pinyin' || pos !== 'All types');
   const reset = () => onFiltersChange?.({ q: '', collection: 'All collections', level: 'All levels', status: 'All words', py: undefined, pos: 'All types' });
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">YOUR PERSONAL WORD COLLECTION</div><h1>Words worth knowing.</h1><p>A new word. A new connection. Make it yours.</p></div><Button onClick={() => setAdding(true)}><Plus/>Add word</Button></div>
@@ -45,8 +54,9 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       <div className="result-row" aria-live="polite"><span>{kind === 'phrase' ? 'Level 1 practice phrases are unofficial · no syllabus IDs' : 'HSK 3.0 vocabulary · levels as recorded in the source'}</span><span className="catalog-results-count">{filtered.length.toLocaleString('en-US')} {label} {hasFilter ? 'match' : 'available'}</span></div>
       {status === 'Saved words' && filtered.length > 0 && <div className="saved-actions"><Button asChild variant="outline" size="sm"><Link to="/flashcards" search={{ category: 'Saved' }}><Layers/>Flashcards</Link></Button><Button asChild variant="outline" size="sm"><Link to="/drawing" search={{ kind: 'Words', saved: true }}><PenLine/>Drawing game</Link></Button></div>}
       {filtered.length ? <>
+      {filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />}
       <div className={`word-grid vocab-grid vocab-${kind}-grid ${list ? 'list-view' : ''}`}>{paged.entries.map(w => <WordCard word={w} key={w.id} list={list} panel={!isMobile || Boolean(onWordOpen)} initiallyOpen={w.id === initialWordId} {...(onWordOpen ? { open: w.id === (isMobile ? initialWordId : selectedWord?.id), onOpenChange: next => onWordOpen(next ? w.id : null, paged.current) } : {})}/>)}</div>
-      <div className="catalog-pagination"><span>{(paged.current - 1) * paged.size + 1}–{Math.min(paged.current * paged.size, filtered.length)}</span><div><Button variant="ghost" size="icon" aria-label="Previous page" disabled={paged.current <= 1} onClick={() => onPageChange?.(paged.current - 1)}><ChevronLeft/></Button><span>Page {paged.current} / {paged.pages}</span><Button variant="ghost" size="icon" aria-label="Next page" disabled={paged.current >= paged.pages} onClick={() => onPageChange?.(paged.current + 1)}><ChevronRight/></Button></div></div>
+      <CatalogPagination range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
     </> : <div className="empty-state"><BookOpen size={32}/><h3>{status === 'Saved words' ? 'A place for your favorite words.' : `No ${label} found.`}</h3><p>{status === 'Saved words' ? 'Your bookmarked vocabulary will be right here.' : 'Try another meaning, Chinese character, or pinyin.'}</p><Button variant="outline" onClick={reset}>Clear filters</Button></div>}
     </section>{!isMobile && filtered.length > 0 && selectedWord && <section className="catalog-detail word-detail-panel" aria-label={`Details for ${selectedWord.hanzi}`}><WordDetailContent key={selectedWord.id} word={selectedWord} /></section>}</div>{isMobile && onWordOpen && linkedWord && (() => { const index = filtered.findIndex(w => w.id === linkedWord.id); const step = (i: number) => { const target = filtered[i]; if (target) onWordOpen(target.id); }; return <DetailSheet open title={`Details for ${linkedWord.hanzi}`} onClose={() => onWordOpen(null, paged.current)} onPrevious={index > 0 ? () => step(index - 1) : undefined} onNext={index >= 0 && index < filtered.length - 1 ? () => step(index + 1) : undefined}><section className="catalog-detail word-detail-panel"><WordDetailContent key={linkedWord.id} word={linkedWord} onNavigate={() => onWordOpen(null, paged.current)}/></section></DetailSheet>; })()}
     </TabsContent></Tabs>
