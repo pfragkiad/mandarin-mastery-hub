@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Place glyph frequency/share after Rank in the facts row; shorten the component label; omit decomposition for radical-identified Components. Verified all three frequency tabs live, with retained Radical/Character decomposition, no page errors and 37 passing existing tests.
+
 - [done] Resolve BabelStone numbered components from the supplied IDS table; hosted its PUA font, verified all source-table font mappings, passed 24 tests and live 年/之 glyphs, source hints and Practice display; preview clean.
 
 - [done] Prioritize explicit BabelStone G-source consistently in Glyphs, Vocabulary and Practice; hide other regional alternatives, retain the original graphical structure; 45 tests passed, live 是 ordering and Recall verified, build clean.
