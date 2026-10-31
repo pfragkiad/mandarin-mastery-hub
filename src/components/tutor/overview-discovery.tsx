@@ -127,7 +127,7 @@ function DiscoveryAudio({ word, entry, slow, onError }: { word?: Word | undefine
     else if (entry) onError(await playCharacter(entry.hanzi, slow, entry.pinyin));
   };
   return (
-    <Button variant="ghost" size="icon" disabled={!available} className={available ? '' : 'audio-tts-only'} aria-label={available ? `Listen to ${hanzi}` : `No audio available for ${hanzi}`} title={available ? `Listen · ${label}` : undefined} onClick={listen}>
+    <Button variant="ghost" size="icon" disabled={!available} className={hasRecording ? '' : 'audio-tts-only'} aria-label={available ? `Listen to ${hanzi}` : `No audio available for ${hanzi}`} title={available ? `Listen · ${label}` : undefined} onClick={listen}>
       <Volume2 />
     </Button>
   );
