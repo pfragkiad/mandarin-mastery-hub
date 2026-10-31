@@ -10,7 +10,7 @@ export type SearchHit =
   | { kind: 'Word'; word: Word }
   | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string };
 
-export function searchAll(items: Word[], query: string, includeTraditional = false, limit = 8): SearchHit[] {
+export function searchAll(items: Word[], query: string, includeTraditional = false, limit = 20): SearchHit[] {
   const q = normalize(query.trim());
   if (!q) return [];
   const wordHits: SearchHit[] = items
@@ -23,5 +23,5 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q))
       .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note })),
   );
-  return [...wordHits, ...refHits].slice(0, limit);
+  return [...refHits, ...wordHits].slice(0, limit);
 }
