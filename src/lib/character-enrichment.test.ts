@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { webcrypto } from 'node:crypto';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { catalog } from './catalog-store';
-import { gSourceDecompositions, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
+import { gSourceDecompositions, sameDecompositionTree, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
 
 beforeAll(() => { vi.stubGlobal('crypto', webcrypto); });
 function record(glyph: string): CharacterEnrichment {
