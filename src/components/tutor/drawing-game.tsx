@@ -23,7 +23,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const words = useMemo(() => (items ?? []).filter(word => vocabularyKind(word) === 'word'), [items]);
   const collections = [...new Set(words.map(word => word.collection))].sort((a, b) => a.localeCompare(b));
   const posOptions = partOfSpeechOptions(words);
-  const levels = [...new Set(words.map(word => word.level))];
+  const levels = [...new Set(words.map(word => word.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const pool = useMemo(() => kind === 'Words' ? drawingWordPool(words, search, preferences.includeTraditional, saved) : drawingPool(entries, search, preferences.includeTraditional, saved), [kind, words, entries, search, preferences.includeTraditional, saved]);
   const savedCount = useMemo(() => kind === 'Words' ? drawingWordPool(words, { ...search, saved: true }, preferences.includeTraditional, saved).length : drawingPool(entries, { ...search, saved: true }, preferences.includeTraditional, saved).length, [kind, words, entries, search, preferences.includeTraditional, saved]);
   const strokeCounts = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
