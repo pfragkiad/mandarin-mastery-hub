@@ -48,12 +48,12 @@ export function EnrichmentNotes({ record }: { record: CharacterEnrichment | null
     </div>}
   </div>;
 }
-export function CharacterDecomposition({ character, tree, source, status }: { character: string; tree: DecompositionNode; source: string; status?: string }) {
+export function CharacterDecomposition({ character, tree, source, status }: { character: string; tree: DecompositionNode; source: string; status?: string | undefined }) {
   const record = useCharacterEnrichment(character, tree);
   return <RecordedDecomposition tree={tree} source={source} status={status} record={record}/>;
 }
 /** Display priority never changes the original tree or the geometry-bound stroke mapping. */
-export function RecordedDecomposition({ tree, source, status, record }: { tree: DecompositionNode; source: string; status?: string; record: CharacterEnrichment | null }) {
+export function RecordedDecomposition({ tree, source, status, record }: { tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
   return <>
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
