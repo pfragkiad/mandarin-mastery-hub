@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { MeaningText } from './meaning-text';
 import { useState } from 'react';
 import { Bookmark, Volume2, PenLine, Check } from 'lucide-react';
 import { Link } from '@tanstack/react-router';

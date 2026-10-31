@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router';
+import { MeaningText } from './meaning-text';
 import { MessageSquareText } from 'lucide-react';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';

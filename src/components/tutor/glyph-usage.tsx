@@ -6,6 +6,7 @@ import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/chara
 import { glyphUsage, glyphParentCharacters } from '@/lib/glyph-usage';
 import { vocabularyKind } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
+import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
 import { ExamplePronunciation } from './example-pronunciation';
 import { characterAudioRequest } from '@/lib/catalog-store';

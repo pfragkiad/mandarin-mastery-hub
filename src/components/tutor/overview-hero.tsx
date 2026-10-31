@@ -4,6 +4,7 @@ import { Volume2, Library, PenLine, BookOpen, Bookmark } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
+import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
 import { libraryEntries, libraryDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';

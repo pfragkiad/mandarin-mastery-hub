@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { MeaningText } from './meaning-text';
 import { Link } from '@tanstack/react-router';
 import { GitBranch } from 'lucide-react';
 import { Button } from '@/components/ui/button';
