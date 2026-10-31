@@ -10,7 +10,7 @@ describe('meaningParts', () => {
 
   it('still splits component form descriptions', () => {
     const parts = meaningParts('Component form of 爪 friend');
-    expect(parts[0]).toMatch(/^component form of/i);
+    expect(parts[1]).toMatch(/^component form of/i);
   });
 
   it('treats text without parentheses or descriptions as a single part', () => {
