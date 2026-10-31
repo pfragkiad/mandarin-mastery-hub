@@ -21,7 +21,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
-import { GlyphUsageExamples } from './glyph-usage';
+import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
 import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
