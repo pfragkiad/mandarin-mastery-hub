@@ -28,8 +28,8 @@ vi.mock('@/lib/character-enrichment', async importOriginal => ({
   ...(await importOriginal<object>()),
   loadStrokeGeometry: async () => ({ data: { strokes: ['path one', 'path two'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, 400]]] } }),
 }));
-// The SOURCE CHECK note is checksum-bound to a lazily loaded sidecar, so the page-level hook
-// stands in for one already-validated record; the note itself renders for real.
+// The enrichment record is checksum-bound to a lazily loaded sidecar, so the page-level hook
+// stands in for one already-validated record; the decomposition renders for real.
 const enrichment = vi.hoisted(() => ({
   bindings: { strokeCount: 2 },
   comparison: { status: 'exact-G-agreement', alternatives: [] },
