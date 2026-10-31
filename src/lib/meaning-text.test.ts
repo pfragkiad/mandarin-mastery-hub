@@ -5,7 +5,7 @@ describe('meaningParts', () => {
   it('italicizes parenthesised spans and keeps surrounding text', () => {
     const parts = meaningParts('friend (also companion) warmth');
     expect(parts).toEqual(['friend ', '(also companion)', ' warmth']);
-    expect(parts[1] ?? '').startsWith('(')).toBe(true);
+    expect((parts[1] ?? '').startsWith('(')).toBe(true);
   });
 
   it('still splits component form descriptions', () => {
