@@ -1,5 +1,7 @@
 # Roadmap
 
+- [open] Confirm Components/Radicals parent examples prioritize highest recorded character frequency before the six-example limit; add regression coverage.
+
 - [done] Italicize Component form of descriptions consistently without changing actual translations. Verified the supplied vocabulary record and mixed glyph detail live; 29 related tests passed, no page errors, preview clean.
 
 - [done] Replace Components/Radicals sentence examples with recorded, linked parent-character examples under In a character; preserve ordinary Character sentences. Nine tests passed; live component/radical parents, exact character navigation and browser Back verified; preview clean.
