@@ -1,7 +1,24 @@
 import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
-import { filterLibrary, libraryEntries, libraryPage, libraryDestination, radicalVariantFallback } from './character-library';
+import { filterLibrary, libraryEntries, libraryPage, libraryDestination, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination } from './character-library';
+import { radicalForm } from './radical-strokes';
 describe('Catalogue requirements', () => {
+  it('saves the selected 人 variant separately and restores its exact form', () => {
+    const heading = libraryEntries('Radicals').find(entry => entry.id === 'Radicals:人');
+    const form = radicalForm(9, '9-1');
+    if (!heading || !form) throw new Error('Missing recorded 人 family');
+    const variant = radicalVariantEntry(heading, form);
+    expect(variant.id).toBe('Radicals:人:variant:9-1');
+    expect(variant.hanzi).toBe('亻');
+    expect(savedGlyphEntry(variant.id)).toEqual(variant);
+    expect(savedGlyphDestination(variant)).toEqual({ tab: 'Radicals', id: 'Radicals:人', variant: '9-1' });
+    expect(filterLibrary(libraryEntries('Radicals'), '', '', false, true, undefined, [variant.id]).map(entry => entry.id)).toEqual([variant.id]);
+    expect(filterLibrary(libraryEntries('Radicals'), '', '', false, true, undefined, [heading.id, variant.id]).map(entry => entry.id).sort()).toEqual([heading.id, variant.id].sort());
+    expect(libraryEntries('Radicals')).toHaveLength(214);
+  });
+  it('rejects an unrecorded saved radical form key', () => {
+    expect(savedGlyphEntry('Radicals:人:variant:9-999')).toBeUndefined();
+  });
   for (const kind of ['Characters', 'Radicals', 'Components', 'Strokes'] as const) {
     it(`shows only bookmarked ${kind.toLowerCase()} in Saved`, () => {
       const entries = libraryEntries(kind);
