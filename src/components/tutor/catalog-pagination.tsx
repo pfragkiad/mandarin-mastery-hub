@@ -12,11 +12,11 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
   innerRef?: Ref<HTMLDivElement>;
 }) {
   return <div ref={innerRef} className={`catalog-pagination${top ? ' catalog-pagination-top' : ''}`}>
-    <span>{range}</span>
     <div>
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
       <span>Page {current} / {pages}</span>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
     </div>
+    <span>{range}</span>
   </div>;
 }
