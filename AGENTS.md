@@ -30,6 +30,7 @@
 - Recordings live on the Lovable CDN; exported data stores only CDN URLs plus source/speaker/license — no media binaries in the repo.
 - Share the record-card footer, sentence rendering, and namespaced session bookmarks between vocabulary and glyph cards; use shared library destinations and real router links; explicit selections resolve independently of browsing filters and offscreen selected cards scroll into view without moving visible ones.
 - Glyph usage pronunciation controls share ExamplePronunciation with optional sentence audio requests; speakers remain outside vocabulary links and use each exact word/example attachment through the common audio pipeline, keeping playback independent of navigation.
+- Glyph parent-character examples use the shared browser-safe glyphParentCharacters adapter: exact recorded tree membership for components and exact dictionary radical assignments for radicals, excluding self and respecting script preferences; links retain Characters record IDs instead of resolving to radical cards.
 - Script metadata is explicit — never guess script from glyphs; Overview discovery and paginated links respect script preferences.
 - Load per-glyph enrichment sidecars only after current tree/raw geometry SHA-256 match; overlay exact occurrence strokes independently of playback; never substitute standalone outlines.
 - Component selection reveals the completed stroke prefix through the selected group using Hanzi Writer render state after native cancellation; tile playback clears group selection first, keeping Step continuation coherent.
