@@ -47,11 +47,11 @@ describe('Exact component identities and lexical readings', () => {
   });
   it('names the radical identity with its Kangxi index for canonical radical characters', () => {
     const info = glyphPresentation('氏', 'Characters', 'shì', 'clan, family; mister');
-    expect(info.label).toBe('Radical #83');
+    expect(info.label).toBe('Character'); expect(info.canonicalRadical?.number).toBe(83);
     expect(info.component).toBe(false);
     expect(info.characterPinyin).toBe('shì');
-    expect(glyphPresentation('广', 'Characters', 'guǎng').label).toBe('Radical #53');
-    expect(glyphPresentation('心', 'Characters', 'xīn').label).toBe('Radical #61');
+    expect(glyphPresentation('广', 'Characters', 'guǎng').canonicalRadical?.number).toBe(53);
+    expect(glyphPresentation('心', 'Characters', 'xīn').canonicalRadical?.number).toBe(61);
   });
   it('keeps simplified dual forms as ordinary characters, not radical pills', () => {
     expect(glyphPresentation('门', 'Characters', 'mén').label).toBe('Character');

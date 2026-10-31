@@ -54,14 +54,14 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
   const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number;
   const radicalFact = (() => {
     if (kind === 'Strokes') return null;
-    if (noteRadical) {
+    if (noteRadical && !(info.canonicalRadical && noteRadical === entry.hanzi)) {
       const identity = radicalIdentity(entry.hanzi).radicals.find(radical => radical.glyph === noteRadical);
       const destination = libraryDestination(noteRadical, preferences.includeTraditional);
       return <span className="facts-radical">{destination
         ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={identity ? `Open Kangxi radical ${identity.number}` : `Open radical ${noteRadical}`}><strong lang="zh-CN">{noteRadical}</strong></Link></Button>
         : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{noteRadical}</strong>}</span>;
     }
-    return kangxiNumber ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : null;
+    return (info.canonicalRadical?.number ?? kangxiNumber) ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : null;
   })();
   const strokeNameFact = (() => {
     if (kind !== 'Strokes') return null;
@@ -114,7 +114,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   const [audioError, setAudioError] = useState<string | null>(null);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const tileMeaning = kind === 'Components' && fallback?.meaning ? `${fallback.meaning} · ${info.meaning}` : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning;
-  const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : [];
+  const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : info.canonicalRadical ? [info.canonicalRadical] : [];
   const hideDecomposition = (kind === 'Characters' || kind === 'Components') && radicalIdentity(entry.hanzi).radicals.length > 0;
   const hasPinyin = Boolean(info.reading || fallback?.pinyin);
   const hasMeaning = Boolean(info.meaning);
