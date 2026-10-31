@@ -1,3 +1,4 @@
+import { radicalFamily } from './radical-strokes';
 import type { DecompositionNode, LibraryEntry, LibraryKind } from './character-library';
 import { gSourceDecompositions, loadRecord, type CharacterEnrichment } from './character-enrichment';
 import { includeScript } from './learning-preferences';
@@ -26,13 +27,18 @@ export async function glyphParentCharactersGSource(entry: LibraryEntry, characte
 }
 
 /** Exact recorded relationships only; exclude self, hidden scripts and duplicate records. */
-export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, characters: LibraryEntry[], includeTraditional = false): LibraryEntry[] {
+/** Radical examples: characters whose dictionary radical is the family heading. When the
+ * family has several forms (刀 / 刂 / ⺈), the parent must also contain the exact selected
+ * form in its recorded breakdown, so each variant only lists characters that use that form. */
+export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, characters: LibraryEntry[], includeTraditional = false, familyGlyph?: string): LibraryEntry[] {
   if (kind !== 'Components' && kind !== 'Radicals') return [];
   const seen = new Set<string>();
+  const assigned = familyGlyph ?? entry.hanzi;
+  const multiForm = kind === 'Radicals' && entry.kangxiIndex !== undefined && new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character) ?? []).size > 1;
   return sortByUsage(characters.filter(parent => {
     if (parent.hanzi === entry.hanzi || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
     const related = kind === 'Radicals'
-      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === entry.hanzi
+      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned && (!multiForm || Boolean(parent.decomposition && containsComponent(parent.decomposition.root, entry.hanzi)))
       : Boolean(parent.decomposition && containsComponent(parent.decomposition.root, entry.hanzi));
     if (related) seen.add(parent.id);
     return related;
