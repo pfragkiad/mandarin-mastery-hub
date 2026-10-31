@@ -1,6 +1,6 @@
 # Roadmap
 
-- [in progress] Replace Components/Radicals sentence examples with recorded, linked parent-character examples under In a character; preserve ordinary Character sentences.
+- [done] Replace Components/Radicals sentence examples with recorded, linked parent-character examples under In a character; preserve ordinary Character sentences. Nine tests passed; live component/radical parents, exact character navigation and browser Back verified; preview clean.
 
 - [done] Place glyph frequency/share after Rank in the facts row; shorten the component label; omit decomposition for radical-identified Components. Verified all three frequency tabs live, with retained Radical/Character decomposition, no page errors and 37 passing existing tests.
 
