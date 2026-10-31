@@ -40,9 +40,12 @@ export function treeEncoding(node?: DecompositionNode): TreeEncoding {
 export function treeChecksum(node?: DecompositionNode) {
   return sha256(new TextEncoder().encode(`${JSON.stringify(treeEncoding(node))}\n`));
 }
-/** Structural equality on the same encoding the checksum uses, so display deduplication never invents its own comparison. */
+/** Structural equality below the root: a recorded tree roots at the character itself while a parsed
+ *  IDS expression roots at its operator, so the comparison uses the same child encoding the checksum
+ *  uses and never invents its own. */
 export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNode): boolean {
-  return JSON.stringify(treeEncoding(a)) === JSON.stringify(treeEncoding(b));
+  if (!a || !b) return false;
+  return JSON.stringify(a.children?.map(treeEncoding) ?? null) === JSON.stringify(b.children?.map(treeEncoding) ?? null);
 }
 const geometries = new Map<string, Promise<BoundGeometry>>();
 export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
