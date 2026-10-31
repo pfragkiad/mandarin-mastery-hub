@@ -5,7 +5,9 @@ import { defaultPreferences, defaultTheme, restoredTheme, includeScript, type Pr
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
 const WorkspaceContext = createContext<Workspace | null>(null);
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState(words);
+  // Imported records must stay live when corrected; only session additions belong in state.
+  const [sessionItems, setSessionItems] = useState<Word[]>([]);
+  const items = [...words, ...sessionItems];
   const [saved, setSaved] = useState<string[]>([]);
   const [preferences, setPreferences] = useState<Preferences>(defaultPreferences);
   const [loaded, setLoaded] = useState(false);
@@ -17,6 +19,6 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   useEffect(() => { try { const raw = localStorage.getItem('tutor-preferences'); if (raw) setPreferences(p => ({ ...p, ...JSON.parse(raw) })); } catch { /* ignore */ } setLoaded(true); }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
-  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}>{children}</WorkspaceContext.Provider>;
+  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}>{children}</WorkspaceContext.Provider>;
 }
 export function useWorkspace() { const value = useContext(WorkspaceContext); if (!value) throw new Error('WorkspaceProvider is required'); return value; }
