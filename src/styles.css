@@ -326,6 +326,7 @@
 .record-gap { margin-top: 10px; }
 .record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; max-width: 46ch; }
 .catalog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted-foreground); }
+.catalog-pagination-top { margin-top: 0; padding-top: 0; border-top: 0; margin-bottom: 16px; scroll-margin-top: 18px; }
 .catalog-pagination > div { display: flex; align-items: center; gap: 8px; }
 @media(max-width:1150px) { .catalog-workspace { grid-template-columns: minmax(0,1fr) minmax(270px,.9fr); gap: 20px; }.catalog-detail { padding-left: 20px; } }
 @media(max-width:850px) { .catalog-workspace { grid-template-columns: 1fr; }.catalog-detail { border-left: none; border-top: 1px solid var(--border); padding: 24px 0; position: static; }.catalog-entry-grid { grid-template-columns: repeat(auto-fill,minmax(108px,1fr)); } }

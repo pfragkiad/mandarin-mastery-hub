@@ -1,7 +1,7 @@
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
-import { Search, Plus, LayoutGrid, List, BookOpen, X, Check, ChevronLeft, ChevronRight, Layers, PenLine } from 'lucide-react';
+import { Search, Plus, LayoutGrid, List, BookOpen, X, Check, Layers, PenLine } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';

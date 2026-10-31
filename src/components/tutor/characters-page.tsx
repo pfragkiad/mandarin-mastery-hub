@@ -3,7 +3,7 @@ import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
 import { Link } from '@tanstack/react-router';
-import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers } from 'lucide-react';
+import { Search, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
