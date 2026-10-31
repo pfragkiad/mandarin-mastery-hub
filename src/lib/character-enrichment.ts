@@ -47,6 +47,24 @@ export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNo
   if (!a || !b) return false;
   return JSON.stringify(a.children?.map(treeEncoding) ?? null) === JSON.stringify(b.children?.map(treeEncoding) ?? null);
 }
+/** Display-only agreement: explicit unknown Hanzi leaves may stand for recorded G-source parts.
+ * Known glyphs, branch positions and nesting must still agree; checksums and bindings stay strict. */
+export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode): boolean {
+  if (!gSource || !recorded) return false;
+  function matches(g: DecompositionNode, r: DecompositionNode, root = false): boolean {
+    if (g.position !== r.position) return false;
+    if (!r.children?.length && /^[?？]$/.test(r.glyph)) return true;
+    const gChildren = g.children ?? [];
+    const rChildren = r.children ?? [];
+    if (gChildren.length !== rChildren.length) return false;
+    if ((!root || !rChildren.length) && g.glyph !== r.glyph) return false;
+    return rChildren.every((child, index) => {
+      const gChild = gChildren[index];
+      return gChild !== undefined && matches(gChild, child);
+    });
+  }
+  return matches(gSource, recorded, true);
+}
 const geometries = new Map<string, Promise<BoundGeometry>>();
 export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
   const cached = geometries.get(character);
