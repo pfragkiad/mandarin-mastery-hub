@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Hide decomposition and its indicator for radical-identified Characters; remove separate vocabulary words below character sentence translations. Verified 一 live, retained 好 and Radicals-tab breakdowns, and 35 existing tests passed.
+
 - [done] Confirmed Components/Radicals parent examples already prioritize highest recorded character frequency before the six-example limit; added regression coverage for both kinds, with 21 tests passing.
 
 - [done] Italicize Component form of descriptions consistently without changing actual translations. Verified the supplied vocabulary record and mixed glyph detail live; 29 related tests passed, no page errors, preview clean.
