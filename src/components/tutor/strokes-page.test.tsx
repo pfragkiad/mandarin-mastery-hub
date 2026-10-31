@@ -28,8 +28,8 @@ vi.mock('@/lib/character-enrichment', async importOriginal => ({
   ...(await importOriginal<object>()),
   loadStrokeGeometry: async () => ({ data: { strokes: ['path one', 'path two'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, 400]]] } }),
 }));
-// The SOURCE CHECK note is checksum-bound to a lazily loaded sidecar, so the page-level hook
-// stands in for one already-validated record; the note itself renders for real.
+// The enrichment record is checksum-bound to a lazily loaded sidecar, so the page-level hook
+// stands in for one already-validated record; the decomposition renders for real.
 const enrichment = vi.hoisted(() => ({
   bindings: { strokeCount: 2 },
   comparison: { status: 'exact-G-agreement', alternatives: [] },
@@ -75,10 +75,10 @@ describe('character practice sections by mode', () => {
   writer.create.mockReturnValue(writer);
   afterEach(cleanup);
 
-  it('shows the breakdown and the source check while watching', () => {
+  it('shows the breakdown while watching', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
     expect(screen.getByText('Decomposition')).toBeInTheDocument();
-    expect(screen.getByText('SOURCE CHECK')).toBeInTheDocument();
+    expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(practiceHeading()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
     expect(document.querySelector('.practice-facts')).not.toHaveClass('practice-facts-hidden');
@@ -92,13 +92,13 @@ describe('character practice sections by mode', () => {
     expect(blocks[1]).toContain('writing-tool');
     expect(blocks[2]).toContain('practice-detail');
     expect(document.querySelector('.practice-detail')?.textContent).toContain('Decomposition');
-    expect(document.querySelector('.practice-detail')?.textContent).toContain('SOURCE CHECK');
+    expect(document.querySelector('.practice-detail')?.textContent).toContain('Hanzi graphical structure');
   });
 
-  it('hides the breakdown and the source check in recall, keeping the reading and meaning', () => {
+  it('hides the breakdown in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
     expect(screen.queryByText('Decomposition')).toBeNull();
-    expect(screen.queryByText('SOURCE CHECK')).toBeNull();
+    expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     expect(practiceHeading()).toHaveClass('sr-only');
     expect(document.querySelector('.practice-facts')).toHaveClass('practice-facts-hidden');
     expect(screen.getByText('xué')).toBeInTheDocument();
