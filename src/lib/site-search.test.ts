@@ -3,10 +3,13 @@ import { searchAll } from './site-search';
 import { words } from './mandarin';
 
 describe('Header search across the library', () => {
-  it('finds a word by its English meaning', () => {
-    const hits = searchAll(words, 'water');
+  it('finds words by their English meaning', () => {
+    const hits = searchAll(words, 'hello');
     expect(hits[0]?.kind).toBe('Word');
-    expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('水');
+    expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('你好');
+  });
+  it('lists glyph hits before word hits', () => {
+    expect(searchAll(words, 'water')[0]?.kind).not.toBe('Word');
   });
   it('finds a word by Chinese characters', () => {
     const hits = searchAll(words, '学习');

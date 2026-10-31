@@ -26,11 +26,9 @@ describe('Absent-record notes', () => {
     expect(note.closest('.record-gap')).not.toBeNull();
   });
 
-  it('shows the stroke decomposition message in the same shared note block', () => {
+  it('omits the decomposition section for individual strokes', () => {
     render(<CharacterDetails entry={strokeForm} kind="Strokes" />);
-    const note = screen.getByText('Decomposition does not apply to an individual stroke.');
-    const block = note.closest('.record-gap');
-    expect(block).not.toBeNull();
-    expect(block!.querySelector('svg')).toBeNull();
+    expect(screen.queryByText('DECOMPOSITION')).toBeNull();
+    expect(screen.queryByText('Decomposition does not apply to an individual stroke.')).toBeNull();
   });
 });
