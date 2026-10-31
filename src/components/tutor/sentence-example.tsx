@@ -14,6 +14,6 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
       const dest = /[㐀-鿿豈-﫿]/.test(ch) ? libraryDestination(ch, preferences.includeTraditional) : undefined;
       return dest ? <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Glyphs`} onClick={onNavigate}>{ch}</Link> : <span key={i}>{ch}</span>;
     })}</p>
-    {translation && <span>{translation}</span>}
+    {translation && <span><MeaningText text={translation}/></span>}
   </div>;
 }
