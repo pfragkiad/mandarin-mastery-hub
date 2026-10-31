@@ -23,7 +23,10 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
           const destination = libraryDestination(glyph, preferences.includeTraditional);
           return destination ? <Button key={glyphIndex} asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
         })}</div>
-        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="pinyin" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}>{part.word.pinyin}</Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : <small>No matching word recorded</small>}</div>
+        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="pinyin" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}>{part.word.pinyin}</Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : (() => {
+          const facts = glyphIndex()[part.text];
+          return facts ? <><span className="example-pinyin-row"><span className="pinyin">{facts.pinyin || '—'}</span><ExamplePronunciation request={characterAudioRequest(part.text, facts.pinyin)} label={`character ${part.text}`}/></span><small>{facts.meaning ? <MeaningText text={facts.meaning}/> : 'Meaning not recorded'}</small></> : <small>No matching word or character recorded</small>;
+        })()}</div>
       </div></li>)}</ul>
     </> : <>
       {!catalogVersion && <p className="library-note">Loading character data…</p>}
