@@ -762,9 +762,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Recall hides the strokes/radical/script facts but keeps the reading card's height. */
 .practice-facts-hidden { visibility: hidden; }
 .practice-detail > .decomposition-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
-.practice-decomposition-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-family: var(--font-display); font-size: 20px; font-weight: 400; line-height: 1.4; text-transform: none; color: var(--foreground); }
-.practice-decomposition-heading > svg { flex-shrink: 0; }
-.practice-decomposition-heading .source-info-trigger, .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
+.practice-detail > .radical-family-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+.practice-detail .radical-family-section { margin-bottom: 0; }
+.stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
   .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
