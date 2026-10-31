@@ -40,6 +40,14 @@ describe('bound character enrichment', () => {
     expect(gSourceDecompositions(r)[0]?.tree).toBeNull();
     expect(gSourceDecompositions(r)[0]?.expression).toBe('⿱日[unknown]');
   });
+  it('treats a G-source tree equal to the recorded tree as the same structure, and different ones as distinct', () => {
+    const gTree = gSourceDecompositions(record('是'))[0]?.tree ?? undefined;
+    expect(sameDecompositionTree(gTree, { glyph: '是', position: 'root', children: [
+      { glyph: '日', position: 'top' }, { glyph: '𤴓', position: 'bottom' }] })).toBe(true);
+    expect(sameDecompositionTree(gTree, { glyph: '是', position: 'root', children: [
+      { glyph: '日', position: 'top' }, { glyph: '疋', position: 'bottom' }] })).toBe(false);
+    expect(sameDecompositionTree(gTree, undefined)).toBe(false);
+  });
   it('fingerprints 河 using compact literal Unicode JSON and a trailing LF', async () => {
     expect(await treeChecksum(catalog.trees['河'])).toBe('553901647f9706a5a1c8662d647a422f15fcbda53a62ed524396d45feccc7167');
   });
