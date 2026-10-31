@@ -61,6 +61,17 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
     }
     return kangxiNumber ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : null;
   })();
+  const strokeNameFact = (() => {
+    if (kind !== 'Strokes') return null;
+    const { name } = strokeSpeech(entry);
+    if (!name) return null;
+    return <div><dt>Name</dt><dd><span className="facts-radical">{[...name].map((glyph, index) => {
+      const destination = libraryDestination(glyph, preferences.includeTraditional);
+      return destination
+        ? <Button asChild key={index} variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open the record for ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button>
+        : <strong key={index} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
+    })}</span></dd></div>;
+  })();
   const bookmarked = saved.includes(entry.id);
   const [audioError, setAudioError] = useState<string | null>(null);
   const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
