@@ -29,6 +29,13 @@ export function pureComponentForm(glyph: string): boolean {
   return radicalIdentity(glyph).kind === 'variant' && !DUAL_CHARACTERS.has(glyph);
 }
 
+/** Drop source "rad. 53" / "radical number 94" notes from displayed translations; the
+ * Kangxi index already appears in its own places. Keeps the original when nothing else remains. */
+export function displayMeaning(meaning: string): string {
+  const parts = meaning.split(/;\s*/).filter(part => !/^rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
+  return parts.length ? parts.join('; ') : meaning;
+}
+
 /** Preserve exact record IDs and library membership; separate lexical readings from names. */
 export function glyphPresentation(glyph: string, kind: string, pinyin = '', meaning = '') {
   const codePoint = glyph.codePointAt(0);
