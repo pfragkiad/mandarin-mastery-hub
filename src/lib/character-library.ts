@@ -2,12 +2,12 @@ import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { kindFromId, sortByUsage, usageGroupFor, usageRank } from './usage-frequency';
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
-import { radicalFamily, radicalForms } from './radical-strokes';
+import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
-export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
+export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; radicalVariant?: string; radicalHeadingId?: string; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 // Planned counts are the loading labels; the Characters tab keeps ordinary characters —
 // 9575 rows minus 37 pure component forms that exist only in the Components tab.
 export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9538 };
@@ -41,10 +41,34 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   return entries;
 }
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+/** Bookmark-only identities preserve the recorded family and form key, including duplicate glyphs. */
+export function radicalVariantEntry(heading: LibraryEntry, form: RadicalForm): LibraryEntry {
+  const first = radicalFamily(heading.kangxiIndex ?? 0)?.forms.find(item => item.character === heading.hanzi);
+  if (form.character === heading.hanzi && first?.key === form.key) return heading;
+  const exact = libraryEntries('Components').find(item => item.hanzi === form.character) ?? libraryEntries('Characters').find(item => item.hanzi === form.character);
+  const fallback = radicalVariantFallback(form.character, exact?.pinyin ?? '', heading.kangxiIndex);
+  return { ...heading, id: `${heading.id}:variant:${form.key}`, radicalHeadingId: heading.id, radicalVariant: form.key,
+    hanzi: form.character, strokes: form.strokeCount, pinyin: fallback?.pinyin ?? exact?.pinyin ?? '',
+    meaning: fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : exact?.meaning ?? heading.meaning,
+    note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` };
+}
+export function savedGlyphEntry(id: string): LibraryEntry | undefined {
+  const [headingId, key] = id.split(':variant:');
+  const kind = headingId ? kindFromId(headingId) : undefined;
+  const heading = kind ? libraryEntries(kind).find(entry => entry.id === headingId) : undefined;
+  if (!heading || !key) return heading;
+  const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, key) : undefined;
+  return form ? radicalVariantEntry(heading, form) : undefined;
+}
+export function savedGlyphDestination(entry: LibraryEntry) {
+  const kind = kindFromId(entry.id);
+  return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
+}
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false) {
   const saved = savedIds ? new Set(savedIds) : undefined;
   const kind = entries[0] ? kindFromId(entries[0].id) : undefined;
-  const matched = entries.filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
+  const variants = kind === 'Radicals' && savedIds ? savedIds.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && entries.some(heading => heading.id === entry.radicalHeadingId) ? [entry] : []; }) : [];
+  const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
 }
 export const LIBRARY_PAGE_SIZE = 48;

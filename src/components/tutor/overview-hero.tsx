@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
-import { libraryEntries, libraryDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
+import { libraryEntries, libraryDestination, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 
@@ -107,8 +107,8 @@ export function SavedStrip() {
     if (word) return [{ id, hanzi: word.hanzi, pinyin: word.pinyin, to: '/vocabulary' as const, search: overviewWordDestination(word) as Record<string, unknown> }];
     const kind = id.split(':')[0] as LibraryKind;
     if (!['Characters', 'Radicals', 'Components', 'Strokes'].includes(kind)) return [];
-    const entry = libraryEntries(kind).find(e => e.id === id);
-    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, to: '/characters' as const, search: { tab: kind, id } as Record<string, unknown> }] : [];
+    const entry = savedGlyphEntry(id);
+    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, to: '/characters' as const, search: savedGlyphDestination(entry) as Record<string, unknown> }] : [];
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }).reverse(), [saved, items, catalogVersion]);
   if (!records.length) return null;
