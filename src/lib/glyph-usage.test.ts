@@ -65,3 +65,17 @@ describe('Existing glyph usage', () => {
     expect(glyphUsage(glyph('一'), 'Strokes', [word('一', '一')], [glyph('一')])).toEqual([]);
   });
 });
+describe('Radical variant examples', () => {
+  const tree = (...parts: string[]) => ({ root: { glyph: '⿰', position: '', children: parts.map(glyph => ({ glyph, position: '' })) }, source: 'recorded', status: 'recorded' });
+  const parents = [
+    { ...glyph('分', '4 strokes · 刀 radical'), decomposition: tree('八', '刀') },
+    { ...glyph('到', '8 strokes · 刀 radical'), decomposition: tree('至', '刂') },
+    { ...glyph('刍', '5 strokes · 刀 radical'), decomposition: tree('⺈', '彐') },
+  ];
+  const form = (hanzi: string) => ({ ...glyph(hanzi), kangxiIndex: 18 });
+  it('lists only characters whose breakdown uses the exact selected form', () => {
+    expect(glyphParentCharacters(form('刀'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['分']);
+    expect(glyphParentCharacters(form('刂'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['到']);
+    expect(glyphParentCharacters(form('⺈'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['刍']);
+  });
+});
