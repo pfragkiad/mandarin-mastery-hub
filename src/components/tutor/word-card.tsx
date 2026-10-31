@@ -45,7 +45,6 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <p className="catalog-record-note">{word.collection} · {word.script === 'Traditional' ? 'Traditional Chinese' : 'Simplified Chinese'}</p>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} />}
     <VocabularyDecomposition word={word}/>
-    <SourceInfo className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo>
   </>;
 }
 
