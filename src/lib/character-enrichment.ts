@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { DecompositionNode } from './character-library';
+import { parseIdsTree } from './ids-tree';
 
 const checksum = z.string().regex(/^[a-f0-9]{64}$/);
 const indices = z.array(z.number().int().nonnegative());
@@ -16,6 +17,11 @@ const envelopeSchema = z.object({ format: z.literal('mandarin-character-enrichme
     teachingCheck: z.object({ scheme: z.literal('GF 0014-2009'), rule: z.string(), printedPage: z.number().int(), result: z.string(), expectedComponents: z.array(z.string()).optional(), expectedUnsplit: z.boolean().optional() }).optional(),
   }) });
 export type CharacterEnrichment = z.infer<typeof envelopeSchema>['record'];
+/** Regional alternatives qualify only through their recorded direct-G flag, never virtual-G. */
+export function gSourceDecompositions(record: CharacterEnrichment | null) {
+  return (record?.comparison.alternatives ?? []).filter(alternative => alternative.directG)
+    .map(alternative => ({ ...alternative, tree: parseIdsTree(alternative.expression) }));
+}
 export type ComponentOccurrence = z.infer<typeof groupSchema>;
 const geometrySchema = z.object({ strokes: z.array(z.string()), medians: z.array(z.array(z.tuple([z.number(), z.number()]))) }).passthrough();
 export type StrokeGeometry = z.infer<typeof geometrySchema>;
