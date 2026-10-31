@@ -45,7 +45,7 @@ describe('Decomposition component audio', () => {
 
   it('keeps an unknown or missing part unpronounceable', () => {
     render(<DecompositionTree node={{ glyph: '?', position: '' }}/>);
-    expect(screen.getByRole('button', { name: 'No audio available for ?' })).toBeDisabled();
+    expect(screen.queryByRole('button', { name: /audio|Listen/i })).not.toBeInTheDocument();
   });
 });
 

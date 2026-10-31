@@ -1,0 +1,740 @@
+{
+  "source": "BabelStone IDS.TXT",
+  "sourceUrl": "https://babelstone.co.uk/CJK/IDS.TXT",
+  "date": "2025-06-27\r",
+  "sha256": "cc2a0a97e6a51ed6ebe59870ef2af66e83f3c3c27387d79b4441bb2d791d78b1",
+  "components": {
+    "1": {
+      "id": 1,
+      "description": "bottom of 廌焉舃",
+      "codePoint": 62117,
+      "suggestedSubstitution": "⿹⿺㇉一灬"
+    },
+    "2": {
+      "id": 2,
+      "description": "top of 免象",
+      "codePoint": 61647,
+      "suggestedSubstitution": "⿱⺈𫩏"
+    },
+    "3": {
+      "id": 3,
+      "description": "top of 夐",
+      "codePoint": 62119,
+      "suggestedSubstitution": "⿱⺈⿵冂人"
+    },
+    "4": {
+      "id": 4,
+      "description": "top of 䝉𫎇",
+      "codePoint": 62227,
+      "suggestedSubstitution": "⿱⿻⿰丨丨丷冖"
+    },
+    "5": {
+      "id": 5,
+      "description": "left of 叚",
+      "codePoint": 62121,
+      "suggestedSubstitution": null
+    },
+    "6": {
+      "id": 6,
+      "description": "left of 段",
+      "codePoint": 62122,
+      "suggestedSubstitution": null
+    },
+    "7": {
+      "id": 7,
+      "description": "top of 專惠",
+      "codePoint": 62707,
+      "suggestedSubstitution": null
+    },
+    "8": {
+      "id": 8,
+      "description": "right of 扥",
+      "codePoint": 62123,
+      "suggestedSubstitution": "⿻⿱㇒一乚"
+    },
+    "9": {
+      "id": 9,
+      "description": "right of 𪟳𪝪",
+      "codePoint": 62124,
+      "suggestedSubstitution": "⿱⿰㇒㇖丨"
+    },
+    "10": {
+      "id": 10,
+      "description": "right of 巩 [T source glyph]",
+      "codePoint": 62120,
+      "suggestedSubstitution": "⿻⿻㇈丿丶"
+    },
+    "11": {
+      "id": 11,
+      "description": "bottom of 軣",
+      "codePoint": 62125,
+      "suggestedSubstitution": "⿰⿱丶㇀⿱㇒丶"
+    },
+    "12": {
+      "id": 12,
+      "description": "right of 龍",
+      "codePoint": 62126,
+      "suggestedSubstitution": null
+    },
+    "13": {
+      "id": 13,
+      "description": "outside of 虍",
+      "codePoint": 62111,
+      "suggestedSubstitution": "⿸⿰丿⿱⺊⺂七"
+    },
+    "14": {
+      "id": 14,
+      "description": "top of 𡕡",
+      "codePoint": 62128,
+      "suggestedSubstitution": null
+    },
+    "15": {
+      "id": 15,
+      "description": "bottom-right of 旅",
+      "codePoint": 62129,
+      "suggestedSubstitution": "⿻𱍸㇒"
+    },
+    "16": {
+      "id": 16,
+      "description": "bottom of 鼠",
+      "codePoint": 62234,
+      "suggestedSubstitution": "⿲⿺𠄌⺀⿺𠄌⺀㇂"
+    },
+    "17": {
+      "id": 17,
+      "description": "left of 剆 [G source glyph]",
+      "codePoint": 62131,
+      "suggestedSubstitution": null
+    },
+    "18": {
+      "id": 18,
+      "description": "left of 即",
+      "codePoint": 62132,
+      "suggestedSubstitution": null
+    },
+    "19": {
+      "id": 19,
+      "description": "right of 㤤",
+      "codePoint": 62133,
+      "suggestedSubstitution": null
+    },
+    "20": {
+      "id": 20,
+      "description": "right of 執 [G source glyph]",
+      "codePoint": 62958,
+      "suggestedSubstitution": "丸"
+    },
+    "21": {
+      "id": 21,
+      "description": "top of 祭豋",
+      "codePoint": 61697,
+      "suggestedSubstitution": null
+    },
+    "22": {
+      "id": 22,
+      "description": "outside of 与",
+      "codePoint": 62182,
+      "suggestedSubstitution": "⿺㇉一"
+    },
+    "23": {
+      "id": 23,
+      "description": "inside of 與",
+      "codePoint": 62185,
+      "suggestedSubstitution": null
+    },
+    "24": {
+      "id": 24,
+      "description": "right of 水",
+      "codePoint": 62194,
+      "suggestedSubstitution": null
+    },
+    "25": {
+      "id": 25,
+      "description": "bottom (legs) of 喪",
+      "codePoint": 62196,
+      "suggestedSubstitution": null
+    },
+    "26": {
+      "id": 26,
+      "description": "top of 韲",
+      "codePoint": 62138,
+      "suggestedSubstitution": null
+    },
+    "27": {
+      "id": 27,
+      "description": "bottom of 𤣥",
+      "codePoint": 62139,
+      "suggestedSubstitution": null
+    },
+    "28": {
+      "id": 28,
+      "description": "outside of 武貮",
+      "codePoint": 62140,
+      "suggestedSubstitution": "⿻弋一"
+    },
+    "29": {
+      "id": 29,
+      "description": "outside of 幾畿",
+      "codePoint": 62141,
+      "suggestedSubstitution": "⿻弋𢆶"
+    },
+    "30": {
+      "id": 30,
+      "description": "top of 彔",
+      "codePoint": 62197,
+      "suggestedSubstitution": null
+    },
+    "31": {
+      "id": 31,
+      "description": "bottom of 卥",
+      "codePoint": 62143,
+      "suggestedSubstitution": "⿴囗⿻𰀪丶"
+    },
+    "32": {
+      "id": 32,
+      "description": "top of 𣓝",
+      "codePoint": 62973,
+      "suggestedSubstitution": "⿱⿻𠮛⿰丨丨冖"
+    },
+    "33": {
+      "id": 33,
+      "description": "bottom of 雋",
+      "codePoint": 62145,
+      "suggestedSubstitution": null
+    },
+    "34": {
+      "id": 34,
+      "description": "bottom of 䇖",
+      "codePoint": 62130,
+      "suggestedSubstitution": "⿹勹丿"
+    },
+    "35": {
+      "id": 35,
+      "description": "right of 𠖵",
+      "codePoint": 62147,
+      "suggestedSubstitution": "⿻几𠄠"
+    },
+    "36": {
+      "id": 36,
+      "description": "top of 𠢘㥑",
+      "codePoint": 62148,
+      "suggestedSubstitution": null
+    },
+    "37": {
+      "id": 37,
+      "description": "top of 睿",
+      "codePoint": 62134,
+      "suggestedSubstitution": "⿱⺊冖"
+    },
+    "38": {
+      "id": 38,
+      "description": "top of 橐",
+      "codePoint": 62137,
+      "suggestedSubstitution": "⿱𰀉冖"
+    },
+    "39": {
+      "id": 39,
+      "description": "left of 卬",
+      "codePoint": 62151,
+      "suggestedSubstitution": null
+    },
+    "40": {
+      "id": 40,
+      "description": "right of 𩤷",
+      "codePoint": 62152,
+      "suggestedSubstitution": null
+    },
+    "41": {
+      "id": 41,
+      "description": "left of 𠜂 [T-form of 𠕋]",
+      "codePoint": 62150,
+      "suggestedSubstitution": "⿻𦉫𠄠"
+    },
+    "42": {
+      "id": 42,
+      "description": "top of 录",
+      "codePoint": 62164,
+      "suggestedSubstitution": "彐"
+    },
+    "43": {
+      "id": 43,
+      "description": "top of 㚑",
+      "codePoint": 62116,
+      "suggestedSubstitution": "⺕"
+    },
+    "44": {
+      "id": 44,
+      "description": "top of 孛",
+      "codePoint": 62153,
+      "suggestedSubstitution": "⿱十冖"
+    },
+    "45": {
+      "id": 45,
+      "description": "left of 北 [G source glyph]",
+      "codePoint": 62971,
+      "suggestedSubstitution": null
+    },
+    "46": {
+      "id": 46,
+      "description": "bottom of 竜",
+      "codePoint": 60464,
+      "suggestedSubstitution": "⿻日乚"
+    },
+    "47": {
+      "id": 47,
+      "description": "outside of 鳥島",
+      "codePoint": 62154,
+      "suggestedSubstitution": null
+    },
+    "48": {
+      "id": 48,
+      "description": "bottom of 年 [J-form of 㐄]",
+      "codePoint": 62972,
+      "suggestedSubstitution": "㐄"
+    },
+    "49": {
+      "id": 49,
+      "description": "left of 帅",
+      "codePoint": 62162,
+      "suggestedSubstitution": "⿰丨丿"
+    },
+    "50": {
+      "id": 50,
+      "description": "top right of 叚",
+      "codePoint": 62233,
+      "suggestedSubstitution": null
+    },
+    "51": {
+      "id": 51,
+      "description": "outside of 馬",
+      "codePoint": 62155,
+      "suggestedSubstitution": null
+    },
+    "52": {
+      "id": 52,
+      "description": "outside of 马",
+      "codePoint": 62184,
+      "suggestedSubstitution": null
+    },
+    "53": {
+      "id": 53,
+      "description": "outside of 鸟岛",
+      "codePoint": 62183,
+      "suggestedSubstitution": null
+    },
+    "54": {
+      "id": 54,
+      "description": "outside of 烏",
+      "codePoint": 62202,
+      "suggestedSubstitution": null
+    },
+    "55": {
+      "id": 55,
+      "description": "outside of 鹿慶",
+      "codePoint": 62160,
+      "suggestedSubstitution": null
+    },
+    "56": {
+      "id": 56,
+      "description": "top of 無",
+      "codePoint": 62159,
+      "suggestedSubstitution": null
+    },
+    "57": {
+      "id": 57,
+      "description": "outside of 在",
+      "codePoint": 62158,
+      "suggestedSubstitution": null
+    },
+    "58": {
+      "id": 58,
+      "description": "top left of 留",
+      "codePoint": 62157,
+      "suggestedSubstitution": "⿰{39}丶"
+    },
+    "59": {
+      "id": 59,
+      "description": "bottom of 舄",
+      "codePoint": 61756,
+      "suggestedSubstitution": null
+    },
+    "60": {
+      "id": 60,
+      "description": "outside of 龜 [H source glyph]",
+      "codePoint": 62966,
+      "suggestedSubstitution": null
+    },
+    "61": {
+      "id": 61,
+      "description": "outside of 臧",
+      "codePoint": 62960,
+      "suggestedSubstitution": null
+    },
+    "62": {
+      "id": 62,
+      "description": "bottom of 華",
+      "codePoint": 61757,
+      "suggestedSubstitution": null
+    },
+    "63": {
+      "id": 63,
+      "description": null,
+      "codePoint": null,
+      "suggestedSubstitution": null
+    },
+    "64": {
+      "id": 64,
+      "description": "bottom left of 龜 [G source glyph]",
+      "codePoint": 62228,
+      "suggestedSubstitution": null
+    },
+    "65": {
+      "id": 65,
+      "description": "bottom right of 龜 [G source glyph]",
+      "codePoint": 62232,
+      "suggestedSubstitution": null
+    },
+    "66": {
+      "id": 66,
+      "description": "bottom right of 𪚴",
+      "codePoint": 62235,
+      "suggestedSubstitution": null
+    },
+    "67": {
+      "id": 67,
+      "description": "middle of 髙 and 𠅘",
+      "codePoint": 62199,
+      "suggestedSubstitution": "⿴⿰丨丨𠄠"
+    },
+    "68": {
+      "id": 68,
+      "description": "top of 黑",
+      "codePoint": 62964,
+      "suggestedSubstitution": null
+    },
+    "69": {
+      "id": 69,
+      "description": "outside of 戠",
+      "codePoint": 62965,
+      "suggestedSubstitution": null
+    },
+    "70": {
+      "id": 70,
+      "description": "inside of 虛",
+      "codePoint": 62161,
+      "suggestedSubstitution": null
+    },
+    "71": {
+      "id": 71,
+      "description": "left of 𦥑",
+      "codePoint": 62974,
+      "suggestedSubstitution": null
+    },
+    "72": {
+      "id": 72,
+      "description": "left of 印 [G source glyph]",
+      "codePoint": 62975,
+      "suggestedSubstitution": null
+    },
+    "73": {
+      "id": 73,
+      "description": "top of 具",
+      "codePoint": 60640,
+      "suggestedSubstitution": "⿴𠀃三"
+    },
+    "74": {
+      "id": 74,
+      "description": "middle of 鄕 [J source glyph]",
+      "codePoint": 60641,
+      "suggestedSubstitution": null
+    },
+    "75": {
+      "id": 75,
+      "description": "bottom left of 爵 [K source glyph]",
+      "codePoint": 60642,
+      "suggestedSubstitution": null
+    },
+    "76": {
+      "id": 76,
+      "description": "top of 長",
+      "codePoint": 60643,
+      "suggestedSubstitution": null
+    },
+    "77": {
+      "id": 77,
+      "description": "top of 㒫",
+      "codePoint": 60644,
+      "suggestedSubstitution": null
+    },
+    "78": {
+      "id": 78,
+      "description": "亜 without the top stroke",
+      "codePoint": 60645,
+      "suggestedSubstitution": "⿱⿻口⿰丨丨一"
+    },
+    "79": {
+      "id": 79,
+      "description": "亞 without the top stroke",
+      "codePoint": 62945,
+      "suggestedSubstitution": null
+    },
+    "80": {
+      "id": 80,
+      "description": "top of 罙 [G source glyph]",
+      "codePoint": 60646,
+      "suggestedSubstitution": "⿱冖八"
+    },
+    "81": {
+      "id": 81,
+      "description": "inner part of 𮭷",
+      "codePoint": 60647,
+      "suggestedSubstitution": null
+    },
+    "82": {
+      "id": 82,
+      "description": "top of 書",
+      "codePoint": 62179,
+      "suggestedSubstitution": "⿱𦘒一"
+    },
+    "83": {
+      "id": 83,
+      "description": "top of 帝",
+      "codePoint": 60649,
+      "suggestedSubstitution": "⿳亠丷冖"
+    },
+    "84": {
+      "id": 84,
+      "description": "厂 with hooked stroke",
+      "codePoint": 60650,
+      "suggestedSubstitution": "⿰丿乛"
+    },
+    "85": {
+      "id": 85,
+      "description": "广 with hooked stroke",
+      "codePoint": 60651,
+      "suggestedSubstitution": "⿰丿⿱丶乛"
+    },
+    "86": {
+      "id": 86,
+      "description": "first three strokes of 灬",
+      "codePoint": 60652,
+      "suggestedSubstitution": "⿲丶丶丶"
+    },
+    "87": {
+      "id": 87,
+      "description": "top of 亭",
+      "codePoint": 60653,
+      "suggestedSubstitution": "⿳亠口冖"
+    },
+    "88": {
+      "id": 88,
+      "description": "top of 合",
+      "codePoint": 60654,
+      "suggestedSubstitution": "⿵𠆢一"
+    },
+    "89": {
+      "id": 89,
+      "description": "outside of 𪚧",
+      "codePoint": 62967,
+      "suggestedSubstitution": null
+    },
+    "90": {
+      "id": 90,
+      "description": "core of 龜 [G source glyph]",
+      "codePoint": 62968,
+      "suggestedSubstitution": null
+    },
+    "91": {
+      "id": 91,
+      "description": "core of 黽",
+      "codePoint": 62969,
+      "suggestedSubstitution": null
+    },
+    "92": {
+      "id": 92,
+      "description": "core of 𪚧",
+      "codePoint": 62970,
+      "suggestedSubstitution": null
+    },
+    "93": {
+      "id": 93,
+      "description": "right of 縄",
+      "codePoint": 60655,
+      "suggestedSubstitution": "⿻昌乚"
+    },
+    "94": {
+      "id": 94,
+      "description": "top of 其",
+      "codePoint": 60656,
+      "suggestedSubstitution": null
+    },
+    "95": {
+      "id": 95,
+      "description": "bottom of 𢀞",
+      "codePoint": 60657,
+      "suggestedSubstitution": "⿻尸一"
+    },
+    "96": {
+      "id": 96,
+      "description": "outside of 𭾐",
+      "codePoint": 60658,
+      "suggestedSubstitution": null
+    },
+    "97": {
+      "id": 97,
+      "description": "bottom right of 𮊫 or right of 戠 without horizontal stroke",
+      "codePoint": 60659,
+      "suggestedSubstitution": null
+    },
+    "98": {
+      "id": 98,
+      "description": "top of 曹",
+      "codePoint": 62942,
+      "suggestedSubstitution": "⿻一曲"
+    },
+    "99": {
+      "id": 99,
+      "description": "top of 𢘼",
+      "codePoint": 60661,
+      "suggestedSubstitution": "⿻𦉫𠄠"
+    },
+    "100": {
+      "id": 100,
+      "description": "之 without top stroke",
+      "codePoint": 62398,
+      "suggestedSubstitution": null
+    },
+    "101": {
+      "id": 101,
+      "description": "left of 癶",
+      "codePoint": 60662,
+      "suggestedSubstitution": null
+    },
+    "102": {
+      "id": 102,
+      "description": "right of 癶",
+      "codePoint": 60663,
+      "suggestedSubstitution": null
+    },
+    "103": {
+      "id": 103,
+      "description": "top right of 祭",
+      "codePoint": 60664,
+      "suggestedSubstitution": null
+    },
+    "104": {
+      "id": 104,
+      "description": "top right of 𥋮",
+      "codePoint": 60665,
+      "suggestedSubstitution": null
+    },
+    "105": {
+      "id": 105,
+      "description": "top right of 𨄛",
+      "codePoint": 60666,
+      "suggestedSubstitution": null
+    },
+    "106": {
+      "id": 106,
+      "description": "top of 𡛹",
+      "codePoint": 60667,
+      "suggestedSubstitution": null
+    },
+    "107": {
+      "id": 107,
+      "description": "middle of 𡙌",
+      "codePoint": 60668,
+      "suggestedSubstitution": null
+    },
+    "108": {
+      "id": 108,
+      "description": "top of 冎 [G source glyph]",
+      "codePoint": 60669,
+      "suggestedSubstitution": null
+    },
+    "109": {
+      "id": 109,
+      "description": "left of 刋",
+      "codePoint": 60670,
+      "suggestedSubstitution": "⿻⿱㇒一丿"
+    },
+    "110": {
+      "id": 110,
+      "description": "outside of 𭁟",
+      "codePoint": 62110,
+      "suggestedSubstitution": "冂"
+    },
+    "111": {
+      "id": 111,
+      "description": "inside of 𭁟",
+      "codePoint": 61233,
+      "suggestedSubstitution": null
+    },
+    "112": {
+      "id": 112,
+      "description": "outside of 𦥓",
+      "codePoint": 61234,
+      "suggestedSubstitution": null
+    },
+    "113": {
+      "id": 113,
+      "description": "bottom of 𠕉",
+      "codePoint": 61235,
+      "suggestedSubstitution": "⿵冂八"
+    },
+    "114": {
+      "id": 114,
+      "description": "top of 坴 [G source glyph]",
+      "codePoint": 61236,
+      "suggestedSubstitution": "⿱土八"
+    },
+    "115": {
+      "id": 115,
+      "description": "top of 𫭣",
+      "codePoint": 61237,
+      "suggestedSubstitution": "⿻𰀪⺀"
+    },
+    "116": {
+      "id": 116,
+      "description": "inside top of 鹿慶",
+      "codePoint": 61238,
+      "suggestedSubstitution": null
+    },
+    "117": {
+      "id": 117,
+      "description": "inside of 𠣏 [G source glyph]",
+      "codePoint": 61239,
+      "suggestedSubstitution": "⿺𠃊⺊"
+    },
+    "118": {
+      "id": 118,
+      "description": "outside of 𠁅",
+      "codePoint": 60671,
+      "suggestedSubstitution": null
+    },
+    "119": {
+      "id": 119,
+      "description": "right of 𥛈",
+      "codePoint": 62181,
+      "suggestedSubstitution": "⿻己⿱工工"
+    },
+    "120": {
+      "id": 120,
+      "description": "right of 𤛒 without 口",
+      "codePoint": 62156,
+      "suggestedSubstitution": "⿻弓⿱{50}匚"
+    },
+    "121": {
+      "id": 121,
+      "description": "top of 𣬋",
+      "codePoint": 62943,
+      "suggestedSubstitution": "⿱⺈罒"
+    },
+    "122": {
+      "id": 122,
+      "description": "bottom of 宐",
+      "codePoint": 62947,
+      "suggestedSubstitution": null
+    }
+  }
+}
