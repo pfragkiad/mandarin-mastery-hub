@@ -1,8 +1,8 @@
-import { ShieldCheck, SquareDashedMousePointer } from 'lucide-react';
+import { SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
-import { gSourceDecompositions, resolveEnrichment, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { gSourceDecompositions, resolveEnrichment, sameDecompositionTree, type CharacterEnrichment } from '@/lib/character-enrichment';
 import { Button } from '@/components/ui/button';
 import { DecompositionTree } from './decomposition-tree';
 import { componentInk } from '@/lib/practice-stroke-groups';
