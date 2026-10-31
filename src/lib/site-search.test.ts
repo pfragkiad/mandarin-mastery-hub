@@ -5,8 +5,9 @@ import { words } from './mandarin';
 describe('Header search across the library', () => {
   it('finds a word by its English meaning', () => {
     const hits = searchAll(words, 'water');
-    expect(hits[0]?.kind).toBe('Word');
-    expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('水');
+    expect(hits.some(hit => hit.kind === 'Word' && hit.word.hanzi === '水')).toBe(true);
+    // Glyphs are listed before words by design (header search priority).
+    expect(hits.findIndex(hit => hit.kind !== 'Word')).toBeLessThan(hits.findIndex(hit => hit.kind === 'Word'));
   });
   it('finds a word by Chinese characters', () => {
     const hits = searchAll(words, '学习');
