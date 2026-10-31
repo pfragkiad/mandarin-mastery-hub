@@ -2,6 +2,14 @@
 @import "tw-animate-css";
 @source "../src";
 @custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: 'BabelStone Han PUA';
+  src: url('/__l5e/assets-v1/5c65b901-5acd-4d6b-86e1-a8dc04962204/BabelStoneHanPUA.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+E000-F8FF, U+F0000-FFFFD, U+100000-10FFFD;
+}
 .drawing-rule { font-size: 12px; color: var(--muted-foreground); margin: -5px 0 25px; line-height: 1.7; }
 .drawing-idle { border-top: 1px solid var(--border); padding: 28px 0; }
 .drawing-idle .record-gap { margin-top: 14px; }
@@ -378,6 +386,11 @@
 /* Every character in a breakdown sits in its own thin-bordered box, like the form tiles on a glyph card. */
 .decomposition-glyph { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 1px solid var(--border); padding: 0; margin: 0; width: 46px; height: 46px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; transition: border-color .15s ease, color .15s ease; }
 .decomposition-glyph-static { cursor: default; }
+.babelstone-pua-glyph { font-family: 'BabelStone Han PUA'; }
+.babelstone-component-id { font-family: var(--font-sans); font-size: 12px; min-width: 46px; text-align: center; flex-shrink: 0; }
+.babelstone-component-facts { display: flex; flex-direction: column; gap: 3px; }
+.babelstone-component-source { display: flex; align-items: center; gap: 6px; color: var(--muted-foreground); font-size: 10px; }
+.babelstone-component-source .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 .decomposition-glyph strong { font-size: 32px; font-weight: 400; }
 /* A clickable character says so with the link colour, never an underline; the box itself stays neutral. */
 .decomposition-glyph:not(.decomposition-glyph-static) strong { color: var(--primary); }

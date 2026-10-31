@@ -7,6 +7,7 @@ import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { radicalIdentity } from '@/lib/radical-identities';
+import { BabelStoneComponent } from './babelstone-component';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
 
@@ -41,7 +42,7 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const destination = libraryDestination(node.glyph, preferences.includeTraditional);
   const identity = radicalIdentity(node.glyph);
   const exactRecord = card?.id.split(':').slice(1).join(':') === node.glyph;
-  const classification = identity.radicals.length ? `Kangxi radical ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : /^[?？]$/.test(node.glyph) ? 'Unknown or missing part' : /^\{\d+\}$/.test(node.glyph) ? 'Unencoded source component' : 'Graphical component · no sourced Kangxi identity';
+  const classification = identity.radicals.length ? `Kangxi radical ${identity.radicals.map(radical => `#${radical.number}`).join(' / ')}` : /^[?？]$/.test(node.glyph) ? 'Unknown or missing part' : 'Graphical component · no sourced Kangxi identity';
   const dictionary = exactRecord && card?.meaning ? card.meaning.split(';').map(part => part.trim()).filter(part => part && !/^(?:Kangxi radical\s*#?|rad\.?|radical)\s*#?\s*\d+$/i.test(part)).join('; ') : '';
   const presentation = card ? glyphPresentation(node.glyph, card.kind, card.pinyin, card.meaning) : null;
   const fallback = presentation?.component ? radicalVariantFallback(node.glyph, card?.pinyin ?? '') : null;
@@ -50,6 +51,7 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   const pinyin = fallback ? fallback.pinyin : exactRecord ? presentation?.reading || '' : '';
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const available = usePronunciationAvailability(Boolean(recording), reading);
+  if (/^\{\d+\}$/.test(node.glyph)) return <li><div className="decomposition-node"><span>{node.position}</span><BabelStoneComponent token={node.glyph}/></div></li>;
   const glyph = card && destination
     ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={exactRecord ? `Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}` : `Open the sourced Kangxi radical for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
     : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{node.glyph}</strong>;
