@@ -121,4 +121,10 @@ describe('bound character enrichment', () => {
     first.strokeIndices = [0, 1, 3]; first.noncontiguous = true;
     expect(await validateEnrichment(r, catalog.trees['河'], geometry(r))).toBe(false);
   });
+  it('treats differing slot names as the same structure', () => {
+    const g = parseIdsTree('⿹勹巳')!;
+    const r = { glyph: '⿹', position: 'root', children: [{ glyph: '勹', position: 'upper-right-enclosure' }, { glyph: '巳', position: 'inside' }] };
+    expect(matchesRecordedGSource(g, r)).toBe(true);
+    expect(matchesRecordedGSource(g, { ...r, children: [r.children[1]!, r.children[0]!] })).toBe(false);
+  });
 });

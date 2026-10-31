@@ -52,12 +52,14 @@ export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNo
 export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode): boolean {
   if (!gSource || !recorded) return false;
   function matches(g: DecompositionNode, r: DecompositionNode, root = false): boolean {
-    if (g.position !== r.position) return false;
+    // Slot names differ between sources (outer/inner vs upper-right-enclosure/inside);
+    // structure is fixed by the operator plus child order, so names are not compared.
     if (!r.children?.length && /^[?？]$/.test(r.glyph)) return true;
     const gChildren = g.children ?? [];
     const rChildren = r.children ?? [];
     if (gChildren.length !== rChildren.length) return false;
-    if ((!root || !rChildren.length) && g.glyph !== r.glyph) return false;
+    const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
+    if ((!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph))) && g.glyph !== r.glyph) return false;
     return rChildren.every((child, index) => {
       const gChild = gChildren[index];
       return gChild !== undefined && matches(gChild, child);
