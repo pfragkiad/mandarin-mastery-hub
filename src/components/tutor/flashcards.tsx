@@ -48,7 +48,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
         const reference = referenceCatalog.find(c => c.kind === kind);
         if (!reference) return [];
         const libraryKind = libraryKinds[reference.kind];
-        return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning, ...(script ? { script } : {}) }));
+        return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: displayMeaning(meaning), ...(script ? { script } : {}) }));
       };
       if (isSaved) {
         const kinds = Object.keys(libraryKinds) as ReferenceKind[];
