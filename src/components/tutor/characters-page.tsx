@@ -1,6 +1,7 @@
 import { DetailSheet, useNarrowLibrary } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { CatalogPagination } from './catalog-pagination';
 import { Link } from '@tanstack/react-router';
 import { Search, ChevronLeft, ChevronRight, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -173,6 +174,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const paged = libraryPage(filtered, page, LIBRARY_PAGE_SIZE, selectedId);
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
   useRecordScroll(selected?.id ?? '', catalogReady);
+  const topPaginationRef = useRef<HTMLDivElement>(null);
+  const lastPageRef = useRef<number | null>(null);
+  useEffect(() => {
+    const previous = lastPageRef.current;
+    lastPageRef.current = page;
+    if (previous === null || previous === page || selectedId) return;
+    topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [page, selectedId]);
   const narrow = useNarrowLibrary();
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
