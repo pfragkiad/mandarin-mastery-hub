@@ -1,5 +1,7 @@
 # Roadmap
 
+- [open] Enable separate radical-variant bookmarks and reopen the exact saved form in Glyphs and review flows.
+
 - [done] Hide decomposition and its indicator for radical-identified Characters; remove separate vocabulary words below character sentence translations. Verified 一 live, retained 好 and Radicals-tab breakdowns, and 35 existing tests passed.
 
 - [done] Confirmed Components/Radicals parent examples already prioritize highest recorded character frequency before the six-example limit; added regression coverage for both kinds, with 21 tests passing.
