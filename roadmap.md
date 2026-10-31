@@ -1,6 +1,6 @@
 # Roadmap
 
-- [in progress] Place glyph frequency/share after Rank in the facts row; shorten the component label; omit decomposition for radical-identified Components.
+- [done] Place glyph frequency/share after Rank in the facts row; shorten the component label; omit decomposition for radical-identified Components. Verified all three frequency tabs live, with retained Radical/Character decomposition, no page errors and 37 passing existing tests.
 
 - [done] Resolve BabelStone numbered components from the supplied IDS table; hosted its PUA font, verified all source-table font mappings, passed 24 tests and live 年/之 glyphs, source hints and Practice display; preview clean.
 
