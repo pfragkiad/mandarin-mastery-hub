@@ -35,6 +35,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
+  const topPaginationRef = useRef<HTMLDivElement>(null);
+  const lastPageRef = useRef<number | null>(null);
+  useEffect(() => {
+    const previous = lastPageRef.current;
+    lastPageRef.current = page ?? 1;
+    if (previous === null || previous === (page ?? 1) || initialWordId) return;
+    topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [page, initialWordId]);
   const hasFilter = Boolean(query.trim() || collection !== 'All collections' || level !== 'All levels' || status !== 'All words' || py === 'pinyin' || pos !== 'All types');
   const reset = () => onFiltersChange?.({ q: '', collection: 'All collections', level: 'All levels', status: 'All words', py: undefined, pos: 'All types' });
   return <div className="page-enter"><div className="page-heading"><div><div className="eyebrow">YOUR PERSONAL WORD COLLECTION</div><h1>Words worth knowing.</h1><p>A new word. A new connection. Make it yours.</p></div><Button onClick={() => setAdding(true)}><Plus/>Add word</Button></div>
