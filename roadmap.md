@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Prioritize explicit BabelStone G-source consistently in Glyphs, Vocabulary and Practice; hide other regional alternatives, retain the original graphical structure and validate source selection.
+- [done] Prioritize explicit BabelStone G-source consistently in Glyphs, Vocabulary and Practice; hide other regional alternatives, retain the original graphical structure; 45 tests passed, live 是 ordering and Recall verified, build clean.
 
 - [done] Add sourced cumulative character/component percentages and update component frequency classes across libraries and games; validated 39 tests, unchanged ranks in both scopes, and live filters/details/flashcard round.
 
