@@ -1,6 +1,10 @@
-/** Form descriptions are not lexical translations; preserve surrounding meanings. */
+// ============= Full file contents =============
+
+/** Form descriptions and parenthesised spans are not lexical translations; preserve surrounding meanings. */
 export function MeaningText({ text }: { text: string }) {
-  return <>{text.split(/(component form of[^;·\n]*)/gi).map((part, index) => /^component form of/i.test(part)
+  return <>{text.split(/(component form of[^;·\n]*|[（(][^（）()·\n]*[）)])/gi).map((part, index) => /^(component form of)/i.test(part)
     ? <em key={index} className="italic">{part}</em>
-    : part)}</>;
+    : /^[（(]/.test(part)
+      ? <em key={index} className="italic">{part}</em>
+      : part)}</>;
 }
