@@ -24,7 +24,7 @@ export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind, includ
   return parents;
 }
 
-export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string }) {
+export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string | undefined }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
