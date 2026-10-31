@@ -42,8 +42,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
       <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
+      {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collection}</dd></div>}
     </dl>
-    <p className="catalog-record-note">{word.collection} · {word.script === 'Traditional' ? 'Traditional Chinese' : 'Simplified Chinese'}</p>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} />}
     <VocabularyDecomposition word={word}/>
   </>;
