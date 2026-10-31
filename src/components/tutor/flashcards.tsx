@@ -37,7 +37,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
   const [repeat, setRepeat] = useState(false);
   const [round, setRound] = useState(1);
   const [total, setTotal] = useState(0);
-  const levels = useMemo(() => [...new Set(items.map(w => w.level))], [items]);
+  const levels = useMemo(() => [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), [items]);
   const posOptions = useMemo(() => partOfSpeechOptions(items), [items]);
   const isReference = category.startsWith('Ref:');
   const isSaved = category === 'Saved';
