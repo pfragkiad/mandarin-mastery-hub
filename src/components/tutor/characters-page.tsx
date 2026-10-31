@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
-import { Search, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers } from 'lucide-react';
+import { Search, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Layers, Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -15,7 +15,7 @@ import { playCharacter, characterRecording } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
-import { glyphUsage } from '@/lib/glyph-usage';
+import { glyphUsage, glyphParentCharacters } from '@/lib/glyph-usage';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
@@ -102,7 +102,7 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
-  const hasExample = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const hasExample = useMemo(() => (kind === 'Components' || kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional)).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
@@ -144,7 +144,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{tileMeaning}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${selected ? 'is-selected' : ''}`}>
-    <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : info.label.toUpperCase()}</span>{entry.kangxiIndex !== undefined && <span className="word-hsk-id" title="Official Kangxi radical index" aria-label={`Kangxi radical index ${entry.kangxiIndex}`}>ID {entry.kangxiIndex}</span>}{componentRadical.length === 1 && componentRadical[0] && <span className="word-hsk-id" title="Sourced Kangxi radical identity">Radical #{componentRadical[0].number}</span>}</span><span className="catalog-card-indicators">{hasExample && <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>}{componentRadical.length === 0 && (entry.decomposition || (kind === 'Radicals' && radicalStrokes(entry.hanzi)?.status === 'recorded')) && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
+    <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{entry.script === 'Traditional' ? <span className="traditional-label">Traditional</span> : info.label.toUpperCase()}</span>{entry.kangxiIndex !== undefined && <span className="word-hsk-id" title="Official Kangxi radical index" aria-label={`Kangxi radical index ${entry.kangxiIndex}`}>ID {entry.kangxiIndex}</span>}{componentRadical.length === 1 && componentRadical[0] && <span className="word-hsk-id" title="Sourced Kangxi radical identity">Radical #{componentRadical[0].number}</span>}</span><span className="catalog-card-indicators">{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{componentRadical.length === 0 && (entry.decomposition || (kind === 'Radicals' && radicalStrokes(entry.hanzi)?.status === 'recorded')) && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head"><strong lang="zh-CN">{entry.hanzi}</strong>{hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning || 'No English meaning recorded in this source.'}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
