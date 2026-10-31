@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { MeaningText } from './meaning-text';
 import { createPortal } from 'react-dom';
 import { FileText, Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -183,7 +184,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose, outlines }: { te
                 <span lang="zh-CN">{text}</span>
                 {showPinyin && pinyin && <span className="pinyin">{pinyin}</span>}
               </div>
-              {showMeaning && meaning && <p className="practice-translation">{meaning}</p>}
+              {showMeaning && meaning && <p className="practice-translation"><MeaningText text={meaning}/></p>}
               <p className="practice-instruction">{singleCharacter ? 'Read the model. Trace the light characters, copy them, then write the last rows from memory.' : 'Read the model. Trace the light characters. Write in the empty squares.'}</p>
             </header>
             <div className="practice-blocks">

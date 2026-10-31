@@ -4,6 +4,7 @@ import { Volume2, Library, PenLine, BookOpen, Bookmark } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
+import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
 import { libraryEntries, libraryDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
@@ -74,7 +75,7 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
       {entry ? <>
         <DailyPinyin entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin}/>
         <StrokeReveal hanzi={entry.hanzi}/>
-        <h2 className="daily-hero-meaning" title={entry.meaning}>{entry.meaning}</h2>
+        <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>
         <div className="daily-hero-actions">
           {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><Library/>Open in Glyphs</Link></Button>}
           <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>

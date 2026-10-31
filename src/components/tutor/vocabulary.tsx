@@ -26,7 +26,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const [adding, setAdding] = useState(false);
   const isMobile = useIsMobile();
   const linkedWord = items.find(w => w.id === initialWordId);
-  const kind = linkedWord ? vocabularyKind(linkedWord) : tab ?? 'word';
+  const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const categoryItems = items.filter(w => vocabularyKind(w) === kind);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   const levels = [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));

@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { MeaningText } from './meaning-text';
 import { Link } from '@tanstack/react-router';
 import { GitBranch } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
     {phrase ? <>
       <ul className="decomposition-tree vocabulary-parts">{phraseParts(word, items).filter(part => part.word || isChineseGlyph(part.text)).map((part, index) => <li key={index}><div className="decomposition-part">
         {part.word ? <Button asChild variant="ghost" className={`decomposition-glyph${part.text.length > 1 ? ' decomposition-glyph-wide' : ''}`}><Link to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${part.text.length > 1 ? ' decomposition-glyph-wide' : ''}`}>{part.text}</strong>}
-        <div className="vocabulary-part-facts">{part.word ? <><span className="pinyin">{part.word.pinyin}</span><small>{part.word.meaning}</small></> : <small>No matching word recorded</small>}</div>
+        <div className="vocabulary-part-facts">{part.word ? <><span className="pinyin">{part.word.pinyin}</span><small><MeaningText text={part.word.meaning}/></small></> : <small>No matching word recorded</small>}</div>
       </div></li>)}</ul>
     </> : <>
       {!catalogVersion && <p className="library-note">Loading character data…</p>}
