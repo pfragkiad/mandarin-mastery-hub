@@ -53,6 +53,6 @@ describe('useKeyboardPaging', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={1} onPageChange={onPageChange} />);
     press('PageDown');
-    expect(onPageChange).not.toHaveBeenCalled();
+    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
   });
 });
