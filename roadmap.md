@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Resolve BabelStone numbered components from the supplied IDS table; host its PUA font, share glyph/description display across pages, and verify exact mappings and live rendering.
+- [done] Resolve BabelStone numbered components from the supplied IDS table; hosted its PUA font, verified all source-table font mappings, passed 24 tests and live 年/之 glyphs, source hints and Practice display; preview clean.
 
 - [done] Prioritize explicit BabelStone G-source consistently in Glyphs, Vocabulary and Practice; hide other regional alternatives, retain the original graphical structure; 45 tests passed, live 是 ordering and Recall verified, build clean.
 
