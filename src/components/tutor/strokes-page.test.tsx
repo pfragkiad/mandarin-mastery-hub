@@ -105,10 +105,13 @@ describe('character practice sections by mode', () => {
     expect(screen.getByText('learn')).toBeInTheDocument();
   });
 
-  it('shows the radical family while watching a radical form', () => {
+  it('shows the radical family above the stroke decomposition while watching a radical form', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
+    const detail = document.querySelector('.practice-detail')?.textContent ?? '';
+    expect(detail.indexOf('Forms of Kangxi radical 17')).toBeGreaterThanOrEqual(0);
+    expect(detail.indexOf('STROKE DECOMPOSITION')).toBeGreaterThan(detail.indexOf('Forms of Kangxi radical 17'));
   });
 
   it('labels radical practice with the Radical pill instead of Character', () => {
