@@ -77,7 +77,7 @@ describe('character practice sections by mode', () => {
 
   it('shows the breakdown while watching', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
-    expect(screen.getByText('Decomposition')).toBeInTheDocument();
+    expect(screen.getByText('DECOMPOSITION')).toBeInTheDocument();
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(practiceHeading()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
@@ -91,13 +91,13 @@ describe('character practice sections by mode', () => {
     expect(blocks[0]).toContain('practice-intro');
     expect(blocks[1]).toContain('writing-tool');
     expect(blocks[2]).toContain('practice-detail');
-    expect(document.querySelector('.practice-detail')?.textContent).toContain('Decomposition');
+    expect(document.querySelector('.practice-detail')?.textContent).toContain('DECOMPOSITION');
     expect(document.querySelector('.practice-detail')?.textContent).toContain('Hanzi graphical structure');
   });
 
   it('hides the breakdown in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
-    expect(screen.queryByText('Decomposition')).toBeNull();
+    expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     expect(practiceHeading()).toHaveClass('sr-only');
     expect(document.querySelector('.practice-facts')).toHaveClass('practice-facts-hidden');
