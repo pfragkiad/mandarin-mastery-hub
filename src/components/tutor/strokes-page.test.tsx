@@ -110,8 +110,8 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
     const detail = document.querySelector('.practice-detail')?.textContent ?? '';
-    expect(detail.indexOf('Forms of Kangxi radical 17')).toBeGreaterThanOrEqual(0);
-    expect(detail.indexOf('STROKE DECOMPOSITION')).toBeGreaterThan(detail.indexOf('Forms of Kangxi radical 17'));
+    expect(detail.indexOf('RADICAL FAMILY')).toBeGreaterThanOrEqual(0);
+    expect(detail.indexOf('STROKE DECOMPOSITION')).toBeGreaterThan(detail.indexOf('RADICAL FAMILY'));
   });
 
   it('labels radical practice with the Radical pill instead of Character', () => {
