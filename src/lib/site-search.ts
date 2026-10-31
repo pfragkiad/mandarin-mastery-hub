@@ -2,6 +2,7 @@ import { referenceCatalog, type ReferenceKind } from './character-library';
 import { includeScript } from './learning-preferences';
 import type { Word } from './mandarin';
 import { radicalSearchGlyphs } from './radical-identities';
+import { displayMeaning } from './glyph-presentation';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
@@ -20,7 +21,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q))
-      .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning, note })),
+      .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note })),
   );
   return [...wordHits, ...refHits].slice(0, limit);
 }
