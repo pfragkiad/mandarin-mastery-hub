@@ -97,7 +97,9 @@ export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?:
   const target = hit ? { id: hit.family.id, glyph: hit.family.kangxiHeading } : identity?.length === 1 && identity[0] ? { id: identity[0].number, glyph: identity[0].glyph } : null;
   if (!target) return null;
   const own = glyphPresentation(glyph, 'Radicals', ownPinyin);
-  if (own.reading) return null;
+  // A reviewed component name (e.g. ⺈ 斜刀头) is not a lexical reading: the variant still
+  // follows its family's reading, sound and meaning.
+  if (own.reading && !own.componentName) return null;
   const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === target.id && (!hit || entry.hanzi === target.glyph));
   if (!heading || heading.hanzi === glyph) return null;
   const main = glyphPresentation(heading.hanzi, 'Radicals', heading.pinyin, heading.meaning);
