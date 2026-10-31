@@ -26,13 +26,12 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const [adding, setAdding] = useState(false);
   const isMobile = useIsMobile();
   const linkedWord = items.find(w => w.id === initialWordId);
-  const kind = linkedWord ? vocabularyKind(linkedWord) : tab ?? 'word';
+  const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const categoryItems = items.filter(w => vocabularyKind(w) === kind);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   const levels = [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
-  console.debug('vocab debug', { items: items.length, categoryItems: categoryItems.length, filtered: filtered.length, kind, tab, initialWordId, query, collection, level, status, pos, py });
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined) });
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
