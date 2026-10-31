@@ -44,7 +44,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
       {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collection}</dd></div>}
     </dl>
-    {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} />}
+    {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
     <VocabularyDecomposition word={word}/>
   </>;
 }
