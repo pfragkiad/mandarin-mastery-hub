@@ -182,6 +182,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const entries = libraryEntries(kind);
   const filtered = includeSelectedRecord(entries, filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly), selectedId);
   const paged = libraryPage(filtered, page, LIBRARY_PAGE_SIZE, selectedId);
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage });
   const selected = entries.find(entry => entry.id === selectedId) ?? paged.entries[0];
   useRecordScroll(selected?.id ?? '', catalogReady);
   const topPaginationRef = useRef<HTMLDivElement>(null);

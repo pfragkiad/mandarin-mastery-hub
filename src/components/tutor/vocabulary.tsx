@@ -33,6 +33,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined) });
   const selectedWord = linkedWord ?? (!isMobile ? paged.entries[0] : undefined);
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
   const topPaginationRef = useRef<HTMLDivElement>(null);
