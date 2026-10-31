@@ -18,5 +18,6 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
       <span>Page {current} / {pages}</span>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
     </div>
+    <span>{range}</span>
   </div>;
 }
