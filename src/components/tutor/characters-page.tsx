@@ -21,7 +21,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
-import { GlyphUsageExamples } from './glyph-usage';
+import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
 import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
@@ -103,7 +103,8 @@ export function CharacterDetails({ entry: heading, kind, variant }: { entry: Lib
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
-  const hasExample = useMemo(() => (kind === 'Components' || kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional)).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
+  const hasExample = useMemo(() => (kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : (kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional)).length > 0), [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents]);
   const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;

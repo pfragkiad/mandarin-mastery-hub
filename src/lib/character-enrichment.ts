@@ -81,7 +81,7 @@ export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
   return promise;
 }
 const records = new Map<string, Promise<CharacterEnrichment | null>>();
-async function loadRecord(character: string): Promise<CharacterEnrichment | null> {
+export async function loadRecord(character: string): Promise<CharacterEnrichment | null> {
   const cached = records.get(character);
   if (cached) return cached;
   const point = character.codePointAt(0);
