@@ -14,19 +14,21 @@ export type CatalogFile = {
   version: number; source: string;
   characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[]; strokes: CatalogRow[];
   trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
+  /** Unihan kRSUnicode radical for components that are not themselves a radical form. */
+  componentRadicals?: Record<string, string>;
 };
 
 export const catalog = {
   loaded: false, version: 0, source: '',
   characters: [] as CatalogRow[], radicals: [] as CatalogRow[], components: [] as CatalogRow[], strokes: [] as CatalogRow[],
-  trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'],
+  trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'], componentRadicals: {} as Record<string, string>,
   radicalIdentities: { schemaVersion: 1, sources: {}, identities: {} } as RadicalIdentityFile,
   radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
 
 export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile) {
   for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
-  catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source;
+  catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
   if (identities) catalog.radicalIdentities = identities;
   if (strokes) catalog.radicalStrokes = strokes;
   catalog.loaded = true; catalog.version += 1;
