@@ -50,7 +50,11 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   // role where the record is browsed as a component.
   const component = pureForm || (dualGlyph && (kind === 'Components' || kind === 'Component'));
   const variant = reviewed ? reviewed.variant : component && (identity.kind === 'variant' || identity.radicals.length > 0);
-  const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
+  // A character that is itself the canonical form of a Kangxi radical (氏, 广, 心…) keeps
+  // its lexical reading, but its record pill names the radical identity with the official
+  // index. Simplified dual forms (门, 马) are variant identities and stay ordinary characters.
+  const canonicalRadical = !component && (kind === 'Characters' || kind === 'Character') && identity.kind === 'canonical' && identity.radicals.length > 0 ? identity.radicals[0] : undefined;
+  const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : canonicalRadical ? `Radical #${canonicalRadical.number}` : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;
   return {
