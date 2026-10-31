@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { CharacterScript } from '@/lib/learning-preferences';
+import { MeaningText } from './meaning-text';
 
 /** Shared heading for every detail column: pinyin above the characters, English
  *  meaning below. Stacking keeps a long phrase from squeezing the translation
@@ -23,7 +24,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
         {audio}
       </div>
       <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>
-      <h2>{meaning || meaningFallback}</h2>
+      <h2><MeaningText text={meaning || meaningFallback}/></h2>
       {traditional && <span className="traditional-label">Traditional</span>}
     </div>
   </div>;
