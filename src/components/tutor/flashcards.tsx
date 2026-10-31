@@ -124,7 +124,7 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
             {direction === 'zh' ? <>{showFrontPinyin && <span className="pinyin flash-pinyin">{card.pinyin}</span>}<span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span></> : <span className="flash-word">{card.meaning}</span>}<span className="flash-hint">TAP TO FLIP</span>
           </div>
           <div className="flash-face back" aria-hidden={!flipped} inert={!flipped}>
-            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(f => !f)} aria-label="Flip card"/>
+            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(true)} aria-label="Card answer"/>
             <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></div>
             <span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span><span className="flash-word">{card.meaning}</span>
           </div>
