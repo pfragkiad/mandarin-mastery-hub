@@ -45,6 +45,18 @@ describe('Exact component identities and lexical readings', () => {
     expect(info.speech).toBe('门');
     expect(libraryEntries('Characters').find(entry => entry.hanzi === '门')?.pinyin).toBe('mén');
   });
+  it('names the radical identity with its Kangxi index for canonical radical characters', () => {
+    const info = glyphPresentation('氏', 'Characters', 'shì', 'clan, family; mister');
+    expect(info.label).toBe('Radical #83');
+    expect(info.component).toBe(false);
+    expect(info.characterPinyin).toBe('shì');
+    expect(glyphPresentation('广', 'Characters', 'guǎng').label).toBe('Radical #53');
+    expect(glyphPresentation('心', 'Characters', 'xīn').label).toBe('Radical #61');
+  });
+  it('keeps simplified dual forms as ordinary characters, not radical pills', () => {
+    expect(glyphPresentation('门', 'Characters', 'mén').label).toBe('Character');
+    expect(glyphPresentation('马', 'Characters', 'mǎ').label).toBe('Character');
+  });
   it('presents the same dual form as a component variant in the Components tab', () => {
     const info = glyphPresentation('门', 'Components', 'mén', 'gate, door, entrance, opening');
     expect(info.label).toBe('Component variant');
