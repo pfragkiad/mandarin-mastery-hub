@@ -715,6 +715,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .source-info-inline { display: none; }
 .source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 10px; border-radius: 999px; color: var(--muted-foreground); }
 .eyebrow .source-info-trigger { margin-top: 0; }
+.library-note:has(.source-info-trigger) { display: flex; align-items: center; gap: 6px; }
+.library-note .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 .source-info-trigger:hover, .source-info-trigger:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .source-info-trigger svg { width: 15px; height: 15px; }
 
