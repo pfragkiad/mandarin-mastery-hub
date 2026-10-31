@@ -95,8 +95,10 @@ export function FlashcardsPage({ category: controlledCategory, onCategoryChange 
         <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
         <optgroup label="Workspace"><option>Saved</option></optgroup>
       </select>
-      <select className="filter-select" aria-label="HSK level" value={level} disabled={isReference || isSaved} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
-      <select className="filter-select" aria-label="Part of speech" value={pos} disabled={isReference || isSaved} onChange={e => { setPos(e.target.value); setDeck(null); }}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
+      {!isReference && !isSaved && <>
+        <select className="filter-select" aria-label="HSK level" value={level} onChange={e => { setLevel(e.target.value); setDeck(null); }}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
+        <select className="filter-select" aria-label="Part of speech" value={pos} onChange={e => { setPos(e.target.value); setDeck(null); }}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
+      </>}
       {isReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[category.slice(4) as ReferenceKind], usage) ?? ''} onChange={e => { setUsage(e.target.value); setDeck(null); }}><option value="">All frequencies</option>{usageGroups(libraryKinds[category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
