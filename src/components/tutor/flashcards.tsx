@@ -9,6 +9,7 @@ import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
+import { displayMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
 import { usageGroupLabel, usageGroups, usageGroupFor, usageRank, parseUsageGroup } from '@/lib/usage-frequency';
 

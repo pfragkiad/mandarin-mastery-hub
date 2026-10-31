@@ -57,7 +57,7 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
     label, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
     readingFallback: component ? 'Component name not recorded' : 'Pinyin not recorded',
-    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? `Component form of ${identity.radicals.map(item => item.glyph).join(' / ')}` : 'Component form; meaning not recorded') : meaning,
+    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? `Component form of ${identity.radicals.map(item => item.glyph).join(' / ')}` : 'Component form; meaning not recorded') : displayMeaning(meaning),
     speech: pureForm ? componentName?.text ?? null : glyph,
     codePoint: codePoint === undefined ? '' : `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')}`,
     source: pureForm ? `Unicode NamesList 17.0.0${reviewed ? ` · ${reviewed.unicodeName}` : ''}${componentName ? ` · ${componentName.source}` : ''}` : null,
