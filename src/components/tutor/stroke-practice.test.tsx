@@ -28,6 +28,7 @@ hydrateCatalog({
 describe('stroke practice pronunciation', () => {
   it('speaks the stroke’s Chinese name, never the stroke glyph or an English note', () => {
     expect(strokeSpeech({ note: '横 · basic · Unicode 18.0 Appendix F', pinyin: 'héng' })).toEqual({ name: '横', reading: 'héng' });
+    expect(strokeSpeech({ note: '点 · basic · Unicode 18.0 Appendix F', pinyin: 'diǎn' })).toEqual({ name: '点', reading: 'diǎn' });
     expect(strokeSpeech({ note: 'Basic stroke form', pinyin: '' })).toEqual({ name: null, reading: null });
     expect(strokeSpeech(undefined)).toEqual({ name: null, reading: null });
   });
