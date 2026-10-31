@@ -12,7 +12,7 @@ import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, LIBRARY_PAGE_SIZE, plannedCounts, radicalVariantFallback, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
-import { playCharacter, characterRecording } from '@/lib/catalog-store';
+import { playCharacter, characterRecording, catalog } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
 import { useRecordScroll } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
