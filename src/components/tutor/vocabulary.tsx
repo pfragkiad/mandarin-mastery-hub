@@ -28,7 +28,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab ?? 'word';
   const categoryItems = items.filter(w => vocabularyKind(w) === kind);
   const label = kind === 'phrase' ? 'phrases' : 'words';
-  const levels = [...new Set(items.map(w => w.level))].sort();
+  const levels = [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
   const paged = vocabularyPage(filtered, kind, page, initialWordId);
