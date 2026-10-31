@@ -301,7 +301,7 @@
 .stroke-component-groups { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
 .stroke-component-group { min-width: 0; max-width: 100%; border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px 6px; }
 :root { --stroke-selection-ink: oklch(.36 .02 200); --stroke-selection-surface: oklch(.91 .01 200); --stroke-selection-border: oklch(.5 .03 200); --stroke-selection-glow: oklch(.6 .07 200 / .4); }
-.component-pronunciation { display: inline-flex; align-items: center; gap: 2px; }
+.component-pronunciation { display: inline-flex; align-items: center; gap: 6px; }
 .stroke-component-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 32px; }
 /* Pronunciation sits at the group box's right edge, so readings form one scannable column. */
 .stroke-component-heading > .component-pronunciation { margin-left: auto; gap: 6px; }
@@ -390,7 +390,7 @@
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
 .kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
 .kangxi-identity-badge { font-size: 8px; }
-.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline; white-space: nowrap; }.decomposition-pronunciation .decomposition-listen { transform: translateY(-1px); }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
+.decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 6px; vertical-align: baseline; white-space: nowrap; }.decomposition-pronunciation .decomposition-listen { transform: translateY(-1px); }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; color: var(--muted-foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
