@@ -1,10 +1,29 @@
 import type { DecompositionNode, LibraryEntry, LibraryKind } from './character-library';
+import { gSourceDecompositions, loadRecord, type CharacterEnrichment } from './character-enrichment';
 import { includeScript } from './learning-preferences';
 import type { Word } from './mandarin';
 import { sortByUsage } from './usage-frequency';
 
 export type GlyphUsage = { word: Word; sentence: boolean; matchedGlyph: string };
 const containsComponent = (node: DecompositionNode, glyph: string): boolean => node.glyph === glyph || Boolean(node.children?.some(child => containsComponent(child, glyph)));
+
+export type EnrichmentLoader = (character: string) => Promise<CharacterEnrichment | null>;
+
+/** Component parents come only from recorded BabelStone direct-G trees, never the Hanzi structure. */
+export async function glyphParentCharactersGSource(entry: LibraryEntry, characters: LibraryEntry[], includeTraditional = false, load: EnrichmentLoader = loadRecord): Promise<LibraryEntry[]> {
+  const seen = new Set<string>();
+  const candidates = characters.filter(parent => {
+    if (parent.hanzi === entry.hanzi || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
+    seen.add(parent.id);
+    return true;
+  });
+  const matches = await Promise.all(candidates.map(async parent => {
+    const record = await load(parent.hanzi);
+    const related = gSourceDecompositions(record).some(alternative => alternative.tree && containsComponent(alternative.tree, entry.hanzi));
+    return related ? parent : null;
+  }));
+  return sortByUsage(matches.filter((parent): parent is LibraryEntry => parent !== null), 'Characters', includeTraditional);
+}
 
 /** Exact recorded relationships only; exclude self, hidden scripts and duplicate records. */
 export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, characters: LibraryEntry[], includeTraditional = false): LibraryEntry[] {
