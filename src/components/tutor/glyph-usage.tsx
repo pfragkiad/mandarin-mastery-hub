@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { Link } from '@tanstack/react-router';
-import { MessageSquareText } from 'lucide-react';
+import { MessageSquareText, Type } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { glyphUsage } from '@/lib/glyph-usage';
+import { glyphUsage, glyphParentCharacters } from '@/lib/glyph-usage';
 import { vocabularyKind } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 import { SentenceExample } from './sentence-example';
@@ -12,6 +13,15 @@ import { characterAudioRequest } from '@/lib/catalog-store';
 export function GlyphUsageExamples({ entry, kind }: { entry: LibraryEntry; kind: LibraryKind }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const parents = useMemo(() => glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional).slice(0, 6), [entry, kind, preferences.includeTraditional, catalogVersion]);
+  if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
+    <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
+    {parents.length ? parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
+      <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
+      {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
+      <span className="glyph-usage-meaning">{parent.meaning}</span>
+    </div>) : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment are available.' : 'No characters with this exact component in their recorded breakdown are available.'}</p></div>}
+  </section>;
   return <section className="glyph-usage-section" aria-label="In a sentence">
     <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
     {examples.length ? examples.map(({ word, sentence, matchedGlyph }) => <div className="glyph-usage-example" key={word.id}>
