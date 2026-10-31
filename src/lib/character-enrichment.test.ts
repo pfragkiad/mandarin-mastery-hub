@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { webcrypto } from 'node:crypto';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { catalog } from './catalog-store';
-import { gSourceDecompositions, sameDecompositionTree, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
+import { gSourceDecompositions, matchesRecordedGSource, sameDecompositionTree, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
+import { parseIdsTree } from './ids-tree';
 
 beforeAll(() => { vi.stubGlobal('crypto', webcrypto); });
 function record(glyph: string): CharacterEnrichment {
@@ -17,6 +18,31 @@ function geometry(r: CharacterEnrichment): BoundGeometry {
   } };
 }
 describe('bound character enrichment', () => {
+  it('matches 之 when only the missing bottom part differs from G-source component 100', () => {
+    const g = parseIdsTree('⿱丶{100}') ?? undefined;
+    const r = { glyph: '之', position: 'root', children: [
+      { glyph: '丶', position: 'top' }, { glyph: '?', position: 'bottom' }] };
+    expect(matchesRecordedGSource(g, r)).toBe(true);
+    expect(sameDecompositionTree(g, r)).toBe(false);
+    expect(r.children[1]?.glyph).toBe('?');
+  });
+  it('does not hide a known-part disagreement even when another part is unknown', () => {
+    expect(matchesRecordedGSource(parseIdsTree('⿱丶{100}') ?? undefined, {
+      glyph: '之', position: 'root', children: [
+        { glyph: '一', position: 'top' }, { glyph: '？', position: 'bottom' }] })).toBe(false);
+  });
+  it('requires matching positions and nested operators rather than treating gaps as arbitrary agreement', () => {
+    expect(matchesRecordedGSource(parseIdsTree('⿱丶{100}') ?? undefined,
+      parseIdsTree('⿰丶?') ?? undefined)).toBe(false);
+    expect(matchesRecordedGSource(parseIdsTree('⿱⿵冂木丶') ?? undefined,
+      parseIdsTree('⿱⿴冂木?') ?? undefined)).toBe(false);
+    expect(matchesRecordedGSource(undefined, parseIdsTree('⿱丶?') ?? undefined)).toBe(false);
+  });
+  it('still matches fully recorded identical structures', () => {
+    expect(matchesRecordedGSource(parseIdsTree('⿱日𤴓') ?? undefined, {
+      glyph: '是', position: 'root', children: [
+        { glyph: '日', position: 'top' }, { glyph: '𤴓', position: 'bottom' }] })).toBe(true);
+  });
   it('selects the recorded G-source 日 / 𤴓 structure for 是, not 疋', () => {
     const selected = gSourceDecompositions(record('是'));
     expect(selected.map(item => item.expression)).toEqual(['⿱日𤴓']);

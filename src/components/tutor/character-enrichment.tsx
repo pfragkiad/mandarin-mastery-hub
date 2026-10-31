@@ -2,7 +2,7 @@ import { SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
-import { gSourceDecompositions, resolveEnrichment, sameDecompositionTree, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { gSourceDecompositions, resolveEnrichment, matchesRecordedGSource, type CharacterEnrichment } from '@/lib/character-enrichment';
 import { Button } from '@/components/ui/button';
 import { DecompositionTree } from './decomposition-tree';
 import { componentInk } from '@/lib/practice-stroke-groups';
@@ -33,11 +33,11 @@ export function CharacterDecomposition({ character, tree, source, status }: { ch
   return <RecordedDecomposition tree={tree} source={source} status={status} record={record}/>;
 }
 /** Display priority never changes the original tree or the geometry-bound stroke mapping.
- *  When a G-source tree is structurally identical to the recorded tree, the duplicate is not
- *  repeated; a short note says the structures agree instead. */
+ *  When known recorded parts agree with G-source (including explicit missing-part gaps),
+ *  the duplicate is not repeated; the original source and bindings remain unchanged. */
 export function RecordedDecomposition({ tree, source, status, record }: { tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
-  const matchesGSource = alternatives.some(alternative => alternative.tree && sameDecompositionTree(alternative.tree, tree));
+  const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree));
   return <>
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
       <h4 className="library-note">BabelStone · G-source<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Recorded qualifiers · {alternative.qualifiers}<br/>Structural description · not verified etymology or stroke geometry</SourceInfo></h4>
