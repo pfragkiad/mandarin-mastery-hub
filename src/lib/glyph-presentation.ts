@@ -54,11 +54,11 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   // its lexical reading, but its record pill names the radical identity with the official
   // index. Simplified dual forms (门, 马) are variant identities and stay ordinary characters.
   const canonicalRadical = !component && (kind === 'Characters' || kind === 'Character') && identity.kind === 'canonical' && identity.radicals.length > 0 ? identity.radicals[0] : undefined;
-  const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : canonicalRadical ? `Radical #${canonicalRadical.number}` : kind.replace(/s$/, '');
+  const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;
   return {
-    label, component, componentName, characterPinyin,
+    label, canonicalRadical, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
     readingFallback: component ? 'Component name not recorded' : 'Pinyin not recorded',
     meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? `Component form of ${identity.radicals.map(item => item.glyph).join(' / ')}` : 'Component form; meaning not recorded') : displayMeaning(meaning),
