@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { useKeyboardPaging } from './keyboard-paging';
 
 function press(key: string, target?: HTMLElement) {
-  target?.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
-  window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
+  if (target) target.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
+  else window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
 }
 
 /** Harness mounts the hook on window so KeyboardEvents can be dispatched from any target. */
