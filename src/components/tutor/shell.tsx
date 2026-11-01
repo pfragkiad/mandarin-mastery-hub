@@ -1,4 +1,5 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
