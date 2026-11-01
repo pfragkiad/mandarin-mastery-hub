@@ -9,11 +9,13 @@ import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight,
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Characters', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
-  // Current Characters tab, so the sub-menu can mark the section you are on.
-  const charactersTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
+  // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
+  const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
+  const charactersTab = activeTab;
+  const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
