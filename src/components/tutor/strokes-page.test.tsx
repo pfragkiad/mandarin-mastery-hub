@@ -113,13 +113,14 @@ describe('character practice sections by mode', () => {
     expect(writer.create.mock.calls[0]?.[2]).toMatchObject({ showCharacter: false, showOutline: false });
   });
 
-  it('shows the radical family above the stroke decomposition while watching a radical form', () => {
+  it('shows the radical family and no stroke decomposition while watching a radical form', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
     const detail = document.querySelector('.practice-detail')?.textContent ?? '';
     expect(detail.indexOf('RADICAL FAMILY')).toBeGreaterThanOrEqual(0);
-    expect(detail.indexOf('STROKE DECOMPOSITION')).toBeGreaterThan(detail.indexOf('RADICAL FAMILY'));
+    // The writing card already lists every stroke, so the redundant stroke sequence is gone.
+    expect(detail).not.toContain('STROKE DECOMPOSITION');
   });
 
   it('labels radical practice with the Radical pill instead of Character', () => {
@@ -134,10 +135,10 @@ describe('character practice sections by mode', () => {
     expect(screen.getByRole('button', { name: 'Back' })).toBeInTheDocument();
   });
 
-  it('shows the Kangxi number in parentheses after the hanzi in the heading', () => {
+  it('shows the heading with the hanzi only, without the Kangxi suffix', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="乙" mode="watch"/>);
-    expect(screen.getByRole('heading', { name: 'Get to know 乙 (Kangxi #5)' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Get to know 乙' })).toBeInTheDocument();
   });
 
   it('hides the radical family and the whole detail card in recall', () => {
