@@ -46,13 +46,13 @@
 - Writing modes share one mounted writer with URL-backed mode selection and a single mode-aware reset; Step retains the next undrawn index for full-playback continuation, avoiding replay of completed strokes; mode changes cancel the previous run, and Recall disables outlines, overlays and automatic quiz hints so guided practice cannot leak into recall. Guide visibility is decided by the mode alone — practice panels expose no separate character-outline switch. The Strokes panel stays visible in Recall with its tiles hidden by default, and Reset lives in the bottom control row beside Play strokes/Step.
 
 - Practice uses a continuous full-width title with the print action, then a reading intro above the writing card in the left column and a separate decomposition/detail column; shared scoped styles preserve phone reading → writing → details order.
-- Narrow-screen Vocabulary and Glyphs details share DetailSheet; its accessible handle supports tap and downward pointer-drag dismissal without intercepting body scrolling, keeping both libraries' close behaviour consistent.
+- Vocabulary and Glyphs share a nonmodal centred DetailSheet at every width, with independently scrolling content and persistent record navigation; full-width card grids remain interactive, preserving list scroll and URL-backed selections.
 - Component dictionary radicals come only from Unihan kRSUnicode via scripts/import-component-radicals.py (catalog componentRadicals, residual>0 only), matching how Characters' radicals are sourced — never inferred from shape or IDS.
 
 - Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.
 
-- Glyphs and Vocabulary share library-page, library-heading and library-source-note spacing styles; filter and action/display controls stay outside the results/detail grid, with pagination in the results column so reference panels start below shared controls.
+- Glyphs and Vocabulary share library-page, library-heading and library-source-note spacing styles; controls stay above the full-width results with shared available-width card density independent of reveal mode.
 
 - Libraries and games share DraftFilterForm/FilterForm: draft state lives inside the form so keystrokes never rerender the results owner; URL changes restore drafts and clearing applies immediately. Apply is conditional on changed drafts, X on active applied filters. Library Play/Hide menus reuse shared controls; game options stay separate so edits cannot interrupt a round.
 
-- Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep a skeleton/wait cursor until the new detail commit without rerendering results for feedback.
+- Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
