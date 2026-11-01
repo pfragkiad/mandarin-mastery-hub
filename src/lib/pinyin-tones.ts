@@ -64,9 +64,8 @@ export const normalizePinyinQuery = (query: string) =>
 /**
  * Does a recorded reading match a typed pinyin query? Accepts tone marks or tone
  * numbers; exact mode requires the whole reading to equal the query, loose mode
- * accepts a substring. A digit-less query never matches a different tone in exact
- * mode only when… actually exact mode compares tone-stripped forms too, so "shi"
- * still matches "shī" exactly as before.
+ * accepts a substring. Exact mode still compares tone-stripped forms, so "shi"
+ * keeps matching "shī" exactly as before, while "shi1" matches only shī.
  */
 export function pinyinReadingMatches(reading: string, query: string, exact: boolean): boolean {
   const q = normalizePinyinQuery(query);
