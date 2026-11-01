@@ -871,7 +871,13 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .reveal-hide-hanzi .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .tile-hanzi-row { visibility: hidden; }
 .reveal-hide-hanzi .usage-strokes { visibility: hidden; }
 .reveal-hide-pinyin .word-character .pinyin { visibility: hidden; }
-.reveal-hide-meaning .catalog-detail, .reveal-hide-hanzi .catalog-detail, .reveal-hide-pinyin .catalog-detail { display: none; }
+/* Peeked card in a Hide mode: its hidden face shows again, marked by a subtle dashed outline. */
+.reveal-hide-meaning .is-revealed .word-meaning, .reveal-hide-meaning .is-revealed .catalog-entry-meaning,
+.reveal-hide-hanzi .is-revealed .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .is-revealed .tile-hanzi-row, .reveal-hide-hanzi .is-revealed .usage-strokes,
+.reveal-hide-pinyin .is-revealed .word-character .pinyin { visibility: visible; }
+.word-card.is-revealed:not(.is-selected) { outline: 1px dashed var(--primary); outline-offset: -1px; }
+/* Hide-mode "open details" action: accent-coloured so it stands apart from technical (i) notes. */
+.word-actions .card-details-action { color: var(--primary); }
 
 /* All library modes use the entire container; card density follows available space. */
 .library-page .catalog-workspace, .library-page .vocabulary-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
@@ -918,7 +924,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 
 /* Details keep their space while a selected record is opening. */
 .detail-loading-boundary { position: relative; min-width: 0; }
-.reveal-hide-meaning .detail-loading-boundary, .reveal-hide-hanzi .detail-loading-boundary, .reveal-hide-pinyin .detail-loading-boundary { display: none; }
+
 .detail-reference-label { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--border); }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-head > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 
