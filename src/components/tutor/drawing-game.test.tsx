@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { DrawingGamePage } from './drawing-game';
+import { DrawingSessionProvider } from './drawing-session';
 import type { LibraryEntry } from '@/lib/character-library';
 import type { Word } from '@/lib/mandarin';
 
@@ -19,6 +20,21 @@ vi.mock('@/lib/character-library', async importOriginal => ({ ...(await importOr
 
 const search = { kind: 'Characters' as const };
 const onSearch = vi.fn();
+it.each([false, true])('restores the same card after Practice (already passed: %s)', async passed => {
+  const view = render(<DrawingSessionProvider><DrawingGamePage search={search} onSearch={onSearch}/></DrawingSessionProvider>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  if (passed) fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
+  fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+  view.rerender(<DrawingSessionProvider><div>Practice page</div></DrawingSessionProvider>);
+  view.rerender(<DrawingSessionProvider><DrawingGamePage search={search} onSearch={onSearch}/></DrawingSessionProvider>);
+  await screen.findByText('Card passed — here is the solution.');
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+  expect(fake.quiz).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+  expect(screen.getByText('Card 2 of 10')).toBeInTheDocument();
+  expect(screen.getByText('0 correct · 1 to review')).toBeInTheDocument();
+});
 beforeEach(() => {
   vi.clearAllMocks();
   entries.length = 0;
