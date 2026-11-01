@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Compact both game setup rows, unify ready states and counts, preserve active rounds during filtering; verify tests and live flows.
+
 - [done] Correct exact traditional script in Practice, purple decomposition parts and Traditional pills in both search boxes; 48 tests passed, lion search-to-Practice verified live, no runtime errors and preview clean.
 
 - [done] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; 19 tests passed, both libraries and independent modal navigation verified live, preview build clean.
