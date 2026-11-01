@@ -49,7 +49,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   </>;
 }
 
-// `revealed` marks a card peeked in a Hide mode; `onDetails` (Hide modes only) opens the panel directly.
+// `revealed` marks a card peeked in a Hide mode; in panel mode clicks never open the panel —
+// the page's onOpenChange reveals only, and `onDetails` is the sole way into the detail sheet.
 export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false, revealed = false, onDetails }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean; revealed?: boolean; onDetails?: () => void }) {
   const [internalOpen, setInternalOpen] = useState(initiallyOpen);
   const open = controlledOpen ?? internalOpen;

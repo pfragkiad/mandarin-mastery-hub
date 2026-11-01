@@ -4,9 +4,9 @@ import type { CardReveal } from '@/lib/learning-preferences';
 /**
  * Per-card "peek" state for the Hide modes on library grids.
  *
- * In a Hide mode the first click on a card reveals its hidden face in place
- * (self-check) instead of opening the detail panel, which would give away
- * every answer at once; a second click on a revealed card opens the panel.
+ * In a Hide mode clicking a card reveals only its hidden face in place
+ * (self-check). Clicks never open the detail panel — the panel is reachable
+ * only through the card's details button, which shows every answer at once.
  *
  * Inputs: the active reveal mode and a `resetKey` (tab, page, filters). Reveals
  * are temporary: whenever the mode or the key changes, all cards hide again so
@@ -22,11 +22,10 @@ export function useCardPeek(mode: CardReveal, resetKey: string) {
   const hiding = mode !== 'all';
   // A ref lets click handlers read the latest set without changing identity.
   const ref = useRef(revealed); ref.current = revealed;
-  /** Returns true when the click should open details, false when it only revealed the card. */
-  const peekOrOpen = useCallback((id: string) => {
-    if (!hiding || ref.current.has(id)) return true;
+  /** Click on a card: in a Hide mode reveal its hidden face; in Show all do nothing. */
+  const reveal = useCallback((id: string) => {
+    if (!hiding || ref.current.has(id)) return;
     setRevealed(prev => new Set(prev).add(id));
-    return false;
   }, [hiding]);
-  return { hiding, revealed, peekOrOpen };
+  return { hiding, revealed, reveal };
 }

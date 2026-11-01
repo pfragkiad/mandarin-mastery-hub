@@ -117,7 +117,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 const MemoCharacterDetails = memo(CharacterDetails);
 
-// `revealed` marks a card peeked in a Hide mode; `onDetails` (Hide modes only) opens the panel directly.
+// `revealed` marks a card peeked in a Hide mode; `onDetails` is the only way to open the panel.
 function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
@@ -217,7 +217,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
   // Hide modes: first click peeks the card, second opens details; reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}`);
-  const selectTile = (id: string) => { if (peek.peekOrOpen(id)) setSelectedId(id); };
+  // Clicks only peek in a Hide mode; the detail panel opens solely via the card's details button.
+  const selectTile = (id: string) => peek.reveal(id);
   // Rank jump: the list is ordered by rank (unranked last), so the first
   // record at or past the target rank is the page to reveal. Strokes carry no
   // ranks; a target beyond the last record lands on the final page.
@@ -264,7 +265,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{strokeCounts.map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
         </>}</DraftFilterForm>
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} onRankChange={rank => { const target = rankToPage(rank); if (target) setPage(target); }} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} {...(peek.hiding ? { onDetails: setSelectedId } : {})}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} onRankChange={rank => { const target = rankToPage(rank); if (target) setPage(target); }} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
         </section></div>
       </TabsContent>)}
