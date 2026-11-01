@@ -28,7 +28,15 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
     <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet"
       onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
       onCloseAutoFocus={event => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
-      onInteractOutside={event => event.preventDefault()}>
+      onInteractOutside={event => event.preventDefault()}
+      onKeyDown={event => {
+        if (!open || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (event.target instanceof HTMLElement && event.target.closest('input, textarea, select, [contenteditable="true"], [role="slider"], [role="combobox"], [role="radio"], [role="tab"]')) return;
+        const navigate = event.key === 'ArrowLeft' ? onPrevious : event.key === 'ArrowRight' ? onNext : undefined;
+        if (!navigate) return;
+        event.preventDefault();
+        navigate();
+      }}>
       <DialogTitle className="sr-only">{title}</DialogTitle>
       <DialogDescription className="sr-only">Record details</DialogDescription>
       <div className="detail-sheet-bar">

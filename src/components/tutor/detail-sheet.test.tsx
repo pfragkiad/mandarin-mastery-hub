@@ -34,4 +34,26 @@ describe('Modal detail sheet', () => {
     fireEvent.click(close);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
+
+  it('navigates to the previous record with ArrowLeft and the next with ArrowRight', () => {
+    const onPrevious = vi.fn();
+    const onNext = vi.fn();
+    render(<DetailSheet open title="Record details" onClose={vi.fn()} onPrevious={onPrevious} onNext={onNext}><p>Record</p></DetailSheet>);
+    fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowLeft' });
+    expect(onPrevious).toHaveBeenCalledTimes(1);
+    expect(onNext).not.toHaveBeenCalled();
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Close details' }), { key: 'ArrowRight' });
+    expect(onNext).toHaveBeenCalledTimes(1);
+  });
+
+  it('respects navigation boundaries and does not intercept editing or modified arrow keys', () => {
+    const onNext = vi.fn();
+    render(<DetailSheet open title="Record details" onClose={vi.fn()} onNext={onNext}><input aria-label="Notes"/></DetailSheet>);
+    fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowLeft' });
+    fireEvent.keyDown(screen.getByRole('textbox'), { key: 'ArrowRight' });
+    fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowRight', altKey: true });
+    expect(onNext).not.toHaveBeenCalled();
+    fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowRight' });
+    expect(onNext).toHaveBeenCalledTimes(1);
+  });
 });
