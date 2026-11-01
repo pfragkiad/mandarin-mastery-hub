@@ -22,6 +22,8 @@ export function FilterForm({ children, onApply, onClear, count, changed, active 
   }, [pending]);
   const run = (action: () => void) => {
     if (pending) return;
+    // Without animation frames (e.g. test DOMs) apply immediately.
+    if (typeof requestAnimationFrame !== 'function') { startTransition(action); return; }
     startTransition(async () => {
       // Let the waiting cursor paint before the expensive result update begins.
       await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));

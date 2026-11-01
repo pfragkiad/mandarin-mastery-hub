@@ -13,22 +13,22 @@ vi.mock('@/lib/character-library', () => ({ referenceCatalog: [{ kind: 'Radical'
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a> }));
 
 describe('Flashcard front pinyin', () => {
-  it('offers audio only on the back and plays the attached recording without flipping', () => {
+  it('offers audio only on the back and plays the attached recording without flipping', async () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 cards' }));
     expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Listen to 你好' }));
     expect(playPronunciation).toHaveBeenCalledWith(expect.objectContaining({ text: '你好', reading: 'nǐ hǎo', audio: expect.objectContaining({ url: 'https://example.com/hello.mp3' }) }), undefined);
     expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
   });
-  it('can reveal and hide pinyin on the Chinese front without restarting the deck', () => {
+  it('can reveal and hide pinyin on the Chinese front without restarting the deck', async () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 cards' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('switch', { name: 'Show pinyin on card front' }));
     expect(screen.getByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe('Unknown-card bookmarks', () => {
   async function finish(category: string, known = false) {
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: category } });
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 cards' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: known ? 'I knew it' : 'Still learning' }));
     await waitFor(() => expect(screen.getByText('DECK COMPLETE')).toBeInTheDocument());
@@ -99,12 +99,12 @@ describe('Deck size', () => {
   });
 });
 
- it('keeps the applied deck pool until Apply and clears immediately with X', () => {
+ it('keeps the applied deck pool until Apply and clears immediately with X', async () => {
    render(<FlashcardsPage/>);
    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
    expect(screen.getByRole('button', { name: 'Start · 10 of 12 cards' })).toBeInTheDocument();
    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
-   expect(screen.getByRole('button', { name: 'Start · 1 cards' })).toBeInTheDocument();
+   expect(await screen.findByRole('button', { name: 'Start · 1 cards' })).toBeInTheDocument();
    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
-   expect(screen.getByRole('button', { name: 'Start · 10 of 12 cards' })).toBeInTheDocument();
- });
+   expect(await screen.findByRole('button', { name: 'Start · 10 of 12 cards' })).toBeInTheDocument();
+  });
