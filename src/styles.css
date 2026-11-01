@@ -326,9 +326,6 @@
 .enrichment-note .decomposition-facts { overflow-wrap: anywhere; }
 /* Every "nothing here" message reads exactly like the decomposition explanation. */
 .decomposition-note { color: var(--foreground); font-size: 13px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
-/* Absent-record notes read like the small muted source notes (e.g. the G-source
-   match line) so every "nothing here" sentence below a section looks the same. */
-.record-gap > p { color: var(--muted-foreground); font-size: 10px; line-height: 1.6; margin: 2px 0 0; max-width: 46ch; }
 .decomposition-footnote { text-align: left; margin-top: 16px; }
 .enrichment-note { margin-top: 22px; min-width: 0; }
 /* Practice panels stack each explanation as its own bordered block, in reading order. */
@@ -336,11 +333,10 @@
 .practice-block > .enrichment-note:first-child, .practice-block > .enrichment-notes > .enrichment-note:first-child { margin-top: 0; }
 .enrichment-note > p:not(.detail-footnote) { font-size: 13px; line-height: 1.6; color: var(--foreground); margin-top: 8px; overflow-wrap: anywhere; }
 .enrichment-note .detail-footnote { text-align: left; line-height: 1.7; letter-spacing: 0; }
-.enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.enrichment-expression { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 2px 0 0; }
 .enrichment-expression > span { font-size: 22px; }
 /* A hanzi quoted inside a source sentence or a raw notation expression gets the same thin box as a breakdown row. */
 .source-glyph-box { display: inline-flex; align-items: center; justify-content: center; min-width: 1.45em; height: 1.45em; padding: 0 .16em; border: 1px solid var(--border); border-radius: 6px; vertical-align: middle; }
-.enrichment-expression > small { font-size: 10px; color: var(--muted-foreground); }
 .component-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0 10px; }
 .component-picker button { height: auto; min-height: 36px; white-space: normal; gap: 8px; }
 .component-picker [aria-pressed='true'] { color: var(--primary); background: var(--secondary); border-color: var(--primary); box-shadow: 0 0 10px var(--stroke-selection-glow); }
