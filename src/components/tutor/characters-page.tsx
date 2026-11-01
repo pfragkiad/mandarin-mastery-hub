@@ -117,7 +117,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 const MemoCharacterDetails = memo(CharacterDetails);
 
-// `revealed` marks a card peeked in a Hide mode; `onDetails` (Hide modes only) opens the panel directly.
+// `revealed` marks a card peeked in a Hide mode; `onDetails` is the only way to open the panel.
 function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
@@ -217,7 +217,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
   // Hide modes: first click peeks the card, second opens details; reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}`);
-  const selectTile = (id: string) => { if (peek.peekOrOpen(id)) setSelectedId(id); };
+  // Clicks only peek in a Hide mode; the detail panel opens solely via the card's details button.
+  const selectTile = (id: string) => peek.reveal(id);
   // Rank jump: the list is ordered by rank (unranked last), so the first
   // record at or past the target rank is the page to reveal. Strokes carry no
   // ranks; a target beyond the last record lands on the final page.
