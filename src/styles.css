@@ -297,7 +297,8 @@
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 /* One shared style for the first content line directly under a section heading:
    the sentence/usage note, the decomposition source line, and the G-source match
-   note all read identically (size, color, spacing, weight). */
+   note all read identically (size, color, spacing, weight) and use the full
+   available width — no artificial wrap. */
 .record-gap > p,
 .decomposition-section .library-note,
 .enrichment-expression > small {
@@ -305,7 +306,6 @@
   font-size: 10px;
   line-height: 1.6;
   margin: 2px 0 0;
-  max-width: 46ch;
   font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
@@ -389,7 +389,7 @@
 .vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 /* Shared block for absent records: sits under its section label, no extra icon or divider. */
 .record-gap { margin-top: 10px; }
-.record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; max-width: 46ch; }
+.record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; }
 .catalog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted-foreground); }
 .catalog-pagination-top { margin-top: 0; padding-top: 0; border-top: 0; margin-bottom: 16px; scroll-margin-top: 18px; }
 /* Slim paging strip revealed once the static top bar scrolls away; fixed to
@@ -978,7 +978,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Details keep their space while a selected record is opening. */
 .detail-loading-boundary { position: relative; min-width: 0; }
 
-.detail-reference-label { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--border); }
+/* The reference label is a section like any other: same 16px above the divider
+   and 14px from divider to heading as the sentence/decomposition sections. */
+.detail-reference-label { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-head > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 /* Detail sheet: tighter vertical rhythm than the practice detail column — the
    floating window reads as one compact card, so section gaps shrink. */
@@ -989,7 +991,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
    divider, 14px from divider to heading — so the gap below any section's last
    line equals the gap below every other section's last line. */
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: 16px; padding-top: 14px; }
-.detail-sheet .detail-reference-label { margin-top: 16px; padding-top: 14px; }
 .detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
