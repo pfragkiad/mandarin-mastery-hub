@@ -210,8 +210,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
-  const density = useLibraryDensity(`${kind}:${filtered.length}`, () => set({ page: 1, id: '', variant: undefined }));
+  const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
+  // Rank jump: the list is ordered by rank (unranked last), so the first
+  // record at or past the target rank is the page to reveal. Strokes carry no
+  // ranks; a target beyond the last record lands on the final page.
+  const rankToPage = (target: number) => {
+    if (kind === 'Strokes' || !usageOrder.loaded) return null;
+    const index = filtered.findIndex(entry => (usageRank(entry, kind, preferences.includeTraditional) ?? Infinity) >= target);
+    return index < 0 ? paged.pages : Math.floor(index / density.size) + 1;
+  };
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
   const selected = entries.find(entry => entry.id === selectedId);
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
@@ -240,7 +248,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{strokeCounts.map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
         </>}</DraftFilterForm>
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} rows={density.rows} onRowsChange={density.onRowsChange} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div ref={density.gridRef} className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} onRankChange={rank => { const target = rankToPage(rank); if (target) setPage(target); }} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
         </section></div>
       </TabsContent>)}
