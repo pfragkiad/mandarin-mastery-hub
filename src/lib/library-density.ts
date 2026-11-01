@@ -1,9 +1,7 @@
-import type { LibraryRows } from './learning-preferences';
+import type { LibraryPerPage } from './learning-preferences';
 
-export function libraryRows(stored: unknown): LibraryRows {
-  return stored === 3 || stored === 5 || stored === 10 ? stored : 3;
-}
-
-export function libraryPageSize(rows: LibraryRows, columns: number) {
-  return rows * Math.max(1, Math.floor(columns));
+// Page size is a plain record count (10/20/50), independent of the responsive
+// column count: the grid only decides how many rows those records fill.
+export function libraryPerPage(stored: unknown): LibraryPerPage {
+  return stored === 10 || stored === 20 || stored === 50 ? stored : 10;
 }

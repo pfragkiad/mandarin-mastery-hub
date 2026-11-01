@@ -911,19 +911,19 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-head > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
-.library-row-picker { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
-.library-row-picker > span { margin-right: 5px; }
-.library-row-picker button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
-.library-row-picker button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
+.library-per-page { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
+.library-per-page > span { margin-right: 5px; }
+.library-per-page button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
+.library-per-page button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
 .catalog-pagination > span { white-space: nowrap; margin-left: auto; }
 /* Numbered page buttons: current page reads as accent text, no background block. */
 .catalog-page-numbers { display: flex; align-items: center; gap: 1px; }
 .catalog-page-numbers .btn, .catalog-page-numbers button { min-width: 30px; padding: 0 6px; }
 .catalog-page-numbers .is-current { color: var(--primary); font-weight: 700; }
 .catalog-page-gap { padding: 0 3px; color: var(--muted-foreground); }
-/* "Go to" jump box: small inline numeric input for direct page entry. */
+/* Page and Rank jump boxes: small inline numeric inputs for direct jumps. */
 .catalog-page-jump { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted-foreground); white-space: nowrap; }
 .catalog-page-jump input { width: 52px; height: 30px; padding: 0 8px; font-size: 12px; text-align: center; }
 @media(max-width:580px) { .catalog-page-jump { display: none; } }
-@media(max-width:580px) { .library-row-picker { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
+@media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
 .library-eyebrow { text-transform: uppercase; }

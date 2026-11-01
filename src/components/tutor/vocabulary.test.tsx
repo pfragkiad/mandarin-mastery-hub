@@ -6,7 +6,7 @@ import { VocabularyPage } from './vocabulary';
 // Isolate the page's real keyboard wiring from data loading and card rendering;
 // URL callbacks and selected record identity remain the inputs under test.
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: words, saved: [], preferences: { cardReveal: 'all' }, addWord: vi.fn() }) }));
-vi.mock('./use-library-density', () => ({ useLibraryDensity: () => ({ size: 12, rows: 3, gridRef: null, onRowsChange: vi.fn() }) }));
+vi.mock('./use-library-density', () => ({ useLibraryDensity: () => ({ size: 12, onPerPageChange: vi.fn() }) }));
 vi.mock('@/lib/selection-scroll', () => ({ useRecordScroll: vi.fn() }));
 vi.mock('./detail-loading', () => ({ useDetailLoading: () => ({ run: vi.fn() }), DetailLoading: () => null }));
 vi.mock('./detail-sheet', () => ({ DetailSheet: () => null }));
