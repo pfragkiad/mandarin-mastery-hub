@@ -80,7 +80,10 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   const matchesQuery = (entry: LibraryEntry) => {
     if (pinyinOnly && pinyinExact) return entry.pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, true));
     if (pinyinOnly) return pinyinReadingMatches(entry.pinyin, query, false);
-    return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q);
+    // Plain (non-Pinyin) mode still honours pinyin input exactly like global
+    // search: tone numbers or marks ("shi1", "shī") match readings even though
+    // the Hanzi, meaning and note text never contains digits.
+    return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q) || pinyinReadingMatches(entry.pinyin, query, false);
   };
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;

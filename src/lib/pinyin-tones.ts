@@ -68,11 +68,18 @@ export const normalizePinyinQuery = (query: string) =>
  * numbers; exact mode requires the whole reading to equal the query, loose mode
  * accepts a substring. Exact mode still compares tone-stripped forms, so "shi"
  * keeps matching "shī" exactly as before, while "shi1" matches only shī.
+ * Queries written with tone marks ("shī") carry their tone through the same
+ * numbered form, so they keep tone discrimination in both modes.
  */
 export function pinyinReadingMatches(reading: string, query: string, exact: boolean): boolean {
   const q = normalizePinyinQuery(query);
   if (!q) return true;
   const plain = reading.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[\s'·-]+/g, '');
   const numbered = pinyinNumbered(reading);
-  return exact ? plain === q || numbered === q : plain.includes(q) || numbered.includes(q);
+  // pinyinNumbered skips digits, so it is only meaningful for tone-marked
+  // queries; tone-number queries already compare directly as strings.
+  const qNumbered = [...q].some(ch => Boolean(TONE_MARKS[ch])) ? pinyinNumbered(q) : '';
+  return exact
+    ? plain === q || numbered === q || (Boolean(qNumbered) && numbered === qNumbered)
+    : plain.includes(q) || numbered.includes(q) || (Boolean(qNumbered) && numbered.includes(qNumbered));
 }
