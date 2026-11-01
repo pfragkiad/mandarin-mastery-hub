@@ -16,7 +16,6 @@ describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', async () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -27,7 +26,6 @@ describe('Flashcard front pinyin', () => {
   it('can reveal and hide pinyin on the Chinese front without restarting the deck', async () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('switch', { name: 'Show pinyin on card front' }));
@@ -42,7 +40,6 @@ describe('Flashcard front pinyin', () => {
 describe('Unknown-card bookmarks', () => {
   async function finish(category: string, known = false) {
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: category } });
-    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: known ? 'I knew it' : 'Still learning' }));
@@ -85,7 +82,6 @@ describe('Deck size', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     const current = screen.getByText('Card 1 of 10');
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     await screen.findByRole('button', { name: 'Restart · 1 card' });
     expect(current).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
@@ -111,12 +107,11 @@ describe('Deck size', () => {
   });
 });
 
- it('keeps the applied deck pool until Apply and clears immediately with X', async () => {
+ it('applies filter changes immediately and clears immediately with X', async () => {
    render(<FlashcardsPage/>);
    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
-   expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
-   fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
+   expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
    expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
