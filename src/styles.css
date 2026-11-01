@@ -57,7 +57,10 @@
 .brand-mark { width: 42px; height: 44px; border-radius: 9px 9px 9px 2px; background: var(--primary); color: var(--primary-foreground); display: grid; place-items: center; font-family: var(--font-hanzi); font-size: 29px; flex-shrink: 0; }
 .brand-copy strong { display: block; font-family: var(--font-display); font-size: 24px; font-weight: 500; line-height: 1.25; }.brand-dot { color: var(--terracotta); }.brand-copy small { font-size: 8px; letter-spacing: 2.4px; color: var(--muted-foreground); }
 .sidebar-label { color: var(--muted-foreground); font-size: 9px; letter-spacing: 1.7px; margin: 0 29px 16px; font-weight: 600; }
-.sidebar nav { display: flex; flex-direction: column; gap: 7px; padding: 0 16px; }.nav-item { justify-content: flex-start; height: 44px; padding: 0 15px; gap: 13px; color: var(--muted-foreground); font-weight: 450; border-radius: 6px; }.nav-item.is-active { background: var(--secondary); color: var(--primary); font-weight: 600; }.nav-item svg { width: 17px; height: 17px; }.active-dot { margin-left: auto; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
+.sidebar nav { display: flex; flex-direction: column; gap: 7px; padding: 0 16px; }.nav-item { justify-content: flex-start; height: 44px; padding: 0 15px; gap: 13px; color: var(--muted-foreground); font-weight: 450; border-radius: 6px; transition: color .15s; }.nav-item.is-active { background: var(--secondary); color: var(--primary); font-weight: 600; }.nav-item svg { width: 17px; height: 17px; }.active-dot { margin-left: auto; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
+/* Nav hover stays background-free: the label and icon simply shift to the
+   accent colour, matching the app-wide tinted-hover treatment. */
+.sidebar .nav-item:hover, .sidebar .nav-sub-item:hover { background: transparent; color: var(--primary); }
 
 /* Sub-itens indentados da seção Characters na navegação: sempre visíveis no
    sidebar completo, escondidos nos modos compacto/ícone-only em que as abas
