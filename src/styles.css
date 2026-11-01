@@ -916,5 +916,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-row-picker button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
 .library-row-picker button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
 .catalog-pagination > span { white-space: nowrap; margin-left: auto; }
+/* Numbered page buttons: current page reads as accent text, no background block. */
+.catalog-page-numbers { display: flex; align-items: center; gap: 1px; }
+.catalog-page-numbers .btn, .catalog-page-numbers button { min-width: 30px; padding: 0 6px; }
+.catalog-page-numbers .is-current { color: var(--primary); font-weight: 700; }
+.catalog-page-gap { padding: 0 3px; color: var(--muted-foreground); }
+/* "Go to" jump box: small inline numeric input for direct page entry. */
+.catalog-page-jump { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted-foreground); white-space: nowrap; }
+.catalog-page-jump input { width: 52px; height: 30px; padding: 0 8px; font-size: 12px; text-align: center; }
+@media(max-width:580px) { .catalog-page-jump { display: none; } }
 @media(max-width:580px) { .library-row-picker { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
 .library-eyebrow { text-transform: uppercase; }
