@@ -221,6 +221,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     return index < 0 ? paged.pages : Math.floor(index / density.size) + 1;
   };
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
+  // Sticky strip label: on ranked tabs, name the frequency ranks visible on
+  // the current page against the kind's ranked total; otherwise the page number.
+  const rankedTotal = useMemo(() => kind === 'Strokes' || !usageOrder.loaded ? 0 : entries.reduce((n, e) => n + (usageRank(e, kind, preferences.includeTraditional) !== null ? 1 : 0), 0), [entries, kind, preferences.includeTraditional, catalogVersion]);
+  const stickyLabel = (() => {
+    if (rankedTotal > 0) {
+      const ranks = paged.entries.map(e => usageRank(e, kind, preferences.includeTraditional)).filter((r): r is number => r !== null);
+      if (ranks.length) return `Ranks ${Math.min(...ranks).toLocaleString('en-US')}–${Math.max(...ranks).toLocaleString('en-US')} of ${rankedTotal.toLocaleString('en-US')}`;
+    }
+    return `Page ${paged.current} / ${paged.pages}`;
+  })();
   const selected = entries.find(entry => entry.id === selectedId);
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
   const selectedBookmarkId = selected && selectedForm ? radicalVariantEntry(selected, selectedForm).id : selected?.id;

@@ -1,6 +1,6 @@
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useRef, useState } from 'react';
-import { CatalogPagination } from './catalog-pagination';
+import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
 import { Search, Plus, BookOpen, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
