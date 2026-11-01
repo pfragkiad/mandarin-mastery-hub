@@ -81,3 +81,41 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
     <span>{range}</span>
   </div>;
 }
+
+/**
+ * Slim paging strip pinned to the top of the results column. It appears only
+ * after the static top pagination bar has scrolled out of view (observed via
+ * IntersectionObserver), so the default 10-per-page view rarely shows it and
+ * it earns its place at 20/50 per page. It shares the static bar's page state
+ * and handlers, so keyboard shortcuts, first/last-page disabling and the
+ * scroll-to-top-on-paging effect all keep working unchanged. Render it with a
+ * per-tab `key` so the observer re-attaches when the tab swaps the top bar.
+ */
+export function StickyPagination({ label, current, pages, onPageChange, watchRef }: {
+  /** Position label, e.g. "Ranks 151–170 of 9,933" on ranked tabs, else "Page 7 / 382". */
+  label: string;
+  current: number;
+  pages: number;
+  onPageChange: (page: number) => void;
+  /** Ref to the static top pagination bar whose disappearance reveals the strip. */
+  watchRef: RefObject<HTMLDivElement | null>;
+}) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = watchRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      // Show only when the bar has passed above the viewport top, never when
+      // it is still below the fold (initial render on a long page).
+      setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [watchRef]);
+  if (!visible) return null;
+  return <div className="sticky-pagination" role="navigation" aria-label="Page navigation">
+    <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
+    <span>{label}</span>
+    <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
+  </div>;
+}
