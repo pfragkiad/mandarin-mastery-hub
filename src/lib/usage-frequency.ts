@@ -14,7 +14,7 @@ export function hydrateUsageOrder(data: UsageOrderFile) { usageOrder.data = data
 export type UsageGroup = { value: string; label: string; min: number; max: number };
 const bin = (min: number, max: number): UsageGroup => ({ value: `${min}-${Number.isFinite(max) ? max : 'plus'}`, label: Number.isFinite(max) ? `Rank ${min.toLocaleString('en-US')}–${max.toLocaleString('en-US')}` : `Rank ${min.toLocaleString('en-US')}+`, min, max });
 export const UNRANKED = 'unranked';
-const unranked: UsageGroup = { value: UNRANKED, label: 'No frequency data', min: 0, max: 0 };
+const unranked: UsageGroup = { value: UNRANKED, label: 'Unranked', min: 0, max: 0 };
 export const usageGroupsByKind: Record<'Characters' | 'Radicals' | 'Components', UsageGroup[]> = {
   Characters: [bin(1, 100), bin(101, 300), bin(301, 500), bin(501, 1000), bin(1001, 2000), bin(2001, 3500), bin(3501, 5000), bin(5001, 9933), unranked],
   Radicals: [bin(1, 10), bin(11, 25), bin(26, 50), bin(51, 100), bin(101, 150), bin(151, 200), bin(201, Infinity), unranked],
