@@ -29,7 +29,12 @@ export function CardRevealToggle() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [preferences, setPreferences]);
 
-  return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={OPTIONS.find(option => option.value === current)?.label}><EyeOff/>Hide<ChevronDown/></Button></DropdownMenuTrigger>
+  // The button names the currently hidden face so the selection stays visible
+  // without opening the menu; "Hide" is the neutral label when nothing is hidden.
+  const selected = OPTIONS.find(option => option.value === current) ?? OPTIONS[0]!;
+  const TriggerIcon = current === 'all' ? EyeOff : selected.icon;
+  const triggerLabel = current === 'all' ? 'Hide' : selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase());
+  return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={selected.label}><TriggerIcon/>{triggerLabel}<ChevronDown/></Button></DropdownMenuTrigger>
     <DropdownMenuContent align="start"><DropdownMenuRadioGroup value={current} onValueChange={value => { const option = OPTIONS.find(option => option.value === value); if (option) setPreferences({ ...preferences, cardReveal: option.value }); }}>
       {[...OPTIONS.slice(1), OPTIONS[0]].filter(option => option !== undefined).map(({ value, label, icon: Icon, shortcut }) => <DropdownMenuRadioItem key={value} value={value}><Icon className="mr-2 size-4"/>{value === 'all' ? label : label.replace('Hide ', '')}<span className="ml-auto pl-5 text-xs text-muted-foreground">{shortcut}</span></DropdownMenuRadioItem>)}
     </DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>;
