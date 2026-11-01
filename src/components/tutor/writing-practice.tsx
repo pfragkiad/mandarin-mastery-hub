@@ -86,7 +86,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                 <Button variant="ghost"
                    type="button"
                    disabled={!interactive || playing}
-                  className={`stroke-chip${activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}`}
+                  className={`stroke-chip${activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
                   title={`Play stroke ${i + 1}`}
                   aria-label={`Play stroke ${i + 1}`}
                   aria-current={activeStroke === i ? 'step' : undefined}
@@ -97,7 +97,8 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                       <path d={stroke.path} style={{ fill: componentInk(run.group.palette) }} />
                     </g>
                   </svg>
-                  <span className="stroke-index">{i + 1}</span>
+                   <span className="stroke-index">{i + 1}</span>
+                  {stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
                   {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
                   <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
@@ -186,7 +187,10 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       setStrokes(data.strokes.map((path, i) => {
         const fallback = nameStroke(data.medians[i] ?? []);
         const recorded = selectedNames?.[i];
-        return { path, name: recorded?.name ?? (exact ? '' : fallback.name), pinyin: recorded?.pinyin ?? (exact ? 'Not recorded' : fallback.pinyin), direction: fallback.direction };
+        // A " / " inside a recorded name marks the source's own alternatives
+        // (心's 斜钩 / 卧钩); only those strokes carry the ambiguous marker.
+        const ambiguous = exact?.status === 'ambiguous' && Boolean(recorded?.name.includes(' / '));
+        return { path, name: recorded?.name ?? (exact ? '' : fallback.name), pinyin: recorded?.pinyin ?? (exact ? 'Not recorded' : fallback.pinyin), direction: fallback.direction, ambiguous };
       }));
       setMedians(data.medians as MedianPoint[][]);
       onStrokeCount?.(data.strokes.length);
