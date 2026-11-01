@@ -915,3 +915,4 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-row-picker button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
 .catalog-pagination > span { white-space: nowrap; margin-left: auto; }
 @media(max-width:580px) { .library-row-picker { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
+.library-eyebrow { text-transform: uppercase; }
