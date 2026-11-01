@@ -5,8 +5,8 @@ import { render, screen } from '@testing-library/react';
 import { CardRevealToggle } from './card-reveal-toggle';
 import type { Preferences } from '@/lib/learning-preferences';
 
-const preferences: LearningPreferences = { cardReveal: 'all' } as LearningPreferences;
-const setPreferences = vi.fn((next: LearningPreferences) => { preferences.cardReveal = next.cardReveal; });
+const preferences: Preferences = { cardReveal: 'all' } as Preferences;
+const setPreferences = vi.fn((next: Preferences) => { preferences.cardReveal = next.cardReveal; });
 
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ preferences, setPreferences }) }));
 
