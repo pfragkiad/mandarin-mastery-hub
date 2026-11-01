@@ -377,6 +377,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
+  const router = useRouter();
   const character = wordChars[focus] ?? wordChars[0] ?? '我';
   const setCharacter = (c: string) => { const i = wordChars.indexOf(c); navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) } }); };
   const [liveStrokes, setLiveStrokes] = useState<number | null>(null);
