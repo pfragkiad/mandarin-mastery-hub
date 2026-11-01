@@ -2,8 +2,7 @@ import type { Word } from './mandarin';
 
 export const VOCABULARY_PAGE_SIZES = { word: 24, phrase: 8 } as const;
 
-export function vocabularyPage(entries: Word[], kind: 'word' | 'phrase', requestedPage?: number, selectedId = '') {
-  const size = VOCABULARY_PAGE_SIZES[kind];
+export function vocabularyPage(entries: Word[], kind: 'word' | 'phrase', requestedPage?: number, selectedId = '', size = VOCABULARY_PAGE_SIZES[kind] as number) {
   const pages = Math.max(1, Math.ceil(entries.length / size));
   const selectedIndex = entries.findIndex(entry => entry.id === selectedId);
   const target = selectedIndex >= 0 ? Math.floor(selectedIndex / size) + 1 : requestedPage ?? 1;

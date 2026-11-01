@@ -881,3 +881,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .reveal-hide-meaning .detail-loading-boundary, .reveal-hide-hanzi .detail-loading-boundary, .reveal-hide-pinyin .detail-loading-boundary { display: none; }
 .detail-reference-label { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--border); }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
+
+.catalog-pagination > div { flex-wrap: wrap; }
+.library-row-picker { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
+.library-row-picker > span { margin-right: 5px; }
+.library-row-picker button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
+.library-row-picker button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
+.catalog-pagination > span { white-space: nowrap; margin-left: auto; }
+@media(max-width:580px) { .library-row-picker { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
