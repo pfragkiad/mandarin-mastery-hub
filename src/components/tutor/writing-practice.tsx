@@ -17,7 +17,6 @@ import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store'
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { referenceCatalog, radicalVariantFallback, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
-import { RadicalStrokeDecomposition, RadicalStrokeSourceInfo } from './radical-stroke-decomposition';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
