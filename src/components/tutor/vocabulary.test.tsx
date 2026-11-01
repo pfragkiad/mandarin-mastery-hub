@@ -11,7 +11,7 @@ vi.mock('@/lib/selection-scroll', () => ({ useRecordScroll: vi.fn() }));
 vi.mock('./detail-loading', () => ({ useDetailLoading: () => ({ run: vi.fn() }), DetailLoading: () => null }));
 vi.mock('./detail-sheet', () => ({ DetailSheet: () => null }));
 vi.mock('./word-card', () => ({ WordCard: () => null, WordDetailContent: () => null }));
-vi.mock('./catalog-pagination', () => ({ CatalogPagination: () => null }));
+vi.mock('./catalog-pagination', () => ({ CatalogPagination: () => null, StickyPagination: () => null }));
 vi.mock('./filter-form', () => ({ DraftFilterForm: () => null }));
 vi.mock('./library-play-menu', () => ({ LibraryPlayMenu: () => null }));
 vi.mock('./card-reveal-toggle', () => ({ CardRevealToggle: () => null, cardRevealClass: () => '' }));
