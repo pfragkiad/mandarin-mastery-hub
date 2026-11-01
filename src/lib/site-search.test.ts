@@ -24,6 +24,16 @@ describe('Header search across the library', () => {
     expect(searchAll(words, '   ')).toEqual([]);
     expect(searchAll(words, 'zzz')).toEqual([]);
   });
+  it('finds fourth-tone reference readings with shi4, without matching other tones', () => {
+    const hits = searchAll([], 'shi4', false, 1000);
+    expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '是')).toBe(true);
+    expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '十')).toBe(false);
+  });
+  it('finds vocabulary using numbered syllables', () => {
+    const hits = searchAll(words, 'ni3hao3', false, 1000);
+    expect(hits.some(hit => hit.kind === 'Word' && hit.word.hanzi === '你好')).toBe(true);
+    expect(searchAll(words, 'ni4hao3', false, 1000).some(hit => hit.kind === 'Word' && hit.word.hanzi === '你好')).toBe(false);
+  });
   it('caps the result list', () => {
     expect(searchAll(words, 'e', false, 8)).toHaveLength(8);
   });
