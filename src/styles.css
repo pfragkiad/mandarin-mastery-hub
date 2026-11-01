@@ -389,7 +389,7 @@
 .vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 /* Shared block for absent records: sits under its section label, no extra icon or divider. */
 .record-gap { margin-top: 10px; }
-.record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; max-width: 46ch; }
+.record-gap > small { display: block; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 8px; }
 .catalog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted-foreground); }
 .catalog-pagination-top { margin-top: 0; padding-top: 0; border-top: 0; margin-bottom: 16px; scroll-margin-top: 18px; }
 /* Slim paging strip revealed once the static top bar scrolls away; fixed to
