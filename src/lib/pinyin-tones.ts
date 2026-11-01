@@ -70,7 +70,7 @@ export const normalizePinyinQuery = (query: string) =>
 export function pinyinReadingMatches(reading: string, query: string, exact: boolean): boolean {
   const q = normalizePinyinQuery(query);
   if (!q) return true;
-  const plain = reading.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[\s'·-]+/g, '');
+  const plain = reading.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[\s'·-]+/g, '');
   const numbered = pinyinNumbered(reading);
   return exact ? plain === q || numbered === q : plain.includes(q) || numbered.includes(q);
 }
