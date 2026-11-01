@@ -17,6 +17,7 @@ import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
+import { SourceInfo } from './source-info';
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
 export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
