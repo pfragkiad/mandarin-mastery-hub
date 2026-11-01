@@ -853,6 +853,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .practice-page-content .practice-intro { grid-column: 1; grid-row: 1; }
   .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
   .practice-page-content .practice-detail { grid-column: 1; grid-row: 3; }
 }
