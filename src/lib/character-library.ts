@@ -68,6 +68,7 @@ export function savedGlyphDestination(entry: LibraryEntry) {
 }
 // pinyinExact (only with pinyinOnly) requires a whole tone-stripped reading to
 // equal the query — "qi" matches 七 (qī) but not readings merely containing it.
+// Tone numbers are accepted too: "shi1" matches only shī, never shí/shǐ/shì.
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false, pinyinExact = false) {
   // Only Saved browsing expands family-qualified variant bookmarks. The normal
   // radical catalogue remains one card per family instead of duplicating forms.
@@ -76,8 +77,9 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   const variants = kind === 'Radicals' && savedIds ? savedIds.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && entries.some(heading => heading.id === entry.radicalHeadingId) ? [entry] : []; }) : [];
   const q = normalize(query);
   const matchesQuery = (entry: LibraryEntry) => {
-    if (pinyinOnly && pinyinExact) return entry.pinyin.split(/[,/;]/).some(reading => normalize(reading) === q);
-    return normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q);
+    if (pinyinOnly && pinyinExact) return entry.pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, true));
+    if (pinyinOnly) return pinyinReadingMatches(entry.pinyin, query, false);
+    return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q);
   };
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
