@@ -74,7 +74,12 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   const saved = savedIds ? new Set(savedIds) : undefined;
   const kind = entries[0] ? kindFromId(entries[0].id) : undefined;
   const variants = kind === 'Radicals' && savedIds ? savedIds.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && entries.some(heading => heading.id === entry.radicalHeadingId) ? [entry] : []; }) : [];
-  const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(normalize(query)) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
+  const q = normalize(query);
+  const matchesQuery = (entry: LibraryEntry) => {
+    if (pinyinOnly && pinyinExact) return entry.pinyin.split(/[,/;]/).some(reading => normalize(reading) === q);
+    return normalize(pinyinOnly ? entry.pinyin : [entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q);
+  };
+  const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
 }
 export const LIBRARY_PAGE_SIZE = 48;
