@@ -1,5 +1,5 @@
 import { referenceCatalog, type ReferenceKind } from './character-library';
-import { includeScript } from './learning-preferences';
+import { includeScript, type CharacterScript } from './learning-preferences';
 import type { Word } from './mandarin';
 import { radicalSearchGlyphs } from './radical-identities';
 import { displayMeaning } from './glyph-presentation';
@@ -9,7 +9,7 @@ const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u0
 
 export type SearchHit =
   | { kind: 'Word'; word: Word }
-  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string };
+  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript };
 
 // Pinyin search modes shared with the library filters: 'pinyin' restricts the
 // query to readings, 'exact' additionally requires the whole reading to match
@@ -38,7 +38,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q) || refMatch(pinyin)))
-      .map(([hanzi, pinyin, meaning, note]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note })),
+      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
   return [...refHits, ...wordHits].slice(0, limit);
 }

@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowRight, Sparkles, Search, Play, Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
-import { vocabularyKind } from '@/lib/mandarin';
+import { SearchHitContent } from './search-hit-content';
 import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { searchAll } from '@/lib/site-search';
@@ -33,8 +33,8 @@ export function OverviewPage() {
 function OverviewSearch({ query, setQuery, py, setPy, hits, includeTraditional }: { query: string; setQuery: (value: string) => void; py: 'any' | 'pinyin' | 'exact'; setPy: (mode: 'any' | 'pinyin' | 'exact') => void; hits: ReturnType<typeof searchAll>; includeTraditional: boolean }) {
   return <section className="overview-library-search"><div className="hero-search"><div className="search-field"><Search/><input aria-label="Search the library" placeholder="Discover a word, character, pinyin, or meaning…" value={query} onChange={event => setQuery(event.target.value)}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
     <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>{query.trim() !== '' && <div className="hero-search-results" role="listbox" aria-label="Library search results">{hits.length ? hits.map(hit => {
-      if (hit.kind === 'Word') return <Link key={`w-${hit.word.id}`} to="/vocabulary" search={overviewWordDestination(hit.word)} className="hero-search-hit" role="option" aria-selected={false}><strong lang="zh-CN">{hit.word.hanzi}</strong><span className="pinyin">{hit.word.pinyin}</span><span className="hit-meaning" title={hit.word.meaning}>{hit.word.meaning}</span><span className="hit-kind">{vocabularyKind(hit.word)}</span></Link>;
+      if (hit.kind === 'Word') return <Link key={`w-${hit.word.id}`} to="/vocabulary" search={overviewWordDestination(hit.word)} className="hero-search-hit" role="option" aria-selected={false}><SearchHitContent hit={hit}/></Link>;
       const destination = libraryDestination(hit.hanzi, includeTraditional);
-      return destination ? <Link key={`${hit.kind}-${hit.hanzi}`} to="/characters" search={destination} className="hero-search-hit" role="option" aria-selected={false}><strong lang="zh-CN">{hit.hanzi}</strong><span className="pinyin">{hit.pinyin}</span><span className="hit-meaning" title={hit.meaning}>{hit.meaning}</span><span className="hit-kind">{hit.kind}</span></Link> : null;
+      return destination ? <Link key={`${hit.kind}-${hit.hanzi}`} to="/characters" search={destination} className="hero-search-hit" role="option" aria-selected={false}><SearchHitContent hit={hit}/></Link> : null;
     }) : <p className="hero-search-empty">No matches — try another word or meaning.</p>}</div>}</div></section>;
 }

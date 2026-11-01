@@ -2,7 +2,7 @@ import { MeaningText } from './meaning-text';
 import { Link } from '@tanstack/react-router';
 import { Columns2, Columns3, Rows2, Rows3, FlipHorizontal2, RotateCw, Layers2, Minus, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { glyphIndex, libraryDestination, radicalVariantFallback, type DecompositionNode } from '@/lib/character-library';
+import { glyphIndex, glyphScript, libraryDestination, radicalVariantFallback, type DecompositionNode } from '@/lib/character-library';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
@@ -56,8 +56,9 @@ export function DecompositionTree({ node }: { node: DecompositionNode }) {
   // A bare ? (or ？) is a data gap in the recorded sources, not an error: give
   // the placeholder glyph a muted, dashed tile plus a tooltip saying so.
   const unknownPart = /^[?？]$/.test(node.glyph);
+  const traditional = glyphScript(node.glyph) === 'Traditional';
   const glyph = card && destination
-    ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={exactRecord ? `Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}` : `Open the sourced Kangxi radical for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
-    : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{node.glyph}</strong>;
+    ? <Button asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}`}><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={exactRecord ? `Open the ${card.kind.replace(/s$/, '').toLowerCase()} card for ${node.glyph}` : `Open the sourced Kangxi radical for ${node.glyph}`} aria-label={`Open the library card for ${node.glyph}`}><strong>{node.glyph}</strong></Link></Button>
+    : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${traditional ? ' traditional-character' : ''}${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{node.glyph}</strong>;
   return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}><LayoutIcon operator={node.glyph}/><small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}<small className="decomposition-facts"><span className="decomposition-facts-row"><span className="decomposition-pronunciation">{pinyin ? <span className="pinyin">{pinyin}</span> : null}{spoken ? <NodeAudio glyph={node.glyph} spoken={spoken} reading={reading} recording={Boolean(recording)} available={available}/> : null}</span>{identity.radicals.length ? identity.radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>) : !dictionary ? <span className="decomposition-classification">{classification}</span> : null}</span>{(dictionary || fallback?.meaning) ? <span className="decomposition-meaning"><MeaningText text={dictionary || fallback?.meaning || ''}/></span> : null}</small></div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child}/> )}</ul> : null}</li>;
 }
