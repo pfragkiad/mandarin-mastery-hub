@@ -832,7 +832,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-page-heading > .eyebrow { grid-column: 1 / -1; }
 /* Back link returns to the card grid via browser history, restoring the exact filters, page and selection. */
 .practice-back { grid-column: 1 / -1; justify-self: start; margin: -10px 0 -2px -10px; color: var(--muted-foreground); font-size: 11px; gap: 6px; }
-.practice-back:hover { color: var(--primary); }
+/* Text-only hover: the shared ghost-button background is suppressed so only the label highlights. */
+.practice-back:hover, .practice-back:focus-visible { background: transparent; color: var(--primary); }
 .practice-back svg { width: 13px; height: 13px; }
 .practice-page-content .practice-heading-row { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: baseline; gap: 0 10px; margin: 0; min-width: 0; }
 .practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.4; font-weight: 400; margin: 0; }
