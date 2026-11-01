@@ -1,7 +1,7 @@
 import type { LibraryRows } from './learning-preferences';
 
-export function libraryRows(stored: unknown, phone: boolean): LibraryRows {
-  return stored === 3 || stored === 5 || stored === 10 ? stored : phone ? 3 : 5;
+export function libraryRows(stored: unknown): LibraryRows {
+  return stored === 3 || stored === 5 || stored === 10 ? stored : 3;
 }
 
 export function libraryPageSize(rows: LibraryRows, columns: number) {
