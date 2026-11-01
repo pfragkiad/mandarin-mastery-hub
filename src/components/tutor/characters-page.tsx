@@ -215,7 +215,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
   // Hide modes: first click peeks the card, second opens details; reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${k}|${paged.current}|${filtered.length}|${savedOnly}`);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}`);
   const selectTile = (id: string) => { if (peek.peekOrOpen(id)) setSelectedId(id); };
   // Rank jump: the list is ordered by rank (unranked last), so the first
   // record at or past the target rank is the page to reveal. Strokes carry no
