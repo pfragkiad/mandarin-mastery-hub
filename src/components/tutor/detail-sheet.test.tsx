@@ -19,6 +19,24 @@ function setup() {
 }
 
 describe('Detail sheet handle dismissal', () => {
+  it('keeps navigation available while changing records and closes only explicitly', () => {
+    const onPrevious = vi.fn();
+    const onNext = vi.fn();
+    const onClose = vi.fn();
+    const { rerender } = render(<><button>Background card</button><DetailSheet open title="First record" onClose={onClose} onNext={onNext}><p>First</p></DetailSheet></>);
+    expect(screen.getByRole('button', { name: 'Previous record' })).toBeDisabled();
+    fireEvent.click(screen.getByRole('button', { name: 'Next record' }));
+    expect(onNext).toHaveBeenCalledTimes(1);
+    rerender(<><button>Background card</button><DetailSheet open title="Second record" onClose={onClose} onPrevious={onPrevious}><p>Second</p></DetailSheet></>);
+    fireEvent.click(screen.getByRole('button', { name: 'Previous record' }));
+    expect(onPrevious).toHaveBeenCalledTimes(1);
+    expect(screen.getByRole('button', { name: 'Next record' })).toBeDisabled();
+    fireEvent.pointerDown(screen.getByRole('button', { name: 'Background card' }));
+    expect(onClose).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Close details', exact: true }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
   it('closes when activated', () => {
     const { handle, onClose } = setup();
     fireEvent.click(handle);
