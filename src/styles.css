@@ -204,6 +204,8 @@
   --secondary: oklch(.29 .022 155); --muted: oklch(.27 .009 155);
   --muted-foreground: oklch(.76 .012 145); --accent: oklch(.34 .024 155);
   --border: oklch(.43 .012 155); --terracotta: oklch(.79 .08 48);
+  /* Rank bands brighten for the dark background so every tier keeps its hue. */
+  --rank-gold: oklch(.82 .11 90); --rank-rust: oklch(.70 .13 33);
   --hsk-id: oklch(.84 .09 72); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
