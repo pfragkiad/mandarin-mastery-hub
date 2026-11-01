@@ -31,7 +31,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const [py, setPy] = useState<'any' | 'pinyin' | 'exact'>('any');
   const [shortcut, setShortcut] = useState('Ctrl K');
   const { preferences, setPreferences, theme, setTheme, items } = useWorkspace();
-  const hits = searchAll(items, query, preferences.includeTraditional, 20, py);
+  // Up to 50 results: enough to browse without leaving the dialog.
+  const hits = searchAll(items, query, preferences.includeTraditional, 50, py);
   useEffect(() => { if (/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent)) setShortcut('⌘K'); }, []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); setSearching(v => !v); } };
@@ -67,7 +68,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     <Dialog open={searching} onOpenChange={setSearching}><DialogContent className="global-search"><DialogTitle className="font-display text-xl">Search everything</DialogTitle><DialogDescription>Words, characters, radicals, and components.</DialogDescription><div className="search-field"><Search/><input autoFocus aria-label="Search everything" placeholder="Search Chinese, pinyin, or meaning…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && hits[0]) { e.preventDefault(); openHit(hits[0]); } }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
       <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>
       {query.trim() === '' ? <p className="global-search-hint">Start typing — results appear as you go. Press Enter to open the first one.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results">{hits.map(hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>)}</div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
-      {query.trim() !== '' && <div className="global-search-foot"><span>{hits.length} {hits.length === 1 ? 'match' : 'matches'} shown</span><Button asChild variant="link" onClick={() => setSearching(false)}><Link to="/vocabulary" search={{ q: query, py: py === 'any' ? undefined : py }}>Search in vocabulary <ArrowRight/></Link></Button></div>}
+      {query.trim() !== '' && hits.length > 0 && <div className="global-search-foot"><span>{hits.length === 50 ? '50+ matches' : `${hits.length} ${hits.length === 1 ? 'match' : 'matches'}`}</span></div>}
     </DialogContent></Dialog>
   </div>;
 }
