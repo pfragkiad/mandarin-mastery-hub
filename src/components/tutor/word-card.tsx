@@ -49,7 +49,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   </>;
 }
 
-export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean }) {
+// `revealed` marks a card peeked in a Hide mode; `onDetails` (Hide modes only) opens the panel directly.
+export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false, revealed = false, onDetails }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean; revealed?: boolean; onDetails?: () => void }) {
   const [internalOpen, setInternalOpen] = useState(initiallyOpen);
   const open = controlledOpen ?? internalOpen;
   const setOpen = onOpenChange ?? setInternalOpen;
@@ -60,9 +61,9 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const { saved, toggleSaved, preferences } = useWorkspace();
   const bookmarked = saved.includes(word.id);
   const listen = async () => { await playPronunciation(request, preferences.slow); };
-  return <><article data-entry-id={word.id} className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''}`}>
+  return <><article data-entry-id={word.id} className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{word.level.toUpperCase()}</span>{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span></div>
     <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}<span lang="zh-CN">{word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
-    <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)}/>
+    <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
