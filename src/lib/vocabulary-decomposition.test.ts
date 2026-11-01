@@ -3,6 +3,15 @@ import { words } from './mandarin';
 import { phraseParts, wordCharacters } from './vocabulary-decomposition';
 
 describe('vocabulary decomposition', () => {
+  it('keeps 意思 as its exact word record within 有意思, with separate constituent characters', () => {
+    const phrase = words.find(item => item.hanzi === '有意思');
+    const meaningWord = words.find(item => item.hanzi === '意思');
+    if (!phrase || !meaningWord) throw new Error('Missing 有意思 or 意思');
+    const matched = phraseParts(phrase, words).find(part => part.text === '意思');
+    expect(matched?.word?.id).toBe(meaningWord.id);
+    expect(matched?.word?.pinyin).toBe('yìsi');
+    expect(matched?.word && wordCharacters(matched.word).map(part => part.text)).toEqual(['意', '思']);
+  });
   it('does not offer the disputed recording for neutral-tone 了 in 我受够了', () => {
     const phrase = words.find(item => item.hanzi === '我受够了');
     if (!phrase) throw new Error('Missing 我受够了');
