@@ -4,6 +4,7 @@ import { kindFromId, sortByUsage, usageGroupFor, usageRank } from './usage-frequ
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
+import { pinyinReadingMatches } from './pinyin-tones';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
