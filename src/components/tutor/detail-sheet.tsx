@@ -16,7 +16,7 @@ export function useNarrowLibrary(maxWidth = 850) {
   return narrow;
 }
 
-/** Bottom sheet holding a record's detail on small screens, with previous/next stepping. */
+/** Top-aligned record details on small screens, with previous/next stepping. */
 export function DetailSheet({ open, title, onClose, onPrevious, onNext, children }: {
   open: boolean; title: string; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
 }) {
@@ -30,7 +30,7 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
   };
   useEffect(() => { resetDrag(); }, [open]);
   return <Sheet open={open} onOpenChange={next => { if (!next) onClose(); }}>
-    <SheetContent ref={panel} side="bottom" className="detail-sheet [&>button.absolute]:hidden">
+    <SheetContent ref={panel} side="top" className="detail-sheet [&>button.absolute]:hidden">
       <SheetTitle className="sr-only">{title}</SheetTitle>
       <SheetDescription className="sr-only">Record details</SheetDescription>
       <div className="detail-sheet-bar">
