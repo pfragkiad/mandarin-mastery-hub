@@ -205,7 +205,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
   const density = useLibraryDensity(`${kind}:${filtered.length}`, () => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
-  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage });
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
   const selected = entries.find(entry => entry.id === selectedId);
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
   const selectedBookmarkId = selected && selectedForm ? radicalVariantEntry(selected, selectedForm).id : selected?.id;

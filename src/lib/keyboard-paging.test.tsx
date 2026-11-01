@@ -9,9 +9,9 @@ function press(key: string, target?: HTMLElement) {
 }
 
 /** Harness mounts the hook on window so KeyboardEvents can be dispatched from any target. */
-function Harness({ pages, onPageChange }: { pages: number; onPageChange: (page: number) => void }) {
+function Harness({ pages, disabled = false, onPageChange }: { pages: number; disabled?: boolean; onPageChange: (page: number) => void }) {
   const [page, setPage] = useState(2);
-  useKeyboardPaging({ current: page, pages, onPageChange });
+  useKeyboardPaging({ current: page, pages, disabled, onPageChange });
   useEffect(() => { onPageChange(page); }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
   return <input data-testid="field" aria-label="search" />;
 }
@@ -53,6 +53,14 @@ describe('useKeyboardPaging', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={1} onPageChange={onPageChange} />);
     press('PageDown');
+    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
+  });
+
+  it('ignores PageUp/PageDown while a record sheet is open', () => {
+    const onPageChange = vi.fn();
+    render(<Harness pages={5} disabled onPageChange={onPageChange} />);
+    press('PageDown');
+    press('PageUp');
     expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
   });
 });

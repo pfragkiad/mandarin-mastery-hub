@@ -35,7 +35,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
   const density = useLibraryDensity(`${kind}:${filtered.length}`, () => onPageChange?.(1));
   const paged = vocabularyPage(filtered, kind, page, initialWordId, density.size);
-  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined) });
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined), disabled: initialWordId !== undefined });
   const selectedWord = linkedWord;
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
   const topPaginationRef = useRef<HTMLDivElement>(null);
