@@ -28,7 +28,7 @@ export function useLibraryDensity(context: string, onResetPage: () => void) {
     observer.observe(grid);
     return () => observer.disconnect();
   }, [context]);
-  const rows = libraryRows(preferences.libraryRows, phone);
+  const rows = libraryRows(preferences.libraryRows);
   const onRowsChange = (value: LibraryRows) => {
     setPreferences({ ...preferences, libraryRows: value });
     onResetPage();
