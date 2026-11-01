@@ -110,3 +110,17 @@ it('offers to bookmark unknown cards after a round, saving only unsaved ids', as
   expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeTruthy();
   expect(screen.getByText('Bookmarked in Saved for this session.')).toBeTruthy();
 });
+
+it('does not change an active round while editing filters and submits or clears explicitly', async () => {
+  const view = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 10 of 12 cards' }));
+  await screen.findByText('Card 1 of 10');
+  fireEvent.change(screen.getByRole('combobox', { name: 'Drawing category' }), { target: { value: 'Words' } });
+  expect(onSearch).not.toHaveBeenCalled();
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+  expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' });
+  view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+  expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' });
+});

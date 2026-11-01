@@ -6,6 +6,7 @@ import { libraryEntries } from '@/lib/character-library';
 import { partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { usageGroupLabel, usageGroups, parseUsageGroup } from '@/lib/usage-frequency';
 import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingResult, type DrawingSearch } from '@/lib/drawing-game';
+import { FilterForm, useDraftFilters } from './filter-form';
 import { DrawingBoard } from './drawing-board';
 import { useWorkspace } from './workspace';
 
@@ -14,6 +15,8 @@ const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; onSearch: (search: DrawingSearch) => void }) {
   const { items, catalogVersion, preferences, saved, toggleSaved } = useWorkspace();
   const kind = search.kind ?? 'Characters';
+  const { draft, patch, setDraft } = useDraftFilters<DrawingSearch>({ ...search, kind });
+  const draftKind = draft.kind ?? 'Characters';
   const [deckSize, setDeckSize] = useState<number | 'all'>(10);
   const [deck, setDeck] = useState<DrawingCard[] | null>(null);
   const [answers, setAnswers] = useState<Answer[]>([]);
@@ -26,8 +29,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const levels = [...new Set(words.map(word => word.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const pool = useMemo(() => kind === 'Words' ? drawingWordPool(words, search, preferences.includeTraditional, saved) : drawingPool(entries, search, preferences.includeTraditional, saved), [kind, words, entries, search, preferences.includeTraditional, saved]);
   const savedCount = useMemo(() => kind === 'Words' ? drawingWordPool(words, { ...search, saved: true }, preferences.includeTraditional, saved).length : drawingPool(entries, { ...search, saved: true }, preferences.includeTraditional, saved).length, [kind, words, entries, search, preferences.includeTraditional, saved]);
-  const strokeCounts = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
-  const filtered = kind === 'Radicals' || kind === 'Components';
+  const filtered = draftKind === 'Radicals' || draftKind === 'Components';
   const card = deck?.[answers.length];
   const done = deck !== null && !card;
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
@@ -40,13 +42,14 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
 
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">RECALL · WRITE · REMEMBER</div><h1>Drawing game</h1></div><span className="heading-hanzi">写<span>xiě</span></span></div>
-    <div className="flash-setup drawing-setup">
-      <select className="filter-select" aria-label="Drawing category" value={kind} onChange={event => { const next = drawingKinds.find(value => value === event.target.value); if (next) configure({ kind: next, ...(search.saved ? { saved: true } : {}) }); }}>{drawingKinds.map(value => <option key={value}>{value}</option>)}</select>
-      <Button variant="ghost" className={search.saved ? 'selected' : ''} aria-pressed={Boolean(search.saved)} onClick={() => configure({ ...search, saved: search.saved ? undefined : true })}>Saved<span className="catalog-tab-count">{savedCount}</span></Button>
-      {kind === 'Words' && <><select className="filter-select" aria-label="Collection" value={search.collection ?? ''} onChange={event => configure({ ...search, collection: event.target.value || undefined })}><option value="">All collections</option>{collections.map(value => <option key={value}>{value}</option>)}</select><select className="filter-select" aria-label="HSK level" value={search.level ?? ''} onChange={event => configure({ ...search, level: event.target.value || undefined })}><option value="">All levels</option>{levels.map(value => <option key={value}>{value}</option>)}</select><select className="filter-select" aria-label="Part of speech" value={search.pos ?? ''} onChange={event => configure({ ...search, pos: event.target.value || undefined })}><option value="">All types</option>{posOptions.map(value => <option key={value}>{value}</option>)}</select></>}
-      {kind !== 'Words' && <select className="filter-select" aria-label="Frequency" value={search.usage ?? ''} onChange={event => configure({ ...search, usage: parseUsageGroup(kind, event.target.value) })}><option value="">All frequencies</option>{usageGroups(kind).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</option>)}</select>}
-      {filtered && <><select className="filter-select" aria-label="Stroke count" value={search.strokes ?? ''} onChange={event => configure({ ...search, strokes: event.target.value || undefined })}><option value="">All stroke counts</option>{strokeCounts.map(value => <option key={value} value={value}>{value} {value === 1 ? 'stroke' : 'strokes'}</option>)}</select>
-        </>}
+    <FilterForm count={pool.length} onApply={() => configure(draft)} onClear={() => { const empty = { kind: draftKind }; setDraft(empty); configure(empty); }}>
+      <select className="filter-select" aria-label="Drawing category" value={draftKind} onChange={event => { const next = drawingKinds.find(value => value === event.target.value); if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}>{drawingKinds.map(value => <option key={value}>{value}</option>)}</select>
+      <Button type="button" variant="ghost" className={draft.saved ? 'selected' : ''} aria-pressed={Boolean(draft.saved)} onClick={() => patch({ saved: draft.saved ? undefined : true })}>Saved<span className="catalog-tab-count">{savedCount}</span></Button>
+      {draftKind === 'Words' && <><select className="filter-select" aria-label="Collection" value={draft.collection ?? ''} onChange={event => patch({ collection: event.target.value || undefined })}><option value="">All collections</option>{collections.map(value => <option key={value}>{value}</option>)}</select><select className="filter-select" aria-label="HSK level" value={draft.level ?? ''} onChange={event => patch({ level: event.target.value || undefined })}><option value="">All levels</option>{levels.map(value => <option key={value}>{value}</option>)}</select><select className="filter-select" aria-label="Part of speech" value={draft.pos ?? ''} onChange={event => patch({ pos: event.target.value || undefined })}><option value="">All types</option>{posOptions.map(value => <option key={value}>{value}</option>)}</select></>}
+      {draftKind !== 'Words' && <select className="filter-select" aria-label="Frequency" value={draft.usage ?? ''} onChange={event => patch({ usage: parseUsageGroup(draftKind, event.target.value) })}><option value="">All frequencies</option>{usageGroups(draftKind).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, draftKind, preferences.includeTraditional)}</option>)}</select>}
+      {filtered && <select className="filter-select" aria-label="Stroke count" value={draft.strokes ?? ''} onChange={event => patch({ strokes: event.target.value || undefined })}><option value="">All stroke counts</option>{[...new Set(libraryEntries(draftKind).flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a,b) => a-b).map(value => <option key={value} value={value}>{value} {value === 1 ? 'stroke' : 'strokes'}</option>)}</select>}
+    </FilterForm>
+    <div className="flash-setup game-options">
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={event => { setDeckSize(event.target.value === 'all' ? 'all' : Number(event.target.value)); setDeck(null); setAnswers([]); }}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
         <option value="all">All cards</option>
