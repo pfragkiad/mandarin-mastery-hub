@@ -1,5 +1,7 @@
 # Roadmap
 
+- [pending] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; verify library paging and separate modal navigation.
+
 - [done] Add explanatory comments covering library controls, source-data adapters, import scripts and practice logic; 114 existing tests passed, Python scripts parsed, both library pages opened without runtime errors and preview build clean.
 
 - [done] Shared remembered 3/5/10 rows in Characters and Vocabulary; verified phone 3/desktop 5, actual row counts, reload/cross-library persistence, paging/reset and no automatic selection; paging tests passed.
