@@ -295,7 +295,9 @@
 
 @media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
-.decomposition-section .library-note { margin-top: 12px; }
+/* Source line sits the same distance under the DECOMPOSITION heading as the
+   sentence note sits under IN A SENTENCE (both 2px). */
+.decomposition-section .library-note { margin-top: 2px; }
 .decomposition-tree { list-style: none; margin: 0 0 4px; padding: 0; }
 .decomposition-tree ul { list-style: none; margin: 2px 0 6px 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
