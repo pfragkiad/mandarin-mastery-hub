@@ -11,6 +11,8 @@ import sys
 
 
 def tree_encoding(node):
+    # Match the browser's treeEncoding exactly: unknown leaves become null,
+    # while operator/glyph order stays intact for cross-language checksums.
     if node is None:
         return None
     if node.get('children'):
@@ -19,6 +21,7 @@ def tree_encoding(node):
 
 
 def fingerprint(node):
+    # Compact UTF-8 JSON plus a trailing newline is the shared checksum format.
     return hashlib.sha256((json.dumps(tree_encoding(node), ensure_ascii=False,
                                     separators=(',', ':')) + '\n').encode()).hexdigest()
 
@@ -36,10 +39,14 @@ def main():
     for glyph, record in data['characters'].items():
         assert len(glyph) == 1
         compatible = fingerprint(catalogue['trees'].get(glyph)) == record['bindings']['treeChecksum']
+        # Report stale bindings rather than rewriting the supplied evidence.
+        # The browser will refuse incompatible annotations at consumption time.
         counts['compatibleTrees' if compatible else 'incompatibleTrees'] += 1
         count = record['bindings']['strokeCount']
         indices = [i for group in record['mapping']['groups'] for i in group['strokeIndices']]
         indices += record['mapping']['unknownStrokeIndices']
+        # Known groups and explicitly unknown strokes must partition the full
+        # sequence exactly once; sorted equality catches gaps and duplicates.
         assert sorted(indices) == list(range(count)), glyph
         payload = {'format': data['format'], 'schemaVersion': 1,
                    'reviewStatus': data['reviewStatus'], 'geometryRegion': data['geometryRegion'],

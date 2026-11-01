@@ -13,6 +13,7 @@ raw = Path(sys.argv[1]).read_bytes()
 text = raw.decode('utf-8-sig')
 components = {}
 for line in text.splitlines():
+    # Definitions live in numbered comment rows, not ordinary character IDS rows.
     match = re.match(r'^#\s*\{(\d+)\}\s*\t(.*)$', line)
     if not match:
         continue
@@ -22,12 +23,15 @@ for line in text.splitlines():
     point = re.search(r'\(([A-F0-9]{4,6})\s+[^)]+\)', definition)
     description = re.sub(r'\s*\([A-F0-9]{4,6}\s+[^)]+\)', '', definition).strip()
     replacement = columns[1].strip() if len(columns) > 1 else ''
+    # Keep the suggested substitution as metadata only. The PUA code point
+    # identifies the source glyph and must not be replaced in decomposition trees.
     components[identifier] = {
         'id': int(identifier), 'description': description or None,
         'codePoint': int(point[1], 16) if point else None,
         'suggestedSubstitution': replacement if replacement not in ('', '？', '?') else None,
     }
 assert components['48']['codePoint'] == 0xF5FC
+ # (The assertions below pin the two source mappings that prompted this importer.)
 assert components['100']['codePoint'] == 0xF3BE
 output = {
     'source': 'BabelStone IDS.TXT', 'sourceUrl': 'https://babelstone.co.uk/CJK/IDS.TXT',

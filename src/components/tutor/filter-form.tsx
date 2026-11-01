@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 /** Draft edits never change the applied URL or result pool. History restores the form. */
 export function useDraftFilters<T extends object>(applied: T) {
   const key = JSON.stringify(applied);
+  // Filter values are serializable URL fields. Compare their values, not the
+  // parent's object identity, so ordinary renders do not erase unsubmitted edits.
   const [draft, setDraft] = useState(applied);
   useEffect(() => { setDraft(JSON.parse(key) as T); }, [key]);
   const patch = (next: Partial<T>) => setDraft(previous => ({ ...previous, ...next }));
@@ -41,5 +43,7 @@ export function FilterForm({ children, onApply, onClear, count, changed, active 
 export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, children }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode }) {
   const controls = useDraftFilters(applied);
   const changed = JSON.stringify(controls.draft) !== JSON.stringify(applied);
+  // Clear applies immediately and returns the cleared values to the local draft;
+  // Apply alone submits edited values to the owning page's URL/filter state.
   return <FilterForm count={count} active={active} changed={changed} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children(controls)}</FilterForm>;
 }

@@ -21,6 +21,8 @@ export function audioCandidates(req: AudioRequest): AudioCandidate[] {
   if (req.audio?.url) list.push({ kind: 'recording', tier: 'attached', attachment: req.audio, label: recordingLabel(req.audio) });
   const glyphs = Array.from(req.text);
   if (glyphs.length === 1 && req.reading) {
+    // A word recording cannot establish a constituent character's pronunciation;
+    // only the exact single-glyph reading is eligible for this tier.
     const match = req.characterAudio?.find(c => c.glyph === glyphs[0] && c.reading === req.reading);
     if (match) list.push({ kind: 'recording', tier: 'character-reading', attachment: match, label: recordingLabel(match) });
   }
@@ -76,6 +78,8 @@ export function speakTts(text: string, rate = NORMAL_RATE): PlayResult {
 }
 
 let current: HTMLAudioElement | null = null;
+// Recording playback is shared across pages so starting another speaker stops
+// the previous recording instead of layering multiple pronunciations.
 async function playRecording(c: Extract<AudioCandidate, { kind: 'recording' }>, rate: number): Promise<PlayResult> {
   try {
     current?.pause();
