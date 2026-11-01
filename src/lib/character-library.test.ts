@@ -133,3 +133,19 @@ describe('Catalogue requirements', () => {
     expect(radicalVariantFallback('雨', 'yǔ')).toBeNull();
   });
 });
+describe('Exact pinyin search', () => {
+  const toneless = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  it('matches only whole readings, not substrings', () => {
+    const entries = libraryEntries('Characters');
+    const loose = filterLibrary(entries, 'qi', '', false, true, undefined, undefined, true);
+    const exact = filterLibrary(entries, 'qi', '', false, true, undefined, undefined, true, true);
+    expect(loose.length).toBeGreaterThan(exact.length);
+    expect(exact.some(e => e.hanzi === '七')).toBe(true);
+    for (const entry of exact) expect(entry.pinyin.split(/[,/;]/).some(r => toneless(r) === 'qi')).toBe(true);
+  });
+  it('exact mode without pinyin mode falls back to normal matching', () => {
+    const entries = libraryEntries('Characters');
+    expect(filterLibrary(entries, 'qi', '', false, true, undefined, undefined, false, true).length)
+      .toBe(filterLibrary(entries, 'qi', '', false, true).length);
+  });
+});

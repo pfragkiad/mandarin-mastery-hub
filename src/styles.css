@@ -731,10 +731,13 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .daily-hero-ghost { font-size: 240px; }
 }
 .search-field .search-toggle { position: absolute; top: 50%; transform: translateY(-50%); right: 7px; height: 27px; padding: 0 10px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 5px; background: transparent; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
+/* Two toggles (Pinyin + Exact) sit side by side; the first shifts left. */
+.search-field .search-toggle:has(+ .search-toggle) { right: 64px; }
 .search-field .search-toggle:hover { color: var(--primary); background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
 .search-field .search-toggle.on { color: var(--primary); background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
 .search-field:has(.search-toggle) input { padding-right: 80px; }
-@media(max-width:580px) { .search-field .search-toggle { right: 6px; } .search-field:has(.search-toggle) input { padding-right: 74px; } }
+.search-field:has(.search-toggle + .search-toggle) input { padding-right: 136px; }
+@media(max-width:580px) { .search-field .search-toggle { right: 6px; } .search-field .search-toggle:has(+ .search-toggle) { right: 63px; } .search-field:has(.search-toggle) input { padding-right: 74px; } .search-field:has(.search-toggle + .search-toggle) input { padding-right: 130px; } }
 
 /* Header and content share one bounded workspace, including wide screens. */
 .workspace { --workspace-width: 1510px; --workspace-gutter: 42px; }

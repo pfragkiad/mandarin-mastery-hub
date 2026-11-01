@@ -25,3 +25,12 @@ describe('Vocabulary filtering', () => {
    expect(options.some(o => o.includes('(additional sense)'))).toBe(false);
  });
 });
+
+describe('Exact pinyin search', () => {
+ it('requires the whole reading to match', () => {
+   const exact = filterWords(words, 'yisi', 'All collections', 'All levels', 'All words', [], true, 'All types', true);
+   expect(exact.map(w => w.hanzi)).toContain('意思');
+   expect(filterWords(words, 'yi', 'All collections', 'All levels', 'All words', [], true, 'All types', true).map(w => w.hanzi)).not.toContain('意思');
+   expect(filterWords(words, 'yi', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).toContain('意思');
+ });
+});

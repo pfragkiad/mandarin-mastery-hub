@@ -105,6 +105,7 @@ export function StickyPagination({ label, current, pages, onPageChange, watchRef
     const el = watchRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(([entry]) => {
+      if (!entry) return;
       // Show only when the bar has passed above the viewport top, never when
       // it is still below the fold (initial render on a long page).
       setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
