@@ -31,7 +31,6 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
   return <>
-    <div className="eyebrow">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div>
     <RecordDetailTitle hanzi={word.hanzi} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
     <div className="word-detail-actions">
       <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
@@ -46,6 +45,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </dl>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
     <VocabularyDecomposition word={word}/>
+    <div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div>
   </>;
 }
 
