@@ -32,11 +32,6 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const close = onNavigate ?? (() => {});
   return <>
     <RecordDetailTitle hanzi={word.hanzi} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
-    <div className="word-detail-actions">
-      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
-      <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
-    </div>
-
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
@@ -45,7 +40,11 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </dl>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
     <VocabularyDecomposition word={word}/>
-    <div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div>
+    {/* Reference label and the record actions share the bottom row: label left, actions right. */}
+    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div><div className="word-detail-actions">
+      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
+      <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
+    </div></div>
   </>;
 }
 

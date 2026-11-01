@@ -310,7 +310,9 @@
   letter-spacing: normal;
   text-transform: none;
 }
-.decomposition-tree { list-style: none; margin: 0 0 4px; padding: 0; }
+/* Symmetric breathing room around the tree: 6px above the root row matches the
+   6px below the last row (4px tree margin + 2px note margin). */
+.decomposition-tree { list-style: none; margin: 6px 0 4px; padding: 0; }
 .decomposition-tree ul { list-style: none; margin: 2px 0 6px 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
    short distance to the right of every label (root, top, bottom, stroke numbers). */
@@ -978,15 +980,18 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Details keep their space while a selected record is opening. */
 .detail-loading-boundary { position: relative; min-width: 0; }
 
-/* The reference label is a section like any other: same 16px above the divider
-   and 14px from divider to heading as the sentence/decomposition sections. */
-.detail-reference-label { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+/* The reference row closes the detail window: label left, actions right, on the
+   same section rhythm as every other section (16px above the divider, 14px below it). */
+.detail-reference-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.detail-reference-row .word-detail-actions { margin: 0; }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-head > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 /* Detail sheet: tighter vertical rhythm than the practice detail column — the
    floating window reads as one compact card, so section gaps shrink. */
 .detail-sheet .catalog-detail-title { margin-bottom: 14px; }
 .detail-sheet .word-detail-actions { margin: 2px 0 4px; }
-.detail-sheet .catalog-facts { padding: 10px 0; }
+/* Facts block: same 16px before its divider as any section, and symmetric inner
+   spacing so content sits centered between the top and bottom lines. */
+.detail-sheet .catalog-facts { margin-top: 16px; padding: 14px 0; }
 /* Every section in the floating window keeps the same rhythm: 16px above the
    divider, 14px from divider to heading — so the gap below any section's last
    line equals the gap below every other section's last line. */
