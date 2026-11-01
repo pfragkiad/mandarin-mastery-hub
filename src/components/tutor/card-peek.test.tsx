@@ -9,6 +9,9 @@ describe('useCardPeek', () => {
     act(() => { result.current.reveal('a'); });
     expect(result.current.revealed.has('a')).toBe(true);
     expect(result.current.revealed.size).toBe(1);
+    // A second click on the revealed card hides it again.
+    act(() => { result.current.reveal('a'); });
+    expect(result.current.revealed.size).toBe(0);
   });
   it('a click in Show all changes nothing (panel opens only via the details button)', () => {
     const { result } = renderHook(() => useCardPeek('all', 'p1'));
