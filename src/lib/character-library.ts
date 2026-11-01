@@ -104,7 +104,7 @@ export function glyphIndex(): Record<string, IndexedGlyph> {
   if (glyphCache.version === catalog.version && glyphCache.index) return glyphCache.index;
   const index: Record<string, IndexedGlyph> = {};
   for (const kind of ['Radicals', 'Characters', 'Components'] as LibraryKind[]) {
-    for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id, pinyin: entry.pinyin, meaning: entry.meaning, script: entry.script };
+    for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id, pinyin: entry.pinyin, meaning: entry.meaning, ...(entry.script ? { script: entry.script } : {}) };
   }
   // Missing symbol records may link to a unique sourced canonical identity.
   // Existing exact records remain intact; ambiguous identities never pick a radical.

@@ -38,7 +38,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q) || refMatch(pinyin)))
-      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, script })),
+      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
   return [...refHits, ...wordHits].slice(0, limit);
 }
