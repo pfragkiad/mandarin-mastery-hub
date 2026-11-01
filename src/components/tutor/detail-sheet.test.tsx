@@ -33,7 +33,7 @@ describe('Detail sheet handle dismissal', () => {
     expect(screen.getByRole('button', { name: 'Next record' })).toBeDisabled();
     fireEvent.pointerDown(screen.getByRole('button', { name: 'Background card' }));
     expect(onClose).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', { name: 'Close details', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Close details$/ }));
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
