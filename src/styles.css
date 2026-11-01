@@ -877,3 +877,4 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Details keep their space while a selected record is opening. */
 .detail-loading-boundary { position: relative; min-width: 0; }
 .reveal-hide-meaning .detail-loading-boundary, .reveal-hide-hanzi .detail-loading-boundary, .reveal-hide-pinyin .detail-loading-boundary { display: none; }
+.detail-reference-label { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--border); }
