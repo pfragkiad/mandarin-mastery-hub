@@ -43,7 +43,9 @@ export function pinyinNumbered(value: string): string {
     }
     if (!/[a-zü]/.test(ch)) continue;
     if (tone) {
-      if (isVowel(ch)) { flush(); syllable = ch; continue; }
+      // A vowel after the marked vowel continues the syllable (diphthongs like
+      // ao in hǎo); a true syllable break before a vowel uses an apostrophe.
+      if (isVowel(ch)) { syllable += ch; continue; }
       // After the tone, only n / ng / r may extend the syllable as a coda.
       if (coda === '' && (ch === 'n' || ch === 'r')) { syllable += ch; coda = ch; continue; }
       if (coda === 'n' && ch === 'g') { syllable += ch; coda = 'ng'; continue; }
