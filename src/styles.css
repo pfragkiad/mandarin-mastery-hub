@@ -829,3 +829,25 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .reveal-hide-hanzi .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .tile-hanzi-row { visibility: hidden; }
 .reveal-hide-pinyin .word-character .pinyin { visibility: hidden; }
 .reveal-hide-meaning .catalog-detail, .reveal-hide-hanzi .catalog-detail, .reveal-hide-pinyin .catalog-detail { display: none; }
+
+/* Reveal hide modes: the sidebar is gone, so the grid takes the full width and gains a column. */
+.reveal-hide-meaning.catalog-workspace, .reveal-hide-hanzi.catalog-workspace, .reveal-hide-pinyin.catalog-workspace,
+.reveal-hide-meaning.vocabulary-workspace, .reveal-hide-hanzi.vocabulary-workspace, .reveal-hide-pinyin.vocabulary-workspace { grid-template-columns: 1fr; }
+.reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
+.reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(4,minmax(0,1fr)); }
+@media(max-width:1200px) {
+  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
+  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:1150px) {
+  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
+  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid,
+  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:580px) {
+  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
+  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid,
+  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
