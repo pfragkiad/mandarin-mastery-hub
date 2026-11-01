@@ -13,7 +13,8 @@ export function NavigationShortcuts({ context }: { context: 'pages' | 'records' 
     <PopoverTrigger asChild>
       <Button variant="ghost" size="icon" aria-label="Keyboard shortcuts" title="Keyboard shortcuts"><Keyboard className="size-4"/></Button>
     </PopoverTrigger>
-    <PopoverContent align="start" aria-label="Keyboard shortcuts" onKeyDown={event => event.stopPropagation()}>
+    {/* Wider panel so every description fits on one line beside its keys. */}
+    <PopoverContent align="start" className="w-80" aria-label="Keyboard shortcuts" onKeyDown={event => event.stopPropagation()}>
       <p className="mb-3 text-sm font-semibold">{context === 'pages' ? 'Page navigation' : 'Record navigation'}</p>
       {/* Two-column grid keeps every key label and description in fixed columns,
           so wrapped rows stay vertically aligned instead of drifting apart. */}
