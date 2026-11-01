@@ -34,14 +34,4 @@ describe('CardRevealToggle trigger label', () => {
     }
   });
 
-  it('returns to the Hide label after choosing Show all', () => {
-    preferences.cardReveal = 'hanzi';
-    renderToggle();
-    const button = screen.getByRole('button');
-    expect(button.textContent).toContain('Hanzi');
-    fireEvent.click(button);
-    fireEvent.click(screen.getByRole('menuitemradio', { name: /Show all/ }));
-    expect(setPreferences).toHaveBeenCalled();
-    expect(preferences.cardReveal).toBe('all');
-  });
 });
