@@ -80,6 +80,18 @@ describe('Unknown-card bookmarks', () => {
 });
 
 describe('Deck size', () => {
+  it('preserves the active card when filters are applied or cleared', async () => {
+    render(<FlashcardsPage/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+    const current = screen.getByText('Card 1 of 10');
+    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+    await screen.findByRole('button', { name: 'Restart · 1 card' });
+    expect(current).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+    await screen.findByRole('button', { name: 'Restart · 10 cards' });
+    expect(current).toBeInTheDocument();
+  });
   it('deals a capped deck by default and honours the deck-size selection', () => {
     render(<FlashcardsPage />);
     expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();

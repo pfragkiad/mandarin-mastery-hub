@@ -120,6 +120,18 @@ it('does not change an active round while editing filters and submits or clears 
   fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
   await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
   view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+  expect(fake.create).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
   await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+});
+
+it('changing deck size does not discard drawing progress', async () => {
+  render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+  await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(1));
+  fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+  expect(fake.create).toHaveBeenCalledTimes(1);
 });
