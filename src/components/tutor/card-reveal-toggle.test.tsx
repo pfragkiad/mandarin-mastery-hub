@@ -40,7 +40,7 @@ describe('CardRevealToggle trigger label', () => {
     const button = screen.getByRole('button');
     expect(button.textContent).toContain('Hanzi');
     fireEvent.click(button);
-    fireEvent.click(screen.getByRole('menuitemradio', { name: 'Show all' }));
+    fireEvent.click(screen.getByRole('menuitemradio', { name: /Show all/ }));
     expect(setPreferences).toHaveBeenCalled();
     expect(preferences.cardReveal).toBe('all');
   });
