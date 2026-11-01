@@ -35,6 +35,8 @@ import { ComponentPronunciation } from './component-pronunciation';
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
 
 function nameStroke(median: Array<[number, number]>): { name: string; pinyin: string; direction: string } {
+  // Geometry-based labels are a fallback for ordinary characters only. Exact
+  // radical forms reject missing names instead of treating this as source data.
   if (median.length < 2) return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
   const [sx, sy] = median[0] ?? [0, 0];
   const [ex, ey] = median[median.length - 1] ?? [0, 0];
@@ -118,6 +120,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const animationRun = useRef(0);
+  // Replacement/reset/quiz starts invalidate old completion callbacks. Native
+  // Pause/Resume deliberately retain this token to continue the existing run.
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
@@ -171,6 +175,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setStrokes([]); setMedians([]); setActiveStroke(null);
     if (target.current) target.current.innerHTML = '';
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data }, names]) => {
+      // Load browser-only playback, exact outlines and recorded names together;
+      // the active guard prevents a previous character's load from taking over.
       if (!active || !target.current) return;
       const exact = radicalStrokes(character, radicalSelection);
       const selectedNames = exact ? exact.status === 'recorded' && exact.strokes.length === data.strokes.length ? exact.strokes : null : names;
@@ -217,6 +223,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       return;
     }
     const start = stepMode ? stepIndex : 0;
+    // Continue after the completed Step prefix; hiding the whole character here
+    // would erase that prefix and visually restart already completed strokes.
     const run = ++animationRun.current;
     applySpeed(instance);
     instance.cancelQuiz(); setPaused(false); setPlaying(true); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Follow each stroke in order.');

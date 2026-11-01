@@ -12,6 +12,8 @@ export function useLibraryDensity(context: string, onResetPage: () => void) {
     const grid = gridRef.current;
     if (!grid) return;
     const sync = () => {
+      // Read actual CSS tracks instead of duplicating responsive breakpoints in
+      // JavaScript; pagination and the rendered card grid then share capacity.
       const tracks = getComputedStyle(grid).gridTemplateColumns;
       if (tracks && tracks !== 'none') setColumns(tracks.trim().split(/\s+/).length);
     };
@@ -21,6 +23,7 @@ export function useLibraryDensity(context: string, onResetPage: () => void) {
     return () => observer.disconnect();
   }, [context]);
   const rows = libraryRows(preferences.libraryRows);
+  // Density is a shared display preference; only page reset belongs to the URL.
   const onRowsChange = (value: LibraryRows) => {
     setPreferences({ ...preferences, libraryRows: value });
     onResetPage();

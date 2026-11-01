@@ -27,6 +27,8 @@ export const catalog = {
 };
 
 export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile) {
+  // Preserve array identities held by synchronous readers; the version increment
+  // tells workspace consumers to recompute after all sidecars are installed.
   for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
   if (identities) catalog.radicalIdentities = identities;
@@ -35,6 +37,7 @@ export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFi
 }
 
 let pending: Promise<void> | null = null;
+/** Share concurrent browser loads; a failed request clears the promise so a later visit can retry. */
 export function loadCatalog(): Promise<void> {
   if (catalog.loaded || typeof window === 'undefined') return Promise.resolve();
   pending ??= Promise.all([
@@ -47,7 +50,7 @@ export function loadCatalog(): Promise<void> {
 }
 
 /** Audio request for a single character, offering its exact-reading recording when one exists.
- * With no pinyin recorded, no tone is guessed — the entry falls through to browser TTS only. */
+ * With no pinyin recorded, no tone is guessed; UI availability still requires a known reading for TTS. */
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
   const chosen = reading ?? null;

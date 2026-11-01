@@ -32,6 +32,7 @@ export async function sha256(bytes: BufferSource): Promise<string> {
   return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
 }
 type TreeEncoding = string | null | TreeEncoding[];
+/** Keep this encoding aligned with import-character-enrichment.py, including null unknown leaves. */
 export function treeEncoding(node?: DecompositionNode): TreeEncoding {
   if (!node) return null;
   if (node.children?.length) return [node.glyph, ...node.children.map(treeEncoding)];
@@ -75,6 +76,8 @@ export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
     .then(async response => {
       if (!response.ok) throw new Error('Stroke data unavailable');
       const bytes = await response.arrayBuffer();
+      // Bind to the original downloaded bytes, not reserialized JSON: the
+      // annotation names this exact geometry file with its SHA-256 checksum.
       const data = geometrySchema.parse(JSON.parse(new TextDecoder().decode(bytes)));
       if (!data.strokes.length || data.strokes.length !== data.medians.length) throw new Error('Invalid stroke geometry');
       return { data, checksum: await sha256(bytes) };
@@ -108,6 +111,8 @@ export async function validateEnrichment(record: CharacterEnrichment, tree: Deco
   if (preserveOverride || !tree || geometry.checksum !== record.bindings.geometryChecksum ||
     geometry.data.strokes.length !== record.bindings.strokeCount || await treeChecksum(tree) !== record.bindings.treeChecksum) return false;
   const all = [...record.mapping.unknownStrokeIndices];
+  // Paths identify occurrences, not merely glyph names: the same component can
+  // appear twice in a tree and must keep separate, non-overlapping stroke groups.
   const paths = new Set<string>();
   for (const group of record.mapping.groups) {
     const key = JSON.stringify(group.path);

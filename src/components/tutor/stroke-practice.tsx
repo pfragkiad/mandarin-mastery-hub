@@ -67,6 +67,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
     const node = target.current;
     node.innerHTML = ''; setMedian([]); setReady(false); setMode('idle'); setMessage('Loading stroke…');
     import('hanzi-writer').then(({ default: Writer }) => {
+      // The writer depends on browser DOM APIs; import it only after mounting.
       if (!active) return;
       const style = getComputedStyle(document.documentElement);
       const ink = toHex(style.getPropertyValue('--primary').trim());
@@ -80,6 +81,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
             .then(res => (res.ok ? res.json() : Promise.reject(new Error('no data'))))
             .then((data: { strokes: string[]; medians: [number, number][][] }) => {
               const path = data.strokes[example.strokeIndex]; const median = data.medians[example.strokeIndex];
+              // Extract the recorded occurrence from the representative character;
+              // missing geometry is an error, not permission to draw a substitute.
               if (!path || !median) throw new Error('missing stroke');
               if (active) { setOutline(path); setMedian(median); }
               onLoad({ strokes: [path], medians: [median] } as never);
@@ -97,6 +100,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const watch = () => {
     const w = writer.current; if (!w) return;
     if (mode === 'paused') {
+      // Resume the native in-progress animation rather than constructing a new
+      // run, preserving the point at which this stroke was paused.
       setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
       void w.resumeAnimation(); return;
     }

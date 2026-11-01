@@ -1,6 +1,8 @@
 import type { DecompositionNode } from './character-library';
 
 const positions: Record<string, readonly string[]> = {
+  // Each operator consumes exactly this many ordered children. Position labels
+  // describe presentation slots; they do not establish stroke order or etymology.
   '⿰': ['left', 'right'], '⿱': ['top', 'bottom'],
   '⿲': ['left', 'middle', 'right'], '⿳': ['top', 'middle', 'bottom'],
   '⿴': ['outer', 'inner'], '⿵': ['outer', 'inner'], '⿶': ['outer', 'inner'],
@@ -38,5 +40,7 @@ export function parseIdsTree(expression: string): DecompositionNode | null {
     return { glyph, position };
   }
   const root = read('root');
+  // Reject partial parses as well as trailing tokens; never display a plausible
+  // tree built from only the supported fragment of an unsupported expression.
   return cursor === tokens.length ? root : null;
 }

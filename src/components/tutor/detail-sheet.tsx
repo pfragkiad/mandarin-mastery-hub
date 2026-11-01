@@ -23,6 +23,8 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
 }) {
   const returnFocus = useRef<HTMLElement | null>(null);
   const body = useRef<HTMLDivElement>(null);
+  // Reset only the panel's scroll for a different record; closing should restore
+  // focus without moving the library list behind the modal.
   useEffect(() => { body.current?.scrollTo?.({ top: 0 }); }, [title]);
   return <Dialog modal open={open} onOpenChange={next => { if (!next) onClose(); }}>
     <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet"
@@ -30,6 +32,8 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
       onCloseAutoFocus={event => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
       onInteractOutside={event => event.preventDefault()}
       onKeyDown={event => {
+        // Reuse button callbacks, but leave editing, widget navigation and
+        // modified/browser shortcuts to the control that owns those keystrokes.
         if (!open || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
         if (event.target instanceof HTMLElement && event.target.closest('input, textarea, select, [contenteditable="true"], [role="slider"], [role="combobox"], [role="radio"], [role="tab"]')) return;
         const navigate = event.key === 'ArrowLeft' ? onPrevious : event.key === 'ArrowRight' ? onNext : undefined;

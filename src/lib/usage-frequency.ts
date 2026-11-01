@@ -30,6 +30,9 @@ export function formatUsagePercentage(percent: number): string {
   return `${percent > 0 && percent < 1 ? smallPercentage.format(percent) : percent.toFixed(1)}%`;
 }
 export function usagePercentage(glyph: string, kind: LibraryKind, includeTraditional: boolean, kangxiIndex?: number): number | null {
+  // These metrics have different denominators: character corpus tokens,
+  // weighted component occurrences, and tokens assigned to radical families.
+  // Missing measurements remain null, never a fabricated zero percent.
   if (kind === 'Radicals') return kangxiIndex ? usageOrder.data?.scopes[scopeFor(includeTraditional)].individual?.radicals?.[String(kangxiIndex)] ?? null : null;
   if (kind !== 'Characters' && kind !== 'Components') return null;
   return usageOrder.data?.scopes[scopeFor(includeTraditional)].individual?.[kind === 'Characters' ? 'characters' : 'components'][glyph] ?? null;
@@ -48,6 +51,8 @@ export function usageGroupLabel(group: UsageGroup, kind: string, includeTraditio
   return percent === undefined ? group.label : `${group.label} · ${formatUsagePercentage(percent)}`;
 }
 export function usageRank(entry: Pick<LibraryEntry, 'hanzi' | 'kangxiIndex' | 'id'>, kind: LibraryKind, includeTraditional: boolean): number | null {
+  // Radical frequency is family-indexed, unlike exact-glyph character/component
+  // ranks. Never use catalogue row position as a replacement rank.
   const ranks = usageOrder.data?.scopes[scopeFor(includeTraditional)] ?? empty;
   if (kind === 'Characters') return ranks.characters[entry.hanzi] ?? null;
   if (kind === 'Components') return ranks.components[entry.hanzi] ?? null;

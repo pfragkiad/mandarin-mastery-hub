@@ -19,6 +19,7 @@ import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
 import { SourceInfo } from './source-info';
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
+/** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
   const detailLoading = useDetailLoading();
@@ -28,12 +29,16 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const setStatus = (status: string) => onFiltersChange?.({ status });
   const [adding, setAdding] = useState(false);
   const linkedWord = items.find(w => w.id === initialWordId);
+  // Exact links determine their own Words/Phrases tab via explicit entry metadata,
+  // never by glyph count. With no link, leave the reference window closed.
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const categoryItems = items.filter(w => vocabularyKind(w) === kind);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   const levels = [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
+  // Keep a directly linked entry reachable even when old browsing filters would
+  // exclude it; pagination uses that same pool for reference-window navigation.
   const density = useLibraryDensity(`${kind}:${filtered.length}`, () => onPageChange?.(1));
   const paged = vocabularyPage(filtered, kind, page, initialWordId, density.size);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined), disabled: initialWordId !== undefined });

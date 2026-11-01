@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Add explanatory comments covering library controls, source-data adapters, import scripts and practice logic; 114 existing tests passed, Python scripts parsed, both library pages opened without runtime errors and preview build clean.
+
 - [done] Shared remembered 3/5/10 rows in Characters and Vocabulary; verified phone 3/desktop 5, actual row counts, reload/cross-library persistence, paging/reset and no automatic selection; paging tests passed.
 
 - [done] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre; verified navigation position, close and two shared tests.
