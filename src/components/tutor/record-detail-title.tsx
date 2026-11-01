@@ -17,15 +17,15 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
 }) {
   const traditional = script === 'Traditional';
   const headStyle = { '--detail-chars': String(hanzi.length || 1) } as CSSProperties;
-  return <div className="catalog-detail-title">
+   return <div className="catalog-detail-title">
     <div className="catalog-detail-head" style={headStyle}>
       <div className="catalog-detail-pinyin-row">
         <span className="pinyin">{pinyin || pinyinFallback}</span>
         {audio}
+        {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
       </div>
       <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>
       <h2><MeaningText text={meaning || meaningFallback}/></h2>
-      {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
     </div>
-  </div>;
+   </div>;
 }
