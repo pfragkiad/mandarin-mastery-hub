@@ -5,18 +5,21 @@ import { useWorkspace } from './workspace';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Game', icon: Gamepad2 }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+// Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
+const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: PenLine }] as const;
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
-  const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
+  // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
+  const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -46,10 +49,12 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
       {/* Sub-itens sempre visíveis e indentados na navegação, para acesso direto
           de qualquer página; as abas na página continuam sendo a troca principal. */}
       <nav aria-label="Main navigation">{navigation.map(n => {
-        const subs = n.to === '/characters' ? characterSections.map(k => ({ label: k, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters') }))
-          : n.to === '/vocabulary' ? vocabularySections.map(s => ({ label: s.label, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word') }))
+        const subs = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: undefined as typeof Gamepad2 | undefined }))
+          : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: undefined as typeof Gamepad2 | undefined }))
+          : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as typeof Gamepad2 | undefined }))
           : null;
-        return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${path === n.to ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{path === n.to && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.label} variant="ghost" className={`nav-sub-item ${path === n.to && s.active ? 'is-active' : ''}`}><Link to={n.to} search={s.search} onClick={() => setMobileOpen(false)} title={`Abrir ${s.label.toLowerCase()}`}><span>{s.label}</span></Link></Button>)}</div>;
+        const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
+        return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.icon ? 'nav-sub-game' : ''} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
       })}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><Button size="icon" variant="ghost" title={collapsed ? 'Expand navigation' : 'Collapse navigation'} aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'} onClick={() => setCollapsed(!collapsed)}><ChevronsLeft className={collapsed ? 'rotate-180' : ''}/></Button></div></div>
     </aside>
