@@ -1,9 +1,10 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
-// Seções da biblioteca de caracteres exibidas como sub-itens indentados na
-// navegação; a rota simples (sem `tab`) abre a aba Characters.
+// Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
+// sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
+const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
 import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
