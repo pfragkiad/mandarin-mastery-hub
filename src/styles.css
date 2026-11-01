@@ -326,13 +326,23 @@
 .component-stroke-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; fill: var(--stroke-selection-ink); opacity: .9; filter: drop-shadow(0 0 2px var(--stroke-selection-glow)) drop-shadow(0 0 6px var(--stroke-selection-glow)); }
 .stroke-chip.component-highlighted { border-color: var(--stroke-selection-border); background: var(--stroke-selection-surface); box-shadow: 0 0 9px var(--stroke-selection-glow); }
 .stroke-chip.component-highlighted.active { border-color: var(--stroke-selection-border); outline: 1px solid var(--stroke-selection-border); }
+/* Vocabulary (word & phrase) decomposition: larger glyph boxes than the shared
+   decomposition tiles so the phrase reading stays legible inside the detail sheet. */
 .vocabulary-parts > li + li { margin-top: 18px; }
 .vocabulary-parts > li > .decomposition-part { min-height: 46px; }
-.vocabulary-parts .phrase-part-characters { display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0; max-width: 100%; }
+.vocabulary-parts .phrase-part-characters { display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0; max-width: 100%; }
 .vocabulary-parts .decomposition-part:has(.phrase-part-characters) { flex-wrap: wrap; }
+.vocabulary-parts .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
+.vocabulary-parts .decomposition-glyph strong { font-size: 40px; }
+.vocabulary-parts .decomposition-glyph strong { overflow-wrap: anywhere; }
 .vocabulary-part-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .vocabulary-part-facts .pinyin { width: auto; font-size: 12px; }
 .vocabulary-part-facts small { color: var(--foreground); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+/* Matched words in a phrase read as one obvious pill link (word + reading);
+   per project rule links carry the accent colour, never an underline. */
+.vocabulary-part-facts .phrase-word-link { display: inline-flex; align-items: baseline; gap: 7px; width: auto; padding: 3px 12px 4px; border: 1px solid var(--border); border-radius: 999px; color: var(--primary); font-size: 13px; line-height: 1.2; transition: border-color .15s ease; }
+.vocabulary-part-facts .phrase-word-link:hover, .vocabulary-part-facts .phrase-word-link:focus-visible { border-color: var(--primary); }
+.vocabulary-part-facts .phrase-word-link > [lang="zh-CN"] { font-size: 16px; }
 .radical-stroke-sequence .decomposition-part { display: flex; align-items: center; gap: 12px; }
 .catalog-detail .catalog-facts { border-bottom: 0; padding-bottom: 4px; }
 .catalog-detail .catalog-facts + .catalog-record-note { margin-top: 4px; }
