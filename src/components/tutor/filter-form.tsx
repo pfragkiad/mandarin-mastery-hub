@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, useTransition, type ReactNode } from 'react';
 import { Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -12,9 +12,25 @@ export function useDraftFilters<T extends object>(applied: T) {
 }
 
 export function FilterForm({ children, onApply, onClear, count, changed, active }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean }) {
-  return <form className="filter-bar shared-filter-form" aria-label="Filters" onSubmit={event => { event.preventDefault(); if (changed) onApply(); }}>
+  const [pending, startTransition] = useTransition();
+  useEffect(() => {
+    if (!pending) return;
+    const style = document.createElement('style');
+    style.textContent = '* { cursor: wait !important; }';
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, [pending]);
+  const run = (action: () => void) => {
+    if (pending) return;
+    startTransition(async () => {
+      // Let the waiting cursor paint before the expensive result update begins.
+      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+      startTransition(action);
+    });
+  };
+  return <form className="filter-bar shared-filter-form" aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
     {children}
-    {(changed || active) && <div className="filter-submit">{changed && <Button type="submit" size="sm" variant="outline"><Check/>Apply</Button>}{active && <Button type="button" size="icon" variant="ghost" aria-label="Clear filters" title="Clear filters" onClick={onClear}><X/></Button>}</div>}
+    {(changed || active) && <div className="filter-submit">{changed && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{active && <Button type="button" size="icon" variant="ghost" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}</div>}
     <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>
   </form>;
 }
