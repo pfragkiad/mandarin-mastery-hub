@@ -37,4 +37,12 @@ describe('Header search across the library', () => {
   it('caps the result list', () => {
     expect(searchAll(words, 'e', false, 8)).toHaveLength(8);
   });
+  it('matches readings only when the pinyin toggle is on, and whole readings when exact', () => {
+    // Pinyin mode drops hanzi/meaning free text, so an English word finds nothing.
+    expect(searchAll(words, 'hello', false, 1000, 'pinyin')).toEqual([]);
+    // Exact mode keeps the same tone-number logic as the library filters.
+    const exact = searchAll([], 'shi4', false, 1000, 'exact');
+    expect(exact.some(hit => hit.kind !== 'Word' && hit.hanzi === '是')).toBe(true);
+    expect(exact.some(hit => hit.kind !== 'Word' && hit.hanzi === '十')).toBe(false);
+  });
 });
