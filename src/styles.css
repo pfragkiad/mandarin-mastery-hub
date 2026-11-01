@@ -821,3 +821,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 
 @media(max-width:1500px) { .catalog-entry-grid, .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 @media(max-width:1150px) { .catalog-entry-grid, .vocab-word-grid:not(.list-view), .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+/* Card reveal toggle: hide one card face for self-testing; the detail sidebar hides too. */
+.card-reveal-toggle { display: flex; align-items: center; gap: 2px; border: 1px solid var(--border); border-radius: 8px; padding: 2px; }
+.card-reveal-toggle .selected { background: color-mix(in srgb, var(--primary) 14%, transparent); color: var(--primary); }
+.reveal-hide-meaning .word-meaning, .reveal-hide-meaning .catalog-entry-meaning { visibility: hidden; }
+.reveal-hide-hanzi .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .tile-hanzi-row { visibility: hidden; }
+.reveal-hide-pinyin .word-character .pinyin { visibility: hidden; }
+.reveal-hide-meaning .catalog-detail, .reveal-hide-hanzi .catalog-detail, .reveal-hide-pinyin .catalog-detail { display: none; }
