@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type Dispatch, type ReactNode, typ
 import type { DrawingCard, DrawingResult } from '@/lib/drawing-game';
 
 export type DrawingBoardSnapshot = { result: DrawingResult; mistakes: number; progress: { completed: number; total: number }; guide: boolean };
-type DrawingSession = { deckSize: number | 'all'; deck: DrawingCard[] | null; answers: { entry: DrawingCard; result: DrawingResult }[]; round: number; board?: DrawingBoardSnapshot };
+type DrawingSession = { deckSize: number | 'all'; deck: DrawingCard[] | null; answers: { entry: DrawingCard; result: DrawingResult }[]; round: number; board?: DrawingBoardSnapshot | undefined };
 const empty: DrawingSession = { deckSize: 10, deck: null, answers: [], round: 0 };
 const Context = createContext<[DrawingSession, Dispatch<SetStateAction<DrawingSession>>] | null>(null);
 

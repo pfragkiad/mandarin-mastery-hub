@@ -20,7 +20,7 @@ function writerColor(token: string) {
   return `#${Array.from(canvas.getImageData(0, 0, 1, 1).data).slice(0, 3).map(value => value.toString(16).padStart(2, '0')).join('')}`;
 }
 
-export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
+export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
   const { theme, preferences } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);

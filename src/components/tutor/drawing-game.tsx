@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { usageGroupLabel, usageGroups, parseUsageGroup } from '@/lib/usage-frequency';
-import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingResult, type DrawingSearch } from '@/lib/drawing-game';
+import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingSearch } from '@/lib/drawing-game';
 import { DraftFilterForm } from './filter-form';
 import { GameSetup, GameReady } from './game-setup';
 import { DrawingBoard } from './drawing-board';
