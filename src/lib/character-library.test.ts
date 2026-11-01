@@ -148,4 +148,15 @@ describe('Exact pinyin search', () => {
     expect(filterLibrary(entries, 'qi', '', false, true, undefined, undefined, false, true).length)
       .toBe(filterLibrary(entries, 'qi', '', false, true).length);
   });
+  it('tone numbers match only the requested tone', () => {
+    const entries = libraryEntries('Characters');
+    const first = filterLibrary(entries, 'qi1', '', false, true, undefined, undefined, true, true);
+    expect(first.some(e => e.hanzi === '七')).toBe(true);
+    expect(first.some(e => e.hanzi === '其')).toBe(false); // qí
+    expect(first.some(e => e.hanzi === '气')).toBe(false); // qì
+    for (const entry of first) expect(entry.pinyin.split(/[,/;]/).some(r => toneless(r) === 'qi' && r.includes('ī'))).toBe(true);
+    const second = filterLibrary(entries, 'qi2', '', false, true, undefined, undefined, true, true);
+    expect(second.some(e => e.hanzi === '其')).toBe(true);
+    expect(second.some(e => e.hanzi === '七')).toBe(false);
+  });
 });
