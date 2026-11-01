@@ -15,7 +15,7 @@ export function useDetailLoading() {
       run: async (id: string, action: () => unknown) => {
         const current = ++revision;
         const cards = [...document.querySelectorAll<HTMLElement>('.library-page .word-card')];
-        cards.forEach(card => card.classList.toggle('is-selected', card.dataset.entryId === id));
+        cards.forEach(card => card.classList.toggle('is-selected', card.dataset['entryId'] === id));
         const cursor = document.createElement('style');
         cursor.textContent = '* { cursor: wait !important; }';
         document.head.appendChild(cursor);
