@@ -641,6 +641,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .vocab-word-grid:not(.list-view) .word-card, .catalog-card {
   --record-card-height: 224px;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 33px minmax(0, 1fr) 40px;
   height: var(--record-card-height);
 }
