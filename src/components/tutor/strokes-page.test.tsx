@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
 import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
@@ -103,6 +103,13 @@ describe('character practice sections by mode', () => {
     expect(document.querySelector('.practice-facts')).toHaveClass('practice-facts-hidden');
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
+  });
+
+  it('creates the writer with character and outline hidden on direct Recall entry', async () => {
+    writer.create.mockClear();
+    render(<StrokesPage initialCharacter="学" mode="recall"/>);
+    await waitFor(() => expect(writer.create).toHaveBeenCalled());
+    expect(writer.create.mock.calls[0]?.[2]).toMatchObject({ showCharacter: false, showOutline: false });
   });
 
   it('shows the radical family above the stroke decomposition while watching a radical form', () => {
