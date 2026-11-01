@@ -985,7 +985,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .detail-sheet .catalog-detail-title { margin-bottom: 14px; }
 .detail-sheet .word-detail-actions { margin: 2px 0 4px; }
 .detail-sheet .catalog-facts { padding: 10px 0; }
+/* Every section in the floating window keeps the same rhythm: 16px above the
+   divider, 14px from divider to heading — so the gap below any section's last
+   line equals the gap below every other section's last line. */
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: 16px; padding-top: 14px; }
+.detail-sheet .detail-reference-label { margin-top: 16px; padding-top: 14px; }
 .detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
