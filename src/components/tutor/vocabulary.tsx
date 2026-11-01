@@ -41,7 +41,10 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // exclude it; pagination uses that same pool for reference-window navigation.
   const density = useLibraryDensity(`${kind}:${filtered.length}`, () => onPageChange?.(1));
   const paged = vocabularyPage(filtered, kind, page, initialWordId, density.size);
-  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined), disabled: initialWordId !== undefined });
+  // An absent selection is an empty string, not undefined; block paging only
+  // while the same conditions below actually render the floating reference.
+  const detailOpen = Boolean(preferences.cardReveal === 'all' && onWordOpen && linkedWord);
+  useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined), disabled: detailOpen });
   const selectedWord = linkedWord;
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
   const topPaginationRef = useRef<HTMLDivElement>(null);
