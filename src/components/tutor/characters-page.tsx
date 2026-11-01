@@ -28,6 +28,7 @@ import { RadicalIdentityNote } from './radical-identity';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
+import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
@@ -190,7 +191,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const activeFilters = Boolean(query || strokeCount || usage || search.py || savedOnly);
   const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined }); };
   const setPage = (p: number) => set({ page: p, id: '' });
-  const setSelectedId = (id: string) => { const entry = savedGlyphEntry(id); set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); };
+  const detailLoading = useDetailLoading();
+  const setSelectedId = (id: string) => { void detailLoading.run(id, () => { const entry = savedGlyphEntry(id); return set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); }); };
   const entries = useMemo(() => libraryEntries(kind), [kind, catalogVersion]);
   const strokeCounts = useMemo(() => Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b), [entries]);
   const requestedHeading = entries.find(entry => entry.id === selectedId);
@@ -229,7 +231,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
         <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
-        </section>{narrow ? null : selected ? <MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
+        </section>{narrow ? null : <DetailLoading loading={detailLoading}>{selected ? <MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</DetailLoading>}</div>
       </TabsContent>)}
     </Tabs>{narrow && preferences.cardReveal === 'all' && selected && search.id && <DetailSheet open title={`Details for ${selected.hanzi}`} onClose={() => set({ id: '', variant: undefined })} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailSheet>}
   </div>;

@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Immediate card highlight, shared wait cursor and animated detail placeholder for Glyphs/Vocabulary. Verified exact card/URL and completed sidebar live in both libraries, waiting cleanup and selection order in tests; four tests passed and preview build clean.
+
 - [done] Isolate search draft state from library results/reference rendering; conditional Apply for changed inputs and X for active applied filters across libraries/games. Typing benchmark reduced from 4.95s with nine long tasks to 0.55s with none; 21 related tests passed, library controls verified live.
 
 - [done] Share compact Play/Hide menus across Glyphs/Vocabulary; explicit Apply and immediate X clearing across both libraries and games. Verified live counts, Hide/Play menus, game rounds retained during edits, desktop/mobile widths and library Back/Forward; 24 tests passed and preview build clean.
