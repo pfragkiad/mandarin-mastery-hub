@@ -259,6 +259,7 @@
 .catalog-record-note { font-size: 12px; color: var(--muted-foreground); margin: 18px 0; }
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
 .usage-top { color: var(--primary); }
+.usage-inter { color: var(--hsk-id); }
 .usage-mid { color: var(--terracotta); }
 .usage-low { color: var(--muted-foreground); }
 .catalog-record-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }

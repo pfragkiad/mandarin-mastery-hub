@@ -45,8 +45,8 @@ const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms 
 const glyphsMotto = 'STUDY THE BLOCKS · ONE CHARACTER AT A TIME';
 function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
   const group = usageGroupFor(kind, rank);
-  // Colour tiers by exact rank: ≤500 top, 501–1000 mid, >1000 low.
-  const tier = rank === null ? 'none' : rank <= 500 ? 'top' : rank <= 1000 ? 'mid' : 'low';
+  // Colour tiers by exact rank: ≤300 top, 301–500 intermediate, 501–1000 mid, >1000 low.
+  const tier = rank === null ? 'none' : rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
   return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? (compact ? 'Unranked' : 'No frequency data') : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
 }
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
