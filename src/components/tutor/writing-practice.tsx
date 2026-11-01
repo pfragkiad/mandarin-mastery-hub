@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate, useRouter } from '@tanstack/react-router';
-import { ArrowLeft, Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRight, Volume2, VolumeX, GitBranch, Printer, StepForward } from 'lucide-react';
+import { ArrowLeft, Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRight, Volume2, VolumeX, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -31,7 +31,7 @@ import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, RecordedDecomposition } from './character-enrichment';
 import { ComponentPronunciation } from './component-pronunciation';
 
-type StrokeInfo = { path: string; name: string; pinyin: string; direction: string };
+type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean };
 
 function nameStroke(median: Array<[number, number]>): { name: string; pinyin: string; direction: string } {
   // Geometry-based labels are a fallback for ordinary characters only. Exact
