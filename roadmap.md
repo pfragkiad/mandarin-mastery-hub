@@ -1,6 +1,6 @@
 # Roadmap
 
-- [in progress] Correct exact traditional script in Practice, decomposition colouring and both search result boxes; test metadata and verify lion live.
+- [done] Correct exact traditional script in Practice, purple decomposition parts and Traditional pills in both search boxes; 48 tests passed, lion search-to-Practice verified live, no runtime errors and preview clean.
 
 - [done] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; 19 tests passed, both libraries and independent modal navigation verified live, preview build clean.
 
