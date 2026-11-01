@@ -10,7 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Application architecture
-- TanStack leaf routes with shared root navigation/state; selections, filters, tabs, pages and Practice focus live in URL search (push selections, replace typing) so history restores exactly.
+- TanStack leaf routes with shared root navigation/state; selections, applied filters, tabs, pages and Practice focus live in URL search (push selections and filter submissions) so history restores exactly.
 - Mandarin data stays browser-safe; large reference data (catalogue, radical-identity sidecar, enrichment sidecars, cnchar-order, Hanzi Writer) loads lazily, never in page bundles. Samples and session-only edits are labeled so they never imply imported or durable records.
 - Hanzi Writer outlines and stroke data come only from recorded sources (Hanzi Writer Data, cnchar-order stroke table via src/lib/stroke-names.ts); never infer missing paths or names — the median-geometry guess is only a fallback. Preserve animation runs across Pause/Resume via native APIs; invalidate only on replacement, reset, practice or teardown.
 - Decompositions stay provenance-attached (Make Me a Hanzi IDS, BabelStone prefix IDS parsed separately, unsupported notation raw); numbered tokens retain their source identities, with a lazily loaded source-table presentation and the matching CDN-hosted BabelStone PUA font, never substituted lexical identity, pronunciation or stroke bindings. Shared rendering across Glyphs, Practice and Vocabulary never implies grammar/etymology.
@@ -50,3 +50,5 @@
 - Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.
 
 - Glyphs and Vocabulary share library-page, library-heading and library-source-note spacing styles; filter and action/display controls stay outside the results/detail grid, with pagination in the results column so reference panels start below shared controls.
+
+- Libraries and games share FilterForm/useDraftFilters: edits stay local until submission, URL changes restore drafts, and clearing applies immediately; library Play/Hide menus reuse shared controls to prevent divergent UX. Game options stay separate from record filters so editing filters cannot interrupt a round.

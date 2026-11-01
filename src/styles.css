@@ -867,3 +867,22 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .library-page .catalog-tools-row .card-reveal-toggle { margin-left: 0; }
   .library-page .filter-bar .search-field { flex-basis: 100%; }
 }
+
+/* Shared contextual filters and compact library actions. */
+.shared-filter-form { flex-wrap: wrap; margin: 16px 0 12px; gap: 8px; }
+.shared-filter-form .search-field { flex: 1 1 220px; max-width: 330px; min-width: 170px; }
+.shared-filter-form .search-field input, .shared-filter-form .filter-select { height: 36px; }
+.shared-filter-form .filter-select { flex: 0 1 auto; max-width: 210px; }
+.filter-submit { display: flex; gap: 2px; align-items: center; }
+.filter-submit button { height: 36px; }
+.filter-submit button:last-child { width: 32px; }
+.shared-filter-form .catalog-results-count { margin-left: auto; font-size: 11px; color: var(--muted-foreground); }
+.catalog-tools-row { gap: 8px; margin-bottom: 12px; }
+.catalog-tools-row > button { height: 32px; font-size: 11px; }
+.catalog-tools-row > button.selected { background: var(--secondary); color: var(--primary); }
+.game-options { margin: 0 0 20px; }
+@media(max-width:580px) {
+  .shared-filter-form .search-field { flex-basis: 100%; max-width: none; }
+  .shared-filter-form .filter-select { flex: 1 1 130px; max-width: none; min-width: 0; }
+  .shared-filter-form .catalog-results-count { margin-left: auto; }
+}

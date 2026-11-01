@@ -16,6 +16,7 @@ describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
     expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -26,6 +27,7 @@ describe('Flashcard front pinyin', () => {
   it('can reveal and hide pinyin on the Chinese front without restarting the deck', () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('switch', { name: 'Show pinyin on card front' }));
@@ -40,6 +42,7 @@ describe('Flashcard front pinyin', () => {
 describe('Unknown-card bookmarks', () => {
   async function finish(category: string, known = false) {
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: category } });
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(screen.getByRole('button', { name: 'Start · 1 cards' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: known ? 'I knew it' : 'Still learning' }));
@@ -95,3 +98,13 @@ describe('Deck size', () => {
     expect(screen.getByText('Card 1 of 12')).toBeInTheDocument();
   });
 });
+
+ it('keeps the applied deck pool until Apply and clears immediately with X', () => {
+   render(<FlashcardsPage/>);
+   fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+   expect(screen.getByRole('button', { name: 'Start · 10 of 12 cards' })).toBeInTheDocument();
+   fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+   expect(screen.getByRole('button', { name: 'Start · 1 cards' })).toBeInTheDocument();
+   fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+   expect(screen.getByRole('button', { name: 'Start · 10 of 12 cards' })).toBeInTheDocument();
+ });
