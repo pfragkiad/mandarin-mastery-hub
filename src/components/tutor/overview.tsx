@@ -10,7 +10,7 @@ import { searchAll } from '@/lib/site-search';
 import { DailyCharacterHero, SavedStrip, useDailyCharacter } from './overview-hero';
 import { DiscoveryTile, type DiscoveryCategory } from './overview-discovery';
 
-const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['word', 'phrase', 'Characters', 'Components', 'Radicals'];
+const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['Characters', 'Components', 'Radicals', 'word', 'phrase'];
 
 export function OverviewPage() {
   const { items, preferences } = useWorkspace();
