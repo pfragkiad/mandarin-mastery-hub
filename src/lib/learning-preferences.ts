@@ -1,6 +1,7 @@
 export type CharacterScript = 'Simplified' | 'Traditional' | 'Common';
 export type CardReveal = 'all' | 'meaning' | 'hanzi' | 'pinyin';
-export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal };
+export type LibraryRows = 3 | 5 | 10;
+export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal; libraryRows?: LibraryRows };
 export const defaultPreferences: Preferences = { pinyin: true, meaning: true, slow: false, font: 'Handwritten', includeTraditional: false, cardReveal: 'all' };
 export const defaultTheme = 'dark' as const;
 export function restoredTheme(stored: string | null): 'light' | 'dark' {

@@ -1,6 +1,7 @@
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
+import { useLibraryDensity } from './use-library-density';
 import { Search, Plus, BookOpen, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -32,7 +33,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const levels = [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const posOptions = partOfSpeechOptions(categoryItems);
   const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, py === 'pinyin', pos), initialWordId);
-  const paged = vocabularyPage(filtered, kind, page, initialWordId);
+  const density = useLibraryDensity(`${kind}:${filtered.length}`, () => onPageChange?.(1));
+  const paged = vocabularyPage(filtered, kind, page, initialWordId, density.size);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: onPageChange ?? (() => undefined) });
   const selectedWord = linkedWord;
   useRecordScroll(selectedWord?.id ?? '', items.length > 0);
@@ -59,8 +61,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     <div className="catalog-tools-row"><LibraryPlayMenu category={status === 'Saved words' ? 'Saved' : collection !== 'All collections' ? collection : undefined} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/><CardRevealToggle/></div>
     <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`}>
       {filtered.length ? <>
-      <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
-      <div className={`word-grid vocab-grid vocab-${kind}-grid`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} {...(onWordOpen ? { open: w.id === selectedWord?.id, onOpenChange: next => { if (next) void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)); else onWordOpen(null, paged.current); } } : {})}/>)}</div>
+      <CatalogPagination top innerRef={topPaginationRef} rows={density.rows} onRowsChange={density.onRowsChange} range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
+      <div ref={density.gridRef} className={`word-grid vocab-grid vocab-${kind}-grid`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} {...(onWordOpen ? { open: w.id === selectedWord?.id, onOpenChange: next => { if (next) void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)); else onWordOpen(null, paged.current); } } : {})}/>)}</div>
       <CatalogPagination range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
     </> : <div className="empty-state"><BookOpen size={32}/><h3>{status === 'Saved words' ? 'A place for your favorite words.' : `No ${label} found.`}</h3><p>{status === 'Saved words' ? 'Your bookmarked vocabulary will be right here.' : 'Try another meaning, Chinese character, or pinyin.'}</p><Button variant="outline" onClick={reset}>Clear filters</Button></div>}
     </section></div>{preferences.cardReveal === 'all' && onWordOpen && linkedWord && (() => { const index = filtered.findIndex(w => w.id === linkedWord.id); const step = (i: number) => { const target = filtered[i]; if (target) void detailLoading.run(target.id, () => onWordOpen(target.id, Math.floor(i / paged.size) + 1)); }; return <DetailSheet open title={`Details for ${linkedWord.hanzi}`} onClose={() => onWordOpen(null, paged.current)} onPrevious={index > 0 ? () => step(index - 1) : undefined} onNext={index >= 0 && index < filtered.length - 1 ? () => step(index + 1) : undefined}><DetailLoading loading={detailLoading}><section className="catalog-detail word-detail-panel"><WordDetailContent key={linkedWord.id} word={linkedWord}/></section></DetailLoading></DetailSheet>; })()}

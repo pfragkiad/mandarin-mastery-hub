@@ -27,6 +27,13 @@ describe('vocabulary pagination', () => {
     expect(vocabularyPage(wordEntries.slice(0, 2), 'word', 100).current).toBe(1);
     expect(vocabularyPage([], 'phrase', 4)).toMatchObject({ current: 1, pages: 1, entries: [] });
   });
+  it('uses responsive row capacity for exact selections and adjacent pages', () => {
+    const target = wordEntries[70];
+    if (!target) throw new Error('Missing imported word');
+    expect(vocabularyPage(wordEntries, 'word', 1, target.id, 15)).toMatchObject({ current: 5, size: 15 });
+    expect(vocabularyPage(wordEntries, 'word', 2, '', 6).entries).toEqual(wordEntries.slice(6, 12));
+    expect(vocabularyPage(phraseEntries, 'phrase', 2, '', 15).entries).toEqual(phraseEntries.slice(15, 30));
+  });
   for (const kind of ['word', 'phrase'] as const) {
     it(`keeps a selected ${kind} visible despite an outdated explicit page`, () => {
       const entries = kind === 'word' ? wordEntries : phraseEntries;

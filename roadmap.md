@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Shared remembered 3/5/10 rows in Characters and Vocabulary; verified phone 3/desktop 5, actual row counts, reload/cross-library persistence, paging/reset and no automatic selection; paging tests passed.
+
 - [done] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre; verified navigation position, close and two shared tests.
 
 - [done] Replace Glyphs/Vocabulary sidebars with shared centred floating reference panels and full-width spacious cards; verified unselected visits, cross-page Previous/Next, close preserving scroll, phone bounds and no runtime errors. Shared panel/loading/paging tests passed.
