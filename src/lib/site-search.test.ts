@@ -37,4 +37,13 @@ describe('Header search across the library', () => {
   it('caps the result list', () => {
     expect(searchAll(words, 'e', false, 8)).toHaveLength(8);
   });
+  it('matches readings only when the pinyin toggle is on, and whole readings when exact', () => {
+    // Meaning text like "yes" must not leak into pinyin-only search.
+    expect(searchAll(words, 'yes', false, 1000, 'pinyin').some(hit => hit.kind === 'Word')).toBe(false);
+    const loose = searchAll(words, 'shi', false, 1000, 'pinyin');
+    expect(loose.some(hit => hit.kind === 'Word' && hit.word.hanzi === '是')).toBe(true);
+    const exact = searchAll(words, 'shi4', false, 1000, 'exact');
+    expect(exact.some(hit => hit.kind === 'Word' && hit.word.hanzi === '是')).toBe(true);
+    expect(searchAll(words, 'shi4', false, 1000, 'exact').some(hit => hit.kind === 'Word' && hit.word.hanzi === '十')).toBe(false);
+  });
 });
