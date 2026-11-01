@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Share compact Play/Hide menus across libraries; explicit Apply and immediate X clearing across libraries/games; verify history, counts and pagination.
+
 - [done] Simplify the Glyphs top section: compact heading/source, filtered-only count, shared actions/display row and grid pagination. Verified desktop/mobile layout, filtering and hide/show behavior; shared preference test passed and preview build clean.
 
 - [done] Enable separate radical-variant bookmarks; exact Saved → Glyphs → Practice flow verified for 亻, with 人 independently unsaved and 62 related tests passing.
