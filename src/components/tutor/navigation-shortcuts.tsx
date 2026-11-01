@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Keyboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -14,8 +15,10 @@ export function NavigationShortcuts({ context }: { context: 'pages' | 'records' 
     </PopoverTrigger>
     <PopoverContent align="start" aria-label="Keyboard shortcuts" onKeyDown={event => event.stopPropagation()}>
       <p className="mb-3 text-sm font-semibold">{context === 'pages' ? 'Page navigation' : 'Record navigation'}</p>
-      <dl className="space-y-2 text-xs">
-        {shortcuts.map(([keys, action]) => <div key={keys} className="flex items-center justify-between gap-4"><dt className="font-mono text-muted-foreground">{keys}</dt><dd>{action}</dd></div>)}
+      {/* Two-column grid keeps every key label and description in fixed columns,
+          so wrapped rows stay vertically aligned instead of drifting apart. */}
+      <dl className="grid grid-cols-[minmax(7.5rem,auto)_1fr] gap-x-5 gap-y-2 text-xs">
+        {shortcuts.map(([keys, action]) => <Fragment key={keys}><dt className="whitespace-nowrap font-mono text-muted-foreground">{keys}</dt><dd className="self-center">{action}</dd></Fragment>)}
       </dl>
     </PopoverContent>
   </Popover>;
