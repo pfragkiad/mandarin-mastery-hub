@@ -1,7 +1,11 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { useWorkspace } from './workspace';
+// Character library sections shown in the nav sub-menu; the plain route (no
+// `tab`) opens the default Characters tab.
+const characterSections = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -9,6 +13,8 @@ import { searchAll } from '@/lib/site-search';
 const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Characters', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
+  // Current Characters tab, so the sub-menu can mark the section you are on.
+  const charactersTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
