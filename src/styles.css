@@ -310,7 +310,9 @@
   letter-spacing: normal;
   text-transform: none;
 }
-.decomposition-tree { list-style: none; margin: 0 0 4px; padding: 0; }
+/* Symmetric breathing room around the tree: 6px above the root row matches the
+   6px below the last row (4px tree margin + 2px note margin). */
+.decomposition-tree { list-style: none; margin: 6px 0 4px; padding: 0; }
 .decomposition-tree ul { list-style: none; margin: 2px 0 6px 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
    short distance to the right of every label (root, top, bottom, stroke numbers). */
