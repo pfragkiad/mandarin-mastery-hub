@@ -25,7 +25,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
       </div>
       <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>
       <h2><MeaningText text={meaning || meaningFallback}/></h2>
-      {traditional && <span className="traditional-label">Traditional</span>}
+      {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
     </div>
   </div>;
 }

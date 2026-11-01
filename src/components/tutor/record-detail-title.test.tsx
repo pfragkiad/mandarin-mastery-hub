@@ -33,6 +33,6 @@ describe('Record detail heading', () => {
     expect(head(container).querySelector('strong')?.className).toBe('traditional-character');
     expect(head(container).querySelector('.pinyin')?.textContent).toBe('Pinyin not recorded');
     expect(head(container).querySelector('h2')?.textContent).toBe('No English meaning recorded yet');
-    expect(head(container).querySelector('.traditional-label')?.textContent).toBe('Traditional');
+    expect(head(container).querySelector('.traditional-pill')?.textContent).toBe('Traditional');
   });
 });
