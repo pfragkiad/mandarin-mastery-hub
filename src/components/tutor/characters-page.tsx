@@ -39,6 +39,9 @@ import { RadicalStrokeDecomposition, RadicalStrokeSourceInfo } from './radical-s
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
+// Motivational small-caps line shared by every tab of the Glyphs section;
+// per-tab provenance stays in the (i) beside the title (kindNotes).
+const glyphsMotto = 'STUDY THE BLOCKS · ONE CHARACTER AT A TIME';
 function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
   const group = usageGroupFor(kind, rank);
   const tier = rank === null ? 'none' : (group && usageGroups(kind).indexOf(group) < 2 ? 'top' : 'mid');
