@@ -383,6 +383,9 @@
 .vocabulary-part-facts .phrase-word-link:hover, .vocabulary-part-facts .phrase-word-link:focus-visible { border-color: var(--primary); }
 .vocabulary-part-facts .phrase-word-link > [lang="zh-CN"] { font-size: 16px; }
 .radical-stroke-sequence .decomposition-part { display: flex; align-items: center; gap: 12px; }
+/* The stroke index is a single digit, so its column is narrower than the shared 42px one;
+this keeps the number right beside the stroke tile. */
+.radical-stroke-sequence .decomposition-node > span { width: 18px; }
 .catalog-detail .catalog-facts { border-bottom: 0; padding-bottom: 4px; }
 .catalog-detail .catalog-facts + .catalog-record-note { margin-top: 4px; }
 .catalog-detail .decomposition-section + .radical-family-section { border-top: 0; padding-top: 0; }
