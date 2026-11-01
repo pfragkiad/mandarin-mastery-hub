@@ -1,3 +1,4 @@
+import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
@@ -15,6 +16,9 @@ const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to:
 const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: PenLine }] as const;
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
+  // Track the page Practice's Back should return to (exact href incl. search).
+  const fullHref = useRouterState({ select: s => s.location.href });
+  rememberOrigin(path, fullHref);
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
