@@ -119,8 +119,8 @@ it('does not change an active round while editing filters and submits or clears 
   expect(onSearch).not.toHaveBeenCalled();
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
-  expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' });
+  await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
   view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
   fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
-  expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' });
+  await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
 });
