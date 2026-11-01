@@ -5,18 +5,21 @@ import { useWorkspace } from './workspace';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Game', icon: Gamepad2 }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+// Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
+const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: PenLine }] as const;
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
-  const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
+  // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
+  const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
