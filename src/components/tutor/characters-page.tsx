@@ -173,7 +173,7 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
 
 const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect);
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string | undefined };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -184,7 +184,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const kind: LibraryKind = selectedKind ?? search.tab ?? glyphHit?.kind ?? 'Characters';
   const query = search.q ?? '';
   const strokeCount = search.strokes ?? '';
-  const pinyinOnly = search.py === 'pinyin';
+  const pinyinOnly = Boolean(search.py);
   const hasUsage = kind !== 'Strokes';
   const usage = hasUsage ? parseUsageGroup(kind, search.usage) : undefined;
   const savedOnly = search.status === 'saved';
@@ -206,7 +206,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
-  const browsed = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly);
+  const browsed = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact');
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
@@ -253,7 +253,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }}>{({ draft, patch }) => <>
-          <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button></div>
+          <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button variant="ghost" type="button" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All frequencies'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All frequencies</SelectItem>{usageGroups(kind).map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
           {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{strokeCounts.map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
         </>}</DraftFilterForm>
