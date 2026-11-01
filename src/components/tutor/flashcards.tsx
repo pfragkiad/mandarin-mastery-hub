@@ -1,4 +1,4 @@
-import { FilterForm, useDraftFilters } from './filter-form';
+import { DraftFilterForm } from './filter-form';
 import { MeaningText } from './meaning-text';
 import { useMemo, useState } from 'react';
 import { RotateCcw, Shuffle, Volume2, Check, X, Play, Bookmark } from 'lucide-react';
@@ -27,10 +27,8 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const [localFilters, setLocalFilters] = useState<FlashcardFilters>({ category: 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' });
   const applied = { category: controlledCategory ?? localFilters.category, level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage };
   const { category, level, pos, usage } = applied;
-  const { draft, patch, setDraft } = useDraftFilters(applied);
+  const activeFilters = Boolean((!category.startsWith('Ref:') && category !== 'All vocabulary') || level !== 'All levels' || pos !== 'All types' || usage);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); setDeck(null); };
-  const draftReference = draft.category.startsWith('Ref:');
-  const draftSaved = draft.category === 'Saved';
   const [direction, setDirection] = useState<'zh' | 'en'>('zh');
   const [showFrontPinyin, setShowFrontPinyin] = useState(false);
   const [deckSize, setDeckSize] = useState<number | 'all'>(10);
@@ -94,7 +92,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const firstTry = repeat ? deck ? new Set(deck.map(c => c.id)).size - uniqueMissed.length : 0 : 0;
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1><p>Pick a category and level, then flip through a shuffled deck.</p></div><span className="heading-hanzi">记<span>jì</span></span></div>
-    <FilterForm count={pool.length} onApply={() => configure(draft)} onClear={() => { const empty = { category: draftReference ? draft.category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; setDraft(empty); configure(empty); }}>
+    <DraftFilterForm applied={applied} active={activeFilters} count={pool.length} onApply={configure} onClear={() => { const empty = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftSaved = draft.category === 'Saved'; return <>
       <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, level: 'All levels', pos: 'All types', usage: '' })}>
         <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
         <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
@@ -105,7 +103,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
         <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
       </>}
       {draftReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[draft.category.slice(4) as ReferenceKind], draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value })}><option value="">All frequencies</option>{usageGroups(libraryKinds[draft.category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[draft.category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
-    </FilterForm>
+    </>; }}</DraftFilterForm>
     <div className="flash-setup game-options">
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
