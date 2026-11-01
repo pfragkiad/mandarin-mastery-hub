@@ -16,7 +16,9 @@ export function partOfSpeechOptions(items: Word[]): string[] { return [...new Se
 export function filterWords(items: Word[], query: string, collection = 'All collections', level = 'All levels', status = 'All words', saved: string[] = [], pinyinOnly = false, pos = 'All types', pinyinExact = false) {
   const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const q = normalize(query.trim());
-  const matches = (w: Word) => pinyinOnly ? pinyinReadingMatches(w.pinyin, query, pinyinExact) : normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q);
+  // Plain mode keeps the free-text match and adds the same pinyin fallback as
+  // global search, so tone-number input ("shi4") still finds 是 (shì).
+  const matches = (w: Word) => pinyinOnly ? pinyinReadingMatches(w.pinyin, query, pinyinExact) : normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q) || pinyinReadingMatches(w.pinyin, query, false);
   return items.filter(w => matches(w) && (collection === 'All collections' || w.collection === collection) && (level === 'All levels' || w.level === level) && (status === 'All words' || saved.includes(w.id)) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
 }
 /** Browser TTS only (last fallback); validated Mandarin voice. Prefer playPronunciation from ./audio. */
