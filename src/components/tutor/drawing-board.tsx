@@ -10,6 +10,7 @@ import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
 import { drawingWordClues, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
+import type { DrawingBoardSnapshot } from './drawing-session';
 
 function writerColor(token: string) {
   const canvas = document.createElement('canvas').getContext('2d');
@@ -19,7 +20,7 @@ function writerColor(token: string) {
   return `#${Array.from(canvas.getImageData(0, 0, 1, 1).data).slice(0, 3).map(value => value.toString(16).padStart(2, '0')).join('')}`;
 }
 
-export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void }) {
+export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
   const { theme, preferences } = useWorkspace();
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
@@ -32,6 +33,8 @@ export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish
   const [guide, setGuide] = useState(false);
   const guideRef = useRef(false); guideRef.current = guide;
   const guideUsed = useRef(false);
+  // Only read the saved terminal snapshot on mount, not when Practice saves it.
+  const initialSnapshot = useRef(restored);
   const prompt = entry.word ?? entry;
   const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), prompt.pinyin);
@@ -51,6 +54,14 @@ export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish
         drawingWidth: 6, charDataLoader: (_glyph, onLoad) => onLoad(data),
       });
       writer.current = instance;
+      const snapshot = initialSnapshot.current;
+      if (snapshot) {
+        settled.current = true; setState(snapshot.result); setMistakes(snapshot.mistakes);
+        setProgress(snapshot.progress); setGuide(snapshot.guide);
+        if (snapshot.guide) instance.showOutline();
+        if (snapshot.result !== 'unavailable') void instance.showCharacter({ duration: 0 });
+        return;
+      }
       if (guideRef.current) instance.showOutline();
       setProgress({ completed: 0, total: data.strokes.length }); setState('drawing');
       void instance.quiz({
@@ -104,7 +115,11 @@ export function DrawingBoard({ entry, onFinish }: { entry: DrawingCard; onFinish
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
       {state === 'unavailable' && <Button variant="outline" onClick={() => setRetry(value => value + 1)}><RotateCcw/>Try again</Button>}
       {!answered && state !== 'unavailable' && <Button variant="outline" onClick={pass}><SkipForward/>Pass card</Button>}
-      <Button variant="outline" asChild><Link to="/strokes" search={entry.word ? { character: entry.word.hanzi, ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi }}><PenLine/>Practice</Link></Button>
+      <Button variant="outline" asChild><Link to="/strokes" onClick={() => {
+        // Seeing Practice reveals the answer: an unfinished attempt returns as
+        // passed, without advancing or falsely awarding a correct answer.
+        onPractice?.({ result: answered || state === 'unavailable' ? state as DrawingResult : 'passed', mistakes, progress, guide });
+      }} search={entry.word ? { character: entry.word.hanzi, ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }}><PenLine/>Practice</Link></Button>
       {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
     </div>
   </section>;

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { words, type Word } from '@/lib/mandarin';
+import { DrawingSessionProvider } from './drawing-session';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
 import { defaultPreferences, defaultTheme, restoredTheme, includeScript, type Preferences } from '@/lib/learning-preferences';
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
@@ -23,6 +24,6 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   useEffect(() => { try { const raw = localStorage.getItem('tutor-preferences'); if (raw) setPreferences(p => ({ ...p, ...JSON.parse(raw) })); } catch { /* ignore */ } setLoaded(true); }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
-  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}>{children}</WorkspaceContext.Provider>;
+  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><DrawingSessionProvider>{children}</DrawingSessionProvider></WorkspaceContext.Provider>;
 }
 export function useWorkspace() { const value = useContext(WorkspaceContext); if (!value) throw new Error('WorkspaceProvider is required'); return value; }

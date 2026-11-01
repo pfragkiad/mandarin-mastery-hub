@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Preserve Drawing rounds across Practice visits; live Back restored the exact second card both before/after Pass, Next advanced correctly with review retained; 35 tests passed and preview build clean.
+
 - [done] Compact shared game setup rows and ready states, simplify Start/counts and align All/Saved; 39 tests passed, both live rounds preserved after filtering and deck-size changes, narrow-screen layouts checked without overflow or runtime errors, preview build clean.
 
 - [done] Correct exact traditional script in Practice, purple decomposition parts and Traditional pills in both search boxes; 48 tests passed, lion search-to-Practice verified live, no runtime errors and preview clean.

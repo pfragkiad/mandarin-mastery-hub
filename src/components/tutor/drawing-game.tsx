@@ -1,27 +1,26 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, Bookmark, Check, Play, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { partOfSpeechOptions, vocabularyKind } from '@/lib/mandarin';
 import { usageGroupLabel, usageGroups, parseUsageGroup } from '@/lib/usage-frequency';
-import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingResult, type DrawingSearch } from '@/lib/drawing-game';
+import { drawingKinds, drawingPool, drawingWordPool, shuffledDrawingDeck, type DrawingCard, type DrawingSearch } from '@/lib/drawing-game';
 import { DraftFilterForm } from './filter-form';
 import { GameSetup, GameReady } from './game-setup';
 import { DrawingBoard } from './drawing-board';
 import { useWorkspace } from './workspace';
+import { useDrawingSession } from './drawing-session';
 
-type Answer = { entry: DrawingCard; result: DrawingResult };
 const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; onSearch: (search: DrawingSearch) => void }) {
   const { items, catalogVersion, preferences, saved, toggleSaved } = useWorkspace();
   const kind = search.kind ?? 'Characters';
   const appliedFilters: DrawingSearch = { kind, collection: search.collection, level: search.level, pos: search.pos, strokes: search.strokes, usage: search.usage, saved: search.saved };
   const activeFilters = Boolean(search.collection || search.level || search.pos || search.strokes || search.usage || search.saved);
-  const [deckSize, setDeckSize] = useState<number | 'all'>(10);
-  const [deck, setDeck] = useState<DrawingCard[] | null>(null);
-  const [answers, setAnswers] = useState<Answer[]>([]);
-  const [round, setRound] = useState(0);
+  const [session, setSession] = useDrawingSession();
+  const { deckSize, deck, answers, round, board } = session;
+  const setDeckSize = (value: number | 'all') => setSession(previous => ({ ...previous, deckSize: value }));
   const entries = useMemo(() => kind === 'Words' ? [] : libraryEntries(kind), [kind, catalogVersion]);
   const words = useMemo(() => (items ?? []).filter(word => vocabularyKind(word) === 'word'), [items]);
   const collections = [...new Set(words.map(word => word.collection))].filter(name => name !== 'Sample collection').sort((a, b) => a.localeCompare(b));
@@ -36,7 +35,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
   const unsavedReview = review.filter(entry => !saved.includes(entry.id));
   const correct = answers.filter(answer => answer.result === 'correct').length;
   const unavailable = answers.filter(answer => answer.result === 'unavailable').length;
-  const start = (records: DrawingCard[], next = false) => { setDeck(shuffledDrawingDeck(records, next || deckSize === 'all' ? records.length : deckSize)); setAnswers([]); setRound(value => value + 1); };
+  const start = (records: DrawingCard[], next = false) => setSession(previous => ({ ...previous, deck: shuffledDrawingDeck(records, next || deckSize === 'all' ? records.length : deckSize), answers: [], round: previous.round + 1, board: undefined }));
   // Filter changes affect the next deal; keep the current card and answers intact.
   const configure = (next: DrawingSearch) => { onSearch(next); };
 
@@ -56,7 +55,7 @@ export function DrawingGamePage({ search, onSearch }: { search: DrawingSearch; o
       <div className="flash-start"><Button disabled={!pool.length} onClick={() => start(pool)}>{deck ? <RotateCcw/> : <Play/>}{deck ? 'New round' : 'Start'} · {roundSize} {roundSize === 1 ? 'card' : 'cards'}</Button></div>
     </GameSetup>
     {!deck && <GameReady available={pool.length > 0} loading={!catalogVersion}/>}
-    {card && <div className="flash-stage drawing-stage"><div className="flash-meta"><span>Card {answers.length + 1} of {deck?.length}</span><span>{correct} correct · {review.length} to review</span></div><progress className="drawing-progress" value={answers.length} max={deck?.length ?? 1} aria-label="Round progress"/><DrawingBoard key={`${round}:${card.id}`} entry={card} onFinish={result => setAnswers(previous => [...previous, { entry: card, result }])}/></div>}
+    {card && <div className="flash-stage drawing-stage"><div className="flash-meta"><span>Card {answers.length + 1} of {deck?.length}</span><span>{correct} correct · {review.length} to review</span></div><progress className="drawing-progress" value={answers.length} max={deck?.length ?? 1} aria-label="Round progress"/><DrawingBoard key={`${round}:${card.id}`} entry={card} restored={board} onPractice={snapshot => setSession(previous => ({ ...previous, board: snapshot }))} onFinish={result => setSession(previous => ({ ...previous, board: undefined, answers: [...previous.answers, { entry: card, result }] }))}/></div>}
     {done && <div className="flash-stage"><section className="drawing-results"><span className="eyebrow">ROUND COMPLETE</span><strong>{correct} / {answers.length - unavailable}</strong><p>{correct} correct · {review.length} to review{unavailable ? ` · ${unavailable} without writing data` : ''}</p>{review.length > 0 && <div className="flash-missed">{review.map(entry => entry.word
       ? <Link key={entry.id} to="/vocabulary" search={{ tab: 'word', word: entry.id }} title={`${entry.word.pinyin} · ${entry.word.meaning}`}><span lang="zh-CN">{entry.word.hanzi}</span><small>{entry.word.pinyin} · {entry.hanzi}</small></Link>
       : <Link key={entry.id} to="/strokes" search={{ character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }} title={`Practice ${entry.pinyin} · ${entry.meaning}`}><span lang="zh-CN">{entry.hanzi}</span><small>{entry.pinyin}</small></Link>)}</div>}{review.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedReview.length} onClick={() => unsavedReview.forEach(entry => toggleSaved(entry.id))}>{unsavedReview.length ? <Bookmark/> : <Check/>}{unsavedReview.length ? `Save ${unsavedReview.length} unknown ${unsavedReview.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}{review.length > 0 && !unsavedReview.length && <p className="text-center mb-4" role="status">Bookmarked in Saved for this session.</p>}<div className="drawing-actions">{review.length > 0 && <Button onClick={() => start(review, true)}><RotateCcw/>Review cards</Button>}<Button variant="outline" onClick={() => start(pool)}>New round<ArrowRight/></Button></div></section></div>}
