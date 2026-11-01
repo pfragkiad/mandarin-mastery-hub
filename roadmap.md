@@ -1,6 +1,6 @@
 # Roadmap
 
-- [open] Simplify the Glyphs top section: heading/source, filters/count, shared actions/display row and grid pagination; verify across widths.
+- [done] Simplify the Glyphs top section: compact heading/source, filtered-only count, shared actions/display row and grid pagination. Verified desktop/mobile layout, filtering and hide/show behavior; shared preference test passed and preview build clean.
 
 - [done] Enable separate radical-variant bookmarks; exact Saved → Glyphs → Practice flow verified for 亻, with 人 independently unsaved and 62 related tests passing.
 
