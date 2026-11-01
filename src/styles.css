@@ -1049,3 +1049,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-page .word-card [role='button']:not([aria-disabled='true']) { cursor: pointer; }
 .library-page .word-card button:disabled,
 .library-page .word-card [aria-disabled='true'] { cursor: default; }
+/* Card returned to from Practice Back: visible focus ring until the user moves on. */
+.word-card[tabindex="-1"]:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
+.word-card.is-traditional[tabindex="-1"]:focus { outline-color: var(--traditional, var(--primary)); }
