@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Simplify the Glyphs top section: compact heading/source, filtered-only count, shared actions/display row and grid pagination. Verified desktop/mobile layout, filtering and hide/show behavior; shared preference test passed and preview build clean.
+
 - [done] Enable separate radical-variant bookmarks; exact Saved → Glyphs → Practice flow verified for 亻, with 人 independently unsaved and 62 related tests passing.
 
 - [done] Hide decomposition and its indicator for radical-identified Characters; remove separate vocabulary words below character sentence translations. Verified 一 live, retained 好 and Radicals-tab breakdowns, and 35 existing tests passed.

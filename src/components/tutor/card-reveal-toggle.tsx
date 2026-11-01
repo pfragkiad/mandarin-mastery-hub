@@ -8,7 +8,7 @@ const OPTIONS: { value: CardReveal; label: string; icon: typeof Eye; shortcut: s
   { value: 'all', label: 'Show all', icon: Eye, shortcut: '0' },
   { value: 'meaning', label: 'Hide translation', icon: Languages, shortcut: '1' },
   { value: 'hanzi', label: 'Hide hanzi', icon: EyeOff, shortcut: '2' },
-  { value: 'pinyin', label: 'Hide pinyin & audio', icon: Volume2, shortcut: '3' },
+  { value: 'pinyin', label: 'Hide pronunciation', icon: Volume2, shortcut: '3' },
 ];
 
 /** Quick self-test toggle above the card grids: hide one card face at a time. */
