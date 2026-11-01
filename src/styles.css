@@ -883,7 +883,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .reveal-hide-meaning .is-revealed .word-meaning, .reveal-hide-meaning .is-revealed .catalog-entry-meaning,
 .reveal-hide-hanzi .is-revealed .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .is-revealed .tile-hanzi-row, .reveal-hide-hanzi .is-revealed .usage-strokes,
 .reveal-hide-pinyin .is-revealed .word-character .pinyin { visibility: visible; }
-.word-card.is-revealed:not(.is-selected) { outline: 1px dashed var(--primary); outline-offset: -1px; }
+.word-card.is-revealed:not(.is-selected) { outline: 2px solid var(--terracotta); outline-offset: -2px; }
 /* The explicit details action contrasts with the green availability indicators.
    Reuse theme-aware terracotta for legibility in both light and dark palettes. */
 .word-actions .card-details-action { color: var(--terracotta); }
