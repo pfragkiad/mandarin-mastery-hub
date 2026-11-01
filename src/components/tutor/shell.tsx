@@ -42,7 +42,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const openHit = (hit: (typeof hits)[number]) => {
     closeSearch();
     if (hit.kind === 'Word') navigate({ to: '/vocabulary', search: { q: hit.word.hanzi, word: hit.word.id } });
-    else navigate({ to: '/strokes', search: { character: hit.hanzi } });
+    else navigate({ to: '/characters', search: { tab: hit.kind === 'Radical' ? 'Radicals' : hit.kind === 'Component' ? 'Components' : 'Characters', character: hit.hanzi } });
   };
   return <div className={`workspace ${collapsed ? 'is-collapsed' : ''}`}>
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
