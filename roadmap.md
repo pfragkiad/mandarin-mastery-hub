@@ -1,6 +1,6 @@
 # Roadmap
 
-- [pending] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; verify library paging and separate modal navigation.
+- [done] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; 19 tests passed, both libraries and independent modal navigation verified live, preview build clean.
 
 - [done] Add explanatory comments covering library controls, source-data adapters, import scripts and practice logic; 114 existing tests passed, Python scripts parsed, both library pages opened without runtime errors and preview build clean.
 
