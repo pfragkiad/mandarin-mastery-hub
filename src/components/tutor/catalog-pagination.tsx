@@ -1,4 +1,4 @@
-import { useState, type Ref } from 'react';
+import { useEffect, useState, type Ref, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
