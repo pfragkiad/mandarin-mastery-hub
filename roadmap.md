@@ -1,6 +1,6 @@
 # Roadmap
 
-- [open] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre.
+- [done] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre; verified navigation position, close and two shared tests.
 
 - [done] Replace Glyphs/Vocabulary sidebars with shared centred floating reference panels and full-width spacious cards; verified unselected visits, cross-page Previous/Next, close preserving scroll, phone bounds and no runtime errors. Shared panel/loading/paging tests passed.
 
