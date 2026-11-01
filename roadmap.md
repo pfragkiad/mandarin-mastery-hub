@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add shared remembered 3/5/10 row controls to Characters and Vocabulary, with phone/desktop defaults and responsive paging; verify persistence and navigation.
+- [done] Shared remembered 3/5/10 rows in Characters and Vocabulary; verified phone 3/desktop 5, actual row counts, reload/cross-library persistence, paging/reset and no automatic selection; paging tests passed.
 
 - [done] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre; verified navigation position, close and two shared tests.
 
