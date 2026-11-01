@@ -1,18 +1,21 @@
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useWorkspace } from './workspace';
-// Seções da biblioteca de caracteres exibidas como sub-itens indentados na
-// navegação; a rota simples (sem `tab`) abre a aba Characters.
+// Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
+// sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
+const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
 import { LayoutGrid, BookOpen, Settings, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Characters', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Flashcards', icon: Layers }, { to: '/drawing' as const, name: 'Drawing game', icon: PenLine }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
-  // Current Characters tab, so the sub-menu can mark the section you are on.
-  const charactersTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
+  // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
+  const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
+  const charactersTab = activeTab;
+  const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   const current = navigation.find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
@@ -40,10 +43,14 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
       <Link to="/" className="brand" aria-label="Mandarin Tutor home"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
       <div className="sidebar-label">YOUR WORKSPACE</div>
-      {/* Seções da biblioteca como sub-itens sempre visíveis e indentados na
-          navegação, para acesso direto de qualquer página; as abas na página
-          continuam sendo a troca principal dentro da biblioteca. */}
-      <nav aria-label="Main navigation">{navigation.map(n => n.to === '/characters' ? <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${path === n.to ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{path === n.to && <span className="active-dot" />}</Link></Button>{characterSections.map(k => { const subActive = path === '/characters' && k === (charactersTab ?? 'Characters'); return <Button asChild key={k} variant="ghost" className={`nav-sub-item ${subActive ? 'is-active' : ''}`}><Link to="/characters" search={k === 'Characters' ? {} : { tab: k }} onClick={() => setMobileOpen(false)} title={`Abrir ${k.toLowerCase()}`}><span>{k}</span></Link></Button>; })}</div> : <Button asChild variant="ghost" className={`nav-item ${path === n.to ? 'is-active' : ''}`} key={n.to}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{path === n.to && <span className="active-dot" />}</Link></Button>)}</nav>
+      {/* Sub-itens sempre visíveis e indentados na navegação, para acesso direto
+          de qualquer página; as abas na página continuam sendo a troca principal. */}
+      <nav aria-label="Main navigation">{navigation.map(n => {
+        const subs = n.to === '/characters' ? characterSections.map(k => ({ label: k, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters') }))
+          : n.to === '/vocabulary' ? vocabularySections.map(s => ({ label: s.label, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word') }))
+          : null;
+        return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${path === n.to ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{path === n.to && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.label} variant="ghost" className={`nav-sub-item ${path === n.to && s.active ? 'is-active' : ''}`}><Link to={n.to} search={s.search} onClick={() => setMobileOpen(false)} title={`Abrir ${s.label.toLowerCase()}`}><span>{s.label}</span></Link></Button>)}</div>;
+      })}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><Button size="icon" variant="ghost" title={collapsed ? 'Expand navigation' : 'Collapse navigation'} aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'} onClick={() => setCollapsed(!collapsed)}><ChevronsLeft className={collapsed ? 'rotate-180' : ''}/></Button></div></div>
     </aside>
     <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><Button variant="ghost" size="icon" className="mobile-menu" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X/> : <Menu/>}</Button><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
