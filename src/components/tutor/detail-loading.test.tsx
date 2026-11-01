@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { expect, it, vi } from 'vitest';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 
-it('selects the exact card before navigation and removes waiting feedback after completion', async () => {
+it('selects the exact card before navigation and keeps the current detail visible until the new one commits', async () => {
   let finish: (() => void) | undefined;
   const navigate = vi.fn(() => new Promise<void>(resolve => { finish = resolve; }));
   function Example() {
@@ -12,10 +12,14 @@ it('selects the exact card before navigation and removes waiting feedback after 
   render(<Example/>);
   fireEvent.click(screen.getByRole('button', { name: 'Select' }));
   expect(document.querySelector('.word-card.is-selected')).toHaveAttribute('data-entry-id', 'new');
-  expect(screen.getByRole('status')).toBeInTheDocument();
+  const boundary = document.querySelector('.detail-loading-boundary');
+  expect(boundary).toHaveAttribute('aria-busy', 'true');
+  expect(screen.getByText('Details')).toBeInTheDocument();
+  expect(screen.queryByRole('status')).not.toBeInTheDocument();
   expect(navigate).not.toHaveBeenCalled();
   await waitFor(() => expect(navigate).toHaveBeenCalledOnce());
   await act(async () => { finish?.(); });
-  await waitFor(() => expect(screen.queryByRole('status')).not.toBeInTheDocument());
+  await waitFor(() => expect(boundary).toHaveAttribute('aria-busy', 'false'));
+  expect(screen.getByText('Details')).toBeInTheDocument();
   expect([...document.head.querySelectorAll('style')].some(style => style.textContent?.includes('cursor: wait'))).toBe(false);
 });
