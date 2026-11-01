@@ -33,7 +33,8 @@ export function CardRevealToggle() {
   // without opening the menu; "Hide" is the neutral label when nothing is hidden.
   const selected = OPTIONS.find(option => option.value === current) ?? OPTIONS[0]!;
   const TriggerIcon = current === 'all' ? EyeOff : selected.icon;
-  const triggerLabel = current === 'all' ? 'Hide' : selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase());
+  // Hidden modes read as a state ("Hanzi hidden"); 'all' falls back to the plain "Hide" action label.
+  const triggerLabel = current === 'all' ? 'Hide' : `${selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase())} hidden`;
   return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={selected.label}><TriggerIcon/>{triggerLabel}<ChevronDown/></Button></DropdownMenuTrigger>
     <DropdownMenuContent align="start"><DropdownMenuRadioGroup value={current} onValueChange={value => { const option = OPTIONS.find(option => option.value === value); if (option) setPreferences({ ...preferences, cardReveal: option.value }); }}>
       {[...OPTIONS.slice(1), OPTIONS[0]].filter(option => option !== undefined).map(({ value, label, icon: Icon, shortcut }) => <DropdownMenuRadioItem key={value} value={value}><Icon className="mr-2 size-4"/>{value === 'all' ? label : label.replace('Hide ', '')}<span className="ml-auto pl-5 text-xs text-muted-foreground">{shortcut}</span></DropdownMenuRadioItem>)}

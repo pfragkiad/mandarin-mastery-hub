@@ -25,8 +25,8 @@ describe('CardRevealToggle trigger label', () => {
     expect(screen.getByRole('button', { name: /Hide/i }).textContent).toContain('Hide');
   });
 
-  it('shows the hidden face name for each hide mode', () => {
-    for (const [mode, label] of [['hanzi', 'Hanzi'], ['meaning', 'Translation'], ['pinyin', 'Pronunciation']] as const) {
+  it('shows the hidden face name as a hidden state for each hide mode', () => {
+    for (const [mode, label] of [['hanzi', 'Hanzi hidden'], ['meaning', 'Translation hidden'], ['pinyin', 'Pronunciation hidden']] as const) {
       preferences.cardReveal = mode;
       const { unmount } = renderToggle();
       expect(screen.getByRole('button').textContent).toContain(label);
