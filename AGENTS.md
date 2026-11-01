@@ -49,4 +49,4 @@
 
 - Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.
 
-- Glyphs places shared filter and action/display controls outside the results/detail grid; pagination stays in the results column so the reference panel starts below shared controls.
+- Glyphs and Vocabulary share library-page, library-heading and library-source-note spacing styles; filter and action/display controls stay outside the results/detail grid, with pagination in the results column so reference panels start below shared controls.
