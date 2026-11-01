@@ -1,4 +1,5 @@
 import type { CharacterScript } from './learning-preferences';
+import { pinyinReadingMatches } from './pinyin-tones';
 import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from './audio';
 import { entryToWord, categoryName, vocabularyData, type Entry } from './data-contract';
 export type Word = { id: string; hanzi: string; pinyin: string; meaning: string; type: string; collection: string; level: string; sentence: string; translation: string; sentencePinyin?: string; hskId?: number | null; script?: CharacterScript; audio?: AudioAttachment | null; entry?: Entry; entryKind?: 'word' | 'phrase' };
@@ -11,10 +12,11 @@ export const partOfSpeechList = (word: Word): string[] => (word.type ?? "").spli
 export function partOfSpeechOptions(items: Word[]): string[] { return [...new Set(items.flatMap(partOfSpeechList))].sort((a, b) => a.localeCompare(b)); }
 // pinyinExact (only with pinyinOnly) requires the whole tone-stripped reading
 // to equal the query — "yisi" matches 意思, but "yi" no longer does.
+// Tone numbers are accepted too: "yi4si" matches 意思 (yìsi) directly.
 export function filterWords(items: Word[], query: string, collection = 'All collections', level = 'All levels', status = 'All words', saved: string[] = [], pinyinOnly = false, pos = 'All types', pinyinExact = false) {
   const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const q = normalize(query.trim());
-  const matches = (w: Word) => pinyinOnly && pinyinExact ? normalize(w.pinyin) === q : normalize(pinyinOnly ? w.pinyin : `${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q);
+  const matches = (w: Word) => pinyinOnly ? pinyinReadingMatches(w.pinyin, query, pinyinExact) : normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q);
   return items.filter(w => matches(w) && (collection === 'All collections' || w.collection === collection) && (level === 'All levels' || w.level === level) && (status === 'All words' || saved.includes(w.id)) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
 }
 /** Browser TTS only (last fallback); validated Mandarin voice. Prefer playPronunciation from ./audio. */
