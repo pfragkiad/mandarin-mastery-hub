@@ -1,5 +1,7 @@
 # Roadmap
 
+- [open] Make library reference windows modal with blurred backgrounds, remove the handle, and anchor navigation top-centre.
+
 - [done] Replace Glyphs/Vocabulary sidebars with shared centred floating reference panels and full-width spacious cards; verified unselected visits, cross-page Previous/Next, close preserving scroll, phone bounds and no runtime errors. Shared panel/loading/paging tests passed.
 
 - [done] Immediate card highlight, shared wait cursor and animated detail placeholder for Glyphs/Vocabulary. Verified exact card/URL and completed sidebar live in both libraries, waiting cleanup and selection order in tests; four tests passed and preview build clean.
