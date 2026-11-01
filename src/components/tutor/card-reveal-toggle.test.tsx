@@ -1,7 +1,7 @@
 // Verifies the Hide button names the currently hidden card face and falls back
 // to a neutral "Hide" label when nothing is hidden (reveal 'all').
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { CardRevealToggle } from './card-reveal-toggle';
 import type { LearningPreferences } from '@/lib/learning-preferences';
 
