@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Keyboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -17,7 +18,7 @@ export function NavigationShortcuts({ context }: { context: 'pages' | 'records' 
       {/* Two-column grid keeps every key label and description in fixed columns,
           so wrapped rows stay vertically aligned instead of drifting apart. */}
       <dl className="grid grid-cols-[minmax(7.5rem,auto)_1fr] gap-x-5 gap-y-2 text-xs">
-        {shortcuts.map(([keys, action]) => <Fragment key={keys}><dt className="whitespace-nowrap font-mono text-muted-foreground">{keys}</dt><dd className="self-center">{action}</dd></div>)}
+        {shortcuts.map(([keys, action]) => <Fragment key={keys}><dt className="whitespace-nowrap font-mono text-muted-foreground">{keys}</dt><dd className="self-center">{action}</dd></Fragment>)}
       </dl>
     </PopoverContent>
   </Popover>;
