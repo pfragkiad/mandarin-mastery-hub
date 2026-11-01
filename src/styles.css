@@ -475,6 +475,8 @@ this keeps the number right beside the stroke tile. */
 .kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
 .kangxi-identity-badge { font-size: 8px; }
 .decomposition-facts { flex: 1; min-width: 0; font-size: 0.78rem; color: var(--muted-foreground); line-height: 1.4; display: flex; flex-direction: column; gap: 2px; align-items: flex-start; }.decomposition-facts-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }.decomposition-facts .pinyin { font-size: inherit; color: var(--terracotta); }.decomposition-facts .decomposition-meaning { color: var(--foreground); }.decomposition-pronunciation { display: inline-flex; align-items: center; gap: 6px; vertical-align: baseline; white-space: nowrap; }.decomposition-pronunciation .decomposition-listen { transform: translateY(-1px); }.decomposition-listen { width: 21px; height: 21px; min-width: 21px; margin-left: -2px; color: var(--foreground); }.decomposition-listen svg { width: 13px; height: 13px; }.decomposition-listen:not(:disabled):hover { color: var(--primary); }
+/* Slash-separated Hanzi names for strokes the source records with two alternatives (心's 斜钩 / 卧钩). */
+.decomposition-node .decomposition-ambiguous-name { font-family: var(--font-hanzi); font-weight: 400; font-size: 11px; color: var(--foreground); }
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
