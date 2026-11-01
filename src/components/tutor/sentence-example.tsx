@@ -13,7 +13,7 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
     {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin"><span>{pinyin}</span><ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/></span>}
     <p lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const dest = /[㐀-鿿豈-﫿]/.test(ch) ? libraryDestination(ch, preferences.includeTraditional) : undefined;
-      return dest ? <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Glyphs`} onClick={onNavigate}>{ch}</Link> : <span key={i}>{ch}</span>;
+      return dest ? <Link key={i} to="/characters" search={dest} className="sentence-char" title={`Open ${ch} in Characters`} onClick={onNavigate}>{ch}</Link> : <span key={i}>{ch}</span>;
     })}</p>
     {translation && <span><MeaningText text={translation}/></span>}
   </div>;
