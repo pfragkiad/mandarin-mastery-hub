@@ -1,5 +1,6 @@
 import { vocabularyKind, type Word } from './mandarin';
 import { filterLibrary, LIBRARY_PAGE_SIZE, type LibraryEntry, type LibraryKind } from './character-library';
+import { usageRank } from './usage-frequency';
 
 /** Pick a real vocabulary record of the given kind, excluding the previous pick when possible. Traditional forms are never chosen at random. */
 export function randomOverviewWord(items: Word[], previousId?: string, random = Math.random, kind: 'word' | 'phrase' = 'word'): Word | undefined {
@@ -33,11 +34,13 @@ export function localDayNumber(date: Date) {
   return Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000);
 }
 
-/** Character of the day: a real simplified catalogue character that appears in imported vocabulary, chosen deterministically by date. */
+/** Character of the day: a real simplified catalogue character that appears in imported vocabulary
+ * and sits in the most-used 500 of the corpus (Jun Da rank), chosen deterministically by date. */
 export function dailyCharacter(entries: LibraryEntry[], vocabulary: Word[], date: Date) {
   const used = new Set(vocabulary.filter(word => word.script !== 'Traditional').flatMap(word => Array.from(word.hanzi)));
-  const pool = filterLibrary(entries, '', '', false, false).filter(entry => used.has(entry.hanzi) && entry.pinyin && entry.meaning);
-  const fallback = pool.length ? pool : filterLibrary(entries, '', '', false, false);
+  const common = filterLibrary(entries, '', '', false, false).filter(entry => used.has(entry.hanzi) && entry.pinyin && entry.meaning);
+  const top = common.filter(entry => (usageRank(entry, 'Characters', false) ?? Infinity) <= 500);
+  const fallback = top.length ? top : common.length ? common : filterLibrary(entries, '', '', false, false);
   if (!fallback.length) return undefined;
   const day = localDayNumber(date);
   return fallback[((day * 2654435761) >>> 0) % fallback.length];
