@@ -23,7 +23,7 @@ export function focusEntryCard() {
   const attempt = () => {
     const link = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="/strokes"]')]
       .find(a => new URL(a.href).searchParams.get('character') === target);
-    const card = link?.closest<HTMLElement>('article, li, [class*="card"], [class*="tile"]') ?? link;
+    const card = link?.closest<HTMLElement>('.word-card, article, li') ?? link;
     if (card) {
       card.scrollIntoView({ block: 'center', behavior: 'instant' });
       if (!card.hasAttribute('tabindex') && !card.matches('a,button')) card.setAttribute('tabindex', '-1');
