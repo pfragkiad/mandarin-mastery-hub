@@ -3,7 +3,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { CardRevealToggle } from './card-reveal-toggle';
-import type { LearningPreferences } from '@/lib/learning-preferences';
+import type { Preferences } from '@/lib/learning-preferences';
 
 const preferences: LearningPreferences = { cardReveal: 'all' } as LearningPreferences;
 const setPreferences = vi.fn((next: LearningPreferences) => { preferences.cardReveal = next.cardReveal; });
