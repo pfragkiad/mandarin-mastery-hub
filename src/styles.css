@@ -875,7 +875,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .shared-filter-form .filter-select { flex: 0 1 auto; max-width: 210px; }
 .filter-submit { display: flex; gap: 2px; align-items: center; }
 .filter-submit button { height: 36px; }
-.filter-submit button:last-child { width: 32px; }
+.filter-submit button[type='button'] { width: 32px; }
 .shared-filter-form .catalog-results-count { margin-left: auto; font-size: 11px; color: var(--muted-foreground); }
 .catalog-tools-row { gap: 8px; margin-bottom: 12px; }
 .catalog-tools-row > button { height: 32px; font-size: 11px; }
