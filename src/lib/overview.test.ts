@@ -88,6 +88,7 @@ describe('Overview random characters', () => {
   });
 });
 import { dailyCharacter, greeting } from './overview';
+import { hydrateUsageOrder, usageOrder, type UsageOrderFile } from './usage-frequency';
 describe('Overview character of the day', () => {
   const entry = (hanzi: string, script?: 'Traditional'): LibraryEntry => ({ id: `Characters:${hanzi}`, hanzi, pinyin: 'x', meaning: 'm', note: '', ...(script ? { script } : {}) });
   const entries = [entry('学'), entry('习'), entry('龘'), entry('學', 'Traditional')];
@@ -97,6 +98,28 @@ describe('Overview character of the day', () => {
     const a = dailyCharacter(entries, vocab, date);
     expect(dailyCharacter(entries, vocab, new Date(2026, 9, 17, 22))?.id).toBe(a?.id);
     expect(['学', '习']).toContain(a?.hanzi);
+  });
+  it('picks only characters ranked in the most-used 500, whatever the date', () => {
+    const ranks: UsageOrderFile = {
+      schemaVersion: 1,
+      source: { provider: 'test', version: '1', sourceUrl: '', license: '' },
+      method: 'test',
+      scopes: { simplified: { characters: { 学: 30, 习: 900 }, components: {}, radicals: {} }, all: { characters: {}, components: {}, radicals: {} } },
+    };
+    hydrateUsageOrder(ranks);
+    try {
+      for (const day of [0, 1, 7, 12345, 987654]) {
+        const picked = dailyCharacter(entries, vocab, new Date(2026, 0, 1 + day));
+        expect(picked?.hanzi).toBe('学');
+      }
+    } finally {
+      usageOrder.data = null; usageOrder.loaded = false;
+    }
+  });
+  it('falls back to vocabulary-used characters when none carry frequency data', () => {
+    const date = new Date(2026, 9, 17, 9);
+    const a = dailyCharacter(entries, vocab, date);
+    expect(['学', '习', '龘']).toContain(a?.hanzi);
   });
   it('greets by time of day', () => {
     expect(greeting(8).hanzi).toBe('早上好');
