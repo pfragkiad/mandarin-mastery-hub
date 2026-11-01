@@ -7,15 +7,7 @@ import { useWorkspace } from './workspace';
 export function useLibraryDensity(context: string, onResetPage: () => void) {
   const { preferences, setPreferences } = useWorkspace();
   const gridRef = useRef<HTMLDivElement>(null);
-  const [phone, setPhone] = useState(false);
   const [columns, setColumns] = useState(1);
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 580px)');
-    const sync = () => setPhone(media.matches);
-    sync();
-    media.addEventListener('change', sync);
-    return () => media.removeEventListener('change', sync);
-  }, []);
   useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return;
@@ -28,7 +20,7 @@ export function useLibraryDensity(context: string, onResetPage: () => void) {
     observer.observe(grid);
     return () => observer.disconnect();
   }, [context]);
-  const rows = libraryRows(preferences.libraryRows, phone);
+  const rows = libraryRows(preferences.libraryRows);
   const onRowsChange = (value: LibraryRows) => {
     setPreferences({ ...preferences, libraryRows: value });
     onResetPage();
