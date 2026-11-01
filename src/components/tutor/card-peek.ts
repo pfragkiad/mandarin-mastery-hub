@@ -22,10 +22,14 @@ export function useCardPeek(mode: CardReveal, resetKey: string) {
   const hiding = mode !== 'all';
   // A ref lets click handlers read the latest set without changing identity.
   const ref = useRef(revealed); ref.current = revealed;
-  /** Click on a card: in a Hide mode reveal its hidden face; in Show all do nothing. */
+  /** Click on a card: in a Hide mode toggle its hidden face; in Show all do nothing. */
   const reveal = useCallback((id: string) => {
-    if (!hiding || ref.current.has(id)) return;
-    setRevealed(prev => new Set(prev).add(id));
+    if (!hiding) return;
+    setRevealed(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
   }, [hiding]);
   return { hiding, revealed, reveal };
 }

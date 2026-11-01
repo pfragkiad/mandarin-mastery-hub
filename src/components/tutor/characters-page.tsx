@@ -215,9 +215,10 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // density-aware paging then reveals their exact card, including saved variants.
   const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
-  // Hide modes: first click peeks the card, second opens details; reset on tab/page/filter change.
+  // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
+  // reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}`);
-  // Clicks only peek in a Hide mode; the detail panel opens solely via the card's details button.
+  // Clicks only toggle the peek in a Hide mode; the detail panel opens solely via the card's details button.
   const selectTile = (id: string) => peek.reveal(id);
   // Rank jump: the list is ordered by rank (unranked last), so the first
   // record at or past the target rank is the page to reveal. Strokes carry no
