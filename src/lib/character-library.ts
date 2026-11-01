@@ -66,7 +66,9 @@ export function savedGlyphDestination(entry: LibraryEntry) {
   const kind = kindFromId(entry.id);
   return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
 }
-export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false) {
+// pinyinExact (only with pinyinOnly) requires a whole tone-stripped reading to
+// equal the query — "qi" matches 七 (qī) but not readings merely containing it.
+export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false, pinyinExact = false) {
   // Only Saved browsing expands family-qualified variant bookmarks. The normal
   // radical catalogue remains one card per family instead of duplicating forms.
   const saved = savedIds ? new Set(savedIds) : undefined;
