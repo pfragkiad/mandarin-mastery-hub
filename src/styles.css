@@ -260,6 +260,7 @@
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
 .usage-top { color: var(--primary); }
 .usage-mid { color: var(--terracotta); }
+.usage-low { color: var(--muted-foreground); }
 .catalog-record-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
 .catalog-entry.has-reuse { height: 144px; gap: 3px; }
 .catalog-entry > .component-reuse-label { margin-top: 2px; }
