@@ -855,7 +855,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 }
 
 /* Libraries share top spacing and controls above the grid/reference panel. */
-.library-heading { margin-bottom: 6px; min-height: 60px; }
+.library-heading { margin-bottom: 6px; min-height: 70px; }
 .library-heading h1 { margin-top: 0; }
 .library-source-note { color: var(--muted-foreground); font-size: 10px; line-height: 1.6; margin-bottom: 14px; }
 .library-page .filter-bar { margin: 16px 0 14px; flex-wrap: wrap; }
