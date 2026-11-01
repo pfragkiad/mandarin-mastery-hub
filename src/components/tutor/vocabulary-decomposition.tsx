@@ -11,6 +11,8 @@ import { useWorkspace } from './workspace';
 import { CharacterDecomposition } from './character-enrichment';
 import { ExamplePronunciation } from './example-pronunciation';
 
+/** Shared vocabulary breakdown: matched phrase words keep their own record/readings/audio,
+ * while individual glyph boxes link independently to character records. */
 export function VocabularyDecomposition({ word }: { word: Word }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const phrase = vocabularyKind(word) === 'phrase';
@@ -32,7 +34,7 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
           const destination = libraryDestination(glyph, preferences.includeTraditional);
           return destination ? <Button key={glyphIndex} asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
         })}</div>
-        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="pinyin" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}>{part.word.pinyin}</Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : recorded ? <><span className="example-pinyin-row"><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(single, reading)} label={`character ${single}`}/>}</span><small>{facts?.meaning ? <MeaningText text={facts.meaning}/> : 'No word or character card recorded'}</small></> : <small>No matching word or character recorded</small>}</div>
+        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="pinyin" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}><span lang="zh-CN">{part.text}</span> {part.word.pinyin}</Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : recorded ? <><span className="example-pinyin-row"><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(single, reading)} label={`character ${single}`}/>}</span><small>{facts?.meaning ? <MeaningText text={facts.meaning}/> : 'No word or character card recorded'}</small></> : <small>No matching word or character recorded</small>}</div>
       </div>{!part.word && tree ? <CharacterDecomposition character={single} tree={tree} source={TREE_SOURCE}/> : null}</li>;
       })}</ul>
     </> : <>
