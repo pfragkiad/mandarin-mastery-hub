@@ -8,6 +8,7 @@ import * as catalogStore from '@/lib/catalog-store';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
   useNavigate: () => () => {},
+  useRouter: () => ({ history: { back: () => {} } }),
 }));
 // The writing card only needs a writer instance to exist; no stroke animation runs here.
 const writer = vi.hoisted(() => ({
