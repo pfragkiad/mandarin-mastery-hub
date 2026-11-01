@@ -2,7 +2,7 @@ import { MeaningText } from './meaning-text';
 import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
-import { CatalogPagination } from './catalog-pagination';
+import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
