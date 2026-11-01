@@ -21,7 +21,7 @@ export const Route = createFileRoute('/characters')({
     const id = str(search['id']); if (id) out.id = id;
     return out;
   },
-  head: () => pageHead('Glyphs', 'Browse characters, radicals, components and strokes, then open one to practise writing it stroke by stroke.'),
+  head: () => pageHead('Characters', 'Browse characters, radicals, components and strokes, then open one to practise writing it stroke by stroke.'),
   component: CharactersRoute,
 });
 
