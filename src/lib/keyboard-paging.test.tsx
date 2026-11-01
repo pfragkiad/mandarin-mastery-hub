@@ -55,4 +55,12 @@ describe('useKeyboardPaging', () => {
     press('PageDown');
     expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
   });
+
+  it('ignores PageUp/PageDown while a record sheet is open', () => {
+    const onPageChange = vi.fn();
+    render(<Harness pages={5} disabled onPageChange={onPageChange} />);
+    press('PageDown');
+    press('PageUp');
+    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
+  });
 });
