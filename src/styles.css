@@ -422,6 +422,9 @@
 /* Every character in a breakdown sits in its own thin-bordered box, like the form tiles on a glyph card. */
 .decomposition-glyph { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 1px solid var(--border); padding: 0; margin: 0; width: 46px; height: 46px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; transition: border-color .15s ease, color .15s ease; }
 .decomposition-glyph-static { cursor: default; }
+/* Unrecorded parts (?) are intentional data gaps: muted text and a dashed
+   border so the placeholder never reads as a broken or missing image. */
+.decomposition-glyph-unknown { color: var(--muted-foreground); border-style: dashed; opacity: .8; }
 .babelstone-pua-glyph { font-family: 'BabelStone Han PUA'; }
 .babelstone-component-id { font-family: var(--font-sans); font-size: 12px; min-width: 46px; text-align: center; flex-shrink: 0; }
 .babelstone-component-facts { display: flex; flex-direction: column; gap: 3px; }
