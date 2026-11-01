@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Eye, EyeOff, Languages, Volume2 } from 'lucide-react';
+import { Eye, EyeOff, Languages, Volume2, ChevronDown } from 'lucide-react';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import type { CardReveal } from '@/lib/learning-preferences';
@@ -25,27 +26,10 @@ export function CardRevealToggle() {
       if (option) setPreferences({ ...preferences, cardReveal: option.value });
     };
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [preferences, setPreferences]);
-
-  return (
-    <div className="card-reveal-toggle" role="group" aria-label="Card display">
-      {OPTIONS.map(({ value, label, icon: Icon, shortcut }) => (
-        <Button
-          key={value}
-          variant="ghost"
-          size="sm"
-          aria-pressed={current === value}
-          className={current === value ? 'selected' : ''}
-          title={`${label} (${shortcut})`}
-          onClick={() => setPreferences({ ...preferences, cardReveal: value })}
-        >
-          <Icon />
-          {label}
-        </Button>
-      ))}
-    </div>
-  );
+    return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={OPTIONS.find(option => option.value === current)?.label}><EyeOff/>Hide<ChevronDown/></Button></DropdownMenuTrigger>
+    <DropdownMenuContent align="start"><DropdownMenuRadioGroup value={current} onValueChange={value => { const option = OPTIONS.find(option => option.value === value); if (option) setPreferences({ ...preferences, cardReveal: option.value }); }}>
+      {[...OPTIONS.slice(1), OPTIONS[0]].filter(option => option !== undefined).map(({ value, label, icon: Icon, shortcut }) => <DropdownMenuRadioItem key={value} value={value}><Icon className="mr-2 size-4"/>{value === 'all' ? label : label.replace('Hide ', '')}<span className="ml-auto pl-5 text-xs text-muted-foreground">{shortcut}</span></DropdownMenuRadioItem>)}
+    </DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>;
 }
 
 /** Grid container class for the active reveal mode ('' shows everything). */
