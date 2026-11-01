@@ -894,13 +894,23 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .word-card.is-revealed:not(.is-selected) { outline: 2px solid var(--reveal-ring); outline-offset: -2px; }
 /* Traditional cards keep their purple identity in interactive states: the hover
    frame, the selected frame and the bold reveal outline (hide mode) stay purple,
-   and the hovered translation tints purple like non-traditional cards tint accent.
-   Cards mark traditional identity with the `n` class (see word-card.tsx). */
-.word-card.n:hover { border-color: var(--traditional); }
-.word-card.n.is-selected { border-color: var(--traditional); box-shadow: 0 0 0 1px var(--traditional); }
-.word-card.n.is-revealed:not(.is-selected) { outline-color: var(--traditional); }
-.word-card.n:hover .catalog-entry-meaning,
-.word-card.n:hover .word-meaning { color: var(--traditional); }
+   the hovered translation tints purple like non-traditional cards tint accent,
+   and the hanzi itself never flips to the accent colour on hover.
+   Cards mark traditional identity with the `is-traditional` class (word-card.tsx, characters-page.tsx). */
+.word-card.is-traditional:hover { border-color: var(--traditional); }
+.word-card.is-traditional.is-selected { border-color: var(--traditional); box-shadow: 0 0 0 1px var(--traditional); }
+.word-card.is-traditional.is-revealed:not(.is-selected) { outline-color: var(--traditional); }
+.word-card.is-traditional:hover .catalog-entry-meaning,
+.word-card.is-traditional:hover .word-meaning { color: var(--traditional); }
+/* The generic catalog hover recolours hanzi + meaning with the accent; traditional
+   cards must keep their purple instead (needs higher specificity than that rule). */
+.word-card.is-traditional .catalog-entry:hover strong,
+.word-card.is-traditional .catalog-entry:hover .catalog-entry-meaning,
+.word-card.is-traditional .catalog-entry:focus-visible strong,
+.word-card.is-traditional .catalog-entry:focus-visible .catalog-entry-meaning { color: var(--traditional); }
+/* Variant tiles inside a traditional radical card are other forms, not traditional
+   themselves — keep them muted despite the `.is-traditional [lang]` rule above. */
+.word-card.is-traditional .radical-tile-forms [lang="zh-CN"] { color: var(--muted-foreground); }
 /* The explicit details action contrasts with the green availability indicators.
    Reuse theme-aware terracotta for legibility in both light and dark palettes. */
 .word-actions .card-details-action { color: var(--terracotta); }
