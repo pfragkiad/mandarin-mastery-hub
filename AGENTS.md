@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Application architecture
+- Comment every new component's purpose, key inputs/state ownership and non-obvious logic; keep comments accurate so readers understand why, not just syntax.
 - TanStack leaf routes with shared root navigation/state; selections, applied filters, tabs, pages and Practice focus live in URL search (push selections and filter submissions) so history restores exactly.
 - Mandarin data stays browser-safe; large reference data (catalogue, radical-identity sidecar, enrichment sidecars, cnchar-order, Hanzi Writer) loads lazily, never in page bundles. Samples and session-only edits are labeled so they never imply imported or durable records.
 - Hanzi Writer outlines and stroke data come only from recorded sources (Hanzi Writer Data, cnchar-order stroke table via src/lib/stroke-names.ts); never infer missing paths or names — the median-geometry guess is only a fallback. Preserve animation runs across Pause/Resume via native APIs; invalidate only on replacement, reset, practice or teardown.
