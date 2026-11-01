@@ -205,7 +205,7 @@
   --muted-foreground: oklch(.76 .012 145); --accent: oklch(.34 .024 155);
   --border: oklch(.43 .012 155); --terracotta: oklch(.79 .08 48);
   /* Rank bands brighten for the dark background so every tier keeps its hue. */
-  --rank-gold: oklch(.82 .11 90); --rank-plum: oklch(.76 .10 300);
+  --rank-gold: oklch(.82 .11 90);
   --hsk-id: oklch(.84 .09 72); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
@@ -260,12 +260,13 @@
 .catalog-facts dd { margin: 6px 0 0; font-size: 14px; }
 .catalog-record-note { font-size: 12px; color: var(--muted-foreground); margin: 18px 0; }
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
-/* Rank bands: ≤300 primary green, 301–500 golden yellow, 501–1000 plum, >1000 grey.
-   Plum is clearly cooler than the gold and terracotta tiers without reading as an error red. */
+/* Rank bands: ≤300 primary green, 301–500 golden yellow, 501–1000 terracotta, >1000 grey.
+   Gold stays lighter and yellower than terracotta; each tier reuses the shared theme tokens
+   so light and dark variants keep correct contrast. */
 .component-reuse-label { display: inline-block; font-size: 10px; line-height: 16px; font-weight: 500; color: var(--muted-foreground); white-space: normal; }
 .usage-top { color: var(--primary); }
 .usage-inter { color: var(--rank-gold); }
-.usage-mid { color: var(--rank-plum); }
+.usage-mid { color: var(--terracotta); }
 .usage-low { color: var(--muted-foreground); }
 .catalog-record-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
 .catalog-entry.has-reuse { height: 144px; gap: 3px; }
