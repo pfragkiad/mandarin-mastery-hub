@@ -48,3 +48,5 @@
 - Component dictionary radicals come only from Unihan kRSUnicode via scripts/import-component-radicals.py (catalog componentRadicals, residual>0 only), matching how Characters' radicals are sourced — never inferred from shape or IDS.
 
 - Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.
+
+- Glyphs places shared filter and action/display controls outside the results/detail grid; pagination stays in the results column so the reference panel starts below shared controls.

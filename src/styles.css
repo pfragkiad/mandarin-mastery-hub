@@ -853,3 +853,17 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid,
   .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
+
+/* Glyphs: shared controls precede both the grid and reference panel. */
+.glyph-library-heading { margin-bottom: 6px; }
+.glyph-library-heading h1 { margin-top: 0; }
+.glyph-source-note { color: var(--muted-foreground); font-size: 10px; line-height: 1.6; margin-bottom: 14px; }
+.glyph-library-page .filter-bar { margin: 16px 0 14px; flex-wrap: wrap; }
+.glyph-library-page .catalog-tools-row { gap: 10px 18px; margin-bottom: 14px; }
+.glyph-library-page .catalog-tools-row .card-reveal-toggle { margin-left: auto; }
+.glyph-library-page .catalog-results > .catalog-pagination-top { justify-content: flex-end; margin-bottom: 12px; gap: 18px; }
+.glyph-library-page .card-reveal-toggle { max-width: 100%; flex-wrap: wrap; height: auto; min-height: 32px; }
+@media(max-width:700px) {
+  .glyph-library-page .catalog-tools-row .card-reveal-toggle { margin-left: 0; }
+  .glyph-library-page .filter-bar .search-field { flex-basis: 100%; }
+}
