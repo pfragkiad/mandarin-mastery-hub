@@ -9,7 +9,7 @@ function press(key: string, target?: HTMLElement) {
 }
 
 /** Harness mounts the hook on window so KeyboardEvents can be dispatched from any target. */
-function Harness({ pages, disabled, onPageChange }: { pages: number; disabled?: boolean; onPageChange: (page: number) => void }) {
+function Harness({ pages, disabled = false, onPageChange }: { pages: number; disabled?: boolean; onPageChange: (page: number) => void }) {
   const [page, setPage] = useState(2);
   useKeyboardPaging({ current: page, pages, disabled, onPageChange });
   useEffect(() => { onPageChange(page); }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
