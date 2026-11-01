@@ -2,7 +2,7 @@ import { useState, type Ref } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import type { LibraryRows } from '@/lib/learning-preferences';
+import type { LibraryPerPage } from '@/lib/learning-preferences';
 import { NavigationShortcuts } from './navigation-shortcuts';
 
 /**
@@ -24,23 +24,35 @@ function pageWindow(current: number, pages: number): (number | null)[] {
   return out;
 }
 
-/** One pagination row, used above and below the catalog grids. */
-export function CatalogPagination({ range, current, pages, onPageChange, top = false, innerRef, rows, onRowsChange }: {
+/**
+ * One pagination row, used above and below the catalog grids. The jump field
+ * is labelled by what it accepts ("Page", and "Rank" on tabs that carry
+ * frequency ranks); the per-page picker shows plain record counts.
+ */
+export function CatalogPagination({ range, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange }: {
   range: string;
   current: number;
   pages: number;
   onPageChange: (page: number) => void;
   top?: boolean;
   innerRef?: Ref<HTMLDivElement>;
-  rows?: LibraryRows;
-  onRowsChange?: (rows: LibraryRows) => void;
+  perPage?: LibraryPerPage;
+  onPerPageChange?: (perPage: LibraryPerPage) => void;
+  /** Resolves a frequency rank to the page holding it; absent on tabs without ranks. */
+  onRankChange?: (rank: number) => void;
 }) {
-  // Draft text for the "Go to" jump box; committed on Enter or blur.
+  // Draft text for the direct-jump boxes; committed on Enter or blur.
   const [jump, setJump] = useState('');
+  const [rankJump, setRankJump] = useState('');
   const commitJump = () => {
     const target = Number.parseInt(jump, 10);
     if (Number.isFinite(target)) onPageChange(Math.min(pages, Math.max(1, target)));
     setJump('');
+  };
+  const commitRank = () => {
+    const target = Number.parseInt(rankJump, 10);
+    if (Number.isFinite(target)) onRankChange?.(target);
+    setRankJump('');
   };
   return <div ref={innerRef} className={`catalog-pagination${top ? ' catalog-pagination-top' : ''}`}>
     <div>
@@ -52,13 +64,19 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
       </div>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       <NavigationShortcuts context="pages"/>
-      <label className="catalog-page-jump">Go to
-        <Input value={jump} inputMode="numeric" aria-label="Go to page" placeholder="…"
+      <label className="catalog-page-jump">Page
+        <Input value={jump} inputMode="numeric" aria-label="Jump to page" placeholder="#"
           onChange={e => setJump(e.target.value.replace(/[^0-9]/g, ''))}
           onKeyDown={e => { if (e.key === 'Enter') commitJump(); }}
           onBlur={commitJump}/>
       </label>
-      {rows && onRowsChange && <div className="library-row-picker" role="group" aria-label="Rows per page"><span>Rows</span>{([3, 5, 10] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} rows`} aria-pressed={rows === value} onClick={() => onRowsChange(value)}>{value}</Button>)}</div>}
+      {onRankChange && <label className="catalog-page-jump">Rank
+        <Input value={rankJump} inputMode="numeric" aria-label="Jump to rank" placeholder="#"
+          onChange={e => setRankJump(e.target.value.replace(/[^0-9]/g, ''))}
+          onKeyDown={e => { if (e.key === 'Enter') commitRank(); }}
+          onBlur={commitRank}/>
+      </label>}
+      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
     </div>
     <span>{range}</span>
   </div>;
