@@ -21,7 +21,7 @@ export function focusEntryCard() {
   if (!target || typeof window === 'undefined') return;
   let tries = 0;
   const attempt = () => {
-    const link = [...document.querySelectorAll<HTMLAnchorElement>('main a[href^="/strokes"]')]
+    const link = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="/strokes"]')]
       .find(a => new URL(a.href).searchParams.get('character') === target);
     const card = link?.closest<HTMLElement>('article, li, [class*="card"], [class*="tile"]') ?? link;
     if (card) {
