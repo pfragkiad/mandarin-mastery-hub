@@ -394,10 +394,9 @@
 .daily-word-content:hover h3 { color: var(--primary); }
 .traditional-character, .is-traditional [lang="zh-CN"], .is-traditional .word-level { color: var(--traditional); }
 /* Traditional marker as a pill matching the Radical pill shape, in the record's own colour. */
-.word-hsk-id.traditional-pill { color: var(--traditional); border-color: color-mix(in oklab, var(--traditional) 40%, transparent); }
+.word-hsk-id.traditional-pill { font-size: 8px; color: var(--traditional); border-color: color-mix(in oklab, var(--traditional) 40%, transparent); }
 .search-hit-badges { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 5px; flex-shrink: 0; }
 .hero-search-hit { min-width: 0; flex-wrap: wrap; }
-.hero-search-hit .search-hit-badges .traditional-pill { font-size: 8px; }
 .practice-facts .traditional-character, .practice-facts .traditional-character strong { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
 .tile-traditional-badge { position: absolute; top: 6px; right: 32px; font-size: 9px; line-height: 14px; padding: 0 5px; letter-spacing: .2px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent); background: var(--card); z-index: 1; }
