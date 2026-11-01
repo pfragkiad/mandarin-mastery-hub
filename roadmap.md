@@ -1,5 +1,7 @@
 # Roadmap
 
+- [in progress] Correct exact traditional script in Practice, decomposition colouring and both search result boxes; test metadata and verify lion live.
+
 - [done] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; 19 tests passed, both libraries and independent modal navigation verified live, preview build clean.
 
 - [done] Add explanatory comments covering library controls, source-data adapters, import scripts and practice logic; 114 existing tests passed, Python scripts parsed, both library pages opened without runtime errors and preview build clean.

@@ -96,14 +96,15 @@ export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRAR
   return { entries: entries.slice((current - 1) * size, current * size), pages, current };
 }
 
-const glyphCache = { version: -1, index: null as null | Record<string, { kind: LibraryKind; id: string; pinyin: string; meaning: string }> };
+type IndexedGlyph = { kind: LibraryKind; id: string; pinyin: string; meaning: string; script?: CharacterScript };
+const glyphCache = { version: -1, index: null as null | Record<string, IndexedGlyph> };
 // Glyphs inside a sourced tree point at real library records. This resolves a glyph to
 // its card; when a glyph exists as several records, the radical card wins.
-export function glyphIndex(): Record<string, { kind: LibraryKind; id: string; pinyin: string; meaning: string }> {
+export function glyphIndex(): Record<string, IndexedGlyph> {
   if (glyphCache.version === catalog.version && glyphCache.index) return glyphCache.index;
-  const index: Record<string, { kind: LibraryKind; id: string; pinyin: string; meaning: string }> = {};
+  const index: Record<string, IndexedGlyph> = {};
   for (const kind of ['Radicals', 'Characters', 'Components'] as LibraryKind[]) {
-    for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id, pinyin: entry.pinyin, meaning: entry.meaning };
+    for (const entry of libraryEntries(kind)) if (!(entry.hanzi in index)) index[entry.hanzi] = { kind, id: entry.id, pinyin: entry.pinyin, meaning: entry.meaning, script: entry.script };
   }
   // Missing symbol records may link to a unique sourced canonical identity.
   // Existing exact records remain intact; ambiguous identities never pick a radical.
@@ -116,6 +117,12 @@ export function glyphIndex(): Record<string, { kind: LibraryKind; id: string; pi
   glyphCache.version = catalog.version;
   glyphCache.index = index;
   return index;
+}
+
+/** Script belongs to the exact recorded form, never a canonical-symbol link or its parent tree. */
+export function glyphScript(glyph: string): CharacterScript | undefined {
+  const hit = glyphIndex()[glyph];
+  return hit?.id.split(':').slice(1).join(':') === glyph ? hit.script : undefined;
 }
 
 /** Open the exact sourced record on its visible page, without carrying unrelated filters. */

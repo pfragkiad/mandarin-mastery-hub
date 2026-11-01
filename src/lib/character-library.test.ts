@@ -1,8 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
-import { filterLibrary, libraryEntries, libraryPage, libraryDestination, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination } from './character-library';
+import { filterLibrary, libraryEntries, libraryPage, libraryDestination, glyphScript, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination } from './character-library';
 import { radicalForm } from './radical-strokes';
 describe('Catalogue requirements', () => {
+  it('preserves exact traditional script for lion in Practice', () => {
+    expect(glyphScript('獅')).toBe('Traditional');
+    expect(glyphScript('狮')).toBe('Simplified');
+    expect(glyphScript('not recorded')).toBeUndefined();
+  });
+  it('classifies decomposition parts independently of traditional lion', () => {
+    expect(glyphScript('師')).toBe('Traditional');
+    expect(glyphScript('犭')).not.toBe('Traditional');
+  });
   it('saves the selected 人 variant separately and restores its exact form', () => {
     const heading = libraryEntries('Radicals').find(entry => entry.id === 'Radicals:人');
     const form = radicalForm(9, '9-1');

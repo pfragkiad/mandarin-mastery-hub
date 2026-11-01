@@ -3,6 +3,11 @@ import { searchAll } from './site-search';
 import { words } from './mandarin';
 
 describe('Header search across the library', () => {
+  it('retains Traditional metadata on the exact lion search result', () => {
+    const hit = searchAll([], '獅', true).find(hit => hit.kind !== 'Word' && hit.hanzi === '獅');
+    expect(hit?.kind !== 'Word' ? hit?.script : undefined).toBe('Traditional');
+    expect(searchAll([], '獅', false)).toEqual([]);
+  });
   it('finds words by their English meaning', () => {
     const hits = searchAll(words, 'hello');
     expect(hits[0]?.kind).toBe('Word');
