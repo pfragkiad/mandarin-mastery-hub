@@ -890,12 +890,3 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Details keep their space while a selected record is opening. */
 .detail-loading-boundary { position: relative; min-width: 0; }
 .reveal-hide-meaning .detail-loading-boundary, .reveal-hide-hanzi .detail-loading-boundary, .reveal-hide-pinyin .detail-loading-boundary { display: none; }
-.detail-loading-boundary.is-loading > :not(.detail-loading-placeholder) { visibility: hidden; }
-.detail-loading-placeholder { position: absolute; inset: 0; min-height: 420px; }
-.detail-loading-line, .detail-loading-glyph { background: var(--secondary); border-radius: 4px; animation: detail-loading-pulse 1s ease-in-out infinite alternate; }
-.detail-loading-line { height: 14px; width: 85%; margin: 14px 0; }
-.detail-loading-line.short { width: 45%; }
-.detail-loading-glyph { width: 80px; height: 80px; margin: 24px 0; }
-.detail-loading-divider { border-top: 1px solid var(--border); margin: 28px 0; }
-@keyframes detail-loading-pulse { from { opacity: .4; } to { opacity: 1; } }
-@media(prefers-reduced-motion:reduce) { .detail-loading-line, .detail-loading-glyph { animation: none; } }
