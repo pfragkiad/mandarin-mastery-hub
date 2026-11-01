@@ -750,6 +750,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .search-field:has(.search-toggle + .search-toggle) input { padding-right: 136px; }
 @media(max-width:580px) { .search-field .search-toggle { right: 6px; } .search-field .search-toggle:has(+ .search-toggle) { right: 63px; } .search-field:has(.search-toggle) input { padding-right: 74px; } .search-field:has(.search-toggle + .search-toggle) input { padding-right: 130px; } }
 
+/* Card pinyin, hanzi and translation stay caret-selectable even though the card
+   body is a button (browsers make button text non-selectable by default). */
+.word-open { user-select: text; -webkit-user-select: text; }
+
 /* Header and content share one bounded workspace, including wide screens. */
 .workspace { --workspace-width: 1510px; --workspace-gutter: 42px; }
 .main-content { max-width: var(--workspace-width); padding-inline: var(--workspace-gutter); }
