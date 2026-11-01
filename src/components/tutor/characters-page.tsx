@@ -2,7 +2,7 @@ import { MeaningText } from './meaning-text';
 import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
-import { CatalogPagination } from './catalog-pagination';
+import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
@@ -221,6 +221,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     return index < 0 ? paged.pages : Math.floor(index / density.size) + 1;
   };
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
+  // Sticky strip label: on ranked tabs, name the frequency ranks visible on
+  // the current page against the kind's ranked total; otherwise the page number.
+  const rankedTotal = useMemo(() => kind === 'Strokes' || !usageOrder.loaded ? 0 : entries.reduce((n, e) => n + (usageRank(e, kind, preferences.includeTraditional) !== null ? 1 : 0), 0), [entries, kind, preferences.includeTraditional, catalogVersion]);
+  const stickyLabel = (() => {
+    if (rankedTotal > 0) {
+      const ranks = paged.entries.map(e => usageRank(e, kind, preferences.includeTraditional)).filter((r): r is number => r !== null);
+      if (ranks.length) return `Ranks ${Math.min(...ranks).toLocaleString('en-US')}–${Math.max(...ranks).toLocaleString('en-US')} of ${rankedTotal.toLocaleString('en-US')}`;
+    }
+    return `Page ${paged.current} / ${paged.pages}`;
+  })();
   const selected = entries.find(entry => entry.id === selectedId);
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
   const selectedBookmarkId = selected && selectedForm ? radicalVariantEntry(selected, selectedForm).id : selected?.id;
@@ -248,7 +258,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{strokeCounts.map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
         </>}</DraftFilterForm>
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} onRankChange={rank => { const target = rankToPage(rank); if (target) setPage(target); }} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} onRankChange={rank => { const target = rankToPage(rank); if (target) setPage(target); }} range={`${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
         </section></div>
       </TabsContent>)}

@@ -1,6 +1,6 @@
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useRef, useState } from 'react';
-import { CatalogPagination } from './catalog-pagination';
+import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
 import { Search, Plus, BookOpen, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -72,6 +72,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     <div className="catalog-tools-row"><LibraryPlayMenu category={status === 'Saved words' ? 'Saved' : collection !== 'All collections' ? collection : undefined} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/><CardRevealToggle/></div>
     <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`}>
       {filtered.length ? <>
+      <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
       <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
       <div className={`word-grid vocab-grid vocab-${kind}-grid`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} {...(onWordOpen ? { open: w.id === selectedWord?.id, onOpenChange: next => { if (next) void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)); else onWordOpen(null, paged.current); } } : {})}/>)}</div>
       <CatalogPagination range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
