@@ -21,5 +21,5 @@ export function useKeyboardPaging({ current, pages, onPageChange, disabled = fal
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [current, pages, onPageChange]);
+  }, [current, pages, onPageChange, disabled]);
 }
