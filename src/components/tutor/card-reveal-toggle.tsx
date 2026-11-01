@@ -31,7 +31,7 @@ export function CardRevealToggle() {
 
   // The button names the currently hidden face so the selection stays visible
   // without opening the menu; "Hide" is the neutral label when nothing is hidden.
-  const selected = OPTIONS.find(option => option.value === current) ?? OPTIONS[0];
+  const selected = OPTIONS.find(option => option.value === current) ?? OPTIONS[0]!;
   const TriggerIcon = current === 'all' ? EyeOff : selected.icon;
   const triggerLabel = current === 'all' ? 'Hide' : selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase());
   return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={selected.label}><TriggerIcon/>{triggerLabel}<ChevronDown/></Button></DropdownMenuTrigger>
