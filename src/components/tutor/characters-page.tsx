@@ -1,7 +1,7 @@
 import { MeaningText } from './meaning-text';
 import { DetailSheet, useNarrowLibrary } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
@@ -28,7 +28,7 @@ import { RadicalIdentityNote } from './radical-identity';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
-import { FilterForm, useDraftFilters } from './filter-form';
+import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
 import { RadicalForms } from './radical-forms';
@@ -107,6 +107,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
+const MemoCharacterDetails = memo(CharacterDetails);
+
 function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
@@ -162,6 +164,8 @@ function CatalogTile({ entry, kind, selected, onSelect }: { entry: LibraryEntry;
   </article>;
 }
 
+const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect);
+
 export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | undefined; variant?: string | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
@@ -182,11 +186,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
   const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
-  const { draft, patch, setDraft } = useDraftFilters({ q: query, strokes: strokeCount, usage, py: search.py });
-  const clearFilters = () => { setDraft({ q: '', strokes: '', usage: undefined, py: undefined }); set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined }); };
+  const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py };
+  const activeFilters = Boolean(query || strokeCount || usage || search.py || savedOnly);
+  const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined }); };
   const setPage = (p: number) => set({ page: p, id: '' });
   const setSelectedId = (id: string) => { const entry = savedGlyphEntry(id); set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); };
-  const entries = libraryEntries(kind);
+  const entries = useMemo(() => libraryEntries(kind), [kind, catalogVersion]);
+  const strokeCounts = useMemo(() => Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b), [entries]);
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
@@ -215,16 +221,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     <p className="library-source-note">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</p>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
-        <FilterForm count={filtered.length} onApply={() => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={clearFilters}>
+        <DraftFilterForm applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }}>{({ draft, patch }) => <>
           <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button></div>
-          {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b).map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
+          {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{strokeCounts.map(n => <option key={n} value={n}>{n} strokes</option>)}</select>}
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All frequencies'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All frequencies</SelectItem>{usageGroups(kind).map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
-        </FilterForm>
+        </>}</DraftFilterForm>
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <CatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
-        </section>{narrow ? null : selected ? <CharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
+        </section>{narrow ? null : selected ? <MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</div>
       </TabsContent>)}
-    </Tabs>{narrow && preferences.cardReveal === 'all' && selected && search.id && <DetailSheet open title={`Details for ${selected.hanzi}`} onClose={() => set({ id: '', variant: undefined })} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><CharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailSheet>}
+    </Tabs>{narrow && preferences.cardReveal === 'all' && selected && search.id && <DetailSheet open title={`Details for ${selected.hanzi}`} onClose={() => set({ id: '', variant: undefined })} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailSheet>}
   </div>;
 }

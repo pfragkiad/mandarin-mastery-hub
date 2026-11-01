@@ -51,4 +51,4 @@
 
 - Glyphs and Vocabulary share library-page, library-heading and library-source-note spacing styles; filter and action/display controls stay outside the results/detail grid, with pagination in the results column so reference panels start below shared controls.
 
-- Libraries and games share FilterForm/useDraftFilters: edits stay local until submission, URL changes restore drafts, and clearing applies immediately; library Play/Hide menus reuse shared controls to prevent divergent UX. Game options stay separate from record filters so editing filters cannot interrupt a round.
+- Libraries and games share DraftFilterForm/FilterForm: draft state lives inside the form so keystrokes never rerender the results owner; URL changes restore drafts and clearing applies immediately. Apply is conditional on changed drafts, X on active applied filters. Library Play/Hide menus reuse shared controls; game options stay separate so edits cannot interrupt a round.
