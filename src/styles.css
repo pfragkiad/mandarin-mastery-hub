@@ -970,6 +970,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 
 .detail-reference-label { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--border); }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-head > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
+/* Detail sheet: tighter vertical rhythm than the practice detail column — the
+   floating window reads as one compact card, so section gaps shrink. */
+.detail-sheet .catalog-detail-title { margin-bottom: 14px; }
+.detail-sheet .word-detail-actions { margin: 2px 0 4px; }
+.detail-sheet .catalog-facts { padding: 10px 0; }
+.detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: 16px; padding-top: 14px; }
+.detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
+.detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
 .library-per-page { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
