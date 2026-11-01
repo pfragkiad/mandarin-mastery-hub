@@ -18,6 +18,9 @@ import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
 import { SourceInfo } from './source-info';
+// Motivational small-caps line shared by Words and Phrases; the per-kind
+// provenance note stays in the (i) beside the title.
+const vocabularyMotto = 'WORDS BUILT FROM THE CHARACTERS YOU KNOW';
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | undefined; pos?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
