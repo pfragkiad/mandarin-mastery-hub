@@ -812,14 +812,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-detail .catalog-detail-title { margin-bottom: 0; }
 .catalog-detail .word-detail-actions { margin: 14px 0 20px; }
 .catalog-detail .catalog-facts { padding-top: 20px; }
-.detail-sheet { max-height: 100dvh; padding: 0; display: flex; flex-direction: column; border-radius: 0 0 8px 8px; gap: 0; }
+.detail-sheet { position: fixed; z-index: 50; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(620px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); border-radius: 8px; gap: 0; overflow: hidden; }
 .detail-sheet-bar { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 6px; border-bottom: 1px solid var(--border); }
 .detail-sheet-bar .detail-sheet-handle { position: absolute; top: 0; left: 50%; width: 72px; height: 24px; margin-left: -36px; padding: 0; border-radius: 6px; touch-action: none; cursor: grab; }
 .detail-sheet-handle > span { width: 40px; height: 4px; border-radius: 999px; background: var(--border); }
 .detail-sheet-handle:active { cursor: grabbing; }
 .detail-sheet.detail-sheet-dragging { transition: none; animation: none; }
 .detail-sheet-nav { display: flex; gap: 4px; }
-.detail-sheet-body { min-height: 0; overflow-y: auto; padding: 4px 20px 24px; overscroll-behavior: contain; }
+.detail-sheet-body { min-height: 0; overflow-y: auto; padding: 20px 24px 24px; overscroll-behavior: contain; }
 .detail-sheet .catalog-detail { border: 0; padding: 0; position: static; }
 
 @media(max-width:1500px) { .catalog-entry-grid, .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); } }
@@ -835,26 +835,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .reveal-hide-pinyin .word-character .pinyin { visibility: hidden; }
 .reveal-hide-meaning .catalog-detail, .reveal-hide-hanzi .catalog-detail, .reveal-hide-pinyin .catalog-detail { display: none; }
 
-/* Reveal hide modes: the sidebar is gone, so the grid takes the full width and gains a column. */
-.reveal-hide-meaning.catalog-workspace, .reveal-hide-hanzi.catalog-workspace, .reveal-hide-pinyin.catalog-workspace,
-.reveal-hide-meaning.vocabulary-workspace, .reveal-hide-hanzi.vocabulary-workspace, .reveal-hide-pinyin.vocabulary-workspace { grid-template-columns: 1fr; }
-.reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
-.reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
-.reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(4,minmax(0,1fr)); }
-@media(max-width:1200px) {
-  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
-  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
-  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); }
-}
-@media(max-width:1150px) {
-  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
-  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid,
-  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); }
-}
+/* All library modes use the entire container; card density follows available space. */
+.library-page .catalog-workspace, .library-page .vocabulary-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
+.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); gap: 20px; }
+.library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 20px; }
 @media(max-width:580px) {
-  .reveal-hide-meaning .vocab-word-grid:not(.list-view), .reveal-hide-hanzi .vocab-word-grid:not(.list-view), .reveal-hide-pinyin .vocab-word-grid:not(.list-view),
-  .reveal-hide-meaning .catalog-entry-grid, .reveal-hide-hanzi .catalog-entry-grid, .reveal-hide-pinyin .catalog-entry-grid,
-  .reveal-hide-meaning .vocab-phrase-grid:not(.list-view), .reveal-hide-hanzi .vocab-phrase-grid:not(.list-view), .reveal-hide-pinyin .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  .detail-sheet { width: calc(100% - 24px); max-height: calc(100dvh - 32px); }
+  .detail-sheet-body { padding: 16px 16px 20px; }
 }
 
 /* Libraries share top spacing and controls above the grid/reference panel. */

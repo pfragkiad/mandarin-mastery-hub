@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { Dialog, DialogPortal, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
 /** True below the width where the library's side detail column stacks under the cards. */
@@ -16,11 +17,13 @@ export function useNarrowLibrary(maxWidth = 850) {
   return narrow;
 }
 
-/** Top-aligned record details on small screens, with previous/next stepping. */
+/** Nonmodal centred reference: the card list remains clickable and scrollable. */
 export function DetailSheet({ open, title, onClose, onPrevious, onNext, children }: {
   open: boolean; title: string; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
 }) {
   const panel = useRef<HTMLDivElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const body = useRef<HTMLDivElement>(null);
   const drag = useRef<{ pointerId: number; startY: number; distance: number } | null>(null);
   const suppressClick = useRef(false);
   const resetDrag = () => {
@@ -29,10 +32,14 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
     panel.current?.classList.remove('detail-sheet-dragging');
   };
   useEffect(() => { resetDrag(); }, [open]);
-  return <Sheet open={open} onOpenChange={next => { if (!next) onClose(); }}>
-    <SheetContent ref={panel} side="top" className="detail-sheet [&>button.absolute]:hidden">
-      <SheetTitle className="sr-only">{title}</SheetTitle>
-      <SheetDescription className="sr-only">Record details</SheetDescription>
+  useEffect(() => { body.current?.scrollTo?.({ top: 0 }); }, [title]);
+  return <Dialog modal={false} open={open} onOpenChange={next => { if (!next) onClose(); }}>
+    <DialogPortal><DialogPrimitive.Content ref={panel} className="detail-sheet"
+      onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
+      onCloseAutoFocus={event => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
+      onInteractOutside={event => event.preventDefault()}>
+      <DialogTitle className="sr-only">{title}</DialogTitle>
+      <DialogDescription className="sr-only">Record details</DialogDescription>
       <div className="detail-sheet-bar">
         <Button variant="ghost" className="detail-sheet-handle" aria-label="Close details using handle" title="Close details"
           onPointerDown={event => {
@@ -48,7 +55,7 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
             if (Math.abs(current.distance) > 8) suppressClick.current = true;
             if (suppressClick.current) {
               panel.current?.classList.add('detail-sheet-dragging');
-              panel.current?.style.setProperty('transform', `translateY(${Math.max(0, current.distance)}px)`);
+              panel.current?.style.setProperty('transform', `translate(-50%, calc(-50% + ${Math.max(0, current.distance)}px))`);
             }
           }}
           onPointerUp={event => {
@@ -71,7 +78,7 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
         </div>
         <Button variant="ghost" size="icon" aria-label="Close details" onClick={onClose}><X/></Button>
       </div>
-      <div className="detail-sheet-body">{children}</div>
-    </SheetContent>
-  </Sheet>;
+      <div ref={body} className="detail-sheet-body">{children}</div>
+    </DialogPrimitive.Content></DialogPortal>
+  </Dialog>;
 }

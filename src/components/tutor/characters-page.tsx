@@ -1,5 +1,5 @@
 import { MeaningText } from './meaning-text';
-import { DetailSheet, useNarrowLibrary } from './detail-sheet';
+import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination } from './catalog-pagination';
@@ -216,11 +216,10 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     if (previous === null || previous === page || selectedId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, selectedId]);
-  const narrow = useNarrowLibrary();
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
-  const sheetIndex = narrow && search.id ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : search.id)) : -1;
-  const stepTo = (index: number) => { const target = filtered[index]; if (target) set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / LIBRARY_PAGE_SIZE) + 1 }, true); };
+  const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : selectedId)) : -1;
+  const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / LIBRARY_PAGE_SIZE) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><h1>Get to know the {kind.toLowerCase()}.</h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <p className="library-source-note">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</p>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
@@ -233,8 +232,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
         <div className="catalog-tools-row">{k !== 'Strokes' && <LibraryPlayMenu category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={{ kind: k, ...(savedOnly ? { saved: true } : {}) }}/>}<CardRevealToggle/></div>
         <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} range={`${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={setPage} />}<div className="catalog-entry-grid">{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * LIBRARY_PAGE_SIZE + 1}–${Math.min(paged.current * LIBRARY_PAGE_SIZE, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
-        </section>{narrow ? null : <DetailLoading loading={detailLoading}>{selected ? <MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={k} variant={search.variant} /> : <section className="catalog-detail"><p className="library-note">No record selected.</p></section>}</DetailLoading>}</div>
+        </section></div>
       </TabsContent>)}
-    </Tabs>{narrow && preferences.cardReveal === 'all' && selected && search.id && <DetailSheet open title={`Details for ${selected.hanzi}`} onClose={() => set({ id: '', variant: undefined })} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailSheet>}
+    </Tabs>{preferences.cardReveal === 'all' && selected && <DetailSheet open title={`Details for ${selected.hanzi} ${search.variant ?? ''}`} onClose={() => set({ id: '', variant: undefined, page: paged.current }, true)} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><DetailLoading loading={detailLoading}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailLoading></DetailSheet>}
   </div>;
 }
