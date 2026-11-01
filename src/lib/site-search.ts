@@ -29,9 +29,10 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
     .map(word => ({ word, rank: normalize(word.hanzi) === q ? 0 : normalize(word.meaning).split(/[^a-z]+/).includes(q) ? 1 : normalize(`${word.hanzi} ${word.pinyin} ${word.meaning}`).includes(q) ? 2 : 3 }))
     .sort((a, b) => a.rank - b.rank)
     .map(({ word }) => ({ kind: 'Word' as const, word }));
-  const refMatch = pinyinMode === 'any'
-    ? (pinyin: string) => normalize(pinyin).includes(q) || pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, false))
-    : (pinyin: string) => pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
+  // Mirror the library filters: pinyin mode matches readings loosely, exact
+  // mode only whole readings — no extra raw-text substring fallback.
+  const refMatch = (pinyin: string) =>
+    pinyinMode === 'any' ? normalize(pinyin).includes(q) : pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q) || refMatch(pinyin)))
