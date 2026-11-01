@@ -124,7 +124,13 @@ describe('character practice sections by mode', () => {
   it('labels radical practice with the Radical pill instead of Character', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="乙" mode="watch"/>);
-    expect(document.querySelector('.practice-kind')?.textContent).toBe('Radical');
+    expect(document.querySelector('.practice-kind')?.textContent).toBe('Radical #5');
+  });
+
+  it('offers a Back action that returns to the card selection', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    expect(screen.getByRole('button', { name: 'Back' })).toBeInTheDocument();
   });
 
   it('shows the Kangxi number in parentheses after the hanzi in the heading', () => {
