@@ -3,6 +3,8 @@ import { words, type Word } from '@/lib/mandarin';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
 import { defaultPreferences, defaultTheme, restoredTheme, includeScript, type Preferences } from '@/lib/learning-preferences';
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
+// Shared session records/bookmarks and persisted display preferences live here;
+// page selections and applied filters belong to route search, not this context.
 const WorkspaceContext = createContext<Workspace | null>(null);
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
   // Imported records must stay live when corrected; only session additions belong in state.
@@ -11,6 +13,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [saved, setSaved] = useState<string[]>([]);
   const [preferences, setPreferences] = useState<Preferences>(defaultPreferences);
   const [loaded, setLoaded] = useState(false);
+  // Restore browser preferences after hydration. Gate writes until restoration
+  // finishes so first-render defaults cannot overwrite a saved preference.
   const [theme, setTheme] = useState<'light' | 'dark'>(defaultTheme);
   const [catalogVersion, setCatalogVersion] = useState(0);
   useEffect(() => { loadCatalog().then(() => setCatalogVersion(catalog.version)).catch(() => { /* catalogue unavailable; screens show loading/empty states */ }); }, []);

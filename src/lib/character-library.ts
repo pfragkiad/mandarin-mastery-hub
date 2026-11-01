@@ -22,6 +22,8 @@ const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'],
 const cache = new Map<LibraryKind, { version: number; entries: LibraryEntry[] }>();
 export const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d)';
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
+  // Stable cached entries support memoized tiles; a catalogue version change
+  // invalidates them after lazy hydration installs the current source data.
   const hit = cache.get(kind);
   if (hit && hit.version === catalog.version) return hit.entries;
   const source = kind === 'Strokes' ? catalog.strokes : kind === 'Radicals' ? catalog.radicals : kind === 'Components' ? catalog.components : catalog.characters;
@@ -65,6 +67,8 @@ export function savedGlyphDestination(entry: LibraryEntry) {
   return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
 }
 export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false) {
+  // Only Saved browsing expands family-qualified variant bookmarks. The normal
+  // radical catalogue remains one card per family instead of duplicating forms.
   const saved = savedIds ? new Set(savedIds) : undefined;
   const kind = entries[0] ? kindFromId(entries[0].id) : undefined;
   const variants = kind === 'Radicals' && savedIds ? savedIds.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && entries.some(heading => heading.id === entry.radicalHeadingId) ? [entry] : []; }) : [];
@@ -73,6 +77,8 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
 }
 export const LIBRARY_PAGE_SIZE = 48;
 export function libraryPage(entries: LibraryEntry[], page: number, size = LIBRARY_PAGE_SIZE, selectedId = '') {
+  // An explicit linked record wins over a stale page number, keeping its tile
+  // visible on direct links and history restoration without auto-selecting rows.
   const pages = Math.max(1, Math.ceil(entries.length / size));
   const selectedIndex = entries.findIndex(entry => entry.id === selectedId);
   const target = selectedIndex >= 0 ? Math.floor(selectedIndex / size) + 1 : page;

@@ -30,8 +30,8 @@ for line in text.splitlines():
         'codePoint': int(point[1], 16) if point else None,
         'suggestedSubstitution': replacement if replacement not in ('', '？', '?') else None,
     }
+# Pin the two source mappings that prompted this importer.
 assert components['48']['codePoint'] == 0xF5FC
- # (The assertions below pin the two source mappings that prompted this importer.)
 assert components['100']['codePoint'] == 0xF3BE
 output = {
     'source': 'BabelStone IDS.TXT', 'sourceUrl': 'https://babelstone.co.uk/CJK/IDS.TXT',

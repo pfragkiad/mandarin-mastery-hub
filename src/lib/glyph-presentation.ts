@@ -51,6 +51,8 @@ export function variantMeaning(glyphs: string[]): string {
 
 /** Preserve exact record IDs and library membership; separate lexical readings from names. */
 export function glyphPresentation(glyph: string, kind: string, pinyin = '', meaning = '') {
+  // This is a display adapter, not an import correction: classification, names
+  // and speech targets change presentation without rewriting source records.
   const codePoint = glyph.codePointAt(0);
   const single = Array.from(glyph).length === 1;
   const supplement = single && codePoint !== undefined && codePoint >= 0x2e80 && codePoint <= 0x2eff;

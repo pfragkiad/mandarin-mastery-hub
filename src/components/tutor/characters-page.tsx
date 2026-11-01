@@ -187,6 +187,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const savedOnly = search.status === 'saved';
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
+  // No first-row fallback: ordinary visits and tab changes must not open a modal.
+  // Explicit record IDs take precedence over glyph-only links to preserve kind.
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
   const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
@@ -203,6 +205,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
   const browsed = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly);
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
+  // Preserve explicitly selected records even when browsing filters exclude them;
+  // density-aware paging then reveals their exact card, including saved variants.
   const density = useLibraryDensity(`${kind}:${filtered.length}`, () => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
@@ -221,6 +225,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : selectedId)) : -1;
+  // Modal arrows traverse the full filtered order, not just the visible page.
+  // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><h1>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{plannedCounts[k].toLocaleString('en-US')}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
