@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render } from '@testing-library/react';
-import { useEffect, useState } from 'react';
+import { render, cleanup } from '@testing-library/react';
+import { afterEach } from 'vitest';
 import { useKeyboardPaging } from './keyboard-paging';
 
 function press(key: string, target?: HTMLElement) {
@@ -10,18 +10,18 @@ function press(key: string, target?: HTMLElement) {
 
 /** Harness mounts the hook on window so KeyboardEvents can be dispatched from any target. */
 function Harness({ pages, disabled = false, onPageChange }: { pages: number; disabled?: boolean; onPageChange: (page: number) => void }) {
-  const [page, setPage] = useState(2);
-  useKeyboardPaging({ current: page, pages, disabled, onPageChange });
-  useEffect(() => { onPageChange(page); }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
+  useKeyboardPaging({ current: 2, pages, disabled, onPageChange });
   return <input data-testid="field" aria-label="search" />;
 }
 
+afterEach(cleanup);
+
 describe('useKeyboardPaging', () => {
-  it('moves to the next page on PageDown', () => {
+  it('moves ten pages on PageDown', () => {
     const onPageChange = vi.fn();
-    render(<Harness pages={5} onPageChange={onPageChange} />);
+    render(<Harness pages={50} onPageChange={onPageChange} />);
     press('PageDown');
-    expect(onPageChange).toHaveBeenLastCalledWith(3);
+    expect(onPageChange).toHaveBeenLastCalledWith(12);
   });
 
   it('moves back on PageUp and clamps at the first page', () => {
@@ -46,14 +46,14 @@ describe('useKeyboardPaging', () => {
     const onPageChange = vi.fn();
     const { getByTestId } = render(<Harness pages={5} onPageChange={onPageChange} />);
     press('PageDown', getByTestId('field'));
-    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
+    expect(onPageChange).not.toHaveBeenCalled();
   });
 
   it('stays idle on a single page', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={1} onPageChange={onPageChange} />);
     press('PageDown');
-    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
+    expect(onPageChange).not.toHaveBeenCalled();
   });
 
   it('ignores PageUp/PageDown while a record sheet is open', () => {
@@ -61,6 +61,36 @@ describe('useKeyboardPaging', () => {
     render(<Harness pages={5} disabled onPageChange={onPageChange} />);
     press('PageDown');
     press('PageUp');
-    expect(onPageChange).toHaveBeenCalledTimes(1); // only the mount report, no key-driven change
+    press('ArrowRight');
+    press('Home');
+    press('End');
+    expect(onPageChange).not.toHaveBeenCalled();
+  });
+
+  it.each([['ArrowLeft', 1], ['ArrowRight', 3], ['Home', 1], ['End', 50]])('maps %s to page %i', (key, page) => {
+    const onPageChange = vi.fn();
+    render(<Harness pages={50} onPageChange={onPageChange}/>);
+    press(key);
+    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(page);
+  });
+
+  it('moves back exactly ten pages away from the boundary', () => {
+    const onPageChange = vi.fn();
+    function Middle() { useKeyboardPaging({ current: 25, pages: 50, onPageChange }); return null; }
+    render(<Middle/>);
+    press('PageUp');
+    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(15);
+  });
+
+  it('leaves modified shortcuts and widget keys untouched', () => {
+    const onPageChange = vi.fn();
+    render(<Harness pages={50} onPageChange={onPageChange}/>);
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', ctrlKey: true }));
+    const tab = document.createElement('div');
+    tab.setAttribute('role', 'tab');
+    document.body.append(tab);
+    press('ArrowRight', tab);
+    tab.remove();
+    expect(onPageChange).not.toHaveBeenCalled();
   });
 });

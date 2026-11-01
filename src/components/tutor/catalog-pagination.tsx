@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import type { LibraryRows } from '@/lib/learning-preferences';
+import { NavigationShortcuts } from './navigation-shortcuts';
 
 /**
  * Builds the visible page-number sequence for the pagination bar:
@@ -50,6 +51,7 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
           : <Button key={p} variant="ghost" size="sm" aria-label={`Page ${p}`} aria-current={p === current ? 'page' : undefined} className={p === current ? 'is-current' : undefined} onClick={() => onPageChange(p)}>{p}</Button>)}
       </div>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
+      <NavigationShortcuts context="pages"/>
       <label className="catalog-page-jump">Go to
         <Input value={jump} inputMode="numeric" aria-label="Go to page" placeholder="…"
           onChange={e => setJump(e.target.value.replace(/[^0-9]/g, ''))}

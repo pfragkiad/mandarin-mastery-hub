@@ -24,7 +24,7 @@ describe('Vocabulary keyboard paging', () => {
     const onPageChange = vi.fn();
     render(<VocabularyPage tab={tab} page={2} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
     fireEvent.keyDown(window, { key: 'PageDown' });
-    expect(onPageChange).toHaveBeenLastCalledWith(3);
+    expect(onPageChange).toHaveBeenLastCalledWith(12);
     fireEvent.keyDown(window, { key: 'PageUp' });
     expect(onPageChange).toHaveBeenLastCalledWith(1);
   });

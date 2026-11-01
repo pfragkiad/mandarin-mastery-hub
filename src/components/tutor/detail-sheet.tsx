@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { NavigationShortcuts } from './navigation-shortcuts';
 
 /** True below the width where the library's side detail column stacks under the cards. */
 export function useNarrowLibrary(maxWidth = 850) {
@@ -47,6 +48,7 @@ export function DetailSheet({ open, title, onClose, onPrevious, onNext, children
         <div className="detail-sheet-nav">
           <Button variant="ghost" size="icon" aria-label="Previous record" disabled={!onPrevious} onClick={onPrevious}><ChevronLeft/></Button>
           <Button variant="ghost" size="icon" aria-label="Next record" disabled={!onNext} onClick={onNext}><ChevronRight/></Button>
+          <NavigationShortcuts context="records"/>
         </div>
         <Button variant="ghost" size="icon" aria-label="Close details" onClick={onClose}><X/></Button>
       </div>
