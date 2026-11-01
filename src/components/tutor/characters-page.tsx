@@ -41,7 +41,7 @@ const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms 
 function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
   const group = usageGroupFor(kind, rank);
   const tier = rank === null ? 'none' : (group && usageGroups(kind).indexOf(group) < 2 ? 'top' : 'mid');
-  return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? (compact ? 'Unranked' : 'No frequency data') : compact ? `#${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
+  return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? (compact ? 'Unranked' : 'No frequency data') : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
 }
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
