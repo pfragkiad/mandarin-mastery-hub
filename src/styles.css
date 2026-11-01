@@ -295,9 +295,21 @@
 
 @media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
-/* Source line sits the same distance under the DECOMPOSITION heading as the
-   sentence note sits under IN A SENTENCE (both 2px). */
-.decomposition-section .library-note { margin-top: 2px; }
+/* One shared style for the first content line directly under a section heading:
+   the sentence/usage note, the decomposition source line, and the G-source match
+   note all read identically (size, color, spacing, weight). */
+.record-gap > p,
+.decomposition-section .library-note,
+.enrichment-expression > small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.6;
+  margin: 2px 0 0;
+  max-width: 46ch;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
 .decomposition-tree { list-style: none; margin: 0 0 4px; padding: 0; }
 .decomposition-tree ul { list-style: none; margin: 2px 0 6px 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
