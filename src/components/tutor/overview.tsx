@@ -15,10 +15,12 @@ const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['Characters', 'Components', '
 export function OverviewPage() {
   const { items, preferences } = useWorkspace();
   const [query, setQuery] = useState('');
-  const hits = searchAll(items, query, preferences.includeTraditional);
+  // Pinyin/Exact toggles inside the hero search box, mirroring the library filters.
+  const [py, setPy] = useState<'any' | 'pinyin' | 'exact'>('any');
+  const hits = searchAll(items, query, preferences.includeTraditional, 20, py);
   const daily = useDailyCharacter().entry?.hanzi;
   return <div className="page-enter overview-page">
-    <DailyCharacterHero><OverviewSearch query={query} setQuery={setQuery} hits={hits} includeTraditional={preferences.includeTraditional}/></DailyCharacterHero>
+    <DailyCharacterHero><OverviewSearch query={query} setQuery={setQuery} py={py} setPy={setPy} hits={hits} includeTraditional={preferences.includeTraditional}/></DailyCharacterHero>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
     </section>
