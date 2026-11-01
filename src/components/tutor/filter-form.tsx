@@ -65,11 +65,11 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   const patch = (next: Partial<T>) => {
     const merged = { ...controls.draft, ...next };
     controls.setDraft(merged);
-    if (autoApply && !pending) submit(merged);
+    if (autoApply) submit(merged);
   };
   const setDraft = (next: T) => {
     controls.setDraft(next);
-    if (autoApply && !pending) submit(next);
+    if (autoApply) submit(next);
   };
   // Clear applies immediately and returns the cleared values to the local draft;
   // Apply alone submits edited values to the owning page's URL/filter state.
