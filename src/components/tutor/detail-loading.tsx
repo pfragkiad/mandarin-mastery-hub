@@ -35,10 +35,11 @@ export function useDetailLoading() {
   }, []);
 }
 
+/**
+ * Keeps the current detail visible while the next one loads; the sidebar
+ * content switches as a whole once the new record commits — no placeholder.
+ */
 export function DetailLoading({ loading, children }: { loading: ReturnType<typeof useDetailLoading>; children: ReactNode }) {
   const busy = useSyncExternalStore(loading.subscribe, loading.snapshot, () => false);
-  return <div className={`detail-loading-boundary${busy ? ' is-loading' : ''}`} aria-busy={busy}>
-    {children}
-    {busy && <section className="catalog-detail detail-loading-placeholder" role="status" aria-label="Loading details"><span className="sr-only">Loading details…</span><div className="detail-loading-line short"/><div className="detail-loading-glyph"/><div className="detail-loading-line"/><div className="detail-loading-line short"/><div className="detail-loading-divider"/><div className="detail-loading-line"/><div className="detail-loading-line"/><div className="detail-loading-line short"/></section>}
-  </div>;
+  return <div className="detail-loading-boundary" aria-busy={busy}>{children}</div>;
 }
