@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Compact shared game setup rows and ready states, simplify Start/counts and align All/Saved; 39 tests passed, both live rounds preserved after filtering and deck-size changes, narrow-screen layouts checked without overflow or runtime errors, preview build clean.
+
 - [done] Correct exact traditional script in Practice, purple decomposition parts and Traditional pills in both search boxes; 48 tests passed, lion search-to-Practice verified live, no runtime errors and preview clean.
 
 - [done] Shared page keyboard shortcuts and contextual keyboard help beside page/record navigation; 19 tests passed, both libraries and independent modal navigation verified live, preview build clean.

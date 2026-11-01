@@ -992,7 +992,24 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-tools-row { gap: 8px; margin-bottom: 12px; }
 .catalog-tools-row > button { height: 32px; font-size: 11px; }
 .catalog-tools-row > button.selected { background: var(--secondary); color: var(--primary); }
-.game-options { margin: 0 0 20px; }
+/* Game setup uses the same 36px controls as library filters, with Start
+   adjacent to round options instead of pushed across the whole workspace. */
+.game-setup { padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid var(--border); }
+.game-setup .shared-filter-form { margin: 0 0 12px; }
+.game-setup .game-options { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; }
+.game-setup .game-options .filter-select { height: 36px; flex: 0 1 auto; }
+.game-setup .vocabulary-saved-filter button { height: 36px; }
+.game-setup .flash-start { margin-left: 4px; }
+.game-setup .flash-start button { height: 36px; font-size: 12px; white-space: nowrap; }
+.game-setup .flash-options { gap: 10px 16px; padding-inline: 6px; }
+.game-setup .flash-option { min-height: 36px; font-size: 11px; }
+.game-ready { padding: 18px 0 30px; color: var(--muted-foreground); }
+.game-ready h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; line-height: 1.5; }
+@media(max-width:580px) {
+  .game-setup .game-options .filter-select { flex: 1 1 130px; max-width: none; min-width: 0; }
+  .game-setup .flash-options { flex-basis: 100%; padding-inline: 0; }
+  .game-setup .flash-start { margin-left: 0; }
+}
 @media(max-width:580px) {
   .shared-filter-form .search-field { flex-basis: 100%; max-width: none; }
   .shared-filter-form .filter-select { flex: 1 1 130px; max-width: none; min-width: 0; }
