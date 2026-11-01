@@ -1,5 +1,6 @@
 import { vocabularyKind, type Word } from './mandarin';
 import { filterLibrary, LIBRARY_PAGE_SIZE, type LibraryEntry, type LibraryKind } from './character-library';
+import { usageRank } from './usage-frequency';
 
 /** Pick a real vocabulary record of the given kind, excluding the previous pick when possible. Traditional forms are never chosen at random. */
 export function randomOverviewWord(items: Word[], previousId?: string, random = Math.random, kind: 'word' | 'phrase' = 'word'): Word | undefined {
