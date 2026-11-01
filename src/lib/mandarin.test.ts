@@ -3,6 +3,11 @@ import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions 
 describe('Vocabulary filtering', () => {
  it('loads all 745 imported vocabulary entries', () => { expect(words).toHaveLength(745); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
+ it('matches tone-number pinyin even without the pinyin toggle', () => {
+   expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');
+   expect(filterWords(words, 'ni3').map(w => w.hanzi)).toContain('你');
+   expect(filterWords(words, 'shi2').map(w => w.hanzi)).not.toContain('是');
+ });
  it('can restrict the search to pinyin only', () => {
    expect(filterWords(words, 'shui', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).toContain('水');
    expect(filterWords(words, 'water', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).not.toContain('水');

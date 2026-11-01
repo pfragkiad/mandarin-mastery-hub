@@ -28,6 +28,12 @@ describe('pinyinReadingMatches', () => {
     expect(pinyinReadingMatches('qiǎn', 'qian3', false)).toBe(true);
     expect(pinyinReadingMatches('qiǎn', 'qian2', false)).toBe(false);
   });
+  it('accepts tone-marked queries and keeps the tone', () => {
+    expect(pinyinReadingMatches('shī', 'shī', true)).toBe(true);
+    expect(pinyinReadingMatches('shí', 'shī', true)).toBe(false);
+    expect(pinyinReadingMatches('shì', 'shī', false)).toBe(false);
+    expect(pinyinReadingMatches('nǐ hǎo', 'nǐhǎo', true)).toBe(true);
+  });
   it('accepts v for ü and ignores spaces', () => {
     expect(pinyinReadingMatches('nǚ', 'nv3', true)).toBe(true);
     expect(pinyinReadingMatches('Zhōng guó', 'zhong1guo2', true)).toBe(true);
