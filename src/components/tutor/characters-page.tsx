@@ -15,7 +15,7 @@ import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, u
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, plannedCounts, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
-import { useRecordScroll } from '@/lib/selection-scroll';
+import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { glyphUsage } from '@/lib/glyph-usage';
 import { radicalCardAvailability } from '@/lib/radical-card-availability';

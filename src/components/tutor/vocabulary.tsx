@@ -11,7 +11,7 @@ import { collections, filterWords, partOfSpeechOptions, vocabularyKind } from '@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
-import { useRecordScroll } from '@/lib/selection-scroll';
+import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
