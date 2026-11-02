@@ -42,3 +42,19 @@ describe('Explicit filter edits', () => {
     expect(ownerRender).not.toHaveBeenCalled();
   });
 });
+describe('Auto-applied filter edits (games)', () => {
+  it('submits each draft edit immediately and never shows the Apply button', async () => {
+    const apply = vi.fn();
+    render(<DraftFilterForm applied={{ q: '' }} active={false} count={103} autoApply onApply={apply} onClear={() => ({ q: '' })}>{({ draft, patch }) => <input aria-label="Query" value={draft.q} onChange={event => patch({ q: event.target.value })}/>}</DraftFilterForm>);
+    fireEvent.change(screen.getByRole('textbox'), { target: { value: 'comp' } });
+    await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ q: 'comp' }));
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    fireEvent.change(screen.getByRole('textbox'), { target: { value: '' } });
+    await waitFor(() => expect(apply).toHaveBeenCalledTimes(2));
+    expect(apply).toHaveBeenLastCalledWith({ q: '' });
+  });
+  it('shows Clear only while a filter is active', async () => {
+    render(<DraftFilterForm applied={{ q: '' }} active={false} count={103} autoApply onApply={vi.fn()} onClear={() => ({ q: '' })}>{({ draft, patch }) => <input aria-label="Query" value={draft.q} onChange={event => patch({ q: event.target.value })}/>}</DraftFilterForm>);
+    expect(screen.queryByRole('button', { name: 'Clear filters' })).not.toBeInTheDocument();
+  });
+});
