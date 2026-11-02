@@ -1,4 +1,4 @@
-import { useEffect, useState, useTransition, type ReactNode } from 'react';
+import { useEffect, useState, useTransition, type ReactNode, type SetStateAction } from 'react';
 import { Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -67,9 +67,10 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
     controls.setDraft(merged);
     if (autoApply) submit(merged);
   };
-  const setDraft = (next: T) => {
+  const setDraft = (next: SetStateAction<T>) => {
     controls.setDraft(next);
-    if (autoApply) submit(next);
+    // Updater functions (if any) resolve against the current draft before auto-submitting.
+    if (autoApply) submit(typeof next === 'function' ? (next as (previous: T) => T)(controls.draft) : next);
   };
   // Clear applies immediately and returns the cleared values to the local draft;
   // Apply alone submits edited values to the owning page's URL/filter state.
