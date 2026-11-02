@@ -15,7 +15,7 @@ import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, u
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, plannedCounts, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
-import { useRecordScroll } from '@/lib/selection-scroll';
+import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { glyphUsage } from '@/lib/glyph-usage';
 import { radicalCardAvailability } from '@/lib/radical-card-availability';
@@ -271,6 +271,6 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           <CatalogPagination range={filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0 records'} current={paged.current} pages={paged.pages} onPageChange={setPage} />
         </section></div>
       </TabsContent>)}
-    </Tabs>{selected && <DetailSheet open title={`Details for ${selected.hanzi} ${search.variant ?? ''}`} onClose={() => set({ id: '', variant: undefined, page: paged.current }, true)} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><DetailLoading loading={detailLoading}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailLoading></DetailSheet>}
+    </Tabs>{selected && <DetailSheet open title={`Details for ${selected.hanzi} ${search.variant ?? ''}`} onClose={() => { set({ id: '', variant: undefined, page: paged.current }, true); focusRecordCard(selectedBookmarkId ?? selected.id); }} onPrevious={sheetIndex > 0 ? () => stepTo(sheetIndex - 1) : undefined} onNext={sheetIndex >= 0 && sheetIndex < filtered.length - 1 ? () => stepTo(sheetIndex + 1) : undefined}><DetailLoading loading={detailLoading}><MemoCharacterDetails key={`${selected.id}:${search.variant ?? ''}`} entry={selected} kind={kind} variant={search.variant} /></DetailLoading></DetailSheet>}
   </div>;
 }
