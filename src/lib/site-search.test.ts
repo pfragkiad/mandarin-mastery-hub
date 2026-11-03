@@ -50,4 +50,11 @@ describe('Header search across the library', () => {
     expect(exact.some(hit => hit.kind !== 'Word' && hit.hanzi === '是')).toBe(true);
     expect(exact.some(hit => hit.kind !== 'Word' && hit.hanzi === '十')).toBe(false);
   });
+  it.each(['pinyin', 'exact'] as const)('excludes translation-only reference matches in %s mode', mode => {
+    const hits = searchAll(words, 'qu', false, 10000, mode);
+    expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '取')).toBe(true);
+    // 后 (queen) and 咨 (inquire) contain qu only in their English meanings.
+    expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '后')).toBe(false);
+    expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '咨')).toBe(false);
+  });
 });
