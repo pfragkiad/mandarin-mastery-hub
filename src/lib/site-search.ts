@@ -13,7 +13,7 @@ export type SearchHit =
 
 // Pinyin search modes shared with the library filters: 'pinyin' restricts the
 // query to readings, 'exact' additionally requires the whole reading to match
-// (tone numbers like `shi4` count as first-tone shi via pinyinReadingMatches).
+// (tone numbers like `shi4` count as fourth-tone shi via pinyinReadingMatches).
 export type GlobalPinyinMode = 'any' | 'pinyin' | 'exact';
 
 export function searchAll(items: Word[], query: string, includeTraditional = false, limit = 20, pinyinMode: GlobalPinyinMode = 'any'): SearchHit[] {
@@ -37,7 +37,9 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
       : pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
-      .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q) || refMatch(pinyin)))
+      // Free-text fields belong only to unrestricted search; Pinyin/Exact must
+      // not admit translation or source-note matches for reference entries.
+      .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (refMatch(pinyin) || (pinyinMode === 'any' && normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q))))
       .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
   return [...refHits, ...wordHits].slice(0, limit);
