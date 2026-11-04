@@ -400,7 +400,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const noteDecompositionReturn = (event: ReactMouseEvent) => {
     const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
     if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
-    detailTrail.replace({ label: character, href: window.location.href });
+    detailTrail.replace({ label: `Practice (${character})`, href: window.location.href });
   };
   useWorkspace().catalogVersion;
   const requestedForm = family ? radicalForm(family, variant) : undefined;

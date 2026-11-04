@@ -60,7 +60,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
       <DialogDescription className="sr-only">Record details</DialogDescription>
       <div className="detail-sheet-bar">
         <div className="detail-sheet-start">
-          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => window.history.back()}><ArrowLeft/><span lang="zh">{back.label}</span></Button>}
+          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => window.history.back()}><ArrowLeft/><span>{back.label}</span></Button>}
         </div>
         {inList && <div className="detail-sheet-nav" role="group" aria-label="Neighbouring cards in this list">
           <Button variant="ghost" size="icon" aria-label="Previous card in this list" title="Previous card in this list" disabled={!previous} onClick={previous}><ChevronLeft/></Button>
