@@ -60,11 +60,11 @@ describe('Modal detail sheet', () => {
 
   it('offers Back to the practice page it was opened from, and clears it on neighbour steps', () => {
     // Practice records its own location in the trail before navigating here.
-    detailTrail.replace({ label: '好', href: '/strokes?character=好&mode=watch' });
+    detailTrail.replace({ label: 'Practice (好)', href: '/strokes?character=好&mode=watch' });
     const backSpy = vi.spyOn(window.history, 'back').mockImplementation(() => {});
     try {
       render(<DetailSheet open title="Character details" label="女" position={2} total={10} onClose={vi.fn()} onNext={vi.fn()}><p>Record</p></DetailSheet>);
-      fireEvent.click(screen.getByRole('button', { name: 'Back to 好' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Back to Practice (好)' }));
       expect(backSpy).toHaveBeenCalledTimes(1);
       // Stepping to a neighbour card is list navigation, not history: it resets Back.
       fireEvent.click(screen.getByRole('button', { name: 'Next card in this list' }));
