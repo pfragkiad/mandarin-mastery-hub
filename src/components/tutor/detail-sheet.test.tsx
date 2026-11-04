@@ -25,7 +25,7 @@ describe('Modal detail sheet', () => {
     expect(screen.getByRole('button', { name: 'Next card in this list' })).toBeDisabled();
     expect(screen.queryByRole('button', { name: 'Background card' })).not.toBeInTheDocument();
     expect(onClose).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', { name: /^Close details$/ }));
+    fireEvent.click(screen.getByRole('button', { name: /^Close and show card in list$/ }));
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
