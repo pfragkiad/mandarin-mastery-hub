@@ -1,10 +1,11 @@
 import { practiceOrigin, focusEntryCard } from '@/lib/practice-return';
+import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
 import { AnimationSpeedControl } from './animation-speed-control';
 import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate, useRouter } from '@tanstack/react-router';
