@@ -63,7 +63,7 @@ describe('Modal detail sheet', () => {
     detailTrail.replace({ label: '好', href: '/strokes?character=好&mode=watch' });
     const backSpy = vi.spyOn(window.history, 'back').mockImplementation(() => {});
     try {
-      render(<DetailSheet open title="Character details" label="女" position={2} total={10} onClose={vi.fn()}><p>Record</p></DetailSheet>);
+      render(<DetailSheet open title="Character details" label="女" position={2} total={10} onClose={vi.fn()} onNext={vi.fn()}><p>Record</p></DetailSheet>);
       fireEvent.click(screen.getByRole('button', { name: 'Back to 好' }));
       expect(backSpy).toHaveBeenCalledTimes(1);
       // Stepping to a neighbour card is list navigation, not history: it resets Back.
