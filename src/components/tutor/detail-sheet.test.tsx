@@ -7,7 +7,7 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 function setup() {
   const onClose = vi.fn();
   render(<DetailSheet open title="Character details" onClose={onClose}><p>Record</p></DetailSheet>);
-  return { onClose, close: screen.getByRole('button', { name: 'Close details' }) };
+  return { onClose, close: screen.getByRole('button', { name: 'Close and show card in list' }) };
 }
 
 describe('Modal detail sheet', () => {
@@ -16,13 +16,13 @@ describe('Modal detail sheet', () => {
     const onNext = vi.fn();
     const onClose = vi.fn();
     const { rerender } = render(<><button>Background card</button><DetailSheet open title="First record" onClose={onClose} onNext={onNext}><p>First</p></DetailSheet></>);
-    expect(screen.getByRole('button', { name: 'Previous record' })).toBeDisabled();
-    fireEvent.click(screen.getByRole('button', { name: 'Next record' }));
+    expect(screen.getByRole('button', { name: 'Previous card in this list' })).toBeDisabled();
+    fireEvent.click(screen.getByRole('button', { name: 'Next card in this list' }));
     expect(onNext).toHaveBeenCalledTimes(1);
     rerender(<><button>Background card</button><DetailSheet open title="Second record" onClose={onClose} onPrevious={onPrevious}><p>Second</p></DetailSheet></>);
-    fireEvent.click(screen.getByRole('button', { name: 'Previous record' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Previous card in this list' }));
     expect(onPrevious).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('button', { name: 'Next record' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Next card in this list' })).toBeDisabled();
     expect(screen.queryByRole('button', { name: 'Background card' })).not.toBeInTheDocument();
     expect(onClose).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole('button', { name: /^Close details$/ }));
@@ -42,7 +42,7 @@ describe('Modal detail sheet', () => {
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowLeft' });
     expect(onPrevious).toHaveBeenCalledTimes(1);
     expect(onNext).not.toHaveBeenCalled();
-    fireEvent.keyDown(screen.getByRole('button', { name: 'Close details' }), { key: 'ArrowRight' });
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Close and show card in list' }), { key: 'ArrowRight' });
     expect(onNext).toHaveBeenCalledTimes(1);
   });
 
