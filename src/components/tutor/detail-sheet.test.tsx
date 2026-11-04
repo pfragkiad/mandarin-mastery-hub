@@ -1,6 +1,7 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DetailSheet } from './detail-sheet';
+import { detailTrail } from '@/lib/detail-trail';
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
@@ -55,5 +56,22 @@ describe('Modal detail sheet', () => {
     expect(onNext).not.toHaveBeenCalled();
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'ArrowRight' });
     expect(onNext).toHaveBeenCalledTimes(1);
+  });
+
+  it('offers Back to the practice page it was opened from, and clears it on neighbour steps', () => {
+    // Practice records its own location in the trail before navigating here.
+    detailTrail.replace({ label: '好', href: '/strokes?character=好&mode=watch' });
+    const backSpy = vi.spyOn(window.history, 'back').mockImplementation(() => {});
+    try {
+      render(<DetailSheet open title="Character details" label="女" position={2} total={10} onClose={vi.fn()} onNext={vi.fn()}><p>Record</p></DetailSheet>);
+      fireEvent.click(screen.getByRole('button', { name: 'Back to 好' }));
+      expect(backSpy).toHaveBeenCalledTimes(1);
+      // Stepping to a neighbour card is list navigation, not history: it resets Back.
+      fireEvent.click(screen.getByRole('button', { name: 'Next card in this list' }));
+      expect(screen.queryByRole('button', { name: /^Back to / })).not.toBeInTheDocument();
+    } finally {
+      detailTrail.clear();
+      backSpy.mockRestore();
+    }
   });
 });
