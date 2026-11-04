@@ -15,11 +15,11 @@ describe('Modal detail sheet', () => {
     const onPrevious = vi.fn();
     const onNext = vi.fn();
     const onClose = vi.fn();
-    const { rerender } = render(<><button>Background card</button><DetailSheet open title="First record" onClose={onClose} onNext={onNext}><p>First</p></DetailSheet></>);
+    const { rerender } = render(<><button>Background card</button><DetailSheet open title="First record" position={0} total={2} onClose={onClose} onNext={onNext}><p>First</p></DetailSheet></>);
     expect(screen.getByRole('button', { name: 'Previous card in this list' })).toBeDisabled();
     fireEvent.click(screen.getByRole('button', { name: 'Next card in this list' }));
     expect(onNext).toHaveBeenCalledTimes(1);
-    rerender(<><button>Background card</button><DetailSheet open title="Second record" onClose={onClose} onPrevious={onPrevious}><p>Second</p></DetailSheet></>);
+    rerender(<><button>Background card</button><DetailSheet open title="Second record" position={1} total={2} onClose={onClose} onPrevious={onPrevious}><p>Second</p></DetailSheet></>);
     fireEvent.click(screen.getByRole('button', { name: 'Previous card in this list' }));
     expect(onPrevious).toHaveBeenCalledTimes(1);
     expect(screen.getByRole('button', { name: 'Next card in this list' })).toBeDisabled();
