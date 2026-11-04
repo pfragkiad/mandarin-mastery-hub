@@ -10,6 +10,7 @@ import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEF
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate, useRouter } from '@tanstack/react-router';
 import { ArrowLeft, Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRight, Volume2, VolumeX, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
