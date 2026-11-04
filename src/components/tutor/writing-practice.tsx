@@ -391,6 +391,17 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const [liveStrokes, setLiveStrokes] = useState<number | null>(null);
   const [sheet, setSheet] = useState(false);
   const [audioError, setAudioError] = useState(false);
+  // Arriving on Practice ends any details-Back trail from a previous record, so
+  // the next details window never offers a stale "Back to <glyph>" step.
+  useEffect(() => { detailTrail.clear(); }, []);
+  // Following a Decomposition part to its library card opens that record's
+  // details window; remember this practice page (as the only trail step) so the
+  // window's Back button returns here.
+  const noteDecompositionReturn = (event: ReactMouseEvent) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+    if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    detailTrail.replace({ label: character, href: window.location.href });
+  };
   useWorkspace().catalogVersion;
   const requestedForm = family ? radicalForm(family, variant) : undefined;
   const radicalSelection = requestedForm?.character === character ? requestedForm : undefined;
