@@ -11,6 +11,11 @@ vi.mock('@tanstack/react-router', () => ({
 afterEach(() => { cleanup(); navigate.mockClear(); });
 
 describe('Radical form destinations', () => {
+  it('keeps Trace when selecting an exact radical variant', () => {
+    render(<RadicalForms familyId={85} destination="practice" mode="trace"/>);
+    fireEvent.click(screen.getByRole('link', { name: 'Practice radical form 氵, 3 strokes' }));
+    expect(navigate).toHaveBeenCalledWith({ to: '/strokes', search: { character: '氵', family: 85, variant: '85-1', mode: 'trace' } });
+  });
   it('switches the exact water variant inside Practice with its family-qualified selection', () => {
     render(<RadicalForms familyId={85} destination="practice"/>);
     fireEvent.click(screen.getByRole('link', { name: 'Practice radical form 氵, 3 strokes' }));
