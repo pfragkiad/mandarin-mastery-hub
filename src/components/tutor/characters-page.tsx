@@ -29,7 +29,7 @@ import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphPresentation } from '@/lib/glyph-presentation';
-import { radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
+import { historicalRadicalHeading, radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
@@ -60,7 +60,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const selectedVariant = variant ?? input.radicalVariant;
   const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, selectedVariant) : undefined;
   const exact = form ? ['Radicals', 'Characters', 'Components'].flatMap(k => libraryEntries(k as LibraryKind)).find(item => item.hanzi === form.character) : undefined;
-  const entry = form ? { ...heading, hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
+  // An exact variant never inherits the heading's script classification.
+  const { script: headingScript, ...headingWithoutScript } = heading;
+  const entry = form ? { ...headingWithoutScript, ...(exact?.script ? { script: exact.script } : {}), hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
@@ -98,7 +100,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   const percentage = usagePercentage(heading.hanzi, kind, preferences.includeTraditional, heading.kangxiIndex);
-  return <section className="catalog-detail" aria-label={`Details for ${entry.hanzi}`}>
+  return <section className={`catalog-detail ${kind === 'Radicals' && historicalRadicalHeading(entry.hanzi, heading.kangxiIndex) ? 'historical-radical-detail' : ''}`} aria-label={`Details for ${entry.hanzi}`}>
     <RecordDetailTitle hanzi={entry.hanzi} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? (kind === 'Strokes' ? 1 : 'Not recorded')}</dd></div>{strokeNameFact}{radicalFact && <div><dt>Radical</dt><dd>{radicalFact}</dd></div>}<div><dt>Record</dt><dd className="catalog-record-value">{info.label}</dd></div>{(kind === 'Characters' || kind === 'Components' || (kind === 'Radicals' && (!form || form.character === heading.hanzi))) && usageOrder.loaded && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">{kind === 'Characters' ? 'Corpus frequency rank' : `Estimated ${kind === 'Radicals' ? 'radical assignment' : 'component exposure'} rank, derived from character frequencies`} · {usageOrder.data?.source.provider ?? 'Jun Da Modern Chinese corpus'}{kind === 'Characters' ? ' · Percentage is this character’s share of corpus tokens.' : kind === 'Components' ? ' · Percentage is this component’s share of weighted known-leaf occurrences; not character corpus coverage.' : kind === 'Radicals' ? ' · Share of matched corpus tokens assigned to this Kangxi family, not graphical radical occurrences.' : ''}</SourceInfo></dt><dd><UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/></dd></div>}{percentage !== null && <div><dt>{kind === 'Characters' ? 'Corpus frequency' : kind === 'Radicals' ? 'Radical assignment share' : 'Occurrence share'}</dt><dd>{formatUsagePercentage(percentage)}</dd></div>}</dl>
