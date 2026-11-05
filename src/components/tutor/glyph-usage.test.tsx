@@ -53,7 +53,7 @@ describe('Traditional parent characters', () => {
     // 鮮 is a recorded Traditional character whose dictionary radical is 魚 (Kangxi #195).
     const radical: LibraryEntry = { id: 'Radicals:魚', hanzi: '魚', pinyin: 'yú', meaning: 'fish; surname', note: '11 strokes · Radical #195', kangxiIndex: 195 };
     render(<GlyphUsageExamples entry={radical} kind="Radicals" familyGlyph="魚" />);
-    const tile = screen.getByRole('link', { name: 'Open character 鮮' }).closest('.decomposition-glyph');
+    const tile = screen.getByText('鮮').closest('.decomposition-glyph');
     expect(tile).toHaveClass('traditional-character');
     workspaceState.includeTraditional = false;
   });
