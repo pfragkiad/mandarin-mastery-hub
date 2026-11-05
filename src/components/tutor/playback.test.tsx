@@ -146,20 +146,20 @@ it.each(['trace', 'recall'] as const)('global Reset restarts %s with cleared sco
   expect(fake.quiz.mock.calls[1]?.[0].showHintAfterMisses).toBe(mode === 'recall' ? false : 2);
 });
 
-it.each(['trace', 'recall'] as const)('a completed %s round re-arms silently and resets on the first new stroke', async mode => {
-  render(<WritingPractice character="我" mode={mode}/>);
+it.each(['trace', 'recall'] as const)('a completed %s round keeps the drawing and re-arms only on the next drag', async mode => {
+  const { container } = render(<WritingPractice character="我" mode={mode}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   const first = fake.quiz.mock.calls[0]?.[0];
   act(() => first.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   act(() => first.onComplete({ totalMistakes: 0 }));
-  // Completion re-arms the quiz without clearing the visible round state.
-  expect(fake.quiz).toHaveBeenCalledTimes(2);
+  // Completion alone must not erase the drawing or restart the quiz.
+  expect(fake.quiz).toHaveBeenCalledTimes(1);
   expect(screen.getByText(/Character complete/)).toBeInTheDocument();
-  // The first stroke of the new round replaces the completion state.
-  const second = fake.quiz.mock.calls[1]?.[0];
-  act(() => second.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 1 }));
+  // Starting to drag again erases the square and begins the fresh round.
+  fireEvent.pointerDown(container.querySelector('.hanzi-target')!);
+  expect(fake.quiz).toHaveBeenCalledTimes(2);
   expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
-  expect(screen.getByText(/Stroke 1: 75% accuracy/)).toBeInTheDocument();
+  expect(screen.getByText('Draw the character in the square.')).toBeInTheDocument();
 });
 
 it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice', async mode => {
