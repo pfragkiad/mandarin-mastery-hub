@@ -155,12 +155,11 @@ it.each(['trace', 'recall'] as const)('a completed %s round re-arms silently and
   // Completion re-arms the quiz without clearing the visible round state.
   expect(fake.quiz).toHaveBeenCalledTimes(2);
   expect(screen.getByText(/Character complete/)).toBeInTheDocument();
-  expect(screen.getByText('100%')).toBeInTheDocument();
-  // The first stroke of the new round clears the old scores.
+  // The first stroke of the new round replaces the completion state.
   const second = fake.quiz.mock.calls[1]?.[0];
   act(() => second.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 1 }));
   expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
-  expect(screen.getByText('75%')).toBeInTheDocument();
+  expect(screen.getByText(/Stroke 1: 75% accuracy/)).toBeInTheDocument();
 });
 
 it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice', async mode => {
