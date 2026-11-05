@@ -8,10 +8,11 @@ import type { LibraryEntry } from '@/lib/character-library';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
 }));
+const workspaceState = vi.hoisted(() => ({ includeTraditional: false }));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
     items: [], saved: [], toggleSaved: () => {},
-    preferences: { includeTraditional: false, pinyin: true, slow: false },
+    preferences: { includeTraditional: workspaceState.includeTraditional, pinyin: true, slow: false },
     catalogVersion: 0, theme: 'light',
   }),
 }));
