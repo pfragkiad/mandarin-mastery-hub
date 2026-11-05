@@ -146,6 +146,23 @@ it.each(['trace', 'recall'] as const)('global Reset restarts %s with cleared sco
   expect(fake.quiz.mock.calls[1]?.[0].showHintAfterMisses).toBe(mode === 'recall' ? false : 2);
 });
 
+it.each(['trace', 'recall'] as const)('a completed %s round re-arms silently and resets on the first new stroke', async mode => {
+  render(<WritingPractice character="我" mode={mode}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  const first = fake.quiz.mock.calls[0]?.[0];
+  act(() => first.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  act(() => first.onComplete({ totalMistakes: 0 }));
+  // Completion re-arms the quiz without clearing the visible round state.
+  expect(fake.quiz).toHaveBeenCalledTimes(2);
+  expect(screen.getByText(/Character complete/)).toBeInTheDocument();
+  expect(screen.getByText('100%')).toBeInTheDocument();
+  // The first stroke of the new round clears the old scores.
+  const second = fake.quiz.mock.calls[1]?.[0];
+  act(() => second.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 1 }));
+  expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
+  expect(screen.getByText('90%')).toBeInTheDocument();
+});
+
 it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice', async mode => {
   render(<StrokePractice glyph="㇐" mode={mode}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
