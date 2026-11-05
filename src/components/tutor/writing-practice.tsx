@@ -209,11 +209,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
       // Capture phase on the container runs before Hanzi Writer's own svg
-      // listener, so re-arming here lets this very drag begin the fresh round.
+      // mousedown/touchstart listeners, so re-arming here lets this very drag
+      // begin the fresh round.
       const el = target.current;
       const rearmOnDrag = () => { if (needsRearm.current) quizRef.current(); };
-      el.addEventListener('pointerdown', rearmOnDrag, true);
-      cleanupRearm = () => el.removeEventListener('pointerdown', rearmOnDrag, true);
+      el.addEventListener('mousedown', rearmOnDrag, true);
+      el.addEventListener('touchstart', rearmOnDrag, true);
+      cleanupRearm = () => { el.removeEventListener('mousedown', rearmOnDrag, true); el.removeEventListener('touchstart', rearmOnDrag, true); };
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
     return () => { active = false; animationRun.current += 1; cleanupRearm?.(); cleanupRearm = null; writer.current?.cancelQuiz(); writer.current = null; };
   }, [character, retry, theme, radicalSelection?.key]);
