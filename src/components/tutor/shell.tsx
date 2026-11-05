@@ -31,6 +31,24 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
+  // Em ecrãs estreitos (≤850px) a sidebar nasce como trilho de ícones; o mesmo
+  // botão do canto inferior a expande para a navegação completa com nomes.
+  const [navExpanded, setNavExpanded] = useState(false);
+  const [isSmall, setIsSmall] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 850px)');
+    const sync = () => setIsSmall(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+  // Em ecrãs largos o trilho é o estado "collapsed"; nos estreitos é o oposto
+  // de "nav-expanded", porque aí o trilho é o aspeto por omissão.
+  const rail = isSmall ? !navExpanded : collapsed;
+  const toggleNav = () => {
+    if (window.matchMedia('(max-width: 850px)').matches) setNavExpanded(v => !v);
+    else setCollapsed(v => !v);
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
@@ -53,7 +71,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     if (hit.kind === 'Word') navigate({ to: '/vocabulary', search: { q: hit.word.hanzi, word: hit.word.id } });
     else navigate({ to: '/characters', search: { tab: hit.kind === 'Radical' ? 'Radicals' : hit.kind === 'Component' ? 'Components' : 'Characters', character: hit.hanzi } });
   };
-  return <div className={`workspace ${collapsed ? 'is-collapsed' : ''}`}>
+  return <div className={`workspace ${rail ? 'is-collapsed' : ''} ${navExpanded ? 'nav-expanded' : ''}`}>
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
       <Link to="/" className="brand" aria-label="Mandarin Tutor home"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
@@ -68,7 +86,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
         return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
       })}</nav>
-      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><Button size="icon" variant="ghost" title={collapsed ? 'Expand navigation' : 'Collapse navigation'} aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'} onClick={() => setCollapsed(!collapsed)}><ChevronsLeft className={collapsed ? 'rotate-180' : ''}/></Button></div></div>
+      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><Button size="icon" variant="ghost" title={rail ? 'Expand navigation' : 'Collapse navigation'} aria-label={rail ? 'Expand navigation' : 'Collapse navigation'} onClick={toggleNav}><ChevronsLeft className={rail ? 'rotate-180' : ''}/></Button></div></div>
     </aside>
     <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><Button variant="ghost" size="icon" className="mobile-menu" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X/> : <Menu/>}</Button><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
       <main className="main-content">{children}</main></div>
