@@ -208,8 +208,16 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
       const instance = Writer.create(target.current, character, { width: 300, height: 300, padding: 22, showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
+      // Capture phase on the container runs before Hanzi Writer's own svg
+      // mousedown/touchstart listeners, so re-arming here lets this very drag
+      // begin the fresh round.
+      const el = target.current;
+      const rearmOnDrag = () => { if (needsRearm.current) quizRef.current(); };
+      el.addEventListener('mousedown', rearmOnDrag, true);
+      el.addEventListener('touchstart', rearmOnDrag, true);
+      cleanupRearm = () => { el.removeEventListener('mousedown', rearmOnDrag, true); el.removeEventListener('touchstart', rearmOnDrag, true); };
     }).catch((err) => { console.error('writer load failed', err); if (active) setMessage('Writing practice couldn’t load. Please try again.'); });
-    return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; };
+    return () => { active = false; animationRun.current += 1; cleanupRearm?.(); cleanupRearm = null; writer.current?.cancelQuiz(); writer.current = null; };
   }, [character, retry, theme, radicalSelection?.key]);
   // Hanzi Writer has no public speed setter; update the live options before each run.
   const applySpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };
@@ -257,11 +265,14 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setPlaying(false); setPaused(false); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Ready for a fresh start.');
     if (mode !== 'watch') quiz();
   };
-  // A completed round re-arms immediately (keepScores), so the next stroke
-  // starts fresh without a Reset press; the old scores stay visible until the
-  // first stroke of the new round lands.
-  const rearmed = useRef(false);
-  const quiz = (keepScores = false) => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); rearmed.current = keepScores; if (!keepScores) setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); const fresh = rearmed.current && strokeNum === 0; if (fresh) rearmed.current = false; setScores(prev => { const base = fresh ? strokes.map(() => null) : prev; const next = [...base]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); quiz(true); setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`); return prev; }); } }); };
+  // A completed round keeps the finished drawing and scores on screen; the
+  // square only erases and re-arms when the learner starts dragging the first
+  // stroke of a new round (see the pointerdown capture listener below).
+  const needsRearm = useRef(false);
+  let cleanupRearm: (() => void) | null = null;
+  const quizRef = useRef<() => void>(() => {});
+  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); needsRearm.current = false; setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); needsRearm.current = true; setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`); return prev; }); } }); };
+  quizRef.current = quiz;
   // Tapping a stroke tile jumps straight to that step: earlier strokes appear
   // instantly (played at max speed) and only the selected stroke animates.
   // Tiles and component headings belong to Watch playback; Trace and Recall
