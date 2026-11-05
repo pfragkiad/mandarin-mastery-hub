@@ -1,5 +1,7 @@
 # Roadmap
 
+- [open] Narrow Characters/Components rank and stroke choices in both directions after Apply; verify matching, history and unchanged drafts.
+
 - [done] Preserve Drawing rounds across Practice visits; live Back restored the exact second card both before/after Pass, Next advanced correctly with review retained; 35 tests passed and preview build clean.
 
 - [done] Compact shared game setup rows and ready states, simplify Start/counts and align All/Saved; 39 tests passed, both live rounds preserved after filtering and deck-size changes, narrow-screen layouts checked without overflow or runtime errors, preview build clean.
