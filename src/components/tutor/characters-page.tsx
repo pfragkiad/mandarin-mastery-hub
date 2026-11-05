@@ -60,7 +60,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const selectedVariant = variant ?? input.radicalVariant;
   const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, selectedVariant) : undefined;
   const exact = form ? ['Radicals', 'Characters', 'Components'].flatMap(k => libraryEntries(k as LibraryKind)).find(item => item.hanzi === form.character) : undefined;
-  const entry = form ? { ...heading, hanzi: form.character, script: exact?.script, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
+  // An exact variant never inherits the heading's script classification.
+  const { script: headingScript, ...headingWithoutScript } = heading;
+  const entry = form ? { ...headingWithoutScript, ...(exact?.script ? { script: exact.script } : {}), hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
