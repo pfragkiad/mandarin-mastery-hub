@@ -9,6 +9,19 @@ vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false }));
+// Controlled catalogue: 鮮 is a Traditional character whose dictionary radical is 魚
+// and whose recorded breakdown contains the exact 魚 form (the family is multi-form).
+const catalogState = vi.hoisted(() => ({
+  xian: {
+    id: 'Characters:鮮', hanzi: '鮮', pinyin: 'xiān', meaning: 'fresh, new, delicious; rare, few',
+    note: '17 strokes · 魚 radical', script: 'Traditional',
+    decomposition: { root: { glyph: '⿰', position: 'root', children: [{ glyph: '魚', position: 'left' }, { glyph: '羊', position: 'right' }] }, source: 'test', status: 'test' },
+  } as LibraryEntry,
+}));
+vi.mock('@/lib/character-library', async importOriginal => ({
+  ...(await importOriginal<typeof import('@/lib/character-library')>()),
+  libraryEntries: (kind: string) => (kind === 'Characters' ? [catalogState.xian] : []),
+}));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
     items: [], saved: [], toggleSaved: () => {},
