@@ -1,6 +1,6 @@
 # Roadmap
 
-- [open] Narrow Characters/Components rank and stroke choices in both directions after Apply; verify matching, history and unchanged drafts.
+- [done] Narrow Characters/Components rank and stroke choices in both directions after Apply; 50 tests passed, live rank/stroke Apply and history verified, draft options unchanged, preview clean.
 
 - [done] Preserve Drawing rounds across Practice visits; live Back restored the exact second card both before/after Pass, Next advanced correctly with review retained; 35 tests passed and preview build clean.
 
