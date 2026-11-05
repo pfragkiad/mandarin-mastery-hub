@@ -6,7 +6,8 @@ import { CharacterDetails } from './characters-page';
 import type { LibraryEntry } from '@/lib/character-library';
 
 vi.mock('@tanstack/react-router', () => ({
-  Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
+  // Forward props so Button asChild classes (e.g. traditional-character) reach the anchor.
+  Link: ({ children, ...props }: { children?: ReactNode } & Record<string, unknown>) => <a {...props}>{children}</a>,
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false }));
 // Controlled catalogue: 鮮 is a Traditional character whose dictionary radical is 魚
