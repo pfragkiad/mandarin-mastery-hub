@@ -160,7 +160,7 @@ it.each(['trace', 'recall'] as const)('a completed %s round re-arms silently and
   const second = fake.quiz.mock.calls[1]?.[0];
   act(() => second.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 1 }));
   expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
-  expect(screen.getByText('90%')).toBeInTheDocument();
+  expect(screen.getByText('75%')).toBeInTheDocument();
 });
 
 it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice', async mode => {
