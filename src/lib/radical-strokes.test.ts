@@ -1,10 +1,24 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog-store';
 import { libraryEntries, filterLibrary } from './character-library';
-import { radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
+import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
 import { strokeNames } from './stroke-names';
 
 describe('Radical-only stroke decompositions', () => {
+  it('prioritises Mainland 鱼 before historical 魚 without mutating the source forms', () => {
+    const family = radicalFamily(195);
+    expect(family).toBeDefined();
+    if (!family) return;
+    const keys = family.forms.map(form => form.key);
+    expect(orderedRadicalForms(family).map(form => form.character).slice(0, 2)).toEqual(['鱼', '魚']);
+    expect(family.forms.map(form => form.key)).toEqual(keys);
+  });
+  it('marks only distinct recorded historical headings, not Mainland or shared forms', () => {
+    expect(historicalRadicalHeading('魚', 195)).toBe(true);
+    expect(historicalRadicalHeading('鱼', 195)).toBe(false);
+    expect(historicalRadicalHeading('木', 75)).toBe(false);
+    expect(historicalRadicalHeading('魚', 75)).toBe(false);
+  });
   it('stores ordered cnchar-order names for 水 and 口', async () => {
     expect(radicalStrokes('水')?.strokes.map(s => s.name)).toEqual(['竖钩', '横撇', '撇', '捺']);
     expect(radicalStrokes('口')?.strokes.map(s => s.name)).toEqual(['竖', '横折', '横']);
