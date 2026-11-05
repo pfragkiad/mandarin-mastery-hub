@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE, pronunciationAvailable } from './audio';
-import { characterRecording, hydrateCatalog } from './catalog-store';
+import { characterAudioRequest, characterRecording, hydrateCatalog } from './catalog-store';
 const rec = { url: '/api/media/a.mp3', source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
 const char = { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0', recordingKind: 'syllable', glyph: '中', reading: 'zhōng' };
 describe('Audio fallback order', () => {
@@ -35,7 +35,14 @@ describe('Rates', () => {
 });
 
 describe('Character recording lookup', () => {
-  hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], strokes: [], trees: {}, readingAudio: { '中': { 'zhōng': 'zhong1' } }, audio: { zhong1: { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+  hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], strokes: [], trees: {}, readingAudio: { '中': { 'zhōng': 'zhong1' }, '讠': { 'yán': 'cmn-syl-yan2' }, '言': { 'yán': 'cmn-syl-yan2' }, '颜': { 'yán': 'cmn-syl-yan2' }, '门': { 'mén': 'cmn-syl-men2' } }, audio: { zhong1: { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-yan2': { url: '/reported-wrong-yan.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-men2': { url: '/correct-men.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+  it('excludes the reported mén-sounding yán clip for all its glyph bindings', () => {
+    for (const glyph of ['讠', '言', '颜']) {
+      expect(characterRecording(glyph, 'yán')).toBeNull();
+      expect(audioCandidates(characterAudioRequest(glyph, 'yán')).map(candidate => candidate.kind)).toEqual(['tts']);
+    }
+    expect(characterRecording('门', 'mén')?.url).toBe('/correct-men.mp3');
+  });
   it('returns the exact-reading recording only when the reading is known', () => {
     expect(characterRecording('中', 'zhōng')?.url).toBe('/api/media/zhong1.mp3');
     expect(characterRecording('中', 'zhòng')).toBeNull();

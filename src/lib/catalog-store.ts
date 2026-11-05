@@ -51,10 +51,14 @@ export function loadCatalog(): Promise<void> {
 
 /** Audio request for a single character, offering its exact-reading recording when one exists.
  * With no pinyin recorded, no tone is guessed; UI availability still requires a known reading for TTS. */
+// This shared yán clip was reported to pronounce mén. Quarantine the asset ID
+// across every glyph binding until its source audio is corrected; preserve raw
+// imported provenance and choose labelled Mandarin TTS before playback instead.
+const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
   const chosen = reading ?? null;
-  const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
+  const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id && !excludedCharacterRecordings.has(id) ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
   return { text: glyph, reading: chosen, characterAudio };
 }
 
