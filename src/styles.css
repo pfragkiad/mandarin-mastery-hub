@@ -1104,3 +1104,12 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Card returned to from Practice Back: visible focus ring until the user moves on. */
 .word-card[tabindex="-1"]:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
 .word-card.is-traditional[tabindex="-1"]:focus { outline-color: var(--traditional, var(--primary)); }
+
+/* Small screens: the navbar's named sub-items already switch library
+   sections, so the in-page kind tabs hide to save vertical space; the
+   All/Saved filter stays because the navbar does not cover it. */
+@media(max-width:850px) {
+  .vocabulary-tabs .vocabulary-category-row > [role='tablist'],
+  .glyph-category-row > [role='tablist'] { display: none; }
+  .vocabulary-category-row .vocabulary-saved-filter { margin-left: 0; }
+}
