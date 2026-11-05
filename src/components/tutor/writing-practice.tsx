@@ -270,6 +270,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   let cleanupRearm: (() => void) | null = null;
   const quizRef = useRef<() => void>(() => {});
   const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); needsRearm.current = false; setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); needsRearm.current = true; setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`); return prev; }); } }); };
+  quizRef.current = quiz;
   // Tapping a stroke tile jumps straight to that step: earlier strokes appear
   // instantly (played at max speed) and only the selected stroke animates.
   // Tiles and component headings belong to Watch playback; Trace and Recall
