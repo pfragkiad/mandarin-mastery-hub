@@ -49,3 +49,4 @@
 
 - [done] Stroke cards and component headings clickable only in Watch; inert reference in Trace/Recall with audio controls live (tests + live check)
 - [done] Step with a selected component deselects it and draws the next group's first stroke; after the last group it returns to stroke one (tests + live check)
+- [done] Trace/Recall: re-arm silently after completion; fresh round starts on first new drag, scores stay until then
