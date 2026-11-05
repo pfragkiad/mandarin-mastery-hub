@@ -156,7 +156,7 @@ it.each(['trace', 'recall'] as const)('a completed %s round keeps the drawing an
   expect(fake.quiz).toHaveBeenCalledTimes(1);
   expect(screen.getByText(/Character complete/)).toBeInTheDocument();
   // Starting to drag again erases the square and begins the fresh round.
-  fireEvent.pointerDown(container.querySelector('.hanzi-target')!);
+  fireEvent.mouseDown(container.querySelector('.hanzi-target')!);
   expect(fake.quiz).toHaveBeenCalledTimes(2);
   expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
   expect(screen.getByText('Draw the character in the square.')).toBeInTheDocument();
