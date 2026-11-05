@@ -31,6 +31,24 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
+  // Em ecrãs estreitos (≤850px) a sidebar nasce como trilho de ícones; o mesmo
+  // botão do canto inferior a expande para a navegação completa com nomes.
+  const [navExpanded, setNavExpanded] = useState(false);
+  const [isSmall, setIsSmall] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 850px)');
+    const sync = () => setIsSmall(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+  // Em ecrãs largos o trilho é o estado "collapsed"; nos estreitos é o oposto
+  // de "nav-expanded", porque aí o trilho é o aspeto por omissão.
+  const rail = isSmall ? !navExpanded : collapsed;
+  const toggleNav = () => {
+    if (window.matchMedia('(max-width: 850px)').matches) setNavExpanded(v => !v);
+    else setCollapsed(v => !v);
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
