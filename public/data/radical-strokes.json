@@ -10025,9 +10025,45 @@
           "formKind": "kangxi-heading",
           "strokeCount": 7,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "竖弯钩",
+                "pinyin": "shù wān gōu",
+                "glyph": "㇟"
+              }
+            ]
           }
         },
         {
@@ -10611,9 +10647,45 @@
           "formKind": "kangxi-heading",
           "strokeCount": 7,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ]
           }
         },
         {
@@ -11004,9 +11076,45 @@
           "formKind": "kangxi-heading",
           "strokeCount": 7,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              }
+            ]
           }
         },
         {
@@ -11803,9 +11911,50 @@
           "formKind": "kangxi-heading",
           "strokeCount": 8,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折钩",
+                "pinyin": "héng zhé gōu",
+                "glyph": "㇆"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              }
+            ]
           }
         },
         {
@@ -12835,9 +12984,55 @@
           "formKind": "kangxi-heading",
           "strokeCount": 9,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ]
           }
         },
         {
@@ -13305,9 +13500,60 @@
           "formKind": "kangxi-heading",
           "strokeCount": 10,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折钩",
+                "pinyin": "héng zhé gōu",
+                "glyph": "㇆"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ]
           }
         },
         {
@@ -13931,9 +14177,65 @@
           "formKind": "kangxi-heading",
           "strokeCount": 11,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "横撇",
+                "pinyin": "héng piě",
+                "glyph": "㇇"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ]
           }
         },
         {
@@ -14416,9 +14718,70 @@
           "formKind": "kangxi-heading",
           "strokeCount": 12,
           "record": {
-            "strokes": [],
-            "status": "unrecorded",
-            "source": "cnchar-order 3.2.6"
+            "status": "recorded",
+            "source": "Standard stroke order · manually checked",
+            "strokes": [
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ]
           }
         },
         {
@@ -22636,9 +22999,45 @@
       "officiallyVerified": false
     },
     "見": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "竖弯钩",
+          "pinyin": "shù wān gōu",
+          "glyph": "㇟"
+        }
+      ]
     },
     "见": {
       "status": "recorded",
@@ -23070,9 +23469,45 @@
       "officiallyVerified": false
     },
     "貝": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "贝": {
       "status": "recorded",
@@ -23362,9 +23797,45 @@
       "officiallyVerified": false
     },
     "車": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        }
+      ]
     },
     "车": {
       "status": "recorded",
@@ -23948,9 +24419,50 @@
       "officiallyVerified": false
     },
     "門": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折钩",
+          "pinyin": "héng zhé gōu",
+          "glyph": "㇆"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        }
+      ]
     },
     "门": {
       "status": "recorded",
@@ -24734,9 +25246,55 @@
       "officiallyVerified": false
     },
     "頁": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "页": {
       "status": "recorded",
@@ -25071,9 +25629,60 @@
       "officiallyVerified": false
     },
     "馬": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折钩",
+          "pinyin": "héng zhé gōu",
+          "glyph": "㇆"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "马": {
       "status": "recorded",
@@ -25552,9 +26161,65 @@
       "officiallyVerified": false
     },
     "魚": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "横撇",
+          "pinyin": "héng piě",
+          "glyph": "㇇"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "鱼": {
       "status": "recorded",
@@ -25907,9 +26572,70 @@
       "officiallyVerified": false
     },
     "黃": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "黄": {
       "status": "recorded",
@@ -31944,9 +32670,45 @@
       "officiallyVerified": false
     },
     "見": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "竖弯钩",
+          "pinyin": "shù wān gōu",
+          "glyph": "㇟"
+        }
+      ]
     },
     "角": {
       "status": "recorded",
@@ -32249,9 +33011,45 @@
       "officiallyVerified": false
     },
     "貝": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "赤": {
       "status": "recorded",
@@ -32454,9 +33252,45 @@
       "officiallyVerified": false
     },
     "車": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        }
+      ]
     },
     "辛": {
       "status": "recorded",
@@ -32871,9 +33705,50 @@
       "source": "cnchar-order 3.2.6"
     },
     "門": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折钩",
+          "pinyin": "héng zhé gōu",
+          "glyph": "㇆"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        }
+      ]
     },
     "阜": {
       "status": "recorded",
@@ -33453,9 +34328,55 @@
       "officiallyVerified": false
     },
     "頁": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "風": {
       "strokes": [],
@@ -33648,9 +34569,60 @@
       "officiallyVerified": false
     },
     "馬": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折钩",
+          "pinyin": "héng zhé gōu",
+          "glyph": "㇆"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "骨": {
       "status": "recorded",
@@ -34099,9 +35071,65 @@
       "officiallyVerified": false
     },
     "魚": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "横撇",
+          "pinyin": "héng piě",
+          "glyph": "㇇"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "鳥": {
       "strokes": [],
@@ -34259,9 +35287,70 @@
       "officiallyVerified": false
     },
     "黃": {
-      "strokes": [],
-      "status": "unrecorded",
-      "source": "cnchar-order 3.2.6"
+      "status": "recorded",
+      "source": "Standard stroke order · manually checked",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ]
     },
     "黍": {
       "status": "recorded",
