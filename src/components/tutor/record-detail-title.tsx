@@ -6,7 +6,9 @@ import { MeaningText } from './meaning-text';
  *  meaning below. Stacking keeps a long phrase from squeezing the translation
  *  into a one-letter-wide column, and the glyph scales down to fit the panel so
  *  a full sentence still reads on one line. */
-export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet' }: {
+export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms }: {
+  /** Radical family tiles: when given they replace the single hanzi, sitting between pinyin and meaning (as in Practice). */
+  forms?: ReactNode;
   hanzi: string;
   pinyin?: string | null;
   meaning?: string | null;
@@ -24,7 +26,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
         {audio}
         {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
       </div>
-      <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>
+      {forms ?? <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>}
       <h2><MeaningText text={meaning || meaningFallback}/></h2>
     </div>
    </div>;
