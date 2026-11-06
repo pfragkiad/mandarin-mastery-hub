@@ -1141,3 +1141,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-intro .practice-hanzi.traditional-character { color: var(--traditional); }
 /* Marks a stroke name guessed from geometry when no source records the order. */
 .stroke-estimated { font-size: 9px; text-transform: uppercase; letter-spacing: .04em; color: var(--paper-muted); margin-left: 3px; }
+/* Centre the speaker on the pinyin line in the Practice reading card (baseline alignment made it hang low). */
+.practice-reading-top { align-items: center; }
+.practice-intro .practice-text { align-items: center; }
+.practice-intro .practice-text .pinyin { align-self: center; line-height: 1.2; }
+.practice-intro .practice-listen { align-self: center; margin-top: 0; }
+.practice-intro .practice-listen { transform: translateY(-3px); }
