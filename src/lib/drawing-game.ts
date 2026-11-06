@@ -3,7 +3,7 @@ import { parseUsageGroup } from './usage-frequency';
 import { partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 
-export const drawingKinds = ['Characters', 'Radicals', 'Components', 'Words'] as const;
+export const drawingKinds = ['Characters', 'Components', 'Radicals', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
 export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: string | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
