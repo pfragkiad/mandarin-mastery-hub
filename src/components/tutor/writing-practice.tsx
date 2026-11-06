@@ -157,8 +157,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     } catch { /* storage may be unavailable */ }
     mutedLoaded.current = true;
   }, []);
+  // Save only after the stored value has been applied: on mount the save effect used to run
+  // in the same commit as the load (still holding the initial `true`) and overwrote it.
+  const savedMuted = useRef<boolean | null>(null);
   useEffect(() => {
     if (!mutedLoaded.current) return;
+    if (savedMuted.current === null) { savedMuted.current = muted; const stored = (() => { try { return localStorage.getItem('tutor-stroke-audio'); } catch { return null; } })(); if (stored !== null && (stored === 'muted') !== muted) return; }
+    savedMuted.current = muted;
     try { localStorage.setItem('tutor-stroke-audio', muted ? 'muted' : 'unmuted'); } catch { /* ignore */ }
   }, [muted]);
   const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup || Boolean(radicalSelection) || Boolean(radicalStrokes(character)), groupingSource);
