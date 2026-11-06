@@ -21,6 +21,13 @@ describe('Radical form destinations', () => {
     fireEvent.click(screen.getByRole('link', { name: 'Practice radical form 氵, 3 strokes' }));
     expect(navigate).toHaveBeenCalledWith({ to: '/strokes', search: { character: '氵', family: 85, variant: '85-1' } });
   });
+  it('marks an exact Traditional variant tile purple even when it is not the Kangxi heading', () => {
+    render(<RadicalForms familyId={149} destination="practice"/>);
+    const tile = screen.getByRole('link', { name: 'Practice radical form 訁, 7 strokes' });
+    expect(tile.className).toContain('is-traditional');
+    const simplified = screen.getByRole('link', { name: 'Practice radical form 讠, 2 strokes' });
+    expect(simplified.className).not.toContain('is-traditional');
+  });
   it('keeps reference form selections in Glyphs', () => {
     render(<RadicalForms familyId={85}/>);
     fireEvent.click(screen.getByRole('link', { name: 'View radical form 氵, 3 strokes' }));
