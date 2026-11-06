@@ -82,7 +82,8 @@ describe('character practice sections by mode', () => {
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(practiceHeading()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
-    expect(document.querySelector('.practice-facts')).not.toHaveClass('practice-facts-hidden');
+    // The character practice reading panel has no strokes/radical/script facts row.
+    expect(document.querySelector('.practice-facts')).toBeNull();
   });
 
   it('keeps the reading panel above the writing card and the breakdown below it', () => {
@@ -101,7 +102,7 @@ describe('character practice sections by mode', () => {
     expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     expect(practiceHeading()).toHaveClass('sr-only');
-    expect(document.querySelector('.practice-facts')).toHaveClass('practice-facts-hidden');
+    expect(document.querySelector('.practice-facts')).toBeNull();
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
   });
