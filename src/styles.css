@@ -895,7 +895,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-detail > .decomposition-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 /* Family form tiles live inside the reading panel, between the pinyin line and
    the translation. */
-.practice-intro .radical-family-section { width: 100%; margin: 14px 0 2px; }
+.practice-intro .radical-family-section { width: 100%; margin: 14px 0 2px; border-top: 0; padding-top: 0; }
 .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
