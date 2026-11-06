@@ -900,13 +900,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
   .practice-page-content .practice-intro { grid-column: 1; grid-row: 1; }
-  /* Small screens put the clickable family tiles directly above the writing card
-     and drop the decomposition, which duplicates the strokes already practised. */
-  .practice-page-content .practice-detail { grid-column: 1; grid-row: 2; }
-  .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 3; }
-  .practice-detail .decomposition-section { display: none; }
-  /* Without family tiles the detail column is empty on small screens: no bordered placeholder. */
-  .practice-page-content .practice-detail:not(:has(.radical-family-section)) { display: none; }
+  /* Small screens drop the decomposition, which duplicates the strokes already
+     practised; the family tiles live in the reading panel at every width, so the
+     detail column has nothing left to show. */
+  .practice-page-content .practice-detail { display: none; }
+  .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
 }
 @media(max-width:580px) {
   .practice-page-content .practice-page-heading { gap: 12px 8px; }
