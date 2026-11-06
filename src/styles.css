@@ -900,6 +900,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .practice-page-content .practice-detail { grid-column: 1; grid-row: 2; }
   .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 3; }
   .practice-detail .decomposition-section { display: none; }
+  /* Without family tiles the detail column is empty on small screens: no bordered placeholder. */
+  .practice-page-content .practice-detail:not(:has(.radical-family-section)) { display: none; }
 }
 @media(max-width:580px) {
   .practice-page-content .practice-page-heading { gap: 12px 8px; }
