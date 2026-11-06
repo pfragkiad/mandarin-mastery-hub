@@ -1130,3 +1130,5 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .settings-row .writer-speed { margin-left: 0; }
 .settings-row .writer-speed-options { padding: 3px; gap: 3px; }
 .settings-row .writer-speed-options button { height: 32px; min-width: 58px; padding: 0 12px; font-size: 13px; }
+/* Sidebar bottom controls (guidance link, collapse toggle) hover like nav items: accent colour, no background. */
+.sidebar .help-link:hover, .sidebar .sidebar-bottom-row button:hover { background: transparent; color: var(--primary); }
