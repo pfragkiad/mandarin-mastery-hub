@@ -905,10 +905,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
   .practice-page-content .practice-intro { grid-column: 1; grid-row: 1; }
-  /* Small screens drop the decomposition, which duplicates the strokes already
-     practised; the family tiles live in the reading panel at every width, so the
-     detail column has nothing left to show. */
-  .practice-page-content .practice-detail { display: none; }
+  /* Small screens stack the decomposition below the writing card (reading → writing →
+     details); radicals never render one, and an empty detail column stays hidden. */
+  .practice-page-content .practice-detail { grid-column: 1; grid-row: 3; }
+  .practice-page-content .practice-detail:not(:has(*)) { display: none; }
   .practice-page-content .practice-layout > .writing-tool { grid-column: 1; grid-row: 2; }
 }
 @media(max-width:580px) {
