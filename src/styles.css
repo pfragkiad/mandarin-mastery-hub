@@ -883,11 +883,12 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-page-content .practice-detail { grid-column: 2; grid-row: 2; min-width: 0; }
 .practice-intro .practice-meaning { width: 100%; margin: 0; }
 .practice-intro .practice-meaning .pinyin { font-size: 22px; }
-/* Pinyin + speaker on the first line, pills pinned to the top right. */
-.practice-reading-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+/* Pinyin + speaker on the first line, pills pinned to the top right. The row and
+   the translation each take the full width of the flex-wrapping .practice-meaning
+   container, so the translation always lands on its own second line. */
+.practice-reading-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; width: 100%; }
 .practice-pills { display: flex; gap: 8px; flex-shrink: 0; }
-/* The translation is always its own second line, like the reference detail cards. */
-.practice-intro .practice-translation { display: block; font-size: 18px; line-height: 1.6; overflow-wrap: anywhere; margin: 6px 0 0; }
+.practice-intro .practice-translation { display: block; width: 100%; font-size: 18px; line-height: 1.6; overflow-wrap: anywhere; margin: 6px 0 0; }
 .practice-intro .practice-text { min-width: 0; }
 /* Single-stroke practice keeps a facts row; Recall hides it but keeps the card's height. */
 .practice-facts-hidden { visibility: hidden; }
