@@ -458,9 +458,12 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // the same translation the reference detail card shows (e.g. 訁 follows 讠/言).
   const variantMeaning = familyId ? radicalVariantMeaning(character, ownInfo.meaning, familyId) : null;
   const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : variantMeaning ? { ...ownInfo, meaning: variantMeaning } : ownInfo;
+  // Glyphs such as 丷 have both a Characters and a Components record; Practice is per glyph,
+  // so it labels the record the learner opened it from (the Components tab), not a guess.
+  const openedFromComponents = (() => { const origin = practiceOrigin(); if (!origin) return false; const url = new URL(origin, 'http://x'); return url.pathname === '/characters' && url.searchParams.get('tab') === 'Components'; })();
   // Pure component forms live only in the Components library; label them as the library does
   // (exact record membership, never shape) so Practice and the detail card agree.
-  const kindLabel = pureComponentForm(character) ? 'Component' : info.label;
+  const kindLabel = pureComponentForm(character) || openedFromComponents ? 'Component' : info.label;
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
