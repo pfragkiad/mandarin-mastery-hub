@@ -895,7 +895,12 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-detail > .decomposition-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 /* Family form tiles live inside the reading panel, between the pinyin line and
    the translation. */
-.practice-intro .radical-family-section { width: 100%; margin: 6px 0 2px; border-top: 0; padding-top: 0; }
+/* Equal visible space above and below the tiles: the pinyin line carries ~10px of
+   leading/descender room under its letters and the translation ~8px above its
+   letters, so the box gaps (flex gap 9px + margins) are tuned to match the ink. */
+.practice-intro .radical-family-section { width: 100%; margin: 0; border-top: 0; padding-top: 0; }
+.practice-intro .radical-family-section .radical-form-list { margin-top: 0; }
+.practice-intro .radical-family-section + .practice-translation { margin-top: 2px; }
 .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 @media(max-width:850px) {
   .practice-page-content .practice-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
