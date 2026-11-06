@@ -1,5 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { historicalRadicalHeading, orderedRadicalForms, radicalFamily } from '@/lib/radical-strokes';
 import type { PracticeMode } from '@/lib/practice-mode';
