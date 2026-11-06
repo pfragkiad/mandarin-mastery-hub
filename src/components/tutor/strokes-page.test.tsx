@@ -119,7 +119,8 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
     const detail = document.querySelector('.practice-detail')?.textContent ?? '';
-    expect(detail.indexOf('RADICAL FAMILY')).toBeGreaterThanOrEqual(0);
+    // The family tiles sit in the reading panel without a 'Radical family' label.
+    expect(detail).not.toContain('RADICAL FAMILY');
     // The writing card already lists every stroke, so the redundant stroke sequence is gone.
     expect(detail).not.toContain('STROKE DECOMPOSITION');
   });
