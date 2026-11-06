@@ -186,7 +186,8 @@
 }
 
 /* Characters library page */
-.glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 10px; color: var(--primary); }
+/* Centre readings and meanings against the boxed hanzi, not its text baseline. */
+.glyph-usage-reference { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 10px; color: var(--primary); }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
 .example-listen { width: 26px; height: 26px; flex: none; color: var(--primary); }
