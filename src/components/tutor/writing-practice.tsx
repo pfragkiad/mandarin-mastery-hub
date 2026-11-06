@@ -64,8 +64,24 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
   return { name: '点', pinyin: 'diǎn', direction: 'A short dot stroke.' };
 }
 
+
+/** Boolean preference remembered in this browser. Starts at `initial` (SSR-safe), then applies
+ *  the stored value after mount; only explicit changes are written back. */
+function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
+  const [value, setValue] = useState(initial);
+  useEffect(() => { try { const saved = localStorage.getItem(key); if (saved !== null) setValue(saved === '1'); } catch { /* storage unavailable */ } }, [key]);
+  const update = (next: boolean | ((v: boolean) => boolean)) => setValue(prev => {
+    const v = typeof next === 'function' ? next(prev) : next;
+    try { localStorage.setItem(key, v ? '1' : '0'); } catch { /* ignore */ }
+    return v;
+  });
+  return [value, update];
+}
 function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true }: { selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean; playing?: boolean; interactive?: boolean }) {
-  const [visible, setVisible] = useState(defaultVisible);
+  const [rememberedVisible, setRememberedVisible] = useRememberedFlag('tutor-stroke-tiles-visible', true);
+  const [recallVisible, setRecallVisible] = useState(false);
+  const visible = defaultVisible ? rememberedVisible : recallVisible;
+  const setVisible = defaultVisible ? setRememberedVisible : setRecallVisible;
   if (!strokes.length) return null;
   return (
     <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}`}>
@@ -127,7 +143,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [arrows, setArrows] = useState(false);
+  // Arrow preference is remembered; Recall never shows them (guides must not leak into recall).
+  const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
+  const arrows = arrowsPref && mode !== 'recall';
   const [medians, setMedians] = useState<MedianPoint[][]>([]);
   // Animation speed is chosen in Settings (default 0.5×) and read live here.
   const speed = SPEEDS.includes(preferences.animationSpeed) ? preferences.animationSpeed : (SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
@@ -342,7 +360,6 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     writer.current.cancelQuiz();
     setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]);
     const outline = practiceModeOptions(mode).showOutline;
-    setArrows(false);
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
     else quiz();
