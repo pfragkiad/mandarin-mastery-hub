@@ -434,7 +434,9 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const strokeCount = liveStrokes ?? notedStrokes;
   const ownInfo = glyphPresentation(character, fact?.kind ?? 'Character', fact?.pinyin, fact?.meaning);
   const fallback = radicalVariantFallback(character, fact?.pinyin, familyId);
-  const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken } : ownInfo;
+  // Variants without their own record inherit the family reading, audio and meaning —
+  // the same translation the reference detail card shows (e.g. 訁 follows 讠/言).
+  const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : ownInfo;
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
