@@ -156,3 +156,17 @@ export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?:
   if (!main.reading) return null;
   return { headingGlyph: heading.hanzi, pinyin: main.reading, spoken: main.speech ?? heading.hanzi, reading: main.reading || null, meaning: main.meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') };
 }
+
+/** A family variant whose own meaning is only the "Kangxi radical #N" placeholder (e.g. 訁)
+ * inherits the family heading's meaning with the same "component form of" note the reference
+ * detail card shows; variants with a real recorded meaning keep it. */
+export function radicalVariantMeaning(glyph: string, ownMeaning: string, familyId?: number): string | null {
+  if (ownMeaning && !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(ownMeaning.trim())) return null;
+  const hit = radicalForms(glyph).find(item => item.form.character === glyph && (familyId === undefined || item.family.id === familyId));
+  if (!hit) return null;
+  const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === hit.family.id && entry.hanzi === hit.family.kangxiHeading);
+  if (!heading || heading.hanzi === glyph) return null;
+  const main = glyphPresentation(heading.hanzi, 'Radicals', heading.pinyin, heading.meaning);
+  const meaning = main.meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ');
+  return meaning ? `${meaning}; component form of ${heading.hanzi}` : null;
+}
