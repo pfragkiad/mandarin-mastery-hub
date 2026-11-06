@@ -895,6 +895,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Recall hides the strokes/radical/script facts but keeps the reading card's height. */
 .practice-facts-hidden { visibility: hidden; }
 .practice-detail > .decomposition-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+/* Small screens: the family dropdown sits between the reading intro and the
+   writing card; the right-column tile list is hidden so it shows only once. */
+@media(max-width:850px) { .radical-family-compact { display: block; margin: 0 0 18px; border-top: none; padding-top: 0; }.practice-page-content .practice-layout>.radical-family-compact { grid-column: 1; grid-row: 2; }.practice-page-content .practice-layout>.writing-tool { grid-row: 3; }.practice-page-content .practice-layout>.practice-detail { grid-row: 4; }.practice-detail .radical-family-section { display: none; } }
 .practice-detail > .radical-family-section:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 .practice-detail .radical-family-section { margin-bottom: 0; }
 .stroke-guide-heading .source-info-trigger { margin-top: 0; flex-shrink: 0; }
