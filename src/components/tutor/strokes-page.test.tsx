@@ -128,7 +128,7 @@ describe('character practice sections by mode', () => {
   it('labels radical practice with the Radical pill instead of Character', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="乙" mode="watch"/>);
-    expect(document.querySelector('.practice-kind')?.textContent).toBe('Radical #5');
+    expect(document.querySelector('.practice-pills .word-hsk-id:not(.traditional-pill)')?.textContent).toBe('Radical #5');
   });
 
   it('offers a Back action that returns to the card selection', () => {
