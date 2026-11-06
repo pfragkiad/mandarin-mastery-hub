@@ -18,7 +18,7 @@ import { glyphScript, type LibraryEntry } from '@/lib/character-library';
 import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { referenceCatalog, radicalVariantFallback, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
+import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
@@ -436,7 +436,8 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const fallback = radicalVariantFallback(character, fact?.pinyin, familyId);
   // Variants without their own record inherit the family reading, audio and meaning —
   // the same translation the reference detail card shows (e.g. 訁 follows 讠/言).
-  const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : ownInfo;
+  const variantMeaning = familyId ? radicalVariantMeaning(character, ownInfo.meaning, familyId) : null;
+  const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : variantMeaning ? { ...ownInfo, meaning: variantMeaning } : ownInfo;
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
