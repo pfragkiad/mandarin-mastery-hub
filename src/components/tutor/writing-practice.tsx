@@ -14,10 +14,11 @@ import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { words } from '@/lib/mandarin';
 import { glyphScript, type LibraryEntry } from '@/lib/character-library';
+import { pureComponentForm } from '@/lib/glyph-presentation';
 import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { libraryEntries, referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
+import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
@@ -459,7 +460,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : variantMeaning ? { ...ownInfo, meaning: variantMeaning } : ownInfo;
   // Pure component forms live only in the Components library; label them as the library does
   // (exact record membership, never shape) so Practice and the detail card agree.
-  const kindLabel = !libraryEntries('Characters').some(entry => entry.hanzi === character) && libraryEntries('Components').some(entry => entry.hanzi === character) ? 'Component' : info.label;
+  const kindLabel = pureComponentForm(character) ? 'Component' : info.label;
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
