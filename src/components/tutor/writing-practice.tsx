@@ -32,7 +32,7 @@ import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, RecordedDecomposition } from './character-enrichment';
 import { ComponentPronunciation } from './component-pronunciation';
 
-type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean };
+type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean; estimated?: boolean };
 
 function nameStroke(median: Array<[number, number]>): { name: string; pinyin: string; direction: string } {
   // Geometry-based labels are a fallback for ordinary characters only. Exact
@@ -99,7 +99,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                     </g>
                   </svg>
                    <span className="stroke-index">{i + 1}</span>
-                  {stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
+                  {stroke.estimated && <span className="stroke-estimated" title="No recorded stroke order for this character — name estimated from the stroke's shape">est.</span>}{stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
                   {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
                   <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
@@ -191,7 +191,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
         // A " / " inside a recorded name marks the source's own alternatives
         // (心's 斜钩 / 卧钩); only those strokes carry the ambiguous marker.
         const ambiguous = exact?.status === 'ambiguous' && Boolean(recorded?.name.includes(' / '));
-        return { path, name: recorded?.name ?? (exact ? '' : fallback.name), pinyin: recorded?.pinyin ?? (exact ? 'Not recorded' : fallback.pinyin), direction: fallback.direction, ambiguous };
+        return { path, name: recorded?.name ?? (exact ? '' : fallback.name), pinyin: recorded?.pinyin ?? (exact ? 'Not recorded' : fallback.pinyin), direction: fallback.direction, ambiguous, estimated: !recorded && !exact };
       }));
       setMedians(data.medians as MedianPoint[][]);
       onStrokeCount?.(data.strokes.length);
@@ -447,7 +447,8 @@ line. The strokes/radical/script facts row is gone — the writing card, family
 tiles and Traditional pill already carry those facts. */}
 <div className="practice-meaning"><div className="practice-reading-top"><span className="practice-text">{info.reading ? <span className="pinyin">{info.componentName ? `Component name · ${info.reading}` : info.reading}</span> : <span className="pinyin">{info.readingFallback}</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></span><span className="practice-pills">{script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}<span className="practice-kind">{radId ? `Radical #${radId}` : info.label}</span></span></div>{/* Family form tiles sit between the pinyin line and the translation, without
 their own heading — the Radical #N pill above already names the family. */}
-{mode !== 'recall' && familyId && <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel/>}<p className="practice-translation">{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}</p></div>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}</section><WritingPractice character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
+{/* Non-radical records show their single hanzi between pinyin and translation, like the
+ detail card; Recall hides it so the glyph never leaks into recall. */}{mode !== 'recall' && !familyId && <strong lang="zh-CN" className={`practice-hanzi${script === 'Traditional' ? ' traditional-character' : ''}`}>{character}</strong>}{mode !== 'recall' && familyId && <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel/>}<p className="practice-translation">{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}</p></div>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}</section><WritingPractice character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
 only the component breakdown; radical practice never shows a decomposition at any width. */}
 {mode !== 'recall' && !familyId && decomposition && <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></h3><RecordedDecomposition tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div>}</section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }

@@ -1135,3 +1135,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Radical detail: family tiles replace the single hanzi between pinyin and meaning, spaced like Practice. */
 .catalog-detail-head > .radical-family-section { width: 100%; margin: 4px 0 8px; border-top: 0; padding-top: 0; }
 .catalog-detail-head > .radical-family-section .radical-form-list { margin-top: 0; }
+
+/* Practice single hanzi mirrors the detail card's glyph between pinyin and translation. */
+.practice-intro .practice-hanzi { display: block; width: 100%; font-size: 64px; line-height: 1.1; font-weight: 400; margin: 2px 0 0; }
+.practice-intro .practice-hanzi.traditional-character { color: var(--traditional); }
+/* Marks a stroke name guessed from geometry when no source records the order. */
+.stroke-estimated { font-size: 9px; text-transform: uppercase; letter-spacing: .04em; color: var(--paper-muted); margin-left: 3px; }

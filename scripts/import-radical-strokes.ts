@@ -13,6 +13,27 @@ for (const [glyph, , , note] of data.radicals as string[][]) {
   const names = await cncharStrokeNames(glyph);
   records[glyph] = { strokes: names?.length === expected ? names.map(stroke => ({ ...stroke, glyph: symbol(stroke.name) })) : [], status: names?.length === expected ? 'recorded' : names ? 'count-mismatch' : 'unrecorded', source: 'cnchar-order 3.2.6' };
 }
+// Manually checked standard stroke orders for Traditional Kangxi headings that cnchar-order
+// does not cover. Only applied when the heading is otherwise unrecorded AND the count matches
+// the recorded stroke count; labelled with its own source so it never reads as cnchar data.
+const CHECKED: Record<string, string[]> = {
+  '貝': ['S', 'HZ', 'H', 'H', 'H', 'P', 'D'],
+  '見': ['S', 'HZ', 'H', 'H', 'H', 'P', 'SWG'],
+  '車': ['H', 'S', 'HZ', 'H', 'H', 'H', 'S'],
+  '門': ['S', 'HZ', 'H', 'H', 'S', 'HZG', 'H', 'H'],
+  '頁': ['H', 'P', 'S', 'HZ', 'H', 'H', 'H', 'P', 'D'],
+  '馬': ['S', 'H', 'H', 'H', 'S', 'HZG', 'D', 'D', 'D', 'D'],
+  '魚': ['P', 'HP', 'S', 'HZ', 'H', 'S', 'H', 'D', 'D', 'D', 'D'],
+  '黃': ['H', 'S', 'S', 'H', 'H', 'S', 'HZ', 'H', 'S', 'H', 'P', 'D'],
+};
+for (const [glyph, codes] of Object.entries(CHECKED)) {
+  const current = records[glyph];
+  const row = (data.radicals as string[][]).find(r => r[0] === glyph);
+  const expected = Number(row?.[3]?.match(/^(\d+) strokes?/)?.[1]);
+  if (!current || current.status === 'recorded') continue;
+  if (codes.length !== expected) throw new Error(`Checked order for ${glyph} has ${codes.length} strokes, expected ${expected}`);
+  records[glyph] = { status: 'recorded', source: 'Standard stroke order · manually checked', strokes: codes.map(code => { const d = input.strokeDefinitions[code]; if (!d?.name) throw new Error(`Unknown code ${code}`); return { name: d.name, pinyin: d.pinyin, glyph: d.symbol ?? symbol(d.name) }; }) };
+}
 const families: RadicalFamily[] = [];
 for (const family of input.radicals) {
   const forms: RadicalForm[] = [];
