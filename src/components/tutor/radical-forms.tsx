@@ -10,11 +10,13 @@ import type { PracticeMode } from '@/lib/practice-mode';
 // already shows the same reading + meaning in its own heading above. Keep the
 // family heading to its Kangxi ID and the information note generic across families.
 // Practice passes its active mode so changing the exact form does not reset to Watch.
-export function RadicalForms({ familyId, selectedKey, destination = 'reference', mode }: { familyId: number; selectedKey?: string | undefined; destination?: 'reference' | 'practice'; mode?: PracticeMode }) {
+export function RadicalForms({ familyId, selectedKey, destination = 'reference', mode, hideLabel = false }: { familyId: number; selectedKey?: string | undefined; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean }) {
   const family = radicalFamily(familyId);
   if (!family) return null;
   return <div className="radical-family-section">
-    <h3 className="eyebrow flex-wrap"><span>RADICAL FAMILY · KANGXI #{family.id}</span><SourceInfo inline className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family readings are shared with variant forms that lack their own recorded name.<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo></h3>
+    {/* Practice renders the tiles inside its reading panel, where the Kangxi ID
+        already appears as a pill — hideLabel drops the redundant heading there. */}
+    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>RADICAL FAMILY · KANGXI #{family.id}</span><SourceInfo inline className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family readings are shared with variant forms that lack their own recorded name.<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`}>
       {/* Purple marks exact recorded Traditional forms: historical Kangxi headings
           and any variant whose own script metadata says Traditional (e.g. 訁). */}
