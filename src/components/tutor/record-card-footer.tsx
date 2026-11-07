@@ -6,6 +6,16 @@ import type { ReactNode } from 'react';
 
 export type PracticeSearch = { character?: string; stroke?: string; family?: number; variant?: string; mode?: PracticeMode };
 
+/**
+ * CardTopMeta repeats the footer metadata (rank · strokes, word type) inside the
+ * card's top label row, prefixed by a dot. It is display:none everywhere except
+ * Comfortable cards on small screens, where the footer text is hidden instead and
+ * the actions move beside the body — so only one copy is ever visible or read aloud.
+ */
+export function CardTopMeta({ children }: { children: ReactNode }) {
+  return <span className="card-top-meta"><span aria-hidden="true">· </span>{children}</span>;
+}
+
 export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails }: {
   metadata: ReactNode;
   hanzi: string;
