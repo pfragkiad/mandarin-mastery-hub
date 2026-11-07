@@ -50,7 +50,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
     if (hit.kind === 'Word') return Infinity;
     const kind = hit.kind === 'Character' ? 'Characters' : hit.kind === 'Component' ? 'Components' : 'Radicals';
     const kangxiIndex = hit.kind === 'Radical' ? Number(hit.note.match(/\bRadical #(\d+)\b/i)?.[1]) : undefined;
-    return usageRank({ id: `${kind}:${hit.hanzi}`, hanzi: hit.hanzi, kangxiIndex }, kind, includeTraditional) ?? Infinity;
+    return usageRank({ id: `${kind}:${hit.hanzi}`, hanzi: hit.hanzi, ...(kangxiIndex !== undefined ? { kangxiIndex } : {}) }, kind, includeTraditional) ?? Infinity;
   };
   const rankedRefs = refHits.map(hit => ({ hit, rank: rank(hit) }))
     .sort((a, b) => a.rank - b.rank).map(({ hit }) => hit);

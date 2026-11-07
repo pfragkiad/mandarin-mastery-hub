@@ -17,7 +17,7 @@ describe('Header search across the library', () => {
     expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('你好');
   });
   it('lists words first, glyphs next and explicit phrases last', () => {
-    const word = { ...words[0], id: 'search-word', hanzi: '水词', pinyin: 'shui', entry: undefined, entryKind: 'word' as const };
+    const word = { id: 'search-word', hanzi: '水词', pinyin: 'shui', meaning: 'water word', translation: '', type: 'noun', collection: 'test', level: '', sentence: '', entryKind: 'word' as const };
     const phrase = { ...word, id: 'search-phrase', hanzi: '水短语', entryKind: 'phrase' as const };
     const hits = searchAll([phrase, word], '水', false, 10000);
     expect(hits[0]).toEqual({ kind: 'Word', word });
