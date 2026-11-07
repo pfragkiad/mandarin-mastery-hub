@@ -23,6 +23,26 @@ export function filterWords(items: Word[], query: string, collection = 'All coll
   const matches = (w: Word) => pinyinOnly ? pinyinReadingMatches(w.pinyin, query, pinyinExact) : normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q) || pinyinReadingMatches(w.pinyin, query, false);
   return items.filter(w => matches(w) && (collection === 'All collections' || w.collection === collection) && (level === 'All levels' || w.level === level) && (status === 'All words' || saved.includes(w.id)) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
 }
+/**
+ * Faceted dropdown options for Vocabulary: each list (collection, level, type)
+ * only offers values that still have records under the *other* current
+ * choices, so picking "Unclassified" narrows Types to what exists there.
+ * A dropdown never filters by its own value (so you can still switch it), and
+ * the current selection always stays listed so the select never goes blank.
+ */
+export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string }) {
+  const { collection, level, pos } = selection;
+  const inCollection = (w: Word) => collection === 'All collections' || w.collection === collection;
+  const inLevel = (w: Word) => level === 'All levels' || w.level === level;
+  const inPos = (w: Word) => pos === 'All types' || partOfSpeechList(w).includes(pos);
+  const keep = (options: string[], current: string, all: string) => current === all || options.includes(current) ? options : [...options, current];
+  const levelSort = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
+  return {
+    collections: keep(collectionOptions(items.filter(w => inLevel(w) && inPos(w))), collection, 'All collections'),
+    levels: keep([...new Set(items.filter(w => inCollection(w) && inPos(w)).map(w => w.level))].sort(levelSort), level, 'All levels'),
+    pos: keep(partOfSpeechOptions(items.filter(w => inCollection(w) && inLevel(w))), pos, 'All types'),
+  };
+}
 /** Browser TTS only (last fallback); validated Mandarin voice. Prefer playPronunciation from ./audio. */
 export function speak(text: string, slow = false) {
   return speakTts(text, slow ? SLOW_RATE : NORMAL_RATE).ok;
