@@ -335,9 +335,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       onComplete: ({ totalMistakes }) => {
         if (animationRun.current !== run || completionHandled) return;
         completionHandled = true;
-        // Zero native mistakes means every attempted stroke was 100%; merely
-        // displaying a prefix/final group never calls this completion handler.
-        if (totalMistakes === 0) celebrate(100);
+        // Celebrate a whole-character attempt only; a clicked completed prefix
+        // followed by a perfect suffix is not a fully drawn hanzi.
+        if (startStroke === 0 && totalMistakes === 0) celebrate(100);
         needsRearm.current = true;
         setScores(prev => {
           const total = characterScore(prev);

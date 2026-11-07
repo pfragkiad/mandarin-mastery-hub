@@ -15,7 +15,6 @@ import { AnimationSpeedControl } from './animation-speed-control';
 import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
 import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
-import { usePerfectCelebration } from './perfect-celebration';
 
 const toHex = (value: string) => {
   const ctx = document.createElement('canvas').getContext('2d');
@@ -39,7 +38,6 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const practiceMode = selectedMode ?? localMode;
   const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };
   const { catalogVersion, theme, preferences } = useWorkspace();
-  const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const entry = libraryEntries('Strokes').find(item => item.hanzi === glyph);
   // A stroke glyph (㇐) has no sound of its own — the stroke's Chinese name (横) is what a voice can say.
   const { name: strokeName, reading } = strokeSpeech(entry);
@@ -119,7 +117,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
     void w.quiz({
       ...practiceModeOptions(practiceMode),
       onMistake: () => setMessage('Try again — check the starting point, direction and shape.'),
-      onComplete: ({ totalMistakes }: { totalMistakes?: number } = {}) => { if (animationRun.current !== run || completed) return; completed = true; if (totalMistakes === 0) celebrate(100); setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
+      onComplete: () => { if (animationRun.current !== run || completed) return; completed = true; setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
   const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (practiceModeOptions(practiceMode).showOutline) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); if (practiceMode !== 'watch') practice(); };
@@ -138,7 +136,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><div className="practice-heading-row"><div className="practice-heading-title"><h1>Practice.</h1><h2 className={practiceMode === "recall" ? "sr-only" : undefined}>Get to know <span lang="zh-CN">{glyph}</span></h2></div><Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div></div><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
-        <div className="writer-board"><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
+        <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls writer-controls-arranged"><div className="writer-playback">
           {practiceMode === 'watch' && <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>}
