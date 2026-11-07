@@ -1460,6 +1460,9 @@ html[data-display-size='comfortable'] {
 .library-remember-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-size: var(--ui-label-size, 13px); }
 .mobile-state-chip { display: inline-flex; align-items: center; gap: 5px; color: var(--primary); font-size: 12px; min-width: 0; white-space: normal; }
 .mobile-state-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+/* Removable chips are text-only: hover/focus never paints a background block. */
+.mobile-state-chip:hover, .mobile-state-chip:focus-visible, .mobile-state-chip:active { background: transparent !important; color: var(--primary); }
+.mobile-state-chip:hover svg:last-child { opacity: 0.75; }
 .mobile-filter-count { background: var(--secondary); color: var(--primary); border-radius: 4px; padding: 0 5px; font-size: 12px; }
 @media (max-width: 760px) {
   .mobile-library-filters { display: grid; gap: 8px; }
