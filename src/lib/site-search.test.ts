@@ -68,6 +68,12 @@ describe('Header search across the library', () => {
   it('caps the result list', () => {
     expect(searchAll(words, 'e', false, 8)).toHaveLength(8);
   });
+  it('returns every match without the 50-result preview cap for expansion', () => {
+    const all = searchAll(words, 'e', false, Infinity);
+    expect(all.length).toBeGreaterThan(50);
+    expect(all.slice(0, 50)).toEqual(searchAll(words, 'e', false, 50));
+    expect(all).toEqual(searchAll(words, 'e', false, 100000));
+  });
   it('matches readings only when the pinyin toggle is on, and whole readings when exact', () => {
     // Pinyin mode drops hanzi/meaning free text, so an English word finds nothing.
     expect(searchAll(words, 'hello', false, 1000, 'pinyin')).toEqual([]);
