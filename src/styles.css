@@ -1590,3 +1590,5 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    the dot so it doesn't read as part of the WORD label. */
 .library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 8px 10px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
 .library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
+/* Phrases stack their headword under the pinyin; the box hugs the characters instead of spanning the card. */
+.library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile { align-self: flex-start; width: fit-content; max-width: 100%; }
