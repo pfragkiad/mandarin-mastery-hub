@@ -1,9 +1,13 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
 import { words, type Word } from '@/lib/mandarin';
 import { DrawingSessionProvider } from './drawing-session';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
 import { defaultPreferences, defaultTheme, restoredTheme, restoredLibraryView, includeScript, type Preferences } from '@/lib/learning-preferences';
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
+/** Independently subscribed, session-only reveals survive route unmounts without
+ * rerendering the entire workspace or persisting record IDs in browser storage. */
+const CardRevealsContext = createContext<{ revealed: ReadonlySet<string>; setRevealed: Dispatch<SetStateAction<ReadonlySet<string>>> } | null>(null);
+export function useSessionCardReveals() { return useContext(CardRevealsContext); }
 // Shared session records/bookmarks and persisted display preferences live here;
 // page selections and applied filters belong to route search, not this context.
 const WorkspaceContext = createContext<Workspace | null>(null);
@@ -12,6 +16,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [sessionItems, setSessionItems] = useState<Word[]>([]);
   const items = [...words, ...sessionItems];
   const [saved, setSaved] = useState<string[]>([]);
+  const [revealed, setRevealed] = useState<ReadonlySet<string>>(() => new Set());
   const [preferences, setPreferences] = useState<Preferences>(defaultPreferences);
   const [loaded, setLoaded] = useState(false);
   // Restore browser preferences after hydration. Gate writes until restoration
@@ -33,6 +38,6 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
   // Root-level sizing also reaches dropdowns and dialogs rendered in portals.
   useEffect(() => { document.documentElement.dataset['displaySize'] = preferences.libraryView === 'list' ? 'comfortable' : 'compact'; }, [preferences.libraryView]);
-  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><DrawingSessionProvider>{children}</DrawingSessionProvider></WorkspaceContext.Provider>;
+  return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><CardRevealsContext.Provider value={{ revealed, setRevealed }}><DrawingSessionProvider>{children}</DrawingSessionProvider></CardRevealsContext.Provider></WorkspaceContext.Provider>;
 }
 export function useWorkspace() { const value = useContext(WorkspaceContext); if (!value) throw new Error('WorkspaceProvider is required'); return value; }

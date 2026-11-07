@@ -32,6 +32,7 @@ export function focusRecordCard(id: string) {
   const attempt = () => {
     const card = document.querySelector<HTMLElement>(`[data-entry-id="${CSS.escape(id)}"]`);
     if (card) {
+      window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: id }));
       card.scrollIntoView({ block: 'center', behavior: 'instant' });
       if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '-1');
       card.focus({ preventScroll: true });

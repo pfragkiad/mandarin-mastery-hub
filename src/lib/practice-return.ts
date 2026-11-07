@@ -25,6 +25,8 @@ export function focusEntryCard() {
       .find(a => new URL(a.href).searchParams.get('character') === target);
     const card = link?.closest<HTMLElement>('.word-card, article, li') ?? link;
     if (card) {
+      const id = card.dataset['entryId'];
+      if (id) window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: id }));
       card.scrollIntoView({ block: 'center', behavior: 'instant' });
       if (!card.hasAttribute('tabindex') && !card.matches('a,button')) card.setAttribute('tabindex', '-1');
       card.focus({ preventScroll: true });

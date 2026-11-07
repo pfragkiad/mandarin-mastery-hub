@@ -46,7 +46,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const density = useLibraryDensity(() => onPageChange?.(1));
   const paged = vocabularyPage(filtered, kind, page, initialWordId, density.size);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide); reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}`);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
   // An absent selection is an empty string, not undefined; block paging only
   // while the same conditions below actually render the floating reference.
   const detailOpen = Boolean(onWordOpen && linkedWord);
