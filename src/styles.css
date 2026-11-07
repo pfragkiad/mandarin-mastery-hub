@@ -1582,6 +1582,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .word-grid:not(.library-list-view) .word-card.headword-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .word-grid:not(.library-list-view) .word-card.headword-card .catalog-card-indicators { display: flex; align-items: center; gap: 8px; min-height: 18px; }
 .word-grid:not(.library-list-view) .word-card.headword-card .catalog-source-icon { position: static; display: block; width: 13px; height: 13px; color: var(--primary); }
+/* Compact word headwords get the same thin box as Compact glyph tiles (.tile-form:
+   1.18em tall, same radius); longer words widen it on one line. */
+.word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 1.18em; height: 1.18em; padding: 0 .12em; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; white-space: nowrap; }
 .library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
 .library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
