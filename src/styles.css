@@ -1138,13 +1138,15 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
-/* The summary wraps as one unit, keeping its range level with Per page. */
-.catalog-pagination { flex-wrap: wrap; }
+/* Navigation and result position belong together; the page-size setting
+   remains a separate trailing cluster and moves to its own row on phones. */
+.catalog-pagination { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+.catalog-pagination-left { min-width: 0; }
 .catalog-pagination-navigation { flex: 0 1 auto; min-width: 0; }
+.catalog-pagination-left > .catalog-pagination-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .catalog-pagination > .catalog-pagination-summary { flex: 0 1 auto; flex-wrap: nowrap; min-width: 0; margin-left: auto; }
-.catalog-page-range { white-space: nowrap; text-align: right; }
-/* The leading range carries the auto margin so range, dot and per-page picker stay together at the right edge. */
-.catalog-pagination-summary > .catalog-page-range { margin-left: 0; }
+.catalog-page-range { white-space: nowrap; text-align: left; color: var(--muted-foreground); }
+@media(max-width:580px) { .catalog-pagination { grid-template-columns: minmax(0, 1fr); } }
 .library-per-page { display: flex; align-items: center; gap: 2px; margin-left: 0; flex-shrink: 0; }
 .library-per-page > span { margin-right: 5px; }
 .library-per-page button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
