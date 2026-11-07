@@ -119,7 +119,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
     void w.quiz({
       ...practiceModeOptions(practiceMode),
       onMistake: () => setMessage('Try again — check the starting point, direction and shape.'),
-      onComplete: ({ totalMistakes } = {}) => { if (animationRun.current !== run || completed) return; completed = true; if (totalMistakes === 0) celebrate(100); setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
+      onComplete: ({ totalMistakes }: { totalMistakes?: number } = {}) => { if (animationRun.current !== run || completed) return; completed = true; if (totalMistakes === 0) celebrate(100); setMode('idle'); setMessage('Stroke complete! Practice again when you’re ready.'); },
     });
   };
   const reset = () => { const w = writer.current; if (!w) return; animationRun.current += 1; w.cancelQuiz(); if (practiceModeOptions(practiceMode).showOutline) void w.showOutline({ duration: 0 }); if (practiceMode === 'watch') void w.showCharacter({ duration: 0 }); else void w.hideCharacter({ duration: 0 }); setMode('idle'); setMessage('Ready. Watch the stroke or start another attempt.'); if (practiceMode !== 'watch') practice(); };

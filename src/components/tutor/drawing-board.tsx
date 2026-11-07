@@ -75,7 +75,7 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
         onCorrectStroke: stroke => {
           if (active && !settled.current) setProgress({ completed: stroke.strokeNum + 1, total: data.strokes.length });
         },
-        onComplete: ({ totalMistakes } = {}) => {
+        onComplete: ({ totalMistakes }: { totalMistakes?: number } = {}) => {
           if (!active || settled.current) return;
           if (totalMistakes === 0) celebrate(100);
           settled.current = true; setState(guideUsed.current || guideRef.current ? 'guided' : 'correct');
