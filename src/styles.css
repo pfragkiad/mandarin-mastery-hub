@@ -1170,6 +1170,26 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
    always stacks pinyin, hanzi and meaning in that order at every width.
    Unclamped text can grow the row without changing it when a face is hidden. */
 .library-view-toggle { display: inline-flex; flex: none; padding: 2px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); gap: 2px; }
+/* Collapsed navigation is a floating named drawer at any viewport, including
+   narrow desktop windows. No icon rail or reserved width survives collapse. */
+.workspace.hamburger-navigation { --sidebar-width: 0px; }
+.workspace.hamburger-navigation .mobile-menu { display: inline-flex; flex-shrink: 0; }
+.workspace.hamburger-navigation .sidebar { width: 238px; transform: translateX(-100%); transition: transform .2s; background: color-mix(in oklab, var(--sidebar-bg) 97%, transparent); backdrop-filter: blur(4px); }
+.workspace.hamburger-navigation .sidebar.is-open { transform: translateX(0); box-shadow: var(--shadow-popover); }
+.workspace.hamburger-navigation .sidebar.is-open .brand-copy,
+.workspace.hamburger-navigation .sidebar.is-open .sidebar-label,
+.workspace.hamburger-navigation .sidebar.is-open .nav-item span,
+.workspace.hamburger-navigation .sidebar.is-open .sidebar-bottom span { display: block; }
+.workspace.hamburger-navigation .sidebar.is-open .nav-item { justify-content: flex-start; padding: 0 14px; }
+.workspace.hamburger-navigation .sidebar.is-open .nav-sub-item { display: flex; justify-content: flex-start; padding: 0 14px 0 40px; gap: 10px; }
+.workspace.hamburger-navigation .sidebar.is-open .nav-sub-item span { display: inline; }
+.workspace.hamburger-navigation .sidebar.is-open .help-link { display: flex; }
+.workspace.hamburger-navigation .mobile-scrim { position: fixed; inset: 0; background: var(--overlay); z-index: 29; }
+@media (max-width: 850px) {
+  .workspace { --sidebar-width: 0px; }
+  .workspace .mobile-menu { display: inline-flex; flex-shrink: 0; }
+  .workspace .sidebar:not(.is-open) { transform: translateX(-100%); }
+}
 .library-view-toggle button { height: 30px; gap: 6px; padding-inline: 10px; }
 .library-view-toggle button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
 .catalog-results .library-list-view { grid-template-columns: minmax(0, 1fr); gap: 18px; }
