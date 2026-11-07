@@ -1164,7 +1164,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
 .catalog-jump-dialog { width: min(300px, calc(100vw - 32px)); max-width: 300px; border-radius: 8px; }
 /* Small screens: one pagination row. Go to shrinks to its crosshair (hint in
-   title/aria-label), clusters drop their wrapping and gaps tighten so pager,
+   title/aria-label), clusters stop wrapping and hit areas tighten so pager,
    range and Per page share a single line without vertical slack. */
 @media (max-width: 760px) {
   .catalog-jump-label { display: none; }
@@ -1172,20 +1172,19 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .catalog-pagination > div, .catalog-pagination-left > .catalog-pagination-navigation { flex-wrap: nowrap; gap: 0; }
   .catalog-pagination-left { gap: 6px; }
   .catalog-pagination-left > *, .catalog-pagination > .catalog-pagination-summary { flex-shrink: 0; min-width: auto; }
-  .catalog-pagination-navigation .catalog-jump-trigger { padding-inline: 4px; }
   .catalog-pagination-navigation > span[aria-current='page'] { min-width: auto; flex-shrink: 0; padding-inline: 4px; }
+  html .catalog-pagination .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page'], .catalog-jump-trigger) { width: 32px; min-width: 32px; padding-inline: 0; }
   .library-per-page > .library-per-page-label { margin-right: 2px; }
-  .library-per-page button, html[data-display-size='comfortable'] .library-per-page button { min-width: 26px; padding: 0 4px; }
+  html .catalog-pagination .library-per-page button { width: auto; min-width: 28px; padding: 0 3px; }
 }
 @media (max-width: 480px) {
-  /* Narrow phones: drop the "Page" and "Per page" words (both groups keep their
-     accessible names) and trim hit areas slightly so the row stays intact. */
+  /* Narrow phones drop the "Page" and "Per page" words; both groups keep their accessible names. */
   .library-per-page > .library-per-page-label, .catalog-page-word { display: none; }
-  .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']),
-  html[data-display-size='comfortable'] .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']),
-  .catalog-pagination-navigation .catalog-jump-trigger, html[data-display-size='comfortable'] .catalog-pagination-navigation .catalog-jump-trigger { width: 32px; min-width: 32px; padding-inline: 0; }
-  .library-per-page button, html[data-display-size='comfortable'] .library-per-page button, html[data-display-size='comfortable'] .catalog-pagination .library-per-page button { width: auto; min-width: 28px; padding: 0 3px; }
-  .catalog-pagination-navigation > span[aria-current='page'] { min-width: 3.25rem; }
+}
+@media (max-width: 420px) {
+  /* Narrowest phones: First/Last give way to the row; Go to still jumps to any page. */
+  html .catalog-pagination .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Last page']) { display: none; }
+}
 }
 .catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
 .catalog-jump-dialog .catalog-jump-rank-range { display: block; white-space: nowrap; }
