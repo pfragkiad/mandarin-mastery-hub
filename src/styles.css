@@ -1422,7 +1422,15 @@ html[data-display-size='comfortable'] {
   height: var(--reference-audio-icon-size);
 }
 @media (max-width: 580px) {
-  .glyph-usage-parents, .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
+  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
+  /* Keep the glyph beside both text rows; a real pronunciation wrapper keeps
+     its speaker adjacent rather than allocating the far edge as an audio track. */
+  .glyph-usage-parents { grid-template-columns: max-content minmax(0, 1fr); }
+  .glyph-usage-reference > a { grid-column: 1; grid-row: 1 / span 2; }
+  .glyph-usage-parents .glyph-usage-reference > .example-pinyin-row { display: flex; flex-wrap: wrap; grid-column: 2; grid-row: 1; min-width: 0; gap: 6px; }
+  .glyph-usage-reference > .glyph-usage-meaning { grid-column: 2; grid-row: 2; }
+  .glyph-usage-reference:not(:has(.example-pinyin-row)) > .glyph-usage-meaning { grid-row: 1 / span 2; }
+  .glyph-usage-reference .example-audio-error { flex-basis: 100%; }
   .sentence-pinyin { flex-wrap: wrap; }
   .sentence-pinyin > span { min-width: 0; overflow-wrap: anywhere; }
 }
