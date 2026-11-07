@@ -258,6 +258,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     range: filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0',
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
     ranks: rankSummary,
+    currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => usageRank(entry, kind, preferences.includeTraditional)).find(rank => rank !== null) ?? undefined : undefined,
     onRankChange: hasUsage ? (rank: number) => { const target = rankToPage(rank); if (target) setPage(target); } : undefined,
   };
   const stickyLabel = (() => {
