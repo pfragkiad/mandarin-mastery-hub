@@ -1476,4 +1476,6 @@ html[data-display-size='comfortable'] {
   .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
   html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { min-height: 36px; height: auto; font-size: 13px; padding-inline: 8px; }
+  /* Filters and Study open matching sheets, so they share one width and their state chips line up. */
+  .library-page .mobile-filter-actions > button:first-child, .library-page .catalog-tools-row > button:first-child { min-width: 112px; justify-content: flex-start; }
 }
