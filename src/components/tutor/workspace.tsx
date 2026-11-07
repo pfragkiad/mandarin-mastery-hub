@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 import { words, type Word } from '@/lib/mandarin';
 import { DrawingSessionProvider } from './drawing-session';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
-import { defaultPreferences, defaultTheme, restoredTheme, includeScript, type Preferences } from '@/lib/learning-preferences';
+import { defaultPreferences, defaultTheme, restoredTheme, restoredLibraryView, includeScript, type Preferences } from '@/lib/learning-preferences';
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
 // Shared session records/bookmarks and persisted display preferences live here;
 // page selections and applied filters belong to route search, not this context.
@@ -21,7 +21,14 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   useEffect(() => { loadCatalog().then(() => setCatalogVersion(catalog.version)).catch(() => { /* catalogue unavailable; screens show loading/empty states */ }); }, []);
   useEffect(() => { try { setTheme(restoredTheme(localStorage.getItem('tutor-theme'))); } catch { /* storage may be unavailable */ } }, []);
   useEffect(() => { document.documentElement.classList.toggle('dark', theme === 'dark'); if (loaded) { try { localStorage.setItem('tutor-theme', theme); } catch { /* storage may be unavailable */ } } }, [theme, loaded]);
-  useEffect(() => { try { const raw = localStorage.getItem('tutor-preferences'); if (raw) setPreferences(p => ({ ...p, ...JSON.parse(raw) })); } catch { /* ignore */ } setLoaded(true); }, []);
+  useEffect(() => {
+    let stored: Partial<Preferences> = {};
+    try { const raw = localStorage.getItem('tutor-preferences'); if (raw) stored = JSON.parse(raw) ?? {}; } catch { /* unavailable or invalid storage uses device defaults */ }
+    // Apply the mobile default only once, not on resize or after a saved choice.
+    const libraryView = restoredLibraryView(stored.libraryView, window.matchMedia('(max-width: 850px)').matches);
+    setPreferences(p => ({ ...p, ...stored, libraryView }));
+    setLoaded(true);
+  }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
   return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><DrawingSessionProvider>{children}</DrawingSessionProvider></WorkspaceContext.Provider>;
