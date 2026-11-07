@@ -12,11 +12,13 @@ afterEach(cleanup);
 it('switches to list without changing the active hidden face or page size', () => {
   preferences = { ...preferences, cardReveal: 'hanzi', libraryPerPage: 20 };
   const view = render(<LibraryViewToggle/>);
-  fireEvent.click(screen.getByRole('button', { name: 'List view' }));
+  fireEvent.keyDown(screen.getByRole('button', { name: /Display size/ }), { key: 'ArrowDown' });
+  fireEvent.click(screen.getByRole('menuitemradio', { name: 'Comfortable' }));
   expect(preferences.libraryView).toBe('list');
   expect(preferences.cardReveal).toBe('hanzi');
   expect(preferences.libraryPerPage).toBe(20);
   view.rerender(<LibraryViewToggle/>);
-  fireEvent.click(screen.getByRole('button', { name: 'Grid view' }));
+  fireEvent.keyDown(screen.getByRole('button', { name: /Display size/ }), { key: 'ArrowDown' });
+  fireEvent.click(screen.getByRole('menuitemradio', { name: 'Compact' }));
   expect(preferences.libraryView).toBe('grid');
 });

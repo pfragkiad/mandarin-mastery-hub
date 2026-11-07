@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Shared header Compact/Comfortable choice; Comfortable enlarges search, dropdowns, labels and controls app-wide while preserving large cards; verified phone/desktop libraries, Practice, games, Settings, portal menus and persistence; 9 tests pass, preview clean.
+
 - [done] Shared remembered Grid/List controls in Glyphs and Vocabulary; large rearranged one-card rows verified at phone/tablet/desktop widths, stable hide/reveal, detail opening and reload persistence; 13 tests pass, preview clean.
 
 - [done] Add small perfect-completion confetti in Trace, Recall and Drawing with saved Settings switch and reduced-motion support; verified a live Trace burst and switch persistence, 56 tests pass, preview clean.

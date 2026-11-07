@@ -31,6 +31,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
+  // Root-level sizing also reaches dropdowns and dialogs rendered in portals.
+  useEffect(() => { document.documentElement.dataset['displaySize'] = preferences.libraryView === 'list' ? 'comfortable' : 'compact'; }, [preferences.libraryView]);
   return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><DrawingSessionProvider>{children}</DrawingSessionProvider></WorkspaceContext.Provider>;
 }
 export function useWorkspace() { const value = useContext(WorkspaceContext); if (!value) throw new Error('WorkspaceProvider is required'); return value; }
