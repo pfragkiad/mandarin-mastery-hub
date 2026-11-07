@@ -1429,11 +1429,10 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 
 /* Footer metadata copy for the top label row; shown only by the rule below. */
 .card-top-meta { display: none; }
-/* Comfortable cards on small screens drop the footer row: its metadata joins the
+/* Comfortable cards at every width drop the footer row: its metadata joins the
    top label row after a dot, and the actions form a 2×2 block to the right of the
    body. The body keeps its own bottom padding so wrapped translations still breathe.
    Phrases keep the footer because their stacked body needs the full card width. */
-@media (max-width: 760px) {
   .library-list-view:not(.vocab-phrase-grid) .word-card { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto; }
   .library-list-view:not(.vocab-phrase-grid) .word-card > .word-card-top { grid-column: 1 / -1; grid-row: 1; }
   .library-list-view:not(.vocab-phrase-grid) .word-card > .word-open { grid-column: 1; grid-row: 2; padding-right: 10px; }
@@ -1444,7 +1443,6 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view:not(.vocab-phrase-grid) .word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
   .library-list-view:not(.vocab-phrase-grid) .word-card .card-top-meta .component-reuse-label { font-size: 12px; }
   .library-list-view:not(.vocab-phrase-grid) .word-card > .catalog-card-audio-error { grid-column: 1 / -1; grid-row: 3; }
-}
 
 /* Reference typography has one scale per semantic role, shared by sentence,
    parent-character, identity and decomposition renderers in every location.
@@ -1540,16 +1538,14 @@ html[data-display-size='comfortable'] {
   .library-page .mobile-filter-actions > button:first-child, .library-page .catalog-tools-row > button:first-child { min-width: 112px; justify-content: flex-start; }
 }
 
-/* Small-screen Comfortable card actions (2×2 block): Details and Save share the top
+/* Comfortable card actions (2×2 block, every width): Details and Save share the top
    row, the two brush practice links sit below. Placement is by grid area so the
    DOM/tab order stays Details → Practice → Expert → Save on every layout. */
-@media (max-width: 760px) {
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-actions { grid-template-areas: "details save" "practice expert"; }
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-actions .card-details-action { grid-area: details; }
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-actions .card-bookmark-action { grid-area: save; }
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-actions .card-practice-action { grid-area: practice; }
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-actions .card-expert-action { grid-area: expert; }
-}
 
 /* Practice reading card: when a single hanzi is shown (Watch/Trace, non-radical), it
    sits in a bordered tile on the left with the pinyin + speaker line and the
