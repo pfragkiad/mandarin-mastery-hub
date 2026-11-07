@@ -1213,6 +1213,21 @@ html[data-display-size='comfortable'] .practice-page-content .radical-form-choic
 html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 92px; height: auto; min-height: 112px; }
 html[data-display-size='comfortable'] .practice-page-content .stroke-index { font-size: 11px; }
 html[data-display-size='comfortable'] .practice-page-content .decomposition-part { flex-wrap: wrap; }
+html[data-display-size='comfortable'] .practice-page-content .word-context { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); align-items: center; gap: 16px; }
+html[data-display-size='comfortable'] .practice-page-content .word-context-detail { font-size: 20px; line-height: 1.5; min-width: 0; overflow-wrap: anywhere; }
+html[data-display-size='comfortable'] .practice-page-content .word-context-detail .pinyin { font-size: 20px; }
+html[data-display-size='comfortable'] .practice-page-content .word-context-hanzi { line-height: 1.4; overflow-wrap: anywhere; }
+html[data-display-size='comfortable'] .practice-page-content .character-picker button { width: 60px; height: 60px; font-size: 32px !important; }
+html[data-display-size='comfortable'] .practice-page-content .picker-label { font-size: 13px; letter-spacing: 0; }
+/* Badge text uses one scale across list cards, detail sheets, search and Practice.
+   Extra specificity preserves it against list-view and Traditional overrides. */
+html[data-display-size='comfortable'] :is(.word-hsk-id, .word-hsk-id.traditional-pill, .practice-kind, .kangxi-identity-badge, .tile-traditional-badge) { font-size: 13px; line-height: 1.4; letter-spacing: 0; padding: 3px 8px; }
+html[data-display-size='comfortable'] .library-list-view .word-hsk-id { font-size: 13px; }
+html[data-display-size='comfortable'] .practice-reading-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+html[data-display-size='comfortable'] .practice-pills { flex-wrap: wrap; justify-content: flex-end; max-width: 160px; }
+@media (max-width: 580px) {
+  html[data-display-size='comfortable'] .practice-page-content .word-context { grid-template-columns: minmax(0, 1fr); text-align: center; }
+}
 html[data-display-size='comfortable'] :is([role='menuitem'], [role='menuitemradio'], [role='menuitemcheckbox'], [role='option']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] [role='menu'] { max-width: calc(100vw - 24px); }
 html[data-display-size='comfortable'] .search-field .search-toggle { font-size: 12px; height: 32px; min-height: 32px; letter-spacing: 0; }
