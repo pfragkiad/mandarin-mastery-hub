@@ -307,7 +307,7 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
   if (mode === 'recall') fireEvent.click(screen.getByRole('button', { name: 'Show strokes' }));
   const tile = await screen.findByRole('button', { name: 'Play stroke 1' });
   expect(tile).toBeDisabled();
-  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeEnabled();
   expect(document.querySelector('.stroke-guide')).toHaveClass('stroke-guide-readonly');
   // A tap on an inert tile must never start a writing animation.
   fireEvent.click(tile);
@@ -422,3 +422,23 @@ it('a single tile clears component selection before drawing the selected stroke'
   fireEvent.mouseDown(target);
   expect(fake.quiz.mock.calls[1]?.[0].quizStartStrokeNum).toBe(0);
  });
+
+it('Trace group click resumes after its final stroke and leaves the next group uncompleted', async () => {
+  render(<WritingPractice character="学" mode="trace" enrichment={selectionRecord()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  const first = screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' });
+  fireEvent.click(first);
+  expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1);
+  expect(first).toHaveAttribute('aria-pressed', 'true');
+  expect(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: 'Continue tracing after stroke 2' })).toHaveAttribute('aria-pressed', 'false');
+  expect(fake.animateStroke).not.toHaveBeenCalled();
+  expect(document.querySelectorAll('.stroke-score')).toHaveLength(0);
+  // Re-clicking a group is a continuation command, not a deselect/reset command.
+  fireEvent.click(first);
+  expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
+  expect(fake.quiz).toHaveBeenCalledTimes(3);
+  expect(fake.showCharacter).toHaveBeenCalledWith({ duration: 0 });
+  expect(screen.getByRole('button', { name: 'Continue tracing after stroke 3' })).toHaveAttribute('aria-pressed', 'true');
+});
