@@ -58,7 +58,7 @@
  --font-sans: 'DM Sans', sans-serif; --font-display: 'Lora', Georgia, serif;
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
 }
-:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --traditional: oklch(.46 .16 305); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
+:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --traditional: oklch(.46 .16 305); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
 @layer base { * { border-color: var(--border); } body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 14px; letter-spacing: 0; } button,a,input,select { -webkit-tap-highlight-color: transparent; } button,a { touch-action: manipulation; } button { cursor: pointer; } h1,h2,h3,p { margin: 0; } a { text-decoration: none; } input,select { font: inherit; } :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
 .workspace { --sidebar-width: 238px; min-height: 100vh; }
 .workspace.is-collapsed { --sidebar-width: 78px; }
@@ -254,7 +254,7 @@
   --muted-foreground: oklch(.76 .012 145); --accent: oklch(.34 .024 155);
   --border: oklch(.43 .012 155); --terracotta: oklch(.79 .08 48); --reveal-ring: oklch(.8 .09 158);
   /* Rank bands brighten for the dark background so every tier keeps its hue. */
-  --rank-gold: oklch(.82 .11 90);
+  --rank-gold: oklch(.82 .11 90); --expert-gold: oklch(.85 .16 90);
   --hsk-id: oklch(.84 .09 72); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
@@ -963,7 +963,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .practice-page-content .practice-page-heading { gap: 12px 8px; }
   .practice-page-heading .eyebrow { letter-spacing: 0; line-height: 1.6; }
   .practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-size: 18px; }
-  .practice-page-heading .practice-print-button { white-space: normal; max-width: 132px; height: auto; min-height: 36px; line-height: 1.4; }
   .stroke-guide-top h3.eyebrow { font-size: 8px; letter-spacing: 1.25px; }
 }
 
@@ -1561,3 +1560,13 @@ html[data-display-size='comfortable'] {
 .practice-intro .practice-meaning:has(> .practice-hanzi) > .practice-reading-top { grid-column: 2; grid-row: 1; align-self: end; }
 .practice-intro .practice-meaning:has(> .practice-hanzi) > .practice-translation { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
 html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .practice-hanzi) > .practice-hanzi { width: 96px; height: 96px; font-size: 70px; }
+
+/* Practice Expert icon crown: filled and outlined in the theme's gold. */
+.expert-crown { fill: var(--expert-gold); stroke: var(--expert-gold); }
+
+/* Print practice sheet keeps its label on one line; on phones and small screens
+   (same 760px breakpoint as the library controls) the button is hidden entirely. */
+.practice-page-content .practice-print-button { white-space: nowrap; }
+@media (max-width: 760px) {
+  .practice-page-content .practice-print-button { display: none; }
+}
