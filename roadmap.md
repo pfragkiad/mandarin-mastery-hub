@@ -1,6 +1,6 @@
 # Roadmap
 
-- [in progress] Clear ranked/unranked totals, nearest recorded rank jumps with feedback, Go to icon, and direct page buttons for up to seven pages.
+- [done] Clear ranked/unranked totals, nearest recorded rank jumps with feedback, Go to icon, and direct page buttons for up to seven pages; 14 tests passed, live rank gap/direct page jumps and phone layout verified, preview clean.
 
 - [done] Shared top/bottom first/previous/next/last paging, filtered Page/Rank Go to dialog and range totals; enlarged Comfortable search with spaced toggles. Verified Glyphs rank/page and Vocabulary page jumps, bottom navigation, desktop/phone layouts without overflow; 25 tests passed and preview clean.
 
