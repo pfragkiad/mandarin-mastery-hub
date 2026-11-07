@@ -447,8 +447,28 @@ it.each(['trace', 'recall'] as const)('%s celebrates only perfect completed atte
   const { container } = render(<WritingPractice character="我" mode={mode}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   const quiz = fake.quiz.mock.calls.at(-1)?.[0];
-  act(() => quiz.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
-  expect(container.querySelector('.perfect-confetti')).toBeNull();
+  for (const strokeNum of [0, 1, 2]) {
+    act(() => quiz.onCorrectStroke({ strokeNum, mistakesOnStroke: 0 }));
+    expect(container.querySelector('.perfect-confetti')).toBeNull();
+  }
   act(() => quiz.onComplete({ totalMistakes: 0 }));
   expect(container.querySelector('.perfect-confetti')).not.toBeNull();
+});
+
+it('does not celebrate finishing only the remaining Trace strokes', async () => {
+  const { container } = render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  fireEvent.click(await screen.findByRole('button', { name: 'Continue tracing after stroke 1' }));
+  const quiz = fake.quiz.mock.calls.at(-1)?.[0];
+  act(() => quiz.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 }));
+  act(() => quiz.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
+  act(() => quiz.onComplete({ totalMistakes: 0 }));
+  expect(container.querySelector('.perfect-confetti')).toBeNull();
+});
+
+it('does not celebrate an isolated stroke exercise', async () => {
+  const { container } = render(<StrokePractice glyph="㇐" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  act(() => fake.quiz.mock.calls.at(-1)?.[0].onComplete({ totalMistakes: 0 }));
+  expect(container.querySelector('.perfect-confetti')).toBeNull();
 });
