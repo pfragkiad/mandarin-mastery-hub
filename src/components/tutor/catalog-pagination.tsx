@@ -10,7 +10,7 @@ import { NavigationShortcuts } from './navigation-shortcuts';
  * Shared top/bottom row. Only the modal owns jump mode/value drafts; owners
  * supply applied result totals and exact recorded rank bounds, never inferred ranks.
  */
-export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks }: {
+export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks, currentRank }: {
   range: string;
   total: number;
   current: number;
@@ -23,6 +23,8 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   /** Resolves a frequency rank to the page holding it; absent on tabs without ranks. */
   onRankChange?: ((rank: number) => void) | undefined;
   ranks?: { count: number; min: number; max: number } | undefined;
+  /** First recorded rank in the current page, never a result index or inferred rank. */
+  currentRank?: number | undefined;
 }) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<'page' | 'rank'>('page');
@@ -36,9 +38,10 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
     <div className="catalog-pagination-navigation">
       <Button variant="ghost" size="icon" aria-label="First page" title="First page" disabled={current <= 1} onClick={() => onPageChange(1)}><ChevronsLeft/></Button>
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
+      <span aria-label={`Current page ${current}`} aria-current="page" className="min-w-8 text-center tabular-nums">{current.toLocaleString('en-US')}</span>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       <Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
-      <Button variant="outline" size="sm" disabled={!total} onClick={() => { setMode('page'); setJump(''); setOpen(true); }}>Go to</Button>
+      <Button variant="outline" size="sm" disabled={!total} onClick={() => { setMode('page'); setJump(String(current)); setOpen(true); }}>Go to</Button>
       <NavigationShortcuts context="pages"/>
     </div>
     <div className="catalog-pagination-summary">
@@ -47,7 +50,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
     </div>
     <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle><DialogDescription><span className="block">Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')} pages</span>{onRankChange && <span className="block">{ranks?.count.toLocaleString('en-US') ?? 0} recorded ranks{ranks && <> ({ranks.min.toLocaleString('en-US')}–{ranks.max.toLocaleString('en-US')})</>}</span>}</DialogDescription>
       <form onSubmit={event => { event.preventDefault(); if (!valid) return; if (mode === 'rank') onRankChange?.(target); else onPageChange(target); setOpen(false); }}>
-        <div className="catalog-jump-modes" role="group" aria-label="Jump by"><Button type="button" variant={mode === 'page' ? 'secondary' : 'ghost'} aria-pressed={mode === 'page'} onClick={() => { setMode('page'); setJump(''); }}>Page</Button>{onRankChange && <Button type="button" variant={mode === 'rank' ? 'secondary' : 'ghost'} aria-pressed={mode === 'rank'} disabled={!rankAvailable} onClick={() => { setMode('rank'); setJump(''); }}>Rank</Button>}</div>
+        <div className="catalog-jump-modes" role="group" aria-label="Jump by"><Button type="button" variant={mode === 'page' ? 'secondary' : 'ghost'} aria-pressed={mode === 'page'} onClick={() => { setMode('page'); setJump(String(current)); }}>Page</Button>{onRankChange && <Button type="button" variant={mode === 'rank' ? 'secondary' : 'ghost'} aria-pressed={mode === 'rank'} disabled={!rankAvailable} onClick={() => { setMode('rank'); setJump(currentRank === undefined ? '' : String(currentRank)); }}>Rank</Button>}</div>
         <label className="catalog-jump-field">{mode === 'rank' ? 'Rank' : 'Page'}<Input type="number" inputMode="numeric" min={min} max={max} step={1} aria-label={mode === 'rank' ? 'Jump to rank' : 'Jump to page'} value={jump} onChange={event => setJump(event.target.value)} required/></label>
         <Button type="submit" disabled={!valid}>Go</Button>
       </form>

@@ -5,6 +5,21 @@ import { CatalogPagination } from './catalog-pagination';
 const base = { range: '81–100', total: 7427, current: 5, pages: 372, perPage: 20 as const };
 
 describe('Library paging and explicit jumps', () => {
+  it('prefills the current page when opening and returning to Page mode', () => {
+    render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    expect(screen.getByRole('spinbutton', { name: 'Jump to page' })).toHaveValue(5);
+    fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
+    fireEvent.click(screen.getByRole('button', { name: /^Page$/ }));
+    expect(screen.getByRole('spinbutton', { name: 'Jump to page' })).toHaveValue(5);
+  });
+
+  it('prefills the first visible recorded rank rather than a filtered position', () => {
+    render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
+    expect(screen.getByRole('spinbutton', { name: 'Jump to rank' })).toHaveValue(123);
+  });
   it('first/previous/next/last navigate to the exact page boundaries', () => {
     const change = vi.fn();
     render(<CatalogPagination {...base} onPageChange={change}/>);
