@@ -21,8 +21,8 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   perPage?: LibraryPerPage;
   onPerPageChange?: (perPage: LibraryPerPage) => void;
   /** Resolves a frequency rank to the page holding it; absent on tabs without ranks. */
-  onRankChange?: (rank: number) => void;
-  ranks?: { count: number; min: number; max: number };
+  onRankChange?: ((rank: number) => void) | undefined;
+  ranks?: { count: number; min: number; max: number } | undefined;
 }) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<'page' | 'rank'>('page');

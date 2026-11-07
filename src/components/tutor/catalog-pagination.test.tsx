@@ -20,7 +20,7 @@ describe('Library paging and explicit jumps', () => {
     fireEvent.change(input, { target: { value: '20' } });
     fireEvent.blur(input);
     expect(change).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', { name: 'Go', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
     expect(change).toHaveBeenCalledExactlyOnceWith(20);
   });
 
@@ -32,7 +32,7 @@ describe('Library paging and explicit jumps', () => {
     fireEvent.submit(screen.getByRole('spinbutton').closest('form') as HTMLFormElement);
     expect(change).not.toHaveBeenCalled();
     fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '4' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Go', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
     expect(change).toHaveBeenCalledExactlyOnceWith(4);
   });
 
@@ -40,17 +40,20 @@ describe('Library paging and explicit jumps', () => {
     const rank = vi.fn();
     render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={rank} ranks={{ count: 78, min: 3, max: 5420 }}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Rank', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
     fireEvent.change(screen.getByRole('spinbutton', { name: 'Jump to rank' }), { target: { value: '5000' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Go', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
     expect(rank).toHaveBeenCalledExactlyOnceWith(5000);
   });
 
   it('top and bottom rows both apply the selected 10/20/50 per-page value', () => {
     const change = vi.fn();
     render(<><CatalogPagination {...base} top onPageChange={vi.fn()} onPerPageChange={change}/><CatalogPagination {...base} onPageChange={vi.fn()} onPerPageChange={change}/></>);
-    fireEvent.click(screen.getAllByRole('button', { name: '50 per page' })[0]);
-    fireEvent.click(screen.getAllByRole('button', { name: '10 per page' })[1]);
+    const top = screen.getAllByRole('button', { name: '50 per page' })[0];
+    const bottom = screen.getAllByRole('button', { name: '10 per page' })[1];
+    if (!top || !bottom) throw new Error('Both paging rows must be available');
+    fireEvent.click(top);
+    fireEvent.click(bottom);
     expect(change.mock.calls).toEqual([[50], [10]]);
   });
 });
