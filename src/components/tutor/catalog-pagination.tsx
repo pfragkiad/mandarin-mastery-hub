@@ -1,36 +1,18 @@
 import { useEffect, useState, type Ref, type RefObject } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import type { LibraryPerPage } from '@/lib/learning-preferences';
 import { NavigationShortcuts } from './navigation-shortcuts';
 
 /**
- * Builds the visible page-number sequence for the pagination bar:
- * always the first and last page, a window of two neighbours around the
- * current page, and null markers where ellipses collapse the gaps.
+ * Shared top/bottom row. Only the modal owns jump mode/value drafts; owners
+ * supply applied result totals and exact recorded rank bounds, never inferred ranks.
  */
-function pageWindow(current: number, pages: number): (number | null)[] {
-  const wanted = new Set<number>([1, pages]);
-  for (let p = current - 2; p <= current + 2; p++) if (p >= 1 && p <= pages) wanted.add(p);
-  const sorted = [...wanted].sort((a, b) => a - b);
-  const out: (number | null)[] = [];
-  let prev = 0;
-  for (const p of sorted) {
-    if (prev && p - prev > 1) out.push(null);
-    out.push(p);
-    prev = p;
-  }
-  return out;
-}
-
-/**
- * One pagination row, used above and below the catalog grids. The jump field
- * is labelled by what it accepts ("Page", and "Rank" on tabs that carry
- * frequency ranks); the per-page picker shows plain record counts.
- */
-export function CatalogPagination({ range, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange }: {
+export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks }: {
   range: string;
+  total: number;
   current: number;
   pages: number;
   onPageChange: (page: number) => void;
@@ -39,49 +21,37 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
   perPage?: LibraryPerPage;
   onPerPageChange?: (perPage: LibraryPerPage) => void;
   /** Resolves a frequency rank to the page holding it; absent on tabs without ranks. */
-  onRankChange?: (rank: number) => void;
+  onRankChange?: ((rank: number) => void) | undefined;
+  ranks?: { count: number; min: number; max: number } | undefined;
 }) {
-  // Draft text for the direct-jump boxes; committed on Enter or blur.
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState<'page' | 'rank'>('page');
   const [jump, setJump] = useState('');
-  const [rankJump, setRankJump] = useState('');
-  const commitJump = () => {
-    const target = Number.parseInt(jump, 10);
-    if (Number.isFinite(target)) onPageChange(Math.min(pages, Math.max(1, target)));
-    setJump('');
-  };
-  const commitRank = () => {
-    const target = Number.parseInt(rankJump, 10);
-    if (Number.isFinite(target)) onRankChange?.(target);
-    setRankJump('');
-  };
+  const rankAvailable = Boolean(onRankChange && ranks?.count);
+  const min = mode === 'rank' && ranks ? ranks.min : 1;
+  const max = mode === 'rank' && ranks ? ranks.max : pages;
+  const target = Number(jump);
+  const valid = jump !== '' && Number.isSafeInteger(target) && target >= min && target <= max;
   return <div ref={innerRef} className={`catalog-pagination${top ? ' catalog-pagination-top' : ''}`}>
     <div className="catalog-pagination-navigation">
+      <Button variant="ghost" size="icon" aria-label="First page" title="First page" disabled={current <= 1} onClick={() => onPageChange(1)}><ChevronsLeft/></Button>
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
-      <div className="catalog-page-numbers" role="group" aria-label="Pages">
-        {pageWindow(current, pages).map((p, i) => p === null
-          ? <span key={`gap-${i}`} className="catalog-page-gap" aria-hidden="true">…</span>
-          : <Button key={p} variant="ghost" size="sm" aria-label={`Page ${p}`} aria-current={p === current ? 'page' : undefined} className={p === current ? 'is-current' : undefined} onClick={() => onPageChange(p)}>{p}</Button>)}
-      </div>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
+      <Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
+      <Button variant="outline" size="sm" disabled={!total} onClick={() => { setMode('page'); setJump(''); setOpen(true); }}>Go to</Button>
       <NavigationShortcuts context="pages"/>
-      <label className="catalog-page-jump">Page
-        <Input value={jump} inputMode="numeric" aria-label="Jump to page" placeholder="#"
-          onChange={e => setJump(e.target.value.replace(/[^0-9]/g, ''))}
-          onKeyDown={e => { if (e.key === 'Enter') commitJump(); }}
-          onBlur={commitJump}/>
-      </label>
-      {onRankChange && <label className="catalog-page-jump">Rank
-        <Input value={rankJump} inputMode="numeric" aria-label="Jump to rank" placeholder="#"
-          onChange={e => setRankJump(e.target.value.replace(/[^0-9]/g, ''))}
-          onKeyDown={e => { if (e.key === 'Enter') commitRank(); }}
-          onBlur={commitRank}/>
-      </label>}
     </div>
-    {/* Range first, then the count picker after a dot separator. */}
     <div className="catalog-pagination-summary">
-      <span className="catalog-page-range">{range}</span>
-      {perPage && onPerPageChange && <><span aria-hidden="true" className="catalog-page-range">·</span><div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div></>}
+      {perPage && onPerPageChange && <><div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div><span aria-hidden="true">·</span></>}
+      <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
     </div>
+    <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle><DialogDescription>Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')} pages{onRankChange && <> · {ranks?.count.toLocaleString('en-US') ?? 0} recorded ranks{ranks && <> ({ranks.min.toLocaleString('en-US')}–{ranks.max.toLocaleString('en-US')})</>}</>}</DialogDescription>
+      <form onSubmit={event => { event.preventDefault(); if (!valid) return; if (mode === 'rank') onRankChange?.(target); else onPageChange(target); setOpen(false); }}>
+        <div className="catalog-jump-modes" role="group" aria-label="Jump by"><Button type="button" variant={mode === 'page' ? 'secondary' : 'ghost'} aria-pressed={mode === 'page'} onClick={() => { setMode('page'); setJump(''); }}>Page</Button>{onRankChange && <Button type="button" variant={mode === 'rank' ? 'secondary' : 'ghost'} aria-pressed={mode === 'rank'} disabled={!rankAvailable} onClick={() => { setMode('rank'); setJump(''); }}>Rank</Button>}</div>
+        <label className="catalog-jump-field">{mode === 'rank' ? 'Rank' : 'Page'}<Input type="number" inputMode="numeric" min={min} max={max} step={1} aria-label={mode === 'rank' ? 'Jump to rank' : 'Jump to page'} value={jump} onChange={event => setJump(event.target.value)} required/></label>
+        <Button type="submit" disabled={!valid}>Go</Button>
+      </form>
+    </DialogContent></Dialog>
   </div>;
 }
 

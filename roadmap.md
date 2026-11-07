@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Shared top/bottom first/previous/next/last paging, filtered Page/Rank Go to dialog and range totals; enlarged Comfortable search with spaced toggles. Verified Glyphs rank/page and Vocabulary page jumps, bottom navigation, desktop/phone layouts without overflow; 25 tests passed and preview clean.
+
 - [done] Combined pronunciation/translation hiding and optional session remembered reveals; verified exact reveal/focus after Details and Practice in Glyphs/Vocabulary, including remembering disabled; related tests pass and preview clean.
 
 - [done] Shared header Compact/Comfortable choice; Comfortable enlarges search, dropdowns, labels and controls app-wide while preserving large cards; verified phone/desktop libraries, Practice, games, Settings, portal menus and persistence; 9 tests pass, preview clean.

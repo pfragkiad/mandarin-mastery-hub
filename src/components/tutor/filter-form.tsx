@@ -24,7 +24,7 @@ function useWaitCursor(pending: boolean) {
   }, [pending]);
 }
 
-export function FilterForm({ children, onApply, onClear, count, changed, active, autoApply = false }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean }) {
+export function FilterForm({ children, onApply, onClear, count, changed, active, autoApply = false, showCount = true }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean }) {
   const [pending, startTransition] = useTransition();
   useWaitCursor(pending);
   const run = (action: () => void) => {
@@ -41,14 +41,14 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
     {children}
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
     {(changed || active) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{active && <Button type="button" size="icon" variant="ghost" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}</div>}
-    <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>
+    {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
 }
 
 /** Own typing state here so draft keystrokes cannot rerender library cards or reference panels.
  * With autoApply, every draft edit (the games' dropdowns) submits immediately through the
  * same wait-cursor transition; libraries keep the explicit Apply button. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply = false, children }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply = false, showCount = true, children }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode }) {
   const controls = useDraftFilters(applied);
   const changed = JSON.stringify(controls.draft) !== JSON.stringify(applied);
   const [pending, startTransition] = useTransition();
@@ -74,5 +74,5 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   };
   // Clear applies immediately and returns the cleared values to the local draft;
   // Apply alone submits edited values to the owning page's URL/filter state.
-  return <FilterForm count={count} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children({ ...controls, patch, setDraft })}</FilterForm>;
+  return <FilterForm count={count} showCount={showCount} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children({ ...controls, patch, setDraft })}</FilterForm>;
 }
