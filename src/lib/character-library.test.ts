@@ -65,8 +65,10 @@ describe('Catalogue requirements', () => {
       expect(libraryEntries('Components').find(entry => entry.hanzi === glyph)).toBeDefined();
     }
   });
-  it('excludes traditional characters by default', () => {
-    expect(defaultPreferences.includeTraditional).toBe(false);
+  it('includes traditional characters in the default preferences', () => {
+    expect(defaultPreferences.includeTraditional).toBe(true);
+  });
+  it('excludes traditional characters when the setting is off', () => {
     const entries = [{ id: 'traditional', hanzi: '學', pinyin: 'xué', meaning: 'learn', note: '', script: 'Traditional' as const }, { id: 'shared', hanzi: '我', pinyin: 'wǒ', meaning: 'I', note: '', script: 'Common' as const }];
     expect(filterLibrary(entries, '').map(e => e.hanzi)).toEqual(['我']);
   });
