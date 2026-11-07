@@ -36,16 +36,15 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   const target = Number(jump);
   const valid = jump !== '' && Number.isSafeInteger(target) && target >= min && target <= max;
   return <div ref={innerRef} className={`catalog-pagination${top ? ' catalog-pagination-top' : ''}`}>
-    <div className="catalog-pagination-navigation">
-      <Button variant="ghost" size="icon" aria-label="First page" title="First page" disabled={current <= 1} onClick={() => onPageChange(1)}><ChevronsLeft/></Button>
+    {pages > 1 && <div className="catalog-pagination-navigation">
+      {pages >= 7 && <Button variant="ghost" size="icon" aria-label="First page" title="First page" disabled={current <= 1} onClick={() => onPageChange(1)}><ChevronsLeft/></Button>}
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
-      <span aria-label={`Current page ${current} of ${pages}`} aria-current="page" className="min-w-20 whitespace-nowrap text-center tabular-nums">{current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')}</span>
-      {pages <= 7 && pages > 1 && Array.from({ length: pages }, (_, index) => index + 1).map(page => <Button key={page} variant={current === page ? 'secondary' : 'ghost'} size="sm" aria-label={`Go to page ${page}`} aria-pressed={current === page} onClick={() => onPageChange(page)}>{page}</Button>)}
+      {pages >= 7 ? <span aria-label={`Current page ${current} of ${pages}`} aria-current="page" className="min-w-20 whitespace-nowrap text-center tabular-nums">Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')}</span> : Array.from({ length: pages }, (_, index) => index + 1).map(page => <Button key={page} variant={current === page ? 'secondary' : 'ghost'} size="sm" aria-label={`Go to page ${page}`} aria-pressed={current === page} onClick={() => onPageChange(page)}>{page}</Button>)}
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
-      <Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
+      {pages >= 7 && <><Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
       <Button variant="outline" size="sm" disabled={!total} onClick={() => { setNearestRank(undefined); setMode('page'); setJump(String(current)); setOpen(true); }}><Crosshair aria-hidden="true"/>Go to</Button>
-      <NavigationShortcuts context="pages"/>
-    </div>
+      <NavigationShortcuts context="pages"/></>}
+    </div>}
     <div className="catalog-pagination-summary">
       {perPage && onPerPageChange && <><div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div><span aria-hidden="true">·</span></>}
       <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
