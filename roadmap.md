@@ -1,5 +1,7 @@
 # Roadmap
 
+- [open] Add shared Grid/List controls to Glyphs and Vocabulary; large one-card rows with rearranged content/actions on phones and desktop; verify switching, detail navigation and paging.
+
 - [done] Add small perfect-completion confetti in Trace, Recall and Drawing with saved Settings switch and reduced-motion support; verified a live Trace burst and switch persistence, 56 tests pass, preview clean.
 
 - [done] Match all reference/Practice stroke tile gaps to character examples with shared spacing; verified 10px gaps on 木.
