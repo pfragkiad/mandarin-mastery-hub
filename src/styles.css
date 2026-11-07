@@ -27,7 +27,7 @@
 .perfect-confetti i:nth-child(3n) { background: var(--rank-gold); }
 .perfect-confetti i:nth-child(3n + 1) { background: var(--terracotta); }
 @keyframes perfect-burst { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 35% { opacity: 1; transform: translate(var(--confetti-x), var(--confetti-y)) rotate(var(--confetti-turn)); } 75% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--confetti-x), 100px) rotate(var(--confetti-turn)); } }
-/* Confetti is an explicit Settings opt-in (Perfect drawing confetti), so it keeps its
+/* Confetti is an explicit Settings opt-in (Show confetti), so it keeps its
    short flying burst even when the device asks for reduced motion; the global
    reduced-motion reset below would otherwise freeze it into a plain fade. */
 @media(prefers-reduced-motion: reduce) { .perfect-confetti i { animation: perfect-burst 2s ease-out forwards !important; } }
