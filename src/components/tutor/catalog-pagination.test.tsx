@@ -5,6 +5,28 @@ import { CatalogPagination } from './catalog-pagination';
 const base = { range: '81–100', total: 7427, current: 5, pages: 372, perPage: 20 as const };
 
 describe('Library paging and explicit jumps', () => {
+  it('direct jumps navigate all seven pages of a small set', () => {
+    const change = vi.fn();
+    render(<CatalogPagination {...base} pages={7} onPageChange={change}/>);
+    for (let page = 1; page <= 7; page++) fireEvent.click(screen.getByRole('button', { name: `Go to page ${page}` }));
+    expect(change.mock.calls).toEqual([[1], [2], [3], [4], [5], [6], [7]]);
+  });
+
+  it('eight pages use compact navigation instead of direct jumps', () => {
+    render(<CatalogPagination {...base} pages={8} onPageChange={vi.fn()}/>);
+    expect(screen.queryByRole('button', { name: 'Go to page 8' })).toBeNull();
+  });
+
+  it('an absent rank jumps immediately and closes the form', () => {
+    const rank = vi.fn(() => 512);
+    render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={rank} ranks={{ count: 1416, min: 1, max: 1436 }}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
+    fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '511' } });
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
+    expect(rank).toHaveBeenCalledExactlyOnceWith(511);
+    expect(screen.queryByRole('dialog')).toBeNull();
+  });
   it('prefills the current page when opening and returning to Page mode', () => {
     render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
