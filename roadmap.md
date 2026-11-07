@@ -1,5 +1,7 @@
 # Roadmap
 
+- [in progress] Clear ranked/unranked totals, nearest recorded rank jumps with feedback, Go to icon, and direct page buttons for up to seven pages.
+
 - [done] Shared top/bottom first/previous/next/last paging, filtered Page/Rank Go to dialog and range totals; enlarged Comfortable search with spaced toggles. Verified Glyphs rank/page and Vocabulary page jumps, bottom navigation, desktop/phone layouts without overflow; 25 tests passed and preview clean.
 
 - [done] Combined pronunciation/translation hiding and optional session remembered reveals; verified exact reveal/focus after Details and Practice in Glyphs/Vocabulary, including remembering disabled; related tests pass and preview clean.

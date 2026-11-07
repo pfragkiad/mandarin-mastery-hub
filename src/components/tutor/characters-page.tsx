@@ -3,6 +3,7 @@ import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
+import { nearestRecordedRank } from '@/lib/rank-jump';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
@@ -232,14 +233,6 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
   // Clicks only toggle the peek in a Hide mode; the detail panel opens solely via the card's details button.
   const selectTile = (id: string) => peek.reveal(id);
-  // Rank jump: the list is ordered by rank (unranked last), so the first
-  // record at or past the target rank is the page to reveal. Strokes carry no
-  // ranks; a target beyond the last record lands on the final page.
-  const rankToPage = (target: number) => {
-    if (kind === 'Strokes' || !usageOrder.loaded) return null;
-    const index = filtered.findIndex(entry => (usageRank(entry, kind, preferences.includeTraditional) ?? Infinity) >= target);
-    return index < 0 ? paged.pages : Math.floor(index / density.size) + 1;
-  };
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
   // Sticky strip label: on ranked tabs, name the frequency ranks visible on
   // the current page against the kind's ranked total; otherwise the page number.
@@ -259,7 +252,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
     ranks: rankSummary,
     currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => usageRank(entry, kind, preferences.includeTraditional)).find(rank => rank !== null) ?? undefined : undefined,
-    onRankChange: hasUsage ? (rank: number) => { const target = rankToPage(rank); if (target) setPage(target); } : undefined,
+    onRankChange: hasUsage ? (rank: number) => {
+      if (!usageOrder.loaded) return;
+      const nearest = nearestRecordedRank(filtered.map(entry => usageRank(entry, kind, preferences.includeTraditional)), rank);
+      if (!nearest) return;
+      setPage(Math.floor(nearest.index / density.size) + 1);
+      return nearest.rank;
+    } : undefined,
   };
   const stickyLabel = (() => {
     if (rankedTotal > 0) {
