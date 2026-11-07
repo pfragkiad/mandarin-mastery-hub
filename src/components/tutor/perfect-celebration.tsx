@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 
 /** Small board-local celebration. Explicit completion events trigger it, never
- * restored answers. The live preference and reduced-motion setting suppress it. */
+ * restored answers. The preference suppresses it; CSS uses stationary particles
+ * for reduced motion so an enabled celebration never silently disappears. */
 export function usePerfectCelebration(enabled: boolean) {
   const [burst, setBurst] = useState(0);
   const enabledRef = useRef(enabled);
   enabledRef.current = enabled;
   const celebrate = useCallback((accuracy: number | null) => {
-    if (accuracy !== 100 || !enabledRef.current || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    if (accuracy !== 100 || !enabledRef.current) return;
     setBurst(n => n + 1);
   }, []);
   useEffect(() => {
