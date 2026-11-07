@@ -1185,7 +1185,6 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   /* Narrowest phones: First/Last give way to the row; Go to still jumps to any page. */
   html .catalog-pagination .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Last page']) { display: none; }
 }
-}
 .catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
 .catalog-jump-dialog .catalog-jump-rank-range { display: block; white-space: nowrap; }
 .catalog-jump-dialog form { display: grid; gap: 16px; }
