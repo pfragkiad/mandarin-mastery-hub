@@ -1596,4 +1596,4 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    size per character count — one line up to 4 characters, otherwise exactly two
    evenly split lines (width = characters per line). */
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile { height: 82px; font-size: var(--tile-size, 64px); white-space: nowrap; }
-.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile.is-two-line { white-space: normal; line-break: anywhere; word-break: break-all; text-align: center; width: calc(var(--tile-per-line) * var(--tile-size) + 20px); line-height: 1.05; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile.is-two-line { white-space: normal; line-break: anywhere; word-break: break-all; text-align: center; width: calc(var(--tile-per-line) * var(--tile-size) + 28px); line-height: 1.05; }
