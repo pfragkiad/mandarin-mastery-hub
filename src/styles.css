@@ -1200,6 +1200,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .library-list-view .word-card { min-height: 320px; }
 }
 @media (max-width: 580px) {
+  .navigation-shortcuts-trigger { display: none; }
   .library-list-view .word-card .word-card-top { padding: 16px 18px 0; }
   .library-list-view .word-card .word-open { padding: 16px 18px 20px; }
   .library-list-view .word-card .word-card-bottom { margin-inline: 18px; gap: 8px; }
