@@ -78,7 +78,7 @@ function useRememberedFlag(key: string, initial: boolean): [boolean, (next: bool
   });
   return [value, update];
 }
-function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true }: { selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean; playing?: boolean; interactive?: boolean }) {
+function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true, mode = 'watch' }: { selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean; playing?: boolean; interactive?: boolean; mode?: PracticeMode }) {
   const [rememberedVisible, setRememberedVisible] = useRememberedFlag('tutor-stroke-tiles-visible', true);
   const [recallVisible, setRecallVisible] = useState(false);
   const visible = defaultVisible ? rememberedVisible : recallVisible;
@@ -97,7 +97,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
         <>
           <div className="stroke-component-groups">
           {strokeGroupRuns(groups, strokes.length).map((run, runIndex) => <div className="stroke-component-group" key={`${run.group.id}-${runIndex}`} data-component-group={run.group.id}>
-            <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={!interactive || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={selectedGroup === run.group.id} onClick={() => onGroupSelect(selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
+            <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={mode !== 'watch' || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={selectedGroup === run.group.id} onClick={() => onGroupSelect(selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
             <ol className="stroke-guide-strip">
             {run.indices.map(i => { const stroke = strokes[i]; if (!stroke) return null; return (
               <li key={i}>
@@ -105,8 +105,8 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                    type="button"
                    disabled={!interactive || playing}
                   className={`stroke-chip${activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
-                  title={`Play stroke ${i + 1}`}
-                  aria-label={`Play stroke ${i + 1}`}
+                  title={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
+                  aria-label={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
                   aria-current={activeStroke === i ? 'step' : undefined}
                   onClick={() => onPlay(i)}
                 >
@@ -124,7 +124,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
             ); })}
           </ol></div>)}
           </div>
-          <p className="stroke-guide-note">{strokes.length} strokes in writing order{interactive ? ' — tap one to draw through it.' : ' — draw them in the square.'}</p>
+          <p className="stroke-guide-note">{strokes.length} strokes in writing order{mode === 'trace' ? ' — continue tracing in the square.' : interactive ? ' — tap one to draw through it.' : ' — draw them in the square.'}</p>
         </>
       )}
     </div>
@@ -296,15 +296,54 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const needsRearm = useRef(false);
   let cleanupRearm: (() => void) | null = null;
   const quizRef = useRef<() => void>(() => {});
-  const quiz = () => { if (!writer.current) return; animationRun.current += 1; setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); needsRearm.current = false; setScores(strokes.map(() => null)); setMessage('Draw the character in the square.'); writer.current.quiz({ ...practiceModeOptions(mode), onMistake: () => setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'), onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => { speakStrokeName(strokeNum); const score = strokeScore(mistakesOnStroke); setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; }); setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`); }, onComplete: ({ totalMistakes }) => { setScores(prev => { const total = characterScore(prev); needsRearm.current = true; setMessage(`Character complete — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`); return prev; }); } }); };
+  // Native quizStartStrokeNum displays the exact completed prefix and validates
+  // only the remaining strokes; displayed strokes deliberately keep null scores.
+  const quiz = (startStroke = 0) => {
+    const instance = writer.current;
+    if (!instance) return;
+    const run = ++animationRun.current;
+    instance.cancelQuiz();
+    setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 ? startStroke : null);
+    setStepIndex(0); setStepMode(false); needsRearm.current = false;
+    setScores(strokes.map(() => null));
+    if (startStroke >= strokes.length) {
+      // No out-of-range quiz: keep the full drawing until Reset or a new drag.
+      setActiveStroke(null); needsRearm.current = true;
+      void instance.showCharacter({ duration: 0 });
+      setMessage('All strokes shown. Draw again to start over.');
+      return;
+    }
+    setMessage(startStroke ? `Continue tracing from stroke ${startStroke + 1} of ${strokes.length}.` : 'Draw the character in the square.');
+    instance.quiz({ ...practiceModeOptions(mode), quizStartStrokeNum: startStroke,
+      onMistake: () => { if (animationRun.current === run) setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'); },
+      onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => {
+        if (animationRun.current !== run) return;
+        speakStrokeName(strokeNum);
+        const score = strokeScore(mistakesOnStroke);
+        setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; });
+        setActiveStroke(strokeNum + 1 < strokes.length ? strokeNum + 1 : null);
+        setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`);
+      },
+      onComplete: ({ totalMistakes }) => {
+        if (animationRun.current !== run) return;
+        needsRearm.current = true;
+        setScores(prev => {
+          const total = characterScore(prev);
+          setMessage(`${startStroke ? 'Remaining strokes complete' : 'Character complete'} — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`);
+          return prev;
+        });
+      },
+    });
+  };
   quizRef.current = quiz;
   // Tapping a stroke tile jumps straight to that step: earlier strokes appear
   // instantly (played at max speed) and only the selected stroke animates.
-  // Tiles and component headings belong to Watch playback; Trace and Recall
-  // render them as a reference, with only the pronunciation controls live.
+  // Trace tiles use the native quiz offset instead of playback. Recall stays inert.
   const playStroke = (index: number) => {
     const instance = writer.current; if (!instance || !strokes.length) return;
+    if (mode === 'recall') return;
     setGroupSelection({ character, id: '' });
+    if (mode === 'trace') { quiz(index + 1); return; }
     const run = ++animationRun.current;
     applySpeed(instance);
     instance.cancelQuiz(); setPlaying(true); setPaused(false); setStepMode(true);
