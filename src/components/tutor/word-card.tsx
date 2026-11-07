@@ -1,12 +1,14 @@
 import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
-import { useState, type CSSProperties } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import { Bookmark, Volume2, Check, MessageSquareText } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { vocabularyKind, type Word } from '@/lib/mandarin';
+import { vocabularyKind, words as vocabularyWords, type Word } from '@/lib/mandarin';
+import { phraseParts } from '@/lib/vocabulary-decomposition';
+import { matchedWordSpans, phraseTileLines } from '@/lib/phrase-tile-fit';
 import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -86,7 +88,12 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const bookmarked = saved.includes(word.id);
   const listen = async () => { await playPronunciation(request, preferences.slow); };
   const comfortableWord = preferences.libraryView === 'list' && vocabularyKind(word) === 'word';
+  const isPhrase = vocabularyKind(word) === 'phrase';
   const tileFit = wordTileFit(word.hanzi);
+  // Phrases: up to 12 glyphs per line, breaking after punctuation or at matched word edges
+  // (the same textual word matching as the phrase breakdown); CSS sizes the box from the longest line.
+  const phraseLines = useMemo(() => isPhrase ? phraseTileLines(word.hanzi, matchedWordSpans(phraseParts(word, vocabularyWords).map(part => ({ text: part.text, matched: Boolean(part.word) })))) : [], [isPhrase, word]);
+  const phraseLongest = Math.max(1, ...phraseLines.map(line => Array.from(line).length));
   // Recorded HSK level and official id only; either part is omitted when not supplied.
   const hskLevel = word.entry?.hskLevel ?? null;
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
@@ -95,7 +102,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
         WORD · type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Compact and phrases keep the level. */}
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{comfortableWord ? 'WORD' : word.level.toUpperCase()}</span>{word.type && <CardTopMeta><span className="card-top-pos">{word.type}</span></CardTopMeta>}{comfortableWord ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official id in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{comfortableWord && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
-    <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}<span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
+    <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
