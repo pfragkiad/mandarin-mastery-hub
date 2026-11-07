@@ -70,3 +70,5 @@
 - [done] Step with a selected component deselects it and draws the next group's first stroke; after the last group it returns to stroke one (tests + live check)
 - [done] Trace/Recall: re-arm silently after completion; fresh round starts on first new drag, scores stay until then
 - [done] Small-screen Practice: family tiles above the writing card; no decomposition for radicals at any width (verified live, build OK)
+- [open] Practice heading: hide Print practice sheet on small screens; never wrap its label on wider screens.
+- [open] Practice Expert icon: larger crown in gold.
