@@ -11,6 +11,7 @@ import { drawingWordClues, type DrawingCard, type DrawingResult } from '@/lib/dr
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import type { DrawingBoardSnapshot } from './drawing-session';
+import { usePerfectCelebration } from './perfect-celebration';
 
 function writerColor(token: string) {
   const canvas = document.createElement('canvas').getContext('2d');
@@ -22,6 +23,7 @@ function writerColor(token: string) {
 
 export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
   const { theme, preferences } = useWorkspace();
+  const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const settled = useRef(false);
@@ -73,8 +75,9 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
         onCorrectStroke: stroke => {
           if (active && !settled.current) setProgress({ completed: stroke.strokeNum + 1, total: data.strokes.length });
         },
-        onComplete: () => {
+        onComplete: ({ totalMistakes }) => {
           if (!active || settled.current) return;
+          if (totalMistakes === 0) celebrate(100);
           settled.current = true; setState(guideUsed.current || guideRef.current ? 'guided' : 'correct');
         },
       });

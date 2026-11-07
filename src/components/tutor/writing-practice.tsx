@@ -32,6 +32,7 @@ import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, RecordedDecomposition } from './character-enrichment';
 import { ComponentPronunciation } from './component-pronunciation';
+import { usePerfectCelebration } from './perfect-celebration';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean; estimated?: boolean };
 
@@ -133,6 +134,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
 }
 export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
   const { theme, preferences } = useWorkspace();
+  const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('watch');
   const mode = selectedMode ?? localMode;
   const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };
@@ -319,6 +321,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       return;
     }
     setMessage(startStroke ? `Continue tracing from stroke ${startStroke + 1} of ${strokes.length}.` : 'Draw the character in the square.');
+    let completionHandled = false;
     instance.quiz({ ...practiceModeOptions(mode), quizStartStrokeNum: startStroke,
       onMistake: () => { if (animationRun.current === run) setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'); },
       onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => {
@@ -330,7 +333,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
         setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`);
       },
       onComplete: ({ totalMistakes }) => {
-        if (animationRun.current !== run) return;
+        if (animationRun.current !== run || completionHandled) return;
+        completionHandled = true;
+        // Zero native mistakes means every attempted stroke was 100%; merely
+        // displaying a prefix/final group never calls this completion handler.
+        if (totalMistakes === 0) celebrate(100);
         needsRearm.current = true;
         setScores(prev => {
           const total = characterScore(prev);
