@@ -44,13 +44,14 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       {pages >= 7 && <><Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
       <Button variant="outline" size="sm" disabled={!total} onClick={() => { setNearestRank(undefined); setMode('page'); setJump(String(current)); setOpen(true); }}><Crosshair aria-hidden="true"/>Go to</Button>
-      <NavigationShortcuts context="pages"/></>}
+      </>}
     </div>}
       <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
       {nearestRank !== undefined && <span role="status" className="text-primary whitespace-nowrap">Nearest: #{nearestRank.toLocaleString('en-US')}</span>}
     </div>
     <div className="catalog-pagination-summary">
       {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
+      {pages >= 7 && <NavigationShortcuts context="pages"/>}
     </div>
     <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle><DialogDescription><span className="block">Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')} pages</span>{onRankChange && <span className="block">{(ranks?.count ?? 0).toLocaleString('en-US')} ranked, {(total - (ranks?.count ?? 0)).toLocaleString('en-US')} unranked</span>}</DialogDescription>
       <form onSubmit={event => { event.preventDefault(); if (!valid) return; if (mode === 'rank') { const resolved = onRankChange?.(target); setNearestRank(typeof resolved === 'number' && resolved !== target ? resolved : undefined); } else { setNearestRank(undefined); onPageChange(target); } setOpen(false); }}>
