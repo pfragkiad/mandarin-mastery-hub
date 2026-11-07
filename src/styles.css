@@ -1612,6 +1612,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* Shared close/clear "×" treatment (dialogs, sheets, detail window, practice sheet,
    filter clear, open phone menu): never a hover background — the icon only
    brightens from 70% to full opacity, exactly like the Go to window's close. */
-.close-x { cursor: pointer; opacity: .7; transition: opacity .15s; }
-.close-x:hover, .close-x:focus-visible, .close-x:active, .close-x[data-state='open'] { opacity: 1; background: transparent !important; }
+.close-x { cursor: pointer; opacity: .7; color: var(--foreground); transition: opacity .15s; }
+.close-x:hover, .close-x:focus-visible, .close-x:active, .close-x[data-state='open'] { opacity: 1; background: transparent !important; color: var(--foreground) !important; }
 .close-x:disabled { opacity: .35; }
