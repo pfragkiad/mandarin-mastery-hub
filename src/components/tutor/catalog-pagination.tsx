@@ -55,7 +55,7 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
     setRankJump('');
   };
   return <div ref={innerRef} className={`catalog-pagination${top ? ' catalog-pagination-top' : ''}`}>
-    <div>
+    <div className="catalog-pagination-navigation">
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
       <div className="catalog-page-numbers" role="group" aria-label="Pages">
         {pageWindow(current, pages).map((p, i) => p === null
@@ -76,9 +76,12 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
           onKeyDown={e => { if (e.key === 'Enter') commitRank(); }}
           onBlur={commitRank}/>
       </label>}
-      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
     </div>
-    <span>{range}</span>
+    {/* Keep the count picker and range together when navigation wraps. */}
+    <div className="catalog-pagination-summary">
+      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
+      <span className="catalog-page-range">{range}</span>
+    </div>
   </div>;
 }
 
