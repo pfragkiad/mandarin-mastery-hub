@@ -256,7 +256,7 @@ it.each([['character', <WritingPractice key="a" character="我" mode="trace"/>],
 
 it('the Strokes group holds the arrow control, and turning it on draws the direction arrows', async () => {
   render(<WritingPractice character="我" mode="trace"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke 3' })).toBeDisabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Continue tracing after stroke 3' })).toBeEnabled());
   const group = document.querySelector('.stroke-guide');
   expect(group).not.toBeNull();
   expect(screen.queryByText('Stroke tiles')).toBeNull();
@@ -300,7 +300,8 @@ it('watch mode keeps stroke tiles and component headings clickable', async () =>
   expect(document.querySelector('.stroke-guide')).not.toHaveClass('stroke-guide-readonly');
 });
 
-it.each(['trace', 'recall'] as const)('%s keeps stroke tiles and component headings inert, leaving only playback and pronunciation controls live', async mode => {
+it('recall keeps stroke tiles and component headings inert, leaving pronunciation controls live', async () => {
+  const mode = 'recall';
   render(<WritingPractice character="学" mode={mode} enrichment={selectionRecord()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   if (mode === 'recall') fireEvent.click(screen.getByRole('button', { name: 'Show strokes' }));
@@ -383,3 +384,35 @@ it('a single tile clears component selection before drawing the selected stroke'
   expect(container.querySelector('.component-stroke-overlay')).toBeNull();
   expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(0);
 });
+
+ it('Trace click resumes after the selected stroke without scoring the displayed prefix', async () => {
+  render(<WritingPractice character="学" mode="trace" enrichment={selectionRecord()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  const oldQuiz = fake.quiz.mock.calls[0]?.[0];
+  fireEvent.click(screen.getByRole('button', { name: 'Continue tracing after stroke 2' }));
+  const resumed = fake.quiz.mock.calls[1]?.[0];
+  expect(resumed.quizStartStrokeNum).toBe(2);
+  expect(fake.animateStroke).not.toHaveBeenCalled();
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
+  act(() => oldQuiz.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  expect(document.querySelectorAll('.stroke-score')).toHaveLength(0);
+  act(() => resumed.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 1 }));
+  expect(document.querySelectorAll('.stroke-score')).toHaveLength(1);
+  expect(document.querySelectorAll('.stroke-chip')[2]?.textContent).toContain('90%');
+  act(() => resumed.onComplete({ totalMistakes: 1 }));
+  expect(document.querySelector('.writer-status')?.textContent).toContain('Remaining strokes complete');
+  fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
+  expect(fake.quiz.mock.calls[2]?.[0].quizStartStrokeNum).toBe(0);
+ });
+
+ it('Trace clicking the final stroke keeps the full drawing and restarts only on a new drag', async () => {
+  const { container } = render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  fireEvent.click(screen.getByRole('button', { name: 'Continue tracing after stroke 3' }));
+  expect(fake.quiz).toHaveBeenCalledTimes(1);
+  expect(fake.showCharacter).toHaveBeenCalledWith({ duration: 0 });
+  const target = container.querySelector('.hanzi-target');
+  if (!target) throw new Error('Missing writing target');
+  fireEvent.mouseDown(target);
+  expect(fake.quiz.mock.calls[1]?.[0].quizStartStrokeNum).toBe(0);
+ });
