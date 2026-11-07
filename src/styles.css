@@ -1167,7 +1167,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Library toggles participate in layout instead of overlapping the input when
    Comfortable text grows. One border encloses the field and its spaced controls. */
 html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex: 1 1 520px; min-width: min(100%, 300px); display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 0; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
-html[data-display-size='comfortable'] .library-page .search-field input { flex: 1; min-width: 0; width: 0; height: 44px; border: 0; background: transparent; padding-right: 8px; }
+html[data-display-size='comfortable'] .library-page .filter-bar .search-field input { flex: 1; min-width: 0; width: 0; height: 44px; border: 0; background: transparent; padding-right: 8px; }
 html[data-display-size='comfortable'] .library-page .search-field .search-toggle { position: static; transform: none; flex: none; height: 40px; min-height: 40px; padding: 0 14px; }
 @media(max-width:700px) { html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex-basis: 100%; } }
 .library-eyebrow { text-transform: uppercase; }
