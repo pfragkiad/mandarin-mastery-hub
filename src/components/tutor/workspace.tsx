@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
 import { words, type Word } from '@/lib/mandarin';
 import { DrawingSessionProvider } from './drawing-session';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
@@ -36,6 +36,17 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => { if (loaded) localStorage.setItem('tutor-preferences', JSON.stringify(preferences)); }, [preferences, loaded]);
   useEffect(() => { document.documentElement.dataset['hanziFont'] = preferences.font.toLowerCase(); }, [preferences.font]);
+  // Changing the hidden-face mode or switching off "Remember revealed cards"
+  // hides every card again: remembered reveals belong only to the mode and
+  // remember-setting they were made under.
+  const revealResetRef = useRef({ mode: preferences.cardReveal, remember: Boolean(preferences.rememberCardReveals) });
+  useEffect(() => {
+    const prev = revealResetRef.current;
+    const mode = preferences.cardReveal;
+    const remember = Boolean(preferences.rememberCardReveals);
+    if (prev.mode !== mode || (prev.remember && !remember)) setRevealed(set => set.size ? new Set() : set);
+    revealResetRef.current = { mode, remember };
+  }, [preferences.cardReveal, preferences.rememberCardReveals]);
   // Root-level sizing also reaches dropdowns and dialogs rendered in portals.
   useEffect(() => { document.documentElement.dataset['displaySize'] = preferences.libraryView === 'list' ? 'comfortable' : 'compact'; }, [preferences.libraryView]);
   return <WorkspaceContext.Provider value={{ items: items.filter(w => includeScript(w.script, preferences.includeTraditional)), addWord: w => setSessionItems(prev => [...prev, w]), saved, toggleSaved: id => setSaved(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]), preferences, setPreferences, theme, setTheme, catalogVersion }}><CardRevealsContext.Provider value={{ revealed, setRevealed }}><DrawingSessionProvider>{children}</DrawingSessionProvider></CardRevealsContext.Provider></WorkspaceContext.Provider>;
