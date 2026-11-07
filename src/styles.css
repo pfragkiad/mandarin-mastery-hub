@@ -1378,6 +1378,17 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view .word-card .word-meaning { font-size: 18px; }
   .library-list-view .word-card { min-height: 320px; }
 }
+/* Comfortable side-by-side body: the hanzi tile(s) sit in a left column and the
+   pinyin+audio line and translation line stack beside them (like decomposition
+   rows), saving vertical space while keeping every font size. Phrases keep the
+   stacked layout because their long hanzi lines need the full card width.
+   Hidden faces use visibility, so the grid cells keep their size in Hide modes. */
+.library-list-view:not(.vocab-phrase-grid) .word-card { grid-template-rows: auto auto auto; min-height: 0; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-open { grid-template-columns: fit-content(55%) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 18px; row-gap: 4px; min-height: 0; padding-block: 14px 18px; align-content: center; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .pinyin { grid-column: 2; grid-row: 1; align-self: end; }
+.library-list-view:not(.vocab-phrase-grid) .word-character > [lang], .library-list-view:not(.vocab-phrase-grid) .tile-hanzi-row { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
+.library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2; grid-row: 2; align-self: start; }
 @media (max-width: 760px), (pointer: coarse) {
   .navigation-shortcuts-trigger { display: none; }
 }
