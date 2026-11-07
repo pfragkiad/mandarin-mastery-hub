@@ -1,9 +1,11 @@
-import { useEffect, type ComponentType } from 'react';
+import { useEffect, useState, type ReactNode, type ComponentType } from 'react';
 import { Eye, EyeOff, Languages, Volume2, ChevronDown, Pin } from 'lucide-react';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import type { CardReveal } from '@/lib/learning-preferences';
+import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
+import { Switch } from '@/components/ui/switch';
 
 // A hanzi glyph stands in for an icon so "Hide hanzi" reads as the face it hides.
 function HanziIcon({ className }: { className?: string }) {
@@ -20,8 +22,9 @@ const OPTIONS: { value: CardReveal; label: string; icon: OptionIcon; shortcut: s
 ];
 
 /** Shared hidden-face menu and optional remembered-reveal toggle for both libraries. */
-export function CardRevealToggle() {
+export function CardRevealToggle({ study, playOptions }: { study?: boolean; playOptions?: ReactNode } = {}) {
   const { preferences, setPreferences } = useWorkspace();
+  const [open, setOpen] = useState(false);
   const current = preferences.cardReveal;
 
   useEffect(() => {
@@ -42,6 +45,8 @@ export function CardRevealToggle() {
   const TriggerIcon = current === 'all' ? EyeOff : selected.icon;
   // Hidden modes read as a state ("Hanzi hidden"); 'all' falls back to the plain "Hide" action label.
   const triggerLabel = current === 'all' ? 'Hide' : `${selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase())} hidden`;
+  // Phone presentation reuses the exact preferences and shortcut handling above.
+  if (study) return <><Button variant="outline" size="sm" onClick={() => setOpen(true)}>Study<ChevronDown/></Button>{current !== 'all' && <span className="mobile-state-chip"><TriggerIcon/>{triggerLabel}</span>}<Sheet open={open} onOpenChange={setOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Study</SheetTitle>{playOptions && <section className="library-study-section"><h3>Play</h3>{playOptions}</section>}<section className="library-study-section"><h3>Hide</h3><div role="group" aria-label="Hidden card faces">{OPTIONS.map(({ value, label, icon: Icon }) => <Button key={value} variant="ghost" aria-pressed={current === value} onClick={() => setPreferences({ ...preferences, cardReveal: value })}><Icon/>{label}</Button>)}</div></section>{current !== 'all' && <label className="library-remember-row">Remember revealed cards<Switch checked={Boolean(preferences.rememberCardReveals)} onCheckedChange={rememberCardReveals => setPreferences({ ...preferences, rememberCardReveals })}/></label>}</SheetContent></Sheet></>;
   return <><DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={`card-visibility-menu ${current !== 'all' ? 'selected' : ''}`} title={selected.label}><TriggerIcon/><span>{triggerLabel}</span><ChevronDown/></Button></DropdownMenuTrigger>
     <DropdownMenuContent align="start"><DropdownMenuRadioGroup value={current} onValueChange={value => { const option = OPTIONS.find(option => option.value === value); if (option) setPreferences({ ...preferences, cardReveal: option.value }); }}>
       {[...OPTIONS.slice(1), OPTIONS[0]].filter(option => option !== undefined).map(({ value, label, icon: Icon, shortcut }) => <DropdownMenuRadioItem key={value} value={value}><Icon className="mr-2 size-4"/>{value === 'all' ? label : label.replace('Hide ', '')}<span className="ml-auto pl-5 text-xs text-muted-foreground">{shortcut}</span></DropdownMenuRadioItem>)}

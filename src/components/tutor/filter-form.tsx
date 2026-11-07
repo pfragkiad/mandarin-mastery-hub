@@ -1,6 +1,8 @@
 import { useEffect, useState, useTransition, type ReactNode, type SetStateAction } from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
+import { useSmallLibraryScreen } from './use-small-library-screen';
 
 /** Draft edits never change the applied URL or result pool. History restores the form. */
 export function useDraftFilters<T extends object>(applied: T) {
@@ -48,8 +50,10 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
 /** Own typing state here so draft keystrokes cannot rerender library cards or reference panels.
  * With autoApply, every draft edit (the games' dropdowns) submits immediately through the
  * same wait-cursor transition; libraries keep the explicit Apply button. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply = false, showCount = true, children }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply = false, showCount = true, children, filterFields, chips = [] }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[] }) {
   const controls = useDraftFilters(applied);
+  const small = useSmallLibraryScreen();
+  const [sheetOpen, setSheetOpen] = useState(false);
   const changed = JSON.stringify(controls.draft) !== JSON.stringify(applied);
   const [pending, startTransition] = useTransition();
   useWaitCursor(autoApply && pending);
@@ -74,5 +78,12 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   };
   // Clear applies immediately and returns the cleared values to the local draft;
   // Apply alone submits edited values to the owning page's URL/filter state.
-  return <FilterForm count={count} showCount={showCount} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children({ ...controls, patch, setDraft })}</FilterForm>;
+  const renderControls = { ...controls, patch, setDraft };
+  // The same isolated drafts feed either desktop fields or a phone sheet.
+  if (small && filterFields) return <div className="mobile-library-filters">
+    <form className="filter-bar shared-filter-form" aria-label="Search filters" onSubmit={event => { event.preventDefault(); submit(controls.draft); }}>{children(renderControls)}{changed && <Button type="submit" variant="ghost" size="sm" disabled={pending}><Check/>Apply</Button>}</form>
+    <div className="mobile-filter-actions"><Button variant="outline" size="sm" onClick={() => setSheetOpen(true)}><SlidersHorizontal/>Filters{chips.length > 0 && <span className="mobile-filter-count">{chips.length}</span>}</Button>{chips.map(chip => <Button key={chip.label} variant="ghost" size="sm" className="mobile-state-chip" aria-label={`Remove ${chip.label} filter`} onClick={() => { const next = { ...applied, ...chip.clear }; controls.setDraft(next); submit(next); }}>{chip.label}<X/></Button>)}</div>
+    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{filterFields(renderControls)}</div><div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}</div></SheetContent></Sheet>
+  </div>;
+  return <FilterForm count={count} showCount={showCount} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}</FilterForm>;
 }
