@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add combined pronunciation/translation hiding, optional session remembered card reveals, and reveal/focus the associated card after Details or Practice.
+- [done] Combined pronunciation/translation hiding and optional session remembered reveals; verified exact reveal/focus after Details and Practice in Glyphs/Vocabulary, including remembering disabled; related tests pass and preview clean.
 
 - [done] Shared header Compact/Comfortable choice; Comfortable enlarges search, dropdowns, labels and controls app-wide while preserving large cards; verified phone/desktop libraries, Practice, games, Settings, portal menus and persistence; 9 tests pass, preview clean.
 

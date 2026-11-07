@@ -1015,6 +1015,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .card-reveal-toggle { display: flex; align-items: center; gap: 2px; border: 1px solid var(--border); border-radius: 8px; padding: 2px; height: 32px; box-sizing: border-box; }
 .card-reveal-toggle button { height: 26px; }
 .card-reveal-toggle .selected { background: color-mix(in srgb, var(--primary) 14%, transparent); color: var(--primary); }
+.catalog-tools-row .card-visibility-menu { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
+.card-visibility-menu span { min-width: 0; text-align: left; overflow-wrap: anywhere; }
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .catalog-entry-meaning { visibility: hidden; }
 .reveal-hide-hanzi .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .tile-hanzi-row { visibility: hidden; }
 .reveal-hide-hanzi .usage-strokes { visibility: hidden; }
