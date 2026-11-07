@@ -1179,6 +1179,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Readable UI sizing is separate from hanzi/content sizing. The document role
    reaches portalled menus too, while named selectors leave cards/boards alone. */
 html[data-display-size='comfortable'] { --ui-label-size: 13px; --ui-control-size: 15px; }
+/* Shared Button marks both buttons and linked actions, including portalled controls.
+   Override fixed-size variants so Comfortable never leaves their text compact. */
+html[data-display-size='comfortable'] [data-ui-button] { font-size: var(--ui-control-size) !important; }
+html[data-display-size='comfortable'] .daily-hero-actions [data-ui-button] { min-height: 40px; height: auto; white-space: normal; text-align: center; }
 html[data-display-size='comfortable'] :is(.filter-select, .search-field input, .form-field input, .form-field select, .practice-options select) { font-size: var(--ui-control-size); min-height: 44px; }
 html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a):not([role='switch']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] :is(.catalog-results-count, .catalog-tab-count, .catalog-pagination, .pagination-jump, .pagination-per-page, .form-field, .settings-row label, .practice-kind, .writer-status, .stroke-guide-top, .drawing-status, .drawing-board-meta, .drawing-rule, .flash-options, .game-setup label, .game-ready, .catalog-facts dt, .catalog-record-note, .library-note, .detail-reference-label) { font-size: var(--ui-label-size); line-height: 1.6; }
@@ -1196,7 +1200,7 @@ html[data-display-size='comfortable'] .search-field:has(.search-toggle + .search
 html[data-display-size='comfortable'] .display-size-trigger { min-height: 40px; font-size: 14px; }
 html[data-display-size='comfortable'] .catalog-pagination { gap: 8px; }
 /* Start cards share the global reading size while retaining aligned record rows. */
-html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 html[data-display-size='comfortable'] .discovery-tile { padding: 20px; row-gap: 12px; }
 html[data-display-size='comfortable'] .discovery-tile-count strong { font-size: 24px; }
 html[data-display-size='comfortable'] .discovery-tile-count span { font-size: var(--ui-label-size); }
@@ -1204,13 +1208,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .pinyin { font-si
 html[data-display-size='comfortable'] :is(.discovery-tile-top, .discovery-record-pinyin) > button { width: 40px; height: 40px; }
 html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link > strong { font-size: 48px; min-height: 76px; }
 html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link > strong.is-long { font-size: 32px; }
-html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link h2 { font-size: var(--ui-control-size); line-height: 1.6; }
-@media (max-width: 1100px) {
-  html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 580px) {
-  html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: minmax(0, 1fr); }
-}
+html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link h2 { font-size: var(--ui-control-size); line-height: 1.6; display: block; overflow: visible; }
 html[data-display-size='comfortable'] :is(.catalog-page-jump, .library-per-page, .catalog-page-range, .flash-option, .flash-meta, .game-options, .practice-mode-tabs button) { font-size: var(--ui-label-size); }
 html[data-display-size='comfortable'] .settings-row:has(select) { grid-template-columns: minmax(0,1fr); gap: 12px; }
 html[data-display-size='comfortable'] .settings-row:has(select) select { width: 100%; }
