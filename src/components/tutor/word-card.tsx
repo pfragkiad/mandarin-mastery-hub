@@ -56,16 +56,20 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
  * Returns CSS variables only (read by `.word-hanzi-tile` in Comfortable word cards),
  * so Compact and Phrase cards ignore them.
  */
-export function wordTileFit(hanzi: string): { lines: 1 | 2; style: CSSProperties } {
-  const count = Array.from(hanzi.replace(/\s/g, '')).length;
+export function wordTileFit(hanzi: string): { lines: 1 | 2; style: CSSProperties; parts: string[] } {
+  const glyphs = Array.from(hanzi.replace(/\s/g, ''));
+  const count = glyphs.length;
   const maxInner = 160; // widest box content, leaving room for the pinyin/translation column
   if (count <= 4) {
     const size = count <= 2 ? 64 : Math.min(64, Math.floor(maxInner / count));
-    return { lines: 1, style: { '--tile-size': `${size}px`, '--tile-per-line': count } as CSSProperties };
+    return { lines: 1, style: { '--tile-size': `${size}px`, '--tile-per-line': count } as CSSProperties, parts: [hanzi] };
   }
   const perLine = Math.ceil(count / 2);
   const size = Math.min(32, Math.floor(maxInner / perLine));
-  return { lines: 2, style: { '--tile-size': `${size}px`, '--tile-per-line': perLine } as CSSProperties };
+  // Explicit balanced split, top-heavy (5 → 3+2, 7 → 4+3): CSS text-wrap: balance alone
+  // puts the shorter line first (2+3), which reads as an orphan at the top.
+  const parts = [glyphs.slice(0, perLine).join(''), glyphs.slice(perLine).join('')];
+  return { lines: 2, style: { '--tile-size': `${size}px`, '--tile-per-line': perLine } as CSSProperties, parts };
 }
 
 // `revealed` marks a card peeked in a Hide mode; in panel mode clicks never open the panel —
@@ -91,7 +95,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
         WORD · type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Compact and phrases keep the level. */}
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{comfortableWord ? 'WORD' : word.level.toUpperCase()}</span>{word.type && <CardTopMeta><span className="card-top-pos">{word.type}</span></CardTopMeta>}{comfortableWord ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official id in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{comfortableWord && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
-    <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}<span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
+    <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}<span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
