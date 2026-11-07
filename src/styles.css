@@ -1172,7 +1172,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .catalog-pagination > div, .catalog-pagination-left > .catalog-pagination-navigation { flex-wrap: nowrap; gap: 0; }
   .catalog-pagination-left { gap: 6px; }
   .catalog-pagination-navigation .catalog-jump-trigger { padding-inline: 4px; }
-  .catalog-pagination-navigation > span[aria-current='page'] { min-width: 0; padding-inline: 2px; }
+  .catalog-pagination-navigation > span[aria-current='page'] { min-width: auto; flex-shrink: 0; padding-inline: 4px; }
   .library-per-page > .library-per-page-label { margin-right: 2px; }
   .library-per-page button, html[data-display-size='comfortable'] .library-per-page button { min-width: 26px; padding: 0 4px; }
 }
