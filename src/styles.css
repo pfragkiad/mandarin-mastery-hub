@@ -1202,6 +1202,17 @@ html[data-display-size='comfortable'] .detail-sheet .radical-form-choice > span 
 html[data-display-size='comfortable'] .detail-sheet .radical-form-choice small { font-size: 12px; }
 html[data-display-size='comfortable'] .detail-sheet .radical-form-choice { height: auto; min-height: 112px; }
 html[data-display-size='comfortable'] .detail-sheet .decomposition-part { flex-wrap: wrap; }
+/* Practice mirrors the reference reading scale, not just its action buttons. */
+html[data-display-size='comfortable'] .practice-intro .practice-meaning .pinyin { font-size: 20px; line-height: 1.5; }
+html[data-display-size='comfortable'] .practice-intro .practice-translation { font-size: 21px; line-height: 1.5; }
+html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-facts, .decomposition-facts .pinyin, .decomposition-note, .decomposition-layout small, .kangxi-identity-meaning) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-node > span, .stroke-guide-note, .stroke-guide-top h3, .stroke-pinyin, .writer-status) { font-size: 13px; line-height: 1.6; letter-spacing: 0; }
+html[data-display-size='comfortable'] .practice-page-content .radical-form-choice > span { font-size: 14px; }
+html[data-display-size='comfortable'] .practice-page-content .radical-form-choice small { font-size: 12px; }
+html[data-display-size='comfortable'] .practice-page-content .radical-form-choice { height: auto; min-height: 112px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 92px; height: auto; min-height: 112px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-index { font-size: 11px; }
+html[data-display-size='comfortable'] .practice-page-content .decomposition-part { flex-wrap: wrap; }
 html[data-display-size='comfortable'] :is([role='menuitem'], [role='menuitemradio'], [role='menuitemcheckbox'], [role='option']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] [role='menu'] { max-width: calc(100vw - 24px); }
 html[data-display-size='comfortable'] .search-field .search-toggle { font-size: 12px; height: 32px; min-height: 32px; letter-spacing: 0; }
