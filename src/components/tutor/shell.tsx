@@ -79,7 +79,6 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
       <Link to="/" className="brand" aria-label="Mandarin Tutor home"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
-      <div className="sidebar-label">YOUR WORKSPACE</div>
       {/* Sub-itens sempre visíveis e indentados na navegação, para acesso direto
           de qualquer página; as abas na página continuam sendo a troca principal. */}
       <nav aria-label="Main navigation">{navigation.map(n => {
