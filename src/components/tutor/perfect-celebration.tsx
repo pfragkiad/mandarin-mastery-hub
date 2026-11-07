@@ -12,7 +12,7 @@ export function usePerfectCelebration(enabled: boolean) {
   }, []);
   useEffect(() => {
     if (!burst) return;
-    const timer = window.setTimeout(() => setBurst(0), 1300);
+    const timer = window.setTimeout(() => setBurst(0), 2100);
     return () => window.clearTimeout(timer);
   }, [burst]);
   const effect = enabled && burst ? <div key={burst} className="perfect-confetti" aria-hidden="true">
