@@ -1168,7 +1168,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-jump-field input { width: 120px; max-width: 100%; }
 /* Library toggles participate in layout instead of overlapping the input when
    Comfortable text grows. One border encloses the field and its spaced controls. */
-html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex: 1 1 520px; max-width: none; min-width: min(100%, 300px); display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 0; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
+/* Start from the controls' intrinsic width, not a wide preferred basis, so
+   dropdowns stay on this row until the search and its toggles cannot fit. */
+html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex: 1 1 0%; max-width: none; min-width: min-content; display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 0; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
 html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form .search-field input { flex: 1; min-width: 0; width: 0; height: 44px; border: 0; background: transparent; padding-right: 8px; }
 html[data-display-size='comfortable'] .library-page .search-field .search-toggle { position: static; transform: none; flex: none; height: 40px; min-height: 40px; padding: 0 14px; }
 @media(max-width:700px) { html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex-basis: 100%; } }
