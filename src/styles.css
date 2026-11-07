@@ -1160,10 +1160,12 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-page-jump input { width: 52px; height: 30px; padding: 0 8px; font-size: 12px; text-align: center; }
 @media(max-width:580px) { .catalog-page-jump { display: none; } }
 @media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
-.catalog-jump-dialog { max-width: min(380px, calc(100vw - 32px)); border-radius: 8px; }
+.catalog-jump-dialog { width: min(300px, calc(100vw - 32px)); max-width: 300px; border-radius: 8px; }
+.catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
 .catalog-jump-dialog form { display: grid; gap: 16px; }
 .catalog-jump-modes { display: flex; gap: 8px; }
 .catalog-jump-field { display: grid; gap: 8px; font-size: var(--ui-label-size, 13px); }
+.catalog-jump-field input { width: 120px; max-width: 100%; }
 /* Library toggles participate in layout instead of overlapping the input when
    Comfortable text grows. One border encloses the field and its spaced controls. */
 html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex: 1 1 520px; max-width: none; min-width: min(100%, 300px); display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 0; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
