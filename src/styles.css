@@ -1575,3 +1575,11 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    card's clipped-content check then sees the overflow and its hover/focus tooltip
    shows the full translation, so nothing recorded is lost. */
 .library-list-view .catalog-card .word-meaning.catalog-entry-meaning { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+
+/* Comfortable word cards at every width: the word type joins the top row after
+   "WORD ·" (CardTopMeta), so the footer no longer repeats it; the sentence indicator
+   matches the glyph cards' top-right icons. */
+.library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
+.library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
+.library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
+.library-list-view .word-card.comfortable-word-card .catalog-source-icon { position: static; display: block; width: 17px; height: 17px; color: var(--primary); }

@@ -1,7 +1,7 @@
 import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
 import { useState } from 'react';
-import { Bookmark, Volume2, Check } from 'lucide-react';
+import { Bookmark, Volume2, Check, MessageSquareText } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -62,8 +62,12 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const { saved, toggleSaved, preferences } = useWorkspace();
   const bookmarked = saved.includes(word.id);
   const listen = async () => { await playPronunciation(request, preferences.slow); };
-  return <><article data-entry-id={word.id} className={`word-card ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`}>
-    <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{word.level.toUpperCase()}</span>{word.type && <CardTopMeta>{word.type}</CardTopMeta>}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span></div>
+  const comfortableWord = preferences.libraryView === 'list' && vocabularyKind(word) === 'word';
+  return <><article data-entry-id={word.id} className={`word-card ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`}>
+    {/* Comfortable word cards: the HSK level is already a filter, so the top row reads
+        WORD · type, then the "HSK ID #n" pill, with a sentence indicator on the right
+        (like the "In a character" icon on glyph cards). Compact and phrases keep the level. */}
+    <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{comfortableWord ? 'WORD' : word.level.toUpperCase()}</span>{word.type && <CardTopMeta>{word.type}</CardTopMeta>}{word.hskId != null && <span className="word-hsk-id" title="Official id in the HSK 3.0 syllabus">{comfortableWord ? `HSK ID #${word.hskId}` : `ID ${word.hskId}`}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{comfortableWord && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
     <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/></span>}<span lang="zh-CN">{word.hanzi}</span></span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
