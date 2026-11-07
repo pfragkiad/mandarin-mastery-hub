@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
+import { LibraryViewToggle } from './library-view-toggle';
 const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Game', icon: Gamepad2 }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 // Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
 const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: PenLine }] as const;

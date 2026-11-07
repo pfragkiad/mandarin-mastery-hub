@@ -17,7 +17,6 @@ import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
-import { LibraryViewToggle } from './library-view-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo } from './source-info';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
