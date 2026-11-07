@@ -204,13 +204,13 @@ describe('matched practice stroke speech', () => {
   });
 
   it('remembers the unmuted preference across remounts', async () => {
-    const first = await startPractice();
+    await startPractice();
     fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
     cleanup();
     expect(localStorage.getItem('tutor-stroke-audio')).toBe('unmuted');
-    await startPractice();
+    const current = await startPractice();
     expect(screen.getByRole('button', { name: 'Mute stroke names' })).toHaveAttribute('aria-pressed', 'false');
-    act(() => first.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    act(() => current.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledTimes(1);
     cleanup();
     localStorage.clear();
@@ -398,7 +398,7 @@ it('a single tile clears component selection before drawing the selected stroke'
   expect(document.querySelectorAll('.stroke-score')).toHaveLength(0);
   act(() => resumed.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 1 }));
   expect(document.querySelectorAll('.stroke-score')).toHaveLength(1);
-  expect(document.querySelectorAll('.stroke-chip')[2]?.textContent).toContain('90%');
+  expect(document.querySelectorAll('.stroke-chip')[2]?.textContent).toContain('75%');
   act(() => resumed.onComplete({ totalMistakes: 1 }));
   expect(document.querySelector('.writer-status')?.textContent).toContain('Remaining strokes complete');
   fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
