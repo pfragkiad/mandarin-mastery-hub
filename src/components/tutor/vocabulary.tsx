@@ -17,6 +17,7 @@ import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryPlayMenu } from './library-play-menu';
 import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
+import { LibraryViewToggle } from './library-view-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo } from './source-info';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
@@ -77,7 +78,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       {filtered.length ? <>
       <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
       <CatalogPagination top innerRef={topPaginationRef} perPage={density.size} onPerPageChange={density.onPerPageChange} range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
-      <div className={`word-grid vocab-grid vocab-${kind}-grid`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} revealed={peek.revealed.has(w.id)} {...(onWordOpen ? { open: w.id === selectedWord?.id, // Card clicks only peek in a Hide mode; the panel opens solely via the details button.
+      <div className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} revealed={peek.revealed.has(w.id)} {...(onWordOpen ? { open: w.id === selectedWord?.id, // Card clicks only peek in a Hide mode; the panel opens solely via the details button.
         onOpenChange: next => { if (next) peek.reveal(w.id); else onWordOpen(null, paged.current); }, onDetails: () => void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)) } : {})}/>)}</div>
       <CatalogPagination range={`${(paged.current - 1) * paged.size + 1}–${Math.min(paged.current * paged.size, filtered.length)}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} />
     </> : <div className="empty-state"><BookOpen size={32}/><h3>{status === 'Saved words' ? 'A place for your favorite words.' : `No ${label} found.`}</h3><p>{status === 'Saved words' ? 'Your bookmarked vocabulary will be right here.' : 'Try another meaning, Chinese character, or pinyin.'}</p><Button variant="outline" onClick={reset}>Clear filters</Button></div>}

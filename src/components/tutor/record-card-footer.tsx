@@ -17,9 +17,9 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
 }) {
   const target = practice ?? { character: hanzi };
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">
-    {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><Maximize2 style={{ width: 12, height: 12 }}/></Button>}
-    <Button asChild variant="ghost" size="icon" title="Practice writing"><Link to="/strokes" search={target} aria-label={`Practice writing ${hanzi}`}><PenLine style={{ width: 12, height: 12 }}/></Link></Button>
-    <Button asChild variant="ghost" size="icon" title="Practice Expert — Recall mode"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Practice Expert (Recall) ${hanzi}`}><GraduationCap style={{ width: 12, height: 12 }}/></Link></Button>
+    {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><Maximize2/></Button>}
+    <Button asChild variant="ghost" size="icon" title="Practice writing"><Link to="/strokes" search={target} aria-label={`Practice writing ${hanzi}`}><PenLine/></Link></Button>
+    <Button asChild variant="ghost" size="icon" title="Practice Expert — Recall mode"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Practice Expert (Recall) ${hanzi}`}><GraduationCap/></Link></Button>
     <Button variant="ghost" size="icon" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${hanzi}`} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
   </div></div>;
 }
