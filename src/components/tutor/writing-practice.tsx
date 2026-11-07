@@ -104,10 +104,11 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                 <Button variant="ghost"
                    type="button"
                    disabled={!interactive || playing}
-                  className={`stroke-chip${activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
+                  className={`stroke-chip${mode === 'watch' && activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
                   title={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
                   aria-label={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
                   aria-current={activeStroke === i ? 'step' : undefined}
+                  aria-pressed={mode === 'trace' ? componentIndices.includes(i) : undefined}
                   onClick={() => onPlay(i)}
                 >
                   <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
@@ -158,6 +159,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
   const [activeStroke, setActiveStroke] = useState<number | null>(null);
   const [scores, setScores] = useState<(number | null)[]>([]);
+  // A shown prefix is completed visually, but is not a scored learner answer.
+  // Keep it separate from the next stroke index used by direction arrows.
+  const [tracePrefix, setTracePrefix] = useState(0);
   // Step-by-step playback: which stroke the next Step press draws, and whether
   // each stroke's Chinese name is spoken aloud.
   const [stepIndex, setStepIndex] = useState(0);
@@ -306,6 +310,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 ? startStroke : null);
     setStepIndex(0); setStepMode(false); needsRearm.current = false;
     setScores(strokes.map(() => null));
+    setTracePrefix(mode === 'trace' ? startStroke : 0);
     if (startStroke >= strokes.length) {
       // No out-of-range quiz: keep the full drawing until Reset or a new drag.
       setActiveStroke(null); needsRearm.current = true;
@@ -398,7 +403,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     if (!ready || !writer.current) return;
     animationRun.current += 1;
     writer.current.cancelQuiz();
-    setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]);
+    setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
