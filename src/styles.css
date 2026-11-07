@@ -1140,11 +1140,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-pagination > div { flex-wrap: wrap; }
 /* The summary wraps as one unit, keeping its range level with Per page. */
 .catalog-pagination { flex-wrap: wrap; }
-.catalog-pagination-navigation { flex: 1 1 600px; min-width: 0; }
-.catalog-pagination > .catalog-pagination-summary { flex: 1 0 260px; flex-wrap: nowrap; min-width: 0; }
+.catalog-pagination-navigation { flex: 0 1 auto; min-width: 0; }
+.catalog-pagination > .catalog-pagination-summary { flex: 0 1 auto; flex-wrap: nowrap; min-width: 0; margin-left: auto; }
 .catalog-page-range { white-space: nowrap; text-align: right; }
 /* The leading range carries the auto margin so range, dot and per-page picker stay together at the right edge. */
-.catalog-pagination-summary > .catalog-page-range:first-child { margin-left: auto; }
+.catalog-pagination-summary > .catalog-page-range { margin-left: 0; }
 .library-per-page { display: flex; align-items: center; gap: 2px; margin-left: 0; flex-shrink: 0; }
 .library-per-page > span { margin-right: 5px; }
 .library-per-page button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
@@ -1160,6 +1160,16 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-page-jump input { width: 52px; height: 30px; padding: 0 8px; font-size: 12px; text-align: center; }
 @media(max-width:580px) { .catalog-page-jump { display: none; } }
 @media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
+.catalog-jump-dialog { max-width: min(380px, calc(100vw - 32px)); border-radius: 8px; }
+.catalog-jump-dialog form { display: grid; gap: 16px; }
+.catalog-jump-modes { display: flex; gap: 8px; }
+.catalog-jump-field { display: grid; gap: 8px; font-size: var(--ui-label-size, 13px); }
+/* Library toggles participate in layout instead of overlapping the input when
+   Comfortable text grows. One border encloses the field and its spaced controls. */
+html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex: 1 1 520px; min-width: min(100%, 300px); display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 0; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
+html[data-display-size='comfortable'] .library-page .search-field input { flex: 1; min-width: 0; width: 0; height: 44px; border: 0; background: transparent; padding-right: 8px; }
+html[data-display-size='comfortable'] .library-page .search-field .search-toggle { position: static; transform: none; flex: none; height: 40px; min-height: 40px; padding: 0 14px; }
+@media(max-width:700px) { html[data-display-size='comfortable'] .library-page .filter-bar .search-field { flex-basis: 100%; } }
 .library-eyebrow { text-transform: uppercase; }
 
 /* Library card surfaces only peek; opening details is an explicit footer action.
