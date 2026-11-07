@@ -71,7 +71,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
       {pages >= 7 ? <span aria-label={`Current page ${current} of ${pages}`} aria-current="page" className="min-w-20 whitespace-nowrap text-center tabular-nums">Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')}</span> : Array.from({ length: pages }, (_, index) => index + 1).map(page => <Button key={page} variant={current === page ? 'secondary' : 'ghost'} size="sm" aria-label={`Go to page ${page}`} aria-pressed={current === page} onClick={() => onPageChange(page)}>{page}</Button>)}
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       {pages >= 7 && <><Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
-      <Button variant="ghost" size="sm" disabled={!total} onClick={() => { setNearestRank(undefined); setJumpNotice(''); let saved: string | null = null; try { saved = localStorage.getItem('mandarin-jump-mode'); } catch { /* Use the default when storage is unavailable. */ } chooseMode(rankAvailable && saved !== 'page' ? 'rank' : 'page', false); setOpen(true); }}><Crosshair aria-hidden="true"/>Go to</Button>
+      <Button variant="ghost" size="sm" className="catalog-jump-trigger" aria-label="Go to page or rank" title="Go to page or rank" disabled={!total} onClick={() => { setNearestRank(undefined); setJumpNotice(''); let saved: string | null = null; try { saved = localStorage.getItem('mandarin-jump-mode'); } catch { /* Use the default when storage is unavailable. */ } chooseMode(rankAvailable && saved !== 'page' ? 'rank' : 'page', false); setOpen(true); }}><Crosshair aria-hidden="true"/><span className="catalog-jump-label">Go to</span></Button>
       </>}
     </div>}
       <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
@@ -79,7 +79,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
       {jumpNotice && <span role="status" className="text-primary">{jumpNotice}</span>}
     </div>
     <div className="catalog-pagination-summary">
-      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
+      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span className="library-per-page-label">Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
       {pages >= 7 && <NavigationShortcuts context="pages"/>}
     </div>
     <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle>
