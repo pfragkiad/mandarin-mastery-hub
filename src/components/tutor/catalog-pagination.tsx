@@ -1,4 +1,4 @@
-import { useEffect, useState, type Ref, type RefObject } from 'react';
+import { useEffect, useRef, useState, type Ref, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Crosshair } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,7 +21,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   perPage?: LibraryPerPage;
   onPerPageChange?: (perPage: LibraryPerPage) => void;
   /** Resolves a frequency rank to the page holding it; absent on tabs without ranks. */
-  onRankChange?: ((rank: number) => number | void) | undefined;
+  onRankChange?: ((rank: number) => number | { rank: number; page: number } | void) | undefined;
   ranks?: { count: number; min: number; max: number } | undefined;
   /** First recorded rank in the current page, never a result index or inferred rank. */
   currentRank?: number | undefined;
@@ -33,6 +33,17 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   const [jump, setJump] = useState('');
   const [nearestRank, setNearestRank] = useState<number>();
   const [jumpNotice, setJumpNotice] = useState('');
+  const [feedbackPage, setFeedbackPage] = useState(current);
+  const previousPage = useRef(current);
+  // Bind feedback to its destination, not the page from which Go was submitted.
+  // Any subsequent page change (including history/keyboard/bottom row) clears it.
+  useEffect(() => {
+    const changed = previousPage.current !== current;
+    previousPage.current = current;
+    if (!changed || current === feedbackPage) return;
+    setNearestRank(undefined);
+    setJumpNotice('');
+  }, [current, feedbackPage]);
   const rankAvailable = Boolean(onRankChange && ranks?.count);
   const min = mode === 'rank' && ranks ? ranks.min : 1;
   const max = mode === 'rank' && ranks ? ranks.max : pages;
@@ -68,7 +79,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
     <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle>
       <div className="catalog-jump-modes" role="group" aria-label="Jump by"><Button type="button" variant={mode === 'page' ? 'secondary' : 'ghost'} aria-pressed={mode === 'page'} onClick={() => chooseMode('page')}>Page</Button>{onRankChange && <Button type="button" variant={mode === 'rank' ? 'secondary' : 'ghost'} aria-pressed={mode === 'rank'} disabled={!rankAvailable} onClick={() => chooseMode('rank')}>Rank</Button>}</div>
       <DialogDescription>{mode === 'page' ? <span>Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')} (1 to {pages.toLocaleString('en-US')})</span> : <><span className="catalog-jump-rank-range">Ranks #{ranks?.min.toLocaleString('en-US')} to #{ranks?.max.toLocaleString('en-US')}</span><span className="block text-muted-foreground">{(ranks?.count ?? 0).toLocaleString('en-US')} ranked · {(total - (ranks?.count ?? 0)).toLocaleString('en-US')} unranked</span></>}</DialogDescription>
-      <form noValidate onSubmit={event => { event.preventDefault(); if (!valid) return; if (mode === 'rank') { const resolved = onRankChange?.(boundedTarget); setNearestRank(typeof resolved === 'number' && resolved !== target && boundedTarget === target ? resolved : undefined); setJumpNotice(boundedTarget !== target && typeof resolved === 'number' ? `Clamped to #${resolved.toLocaleString('en-US')}` : ''); } else { setNearestRank(undefined); setJumpNotice(''); onPageChange(target); } setOpen(false); }}>
+      <form noValidate onSubmit={event => { event.preventDefault(); if (!valid) return; if (mode === 'rank') { const result = onRankChange?.(boundedTarget); const resolved = typeof result === 'object' ? result.rank : result; setFeedbackPage(typeof result === 'object' ? result.page : current); setNearestRank(typeof resolved === 'number' && resolved !== target && boundedTarget === target ? resolved : undefined); setJumpNotice(boundedTarget !== target && typeof resolved === 'number' ? `Clamped to #${resolved.toLocaleString('en-US')}` : ''); } else { setNearestRank(undefined); setJumpNotice(''); onPageChange(target); } setOpen(false); }}>
         <label className="catalog-jump-field">{mode === 'rank' ? 'Rank' : 'Page'}<Input key={mode} type="number" inputMode="numeric" min={min} max={max} step={1} aria-label={mode === 'rank' ? 'Jump to rank' : 'Jump to page'} value={jump} onFocus={event => event.currentTarget.select()} onChange={event => setJump(event.target.value)} required/></label>
         {mode === 'rank' && <p className="text-muted-foreground text-sm">Missing ranks jump to the nearest recorded rank.{valid && boundedTarget !== target && <span className="block" role="status">Will clamp to #{boundedTarget.toLocaleString('en-US')}.</span>}</p>}
         <Button type="submit" disabled={!valid}>Go</Button>
