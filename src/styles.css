@@ -1150,7 +1150,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-per-page { display: flex; align-items: center; gap: 2px; margin-left: 0; flex-shrink: 0; }
 .library-per-page > span { margin-right: 5px; }
 .library-per-page button { height: 30px; min-width: 30px; padding: 0 6px; font-size: 11px; }
-.library-per-page button[aria-pressed='true'] { background: var(--secondary); color: var(--primary); }
+.library-per-page button[aria-pressed='true'] { background: transparent; color: var(--primary); }
 .catalog-pagination > span { white-space: nowrap; margin-left: auto; }
 /* Numbered page buttons: current page reads as accent text, no background block. */
 .catalog-page-numbers { display: flex; align-items: center; gap: 1px; }

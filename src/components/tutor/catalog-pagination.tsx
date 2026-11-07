@@ -43,7 +43,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
       {pages >= 7 ? <span aria-label={`Current page ${current} of ${pages}`} aria-current="page" className="min-w-20 whitespace-nowrap text-center tabular-nums">Page {current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')}</span> : Array.from({ length: pages }, (_, index) => index + 1).map(page => <Button key={page} variant={current === page ? 'secondary' : 'ghost'} size="sm" aria-label={`Go to page ${page}`} aria-pressed={current === page} onClick={() => onPageChange(page)}>{page}</Button>)}
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       {pages >= 7 && <><Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
-      <Button variant="outline" size="sm" disabled={!total} onClick={() => { setNearestRank(undefined); setMode('page'); setJump(String(current)); setOpen(true); }}><Crosshair aria-hidden="true"/>Go to</Button>
+      <Button variant="ghost" size="sm" disabled={!total} onClick={() => { setNearestRank(undefined); setMode('page'); setJump(String(current)); setOpen(true); }}><Crosshair aria-hidden="true"/>Go to</Button>
       </>}
     </div>}
       <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
