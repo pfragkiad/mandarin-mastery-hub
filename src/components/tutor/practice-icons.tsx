@@ -14,7 +14,7 @@ const expertNode: IconNode = [
   ['path', { d: 'm11 10 3 3', key: 'brush-tip' }],
   ['path', { d: 'M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z', key: 'brush-head' }],
   ['path', { d: 'M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031', key: 'brush-handle' }],
-  ['path', { d: 'M2 8 2 2.8l2.4 2.1L6 1.8l1.6 3.1L10 2.8V8z', fill: 'currentColor', strokeWidth: 1.2, strokeLinejoin: 'round', key: 'crown' }],
+  ['path', { d: 'M2 8 2 2.8l2.4 2.1L6 1.8l1.6 3.1L10 2.8V8z', fill: 'currentColor', strokeWidth: '1.2', strokeLinejoin: 'round', key: 'crown' }],
 ];
 
 export function ExpertPracticeIcon(props: LucideProps) {
