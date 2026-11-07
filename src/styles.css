@@ -1626,4 +1626,4 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    at the same distance as pinyin above it; leftover card height goes below the
    translation instead of being spread between box and translation. */
 .word-grid:not(.library-list-view) .word-card .word-open,
-.word-grid:not(.library-list-view) .catalog-card .catalog-entry { justify-content: flex-start; gap: 7px; }
+.catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { justify-content: flex-start; gap: 7px; }
