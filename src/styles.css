@@ -1192,7 +1192,13 @@ html[data-display-size='comfortable'] :is(.nav-item, .nav-sub-item, .help-link) 
 html[data-display-size='comfortable'] .sidebar nav { overflow-y: auto; min-height: 0; }
 html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs, .detail-footnote, .source-note) { font-size: 12px; letter-spacing: 0; }
 /* The floating reference uses the same readable scale across all library kinds.
-   Keep boxes and shared row gaps unchanged so source trees retain their alignment. */
+   Shared square boxes enlarge examples, source checks and both breakdown types
+   together; only recorded multi-character boxes may grow wider. */
+html[data-display-size='comfortable'] { --reference-glyph-box-size: 64px; --reference-glyph-size: 44px; }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph strong { font-size: var(--reference-glyph-size); }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] .detail-sheet { width: min(760px, calc(100% - 32px)); }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
