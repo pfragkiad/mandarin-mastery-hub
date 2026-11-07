@@ -1191,6 +1191,16 @@ html[data-display-size='comfortable'] .settings-row label { font-size: 16px; lin
 html[data-display-size='comfortable'] :is(.nav-item, .nav-sub-item, .help-link) { font-size: 14px; min-height: 40px; }
 html[data-display-size='comfortable'] .sidebar nav { overflow-y: auto; min-height: 0; }
 html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs, .detail-footnote, .source-note) { font-size: 12px; letter-spacing: 0; }
+/* The floating reference uses the same readable scale across all library kinds.
+   Keep boxes and shared row gaps unchanged so source trees retain their alignment. */
+html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
+html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
+html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-facts, .decomposition-facts .pinyin, .decomposition-note, .decomposition-layout small, .glyph-usage-reference .pinyin, .glyph-usage-meaning, .kangxi-identity-meaning, .catalog-facts dd, .sentence-pinyin, .sentence-meaning) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-node > span, .catalog-facts dt, .catalog-record-note, .detail-footnote, .source-note, .glyph-usage-relation, .babelstone-component-source, .kangxi-identity-item small, .detail-sheet-position) { font-size: 13px; line-height: 1.6; }
+html[data-display-size='comfortable'] .detail-sheet .radical-form-choice > span { font-size: 14px; }
+html[data-display-size='comfortable'] .detail-sheet .radical-form-choice small { font-size: 12px; }
+html[data-display-size='comfortable'] .detail-sheet .radical-form-choice { height: auto; min-height: 112px; }
+html[data-display-size='comfortable'] .detail-sheet .decomposition-part { flex-wrap: wrap; }
 html[data-display-size='comfortable'] :is([role='menuitem'], [role='menuitemradio'], [role='menuitemcheckbox'], [role='option']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] [role='menu'] { max-width: calc(100vw - 24px); }
 html[data-display-size='comfortable'] .search-field .search-toggle { font-size: 12px; height: 32px; min-height: 32px; letter-spacing: 0; }
