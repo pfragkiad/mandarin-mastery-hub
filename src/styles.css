@@ -1163,6 +1163,23 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:580px) { .catalog-page-jump { display: none; } }
 @media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
 .catalog-jump-dialog { width: min(300px, calc(100vw - 32px)); max-width: 300px; border-radius: 8px; }
+/* Small screens: one pagination row. Go to shrinks to its crosshair (hint in
+   title/aria-label), clusters drop their wrapping and gaps tighten so pager,
+   range and Per page share a single line without vertical slack. */
+@media (max-width: 760px) {
+  .catalog-jump-label { display: none; }
+  .catalog-pagination, html[data-display-size='comfortable'] .catalog-pagination { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 4px; }
+  .catalog-pagination > div, .catalog-pagination-left > .catalog-pagination-navigation { flex-wrap: nowrap; gap: 0; }
+  .catalog-pagination-left { gap: 6px; }
+  .catalog-pagination-navigation .catalog-jump-trigger { padding-inline: 4px; }
+  .catalog-pagination-navigation > span[aria-current='page'] { min-width: 0; padding-inline: 2px; }
+  .library-per-page > .library-per-page-label { margin-right: 2px; }
+  .library-per-page button, html[data-display-size='comfortable'] .library-per-page button { min-width: 26px; padding: 0 4px; }
+}
+@media (max-width: 480px) {
+  /* Keep the row intact on the narrowest phones; the group keeps its "Records per page" name. */
+  .library-per-page > .library-per-page-label { display: none; }
+}
 .catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
 .catalog-jump-dialog .catalog-jump-rank-range { display: block; white-space: nowrap; }
 .catalog-jump-dialog form { display: grid; gap: 16px; }
