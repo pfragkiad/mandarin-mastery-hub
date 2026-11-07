@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type ComponentType } from 'react';
 import { Eye, EyeOff, Languages, Volume2, ChevronDown, Pin } from 'lucide-react';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,8 @@ function HanziIcon({ className }: { className?: string }) {
   return <span aria-hidden className={`inline-flex size-4 shrink-0 items-center justify-center leading-none ${className ?? ''}`}>汉</span>;
 }
 
-const OPTIONS: { value: CardReveal; label: string; icon: typeof Eye; shortcut: string }[] = [
+type OptionIcon = ComponentType<{ className?: string }>;
+const OPTIONS: { value: CardReveal; label: string; icon: OptionIcon; shortcut: string }[] = [
   { value: 'all', label: 'Show all', icon: Eye, shortcut: '0' },
   { value: 'meaning', label: 'Hide translation', icon: Languages, shortcut: '1' },
   { value: 'hanzi', label: 'Hide hanzi', icon: HanziIcon, shortcut: '2' },
