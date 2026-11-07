@@ -1175,7 +1175,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
    reaches portalled menus too, while named selectors leave cards/boards alone. */
 html[data-display-size='comfortable'] { --ui-label-size: 13px; --ui-control-size: 15px; }
 html[data-display-size='comfortable'] :is(.filter-select, .search-field input, .form-field input, .form-field select, .practice-options select) { font-size: var(--ui-control-size); min-height: 44px; }
-html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a) { font-size: var(--ui-control-size); min-height: 40px; }
+html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a):not([role='switch']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] :is(.catalog-results-count, .catalog-tab-count, .catalog-pagination, .pagination-jump, .pagination-per-page, .form-field, .settings-row label, .practice-kind, .writer-status, .stroke-guide-top, .drawing-status, .drawing-board-meta, .drawing-rule, .flash-options, .game-setup label, .game-ready, .catalog-facts dt, .catalog-record-note, .library-note, .detail-reference-label) { font-size: var(--ui-label-size); line-height: 1.6; }
 html[data-display-size='comfortable'] :is(.settings-row p, .settings-notice, .help-content p, .practice-info > p, .drawing-results > p, .game-source-note) { font-size: 14px; line-height: 1.7; }
 html[data-display-size='comfortable'] :is(.nav-item, .nav-sub-item, .help-link) { font-size: 14px; min-height: 40px; }
@@ -1189,6 +1189,9 @@ html[data-display-size='comfortable'] .search-field:has(.search-toggle) input { 
 html[data-display-size='comfortable'] .search-field:has(.search-toggle + .search-toggle) input { padding-right: 150px; }
 html[data-display-size='comfortable'] .display-size-trigger { min-height: 40px; font-size: 14px; }
 html[data-display-size='comfortable'] .catalog-pagination { gap: 8px; }
+html[data-display-size='comfortable'] :is(.catalog-page-jump, .library-per-page, .catalog-page-range, .flash-option, .flash-meta, .game-options, .practice-mode-tabs button) { font-size: var(--ui-label-size); }
+html[data-display-size='comfortable'] .settings-row:has(select) { grid-template-columns: minmax(0,1fr); gap: 12px; }
+html[data-display-size='comfortable'] .settings-row:has(select) select { width: 100%; }
 html[data-display-size='comfortable'] .catalog-pagination button { min-width: 36px; }
 html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1; min-width: 0; }
 @media (max-width: 1150px) {
