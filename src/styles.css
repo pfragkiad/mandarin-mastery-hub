@@ -1378,11 +1378,11 @@ html[data-display-size='comfortable'] {
   font-size: var(--reference-pinyin-size);
   line-height: var(--reference-line-height);
 }
-:is(.decomposition-facts, .glyph-usage-meaning, .kangxi-identity-meaning, .vocabulary-part-facts small, .sentence > .sentence-meaning) {
+:is(.decomposition-facts, .glyph-usage-meaning, .kangxi-identity-meaning, .vocabulary-part-facts small, .sentence > span.sentence-meaning) {
   font-size: var(--reference-translation-size);
   line-height: var(--reference-line-height);
 }
-.sentence .sentence-hanzi {
+.sentence p.sentence-hanzi {
   font-size: var(--reference-sentence-hanzi-size);
   line-height: 1.6;
   overflow-wrap: anywhere;
