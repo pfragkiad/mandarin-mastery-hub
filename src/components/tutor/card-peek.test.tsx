@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { useCardPeek } from './card-peek';
 import type { CardReveal } from '@/lib/learning-preferences';
-import { WorkspaceProvider } from './workspace';
+import { WorkspaceProvider, useWorkspace } from './workspace';
 import { render } from '@testing-library/react';
 vi.mock('@/lib/catalog-store', () => ({ loadCatalog: async () => {}, catalog: { version: 1 } }));
 
@@ -28,6 +28,23 @@ describe('useCardPeek', () => {
     act(() => peek?.reveal('Characters:好'));
     unmount();
     render(<WorkspaceProvider><Probe page="p1"/></WorkspaceProvider>);
+    expect(peek?.revealed.size).toBe(0);
+  });
+  it('remembered reveals hide again when the mode changes or remembering is switched off', () => {
+    let peek: ReturnType<typeof useCardPeek> | undefined;
+    let workspace: ReturnType<typeof useWorkspace> | undefined;
+    function Probe() { workspace = useWorkspace(); peek = useCardPeek(workspace.preferences.cardReveal, 'p1', true); return null; }
+    render(<WorkspaceProvider><Probe/></WorkspaceProvider>);
+    act(() => workspace?.setPreferences({ ...workspace.preferences, cardReveal: 'meaning', rememberCardReveals: true }));
+    act(() => peek?.reveal('Characters:好'));
+    expect(peek?.revealed.has('Characters:好')).toBe(true);
+    // Switching the hidden-face mode re-hides every card.
+    act(() => workspace?.setPreferences({ ...workspace!.preferences, cardReveal: 'hanzi' }));
+    expect(peek?.revealed.size).toBe(0);
+    act(() => peek?.reveal('Characters:好'));
+    expect(peek?.revealed.has('Characters:好')).toBe(true);
+    // Switching off "Remember revealed cards" re-hides every card too.
+    act(() => workspace?.setPreferences({ ...workspace!.preferences, rememberCardReveals: false }));
     expect(peek?.revealed.size).toBe(0);
   });
   it('returning to a card reveals it even without remembering and never toggles it off', () => {
