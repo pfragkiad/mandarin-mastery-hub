@@ -38,7 +38,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
     <div className="catalog-pagination-navigation">
       <Button variant="ghost" size="icon" aria-label="First page" title="First page" disabled={current <= 1} onClick={() => onPageChange(1)}><ChevronsLeft/></Button>
       <Button variant="ghost" size="icon" aria-label="Previous page" disabled={current <= 1} onClick={() => onPageChange(current - 1)}><ChevronLeft/></Button>
-      <span aria-label={`Current page ${current}`} aria-current="page" className="min-w-8 text-center tabular-nums">{current.toLocaleString('en-US')}</span>
+      <span aria-label={`Current page ${current} of ${pages}`} aria-current="page" className="min-w-20 whitespace-nowrap text-center tabular-nums">{current.toLocaleString('en-US')} of {pages.toLocaleString('en-US')}</span>
       <Button variant="ghost" size="icon" aria-label="Next page" disabled={current >= pages} onClick={() => onPageChange(current + 1)}><ChevronRight/></Button>
       <Button variant="ghost" size="icon" aria-label="Last page" title="Last page" disabled={current >= pages} onClick={() => onPageChange(pages)}><ChevronsRight/></Button>
       <Button variant="outline" size="sm" disabled={!total} onClick={() => { setMode('page'); setJump(String(current)); setOpen(true); }}>Go to</Button>
