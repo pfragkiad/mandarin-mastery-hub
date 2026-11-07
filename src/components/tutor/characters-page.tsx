@@ -247,6 +247,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
   const rankedTotal = filteredRanks.length;
   const paginationProps = {
+    filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
     total: filtered.length, current: paged.current, pages: paged.pages,
     range: filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0',
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
