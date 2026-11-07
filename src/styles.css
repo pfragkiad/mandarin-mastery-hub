@@ -1583,3 +1583,10 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
 .library-list-view .word-card.comfortable-word-card .catalog-source-icon { position: static; display: block; width: 17px; height: 17px; color: var(--primary); }
+
+/* Comfortable words and phrases: one thin-bordered box around the whole headword,
+   matching the glyph cards' hanzi tile (same minimum size and radius); long phrases
+   simply widen or wrap inside it. The part of speech after "WORD ·" is fainter than
+   the dot so it doesn't read as part of the WORD label. */
+.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+.library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
