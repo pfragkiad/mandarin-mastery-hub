@@ -529,7 +529,7 @@ this keeps the number right beside the stroke tile. */
 .kangxi-identity-rows { display: grid; grid-template-columns: max-content max-content 26px minmax(0, 1fr); align-items: center; gap: var(--record-tile-gap) 12px; }
 /* Equal reading tracks align speakers and meanings across the two sections;
    unusually long recorded readings wrap rather than widening one section. */
-.kangxi-identity-rows, .glyph-usage-parents { grid-template-columns: max-content 7ch 26px minmax(0, 1fr); }
+.kangxi-identity-rows, .glyph-usage-parents { grid-template-columns: max-content 7ch var(--reference-audio-size) minmax(0, 1fr); }
 .kangxi-identity-item .pinyin, .glyph-usage-reference .pinyin { min-width: 0; overflow-wrap: anywhere; }
 .kangxi-identity-item { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; gap: 4px 12px; min-width: 0; }
 .kangxi-identity-item > .component-pronunciation { display: contents; }
@@ -537,9 +537,8 @@ this keeps the number right beside the stroke tile. */
 .kangxi-identity-item .decomposition-listen { grid-column: 3; width: 26px; height: 26px; margin: 0; color: var(--primary); }
 .kangxi-identity-item .decomposition-listen svg { width: 14px; height: 14px; }
 .kangxi-identity-description { grid-column: 4; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
-html[data-display-size='comfortable'] .kangxi-identity-item .pinyin { font-size: 16px; line-height: 1.6; }
 @media (max-width: 580px) {
-  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) 26px; }
+  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
   .kangxi-identity-description { grid-column: 1 / -1; }
 }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
@@ -1231,7 +1230,7 @@ html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content)
 html[data-display-size='comfortable'] .detail-sheet { width: min(760px, calc(100% - 32px)); }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
-html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-facts, .decomposition-facts .pinyin, .decomposition-note, .decomposition-layout small, .glyph-usage-reference .pinyin, .glyph-usage-meaning, .kangxi-identity-meaning, .catalog-facts dd, .sentence-pinyin, .sentence-meaning) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-note, .decomposition-layout small, .catalog-facts dd) { font-size: 16px; line-height: 1.6; }
 html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-node > span, .catalog-facts dt, .catalog-record-note, .detail-footnote, .source-note, .glyph-usage-relation, .babelstone-component-source, .kangxi-identity-item small, .detail-sheet-position) { font-size: 13px; line-height: 1.6; }
 html[data-display-size='comfortable'] .detail-sheet .radical-form-choice > span { font-size: 14px; }
 html[data-display-size='comfortable'] .detail-sheet .radical-form-choice small { font-size: 12px; }
@@ -1240,7 +1239,7 @@ html[data-display-size='comfortable'] .detail-sheet .decomposition-part { flex-w
 /* Practice mirrors the reference reading scale, not just its action buttons. */
 html[data-display-size='comfortable'] .practice-intro .practice-meaning .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .practice-intro .practice-translation { font-size: 21px; line-height: 1.5; }
-html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-facts, .decomposition-facts .pinyin, .decomposition-note, .decomposition-layout small, .kangxi-identity-meaning) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-note, .decomposition-layout small) { font-size: 16px; line-height: 1.6; }
 html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-node > span, .stroke-guide-note, .stroke-guide-top h3, .stroke-pinyin, .writer-status) { font-size: 13px; line-height: 1.6; letter-spacing: 0; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice > span { font-size: 14px; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice small { font-size: 12px; }
@@ -1355,4 +1354,54 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view .word-card .word-card-bottom { margin-inline: 18px; gap: 8px; }
   .library-list-view .word-actions { gap: 2px; }
   .library-list-view .word-actions button, .library-list-view .word-actions a { width: 36px; height: 40px; }
+}
+
+/* Reference typography has one scale per semantic role, shared by sentence,
+   parent-character, identity and decomposition renderers in every location.
+   Display mode changes tokens only, not a growing list of section overrides. */
+:root {
+  --reference-pinyin-size: 13px;
+  --reference-translation-size: 13px;
+  --reference-line-height: 1.6;
+  --reference-audio-size: 26px;
+  --reference-audio-icon-size: 14px;
+  --reference-sentence-hanzi-size: 24px;
+}
+html[data-display-size='comfortable'] {
+  --reference-pinyin-size: 16px;
+  --reference-translation-size: 16px;
+  --reference-audio-size: 32px;
+  --reference-audio-icon-size: 18px;
+  --reference-sentence-hanzi-size: 32px;
+}
+:is(.decomposition-facts, .glyph-usage-reference, .kangxi-identity-item, .vocabulary-part-facts, .sentence, .stroke-component-heading) .pinyin {
+  font-size: var(--reference-pinyin-size);
+  line-height: var(--reference-line-height);
+}
+:is(.decomposition-facts, .glyph-usage-meaning, .kangxi-identity-meaning, .vocabulary-part-facts small, .sentence > span.sentence-meaning) {
+  font-size: var(--reference-translation-size);
+  line-height: var(--reference-line-height);
+}
+.sentence p.sentence-hanzi {
+  font-size: var(--reference-sentence-hanzi-size);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+/* Match hit targets and actual SVG sizes; preserve each control's availability,
+   colours and recorded pronunciation pipeline. */
+:is(.sentence, .glyph-usage-reference, .kangxi-identity-item, .decomposition-part, .vocabulary-part-facts, .stroke-component-heading) :is(.example-listen, .decomposition-listen) {
+  width: var(--reference-audio-size);
+  height: var(--reference-audio-size);
+  min-width: var(--reference-audio-size);
+  margin: 0;
+  transform: none;
+}
+:is(.sentence, .glyph-usage-reference, .kangxi-identity-item, .decomposition-part, .vocabulary-part-facts, .stroke-component-heading) :is(.example-listen, .decomposition-listen) svg {
+  width: var(--reference-audio-icon-size);
+  height: var(--reference-audio-icon-size);
+}
+@media (max-width: 580px) {
+  .glyph-usage-parents, .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
+  .sentence-pinyin { flex-wrap: wrap; }
+  .sentence-pinyin > span { min-width: 0; overflow-wrap: anywhere; }
 }
