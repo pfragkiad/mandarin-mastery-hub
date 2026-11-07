@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Refine Go to: split rank summary, remember tab/default Rank, select prefill, clamp feedback and first-unranked jump; verify tests and live flow.
+
 - [done] Clear ranked/unranked totals, nearest recorded rank jumps with feedback, Go to icon, and direct page buttons for up to seven pages; 14 tests passed, live rank gap/direct page jumps and phone layout verified, preview clean.
 
 - [done] Shared top/bottom first/previous/next/last paging, filtered Page/Rank Go to dialog and range totals; enlarged Comfortable search with spaced toggles. Verified Glyphs rank/page and Vocabulary page jumps, bottom navigation, desktop/phone layouts without overflow; 25 tests passed and preview clean.

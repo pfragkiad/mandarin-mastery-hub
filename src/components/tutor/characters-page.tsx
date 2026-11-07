@@ -251,6 +251,10 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     range: filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0',
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
     ranks: rankSummary,
+    onUnrankedChange: hasUsage && usageOrder.loaded ? () => {
+      const index = filtered.findIndex(entry => usageRank(entry, kind, preferences.includeTraditional) === null);
+      if (index >= 0) setPage(Math.floor(index / density.size) + 1);
+    } : undefined,
     currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => usageRank(entry, kind, preferences.includeTraditional)).find(rank => rank !== null) ?? undefined : undefined,
     onRankChange: hasUsage ? (rank: number) => {
       if (!usageOrder.loaded) return;

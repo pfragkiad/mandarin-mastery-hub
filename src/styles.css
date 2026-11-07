@@ -1164,6 +1164,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:580px) { .library-per-page { margin-left: 0; } .catalog-pagination { flex-wrap: wrap; } }
 .catalog-jump-dialog { width: min(300px, calc(100vw - 32px)); max-width: 300px; border-radius: 8px; }
 .catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
+.catalog-jump-dialog .catalog-jump-rank-range { display: block; white-space: nowrap; }
 .catalog-jump-dialog form { display: grid; gap: 16px; }
 .catalog-jump-modes { display: flex; gap: 8px; }
 .catalog-jump-field { display: grid; gap: 8px; font-size: var(--ui-label-size, 13px); }
