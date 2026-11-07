@@ -1,10 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { CatalogPagination } from './catalog-pagination';
 
 const base = { range: '81–100', total: 7427, current: 5, pages: 372, perPage: 20 as const };
 
 describe('Library paging and explicit jumps', () => {
+  beforeEach(() => localStorage.clear());
   it('direct jumps navigate all six pages with only previous/next arrows', () => {
     const change = vi.fn();
     render(<CatalogPagination {...base} pages={6} onPageChange={change}/>);
@@ -42,6 +43,7 @@ describe('Library paging and explicit jumps', () => {
   it('prefills the current page when opening and returning to Page mode', () => {
     render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Page$/ }));
     expect(screen.getByRole('spinbutton', { name: 'Jump to page' })).toHaveValue(5);
     fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
     fireEvent.click(screen.getByRole('button', { name: /^Page$/ }));
@@ -53,6 +55,45 @@ describe('Library paging and explicit jumps', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
     fireEvent.click(screen.getByRole('button', { name: /^Rank$/ }));
     expect(screen.getByRole('spinbutton', { name: 'Jump to rank' })).toHaveValue(123);
+  });
+  it('defaults to Rank and remembers Page across reopening', () => {
+    render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 399, min: 252, max: 9206 }} currentRank={512}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    expect(screen.getByRole('spinbutton', { name: 'Jump to rank' })).toHaveValue(512);
+    fireEvent.click(screen.getByRole('button', { name: /^Page$/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Close' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    expect(screen.getByRole('spinbutton', { name: 'Jump to page' })).toHaveValue(5);
+  });
+  it('selects the current value on focus so typing replaces it', () => {
+    render(<CatalogPagination {...base} onPageChange={vi.fn()}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    const input = screen.getByRole('spinbutton');
+    const select = vi.spyOn(input as HTMLInputElement, 'select');
+    fireEvent.focus(input);
+    expect(select).toHaveBeenCalledOnce();
+  });
+  it.each([[0, 252], [99999, 9206]])('clamps rank %s to the filtered boundary %s', (requested, boundary) => {
+    const rank = vi.fn(() => boundary);
+    render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={rank} ranks={{ count: 399, min: 252, max: 9206 }} currentRank={512}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.change(screen.getByRole('spinbutton'), { target: { value: String(requested) } });
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
+    expect(rank).toHaveBeenCalledExactlyOnceWith(boundary);
+  });
+  it('jumps to unranked without sending an invented rank', () => {
+    const unranked = vi.fn();
+    const rank = vi.fn();
+    render(<CatalogPagination {...base} total={436} onPageChange={vi.fn()} onRankChange={rank} onUnrankedChange={unranked} ranks={{ count: 399, min: 252, max: 9206 }}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Jump to unranked' }));
+    expect(unranked).toHaveBeenCalledOnce();
+    expect(rank).not.toHaveBeenCalled();
+  });
+  it('has no unranked jump when all 399 records are ranked', () => {
+    render(<CatalogPagination {...base} total={399} onPageChange={vi.fn()} onRankChange={vi.fn()} onUnrankedChange={vi.fn()} ranks={{ count: 399, min: 252, max: 9206 }}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    expect(screen.queryByRole('button', { name: 'Jump to unranked' })).toBeNull();
   });
   it('first/previous/next/last navigate to the exact page boundaries', () => {
     const change = vi.fn();
