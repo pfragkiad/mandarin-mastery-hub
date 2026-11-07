@@ -22,9 +22,9 @@ it('defaults on and responds immediately to disabling the saved preference', () 
   act(() => result.current.celebrate(100));
   expect(result.current.effect).toBeNull();
 });
-it('suppresses confetti for reduced motion', () => {
+it('keeps the enabled celebration available for the stationary reduced-motion fallback', () => {
   vi.stubGlobal('matchMedia', () => ({ matches: true }));
   const { result } = renderHook(() => usePerfectCelebration(true));
   act(() => result.current.celebrate(100));
-  expect(result.current.effect).toBeNull();
+  expect(result.current.effect).not.toBeNull();
 });
