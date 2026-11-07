@@ -1570,3 +1570,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 @media (max-width: 760px) {
   .practice-page-content .practice-print-button { display: none; }
 }
+
+/* Comfortable glyph cards cap the translation at two lines with an ellipsis. The
+   card's clipped-content check then sees the overflow and its hover/focus tooltip
+   shows the full translation, so nothing recorded is lost. */
+.library-list-view .catalog-card .word-meaning.catalog-entry-meaning { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
