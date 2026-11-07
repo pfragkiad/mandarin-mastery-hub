@@ -1,4 +1,4 @@
-import { useEffect, useState, type Ref, type RefObject } from 'react';
+import { useEffect, useRef, useState, type Ref, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Crosshair } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,10 +34,13 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   const [nearestRank, setNearestRank] = useState<number>();
   const [jumpNotice, setJumpNotice] = useState('');
   const [feedbackPage, setFeedbackPage] = useState(current);
+  const previousPage = useRef(current);
   // Bind feedback to its destination, not the page from which Go was submitted.
   // Any subsequent page change (including history/keyboard/bottom row) clears it.
   useEffect(() => {
-    if (current === feedbackPage) return;
+    const changed = previousPage.current !== current;
+    previousPage.current = current;
+    if (!changed || current === feedbackPage) return;
     setNearestRank(undefined);
     setJumpNotice('');
   }, [current, feedbackPage]);
