@@ -30,6 +30,12 @@ export function focusRecordCard(id: string) {
   if (!id || typeof window === 'undefined') return;
   let tries = 0;
   const attempt = () => {
+    // The closing modal keeps its focus trap during its exit animation. Wait
+    // for teardown before focusing the card so it cannot steal focus back.
+    if (document.querySelector('.detail-sheet')) {
+      if (++tries < 120) requestAnimationFrame(attempt);
+      return;
+    }
     const card = document.querySelector<HTMLElement>(`[data-entry-id="${CSS.escape(id)}"]`);
     if (card) {
       window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: id }));
