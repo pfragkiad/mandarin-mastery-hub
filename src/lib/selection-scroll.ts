@@ -30,11 +30,23 @@ export function focusRecordCard(id: string) {
   if (!id || typeof window === 'undefined') return;
   let tries = 0;
   const attempt = () => {
+    // The closing modal keeps its focus trap during its exit animation. Wait
+    // for teardown before focusing the card so it cannot steal focus back.
+    if (document.querySelector('.detail-sheet')) {
+      if (++tries < 120) requestAnimationFrame(attempt);
+      return;
+    }
     const card = document.querySelector<HTMLElement>(`[data-entry-id="${CSS.escape(id)}"]`);
     if (card) {
+      window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: id }));
       card.scrollIntoView({ block: 'center', behavior: 'instant' });
       if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '-1');
       card.focus({ preventScroll: true });
+      // Radix restores its opener in a deferred teardown callback. Reassert the
+      // exact card after that callback, provided no new detail has opened.
+      window.setTimeout(() => {
+        if (card.isConnected && !document.querySelector('.detail-sheet')) card.focus({ preventScroll: true });
+      }, 50);
     } else if (++tries < 40) requestAnimationFrame(attempt);
   };
   requestAnimationFrame(attempt);

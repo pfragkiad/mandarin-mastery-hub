@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Eye, EyeOff, Languages, Volume2, ChevronDown } from 'lucide-react';
+import { Eye, EyeOff, Languages, Volume2, ChevronDown, Pin } from 'lucide-react';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
@@ -10,9 +10,10 @@ const OPTIONS: { value: CardReveal; label: string; icon: typeof Eye; shortcut: s
   { value: 'meaning', label: 'Hide translation', icon: Languages, shortcut: '1' },
   { value: 'hanzi', label: 'Hide hanzi', icon: EyeOff, shortcut: '2' },
   { value: 'pinyin', label: 'Hide pronunciation', icon: Volume2, shortcut: '3' },
+  { value: 'pinyin-meaning', label: 'Hide pronunciation and translation', icon: EyeOff, shortcut: '4' },
 ];
 
-/** Quick self-test toggle above the card grids: hide one card face at a time. */
+/** Shared hidden-face menu and optional remembered-reveal toggle for both libraries. */
 export function CardRevealToggle() {
   const { preferences, setPreferences } = useWorkspace();
   const current = preferences.cardReveal;
@@ -31,14 +32,14 @@ export function CardRevealToggle() {
 
   // The button names the currently hidden face so the selection stays visible
   // without opening the menu; "Hide" is the neutral label when nothing is hidden.
-  const selected = OPTIONS.find(option => option.value === current) ?? OPTIONS[0]!;
+  const selected = OPTIONS.find(option => option.value === current) ?? { value: 'all', label: 'Show all', icon: Eye, shortcut: '0' };
   const TriggerIcon = current === 'all' ? EyeOff : selected.icon;
   // Hidden modes read as a state ("Hanzi hidden"); 'all' falls back to the plain "Hide" action label.
   const triggerLabel = current === 'all' ? 'Hide' : `${selected.label.replace(/^Hide /, '').replace(/^./, c => c.toUpperCase())} hidden`;
-  return <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={current !== 'all' ? 'selected' : ''} title={selected.label}><TriggerIcon/>{triggerLabel}<ChevronDown/></Button></DropdownMenuTrigger>
+  return <><DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline" size="sm" className={`card-visibility-menu ${current !== 'all' ? 'selected' : ''}`} title={selected.label}><TriggerIcon/><span>{triggerLabel}</span><ChevronDown/></Button></DropdownMenuTrigger>
     <DropdownMenuContent align="start"><DropdownMenuRadioGroup value={current} onValueChange={value => { const option = OPTIONS.find(option => option.value === value); if (option) setPreferences({ ...preferences, cardReveal: option.value }); }}>
       {[...OPTIONS.slice(1), OPTIONS[0]].filter(option => option !== undefined).map(({ value, label, icon: Icon, shortcut }) => <DropdownMenuRadioItem key={value} value={value}><Icon className="mr-2 size-4"/>{value === 'all' ? label : label.replace('Hide ', '')}<span className="ml-auto pl-5 text-xs text-muted-foreground">{shortcut}</span></DropdownMenuRadioItem>)}
-    </DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>;
+    </DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>{current !== 'all' && <Button variant="outline" size="sm" aria-pressed={Boolean(preferences.rememberCardReveals)} title="Remember revealed cards" className={preferences.rememberCardReveals ? 'selected' : ''} onClick={() => setPreferences({ ...preferences, rememberCardReveals: !preferences.rememberCardReveals })}><Pin/>Remember revealed cards</Button>}</>;
 }
 
 /** Grid container class for the active reveal mode ('' shows everything). */

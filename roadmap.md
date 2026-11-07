@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Combined pronunciation/translation hiding and optional session remembered reveals; verified exact reveal/focus after Details and Practice in Glyphs/Vocabulary, including remembering disabled; related tests pass and preview clean.
+
 - [done] Shared header Compact/Comfortable choice; Comfortable enlarges search, dropdowns, labels and controls app-wide while preserving large cards; verified phone/desktop libraries, Practice, games, Settings, portal menus and persistence; 9 tests pass, preview clean.
 
 - [done] Shared remembered Grid/List controls in Glyphs and Vocabulary; large rearranged one-card rows verified at phone/tablet/desktop widths, stable hide/reveal, detail opening and reload persistence; 13 tests pass, preview clean.

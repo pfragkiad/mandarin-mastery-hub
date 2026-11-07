@@ -229,7 +229,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}`);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
   // Clicks only toggle the peek in a Hide mode; the detail panel opens solely via the card's details button.
   const selectTile = (id: string) => peek.reveal(id);
   // Rank jump: the list is ordered by rank (unranked last), so the first

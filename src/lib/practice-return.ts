@@ -6,11 +6,19 @@
  */
 let lastOrigin: string | null = null;
 let entryCharacter: string | null = null;
+let entryStroke: string | null = null;
+let entryRecordId: string | null = null;
 let previousPath: string | null = null;
 
 export function rememberOrigin(pathname: string, href: string) {
   if (pathname !== '/strokes') lastOrigin = href;
-  else if (previousPath !== '/strokes') entryCharacter = new URL(href, 'http://x').searchParams.get('character');
+  else if (previousPath !== '/strokes') {
+    const practice = new URL(href, 'http://x').searchParams;
+    const origin = lastOrigin ? new URL(lastOrigin, 'http://x').searchParams : null;
+    entryCharacter = practice.get('character');
+    entryStroke = practice.get('stroke');
+    entryRecordId = origin?.get('word') ?? origin?.get('id') ?? null;
+  }
   previousPath = pathname;
 }
 export function practiceOrigin() { return lastOrigin; }
@@ -18,13 +26,17 @@ export function practiceOrigin() { return lastOrigin; }
 /** After Back: wait for the grid to render, then scroll the card holding the entry record's Practice link into view and focus it. */
 export function focusEntryCard() {
   const target = entryCharacter;
-  if (!target || typeof window === 'undefined') return;
+  if ((!target && !entryStroke && !entryRecordId) || typeof window === 'undefined') return;
   let tries = 0;
   const attempt = () => {
+    // Prefer the exact originating record (not another word sharing a character).
+    const exact = entryRecordId ? [...document.querySelectorAll<HTMLElement>('[data-entry-id]')].find(card => card.dataset['entryId'] === entryRecordId) : undefined;
     const link = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="/strokes"]')]
-      .find(a => new URL(a.href).searchParams.get('character') === target);
-    const card = link?.closest<HTMLElement>('.word-card, article, li') ?? link;
+      .find(a => { const params = new URL(a.href).searchParams; return target ? params.get('character') === target : params.get('stroke') === entryStroke; });
+    const card = exact ?? link?.closest<HTMLElement>('.word-card, article, li') ?? link;
     if (card) {
+      const id = card.dataset['entryId'];
+      if (id) window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: id }));
       card.scrollIntoView({ block: 'center', behavior: 'instant' });
       if (!card.hasAttribute('tabindex') && !card.matches('a,button')) card.setAttribute('tabindex', '-1');
       card.focus({ preventScroll: true });

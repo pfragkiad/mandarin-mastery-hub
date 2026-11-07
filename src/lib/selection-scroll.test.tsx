@@ -1,6 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { useRecordScroll } from './selection-scroll';
+import { useRecordScroll, focusRecordCard } from './selection-scroll';
 
 function Harness({ id, ready = true }: { id: string; ready?: boolean }) {
   useRecordScroll(id, ready);
@@ -11,6 +11,15 @@ function Harness({ id, ready = true }: { id: string; ready?: boolean }) {
 }
 
 describe('useRecordScroll', () => {
+  it('closing details reveals and focuses the exact associated card after deferred opener restoration', async () => {
+    render(<Harness id=""/>);
+    const onReveal = vi.fn();
+    window.addEventListener('tutor:reveal-card', onReveal);
+    focusRecordCard('Characters:水');
+    await vi.waitFor(() => expect(document.activeElement).toHaveAttribute('data-entry-id', 'Characters:水'));
+    expect((onReveal.mock.calls[0]?.[0] as CustomEvent).detail).toBe('Characters:水');
+    window.removeEventListener('tutor:reveal-card', onReveal);
+  });
   let scrolled: HTMLElement[] = [];
   const scrollIntoView = vi.fn(function (this: HTMLElement) { scrolled.push(this); });
 
