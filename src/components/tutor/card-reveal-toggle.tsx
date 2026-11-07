@@ -5,10 +5,15 @@ import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import type { CardReveal } from '@/lib/learning-preferences';
 
+// A hanzi glyph stands in for an icon so "Hide hanzi" reads as the face it hides.
+function HanziIcon({ className }: { className?: string }) {
+  return <span aria-hidden className={`inline-flex size-4 shrink-0 items-center justify-center leading-none ${className ?? ''}`}>汉</span>;
+}
+
 const OPTIONS: { value: CardReveal; label: string; icon: typeof Eye; shortcut: string }[] = [
   { value: 'all', label: 'Show all', icon: Eye, shortcut: '0' },
   { value: 'meaning', label: 'Hide translation', icon: Languages, shortcut: '1' },
-  { value: 'hanzi', label: 'Hide hanzi', icon: EyeOff, shortcut: '2' },
+  { value: 'hanzi', label: 'Hide hanzi', icon: HanziIcon, shortcut: '2' },
   { value: 'pinyin', label: 'Hide pronunciation', icon: Volume2, shortcut: '3' },
   { value: 'pinyin-meaning', label: 'Hide pronunciation and translation', icon: EyeOff, shortcut: '4' },
 ];

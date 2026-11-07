@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
 import { words, type Word } from '@/lib/mandarin';
 import { DrawingSessionProvider } from './drawing-session';
 import { loadCatalog, catalog } from '@/lib/catalog-store';
