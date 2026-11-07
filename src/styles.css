@@ -1177,7 +1177,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   /* Phones offer 10/20 only; 50 stays visible solely while it is the saved choice. */
   .library-per-page { gap: 0; }
   .library-per-page > .library-per-page-label { margin-right: 0; }
-  html .catalog-pagination .library-per-page button { width: auto; min-width: 24px; padding: 0 2px; }
+  html .catalog-pagination .catalog-pagination-summary .library-per-page button { width: auto; min-width: 24px; padding: 0 2px; }
   .library-per-page button[aria-label='50 per page']:not([aria-pressed='true']) { display: none; }
 }
 @media (max-width: 480px) {
