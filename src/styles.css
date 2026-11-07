@@ -1143,7 +1143,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-pagination { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
 .catalog-pagination-left { min-width: 0; }
 .catalog-pagination-navigation { flex: 0 1 auto; min-width: 0; }
-.catalog-pagination-left > .catalog-pagination-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.catalog-pagination-left > .catalog-pagination-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
 .catalog-pagination > .catalog-pagination-summary { flex: 0 1 auto; flex-wrap: nowrap; min-width: 0; margin-left: auto; }
 .catalog-page-range { white-space: nowrap; text-align: left; color: var(--muted-foreground); }
 @media(max-width:580px) { .catalog-pagination { grid-template-columns: minmax(0, 1fr); } }
