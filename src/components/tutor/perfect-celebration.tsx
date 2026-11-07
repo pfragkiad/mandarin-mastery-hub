@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 
 /** Small board-local celebration. Explicit completion events trigger it, never
- * restored answers. The preference suppresses it; CSS uses a gentle fade instead
- * of flying particles for reduced motion, without a stationary fallback. */
+ * restored answers. The Settings preference is the only switch: because it is an
+ * explicit opt-in, CSS keeps the flying burst even under reduced motion. */
 export function usePerfectCelebration(enabled: boolean) {
   const [burst, setBurst] = useState(0);
   const enabledRef = useRef(enabled);
