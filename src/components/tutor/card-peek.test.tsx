@@ -3,6 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { useCardPeek } from './card-peek';
 import type { CardReveal } from '@/lib/learning-preferences';
 import { WorkspaceProvider } from './workspace';
+import { render } from '@testing-library/react';
 vi.mock('@/lib/catalog-store', () => ({ loadCatalog: async () => {}, catalog: { version: 1 } }));
 
 describe('useCardPeek', () => {
@@ -13,10 +14,28 @@ describe('useCardPeek', () => {
     expect([...result.current.revealed]).toEqual(['Characters:好']);
   });
   it('remembered reveals survive page changes and library unmounts, until toggled off', () => {
-    const { result, rerender } = renderHook(({ mounted, page }) => mounted ? <PeekProbe page={page}/> : null, { initialProps: { mounted: true, page: 'p1' } });
-    // Root-provider retention is exercised below through a mounted hook host.
-    expect(result.current).not.toBeNull();
-    rerender({ mounted: false, page: 'p2' });
+    let peek: ReturnType<typeof useCardPeek> | undefined;
+    function Probe({ page }: { page: string }) { peek = useCardPeek('meaning', page, true); return null; }
+    const { rerender, unmount } = render(<WorkspaceProvider><Probe page="p1"/></WorkspaceProvider>);
+    act(() => peek?.reveal('Characters:好'));
+    rerender(<WorkspaceProvider><Probe page="p2"/></WorkspaceProvider>);
+    expect(peek?.revealed.has('Characters:好')).toBe(true);
+    rerender(<WorkspaceProvider>{null}</WorkspaceProvider>);
+    rerender(<WorkspaceProvider><Probe page="p1"/></WorkspaceProvider>);
+    expect(peek?.revealed.has('Characters:好')).toBe(true);
+    act(() => peek?.reveal('Characters:好'));
+    expect(peek?.revealed.has('Characters:好')).toBe(false);
+    act(() => peek?.reveal('Characters:好'));
+    unmount();
+    render(<WorkspaceProvider><Probe page="p1"/></WorkspaceProvider>);
+    expect(peek?.revealed.size).toBe(0);
+  });
+  it('returning to a card reveals it even without remembering and never toggles it off', () => {
+    const { result } = renderHook(() => useCardPeek('pinyin-meaning', 'p1', false));
+    act(() => window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: 'word:1' })));
+    expect(result.current.revealed.has('word:1')).toBe(true);
+    act(() => window.dispatchEvent(new CustomEvent('tutor:reveal-card', { detail: 'word:1' })));
+    expect(result.current.revealed.has('word:1')).toBe(true);
   });
   it('a click in a Hide mode reveals only that card, never the panel', () => {
     const { result } = renderHook(() => useCardPeek('meaning', 'p1'));
