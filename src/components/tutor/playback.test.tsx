@@ -176,7 +176,7 @@ describe('matched practice stroke speech', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
     fireEvent.mouseDown(screen.getByRole('tab', { name: 'Trace' }), { button: 0, ctrlKey: false });
     await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
-    return fake.quiz.mock.calls[0]?.[0];
+    return fake.quiz.mock.calls.at(-1)?.[0];
   }
 
   it('speaks each accepted stroke name once audio is turned on, including a corrected stroke, but not mistakes', async () => {
