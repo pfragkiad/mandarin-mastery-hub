@@ -1174,8 +1174,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .catalog-pagination-left > *, .catalog-pagination > .catalog-pagination-summary { flex-shrink: 0; min-width: auto; }
   .catalog-pagination-navigation > span[aria-current='page'] { min-width: auto; flex-shrink: 0; padding-inline: 4px; }
   html .catalog-pagination .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page'], .catalog-jump-trigger) { width: 32px; min-width: 32px; padding-inline: 0; }
-  .library-per-page > .library-per-page-label { margin-right: 2px; }
-  html .catalog-pagination .library-per-page button { width: auto; min-width: 28px; padding: 0 3px; }
+  /* Phones offer 10/20 only; 50 stays visible solely while it is the saved choice. */
+  .library-per-page { gap: 0; }
+  .library-per-page > .library-per-page-label { margin-right: 0; }
+  html .catalog-pagination .library-per-page button { width: auto; min-width: 24px; padding: 0 2px; }
+  .library-per-page button[aria-label='50 per page']:not([aria-pressed='true']) { display: none; }
 }
 @media (max-width: 480px) {
   /* Narrow phones drop the "Page" and "Per page" words; both groups keep their accessible names. */
@@ -1191,6 +1194,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-jump-modes { display: flex; gap: 8px; }
 .catalog-jump-field { display: grid; gap: 8px; font-size: var(--ui-label-size, 13px); }
 .catalog-jump-field input { width: 120px; max-width: 100%; }
+.catalog-jump-ends { display: flex; gap: 8px; margin-top: -8px; }
+.catalog-jump-ends button { padding-inline: 6px; color: var(--primary); }
+.catalog-jump-ends button:hover { background: transparent; }
 /* Library toggles participate in layout instead of overlapping the input when
    Comfortable text grows. One border encloses the field and its spaced controls. */
 /* Start from the controls' intrinsic width, not a wide preferred basis, so
