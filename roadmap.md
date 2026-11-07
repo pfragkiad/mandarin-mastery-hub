@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Compact small-screen library Filters/Study sheets in both modes, applied chips and hidden keyboard help; verify phone/desktop flows.
+
 - [done] Refine Go to: tabs above summary, split rank summary, remember tab/default Rank, select prefill, clamp feedback and first-unranked jump; 21 tests passed, live replacement, clamp, unranked and tab recall verified; preview clean.
 
 - [done] Clear ranked/unranked totals, nearest recorded rank jumps with feedback, Go to icon, and direct page buttons for up to seven pages; 14 tests passed, live rank gap/direct page jumps and phone layout verified, preview clean.
