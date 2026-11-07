@@ -1167,7 +1167,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-detail-pill { margin-left: auto; display: inline-flex; }
 
 /* Large library rows reuse exact record content and reveal rules. The body
-   places reading/hanzi at left, meaning at right; phones stack those areas.
+   always stacks pinyin, hanzi and meaning in that order at every width.
    Unclamped text can grow the row without changing it when a face is hidden. */
 .library-view-toggle { display: inline-flex; flex: none; padding: 2px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); gap: 2px; }
 .library-view-toggle button { height: 30px; gap: 6px; padding-inline: 10px; }
@@ -1178,14 +1178,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-list-view .word-level-wrap { flex-wrap: wrap; gap: 8px; }
 .library-list-view .word-level { font-size: 10px; letter-spacing: 0; width: auto; }
 .library-list-view .word-hsk-id { font-size: 10px; letter-spacing: 0; }
-.library-list-view .word-card .word-open { display: grid; grid-template-columns: minmax(200px, .45fr) minmax(0,1fr); grid-template-rows: auto 1fr; height: auto; min-height: 170px; padding: 16px 24px 22px; gap: 8px 32px; justify-content: start; align-items: center; white-space: normal; }
+.library-list-view .word-card .word-open { display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto auto; height: auto; min-height: 170px; padding: 16px 24px 22px; gap: 12px; justify-content: start; align-items: center; white-space: normal; }
 .library-list-view .word-card .word-character { display: contents; font-size: 64px; }
 .library-list-view .word-card .pinyin { grid-column: 1; grid-row: 1; font-size: 18px; line-height: 1.5; max-width: 100%; white-space: normal; overflow: visible; }
 .library-list-view .pinyin-text { overflow-wrap: anywhere; }
 .library-list-view .word-character > [lang], .library-list-view .tile-hanzi-row { grid-column: 1; grid-row: 2; min-width: 0; overflow-wrap: anywhere; line-height: 1.35; }
 .library-list-view .word-card .tile-hanzi-row { flex-wrap: wrap; gap: 10px; }
 .library-list-view .word-card .tile-form { width: 82px; height: 82px; flex: 0 0 82px; font-size: 60px; }
-.library-list-view .word-card .word-meaning { grid-column: 2; grid-row: 1 / span 2; width: 100%; display: block; font-size: 20px; line-height: 1.6; white-space: normal; overflow: visible; overflow-wrap: anywhere; -webkit-line-clamp: unset; }
+.library-list-view .word-card .word-meaning { grid-column: 1; grid-row: 3; width: 100%; display: block; font-size: 20px; line-height: 1.6; white-space: normal; overflow: visible; overflow-wrap: anywhere; -webkit-line-clamp: unset; }
 .library-list-view .word-card .word-card-bottom { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; margin: 0 24px; height: auto; min-height: 62px; font-size: 12px; }
 .library-list-view .word-card .word-card-bottom > span { white-space: normal; overflow: visible; }
 .library-list-view .word-card .component-reuse-label { font-size: 12px; }
@@ -1196,8 +1196,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .library-list-view .tile-speaker svg { width: 17px; height: 17px; }
 .library-list-view .catalog-card .catalog-source-icon { width: 17px; height: 17px; }
 @media (max-width: 850px) {
-  .library-list-view .word-card .word-open { grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto auto; gap: 12px; }
-  .library-list-view .word-card .word-meaning { grid-column: 1; grid-row: 3; font-size: 18px; }
+  .library-list-view .word-card .word-meaning { font-size: 18px; }
   .library-list-view .word-card { min-height: 320px; }
 }
 @media (max-width: 580px) {
