@@ -1575,6 +1575,13 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* Comfortable word cards at every width: the word type joins the top row after
    "WORD ·" (CardTopMeta), so the footer no longer repeats it; the sentence indicator
    matches the glyph cards' top-right icons. */
+/* Compact word cards use the same labels: type in the top row (fainter than the dot),
+   no type text in the footer (the actions keep their place), sentence icon top right. */
+.word-grid:not(.library-list-view) .word-card.headword-card .card-top-meta { display: inline; margin-left: -3px; font-size: 9px; letter-spacing: 0; color: var(--muted-foreground); }
+.word-grid:not(.library-list-view) .word-card.headword-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
+.word-grid:not(.library-list-view) .word-card.headword-card > .word-card-bottom > span:first-child { visibility: hidden; }
+.word-grid:not(.library-list-view) .word-card.headword-card .catalog-card-indicators { display: flex; align-items: center; gap: 8px; min-height: 18px; }
+.word-grid:not(.library-list-view) .word-card.headword-card .catalog-source-icon { position: static; display: block; width: 13px; height: 13px; color: var(--primary); }
 .library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
 .library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
