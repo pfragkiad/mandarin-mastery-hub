@@ -1588,5 +1588,5 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    matching the glyph cards' hanzi tile (same minimum size and radius); long phrases
    simply widen or wrap inside it. The part of speech after "WORD ·" is fainter than
    the dot so it doesn't read as part of the WORD label. */
-.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 8px 10px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
 .library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
