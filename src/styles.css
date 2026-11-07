@@ -341,7 +341,11 @@
 /* Symmetric breathing room around the tree: 6px above the root row matches the
    6px below the last row (4px tree margin + 2px note margin). */
 .decomposition-tree { list-style: none; margin: 6px 0 4px; padding: 0; }
-.decomposition-tree ul { list-style: none; margin: 2px 0 6px 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
+/* Shared row gaps apply to both siblings and parent/child rows, without
+   accumulating nested margins. Vocabulary word groups keep their own layout. */
+.decomposition-tree:not(.vocabulary-parts), .decomposition-tree ul,
+.decomposition-tree:not(.vocabulary-parts) li { display: flex; flex-direction: column; gap: var(--record-tile-gap); }
+.decomposition-tree ul { list-style: none; margin: 0 0 0 2px; padding: 0 0 0 10px; border-left: 1px solid var(--border); }
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
    short distance to the right of every label (root, top, bottom, stroke numbers). */
 .decomposition-node { display: flex; align-items: center; gap: 10px; min-height: 46px; }
@@ -410,8 +414,6 @@
 .vocabulary-part-facts .phrase-word-link { display: inline-flex; align-items: baseline; gap: 7px; width: auto; padding: 3px 12px 4px; border: 1px solid var(--border); border-radius: 999px; color: var(--primary); font-size: 13px; line-height: 1.2; transition: border-color .15s ease; }
 .vocabulary-part-facts .phrase-word-link:hover, .vocabulary-part-facts .phrase-word-link:focus-visible { border-color: var(--primary); }
 .vocabulary-part-facts .phrase-word-link > [lang="zh-CN"] { font-size: 16px; }
-/* Match the 10px vertical gap between character-example tiles. */
-.radical-stroke-sequence { display: flex; flex-direction: column; gap: var(--record-tile-gap); }
 .radical-stroke-sequence .decomposition-part { display: flex; align-items: center; gap: 12px; }
 /* The stroke index is a single digit, so its column is narrower than the shared 42px one;
 this keeps the number right beside the stroke tile. */
