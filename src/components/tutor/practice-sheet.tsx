@@ -134,7 +134,7 @@ export function PracticeSheet({ text, pinyin, meaning, onClose, outlines }: { te
             <span className="practice-preview-eyebrow"><FileText size={14} />WRITING PRACTICE</span>
             <h1>Handwriting practice sheet</h1>
           </div>
-          <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
+          <Button variant="ghost" size="icon" className="close-x" onClick={onClose} aria-label="Close practice sheet" title="Close practice sheet"><X /></Button>
         </div>
         <div className="practice-options">
           {!singleCharacter && (

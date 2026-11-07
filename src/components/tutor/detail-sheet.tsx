@@ -69,7 +69,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         </div>}
         <div className="detail-sheet-end">
           {inList && <NavigationShortcuts context="records"/>}
-          <Button variant="ghost" size="icon" aria-label="Close and show card in list" title="Close and show card in list" onClick={close}><X/></Button>
+          <Button variant="ghost" size="icon" className="close-x" aria-label="Close and show card in list" title="Close and show card in list" onClick={close}><X/></Button>
         </div>
       </div>
       {/* A link followed inside the window remembers this record for Back. */}
