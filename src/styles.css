@@ -1177,8 +1177,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .library-per-page button, html[data-display-size='comfortable'] .library-per-page button { min-width: 26px; padding: 0 4px; }
 }
 @media (max-width: 480px) {
-  /* Keep the row intact on the narrowest phones; the group keeps its "Records per page" name. */
-  .library-per-page > .library-per-page-label { display: none; }
+  /* Narrow phones: drop the "Page" and "Per page" words (both groups keep their
+     accessible names) and trim hit areas slightly so the row stays intact. */
+  .library-per-page > .library-per-page-label, .catalog-page-word { display: none; }
+  .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']),
+  html[data-display-size='comfortable'] .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']),
+  .catalog-pagination-navigation .catalog-jump-trigger, html[data-display-size='comfortable'] .catalog-pagination-navigation .catalog-jump-trigger { width: 32px; min-width: 32px; padding-inline: 0; }
+  .library-per-page button, html[data-display-size='comfortable'] .library-per-page button, html[data-display-size='comfortable'] .catalog-pagination .library-per-page button { width: auto; min-width: 28px; padding: 0 3px; }
+  .catalog-pagination-navigation > span[aria-current='page'] { min-width: 3.25rem; }
 }
 .catalog-jump-dialog [id] { white-space: normal; overflow-wrap: break-word; }
 .catalog-jump-dialog .catalog-jump-rank-range { display: block; white-space: nowrap; }
