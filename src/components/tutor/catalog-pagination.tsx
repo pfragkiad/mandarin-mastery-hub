@@ -10,7 +10,7 @@ import { NavigationShortcuts } from './navigation-shortcuts';
  * Shared top/bottom row. Only the modal owns jump mode/value drafts; owners
  * supply applied result totals and exact recorded rank bounds, never inferred ranks.
  */
-export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks, currentRank, onUnrankedChange }: {
+export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks, currentRank, onUnrankedChange, filterKey }: {
   range: string;
   total: number;
   current: number;
@@ -27,6 +27,8 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   currentRank?: number | undefined;
   /** Jumps to the page containing the first exact unranked record in the applied pool. */
   onUnrankedChange?: (() => void) | undefined;
+  /** Applied filter identity, independent of page and result count. */
+  filterKey?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<'page' | 'rank'>('page');
@@ -35,6 +37,10 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
   const [jumpNotice, setJumpNotice] = useState('');
   const [feedbackPage, setFeedbackPage] = useState(current);
   const previousPage = useRef(current);
+  useEffect(() => {
+    setNearestRank(undefined);
+    setJumpNotice('');
+  }, [filterKey]);
   // Bind feedback to its destination, not the page from which Go was submitted.
   // Any subsequent page change (including history/keyboard/bottom row) clears it.
   useEffect(() => {

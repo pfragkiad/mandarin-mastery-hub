@@ -53,6 +53,16 @@ describe('Library paging and explicit jumps', () => {
     rerender(<CatalogPagination {...props} current={6}/>);
     expect(screen.queryByRole('status')).toBeNull();
   });
+  it('clears nearest feedback when applied filters change even with the same page and total', () => {
+    const props = { ...base, onPageChange: vi.fn(), onRankChange: vi.fn(() => 512), ranks: { count: 399, min: 252, max: 9206 } };
+    const { rerender } = render(<CatalogPagination {...props} filterKey="strokes:14"/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '511' } });
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
+    expect(screen.getByRole('status')).toBeInTheDocument();
+    rerender(<CatalogPagination {...props} filterKey="strokes:5"/>);
+    expect(screen.queryByRole('status')).toBeNull();
+  });
   it('prefills the current page when opening and returning to Page mode', () => {
     render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
