@@ -524,7 +524,24 @@ this keeps the number right beside the stroke tile. */
 
 .decomposition-part { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
 /* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
-.kangxi-identity-item { display: inline-flex; align-items: center; gap: 8px; }
+/* Identity uses the same four-column rhythm as parent examples, preserving
+   its sourced pronunciation control and keeping the badge beside the meaning. */
+.kangxi-identity-rows { display: grid; grid-template-columns: max-content max-content 26px minmax(0, 1fr); align-items: center; gap: var(--record-tile-gap) 12px; }
+/* Equal reading tracks align speakers and meanings across the two sections;
+   unusually long recorded readings wrap rather than widening one section. */
+.kangxi-identity-rows, .glyph-usage-parents { grid-template-columns: max-content 7ch 26px minmax(0, 1fr); }
+.kangxi-identity-item .pinyin, .glyph-usage-reference .pinyin { min-width: 0; overflow-wrap: anywhere; }
+.kangxi-identity-item { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; gap: 4px 12px; min-width: 0; }
+.kangxi-identity-item > .component-pronunciation { display: contents; }
+.kangxi-identity-item .pinyin { grid-column: 2; font-size: 13px; }
+.kangxi-identity-item .decomposition-listen { grid-column: 3; width: 26px; height: 26px; margin: 0; color: var(--primary); }
+.kangxi-identity-item .decomposition-listen svg { width: 14px; height: 14px; }
+.kangxi-identity-description { grid-column: 4; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+html[data-display-size='comfortable'] .kangxi-identity-item .pinyin { font-size: 16px; line-height: 1.6; }
+@media (max-width: 580px) {
+  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) 26px; }
+  .kangxi-identity-description { grid-column: 1 / -1; }
+}
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
 .kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
 .kangxi-identity-badge { font-size: 8px; }
