@@ -4,14 +4,15 @@ import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 /** Shared keyboard help beside navigation. Context chooses page or record keys;
- * the popover owns only its open state and never changes a library selection. */
+ * the popover owns only its open state and never changes a library selection.
+ * Phone layouts hide this optional help, not the navigation or key handlers. */
 export function NavigationShortcuts({ context }: { context: 'pages' | 'records' }) {
   const shortcuts = context === 'pages'
     ? [['← / →', 'Previous / next page'], ['PageUp / PageDown', 'Back / forward 10 pages'], ['Home / End', 'First / last page']]
     : [['← / →', 'Previous / next record'], ['Esc', 'Close']];
   return <Popover>
     <PopoverTrigger asChild>
-      <Button variant="ghost" size="icon" aria-label="Keyboard shortcuts" title="Keyboard shortcuts"><Keyboard className="size-4"/></Button>
+      <Button variant="ghost" size="icon" className="navigation-shortcuts-trigger" aria-label="Keyboard shortcuts" title="Keyboard shortcuts"><Keyboard className="size-4"/></Button>
     </PopoverTrigger>
     {/* Wider panel so every description fits on one line beside its keys. */}
     <PopoverContent align="start" className="w-80" aria-label="Keyboard shortcuts" onKeyDown={event => event.stopPropagation()}>
