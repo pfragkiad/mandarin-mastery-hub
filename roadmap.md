@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Match spacing in all stroke decomposition displays to character examples.
-- [ ] Allow Trace stroke clicks to show the prefix and continue after the selected stroke; keep Recall unchanged.
+- [done] Match all reference/Practice stroke tile gaps to character examples with shared spacing; verified 10px gaps on 木.
+- [done] Trace stroke clicks show the prefix and continue after the selected stroke; Recall unchanged. Verified tracing 木 strokes 3–4 to completion, prefix unscored, Reset and last-stroke behavior; 38 tests pass.
 
 - [done] Narrow Characters/Components rank and stroke choices in both directions after Apply; 50 tests passed, live rank/stroke Apply and history verified, draft options unchanged, preview clean.
 
