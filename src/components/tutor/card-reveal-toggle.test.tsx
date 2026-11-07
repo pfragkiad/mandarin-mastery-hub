@@ -38,6 +38,16 @@ describe('CardRevealToggle trigger label', () => {
 });
 
 describe('hidden-card preferences', () => {
+  it('Study preserves combined hiding and offers independent remembered reveals', () => {
+    const { rerender } = render(<CardRevealToggle study/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Study' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Hide pronunciation and translation' }));
+    expect(preferences.cardReveal).toBe('pinyin-meaning');
+    rerender(<CardRevealToggle study/>);
+    fireEvent.click(screen.getByRole('switch', { name: 'Remember revealed cards' }));
+    expect(preferences.rememberCardReveals).toBe(true);
+    expect(preferences.cardReveal).toBe('pinyin-meaning');
+  });
   it('shortcut 4 selects combined pronunciation and translation hiding', () => {
     renderToggle();
     fireEvent.keyDown(window, { key: '4' });

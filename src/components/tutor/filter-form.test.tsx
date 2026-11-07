@@ -1,6 +1,23 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DraftFilterForm } from './filter-form';
+
+afterEach(() => vi.unstubAllGlobals());
+
+describe('Phone filter sheet', () => {
+  it('drafts sheet filters until Apply and removes only the selected applied chip', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+    const apply = vi.fn();
+    render(<DraftFilterForm applied={{ q: 'qi', strokes: '10' }} active count={881} onApply={apply} onClear={() => ({ q: '', strokes: '' })} chips={[{ label: '10 strokes', clear: { strokes: '' } }]} filterFields={({ draft, patch }) => <select aria-label="Strokes" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="10">10</option><option value="5">5</option></select>}>{({ draft }) => <input aria-label="Query" value={draft.q} readOnly/>}</DraftFilterForm>);
+    fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
+    fireEvent.change(screen.getByLabelText('Strokes'), { target: { value: '5' } });
+    expect(apply).not.toHaveBeenCalled();
+    fireEvent.click(screen.getAllByRole('button', { name: 'Apply' }).at(-1) as HTMLElement);
+    await waitFor(() => expect(apply).toHaveBeenLastCalledWith({ q: 'qi', strokes: '5' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 10 strokes filter' }));
+    await waitFor(() => expect(apply).toHaveBeenLastCalledWith({ q: 'qi', strokes: '' }));
+  });
+});
 
 describe('Explicit filter edits', () => {
   it('submits only changed drafts and restores the applied input after an edit is undone', async () => {
