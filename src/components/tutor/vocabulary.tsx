@@ -15,8 +15,8 @@ import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
-import { LibraryPlayMenu } from './library-play-menu';
-import { CardRevealToggle, cardRevealClass } from './card-reveal-toggle';
+import { LibraryTools } from './library-tools';
+import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo } from './source-info';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
@@ -72,13 +72,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind} onValueChange={value => { if (value === 'word' || value === 'phrase') onTabChange?.(value); }}>
     <div className="vocabulary-category-row"><TabsList aria-label="Vocabulary categories">{(['word', 'phrase'] as const).map(k => <TabsTrigger key={k} value={k}>{k === 'word' ? 'Words' : 'Phrases'}<span className="catalog-tab-count">{items.filter(w => vocabularyKind(w) === k).length}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved vocabulary">{['All words','Saved words'].map(s => <Button key={s} variant="ghost" aria-pressed={status === s} className={status === s ? 'selected' : ''} onClick={() => setStatus(s)}>{s === 'All words' ? 'All' : 'Saved'}{s === 'Saved words' && <span className="catalog-tab-count">{categoryItems.filter(w => saved.includes(w.id)).length}</span>}</Button>)}</div></div>
     <TabsContent value={kind}>
-    <DraftFilterForm showCount={false} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset}>{({ draft, patch }) => <>
-      <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
+    <DraftFilterForm showCount={false} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections' } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : [])]} filterFields={({ draft, patch }) => <>
       <select className="filter-select" aria-label="Collection" value={draft.collection} onChange={e => patch({ collection: e.target.value })}><option>All collections</option>{collections.map(c => <option key={c}>{c}</option>)}</select>
       <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
+    </>}>{({ draft, patch }) => <>
+      <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
     </>}</DraftFilterForm>
-    <div className="catalog-tools-row"><LibraryPlayMenu category={status === 'Saved words' ? 'Saved' : collection !== 'All collections' ? collection : undefined} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/><CardRevealToggle/></div>
+    <LibraryTools category={status === 'Saved words' ? 'Saved' : collection !== 'All collections' ? collection : undefined} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
     <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`}>
       {filtered.length ? <>
       <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
