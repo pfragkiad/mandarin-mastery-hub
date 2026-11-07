@@ -1600,3 +1600,11 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* wordTileFit() splits 5+ glyphs into two explicit lines (3+2, 3+3, 4+3, 4+4), so a box
    squeezed by the row can never wrap a lone glyph; text-wrap: balance is a safety net. */
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile.is-two-line .word-hanzi-line { display: block; text-wrap: balance; }
+/* Phrase headwords (Compact and Comfortable): phraseTileLines() picks the lines (≤12 glyphs
+   each, breaking after punctuation or at word edges); here every line stays unwrapped and the
+   glyph size shrinks so the longest line (--tile-per-line) fits the card's inner width,
+   capped at the view's normal phrase size. Longer phrases add lines, so the card grows. */
+.vocab-phrase-grid .word-card .word-open { container-type: inline-size; }
+.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 38px; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: center; align-self: flex-start; width: fit-content; max-width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: min(var(--phrase-max), calc((100cqi - 24px) / var(--tile-per-line, 1))); line-height: 1.15; white-space: nowrap; overflow-wrap: normal; }
+.library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 64px; min-width: 82px; min-height: 82px; }
+.vocab-phrase-grid .word-card .phrase-hanzi-tile .word-hanzi-line { display: block; white-space: nowrap; }
