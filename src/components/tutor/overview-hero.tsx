@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Volume2, Library, PenLine, BookOpen, Bookmark } from 'lucide-react';
+import { Volume2, Library, BookOpen, Bookmark } from 'lucide-react';
+import { PracticeIcon } from './practice-icons';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
@@ -78,7 +79,7 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
         <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>
         <div className="daily-hero-actions">
           {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><Library/>Open in Characters</Link></Button>}
-          <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PenLine/>Practice writing</Link></Button>
+          <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi }}><PracticeIcon/>Practice writing</Link></Button>
           <Button asChild variant="ghost" size="sm"><Link to="/vocabulary" search={{ q: entry.hanzi }}><BookOpen/>Words using it</Link></Button>
         </div>
       </> : <div className="daily-glyph is-loading" aria-hidden="true"/>}

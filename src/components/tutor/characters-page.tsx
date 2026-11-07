@@ -7,7 +7,8 @@ import { nearestRecordedRank } from '@/lib/rank-jump';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
-import { Search, PenLine, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Type } from 'lucide-react';
+import { Search, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Type } from 'lucide-react';
+import { PracticeIcon } from './practice-icons';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -113,7 +114,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       {kind === 'Radicals' ? <RadicalStrokeDecomposition glyph={entry.hanzi} form={form} sourceInHeading/> : entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>This record has no breakdown in the imported sources. None is inferred.</small></div>}
     </div>}
     {/* Reference label and the record actions share the bottom row: label left, actions right. */}
-    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{info.label.toUpperCase()} REFERENCE<SourceInfo inline className="detail-footnote">{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}</SourceInfo></div><div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }}><PenLine/>Practice writing</Link></Button><Button variant="outline" size="sm" onClick={() => toggleSaved(bookmarkId)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div></div>
+    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{info.label.toUpperCase()} REFERENCE<SourceInfo inline className="detail-footnote">{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}</SourceInfo></div><div className="word-detail-actions"><Button asChild variant="outline" size="sm"><Link to="/strokes" search={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }}><PracticeIcon/>Practice writing</Link></Button><Button variant="outline" size="sm" onClick={() => toggleSaved(bookmarkId)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save glyph'}</Button></div></div>
   </section>;
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
