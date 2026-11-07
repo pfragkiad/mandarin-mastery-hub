@@ -1,7 +1,8 @@
 import { MeaningText } from './meaning-text';
 import { useEffect, useRef, useState } from 'react';
 import type HanziWriter from 'hanzi-writer';
-import { ArrowRight, Eye, EyeOff, PenLine, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, RotateCcw, SkipForward, Volume2 } from 'lucide-react';
+import { PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
@@ -122,7 +123,7 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
         // Seeing Practice reveals the answer: an unfinished attempt returns as
         // passed, without advancing or falsely awarding a correct answer.
         onPractice?.({ result: answered || state === 'unavailable' ? state as DrawingResult : 'passed', mistakes, progress, guide });
-      }} search={entry.word ? { character: entry.word.hanzi, ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }}><PenLine/>Practice</Link></Button>
+      }} search={entry.word ? { character: entry.word.hanzi, ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }}><PracticeIcon/>Practice</Link></Button>
       {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
     </div>
   </section>;

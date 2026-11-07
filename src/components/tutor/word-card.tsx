@@ -1,7 +1,8 @@
 import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
 import { useState } from 'react';
-import { Bookmark, Volume2, PenLine, Check } from 'lucide-react';
+import { Bookmark, Volume2, Check } from 'lucide-react';
+import { PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -42,7 +43,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <VocabularyDecomposition word={word}/>
     {/* Reference label and the record actions share the bottom row: label left, actions right. */}
     <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div><div className="word-detail-actions">
-      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PenLine/>Practice writing</Link></Button>
+      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi }} onClick={close}><PracticeIcon/>Practice writing</Link></Button>
       <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
     </div></div>
   </>;
