@@ -32,12 +32,12 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
-    {parents.length ? parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
+    {parents.length ? <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
       <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
       {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
       <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
-    </div>) : kind === 'Components' && gSourceParents === null ? null : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment and exact form in their breakdown are available.' : 'No characters with this exact component in their recorded BabelStone G-source breakdown are available.'}</p></div>}
+    </div>)}</div> : kind === 'Components' && gSourceParents === null ? null : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment and exact form in their breakdown are available.' : 'No characters with this exact component in their recorded BabelStone G-source breakdown are available.'}</p></div>}
   </section>;
   return <section className="glyph-usage-section" aria-label="In a sentence">
     <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
