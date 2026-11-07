@@ -442,3 +442,13 @@ it('Trace group click resumes after its final stroke and leaves the next group u
   expect(fake.showCharacter).toHaveBeenCalledWith({ duration: 0 });
   expect(screen.getByRole('button', { name: 'Continue tracing after stroke 3' })).toHaveAttribute('aria-pressed', 'true');
 });
+
+it.each(['trace', 'recall'] as const)('%s celebrates only perfect completed attempts', async mode => {
+  const { container } = render(<WritingPractice character="我" mode={mode}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  const quiz = fake.quiz.mock.calls.at(-1)?.[0];
+  act(() => quiz.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  expect(container.querySelector('.perfect-confetti')).toBeNull();
+  act(() => quiz.onComplete({ totalMistakes: 0 }));
+  expect(container.querySelector('.perfect-confetti')).not.toBeNull();
+});
