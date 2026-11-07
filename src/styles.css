@@ -1231,7 +1231,9 @@ html[data-display-size='comfortable'] :is(.discovery-tile-top, .discovery-record
 html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link > strong { font-size: 48px; min-height: 76px; }
 html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link > strong.is-long { font-size: 32px; }
 html[data-display-size='comfortable'] .discovery-tile-record .overview-record-link h2 { font-size: var(--ui-control-size); line-height: 1.6; display: block; overflow: visible; }
-html[data-display-size='comfortable'] :is(.catalog-page-jump, .library-per-page, .catalog-page-range, .flash-option, .flash-meta, .game-options, .practice-mode-tabs button) { font-size: var(--ui-label-size); }
+html[data-display-size='comfortable'] :is(.catalog-page-jump, .library-per-page, .catalog-page-range, .flash-option, .flash-meta, .game-options) { font-size: var(--ui-label-size); }
+html[data-display-size='comfortable'] .practice-mode-tabs [role='tablist'] { height: auto; min-height: 48px; }
+html[data-display-size='comfortable'] .practice-mode-tabs [role='tab'] { font-size: 16px; min-height: 40px; }
 html[data-display-size='comfortable'] .settings-row:has(select) { grid-template-columns: minmax(0,1fr); gap: 12px; }
 html[data-display-size='comfortable'] .settings-row:has(select) select { width: 100%; }
 html[data-display-size='comfortable'] .catalog-pagination button { min-width: 36px; }
