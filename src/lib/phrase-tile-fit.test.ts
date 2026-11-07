@@ -25,7 +25,7 @@ describe('phraseTileLines', () => {
   });
 
   it('breaks at a matched word edge, not inside a word, when there is no punctuation', () => {
-    // 14 glyphs; an even split would land inside 图书馆 (glyphs 6–8).
+    // 15 glyphs; an even 8+7 split would land inside 图书馆 (glyphs 7–9).
     const text = '我们下午一起去图书馆看书吧好吗';
     const lines = phraseTileLines(text, [[0, 2], [2, 4], [4, 6], [6, 7], [7, 10], [10, 11], [11, 12]]);
     expect(lines.join('')).toBe(text);
