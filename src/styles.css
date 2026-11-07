@@ -1592,3 +1592,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
 /* Phrases stack their headword under the pinyin; the box hugs the characters instead of spanning the card. */
 .library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile { align-self: flex-start; width: fit-content; max-width: 100%; }
+/* Comfortable word boxes keep the glyph tile's 82px height: wordTileFit() sets the
+   size per character count — one line up to 4 characters, otherwise exactly two
+   evenly split lines (width = characters per line). */
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile { height: 82px; font-size: var(--tile-size, 64px); white-space: nowrap; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile.is-two-line { white-space: normal; line-break: anywhere; word-break: break-all; text-align: center; width: calc(var(--tile-per-line) * var(--tile-size) + 20px); line-height: 1.05; }
