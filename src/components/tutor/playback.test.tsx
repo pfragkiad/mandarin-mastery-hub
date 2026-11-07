@@ -307,7 +307,7 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
   if (mode === 'recall') fireEvent.click(screen.getByRole('button', { name: 'Show strokes' }));
   const tile = await screen.findByRole('button', { name: 'Play stroke 1' });
   expect(tile).toBeDisabled();
-  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeEnabled();
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
   expect(document.querySelector('.stroke-guide')).toHaveClass('stroke-guide-readonly');
   // A tap on an inert tile must never start a writing animation.
   fireEvent.click(tile);
@@ -397,7 +397,7 @@ it('a single tile clears component selection before drawing the selected stroke'
   expect(screen.getByRole('button', { name: 'Continue tracing after stroke 2' })).toHaveAttribute('aria-pressed', 'true');
   expect(screen.getByRole('button', { name: 'Continue tracing after stroke 3' })).toHaveAttribute('aria-pressed', 'false');
   expect(fake.animateStroke).not.toHaveBeenCalled();
-  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeEnabled();
   act(() => oldQuiz.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(document.querySelectorAll('.stroke-score')).toHaveLength(0);
   act(() => resumed.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 1 }));
