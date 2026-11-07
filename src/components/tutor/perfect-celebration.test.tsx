@@ -22,7 +22,7 @@ it('defaults on and responds immediately to disabling the saved preference', () 
   act(() => result.current.celebrate(100));
   expect(result.current.effect).toBeNull();
 });
-it('keeps the enabled celebration available for the reduced-motion fade', () => {
+it('keeps the enabled celebration available under reduced motion', () => {
   vi.stubGlobal('matchMedia', () => ({ matches: true }));
   const { result } = renderHook(() => usePerfectCelebration(true));
   act(() => result.current.celebrate(100));
