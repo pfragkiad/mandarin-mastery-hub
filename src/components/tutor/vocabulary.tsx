@@ -40,7 +40,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // Exact links determine their own Words/Phrases tab via explicit entry metadata,
   // never by glyph count. With no link, leave the reference window closed.
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
-  const categoryItems = items.filter(w => vocabularyKind(w) === kind);
+  const categoryItems = useMemo(() => items.filter(w => vocabularyKind(w) === kind), [items, kind]);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   // Facet base: this tab's records under the applied search and All/Saved
   // choice. The three dropdowns then narrow each other from the form's current
