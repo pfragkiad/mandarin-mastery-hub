@@ -1143,7 +1143,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-pagination { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
 .catalog-pagination-left { min-width: 0; }
 .catalog-pagination-navigation { flex: 0 1 auto; min-width: 0; }
-.catalog-pagination-left > .catalog-pagination-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
+.catalog-pagination-left > .catalog-pagination-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 0; }
 .catalog-pagination > .catalog-pagination-summary { flex: 0 1 auto; flex-wrap: nowrap; min-width: 0; margin-left: auto; }
 .catalog-page-range { white-space: nowrap; text-align: left; color: var(--muted-foreground); }
 @media(max-width:580px) { .catalog-pagination { grid-template-columns: minmax(0, 1fr); } }
@@ -1312,6 +1312,11 @@ html[data-display-size='comfortable'] .practice-mode-tabs [role='tab'] { font-si
 html[data-display-size='comfortable'] .settings-row:has(select) { grid-template-columns: minmax(0,1fr); gap: 12px; }
 html[data-display-size='comfortable'] .settings-row:has(select) select { width: 100%; }
 html[data-display-size='comfortable'] .catalog-pagination button { min-width: 36px; }
+/* Narrow only desktop arrow hit areas; keep touch targets and text sizing intact. */
+@media (pointer: fine) {
+  .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']),
+  html[data-display-size='comfortable'] .catalog-pagination-navigation button:is([aria-label='First page'], [aria-label='Previous page'], [aria-label='Next page'], [aria-label='Last page']) { width: 28px; min-width: 28px; padding-inline: 0; }
+}
 html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1; min-width: 0; }
 @media (max-width: 1150px) {
   .display-size-trigger > span, .display-size-trigger .display-size-chevron { display: none; }
