@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Simplify top/bottom library paging and add filtered Page/Rank Go to dialog; enlarge Comfortable search and space toggles; test both libraries.
+- [done] Shared top/bottom first/previous/next/last paging, filtered Page/Rank Go to dialog and range totals; enlarged Comfortable search with spaced toggles. Verified Glyphs rank/page and Vocabulary page jumps, bottom navigation, desktop/phone layouts without overflow; 25 tests passed and preview clean.
 
 - [done] Combined pronunciation/translation hiding and optional session remembered reveals; verified exact reveal/focus after Details and Practice in Glyphs/Vocabulary, including remembering disabled; related tests pass and preview clean.
 
