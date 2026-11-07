@@ -11,6 +11,7 @@ import { drawingWordClues, type DrawingCard, type DrawingResult } from '@/lib/dr
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import type { DrawingBoardSnapshot } from './drawing-session';
+import { usePerfectCelebration } from './perfect-celebration';
 
 function writerColor(token: string) {
   const canvas = document.createElement('canvas').getContext('2d');
@@ -22,6 +23,7 @@ function writerColor(token: string) {
 
 export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
   const { theme, preferences } = useWorkspace();
+  const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const target = useRef<HTMLDivElement>(null);
   const writer = useRef<HanziWriter | null>(null);
   const settled = useRef(false);
@@ -73,8 +75,9 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
         onCorrectStroke: stroke => {
           if (active && !settled.current) setProgress({ completed: stroke.strokeNum + 1, total: data.strokes.length });
         },
-        onComplete: () => {
+        onComplete: ({ totalMistakes }: { totalMistakes?: number } = {}) => {
           if (!active || settled.current) return;
+          if (totalMistakes === 0) celebrate(100);
           settled.current = true; setState(guideUsed.current || guideRef.current ? 'guided' : 'correct');
         },
       });
@@ -106,7 +109,7 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
     </div>
     <div className="drawing-board-meta"><Button variant="ghost" size="sm" disabled={state === 'loading' || state === 'unavailable'} onClick={toggleGuide}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
     <div className={entry.word ? 'drawing-word-layout' : undefined}>
-      <div className="writing-grid drawing-grid"><div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
+      <div className="writing-grid drawing-grid">{celebration}<div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
     <p className={`drawing-status${state === 'correct' || state === 'guided' ? ' is-correct' : ''}`} role="status">{message}</p>

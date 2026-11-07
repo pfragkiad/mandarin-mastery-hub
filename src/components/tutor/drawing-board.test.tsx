@@ -105,3 +105,10 @@ it('a word card always offers Practice for that word focused on the drawn charac
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
 });
+
+it.each([0, 1])('Drawing celebrates only completion with zero mistakes (%s)', async mistakes => {
+  const { container } = render(<DrawingBoard entry={entry} onFinish={vi.fn()}/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  act(() => fake.quiz.mock.calls[0]?.[0].onComplete({ totalMistakes: mistakes }));
+  expect(Boolean(container.querySelector('.perfect-confetti'))).toBe(mistakes === 0);
+});

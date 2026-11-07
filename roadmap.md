@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Add small perfect-completion confetti in Trace, Recall and Drawing with saved Settings switch and reduced-motion support; verified a live Trace burst and switch persistence, 56 tests pass, preview clean.
+
 - [done] Match all reference/Practice stroke tile gaps to character examples with shared spacing; verified 10px gaps on 木.
 - [done] Trace stroke clicks show the prefix and continue after the selected stroke; Recall unchanged. Verified tracing 木 strokes 3–4 to completion, prefix unscored, Reset and last-stroke behavior; 38 tests pass.
 
