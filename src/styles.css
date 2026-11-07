@@ -1171,6 +1171,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .catalog-pagination, html[data-display-size='comfortable'] .catalog-pagination { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 4px; }
   .catalog-pagination > div, .catalog-pagination-left > .catalog-pagination-navigation { flex-wrap: nowrap; gap: 0; }
   .catalog-pagination-left { gap: 6px; }
+  .catalog-pagination-left > *, .catalog-pagination > .catalog-pagination-summary { flex-shrink: 0; min-width: auto; }
   .catalog-pagination-navigation .catalog-jump-trigger { padding-inline: 4px; }
   .catalog-pagination-navigation > span[aria-current='page'] { min-width: auto; flex-shrink: 0; padding-inline: 4px; }
   .library-per-page > .library-per-page-label { margin-right: 2px; }
