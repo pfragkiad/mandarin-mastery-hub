@@ -481,6 +481,7 @@ this keeps the number right beside the stroke tile. */
 .search-trigger kbd { font-family: inherit; font-size: 9px; letter-spacing: .4px; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: var(--muted-foreground); }
 .global-search { width: min(560px, calc(100% - 24px)); max-width: 560px; max-height: calc(100dvh - 32px); gap: 13px; display: flex; flex-direction: column; }
 .global-search > :not(.global-search-results) { flex-shrink: 0; }
+.global-search > .search-field { flex: 0 0 auto; }
 .global-search.global-search-expanded { width: min(1040px, calc(100% - 24px)); max-width: 1040px; height: min(1100px, calc(100dvh - 32px)); }
 .global-search.global-search-expanded .global-search-results { flex: 1; max-height: none; }
 .global-search .search-field input { height: 46px; font-size: 13px; }
