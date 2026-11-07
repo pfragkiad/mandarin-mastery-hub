@@ -1,6 +1,7 @@
 import { referenceCatalog, type ReferenceKind } from './character-library';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import type { Word } from './mandarin';
+import { vocabularyKind, type Word } from './mandarin';
+import { usageRank } from './usage-frequency';
 import { radicalSearchGlyphs } from './radical-identities';
 import { displayMeaning } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
@@ -42,5 +43,18 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
       .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (refMatch(pinyin) || (pinyinMode === 'any' && normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q))))
       .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
-  return [...refHits, ...wordHits].slice(0, limit);
+  // Words lead, phrases follow all glyphs. Compare the recorded numeric ranks
+  // across glyph kinds rather than letting catalogue groups dictate priority.
+  // Unranked glyphs stay last within that middle group; ties stay source-ordered.
+  const rank = (hit: SearchHit): number => {
+    if (hit.kind === 'Word') return Infinity;
+    const kind = hit.kind === 'Character' ? 'Characters' : hit.kind === 'Component' ? 'Components' : 'Radicals';
+    const kangxiIndex = hit.kind === 'Radical' ? Number(hit.note.match(/\bRadical #(\d+)\b/i)?.[1]) : undefined;
+    return usageRank({ id: `${kind}:${hit.hanzi}`, hanzi: hit.hanzi, kangxiIndex }, kind, includeTraditional) ?? Infinity;
+  };
+  const rankedRefs = refHits.map(hit => ({ hit, rank: rank(hit) }))
+    .sort((a, b) => a.rank - b.rank).map(({ hit }) => hit);
+  const words = wordHits.filter(hit => hit.kind === 'Word' && vocabularyKind(hit.word) === 'word');
+  const phrases = wordHits.filter(hit => hit.kind === 'Word' && vocabularyKind(hit.word) === 'phrase');
+  return [...words, ...rankedRefs, ...phrases].slice(0, limit);
 }

@@ -1,6 +1,9 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { searchAll } from './site-search';
 import { words } from './mandarin';
+import * as frequency from './usage-frequency';
+
+afterEach(() => vi.restoreAllMocks());
 
 describe('Header search across the library', () => {
   it('retains Traditional metadata on the exact lion search result', () => {
@@ -13,8 +16,31 @@ describe('Header search across the library', () => {
     expect(hits[0]?.kind).toBe('Word');
     expect(hits[0]?.kind === 'Word' ? hits[0].word.hanzi : '').toBe('你好');
   });
-  it('lists glyph hits before word hits', () => {
-    expect(searchAll(words, 'water')[0]?.kind).not.toBe('Word');
+  it('lists words first, glyphs next and explicit phrases last', () => {
+    const word = { ...words[0], id: 'search-word', hanzi: '水词', pinyin: 'shui', entry: undefined, entryKind: 'word' as const };
+    const phrase = { ...word, id: 'search-phrase', hanzi: '水短语', entryKind: 'phrase' as const };
+    const hits = searchAll([phrase, word], '水', false, 10000);
+    expect(hits[0]).toEqual({ kind: 'Word', word });
+    expect(hits.slice(1, -1).length).toBeGreaterThan(0);
+    expect(hits.slice(1, -1).every(hit => hit.kind !== 'Word')).toBe(true);
+    expect(hits.at(-1)).toEqual({ kind: 'Word', word: phrase });
+  });
+  it('puts a rank 1 component before a rank 100 character and unranked glyphs', () => {
+    vi.spyOn(frequency, 'usageRank').mockImplementation((entry, kind) =>
+      entry.hanzi === '氵' && kind === 'Components' ? 1 : entry.hanzi === '水' && kind === 'Characters' ? 100 : null);
+    const hits = searchAll([], 'shui', false, 10000);
+    expect(hits[0]).toMatchObject({ kind: 'Component', hanzi: '氵' });
+    expect(hits[1]).toMatchObject({ kind: 'Character', hanzi: '水' });
+  });
+  it('uses the selected Traditional rank scope', () => {
+    const rank = vi.spyOn(frequency, 'usageRank').mockReturnValue(null);
+    searchAll([], 'shui', true);
+    expect(rank).toHaveBeenCalled();
+    expect(rank.mock.calls.every(call => call[2] === true)).toBe(true);
+    rank.mockClear();
+    searchAll([], 'shui', false);
+    expect(rank).toHaveBeenCalled();
+    expect(rank.mock.calls.every(call => call[2] === false)).toBe(true);
   });
   it('finds a word by Chinese characters', () => {
     const hits = searchAll(words, '学习');
