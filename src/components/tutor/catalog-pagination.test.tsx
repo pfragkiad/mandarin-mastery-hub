@@ -40,6 +40,19 @@ describe('Library paging and explicit jumps', () => {
     expect(rank).toHaveBeenCalledExactlyOnceWith(511);
     expect(screen.queryByRole('dialog')).toBeNull();
   });
+  it('keeps nearest feedback on the jump destination but clears it on the next page change', () => {
+    const props = { ...base, onPageChange: vi.fn(), onRankChange: vi.fn(() => ({ rank: 512, page: 6 })), ranks: { count: 399, min: 252, max: 9206 } };
+    const { rerender } = render(<CatalogPagination {...props}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Go to' }));
+    fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '511' } });
+    fireEvent.click(screen.getByRole('button', { name: /^Go$/ }));
+    rerender(<CatalogPagination {...props} current={6}/>);
+    expect(screen.getByRole('status')).toBeInTheDocument();
+    rerender(<CatalogPagination {...props} current={7}/>);
+    expect(screen.queryByRole('status')).toBeNull();
+    rerender(<CatalogPagination {...props} current={6}/>);
+    expect(screen.queryByRole('status')).toBeNull();
+  });
   it('prefills the current page when opening and returning to Page mode', () => {
     render(<CatalogPagination {...base} onPageChange={vi.fn()} onRankChange={vi.fn()} ranks={{ count: 78, min: 3, max: 5420 }} currentRank={123}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Go to' }));

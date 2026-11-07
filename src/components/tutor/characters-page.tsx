@@ -260,8 +260,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
       if (!usageOrder.loaded) return;
       const nearest = nearestRecordedRank(filtered.map(entry => usageRank(entry, kind, preferences.includeTraditional)), rank);
       if (!nearest) return;
-      setPage(Math.floor(nearest.index / density.size) + 1);
-      return nearest.rank;
+      const destinationPage = Math.floor(nearest.index / density.size) + 1;
+      setPage(destinationPage);
+      return { rank: nearest.rank, page: destinationPage };
     } : undefined,
   };
   const stickyLabel = (() => {
