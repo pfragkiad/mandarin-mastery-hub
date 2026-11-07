@@ -922,7 +922,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .practice-back:hover, .practice-back:focus-visible { background: transparent; color: var(--primary); }
 .practice-back svg { width: 13px; height: 13px; }
 .practice-page-content .practice-heading-row { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: baseline; gap: 0 10px; margin: 0; min-width: 0; }
-.practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.4; font-weight: 400; margin: 0; }
+.practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-family: var(--font-display); font-size: 34px; line-height: 1.35; font-weight: 400; margin: 0; }
 .practice-page-content .practice-layout { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); grid-template-rows: auto 1fr; margin-top: 0; gap: 22px 35px; align-items: start; }
 /* Writing card (Watch/Trace/Recall) owns the left column; the reading header
  * and decomposition stack in the right column. */
@@ -962,7 +962,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 @media(max-width:580px) {
   .practice-page-content .practice-page-heading { gap: 12px 8px; }
   .practice-page-heading .eyebrow { letter-spacing: 0; line-height: 1.6; }
-  .practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-size: 18px; }
+  .practice-page-content .practice-heading-row h1, .practice-page-content .practice-heading-row h2 { font-size: 28px; }
   .stroke-guide-top h3.eyebrow { font-size: 8px; letter-spacing: 1.25px; }
 }
 
