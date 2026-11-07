@@ -77,10 +77,10 @@ export function CatalogPagination({ range, current, pages, onPageChange, top = f
           onBlur={commitRank}/>
       </label>}
     </div>
-    {/* Keep the count picker and range together when navigation wraps. */}
+    {/* Range first, then the count picker after a dot separator. */}
     <div className="catalog-pagination-summary">
-      {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
       <span className="catalog-page-range">{range}</span>
+      {perPage && onPerPageChange && <><span aria-hidden="true" className="catalog-page-range">·</span><div className="library-per-page" role="group" aria-label="Records per page"><span>Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div></>}
     </div>
   </div>;
 }
