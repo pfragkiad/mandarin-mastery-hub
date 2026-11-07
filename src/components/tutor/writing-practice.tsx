@@ -97,7 +97,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
         <>
           <div className="stroke-component-groups">
           {strokeGroupRuns(groups, strokes.length).map((run, runIndex) => <div className="stroke-component-group" key={`${run.group.id}-${runIndex}`} data-component-group={run.group.id}>
-            <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={mode !== 'watch' || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={selectedGroup === run.group.id} onClick={() => onGroupSelect(selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
+            <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={mode === 'recall' || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={mode === 'trace' ? run.group.strokeIndices.every(i => componentIndices.includes(i)) : selectedGroup === run.group.id} onClick={() => onGroupSelect(mode === 'watch' && selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
             <ol className="stroke-guide-strip">
             {run.indices.map(i => { const stroke = strokes[i]; if (!stroke) return null; return (
               <li key={i}>
@@ -412,9 +412,18 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const selected = groups.find(group => group.id === selectedGroup);
   const selectGroup = (id: string) => {
     const group = groups.find(group => group.id === id);
-    setGroupSelection({ character, id });
     const instance = writer.current;
-    if (!instance || !group?.strokeIndices.length || mode !== 'watch') return;
+    if (mode === 'recall') return;
+    // Trace uses the same native prefix continuation as an individual tile;
+    // the group's final exact index decides the next stroke, including unknown groups.
+    if (mode === 'trace') {
+      if (!instance || !group?.strokeIndices.length) return;
+      setGroupSelection({ character, id: '' });
+      quiz(Math.max(...group.strokeIndices) + 1);
+      return;
+    }
+    setGroupSelection({ character, id });
+    if (!instance || !group?.strokeIndices.length) return;
     const last = Math.max(...group.strokeIndices);
     const run = ++animationRun.current;
     instance.cancelQuiz();
