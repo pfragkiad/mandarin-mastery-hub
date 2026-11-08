@@ -262,11 +262,15 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const play = () => {
     const instance = writer.current; if (!instance) return;
     if (paused) {
-      applySpeed(instance); setPaused(false); setPlaying(true);
+      applySpeed(instance); setPaused(false); setPlaying(true); pausedNow.current = false;
       if (activeStroke !== null) setMessage(strokeMessage(activeStroke));
-      void instance.resumeAnimation();
+      // Paused between strokes (animation done, waiting on speech or the pause):
+      // continue with the queued next stroke instead of resuming a finished animation.
+      const next = pendingNext.current; pendingNext.current = null;
+      if (next) next(); else void instance.resumeAnimation();
       return;
     }
+    pausedNow.current = false; pendingNext.current = null;
     // Trace continues from the clicked/drawn position (restarting once everything is drawn).
     const tracePlay = mode === 'trace';
     const start = tracePlay ? (tracePos.current < strokes.length ? tracePos.current : 0) : stepMode ? stepIndex : 0;
@@ -288,14 +292,23 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       setActiveStroke(i);
       setMessage(strokeMessage(i));
       // Play strokes speaks each stroke name too when stroke audio is on.
-      speakStrokeName(i);
-      instance.animateStroke(i, { onComplete: () => step(i + 1) });
+      // The next stroke starts only after both this stroke's animation and its
+      // spoken name have finished, so names never get cut off or pile up.
+      let animDone = false;
+      let speechDone = true;
+      const advance = () => {
+        if (animationRun.current !== run || !animDone || !speechDone) return;
+        if (pausedNow.current) { pendingNext.current = () => step(i + 1); return; }
+        step(i + 1);
+      };
+      if (speakStrokeName(i, () => { speechDone = true; advance(); })) speechDone = false;
+      instance.animateStroke(i, { onComplete: () => { animDone = true; advance(); } });
     };
     step(start);
   };
   const pause = () => {
     if (!writer.current) return;
-    void writer.current.pauseAnimation(); setPlaying(false); setPaused(true);
+    void writer.current.pauseAnimation(); setPlaying(false); setPaused(true); pausedNow.current = true;
     setMessage(`Paused. ${activeStroke !== null ? strokeMessage(activeStroke) : ''}`);
   };
   const reset = () => {
@@ -306,6 +319,10 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // A completed round keeps the finished drawing and scores on screen; the
   // square only erases and re-arms when the learner starts dragging the first
   // stroke of a new round (see the pointerdown capture listener below).
+  // Play-run pause bookkeeping: pausedNow mirrors the pause for async callbacks;
+  // pendingNext holds the next stroke when a pause lands between strokes.
+  const pausedNow = useRef(false);
+  const pendingNext = useRef<(() => void) | null>(null);
   const needsRearm = useRef(false);
   // Trace: next undrawn stroke (clicked prefix or hand-drawn), so Play continues from there.
   const tracePos = useRef(0);
@@ -396,7 +413,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   };
   // Practice matches and Step playback share stroke-name speech and the live mute setting.
   // Each Step press draws one stroke; after the last stroke it starts over.
-  const speakStrokeName = (i: number) => { if (!mutedRef.current && strokes[i]?.name) speakTts(strokes[i].name); };
+  // Returns true when speech actually started, in which case onEnd will fire later.
+  const speakStrokeName = (i: number, onEnd?: () => void) => {
+    if (mutedRef.current || !strokes[i]?.name) return false;
+    return speakTts(strokes[i].name, undefined, onEnd).ok;
+  };
   const step = () => {
     const instance = writer.current; if (!instance || !strokes.length || playing) return;
     // A component highlight is a viewing aid, not a playback position: pressing
