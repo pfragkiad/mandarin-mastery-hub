@@ -131,8 +131,12 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       </button>;
     })}</div>
     <div className="pinyin-player-actions">
-      {sequencePlaying ? <Button variant="outline" size="sm" onClick={player.stop}><Square />Stop</Button>
-        : <Button variant="outline" size="sm" disabled={recorded.length < 2} onClick={onPlayAll}><ListMusic />Play all</Button>}
+      {/* One button whose two labels share a grid cell: the hidden one still
+          reserves its width, so switching Play all ⇄ Stop never resizes it. */}
+      <Button variant="outline" size="sm" className="pinyin-playall" disabled={!sequencePlaying && recorded.length < 2} onClick={sequencePlaying ? player.stop : onPlayAll}>
+        <span className={sequencePlaying ? 'is-hidden' : undefined} aria-hidden={sequencePlaying}><ListMusic />Play all</span>
+        <span className={sequencePlaying ? undefined : 'is-hidden'} aria-hidden={!sequencePlaying}><Square />Stop</span>
+      </Button>
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}

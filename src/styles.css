@@ -1755,6 +1755,10 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .tone-contour circle { fill: currentColor; stroke: none; }
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
 .pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+/* Play all / Stop: both labels overlap in one cell so the button width stays fixed. */
+.pinyin-playall { display: inline-grid; justify-items: center; }
+.pinyin-playall > span { grid-area: 1 / 1; display: inline-flex; align-items: center; gap: 6px; }
+.pinyin-playall > span.is-hidden { visibility: hidden; }
 .pinyin-slow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted-foreground); cursor: pointer; }
 .pinyin-audio-error { font-size: 12px; color: var(--destructive); }
 .pinyin-parts { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 4px 16px; border-top: 1px solid var(--border); padding-top: 12px; }
