@@ -6,14 +6,16 @@ import { useWorkspace } from './workspace';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2 } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Layers, Library, PenLine, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Grid3x3, Activity, Ear, Keyboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Game', icon: Gamepad2 }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }, { to: '/flashcards' as const, name: 'Game', icon: Gamepad2 }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 // Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
+// Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
+const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, { label: 'Tone quiz', mode: 'tones', icon: Activity }, { label: 'Sound-alikes', mode: 'alikes', icon: Ear }, { label: 'Type what you hear', mode: 'type', icon: Keyboard }] as const;
 const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: PenLine }] as const;
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
@@ -27,6 +29,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
+  const activeMode = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('mode') });
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
@@ -88,6 +91,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
       <nav aria-label="Main navigation">{navigation.map(n => {
         const subs = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
+          : n.to === '/pinyin' ? pinyinSections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.mode ? { mode: s.mode } : {}, active: (activeMode ?? undefined) === s.mode, icon: s.icon as typeof Gamepad2 | undefined, cls: 'nav-sub-tab' }))
           : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as typeof Gamepad2 | undefined, cls: 'nav-sub-game' }))
           : null;
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;

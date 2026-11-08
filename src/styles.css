@@ -1712,3 +1712,108 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .try-pad-strokes li.is-fail { color: var(--grade-low); border-color: color-mix(in oklch, var(--grade-low) 40%, transparent); }
 .try-pad .writer-status { min-height: 0; }
 @media (max-width: 580px) { .settings-row-try { grid-template-columns: 1fr; justify-items: center; } .settings-row-try > div:first-child { justify-self: stretch; } }
+
+/* ===== Pinyin guide (/pinyin): sound chart, player panel and listening quizzes ===== */
+.pinyin-page .library-heading { align-items: end; }
+.pinyin-progress { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px 12px; font-size: 12px; color: var(--muted-foreground); }
+.pinyin-progress strong { color: var(--foreground); font-weight: 600; }
+.pinyin-progress .pinyin-review-count { color: var(--grade-low); }
+.pinyin-reset-confirm { display: inline-flex; align-items: center; gap: 6px; color: var(--foreground); }
+.pinyin-body { margin-top: 22px; }
+.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 30px; align-items: start; }
+.pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
+.pinyin-group { margin-bottom: 22px; }
+.pinyin-group-title { display: flex; align-items: baseline; gap: 10px; font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 600; color: var(--muted-foreground); margin-bottom: 10px; }
+.pinyin-group-title span { letter-spacing: .5px; text-transform: none; font-weight: 400; font-size: 12px; color: var(--terracotta); }
+.pinyin-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 8px; }
+.pinyin-tile { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 58px; padding: 8px 6px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, color .15s, transform .15s; }
+.pinyin-tile:hover, .pinyin-tile:focus-visible { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); outline: none; }
+.pinyin-tile.is-selected { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); color: var(--primary); }
+.pinyin-tile-base { font-size: 15px; line-height: 1.1; }
+.pinyin-tile-tones { display: flex; gap: 3px; }
+.pinyin-tile-tones span { width: 5px; height: 5px; border-radius: 999px; }
+.pinyin-tile-tones .on { background: var(--terracotta); }
+.pinyin-tile-tones .off { border: 1px solid var(--border); }
+.pinyin-tile-tones .none { background: transparent; }
+.pinyin-tile-state { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 999px; }
+.pinyin-tile-state.done { background: var(--grade-high); }
+.pinyin-tile-state.review { background: var(--grade-low); }
+.pinyin-player { position: sticky; top: 84px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.pinyin-player-empty { font-family: var(--font-display); font-size: 19px; line-height: 1.5; }
+.pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
+.pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
+.pinyin-player-tone { font-size: 12px; color: var(--muted-foreground); margin-top: -6px; }
+.pinyin-tone-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
+.pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px 6px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
+.pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
+.pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
+.pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
+.pinyin-tone-button.is-playing .tone-contour path:not(.tone-contour-base) { stroke: var(--terracotta); }
+.pinyin-tone-button:disabled { cursor: default; color: var(--muted-foreground); border-style: dashed; }
+.pinyin-tone-button:disabled small { font-size: 8px; text-align: center; line-height: 1.2; }
+.tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.tone-contour circle { fill: currentColor; stroke: none; }
+.tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
+.pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pinyin-slow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted-foreground); cursor: pointer; }
+.pinyin-audio-error { font-size: 12px; color: var(--destructive); }
+.pinyin-parts { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 4px 16px; border-top: 1px solid var(--border); padding-top: 12px; }
+.pinyin-parts dt { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); }
+.pinyin-parts dd { font-size: 13px; color: var(--foreground); }
+.pinyin-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
+.pinyin-alikes > div:last-child { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.pinyin-alike { border: 1px solid var(--border); border-radius: 999px; padding: 3px 11px; background: transparent; font-size: 13px; color: var(--terracotta); cursor: pointer; transition: border-color .15s, color .15s; }
+.pinyin-alike:hover, .pinyin-alike:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
+.pinyin-source { margin-top: 30px; }
+.pinyin-source a { color: var(--primary); text-decoration: none; }
+.pinyin-score { font-size: 12px; color: var(--muted-foreground); margin-left: auto; }
+.pinyin-drill-ready p { font-size: 13px; margin: 6px 0 16px; }
+.pinyin-drill { max-width: 760px; display: flex; flex-direction: column; gap: 22px; }
+.pinyin-drill-listen { display: flex; align-items: center; gap: 16px; }
+.pinyin-listen-button.pinyin-listen-button { width: 64px; height: 64px; border-radius: 999px; flex: none; color: var(--primary); }
+.pinyin-listen-button svg { width: 26px !important; height: 26px !important; }
+.pinyin-listen-button.is-playing { border-color: var(--terracotta); color: var(--terracotta); }
+.pinyin-drill-prompt { font-family: var(--font-display); font-size: 22px; line-height: 1.4; }
+.pinyin-drill-keys { font-size: 11px; color: var(--muted-foreground); margin-top: 2px; }
+.pinyin-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.pinyin-option { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, color .15s, transform .15s; }
+.pinyin-option strong { font-size: 24px; font-weight: 400; color: var(--terracotta); }
+.pinyin-option small { font-size: 10px; color: var(--muted-foreground); }
+.pinyin-option .tone-contour { width: 46px; height: 30px; }
+.pinyin-option:hover:not(:disabled), .pinyin-option:focus-visible { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); outline: none; }
+.pinyin-option:disabled { cursor: default; opacity: .6; }
+.pinyin-option.is-answer { opacity: 1; border-color: var(--grade-high); box-shadow: inset 0 0 0 1px var(--grade-high); color: var(--grade-high); }
+.pinyin-option.is-wrong { opacity: 1; border-color: var(--grade-low); color: var(--grade-low); }
+.pinyin-drill-feedback { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; min-height: 44px; font-size: 13px; }
+.pinyin-drill-feedback .pinyin { font-size: 16px; }
+.pinyin-right, .pinyin-wrong { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.pinyin-right { color: var(--grade-high); }
+.pinyin-wrong { color: var(--grade-low); }
+.pinyin-right svg, .pinyin-wrong svg { width: 16px; height: 16px; }
+.pinyin-compare { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; color: var(--muted-foreground); }
+.pinyin-compare button { color: var(--terracotta); }
+.pinyin-compare button.is-playing { color: var(--primary); }
+.pinyin-next { margin-left: auto; }
+.pinyin-type-form { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.pinyin-type-input { flex: 0 1 260px; min-width: 0; height: 52px; padding: 0 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--terracotta); font-size: 22px; }
+.pinyin-type-input:focus { outline: none; border-color: var(--primary); }
+.pinyin-type-hint { flex-basis: 100%; font-size: 12px; color: var(--muted-foreground); min-height: 20px; }
+.pinyin-type-hint.is-prompt { color: var(--foreground); }
+.pinyin-absent { margin-top: 10px; }
+@media (max-width: 850px) {
+  .pinyin-tabs { display: none; }
+  .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  /* Phones: the player docks to the bottom of the screen while browsing the chart. */
+  .pinyin-player { top: auto; bottom: 0; z-index: 5; margin: 0 -4px; padding: 14px 16px; gap: 8px; border-radius: 10px 10px 0 0; box-shadow: var(--shadow-popover); }
+  .pinyin-player .eyebrow, .pinyin-player-tip, .pinyin-parts, .pinyin-note, .pinyin-alikes { display: none; }
+  .pinyin-player-empty { font-size: 15px; }
+  .pinyin-player-title.pinyin { font-size: 28px; }
+  .pinyin-progress { justify-content: flex-start; }
+  .pinyin-page .library-heading { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 580px) {
+  .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 6px; }
+  .pinyin-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pinyin-drill-prompt { font-size: 18px; }
+  .pinyin-next { margin-left: 0; }
+}
