@@ -1797,9 +1797,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .tone-contour circle { fill: currentColor; stroke: none; }
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
-.pinyin-details-toggle.pinyin-details-toggle { display: none; height: 32px; gap: 4px; padding: 0 8px; font-size: 13px; color: var(--muted-foreground); }
-.pinyin-details-toggle svg { width: 16px; height: 16px; }
-.pinyin-player-close.pinyin-player-close { display: none; position: relative; z-index: 1; align-self: flex-end; flex: none; width: 32px; height: 32px; margin: -8px -10px -40px 0; }
+/* The card inside the small-screen window: no frame of its own, no sticky/scroll (the window body scrolls). */
+.pinyin-player.in-sheet { position: static; max-height: none; overflow: visible; border: 0; border-radius: 0; background: transparent; padding: 0; }
 .pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 /* Play all / Stop: both labels overlap in one cell so the button width stays fixed. */
 .pinyin-playall { display: inline-grid; justify-items: center; }
@@ -1853,17 +1852,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 @media (max-width: 850px) {
   .pinyin-tabs { display: none; }
   .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  /* Phones: the player docks to the bottom of the screen while browsing the chart. */
-  .pinyin-player { top: auto; bottom: 0; z-index: 5; margin: 0 -4px; padding: 14px 16px; gap: 8px; border-radius: 10px 10px 0 0; box-shadow: var(--shadow-popover); }
-  /* Details (parts, sounds alike, "In a character") show when opened; the card then
-     scrolls inside itself so it never covers more than about half the screen. */
-  .pinyin-player { max-height: none; overflow: visible; }
-  .pinyin-player.details-open { max-height: 55vh; overflow-y: auto; overscroll-behavior: contain; }
-  .pinyin-player:not(.details-open) .eyebrow, .pinyin-player-tip, .pinyin-player:not(.details-open) :is(.pinyin-parts, .pinyin-note, .pinyin-alikes, .pinyin-characters, .pinyin-player-head) { display: none; }
-  .pinyin-details-toggle.pinyin-details-toggle { display: inline-flex; margin-left: auto; }
-  .pinyin-player-close.pinyin-player-close { display: inline-flex; }
-  /* Closed (nothing selected): no docked card; tapping a syllable brings it back. */
-  .pinyin-player.is-empty { display: none; }
+  /* Small screens: the selected syllable opens in the top-anchored window
+     (.pinyin-sound-sheet); the beside-the-grid card is never shown, even before hydration. */
+  .pinyin-chart-layout > .pinyin-player { display: none; }
   .pinyin-player-empty { font-size: 15px; }
   .pinyin-player-title.pinyin { font-size: 28px; }
   .pinyin-progress { justify-content: flex-start; }
