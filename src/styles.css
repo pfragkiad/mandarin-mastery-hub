@@ -569,7 +569,7 @@ this keeps the number right beside the stroke tile. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
 .vocabulary-tabs .vocabulary-category-row > [role='tablist'] { display: flex; justify-content: flex-start; flex: 1; width: auto; height: auto; gap: 8px; background: transparent; border-radius: 0; border: 0; padding: 0; }
 .vocabulary-saved-filter { display: flex; gap: 4px; flex-shrink: 0; }
-.vocabulary-saved-filter button { font-size: 11px; height: 33px; }
+.vocabulary-saved-filter button { font-size: 11px; height: 33px; gap: 0.6em; } /* Count spacing scales with the label so Comfortable mode never looks cramped. */
 .vocabulary-saved-filter .selected { background: var(--secondary); color: var(--primary); }
 .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
 .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
@@ -593,7 +593,7 @@ this keeps the number right beside the stroke tile. */
   .vocabulary-category-row { gap: 4px; }
   .vocabulary-tabs .vocabulary-category-row > [role='tablist'] { display: flex; gap: 4px; }
   .vocabulary-tabs [role='tab'] { min-height: 36px; padding: 0 8px; font-size: 11px; }
-  .vocabulary-saved-filter button { padding: 0 7px; font-size: 10px; gap: 4px; }
+  .vocabulary-saved-filter button { padding: 0 7px; font-size: 10px; gap: 0.6em; }
   .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .vocab-word-grid:not(.list-view) .word-open { padding: 10px 12px 14px; min-height: 128px; }
