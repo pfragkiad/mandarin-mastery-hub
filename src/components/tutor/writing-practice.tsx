@@ -416,7 +416,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Returns true when speech actually started, in which case onEnd will fire later.
   const speakStrokeName = (i: number, onEnd?: () => void) => {
     if (mutedRef.current || !strokes[i]?.name) return false;
-    return speakTts(strokes[i].name, undefined, onEnd)?.ok === true;
+    return (onEnd ? speakTts(strokes[i].name, undefined, onEnd) : speakTts(strokes[i].name))?.ok === true;
   };
   const step = () => {
     const instance = writer.current; if (!instance || !strokes.length || playing) return;
