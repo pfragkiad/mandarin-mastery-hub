@@ -226,7 +226,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
         aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
         {/* Neutral tone shows its spelling (ma) like the other cards; the caption names the tone so "No recording" never reads as the whole syllable missing. */}
-        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{playable ? t : t === 5 ? <>Neutral<br />No recording</> : 'No recording'}</small>
+        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{playable ? `Tone ${t}` : t === 5 ? <>Neutral<br />No recording</> : 'No recording'}</small>
       </button>;
     })}</div>
     <div className="pinyin-player-actions">
