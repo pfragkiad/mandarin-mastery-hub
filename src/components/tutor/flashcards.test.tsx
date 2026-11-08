@@ -2,6 +2,8 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { FlashcardsPage } from './flashcards';
 import { playPronunciation } from '@/lib/audio';
+import { FlashcardSessionProvider } from './flashcard-session';
+import { detailTrail } from '@/lib/detail-trail';
 
 const bookmarks = vi.hoisted(() => ({ saved: [] as string[], toggle: vi.fn() }));
 beforeEach(() => { bookmarks.saved = []; bookmarks.toggle.mockReset(); bookmarks.toggle.mockImplementation((id: string) => bookmarks.saved.push(id)); });
@@ -52,7 +54,7 @@ describe('Unknown-card bookmarks', () => {
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith('hello');
     view.rerender(<FlashcardsPage />);
     expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeDisabled();
-    expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello');
+    expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
   });
   it.each(['Radical', 'Component', 'Character'])('saves an exact %s bookmark and review destination', async kind => {
     render(<FlashcardsPage />);
@@ -73,6 +75,28 @@ describe('Unknown-card bookmarks', () => {
     await finish('Greetings', true);
     expect(screen.queryByRole('button', { name: /unknown card/i })).not.toBeInTheDocument();
     expect(bookmarks.toggle).not.toHaveBeenCalled();
+  });
+});
+
+describe('Card details and Back', () => {
+  it('offers Details only on the answer side and Back resumes the same turned-over card', async () => {
+    // The provider stays mounted (as at the app root) while the page leaves and returns.
+    const page = (shown: boolean) => <FlashcardSessionProvider>{shown && <FlashcardsPage />}</FlashcardSessionProvider>;
+    const view = render(page(true));
+    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
+    expect(screen.queryByRole('link', { name: 'Open details for 你好' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+    const details = screen.getByRole('link', { name: 'Open details for 你好' });
+    expect(details).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
+    fireEvent.click(details);
+    expect(detailTrail.get()).toEqual([{ label: 'Flashcards', href: window.location.href }]);
+    // Leaving for the details page and coming Back remounts the game.
+    view.rerender(page(false));
+    view.rerender(page(true));
+    expect(screen.getByText('Card 1 of 1')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
+    expect(detailTrail.get()).toEqual([]);
   });
 });
 

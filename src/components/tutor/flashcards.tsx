@@ -1,14 +1,17 @@
 import { DraftFilterForm } from './filter-form';
 import { GameSetup, GameReady } from './game-setup';
 import { MeaningText } from './meaning-text';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useFlashcardSession, type FlashCard } from './flashcard-session';
+import { DetailsIcon } from './practice-icons';
+import { detailTrail } from '@/lib/detail-trail';
 import { RotateCcw, Shuffle, Volume2, Check, X, Play, Bookmark } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
-import { collections, partOfSpeechList, partOfSpeechOptions } from '@/lib/mandarin';
-import { audioCandidates, playPronunciation, type AudioAttachment } from '@/lib/audio';
+import { includeScript } from '@/lib/learning-preferences';
+import { collections, partOfSpeechList, partOfSpeechOptions, vocabularyKind, type Word } from '@/lib/mandarin';
+import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
@@ -16,7 +19,7 @@ import { displayMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
 import { usageGroupLabel, usageGroups, usageGroupFor, usageRank, parseUsageGroup } from '@/lib/usage-frequency';
 
-type Card = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; radicalVariant?: string; radicalHeadingId?: string; script?: CharacterScript; audio?: AudioAttachment | null };
+type Card = FlashCard;
 const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
@@ -30,16 +33,20 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const { category, level, pos, usage } = applied;
   const activeFilters = Boolean((!category.startsWith('Ref:') && category !== 'All vocabulary') || level !== 'All levels' || pos !== 'All types' || usage);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); };
-  const [direction, setDirection] = useState<'zh' | 'en'>('zh');
-  const [showFrontPinyin, setShowFrontPinyin] = useState(false);
-  const [deckSize, setDeckSize] = useState<number | 'all'>(10);
-  const [deck, setDeck] = useState<Card[] | null>(null);
-  const [index, setIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [missed, setMissed] = useState<Card[]>([]);
-  const [repeat, setRepeat] = useState(false);
-  const [round, setRound] = useState(1);
-  const [total, setTotal] = useState(0);
+  // The round lives in root session state so opening a card's Details and pressing
+  // Back resumes the same card (still turned over) instead of a fresh setup.
+  const [session, setSession] = useFlashcardSession();
+  const { direction, showFrontPinyin, deckSize, deck, index, flipped, missed, repeat, round } = session;
+  const patch = (next: Partial<typeof session>) => setSession(s => ({ ...s, ...next }));
+  // Coming back from details ends that details-Back step, so a later details window
+  // opened from a library grid never offers a stale "Back to Flashcards".
+  useEffect(() => { detailTrail.clear(); }, []);
+  // Details for the exact record (vocabulary entry or library glyph, incl. saved
+  // radical variants). Back in the details window returns here via history.
+  const detailsFor = (c: Card) => c.libraryKind
+    ? { to: '/characters' as const, search: c.radicalVariant ? savedGlyphDestination(c as LibraryEntry) : { tab: c.libraryKind, id: c.id } }
+    : { to: '/vocabulary' as const, search: { word: c.id, tab: vocabularyKind(c as unknown as Word) } };
+  const rememberReturn = () => detailTrail.replace({ label: 'Flashcards', href: window.location.href });
   const levels = useMemo(() => [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), [items]);
   const posOptions = useMemo(() => partOfSpeechOptions(items), [items]);
   const isReference = category.startsWith('Ref:');
@@ -68,19 +75,14 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const start = (cards: Card[], next = false) => {
     const dealt = next ? shuffle(cards) : shuffle(cards).slice(0, deckSize === 'all' ? cards.length : deckSize);
-    setRound(r => next ? r + 1 : 1);
-    if (!next) setTotal(dealt.length);
-    setDeck(dealt);
-    setIndex(0);
-    setFlipped(false);
-    setMissed([]);
+    setSession(s => ({ ...s, round: next ? s.round + 1 : 1, total: next ? s.total : dealt.length, deck: dealt, index: 0, flipped: false, missed: [] }));
   };
   const answer = (known: boolean) => {
     if (!deck) return;
-    const current = deck[index]; if (!known && current) setMissed(m => [...m, current]);
-    setFlipped(false);
-    if (repeat && !known && current) { setTimeout(() => setDeck(d => d ? [...d, current] : d), 150); }
-    setTimeout(() => setIndex(i => i + 1), 150);
+    const current = deck[index];
+    setSession(s => ({ ...s, flipped: false, missed: !known && current ? [...s.missed, current] : s.missed }));
+    // Advance after the flip-back starts; a repeated miss goes to the end of the deck.
+    setTimeout(() => setSession(s => ({ ...s, deck: repeat && !known && current && s.deck ? [...s.deck, current] : s.deck, index: s.index + 1 })), 150);
   };
   const card = deck?.[index];
   const done = deck && index >= deck.length;
@@ -106,14 +108,14 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       </>}
       {draftReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[draft.category.slice(4) as ReferenceKind], draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value })}><option value="">All ranks</option>{usageGroups(libraryKinds[draft.category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[draft.category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
     </>; }}</DraftFilterForm>}>
-      <select className="filter-select" aria-label="Card front" value={direction} onChange={e => { setDirection(e.target.value as 'zh' | 'en'); setFlipped(false); }}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
-      <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => setDeckSize(e.target.value === 'all' ? 'all' : Number(e.target.value))}>
+      <select className="filter-select" aria-label="Card front" value={direction} onChange={e => patch({ direction: e.target.value as 'zh' | 'en', flipped: false })}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
+      <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => patch({ deckSize: e.target.value === 'all' ? 'all' : Number(e.target.value) })}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
         <option value="all">All cards</option>
       </select>
       <div className="flash-options">
-        <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={setShowFrontPinyin} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
-        <label className="flash-option"><Switch checked={repeat} onCheckedChange={setRepeat} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
+        <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={value => patch({ showFrontPinyin: value })} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
+        <label className="flash-option"><Switch checked={repeat} onCheckedChange={value => patch({ repeat: value })} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
       </div>
       <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {roundSize} {roundSize === 1 ? 'card' : 'cards'}</Button></div>
     </GameSetup>
@@ -126,11 +128,13 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       <div className={`flash-card ${flipped ? 'is-flipped' : ''}`}>
         <div className="flash-inner">
           <div className="flash-face" aria-hidden={flipped} inert={flipped}>
-            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(f => !f)} aria-label="Flip card"/>
+            <Button variant="ghost" className="flash-face-flip" onClick={() => setSession(s => ({ ...s, flipped: !s.flipped }))} aria-label="Flip card"/>
             {direction === 'zh' ? <>{showFrontPinyin && <span className="pinyin flash-pinyin">{card.pinyin}</span>}<span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span></> : <span className="flash-word"><MeaningText text={card.meaning}/></span>}<span className="flash-hint">TAP TO FLIP</span>
           </div>
           <div className="flash-face back" aria-hidden={!flipped} inert={!flipped}>
-            <Button variant="ghost" className="flash-face-flip" onClick={() => setFlipped(true)} aria-label="Card answer"/>
+            <Button variant="ghost" className="flash-face-flip" onClick={() => patch({ flipped: true })} aria-label="Card answer"/>
+            {/* Only on the answer side, so opening details never gives the answer away. */}
+            <Button asChild variant="ghost" size="sm" className="flash-details"><Link {...detailsFor(card)} onClick={rememberReturn} title={`Open details for ${card.hanzi}`} aria-label={`Open details for ${card.hanzi}`}><DetailsIcon/>Details</Link></Button>
             <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></div>
             <span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span><span className="flash-word"><MeaningText text={card.meaning}/></span>
           </div>
@@ -146,9 +150,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       <div className="eyebrow">DECK COMPLETE</div>
       {repeat ? <><strong>All {new Set(deck?.map(c => c.id)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
         : <><strong>{(deck?.length ?? 0) - uniqueMissed.length} / {deck?.length ?? 0}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
-      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => m.libraryKind
-        ? <Link key={m.id} to="/characters" search={m.radicalVariant ? savedGlyphDestination(m as LibraryEntry) : { tab: m.libraryKind, id: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Characters`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>
-        : <Link key={m.id} to="/vocabulary" search={{ word: m.id }} title={`${m.pinyin} · ${m.meaning} — open in Vocabulary`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
+      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => <Link key={m.id} {...detailsFor(m)} onClick={rememberReturn} title={`${m.pinyin} · ${m.meaning} — open in ${m.libraryKind ? 'Glyphs' : 'Vocabulary'}`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
       {uniqueMissed.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedMissed.length} onClick={() => unsavedMissed.forEach(m => toggleSaved(m.id))}>{unsavedMissed.length ? <Bookmark/> : <Check/>}{unsavedMissed.length ? `Save ${unsavedMissed.length} unknown ${unsavedMissed.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}
       <div className="flex gap-2 flex-wrap justify-center">
         {uniqueMissed.length > 0 && <Button onClick={() => start(uniqueMissed, true)}><RotateCcw />New round with {uniqueMissed.length} missed</Button>}
