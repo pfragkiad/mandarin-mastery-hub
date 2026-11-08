@@ -1689,3 +1689,12 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    own second line; its colour comes inline from the drawn character's ink. */
 .writer-status-text { display: block; max-width: 100%; }
 .writer-status-cue-break { display: block; }
+
+/* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */
+:root { --grade-high: oklch(.5 .13 150); --grade-good: oklch(.6 .15 58); --grade-fair: oklch(.47 .07 50); --grade-low: oklch(.54 .19 27); }
+:root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
+.accuracy-grade { font-weight: 600; }
+.accuracy-grade-high { color: var(--grade-high); }
+.accuracy-grade-good { color: var(--grade-good); }
+.accuracy-grade-fair { color: var(--grade-fair); }
+.accuracy-grade-low { color: var(--grade-low); }
