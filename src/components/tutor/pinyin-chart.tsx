@@ -19,22 +19,40 @@ import { Search } from 'lucide-react';
 
 export type ChartFilters = { q: string; initial: string; final: string };
 
-export function InitialSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+/**
+ * Initial dropdown. `available` (optional, the Sound chart's narrowed choices from
+ * chartFilterOptions) hides initials — and whole groups — with no matching syllable;
+ * the current value is always kept. Without it (drills) every initial is offered.
+ */
+export function InitialSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string | null> }) {
+  const offered = (initial: string | null) => !available || available.has(initial) || value === (initial ?? 'none');
   return <select className="filter-select" aria-label="Filter by initial" value={value} onChange={e => onChange(e.target.value)}>
     <option value="">All initials</option>
-    {INITIAL_GROUPS.map((group, index) => <optgroup key={group.label} label={group.label}>
-      <option value={`group:${index}`}>{group.label}{group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}</option>
-      {group.initials[0] !== null && group.initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
-    </optgroup>)}
+    {INITIAL_GROUPS.map((group, index) => {
+      const groupValue = `group:${index}`;
+      const initials = group.initials.filter(offered);
+      if (!initials.length && value !== groupValue) return null;
+      return <optgroup key={group.label} label={group.label}>
+        <option value={groupValue}>{group.label}{group.initials[0] ? ` · ${initials.join(' ')}` : ''}</option>
+        {group.initials[0] !== null && initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
+      </optgroup>;
+    })}
   </select>;
 }
-export function FinalSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+/** Final dropdown; `available` narrows it exactly as for InitialSelect. */
+export function FinalSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string> }) {
+  const offered = (final: string) => !available || available.has(final) || value === final;
   return <select className="filter-select" aria-label="Filter by final" value={value} onChange={e => onChange(e.target.value)}>
     <option value="">All finals</option>
-    {FINAL_GROUPS.map((group, index) => <optgroup key={group.label} label={`Finals with ${group.label}`}>
-      <option value={`group:${index}`}>Finals with {group.label}</option>
-      {group.finals.map(final => <option key={final} value={final}>{final}</option>)}
-    </optgroup>)}
+    {FINAL_GROUPS.map((group, index) => {
+      const groupValue = `group:${index}`;
+      const finals = group.finals.filter(offered);
+      if (!finals.length && value !== groupValue) return null;
+      return <optgroup key={group.label} label={`Finals with ${group.label}`}>
+        <option value={groupValue}>Finals with {group.label}</option>
+        {finals.map(final => <option key={final} value={final}>{final}</option>)}
+      </optgroup>;
+    })}
   </select>;
 }
 
