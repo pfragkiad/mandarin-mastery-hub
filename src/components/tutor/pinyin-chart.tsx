@@ -100,10 +100,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   // A tile hidden by the current filters simply isn't found and nothing moves.
   const chartRef = useRef<HTMLDivElement>(null);
   const revealRef = useRef<string | null>(null);
-  useEffect(() => {
-    const base = revealRef.current;
-    if (!base || base !== selected) return;
-    revealRef.current = null;
+  const revealTile = (base: string, behavior: ScrollBehavior) => {
     const tile = chartRef.current?.querySelector<HTMLElement>(`.pinyin-tile[data-base="${CSS.escape(base)}"]`);
     if (!tile) return;
     tile.focus({ preventScroll: true });
@@ -113,8 +110,26 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     const rect = tile.getBoundingClientRect();
     const player = chartRef.current?.querySelector<HTMLElement>('.pinyin-player')?.getBoundingClientRect();
     const bottom = player && player.top > window.innerHeight / 2 ? player.top : window.innerHeight;
-    if (rect.top < 84 || rect.bottom > bottom) tile.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (rect.top < 84 || rect.bottom > bottom) tile.scrollIntoView({ block: 'center', behavior });
+  };
+  useEffect(() => {
+    const base = revealRef.current;
+    if (!base || base !== selected) return;
+    revealRef.current = null;
+    revealTile(base, 'smooth');
   }, [selected]);
+  // Coming back from a character opened in "In a character" (details Back or browser
+  // Back) remounts the chart: bring the selected syllable's tile into view and focus
+  // too. The flag is read during the first render, before the mount effect above
+  // resets it. The reveal waits two frames so the router's scroll restoration runs
+  // first and cannot scroll the tile away again.
+  const returnedFromCharacter = useRef(leftForCharacter);
+  useEffect(() => {
+    if (!returnedFromCharacter.current || !selected) return;
+    returnedFromCharacter.current = false;
+    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => revealTile(selected, 'auto')); });
+    return () => cancelAnimationFrame(frame);
+  }, []);
   // A sound-alike is a link inside the card: remember the sound being left for Back,
   // keep the chosen tone when the other syllable has it, and play it if recorded.
   const selectAlike = (base: string, label: string, current: Tone | null) => {
