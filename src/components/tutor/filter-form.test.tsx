@@ -19,6 +19,32 @@ describe('Phone filter sheet', () => {
   });
 });
 
+describe('Phone search-box clear', () => {
+  const phone = () => vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const fields = ({ draft, patch }: { draft: { strokes: string }; patch: (next: { strokes: string }) => void }) => <select aria-label="Strokes" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All</option><option value="10">10</option></select>;
+
+  it('clears only the applied search text and keeps the other filters', async () => {
+    phone();
+    const apply = vi.fn();
+    render(<DraftFilterForm searchKey="q" applied={{ q: 'wo', strokes: '10', py: 'pinyin' }} active count={268} onApply={apply} onClear={() => ({ q: '', strokes: '', py: '' })} filterFields={fields}>{({ draft, patch }) => <div className="search-field"><input aria-label="Query" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}</DraftFilterForm>);
+    fireEvent.click(screen.getByRole('button', { name: 'Clear search' }));
+    await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ q: '', strokes: '10', py: 'pinyin' }));
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+  });
+
+  it('empties unapplied typing without applying anything, and hides when there is no text', () => {
+    phone();
+    const apply = vi.fn();
+    render(<DraftFilterForm searchKey="q" applied={{ q: '', strokes: '' }} active={false} count={407} onApply={apply} onClear={() => ({ q: '', strokes: '' })} filterFields={fields}>{({ draft, patch }) => <div className="search-field"><input aria-label="Query" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}</DraftFilterForm>);
+    expect(screen.queryByRole('button', { name: 'Clear search' })).not.toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Query'), { target: { value: 'zh' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Clear search' }));
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+    expect(apply).not.toHaveBeenCalled();
+    expect(screen.queryByRole('button', { name: 'Clear search' })).not.toBeInTheDocument();
+  });
+});
+
 describe('Explicit filter edits', () => {
   it('submits only changed drafts and restores the applied input after an edit is undone', async () => {
     const apply = vi.fn();
