@@ -1671,4 +1671,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* The status line under the writing square always reserves two lines, so a
    two-line completion message never pushes Play/Reset down. */
-.writing-tool-tabbed .writer-status { min-height: 2lh; }
+/* Equal gap above (square) and below (Play/Reset): the line is centred vertically
+   in its two-line box, so one- and two-line messages sit midway. */
+.writing-tool-tabbed .writer-status { min-height: 2lh; margin: 0; display: flex; align-items: center; justify-content: center; }
+.writer-board.writer-board-fill .writing-grid { margin-bottom: 12px; }
