@@ -1684,3 +1684,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    in its two-line box, so one- and two-line messages sit midway. */
 .writing-tool-tabbed .writer-status { min-height: 2lh; margin: 0; display: flex; align-items: center; justify-content: center; }
 .writer-board.writer-board-fill .writing-grid { margin-bottom: 12px; }
+
+/* Practice status cue: when the result fits on one line, "Draw again to start over." takes its
+   own second line; its colour comes inline from the drawn character's ink. */
+.writer-status-text { display: block; max-width: 100%; }
+.writer-status-cue-break { display: block; }
