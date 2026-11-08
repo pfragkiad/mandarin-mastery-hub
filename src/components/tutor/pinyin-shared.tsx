@@ -17,26 +17,32 @@ export function ToneContour({ tone, className = '' }: { tone: Tone; className?: 
 
 /**
  * Play exact recordings only. Inputs: the loaded data, the slow preference and
- * an `onHeard` callback (progress). State: the sound id now playing and the last
- * error. `sequence` chains clips (all tones) and is cancelled by any new play/stop.
+ * an `onHeard` callback (progress). State: the sound id now playing, whether a
+ * multi-clip sequence is running, and the last error. `sequence` chains clips (all tones) and is cancelled by any new play/stop.
  */
 export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?: (id: string) => void) {
   const [playing, setPlaying] = useState<string | null>(null);
+  // True only while a chain of several clips (Play all) runs, so callers can offer
+  // Stop for a sequence without flashing it during a short single-tone clip.
+  const [sequencing, setSequencing] = useState(false);
   const [error, setError] = useState('');
   const ticket = useRef(0);
   const heard = useRef(onHeard);
   heard.current = onHeard;
+  // Every path that ends playback (done, missing clip, failed clip, stop) also ends the sequence.
+  const idle = useCallback(() => { setPlaying(null); setSequencing(false); }, []);
   const playChain = useCallback(async (sounds: PinyinSound[]) => {
     const mine = ++ticket.current;
     setError('');
+    setSequencing(sounds.length > 1);
     for (const sound of sounds) {
       if (mine !== ticket.current) return;
       const recording = data && hasRecording(data, sound.base, sound.tone) ? data.recordings[sound.id] : null;
-      if (!recording) { setPlaying(null); setError('No recording exists for this sound.'); return; }
+      if (!recording) { idle(); setError('No recording exists for this sound.'); return; }
       setPlaying(sound.id);
       const finished = new Promise<void>(resolve => {
         void playRecordingUrl(recording.url, slow, resolve).then(ok => {
-          if (!ok) { if (mine === ticket.current) { setError('The recording could not play. Try again.'); setPlaying(null); } ticket.current++; resolve(); }
+          if (!ok) { if (mine === ticket.current) { setError('The recording could not play. Try again.'); idle(); } ticket.current++; resolve(); }
           else heard.current?.(sound.id);
         });
       });
@@ -44,12 +50,12 @@ export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?
       // A short gap keeps chained tones distinct.
       if (mine === ticket.current) await new Promise(resolve => setTimeout(resolve, 260));
     }
-    if (mine === ticket.current) setPlaying(null);
-  }, [data, slow]);
+    if (mine === ticket.current) idle();
+  }, [data, slow, idle]);
   const play = useCallback((sound: PinyinSound) => playChain([sound]), [playChain]);
-  const stop = useCallback(() => { ticket.current++; stopRecording(); setPlaying(null); }, []);
+  const stop = useCallback(() => { ticket.current++; stopRecording(); idle(); }, [idle]);
   useEffect(() => () => { ticket.current++; stopRecording(); }, []);
-  return { playing, error, play, sequence: playChain, stop, clearError: () => setError('') };
+  return { playing, sequencing, error, play, sequence: playChain, stop, clearError: () => setError('') };
 }
 export type PinyinPlayer = ReturnType<typeof usePinyinPlayer>;
 
