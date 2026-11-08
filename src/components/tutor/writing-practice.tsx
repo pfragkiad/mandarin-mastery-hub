@@ -1,7 +1,7 @@
 import { practiceOrigin, focusEntryCard } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
-import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
+import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
 import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
@@ -166,7 +166,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const arrows = arrowsPref && mode !== 'recall';
   const [medians, setMedians] = useState<MedianPoint[][]>([]);
   // Animation speed is chosen in Settings (default 0.5×) and read live here.
-  const speed = SPEEDS.includes(preferences.animationSpeed) ? preferences.animationSpeed : (SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
+  const speed = strokeSpeed(preferences.animationSpeed);
   const speedRef = useRef(speed);
   speedRef.current = speed;
   const [groupSelection, setGroupSelection] = useState({ character, id: '' });
