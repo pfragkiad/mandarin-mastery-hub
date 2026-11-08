@@ -1748,14 +1748,14 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile-base { font-size: 15px; line-height: 1.1; }
 .pinyin-tile-tones { display: flex; gap: 3px; }
 .pinyin-tile-tones span { width: 5px; height: 5px; border-radius: 999px; }
-/* Each tone dot keeps its own fixed colour (1 red, 2 orange, 3 green, 4 blue), so the
-   position and colour of a dot both say which tone is recorded. */
-.pinyin-tile-tones .tone-1 { --tone-dot: var(--tone-1); }
-.pinyin-tile-tones .tone-2 { --tone-dot: var(--tone-2); }
-.pinyin-tile-tones .tone-3 { --tone-dot: var(--tone-3); }
-.pinyin-tile-tones .tone-4 { --tone-dot: var(--tone-4); }
-.pinyin-tile-tones .on { background: var(--tone-dot); }
-.pinyin-tile-tones .off { border: 1px solid var(--tone-dot); }
+/* Each tone keeps its own fixed colour (1 red, 2 orange, 3 green, 4 blue) in the grid
+   dots and the Selected sound tone cards, so colour alone already says which tone. */
+.tone-1 { --tone-ink: var(--tone-1); }
+.tone-2 { --tone-ink: var(--tone-2); }
+.tone-3 { --tone-ink: var(--tone-3); }
+.tone-4 { --tone-ink: var(--tone-4); }
+.pinyin-tile-tones .on { background: var(--tone-ink); }
+.pinyin-tile-tones .off { border: 1px solid var(--tone-ink); }
 .pinyin-tile-tones .none { background: transparent; }
 .pinyin-tile-state { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 999px; }
 .pinyin-tile-state.done { background: var(--grade-high); }
@@ -1770,7 +1770,11 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
 .pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
-.pinyin-tone-button.is-playing .tone-contour path:not(.tone-contour-base) { stroke: var(--terracotta); }
+/* Recorded tone cards use their tone colour for the contour and spelling; hover and
+   the selected (or now playing) card take a border and tint in that same colour. */
+.pinyin-tone-button[class*='tone-']:not(.is-unrecorded) { color: var(--tone-ink); }
+.pinyin-tone-button[class*='tone-']:not(.is-unrecorded):hover, .pinyin-tone-button[class*='tone-']:not(.is-unrecorded):focus-visible { border-color: var(--tone-ink); color: var(--tone-ink); }
+.pinyin-tone-button[class*='tone-']:not(.is-unrecorded).is-current { border-color: var(--tone-ink); color: var(--tone-ink); background: color-mix(in oklch, var(--tone-ink) 14%, transparent); }
 /* Unrecorded tone (neutral): selectable for its characters, never played; grey instead of the accent. */
 .pinyin-tone-button.is-unrecorded { color: var(--muted-foreground); border-style: dashed; }
 .pinyin-tone-button.is-unrecorded small { font-size: 8px; text-align: center; line-height: 1.2; }
@@ -1787,10 +1791,12 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-character { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 10px; padding: 2px; border-radius: 7px; color: var(--foreground); text-decoration: none; transition: background-color .15s, color .15s; }
 .pinyin-character-glyph { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); transition: border-color .15s; }
 .pinyin-character.traditional-character .pinyin-character-glyph { color: var(--traditional); }
-.pinyin-character-meaning { font-family: var(--font-sans); font-size: 12px; line-height: 1.4; color: var(--muted-foreground); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pinyin-character-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; font-family: var(--font-sans); }
+.pinyin-character-text .component-reuse-label { line-height: 14px; }
+.pinyin-character-meaning { font-size: 13px; line-height: 1.4; color: var(--foreground); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .pinyin-character:hover, .pinyin-character:focus-visible { background: color-mix(in oklch, var(--primary) 8%, transparent); outline: none; }
 .pinyin-character:hover .pinyin-character-glyph, .pinyin-character:focus-visible .pinyin-character-glyph { border-color: var(--primary); }
-.pinyin-character:hover .pinyin-character-meaning, .pinyin-character:focus-visible .pinyin-character-meaning { color: var(--primary); }
+.pinyin-character:hover .pinyin-character-meaning, .pinyin-character:focus-visible .pinyin-character-meaning { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
 .pinyin-characters-more.pinyin-characters-more { align-self: flex-start; height: auto; padding: 0; font-size: 12px; }
 .tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .tone-contour circle { fill: currentColor; stroke: none; }
