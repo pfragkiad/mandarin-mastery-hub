@@ -347,6 +347,12 @@
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
 
 @media (max-width: 580px) { .writer-playback .writer-speed { flex-basis: 100%; } }
+/* Phones: cap the writing square (plus its tabs and Play/Reset row) at 250px,
+   centred, leaving clear side gutters so thumbs can scroll without drawing. */
+@media (max-width: 580px) {
+  .writer-board, .writer-board.writer-board-fill { width: min(100%, 250px); margin-left: auto; margin-right: auto; }
+  .writing-tool-tabbed .practice-mode-tabs, .writing-tool-tabbed .writer-playback { width: min(100%, 250px); margin-left: auto; margin-right: auto; }
+}
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 /* One shared style for the first content line directly under a section heading:
    the sentence/usage note, the decomposition source line, and the G-source match
