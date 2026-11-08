@@ -478,5 +478,6 @@ it('Trace Play continues after a clicked stroke instead of restarting', async ()
   fireEvent.click(screen.getByRole('button', { name: 'Continue tracing after stroke 3' }));
   fake.animateStroke.mockClear();
   fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  console.log('DBG', JSON.stringify(fake.quiz.mock.calls.map(c => c[0].quizStartStrokeNum)), fake.animateStroke.mock.calls.map(c => c[0]));
   expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(3);
 });
