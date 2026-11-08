@@ -11,6 +11,20 @@ export function syllableCharacters(entries: LibraryEntry[], base: string, tone: 
   return filterLibrary(entries, `${base}${tone}`, '', false, includeTraditional, undefined, undefined, true, true);
 }
 
+/** Radicals-tab URL search keyed by the radical card's exact glyph, so a character that is
+ *  itself a Kangxi radical (丿, 马…) opens its radical card. Only exact card glyphs match —
+ *  never a shape, variant family or normalised form. */
+export function radicalDestinations(radicalEntries: LibraryEntry[], includeTraditional = false) {
+  const visible = filterLibrary(radicalEntries, '', '', false, includeTraditional);
+  const out = new Map<string, { tab: 'Radicals'; id: string; page?: number }>();
+  visible.forEach((entry, index) => {
+    if (out.has(entry.hanzi)) return;
+    const page = Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
+    out.set(entry.hanzi, { tab: 'Radicals', id: entry.id, ...(page > 1 ? { page } : {}) });
+  });
+  return out;
+}
+
 /** Characters-tab URL search for every visible entry (exact record ID plus its grid page), built once per list. */
 export function characterDestinations(entries: LibraryEntry[], includeTraditional = false) {
   const visible = filterLibrary(entries, '', '', false, includeTraditional);
