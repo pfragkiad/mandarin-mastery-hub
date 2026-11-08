@@ -2,7 +2,7 @@
 // the selected syllable. Inputs: loaded data, remembered progress, the shared
 // player, the applied URL filters and the URL-selected syllable. Local state:
 // only the tone currently shown in the player (selection itself lives in the URL).
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ListMusic, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -71,7 +71,30 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
     return () => window.removeEventListener('keydown', onKey);
   }, [syllable, data, player]);
 
-  return <div className="pinyin-chart-layout">
+  // A syllable picked from "Sounds alike" also brings its grid tile into view and
+  // focus once the new selection has rendered. Only that path sets the ref, so a
+  // grid click (tile already on screen) or a URL/history change never scrolls.
+  // A tile hidden by the current filters simply isn't found and nothing moves.
+  const chartRef = useRef<HTMLDivElement>(null);
+  const revealRef = useRef<string | null>(null);
+  useEffect(() => {
+    const base = revealRef.current;
+    if (!base || base !== selected) return;
+    revealRef.current = null;
+    const tile = chartRef.current?.querySelector<HTMLElement>(`.pinyin-tile[data-base="${CSS.escape(base)}"]`);
+    if (!tile) return;
+    tile.focus({ preventScroll: true });
+    // Scroll only when the tile is not fully visible: below the sticky header
+    // (84px, matching .pinyin-player's top) and above the phone-size player
+    // docked at the bottom of the window, so visible tiles never move.
+    const rect = tile.getBoundingClientRect();
+    const player = chartRef.current?.querySelector<HTMLElement>('.pinyin-player')?.getBoundingClientRect();
+    const bottom = player && player.top > window.innerHeight / 2 ? player.top : window.innerHeight;
+    if (rect.top < 84 || rect.bottom > bottom) tile.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, [selected]);
+  const selectAlike = (base: string) => { revealRef.current = base; onSelect(base); };
+
+  return <div className="pinyin-chart-layout" ref={chartRef}>
     <div className="pinyin-chart-main">
       <DraftFilterForm applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
         chips={[...(filters.initial ? [{ label: filters.initial === 'none' ? 'No initial' : filters.initial.startsWith('group:') ? INITIAL_GROUPS[Number(filters.initial.slice(6))]?.label ?? '' : filters.initial, clear: { initial: '' } }] : []), ...(filters.final ? [{ label: filters.final.startsWith('group:') ? `Finals with ${FINAL_GROUPS[Number(filters.final.slice(6))]?.label}` : filters.final, clear: { final: '' } }] : [])]}
@@ -97,7 +120,7 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
       </section>)}
     </div>
     <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={t => { setTone(t); if (syllable) void player.play(sound(syllable.base, t)); }}
-      onPlayAll={() => { if (!syllable) return; setTone(null); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }} onSelect={onSelect} />
+      onPlayAll={() => { if (!syllable) return; setTone(null); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }} onSelect={selectAlike} />
   </div>;
 }
 
