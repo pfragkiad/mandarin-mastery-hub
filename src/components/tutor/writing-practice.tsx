@@ -135,7 +135,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
 export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
   const { theme, preferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
-  const [localMode, setLocalMode] = useState<PracticeMode>('watch');
+  const [localMode, setLocalMode] = useState<PracticeMode>('trace');
   const mode = selectedMode ?? localMode;
   const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };
   const target = useRef<HTMLDivElement>(null);
@@ -267,7 +267,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       void instance.resumeAnimation();
       return;
     }
-    const start = stepMode ? stepIndex : 0;
+    // Trace continues from the clicked/drawn position (restarting once everything is drawn).
+    const tracePlay = mode === 'trace';
+    const start = tracePlay ? (tracePos.current < strokes.length ? tracePos.current : 0) : stepMode ? stepIndex : 0;
     // Continue after the completed Step prefix; hiding the whole character here
     // would erase that prefix and visually restart already completed strokes.
     const run = ++animationRun.current;
@@ -277,7 +279,12 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     if (start === 0) instance.hideCharacter();
     const step = (i: number) => {
       if (animationRun.current !== run) return;
-      if (i >= strokes.length) { setPlaying(false); setPaused(false); setActiveStroke(null); setMessage('Your turn. Ready to write it from memory?'); return; }
+      if (i >= strokes.length) {
+        setPlaying(false); setPaused(false); setActiveStroke(null);
+        // Trace keeps the finished drawing; the next drag starts a fresh round.
+        if (tracePlay) { quiz(strokes.length); setMessage('All strokes played. Draw to trace it yourself.'); return; }
+        setMessage('Your turn. Ready to write it from memory?'); return;
+      }
       setActiveStroke(i);
       setMessage(strokeMessage(i));
       // Play strokes speaks each stroke name too when stroke audio is on.
@@ -300,6 +307,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // square only erases and re-arms when the learner starts dragging the first
   // stroke of a new round (see the pointerdown capture listener below).
   const needsRearm = useRef(false);
+  // Trace: next undrawn stroke (clicked prefix or hand-drawn), so Play continues from there.
+  const tracePos = useRef(0);
   let cleanupRearm: (() => void) | null = null;
   const quizRef = useRef<() => void>(() => {});
   // Native quizStartStrokeNum displays the exact completed prefix and validates
@@ -307,6 +316,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const quiz = (startStroke = 0) => {
     const instance = writer.current;
     if (!instance) return;
+    tracePos.current = startStroke;
     const run = ++animationRun.current;
     instance.cancelQuiz();
     setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 ? startStroke : null);
@@ -327,6 +337,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => {
         if (animationRun.current !== run) return;
         speakStrokeName(strokeNum);
+        tracePos.current = strokeNum + 1;
         const score = strokeScore(mistakesOnStroke);
         setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; });
         setActiveStroke(strokeNum + 1 < strokes.length ? strokeNum + 1 : null);
@@ -447,7 +458,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   };
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
   const audioControl = <Button variant="ghost" size="icon" title={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-label={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX/> : <Volume2/>}</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode === 'watch' && <><Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play strokes'}</span></Button><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div className="writer-board"><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{message}</p><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
@@ -478,7 +489,7 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 }
 
 
-export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant, mode = 'watch', onModeChange, groupingSource = DEFAULT_GROUPING_SOURCE }: { groupingSource?: string; onGroupingSourceChange?: (source: string) => void; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
+export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant, mode = 'trace', onModeChange, groupingSource = DEFAULT_GROUPING_SOURCE }: { groupingSource?: string; onGroupingSourceChange?: (source: string) => void; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
   const wordChars = Array.from(initialCharacter);
   const isWord = wordChars.length > 1;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
