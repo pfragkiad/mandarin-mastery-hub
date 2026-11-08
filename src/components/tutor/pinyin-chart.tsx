@@ -76,7 +76,7 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
         filterFields={({ draft, patch }) => <><InitialSelect value={draft.initial} onChange={initial => patch({ initial })} /><FinalSelect value={draft.final} onChange={final => patch({ final })} /></>}>
         {({ draft, patch }) => <div className="search-field"><Search /><input type="search" aria-label="Search syllables" placeholder="Find a syllable: rén, ren2, lv4…" value={draft.q} onChange={e => patch({ q: e.target.value })} /></div>}
       </DraftFilterForm>
-      {groups.length === 0 ? <p className="absent-note pinyin-absent">No syllable matches this search.</p> : groups.map(group => <section key={group.label} className="pinyin-group" aria-label={group.label}>
+      {groups.length === 0 ? <div className="record-gap pinyin-absent"><p>No syllable matches this search.</p></div> : groups.map(group => <section key={group.label} className="pinyin-group" aria-label={group.label}>
         <h2 className="pinyin-group-title">{group.label}{group.initials[0] !== null && <span>{group.initials.join(' ')}</span>}</h2>
         <div className="pinyin-tiles">{group.items.map(s => {
           const sounds = s.tones.filter(t => t !== 5).map(t => progress[soundId(s.base, t)]);

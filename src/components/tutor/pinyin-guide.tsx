@@ -53,7 +53,7 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
       <TabsList>{PINYIN_MODES.map(m => <TabsTrigger key={m.mode} value={m.mode}>{m.label}</TabsTrigger>)}</TabsList>
     </Tabs>
     <div className="pinyin-body">
-      {failed ? <p className="absent-note pinyin-absent">The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p>
+      {failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
         : !data || !drillProps ? <p className="library-note">Loading sounds…</p>
         : mode === 'chart' ? <PinyinChart data={data} progress={progress} player={player} filters={chartFilters} selected={selected} slow={preferences.slow} onSlow={onSlow} onSelect={onSelect} onFilters={onChartFilters} />
         : mode === 'tones' ? <ToneDrill key="tones" {...drillProps} />
