@@ -61,7 +61,7 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
         : <TypeDrill key="type" {...drillProps} />}
     </div>
     {data && <p className="source-note library-source-note pinyin-source">
-      Recordings: <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.credits} · {data.audioSource.license} · {data.audioSource.accent} · not listening-reviewed · neutral-tone recordings withdrawn by the source.{' '}
+      Recordings: <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.credits} · {data.audioSource.license} · {data.audioSource.accent}, not listening-reviewed · neutral-tone recordings withdrawn by the source.{' '}
       Syllables and tones: <a href={data.inventorySource.url} target="_blank" rel="noreferrer">CC-CEDICT</a> · {data.inventorySource.license}.
     </p>}
   </div>;
