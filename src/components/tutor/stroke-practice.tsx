@@ -107,7 +107,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
     }
     const run = ++animationRun.current;
     w.cancelQuiz(); setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
-    void w.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setMode('idle'); setMessage('Now trace it yourself, or watch again.'); } });
+    void w.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setMode('idle'); if (practiceMode === 'trace') { void w.hideCharacter({ duration: 0 }); practice(); } setMessage('Now trace it yourself, or play again.'); } });
   };
   const practice = () => {
     const w = writer.current; if (!w) return;
