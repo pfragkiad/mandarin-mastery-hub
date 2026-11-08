@@ -19,7 +19,7 @@ import { UsageLabel } from './usage-label';
 import { useWorkspace } from './workspace';
 
 /** Characters shown before "Show all". */
-export const SYLLABLE_CHARACTERS_SHOWN = 12;
+export const SYLLABLE_CHARACTERS_SHOWN = 5;
 
 export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: string; tone: Tone | null; backLabel: string; onLeave: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
@@ -38,20 +38,22 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
-        <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id}>
+        <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id} className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}>
+          {/* Only the hanzi box is the link (like decomposition tiles), so hover and focus
+              outline the box alone; the rank and meaning beside it stay plain, selectable text. */}
           <Link to="/characters" search={destinations.get(entry.id) ?? { tab: 'Characters', id: entry.id }}
-            className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}
+            className="pinyin-character-glyph" lang="zh-CN"
             title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
             onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
-            {/* Hanzi in its own box; to its right, centred on the box, the coloured corpus
-                rank and the meaning styled like the glyph details' "In a character" rows. */}
-            <span className="pinyin-character-glyph" lang="zh-CN">{entry.hanzi}</span>
-            <span className="pinyin-character-text">
-              {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
-              {entry.meaning && <span className="pinyin-character-meaning"><MeaningText text={entry.meaning} /></span>}
-            </span>
+            {entry.hanzi}
           </Link>
+          {/* To the right of the box, centred on it: the coloured corpus rank and the
+              meaning styled like the glyph details' "In a character" rows. */}
+          <span className="pinyin-character-text">
+            {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
+            {entry.meaning && <span className="pinyin-character-meaning"><MeaningText text={entry.meaning} /></span>}
+          </span>
         </li>)}</ul>
         {matches.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
       </>}
