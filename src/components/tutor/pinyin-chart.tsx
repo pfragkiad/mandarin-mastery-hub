@@ -4,7 +4,7 @@
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { ArrowLeft, ChevronDown, ChevronUp, ListMusic, Square } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronUp, ListMusic, Square, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, TONE_HINTS, TONE_NAMES, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
@@ -191,7 +191,9 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     </div>
     <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone}
       onPlayAll={() => { if (!syllable) return; onTone(undefined); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }}
-      onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }} />
+      onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }}
+      // Phone-size close: stop the sound, forget the card's Back steps and deselect (URL replace).
+      onClose={() => { player.stop(); soundTrail.clear(); onSelect(undefined); }} />
   </div>;
 }
 
@@ -200,9 +202,9 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
 let dockedDetailsOpen = true;
 
 /** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
-function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave }: {
+function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, onClose }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
-  onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string, label: string, current: Tone | null) => void; onLeave: () => void;
+  onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string, label: string, current: Tone | null) => void; onLeave: () => void; onClose: () => void;
 }) {
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
   const [detailsOpen, setDetailsOpen] = useState(dockedDetailsOpen);
@@ -249,6 +251,8 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       {/* Phone-size docked player only (hidden by CSS on wider screens): shows or hides the
           details below — parts, sounds alike and "In a character". */}
       <Button variant="ghost" size="sm" className="pinyin-details-toggle" aria-expanded={detailsOpen} onClick={toggleDetails}>{detailsOpen ? <ChevronDown /> : <ChevronUp />}{detailsOpen ? 'Hide details' : 'Details'}</Button>
+      {/* Phone-size only too: closes the docked card by deselecting the syllable. */}
+      <Button variant="ghost" size="icon" className="pinyin-player-close close-x" aria-label="Close the selected sound" title="Close" onClick={onClose}><X /></Button>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
     <dl className="pinyin-parts">
