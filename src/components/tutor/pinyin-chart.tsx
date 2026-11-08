@@ -124,7 +124,8 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   const revealTile = (base: string, behavior: ScrollBehavior) => {
     const tile = chartRef.current?.querySelector<HTMLElement>(`.pinyin-tile[data-base="${CSS.escape(base)}"]`);
     if (!tile) return;
-    tile.focus({ preventScroll: true });
+    // While the small-screen window is open, focus stays inside it (the tile is only scrolled to).
+    if (!document.querySelector('.pinyin-sound-sheet')) tile.focus({ preventScroll: true });
     // Scroll only when the tile is not fully visible: below the sticky header
     // (84px, matching .pinyin-player's top) and above the phone-size player
     // docked at the bottom of the window, so visible tiles never move.
