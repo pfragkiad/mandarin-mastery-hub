@@ -49,9 +49,13 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
 
 /** Own typing state here so draft keystrokes cannot rerender library cards or reference panels.
  * With autoApply, every draft edit (the games' dropdowns) submits immediately through the
- * same wait-cursor transition; libraries keep the explicit Apply button. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply = false, showCount = true, children, filterFields, chips = [] }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[] }) {
+ * same wait-cursor transition; libraries keep the explicit Apply button. With live (small,
+ * cheap result sets such as the Sound chart's syllables), every edit — keystrokes included —
+ * applies synchronously with no wait cursor or frame delay, so the applied value catches
+ * up before the next keystroke and the draft-sync effect never rolls typing back. */
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [] }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[] }) {
   const controls = useDraftFilters(applied);
+  const autoApply = autoApplyProp || live;
   const small = useSmallLibraryScreen();
   const [sheetOpen, setSheetOpen] = useState(false);
   const changed = JSON.stringify(controls.draft) !== JSON.stringify(applied);
@@ -59,6 +63,7 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   useWaitCursor(autoApply && pending);
   // Auto-submit an edit with the same painted-wait-cursor pattern as FilterForm's Apply.
   const submit = (draft: T) => {
+    if (live) { onApply(draft); return; }
     if (typeof requestAnimationFrame !== 'function') { startTransition(() => onApply(draft)); return; }
     startTransition(async () => {
       await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));

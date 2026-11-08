@@ -162,7 +162,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
 
   return <div className="pinyin-chart-layout" ref={chartRef}>
     <div className="pinyin-chart-main">
-      <DraftFilterForm applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
+      <DraftFilterForm live applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
         chips={[...(filters.initial ? [{ label: filters.initial === 'none' ? 'No initial' : filters.initial.startsWith('group:') ? INITIAL_GROUPS[Number(filters.initial.slice(6))]?.label ?? '' : filters.initial, clear: { initial: '' } }] : []), ...(filters.final ? [{ label: filters.final.startsWith('group:') ? `Finals with ${FINAL_GROUPS[Number(filters.final.slice(6))]?.label}` : filters.final, clear: { final: '' } }] : [])]}
         filterFields={({ draft, patch }) => <><InitialSelect value={draft.initial} onChange={initial => patch({ initial })} /><FinalSelect value={draft.final} onChange={final => patch({ final })} /></>}>
         {({ draft, patch }) => <div className="search-field"><Search /><input type="search" aria-label="Search syllables" placeholder="Find a syllable: rén, ren2, lv4…" value={draft.q} onChange={e => patch({ q: e.target.value })} /></div>}
