@@ -160,6 +160,23 @@ export function matchesFinal(s: PinyinSyllable, value: string | undefined): bool
   if (group) return FINAL_GROUPS[Number(group[1])]?.finals.includes(s.final) ?? false;
   return s.final === value;
 }
+/**
+ * Sound chart dropdown choices that still lead to syllables. Inputs: every syllable, the
+ * applied search, and the current initial/final choices. Each dropdown is narrowed by the
+ * search and the *other* dropdown only (never by itself, so it can still be switched), and
+ * a value already chosen always stays offered so the dropdown never goes blank.
+ * Returns the exact initials (null = no initial) and finals that remain available.
+ */
+export function chartFilterOptions(syllables: readonly PinyinSyllable[], q: string, initial: string, final: string) {
+  const initials = new Set<string | null>(), finals = new Set<string>();
+  for (const s of syllables) {
+    if (!matchesSyllable(s, q)) continue;
+    if (matchesFinal(s, final)) initials.add(s.initial);
+    if (matchesInitial(s, initial)) finals.add(s.final);
+  }
+  return { initials, finals };
+}
+
 export function initialFilterLabel(value: string | undefined) {
   if (!value) return 'All initials';
   const group = value.match(/^group:(\d+)$/);

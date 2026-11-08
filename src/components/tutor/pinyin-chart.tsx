@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'reac
 import { ArrowLeft, ListMusic, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, TONE_HINTS, TONE_NAMES, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
+import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { answered, needsReview, type PinyinProgress } from '@/lib/pinyin-progress';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
@@ -19,22 +19,40 @@ import { Search } from 'lucide-react';
 
 export type ChartFilters = { q: string; initial: string; final: string };
 
-export function InitialSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+/**
+ * Initial dropdown. `available` (optional, the Sound chart's narrowed choices from
+ * chartFilterOptions) hides initials — and whole groups — with no matching syllable;
+ * the current value is always kept. Without it (drills) every initial is offered.
+ */
+export function InitialSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string | null> }) {
+  const offered = (initial: string | null) => !available || available.has(initial) || value === (initial ?? 'none');
   return <select className="filter-select" aria-label="Filter by initial" value={value} onChange={e => onChange(e.target.value)}>
     <option value="">All initials</option>
-    {INITIAL_GROUPS.map((group, index) => <optgroup key={group.label} label={group.label}>
-      <option value={`group:${index}`}>{group.label}{group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}</option>
-      {group.initials[0] !== null && group.initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
-    </optgroup>)}
+    {INITIAL_GROUPS.map((group, index) => {
+      const groupValue = `group:${index}`;
+      const initials = group.initials.filter(offered);
+      if (!initials.length && value !== groupValue) return null;
+      return <optgroup key={group.label} label={group.label}>
+        <option value={groupValue}>{group.label}{group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}</option>
+        {group.initials[0] !== null && initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
+      </optgroup>;
+    })}
   </select>;
 }
-export function FinalSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+/** Final dropdown; `available` narrows it exactly as for InitialSelect. */
+export function FinalSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string> }) {
+  const offered = (final: string) => !available || available.has(final) || value === final;
   return <select className="filter-select" aria-label="Filter by final" value={value} onChange={e => onChange(e.target.value)}>
     <option value="">All finals</option>
-    {FINAL_GROUPS.map((group, index) => <optgroup key={group.label} label={`Finals with ${group.label}`}>
-      <option value={`group:${index}`}>Finals with {group.label}</option>
-      {group.finals.map(final => <option key={final} value={final}>{final}</option>)}
-    </optgroup>)}
+    {FINAL_GROUPS.map((group, index) => {
+      const groupValue = `group:${index}`;
+      const finals = group.finals.filter(offered);
+      if (!finals.length && value !== groupValue) return null;
+      return <optgroup key={group.label} label={`Finals with ${group.label}`}>
+        <option value={groupValue}>Finals with {group.label}</option>
+        {finals.map(final => <option key={final} value={final}>{final}</option>)}
+      </optgroup>;
+    })}
   </select>;
 }
 
@@ -177,9 +195,12 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
 
   return <div className="pinyin-chart-layout" ref={chartRef}>
     <div className="pinyin-chart-main">
-      <DraftFilterForm live applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
+      {/* Same explicit Apply as the libraries: edits stay in the draft until Apply/Enter, X clears
+          at once. Dropdowns offer only choices that still have syllables under the applied search
+          and the other dropdown (chartFilterOptions over 407 syllables, cheap to recompute). */}
+      <DraftFilterForm applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
         chips={[...(filters.initial ? [{ label: filters.initial === 'none' ? 'No initial' : filters.initial.startsWith('group:') ? INITIAL_GROUPS[Number(filters.initial.slice(6))]?.label ?? '' : filters.initial, clear: { initial: '' } }] : []), ...(filters.final ? [{ label: filters.final.startsWith('group:') ? `Finals with ${FINAL_GROUPS[Number(filters.final.slice(6))]?.label}` : filters.final, clear: { final: '' } }] : [])]}
-        filterFields={({ draft, patch }) => <><InitialSelect value={draft.initial} onChange={initial => patch({ initial })} /><FinalSelect value={draft.final} onChange={final => patch({ final })} /></>}>
+        filterFields={({ draft, patch }) => { const options = chartFilterOptions(sorted, filters.q, draft.initial, draft.final); return <><InitialSelect value={draft.initial} available={options.initials} onChange={initial => patch({ initial })} /><FinalSelect value={draft.final} available={options.finals} onChange={final => patch({ final })} /></>; }}>
         {({ draft, patch }) => <div className="search-field"><Search /><input type="search" aria-label="Search syllables" placeholder="Find a syllable: rén, ren2, lv4…" value={draft.q} onChange={e => patch({ q: e.target.value })} /></div>}
       </DraftFilterForm>
       {groups.length === 0 ? <div className="record-gap pinyin-absent"><p>No syllable matches this search.</p></div> : groups.map(group => <section key={group.label} className="pinyin-group" aria-label={group.label}>
