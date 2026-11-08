@@ -1772,9 +1772,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
 /* Recorded tone cards use their tone colour for the contour and spelling; hover and
    the selected (or now playing) card take a border and tint in that same colour. */
-.pinyin-tone-button[class*='tone-']:not(.is-unrecorded) { color: var(--tone-ink); }
-.pinyin-tone-button[class*='tone-']:not(.is-unrecorded):hover, .pinyin-tone-button[class*='tone-']:not(.is-unrecorded):focus-visible { border-color: var(--tone-ink); color: var(--tone-ink); }
-.pinyin-tone-button[class*='tone-']:not(.is-unrecorded).is-current { border-color: var(--tone-ink); color: var(--tone-ink); background: color-mix(in oklch, var(--tone-ink) 14%, transparent); }
+.pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded) { color: var(--tone-ink); }
+.pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded):hover, .pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded):focus-visible { border-color: var(--tone-ink); color: var(--tone-ink); }
+.pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded).is-current { border-color: var(--tone-ink); color: var(--tone-ink); background: color-mix(in oklch, var(--tone-ink) 14%, transparent); }
 /* Unrecorded tone (neutral): selectable for its characters, never played; grey instead of the accent. */
 .pinyin-tone-button.is-unrecorded { color: var(--muted-foreground); border-style: dashed; }
 .pinyin-tone-button.is-unrecorded small { font-size: 8px; text-align: center; line-height: 1.2; }
