@@ -7,3 +7,4 @@
 - DraftFilterForm `live` applies every edit synchronously (no wait cursor/frame delay) for result sets that opt in, so the applied URL catches up before the next keystroke; the Sound chart and libraries use explicit Apply.
 - Sound chart dropdowns narrow through chartFilterOptions (applied search plus the other dropdown, never themselves, current value kept), so every offered initial/final still leads to syllables.
 - On small screens (≤850px) the Sound chart card opens in PinyinSoundSheet, a top-anchored modal sharing .detail-sheet styles, so tone changes only grow the card downward; Previous/Next walk the visible grid and start a fresh soundTrail.
+- On phones, DraftFilterForm `searchKey` adds a search-box X that clears only that text field (re-applying the other applied filters/modes, or just emptying unapplied typing), because phones hide the desktop clear-all X.
