@@ -1706,7 +1706,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */
 :root { --grade-high: oklch(.5 .13 150); --grade-good: oklch(.6 .15 58); --grade-fair: oklch(.47 .07 50); --grade-low: oklch(.54 .19 27); }
-:root { --tone-1: oklch(.55 .19 27); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .13 250); }
+:root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.55 .19 27); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .13 250); }
 :root.dark { --tone-1: oklch(.7 .17 25); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.72 .12 250); }
 :root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
 .accuracy-grade { font-weight: 600; }
@@ -1747,7 +1747,16 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile.is-selected { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); color: var(--primary); }
 .pinyin-tile-base { font-size: 15px; line-height: 1.1; }
 .pinyin-tile-tones { display: flex; gap: 3px; }
-.pinyin-tile-tones span { width: 5px; height: 5px; border-radius: 999px; }
+.pinyin-tile-tones { gap: 2px; }
+.pinyin-tile-badge { display: block; flex: none; width: 10px; height: 10px; }
+.pinyin-tile-badge-ring { stroke-width: 2; }
+.pinyin-tile-badge-mark { fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.pinyin-tile-badge.on .pinyin-tile-badge-ring { fill: var(--tone-ink); stroke: var(--tone-ink); }
+.pinyin-tile-badge.on .pinyin-tile-badge-mark { stroke: var(--tone-mark); }
+.pinyin-tile-badge.on .pinyin-tile-badge-dot { fill: var(--tone-mark); }
+.pinyin-tile-badge.off .pinyin-tile-badge-ring { fill: none; stroke: var(--tone-ink); }
+.pinyin-tile-badge.off .pinyin-tile-badge-mark { stroke: var(--tone-ink); }
+.pinyin-tile-badge.off .pinyin-tile-badge-dot { fill: var(--tone-ink); }
 /* Each tone keeps its own fixed colour (1 red, 2 orange, 3 green, 4 blue) in the grid
    dots and the Selected sound tone cards, so colour alone already says which tone. */
 .tone-1 { --tone-ink: var(--tone-1); }
@@ -1756,9 +1765,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .tone-4 { --tone-ink: var(--tone-4); }
 /* Neutral tone: grey, and only ever hollow in the grid (no recordings exist). */
 .pinyin-tile-tones .tone-5 { --tone-ink: var(--muted-foreground); }
-.pinyin-tile-tones .on { background: var(--tone-ink); }
-.pinyin-tile-tones .off { border: 1px solid var(--tone-ink); }
-.pinyin-tile-tones .none { background: transparent; }
+
 .pinyin-tile-state { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 999px; }
 .pinyin-tile-state.done { background: var(--grade-high); }
 .pinyin-tile-state.review { background: var(--grade-low); }

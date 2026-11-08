@@ -44,7 +44,26 @@ export function FinalSelect({ value, onChange }: { value: string; onChange: (val
  */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
   const tones: Tone[] = syllable.tones.includes(5) ? [...SPOKEN_TONES, 5] : [...SPOKEN_TONES];
-  return <span className="pinyin-tile-tones" aria-hidden="true">{tones.map(t => <span key={t} className={`tone-${t} ${hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'}`} />)}</span>;
+  return <span className="pinyin-tile-tones" aria-hidden="true">{tones.map(t => <TileToneBadge key={t} tone={t} state={hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'} />)}</span>;
+}
+
+// Pitch mark drawn inside a tile badge, in a 20×20 box: level, rising, dip-and-rise,
+// falling, and a bold centre dot for the neutral tone.
+const BADGE_MARKS: Record<Exclude<Tone, 5>, string> = { 1: 'M5 10 L15 10', 2: 'M6 14 L14 6', 3: 'M5 7 Q8.5 15.5 11.5 13 T15 6', 4: 'M6 6 L14 14' };
+
+/**
+ * One tone position on a grid tile. Inputs: the tone and its state — 'on' (recorded:
+ * solid tone-coloured circle, light mark), 'off' (the tone exists but has no
+ * recording: hollow ring with the mark in the tone's colour; the neutral tone is
+ * grey) or 'none' (the syllable has no such tone: an empty slot that keeps the
+ * five positions aligned).
+ */
+function TileToneBadge({ tone, state }: { tone: Tone; state: 'on' | 'off' | 'none' }) {
+  if (state === 'none') return <span className={`pinyin-tile-badge tone-${tone} none`} />;
+  return <svg viewBox="0 0 20 20" className={`pinyin-tile-badge tone-${tone} ${state}`} focusable="false">
+    <circle cx="10" cy="10" r="9" className="pinyin-tile-badge-ring" />
+    {tone === 5 ? <circle cx="10" cy="10" r="3.4" className="pinyin-tile-badge-dot" /> : <path d={BADGE_MARKS[tone]} className="pinyin-tile-badge-mark" />}
+  </svg>;
 }
 
 // Chart instances currently mounted, and whether the last one left to open a character's
