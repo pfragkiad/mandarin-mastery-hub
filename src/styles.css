@@ -1627,3 +1627,10 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    translation instead of being spread between box and translation. */
 .word-grid:not(.library-list-view) .word-card .word-open,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { justify-content: flex-start; gap: 7px; }
+/* Compact word and glyph cards fit their content instead of a fixed 224px frame;
+   cards in the same grid row still share one height (grid stretch), so a row only
+   grows when one of its translations needs a second line (clamped at two). */
+.vocab-word-grid:not(.list-view):not(.library-list-view) .word-card,
+.catalog-entry-grid:not(.library-list-view) .catalog-card { height: auto; grid-template-rows: 33px auto 40px; }
+.vocab-word-grid:not(.library-list-view) .word-card .word-open,
+.catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { height: auto; padding-bottom: 12px; }
