@@ -53,13 +53,17 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
  * cheap result sets such as the Sound chart's syllables), every edit — keystrokes included —
  * applies synchronously with no wait cursor or frame delay, so the applied value catches
  * up before the next keystroke and the draft-sync effect never rolls typing back. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [], searchKey }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [], searchKey, searchModeKey }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T; /** Search-mode field (Pinyin/Exact) that alone never offers Apply while the search text is empty. */ searchModeKey?: keyof T }) {
   const controls = useDraftFilters(applied);
   const formRef = useRef<HTMLFormElement>(null);
   const autoApply = autoApplyProp || live;
   const small = useSmallLibraryScreen();
   const [sheetOpen, setSheetOpen] = useState(false);
-  const changed = JSON.stringify(controls.draft) !== JSON.stringify(applied);
+  // A search mode (Pinyin/Exact) only matters once there is text to search: with an empty
+  // search box, toggling it alone filters nothing, so it must not offer Apply. The toggled
+  // mode stays in the draft and is applied together with the next typed text or filter.
+  const comparable = (values: T) => searchKey && searchModeKey && !String(controls.draft[searchKey] ?? '') ? { ...values, [searchModeKey]: undefined } : values;
+  const changed = JSON.stringify(comparable(controls.draft)) !== JSON.stringify(comparable(applied));
   const [pending, startTransition] = useTransition();
   useWaitCursor(autoApply && pending);
   // Auto-submit an edit with the same painted-wait-cursor pattern as FilterForm's Apply.
