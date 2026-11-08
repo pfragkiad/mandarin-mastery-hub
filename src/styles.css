@@ -644,7 +644,7 @@ this keeps the number right beside the stroke tile. */
 .discovery-sound-count { font-size: 11px; color: var(--muted-foreground); }
 .discovery-sound .overview-record-link > strong.discovery-sound-syllable { font-family: var(--font-display); font-size: 30px; }
 .discovery-sound-tones { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
-.discovery-sound-tone { min-height: 26px; padding: 0 9px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--pinyin, var(--terracotta)); font-size: 12px; cursor: pointer; transition: border-color .18s ease, background-color .18s ease; }
+.discovery-sound-tone { min-height: 26px; padding: 0 9px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--terracotta); font-family: var(--font-sans); font-size: 12px; cursor: pointer; transition: border-color .18s ease, background-color .18s ease; }
 .discovery-sound-tone:hover,.discovery-sound-tone:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); background: color-mix(in oklab, var(--primary) 10%, transparent); }
 .discovery-sound-tone.is-playing { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 18%, transparent); }
 
@@ -655,7 +655,7 @@ this keeps the number right beside the stroke tile. */
 .overview-game-group > h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font-family: var(--font-display); font-weight: 400; font-size: 22px; margin: 0 0 14px; }
 .overview-game-group-icon { align-self: center; display: inline-grid; place-items: center; color: var(--primary); }
 .overview-game-group-icon svg { width: 22px; height: 22px; }
-.overview-game-group-note { font-family: var(--font-sans, inherit); font-size: 11px; color: var(--muted-foreground); }
+.overview-game-group-note { font-family: var(--font-sans); font-size: 11px; color: var(--muted-foreground); }
 .overview-game-list { display: grid; grid-template-columns: repeat(var(--game-count), minmax(0,1fr)); gap: 14px; }
 .overview-game-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
 .overview-game-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 6px; background: var(--secondary); color: var(--primary); }
