@@ -80,8 +80,9 @@ describe('Unknown-card bookmarks', () => {
 
 describe('Card details and Back', () => {
   it('offers Details only on the answer side and Back resumes the same turned-over card', async () => {
-    const page = () => <FlashcardSessionProvider><FlashcardsPage /></FlashcardSessionProvider>;
-    const view = render(page());
+    // The provider stays mounted (as at the app root) while the page leaves and returns.
+    const page = (shown: boolean) => <FlashcardSessionProvider>{shown && <FlashcardsPage />}</FlashcardSessionProvider>;
+    const view = render(page(true));
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('link', { name: 'Open details for 你好' })).not.toBeInTheDocument();
@@ -91,8 +92,8 @@ describe('Card details and Back', () => {
     fireEvent.click(details);
     expect(detailTrail.get()).toEqual([{ label: 'Flashcards', href: window.location.href }]);
     // Leaving for the details page and coming Back remounts the game.
-    view.unmount();
-    render(page());
+    view.rerender(page(false));
+    view.rerender(page(true));
     expect(screen.getByText('Card 1 of 1')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
     expect(detailTrail.get()).toEqual([]);
