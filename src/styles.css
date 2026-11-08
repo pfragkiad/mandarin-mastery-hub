@@ -1754,6 +1754,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .tone-2 { --tone-ink: var(--tone-2); }
 .tone-3 { --tone-ink: var(--tone-3); }
 .tone-4 { --tone-ink: var(--tone-4); }
+/* Neutral tone: grey, and only ever hollow in the grid (no recordings exist). */
+.pinyin-tile-tones .tone-5 { --tone-ink: var(--muted-foreground); }
 .pinyin-tile-tones .on { background: var(--tone-ink); }
 .pinyin-tile-tones .off { border: 1px solid var(--tone-ink); }
 .pinyin-tile-tones .none { background: transparent; }
