@@ -3,7 +3,7 @@
 // player, the applied URL filters and the URL-selected syllable and tone (both live
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
-import { useEffect, useMemo, useRef, useSyncExternalStore } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { ArrowLeft, ListMusic, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -126,16 +126,10 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     if (!tile) return;
     // While the small-screen window is open, focus stays inside it (the tile is only scrolled to).
     if (!document.querySelector('.pinyin-sound-sheet')) tile.focus({ preventScroll: true });
-    // Scroll only when the tile is not fully visible: below the sticky header
-    // (84px, matching .pinyin-player's top) and above the phone-size player
-    // docked at the bottom of the window, so visible tiles never move.
-    // The docked player touches the window bottom (its expanded details can be tall);
-    // the beside-the-grid player on wider screens never does.
-    const rect = tile.getBoundingClientRect();
-    const player = chartRef.current?.querySelector<HTMLElement>('.pinyin-player')?.getBoundingClientRect();
-    const docked = Boolean(player && player.bottom >= window.innerHeight - 2 && player.top > 84 && player.left < rect.right && player.right > rect.left);
-    const bottom = docked && player ? player.top : window.innerHeight;
-    // Centre the tile in the visible band between the header and the docked player.
+    // Scroll only when the tile is not fully visible below the sticky header
+    // (84px, matching .pinyin-player's top), so visible tiles never move;
+    // then centre it in the visible band.
+    const rect = tile.getBoundingClientRect(), bottom = window.innerHeight;
     if (rect.top < 84 || rect.bottom > bottom) window.scrollBy({ top: rect.top + rect.height / 2 - (84 + bottom) / 2, behavior });
   };
   useEffect(() => {
@@ -174,6 +168,9 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   const position = syllable ? ordered.findIndex(s => s.base === syllable.base) : -1;
   const step = (index: number) => { const target = ordered[index]; if (!target) return; player.stop(); soundTrail.clear(); revealRef.current = target.base; onSelect(target.base); };
   const closedBase = useRef<string | null>(null);
+  // The tile whose small-screen window was just closed keeps the hover look (.is-recent)
+  // so the eye finds it again; pointing at another tile, or choosing any tile, drops it.
+  const [recent, setRecent] = useState<string | null>(null);
   const panel = (inSheet: boolean) => <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone} inSheet={inSheet}
     onPlayAll={() => { if (!syllable) return; onTone(undefined); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }}
     onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }} />;
@@ -191,12 +188,13 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
           const sounds = s.tones.filter(t => t !== 5).map(t => progress[soundId(s.base, t)]);
           const review = sounds.some(needsReview), done = sounds.some(answered);
           const recorded = s.tones.filter(t => hasRecording(data, s.base, t)).length;
-          return <button key={s.base} type="button" data-base={s.base} className={`pinyin-tile${s.base === selected ? ' is-selected' : ''}`} aria-pressed={s.base === selected}
+          return <button key={s.base} type="button" data-base={s.base} className={`pinyin-tile${s.base === selected ? ' is-selected' : ''}${s.base === recent ? ' is-recent' : ''}`}
+            onPointerEnter={() => { if (recent && recent !== s.base) setRecent(null); }} aria-pressed={s.base === selected}
             aria-label={`${s.base}, ${recorded} tone${recorded === 1 ? '' : 's'} recorded${review ? ', needs review' : done ? ', practised' : ''}`}
             // Selecting a tile only opens it in the player — it never plays or highlights
             // a tone by itself; any sound still running from the previous syllable stops.
             // A grid card starts a fresh Back trail, like Previous/Next in the details window.
-            onClick={() => { player.stop(); soundTrail.clear(); onSelect(s.base === selected ? undefined : s.base); }}>
+            onClick={() => { setRecent(null); player.stop(); soundTrail.clear(); onSelect(s.base === selected ? undefined : s.base); }}>
             <span className="pinyin-tile-base" lang="zh-Latn-pinyin">{s.base}</span>
             <TileTones data={data} syllable={s} />
             {(review || done) && <span className={`pinyin-tile-state ${review ? 'review' : 'done'}`} aria-hidden="true" />}
@@ -212,7 +210,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
         onClose={() => { closedBase.current = syllable?.base ?? null; player.stop(); soundTrail.clear(); onSelect(undefined); }}
-        onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) requestAnimationFrame(() => revealTile(base, 'auto')); }}>
+        onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) { setRecent(base); requestAnimationFrame(() => revealTile(base, 'auto')); } }}>
         {panel(true)}
       </PinyinSoundSheet>
       : panel(false)}
