@@ -12,7 +12,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { PracticeSheet } from './practice-sheet';
 import { AnimationSpeedControl } from './animation-speed-control';
-import { DEFAULT_SPEED_INDEX, SPEEDS } from '@/lib/practice-speed';
+import { strokeSpeed } from '@/lib/practice-speed';
 import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 
@@ -56,7 +56,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   const [outline, setOutline] = useState<string | null>(null);
   const [arrows, setArrows] = useState(false);
   const [median, setMedian] = useState<MedianPoint[]>([]);
-  const [speed, setSpeedValue] = useState<number>(SPEEDS[DEFAULT_SPEED_INDEX] ?? 0.5);
+  const [speed, setSpeedValue] = useState<number>(() => strokeSpeed(preferences.animationSpeed));
   const speedRef = useRef(speed);
   speedRef.current = speed;
 
