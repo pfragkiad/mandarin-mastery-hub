@@ -13,7 +13,7 @@ import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
-import { characterDestinations, syllableCharacters } from '@/lib/syllable-characters';
+import { characterDestinations, radicalDestinations, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
@@ -30,6 +30,9 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   // catalogVersion is 0 until the lazily fetched catalogue is installed.
   const entries = useMemo(() => (catalogVersion ? libraryEntries('Characters') : []), [catalogVersion]);
   const destinations = useMemo(() => characterDestinations(entries, includeTraditional), [entries, includeTraditional]);
+  // A character that is itself a Kangxi radical (exact sourced identity) opens its radical card.
+  const radicalCard = useMemo(() => (catalogVersion ? radicalDestinations(libraryEntries('Radicals'), includeTraditional) : () => undefined), [catalogVersion, includeTraditional]);
+  const destinationFor = (entry: (typeof entries)[number]) => radicalCard(entry.hanzi) ?? destinations.get(entry.id) ?? { tab: 'Characters' as const, id: entry.id };
   const matches = useMemo(() => (tone === null || !entries.length ? [] : syllableCharacters(entries, base, tone, includeTraditional)), [entries, base, tone, includeTraditional]);
   const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
 
@@ -42,7 +45,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
         <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id} className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}>
           {/* Only the hanzi box is the link (like decomposition tiles), so hover and focus
               outline the box alone; the rank and meaning beside it stay plain, selectable text. */}
-          <Link to="/characters" search={destinations.get(entry.id) ?? { tab: 'Characters', id: entry.id }}
+          <Link to="/characters" search={destinationFor(entry)}
             className="pinyin-character-glyph" lang="zh-CN"
             title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
