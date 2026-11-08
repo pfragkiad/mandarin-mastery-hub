@@ -5,6 +5,7 @@ import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
 import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
+import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate, useRouter } from '@tanstack/react-router';
@@ -100,12 +101,19 @@ function WriterStatus({ message, ink }: { message: string; ink: string }) {
     <p ref={box} className="writer-status" aria-live="polite">
       {match ? (
         <span className="writer-status-text">
-          {lead && <><span ref={leadRef}>{lead}</span>{' '}</>}
+          {lead && <><span ref={leadRef}>{gradePercents(lead)}</span>{' '}</>}
           <strong className={`writer-status-cue${lead && !leadWraps ? ' writer-status-cue-break' : ''}`} style={{ color: ink }}>{match[1]}</strong>
         </span>
-      ) : message}
+      ) : gradePercents(message)}
     </p>
   );
+}
+
+// Colours each "NN%" in a status message by its grade band (see accuracyGrade); the text itself is unchanged.
+function gradePercents(text: string): React.ReactNode {
+  const parts = text.split(/(\d+%)/);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) => i % 2 ? <span key={i} className={`accuracy-grade accuracy-grade-${accuracyGrade(parseInt(part, 10))}`}>{part}</span> : part);
 }
 
 function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
