@@ -47,6 +47,10 @@ function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSylla
 // survives React's development double-mount without wiping the trail.
 let chartMounts = 0;
 let leftForCharacter = false;
+// A Back step is identified by its history entry, not just its URL: following
+// sound-alikes lai → lei → lai reaches the same URL again as a new entry, which must
+// not count as "returned" and drop the step.
+const historyEntry = () => `${window.location.href}#${(window.history.state as { __TSR_key?: string } | null)?.__TSR_key ?? ''}`;
 
 export function PinyinChart({ data, progress, player, filters, selected, tone, slow, onSlow, onSelect, onTone, onFilters }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; tone: Tone | null; slow: boolean;
@@ -64,7 +68,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   const chooseTone = (t: Tone) => { onTone(t); if (syllable && hasRecording(data, syllable.base, t)) void player.play(sound(syllable.base, t)); };
 
   // Drop the card's Back step once history is back at it (card Back or browser Back).
-  useEffect(() => { soundTrail.sync(window.location.href); }, [selected, tone]);
+  useEffect(() => { soundTrail.sync(historyEntry()); }, [selected, tone]);
   useEffect(() => {
     chartMounts += 1; leftForCharacter = false;
     return () => { chartMounts -= 1; setTimeout(() => { if (chartMounts === 0 && !leftForCharacter) soundTrail.clear(); }, 0); };
@@ -109,7 +113,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   // keep the chosen tone when the other syllable has it, and play it if recorded.
   const selectAlike = (base: string, label: string, current: Tone | null) => {
     const keep = current !== null && findSyllable(data, base)?.tones.includes(current) ? current : undefined;
-    soundTrail.push({ label, href: window.location.href });
+    soundTrail.push({ label, href: historyEntry() });
     revealRef.current = base;
     onSelect(base, keep);
     if (keep !== undefined && hasRecording(data, base, keep)) void player.play(sound(base, keep));
