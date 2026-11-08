@@ -36,7 +36,9 @@ function PinyinRoute() {
     // tone only replaces the current entry, so tone clicks never pile up history steps.
     onSelect={(s, t) => navigate({ search: prev => ({ ...prev, s, t: s ? t : undefined }), resetScroll: false, replace: !s })}
     onTone={t => navigate({ search: prev => ({ ...prev, t }), resetScroll: false, replace: true })}
-    onChartFilters={f => navigate({ search: prev => ({ ...prev, q: f.q || undefined, initial: f.initial || undefined, final: f.final || undefined }), resetScroll: false })}
+    // The chart search applies on every keystroke, so text-only edits replace the current
+    // history entry (no step per letter); initial/final dropdown changes still push one.
+    onChartFilters={f => navigate({ search: prev => ({ ...prev, q: f.q || undefined, initial: f.initial || undefined, final: f.final || undefined }), resetScroll: false, replace: (f.initial || undefined) === search.initial && (f.final || undefined) === search.final })}
     onDrillFilters={f => navigate({ search: prev => ({ ...prev, initial: f.initial || undefined, final: f.final || undefined, focus: f.focus || undefined }), resetScroll: false })}
   />;
 }
