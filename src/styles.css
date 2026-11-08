@@ -1869,3 +1869,56 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
   .pinyin-drill-prompt { font-size: 18px; }
   .pinyin-next { margin-left: 0; }
 }
+
+/* Comfortable mode for the Sound chart. Nothing new in behaviour: the selected-sound card
+   (beside the grid, or in the small-screen window that already shares .detail-sheet) grows
+   with the same tokens the Glyphs/Vocabulary details use — 13px labels, 16px readings and
+   notes, the shared reference hanzi box — and the grid tiles simply get larger. */
+html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) 380px; }
+html[data-display-size='comfortable'] .pinyin-progress { font-size: var(--ui-label-size); }
+html[data-display-size='comfortable'] .pinyin-group-title { font-size: 12px; letter-spacing: 1px; }
+html[data-display-size='comfortable'] .pinyin-group-title span { font-size: 14px; }
+html[data-display-size='comfortable'] .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; }
+html[data-display-size='comfortable'] .pinyin-tile { min-height: 68px; gap: 8px; }
+html[data-display-size='comfortable'] .pinyin-tile-base { font-size: 18px; }
+html[data-display-size='comfortable'] .pinyin-tile-tones { gap: 3px; }
+html[data-display-size='comfortable'] .pinyin-tile-badge { width: 12px; height: 12px; }
+html[data-display-size='comfortable'] .pinyin-tile-state { width: 7px; height: 7px; }
+html[data-display-size='comfortable'] .pinyin-player { gap: 14px; }
+html[data-display-size='comfortable'] .pinyin-player-empty { font-size: 21px; }
+html[data-display-size='comfortable'] .pinyin-player-tip { font-size: 14px; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 48px; }
+html[data-display-size='comfortable'] .pinyin-player-tone { font-size: 13px; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-player-back.pinyin-player-back { height: 32px; font-size: 13px; }
+html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 10px 4px 8px; gap: 4px; }
+html[data-display-size='comfortable'] .pinyin-tone-button small { font-size: 12px; }
+html[data-display-size='comfortable'] .pinyin-tone-button.is-unrecorded small { font-size: 11px; }
+html[data-display-size='comfortable'] .pinyin-tone-button .tone-contour { width: 40px; height: 26px; }
+html[data-display-size='comfortable'] .pinyin-player-actions { gap: 10px; }
+html[data-display-size='comfortable'] .pinyin-playall { min-height: 40px; }
+html[data-display-size='comfortable'] :is(.pinyin-slow, .pinyin-audio-error) { font-size: var(--ui-label-size); }
+html[data-display-size='comfortable'] .pinyin-parts { gap: 6px 18px; padding-top: 14px; }
+html[data-display-size='comfortable'] .pinyin-parts dt { font-size: 12px; letter-spacing: 0; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-parts dd { font-size: 16px; line-height: 1.5; }
+html[data-display-size='comfortable'] :is(.pinyin-note, .pinyin-characters-note) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; padding: 5px 14px; }
+html[data-display-size='comfortable'] .pinyin-character-list { gap: var(--record-tile-gap); }
+html[data-display-size='comfortable'] .pinyin-character { grid-template-columns: var(--reference-glyph-box-size) minmax(0, 1fr); gap: 12px; }
+html[data-display-size='comfortable'] .pinyin-character-glyph { height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
+html[data-display-size='comfortable'] .pinyin-character-text { gap: 3px; }
+html[data-display-size='comfortable'] .pinyin-character-text .component-reuse-label { font-size: 13px; line-height: 1.4; }
+html[data-display-size='comfortable'] .pinyin-character-meaning { font-size: var(--reference-translation-size); line-height: 1.5; }
+html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-more { font-size: 14px; }
+@media (max-width: 850px) {
+  html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); }
+  html[data-display-size='comfortable'] .pinyin-player-empty { font-size: 17px; }
+  html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 34px; }
+}
+@media (max-width: 580px) {
+  html[data-display-size='comfortable'] .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 8px; }
+  html[data-display-size='comfortable'] .pinyin-tile { min-height: 62px; }
+  html[data-display-size='comfortable'] .pinyin-tile-base { font-size: 17px; }
+  /* 5 × 11px + 4 × 2px = 63px, inside the 64px a 76px tile leaves after padding. */
+  html[data-display-size='comfortable'] .pinyin-tile-tones { gap: 2px; }
+  html[data-display-size='comfortable'] .pinyin-tile-badge { width: 11px; height: 11px; }
+}
