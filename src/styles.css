@@ -335,7 +335,8 @@
 .writer-speed-options { flex-shrink: 0; }
 /* Practice writing square spans the card's content width (same edges as the
    mode tabs and the Play/Reset row). */
-.writer-board { width: 100%; margin: 0 auto; }
+.writer-board { width: min(100%, 300px); margin: 0 auto; }
+.writing-tool-tabbed > .writer-board { width: 100%; }
 .writer-board .writing-grid { width: 100%; margin: 20px 0 22px; }
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .stroke-guide-heading > button { flex-shrink: 0; }
