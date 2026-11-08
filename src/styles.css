@@ -325,10 +325,11 @@
 .decomposition-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
 .writer-controls-arranged { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
 .writer-playback { grid-column: 1 / -1; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-.writer-playback > button { flex: 0 0 auto; }
-.writer-playback > button:first-child { min-width: max-content; }
+/* Play and Reset share one width; the hidden "Resume" (longest Play label) keeps
+   the button from changing size while toggling Play/Pause/Resume. */
+.writer-playback > button { flex: 0 0 auto; min-width: 7rem; justify-content: center; }
 .writer-play-label { display: inline-block; }
-.writer-play-label::before { content: 'Play strokes'; display: block; height: 0; overflow: hidden; visibility: hidden; }
+.writer-play-label::before { content: 'Resume'; display: block; height: 0; overflow: hidden; visibility: hidden; }
 .writer-playback .writer-speed { flex: 1 0 auto; min-width: max-content; margin-left: 0; gap: 8px; justify-content: flex-end; }
 .writer-speed-label { white-space: nowrap; }
 .writer-speed-options { flex-shrink: 0; }
