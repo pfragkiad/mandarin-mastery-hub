@@ -8,3 +8,4 @@
 - Sound chart dropdowns narrow through chartFilterOptions (applied search plus the other dropdown, never themselves, current value kept), so every offered initial/final still leads to syllables.
 - On small screens (≤850px) the Sound chart card opens in PinyinSoundSheet, a top-anchored modal sharing .detail-sheet styles, so tone changes only grow the card downward; Previous/Next walk the visible grid and start a fresh soundTrail.
 - On phones, DraftFilterForm `searchKey` adds a search-box X that clears only that text field (re-applying the other applied filters/modes, or just emptying unapplied typing), because phones hide the desktop clear-all X.
+- DraftFilterForm `searchModeKey` (Pinyin/Exact) is ignored when deciding whether to offer Apply while the search text is empty, because a mode alone filters nothing; the toggled mode stays drafted and applies with the next text.
