@@ -1775,7 +1775,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-characters { display: flex; flex-direction: column; gap: 8px; }
 .pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
 .pinyin-character-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 6px; list-style: none; margin: 0; padding: 0; }
-.pinyin-character { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi, inherit); font-size: 22px; color: var(--foreground); text-decoration: none; transition: border-color .15s, color .15s; }
+.pinyin-character { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--foreground); text-decoration: none; transition: border-color .15s, color .15s; }
 .pinyin-character:hover, .pinyin-character:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
 .pinyin-characters-more.pinyin-characters-more { align-self: flex-start; height: auto; padding: 0; font-size: 12px; }
 .tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
