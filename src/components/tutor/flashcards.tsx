@@ -9,7 +9,7 @@ import { RotateCcw, Shuffle, Volume2, Check, X, Play, Bookmark } from 'lucide-re
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { includeScript, type CharacterScript } from '@/lib/learning-preferences';
+import { includeScript } from '@/lib/learning-preferences';
 import { collections, partOfSpeechList, partOfSpeechOptions, vocabularyKind, type Word } from '@/lib/mandarin';
 import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';

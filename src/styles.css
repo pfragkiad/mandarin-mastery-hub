@@ -167,6 +167,9 @@
 .flash-face > .flash-hint { font-size: 10px; color: var(--muted-foreground); letter-spacing: 1px; position: absolute; bottom: 14px; }
 @media(max-width:580px) { .flash-word { font-size: 23px; } .flash-face { padding-inline: 20px; } }
 .flash-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+/* Details link in the answer side's top-right corner, clickable above the flip area. */
+.flash-face.back > .flash-details { position: absolute; top: 10px; right: 10px; pointer-events: auto; gap: 6px; color: var(--muted-foreground); }
+.flash-face.back > .flash-details:hover { background: transparent; color: var(--primary); }
 .flash-result { text-align: center; border: 1px solid var(--border); border-radius: 10px; background: var(--card); padding: 36px 24px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
 .flash-result strong { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--primary); }
 .flash-missed { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }.flash-missed a { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; color: var(--foreground); text-decoration: none; transition: border-color .2s, background .2s; }.flash-missed a:hover { border-color: var(--primary); background: var(--secondary); }.flash-missed a span { font-family: var(--font-hanzi); font-size: 22px; }.flash-missed a small { font-size: 10px; color: var(--muted-foreground); }
