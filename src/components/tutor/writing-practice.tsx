@@ -221,6 +221,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const speed = strokeSpeed(preferences.animationSpeed);
   const speedRef = useRef(speed);
   speedRef.current = speed;
+  // Per-mode handwriting strictness (Hanzi Writer leniency) from Settings.
+  const strictness = leniency(mode === 'recall' ? preferences.recallLeniency : preferences.traceLeniency);
   const [groupSelection, setGroupSelection] = useState({ character, id: '' });
   const selectedGroup = groupSelection.character === character ? groupSelection.id : '';
   const [retry, setRetry] = useState(0);
@@ -307,7 +309,14 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       // mousedown/touchstart listeners, so re-arming here lets this very drag
       // begin the fresh round.
       const el = target.current;
-      const rearmOnDrag = () => { if (needsRearm.current) quizRef.current(); };
+      // Drawing must always be possible: after a finished round start fresh;
+      // if no quiz is listening (Play running/paused or a cancelled run),
+      // stop the animation and arm the quiz at the next undrawn stroke.
+      const rearmOnDrag = () => {
+        if (needsRearm.current) { quizRef.current(0); return; }
+        const live = writer.current as unknown as { _quiz?: unknown } | null;
+        if (live && !live._quiz) quizRef.current(tracePos.current < strokesRef.current ? tracePos.current : 0);
+      };
       el.addEventListener('mousedown', rearmOnDrag, true);
       el.addEventListener('touchstart', rearmOnDrag, true);
       cleanupRearm = () => { el.removeEventListener('mousedown', rearmOnDrag, true); el.removeEventListener('touchstart', rearmOnDrag, true); };
@@ -393,7 +402,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Trace: next undrawn stroke (clicked prefix or hand-drawn), so Play continues from there.
   const tracePos = useRef(0);
   let cleanupRearm: (() => void) | null = null;
-  const quizRef = useRef<() => void>(() => {});
+  const quizRef = useRef<(start?: number) => void>(() => {});
+  const strokesRef = useRef(0);
+  strokesRef.current = strokes.length;
   // Native quizStartStrokeNum displays the exact completed prefix and validates
   // only the remaining strokes; displayed strokes deliberately keep null scores.
   const quiz = (startStroke = 0) => {
@@ -415,7 +426,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     }
     setMessage(startStroke ? `Continue tracing from stroke ${startStroke + 1} of ${strokes.length}.` : 'Draw the character in the square.');
     let completionHandled = false;
-    instance.quiz({ ...practiceModeOptions(mode), quizStartStrokeNum: startStroke,
+    instance.quiz({ ...practiceModeOptions(mode), leniency: strictness, quizStartStrokeNum: startStroke,
       onMistake: () => { if (animationRun.current === run) setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'); },
       onCorrectStroke: ({ strokeNum, mistakesOnStroke }) => {
         if (animationRun.current !== run) return;
