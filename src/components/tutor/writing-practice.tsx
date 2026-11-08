@@ -93,7 +93,8 @@ function WriterStatus({ message, ink }: { message: string; ink: string }) {
     // Count distinct line tops (graded percentages split the span into several rects on one line).
     const measure = () => {
       const rects = Array.from(leadRef.current?.getClientRects() ?? []);
-      setLeadWraps(rects.some(rect => rect.top > rects[0].top + rect.height / 2));
+      const firstTop = rects[0]?.top ?? 0;
+      setLeadWraps(rects.some(rect => rect.top > firstTop + rect.height / 2));
     };
     measure();
     if (!box.current || typeof ResizeObserver === 'undefined') return;
