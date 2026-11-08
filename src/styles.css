@@ -1550,6 +1550,8 @@ html[data-display-size='comfortable'] {
   html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field input { width: 0; min-width: 0; flex: 1; border: 0; padding: 0 4px; height: 42px; font-size: 14px; background: transparent; }
   .library-page .mobile-library-filters .search-field .search-toggle,
   html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field .search-toggle { position: static; transform: none; flex-shrink: 0; padding: 0 6px; min-width: 0; height: 36px; min-height: 36px; font-size: 11px; }
+  /* Apply and the search-box X share the form's trailing column, side by side. */
+  .mobile-search-actions { display: inline-flex; align-items: center; gap: 2px; }
   .mobile-filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
   .library-page .catalog-tools-row { gap: 6px; margin-top: 8px; margin-bottom: 12px; }
   .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
