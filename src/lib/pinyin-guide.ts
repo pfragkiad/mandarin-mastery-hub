@@ -187,14 +187,35 @@ export const isScored = (verdict: TypedVerdict) => verdict === 'correct' || verd
 export const TONE_NAMES: Record<Tone, string> = { 1: '1st tone', 2: '2nd tone', 3: '3rd tone', 4: '4th tone', 5: 'Neutral tone' };
 export const TONE_HINTS: Record<Tone, string> = { 1: 'High and level', 2: 'Rising', 3: 'Low, dipping', 4: 'Falling sharply', 5: 'Light and short' };
 
+/**
+ * Attested tones 1–4 with no recording. The importer publishes a recording for every
+ * attested non-neutral tone, so any entry here means the two sidecars are out of sync
+ * (e.g. a page still holding a half-imported recording list) — never a real gap.
+ */
+export function missingRecordings(data: Pick<PinyinData, 'syllables' | 'recordings'>): string[] {
+  return data.syllables.flatMap(s => s.tones.filter(t => t !== 5 && !hasRecording(data, s.base, t)).map(t => soundId(s.base, t)));
+}
+
+/** Raised when the loaded recording list doesn't cover the inventory; the page asks for a reload instead of showing false "No recording" states. */
+export class IncompletePinyinDataError extends Error {
+  constructor(readonly missing: string[]) { super(`Pinyin recording list is incomplete (${missing.length} missing)`); }
+}
+
 /** Lazily load both sidecars so ~1,300 recording entries never enter page bundles. */
 let loading: Promise<PinyinData> | null = null;
 export function loadPinyinData(): Promise<PinyinData> {
-  loading ??= Promise.all([import('@/data/pinyin/inventory.json'), import('@/data/pinyin/audio.json')]).then(([inventory, audio]) => ({
-    syllables: (inventory.default.syllables as PinyinSyllable[]),
-    recordings: audio.default.recordings as Record<string, PinyinRecording>,
-    inventorySource: inventory.default.source,
-    audioSource: audio.default.source,
-  })).catch(error => { loading = null; throw error; });
+  loading ??= Promise.all([import('@/data/pinyin/inventory.json'), import('@/data/pinyin/audio.json')]).then(([inventory, audio]) => {
+    const data: PinyinData = {
+      syllables: (inventory.default.syllables as PinyinSyllable[]),
+      recordings: audio.default.recordings as Record<string, PinyinRecording>,
+      inventorySource: inventory.default.source,
+      audioSource: audio.default.source,
+    };
+    const missing = missingRecordings(data);
+    if (missing.length) throw new IncompletePinyinDataError(missing);
+    return data;
+  }).catch(error => { loading = null; throw error; });
   return loading;
 }
+// Dev only: drop the memoised sidecars when files change so an open tab never keeps an older recording list.
+if (import.meta.hot) import.meta.hot.on('vite:beforeUpdate', () => { loading = null; });

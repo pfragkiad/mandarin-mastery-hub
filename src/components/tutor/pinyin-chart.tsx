@@ -114,7 +114,8 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       const playable = hasRecording(data, syllable.base, t);
       return <button key={t} type="button" className={`pinyin-tone-button${t === tone ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} disabled={!playable}
         aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : 'No recording for the neutral tone'} onClick={() => onTone(t)}>
-        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{playable ? t : 'No recording'}</small>
+        {/* Neutral tone: name the tone, not the bare syllable, so "No recording" never reads as the whole syllable missing. */}
+        <ToneContour tone={t} />{t === 5 ? <span>Neutral</span> : <span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span>}<small>{playable ? t : 'No recording'}</small>
       </button>;
     })}</div>
     <div className="pinyin-player-actions">
