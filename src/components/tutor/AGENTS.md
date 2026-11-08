@@ -1,0 +1,1 @@
+- The Settings handwriting try pad (大) reads the live Trace/Recall strictness and Practice mode options, so it always judges strokes exactly as Practice will; its mode switch is local and never saved.
