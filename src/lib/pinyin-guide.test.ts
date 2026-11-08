@@ -96,3 +96,22 @@ describe('shipped pinyin sidecars', () => {
     expect(missingRecordings(data)).toEqual(['shang1', 'shang3', 'shang4']);
   });
 });
+
+describe('Start page random sound', () => {
+  // Only zhi5 is "recorded" for a tone-5-only syllable: neutral tones never count.
+  const sparse: PinyinData = { ...data, syllables: [...data.syllables, { base: 'm', initial: 'm', final: '', tones: [5], note: null }], recordings: { ...data.recordings, m5: rec } };
+  it('never picks a syllable without at least one recorded tone', () => {
+    for (let i = 0; i < 50; i++) {
+      const picked = randomRecordedSyllable(sparse, undefined, () => i / 50)!;
+      expect(picked.base).not.toBe('m');
+      expect(recordedTones(sparse, picked).length).toBeGreaterThan(0);
+    }
+  });
+  it('offers only recorded tones, never the neutral tone', () => {
+    expect(recordedTones(data, data.syllables[0]!)).toEqual([1, 2, 3, 4]);
+    expect(recordedTones(data, data.syllables[3]!)).toEqual([3, 4]);
+  });
+  it('shuffles to a different syllable when another exists', () => {
+    for (let i = 0; i < 20; i++) expect(randomRecordedSyllable(data, 'ji', () => i / 20)!.base).not.toBe('ji');
+  });
+});
