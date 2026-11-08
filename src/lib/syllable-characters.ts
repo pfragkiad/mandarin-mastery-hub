@@ -14,6 +14,15 @@ export function syllableCharacters(entries: LibraryEntry[], base: string, tone: 
 }
 
 export type RadicalCardSearch = { tab: 'Radicals'; id: string; page?: number; variant?: string };
+type RadicalCard = { search: RadicalCardSearch; entry: LibraryEntry };
+
+/** Sound-card order: characters that resolve to a radical card come first (by the radical
+ *  family's own supplied rank, unranked radicals after ranked ones), then ordinary
+ *  characters in their existing order. Stable, so equal ranks keep catalogue order. */
+export function radicalsFirst<T>(rows: T[], radicalRank: (row: T) => number | null | undefined): T[] {
+  const key = (row: T) => { const rank = radicalRank(row); return rank === undefined ? 2 : rank === null ? 1 : 0; };
+  return [...rows].sort((a, b) => key(a) - key(b) || (key(a) === 0 ? (radicalRank(a) as number) - (radicalRank(b) as number) : 0));
+}
 
 /** Resolver from a character to its radical card, so a character that is itself a Kangxi
  *  radical opens the Radicals tab instead of Characters. Resolution, exact only:
@@ -24,15 +33,16 @@ export type RadicalCardSearch = { tab: 'Radicals'; id: string; page?: number; va
  *  Anything else returns undefined and the caller keeps the Characters link. */
 export function radicalDestinations(radicalEntries: LibraryEntry[], includeTraditional = false) {
   const visible = filterLibrary(radicalEntries, '', '', false, includeTraditional);
-  const byGlyph = new Map<string, RadicalCardSearch>();
-  const byNumber = new Map<number, RadicalCardSearch>();
+  const byGlyph = new Map<string, RadicalCard>();
+  const byNumber = new Map<number, RadicalCard>();
   visible.forEach((entry, index) => {
     const page = Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
-    const search: RadicalCardSearch = { tab: 'Radicals', id: entry.id, ...(page > 1 ? { page } : {}) };
-    if (!byGlyph.has(entry.hanzi)) byGlyph.set(entry.hanzi, search);
-    if (entry.kangxiIndex && !byNumber.has(entry.kangxiIndex)) byNumber.set(entry.kangxiIndex, search);
+    const card: RadicalCard = { search: { tab: 'Radicals', id: entry.id, ...(page > 1 ? { page } : {}) }, entry };
+    if (!byGlyph.has(entry.hanzi)) byGlyph.set(entry.hanzi, card);
+    if (entry.kangxiIndex && !byNumber.has(entry.kangxiIndex)) byNumber.set(entry.kangxiIndex, card);
   });
-  return (glyph: string): RadicalCardSearch | undefined => {
+  // Returns the radical card's URL search plus its entry (whose family index gives the rank).
+  return (glyph: string): RadicalCard | undefined => {
     const radicals = radicalIdentity(glyph).radicals;
     if (!radicals.length) return undefined;
     const exact = byGlyph.get(glyph);
@@ -41,7 +51,7 @@ export function radicalDestinations(radicalEntries: LibraryEntry[], includeTradi
     const heading = only ? byNumber.get(only.number) : undefined;
     if (!only || !heading) return undefined;
     const forms = radicalFamily(only.number)?.forms.filter(form => form.character === glyph) ?? [];
-    return forms.length === 1 && forms[0] ? { ...heading, variant: forms[0].key } : heading;
+    return forms.length === 1 && forms[0] ? { ...heading, search: { ...heading.search, variant: forms[0].key } } : heading;
   };
 }
 
