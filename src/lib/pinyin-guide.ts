@@ -121,10 +121,46 @@ export function sortSyllables(list: PinyinSyllable[]): PinyinSyllable[] {
  * Real syllables that differ from `base` in exactly one confusable part and have a
  * recording in the same tone — the options for the sound-alike quiz.
  */
+const partIndex = new WeakMap<PinyinSyllable[], { byBase: Map<string, PinyinSyllable>; byParts: Map<string, string> }>();
+function indexOf(list: PinyinSyllable[]) {
+  let index = partIndex.get(list);
+  if (!index) {
+    index = { byBase: new Map(list.map(s => [s.base, s])), byParts: new Map(list.map(s => [`${s.initial ?? ''}|${s.final}`, s.base])) };
+    partIndex.set(list, index);
+  }
+  return index;
+}
+export const findSyllable = (data: Pick<PinyinData, 'syllables'>, base: string) => indexOf(data.syllables).byBase.get(base);
+
+/** Chart/quiz filters: '' = all, 'group:N' = an INITIAL_GROUPS / FINAL_GROUPS entry, 'none' = no initial, else one exact initial. */
+export function matchesInitial(s: PinyinSyllable, value: string | undefined): boolean {
+  if (!value) return true;
+  const group = value.match(/^group:(\d+)$/);
+  if (group) return INITIAL_GROUPS[Number(group[1])]?.initials.includes(s.initial) ?? false;
+  return value === 'none' ? s.initial === null : s.initial === value;
+}
+export function matchesFinal(s: PinyinSyllable, value: string | undefined): boolean {
+  if (!value) return true;
+  const group = value.match(/^group:(\d+)$/);
+  if (group) return FINAL_GROUPS[Number(group[1])]?.finals.includes(s.final) ?? false;
+  return s.final === value;
+}
+export function initialFilterLabel(value: string | undefined) {
+  if (!value) return 'All initials';
+  const group = value.match(/^group:(\d+)$/);
+  if (group) return INITIAL_GROUPS[Number(group[1])]?.label ?? value;
+  return value === 'none' ? 'No initial' : `Initial ${value}`;
+}
+export function finalFilterLabel(value: string | undefined) {
+  if (!value) return 'All finals';
+  const group = value.match(/^group:(\d+)$/);
+  return group ? `Finals with ${FINAL_GROUPS[Number(group[1])]?.label ?? value}` : `Final ${value}`;
+}
+
 export function soundAlikes(data: PinyinData, base: string, tone: Tone): string[] {
-  const target = data.syllables.find(s => s.base === base);
+  const { byBase, byParts } = indexOf(data.syllables);
+  const target = byBase.get(base);
   if (!target) return [];
-  const byParts = new Map(data.syllables.map(s => [`${s.initial ?? ''}|${s.final}`, s.base]));
   const found = new Set<string>();
   for (const set of CONFUSABLE_INITIALS) if (target.initial && set.includes(target.initial)) for (const other of set) {
     const candidate = byParts.get(`${other}|${target.final}`);
