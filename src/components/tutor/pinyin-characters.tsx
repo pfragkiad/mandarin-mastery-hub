@@ -31,9 +31,8 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const entries = useMemo(() => (catalogVersion ? libraryEntries('Characters') : []), [catalogVersion]);
   const destinations = useMemo(() => characterDestinations(entries, includeTraditional), [entries, includeTraditional]);
   // A character that is itself a Kangxi radical (exact sourced identity) opens its radical card.
-  const radicalCards = useMemo(() => (catalogVersion ? radicalDestinations(libraryEntries('Radicals'), includeTraditional) : new Map()), [catalogVersion, includeTraditional]);
-  const destinationFor = (entry: (typeof entries)[number]) => (radicalIdentity(entry.hanzi).radicals.length ? radicalCards.get(entry.hanzi) : undefined)
-    ?? destinations.get(entry.id) ?? { tab: 'Characters' as const, id: entry.id };
+  const radicalCard = useMemo(() => (catalogVersion ? radicalDestinations(libraryEntries('Radicals'), includeTraditional) : () => undefined), [catalogVersion, includeTraditional]);
+  const destinationFor = (entry: (typeof entries)[number]) => radicalCard(entry.hanzi) ?? destinations.get(entry.id) ?? { tab: 'Characters' as const, id: entry.id };
   const matches = useMemo(() => (tone === null || !entries.length ? [] : syllableCharacters(entries, base, tone, includeTraditional)), [entries, base, tone, includeTraditional]);
   const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
 
