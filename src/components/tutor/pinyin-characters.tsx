@@ -13,7 +13,7 @@ import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
-import { characterDestinations, radicalDestinations, syllableCharacters } from '@/lib/syllable-characters';
+import { characterDestinations, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
@@ -32,8 +32,19 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const destinations = useMemo(() => characterDestinations(entries, includeTraditional), [entries, includeTraditional]);
   // A character that is itself a Kangxi radical (exact sourced identity) opens its radical card.
   const radicalCard = useMemo(() => (catalogVersion ? radicalDestinations(libraryEntries('Radicals'), includeTraditional) : () => undefined), [catalogVersion, includeTraditional]);
-  const destinationFor = (entry: (typeof entries)[number]) => radicalCard(entry.hanzi) ?? destinations.get(entry.id) ?? { tab: 'Characters' as const, id: entry.id };
-  const matches = useMemo(() => (tone === null || !entries.length ? [] : syllableCharacters(entries, base, tone, includeTraditional)), [entries, base, tone, includeTraditional]);
+  const destinationFor = (entry: (typeof entries)[number]) => radicalCard(entry.hanzi)?.search ?? destinations.get(entry.id) ?? { tab: 'Characters' as const, id: entry.id };
+  // A radical row's rank is its radical family's supplied rank (Radicals scope), never the
+  // character-corpus rank; radical rows come first, then ordinary characters by their rank.
+  const rankFor = (entry: (typeof entries)[number]) => {
+    const radical = radicalCard(entry.hanzi);
+    return radical ? { kind: 'Radicals' as const, rank: usageRank(radical.entry, 'Radicals', includeTraditional) } : { kind: 'Characters' as const, rank: usageRank(entry, 'Characters', includeTraditional) };
+  };
+  const usageLoaded = usageOrder.loaded;
+  const matches = useMemo(() => {
+    if (tone === null || !entries.length) return [];
+    const found = syllableCharacters(entries, base, tone, includeTraditional);
+    return radicalsFirst(found, entry => { const radical = radicalCard(entry.hanzi); return radical ? usageRank(radical.entry, 'Radicals', includeTraditional) : undefined; });
+  }, [entries, base, tone, includeTraditional, radicalCard, usageLoaded]);
   const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
 
   return <section className="pinyin-characters" aria-label="In a character">
@@ -62,7 +73,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
               const traditional = entry.script === 'Traditional';
               if (!usageOrder.loaded && !radicals.length && !traditional) return null;
               return <span className="pinyin-character-facts">
-                {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
+                {usageOrder.loaded && (() => { const { kind, rank } = rankFor(entry); return <UsageLabel rank={rank} kind={kind} compact />; })()}
                 {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
                 {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
               </span>;

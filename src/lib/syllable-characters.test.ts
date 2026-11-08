@@ -3,7 +3,8 @@ import fs from 'fs';
 import { hydrateCatalog } from './catalog-store';
 import { hydrateUsageOrder } from './usage-frequency';
 import { libraryEntries } from './character-library';
-import { characterDestinations, syllableCharacters } from './syllable-characters';
+import { characterDestinations, radicalDestinations, radicalsFirst, syllableCharacters } from './syllable-characters';
+import { usageRank } from './usage-frequency';
 
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
 beforeAll(() => {
@@ -31,5 +32,17 @@ describe('Sound chart "In a character"', () => {
     const entries = libraryEntries('Characters');
     const [first] = syllableCharacters(entries, 'shi', 4);
     expect(characterDestinations(entries).get(first!.id)).toMatchObject({ tab: 'Characters', id: 'Characters:是' });
+  });
+
+  it('ranks a radical character by its radical family and lists radicals first', () => {
+    const radicalCard = radicalDestinations(libraryEntries('Radicals'));
+    const card = radicalCard('丿');
+    expect(card?.search).toMatchObject({ tab: 'Radicals', id: 'Radicals:丿' });
+    expect(card && usageRank(card.entry, 'Radicals', false)).toEqual(expect.any(Number));
+    expect(radicalCard('马')?.search).toMatchObject({ tab: 'Radicals', id: 'Radicals:馬', variant: '187-0' });
+    expect(radicalCard('玛')).toBeUndefined();
+    const rows = syllableCharacters(libraryEntries('Characters'), 'pie', 3);
+    const ordered = radicalsFirst(rows, entry => { const r = radicalCard(entry.hanzi); return r ? usageRank(r.entry, 'Radicals', false) : undefined; });
+    expect(ordered[0]?.hanzi).toBe('丿');
   });
 });
