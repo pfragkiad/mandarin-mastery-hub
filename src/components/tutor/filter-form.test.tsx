@@ -45,6 +45,18 @@ describe('Phone search-box clear', () => {
   });
 });
 
+describe('Search mode toggle', () => {
+  it('offers Apply for the Pinyin toggle only once there is search text', async () => {
+    const apply = vi.fn();
+    render(<DraftFilterForm searchKey="q" searchModeKey="py" applied={{ q: '', py: undefined as string | undefined }} active={false} count={103} onApply={apply} onClear={() => ({ q: '', py: undefined })}>{({ draft, patch }) => <><input aria-label="Query" value={draft.q} onChange={event => patch({ q: event.target.value })}/><button type="button" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</button></>}</DraftFilterForm>);
+    fireEvent.click(screen.getByRole('button', { name: 'Pinyin' }));
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Query'), { target: { value: 'ma' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+    await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ q: 'ma', py: 'pinyin' }));
+  });
+});
+
 describe('Explicit filter edits', () => {
   it('submits only changed drafts and restores the applied input after an edit is undone', async () => {
     const apply = vi.fn();
