@@ -1706,6 +1706,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */
 :root { --grade-high: oklch(.5 .13 150); --grade-good: oklch(.6 .15 58); --grade-fair: oklch(.47 .07 50); --grade-low: oklch(.54 .19 27); }
+:root { --tone-1: oklch(.55 .19 27); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .13 250); }
+:root.dark { --tone-1: oklch(.7 .17 25); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.72 .12 250); }
 :root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
 .accuracy-grade { font-weight: 600; }
 .accuracy-grade-high { color: var(--grade-high); }
@@ -1746,13 +1748,19 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile-base { font-size: 15px; line-height: 1.1; }
 .pinyin-tile-tones { display: flex; gap: 3px; }
 .pinyin-tile-tones span { width: 5px; height: 5px; border-radius: 999px; }
-.pinyin-tile-tones .on { background: var(--terracotta); }
-.pinyin-tile-tones .off { border: 1px solid var(--border); }
+/* Each tone dot keeps its own fixed colour (1 red, 2 orange, 3 green, 4 blue), so the
+   position and colour of a dot both say which tone is recorded. */
+.pinyin-tile-tones .tone-1 { --tone-dot: var(--tone-1); }
+.pinyin-tile-tones .tone-2 { --tone-dot: var(--tone-2); }
+.pinyin-tile-tones .tone-3 { --tone-dot: var(--tone-3); }
+.pinyin-tile-tones .tone-4 { --tone-dot: var(--tone-4); }
+.pinyin-tile-tones .on { background: var(--tone-dot); }
+.pinyin-tile-tones .off { border: 1px solid var(--tone-dot); }
 .pinyin-tile-tones .none { background: transparent; }
 .pinyin-tile-state { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 999px; }
 .pinyin-tile-state.done { background: var(--grade-high); }
 .pinyin-tile-state.review { background: var(--grade-low); }
-.pinyin-player { position: sticky; top: 84px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.pinyin-player { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .pinyin-player-empty { font-family: var(--font-display); font-size: 19px; line-height: 1.5; }
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
@@ -1763,8 +1771,27 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
 .pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
 .pinyin-tone-button.is-playing .tone-contour path:not(.tone-contour-base) { stroke: var(--terracotta); }
-.pinyin-tone-button:disabled { cursor: default; color: var(--muted-foreground); border-style: dashed; }
-.pinyin-tone-button:disabled small { font-size: 8px; text-align: center; line-height: 1.2; }
+/* Unrecorded tone (neutral): selectable for its characters, never played; grey instead of the accent. */
+.pinyin-tone-button.is-unrecorded { color: var(--muted-foreground); border-style: dashed; }
+.pinyin-tone-button.is-unrecorded small { font-size: 8px; text-align: center; line-height: 1.2; }
+.pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { border-color: var(--muted-foreground); color: var(--foreground); }
+.pinyin-tone-button.is-unrecorded.is-current { border-color: var(--muted-foreground); color: var(--foreground); background: var(--muted); }
+.pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 16px; }
+.pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px -8px -4px 0; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
+.pinyin-player-back:hover { color: var(--primary); }
+.pinyin-player-back svg { width: 14px; height: 14px; }
+.pinyin-characters { display: flex; flex-direction: column; gap: 8px; }
+.pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
+.pinyin-character-list { display: flex; flex-direction: column; gap: 4px; list-style: none; margin: 0; padding: 0; }
+/* One row per character: boxed hanzi, then its meaning centred vertically on the box. */
+.pinyin-character { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 10px; padding: 2px; border-radius: 7px; color: var(--foreground); text-decoration: none; transition: background-color .15s, color .15s; }
+.pinyin-character-glyph { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); transition: border-color .15s; }
+.pinyin-character.traditional-character .pinyin-character-glyph { color: var(--traditional); }
+.pinyin-character-meaning { font-family: var(--font-sans); font-size: 12px; line-height: 1.4; color: var(--muted-foreground); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pinyin-character:hover, .pinyin-character:focus-visible { background: color-mix(in oklch, var(--primary) 8%, transparent); outline: none; }
+.pinyin-character:hover .pinyin-character-glyph, .pinyin-character:focus-visible .pinyin-character-glyph { border-color: var(--primary); }
+.pinyin-character:hover .pinyin-character-meaning, .pinyin-character:focus-visible .pinyin-character-meaning { color: var(--primary); }
+.pinyin-characters-more.pinyin-characters-more { align-self: flex-start; height: auto; padding: 0; font-size: 12px; }
 .tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .tone-contour circle { fill: currentColor; stroke: none; }
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
@@ -1823,7 +1850,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
   .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
   /* Phones: the player docks to the bottom of the screen while browsing the chart. */
   .pinyin-player { top: auto; bottom: 0; z-index: 5; margin: 0 -4px; padding: 14px 16px; gap: 8px; border-radius: 10px 10px 0 0; box-shadow: var(--shadow-popover); }
-  .pinyin-player .eyebrow, .pinyin-player-tip, .pinyin-parts, .pinyin-note, .pinyin-alikes { display: none; }
+  .pinyin-player { max-height: none; overflow: visible; }
+  .pinyin-player .eyebrow, .pinyin-player-tip, .pinyin-parts, .pinyin-note, .pinyin-alikes, .pinyin-characters, .pinyin-player-head { display: none; }
   .pinyin-player-empty { font-size: 15px; }
   .pinyin-player-title.pinyin { font-size: 28px; }
   .pinyin-progress { justify-content: flex-start; }

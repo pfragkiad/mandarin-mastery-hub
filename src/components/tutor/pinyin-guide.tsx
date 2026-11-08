@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { allSounds, IncompletePinyinDataError, loadPinyinData, type PinyinData } from '@/lib/pinyin-guide';
+import { allSounds, IncompletePinyinDataError, loadPinyinData, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import { progressSummary } from '@/lib/pinyin-progress';
 import { useWorkspace } from './workspace';
 import { SourceInfo } from './source-info';
@@ -24,9 +24,9 @@ export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
 ];
 const headings: Record<PinyinMode, string> = { chart: 'Every sound of Mandarin.', tones: 'Hear the tone.', alikes: 'Tell sound-alikes apart.', type: 'Write what you hear.' };
 
-export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, onMode, onSelect, onChartFilters, onDrillFilters }: {
-  mode: PinyinMode; selected?: string | undefined; chartFilters: ChartFilters; drillFilters: DrillFilters;
-  onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined) => void; onChartFilters: (f: ChartFilters) => void; onDrillFilters: (f: DrillFilters) => void;
+export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilters, onMode, onSelect, onTone, onChartFilters, onDrillFilters }: {
+  mode: PinyinMode; selected?: string | undefined; tone: Tone | null; chartFilters: ChartFilters; drillFilters: DrillFilters;
+  onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onChartFilters: (f: ChartFilters) => void; onDrillFilters: (f: DrillFilters) => void;
 }) {
   const { preferences, setPreferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
@@ -64,7 +64,7 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
       : failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
         : !data || !drillProps ? <p className="library-note">Loading sounds…</p>
-        : mode === 'chart' ? <PinyinChart data={data} progress={progress} player={player} filters={chartFilters} selected={selected} slow={preferences.slow} onSlow={onSlow} onSelect={onSelect} onFilters={onChartFilters} />
+        : mode === 'chart' ? <PinyinChart data={data} progress={progress} player={player} filters={chartFilters} selected={selected} tone={tone} slow={preferences.slow} onSlow={onSlow} onSelect={onSelect} onTone={onTone} onFilters={onChartFilters} />
         : mode === 'tones' ? <ToneDrill key="tones" {...drillProps} />
         : mode === 'alikes' ? <SoundAlikeDrill key="alikes" {...drillProps} />
         : <TypeDrill key="type" {...drillProps} />}

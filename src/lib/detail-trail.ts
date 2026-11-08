@@ -11,20 +11,31 @@
  */
 export type TrailStep = { label: string; href: string };
 
-let trail: TrailStep[] = [];
-const listeners = new Set<() => void>();
-const emit = () => listeners.forEach(listener => listener());
+/** One independent session trail; each window that offers Back owns its own instance. */
+export function createTrail() {
+  let trail: TrailStep[] = [];
+  const listeners = new Set<() => void>();
+  const emit = () => listeners.forEach(listener => listener());
+  return {
+    get: () => trail,
+    push(step: TrailStep) { trail = [...trail, step]; emit(); },
+    /** Replace the trail with a single return step (leaving Practice for a detail window). */
+    replace(step: TrailStep) { trail = [step]; emit(); },
+    clear() { if (trail.length) { trail = []; emit(); } },
+    /** Drop the top step once the browser is back at its URL (Back button or browser Back). */
+    sync(href: string) {
+      const index = trail.map(step => step.href).lastIndexOf(href);
+      if (index >= 0) { trail = trail.slice(0, index); emit(); }
+    },
+    subscribe(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener); }; },
+  };
+}
 
-export const detailTrail = {
-  get: () => trail,
-  push(step: TrailStep) { trail = [...trail, step]; emit(); },
-  /** Replace the trail with a single return step (leaving Practice for a detail window). */
-  replace(step: TrailStep) { trail = [step]; emit(); },
-  clear() { if (trail.length) { trail = []; emit(); } },
-  /** Drop the top step once the browser is back at its URL (Back button or browser Back). */
-  sync(href: string) {
-    const index = trail.map(step => step.href).lastIndexOf(href);
-    if (index >= 0) { trail = trail.slice(0, index); emit(); }
-  },
-  subscribe(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener); }; },
-};
+export const detailTrail = createTrail();
+
+/**
+ * Back trail for the Pinyin Sound chart's Selected sound card. Only links inside
+ * the card (Sounds alike) push a step; clicking a grid card clears it, exactly as
+ * Previous/Next do for the details window.
+ */
+export const soundTrail = createTrail();

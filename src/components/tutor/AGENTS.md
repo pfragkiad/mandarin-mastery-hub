@@ -2,3 +2,5 @@
 - FlashcardSessionProvider (root) keeps flashcard rounds across Details; Details/missed links set one detailTrail step so Back resumes the game.
 - Shell side-menu docking per window size comes only from src/lib/nav-layout.ts (large docked, medium pin/hide remembered, small drawer), so markup/CSS never encode their own breakpoint rules.
 - The five games (names, icons, destinations) come only from game-catalog.tsx, shared by the sidebar and the Start page, so the two never drift.
+- The Sound chart keeps syllable and tone in the URL (s, t); its card Back uses soundTrail (createTrail in detail-trail.ts) keyed by history entry, so revisiting the same URL is never mistaken for a return.
+- Sound chart "In a character" lists come only from exact catalogue readings via src/lib/syllable-characters.ts, so no reading is inferred from shape or words.
