@@ -1873,6 +1873,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 }
 @media (max-width: 580px) {
   .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 6px; }
+  /* 5 × 9px + 4 × 1px = 49px, inside the 52px a 64px tile leaves after padding. */
+  .pinyin-tile-tones { gap: 1px; }
+  .pinyin-tile-badge { width: 9px; height: 9px; }
   .pinyin-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pinyin-drill-prompt { font-size: 18px; }
   .pinyin-next { margin-left: 0; }
