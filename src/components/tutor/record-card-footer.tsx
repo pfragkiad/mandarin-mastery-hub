@@ -29,7 +29,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
   const target = practice ?? { character: hanzi };
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">
     {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon/></Button>}
-    <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Practice writing"><Link to="/strokes" search={target} aria-label={`Practice writing ${hanzi}`}><PracticeIcon/></Link></Button>
+    <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Practice writing"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Practice writing ${hanzi}`}><PracticeIcon/></Link></Button>
     <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Practice Expert — Recall mode"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Practice Expert (Recall) ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
     <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${hanzi}`} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
   </div></div>;
