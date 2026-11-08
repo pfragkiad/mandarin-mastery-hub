@@ -28,7 +28,7 @@
 - Pronunciation routes through src/lib/audio.ts (attached recording → exact character-reading recording → validated Mandarin TTS, never auto-switching after failure); unrecorded speech needs a known reading and confirmed Mandarin voice, so disabled controls never promise audio.
 - Workspace derives imported words from the current source and stores only session additions in state, so corrected recordings cannot remain captured in an already-mounted library.
 - Flashcards: separate flip targets from pronunciation, hidden faces inert; preserve exact record IDs and library kinds; bookmark only unsaved missed IDs in the session workspace, linked to their exact Vocabulary/Glyphs records.
-- DrawingSessionProvider and FlashcardSessionProvider preserve rounds across Practice/Details (Back uses a single detailTrail step); restore terminal card snapshots without quiz restart. Native quizzes hide outlines/auto hints and never guess acceptance.
+- DrawingSessionProvider preserves rounds across Practice; restore terminal card snapshots without quiz restart. Native quizzes hide outlines/auto hints and never guess acceptance.
 - Word drawing rounds sample vocabulary records before character occurrences, retain the exact word ID and selected occurrence through review, and use the full word's recorded clues/audio so no character reading is inferred from a word reading.
 - Vocabulary splits by explicit entryKind metadata (never glyph length) with URL-backed Words/Phrases tabs; mirror the external Mandarin Tutor API contract in src/lib/data-contract.ts; preserve field-level spreadsheet provenance and match by HSK identity/headword without replacing audio, examples or entry IDs. Unofficial phrases keep local IDs/review in phraseMetadata with hsk_index/hskSource empty.
 - Phrase decomposition keeps matched word records intact while presenting their exact characters as horizontal glyph links; word readings link to vocabulary and independent speakers use the matched word's audio, preventing character splitting from changing word pronunciation.
@@ -59,4 +59,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- Side-menu docking per window size lives in src/lib/nav-layout.ts (large always docked, medium pin/hide remembered, small drawer only), so shell markup and CSS never encode their own breakpoint rules.
