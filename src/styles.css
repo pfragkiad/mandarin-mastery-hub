@@ -1727,6 +1727,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-body { margin-top: 22px; }
 .pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 30px; align-items: start; }
 .pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
+/* Phones wrap the search and Filters button in .mobile-library-filters, whose inner form has no
+   margin; give the wrapper the same gap so the first syllable group never touches Filters. */
+.pinyin-chart-main .mobile-library-filters { margin-bottom: 18px; }
 .pinyin-group { margin-bottom: 22px; }
 .pinyin-group-title { display: flex; align-items: baseline; gap: 10px; font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 600; color: var(--muted-foreground); margin-bottom: 10px; }
 .pinyin-group-title span { letter-spacing: .5px; text-transform: none; font-weight: 400; font-size: 12px; color: var(--terracotta); }
