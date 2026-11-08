@@ -1698,3 +1698,17 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .accuracy-grade-good { color: var(--grade-good); }
 .accuracy-grade-fair { color: var(--grade-fair); }
 .accuracy-grade-low { color: var(--grade-low); }
+
+/* Settings → Handwriting & strokes: mini 大 pad for testing strictness. */
+.settings-row-try { align-items: start; }
+.try-pad { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 200px; }
+.try-pad-modes { align-self: stretch; justify-content: stretch; }
+.try-pad-modes button { flex: 1; }
+.writing-grid.try-pad-grid { width: 200px; margin: 0; }
+.try-pad-strokes { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.try-pad-strokes li { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border: 1px solid var(--border); border-radius: 999px; font-size: 10px; color: var(--muted-foreground); }
+.try-pad-strokes li svg { width: 12px; height: 12px; }
+.try-pad-strokes li.is-pass { color: var(--grade-high); border-color: color-mix(in oklch, var(--grade-high) 40%, transparent); }
+.try-pad-strokes li.is-fail { color: var(--grade-low); border-color: color-mix(in oklch, var(--grade-low) 40%, transparent); }
+.try-pad .writer-status { min-height: 0; }
+@media (max-width: 580px) { .settings-row-try { grid-template-columns: 1fr; justify-items: center; } .settings-row-try > div:first-child { justify-self: stretch; } }
