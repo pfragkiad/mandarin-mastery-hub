@@ -32,9 +32,9 @@ describe('pinyin input', () => {
     expect(toneMark('zhou', 1)).toBe('zhōu');
   });
   it('searches by prefix, or by exact attested tone', () => {
-    expect(matchesSyllable(data.syllables[0], 'zh')).toBe(true);
-    expect(matchesSyllable(data.syllables[1], 'zi2')).toBe(false);
-    expect(matchesInitial(data.syllables[2], 'group:3')).toBe(true);
+    expect(matchesSyllable(data.syllables[0]!, 'zh')).toBe(true);
+    expect(matchesSyllable(data.syllables[1]!, 'zi2')).toBe(false);
+    expect(matchesInitial(data.syllables[2]!, 'group:3')).toBe(true);
   });
 });
 
@@ -64,10 +64,10 @@ describe('typed answers', () => {
 describe('progress', () => {
   it('marks a sound for review after a wrong answer and clears it after a right one', () => {
     let p = recordSound({}, 'zhi1', 'wrong');
-    expect(needsReview(p.zhi1)).toBe(true);
+    expect(needsReview(p['zhi1'])).toBe(true);
     p = recordSound(p, 'zhi1', 'right');
-    expect(needsReview(p.zhi1)).toBe(false);
-    expect(p.zhi1).toMatchObject({ right: 1, wrong: 1 });
+    expect(needsReview(p['zhi1'])).toBe(false);
+    expect(p['zhi1']).toMatchObject({ right: 1, wrong: 1 });
   });
   it('drops malformed stored entries', () => {
     expect(parseProgress('{"zhi1":{"heard":1,"right":0,"wrong":0,"at":"x"},"zhi5":{"heard":1,"right":0,"wrong":0,"at":"x"},"bad":3}')).toEqual({ zhi1: { heard: 1, right: 0, wrong: 0, at: 'x' } });

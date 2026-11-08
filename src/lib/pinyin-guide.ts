@@ -61,7 +61,7 @@ export function toneMark(base: string, tone: Tone): string {
   if (index < 0) index = base.indexOf('e');
   if (index < 0 && base.includes('ou')) index = base.indexOf('o');
   if (index < 0) {
-    for (let i = base.length - 1; i >= 0; i--) if ('iouü'.includes(base[i])) { index = i; break; }
+    for (let i = base.length - 1; i >= 0; i--) if ('iouü'.includes(base.charAt(i))) { index = i; break; }
   }
   if (index < 0) return base;
   return (base.slice(0, index + 1) + ACCENTS[tone - 1] + base.slice(index + 1)).normalize('NFC');
@@ -91,7 +91,7 @@ export function parsePinyin(input: string): { base: string; tone?: Tone } | null
   tone ??= marked;
   base = base.replace(/^([jqxy])ü/, '$1u');
   if (!/^[a-zü]+$/.test(base)) return null;
-  return { base, tone };
+  return tone ? { base, tone } : { base };
 }
 
 /** Chart search: a bare spelling matches by prefix; with a tone it must be that exact attested sound. */

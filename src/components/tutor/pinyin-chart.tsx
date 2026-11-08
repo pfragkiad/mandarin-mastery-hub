@@ -52,7 +52,7 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
   useEffect(() => {
     if (!syllable) return;
     const recorded = syllable.tones.filter(t => hasRecording(data, syllable.base, t));
-    setTone(current => (recorded.includes(current) ? current : recorded[0] ?? syllable.tones[0]));
+    setTone(current => (recorded.includes(current) ? current : recorded[0] ?? syllable.tones[0] ?? 1));
   }, [syllable, data]);
 
   // Number keys 1–4 play that tone of the selected syllable (not while typing).

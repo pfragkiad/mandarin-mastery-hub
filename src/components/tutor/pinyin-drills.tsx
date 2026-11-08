@@ -20,7 +20,7 @@ export type DrillFilters = { initial: string; final: string; focus: '' | 'review
 type DrillProps = { data: PinyinData; progress: PinyinProgress; record: (id: string, action: 'right' | 'wrong') => void; player: PinyinPlayer; filters: DrillFilters; onFilters: (filters: DrillFilters) => void; slow: boolean; onSlow: (slow: boolean) => void };
 
 const editable = (target: EventTarget | null) => { const el = target as HTMLElement | null; return Boolean(el && (el.isContentEditable || /^(input|textarea|select)$/i.test(el.tagName))); };
-const shuffle = <T,>(list: T[]) => { const out = [...list]; for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; } return out; };
+const shuffle = <T,>(list: T[]) => { const out = [...list]; for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [out[i], out[j]] = [out[j]!, out[i]!]; } return out; };
 
 /** Sounds a quiz may ask: every recorded sound matching the filters; Sound-alikes also needs at least one real alternative. */
 export function drillPool(data: PinyinData, mode: DrillMode, filters: DrillFilters, progress: PinyinProgress): PinyinSound[] {
@@ -128,7 +128,7 @@ export function SoundAlikeDrill(props: DrillProps) {
   const options = useMemo(() => current ? shuffle([current.base, ...shuffle(soundAlikes(props.data, current.base, current.tone)).slice(0, 3)]) : [], [current, props.data]);
   const choose = (base: string) => { if (current) drill.answer(base === current.base, base); };
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => { if (editable(event.target) || event.metaKey || event.ctrlKey || event.altKey) return; const i = Number(event.key) - 1; if (i >= 0 && i < options.length) { event.preventDefault(); choose(options[i]); } };
+    const onKey = (event: KeyboardEvent) => { if (editable(event.target) || event.metaKey || event.ctrlKey || event.altKey) return; const i = Number(event.key) - 1; if (i >= 0 && i < options.length) { event.preventDefault(); choose(options[i]!); } };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
