@@ -72,3 +72,6 @@
 - [done] Small-screen Practice: family tiles above the writing card; no decomposition for radicals at any width (verified live, build OK)
 - [done] Practice heading: hide Print practice sheet on small screens; never wrap its label on wider screens.
 - [done] Practice Expert icon: larger crown in gold.
+
+- [ ] Sound card Back trail (sound-alike clicks only), selectable grey neutral tone, Play all with one recording, "In a character" list (12 + Show all, details Back returns).
+- [ ] Sound chart grid dots: fixed colour per tone; "In a character" items show the meaning to the right, vertically centred on the hanzi.
