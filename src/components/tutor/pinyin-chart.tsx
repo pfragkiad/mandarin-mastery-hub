@@ -182,7 +182,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     <div className="pinyin-tone-buttons" role="group" aria-label="Tones">{syllable.tones.map(t => {
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
-      return <button key={t} type="button" className={`pinyin-tone-button${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
+      return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
         aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
         {/* Neutral tone: name the tone, not the bare syllable, so "No recording" never reads as the whole syllable missing. */}
         <ToneContour tone={t} />{t === 5 ? <span>Neutral</span> : <span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span>}<small>{playable ? t : 'No recording'}</small>

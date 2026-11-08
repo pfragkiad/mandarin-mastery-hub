@@ -1,4 +1,5 @@
 import { MeaningText } from './meaning-text';
+import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
@@ -46,12 +47,6 @@ const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms 
 // Motivational small-caps line shared by every tab of the Glyphs section;
 // per-tab provenance stays in the (i) beside the title (kindNotes).
 const glyphsMotto = 'STUDY THE BLOCKS · ONE CHARACTER AT A TIME';
-function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
-  const group = usageGroupFor(kind, rank);
-  // Colour tiers by exact rank: ≤300 top, 301–500 intermediate, 501–1000 mid, >1000 low.
-  const tier = rank === null ? 'none' : rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
-  return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? 'Unranked' : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
-}
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
   if (kind !== 'Strokes') { const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning); return { text: info.speech, reading: info.reading || null }; }

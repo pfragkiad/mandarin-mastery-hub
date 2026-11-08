@@ -13,6 +13,9 @@ import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, syllableCharacters } from '@/lib/syllable-characters';
+import { usageOrder, usageRank } from '@/lib/usage-frequency';
+import { MeaningText } from './meaning-text';
+import { UsageLabel } from './usage-label';
 import { useWorkspace } from './workspace';
 
 /** Characters shown before "Show all". */
@@ -41,9 +44,13 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
             onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
-            {/* Hanzi in its own box, its recorded meaning to the right, centred on the box. */}
+            {/* Hanzi in its own box; to its right, centred on the box, the coloured corpus
+                rank and the meaning styled like the glyph details' "In a character" rows. */}
             <span className="pinyin-character-glyph" lang="zh-CN">{entry.hanzi}</span>
-            {entry.meaning && <span className="pinyin-character-meaning" lang="en">{entry.meaning}</span>}
+            <span className="pinyin-character-text">
+              {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
+              {entry.meaning && <span className="pinyin-character-meaning"><MeaningText text={entry.meaning} /></span>}
+            </span>
           </Link>
         </li>)}</ul>
         {matches.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
