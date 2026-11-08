@@ -59,4 +59,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- The Settings handwriting try pad (大) reads the live Trace/Recall strictness and Practice mode options, so it always judges strokes exactly as Practice will; its mode switch is local and never saved.
