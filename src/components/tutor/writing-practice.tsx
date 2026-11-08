@@ -69,6 +69,17 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
 
 /** Boolean preference remembered in this browser. Starts at `initial` (SSR-safe), then applies
  *  the stored value after mount; only explicit changes are written back. */
+// Status line under the drawing square. The trailing "start over" instruction
+// (e.g. "Draw again to start over.") is the next action the learner should take,
+// so it is emphasised separately from the result text before it.
+const START_OVER_CUE = /((?:Draw again|Press \w+) to start over\.)$/;
+function renderStatus(message: string): React.ReactNode {
+  const match = START_OVER_CUE.exec(message);
+  if (!match) return message;
+  const lead = message.slice(0, match.index).trimEnd();
+  return <>{lead && <>{lead} </>}<strong className="writer-status-cue">{match[1]}</strong></>;
+}
+
 function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
   const [value, setValue] = useState(initial);
   useEffect(() => { try { const saved = localStorage.getItem(key); if (saved !== null) setValue(saved === '1'); } catch { /* storage unavailable */ } }, [key]);
