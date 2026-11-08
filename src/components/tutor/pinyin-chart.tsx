@@ -126,8 +126,9 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   const returnedFromCharacter = useRef(leftForCharacter);
   useEffect(() => {
     if (!returnedFromCharacter.current || !selected) return;
-    returnedFromCharacter.current = false;
-    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => revealTile(selected, 'auto')); });
+    // Cleared only once the reveal runs, so a development double-mount (which cancels
+    // the first frame) still reveals on the second run.
+    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { returnedFromCharacter.current = false; revealTile(selected, 'auto'); }); });
     return () => cancelAnimationFrame(frame);
   }, []);
   // A sound-alike is a link inside the card: remember the sound being left for Back,
