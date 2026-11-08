@@ -1634,3 +1634,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .catalog-entry-grid:not(.library-list-view) .catalog-card { height: auto; grid-template-rows: 33px auto 40px; }
 .vocab-word-grid:not(.library-list-view) .word-card .word-open,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { height: auto; padding-bottom: 12px; }
+/* Comfortable view on larger screens: Words and Glyph cards sit two per row
+   (Phrases keep one wide card per row for long sentences). */
+@media (min-width: 1200px) {
+  .catalog-results .catalog-entry-grid.library-list-view,
+  .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+}
