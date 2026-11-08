@@ -26,8 +26,11 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
       <div className="catalog-detail-pinyin-row">
         <span className="pinyin">{pinyin || pinyinFallback}</span>
         {audio}
-        {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
-        {pill && <span className="catalog-detail-pill">{pill}</span>}
+        {/* All header pills share one right-aligned group so Traditional sits tight against the kind pill. */}
+        {(traditional || pill) && <span className="catalog-detail-pills">
+          {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
+          {pill && <span className="catalog-detail-pill">{pill}</span>}
+        </span>}
       </div>
       {forms ?? <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>}
       <h2><MeaningText text={meaning || meaningFallback}/></h2>

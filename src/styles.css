@@ -200,22 +200,17 @@
 /* Shared spacing keeps reference stroke rows and Practice stroke tiles aligned. */
 :root { --record-tile-gap: 10px; }
 /* Characters library page */
-/* Shared intrinsic tracks align every parent row without guessing reading widths.
-   The pronunciation wrapper contributes separate reading/audio cells; errors
-   span those cells instead of shifting the following translation column. */
-.glyph-usage-parents { display: grid; grid-template-columns: max-content max-content 26px minmax(0, 1fr); align-items: center; gap: var(--record-tile-gap) 12px; margin-top: var(--record-tile-gap); }
-.glyph-usage-reference { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; gap: 4px 12px; min-width: 0; color: var(--primary); }
-.glyph-usage-reference .example-pinyin-row > .pinyin { grid-column: 2; }
-.glyph-usage-reference .example-pinyin-row > .example-listen { grid-column: 3; }
-.glyph-usage-reference .example-audio-error { grid-column: 2 / 4; }
-.glyph-usage-reference > .glyph-usage-meaning { grid-column: 4; min-width: 0; overflow-wrap: anywhere; }
-@media (max-width: 580px) {
-  .glyph-usage-parents { grid-template-columns: max-content minmax(0, 1fr) 26px; }
-  .glyph-usage-reference > .glyph-usage-meaning { grid-column: 1 / -1; }
-}
+/* "In a character" rows mirror Decomposition: the tile, then two lines beside it
+   (reading + speaker + Traditional pill, then meaning). The speaker follows its
+   own reading, so short readings never leave it stranded in a wide column. */
+.glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
+.glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
+.glyph-usage-facts { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
+.glyph-usage-facts-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.glyph-usage-facts-row .example-audio-error { flex-basis: 100%; }
+.glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
-.glyph-usage-parents .glyph-usage-reference > .example-pinyin-row { display: contents; }
 .example-listen { width: 26px; height: 26px; flex: none; color: var(--primary); }
 .example-listen svg { width: 14px; height: 14px; }
 .example-audio-error { font-size: 11px; color: var(--foreground); }
@@ -487,7 +482,8 @@ this keeps the number right beside the stroke tile. */
 .practice-facts .traditional-character, .practice-facts .traditional-character strong { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
 /* Detail heading: the Traditional pill shares the pinyin row, pinned to the right. */
-.catalog-detail-pinyin-row .traditional-pill { margin-left: auto; }
+/* One right-aligned group keeps every header pill tight together (Traditional, then the kind/radical pill). */
+.catalog-detail-pills { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .tile-traditional-badge { position: absolute; top: 6px; right: 32px; font-size: 9px; line-height: 14px; padding: 0 5px; letter-spacing: .2px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent); background: var(--card); z-index: 1; }
 .catalog-entry:has(.tile-traditional-badge) > strong { margin-top: 10px; }
 .catalog-entry:not(:has(.catalog-source-icon)) .tile-traditional-badge { right: 10px; }
@@ -546,9 +542,8 @@ this keeps the number right beside the stroke tile. */
 /* Identity uses the same four-column rhythm as parent examples, preserving
    its sourced pronunciation control and keeping the badge beside the meaning. */
 .kangxi-identity-rows { display: grid; grid-template-columns: max-content max-content 26px minmax(0, 1fr); align-items: center; gap: var(--record-tile-gap) 12px; }
-/* Equal reading tracks align speakers and meanings across the two sections;
-   unusually long recorded readings wrap rather than widening one section. */
-.kangxi-identity-rows, .glyph-usage-parents { grid-template-columns: max-content 7ch var(--reference-audio-size) minmax(0, 1fr); }
+/* Unusually long recorded readings wrap rather than widening the section. */
+.kangxi-identity-rows { grid-template-columns: max-content 7ch var(--reference-audio-size) minmax(0, 1fr); }
 .kangxi-identity-item .pinyin, .glyph-usage-reference .pinyin { min-width: 0; overflow-wrap: anywhere; }
 .kangxi-identity-item { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; gap: 4px 12px; min-width: 0; }
 .kangxi-identity-item > .component-pronunciation { display: contents; }
@@ -1273,7 +1268,7 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 .practice-intro .practice-text .pinyin { align-self: center; line-height: 1.2; }
 .practice-intro .practice-listen { align-self: center; margin-top: 0; }
 .practice-intro .practice-listen { transform: translateY(-3px); }
-.catalog-detail-pill { margin-left: auto; display: inline-flex; }
+.catalog-detail-pill { display: inline-flex; }
 
 /* Large library rows reuse exact record content and reveal rules. The body
    always stacks pinyin, hanzi and meaning in that order at every width.
@@ -1522,14 +1517,6 @@ html[data-display-size='comfortable'] {
 }
 @media (max-width: 580px) {
   .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
-  /* Keep the glyph beside both text rows; a real pronunciation wrapper keeps
-     its speaker adjacent rather than allocating the far edge as an audio track. */
-  .glyph-usage-parents { grid-template-columns: max-content minmax(0, 1fr); }
-  .glyph-usage-reference > a { grid-column: 1; grid-row: 1 / span 2; }
-  .glyph-usage-parents .glyph-usage-reference > .example-pinyin-row { display: flex; flex-wrap: wrap; grid-column: 2; grid-row: 1; min-width: 0; gap: 6px; }
-  .glyph-usage-reference > .glyph-usage-meaning { grid-column: 2; grid-row: 2; }
-  .glyph-usage-reference:not(:has(.example-pinyin-row)) > .glyph-usage-meaning { grid-row: 1 / span 2; }
-  .glyph-usage-reference .example-audio-error { flex-basis: 100%; }
   .sentence-pinyin { flex-wrap: wrap; }
   .sentence-pinyin > span { min-width: 0; overflow-wrap: anywhere; }
 }

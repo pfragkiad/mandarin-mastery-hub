@@ -35,8 +35,15 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     {parents.length ? <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
       <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
-      {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
-      <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
+      {/* Two lines beside the tile, as in Decomposition: reading + speaker (+ Traditional pill) on top, meaning below.
+          The speaker sits right after the reading instead of in a shared column, so it never drifts away from short readings. */}
+      <span className="glyph-usage-facts">
+        {((preferences.pinyin && parent.pinyin) || parent.script === 'Traditional') && <span className="glyph-usage-facts-row">
+          {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
+          {parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
+        </span>}
+        <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
+      </span>
     </div>)}</div> : kind === 'Components' && gSourceParents === null ? null : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment and exact form in their breakdown are available.' : 'No characters with this exact component in their recorded BabelStone G-source breakdown are available.'}</p></div>}
   </section>;
   return <section className="glyph-usage-section" aria-label="In a sentence">
