@@ -1,4 +1,4 @@
-import { useEffect, useState, useTransition, type ReactNode, type SetStateAction } from 'react';
+import { useEffect, useRef, useState, useTransition, type ReactNode, type SetStateAction } from 'react';
 import { Check, X, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
@@ -53,8 +53,9 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
  * cheap result sets such as the Sound chart's syllables), every edit — keystrokes included —
  * applies synchronously with no wait cursor or frame delay, so the applied value catches
  * up before the next keystroke and the draft-sync effect never rolls typing back. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [] }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[] }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [], searchKey }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T }) {
   const controls = useDraftFilters(applied);
+  const formRef = useRef<HTMLFormElement>(null);
   const autoApply = autoApplyProp || live;
   const small = useSmallLibraryScreen();
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -84,9 +85,21 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   // Clear applies immediately and returns the cleared values to the local draft;
   // Apply alone submits edited values to the owning page's URL/filter state.
   const renderControls = { ...controls, patch, setDraft };
+  // Phone search-box X: phones hide the desktop clear-all X, so typed or applied search text
+  // needs its own one-tap clear. It clears only the text: an applied search re-applies the
+  // applied filters without it (discarding nothing else); unapplied typing just empties the draft.
+  const draftSearch = searchKey ? String(controls.draft[searchKey] ?? '') : '';
+  const appliedSearch = searchKey ? String(applied[searchKey] ?? '') : '';
+  const clearSearch = () => {
+    if (!searchKey) return;
+    if (appliedSearch) { const next = { ...applied, [searchKey]: '' } as T; controls.setDraft(next); submit(next); }
+    else controls.setDraft(previous => ({ ...previous, [searchKey]: '' }));
+    // Keep the keyboard on the search box so the next query can be typed straight away.
+    formRef.current?.querySelector<HTMLInputElement>('.search-field input')?.focus();
+  };
   // The same isolated drafts feed either desktop fields or a phone sheet.
   if (small && filterFields) return <div className="mobile-library-filters">
-    <form className="filter-bar shared-filter-form" aria-label="Search filters" onSubmit={event => { event.preventDefault(); submit(controls.draft); }}>{children(renderControls)}{changed && <Button type="submit" variant="ghost" size="sm" disabled={pending}><Check/>Apply</Button>}</form>
+    <form ref={formRef} className="filter-bar shared-filter-form" aria-label="Search filters" onSubmit={event => { event.preventDefault(); submit(controls.draft); }}>{children(renderControls)}{(changed || draftSearch || appliedSearch) && <span className="mobile-search-actions">{changed && <Button type="submit" variant="ghost" size="sm" disabled={pending}><Check/>Apply</Button>}{(draftSearch || appliedSearch) && <Button type="button" variant="ghost" size="icon" className="close-x" disabled={pending} aria-label="Clear search" title="Clear search" onClick={clearSearch}><X/></Button>}</span>}</form>
     <div className="mobile-filter-actions"><Button variant="outline" size="sm" onClick={() => setSheetOpen(true)}><SlidersHorizontal/>Filters{chips.length > 0 && <span className="mobile-filter-count">{chips.length}</span>}</Button>{chips.map(chip => <Button key={chip.label} variant="ghost" size="sm" className="mobile-state-chip" aria-label={`Remove ${chip.label} filter`} onClick={() => { const next = { ...applied, ...chip.clear }; controls.setDraft(next); submit(next); }}>{chip.label}<X/></Button>)}</div>
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{filterFields(renderControls)}</div><div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}</div></SheetContent></Sheet>
   </div>;
