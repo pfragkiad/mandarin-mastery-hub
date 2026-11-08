@@ -10,6 +10,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { allSounds, loadPinyinData, type PinyinData } from '@/lib/pinyin-guide';
 import { progressSummary } from '@/lib/pinyin-progress';
 import { useWorkspace } from './workspace';
+import { SourceInfo } from './source-info';
 import { PinyinChart, type ChartFilters } from './pinyin-chart';
 import { SoundAlikeDrill, ToneDrill, TypeDrill, type DrillFilters, type DrillMode } from './pinyin-drills';
 import { usePinyinPlayer, usePinyinProgress } from './pinyin-shared';
@@ -41,7 +42,13 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
   const drillProps = data && { data, progress, record, player, filters: drillFilters, onFilters: onDrillFilters, slow: preferences.slow, onSlow };
 
   return <div className="page-enter library-page pinyin-page">
-    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1>{headings[mode]}</h1></div>
+    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
+        Recordings · <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.license}<br/>
+        {data.audioSource.credits}<br/>
+        {data.audioSource.accent} · not listening-reviewed<br/>
+        Neutral-tone recordings withdrawn by the source<br/>
+        Syllables and tones · <a href={data.inventorySource.url} target="_blank" rel="noreferrer">CC-CEDICT</a> · {data.inventorySource.license}
+      </SourceInfo>}</h1></div>
       {data && <div className="pinyin-progress" aria-label="Your progress">
         <span><strong>{summary.practised.toLocaleString('en-US')}</strong> of {total.toLocaleString('en-US')} sounds practised{summary.review ? <> · <strong className="pinyin-review-count">{summary.review}</strong> to review</> : null}</span>
         {summary.practised > 0 && (confirming
@@ -60,9 +67,5 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
         : mode === 'alikes' ? <SoundAlikeDrill key="alikes" {...drillProps} />
         : <TypeDrill key="type" {...drillProps} />}
     </div>
-    {data && <p className="source-note library-source-note pinyin-source">
-      Recordings: <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.credits} · {data.audioSource.license} · {data.audioSource.accent}, not listening-reviewed · neutral-tone recordings withdrawn by the source.{' '}
-      Syllables and tones: <a href={data.inventorySource.url} target="_blank" rel="noreferrer">CC-CEDICT</a> · {data.inventorySource.license}.
-    </p>}
   </div>;
 }
