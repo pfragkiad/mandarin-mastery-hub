@@ -36,13 +36,13 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
         <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id}>
-          <Link to="/characters" search={destinations.get(entry.id) ?? { tab: 'Characters', id: entry.id }} lang="zh-CN"
+          <Link to="/characters" search={destinations.get(entry.id) ?? { tab: 'Characters', id: entry.id }}
             className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}
             title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
             onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
             {/* Hanzi in its own box, its recorded meaning to the right, centred on the box. */}
-            <span className="pinyin-character-glyph">{entry.hanzi}</span>
+            <span className="pinyin-character-glyph" lang="zh-CN">{entry.hanzi}</span>
             {entry.meaning && <span className="pinyin-character-meaning" lang="en">{entry.meaning}</span>}
           </Link>
         </li>)}</ul>
