@@ -81,3 +81,18 @@ describe('progress', () => {
     expect(pickNextSound(two, p, 'ji1', () => 0)?.id).toBe('ji2');
   });
 });
+
+describe('shipped pinyin sidecars', () => {
+  it('have a recording for every attested tone 1–4 (incl. shang, sha, shi, xi, zhen)', async () => {
+    const inventory = (await import('@/data/pinyin/inventory.json')).default;
+    const audio = (await import('@/data/pinyin/audio.json')).default;
+    const data = { syllables: inventory.syllables as never, recordings: audio.recordings as never };
+    expect(missingRecordings(data)).toEqual([]);
+    expect(Object.keys(audio.recordings)).toHaveLength(1288);
+    for (const id of ['shang1', 'shang3', 'shang4', 'sha1', 'shi4', 'xi1', 'zhen1']) expect(audio.recordings).toHaveProperty(id);
+  });
+  it('flags a half-imported recording list instead of silently showing no recordings', () => {
+    const data = { syllables: [{ base: 'shang', initial: 'sh', final: 'ang', tones: [1, 3, 4, 5], note: null }] as never, recordings: {} };
+    expect(missingRecordings(data)).toEqual(['shang1', 'shang3', 'shang4']);
+  });
+});
