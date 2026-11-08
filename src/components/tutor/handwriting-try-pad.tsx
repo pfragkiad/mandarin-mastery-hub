@@ -81,9 +81,9 @@ export function HandwritingTryPad() {
     </div>
     <div className="writing-grid try-pad-grid"><div ref={target} className="hanzi-target" role="img" aria-label={`Try writing ${TRY_GLYPH}`}/></div>
     <ol className="try-pad-strokes" aria-label="Stroke results">
-      {results.map((value, index) => <li key={index} className={value === undefined ? '' : value ? 'is-pass' : 'is-fail'}>
-        {value === undefined ? <span aria-hidden="true">·</span> : value ? <Check aria-hidden="true"/> : <X aria-hidden="true"/>}
-        <span>Stroke {index + 1}{value === undefined ? '' : value ? ' · pass' : ' · fail'}</span>
+      {results.map((value, index) => <li key={index} className={value === undefined ? '' : value ? 'is-pass' : 'is-fail'} aria-label={`Stroke ${index + 1}${value === undefined ? ', not drawn yet' : value ? ', pass' : ', fail'}`}>
+        <span aria-hidden="true">{index + 1}</span>
+        {value === undefined ? null : value ? <Check aria-hidden="true"/> : <X aria-hidden="true"/>}
       </li>)}
     </ol>
     <p className="writer-status" role="status">{status}</p>
