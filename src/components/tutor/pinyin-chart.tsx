@@ -96,23 +96,28 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
         })}</div>
       </section>)}
     </div>
-    <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={t => { setTone(t); if (syllable) void player.play(sound(syllable.base, t)); }} onSelect={onSelect} />
+    <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={t => { setTone(t); if (syllable) void player.play(sound(syllable.base, t)); }}
+      onPlayAll={() => { if (!syllable) return; setTone(null); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }} onSelect={onSelect} />
   </div>;
 }
 
 /** Selected-syllable player: tone buttons (neutral listed but never playable), play-all, slow, parts and sound-alikes. */
-function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onSelect }: {
+function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
-  onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onSelect: (base: string) => void;
+  onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string) => void;
 }) {
   if (!syllable) return <aside className="pinyin-player is-empty" aria-label="Selected syllable"><div className="eyebrow">SELECTED SOUND</div><p className="pinyin-player-empty">Pick a syllable to hear its tones.</p><p className="pinyin-player-tip">Then press 1–4 to replay a tone.</p></aside>;
   const recorded = syllable.tones.filter(t => hasRecording(data, syllable.base, t));
   // With no tone chosen, the title is the bare syllable, "You" totals every recorded
   // tone, and sound-alikes are any syllable with at least one of those tones recorded.
-  const current = tone !== null && recorded.includes(tone) ? tone : null;
+  // While Play all runs, the tone being heard is the selected one; when the
+  // sequence ends nothing stays selected (Play all clears the chosen tone first).
+  const sequenceTone = player.sequencing ? recorded.find(t => player.playing === soundId(syllable.base, t)) ?? null : null;
+  const current = sequenceTone ?? (tone !== null && recorded.includes(tone) ? tone : null);
   const alikes = current !== null ? soundAlikes(data, syllable.base, current) : [...new Set(recorded.flatMap(t => soundAlikes(data, syllable.base, t)))].sort();
   const totals = (current !== null ? [current] : recorded).map(t => progress[soundId(syllable.base, t)]).reduce((sum, s) => ({ right: sum.right + (s?.right ?? 0), wrong: sum.wrong + (s?.wrong ?? 0) }), { right: 0, wrong: 0 });
-  const sequencePlaying = player.playing !== null;
+  // Stop replaces Play all only for the sequence; single tones are too short to need it.
+  const sequencePlaying = player.sequencing;
   return <aside className="pinyin-player" aria-label="Selected syllable">
     <div className="eyebrow">SELECTED SOUND</div>
     <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{current !== null ? toneMark(syllable.base, current) : syllable.base}</h2>
@@ -127,7 +132,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     })}</div>
     <div className="pinyin-player-actions">
       {sequencePlaying ? <Button variant="outline" size="sm" onClick={player.stop}><Square />Stop</Button>
-        : <Button variant="outline" size="sm" disabled={recorded.length < 2} onClick={() => void player.sequence(recorded.map(t => sound(syllable.base, t)))}><ListMusic />Play all</Button>}
+        : <Button variant="outline" size="sm" disabled={recorded.length < 2} onClick={onPlayAll}><ListMusic />Play all</Button>}
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
