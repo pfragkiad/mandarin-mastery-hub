@@ -1103,6 +1103,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .shared-filter-form { flex-wrap: wrap; margin: 16px 0 12px; gap: 8px; }
 .shared-filter-form .search-field { flex: 1 1 220px; max-width: 330px; min-width: 170px; }
 .shared-filter-form .search-field input, .shared-filter-form .filter-select { height: 36px; }
+/* Hide the browser's own in-field search clear (it only shows while focused); the form's X outside the box is the one clear control. */
+.shared-filter-form .search-field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; display: none; }
 .shared-filter-form .filter-select { flex: 0 1 auto; max-width: 210px; }
 .filter-submit { display: flex; gap: 2px; align-items: center; }
 .filter-submit button { height: 36px; }
@@ -1552,6 +1554,8 @@ html[data-display-size='comfortable'] {
   html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field .search-toggle { position: static; transform: none; flex-shrink: 0; padding: 0 6px; min-width: 0; height: 36px; min-height: 36px; font-size: 11px; }
   /* Apply and the search-box X share the form's trailing column, side by side. */
   .mobile-search-actions { display: inline-flex; align-items: center; gap: 2px; }
+  /* The search-box X sits outside the field at full strength, so it reads clearly without focusing the box. */
+  .mobile-search-actions .close-x { opacity: 1; }
   .mobile-filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
   .library-page .catalog-tools-row { gap: 6px; margin-top: 8px; margin-bottom: 12px; }
   .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
