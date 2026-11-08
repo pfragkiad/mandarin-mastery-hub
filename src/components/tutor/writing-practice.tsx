@@ -90,7 +90,11 @@ function WriterStatus({ message, ink }: { message: string; ink: string }) {
   const match = START_OVER_CUE.exec(message);
   const lead = match ? message.slice(0, match.index).trimEnd() : '';
   useLayoutEffect(() => {
-    const measure = () => setLeadWraps((leadRef.current?.getClientRects().length ?? 0) > 1);
+    // Count distinct line tops (graded percentages split the span into several rects on one line).
+    const measure = () => {
+      const rects = Array.from(leadRef.current?.getClientRects() ?? []);
+      setLeadWraps(rects.some(rect => rect.top > rects[0].top + rect.height / 2));
+    };
     measure();
     if (!box.current || typeof ResizeObserver === 'undefined') return;
     const observer = new ResizeObserver(measure);
