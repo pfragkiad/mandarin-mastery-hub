@@ -1414,6 +1414,11 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-open { grid-template-columns: fit-content(55%) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 18px; row-gap: 4px; min-height: 0; padding-block: 14px 18px; align-content: center; }
 .library-list-view:not(.vocab-phrase-grid) .word-card .pinyin { grid-column: 2; grid-row: 1; align-self: end; }
 .library-list-view:not(.vocab-phrase-grid) .word-character > [lang], .library-list-view:not(.vocab-phrase-grid) .tile-hanzi-row { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+/* Radicals with 3+ forms wrap to at most two boxes per row. Capping the row at two
+   82px boxes + gap keeps the fit-content column shrink-wrapped to the boxes, so the
+   pinyin/translation sit the same distance from the forms as with two variants
+   (otherwise the wrapping row stretches to the 55% column limit and leaves a gap). */
+.library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row { max-width: calc(2 * 82px + 10px); }
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
 .library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2; grid-row: 2; align-self: start; }
 @media (max-width: 760px), (pointer: coarse) {
