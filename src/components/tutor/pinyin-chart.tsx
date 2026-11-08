@@ -226,6 +226,9 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
   return <aside className={`pinyin-player${detailsOpen ? ' details-open' : ''}`} aria-label="Selected syllable">
+    {/* Phone-size only: the docked card's top-right close; it deselects the syllable.
+        It takes no row of its own (negative margins), sitting beside the title. */}
+    <Button variant="ghost" size="icon" className="pinyin-player-close close-x" aria-label="Close the selected sound" title="Close" onClick={onClose}><X /></Button>
     <div className="pinyin-player-head"><div className="eyebrow">SELECTED SOUND</div>
       {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang="zh-Latn-pinyin">{back.label}</span></Button>}
     </div>
@@ -251,8 +254,6 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       {/* Phone-size docked player only (hidden by CSS on wider screens): shows or hides the
           details below — parts, sounds alike and "In a character". */}
       <Button variant="ghost" size="sm" className="pinyin-details-toggle" aria-expanded={detailsOpen} onClick={toggleDetails}>{detailsOpen ? <ChevronDown /> : <ChevronUp />}{detailsOpen ? 'Hide details' : 'Details'}</Button>
-      {/* Phone-size only too: closes the docked card by deselecting the syllable. */}
-      <Button variant="ghost" size="icon" className="pinyin-player-close close-x" aria-label="Close the selected sound" title="Close" onClick={onClose}><X /></Button>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
     <dl className="pinyin-parts">
