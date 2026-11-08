@@ -333,7 +333,10 @@
 .writer-playback .writer-speed { flex: 1 0 auto; min-width: max-content; margin-left: 0; gap: 8px; justify-content: flex-end; }
 .writer-speed-label { white-space: nowrap; }
 .writer-speed-options { flex-shrink: 0; }
+/* Practice writing square spans the card's content width (same edges as the
+   mode tabs and the Play/Reset row). */
 .writer-board { width: min(100%, 300px); margin: 0 auto; }
+.writer-board.writer-board-fill { width: 100%; }
 .writer-board .writing-grid { width: 100%; margin: 20px 0 22px; }
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .stroke-guide-heading > button { flex-shrink: 0; }
@@ -1665,3 +1668,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 @media (min-width: 1720px) {
   .vocab-grid.vocab-phrase-grid.library-list-view { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* The status line under the writing square always reserves two lines, so a
+   two-line completion message never pushes Play/Reset down. */
+.writing-tool-tabbed .writer-status { min-height: 2lh; }
