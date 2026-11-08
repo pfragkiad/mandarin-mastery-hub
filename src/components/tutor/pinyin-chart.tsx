@@ -3,8 +3,8 @@
 // player, the applied URL filters and the URL-selected syllable and tone (both live
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
-import { useEffect, useMemo, useRef, useSyncExternalStore } from 'react';
-import { ArrowLeft, ListMusic, Square } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { ArrowLeft, ChevronDown, ChevronUp, ListMusic, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, TONE_HINTS, TONE_NAMES, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
@@ -126,10 +126,14 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     // Scroll only when the tile is not fully visible: below the sticky header
     // (84px, matching .pinyin-player's top) and above the phone-size player
     // docked at the bottom of the window, so visible tiles never move.
+    // The docked player touches the window bottom (its expanded details can be tall);
+    // the beside-the-grid player on wider screens never does.
     const rect = tile.getBoundingClientRect();
     const player = chartRef.current?.querySelector<HTMLElement>('.pinyin-player')?.getBoundingClientRect();
-    const bottom = player && player.top > window.innerHeight / 2 ? player.top : window.innerHeight;
-    if (rect.top < 84 || rect.bottom > bottom) tile.scrollIntoView({ block: 'center', behavior });
+    const docked = Boolean(player && player.bottom >= window.innerHeight - 2 && player.top > 84 && player.left < rect.right && player.right > rect.left);
+    const bottom = docked && player ? player.top : window.innerHeight;
+    // Centre the tile in the visible band between the header and the docked player.
+    if (rect.top < 84 || rect.bottom > bottom) window.scrollBy({ top: rect.top + rect.height / 2 - (84 + bottom) / 2, behavior });
   };
   useEffect(() => {
     const base = revealRef.current;
@@ -137,17 +141,16 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     revealRef.current = null;
     revealTile(base, 'smooth');
   }, [selected]);
-  // Coming back from a character opened in "In a character" (details Back or browser
-  // Back) remounts the chart: bring the selected syllable's tile into view and focus
-  // too. The flag is read during the first render, before the mount effect above
-  // resets it. The reveal waits two frames so the router's scroll restoration runs
-  // first and cannot scroll the tile away again.
-  const returnedFromCharacter = useRef(leftForCharacter);
+  // Arriving at the chart with a syllable already selected — from the Start page's
+  // sound card, a shared link, or Back from a character opened in "In a character" —
+  // brings that syllable's tile into view and focus. The reveal waits two frames so
+  // the router's scroll restoration runs first and cannot scroll the tile away again.
+  const revealOnMount = useRef(true);
   useEffect(() => {
-    if (!returnedFromCharacter.current || !selected) return;
+    if (!revealOnMount.current || !selected) return;
     // Cleared only once the reveal runs, so a development double-mount (which cancels
     // the first frame) still reveals on the second run.
-    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { returnedFromCharacter.current = false; revealTile(selected, 'auto'); }); });
+    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { revealOnMount.current = false; revealTile(selected, 'auto'); }); });
     return () => cancelAnimationFrame(frame);
   }, []);
   // A sound-alike is a link inside the card: remember the sound being left for Back,
@@ -192,12 +195,18 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   </div>;
 }
 
+/** Whether the phone-size docked player shows its details; kept for this visit so every
+ *  syllable (and a return from a character) opens the same way. Open by default. */
+let dockedDetailsOpen = true;
+
 /** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
 function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
   onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string, label: string, current: Tone | null) => void; onLeave: () => void;
 }) {
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
+  const [detailsOpen, setDetailsOpen] = useState(dockedDetailsOpen);
+  const toggleDetails = () => setDetailsOpen(open => { dockedDetailsOpen = !open; return !open; });
   if (!syllable) return <aside className="pinyin-player is-empty" aria-label="Selected syllable"><div className="eyebrow">SELECTED SOUND</div><p className="pinyin-player-empty">Pick a syllable to hear its tones.</p><p className="pinyin-player-tip">Then press 1–4 to replay a tone.</p></aside>;
   const recorded = syllable.tones.filter(t => hasRecording(data, syllable.base, t));
   // With no tone chosen, the title is the bare syllable, "You" totals every recorded
@@ -214,7 +223,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   const totals = (current !== null ? [current] : recorded).map(t => progress[soundId(syllable.base, t)]).reduce((sum, s) => ({ right: sum.right + (s?.right ?? 0), wrong: sum.wrong + (s?.wrong ?? 0) }), { right: 0, wrong: 0 });
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
-  return <aside className="pinyin-player" aria-label="Selected syllable">
+  return <aside className={`pinyin-player${detailsOpen ? ' details-open' : ''}`} aria-label="Selected syllable">
     <div className="pinyin-player-head"><div className="eyebrow">SELECTED SOUND</div>
       {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang="zh-Latn-pinyin">{back.label}</span></Button>}
     </div>
@@ -237,6 +246,9 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
         <span className={sequencePlaying ? undefined : 'is-hidden'} aria-hidden={!sequencePlaying}><Square />Stop</span>
       </Button>
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
+      {/* Phone-size docked player only (hidden by CSS on wider screens): shows or hides the
+          details below — parts, sounds alike and "In a character". */}
+      <Button variant="ghost" size="sm" className="pinyin-details-toggle" aria-expanded={detailsOpen} onClick={toggleDetails}>{detailsOpen ? <ChevronDown /> : <ChevronUp />}{detailsOpen ? 'Hide details' : 'Details'}</Button>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
     <dl className="pinyin-parts">
