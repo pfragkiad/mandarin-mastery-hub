@@ -1693,8 +1693,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */
 :root { --grade-high: oklch(.5 .13 150); --grade-good: oklch(.6 .15 58); --grade-fair: oklch(.47 .07 50); --grade-low: oklch(.54 .19 27); }
-:root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.55 .19 27); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .13 250); }
-:root.dark { --tone-1: oklch(.7 .17 25); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.72 .12 250); }
+:root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.58 .13 230); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .17 305); }
+:root.dark { --tone-1: oklch(.76 .12 225); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.7 .15 305); }
 :root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
 .accuracy-grade { font-weight: 600; }
 .accuracy-grade-high { color: var(--grade-high); }
@@ -1744,7 +1744,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile-badge.off .pinyin-tile-badge-ring { fill: none; stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-mark { stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-dot { fill: var(--tone-ink); }
-/* Each tone keeps its own fixed colour (1 red, 2 orange, 3 green, 4 blue) in the grid
+/* Each tone keeps its own fixed colour (1 sky blue, 2 orange, 3 green, 4 purple; red is avoided because a red disc with a bar reads as "No entry") in the grid
    dots and the Selected sound tone cards, so colour alone already says which tone. */
 .tone-1 { --tone-ink: var(--tone-1); }
 .tone-2 { --tone-ink: var(--tone-2); }
