@@ -36,9 +36,15 @@ export function FinalSelect({ value, onChange }: { value: string; onChange: (val
   </select>;
 }
 
-/** The tones a tile shows as dots: recorded tones filled, unrecorded attested tones hollow. */
+/**
+ * The tones a tile shows as dots: recorded tones filled, unrecorded attested tones hollow.
+ * A fifth grey dot appears only when the dictionary attests a neutral tone for this
+ * syllable (ma, le…); it stays hollow because no neutral recordings exist. Syllables
+ * without a neutral tone (ping…) get no fifth dot at all.
+ */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
-  return <span className="pinyin-tile-tones" aria-hidden="true">{SPOKEN_TONES.map(t => <span key={t} className={`tone-${t} ${hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'}`} />)}</span>;
+  const tones: number[] = syllable.tones.includes(5) ? [...SPOKEN_TONES, 5] : [...SPOKEN_TONES];
+  return <span className="pinyin-tile-tones" aria-hidden="true">{tones.map(t => <span key={t} className={`tone-${t} ${hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'}`} />)}</span>;
 }
 
 // Chart instances currently mounted, and whether the last one left to open a character's
@@ -184,8 +190,8 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
         aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
-        {/* Neutral tone: name the tone, not the bare syllable, so "No recording" never reads as the whole syllable missing. */}
-        <ToneContour tone={t} />{t === 5 ? <span>Neutral</span> : <span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span>}<small>{playable ? t : 'No recording'}</small>
+        {/* Neutral tone shows its spelling (ma) like the other cards; the caption names the tone so "No recording" never reads as the whole syllable missing. */}
+        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{playable ? t : t === 5 ? <>Neutral<br />No recording</> : 'No recording'}</small>
       </button>;
     })}</div>
     <div className="pinyin-player-actions">
