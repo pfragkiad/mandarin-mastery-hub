@@ -2,7 +2,7 @@ import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useMemo, useState } from 'react';
 import { useWorkspace } from './workspace';
-import { HanziIcon } from './game-catalog';
+import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
@@ -17,8 +17,10 @@ import { LibraryViewToggle } from './library-view-toggle';
 const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Hanzi games', icon: HanziIcon }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 // Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
 // Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
-const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, { label: 'Tone quiz', mode: 'tones', icon: Activity }, { label: 'Sound-alikes', mode: 'alikes', icon: Ear }, { label: 'Type what you hear', mode: 'type', icon: Keyboard }] as const;
-const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: Brush }] as const;
+// Pinyin sub-items: the Sound chart plus the three Pinyin games; Hanzi games sub-items.
+// Both game lists come from game-catalog so the Start page shows the same games.
+const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, ...PINYIN_GAMES.map(g => ({ label: g.label, mode: g.mode, icon: g.icon }))];
+const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g.icon }));
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
