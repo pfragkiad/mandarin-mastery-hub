@@ -11,6 +11,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
+import { radicalIdentity } from '@/lib/radical-identities';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
@@ -51,7 +52,18 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           {/* To the right of the box, centred on it: the coloured corpus rank and the
               meaning styled like the glyph details' "In a character" rows. */}
           <span className="pinyin-character-text">
-            {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
+            {/* Top line: rank, then the same pills Decomposition shows — Radical #N only from
+                the exact sourced glyph identity (never shape), Traditional from record metadata. */}
+            {(() => {
+              const radicals = radicalIdentity(entry.hanzi).radicals;
+              const traditional = entry.script === 'Traditional';
+              if (!usageOrder.loaded && !radicals.length && !traditional) return null;
+              return <span className="pinyin-character-facts">
+                {usageOrder.loaded && <UsageLabel rank={usageRank(entry, 'Characters', includeTraditional)} kind="Characters" compact />}
+                {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
+                {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
+              </span>;
+            })()}
             {entry.meaning && <span className="pinyin-character-meaning"><MeaningText text={entry.meaning} /></span>}
           </span>
         </li>)}</ul>
