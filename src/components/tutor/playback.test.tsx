@@ -497,5 +497,6 @@ it('Play waits for a spoken stroke name to finish before drawing the next stroke
   act(() => onEnd?.());
   expect(fake.animateStroke).toHaveBeenCalledTimes(2);
   expect(fake.animateStroke.mock.calls[1]?.[0]).toBe(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
   vi.mocked(speakTts).mockReset();
 });
