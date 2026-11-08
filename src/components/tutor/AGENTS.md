@@ -4,3 +4,4 @@
 - The five games (names, icons, destinations) come only from game-catalog.tsx, shared by the sidebar and the Start page, so the two never drift.
 - The Sound chart keeps syllable and tone in the URL (s, t); its card Back uses soundTrail (createTrail in detail-trail.ts) keyed by history entry, so revisiting the same URL is never mistaken for a return.
 - Sound chart "In a character" lists come only from exact catalogue readings via src/lib/syllable-characters.ts, so no reading is inferred from shape or words; radical characters link to their radical card only through an exact card glyph or a unique sourced Kangxi identity (variant key only when one form matches); those rows use the radical family's own rank and list before ordinary characters.
+- DraftFilterForm `live` applies every edit synchronously (no wait cursor/frame delay) for small cheap result sets like the Sound chart, so the applied URL catches up before the next keystroke; libraries keep explicit Apply.
