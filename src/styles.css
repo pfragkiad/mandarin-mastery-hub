@@ -1373,6 +1373,8 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    narrow desktop windows. No icon rail or reserved width survives collapse. */
 .workspace.hamburger-navigation { --sidebar-width: 0px; }
 .workspace.hamburger-navigation .mobile-menu { display: inline-flex; flex-shrink: 0; }
+/* Medium windows keep the hamburger even while the menu is pinned (it hides the menu). */
+.workspace.has-menu-button .mobile-menu { display: inline-flex; flex-shrink: 0; }
 .workspace.hamburger-navigation .sidebar { width: 238px; transform: translateX(-100%); transition: transform .2s; background: color-mix(in oklab, var(--sidebar-bg) 97%, transparent); backdrop-filter: blur(4px); }
 .workspace.hamburger-navigation .sidebar.is-open { transform: translateX(0); box-shadow: var(--shadow-popover); }
 .workspace.hamburger-navigation .sidebar.is-open .brand-copy,
