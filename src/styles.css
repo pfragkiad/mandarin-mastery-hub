@@ -1022,7 +1022,9 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .detail-sheet-bar { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; flex-shrink: 0; border-bottom: 1px solid var(--border); }
 .detail-sheet-bar { display: grid; grid-template-columns: 1fr auto 1fr; }
 .detail-sheet-start { display: flex; justify-content: flex-start; min-width: 0; }
-.detail-sheet-end { display: flex; justify-content: flex-end; align-items: center; gap: 4px; }
+/* Pinned to the last column so the close X stays top-right even when the middle
+   ‹ n of N › navigation is absent (e.g. a card opened outside the current filter). */
+.detail-sheet-end { display: flex; justify-content: flex-end; align-items: center; gap: 4px; grid-column: 3; }
 .detail-sheet-back { gap: 6px; font-size: 15px; }
 .detail-sheet-back:hover { background: transparent; color: var(--primary); }
 .detail-sheet-nav { display: flex; align-items: center; gap: 2px; grid-column: 2; border: 1px solid var(--border); border-radius: 999px; padding: 0 2px; }
