@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Sparkles, Search, Play, Maximize2, Minimize2 } from 'lucide-react';
-import { PracticeIcon } from './practice-icons';
+import { Search, Maximize2, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useWorkspace } from './workspace';
@@ -9,8 +8,10 @@ import { SearchHitContent } from './search-hit-content';
 import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { searchAll } from '@/lib/site-search';
-import { DailyCharacterHero, SavedStrip, useDailyCharacter } from './overview-hero';
+import { DailyCharacterHero, SavedStrip } from './overview-hero';
 import { DiscoveryTile, type DiscoveryCategory } from './overview-discovery';
+import { SoundDiscoveryTile } from './overview-sound';
+import { OverviewGames } from './overview-games';
 
 const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['Characters', 'Components', 'Radicals', 'word', 'phrase'];
 
@@ -20,15 +21,16 @@ export function OverviewPage() {
   // Pinyin/Exact toggles inside the hero search box, mirroring the library filters.
   const [py, setPy] = useState<'any' | 'pinyin' | 'exact'>('any');
   const hits = useMemo(() => searchAll(items, query, preferences.includeTraditional, Infinity, py), [items, query, preferences.includeTraditional, py, catalogVersion]);
-  const daily = useDailyCharacter().entry?.hanzi;
   return <div className="page-enter overview-page">
     <DailyCharacterHero><OverviewSearch query={query} setQuery={setQuery} py={py} setPy={setPy} hits={hits} includeTraditional={preferences.includeTraditional}/></DailyCharacterHero>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
+      {/* Sixth card: a random Pinyin syllable that has at least one recording. */}
+      <SoundDiscoveryTile/>
     </section>
     <SavedStrip/>
-    <section className="overview-flashcards" aria-label="Play flashcards"><div className="flashcard-fan" aria-hidden="true"><span lang="zh-CN">学</span><span lang="zh-CN">{daily ?? '习'}</span><Sparkles/></div><div><div className="eyebrow">A LITTLE CHALLENGE</div><h2>How much will you remember?</h2><p>A fresh round. A second chance at the ones you miss.</p></div><Button asChild className="overview-play"><Link to="/flashcards"><Play/>Play flashcards now <ArrowRight/></Link></Button></section>
-    <section className="overview-flashcards overview-drawing" aria-label="Play the drawing game"><div className="drawing-badge" aria-hidden="true"><PracticeIcon/></div><div><div className="eyebrow">PRACTICE YOUR HAND</div><h2>Can you write it without the guide?</h2><p>Draw characters, radicals, and words stroke by stroke.</p></div><Button asChild className="overview-play"><Link to="/drawing"><Play/>Play drawing game <ArrowRight/></Link></Button></section>
+    {/* All five games, grouped as Hanzi games and Pinyin games. */}
+    <OverviewGames/>
   </div>;
 }
 

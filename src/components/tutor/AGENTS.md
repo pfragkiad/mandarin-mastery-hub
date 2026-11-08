@@ -1,3 +1,4 @@
 - The Settings handwriting try pad (大) reads the live Trace/Recall strictness and Practice mode options, so it always judges strokes exactly as Practice will; its mode switch is local and never saved.
 - FlashcardSessionProvider (root) keeps flashcard rounds across Details; Details/missed links set one detailTrail step so Back resumes the game.
 - Shell side-menu docking per window size comes only from src/lib/nav-layout.ts (large docked, medium pin/hide remembered, small drawer), so markup/CSS never encode their own breakpoint rules.
+- The five games (names, icons, destinations) come only from game-catalog.tsx, shared by the sidebar and the Start page, so the two never drift.

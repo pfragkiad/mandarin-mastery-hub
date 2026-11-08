@@ -112,6 +112,22 @@ export function allSounds(data: PinyinData): PinyinSound[] {
   return sortSyllables(data.syllables).flatMap(s => s.tones.filter(t => hasRecording(data, s.base, t)).map(tone => ({ id: soundId(s.base, tone), base: s.base, tone })));
 }
 
+/** The recorded tones of one syllable, in tone order (never the neutral tone). */
+export function recordedTones(data: Pick<PinyinData, 'recordings'>, syllable: PinyinSyllable): Tone[] {
+  return syllable.tones.filter(t => hasRecording(data, syllable.base, t)).sort((a, b) => a - b);
+}
+
+/**
+ * A random syllable with at least one recorded tone (Start page sound card).
+ * Syllables with no recording at all are never picked; `previous` is skipped
+ * when another choice exists, so Shuffle always changes the card.
+ */
+export function randomRecordedSyllable(data: Pick<PinyinData, 'syllables' | 'recordings'>, previous?: string, random = Math.random): PinyinSyllable | null {
+  const pool = data.syllables.filter(s => recordedTones(data, s).length > 0);
+  const choices = pool.length > 1 ? pool.filter(s => s.base !== previous) : pool;
+  return choices[Math.floor(random() * choices.length)] ?? null;
+}
+
 export function sortSyllables(list: PinyinSyllable[]): PinyinSyllable[] {
   return [...list].sort((a, b) => INITIAL_ORDER.indexOf(a.initial) - INITIAL_ORDER.indexOf(b.initial) || FINAL_ORDER.indexOf(a.final) - FINAL_ORDER.indexOf(b.final) || a.base.localeCompare(b.base));
 }

@@ -2,11 +2,12 @@ import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useMemo, useState } from 'react';
 import { useWorkspace } from './workspace';
+import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Layers, Library, Brush, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Grid3x3, Activity, Ear, Keyboard, Pin, PinOff } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Grid3x3, Pin, PinOff } from 'lucide-react';
 import { NAV_MEDIUM_MAX, NAV_PINNED_KEY, NAV_SMALL_MAX, navCanPin, navHasMenuButton, navIsDocked, navSizeFor, readNavPinned, type NavSize } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -16,13 +17,10 @@ import { LibraryViewToggle } from './library-view-toggle';
 const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Hanzi games', icon: HanziIcon }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
 // Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
 // Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
-const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, { label: 'Tone quiz', mode: 'tones', icon: Activity }, { label: 'Sound-alikes', mode: 'alikes', icon: Ear }, { label: 'Type what you hear', mode: 'type', icon: Keyboard }] as const;
-const gameSections = [{ label: 'Flashcards', path: '/flashcards', icon: Layers }, { label: 'Drawing game', path: '/drawing', icon: Brush }] as const;
-/** Nav icon for Hanzi games: the character 字 drawn as an SVG so it sizes and
- * colours like the lucide icons beside it (currentColor, 24×24 viewBox). */
-function HanziIcon(props: React.SVGProps<SVGSVGElement>) {
-  return <svg viewBox="0 0 24 24" width={24} height={24} fill="currentColor" aria-hidden="true" {...props}><text x="12" y="19.5" textAnchor="middle" fontSize="20" fontWeight="600" lang="zh-CN">字</text></svg>;
-}
+// Pinyin sub-items: the Sound chart plus the three Pinyin games; Hanzi games sub-items.
+// Both game lists come from game-catalog so the Start page shows the same games.
+const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, ...PINYIN_GAMES.map(g => ({ label: g.label, mode: g.mode, icon: g.icon }))];
+const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g.icon }));
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.

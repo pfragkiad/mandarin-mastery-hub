@@ -1,0 +1,75 @@
+import { useEffect, useState } from 'react';
+import { Link } from '@tanstack/react-router';
+import { Shuffle, Volume2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useWorkspace } from './workspace';
+import { usePinyinPlayer, usePinyinProgress, sound } from './pinyin-shared';
+import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneMark, type PinyinData, type PinyinSyllable } from '@/lib/pinyin-guide';
+
+/**
+ * Start page "Sounds" discovery card, the sixth beside Characters…Phrases.
+ * State: the lazily loaded Pinyin data, the shown syllable and a load failure.
+ * It shows a random syllable that has at least one human recording; the speaker
+ * plays all its recorded tones in order, each tone chip plays just that tone and
+ * the syllable opens it in the Sound chart. Neutral tones (never recorded) are not
+ * offered. Playing counts as "heard" in the same browser progress as the Pinyin page.
+ */
+export function SoundDiscoveryTile() {
+  const { preferences } = useWorkspace();
+  const [data, setData] = useState<PinyinData | null>(null);
+  const [failed, setFailed] = useState(false);
+  const [syllable, setSyllable] = useState<PinyinSyllable | null>(null);
+  const { record } = usePinyinProgress();
+  const player = usePinyinPlayer(data, preferences.slow, id => record(id, 'heard'));
+
+  // Data loads after mount (it is a separate download), so the server render shows the loading note.
+  useEffect(() => {
+    let live = true;
+    loadPinyinData().then(loaded => { if (live) { setData(loaded); setSyllable(randomRecordedSyllable(loaded)); } }, () => { if (live) setFailed(true); });
+    return () => { live = false; };
+  }, []);
+
+  const count = data ? allSounds(data).length : null;
+  const tones = data && syllable ? recordedTones(data, syllable) : [];
+  const shuffle = () => { if (!data) return; player.stop(); setSyllable(randomRecordedSyllable(data, syllable?.base)); };
+  const playAll = () => { if (syllable) void player.sequence(tones.map(t => sound(syllable.base, t))); };
+
+  return (
+    <section className="discovery-tile discovery-sound" aria-label={`Sounds: ${count ?? '…'} recordings`}>
+      <div className="discovery-tile-top">
+        <Link to="/pinyin" className="discovery-tile-heading" aria-label="Open the Pinyin sound chart">
+          <span className="stat-icon" aria-hidden="true" lang="zh-CN">音</span>
+          <span className="discovery-tile-count">
+            <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
+            <span>Sounds</span>
+          </span>
+        </Link>
+        <Button variant="ghost" size="icon" title="Show another random sound" aria-label="Show another random sound" onClick={shuffle} disabled={!syllable}>
+          <Shuffle />
+        </Button>
+      </div>
+      {syllable ? (
+        <div className="discovery-tile-record" aria-live="polite">
+          <div className="discovery-record-pinyin">
+            <span className="discovery-sound-count">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span>
+            <Button variant="ghost" size="icon" aria-label={`Play every recorded tone of ${syllable.base}`} title="Play all tones · Recording" onClick={player.sequencing ? player.stop : playAll}>
+              <Volume2 />
+            </Button>
+          </div>
+          <Link to="/pinyin" search={{ s: syllable.base }} className="overview-record-link" aria-label={`Open ${syllable.base} in the sound chart`}>
+            <strong className="discovery-sound-syllable">{syllable.base}</strong>
+          </Link>
+          <div className="discovery-sound-tones" role="group" aria-label={`Tones of ${syllable.base}`}>
+            {tones.map(t => {
+              const id = sound(syllable.base, t).id;
+              return <button key={t} type="button" className={`discovery-sound-tone${player.playing === id ? ' is-playing' : ''}`} aria-label={`Play ${toneMark(syllable.base, t)}, tone ${t}`} aria-pressed={player.playing === id} onClick={() => void player.play(sound(syllable.base, t))}>{toneMark(syllable.base, t)}</button>;
+            })}
+          </div>
+        </div>
+      ) : (
+        <p className="library-note">{failed ? 'Sounds could not load. Reload the page to try again.' : 'Loading sounds…'}</p>
+      )}
+      {player.error && <p className="library-note" role="status">{player.error}</p>}
+    </section>
+  );
+}
