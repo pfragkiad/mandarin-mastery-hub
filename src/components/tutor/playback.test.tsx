@@ -172,9 +172,7 @@ it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice'
 
 describe('matched practice stroke speech', () => {
   async function startPractice() {
-    render(<WritingPractice mode="watch" character="宀"/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
-    fireEvent.mouseDown(screen.getByRole('tab', { name: 'Trace' }), { button: 0, ctrlKey: false });
+    render(<WritingPractice character="宀"/>);
     await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
     return fake.quiz.mock.calls.at(-1)?.[0];
   }
@@ -471,4 +469,14 @@ it('does not celebrate an isolated stroke exercise', async () => {
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onComplete({ totalMistakes: 0 }));
   expect(container.querySelector('.perfect-confetti')).toBeNull();
+});
+
+it('Trace Play continues after a clicked stroke instead of restarting', async () => {
+  render(<WritingPractice character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  expect(screen.queryByRole('tab', { name: 'Watch' })).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Continue tracing after stroke 3' }));
+  fake.animateStroke.mockClear();
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(3);
 });
