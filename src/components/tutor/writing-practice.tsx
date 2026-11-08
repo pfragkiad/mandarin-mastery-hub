@@ -73,11 +73,39 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
 // (e.g. "Draw again to start over.") is the next action the learner should take,
 // so it is emphasised separately from the result text before it.
 const START_OVER_CUE = /((?:Draw again|Press \w+) to start over\.)$/;
-function renderStatus(message: string): React.ReactNode {
+/**
+ * WriterStatus — the status line under the drawing square.
+ * Inputs: `message` (full status text) and `ink` (CSS colour of the drawn character, so the
+ * "start over" cue matches the Hanzi ink above it).
+ * Layout: when the result text fits on one line, the cue moves to its own second line; when
+ * the result text already wraps, the cue stays inline (nowrap) so the box never exceeds the
+ * two reserved lines. Line count is measured from the lead span's line boxes and re-checked
+ * whenever the status width changes.
+ */
+function WriterStatus({ message, ink }: { message: string; ink: string }) {
+  const box = useRef<HTMLParagraphElement>(null);
+  const leadRef = useRef<HTMLSpanElement>(null);
+  const [leadWraps, setLeadWraps] = useState(false);
   const match = START_OVER_CUE.exec(message);
-  if (!match) return message;
-  const lead = message.slice(0, match.index).trimEnd();
-  return <>{lead && <>{lead} </>}<strong className="writer-status-cue">{match[1]}</strong></>;
+  const lead = match ? message.slice(0, match.index).trimEnd() : '';
+  useLayoutEffect(() => {
+    const measure = () => setLeadWraps((leadRef.current?.getClientRects().length ?? 0) > 1);
+    measure();
+    if (!box.current || typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(measure);
+    observer.observe(box.current);
+    return () => observer.disconnect();
+  }, [lead]);
+  return (
+    <p ref={box} className="writer-status" aria-live="polite">
+      {match ? (
+        <span className="writer-status-text">
+          {lead && <><span ref={leadRef}>{lead}</span>{' '}</>}
+          <strong className={`writer-status-cue${lead && !leadWraps ? ' writer-status-cue-break' : ''}`} style={{ color: ink }}>{match[1]}</strong>
+        </span>
+      ) : message}
+    </p>
+  );
 }
 
 function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
@@ -504,7 +532,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   };
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
   const audioControl = <Button variant="ghost" size="icon" title={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-label={muted ? 'Unmute stroke names' : 'Mute stroke names'} aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX/> : <Volume2/>}</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill"><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><p className="writer-status" aria-live="polite">{renderStatus(message)}</p><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill"><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
