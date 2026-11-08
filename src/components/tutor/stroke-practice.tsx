@@ -34,7 +34,7 @@ export function strokeSpeech(entry?: { note: string; pinyin: string }) {
 
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
 export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { glyph: string; mode?: PracticeMode | undefined; onModeChange?: (mode: PracticeMode) => void }) {
-  const [localMode, setLocalMode] = useState<PracticeMode>('watch');
+  const [localMode, setLocalMode] = useState<PracticeMode>('trace');
   const practiceMode = selectedMode ?? localMode;
   const changeMode = (next: PracticeMode) => { setLocalMode(next); onModeChange?.(next); };
   const { catalogVersion, theme, preferences } = useWorkspace();
@@ -107,7 +107,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
     }
     const run = ++animationRun.current;
     w.cancelQuiz(); setSpeed(w); setMode('watch'); setMessage('Watch the direction and where the stroke starts…');
-    void w.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setMode('idle'); setMessage('Now trace it yourself, or watch again.'); } });
+    void w.animateCharacter({ onComplete: () => { if (animationRun.current !== run) return; setMode('idle'); if (practiceMode === 'trace') { void w.hideCharacter({ duration: 0 }); practice(); } setMessage('Now trace it yourself, or play again.'); } });
   };
   const practice = () => {
     const w = writer.current; if (!w) return;
@@ -139,7 +139,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
         <p className="writer-status" role="status">{message}</p>
         <div className="writer-controls writer-controls-arranged"><div className="writer-playback">
-          {practiceMode === 'watch' && <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>}
+          {practiceMode !== 'recall' && <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>}
           <Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button>
           {practiceMode === 'watch' && <AnimationSpeedControl speed={speed} onChange={setSpeedValue}/>}</div>
         </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button></div>}

@@ -42,7 +42,7 @@ beforeEach(() => {
 it('selects exact component strokes from a group heading and toggles them off without starting playback', async () => {
   const record = JSON.parse(readFileSync('public/data/character-enrichment/5b66.json', 'utf8')).record as CharacterEnrichment;
   const enrichment: CharacterEnrichment = { ...record, bindings: { ...record.bindings, strokeCount: 3 }, mapping: { status: 'complete', groups: record.mapping.groups.slice(0, 1), unknownStrokeIndices: [] } };
-  const { container } = render(<WritingPractice character="学" enrichment={enrichment}/>);
+  const { container } = render(<WritingPractice mode="watch" character="学" enrichment={enrichment}/>);
   const group = await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1, 2, 3' });
   fireEvent.click(group);
   expect(Array.from(container.querySelectorAll('.component-stroke-overlay path')).map(path => path.getAttribute('data-stroke-index'))).toEqual(['0', '1', '2']);
@@ -54,10 +54,10 @@ afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 describe.each(['我', '口'])('character/radical playback for %s', character => {
   it('pauses with the current stroke selected and resumes the same animation before continuing in order', async () => {
-    render(<WritingPractice character={character}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+    render(<WritingPractice mode="watch" character={character}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
     await screen.findByRole('button', { name: 'Play stroke 3' });
-    fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
     const firstComplete = fake.animateStroke.mock.calls[0]?.[1].onComplete;
     act(() => firstComplete());
     expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
@@ -74,16 +74,16 @@ describe.each(['我', '口'])('character/radical playback for %s', character => 
   });
 
   it('reset while paused discards the old run and next Play starts with stroke one', async () => {
-    render(<WritingPractice character={character}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+    render(<WritingPractice mode="watch" character={character}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
     await screen.findByRole('button', { name: 'Play stroke 3' });
-    fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
     const oldComplete = fake.animateStroke.mock.calls[0]?.[1].onComplete;
     fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
     fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
     act(() => oldComplete());
     expect(fake.animateStroke).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
     expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 0]);
     expect(fake.resumeAnimation).not.toHaveBeenCalled();
   });
@@ -101,11 +101,11 @@ it('individual strokes also resume the same correct-writing animation', async ()
 });
 
 it('selecting occurrence strokes while paused does not replace or resume the animation', async () => {
-  const { container, rerender } = render(<WritingPractice character="河"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
-  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  const { container, rerender } = render(<WritingPractice mode="watch" character="河"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
-  rerender(<WritingPractice character="河" component={{ glyph: '氵', path: [0], strokeIndices: [0, 1, 2], noncontiguous: false, standaloneFit: 'fits-current-geometry-guards', standaloneReuseAllowed: true }}/>);
+  rerender(<WritingPractice mode="watch" character="河" component={{ glyph: '氵', path: [0], strokeIndices: [0, 1, 2], noncontiguous: false, standaloneFit: 'fits-current-geometry-guards', standaloneReuseAllowed: true }}/>);
   expect(container.querySelectorAll('.component-stroke-overlay path')).toHaveLength(3);
   expect(fake.animateStroke).toHaveBeenCalledTimes(1);
   expect(fake.resumeAnimation).not.toHaveBeenCalled();
@@ -116,14 +116,14 @@ it('selecting occurrence strokes while paused does not replace or resume the ani
 });
 
 it('Play after Step draws only remaining strokes and keeps pause/resume available', async () => {
-  render(<WritingPractice character="我"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  render(<WritingPractice mode="watch" character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(screen.getByRole('button', { name: 'Pause' })).toBeDisabled();
   const drawn = fake.animateStroke.mock.calls[0]?.[1].onComplete;
   act(() => drawn());
-  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
-  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled();
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1]);
   expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
@@ -132,8 +132,8 @@ it('Play after Step draws only remaining strokes and keeps pause/resume availabl
   act(() => fake.animateStroke.mock.calls[1]?.[1].onComplete());
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1, 2]);
   fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
-  expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled();
-  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled();
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   expect(fake.animateStroke.mock.calls.map(call => call[0])).toEqual([0, 1, 2, 0]);
 });
 
@@ -173,8 +173,6 @@ it.each(['trace', 'recall'] as const)('single-stroke Reset restarts %s practice'
 describe('matched practice stroke speech', () => {
   async function startPractice() {
     render(<WritingPractice character="宀"/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
-    fireEvent.mouseDown(screen.getByRole('tab', { name: 'Trace' }), { button: 0, ctrlKey: false });
     await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
     return fake.quiz.mock.calls.at(-1)?.[0];
   }
@@ -230,11 +228,11 @@ it('Recall starts without outline, component overlays or automatic hints', async
   expect(container.querySelector('.stroke-guide-strip')).toBeNull();
 });
 
-it('the Reset button sits in the playback row beside Play strokes and Step', async () => {
+it('the Reset button sits in the playback row beside Play and Step', async () => {
   render(<WritingPractice character="我" mode="watch"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
   const row = document.querySelector('.writer-playback');
-  expect(row?.textContent).toContain('Play strokes');
+  expect(row?.textContent).toContain('Play');
   expect(row?.textContent).toContain('Step');
   expect(row?.textContent).toContain('Reset');
 });
@@ -277,7 +275,7 @@ it('the single-stroke panel uses the same arrow button instead of a switch', asy
 
 it('tapping a stroke tile jumps straight to it: earlier strokes appear instantly, only the selected one animates', async () => {
   render(<WritingPractice character="我" mode="watch"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
   await screen.findByRole('button', { name: 'Play stroke 3' });
   fireEvent.click(screen.getByRole('button', { name: 'Play stroke 2' }));
   expect(fake.hideCharacter).toHaveBeenCalledTimes(1);
@@ -317,7 +315,7 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
 });
 
 it('Step after a component selection clears the highlight and draws the next group\'s first stroke', async () => {
-  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  render(<WritingPractice mode="watch" character="学" enrichment={selectionRecord()}/>);
   fireEvent.click(await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1' }));
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toHaveAttribute('aria-pressed', 'false');
@@ -325,7 +323,7 @@ it('Step after a component selection clears the highlight and draws the next gro
 });
 
 it('Step after the last component selection starts again from the first stroke card', async () => {
-  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  render(<WritingPractice mode="watch" character="学" enrichment={selectionRecord()}/>);
   fireEvent.click(await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' }));
   fireEvent.click(screen.getByRole('button', { name: 'Step' }));
   expect(screen.getByRole('button', { name: 'Highlight 冖 strokes 2, 3' })).toHaveAttribute('aria-pressed', 'false');
@@ -335,8 +333,8 @@ it('Step after the last component selection starts again from the first stroke c
 
 it('changing mode cancels an old playback run without remounting the writer', async () => {
   const { rerender } = render(<WritingPractice character="我" mode="watch"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
-  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   const complete = fake.animateStroke.mock.calls[0]?.[1].onComplete;
   rerender(<WritingPractice character="我" mode="recall"/>);
   act(() => complete());
@@ -344,10 +342,10 @@ it('changing mode cancels an old playback run without remounting the writer', as
   expect(fake.quiz).toHaveBeenCalledTimes(1);
 });
 it('Practice has no speed buttons and plays at the Settings default of 0.5×', async () => {
-  render(<WritingPractice character="我"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play strokes' })).toBeEnabled());
+  render(<WritingPractice mode="watch" character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
   expect(screen.queryByRole('group', { name: 'Animation speed' })).toBeNull();
-  fireEvent.click(screen.getByRole('button', { name: 'Play strokes' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   expect(fake._options.strokeAnimationSpeed).toBe(0.5);
 });
 
@@ -359,7 +357,7 @@ const selectionRecord = () => {
   ], unknownStrokeIndices: [] } } as CharacterEnrichment;
 };
 it('selecting a later component instantly draws all earlier strokes and Step continues after the group', async () => {
-  render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  render(<WritingPractice mode="watch" character="学" enrichment={selectionRecord()}/>);
   fireEvent.click(await screen.findByRole('button', { name: 'Highlight ⺍ strokes 1' }));
   await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalledWith({ character: { main: { opacity: 1, strokes: {
     0: { opacity: 1, displayPortion: 1 }, 1: { opacity: 0, displayPortion: 1 }, 2: { opacity: 0, displayPortion: 1 },
@@ -375,7 +373,7 @@ it('selecting a later component instantly draws all earlier strokes and Step con
   expect(fake.animateStroke).not.toHaveBeenCalled();
 });
 it('a single tile clears component selection before drawing the selected stroke', async () => {
-  const { container } = render(<WritingPractice character="学" enrichment={selectionRecord()}/>);
+  const { container } = render(<WritingPractice mode="watch" character="学" enrichment={selectionRecord()}/>);
   const group = await screen.findByRole('button', { name: 'Highlight 冖 strokes 2, 3' });
   fireEvent.click(group);
   await waitFor(() => expect(fake._renderState.updateState).toHaveBeenCalled());
@@ -471,4 +469,14 @@ it('does not celebrate an isolated stroke exercise', async () => {
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onComplete({ totalMistakes: 0 }));
   expect(container.querySelector('.perfect-confetti')).toBeNull();
+});
+
+it('Trace Play continues after a clicked stroke instead of restarting', async () => {
+  render(<WritingPractice character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  expect(screen.queryByRole('tab', { name: 'Watch' })).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Continue tracing after stroke 1' }));
+  fake.animateStroke.mockClear();
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
 });
