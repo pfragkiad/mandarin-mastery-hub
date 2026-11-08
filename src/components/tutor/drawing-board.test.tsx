@@ -101,9 +101,9 @@ it('a word card always offers Practice for that word focused on the drawn charac
   const word = { id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'HSK 1', type: '', sentence: '', translation: '' };
   render(<DrawingBoard entry={{ ...entry, id: word.id, hanzi: '好', word, characterIndex: 1 }} onFinish={vi.fn()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
-  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
+  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&mode=trace&focus=1');
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
-  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&focus=1');
+  expect(screen.getByRole('link', { name: 'Practice' }).getAttribute('href')).toBe('/strokes?character=%E4%BD%A0%E5%A5%BD&mode=trace&focus=1');
 });
 
 it.each([0, 1])('Drawing celebrates only completion with zero mistakes (%s)', async mistakes => {
