@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { allSounds, loadPinyinData, type PinyinData } from '@/lib/pinyin-guide';
+import { allSounds, IncompletePinyinDataError, loadPinyinData, type PinyinData } from '@/lib/pinyin-guide';
 import { progressSummary } from '@/lib/pinyin-progress';
 import { useWorkspace } from './workspace';
 import { SourceInfo } from './source-info';
@@ -30,9 +30,10 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
 }) {
   const { preferences, setPreferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
-  const [failed, setFailed] = useState(false);
+  // failed: 'load' = sidecars couldn't be fetched; 'stale' = recording list doesn't cover the inventory (reload needed).
+  const [failed, setFailed] = useState<false | 'load' | 'stale'>(false);
   const [attempt, setAttempt] = useState(0);
-  useEffect(() => { let live = true; setFailed(false); loadPinyinData().then(d => { if (live) setData(d); }, () => { if (live) setFailed(true); }); return () => { live = false; }; }, [attempt]);
+  useEffect(() => { let live = true; setFailed(false); loadPinyinData().then(d => { if (live) setData(d); }, error => { if (live) { setData(null); setFailed(error instanceof IncompletePinyinDataError ? 'stale' : 'load'); } }); return () => { live = false; }; }, [attempt]);
   const { progress, record, reset } = usePinyinProgress();
   const player = usePinyinPlayer(data, preferences.slow, id => record(id, 'heard'));
   const [confirming, setConfirming] = useState(false);
@@ -60,7 +61,8 @@ export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, on
       <TabsList>{PINYIN_MODES.map(m => <TabsTrigger key={m.mode} value={m.mode}>{m.label}</TabsTrigger>)}</TabsList>
     </Tabs>
     <div className="pinyin-body">
-      {failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
+      {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
+      : failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
         : !data || !drillProps ? <p className="library-note">Loading sounds…</p>
         : mode === 'chart' ? <PinyinChart data={data} progress={progress} player={player} filters={chartFilters} selected={selected} slow={preferences.slow} onSlow={onSlow} onSelect={onSelect} onFilters={onChartFilters} />
         : mode === 'tones' ? <ToneDrill key="tones" {...drillProps} />
