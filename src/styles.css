@@ -352,6 +352,9 @@
 @media (max-width: 580px) {
   .writer-board, .writer-board.writer-board-fill { width: min(100%, 250px); margin-left: auto; margin-right: auto; }
   .writing-tool-tabbed .practice-mode-tabs, .writing-tool-tabbed .writer-playback { width: min(100%, 250px); margin-left: auto; margin-right: auto; }
+  /* Play sits on the square's left edge, Reset (always last) on its right edge. */
+  .writing-tool-tabbed .writer-playback { flex-wrap: nowrap; }
+  .writing-tool-tabbed .writer-playback > button:last-child { margin-left: auto; }
 }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 /* One shared style for the first content line directly under a section heading:
