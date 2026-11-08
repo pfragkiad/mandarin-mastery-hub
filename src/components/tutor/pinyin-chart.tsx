@@ -226,8 +226,8 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
   return <aside className={`pinyin-player${detailsOpen ? ' details-open' : ''}`} aria-label="Selected syllable">
-    {/* Phone-size only: the docked card's top-right close; it deselects the syllable. It
-        stays pinned to the card's top corner while the open details scroll beneath it. */}
+    {/* Phone-size only: the docked card's top-right close; it deselects the syllable.
+        It takes no row of its own (negative margins), sitting beside the title. */}
     <Button variant="ghost" size="icon" className="pinyin-player-close close-x" aria-label="Close the selected sound" title="Close" onClick={onClose}><X /></Button>
     <div className="pinyin-player-head"><div className="eyebrow">SELECTED SOUND</div>
       {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang="zh-Latn-pinyin">{back.label}</span></Button>}

@@ -1799,7 +1799,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
 .pinyin-details-toggle.pinyin-details-toggle { display: none; height: 32px; gap: 4px; padding: 0 8px; font-size: 13px; color: var(--muted-foreground); }
 .pinyin-details-toggle svg { width: 16px; height: 16px; }
-.pinyin-player-close.pinyin-player-close { display: none; position: sticky; top: 0; z-index: 1; align-self: flex-end; flex: none; width: 32px; height: 32px; margin: -8px -10px -40px 0; }
+.pinyin-player-close.pinyin-player-close { display: none; position: relative; z-index: 1; align-self: flex-end; flex: none; width: 32px; height: 32px; margin: -8px -10px -40px 0; }
 .pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 /* Play all / Stop: both labels overlap in one cell so the button width stays fixed. */
 .pinyin-playall { display: inline-grid; justify-items: center; }
