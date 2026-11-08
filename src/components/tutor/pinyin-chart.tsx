@@ -105,7 +105,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   const recorded = syllable.tones.filter(t => hasRecording(data, syllable.base, t));
   const alikes = soundAlikes(data, syllable.base, recorded.includes(tone) ? tone : recorded[0] ?? 1);
   const stats = progress[soundId(syllable.base, tone)];
-  const sequencePlaying = player.playing !== null && recorded.length > 1 && player.playing.startsWith(syllable.base);
+  const sequencePlaying = player.playing !== null;
   return <aside className="pinyin-player" aria-label="Selected syllable">
     <div className="eyebrow">SELECTED SOUND</div>
     <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{toneMark(syllable.base, tone)}</h2>
@@ -130,6 +130,6 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       <div><dt>You</dt><dd>{stats ? `${stats.right} right · ${stats.wrong} wrong` : 'Not practised yet'}</dd></div>
     </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
-    {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => <button key={base} type="button" className="pinyin-alike" onClick={() => onSelect(base)} lang="zh-Latn-pinyin">{base}</button>)}</div></div>}
+    {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => <button key={base} type="button" className="pinyin-alike" onClick={() => { onSelect(base); if (hasRecording(data, base, tone)) void player.play(sound(base, tone)); }} lang="zh-Latn-pinyin">{toneMark(base, recorded.includes(tone) ? tone : recorded[0] ?? 1)}</button>)}</div></div>}
   </aside>;
 }
