@@ -84,7 +84,9 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
           const recorded = s.tones.filter(t => hasRecording(data, s.base, t)).length;
           return <button key={s.base} type="button" data-base={s.base} className={`pinyin-tile${s.base === selected ? ' is-selected' : ''}`} aria-pressed={s.base === selected}
             aria-label={`${s.base}, ${recorded} tone${recorded === 1 ? '' : 's'} recorded${review ? ', needs review' : done ? ', practised' : ''}`}
-            onClick={() => { onSelect(s.base === selected ? undefined : s.base); const first = s.tones.find(t => hasRecording(data, s.base, t)); if (s.base !== selected && first) { setTone(first); void player.play(sound(s.base, first)); } }}>
+            // Selecting a tile only opens it in the player — it never plays a tone by
+            // itself; any sound still running from the previous syllable is stopped.
+            onClick={() => { player.stop(); onSelect(s.base === selected ? undefined : s.base); const first = s.tones.find(t => hasRecording(data, s.base, t)); if (s.base !== selected && first) setTone(first); }}>
             <span className="pinyin-tile-base" lang="zh-Latn-pinyin">{s.base}</span>
             <TileTones data={data} syllable={s} />
             {(review || done) && <span className={`pinyin-tile-state ${review ? 'review' : 'done'}`} aria-hidden="true" />}
@@ -120,7 +122,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     })}</div>
     <div className="pinyin-player-actions">
       {sequencePlaying ? <Button variant="outline" size="sm" onClick={player.stop}><Square />Stop</Button>
-        : <Button variant="outline" size="sm" disabled={recorded.length < 2} onClick={() => void player.sequence(recorded.map(t => sound(syllable.base, t)))}><ListMusic />Play all tones</Button>}
+        : <Button variant="outline" size="sm" disabled={recorded.length < 2} onClick={() => void player.sequence(recorded.map(t => sound(syllable.base, t)))}><ListMusic />Play all</Button>}
       <Button variant="ghost" size="sm" disabled={!recorded.includes(tone)} onClick={() => void player.play(sound(syllable.base, tone))}><Volume2 />Again</Button>
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
     </div>
