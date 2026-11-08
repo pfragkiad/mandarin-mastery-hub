@@ -38,7 +38,7 @@ export function FinalSelect({ value, onChange }: { value: string; onChange: (val
 
 /** The tones a tile shows as dots: recorded tones filled, unrecorded attested tones hollow. */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
-  return <span className="pinyin-tile-tones" aria-hidden="true">{SPOKEN_TONES.map(t => <span key={t} className={hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'} />)}</span>;
+  return <span className="pinyin-tile-tones" aria-hidden="true">{SPOKEN_TONES.map(t => <span key={t} className={`tone-${t} ${hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'}`} />)}</span>;
 }
 
 // Chart instances currently mounted, and whether the last one left to open a character's

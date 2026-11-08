@@ -38,9 +38,13 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
         <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id}>
           <Link to="/characters" search={destinations.get(entry.id) ?? { tab: 'Characters', id: entry.id }} lang="zh-CN"
             className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}
-            title={entry.meaning} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
+            title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
-            onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>{entry.hanzi}</Link>
+            onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
+            {/* Hanzi in its own box, its recorded meaning to the right, centred on the box. */}
+            <span className="pinyin-character-glyph">{entry.hanzi}</span>
+            {entry.meaning && <span className="pinyin-character-meaning" lang="en">{entry.meaning}</span>}
+          </Link>
         </li>)}</ul>
         {matches.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
       </>}
