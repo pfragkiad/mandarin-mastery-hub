@@ -482,7 +482,8 @@ this keeps the number right beside the stroke tile. */
 .practice-facts .traditional-character, .practice-facts .traditional-character strong { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
 /* Detail heading: the Traditional pill shares the pinyin row, pinned to the right. */
-.catalog-detail-pinyin-row .traditional-pill { margin-left: auto; }
+/* One right-aligned group keeps every header pill tight together (Traditional, then the kind/radical pill). */
+.catalog-detail-pills { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .tile-traditional-badge { position: absolute; top: 6px; right: 32px; font-size: 9px; line-height: 14px; padding: 0 5px; letter-spacing: .2px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent); background: var(--card); z-index: 1; }
 .catalog-entry:has(.tile-traditional-badge) > strong { margin-top: 10px; }
 .catalog-entry:not(:has(.catalog-source-icon)) .tile-traditional-badge { right: 10px; }
@@ -1267,7 +1268,7 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 .practice-intro .practice-text .pinyin { align-self: center; line-height: 1.2; }
 .practice-intro .practice-listen { align-self: center; margin-top: 0; }
 .practice-intro .practice-listen { transform: translateY(-3px); }
-.catalog-detail-pill { margin-left: auto; display: inline-flex; }
+.catalog-detail-pill { display: inline-flex; }
 
 /* Large library rows reuse exact record content and reveal rules. The body
    always stacks pinyin, hanzi and meaning in that order at every width.
