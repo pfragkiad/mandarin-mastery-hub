@@ -43,7 +43,7 @@ export function FinalSelect({ value, onChange }: { value: string; onChange: (val
  * without a neutral tone (ping…) get no fifth dot at all.
  */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
-  const tones: number[] = syllable.tones.includes(5) ? [...SPOKEN_TONES, 5] : [...SPOKEN_TONES];
+  const tones: Tone[] = syllable.tones.includes(5) ? [...SPOKEN_TONES, 5] : [...SPOKEN_TONES];
   return <span className="pinyin-tile-tones" aria-hidden="true">{tones.map(t => <span key={t} className={`tone-${t} ${hasRecording(data, syllable.base, t) ? 'on' : syllable.tones.includes(t) ? 'off' : 'none'}`} />)}</span>;
 }
 
