@@ -22,6 +22,9 @@ export function ToneContour({ tone, className = '' }: { tone: Tone; className?: 
  */
 export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?: (id: string) => void) {
   const [playing, setPlaying] = useState<string | null>(null);
+  // True only while a chain of several clips (Play all) runs, so callers can offer
+  // Stop for a sequence without flashing it during a short single-tone clip.
+  const [sequencing, setSequencing] = useState(false);
   const [error, setError] = useState('');
   const ticket = useRef(0);
   const heard = useRef(onHeard);
@@ -29,6 +32,10 @@ export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?
   const playChain = useCallback(async (sounds: PinyinSound[]) => {
     const mine = ++ticket.current;
     setError('');
+    setSequencing(sounds.length > 1);
+    try { await runChain(mine, sounds); } finally { if (mine === ticket.current) setSequencing(false); }
+  }, [data, slow]); // eslint-disable-line react-hooks/exhaustive-deps
+  const runChain = async (mine: number, sounds: PinyinSound[]) => {
     for (const sound of sounds) {
       if (mine !== ticket.current) return;
       const recording = data && hasRecording(data, sound.base, sound.tone) ? data.recordings[sound.id] : null;
