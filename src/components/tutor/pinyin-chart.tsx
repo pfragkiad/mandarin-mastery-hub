@@ -33,7 +33,7 @@ export function InitialSelect({ value, onChange, available }: { value: string; o
       const initials = group.initials.filter(offered);
       if (!initials.length && value !== groupValue) return null;
       return <optgroup key={group.label} label={group.label}>
-        <option value={groupValue}>{group.label}{group.initials[0] ? ` · ${initials.join(' ')}` : ''}</option>
+        <option value={groupValue}>{group.label}{group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}</option>
         {group.initials[0] !== null && initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
       </optgroup>;
     })}
