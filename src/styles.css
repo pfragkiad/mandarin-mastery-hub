@@ -1743,7 +1743,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
 .pinyin-player-tone { font-size: 12px; color: var(--muted-foreground); margin-top: -6px; }
-.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(52px, 1fr)); gap: 6px; }
+.pinyin-tone-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
 .pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px 6px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }

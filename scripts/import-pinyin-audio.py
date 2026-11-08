@@ -79,7 +79,7 @@ json.dump({
         'license': 'CC BY-SA 3.0',
         'credits': 'Chen Wang 王琛, Hugo Lopez, Nicolas Vion',
         'speaker': first['speakerId'],
-        'accent': 'Mainland speaker; accent not reviewed',
+        'accent': 'Mainland speaker',
         'reviewed': False,
         'neutralToneWithdrawn': True,
     },
