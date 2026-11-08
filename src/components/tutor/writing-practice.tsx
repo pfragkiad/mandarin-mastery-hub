@@ -13,6 +13,7 @@ import { ArrowLeft, Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRigh
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
+import { leniency } from '@/lib/handwriting-strictness';
 import { words } from '@/lib/mandarin';
 import { glyphScript, type LibraryEntry } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
