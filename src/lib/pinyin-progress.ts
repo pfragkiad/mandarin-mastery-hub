@@ -65,7 +65,7 @@ export function pickNextSound<T extends PinyinSound>(pool: T[], progress: Pinyin
   const total = candidates.reduce((sum, s) => sum + weight(s), 0);
   let roll = random() * total;
   for (const s of candidates) { roll -= weight(s); if (roll < 0) return s; }
-  return candidates[candidates.length - 1];
+  return candidates[candidates.length - 1] ?? null;
 }
 
 export function progressSummary(progress: PinyinProgress, total: number) {

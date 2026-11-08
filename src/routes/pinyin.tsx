@@ -4,13 +4,13 @@ import { pageHead } from '@/lib/mandarin';
 
 // URL search keeps the mode, the selected chart syllable and applied filters so
 // history and shared links restore exactly. Chart and quizzes keep separate filters.
-export type PinyinSearch = { mode?: Exclude<PinyinMode, 'chart'>; s?: string; q?: string; initial?: string; final?: string; focus?: 'review' | 'new' };
+export type PinyinSearch = { mode?: Exclude<PinyinMode, 'chart'> | undefined; s?: string | undefined; q?: string | undefined; initial?: string | undefined; final?: string | undefined; focus?: 'review' | 'new' | undefined };
 const text = (v: unknown) => (typeof v === 'string' && v.trim() ? v : undefined);
 export const Route = createFileRoute('/pinyin')({
   validateSearch: (search: Record<string, unknown>): PinyinSearch => {
     const out: PinyinSearch = {};
-    if (search.mode === 'tones' || search.mode === 'alikes' || search.mode === 'type') out.mode = search.mode;
-    if (search.focus === 'review' || search.focus === 'new') out.focus = search.focus;
+    if (search['mode'] === 'tones' || search['mode'] === 'alikes' || search['mode'] === 'type') out.mode = search['mode'];
+    if (search['focus'] === 'review' || search['focus'] === 'new') out.focus = search['focus'];
     for (const key of ['s', 'q', 'initial', 'final'] as const) { const v = text(search[key]); if (v) out[key] = v; }
     return out;
   },

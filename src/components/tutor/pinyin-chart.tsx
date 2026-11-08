@@ -39,7 +39,7 @@ function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSylla
 }
 
 export function PinyinChart({ data, progress, player, filters, selected, slow, onSlow, onSelect, onFilters }: {
-  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string; slow: boolean;
+  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; slow: boolean;
   onSlow: (slow: boolean) => void; onSelect: (base: string | undefined) => void; onFilters: (filters: ChartFilters) => void;
 }) {
   const sorted = useMemo(() => sortSyllables(data.syllables), [data]);
@@ -98,7 +98,7 @@ export function PinyinChart({ data, progress, player, filters, selected, slow, o
 
 /** Selected-syllable player: tone buttons (neutral listed but never playable), play-all, slow, parts and sound-alikes. */
 function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onSelect }: {
-  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable; tone: Tone; slow: boolean;
+  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone; slow: boolean;
   onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onSelect: (base: string) => void;
 }) {
   if (!syllable) return <aside className="pinyin-player is-empty" aria-label="Selected syllable"><div className="eyebrow">SELECTED SOUND</div><p className="pinyin-player-empty">Pick a syllable to hear its tones.</p><p className="pinyin-player-tip">Then press 1–4 to replay a tone.</p></aside>;

@@ -24,7 +24,7 @@ export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
 const headings: Record<PinyinMode, string> = { chart: 'Every sound of Mandarin.', tones: 'Hear the tone.', alikes: 'Tell sound-alikes apart.', type: 'Write what you hear.' };
 
 export function PinyinGuidePage({ mode, selected, chartFilters, drillFilters, onMode, onSelect, onChartFilters, onDrillFilters }: {
-  mode: PinyinMode; selected?: string; chartFilters: ChartFilters; drillFilters: DrillFilters;
+  mode: PinyinMode; selected?: string | undefined; chartFilters: ChartFilters; drillFilters: DrillFilters;
   onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined) => void; onChartFilters: (f: ChartFilters) => void; onDrillFilters: (f: DrillFilters) => void;
 }) {
   const { preferences, setPreferences } = useWorkspace();

@@ -113,8 +113,7 @@ export function allSounds(data: PinyinData): PinyinSound[] {
 }
 
 export function sortSyllables(list: PinyinSyllable[]): PinyinSyllable[] {
-  const rank = (s: PinyinSyllable) => [INITIAL_ORDER.indexOf(s.initial), FINAL_ORDER.indexOf(s.final)];
-  return [...list].sort((a, b) => { const [ai, af] = rank(a); const [bi, bf] = rank(b); return ai - bi || af - bf || a.base.localeCompare(b.base); });
+  return [...list].sort((a, b) => INITIAL_ORDER.indexOf(a.initial) - INITIAL_ORDER.indexOf(b.initial) || FINAL_ORDER.indexOf(a.final) - FINAL_ORDER.indexOf(b.final) || a.base.localeCompare(b.base));
 }
 
 /**
