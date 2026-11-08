@@ -103,6 +103,31 @@ async function playRecording(c: Extract<AudioCandidate, { kind: 'recording' }>, 
   }
 }
 
+/**
+ * Play one exact recording URL through the shared element (stopping any other
+ * speaker). `onEnded` fires only when this clip finishes naturally, so callers
+ * can chain clips (e.g. all four tones). Never falls back to TTS.
+ */
+export async function playRecordingUrl(url: string, slow = false, onEnded?: () => void): Promise<boolean> {
+  try {
+    current?.pause();
+    const el = new Audio(url);
+    el.playbackRate = slow ? SLOW_RATE : NORMAL_RATE;
+    current = el;
+    if (onEnded) el.addEventListener('ended', () => { if (current === el) onEnded(); }, { once: true });
+    await el.play();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Stop whichever recording is playing. */
+export function stopRecording() {
+  current?.pause();
+  current = null;
+}
+
 export async function playPronunciation(req: AudioRequest, slow = false, preferTts = false): Promise<PlayResult> {
   const rate = slow ? SLOW_RATE : NORMAL_RATE;
   const first = preferTts ? { kind: 'tts', label: 'Browser TTS' } as const : audioCandidates(req)[0];
