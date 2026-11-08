@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { allSounds, checkTyped, hasRecording, matchesInitial, matchesSyllable, parsePinyin, soundAlikes, toneMark, type PinyinData } from './pinyin-guide';
+import { allSounds, checkTyped, hasRecording, missingRecordings, matchesInitial, matchesSyllable, parsePinyin, soundAlikes, toneMark, type PinyinData } from './pinyin-guide';
 import { filterByFocus, needsReview, parseProgress, pickNextSound, recordSound } from './pinyin-progress';
 
 const rec = { url: '/x.mp3', ms: 900 };
