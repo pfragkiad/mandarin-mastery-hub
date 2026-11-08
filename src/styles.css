@@ -1790,15 +1790,14 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
 .pinyin-character-list { display: flex; flex-direction: column; gap: 4px; list-style: none; margin: 0; padding: 0; }
 /* One row per character: boxed hanzi, then its meaning centred vertically on the box. */
-.pinyin-character { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 10px; padding: 2px; border-radius: 7px; color: var(--foreground); text-decoration: none; transition: background-color .15s, color .15s; }
-.pinyin-character-glyph { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); transition: border-color .15s; }
+.pinyin-character { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 10px; padding: 2px; color: var(--foreground); }
+.pinyin-character-glyph { display: grid; place-items: center; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); text-decoration: none; transition: border-color .15s; }
 .pinyin-character.traditional-character .pinyin-character-glyph { color: var(--traditional); }
 .pinyin-character-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; font-family: var(--font-sans); }
 .pinyin-character-text .component-reuse-label { line-height: 14px; }
 .pinyin-character-meaning { font-size: 13px; line-height: 1.4; color: var(--foreground); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.pinyin-character:hover, .pinyin-character:focus-visible { background: color-mix(in oklch, var(--primary) 8%, transparent); outline: none; }
-.pinyin-character:hover .pinyin-character-glyph, .pinyin-character:focus-visible .pinyin-character-glyph { border-color: var(--primary); }
-.pinyin-character:hover .pinyin-character-meaning, .pinyin-character:focus-visible .pinyin-character-meaning { color: color-mix(in oklch, var(--primary) 72%, var(--foreground)); }
+/* Hover and focus mark the character box only, matching decomposition tiles. */
+.pinyin-character-glyph:hover, .pinyin-character-glyph:focus-visible { border-color: var(--primary); outline: none; }
 .pinyin-characters-more.pinyin-characters-more { align-self: flex-start; height: auto; padding: 0; font-size: 12px; }
 .tone-contour { width: 34px; height: 22px; fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .tone-contour circle { fill: currentColor; stroke: none; }
