@@ -64,7 +64,10 @@ export function ttsAvailable(): boolean {
   return Boolean(pickMandarinVoice(voices));
 }
 
-export function speakTts(text: string, rate = NORMAL_RATE): PlayResult {
+// onEnd fires once when the utterance finishes, errors or is cancelled, so callers
+// (stroke Play) can wait for the spoken name. A timeout guards browsers whose
+// speech engine never reports the end; if speech can't start, onEnd is not called.
+export function speakTts(text: string, rate = NORMAL_RATE, onEnd?: () => void): PlayResult {
   const candidate: AudioCandidate = { kind: 'tts', label: 'Browser TTS' };
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return { ok: false, candidate, reason: 'unsupported', canUseTts: false };
   if (!voices.length) voices = window.speechSynthesis.getVoices();
@@ -73,6 +76,12 @@ export function speakTts(text: string, rate = NORMAL_RATE): PlayResult {
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = voice.lang; u.voice = voice; u.rate = clampRate(rate);
+  if (onEnd) {
+    let done = false;
+    const finish = () => { if (done) return; done = true; window.clearTimeout(guard); onEnd(); };
+    const guard = window.setTimeout(finish, 4000 + text.length * 600);
+    u.onend = finish; u.onerror = finish;
+  }
   window.speechSynthesis.speak(u);
   return { ok: true, candidate };
 }

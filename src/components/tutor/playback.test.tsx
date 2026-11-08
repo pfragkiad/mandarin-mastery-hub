@@ -480,3 +480,23 @@ it('Trace Play continues after a clicked stroke instead of restarting', async ()
   fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
 });
+
+it('Play waits for a spoken stroke name to finish before drawing the next stroke', async () => {
+  vi.mocked(speakTts).mockReturnValue({ ok: true, candidate: { kind: 'tts', label: 'Browser TTS' } });
+  render(<WritingPractice character="我"/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  const unmute = screen.queryByRole('button', { name: 'Unmute stroke names' });
+  if (unmute) fireEvent.click(unmute);
+  fake.animateStroke.mockClear();
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+  act(() => fake.animateStroke.mock.calls[0]?.[1].onComplete());
+  // Animation done but the name is still being spoken: stroke 2 must wait.
+  expect(fake.animateStroke).toHaveBeenCalledTimes(1);
+  const onEnd = vi.mocked(speakTts).mock.calls.at(-1)?.[2];
+  act(() => onEnd?.());
+  expect(fake.animateStroke).toHaveBeenCalledTimes(2);
+  expect(fake.animateStroke.mock.calls[1]?.[0]).toBe(1);
+  fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+  vi.mocked(speakTts).mockReset();
+});
