@@ -127,7 +127,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     <dl className="pinyin-parts">
       <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
       <div><dt>Final</dt><dd>{syllable.final}</dd></div>
-      <div><dt>You</dt><dd>{stats ? `${stats.right} right · ${stats.wrong} wrong` : 'Not practised yet'}</dd></div>
+      <div><dt>You</dt><dd>{stats && stats.right + stats.wrong > 0 ? `${stats.right} right · ${stats.wrong} wrong` : 'Not practised yet'}</dd></div>
     </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
     {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => <button key={base} type="button" className="pinyin-alike" onClick={() => { onSelect(base); if (hasRecording(data, base, tone)) void player.play(sound(base, tone)); }} lang="zh-Latn-pinyin">{toneMark(base, recorded.includes(tone) ? tone : recorded[0] ?? 1)}</button>)}</div></div>}
