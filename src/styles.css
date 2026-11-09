@@ -1967,3 +1967,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-actions { gap: 4px 14px; margin-left: -10px; }
 .stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
+/* When the three actions don't fit one line they wrap into aligned columns, not a ragged row. */
+.stroke-guide-actions { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), max-content)); justify-content: start; }
+.stroke-guide-actions > button { justify-content: flex-start; }
