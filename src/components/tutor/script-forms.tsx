@@ -94,7 +94,7 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
       <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}Possible correspondence, not an automatic replacement{note.evidenceScope ? ` · ${note.evidenceScope}` : ''}{note.sourceUrl && <><br/><a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a></>}<br/>Character associations v{characterVariants.version || '1.4.0'}</SourceInfo>
     </p>
     <p className="association-note-text">{note.explanation}</p>
-    {note.example && <p className="association-note-example" lang="zh-CN"><span lang="en">Example: </span>{note.example}</p>}
+    {note.example && <p className="association-note-example">Example: {note.example}</p>}
   </li>;
 }
 
