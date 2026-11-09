@@ -12,6 +12,7 @@ import { SourceInfo } from './source-info';
 import { libraryEntries } from '@/lib/character-library';
 import { radicalForm } from '@/lib/radical-strokes';
 import { contextualVariantIdentity } from '@/lib/radical-contextual-identity';
+import { trimTranslationPeriod } from './meaning-text';
 
 /**
  * "Additional meanings and origins" for one radical variant card.
@@ -38,6 +39,8 @@ type Audit = { variants: Variant[]; characterSpecificFollowUps: FollowUp[] };
 
 let audit: Promise<Audit> | undefined;
 const loadAudit = () => (audit ??= fetch('/data/radical_variant_etymology_audit.json').then(r => { if (!r.ok) throw new Error(`etymology ${r.status}`); return r.json() as Promise<Audit>; }));
+// Translation-slot text under a tile: capitalised, no trailing period (see trimTranslationPeriod).
+const gloss = (text: string) => trimTranslationPeriod(text.charAt(0).toUpperCase() + text.slice(1));
 const sentence = (text: string) => text.charAt(0).toUpperCase() + text.slice(1) + (/[.!?]$/.test(text) ? '' : '.');
 const isHanzi = (text: string | null) => Boolean(text && /^\p{Script=Han}$/u.test(text));
 const characterRecord = (glyph: string) => libraryEntries('Characters').find(entry => entry.hanzi === glyph);
@@ -94,7 +97,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   // `caption` is off where a COMPONENT NAME section heading already says it.
   const nameBlock = (name: { hanzi: string; pinyin: string; englishTranslation?: string }, caption = true) => <div className="glyph-usage-parents variant-etymology-name">
     {caption && <span className="variant-etymology-caption">Component name</span>}
-    {row('name', name.hanzi, name.pinyin, name.englishTranslation ? sentence(name.englishTranslation) : '', { link: false, word: true })}
+    {row('name', name.hanzi, name.pinyin, name.englishTranslation ? gloss(name.englishTranslation) : '', { link: false, word: true })}
   </div>;
   const host = (url?: string) => { try { return url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { return ''; } };
   // Identity first: it replaces the look-alike character's reading and meaning in the heading,
@@ -105,15 +108,15 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
     {/* Learners read the plain note; the technical reading note sits in the (i) tooltip above. */}
     {identity.learnerNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.learnerNote}</p>}
   </section>;
-  const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, sentence(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
+  const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, gloss(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
     {identitySection}
     {chineseName && <section className="glyph-usage-section" aria-label="Component name"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT NAME<SourceInfo inline className="detail-footnote">Conventional Chinese component name{chineseName.sourceUrl && <> · {host(chineseName.sourceUrl)}</>}{chineseName.sourceStatus && <><br/>{sentence(chineseName.sourceStatus.replace(/_/g, ' '))}</>}</SourceInfo></h3>{nameBlock(chineseName, false)}</section>}
-    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record?.variant ?? '', d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
+    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record?.variant ?? '', d.alternativePinyin ?? '', gloss(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
     {generalNotes.length > 0 && <section className="glyph-usage-section" aria-label="Historical origin">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE{claimSources(generalNotes)}</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN{claimSources(generalNotes)}</h3>}{generalNotes.map((c, i) => <p key={i} className="glyph-usage-meaning">{sentence(c.englishMeaningOrInterpretation)}{/* A reviewed full-sentence scope (scopeNote) reads naturally; older claims keep the raw appliesWhen label. */}{c.scopeNote ? <span className="variant-etymology-scope"> {c.scopeNote}</span> : c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}</p>)}</section>}
     {(characterNotes.length > 0 || followUps.length > 0) && <section className="glyph-usage-section" aria-label="Other historical origins of this shape"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE{sources([...characterNotes.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: `${c.appliesWhen}: ${c.sourceEvidenceSummary}` })), ...followUps.map(f => ({ source: f.source, evidenceStatus: f.evidenceStatus, summary: f.glyph }))])}</h3><div className="glyph-usage-parents">
-      {characterNotes.map((c, i) => row(`c${i}`, c.appliesWhen ?? '', '', sentence(c.englishMeaningOrInterpretation)))}
-      {followUps.map((f, i) => row(`f${i}`, f.glyph, f.pinyin, sentence(f.interpretation)))}
+      {characterNotes.map((c, i) => row(`c${i}`, c.appliesWhen ?? '', '', gloss(c.englishMeaningOrInterpretation)))}
+      {followUps.map((f, i) => row(`f${i}`, f.glyph, f.pinyin, gloss(f.interpretation)))}
     </div></section>}
     {lookAlikeSection}
   </div>;
