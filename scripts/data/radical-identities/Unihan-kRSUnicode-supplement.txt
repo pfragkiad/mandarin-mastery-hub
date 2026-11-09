@@ -1,0 +1,4 @@
+# Unicode 17.0.0 Unihan_IRGSources.txt (https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip)
+# sha256(Unihan_IRGSources.txt) = d1c817dd7db84295dab0643c277d97c2fa742c245f8824e6736c2a0935095325
+# Exact kRSUnicode lines for radical-position forms the audited mirror omits.
+U+91D2	kRSUnicode	167.0

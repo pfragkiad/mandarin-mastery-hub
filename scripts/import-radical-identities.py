@@ -79,11 +79,88 @@ for line in (INPUT / 'NamesList-supplement.txt').read_text().splitlines():
     if symbol and match:
         add(symbol, 'symbol', [int(match[1])], [], sid)
 
+# Unihan kRSUnicode supplement: exact radical-position forms (residual 0) that the audited
+# mirror omits, e.g. the traditional left-side metal form 釒 (167.0). Each line is copied
+# verbatim from the pinned Unihan_IRGSources.txt whose checksum the file header records.
+supplement = (INPUT / 'Unihan-kRSUnicode-supplement.txt').read_text()
+unihan_sha = re.search(r'sha256\(Unihan_IRGSources\.txt\) = ([0-9a-f]{64})', supplement)[1]
+sid = f'Unicode UCD/Unihan kRSUnicode:17.0.0:{unihan_sha}'
+sources[sid] = {'id': sid, 'provider': 'Unicode UCD/Unihan', 'version': '17.0.0', 'checksum': unihan_sha, 'license': 'Unicode License V3', 'source_url': 'https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip'}
+for line in supplement.splitlines():
+    match = re.match(r'^U\+([0-9A-F]+)\tkRSUnicode\t(\d+)\.0$', line)
+    if match:
+        add(chr(int(match[1], 16)), 'variant', [int(match[2])], [], sid)
+assert identities['釒']['radicals'] == [{'id': 'kangxi-167', 'number': 167, 'glyph': '金'}]
+
+# Reviewed shared forms: one codepoint that recorded breakdowns write for two Kangxi
+# families (right-side 阝 for 邑 and left-side 阝 for 阜; 月 for 肉; 日 for 曰; 夂 for 夊).
+# The standalone identity above keeps Unicode's own number (阝 is 170.0 in Unihan). Inside a
+# character, the character's declared Unihan radical (catalogue note "· X radical") picks
+# the family when it is a candidate; only 阝 also has a positional rule, which is exported
+# only because the declared radicals below prove it without a single contradiction.
+# `form` is that family's recorded form in radical-strokes.json the shared glyph stands for.
+SHARED_FORMS = {
+    '阝': {'families': {163: '⻏', 170: '阝'}, 'positions': {'right': 163, 'left': 170}},
+    '月': {'families': {74: '月', 130: '⺼'}},
+    '日': {'families': {72: '日', 73: '曰'}},
+    '夂': {'families': {34: '夂', 35: '夊'}},
+}
+OPERATORS = set('⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻⿼⿽⿾⿿㇯')
+number_of = {glyph: number for number, glyph in canonical.items()}
+declared = {}
+for glyph, _, _, note, *_ in catalog['characters']:
+    match = re.search(r'·\s*(.+?) radical$', note)
+    if match and match[1] in number_of:
+        declared.setdefault(glyph, number_of[match[1]])
+for glyph, radical in catalog.get('componentRadicals', {}).items():
+    if radical in number_of:
+        declared.setdefault(glyph, number_of[radical])
+strokes = json.loads((ROOT / 'public/data/radical-strokes.json').read_text())
+family_forms = {family['id']: {form['character'] for form in family['forms']} for family in strokes['families']}
+evidence = {glyph: {'declared': {}, 'positional': 0, 'contradictions': []} for glyph in SHARED_FORMS}
+
+def walk(node, owner):
+    shared = SHARED_FORMS.get(node['glyph'])
+    if shared:
+        record = evidence[node['glyph']]
+        number = declared.get(owner)
+        if number in shared['families']:
+            record['declared'][str(number)] = record['declared'].get(str(number), 0) + 1
+            expected = shared.get('positions', {}).get(node['position'])
+            if 'positions' in shared and expected != number:
+                record['contradictions'].append(owner)
+        elif shared.get('positions', {}).get(node['position']):
+            record['positional'] += 1
+    # Descending into a real component changes whose declared radical applies.
+    child_owner = owner if node['glyph'] in OPERATORS or node['position'] == 'root' else node['glyph']
+    for child in node.get('children', []):
+        walk(child, child_owner)
+
+for character, tree in catalog['trees'].items():
+    walk(tree, character)
+shared_forms = {}
+for glyph, shared in SHARED_FORMS.items():
+    for number, form in shared['families'].items():
+        assert form in family_forms[number], f'{form} is not a recorded form of family {number}'
+    record = evidence[glyph]
+    assert not record['contradictions'], f'{glyph} position rule contradicted by {record["contradictions"]}'
+    assert all(record['declared'].get(str(number)) for number in shared['families']), f'{glyph} lacks declared evidence'
+    shared_forms[glyph] = {
+        'glyph': glyph,
+        'families': [{'number': number, 'glyph': canonical[number], 'form': form} for number, form in shared['families'].items()],
+        **({'positions': shared['positions']} if 'positions' in shared else {}),
+        'evidence': {'declaredOccurrences': record['declared'], 'positionalOccurrences': record['positional']},
+        'basis': 'Character declared radical (Unihan kRSUnicode via catalogue)' + (' · position rule with zero contradictions' if 'positions' in shared else ''),
+    }
+assert shared_forms['阝']['evidence']['declaredOccurrences'] == {'163': 77, '170': 80}
+
 for glyph in ['丆', '可', '〡', '㇑', '⿰']:
     assert glyph not in identities, f'False positive: {glyph}'
-output = {'schemaVersion': 1, 'sources': sources, 'identities': identities,
+output = {'schemaVersion': 1, 'sources': sources, 'identities': identities, 'sharedForms': shared_forms,
           'coverage': {'canonicalRadicals': 214, 'identityGlyphs': len(identities),
                        'auditSha256': hashlib.sha256((INPUT / 'review.json').read_bytes()).hexdigest()}}
 destination = ROOT / 'public/data/radical-identities.json'
 destination.write_text(json.dumps(output, ensure_ascii=False, separators=(',', ':')) + '\n')
-print(f'Exported {len(identities)} exact identities; 214 canonical radicals preserved.')
+print(f'Exported {len(identities)} exact identities and {len(shared_forms)} shared forms; 214 canonical radicals preserved.')
+for glyph, item in shared_forms.items():
+    print(f'  {glyph}: {item["evidence"]}')

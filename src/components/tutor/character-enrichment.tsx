@@ -30,24 +30,25 @@ export function useCharacterEnrichment(character: string, tree?: DecompositionNo
 
 export function CharacterDecomposition({ character, tree, source, status }: { character: string; tree: DecompositionNode; source: string; status?: string | undefined }) {
   const record = useCharacterEnrichment(character, tree);
-  return <RecordedDecomposition tree={tree} source={source} status={status} record={record}/>;
+  return <RecordedDecomposition character={character} tree={tree} source={source} status={status} record={record}/>;
 }
 /** Display priority never changes the original tree or the geometry-bound stroke mapping.
  *  When known recorded parts agree with G-source (including explicit missing-part gaps),
- *  the duplicate is not repeated; the original source and bindings remain unchanged. */
-export function RecordedDecomposition({ tree, source, status, record }: { tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
+ *  the duplicate is not repeated; the original source and bindings remain unchanged.
+ *  `character` owns the breakdown: its declared radical resolves shared forms such as 阝. */
+export function RecordedDecomposition({ character, tree, source, status, record }: { character?: string | undefined; tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
   const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree));
   return <>
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
       <h4 className="library-note">BabelStone · G-source<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Recorded qualifiers · {alternative.qualifiers}<br/>Structural description · not verified etymology or stroke geometry</SourceInfo></h4>
-      {alternative.tree ? <ul className="decomposition-tree" aria-label={`BabelStone G-source ${index + 1}`}><DecompositionTree node={alternative.tree}/></ul> : <p className="enrichment-expression"><span lang="zh-CN"><SourceGlyphs text={alternative.expression}/></span><small>Source notation retained; tree unavailable.</small></p>}
+      {alternative.tree ? <ul className="decomposition-tree" aria-label={`BabelStone G-source ${index + 1}`}><DecompositionTree node={alternative.tree} owner={character}/></ul> : <p className="enrichment-expression"><span lang="zh-CN"><SourceGlyphs text={alternative.expression}/></span><small>Source notation retained; tree unavailable.</small></p>}
     </div>)}
     {matchesGSource
       ? <p className="enrichment-expression"><small>The recorded graphical structure matches the G-source breakdown above.</small></p>
       : <>
         <h4 className="library-note">Hanzi graphical structure<SourceInfo inline className="detail-footnote">Source · {source}<br/>{status ?? 'Imported graphical structure · not verified etymology'}</SourceInfo></h4>
-        <ul className="decomposition-tree" aria-label="Hanzi graphical structure"><DecompositionTree node={tree}/></ul>
+        <ul className="decomposition-tree" aria-label="Hanzi graphical structure"><DecompositionTree node={tree} owner={character}/></ul>
       </>}
   </>;
 }

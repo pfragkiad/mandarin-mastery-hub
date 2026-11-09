@@ -1,0 +1,1 @@
+- radical-context.ts narrows dual identities and the exported reviewed sharedForms (阝, 月, 日, 夂) by the owning character's declared Unihan radical, using position only where the import proved a contradiction-free rule, so look-alike forms take the right family without changing source trees or standalone identities.

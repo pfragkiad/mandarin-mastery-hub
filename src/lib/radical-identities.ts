@@ -8,10 +8,21 @@ export type RadicalIdentity = {
   equivalentGlyphs: string[];
   sourceIds: string[];
 };
+/** A reviewed codepoint that recorded breakdowns write for several Kangxi families (阝 for
+ *  邑 and 阜). `form` is the family's recorded radical-strokes form the glyph stands for;
+ *  `positions` exists only where the export proved a contradiction-free positional rule. */
+export type SharedRadicalForm = {
+  glyph: string;
+  families: { number: number; glyph: string; form: string }[];
+  positions?: Record<string, number>;
+  evidence: { declaredOccurrences: Record<string, number>; positionalOccurrences: number };
+  basis: string;
+};
 export type RadicalIdentityFile = {
   schemaVersion: 1;
   sources: Record<string, { id: string; provider: string; version: string; checksum: string; license: string; source_url: string }>;
   identities: Record<string, RadicalIdentity>;
+  sharedForms?: Record<string, SharedRadicalForm>;
 };
 
 /** Exact source identities, independent of dictionary assignment or record presence. */
