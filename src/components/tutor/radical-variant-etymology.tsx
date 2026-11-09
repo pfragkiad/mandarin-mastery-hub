@@ -3,6 +3,7 @@ import { BookOpen, History, Info, Tag } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { ExamplePronunciation } from './example-pronunciation';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
@@ -86,7 +87,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
     return <div className="glyph-usage-reference" key={key}>
       {destination ? <Button asChild variant="ghost" className={tileClass}><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong lang="zh-CN" className={`${tileClass} decomposition-glyph-static`}>{glyph}</strong>}
       <span className="glyph-usage-facts">
-        {reading && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{reading}</span>{options.recording ? <ExamplePronunciation request={{ text: reading, reading, audio: options.recording }} label={`${glyph} ${reading}`}/> : options.audio !== false && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</span></span>}
+        {reading && <span className="glyph-usage-facts-row"><span className="example-pinyin-row">{!options.recording && options.audio !== false && isMultiReading(reading) ? <MultiReadingSpeakers spoken={glyph} reading={reading} variant="example"/> : <><span className="pinyin">{reading}</span>{options.recording ? <ExamplePronunciation request={{ text: reading, reading, audio: options.recording }} label={`${glyph} ${reading}`}/> : options.audio !== false && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</>}</span></span>}
         <span className="glyph-usage-meaning">{text}</span>
       </span>
     </div>;

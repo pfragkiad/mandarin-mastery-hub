@@ -8,6 +8,7 @@ import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
 import { ExamplePronunciation } from './example-pronunciation';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { UsageLabel } from './usage-label';
@@ -45,7 +46,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
           shown only once the lazily loaded usage sidecar is installed — never estimated. */}
       <span className="glyph-usage-facts">
         {((preferences.pinyin && parent.pinyin) || usageOrder.loaded || parent.script === 'Traditional') && <span className="glyph-usage-facts-row">
-          {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
+          {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row">{isMultiReading(parent.pinyin) ? <MultiReadingSpeakers spoken={parent.hanzi} reading={parent.pinyin} variant="example"/> : <><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></>}</span>}
           {usageOrder.loaded && <UsageLabel rank={usageRank(parent, 'Characters', preferences.includeTraditional)} kind="Characters" compact/>}
           {parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
         </span>}
