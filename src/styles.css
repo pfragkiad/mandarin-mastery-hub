@@ -2032,3 +2032,27 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* Components radical-family "+N" (刂, ⺈ sharing 刀's card): coloured like the Radical # pill. */
 .catalog-tab-count.catalog-tab-family, .catalog-total-traditional.catalog-total-family { color: var(--hsk-id); }
 .catalog-tab-count.catalog-tab-family { margin-left: -6px; }
+/* Shared hint card: every (i) and Details popover lists its lines as separated rows,
+   with a thin accent bar, so all hints read in one consistent style. */
+.source-info-popover { padding: 12px 14px; border-radius: 8px; box-shadow: var(--shadow-popover); border-left: 3px solid color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.hint-rows { list-style: none; margin: 0; padding: 0; display: grid; font-size: 12px; line-height: 1.55; color: var(--foreground); text-align: left; }
+.hint-rows, .hint-rows * { text-transform: none; letter-spacing: normal; }
+.hint-rows > li { padding: 6px 0; }
+.hint-rows > li:first-child { padding-top: 0; }
+.hint-rows > li:last-child { padding-bottom: 0; }
+.hint-rows > li + li { border-top: 1px solid var(--border); color: var(--muted-foreground); }
+.hint-rows a { color: var(--primary); }
+html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
+/* Details trigger: plain text + icon, no background block. */
+.association-note-toggle { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 4px; border: 0; background: transparent; font-size: 12px; color: var(--primary); cursor: pointer; border-radius: 4px; }
+.association-note-toggle:hover, .association-note-toggle[data-state='open'] { background: transparent; color: color-mix(in oklab, var(--primary) 80%, var(--foreground)); }
+.association-note-toggle svg { width: 14px; height: 14px; }
+.association-note-popover { max-width: min(360px, 92vw); font-size: 12px; }
+.association-note-popover .association-note-details { display: grid; gap: 10px; margin: 0; }
+.association-note-popover { width: max-content; max-width: min(420px, 92vw); }
+.association-note-popover table { width: 100%; table-layout: auto; }
+.association-note-popover td, .association-note-popover th { overflow-wrap: anywhere; }
+.source-info-popover.association-note-popover { width: min(400px, 92vw) !important; max-width: min(400px, 92vw); }
+.association-note-popover .spelling-examples, .association-note-popover .association-note-details { min-width: 0; }
+.association-note-popover .spelling-examples table { width: 100%; }
+.association-note-popover th { overflow-wrap: normal; white-space: nowrap; }
