@@ -5,6 +5,7 @@ import { characterVariants, scriptGroup } from '@/lib/character-variants';
 import { libraryEntries } from '@/lib/character-library';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { useWorkspace } from './workspace';
+import type { CharactersSearch } from './characters-page';
 
 // Form picker for a simplified/traditional script group on a Characters detail card.
 // Input: the glyph whose record is shown. Each tile links to that form's own record
@@ -22,7 +23,7 @@ export function ScriptForms({ glyph }: { glyph: string }) {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, 'Characters', preferences.includeTraditional) : null;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
-          <Link to="/characters" search={prev => ({ ...prev, id: entry.id, variant: undefined })} replace resetScroll={false} aria-current={selected ? 'true' : undefined} aria-label={`View ${entry.script === 'Traditional' ? 'traditional' : 'simplified'} form ${entry.hanzi}`}>
+          <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, id: entry.id }; }} replace resetScroll={false} aria-current={selected ? 'true' : undefined} aria-label={`View ${entry.script === 'Traditional' ? 'traditional' : 'simplified'} form ${entry.hanzi}`}>
             <strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.strokes ?? '?'} strokes</span><small>{entry.script === 'Traditional' ? 'Traditional' : 'Simplified'}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `#${rank.toLocaleString('en-US')}`}</>}</small>
           </Link>
         </Button>;
