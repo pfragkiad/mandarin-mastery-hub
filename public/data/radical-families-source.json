@@ -8149,6 +8149,41 @@
             "result": "missing-standalone-entry",
             "officialStandardVerified": false
           }
+        },
+        {
+          "character": "糹",
+          "unicodeRadicalAliases": [
+            "⺯"
+          ],
+          "formKind": "variant",
+          "strokeCount": 6,
+          "strokeSequence": [
+            "PZ",
+            "PZ",
+            "D",
+            "D",
+            "D",
+            "D"
+          ],
+          "status": "source-record",
+          "officiallyVerified": false,
+          "source": {
+            "id": "cjklib",
+            "method": "direct",
+            "record": {
+              "character": "糹",
+              "radicalSymbol": "⺯",
+              "glyph": 0,
+              "localeInSource": null,
+              "rawSequence": "PZ-PZ D D D D"
+            }
+          },
+          "convention": "traditional",
+          "verification": {
+            "basis": "cjklib strokeorder.csv exact-form entry (all locales); Unicode EquivalentUnifiedIdeograph 2EAF → 7CF9; stroke count matches Hanzi Writer Data outline (6)",
+            "result": "added as the Traditional left-side silk form of Kangxi #120",
+            "officialStandardVerified": false
+          }
         }
       ],
       "kangxiHeading": "糸"

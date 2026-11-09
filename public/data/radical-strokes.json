@@ -7561,6 +7561,64 @@
             },
             "officiallyVerified": false
           }
+        },
+        {
+          "key": "120-2",
+          "character": "糹",
+          "aliases": [
+            "⺯"
+          ],
+          "formKind": "variant",
+          "strokeCount": 6,
+          "record": {
+            "status": "recorded",
+            "strokes": [
+              {
+                "name": "撇折",
+                "pinyin": "piě zhé",
+                "glyph": "㇜"
+              },
+              {
+                "name": "撇折",
+                "pinyin": "piě zhé",
+                "glyph": "㇜"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ],
+            "source": "cjklib · C-locale strokeorder",
+            "sourceStatus": "source-record",
+            "provenance": {
+              "id": "cjklib",
+              "method": "direct",
+              "record": {
+                "character": "糹",
+                "radicalSymbol": "⺯",
+                "glyph": 0,
+                "localeInSource": null,
+                "rawSequence": "PZ-PZ D D D D"
+              }
+            },
+            "officiallyVerified": false
+          }
         }
       ]
     },
@@ -21199,6 +21257,55 @@
           "radicalSymbol": "⺰",
           "glyph": 0,
           "localeInSource": "C"
+        }
+      },
+      "officiallyVerified": false
+    },
+    "糹": {
+      "status": "recorded",
+      "strokes": [
+        {
+          "name": "撇折",
+          "pinyin": "piě zhé",
+          "glyph": "㇜"
+        },
+        {
+          "name": "撇折",
+          "pinyin": "piě zhé",
+          "glyph": "㇜"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ],
+      "source": "cjklib · C-locale strokeorder",
+      "sourceStatus": "source-record",
+      "provenance": {
+        "id": "cjklib",
+        "method": "direct",
+        "record": {
+          "character": "糹",
+          "radicalSymbol": "⺯",
+          "glyph": 0,
+          "localeInSource": null,
+          "rawSequence": "PZ-PZ D D D D"
         }
       },
       "officiallyVerified": false
