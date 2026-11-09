@@ -24,6 +24,8 @@ import { contextualVariantIdentity } from '@/lib/radical-contextual-identity';
  * "Component identity" section (label, component name, reading note) and a "Look-alike
  * character" row linking to the independent character; it comes from the small extracted
  * src/data/radical-contextual-identities.json, so it renders without waiting for the audit.
+ * Other variants with a mapped conventional Chinese name (componentNaming.chineseName, e.g. 三点水)
+ * get a "Component name" section: word tile, pinyin + speech, recorded English translation.
  */
 type Source = { url: string; publisher: string };
 type Claim = { claimType: string; englishMeaningOrInterpretation: string; alternativePinyin: string | null; appliesWhen: string | null; scopeNote?: string | null; sourceEvidenceSummary: string; source: Source; evidenceStatus: string; displayAs: string };
@@ -89,8 +91,9 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   // The component name is a name, not a reading of the form: a small italic "Component name"
   // caption sits above its own bordered word tile, with the recorded pinyin and speech (validated
   // Mandarin TTS — no recording exists for names) and the recorded English translation below.
-  const nameBlock = (name: { hanzi: string; pinyin: string; englishTranslation?: string }) => <div className="glyph-usage-parents variant-etymology-name">
-    <span className="variant-etymology-caption">Component name</span>
+  // `caption` is off where a COMPONENT NAME section heading already says it.
+  const nameBlock = (name: { hanzi: string; pinyin: string; englishTranslation?: string }, caption = true) => <div className="glyph-usage-parents variant-etymology-name">
+    {caption && <span className="variant-etymology-caption">Component name</span>}
     {row('name', name.hanzi, name.pinyin, name.englishTranslation ? sentence(name.englishTranslation) : '', { link: false, word: true })}
   </div>;
   const host = (url?: string) => { try { return url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { return ''; } };
@@ -105,7 +108,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, sentence(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
     {identitySection}
-    {chineseName && <section className="glyph-usage-section" aria-label="Component name"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT NAME<SourceInfo inline className="detail-footnote">Conventional Chinese component name{chineseName.sourceUrl && <> · {host(chineseName.sourceUrl)}</>}{chineseName.sourceStatus && <><br/>{sentence(chineseName.sourceStatus.replace(/_/g, ' '))}</>}</SourceInfo></h3>{nameBlock(chineseName)}</section>}
+    {chineseName && <section className="glyph-usage-section" aria-label="Component name"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT NAME<SourceInfo inline className="detail-footnote">Conventional Chinese component name{chineseName.sourceUrl && <> · {host(chineseName.sourceUrl)}</>}{chineseName.sourceStatus && <><br/>{sentence(chineseName.sourceStatus.replace(/_/g, ' '))}</>}</SourceInfo></h3>{nameBlock(chineseName, false)}</section>}
     {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record?.variant ?? '', d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
     {generalNotes.length > 0 && <section className="glyph-usage-section" aria-label="Historical origin">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE{claimSources(generalNotes)}</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN{claimSources(generalNotes)}</h3>}{generalNotes.map((c, i) => <p key={i} className="glyph-usage-meaning">{sentence(c.englishMeaningOrInterpretation)}{/* A reviewed full-sentence scope (scopeNote) reads naturally; older claims keep the raw appliesWhen label. */}{c.scopeNote ? <span className="variant-etymology-scope"> {c.scopeNote}</span> : c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}</p>)}</section>}
     {(characterNotes.length > 0 || followUps.length > 0) && <section className="glyph-usage-section" aria-label="Other historical origins of this shape"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE{sources([...characterNotes.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: `${c.appliesWhen}: ${c.sourceEvidenceSummary}` })), ...followUps.map(f => ({ source: f.source, evidenceStatus: f.evidenceStatus, summary: f.glyph }))])}</h3><div className="glyph-usage-parents">

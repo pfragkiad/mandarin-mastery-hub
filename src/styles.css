@@ -1979,3 +1979,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
 .variant-etymology .glyph-usage-section > .glyph-usage-parents + p.glyph-usage-meaning { margin-top: 8px; }
 .decomposition-glyph.variant-etymology-word-tile { font-size: 28px; font-weight: 400; }
+/* "Component name" caption above the name's word tile (radical variant cards): small italic label, tight to its tile. */
+.variant-etymology-name { gap: 4px; }
+.variant-etymology-caption { font-size: 12px; font-style: italic; color: var(--muted-foreground); }
