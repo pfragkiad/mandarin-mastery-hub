@@ -26,7 +26,9 @@ export function gSourceDecompositions(record: CharacterEnrichment | null) {
 export type ComponentOccurrence = z.infer<typeof groupSchema>;
 const geometrySchema = z.object({ strokes: z.array(z.string()), medians: z.array(z.array(z.tuple([z.number(), z.number()]))) }).passthrough();
 export type StrokeGeometry = z.infer<typeof geometrySchema>;
-export type BoundGeometry = { data: StrokeGeometry; checksum: string };
+/** Set only when the outline is not Hanzi Writer Data, so Practice can name the real source. */
+export type OutlineSource = { name: string; recordedAs: string; style: string; license: string };
+export type BoundGeometry = { data: StrokeGeometry; checksum: string; source?: OutlineSource };
 
 export async function sha256(bytes: BufferSource): Promise<string> {
   const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
@@ -82,10 +84,36 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
 export class StrokeDataUnavailable extends Error {
   constructor(character: string) { super(`No Hanzi Writer outline recorded for ${character}`); this.name = 'StrokeDataUnavailable'; }
 }
+const supplementarySchema = z.object({
+  character: z.string(),
+  source: z.object({ name: z.string(), url: z.string(), recordedAs: z.string(), style: z.string(), license: z.string() }).passthrough(),
+  strokes: z.array(z.string()), medians: z.array(z.array(z.tuple([z.number(), z.number()]))),
+});
+/**
+ * Owner-reviewed outlines for exact glyphs Hanzi Writer Data lacks (see
+ * scripts/import-supplementary-outlines.py). Only glyphs listed in the manifest
+ * use them; the file must name the same exact character or loading fails closed.
+ */
+function loadSupplementaryGeometry(character: string, file: string): Promise<BoundGeometry> {
+  return fetch(file).then(async response => {
+    if (!response.ok) throw new Error('Stroke data unavailable');
+    const bytes = await response.arrayBuffer();
+    const record = supplementarySchema.parse(JSON.parse(new TextDecoder().decode(bytes)));
+    if (record.character !== character || !record.strokes.length || record.strokes.length !== record.medians.length) throw new Error('Invalid stroke geometry');
+    const { name, recordedAs, style, license } = record.source;
+    return { data: { strokes: record.strokes, medians: record.medians }, checksum: await sha256(bytes), source: { name, recordedAs, style, license } };
+  });
+}
 const geometries = new Map<string, Promise<BoundGeometry>>();
 export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
   const cached = geometries.get(character);
   if (cached) return cached;
+  const supplementary = (supplementaryOutlines as Record<string, { file: string } | undefined>)[character];
+  if (supplementary) {
+    const promise = loadSupplementaryGeometry(character, supplementary.file).catch(error => { geometries.delete(character); throw error; });
+    geometries.set(character, promise);
+    return promise;
+  }
   const promise = fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(character)}.json`)
     .then(async response => {
       if (response.status === 404) throw new StrokeDataUnavailable(character);
