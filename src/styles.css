@@ -929,6 +929,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .association-note { font-size: 13px; line-height: 1.45; }
 .association-note p { margin: 0; }
 .association-note-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 600; }
+/* The paired hanzi (e.g. 了 ↔ 瞭) read larger than the note text; the ↔ and pill stay small. */
+.association-note-head > span[lang] { font-size: 20px; line-height: 1.2; font-weight: 500; }
 .association-note-kind { font-size: 11px; font-weight: 500; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
 .association-note-head .source-info-trigger { margin-top: 0; width: 20px; height: 20px; }
 .association-note .traditional-character { color: var(--traditional); }
