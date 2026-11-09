@@ -2055,3 +2055,4 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .source-info-popover.association-note-popover { width: min(400px, 92vw) !important; max-width: min(400px, 92vw); }
 .association-note-popover .spelling-examples, .association-note-popover .association-note-details { min-width: 0; }
 .association-note-popover .spelling-examples table { width: 100%; }
+.association-note-popover th { overflow-wrap: normal; white-space: nowrap; }
