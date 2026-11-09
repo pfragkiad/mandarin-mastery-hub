@@ -22,6 +22,7 @@ import { catalog } from './catalog-store';
 import { radicalIdentity } from './radical-identities';
 import { orderedRadicalForms } from './radical-strokes';
 import { scriptGroup, scriptHead } from './character-variants';
+import { includeScript, type CharacterScript } from './learning-preferences';
 
 export type ComponentFamilyGroup = { familyId: number; head: string; forms: string[] };
 
@@ -87,7 +88,9 @@ export function componentCardHead(glyph: string, includeTraditional: boolean): s
 export function componentCardGlyphs(glyph: string, includeTraditional: boolean): string[] {
   const family = componentFamilyGroup(glyph);
   const base = family ? family.forms : [scriptHead(glyph)];
+  const scripts = new Map(catalog.components.map(row => [row[0], row[4] as CharacterScript | undefined]));
   const out: string[] = [];
-  for (const form of base) for (const partner of includeTraditional ? scriptGroup(form) : [form]) if (!out.includes(partner)) out.push(partner);
+  // Only Components records, and Traditional ones only when the preference includes them.
+  for (const form of base) for (const partner of includeTraditional ? scriptGroup(form) : [form]) if (!out.includes(partner) && scripts.has(partner) && includeScript(scripts.get(partner), includeTraditional)) out.push(partner);
   return out;
 }
