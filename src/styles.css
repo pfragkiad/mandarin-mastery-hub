@@ -2049,3 +2049,6 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .association-note-toggle svg { width: 14px; height: 14px; }
 .association-note-popover { max-width: min(360px, 92vw); font-size: 12px; }
 .association-note-popover .association-note-details { display: grid; gap: 10px; margin: 0; }
+.association-note-popover { width: max-content; max-width: min(420px, 92vw); }
+.association-note-popover table { width: 100%; table-layout: auto; }
+.association-note-popover td, .association-note-popover th { overflow-wrap: anywhere; }
