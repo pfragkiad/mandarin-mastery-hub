@@ -47,7 +47,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   if (forms.length < 2) return null;
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className="radical-family-section script-forms">
-    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {characterVariants.source}</> : null}</> : <>Simplified ↔ traditional links · {characterVariants.source}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
+    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
@@ -64,6 +64,9 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
     {!family && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
   </div>;
 }
+
+/** Learner-facing provenance for simplified ↔ traditional links: the upstream dataset, never our data file name. */
+const VARIANT_LINK_SOURCE = 'Unicode Unihan 17.0.0, with reviewed usage notes';
 
 /** Short learner label for a recorded association classification (unknown values shown as recorded). */
 export function classificationLabel(classification: string) {
@@ -140,7 +143,7 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
     ? entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
-    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · Unicode Unihan 17.0, reviewed against Taiwan MOE dictionaries and OpenCC phrase records</SourceInfo></h3>
+    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
     <div className="radical-form-list" role="group" aria-label={`Related written forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
