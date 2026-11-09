@@ -1969,3 +1969,9 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-actions { flex-wrap: wrap; gap: 2px 4px; margin: 0 -10px; }
 .stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; justify-content: flex-start; height: 32px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
+
+/* While the writing square is being resized, its drawing (character, overlays, arrows,
+   celebration) fades so only the grid and the handle read clearly; the grid lines are the
+   square's own background and stay at full strength. */
+.writer-board .writing-grid > :not(.writer-resize-handle) { transition: opacity .15s; }
+.writer-board.is-resizing .writing-grid > :not(.writer-resize-handle) { opacity: .2; }
