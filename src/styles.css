@@ -1959,3 +1959,11 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* Card text (pinyin, hanzi, translation) shows a text caret so it reads as selectable;
    the card surface keeps the arrow and buttons keep the hand. */
 .library-page .word-card .word-open :is(.pinyin-text, .word-hanzi-tile, .tile-form, .word-meaning, .catalog-entry-meaning) { cursor: text; }
+
+/* Practice card bottom: "Strokes" heading on its own line, then one even row of
+   labelled actions (arrows, stroke tiles, stroke names). The negative inline margin
+   cancels the first ghost button's padding so its icon lines up with the heading. */
+.stroke-guide-top { flex-direction: column; align-items: stretch; gap: 8px; }
+.stroke-guide-actions { gap: 4px 14px; margin-left: -10px; }
+.stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; }
+.stroke-guide-actions > button svg { width: 16px; height: 16px; }
