@@ -34,11 +34,10 @@ vi.mock('./workspace', () => ({
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
 describe('Absent-record notes', () => {
-  it('keeps the sentence label and shows the explanation in the shared note block', () => {
+  it('hides the whole sentence section when there is no example', () => {
     render(<GlyphUsageExamples entry={strokeForm} kind="Strokes" />);
-    expect(screen.getByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toHaveClass('eyebrow');
-    const note = screen.getByText('No recorded stroke-to-character usage examples available.');
-    expect(note.closest('.record-gap')).not.toBeNull();
+    expect(screen.queryByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toBeNull();
+    expect(screen.queryByText('No recorded stroke-to-character usage examples available.')).toBeNull();
   });
 
   it('omits the decomposition section for individual strokes', () => {
