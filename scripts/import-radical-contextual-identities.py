@@ -54,6 +54,8 @@ def main() -> int:
             'parentRadicalPinyin': component['parentRadicalPinyin'],
             'meaning': component['meaning'],
             'preferredLabel': component['preferredLabel'],
+            # Learner-facing explanation shown on the card; readingNote stays in the (i) tooltip.
+            'learnerNote': component.get('learnerNote'),
             'componentName': component.get('componentName'),
             'readingNote': component.get('readingNote'),
             'usageConstraint': component.get('usageConstraint'),

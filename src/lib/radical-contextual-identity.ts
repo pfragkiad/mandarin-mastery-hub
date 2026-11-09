@@ -22,6 +22,8 @@ export type ContextualVariantIdentity = {
   parentRadicalPinyin: string;
   meaning: string;
   preferredLabel: string;
+  /** Plain learner wording for the card; the technical readingNote lives in its tooltip. */
+  learnerNote: string | null;
   componentName: { hanzi: string; pinyin: string } | null;
   readingNote: string | null;
   usageConstraint: string | null;
