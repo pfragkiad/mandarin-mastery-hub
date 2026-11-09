@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { DecompositionNode } from './character-library';
 import { parseIdsTree } from './ids-tree';
 import { childOwner, sameContextualForm } from './radical-context';
+import supplementaryOutlines from '@/data/supplementary-outlines.json';
 
 const checksum = z.string().regex(/^[a-f0-9]{64}$/);
 const indices = z.array(z.number().int().nonnegative());
@@ -77,7 +78,7 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
   return matches(gSource, recorded, true);
 }
 /**
- * Hanzi Writer Data has no file for this exact glyph (HTTP 404), e.g. the four-stroke grass form ⺿.
+ * Hanzi Writer Data has no file for this exact glyph (HTTP 404) and no reviewed supplementary outline exists.
  * Distinct from a network failure so Practice can say "no outline recorded" instead of offering a
  * retry, and never substitutes a look-alike glyph's outline.
  */
