@@ -923,6 +923,19 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-form-choice small { font-size: 9px; line-height: 1.4; color: var(--muted-foreground); text-align: center; }
 .radical-form-choice.is-selected { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
 .radical-form-choice.is-traditional strong { color: var(--traditional); }
+/* Related written forms (context-dependent v1.4.0 associations) and recorded pair notes. */
+.related-form-choice { height: auto; min-height: 100px; }
+.association-notes { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
+.association-note { font-size: 13px; line-height: 1.45; }
+.association-note p { margin: 0; }
+.association-note-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 600; }
+.association-note-kind { font-size: 11px; font-weight: 500; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
+.association-note-text { color: var(--foreground); }
+.association-note-example { color: var(--muted-foreground); }
+/* One speaker per recorded reading: "liào 🔊 / liǎo 🔊". */
+.multi-reading { display: inline-flex; flex-wrap: wrap; align-items: center; column-gap: 6px; row-gap: 2px; min-width: 0; }
+.multi-reading-part { display: inline-flex; align-items: center; gap: 2px; min-width: 0; }
+.multi-reading-separator { opacity: .7; }
 .historical-radical-detail .catalog-detail-head > strong { color: var(--traditional); }
 .radical-form-choice.is-traditional:hover,
 .radical-form-choice.is-traditional.is-selected { color: var(--traditional); border-color: var(--traditional); background: color-mix(in oklab, var(--traditional) 10%, var(--card)); }
