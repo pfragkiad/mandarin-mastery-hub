@@ -1724,9 +1724,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
   .catalog-results .catalog-entry-grid.library-list-view,
   .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 }
-/* Much larger screens (about a full-screen 1920px monitor): three Comfortable
-   Words/Glyph cards per row, each still at least ~460px wide. */
-@media (min-width: 1720px) {
+/* Very wide windows only: three Comfortable Words/Glyph cards per row. Below 2100px
+   three cards left too little room beside two hanzi tiles (预 預), cutting the translation. */
+@media (min-width: 2100px) {
   .catalog-results .catalog-entry-grid.library-list-view,
   .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
