@@ -923,6 +923,13 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Source metadata is always collapsed behind a small (i) button. */
 .source-info-popover { max-width: min(320px, 90vw); }
 .source-info-popover > p { margin: 0; border-top: 0; padding-top: 0; text-align: left; }
+/* Global hint rule: every hint (source (i) popovers, tooltips) reads in sentence case.
+   The popover reuses its trigger's footnote class, which is uppercase in place, so the
+   transform is undone here; acronyms (CUHK, HSK, IDS) keep their capitals from the text itself.
+   Lowercase 9px would be illegible, so the hint also gets a readable size. */
+.source-info-popover > p, .source-info-popover > p * { text-transform: none; letter-spacing: normal; }
+.source-info-popover > p { font-size: 11px; line-height: 1.6; }
+html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px; }
 .source-info-inline { display: none; }
 .source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 10px; border-radius: 999px; color: var(--muted-foreground); }
 .eyebrow .source-info-trigger { margin-top: 0; }
