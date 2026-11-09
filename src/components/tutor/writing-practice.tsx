@@ -217,7 +217,6 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const up = () => {
       window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
       resizing.current = false;
-      node.style.removeProperty('--writer-size');
       setPreferences({ ...preferences, practiceCanvasSize: Math.round(size) });
       requestAnimationFrame(() => { const w = Math.round(node.clientWidth); if (w > 0) setBoardSize(w); });
     };
