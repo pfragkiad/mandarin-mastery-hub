@@ -56,7 +56,9 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   useEffect(() => { let live = true; loadAudit().then(d => { if (live) setData(d); }).catch(() => undefined); return () => { live = false; }; }, []);
   const record = data?.variants.find(v => v.radicalId === familyId && v.formKey === formKey);
   const identity = contextualVariantIdentity(familyId, formKey, radicalForm(familyId, formKey)?.character ?? '');
-  if (!identity && (!data || !record?.reviewedClaims.length)) return null;
+  // A reviewed identity carries its own component name; otherwise the audit's mapped Chinese name.
+  const chineseName = identity?.componentName ? null : record?.componentNaming?.chineseName ?? null;
+  if (!identity && (!data || (!record?.reviewedClaims.length && !chineseName))) return null;
   const claims = record?.reviewedClaims ?? [];
   const definitions = claims.filter(c => c.displayAs === 'alternative_dictionary_definition');
   const notes = claims.filter(c => c.displayAs !== 'alternative_dictionary_definition');
@@ -84,19 +86,26 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
       </span>
     </div>;
   };
+  // The component name is a name, not a reading of the form: a small italic "Component name"
+  // caption sits above its own bordered word tile, with the recorded pinyin and speech (validated
+  // Mandarin TTS — no recording exists for names) and the recorded English translation below.
+  const nameBlock = (name: { hanzi: string; pinyin: string; englishTranslation?: string }) => <div className="glyph-usage-parents variant-etymology-name">
+    <span className="variant-etymology-caption">Component name</span>
+    {row('name', name.hanzi, name.pinyin, name.englishTranslation ? sentence(name.englishTranslation) : '', { link: false, word: true })}
+  </div>;
+  const host = (url?: string) => { try { return url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { return ''; } };
   // Identity first: it replaces the look-alike character's reading and meaning in the heading,
   // so the learner sees why right below the translation.
-  const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.readingNote && <>{identity.readingNote}<br/></>}{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
+  const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.readingNote && <>{identity.readingNote}<br/></>}{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}{identity.componentName?.translationSourceUrl && <>Component name · {host(identity.componentName.translationSourceUrl)}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
     <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
-    {/* The component name is a name, not a reading of the form: it gets its own bordered word tile, its
-        recorded pinyin and speech (validated Mandarin TTS — no recording exists for the name). */}
-    {identity.componentName && <div className="glyph-usage-parents">{row('name', identity.componentName.hanzi, identity.componentName.pinyin, 'Component name', { link: false, word: true })}</div>}
+    {identity.componentName && nameBlock(identity.componentName)}
     {/* Learners read the plain note; the technical reading note sits in the (i) tooltip above. */}
     {identity.learnerNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.learnerNote}</p>}
   </section>;
   const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, sentence(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
     {identitySection}
+    {chineseName && <section className="glyph-usage-section" aria-label="Component name"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT NAME<SourceInfo inline className="detail-footnote">Conventional Chinese component name{chineseName.sourceUrl && <> · {host(chineseName.sourceUrl)}</>}{chineseName.sourceStatus && <><br/>{sentence(chineseName.sourceStatus.replace(/_/g, ' '))}</>}</SourceInfo></h3>{nameBlock(chineseName)}</section>}
     {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record?.variant ?? '', d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
     {generalNotes.length > 0 && <section className="glyph-usage-section" aria-label="Historical origin">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE{claimSources(generalNotes)}</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN{claimSources(generalNotes)}</h3>}{generalNotes.map((c, i) => <p key={i} className="glyph-usage-meaning">{sentence(c.englishMeaningOrInterpretation)}{/* A reviewed full-sentence scope (scopeNote) reads naturally; older claims keep the raw appliesWhen label. */}{c.scopeNote ? <span className="variant-etymology-scope"> {c.scopeNote}</span> : c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}</p>)}</section>}
     {(characterNotes.length > 0 || followUps.length > 0) && <section className="glyph-usage-section" aria-label="Other historical origins of this shape"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE{sources([...characterNotes.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: `${c.appliesWhen}: ${c.sourceEvidenceSummary}` })), ...followUps.map(f => ({ source: f.source, evidenceStatus: f.evidenceStatus, summary: f.glyph }))])}</h3><div className="glyph-usage-parents">
