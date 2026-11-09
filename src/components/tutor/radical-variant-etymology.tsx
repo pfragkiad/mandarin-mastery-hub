@@ -67,11 +67,12 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const claimSources = (claims: Claim[]) => sources(claims.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: c.sourceEvidenceSummary })));
   // Character-specific origins reuse the "In a character" row exactly: linked hanzi tile,
   // reading + speaker on the first line, the origin text styled like a translation below.
-  const row = (key: string, glyph: string, pinyin: string, text: string, options: { link?: boolean; audio?: boolean; recording?: AudioAttachment | null } = {}) => {
+  const row = (key: string, glyph: string, pinyin: string, text: string, options: { link?: boolean; audio?: boolean; recording?: AudioAttachment | null; word?: boolean } = {}) => {
     const record = characterRecord(glyph);
     const reading = pinyin || record?.pinyin || '';
     const destination = options.link === false ? undefined : libraryDestination(glyph, preferences.includeTraditional);
-    const tileClass = `decomposition-glyph${record?.script === 'Traditional' ? ' traditional-character' : ''}`;
+    // `word` widens the tile so one border frames a whole multi-character name (斜玉旁).
+    const tileClass = `decomposition-glyph${options.word ? ' variant-etymology-word-tile' : ''}${record?.script === 'Traditional' ? ' traditional-character' : ''}`;
     return <div className="glyph-usage-reference" key={key}>
       {destination ? <Button asChild variant="ghost" className={tileClass}><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong lang="zh-CN" className={`${tileClass} decomposition-glyph-static`}>{glyph}</strong>}
       <span className="glyph-usage-facts">
@@ -84,7 +85,9 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   // so the learner sees why right below the translation.
   const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.readingNote && <>{identity.readingNote}<br/></>}{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
     <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
-    {identity.componentName && <p className="glyph-usage-meaning">Component name: <span lang="zh-CN">{identity.componentName.hanzi}</span> <span className="pinyin">{identity.componentName.pinyin}</span></p>}
+    {/* The component name is a name, not a reading of the form: it gets its own bordered word tile, its
+        recorded pinyin and speech (validated Mandarin TTS — no recording exists for the name). */}
+    {identity.componentName && <div className="glyph-usage-parents">{row('name', identity.componentName.hanzi, identity.componentName.pinyin, 'Component name', { link: false, word: true })}</div>}
     {/* Learners read the plain note; the technical reading note sits in the (i) tooltip above. */}
     {identity.learnerNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.learnerNote}</p>}
   </section>;
