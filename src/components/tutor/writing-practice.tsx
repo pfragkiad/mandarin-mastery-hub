@@ -658,7 +658,9 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const decomposition = decompositionFor(character);
   const enrichment = useCharacterEnrichment(character, decomposition?.root);
   const ownInfo = glyphPresentation(character, fact?.kind ?? 'Character', fact?.pinyin, fact?.meaning);
-  const fallback = radicalVariantFallback(character, fact?.pinyin, familyId);
+  // Only an explicit family-qualified variant (URL family + variant) can take a reviewed
+  // contextual identity; practising the plain character 王 keeps its own reading.
+  const fallback = radicalVariantFallback(character, fact?.pinyin, familyId, radicalSelection?.key);
   // Variants without their own record inherit the family reading, audio and meaning —
   // the same translation the reference detail card shows (e.g. 訁 follows 讠/言).
   const variantMeaning = familyId ? radicalVariantMeaning(character, ownInfo.meaning, familyId) : null;

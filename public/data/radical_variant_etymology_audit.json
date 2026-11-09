@@ -878,9 +878,10 @@
       "reviewedClaims": [
         {
           "claimType": "historical_pictograph",
-          "englishMeaningOrInterpretation": "jade pieces threaded together",
+          "englishMeaningOrInterpretation": "pieces of jade threaded together",
           "alternativePinyin": null,
-          "appliesWhen": "as left-side jade component only",
+          "appliesWhen": "when the four-stroke shape functions as the jade component",
+          "scopeNote": "This interpretation applies when the four-stroke shape functions as the jade component.",
           "sourceEvidenceSummary": "CUHK shows original 玉 depicts pieces of jade strung on a cord; visually 王-like positional shape must not be interpreted as independent 王 (king).",
           "source": {
             "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%8E%89",
@@ -900,6 +901,7 @@
           "recordedFormGlyph": "王",
           "meaning": "jade; precious stone",
           "preferredLabel": "Jade component (variant of 玉)",
+          "learnerNote": "This jade component belongs to 玉 (yù). It resembles 王 (wáng, king), but has a different historical origin and meaning.",
           "componentName": {
             "hanzi": "斜玉旁",
             "pinyin": "xiéyùpáng",

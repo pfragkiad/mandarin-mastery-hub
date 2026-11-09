@@ -1,0 +1,43 @@
+{
+  "source": {
+    "file": "public/data/radical_variant_etymology_audit.json",
+    "title": "Kangxi radical positional variants: targeted alternative definitions and historical-origin audit",
+    "generatedOn": "2026-11-09"
+  },
+  "identities": {
+    "96-1": {
+      "familyId": 96,
+      "formKey": "96-1",
+      "recordedFormGlyph": "王",
+      "displayGlyph": "⺩",
+      "aliases": [
+        "⺩"
+      ],
+      "parentRadical": "玉",
+      "parentRadicalPinyin": "yù",
+      "meaning": "jade; precious stone",
+      "preferredLabel": "Jade component (variant of 玉)",
+      "learnerNote": "This jade component belongs to 玉 (yù). It resembles 王 (wáng, king), but has a different historical origin and meaning.",
+      "componentName": {
+        "hanzi": "斜玉旁",
+        "pinyin": "xiéyùpáng"
+      },
+      "readingNote": "yù is the parent radical’s dictionary reading, not an independent lexical reading assigned to ⺩.",
+      "usageConstraint": "Use this meaning for 玉-derived jade components; a visually similar 王 shape does not by itself prove jade origin.",
+      "lookAlike": {
+        "glyph": "王",
+        "pinyin": "wáng",
+        "meaning": "king; ruler; surname",
+        "note": "This lexical reading and meaning belong to the independent character 王 and must not replace the jade-component identity when the radical #96 variant is selected."
+      },
+      "guidance": {
+        "whenSelectedAsRadicalVariant": "Show jade-component identity and meaning from 玉 (yù), and optionally explain the look-alike independent character 王 (wáng).",
+        "doNotUseAsVariantDefinition": "king, ruler; royal; surname",
+        "doNotUseAsVariantPronunciation": "wáng",
+        "doNotOverwriteCharacterEntry": "王 (wáng) retains its ordinary dictionary meaning and reading in the Characters view.",
+        "doNotRewriteSourceGlyph": "Keep the recorded form 王 and alias ⺩ unchanged to preserve source mappings.",
+        "exampleCurationNote": "Prefer unambiguous jade-component examples such as 珠 (zhū) over 玉 (yù) itself in a form-specific “In a character” list; do not alter automated corpus results without checking their decomposition provenance."
+      }
+    }
+  }
+}
