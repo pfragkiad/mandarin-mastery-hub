@@ -4,6 +4,7 @@ import { gSourceDecompositions, loadRecord, type CharacterEnrichment } from './c
 import { includeScript } from './learning-preferences';
 import type { Word } from './mandarin';
 import { sortByUsage } from './usage-frequency';
+import { breakdownUsesForm } from './radical-context';
 
 export type GlyphUsage = { word: Word; sentence: boolean; matchedGlyph: string };
 const containsComponent = (node: DecompositionNode, glyph: string): boolean => node.glyph === glyph || Boolean(node.children?.some(child => containsComponent(child, glyph)));
@@ -38,7 +39,8 @@ export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, ch
   return sortByUsage(characters.filter(parent => {
     if (parent.hanzi === entry.hanzi || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
     const related = kind === 'Radicals'
-      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned && (!multiForm || Boolean(parent.decomposition && containsComponent(parent.decomposition.root, entry.hanzi)))
+      // Shared glyphs count for the form their context resolves to (鄱's right-side 阝 → ⻏ of 邑).
+      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned && (!multiForm || Boolean(parent.decomposition && entry.kangxiIndex !== undefined && breakdownUsesForm(parent.decomposition.root, parent.hanzi, entry.kangxiIndex, entry.hanzi)))
       : Boolean(parent.decomposition && containsComponent(parent.decomposition.root, entry.hanzi));
     if (related) seen.add(parent.id);
     return related;

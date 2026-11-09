@@ -82,13 +82,13 @@ export function contextualRadical(glyph: string, position: string, owner?: strin
  *  directly or as a shared glyph that resolves to that family in this owner's context. */
 export function breakdownUsesForm(root: DecompositionNode, owner: string, family: number, form: string): boolean {
   const visit = (node: DecompositionNode, current: string | undefined): boolean => {
-    if (node.glyph === form) {
-      const resolved = contextualRadical(node.glyph, node.position, current);
-      if (!resolved.form || resolved.form.family === family) return true;
-    } else {
-      const resolved = contextualRadical(node.glyph, node.position, current);
-      if (resolved.form?.family === family && resolved.form.glyph === form) return true;
-    }
+    const resolved = contextualRadical(node.glyph, node.position, current);
+    // An exact glyph counts unless context moved it to another family (鄱's 阝 is not 阜's);
+    // a shared glyph counts when context resolves it to this family's form (鄱's 阝 → ⻏).
+    const uses = node.glyph === form
+      ? !resolved.form || resolved.form.family === family
+      : resolved.form?.family === family && resolved.form.glyph === form;
+    if (uses) return true;
     const next = childOwner(node, current);
     return Boolean(node.children?.some(child => visit(child, next)));
   };
