@@ -57,7 +57,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     perPage: density.size, onPerPageChange: density.onPerPageChange,
     onPageChange: onPageChange ?? (() => undefined),
   };
-  // Hide modes: a click toggles the card's peek (reveal, then click again to hide); reset on tab/page/filter change.
+  // Hide modes: a click toggles the card peek (reveal, then click again to hide); Show all: a click opens details. Peeks reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
   // An absent selection is an empty string, not undefined; block paging only
   // while the same conditions below actually render the floating reference.
@@ -90,7 +90,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       {filtered.length ? <>
       <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
       <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} />
-      <div className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} revealed={peek.revealed.has(w.id)} {...(onWordOpen ? { open: w.id === selectedWord?.id, // Card clicks only peek in a Hide mode; the panel opens solely via the details button.
+      <div className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} revealed={peek.revealed.has(w.id)} {...(onWordOpen ? { open: w.id === selectedWord?.id, // Card clicks peek in a Hide mode; in Show all they open the details, like the details button.
         onOpenChange: next => { if (next) peek.activate(w.id, () => void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current))); else onWordOpen(null, paged.current); }, onDetails: () => void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)) } : {})}/>)}</div>
       <CatalogPagination {...paginationProps} />
     </> : <div className="empty-state"><BookOpen size={32}/><h3>{status === 'Saved words' ? 'A place for your favorite words.' : `No ${label} found.`}</h3><p>{status === 'Saved words' ? 'Your bookmarked vocabulary will be right here.' : 'Try another meaning, Chinese character, or pinyin.'}</p><Button variant="outline" onClick={reset}>Clear filters</Button></div>}
