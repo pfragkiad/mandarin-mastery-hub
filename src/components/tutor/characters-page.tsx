@@ -326,6 +326,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   });
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
   const rankedTotal = filteredRanks.length;
+  // Phones hide the kind tabs (and their purple "+N"), so the top page counter
+  // repeats it after the card total. Only on the unfiltered All view, where the
+  // total equals the tab's card count the hint describes.
+  const sharedHere = sharedTraditional[kind] ?? 0;
+  const traditionalTotalHint = sharedHere > 0 && !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length
+    ? (kind === 'Radicals' ? radicalTraditionalCountHint(sharedHere) : traditionalCountHint(sharedHere, standaloneTraditional[kind] ?? 0, filtered.length))
+    : undefined;
+  const traditionalTotalExtra = traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : undefined;
   const paginationProps = {
     filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
     total: filtered.length, current: paged.current, pages: paged.pages,
