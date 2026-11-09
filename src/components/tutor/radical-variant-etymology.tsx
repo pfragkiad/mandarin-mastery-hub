@@ -6,6 +6,8 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
+import { loadPinyinData, parsePinyin, hasRecording, soundId, type PinyinData } from '@/lib/pinyin-guide';
+import type { AudioAttachment } from '@/lib/audio';
 import { SourceInfo } from './source-info';
 import { libraryEntries } from '@/lib/character-library';
 
@@ -32,6 +34,16 @@ const characterRecord = (glyph: string) => libraryEntries('Characters').find(ent
 export function RadicalVariantEtymology({ familyId, formKey, reading }: { familyId: number; formKey: string; reading?: string }) {
   const [data, setData] = useState<Audit | null>(null);
   const { preferences } = useWorkspace();
+  // Alternative readings (e.g. 灬 biāo) have no character recording; the Pinyin guide's human
+  // recording of that exact syllable + tone is the same sound, so it is attached only on an exact match.
+  const [pinyin, setPinyin] = useState<PinyinData | null>(null);
+  useEffect(() => { let live = true; loadPinyinData().then(d => { if (live) setPinyin(d); }).catch(() => undefined); return () => { live = false; }; }, []);
+  const syllableRecording = (reading: string): AudioAttachment | null => {
+    const parsed = parsePinyin(reading);
+    if (!pinyin || !parsed?.tone || !hasRecording(pinyin, parsed.base, parsed.tone)) return null;
+    const clip = pinyin.recordings[soundId(parsed.base, parsed.tone)];
+    return clip ? { url: clip.url, source: pinyin.audioSource.name, license: pinyin.audioSource.license, recordingKind: 'syllable' } : null;
+  };
   useEffect(() => { let live = true; loadAudit().then(d => { if (live) setData(d); }).catch(() => undefined); return () => { live = false; }; }, []);
   const record = data?.variants.find(v => v.radicalId === familyId && v.formKey === formKey);
   if (!data || !record?.reviewedClaims.length) return null;
@@ -47,7 +59,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const claimSources = (claims: Claim[]) => sources(claims.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: c.sourceEvidenceSummary })));
   // Character-specific origins reuse the "In a character" row exactly: linked hanzi tile,
   // reading + speaker on the first line, the origin text styled like a translation below.
-  const row = (key: string, glyph: string, pinyin: string, text: string, options: { link?: boolean; audio?: boolean } = {}) => {
+  const row = (key: string, glyph: string, pinyin: string, text: string, options: { link?: boolean; audio?: boolean; recording?: AudioAttachment | null } = {}) => {
     const record = characterRecord(glyph);
     const reading = pinyin || record?.pinyin || '';
     const destination = options.link === false ? undefined : libraryDestination(glyph, preferences.includeTraditional);
@@ -55,13 +67,13 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
     return <div className="glyph-usage-reference" key={key}>
       {destination ? <Button asChild variant="ghost" className={tileClass}><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong lang="zh-CN" className={`${tileClass} decomposition-glyph-static`}>{glyph}</strong>}
       <span className="glyph-usage-facts">
-        {reading && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{reading}</span>{options.audio !== false && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</span></span>}
+        {reading && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{reading}</span>{options.recording ? <ExamplePronunciation request={{ text: reading, reading, audio: options.recording }} label={`${glyph} ${reading}`}/> : options.audio !== false && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</span></span>}
         <span className="glyph-usage-meaning">{text}</span>
       </span>
     </div>;
   };
   return <div className="variant-etymology">
-    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record.variant, d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false }))}</div></section>}
+    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record.variant, d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
     {generalNotes.length > 0 && <section className="glyph-usage-section" aria-label="Historical origin">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE{claimSources(generalNotes)}</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN{claimSources(generalNotes)}</h3>}{generalNotes.map((c, i) => <p key={i} className="glyph-usage-meaning">{sentence(c.englishMeaningOrInterpretation)}{c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}</p>)}</section>}
     {(characterNotes.length > 0 || followUps.length > 0) && <section className="glyph-usage-section" aria-label="Other historical origins of this shape"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE{sources([...characterNotes.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: `${c.appliesWhen}: ${c.sourceEvidenceSummary}` })), ...followUps.map(f => ({ source: f.source, evidenceStatus: f.evidenceStatus, summary: f.glyph }))])}</h3><div className="glyph-usage-parents">
       {characterNotes.map((c, i) => row(`c${i}`, c.appliesWhen ?? '', '', sentence(c.englishMeaningOrInterpretation)))}
