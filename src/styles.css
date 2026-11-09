@@ -1993,3 +1993,7 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* "Component name" caption above the name's word tile (radical variant cards): small italic label, tight to its tile. */
 .variant-etymology-name { gap: 4px; }
 .variant-etymology-caption { font-size: 12px; font-style: italic; color: var(--muted-foreground); }
+/* Small screens: the kind tabs (with their purple "+N") are hidden, so the page
+   total repeats the shared Traditional count as a tappable purple hint. */
+.catalog-total-traditional { display: none; margin-left: 5px; padding: 0; border: 0; background: transparent; color: var(--traditional); font: inherit; cursor: help; }
+@media(max-width:850px) { .catalog-total-traditional { display: inline; } }

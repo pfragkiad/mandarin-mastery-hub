@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type Ref, type RefObject } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type Ref, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Crosshair } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,9 +10,11 @@ import { NavigationShortcuts } from './navigation-shortcuts';
  * Shared top/bottom row. Only the modal owns jump mode/value drafts; owners
  * supply applied result totals and exact recorded rank bounds, never inferred ranks.
  */
-export function CatalogPagination({ range, total, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks, currentRank, onUnrankedChange, filterKey }: {
+export function CatalogPagination({ range, total, totalExtra, current, pages, onPageChange, top = false, innerRef, perPage, onPerPageChange, onRankChange, ranks, currentRank, onUnrankedChange, filterKey }: {
   range: string;
   total: number;
+  /** Optional note rendered right after the total (e.g. the small-screen purple Traditional count). */
+  totalExtra?: ReactNode;
   current: number;
   pages: number;
   onPageChange: (page: number) => void;
@@ -74,7 +76,7 @@ export function CatalogPagination({ range, total, current, pages, onPageChange, 
       <Button variant="ghost" size="sm" className="catalog-jump-trigger" aria-label="Go to" title="Go to page or rank" disabled={!total} onClick={() => { setNearestRank(undefined); setJumpNotice(''); let saved: string | null = null; try { saved = localStorage.getItem('mandarin-jump-mode'); } catch { /* Use the default when storage is unavailable. */ } chooseMode(rankAvailable && saved !== 'page' ? 'rank' : 'page', false); setOpen(true); }}><Crosshair aria-hidden="true"/><span className="catalog-jump-label">Go to</span></Button>
       </>}
     </div>}
-      <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}</span>
+      <span className="catalog-page-range">{range} of {total.toLocaleString('en-US')}{totalExtra}</span>
       {nearestRank !== undefined && <span role="status" className="text-primary whitespace-nowrap">Nearest: #{nearestRank.toLocaleString('en-US')}</span>}
       {jumpNotice && <span role="status" className="text-primary">{jumpNotice}</span>}
     </div>
