@@ -42,7 +42,8 @@ import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek, isPlainCardDoubleClick } from './card-peek';
 import { libraryFilterOptions } from '@/lib/library-filter-options';
 import { RadicalForms } from './radical-forms';
-import { ScriptForms, scriptFormRecords } from './script-forms';
+import { ScriptForms, cardFormRecords } from './script-forms';
+import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
@@ -83,16 +84,25 @@ function radicalCardForms(familyId: number) {
  * button (a nested popover button would be invalid and would switch tabs).
  */
 const traditionalHintClass = 'traditional-count-hint w-auto';
-function TraditionalTabHint({ count, hint }: { count: number; hint: string }) {
-  return <Tooltip><TooltipTrigger asChild><span className="catalog-tab-count catalog-tab-traditional" aria-label={`Plus ${count.toLocaleString('en-US')} Traditional forms. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
+// `tone` 'family' marks the Components radical-family count (刂, ⺈ on 刀's card), coloured
+// like the Radical # pill instead of Traditional purple.
+type HintTone = 'traditional' | 'family';
+const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' : 'Traditional forms';
+function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
+  return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
     <TooltipContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></TooltipContent></Tooltip>;
 }
 /** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
-function TraditionalTotalHint({ count, hint }: { count: number; hint: string }) {
+function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
-    <PopoverTrigger className="catalog-total-traditional" aria-label={`Plus ${count.toLocaleString('en-US')} Traditional forms. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
+    <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
     <PopoverContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></PopoverContent>
   </Popover>;
+}
+
+/** Hint for the Components family "+N" (component-families.ts membership rules). */
+export function familyCountHint(shared: number) {
+  return `${shared.toLocaleString('en-US')} radical-family ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} main form, such as 刂 and ⺈ on 刀's card. Forms with their own sound, such as 王 (wáng), keep their own card`;
 }
 
 /** Hint for the Radicals tab "+N": Traditional forms always share their family's card. */
@@ -152,7 +162,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   const percentage = usagePercentage(heading.hanzi, kind, preferences.includeTraditional, heading.kangxiIndex);
   return <section className={`catalog-detail ${kind === 'Radicals' && historicalRadicalHeading(entry.hanzi, heading.kangxiIndex) ? 'historical-radical-detail' : ''}`} aria-label={`Details for ${entry.hanzi}`}>
-    <RecordDetailTitle hanzi={entry.hanzi} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined} forms={kind === 'Radicals' && heading.kangxiIndex ? <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key} hideLabel/> : (kind === 'Characters' || kind === 'Components') && preferences.includeTraditional && scriptFormRecords(entry.hanzi, kind).length > 1 ? <ScriptForms glyph={entry.hanzi} kind={kind}/> : undefined} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={entry.hanzi} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined} forms={kind === 'Radicals' && heading.kangxiIndex ? <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key} hideLabel/> : (kind === 'Characters' || kind === 'Components') && cardFormRecords(entry.hanzi, kind, preferences.includeTraditional).length > 1 ? <ScriptForms glyph={entry.hanzi} kind={kind} grouping="card"/> : undefined} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {/* Etymology audit notes belong to radical variant cards only (directly below the translation), never the family's main form. */}
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {audioError && <p role="status" className="library-note">{audioError}</p>}
@@ -171,6 +181,27 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 const MemoCharacterDetails = memo(CharacterDetails);
+
+/** A grouped Components card ranks by its best-ranked form (刀's card shows 刂's #32),
+ * matching where the card sits in the rank-sorted list; each form keeps its own rank in the details. */
+const componentRecordCache = new WeakMap<LibraryEntry[], Map<string, LibraryEntry>>();
+function componentRecords() {
+  const list = libraryEntries('Components');
+  let map = componentRecordCache.get(list);
+  if (!map) { map = new Map(list.map(item => [item.hanzi, item])); componentRecordCache.set(list, map); }
+  return map;
+}
+/** Glyphs a Components card shows: its whole group when it heads one, else just itself. */
+function componentCardForms(entry: LibraryEntry, includeTraditional: boolean): string[] {
+  const glyphs = componentCardGlyphs(entry.hanzi, includeTraditional);
+  return glyphs[0] === entry.hanzi && glyphs.length > 1 ? glyphs : [entry.hanzi];
+}
+function componentCardRank(entry: LibraryEntry, forms: string[], includeTraditional: boolean): number | null {
+  if (forms.length < 2) return usageRank(entry, 'Components', includeTraditional);
+  const records = componentRecords();
+  const ranks = forms.flatMap(glyph => { const record = records.get(glyph); const rank = record ? usageRank(record, 'Components', includeTraditional) : null; return rank === null ? [] : [rank]; });
+  return ranks.length ? Math.min(...ranks) : null;
+}
 
 // `revealed` marks a card peeked in a Hide mode; `onDetails` is the only way to open the panel.
 function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
@@ -221,13 +252,16 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
   // Components cards do the same but only with forms that exist as Components records.
-  const displayedForms = family ? radicalCardForms(family.id).map(form => form.glyph) : kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : kind === 'Components' && preferences.includeTraditional ? scriptFormRecords(entry.hanzi, 'Components').map(form => form.hanzi) : [entry.hanzi];
+  // Components cards also show their radical-family forms (刀 刂 ⺈, component-families.ts).
+  // Only a card's head shows the group: a Saved card of 爺 or 刂 keeps just its exact form.
+  const scriptForms = kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : [entry.hanzi];
+  const displayedForms = family ? radicalCardForms(family.id).map(form => form.glyph) : kind === 'Components' ? componentCardForms(entry, preferences.includeTraditional) : scriptForms[0] === entry.hanzi ? scriptForms : [entry.hanzi];
   const primaryForm = displayedForms[0] ?? entry.hanzi;
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning"><MeaningText text={tileMeaning}/></span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
-  const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{entry.strokes !== undefined && <span className="usage-strokes"> · {entry.strokes} strokes</span>}</> : entry.strokes !== undefined ? <span className="usage-strokes">{entry.strokes} strokes</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
+  const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={kind === 'Components' ? componentCardRank(entry, displayedForms, preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{entry.strokes !== undefined && <span className="usage-strokes"> · {entry.strokes} strokes</span>}</> : entry.strokes !== undefined ? <span className="usage-strokes">{entry.strokes} strokes</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
   // Stroke cards already read "STROKE" in their label, so they carry no repeated
   // "Stroke" metadata in the header or footer (null skips CardTopMeta's dot too).
   // The clipped-translation hint is portaled outside the grid, so the grid's
@@ -293,11 +327,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Grouped traditional records share their simplified card (a search hitting only 爺 shows 爷's card).
   // Saved browsing keeps exact bookmarked records, so a saved 爺 stays its own card there.
   // Applies to Characters and Components alike (each groups only within its own library).
-  const groupScripts = (kind === 'Characters' || kind === 'Components') && preferences.includeTraditional && !savedOnly;
-  const browsed = groupScripts ? collapseScriptForms(browsedRecords, entries) : browsedRecords;
+  // Components additionally fold radical-family forms (刂, ⺈) into their main form's card,
+  // independent of the Traditional preference (component-families.ts decides membership).
+  const groupScripts = !savedOnly && ((kind === 'Characters' && preferences.includeTraditional) || kind === 'Components');
+  const cardHead = (glyph: string) => kind === 'Components' ? componentCardHead(glyph, preferences.includeTraditional) : scriptHead(glyph);
+  const browsed = groupScripts ? collapseScriptForms(browsedRecords, entries, cardHead) : browsedRecords;
   // A selected traditional form is shown in the sheet, but its card, paging and arrows are the head's
   // (when the head exists in this library; otherwise the form keeps its own card).
-  const cardSelectedId = groupScripts && selectedId.startsWith(`${kind}:`) && entries.some(entry => entry.id === `${kind}:${scriptHead(selectedId.slice(kind.length + 1))}`) ? `${kind}:${scriptHead(selectedId.slice(kind.length + 1))}` : selectedId;
+  const cardSelectedId = groupScripts && selectedId.startsWith(`${kind}:`) && entries.some(entry => entry.id === `${kind}:${cardHead(selectedId.slice(kind.length + 1))}`) ? `${kind}:${cardHead(selectedId.slice(kind.length + 1))}` : selectedId;
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : cardSelectedId);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
@@ -317,10 +354,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // `sharedTraditional` separately counts the forms folded into those cards
   // (unpaired Traditional records already have their own card and stay in the
   // card count). Shown as a purple "+N" on the Characters, Components and Radicals tabs.
-  const { tabCounts, sharedTraditional, standaloneTraditional } = useMemo(() => {
-    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number> };
+  // Components also count `sharedFamily`: non-Traditional radical-family forms (刂, ⺈)
+  // folded into their main form's card, shown as a separate "+N" beside the purple one.
+  const { tabCounts, sharedTraditional, standaloneTraditional, sharedFamily } = useMemo(() => {
+    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number>, sharedFamily: 0 };
     const shared: Record<string, number> = {};
     const standalone: Record<string, number> = {};
+    let family = 0;
     const counts = Object.fromEntries(kinds.map(k => {
       const list = filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional);
       if (k === 'Radicals') {
@@ -329,7 +369,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
         shared[k] = list.reduce((sum, e) => sum + (!e.radicalVariant && e.kangxiIndex ? radicalCardForms(e.kangxiIndex).filter(form => form.traditional).length : 0), 0);
         return [k, list.length];
       }
-      if ((k !== 'Characters' && k !== 'Components') || !preferences.includeTraditional) return [k, list.length];
+      if (k === 'Components') {
+        const head = (glyph: string) => componentCardHead(glyph, preferences.includeTraditional);
+        const present = new Set(list.map(e => e.hanzi));
+        const folded = list.filter(e => head(e.hanzi) !== e.hanzi && present.has(head(e.hanzi)));
+        shared[k] = folded.filter(e => e.script === 'Traditional').length;
+        family = folded.length - shared[k];
+        standalone[k] = Math.max(0, list.filter(e => e.script === 'Traditional').length - shared[k]);
+        return [k, collapseScriptForms(list, list, head).length];
+      }
+      if (k !== 'Characters' || !preferences.includeTraditional) return [k, list.length];
       const cards = collapseScriptForms(list, list).length;
       shared[k] = list.length - cards;
       // Traditional records with no linked Simplified form (e.g. 鱻) keep their own card;
@@ -337,12 +386,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
       standalone[k] = Math.max(0, list.filter(e => e.script === 'Traditional').length - shared[k]);
       return [k, cards];
     })) as Record<string, number>;
-    return { tabCounts: counts, sharedTraditional: shared, standaloneTraditional: standalone };
+    return { tabCounts: counts, sharedTraditional: shared, standaloneTraditional: standalone, sharedFamily: family };
   }, [catalogReady, preferences.includeTraditional, catalogVersion]);
   // Count only sourced ranks in the applied pool; gaps remain original ranks,
   // not renumbered result positions, so the jump bounds preserve source identity.
+  // Grouped Components cards rank by their best form, the same rank the card shows.
+  const rankOf = (entry: LibraryEntry) => kind === 'Components' && !savedOnly ? componentCardRank(entry, componentCardForms(entry, preferences.includeTraditional), preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional);
   const filteredRanks = filtered.flatMap(entry => {
-    const rank = hasUsage && usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
+    const rank = hasUsage && usageOrder.loaded ? rankOf(entry) : null;
     return rank === null ? [] : [rank];
   });
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
@@ -354,7 +405,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const traditionalTotalHint = sharedHere > 0 && !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length
     ? (kind === 'Radicals' ? radicalTraditionalCountHint(sharedHere) : traditionalCountHint(sharedHere, standaloneTraditional[kind] ?? 0, filtered.length))
     : undefined;
-  const traditionalTotalExtra = traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : undefined;
+  const unfilteredAll = !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length;
+  const familyTotalExtra = kind === 'Components' && sharedFamily > 0 && unfilteredAll ? <TraditionalTotalHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/> : null;
+  const traditionalTotalExtra = traditionalTotalHint || familyTotalExtra ? <>{traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : null}{familyTotalExtra}</> : undefined;
   const paginationProps = {
     filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
     total: filtered.length, current: paged.current, pages: paged.pages,
@@ -362,13 +415,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
     ranks: rankSummary,
     onUnrankedChange: hasUsage && usageOrder.loaded ? () => {
-      const index = filtered.findIndex(entry => usageRank(entry, kind, preferences.includeTraditional) === null);
+      const index = filtered.findIndex(entry => rankOf(entry) === null);
       if (index >= 0) setPage(Math.floor(index / density.size) + 1);
     } : undefined,
-    currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => usageRank(entry, kind, preferences.includeTraditional)).find(rank => rank !== null) ?? undefined : undefined,
+    currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => rankOf(entry)).find(rank => rank !== null) ?? undefined : undefined,
     onRankChange: hasUsage ? (rank: number) => {
       if (!usageOrder.loaded) return;
-      const nearest = nearestRecordedRank(filtered.map(entry => usageRank(entry, kind, preferences.includeTraditional)), rank);
+      const nearest = nearestRecordedRank(filtered.map(entry => rankOf(entry)), rank);
       if (!nearest) return;
       const destinationPage = Math.floor(nearest.index / density.size) + 1;
       setPage(destinationPage);
@@ -377,7 +430,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   };
   const stickyLabel = (() => {
     if (rankedTotal > 0) {
-      const ranks = paged.entries.map(e => usageRank(e, kind, preferences.includeTraditional)).filter((r): r is number => r !== null);
+      const ranks = paged.entries.map(e => rankOf(e)).filter((r): r is number => r !== null);
       if (ranks.length) return `Ranks ${Math.min(...ranks).toLocaleString('en-US')}–${Math.max(...ranks).toLocaleString('en-US')} of ${rankedTotal.toLocaleString('en-US')}`;
     }
     return `Page ${paged.current} / ${paged.pages}`;
@@ -401,7 +454,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
+    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}{k === 'Components' && sharedFamily > 0 && <TraditionalTabHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} strokes`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
