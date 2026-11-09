@@ -4,6 +4,7 @@ import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { nearestRecordedRank } from '@/lib/rank-jump';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
@@ -74,6 +75,18 @@ function radicalCardForms(familyId: number) {
   const glyphs = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : [];
   return glyphs.map((glyph, index) => ({ glyph, traditional: radicalFormIsTraditional(glyph, familyId, index === 0) }));
 }
+/**
+ * Small-screen purple "+N" after the page total. Purpose: phones hide the kind
+ * tabs carrying this count. Inputs: shared Traditional count and its hint text.
+ * A tap opens the hint (touch has no hover title); hidden above 850px by CSS.
+ */
+function TraditionalTotalHint({ count, hint }: { count: number; hint: string }) {
+  return <Popover>
+    <PopoverTrigger className="catalog-total-traditional" title={hint} aria-label={`Plus ${count.toLocaleString('en-US')} Traditional forms. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
+    <PopoverContent className="source-info-popover" align="start"><p className="detail-footnote">{hint}</p></PopoverContent>
+  </Popover>;
+}
+
 /** Hint for the Radicals tab "+N": Traditional forms always share their family's card. */
 export function radicalTraditionalCountHint(shared: number) {
   return `${shared.toLocaleString('en-US')} Traditional ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} radical family, shown in purple beside the other forms`;
@@ -389,7 +402,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button variant="ghost" type="button" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
         </>}</DraftFilterForm>
         <LibraryTools category={savedOnly ? 'Saved' : `Ref:${k.slice(0, -1)}`} drawing={k !== 'Strokes' ? { kind: k, ...(savedOnly ? { saved: true } : {}) } : undefined}/>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} />}<div className={`catalog-entry-grid ${preferences.libraryView === 'list' ? 'library-list-view' : ''}`}>{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} totalExtra={traditionalTotalExtra} />}<div className={`catalog-entry-grid ${preferences.libraryView === 'list' ? 'library-list-view' : ''}`}>{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination {...paginationProps} />
         </section></div>
       </TabsContent>)}
