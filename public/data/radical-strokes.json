@@ -7613,7 +7613,7 @@
                 "character": "糹",
                 "radicalSymbol": "⺯",
                 "glyph": 0,
-                "localeInSource": null,
+                "localeInSource": "all",
                 "rawSequence": "PZ-PZ D D D D"
               }
             },
@@ -11889,6 +11889,72 @@
             },
             "officiallyVerified": false
           }
+        },
+        {
+          "key": "167-2",
+          "character": "釒",
+          "aliases": [],
+          "formKind": "variant",
+          "strokeCount": 8,
+          "record": {
+            "status": "recorded",
+            "strokes": [
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖",
+                "pinyin": "shù",
+                "glyph": "㇑"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "提",
+                "pinyin": "tí",
+                "glyph": "㇀"
+              }
+            ],
+            "source": "cjklib · C-locale strokeorder",
+            "sourceStatus": "source-record",
+            "provenance": {
+              "id": "cjklib",
+              "method": "direct",
+              "record": {
+                "character": "釒",
+                "radicalSymbol": null,
+                "glyph": 0,
+                "localeInSource": "all",
+                "rawSequence": "P-D H-H-S-D-P-T"
+              }
+            },
+            "officiallyVerified": false
+          }
         }
       ]
     },
@@ -13384,6 +13450,74 @@
                 "radicalSymbol": "⻠",
                 "glyph": 0,
                 "localeInSource": "C"
+              }
+            },
+            "officiallyVerified": false
+          }
+        },
+        {
+          "key": "184-2",
+          "character": "飠",
+          "aliases": [
+            "⻟"
+          ],
+          "formKind": "variant",
+          "strokeCount": 8,
+          "record": {
+            "status": "recorded",
+            "strokes": [
+              {
+                "name": "撇",
+                "pinyin": "piě",
+                "glyph": "㇒"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              },
+              {
+                "name": "横折",
+                "pinyin": "héng zhé",
+                "glyph": "㇕"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "横",
+                "pinyin": "héng",
+                "glyph": "㇐"
+              },
+              {
+                "name": "竖提",
+                "pinyin": "shù tí",
+                "glyph": "㇙"
+              },
+              {
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
+              }
+            ],
+            "source": "cjklib · C-locale strokeorder",
+            "sourceStatus": "source-record",
+            "provenance": {
+              "id": "cjklib",
+              "method": "direct",
+              "record": {
+                "character": "飠",
+                "radicalSymbol": "⻟",
+                "glyph": 0,
+                "localeInSource": "CJ",
+                "rawSequence": "P-D D-HZ-H-H-ST-D"
               }
             },
             "officiallyVerified": false
@@ -21304,7 +21438,7 @@
           "character": "糹",
           "radicalSymbol": "⺯",
           "glyph": 0,
-          "localeInSource": null,
+          "localeInSource": "all",
           "rawSequence": "PZ-PZ D D D D"
         }
       },
@@ -24549,6 +24683,65 @@
       },
       "officiallyVerified": false
     },
+    "釒": {
+      "status": "recorded",
+      "strokes": [
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "提",
+          "pinyin": "tí",
+          "glyph": "㇀"
+        }
+      ],
+      "source": "cjklib · C-locale strokeorder",
+      "sourceStatus": "source-record",
+      "provenance": {
+        "id": "cjklib",
+        "method": "direct",
+        "record": {
+          "character": "釒",
+          "radicalSymbol": null,
+          "glyph": 0,
+          "localeInSource": "all",
+          "rawSequence": "P-D H-H-S-D-P-T"
+        }
+      },
+      "officiallyVerified": false
+    },
     "長": {
       "strokes": [],
       "status": "unrecorded",
@@ -25675,6 +25868,65 @@
           "radicalSymbol": "⻠",
           "glyph": 0,
           "localeInSource": "C"
+        }
+      },
+      "officiallyVerified": false
+    },
+    "飠": {
+      "status": "recorded",
+      "strokes": [
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        },
+        {
+          "name": "横折",
+          "pinyin": "héng zhé",
+          "glyph": "㇕"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖提",
+          "pinyin": "shù tí",
+          "glyph": "㇙"
+        },
+        {
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
+        }
+      ],
+      "source": "cjklib · C-locale strokeorder",
+      "sourceStatus": "source-record",
+      "provenance": {
+        "id": "cjklib",
+        "method": "direct",
+        "record": {
+          "character": "飠",
+          "radicalSymbol": "⻟",
+          "glyph": 0,
+          "localeInSource": "CJ",
+          "rawSequence": "P-D D-HZ-H-H-ST-D"
         }
       },
       "officiallyVerified": false
