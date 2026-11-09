@@ -74,8 +74,8 @@ export function wordTileFit(hanzi: string): { lines: 1 | 2; style: CSSProperties
   return { lines: 2, style: { '--tile-size': `${size}px`, '--tile-per-line': perLine } as CSSProperties, parts };
 }
 
-// `revealed` marks a card peeked in a Hide mode; in panel mode the page's onOpenChange decides
-// a click (peek in a Hide mode, details in Show all), and `onDetails` is the explicit details button.
+// `revealed` marks a card peeked in a Hide mode; in panel mode clicks never open the panel —
+// the page's onOpenChange reveals only, and `onDetails` is the sole way into the detail sheet.
 export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false, revealed = false, onDetails }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean; revealed?: boolean; onDetails?: () => void }) {
   const [internalOpen, setInternalOpen] = useState(initiallyOpen);
   const open = controlledOpen ?? internalOpen;
