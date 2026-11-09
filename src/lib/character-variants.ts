@@ -19,13 +19,16 @@ export const scriptHead = (glyph: string) => characterVariants.head[glyph] ?? gl
 export const scriptGroup = (glyph: string) => { const head = scriptHead(glyph); return [head, ...(characterVariants.groups[head] ?? [])]; };
 
 /** Collapse grouped traditional records into their simplified card, keeping first-seen order.
- * `all` resolves a head that the filtered list itself lacks (e.g. a search matching only 爺). */
-export function collapseScriptForms<T extends { id: string; hanzi: string }>(entries: T[], all: T[]): T[] {
+ * `all` resolves a head that the filtered list itself lacks (e.g. a search matching only 爺).
+ * `head` picks the card owner; Components pass componentCardHead so radical-family forms
+ * (刂, ⺈) also fold into their main form's card. First-seen order means a card sits at its
+ * best-ranked member's position in a rank-sorted list. */
+export function collapseScriptForms<T extends { id: string; hanzi: string }>(entries: T[], all: T[], head: (glyph: string) => string = scriptHead): T[] {
   const byGlyph = new Map(all.map(entry => [entry.hanzi, entry]));
   const seen = new Set<string>();
   const out: T[] = [];
   for (const entry of entries) {
-    const card = byGlyph.get(scriptHead(entry.hanzi)) ?? entry;
+    const card = byGlyph.get(head(entry.hanzi)) ?? entry;
     if (seen.has(card.id)) continue;
     seen.add(card.id);
     out.push(card);
