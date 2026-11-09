@@ -38,7 +38,7 @@ export function CharacterDecomposition({ character, tree, source, status }: { ch
  *  `character` owns the breakdown: its declared radical resolves shared forms such as 阝. */
 export function RecordedDecomposition({ character, tree, source, status, record }: { character?: string | undefined; tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
-  const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree));
+  const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree, character));
   return <>
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
       <h4 className="library-note">BabelStone · G-source<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>Recorded qualifiers · {alternative.qualifiers}<br/>Structural description · not verified etymology or stroke geometry</SourceInfo></h4>

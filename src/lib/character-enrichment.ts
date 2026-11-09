@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import type { DecompositionNode } from './character-library';
 import { parseIdsTree } from './ids-tree';
+import { childOwner, sameContextualForm } from './radical-context';
 
 const checksum = z.string().regex(/^[a-f0-9]{64}$/);
 const indices = z.array(z.number().int().nonnegative());
@@ -49,10 +50,12 @@ export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNo
   return JSON.stringify(a.children?.map(treeEncoding) ?? null) === JSON.stringify(b.children?.map(treeEncoding) ?? null);
 }
 /** Display-only agreement: explicit unknown Hanzi leaves may stand for recorded G-source parts.
- * Known glyphs, branch positions and nesting must still agree; checksums and bindings stay strict. */
-export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode): boolean {
+ * Known glyphs, branch positions and nesting must still agree; checksums and bindings stay strict.
+ * With the owner character, two codepoints for one radical form in that character's context
+ * (胖: G-source 月, recorded ⺼, both 肉 #130's ⺼) agree — see sameContextualForm. */
+export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode, owner?: string): boolean {
   if (!gSource || !recorded) return false;
-  function matches(g: DecompositionNode, r: DecompositionNode, root = false): boolean {
+  function matches(g: DecompositionNode, r: DecompositionNode, root = false, current = owner): boolean {
     // Slot names differ between sources (outer/inner vs upper-right-enclosure/inside);
     // structure is fixed by the operator plus child order, so names are not compared.
     if (!r.children?.length && /^[?？]$/.test(r.glyph)) return true;
@@ -60,10 +63,13 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
     const rChildren = r.children ?? [];
     if (gChildren.length !== rChildren.length) return false;
     const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
-    if ((!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph))) && g.glyph !== r.glyph) return false;
+    if ((!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph)))
+      && !(isOperator(g.glyph) ? g.glyph === r.glyph : sameContextualForm(g.glyph, r.glyph, r.position, current))) return false;
+    // Inside a real component its own declared radical applies (same rule as the renderer).
+    const next = childOwner(r, current);
     return rChildren.every((child, index) => {
       const gChild = gChildren[index];
-      return gChild !== undefined && matches(gChild, child);
+      return gChild !== undefined && matches(gChild, child, false, next);
     });
   }
   return matches(gSource, recorded, true);
