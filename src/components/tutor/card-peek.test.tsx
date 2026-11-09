@@ -78,3 +78,28 @@ describe('useCardPeek', () => {
     expect(result.current.revealed.size).toBe(0);
   });
 });
+
+describe('card click (activate)', () => {
+  it('opens the details in Show all mode', () => {
+    const open = vi.fn();
+    const { result } = renderHook(() => useCardPeek('all', 'p1'));
+    act(() => result.current.activate('Characters:好', open));
+    expect(open).toHaveBeenCalledWith('Characters:好');
+    expect(result.current.revealed.size).toBe(0);
+  });
+  it('only peeks in a Hide mode and never opens the details', () => {
+    const open = vi.fn();
+    const { result } = renderHook(() => useCardPeek('meaning', 'p1'));
+    act(() => result.current.activate('Characters:好', open));
+    expect(open).not.toHaveBeenCalled();
+    expect(result.current.revealed.has('Characters:好')).toBe(true);
+  });
+  it('does not open the details when the click ended a text selection', () => {
+    const open = vi.fn();
+    const spy = vi.spyOn(window, 'getSelection').mockReturnValue({ isCollapsed: false, toString: () => 'hǎo' } as unknown as Selection);
+    const { result } = renderHook(() => useCardPeek('all', 'p1'));
+    act(() => result.current.activate('Characters:好', open));
+    expect(open).not.toHaveBeenCalled();
+    spy.mockRestore();
+  });
+});
