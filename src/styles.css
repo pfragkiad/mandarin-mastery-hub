@@ -1933,3 +1933,15 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
   html[data-display-size='comfortable'] .pinyin-tile-tones { gap: 2px; }
   html[data-display-size='comfortable'] .pinyin-tile-badge { width: 11px; height: 11px; }
 }
+
+/* Radical variant etymology (audit notes) — only on variant detail cards. */
+.variant-etymology { margin: 18px 0; padding-top: 14px; border-top: 1px solid var(--border); }
+.variant-etymology h3 { font-weight: 600; margin: 0 0 10px; }
+.variant-etymology-readings { margin: 0 0 8px; }
+.variant-etymology-group { padding: 8px 0; }
+.variant-etymology-group + .variant-etymology-group { border-top: 1px solid var(--border); }
+.variant-etymology-group h4 { margin: 0 0 6px; }
+.variant-etymology-group p { margin: 0; }
+.variant-etymology-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.variant-etymology-group li > p { padding-left: 1.6em; }
+.variant-etymology-scope { color: var(--muted-foreground); }
