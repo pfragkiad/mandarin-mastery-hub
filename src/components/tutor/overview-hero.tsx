@@ -9,6 +9,7 @@ import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
 import { libraryEntries, libraryDestination, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 
 function cssColorToHex(value: string) {
@@ -91,6 +92,11 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
 function DailyPinyin({ entry, slow, showPinyin }: { entry: LibraryEntry; slow: boolean; showPinyin: boolean }) {
   const [error, setError] = useState<string | null>(null);
   const available = usePronunciationAvailability(Boolean(characterRecording(entry.hanzi, entry.pinyin)), entry.pinyin);
+  // Several readings: each beside its own speaker (hidden pinyin keeps one per reading too).
+  if (isMultiReading(entry.pinyin)) return <div className="daily-hero-pinyin">
+    <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={showPinyin ? 'pinyin' : 'sr-only'} onError={setError}/>
+    {error && <p className="library-note" role="status">{error}</p>}
+  </div>;
   return <div className="daily-hero-pinyin">
     {showPinyin && <span className="pinyin">{entry.pinyin}</span>}
     <Button variant="ghost" size="icon" disabled={!available} aria-label={available ? `Listen to ${entry.hanzi}` : `No audio available for ${entry.hanzi}`} onClick={async () => setError(await playCharacter(entry.hanzi, slow, entry.pinyin))}><Volume2/></Button>

@@ -6,6 +6,7 @@ import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { randomOverviewWord, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from '@/lib/overview';
 import { catalog, characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -94,8 +95,9 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
           <div className="discovery-record-pinyin">
+            {!word && entry && isMultiReading(entry.pinyin) ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'} onError={setAudioError}/> : <>
             {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
-            <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
+            <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} /></>}
           </div>
           <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" aria-label={`Open ${hanzi}`}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>

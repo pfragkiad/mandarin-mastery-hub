@@ -5,6 +5,7 @@ import { glyphPresentation } from '@/lib/glyph-presentation';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 
 /** Exact component readings only; family speech is used only for recorded variant fallback. */
 export function ComponentPronunciation({ glyph }: { glyph: string }) {
@@ -18,5 +19,7 @@ export function ComponentPronunciation({ glyph }: { glyph: string }) {
   const pinyin = fallback?.pinyin ?? (exact ? presentation?.reading || '' : '');
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const available = usePronunciationAvailability(Boolean(recording), reading);
+  // Several recorded readings (" / ") each get their own speaker for that exact reading.
+  if (spoken && reading && pinyin === reading && isMultiReading(reading)) return <span className="component-pronunciation"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="inline"/></span>;
   return <span className="component-pronunciation">{pinyin && <span className="pinyin">{pinyin}</span>}<Button variant="ghost" size="icon" className={`decomposition-listen${recording ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${spoken ?? glyph}` : `No audio available for ${glyph}`} title={available ? 'Listen to component pronunciation' : 'No recorded component pronunciation'} onClick={() => { if (spoken) void playCharacter(spoken, preferences.slow, reading); }}><Volume2 size={13}/></Button></span>;
 }
