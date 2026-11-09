@@ -8174,11 +8174,11 @@
               "character": "糹",
               "radicalSymbol": "⺯",
               "glyph": 0,
-              "localeInSource": null,
+              "localeInSource": "all",
               "rawSequence": "PZ-PZ D D D D"
             }
           },
-          "convention": "traditional",
+          "convention": "mainland",
           "verification": {
             "basis": "cjklib strokeorder.csv exact-form entry (all locales); Unicode EquivalentUnifiedIdeograph 2EAF → 7CF9; stroke count matches Hanzi Writer Data outline (6)",
             "result": "added as the Traditional left-side silk form of Kangxi #120",
@@ -11739,6 +11739,41 @@
             "result": "sequence supplied by cnchar-order",
             "officialStandardVerified": false
           }
+        },
+        {
+          "character": "釒",
+          "unicodeRadicalAliases": [],
+          "formKind": "variant",
+          "strokeCount": 8,
+          "strokeSequence": [
+            "P",
+            "D",
+            "H",
+            "H",
+            "S",
+            "D",
+            "P",
+            "T"
+          ],
+          "status": "source-record",
+          "officiallyVerified": false,
+          "source": {
+            "id": "cjklib",
+            "method": "direct",
+            "record": {
+              "character": "釒",
+              "radicalSymbol": null,
+              "glyph": 0,
+              "localeInSource": "all",
+              "rawSequence": "P-D H-H-S-D-P-T"
+            }
+          },
+          "convention": "mainland",
+          "verification": {
+            "basis": "cjklib strokeorder.csv exact-form entry (single glyph, all locales); stroke count matches Hanzi Writer Data outline (8)",
+            "result": "added as the Traditional side form of Kangxi #167",
+            "officialStandardVerified": false
+          }
         }
       ],
       "kangxiHeading": "金"
@@ -12900,6 +12935,43 @@
           "verification": {
             "basis": "cnchar-order exact-form standalone lookup",
             "result": "missing-standalone-entry",
+            "officialStandardVerified": false
+          }
+        },
+        {
+          "character": "飠",
+          "unicodeRadicalAliases": [
+            "⻟"
+          ],
+          "formKind": "variant",
+          "strokeCount": 8,
+          "strokeSequence": [
+            "P",
+            "D",
+            "D",
+            "HZ",
+            "H",
+            "H",
+            "ST",
+            "D"
+          ],
+          "status": "source-record",
+          "officiallyVerified": false,
+          "source": {
+            "id": "cjklib",
+            "method": "direct",
+            "record": {
+              "character": "飠",
+              "radicalSymbol": "⻟",
+              "glyph": 0,
+              "localeInSource": "CJ",
+              "rawSequence": "P-D D-HZ-H-H-ST-D"
+            }
+          },
+          "convention": "mainland",
+          "verification": {
+            "basis": "cjklib strokeorder.csv exact-form entry, glyph 0 (localecharacterglyph: C/J); the Taiwan glyph 1 records 横 as stroke 3 (P-D H-HZ-H-H-ST-D) and is not used; stroke count matches Hanzi Writer Data outline (8)",
+            "result": "added as the Traditional side form of Kangxi #184",
             "officialStandardVerified": false
           }
         }
