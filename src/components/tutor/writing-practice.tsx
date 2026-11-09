@@ -380,7 +380,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       : `Drawn through stroke ${drawnTo + 1}. Press Reset to practise the whole character.`;
   const play = () => {
     const instance = writer.current; if (!instance) return;
-    if (paused) {
+    // Trace pauses only between strokes and re-arms tracing at the next stroke,
+    // so Resume is simply a fresh Play from that position (no native resume).
+    if (paused && mode !== 'trace') {
       applySpeed(instance); setPaused(false); setPlaying(true); pausedNow.current = false;
       if (activeStroke !== null) setMessage(strokeMessage(activeStroke));
       // Paused between strokes (animation done, waiting on speech or the pause):
@@ -389,7 +391,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       if (next) next(); else void instance.resumeAnimation();
       return;
     }
-    pausedNow.current = false; pendingNext.current = null;
+    pausedNow.current = false; pendingNext.current = null; pauseAfterStroke.current = false; setPausing(false);
     // Trace continues from the clicked/drawn position (restarting once everything is drawn).
     const tracePlay = mode === 'trace';
     const start = tracePlay ? (tracePos.current < strokes.length ? tracePos.current : 0) : stepMode ? stepIndex : 0;
@@ -398,6 +400,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const run = ++animationRun.current;
     applySpeed(instance);
     instance.cancelQuiz(); setPaused(false); setPlaying(true); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Follow each stroke in order.');
+    // Trace Play marks already-drawn strokes like hand tracing does: cards before
+    // the current stroke are highlighted, the current one is the active card.
+    if (tracePlay) setTracePrefix(start);
     // Draw stroke-by-stroke so the guide below can highlight the stroke being drawn.
     if (start === 0) instance.hideCharacter();
     const step = (i: number) => {
@@ -410,13 +415,25 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       }
       setActiveStroke(i);
       setMessage(strokeMessage(i));
+      // Keep the trace position in step with playback so a drag mid-run (or
+      // after Pause) continues from here rather than starting over.
+      if (tracePlay) { tracePos.current = i; setTracePrefix(i); }
       // Play strokes speaks each stroke name too when stroke audio is on.
       // The next stroke starts only after both this stroke's animation and its
       // spoken name have finished, so names never get cut off or pile up.
       let animDone = false;
       let speechDone = true;
       const advance = () => {
-        if (animationRun.current !== run || !animDone || !speechDone) return;
+        if (animationRun.current !== run || !animDone) return;
+        // Trace Pause lands once this stroke has finished drawing: arm tracing at
+        // the next stroke (the drawn prefix stays) and offer Resume.
+        if (tracePlay && pauseAfterStroke.current && i + 1 < strokes.length) {
+          pauseAfterStroke.current = false; setPausing(false);
+          quiz(i + 1); setPaused(true);
+          setMessage(`Paused after stroke ${i + 1} of ${strokes.length}. Trace stroke ${i + 2} or press Resume.`);
+          return;
+        }
+        if (!speechDone) return;
         if (pausedNow.current) { pendingNext.current = () => step(i + 1); return; }
         step(i + 1);
       };
@@ -427,6 +444,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   };
   const pause = () => {
     if (!writer.current) return;
+    if (mode === 'trace') {
+      // Finish the stroke being drawn, then pause (handled in Play's advance).
+      if (activeStroke === null || activeStroke + 1 >= strokes.length) return;
+      pauseAfterStroke.current = true; setPausing(true);
+      setMessage(`Pausing after stroke ${activeStroke + 1}…`);
+      return;
+    }
     void writer.current.pauseAnimation(); setPlaying(false); setPaused(true); pausedNow.current = true;
     setMessage(`Paused. ${activeStroke !== null ? strokeMessage(activeStroke) : ''}`);
   };
@@ -442,6 +466,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // pendingNext holds the next stroke when a pause lands between strokes.
   const pausedNow = useRef(false);
   const pendingNext = useRef<(() => void) | null>(null);
+  // Trace Pause request: honoured when the current stroke finishes drawing.
+  const pauseAfterStroke = useRef(false);
+  const [pausing, setPausing] = useState(false);
   const needsRearm = useRef(false);
   // Trace: next undrawn stroke (clicked prefix or hand-drawn), so Play continues from there.
   const tracePos = useRef(0);
@@ -458,7 +485,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const run = ++animationRun.current;
     instance.cancelQuiz();
     setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 ? startStroke : null);
-    setStepIndex(0); setStepMode(false); needsRearm.current = false;
+    setStepIndex(0); setStepMode(false); needsRearm.current = false; pauseAfterStroke.current = false; setPausing(false);
     setScores(strokes.map(() => null));
     setTracePrefix(mode === 'trace' ? startStroke : 0);
     if (startStroke >= strokes.length) {
@@ -601,7 +628,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
   // Stroke-name speech toggle: a labelled ghost button in the Strokes action row (shares Step's mute state).
   const audioControl = <Button variant="ghost" size="sm" aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX/> : <Volume2/>}{muted ? 'Unmute names' : 'Mute names'}</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
