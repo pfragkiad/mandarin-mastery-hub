@@ -9,6 +9,8 @@ import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
 import { ExamplePronunciation } from './example-pronunciation';
 import { characterAudioRequest } from '@/lib/catalog-store';
+import { usageOrder, usageRank } from '@/lib/usage-frequency';
+import { UsageLabel } from './usage-label';
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
 export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
@@ -35,11 +37,16 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     {parents.length ? <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
       <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
-      {/* Two lines beside the tile, as in Decomposition: reading + speaker (+ Traditional pill) on top, meaning below.
-          The speaker sits right after the reading instead of in a shared column, so it never drifts away from short readings. */}
+      {/* Two lines beside the tile, as in Decomposition: reading + speaker, then the parent's
+          rank (+ Traditional pill) on top, meaning below. The speaker sits right after the reading
+          instead of in a shared column, so it never drifts away from short readings. The rank is
+          the same label the Sound chart's "In a character" rows use: the parent is a Characters
+          record (its link keeps that record ID), so it is the exact supplied Characters-scope rank,
+          shown only once the lazily loaded usage sidecar is installed — never estimated. */}
       <span className="glyph-usage-facts">
-        {((preferences.pinyin && parent.pinyin) || parent.script === 'Traditional') && <span className="glyph-usage-facts-row">
+        {((preferences.pinyin && parent.pinyin) || usageOrder.loaded || parent.script === 'Traditional') && <span className="glyph-usage-facts-row">
           {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row"><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></span>}
+          {usageOrder.loaded && <UsageLabel rank={usageRank(parent, 'Characters', preferences.includeTraditional)} kind="Characters" compact/>}
           {parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
         </span>}
         <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
