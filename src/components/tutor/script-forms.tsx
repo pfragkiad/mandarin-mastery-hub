@@ -128,8 +128,9 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
     {note.example && <div className="spelling-examples">
       <span className="variant-etymology-caption">Spelling examples</span>
       {rows
-        ? <table><thead><tr><th scope="col">Simplified</th><th scope="col">Traditional</th><th scope="col"><span className="sr-only">Note</span></th></tr></thead>
-            <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-TW" className="traditional-character">{row.traditional}</td><td>{row.note ?? ''}</td></tr>)}</tbody></table>
+        ? <table><thead><tr><th scope="col">Simplified</th><th scope="col">Traditional</th>{rows.some(row => row.note) && <th scope="col"><span className="sr-only">Note</span></th>}</tr></thead>
+            {/* Both columns share one lang so the two spellings render in the same Hanzi font. */}
+            <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
         : <p>{note.example}</p>}
     </div>}
   </li>;
