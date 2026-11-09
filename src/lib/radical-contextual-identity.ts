@@ -34,6 +34,32 @@ export type ContextualVariantIdentity = {
 
 const identities = (data as { identities: Record<string, ContextualVariantIdentity> }).identities;
 
+/**
+ * The one-line intro of a variant card's "Component identity", composed the same way for every
+ * reviewed identity so all look-alike cases read alike:
+ *   "{label} of {parent} ({parent reading}), visually similar to {look-alike} ({reading}, {first gloss})."
+ * label = preferredLabel without its trailing "(variant of …)" (the sentence already names the parent);
+ * gloss = the look-alike's first recorded meaning. Every part is a recorded field — nothing is invented.
+ */
+export function identitySummary(identity: ContextualVariantIdentity) {
+  const label = identity.preferredLabel.replace(/\s*[（(][^（）()]*[）)]\s*$/, '').trim();
+  const look = identity.lookAlike;
+  const gloss = look?.meaning.split(/[;；,，]/)[0]?.trim() ?? '';
+  return {
+    label,
+    parent: identity.parentRadical,
+    parentPinyin: identity.parentRadicalPinyin,
+    lookAlike: look ? { glyph: look.glyph, pinyin: look.pinyin, gloss } : null,
+  };
+}
+
+/** Plain-text form of identitySummary (tests, labels). */
+export function identitySummaryText(identity: ContextualVariantIdentity): string {
+  const s = identitySummary(identity);
+  const similar = s.lookAlike ? `, visually similar to ${s.lookAlike.glyph} (${s.lookAlike.pinyin}${s.lookAlike.gloss ? `, ${s.lookAlike.gloss}` : ''})` : '';
+  return `${s.label} of ${s.parent} (${s.parentPinyin})${similar}.`;
+}
+
 /** Exact family + form key + recorded glyph, or null; never matched by shape or glyph alone. */
 export function contextualVariantIdentity(familyId: number | undefined, formKey: string | undefined, glyph: string): ContextualVariantIdentity | null {
   if (familyId === undefined || !formKey) return null;
