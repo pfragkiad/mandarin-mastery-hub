@@ -7422,7 +7422,7 @@
     "面": {
       "麵": {
         "classification": "context_dependent_not_error",
-        "explanation": "The traditional noodle/flour form is 麵 in Taiwan standard writing (e.g. 麵條); the face/surface sense remains 面. Taiwan writing uses 麵條; 麪條 is a variant form seen in OpenCC's basic conversion.",
+        "explanation": "The traditional noodle/flour form is 麵 in Taiwan standard writing (e.g. 麵條); the face/surface sense remains 面. 麪條 is a variant form seen in OpenCC's basic conversion.",
         "example": "面条 → 麵條 (Taiwan writing uses 麵; 麪條 is a variant form seen in OpenCC's basic conversion); 面子 → 面子",
         "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4700&la=0&powerMode=0",
         "evidenceScope": "All examples in this note were individually reviewed against cited pinned OpenCC phrase records or identified supplementary sources. This does not establish unconditional character conversion, all regional spelling choices or full mainland-2013 certification.",
