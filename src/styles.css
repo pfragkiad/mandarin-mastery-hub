@@ -2000,3 +2000,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* Traditional "+N" hints (tab tooltip and phone page-total popover) share one small card. */
 .traditional-count-hint { max-width: min(260px, 85vw); padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--foreground); box-shadow: var(--shadow-popover); }
 .traditional-count-hint > p { margin: 0; font-size: 11px; line-height: 1.45; font-weight: 400; text-align: left; text-transform: none; letter-spacing: normal; }
+/* Components radical-family "+N" (刂, ⺈ sharing 刀's card): coloured like the Radical # pill. */
+.catalog-tab-count.catalog-tab-family, .catalog-total-traditional.catalog-total-family { color: var(--hsk-id); }
+.catalog-tab-count.catalog-tab-family { margin-left: -6px; }

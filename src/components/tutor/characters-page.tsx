@@ -84,16 +84,25 @@ function radicalCardForms(familyId: number) {
  * button (a nested popover button would be invalid and would switch tabs).
  */
 const traditionalHintClass = 'traditional-count-hint w-auto';
-function TraditionalTabHint({ count, hint }: { count: number; hint: string }) {
-  return <Tooltip><TooltipTrigger asChild><span className="catalog-tab-count catalog-tab-traditional" aria-label={`Plus ${count.toLocaleString('en-US')} Traditional forms. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
+// `tone` 'family' marks the Components radical-family count (刂, ⺈ on 刀's card), coloured
+// like the Radical # pill instead of Traditional purple.
+type HintTone = 'traditional' | 'family';
+const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' : 'Traditional forms';
+function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
+  return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
     <TooltipContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></TooltipContent></Tooltip>;
 }
 /** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
-function TraditionalTotalHint({ count, hint }: { count: number; hint: string }) {
+function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
-    <PopoverTrigger className="catalog-total-traditional" aria-label={`Plus ${count.toLocaleString('en-US')} Traditional forms. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
+    <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
     <PopoverContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></PopoverContent>
   </Popover>;
+}
+
+/** Hint for the Components family "+N" (component-families.ts membership rules). */
+export function familyCountHint(shared: number) {
+  return `${shared.toLocaleString('en-US')} radical-family ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} main form, such as 刂 and ⺈ on 刀's card. Forms with their own sound, such as 王 (wáng), keep their own card`;
 }
 
 /** Hint for the Radicals tab "+N": Traditional forms always share their family's card. */
@@ -396,7 +405,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const traditionalTotalHint = sharedHere > 0 && !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length
     ? (kind === 'Radicals' ? radicalTraditionalCountHint(sharedHere) : traditionalCountHint(sharedHere, standaloneTraditional[kind] ?? 0, filtered.length))
     : undefined;
-  const traditionalTotalExtra = traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : undefined;
+  const unfilteredAll = !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length;
+  const familyTotalExtra = kind === 'Components' && sharedFamily > 0 && unfilteredAll ? <TraditionalTotalHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/> : null;
+  const traditionalTotalExtra = traditionalTotalHint || familyTotalExtra ? <>{familyTotalExtra}{traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : null}</> : undefined;
   const paginationProps = {
     filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
     total: filtered.length, current: paged.current, pages: paged.pages,
@@ -443,7 +454,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
+    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}{k === 'Components' && sharedFamily > 0 && <TraditionalTabHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} strokes`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
