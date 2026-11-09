@@ -148,7 +148,7 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
   </li>;
 }
 
-// Related written forms: a context-dependent association set from v1.4.0 (了 ↔ 瞭, 发 ↔ 發/髮).
+// Variant spelling: a context-dependent association set (了 ↔ 瞭, 发 ↔ 發/髮).
 // These forms never share a library card, so each tile opens that form's own card (pushed, so
 // Back returns). Inputs: the shown glyph and its library kind; Traditional forms hide when
 // Include traditional is off. The simplified key adds "Also used in traditional" only
