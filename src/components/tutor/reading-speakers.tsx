@@ -39,14 +39,14 @@ export function GlyphReadingSpeaker({ spoken, reading, variant, onError }: { spo
   const label = `Listen to ${spoken} ${reading}`;
   const title = available ? recording ? `Listen to ${reading} · Recording` : `${reading} · Browser speech · no recording` : undefined;
   const control = variant === 'tile'
-    ? <TileSpeaker available={available} hasRecording={Boolean(recording)} label={label} unavailableLabel={`No audio available for ${spoken} ${reading}`} title={title} onActivate={() => void play()}/>
+    ? <TileSpeaker available={available} hasRecording={Boolean(recording)} label={label} unavailableLabel={`No audio available for ${spoken} ${reading}`} {...(title ? { title } : {})} onActivate={() => { void play(); }}/>
     : <Button variant="ghost" size="icon" className={`${buttonClass[variant]}${recording ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? label : `No audio available for ${spoken} ${reading}`} title={title} onClick={() => void play()}>{variant === 'inline' ? <Volume2 size={13}/> : <Volume2/>}</Button>;
   return <>{control}{!onError && error && <span role="status" className="example-audio-error">{error}</span>}</>;
 }
 
 /** "reading 🔊 / reading 🔊": every reading beside its own speaker. `prefix` (e.g. "Name · ")
  *  precedes the first reading; `textClassName` styles the reading text like the surface's pinyin. */
-export function MultiReadingSpeakers({ spoken, reading, variant, textClassName = 'pinyin', prefix, onError }: { spoken: string; reading: string; variant: ReadingSpeakerVariant; textClassName?: string; prefix?: string; onError?: ((message: string | null) => void) | undefined }) {
+export function MultiReadingSpeakers({ spoken, reading, variant, textClassName = 'pinyin', prefix, onError }: { spoken: string; reading: string; variant: ReadingSpeakerVariant; textClassName?: string; prefix?: string | undefined; onError?: ((message: string | null) => void) | undefined }) {
   const parts = splitReadings(reading);
   return <span className="multi-reading" role="group" aria-label={`Readings of ${spoken}`}>
     {parts.map((part, index) => <Fragment key={`${part}-${index}`}>

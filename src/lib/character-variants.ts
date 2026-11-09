@@ -56,7 +56,7 @@ export function documentsUnchangedUse(simplified: string, note: AssociationNote)
   if (note.unchangedSense?.trim()) return true;
   for (const part of (note.example ?? '').split(';')) {
     const match = part.match(/^\s*(\S+)\s*→\s*(\S+)/);
-    if (match && match[1] === match[2] && match[1].includes(simplified)) return true;
+    if (match?.[1] && match[1] === match[2] && match[1].includes(simplified)) return true;
   }
   return (note.lexicalEvidence?.examples ?? []).some(example => example.simplifiedInput.includes(simplified) && example.attestedTargets.some(target => target.attestedForm === example.simplifiedInput));
 }
@@ -93,7 +93,7 @@ export const scriptGroup = (glyph: string) => { const head = scriptHead(glyph); 
 /** Context-dependent association set containing `glyph` (simplified key first), or [] when none. */
 export const relatedGroup = (glyph: string) => {
   const head = characterVariants.relatedHead[glyph] ?? (characterVariants.related[glyph] ? glyph : undefined);
-  return head ? [head, ...characterVariants.related[head]] : [];
+  return head ? [head, ...(characterVariants.related[head] ?? [])] : [];
 };
 /** Recorded note for the association between a simplified key and one traditional form. */
 export const associationNote = (simplified: string, traditional: string) => characterVariants.notes[simplified]?.[traditional];
