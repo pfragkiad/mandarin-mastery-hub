@@ -7,7 +7,9 @@ import { catalog } from '@/lib/catalog-store';
 import { radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { useWorkspace } from './workspace';
 
-const sourceNote = (record?: { source?: string; sourceStatus?: string; status?: string } | null) => <>Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{record?.sourceStatus ?? record?.status} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</>;
+/** Hints read in sentence case: capitalise only the first letter of a raw recorded status (display only; the stored value is untouched). */
+const sentenceStart = (text?: string) => text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+const sourceNote = (record?: { source?: string; sourceStatus?: string; status?: string } | null) => <>Source · {record?.source || catalog.radicalStrokes.source || 'cnchar-order 3.2.6'}<br/>{sentenceStart(record?.sourceStatus ?? record?.status)} · no official verification claimed<br/>Exact form writing order · no component breakdown inferred</>;
 
 /** Provenance for a radical's recorded stroke sequence. `inline` tucks the button beside the section label. */
 export function RadicalStrokeSourceInfo({ glyph, form, inline = true }: { glyph: string; form?: RadicalForm | undefined; inline?: boolean }) {
