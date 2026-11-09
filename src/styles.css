@@ -1358,7 +1358,9 @@ html[data-display-size='comfortable'] .practice-page-content .picker-label { fon
 html[data-display-size='comfortable'] :is(.word-hsk-id, .word-hsk-id.traditional-pill, .practice-kind, .kangxi-identity-badge, .tile-traditional-badge) { font-size: 13px; line-height: 1.4; letter-spacing: 0; padding: 3px 8px; }
 html[data-display-size='comfortable'] .library-list-view .word-hsk-id { font-size: 13px; }
 html[data-display-size='comfortable'] .practice-reading-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
-html[data-display-size='comfortable'] .practice-pills { flex-wrap: wrap; justify-content: flex-end; max-width: 160px; }
+/* Pills stay side by side (Traditional left of the kind pill) and only wrap when the
+   reading line itself runs out of room. */
+html[data-display-size='comfortable'] .practice-pills { flex-wrap: wrap; justify-content: flex-end; }
 @media (max-width: 580px) {
   html[data-display-size='comfortable'] .practice-page-content .word-context { grid-template-columns: minmax(0, 1fr); text-align: center; }
 }
