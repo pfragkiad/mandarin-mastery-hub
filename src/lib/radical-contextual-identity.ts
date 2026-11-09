@@ -24,7 +24,8 @@ export type ContextualVariantIdentity = {
   preferredLabel: string;
   /** Plain learner wording for the card; the technical readingNote lives in its tooltip. */
   learnerNote: string | null;
-  componentName: { hanzi: string; pinyin: string } | null;
+  /** Conventional Chinese component name with its recorded English translation (when supplied). */
+  componentName: { hanzi: string; pinyin: string; englishTranslation?: string; translationSourceUrl?: string } | null;
   readingNote: string | null;
   usageConstraint: string | null;
   lookAlike: { glyph: string; pinyin: string; meaning: string; note: string } | null;

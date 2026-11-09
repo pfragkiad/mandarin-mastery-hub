@@ -27,7 +27,10 @@ import { contextualVariantIdentity } from '@/lib/radical-contextual-identity';
  */
 type Source = { url: string; publisher: string };
 type Claim = { claimType: string; englishMeaningOrInterpretation: string; alternativePinyin: string | null; appliesWhen: string | null; scopeNote?: string | null; sourceEvidenceSummary: string; source: Source; evidenceStatus: string; displayAs: string };
-type Variant = { radicalId: number; variant: string; formKey: string; reviewedClaims: Claim[] };
+// componentNaming.chineseName is the conventional Chinese name of the component (e.g. 三点水) with
+// its recorded English translation; null means "no verified name in this dataset", never "none exists".
+type ChineseName = { hanzi: string; pinyin: string; englishTranslation?: string; sourceUrl?: string; sourceStatus?: string };
+type Variant = { radicalId: number; variant: string; formKey: string; reviewedClaims: Claim[]; componentNaming?: { chineseName?: ChineseName | null } };
 type FollowUp = { glyph: string; pinyin: string; relatedVariant: string; interpretation: string; source: Source; evidenceStatus: string };
 type Audit = { variants: Variant[]; characterSpecificFollowUps: FollowUp[] };
 
