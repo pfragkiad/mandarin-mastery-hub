@@ -13,6 +13,7 @@ import { includeScript } from '@/lib/learning-preferences';
 import { collections, partOfSpeechList, partOfSpeechOptions, vocabularyKind, type Word } from '@/lib/mandarin';
 import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
 import { displayMeaning } from '@/lib/glyph-presentation';
@@ -135,7 +136,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
             <Button variant="ghost" className="flash-face-flip" onClick={() => patch({ flipped: true })} aria-label="Card answer"/>
             {/* Only on the answer side, so opening details never gives the answer away. */}
             <Button asChild variant="ghost" size="sm" className="flash-details"><Link {...detailsFor(card)} onClick={rememberReturn} title={`Open details for ${card.hanzi}`} aria-label={`Open details for ${card.hanzi}`}><DetailsIcon/>Details</Link></Button>
-            <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></div>
+            <div className="flash-pinyin-row">{!card.audio && Array.from(card.hanzi).length === 1 && isMultiReading(card.pinyin) ? <MultiReadingSpeakers spoken={card.hanzi} reading={card.pinyin} variant="header" textClassName="pinyin flash-pinyin"/> : <><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></>}</div>
             <span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span><span className="flash-word"><MeaningText text={card.meaning}/></span>
           </div>
         </div>
