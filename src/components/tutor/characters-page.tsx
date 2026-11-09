@@ -91,7 +91,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const bookmarkId = form ? radicalVariantEntry(heading, form).id : heading.id;
   const bookmarked = saved.includes(bookmarkId);
   const [audioError, setAudioError] = useState<string | null>(null);
-  const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  // The exact family + form key lets a reviewed contextual identity (#96 jade 王) apply here only.
+  const fallback = form && form.character !== heading.hanzi ? radicalVariantFallback(entry.hanzi, entry.pinyin, heading.kangxiIndex, form.key) : kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
   const reading = fallback ? fallback.reading : base.reading;
@@ -125,7 +126,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const familyAvailability = useMemo(() => kind === 'Radicals' ? radicalCardAvailability(entry, libraryEntries('Characters'), preferences.includeTraditional) : null, [entry, kind, preferences.includeTraditional, catalogVersion]);
   const hasExample = useMemo(() => kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : familyAvailability ? familyAvailability.example : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents, familyAvailability]);
-  const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin) : null;
+  // Saved variant cards carry their exact family + form key; ordinary cards pass neither.
+  const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin, entry.radicalVariant ? entry.kangxiIndex : undefined, entry.radicalVariant) : null;
   const base = speechTarget(entry, kind);
   const spoken = fallback ? fallback.spoken : base.text;
   const reading = fallback ? fallback.reading : base.reading;
