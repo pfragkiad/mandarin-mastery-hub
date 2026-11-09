@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BookOpen, History, Info } from 'lucide-react';
 import { SourceInfo } from './source-info';
 import { libraryEntries } from '@/lib/character-library';
 
@@ -37,9 +38,9 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   return <section className="variant-etymology">
     {altReadings.length > 0 && <p className="variant-etymology-readings"><span lang="zh-CN">{record.variant}</span> <span className="pinyin">{[reading, ...altReadings].filter(Boolean).join(' / ')}</span></p>}
     <h3>Additional meanings and origins</h3>
-    {definitions.length > 0 && <div className="variant-etymology-group"><h4 className="eyebrow">Alternative dictionary definition</h4>{definitions.map((d, i) => <p key={i}>{sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', ').replace(/\.$/, '')}{d.alternativePinyin && <> (<em>{d.alternativePinyin}</em>)</>}.{cite(d.source, d.evidenceStatus, d.sourceEvidenceSummary)}</p>)}</div>}
-    {generalNotes.length > 0 && <div className="variant-etymology-group"><h4 className="eyebrow">{generalNotes.every(c => c.claimType === 'classification_warning') ? 'Note' : 'Historical origin'}</h4>{generalNotes.map((c, i) => <p key={i}>{sentence(c.englishMeaningOrInterpretation)}{c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}{cite(c.source, c.evidenceStatus, c.sourceEvidenceSummary)}</p>)}</div>}
-    {(characterNotes.length > 0 || followUps.length > 0) && <div className="variant-etymology-group"><h4 className="eyebrow">Other historical origins of this shape</h4><ul>
+    {definitions.length > 0 && <div className="variant-etymology-group"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION</h3>{definitions.map((d, i) => <p key={i}>{sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', ').replace(/\.$/, '')}{d.alternativePinyin && <> (<em>{d.alternativePinyin}</em>)</>}.{cite(d.source, d.evidenceStatus, d.sourceEvidenceSummary)}</p>)}</div>}
+    {generalNotes.length > 0 && <div className="variant-etymology-group">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN</h3>}{generalNotes.map((c, i) => <p key={i}>{sentence(c.englishMeaningOrInterpretation)}{c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}{cite(c.source, c.evidenceStatus, c.sourceEvidenceSummary)}</p>)}</div>}
+    {(characterNotes.length > 0 || followUps.length > 0) && <div className="variant-etymology-group"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE</h3><ul>
       {characterNotes.map((c, i) => <li key={`c${i}`}><strong lang="zh-CN">{c.appliesWhen}</strong> <span className="pinyin">{readingOf(c.appliesWhen ?? '')}</span><p>{sentence(c.englishMeaningOrInterpretation)}{cite(c.source, c.evidenceStatus, c.sourceEvidenceSummary)}</p></li>)}
       {followUps.map((f, i) => <li key={`f${i}`}><strong lang="zh-CN">{f.glyph}</strong> <span className="pinyin">{f.pinyin}</span><p>{sentence(f.interpretation)}{cite(f.source, f.evidenceStatus)}</p></li>)}
     </ul></div>}
