@@ -1,4 +1,6 @@
+import { useId, useState } from 'react';
 import { Link } from '@tanstack/react-router';
+import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
@@ -105,9 +107,9 @@ export function parseSpellingExamples(example: string): SpellingExample[] | null
 }
 
 /** Recorded notes for every simplified → traditional pair among `forms` (first form is the
- *  simplified key). Learner view: explanation verbatim, the key caveat visible in one muted line,
- *  and the recorded example as a small spelling table; usage caveat, evidence scope and the
- *  source link stay behind the ⓘ. Pairs without a note show nothing. */
+ *  simplified key). Learner view: the key caveat in one muted line; the explanation (verbatim) and
+ *  the recorded example as a small spelling table sit behind Details; usage caveat, evidence scope
+ *  and the source link stay behind the ⓘ. Pairs without a note show nothing. */
 function AssociationNotes({ forms }: { forms: string[] }) {
   const [simplified, ...rest] = forms;
   if (!simplified) return null;
@@ -116,27 +118,37 @@ function AssociationNotes({ forms }: { forms: string[] }) {
   return <ul className="association-notes">{notes.map(({ traditional, note }) => <AssociationNoteRow key={traditional} simplified={simplified} traditional={traditional} note={note}/>)}</ul>;
 }
 
+// One pair note. Collapsed (default): the pair, its classification pill, ⓘ and the one-line
+// caveat with a Details toggle. Expanded: the recorded explanation verbatim and the spelling table.
+// State: `open` is local to this note, so it resets when another card is shown.
 function AssociationNoteRow({ simplified, traditional, note }: { simplified: string; traditional: string; note: AssociationNote }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
   const rows = note.example ? parseSpellingExamples(note.example) : null;
   const contextual = note.classification === CONTEXT_DEPENDENT;
   return <li className="association-note">
     <div className="association-note-head"><span lang="zh-CN">{simplified}</span><span aria-hidden="true">↔</span><span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span>
       <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</SourceInfo>
     </div>
-    <p className="association-note-text">{note.explanation}</p>
-    {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
-    {note.example && <div className="spelling-examples">
-      <span className="variant-etymology-caption">Spelling examples</span>
-      {rows
-        ? <table><thead><tr><th scope="col">Simplified</th><th scope="col">Traditional</th>{rows.some(row => row.note) && <th scope="col"><span className="sr-only">Note</span></th>}</tr></thead>
-            {/* Both columns share one lang so the two spellings render in the same Hanzi font. */}
-            <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
-        : <p>{note.example}</p>}
+    <div className="association-note-summary">
+      {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
+      <Button type="button" variant="ghost" size="sm" className="association-note-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>Details<ChevronDown aria-hidden="true" className={open ? 'is-open' : ''}/></Button>
+    </div>
+    {open && <div id={panelId} className="association-note-details">
+      <p className="association-note-text">{note.explanation}</p>
+      {note.example && <div className="spelling-examples">
+        <span className="variant-etymology-caption">Spelling examples</span>
+        {rows
+          ? <table><thead><tr><th scope="col">Simplified</th><th scope="col">Traditional</th>{rows.some(row => row.note) && <th scope="col"><span className="sr-only">Note</span></th>}</tr></thead>
+              {/* Both columns share one lang so the two spellings render in the same Hanzi font. */}
+              <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
+          : <p>{note.example}</p>}
+      </div>}
     </div>}
   </li>;
 }
 
-// Related written forms: a context-dependent association set from v1.4.0 (了 ↔ 瞭, 发 ↔ 發/髮).
+// Variant spelling: a context-dependent association set (了 ↔ 瞭, 发 ↔ 發/髮).
 // These forms never share a library card, so each tile opens that form's own card (pushed, so
 // Back returns). Inputs: the shown glyph and its library kind; Traditional forms hide when
 // Include traditional is off. The simplified key adds "Also used in traditional" only
@@ -153,8 +165,8 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
     ? entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
-    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
-    <div className="radical-form-list" role="group" aria-label={`Related written forms of ${glyph}`}>
+    <h3 className="eyebrow flex-wrap"><span>VARIANT SPELLING</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
+    <div className="radical-form-list" role="group" aria-label={`Variant spellings of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
