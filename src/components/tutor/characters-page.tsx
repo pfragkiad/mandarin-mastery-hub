@@ -407,7 +407,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     : undefined;
   const unfilteredAll = !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length;
   const familyTotalExtra = kind === 'Components' && sharedFamily > 0 && unfilteredAll ? <TraditionalTotalHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/> : null;
-  const traditionalTotalExtra = traditionalTotalHint || familyTotalExtra ? <>{familyTotalExtra}{traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : null}</> : undefined;
+  const traditionalTotalExtra = traditionalTotalHint || familyTotalExtra ? <>{traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : null}{familyTotalExtra}</> : undefined;
   const paginationProps = {
     filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
     total: filtered.length, current: paged.current, pages: paged.pages,
