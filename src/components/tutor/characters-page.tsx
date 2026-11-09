@@ -1,7 +1,7 @@
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
-import { SourceInfo } from '@/components/tutor/source-info';
+import { HintBody, SourceInfo } from '@/components/tutor/source-info';
 import { Fragment, memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -84,20 +84,25 @@ function radicalCardForms(familyId: number) {
  * The tab version is a span with a tooltip because it sits inside the tab
  * button (a nested popover button would be invalid and would switch tabs).
  */
-const traditionalHintClass = 'traditional-count-hint w-auto';
+const traditionalHintClass = 'source-info-popover count-hint w-auto';
 // `tone` 'family' marks the Components radical-family count (刂, ⺈ on 刀's card), coloured
 // like the Radical # pill instead of Traditional purple.
 type HintTone = 'traditional' | 'family';
 const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' : 'Traditional forms';
+/** Shared (i)-style card body for the "+N" hints: a coloured title row naming the count,
+ *  then the explanation as a separated muted row (HintBody), matching every other hint. */
+function CountHintBody({ count, hint, tone }: { count: number; hint: string; tone: HintTone }) {
+  return <HintBody><strong className={`count-hint-title count-hint-${tone}`}>+{count.toLocaleString('en-US')} {hintNoun(tone)}</strong><br/>{hint}</HintBody>;
+}
 function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
-    <TooltipContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></TooltipContent></Tooltip>;
+    <TooltipContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></TooltipContent></Tooltip>;
 }
 /** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
     <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
-    <PopoverContent side="bottom" align="start" className={traditionalHintClass}><p>{hint}</p></PopoverContent>
+    <PopoverContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></PopoverContent>
   </Popover>;
 }
 

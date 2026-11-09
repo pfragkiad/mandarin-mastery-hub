@@ -2020,9 +2020,13 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
    total repeats the shared Traditional count as a tappable purple hint. */
 .catalog-total-traditional { display: none; margin-left: 5px; padding: 0; border: 0; background: transparent; color: var(--traditional); font: inherit; cursor: help; }
 @media(max-width:850px) { .catalog-total-traditional { display: inline; } }
-/* Traditional "+N" hints (tab tooltip and phone page-total popover) share one small card. */
-.traditional-count-hint { max-width: min(260px, 85vw); padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--foreground); box-shadow: var(--shadow-popover); }
-.traditional-count-hint > p { margin: 0; font-size: 11px; line-height: 1.45; font-weight: 400; text-align: left; text-transform: none; letter-spacing: normal; }
+/* "+N" count hints (tab tooltip and phone page-total popover) reuse the shared (i) hint card
+   (.source-info-popover + .hint-rows): coloured title row, then the explanation. The tooltip
+   variant needs the popover surface restated because tooltips default to a filled primary chip. */
+.count-hint { max-width: min(300px, 88vw); background: var(--card); color: var(--foreground); border: 1px solid var(--border); font-weight: 400; }
+.count-hint-title { font-weight: 600; }
+.count-hint-traditional { color: var(--traditional); }
+.count-hint-family { color: var(--hsk-id); }
 /* Components radical-family "+N" (刂, ⺈ sharing 刀's card): coloured like the Radical # pill. */
 .catalog-tab-count.catalog-tab-family, .catalog-total-traditional.catalog-total-family { color: var(--hsk-id); }
 .catalog-tab-count.catalog-tab-family { margin-left: -6px; }
