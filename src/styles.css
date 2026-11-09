@@ -923,15 +923,25 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-form-choice small { font-size: 9px; line-height: 1.4; color: var(--muted-foreground); text-align: center; }
 .radical-form-choice.is-selected { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
 .radical-form-choice.is-traditional strong { color: var(--traditional); }
-/* Related written forms (context-dependent v1.4.0 associations) and recorded pair notes. */
+/* Related written forms (context-dependent associations) and recorded pair notes. */
 .related-form-choice { height: auto; min-height: 100px; }
 .association-notes { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
 .association-note { font-size: 13px; line-height: 1.45; }
 .association-note p { margin: 0; }
 .association-note-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 600; }
 .association-note-kind { font-size: 11px; font-weight: 500; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
+.association-note-head .source-info-trigger { margin-top: 0; width: 20px; height: 20px; }
+.association-note .traditional-character { color: var(--traditional); }
 .association-note-text { color: var(--foreground); }
-.association-note-example { color: var(--muted-foreground); }
+.association-note-caveat { color: var(--muted-foreground); font-size: 12px; }
+/* Recorded example split into Simplified | Traditional | note rows (falls back to the raw line). */
+.spelling-examples { margin-top: 8px; display: grid; gap: 4px; }
+.spelling-examples table { border-collapse: collapse; width: max-content; max-width: 100%; font-size: 13px; }
+.spelling-examples th { font-size: 11px; font-weight: 500; text-align: left; color: var(--muted-foreground); padding: 0 16px 2px 0; }
+.spelling-examples td { padding: 3px 16px 3px 0; border-top: 1px solid var(--border); vertical-align: top; }
+.spelling-examples td:nth-child(-n+2) { white-space: nowrap; font-size: 15px; }
+.spelling-examples td:nth-child(3) { color: var(--muted-foreground); font-size: 12px; padding-right: 0; white-space: normal; }
+.spelling-examples > p { color: var(--muted-foreground); }
 /* One speaker per recorded reading: "liào 🔊 / liǎo 🔊". */
 .multi-reading { display: inline-flex; flex-wrap: wrap; align-items: center; column-gap: 6px; row-gap: 2px; min-width: 0; }
 .multi-reading-part { display: inline-flex; align-items: center; gap: 2px; min-width: 0; }

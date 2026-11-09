@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { associationNote, characterVariants, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
+import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
 import { componentCardGlyphs, componentFamilyGroup } from '@/lib/component-families';
 import { catalog } from '@/lib/catalog-store';
 import { libraryEntries } from '@/lib/character-library';
@@ -47,7 +47,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   if (forms.length < 2) return null;
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className="radical-family-section script-forms">
-    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {characterVariants.source}</> : null}</> : <>Simplified ↔ traditional links · {characterVariants.source}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
+    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
@@ -65,10 +65,13 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   </div>;
 }
 
-/** Short learner label for a v1.4.0 association classification (unknown values shown as recorded). */
+/** Learner-facing provenance for simplified ↔ traditional links: the upstream dataset, never our data file name. */
+const VARIANT_LINK_SOURCE = 'Unicode Unihan 17.0.0, with reviewed usage notes';
+
+/** Short learner label for a recorded association classification (unknown values shown as recorded). */
 export function classificationLabel(classification: string) {
   switch (classification) {
-    case 'context_dependent_not_error': return 'Context-dependent';
+    case 'context_dependent_not_error': return 'Some meanings only';
     case 'orthographic_variant': return 'Orthographic variant';
     case 'regional_variant': return 'Regional variant';
     case 'traditional': return '2013 traditional column';
@@ -77,9 +80,34 @@ export function classificationLabel(classification: string) {
   }
 }
 
+export type SpellingExample = { simplified: string; traditional: string; note?: string };
+/** Splits a recorded example ("了解 → 了解 / 瞭解 (both accepted in Taiwan); 吃了 → 吃了") into
+ *  rows for the spelling table. Text is never reworded: each row keeps its two sides and its
+ *  parenthetical note verbatim. Returns null when any part is not "A → B (note)", so the
+ *  caller falls back to the recorded line as written rather than guessing a split. */
+export function parseSpellingExamples(example: string): SpellingExample[] | null {
+  const rows: SpellingExample[] = [];
+  // Split on ";" only outside parentheses: a row note may itself contain ";".
+  const parts: string[] = [];
+  let depth = 0, current = '';
+  for (const ch of example) {
+    if (ch === '(') depth++;
+    if (ch === ')') depth = Math.max(0, depth - 1);
+    if (ch === ';' && depth === 0) { parts.push(current); current = ''; } else current += ch;
+  }
+  parts.push(current);
+  for (const part of parts.map(item => item.trim()).filter(Boolean)) {
+    const match = part.match(/^(.+?)\s*→\s*(.+?)(?:\s*\(([^()]*)\))?$/);
+    if (!match) return null;
+    rows.push({ simplified: match[1]!.trim(), traditional: match[2]!.trim(), ...(match[3] ? { note: match[3].trim() } : {}) });
+  }
+  return rows.length ? rows : null;
+}
+
 /** Recorded notes for every simplified → traditional pair among `forms` (first form is the
- *  simplified key). Text is shown verbatim from v1.4.0: explanation and example inline, the
- *  usage caveat, evidence scope and source link behind the ⓘ. Pairs without a note show nothing. */
+ *  simplified key). Learner view: explanation verbatim, the key caveat visible in one muted line,
+ *  and the recorded example as a small spelling table; usage caveat, evidence scope and the
+ *  source link stay behind the ⓘ. Pairs without a note show nothing. */
 function AssociationNotes({ forms }: { forms: string[] }) {
   const [simplified, ...rest] = forms;
   if (!simplified) return null;
@@ -89,19 +117,29 @@ function AssociationNotes({ forms }: { forms: string[] }) {
 }
 
 function AssociationNoteRow({ simplified, traditional, note }: { simplified: string; traditional: string; note: AssociationNote }) {
+  const rows = note.example ? parseSpellingExamples(note.example) : null;
+  const contextual = note.classification === CONTEXT_DEPENDENT;
   return <li className="association-note">
-    <p className="association-note-head"><span lang="zh-CN">{simplified}</span> ↔ <span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span>
-      <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}Possible correspondence, not an automatic replacement{note.evidenceScope ? ` · ${note.evidenceScope}` : ''}{note.sourceUrl && <><br/><a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a></>}<br/>Character associations v{characterVariants.version || '1.4.0'}</SourceInfo>
-    </p>
+    <div className="association-note-head"><span lang="zh-CN">{simplified}</span><span aria-hidden="true">↔</span><span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span>
+      <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</SourceInfo>
+    </div>
     <p className="association-note-text">{note.explanation}</p>
-    {note.example && <p className="association-note-example">Relationship example (not a vocabulary entry): {note.example}</p>}
+    {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
+    {note.example && <div className="spelling-examples">
+      <span className="variant-etymology-caption">Spelling examples</span>
+      {rows
+        ? <table><thead><tr><th scope="col">Simplified</th><th scope="col">Traditional</th>{rows.some(row => row.note) && <th scope="col"><span className="sr-only">Note</span></th>}</tr></thead>
+            {/* Both columns share one lang so the two spellings render in the same Hanzi font. */}
+            <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
+        : <p>{note.example}</p>}
+    </div>}
   </li>;
 }
 
 // Related written forms: a context-dependent association set from v1.4.0 (了 ↔ 瞭, 发 ↔ 發/髮).
 // These forms never share a library card, so each tile opens that form's own card (pushed, so
 // Back returns). Inputs: the shown glyph and its library kind; Traditional forms hide when
-// Include traditional is off. The simplified key reads "Simplified · also traditional" only
+// Include traditional is off. The simplified key adds "Also used in traditional" only
 // when a note documents it staying unchanged in traditional writing (alsoTraditional).
 export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: string; kind?: ScriptFormKind }) {
   const { preferences } = useWorkspace();
@@ -112,16 +150,17 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
   if (forms.length < 2) return null;
   const head = group[0]!;
   const label = (entry: (typeof forms)[number]) => entry.hanzi === head
-    ? entry.script === 'Simplified' && characterVariants.alsoTraditional.has(head) ? 'Simplified · also traditional' : entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
+    ? entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
-    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional associations · {characterVariants.source}</SourceInfo></h3>
+    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
     <div className="radical-form-list" role="group" aria-label={`Related written forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
-        const note = entry.hanzi === head ? undefined : associationNote(head, entry.hanzi);
-        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.pinyin || 'Pinyin not recorded'}</span><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{note && <><br/>{classificationLabel(note.classification)}</>}</small></>;
+        // "Also traditional" only when a note documents the key unchanged in traditional writing.
+        const alsoTraditional = entry.hanzi === head && entry.script === 'Simplified' && characterVariants.alsoTraditional.has(head);
+        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.pinyin || 'Pinyin not recorded'}</span><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{alsoTraditional && <><br/>Also used in traditional</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice related-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {selected
             ? <span aria-current="true">{content}</span>
