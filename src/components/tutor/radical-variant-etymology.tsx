@@ -40,7 +40,6 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const characterNotes = notes.filter(c => isHanzi(c.appliesWhen));
   const generalNotes = notes.filter(c => !isHanzi(c.appliesWhen));
   const followUps = data.characterSpecificFollowUps.filter(f => f.relatedVariant === record.variant && !characterNotes.some(c => c.appliesWhen === f.glyph));
-  const altReadings = definitions.map(d => d.alternativePinyin).filter((p): p is string => Boolean(p) && p !== reading);
   // One (i) per section caption lists every source behind that section's lines, so the
   // meanings themselves carry no buttons and stay aligned like "In a character".
   type Cited = { source: Source; evidenceStatus: string; summary?: string };
