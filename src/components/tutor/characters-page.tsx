@@ -60,6 +60,25 @@ export function traditionalCountHint(shared: number, standalone: number, cards: 
   return `${sharedLine}. ${n(standalone)} other Traditional ${standalone === 1 ? 'form has' : 'forms have'} no linked Simplified form and ${standalone === 1 ? 'keeps its' : 'keep their'} own card, included in the ${n(cards)}`;
 }
 
+/** Purple rule for a radical family card's forms: the first (head) form is purple only
+ * when it is the family's historical Kangxi heading (貝 beside 贝); later forms are also
+ * purple when their exact glyph is a Traditional-script record (糹, 釒, 飠). The card and
+ * the Radicals tab "+N" both use this, so the count always equals the purple forms shown. */
+function radicalFormIsTraditional(glyph: string, familyId: number, head: boolean) {
+  return historicalRadicalHeading(glyph, familyId) || (!head && glyphScript(glyph) === 'Traditional');
+}
+/** Distinct forms shown on a radical family card, in the reference selector's order,
+ * each flagged with the purple rule above. */
+function radicalCardForms(familyId: number) {
+  const family = radicalFamily(familyId);
+  const glyphs = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : [];
+  return glyphs.map((glyph, index) => ({ glyph, traditional: radicalFormIsTraditional(glyph, familyId, index === 0) }));
+}
+/** Hint for the Radicals tab "+N": Traditional forms always share their family's card. */
+export function radicalTraditionalCountHint(shared: number) {
+  return `${shared.toLocaleString('en-US')} Traditional ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} radical family, shown in purple beside the other forms`;
+}
+
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
   if (kind !== 'Strokes') { const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning); return { text: info.speech, reading: info.reading || null }; }
   const { name, reading } = strokeSpeech(entry);
@@ -181,10 +200,10 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
   // Components cards do the same but only with forms that exist as Components records.
-  const displayedForms = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : kind === 'Components' && preferences.includeTraditional ? scriptFormRecords(entry.hanzi, 'Components').map(form => form.hanzi) : [entry.hanzi];
+  const displayedForms = family ? radicalCardForms(family.id).map(form => form.glyph) : kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : kind === 'Components' && preferences.includeTraditional ? scriptFormRecords(entry.hanzi, 'Components').map(form => form.hanzi) : [entry.hanzi];
   const primaryForm = displayedForms[0] ?? entry.hanzi;
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
-      <span className="word-character">{hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? historicalRadicalHeading(primaryForm, family.id) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional' ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
+      <span className="word-character">{hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional' ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning"><MeaningText text={tileMeaning}/></span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
   const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{entry.strokes !== undefined && <span className="usage-strokes"> · {entry.strokes} strokes</span>}</> : entry.strokes !== undefined ? <span className="usage-strokes">{entry.strokes} strokes</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
