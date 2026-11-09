@@ -61,11 +61,11 @@ describe('Radical-only stroke decompositions', () => {
     expect(filterLibrary(libraryEntries('Radicals'), '氵').map(entry => entry.id)).toContain('Radicals:水');
     expect(libraryEntries('Radicals').some(entry => entry.id === 'Radicals:氵')).toBe(false);
   });
-  it('keeps the two grass sequences selectable rather than deduplicating the exact glyph', () => {
-    const forms = radicalFamily(140)?.forms.filter(form => form.character === '艹');
-    expect(forms?.map(form => form.strokeCount)).toEqual([3, 4]);
-    expect(new Set(forms?.map(form => form.key)).size).toBe(2);
-    expect(radicalStrokes('艹')?.status).toBe('ambiguous');
+  it('keeps the two grass variants as separate exact glyphs (艹 three strokes, ⺿ four strokes)', () => {
+    const forms = radicalFamily(140)?.forms.filter(form => form.formKind === 'variant');
+    expect(forms?.map(form => [form.key, form.character, form.strokeCount])).toEqual([['140-1', '艹', 3], ['140-2', '⺿', 4]]);
+    expect(radicalStrokes('艹')?.strokes.length).toBe(3);
+    expect(radicalStrokes('⺿')?.strokes.length).toBe(4);
   });
   it('resolves variant keys only inside their own family', () => {
     const form = radicalFamily(85)?.forms.find(form => form.character === '氵');
