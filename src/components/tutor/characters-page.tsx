@@ -50,6 +50,16 @@ const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms 
 // per-tab provenance stays in the (i) beside the title (kindNotes).
 const glyphsMotto = 'STUDY THE BLOCKS · ONE CHARACTER AT A TIME';
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
+/** Hint for the purple "+N" tab count: `shared` Traditional forms folded into a
+ * Simplified card, plus `standalone` Traditional records with no linked Simplified
+ * form that keep their own card and are already part of the `cards` total. */
+export function traditionalCountHint(shared: number, standalone: number, cards: number) {
+  const n = (v: number) => v.toLocaleString('en-US');
+  const sharedLine = `${n(shared)} Traditional ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} Simplified form`;
+  if (!standalone) return sharedLine;
+  return `${sharedLine}. ${n(standalone)} other Traditional ${standalone === 1 ? 'form has' : 'forms have'} no linked Simplified form and ${standalone === 1 ? 'keeps its' : 'keep their'} own card, included in the ${n(cards)}`;
+}
+
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
   if (kind !== 'Strokes') { const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning); return { text: info.speech, reading: info.reading || null }; }
   const { name, reading } = strokeSpeech(entry);
@@ -267,17 +277,21 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // `sharedTraditional` separately counts the forms folded into those cards
   // (unpaired Traditional records already have their own card and stay in the
   // card count). Shown as a purple "+N" on the Characters and Components tabs.
-  const { tabCounts, sharedTraditional } = useMemo(() => {
-    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number> };
+  const { tabCounts, sharedTraditional, standaloneTraditional } = useMemo(() => {
+    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number> };
     const shared: Record<string, number> = {};
+    const standalone: Record<string, number> = {};
     const counts = Object.fromEntries(kinds.map(k => {
       const list = filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional);
       if ((k !== 'Characters' && k !== 'Components') || !preferences.includeTraditional) return [k, list.length];
       const cards = collapseScriptForms(list, list).length;
       shared[k] = list.length - cards;
+      // Traditional records with no linked Simplified form (e.g. 鱻) keep their own card;
+      // the hint names them so "+N" is never read as covering every Traditional form.
+      standalone[k] = Math.max(0, list.filter(e => e.script === 'Traditional').length - shared[k]);
       return [k, cards];
     })) as Record<string, number>;
-    return { tabCounts: counts, sharedTraditional: shared };
+    return { tabCounts: counts, sharedTraditional: shared, standaloneTraditional: standalone };
   }, [catalogReady, preferences.includeTraditional, catalogVersion]);
   // Count only sourced ranks in the applied pool; gaps remain original ranks,
   // not renumbered result positions, so the jump bounds preserve source identity.
@@ -333,7 +347,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Settings.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <span className="catalog-tab-count catalog-tab-traditional" title={`${(sharedTraditional[k] ?? 0).toLocaleString('en-US')} Traditional forms share a card with their Simplified form`}>+{(sharedTraditional[k] ?? 0).toLocaleString('en-US')}</span>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
+    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><TabsList aria-label="Character library categories">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <span className="catalog-tab-count catalog-tab-traditional" title={traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}>+{(sharedTraditional[k] ?? 0).toLocaleString('en-US')}</span>}</TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} strokes`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}

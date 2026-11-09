@@ -16,7 +16,7 @@ import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { leniency } from '@/lib/handwriting-strictness';
 import { words } from '@/lib/mandarin';
-import { glyphScript, type LibraryEntry } from '@/lib/character-library';
+import { glyphScript, libraryEntries, type LibraryEntry } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
 import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -26,7 +26,7 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, type OutlineSource } from '@/lib/character-enrichment';
 import { formatStrokeIndices, splitPinyinLines, strokeNames } from '@/lib/stroke-names';
-import { radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
+import { historicalRadicalHeading, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords } from './script-forms';
 import { speakTts, stopAllAudio } from '@/lib/audio';
@@ -691,13 +691,21 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // records, so their tiles show component ranks; ordinary characters group within Characters.
   const scriptKind = openedFromComponents || pureComponentForm(character) || scriptFormRecords(character).length < 2 ? 'Components' : 'Characters';
   const scriptTiles = !isWord && preferences.includeTraditional && scriptFormRecords(character, scriptKind).length > 1;
+  // Traditional pill follows the exact practised record, not the first glyph-index hit
+  // (門 resolves to its Common radical record there): a radical family form is
+  // Traditional when it is the family's historical Kangxi heading (same rule as the
+  // purple form tile); otherwise use the record's script in the library it was opened from.
+  const kindScript = libraryEntries(scriptKind).find(e => e.hanzi === character)?.script;
+  const traditionalPill = familyId
+    ? historicalRadicalHeading(character, familyId) || script === 'Traditional'
+    : (kindScript ?? script) === 'Traditional';
   // Radical cards break down into strokes, so the character-level mapping and BabelStone comparison don't apply there.
   const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
   return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><Button variant="ghost" size="sm" className="practice-back" onClick={() => { const origin = practiceOrigin(); if (origin) { router.history.push(origin); focusEntryCard(); } else void navigate({ to: '/characters' }); }}><ArrowLeft/>Back</Button><div className="practice-heading-row"><div className="practice-heading-title"><h1>Practice.</h1><h2 className={mode === "recall" ? "sr-only" : undefined}>Get to know <span lang="zh-CN">{character}</span></h2></div><Button variant="outline" size="sm" className="practice-print-button" onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div></div><div className="practice-layout"><section className="practice-info practice-intro">{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}{/* Reading panel mirrors the reference detail heading: pinyin + speaker on the
 first line with the pills at the top right, the translation on its own second
 line. The strokes/radical/script facts row is gone — the writing card, family
 tiles and Traditional pill already carry those facts. */}
-<div className="practice-meaning"><div className="practice-reading-top"><span className="practice-text">{info.reading ? <span className="pinyin">{info.componentName ? `Component name · ${info.reading}` : info.reading}</span> : <span className="pinyin">{info.readingFallback}</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></span><span className="practice-pills">{script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span></div>{/* Family form tiles sit between the pinyin line and the translation, without
+<div className="practice-meaning"><div className="practice-reading-top"><span className="practice-text">{info.reading ? <span className="pinyin">{info.componentName ? `Component name · ${info.reading}` : info.reading}</span> : <span className="pinyin">{info.readingFallback}</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></span><span className="practice-pills">{traditionalPill && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span></div>{/* Family form tiles sit between the pinyin line and the translation, without
 their own heading — the Radical #N pill above already names the family. */}
 {/* Non-radical records show their single hanzi between pinyin and translation, like the
  detail card; Recall hides it so the glyph never leaks into recall. */}{mode !== 'recall' && !familyId && scriptTiles && <ScriptForms glyph={character} kind={scriptKind} destination="practice" mode={mode} hideLabel/>}{mode !== 'recall' && !familyId && !scriptTiles && <strong lang="zh-CN" className={`practice-hanzi${script === 'Traditional' ? ' traditional-character' : ''}`}>{character}</strong>}{mode !== 'recall' && familyId && <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel/>}<p className="practice-translation">{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}</p></div>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}</section><WritingPractice character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
