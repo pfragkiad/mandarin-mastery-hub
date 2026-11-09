@@ -85,7 +85,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Info size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
     <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
     {identity.componentName && <p className="glyph-usage-meaning">Component name: <span lang="zh-CN">{identity.componentName.hanzi}</span> <span className="pinyin">{identity.componentName.pinyin}</span></p>}
-    {identity.readingNote && <p className="glyph-usage-meaning variant-etymology-scope">{sentence(identity.readingNote)}</p>}
+    {identity.readingNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.readingNote}</p>}
   </section>;
   const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, sentence(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
