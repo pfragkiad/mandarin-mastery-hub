@@ -1314,6 +1314,7 @@ html[data-display-size='comfortable'] :is(.nav-item, .nav-sub-item, .help-link) 
    scrollbar. */
 html[data-display-size='comfortable'] .sidebar nav { overflow-y: auto; overflow-x: hidden; min-height: 0; }
 html[data-display-size='comfortable'] .sidebar :is(.nav-item, .nav-sub-item) { height: auto; min-width: 0; white-space: normal; text-align: left; line-height: 1.3; }
+html[data-display-size='comfortable'] .workspace:not(.is-collapsed) .sidebar .nav-sub-item { padding-right: 6px; }
 html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs, .detail-footnote, .source-note) { font-size: 12px; letter-spacing: 0; }
 /* The floating reference uses the same readable scale across all library kinds.
    Shared square boxes enlarge examples, source checks and both breakdown types
