@@ -47,7 +47,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   if (forms.length < 2) return null;
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className="radical-family-section script-forms">
-    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {characterVariants.source}</> : null}</> : <>Simplified ↔ traditional links · {characterVariants.source}</>}</SourceInfo></h3>}
+    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {characterVariants.source}</> : null}</> : <>Simplified ↔ traditional links · {characterVariants.source}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
@@ -94,7 +94,7 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
       <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}Possible correspondence, not an automatic replacement{note.evidenceScope ? ` · ${note.evidenceScope}` : ''}{note.sourceUrl && <><br/><a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a></>}<br/>Character associations v{characterVariants.version || '1.4.0'}</SourceInfo>
     </p>
     <p className="association-note-text">{note.explanation}</p>
-    {note.example && <p className="association-note-example">Example: {note.example}</p>}
+    {note.example && <p className="association-note-example">Relationship example (not a vocabulary entry): {note.example}</p>}
   </li>;
 }
 
