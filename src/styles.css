@@ -1960,13 +1960,12 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
    the card surface keeps the arrow and buttons keep the hand. */
 .library-page .word-card .word-open :is(.pinyin-text, .word-hanzi-tile, .tile-form, .word-meaning, .catalog-entry-meaning) { cursor: text; }
 
-/* Practice card bottom: "Strokes" heading on its own line, then one even row of
-   labelled actions (arrows, stroke tiles, stroke names). The negative inline margin
-   cancels the first ghost button's padding so its icon lines up with the heading. */
-.stroke-guide-top { flex-direction: column; align-items: stretch; gap: 8px; }
-.stroke-guide-actions { gap: 4px 14px; margin-left: -10px; }
-.stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; }
+/* Practice card bottom: "Strokes" heading and its three short actions (arrows, stroke
+   tiles, names) share one row. The action group is a single flex item, so when space runs
+   out it wraps below the heading as a whole; space-between puts a lone wrapped group at the
+   start. The negative inline margins cancel the ghost buttons' outer padding so the first
+   icon lines up with the heading when wrapped and the last label with the card's right edge. */
+.stroke-guide-top { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+.stroke-guide-actions { flex-wrap: wrap; gap: 2px 4px; margin: 0 -10px; }
+.stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; justify-content: flex-start; height: 32px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
-/* Wrapped actions keep the same left edge and a tight row gap. */
-.stroke-guide-actions { row-gap: 2px; }
-.stroke-guide-actions > button { justify-content: flex-start; height: 32px; }

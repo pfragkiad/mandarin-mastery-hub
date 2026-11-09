@@ -142,7 +142,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
           {practiceMode !== 'recall' && <Button disabled={!ready} onClick={mode === 'watch' ? () => { void writer.current?.pauseAnimation(); setMode('paused'); setMessage('Paused. Resume to continue this stroke.'); } : watch}>{mode === 'watch' ? <Pause/> : <Play/>}{mode === 'watch' ? 'Pause' : mode === 'paused' ? 'Resume' : 'Play stroke'}</Button>}
           <Button disabled={!ready} variant="outline" title="Reset stroke" aria-label="Reset stroke" onClick={reset}><RotateCcw/>Reset</Button>
           {practiceMode === 'watch' && <AnimationSpeedControl speed={speed} onChange={setSpeedValue}/>}</div>
-        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide stroke arrows' : 'Show stroke arrows'}</Button></div>}
+        </div>{practiceMode !== 'recall' && <div className="tool-top-actions writer-display"><Button variant="ghost" size="sm" aria-pressed={arrows} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide arrows' : 'Show arrows'}</Button></div>}
 
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info practice-intro">
