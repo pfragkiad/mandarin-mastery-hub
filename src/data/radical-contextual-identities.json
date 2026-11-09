@@ -20,7 +20,10 @@
       "learnerNote": "This jade component belongs to 玉 (yù). It resembles 王 (wáng, king), but has a different historical origin and meaning.",
       "componentName": {
         "hanzi": "斜玉旁",
-        "pinyin": "xiéyùpáng"
+        "pinyin": "xiéyùpáng",
+        "englishTranslation": "slanted jade component (usually on the left)",
+        "translationType": "conventional_component_name_translation",
+        "translationSourceUrl": "https://memphischinese.com/pianpang.php"
       },
       "readingNote": "yù is the parent radical’s dictionary reading, not an independent lexical reading assigned to ⺩.",
       "usageConstraint": "Use this meaning for 玉-derived jade components; a visually similar 王 shape does not by itself prove jade origin.",
