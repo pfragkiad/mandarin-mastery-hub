@@ -50,10 +50,17 @@ export function useCardPeek(mode: CardReveal, resetKey: string, remember = false
  * its details — only in Show all mode, where a single click does nothing.
  * Double-clicks on text (hanzi, pinyin, translation, labels) keep native word
  * selection, and controls (speaker, Save, Details, Practice, links) are ignored.
- * The card's own transparent wrapper button counts as plain area.
+ * The card's own transparent wrapper button counts as plain area. Mouse only:
+ * touch and pen double taps are ignored.
  */
 const CARD_CONTENT = 'a, input, select, textarea, button:not(.word-open), [role="button"]:not(.word-open), .pinyin, .word-hanzi-tile, .tile-hanzi-row, .tile-form, .word-meaning, .tile-absent, .word-card-top span, .record-card-footer span, svg';
+// Touch phones never open details by double-tap: they keep the explicit Details
+// button, and a quick double tap must not surprise the learner with a sheet.
+// `dblclick` carries no pointer type, so the last pointerdown's type is tracked
+// once, globally (capture phase, passive), and consulted when the dblclick fires.
+let lastPointerType = 'mouse';
+if (typeof window !== 'undefined') window.addEventListener('pointerdown', event => { lastPointerType = event.pointerType; }, { capture: true, passive: true });
 export function isPlainCardDoubleClick(mode: CardReveal, target: EventTarget | null): boolean {
-  if (mode !== 'all' || !(target instanceof Element)) return false;
+  if (mode !== 'all' || lastPointerType !== 'mouse' || !(target instanceof Element)) return false;
   return !target.closest(CARD_CONTENT);
 }
