@@ -179,7 +179,7 @@ describe('matched practice stroke speech', () => {
 
   it('speaks each accepted stroke name once audio is turned on, including a corrected stroke, but not mistakes', async () => {
     const callbacks = await startPractice();
-    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute names' }));
     act(() => callbacks.onMistake());
     expect(speakTts).not.toHaveBeenCalled();
     act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
@@ -190,24 +190,24 @@ describe('matched practice stroke speech', () => {
 
   it('keeps stroke names silent by default until the listener unmutes', async () => {
     const callbacks = await startPractice();
-    expect(screen.getByRole('button', { name: 'Unmute stroke names' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('button', { name: 'Unmute names' })).toHaveAttribute('aria-pressed', 'true');
     act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
     expect(speakTts).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute names' }));
     act(() => callbacks.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
-    fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Mute names' }));
     act(() => callbacks.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledExactlyOnceWith('横钩');
   });
 
   it('remembers the unmuted preference across remounts', async () => {
     await startPractice();
-    fireEvent.click(screen.getByRole('button', { name: 'Unmute stroke names' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute names' }));
     cleanup();
     expect(localStorage.getItem('tutor-stroke-audio')).toBe('unmuted');
     const current = await startPractice();
-    expect(screen.getByRole('button', { name: 'Mute stroke names' })).toHaveAttribute('aria-pressed', 'false');
+    expect(screen.getByRole('button', { name: 'Mute names' })).toHaveAttribute('aria-pressed', 'false');
     act(() => current.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
     expect(speakTts).toHaveBeenCalledTimes(1);
     cleanup();
@@ -259,7 +259,7 @@ it('the Strokes group holds the arrow control, and turning it on draws the direc
   expect(group).not.toBeNull();
   expect(screen.queryByText('Stroke tiles')).toBeNull();
   expect(group?.textContent).toContain('Strokes');
-  const arrows = screen.getByRole('button', { name: 'Show stroke arrows' });
+  const arrows = screen.getByRole('button', { name: 'Show arrows' });
   expect(group?.contains(arrows)).toBe(true);
   expect(document.querySelector('.stroke-direction-overlay')).toBeNull();
   fireEvent.click(arrows);
@@ -269,7 +269,7 @@ it('the Strokes group holds the arrow control, and turning it on draws the direc
 it('the single-stroke panel uses the same arrow button instead of a switch', async () => {
   render(<StrokePractice glyph="㇐" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
-  expect(screen.getByRole('button', { name: 'Show stroke arrows' })).toBeTruthy();
+  expect(screen.getByRole('button', { name: 'Show arrows' })).toBeTruthy();
   expect(screen.queryByRole('switch')).toBeNull();
 });
 
@@ -310,8 +310,8 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
   // A tap on an inert tile must never start a writing animation.
   fireEvent.click(tile);
   expect(fake.animateStroke).not.toHaveBeenCalled();
-  expect(screen.getByRole('button', { name: /stroke names/ })).toBeEnabled();
-  expect(screen.getByRole('button', { name: 'Show stroke arrows' })).toBeEnabled();
+  expect(screen.getByRole('button', { name: /^(Un)?mute names$/ })).toBeEnabled();
+  expect(screen.getByRole('button', { name: 'Show arrows' })).toBeEnabled();
 });
 
 it('Step after a component selection clears the highlight and draws the next group\'s first stroke', async () => {
@@ -485,7 +485,7 @@ it('Play waits for a spoken stroke name to finish before drawing the next stroke
   vi.mocked(speakTts).mockReturnValue({ ok: true, candidate: { kind: 'tts', label: 'Browser TTS' } });
   render(<WritingPractice character="我"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
-  const unmute = screen.queryByRole('button', { name: 'Unmute stroke names' });
+  const unmute = screen.queryByRole('button', { name: 'Unmute names' });
   if (unmute) fireEvent.click(unmute);
   fake.animateStroke.mockClear();
   fireEvent.click(screen.getByRole('button', { name: 'Play' }));
@@ -497,6 +497,6 @@ it('Play waits for a spoken stroke name to finish before drawing the next stroke
   act(() => onEnd?.());
   expect(fake.animateStroke).toHaveBeenCalledTimes(2);
   expect(fake.animateStroke.mock.calls[1]?.[0]).toBe(1);
-  fireEvent.click(screen.getByRole('button', { name: 'Mute stroke names' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Mute names' }));
   vi.mocked(speakTts).mockReset();
 });
