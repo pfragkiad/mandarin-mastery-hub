@@ -74,12 +74,21 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
   }
   return matches(gSource, recorded, true);
 }
+/**
+ * Hanzi Writer Data has no file for this exact glyph (HTTP 404), e.g. the four-stroke grass form ⺿.
+ * Distinct from a network failure so Practice can say "no outline recorded" instead of offering a
+ * retry, and never substitutes a look-alike glyph's outline.
+ */
+export class StrokeDataUnavailable extends Error {
+  constructor(character: string) { super(`No Hanzi Writer outline recorded for ${character}`); this.name = 'StrokeDataUnavailable'; }
+}
 const geometries = new Map<string, Promise<BoundGeometry>>();
 export function loadStrokeGeometry(character: string): Promise<BoundGeometry> {
   const cached = geometries.get(character);
   if (cached) return cached;
   const promise = fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(character)}.json`)
     .then(async response => {
+      if (response.status === 404) throw new StrokeDataUnavailable(character);
       if (!response.ok) throw new Error('Stroke data unavailable');
       const bytes = await response.arrayBuffer();
       // Bind to the original downloaded bytes, not reserialized JSON: the

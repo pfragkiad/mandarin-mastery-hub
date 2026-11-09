@@ -9367,7 +9367,7 @@
         },
         {
           "key": "140-2",
-          "character": "艹",
+          "character": "⺿",
           "aliases": [
             "⺿"
           ],
@@ -22533,9 +22533,73 @@
       "officiallyVerified": false
     },
     "艹": {
-      "status": "ambiguous",
-      "strokes": [],
-      "source": "cjklib · conflicting exact-form records"
+      "status": "recorded",
+      "strokes": [
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        }
+      ],
+      "source": "cjklib · C-locale strokeorder",
+      "sourceStatus": "source-record",
+      "provenance": {
+        "id": "cjklib",
+        "method": "direct",
+        "record": {
+          "radicalSymbol": "⺾",
+          "glyph": 0,
+          "localeInSource": "C"
+        }
+      },
+      "officiallyVerified": false
+    },
+    "⺿": {
+      "status": "recorded",
+      "strokes": [
+        {
+          "name": "竖",
+          "pinyin": "shù",
+          "glyph": "㇑"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "横",
+          "pinyin": "héng",
+          "glyph": "㇐"
+        },
+        {
+          "name": "撇",
+          "pinyin": "piě",
+          "glyph": "㇒"
+        }
+      ],
+      "source": "cjklib · C-locale strokeorder",
+      "sourceStatus": "source-record",
+      "provenance": {
+        "id": "cjklib",
+        "method": "direct",
+        "record": {
+          "radicalSymbol": "⺿",
+          "glyph": 0,
+          "localeInSource": "C"
+        }
+      },
+      "officiallyVerified": false
     },
     "虍": {
       "status": "recorded",
