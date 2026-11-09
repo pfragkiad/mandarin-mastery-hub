@@ -5,6 +5,7 @@ import { FileText, Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
+import { loadStrokeGeometry } from '@/lib/character-enrichment';
 
 type StrokeModel = { strokes: string[] } | null;
 
@@ -19,10 +20,9 @@ function useStrokeModels(tokens: PracticeToken[], outlines?: Record<string, Stro
     setState({ key, assets: {}, loading: true });
     void Promise.all(glyphs.map(async glyph => {
       try {
-        const res = await fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(glyph)}.json`);
-        if (!res.ok) throw new Error('no data');
-        const data = (await res.json()) as { strokes?: unknown };
-        assets[glyph] = Array.isArray(data.strokes) && data.strokes.every(s => typeof s === 'string') ? { strokes: data.strokes as string[] } : null;
+        // Shared loader: Hanzi Writer Data, or a reviewed supplementary outline (e.g. ⺿).
+        const { data } = await loadStrokeGeometry(glyph);
+        assets[glyph] = { strokes: data.strokes };
       } catch { assets[glyph] = null; }
     })).then(() => { if (active) setState({ key, assets, loading: false }); });
     return () => { active = false; };
