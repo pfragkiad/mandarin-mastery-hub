@@ -340,8 +340,8 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .writer-board { width: min(100%, 300px); margin: 0 auto; }
 /* Desktop square uses the remembered size (default 380px) capped at the card width; phones override below. */
 .writer-board.writer-board-fill { width: min(100%, var(--writer-size, 380px)); position: relative; }
-.writer-resize-handle { position: absolute; right: -10px; bottom: 2px; width: 20px; height: 20px; padding: 0; border: 0; background: transparent; color: var(--muted-foreground); cursor: nwse-resize; touch-action: none; display: grid; place-items: center; opacity: .6; }
-.writer-resize-handle:hover, .writer-resize-handle:focus-visible { opacity: 1; color: var(--primary); }
+.writer-resize-handle { position: absolute; right: -12px; bottom: -12px; z-index: 3; width: 24px; height: 24px; padding: 0; border: 1px solid color-mix(in oklab, var(--foreground) 35%, var(--border)); border-radius: 6px; background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); cursor: nwse-resize; touch-action: none; display: grid; place-items: center; transition: color .15s, border-color .15s, transform .15s; }
+.writer-resize-handle:hover, .writer-resize-handle:focus-visible { color: var(--primary); border-color: var(--primary); transform: scale(1.08); outline: none; }
 @media (max-width: 580px) { .writer-resize-handle { display: none; } }
 .writer-board .writing-grid { width: 100%; margin: 20px 0 22px; }
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
