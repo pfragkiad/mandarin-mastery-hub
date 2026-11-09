@@ -55,9 +55,8 @@ def flip_median(d: str) -> list[list[float]]:
 
 def recorded_count(character: str, family: int) -> int:
     source = json.loads((ROOT / 'public/data/radical-families-source.json').read_text())
-    families = source if isinstance(source, list) else source.get('families') or source.get('radicals')
-    for fam in families:
-        if fam.get('number', fam.get('kangxiNumber', fam.get('id'))) == family:
+    for fam in source['radicals']:
+        if fam['id'] == family:
             for form in fam.get('forms', []):
                 if form.get('character') == character:
                     return len(form['strokeSequence'])
