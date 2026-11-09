@@ -10,6 +10,7 @@ import { phraseParts, wordCharacters, isChineseGlyph } from '@/lib/vocabulary-de
 import { useWorkspace } from './workspace';
 import { CharacterDecomposition } from './character-enrichment';
 import { ExamplePronunciation } from './example-pronunciation';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 
 /** Shared vocabulary breakdown: matched phrase words keep their own record/readings/audio,
  * while individual glyph boxes link independently to character records. */
@@ -47,7 +48,7 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
         const tree = catalog.trees[part.text];
         return <li key={index}><div className="decomposition-part">
           {destination ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${part.text}`}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{part.text}</strong>}
-          <div className="vocabulary-part-facts"><span className="example-pinyin-row"><span className="pinyin">{part.pinyin || facts?.pinyin || '—'}</span><ExamplePronunciation request={characterAudioRequest(part.text, part.pinyin || facts?.pinyin)} label={`character ${part.text}`}/></span><small>{facts?.meaning || 'Meaning not recorded'}</small></div>
+          <div className="vocabulary-part-facts"><span className="example-pinyin-row">{Array.from(part.text).length === 1 && isMultiReading(part.pinyin || facts?.pinyin) ? <MultiReadingSpeakers spoken={part.text} reading={part.pinyin || facts?.pinyin || ''} variant="example"/> : <><span className="pinyin">{part.pinyin || facts?.pinyin || '—'}</span><ExamplePronunciation request={characterAudioRequest(part.text, part.pinyin || facts?.pinyin)} label={`character ${part.text}`}/></>}</span><small>{facts?.meaning || 'Meaning not recorded'}</small></div>
         </div>{tree ? <CharacterDecomposition character={part.text} tree={tree} source={TREE_SOURCE}/> : Boolean(catalogVersion) && <p className="library-note">No recorded character breakdown.</p>}</li>;
       })}</ul>
     </>}

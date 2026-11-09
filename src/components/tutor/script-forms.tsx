@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { characterVariants, scriptGroup } from '@/lib/character-variants';
+import { associationNote, characterVariants, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
 import { componentCardGlyphs, componentFamilyGroup } from '@/lib/component-families';
 import { catalog } from '@/lib/catalog-store';
 import { libraryEntries } from '@/lib/character-library';
@@ -61,5 +61,74 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
         </Button>;
       })}
     </div>
+    {!family && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
+  </div>;
+}
+
+/** Short learner label for a v1.4.0 association classification (unknown values shown as recorded). */
+export function classificationLabel(classification: string) {
+  switch (classification) {
+    case 'context_dependent_not_error': return 'Context-dependent';
+    case 'orthographic_variant': return 'Orthographic variant';
+    case 'regional_variant': return 'Regional variant';
+    case 'traditional': return '2013 traditional column';
+    case 'attested_alternate_form': return 'Alternate form';
+    default: return classification.replace(/_/g, ' ');
+  }
+}
+
+/** Recorded notes for every simplified → traditional pair among `forms` (first form is the
+ *  simplified key). Text is shown verbatim from v1.4.0: explanation and example inline, the
+ *  usage caveat, evidence scope and source link behind the ⓘ. Pairs without a note show nothing. */
+function AssociationNotes({ forms }: { forms: string[] }) {
+  const [simplified, ...rest] = forms;
+  if (!simplified) return null;
+  const notes = rest.flatMap(traditional => { const note = associationNote(simplified, traditional); return note ? [{ traditional, note }] : []; });
+  if (!notes.length) return null;
+  return <ul className="association-notes">{notes.map(({ traditional, note }) => <AssociationNoteRow key={traditional} simplified={simplified} traditional={traditional} note={note}/>)}</ul>;
+}
+
+function AssociationNoteRow({ simplified, traditional, note }: { simplified: string; traditional: string; note: AssociationNote }) {
+  return <li className="association-note">
+    <p className="association-note-head"><span lang="zh-CN">{simplified}</span> ↔ <span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span>
+      <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}Possible correspondence, not an automatic replacement{note.evidenceScope ? ` · ${note.evidenceScope}` : ''}{note.sourceUrl && <><br/><a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a></>}<br/>Character associations v{characterVariants.version || '1.4.0'}</SourceInfo>
+    </p>
+    <p className="association-note-text">{note.explanation}</p>
+    {note.example && <p className="association-note-example">Example: {note.example}</p>}
+  </li>;
+}
+
+// Related written forms: a context-dependent association set from v1.4.0 (了 ↔ 瞭, 发 ↔ 發/髮).
+// These forms never share a library card, so each tile opens that form's own card (pushed, so
+// Back returns). Inputs: the shown glyph and its library kind; Traditional forms hide when
+// Include traditional is off. The simplified key reads "Simplified · also traditional" only
+// when a note documents it staying unchanged in traditional writing (alsoTraditional).
+export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: string; kind?: ScriptFormKind }) {
+  const { preferences } = useWorkspace();
+  const group = relatedGroup(glyph);
+  if (group.length < 2) return null;
+  const records = new Map(libraryEntries(kind).map(entry => [entry.hanzi, entry]));
+  const forms = group.flatMap(form => { const entry = records.get(form); return entry && (preferences.includeTraditional || entry.script !== 'Traditional' || form === glyph) ? [entry] : []; });
+  if (forms.length < 2) return null;
+  const head = group[0]!;
+  const label = (entry: (typeof forms)[number]) => entry.hanzi === head
+    ? entry.script === 'Simplified' && characterVariants.alsoTraditional.has(head) ? 'Simplified · also traditional' : entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
+    : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
+  return <div className="radical-family-section script-forms related-forms">
+    <h3 className="eyebrow flex-wrap"><span>RELATED WRITTEN FORMS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional associations · {characterVariants.source}</SourceInfo></h3>
+    <div className="radical-form-list" role="group" aria-label={`Related written forms of ${glyph}`}>
+      {forms.map(entry => {
+        const selected = entry.hanzi === glyph;
+        const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
+        const note = entry.hanzi === head ? undefined : associationNote(head, entry.hanzi);
+        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.pinyin || 'Pinyin not recorded'}</span><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{note && <><br/>{classificationLabel(note.classification)}</>}</small></>;
+        return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice related-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
+          {selected
+            ? <span aria-current="true">{content}</span>
+            : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, tab: kind, id: entry.id }; }} resetScroll={false} aria-label={`Open the card for ${entry.hanzi}`}>{content}</Link>}
+        </Button>;
+      })}
+    </div>
+    <AssociationNotes forms={[head, ...forms.map(entry => entry.hanzi).filter(form => form !== head)]}/>
   </div>;
 }

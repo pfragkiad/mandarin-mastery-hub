@@ -7,6 +7,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
 import { characterAudioRequest } from '@/lib/catalog-store';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
 import { drawingWordClues, type DrawingCard, type DrawingResult } from '@/lib/drawing-game';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -104,7 +105,7 @@ export function DrawingBoard({ entry, onFinish, restored, onPractice }: { entry:
   const answered = state === 'correct' || state === 'guided' || state === 'passed';
   return <section className="drawing-board">
     <div className="drawing-prompt">
-      <div className="flash-pinyin-row"><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></div>
+      <div className="flash-pinyin-row">{!entry.word && Array.from(prompt.hanzi).length === 1 && isMultiReading(prompt.pinyin) ? <MultiReadingSpeakers spoken={prompt.hanzi} reading={prompt.pinyin} variant="header" textClassName="pinyin flash-pinyin" onError={message => setAudioError(Boolean(message))}/> : <><span className="pinyin flash-pinyin">{prompt.pinyin}</span><Button variant="ghost" size="icon" disabled={!audioAvailable} className={audioAvailable ? '' : 'audio-tts-only'} aria-label="Listen to prompt" title="Listen to pronunciation" onClick={async () => setAudioError(Boolean(audioMessage(await playPronunciation(request, preferences.slow))))}><Volume2/></Button></>}</div>
       <p className="drawing-meaning"><MeaningText text={prompt.meaning}/></p>
       {audioError && <p className="meaning-missing" role="status">Audio isn’t available in this browser.</p>}
     </div>
