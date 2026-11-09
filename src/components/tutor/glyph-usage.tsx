@@ -33,9 +33,12 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useMemo(() => kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional, familyGlyph) : [], [entry, kind, familyGlyph, preferences.includeTraditional, catalogVersion]);
   const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
+  // No sourced parent characters (or the component sidecar is still loading): hide the whole
+  // "In a character" section (owner choice), like "In a sentence".
+  if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
-    {parents.length ? <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
+    <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
       <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
       {/* Two lines beside the tile, as in Decomposition: reading + speaker, then the parent's
@@ -52,7 +55,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
         </span>}
         <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
       </span>
-    </div>)}</div> : kind === 'Components' && gSourceParents === null ? null : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment and exact form in their breakdown are available.' : 'No characters with this exact component in their recorded BabelStone G-source breakdown are available.'}</p></div>}
+    </div>)}</div>
   </section>;
   // No recorded sentence or word example: the whole "In a sentence" section is hidden (owner choice),
   // unlike other empty blocks that keep their label and a note.
