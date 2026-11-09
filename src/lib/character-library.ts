@@ -5,6 +5,7 @@ import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
+import { contextualVariantIdentity } from './radical-contextual-identity';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -49,7 +50,7 @@ export function radicalVariantEntry(heading: LibraryEntry, form: RadicalForm): L
   const first = radicalFamily(heading.kangxiIndex ?? 0)?.forms.find(item => item.character === heading.hanzi);
   if (form.character === heading.hanzi && first?.key === form.key) return heading;
   const exact = libraryEntries('Components').find(item => item.hanzi === form.character) ?? libraryEntries('Characters').find(item => item.hanzi === form.character);
-  const fallback = radicalVariantFallback(form.character, exact?.pinyin ?? '', heading.kangxiIndex);
+  const fallback = radicalVariantFallback(form.character, exact?.pinyin ?? '', heading.kangxiIndex, form.key);
   return { ...heading, id: `${heading.id}:variant:${form.key}`, radicalHeadingId: heading.id, radicalVariant: form.key,
     hanzi: form.character, strokes: form.strokeCount, pinyin: fallback?.pinyin ?? exact?.pinyin ?? '',
     meaning: fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : exact?.meaning ?? heading.meaning,
@@ -139,8 +140,19 @@ export function libraryDestination(glyph: string, includeTraditional = false) {
 }
 
 /** A Kangxi variant form without its own recorded component name or reading inherits the
- * family heading's name, pronunciation and audio; forms with their own data stay untouched. */
-export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null; meaning: string } | null {
+ * family heading's name, pronunciation and audio; forms with their own data stay untouched.
+ * Exception: an exactly selected form (familyId + formKey) with a reviewed contextual
+ * identity (radical #96's 王-shaped jade component) presents that identity instead of the
+ * look-alike character's own reading — the standalone record itself is never changed. */
+export function radicalVariantFallback(glyph: string, ownPinyin = '', familyId?: number, formKey?: string): { headingGlyph: string; pinyin: string; spoken: string; reading: string | null; meaning: string } | null {
+  const contextual = contextualVariantIdentity(familyId, formKey, glyph);
+  if (contextual) {
+    // Fail closed unless the reviewed parent is this family's recorded heading.
+    const family = radicalFamily(contextual.familyId);
+    const form = family?.forms.find(item => item.key === contextual.formKey);
+    if (family?.kangxiHeading !== contextual.parentRadical || form?.character !== glyph) return null;
+    return { headingGlyph: contextual.parentRadical, pinyin: contextual.parentRadicalPinyin, spoken: contextual.parentRadical, reading: contextual.parentRadicalPinyin, meaning: contextual.meaning };
+  }
   const hit = radicalForms(glyph).find(item => item.form.character === glyph && (familyId === undefined || item.family.id === familyId));
   // Without a family form, fall back to a unique exact Kangxi identity (e.g. component 亻 → 人).
   const identity = hit || familyId !== undefined ? undefined : radicalIdentity(glyph).radicals;

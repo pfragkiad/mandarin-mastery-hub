@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BookOpen, History, Info } from 'lucide-react';
+import { BookOpen, History, Info, Tag } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -10,6 +10,8 @@ import { loadPinyinData, parsePinyin, hasRecording, soundId, type PinyinData } f
 import type { AudioAttachment } from '@/lib/audio';
 import { SourceInfo } from './source-info';
 import { libraryEntries } from '@/lib/character-library';
+import { radicalForm } from '@/lib/radical-strokes';
+import { contextualVariantIdentity } from '@/lib/radical-contextual-identity';
 
 /**
  * "Additional meanings and origins" for one radical variant card.
@@ -18,6 +20,10 @@ import { libraryEntries } from '@/lib/character-library';
  * Only reviewed claims are shown; entries without claims render nothing (the audit says
  * "unverified", never "no other meanings"). Character follow-ups awaiting confirmation are
  * labelled as such. Rendered only by radical variant detail cards — nowhere else.
+ * A reviewed contextual identity (radical #96's 王-shaped jade component) adds a
+ * "Component identity" section (label, component name, reading note) and a "Look-alike
+ * character" row linking to the independent character; it comes from the small extracted
+ * src/data/radical-contextual-identities.json, so it renders without waiting for the audit.
  */
 type Source = { url: string; publisher: string };
 type Claim = { claimType: string; englishMeaningOrInterpretation: string; alternativePinyin: string | null; appliesWhen: string | null; sourceEvidenceSummary: string; source: Source; evidenceStatus: string; displayAs: string };
@@ -46,12 +52,14 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   };
   useEffect(() => { let live = true; loadAudit().then(d => { if (live) setData(d); }).catch(() => undefined); return () => { live = false; }; }, []);
   const record = data?.variants.find(v => v.radicalId === familyId && v.formKey === formKey);
-  if (!data || !record?.reviewedClaims.length) return null;
-  const definitions = record.reviewedClaims.filter(c => c.displayAs === 'alternative_dictionary_definition');
-  const notes = record.reviewedClaims.filter(c => c.displayAs !== 'alternative_dictionary_definition');
+  const identity = contextualVariantIdentity(familyId, formKey, radicalForm(familyId, formKey)?.character ?? '');
+  if (!identity && (!data || !record?.reviewedClaims.length)) return null;
+  const claims = record?.reviewedClaims ?? [];
+  const definitions = claims.filter(c => c.displayAs === 'alternative_dictionary_definition');
+  const notes = claims.filter(c => c.displayAs !== 'alternative_dictionary_definition');
   const characterNotes = notes.filter(c => isHanzi(c.appliesWhen));
   const generalNotes = notes.filter(c => !isHanzi(c.appliesWhen));
-  const followUps = data.characterSpecificFollowUps.filter(f => f.relatedVariant === record.variant && !characterNotes.some(c => c.appliesWhen === f.glyph));
+  const followUps = !data || !record ? [] : data.characterSpecificFollowUps.filter(f => f.relatedVariant === record.variant && !characterNotes.some(c => c.appliesWhen === f.glyph));
   // One (i) per section caption lists every source behind that section's lines, so the
   // meanings themselves carry no buttons and stay aligned like "In a character".
   type Cited = { source: Source; evidenceStatus: string; summary?: string };
@@ -72,12 +80,22 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
       </span>
     </div>;
   };
+  // Identity first: it replaces the look-alike character's reading and meaning in the heading,
+  // so the learner sees why right below the translation.
+  const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
+    <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
+    {identity.componentName && <p className="glyph-usage-meaning">Component name: <span lang="zh-CN">{identity.componentName.hanzi}</span> <span className="pinyin">{identity.componentName.pinyin}</span></p>}
+    {identity.readingNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.readingNote}</p>}
+  </section>;
+  const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, sentence(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
-    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record.variant, d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
+    {identitySection}
+    {definitions.length > 0 && <section className="glyph-usage-section" aria-label="Alternative dictionary definition"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>ALTERNATIVE DICTIONARY DEFINITION{claimSources(definitions)}</h3><div className="glyph-usage-parents">{definitions.map((d, i) => row(`d${i}`, record?.variant ?? '', d.alternativePinyin ?? '', sentence(d.englishMeaningOrInterpretation).replace(/;\s*/g, ', '), { link: false, audio: false, recording: d.alternativePinyin ? syllableRecording(d.alternativePinyin) : null }))}</div></section>}
     {generalNotes.length > 0 && <section className="glyph-usage-section" aria-label="Historical origin">{generalNotes.every(c => c.claimType === 'classification_warning') ? <h3 className="eyebrow"><Info size={13} aria-hidden="true"/>NOTE{claimSources(generalNotes)}</h3> : <h3 className="eyebrow"><History size={13} aria-hidden="true"/>HISTORICAL ORIGIN{claimSources(generalNotes)}</h3>}{generalNotes.map((c, i) => <p key={i} className="glyph-usage-meaning">{sentence(c.englishMeaningOrInterpretation)}{c.appliesWhen && <span className="variant-etymology-scope"> Applies to: {c.appliesWhen}.</span>}</p>)}</section>}
     {(characterNotes.length > 0 || followUps.length > 0) && <section className="glyph-usage-section" aria-label="Other historical origins of this shape"><h3 className="eyebrow"><History size={13} aria-hidden="true"/>OTHER HISTORICAL ORIGINS OF THIS SHAPE{sources([...characterNotes.map(c => ({ source: c.source, evidenceStatus: c.evidenceStatus, summary: `${c.appliesWhen}: ${c.sourceEvidenceSummary}` })), ...followUps.map(f => ({ source: f.source, evidenceStatus: f.evidenceStatus, summary: f.glyph }))])}</h3><div className="glyph-usage-parents">
       {characterNotes.map((c, i) => row(`c${i}`, c.appliesWhen ?? '', '', sentence(c.englishMeaningOrInterpretation)))}
       {followUps.map((f, i) => row(`f${i}`, f.glyph, f.pinyin, sentence(f.interpretation)))}
     </div></section>}
+    {lookAlikeSection}
   </div>;
 }
