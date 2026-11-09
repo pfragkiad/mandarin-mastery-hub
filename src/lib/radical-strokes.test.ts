@@ -5,6 +5,13 @@ import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalF
 import { strokeNames } from './stroke-names';
 
 describe('Radical-only stroke decompositions', () => {
+  it('records the Traditional side forms 糹, 釒 and 飠 with their cjklib stroke orders', () => {
+    const names = (id: number, ch: string) => radicalFamily(id)?.forms.find(form => form.character === ch)?.record.strokes.map(stroke => stroke.name);
+    expect(names(120, '糹')).toEqual(['撇折', '撇折', '点', '点', '点', '点']);
+    expect(names(167, '釒')).toEqual(['撇', '点', '横', '横', '竖', '点', '撇', '提']);
+    // Glyph 0 (China/Japan); Taiwan's glyph 1 has 横 as stroke 3 and is not used.
+    expect(names(184, '飠')).toEqual(['撇', '点', '点', '横折', '横', '横', '竖提', '点']);
+  });
   it('prioritises Mainland 鱼 before historical 魚 without mutating the source forms', () => {
     const family = radicalFamily(195);
     expect(family).toBeDefined();
