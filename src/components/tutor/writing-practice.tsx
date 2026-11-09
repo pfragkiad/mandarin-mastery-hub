@@ -24,7 +24,7 @@ import { useWorkspace } from './workspace';
 import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
-import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-enrichment';
+import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence } from '@/lib/character-enrichment';
 import { formatStrokeIndices, splitPinyinLines, strokeNames } from '@/lib/stroke-names';
 import { radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
