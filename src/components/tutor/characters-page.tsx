@@ -50,6 +50,16 @@ const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms 
 // per-tab provenance stays in the (i) beside the title (kindNotes).
 const glyphsMotto = 'STUDY THE BLOCKS · ONE CHARACTER AT A TIME';
 /** Strokes speak their recorded Chinese name (㇐ → 横); other glyphs speak themselves. */
+/** Hint for the purple "+N" tab count: `shared` Traditional forms folded into a
+ * Simplified card, plus `standalone` Traditional records with no linked Simplified
+ * form that keep their own card and are already part of the `cards` total. */
+export function traditionalCountHint(shared: number, standalone: number, cards: number) {
+  const n = (v: number) => v.toLocaleString('en-US');
+  const sharedLine = `${n(shared)} Traditional ${shared === 1 ? 'form shares' : 'forms share'} a card with ${shared === 1 ? 'its' : 'their'} Simplified form`;
+  if (!standalone) return sharedLine;
+  return `${sharedLine}. ${n(standalone)} other Traditional ${standalone === 1 ? 'form has' : 'forms have'} no linked Simplified form and ${standalone === 1 ? 'keeps its' : 'keep their'} own card, included in the ${n(cards)}`;
+}
+
 function speechTarget(entry: LibraryEntry, kind: LibraryKind) {
   if (kind !== 'Strokes') { const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning); return { text: info.speech, reading: info.reading || null }; }
   const { name, reading } = strokeSpeech(entry);
