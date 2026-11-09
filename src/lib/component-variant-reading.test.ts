@@ -68,3 +68,13 @@ it('extracted contextual identities match the supplied audit verbatim', () => {
   expect(identity.guidance).toEqual(row.uiPresentationGuidance);
   expect(Object.keys(extracted.identities)).toEqual(audit.variants.filter((v: { contextualIdentity?: unknown }) => v.contextualIdentity).map((v: { formKey: string }) => v.formKey));
 });
+
+it('#96 jade wording: learner note on the card, scoped origin by function rather than position', () => {
+  const audit = JSON.parse(fs.readFileSync('public/data/radical_variant_etymology_audit.json', 'utf8'));
+  const extracted = JSON.parse(fs.readFileSync('src/data/radical-contextual-identities.json', 'utf8'));
+  expect(extracted.identities['96-1'].learnerNote).toBe('This jade component belongs to 玉 (yù). It resembles 王 (wáng, king), but has a different historical origin and meaning.');
+  const claim = audit.variants.find((v: { formKey: string }) => v.formKey === '96-1').reviewedClaims[0];
+  expect(claim.englishMeaningOrInterpretation).toBe('pieces of jade threaded together');
+  expect(claim.scopeNote).toBe('This interpretation applies when the four-stroke shape functions as the jade component.');
+  expect(claim.appliesWhen).not.toMatch(/left/);
+});
