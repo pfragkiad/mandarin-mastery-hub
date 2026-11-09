@@ -46,7 +46,7 @@ export function loadCatalog(): Promise<void> {
     fetch('/data/radical-identities.json').then(r => { if (!r.ok) throw new Error(`radical identities ${r.status}`); return r.json() as Promise<RadicalIdentityFile>; }),
     fetch('/data/radical-strokes.json').then(r => { if (!r.ok) throw new Error(`radical strokes ${r.status}`); return r.json() as Promise<RadicalStrokeFile>; }),
     fetch('/data/usage-order.json').then(r => { if (!r.ok) throw new Error(`usage order ${r.status}`); return r.json() as Promise<UsageOrderFile>; }),
-    fetch('/data/character-variants.json').then(r => { if (!r.ok) throw new Error(`character variants ${r.status}`); return r.json() as Promise<CharacterVariantFile>; }),
+    fetch('/data/character-variants-v1.4.0.json').then(r => { if (!r.ok) throw new Error(`character variants ${r.status}`); return r.json() as Promise<CharacterVariantFile>; }),
   ]).then(([data, identities, strokes, usage, variants]) => { hydrateUsageOrder(usage); hydrateCharacterVariants(variants); hydrateCatalog(data, identities, strokes); }).catch(err => { pending = null; throw err; });
   return pending;
 }

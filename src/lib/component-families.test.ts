@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 import { componentCardGlyphs, componentCardHead, componentFamilyGroup, sharesFamilyReading } from './component-families';
 
-beforeAll(() => hydrateCharacterVariants(JSON.parse(readFileSync('public/data/character-variants.json', 'utf8')) as CharacterVariantFile));
+beforeAll(() => hydrateCharacterVariants(JSON.parse(readFileSync('public/data/character-variants-v1.4.0.json', 'utf8')) as CharacterVariantFile));
 
 describe('Components radical-family cards', () => {
   it('puts 刀, 刂 and ⺈ (Radical #18, all dāo) on one card headed by 刀', () => {
