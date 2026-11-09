@@ -338,7 +338,11 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 /* Practice writing square spans the card's content width (same edges as the
    mode tabs and the Play/Reset row). */
 .writer-board { width: min(100%, 300px); margin: 0 auto; }
-.writer-board.writer-board-fill { width: 100%; }
+/* Desktop square uses the remembered size (default 380px) capped at the card width; phones override below. */
+.writer-board.writer-board-fill { width: min(100%, var(--writer-size, 380px)); position: relative; }
+.writer-resize-handle { position: absolute; right: -10px; bottom: 2px; width: 20px; height: 20px; padding: 0; border: 0; background: transparent; color: var(--muted-foreground); cursor: nwse-resize; touch-action: none; display: grid; place-items: center; opacity: .6; }
+.writer-resize-handle:hover, .writer-resize-handle:focus-visible { opacity: 1; color: var(--primary); }
+@media (max-width: 580px) { .writer-resize-handle { display: none; } }
 .writer-board .writing-grid { width: 100%; margin: 20px 0 22px; }
 .stroke-guide-heading { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .stroke-guide-heading > button { flex-shrink: 0; }
