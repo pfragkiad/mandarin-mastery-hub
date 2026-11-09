@@ -310,7 +310,7 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
   // A tap on an inert tile must never start a writing animation.
   fireEvent.click(tile);
   expect(fake.animateStroke).not.toHaveBeenCalled();
-  expect(screen.getByRole('button', { name: /stroke names/ })).toBeEnabled();
+  expect(screen.getByRole('button', { name: /^(Un)?mute names$/ })).toBeEnabled();
   expect(screen.getByRole('button', { name: 'Show arrows' })).toBeEnabled();
 });
 
