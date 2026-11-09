@@ -1,5 +1,5 @@
 // Simplified ↔ traditional script groups (public/data/character-variants-v1.4.0.json, v1.4.0, owner-curated from
-// scripts/import-character-variants.py from mutual Unihan variant links). Loaded lazily with
+// the original Unihan import, scripts/import-character-variants.py). Loaded lazily with
 // the catalogue. Groups only decide presentation — which records share one library card;
 // every glyph keeps its own record, reading, meaning, rank and strokes.
 export type CharacterVariantFile = { schemaVersion: number; source: string; groups: Record<string, string[]> };
