@@ -175,9 +175,21 @@ const MemoCharacterDetails = memo(CharacterDetails);
 
 /** A grouped Components card ranks by its best-ranked form (刀's card shows 刂's #32),
  * matching where the card sits in the rank-sorted list; each form keeps its own rank in the details. */
+const componentRecordCache = new WeakMap<LibraryEntry[], Map<string, LibraryEntry>>();
+function componentRecords() {
+  const list = libraryEntries('Components');
+  let map = componentRecordCache.get(list);
+  if (!map) { map = new Map(list.map(item => [item.hanzi, item])); componentRecordCache.set(list, map); }
+  return map;
+}
+/** Glyphs a Components card shows: its whole group when it heads one, else just itself. */
+function componentCardForms(entry: LibraryEntry, includeTraditional: boolean): string[] {
+  const glyphs = componentCardGlyphs(entry.hanzi, includeTraditional);
+  return glyphs[0] === entry.hanzi && glyphs.length > 1 ? glyphs : [entry.hanzi];
+}
 function componentCardRank(entry: LibraryEntry, forms: string[], includeTraditional: boolean): number | null {
   if (forms.length < 2) return usageRank(entry, 'Components', includeTraditional);
-  const records = new Map(libraryEntries('Components').map(item => [item.hanzi, item]));
+  const records = componentRecords();
   const ranks = forms.flatMap(glyph => { const record = records.get(glyph); const rank = record ? usageRank(record, 'Components', includeTraditional) : null; return rank === null ? [] : [rank]; });
   return ranks.length ? Math.min(...ranks) : null;
 }
@@ -233,8 +245,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Components cards do the same but only with forms that exist as Components records.
   // Components cards also show their radical-family forms (刀 刂 ⺈, component-families.ts).
   // Only a card's head shows the group: a Saved card of 爺 or 刂 keeps just its exact form.
-  const cardForms = kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : kind === 'Components' ? cardFormRecords(entry.hanzi, 'Components', preferences.includeTraditional).map(form => form.hanzi) : [entry.hanzi];
-  const displayedForms = family ? radicalCardForms(family.id).map(form => form.glyph) : cardForms[0] === entry.hanzi && cardForms.length > 1 ? cardForms : [entry.hanzi];
+  const scriptForms = kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : [entry.hanzi];
+  const displayedForms = family ? radicalCardForms(family.id).map(form => form.glyph) : kind === 'Components' ? componentCardForms(entry, preferences.includeTraditional) : scriptForms[0] === entry.hanzi ? scriptForms : [entry.hanzi];
   const primaryForm = displayedForms[0] ?? entry.hanzi;
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
@@ -333,10 +345,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // `sharedTraditional` separately counts the forms folded into those cards
   // (unpaired Traditional records already have their own card and stay in the
   // card count). Shown as a purple "+N" on the Characters, Components and Radicals tabs.
-  const { tabCounts, sharedTraditional, standaloneTraditional } = useMemo(() => {
-    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number> };
+  // Components also count `sharedFamily`: non-Traditional radical-family forms (刂, ⺈)
+  // folded into their main form's card, shown as a separate "+N" beside the purple one.
+  const { tabCounts, sharedTraditional, standaloneTraditional, sharedFamily } = useMemo(() => {
+    if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number>, sharedFamily: 0 };
     const shared: Record<string, number> = {};
     const standalone: Record<string, number> = {};
+    let family = 0;
     const counts = Object.fromEntries(kinds.map(k => {
       const list = filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional);
       if (k === 'Radicals') {
@@ -345,7 +360,16 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
         shared[k] = list.reduce((sum, e) => sum + (!e.radicalVariant && e.kangxiIndex ? radicalCardForms(e.kangxiIndex).filter(form => form.traditional).length : 0), 0);
         return [k, list.length];
       }
-      if ((k !== 'Characters' && k !== 'Components') || !preferences.includeTraditional) return [k, list.length];
+      if (k === 'Components') {
+        const head = (glyph: string) => componentCardHead(glyph, preferences.includeTraditional);
+        const present = new Set(list.map(e => e.hanzi));
+        const folded = list.filter(e => head(e.hanzi) !== e.hanzi && present.has(head(e.hanzi)));
+        shared[k] = folded.filter(e => e.script === 'Traditional').length;
+        family = folded.length - shared[k];
+        standalone[k] = Math.max(0, list.filter(e => e.script === 'Traditional').length - shared[k]);
+        return [k, collapseScriptForms(list, list, head).length];
+      }
+      if (k !== 'Characters' || !preferences.includeTraditional) return [k, list.length];
       const cards = collapseScriptForms(list, list).length;
       shared[k] = list.length - cards;
       // Traditional records with no linked Simplified form (e.g. 鱻) keep their own card;
@@ -353,12 +377,14 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
       standalone[k] = Math.max(0, list.filter(e => e.script === 'Traditional').length - shared[k]);
       return [k, cards];
     })) as Record<string, number>;
-    return { tabCounts: counts, sharedTraditional: shared, standaloneTraditional: standalone };
+    return { tabCounts: counts, sharedTraditional: shared, standaloneTraditional: standalone, sharedFamily: family };
   }, [catalogReady, preferences.includeTraditional, catalogVersion]);
   // Count only sourced ranks in the applied pool; gaps remain original ranks,
   // not renumbered result positions, so the jump bounds preserve source identity.
+  // Grouped Components cards rank by their best form, the same rank the card shows.
+  const rankOf = (entry: LibraryEntry) => kind === 'Components' && !savedOnly ? componentCardRank(entry, componentCardForms(entry, preferences.includeTraditional), preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional);
   const filteredRanks = filtered.flatMap(entry => {
-    const rank = hasUsage && usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
+    const rank = hasUsage && usageOrder.loaded ? rankOf(entry) : null;
     return rank === null ? [] : [rank];
   });
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
