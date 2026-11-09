@@ -404,13 +404,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
     ranks: rankSummary,
     onUnrankedChange: hasUsage && usageOrder.loaded ? () => {
-      const index = filtered.findIndex(entry => usageRank(entry, kind, preferences.includeTraditional) === null);
+      const index = filtered.findIndex(entry => rankOf(entry) === null);
       if (index >= 0) setPage(Math.floor(index / density.size) + 1);
     } : undefined,
-    currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => usageRank(entry, kind, preferences.includeTraditional)).find(rank => rank !== null) ?? undefined : undefined,
+    currentRank: hasUsage && usageOrder.loaded ? paged.entries.map(entry => rankOf(entry)).find(rank => rank !== null) ?? undefined : undefined,
     onRankChange: hasUsage ? (rank: number) => {
       if (!usageOrder.loaded) return;
-      const nearest = nearestRecordedRank(filtered.map(entry => usageRank(entry, kind, preferences.includeTraditional)), rank);
+      const nearest = nearestRecordedRank(filtered.map(entry => rankOf(entry)), rank);
       if (!nearest) return;
       const destinationPage = Math.floor(nearest.index / density.size) + 1;
       setPage(destinationPage);
