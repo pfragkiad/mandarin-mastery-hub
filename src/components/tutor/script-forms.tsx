@@ -132,9 +132,11 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
     </div>
     <div className="association-note-summary">
       {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
-      <Button type="button" variant="ghost" size="sm" className="association-note-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>Details<ChevronDown aria-hidden="true" className={open ? 'is-open' : ''}/></Button>
-    </div>
-    {open && <div id={panelId} className="association-note-details">
+      {/* Details opens a floating card (like the hints) so the detail sheet never grows. */}
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger className="association-note-toggle" aria-controls={panelId}><ScrollText aria-hidden="true"/>Details</PopoverTrigger>
+        <PopoverContent id={panelId} align="start" className="source-info-popover association-note-popover">
+    <div className="association-note-details">
       <p className="association-note-text">{note.explanation}</p>
       {note.example && <div className="spelling-examples">
         <span className="variant-etymology-caption">Spelling examples</span>
@@ -144,7 +146,10 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
               <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
           : <p>{note.example}</p>}
       </div>}
-    </div>}
+    </div>
+        </PopoverContent>
+      </Popover>
+    </div>
   </li>;
 }
 
