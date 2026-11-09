@@ -1949,3 +1949,7 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .variant-etymology-readings { margin: 0 0 8px; }
 .variant-etymology .glyph-usage-section > p.glyph-usage-meaning { display: block; margin: 0; }
 .variant-etymology-scope { color: var(--muted-foreground); }
+
+/* Card text (pinyin, hanzi, translation) shows a text caret so it reads as selectable;
+   the card surface keeps the arrow and buttons keep the hand. */
+.library-page .word-card .word-open :is(.pinyin-text, .word-hanzi-tile, .tile-form, .word-meaning, .catalog-entry-meaning) { cursor: text; }
