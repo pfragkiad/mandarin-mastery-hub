@@ -419,7 +419,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   };
   const stickyLabel = (() => {
     if (rankedTotal > 0) {
-      const ranks = paged.entries.map(e => usageRank(e, kind, preferences.includeTraditional)).filter((r): r is number => r !== null);
+      const ranks = paged.entries.map(e => rankOf(e)).filter((r): r is number => r !== null);
       if (ranks.length) return `Ranks ${Math.min(...ranks).toLocaleString('en-US')}–${Math.max(...ranks).toLocaleString('en-US')} of ${rankedTotal.toLocaleString('en-US')}`;
     }
     return `Page ${paged.current} / ${paged.pages}`;
