@@ -96,13 +96,13 @@ function CountHintBody({ count, hint, tone }: { count: number; hint: string; ton
 }
 function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
-    <TooltipContent side="bottom" align="start" className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></TooltipContent></Tooltip>;
+    <TooltipContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></TooltipContent></Tooltip>;
 }
 /** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
     <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
-    <PopoverContent side="bottom" align="start" className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></PopoverContent>
+    <PopoverContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></PopoverContent>
   </Popover>;
 }
 
