@@ -23,7 +23,8 @@
     "A shared shape does not prove the same etymology in every containing character.",
     "An entry without sourced claims remains unverified: it is NOT asserted to have no alternative meanings.",
     "Character-specific tails/feet/feathers must not be assigned to 灬 generally.",
-    "Source citations support individual claims; no automatic redistribution of source text or images is authorized."
+    "Source citations support individual claims; no automatic redistribution of source text or images is authorized.",
+    "For radical #96, treat 王-shaped jade component (⺩) as 玉-derived in component context, while preserving 王 (wáng, king) as an independent lexical character; glyph resemblance alone is not etymological proof."
   ],
   "variants": [
     {
@@ -467,19 +468,6 @@
           },
           "evidenceStatus": "verified",
           "displayAs": "alternative_dictionary_definition"
-        },
-        {
-          "claimType": "character_specific_shape",
-          "englishMeaningOrInterpretation": "forked tail of a swallow",
-          "alternativePinyin": null,
-          "appliesWhen": "燕",
-          "sourceEvidenceSummary": "CUHK says oracle-bone swallow pictograph has a forked tail, which became a fire-like form in seal script",
-          "source": {
-            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%87%95",
-            "publisher": "CUHK Chinese Character Database"
-          },
-          "evidenceStatus": "verified",
-          "displayAs": "historical_note_or_warning"
         }
       ],
       "doNotInferNoAdditionalMeanings": false
@@ -593,7 +581,38 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "contextualIdentity": {
+        "radicalComponent": {
+          "familyRadicalId": 96,
+          "parentRadical": "玉",
+          "parentRadicalPinyin": "yù",
+          "displayGlyph": "⺩",
+          "recordedFormGlyph": "王",
+          "meaning": "jade; precious stone",
+          "preferredLabel": "Jade component (variant of 玉)",
+          "componentName": {
+            "hanzi": "斜玉旁",
+            "pinyin": "xiéyùpáng"
+          },
+          "readingNote": "yù is the parent radical’s dictionary reading, not an independent lexical reading assigned to ⺩.",
+          "usageConstraint": "Use this meaning for 玉-derived jade components; a visually similar 王 shape does not by itself prove jade origin."
+        },
+        "lookAlikeIndependentCharacter": {
+          "glyph": "王",
+          "pinyin": "wáng",
+          "meaning": "king; ruler; surname",
+          "note": "This lexical reading and meaning belong to the independent character 王 and must not replace the jade-component identity when the radical #96 variant is selected."
+        }
+      },
+      "uiPresentationGuidance": {
+        "whenSelectedAsRadicalVariant": "Show jade-component identity and meaning from 玉 (yù), and optionally explain the look-alike independent character 王 (wáng).",
+        "doNotUseAsVariantDefinition": "king, ruler; royal; surname",
+        "doNotUseAsVariantPronunciation": "wáng",
+        "doNotOverwriteCharacterEntry": "王 (wáng) retains its ordinary dictionary meaning and reading in the Characters view.",
+        "doNotRewriteSourceGlyph": "Keep the recorded form 王 and alias ⺩ unchanged to preserve source mappings.",
+        "exampleCurationNote": "Prefer unambiguous jade-component examples such as 珠 (zhū) over 玉 (yù) itself in a form-specific “In a character” list; do not alter automated corpus results without checking their decomposition provenance."
+      }
     },
     {
       "radicalId": 103,
@@ -1158,6 +1177,20 @@
     }
   ],
   "characterSpecificFollowUps": [
+    {
+      "glyph": "燕",
+      "pinyin": "yàn",
+      "relatedVariant": "灬",
+      "claimType": "character_specific_shape",
+      "interpretation": "forked tail of a swallow",
+      "sourceEvidenceSummary": "CUHK says oracle-bone swallow pictograph has a forked tail, which became a fire-like form in seal script",
+      "source": {
+        "publisher": "CUHK Chinese Character Database",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/oraclePiece.php?piece=%E7%87%95"
+      },
+      "evidenceStatus": "verified",
+      "displayAs": "historical_note_or_warning"
+    },
     {
       "glyph": "魚",
       "pinyin": "yú",
