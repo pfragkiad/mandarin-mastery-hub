@@ -4,7 +4,8 @@ import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
-import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from 'react';
+import { practiceCanvasSize, PRACTICE_CANVAS_MIN } from '@/lib/learning-preferences';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
@@ -186,7 +187,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
   );
 }
 export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
-  const { theme, preferences } = useWorkspace();
+  const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('trace');
   const mode = selectedMode ?? localMode;
