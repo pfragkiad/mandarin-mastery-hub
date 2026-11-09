@@ -1,0 +1,1193 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Kangxi radical positional variants: targeted alternative definitions and historical-origin audit",
+  "generatedOn": "2026-11-09",
+  "scope": {
+    "familyCount": 214,
+    "variantRecordsInSource": 65,
+    "uniqueVariantRecords": 64,
+    "radicalCountWithVariants": 51,
+    "distinctVariantGlyphs": 64,
+    "inventorySourceFiles": [
+      "radical-strokes.json",
+      "radical-families-source.json",
+      "radical-identities.json",
+      "glyph-presentation.ts"
+    ],
+    "scopeNote": "Covers every form explicitly marked variant in radical-strokes.json, deduplicating its duplicate 艹. Not a claim to cover every historical glyph or every hidden Unicode symbol alias.",
+    "explanationOfRecordCounts": "280 form records in radical-families-source.json are not 280 variants; radical-strokes.json has 65 records explicitly marked variant, of which 艹 is recorded twice; resulting audit covers 64 unique radical/variant pairs."
+  },
+  "interpretationPolicy": [
+    "Alternative dictionary definition is distinct from historical pictographic interpretation.",
+    "Historical origin of a parent radical is not a new lexical meaning of its variant.",
+    "A shared shape does not prove the same etymology in every containing character.",
+    "An entry without sourced claims remains unverified: it is NOT asserted to have no alternative meanings.",
+    "Character-specific tails/feet/feathers must not be assigned to 灬 generally.",
+    "Source citations support individual claims; no automatic redistribution of source text or images is authorized."
+  ],
+  "variants": [
+    {
+      "radicalId": 5,
+      "radical": "乙",
+      "radicalPinyin": "yǐ",
+      "variant": "乚",
+      "formKey": "5-1",
+      "aliases": [
+        "⺃"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 5,
+      "radical": "乙",
+      "radicalPinyin": "yǐ",
+      "variant": "乛",
+      "formKey": "5-2",
+      "aliases": [
+        "⺂"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 9,
+      "radical": "人",
+      "radicalPinyin": "rén",
+      "variant": "亻",
+      "formKey": "9-1",
+      "aliases": [
+        "⺅"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 13,
+      "radical": "冂",
+      "radicalPinyin": "jiōng",
+      "variant": "⺆",
+      "formKey": "13-1",
+      "aliases": [
+        "⺆"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 15,
+      "radical": "冫",
+      "radicalPinyin": "bīng",
+      "variant": "⺀",
+      "formKey": "15-1",
+      "aliases": [
+        "⺀"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "classification_warning",
+          "englishMeaningOrInterpretation": "two-dot or repeat sign; do not automatically assign ice etymology",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "Unicode calls ⺀ CJK RADICAL REPEAT; the submitted family grouping under 冫 is not proof of common origin",
+          "source": {
+            "url": "https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt",
+            "publisher": "Unicode Consortium"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 18,
+      "radical": "刀",
+      "radicalPinyin": "dāo",
+      "variant": "刂",
+      "formKey": "18-1",
+      "aliases": [
+        "⺉"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 18,
+      "radical": "刀",
+      "radicalPinyin": "dāo",
+      "variant": "⺈",
+      "formKey": "18-2",
+      "aliases": [
+        "⺈"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "classification_warning",
+          "englishMeaningOrInterpretation": "knife-derived graphical radical; may resemble other non-knife components",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "Unicode identifies ⺈ as CJK RADICAL KNIFE ONE; resemblance alone cannot determine origins",
+          "source": {
+            "url": "https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt",
+            "publisher": "Unicode Consortium"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 25,
+      "radical": "卜",
+      "radicalPinyin": "bo",
+      "variant": "⺊",
+      "formKey": "25-1",
+      "aliases": [
+        "⺊"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 26,
+      "radical": "卩",
+      "radicalPinyin": "jié",
+      "variant": "㔾",
+      "formKey": "26-1",
+      "aliases": [
+        "⺋"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 27,
+      "radical": "厂",
+      "radicalPinyin": "chǎng",
+      "variant": "⺁",
+      "formKey": "27-1",
+      "aliases": [
+        "⺁"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 39,
+      "radical": "子",
+      "radicalPinyin": "zi",
+      "variant": "孑",
+      "formKey": "39-1",
+      "aliases": [],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 42,
+      "radical": "小",
+      "radicalPinyin": "xiǎo",
+      "variant": "⺌",
+      "formKey": "42-1",
+      "aliases": [
+        "⺌"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 42,
+      "radical": "小",
+      "radicalPinyin": "xiǎo",
+      "variant": "⺍",
+      "formKey": "42-2",
+      "aliases": [
+        "⺍"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 43,
+      "radical": "尢",
+      "radicalPinyin": "yóu",
+      "variant": "尣",
+      "formKey": "43-1",
+      "aliases": [
+        "⺏",
+        "⺑"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 47,
+      "radical": "巛",
+      "radicalPinyin": "chuān",
+      "variant": "川",
+      "formKey": "47-1",
+      "aliases": [],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 49,
+      "radical": "己",
+      "radicalPinyin": "jǐ",
+      "variant": "巳",
+      "formKey": "49-1",
+      "aliases": [
+        "⺒"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 58,
+      "radical": "彐",
+      "radicalPinyin": "jì",
+      "variant": "彑",
+      "formKey": "58-1",
+      "aliases": [
+        "⺔"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "classification_warning",
+          "englishMeaningOrInterpretation": "snout/shorthand grouping; visually similar hand-derived form exists",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "Unicode names list warns that one visually similar snout-labeled radical symbol (⺕) is actually hand-derived, not that all instances of 彐/彑 are hand-derived.",
+          "source": {
+            "url": "https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt",
+            "publisher": "Unicode Consortium"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 61,
+      "radical": "心",
+      "radicalPinyin": "xīn",
+      "variant": "忄",
+      "formKey": "61-1",
+      "aliases": [
+        "⺖"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 61,
+      "radical": "心",
+      "radicalPinyin": "xīn",
+      "variant": "⺗",
+      "formKey": "61-2",
+      "aliases": [
+        "⺗"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 64,
+      "radical": "手",
+      "radicalPinyin": "shǒu",
+      "variant": "扌",
+      "formKey": "64-1",
+      "aliases": [
+        "⺘"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 66,
+      "radical": "攴",
+      "radicalPinyin": "pū",
+      "variant": "攵",
+      "formKey": "66-1",
+      "aliases": [
+        "⺙"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 71,
+      "radical": "无",
+      "radicalPinyin": "wú",
+      "variant": "旡",
+      "formKey": "71-1",
+      "aliases": [
+        "⺛"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 78,
+      "radical": "歹",
+      "radicalPinyin": "dǎi",
+      "variant": "歺",
+      "formKey": "78-1",
+      "aliases": [
+        "⺞"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 80,
+      "radical": "毋",
+      "radicalPinyin": "wú",
+      "variant": "母",
+      "formKey": "80-1",
+      "aliases": [
+        "⺟"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 83,
+      "radical": "氏",
+      "radicalPinyin": "shì",
+      "variant": "民",
+      "formKey": "83-1",
+      "aliases": [
+        "⺠"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 85,
+      "radical": "水",
+      "radicalPinyin": "shuǐ",
+      "variant": "氵",
+      "formKey": "85-1",
+      "aliases": [
+        "⺡"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 85,
+      "radical": "水",
+      "radicalPinyin": "shuǐ",
+      "variant": "氺",
+      "formKey": "85-2",
+      "aliases": [
+        "⺢"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 86,
+      "radical": "火",
+      "radicalPinyin": "huǒ",
+      "variant": "灬",
+      "formKey": "86-1",
+      "aliases": [
+        "⺣"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "lexical_alternative",
+          "englishMeaningOrInterpretation": "blazing fire; intense flames",
+          "alternativePinyin": "biāo",
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "Hàndiǎn entry for 灬 gives biāo 烈火",
+          "source": {
+            "url": "https://www.zdic.net/hans/%E7%81%AC",
+            "publisher": "Hàndiǎn"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "alternative_dictionary_definition"
+        },
+        {
+          "claimType": "character_specific_shape",
+          "englishMeaningOrInterpretation": "forked tail of a swallow",
+          "alternativePinyin": null,
+          "appliesWhen": "燕",
+          "sourceEvidenceSummary": "CUHK says oracle-bone swallow pictograph has a forked tail, which became a fire-like form in seal script",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%87%95",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 87,
+      "radical": "爪",
+      "radicalPinyin": "zhǎo",
+      "variant": "爫",
+      "formKey": "87-1",
+      "aliases": [
+        "⺤",
+        "⺥"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "downward-facing hand; grasping hand",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "CUHK description of 爪 explicitly identifies early pictograph as a downward-oriented hand and describes 爫 as a hand grasping",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%88%AA",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 90,
+      "radical": "爿",
+      "radicalPinyin": "pán",
+      "variant": "丬",
+      "formKey": "90-1",
+      "aliases": [
+        "⺦"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 93,
+      "radical": "牛",
+      "radicalPinyin": "niú",
+      "variant": "⺧",
+      "formKey": "93-1",
+      "aliases": [
+        "⺧"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 93,
+      "radical": "牛",
+      "radicalPinyin": "niú",
+      "variant": "牜",
+      "formKey": "93-2",
+      "aliases": [],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 94,
+      "radical": "犬",
+      "radicalPinyin": "quǎn",
+      "variant": "犭",
+      "formKey": "94-1",
+      "aliases": [
+        "⺨"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 96,
+      "radical": "玉",
+      "radicalPinyin": "yù",
+      "variant": "王",
+      "formKey": "96-1",
+      "aliases": [
+        "⺩"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "jade pieces threaded together",
+          "alternativePinyin": null,
+          "appliesWhen": "as left-side jade component only",
+          "sourceEvidenceSummary": "CUHK shows original 玉 depicts pieces of jade strung on a cord; visually 王-like positional shape must not be interpreted as independent 王 (king).",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%8E%89",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 103,
+      "radical": "疋",
+      "radicalPinyin": "pǐ",
+      "variant": "⺪",
+      "formKey": "103-1",
+      "aliases": [
+        "⺪"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 113,
+      "radical": "示",
+      "radicalPinyin": "shì",
+      "variant": "礻",
+      "formKey": "113-1",
+      "aliases": [
+        "⺭"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "ancestral tablet; ritual or sacrificial altar",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "CUHK records ancestral tablet reading for 示 while noting competing scholarly interpretations",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%A4%BA",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "disputed_details",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 118,
+      "radical": "竹",
+      "radicalPinyin": "zhú",
+      "variant": "⺮",
+      "formKey": "118-1",
+      "aliases": [
+        "⺮"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 120,
+      "radical": "糸",
+      "radicalPinyin": "mì",
+      "variant": "纟",
+      "formKey": "120-1",
+      "aliases": [
+        "⺰"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 122,
+      "radical": "网",
+      "radicalPinyin": "wǎng",
+      "variant": "⺴",
+      "formKey": "122-1",
+      "aliases": [
+        "⺴"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "net of interlaced cords; fishing or hunting net",
+          "alternativePinyin": null,
+          "appliesWhen": "net-origin component",
+          "sourceEvidenceSummary": "CUHK 网 entry gives pictographic origin; Unicode maps this positional form to radical family 122",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BD%91",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 122,
+      "radical": "网",
+      "radicalPinyin": "wǎng",
+      "variant": "罓",
+      "formKey": "122-2",
+      "aliases": [
+        "⺱"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "net of interlaced cords; fishing or hunting net",
+          "alternativePinyin": null,
+          "appliesWhen": "net-origin component",
+          "sourceEvidenceSummary": "CUHK 网 entry and Shuowen describe a net of interlaced cords for fishing",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BD%91",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 122,
+      "radical": "网",
+      "radicalPinyin": "wǎng",
+      "variant": "罒",
+      "formKey": "122-3",
+      "aliases": [
+        "⺲"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "net of interlaced cords; fishing or hunting net",
+          "alternativePinyin": null,
+          "appliesWhen": "net-origin component",
+          "sourceEvidenceSummary": "CUHK 网 entry and Shuowen describe a net of interlaced cords for fishing",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BD%91",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 122,
+      "radical": "网",
+      "radicalPinyin": "wǎng",
+      "variant": "⺳",
+      "formKey": "122-4",
+      "aliases": [
+        "⺳"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "net of interlaced cords; fishing or hunting net",
+          "alternativePinyin": null,
+          "appliesWhen": "net-origin component",
+          "sourceEvidenceSummary": "CUHK 网 entry gives pictographic origin; Unicode maps this positional form to radical family 122",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BD%91",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 123,
+      "radical": "羊",
+      "radicalPinyin": "yáng",
+      "variant": "⺶",
+      "formKey": "123-1",
+      "aliases": [
+        "⺶"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 123,
+      "radical": "羊",
+      "radicalPinyin": "yáng",
+      "variant": "⺷",
+      "formKey": "123-2",
+      "aliases": [
+        "⺷"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 123,
+      "radical": "羊",
+      "radicalPinyin": "yáng",
+      "variant": "羋",
+      "formKey": "123-3",
+      "aliases": [
+        "⺸"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 125,
+      "radical": "老",
+      "radicalPinyin": "lǎo",
+      "variant": "耂",
+      "formKey": "125-1",
+      "aliases": [
+        "⺹"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 129,
+      "radical": "聿",
+      "radicalPinyin": "yù",
+      "variant": "肀",
+      "formKey": "129-1",
+      "aliases": [
+        "⺺"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 130,
+      "radical": "肉",
+      "radicalPinyin": "ròu",
+      "variant": "⺼",
+      "formKey": "130-1",
+      "aliases": [
+        "⺼"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_component_origin",
+          "englishMeaningOrInterpretation": "meat; flesh; bodily tissue",
+          "alternativePinyin": null,
+          "appliesWhen": "meat-origin component only",
+          "sourceEvidenceSummary": "CUHK lists 肉 as pictographic flesh, and Unicode names this component CJK RADICAL MEAT; visually similar to moon component",
+          "source": {
+            "url": "https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt",
+            "publisher": "Unicode Consortium"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 140,
+      "radical": "艸",
+      "radicalPinyin": "cǎo",
+      "variant": "艹",
+      "formKey": "140-1",
+      "aliases": [
+        "⺾",
+        "⻀"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 141,
+      "radical": "虍",
+      "radicalPinyin": "hū",
+      "variant": "虎",
+      "formKey": "141-1",
+      "aliases": [
+        "⻁"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 145,
+      "radical": "衣",
+      "radicalPinyin": "yī",
+      "variant": "衤",
+      "formKey": "145-1",
+      "aliases": [
+        "⻂"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "upper garment; collar, sleeves and overlapping lapels",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "CUHK describes the oracle-bone/bronze pictograph of 衣 as upper clothing with collar, sleeves and overlapping panels; 衤 is its positional form.",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%A1%A3",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 146,
+      "radical": "襾",
+      "radicalPinyin": "yà",
+      "variant": "覀",
+      "formKey": "146-1",
+      "aliases": [
+        "⻃"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 146,
+      "radical": "襾",
+      "radicalPinyin": "yà",
+      "variant": "西",
+      "formKey": "146-2",
+      "aliases": [
+        "⻄"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "classification_warning",
+          "englishMeaningOrInterpretation": "independent character west, also used as shape classified with 襾",
+          "alternativePinyin": null,
+          "appliesWhen": null,
+          "sourceEvidenceSummary": "Identity/Unicode mapping is not proof that every 西-shaped component derives from 覀",
+          "source": {
+            "url": "https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt",
+            "publisher": "Unicode Consortium"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 148,
+      "radical": "角",
+      "radicalPinyin": "jiǎo",
+      "variant": "𧢲",
+      "formKey": "148-1",
+      "aliases": [
+        "⻇"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 149,
+      "radical": "言",
+      "radicalPinyin": "yán",
+      "variant": "讠",
+      "formKey": "149-1",
+      "aliases": [
+        "⻈"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 149,
+      "radical": "言",
+      "radicalPinyin": "yán",
+      "variant": "訁",
+      "formKey": "149-2",
+      "aliases": [],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 157,
+      "radical": "足",
+      "radicalPinyin": "zú",
+      "variant": "⻊",
+      "formKey": "157-1",
+      "aliases": [
+        "⻊"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 162,
+      "radical": "辵",
+      "radicalPinyin": "chuò",
+      "variant": "辶",
+      "formKey": "162-1",
+      "aliases": [
+        "⻌",
+        "⻍",
+        "⻎"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 163,
+      "radical": "邑",
+      "radicalPinyin": "yì",
+      "variant": "⻏",
+      "formKey": "163-1",
+      "aliases": [
+        "⻏"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_component_origin",
+          "englishMeaningOrInterpretation": "settlement; town; inhabited place",
+          "alternativePinyin": null,
+          "appliesWhen": "right-side ⻏",
+          "sourceEvidenceSummary": "CUHK documents 邑 as settlement/town in character formation, not left-side 阜",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%82%91",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 167,
+      "radical": "金",
+      "radicalPinyin": "jīn",
+      "variant": "钅",
+      "formKey": "167-1",
+      "aliases": [
+        "⻐"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 170,
+      "radical": "阜",
+      "radicalPinyin": "fù",
+      "variant": "阝",
+      "formKey": "170-1",
+      "aliases": [
+        "⻖"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "source_supported_note",
+      "reviewedClaims": [
+        {
+          "claimType": "historical_pictograph",
+          "englishMeaningOrInterpretation": "steps; staircase; hillside; high ground",
+          "alternativePinyin": null,
+          "appliesWhen": "left-side 阝",
+          "sourceEvidenceSummary": "CUHK describes 阜 as originally a staircase (alternative interpretation: terraced hillside); same-shape right-side component belongs to 邑",
+          "source": {
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%98%9C",
+            "publisher": "CUHK Chinese Character Database"
+          },
+          "evidenceStatus": "verified",
+          "displayAs": "historical_note_or_warning"
+        }
+      ],
+      "doNotInferNoAdditionalMeanings": false
+    },
+    {
+      "radicalId": 173,
+      "radical": "雨",
+      "radicalPinyin": "yǔ",
+      "variant": "⻗",
+      "formKey": "173-1",
+      "aliases": [
+        "⻗"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 174,
+      "radical": "靑",
+      "radicalPinyin": "qīng",
+      "variant": "青",
+      "formKey": "174-1",
+      "aliases": [
+        "⻘"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    },
+    {
+      "radicalId": 184,
+      "radical": "食",
+      "radicalPinyin": "shí",
+      "variant": "饣",
+      "formKey": "184-1",
+      "aliases": [
+        "⻠"
+      ],
+      "classificationInUploadedData": "variant",
+      "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
+      "reviewedClaims": [],
+      "doNotInferNoAdditionalMeanings": true
+    }
+  ],
+  "characterSpecificFollowUps": [
+    {
+      "glyph": "魚",
+      "pinyin": "yú",
+      "relatedVariant": "灬",
+      "claimType": "character_specific_shape",
+      "interpretation": "bottom shape reflects historical fish tail, not necessarily fire",
+      "source": {
+        "publisher": "CUHK Chinese Character Database",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%AD%9A"
+      },
+      "evidenceStatus": "requires_direct_entry_confirmation"
+    },
+    {
+      "glyph": "馬",
+      "pinyin": "mǎ",
+      "relatedVariant": "灬",
+      "claimType": "character_specific_shape",
+      "interpretation": "four dots of traditional horse visually reflect feet/legs; not a general meaning of 灬",
+      "source": {
+        "publisher": "CUHK Chinese Character Database",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%A6%AC"
+      },
+      "evidenceStatus": "requires_direct_entry_confirmation"
+    }
+  ],
+  "recommendedUiFields": [
+    "alternativeDefinitions",
+    "etymologicalNotes",
+    "contextualOrigins",
+    "sourceEvidence",
+    "sourceStatus"
+  ]
+}
