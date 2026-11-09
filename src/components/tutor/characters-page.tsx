@@ -295,7 +295,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // included, linked Simplified/Traditional pairs share one Characters card, so
   // `sharedTraditional` separately counts the forms folded into those cards
   // (unpaired Traditional records already have their own card and stay in the
-  // card count). Shown as a purple "+N" on the Characters and Components tabs.
+  // card count). Shown as a purple "+N" on the Characters, Components and Radicals tabs.
   const { tabCounts, sharedTraditional, standaloneTraditional } = useMemo(() => {
     if (!catalogReady) return { tabCounts: null, sharedTraditional: {} as Record<string, number>, standaloneTraditional: {} as Record<string, number> };
     const shared: Record<string, number> = {};
