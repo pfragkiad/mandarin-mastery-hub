@@ -11,7 +11,7 @@ import type { AudioAttachment } from '@/lib/audio';
 import { SourceInfo } from './source-info';
 import { libraryEntries } from '@/lib/character-library';
 import { radicalForm } from '@/lib/radical-strokes';
-import { contextualVariantIdentity } from '@/lib/radical-contextual-identity';
+import { contextualVariantIdentity, identitySummary } from '@/lib/radical-contextual-identity';
 import { trimTranslationPeriod } from './meaning-text';
 
 /**
@@ -22,7 +22,7 @@ import { trimTranslationPeriod } from './meaning-text';
  * "unverified", never "no other meanings"). Character follow-ups awaiting confirmation are
  * labelled as such. Rendered only by radical variant detail cards — nowhere else.
  * A reviewed contextual identity (radical #96's 王-shaped jade component) adds a
- * "Component identity" section (label, component name, reading note) and a "Look-alike
+ * "Component identity" section (one composed intro line, component name; reading note in (i)) and a "Look-alike
  * character" row linking to the independent character; it comes from the small extracted
  * src/data/radical-contextual-identities.json, so it renders without waiting for the audit.
  * Other variants with a mapped conventional Chinese name (componentNaming.chineseName, e.g. 三点水)
@@ -100,13 +100,14 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
     {row('name', name.hanzi, name.pinyin, name.englishTranslation ? gloss(name.englishTranslation) : '', { link: false, word: true })}
   </div>;
   const host = (url?: string) => { try { return url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { return ''; } };
+  const summary = identity ? identitySummary(identity) : null;
   // Identity first: it replaces the look-alike character's reading and meaning in the heading,
   // so the learner sees why right below the translation.
   const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.readingNote && <>{identity.readingNote}<br/></>}{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}{identity.componentName?.translationSourceUrl && <>Component name · {host(identity.componentName.translationSourceUrl)}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
-    <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
+    {/* One composed line for every reviewed identity (identitySummary) replaces the label + learner note,
+        so no fact is repeated; the origin story lives in Historical origin and the technical note in (i). */}
+    {summary && <p className="glyph-usage-meaning">{summary.label} of <span lang="zh-CN">{summary.parent}</span> ({summary.parentPinyin}){summary.lookAlike && <>, visually similar to <span lang="zh-CN">{summary.lookAlike.glyph}</span> ({summary.lookAlike.pinyin}{summary.lookAlike.gloss && `, ${summary.lookAlike.gloss}`})</>}.</p>}
     {identity.componentName && nameBlock(identity.componentName)}
-    {/* Learners read the plain note; the technical reading note sits in the (i) tooltip above. */}
-    {identity.learnerNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.learnerNote}</p>}
   </section>;
   const lookAlikeSection = identity?.lookAlike && <section className="glyph-usage-section" aria-label="Look-alike character"><h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>LOOK-ALIKE CHARACTER<SourceInfo inline className="detail-footnote">{identity.lookAlike.note}</SourceInfo></h3><div className="glyph-usage-parents">{row('look', identity.lookAlike.glyph, identity.lookAlike.pinyin, gloss(identity.lookAlike.meaning).replace(/;\s*/g, ', '))}</div></section>;
   return <div className="variant-etymology">
