@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BookOpen, History, Info } from 'lucide-react';
+import { BookOpen, History, Info, Tag } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -82,7 +82,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   };
   // Identity first: it replaces the look-alike character's reading and meaning in the heading,
   // so the learner sees why right below the translation.
-  const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Info size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
+  const identitySection = identity && <section className="glyph-usage-section" aria-label="Component identity"><h3 className="eyebrow"><Tag size={13} aria-hidden="true"/>COMPONENT IDENTITY<SourceInfo inline className="detail-footnote">{identity.usageConstraint && <>{identity.usageConstraint}<br/></>}Radical variant etymology audit · {identity.formKey} · reviewed contextual identity</SourceInfo></h3>
     <p className="glyph-usage-meaning">{identity.preferredLabel}.</p>
     {identity.componentName && <p className="glyph-usage-meaning">Component name: <span lang="zh-CN">{identity.componentName.hanzi}</span> <span className="pinyin">{identity.componentName.pinyin}</span></p>}
     {identity.readingNote && <p className="glyph-usage-meaning variant-etymology-scope">{identity.readingNote}</p>}
