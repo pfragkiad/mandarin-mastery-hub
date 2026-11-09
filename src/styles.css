@@ -1718,30 +1718,22 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .catalog-entry-grid:not(.library-list-view) .catalog-card { height: auto; grid-template-rows: 33px auto 40px; }
 .vocab-word-grid:not(.library-list-view) .word-card .word-open,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { height: auto; padding-bottom: 12px; }
-/* Comfortable view on larger screens: Words and Glyph cards sit two per row
-   (Phrases keep one wide card per row for long sentences). */
+/* Comfortable view on larger screens: Words and Glyph cards sit two per row at most.
+   Page content stops widening (main-content max-width), so a third column would always
+   be too narrow beside two hanzi tiles (预 預) and cut the translation. */
 @media (min-width: 1200px) {
   .catalog-results .catalog-entry-grid.library-list-view,
   .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-}
-/* Very wide windows only: three Comfortable Words/Glyph cards per row. Below 2100px
-   three cards left too little room beside two hanzi tiles (预 預), cutting the translation. */
-@media (min-width: 2100px) {
-  .catalog-results .catalog-entry-grid.library-list-view,
-  .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Comfortable phrases: no footer row, so the card and body fit their content like Words. */
 .library-list-view.vocab-phrase-grid .word-card { min-height: 0; }
 .library-list-view.vocab-phrase-grid .word-card > .word-open { min-height: 0; }
-/* Larger screens: Phrases go two per row; very large screens (same 1720px breakpoint
-   as Words/Glyphs) go three per row so every Comfortable library reads consistently.
-   The phrase box still shrinks via its container query, so long sentences stay inside. */
+/* Larger screens: Phrases go two per row at most, like Words/Glyphs, so every
+   Comfortable library reads consistently. The phrase box still shrinks via its
+   container query, so long sentences stay inside. */
 @media (min-width: 1200px) {
   .vocab-grid.vocab-phrase-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-}
-@media (min-width: 1720px) {
-  .vocab-grid.vocab-phrase-grid.library-list-view { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* The status line under the writing square always reserves two lines, so a
