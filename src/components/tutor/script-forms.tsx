@@ -87,7 +87,16 @@ export type SpellingExample = { simplified: string; traditional: string; note?: 
  *  caller falls back to the recorded line as written rather than guessing a split. */
 export function parseSpellingExamples(example: string): SpellingExample[] | null {
   const rows: SpellingExample[] = [];
-  for (const part of example.split(';').map(item => item.trim()).filter(Boolean)) {
+  // Split on ";" only outside parentheses: a row note may itself contain ";".
+  const parts: string[] = [];
+  let depth = 0, current = '';
+  for (const ch of example) {
+    if (ch === '(') depth++;
+    if (ch === ')') depth = Math.max(0, depth - 1);
+    if (ch === ';' && depth === 0) { parts.push(current); current = ''; } else current += ch;
+  }
+  parts.push(current);
+  for (const part of parts.map(item => item.trim()).filter(Boolean)) {
     const match = part.match(/^(.+?)\s*→\s*(.+?)(?:\s*\(([^()]*)\))?$/);
     if (!match) return null;
     rows.push({ simplified: match[1]!.trim(), traditional: match[2]!.trim(), ...(match[3] ? { note: match[3].trim() } : {}) });
