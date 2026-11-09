@@ -1,7 +1,7 @@
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
-import { SourceInfo } from '@/components/tutor/source-info';
+import { HintBody, SourceInfo } from '@/components/tutor/source-info';
 import { Fragment, memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
