@@ -41,6 +41,8 @@ import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek, isPlainCardDoubleClick } from './card-peek';
 import { libraryFilterOptions } from '@/lib/library-filter-options';
 import { RadicalForms } from './radical-forms';
+import { ScriptForms } from './script-forms';
+import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
@@ -100,7 +102,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const listen = async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null);
   const percentage = usagePercentage(heading.hanzi, kind, preferences.includeTraditional, heading.kangxiIndex);
   return <section className={`catalog-detail ${kind === 'Radicals' && historicalRadicalHeading(entry.hanzi, heading.kangxiIndex) ? 'historical-radical-detail' : ''}`} aria-label={`Details for ${entry.hanzi}`}>
-    <RecordDetailTitle hanzi={entry.hanzi} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined} forms={kind === 'Radicals' && heading.kangxiIndex ? <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key} hideLabel/> : undefined} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={entry.hanzi} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined} forms={kind === 'Radicals' && heading.kangxiIndex ? <RadicalForms familyId={heading.kangxiIndex} selectedKey={form?.key ?? radicalFamily(heading.kangxiIndex)?.forms.find(item => item.character === heading.hanzi)?.key} hideLabel/> : kind === 'Characters' && preferences.includeTraditional && scriptGroup(entry.hanzi).length > 1 ? <ScriptForms glyph={entry.hanzi}/> : undefined} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning} script={entry.script} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}/>
     {/* Etymology audit notes belong to radical variant cards only (directly below the translation), never the family's main form. */}
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {audioError && <p role="status" className="library-note">{audioError}</p>}
@@ -167,7 +169,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Match the reference/Practice selector's presentation order without changing
   // the family record ID, reading, metadata or exact-form bookmark identity.
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
-  const displayedForms = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : [entry.hanzi];
+  // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head.
+  const displayedForms = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : kind === 'Characters' && preferences.includeTraditional ? scriptGroup(entry.hanzi) : [entry.hanzi];
   const primaryForm = displayedForms[0] ?? entry.hanzi;
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? historicalRadicalHeading(primaryForm, family.id) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional' ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
@@ -235,12 +238,18 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
-  const browsed = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact');
-  const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : selectedId);
+  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact');
+  // Grouped traditional records share their simplified card (a search hitting only 爺 shows 爷's card).
+  // Saved browsing keeps exact bookmarked records, so a saved 爺 stays its own card there.
+  const groupScripts = kind === 'Characters' && preferences.includeTraditional && !savedOnly;
+  const browsed = groupScripts ? collapseScriptForms(browsedRecords, entries) : browsedRecords;
+  // A selected traditional form is shown in the sheet, but its card, paging and arrows are the head's.
+  const cardSelectedId = groupScripts && selectedId.startsWith('Characters:') ? `Characters:${scriptHead(selectedId.slice(11))}` : selectedId;
+  const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : cardSelectedId);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
   const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
-  const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : selectedId);
+  const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : cardSelectedId);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
@@ -250,7 +259,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Sticky strip label: on ranked tabs, name the frequency ranks visible on
   // the current page against the kind's ranked total; otherwise the page number.
   // Tab counts follow the script preference: hiding Traditional removes those records from each tab.
-  const tabCounts = useMemo(() => catalogReady ? Object.fromEntries(kinds.map(k => [k, filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional).length])) as Record<string, number> : null, [catalogReady, preferences.includeTraditional, catalogVersion]);
+  const tabCounts = useMemo(() => catalogReady ? Object.fromEntries(kinds.map(k => { const list = filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional); return [k, k === 'Characters' && preferences.includeTraditional ? collapseScriptForms(list, list).length : list.length]; })) as Record<string, number> : null, [catalogReady, preferences.includeTraditional, catalogVersion]);
   // Count only sourced ranks in the applied pool; gaps remain original ranks,
   // not renumbered result positions, so the jump bounds preserve source identity.
   const filteredRanks = filtered.flatMap(entry => {
@@ -288,8 +297,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   })();
   const selected = entries.find(entry => entry.id === selectedId);
   const selectedForm = selected?.kangxiIndex ? radicalForm(selected.kangxiIndex, search.variant) : undefined;
-  const selectedBookmarkId = selected && selectedForm ? radicalVariantEntry(selected, selectedForm).id : selected?.id;
-  useRecordScroll(selected?.id ?? '', catalogReady);
+  const selectedBookmarkId = selected && selectedForm ? radicalVariantEntry(selected, selectedForm).id : selected ? cardSelectedId : undefined;
+  useRecordScroll(selected ? cardSelectedId : '', catalogReady);
   const topPaginationRef = useRef<HTMLDivElement>(null);
   const lastPageRef = useRef<number | null>(null);
   useEffect(() => {
@@ -300,7 +309,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   }, [page, selectedId]);
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
-  const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : selectedId)) : -1;
+  const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : cardSelectedId)) : -1;
   // Modal arrows traverse the full filtered order, not just the visible page.
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };

@@ -77,3 +77,5 @@
 
 - [done] Sound card Back trail (sound-alike clicks only), selectable grey neutral tone, Play all with one recording, "In a character" list (12 + Show all, details Back returns); 36 tests pass, Back/details/grid-reset verified live.
 - [done] Sound chart grid dots: fixed colour per tone; "In a character" items show the meaning to the right, vertically centred on the hanzi; verified in preview.
+
+- [done] Group simplified/traditional characters (mutual Unihan links) onto one Glyphs card; details show Script forms tiles, each opening that form's own rank, strokes and meaning.
