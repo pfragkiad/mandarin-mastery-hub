@@ -1978,3 +1978,4 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* Component-name tile (radical variant identity): one border around the whole word, same height as glyph tiles. */
 .decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
 .variant-etymology .glyph-usage-section > .glyph-usage-parents + p.glyph-usage-meaning { margin-top: 8px; }
+.decomposition-glyph.variant-etymology-word-tile { font-size: 24px; font-weight: 400; }
