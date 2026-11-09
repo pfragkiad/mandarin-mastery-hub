@@ -128,6 +128,13 @@ export function stopRecording() {
   current = null;
 }
 
+/** Silence everything: the shared recording element and any browser TTS utterance.
+ *  A cancelled utterance still fires its onEnd guard, so chained callers settle. */
+export function stopAllAudio() {
+  stopRecording();
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
 export async function playPronunciation(req: AudioRequest, slow = false, preferTts = false): Promise<PlayResult> {
   const rate = slow ? SLOW_RATE : NORMAL_RATE;
   const first = preferTts ? { kind: 'tts', label: 'Browser TTS' } as const : audioCandidates(req)[0];

@@ -28,7 +28,7 @@ import { loadStrokeGeometry, type ComponentOccurrence } from '@/lib/character-en
 import { formatStrokeIndices, splitPinyinLines, strokeNames } from '@/lib/stroke-names';
 import { radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
-import { speakTts } from '@/lib/audio';
+import { speakTts, stopAllAudio } from '@/lib/audio';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { nextStepIndex } from '@/lib/step-playback';
 import { StrokeDirectionHints } from './stroke-direction-hints';
@@ -209,6 +209,12 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const node = board.current; if (!node) return;
     event.preventDefault();
     resizing.current = true;
+    // While dragging, the square is quiet: Play pauses (Resume continues in place
+    // if the size ends up unchanged), speech/recordings stop, and the drawing
+    // fades via a class toggled directly on the node so no React rerender runs.
+    if (playing && !stepMode) pause();
+    stopAllAudio();
+    node.classList.add('is-resizing');
     const startX = event.clientX, startY = event.clientY, start = node.clientWidth;
     const max = node.parentElement?.clientWidth ?? start;
     let size = start;
@@ -219,6 +225,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     const up = () => {
       window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
       resizing.current = false;
+      node.classList.remove('is-resizing');
       setPreferences({ ...preferences, practiceCanvasSize: Math.round(size) });
       requestAnimationFrame(() => { const w = Math.round(node.clientWidth); if (w > 0) setBoardSize(w); });
     };
