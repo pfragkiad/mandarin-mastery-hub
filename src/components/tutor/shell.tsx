@@ -7,7 +7,7 @@ import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Grid3x3, Pin, PinOff } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, Pin, PinOff } from 'lucide-react';
 import { NAV_MEDIUM_MAX, NAV_PINNED_KEY, NAV_SMALL_MAX, navCanPin, navHasMenuButton, navIsDocked, navSizeFor, readNavPinned, type NavSize } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -19,7 +19,7 @@ const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to:
 // Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
 // Pinyin sub-items: the Sound chart plus the three Pinyin games; Hanzi games sub-items.
 // Both game lists come from game-catalog so the Start page shows the same games.
-const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Grid3x3 }, ...PINYIN_GAMES.map(g => ({ label: g.label, mode: g.mode, icon: g.icon }))];
+const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Volume2 }, ...PINYIN_GAMES.map(g => ({ label: g.label, mode: g.mode, icon: g.icon }))];
 const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g.icon }));
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
