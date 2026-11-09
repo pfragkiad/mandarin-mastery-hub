@@ -119,7 +119,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
 export const stripKangxiLabel = (meaning: string) => meaning.split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ') || meaning;
 const MemoCharacterDetails = memo(CharacterDetails);
 
-// `revealed` marks a card peeked in a Hide mode; `onDetails` is the only way to open the panel.
+// `revealed` marks a card peeked in a Hide mode; `onSelect` is the card click (peek in a Hide mode,
+// details in Show all) and `onDetails` the explicit details button.
 function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
@@ -241,8 +242,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
-  // Clicks only toggle the peek in a Hide mode; the detail panel opens solely via the card's details button.
-  const selectTile = (id: string) => peek.reveal(id);
+  // A click peeks in a Hide mode; in Show all it opens the details, like the card's details button.
+  const selectTile = (id: string) => peek.activate(id, setSelectedId);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
   // Sticky strip label: on ranked tabs, name the frequency ranks visible on
   // the current page against the kind's ranked total; otherwise the page number.
