@@ -16,10 +16,15 @@ import type { CharactersSearch } from './characters-page';
 // strokes and rank — a traditional form never borrows the simplified rank or vice versa.
 // `hideLabel` drops the heading where the surrounding panel already labels the record
 // (Practice shows a Traditional pill). Reuses the radical-family tile styles.
+/** Library records for each form in the glyph's script group (forms without a record drop out). */
+export function scriptFormRecords(glyph: string) {
+  const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
+  return scriptGroup(glyph).flatMap(form => { const entry = records.get(form); return entry ? [entry] : []; });
+}
+
 export function ScriptForms({ glyph, destination = 'reference', mode, hideLabel = false }: { glyph: string; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean }) {
   const { preferences } = useWorkspace();
-  const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
-  const forms = scriptGroup(glyph).flatMap(form => { const entry = records.get(form); return entry ? [entry] : []; });
+  const forms = scriptFormRecords(glyph);
   if (forms.length < 2) return null;
   return <div className="radical-family-section script-forms">
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>SCRIPT FORMS</span><SourceInfo inline className="detail-footnote">Simplified ↔ traditional links · {characterVariants.source}</SourceInfo></h3>}
