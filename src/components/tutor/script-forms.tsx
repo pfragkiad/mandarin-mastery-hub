@@ -33,7 +33,7 @@ export function ScriptForms({ glyph, destination = 'reference', mode, hideLabel 
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, 'Characters', preferences.includeTraditional) : null;
         const scriptName = entry.script === 'Traditional' ? 'traditional' : 'simplified';
-        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.strokes ?? '?'} strokes</span><small>{entry.script === 'Traditional' ? 'Traditional' : 'Simplified'}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `#${rank.toLocaleString('en-US')}`}</>}</small></>;
+        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.strokes ?? '?'} strokes</span><small>{entry.script === 'Traditional' ? 'Traditional' : 'Simplified'}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {destination === 'practice'
             ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} resetScroll={false} aria-current={selected ? 'true' : undefined} aria-label={`Practice ${scriptName} form ${entry.hanzi}`}>{content}</Link>
