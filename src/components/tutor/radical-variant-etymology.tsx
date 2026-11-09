@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { BookOpen, History, Info } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -44,7 +44,7 @@ export function RadicalVariantEtymology({ familyId, formKey, reading }: { family
   const cite = (source: Source, status: string, summary?: string) => <SourceInfo inline className="detail-footnote">{summary && <>{summary}<br/></>}{source.publisher}{status !== 'verified' ? ` · ${status.replace(/_/g, ' ')}` : ''}</SourceInfo>;
   // Character-specific origins reuse the "In a character" row exactly: linked hanzi tile,
   // reading + speaker on the first line, the origin text styled like a translation below.
-  const row = (key: string, glyph: string, pinyin: string, text: string, citation: React.ReactNode) => {
+  const row = (key: string, glyph: string, pinyin: string, text: string, citation: ReactNode) => {
     const record = characterRecord(glyph);
     const reading = pinyin || record?.pinyin || '';
     const destination = libraryDestination(glyph, preferences.includeTraditional);
