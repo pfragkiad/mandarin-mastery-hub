@@ -161,7 +161,7 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                 <Button variant="ghost"
                    type="button"
                    disabled={!interactive || playing}
-                  className={`stroke-chip${mode === 'watch' && activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
+                  className={`stroke-chip${mode !== 'recall' && activeStroke === i ? ' active' : ''}${componentIndices.includes(i) ? ' component-highlighted' : ''}${stroke.ambiguous ? ' has-ambiguous' : ''}`}
                   title={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
                   aria-label={mode === 'trace' ? `Continue tracing after stroke ${i + 1}` : `Play stroke ${i + 1}`}
                   aria-current={activeStroke === i ? 'step' : undefined}
