@@ -78,6 +78,23 @@ export function contextualRadical(glyph: string, position: string, owner?: strin
   };
 }
 
+/** Display-only agreement for two different codepoints in the same slot of the owner's
+ *  breakdowns: they agree only when the owner's context resolves both to one Kangxi family
+ *  and the same recorded family form (胖: BabelStone writes 月, the graphical structure ⺼;
+ *  胖 declares 肉 #130, so both stand for 肉's form ⺼). Without an owner, a reviewed shared
+ *  form or a resolved family, distinct glyphs stay distinct. */
+export function sameContextualForm(a: string, b: string, position: string, owner?: string): boolean {
+  if (a === b) return true;
+  if (!owner) return false;
+  const left = contextualRadical(a, position, owner);
+  const right = contextualRadical(b, position, owner);
+  if (!left.form && !right.form) return false;
+  const family = (context: ContextualRadical) => context.radicals.length === 1 ? context.radicals[0]!.number : undefined;
+  const leftFamily = family(left);
+  return leftFamily !== undefined && leftFamily === family(right)
+    && (left.form?.glyph ?? a) === (right.form?.glyph ?? b);
+}
+
 /** Whether the owner's recorded breakdown uses this family's exact form, either written
  *  directly or as a shared glyph that resolves to that family in this owner's context. */
 export function breakdownUsesForm(root: DecompositionNode, owner: string, family: number, form: string): boolean {

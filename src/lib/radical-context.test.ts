@@ -72,3 +72,23 @@ describe('Radical variant cards use contextual forms', () => {
     expect(glyphParentCharacters(entry, 'Radicals', characters(), true, heading.hanzi).map(row => row.hanzi)).toContain('胧');
   });
 });
+
+// A G-source breakdown that differs only by a look-alike codepoint for the same radical form
+// is the same breakdown, so the duplicate "Hanzi graphical structure" is hidden.
+describe('Breakdown agreement through contextual radical forms', () => {
+  const tree = (character: string) => JSON.parse(fs.readFileSync('public/data/catalog.json', 'utf8')).trees[character];
+  it('treats 胖 G-source ⿰月半 as the recorded ⿰⺼半 because 胖 declares 肉 #130', async () => {
+    const { matchesRecordedGSource } = await import('./character-enrichment');
+    const { parseIdsTree } = await import('./ids-tree');
+    expect(matchesRecordedGSource(parseIdsTree('⿰月半') ?? undefined, tree('胖'), '胖')).toBe(true);
+  });
+  it('keeps them different without the owner character', async () => {
+    const { matchesRecordedGSource } = await import('./character-enrichment');
+    const { parseIdsTree } = await import('./ids-tree');
+    expect(matchesRecordedGSource(parseIdsTree('⿰月半') ?? undefined, tree('胖'))).toBe(false);
+  });
+  it('keeps 月 and ⺼ different in a character declared under 月 #74 (朋)', async () => {
+    const { sameContextualForm } = await import('./radical-context');
+    expect(sameContextualForm('月', '⺼', 'left', '朋')).toBe(false);
+  });
+});
