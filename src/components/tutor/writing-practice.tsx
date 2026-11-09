@@ -252,6 +252,8 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
   const arrows = arrowsPref && mode !== 'recall';
   const [medians, setMedians] = useState<MedianPoint[][]>([]);
+  // Non-Hanzi-Writer outline provenance (reviewed supplementary source), shown in the Strokes (i).
+  const [outlineSource, setOutlineSource] = useState<OutlineSource | undefined>();
   // Animation speed is chosen in Settings (default 0.5×) and read live here.
   const speed = strokeSpeed(preferences.animationSpeed);
   const speedRef = useRef(speed);
