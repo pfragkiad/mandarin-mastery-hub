@@ -5,6 +5,7 @@ import { FileText, Printer, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { buildPracticePages, type PracticeBlock, type PracticeToken } from '@/lib/practice-layout';
+import { loadStrokeGeometry } from '@/lib/character-enrichment';
 
 type StrokeModel = { strokes: string[] } | null;
 
