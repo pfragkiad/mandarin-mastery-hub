@@ -54,10 +54,13 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       </span>
     </div>)}</div> : kind === 'Components' && gSourceParents === null ? null : <div className="record-gap"><p>{kind === 'Radicals' ? 'No characters with this recorded radical assignment and exact form in their breakdown are available.' : 'No characters with this exact component in their recorded BabelStone G-source breakdown are available.'}</p></div>}
   </section>;
+  // No recorded sentence or word example: the whole "In a sentence" section is hidden (owner choice),
+  // unlike other empty blocks that keep their label and a note.
+  if (!examples.length) return null;
   return <section className="glyph-usage-section" aria-label="In a sentence">
     <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
-    {examples.length ? examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
+    {examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
       <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} />
-    </div>) : <div className="record-gap"><p>{kind === 'Strokes' ? 'No recorded stroke-to-character usage examples available.' : 'No existing usage examples available in the current vocabulary.'}</p></div>}
+    </div>)}
   </section>;
 }
