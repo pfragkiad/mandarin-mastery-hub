@@ -188,12 +188,29 @@ const MemoCharacterDetails = memo(CharacterDetails);
 
 /** A grouped Components card ranks by its best-ranked form (刀's card shows 刂's #32),
  * matching where the card sits in the rank-sorted list; each form keeps its own rank in the details. */
-const componentRecordCache = new WeakMap<LibraryEntry[], Map<string, LibraryEntry>>();
-function componentRecords() {
-  const list = libraryEntries('Components');
-  let map = componentRecordCache.get(list);
-  if (!map) { map = new Map(list.map(item => [item.hanzi, item])); componentRecordCache.set(list, map); }
+const recordCache = new WeakMap<LibraryEntry[], Map<string, LibraryEntry>>();
+/** Exact-glyph record lookup within one library (cached per catalogue version's entry list). */
+function libraryRecords(kind: 'Characters' | 'Components') {
+  const list = libraryEntries(kind);
+  let map = recordCache.get(list);
+  if (!map) { map = new Map(list.map(item => [item.hanzi, item])); recordCache.set(list, map); }
   return map;
+}
+const componentRecords = () => libraryRecords('Components');
+/**
+ * Per-tile stroke counts for a card showing several forms (预 / 預, 刀 / 刂 / ⺈), in tile order.
+ * Each count comes from that exact form's own record — the Characters/Components record of the
+ * same glyph, or the radical family's recorded form — never from the head form; a form with no
+ * recorded count stays undefined (shown as "–"). `traditional` mirrors the tile's purple rule.
+ */
+function formStrokeCounts(forms: string[], entry: LibraryEntry, kind: LibraryKind, familyId: number | undefined): { glyph: string; strokes: number | undefined; traditional: boolean }[] {
+  if (familyId !== undefined) {
+    const family = radicalFamily(familyId);
+    const recorded = family ? orderedRadicalForms(family) : [];
+    return forms.map((glyph, index) => ({ glyph, strokes: recorded.find(form => form.character === glyph)?.strokeCount, traditional: radicalFormIsTraditional(glyph, familyId, index === 0) }));
+  }
+  const records = libraryRecords(kind === 'Components' ? 'Components' : 'Characters');
+  return forms.map((glyph, index) => ({ glyph, strokes: index === 0 ? entry.strokes : records.get(glyph)?.strokes, traditional: index === 0 ? entry.script === 'Traditional' : Boolean(historicalRadicalHeading(glyph, entry.kangxiIndex)) || glyphScript(glyph) === 'Traditional' }));
 }
 /** Glyphs a Components card shows: its whole group when it heads one, else just itself. */
 function componentCardForms(entry: LibraryEntry, includeTraditional: boolean): string[] {
@@ -265,7 +282,11 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
       <span className="word-character">{hasPinyin && spoken && reading && kind !== 'Strokes' && isMultiReading(reading) ? <span className="pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined} onError={setAudioError}/></span> : hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}`}>{glyph}</span>)}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning"><MeaningText text={tileMeaning}/></span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
     </Button>;
-  const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={kind === 'Components' ? componentCardRank(entry, displayedForms, preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{entry.strokes !== undefined && <span className="usage-strokes"> · {entry.strokes} strokes</span>}</> : entry.strokes !== undefined ? <span className="usage-strokes">{entry.strokes} strokes</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
+  // Several tiles: one count per tile in tile order ("10 / 15 strokes"), traditional counts purple.
+  const multiStrokes = displayedForms.length > 1 ? formStrokeCounts(displayedForms, entry, kind, family?.id) : null;
+  const strokesText = multiStrokes ? <>{multiStrokes.map((form, index) => <span key={form.glyph} className={form.traditional ? 'traditional-character' : undefined} title={form.strokes === undefined ? `Stroke count not recorded for ${form.glyph}` : `${form.glyph}: ${form.strokes} strokes`}>{index > 0 && ' / '}{form.strokes ?? '–'}</span>)} strokes</> : <>{entry.strokes} strokes</>;
+  const hasStrokes = multiStrokes ? multiStrokes.some(form => form.strokes !== undefined) : entry.strokes !== undefined;
+  const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={kind === 'Components' ? componentCardRank(entry, displayedForms, preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{hasStrokes && <span className="usage-strokes"> · {strokesText}</span>}</> : hasStrokes ? <span className="usage-strokes">{strokesText}</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
   // Stroke cards already read "STROKE" in their label, so they carry no repeated
   // "Stroke" metadata in the header or footer (null skips CardTopMeta's dot too).
   // The clipped-translation hint is portaled outside the grid, so the grid's
