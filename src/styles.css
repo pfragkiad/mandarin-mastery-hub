@@ -1975,3 +1975,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
    square's own background and stay at full strength. */
 .writer-board .writing-grid > :not(.writer-resize-handle) { transition: opacity .15s; }
 .writer-board.is-resizing .writing-grid > :not(.writer-resize-handle) { opacity: .2; }
+/* Component-name tile (radical variant identity): one border around the whole word, same height as glyph tiles. */
+.decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
+.variant-etymology .glyph-usage-section > .glyph-usage-parents + p.glyph-usage-meaning { margin-top: 8px; }
