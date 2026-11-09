@@ -39,7 +39,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Hook-shaped variant of the second radical",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 5,
@@ -53,7 +60,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Horizontal-hook variant of the second radical",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 9,
@@ -67,7 +81,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Person component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "单人旁",
+          "pinyin": "dānrénpáng",
+          "englishTranslation": "single-person side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 13,
@@ -81,7 +108,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Enclosing frame component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 15,
@@ -109,7 +143,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Two-dot graphical component (Unicode repeat symbol)",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 18,
@@ -123,7 +164,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Knife component on the right",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "立刀旁",
+          "pinyin": "lìdāopáng",
+          "englishTranslation": "standing-knife side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 18,
@@ -151,7 +205,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Knife-shaped component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "斜刀头",
+          "pinyin": "xiédāotóu",
+          "englishTranslation": "slanted-knife top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://memphischinese.com/pianpang.php",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 25,
@@ -165,7 +232,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Divination component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 26,
@@ -179,7 +253,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Seal or kneeling-person radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 27,
@@ -193,7 +274,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Cliff-shaped radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 39,
@@ -205,7 +293,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Child-shaped variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 42,
@@ -219,7 +314,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Small component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "小字头",
+          "pinyin": "xiǎozìtóu",
+          "englishTranslation": "small-character top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 42,
@@ -233,7 +341,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Three-dot small-shaped component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 43,
@@ -248,7 +363,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Lame-leg radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 47,
@@ -260,7 +382,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "River component form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 49,
@@ -274,7 +403,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Related form of the self radical; also an independent character",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 58,
@@ -302,7 +438,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Snout-shaped radical variant; not necessarily a hand component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 61,
@@ -316,7 +459,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Heart component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "竖心旁",
+          "pinyin": "shùxīnpáng",
+          "englishTranslation": "vertical-heart side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 61,
@@ -330,7 +486,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Heart component at the bottom",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 64,
@@ -344,7 +507,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Hand component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "提手旁",
+          "pinyin": "tíshǒupáng",
+          "englishTranslation": "raised-hand side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 66,
@@ -358,7 +534,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Tap/strike component on the right",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "反文旁",
+          "pinyin": "fǎnwénpáng",
+          "englishTranslation": "reversed-script side component (conventional name)",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 71,
@@ -372,7 +561,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Without / not-have radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 78,
@@ -386,7 +582,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Death/bone-fragment component form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 80,
@@ -400,7 +603,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Not / do-not radical variant; also mother character",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 83,
@@ -414,7 +624,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Clan radical variant; also independent people character",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 85,
@@ -428,7 +645,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Three-dot water component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "三点水",
+          "pinyin": "sāndiǎnshuǐ",
+          "englishTranslation": "three-dot water component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 85,
@@ -442,7 +672,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Water component at the bottom",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 86,
@@ -470,7 +707,20 @@
           "displayAs": "alternative_dictionary_definition"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Four-dot fire component at the bottom",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "四点底",
+          "pinyin": "sìdiǎndǐ",
+          "englishTranslation": "four-dot bottom component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://memphischinese.com/pianpang.php",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 87,
@@ -499,7 +749,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Claw or downward-hand component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "爪字头",
+          "pinyin": "zhǎozìtóu",
+          "englishTranslation": "claw top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 90,
@@ -513,7 +776,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Split-wood/bed-left radical simplified form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "将字旁",
+          "pinyin": "jiàngzìpáng",
+          "englishTranslation": "jiàng-character side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 93,
@@ -527,7 +803,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Ox/cow component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 93,
@@ -539,7 +822,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Ox/cow component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "牛字旁",
+          "pinyin": "niúzìpáng",
+          "englishTranslation": "ox/cow side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 94,
@@ -553,7 +849,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Dog/animal component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "反犬旁",
+          "pinyin": "fǎnquǎnpáng",
+          "englishTranslation": "reversed-dog side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 96,
@@ -593,7 +902,10 @@
           "preferredLabel": "Jade component (variant of 玉)",
           "componentName": {
             "hanzi": "斜玉旁",
-            "pinyin": "xiéyùpáng"
+            "pinyin": "xiéyùpáng",
+            "englishTranslation": "slanted jade component (usually on the left)",
+            "translationType": "conventional_component_name_translation",
+            "translationSourceUrl": "https://memphischinese.com/pianpang.php"
           },
           "readingNote": "yù is the parent radical’s dictionary reading, not an independent lexical reading assigned to ⺩.",
           "usageConstraint": "Use this meaning for 玉-derived jade components; a visually similar 王 shape does not by itself prove jade origin."
@@ -612,6 +924,19 @@
         "doNotOverwriteCharacterEntry": "王 (wáng) retains its ordinary dictionary meaning and reading in the Characters view.",
         "doNotRewriteSourceGlyph": "Keep the recorded form 王 and alias ⺩ unchanged to preserve source mappings.",
         "exampleCurationNote": "Prefer unambiguous jade-component examples such as 珠 (zhū) over 玉 (yù) itself in a form-specific “In a character” list; do not alter automated corpus results without checking their decomposition provenance."
+      },
+      "componentNaming": {
+        "englishDisplayName": "Jade component (usually on the left); looks like the king character",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "斜玉旁",
+          "pinyin": "xiéyùpáng",
+          "englishTranslation": "slanted jade component (usually on the left)",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://memphischinese.com/pianpang.php",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
       }
     },
     {
@@ -626,7 +951,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Foot-related radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 113,
@@ -654,7 +986,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Ritual/altar component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "示字旁",
+          "pinyin": "shìzìpáng",
+          "englishTranslation": "shì (ritual/altar) side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 118,
@@ -668,7 +1013,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Bamboo component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "竹字头",
+          "pinyin": "zhúzìtóu",
+          "englishTranslation": "bamboo top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 120,
@@ -682,7 +1040,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Silk/thread component on the left, simplified",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "绞丝旁",
+          "pinyin": "jiǎosīpáng",
+          "englishTranslation": "twisted-silk/thread side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 122,
@@ -710,7 +1081,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Net-shaped radical component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 122,
@@ -738,7 +1116,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Net-shaped top component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 122,
@@ -766,7 +1151,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Net-shaped top component (four-square form)",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 122,
@@ -794,7 +1186,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Net-shaped radical component",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 123,
@@ -808,7 +1207,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Sheep component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 123,
@@ -822,7 +1228,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Sheep-related component form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 123,
@@ -836,7 +1249,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Sheep-related historical form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 125,
@@ -850,7 +1270,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Old/elder component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "老字头",
+          "pinyin": "lǎozìtóu",
+          "englishTranslation": "old/elder top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 129,
@@ -864,7 +1297,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Writing-brush radical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 130,
@@ -892,7 +1332,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Flesh/meat component; often looks like moon",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 140,
@@ -907,7 +1354,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Grass/plant component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "草字头",
+          "pinyin": "cǎozìtóu",
+          "englishTranslation": "grass top component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 141,
@@ -921,7 +1381,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Tiger-shaped full character form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 145,
@@ -949,7 +1416,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Clothing component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "衣字旁",
+          "pinyin": "yīzìpáng",
+          "englishTranslation": "clothing side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 146,
@@ -963,7 +1443,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Cover/over component form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 146,
@@ -991,7 +1478,14 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Cover-radical classification; also independent west character",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 148,
@@ -1005,7 +1499,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Horn radical historical graphical variant",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 149,
@@ -1019,7 +1520,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Speech component on the left, simplified",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "言字旁",
+          "pinyin": "yánzìpáng",
+          "englishTranslation": "speech side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 149,
@@ -1031,7 +1545,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Speech component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 157,
@@ -1045,7 +1566,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Foot component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "足字旁",
+          "pinyin": "zúzìpáng",
+          "englishTranslation": "foot side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 162,
@@ -1061,7 +1595,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Movement/walking component wrapping bottom-left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "走之旁",
+          "pinyin": "zǒuzhīpáng",
+          "englishTranslation": "walking/movement wrapping component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 163,
@@ -1089,7 +1636,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Settlement/town component on the right",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "右耳刀",
+          "pinyin": "yòuěrdāo",
+          "englishTranslation": "right-ear-knife component (conventional name)",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 167,
@@ -1103,7 +1663,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Metal/gold component on the left, simplified",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "金字旁",
+          "pinyin": "jīnzìpáng",
+          "englishTranslation": "metal/gold side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 170,
@@ -1131,7 +1704,20 @@
           "displayAs": "historical_note_or_warning"
         }
       ],
-      "doNotInferNoAdditionalMeanings": false
+      "doNotInferNoAdditionalMeanings": false,
+      "componentNaming": {
+        "englishDisplayName": "Hill/steps component on the left",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "左耳刀",
+          "pinyin": "zuǒěrdāo",
+          "englishTranslation": "left-ear-knife component (conventional name)",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     },
     {
       "radicalId": 173,
@@ -1145,7 +1731,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Rain component at the top",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 174,
@@ -1159,7 +1752,14 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Blue-green radical simplified or alternate form",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": null,
+        "nameStatus": "no_documented_chinese_component_name_in_this_audit"
+      }
     },
     {
       "radicalId": 184,
@@ -1173,7 +1773,20 @@
       "classificationInUploadedData": "variant",
       "etymologyReviewStatus": "no_source_supported_additional_claim_in_this_audit",
       "reviewedClaims": [],
-      "doNotInferNoAdditionalMeanings": true
+      "doNotInferNoAdditionalMeanings": true,
+      "componentNaming": {
+        "englishDisplayName": "Food/eating component on the left, simplified",
+        "englishDisplayNameType": "descriptive_editorial_label",
+        "englishDisplayNameEvidence": "derived from recorded radical family and component form; not an etymological claim",
+        "chineseName": {
+          "hanzi": "食字旁",
+          "pinyin": "shízìpáng",
+          "englishTranslation": "food side component",
+          "translationType": "conventional_component_name_translation",
+          "sourceUrl": "https://www.hypy.com.cn/pianpangbushou.html",
+          "sourceStatus": "name_list_reference; not independent historical verification"
+        }
+      }
     }
   ],
   "characterSpecificFollowUps": [
@@ -1222,5 +1835,19 @@
     "contextualOrigins",
     "sourceEvidence",
     "sourceStatus"
-  ]
+  ],
+  "componentNameTranslationPolicy": {
+    "scope": "Every one of the 64 distinct variant records has an English display name. Chinese conventional names with pinyin and English translation are supplied only where represented in the cited component name lists.",
+    "fields": {
+      "componentNaming.englishDisplayName": "Concise English descriptive label for the variant; not a claim about lexical meaning or etymology",
+      "componentNaming.chineseName.englishTranslation": "Natural-language English rendering of a recorded conventional Chinese component name; only present when a name was mapped",
+      "componentNaming.chineseName=null": "No verified conventional Chinese name assigned in this dataset; not evidence that none exists"
+    },
+    "nameSources": {
+      "primary": "https://www.hypy.com.cn/pianpangbushou.html",
+      "school": "https://file.xdf.cn/uploads/200411/1113_200411232325UoPnWYuJ7Y1kzVRq.pdf",
+      "additional": "https://memphischinese.com/pianpang.php"
+    },
+    "warning": "Do not synthesize Chinese component names from these English labels. Keep dictionary readings, component names, graphic descriptions and etymological claims separate."
+  }
 }
