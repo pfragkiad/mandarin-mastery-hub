@@ -44,3 +44,16 @@ export function useCardPeek(mode: CardReveal, resetKey: string, remember = false
   }, [hiding, setRevealed]);
   return { hiding, revealed, reveal, ensureRevealed };
 }
+
+/**
+ * Double-click on a library card's plain area (padding, gaps, background) opens
+ * its details — only in Show all mode, where a single click does nothing.
+ * Double-clicks on text (hanzi, pinyin, translation, labels) keep native word
+ * selection, and controls (speaker, Save, Details, Practice, links) are ignored.
+ * The card's own transparent wrapper button counts as plain area.
+ */
+const CARD_CONTENT = 'a, input, select, textarea, button:not(.word-open), [role="button"]:not(.word-open), .pinyin, .word-hanzi-tile, .tile-hanzi-row, .tile-form, .word-meaning, .tile-absent, .word-card-top span, .record-card-footer span, svg';
+export function isPlainCardDoubleClick(mode: CardReveal, target: EventTarget | null): boolean {
+  if (mode !== 'all' || !(target instanceof Element)) return false;
+  return !target.closest(CARD_CONTENT);
+}
