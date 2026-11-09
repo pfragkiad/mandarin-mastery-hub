@@ -7259,7 +7259,7 @@
       "瞭": {
         "classification": "context_dependent_not_error",
         "explanation": "In understanding/seeing-clearly contexts, 瞭 is an optional traditional spelling in Taiwan; Taiwan MOE accepts both 了解 and 瞭解. The grammatical particle 了 is unchanged.",
-        "example": "了解 → 了解 / 瞭解 (both accepted in Taiwan); 吃了 → 吃了 (Taiwan writing; OpenCC base s2t records 喫了)",
+        "example": "了解 → 了解 / 瞭解 (both accepted in Taiwan); 吃了 → 吃了 (Taiwan writing uses 吃; 喫了 is an older form seen in OpenCC's basic conversion)",
         "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63145",
         "evidenceScope": "All examples in this note were individually reviewed against cited pinned OpenCC phrase records or identified supplementary sources. This does not establish unconditional character conversion, all regional spelling choices or full mainland-2013 certification.",
         "lexicalExampleEvidenceStatus": "supported_with_qualification",
