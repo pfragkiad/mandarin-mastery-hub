@@ -2,7 +2,7 @@ import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { nearestRecordedRank } from '@/lib/rank-jump';
@@ -284,7 +284,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
     </Button>;
   // Several tiles: one count per tile in tile order ("10 / 15 strokes"), traditional counts purple.
   const multiStrokes = displayedForms.length > 1 ? formStrokeCounts(displayedForms, entry, kind, family?.id) : null;
-  const strokesText = multiStrokes ? <>{multiStrokes.map((form, index) => <span key={form.glyph} className={form.traditional ? 'traditional-character' : undefined} title={form.strokes === undefined ? `Stroke count not recorded for ${form.glyph}` : `${form.glyph}: ${form.strokes} strokes`}>{index > 0 && ' / '}{form.strokes ?? '–'}</span>)} strokes</> : <>{entry.strokes} strokes</>;
+  const strokesText = multiStrokes ? <>{multiStrokes.map((form, index) => <Fragment key={form.glyph}>{index > 0 && ' / '}<span className={form.traditional ? 'traditional-character' : undefined} title={form.strokes === undefined ? `Stroke count not recorded for ${form.glyph}` : `${form.glyph}: ${form.strokes} strokes`}>{form.strokes ?? '–'}</span></Fragment>)} strokes</> : <>{entry.strokes} strokes</>;
   const hasStrokes = multiStrokes ? multiStrokes.some(form => form.strokes !== undefined) : entry.strokes !== undefined;
   const metadata = kind !== 'Strokes' && usageOrder.loaded ? <><UsageLabel rank={kind === 'Components' ? componentCardRank(entry, displayedForms, preferences.includeTraditional) : usageRank(entry, kind, preferences.includeTraditional)} kind={kind} compact/>{hasStrokes && <span className="usage-strokes"> · {strokesText}</span>}</> : hasStrokes ? <span className="usage-strokes">{strokesText}</span> : info.component || kind === 'Components' ? 'Component form' : kind === 'Strokes' ? null : 'Stroke count not recorded';
   // Stroke cards already read "STROKE" in their label, so they carry no repeated
