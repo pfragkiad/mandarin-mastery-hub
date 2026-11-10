@@ -532,6 +532,10 @@ this keeps the number right beside the stroke tile. */
   border-radius: 999px;
   border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent);
   background: color-mix(in oklch, var(--traditional) 16%, var(--card));
+  /* A lavender tint that keeps the traditional hue: mixing the token with the card in oklch
+     drifts the hue, so the fill is built from the token's own hue instead. The line above stays
+     as the fallback where relative colour syntax is not supported. */
+  background: oklch(from var(--traditional) 0.93 0.035 h);
   color: var(--traditional);
   pointer-events: none;
 }
@@ -543,6 +547,7 @@ this keeps the number right beside the stroke tile. */
     .radical-form-choice.is-traditional,
     .pinyin-character-glyph.is-traditional)::after {
   background: color-mix(in oklch, var(--traditional) 26%, var(--card));
+  background: oklch(from var(--traditional) 0.3 0.055 h);
   border-color: color-mix(in oklch, var(--traditional) 62%, transparent);
 }
 /* Library card form boxes are tight around their glyph, so the stamp is pushed further off the
