@@ -1236,10 +1236,10 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Match the bordered search wrapper, not just its inner input: Comfortable
    includes 44px input + 12px padding + 2px border. Keep mobile touch sizing. */
 html[data-display-size='comfortable'] .shared-filter-form .filter-select { height: 58px; }
-@media (max-width: 1280px) {
-  .library-page .shared-filter-form .filter-select { height: 44px; }
-  html[data-display-size='comfortable'] .library-page .shared-filter-form .filter-select { height: 46px; }
-}
+/* No separate ≤1280px dropdown height: on those widths the dropdowns live in the Filters
+   sheet, and the inline form only shows briefly (first paint, before the screen-size check
+   runs), where a shorter dropdown sat beside the full-height search box. Inline dropdowns
+   therefore always match the search box at every width. */
 .filter-submit { display: flex; gap: 2px; align-items: center; }
 .filter-submit button { height: 36px; }
 .filter-submit button[type='button'] { width: 32px; }
@@ -1927,7 +1927,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
 .pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
-.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+/* padding-right narrows the five tiles slightly so the no-recording stamp, which hangs off a
+   tile's top-right corner, always has room inside the card instead of being clipped at its edge. */
+.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; padding-right: 10px; }
 /* A tone the syllable doesn't use: a quiet slot with one thin diagonal slash across it.
    Its contour and spelling are invisible spacers, so it matches the other tiles' height. */
 .pinyin-tone-button.is-absent { --slash: color-mix(in oklab, var(--muted-foreground) 45%, transparent); cursor: default; border-color: color-mix(in oklab, var(--border) 60%, transparent);
@@ -1935,7 +1937,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button.is-absent small { color: color-mix(in oklab, var(--muted-foreground) 60%, transparent); }
 .pinyin-tone-button.is-absent.is-absent.is-absent:hover { border-color: color-mix(in oklab, var(--border) 60%, transparent); }
 .pinyin-tone-spacer { display: contents; visibility: hidden; }
-.pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 5px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
+.pinyin-tone-button { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 5px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
 .pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
