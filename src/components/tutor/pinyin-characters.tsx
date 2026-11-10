@@ -75,10 +75,15 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
               text. A grouped row shows one box per form, each opening its own exact record. */}
           <span className="pinyin-character-glyphs">{forms.map(entry => {
             const traditional = entry.script === 'Traditional';
+            // The hint always states the action, never the meaning (already printed to the
+            // right of the boxes) or the script alone (the purple box / Traditional pill
+            // already show it). A Kangxi radical character opens its radical card, every
+            // other form opens its own character details — the same rule as destinationFor.
+            const target = radicalCard(entry.hanzi) ? 'radical card' : 'character details';
             return <Link key={entry.id} to="/characters" search={destinationFor(entry)}
               className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
-              title={`${traditional ? 'Traditional form' : forms.length > 1 ? 'Simplified form' : meaning || ''}`.trim() || undefined}
-              aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its details`}
+              title={`Click to open ${entry.hanzi}'s ${target}`}
+              aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its ${target}`}
               // The details window's Back returns to this exact sound (syllable + tone in the URL).
               onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
               {entry.hanzi}
