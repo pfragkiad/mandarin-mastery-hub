@@ -1833,6 +1833,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button.is-absent { --slash: color-mix(in oklab, var(--muted-foreground) 45%, transparent); cursor: default; border-color: color-mix(in oklab, var(--border) 60%, transparent);
   background: linear-gradient(to top right, transparent calc(50% - .6px), var(--slash) calc(50% - .6px), var(--slash) calc(50% + .6px), transparent calc(50% + .6px)); }
 .pinyin-tone-button.is-absent small { color: color-mix(in oklab, var(--muted-foreground) 60%, transparent); }
+.pinyin-tone-button.is-absent.is-absent.is-absent:hover { border-color: color-mix(in oklab, var(--border) 60%, transparent); }
 .pinyin-tone-spacer { display: contents; visibility: hidden; }
 .pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 5px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
