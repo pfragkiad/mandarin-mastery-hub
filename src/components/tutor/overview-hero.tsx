@@ -11,6 +11,7 @@ import { libraryEntries, libraryDestination, savedGlyphEntry, savedGlyphDestinat
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
+import { SoundChartLink } from './sound-chart-link';
 
 function cssColorToHex(value: string) {
   const ctx = document.createElement('canvas').getContext('2d');
@@ -75,7 +76,7 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
       {component && <span className="daily-hero-ghost" aria-hidden="true" lang="zh-CN">{component}</span>}
       <div className="eyebrow daily-hero-label">CHARACTER OF THE DAY</div>
       {entry ? <>
-        <DailyPinyin entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin}/>
+        <DailyPinyin entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin} chartLinks={preferences.soundChartLinks !== false}/>
         <StrokeReveal hanzi={entry.hanzi}/>
         <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>
         <div className="daily-hero-actions">
@@ -88,18 +89,20 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
   </section>;
 }
 
-/** The reading and its audio control on one line, above the character. */
-function DailyPinyin({ entry, slow, showPinyin }: { entry: LibraryEntry; slow: boolean; showPinyin: boolean }) {
+/** The reading and its audio control on one line, above the character. `chartLinks` (the
+ *  "Sound chart links on cards" setting) adds each reading's Sound chart link after its speaker. */
+function DailyPinyin({ entry, slow, showPinyin, chartLinks }: { entry: LibraryEntry; slow: boolean; showPinyin: boolean; chartLinks: boolean }) {
   const [error, setError] = useState<string | null>(null);
   const available = usePronunciationAvailability(Boolean(characterRecording(entry.hanzi, entry.pinyin)), entry.pinyin);
   // Several readings: each beside its own speaker (hidden pinyin keeps one per reading too).
   if (isMultiReading(entry.pinyin)) return <div className="daily-hero-pinyin">
-    <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={showPinyin ? 'pinyin' : 'sr-only'} onError={setError}/>
+    <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={showPinyin ? 'pinyin' : 'sr-only'} onError={setError} chartFrom={chartLinks ? entry.hanzi : undefined}/>
     {error && <p className="library-note" role="status">{error}</p>}
   </div>;
   return <div className="daily-hero-pinyin">
     {showPinyin && <span className="pinyin">{entry.pinyin}</span>}
     <Button variant="ghost" size="icon" disabled={!available} aria-label={available ? `Listen to ${entry.hanzi}` : `No audio available for ${entry.hanzi}`} onClick={async () => setError(await playCharacter(entry.hanzi, slow, entry.pinyin))}><Volume2/></Button>
+    {chartLinks && entry.pinyin && <SoundChartLink reading={entry.pinyin} from={entry.hanzi} variant="header"/>}
     {error && <p className="library-note" role="status">{error}</p>}
   </div>;
 }
