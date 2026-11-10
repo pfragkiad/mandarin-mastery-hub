@@ -45,22 +45,22 @@ export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFi
   catalog.loaded = true; catalog.version += 1;
 }
 
-/** Reviewed per-reading meanings for a character, in its recorded reading order, or null.
- *  Fails closed: the split applies only while the character's catalogue row still records
- *  exactly the reviewed combined meaning and exactly the reviewed set of readings, so a later
- *  data correction can never leave a stale split showing (it falls back to the combined text). */
-export function readingMeanings(glyph: string, recordedReading: string, recordedMeaning: string): { reading: string; meaning: string }[] | null {
+/** Reviewed per-reading meanings for a Characters record, in its recorded reading order, or null.
+ *  Fails closed: the split applies only while the character's own catalogue row still records
+ *  exactly the reviewed combined meaning and a reading list matching the reviewed readings, so a
+ *  later data correction can never leave a stale split showing (callers keep the combined text). */
+export function readingMeanings(glyph: string): { reading: string; meaning: string }[] | null {
   const record = catalog.readingMeanings[glyph];
-  if (!record || record.combined !== recordedMeaning) return null;
-  const readings = recordedReading.split('/').map(part => part.trim()).filter(Boolean);
-  const keys = Object.keys(record.readings);
-  if (readings.length !== keys.length || readings.some(reading => !record.readings[reading])) return null;
+  const row = record ? catalog.characters.find(item => item[0] === glyph) : undefined;
+  if (!record || !row || row[2] !== record.combined) return null;
+  const readings = row[1].split('/').map(part => part.trim()).filter(Boolean);
+  if (readings.length < 2 || readings.length !== Object.keys(record.readings).length || readings.some(reading => !record.readings[reading])) return null;
   return readings.map(reading => ({ reading, meaning: record.readings[reading] as string }));
 }
 
 /** Meaning for one exact reading (e.g. 了 liǎo), or undefined when no reviewed split applies. */
-export function readingMeaning(glyph: string, recordedReading: string, recordedMeaning: string, reading: string): string | undefined {
-  return readingMeanings(glyph, recordedReading, recordedMeaning)?.find(item => item.reading === reading.normalize('NFC'))?.meaning;
+export function readingMeaning(glyph: string, reading: string): string | undefined {
+  return readingMeanings(glyph)?.find(item => item.reading === reading.normalize('NFC'))?.meaning;
 }
 
 let pending: Promise<void> | null = null;

@@ -49,7 +49,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
   // A multi-reading character (了 le / liǎo) shows the reviewed meaning of the reading this
   // sound card is about; without a reviewed split it keeps its combined dictionary meaning.
-  const shownMeaning = (entry: (typeof entries)[number]) => (tone !== null && entry.pinyin ? readingMeaning(entry.hanzi, entry.pinyin, entry.meaning, toneMark(base, tone)) : undefined) ?? entry.meaning;
+  const shownMeaning = (entry: (typeof entries)[number]) => (tone !== null ? readingMeaning(entry.hanzi, toneMark(base, tone)) : undefined) ?? entry.meaning;
 
   return <section className="pinyin-characters" aria-label="In a character">
     <div className="eyebrow">IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</div>
