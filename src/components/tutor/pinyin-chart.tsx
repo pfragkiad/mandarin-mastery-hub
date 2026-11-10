@@ -193,7 +193,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     if (keep !== undefined && hasRecording(data, base, keep)) void player.play(sound(base, keep));
   };
 
-  const narrow = useNarrowLibrary(850);
+  const narrow = useSoundWindowLayout(chartRef);
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
   // Previous/Next in the small-screen window walk the cards the grid shows, in grid order;
   // like a grid click they start a fresh Back trail.
@@ -208,7 +208,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
     onPlayAll={() => { if (!syllable) return; onTone(undefined); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }}
     onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }} />;
 
-  return <div className="pinyin-chart-layout" ref={chartRef}>
+  return <div className="pinyin-chart-host"><div className="pinyin-chart-layout" ref={chartRef}>
     <div className="pinyin-chart-main">
       {/* Same explicit Apply as the libraries: edits stay in the draft until Apply/Enter, X clears
           at once. Dropdowns offer only choices that still have syllables under the applied search
@@ -257,7 +257,35 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
         {panel(true)}
       </PinyinSoundSheet>
       : panel(false)}
-  </div>;
+  </div></div>;
+}
+
+/**
+ * Whether the Selected sound card should open in the centred window instead of beside the grid.
+ *
+ * The decision is made in CSS only (src/styles.css, `@container pinyin-chart`): the card goes
+ * into the window whenever the chart's own width — what is left after the side menu — would
+ * squeeze the grid column and its search box; Comfortable size needs more room than Compact.
+ * The container query sets `--pinyin-sound-window: 1` on the layout, and this hook simply reads
+ * it back, so the server render (card beside the grid, hidden by CSS when narrow) and the
+ * hydrated choice can never disagree. Re-read on any chart resize (window, side menu pinned or
+ * hidden) and when the Compact/Comfortable size changes on <html>.
+ */
+function useSoundWindowLayout(layoutRef: React.RefObject<HTMLDivElement | null>) {
+  const [windowed, setWindowed] = useState(false);
+  useEffect(() => {
+    const layout = layoutRef.current;
+    const host = layout?.parentElement;
+    if (!layout || !host) return;
+    const update = () => setWindowed(getComputedStyle(layout).getPropertyValue('--pinyin-sound-window').trim() === '1');
+    update();
+    const resize = new ResizeObserver(update);
+    resize.observe(host);
+    const size = new MutationObserver(update);
+    size.observe(document.documentElement, { attributes: true, attributeFilter: ['data-display-size'] });
+    return () => { resize.disconnect(); size.disconnect(); };
+  }, [layoutRef]);
+  return windowed;
 }
 
 /**
