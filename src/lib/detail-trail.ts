@@ -48,3 +48,14 @@ export const soundTrail = createTrail();
  * mistaken for a return to the earlier one.
  */
 export const historyEntry = () => `${window.location.href}#${(window.history.state as { __TSR_key?: string } | null)?.__TSR_key ?? ''}`;
+
+/**
+ * One-shot request from a glyph card's or details window's Sound chart link: when the chart
+ * mounts it lines the selected syllable's grid card up with the top of the Selected sound
+ * card (wide screens), instead of the usual "scroll only if hidden" reveal. Taken once.
+ */
+let alignOnArrival = false;
+export const soundChartArrival = {
+  request() { alignOnArrival = true; },
+  take() { const value = alignOnArrival; alignOnArrival = false; return value; },
+};
