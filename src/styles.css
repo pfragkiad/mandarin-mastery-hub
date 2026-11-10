@@ -2059,13 +2059,14 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .association-note-popover .spelling-examples table { width: 100%; }
 .association-note-popover th { overflow-wrap: normal; white-space: nowrap; }
 
-/* Sound chart link beside a glyph speaker (SoundChartLink): link colour and a small gap set it
-   apart from the neutral speaker, so listening and leaving for the Sound chart never look alike. */
-.sound-chart-link { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px; margin-left: 4px; border-radius: 6px; color: var(--primary); text-decoration: none; cursor: pointer; }
+/* Sound chart link beside a glyph speaker (SoundChartLink): the link colour sets it apart from the
+   neutral speaker. Margins are tuned so the speaker icon sits exactly midway between the last pinyin
+   letter and this icon (equal visible gaps, measured on the icons, not their hit areas). */
+.sound-chart-link { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px; margin-left: -7.5px; border-radius: 6px; color: var(--primary); text-decoration: none; cursor: pointer; }
 .sound-chart-link svg { width: 16px; height: 16px; }
 .sound-chart-link:hover { background: color-mix(in oklab, var(--primary) 10%, transparent); }
 .sound-chart-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
-.sound-chart-link.is-tile { width: 18px; height: 18px; margin-left: 6px; border-radius: 5px; }
+.sound-chart-link.is-tile { width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
-.library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; }
+.library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .sound-chart-link.is-tile svg { width: 17px; height: 17px; }
