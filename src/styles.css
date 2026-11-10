@@ -535,6 +535,16 @@ this keeps the number right beside the stroke tile. */
   color: var(--traditional);
   pointer-events: none;
 }
+/* In dark mode the card is already near-black, so a light purple tint of it is almost
+   invisible: the stamp takes a stronger purple fill and border there so it reads as its own
+   chip rather than a faint outline on the tile. */
+:root.dark :is(.tile-form.traditional-character,
+    .decomposition-glyph.traditional-character,
+    .radical-form-choice.is-traditional,
+    .pinyin-character-glyph.is-traditional)::after {
+  background: color-mix(in oklch, var(--traditional) 26%, var(--card));
+  border-color: color-mix(in oklch, var(--traditional) 62%, transparent);
+}
 /* Library card form boxes are tight around their glyph, so the stamp is pushed further off the
    corner there (and the boxes themselves grew slightly, 1.18em -> 1.34em) to keep it clear of
    the character's own strokes. */
