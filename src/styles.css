@@ -1236,7 +1236,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Match the bordered search wrapper, not just its inner input: Comfortable
    includes 44px input + 12px padding + 2px border. Keep mobile touch sizing. */
 html[data-display-size='comfortable'] .shared-filter-form .filter-select { height: 58px; }
-@media (max-width: 760px) {
+@media (max-width: 1280px) {
   .library-page .shared-filter-form .filter-select { height: 44px; }
   html[data-display-size='comfortable'] .library-page .shared-filter-form .filter-select { height: 46px; }
 }
@@ -1686,7 +1686,9 @@ html[data-display-size='comfortable'] {
 .mobile-state-chip:hover, .mobile-state-chip:focus-visible, .mobile-state-chip:active { background: transparent !important; color: var(--primary); }
 .mobile-state-chip:hover svg:last-child { opacity: 0.75; }
 .mobile-filter-count { background: var(--secondary); color: var(--primary); border-radius: 4px; padding: 0 5px; font-size: 12px; }
-@media (max-width: 760px) {
+/* Match useSmallLibraryScreen: tablets move filters into the sheet before
+   the sidebar and split Sound chart can squeeze the search input. */
+@media (max-width: 1280px) {
   .mobile-library-filters { display: grid; gap: 8px; }
   .library-page .mobile-library-filters .filter-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px; margin: 0; }
   .library-page .mobile-library-filters .search-field,
@@ -1707,6 +1709,15 @@ html[data-display-size='comfortable'] {
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { min-height: 36px; height: auto; font-size: 13px; padding-inline: 8px; }
   /* Filters and Study open matching sheets, so they share one width and their state chips line up. */
   .library-page .mobile-filter-actions > button:first-child, .library-page .catalog-tools-row > button:first-child { min-width: 112px; justify-content: flex-start; }
+}
+/* Tablet Comfortable controls retain desktop readability and search height;
+   the existing tighter phone sizing below 761px remains unchanged. */
+@media (min-width: 761px) and (max-width: 1280px) {
+  html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field { min-height: 58px; padding: 6px 8px; gap: 8px; }
+  html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field input { height: 44px; font-size: var(--ui-control-size); }
+  html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field .search-toggle { height: 40px; min-height: 40px; padding-inline: 14px; font-size: 12px; }
+  html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
+  html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { min-height: 40px; font-size: var(--ui-control-size); }
 }
 
 /* Comfortable card actions (2×2 block, every width): Details and Save share the top
