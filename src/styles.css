@@ -522,10 +522,10 @@ this keeps the number right beside the stroke tile. */
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(30%, -30%);
+  transform: translate(46%, -46%);
   z-index: 2;
   font-family: var(--font-hanzi);
-  font-size: var(--traditional-mark-size, 11px);
+  font-size: var(--traditional-mark-size, 13px);
   font-weight: 400;
   line-height: 1;
   padding: 1px 3px;
