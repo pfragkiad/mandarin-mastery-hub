@@ -294,14 +294,18 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
       {current !== null && <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span>}
     </div>
-    <p className="pinyin-player-tone">{current !== null ? `${TONE_HINTS[current]}${hasRecording(data, syllable.base, current) ? '' : ' · no recording'}` : 'Click a tone to hear it'}</p>
+    {/* The tone's description; an unrecorded tone adds an italic "no recording" here
+        rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
+    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) && <> · <em>no recording</em></>}</> : 'Click a tone to hear it'}</p>
     <div className="pinyin-tone-buttons" role="group" aria-label="Tones">{syllable.tones.map(t => {
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
         aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
-        {/* Neutral tone shows its spelling (ma) like the other cards; the caption names the tone so "No recording" never reads as the whole syllable missing. */}
-        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{playable ? `Tone ${t}` : t === 5 ? <>Neutral<br />No recording</> : 'No recording'}</small>
+        {/* Neutral tone shows its spelling (ma) like the other cards. Captions stay one line
+            ("Tone N" / "Neutral"); a missing recording shows through the dashed border, the
+            tooltip and the italic note under the big syllable. */}
+        <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
       </button>;
     })}</div>
     <div className="pinyin-player-actions">

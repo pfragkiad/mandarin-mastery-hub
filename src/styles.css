@@ -1838,10 +1838,16 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded):hover, .pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded):focus-visible { border-color: var(--tone-ink); color: var(--tone-ink); }
 .pinyin-tone-button:is(.tone-1, .tone-2, .tone-3, .tone-4):not(.is-unrecorded).is-current { border-color: var(--tone-ink); color: var(--tone-ink); background: color-mix(in oklch, var(--tone-ink) 14%, transparent); }
 /* Unrecorded tone (neutral): selectable for its characters, never played; grey instead of the accent. */
-.pinyin-tone-button.is-unrecorded { color: var(--muted-foreground); border-style: dashed; }
-.pinyin-tone-button.is-unrecorded small { font-size: 8px; text-align: center; line-height: 1.2; }
-.pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { border-color: var(--muted-foreground); color: var(--foreground); }
-.pinyin-tone-button.is-unrecorded.is-current { border-color: var(--muted-foreground); color: var(--foreground); background: var(--muted); }
+/* Its dashed border is drawn by an SVG mask (4px dashes, 5px gaps) instead of
+   border-style: dashed, whose tight browser dashes barely read as dashed. The real border
+   stays transparent so the tile keeps its size; the mask's colour follows --dash-ink. */
+.pinyin-tone-button.is-unrecorded { --dash-ink: color-mix(in oklab, var(--muted-foreground) 75%, transparent); position: relative; color: var(--muted-foreground); border-color: transparent; }
+.pinyin-tone-button.is-unrecorded::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; background: var(--dash-ink); pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' rx='7' ry='7' fill='none' stroke='black' stroke-width='2' stroke-dasharray='4 5'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' rx='7' ry='7' fill='none' stroke='black' stroke-width='2' stroke-dasharray='4 5'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+.pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { --dash-ink: var(--muted-foreground); border-color: transparent; color: var(--foreground); }
+.pinyin-tone-button.is-unrecorded.is-current { --dash-ink: var(--foreground); border-color: transparent; color: var(--foreground); background: var(--muted); }
+.pinyin-player-tone em { font-style: italic; color: var(--muted-foreground); }
 .pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
 /* The chosen tone's pill sits at the top right of the syllable row, its top level with the
    syllable's letters, coloured like the selected tone card (grey for the neutral tone). */
@@ -1962,7 +1968,6 @@ html[data-display-size='comfortable'] .pinyin-player-tone { font-size: 13px; lin
 html[data-display-size='comfortable'] .pinyin-player-back.pinyin-player-back { height: 32px; font-size: 13px; }
 html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 10px 4px 8px; gap: 4px; }
 html[data-display-size='comfortable'] .pinyin-tone-button small { font-size: 12px; }
-html[data-display-size='comfortable'] .pinyin-tone-button.is-unrecorded small { font-size: 11px; }
 html[data-display-size='comfortable'] .pinyin-tone-button .tone-contour { width: 40px; height: 26px; }
 html[data-display-size='comfortable'] .pinyin-player-actions { gap: 10px; }
 html[data-display-size='comfortable'] .pinyin-playall { min-height: 40px; }
