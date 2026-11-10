@@ -1885,6 +1885,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-body { margin-top: 22px; }
 /* The selected-sound card widens with the window (capped) so rows holding two or three
    script forms still leave their meanings room to breathe. */
+.pinyin-chart-host { container: pinyin-chart / inline-size; }
 .pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px); gap: 30px; align-items: start; }
 .pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
 /* Phones wrap the search and Filters button in .mobile-library-filters, whose inner form has no
@@ -2048,10 +2049,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-absent { margin-top: 10px; }
 @media (max-width: 850px) {
   .pinyin-tabs { display: none; }
-  .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  /* Small screens: the selected syllable opens in the top-anchored window
-     (.pinyin-sound-sheet); the beside-the-grid card is never shown, even before hydration. */
-  .pinyin-chart-layout > .pinyin-player { display: none; }
   .pinyin-player-empty { font-size: 15px; }
   .pinyin-player-title.pinyin { font-size: 28px; }
   .pinyin-progress { justify-content: flex-start; }
@@ -2106,7 +2103,6 @@ html[data-display-size='comfortable'] .pinyin-character-text .component-reuse-la
 html[data-display-size='comfortable'] .pinyin-character-meaning { font-size: var(--reference-translation-size); line-height: 1.5; }
 html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-more { font-size: 14px; }
 @media (max-width: 850px) {
-  html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); }
   html[data-display-size='comfortable'] .pinyin-player-empty { font-size: 17px; }
   html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 34px; }
 }
@@ -2222,3 +2218,18 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .daily-hero-pinyin .sound-chart-link { margin-left: -8px; }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link { width: 40px; height: 40px; margin-left: -12px; }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link svg { width: 16px; height: 16px; }
+
+/* Selected sound card: beside the grid only while the chart (its width after the side menu)
+   leaves the grid column enough room for a usable search box and two dropdowns; otherwise
+   the card opens in the centred window (.pinyin-sound-sheet), like the Glyphs details, and
+   the grid takes the full width. Comfortable controls are larger, so they switch sooner.
+   The beside-the-grid card is hidden here even before hydration; pinyin-chart.tsx reads
+   --pinyin-sound-window back so the JavaScript choice always matches these thresholds. */
+@container pinyin-chart (max-width: 1199px) {
+  .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
+  .pinyin-chart-layout > .pinyin-player { display: none; }
+}
+@container pinyin-chart (max-width: 1399px) {
+  html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
+  html[data-display-size='comfortable'] .pinyin-chart-layout > .pinyin-player { display: none; }
+}
