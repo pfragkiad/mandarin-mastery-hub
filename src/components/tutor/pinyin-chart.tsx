@@ -260,6 +260,16 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   </div>;
 }
 
+/**
+ * Hover hint for a tone tile. The tile already shows its contour, spelling and "Tone N"
+ * caption, so the hint says what clicking does instead: play the recorded sound (with
+ * the 1–4 key shortcut), or — when nothing was recorded — show the tone's characters.
+ */
+function toneTileHint(base: string, tone: Tone, playable: boolean): string {
+  if (!playable) return 'No recording · click to see its characters';
+  return `Click to listen to ${toneMark(base, tone)} (recorded sound)${tone <= 4 ? ` · or press ${tone}` : ''}`;
+}
+
 /** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
 function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
@@ -313,7 +323,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
-        aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
+        aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={toneTileHint(syllable.base, t, playable)} onClick={() => onTone(t)}>
         {/* Neutral tone shows its spelling (ma) like the other cards. Captions stay one line
             ("Tone N" / "Neutral"); a missing recording shows through the dashed border, the
             tooltip and the italic note under the big syllable. */}
