@@ -1826,7 +1826,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-empty { font-family: var(--font-display); font-size: 19px; line-height: 1.5; }
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
-.pinyin-player-tone { font-size: 12px; color: var(--muted-foreground); margin-top: -6px; }
+.pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
 .pinyin-tone-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
 .pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px 6px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
@@ -1843,8 +1843,10 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { border-color: var(--muted-foreground); color: var(--foreground); }
 .pinyin-tone-button.is-unrecorded.is-current { border-color: var(--muted-foreground); color: var(--foreground); background: var(--muted); }
 .pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
-/* The chosen tone's pill always sits at the top right, with or without a Back button. */
-.sound-tone-pill { margin-left: auto; color: var(--sound-link); border-color: color-mix(in oklab, var(--sound-link) 45%, transparent); white-space: nowrap; }
+/* The chosen tone's pill sits at the top right of the syllable row, its top level with the
+   syllable's letters, coloured like the selected tone card (grey for the neutral tone). */
+.pinyin-player-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.sound-tone-pill { margin-left: auto; margin-top: 6px; color: var(--tone-ink, var(--muted-foreground)); border-color: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 45%, transparent); white-space: nowrap; }
 .pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px 0 -4px -8px; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-back:hover { color: var(--primary); }
 .pinyin-player-back svg { width: 14px; height: 14px; }
