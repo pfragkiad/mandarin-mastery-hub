@@ -14,7 +14,7 @@ import { detailTrail } from '@/lib/detail-trail';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { readingMeaning } from '@/lib/catalog-store';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
-import { characterDestinations, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
+import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
@@ -46,10 +46,15 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
     const found = syllableCharacters(entries, base, tone, includeTraditional);
     return radicalsFirst(found, entry => { const radical = radicalCard(entry.hanzi); return radical ? usageRank(radical.entry, 'Radicals', includeTraditional) : undefined; });
   }, [entries, base, tone, includeTraditional, radicalCard, usageLoaded]);
-  const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
   // A multi-reading character (了 le / liǎo) shows the reviewed meaning of the reading this
   // sound card is about; without a reviewed split it keeps its combined dictionary meaning.
   const shownMeaning = (entry: (typeof entries)[number]) => (tone !== null ? readingMeaning(entry.hanzi, toneMark(base, tone)) : undefined) ?? entry.meaning;
+  // Simplified + traditional forms share a row only for an ordinary script pair recording
+  // the same meaning for this reading (groupScriptForms); "Show all" pages by rows, while
+  // the eyebrow keeps counting every listed character.
+  const rows = useMemo(() => groupScriptForms(matches, shownMeaning), [matches, base, tone]);
+  const shown = expanded ? rows : rows.slice(0, SYLLABLE_CHARACTERS_SHOWN);
+  const rankOf = (entry: (typeof entries)[number]) => rankFor(entry);
 
   return <section className="pinyin-characters" aria-label="In a character">
     <div className="eyebrow">IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</div>
@@ -57,35 +62,48 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
-        <ul className="pinyin-character-list">{shown.map(entry => { const meaning = shownMeaning(entry); return <li key={entry.id} className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}>
-          {/* Only the hanzi box is the link (like decomposition tiles), so hover and focus
-              outline the box alone; the rank and meaning beside it stay plain, selectable text. */}
-          <Link to="/characters" search={destinationFor(entry)}
-            className="pinyin-character-glyph" lang="zh-CN"
-            title={meaning || undefined} aria-label={`${entry.hanzi}${meaning ? `, ${meaning}` : ''} · open its details`}
-            // The details window's Back returns to this exact sound (syllable + tone in the URL).
-            onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
-            {entry.hanzi}
-          </Link>
-          {/* To the right of the box, centred on it: the coloured corpus rank and the
+        <ul className="pinyin-character-list">{shown.map(({ key, forms }) => {
+          // All forms in a row record the same meaning (groupScriptForms), so one line serves them.
+          const meaning = shownMeaning(forms[0]!);
+          const onlyTraditional = forms.every(form => form.script === 'Traditional');
+          return <li key={key} className={`pinyin-character${onlyTraditional ? ' traditional-character' : ''}${forms.length > 1 ? ' is-grouped' : ''}`}>
+          {/* Only the hanzi boxes are links (like decomposition tiles), so hover and focus
+              outline one box alone; the rank and meaning beside them stay plain, selectable
+              text. A grouped row shows one box per form, each opening its own exact record. */}
+          <span className="pinyin-character-glyphs">{forms.map(entry => {
+            const traditional = entry.script === 'Traditional';
+            return <Link key={entry.id} to="/characters" search={destinationFor(entry)}
+              className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
+              title={`${traditional ? 'Traditional form' : forms.length > 1 ? 'Simplified form' : meaning || ''}`.trim() || undefined}
+              aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its details`}
+              // The details window's Back returns to this exact sound (syllable + tone in the URL).
+              onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
+              {entry.hanzi}
+            </Link>;
+          })}</span>
+          {/* To the right of the boxes, centred on them: the coloured corpus rank and the
               meaning styled like the glyph details' "In a character" rows. */}
           <span className="pinyin-character-text">
             {/* Top line: rank, then the same pills Decomposition shows — Radical #N only from
-                the exact sourced glyph identity (never shape), Traditional from record metadata. */}
+                the exact sourced glyph identity (never shape), Traditional from record metadata
+                (a grouped row's purple box already marks its traditional form). Forms whose own
+                ranks differ list each rank in box order, joined by " / ". */}
             {(() => {
-              const radicals = radicalIdentity(entry.hanzi).radicals;
-              const traditional = entry.script === 'Traditional';
-              if (!usageOrder.loaded && !radicals.length && !traditional) return null;
+              const radicals = [...new Map(forms.flatMap(form => radicalIdentity(form.hanzi).radicals).map(radical => [radical.id, radical])).values()];
+              if (!usageOrder.loaded && !radicals.length && !onlyTraditional) return null;
+              const ranks = usageOrder.loaded ? forms.map(rankOf) : [];
+              const sameRank = ranks.every(({ kind, rank }) => kind === ranks[0]?.kind && rank === ranks[0]?.rank);
               return <span className="pinyin-character-facts">
-                {usageOrder.loaded && (() => { const { kind, rank } = rankFor(entry); return <UsageLabel rank={rank} kind={kind} compact />; })()}
+                {ranks.length > 0 && (sameRank ? <UsageLabel rank={ranks[0]!.rank} kind={ranks[0]!.kind} compact />
+                  : <span className="pinyin-character-ranks">{ranks.map(({ kind, rank }, i) => <span key={forms[i]!.id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact /></span>)}</span>)}
                 {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
-                {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
+                {onlyTraditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
               </span>;
             })()}
             {meaning && <span className="pinyin-character-meaning"><MeaningText text={meaning} /></span>}
           </span>
         </li>; })}</ul>
-        {matches.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
+        {rows.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
       </>}
   </section>;
 }
