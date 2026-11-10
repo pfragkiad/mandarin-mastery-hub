@@ -60,7 +60,7 @@ article.word-card { touch-action: manipulation; }
  --font-sans: 'DM Sans', sans-serif; --font-display: 'Lora', Georgia, serif;
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
 }
-:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --traditional: oklch(.46 .16 305); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
+:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
 @layer base { * { border-color: var(--border); } body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 14px; letter-spacing: 0; } button,a,input,select { -webkit-tap-highlight-color: transparent; } button,a { touch-action: manipulation; } button { cursor: pointer; } h1,h2,h3,p { margin: 0; } a { text-decoration: none; } input,select { font: inherit; } :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
 .workspace { --sidebar-width: 238px; min-height: 100vh; }
 .workspace.is-collapsed { --sidebar-width: 78px; }
@@ -249,6 +249,8 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
   --component-ink-0: oklch(.82 .115 210); --component-ink-1: oklch(.82 .115 50); --component-ink-2: oklch(.82 .115 145); --component-ink-3: oklch(.82 .115 330); --component-ink-4: oklch(.82 .115 85); --component-ink-5: oklch(.82 .115 275); --component-ink-6: oklch(.82 .115 25); --component-ink-7: oklch(.82 .115 175);
   color-scheme: dark;
   --banner-ink: oklch(.96 .009 140); --banner-surface: oklch(.19 .008 155); --banner-accent: oklch(.85 .075 65); --traditional: oklch(.81 .12 305);
+  /* Cyan Sound chart link: separate from the green (Simplified/link) and purple (Traditional) script colours. */
+  --sound-link: oklch(.82 .11 198);
   --background: oklch(.19 .008 155); --foreground: oklch(.94 .009 140);
   --card: oklch(.235 .009 155); --sidebar-bg: oklch(.215 .008 155);
   --primary: oklch(.8 .09 158); --primary-foreground: oklch(.19 .022 158);
@@ -2060,12 +2062,12 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .association-note-popover th { overflow-wrap: normal; white-space: nowrap; }
 
 /* Sound chart link beside a glyph speaker (SoundChartLink): the link colour sets it apart from the
-   neutral speaker. Margins are tuned so the speaker icon sits exactly midway between the last pinyin
+   neutral speaker; it is cyan (--sound-link) so it never reads as a Simplified or Traditional colour. Margins are tuned so the speaker icon sits exactly midway between the last pinyin
    letter and this icon (equal visible gaps, measured on the icons, not their hit areas). */
-.sound-chart-link { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px; margin-left: -7.5px; border-radius: 6px; color: var(--primary); text-decoration: none; cursor: pointer; }
+.sound-chart-link { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px; margin-left: -7.5px; border-radius: 6px; color: var(--sound-link); text-decoration: none; cursor: pointer; }
 .sound-chart-link svg { width: 16px; height: 16px; }
-.sound-chart-link:hover { background: color-mix(in oklab, var(--primary) 10%, transparent); }
-.sound-chart-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.sound-chart-link:hover { background: color-mix(in oklab, var(--sound-link) 12%, transparent); }
+.sound-chart-link:focus-visible { outline: 2px solid var(--sound-link); outline-offset: 1px; }
 .sound-chart-link.is-tile { width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
