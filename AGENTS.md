@@ -59,4 +59,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- Per-reading meanings come only from owner-reviewed catalog.json readingMeanings entries, applied by catalog-store readingMeanings only while the character row still records the reviewed combined meaning and readings; otherwise the combined meaning shows, so no sense is split or paired with a reading by inference.
