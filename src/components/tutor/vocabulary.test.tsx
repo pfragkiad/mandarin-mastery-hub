@@ -38,3 +38,13 @@ describe('Vocabulary keyboard paging', () => {
     expect(onPageChange).not.toHaveBeenCalled();
   });
 });
+
+// The collection is partial material, so the page must say so and name what is missing.
+describe('Vocabulary experimental status tag', () => {
+  it('shows an Experimental pill whose hint names the missing levels and sentences', async () => {
+    render(<VocabularyPage tab="word" onPageChange={vi.fn()}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Vocabulary is experimental — what this means' }));
+    expect(await screen.findByText(/levels 3 and above are not in the collection yet/)).toBeInTheDocument();
+    expect(screen.getByText(/Example sentences cover some entries only/)).toBeInTheDocument();
+  });
+});
