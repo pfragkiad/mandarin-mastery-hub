@@ -1530,6 +1530,31 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 .workspace.hamburger-navigation .mobile-menu { display: inline-flex; flex-shrink: 0; }
 /* Medium windows keep the hamburger even while the menu is pinned (it hides the menu); large windows only get it while the menu is hidden. */
 .workspace.has-menu-button .mobile-menu { display: inline-flex; flex-shrink: 0; }
+/* The menu button always sits at the window's left gutter and is large enough to
+   hit, so hiding the side menu never leaves the learner hunting for the way back.
+   It is taken out of the breadcrumb row (position:absolute inside the top bar) and
+   the breadcrumb label keeps its own aligned edge, so the page content never
+   shifts when the menu is hidden or shown. With the drawer open the button steps
+   past the 238px panel so the × stays visible and clickable above the scrim. */
+.workspace:is(.has-menu-button, .hamburger-navigation) .mobile-menu {
+  display: inline-flex;
+  position: absolute;
+  left: var(--workspace-gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 31;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+/* The shared button shrinks its icon to 16px; the menu button needs a bigger mark. */
+.workspace:is(.has-menu-button, .hamburger-navigation) .mobile-menu > svg { width: 22px; height: 22px; }
+.workspace:is(.has-menu-button, .hamburger-navigation).nav-expanded .mobile-menu { left: calc(238px + var(--workspace-gutter)); }
+/* Below the content column's width the breadcrumb label starts at the gutter too,
+   so reserve the button's width there; wider windows keep the label centred and clear. */
+@media (max-width: 1610px) {
+  .workspace:is(.has-menu-button, .hamburger-navigation) .breadcrumbs { padding-left: 56px; }
+}
 .workspace.hamburger-navigation .sidebar { width: 238px; transform: translateX(-100%); transition: transform .2s; background: color-mix(in oklab, var(--sidebar-bg) 97%, transparent); backdrop-filter: blur(4px); }
 .workspace.hamburger-navigation .sidebar.is-open { transform: translateX(0); box-shadow: var(--shadow-popover); }
 .workspace.hamburger-navigation .sidebar.is-open .brand-copy,
