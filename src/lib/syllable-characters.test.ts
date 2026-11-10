@@ -3,7 +3,8 @@ import fs from 'fs';
 import { hydrateCatalog } from './catalog-store';
 import { hydrateUsageOrder } from './usage-frequency';
 import { libraryEntries } from './character-library';
-import { characterDestinations, radicalDestinations, radicalsFirst, syllableCharacters } from './syllable-characters';
+import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from './syllable-characters';
+import { hydrateCharacterVariants } from './character-variants';
 import { usageRank } from './usage-frequency';
 
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
@@ -44,5 +45,30 @@ describe('Sound chart "In a character"', () => {
     const rows = syllableCharacters(libraryEntries('Characters'), 'pie', 3);
     const ordered = radicalsFirst(rows, entry => { const r = radicalCard(entry.hanzi); return r ? usageRank(r.entry, 'Radicals', false) : undefined; });
     expect(ordered[0]?.hanzi).toBe('丿');
+  });
+});
+
+describe('Sound chart groups script forms only for the same meaning', () => {
+  const rows = [
+    { id: 'a', hanzi: '贝', meaning: 'sea shell' },
+    { id: 'b', hanzi: '被', meaning: 'by' },
+    { id: 'c', hanzi: '貝', meaning: 'sea shell' },
+    { id: 'd', hanzi: '郁', meaning: 'dense' },
+    { id: 'e', hanzi: '鬱', meaning: 'depressed' },
+  ];
+  const head = (g: string) => ({ 貝: '贝', 鬱: '郁' } as Record<string, string>)[g] ?? g;
+  const order = (g: string) => (head(g) === '贝' ? ['贝', '貝'] : head(g) === '郁' ? ['郁', '鬱'] : [g]);
+  const grouped = groupScriptForms(rows, r => r.meaning, head, order).map(row => row.forms.map(f => f.hanzi).join(''));
+  it('puts 贝 and 貝 in one row at the best-listed position', () => {
+    expect(grouped).toEqual(['贝貝', '被', '郁', '鬱']);
+  });
+  it('keeps forms with different recorded meanings (郁 / 鬱) in separate rows', () => {
+    expect(grouped).toContain('郁');
+    expect(grouped).toContain('鬱');
+  });
+  it('never groups a context-dependent pair (了 / 瞭) using the real script groups', () => {
+    hydrateCharacterVariants(read('character-variants-v1.4.0.json'));
+    const real = groupScriptForms([{ id: '1', hanzi: '了', meaning: 'x' }, { id: '2', hanzi: '瞭', meaning: 'x' }, { id: '3', hanzi: '书', meaning: 'book' }, { id: '4', hanzi: '書', meaning: 'book' }], r => r.meaning);
+    expect(real.map(row => row.forms.length)).toEqual([1, 1, 2]);
   });
 });

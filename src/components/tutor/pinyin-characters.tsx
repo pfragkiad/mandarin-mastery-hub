@@ -6,6 +6,9 @@
 // full list is expanded; it collapses again for every new syllable or tone.
 // The catalogue loads lazily in the workspace; catalogVersion re-runs the lookup once
 // it arrives. Matching is exact (src/lib/syllable-characters.ts) — never inferred.
+// Simplified + traditional forms of an ordinary script pair that both read this sound
+// with the same recorded meaning share one row (groupScriptForms); each box still opens
+// its own record and different ranks are listed per box.
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -66,7 +69,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           // All forms in a row record the same meaning (groupScriptForms), so one line serves them.
           const meaning = shownMeaning(forms[0]!);
           const onlyTraditional = forms.every(form => form.script === 'Traditional');
-          return <li key={key} className={`pinyin-character${onlyTraditional ? ' traditional-character' : ''}${forms.length > 1 ? ' is-grouped' : ''}`}>
+          return <li key={key} className={`pinyin-character${forms.length > 1 ? ' is-grouped' : ''}`}>
           {/* Only the hanzi boxes are links (like decomposition tiles), so hover and focus
               outline one box alone; the rank and meaning beside them stay plain, selectable
               text. A grouped row shows one box per form, each opening its own exact record. */}
