@@ -60,7 +60,7 @@ article.word-card { touch-action: manipulation; }
  --font-sans: 'DM Sans', sans-serif; --font-display: 'Lora', Georgia, serif;
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
 }
-:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
+:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --experimental: oklch(.55 .12 80); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
 @layer base { * { border-color: var(--border); } body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 14px; letter-spacing: 0; } button,a,input,select { -webkit-tap-highlight-color: transparent; } button,a { touch-action: manipulation; } button { cursor: pointer; } h1,h2,h3,p { margin: 0; } a { text-decoration: none; } input,select { font: inherit; } :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
 .workspace { --sidebar-width: 238px; min-height: 100vh; }
 .workspace.is-collapsed { --sidebar-width: 78px; }
@@ -259,7 +259,7 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
   --border: oklch(.43 .012 155); --terracotta: oklch(.79 .08 48); --reveal-ring: oklch(.8 .09 158);
   /* Rank bands brighten for the dark background so every tier keeps its hue. */
   --rank-gold: oklch(.82 .11 90); --expert-gold: oklch(.85 .16 90);
-  --hsk-id: oklch(.84 .09 72); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
+  --hsk-id: oklch(.84 .09 72); --experimental: oklch(.80 .12 85); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
 .journey-banner { background: var(--banner-surface); }
@@ -2069,6 +2069,17 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 /* Components radical-family "+N" (刂, ⺈ sharing 刀's card): coloured like the Radical # pill. */
 .catalog-tab-count.catalog-tab-family, .catalog-total-traditional.catalog-total-family { color: var(--hsk-id); }
 .catalog-tab-count.catalog-tab-family { margin-left: -6px; }
+/* Vocabulary is partial material, so its heading carries an Experimental pill that opens
+   the shared hint card. A filled amber chip (not an outline pill like the HSK/Traditional
+   badges, and not a script colour) so the status reads at a glance from the title row. */
+.experimental-tag { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px; border-radius: 999px; font-size: 10px; font-weight: 600; letter-spacing: .6px; white-space: nowrap; color: var(--experimental); background: color-mix(in oklab, var(--experimental) 14%, var(--card)); border: 1px solid color-mix(in oklab, var(--experimental) 38%, transparent); }
+.experimental-tag svg { width: 13px; height: 13px; }
+.experimental-tag:hover, .experimental-tag:focus-visible { background: color-mix(in oklab, var(--experimental) 24%, var(--card)); outline: none; }
+.count-hint-experimental { color: var(--experimental); }
+html[data-display-size='comfortable'] .experimental-tag { height: 30px; padding: 0 13px; font-size: 12px; letter-spacing: 0; }
+html[data-display-size='comfortable'] .experimental-tag svg { width: 15px; height: 15px; }
+/* Phones have no room beside a 28px title: the pill moves above the motto instead. */
+@media(max-width:580px) { .library-page .page-heading { grid-template-columns: minmax(0,1fr); } .experimental-tag { order: -1; justify-self: start; } }
 /* Shared hint card: every (i) and Details popover lists its lines as separated rows,
    with a thin accent bar, so all hints read in one consistent style. */
 .source-info-popover { padding: 12px 14px; border-radius: 8px; box-shadow: var(--shadow-popover); border-left: 3px solid color-mix(in oklab, var(--primary) 55%, var(--border)); }
