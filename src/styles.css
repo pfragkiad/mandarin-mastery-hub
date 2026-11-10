@@ -1867,10 +1867,12 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-back svg { width: 14px; height: 14px; }
 .pinyin-characters { display: flex; flex-direction: column; gap: 8px; }
 .pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
-.pinyin-character-list { display: flex; flex-direction: column; gap: 4px; list-style: none; margin: 0; padding: 0; }
+/* Rows share the list's two columns (subgrid), so every meaning starts at the same x even
+   when some rows hold two or three form boxes. */
+.pinyin-character-list { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 4px; list-style: none; margin: 0; padding: 0; }
 /* One row per character: boxed hanzi, then its meaning centred vertically on the box. */
 /* A grouped row (simplified + traditional with the same meaning) shows one box per form. */
-.pinyin-character { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 2px; color: var(--foreground); }
+.pinyin-character { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; padding: 2px; color: var(--foreground); }
 .pinyin-character-glyphs { display: flex; gap: 6px; }
 .pinyin-character-glyph { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); text-decoration: none; transition: border-color .15s; }
 .pinyin-character-glyph.is-traditional { color: var(--traditional); }
@@ -1990,8 +1992,7 @@ html[data-display-size='comfortable'] .pinyin-parts dt { font-size: 12px; letter
 html[data-display-size='comfortable'] .pinyin-parts dd { font-size: 16px; line-height: 1.5; }
 html[data-display-size='comfortable'] :is(.pinyin-note, .pinyin-characters-note) { font-size: 16px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; padding: 5px 14px; }
-html[data-display-size='comfortable'] .pinyin-character-list { gap: var(--record-tile-gap); }
-html[data-display-size='comfortable'] .pinyin-character { gap: 12px; }
+html[data-display-size='comfortable'] .pinyin-character-list { row-gap: var(--record-tile-gap); column-gap: 12px; }
 html[data-display-size='comfortable'] .pinyin-character-glyphs { gap: 8px; }
 html[data-display-size='comfortable'] .pinyin-character-glyph { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] .pinyin-character-text { gap: 3px; }
