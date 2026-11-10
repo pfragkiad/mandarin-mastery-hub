@@ -1,4 +1,5 @@
 import { DraftFilterForm } from './filter-form';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady } from './game-setup';
 import { MeaningText } from './meaning-text';
 import { useEffect, useMemo, useState } from 'react';
@@ -151,7 +152,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       <div className="eyebrow">DECK COMPLETE</div>
       {repeat ? <><strong>All {new Set(deck?.map(c => c.id)).size} known</strong><p>{uniqueMissed.length ? `${firstTry} on the first try. These took extra tries:` : 'Every card on the first try — well done.'}</p></>
         : <><strong>{(deck?.length ?? 0) - uniqueMissed.length} / {deck?.length ?? 0}</strong><p>{uniqueMissed.length ? 'These deserve another look — tap one to open it:' : 'A perfect round — well done.'}</p></>}
-      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => <Link key={m.id} {...detailsFor(m)} onClick={rememberReturn} title={`${m.pinyin} · ${m.meaning} — open in ${m.libraryKind ? 'Glyphs' : 'Vocabulary'}`}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
+      {uniqueMissed.length > 0 && <div className="flash-missed">{uniqueMissed.map(m => <Link key={m.id} {...detailsFor(m)} onClick={rememberReturn} title={openDetailsHint(m.hanzi, m.libraryKind ?? vocabularyKind(m as unknown as Word))}><span lang="zh-CN">{m.hanzi}</span><small>{m.pinyin}</small></Link>)}</div>}
       {uniqueMissed.length > 0 && <div className="flex justify-center mb-4"><Button variant="outline" disabled={!unsavedMissed.length} onClick={() => unsavedMissed.forEach(m => toggleSaved(m.id))}>{unsavedMissed.length ? <Bookmark/> : <Check/>}{unsavedMissed.length ? `Save ${unsavedMissed.length} unknown ${unsavedMissed.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button></div>}
       <div className="flex gap-2 flex-wrap justify-center">
         {uniqueMissed.length > 0 && <Button onClick={() => start(uniqueMissed, true)}><RotateCcw />New round with {uniqueMissed.length} missed</Button>}

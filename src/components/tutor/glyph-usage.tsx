@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { MessageSquareText, Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
     <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
-      <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} aria-label={`Open character ${parent.hanzi}`}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
+      <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
       {/* Two lines beside the tile, as in Decomposition: reading + speaker, then the parent's
           rank (+ Traditional pill) on top, meaning below. The speaker sits right after the reading
           instead of in a shared column, so it never drifts away from short readings. The rank is

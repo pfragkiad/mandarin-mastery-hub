@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { MeaningText } from './meaning-text';
 import { Link } from '@tanstack/react-router';
 import { GitBranch } from 'lucide-react';
@@ -33,11 +34,11 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
         return <li key={index}><div className="decomposition-part">
         <div className="phrase-part-characters">{Array.from(part.text).filter(isChineseGlyph).map((glyph, glyphIndex) => {
           const destination = libraryDestination(glyph, preferences.includeTraditional);
-          return destination ? <Button key={glyphIndex} asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
+          return destination ? <Button key={glyphIndex} asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
         })}</div>
         {/* A matched word stays one clear pill link (word + reading); its glyph boxes
             above remain separate character links, so either destination is reachable. */}
-        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="phrase-word-link" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} aria-label={`Study word ${part.text}`}><span lang="zh-CN">{part.text}</span> <span className="phrase-word-reading">{part.word.pinyin}</span></Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : recorded ? <><span className="example-pinyin-row"><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(single, reading)} label={`character ${single}`}/>}</span><small>{facts?.meaning ? <MeaningText text={facts.meaning}/> : 'No word or character card recorded'}</small></> : <small>No matching word or character recorded</small>}</div>
+        <div className="vocabulary-part-facts">{part.word ? <><span className="example-pinyin-row"><Link className="phrase-word-link" to="/vocabulary" search={{ tab: 'word', word: part.word.id }} resetScroll={false} title={openDetailsHint(part.text, 'word')} aria-label={openDetailsHint(part.text, 'word')}><span lang="zh-CN">{part.text}</span> <span className="phrase-word-reading">{part.word.pinyin}</span></Link><ExamplePronunciation request={{ ...characterAudioRequest(part.word.hanzi, part.word.pinyin), audio: part.word.audio ?? null }} label={`word ${part.text}`}/></span><small><MeaningText text={part.word.meaning}/></small></> : recorded ? <><span className="example-pinyin-row"><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(single, reading)} label={`character ${single}`}/>}</span><small>{facts?.meaning ? <MeaningText text={facts.meaning}/> : 'No word or character card recorded'}</small></> : <small>No matching word or character recorded</small>}</div>
       </div>{!part.word && tree ? <CharacterDecomposition character={single} tree={tree} source={TREE_SOURCE}/> : null}</li>;
       })}</ul>
     </> : <>
@@ -47,7 +48,7 @@ export function VocabularyDecomposition({ word }: { word: Word }) {
         const facts = glyphIndex()[part.text];
         const tree = catalog.trees[part.text];
         return <li key={index}><div className="decomposition-part">
-          {destination ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open character ${part.text}`}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{part.text}</strong>}
+          {destination ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(part.text, destination.tab)} aria-label={openDetailsHint(part.text, destination.tab)}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{part.text}</strong>}
           <div className="vocabulary-part-facts"><span className="example-pinyin-row">{Array.from(part.text).length === 1 && isMultiReading(part.pinyin || facts?.pinyin) ? <MultiReadingSpeakers spoken={part.text} reading={part.pinyin || facts?.pinyin || ''} variant="example"/> : <><span className="pinyin">{part.pinyin || facts?.pinyin || '—'}</span><ExamplePronunciation request={characterAudioRequest(part.text, part.pinyin || facts?.pinyin)} label={`character ${part.text}`}/></>}</span><small>{facts?.meaning || 'Meaning not recorded'}</small></div>
         </div>{tree ? <CharacterDecomposition character={part.text} tree={tree} source={TREE_SOURCE}/> : Boolean(catalogVersion) && <p className="library-note">No recorded character breakdown.</p>}</li>;
       })}</ul>

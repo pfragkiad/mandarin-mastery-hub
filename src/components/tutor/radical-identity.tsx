@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { catalog } from '@/lib/catalog-store';
@@ -17,7 +18,7 @@ export function RadicalIdentityNote({ glyph }: { glyph: string }) {
     {identity.radicals.length ? <div className="kangxi-identity-rows">{identity.radicals.map(radical => {
       const destination = libraryDestination(radical.glyph, preferences.includeTraditional);
       return <span key={radical.id} className="kangxi-identity-item">{destination
-        ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open Kangxi radical ${radical.number}`}><strong lang="zh-CN">{radical.glyph}</strong></Link></Button>
+        ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(radical.glyph, destination.tab)} aria-label={`Kangxi radical ${radical.number} · ${openDetailsHint(radical.glyph, destination.tab)}`}><strong lang="zh-CN">{radical.glyph}</strong></Link></Button>
         : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{radical.glyph}</strong>}<ComponentPronunciation glyph={radical.glyph}/><span className="kangxi-identity-description">{glyphIndex()[radical.glyph]?.meaning && <span className="kangxi-identity-meaning">{stripKangxiLabel(glyphIndex()[radical.glyph]?.meaning ?? '')}</span>}<span className="word-hsk-id kangxi-identity-badge">Radical #{radical.number}</span></span></span>;
     })}</div> : <div className="record-gap"><p>Graphical component; no sourced Kangxi radical identity in the imported mappings.</p></div>}
   </div>;

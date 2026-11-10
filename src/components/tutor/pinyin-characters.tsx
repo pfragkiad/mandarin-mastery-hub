@@ -10,6 +10,7 @@
 // with the same recorded meaning share one row (groupScriptForms); each box still opens
 // its own record and different ranks are listed per box.
 import { useEffect, useMemo, useState } from 'react';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
@@ -79,10 +80,11 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             // right of the boxes) or the script alone (the purple box / Traditional pill
             // already show it). A Kangxi radical character opens its radical card, every
             // other form opens its own character details — the same rule as destinationFor.
-            const target = radicalCard(entry.hanzi) ? 'radical card' : 'character details';
+            const kind = radicalCard(entry.hanzi) ? 'Radicals' : 'Characters';
+            const target = kind === 'Radicals' ? 'radical details' : 'character details';
             return <Link key={entry.id} to="/characters" search={destinationFor(entry)}
               className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
-              title={`Click to open ${entry.hanzi}'s ${target}`}
+              title={openDetailsHint(entry.hanzi, kind)}
               aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its ${target}`}
               // The details window's Back returns to this exact sound (syllable + tone in the URL).
               onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>

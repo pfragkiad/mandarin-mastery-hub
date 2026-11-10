@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { openDetailsHint, practiceHint } from '@/lib/tile-hints';
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Bookmark, Check, Play, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -310,7 +311,7 @@ export function DrawingGamePage({
                       key={entry.id}
                       to="/vocabulary"
                       search={{ tab: "word", word: entry.id }}
-                      title={`${entry.word.pinyin} · ${entry.word.meaning}`}
+                      title={openDetailsHint(entry.word.hanzi, 'word')}
                     >
                       <span lang="zh-CN">{entry.word.hanzi}</span>
                       <small>
@@ -325,7 +326,7 @@ export function DrawingGamePage({
                         character: entry.hanzi,
                         ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}),
                       }}
-                      title={`Practice ${entry.pinyin} · ${entry.meaning}`}
+                      title={practiceHint(entry.hanzi)}
                     >
                       <span lang="zh-CN">{entry.hanzi}</span>
                       <small>{entry.pinyin}</small>
