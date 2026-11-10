@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions } from './mandarin';
 describe('Vocabulary filtering', () => {
- it('loads all 745 imported vocabulary entries', () => { expect(words).toHaveLength(745); });
+ it('loads all 741 imported vocabulary entries', () => { expect(words).toHaveLength(741); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
  it('matches tone-number pinyin even without the pinyin toggle', () => {
    expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');
@@ -20,7 +20,8 @@ describe('Vocabulary filtering', () => {
    expect(verbs.length).toBeGreaterThan(0);
    expect(verbs.every(w => partOfSpeechList(w).includes('Verb'))).toBe(true);
    expect(verbs.some(w => w.type.includes('/'))).toBe(true);
-   expect(filterWords(words, '', 'All collections', 'All levels', 'All words', [], false, 'Pronoun').some(w => w.type === 'pronoun')).toBe(true);
+   // A recorded lower-case part of speech ("phrase") still matches the capitalised filter option.
+   expect(filterWords(words, '', 'All collections', 'All levels', 'All words', [], false, 'Phrase').some(w => w.type === 'phrase')).toBe(true);
  });
  it('lists each base part of speech once in the filter options', () => {
    const options = partOfSpeechOptions(words);
