@@ -15,7 +15,7 @@ vi.mock('./catalog-pagination', () => ({ CatalogPagination: () => null, StickyPa
 vi.mock('./filter-form', () => ({ DraftFilterForm: () => null }));
 vi.mock('./library-play-menu', () => ({ LibraryPlayMenu: () => null }));
 vi.mock('./card-reveal-toggle', () => ({ CardRevealToggle: () => null, cardRevealClass: () => '' }));
-vi.mock('./source-info', () => ({ SourceInfo: () => null }));
+vi.mock('./source-info', async () => { const actual = await vi.importActual<typeof import('./source-info')>('./source-info'); return { ...actual, SourceInfo: () => null }; });
 
 afterEach(cleanup);
 
