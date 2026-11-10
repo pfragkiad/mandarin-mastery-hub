@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { words } from '@/lib/mandarin';
 import { VocabularyPage } from './vocabulary';
@@ -15,7 +15,7 @@ vi.mock('./catalog-pagination', () => ({ CatalogPagination: () => null, StickyPa
 vi.mock('./filter-form', () => ({ DraftFilterForm: () => null }));
 vi.mock('./library-play-menu', () => ({ LibraryPlayMenu: () => null }));
 vi.mock('./card-reveal-toggle', () => ({ CardRevealToggle: () => null, cardRevealClass: () => '' }));
-vi.mock('./source-info', () => ({ SourceInfo: () => null }));
+vi.mock('./source-info', async () => { const actual = await vi.importActual<typeof import('./source-info')>('./source-info'); return { ...actual, SourceInfo: () => null }; });
 
 afterEach(cleanup);
 
@@ -29,13 +29,22 @@ describe('Vocabulary keyboard paging', () => {
     expect(onPageChange).toHaveBeenLastCalledWith(1);
   });
 
-  it('blocks paging while a matching reference is open', () => {
-    const onPageChange = vi.fn();
+  it('blocks paging while a matching reference is open', () => {    const onPageChange = vi.fn();
     const record = words.find(word => word.hanzi === '意思');
     if (!record) throw new Error('Missing 意思');
     render(<VocabularyPage initialWordId={record.id} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
     fireEvent.keyDown(window, { key: 'PageDown' });
     fireEvent.keyDown(window, { key: 'PageUp' });
     expect(onPageChange).not.toHaveBeenCalled();
+  });
+});
+
+// The collection is partial material, so the page must say so and name what is missing.
+describe('Vocabulary experimental status tag', () => {
+  it('shows an Experimental pill whose hint names the missing levels and sentences', async () => {
+    render(<VocabularyPage tab="word" onPageChange={vi.fn()}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Vocabulary is experimental — what this means' }));
+    expect(await screen.findByText(/levels 3 and above are not in the collection yet/)).toBeInTheDocument();
+    expect(screen.getByText(/Example sentences cover some entries only/)).toBeInTheDocument();
   });
 });

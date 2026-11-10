@@ -6,7 +6,7 @@ const all = { collection: 'All collections', level: 'All levels', pos: 'All type
 
 describe('vocabularyFacetOptions', () => {
   it('narrows Types to the types recorded at the chosen level', () => {
-    const level = 'Unclassified';
+    const level = 'HSK 3.0 · 1';
     const expected = [...new Set(wordItems.filter(w => w.level === level).flatMap(partOfSpeechList))].sort((a, b) => a.localeCompare(b));
     const facets = vocabularyFacetOptions(wordItems, { ...all, level });
     expect(facets.pos).toEqual(expected);
@@ -18,7 +18,7 @@ describe('vocabularyFacetOptions', () => {
     for (const c of facets.collections) expect(wordItems.some(w => w.collection === c && partOfSpeechList(w).includes('Verb'))).toBe(true);
   });
   it('never filters a dropdown by its own value and keeps the current pick listed', () => {
-    const facets = vocabularyFacetOptions(wordItems, { ...all, level: 'Unclassified' });
+    const facets = vocabularyFacetOptions(wordItems, { ...all, level: 'HSK 3.0 · 1' });
     expect(facets.levels).toEqual(vocabularyFacetOptions(wordItems, all).levels);
     expect(vocabularyFacetOptions([], { ...all, pos: 'Verb' }).pos).toEqual(['Verb']);
   });

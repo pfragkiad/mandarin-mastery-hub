@@ -2,8 +2,9 @@ import { DetailSheet } from './detail-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
-import { Search, Plus, BookOpen, Check } from 'lucide-react';
+import { Search, Plus, BookOpen, Check, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
@@ -18,10 +19,27 @@ import { DraftFilterForm } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
-import { SourceInfo } from './source-info';
+import { SourceInfo, HintBody } from './source-info';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
 // provenance note stays in the (i) beside the title.
 const vocabularyMotto = 'WORDS BUILT FROM THE CHARACTERS YOU KNOW';
+/** Vocabulary's status pill in the page heading: the collection is partial material, so
+ *  the tag says so and opens the shared hint card explaining exactly what is missing.
+ *  No inputs or state — the copy restates only what the data holds today (HSK 3.0 levels
+ *  1–2, examples on some entries, no way to add your own sentences yet), so the tag can
+ *  never read as a claim of complete coverage. */
+function ExperimentalTag() {
+  return <Popover>
+    <PopoverTrigger className="experimental-tag" aria-label="Vocabulary is experimental — what this means">
+      <FlaskConical aria-hidden="true"/>Experimental
+    </PopoverTrigger>
+    <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
+      <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
+      Still being built: HSK 3.0 levels 1–2 so far; levels 3 and above are not in the collection yet.<br/>
+      Example sentences cover some entries only, and your own sentences cannot be added yet.
+    </HintBody></PopoverContent>
+  </Popover>;
+}
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 // Adding words is hidden: without storage or accounts, additions would vanish on reload.
@@ -74,7 +92,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, initialWordId]);
   const reset = () => { const empty = { q: '', collection: 'All collections', level: 'All levels', py: undefined, pos: 'All types' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
-  return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Level 1 practice phrases are unofficial · no syllabus IDs' : 'HSK 3.0 vocabulary · levels as recorded in the source'}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}</div>
+  return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Level 1 practice phrases are unofficial · no syllabus IDs' : 'HSK 3.0 vocabulary · levels as recorded in the source'}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind} onValueChange={value => { if (value === 'word' || value === 'phrase') onTabChange?.(value); }}>
     <div className="vocabulary-category-row"><TabsList aria-label="Vocabulary categories">{(['word', 'phrase'] as const).map(k => <TabsTrigger key={k} value={k}>{k === 'word' ? 'Words' : 'Phrases'}<span className="catalog-tab-count">{items.filter(w => vocabularyKind(w) === k).length}</span></TabsTrigger>)}</TabsList><div className="vocabulary-saved-filter" aria-label="Saved vocabulary">{['All words','Saved words'].map(s => <Button key={s} variant="ghost" aria-pressed={status === s} className={status === s ? 'selected' : ''} onClick={() => setStatus(s)}>{s === 'All words' ? 'All' : 'Saved'}{s === 'Saved words' && <span className="catalog-tab-count">{categoryItems.filter(w => saved.includes(w.id)).length}</span>}</Button>)}</div></div>
     <TabsContent value={kind}>
