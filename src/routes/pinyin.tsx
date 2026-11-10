@@ -38,7 +38,8 @@ function PinyinRoute() {
     onTone={t => navigate({ search: prev => ({ ...prev, t }), resetScroll: false, replace: true })}
     // Chart filters apply only on Apply/Enter, X or a chip, so each submission pushes one
     // history step (Back restores the previous filters), as in the libraries.
-    onChartFilters={f => navigate({ search: prev => ({ ...prev, q: f.q || undefined, initial: f.initial || undefined, final: f.final || undefined }), resetScroll: false })}
+    // A toned search naming one exact sound (ma1) also selects it in the same step.
+    onChartFilters={(f, pick) => navigate({ search: prev => ({ ...prev, q: f.q || undefined, initial: f.initial || undefined, final: f.final || undefined, ...(pick ? { s: pick.base, t: pick.tone } : {}) }), resetScroll: false })}
     onDrillFilters={f => navigate({ search: prev => ({ ...prev, initial: f.initial || undefined, final: f.final || undefined, focus: f.focus || undefined }), resetScroll: false })}
   />;
 }

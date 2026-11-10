@@ -102,6 +102,18 @@ export function matchesSyllable(syllable: PinyinSyllable, input: string): boolea
   return query.tone ? syllable.base === query.base && syllable.tones.includes(query.tone) : syllable.base.startsWith(query.base);
 }
 
+/**
+ * The sound a chart search names outright: a toned query (ma1, mā) whose filtered
+ * result is exactly one tile with that exact spelling and attested tone. A bare
+ * spelling or several results name no single sound, so nothing is selected for them.
+ */
+export function directSoundMatch(visible: readonly PinyinSyllable[], input: string): { base: string; tone: Tone } | null {
+  const query = parsePinyin(input);
+  if (!query?.tone || visible.length !== 1) return null;
+  const only = visible[0]!;
+  return only.base === query.base && only.tones.includes(query.tone) ? { base: only.base, tone: query.tone } : null;
+}
+
 /** Only an exact recording makes a sound playable; tone 5 never is. */
 export function hasRecording(data: Pick<PinyinData, 'recordings'>, base: string, tone: Tone): boolean {
   return tone !== 5 && Boolean(data.recordings[soundId(base, tone)]);

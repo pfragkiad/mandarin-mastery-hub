@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'reac
 import { ArrowLeft, ListMusic, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
+import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { answered, needsReview, type PinyinProgress } from '@/lib/pinyin-progress';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
@@ -99,7 +99,9 @@ const historyEntry = () => `${window.location.href}#${(window.history.state as {
 
 export function PinyinChart({ data, progress, player, filters, selected, tone, slow, onSlow, onSelect, onTone, onFilters }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; tone: Tone | null; slow: boolean;
-  onSlow: (slow: boolean) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onFilters: (filters: ChartFilters) => void;
+  onSlow: (slow: boolean) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void;
+  /** `pick`: the sound the applied search names outright (see directSoundMatch), selected in the same history step. */
+  onFilters: (filters: ChartFilters, pick?: { base: string; tone: Tone }) => void;
 }) {
   const sorted = useMemo(() => sortSyllables(data.syllables), [data]);
   const visible = useMemo(() => sorted.filter(s => matchesSyllable(s, filters.q) && matchesInitial(s, filters.initial) && matchesFinal(s, filters.final)), [sorted, filters]);
@@ -198,7 +200,14 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
       {/* Same explicit Apply as the libraries: edits stay in the draft until Apply/Enter, X clears
           at once. Dropdowns offer only choices that still have syllables under the applied search
           and the other dropdown (chartFilterOptions over 407 syllables, cheap to recompute). */}
-      <DraftFilterForm searchKey="q" applied={filters} active={active} count={visible.length} onApply={onFilters} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
+      {/* Applying a toned search (ma1) that leaves one exact tile also selects that syllable
+          and tone, as a grid click would (fresh Back trail, no sound plays by itself). */}
+      <DraftFilterForm searchKey="q" applied={filters} active={active} count={visible.length} onApply={f => {
+        const next = sorted.filter(s => matchesSyllable(s, f.q) && matchesInitial(s, f.initial) && matchesFinal(s, f.final));
+        const pick = directSoundMatch(next, f.q) ?? undefined;
+        if (pick && (pick.base !== selected || pick.tone !== tone)) { player.stop(); soundTrail.clear(); }
+        onFilters(f, pick);
+      }} onClear={() => { const empty = { q: '', initial: '', final: '' }; onFilters(empty); return empty; }}
         chips={[...(filters.initial ? [{ label: filters.initial === 'none' ? 'No initial' : filters.initial.startsWith('group:') ? INITIAL_GROUPS[Number(filters.initial.slice(6))]?.label ?? '' : filters.initial, clear: { initial: '' } }] : []), ...(filters.final ? [{ label: filters.final.startsWith('group:') ? `Finals with ${FINAL_GROUPS[Number(filters.final.slice(6))]?.label}` : filters.final, clear: { final: '' } }] : [])]}
         filterFields={({ draft, patch }) => { const options = chartFilterOptions(sorted, filters.q, draft.initial, draft.final); return <><InitialSelect value={draft.initial} available={options.initials} onChange={initial => patch({ initial })} /><FinalSelect value={draft.final} available={options.finals} onChange={final => patch({ final })} /></>; }}>
         {({ draft, patch }) => <div className="search-field"><Search /><input type="search" aria-label="Search syllables" placeholder="Find a syllable: rén, ren2, lv4…" value={draft.q} onChange={e => patch({ q: e.target.value })} /></div>}
