@@ -4,7 +4,7 @@
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { ArrowLeft, ListMusic, Square } from 'lucide-react';
+import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
@@ -327,9 +327,10 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
         {/* Neutral tone shows its spelling (ma) like the other cards. Captions stay one line
             ("Tone N" / "Neutral"); a missing recording shows through the dashed border, the
             tooltip and the italic note under the big syllable. */}
-        {/* An unrecorded tile also carries a small "No rec" pill in its top border, centred like a notch label
-            (absolutely placed so it never collides with the contour, and the tile keeps the same height as recorded ones). */}
-        {!playable && <span className="pinyin-tone-norec" aria-hidden="true">No rec</span>}
+        {/* Audio-off corner stamp marks a missing recording, not a mute toggle.
+            The parent retains the no-recording hint and accessible name; this decorative
+            pill never intercepts selection or changes the fixed tone-slot dimensions. */}
+        {!playable && <span className="pinyin-tone-norec" aria-hidden="true"><VolumeX /></span>}
         <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
       </button>;
     })}</div>
