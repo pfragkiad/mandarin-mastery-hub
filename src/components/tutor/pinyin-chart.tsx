@@ -14,7 +14,7 @@ import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
 import { useNarrowLibrary } from './detail-sheet';
-import { soundTrail } from '@/lib/detail-trail';
+import { historyEntry, soundTrail } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
 export type ChartFilters = { q: string; initial: string; final: string };
@@ -92,10 +92,7 @@ function TileToneBadge({ tone, state }: { tone: Tone; state: 'on' | 'off' | 'non
 // survives React's development double-mount without wiping the trail.
 let chartMounts = 0;
 let leftForCharacter = false;
-// A Back step is identified by its history entry, not just its URL: following
-// sound-alikes lai → lei → lai reaches the same URL again as a new entry, which must
-// not count as "returned" and drop the step.
-const historyEntry = () => `${window.location.href}#${(window.history.state as { __TSR_key?: string } | null)?.__TSR_key ?? ''}`;
+// A Back step is identified by its history entry (historyEntry), not just its URL.
 
 export function PinyinChart({ data, progress, player, filters, selected, tone, slow, onSlow, onSelect, onTone, onFilters }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; tone: Tone | null; slow: boolean;
@@ -273,7 +270,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   const sequencePlaying = player.sequencing;
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
     {!inSheet && <div className="pinyin-player-head"><div className="eyebrow">SELECTED SOUND</div>
-      {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang="zh-Latn-pinyin">{back.label}</span></Button>}
+      {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
     </div>}
     <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
     <p className="pinyin-player-tone">{current !== null ? `${TONE_NAMES[current]} · ${TONE_HINTS[current]}${hasRecording(data, syllable.base, current) ? '' : ' · no recording'}` : 'Click a tone to hear it'}</p>

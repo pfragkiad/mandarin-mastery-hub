@@ -9,7 +9,8 @@
  * cards in the grid) and Close reset the trail, so Back never mixes with grid
  * navigation.
  */
-export type TrailStep = { label: string; href: string };
+/** `lang` tags the Back label when it is not pinyin (a hanzi such as 了 when a glyph card opened the Sound chart). */
+export type TrailStep = { label: string; href: string; lang?: string };
 
 /** One independent session trail; each window that offers Back owns its own instance. */
 export function createTrail() {
@@ -34,8 +35,16 @@ export function createTrail() {
 export const detailTrail = createTrail();
 
 /**
- * Back trail for the Pinyin Sound chart's Selected sound card. Only links inside
- * the card (Sounds alike) push a step; clicking a grid card clears it, exactly as
- * Previous/Next do for the details window.
+ * Back trail for the Pinyin Sound chart's Selected sound card. Links inside the card
+ * (Sounds alike) push a step; a glyph card's or details window's Sound chart link
+ * (SoundChartLink) replaces it with one step back to that glyph; clicking a grid card
+ * clears it, exactly as Previous/Next do for the details window.
  */
 export const soundTrail = createTrail();
+
+/**
+ * Identity of the current history entry for soundTrail steps: the URL plus the router's
+ * entry key, so reaching the same URL again as a new entry (lai → lei → lai) is never
+ * mistaken for a return to the earlier one.
+ */
+export const historyEntry = () => `${window.location.href}#${(window.history.state as { __TSR_key?: string } | null)?.__TSR_key ?? ''}`;

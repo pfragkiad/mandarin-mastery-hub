@@ -15,7 +15,7 @@ import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } f
 import { Button } from '@/components/ui/button';
 
 export function PinyinSoundSheet({ open, title, back, position, total, onBack, onPrevious, onNext, onClose, onClosed, children }: {
-  open: boolean; title: string; back?: { label: string } | undefined; position: number; total: number;
+  open: boolean; title: string; back?: { label: string; lang?: string | undefined } | undefined; position: number; total: number;
   onBack: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; onClose: () => void; onClosed: () => void; children: ReactNode;
 }) {
   const body = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ export function PinyinSoundSheet({ open, title, back, position, total, onBack, o
       <DialogDescription className="sr-only">Selected sound</DialogDescription>
       <div className="detail-sheet-bar">
         <div className="detail-sheet-start">
-          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={onBack}><ArrowLeft/><span lang="zh-Latn-pinyin">{back.label}</span></Button>}
+          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={onBack}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
         </div>
         {inList && <div className="detail-sheet-nav" role="group" aria-label="Neighbouring syllables in the chart">
           <Button variant="ghost" size="icon" aria-label="Previous syllable" title="Previous syllable" disabled={!onPrevious} onClick={onPrevious}><ChevronLeft/></Button>
