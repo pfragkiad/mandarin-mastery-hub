@@ -2110,3 +2110,7 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
    matches that size; margins keep the speaker midway between the pinyin and the link. */
 .daily-hero-pinyin .sound-chart-link { width: 40px; height: 40px; border-radius: 8px; }
 .daily-hero-pinyin .sound-chart-link svg { width: 24px; height: 24px; }
+.discovery-record-pinyin .sound-chart-link { margin-left: -6px; }
+.daily-hero-pinyin .sound-chart-link { margin-left: -8px; }
+html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link { width: 40px; height: 40px; margin-left: -10px; }
+html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link svg { width: 20px; height: 20px; }
