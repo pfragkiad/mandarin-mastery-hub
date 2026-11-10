@@ -119,7 +119,7 @@ export function SavedStrip() {
     const kind = id.split(':')[0] as LibraryKind;
     if (!['Characters', 'Radicals', 'Components', 'Strokes'].includes(kind)) return [];
     const entry = savedGlyphEntry(id);
-    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, kind: entry.kind, to: '/characters' as const, search: savedGlyphDestination(entry) as Record<string, unknown> }] : [];
+    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, kind, to: '/characters' as const, search: savedGlyphDestination(entry) as Record<string, unknown> }] : [];
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }).reverse(), [saved, items, catalogVersion]);
   if (!records.length) return null;
