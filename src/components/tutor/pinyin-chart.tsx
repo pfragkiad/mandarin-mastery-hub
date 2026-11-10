@@ -17,6 +17,9 @@ import { useNarrowLibrary } from './detail-sheet';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
+/** The Sound card's five fixed tone slots, in column order. */
+const ALL_TONES: readonly Tone[] = [1, 2, 3, 4, 5];
+
 export type ChartFilters = { q: string; initial: string; final: string };
 
 /**
@@ -297,7 +300,16 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     {/* The tone's description; an unrecorded tone adds an italic "no recording" here
         rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
     <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) && <> · <em>no recording</em></>}</> : 'Click a tone to hear it'}</p>
-    <div className="pinyin-tone-buttons" role="group" aria-label="Tones">{syllable.tones.map(t => {
+    {/* Five fixed slots (Tone 1–4, Neutral) so every tone keeps its column. A tone the
+        syllable inventory doesn't list gets a quiet slashed, non-interactive slot — only the
+        inventory decides this, never a guess — and number keys skip it (no recording). */}
+    <div className="pinyin-tone-buttons" role="group" aria-label="Tones">{ALL_TONES.map(t => {
+      if (!syllable.tones.includes(t)) return <span key={t} className={`pinyin-tone-button tone-${t} is-absent`} role="img"
+        aria-label={`${TONE_NAMES[t]} · not used with ${syllable.base}`} title={`${TONE_NAMES[t]} · not used with ${syllable.base}`}>
+        {/* Contour and spelling stay as invisible spacers so the slot is as tall as the others. */}
+        <span className="pinyin-tone-spacer" aria-hidden="true"><ToneContour tone={t} /><span>{syllable.base}</span></span>
+        <small aria-hidden="true">{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
+      </span>;
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
