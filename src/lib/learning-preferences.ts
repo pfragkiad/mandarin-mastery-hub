@@ -2,7 +2,7 @@ export type CharacterScript = 'Simplified' | 'Traditional' | 'Common';
 export type CardReveal = 'all' | 'meaning' | 'hanzi' | 'pinyin' | 'pinyin-meaning';
 export type LibraryPerPage = 10 | 20 | 50;
 export type LibraryView = 'grid' | 'list';
-export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal; rememberCardReveals?: boolean; libraryView?: LibraryView; libraryPerPage?: LibraryPerPage; animationSpeed: number; confetti: boolean; traceLeniency?: number; recallLeniency?: number; practiceCanvasSize?: number; /** Sound chart links on Glyphs grid cards; absent (older saves) means shown. Details windows always keep them. */ soundChartLinks?: boolean };
+export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal; rememberCardReveals?: boolean; libraryView?: LibraryView; libraryPerPage?: LibraryPerPage; animationSpeed: number; confetti: boolean; traceLeniency?: number; recallLeniency?: number; practiceCanvasSize?: number; /** Sound chart links on Glyphs grid cards and Start's glyph cards; absent (older saves) means shown. Details windows always keep them. */ soundChartLinks?: boolean };
 /** Practice writing square: default and drag limits in CSS px (phones keep their own 250px cap). */
 export const PRACTICE_CANVAS_DEFAULT = 380;
 export const PRACTICE_CANVAS_MIN = 240;

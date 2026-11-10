@@ -2105,3 +2105,8 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .sound-chart-link.is-tile svg { width: 17px; height: 17px; }
+
+/* Start page: the Character of the day's speaker is 40px with a 24px icon, so its Sound chart link
+   matches that size; margins keep the speaker midway between the pinyin and the link. */
+.daily-hero-pinyin .sound-chart-link { width: 40px; height: 40px; border-radius: 8px; }
+.daily-hero-pinyin .sound-chart-link svg { width: 24px; height: 24px; }
