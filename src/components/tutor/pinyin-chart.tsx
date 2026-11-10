@@ -294,7 +294,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
       {current !== null && <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span>}
     </div>
-    <p className="pinyin-player-tone">{current !== null ? `${TONE_NAMES[current]} · ${TONE_HINTS[current]}${hasRecording(data, syllable.base, current) ? '' : ' · no recording'}` : 'Click a tone to hear it'}</p>
+    <p className="pinyin-player-tone">{current !== null ? `${TONE_HINTS[current]}${hasRecording(data, syllable.base, current) ? '' : ' · no recording'}` : 'Click a tone to hear it'}</p>
     <div className="pinyin-tone-buttons" role="group" aria-label="Tones">{syllable.tones.map(t => {
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
