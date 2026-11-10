@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { words } from '@/lib/mandarin';
 import { VocabularyPage } from './vocabulary';
@@ -29,8 +29,7 @@ describe('Vocabulary keyboard paging', () => {
     expect(onPageChange).toHaveBeenLastCalledWith(1);
   });
 
-  it('blocks paging while a matching reference is open', () => {
-    const onPageChange = vi.fn();
+  it('blocks paging while a matching reference is open', () => {    const onPageChange = vi.fn();
     const record = words.find(word => word.hanzi === '意思');
     if (!record) throw new Error('Missing 意思');
     render(<VocabularyPage initialWordId={record.id} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
