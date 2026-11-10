@@ -10,6 +10,8 @@ import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
+import { SoundChartLink } from './sound-chart-link';
+import { historyEntry } from '@/lib/detail-trail';
 
 export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
@@ -20,6 +22,13 @@ const CATEGORY_META: Record<DiscoveryCategory, { glyph: string; label: string; n
   Components: { glyph: '口', label: 'Components', note: 'Structural building blocks' },
   Radicals: { glyph: '氵', label: 'Radicals', note: 'Dictionary reference library' },
 };
+
+// Random pick shown in each tile, remembered per browser history entry (URL + router key) and
+// category. A new visit to Start is a new entry and gets a fresh random record; returning to the
+// same entry (browser Back from the Sound chart link's "← 了") shows the record it was left on,
+// so the Back label never points at a card that has since been reshuffled. Session memory only.
+const picksByEntry = new Map<string, string>();
+const pickKey = (category: DiscoveryCategory) => `${historyEntry()}|${category}`;
 
 function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase' {
   return category === 'word' || category === 'phrase';
@@ -40,10 +49,15 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   const visible = useMemo(() => (entries.length ? filterLibrary(entries, '', '', false, false) : []), [entries]);
 
   useEffect(() => {
-    if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, undefined, Math.random, category)?.id);
+    const kept = picksByEntry.get(pickKey(category));
+    const keptValid = kept && (isVocabulary(category) ? vocabularyPool.some(word => word.id === kept) : entries.some(candidate => candidate.id === kept));
+    if (keptValid) setSelectedId(kept);
+    else if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, undefined, Math.random, category)?.id);
     else setSelectedId(randomOverviewCharacter(entries)?.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, catalogVersion]);
+  // Remember the current pick (including shuffles) for this history entry; see picksByEntry.
+  useEffect(() => { if (selectedId) picksByEntry.set(pickKey(category), selectedId); }, [category, selectedId]);
 
   const word = isVocabulary(category) ? vocabularyPool.find(candidate => candidate.id === selectedId) ?? vocabularyPool[0] : undefined;
   const entry = !isVocabulary(category) ? entries.find(candidate => candidate.id === selectedId) ?? visible[0] : undefined;
@@ -74,6 +88,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       : null;
 
   const record = word ?? entry;
+  const chartLinks = preferences.soundChartLinks !== false;
   const hanzi = word ? word.hanzi : entry?.hanzi;
   const pinyin = word ? word.pinyin : entry?.pinyin || '—';
   const meaning = word ? word.meaning : entry?.meaning || '—';
@@ -95,9 +110,12 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
           <div className="discovery-record-pinyin">
-            {!word && entry && isMultiReading(entry.pinyin) ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'} onError={setAudioError}/> : <>
+            {/* Glyph tiles (never Words/Phrases) add the Sound chart link beside each reading's speaker,
+                following the same "Sound chart links on cards" setting as the Glyphs grid cards. */}
+            {!word && entry && isMultiReading(entry.pinyin) ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="header" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'} onError={setAudioError} chartFrom={chartLinks ? entry.hanzi : undefined}/> : <>
             {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
-            <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} /></>}
+            <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
+            {!word && entry?.pinyin && chartLinks && <SoundChartLink reading={entry.pinyin} from={entry.hanzi} variant="header"/>}</>}
           </div>
           <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" aria-label={`Open ${hanzi}`}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
