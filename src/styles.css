@@ -1122,6 +1122,21 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Variant tiles inside a traditional radical card are other forms, not traditional
    themselves — keep them muted despite the `.is-traditional [lang]` rule above. */
 .word-card.is-traditional .radical-tile-forms [lang="zh-CN"] { color: var(--muted-foreground); }
+/* The purple identity also owns the frame a traditional tile draws when it is hovered or
+   keyboard-focused. Without this the global :focus-visible outline and the generic tile hover
+   both use --primary green, so a purple 龍 box would light up green — the same colour clash the
+   Tone 4 change removed. Two frame mechanisms are in play, so both are recoloured:
+   border-based tiles (Sound chart boxes, decomposition/etymology tiles, radical and script form
+   tiles) take a purple border; outline-based ones (the card body and its rows, form tiles' ring)
+   take a purple outline. Marks: .is-traditional (pinyin-characters.tsx, script-forms.tsx,
+   radical-forms.tsx, word-card.tsx, characters-page.tsx) and .traditional-character
+   (decomposition-tree.tsx, glyph-usage.tsx, radical-variant-etymology.tsx). */
+:is(.pinyin-character-glyph.is-traditional,
+    .decomposition-glyph.traditional-character:not(.decomposition-glyph-static),
+    .radical-form-choice.is-traditional):is(:hover, :focus-visible) { border-color: var(--traditional); }
+:is(.radical-form-choice.is-traditional,
+    .word-card.is-traditional .word-open,
+    .word-card.is-traditional .catalog-entry):focus-visible { outline-color: var(--traditional); }
 /* The explicit details action contrasts with the green availability indicators.
    Reuse theme-aware terracotta for legibility in both light and dark palettes. */
 .word-actions .card-details-action { color: var(--terracotta); }
