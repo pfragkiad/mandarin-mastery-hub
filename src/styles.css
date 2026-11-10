@@ -1824,8 +1824,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile-badge.off .pinyin-tile-badge-ring { fill: none; stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-mark { stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-dot { fill: var(--tone-ink); }
-/* Each tone keeps its own fixed colour (1 sky blue, 2 orange, 3 green, 4 purple; red is avoided because a red disc with a bar reads as "No entry") in the grid
-   dots and the Selected sound tone cards, so colour alone already says which tone. */
+/* Each tone keeps its own fixed colour (1 sky blue, 2 orange, 3 green, 4 crimson — see the
+   --tone-4 note above) in the grid dots and the Selected sound tone cards, so colour alone
+   already says which tone. */
 .tone-1 { --tone-ink: var(--tone-1); }
 .tone-2 { --tone-ink: var(--tone-2); }
 .tone-3 { --tone-ink: var(--tone-3); }
