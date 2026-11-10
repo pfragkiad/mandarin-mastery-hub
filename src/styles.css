@@ -541,7 +541,7 @@ this keeps the number right beside the stroke tile. */
 html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
-    .pinyin-character-glyph.is-traditional) { --traditional-mark-size: 13px; }
+    .pinyin-character-glyph.is-traditional) { --traditional-mark-size: 14px; }
 .search-trigger { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-size: 11px; }
 .search-trigger:hover { color: var(--foreground); border-color: var(--primary); }
 .search-trigger>svg { width: 14px; }
