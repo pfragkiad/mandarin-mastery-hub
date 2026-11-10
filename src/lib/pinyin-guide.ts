@@ -246,6 +246,27 @@ export class IncompletePinyinDataError extends Error {
   constructor(readonly missing: string[]) { super(`Pinyin recording list is incomplete (${missing.length} missing)`); }
 }
 
+/**
+ * The Sound chart card (syllable + tone) for one recorded glyph reading, or null.
+ * Exact only: the reading must parse as a single syllable (tone mark, or none for the
+ * neutral tone) that the inventory attests in that tone; multi-syllable names, erhua
+ * (nǎr) and anything unattested get no link, so no sound is guessed for a reading.
+ */
+export function soundChartTarget(data: Pick<PinyinData, 'syllables'>, reading: string | null | undefined): { base: string; tone: Tone } | null {
+  if (!reading || /\d/.test(reading)) return null;
+  const parsed = parsePinyin(reading);
+  if (!parsed) return null;
+  const tone = parsed.tone ?? 5;
+  return findSyllable(data, parsed.base)?.tones.includes(tone) ? { base: parsed.base, tone } : null;
+}
+
+/** Syllable inventory alone (no recordings), for Sound chart links on glyph cards. */
+let inventoryLoading: Promise<PinyinSyllable[]> | null = null;
+export function loadSyllableInventory(): Promise<PinyinSyllable[]> {
+  inventoryLoading ??= import('@/data/pinyin/inventory.json').then(inventory => inventory.default.syllables as PinyinSyllable[]).catch(error => { inventoryLoading = null; throw error; });
+  return inventoryLoading;
+}
+
 /** Lazily load both sidecars so ~1,300 recording entries never enter page bundles. */
 let loading: Promise<PinyinData> | null = null;
 export function loadPinyinData(): Promise<PinyinData> {
@@ -263,4 +284,4 @@ export function loadPinyinData(): Promise<PinyinData> {
   return loading;
 }
 // Dev only: drop the memoised sidecars when files change so an open tab never keeps an older recording list.
-if (import.meta.hot) import.meta.hot.on('vite:beforeUpdate', () => { loading = null; });
+if (import.meta.hot) import.meta.hot.on('vite:beforeUpdate', () => { loading = null; inventoryLoading = null; });
