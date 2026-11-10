@@ -26,7 +26,7 @@ const headings: Record<PinyinMode, string> = { chart: 'Every sound of Mandarin.'
 
 export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilters, onMode, onSelect, onTone, onChartFilters, onDrillFilters }: {
   mode: PinyinMode; selected?: string | undefined; tone: Tone | null; chartFilters: ChartFilters; drillFilters: DrillFilters;
-  onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onChartFilters: (f: ChartFilters) => void; onDrillFilters: (f: DrillFilters) => void;
+  onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onChartFilters: (f: ChartFilters, pick?: { base: string; tone: Tone }) => void; onDrillFilters: (f: DrillFilters) => void;
 }) {
   const { preferences, setPreferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
