@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
@@ -117,7 +118,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
             <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
             {!word && entry?.pinyin && chartLinks && <SoundChartLink reading={entry.pinyin} from={entry.hanzi} variant="header"/>}</>}
           </div>
-          <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" aria-label={`Open ${hanzi}`}>
+          <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" title={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
             {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
           </Link>
