@@ -1788,7 +1788,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-body { margin-top: 22px; }
 /* The selected-sound card widens with the window (capped) so rows holding two or three
    script forms still leave their meanings room to breathe. */
-.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(320px, 26vw, 420px); gap: 30px; align-items: start; }
+.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px); gap: 30px; align-items: start; }
 .pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
 /* Phones wrap the search and Filters button in .mobile-library-filters, whose inner form has no
    margin; give the wrapper the same gap so the first syllable group never touches Filters. */
@@ -1965,7 +1965,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    (beside the grid, or in the small-screen window that already shares .detail-sheet) grows
    with the same tokens the Glyphs/Vocabulary details use — 13px labels, 16px readings and
    notes, the shared reference hanzi box — and the grid tiles simply get larger. */
-html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) clamp(380px, 30vw, 500px); }
+html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) clamp(400px, 34vw, 620px); }
 html[data-display-size='comfortable'] .pinyin-progress { font-size: var(--ui-label-size); }
 html[data-display-size='comfortable'] .pinyin-group-title { font-size: 12px; letter-spacing: 1px; }
 html[data-display-size='comfortable'] .pinyin-group-title span { font-size: 14px; }
