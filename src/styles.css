@@ -1769,7 +1769,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    lands on --rank-gold / --experimental, and in dark mode on --tone-2 itself. The hue stays clear
    of the review/error red (--grade-low, hue 27) so a tone dot never impersonates a review dot. */
 :root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.58 .13 230); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .19 345); }
-:root.dark { --tone-1: oklch(.76 .12 225); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.72 .17 345); }
+:root.dark { --tone-1: oklch(.76 .12 225); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.75 .17 345); }
 :root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
 .accuracy-grade { font-weight: 600; }
 .accuracy-grade-high { color: var(--grade-high); }
