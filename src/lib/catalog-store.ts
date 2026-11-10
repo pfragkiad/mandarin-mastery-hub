@@ -17,12 +17,19 @@ export type CatalogFile = {
   trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
   /** Unihan kRSUnicode radical for components that are not themselves a radical form. */
   componentRadicals?: Record<string, string>;
+  /** Reviewed meaning for each reading of a multi-reading character (see readingMeaning). */
+  readingMeanings?: Record<string, ReadingMeaningRecord>;
 };
+
+/** One owner-reviewed split of a character's combined dictionary meaning by reading.
+ *  `combined` is the catalogue meaning the split was reviewed against. */
+export type ReadingMeaningRecord = { readings: Record<string, string>; combined: string; source: string; sourceUrl?: string; date?: string; approvedBy?: string };
 
 export const catalog = {
   loaded: false, version: 0, source: '',
   characters: [] as CatalogRow[], radicals: [] as CatalogRow[], components: [] as CatalogRow[], strokes: [] as CatalogRow[],
   trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'], componentRadicals: {} as Record<string, string>,
+  readingMeanings: {} as Record<string, ReadingMeaningRecord>,
   radicalIdentities: { schemaVersion: 1, sources: {}, identities: {} } as RadicalIdentityFile,
   radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
@@ -32,9 +39,28 @@ export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFi
   // tells workspace consumers to recompute after all sidecars are installed.
   for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
+  catalog.readingMeanings = data.readingMeanings ?? {};
   if (identities) catalog.radicalIdentities = identities;
   if (strokes) catalog.radicalStrokes = strokes;
   catalog.loaded = true; catalog.version += 1;
+}
+
+/** Reviewed per-reading meanings for a character, in its recorded reading order, or null.
+ *  Fails closed: the split applies only while the character's catalogue row still records
+ *  exactly the reviewed combined meaning and exactly the reviewed set of readings, so a later
+ *  data correction can never leave a stale split showing (it falls back to the combined text). */
+export function readingMeanings(glyph: string, recordedReading: string, recordedMeaning: string): { reading: string; meaning: string }[] | null {
+  const record = catalog.readingMeanings[glyph];
+  if (!record || record.combined !== recordedMeaning) return null;
+  const readings = recordedReading.split('/').map(part => part.trim()).filter(Boolean);
+  const keys = Object.keys(record.readings);
+  if (readings.length !== keys.length || readings.some(reading => !record.readings[reading])) return null;
+  return readings.map(reading => ({ reading, meaning: record.readings[reading] as string }));
+}
+
+/** Meaning for one exact reading (e.g. 了 liǎo), or undefined when no reviewed split applies. */
+export function readingMeaning(glyph: string, recordedReading: string, recordedMeaning: string, reading: string): string | undefined {
+  return readingMeanings(glyph, recordedReading, recordedMeaning)?.find(item => item.reading === reading.normalize('NFC'))?.meaning;
 }
 
 let pending: Promise<void> | null = null;
