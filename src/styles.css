@@ -502,6 +502,65 @@ this keeps the number right beside the stroke tile. */
 .tile-traditional-badge { position: absolute; top: 6px; right: 32px; font-size: 9px; line-height: 14px; padding: 0 5px; letter-spacing: .2px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent); background: var(--card); z-index: 1; }
 .catalog-entry:has(.tile-traditional-badge) > strong { margin-top: 10px; }
 .catalog-entry:not(:has(.catalog-source-icon)) .tile-traditional-badge { right: 10px; }
+/* Every traditional character box carries a tiny 繁 stamp straddling its top-right corner.
+   It is the smallest mark that says "traditional spelling" without repeating the word
+   "Traditional" in each panel, and it sits half outside the box so it never covers the glyph.
+   Marks: .tile-form (library card form boxes), .decomposition-glyph (breakdown parts, linked
+   and static), .radical-form-choice (script, radical-family and variant-spelling form tiles)
+   and .pinyin-character-glyph (Sound chart "In a character" boxes). The fill is a purple tint
+   of the card itself, so it reads in both themes, and pointer-events: none keeps the whole box
+   clickable. --traditional-mark-size scales the stamp where the box is larger. */
+:is(.tile-form.traditional-character,
+    .decomposition-glyph.traditional-character,
+    .radical-form-choice.is-traditional,
+    .pinyin-character-glyph.is-traditional) { position: relative; }
+:is(.tile-form.traditional-character,
+    .decomposition-glyph.traditional-character,
+    .radical-form-choice.is-traditional,
+    .pinyin-character-glyph.is-traditional)::after {
+  content: "繁";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(46%, -46%);
+  z-index: 2;
+  font-family: var(--font-hanzi);
+  font-size: var(--traditional-mark-size, 13px);
+  font-weight: 400;
+  line-height: 1;
+  padding: 1px 3px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--traditional) 45%, transparent);
+  background: color-mix(in oklch, var(--traditional) 16%, var(--card));
+  /* A lavender tint that keeps the traditional hue: mixing the token with the card in oklch
+     drifts the hue, so the fill is built from the token's own hue instead. The line above stays
+     as the fallback where relative colour syntax is not supported. */
+  background: oklch(from var(--traditional) 0.93 0.035 h);
+  color: var(--traditional);
+  pointer-events: none;
+}
+/* In dark mode the card is already near-black, so a light purple tint of it is almost
+   invisible: the stamp takes a stronger purple fill and border there so it reads as its own
+   chip rather than a faint outline on the tile. */
+:root.dark :is(.tile-form.traditional-character,
+    .decomposition-glyph.traditional-character,
+    .radical-form-choice.is-traditional,
+    .pinyin-character-glyph.is-traditional)::after {
+  background: color-mix(in oklch, var(--traditional) 26%, var(--card));
+  background: oklch(from var(--traditional) 0.3 0.055 h);
+  border-color: color-mix(in oklch, var(--traditional) 62%, transparent);
+}
+/* Library card form boxes are tight around their glyph, so the stamp is pushed further off the
+   corner there (and the boxes themselves grew slightly, 1.18em -> 1.34em) to keep it clear of
+   the character's own strokes. */
+.tile-form.traditional-character::after { transform: translate(58%, -58%); }
+/* Bigger boxes take a bigger stamp so the mark stays proportional (see the list view and the
+   comfortable display size, which enlarge the same boxes). */
+.library-list-view .word-card .tile-form.traditional-character,
+html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
+    .decomposition-glyph.traditional-character,
+    .radical-form-choice.is-traditional,
+    .pinyin-character-glyph.is-traditional) { --traditional-mark-size: 14px; }
 .search-trigger { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-size: 11px; }
 .search-trigger:hover { color: var(--foreground); border-color: var(--primary); }
 .search-trigger>svg { width: 14px; }
@@ -919,10 +978,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Exact radical variants remain grouped without enlarging the canonical deck. */
 .radical-family-card { position: relative; }
 .tile-hanzi-row { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-width: 0; }
-.tile-form { display: inline-flex; align-items: center; justify-content: center; width: 1.18em; height: 1.18em; line-height: 1; border: 1px solid var(--border); border-radius: 6px; }
+.tile-form { display: inline-flex; align-items: center; justify-content: center; width: 1.34em; height: 1.34em; line-height: 1; border: 1px solid var(--border); border-radius: 6px; }
 .radical-tile-forms { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-width: 0; pointer-events: none; color: var(--muted-foreground); opacity: .7; }
 .radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
-.radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 8px; margin-top: 14px; }
+.radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 14px 8px; margin-top: 14px; }
 .radical-form-choice { height: 100px; min-width: 0; padding: 9px 5px; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--border); border-radius: 6px; white-space: normal; }
 .radical-form-choice strong { font-size: 32px; font-weight: 400; line-height: 1.2; }
 .radical-form-choice>span { font-size: 10px; color: var(--foreground); }
