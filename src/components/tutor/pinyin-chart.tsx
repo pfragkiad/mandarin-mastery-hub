@@ -284,8 +284,9 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
     {/* Head, laid out like the other details windows: Back at the top left (the small-screen
         window's own bar carries it there instead), and the heard/chosen tone as a pill at the
-        top right ("1st tone" … "Neutral tone"), absent until a tone is chosen. */}
-    {((!inSheet && back) || current !== null) && <div className="pinyin-player-head">
+        top right ("1st tone" … "Neutral tone"), absent until a tone is chosen. The row is always
+        there (fixed height), so choosing a tone or gaining Back never shifts the card. */}
+    {<div className="pinyin-player-head">
       {!inSheet && back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
       {current !== null && <span className="word-hsk-id sound-tone-pill">{TONE_NAMES[current]}</span>}
     </div>}

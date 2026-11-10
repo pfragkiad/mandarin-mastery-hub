@@ -1842,7 +1842,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tone-button.is-unrecorded small { font-size: 8px; text-align: center; line-height: 1.2; }
 .pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { border-color: var(--muted-foreground); color: var(--foreground); }
 .pinyin-tone-button.is-unrecorded.is-current { border-color: var(--muted-foreground); color: var(--foreground); background: var(--muted); }
-.pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 16px; }
+.pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
 /* The chosen tone's pill always sits at the top right, with or without a Back button. */
 .sound-tone-pill { margin-left: auto; color: var(--sound-link); border-color: color-mix(in oklab, var(--sound-link) 45%, transparent); white-space: nowrap; }
 .pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px 0 -4px -8px; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
