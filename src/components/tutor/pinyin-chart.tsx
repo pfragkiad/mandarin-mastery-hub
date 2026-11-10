@@ -265,7 +265,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   inSheet?: boolean;
 }) {
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
-  if (!syllable) return <aside className="pinyin-player is-empty" aria-label="Selected syllable"><div className="eyebrow">SELECTED SOUND</div><p className="pinyin-player-empty">Pick a syllable to hear its tones.</p><p className="pinyin-player-tip">Then press 1–4 to replay a tone.</p></aside>;
+  if (!syllable) return <aside className="pinyin-player is-empty" aria-label="Selected syllable"><p className="pinyin-player-empty">Pick a syllable to hear its tones.</p><p className="pinyin-player-tip">Then press 1–4 to replay a tone.</p></aside>;
   const recorded = syllable.tones.filter(t => hasRecording(data, syllable.base, t));
   // With no tone chosen, the title is the bare syllable, "You" totals every recorded
   // tone, and sound-alikes are any syllable with at least one of those tones recorded.
@@ -282,8 +282,13 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
-    {!inSheet && <div className="pinyin-player-head"><div className="eyebrow">SELECTED SOUND</div>
-      {back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
+    {/* Head, laid out like the other details windows: Back at the top left (the small-screen
+        window's own bar carries it there instead), and the heard/chosen tone as a pill at the
+        top right ("1st tone" … "Neutral tone"), absent until a tone is chosen. The row is always
+        there (fixed height), so choosing a tone or gaining Back never shifts the card. */}
+    {<div className="pinyin-player-head">
+      {!inSheet && back && <Button variant="ghost" size="sm" className="pinyin-player-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => { player.stop(); window.history.back(); }}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
+      {current !== null && <span className="word-hsk-id sound-tone-pill">{TONE_NAMES[current]}</span>}
     </div>}
     <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
     <p className="pinyin-player-tone">{current !== null ? `${TONE_NAMES[current]} · ${TONE_HINTS[current]}${hasRecording(data, syllable.base, current) ? '' : ' · no recording'}` : 'Click a tone to hear it'}</p>
