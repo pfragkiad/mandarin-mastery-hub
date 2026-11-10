@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
 import { radicalIdentity } from '@/lib/radical-identities';
+import { readingMeaning } from '@/lib/catalog-store';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
@@ -46,6 +47,9 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
     return radicalsFirst(found, entry => { const radical = radicalCard(entry.hanzi); return radical ? usageRank(radical.entry, 'Radicals', includeTraditional) : undefined; });
   }, [entries, base, tone, includeTraditional, radicalCard, usageLoaded]);
   const shown = expanded ? matches : matches.slice(0, SYLLABLE_CHARACTERS_SHOWN);
+  // A multi-reading character (了 le / liǎo) shows the reviewed meaning of the reading this
+  // sound card is about; without a reviewed split it keeps its combined dictionary meaning.
+  const shownMeaning = (entry: (typeof entries)[number]) => (tone !== null ? readingMeaning(entry.hanzi, toneMark(base, tone)) : undefined) ?? entry.meaning;
 
   return <section className="pinyin-characters" aria-label="In a character">
     <div className="eyebrow">IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</div>
@@ -53,12 +57,12 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
-        <ul className="pinyin-character-list">{shown.map(entry => <li key={entry.id} className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}>
+        <ul className="pinyin-character-list">{shown.map(entry => { const meaning = shownMeaning(entry); return <li key={entry.id} className={`pinyin-character${entry.script === 'Traditional' ? ' traditional-character' : ''}`}>
           {/* Only the hanzi box is the link (like decomposition tiles), so hover and focus
               outline the box alone; the rank and meaning beside it stay plain, selectable text. */}
           <Link to="/characters" search={destinationFor(entry)}
             className="pinyin-character-glyph" lang="zh-CN"
-            title={entry.meaning || undefined} aria-label={`${entry.hanzi}${entry.meaning ? `, ${entry.meaning}` : ''} · open its details`}
+            title={meaning || undefined} aria-label={`${entry.hanzi}${meaning ? `, ${meaning}` : ''} · open its details`}
             // The details window's Back returns to this exact sound (syllable + tone in the URL).
             onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
             {entry.hanzi}
@@ -78,9 +82,9 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
                 {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
               </span>;
             })()}
-            {entry.meaning && <span className="pinyin-character-meaning"><MeaningText text={entry.meaning} /></span>}
+            {meaning && <span className="pinyin-character-meaning"><MeaningText text={meaning} /></span>}
           </span>
-        </li>)}</ul>
+        </li>; })}</ul>
         {matches.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
       </>}
   </section>;
