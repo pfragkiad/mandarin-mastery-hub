@@ -2,8 +2,9 @@ import { DetailSheet } from './detail-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { useLibraryDensity } from './use-library-density';
-import { Search, Plus, BookOpen, Check } from 'lucide-react';
+import { Search, Plus, BookOpen, Check, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
@@ -18,10 +19,27 @@ import { DraftFilterForm } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
-import { SourceInfo } from './source-info';
+import { SourceInfo, HintBody } from './source-info';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
 // provenance note stays in the (i) beside the title.
 const vocabularyMotto = 'WORDS BUILT FROM THE CHARACTERS YOU KNOW';
+/** Vocabulary's status pill in the page heading: the collection is partial material, so
+ *  the tag says so and opens the shared hint card explaining exactly what is missing.
+ *  No inputs or state — the copy restates only what the data holds today (HSK 3.0 levels
+ *  1–2, examples on some entries, no way to add your own sentences yet), so the tag can
+ *  never read as a claim of complete coverage. */
+function ExperimentalTag() {
+  return <Popover>
+    <PopoverTrigger className="experimental-tag" aria-label="Vocabulary is experimental — what this means">
+      <FlaskConical aria-hidden="true"/>Experimental
+    </PopoverTrigger>
+    <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
+      <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
+      Still being built: HSK 3.0 levels 1–2 so far; levels 3 and above are not in the collection yet.<br/>
+      Example sentences cover some entries only, and your own sentences cannot be added yet.
+    </HintBody></PopoverContent>
+  </Popover>;
+}
 type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 // Adding words is hidden: without storage or accounts, additions would vanish on reload.
