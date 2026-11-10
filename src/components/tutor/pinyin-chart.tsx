@@ -3,7 +3,7 @@
 // player, the applied URL filters and the URL-selected syllable and tone (both live
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
 import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -13,7 +13,6 @@ import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
-import { useNarrowLibrary } from './detail-sheet';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
@@ -271,7 +270,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
  * hydrated choice can never disagree. Re-read on any chart resize (window, side menu pinned or
  * hidden) and when the Compact/Comfortable size changes on <html>.
  */
-function useSoundWindowLayout(layoutRef: React.RefObject<HTMLDivElement | null>) {
+function useSoundWindowLayout(layoutRef: RefObject<HTMLDivElement | null>) {
   const [windowed, setWindowed] = useState(false);
   useEffect(() => {
     const layout = layoutRef.current;
