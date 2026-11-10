@@ -14,7 +14,7 @@ import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
 import { useNarrowLibrary } from './detail-sheet';
-import { historyEntry, soundTrail } from '@/lib/detail-trail';
+import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
 export type ChartFilters = { q: string; initial: string; final: string };
@@ -138,11 +138,20 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   // A tile hidden by the current filters simply isn't found and nothing moves.
   const chartRef = useRef<HTMLDivElement>(null);
   const revealRef = useRef<string | null>(null);
-  const revealTile = (base: string, behavior: ScrollBehavior) => {
+  // `align` (arrival from a glyph's Sound chart link, wide screens): scroll so the tile's top
+  // lines up with the sticky Selected sound card's top. The browser clamps the scroll, so a
+  // tile near the page end simply ends up visible lower down, and one near the start stays put.
+  const revealTile = (base: string, behavior: ScrollBehavior, align = false) => {
     const tile = chartRef.current?.querySelector<HTMLElement>(`.pinyin-tile[data-base="${CSS.escape(base)}"]`);
     if (!tile) return;
     // While the small-screen window is open, focus stays inside it (the tile is only scrolled to).
     if (!document.querySelector('.pinyin-sound-sheet')) tile.focus({ preventScroll: true });
+    const player = align ? chartRef.current?.querySelector<HTMLElement>('.pinyin-chart-layout > .pinyin-player') : null;
+    if (player && player.offsetParent) {
+      const top = parseFloat(getComputedStyle(player).top) || 84;
+      window.scrollTo({ top: window.scrollY + tile.getBoundingClientRect().top - top, behavior });
+      return;
+    }
     // Scroll only when the tile is not fully visible below the sticky header
     // (84px, matching .pinyin-player's top), so visible tiles never move;
     // then centre it in the visible band.
@@ -160,11 +169,15 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   // brings that syllable's tile into view and focus. The reveal waits two frames so
   // the router's scroll restoration runs first and cannot scroll the tile away again.
   const revealOnMount = useRef(true);
+  // Arrival from a glyph's Sound chart link lines the tile up with the card (taken once, so a
+  // development double-mount keeps it for the run that actually reveals).
+  const alignOnMount = useRef<boolean | null>(null);
   useEffect(() => {
     if (!revealOnMount.current || !selected) return;
     // Cleared only once the reveal runs, so a development double-mount (which cancels
     // the first frame) still reveals on the second run.
-    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { revealOnMount.current = false; revealTile(selected, 'auto'); }); });
+    alignOnMount.current ??= soundChartArrival.take();
+    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { revealOnMount.current = false; revealTile(selected, 'auto', alignOnMount.current ?? false); }); });
     return () => cancelAnimationFrame(frame);
   }, []);
   // A sound-alike is a link inside the card: remember the sound being left for Back,
