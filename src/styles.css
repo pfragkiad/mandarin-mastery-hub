@@ -1828,7 +1828,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
 .pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
 .pinyin-tone-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
-.pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px 6px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
+.pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 5px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
 .pinyin-tone-button.is-current { border-color: var(--primary); color: var(--primary); background: var(--secondary); }
@@ -1847,7 +1847,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' rx='7' ry='7' fill='none' stroke='black' stroke-width='2' stroke-dasharray='4 5'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
 .pinyin-tone-button.is-unrecorded:hover, .pinyin-tone-button.is-unrecorded:focus-visible { --dash-ink: var(--muted-foreground); border-color: transparent; color: var(--foreground); }
 .pinyin-tone-button.is-unrecorded.is-current { --dash-ink: var(--foreground); border-color: transparent; color: var(--foreground); background: var(--muted); }
-.pinyin-player-tone em { font-style: italic; color: var(--muted-foreground); }
+.pinyin-player-tone em { font-style: italic; }
 .pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
 /* The chosen tone's pill sits at the top right of the syllable row, its top level with the
    syllable's letters, coloured like the selected tone card (grey for the neutral tone). */
@@ -1966,7 +1966,7 @@ html[data-display-size='comfortable'] .pinyin-player-tip { font-size: 14px; line
 html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 48px; }
 html[data-display-size='comfortable'] .pinyin-player-tone { font-size: 13px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-player-back.pinyin-player-back { height: 32px; font-size: 13px; }
-html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 10px 4px 8px; gap: 4px; }
+html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 8px 4px 6px; gap: 3px; }
 html[data-display-size='comfortable'] .pinyin-tone-button small { font-size: 12px; }
 html[data-display-size='comfortable'] .pinyin-tone-button .tone-contour { width: 40px; height: 26px; }
 html[data-display-size='comfortable'] .pinyin-player-actions { gap: 10px; }
