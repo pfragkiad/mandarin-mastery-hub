@@ -7,6 +7,36 @@ import { filterLibrary, LIBRARY_PAGE_SIZE, type LibraryEntry } from './character
 import type { Tone } from './pinyin-guide';
 import { radicalIdentity } from './radical-identities';
 import { radicalFamily } from './radical-strokes';
+import { scriptGroup, scriptHead } from './character-variants';
+
+/** One "In a character" row: a single record, or simplified + traditional forms shown together. */
+export type SyllableRow<T> = { key: string; forms: T[] };
+
+/** Group listed forms into shared rows only when (a) they belong to the same ordinary
+ *  simplified ↔ traditional card group (scriptHead — context-dependent pairs such as
+ *  了 ↔ 瞭 are never in one, see character-variants.ts), (b) every form is itself in the
+ *  list, i.e. records this exact syllable + tone, and (c) their recorded meanings for this
+ *  reading are identical. Anything else (郁 / 鬱 with different senses) stays its own row,
+ *  so a partial or different-sense correspondence is never presented as one word.
+ *  A row sits at its best-listed member's position; forms keep script-group order
+ *  (simplified first) and each keeps its own record, link and rank. */
+export function groupScriptForms<T extends { id: string; hanzi: string }>(rows: T[], meaning: (row: T) => string, head: (glyph: string) => string = scriptHead, order: (glyph: string) => string[] = scriptGroup): SyllableRow<T>[] {
+  const keyOf = (row: T) => `${head(row.hanzi)}\u0000${meaning(row).trim()}`;
+  const byKey = new Map<string, T[]>();
+  for (const row of rows) byKey.set(keyOf(row), [...(byKey.get(keyOf(row)) ?? []), row]);
+  const out: SyllableRow<T>[] = [];
+  const done = new Set<string>();
+  for (const row of rows) {
+    const key = keyOf(row);
+    if (done.has(key)) continue;
+    done.add(key);
+    const members = byKey.get(key)!;
+    const position = order(row.hanzi);
+    const forms = members.length > 1 ? [...members].sort((a, b) => position.indexOf(a.hanzi) - position.indexOf(b.hanzi)) : members;
+    out.push({ key: forms.map(form => form.id).join('|'), forms });
+  }
+  return out;
+}
 
 /** Characters-tab entries reading exactly `base` in `tone`, most used first (supplied corpus ranks). */
 export function syllableCharacters(entries: LibraryEntry[], base: string, tone: Tone, includeTraditional = false): LibraryEntry[] {
