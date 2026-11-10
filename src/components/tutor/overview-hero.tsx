@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
+import { openDetailsHint } from '@/lib/tile-hints';
+import { vocabularyKind } from '@/lib/mandarin';
 import { Volume2, Library, BookOpen, Bookmark } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import type HanziWriter from 'hanzi-writer';
@@ -107,23 +109,23 @@ function DailyPinyin({ entry, slow, showPinyin, chartLinks }: { entry: LibraryEn
   </div>;
 }
 
-type SavedRecord = { id: string; hanzi: string; pinyin: string; to: '/vocabulary' | '/characters'; search: Record<string, unknown> };
+type SavedRecord = { id: string; hanzi: string; pinyin: string; kind: string; to: '/vocabulary' | '/characters'; search: Record<string, unknown> };
 
 /** Session bookmarks as a quick row; hidden when nothing is saved. */
 export function SavedStrip() {
   const { saved, items, preferences, catalogVersion } = useWorkspace();
   const records = useMemo(() => saved.flatMap((id): SavedRecord[] => {
     const word = items.find(w => w.id === id);
-    if (word) return [{ id, hanzi: word.hanzi, pinyin: word.pinyin, to: '/vocabulary' as const, search: overviewWordDestination(word) as Record<string, unknown> }];
+    if (word) return [{ id, hanzi: word.hanzi, pinyin: word.pinyin, kind: vocabularyKind(word), to: '/vocabulary' as const, search: overviewWordDestination(word) as Record<string, unknown> }];
     const kind = id.split(':')[0] as LibraryKind;
     if (!['Characters', 'Radicals', 'Components', 'Strokes'].includes(kind)) return [];
     const entry = savedGlyphEntry(id);
-    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, to: '/characters' as const, search: savedGlyphDestination(entry) as Record<string, unknown> }] : [];
+    return entry ? [{ id, hanzi: entry.hanzi, pinyin: entry.pinyin, kind, to: '/characters' as const, search: savedGlyphDestination(entry) as Record<string, unknown> }] : [];
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }).reverse(), [saved, items, catalogVersion]);
   if (!records.length) return null;
   return <section className="saved-strip" aria-label="Pick up where you left off">
     <div className="eyebrow"><Bookmark size={13} aria-hidden="true"/>PICK UP WHERE YOU LEFT OFF</div>
-    <div className="saved-strip-row">{records.map(r => <Link key={r.id} to={r.to} search={r.search as never} className="saved-chip">{preferences.pinyin && r.pinyin && <span className="pinyin">{r.pinyin}</span>}<strong lang="zh-CN">{r.hanzi}</strong></Link>)}</div>
+    <div className="saved-strip-row">{records.map(r => <Link key={r.id} to={r.to} search={r.search as never} className="saved-chip" title={openDetailsHint(r.hanzi, r.kind)}>{preferences.pinyin && r.pinyin && <span className="pinyin">{r.pinyin}</span>}<strong lang="zh-CN">{r.hanzi}</strong></Link>)}</div>
   </section>;
 }

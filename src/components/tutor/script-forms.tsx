@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { openDetailsHint, practiceHint, switchFormHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { ScrollText } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -59,8 +60,8 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
         const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Strokes not recorded'}</span><small>{formLabel(entry.hanzi, entry.script)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {destination === 'practice'
-            ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} resetScroll={false} aria-current={selected ? 'true' : undefined} aria-label={`Practice ${scriptName} form ${entry.hanzi}`}>{content}</Link>
-            : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, id: entry.id }; }} replace resetScroll={false} aria-current={selected ? 'true' : undefined} aria-label={`View ${scriptName} form ${entry.hanzi}`}>{content}</Link>}
+            ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} resetScroll={false} aria-current={selected ? 'true' : undefined} title={practiceHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${practiceHint(entry.hanzi, selected)}`}>{content}</Link>
+            : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, id: entry.id }; }} replace resetScroll={false} aria-current={selected ? 'true' : undefined} title={switchFormHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${switchFormHint(entry.hanzi, selected)}`}>{content}</Link>}
         </Button>;
       })}
     </div>
@@ -181,8 +182,8 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
         const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.pinyin || 'Pinyin not recorded'}</span><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{alsoTraditional && <><br/>Also used in traditional</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice related-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {selected
-            ? <span aria-current="true">{content}</span>
-            : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, tab: kind, id: entry.id }; }} resetScroll={false} aria-label={`Open the card for ${entry.hanzi}`}>{content}</Link>}
+            ? <span aria-current="true" title={switchFormHint(entry.hanzi, true)}>{content}</span>
+            : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, tab: kind, id: entry.id }; }} resetScroll={false} title={openDetailsHint(entry.hanzi, kind)} aria-label={openDetailsHint(entry.hanzi, kind)}>{content}</Link>}
         </Button>;
       })}
     </div>
