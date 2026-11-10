@@ -5,6 +5,7 @@ import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { useWorkspace } from './workspace';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { TileSpeaker } from './tile-speaker';
+import { SoundChartLink } from './sound-chart-link';
 
 // One speaker per recorded reading of a glyph ("liào / liǎo" → liào 🔊 / liǎo 🔊).
 // Purpose: a glyph whose catalogue reading joins several readings with " / " never plays
@@ -45,13 +46,15 @@ export function GlyphReadingSpeaker({ spoken, reading, variant, onError }: { spo
 }
 
 /** "reading 🔊 / reading 🔊": every reading beside its own speaker. `prefix` (e.g. "Name · ")
- *  precedes the first reading; `textClassName` styles the reading text like the surface's pinyin. */
-export function MultiReadingSpeakers({ spoken, reading, variant, textClassName = 'pinyin', prefix, onError }: { spoken: string; reading: string; variant: ReadingSpeakerVariant; textClassName?: string; prefix?: string | undefined; onError?: ((message: string | null) => void) | undefined }) {
+ *  precedes the first reading; `textClassName` styles the reading text like the surface's pinyin.
+ *  `chartFrom` (Glyphs cards and details only) adds each reading's own Sound chart link, whose
+ *  Back returns to that glyph; tile and header variants only. */
+export function MultiReadingSpeakers({ spoken, reading, variant, textClassName = 'pinyin', prefix, onError, chartFrom }: { spoken: string; reading: string; variant: ReadingSpeakerVariant; textClassName?: string; prefix?: string | undefined; onError?: ((message: string | null) => void) | undefined; chartFrom?: string | undefined }) {
   const parts = splitReadings(reading);
   return <span className="multi-reading" role="group" aria-label={`Readings of ${spoken}`}>
     {parts.map((part, index) => <Fragment key={`${part}-${index}`}>
       {index > 0 && <span className={`multi-reading-separator ${textClassName}`} aria-hidden="true">/</span>}
-      <span className="multi-reading-part"><span className={textClassName}>{index === 0 && prefix ? prefix : ''}{part}</span><GlyphReadingSpeaker spoken={spoken} reading={part} variant={variant} onError={onError}/></span>
+      <span className="multi-reading-part"><span className={textClassName}>{index === 0 && prefix ? prefix : ''}{part}</span><GlyphReadingSpeaker spoken={spoken} reading={part} variant={variant} onError={onError}/>{chartFrom && (variant === 'tile' || variant === 'header') && <SoundChartLink reading={part} from={chartFrom} variant={variant}/>}</span>
     </Fragment>)}
   </span>;
 }

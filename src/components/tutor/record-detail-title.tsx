@@ -6,7 +6,7 @@ import { MeaningText } from './meaning-text';
  *  meaning below. Stacking keeps a long phrase from squeezing the translation
  *  into a one-letter-wide column, and the glyph scales down to fit the panel so
  *  a full sentence still reads on one line. */
-export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyinContent, meaningContent, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, pill }: {
+export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, pill }: {
   /** Replaces the pinyin text + single speaker, e.g. one speaker per reading (MultiReadingSpeakers). */
   pinyinContent?: ReactNode;
   /** Replaces the single meaning line, e.g. one meaning per reading (了 le / liǎo). */
@@ -20,6 +20,8 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
   meaning?: string | null;
   script?: CharacterScript | undefined;
   audio?: ReactNode;
+  /** Sound chart link (SoundChartLink) placed just after the speaker, single readings only. */
+  chartLink?: ReactNode;
   pinyinFallback?: string;
   meaningFallback?: string;
 }) {
@@ -28,7 +30,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, pinyi
    return <div className="catalog-detail-title">
     <div className="catalog-detail-head" style={headStyle}>
       <div className="catalog-detail-pinyin-row">
-        {pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}</>}
+        {pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}
         {/* All header pills share one right-aligned group so Traditional sits tight against the kind pill. */}
         {(traditional || pill) && <span className="catalog-detail-pills">
           {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
