@@ -260,6 +260,16 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   </div>;
 }
 
+/**
+ * Hover hint for a tone tile. The tile already shows its contour, spelling and "Tone N"
+ * caption, so the hint says what clicking does instead: play the recorded sound (with
+ * the 1–4 key shortcut), or — when nothing was recorded — show the tone's characters.
+ */
+function toneTileHint(base: string, tone: Tone, playable: boolean): string {
+  if (!playable) return 'No recording · click to see its characters';
+  return `Click to listen to ${toneMark(base, tone)} (recorded sound)${tone <= 4 ? ` · or press ${tone}` : ''}`;
+}
+
 /** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
 function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
   data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
