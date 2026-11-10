@@ -327,6 +327,9 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
         {/* Neutral tone shows its spelling (ma) like the other cards. Captions stay one line
             ("Tone N" / "Neutral"); a missing recording shows through the dashed border, the
             tooltip and the italic note under the big syllable. */}
+        {/* An unrecorded tile also carries a small "No rec" pill in its top border, centred like a notch label
+            (absolutely placed so it never collides with the contour, and the tile keeps the same height as recorded ones). */}
+        {!playable && <span className="pinyin-tone-norec" aria-hidden="true">No rec</span>}
         <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
       </button>;
     })}</div>
