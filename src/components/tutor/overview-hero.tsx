@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
+import { vocabularyKind } from '@/lib/mandarin';
 import { Volume2, Library, BookOpen, Bookmark } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import type HanziWriter from 'hanzi-writer';
