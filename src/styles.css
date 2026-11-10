@@ -1827,7 +1827,13 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-title.pinyin { font-family: var(--font-sans); font-size: 42px; line-height: 1.1; margin: 0; font-weight: 400; }
 .pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
-.pinyin-tone-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
+.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+/* A tone the syllable doesn't use: a quiet slot with one thin diagonal slash across it.
+   Its contour and spelling are invisible spacers, so it matches the other tiles' height. */
+.pinyin-tone-button.is-absent { --slash: color-mix(in oklab, var(--muted-foreground) 45%, transparent); cursor: default; border-color: color-mix(in oklab, var(--border) 60%, transparent);
+  background: linear-gradient(to top right, transparent calc(50% - .6px), var(--slash) calc(50% - .6px), var(--slash) calc(50% + .6px), transparent calc(50% + .6px)); }
+.pinyin-tone-button.is-absent small { color: color-mix(in oklab, var(--muted-foreground) 60%, transparent); }
+.pinyin-tone-spacer { display: contents; visibility: hidden; }
 .pinyin-tone-button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 5px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--foreground); cursor: pointer; font-size: 14px; transition: border-color .15s, color .15s; }
 .pinyin-tone-button small { font-size: 9px; color: var(--muted-foreground); }
 .pinyin-tone-button:hover:not(:disabled), .pinyin-tone-button:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }

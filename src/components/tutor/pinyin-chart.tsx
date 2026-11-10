@@ -17,6 +17,9 @@ import { useNarrowLibrary } from './detail-sheet';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
+/** The Sound card's five fixed tone slots, in column order. */
+const ALL_TONES: readonly Tone[] = [1, 2, 3, 4, 5];
+
 export type ChartFilters = { q: string; initial: string; final: string };
 
 /**
