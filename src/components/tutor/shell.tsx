@@ -7,7 +7,7 @@ import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, Pin, PinOff } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, Pin, PanelLeftClose } from 'lucide-react';
 import { NAV_MEDIUM_MAX, NAV_PINNED_KEY, NAV_SMALL_MAX, navCanPin, navHasMenuButton, navIsDocked, navSizeFor, readNavPinned, type NavSize } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -38,9 +38,10 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
-  // Menu per window size (see src/lib/nav-layout.ts): large always shown; medium
-  // pinned beside the page or hidden behind the hamburger (remembered); small only
-  // opens over the page. Undocked menus use the same drawer, never an icon rail.
+  // Menu per window size (see src/lib/nav-layout.ts): medium and large are pinned
+  // beside the page or hidden behind the hamburger (one remembered choice; large shows
+  // the hamburger only while hidden); small only opens over the page. Undocked menus
+  // use the same drawer, never an icon rail.
   const [navSize, setNavSize] = useState<NavSize>('large');
   const [pinned, setPinned] = useState(true);
   useEffect(() => {
@@ -59,9 +60,9 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     setMobileOpen(false);
     try { window.localStorage.setItem(NAV_PINNED_KEY, String(value)); } catch { /* storage unavailable: keep for this visit */ }
   };
-  // Hamburger: on a pinned medium window it hides the menu; otherwise it opens or
+  // Hamburger: on a pinned (medium) window it hides the menu; otherwise it opens or
   // closes the drawer.
-  const onMenuButton = () => { if (navSize === 'medium' && pinned) savePinned(false); else setMobileOpen(open => !open); };
+  const onMenuButton = () => { if (navIsDocked(navSize, pinned)) savePinned(false); else setMobileOpen(open => !open); };
   const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
     if (!mobileOpen) return;
@@ -94,7 +95,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     if (hit.kind === 'Word') navigate({ to: '/vocabulary', search: { q: hit.word.hanzi, word: hit.word.id } });
     else navigate({ to: '/characters', search: { tab: hit.kind === 'Radical' ? 'Radicals' : hit.kind === 'Component' ? 'Components' : 'Characters', character: hit.hanzi } });
   };
-  return <div className={`workspace ${hamburgerNav ? 'hamburger-navigation' : ''} ${navHasMenuButton(navSize) ? 'has-menu-button' : ''} ${mobileOpen ? 'nav-expanded' : ''}`}>
+  return <div className={`workspace ${hamburgerNav ? 'hamburger-navigation' : ''} ${navHasMenuButton(navSize, pinned) ? 'has-menu-button' : ''} ${mobileOpen ? 'nav-expanded' : ''}`}>
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
       <Link to="/" className="brand" aria-label="Mandarin Tutor home"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
@@ -110,7 +111,11 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
       })}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navCanPin(navSize)
-        ? <Button size="icon" variant="ghost" title={pinned ? 'Unpin menu (hide it)' : 'Pin menu beside the page'} aria-label={pinned ? 'Unpin menu' : 'Pin menu'} aria-pressed={pinned} onClick={() => savePinned(!pinned)}>{pinned ? <PinOff/> : <Pin/>}</Button>
+        ? (pinned
+          // Docked: collapse button hides the menu (the hamburger then brings it back).
+          ? <Button size="icon" variant="ghost" title="Hide menu" aria-label="Hide menu" onClick={() => savePinned(false)}><PanelLeftClose/></Button>
+          // Drawer over the page: pin it back beside the page.
+          : <Button size="icon" variant="ghost" title="Keep menu beside the page" aria-label="Keep menu beside the page" onClick={() => savePinned(true)}><Pin/></Button>)
         : hamburgerNav && <Button size="icon" variant="ghost" title="Close menu" aria-label="Close navigation" onClick={() => setMobileOpen(false)}><ChevronsLeft/></Button>}</div></div>
     </aside>
     <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><Button variant="ghost" size="icon" className={mobileOpen ? 'mobile-menu close-x' : 'mobile-menu'} aria-label={mobileOpen ? 'Close menu' : hamburgerNav ? 'Open menu' : 'Hide menu'} title={mobileOpen ? 'Close menu' : hamburgerNav ? 'Open menu' : 'Hide menu'} onClick={onMenuButton}>{mobileOpen ? <X/> : <Menu/>}</Button><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
