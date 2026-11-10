@@ -1763,8 +1763,13 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */
 :root { --grade-high: oklch(.5 .13 150); --grade-good: oklch(.6 .15 58); --grade-fair: oklch(.47 .07 50); --grade-low: oklch(.54 .19 27); }
-:root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.58 .13 230); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .17 305); }
-:root.dark { --tone-1: oklch(.76 .12 225); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.7 .15 305); }
+/* Tone 4 is crimson, not the violet it used to be: that violet sat almost exactly on
+   --traditional, so a 4th-tone tile and a Traditional character in "In a character" read as
+   the same colour. Yellow was rejected — it cannot reach AA on white (.55/.14 gives 4.8:1) and
+   lands on --rank-gold / --experimental, and in dark mode on --tone-2 itself. The hue stays clear
+   of the review/error red (--grade-low, hue 27) so a tone dot never impersonates a review dot. */
+:root { --tone-mark: oklch(1 0 0); --tone-1: oklch(.58 .13 230); --tone-2: oklch(.62 .15 62); --tone-3: oklch(.52 .13 150); --tone-4: oklch(.5 .19 345); }
+:root.dark { --tone-1: oklch(.76 .12 225); --tone-2: oklch(.79 .14 70); --tone-3: oklch(.76 .14 150); --tone-4: oklch(.75 .17 345); }
 :root.dark { --grade-high: oklch(.8 .14 150); --grade-good: oklch(.79 .13 62); --grade-fair: oklch(.63 .07 48); --grade-low: oklch(.7 .17 25); }
 .accuracy-grade { font-weight: 600; }
 .accuracy-grade-high { color: var(--grade-high); }
@@ -1819,8 +1824,9 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-tile-badge.off .pinyin-tile-badge-ring { fill: none; stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-mark { stroke: var(--tone-ink); }
 .pinyin-tile-badge.off .pinyin-tile-badge-dot { fill: var(--tone-ink); }
-/* Each tone keeps its own fixed colour (1 sky blue, 2 orange, 3 green, 4 purple; red is avoided because a red disc with a bar reads as "No entry") in the grid
-   dots and the Selected sound tone cards, so colour alone already says which tone. */
+/* Each tone keeps its own fixed colour (1 sky blue, 2 orange, 3 green, 4 crimson — see the
+   --tone-4 note above) in the grid dots and the Selected sound tone cards, so colour alone
+   already says which tone. */
 .tone-1 { --tone-ink: var(--tone-1); }
 .tone-2 { --tone-ink: var(--tone-2); }
 .tone-3 { --tone-ink: var(--tone-3); }
