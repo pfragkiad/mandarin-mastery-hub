@@ -313,7 +313,7 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
       const playable = hasRecording(data, syllable.base, t);
       // An unrecorded tone stays clickable (it shows its characters) but plays nothing; it gets its own grey look.
       return <button key={t} type="button" className={`pinyin-tone-button tone-${t}${playable ? '' : ' is-unrecorded'}${t === current ? ' is-current' : ''}${player.playing === soundId(syllable.base, t) ? ' is-playing' : ''}`} aria-pressed={t === current}
-        aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={playable ? `${TONE_NAMES[t]} (${t})` : `${TONE_NAMES[t]} · no recording; shows its characters`} onClick={() => onTone(t)}>
+        aria-label={`${TONE_NAMES[t]}: ${toneMark(syllable.base, t)}${playable ? '' : ' · no recording'}`} title={toneTileHint(syllable.base, t, playable)} onClick={() => onTone(t)}>
         {/* Neutral tone shows its spelling (ma) like the other cards. Captions stay one line
             ("Tone N" / "Neutral"); a missing recording shows through the dashed border, the
             tooltip and the italic note under the big syllable. */}
