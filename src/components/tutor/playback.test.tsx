@@ -573,11 +573,28 @@ it('the progress tile shows the next stroke glowing and fills its bar as strokes
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 2 of 3/);
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
-  // The Strokes pill off leaves the drawn stroke count and the bar.
+  // The Strokes pill off leaves the stroke you are on and the bar.
   fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
-  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('1 / 3');
+  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('2 / 3');
   expect(tile()?.getAttribute('aria-label')).toBe('1 of 3 strokes drawn');
+});
+
+it('a finished character keeps its tick but shows no stroke count', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const tile = () => document.querySelector('.stroke-progress-tile');
+  await waitFor(() => expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 1 of 3/));
+  expect(tile()?.querySelector('.stroke-index')?.textContent).toBe('1 / 3');
+  act(() => {
+    const quiz = fake.quiz.mock.calls.at(-1)?.[0];
+    quiz?.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 });
+    quiz?.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 });
+    quiz?.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 });
+  });
+  await waitFor(() => expect(tile()?.getAttribute('aria-label')).toBe('All 3 strokes drawn'));
+  expect(tile()?.querySelector('.stroke-index')?.textContent).toBe('');
+  expect(tile()?.querySelector('.word-strip-done')).not.toBeNull();
 });
 
 it('Recall keeps the progress tile to its bar, even with the Strokes pill on', async () => {
@@ -590,7 +607,7 @@ it('Recall keeps the progress tile to its bar, even with the Strokes pill on', a
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
   expect(tile()?.textContent).not.toMatch(/\p{Script=Latin}/u);
-  // The blank box carries the drawn stroke count, so the tile is never just empty.
-  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('1 / 3');
+  // The blank box carries the stroke you are on, so the tile is never just empty.
+  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('2 / 3');
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
 });
