@@ -213,11 +213,11 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink }: { 
   const count = done ? '' : `${next + 1} / ${total}`;
   const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
   return (
-    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke || word?.glyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${word?.stamp ? ` ${word.stamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || word?.glyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${word?.stamp ? ` ${word.stamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? word.glyph ? <span lang="zh-CN" className={`word-strip-glyph ${word.ink ?? ''}`}>{word.glyph}</span> : null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? word.glyph ? <span lang="zh-CN" className="word-strip-glyph">{word.glyph}</span> : null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
