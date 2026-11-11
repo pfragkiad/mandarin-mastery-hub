@@ -23,6 +23,14 @@ function cssColorToHex(value: string) {
   return `#${Array.from(p).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 }
 
+/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card).
+ *  Hanzi Writer's SVG carries width/height attributes but no viewBox, so CSS cannot scale the
+ *  drawing — the writer is built at this exact size and re-dimensioned when the box changes. */
+function dailyGlyphSize(box: HTMLElement) {
+  const parsed = parseFloat(getComputedStyle(box).getPropertyValue('--daily-glyph-size'));
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 300;
+}
+
 /** Draws the character once in stroke order, then hands over to the learner's chosen font. */
 function StrokeReveal({ hanzi }: { hanzi: string }) {
   const target = useRef<HTMLDivElement>(null);
@@ -31,19 +39,31 @@ function StrokeReveal({ hanzi }: { hanzi: string }) {
     setDone(false);
     let active = true;
     let writer: HanziWriter | undefined;
+    let observer: ResizeObserver | undefined;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setDone(true); return; }
     import('hanzi-writer').then(({ default: Writer }) => {
-      if (!active || !target.current) return;
-      target.current.innerHTML = '';
+      const host = target.current;
+      const box = host?.parentElement ?? host;
+      if (!active || !host || !box) return;
+      host.innerHTML = '';
       const ink = cssColorToHex(getComputedStyle(document.documentElement).getPropertyValue('--primary').trim());
-      writer = Writer.create(target.current, hanzi, {
-        width: 300, height: 300, padding: 10, showOutline: false, showCharacter: false,
+      let size = dailyGlyphSize(box);
+      writer = Writer.create(host, hanzi, {
+        width: size, height: size, padding: 10, showOutline: false, showCharacter: false,
         strokeAnimationSpeed: 1.4, delayBetweenStrokes: 120, ...(ink ? { strokeColor: ink } : {}),
         onLoadCharDataError: () => active && setDone(true),
       });
+      // Rotating a tablet or switching display size moves --daily-glyph-size; keep the ink in step.
+      observer = new ResizeObserver(() => {
+        const next = dailyGlyphSize(box);
+        if (!writer || next === size) return;
+        size = next;
+        writer.updateDimensions({ width: next, height: next, padding: 10 });
+      });
+      observer.observe(box);
       writer.animateCharacter({ onComplete: () => { if (active) setTimeout(() => active && setDone(true), 350); } });
     }).catch(() => active && setDone(true));
-    return () => { active = false; writer = undefined; };
+    return () => { active = false; observer?.disconnect(); writer = undefined; };
   }, [hanzi]);
   return <div className={`daily-glyph ${done ? 'is-done' : ''}`}>
     <div ref={target} className="daily-glyph-writer" aria-hidden="true"/>
