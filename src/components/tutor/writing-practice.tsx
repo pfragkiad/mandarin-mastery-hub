@@ -708,6 +708,12 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // Pure component forms live only in the Components library; label them as the library does
   // (exact record membership, never shape) so Practice and the detail card agree.
   const kindLabel = pureComponentForm(character) || openedFromComponents ? 'Component' : info.label;
+  // The reading card's single hanzi wears the same identity ink as the library cards
+  // (styles.css `.card-ink-*` / `--card-ink`): purple traditional, gold sourced radical,
+  // foreground component, green character. Stroke records keep the plain text colour, as
+  // their library cards do.
+  const traditionalRecord = traditionalPill || script === 'Traditional';
+  const practiceInk = traditionalRecord ? 'is-traditional' : radId || kindLabel === 'Radical' ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
