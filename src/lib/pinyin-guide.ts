@@ -130,6 +130,25 @@ export function recordedTones(data: Pick<PinyinData, 'recordings'>, syllable: Pi
 }
 
 /**
+ * Hover hint for a syllable's grid card in the Sound chart. The card itself only
+ * shows tone dots, so the hint names every tone the inventory attests for this
+ * syllable as its real spelling (mā, má, mǎ, mà…), flags the attested tones that
+ * have no recording, and says what the click does (open the sound card beside the
+ * grid, or in the small-screen window). Inputs are the exact syllable row plus the
+ * recordings map, so nothing is promised that the data does not hold; sentence case
+ * per the global hint rule.
+ */
+export function syllableTonesHint(data: Pick<PinyinData, 'recordings'>, syllable: PinyinSyllable): string {
+  const tones = [...syllable.tones].sort((a, b) => a - b);
+  if (tones.length === 0) return 'Click to open its sound card';
+  const silent = tones.filter(t => !hasRecording(data, syllable.base, t));
+  let hint = `Available tones: ${tones.map(t => toneMark(syllable.base, t)).join(', ')}`;
+  if (silent.length === tones.length) hint += ' · no recordings yet';
+  else if (silent.length) hint += ` · no recording for ${silent.map(t => toneMark(syllable.base, t)).join(', ')}`;
+  return `${hint} · click to open its sound card`;
+}
+
+/**
  * A random syllable with at least one recorded tone (Start page sound card).
  * Syllables with no recording at all are never picked; `previous` is skipped
  * when another choice exists, so Shuffle always changes the card.
