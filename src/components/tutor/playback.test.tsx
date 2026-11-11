@@ -541,6 +541,17 @@ it('switching Trace to Recall still starts Recall fresh', async () => {
   expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(0);
 });
 
+it('word practice shows the progress tile in the focused character\'s place, count top-left and reading on top', async () => {
+  render(<WritingPractice character="我" mode="trace" strip={tile => <div role="group" aria-label="Characters in this word">{tile?.({ reading: 'wǒ', label: 'Character 1 我' })}</div>}/>);
+  await waitFor(() => expect(document.querySelector('.stroke-progress-tile')).not.toBeNull());
+  // One tile only: the strip's focused tile is the progress tile, not an extra one beside it.
+  expect(document.querySelectorAll('.stroke-progress-tile')).toHaveLength(1);
+  const tile = screen.getByRole('group', { name: 'Characters in this word' }).querySelector('.stroke-progress-tile');
+  expect(tile?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('1 / 3');
+  expect(tile?.querySelector('.stroke-progress-head .word-strip-pinyin')?.textContent).toBe('wǒ');
+  expect(tile?.getAttribute('aria-label')).toMatch(/^Character 1 我 \(wǒ\) · Next: stroke 1 of 3/);
+});
+
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
   localStorage.removeItem('tutor-stroke-drawer-open');
   render(<WritingPractice character="我" mode="trace"/>);
