@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { AudioLines, Play, Volume2 } from 'lucide-react';
+import { Play, Volume2 } from 'lucide-react';
 import type HanziWriter from 'hanzi-writer';
-import { HANZI_GAMES, PINYIN_GAMES, HanziIcon, type GameEntry } from './game-catalog';
+import { HANZI_GAMES, PINYIN_GAMES, HanziIcon, PinyinGamesIcon, type GameEntry } from './game-catalog';
 import { useWorkspace } from './workspace';
 
 /**
@@ -22,7 +22,7 @@ export function OverviewGames() {
     <div className="eyebrow" id="overview-games-title">GAMES</div>
     <div className="overview-game-groups">
       <GameGroup title="Hanzi games" note="Characters, radicals and words" icon={<HanziIcon/>} games={HANZI_GAMES}/>
-      <GameGroup title="Pinyin games" note="Real recorded syllables" icon={<AudioLines/>} games={PINYIN_GAMES}/>
+      <GameGroup title="Pinyin games" note="Real recorded syllables" icon={<PinyinGamesIcon/>} games={PINYIN_GAMES}/>
     </div>
   </section>;
 }

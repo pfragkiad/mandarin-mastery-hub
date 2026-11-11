@@ -3,19 +3,8 @@ import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { GameIcon } from './game-catalog';
 
-/**
- * One sub-item of a nav group (a library section, a vocabulary tab, a game).
- * `group` (games only: Hanzi / Pinyin) puts a small family heading before the
- * first sub-item of each family, in the full menu and in the flyout alike.
- */
-export type NavSub = { key: string; label: string; to: string; search?: Record<string, string> | undefined; active: boolean; icon?: GameIcon | undefined; cls: string; group?: { label: string; icon: GameIcon } | undefined };
-
-/** Family heading shown when a sub-item starts a new `group` (decorative: the links carry their own names). */
-function groupHeading(subs: NavSub[], index: number) {
-  const group = subs[index]?.group;
-  if (!group || subs[index - 1]?.group?.label === group.label) return null;
-  return <span className="nav-sub-heading" aria-hidden="true"><group.icon/>{group.label}</span>;
-}
+/** One sub-item of a nav group (a library section, a vocabulary tab, a game). */
+export type NavSub = { key: string; label: string; to: string; search?: Record<string, string> | undefined; active: boolean; icon?: GameIcon | undefined; cls: string };
 
 /**
  * One main menu item plus its sub-items.
@@ -31,14 +20,15 @@ function groupHeading(subs: NavSub[], index: number) {
  * The current page shows as a tinted pill on its main item and sub-item (styles.css,
  * "Side menu"); Settings is rendered by the shell in the bottom row, not here.
  *
- * Inputs: the main item (`name`, `to`, `icon`, `selected`), its `subs`, `rail`,
+ * Inputs: the main item (`id` — unique, since two items may share a route, e.g.
+ * Pinyin and Pinyin games — `name`, `to`, optional `search`, `icon`, `selected`), its `subs`, `rail`,
  * `onNavigate` (closes the phone drawer), and `open`/`onOpenChange` — the shell owns
  * which group's flyout is open, so opening one always closes the other. State: the
  * flyout's position. It is `position: fixed`, because the strip scrolls (overflow)
  * and would clip an absolutely positioned panel; top is read from the main item and
  * clamped so the panel never runs past the bottom of the window.
  */
-export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNavigate, open: openProp, onOpenChange }: { name: string; to: string; icon: GameIcon; selected: boolean; subs: NavSub[] | null; rail: boolean; onNavigate: () => void; open: boolean; onOpenChange: (open: boolean) => void }) {
+export function NavGroup({ id: itemId, name, to, search, icon: MainIcon, selected, subs, rail, onNavigate, open: openProp, onOpenChange }: { id: string; name: string; to: string; search?: Record<string, string> | undefined; icon: GameIcon; selected: boolean; subs: NavSub[] | null; rail: boolean; onNavigate: () => void; open: boolean; onOpenChange: (open: boolean) => void }) {
   const flyoutEnabled = rail && Boolean(subs?.length);
   const open = flyoutEnabled && openProp;
   const setOpen = onOpenChange;
@@ -50,7 +40,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
   const pointerType = useRef<string>('mouse');
   // Escape hands focus back to the main item; that focus must not reopen the flyout.
   const returningFocus = useRef(false);
-  const id = `nav-flyout-${to.replace(/\W/g, '') || 'start'}`;
+  const id = `nav-flyout-${itemId}`;
 
   const show = () => {
     window.clearTimeout(closeTimer.current);
@@ -90,7 +80,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
     onPointerLeave={e => { if (flyoutEnabled && e.pointerType !== 'touch') hideSoon(); }}
     onBlur={e => { if (flyoutEnabled && !groupRef.current?.contains(e.relatedTarget as Node)) setOpen(false); }}>
     <Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}>
-      <Link ref={mainRef} to={to} title={name}
+      <Link ref={mainRef} to={to} search={search ?? {}} title={name}
         aria-expanded={flyoutEnabled ? open : undefined} aria-controls={flyoutEnabled && open ? id : undefined}
         onPointerDown={e => { pointerType.current = e.pointerType; }}
         onFocus={e => { if (flyoutEnabled && !returningFocus.current && e.currentTarget.matches(':focus-visible')) show(); }}
@@ -104,11 +94,10 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
     </Button>
     {/* Full menu / drawer: sub-items always visible inside .nav-subs, whose left
         border is the thin guide line aligned with the parent icon. */}
-    {!rail && subs?.length ? <div className="nav-subs">{subs.map((s, i) => <Fragment key={s.key}>{groupHeading(subs, i)}<Button asChild variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}</div> : null}
+    {!rail && subs?.length ? <div className="nav-subs">{subs.map(s => <Fragment key={s.key}><Button asChild variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}</div> : null}
     {flyoutEnabled && open && <div ref={flyoutRef} id={id} className="nav-flyout" role="group" aria-label={name} style={{ top: pos.top, left: pos.left }}>
-      {/* Grouped subs (Games) start with their family headings instead of the group title. */}
-      {!subs![0]?.group && <span className="nav-flyout-title" aria-hidden="true">{name}</span>}
-      {subs!.map((s, i) => <Fragment key={s.key}>{groupHeading(subs!, i)}<Button asChild variant="ghost" className={`nav-flyout-item ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => { setOpen(false); onNavigate(); }}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}
+      <span className="nav-flyout-title" aria-hidden="true">{name}</span>
+      {subs!.map(s => <Fragment key={s.key}><Button asChild variant="ghost" className={`nav-flyout-item ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => { setOpen(false); onNavigate(); }}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}
     </div>}
   </div>;
 }

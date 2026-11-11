@@ -1,4 +1,4 @@
-import { Ear, Icon, Keyboard, type IconNode, type LucideProps } from 'lucide-react';
+import { Ear, Headphones, Icon, Keyboard, type IconNode, type LucideProps } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 
 /**
@@ -45,6 +45,13 @@ const cardStackNode: IconNode = [
 export function FlashcardsIcon(props: LucideProps) {
   return <Icon iconNode={cardStackNode} {...props}/>;
 }
+
+/**
+ * Pinyin games family: headphones (listening games), distinct from the Pinyin
+ * section's waveform (the Sound chart), so the two menu items never share an icon.
+ * Used by the side menu's "Pinyin games" item and the Start page group heading.
+ */
+export const PinyinGamesIcon = Headphones;
 
 /** Any icon the game lists accept: lucide icons and the text-glyph icons above. */
 export type GameIcon = React.ComponentType<{ className?: string }>;
