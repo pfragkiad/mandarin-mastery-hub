@@ -182,8 +182,8 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // drawn so far, with a tick once the character is finished (the picture then shows the whole
 // character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
 // = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
-// Recall, so the answer never shows — the picture becomes an empty box carrying the drawn
-// stroke count ("4 / 6") plus the bar, like the word strip in Recall; a stroke count is not
+// Recall, so the answer never shows — the picture becomes an empty box carrying the stroke you
+// are on ("1 / 6") plus the bar, like the word strip in Recall; a stroke count is not
 // the answer (the form tiles already show each form's total), and the hidden lines keep
 // their space so the tile never changes size.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
@@ -201,15 +201,16 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strok
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
     : `${Math.min(next, total)} of ${total} strokes drawn`;
   const label = word ? `${word.label}${word.reading ? ` (${word.reading})` : ''} · ${status}` : status;
-  // Word tiles always carry their count in the corner (hidden: strokes drawn, like the other
-  // strip tiles), so the hidden picture box stays empty instead of repeating it.
-  const index = <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : word ? `${Math.min(next, total)} / ${total}` : ''}</span>;
+  // Every top tile counts the stroke you are on, so an untouched character reads "1 / 5"
+  // and a finished one carries no count at all — the tick already says it is done.
+  const count = done ? '' : `${next + 1} / ${total}`;
+  const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
   return (
     <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? null : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
@@ -940,7 +941,8 @@ only the component breakdown; radical practice never shows a decomposition at an
 // reported progress. A tile shows the character, its own pinyin only when the catalogue
 // records exactly one reading (a word reading is never split onto its characters), and a
 // bar for the strokes drawn in the current mode, with a tick once the character is done.
-// Every tile shows the strokes drawn so far in its top-left corner ("0 / 5"); Recall blanks
+// Every tile shows the stroke you are on in its top-left corner ("1 / 5") and no count once
+// the character is finished: Recall blanks
 // the hanzi (pinyin and progress stay): the total is the character's own recorded stroke count — the same
 // number the Simplified/Traditional form tiles show — so nothing new about the answer leaks.
 // Once the writer is ready, the focused character's tile is the live stroke progress tile
@@ -961,10 +963,11 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const record = records.get(c);
       const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
       // Strokes drawn out of the total: the live writer's count once this character has
-      // reported, otherwise its recorded count, so an untouched tile still reads "0 / 8".
+      // reported, otherwise its recorded count, so an untouched tile still reads "1 / 8".
       const total = p?.total ?? record?.strokes;
       const drawn = Math.min(p?.start ?? 0, total ?? 0);
-      const count = total ? `${drawn} / ${total}` : '';
+      // The same count as the focused tile: the stroke you are on, and nothing once done.
+      const count = total && !done ? `${Math.min(drawn + 1, total)} / ${total}` : '';
       const drawnNote = total ? `${drawn} of ${total} strokes drawn` : '';
       // The focused tile while its writer loads keeps the same frame with an empty picture
       // (no hanzi), so switching characters never flashes the glyph or changes the height.
