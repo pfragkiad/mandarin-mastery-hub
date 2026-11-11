@@ -59,9 +59,9 @@ export type GameIcon = React.ComponentType<{ className?: string }>;
 /**
  * The five games, in their two families (Hanzi and Pinyin). The sidebar and the Start
  * page both read this list, so a game's name, icon and destination never drift between
- * them. Pinyin games open the Pinyin page in their quiz mode (URL search `mode`).
+ * them. Every game has its own route; the Pinyin quizzes live under /pinyin.
  */
-export type GameEntry = { key: string; label: string; line: string; icon: GameIcon; to: '/flashcards' | '/drawing' | '/pinyin'; mode?: 'tones' | 'alikes' | 'type' };
+export type GameEntry = { key: string; label: string; line: string; icon: GameIcon; to: '/flashcards' | '/drawing' | '/pinyin/tone-quiz' | '/pinyin/sound-alikes' | '/pinyin/type-what-you-hear' };
 
 export const HANZI_GAMES: GameEntry[] = [
   { key: 'flashcards', label: 'Flashcards', line: 'A second chance at the ones you miss.', icon: FlashcardsIcon, to: '/flashcards' },
@@ -69,7 +69,7 @@ export const HANZI_GAMES: GameEntry[] = [
 ];
 
 export const PINYIN_GAMES: GameEntry[] = [
-  { key: 'tones', label: 'Tone quiz', line: 'Hear a syllable, pick its tone.', icon: ToneIcon, to: '/pinyin', mode: 'tones' },
-  { key: 'alikes', label: 'Sound-alikes', line: 'Tell close syllables apart.', icon: Ear, to: '/pinyin', mode: 'alikes' },
-  { key: 'type', label: 'Type what you hear', line: 'Listen, then type the pinyin.', icon: Keyboard, to: '/pinyin', mode: 'type' },
+  { key: 'tones', label: 'Tone quiz', line: 'Hear a syllable, pick its tone.', icon: ToneIcon, to: '/pinyin/tone-quiz' },
+  { key: 'alikes', label: 'Sound-alikes', line: 'Tell close syllables apart.', icon: Ear, to: '/pinyin/sound-alikes' },
+  { key: 'type', label: 'Type what you hear', line: 'Listen, then type the pinyin.', icon: Keyboard, to: '/pinyin/type-what-you-hear' },
 ];
