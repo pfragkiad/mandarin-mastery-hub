@@ -6,7 +6,6 @@ import { Fragment, memo, useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { nearestRecordedRank } from '@/lib/rank-jump';
-import { radicalIdentity } from '@/lib/radical-identities';
 import { useLibraryDensity } from './use-library-density';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
