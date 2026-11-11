@@ -12,7 +12,7 @@ vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ id: 'hello', ha
 vi.mock('@/lib/audio', async importOriginal => ({ ...await importOriginal<typeof import('@/lib/audio')>(), playPronunciation: vi.fn() }));
 vi.mock('@/lib/mandarin', async importOriginal => ({ ...await importOriginal<typeof import('@/lib/mandarin')>(), collections: ['Greetings', 'Numbers'], speak: vi.fn() }));
 vi.mock('@/lib/character-library', () => ({ referenceCatalog: [{ kind: 'Radical', entries: [['一', 'yī', 'one']] }, { kind: 'Component', entries: [['一', 'yī', 'one']] }, { kind: 'Character', entries: [['一', 'yī', 'one']] }] }));
-vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a> }));
+vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a>, useNavigate: () => vi.fn() }));
 
 describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', async () => {

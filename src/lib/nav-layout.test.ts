@@ -28,8 +28,8 @@ describe('phone tab bar', () => {
     expect(phoneTabFor('/drawing')).toBe('games');
     expect(phoneTabFor('/pinyin')).toBe('pinyin');
   });
-  it('Start and Settings sit under More; Practice claims no tab', () => {
-    expect(phoneTabFor('/')).toBe('more');
+  it('Start has its own tab, Settings sits under More, Practice claims no tab', () => {
+    expect(phoneTabFor('/')).toBe('start');
     expect(phoneTabFor('/settings')).toBe('more');
     expect(phoneTabFor('/strokes')).toBeNull();
   });
