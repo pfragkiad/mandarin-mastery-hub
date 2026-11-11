@@ -716,14 +716,28 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       setMessage(i + 1 >= strokes.length ? 'All strokes drawn. Press Step to start over.' : `Press Step for stroke ${i + 2} of ${strokes.length}.`);
     } });
   };
+  // The mode/character/writer build the mode effect last armed, so it can tell a plain
+  // Recall → Trace switch on the same live writer from a new character or rebuild.
+  const armedFor = useRef<{ mode: PracticeMode; character: string; build: number } | null>(null);
   useEffect(() => {
     if (!ready || !writer.current) return;
+    // Switching Recall → Trace on the same writer carries the hand-drawn progress over:
+    // Trace re-arms the native quiz at the next undrawn stroke (quizStartStrokeNum redraws
+    // exactly that prefix) with the Recall scores kept, so the learner can trace on or
+    // press Play from there. Prefix 0 because these strokes were drawn, not clicked.
+    // Other switches still start fresh (Trace → Recall must not hand over guided strokes).
+    const previous = armedFor.current;
+    armedFor.current = { mode, character, build: writerBuild };
+    const drawn = tracePos.current;
+    const carried = previous?.mode === 'recall' && mode === 'trace' && previous.character === character && previous.build === writerBuild && drawn > 0
+      ? { start: drawn, scores, prefix: 0, mode, message: drawn >= strokes.length ? 'All strokes drawn. Draw again to start over.' : `Continue tracing from stroke ${drawn + 1} of ${strokes.length}, or press Play.` }
+      : null;
     animationRun.current += 1;
     writer.current.cancelQuiz();
     setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
-    const restore = restoreRef.current; restoreRef.current = null;
+    const restore = carried ?? restoreRef.current; restoreRef.current = null;
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
     else if (restore && restore.mode === mode) quiz(restore.start, restore);
     else quiz();
