@@ -8,7 +8,7 @@ import { NavGroup, type NavSub } from './nav-group';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Maximize2, Minimize2, AudioLines, Volume2, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Maximize2, Minimize2, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
 import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';

@@ -1,10 +1,21 @@
 import { Link } from '@tanstack/react-router';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { GameIcon } from './game-catalog';
 
-/** One sub-item of a nav group (a library section, a vocabulary tab, a game). */
-export type NavSub = { key: string; label: string; to: string; search?: Record<string, string> | undefined; active: boolean; icon?: GameIcon | undefined; cls: string };
+/**
+ * One sub-item of a nav group (a library section, a vocabulary tab, a game).
+ * `group` (games only: Hanzi / Pinyin) puts a small family heading before the
+ * first sub-item of each family, in the full menu and in the flyout alike.
+ */
+export type NavSub = { key: string; label: string; to: string; search?: Record<string, string> | undefined; active: boolean; icon?: GameIcon | undefined; cls: string; group?: { label: string; icon: GameIcon } | undefined };
+
+/** Family heading shown when a sub-item starts a new `group` (decorative: the links carry their own names). */
+function groupHeading(subs: NavSub[], index: number) {
+  const group = subs[index]?.group;
+  if (!group || subs[index - 1]?.group?.label === group.label) return null;
+  return <span className="nav-sub-heading" aria-hidden="true"><group.icon/>{group.label}</span>;
+}
 
 /**
  * One main menu item plus its sub-items.
@@ -93,10 +104,11 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
     </Button>
     {/* Full menu / drawer: sub-items always visible inside .nav-subs, whose left
         border is the thin guide line aligned with the parent icon. */}
-    {!rail && subs?.length ? <div className="nav-subs">{subs.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button>)}</div> : null}
+    {!rail && subs?.length ? <div className="nav-subs">{subs.map((s, i) => <Fragment key={s.key}>{groupHeading(subs, i)}<Button asChild variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}</div> : null}
     {flyoutEnabled && open && <div ref={flyoutRef} id={id} className="nav-flyout" role="group" aria-label={name} style={{ top: pos.top, left: pos.left }}>
-      <span className="nav-flyout-title" aria-hidden="true">{name}</span>
-      {subs!.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-flyout-item ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => { setOpen(false); onNavigate(); }}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button>)}
+      {/* Grouped subs (Games) start with their family headings instead of the group title. */}
+      {!subs![0]?.group && <span className="nav-flyout-title" aria-hidden="true">{name}</span>}
+      {subs!.map((s, i) => <Fragment key={s.key}>{groupHeading(subs!, i)}<Button asChild variant="ghost" className={`nav-flyout-item ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => { setOpen(false); onNavigate(); }}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button></Fragment>)}
     </div>}
   </div>;
 }
