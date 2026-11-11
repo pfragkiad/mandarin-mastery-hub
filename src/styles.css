@@ -1550,6 +1550,9 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 /* The shared button shrinks its icon to 16px; the menu button needs a bigger mark. */
 .workspace:is(.has-menu-button, .hamburger-navigation) .mobile-menu > svg { width: 22px; height: 22px; }
 .workspace:is(.has-menu-button, .hamburger-navigation).nav-expanded .mobile-menu { left: calc(238px + var(--workspace-gutter)); }
+/* While the drawer is over the page the × is the only top-bar control that matters,
+   so the breadcrumb label steps out of the way instead of sitting under the button. */
+.workspace.nav-expanded .breadcrumbs { visibility: hidden; }
 /* Below the content column's width the breadcrumb label starts at the gutter too,
    so reserve the button's width there; wider windows keep the label centred and clear. */
 @media (max-width: 1610px) {
