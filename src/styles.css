@@ -2314,6 +2314,12 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-actions { flex-wrap: wrap; gap: 6px; margin: 0; }
 .stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; justify-content: flex-start; height: 32px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
+/* Small screens: the three pills take their own full row below the heading and never wrap
+   among themselves, so Arrows/Strokes/Names always sit together on one line. */
+@media (max-width: 850px) {
+  .stroke-guide-actions { flex-basis: 100%; flex-wrap: nowrap; }
+  .stroke-guide-actions > button { min-width: 0; flex: 0 1 auto; }
+}
 
 /* Component-name tile (radical variant identity): one border around the whole word, same height as glyph tiles. */
 .decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
