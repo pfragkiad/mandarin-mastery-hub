@@ -83,7 +83,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             const kind = radicalCard(entry.hanzi) ? 'Radicals' : 'Characters';
             const target = kind === 'Radicals' ? 'radical details' : 'character details';
             return <Link key={entry.id} to="/characters" search={destinationFor(entry)}
-              className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
+              className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}${kind === 'Radicals' ? ' is-radical' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
               title={openDetailsHint(entry.hanzi, kind)}
               aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its ${target}`}
               // The details window's Back returns to this exact sound (syllable + tone in the URL).
