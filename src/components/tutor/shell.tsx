@@ -3,6 +3,7 @@ import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, type GameIcon } from './game-catalog';
+import { NavGroup, type NavSub } from './nav-group';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
@@ -54,6 +55,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const [navSize, setNavSize] = useState<NavSize>('wide');
   const [expanded, setExpanded] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Icon strip: which main item's sub-item flyout is open (one at a time; nav-group.tsx).
+  const [flyout, setFlyout] = useState<string | null>(null);
   useEffect(() => {
     setExpanded(readNavExpanded(window.localStorage));
     const phone = window.matchMedia(`(max-width: ${NAV_PHONE_MAX}px)`);
@@ -115,16 +118,16 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
       {/* Logo row; on phones the drawer's close button sits at its right end. */}
       <div className="sidebar-head"><Link to="/" className="brand" aria-label="Mandarin Tutor home" title="Start" onClick={() => setMobileOpen(false)}><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
         <Button ref={drawerCloseRef} variant="ghost" size="icon" className="drawer-close close-x" aria-label="Close menu" title="Close menu" onClick={() => setMobileOpen(false)}><X/></Button></div>
-      {/* Sub-itens sempre visíveis e indentados na navegação, para acesso direto
-          de qualquer página; as abas na página continuam sendo a troca principal. */}
+      {/* Full menu and drawer: sub-items always visible, indented. Icon strip: main
+          icons only, sub-items in a labelled flyout (nav-group.tsx). */}
       <nav aria-label="Main navigation">{navigation.map(n => {
-        const subs = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
+        const subs: NavSub[] | null = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
           : n.to === '/pinyin' ? pinyinSections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.mode ? { mode: s.mode } : {}, active: (activeMode ?? undefined) === s.mode, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-tab' }))
           : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-game' }))
           : null;
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
-        return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
+        return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.to} onOpenChange={open => setFlyout(current => open ? n.to : current === n.to ? null : current)}/>;
       })}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
