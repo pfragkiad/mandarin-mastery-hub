@@ -159,6 +159,22 @@ describe('character practice sections by mode', () => {
     expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
   });
 
+  it('marks the chosen form with one frame that wears that form\'s identity ink', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="recall"/>);
+    const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
+    const frame = group.querySelector('.form-switch-thumb');
+    expect(frame).not.toBeNull();
+    // Decorative only: the tile itself already carries the selection for screen readers.
+    expect(frame?.getAttribute('aria-hidden')).toBe('true');
+    // One frame, and its colour follows the form it covers rather than inventing its own.
+    const selected = group.querySelector('.radical-form-choice.is-selected');
+    const identity = selected?.classList.contains('is-traditional') ? 'is-traditional'
+      : selected?.classList.contains('is-radical') ? 'is-radical' : 'is-character';
+    expect(frame?.classList.contains(identity)).toBe(true);
+    expect(frame?.classList.contains('is-visible')).toBe(true);
+  });
+
   it("word practice shows a character strip with each character's own reading, blanked in recall", () => {
     const { unmount } = render(<StrokesPage initialCharacter="学乙" mode="trace"/>);
     const strip = screen.getByRole('group', { name: 'Characters in this word' });
