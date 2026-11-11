@@ -982,10 +982,10 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const hidden = hideGlyphs || loading;
       // Every tile shares the progress tile's frame (count top-left, reading top-centre,
       // fixed picture box, name line, bar), so the row keeps one height and one look.
-      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${loading ? ' is-selected' : ''}${hideGlyphs ? ' is-blank' : ''}${done ? ' is-done' : ''}${stamp ? ` ${stamp}` : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${ink ? ` ${ink}` : ''}${loading ? ' is-selected' : ''}${hideGlyphs ? ' is-blank' : ''}${done ? ' is-done' : ''}${stamp ? ` ${stamp}` : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
         <span className="stroke-progress-head" aria-hidden="true"><span className="stroke-index tile-count-corner">{count}</span>{single && <span className="pinyin word-strip-pinyin">{single}</span>}</span>
-        <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}</span>
+        <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
         <span className="stroke-pinyin" aria-hidden="true"/>
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
       </button>;
