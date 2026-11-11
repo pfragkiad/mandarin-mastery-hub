@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Menu per reviewer notes: wide windows full menu or remembered icon strip (no hamburger); phones bottom tab bar with More opening the drawer, close X on the drawer's logo row.
+
 - [done] Resolve look-alike radical forms (阝 邑/阜, 月 肉, 日 曰, 夂 夊, 斗, ⺫) by the character's declared radical, 阝 position fallback, 釒 #167 from Unihan; 邑 ⻏ card lists its characters. 12 new tests pass; 鄱, 阳, 祁, 胧, 曹, 夏 verified live.
 
 - [done] Compact small-screen library Filters/Study sheets in both modes, applied chips and hidden keyboard help; 14 tests pass, phone Apply/removal/hiding/remembering and vocabulary sheet verified, both modes at 700px fit without overflow, desktop menus restored; preview clean.

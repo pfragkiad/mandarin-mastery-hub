@@ -1,14 +1,14 @@
 import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronsLeft, ChevronRight, Menu, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, Pin, PanelLeftClose } from 'lucide-react';
-import { NAV_MEDIUM_MAX, NAV_PINNED_KEY, NAV_SMALL_MAX, navCanPin, navHasMenuButton, navIsDocked, navSizeFor, readNavPinned, type NavSize } from '@/lib/nav-layout';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll } from '@/lib/site-search';
@@ -25,6 +25,14 @@ const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
 const sectionIcons: Record<string, typeof Gamepad2> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
+// Phone bottom tab bar: the four main destinations; "More" (a button, not a link)
+// opens the full menu drawer for Start, Settings and every sub-item.
+const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon }[] = [
+  { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
+  { key: 'vocabulary', to: '/vocabulary', label: 'Vocabulary', icon: BookOpen },
+  { key: 'games', to: '/flashcards', label: 'Games', icon: HanziIcon },
+  { key: 'pinyin', to: '/pinyin', label: 'Pinyin', icon: AudioLines },
+];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
   // Track the page Practice's Back should return to (exact href incl. search).
@@ -38,38 +46,44 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
-  // Menu per window size (see src/lib/nav-layout.ts): medium and large are pinned
-  // beside the page or hidden behind the hamburger (one remembered choice; large shows
-  // the hamburger only while hidden); small only opens over the page. Undocked menus
-  // use the same drawer, never an icon rail.
-  const [navSize, setNavSize] = useState<NavSize>('large');
-  const [pinned, setPinned] = useState(true);
+  // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
+  // beside the page, full or as the slim icon strip (one remembered choice, no
+  // hamburger); phones get the bottom tab bar whose "More" opens the drawer.
+  // The phone layout itself is decided by CSS at the same 850px breakpoint, so
+  // the first paint is right before this effect runs.
+  const [navSize, setNavSize] = useState<NavSize>('wide');
+  const [expanded, setExpanded] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
-    setPinned(readNavPinned(window.localStorage));
-    const small = window.matchMedia(`(max-width: ${NAV_SMALL_MAX}px)`);
-    const medium = window.matchMedia(`(max-width: ${NAV_MEDIUM_MAX}px)`);
+    setExpanded(readNavExpanded(window.localStorage));
+    const phone = window.matchMedia(`(max-width: ${NAV_PHONE_MAX}px)`);
     const sync = () => { setNavSize(navSizeFor(window.innerWidth)); setMobileOpen(false); };
     sync();
-    small.addEventListener('change', sync);
-    medium.addEventListener('change', sync);
-    return () => { small.removeEventListener('change', sync); medium.removeEventListener('change', sync); };
+    phone.addEventListener('change', sync);
+    return () => phone.removeEventListener('change', sync);
   }, []);
-  const hamburgerNav = !navIsDocked(navSize, pinned);
-  const savePinned = (value: boolean) => {
-    setPinned(value);
-    setMobileOpen(false);
-    try { window.localStorage.setItem(NAV_PINNED_KEY, String(value)); } catch { /* storage unavailable: keep for this visit */ }
+  const navMode = navModeFor(navSize, expanded);
+  const saveExpanded = (value: boolean) => {
+    setExpanded(value);
+    try { window.localStorage.setItem(NAV_EXPANDED_KEY, String(value)); } catch { /* storage unavailable: keep for this visit */ }
   };
-  // Hamburger: on a pinned (medium) window it hides the menu; otherwise it opens or
-  // closes the drawer.
-  const onMenuButton = () => { if (navIsDocked(navSize, pinned)) savePinned(false); else setMobileOpen(open => !open); };
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // Drawer focus: opening moves focus to the drawer's close button; closing hands
+  // it back to "More", so keyboard and screen-reader users never lose their place.
+  const moreRef = useRef<HTMLButtonElement>(null);
+  const drawerCloseRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (mobileOpen) drawerCloseRef.current?.focus();
+    else if (wasOpen.current && navSize === 'phone') moreRef.current?.focus();
+    wasOpen.current = mobileOpen;
+  }, [mobileOpen, navSize]);
   useEffect(() => {
     if (!mobileOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') setMobileOpen(false); };
     window.addEventListener('keydown', closeOnEscape);
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [mobileOpen]);
+  const activePhoneTab = phoneTabFor(path);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
   const [expandedSearch, setExpandedSearch] = useState(false);
@@ -95,10 +109,12 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     if (hit.kind === 'Word') navigate({ to: '/vocabulary', search: { q: hit.word.hanzi, word: hit.word.id } });
     else navigate({ to: '/characters', search: { tab: hit.kind === 'Radical' ? 'Radicals' : hit.kind === 'Component' ? 'Components' : 'Characters', character: hit.hanzi } });
   };
-  return <div className={`workspace ${hamburgerNav ? 'hamburger-navigation' : ''} ${navHasMenuButton(navSize, pinned) ? 'has-menu-button' : ''} ${mobileOpen ? 'nav-expanded' : ''}`}>
+  return <div className={`workspace nav-${navMode}${navMode === 'rail' ? ' is-collapsed' : ''}${mobileOpen ? ' nav-expanded' : ''}`}>
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
-      <Link to="/" className="brand" aria-label="Mandarin Tutor home"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
+      {/* Logo row; on phones the drawer's close button sits at its right end. */}
+      <div className="sidebar-head"><Link to="/" className="brand" aria-label="Mandarin Tutor home" title="Start" onClick={() => setMobileOpen(false)}><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></Link>
+        <Button ref={drawerCloseRef} variant="ghost" size="icon" className="drawer-close close-x" aria-label="Close menu" title="Close menu" onClick={() => setMobileOpen(false)}><X/></Button></div>
       {/* Sub-itens sempre visíveis e indentados na navegação, para acesso direto
           de qualquer página; as abas na página continuam sendo a troca principal. */}
       <nav aria-label="Main navigation">{navigation.map(n => {
@@ -110,16 +126,17 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
         return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
       })}</nav>
-      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navCanPin(navSize)
-        ? (pinned
-          // Docked: collapse button hides the menu (the hamburger then brings it back).
-          ? <Button size="icon" variant="ghost" title="Hide menu" aria-label="Hide menu" onClick={() => savePinned(false)}><PanelLeftClose/></Button>
-          // Drawer over the page: pin it back beside the page.
-          : <Button size="icon" variant="ghost" title="Keep menu beside the page" aria-label="Keep menu beside the page" onClick={() => savePinned(true)}><Pin/></Button>)
-        : hamburgerNav && <Button size="icon" variant="ghost" title="Close menu" aria-label="Close navigation" onClick={() => setMobileOpen(false)}><ChevronsLeft/></Button>}</div></div>
+      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navSize === 'wide' && (expanded
+        // Full menu: shrink it to the slim icon strip (still beside the page).
+        ? <Button size="icon" variant="ghost" title="Shrink menu to icons" aria-label="Shrink menu to icons" onClick={() => saveExpanded(false)}><PanelLeftClose/></Button>
+        // Icon strip: bring the names and sub-items back.
+        : <Button size="icon" variant="ghost" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
     </aside>
-    <div className="main-shell"><header className="topbar"><Button variant="ghost" size="icon" className={mobileOpen ? 'mobile-menu close-x' : 'mobile-menu'} aria-label={mobileOpen ? 'Close menu' : hamburgerNav ? 'Open menu' : 'Hide menu'} title={mobileOpen ? 'Close menu' : hamburgerNav ? 'Open menu' : 'Hide menu'} onClick={onMenuButton}>{mobileOpen ? <X/> : <Menu/>}</Button><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
+    <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
       <main className="main-content">{children}</main></div>
+    {/* Phone bottom tab bar (hidden by CSS above 850px). */}
+    <nav className="phone-tabs" aria-label="Quick navigation">{phoneTabs.map(t => <Link key={t.key} to={t.to} className={`phone-tab${activePhoneTab === t.key ? ' is-active' : ''}`} aria-current={activePhoneTab === t.key ? 'page' : undefined} onClick={() => setMobileOpen(false)}><t.icon/><span>{t.label}</span></Link>)}
+      <button ref={moreRef} type="button" className={`phone-tab${activePhoneTab === 'more' || mobileOpen ? ' is-active' : ''}`} aria-expanded={mobileOpen} aria-label="More: open the full menu" title="Open the full menu" onClick={() => setMobileOpen(open => !open)}><MoreHorizontal/><span>More</span></button></nav>
     <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play Flashcards and the Drawing game under Hanzi games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
     <Dialog open={searching} onOpenChange={setSearching}><DialogContent className={`global-search${expandedSearch ? ' global-search-expanded' : ''}`}><DialogTitle className="font-display text-xl">Search everything</DialogTitle><DialogDescription>Words, characters, radicals, components, and phrases.</DialogDescription><div className="search-field"><Search/><input autoFocus aria-label="Search everything" placeholder="Search Chinese, pinyin, or meaning…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && hits[0]) { e.preventDefault(); openHit(hits[0]); } }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
       <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>
