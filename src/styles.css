@@ -2530,6 +2530,10 @@ html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; he
 .stroke-progress-head .stroke-index { grid-column: 1; justify-self: start; white-space: nowrap; }
 .stroke-progress-head .word-strip-pinyin { grid-column: 2; }
 html[data-display-size='comfortable'] .stroke-progress-tile.is-word { width: 160px; }
+/* Unfocused strip tiles are buttons in the same frame: the hanzi fills the picture box. */
+.word-strip-tile.stroke-progress-tile { cursor: pointer; }
+.stroke-progress-picture .word-strip-glyph { font-size: 54px; line-height: 1; }
+html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: 60px; }
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
 .stroke-drawer-toggle { height: 28px; padding: 0 8px 0 10px; gap: 4px; border-radius: 999px; font-size: 12px; color: var(--muted-foreground); }
 .stroke-drawer-toggle:hover, .stroke-drawer-toggle.is-open { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
