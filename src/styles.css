@@ -190,7 +190,8 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .flash-missed { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }.flash-missed a { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; color: var(--foreground); text-decoration: none; transition: border-color .2s, background .2s; }.flash-missed a:hover { border-color: var(--primary); background: var(--secondary); }.flash-missed a span { font-family: var(--font-hanzi); font-size: 22px; }.flash-missed a small { font-size: 10px; color: var(--muted-foreground); }
 .flash-repeat { justify-content: flex-end; }.flash-repeat > span:last-child { min-height: 36px; }
 .flash-start { margin-left: auto; display: flex; align-items: center; }
-:root { --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; } :root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'Ma Shan Zheng', serif; } :root[data-hanzi-font='print'] { --font-hanzi: 'Noto Serif SC', 'SimSun', 'Songti SC', serif; }
+/* Handwritten fallback must cover Simplified and Traditional: Ma Shan Zheng drew only Simplified, so phones without KaiTi showed Traditional forms in a mismatched serif. */
+:root { --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; } :root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'LXGW WenKai TC', serif; } :root[data-hanzi-font='print'] { --font-hanzi: 'Noto Serif SC', 'SimSun', 'Songti SC', serif; }
 
 .word-context {
   display: flex;
@@ -285,7 +286,7 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .search-field input::placeholder { color: var(--muted-foreground); opacity: 1; }
 .banner-seal { color: var(--banner-accent); border-color: var(--banner-accent); }
 .font-toggle button[data-font='sans'] { font-family: 'Noto Sans SC', sans-serif; }
-.font-toggle button[data-font='handwritten'] { font-family: 'KaiTi', 'STKaiti', 'Ma Shan Zheng', serif; }
+.font-toggle button[data-font='handwritten'] { font-family: 'KaiTi', 'STKaiti', 'LXGW WenKai TC', serif; }
 .font-toggle button[data-font='print'] { font-family: 'Noto Serif SC', 'SimSun', 'Songti SC', serif; }
 .theme-toggle { flex-shrink: 0; color: var(--muted-foreground); }
 .catalog-tabs > [role='tablist'] { display: flex; justify-content: flex-start; width: 100%; height: auto; padding: 0 0 12px; gap: 8px; background: transparent; border-radius: 0; border-bottom: 1px solid var(--border); overflow-x: auto; }
@@ -1772,6 +1773,13 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view .word-card .word-card-bottom { margin-inline: 18px; gap: 8px; }
   .library-list-view .word-actions { gap: 2px; }
   .library-list-view .word-actions button, .library-list-view .word-actions a { width: 36px; height: 40px; }
+}
+/* Phones: two form boxes never fit the 55% hanzi column, so they wrap one per row, but the
+   wrapping row still claims the full column and pushes pinyin/translation away (wrapping
+   "zhè" mid-syllable). Cap the row at one box so the column shrink-wraps to it. */
+@media (max-width: 500px) {
+  .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row { max-width: 82px; }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open { column-gap: 14px; }
 }
 
 /* Footer metadata copy for the top label row; shown only by the rule below. */
