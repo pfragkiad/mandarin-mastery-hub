@@ -554,8 +554,21 @@ it('word practice shows the progress tile in the focused character\'s place, cou
   expect(tile?.getAttribute('aria-label')).toMatch(/^Character 1 我 \(wǒ\) · Next: stroke 1 of 3/);
 });
 
+it('every Strokes pill starts off on a first visit', async () => {
+  localStorage.clear();
+  const { container } = render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  expect(screen.getByRole('button', { name: 'Arrows' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: 'Strokes' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: 'Names' })).toHaveAttribute('aria-pressed', 'false');
+  // Nothing extra is revealed: no stroke tiles and no direction arrows over the writing square.
+  expect(container.querySelector('.stroke-guide-strip')).toBeNull();
+  expect(container.querySelector('.stroke-direction-hints')).toBeNull();
+});
+
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
-  localStorage.removeItem('tutor-stroke-drawer-open');  render(<WritingPractice character="我" mode="trace"/>);
+  localStorage.removeItem('tutor-stroke-drawer-open');
+  render(<WritingPractice character="我" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
   const details = screen.getByRole('button', { name: 'Details' });
   expect(details).toHaveAttribute('aria-expanded', 'false');
