@@ -64,7 +64,7 @@ export function useGlyphFit(ref: RefObject<HTMLElement | null>, glyph: string): 
         let minX = px, maxX = -1, minY = px, maxY = -1;
         for (let y = 0; y < px; y++) {
           for (let x = 0; x < px; x++) {
-            if (data[(y * px + x) * 4 + 3] > 24) {
+            if ((data[(y * px + x) * 4 + 3] ?? 0) > 24) {
               if (x < minX) minX = x;
               if (x > maxX) maxX = x;
               if (y < minY) minY = y;
