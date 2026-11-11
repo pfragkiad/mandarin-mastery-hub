@@ -71,7 +71,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
     return () => { window.removeEventListener('keydown', onKey); document.removeEventListener('pointerdown', onDown); };
   }, [open]);
 
-  return <div ref={groupRef} className="nav-group"
+  return <div ref={groupRef} className={`nav-group${to === '/settings' ? ' nav-group-settings' : ''}`}
     onPointerEnter={e => { if (flyoutEnabled && e.pointerType !== 'touch') show(); }}
     onPointerLeave={e => { if (flyoutEnabled && e.pointerType !== 'touch') hideSoon(); }}
     onBlur={e => { if (flyoutEnabled && !groupRef.current?.contains(e.relatedTarget as Node)) setOpen(false); }}>
