@@ -1248,7 +1248,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component).is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
 .catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component)[tabindex="-1"]:focus,
 .catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:focus-visible { outline-color: var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):is(:hover, :focus-within) .catalog-entry-meaning,
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):hover .catalog-entry-meaning,
 .catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
 /* The purple identity also owns the frame a traditional tile draws when it is hovered or
    keyboard-focused. Without this the global :focus-visible outline and the generic tile hover
