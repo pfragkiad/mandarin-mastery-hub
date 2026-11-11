@@ -92,6 +92,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // Word (not phrase) cards use the same top-row labels in Compact and Comfortable;
   // only the Comfortable class changes the layout around them.
   const headword = vocabularyKind(word) === 'word';
+  const singleGlyph = Array.from(word.hanzi.replace(/\s/g, '')).length === 1;
   const isPhrase = vocabularyKind(word) === 'phrase';
   // Comfortable phrases share the Words top row (PHRASE · type, merged HSK pill, sentence icon)
   // and the 2×2 action block; only their stacked pinyin/box/translation body differs.
