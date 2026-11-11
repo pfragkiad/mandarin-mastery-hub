@@ -8,12 +8,13 @@ import { PracticeIcon } from './practice-icons';
  * (so CJK glyphs use the CJK font); weight 500 gives stems about as thick as a
  * lucide 2-unit stroke, so text and line icons read at one weight. No state.
  */
-function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: Omit<React.SVGProps<SVGSVGElement>, 'fontSize' | 'lang'> & { glyph: string; fontSize: number; baseline: number; lang: string }) {
+type GlyphSvgProps = Omit<React.SVGProps<SVGSVGElement>, 'fontSize' | 'lang'>;
+function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: GlyphSvgProps & { glyph: string; fontSize: number; baseline: number; lang: string }) {
   return <svg viewBox="0 0 24 24" width={24} height={24} fill="currentColor" aria-hidden="true" {...props}><text x="12" y={baseline} textAnchor="middle" fontSize={fontSize} fontWeight={500} lang={lang}>{glyph}</text></svg>;
 }
 
 /** Hanzi games: the character 字 — the strip's clearest icon. */
-export function HanziIcon(props: React.SVGProps<SVGSVGElement>) {
+export function HanziIcon(props: GlyphSvgProps) {
   return <TextGlyphIcon glyph="字" fontSize={20} baseline={19.5} lang="zh-CN" {...props}/>;
 }
 
@@ -22,7 +23,7 @@ export function HanziIcon(props: React.SVGProps<SVGSVGElement>) {
  * learning pinyin. A lowercase Latin letter is small for its em box, so it is set
  * larger than 字 to fill the same visual footprint as the line icons.
  */
-export function ToneIcon(props: React.SVGProps<SVGSVGElement>) {
+export function ToneIcon(props: GlyphSvgProps) {
   return <TextGlyphIcon glyph="ǎ" fontSize={27} baseline={20} lang="zh-Latn-pinyin" {...props}/>;
 }
 
