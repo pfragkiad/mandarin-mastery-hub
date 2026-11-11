@@ -339,6 +339,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data, source }, names]) => {
       // Load browser-only playback, exact outlines and recorded names together;
       // the active guard prevents a previous character's load from taking over.
+      console.log('DBGLOAD', active, !!target.current, boardSize);
       if (!active || !target.current) return;
       const exact = radicalStrokes(character, radicalSelection);
       // Recorded and ambiguous records both carry the source's exact names (ambiguous ones
@@ -622,7 +623,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
-    const restore = restoreRef.current; restoreRef.current = null;
+    const restore = restoreRef.current; restoreRef.current = null; console.log('DBGMODE', ready, JSON.stringify(restore));
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
     else if (restore && restore.mode === mode) quiz(restore.start, restore);
     else quiz();
