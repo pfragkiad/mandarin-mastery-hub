@@ -566,8 +566,10 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
    straddling the top-right corner, gold glyph ink and a gold hover/focus border. Marks:
    .decomposition-glyph.is-radical (breakdown parts resolved to a Kangxi radical),
    .pinyin-character-glyph.is-radical (Sound chart "In a character" radical boxes),
-   .tile-form.is-radical (Radicals library card form boxes) and .radical-form-choice (every
-   form tile in a radical family list). A form that is also traditional keeps the purple 繁
+   .tile-form.is-radical (Radicals library card form boxes) and .radical-form-choice.is-radical
+   (every form tile in a radical family list — script-form and variant-spelling tiles of
+   ordinary characters reuse .radical-form-choice without .is-radical and stay unmarked).
+   A form that is also traditional keeps the purple 繁
    stamp and ink — traditional is the more specific identity, so radical gold only shows on
    non-traditional forms. */
 :is(.decomposition-glyph.is-radical,
