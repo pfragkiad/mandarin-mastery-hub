@@ -71,7 +71,13 @@ export function FormSwitchThumb() {
       && Math.abs(start.y - first.box.y) <= first.box.h + 20;
     let timer = 0;
     if (start && near) {
-      setBox(start);
+      // Write the outgoing box straight onto the element and force a style flush: React's own
+      // render would land both boxes in the same paint, and a transition needs a computed
+      // start style to run from.
+      thumb.style.transform = `translate(${start.x}px, ${start.y}px)`;
+      thumb.style.width = `${start.w}px`;
+      thumb.style.height = `${start.h}px`;
+      void thumb.offsetWidth;
       requestAnimationFrame(() => {
         if (!live) return;
         setGliding(true);
