@@ -2442,7 +2442,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
    One card for Back, the print action, "Write <glyph>", the reading line and — only when
    the record has other forms — the form switch. The title glyph and switch tiles wear the
    shared identity ink (--card-ink: green character, gold radical, purple traditional). */
-.practice-header { border: 1px solid var(--border); background: var(--card); border-radius: 12px; padding: 18px 24px 22px; margin-bottom: 22px; min-width: 0; }
+.practice-header { border: 0; background: transparent; border-radius: 0; padding: 0; margin-bottom: 22px; min-width: 0; }
 .practice-header-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
 .practice-header .practice-back { margin: 0 0 0 -10px; font-size: 13px; }
 .practice-header .practice-back svg { width: 15px; height: 15px; }
@@ -2468,7 +2468,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 @media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
 .practice-header-forms { min-width: 0; justify-self: end; }
 @media (max-width: 850px) {
-  .practice-header { padding: 14px 18px 18px; }
+  .practice-header { padding: 0; }
   .practice-header-main { grid-template-columns: minmax(0, 1fr); }
   .practice-header-forms { justify-self: stretch; }
   .practice-title { font-size: 34px; }
