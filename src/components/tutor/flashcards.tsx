@@ -1,7 +1,7 @@
 import { GameTabs } from './game-tabs';
 import { DraftFilterForm } from './filter-form';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { GameSetup, GameReady } from './game-setup';
+import { GameSetup, GameReady, deckSummary } from './game-setup';
 import { MeaningText } from './meaning-text';
 import { useEffect, useMemo, useState } from 'react';
 import { useFlashcardSession, type FlashCard } from './flashcard-session';
@@ -100,7 +100,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1></div><span className="heading-hanzi">记<span>jì</span></span></div>
     <GameTabs current="flashcards"/>
     {/* Game dropdowns apply immediately: filters only shape the next deck, never the active round. */}
-    <GameSetup filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} autoApply onApply={configure} onClear={() => { const empty = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftSaved = draft.category === 'Saved'; return <>
+    <GameSetup summary={deckSummary(roundSize, pool.length)} action={<Button onClick={() => start(pool)} disabled={!pool.length} aria-label={`${deck ? 'Restart' : 'Start'} · ${roundSize} ${roundSize === 1 ? 'card' : 'cards'}`}><Play />{deck ? 'Restart' : 'Start'}</Button>} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftSaved = draft.category === 'Saved'; return <>
       <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, level: 'All levels', pos: 'All types', usage: '' })}>
         <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
         <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
@@ -112,16 +112,17 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       </>}
       {draftReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[draft.category.slice(4) as ReferenceKind], draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value })}><option value="">All ranks</option>{usageGroups(libraryKinds[draft.category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[draft.category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
     </>; }}</DraftFilterForm>}>
+      <div className="game-option-row">
       <select className="filter-select" aria-label="Card front" value={direction} onChange={e => patch({ direction: e.target.value as 'zh' | 'en', flipped: false })}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
       <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => patch({ deckSize: e.target.value === 'all' ? 'all' : Number(e.target.value) })}>
         {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
         <option value="all">All cards</option>
       </select>
+      </div>
       <div className="flash-options">
         <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={value => patch({ showFrontPinyin: value })} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
         <label className="flash-option"><Switch checked={repeat} onCheckedChange={value => patch({ repeat: value })} aria-label="Repeat missed cards until all are known" /><span>Repeat missed until known</span></label>
       </div>
-      <div className="flash-start"><Button onClick={() => start(pool)} disabled={!pool.length}><Play />{deck ? 'Restart' : 'Start'} · {roundSize} {roundSize === 1 ? 'card' : 'cards'}</Button></div>
     </GameSetup>
 
     {!deck && <GameReady available={pool.length > 0}/>}
