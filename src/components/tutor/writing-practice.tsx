@@ -912,7 +912,9 @@ only the component breakdown; radical practice never shows a decomposition at an
 // reported progress. A tile shows the character, its own pinyin only when the catalogue
 // records exactly one reading (a word reading is never split onto its characters), and a
 // bar for the strokes drawn in the current mode, with a tick once the character is done.
-// Recall blanks the hanzi (pinyin and progress stay) so the answer never shows.
+// Recall blanks the hanzi (pinyin and progress stay) and puts the drawn stroke count in the
+// empty box ("4 / 6"): the total is the character's own recorded stroke count — the same
+// number the Simplified/Traditional form tiles show — so nothing new about the answer leaks.
 function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void }) {
   const facts = charFacts();
   const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
@@ -926,9 +928,15 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       // Same identity ink as the Characters cards (gold radical, purple traditional, green).
       const record = records.get(c);
       const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
-      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}`} title={hideGlyphs ? `Practise character ${i + 1}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+      // Strokes drawn out of the total: the live writer's count once this character has
+      // reported, otherwise its recorded count, so an untouched tile still reads "0 / 8".
+      const total = p?.total ?? record?.strokes;
+      const drawn = Math.min(p?.start ?? 0, total ?? 0);
+      const count = total ? `${drawn} / ${total}` : '';
+      const drawnNote = total ? `${drawn} of ${total} strokes drawn` : '';
+      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${hideGlyphs && drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true"/> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
+        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true">{count}</span> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
         {single && <span className="pinyin word-strip-pinyin">{single}</span>}
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
       </button>;
