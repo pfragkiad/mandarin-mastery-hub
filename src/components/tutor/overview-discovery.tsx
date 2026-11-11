@@ -14,6 +14,8 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
 import { historyEntry } from '@/lib/detail-trail';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
+import { sectionIcons } from '@/lib/section-icons';
+import type { GameIcon } from './game-catalog';
 
 export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
@@ -104,7 +106,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
     <section className="discovery-tile" aria-label={`${meta.label}: ${count ?? '…'} records`}>
       <div className="discovery-tile-top">
         <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
-          <span className="stat-icon" aria-hidden="true" lang="zh-CN">{meta.glyph}</span>
+          <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
           <span className="discovery-tile-count">
             <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
             <span>{meta.label}</span>
