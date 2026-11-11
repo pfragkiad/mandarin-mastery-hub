@@ -200,6 +200,38 @@ describe('character practice sections by mode', () => {
     expect(Array.from(recallStrip.querySelectorAll('.tile-count-corner')).map(node => node.textContent)).toEqual(['1 / 8', '1 / 1']);
   });
 
+  it("puts each tile's reading and its speaker in one centred pair", () => {
+    const { unmount } = render(<StrokesPage initialCharacter="学乙" mode="trace"/>);
+    const strip = screen.getByRole('group', { name: 'Characters in this word' });
+    // The focused 学 tile is the live progress tile, so its reading pair lives there; 乙 is the
+    // inactive tile. Both readings sit in the head's centre column with the speaker right after.
+    const pairs = Array.from(strip.querySelectorAll('.word-strip-reading'));
+    expect(pairs).toHaveLength(2);
+    for (const pair of pairs) {
+      expect(pair.querySelector('.word-strip-pinyin')).not.toBeNull();
+      expect(pair.querySelector('.tile-speaker')).not.toBeNull();
+    }
+    expect(pairs.map(pair => pair.querySelector('.word-strip-pinyin')?.textContent)).toEqual(['xué', 'yǐ']);
+    // The speakers are the shared character-reading controls, one per exact recorded reading.
+    expect(screen.getByRole('button', { name: 'Listen to 学 xué' })).not.toBeNull();
+    expect(screen.getByRole('button', { name: 'Listen to 乙 yǐ' })).not.toBeNull();
+    unmount();
+  });
+
+  it("plays a tile's character from its speaker without selecting that tile", () => {
+    const play = vi.spyOn(catalogStore, 'playCharacter').mockResolvedValue(null);
+    const { unmount } = render(<StrokesPage initialCharacter="学乙" mode="trace"/>);
+    const strip = screen.getByRole('group', { name: 'Characters in this word' });
+    fireEvent.click(screen.getByRole('button', { name: 'Listen to 乙 yǐ' }));
+    expect(play).toHaveBeenCalledWith('乙', false, 'yǐ');
+    // Hearing 乙 must not move the practice focus: the pressed tile is still 学 (character 1),
+    // whether it is the live progress tile or still waiting for its writer.
+    expect(strip.querySelector('.stroke-progress-tile.is-word.is-selected')).not.toBeNull();
+    expect(strip.querySelector('.word-strip-select[aria-pressed="true"]')?.getAttribute('aria-label')).toContain('Practice character 1');
+    play.mockRestore();
+    unmount();
+  });
+
   it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
     hydrateCatalog({ ...catalogData, radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']] }, undefined, {
       ...familyFile,
