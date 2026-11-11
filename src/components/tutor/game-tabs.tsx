@@ -1,6 +1,7 @@
 import { useNavigate } from '@tanstack/react-router';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
+import { useActivePill } from '@/lib/use-active-pill';
 
 const ALL_GAMES = [...HANZI_GAMES, ...PINYIN_GAMES];
 export type GameKey = (typeof ALL_GAMES)[number]['key'];
@@ -19,12 +20,13 @@ export type GameKey = (typeof ALL_GAMES)[number]['key'];
  */
 export function GameTabs({ current, onBeforeNavigate }: { current: GameKey; onBeforeNavigate?: () => void }) {
   const navigate = useNavigate();
+  const pills = useActivePill(current);
   return <Tabs value={current} onValueChange={value => {
     const game = ALL_GAMES.find(g => g.key === value);
     if (!game || game.key === current) return;
     onBeforeNavigate?.();
     void (game.mode ? navigate({ to: '/pinyin', search: { mode: game.mode } }) : navigate({ to: game.to }));
   }} className="catalog-tabs game-tabs">
-    <TabsList aria-label="Games" className="page-pills">{ALL_GAMES.map(g => <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>)}</TabsList>
+    <TabsList ref={pills} aria-label="Games" className="page-pills">{ALL_GAMES.map(g => <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>)}</TabsList>
   </Tabs>;
 }
