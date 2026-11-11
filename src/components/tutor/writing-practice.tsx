@@ -182,8 +182,10 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // drawn so far, with a tick once the character is finished (the picture then shows the whole
 // character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
 // = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
-// Recall, so the answer never shows — only the bar remains, like the word strip in Recall;
-// the hidden lines keep their space so the tile never changes size.
+// Recall, so the answer never shows — the picture becomes an empty box carrying the drawn
+// stroke count ("4 / 6") plus the bar, like the word strip in Recall; a stroke count is not
+// the answer (the form tiles already show each form's total), and the hidden lines keep
+// their space so the tile never changes size.
 function StrokeProgressTile({ strokes, groups, next, showStroke }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
@@ -199,7 +201,7 @@ function StrokeProgressTile({ strokes, groups, next, showStroke }: { strokes: St
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>
-      <span className="stroke-progress-picture">{showStroke && <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
