@@ -1216,40 +1216,26 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .reveal-hide-hanzi .is-revealed .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .is-revealed .tile-hanzi-row, .reveal-hide-hanzi .is-revealed .usage-strokes,
 :is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning) .is-revealed .word-character .pinyin { visibility: visible; }
 .word-card.is-revealed:not(.is-selected) { outline: 2px solid var(--reveal-ring); outline-offset: -2px; }
-/* Traditional cards keep their purple identity in interactive states: the hover
-   frame, the selected frame and the bold reveal outline (hide mode) stay purple,
-   the hovered translation tints purple like non-traditional cards tint accent,
-   and the hanzi itself never flips to the accent colour on hover.
-   Cards mark traditional identity with the `is-traditional` class (word-card.tsx, characters-page.tsx). */
-.word-card.is-traditional:hover { border-color: var(--traditional); }
-.word-card.is-traditional.is-selected { border-color: var(--traditional); box-shadow: 0 0 0 1px var(--traditional); }
-.word-card.is-traditional.is-revealed:not(.is-selected) { outline-color: var(--traditional); }
-.word-card.is-traditional:hover .catalog-entry-meaning,
-.word-card.is-traditional:hover .word-meaning { color: var(--traditional); }
-/* The generic catalog hover recolours hanzi + meaning with the accent; traditional
-   cards must keep their purple instead (needs higher specificity than that rule). */
-.word-card.is-traditional .catalog-entry:hover strong,
-.word-card.is-traditional .catalog-entry:hover .catalog-entry-meaning,
-.word-card.is-traditional .catalog-entry:focus-visible strong,
-.word-card.is-traditional .catalog-entry:focus-visible .catalog-entry-meaning { color: var(--traditional); }
+/* Card identity ink — one rule set for every inked card. A card opts in with `card-ink` plus
+   one identity class (characters-page.tsx `cardInk`, word-card.tsx): purple traditional, gold
+   sourced radicals, green Characters, foreground Components. The hanzi always wears the ink;
+   hover/selected/reveal/focus frames take it; the translation stays foreground until hovered.
+   Traditional form tiles inside a card keep their own purple. */
+.word-card.is-traditional { --card-ink: var(--traditional); }
+.word-card.card-ink-radical { --card-ink: var(--hsk-id); }
+.word-card.card-ink-character { --card-ink: var(--primary); }
+.word-card.card-ink-component { --card-ink: var(--foreground); }
+.word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
+.word-card.card-ink:hover { border-color: var(--card-ink); }
+.word-card.card-ink.is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
+.word-card.card-ink.is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
+.word-card.card-ink[tabindex="-1"]:focus,
+.word-card.card-ink :is(.word-open, .catalog-entry):focus-visible { outline-color: var(--card-ink); }
+.word-card.card-ink:hover :is(.catalog-entry-meaning, .word-meaning),
+.word-card.card-ink .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
 /* Variant tiles inside a traditional radical card are other forms, not traditional
    themselves — keep them muted despite the `.is-traditional [lang]` rule above. */
 .word-card.is-traditional .radical-tile-forms [lang="zh-CN"] { color: var(--muted-foreground); }
-/* Glyph-card identity ink (characters-page.tsx `cardInk`): gold radicals, green Characters,
-   foreground Components. Mirrors the traditional purple rules above — the hanzi always wears the
-   ink, the hover/selected/reveal/focus frames take it, and the translation stays foreground until
-   the card is hovered or focused. Traditional form tiles inside a card keep their own purple. */
-.catalog-card.card-ink-radical { --card-ink: var(--hsk-id); }
-.catalog-card.card-ink-character { --card-ink: var(--primary); }
-.catalog-card.card-ink-component { --card-ink: var(--foreground); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):hover { border-color: var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component).is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component).is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component)[tabindex="-1"]:focus,
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:focus-visible { outline-color: var(--card-ink); }
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):hover .catalog-entry-meaning,
-.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
 /* The purple identity also owns the frame a traditional tile draws when it is hovered or
    keyboard-focused. Without this the global :focus-visible outline and the generic tile hover
    both use --primary green, so a purple 龍 box would light up green — the same colour clash the
@@ -1262,9 +1248,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 :is(.pinyin-character-glyph.is-traditional,
     .decomposition-glyph.traditional-character:not(.decomposition-glyph-static),
     .radical-form-choice.is-traditional):is(:hover, :focus-visible) { border-color: var(--traditional); }
-:is(.radical-form-choice.is-traditional,
-    .word-card.is-traditional .word-open,
-    .word-card.is-traditional .catalog-entry):focus-visible { outline-color: var(--traditional); }
+.radical-form-choice.is-traditional:focus-visible { outline-color: var(--traditional); }
 /* The explicit details action contrasts with the green availability indicators.
    Reuse theme-aware terracotta for legibility in both light and dark palettes. */
 .word-actions .card-details-action { color: var(--terracotta); }
@@ -1444,7 +1428,6 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 .library-page .word-card [aria-disabled='true'] { cursor: default; }
 /* Card returned to from Practice Back: visible focus ring until the user moves on. */
 .word-card[tabindex="-1"]:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
-.word-card.is-traditional[tabindex="-1"]:focus { outline-color: var(--traditional, var(--primary)); }
 
 /* Small screens: the navbar's named sub-items already switch library
    sections, so the in-page kind tabs hide to save vertical space; the
