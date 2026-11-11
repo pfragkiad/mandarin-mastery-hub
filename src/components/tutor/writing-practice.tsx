@@ -235,7 +235,13 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {/* The reading and its speaker are one centred pair: the pinyin stays the primary text and
           the speaker rides immediately after it, inside the head's centre column. */}
-      {word ? <span className="stroke-progress-head">{index}{word.reading && <span className="word-strip-reading"><span className="pinyin word-strip-pinyin" aria-hidden="true">{word.reading}</span>{word.glyph && <GlyphReadingSpeaker spoken={word.glyph} reading={word.reading} variant="tile" onError={word.onError}/>}</span>}</span> : index}
+      {word ? <span className="stroke-progress-head">
+        {index}
+        {word.reading && <span className="word-strip-reading">
+          <span className="pinyin word-strip-pinyin" aria-hidden="true">{word.reading}</span>
+          {word.glyph && <GlyphReadingSpeaker spoken={word.glyph} reading={word.reading} variant="tile" onError={word.onError}/>}
+        </span>}
+      </span> : index}
       <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : null : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
@@ -1024,7 +1030,13 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       // a real control above it, so hearing one character never selects another.
       return <div key={`${c}-${i}`} className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${revealed ? '' : ' is-blank'}${done ? ' is-done' : ''}${shownStamp ? ` ${shownStamp}` : ''}`}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        <span className="stroke-progress-head"><span className="stroke-index tile-count-corner" aria-hidden="true">{count}</span>{single && <span className="word-strip-reading"><span className="pinyin word-strip-pinyin" aria-hidden="true">{single}</span><GlyphReadingSpeaker spoken={c} reading={single} variant="tile" onError={onError}/>}</span>}</span>
+        <span className="stroke-progress-head">
+          <span className="stroke-index tile-count-corner" aria-hidden="true">{count}</span>
+          {single && <span className="word-strip-reading">
+            <span className="pinyin word-strip-pinyin" aria-hidden="true">{single}</span>
+            <GlyphReadingSpeaker spoken={c} reading={single} variant="tile" onError={onError}/>
+          </span>}
+        </span>
         <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
         <span className="stroke-pinyin" aria-hidden="true"/>
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
