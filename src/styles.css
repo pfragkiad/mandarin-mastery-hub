@@ -1562,8 +1562,13 @@ html[data-display-size='comfortable'] .search-field:has(.search-toggle) input { 
 html[data-display-size='comfortable'] .search-field:has(.search-toggle + .search-toggle) input { padding-right: 150px; }
 html[data-display-size='comfortable'] .display-size-trigger { min-height: 40px; font-size: 14px; }
 html[data-display-size='comfortable'] .catalog-pagination { gap: 8px; }
-/* Start cards share the global reading size while retaining aligned record rows. */
+/* Start cards share the global reading size while retaining aligned record rows.
+   Comfortable steps the grid like Compact but roomier: one column on narrow
+   windows, two from tablet widths up, three on very wide windows, so a card
+   never stretches across a large screen. */
 html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width:1100px) { html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width:1600px) { html[data-display-size='comfortable'] .overview-discovery-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 html[data-display-size='comfortable'] .discovery-tile { padding: 20px; row-gap: 12px; }
 html[data-display-size='comfortable'] .discovery-tile-count strong { font-size: 24px; }
 html[data-display-size='comfortable'] .discovery-tile-count span { font-size: var(--ui-label-size); }
