@@ -28,13 +28,17 @@ export function useRecordScroll(id: string, ready = true) {
  * details window's Previous/Next moved from the scroll position it was opened at.
  * Cards in the first row scroll the page to the top; the browser clamps the scroll, so
  * a card near the page end simply ends up visible lower down. A card too tall for that
- * spot (small screens) rises just enough to fit, staying below the 40px sticky bar.
+ * spot (small screens) rises just enough to fit, staying below the 40px sticky bar
+ * (and below the pinned phone header).
  */
 export function alignCardToTopRow(card: HTMLElement) {
   const first = document.querySelector<HTMLElement>('main [data-entry-id]') ?? document.querySelector<HTMLElement>('[data-entry-id]');
   const rect = card.getBoundingClientRect();
   const rowTop = (first ?? card).getBoundingClientRect().top + window.scrollY;
-  const spot = Math.max(48, Math.min(rowTop, window.innerHeight - rect.height - 12));
+  // Phones pin the page header (position: sticky), so the 40px page bar sits below it.
+  const header = document.querySelector<HTMLElement>('.topbar');
+  const pinned = header && getComputedStyle(header).position === 'sticky' ? header.offsetHeight : 0;
+  const spot = Math.max(48 + pinned, Math.min(rowTop, window.innerHeight - rect.height - 12));
   window.scrollTo({ top: Math.max(0, rect.top + window.scrollY - spot), behavior: 'instant' });
 }
 

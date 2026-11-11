@@ -807,10 +807,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .overview-game-text { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 0; padding: 0 4px; }
 .overview-game-text > strong { font-size: 17px; font-weight: 600; }
 .overview-game-line { color: var(--muted-foreground); font-size: 14px; line-height: 1.55; }
-.overview-game-play { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; margin: 8px 4px 0; color: var(--primary); font-size: 14px; font-weight: 500; }
+.overview-game-play { display: inline-flex; align-items: center; gap: 0; align-self: flex-start; margin: 8px 4px 0; color: var(--primary); font-size: 14px; font-weight: 500; }
 .overview-game-play-dot { width: 0; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); opacity: 0; transition: width .18s ease, opacity .18s ease; overflow: hidden; }
 .overview-game-play-dot svg { width: 13px; height: 13px; fill: currentColor; }
-.overview-game-play { gap: 0; }
 .overview-game-card:is(:hover, :focus-visible) .overview-game-play { gap: 10px; }
 .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot { width: 30px; opacity: 1; }
 /* Decorative previews (illustrations only — no reading, tone or audio is attached). */
@@ -825,7 +824,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .game-preview-tones { display: flex; gap: 10px; }
 .game-preview-tones > span { width: 50px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid var(--border); border-radius: 10px; color: var(--muted-foreground); font-size: 17px; }
 .game-preview-tones svg { width: 30px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
-.game-preview-tones > span:first-child svg, .game-preview-tones > span:not(.is-picked) svg { color: var(--foreground); }
+.game-preview-tones > span:not(.is-picked) svg { color: var(--foreground); }
 .game-preview-tones > .is-picked { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 16%, transparent); color: var(--primary); }
 .game-preview-tones > .is-picked svg { color: var(--primary); }
 .game-preview-alikes { display: flex; align-items: center; gap: 10px; color: var(--muted-foreground); }
