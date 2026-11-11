@@ -708,12 +708,6 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // Pure component forms live only in the Components library; label them as the library does
   // (exact record membership, never shape) so Practice and the detail card agree.
   const kindLabel = pureComponentForm(character) || openedFromComponents ? 'Component' : info.label;
-  // The reading card's single hanzi wears the same identity ink as the library cards
-  // (styles.css `.card-ink-*` / `--card-ink`): purple traditional, gold sourced radical,
-  // foreground component, green character. Stroke records keep the plain text colour, as
-  // their library cards do.
-  const traditionalRecord = traditionalPill || script === 'Traditional';
-  const practiceInk = traditionalRecord ? 'is-traditional' : radId || kindLabel === 'Radical' ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   const reading = info.reading?.split(' / ')[0] || null;
   const recording = info.speech ? characterRecording(info.speech, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
@@ -736,6 +730,12 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const traditionalPill = familyId
     ? historicalRadicalHeading(character, familyId) || script === 'Traditional'
     : (kindScript ?? script) === 'Traditional';
+  // The reading card's single hanzi wears the same identity ink as the library cards
+  // (styles.css `.card-ink-*` / `--card-ink`): purple traditional, gold sourced radical,
+  // foreground component, green character. Stroke records keep the plain text colour, as
+  // their library cards do.
+  const traditionalRecord = traditionalPill || script === 'Traditional';
+  const practiceInk = traditionalRecord ? 'is-traditional' : radId || kindLabel === 'Radical' ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   // Radical cards break down into strokes, so the character-level mapping and BabelStone comparison don't apply there.
   const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
   return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><Button variant="ghost" size="sm" className="practice-back" onClick={() => { const origin = practiceOrigin(); if (origin) { router.history.push(origin); focusEntryCard(); } else void navigate({ to: '/characters' }); }}><ArrowLeft/>Back</Button><div className="practice-heading-row"><div className="practice-heading-title"><h1>Practice.</h1><h2 className={mode === "recall" ? "sr-only" : undefined}>Get to know <span lang="zh-CN">{character}</span></h2></div><Button variant="outline" size="sm" className="practice-print-button" onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div></div><div className="practice-layout"><section className="practice-info practice-intro">{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}{/* Reading panel mirrors the reference detail heading: pinyin + speaker on the
