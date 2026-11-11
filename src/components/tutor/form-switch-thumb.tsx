@@ -97,6 +97,7 @@ export function FormSwitchThumb() {
       if (!settled) return;
       const next = measure();
       if (!next) return;
+      last = next.rect;
       setBox(next.box);
       setInk(next.ink);
       outgoing = { ...next.rect, at: Date.now() };
@@ -107,8 +108,8 @@ export function FormSwitchThumb() {
       live = false;
       window.clearTimeout(timer);
       observer?.disconnect();
-      const last = measure();
-      if (last) outgoing = { ...last.rect, at: Date.now() };
+      // Fresh timestamp, last known geometry: this is what the next record's frame slides from.
+      outgoing = { ...last, at: Date.now() };
     };
   }, []);
 
