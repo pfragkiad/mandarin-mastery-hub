@@ -8,6 +8,7 @@ import { useWorkspace } from './workspace';
 /**
  * Start page games: all five games in two labelled groups — Hanzi
  * (characters/words) and Pinyin (recorded syllables), matching the side menu's
+ * two game items. No inputs or state;
  * the list itself comes from game-catalog so names, icons and destinations match
  * the side menu.
  *
