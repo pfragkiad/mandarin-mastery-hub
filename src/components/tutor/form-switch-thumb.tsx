@@ -58,6 +58,10 @@ export function FormSwitchThumb() {
     };
     const first = measure();
     if (!first) return;
+    // The last box this frame was known to sit in. The note is refreshed from here on the way
+    // out: a deleted tree is already detached from the document when the cleanup runs, so
+    // measuring it again would read zeros and the next frame would have nothing to slide from.
+    let last = first.rect;
     setInk(first.ink);
     const row = list.getBoundingClientRect();
     const note = outgoing && Date.now() - outgoing.at < NOTE_MS ? outgoing : null;
