@@ -10,7 +10,7 @@ import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, StepForward, TriangleAlert } from 'lucide-react';
+import { Check, ChevronDown, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -25,7 +25,7 @@ import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_S
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, type OutlineSource } from '@/lib/character-enrichment';
-import { formatStrokeIndices, splitPinyinLines, strokeNames } from '@/lib/stroke-names';
+import { formatStrokeIndices, strokeNames } from '@/lib/stroke-names';
 import { historicalRadicalHeading, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
@@ -139,41 +139,97 @@ function useRememberedFlag(key: string, initial: boolean): [boolean, (next: bool
   });
   return [value, update];
 }
-function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, defaultVisible = true, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true, mode = 'watch', outlineSource }: { outlineSource?: OutlineSource | undefined; selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; defaultVisible?: boolean; playing?: boolean; interactive?: boolean; mode?: PracticeMode }) {
-  const [rememberedVisible, setRememberedVisible] = useRememberedFlag('tutor-stroke-tiles-visible', true);
-  const [recallVisible, setRecallVisible] = useState(false);
-  const visible = defaultVisible ? rememberedVisible : recallVisible;
-  const setVisible = defaultVisible ? setRememberedVisible : setRecallVisible;
+// The tile's own stroke halo, shared by every stroke picture (drawer tiles and the progress
+// tile). Pushed toward white so the stroke reads as the brightest thing on the card: a wide
+// blur of the stroke lifted toward white by a constant, then a tighter white core hugging the
+// stroke, then the crisp stroke on top. The lift is a constant mix, so it works for every
+// component colour. `id` must be a valid url(#…) fragment and unique on the page.
+function StrokeGlowFilter({ id }: { id: string }) {
+  return (
+    <svg width="0" height="0" className="stroke-glow-defs" aria-hidden="true" focusable="false">
+      <filter id={id} x="-40%" y="-40%" width="180%" height="180%" colorInterpolationFilters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="34" result="blur" />
+        <feColorMatrix in="blur" type="matrix" result="whiteBlur" values="0.45 0 0 0 0.55  0 0.45 0 0 0.55  0 0 0.45 0 0.55  0 0 0 1 0" />
+        <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="core" />
+        <feFlood flood-color="#fff" flood-opacity="0.6" result="coreInk" />
+        <feComposite in="coreInk" in2="core" operator="in" result="coreHalo" />
+        <feMerge><feMergeNode in="whiteBlur" /><feMergeNode in="whiteBlur" /><feMergeNode in="coreHalo" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+    </svg>
+  );
+}
+
+// One stroke picture, shared by the drawer's stroke tiles and the progress tile above the
+// square. Inputs: the character's own recorded strokes, their component groups, the picture's
+// stroke `index` and the glow filter id. Strokes before `index` are drawn fuller in their own
+// component colour, later strokes stay faint, and stroke `index` glows on top; an index past
+// the last stroke shows the whole finished character. Nothing is drawn from any other source.
+function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; index: number; glowId: string }) {
+  const current = strokes[index];
+  return (
+    <svg viewBox="0 0 1024 1024" className={`stroke-shape${current ? '' : ' is-complete'}`} aria-hidden="true">
+      <g transform="scale(1, -1) translate(0, -900)">
+        <g className="stroke-shape-context">{strokes.map((other, j) => j > index ? <path key={j} d={other.path} /> : null)}</g>
+        <g className="stroke-shape-previous">{strokes.map((other, j) => j < index ? <path key={j} d={other.path} style={{ fill: componentInk(strokeGroupAt(groups, j)?.palette) }} /> : null)}</g>
+        {current && <path className="stroke-shape-current" d={current.path} style={{ fill: componentInk(strokeGroupAt(groups, index)?.palette) }} filter={`url(#${glowId})`} />}
+      </g>
+    </svg>
+  );
+}
+
+// The progress tile under the mode tabs (beside a word's character strip): the stroke to
+// draw next as a stroke picture with its number and recorded name, and a bar for the strokes
+// drawn so far, with a tick once the character is finished (the picture then shows the whole
+// character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
+// = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
+// Recall, so the answer never shows — only the bar remains, like the word strip in Recall;
+// the hidden lines keep their space so the tile never changes size.
+function StrokeProgressTile({ strokes, groups, next, showStroke }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean }) {
+  const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
+  const total = strokes.length;
+  if (!total) return null;
+  const done = next >= total;
+  const stroke = strokes[next];
+  const fraction = Math.min(1, next / total);
+  const label = showStroke
+    ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
+    : `${Math.min(next, total)} of ${total} strokes drawn`;
+  return (
+    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}`} role="img" aria-label={label} title={label}>
+      {showStroke && <StrokeGlowFilter id={glowId}/>}
+      {done && <Check className="word-strip-done" aria-hidden="true"/>}
+      <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>
+      <span className="stroke-progress-picture">{showStroke && <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/>}</span>
+      <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
+      <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
+    </div>
+  );
+}
+
+// The Strokes panel under the writer. `visible` is the Strokes pill (owned by WritingPractice,
+// which also hides the progress tile's picture with it); the full tile sequence sits in a
+// collapsible drawer opened by "Details" beside the heading, remembered across visits, so
+// the panel stays short unless the learner asks for every tile.
+function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, visible, onVisibleChange, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true, mode = 'watch', outlineSource }: { outlineSource?: OutlineSource | undefined; selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; visible: boolean; onVisibleChange: (value: boolean) => void; playing?: boolean; interactive?: boolean; mode?: PracticeMode }) {
+  const [drawerOpen, setDrawerOpen] = useRememberedFlag('tutor-stroke-drawer-open', false);
+  const drawerId = `stroke-drawer-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   // One shared glow filter for every tile's current stroke (ids must be valid in url(#…)).
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   if (!strokes.length) return null;
   return (
     <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}`}>
-      <svg width="0" height="0" className="stroke-glow-defs" aria-hidden="true" focusable="false">
-        {/* Halo for the tile's own stroke, pushed toward white so it reads as the brightest
-            thing on the card: a wide blur of the stroke lifted toward white by a constant,
-            then a tighter white core hugging the stroke, then the crisp stroke on top.
-            The lift is a constant mix, so it works for every component colour. */}
-        <filter id={glowId} x="-40%" y="-40%" width="180%" height="180%" colorInterpolationFilters="sRGB">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="34" result="blur" />
-          <feColorMatrix in="blur" type="matrix" result="whiteBlur" values="0.45 0 0 0 0.55  0 0.45 0 0 0.55  0 0 0.45 0 0.55  0 0 0 1 0" />
-          <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="core" />
-          <feFlood flood-color="#fff" flood-opacity="0.6" result="coreInk" />
-          <feComposite in="coreInk" in2="core" operator="in" result="coreHalo" />
-          <feMerge><feMergeNode in="whiteBlur" /><feMergeNode in="whiteBlur" /><feMergeNode in="coreHalo" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-      </svg>
+      <StrokeGlowFilter id={glowId}/>
       <div className="stroke-guide-top">
-        <div className="stroke-guide-heading"><h3 className="eyebrow"><ListOrdered size={13} />Strokes<SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo></h3></div>
+        <div className="stroke-guide-heading"><h3 className="eyebrow"><ListOrdered size={13} />Strokes<SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo></h3>{visible && <Button variant="ghost" size="sm" className={`stroke-drawer-toggle${drawerOpen ? ' is-open' : ''}`} aria-expanded={drawerOpen} aria-controls={drawerId} title={drawerOpen ? 'Hide every stroke tile' : `Show all ${strokes.length} stroke tiles`} onClick={() => setDrawerOpen(open => !open)}>Details<ChevronDown size={14} aria-hidden="true"/></Button>}</div>
         <div className="stroke-guide-actions">
           {/* Toggle pills: a fixed one-word label and icon; the green tint (and aria-pressed) shows the feature is on. */}
           <Button variant="ghost" size="sm" className={`stroke-pill${arrows ? ' is-on' : ''}`} aria-pressed={arrows} title={arrows ? 'Hide direction arrows' : 'Show direction arrows'} disabled={arrowsDisabled} onClick={() => onArrowsChange(!arrows)}><MoveUpRight size={16} />Arrows</Button>
-          <Button variant="ghost" size="sm" className={`stroke-pill${visible ? ' is-on' : ''}`} aria-pressed={visible} title={visible ? 'Hide stroke tiles' : 'Show stroke tiles'} onClick={() => setVisible(v => !v)}><Eye size={16} />Strokes</Button>
+          <Button variant="ghost" size="sm" className={`stroke-pill${visible ? ' is-on' : ''}`} aria-pressed={visible} title={visible ? 'Hide stroke tiles' : 'Show stroke tiles'} onClick={() => onVisibleChange(!visible)}><Eye size={16} />Strokes</Button>
           {audioControl}
         </div>
       </div>
-      {visible && (
-        <>
+      {visible && drawerOpen && (
+        <div className="stroke-drawer" id={drawerId}>
           <div className="stroke-component-groups">
           {strokeGroupRuns(groups, strokes.length).map((run, runIndex) => <div className="stroke-component-group" key={`${run.group.id}-${runIndex}`} data-component-group={run.group.id}>
             <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={mode === 'recall' || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={mode === 'trace' ? run.group.strokeIndices.every(i => componentIndices.includes(i)) : selectedGroup === run.group.id} onClick={() => onGroupSelect(mode === 'watch' && selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
@@ -194,29 +250,20 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                       tile itself holds only the stroke and stays a square. */}
                   <span className="stroke-index">{i + 1}</span>
                   <span className="stroke-frame">
-                    <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
-                      {/* The whole character's own recorded strokes sit faded behind the tile's stroke,
-                          so the stroke reads in place; nothing here is drawn from any other source. */}
-                      <g transform="scale(1, -1) translate(0, -900)">
-                        {/* Later strokes stay faint; strokes already written before this one are drawn
-                            fuller in their own component colour; the tile's stroke glows on top. */}
-                        <g className="stroke-shape-context">{strokes.map((other, j) => j > i ? <path key={j} d={other.path} /> : null)}</g>
-                        <g className="stroke-shape-previous">{strokes.map((other, j) => j < i ? <path key={j} d={other.path} style={{ fill: componentInk(strokeGroupAt(groups, j)?.palette) }} /> : null)}</g>
-                        <path className="stroke-shape-current" d={stroke.path} style={{ fill: componentInk(run.group.palette) }} filter={`url(#${glowId})`} />
-                      </g>
-                    </svg>
+                    {/* Earlier strokes fuller in their component colour, later ones faint, this one glowing. */}
+                    <StrokePicture strokes={strokes} groups={groups} index={i} glowId={glowId}/>
                     {stroke.estimated && <span className="stroke-estimated" title="No recorded stroke order for this character — name estimated from the stroke's shape">est.</span>}
                     {stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
                     {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
                   </span>
-                  <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
+                  <span className="stroke-pinyin">{stroke.pinyin}</span>
                 </Button>
               </li>
             ); })}
           </ol></div>)}
           </div>
           <p className="stroke-guide-note">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'} in writing order{mode === 'trace' ? ' — continue tracing in the square.' : interactive ? ' — tap one to draw through it.' : ' — draw them in the square.'}</p>
-        </>
+        </div>
       )}
     </div>
   );
@@ -302,6 +349,12 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [paused, setPaused] = useState(false);
   // Arrow preference is remembered; Recall never shows them (guides must not leak into recall).
   const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
+  // Strokes pill: remembered in Watch/Trace; Recall starts hidden each time it is entered so
+  // nothing reveals the answer by default. It drives both the Strokes drawer and the progress
+  // tile's picture.
+  const [tilesPref, setTilesPref] = useRememberedFlag('tutor-stroke-tiles-visible', true);
+  const [recallTiles, setRecallTiles] = useState(false);
+  useEffect(() => { setRecallTiles(false); }, [mode]);
   const arrows = arrowsPref && mode !== 'recall';
   const [medians, setMedians] = useState<MedianPoint[][]>([]);
   // Non-Hanzi-Writer outline provenance (reviewed supplementary source), shown in the Strokes (i).
@@ -709,8 +762,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
   // Stroke-name speech toggle: the "Names" pill in the Strokes action row (shares Step's mute state);
   // pressed/tinted means names are spoken aloud.
+  const strokesVisible = mode === 'recall' ? recallTiles : tilesPref;
+  const setStrokesVisible = mode === 'recall' ? setRecallTiles : setTilesPref;
+  // Next undrawn stroke, the same position reported through onProgress (Watch: the Step position).
+  const nextStroke = mode === 'watch' ? Math.min(stepIndex, strokes.length) : Math.min(tracePos.current, strokes.length);
+  const progressRow = <div className="practice-progress-row">{strip}{ready && strokes.length > 0 && <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'}/>}</div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{strip}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} visible={strokesVisible} onVisibleChange={setStrokesVisible} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
