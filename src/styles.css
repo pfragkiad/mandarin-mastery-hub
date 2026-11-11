@@ -2591,7 +2591,10 @@ html[data-display-size='comfortable'] .stroke-progress-tile.is-word { width: 160
    an invisible button underneath it. The head sits above that button but lets clicks fall
    through, except on the speaker — so hearing a character never selects it. */
 .word-strip-tile > .word-strip-select { position: absolute; inset: 0; z-index: 0; padding: 0; border: 0; background: none; border-radius: inherit; cursor: pointer; }
-.word-strip-tile > :not(.word-strip-select) { position: relative; z-index: 1; pointer-events: none; }
+/* Every child but the select button and the done tick sits above the button and ignores
+   pointer events; the tick keeps its own absolute corner position (a relative override here
+   dropped it into the flow, where it landed mid-tile beside the 部 / 繁 corner stamp). */
+.word-strip-tile > :not(.word-strip-select):not(.word-strip-done) { position: relative; z-index: 1; pointer-events: none; }
 .word-strip-tile .tile-speaker { pointer-events: auto; }
 .word-strip-tile:has(.word-strip-select:focus-visible) { border-color: var(--card-ink, var(--primary)); }
 .word-strip-tile.stroke-progress-tile { cursor: pointer; }
