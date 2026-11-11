@@ -1404,23 +1404,34 @@ html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-fo
 .catalog-tools-row { gap: 8px; margin-bottom: 12px; }
 .catalog-tools-row > button { height: 32px; font-size: 11px; }
 .catalog-tools-row > button.selected { background: var(--secondary); color: var(--primary); }
-/* Game setup uses the same 36px controls as library filters, with Start
-   adjacent to round options instead of pushed across the whole workspace. */
-.game-setup { padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid var(--border); }
-.game-setup .shared-filter-form { margin: 0 0 12px; }
-.game-setup .game-options { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; }
-.game-setup .game-options .filter-select { height: 36px; flex: 0 1 auto; }
+/* Game setup: one framed box shared by every game, read top to bottom as
+   "What to practise" (filters) → "How" (round options) → footer (summary · Start).
+   Capped width so Start stays near the controls it starts instead of drifting across
+   wide screens; controls keep their natural width and wrap. */
+.game-setup { max-width: 820px; margin-bottom: 24px; padding: 20px 22px 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 18px; }
+.game-setup-group { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.game-setup-label { font-size: 10px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted-foreground); }
+.game-setup .shared-filter-form { margin: 0; gap: 10px; }
+.game-setup .shared-filter-form .filter-select,
+.game-setup .game-options .filter-select { height: 36px; flex: 0 1 auto; max-width: 100%; min-width: 0; field-sizing: content; }
+/* field-sizing sizes each dropdown to its chosen option (not its longest one), so a short
+   choice like "All levels" never reserves the width of a long collection name. */
+.game-setup .game-options { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0; }
+.game-setup .game-option-row { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
 .game-setup .vocabulary-saved-filter button { height: 36px; }
-.game-setup .flash-start { margin-left: 4px; }
-.game-setup .flash-start button { height: 36px; font-size: 12px; white-space: nowrap; }
-.game-setup .flash-options { gap: 10px 16px; padding-inline: 6px; }
-.game-setup .flash-option { min-height: 36px; font-size: 11px; }
+.game-setup .flash-options { flex-direction: column; align-items: flex-start; gap: 10px; padding-inline: 0; }
+.game-setup .flash-option { min-height: 28px; font-size: 12px; }
+.game-setup-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+.game-setup-summary { font-size: 12px; color: var(--muted-foreground); min-width: 0; }
+.game-setup-summary .pinyin-score { margin-left: 0; font-size: inherit; }
+.game-setup .flash-start { margin-left: auto; }
+.game-setup .flash-start button { height: 40px; padding-inline: 20px; font-size: 13px; white-space: nowrap; }
 .game-ready { padding: 18px 0 30px; color: var(--muted-foreground); }
 .game-ready h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; line-height: 1.5; }
 @media(max-width:580px) {
-  .game-setup .game-options .filter-select { flex: 1 1 130px; max-width: none; min-width: 0; }
-  .game-setup .flash-options { flex-basis: 100%; padding-inline: 0; }
-  .game-setup .flash-start { margin-left: 0; }
+  .game-setup { padding: 16px 16px 14px; gap: 16px; }
+  .game-setup .shared-filter-form .filter-select,
+  .game-setup .game-options .filter-select { flex: 0 1 auto; max-width: 100%; }
 }
 @media(max-width:580px) {
   .shared-filter-form .search-field { flex-basis: 100%; max-width: none; }

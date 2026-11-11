@@ -68,7 +68,9 @@ function DrillFrame({ mode, data, progress, filters, onFilters, pool, drill, slo
   }, []);
   const { current, result, score } = drill;
   return <>
-    <GameSetup filters={<DraftFilterForm applied={filters} active={active} count={pool.length} autoApply onApply={onFilters} onClear={() => { const empty: DrillFilters = { initial: '', final: '', focus: '' }; onFilters(empty); return empty; }}>
+    <GameSetup summary={<>{pool.length ? `${pool.length.toLocaleString('en-US')} ${pool.length === 1 ? 'sound matches' : 'sounds match'}` : 'No sounds match'}{score.total > 0 && <span className="pinyin-score"> · {score.right} of {score.total} right{score.streak > 1 ? ` · ${score.streak} in a row` : ''}</span>}</>}
+      action={!current ? <Button onClick={drill.next} disabled={!pool.length}><Play />Start listening</Button> : undefined}
+      filters={<DraftFilterForm applied={filters} active={active} count={pool.length} showCount={false} autoApply onApply={onFilters} onClear={() => { const empty: DrillFilters = { initial: '', final: '', focus: '' }; onFilters(empty); return empty; }}>
       {({ draft, patch }) => <>
         <InitialSelect value={draft.initial} onChange={initial => patch({ initial })} />
         <FinalSelect value={draft.final} onChange={final => patch({ final })} />
@@ -78,11 +80,10 @@ function DrillFrame({ mode, data, progress, filters, onFilters, pool, drill, slo
       </>}
     </DraftFilterForm>}>
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
-      {score.total > 0 && <span className="pinyin-score" aria-live="polite">{score.right} of {score.total} right{score.streak > 1 ? ` · ${score.streak} in a row` : ''}</span>}
     </GameSetup>
     {!current ? <section className="game-ready pinyin-drill-ready" role="status">
       <h2>{pool.length ? 'Ready when you are.' : 'No sounds in this selection.'}</h2>
-      {pool.length > 0 && <><p>{prompt}</p><Button onClick={drill.next}><Play />Start listening</Button></>}
+      {pool.length > 0 && <p>{prompt}</p>}
     </section> : <section className="pinyin-drill" aria-label="Question">
       <div className="pinyin-drill-listen">
         <Button variant="outline" className={`pinyin-listen-button${player.playing === current.id ? ' is-playing' : ''}`} onClick={drill.replay} aria-label="Hear it again"><Volume2 /></Button>

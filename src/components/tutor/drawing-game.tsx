@@ -16,7 +16,7 @@ import {
   type DrawingSearch,
 } from "@/lib/drawing-game";
 import { DraftFilterForm } from "./filter-form";
-import { GameSetup, GameReady } from "./game-setup";
+import { GameSetup, GameReady, deckSummary } from "./game-setup";
 import { DrawingBoard } from "./drawing-board";
 import { useWorkspace } from "./workspace";
 import { useDrawingSession } from "./drawing-session";
@@ -103,11 +103,23 @@ export function DrawingGamePage({
       <GameTabs current="drawing" />
       {/* Game dropdowns apply immediately: filters only shape the next deal, never the active round. */}
       <GameSetup
+        summary={catalogVersion ? deckSummary(roundSize, pool.length) : undefined}
+        action={
+          <Button
+            disabled={!pool.length}
+            onClick={() => start(pool)}
+            aria-label={`${deck ? "New round" : "Start"} · ${roundSize} ${roundSize === 1 ? "card" : "cards"}`}
+          >
+            {deck ? <RotateCcw /> : <Play />}
+            {deck ? "New round" : "Start"}
+          </Button>
+        }
         filters={
           <DraftFilterForm
             applied={appliedFilters}
             active={activeFilters}
             count={pool.length}
+            showCount={false}
             autoApply
             onApply={configure}
             onClear={() => {
@@ -256,12 +268,6 @@ export function DrawingGamePage({
           ))}
           <option value="all">All cards</option>
         </select>
-        <div className="flash-start">
-          <Button disabled={!pool.length} onClick={() => start(pool)}>
-            {deck ? <RotateCcw /> : <Play />}
-            {deck ? "New round" : "Start"} · {roundSize} {roundSize === 1 ? "card" : "cards"}
-          </Button>
-        </div>
       </GameSetup>
       {!deck && <GameReady available={pool.length > 0} loading={!catalogVersion} />}
       {card && (
