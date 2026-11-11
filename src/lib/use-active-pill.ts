@@ -14,9 +14,10 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
     const list = ref.current;
     const active = list?.querySelector<HTMLElement>("[role='tab'][data-state='active']");
     if (!list || !active) return;
-    // Measured from on-screen boxes, and again whenever the current pill changes
-    // size (the saved font/display size applies after hydration and widens the
-    // pills); a learner's own sideways scroll never resizes it, so it is left alone.
+    // Measured from on-screen boxes, and again whenever any pill changes size (the
+    // saved font/display size applies after hydration and widens the pills, which
+    // shifts the current one); a learner's own sideways scroll resizes nothing, so
+    // it is left alone.
     let live = true;
     const reveal = () => {
       if (!live || list.scrollWidth <= list.clientWidth) return;
@@ -26,7 +27,7 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
       else if (pill.right > row.right) list.scrollLeft += pill.right - row.right + 16;
     };
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(reveal);
-    observer?.observe(active);
+    list.querySelectorAll("[role='tab']").forEach(tab => observer?.observe(tab));
     const frame = requestAnimationFrame(reveal);
     return () => { live = false; cancelAnimationFrame(frame); observer?.disconnect(); };
   }, [value]);
