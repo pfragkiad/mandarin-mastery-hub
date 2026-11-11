@@ -1,9 +1,13 @@
-// Pinyin guide page: loads the syllable inventory and recordings lazily, then
-// shows one of four URL-backed modes (Sound chart, Tone quiz, Sound-alikes,
-// Type what you hear). Inputs: the route's search values and navigation
-// callbacks. State: the loaded data, browser-remembered progress and the shared
-// player; the slow switch writes the global "Slower pronunciation" preference.
-import { useEffect, useState } from 'react';
+// Pinyin pages: the Sound chart (/pinyin) and the three quiz games (Tone quiz,
+// Sound-alikes, Type what you hear) are separate routes sharing one shell. The
+// shell loads the syllable inventory and recordings lazily, shows the heading,
+// source note and browser-remembered progress, and renders the mode tab row,
+// which now navigates between routes instead of switching URL search. Inputs:
+// the route's search values and navigation callbacks. State: the loaded data,
+// progress and the shared player; the slow switch writes the global "Slower
+// pronunciation" preference.
+import { useEffect, useState, type ReactNode } from 'react';
+import { useNavigate } from '@tanstack/react-router';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -13,8 +17,9 @@ import { useWorkspace } from './workspace';
 import { SourceInfo } from './source-info';
 import { PinyinChart, type ChartFilters } from './pinyin-chart';
 import { SoundAlikeDrill, ToneDrill, TypeDrill, type DrillFilters, type DrillMode } from './pinyin-drills';
-import { usePinyinPlayer, usePinyinProgress } from './pinyin-shared';
+import { usePinyinPlayer, usePinyinProgress, type PinyinPlayer } from './pinyin-shared';
 import { GameTabs } from './game-tabs';
+import type { PinyinProgress } from '@/lib/pinyin-progress';
 
 export type PinyinMode = 'chart' | DrillMode;
 export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
@@ -23,12 +28,19 @@ export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
   { mode: 'alikes', label: 'Sound-alikes' },
   { mode: 'type', label: 'Type what you hear' },
 ];
+/** Each mode's own route: the chart keeps /pinyin, every quiz is its own page. */
+export const PINYIN_MODE_PATHS: Record<PinyinMode, '/pinyin' | '/pinyin/tone-quiz' | '/pinyin/sound-alikes' | '/pinyin/type-what-you-hear'> = {
+  chart: '/pinyin',
+  tones: '/pinyin/tone-quiz',
+  alikes: '/pinyin/sound-alikes',
+  type: '/pinyin/type-what-you-hear',
+};
 const headings: Record<PinyinMode, string> = { chart: 'Every sound of Mandarin.', tones: 'Hear the tone.', alikes: 'Tell sound-alikes apart.', type: 'Write what you hear.' };
 
-export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilters, onMode, onSelect, onTone, onChartFilters, onDrillFilters }: {
-  mode: PinyinMode; selected?: string | undefined; tone: Tone | null; chartFilters: ChartFilters; drillFilters: DrillFilters;
-  onMode: (mode: PinyinMode) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onChartFilters: (f: ChartFilters, pick?: { base: string; tone: Tone }) => void; onDrillFilters: (f: DrillFilters) => void;
-}) {
+/** Everything a mode page needs from the shell: loaded data, progress, player and the slow preference. */
+type PinyinContext = { data: PinyinData; progress: PinyinProgress; record: (id: string, action: 'right' | 'wrong' | 'heard') => void; player: PinyinPlayer; slow: boolean; onSlow: (slow: boolean) => void };
+
+function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: PinyinContext) => ReactNode }) {
   const { preferences, setPreferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
   // failed: 'load' = sidecars couldn't be fetched; 'stale' = recording list doesn't cover the inventory (reload needed).
@@ -41,7 +53,7 @@ export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilte
   const onSlow = (slow: boolean) => setPreferences({ ...preferences, slow });
   const total = data ? allSounds(data).length : 0;
   const summary = progressSummary(progress, total);
-  const drillProps = data && { data, progress, record, player, filters: drillFilters, onFilters: onDrillFilters, slow: preferences.slow, onSlow };
+  const navigate = useNavigate();
 
   return <div className="page-enter library-page pinyin-page">
     <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
@@ -58,20 +70,38 @@ export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilte
           : <Button size="sm" variant="ghost" onClick={() => setConfirming(true)}><RotateCcw />Reset progress</Button>)}
       </div>}
     </div>
-    <Tabs className="catalog-tabs pinyin-tabs" value={mode} onValueChange={value => { const next = PINYIN_MODES.find(m => m.mode === value); if (next) { player.stop(); onMode(next.mode); } }}>
+    {/* The tab row links the four Pinyin pages; switching routes stops playback. */}
+    <Tabs className="catalog-tabs pinyin-tabs" value={mode} onValueChange={value => { const next = PINYIN_MODES.find(m => m.mode === value); if (next && next.mode !== mode) { player.stop(); void navigate({ to: PINYIN_MODE_PATHS[next.mode] }); } }}>
       <TabsList>{PINYIN_MODES.map(m => <TabsTrigger key={m.mode} value={m.mode}>{m.label}</TabsTrigger>)}</TabsList>
     </Tabs>
-    {/* Phones hide the mode tabs above; in a quiz mode the five-game pill row
+    {/* Phones hide the mode tabs above; in a quiz the five-game pill row
         (phone only) switches games, since the phone Games tab covers all five. */}
     {mode !== 'chart' && <GameTabs current={mode} onBeforeNavigate={() => player.stop()}/>}
     <div className="pinyin-body">
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
       : failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
-        : !data || !drillProps ? <p className="library-note">Loading sounds…</p>
-        : mode === 'chart' ? <PinyinChart data={data} progress={progress} player={player} filters={chartFilters} selected={selected} tone={tone} slow={preferences.slow} onSlow={onSlow} onSelect={onSelect} onTone={onTone} onFilters={onChartFilters} />
-        : mode === 'tones' ? <ToneDrill key="tones" {...drillProps} />
-        : mode === 'alikes' ? <SoundAlikeDrill key="alikes" {...drillProps} />
-        : <TypeDrill key="type" {...drillProps} />}
+        : !data ? <p className="library-note">Loading sounds…</p>
+        : children({ data, progress, record, player, slow: preferences.slow, onSlow })}
     </div>
   </div>;
+}
+
+/** Sound chart page (/pinyin): syllable and tone stay in URL search (s, t). */
+export function PinyinChartPage({ selected, tone, filters, onSelect, onTone, onFilters }: {
+  selected?: string | undefined; tone: Tone | null; filters: ChartFilters;
+  onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void; onFilters: (f: ChartFilters, pick?: { base: string; tone: Tone }) => void;
+}) {
+  return <PinyinShell mode="chart">{ctx => <PinyinChart data={ctx.data} progress={ctx.progress} player={ctx.player} filters={filters} selected={selected} tone={tone} slow={ctx.slow} onSlow={ctx.onSlow} onSelect={onSelect} onTone={onTone} onFilters={onFilters} />}</PinyinShell>;
+}
+
+/** One quiz game page (/pinyin/tone-quiz, /pinyin/sound-alikes, /pinyin/type-what-you-hear). */
+export function PinyinDrillPage({ mode, filters, onFilters }: {
+  mode: DrillMode; filters: DrillFilters; onFilters: (f: DrillFilters) => void;
+}) {
+  return <PinyinShell mode={mode}>{ctx => {
+    const drillProps = { data: ctx.data, progress: ctx.progress, record: ctx.record, player: ctx.player, filters, onFilters, slow: ctx.slow, onSlow: ctx.onSlow };
+    return mode === 'tones' ? <ToneDrill key="tones" {...drillProps} />
+      : mode === 'alikes' ? <SoundAlikeDrill key="alikes" {...drillProps} />
+      : <TypeDrill key="type" {...drillProps} />;
+  }}</PinyinShell>;
 }
