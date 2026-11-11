@@ -80,6 +80,7 @@ article.word-card { touch-action: manipulation; }
 .workspace { --nav-active: color-mix(in oklab, var(--primary) 14%, transparent); --nav-row: 38px; --nav-font: 13.5px; --nav-icon: 19px; --nav-sub-row: 32px; --nav-sub-font: 13px; --nav-sub-icon: 17px; }
 html[data-display-size='comfortable'] .workspace { --nav-row: 42px; --nav-font: 15px; --nav-icon: 20px; --nav-sub-row: 36px; --nav-sub-font: 14px; --nav-sub-icon: 18px; }
 .sidebar nav { display: flex; flex-direction: column; gap: 2px; padding: 0 12px 12px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
+.sidebar .nav-group { display: flex; flex-direction: column; min-width: 0; }
 .sidebar :is(.nav-item, .nav-sub-item) { justify-content: flex-start; min-width: 0; height: auto; white-space: normal; text-align: left; line-height: 1.25; color: var(--muted-foreground); font-weight: 450; transition: color .15s, background-color .15s; }
 .sidebar .nav-item { min-height: var(--nav-row); padding: 6px 12px; gap: 12px; font-size: var(--nav-font); border-radius: 10px; }
 .sidebar .nav-item svg { width: var(--nav-icon); height: var(--nav-icon); flex-shrink: 0; }
