@@ -2314,3 +2314,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
   html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
   html[data-display-size='comfortable'] .pinyin-chart-layout > .pinyin-player { display: none; }
 }
+/* Settings → Character style: the 永 picker at a comfortable tap size, with the
+   preview line tucked directly under its row so each tap shows the new face. */
+.settings-row .font-toggle button { width: 46px; height: 38px; font-size: 20px; }
+.settings-row + .font-preview { padding: 0 0 15px; margin-top: -4px; }
