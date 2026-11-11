@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { Shuffle, Volume2 } from 'lucide-react';
+import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
