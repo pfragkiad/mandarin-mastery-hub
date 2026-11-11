@@ -162,7 +162,7 @@ describe('character practice sections by mode', () => {
     expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
   });
 
-  it('marks the chosen form with one frame that wears that form\'s identity ink', () => {
+  it('marks the chosen form with one frame that wears that form\'s identity ink', async () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
