@@ -150,10 +150,17 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
   return (
     <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}`}>
       <svg width="0" height="0" className="stroke-glow-defs" aria-hidden="true" focusable="false">
-        {/* Soft halo in the stroke's own colour: a blurred copy merged beneath the crisp stroke. */}
-        <filter id={glowId} x="-30%" y="-30%" width="160%" height="160%" colorInterpolationFilters="sRGB">
+        {/* Halo for the tile's own stroke, pushed toward white so it reads as the brightest
+            thing on the card: a wide blur of the stroke lifted toward white by a constant,
+            then a tighter white core hugging the stroke, then the crisp stroke on top.
+            The lift is a constant mix, so it works for every component colour. */}
+        <filter id={glowId} x="-40%" y="-40%" width="180%" height="180%" colorInterpolationFilters="sRGB">
           <feGaussianBlur in="SourceGraphic" stdDeviation="34" result="blur" />
-          <feMerge><feMergeNode in="blur" /><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          <feColorMatrix in="blur" type="matrix" result="whiteBlur" values="0.45 0 0 0 0.55  0 0.45 0 0 0.55  0 0 0.45 0 0.55  0 0 0 1 0" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="core" />
+          <feFlood flood-color="#fff" flood-opacity="0.6" result="coreInk" />
+          <feComposite in="coreInk" in2="core" operator="in" result="coreHalo" />
+          <feMerge><feMergeNode in="whiteBlur" /><feMergeNode in="whiteBlur" /><feMergeNode in="coreHalo" /><feMergeNode in="SourceGraphic" /></feMerge>
         </filter>
       </svg>
       <div className="stroke-guide-top">
