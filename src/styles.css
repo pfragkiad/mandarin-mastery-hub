@@ -478,6 +478,9 @@ this keeps the number right beside the stroke tile. */
 .hero-search-hit { min-width: 0; flex-wrap: wrap; }
 .practice-facts .traditional-character, .practice-facts .traditional-character strong { color: var(--traditional); }
 .traditional-label { color: var(--traditional); font-size: 10px; font-weight: 600; }
+/* The switch that turns traditional forms on wears the same purple as every traditional
+   mark, so the control and what it reveals read as one idea. */
+.settings-row .traditional-switch[data-state='checked'] { background-color: var(--traditional); }
 /* Detail heading: the Traditional pill shares the pinyin row, pinned to the right. */
 /* One right-aligned group keeps every header pill tight together (Traditional, then the kind/radical pill). */
 .catalog-detail-pills { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
