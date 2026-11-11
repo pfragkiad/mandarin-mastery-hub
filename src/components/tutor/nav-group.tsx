@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import type { GameIcon } from './game-catalog';
 
 /** One sub-item of a nav group (a library section, a vocabulary tab, a game). */
-export type NavSub = { key: string; label: string; to: string; search?: Record<string, string>; active: boolean; icon?: GameIcon; cls: string };
+export type NavSub = { key: string; label: string; to: string; search?: Record<string, string> | undefined; active: boolean; icon?: GameIcon | undefined; cls: string };
 
 /**
  * One main menu item plus its sub-items.
