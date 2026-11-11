@@ -539,7 +539,8 @@ this keeps the number right beside the stroke tile. */
 :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
-    .pinyin-character-glyph.is-traditional)::after {
+    .pinyin-character-glyph.is-traditional,
+    .tile-stamp-traditional)::after {
   content: "繁";
   position: absolute;
   top: 0;
@@ -567,7 +568,8 @@ this keeps the number right beside the stroke tile. */
 :root.dark :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
-    .pinyin-character-glyph.is-traditional)::after {
+    .pinyin-character-glyph.is-traditional,
+    .tile-stamp-traditional)::after {
   background: color-mix(in oklch, var(--traditional) 26%, var(--card));
   background: oklch(from var(--traditional) 0.3 0.055 h);
   border-color: color-mix(in oklch, var(--traditional) 62%, transparent);
@@ -601,7 +603,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional)::after {
+    .radical-form-choice.is-radical,
+    .tile-stamp-radical):not(.traditional-character):not(.is-traditional)::after {
   content: "部";
   position: absolute;
   top: 0;
@@ -624,7 +627,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 :root.dark :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional)::after {
+    .radical-form-choice.is-radical,
+    .tile-stamp-radical):not(.traditional-character):not(.is-traditional)::after {
   background: color-mix(in oklch, var(--hsk-id) 26%, var(--card));
   background: oklch(from var(--hsk-id) 0.3 0.05 h);
   border-color: color-mix(in oklch, var(--hsk-id) 62%, transparent);
@@ -2505,6 +2509,7 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .word-strip-pinyin { font-size: 14px; }
 .word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
 .word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
+/* Practice word-strip tiles reuse the 繁 / 部 corner stamps (.tile-stamp-*) of every other glyph tile. */
 .word-strip-done { position: absolute; top: 7px; right: 8px; width: 15px; height: 15px; color: var(--primary); }
 /* Row under the mode tabs: a word's character strip, then the progress tile (StrokeProgressTile),
    which shares the word tiles' frame and bar but is a read-out, not a button. */
