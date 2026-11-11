@@ -2446,7 +2446,9 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 .practice-header-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
 .practice-header .practice-back { margin: 0 0 0 -10px; font-size: 13px; }
 .practice-header .practice-back svg { width: 15px; height: 15px; }
-.practice-header .practice-print-button { margin: 0; border-radius: 999px; }
+.practice-header .practice-print-button { margin: 0; border-radius: 999px; height: 40px; padding: 0 18px; gap: 8px; font-size: 14px; background: var(--card); border-color: var(--border); }
+.practice-header .practice-print-button:hover:not(:disabled) { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
+.practice-header .practice-print-button svg { width: 16px; height: 16px; }
 .practice-more-button { display: none; }
 @media (max-width: 760px) { .practice-more-button { display: inline-flex; margin-right: -8px; color: var(--muted-foreground); } }
 .practice-header-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px 28px; }
