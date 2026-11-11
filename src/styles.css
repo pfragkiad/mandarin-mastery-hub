@@ -82,7 +82,10 @@ article.word-card { touch-action: manipulation; }
    the slim icon strip sub-items are not rendered at all: they open in the flyout. */
 .nav-sub-item svg { display: block; width: 16px; height: 16px; flex-shrink: 0; }
 .sidebar-note { margin: auto 29px 58px; padding-top: 50px; color: var(--primary); }.sidebar-note svg { margin-bottom: 13px; stroke-width: 1.4; }.sidebar-note p { font-family: var(--font-display); font-size: 17px; margin-bottom: 9px; }.sidebar-note>span { font-size: 11px; color: var(--muted-foreground); letter-spacing: 2px; }.note-line { height: 1px; width: 28px; background: var(--border); margin-top: 22px; }
-.sidebar-bottom { border-top: 1px solid var(--border); margin: 0 20px; padding: 15px 0 16px; }.help-link { padding: 0 6px; font-size: 11px; font-weight: 400; gap: 8px; width: 100%; justify-content: flex-start; }.help-link svg:last-child { margin-left: auto; }.sidebar-bottom-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 9px; color: var(--muted-foreground); }.sidebar-bottom-row button { width: 25px; height: 25px; }
+/* Guidance link and its divider hidden for the moment (owner request): the help
+   dialog code stays in shell.tsx, only the entry point and the line above it are
+   hidden. Remove these two rules to bring them back. */
+.sidebar-bottom { border-top: none; margin: 0 20px; padding: 15px 0 16px; }.help-link { display: none; padding: 0 6px; font-size: 11px; font-weight: 400; gap: 8px; width: 100%; justify-content: flex-start; }.help-link svg:last-child { margin-left: auto; }.sidebar-bottom-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 9px; color: var(--muted-foreground); }.sidebar-bottom-row button { width: 25px; height: 25px; }
 /* ===== Slim icon strip (rail) =====
    Every icon carries its own name underneath at 11px, the Material rail way, so
    nothing has to be guessed. Only the main items (and the guidance link) appear;
