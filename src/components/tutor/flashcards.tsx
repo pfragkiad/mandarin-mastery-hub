@@ -1,4 +1,4 @@
-import { HanziGameTabs } from './hanzi-game-tabs';
+import { GameTabs } from './game-tabs';
 import { DraftFilterForm } from './filter-form';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady } from './game-setup';
@@ -98,7 +98,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const firstTry = repeat ? deck ? new Set(deck.map(c => c.id)).size - uniqueMissed.length : 0 : 0;
   return <div className="page-enter">
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1></div><span className="heading-hanzi">记<span>jì</span></span></div>
-    <HanziGameTabs current="flashcards"/>
+    <GameTabs current="flashcards"/>
     {/* Game dropdowns apply immediately: filters only shape the next deck, never the active round. */}
     <GameSetup filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} autoApply onApply={configure} onClear={() => { const empty = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftSaved = draft.category === 'Saved'; return <>
       <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, level: 'All levels', pos: 'All types', usage: '' })}>
