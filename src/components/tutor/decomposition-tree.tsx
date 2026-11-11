@@ -1,5 +1,6 @@
 import { MeaningText } from './meaning-text';
 import { openDetailsHint } from '@/lib/tile-hints';
+import { useRef } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Columns2, Columns3, Rows2, Rows3, FlipHorizontal2, RotateCw, Layers2, Minus, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,6 +13,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { childOwner, contextualRadical } from '@/lib/radical-context';
 import { radicalFamily } from '@/lib/radical-strokes';
 import { BabelStoneComponent } from './babelstone-component';
+import { useGlyphFit } from './glyph-fit';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
 
