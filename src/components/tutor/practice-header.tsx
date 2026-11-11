@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useNavigate, useRouter } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 import { ArrowLeft, MoreHorizontal, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -19,9 +19,8 @@ import { focusEntryCard, originLabel, practiceOrigin } from '@/lib/practice-retu
 // No state of its own: Back reads the session origin remembered by practice-return.ts.
 export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, reading, meaning, pills, forms, onPrint, printDisabled = false, after }: { glyph: string; glyphClassName?: string; hideGlyph?: boolean; reading: ReactNode; meaning: ReactNode; pills?: ReactNode; forms?: ReactNode; onPrint: () => void; printDisabled?: boolean; after?: ReactNode }) {
   const navigate = useNavigate();
-  const router = useRouter();
   const origin = practiceOrigin();
-  const back = () => { if (origin) { router.history.push(origin); focusEntryCard(); } else void navigate({ to: '/characters' }); };
+  const back = () => { if (origin) { void navigate({ href: origin }); focusEntryCard(); } else void navigate({ to: '/characters' }); };
   return <header className={`practice-header${forms ? ' has-forms' : ''}`}>
     <div className="practice-header-top">
       <Button variant="ghost" size="sm" className="practice-back" onClick={back}><ArrowLeft/>{originLabel(origin)}</Button>
