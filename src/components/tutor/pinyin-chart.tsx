@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObj
 import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
+import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { answered, needsReview, type PinyinProgress } from '@/lib/pinyin-progress';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
@@ -232,6 +232,9 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
           const recorded = s.tones.filter(t => hasRecording(data, s.base, t)).length;
           return <button key={s.base} type="button" data-base={s.base} className={`pinyin-tile${s.base === selected ? ' is-selected' : ''}${s.base === recent ? ' is-recent' : ''}`}
             onPointerEnter={() => { if (recent && recent !== s.base) setRecent(null); }} aria-pressed={s.base === selected}
+            // Hovering the card lists the tones this syllable really has (attested spellings,
+            // with any unrecorded one named) before the click opens the sound card.
+            title={syllableTonesHint(data, s)}
             aria-label={`${s.base}, ${recorded} tone${recorded === 1 ? '' : 's'} recorded${review ? ', needs review' : done ? ', practised' : ''}`}
             // Selecting a tile only opens it in the player — it never plays or highlights
             // a tone by itself; any sound still running from the previous syllable stops.
