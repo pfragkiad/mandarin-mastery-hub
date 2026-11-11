@@ -169,7 +169,10 @@ describe('character practice sections by mode', () => {
     expect(document.querySelector('.practice-header-forms')).toBeNull();
     unmount();
     render(<StrokesPage initialCharacter="学乙" mode="recall"/>);
-    expect(screen.getByRole('group', { name: 'Characters in this word' }).textContent).not.toContain('学');
+    const recallStrip = screen.getByRole('group', { name: 'Characters in this word' });
+    expect(recallStrip.textContent).not.toContain('学');
+    // Each blank tile carries its own recorded stroke count in place of the hanzi.
+    expect(Array.from(recallStrip.querySelectorAll('.tile-count')).map(node => node.textContent)).toEqual(['0 / 8', '0 / 1']);
   });
 
   it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
