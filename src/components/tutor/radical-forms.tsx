@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { historicalRadicalHeading, orderedRadicalForms, radicalFamily } from '@/lib/radical-strokes';
 import { glyphScript } from '@/lib/character-library';
 import { FormSwitchGlyph } from './script-forms';
+import { FormSwitchThumb } from './form-switch-thumb';
 import type { PracticeMode } from '@/lib/practice-mode';
 
 // Variant picker for a Kangxi radical family. The family meaning is not shown
@@ -22,6 +23,8 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference',
         already appears as a pill — hideLabel drops the redundant heading there. */}
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>RADICAL FAMILY · KANGXI #{family.id}</span><SourceInfo inline className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family readings are shared with variant forms that lack their own recorded name.<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`}>
+      {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
+      {layout === 'switch' && <FormSwitchThumb/>}
       {/* Purple marks exact recorded Traditional forms: historical Kangxi headings
           and any variant whose own script metadata says Traditional (e.g. 訁). */}
       {orderedRadicalForms(family).map(form => <Button key={form.key} asChild variant="ghost" className={`radical-form-choice is-radical ${historicalRadicalHeading(form.character, family.id) || glyphScript(form.character) === 'Traditional' ? 'is-traditional' : ''} ${selectedKey === form.key ? 'is-selected' : ''}`}>

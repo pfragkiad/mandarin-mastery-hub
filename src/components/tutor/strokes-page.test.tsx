@@ -6,7 +6,10 @@ import type { RadicalStrokeFile } from '@/lib/radical-strokes';
 import * as catalogStore from '@/lib/catalog-store';
 
 vi.mock('@tanstack/react-router', () => ({
-  Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
+  // The mock keeps the classes and the selection marker the real Link gets, so tests can see
+  // which form tile is the current one (the sliding frame is chosen from that tile).
+  Link: ({ children, className, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; 'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean | 'true' | 'false' }) =>
+    <a className={className} aria-current={ariaCurrent}>{children}</a>,
   useNavigate: () => () => {},
   useRouter: () => ({ history: { back: () => {} } }),
 }));
@@ -157,6 +160,24 @@ describe('character practice sections by mode', () => {
     expect(group.querySelectorAll('strong.form-switch-blank').length).toBeGreaterThan(0);
     expect(group.textContent).not.toContain('冂');
     expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
+  });
+
+  it('marks the chosen form with one frame that wears that form\'s identity ink', async () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="冂" mode="recall"/>);
+    const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
+    const frame = group.querySelector('.form-switch-thumb');
+    expect(frame).not.toBeNull();
+    // Decorative only: the tile itself already carries the selection for screen readers.
+    expect(frame?.getAttribute('aria-hidden')).toBe('true');
+    // One frame, and its colour follows the form it covers rather than inventing its own.
+    const selected = group.querySelector('.radical-form-choice.is-selected');
+    const identity = selected?.classList.contains('is-traditional') ? 'is-traditional'
+      : selected?.classList.contains('is-radical') ? 'is-radical' : 'is-character';
+    expect(frame?.classList.contains(identity)).toBe(true);
+    // The frame is placed on the next frame when it has a previous box to slide from, so wait
+    // for it rather than assuming the first paint already shows it.
+    await waitFor(() => expect(frame?.classList.contains('is-visible')).toBe(true));
   });
 
   it("word practice shows a character strip with each character's own reading, blanked in recall", () => {

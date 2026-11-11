@@ -2477,14 +2477,21 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 /* Form switch: Simplified/Traditional, radical-family and component-card forms as wide
    tiles (glyph beside label + strokes) in one tray. Recall blanks the glyph box. */
 .form-switch { margin: 0; border: 0; padding: 0; }
-.form-switch .radical-form-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
-html .practice-header .form-switch .radical-form-choice { flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
+.form-switch .radical-form-list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
+html .practice-header .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
 .practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
 .practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
 .practice-header .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }
-html .practice-header .form-switch .radical-form-choice.is-selected { background: color-mix(in oklab, var(--primary) 12%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
-html .practice-header .form-switch .radical-form-choice.is-traditional.is-selected { background: color-mix(in oklab, var(--traditional) 14%, var(--card)); border-color: color-mix(in oklab, var(--traditional) 60%, transparent); }
-html .practice-header .form-switch .radical-form-choice.is-radical:not(.is-traditional).is-selected { background: color-mix(in oklab, var(--hsk-id) 12%, var(--card)); border-color: color-mix(in oklab, var(--hsk-id) 55%, transparent); }
+/* The selected form is marked by one sliding frame (form-switch-thumb.tsx) laid behind the
+   transparent tiles, so picking another form glides the border across the tray instead of
+   dropping a new one. It wears the identity ink of the form it covers, exactly as the tile
+   border used to: green character, gold radical, purple traditional. */
+.form-switch-thumb { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; border: 1px solid transparent; border-radius: 9px; background: transparent; opacity: 0; }
+.form-switch-thumb.is-visible { opacity: 1; }
+.form-switch-thumb.is-gliding { transition: transform .24s cubic-bezier(.22,.75,.3,1), width .24s cubic-bezier(.22,.75,.3,1), height .24s cubic-bezier(.22,.75,.3,1), border-color .2s, background-color .2s; }
+html .practice-header .form-switch-thumb.is-character { background: color-mix(in oklab, var(--primary) 12%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+html .practice-header .form-switch-thumb.is-traditional { background: color-mix(in oklab, var(--traditional) 14%, var(--card)); border-color: color-mix(in oklab, var(--traditional) 60%, transparent); }
+html .practice-header .form-switch-thumb.is-radical:not(.is-traditional) { background: color-mix(in oklab, var(--hsk-id) 12%, var(--card)); border-color: color-mix(in oklab, var(--hsk-id) 55%, transparent); }
 html .practice-header .form-switch .radical-form-choice:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
 .form-switch-text { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; text-align: left; min-width: 0; }
 html .practice-header .form-switch-text b { font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--foreground); }

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
 import { componentCardGlyphs, componentFamilyGroup } from '@/lib/component-families';
+import { FormSwitchThumb } from './form-switch-thumb';
 import { catalog } from '@/lib/catalog-store';
 import { libraryEntries } from '@/lib/character-library';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
@@ -56,6 +57,8 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   return <div className={`radical-family-section script-forms${layout === 'switch' ? ' form-switch' : ''}`}>
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
+      {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
+      {layout === 'switch' && <FormSwitchThumb/>}
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
