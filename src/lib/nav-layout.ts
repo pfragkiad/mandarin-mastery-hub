@@ -38,16 +38,17 @@ export function readNavExpanded(storage: Pick<Storage, 'getItem'> | undefined) {
 export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'pinyin' | 'more';
 
 /**
- * Which phone tab is lit for a page. Both Hanzi games count as Games; Settings
- * lives under More. Practice has no tab of its own (it is opened from Glyphs,
- * Vocabulary or a game), so no tab claims it.
+ * Which phone tab is lit for a page. All five games count as Games — the two
+ * Hanzi games and the Pinyin quiz modes (/pinyin with a URL `mode`); Pinyin
+ * itself is only the Sound chart. Settings lives under More. Practice has no tab
+ * of its own (it is opened from Glyphs, Vocabulary or a game), so no tab claims it.
  */
-export function phoneTabFor(path: string): PhoneTab | null {
+export function phoneTabFor(path: string, mode?: string | null): PhoneTab | null {
   if (path === '/') return 'start';
   if (path === '/characters') return 'glyphs';
   if (path === '/vocabulary') return 'vocabulary';
   if (path === '/flashcards' || path === '/drawing') return 'games';
-  if (path === '/pinyin') return 'pinyin';
+  if (path === '/pinyin') return mode === 'tones' || mode === 'alikes' || mode === 'type' ? 'games' : 'pinyin';
   if (path === '/settings') return 'more';
   return null;
 }

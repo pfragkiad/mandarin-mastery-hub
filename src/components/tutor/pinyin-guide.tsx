@@ -14,6 +14,7 @@ import { SourceInfo } from './source-info';
 import { PinyinChart, type ChartFilters } from './pinyin-chart';
 import { SoundAlikeDrill, ToneDrill, TypeDrill, type DrillFilters, type DrillMode } from './pinyin-drills';
 import { usePinyinPlayer, usePinyinProgress } from './pinyin-shared';
+import { GameTabs } from './game-tabs';
 
 export type PinyinMode = 'chart' | DrillMode;
 export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
@@ -60,6 +61,9 @@ export function PinyinGuidePage({ mode, selected, tone, chartFilters, drillFilte
     <Tabs className="catalog-tabs pinyin-tabs" value={mode} onValueChange={value => { const next = PINYIN_MODES.find(m => m.mode === value); if (next) { player.stop(); onMode(next.mode); } }}>
       <TabsList>{PINYIN_MODES.map(m => <TabsTrigger key={m.mode} value={m.mode}>{m.label}</TabsTrigger>)}</TabsList>
     </Tabs>
+    {/* Phones hide the mode tabs above; in a quiz mode the five-game pill row
+        (phone only) switches games, since the phone Games tab covers all five. */}
+    {mode !== 'chart' && <GameTabs current={mode} onBeforeNavigate={() => player.stop()}/>}
     <div className="pinyin-body">
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
       : failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>
