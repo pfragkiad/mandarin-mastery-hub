@@ -981,7 +981,9 @@ only the component breakdown; radical practice never shows a decomposition at an
 // Once the writer is ready, the focused character's tile is the live stroke progress tile
 // (`focusTile`: next stroke picture, count top-left, its reading top-centre), so a word never
 // shows a separate progress tile; while loading the focused tile keeps the plain look.
-function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect, focusTile }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void; focusTile: ((word: ProgressTileWord) => ReactNode) | null }) {
+// `onError` routes a failed reading to the header's audio note (the same place the word's own
+// speaker reports), so a tile never grows with an inline message.
+function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect, focusTile, onError }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void; focusTile: ((word: ProgressTileWord) => ReactNode) | null; onError: (message: string | null) => void }) {
   const facts = charFacts();
   const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
   return <div className="word-strip" role="group" aria-label="Characters in this word">
@@ -996,7 +998,7 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       // Same corner stamps as every glyph tile (繁 traditional, 部 radical), from the exact record;
       // Recall drops them with the hanzi so the tile never hints at the hidden answer.
       const stamp = !record ? undefined : record.script === 'Traditional' ? 'tile-stamp-traditional' : isRadicalGlyph(record, 'Characters') ? 'tile-stamp-radical' : undefined;
-      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}`, glyph: c, ink, stamp, hidden: hideGlyphs })}</Fragment>;
+      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}`, glyph: c, ink, stamp, hidden: hideGlyphs, onError })}</Fragment>;
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
