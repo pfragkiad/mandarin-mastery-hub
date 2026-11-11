@@ -2220,7 +2220,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-type-hint.is-prompt { color: var(--foreground); }
 .pinyin-absent { margin-top: 10px; }
 @media (max-width: 850px) {
-  .pinyin-tabs { display: none; }
   .pinyin-player-empty { font-size: 15px; }
   .pinyin-player-title.pinyin { font-size: 28px; }
   .pinyin-progress { justify-content: flex-start; }
