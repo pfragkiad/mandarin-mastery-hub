@@ -12,6 +12,7 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
+import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
@@ -40,8 +41,8 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
     <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
-      {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. */}
-      <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
+      {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
+      <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
       {/* Two lines beside the tile, as in Decomposition: reading + speaker, then the parent's
           rank (+ Traditional pill) on top, meaning below. The speaker sits right after the reading
           instead of in a shared column, so it never drifts away from short readings. The rank is
