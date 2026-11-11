@@ -26,3 +26,5 @@
 
 - Character style is picked only through CharacterStyleToggle in Settings; theme and display size also have Settings rows writing the same workspace preferences as the wide topbar controls, so the slim phone header can drop them without losing any setting.
 - HanziGameTabs (Flashcards | Drawing game) renders on both game pages but shows only at phone widths, navigating to each game's own route so each keeps its URL filters and preserved round.
+- Start's game tiles (overview-games.tsx) are one markup styled two ways by CSS (wide: preview-picture tiles; ≤700px: compact rows), the whole tile being the link, so phone and desktop never list different games; the previews are decorative illustrations hidden from screen readers and carry no reading, tone or audio.
+- The phone header (≤850px) is position: sticky with html scroll-padding-top matching its height, and anything pinned below it (sticky page bar, alignCardToTopRow) offsets by the header, so scrolled-to cards never land underneath it.
