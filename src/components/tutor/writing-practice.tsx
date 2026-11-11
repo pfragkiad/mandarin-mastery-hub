@@ -10,7 +10,7 @@ import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate, useRouter } from '@tanstack/react-router';
-import { ArrowLeft, Play, Pause, RotateCcw, Eye, EyeOff, ListOrdered, MoveUpRight, Volume2, VolumeX, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
+import { ArrowLeft, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -148,8 +148,9 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
       <div className="stroke-guide-top">
         <div className="stroke-guide-heading"><h3 className="eyebrow"><ListOrdered size={13} />Strokes<SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo></h3></div>
         <div className="stroke-guide-actions">
-          <Button variant="ghost" size="sm" className={`stroke-pill${arrows ? ' is-on' : ''}`} aria-pressed={arrows} disabled={arrowsDisabled} onClick={() => onArrowsChange(!arrows)}><MoveUpRight size={16} />{arrows ? 'Hide arrows' : 'Show arrows'}</Button>
-          <Button variant="ghost" size="sm" className="stroke-pill" onClick={() => setVisible(v => !v)}>{visible ? <EyeOff size={16} /> : <Eye size={16} />}{visible ? 'Hide strokes' : 'Show strokes'}</Button>
+          {/* Toggle pills: a fixed one-word label and icon; the green tint (and aria-pressed) shows the feature is on. */}
+          <Button variant="ghost" size="sm" className={`stroke-pill${arrows ? ' is-on' : ''}`} aria-pressed={arrows} title={arrows ? 'Hide direction arrows' : 'Show direction arrows'} disabled={arrowsDisabled} onClick={() => onArrowsChange(!arrows)}><MoveUpRight size={16} />Arrows</Button>
+          <Button variant="ghost" size="sm" className={`stroke-pill${visible ? ' is-on' : ''}`} aria-pressed={visible} title={visible ? 'Hide stroke tiles' : 'Show stroke tiles'} onClick={() => setVisible(v => !v)}><Eye size={16} />Strokes</Button>
           {audioControl}
         </div>
       </div>
@@ -637,9 +638,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     });
   };
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
-  // Stroke-name speech toggle: a labelled pill in the Strokes action row (shares Step's mute state);
-  // is-on marks the feature being active (names audible), not the muted pressed state.
-  const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={muted} onClick={() => setMuted(m => !m)}>{muted ? <VolumeX size={16}/> : <Volume2 size={16}/>}{muted ? 'Unmute names' : 'Mute names'}</Button>;
+  // Stroke-name speech toggle: the "Names" pill in the Strokes action row (shares Step's mute state);
+  // pressed/tinted means names are spoken aloud.
+  const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
   return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
