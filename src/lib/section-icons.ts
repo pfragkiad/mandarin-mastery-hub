@@ -6,4 +6,6 @@ import type { GameIcon } from '@/components/tutor/game-catalog';
  * Start page random cards (overview-discovery.tsx), so a section's icon never
  * differs between the menu and the cards. No state.
  */
-export const sectionIcons: Record<string, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
+export type SectionName = 'Characters' | 'Components' | 'Radicals' | 'Strokes' | 'Words' | 'Phrases';
+
+export const sectionIcons: Record<SectionName, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
