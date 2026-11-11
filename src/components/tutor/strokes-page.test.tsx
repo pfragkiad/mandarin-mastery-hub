@@ -167,7 +167,6 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
     const frame = group.querySelector('.form-switch-thumb');
-    console.log('TRAY HTML:', group.outerHTML.slice(0, 900));
     expect(frame).not.toBeNull();
     // Decorative only: the tile itself already carries the selection for screen readers.
     expect(frame?.getAttribute('aria-hidden')).toBe('true');
@@ -176,7 +175,9 @@ describe('character practice sections by mode', () => {
     const identity = selected?.classList.contains('is-traditional') ? 'is-traditional'
       : selected?.classList.contains('is-radical') ? 'is-radical' : 'is-character';
     expect(frame?.classList.contains(identity)).toBe(true);
-    expect(frame?.classList.contains('is-visible')).toBe(true);
+    // The frame is placed on the next frame when it has a previous box to slide from, so wait
+    // for it rather than assuming the first paint already shows it.
+    await waitFor(() => expect(frame?.classList.contains('is-visible')).toBe(true));
   });
 
   it("word practice shows a character strip with each character's own reading, blanked in recall", () => {
