@@ -5,7 +5,7 @@ import { DrawingSessionProvider } from './drawing-session';
 import type { LibraryEntry } from '@/lib/character-library';
 import type { Word } from '@/lib/mandarin';
 
-vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props} onClick={event => { event.preventDefault(); (props as { onClick?: () => void }).onClick?.(); }}>{children}</a> }));
+vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props} onClick={event => { event.preventDefault(); (props as { onClick?: () => void }).onClick?.(); }}>{children}</a>, useNavigate: () => vi.fn() }));
 
 const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
