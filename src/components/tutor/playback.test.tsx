@@ -513,6 +513,7 @@ it('resizing the square after tracing keeps the drawn strokes and re-arms at the
   width = 420;
   fireEvent.pointerMove(window, { clientX: 120, clientY: 120 });
   fireEvent.pointerUp(window);
+  await new Promise(r => setTimeout(r, 100)); console.log('DBG', quizzes, fake.quiz.mock.calls.length, fake.cancelQuiz.mock.calls.length);
   await waitFor(() => expect(fake.quiz.mock.calls.length).toBeGreaterThan(quizzes));
   // The rebuilt writer starts its quiz after stroke 1, so stroke 1 stays drawn.
   expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1);
