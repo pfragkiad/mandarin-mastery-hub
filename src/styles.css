@@ -368,6 +368,12 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .stroke-guide-heading > button { flex-shrink: 0; }
 .stroke-guide-top { flex-wrap: wrap; }
 .stroke-guide-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+/* Strokes header actions read as rounded pills with icon + label; is-on tints the pill
+   with the accent when the feature is active (arrows shown, names audible). */
+.stroke-guide-actions > .stroke-pill { border: 1px solid var(--border); border-radius: 999px; padding-left: 14px; padding-right: 16px; gap: 8px; }
+.stroke-pill svg { flex-shrink: 0; }
+.stroke-pill.is-on { border-color: color-mix(in srgb, var(--primary) 45%, transparent); background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary); }
+.stroke-pill.is-on:hover { background: color-mix(in srgb, var(--primary) 18%, transparent); color: var(--primary); }
 .writing-tool-tabbed { align-self: start; }
 .practice-mode-tabs { margin-bottom: 18px; }
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
