@@ -561,6 +561,55 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
     .pinyin-character-glyph.is-traditional) { --traditional-mark-size: 14px; }
+/* Radical glyph tiles carry the same corner-stamp idea as the traditional 繁 mark, in the
+   Radical #N pill's gold: a tiny 部 (bù, "section" — the Chinese term for a Kangxi radical)
+   straddling the top-right corner, gold glyph ink and a gold hover/focus border. Marks:
+   .decomposition-glyph.is-radical (breakdown parts resolved to a Kangxi radical),
+   .pinyin-character-glyph.is-radical (Sound chart "In a character" radical boxes),
+   .tile-form.is-radical (Radicals library card form boxes) and .radical-form-choice (every
+   form tile in a radical family list). A form that is also traditional keeps the purple 繁
+   stamp and ink — traditional is the more specific identity, so radical gold only shows on
+   non-traditional forms. */
+:is(.decomposition-glyph.is-radical,
+    .pinyin-character-glyph.is-radical,
+    .tile-form.is-radical,
+    .radical-form-choice):not(.traditional-character):not(.is-traditional) { position: relative; color: var(--hsk-id); }
+:is(.decomposition-glyph.is-radical,
+    .pinyin-character-glyph.is-radical,
+    .tile-form.is-radical,
+    .radical-form-choice):not(.traditional-character):not(.is-traditional)::after {
+  content: "部";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(46%, -46%);
+  z-index: 2;
+  font-family: var(--font-hanzi);
+  font-size: var(--traditional-mark-size, 13px);
+  font-weight: 400;
+  line-height: 1;
+  padding: 1px 3px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--hsk-id) 45%, transparent);
+  background: color-mix(in oklch, var(--hsk-id) 16%, var(--card));
+  /* Same hue-preserving fill trick as the 繁 stamp: a plain card mix drifts the gold hue. */
+  background: oklch(from var(--hsk-id) 0.93 0.03 h);
+  color: var(--hsk-id);
+  pointer-events: none;
+}
+:root.dark :is(.decomposition-glyph.is-radical,
+    .pinyin-character-glyph.is-radical,
+    .tile-form.is-radical,
+    .radical-form-choice):not(.traditional-character):not(.is-traditional)::after {
+  background: color-mix(in oklch, var(--hsk-id) 26%, var(--card));
+  background: oklch(from var(--hsk-id) 0.3 0.05 h);
+  border-color: color-mix(in oklch, var(--hsk-id) 62%, transparent);
+}
+.tile-form.is-radical::after { transform: translate(58%, -58%); }
+:is(.decomposition-glyph.is-radical,
+    .pinyin-character-glyph.is-radical,
+    .tile-form.is-radical,
+    .radical-form-choice):not(.traditional-character):not(.is-traditional):not(.is-selected):is(:hover, :focus-visible) { border-color: var(--hsk-id); }
 .search-trigger { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-size: 11px; }
 .search-trigger:hover { color: var(--foreground); border-color: var(--primary); }
 .search-trigger>svg { width: 14px; }
