@@ -107,7 +107,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     window.addEventListener('keydown', closeOnEscape);
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [mobileOpen]);
-  const activePhoneTab = phoneTabFor(path, activeMode);
+  const activePhoneTab = phoneTabFor(path);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
   const [expandedSearch, setExpandedSearch] = useState(false);
@@ -146,12 +146,11 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         {section.items.map(n => {
         const subs: NavSub[] | null = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
-          : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, search: g.mode ? { mode: g.mode } : undefined, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
+          : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
           : null;
-        // A game family owns its own game pages (Pinyin quiz modes light Pinyin
-        // games); Pinyin owns only the Sound chart.
-        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : n.to === '/pinyin' ? path === '/pinyin' && !currentGame : path === n.to;
-        return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} search={n.search} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
+        // A game family owns its own game pages; the Sound chart owns /pinyin.
+        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : path === n.to;
+        return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
         })}</div>)}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup id="settings" name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
