@@ -1,31 +1,36 @@
 import { describe, expect, it } from 'vitest';
-import { navCanPin, navHasMenuButton, navIsDocked, navSizeFor, readNavPinned } from './nav-layout';
+import { navModeFor, navSizeFor, phoneTabFor, readNavExpanded } from './nav-layout';
 
 describe('side menu per window size', () => {
-  it('large windows can hide the menu; the hamburger appears only while it is hidden', () => {
-    expect(navSizeFor(1975)).toBe('large');
-    expect(navCanPin('large')).toBe(true);
-    expect(navIsDocked('large', true)).toBe(true);
-    expect(navHasMenuButton('large', true)).toBe(false);
-    expect(navIsDocked('large', false)).toBe(false);
-    expect(navHasMenuButton('large', false)).toBe(true);
+  it('windows wider than 850px never use the drawer: full menu or slim icon strip', () => {
+    expect(navSizeFor(851)).toBe('wide');
+    expect(navSizeFor(1000)).toBe('wide');
+    expect(navSizeFor(2486)).toBe('wide');
+    expect(navModeFor('wide', true)).toBe('full');
+    expect(navModeFor('wide', false)).toBe('rail');
   });
-  it('medium windows can pin or hide the menu and keep the hamburger button', () => {
-    expect(navSizeFor(1000)).toBe('medium');
-    expect(navIsDocked('medium', true)).toBe(true);
-    expect(navIsDocked('medium', false)).toBe(false);
-    expect(navHasMenuButton('medium', true)).toBe(true);
-    expect(navHasMenuButton('medium', false)).toBe(true);
-    expect(navCanPin('medium')).toBe(true);
+  it('phones (850px and below) always use the drawer, whatever was saved', () => {
+    expect(navSizeFor(850)).toBe('phone');
+    expect(navModeFor('phone', true)).toBe('drawer');
+    expect(navModeFor('phone', false)).toBe('drawer');
   });
-  it('small windows never pin; the menu only opens from the hamburger button', () => {
-    expect(navSizeFor(850)).toBe('small');
-    expect(navIsDocked('small', true)).toBe(false);
-    expect(navHasMenuButton('small', true)).toBe(true);
-    expect(navCanPin('small')).toBe(false);
+  it('the menu starts full until the icon strip is remembered', () => {
+    expect(readNavExpanded({ getItem: () => null })).toBe(true);
+    expect(readNavExpanded({ getItem: () => 'false' })).toBe(false);
   });
-  it('menus start pinned until hidden is remembered', () => {
-    expect(readNavPinned({ getItem: () => null })).toBe(true);
-    expect(readNavPinned({ getItem: () => 'false' })).toBe(false);
+});
+
+describe('phone tab bar', () => {
+  it('lights Glyphs, Vocabulary, Games (both games) and Pinyin for their pages', () => {
+    expect(phoneTabFor('/characters')).toBe('glyphs');
+    expect(phoneTabFor('/vocabulary')).toBe('vocabulary');
+    expect(phoneTabFor('/flashcards')).toBe('games');
+    expect(phoneTabFor('/drawing')).toBe('games');
+    expect(phoneTabFor('/pinyin')).toBe('pinyin');
+  });
+  it('Start and Settings sit under More; Practice claims no tab', () => {
+    expect(phoneTabFor('/')).toBe('more');
+    expect(phoneTabFor('/settings')).toBe('more');
+    expect(phoneTabFor('/strokes')).toBeNull();
   });
 });
