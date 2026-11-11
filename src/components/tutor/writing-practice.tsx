@@ -170,7 +170,10 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                   onClick={() => onPlay(i)}
                 >
                   <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
+                    {/* The whole character's own recorded strokes sit faded behind the tile's stroke,
+                        so the stroke reads in place; nothing here is drawn from any other source. */}
                     <g transform="scale(1, -1) translate(0, -900)">
+                      <g className="stroke-shape-context">{strokes.map((other, j) => j === i ? null : <path key={j} d={other.path} />)}</g>
                       <path d={stroke.path} style={{ fill: componentInk(run.group.palette) }} />
                     </g>
                   </svg>
