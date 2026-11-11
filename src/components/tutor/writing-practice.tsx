@@ -1,4 +1,4 @@
-import { practiceOrigin, focusEntryCard } from '@/lib/practice-return';
+import { practiceOrigin } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
@@ -9,8 +9,8 @@ import { practiceCanvasSize, PRACTICE_CANVAS_MIN } from '@/lib/learning-preferen
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
-import { useNavigate, useRouter } from '@tanstack/react-router';
-import { Check, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
+import { useNavigate } from '@tanstack/react-router';
+import { Check, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -719,7 +719,6 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
-  const router = useRouter();
   const character = wordChars[focus] ?? wordChars[0] ?? '我';
   const setCharacter = (i: number) => { navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) } }); };
   const [sheet, setSheet] = useState(false);
