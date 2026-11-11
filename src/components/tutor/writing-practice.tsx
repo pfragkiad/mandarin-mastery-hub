@@ -191,33 +191,43 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // beside it (null when it has several), and `word.label` names the character for screen readers.
 // `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
-type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined };
+type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined; hidden?: boolean | undefined };
+// `hidden` (Recall): the word tile keeps `glyph`, `ink` and `stamp` back until the character is
+// finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
+// only shown once it has been written from memory.
+// `glyph` (single character): the practised character, revealed in place of the empty box once
+// every stroke is drawn while the stroke picture is hidden (Recall or the Strokes pill off).
 // `stamp`: the 繁 / 部 corner-stamp class of the character's exact identity (omitted in Recall).
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
 // wins because that frame shows a different character.
-function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined }) {
+function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
   const done = next >= total;
   const stroke = strokes[next];
-  const tileInk = word?.ink ?? ink ?? '';
+  // Word tiles hidden by Recall reveal their hanzi, ink and stamp only once finished.
+  const wordShown = Boolean(word && (!word.hidden || done));
+  const wordGlyph = wordShown ? word?.glyph : undefined;
+  const wordStamp = wordShown ? word?.stamp : undefined;
+  const singleGlyph = !word && !showStroke && done ? glyph : undefined;
+  const tileInk = word ? (wordShown ? word.ink ?? '' : '') : ink ?? '';
   const fraction = Math.min(1, next / total);
   const status = showStroke
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
     : `${Math.min(next, total)} of ${total} strokes drawn`;
-  const label = word ? `${word.label}${word.reading ? ` (${word.reading})` : ''} · ${status}` : status;
+  const label = word ? `${word.label}${wordGlyph ? ` ${wordGlyph}` : ''}${word.reading ? ` (${word.reading})` : ''} · ${status}` : status;
   // Every top tile counts the stroke you are on, so an untouched character reads "1 / 5"
   // and a finished one carries no count at all — the tick already says it is done.
   const count = done ? '' : `${next + 1} / ${total}`;
   const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
   return (
-    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || word?.glyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${word?.stamp ? ` ${word.stamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? word.glyph ? <span lang="zh-CN" className="word-strip-glyph">{word.glyph}</span> : null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : null : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
@@ -806,7 +816,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={progressInk}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character}/>
     : null;
   const progressRow = <div className="practice-progress-row">{strip ? strip(progressTile) : progressTile?.()}</div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
@@ -942,7 +952,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
       pills={isWord ? undefined : characterPills} forms={forms} onPrint={() => setSheet(true)}
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
-    <div className="practice-layout"><WritingPractice key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord || recall ? undefined : practiceInk}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
+    <div className="practice-layout"><WritingPractice key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord ? undefined : practiceInk}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
 only the component breakdown; radical practice never shows a decomposition at any width. */}
 {!recall && !familyId && decomposition && <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></h3><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div>}</section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }
@@ -970,11 +980,11 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
       // Recall drops the identity ink with the hanzi and the stamps: a gold or purple frame
       // would hint at the hidden character the same way the 部 / 繁 mark would.
-      const shownInk = hideGlyphs ? '' : ink;
+      // A finished character is revealed again (see `revealed` below).
       // Same corner stamps as every glyph tile (繁 traditional, 部 radical), from the exact record;
       // Recall drops them with the hanzi so the tile never hints at the hidden answer.
-      const stamp = hideGlyphs || !record ? undefined : record.script === 'Traditional' ? 'tile-stamp-traditional' : isRadicalGlyph(record, 'Characters') ? 'tile-stamp-radical' : undefined;
-      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}`, glyph: hideGlyphs ? undefined : c, ink: shownInk, stamp })}</Fragment>;
+      const stamp = !record ? undefined : record.script === 'Traditional' ? 'tile-stamp-traditional' : isRadicalGlyph(record, 'Characters') ? 'tile-stamp-radical' : undefined;
+      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}`, glyph: c, ink, stamp, hidden: hideGlyphs })}</Fragment>;
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
@@ -988,10 +998,14 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       // The focused tile while its writer loads keeps the same frame with an empty picture
       // (no hanzi), so switching characters never flashes the glyph or changes the height.
       const loading = i === focus;
-      const hidden = hideGlyphs || loading;
+      // Recall hides the hanzi until that character is finished, then shows what was written.
+      const revealed = !hideGlyphs || done;
+      const hidden = !revealed || loading;
+      const shownInk = revealed ? ink : '';
+      const shownStamp = revealed ? stamp : undefined;
       // Every tile shares the progress tile's frame (count top-left, reading top-centre,
       // fixed picture box, name line, bar), so the row keeps one height and one look.
-      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${hideGlyphs ? ' is-blank' : ''}${done ? ' is-done' : ''}${stamp ? ` ${stamp}` : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${revealed ? '' : ' is-blank'}${done ? ' is-done' : ''}${shownStamp ? ` ${shownStamp}` : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${revealed ? ` ${c}` : ''}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={!revealed ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
         <span className="stroke-progress-head" aria-hidden="true"><span className="stroke-index tile-count-corner">{count}</span>{single && <span className="pinyin word-strip-pinyin">{single}</span>}</span>
         <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
