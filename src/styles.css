@@ -2456,8 +2456,10 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 .practice-title-glyph.traditional-character { color: var(--traditional); }
 .practice-reading-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 0; font-size: 18px; }
 .practice-reading-line .pinyin { font-size: 20px; }
-.practice-reading-line .practice-listen { width: 36px; height: 36px; border-radius: 999px; background: color-mix(in oklab, var(--primary) 12%, transparent); color: var(--primary); }
-.practice-reading-line .practice-listen:disabled { background: transparent; }
+/* The reading line's speaker is the standard audio control: same plain icon, same
+   muted colour and hover-to-primary behaviour as every other .practice-listen. Only the
+   hit target grows here because the reading line sets 18px text. */
+.practice-reading-line .practice-listen { width: 32px; height: 32px; }
 .practice-reading-dot { color: var(--muted-foreground); }
 .practice-reading-line .practice-translation { display: inline; width: auto; margin: 0; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--foreground); overflow-wrap: anywhere; }
 .practice-reading-line .practice-pills { margin-left: 2px; }
