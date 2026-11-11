@@ -191,7 +191,9 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // beside it (null when it has several), and `word.label` names the character for screen readers.
 // `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
-type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined; hidden?: boolean | undefined };
+// `onError`: where a failed reading goes (the header's audio note), so the tile's speaker never
+// grows the tile with an inline message.
+type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined; hidden?: boolean | undefined; onError?: ((message: string | null) => void) | undefined };
 // `hidden` (Recall): the word tile keeps `glyph`, `ink` and `stamp` back until the character is
 // finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
 // only shown once it has been written from memory.
@@ -225,11 +227,16 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   const centreCount = !showStroke && !word && !singleGlyph;
   const index = <span className="stroke-index" aria-hidden="true">{centreCount ? '' : count}</span>;
   return (
-    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    // A word tile hosts a speaker control, so its read-out is a labelled group (an <img> role
+    // would hide that control from screen readers); a single-character tile has no control and
+    // stays a plain image read-out.
+    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
-      {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : null : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
+      {/* The reading and its speaker are one centred pair: the pinyin stays the primary text and
+          the speaker rides immediately after it, inside the head's centre column. */}
+      {word ? <span className="stroke-progress-head">{index}{word.reading && <span className="word-strip-reading"><span className="pinyin word-strip-pinyin" aria-hidden="true">{word.reading}</span>{word.glyph && <GlyphReadingSpeaker spoken={word.glyph} reading={word.reading} variant="tile" onError={word.onError}/>}</span>}</span> : index}
+      <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : null : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
