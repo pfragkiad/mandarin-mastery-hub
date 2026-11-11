@@ -787,36 +787,94 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-sound-tone:hover,.discovery-sound-tone:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); background: color-mix(in oklab, var(--primary) 10%, transparent); }
 .discovery-sound-tone.is-playing { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 18%, transparent); }
 
-/* Start games: two labelled groups (Hanzi 2 cards, Pinyin 3 cards) side by side, sized by card count. */
+/* Start games (overview-games.tsx): two stacked groups, each a three-column grid of
+   preview tiles (Hanzi games leaves the third column empty so every tile is one size).
+   The whole tile is the link; hover/focus tints it and fills the round Play cue.
+   Phones (≤700px) switch the same markup to compact rows: see the media query below. */
 .overview-games { padding-top: 28px; border-top: 1px solid var(--border); }
-/* Both groups share the parent's two rows (heading, cards) through subgrid, so every game card
-   across Hanzi and Pinyin games ends up the height of the tallest one. */
-.overview-game-groups { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,3fr); grid-template-rows: auto 1fr; gap: 28px; margin-top: 14px; }
-.overview-game-group { min-width: 0; display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
-.overview-game-group > h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font-family: var(--font-display); font-weight: 400; font-size: 22px; margin: 0 0 14px; }
+.overview-game-groups { display: grid; gap: 30px; margin-top: 14px; }
+.overview-game-group { min-width: 0; }
+.overview-game-group > h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; font-family: var(--font-display); font-weight: 400; font-size: 26px; margin: 0 0 14px; }
 .overview-game-group-icon { align-self: center; display: inline-grid; place-items: center; color: var(--primary); }
-.overview-game-group-icon svg { width: 22px; height: 22px; }
-.overview-game-group-note { font-family: var(--font-sans); font-size: 11px; color: var(--muted-foreground); }
-.overview-game-list { display: grid; grid-template-columns: repeat(var(--game-count), minmax(0,1fr)); grid-auto-rows: 1fr; gap: 14px; }
-.overview-game-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
-.overview-game-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 6px; background: var(--secondary); color: var(--primary); }
-.overview-game-icon svg { width: 20px; height: 20px; }
-.overview-game-card h3 { font-size: 15px; font-weight: 500; margin: 4px 0 0; }
-.overview-game-card p { color: var(--muted-foreground); font-size: 12px; line-height: 1.6; flex: 1; }
-.overview-game-play { align-self: flex-start; margin-top: 4px; }
-.overview-game-play > svg { fill: currentColor; }
+.overview-game-group-icon svg { width: 24px; height: 24px; }
+.overview-game-group-note { font-family: var(--font-sans); font-size: 13px; color: var(--muted-foreground); }
+.overview-game-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.overview-game-card { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 14px 14px 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--card); color: var(--foreground); text-decoration: none; transition: border-color .18s ease, background-color .18s ease; }
+.overview-game-card:hover, .overview-game-card:focus-visible { border-color: color-mix(in oklab, var(--primary) 60%, var(--border)); background: color-mix(in oklab, var(--primary) 6%, var(--card)); outline: none; }
+.overview-game-card:focus-visible { box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary) 45%, transparent); }
+.overview-game-preview { height: 128px; display: grid; place-items: center; margin-bottom: 10px; border-radius: 12px; background: var(--background); overflow: hidden; }
+.overview-game-icon { display: none; }
+.overview-game-text { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 0; padding: 0 4px; }
+.overview-game-text > strong { font-size: 17px; font-weight: 600; }
+.overview-game-line { color: var(--muted-foreground); font-size: 14px; line-height: 1.55; }
+.overview-game-play { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; margin: 8px 4px 0; color: var(--primary); font-size: 14px; font-weight: 500; }
+.overview-game-play-dot { width: 0; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); opacity: 0; transition: width .18s ease, opacity .18s ease; overflow: hidden; }
+.overview-game-play-dot svg { width: 13px; height: 13px; fill: currentColor; }
+.overview-game-play { gap: 0; }
+.overview-game-card:is(:hover, :focus-visible) .overview-game-play { gap: 10px; }
+.overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot { width: 30px; opacity: 1; }
+/* Decorative previews (illustrations only — no reading, tone or audio is attached). */
+.game-preview-cards { position: relative; width: 104px; height: 100px; }
+.game-preview-cards > span { position: absolute; width: 82px; height: 96px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.game-preview-cards > span:first-child { left: 0; top: 6px; transform: rotate(-8deg); }
+.game-preview-cards > span:last-child { right: 0; top: 0; transform: rotate(4deg); display: grid; place-items: center; font-family: var(--font-hanzi); font-size: 42px; color: var(--primary); box-shadow: var(--shadow-soft); }
+.game-preview-drawing { width: 160px; height: 120px; }
+.game-preview-guide { stroke: var(--muted-foreground); stroke-width: 1.2; stroke-dasharray: 4 5; opacity: .55; fill: none; }
+.game-preview-ink { stroke: var(--primary); stroke-width: 7; stroke-linecap: round; fill: none; }
+.game-preview-pen { fill: var(--terracotta); }
+.game-preview-tones { display: flex; gap: 10px; }
+.game-preview-tones > span { width: 50px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid var(--border); border-radius: 10px; color: var(--muted-foreground); font-size: 17px; }
+.game-preview-tones svg { width: 30px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.game-preview-tones > span:first-child svg, .game-preview-tones > span:not(.is-picked) svg { color: var(--foreground); }
+.game-preview-tones > .is-picked { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 16%, transparent); color: var(--primary); }
+.game-preview-tones > .is-picked svg { color: var(--primary); }
+.game-preview-alikes { display: flex; align-items: center; gap: 10px; color: var(--muted-foreground); }
+.game-preview-alikes > span { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border: 1px solid var(--border); border-radius: 10px; color: var(--terracotta); font-size: 20px; }
+.game-preview-alikes > span > svg { width: 18px; height: 18px; color: var(--primary); }
+.game-preview-alikes > i { font-style: normal; font-size: 18px; }
+.game-preview-type { display: flex; align-items: center; gap: 10px; width: calc(100% - 36px); max-width: 300px; height: 56px; padding: 0 14px 0 10px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); font-size: 20px; }
+.game-preview-type-speaker { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--secondary); color: var(--primary); flex-shrink: 0; }
+.game-preview-type-speaker svg { width: 17px; height: 17px; }
+.game-preview-caret { width: 3px; height: 26px; margin-left: -6px; border-radius: 1px; background: var(--primary); animation: game-preview-caret 1.1s steps(1) infinite; }
+@keyframes game-preview-caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .game-preview-caret { animation: none; } }
+/* Tablets: tighter tiles, smaller pictures. */
+@media (max-width: 1100px) {
+  .overview-game-list { gap: 12px; }
+  .overview-game-preview { height: 108px; }
+  .game-preview-tones { gap: 6px; }
+  .game-preview-tones > span { width: 40px; height: 70px; font-size: 15px; }
+  .game-preview-alikes > span { padding: 0 10px; font-size: 17px; height: 40px; }
+}
+/* Phones: one bordered panel of compact rows — menu icon, name + one-line description,
+   round Play button; uppercase group labels without their notes. */
+@media (max-width: 700px) {
+  .overview-game-groups { gap: 10px; padding: 18px 16px 8px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); }
+  .overview-game-group > h2 { align-items: center; gap: 10px; margin: 0 0 6px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted-foreground); }
+  .overview-game-group-icon svg { width: 20px; height: 20px; }
+  .overview-game-group-note, .overview-game-preview, .overview-game-play-label { display: none; }
+  .overview-game-list { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .overview-game-card { flex-direction: row; align-items: center; gap: 14px; padding: 10px 6px; margin: 0 -6px; border: 0; border-radius: 14px; background: transparent; }
+  .overview-game-card:hover, .overview-game-card:focus-visible { background: color-mix(in oklab, var(--primary) 7%, transparent); }
+  .overview-game-icon { display: grid; place-items: center; width: 54px; height: 54px; flex-shrink: 0; border-radius: 14px; background: var(--secondary); color: var(--primary); }
+  .overview-game-icon svg { width: 24px; height: 24px; }
+  .overview-game-text { gap: 2px; padding: 0; }
+  .overview-game-text > strong { font-size: 16px; }
+  .overview-game-line { font-size: 13px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .overview-game-play, .overview-game-card:is(:hover, :focus-visible) .overview-game-play { margin: 0; gap: 0; align-self: center; }
+  .overview-game-play-dot, .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot { width: 44px; height: 44px; opacity: 1; background: var(--secondary); color: var(--primary); }
+  .overview-game-play-dot svg { width: 15px; height: 15px; }
+  .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot { background: var(--primary); color: var(--primary-foreground); }
+}
 /* Six discovery cards: one row only when each card has room for a phrase; otherwise 3×2. */
 @media (max-width:1599px) { .overview-discovery-row { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 @media (max-width:1100px) {
   .overview-discovery-row { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
-  .overview-game-groups { grid-template-columns: minmax(0,1fr); gap: 24px; }
 }
-@media (max-width:700px) { .overview-game-list { grid-template-columns: minmax(0,1fr); gap: 10px; } }
 @media (max-width:580px) {
   .overview-heading h1 { font-size: 31px; letter-spacing: -.008em; }
   .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
-  .overview-game-group > h2 { font-size: 20px; }
 }
 
 /* Printable handwriting practice sheet */
@@ -2326,7 +2384,11 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
    avatar move to Settings there. Wider windows keep the breadcrumb header. */
 .topbar-title, .topbar-settings { display: none; }
 @media (max-width: 850px) {
-  .topbar { height: 60px; }
+  /* The header stays pinned while the page scrolls; scroll-padding keeps scrolled-to
+     cards and anchors from landing underneath it, and the floating page bar sits below it. */
+  html { scroll-padding-top: 60px; }
+  .topbar { height: 60px; position: sticky; top: 0; z-index: 27; }
+  .sticky-pagination { top: 60px; }
   .topbar .breadcrumbs > :not(.topbar-title),
   .topbar-actions :is(.display-size-trigger, .theme-toggle, .header-divider, .learning-status, .avatar) { display: none; }
   .topbar .topbar-title { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--foreground); }
