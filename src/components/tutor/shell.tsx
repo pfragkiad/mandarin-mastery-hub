@@ -27,10 +27,10 @@ const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g
 const sectionIcons: Record<string, typeof Gamepad2> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
 // Phone bottom tab bar: the four main destinations; "More" (a button, not a link)
 // opens the full menu drawer for Start, Settings and every sub-item.
-const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Gamepad2 }[] = [
+const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon }[] = [
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
   { key: 'vocabulary', to: '/vocabulary', label: 'Vocabulary', icon: BookOpen },
-  { key: 'games', to: '/flashcards', label: 'Games', icon: HanziIcon as typeof Gamepad2 },
+  { key: 'games', to: '/flashcards', label: 'Games', icon: HanziIcon },
   { key: 'pinyin', to: '/pinyin', label: 'Pinyin', icon: AudioLines },
 ];
 export function TutorShell({ children }: { children: React.ReactNode }) {
