@@ -109,7 +109,6 @@ export function FormSwitchThumb() {
     });
     observer?.observe(list);
     list.querySelectorAll('.radical-form-choice').forEach(tile => observer?.observe(tile));
-    let timer = 0;
     return () => {
       live = false;
       window.clearTimeout(timer);
