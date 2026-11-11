@@ -78,6 +78,7 @@ export function FormSwitchThumb() {
       && (Math.abs(start.x - first.box.x) > 1 || Math.abs(start.y - first.box.y) > 1
         || Math.abs(start.w - first.box.w) > 1 || Math.abs(start.h - first.box.h) > 1);
     let last: Box & { at: number } = { ...first.box, at: Date.now() };
+    let timer = 0;
     if (slides && start) {
       // Write the outgoing box straight onto the element and force a style flush: React's own
       // render would land both boxes in the same paint, and a transition needs a computed
