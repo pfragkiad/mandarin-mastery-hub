@@ -1599,8 +1599,11 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 .drawer-close { display: none; }
 .phone-tabs { display: none; }
 @media (min-width: 851px) {
-  /* The icon strip lists every section; let it scroll on short windows. */
+  /* The icon strip scrolls on short windows. Settings is pinned to the strip's bottom
+     (margin-top:auto when everything fits, sticky when the list scrolls) under one thin
+     line — the strip's only divider; the main items and the full menu have none. */
   .workspace.is-collapsed .sidebar nav { padding: 0 4px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
+  .workspace.is-collapsed .nav-group-settings { margin-top: auto; position: sticky; bottom: 0; padding-top: 6px; border-top: 1px solid var(--border); background: var(--sidebar-bg); }
 }
 /* Phones: the menu is a drawer over the page, opened from "More" in the bottom
    tab bar; its close button sits at the right end of the logo row. */
