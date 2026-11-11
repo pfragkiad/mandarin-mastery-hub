@@ -44,3 +44,22 @@ export function focusEntryCard() {
   };
   requestAnimationFrame(attempt);
 }
+
+/** Learner label for Practice's Back link: the section the origin URL belongs to
+ *  ("Characters", "Words", "Start"…), or plain "Back" when there is no origin or the
+ *  page is not a named section. Pure, so the label never guesses beyond the URL. */
+export function originLabel(href: string | null): string {
+  if (!href) return 'Back';
+  const url = new URL(href, 'http://x');
+  const tab = url.searchParams.get('tab');
+  switch (url.pathname) {
+    case '/': return 'Start';
+    case '/characters': return tab === 'Components' || tab === 'Radicals' || tab === 'Strokes' ? tab : 'Characters';
+    case '/vocabulary': return tab === 'phrase' ? 'Phrases' : 'Words';
+    case '/flashcards': return 'Flashcards';
+    case '/drawing': return 'Drawing game';
+    case '/pinyin': return 'Sound chart';
+    case '/settings': return 'Settings';
+    default: return 'Back';
+  }
+}
