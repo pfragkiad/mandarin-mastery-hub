@@ -2497,8 +2497,11 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
    mode; a tick marks a finished character. */
 .word-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 2px; }
 .word-strip-tile, .stroke-progress-tile { position: relative; width: 116px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 12px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, background-color .15s; }
-.word-strip-tile:hover, .word-strip-tile:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
-.word-strip-tile.is-selected { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
+/* The frame wears the character's identity ink (styles.css `.card-ink-*`, set on the tile
+   itself): gold radical, green character, purple traditional, foreground component — the same
+   rule as every library card, so hover/selected never reads green on a gold character. */
+.word-strip-tile:hover, .word-strip-tile:focus-visible { border-color: color-mix(in oklab, var(--card-ink, var(--primary)) 55%, transparent); }
+.word-strip-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
 .word-strip-glyph { font-size: 38px; line-height: 1.15; color: var(--card-ink, inherit); }
 /* The Recall box is near-square so the drawn stroke count inside it has breathing room. */
 .word-strip-glyph.form-switch-blank { display: flex; align-items: center; justify-content: center; width: 46px; height: 44px; }
@@ -2519,7 +2522,7 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .practice-progress-row:empty { display: none; }
 .practice-progress-row > .word-strip { margin: 0; }
 .stroke-progress-tile { width: 132px; cursor: default; gap: 4px; }
-.stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+.stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--card-ink, var(--primary)) 55%, transparent); }
 .stroke-progress-tile .stroke-index { min-height: 1.2em; }
 .stroke-progress-picture { display: flex; align-items: center; justify-content: center; width: 68px; height: 68px; }
 .stroke-progress-tile.is-blank .stroke-progress-picture { border: 1px dashed var(--border); border-radius: 8px; }
@@ -2532,7 +2535,7 @@ html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; he
    the stroke count in the left corner and the character's reading centred, in a 1fr/auto/1fr
    grid so a long count never overlaps the reading; it wears the selected strip tile's tint. */
 .stroke-progress-tile.is-word { width: 148px; }
-.stroke-progress-tile.is-selected { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
+.stroke-progress-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
 .stroke-progress-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; column-gap: 4px; width: 100%; min-height: 1.35em; }
 .stroke-progress-head .stroke-index { grid-column: 1; justify-self: start; white-space: nowrap; }
 .stroke-progress-head .word-strip-pinyin { grid-column: 2; }
