@@ -1287,8 +1287,11 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .shared-filter-form .search-field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; display: none; }
 .shared-filter-form .filter-select { flex: 0 1 auto; max-width: 210px; }
 /* Match the bordered search wrapper, not just its inner input: Comfortable
-   includes 44px input + 12px padding + 2px border. Keep mobile touch sizing. */
-html[data-display-size='comfortable'] .shared-filter-form .filter-select { height: 58px; }
+   includes 44px input + 12px padding + 2px border. Only library pages wrap the
+   search field that way, so this 58px dropdown height belongs to them alone;
+   everywhere else (game setups) dropdowns keep the shared 44px Comfortable
+   control height, so every control in one row matches. Keep mobile touch sizing. */
+html[data-display-size='comfortable'] .library-page .shared-filter-form .filter-select { height: 58px; }
 /* No separate ≤1280px dropdown height: on those widths the dropdowns live in the Filters
    sheet, and the inline form only shows briefly (first paint, before the screen-size check
    runs), where a shorter dropdown sat beside the full-height search box. Inline dropdowns
