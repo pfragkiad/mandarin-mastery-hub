@@ -258,6 +258,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Replacement/reset/quiz starts invalidate old completion callbacks. Native
   // Pause/Resume deliberately retain this token to continue the existing run.
   const [ready, setReady] = useState(false);
+  // Counts finished writer builds. A rebuild can resolve so fast that ready's false→true
+  // flip is batched away, so the mode effect keys on this to re-arm every new writer.
+  const [writerBuild, setWriterBuild] = useState(0);
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -309,6 +312,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     savedMuted.current = muted;
     try { localStorage.setItem('tutor-stroke-audio', muted ? 'muted' : 'unmuted'); } catch { /* ignore */ }
   }, [muted]);
+  // Progress carried across a same-character writer rebuild (see the build effect).
+  const lastBuild = useRef('');
+  const restoreRef = useRef<{ start: number; scores: (number | null)[]; prefix: number; message: string; mode: PracticeMode } | null>(null);
   const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup || Boolean(radicalSelection) || Boolean(radicalStrokes(character)), groupingSource);
   const groupRef = useRef(groups);
   groupRef.current = groups;
@@ -319,6 +325,16 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   useEffect(() => { if (ready) paintStrokes(); }, [ready, enrichment, groupingSource, singleGroup, strokes.length]);
   useEffect(() => {
     let active = true;
+    // A rebuild of the same character (new square size after a resize drag, or a theme
+    // change) keeps the learner's tracing/recall progress: remember the next undrawn
+    // stroke, the scores and the status line so the mode effect can re-arm the quiz there
+    // (the native quizStartStrokeNum redraws exactly that prefix). A new character, form
+    // or retry starts fresh.
+    const buildKey = `${character}|${radicalSelection?.key ?? ''}|${retry}`;
+    restoreRef.current = buildKey === lastBuild.current && ready && mode !== 'watch' && tracePos.current > 0
+      ? { start: tracePos.current, scores, prefix: tracePrefix, message, mode }
+      : null;
+    lastBuild.current = buildKey;
     animationRun.current += 1;
     setReady(false); setPlaying(false); setPaused(false); setMessage('Loading stroke order…');
     setStrokes([]); setMedians([]); setActiveStroke(null);
@@ -354,7 +370,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setWriterBuild(n => n + 1); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
       // Capture phase on the container runs before Hanzi Writer's own svg
       // mousedown/touchstart listeners, so re-arming here lets this very drag
@@ -490,24 +506,28 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   strokesRef.current = strokes.length;
   // Native quizStartStrokeNum displays the exact completed prefix and validates
   // only the remaining strokes; displayed strokes deliberately keep null scores.
-  const quiz = (startStroke = 0) => {
+  // `restored` (after a same-character rebuild) keeps the earlier scores, shown-prefix
+  // marker and status line instead of treating the redrawn prefix as clicked/unscored.
+  const quiz = (startStroke = 0, restored?: { scores: (number | null)[]; prefix: number; message: string }) => {
     const instance = writer.current;
     if (!instance) return;
     tracePos.current = startStroke;
     const run = ++animationRun.current;
     instance.cancelQuiz();
-    setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 ? startStroke : null);
+    setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 && startStroke < strokes.length ? startStroke : null);
     setStepIndex(0); setStepMode(false); needsRearm.current = false; pauseAfterStroke.current = false; setPausing(false);
-    setScores(strokes.map(() => null));
-    setTracePrefix(mode === 'trace' ? startStroke : 0);
+    setScores(strokes.map((_, i) => restored?.scores[i] ?? null));
+    setTracePrefix(mode === 'trace' ? restored ? restored.prefix : startStroke : 0);
+    // A restored round counts as a whole attempt when nothing was skipped by clicking.
+    const wholeAttempt = startStroke === 0 || (restored !== undefined && restored.prefix === 0);
     if (startStroke >= strokes.length) {
       // No out-of-range quiz: keep the full drawing until Reset or a new drag.
       setActiveStroke(null); needsRearm.current = true;
       void instance.showCharacter({ duration: 0 });
-      setMessage('All strokes shown. Draw again to start over.');
+      setMessage(restored ? restored.message : 'All strokes shown. Draw again to start over.');
       return;
     }
-    setMessage(startStroke ? `Continue tracing from stroke ${startStroke + 1} of ${strokes.length}.` : 'Draw the character in the square.');
+    setMessage(restored ? restored.message : startStroke ? `Continue tracing from stroke ${startStroke + 1} of ${strokes.length}.` : 'Draw the character in the square.');
     let completionHandled = false;
     instance.quiz({ ...practiceModeOptions(mode), leniency: strictness, quizStartStrokeNum: startStroke,
       onMistake: () => { if (animationRun.current === run) setMessage(mode === 'recall' ? 'Try that stroke again.' : 'Keep going — follow the highlighted stroke.'); },
@@ -525,11 +545,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
         completionHandled = true;
         // Celebrate a whole-character attempt only; a clicked completed prefix
         // followed by a perfect suffix is not a fully drawn hanzi.
-        if (startStroke === 0 && totalMistakes === 0) celebrate(100);
+        if (wholeAttempt && totalMistakes === 0 && (startStroke === 0 || restored?.scores.slice(0, startStroke).every(score => score === 100))) celebrate(100);
         needsRearm.current = true;
         setScores(prev => {
           const total = characterScore(prev);
-          setMessage(`${startStroke ? 'Remaining strokes complete' : 'Character complete'} — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`);
+          setMessage(`${wholeAttempt ? 'Character complete' : 'Remaining strokes complete'} — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`);
           return prev;
         });
       },
@@ -605,9 +625,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
+    const restore = restoreRef.current; restoreRef.current = null;
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
+    else if (restore && restore.mode === mode) quiz(restore.start, restore);
     else quiz();
-  }, [mode, ready, character]);
+  }, [mode, ready, character, writerBuild]);
   const selected = groups.find(group => group.id === selectedGroup);
   const selectGroup = (id: string) => {
     const group = groups.find(group => group.id === id);

@@ -18,7 +18,7 @@ vi.mock('hanzi-writer', () => ({ default: { create: (_node: unknown, _char: stri
   queueMicrotask(options.onLoadCharDataSuccess);
   return fake;
 } } }));
-vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'light', catalogVersion: 1, preferences: { slow: false } }) }));
+vi.mock('./workspace', () => ({ useWorkspace: () => ({ theme: 'light', catalogVersion: 1, preferences: { slow: false }, setPreferences: () => {} }) }));
 vi.mock('@/lib/audio', async importOriginal => ({
   ...await importOriginal<typeof import('@/lib/audio')>(),
   speakTts: vi.fn(),
@@ -498,4 +498,23 @@ it('Play waits for a spoken stroke name to finish before drawing the next stroke
   expect(fake.animateStroke.mock.calls[1]?.[0]).toBe(1);
   fireEvent.click(screen.getByRole('button', { name: 'Names' }));
   vi.mocked(speakTts).mockReset();
+});
+
+it('resizing the square after tracing keeps the drawn strokes and re-arms at the next stroke', async () => {
+  let width = 300;
+  vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockImplementation(function (this: HTMLElement) { return this.classList.contains('writer-board') ? width : 0; });
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const callbacks = fake.quiz.mock.calls.at(-1)?.[0];
+  act(() => callbacks.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  const quizzes = fake.quiz.mock.calls.length;
+  const handle = screen.getByRole('button', { name: 'Resize writing square' });
+  fireEvent.pointerDown(handle, { clientX: 0, clientY: 0 });
+  width = 420;
+  fireEvent.pointerMove(window, { clientX: 120, clientY: 120 });
+  fireEvent.pointerUp(window);
+  await waitFor(() => expect(fake.quiz.mock.calls.length).toBeGreaterThan(quizzes));
+  // The rebuilt writer starts its quiz after stroke 1, so stroke 1 stays drawn.
+  expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1);
+  expect(document.querySelector('.writer-status')?.textContent).toContain('Stroke 1: 100% accuracy.');
 });
