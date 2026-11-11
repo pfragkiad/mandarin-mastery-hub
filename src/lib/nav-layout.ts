@@ -39,8 +39,8 @@ export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'pinyin' | 
 
 /**
  * Which phone tab is lit for a page. All five games count as Games — the two
- * Hanzi games and the Pinyin quiz modes (/pinyin with a URL `mode`); Pinyin
- * itself is only the Sound chart. Settings lives under More. Practice has no tab
+ * Hanzi games and the Pinyin quiz modes (/pinyin with a URL `mode`); the Sound
+ * chart is the Pinyin tab. Settings lives under More. Practice has no tab
  * of its own (it is opened from Glyphs, Vocabulary or a game), so no tab claims it.
  */
 export function phoneTabFor(path: string, mode?: string | null): PhoneTab | null {

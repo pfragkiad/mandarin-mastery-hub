@@ -799,7 +799,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-sound-tone.is-playing { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 18%, transparent); }
 
 /* Start games (overview-games.tsx): two stacked groups, each a three-column grid of
-   preview tiles (Hanzi games leaves the third column empty so every tile is one size).
+   preview tiles (the Hanzi group leaves the third column empty so every tile is one size).
    The whole tile is the link; hover/focus tints it and fills the round Play cue.
    Phones (≤700px) switch the same markup to compact rows: see the media query below. */
 .overview-games { padding-top: 28px; border-top: 1px solid var(--border); }

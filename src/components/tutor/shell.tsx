@@ -17,28 +17,31 @@ import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
 // Main menu in three blocks: Start, then "Learn" (the reference sections) and
-// "Games" (Hanzi games and Pinyin games, each a main item with its games as
-// sub-items, like Glyphs and Vocabulary). The block is called "Games", not
-// "Practice", so it never reads as the Hanzi writer's writing practice (/strokes). Full menu and drawer show each block's
+// "Games" (Hanzi and Pinyin, each a main item with its games as sub-items, like
+// Glyphs and Vocabulary). The block is called "Games", not "Practice", so it never
+// reads as the Hanzi writer's writing practice (/strokes); inside it the family
+// names drop the word "games" because the heading already says it. The reference
+// item is named "Sound chart" (not "Pinyin") so only one menu item is called Pinyin.
+// Full menu and drawer show each block's
 // small uppercase heading; the icon strip draws it as a thin line.
-// `key` is unique per item because Pinyin and Pinyin games share the /pinyin route
-// (the Pinyin games item opens its first quiz mode through URL search `mode`).
+// `key` is unique per item because the Sound chart and the Pinyin games share the
+// /pinyin route (the Pinyin games item opens its first quiz mode through URL search `mode`).
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
 type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to']; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
-    { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
-    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
+    { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi', icon: HanziIcon, games: HANZI_GAMES },
+    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin', icon: PinyinGamesIcon, games: PINYIN_GAMES },
   ] },
 ];
 const navigation = navSections.flatMap(section => section.items);
 // Settings lives in the menu's bottom row (beside the shrink/expand button, under
 // the one divider), outside the scrolling list, so it is always reachable.
 const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
-// Pinyin itself has no sub-items: it opens the Sound chart. Both game lists come
+// The Sound chart item has no sub-items: it opens the chart itself. Both game lists come
 // from game-catalog so the Start page shows the same games.
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de

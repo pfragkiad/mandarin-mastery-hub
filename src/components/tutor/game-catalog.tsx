@@ -14,7 +14,7 @@ function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: GlyphSvgPr
 }
 
 /**
- * Hanzi games: the character 字 — the strip's clearest icon.
+ * Hanzi games family: the character 字 — the strip's clearest icon.
  * Measured in the live menu: at fontSize 20 the drawn ink is 17.8 units tall in the
  * 24-unit box, while the lucide icons beside it draw ~19.2, so 字 read smaller than
  * the waveform/library icons. 22 with the baseline lifted to 19.2 puts its ink at the
@@ -47,9 +47,9 @@ export function FlashcardsIcon(props: LucideProps) {
 }
 
 /**
- * Pinyin games family: headphones (listening games), distinct from the Pinyin
- * section's waveform (the Sound chart), so the two menu items never share an icon.
- * Used by the side menu's "Pinyin games" item and the Start page group heading.
+ * Pinyin games family: headphones (listening games), distinct from the Sound
+ * chart's waveform (the Learn item), so the two menu items never share an icon.
+ * Used by the side menu's "Pinyin" game item and the Start page group heading.
  */
 export const PinyinGamesIcon = Headphones;
 
@@ -57,9 +57,9 @@ export const PinyinGamesIcon = Headphones;
 export type GameIcon = React.ComponentType<{ className?: string }>;
 
 /**
- * The five games, in their two families. The sidebar and the Start page both read
- * this list, so a game's name, icon and destination never drift between them.
- * Pinyin games open the Pinyin page in their quiz mode (URL search `mode`).
+ * The five games, in their two families (Hanzi and Pinyin). The sidebar and the Start
+ * page both read this list, so a game's name, icon and destination never drift between
+ * them. Pinyin games open the Pinyin page in their quiz mode (URL search `mode`).
  */
 export type GameEntry = { key: string; label: string; line: string; icon: GameIcon; to: '/flashcards' | '/drawing' | '/pinyin'; mode?: 'tones' | 'alikes' | 'type' };
 
