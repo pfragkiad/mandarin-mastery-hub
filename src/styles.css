@@ -837,13 +837,17 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .game-preview-caret { width: 3px; height: 26px; margin-left: -6px; border-radius: 1px; background: var(--primary); animation: game-preview-caret 1.1s steps(1) infinite; }
 @keyframes game-preview-caret { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .game-preview-caret { animation: none; } }
-/* Tablets: tighter tiles, smaller pictures. */
-@media (max-width: 1100px) {
-  .overview-game-list { gap: 12px; }
-  .overview-game-preview { height: 108px; }
-  .game-preview-tones { gap: 6px; }
-  .game-preview-tones > span { width: 40px; height: 70px; font-size: 15px; }
-  .game-preview-alikes > span { padding: 0 10px; font-size: 17px; height: 40px; }
+/* Narrow tiles (tablets): the pictures shrink with the tile's own width, so the
+   tone keys and sound pills always fit inside the picture area. */
+.overview-game-preview { container-type: inline-size; }
+@media (max-width: 1100px) { .overview-game-list { gap: 12px; } .overview-game-preview { height: 108px; } }
+@container (max-width: 260px) {
+  .game-preview-tones { gap: 5px; }
+  .game-preview-tones > span { width: 36px; height: 66px; gap: 8px; font-size: 15px; }
+  .game-preview-tones svg { width: 24px; height: 18px; }
+  .game-preview-alikes { gap: 6px; }
+  .game-preview-alikes > span { gap: 5px; height: 38px; padding: 0 8px; font-size: 16px; }
+  .game-preview-alikes > span > svg { width: 14px; height: 14px; }
 }
 /* Phones: one bordered panel of compact rows — menu icon, name + one-line description,
    round Play button; uppercase group labels without their notes. */
