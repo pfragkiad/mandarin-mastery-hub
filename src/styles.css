@@ -1235,6 +1235,21 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Variant tiles inside a traditional radical card are other forms, not traditional
    themselves — keep them muted despite the `.is-traditional [lang]` rule above. */
 .word-card.is-traditional .radical-tile-forms [lang="zh-CN"] { color: var(--muted-foreground); }
+/* Glyph-card identity ink (characters-page.tsx `cardInk`): gold radicals, green Characters,
+   foreground Components. Mirrors the traditional purple rules above — the hanzi always wears the
+   ink, the hover/selected/reveal/focus frames take it, and the translation stays foreground until
+   the card is hovered or focused. Traditional form tiles inside a card keep their own purple. */
+.catalog-card.card-ink-radical { --card-ink: var(--hsk-id); }
+.catalog-card.card-ink-character { --card-ink: var(--primary); }
+.catalog-card.card-ink-component { --card-ink: var(--foreground); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):hover { border-color: var(--card-ink); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component).is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component).is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component)[tabindex="-1"]:focus,
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:focus-visible { outline-color: var(--card-ink); }
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component):is(:hover, :focus-within) .catalog-entry-meaning,
+.catalog-card:is(.card-ink-radical, .card-ink-character, .card-ink-component) .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
 /* The purple identity also owns the frame a traditional tile draws when it is hovered or
    keyboard-focused. Without this the global :focus-visible outline and the generic tile hover
    both use --primary green, so a purple 龍 box would light up green — the same colour clash the
