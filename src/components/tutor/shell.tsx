@@ -29,10 +29,11 @@ const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
-// Phone bottom tab bar: the four main destinations (Vocabulary shortened to "Vocab"
-// so it never clips); "More" (a button, not a link)
-// opens the full menu drawer for Start, Settings and every sub-item.
-const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon }[] = [
+// Phone bottom tab bar: Start first, then the four main destinations (Vocabulary
+// shortened to "Vocab" so it never clips); "More" (a button, not a link)
+// opens the full menu drawer for Settings and every sub-item.
+const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon | typeof LayoutGrid }[] = [
+  { key: 'start', to: '/', label: 'Start', icon: LayoutGrid },
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
   { key: 'vocabulary', to: '/vocabulary', label: 'Vocab', icon: BookOpen },
   { key: 'games', to: '/flashcards', label: 'Games', icon: HanziIcon },
