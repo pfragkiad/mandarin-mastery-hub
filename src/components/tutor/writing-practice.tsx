@@ -189,7 +189,9 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // In word practice the tile takes the focused character's place in the strip (`word`): the
 // stroke count moves to the top-left corner with the character's own single reading centred
 // beside it (null when it has several), and `word.label` names the character for screen readers.
-type ProgressTileWord = { reading: string | null; label: string };
+// `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
+// focused tile shows its hanzi like the other strip tiles instead of an empty box.
+type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined };
 function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
@@ -206,11 +208,11 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strok
   const count = done ? '' : `${next + 1} / ${total}`;
   const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
   return (
-    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke || word?.glyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? word.glyph ? <span lang="zh-CN" className={`word-strip-glyph ${word.ink ?? ''}`}>{word.glyph}</span> : null : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
@@ -954,13 +956,12 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
     {characters.map((c, i) => {
       const reading = facts[c]?.pinyin;
       const single = reading && !isMultiReading(reading) ? reading : null;
-      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}` })}</Fragment>;
+      const record = records.get(c);
+      const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
+      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}`, glyph: hideGlyphs ? undefined : c, ink })}</Fragment>;
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
-      // Same identity ink as the Characters cards (gold radical, purple traditional, green).
-      const record = records.get(c);
-      const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
       // Strokes drawn out of the total: the live writer's count once this character has
       // reported, otherwise its recorded count, so an untouched tile still reads "1 / 8".
       const total = p?.total ?? record?.strokes;
