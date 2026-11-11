@@ -164,6 +164,7 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
     const frame = group.querySelector('.form-switch-thumb');
+    console.log('TRAY HTML:', group.outerHTML.slice(0, 1200));
     expect(frame).not.toBeNull();
     // Decorative only: the tile itself already carries the selection for screen readers.
     expect(frame?.getAttribute('aria-hidden')).toBe('true');
