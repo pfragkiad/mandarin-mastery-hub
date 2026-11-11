@@ -144,9 +144,18 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
   const [recallVisible, setRecallVisible] = useState(false);
   const visible = defaultVisible ? rememberedVisible : recallVisible;
   const setVisible = defaultVisible ? setRememberedVisible : setRecallVisible;
+  // One shared glow filter for every tile's current stroke (ids must be valid in url(#…)).
+  const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   if (!strokes.length) return null;
   return (
     <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}`}>
+      <svg width="0" height="0" className="stroke-glow-defs" aria-hidden="true" focusable="false">
+        {/* Soft halo in the stroke's own colour: a blurred copy merged beneath the crisp stroke. */}
+        <filter id={glowId} x="-30%" y="-30%" width="160%" height="160%" colorInterpolationFilters="sRGB">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="34" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </svg>
       <div className="stroke-guide-top">
         <div className="stroke-guide-heading"><h3 className="eyebrow"><ListOrdered size={13} />Strokes<SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo></h3></div>
         <div className="stroke-guide-actions">
@@ -182,8 +191,11 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                       {/* The whole character's own recorded strokes sit faded behind the tile's stroke,
                           so the stroke reads in place; nothing here is drawn from any other source. */}
                       <g transform="scale(1, -1) translate(0, -900)">
-                        <g className="stroke-shape-context">{strokes.map((other, j) => j === i ? null : <path key={j} d={other.path} />)}</g>
-                        <path d={stroke.path} style={{ fill: componentInk(run.group.palette) }} />
+                        {/* Later strokes stay faint; strokes already written before this one are drawn
+                            fuller in their own component colour; the tile's stroke glows on top. */}
+                        <g className="stroke-shape-context">{strokes.map((other, j) => j > i ? <path key={j} d={other.path} /> : null)}</g>
+                        <g className="stroke-shape-previous">{strokes.map((other, j) => j < i ? <path key={j} d={other.path} style={{ fill: componentInk(strokeGroupAt(groups, j)?.palette) }} /> : null)}</g>
+                        <path className="stroke-shape-current" d={stroke.path} style={{ fill: componentInk(run.group.palette) }} filter={`url(#${glowId})`} />
                       </g>
                     </svg>
                     {stroke.estimated && <span className="stroke-estimated" title="No recorded stroke order for this character — name estimated from the stroke's shape">est.</span>}
