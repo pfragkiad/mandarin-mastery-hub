@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Shuffle, Volume2 } from 'lucide-react';
+import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { usePinyinPlayer, usePinyinProgress, sound } from './pinyin-shared';
@@ -40,8 +40,8 @@ export function SoundDiscoveryTile() {
         <Link to="/pinyin" className="discovery-tile-heading" aria-label="Open the Pinyin sound chart">
           <span className="stat-icon" aria-hidden="true"><Volume2/></span>
           <span className="discovery-tile-count">
-            <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
-            <span>Sounds</span>
+            <strong>Sounds<ChevronRight aria-hidden="true"/></strong>
+            <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
           </span>
         </Link>
         <Button variant="ghost" size="icon" title="Show another random sound" aria-label="Show another random sound" onClick={shuffle} disabled={!syllable}>
