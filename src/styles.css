@@ -2325,7 +2325,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-top { flex-wrap: wrap-reverse; }
 .stroke-guide-actions { flex-wrap: nowrap; max-width: 100%; }
 .stroke-guide-actions > button { min-width: 0; flex: 0 1 auto; }
-}
 
 /* Component-name tile (radical variant identity): one border around the whole word, same height as glyph tiles. */
 .decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
