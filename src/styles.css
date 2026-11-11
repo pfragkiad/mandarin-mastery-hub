@@ -752,8 +752,12 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
    line icons to sit like the hanzi glyphs they replaced. */
 .stat-icon svg { width: 18px; height: 18px; }
 .discovery-tile-count { display: flex; flex-direction: column; min-width: 0; transition: color .2s ease; }
-.discovery-tile-count strong { font-size: 20px; font-weight: 500; line-height: 1.2; }
-.discovery-tile-count span { font-size: 10px; color: var(--muted-foreground); white-space: nowrap; }
+/* The section name leads (with a small chevron hinting at the library it opens);
+   the record count sits under it as the quiet line. */
+.discovery-tile-count strong { display: flex; align-items: center; gap: 3px; font-size: 18px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.discovery-tile-count strong svg { width: 15px; height: 15px; color: var(--muted-foreground); transition: color .2s ease, transform .2s ease; }
+.discovery-tile-count span { font-size: 11px; color: var(--muted-foreground); white-space: nowrap; }
+.discovery-tile-heading:hover .discovery-tile-count strong svg,.discovery-tile-heading:focus-visible .discovery-tile-count strong svg { color: var(--primary); transform: translateX(2px); }
 .discovery-tile-heading:hover .stat-icon,.discovery-tile-heading:focus-visible .stat-icon { background: color-mix(in oklab, var(--primary) 18%, var(--secondary)); transform: translateY(-2px); }
 .discovery-tile-heading:hover .discovery-tile-count,.discovery-tile-heading:focus-visible .discovery-tile-count { color: var(--primary); }
 .discovery-tile-record { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 3px; min-width: 0; }

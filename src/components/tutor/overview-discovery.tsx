@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { Shuffle, Volume2 } from 'lucide-react';
+import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
@@ -108,8 +108,8 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
         <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
           <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
           <span className="discovery-tile-count">
-            <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
-            <span>{meta.label}</span>
+            <strong>{meta.label}<ChevronRight aria-hidden="true"/></strong>
+            <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
           </span>
         </Link>
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
