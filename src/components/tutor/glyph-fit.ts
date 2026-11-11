@@ -24,6 +24,20 @@ import type { RefObject } from 'react';
  *   e.g. in tests or very old browsers.
  * - The scale is applied with a CSS transform, so layout never shifts.
  */
+/**
+ * glyphFitScale — the pure rule behind useGlyphFit, exported for tests.
+ * longest = ink's longest side in px, size = font size in px, box = tile box in px.
+ * Returns 1 (untouched) when the ink already fills at least 0.78em; otherwise lifts it
+ * toward 0.86em, never above 1.45× and never past 92% of the tile box.
+ */
+export function glyphFitScale(longest: number, size: number, box: number): number {
+  if (longest <= 0 || size <= 0) return 1;
+  const em = longest / size;
+  if (em >= 0.78) return 1;
+  const next = Math.min(0.86 / em, (box * 0.92) / longest, 1.45);
+  return next > 1.02 ? next : 1;
+}
+
 export function useGlyphFit(ref: RefObject<HTMLElement | null>, glyph: string): number {
   const [scale, setScale] = useState(1);
   useEffect(() => {
@@ -60,15 +74,8 @@ export function useGlyphFit(ref: RefObject<HTMLElement | null>, glyph: string): 
         }
         if (maxX < 0 || cancelled) return;
         const longest = Math.max(maxX - minX + 1, maxY - minY + 1);
-        const em = longest / size;
-        if (em >= 0.78) {
-          setScale(1);
-          return;
-        }
         const box = el.closest('.decomposition-glyph')?.clientWidth || size * 1.45;
-        const fit = (box * 0.92) / longest;
-        const next = Math.min(0.86 / em, fit, 1.45);
-        setScale(next > 1.02 ? next : 1);
+        setScale(glyphFitScale(longest, size, box));
       } catch {
         /* fail closed: keep scale 1 */
       }
