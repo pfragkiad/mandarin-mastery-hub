@@ -8,7 +8,7 @@ import { PracticeIcon } from './practice-icons';
  * (so CJK glyphs use the CJK font); weight 500 gives stems about as thick as a
  * lucide 2-unit stroke, so text and line icons read at one weight. No state.
  */
-function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: React.SVGProps<SVGSVGElement> & { glyph: string; fontSize: number; baseline: number; lang: string }) {
+function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: Omit<React.SVGProps<SVGSVGElement>, 'fontSize' | 'lang'> & { glyph: string; fontSize: number; baseline: number; lang: string }) {
   return <svg viewBox="0 0 24 24" width={24} height={24} fill="currentColor" aria-hidden="true" {...props}><text x="12" y={baseline} textAnchor="middle" fontSize={fontSize} fontWeight={500} lang={lang}>{glyph}</text></svg>;
 }
 
