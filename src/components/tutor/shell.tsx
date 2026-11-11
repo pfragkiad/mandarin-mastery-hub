@@ -41,7 +41,7 @@ const navigation = navSections.flatMap(section => section.items);
 // Settings lives in the menu's bottom row (beside the shrink/expand button, under
 // the one divider), outside the scrolling list, so it is always reachable.
 const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
-// Pinyin itself has no sub-items: it opens the Sound chart. Both game lists come
+// The Sound chart item has no sub-items: it opens the chart itself. Both game lists come
 // from game-catalog so the Start page shows the same games.
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de

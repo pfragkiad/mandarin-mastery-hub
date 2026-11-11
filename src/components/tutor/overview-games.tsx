@@ -6,8 +6,8 @@ import { HANZI_GAMES, PINYIN_GAMES, HanziIcon, PinyinGamesIcon, type GameEntry }
 import { useWorkspace } from './workspace';
 
 /**
- * Start page games: all five games in two labelled groups — Hanzi games
- * (characters/words) and Pinyin games (recorded syllables). No inputs or state;
+ * Start page games: all five games in two labelled groups — Hanzi
+ * (characters/words) and Pinyin (recorded syllables), matching the side menu's
  * the list itself comes from game-catalog so names, icons and destinations match
  * the side menu.
  *
@@ -21,8 +21,8 @@ export function OverviewGames() {
   return <section className="overview-games" aria-labelledby="overview-games-title">
     <div className="eyebrow" id="overview-games-title">GAMES</div>
     <div className="overview-game-groups">
-      <GameGroup title="Hanzi games" note="Characters, radicals and words" icon={<HanziIcon/>} games={HANZI_GAMES}/>
-      <GameGroup title="Pinyin games" note="Real recorded syllables" icon={<PinyinGamesIcon/>} games={PINYIN_GAMES}/>
+      <GameGroup title="Hanzi" note="Characters, radicals and words" icon={<HanziIcon/>} games={HANZI_GAMES}/>
+      <GameGroup title="Pinyin" note="Real recorded syllables" icon={<PinyinGamesIcon/>} games={PINYIN_GAMES}/>
     </div>
   </section>;
 }
