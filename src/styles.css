@@ -2461,7 +2461,9 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 .practice-reading-dot { color: var(--muted-foreground); }
 .practice-reading-line .practice-translation { display: inline; width: auto; margin: 0; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--foreground); overflow-wrap: anywhere; }
 .practice-reading-line .practice-pills { margin-left: 2px; }
-.practice-reading-line .practice-kind { margin-left: 0; }
+.practice-reading-line .practice-kind { margin-left: 0; font-size: 10px; padding: 4px 10px; }
+.practice-reading-line .word-hsk-id { font-size: 10px; padding: 3px 9px; }
+@media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
 .practice-header-forms { min-width: 0; justify-self: end; }
 @media (max-width: 850px) {
   .practice-header { padding: 14px 18px 18px; }
@@ -2474,7 +2476,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
    tiles (glyph beside label + strokes) in one tray. Recall blanks the glyph box. */
 .form-switch { margin: 0; border: 0; padding: 0; }
 .form-switch .radical-form-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
-html .practice-header .form-switch .radical-form-choice { flex: 1 1 0; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
+html .practice-header .form-switch .radical-form-choice { flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
 .practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
 .practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
 .practice-header .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }

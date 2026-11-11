@@ -31,6 +31,7 @@ import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
 import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
 import { PracticeHeader } from './practice-header';
+import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { nextStepIndex } from '@/lib/step-playback';
 import { StrokeDirectionHints } from './stroke-direction-hints';
@@ -827,6 +828,7 @@ only the component breakdown; radical practice never shows a decomposition at an
 // Recall blanks the hanzi (pinyin and progress stay) so the answer never shows.
 function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void }) {
   const facts = charFacts();
+  const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
   return <div className="word-strip" role="group" aria-label="Characters in this word">
     {characters.map((c, i) => {
       const reading = facts[c]?.pinyin;
@@ -834,9 +836,12 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
+      // Same identity ink as the Characters cards (gold radical, purple traditional, green).
+      const record = records.get(c);
+      const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
       return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}`} title={hideGlyphs ? `Practise character ${i + 1}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true"/> : <span lang="zh-CN" className="word-strip-glyph card-ink-character">{c}</span>}
+        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true"/> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
         {single && <span className="pinyin word-strip-pinyin">{single}</span>}
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
       </button>;
