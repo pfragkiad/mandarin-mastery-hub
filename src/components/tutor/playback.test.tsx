@@ -34,8 +34,10 @@ vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ 
 beforeEach(() => {
   vi.clearAllMocks();
   localStorage.clear();
-  // Most tests drive the stroke tiles, which live in the Strokes drawer (closed by default).
+  // Most tests drive the stroke tiles, which live in the Strokes drawer: the drawer is closed
+  // by default and the Strokes pill is off by default, so both are switched on here.
   localStorage.setItem('tutor-stroke-drawer-open', '1');
+  localStorage.setItem('tutor-stroke-tiles-visible', '1');
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
@@ -550,6 +552,18 @@ it('word practice shows the progress tile in the focused character\'s place, cou
   expect(tile?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('1 / 3');
   expect(tile?.querySelector('.stroke-progress-head .word-strip-pinyin')?.textContent).toBe('wǒ');
   expect(tile?.getAttribute('aria-label')).toMatch(/^Character 1 我 \(wǒ\) · Next: stroke 1 of 3/);
+});
+
+it('every Strokes pill starts off on a first visit', async () => {
+  localStorage.clear();
+  const { container } = render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  expect(screen.getByRole('button', { name: 'Arrows' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: 'Strokes' })).toHaveAttribute('aria-pressed', 'false');
+  expect(screen.getByRole('button', { name: 'Names' })).toHaveAttribute('aria-pressed', 'false');
+  // Nothing extra is revealed: no stroke tiles and no direction arrows over the writing square.
+  expect(container.querySelector('.stroke-guide-strip')).toBeNull();
+  expect(container.querySelector('.stroke-direction-overlay')).toBeNull();
 });
 
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
