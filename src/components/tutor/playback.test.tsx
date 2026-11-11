@@ -34,8 +34,10 @@ vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ 
 beforeEach(() => {
   vi.clearAllMocks();
   localStorage.clear();
-  // Most tests drive the stroke tiles, which live in the Strokes drawer (closed by default).
+  // Most tests drive the stroke tiles, which live in the Strokes drawer: the drawer is closed
+  // by default and the Strokes pill is off by default, so both are switched on here.
   localStorage.setItem('tutor-stroke-drawer-open', '1');
+  localStorage.setItem('tutor-stroke-tiles-visible', '1');
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
@@ -553,8 +555,7 @@ it('word practice shows the progress tile in the focused character\'s place, cou
 });
 
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
-  localStorage.removeItem('tutor-stroke-drawer-open');
-  render(<WritingPractice character="我" mode="trace"/>);
+  localStorage.removeItem('tutor-stroke-drawer-open');  render(<WritingPractice character="我" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
   const details = screen.getByRole('button', { name: 'Details' });
   expect(details).toHaveAttribute('aria-expanded', 'false');
