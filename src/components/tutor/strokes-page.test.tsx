@@ -166,8 +166,8 @@ describe('character practice sections by mode', () => {
     expect(Array.from(strip.querySelectorAll('.word-strip-pinyin')).map(node => node.textContent)).toEqual(['xué', 'yǐ']);
     // The focused 学 tile waits for its writer with an empty picture (no glyph flash); 乙 shows its hanzi.
     expect(strip.textContent).toContain('乙');
-    // Every tile carries the same top-left stroke count.
-    expect(Array.from(strip.querySelectorAll('.tile-count-corner')).map(node => node.textContent)).toEqual(['0 / 8', '0 / 1']);
+    // Every tile carries the same top-left count: the stroke you are on.
+    expect(Array.from(strip.querySelectorAll('.tile-count-corner')).map(node => node.textContent)).toEqual(['1 / 8', '1 / 1']);
     // Words have no traditional records yet, so no form tiles.
     expect(document.querySelector('.practice-header-forms')).toBeNull();
     unmount();
@@ -176,7 +176,7 @@ describe('character practice sections by mode', () => {
     expect(recallStrip.textContent).not.toContain('学');
     expect(recallStrip.textContent).not.toContain('乙');
     // Each blank tile carries its own recorded stroke count in its corner.
-    expect(Array.from(recallStrip.querySelectorAll('.tile-count-corner')).map(node => node.textContent)).toEqual(['0 / 8', '0 / 1']);
+    expect(Array.from(recallStrip.querySelectorAll('.tile-count-corner')).map(node => node.textContent)).toEqual(['1 / 8', '1 / 1']);
   });
 
   it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
