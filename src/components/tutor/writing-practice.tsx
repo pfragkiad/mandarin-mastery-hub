@@ -292,8 +292,10 @@ export type PracticeProgress = { character: string; mode: PracticeMode; start: n
 // `strip` renders under the mode tabs (word practice's character strip); it is called with the
 // live progress tile renderer (null while loading) so the focused character's tile is that tile. `savedProgress`
 // re-arms the quiz where an earlier visit to this character stopped (same mode only);
-// `onProgress` reports every change so the strip can show per-character progress.
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined }) {
+// `onProgress` reports every change so the strip can show per-character progress. `progressInk`
+// is the practised glyph's identity ink (styles.css `.card-ink-*`), worn by the standalone
+// progress tile's frame so its border matches the hanzi's colour.
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress, progressInk }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined; progressInk?: string | undefined }) {
   const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('trace');
@@ -804,7 +806,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={progressInk}/>
     : null;
   const progressRow = <div className="practice-progress-row">{strip ? strip(progressTile) : progressTile?.()}</div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
