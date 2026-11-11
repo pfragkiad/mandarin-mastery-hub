@@ -17,21 +17,25 @@ export type NavSub = { key: string; label: string; to: string; search?: Record<s
  * tap of the main item (a second tap follows the link). It closes on leaving the
  * group, Escape (focus returns to the main item), a tap outside or choosing an item.
  *
- * Inputs: the main item (`name`, `to`, `icon`, `selected`), its `subs`, `rail`, and
- * `onNavigate` (closes the phone drawer). State: whether the flyout is open and its
- * vertical position. It is `position: fixed`, because the strip scrolls (overflow)
+ * Inputs: the main item (`name`, `to`, `icon`, `selected`), its `subs`, `rail`,
+ * `onNavigate` (closes the phone drawer), and `open`/`onOpenChange` — the shell owns
+ * which group's flyout is open, so opening one always closes the other. State: the
+ * flyout's position. It is `position: fixed`, because the strip scrolls (overflow)
  * and would clip an absolutely positioned panel; top is read from the main item and
  * clamped so the panel never runs past the bottom of the window.
  */
-export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNavigate }: { name: string; to: string; icon: GameIcon; selected: boolean; subs: NavSub[] | null; rail: boolean; onNavigate: () => void }) {
+export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNavigate, open: openProp, onOpenChange }: { name: string; to: string; icon: GameIcon; selected: boolean; subs: NavSub[] | null; rail: boolean; onNavigate: () => void; open: boolean; onOpenChange: (open: boolean) => void }) {
   const flyoutEnabled = rail && Boolean(subs?.length);
-  const [open, setOpen] = useState(false);
+  const open = flyoutEnabled && openProp;
+  const setOpen = onOpenChange;
   const [pos, setPos] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
   const groupRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLAnchorElement>(null);
   const flyoutRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<number | undefined>(undefined);
   const pointerType = useRef<string>('mouse');
+  // Escape hands focus back to the main item; that focus must not reopen the flyout.
+  const returningFocus = useRef(false);
   const id = `nav-flyout-${to.replace(/\W/g, '') || 'start'}`;
 
   const show = () => {
@@ -47,7 +51,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
   const hideSoon = () => { window.clearTimeout(closeTimer.current); closeTimer.current = window.setTimeout(() => setOpen(false), 160); };
   useEffect(() => () => window.clearTimeout(closeTimer.current), []);
   // Leaving the strip (window widens to the full menu, or a phone drawer) closes it.
-  useEffect(() => { if (!flyoutEnabled) setOpen(false); }, [flyoutEnabled]);
+  useEffect(() => { if (!flyoutEnabled && openProp) setOpen(false); }, [flyoutEnabled, openProp]);
 
   // Keep the panel inside the window: shift it up when it would overflow the bottom.
   useLayoutEffect(() => {
@@ -60,7 +64,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
   // Escape closes and hands focus back; a tap or click outside the group closes.
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setOpen(false); mainRef.current?.focus(); } };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setOpen(false); returningFocus.current = true; mainRef.current?.focus(); returningFocus.current = false; } };
     const onDown = (e: PointerEvent) => { if (!groupRef.current?.contains(e.target as Node)) setOpen(false); };
     window.addEventListener('keydown', onKey);
     document.addEventListener('pointerdown', onDown);
@@ -75,7 +79,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
       <Link ref={mainRef} to={to} title={name}
         aria-expanded={flyoutEnabled ? open : undefined} aria-controls={flyoutEnabled && open ? id : undefined}
         onPointerDown={e => { pointerType.current = e.pointerType; }}
-        onFocus={e => { if (flyoutEnabled && e.currentTarget.matches(':focus-visible')) show(); }}
+        onFocus={e => { if (flyoutEnabled && !returningFocus.current && e.currentTarget.matches(':focus-visible')) show(); }}
         onClick={e => {
           // Touch has no hover: the first tap opens the flyout instead of leaving the page.
           if (flyoutEnabled && pointerType.current === 'touch' && !open) { e.preventDefault(); show(); return; }

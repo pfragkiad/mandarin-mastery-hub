@@ -55,6 +55,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const [navSize, setNavSize] = useState<NavSize>('wide');
   const [expanded, setExpanded] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Icon strip: which main item's sub-item flyout is open (one at a time; nav-group.tsx).
+  const [flyout, setFlyout] = useState<string | null>(null);
   useEffect(() => {
     setExpanded(readNavExpanded(window.localStorage));
     const phone = window.matchMedia(`(max-width: ${NAV_PHONE_MAX}px)`);
@@ -125,7 +127,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
           : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-game' }))
           : null;
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
-        return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)}/>;
+        return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.to} onOpenChange={open => setFlyout(current => open ? n.to : current === n.to ? null : current)}/>;
       })}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
