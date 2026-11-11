@@ -122,7 +122,9 @@ function WriterStatus({ message, ink }: { message: string; ink: string }) {
 function gradePercents(text: string): React.ReactNode {
   const parts = text.split(/(\d+%)/);
   if (parts.length === 1) return text;
-  return parts.map((part, i) => i % 2 ? <span key={i} className={`accuracy-grade accuracy-grade-${accuracyGrade(parseInt(part, 10))}`}>{part}</span> : part);
+  // One wrapper span: .writer-status is a flex row, so bare array children would become
+  // separate flex items and the spaces around "NN%" would collapse ("1:100%accuracy.").
+  return <span>{parts.map((part, i) => i % 2 ? <span key={i} className={`accuracy-grade accuracy-grade-${accuracyGrade(parseInt(part, 10))}`}>{part}</span> : part)}</span>;
 }
 
 function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
