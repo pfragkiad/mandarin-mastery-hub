@@ -106,10 +106,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+// Mirrors workspace.tsx: preferences.font (Handwritten/Sans/Print) lowercased onto <html>.
+const savedHanziFontScript = `try{var f=String((JSON.parse(localStorage.getItem('tutor-preferences')||'{}')||{}).font||'').toLowerCase();if(f==='handwritten'||f==='sans'||f==='print')document.documentElement.dataset.hanziFont=f}catch(e){}`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    // data-hanzi-font starts at the default style and the inline script swaps in the saved one
+    // before first paint; otherwise phones (slow to hydrate) draw every character in the plain
+    // sans style for a moment before the chosen Handwritten/Print style appears.
+    <html lang="en" data-hanzi-font="handwritten" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: savedHanziFontScript }} />
         <HeadContent />
       </head>
       <body>
