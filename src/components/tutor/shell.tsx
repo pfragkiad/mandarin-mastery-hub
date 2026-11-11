@@ -17,8 +17,9 @@ import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
 // Main menu in three blocks: Start, then "Learn" (the reference sections) and
-// "Practice" (Hanzi games and Pinyin games, each a main item with its games as
-// sub-items, like Glyphs and Vocabulary). Full menu and drawer show each block's
+// "Games" (Hanzi games and Pinyin games, each a main item with its games as
+// sub-items, like Glyphs and Vocabulary). The block is called "Games", not
+// "Practice", so it never reads as the Hanzi writer's writing practice (/strokes). Full menu and drawer show each block's
 // small uppercase heading; the icon strip draws it as a thin line.
 // `key` is unique per item because Pinyin and Pinyin games share the /pinyin route
 // (the Pinyin games item opens its first quiz mode through URL search `mode`).
@@ -28,7 +29,7 @@ type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntr
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
   { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
-  { label: 'Practice', items: [
+  { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
     { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
   ] },
