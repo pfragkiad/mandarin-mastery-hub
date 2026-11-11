@@ -221,7 +221,9 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   // Every top tile counts the stroke you are on, so an untouched character reads "1 / 5"
   // and a finished one carries no count at all — the tick already says it is done.
   const count = done ? '' : `${next + 1} / ${total}`;
-  const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
+  // A blank single tile already shows its count in the centre, so the corner stays empty.
+  const centreCount = !showStroke && !word && !singleGlyph;
+  const index = <span className="stroke-index" aria-hidden="true">{centreCount ? '' : count}</span>;
   return (
     <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
