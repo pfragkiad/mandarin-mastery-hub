@@ -1,5 +1,6 @@
 import { MeaningText } from './meaning-text';
 import { openDetailsHint } from '@/lib/tile-hints';
+import { useRef } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Columns2, Columns3, Rows2, Rows3, FlipHorizontal2, RotateCw, Layers2, Minus, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,6 +13,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { childOwner, contextualRadical } from '@/lib/radical-context';
 import { radicalFamily } from '@/lib/radical-strokes';
 import { BabelStoneComponent } from './babelstone-component';
+import { useGlyphFit } from './glyph-fit';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
 
@@ -60,6 +62,11 @@ function sharedFormPresentation(form: { family: number; glyph: string }, heading
  *  (see childOwner); without it, nodes keep their standalone source identity. */
 export function DecompositionTree({ node, owner }: { node: DecompositionNode; owner?: string | undefined }) {
   const { preferences } = useWorkspace();
+  // Placeholder tokens ({n}, ?) carry no glyph ink, so they skip the visual fit.
+  const fitGlyph = /^[?？]$/.test(node.glyph) || /^\{\d+\}$/.test(node.glyph) ? '' : node.glyph;
+  const tileTextRef = useRef<HTMLElement | null>(null);
+  const glyphFit = useGlyphFit(tileTextRef, fitGlyph);
+  const glyphFitStyle = glyphFit !== 1 ? { transform: `scale(${glyphFit})`, display: 'inline-block' } as const : undefined;
   const card = glyphIndex()[node.glyph];
   const context = contextualRadical(node.glyph, node.position, owner);
   const resolvedHeading = context.radicals[0]?.glyph ?? '';
@@ -87,7 +94,7 @@ export function DecompositionTree({ node, owner }: { node: DecompositionNode; ow
   // and ink; a traditional radical form keeps the purple 繁 mark instead (CSS decides).
   const isRadical = context.radicals.length > 0;
   const glyph = (card || shared) && destination
-    ? <Button asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}`}><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={openDetailsHint(node.glyph, destination.tab)} aria-label={`${linkTitle} · ${openDetailsHint(node.glyph, destination.tab)}`}><strong>{node.glyph}</strong></Link></Button>
-    : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{node.glyph}</strong>;
+    ? <Button asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}`}><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={openDetailsHint(node.glyph, destination.tab)} aria-label={`${linkTitle} · ${openDetailsHint(node.glyph, destination.tab)}`}><strong ref={tileTextRef} style={glyphFitStyle}>{node.glyph}</strong></Link></Button>
+    : <strong ref={tileTextRef} style={glyphFitStyle} lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{node.glyph}</strong>;
   return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}><LayoutIcon operator={node.glyph}/><small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}<small className="decomposition-facts"><span className="decomposition-facts-row">{/* Omit the empty pronunciation slot so its flex gap never indents a classification-only row. */}{(pinyin || spoken) ? <span className="decomposition-pronunciation">{spoken && reading && pinyin === reading && isMultiReading(reading) ? <MultiReadingSpeakers spoken={spoken} reading={reading} variant="inline"/> : <>{pinyin ? <span className="pinyin">{pinyin}</span> : null}{spoken ? <NodeAudio glyph={node.glyph} spoken={spoken} reading={reading} recording={Boolean(recording)} available={available}/> : null}</>}</span> : null}{context.radicals.length ? context.radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag" title={radicalTitle}>Radical #{radical.number}</span>) : !dictionary ? <span className="decomposition-classification">{classification}</span> : null}{traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{(dictionary || fallback?.meaning) ? <span className="decomposition-meaning"><MeaningText text={dictionary || fallback?.meaning || ''}/></span> : null}</small></div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child} owner={childOwner(node, owner)}/> )}</ul> : null}</li>;
 }
