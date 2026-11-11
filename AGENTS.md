@@ -59,4 +59,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- The handwritten hanzi web-font fallback must cover both Simplified and Traditional code points, so phones without a system Kai font never mix styles between script forms.
