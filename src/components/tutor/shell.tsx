@@ -24,7 +24,7 @@ import { LibraryViewToggle } from './library-view-toggle';
 // (the Pinyin games item opens its first quiz mode through URL search `mode`).
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
-type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | '/pinyin' | '/flashcards'; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to']; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
   { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
