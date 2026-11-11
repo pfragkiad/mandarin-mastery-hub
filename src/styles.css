@@ -92,7 +92,24 @@ article.word-card { touch-action: manipulation; }
 .is-collapsed .nav-sub-tab svg { display: block; width: 16px; height: 16px; }
 .sidebar-note { margin: auto 29px 58px; padding-top: 50px; color: var(--primary); }.sidebar-note svg { margin-bottom: 13px; stroke-width: 1.4; }.sidebar-note p { font-family: var(--font-display); font-size: 17px; margin-bottom: 9px; }.sidebar-note>span { font-size: 11px; color: var(--muted-foreground); letter-spacing: 2px; }.note-line { height: 1px; width: 28px; background: var(--border); margin-top: 22px; }
 .sidebar-bottom { border-top: 1px solid var(--border); margin: 0 20px; padding: 15px 0 16px; }.help-link { padding: 0 6px; font-size: 11px; font-weight: 400; gap: 8px; width: 100%; justify-content: flex-start; }.help-link svg:last-child { margin-left: auto; }.sidebar-bottom-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 9px; color: var(--muted-foreground); }.sidebar-bottom-row button { width: 25px; height: 25px; }
-.is-collapsed .brand { margin-left: 18px; }.is-collapsed .brand-copy,.is-collapsed .sidebar-label,.is-collapsed .nav-item span,.is-collapsed .sidebar-note,.is-collapsed .sidebar-bottom span,.is-collapsed .help-link { display: none; }.is-collapsed .nav-item { padding: 0; justify-content: center; }.is-collapsed .sidebar-bottom { margin-top: auto; }.is-collapsed .sidebar-bottom-row { justify-content: center; }
+/* ===== Slim icon strip (rail) =====
+   Every icon carries its own name underneath at 11px, the Material rail way, so
+   nothing has to be guessed. One rule covers the main items, the section/game
+   sub-items and the guidance link; only colour and weight differ, inherited from
+   each item's own hover/active state. The strip is 80px wide: single-word names
+   ("Components", "Sound-alikes") fit on one line, the two long ones
+   ("Drawing game", "Type what you hear") wrap to a second. */
+.is-collapsed .brand-copy,.is-collapsed .sidebar-label,.is-collapsed .sidebar-note { display: none; }
+.is-collapsed .brand { margin-inline: 0; justify-content: center; }
+.is-collapsed .sidebar-bottom { margin-top: auto; margin-inline: 6px; }
+.is-collapsed .sidebar-bottom-row { justify-content: center; }
+html .workspace.is-collapsed :is(.nav-item,.nav-sub-tab,.nav-sub-game,.help-link) { flex-direction: column; align-items: center; justify-content: center; gap: 4px; height: auto; min-height: 0; padding: 7px 2px 6px; text-align: center; white-space: normal; }
+html .workspace.is-collapsed :is(.nav-item,.nav-sub-tab,.nav-sub-game,.help-link) > span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 11px; line-height: 1.15; }
+/* The active dot would sit under the label; the accent colour and weight already
+   say which item is current. */
+html .workspace.is-collapsed .active-dot { display: none; }
+/* The guidance link's trailing arrow has nowhere to point inside the strip. */
+html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .main-shell { margin-left: var(--sidebar-width); transition: margin-left .2s; }.topbar { position: relative; height: 77px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; padding: 0 42px; gap: 12px; background: var(--card); }.breadcrumbs { display: flex; align-items: center; gap: 14px; font-size: 11px; }.breadcrumb-home { color: var(--muted-foreground); }.breadcrumbs>svg { color: var(--muted-foreground); width: 11px; }.topbar-actions { display: flex; align-items: center; gap: 17px; }.topbar-actions button svg { width: 17px; }.header-divider { width: 1px; height: 19px; background: var(--border); }.learning-status { font-size: 10px; color: var(--muted-foreground); display: flex; align-items: center; gap: 7px; }.status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }.avatar { background: var(--secondary); color: var(--primary); width: 32px; height: 32px; border-radius: 50%; font-family: var(--font-hanzi); font-size: 17px; padding: 0; }
 .main-content { max-width: 1510px; padding: 37px 42px 34px; margin: 0 auto; }.page-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 20px; margin-bottom: 28px; }.eyebrow { color: var(--muted-foreground); font-size: 9px; letter-spacing: 1.65px; font-weight: 600; display: flex; align-items: center; gap: 7px; }.page-heading h1 { font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1.35; margin-top: 10px; }.page-heading p { font-size: 12px; color: var(--muted-foreground); margin-top: 9px; }.heading-hanzi { font-family: var(--font-hanzi); font-size: 31px; color: var(--primary); padding: 4px 9px 0; text-align: center; }.heading-hanzi>span { display: block; font-family: var(--font-sans); font-size: 10px; color: var(--terracotta); margin-top: 3px; }
 .journey-banner { position: relative; overflow: hidden; min-height: 302px; background: var(--secondary); border-radius: 7px; }.journey-banner>img { position: absolute; width: 100%; height: 100%; object-fit: cover; inset: 0; }.banner-copy { position: relative; padding: 31px 35px 29px; color: var(--banner-ink); }.banner-eyebrow { font-size: 8px; letter-spacing: 1.9px; }.banner-copy h2 { font-family: var(--font-display); font-size: 36px; line-height: 1.24; font-weight: 400; margin: 14px 0 14px; }.banner-copy h2 em { font-weight: 400; }.banner-copy p { font-size: 11px; line-height: 1.8; margin-bottom: 20px; }.banner-copy button,.banner-copy a { font-size: 10px; height: 36px; }.banner-seal { position: absolute; right: 25px; bottom: 24px; color: var(--terracotta); font-family: var(--font-hanzi); padding: 5px; border: 1px solid var(--terracotta); font-size: 13px; line-height: 1.2; transform: rotate(-6deg); }
@@ -1576,10 +1593,7 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 .phone-tabs { display: none; }
 @media (min-width: 851px) {
   /* The icon strip lists every section; let it scroll on short windows. */
-  .workspace.is-collapsed .sidebar nav { padding: 0 14px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
-  /* Comfortable lets labelled items size to their text; the strip has none, so keep fixed rows. */
-  html .workspace.is-collapsed .sidebar .nav-item { height: 36px; }
-  html .workspace.is-collapsed .sidebar .nav-sub-item { height: 28px; }
+  .workspace.is-collapsed .sidebar nav { padding: 0 4px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
 }
 /* Phones: the menu is a drawer over the page, opened from "More" in the bottom
    tab bar; its close button sits at the right end of the logo row. */
