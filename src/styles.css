@@ -2496,7 +2496,12 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
 .word-strip-tile:hover, .word-strip-tile:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
 .word-strip-tile.is-selected { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
 .word-strip-glyph { font-size: 38px; line-height: 1.15; color: var(--card-ink, inherit); }
-.word-strip-glyph.form-switch-blank { width: 38px; height: 44px; }
+/* The Recall box is near-square so the drawn stroke count inside it has breathing room. */
+.word-strip-glyph.form-switch-blank { display: flex; align-items: center; justify-content: center; width: 46px; height: 44px; }
+html[data-display-size='comfortable'] .word-strip-glyph.form-switch-blank { width: 52px; height: 50px; }
+/* Stroke progress shown where a hidden hanzi would be (Recall's blank boxes). */
+.tile-count { font-size: 16px; line-height: 1; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .word-strip-pinyin { font-size: 14px; }
 .word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
 .word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
