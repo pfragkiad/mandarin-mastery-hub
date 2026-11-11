@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Start game tiles per mock-ups (picture tiles wide, compact rows on phones, whole tile clickable) and pinned phone header; verified desktop/tablet/phone, scroll tests pass.
+
 - [done] Phone header (title + Search + Settings), Vocab label and tinted active tab, More drawer kept, phone game switch tabs; Character style 永 buttons + preview, Theme and Display size moved into Settings.
 
 - [done] Menu per reviewer notes: wide windows full menu or remembered icon strip (no hamburger); phones bottom tab bar with More opening the drawer, close X on the drawer's logo row.
