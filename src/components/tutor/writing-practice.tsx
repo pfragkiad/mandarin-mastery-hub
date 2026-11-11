@@ -957,7 +957,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // No rank on Practice pages. Traditional is named by the form switch when it is shown,
   // so the pill appears only when there are no tiles.
   const characterPills = <span className="practice-pills">{traditionalPill && !forms && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span>;
-  const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile}/> : undefined;
+  const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : character} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
@@ -1019,13 +1019,17 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const shownStamp = revealed ? stamp : undefined;
       // Every tile shares the progress tile's frame (count top-left, reading top-centre,
       // fixed picture box, name line, bar), so the row keeps one height and one look.
-      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${revealed ? '' : ' is-blank'}${done ? ' is-done' : ''}${shownStamp ? ` ${shownStamp}` : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${revealed ? ` ${c}` : ''}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={!revealed ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+      // The frame is a plain box: the whole tile stays the select target through an invisible
+      // button laid under the head (styles.css .word-strip-select), and the reading's speaker is
+      // a real control above it, so hearing one character never selects another.
+      return <div key={`${c}-${i}`} className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${revealed ? '' : ' is-blank'}${done ? ' is-done' : ''}${shownStamp ? ` ${shownStamp}` : ''}`}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        <span className="stroke-progress-head" aria-hidden="true"><span className="stroke-index tile-count-corner">{count}</span>{single && <span className="pinyin word-strip-pinyin">{single}</span>}</span>
+        <span className="stroke-progress-head"><span className="stroke-index tile-count-corner" aria-hidden="true">{count}</span>{single && <span className="word-strip-reading"><span className="pinyin word-strip-pinyin" aria-hidden="true">{single}</span><GlyphReadingSpeaker spoken={c} reading={single} variant="tile" onError={onError}/>}</span>}</span>
         <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
         <span className="stroke-pinyin" aria-hidden="true"/>
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
-      </button>;
+        <button type="button" className="word-strip-select" aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${revealed ? ` ${c}` : ''}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={!revealed ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}/>
+      </div>;
     })}
   </div>;
 }
