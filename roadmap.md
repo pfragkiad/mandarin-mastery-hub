@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Practice progress tile (current stroke + bar, bar-only in Recall), stroke tiles in a closed Details drawer, larger stroke labels wrapping only when needed, 爱 stroke 5 named diǎn; 71 tests pass, 爱/身体 checked live.
+
 - [done] Start game tiles per mock-ups (picture tiles wide, compact rows on phones, whole tile clickable) and pinned phone header; verified desktop/tablet/phone, scroll tests pass.
 
 - [done] Phone header (title + Search + Settings), Vocab label and tinted active tab, More drawer kept, phone game switch tabs; Character style 永 buttons + preview, Theme and Display size moved into Settings.

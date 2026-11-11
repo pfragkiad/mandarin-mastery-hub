@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { splitPinyinLines, strokeNames } from './stroke-names';
+import { strokeNames } from './stroke-names';
 
 describe('stroke names from cnchar-order', () => {
   it('names every stroke of 门, including the compound 横折钩', async () => {
@@ -29,10 +29,10 @@ describe('stroke names from cnchar-order', () => {
     }
   });
 
-  it('splits compound names into two balanced lines for the stroke chips', () => {
-    expect(splitPinyinLines('héng zhé wān gōu')).toEqual(['héng zhé', 'wān gōu']);
-    expect(splitPinyinLines('héng zhé zhé zhé gōu')).toEqual(['héng zhé zhé', 'zhé gōu']);
-    expect(splitPinyinLines('piě')).toEqual(['piě']);
+  it('names 爱’s fifth stroke plain 点 (diǎn), never cnchar’s “点2” variant tag', async () => {
+    const names = await strokeNames('爱');
+    expect(names?.[4]?.name).toBe('点');
+    expect(names?.[4]?.pinyin).toBe('diǎn');
   });
 
   it('names 宀 from the verified supplement, matching the radical decomposition', async () => {

@@ -153,7 +153,7 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 
 /* Stroke guide panel */
 .stroke-guide { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 16px; }.stroke-guide-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }.stroke-guide-top h3 { font-family: var(--font-sans); font-weight: 600; font-size: 9px; letter-spacing: 1.65px; text-transform: uppercase; color: var(--muted-foreground); display: flex; align-items: center; gap: 8px; }
-.stroke-guide-strip { display: flex; flex-wrap: wrap; gap: var(--record-tile-gap); list-style: none; padding: 0; margin: 14px 0 10px; align-items: stretch; }.stroke-guide-strip>li { display: flex; }.stroke-chip { position: relative; flex: none; width: 104px; min-width: 0; height: auto; padding: 0; white-space: normal; border: 0; background: none; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px; cursor: pointer; }/* The framed picture is the tile: a square box holding only the stroke, while the number and the name sit outside it. */.stroke-frame { position: relative; width: 100%; aspect-ratio: 1; border: 1px solid var(--border); border-radius: 7px; background: var(--card); display: flex; align-items: center; justify-content: center; transition: border-color .15s, background .15s; }.stroke-chip:hover .stroke-frame { border-color: var(--primary); }.stroke-chip.active .stroke-frame { border-color: var(--primary); background: var(--secondary); }.stroke-chip .stroke-shape { width: 68px; height: 68px; flex: none; fill: var(--foreground); }.stroke-chip .stroke-shape-context { fill: var(--foreground); opacity: .14; }.stroke-shape-previous { opacity: .44; }.stroke-glow-defs { position: absolute; width: 0; height: 0; overflow: hidden; }.stroke-chip .stroke-index { font-size: 9px; line-height: 1.2; color: var(--muted-foreground); }.stroke-chip .stroke-estimated { position: absolute; top: 3px; left: 6px; font-size: 8px; }.stroke-chip .stroke-pinyin { align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-align: center; white-space: normal; font-size: 9px; line-height: 1.4; min-height: 26px; color: var(--muted-foreground); overflow-wrap: anywhere; }.stroke-guide-note { font-size: 9px; color: var(--muted-foreground); margin: 14px 0 0; }
+.stroke-guide-strip { display: flex; flex-wrap: wrap; gap: var(--record-tile-gap); list-style: none; padding: 0; margin: 14px 0 10px; align-items: stretch; }.stroke-guide-strip>li { display: flex; }.stroke-chip { position: relative; flex: none; width: 104px; min-width: 0; height: auto; padding: 0; white-space: normal; border: 0; background: none; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px; cursor: pointer; }/* The framed picture is the tile: a square box holding only the stroke, while the number and the name sit outside it. */.stroke-frame { position: relative; width: 100%; aspect-ratio: 1; border: 1px solid var(--border); border-radius: 7px; background: var(--card); display: flex; align-items: center; justify-content: center; transition: border-color .15s, background .15s; }.stroke-chip:hover .stroke-frame { border-color: var(--primary); }.stroke-chip.active .stroke-frame { border-color: var(--primary); background: var(--secondary); }:is(.stroke-chip, .stroke-progress-tile) .stroke-shape { width: 68px; height: 68px; flex: none; fill: var(--foreground); }:is(.stroke-chip, .stroke-progress-tile) .stroke-shape-context { fill: var(--foreground); opacity: .14; }.stroke-shape-previous { opacity: .44; }.stroke-shape.is-complete .stroke-shape-previous { opacity: .9; }.stroke-glow-defs { position: absolute; width: 0; height: 0; overflow: hidden; }:is(.stroke-chip, .stroke-progress-tile) .stroke-index { font-size: 12px; line-height: 1.2; color: var(--muted-foreground); }.stroke-chip .stroke-estimated { position: absolute; top: 3px; left: 6px; font-size: 8px; }/* Names wrap only when they do not fit, balanced across the lines. */:is(.stroke-chip, .stroke-progress-tile) .stroke-pinyin { align-self: stretch; display: block; text-align: center; white-space: normal; text-wrap: balance; font-size: 12px; line-height: 1.35; min-height: 32px; color: var(--muted-foreground); overflow-wrap: normal; }.stroke-guide-note { font-size: 9px; color: var(--muted-foreground); margin: 14px 0 0; }
 
 [lang="zh-CN"], .reference-card strong, .word-character, .word-detail-character, .font-preview { font-family: var(--font-hanzi); }
 .flash-setup { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 29px 0 20px; }
@@ -1606,8 +1606,9 @@ html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice > span { font-size: 14px; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice small { font-size: 12px; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice { height: auto; min-height: 112px; }
-html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 114px; }html[data-display-size='comfortable'] .practice-page-content .stroke-chip .stroke-shape { width: 76px; height: 76px; }
-html[data-display-size='comfortable'] .practice-page-content .stroke-index { font-size: 11px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 114px; }html[data-display-size='comfortable'] .practice-page-content :is(.stroke-chip, .stroke-progress-tile) .stroke-shape { width: 76px; height: 76px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-index { font-size: 14px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-pinyin { font-size: 14px; min-height: 38px; }
 html[data-display-size='comfortable'] .practice-page-content .decomposition-part { flex-wrap: wrap; }
 html[data-display-size='comfortable'] .practice-page-content .word-context { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); align-items: center; gap: 16px; }
 html[data-display-size='comfortable'] .practice-page-content .word-context-detail { font-size: 20px; line-height: 1.5; min-width: 0; overflow-wrap: anywhere; }
@@ -2491,7 +2492,7 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
    shows the hanzi, its own single recorded reading, and a progress bar for the current
    mode; a tick marks a finished character. */
 .word-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 2px; }
-.word-strip-tile { position: relative; width: 116px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 12px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.word-strip-tile, .stroke-progress-tile { position: relative; width: 116px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 12px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, background-color .15s; }
 .word-strip-tile:hover, .word-strip-tile:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
 .word-strip-tile.is-selected { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
 .word-strip-glyph { font-size: 38px; line-height: 1.15; color: var(--card-ink, inherit); }
@@ -2500,6 +2501,28 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
 .word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
 .word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
 .word-strip-done { position: absolute; top: 7px; right: 8px; width: 15px; height: 15px; color: var(--primary); }
+/* Row under the mode tabs: a word's character strip, then the progress tile (StrokeProgressTile),
+   which shares the word tiles' frame and bar but is a read-out, not a button. */
+.practice-progress-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px 18px; margin: 14px 0 2px; }
+.practice-progress-row:empty { display: none; }
+.practice-progress-row > .word-strip { margin: 0; }
+.stroke-progress-tile { width: 132px; cursor: default; gap: 4px; }
+.stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+.stroke-progress-tile .stroke-index { min-height: 1.2em; }
+.stroke-progress-picture { display: flex; align-items: center; justify-content: center; width: 68px; height: 68px; }
+.stroke-progress-tile.is-blank .stroke-progress-picture { border: 1px dashed var(--border); border-radius: 8px; }
+/* Bars line up along the bottom of every tile in the row, whatever each tile holds. */
+.practice-progress-row :is(.word-strip-tile, .stroke-progress-tile) .word-strip-progress { margin-top: auto; }
+.practice-progress-row .word-strip-tile { gap: 4px; }
+html[data-display-size='comfortable'] .stroke-progress-tile { width: 144px; }
+html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; height: 76px; }
+/* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
+.stroke-drawer-toggle { height: 28px; padding: 0 8px 0 10px; gap: 4px; border-radius: 999px; font-size: 12px; color: var(--muted-foreground); }
+.stroke-drawer-toggle:hover, .stroke-drawer-toggle.is-open { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
+.stroke-drawer-toggle svg { transition: transform .2s; }
+.stroke-drawer-toggle.is-open svg { transform: rotate(180deg); }
+.stroke-drawer { animation: stroke-drawer-in .2s ease-out; }
+@keyframes stroke-drawer-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
 /* Without a reading card the right column starts at the top; phones stack writing → details. */
 .practice-page-content .practice-layout:not(:has(> .practice-intro)) > .practice-detail { grid-row: 1 / span 2; }

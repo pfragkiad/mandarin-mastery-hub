@@ -34,6 +34,8 @@ vi.mock('@tanstack/react-router', () => ({ useNavigate: () => vi.fn(), Link: ({ 
 beforeEach(() => {
   vi.clearAllMocks();
   localStorage.clear();
+  // Most tests drive the stroke tiles, which live in the Strokes drawer (closed by default).
+  localStorage.setItem('tutor-stroke-drawer-open', '1');
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({
     strokes: ['one', 'two', 'three'], medians: [[[0, 0], [400, 0]], [[0, 0], [0, -400]], [[0, 0], [400, -400]]],
@@ -517,4 +519,44 @@ it('resizing the square after tracing keeps the drawn strokes and re-arms at the
   // The rebuilt writer starts its quiz after stroke 1, so stroke 1 stays drawn.
   expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1);
   expect(document.querySelector('.writer-status')?.textContent).toContain('Stroke 1: 100% accuracy.');
+});
+
+it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
+  localStorage.removeItem('tutor-stroke-drawer-open');
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const details = screen.getByRole('button', { name: 'Details' });
+  expect(details).toHaveAttribute('aria-expanded', 'false');
+  expect(document.querySelectorAll('.stroke-chip')).toHaveLength(0);
+  fireEvent.click(details);
+  expect(await screen.findByRole('button', { name: 'Continue tracing after stroke 3' })).toBeTruthy();
+  expect(localStorage.getItem('tutor-stroke-drawer-open')).toBe('1');
+});
+
+it('the progress tile shows the next stroke glowing and fills its bar as strokes are drawn', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const tile = () => document.querySelector('.stroke-progress-tile');
+  await waitFor(() => expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 1 of 3/));
+  expect(tile()?.querySelector('.stroke-shape-current')).not.toBeNull();
+  act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 2 of 3/);
+  expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
+  // The Strokes pill off leaves only the bar.
+  fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
+  expect(tile()?.querySelector('.stroke-shape')).toBeNull();
+  expect(tile()?.getAttribute('aria-label')).toBe('1 of 3 strokes drawn');
+});
+
+it('Recall keeps the progress tile to its bar, even with the Strokes pill on', async () => {
+  render(<WritingPractice character="我" mode="recall"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const tile = () => document.querySelector('.stroke-progress-tile');
+  await waitFor(() => expect(tile()).not.toBeNull());
+  expect(tile()?.querySelector('.stroke-shape')).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
+  act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  expect(tile()?.querySelector('.stroke-shape')).toBeNull();
+  expect(tile()?.textContent).not.toMatch(/\p{Script=Latin}/u);
+  expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
 });

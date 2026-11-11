@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { ArrowLeft, MoreHorizontal, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,11 +16,13 @@ import { focusEntryCard, originLabel, practiceOrigin } from '@/lib/practice-retu
 // - forms: ScriptForms / RadicalForms in their "switch" layout; omitted when there is only
 //   one form, so a simplified-only record shows no tiles.
 // - after: notes shown under the reading line (e.g. an audio error).
-// No state of its own: Back reads the session origin remembered by practice-return.ts.
+// State: only Back's label, read from the session origin (practice-return.ts) after mount —
+// the server has no session storage, so reading it during render would mismatch hydration.
 export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, reading, meaning, pills, forms, onPrint, printDisabled = false, after }: { glyph: string; glyphClassName?: string; hideGlyph?: boolean; reading: ReactNode; meaning: ReactNode; pills?: ReactNode; forms?: ReactNode; onPrint: () => void; printDisabled?: boolean; after?: ReactNode }) {
   const navigate = useNavigate();
-  const origin = practiceOrigin();
-  const back = () => { if (origin) { void navigate({ href: origin }); focusEntryCard(); } else void navigate({ to: '/characters' }); };
+  const [origin, setOrigin] = useState<string | null>(null);
+  useEffect(() => { setOrigin(practiceOrigin()); }, [glyph]);
+  const back = () => { const origin = practiceOrigin(); if (origin) { void navigate({ href: origin }); focusEntryCard(); } else void navigate({ to: '/characters' }); };
   return <header className={`practice-header${forms ? ' has-forms' : ''}`}>
     <div className="practice-header-top">
       <Button variant="ghost" size="sm" className="practice-back" onClick={back}><ArrowLeft/>{originLabel(origin)}</Button>

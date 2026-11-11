@@ -39,6 +39,7 @@ const HENG_ZHE_WAN_GOU = new Set([
 ]);
 const HENG_XIE_GOU = '横斜钩';
 const HENG_ZHE_WAN_GOU_NAME = '横折弯钩';
+const CNCHAR_DIAN_VARIANT = '点2';
 
 const cache = new Map<string, StrokeName[] | null>();
 
@@ -61,20 +62,15 @@ export async function cncharStrokeNames(character: string): Promise<StrokeName[]
   let names = row?.length ? row.map(name => {
     let primary = name.split('|')[0] ?? name;
     if (primary === HENG_XIE_GOU && HENG_ZHE_WAN_GOU.has(character)) primary = HENG_ZHE_WAN_GOU_NAME;
+    // cnchar-order tags one 点 shape variant as "点2"; the curated radical family source
+    // records that entry as plain 点 (diǎn), so the digit never reaches labels or speech.
+    if (primary === CNCHAR_DIAN_VARIANT) primary = '点';
     return { name: primary, pinyin: spellName(cnchar, primary) };
   }) : null;
   // Radicals cnchar-order lacks standalone fall back to the verified supplement table.
   names ??= RADICAL_STROKE_SUPPLEMENTS[character]?.map(name => ({ name, pinyin: spellName(cnchar, name) })) ?? null;
   cache.set(character, names);
   return names;
-}
-
-/** Split a multi-syllable pinyin name into two balanced lines for the stroke chips. */
-export function splitPinyinLines(pinyin: string): string[] {
-  const words = pinyin.trim().split(/\s+/).filter(Boolean);
-  if (words.length < 2) return words;
-  const k = Math.ceil(words.length / 2);
-  return [words.slice(0, k).join(" "), words.slice(k).join(" ")];
 }
 
 /** Compact stroke range for component headings: 1-based, "4–5" when contiguous, otherwise a list. */
