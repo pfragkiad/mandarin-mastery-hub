@@ -2318,3 +2318,28 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
    preview line tucked directly under its row so each tap shows the new face. */
 .settings-row .font-toggle button { width: 46px; height: 38px; font-size: 20px; }
 .settings-row + .font-preview { padding: 0 0 15px; margin-top: -4px; }
+/* Hanzi game switch (hanzi-game-tabs.tsx): phones only; wider windows use the side menu. */
+.hanzi-game-tabs { margin-bottom: 20px; }
+@media (min-width: 851px) { .hanzi-game-tabs { display: none; } }
+/* Phone header (≤850px, NAV_PHONE_MAX): just the page title in the display serif,
+   then Search and a Settings gear as 44px targets. Theme, display size and the 学
+   avatar move to Settings there. Wider windows keep the breadcrumb header. */
+.topbar-title, .topbar-settings { display: none; }
+@media (max-width: 850px) {
+  .topbar { height: 60px; }
+  .topbar .breadcrumbs > :not(.topbar-title),
+  .topbar-actions :is(.display-size-trigger, .theme-toggle, .header-divider, .learning-status, .avatar) { display: none; }
+  .topbar .topbar-title { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--foreground); }
+  .topbar .topbar-actions { gap: 4px; margin-right: -10px; }
+  .topbar-actions :is(.search-trigger, .topbar-settings) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--muted-foreground); }
+  .topbar-actions :is(.search-trigger, .topbar-settings):hover { color: var(--primary); }
+  .topbar-actions :is(.search-trigger, .topbar-settings) > svg { width: 21px; height: 21px; }
+  /* Tab bar: the current tab sits in the same soft tinted capsule as the side menu's pill. */
+  .phone-tab { margin: 5px 2px; border-radius: 12px; }
+  .phone-tab.is-active { background: var(--nav-active); }
+}
+/* Settings Theme row: sun/moon icons inside the shared segmented buttons. */
+.settings-row .writer-speed-options button { gap: 6px; }
+.settings-row .writer-speed-options button > svg { width: 15px; height: 15px; }
+/* Narrow phones: segmented Settings choices sit under their explanation so the text keeps its width. */
+@media (max-width: 580px) { .settings-row:has(> .writer-speed-options, > .font-toggle) { grid-template-columns: minmax(0,1fr); gap: 12px; justify-items: start; } }
