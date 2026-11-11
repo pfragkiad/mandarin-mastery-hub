@@ -25,6 +25,9 @@ import type { CharactersSearch } from './characters-page';
 // `kind` picks which library's records form the group (Characters or Components), so a
 // component's tiles only offer forms that exist as Components records, ranked by the
 // component-exposure scope rather than character frequency.
+// `layout="switch"` is Practice's header form switch: wide tiles with the glyph beside its
+// form label and stroke count, no rank (Practice shows no ranks). `hideGlyph` (Recall)
+// keeps each tile's label and strokes but blanks the hanzi so the answer never shows.
 export type ScriptFormKind = 'Characters' | 'Components';
 /** Library records of `kind` for each form in the glyph's script group (forms without a record drop out). */
 export function scriptFormRecords(glyph: string, kind: ScriptFormKind = 'Characters') {
@@ -44,20 +47,23 @@ export function cardFormRecords(glyph: string, kind: ScriptFormKind, includeTrad
 // `grouping`: 'script' (default) offers only Simplified/Traditional partners; 'card' offers
 // everything the Components card shows, including the radical-family forms (刀 刂 ⺈), whose
 // tiles read Main form / Variant. Each tile still opens that exact form's own record.
-export function ScriptForms({ glyph, kind = 'Characters', destination = 'reference', mode, hideLabel = false, grouping = 'script' }: { glyph: string; kind?: ScriptFormKind; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean; grouping?: 'script' | 'card' }) {
+export function ScriptForms({ glyph, kind = 'Characters', destination = 'reference', mode, hideLabel = false, grouping = 'script', layout = 'tiles', hideGlyph = false }: { glyph: string; kind?: ScriptFormKind; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean; grouping?: 'script' | 'card'; layout?: 'tiles' | 'switch'; hideGlyph?: boolean }) {
   const { preferences } = useWorkspace();
   const forms = grouping === 'card' ? cardFormRecords(glyph, kind, preferences.includeTraditional) : scriptFormRecords(glyph, kind);
   const family = grouping === 'card' && kind === 'Components' ? componentFamilyGroup(glyph) : undefined;
   if (forms.length < 2) return null;
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
-  return <div className="radical-family-section script-forms">
+  return <div className={`radical-family-section script-forms${layout === 'switch' ? ' form-switch' : ''}`}>
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
     <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
         const scriptName = formLabel(entry.hanzi, entry.script).toLowerCase();
-        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Strokes not recorded'}</span><small>{formLabel(entry.hanzi, entry.script)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;
+        const strokes = entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Strokes not recorded';
+        const content = layout === 'switch'
+          ? <><FormSwitchGlyph glyph={entry.hanzi} hidden={hideGlyph}/><span className="form-switch-text"><b>{formLabel(entry.hanzi, entry.script)}</b><small>{strokes}</small></span></>
+          : <><strong lang="zh-CN">{entry.hanzi}</strong><span>{strokes}</span><small>{formLabel(entry.hanzi, entry.script)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {destination === 'practice'
             ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} resetScroll={false} aria-current={selected ? 'true' : undefined} title={practiceHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${practiceHint(entry.hanzi, selected)}`}>{content}</Link>
@@ -65,8 +71,14 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
         </Button>;
       })}
     </div>
-    {!family && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
+    {!family && layout === 'tiles' && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
   </div>;
+}
+
+/** Hanzi of a form-switch tile. In Recall the glyph is replaced by an empty box of the
+ *  same size (screen readers still hear the tile's label), so the tile row never shifts. */
+export function FormSwitchGlyph({ glyph, hidden }: { glyph: string; hidden: boolean }) {
+  return hidden ? <strong className="form-switch-blank" aria-hidden="true"/> : <strong lang="zh-CN">{glyph}</strong>;
 }
 
 /** Learner-facing provenance for simplified ↔ traditional links: the upstream dataset, never our data file name. */
