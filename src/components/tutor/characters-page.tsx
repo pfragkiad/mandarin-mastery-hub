@@ -33,6 +33,7 @@ import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
 import { RadicalVariantEtymology } from './radical-variant-etymology';
 import { radicalIdentity } from '@/lib/radical-identities';
+import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { DetailLoading, useDetailLoading } from './detail-loading';
@@ -284,7 +285,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
   // Characters/Components whose head glyph is itself a sourced Kangxi radical (白, 口, 刀)
   // wear the gold 部 stamp and ink too; exact source identities only, never shape.
-  const radicalTile = Boolean(family) || radicalIdentity(entry.hanzi).radicals.length > 0;
+  const radicalTile = isRadicalGlyph(entry, kind);
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
   // Components cards do the same but only with forms that exist as Components records.
   // Components cards also show their radical-family forms (刀 刂 ⺈, component-families.ts).
@@ -324,7 +325,9 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // frame and hovered translation: gold for sourced Kangxi radicals (radicalTile, so a Character or Component
   // that is itself a radical reads gold), green for Characters, foreground for Components. Traditional wins,
   // then radical; Strokes cards keep the default accent.
-  const cardInk = entry.script === 'Traditional' ? 'card-ink' : radicalTile ? 'card-ink card-ink-radical' : kind === 'Characters' ? 'card-ink card-ink-character' : kind === 'Components' ? 'card-ink card-ink-component' : '';
+  // Shared with Start's random cards (src/lib/card-ink.ts); `is-traditional` itself is added below.
+  const ink = glyphCardInk(kind, entry.script, radicalTile);
+  const cardInk = ink ? `card-ink${ink === 'is-traditional' ? '' : ` ${ink}`}` : '';
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${cardInk} ${selected ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(entry.id); }}>
     <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{info.label.toUpperCase()}</span>{metadata !== null && <CardTopMeta>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <span className="word-hsk-id" title="Official Kangxi radical index" aria-label={`Kangxi radical ${entry.kangxiIndex}`}>Radical #{entry.kangxiIndex}</span>}{componentRadical.length === 1 && componentRadical[0] && <span className="word-hsk-id" title="Sourced Kangxi radical identity">Radical #{componentRadical[0].number}</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{!hideDecomposition && entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>

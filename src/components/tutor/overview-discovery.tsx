@@ -13,6 +13,7 @@ import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
 import { historyEntry } from '@/lib/detail-trail';
+import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 
 export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
@@ -93,6 +94,9 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   const hanzi = word ? word.hanzi : entry?.hanzi;
   const pinyin = word ? word.pinyin : entry?.pinyin || '—';
   const meaning = word ? word.meaning : entry?.meaning || '—';
+  // Glyph picks wear the same identity ink as their library cards (purple traditional,
+  // gold radical, green character, text-colour component); Words/Phrases keep the accent.
+  const ink = entry ? glyphCardInk(category as LibraryKind, entry.script, isRadicalGlyph(entry, category as LibraryKind)) : '';
 
   return (
     <section className="discovery-tile" aria-label={`${meta.label}: ${count ?? '…'} records`}>
@@ -118,7 +122,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
             <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
             {!word && entry?.pinyin && chartLinks && <SoundChartLink reading={entry.pinyin} from={entry.hanzi} variant="header"/>}</>}
           </div>
-          <Link to={recordLink.to} search={recordLink.search} className="overview-record-link" title={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)}>
+          <Link to={recordLink.to} search={recordLink.search} className={`overview-record-link${ink ? ` ${ink}` : ''}`} title={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
             {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
           </Link>

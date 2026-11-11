@@ -755,6 +755,10 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
 .overview-record-link:hover strong,.overview-record-link:hover h2,.overview-record-link:focus-visible strong,.overview-record-link:focus-visible h2 { color: var(--primary); }
+/* Start's random glyph cards: the identity class (src/lib/card-ink.ts) sets --card-ink, so the
+   hanzi wears it at rest and hanzi + translation take it on hover, as on the library cards. */
+.overview-record-link:is(.is-traditional,.card-ink-radical,.card-ink-character,.card-ink-component) > strong,
+.overview-record-link:is(.is-traditional,.card-ink-radical,.card-ink-character,.card-ink-component):is(:hover,:focus-visible) :is(strong,h2) { color: var(--card-ink); }
 .overview-library-search { position: relative; z-index: 21; margin: 0 0 24px; }
 .overview-library-search .hero-search { width: 100%; max-width: none; margin: 0; }
 .overview-library-search .search-field input { height: 56px; font-size: 14px; padding-left: 48px; border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); box-shadow: var(--shadow-soft); }
