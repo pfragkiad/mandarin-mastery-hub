@@ -741,6 +741,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-tile-top > button { width: 28px; height: 28px; flex-shrink: 0; }
 .discovery-tile-heading { display: flex; align-items: center; gap: 10px; min-width: 0; color: var(--foreground); }
 .discovery-tile-heading .stat-icon { width: 34px; height: 34px; font-size: 20px; transition: background-color .2s ease, transform .2s ease; }
+/* Start random cards wear the sidebar's section icons (section-icons.ts); size the
+   line icons to sit like the hanzi glyphs they replaced. */
+.stat-icon svg { width: 18px; height: 18px; }
 .discovery-tile-count { display: flex; flex-direction: column; min-width: 0; transition: color .2s ease; }
 .discovery-tile-count strong { font-size: 20px; font-weight: 500; line-height: 1.2; }
 .discovery-tile-count span { font-size: 10px; color: var(--muted-foreground); white-space: nowrap; }

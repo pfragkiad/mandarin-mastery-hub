@@ -38,7 +38,7 @@ export function SoundDiscoveryTile() {
     <section className="discovery-tile discovery-sound" aria-label={`Sounds: ${count ?? '…'} recordings`}>
       <div className="discovery-tile-top">
         <Link to="/pinyin" className="discovery-tile-heading" aria-label="Open the Pinyin sound chart">
-          <span className="stat-icon" aria-hidden="true" lang="zh-CN">音</span>
+          <span className="stat-icon" aria-hidden="true"><Volume2/></span>
           <span className="discovery-tile-count">
             <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
             <span>Sounds</span>

@@ -8,7 +8,8 @@ import { NavGroup, type NavSub } from './nav-group';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Type, Sprout, Puzzle, PenTool, AlignLeft, Quote, Maximize2, Minimize2, AudioLines, Volume2, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Maximize2, Minimize2, AudioLines, Volume2, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -25,7 +26,6 @@ const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
-const sectionIcons: Record<string, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
 // Phone bottom tab bar: the four main destinations; "More" (a button, not a link)
 // opens the full menu drawer for Start, Settings and every sub-item.
 const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon }[] = [

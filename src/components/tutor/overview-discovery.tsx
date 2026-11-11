@@ -14,15 +14,19 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
 import { historyEntry } from '@/lib/detail-trail';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
+import { sectionIcons } from '@/lib/section-icons';
+import type { GameIcon } from './game-catalog';
 
 export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
-const CATEGORY_META: Record<DiscoveryCategory, { glyph: string; label: string; note: string }> = {
-  word: { glyph: '词', label: 'Words', note: 'HSK & everyday vocabulary' },
-  phrase: { glyph: '句', label: 'Phrases', note: 'Including unofficial practice phrases' },
-  Characters: { glyph: '字', label: 'Characters', note: 'Full imported catalogue' },
-  Components: { glyph: '口', label: 'Components', note: 'Structural building blocks' },
-  Radicals: { glyph: '氵', label: 'Radicals', note: 'Dictionary reference library' },
+// Each tile wears the same icon as its sidebar section (src/lib/section-icons.ts),
+// so the menu and the Start cards never show a section with two different icons.
+const CATEGORY_META: Record<DiscoveryCategory, { icon: GameIcon; label: string; note: string }> = {
+  word: { icon: sectionIcons.Words, label: 'Words', note: 'HSK & everyday vocabulary' },
+  phrase: { icon: sectionIcons.Phrases, label: 'Phrases', note: 'Including unofficial practice phrases' },
+  Characters: { icon: sectionIcons.Characters, label: 'Characters', note: 'Full imported catalogue' },
+  Components: { icon: sectionIcons.Components, label: 'Components', note: 'Structural building blocks' },
+  Radicals: { icon: sectionIcons.Radicals, label: 'Radicals', note: 'Dictionary reference library' },
 };
 
 // Random pick shown in each tile, remembered per browser history entry (URL + router key) and
@@ -102,7 +106,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
     <section className="discovery-tile" aria-label={`${meta.label}: ${count ?? '…'} records`}>
       <div className="discovery-tile-top">
         <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
-          <span className="stat-icon" aria-hidden="true" lang="zh-CN">{meta.glyph}</span>
+          <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
           <span className="discovery-tile-count">
             <strong>{count === null ? '—' : count.toLocaleString('en-US')}</strong>
             <span>{meta.label}</span>
