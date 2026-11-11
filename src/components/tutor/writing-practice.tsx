@@ -273,7 +273,6 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
             ); })}
           </ol></div>)}
           </div>
-          <p className="stroke-guide-note">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'} in writing order{mode === 'trace' ? ' — continue tracing in the square.' : interactive ? ' — tap one to draw through it.' : ' — draw them in the square.'}</p>
         </div>
       )}
     </div>
