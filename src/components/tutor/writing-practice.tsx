@@ -201,8 +201,7 @@ function StrokeProgressTile({ strokes, groups, next, showStroke }: { strokes: St
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
-      <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>      <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
   );
@@ -936,7 +935,7 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const drawnNote = total ? `${drawn} of ${total} strokes drawn` : '';
       return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${hideGlyphs && drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true">{count}</span> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
+        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true">{count && <span className="tile-count">{count}</span>}</span> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
         {single && <span className="pinyin word-strip-pinyin">{single}</span>}
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
       </button>;
