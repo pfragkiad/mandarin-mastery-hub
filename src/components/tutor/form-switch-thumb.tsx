@@ -75,6 +75,7 @@ export function FormSwitchThumb() {
       && Math.abs(start.x - first.box.x) <= first.box.w * 2 + 40
       && Math.abs(start.y - first.box.y) <= first.box.h + 20;
     let timer = 0;
+    console.debug('[thumb] decide', JSON.stringify({ start, near, glides: !!(start && near) }));
     if (start && near) {
       // Write the outgoing box straight onto the element and force a style flush: React's own
       // render would land both boxes in the same paint, and a transition needs a computed
