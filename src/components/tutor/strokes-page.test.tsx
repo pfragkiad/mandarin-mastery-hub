@@ -224,9 +224,10 @@ describe('character practice sections by mode', () => {
     const strip = screen.getByRole('group', { name: 'Characters in this word' });
     fireEvent.click(screen.getByRole('button', { name: 'Listen to 乙 yǐ' }));
     expect(play).toHaveBeenCalledWith('乙', false, 'yǐ');
-    // Hearing 乙 must not move the practice focus: 学 is still the character being written.
+    // Hearing 乙 must not move the practice focus: the pressed tile is still 学 (character 1),
+    // whether it is the live progress tile or still waiting for its writer.
     expect(strip.querySelector('.stroke-progress-tile.is-word.is-selected')).not.toBeNull();
-    expect(strip.querySelector('.word-strip-select[aria-pressed="true"]')).toBeNull();
+    expect(strip.querySelector('.word-strip-select[aria-pressed="true"]')?.getAttribute('aria-label')).toContain('Practice character 1');
     play.mockRestore();
     unmount();
   });
