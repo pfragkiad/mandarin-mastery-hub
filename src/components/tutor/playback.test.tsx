@@ -521,6 +521,26 @@ it('resizing the square after tracing keeps the drawn strokes and re-arms at the
   expect(document.querySelector('.writer-status')?.textContent).toContain('Stroke 1: 100% accuracy.');
 });
 
+it('switching Recall to Trace keeps the drawn strokes so tracing or Play continues from the next stroke', async () => {
+  const { rerender } = render(<WritingPractice character="我" mode="recall"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  rerender(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(1));
+  expect(fake.quiz.mock.calls.at(-1)?.[0].showOutline).toBe(true);
+  expect(document.querySelector('.stroke-progress-tile')?.getAttribute('aria-label')).toMatch(/^Next: stroke 2 of 3/);
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  expect(fake.animateStroke.mock.calls[0]?.[0]).toBe(1);
+});
+it('switching Trace to Recall still starts Recall fresh', async () => {
+  const { rerender } = render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+  rerender(<WritingPractice character="我" mode="recall"/>);
+  await waitFor(() => expect(fake.quiz.mock.calls.at(-1)?.[0].showOutline).toBe(false));
+  expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(0);
+});
+
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
   localStorage.removeItem('tutor-stroke-drawer-open');
   render(<WritingPractice character="我" mode="trace"/>);
