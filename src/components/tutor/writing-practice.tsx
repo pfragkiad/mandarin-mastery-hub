@@ -201,13 +201,15 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strok
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
     : `${Math.min(next, total)} of ${total} strokes drawn`;
   const label = word ? `${word.label}${word.reading ? ` (${word.reading})` : ''} · ${status}` : status;
-  const index = <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>;
+  // Word tiles always carry their count in the corner (hidden: strokes drawn, like the other
+  // strip tiles), so the hidden picture box stays empty instead of repeating it.
+  const index = <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : word ? `${Math.min(next, total)} / ${total}` : ''}</span>;
   return (
     <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
-      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
+      <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? null : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
@@ -938,8 +940,8 @@ only the component breakdown; radical practice never shows a decomposition at an
 // reported progress. A tile shows the character, its own pinyin only when the catalogue
 // records exactly one reading (a word reading is never split onto its characters), and a
 // bar for the strokes drawn in the current mode, with a tick once the character is done.
-// Recall blanks the hanzi (pinyin and progress stay) and puts the drawn stroke count in the
-// empty box ("4 / 6"): the total is the character's own recorded stroke count — the same
+// Every tile shows the strokes drawn so far in its top-left corner ("0 / 5"); Recall blanks
+// the hanzi (pinyin and progress stay): the total is the character's own recorded stroke count — the same
 // number the Simplified/Traditional form tiles show — so nothing new about the answer leaks.
 // Once the writer is ready, the focused character's tile is the live stroke progress tile
 // (`focusTile`: next stroke picture, count top-left, its reading top-centre), so a word never
@@ -964,10 +966,17 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const drawn = Math.min(p?.start ?? 0, total ?? 0);
       const count = total ? `${drawn} / ${total}` : '';
       const drawnNote = total ? `${drawn} of ${total} strokes drawn` : '';
-      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${hideGlyphs && drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+      // The focused tile while its writer loads keeps the same frame with an empty picture
+      // (no hanzi), so switching characters never flashes the glyph or changes the height.
+      const loading = i === focus;
+      const hidden = hideGlyphs || loading;
+      // Every tile shares the progress tile's frame (count top-left, reading top-centre,
+      // fixed picture box, name line, bar), so the row keeps one height and one look.
+      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile stroke-progress-tile is-word${loading ? ' is-selected' : ''}${hidden ? ' is-blank' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={hideGlyphs ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
-        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true">{count && <span className="tile-count">{count}</span>}</span> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
-        {single && <span className="pinyin word-strip-pinyin">{single}</span>}
+        <span className="stroke-progress-head" aria-hidden="true"><span className="stroke-index tile-count-corner">{count}</span>{single && <span className="pinyin word-strip-pinyin">{single}</span>}</span>
+        <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}</span>
+        <span className="stroke-pinyin" aria-hidden="true"/>
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
       </button>;
     })}
