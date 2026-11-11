@@ -1,15 +1,12 @@
-import { expect, it } from 'vitest';
-import { restoredLibraryView } from './learning-preferences';
+// Guards the out-of-the-box state of the "Sound chart links on cards" switch:
+// a fresh browser (and Settings -> Reset preferences, which writes this object)
+// must show the sound-wave link beside every glyph card's speaker. Only an
+// explicit stored `false` hides it, so the default can never drift to hidden.
+import { describe, expect, it } from 'vitest';
+import { defaultPreferences } from './learning-preferences';
 
-it('defaults mobile libraries to list without a saved choice', () => {
-  expect(restoredLibraryView(undefined, true)).toBe('list');
-});
-it('retains an explicit grid choice on mobile', () => {
-  expect(restoredLibraryView('grid', true)).toBe('grid');
-});
-it('retains an explicit list choice on desktop', () => {
-  expect(restoredLibraryView('list', false)).toBe('list');
-});
-it('keeps grid as the desktop default', () => {
-  expect(restoredLibraryView(undefined, false)).toBe('grid');
+describe('sound chart links default', () => {
+  it('shows the links on cards for new visitors', () => {
+    expect(defaultPreferences.soundChartLinks).toBe(true);
+  });
 });

@@ -9,7 +9,7 @@ export const PRACTICE_CANVAS_MIN = 240;
 export function practiceCanvasSize(stored: unknown): number {
   return typeof stored === 'number' && Number.isFinite(stored) ? Math.max(PRACTICE_CANVAS_MIN, Math.round(stored)) : PRACTICE_CANVAS_DEFAULT;
 }
-export const defaultPreferences: Preferences = { pinyin: true, meaning: true, slow: false, font: 'Handwritten', includeTraditional: true, cardReveal: 'all', libraryView: 'grid', animationSpeed: 0.5, confetti: true };
+export const defaultPreferences: Preferences = { pinyin: true, meaning: true, slow: false, font: 'Handwritten', includeTraditional: true, cardReveal: 'all', libraryView: 'grid', animationSpeed: 0.5, confetti: true, soundChartLinks: true };
 export const defaultTheme = 'dark' as const;
 /** A saved layout wins over device defaults, including older preferences that
  * lack this field. Called after hydration so SSR never reads viewport state. */
