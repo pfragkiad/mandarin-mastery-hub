@@ -104,7 +104,7 @@ article.word-card { touch-action: manipulation; }
 .is-collapsed .sidebar-bottom { margin-top: auto; margin-inline: 6px; }
 .is-collapsed .sidebar-bottom-row { justify-content: center; }
 html .workspace.is-collapsed :is(.nav-item,.nav-sub-tab,.nav-sub-game,.help-link) { flex-direction: column; align-items: center; justify-content: center; gap: 4px; height: auto; min-height: 0; padding: 7px 2px 6px; text-align: center; white-space: normal; }
-html .workspace.is-collapsed :is(.nav-item,.nav-sub-tab,.nav-sub-game,.help-link) > span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 11px; line-height: 1.15; }
+html .workspace.is-collapsed :is(.nav-item,.nav-sub-tab,.nav-sub-game,.help-link) > span:not(.active-dot) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 11px; line-height: 1.15; }
 /* The active dot would sit under the label; the accent colour and weight already
    say which item is current. */
 html .workspace.is-collapsed .active-dot { display: none; }
