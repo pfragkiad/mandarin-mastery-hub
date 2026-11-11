@@ -2546,9 +2546,23 @@ html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; he
 .stroke-progress-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
 .stroke-progress-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; column-gap: 4px; width: 100%; min-height: 1.35em; }
 .stroke-progress-head .stroke-index { grid-column: 1; justify-self: start; white-space: nowrap; }
-.stroke-progress-head .word-strip-pinyin { grid-column: 2; }
+/* The reading and its speaker are one pair in the head's centre column, so the pair — not the
+   pinyin alone — stays centred in the tile and the icon never drifts to the tile's edge. */
+.stroke-progress-head .word-strip-reading { grid-column: 2; display: inline-flex; align-items: center; gap: 3px; }
+/* The strip's speaker is the shared embedded-tile speaker (.tile-speaker), sized to sit beside
+   the reading without crowding it; Comfortable gives it a little more room. */
+.word-strip-tile .tile-speaker, .stroke-progress-tile .tile-speaker { width: 22px; height: 22px; }
+.word-strip-tile .tile-speaker svg, .stroke-progress-tile .tile-speaker svg { width: 14px; height: 14px; }
+html[data-display-size='comfortable'] .word-strip-tile .tile-speaker, html[data-display-size='comfortable'] .stroke-progress-tile .tile-speaker { width: 26px; height: 26px; }
+html[data-display-size='comfortable'] .word-strip-tile .tile-speaker svg, html[data-display-size='comfortable'] .stroke-progress-tile .tile-speaker svg { width: 16px; height: 16px; }
 html[data-display-size='comfortable'] .stroke-progress-tile.is-word { width: 160px; }
-/* Unfocused strip tiles are buttons in the same frame: the hanzi fills the picture box. */
+/* Unfocused strip tiles: the frame is a box, and the whole tile stays the select target through
+   an invisible button underneath it. The head sits above that button but lets clicks fall
+   through, except on the speaker — so hearing a character never selects it. */
+.word-strip-tile > .word-strip-select { position: absolute; inset: 0; z-index: 0; padding: 0; border: 0; background: none; border-radius: inherit; cursor: pointer; }
+.word-strip-tile > :not(.word-strip-select) { position: relative; z-index: 1; pointer-events: none; }
+.word-strip-tile .tile-speaker { pointer-events: auto; }
+.word-strip-tile:has(.word-strip-select:focus-visible) { border-color: var(--card-ink, var(--primary)); }
 .word-strip-tile.stroke-progress-tile { cursor: pointer; }
 .stroke-progress-picture .word-strip-glyph { font-size: 54px; line-height: 1; }
 html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: 60px; }
