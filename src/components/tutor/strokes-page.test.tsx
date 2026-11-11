@@ -234,7 +234,7 @@ describe('character practice sections by mode', () => {
 
   it('shows only the first stroke\'s arrow when a Trace round starts', async () => {
     // Arrows are a remembered preference; turn them on before the page mounts.
-    window.localStorage.setItem('tutor-stroke-arrows', 'true');
+    window.localStorage.setItem('tutor-stroke-arrows', '1');
     const { unmount } = render(<StrokesPage initialCharacter="学" mode="trace"/>);
     await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
     const shown = Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
