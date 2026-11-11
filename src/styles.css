@@ -2317,10 +2317,13 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-actions { flex-wrap: wrap; gap: 6px; margin: 0; }
 .stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; justify-content: flex-start; height: 32px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
-/* Small screens: the three pills take their own full row ABOVE the "Strokes" caption
+/* Narrow Strokes panels: the three pills take their own full row ABOVE the "Strokes" caption
    (flex order swaps the DOM order) and never wrap among themselves, so Arrows/Strokes/Names
-   always sit together on one line, with the heading + Details pill on the row below. */
-@media (max-width: 850px) {
+   always sit together on one line, with the heading + Details pill on the row below.
+   Keyed to the panel's own width (container query), not the window: on wide windows the
+   two-column Practice layout still leaves the card too narrow for one shared row. */
+.stroke-guide { container: stroke-guide / inline-size; }
+@container stroke-guide (max-width: 720px) {
   .stroke-guide-actions { flex-basis: 100%; flex-wrap: nowrap; order: 1; }
   .stroke-guide-actions > button { min-width: 0; flex: 0 1 auto; }
   .stroke-guide-heading { order: 2; }
