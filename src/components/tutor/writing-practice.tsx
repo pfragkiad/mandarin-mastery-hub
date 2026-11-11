@@ -186,21 +186,27 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // stroke count ("4 / 6") plus the bar, like the word strip in Recall; a stroke count is not
 // the answer (the form tiles already show each form's total), and the hidden lines keep
 // their space so the tile never changes size.
-function StrokeProgressTile({ strokes, groups, next, showStroke }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean }) {
+// In word practice the tile takes the focused character's place in the strip (`word`): the
+// stroke count moves to the top-left corner with the character's own single reading centred
+// beside it (null when it has several), and `word.label` names the character for screen readers.
+type ProgressTileWord = { reading: string | null; label: string };
+function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
   const done = next >= total;
   const stroke = strokes[next];
   const fraction = Math.min(1, next / total);
-  const label = showStroke
+  const status = showStroke
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
     : `${Math.min(next, total)} of ${total} strokes drawn`;
+  const label = word ? `${word.label}${word.reading ? ` (${word.reading})` : ''} · ${status}` : status;
+  const index = <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>;
   return (
-    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}`} role="img" aria-label={label} title={label}>
+    <div className={`stroke-progress-tile${done ? ' is-done' : ''}${showStroke ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}`} role="img" aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
-      <span className="stroke-index" aria-hidden="true">{showStroke ? `${Math.min(next + 1, total)} / ${total}` : ''}</span>
+      {word ? <span className="stroke-progress-head" aria-hidden="true">{index}{word.reading && <span className="pinyin word-strip-pinyin">{word.reading}</span>}</span> : index}
       <span className="stroke-progress-picture">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : <span className="tile-count" aria-hidden="true">{Math.min(next, total)} / {total}</span>}</span>
       <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
@@ -274,10 +280,11 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
  *  scores and status line, and the mode they were drawn in. Reported by WritingPractice
  *  (onProgress) and handed back (savedProgress) so switching characters keeps each one. */
 export type PracticeProgress = { character: string; mode: PracticeMode; start: number; total: number; scores: (number | null)[]; prefix: number; message: string };
-// `strip` renders under the mode tabs (word practice's character strip). `savedProgress`
+// `strip` renders under the mode tabs (word practice's character strip); it is called with the
+// live progress tile renderer (null while loading) so the focused character's tile is that tile. `savedProgress`
 // re-arms the quiz where an earlier visit to this character stopped (same mode only);
 // `onProgress` reports every change so the strip can show per-character progress.
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ReactNode; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined }) {
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined }) {
   const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('trace');
@@ -782,7 +789,12 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const setStrokesVisible = mode === 'recall' ? setRecallTiles : setTilesPref;
   // Next undrawn stroke, the same position reported through onProgress (Watch: the Step position).
   const nextStroke = mode === 'watch' ? Math.min(stepIndex, strokes.length) : Math.min(tracePos.current, strokes.length);
-  const progressRow = <div className="practice-progress-row">{strip}{ready && strokes.length > 0 && <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'}/>}</div>;
+  // The progress tile stands alone for a single character; in word practice the strip
+  // receives it as a renderer and shows it in the focused character's place.
+  const progressTile = ready && strokes.length > 0
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word}/>
+    : null;
+  const progressRow = <div className="practice-progress-row">{strip ? strip(progressTile) : progressTile?.()}</div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
   return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} visible={strokesVisible} onVisibleChange={setStrokesVisible} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
@@ -909,7 +921,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // No rank on Practice pages. Traditional is named by the form switch when it is shown,
   // so the pill appears only when there are no tiles.
   const characterPills = <span className="practice-pills">{traditionalPill && !forms && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span>;
-  const strip = isWord ? <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter}/> : undefined;
+  const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile}/> : undefined;
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : character} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
@@ -929,13 +941,17 @@ only the component breakdown; radical practice never shows a decomposition at an
 // Recall blanks the hanzi (pinyin and progress stay) and puts the drawn stroke count in the
 // empty box ("4 / 6"): the total is the character's own recorded stroke count — the same
 // number the Simplified/Traditional form tiles show — so nothing new about the answer leaks.
-function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void }) {
+// Once the writer is ready, the focused character's tile is the live stroke progress tile
+// (`focusTile`: next stroke picture, count top-left, its reading top-centre), so a word never
+// shows a separate progress tile; while loading the focused tile keeps the plain look.
+function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect, focusTile }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void; focusTile: ((word: ProgressTileWord) => ReactNode) | null }) {
   const facts = charFacts();
   const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
   return <div className="word-strip" role="group" aria-label="Characters in this word">
     {characters.map((c, i) => {
       const reading = facts[c]?.pinyin;
       const single = reading && !isMultiReading(reading) ? reading : null;
+      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}` })}</Fragment>;
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
