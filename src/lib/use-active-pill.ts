@@ -14,16 +14,19 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
     const list = ref.current;
     const active = list?.querySelector<HTMLElement>("[role='tab'][data-state='active']");
     if (!list || !active) return;
-    // Measured after layout (next frame), from on-screen boxes, so pill fonts and
-    // the row's own padding are already applied.
-    const frame = requestAnimationFrame(() => {
-      if (list.scrollWidth <= list.clientWidth) return;
+    // Measured from on-screen boxes after layout (next frame), and again once web
+    // fonts finish loading, because the font swap widens the pills.
+    let live = true;
+    const reveal = () => {
+      if (!live || list.scrollWidth <= list.clientWidth) return;
       const row = list.getBoundingClientRect();
       const pill = active.getBoundingClientRect();
       if (pill.left < row.left) list.scrollLeft += pill.left - row.left - 16;
       else if (pill.right > row.right) list.scrollLeft += pill.right - row.right + 16;
-    });
-    return () => cancelAnimationFrame(frame);
+    };
+    const frame = requestAnimationFrame(reveal);
+    void document.fonts?.ready.then(reveal);
+    return () => { live = false; cancelAnimationFrame(frame); };
   }, [value]);
   return ref;
 }
