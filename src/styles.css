@@ -659,6 +659,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 /* A clickable character says so with the link colour, never an underline; the box itself stays neutral. */
 .decomposition-glyph:not(.decomposition-glyph-static) strong { color: var(--primary); }
 .decomposition-glyph.traditional-character strong { color: var(--traditional); }
+/* Radical parts wear the Radical #N gold on the glyph itself, not just the corner stamp;
+   a traditional radical form keeps its purple ink (traditional is the more specific mark). */
+.decomposition-glyph.is-radical:not(.traditional-character) strong { color: var(--hsk-id); }
 .decomposition-glyph:not(.decomposition-glyph-static):hover, .decomposition-glyph:not(.decomposition-glyph-static):focus-visible { background-color: transparent; border-color: var(--primary); }
 .decomposition-glyph-static:hover, .decomposition-glyph-static:focus-visible { border-color: var(--border); }
 
