@@ -968,10 +968,13 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const single = reading && !isMultiReading(reading) ? reading : null;
       const record = records.get(c);
       const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
+      // Recall drops the identity ink with the hanzi and the stamps: a gold or purple frame
+      // would hint at the hidden character the same way the 部 / 繁 mark would.
+      const shownInk = hideGlyphs ? '' : ink;
       // Same corner stamps as every glyph tile (繁 traditional, 部 radical), from the exact record;
       // Recall drops them with the hanzi so the tile never hints at the hidden answer.
       const stamp = hideGlyphs || !record ? undefined : record.script === 'Traditional' ? 'tile-stamp-traditional' : isRadicalGlyph(record, 'Characters') ? 'tile-stamp-radical' : undefined;
-      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}`, glyph: hideGlyphs ? undefined : c, ink, stamp })}</Fragment>;
+      if (i === focus && focusTile) return <Fragment key={`${c}-${i}`}>{focusTile({ reading: single, label: `Character ${i + 1}${hideGlyphs ? '' : ` ${c}`}`, glyph: hideGlyphs ? undefined : c, ink: shownInk, stamp })}</Fragment>;
       const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
       const done = Boolean(p && p.total && p.start >= p.total);
       const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
