@@ -16,27 +16,34 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Hanzi games', icon: HanziIcon }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }];
+// Main menu in three blocks: Start, then "Learn" (the reference sections) and
+// "Practice" (one Games group holding all five games). Full menu and drawer show
+// each block's small uppercase heading; the icon strip draws it as a thin line.
+const navSections: { label: string | null; items: { to: '/' | '/characters' | '/vocabulary' | '/pinyin' | '/flashcards'; name: string; icon: GameIcon }[] }[] = [
+  { label: null, items: [{ to: '/', name: 'Start', icon: LayoutGrid }] },
+  { label: 'Learn', items: [{ to: '/characters', name: 'Glyphs', icon: Library }, { to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
+  { label: 'Practice', items: [{ to: '/flashcards', name: 'Games', icon: Gamepad2 }] },
+];
+const navigation = navSections.flatMap(section => section.items);
 // Settings lives in the menu's bottom row (beside the shrink/expand button, under
 // the one divider), outside the scrolling list, so it is always reachable.
 const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
-// Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
-// Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
-// Pinyin sub-items: the Sound chart plus the three Pinyin games; Hanzi games sub-items.
-// Both game lists come from game-catalog so the Start page shows the same games.
-const pinyinSections = [{ label: 'Sound chart', mode: undefined, icon: Volume2 }, ...PINYIN_GAMES.map(g => ({ label: g.label, mode: g.mode, icon: g.icon }))];
-const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g.icon }));
+// Games sub-items: the two Hanzi games, then the three Pinyin games (Pinyin
+// quiz modes of /pinyin, URL search `mode`), each under its family heading.
+// Pinyin itself has no sub-items: it opens the Sound chart. Both game lists come
+// from game-catalog so the Start page shows the same games.
+const gameGroups = [{ label: 'Hanzi', icon: HanziIcon as GameIcon, games: HANZI_GAMES }, { label: 'Pinyin', icon: AudioLines as GameIcon, games: PINYIN_GAMES }];
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
 // Phone bottom tab bar: Start first, then the four main destinations (Vocabulary
 // shortened to "Vocab" so it never clips); "More" (a button, not a link)
 // opens the full menu drawer for Settings and every sub-item.
-const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon | typeof LayoutGrid }[] = [
+const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: GameIcon }[] = [
   { key: 'start', to: '/', label: 'Start', icon: LayoutGrid },
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
   { key: 'vocabulary', to: '/vocabulary', label: 'Vocab', icon: BookOpen },
-  { key: 'games', to: '/flashcards', label: 'Games', icon: HanziIcon },
+  { key: 'games', to: '/flashcards', label: 'Games', icon: Gamepad2 },
   { key: 'pinyin', to: '/pinyin', label: 'Pinyin', icon: AudioLines },
 ];
 export function TutorShell({ children }: { children: React.ReactNode }) {
@@ -50,7 +57,9 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const activeMode = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('mode') });
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
-  const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : [...navigation, settingsItem].find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
+  // The breadcrumb (and phone title) names the exact page; inside a game, the game.
+  const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path && (g.mode === undefined || g.mode === activeMode));
+  const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
   // beside the page, full or as the slim icon strip (one remembered choice, no
@@ -91,7 +100,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     window.addEventListener('keydown', closeOnEscape);
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [mobileOpen]);
-  const activePhoneTab = phoneTabFor(path);
+  const activePhoneTab = phoneTabFor(path, activeMode);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
   const [expandedSearch, setExpandedSearch] = useState(false);
@@ -125,15 +134,17 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         <Button ref={drawerCloseRef} variant="ghost" size="icon" className="drawer-close close-x" aria-label="Close menu" title="Close menu" onClick={() => setMobileOpen(false)}><X/></Button></div>
       {/* Full menu and drawer: sub-items always visible, indented. Icon strip: main
           icons only, sub-items in a labelled flyout (nav-group.tsx). */}
-      <nav aria-label="Main navigation">{navigation.map(n => {
+      <nav aria-label="Main navigation">{navSections.map(section => <div key={section.label ?? 'start'} className="nav-section" role="group" aria-label={section.label ?? undefined}>
+        {section.label && <span className="nav-section-label">{section.label}</span>}
+        {section.items.map(n => {
         const subs: NavSub[] | null = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
-          : n.to === '/pinyin' ? pinyinSections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.mode ? { mode: s.mode } : {}, active: (activeMode ?? undefined) === s.mode, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-tab' }))
-          : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-game' }))
+          : n.to === '/flashcards' ? gameGroups.flatMap(group => group.games.map(g => ({ key: g.key, label: g.label, to: g.to, search: g.mode ? { mode: g.mode } : undefined, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game', group: { label: group.label, icon: group.icon } })))
           : null;
-        const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
+        // Games owns every game page (Pinyin quiz modes included); Pinyin owns only the chart.
+        const selected = n.to === '/flashcards' ? Boolean(currentGame) : n.to === '/pinyin' ? path === '/pinyin' && !currentGame : path === n.to;
         return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.to} onOpenChange={open => setFlyout(current => open ? n.to : current === n.to ? null : current)}/>;
-      })}</nav>
+        })}</div>)}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
         ? <Button size="icon" variant="ghost" className="sidebar-collapse" title="Shrink menu to icons" aria-label="Shrink menu to icons" onClick={() => saveExpanded(false)}><PanelLeftClose/></Button>
@@ -145,7 +156,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     {/* Phone bottom tab bar (hidden by CSS above 850px). */}
     <nav className="phone-tabs" aria-label="Quick navigation">{phoneTabs.map(t => <Link key={t.key} to={t.to} className={`phone-tab${activePhoneTab === t.key ? ' is-active' : ''}`} aria-current={activePhoneTab === t.key ? 'page' : undefined} onClick={() => setMobileOpen(false)}><t.icon/><span>{t.label}</span></Link>)}
       <button ref={moreRef} type="button" className={`phone-tab${activePhoneTab === 'more' || mobileOpen ? ' is-active' : ''}`} aria-expanded={mobileOpen} aria-label="More: open the full menu" title="Open the full menu" onClick={() => setMobileOpen(open => !open)}><MoreHorizontal/><span>More</span></button></nav>
-    <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play Flashcards and the Drawing game under Hanzi games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
+    <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play any of the five games under Games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
     <Dialog open={searching} onOpenChange={setSearching}><DialogContent className={`global-search${expandedSearch ? ' global-search-expanded' : ''}`}><DialogTitle className="font-display text-xl">Search everything</DialogTitle><DialogDescription>Words, characters, radicals, components, and phrases.</DialogDescription><div className="search-field"><Search/><input autoFocus aria-label="Search everything" placeholder="Search Chinese, pinyin, or meaning…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && hits[0]) { e.preventDefault(); openHit(hits[0]); } }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
       <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>
       {query.trim() === '' ? <p className="global-search-hint">Start typing — results appear as you go. Press Enter to open the first one.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results">{hits.map(hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>)}</div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
