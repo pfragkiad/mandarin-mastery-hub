@@ -193,12 +193,16 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
 type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined };
 // `stamp`: the 繁 / 部 corner-stamp class of the character's exact identity (omitted in Recall).
-function StrokeProgressTile({ strokes, groups, next, showStroke, word }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined }) {
+// `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
+// tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
+// wins because that frame shows a different character.
+function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
   const done = next >= total;
   const stroke = strokes[next];
+  const tileInk = word?.ink ?? ink ?? '';
   const fraction = Math.min(1, next / total);
   const status = showStroke
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
