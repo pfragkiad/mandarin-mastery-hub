@@ -2511,6 +2511,8 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
 /* Practice word-strip tiles reuse the 繁 / 部 corner stamps (.tile-stamp-*) of every other glyph tile. */
 .word-strip-done { position: absolute; top: 7px; right: 8px; width: 15px; height: 15px; color: var(--primary); }
+/* A stamped tile moves its tick clear of the corner stamp. */
+:is(.tile-stamp-radical, .tile-stamp-traditional) > .word-strip-done { right: 24px; }
 /* Row under the mode tabs: a word's character strip, then the progress tile (StrokeProgressTile),
    which shares the word tiles' frame and bar but is a read-out, not a button. */
 .practice-progress-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px 18px; margin: 14px 0 2px; }
