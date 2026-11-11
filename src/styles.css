@@ -1595,7 +1595,7 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .phone-tab > span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .phone-tab:hover, .phone-tab.is-active { color: var(--primary); }
   .phone-tab.is-active { font-weight: 650; }
-  .phone-tab:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
+  .phone-tab:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
   /* Keep the last content row clear of the tab bar. */
   .main-shell { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
 }
