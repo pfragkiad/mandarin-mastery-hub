@@ -2341,3 +2341,5 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 /* Settings Theme row: sun/moon icons inside the shared segmented buttons. */
 .settings-row .writer-speed-options button { gap: 6px; }
 .settings-row .writer-speed-options button > svg { width: 15px; height: 15px; }
+/* Narrow phones: segmented Settings choices sit under their explanation so the text keeps its width. */
+@media (max-width: 580px) { .settings-row:has(> .writer-speed-options, > .font-toggle) { grid-template-columns: minmax(0,1fr); gap: 12px; justify-items: start; } }
