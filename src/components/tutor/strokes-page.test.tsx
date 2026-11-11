@@ -6,7 +6,10 @@ import type { RadicalStrokeFile } from '@/lib/radical-strokes';
 import * as catalogStore from '@/lib/catalog-store';
 
 vi.mock('@tanstack/react-router', () => ({
-  Link: ({ children }: { children?: React.ReactNode }) => <a>{children}</a>,
+  // The mock keeps the classes and the selection marker the real Link gets, so tests can see
+  // which form tile is the current one (the sliding frame is chosen from that tile).
+  Link: ({ children, className, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; 'aria-current'?: string }) =>
+    <a className={className} aria-current={ariaCurrent}>{children}</a>,
   useNavigate: () => () => {},
   useRouter: () => ({ history: { back: () => {} } }),
 }));
@@ -164,7 +167,6 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
     const frame = group.querySelector('.form-switch-thumb');
-    console.log('TRAY HTML:', group.outerHTML.slice(0, 1200));
     expect(frame).not.toBeNull();
     // Decorative only: the tile itself already carries the selection for screen readers.
     expect(frame?.getAttribute('aria-hidden')).toBe('true');
