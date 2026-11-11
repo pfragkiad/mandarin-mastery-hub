@@ -396,8 +396,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
   // Strokes pill: remembered in Watch/Trace; Recall starts hidden each time it is entered so
   // nothing reveals the answer by default. It drives both the Strokes drawer and the progress
-  // tile's picture.
-  const [tilesPref, setTilesPref] = useRememberedFlag('tutor-stroke-tiles-visible', true);
+  // tile's picture. Off on first visit like the other two pills — the writer alone is the
+  // default view, and the learner opts into tiles, arrows and spoken names.
+  const [tilesPref, setTilesPref] = useRememberedFlag('tutor-stroke-tiles-visible', false);
   const [recallTiles, setRecallTiles] = useState(false);
   useEffect(() => { setRecallTiles(false); }, [mode]);
   const arrows = arrowsPref && mode !== 'recall';
