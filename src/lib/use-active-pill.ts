@@ -13,11 +13,17 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
   useEffect(() => {
     const list = ref.current;
     const active = list?.querySelector<HTMLElement>("[role='tab'][data-state='active']");
-    if (!list || !active || list.scrollWidth <= list.clientWidth) return;
-    const left = active.offsetLeft - list.offsetLeft;
-    const right = left + active.offsetWidth;
-    if (left < list.scrollLeft) list.scrollLeft = Math.max(0, left - 16);
-    else if (right > list.scrollLeft + list.clientWidth) list.scrollLeft = right - list.clientWidth + 16;
+    if (!list || !active) return;
+    // Measured after layout (next frame), from on-screen boxes, so pill fonts and
+    // the row's own padding are already applied.
+    const frame = requestAnimationFrame(() => {
+      if (list.scrollWidth <= list.clientWidth) return;
+      const row = list.getBoundingClientRect();
+      const pill = active.getBoundingClientRect();
+      if (pill.left < row.left) list.scrollLeft += pill.left - row.left - 16;
+      else if (pill.right > row.right) list.scrollLeft += pill.right - row.right + 16;
+    });
+    return () => cancelAnimationFrame(frame);
   }, [value]);
   return ref;
 }
