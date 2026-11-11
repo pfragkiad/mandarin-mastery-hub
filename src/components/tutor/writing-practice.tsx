@@ -658,7 +658,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     tracePos.current = startStroke;
     const run = ++animationRun.current;
     instance.cancelQuiz();
-    setPlaying(false); setPaused(false); setActiveStroke(startStroke > 0 && startStroke < strokes.length ? startStroke : null);
+    setPlaying(false); setPaused(false); setActiveStroke(startStroke < strokes.length ? startStroke : null); // includes stroke 1, so a fresh round shows only its arrow
     setStepIndex(0); setStepMode(false); needsRearm.current = false; pauseAfterStroke.current = false; setPausing(false);
     setScores(strokes.map((_, i) => restored?.scores[i] ?? null));
     setTracePrefix(mode === 'trace' ? restored ? restored.prefix : startStroke : 0);
