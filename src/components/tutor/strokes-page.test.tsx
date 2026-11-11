@@ -8,7 +8,7 @@ import * as catalogStore from '@/lib/catalog-store';
 vi.mock('@tanstack/react-router', () => ({
   // The mock keeps the classes and the selection marker the real Link gets, so tests can see
   // which form tile is the current one (the sliding frame is chosen from that tile).
-  Link: ({ children, className, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; 'aria-current'?: string }) =>
+  Link: ({ children, className, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; 'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean | 'true' | 'false' }) =>
     <a className={className} aria-current={ariaCurrent}>{children}</a>,
   useNavigate: () => () => {},
   useRouter: () => ({ history: { back: () => {} } }),
