@@ -13,9 +13,15 @@ function TextGlyphIcon({ glyph, fontSize, baseline, lang, ...props }: GlyphSvgPr
   return <svg viewBox="0 0 24 24" width={24} height={24} fill="currentColor" aria-hidden="true" {...props}><text x="12" y={baseline} textAnchor="middle" fontSize={fontSize} fontWeight={500} lang={lang}>{glyph}</text></svg>;
 }
 
-/** Hanzi games: the character 字 — the strip's clearest icon. */
+/**
+ * Hanzi games: the character 字 — the strip's clearest icon.
+ * Measured in the live menu: at fontSize 20 the drawn ink is 17.8 units tall in the
+ * 24-unit box, while the lucide icons beside it draw ~19.2, so 字 read smaller than
+ * the waveform/library icons. 22 with the baseline lifted to 19.2 puts its ink at the
+ * same height and keeps it vertically centred in the box.
+ */
 export function HanziIcon(props: GlyphSvgProps) {
-  return <TextGlyphIcon glyph="字" fontSize={20} baseline={19.5} lang="zh-CN" {...props}/>;
+  return <TextGlyphIcon glyph="字" fontSize={22} baseline={19.2} lang="zh-CN" {...props}/>;
 }
 
 /**
