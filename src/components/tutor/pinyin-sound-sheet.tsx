@@ -25,7 +25,11 @@ export function PinyinSoundSheet({ open, title, back, position, total, onBack, o
   return <Dialog modal open={open} onOpenChange={value => { if (!value) onClose(); }}>
     <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet pinyin-sound-sheet"
       onCloseAutoFocus={event => { event.preventDefault(); onClosed(); }}
-      onInteractOutside={event => event.preventDefault()}
+      // A click on the dimmed backdrop closes the window (via onOpenChange);
+      // clicks inside portaled popovers or on a toast must not.
+      onInteractOutside={event => {
+        if (event.target instanceof Element && event.target.closest('[data-radix-popper-content-wrapper], [data-sonner-toaster]')) event.preventDefault();
+      }}
       onKeyDown={event => {
         if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
         if (event.target instanceof HTMLElement && event.target.closest('input, textarea, select, [contenteditable="true"], [role="slider"], [role="switch"]')) return;

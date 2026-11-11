@@ -45,7 +45,12 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
     <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet"
       onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
       onCloseAutoFocus={event => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
-      onInteractOutside={event => event.preventDefault()}
+      // A click on the dimmed backdrop closes the window (via onOpenChange).
+      // Clicks inside portaled popovers/dropdowns that belong to this window
+      // (hint cards, source notes, reveal menus) or on a toast must not.
+      onInteractOutside={event => {
+        if (event.target instanceof Element && event.target.closest('[data-radix-popper-content-wrapper], [data-sonner-toaster]')) event.preventDefault();
+      }}
       onKeyDown={event => {
         // Reuse button callbacks, but leave editing, widget navigation and
         // modified/browser shortcuts to the control that owns those keystrokes.
