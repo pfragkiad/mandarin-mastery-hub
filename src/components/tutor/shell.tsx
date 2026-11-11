@@ -24,17 +24,15 @@ import { LibraryViewToggle } from './library-view-toggle';
 // item is named "Sound chart" (not "Pinyin") so only one menu item is called Pinyin.
 // Full menu and drawer show each block's
 // small uppercase heading; the icon strip draws it as a thin line.
-// `key` is unique per item because the Sound chart and the Pinyin games share the
-// /pinyin route (the Pinyin games item opens its first quiz mode through URL search `mode`).
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
-type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to']; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
   { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi', icon: HanziIcon, games: HANZI_GAMES },
-    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin', icon: PinyinGamesIcon, games: PINYIN_GAMES },
+    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin', icon: PinyinGamesIcon, games: PINYIN_GAMES },
   ] },
 ];
 const navigation = navSections.flatMap(section => section.items);
@@ -64,11 +62,10 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
-  const activeMode = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('mode') });
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
-  const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path && (g.mode === undefined || g.mode === activeMode));
+  const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);
   const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
@@ -110,7 +107,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     window.addEventListener('keydown', closeOnEscape);
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [mobileOpen]);
-  const activePhoneTab = phoneTabFor(path, activeMode);
+  const activePhoneTab = phoneTabFor(path);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
   const [expandedSearch, setExpandedSearch] = useState(false);
@@ -149,12 +146,11 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         {section.items.map(n => {
         const subs: NavSub[] | null = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
-          : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, search: g.mode ? { mode: g.mode } : undefined, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
+          : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
           : null;
-        // A game family owns its own game pages (Pinyin quiz modes light Pinyin
-        // games); Pinyin owns only the Sound chart.
-        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : n.to === '/pinyin' ? path === '/pinyin' && !currentGame : path === n.to;
-        return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} search={n.search} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
+        // A game family owns its own game pages; the Sound chart owns /pinyin.
+        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : path === n.to;
+        return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
         })}</div>)}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup id="settings" name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).

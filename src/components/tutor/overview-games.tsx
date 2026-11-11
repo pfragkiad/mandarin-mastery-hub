@@ -31,7 +31,7 @@ export function OverviewGames() {
 function GameGroup({ title, note, icon, games }: { title: string; note: string; icon: React.ReactNode; games: GameEntry[] }) {
   return <section className="overview-game-group" aria-label={title}>
     <h2><span className="overview-game-group-icon" aria-hidden="true">{icon}</span><span className="overview-game-group-title">{title}</span><span className="overview-game-group-note">{note}</span></h2>
-    <div className="overview-game-list">{games.map(game => <Link key={game.key} to={game.to} search={game.mode ? { mode: game.mode } : {}} className="overview-game-card" aria-label={`Play ${game.label.toLowerCase()}`}>
+    <div className="overview-game-list">{games.map(game => <Link key={game.key} to={game.to} className="overview-game-card" aria-label={`Play ${game.label.toLowerCase()}`}>
       <span className="overview-game-preview" aria-hidden="true"><GamePreview game={game.key}/></span>
       <span className="overview-game-icon" aria-hidden="true"><game.icon/></span>
       <span className="overview-game-text">
