@@ -1218,15 +1218,17 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .reveal-hide-hanzi .is-revealed .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .is-revealed .tile-hanzi-row, .reveal-hide-hanzi .is-revealed .usage-strokes,
 :is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning) .is-revealed .word-character .pinyin { visibility: visible; }
 .word-card.is-revealed:not(.is-selected) { outline: 2px solid var(--reveal-ring); outline-offset: -2px; }
-/* Card identity ink — one rule set for every inked card. A card opts in with `card-ink` plus
-   one identity class (characters-page.tsx `cardInk`, word-card.tsx): purple traditional, gold
-   sourced radicals, green Characters, foreground Components. The hanzi always wears the ink;
-   hover/selected/reveal/focus frames take it; the translation stays foreground until hovered.
+/* Card identity ink — one rule set for every inked card. The four identity classes
+   (characters-page.tsx `cardInk`, word-card.tsx, writing-practice.tsx) set the ink token on
+   whatever element carries them: purple traditional, gold sourced radicals, green Characters,
+   foreground Components. On a card, `card-ink` plus that class makes the hanzi wear the ink,
+   hover/selected/reveal/focus frames take it, and the translation stays foreground until
+   hovered; outside a card (the Practice reading glyph) the element just reads the token.
    Traditional form tiles inside a card keep their own purple. */
-.word-card.is-traditional { --card-ink: var(--traditional); }
-.word-card.card-ink-radical { --card-ink: var(--hsk-id); }
-.word-card.card-ink-character { --card-ink: var(--primary); }
-.word-card.card-ink-component { --card-ink: var(--foreground); }
+.is-traditional { --card-ink: var(--traditional); }
+.card-ink-radical { --card-ink: var(--hsk-id); }
+.card-ink-character { --card-ink: var(--primary); }
+.card-ink-component { --card-ink: var(--foreground); }
 .word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
 .word-card.card-ink:hover { border-color: var(--card-ink); }
 .word-card.card-ink.is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
@@ -1453,9 +1455,11 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 .catalog-detail-head > .radical-family-section { width: 100%; margin: 4px 0 8px; border-top: 0; padding-top: 0; }
 .catalog-detail-head > .radical-family-section .radical-form-list { margin-top: 0; }
 
-/* Practice single hanzi mirrors the detail card's glyph between pinyin and translation. */
-.practice-intro .practice-hanzi { display: block; width: 100%; font-size: 64px; line-height: 1.1; font-weight: 400; margin: 2px 0 0; }
-.practice-intro .practice-hanzi.traditional-character { color: var(--traditional); }
+/* Practice single hanzi mirrors the detail card's glyph between pinyin and translation, and
+   wears the same identity ink as the library cards: the `--card-ink` token set by the identity
+   class writing-practice.tsx puts on it (purple traditional, gold radical, foreground
+   component, green character), falling back to the plain text colour when a record has none. */
+.practice-intro .practice-hanzi { display: block; width: 100%; font-size: 64px; line-height: 1.1; font-weight: 400; margin: 2px 0 0; color: var(--card-ink, inherit); }
 /* Marks a stroke name guessed from geometry when no source records the order. */
 .stroke-estimated { font-size: 9px; text-transform: uppercase; letter-spacing: .04em; color: var(--paper-muted); margin-left: 3px; }
 /* Centre the speaker on the pinyin line in the Practice reading card (baseline alignment made it hang low). */
