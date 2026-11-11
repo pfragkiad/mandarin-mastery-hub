@@ -232,6 +232,22 @@ describe('character practice sections by mode', () => {
     unmount();
   });
 
+  it('shows only the first stroke\'s arrow when a Trace round starts', async () => {
+    // Arrows are a remembered preference; turn them on before the page mounts.
+    window.localStorage.setItem('tutor-stroke-arrows', '1');
+    // Let the stand-in writer report its stroke data as loaded, so the round actually starts.
+    writer.create.mockImplementationOnce((_el: unknown, _glyph: string, options: { onLoadCharDataSuccess?: () => void }) => {
+      queueMicrotask(() => options.onLoadCharDataSuccess?.());
+      return writer;
+    });
+    const { unmount } = render(<StrokesPage initialCharacter="学" mode="trace"/>);
+    await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
+    const shown = Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
+    expect(shown).toEqual(['0']);
+    window.localStorage.removeItem('tutor-stroke-arrows');
+    unmount();
+  });
+
   it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
     hydrateCatalog({ ...catalogData, radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']] }, undefined, {
       ...familyFile,
