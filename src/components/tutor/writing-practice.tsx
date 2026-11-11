@@ -251,10 +251,18 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     event.preventDefault();
     resizing.current = true;
     // While dragging, the square is quiet: Play pauses (Resume continues in place
-    // if the size ends up unchanged), speech/recordings stop, and the drawing
-    // fades via a class toggled directly on the node so no React rerender runs.
+    // if the size ends up unchanged) and speech/recordings stop. The drawing follows
+    // the drag live: Hanzi Writer's SVG has no viewBox (its paths are in pixels of the
+    // size it was built at), so we give it one matching that build size; the SVG is
+    // already CSS-stretched to the square, so the character, drawn strokes and the
+    // 300-unit overlays all scale together each frame without a writer rebuild.
     if (playing && !stepMode) pause();
     stopAllAudio();
+    const drawing = target.current?.querySelector('svg');
+    if (drawing && !drawing.hasAttribute('viewBox')) {
+      const w = Number(drawing.getAttribute('width')) || boardSize, h = Number(drawing.getAttribute('height')) || boardSize;
+      drawing.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    }
     node.classList.add('is-resizing');
     const startX = event.clientX, startY = event.clientY, start = node.clientWidth;
     const max = node.parentElement?.clientWidth ?? start;

@@ -2292,11 +2292,6 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
 .stroke-guide-actions > button { padding-left: 10px; padding-right: 10px; gap: 8px; justify-content: flex-start; height: 32px; }
 .stroke-guide-actions > button svg { width: 16px; height: 16px; }
 
-/* While the writing square is being resized, its drawing (character, overlays, arrows,
-   celebration) fades so only the grid and the handle read clearly; the grid lines are the
-   square's own background and stay at full strength. */
-.writer-board .writing-grid > :not(.writer-resize-handle) { transition: opacity .15s; }
-.writer-board.is-resizing .writing-grid > :not(.writer-resize-handle) { opacity: .2; }
 /* Component-name tile (radical variant identity): one border around the whole word, same height as glyph tiles. */
 .decomposition-glyph.variant-etymology-word-tile, html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph.variant-etymology-word-tile { width: auto; padding: 0 10px; }
 .variant-etymology .glyph-usage-section > .glyph-usage-parents + p.glyph-usage-meaning { margin-top: 8px; }
