@@ -2510,6 +2510,10 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
 .stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
 .stroke-progress-tile .stroke-index { min-height: 1.2em; }
 .stroke-progress-picture { display: flex; align-items: center; justify-content: center; width: 68px; height: 68px; }
+.stroke-progress-tile.is-blank .stroke-progress-picture { border: 1px dashed var(--border); border-radius: 8px; }
+/* Bars line up along the bottom of every tile in the row, whatever each tile holds. */
+.practice-progress-row :is(.word-strip-tile, .stroke-progress-tile) .word-strip-progress { margin-top: auto; }
+.practice-progress-row .word-strip-tile { gap: 4px; }
 html[data-display-size='comfortable'] .stroke-progress-tile { width: 144px; }
 html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; height: 76px; }
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
