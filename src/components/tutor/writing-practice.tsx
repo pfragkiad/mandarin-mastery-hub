@@ -169,17 +169,22 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
                   aria-pressed={mode === 'trace' ? componentIndices.includes(i) : undefined}
                   onClick={() => onPlay(i)}
                 >
-                  <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
-                    {/* The whole character's own recorded strokes sit faded behind the tile's stroke,
-                        so the stroke reads in place; nothing here is drawn from any other source. */}
-                    <g transform="scale(1, -1) translate(0, -900)">
-                      <g className="stroke-shape-context">{strokes.map((other, j) => j === i ? null : <path key={j} d={other.path} />)}</g>
-                      <path d={stroke.path} style={{ fill: componentInk(run.group.palette) }} />
-                    </g>
-                  </svg>
-                   <span className="stroke-index">{i + 1}</span>
-                  {stroke.estimated && <span className="stroke-estimated" title="No recorded stroke order for this character — name estimated from the stroke's shape">est.</span>}{stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
-                  {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
+                  {/* The number sits above the framed picture and the name below it, so the
+                      tile itself holds only the stroke and stays a square. */}
+                  <span className="stroke-index">{i + 1}</span>
+                  <span className="stroke-frame">
+                    <svg viewBox="0 0 1024 1024" className="stroke-shape" aria-hidden="true">
+                      {/* The whole character's own recorded strokes sit faded behind the tile's stroke,
+                          so the stroke reads in place; nothing here is drawn from any other source. */}
+                      <g transform="scale(1, -1) translate(0, -900)">
+                        <g className="stroke-shape-context">{strokes.map((other, j) => j === i ? null : <path key={j} d={other.path} />)}</g>
+                        <path d={stroke.path} style={{ fill: componentInk(run.group.palette) }} />
+                      </g>
+                    </svg>
+                    {stroke.estimated && <span className="stroke-estimated" title="No recorded stroke order for this character — name estimated from the stroke's shape">est.</span>}
+                    {stroke.ambiguous && <span className="stroke-ambiguous" title="The source records two names for this stroke"><TriangleAlert size={10} aria-hidden="true"/></span>}
+                    {scores[i] != null && <span className={`stroke-score${(scores[i] ?? 100) < 100 ? ' imperfect' : ''}`}>{scores[i]}%</span>}
+                  </span>
                   <span className="stroke-pinyin">{splitPinyinLines(stroke.pinyin).map((line, j) => <span key={j}>{line}</span>)}</span>
                 </Button>
               </li>
