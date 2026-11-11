@@ -43,7 +43,8 @@ function GameGroup({ title, note, icon, games }: { title: string; note: string; 
  * Decorative picture at the top of each wide-screen tile (hidden on phones and from
  * screen readers). These are illustrations of how each game looks, not lesson data:
  * the drawing-game strokes are a schematic sketch, and no reading, tone or audio is
- * attached to anything here. Input: the game key from game-catalog.
+ * attached to anything here. The syllables shown (bān, pān, hǎo) are real Sound chart
+ * syllables with recordings, typed as one syllable the way the quiz asks. Input: the game key.
  */
 function GamePreview({ game }: { game: string }) {
   switch (game) {
@@ -64,7 +65,7 @@ function GamePreview({ game }: { game: string }) {
     case 'alikes':
       return <span className="game-preview-alikes"><span><Volume2/>bān</span><i>≈</i><span><Volume2/>pān</span></span>;
     case 'type':
-      return <span className="game-preview-type"><span className="game-preview-type-speaker"><Volume2/></span><span>nǐ hǎ</span><span className="game-preview-caret"/></span>;
+      return <span className="game-preview-type"><span className="game-preview-type-speaker"><Volume2/></span><span>hǎo</span><span className="game-preview-caret"/></span>;
     default:
       return null;
   }
