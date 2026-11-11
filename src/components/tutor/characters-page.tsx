@@ -49,6 +49,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
+import { useActivePill } from '@/lib/use-active-pill';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
 const kindNotes: Record<LibraryKind, string> = { Characters: 'Traditional forms marked from Unihan variant data', Radicals: 'Kangxi families · Unihan 17.0.0 · variants: cjklib C-locale', Components: 'Make Me a Hanzi components', Strokes: 'Unicode 18.0 stroke inventory' };
@@ -502,6 +503,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     if (previous === null || previous === page || selectedId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, selectedId]);
+  // Phones: the kind tabs are a scrolling pill row; keep the current kind in view.
+  const kindPills = useActivePill(kind);
   const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : cardSelectedId)) : -1;

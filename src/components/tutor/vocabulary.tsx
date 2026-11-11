@@ -20,6 +20,7 @@ import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo, HintBody } from './source-info';
+import { useActivePill } from '@/lib/use-active-pill';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
 // provenance note stays in the (i) beside the title.
 const vocabularyMotto = 'WORDS BUILT FROM THE CHARACTERS YOU KNOW';
@@ -60,6 +61,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const categoryItems = useMemo(() => items.filter(w => vocabularyKind(w) === kind), [items, kind]);
   const label = kind === 'phrase' ? 'phrases' : 'words';
+  const kindPills = useActivePill(kind);
   // Facet base: this tab's records under the applied search and All/Saved
   // choice. The three dropdowns then narrow each other from the form's current
   // (draft) picks, so e.g. choosing "Unclassified" leaves only its types.
