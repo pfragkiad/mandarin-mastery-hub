@@ -542,10 +542,10 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
         completionHandled = true;
         // Celebrate a whole-character attempt only; a clicked completed prefix
         // followed by a perfect suffix is not a fully drawn hanzi.
+        if (wholeAttempt && totalMistakes === 0 && (startStroke === 0 || restored?.scores.slice(0, startStroke).every(score => score === 100))) celebrate(100);
         needsRearm.current = true;
         setScores(prev => {
           const total = characterScore(prev);
-          if (wholeAttempt && totalMistakes === 0 && (startStroke === 0 || total === 100)) celebrate(100);
           setMessage(`${wholeAttempt ? 'Character complete' : 'Remaining strokes complete'} — ${total ?? 100}% accuracy${totalMistakes ? ` (${totalMistakes} mistake${totalMistakes === 1 ? '' : 's'})` : ''}.${total === 100 ? ' Perfect!' : ''} Draw again to start over.`);
           return prev;
         });
