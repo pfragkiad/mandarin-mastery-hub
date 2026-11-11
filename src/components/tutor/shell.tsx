@@ -24,17 +24,15 @@ import { LibraryViewToggle } from './library-view-toggle';
 // item is named "Sound chart" (not "Pinyin") so only one menu item is called Pinyin.
 // Full menu and drawer show each block's
 // small uppercase heading; the icon strip draws it as a thin line.
-// `key` is unique per item because the Sound chart and the Pinyin games share the
-// /pinyin route (the Pinyin games item opens its first quiz mode through URL search `mode`).
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
-type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to']; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
   { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi', icon: HanziIcon, games: HANZI_GAMES },
-    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin', icon: PinyinGamesIcon, games: PINYIN_GAMES },
+    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin', icon: PinyinGamesIcon, games: PINYIN_GAMES },
   ] },
 ];
 const navigation = navSections.flatMap(section => section.items);
@@ -64,11 +62,10 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
-  const activeMode = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('mode') });
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
-  const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path && (g.mode === undefined || g.mode === activeMode));
+  const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);
   const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
