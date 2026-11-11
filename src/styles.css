@@ -1600,7 +1600,7 @@ html[data-display-size='comfortable'] .practice-page-content :is(.decomposition-
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice > span { font-size: 14px; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice small { font-size: 12px; }
 html[data-display-size='comfortable'] .practice-page-content .radical-form-choice { height: auto; min-height: 112px; }
-html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 124px; height: auto; min-height: 140px; }html[data-display-size='comfortable'] .practice-page-content .stroke-chip .stroke-shape { width: 72px; height: 72px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-chip { width: 114px; height: auto; min-height: 136px; }html[data-display-size='comfortable'] .practice-page-content .stroke-chip .stroke-shape { width: 68px; height: 68px; }
 html[data-display-size='comfortable'] .practice-page-content .stroke-index { font-size: 11px; }
 html[data-display-size='comfortable'] .practice-page-content .decomposition-part { flex-wrap: wrap; }
 html[data-display-size='comfortable'] .practice-page-content .word-context { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); align-items: center; gap: 16px; }
