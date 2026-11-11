@@ -17,12 +17,14 @@ import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 
 export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
-const CATEGORY_META: Record<DiscoveryCategory, { glyph: string; label: string; note: string }> = {
-  word: { glyph: '词', label: 'Words', note: 'HSK & everyday vocabulary' },
-  phrase: { glyph: '句', label: 'Phrases', note: 'Including unofficial practice phrases' },
-  Characters: { glyph: '字', label: 'Characters', note: 'Full imported catalogue' },
-  Components: { glyph: '口', label: 'Components', note: 'Structural building blocks' },
-  Radicals: { glyph: '氵', label: 'Radicals', note: 'Dictionary reference library' },
+// Each tile wears the same icon as its sidebar section (src/lib/section-icons.ts),
+// so the menu and the Start cards never show a section with two different icons.
+const CATEGORY_META: Record<DiscoveryCategory, { icon: GameIcon; label: string; note: string }> = {
+  word: { icon: sectionIcons.Words, label: 'Words', note: 'HSK & everyday vocabulary' },
+  phrase: { icon: sectionIcons.Phrases, label: 'Phrases', note: 'Including unofficial practice phrases' },
+  Characters: { icon: sectionIcons.Characters, label: 'Characters', note: 'Full imported catalogue' },
+  Components: { icon: sectionIcons.Components, label: 'Components', note: 'Structural building blocks' },
+  Radicals: { icon: sectionIcons.Radicals, label: 'Radicals', note: 'Dictionary reference library' },
 };
 
 // Random pick shown in each tile, remembered per browser history entry (URL + router key) and
