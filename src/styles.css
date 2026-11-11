@@ -81,7 +81,7 @@ article.word-card { touch-action: manipulation; }
 html[data-display-size='comfortable'] .workspace { --nav-row: 42px; --nav-font: 15px; --nav-icon: 20px; --nav-sub-row: 36px; --nav-sub-font: 14px; --nav-sub-icon: 18px; }
 .sidebar nav { display: flex; flex-direction: column; gap: 2px; padding: 0 12px 12px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
 .sidebar .nav-group { display: flex; flex-direction: column; min-width: 0; }
-/* Menu blocks (Start, Learn, Practice): small uppercase heading in the full menu
+/* Menu blocks (Start, Learn, Games): small uppercase heading in the full menu
    and drawer; the strip draws it as one short thin line instead. Game family
    headings (Hanzi / Pinyin) inside the Games group, in the menu and the flyout. */
 .sidebar .nav-section { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
