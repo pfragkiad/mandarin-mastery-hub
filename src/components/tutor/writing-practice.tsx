@@ -304,7 +304,7 @@ export type PracticeProgress = { character: string; mode: PracticeMode; start: n
 // re-arms the quiz where an earlier visit to this character stopped (same mode only);
 // `onProgress` reports every change so the strip can show per-character progress. `progressInk`
 // is the practised glyph's identity ink (styles.css `.card-ink-*`), worn by the standalone
-// progress tile's frame so its border matches the hanzi's colour.
+// progress tile's frame so its border matches the hanzi's colour (held back in Recall until the character is finished).
 export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress, progressInk }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined; progressInk?: string | undefined }) {
   const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
