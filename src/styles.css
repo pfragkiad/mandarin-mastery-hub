@@ -941,13 +941,15 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .daily-greeting-pinyin { font-size: 15px; }
 .daily-hero-copy > p { color: var(--muted-foreground); font-size: 14px; line-height: 1.7; max-width: 46ch; margin-bottom: 10px; }
 .daily-hero-copy .overview-library-search { margin: 0; }
-.daily-hero-card { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: radial-gradient(120% 90% at 50% 30%, color-mix(in oklab, var(--primary) 12%, var(--card)), var(--card) 70%); box-shadow: var(--shadow-soft); padding: 22px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.daily-hero-card { --daily-glyph-size: 300px; position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: radial-gradient(120% 90% at 50% 30%, color-mix(in oklab, var(--primary) 12%, var(--card)), var(--card) 70%); box-shadow: var(--shadow-soft); padding: 22px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .daily-hero-label { align-self: flex-start; position: relative; }
 .daily-hero-ghost { position: absolute; right: -8%; top: -10%; font-size: 340px; line-height: 1; color: var(--primary); opacity: .05; pointer-events: none; user-select: none; }
-.daily-glyph { position: relative; width: 300px; height: 300px; max-width: 100%; display: grid; place-items: center; }
+/* One size variable drives the stroke animation (created at this size in overview-hero.tsx,
+   because its SVG has no viewBox) and the finished hanzi, so both always agree. */
+.daily-glyph { position: relative; width: var(--daily-glyph-size); height: var(--daily-glyph-size); max-width: 100%; display: grid; place-items: center; }
 .daily-glyph.is-loading { opacity: .4; }
 .daily-glyph-writer, .daily-glyph-font { grid-area: 1 / 1; transition: opacity .7s ease; }
-.daily-glyph-font { font-size: 240px; line-height: 1; font-weight: 400; color: var(--primary); opacity: 0; }
+.daily-glyph-font { font-size: calc(var(--daily-glyph-size) * .8); line-height: 1; font-weight: 400; color: var(--primary); opacity: 0; }
 .daily-glyph.is-done .daily-glyph-font { opacity: 1; }
 .daily-glyph.is-done .daily-glyph-writer { opacity: 0; }
 .daily-hero-pinyin { position: relative; display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: -12px; }
@@ -966,11 +968,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .saved-chip:hover, .saved-chip:focus-visible { color: var(--primary); transform: translateY(-2px); }
 @media (max-width:1100px) {
   .daily-hero { grid-template-columns: minmax(0,1fr); min-height: 0; gap: 24px; }
+  /* Tablet: the card sits below the greeting, so a smaller character keeps the whole
+     card — reading, character, meaning and actions — on one screen. */
+  .daily-hero-card { --daily-glyph-size: 220px; }
 }
 @media (max-width:580px) {
-  .daily-glyph { width: 220px; height: 220px; }
-  .daily-glyph-font { font-size: 176px; }
-  .daily-glyph-writer svg { width: 220px; height: 220px; }
   .daily-hero-ghost { font-size: 240px; }
 }
 .search-field .search-toggle { position: absolute; top: 50%; transform: translateY(-50%); right: 7px; height: 27px; padding: 0 10px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 5px; background: transparent; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
