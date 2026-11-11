@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { practiceHint } from '@/lib/tile-hints';
-import { MoveUpRight, Pause, Play, Printer, RotateCcw, Volume2 } from 'lucide-react';
+import { MoveUpRight, Pause, Play, RotateCcw, Volume2 } from 'lucide-react';
+import { PracticeHeader } from './practice-header';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
@@ -134,7 +135,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   }, [practiceMode, ready, glyph]);
 
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
-  return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><div className="practice-heading-row"><div className="practice-heading-title"><h1>Practice.</h1><h2 className={practiceMode === "recall" ? "sr-only" : undefined}>Get to know <span lang="zh-CN">{glyph}</span></h2></div><Button variant="outline" size="sm" className="practice-print-button" disabled={!outline} onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div></div><div className="practice-layout">
+  const reading = <>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button></>;
+  return <div className="page-enter practice-page-content"><PracticeHeader glyph={glyph} hideGlyph={practiceMode === 'recall'} reading={reading} meaning={entry.meaning || <span className="meaning-missing">No English meaning recorded yet</span>} pills={<span className="practice-pills"><span className="practice-kind">Stroke</span></span>} onPrint={() => setSheet(true)} printDisabled={!outline} after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/><div className="practice-layout">
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
@@ -148,8 +150,6 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
     </section><section className="practice-info practice-intro">
       
-      <p className="practice-meaning"><span className="practice-text">{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button>{entry.meaning ? <span className="practice-translation">{entry.meaning}</span> : <span className="meaning-missing">No English meaning recorded yet</span>}</span><span className="practice-kind">Stroke</span></p>
-      {audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}
       <div className={`practice-facts${practiceMode === 'recall' ? ' practice-facts-hidden' : ''}`}><span><strong>1</strong>stroke</span><span><strong lang="zh-CN">{strokeName ?? '—'}</strong>name</span><span>{example ? <Link to="/strokes" search={{ character: example.character }} title={practiceHint(example.character)}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}{example ? `example · stroke ${example.strokeIndex + 1}` : 'example'}</span></div>
       <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
     </section>
