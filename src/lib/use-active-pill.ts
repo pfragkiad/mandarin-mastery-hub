@@ -14,8 +14,9 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
     const list = ref.current;
     const active = list?.querySelector<HTMLElement>("[role='tab'][data-state='active']");
     if (!list || !active) return;
-    // Measured from on-screen boxes after layout (next frame), and again once web
-    // fonts finish loading, because the font swap widens the pills.
+    // Measured from on-screen boxes, and again whenever the current pill changes
+    // size (the saved font/display size applies after hydration and widens the
+    // pills); a learner's own sideways scroll never resizes it, so it is left alone.
     let live = true;
     const reveal = () => {
       if (!live || list.scrollWidth <= list.clientWidth) return;
@@ -24,9 +25,10 @@ export function useActivePill<T extends HTMLElement = HTMLDivElement>(value: str
       if (pill.left < row.left) list.scrollLeft += pill.left - row.left - 16;
       else if (pill.right > row.right) list.scrollLeft += pill.right - row.right + 16;
     };
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(reveal);
+    observer?.observe(active);
     const frame = requestAnimationFrame(reveal);
-    void document.fonts?.ready.then(reveal);
-    return () => { live = false; cancelAnimationFrame(frame); };
+    return () => { live = false; cancelAnimationFrame(frame); observer?.disconnect(); };
   }, [value]);
   return ref;
 }
