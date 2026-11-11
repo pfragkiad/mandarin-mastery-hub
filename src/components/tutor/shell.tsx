@@ -16,7 +16,10 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
-const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Hanzi games', icon: HanziIcon }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }, { to: '/settings' as const, name: 'Settings', icon: Settings }];
+const navigation = [{ to: '/' as const, name: 'Start', icon: LayoutGrid }, { to: '/characters' as const, name: 'Glyphs', icon: Library }, { to: '/vocabulary' as const, name: 'Vocabulary', icon: BookOpen }, { to: '/flashcards' as const, name: 'Hanzi games', icon: HanziIcon }, { to: '/pinyin' as const, name: 'Pinyin', icon: AudioLines }];
+// Settings lives in the menu's bottom row (beside the shrink/expand button, under
+// the one divider), outside the scrolling list, so it is always reachable.
+const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
 // Os dois jogos ficam como sub-itens indentados de Game; cada um abre a sua rota.
 // Pinyin guide modes as sub-items; the chart is the plain route (no `mode`).
 // Pinyin sub-items: the Sound chart plus the three Pinyin games; Hanzi games sub-items.
@@ -45,7 +48,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const activeMode = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('mode') });
   const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
-  const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : navigation.find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
+  const current = (path === '/flashcards' ? 'Flashcards' : path === '/drawing' ? 'Drawing game' : [...navigation, settingsItem].find(n => n.to === path)?.name) ?? (path === '/strokes' ? 'Practice' : 'Start');
   const navigate = useNavigate();
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
   // beside the page, full or as the slim icon strip (one remembered choice, no
@@ -129,11 +132,11 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
         return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.to} onOpenChange={open => setFlyout(current => open ? n.to : current === n.to ? null : current)}/>;
       })}</nav>
-      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row">{navSize === 'wide' && (expanded
+      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
-        ? <Button size="icon" variant="ghost" title="Shrink menu to icons" aria-label="Shrink menu to icons" onClick={() => saveExpanded(false)}><PanelLeftClose/></Button>
+        ? <Button size="icon" variant="ghost" className="sidebar-collapse" title="Shrink menu to icons" aria-label="Shrink menu to icons" onClick={() => saveExpanded(false)}><PanelLeftClose/></Button>
         // Icon strip: bring the names and sub-items back.
-        : <Button size="icon" variant="ghost" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
+        : <Button size="icon" variant="ghost" className="sidebar-collapse" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
     </aside>
     <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><div className="font-toggle" role="group" aria-label="Character style"><Button variant="ghost" type="button" className={preferences.font === 'Handwritten' ? 'active' : ''} data-font="handwritten" aria-pressed={preferences.font === 'Handwritten'} aria-label="Handwritten characters" title="Handwritten characters" onClick={() => setPreferences({ ...preferences, font: 'Handwritten' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Sans' ? 'active' : ''} data-font="sans" aria-pressed={preferences.font === 'Sans'} aria-label="Clean sans characters" title="Clean sans characters" onClick={() => setPreferences({ ...preferences, font: 'Sans' })}>永</Button><Button variant="ghost" type="button" className={preferences.font === 'Print' ? 'active' : ''} data-font="print" aria-pressed={preferences.font === 'Print'} aria-label="Print (song) characters" title="Print (song) characters" onClick={() => setPreferences({ ...preferences, font: 'Print' })}>永</Button></div><span className="header-divider"/><span className="learning-status"><span className="status-dot"/>One step at a time</span><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button></div></header>
       <main className="main-content">{children}</main></div>

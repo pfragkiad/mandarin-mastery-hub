@@ -17,6 +17,9 @@ export type NavSub = { key: string; label: string; to: string; search?: Record<s
  * tap of the main item (a second tap follows the link). It closes on leaving the
  * group, Escape (focus returns to the main item), a tap outside or choosing an item.
  *
+ * The current page shows as a tinted pill on its main item and sub-item (styles.css,
+ * "Side menu"); Settings is rendered by the shell in the bottom row, not here.
+ *
  * Inputs: the main item (`name`, `to`, `icon`, `selected`), its `subs`, `rail`,
  * `onNavigate` (closes the phone drawer), and `open`/`onOpenChange` — the shell owns
  * which group's flyout is open, so opening one always closes the other. State: the
@@ -71,7 +74,7 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
     return () => { window.removeEventListener('keydown', onKey); document.removeEventListener('pointerdown', onDown); };
   }, [open]);
 
-  return <div ref={groupRef} className={`nav-group${to === '/settings' ? ' nav-group-settings' : ''}`}
+  return <div ref={groupRef} className="nav-group"
     onPointerEnter={e => { if (flyoutEnabled && e.pointerType !== 'touch') show(); }}
     onPointerLeave={e => { if (flyoutEnabled && e.pointerType !== 'touch') hideSoon(); }}
     onBlur={e => { if (flyoutEnabled && !groupRef.current?.contains(e.relatedTarget as Node)) setOpen(false); }}>
@@ -85,10 +88,12 @@ export function NavGroup({ name, to, icon: MainIcon, selected, subs, rail, onNav
           if (flyoutEnabled && pointerType.current === 'touch' && !open) { e.preventDefault(); show(); return; }
           setOpen(false); onNavigate();
         }}>
-        <MainIcon/><span>{name}</span>{selected && <span className="active-dot"/>}
+        <MainIcon/><span>{name}</span>
       </Link>
     </Button>
-    {!rail && subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button>)}
+    {/* Full menu / drawer: sub-items always visible inside .nav-subs, whose left
+        border is the thin guide line aligned with the parent icon. */}
+    {!rail && subs?.length ? <div className="nav-subs">{subs.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={onNavigate} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button>)}</div> : null}
     {flyoutEnabled && open && <div ref={flyoutRef} id={id} className="nav-flyout" role="group" aria-label={name} style={{ top: pos.top, left: pos.left }}>
       <span className="nav-flyout-title" aria-hidden="true">{name}</span>
       {subs!.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-flyout-item ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => { setOpen(false); onNavigate(); }}>{s.icon && <s.icon/>}<span>{s.label}</span></Link></Button>)}
