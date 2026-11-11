@@ -62,6 +62,11 @@ function sharedFormPresentation(form: { family: number; glyph: string }, heading
  *  (see childOwner); without it, nodes keep their standalone source identity. */
 export function DecompositionTree({ node, owner }: { node: DecompositionNode; owner?: string | undefined }) {
   const { preferences } = useWorkspace();
+  // Placeholder tokens ({n}, ?) carry no glyph ink, so they skip the visual fit.
+  const fitGlyph = /^[?？]$/.test(node.glyph) || /^\{\d+\}$/.test(node.glyph) ? '' : node.glyph;
+  const tileTextRef = useRef<HTMLElement | null>(null);
+  const glyphFit = useGlyphFit(tileTextRef, fitGlyph);
+  const glyphFitStyle = glyphFit !== 1 ? { transform: `scale(${glyphFit})`, display: 'inline-block' } as const : undefined;
   const card = glyphIndex()[node.glyph];
   const context = contextualRadical(node.glyph, node.position, owner);
   const resolvedHeading = context.radicals[0]?.glyph ?? '';
