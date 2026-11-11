@@ -573,11 +573,11 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice):not(.traditional-character):not(.is-traditional) { position: relative; color: var(--hsk-id); }
+    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional) { position: relative; color: var(--hsk-id); }
 :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice):not(.traditional-character):not(.is-traditional)::after {
+    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional)::after {
   content: "部";
   position: absolute;
   top: 0;
@@ -600,7 +600,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 :root.dark :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice):not(.traditional-character):not(.is-traditional)::after {
+    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional)::after {
   background: color-mix(in oklch, var(--hsk-id) 26%, var(--card));
   background: oklch(from var(--hsk-id) 0.3 0.05 h);
   border-color: color-mix(in oklch, var(--hsk-id) 62%, transparent);
@@ -609,7 +609,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
-    .radical-form-choice):not(.traditional-character):not(.is-traditional):not(.is-selected):is(:hover, :focus-visible) { border-color: var(--hsk-id); }
+    .radical-form-choice.is-radical):not(.traditional-character):not(.is-traditional):not(.is-selected):is(:hover, :focus-visible) { border-color: var(--hsk-id); }
 .search-trigger { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-size: 11px; }
 .search-trigger:hover { color: var(--foreground); border-color: var(--primary); }
 .search-trigger>svg { width: 14px; }
