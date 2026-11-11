@@ -258,6 +258,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Replacement/reset/quiz starts invalidate old completion callbacks. Native
   // Pause/Resume deliberately retain this token to continue the existing run.
   const [ready, setReady] = useState(false);
+  // Counts finished writer builds. A rebuild can resolve so fast that ready's false→true
+  // flip is batched away, so the mode effect keys on this to re-arm every new writer.
+  const [writerBuild, setWriterBuild] = useState(0);
   const [message, setMessage] = useState('Loading stroke order…');
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -339,7 +342,6 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(character), strokeNames(character)]).then(([{ default: Writer }, { data, source }, names]) => {
       // Load browser-only playback, exact outlines and recorded names together;
       // the active guard prevents a previous character's load from taking over.
-      console.log('DBGLOAD', active, !!target.current, boardSize);
       if (!active || !target.current) return;
       const exact = radicalStrokes(character, radicalSelection);
       // Recorded and ambiguous records both carry the source's exact names (ambiguous ones
@@ -368,7 +370,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setWriterBuild(n => n + 1); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
       // Capture phase on the container runs before Hanzi Writer's own svg
       // mousedown/touchstart listeners, so re-arming here lets this very drag
@@ -623,11 +625,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
-    const restore = restoreRef.current; restoreRef.current = null; console.log('DBGMODE', ready, JSON.stringify(restore));
+    const restore = restoreRef.current; restoreRef.current = null;
     if (mode === 'watch') { void writer.current.showCharacter({ duration: 0 }); setMessage(''); }
     else if (restore && restore.mode === mode) quiz(restore.start, restore);
     else quiz();
-  }, [mode, ready, character]);
+  }, [mode, ready, character, writerBuild]);
   const selected = groups.find(group => group.id === selectedGroup);
   const selectGroup = (id: string) => {
     const group = groups.find(group => group.id === id);
