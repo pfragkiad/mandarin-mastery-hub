@@ -2,7 +2,7 @@ import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
-import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, type GameIcon } from './game-catalog';
+import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, PinyinGamesIcon, type GameEntry, type GameIcon } from './game-catalog';
 import { NavGroup, type NavSub } from './nav-group';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
@@ -17,22 +17,28 @@ import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
 // Main menu in three blocks: Start, then "Learn" (the reference sections) and
-// "Practice" (one Games group holding all five games). Full menu and drawer show
-// each block's small uppercase heading; the icon strip draws it as a thin line.
-const navSections: { label: string | null; items: { to: '/' | '/characters' | '/vocabulary' | '/pinyin' | '/flashcards'; name: string; icon: GameIcon }[] }[] = [
-  { label: null, items: [{ to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ to: '/characters', name: 'Glyphs', icon: Library }, { to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
-  { label: 'Practice', items: [{ to: '/flashcards', name: 'Games', icon: Gamepad2 }] },
+// "Practice" (Hanzi games and Pinyin games, each a main item with its games as
+// sub-items, like Glyphs and Vocabulary). Full menu and drawer show each block's
+// small uppercase heading; the icon strip draws it as a thin line.
+// `key` is unique per item because Pinyin and Pinyin games share the /pinyin route
+// (the Pinyin games item opens its first quiz mode through URL search `mode`).
+// `games` marks a game family: its sub-items are that family's games, and it is
+// the current item on any of those game pages.
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | '/pinyin' | '/flashcards'; search?: Record<string, string>; name: string; icon: GameIcon; games?: GameEntry[] };
+const navSections: { label: string | null; items: NavItem[] }[] = [
+  { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Pinyin', icon: AudioLines }] },
+  { label: 'Practice', items: [
+    { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
+    { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, search: { mode: PINYIN_GAMES[0]!.mode! }, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
+  ] },
 ];
 const navigation = navSections.flatMap(section => section.items);
 // Settings lives in the menu's bottom row (beside the shrink/expand button, under
 // the one divider), outside the scrolling list, so it is always reachable.
 const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
-// Games sub-items: the two Hanzi games, then the three Pinyin games (Pinyin
-// quiz modes of /pinyin, URL search `mode`), each under its family heading.
 // Pinyin itself has no sub-items: it opens the Sound chart. Both game lists come
 // from game-catalog so the Start page shows the same games.
-const gameGroups = [{ label: 'Hanzi', icon: HanziIcon as GameIcon, games: HANZI_GAMES }, { label: 'Pinyin', icon: AudioLines as GameIcon, games: PINYIN_GAMES }];
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
@@ -139,13 +145,14 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         {section.items.map(n => {
         const subs: NavSub[] | null = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
-          : n.to === '/flashcards' ? gameGroups.flatMap(group => group.games.map(g => ({ key: g.key, label: g.label, to: g.to, search: g.mode ? { mode: g.mode } : undefined, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game', group: { label: group.label, icon: group.icon } })))
+          : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, search: g.mode ? { mode: g.mode } : undefined, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
           : null;
-        // Games owns every game page (Pinyin quiz modes included); Pinyin owns only the chart.
-        const selected = n.to === '/flashcards' ? Boolean(currentGame) : n.to === '/pinyin' ? path === '/pinyin' && !currentGame : path === n.to;
-        return <NavGroup key={n.to} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.to} onOpenChange={open => setFlyout(current => open ? n.to : current === n.to ? null : current)}/>;
+        // A game family owns its own game pages (Pinyin quiz modes light Pinyin
+        // games); Pinyin owns only the Sound chart.
+        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : n.to === '/pinyin' ? path === '/pinyin' && !currentGame : path === n.to;
+        return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} search={n.search} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
         })}</div>)}</nav>
-      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
+      <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup id="settings" name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
         // Full menu: shrink it to the slim icon strip (still beside the page).
         ? <Button size="icon" variant="ghost" className="sidebar-collapse" title="Shrink menu to icons" aria-label="Shrink menu to icons" onClick={() => saveExpanded(false)}><PanelLeftClose/></Button>
         // Icon strip: bring the names and sub-items back.
@@ -156,7 +163,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     {/* Phone bottom tab bar (hidden by CSS above 850px). */}
     <nav className="phone-tabs" aria-label="Quick navigation">{phoneTabs.map(t => <Link key={t.key} to={t.to} className={`phone-tab${activePhoneTab === t.key ? ' is-active' : ''}`} aria-current={activePhoneTab === t.key ? 'page' : undefined} onClick={() => setMobileOpen(false)}><t.icon/><span>{t.label}</span></Link>)}
       <button ref={moreRef} type="button" className={`phone-tab${activePhoneTab === 'more' || mobileOpen ? ' is-active' : ''}`} aria-expanded={mobileOpen} aria-label="More: open the full menu" title="Open the full menu" onClick={() => setMobileOpen(open => !open)}><MoreHorizontal/><span>More</span></button></nav>
-    <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play any of the five games under Games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
+    <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play the Hanzi games and Pinyin games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
     <Dialog open={searching} onOpenChange={setSearching}><DialogContent className={`global-search${expandedSearch ? ' global-search-expanded' : ''}`}><DialogTitle className="font-display text-xl">Search everything</DialogTitle><DialogDescription>Words, characters, radicals, components, and phrases.</DialogDescription><div className="search-field"><Search/><input autoFocus aria-label="Search everything" placeholder="Search Chinese, pinyin, or meaning…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && hits[0]) { e.preventDefault(); openHit(hits[0]); } }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
       <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>
       {query.trim() === '' ? <p className="global-search-hint">Start typing — results appear as you go. Press Enter to open the first one.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results">{hits.map(hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>)}</div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
