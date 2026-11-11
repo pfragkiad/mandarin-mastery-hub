@@ -2437,3 +2437,82 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
   .vocabulary-category-row:has(> .page-pills), .glyph-category-row { flex-wrap: wrap; row-gap: 12px; }
   .game-tabs > [role='tablist'].page-pills { padding-bottom: 2px; }
 }
+
+/* ───────── Practice title card (practice-header.tsx) ─────────
+   One card for Back, the print action, "Write <glyph>", the reading line and — only when
+   the record has other forms — the form switch. The title glyph and switch tiles wear the
+   shared identity ink (--card-ink: green character, gold radical, purple traditional). */
+.practice-header { border: 1px solid var(--border); background: var(--card); border-radius: 12px; padding: 18px 24px 22px; margin-bottom: 22px; min-width: 0; }
+.practice-header-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.practice-header .practice-back { margin: 0 0 0 -10px; font-size: 13px; }
+.practice-header .practice-back svg { width: 15px; height: 15px; }
+.practice-header .practice-print-button { margin: 0; border-radius: 999px; }
+.practice-more-button { display: none; }
+@media (max-width: 760px) { .practice-more-button { display: inline-flex; margin-right: -8px; color: var(--muted-foreground); } }
+.practice-header-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px 28px; }
+.practice-header-text { min-width: 0; }
+.practice-title { font-family: var(--font-display); font-size: 42px; line-height: 1.2; font-weight: 400; margin: 0; overflow-wrap: anywhere; }
+.practice-title-glyph { color: var(--card-ink, inherit); }
+.practice-title-glyph.traditional-character { color: var(--traditional); }
+.practice-reading-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 0; font-size: 18px; }
+.practice-reading-line .pinyin { font-size: 20px; }
+.practice-reading-line .practice-listen { width: 36px; height: 36px; border-radius: 999px; background: color-mix(in oklab, var(--primary) 12%, transparent); color: var(--primary); }
+.practice-reading-line .practice-listen:disabled { background: transparent; }
+.practice-reading-dot { color: var(--muted-foreground); }
+.practice-reading-line .practice-translation { display: inline; width: auto; margin: 0; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--foreground); overflow-wrap: anywhere; }
+.practice-reading-line .practice-pills { margin-left: 2px; }
+.practice-reading-line .practice-kind { margin-left: 0; font-size: 10px; padding: 4px 10px; }
+.practice-reading-line .word-hsk-id { font-size: 10px; padding: 3px 9px; }
+@media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
+.practice-header-forms { min-width: 0; justify-self: end; }
+@media (max-width: 850px) {
+  .practice-header { padding: 14px 18px 18px; }
+  .practice-header-main { grid-template-columns: minmax(0, 1fr); }
+  .practice-header-forms { justify-self: stretch; }
+  .practice-title { font-size: 34px; }
+}
+
+/* Form switch: Simplified/Traditional, radical-family and component-card forms as wide
+   tiles (glyph beside label + strokes) in one tray. Recall blanks the glyph box. */
+.form-switch { margin: 0; border: 0; padding: 0; }
+.form-switch .radical-form-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
+html .practice-header .form-switch .radical-form-choice { flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
+.practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
+.practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
+.practice-header .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }
+html .practice-header .form-switch .radical-form-choice.is-selected { background: color-mix(in oklab, var(--primary) 12%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+html .practice-header .form-switch .radical-form-choice.is-traditional.is-selected { background: color-mix(in oklab, var(--traditional) 14%, var(--card)); border-color: color-mix(in oklab, var(--traditional) 60%, transparent); }
+html .practice-header .form-switch .radical-form-choice.is-radical:not(.is-traditional).is-selected { background: color-mix(in oklab, var(--hsk-id) 12%, var(--card)); border-color: color-mix(in oklab, var(--hsk-id) 55%, transparent); }
+html .practice-header .form-switch .radical-form-choice:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
+.form-switch-text { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; text-align: left; min-width: 0; }
+html .practice-header .form-switch-text b { font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--foreground); }
+html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.3; color: var(--muted-foreground); text-align: left; }
+.form-switch-blank { display: inline-block; width: 34px; height: 34px; border: 1px dashed var(--border); border-radius: 6px; }
+.form-switch .association-notes { margin-top: 10px; }
+
+/* Word practice: character strip under the mode tabs (WordCharacterStrip). Each tile
+   shows the hanzi, its own single recorded reading, and a progress bar for the current
+   mode; a tick marks a finished character. */
+.word-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 2px; }
+.word-strip-tile { position: relative; width: 116px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 12px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.word-strip-tile:hover, .word-strip-tile:focus-visible { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+.word-strip-tile.is-selected { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, var(--card)); }
+.word-strip-glyph { font-size: 38px; line-height: 1.15; color: var(--card-ink, inherit); }
+.word-strip-glyph.form-switch-blank { width: 38px; height: 44px; }
+.word-strip-pinyin { font-size: 14px; }
+.word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
+.word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
+.word-strip-done { position: absolute; top: 7px; right: 8px; width: 15px; height: 15px; color: var(--primary); }
+
+/* Without a reading card the right column starts at the top; phones stack writing → details. */
+.practice-page-content .practice-layout:not(:has(> .practice-intro)) > .practice-detail { grid-row: 1 / span 2; }
+@media (max-width: 850px) {
+  .practice-page-content .practice-layout:not(:has(> .practice-intro)) > .writing-tool { grid-row: 1; }
+  .practice-page-content .practice-layout:not(:has(> .practice-intro)) > .practice-detail { grid-row: 2; }
+}
+html[data-display-size='comfortable'] .practice-title { font-size: 48px; }
+html[data-display-size='comfortable'] .practice-reading-line, html[data-display-size='comfortable'] .practice-reading-line .practice-translation { font-size: 21px; }
+html[data-display-size='comfortable'] .practice-reading-line .pinyin { font-size: 22px; }
+html[data-display-size='comfortable'] .practice-header .form-switch-text b { font-size: 18px; }
+html[data-display-size='comfortable'] .practice-header .form-switch-text small { font-size: 14px; }
+html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }

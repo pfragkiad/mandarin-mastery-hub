@@ -37,7 +37,7 @@ describe('stroke practice pronunciation', () => {
     render(<StrokePractice glyph="㇐" />);
     const button = screen.getByRole('button', { name: 'Listen to 横' });
     expect(button).toHaveClass('practice-listen');
-    expect(button.closest('.practice-meaning')).not.toBeNull();
+    expect(button.closest('.practice-reading-line')).not.toBeNull();
     expect(screen.queryByRole('button', { name: 'Listen to ㇐' })).toBeNull();
   });
 });
@@ -50,17 +50,16 @@ describe('stroke practice heading', () => {
 
   it('shows the heading with the stroke form while watching or tracing', () => {
     const { unmount } = render(<StrokePractice glyph="㇐" mode="watch" />);
-    const watching = screen.getByRole('heading', { name: 'Get to know ㇐' });
-    expect(watching).not.toHaveClass('sr-only');
+    const watching = screen.getByRole('heading', { name: 'Write ㇐' });
     expect(visibleGlyphs(watching)).toEqual(['㇐']);
     unmount();
     render(<StrokePractice glyph="㇐" mode="trace" />);
-    expect(screen.getByRole('heading', { name: 'Get to know ㇐' })).not.toHaveClass('sr-only');
+    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Write ㇐' }))).toEqual(['㇐']);
   });
 
-  it('hides the whole heading in recall, but keeps the reading and meaning', () => {
+  it('hides the stroke glyph in recall, but keeps the reading and meaning', () => {
     render(<StrokePractice glyph="㇐" mode="recall" />);
-    expect(screen.getByRole('heading', { name: 'Get to know ㇐' })).toHaveClass('sr-only');
+    expect(visibleGlyphs(screen.getByRole('heading', { name: 'Write ㇐' }))).toEqual([]);
     expect(screen.getByText('héng')).toBeInTheDocument();
   });
 });

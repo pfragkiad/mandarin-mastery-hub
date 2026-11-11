@@ -1,16 +1,16 @@
-import { practiceOrigin, focusEntryCard } from '@/lib/practice-return';
+import { practiceOrigin } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
-import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { practiceCanvasSize, PRACTICE_CANVAS_MIN } from '@/lib/learning-preferences';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
-import { useNavigate, useRouter } from '@tanstack/react-router';
-import { ArrowLeft, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, Printer, StepForward, TriangleAlert } from 'lucide-react';
+import { useNavigate } from '@tanstack/react-router';
+import { Check, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -18,7 +18,7 @@ import { leniency } from '@/lib/handwriting-strictness';
 import { words } from '@/lib/mandarin';
 import { glyphScript, libraryEntries, type LibraryEntry } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
-import { catalog, playCharacter, characterRecording } from '@/lib/catalog-store';
+import { catalog, playCharacter, characterRecording, characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
@@ -29,7 +29,9 @@ import { formatStrokeIndices, splitPinyinLines, strokeNames } from '@/lib/stroke
 import { historicalRadicalHeading, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
-import { speakTts, stopAllAudio } from '@/lib/audio';
+import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
+import { PracticeHeader } from './practice-header';
+import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { nextStepIndex } from '@/lib/step-playback';
 import { StrokeDirectionHints } from './stroke-direction-hints';
@@ -200,7 +202,14 @@ function StrokeGuide({ strokes, onPlay, activeStroke, componentIndices = [], sco
     </div>
   );
 }
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined }) {
+/** One character's tracing/recall progress inside a word: the next undrawn stroke, the
+ *  scores and status line, and the mode they were drawn in. Reported by WritingPractice
+ *  (onProgress) and handed back (savedProgress) so switching characters keeps each one. */
+export type PracticeProgress = { character: string; mode: PracticeMode; start: number; total: number; scores: (number | null)[]; prefix: number; message: string };
+// `strip` renders under the mode tabs (word practice's character strip). `savedProgress`
+// re-arms the quiz where an earlier visit to this character stopped (same mode only);
+// `onProgress` reports every change so the strip can show per-character progress.
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ReactNode; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined }) {
   const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('trace');
@@ -315,6 +324,9 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Progress carried across a same-character writer rebuild (see the build effect).
   const lastBuild = useRef('');
   const restoreRef = useRef<{ start: number; scores: (number | null)[]; prefix: number; message: string; mode: PracticeMode } | null>(null);
+  // The character the live writer was built for; progress is reported only for it, so a
+  // render that already carries a new character never files the old one's scores under it.
+  const builtFor = useRef('');
   const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup || Boolean(radicalSelection) || Boolean(radicalStrokes(character)), groupingSource);
   const groupRef = useRef(groups);
   groupRef.current = groups;
@@ -334,6 +346,10 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     restoreRef.current = buildKey === lastBuild.current && ready && mode !== 'watch' && tracePos.current > 0
       ? { start: tracePos.current, scores, prefix: tracePrefix, message, mode }
       : null;
+    // A character revisited inside a word resumes where its earlier visit stopped.
+    if (!restoreRef.current && savedProgress && savedProgress.character === character && savedProgress.start > 0 && savedProgress.mode !== 'watch')
+      restoreRef.current = { start: savedProgress.start, scores: savedProgress.scores, prefix: savedProgress.prefix, message: savedProgress.message, mode: savedProgress.mode };
+    builtFor.current = '';
     lastBuild.current = buildKey;
     animationRun.current += 1;
     setReady(false); setPlaying(false); setPaused(false); setMessage('Loading stroke order…');
@@ -370,7 +386,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { setReady(true); setWriterBuild(n => n + 1); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { builtFor.current = character; setReady(true); setWriterBuild(n => n + 1); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
       // Capture phase on the container runs before Hanzi Writer's own svg
       // mousedown/touchstart listeners, so re-arming here lets this very drag
@@ -630,6 +646,10 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     else if (restore && restore.mode === mode) quiz(restore.start, restore);
     else quiz();
   }, [mode, ready, character, writerBuild]);
+  useEffect(() => {
+    if (!onProgress || !ready || builtFor.current !== character || !strokes.length || mode === 'watch') return;
+    onProgress({ character, mode, start: Math.min(tracePos.current, strokes.length), total: strokes.length, scores, prefix: tracePrefix, message });
+  }, [scores, tracePrefix, message, ready, mode, strokes.length]);
   const selected = groups.find(group => group.id === selectedGroup);
   const selectGroup = (id: string) => {
     const group = groups.find(group => group.id === id);
@@ -663,7 +683,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Stroke-name speech toggle: the "Names" pill in the Strokes action row (shares Step's mute state);
   // pressed/tinted means names are spoken aloud.
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/><div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{strip}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} defaultVisible={mode !== 'recall'} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
@@ -700,11 +720,13 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
-  const router = useRouter();
   const character = wordChars[focus] ?? wordChars[0] ?? '我';
-  const setCharacter = (c: string) => { const i = wordChars.indexOf(c); navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) } }); };
+  const setCharacter = (i: number) => { navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) } }); };
   const [sheet, setSheet] = useState(false);
   const [audioError, setAudioError] = useState(false);
+  // Word practice: each character's progress by its position in the word (StrokesPage is
+  // keyed by the word, so this lives exactly as long as this word's practice).
+  const [wordProgress, setWordProgress] = useState<Record<number, PracticeProgress>>({});
   // Arriving on Practice ends any details-Back trail from a previous record, so
   // the next details window never offers a stale "Back to <glyph>" step.
   useEffect(() => { detailTrail.clear(); }, []);
@@ -772,14 +794,67 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const practiceInk = traditionalRecord ? 'is-traditional' : radId || kindLabel === 'Radical' ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   // Radical cards break down into strokes, so the character-level mapping and BabelStone comparison don't apply there.
   const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
-  return <div className="page-enter practice-page-content"><div className="page-heading practice-page-heading"><Button variant="ghost" size="sm" className="practice-back" onClick={() => { const origin = practiceOrigin(); if (origin) { router.history.push(origin); focusEntryCard(); } else void navigate({ to: '/characters' }); }}><ArrowLeft/>Back</Button><div className="practice-heading-row"><div className="practice-heading-title"><h1>Practice.</h1><h2 className={mode === "recall" ? "sr-only" : undefined}>Get to know <span lang="zh-CN">{character}</span></h2></div><Button variant="outline" size="sm" className="practice-print-button" onClick={() => setSheet(true)}><Printer/>Print practice sheet</Button></div></div><div className="practice-layout"><section className="practice-info practice-intro">{isWord && <div className="word-context"><span lang="zh-CN" className="word-context-hanzi">{initialCharacter}</span><span className="word-context-detail">{wordFact ? <><span className="pinyin">{wordFact.pinyin}</span> · {wordFact.meaning}</> : 'Word practice'}</span></div>}{isWord && <div className="picker-group"><span className="picker-label">Characters in this word</span><div className="character-picker" role="group" aria-label="Characters in this word">{wordChars.map((c, i) => <Button key={`${c}-${i}`} variant="outline" lang="zh-CN" className={c === character ? 'selected' : ''} onClick={() => setCharacter(c)} aria-label={`Practice ${c}`}>{c}</Button>)}</div></div>}{/* Reading panel mirrors the reference detail heading: pinyin + speaker on the
-first line with the pills at the top right, the translation on its own second
-line. The strokes/radical/script facts row is gone — the writing card, family
-tiles and Traditional pill already carry those facts. */}
-<div className="practice-meaning"><div className="practice-reading-top"><span className="practice-text">{info.speech && isMultiReading(info.reading) ? <MultiReadingSpeakers spoken={info.speech} reading={info.reading} variant="practice" prefix={info.componentName ? 'Component name · ' : undefined} onError={message => setAudioError(Boolean(message))}/> : <>{info.reading ? <span className="pinyin">{info.componentName ? `Component name · ${info.reading}` : info.reading}</span> : <span className="pinyin">{info.readingFallback}</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></>}</span><span className="practice-pills">{traditionalPill && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span></div>{/* Family form tiles sit between the pinyin line and the translation, without
-their own heading — the Radical #N pill above already names the family. */}
-{/* Non-radical records show their single hanzi between pinyin and translation, like the
- detail card; Recall hides it so the glyph never leaks into recall. */}{mode !== 'recall' && !familyId && scriptTiles && <ScriptForms glyph={character} kind={scriptKind} destination="practice" mode={mode} hideLabel grouping={componentCardTiles ? 'card' : 'script'}/>}{mode !== 'recall' && !familyId && !scriptTiles && <strong lang="zh-CN" className={`practice-hanzi ${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`}>{character}</strong>}{mode !== 'recall' && familyId && <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel/>}<p className="practice-translation">{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}</p></div>{audioError && <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p>}</section><WritingPractice character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
+  const recall = mode === 'recall';
+  // Form switch (right side of the title card): radical-family forms, or script/component
+  // card forms when there is more than one; a simplified-only record shows no tiles.
+  // Words have no traditional records yet, so word practice never shows tiles.
+  const forms = isWord ? undefined
+    : familyId ? <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel layout="switch" hideGlyph={recall}/>
+    : scriptTiles ? <ScriptForms glyph={character} kind={scriptKind} destination="practice" mode={mode} hideLabel grouping={componentCardTiles ? 'card' : 'script'} layout="switch" hideGlyph={recall}/>
+    : undefined;
+  const characterReading = info.speech && isMultiReading(info.reading)
+    ? <MultiReadingSpeakers spoken={info.speech} reading={info.reading} variant="practice" prefix={info.componentName ? 'Component name · ' : undefined} onError={message => setAudioError(Boolean(message))}/>
+    : <>{info.reading ? <span className="pinyin">{info.componentName ? `Component name · ${info.reading}` : info.reading}</span> : <span className="pinyin">{info.readingFallback}</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${character}` : `No audio available for ${character}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button></>;
+  // No rank on Practice pages. Traditional is named by the form switch when it is shown,
+  // so the pill appears only when there are no tiles.
+  const characterPills = <span className="practice-pills">{traditionalPill && !forms && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span>;
+  const strip = isWord ? <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter}/> : undefined;
+  return <div className="page-enter practice-page-content">
+    <PracticeHeader glyph={isWord ? initialCharacter : character} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
+      reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
+      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
+      pills={isWord ? undefined : characterPills} forms={forms} onPrint={() => setSheet(true)}
+      after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
+    <div className="practice-layout"><WritingPractice key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
 only the component breakdown; radical practice never shows a decomposition at any width. */}
-{mode !== 'recall' && !familyId && decomposition && <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></h3><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div>}</section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+{!recall && !familyId && decomposition && <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></h3><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div>}</section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+}
+
+// Word practice's character strip, inside the writing card under the mode tabs.
+// Inputs: the word's characters, the focused position, the live mode and each position's
+// reported progress. A tile shows the character, its own pinyin only when the catalogue
+// records exactly one reading (a word reading is never split onto its characters), and a
+// bar for the strokes drawn in the current mode, with a tick once the character is done.
+// Recall blanks the hanzi (pinyin and progress stay) so the answer never shows.
+function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onSelect }: { characters: string[]; focus: number; hideGlyphs: boolean; mode: PracticeMode; progress: Record<number, PracticeProgress>; onSelect: (index: number) => void }) {
+  const facts = charFacts();
+  const records = new Map(libraryEntries('Characters').map(entry => [entry.hanzi, entry]));
+  return <div className="word-strip" role="group" aria-label="Characters in this word">
+    {characters.map((c, i) => {
+      const reading = facts[c]?.pinyin;
+      const single = reading && !isMultiReading(reading) ? reading : null;
+      const p = progress[i]?.mode === mode && progress[i]?.character === c ? progress[i] : undefined;
+      const done = Boolean(p && p.total && p.start >= p.total);
+      const fraction = p && p.total ? Math.min(1, p.start / p.total) : 0;
+      // Same identity ink as the Characters cards (gold radical, purple traditional, green).
+      const record = records.get(c);
+      const ink = record ? glyphCardInk('Characters', record.script, isRadicalGlyph(record, 'Characters')) : 'card-ink-character';
+      return <button key={`${c}-${i}`} type="button" className={`word-strip-tile${i === focus ? ' is-selected' : ''}${done ? ' is-done' : ''}`} aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${hideGlyphs ? '' : ` ${c}`}${single ? ` (${single})` : ''}${done ? ', done' : ''}`} title={hideGlyphs ? `Practise character ${i + 1}` : `Practise ${c}`} onClick={() => onSelect(i)}>
+        {done && <Check className="word-strip-done" aria-hidden="true"/>}
+        {hideGlyphs ? <span className="word-strip-glyph form-switch-blank" aria-hidden="true"/> : <span lang="zh-CN" className={`word-strip-glyph ${ink}`}>{c}</span>}
+        {single && <span className="pinyin word-strip-pinyin">{single}</span>}
+        <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
+      </button>;
+    })}
+  </div>;
+}
+
+// The practised word's own reading and speaker: the word's recorded audio first, then the
+// shared pronunciation pipeline (src/lib/audio.ts) for that exact word reading.
+function WordReading({ word, onError }: { word: (typeof words)[number] | undefined; onError: (failed: boolean) => void }) {
+  const { preferences } = useWorkspace();
+  const request = word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : null;
+  const available = usePronunciationAvailability(Boolean(request && audioCandidates(request).some(candidate => candidate.kind === 'recording')), word?.pinyin);
+  if (!word) return null;
+  return <><span className="pinyin">{word.pinyin}</span><Button variant="ghost" size="icon" className={`practice-listen${available ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={available ? 'Listen to pronunciation' : undefined} onClick={async () => onError(Boolean(audioMessage(await playPronunciation(request!, preferences.slow))))}><Volume2/></Button></>;
 }

@@ -65,7 +65,8 @@ const familyFile: RadicalStrokeFile = {
   }],
 };
 
-const practiceHeading = () => screen.getByRole('heading', { name: 'Get to know 学' });
+const practiceHeading = () => screen.getByRole('heading', { name: 'Write 学' });
+const titleGlyph = () => practiceHeading().querySelector('.practice-title-glyph');
 
 const visibleHeadingGlyphs = () => Array.from(practiceHeading().querySelectorAll('span'))
   .filter(node => !node.classList.contains('sr-only'))
@@ -80,28 +81,34 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
     expect(screen.getByText('DECOMPOSITION')).toBeInTheDocument();
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
-    expect(practiceHeading()).not.toHaveClass('sr-only');
+    expect(titleGlyph()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
     // The character practice reading panel has no strokes/radical/script facts row.
     expect(document.querySelector('.practice-facts')).toBeNull();
   });
 
-  it('keeps the reading panel above the writing card and the breakdown below it', () => {
+  it('puts the title card above the writing card and the breakdown beside it', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    const page = document.querySelector('.practice-page-content')!;
+    expect(page.firstElementChild).toHaveClass('practice-header');
     const blocks = Array.from(document.querySelectorAll('.practice-layout > *')).map(node => node.className);
-    expect(blocks).toHaveLength(3);
-    expect(blocks[0]).toContain('practice-intro');
-    expect(blocks[1]).toContain('writing-tool');
-    expect(blocks[2]).toContain('practice-detail');
+    expect(blocks).toHaveLength(2);
+    expect(blocks[0]).toContain('writing-tool');
+    expect(blocks[1]).toContain('practice-detail');
     expect(document.querySelector('.practice-detail')?.textContent).toContain('DECOMPOSITION');
-    expect(document.querySelector('.practice-detail')?.textContent).toContain('Hanzi graphical structure');
+  });
+
+  it('shows no form tiles for a simplified-only character', () => {
+    render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    expect(document.querySelector('.practice-header-forms')).toBeNull();
   });
 
   it('hides the breakdown in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
     expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
-    expect(practiceHeading()).toHaveClass('sr-only');
+    // Recall keeps "Write" but the glyph is only read aloud by screen readers.
+    expect(titleGlyph()).toHaveClass('sr-only');
     expect(document.querySelector('.practice-facts')).toBeNull();
     expect(screen.getByText('xué')).toBeInTheDocument();
     expect(screen.getByText('learn')).toBeInTheDocument();
@@ -140,14 +147,29 @@ describe('character practice sections by mode', () => {
   it('shows the heading with the hanzi only, without the Kangxi suffix', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="乙" mode="watch"/>);
-    expect(screen.getByRole('heading', { name: 'Get to know 乙' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Write 乙' })).toBeInTheDocument();
   });
 
-  it('hides the radical family and the whole detail card in recall', () => {
+  it('keeps the radical form tiles in recall with their hanzi blanked, and no detail card', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="recall"/>);
-    expect(screen.queryByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeNull();
+    const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
+    expect(group.querySelectorAll('strong.form-switch-blank').length).toBeGreaterThan(0);
+    expect(group.textContent).not.toContain('冂');
     expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
+  });
+
+  it("word practice shows a character strip with each character's own reading, blanked in recall", () => {
+    const { unmount } = render(<StrokesPage initialCharacter="学乙" mode="trace"/>);
+    const strip = screen.getByRole('group', { name: 'Characters in this word' });
+    expect(strip.closest('.writing-tool')).not.toBeNull();
+    expect(Array.from(strip.querySelectorAll('.word-strip-pinyin')).map(node => node.textContent)).toEqual(['xué', 'yǐ']);
+    expect(strip.textContent).toContain('学');
+    // Words have no traditional records yet, so no form tiles.
+    expect(document.querySelector('.practice-header-forms')).toBeNull();
+    unmount();
+    render(<StrokesPage initialCharacter="学乙" mode="recall"/>);
+    expect(screen.getByRole('group', { name: 'Characters in this word' }).textContent).not.toContain('学');
   });
 
   it('uses family 5 reading yǐ and the 乙 audio target when practising its unrecorded 乚 variant', () => {
@@ -160,7 +182,7 @@ describe('character practice sections by mode', () => {
     });
     const play = vi.spyOn(catalogStore, 'playCharacter').mockResolvedValue(null);
     render(<StrokesPage initialCharacter="乚" family={5} variant="5-1" mode="watch"/>);
-    expect(document.querySelector('.practice-intro .pinyin')?.textContent).toBe('yǐ');
+    expect(document.querySelector('.practice-header .pinyin')?.textContent).toBe('yǐ');
     fireEvent.click(screen.getByRole('button', { name: /^Listen to 乚$/ }));
     expect(play).toHaveBeenCalledWith('乙', false, 'yǐ');
     play.mockRestore();
