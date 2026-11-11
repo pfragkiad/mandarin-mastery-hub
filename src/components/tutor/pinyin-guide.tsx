@@ -1,16 +1,16 @@
 // Pinyin pages: the Sound chart (/pinyin) and the three quiz games (Tone quiz,
 // Sound-alikes, Type what you hear) are separate routes sharing one shell. The
 // shell loads the syllable inventory and recordings lazily, shows the heading,
-// source note and browser-remembered progress, and renders the mode tab row,
-// which now navigates between routes instead of switching URL search. Inputs:
+// source note and browser-remembered progress. The pages are reached from the
+// side menu (Sound chart under Learn, the quizzes under Pinyin games), so the
+// chart carries no quiz tab row; only phones show the five-game pill row on a
+// quiz page. Inputs:
 // the route's search values and navigation callbacks. State: the loaded data,
 // progress and the shared player; the slow switch writes the global "Slower
 // pronunciation" preference.
 import { useEffect, useState, type ReactNode } from 'react';
-import { useNavigate } from '@tanstack/react-router';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { allSounds, IncompletePinyinDataError, loadPinyinData, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import { progressSummary } from '@/lib/pinyin-progress';
 import { useWorkspace } from './workspace';
@@ -22,19 +22,6 @@ import { GameTabs } from './game-tabs';
 import type { PinyinProgress } from '@/lib/pinyin-progress';
 
 export type PinyinMode = 'chart' | DrillMode;
-export const PINYIN_MODES: { mode: PinyinMode; label: string }[] = [
-  { mode: 'chart', label: 'Sound chart' },
-  { mode: 'tones', label: 'Tone quiz' },
-  { mode: 'alikes', label: 'Sound-alikes' },
-  { mode: 'type', label: 'Type what you hear' },
-];
-/** Each mode's own route: the chart keeps /pinyin, every quiz is its own page. */
-export const PINYIN_MODE_PATHS: Record<PinyinMode, '/pinyin' | '/pinyin/tone-quiz' | '/pinyin/sound-alikes' | '/pinyin/type-what-you-hear'> = {
-  chart: '/pinyin',
-  tones: '/pinyin/tone-quiz',
-  alikes: '/pinyin/sound-alikes',
-  type: '/pinyin/type-what-you-hear',
-};
 const headings: Record<PinyinMode, string> = { chart: 'Every sound of Mandarin.', tones: 'Hear the tone.', alikes: 'Tell sound-alikes apart.', type: 'Write what you hear.' };
 
 /** Everything a mode page needs from the shell: loaded data, progress, player and the slow preference. */
@@ -53,7 +40,6 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   const onSlow = (slow: boolean) => setPreferences({ ...preferences, slow });
   const total = data ? allSounds(data).length : 0;
   const summary = progressSummary(progress, total);
-  const navigate = useNavigate();
 
   return <div className="page-enter library-page pinyin-page">
     <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
@@ -70,12 +56,8 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
           : <Button size="sm" variant="ghost" onClick={() => setConfirming(true)}><RotateCcw />Reset progress</Button>)}
       </div>}
     </div>
-    {/* The tab row links the four Pinyin pages; switching routes stops playback. */}
-    <Tabs className="catalog-tabs pinyin-tabs" value={mode} onValueChange={value => { const next = PINYIN_MODES.find(m => m.mode === value); if (next && next.mode !== mode) { player.stop(); void navigate({ to: PINYIN_MODE_PATHS[next.mode] }); } }}>
-      <TabsList>{PINYIN_MODES.map(m => <TabsTrigger key={m.mode} value={m.mode}>{m.label}</TabsTrigger>)}</TabsList>
-    </Tabs>
-    {/* Phones hide the mode tabs above; in a quiz the five-game pill row
-        (phone only) switches games, since the phone Games tab covers all five. */}
+    {/* In a quiz the five-game pill row (phone only) switches games, since the
+        phone Games tab covers all five; wider screens use the side menu. */}
     {mode !== 'chart' && <GameTabs current={mode} onBeforeNavigate={() => player.stop()}/>}
     <div className="pinyin-body">
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>

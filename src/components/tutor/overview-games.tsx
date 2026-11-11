@@ -22,8 +22,8 @@ export function OverviewGames() {
   return <section className="overview-games" aria-labelledby="overview-games-title">
     <div className="eyebrow" id="overview-games-title">GAMES</div>
     <div className="overview-game-groups">
-      <GameGroup title="Hanzi" note="Characters, radicals and words" icon={<HanziIcon/>} games={HANZI_GAMES}/>
-      <GameGroup title="Pinyin" note="Real recorded syllables" icon={<PinyinGamesIcon/>} games={PINYIN_GAMES}/>
+      <GameGroup title="Hanzi games" note="Characters, radicals and words" icon={<HanziIcon/>} games={HANZI_GAMES}/>
+      <GameGroup title="Pinyin games" note="Real recorded syllables" icon={<PinyinGamesIcon/>} games={PINYIN_GAMES}/>
     </div>
   </section>;
 }
