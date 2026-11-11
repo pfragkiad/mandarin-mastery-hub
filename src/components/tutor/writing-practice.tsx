@@ -38,7 +38,7 @@ import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, RecordedDecomposition } from './character-enrichment';
 import { ComponentPronunciation } from './component-pronunciation';
-import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
+import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePerfectCelebration } from './perfect-celebration';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean; estimated?: boolean };
