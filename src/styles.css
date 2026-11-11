@@ -2529,6 +2529,7 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .practice-progress-row:empty { display: none; }
 .practice-progress-row > .word-strip { margin: 0; }
 .stroke-progress-tile { width: 132px; cursor: default; gap: 4px; }
+.stroke-progress-tile.is-placeholder { visibility: hidden; }
 .stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--card-ink, var(--primary)) 55%, transparent); }
 .stroke-progress-tile .stroke-index { min-height: 1.2em; }
 .stroke-progress-picture { display: flex; align-items: center; justify-content: center; width: 68px; height: 68px; }
