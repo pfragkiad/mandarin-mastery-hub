@@ -59,6 +59,14 @@ describe('breakdown character boxes', () => {
     const { container } = render(<DecompositionTree node={{ glyph: '?', position: '' }}/>);
     expect(container.querySelector('strong.decomposition-glyph.decomposition-glyph-static')?.textContent).toBe('?');
   });
+
+  it('never scales a tile glyph when ink measurement is unavailable (fail closed)', () => {
+    // jsdom has no canvas pixel measurement; the visual fit must stay off, not throw.
+    const { container } = render(<DecompositionTree node={{ glyph: '辶', position: 'outer' }}/>);
+    const text = container.querySelector('.decomposition-glyph strong');
+    expect(text?.textContent).toBe('辶');
+    expect((text as HTMLElement)?.style.transform ?? '').toBe('');
+  });
 });
 
 describe('hanzi quoted inside a source note', () => {
