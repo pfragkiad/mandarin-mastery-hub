@@ -2,7 +2,7 @@ import { rememberOrigin } from '@/lib/practice-return';
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
-import { HanziIcon, HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
+import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, type GameIcon } from './game-catalog';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
@@ -24,7 +24,7 @@ const gameSections = HANZI_GAMES.map(g => ({ label: g.label, path: g.to, icon: g
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
-const sectionIcons: Record<string, typeof Gamepad2> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
+const sectionIcons: Record<string, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
 // Phone bottom tab bar: the four main destinations; "More" (a button, not a link)
 // opens the full menu drawer for Start, Settings and every sub-item.
 const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: typeof Library | typeof HanziIcon }[] = [
@@ -120,8 +120,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
       <nav aria-label="Main navigation">{navigation.map(n => {
         const subs = n.to === '/characters' ? characterSections.map(k => ({ key: k, label: k, to: n.to, search: k === 'Characters' ? {} : { tab: k }, active: k === (charactersTab ?? 'Characters'), icon: sectionIcons[k], cls: 'nav-sub-tab' }))
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
-          : n.to === '/pinyin' ? pinyinSections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.mode ? { mode: s.mode } : {}, active: (activeMode ?? undefined) === s.mode, icon: s.icon as typeof Gamepad2 | undefined, cls: 'nav-sub-tab' }))
-          : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as typeof Gamepad2 | undefined, cls: 'nav-sub-game' }))
+          : n.to === '/pinyin' ? pinyinSections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.mode ? { mode: s.mode } : {}, active: (activeMode ?? undefined) === s.mode, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-tab' }))
+          : n.to === '/flashcards' ? gameSections.map(s => ({ key: s.label, label: s.label, to: s.path, search: undefined, active: path === s.path, icon: s.icon as GameIcon | undefined, cls: 'nav-sub-game' }))
           : null;
         const selected = n.to === '/flashcards' ? path === '/flashcards' || path === '/drawing' : path === n.to;
         return <div key={n.to}><Button asChild variant="ghost" className={`nav-item ${selected ? 'is-active' : ''}`}><Link to={n.to} onClick={() => setMobileOpen(false)} title={n.name}><n.icon /><span>{n.name}</span>{selected && <span className="active-dot" />}</Link></Button>{subs?.map(s => <Button asChild key={s.key} variant="ghost" className={`nav-sub-item ${s.cls} ${selected && s.active ? 'is-active' : ''}`}><Link to={s.to} search={s.search ?? {}} onClick={() => setMobileOpen(false)} title={`Open ${s.label.toLowerCase()}`}>{s.icon && <s.icon />}<span>{s.label}</span></Link></Button>)}</div>;
