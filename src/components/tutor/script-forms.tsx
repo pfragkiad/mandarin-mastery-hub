@@ -71,7 +71,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
         </Button>;
       })}
     </div>
-    {!family && layout === 'tiles' && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
+    {!family && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
   </div>;
 }
 
