@@ -28,11 +28,10 @@ describe('phone tab bar', () => {
     expect(phoneTabFor('/drawing')).toBe('games');
     expect(phoneTabFor('/pinyin')).toBe('pinyin');
   });
-  it('the three Pinyin quizzes light Games, so Games covers all five games', () => {
-    expect(phoneTabFor('/pinyin', 'tones')).toBe('games');
-    expect(phoneTabFor('/pinyin', 'alikes')).toBe('games');
-    expect(phoneTabFor('/pinyin', 'type')).toBe('games');
-    expect(phoneTabFor('/pinyin', null)).toBe('pinyin');
+  it('the three Pinyin quiz pages light Games, so Games covers all five games', () => {
+    expect(phoneTabFor('/pinyin/tone-quiz')).toBe('games');
+    expect(phoneTabFor('/pinyin/sound-alikes')).toBe('games');
+    expect(phoneTabFor('/pinyin/type-what-you-hear')).toBe('games');
   });
   it('Start has its own tab, Settings sits under More, Practice claims no tab', () => {
     expect(phoneTabFor('/')).toBe('start');
