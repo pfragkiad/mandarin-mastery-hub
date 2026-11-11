@@ -563,7 +563,7 @@ it('every Strokes pill starts off on a first visit', async () => {
   expect(screen.getByRole('button', { name: 'Names' })).toHaveAttribute('aria-pressed', 'false');
   // Nothing extra is revealed: no stroke tiles and no direction arrows over the writing square.
   expect(container.querySelector('.stroke-guide-strip')).toBeNull();
-  expect(container.querySelector('.stroke-direction-hints')).toBeNull();
+  expect(container.querySelector('.stroke-direction-overlay')).toBeNull();
 });
 
 it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
