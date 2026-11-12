@@ -489,11 +489,13 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
       // the active guard prevents a previous character's load from taking over.
       if (!active || !target.current) return;
       const exact = radicalStrokes(character, radicalSelection);
-      // Recorded and ambiguous records both carry the source's exact names (ambiguous ones
-      // keep their recorded alternatives, e.g. 心's 斜钩 / 卧钩, like the radical detail card);
-      // unrecorded, derived and count-mismatched sequences still fail closed — never invent
-      // names from stroke geometry.
-      const selectedNames = exact ? (exact.status === 'recorded' || exact.status === 'ambiguous') && exact.strokes.length === data.strokes.length ? exact.strokes : null : names;
+      // Recorded and ambiguous records carry the source's exact names (ambiguous ones keep
+      // their recorded alternatives, e.g. 心's 斜钩 / 卧钩); derived ones show too but are
+      // labelled unverified in the Strokes heading. Unrecorded and count-mismatched sequences
+      // still fail closed — never invent names from stroke geometry.
+      const exactNames = exact ? practiceStrokeNames(exact, data.strokes.length) : null;
+      setDerivedNames(Boolean(exactNames?.derived));
+      const selectedNames = exact ? exactNames?.strokes ?? null : names;
       setStrokes(data.strokes.map((path, i) => {
         const fallback = nameStroke(data.medians[i] ?? []);
         const recorded = selectedNames?.[i];
