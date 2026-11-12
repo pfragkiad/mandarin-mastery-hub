@@ -10,7 +10,7 @@ import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, Play, Pause, RotateCcw, Eye, ListOrdered, MoveUpRight, Volume2, GitBranch, StepForward, TriangleAlert } from 'lucide-react';
+import { Check, ChevronUp, Play, Pause, RotateCcw, Eye, MoveUpRight, Volume2, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -129,6 +129,14 @@ function gradePercents(text: string): React.ReactNode {
   return <span>{parts.map((part, i) => i % 2 ? <span key={i} className={`accuracy-grade accuracy-grade-${accuracyGrade(parseInt(part, 10))}`}>{part}</span> : part)}</span>;
 }
 
+// A remembered one-of-several choice (localStorage), read after mount like useRememberedFlag;
+// stored values outside `allowed` are ignored so a stale key never selects a missing tab.
+function useRememberedChoice<T extends string>(key: string, initial: T, allowed: readonly T[]): [T, (next: T) => void] {
+  const [value, setValue] = useState<T>(initial);
+  useEffect(() => { try { const saved = localStorage.getItem(key); if (saved !== null && (allowed as readonly string[]).includes(saved)) setValue(saved as T); } catch { /* storage unavailable */ } }, [key]);
+  const update = (next: T) => { setValue(next); try { localStorage.setItem(key, next); } catch { /* ignore */ } };
+  return [value, update];
+}
 function useRememberedFlag(key: string, initial: boolean): [boolean, (next: boolean | ((v: boolean) => boolean)) => void] {
   const [value, setValue] = useState(initial);
   useEffect(() => { try { const saved = localStorage.getItem(key); if (saved !== null) setValue(saved === '1'); } catch { /* storage unavailable */ } }, [key]);
@@ -182,15 +190,15 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
 // recorded name, "Preview hidden" or "done") and the bar for the strokes drawn so far, with a
 // tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
-// = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
+// = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
 // Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
 // already show each form's total), and the sub-line never names a stroke while it is hidden.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
 // title leads with the character's own single reading and speaker (null when it has several),
 // then the count, and `word.label` names the character for screen readers.
-// `recall`: the empty box shows "?" (a quiz), rather than staying plain as with Strokes off.
-// `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
+// `recall`: the empty box shows "?" (a quiz), rather than staying plain as with Next stroke off.
+// `glyph`/`ink` (absent when hidden, e.g. Recall): with Next stroke off in Trace the
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
 // `onError`: where a failed reading goes (the header's audio note), so the tile's speaker never
 // grows the tile with an inline message.
@@ -200,7 +208,7 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
 // only shown once it has been written from memory.
 // `glyph` (single character): the practised character, revealed in place of the empty box once
-// every stroke is drawn while the stroke picture is hidden (Recall or the Strokes pill off).
+// every stroke is drawn while the stroke picture is hidden (Recall or Next stroke off).
 // `stamp`: the 繁 / 部 corner-stamp class of the character's exact identity (omitted in Recall).
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
@@ -262,42 +270,50 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   );
 }
 
-// The Strokes panel under the writer. Its drawer holds one of two things, chosen by pills that
-// exclude each other (both owned by WritingPractice and remembered):
-// - `visible`, the Strokes pill: the full sequence of stroke tiles (and, in WritingPractice, the
-//   progress tile's stroke picture) — one switch, so there is no separate Details toggle;
-// - `decompositionOpen`, the Decomposition pill: the character's recorded breakdown
-//   (`decomposition`, built by StrokesPage) in the same spot. The pill is absent when there is
-//   no breakdown (e.g. radical practice) and disabled in Recall so it never gives the answer away.
-// Without stroke data the panel still offers the Decomposition pill alone.
-/** A drawer the Strokes panel can show instead of the stroke tiles: its heading takes the
- *  panel heading's place (so the panel never reads "Strokes" above a breakdown) and its body fills the drawer. */
-type PanelDrawer = { heading: ReactNode; body: ReactNode };
-function StrokeGuide({ decomposition = null, decompositionOpen = false, onDecompositionChange, decompositionDisabled = false, derivedSource = null, strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, audioControl, arrows, onArrowsChange, arrowsDisabled, visible, onVisibleChange, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true, mode = 'watch', outlineSource }: { decomposition?: PanelDrawer | null; decompositionOpen?: boolean; onDecompositionChange?: (value: boolean) => void; decompositionDisabled?: boolean; derivedSource?: string | null; outlineSource?: OutlineSource | undefined; selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; audioControl: React.ReactNode; arrows: boolean; onArrowsChange: (value: boolean) => void; arrowsDisabled: boolean; visible: boolean; onVisibleChange: (value: boolean) => void; playing?: boolean; interactive?: boolean; mode?: PracticeMode }) {
+// The section under the writer's controls: drawer tabs, not switches. `panel` names the open
+// tab — 'strokes' (every stroke tile, in component groups) or 'decomposition' (the character's
+// recorded breakdown, `decomposition`, built by StrokesPage) — or '' when collapsed, which shows
+// only the tab row. Clicking a tab opens it; the chevron collapses the section. WritingPractice
+// owns and remembers `panel`. The Decomposition tab is absent when there is no breakdown (e.g.
+// radical practice) and disabled in Recall (`decompositionDisabled`) so it never gives the
+// answer away; without stroke data only the Decomposition tab is offered. The canvas switches
+// (Arrows, Next stroke, Names) are not here: they sit beside Play/Reset because they change the
+// canvas rather than open something.
+/** The breakdown the Decomposition tab opens: `info` is its source note (shown beside the tab
+ *  while it is open, like the Strokes tab's own note) and `body` fills the drawer. */
+type PanelDrawer = { info: ReactNode; body: ReactNode };
+export type PracticePanel = '' | 'strokes' | 'decomposition';
+function StrokeGuide({ decomposition = null, panel, onPanelChange, decompositionDisabled = false, derivedSource = null, strokes, onPlay, activeStroke, componentIndices = [], scores = [], groups, selectedGroup, onGroupSelect, mapped = false, playing = false, interactive = true, mode = 'watch', outlineSource }: { decomposition?: PanelDrawer | null; panel: PracticePanel; onPanelChange: (panel: PracticePanel) => void; decompositionDisabled?: boolean; derivedSource?: string | null; outlineSource?: OutlineSource | undefined; selectedGroup: string; onGroupSelect: (id: string) => void; mapped?: boolean; strokes: StrokeInfo[]; onPlay: (index: number) => void; activeStroke: number | null; componentIndices?: number[]; scores?: (number | null)[]; groups: PracticeStrokeGroup[]; playing?: boolean; interactive?: boolean; mode?: PracticeMode }) {
   const drawerId = `stroke-drawer-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   // One shared glow filter for every tile's current stroke (ids must be valid in url(#…)).
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const hasStrokes = strokes.length > 0;
   if (!hasStrokes && !decomposition) return null;
-  const showDecomposition = Boolean(decomposition) && decompositionOpen && !decompositionDisabled;
+  const showDecomposition = Boolean(decomposition) && panel === 'decomposition' && !decompositionDisabled;
+  const showStrokes = hasStrokes && panel === 'strokes';
+  const open = showStrokes || showDecomposition;
+  const strokesInfo = <SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo>;
+  const tabId = (name: string) => `${drawerId}-${name}`;
   return (
-    <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}`}>
+    <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}${open ? ' is-open' : ''}`}>
       <StrokeGlowFilter id={glowId}/>
-      <div className="stroke-guide-top">
-        <div className="stroke-guide-heading"><h3 className="eyebrow">{showDecomposition && decomposition ? decomposition.heading : <><ListOrdered size={13} />Strokes<SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo></>}</h3>{derivedSource && !showDecomposition && <span className="stroke-derived-pill" title={`Stroke names assembled from this form's parts by ${derivedSource}; not checked against the official standard`}>Derived · unverified</span>}</div>
-        <div className="stroke-guide-actions">
-          {/* Toggle pills: a fixed one-word label and icon; the green tint (and aria-pressed) shows the feature is on. */}
-          {hasStrokes && <>
-          <Button variant="ghost" size="sm" className={`stroke-pill${arrows ? ' is-on' : ''}`} aria-pressed={arrows} title={arrows ? 'Hide direction arrows' : 'Show direction arrows'} disabled={arrowsDisabled} onClick={() => onArrowsChange(!arrows)}><MoveUpRight size={16} />Arrows</Button>
-          <Button variant="ghost" size="sm" className={`stroke-pill${visible ? ' is-on' : ''}`} aria-pressed={visible} aria-controls={visible ? drawerId : undefined} title={visible ? 'Hide the stroke tiles' : `Show all ${strokes.length} stroke tiles`} onClick={() => onVisibleChange(!visible)}><Eye size={16} />Strokes</Button>
-          {audioControl}
-          </>}
-          {decomposition && <Button variant="ghost" size="sm" className={`stroke-pill${showDecomposition ? ' is-on' : ''}`} aria-pressed={showDecomposition} aria-controls={showDecomposition ? drawerId : undefined} disabled={decompositionDisabled} title={decompositionDisabled ? 'Decomposition is hidden in Recall so it can’t give the answer away' : showDecomposition ? 'Hide the decomposition' : 'Show the decomposition'} onClick={() => onDecompositionChange?.(!showDecomposition)}><GitBranch size={16} />Decomposition</Button>}
+      <div className="stroke-tabs">
+        <div className="stroke-tab-list" role="tablist" aria-label="Character details">
+          {hasStrokes && <span className="stroke-tab-item">
+            <button type="button" role="tab" id={tabId('strokes')} className="stroke-tab" aria-selected={showStrokes} aria-controls={showStrokes ? drawerId : undefined} title={`Show all ${strokes.length} stroke tiles`} onClick={() => onPanelChange('strokes')}>Strokes</button>
+            {showStrokes && strokesInfo}
+            {showStrokes && derivedSource && <span className="stroke-derived-pill" title={`Stroke names assembled from this form's parts by ${derivedSource}; not checked against the official standard`}>Derived · unverified</span>}
+          </span>}
+          {decomposition && <span className="stroke-tab-item">
+            <button type="button" role="tab" id={tabId('decomposition')} className="stroke-tab" aria-selected={showDecomposition} aria-controls={showDecomposition ? drawerId : undefined} disabled={decompositionDisabled} title={decompositionDisabled ? 'Decomposition is hidden in Recall so it can’t give the answer away' : 'Show the decomposition'} onClick={() => onPanelChange('decomposition')}>Decomposition</button>
+            {showDecomposition && decomposition.info}
+          </span>}
         </div>
+        {open && <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Collapse details" title="Collapse" onClick={() => onPanelChange('')}><ChevronUp size={18} aria-hidden="true"/></Button>}
       </div>
-      {showDecomposition && decomposition && <div className="stroke-drawer stroke-drawer-decomposition" id={drawerId}>{decomposition.body}</div>}
-      {hasStrokes && visible && !showDecomposition && (
-        <div className="stroke-drawer" id={drawerId}>
+      {showDecomposition && decomposition && <div className="stroke-drawer stroke-drawer-decomposition" id={drawerId} role="tabpanel" aria-labelledby={tabId('decomposition')}>{decomposition.body}</div>}
+      {showStrokes && (
+        <div className="stroke-drawer" id={drawerId} role="tabpanel" aria-labelledby={tabId('strokes')}>
           <div className="stroke-component-groups">
           {strokeGroupRuns(groups, strokes.length).map((run, runIndex) => <div className="stroke-component-group" key={`${run.group.id}-${runIndex}`} data-component-group={run.group.id}>
             <div className="stroke-component-heading"><Button variant="ghost" size="sm" className="stroke-component-label" disabled={mode === 'recall' || playing} aria-label={`Highlight ${run.group.glyph ?? 'unrecorded part'} strokes ${run.group.strokeIndices.map(i => i + 1).join(', ')}`} aria-pressed={mode === 'trace' ? run.group.strokeIndices.every(i => componentIndices.includes(i)) : selectedGroup === run.group.id} onClick={() => onGroupSelect(mode === 'watch' && selectedGroup === run.group.id ? '' : run.group.id)}><span className="component-color-marker" style={{ background: componentInk(run.group.palette) }}/><span lang="zh-CN">{run.group.glyph ?? '—'}</span><span className="stroke-component-indices">{formatStrokeIndices(run.indices)}</span></Button>{run.group.glyph && <ComponentPronunciation glyph={run.group.glyph}/>}</div>
@@ -446,13 +462,14 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   const [paused, setPaused] = useState(false);
   // Arrow preference is remembered; Recall never shows them (guides must not leak into recall).
   const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
-  // Strokes pill: remembered in Watch/Trace; Recall starts hidden each time it is entered so
-  // nothing reveals the answer by default. It drives both the Strokes drawer and the progress
-  // tile's picture. Off on first visit like the other two pills — the writer alone is the
-  // default view, and the learner opts into tiles, arrows and spoken names.
-  const [tilesPref, setTilesPref] = useRememberedFlag('tutor-stroke-tiles-visible', false);
-  const [recallTiles, setRecallTiles] = useState(false);
-  useEffect(() => { setRecallTiles(false); }, [mode]);
+  // "Next stroke" switch: the progress tile's picture of the stroke to draw next. Remembered, off
+  // on a first visit like the other switches, and never shown in Recall (it would be the answer).
+  const [nextPref, setNextPref] = useRememberedFlag('tutor-stroke-next-preview', false);
+  // The open drawer tab under the controls (Strokes / Decomposition / '' collapsed). Remembered
+  // in Watch/Trace; Recall starts collapsed each time it is entered so nothing reveals the answer.
+  const [panelPref, setPanelPref] = useRememberedChoice<PracticePanel>('tutor-practice-panel', '', ['', 'strokes', 'decomposition']);
+  const [recallPanel, setRecallPanel] = useState<PracticePanel>('');
+  useEffect(() => { setRecallPanel(''); }, [mode]);
   const arrows = arrowsPref && mode !== 'recall';
   const [medians, setMedians] = useState<MedianPoint[][]>([]);
   // Non-Hanzi-Writer outline provenance (reviewed supplementary source), shown in the Strokes (i).
@@ -880,35 +897,31 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     });
   };
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
-  // Stroke-name speech toggle: the "Names" pill in the Strokes action row (shares Step's mute state);
-  // pressed/tinted means names are spoken aloud.
-  const strokesVisible = mode === 'recall' ? recallTiles : tilesPref;
-  // Strokes and Decomposition share the Strokes panel's drawer, so turning one on turns the
-  // other off (Strokes off also hides the progress tile's picture). Decomposition is
-  // remembered like the other pills; Recall disables it (the breakdown would give the answer).
-  const [decompositionPref, setDecompositionPref] = useRememberedFlag('tutor-practice-decomposition', false);
-  const decompositionOpen = decompositionPref && !strokesVisible;
-  const setStrokesVisible = (value: boolean) => {
-    (mode === 'recall' ? setRecallTiles : setTilesPref)(value);
-    if (value) setDecompositionPref(false);
-  };
-  const setDecompositionOpen = (value: boolean) => {
-    setDecompositionPref(value);
-    if (value) { setTilesPref(false); setRecallTiles(false); }
-  };
+  const panel = mode === 'recall' ? recallPanel : panelPref;
+  const setPanel = mode === 'recall' ? setRecallPanel : setPanelPref;
+  const nextPreview = nextPref && mode !== 'recall';
   // Next undrawn stroke, the same position reported through onProgress (Watch: the Step position).
   const nextStroke = mode === 'watch' ? Math.min(stepIndex, strokes.length) : Math.min(tracePos.current, strokes.length);
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={nextPreview} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
     : null;
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
   const tileSlot = <div className="stroke-progress-tile is-placeholder" aria-hidden="true"><span className="stroke-progress-picture"/><span className="stroke-progress-head">{'\u00a0'}</span><span className="stroke-pinyin">{'\u00a0'}</span><span className="word-strip-progress"><span/></span></div>;
   const progressRow = <div ref={progressRowNode} className="practice-progress-row" style={progressPicture ? { ['--practice-progress-picture' as string]: `${progressPicture}px` } : undefined}>{strip ? strip(progressTile) : progressTile?.() ?? tileSlot}<button type="button" className="practice-progress-grip" title="Drag to resize the preview · double-click to reset" aria-label="Resize the stroke preview" onPointerDown={startProgressResize} onDoubleClick={resetProgressPicture}><svg width="34" height="6" viewBox="0 0 34 6" aria-hidden="true"><rect x="1" y="1.5" width="32" height="3" rx="1.5" fill="currentColor"/></svg></button></div>;
-  const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide decomposition={decomposition} decompositionOpen={decompositionOpen} onDecompositionChange={setDecompositionOpen} decompositionDisabled={mode === 'recall'} outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} visible={strokesVisible} onVisibleChange={setStrokesVisible} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  // Canvas switches beside Play/Reset (tinted with a tick while on; aria-pressed): direction
+  // arrows on the square, the progress tile's next-stroke picture, and spoken stroke names
+  // (Names shares Step's mute state).
+  const canvasSwitch = (label: string, on: boolean, icon: ReactNode, title: string, onClick: () => void, disabled = false) =>
+    <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${on ? ' is-on' : ''}`} aria-pressed={on} title={title} disabled={disabled} onClick={onClick}>{on ? <Check size={16} aria-hidden="true"/> : icon}{label}</Button>;
+  const canvasSwitches = <div className="writer-toggles">
+    {canvasSwitch('Arrows', arrows, <MoveUpRight size={16} aria-hidden="true"/>, arrows ? 'Hide direction arrows' : 'Show direction arrows', () => setArrows(!arrows), !ready || !medians.some(median => median.length > 1))}
+    {canvasSwitch('Next stroke', nextPreview, <Eye size={16} aria-hidden="true"/>, mode === 'recall' ? 'The next stroke stays hidden in Recall' : nextPreview ? 'Hide the next-stroke preview' : 'Preview the next stroke in the progress tile', () => setNextPref(!nextPref), mode === 'recall')}
+    {canvasSwitch('Names', !muted, <Volume2 size={16} aria-hidden="true"/>, muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names', () => setMuted(m => !m))}
+  </div>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div>{canvasSwitches}</div><StrokeGuide decomposition={decomposition} panel={panel} onPanelChange={setPanel} decompositionDisabled={mode === 'recall'} outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
@@ -1042,7 +1055,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}
-    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={!familyId && decomposition ? { heading: <><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={!familyId && decomposition ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }
 
 // Word practice's character strip, inside the writing card under the mode tabs.

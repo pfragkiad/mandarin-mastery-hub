@@ -2655,10 +2655,36 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 .stroke-drawer-decomposition > .decomposition-section { margin-top: 0; border-top: 0; padding-top: 0; }
 /* The title sits over the same centred column, so Back, "Write …" and Print line up with the card. */
 .practice-page-content:has(> .practice-layout-single) > .practice-header { max-width: 760px; margin-left: auto; margin-right: auto; }
-/* Four pills (Arrows, Strokes, Names, Decomposition) fit one row only in a roomy panel; when the
-   panel itself is narrow they form an even 2 × 2 grid instead of overflowing. */
-.writing-tool .stroke-guide { container-type: inline-size; container-name: stroke-guide; }
-@container stroke-guide (max-width: 520px) {
-  .stroke-guide-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
-  .stroke-guide-actions > button { justify-content: center; }
+
+/* Practice controls row: Play/Reset on the left, the canvas switches (Arrows, Next stroke, Names)
+   on the right — switches change the square, so they live with the playback buttons rather
+   than with the drawer tabs below. A narrow card stacks them as two centred rows. */
+.writing-tool-tabbed { container-type: inline-size; container-name: practice-card; }
+.writing-tool-tabbed .writer-controls-arranged { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; }
+.writing-tool-tabbed .writer-controls-arranged .writer-playback { flex: 0 0 auto; }
+.writer-toggles { display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; }
+.writer-toggles > .stroke-pill { border: 1px solid var(--border); border-radius: 999px; padding-left: 12px; padding-right: 14px; gap: 7px; height: 36px; }
+.writer-toggles > .stroke-pill svg { width: 16px; height: 16px; }
+@container practice-card (max-width: 600px) {
+  .writing-tool-tabbed .writer-controls-arranged { flex-direction: column; align-items: center; }
+  .writing-tool-tabbed .writer-controls-arranged .writer-playback { width: min(100%, 250px); }
+  .writer-toggles { justify-content: center; max-width: 100%; }
+  .writer-toggles > .stroke-pill { padding-left: 10px; padding-right: 11px; gap: 6px; min-width: 0; }
 }
+
+/* Drawer tabs under the controls: plain text tabs (underlined while open) with the open tab's
+   source note beside it and a collapse chevron at the right; collapsed, only the tab row shows. */
+.stroke-guide .stroke-tabs { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); }
+.stroke-guide { border-top: 0; padding-top: 0; }
+.stroke-tab-list { display: flex; align-items: center; gap: 22px; min-width: 0; flex-wrap: wrap; }
+.stroke-tab-item { display: inline-flex; align-items: center; gap: 8px; }
+.stroke-tab-item .source-info-trigger { margin-top: 0; flex-shrink: 0; }
+.stroke-tab { position: relative; background: none; border: 0; padding: 10px 2px 12px; font: inherit; font-size: 14px; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
+.stroke-tab:hover:not(:disabled) { color: var(--foreground); }
+.stroke-tab[aria-selected='true'] { color: var(--foreground); font-weight: 600; }
+.stroke-tab[aria-selected='true']::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--foreground); }
+.stroke-tab:disabled { opacity: .45; cursor: not-allowed; }
+.stroke-tab:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
+.stroke-tabs-collapse { flex-shrink: 0; color: var(--muted-foreground); }
+.stroke-tabs-collapse:hover { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
+html[data-display-size='comfortable'] .stroke-tab { font-size: 16px; }
