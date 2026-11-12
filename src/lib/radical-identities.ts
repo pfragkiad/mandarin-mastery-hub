@@ -1,4 +1,5 @@
 import { catalog } from './catalog-store';
+import { radicalFamily } from './radical-strokes';
 
 export type RadicalLink = { id: string; number: number; glyph: string };
 export type RadicalIdentity = {
@@ -30,17 +31,17 @@ export function radicalIdentity(glyph: string): RadicalIdentity {
   return catalog.radicalIdentities.identities[glyph] ?? { glyph, kind: 'unmapped', radicals: [], equivalentGlyphs: [], sourceIds: [] };
 }
 
-/** The glyph a breakdown tile draws for a source token. A Unicode radical symbol (⺝, ⽉)
- *  whose recorded identity names exactly one Kangxi radical AND lists that radical's own
- *  glyph as its Unicode equivalent is the same form under another code, so the tile shows
- *  the radical's glyph (⺝ → 月) and both source trees look identical. Anything else (⺮,
- *  whose equivalent is 𥫗 rather than 竹) keeps its own source glyph. Display only: source
- *  trees, links and identities still use the token itself. */
+/** The glyph a breakdown tile draws for a source token. When the token's exact Kangxi
+ *  identity names one family and that family's radical file lists the token as another
+ *  Unicode code of one of its forms (⺝ and ⽉ are codes of 月's form; ⻖ of 阝), the tile
+ *  shows that form's character so both source trees draw the same picture. Tokens that are
+ *  their own recorded form (⺼, ⺮) or have no recorded alias keep their glyph. Display only:
+ *  source trees, links and identities still use the token itself. */
 export function breakdownDisplayGlyph(glyph: string): string {
   const identity = radicalIdentity(glyph);
-  if (identity.kind !== 'symbol' || identity.radicals.length !== 1) return glyph;
-  const radical = identity.radicals[0]!.glyph;
-  return identity.equivalentGlyphs.includes(radical) ? radical : glyph;
+  if (identity.radicals.length !== 1) return glyph;
+  const form = radicalFamily(identity.radicals[0]!.number)?.forms.find(item => item.aliases.includes(glyph));
+  return form?.character ?? glyph;
 }
 
 let searchVersion = -1;
