@@ -695,7 +695,9 @@ it('while Play runs, the progress tile names the stroke being drawn even with th
   render(<WritingPractice character="我" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
   const tile = () => document.querySelector('.stroke-progress-tile');
-  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden'));
+  await waitFor(() => expect(tile()).not.toBeNull());
+  fireEvent.click(screen.getByRole('button', { name: 'Next stroke' }));
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
   fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('Preview hidden'));
   expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('');
