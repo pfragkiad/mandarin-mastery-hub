@@ -2438,9 +2438,9 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
   .topbar-actions :is(.display-size-trigger, .theme-toggle, .header-divider, .avatar) { display: none; }
   .topbar .topbar-title { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--foreground); }
   .topbar .topbar-actions { gap: 4px; margin-right: -10px; }
-  .topbar-actions .search-trigger) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--muted-foreground); }
-  .topbar-actions .search-trigger):hover { color: var(--primary); }
-  .topbar-actions .search-trigger) > svg { width: 21px; height: 21px; }
+  .topbar-actions .search-trigger { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--muted-foreground); }
+  .topbar-actions .search-trigger:hover { color: var(--primary); }
+  .topbar-actions .search-trigger > svg { width: 21px; height: 21px; }
   /* Tab bar: the current tab sits in the same soft tinted capsule as the side menu's pill. */
   .phone-tab { margin: 5px 2px; border-radius: 12px; }
   .phone-tab.is-active { background: var(--nav-active); }
