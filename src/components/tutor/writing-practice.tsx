@@ -233,10 +233,10 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   const subLine = done ? 'done' : showStroke ? stroke?.pinyin ? `next: ${stroke.pinyin}` : '' : 'Preview hidden';
   const blank = recall ? <span className="stroke-progress-unknown">?</span> : null;
   return (
-    // A word tile hosts a speaker control, so its read-out is a labelled group (an <img> role
+    // A tile with a speaker (word character, or a single character's reading) is a group; its read-out is a labelled group (an <img> role
     // would hide that control from screen readers); a single-character tile has no control and
     // stays a plain image read-out.
-    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word || reading ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : blank : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : blank}</span>
