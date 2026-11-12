@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { glyphFitScale } from './glyph-fit';
+import { glyphFitScale, glyphInkShift } from './glyph-fit';
 
 describe('glyphFitScale', () => {
   it('leaves ink that already fills the em untouched', () => {

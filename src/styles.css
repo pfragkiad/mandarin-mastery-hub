@@ -687,6 +687,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 /* Unrecorded parts (?) are intentional data gaps: muted text and a dashed
    border so the placeholder never reads as a broken or missing image. */
 .decomposition-glyph-unknown { color: var(--muted-foreground); border-style: dashed; opacity: .8; }
+/* The measured optical nudge only works on a box the transform can move, so the
+   placeholder mark gets its own inline box inside the tile. */
+.decomposition-unknown-mark { display: inline-block; }
 .babelstone-pua-glyph { font-family: 'BabelStone Han PUA'; }
 .babelstone-component-id { font-family: var(--font-sans); font-size: 12px; min-width: 46px; text-align: center; flex-shrink: 0; }
 .babelstone-component-facts { display: flex; flex-direction: column; gap: 3px; }
