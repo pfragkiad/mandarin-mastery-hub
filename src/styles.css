@@ -425,6 +425,10 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
    tree rather than a section heading, so it gets the panel block gap instead of the 2px note
    spacing that .decomposition-section .library-note uses. */
 .decomposition-trees > h4.library-note { margin-top: 22px; }
+/* The "matches the G-source breakdown above" note replaces that second heading, so it gets the
+   same 22px block gap instead of the 2px note spacing. Direct-child only: the "tree unavailable"
+   note sits inside a BabelStone block's own div and keeps its tight spacing. */
+.decomposition-trees > p.enrichment-expression { margin-top: 22px; }
 /* Shared row gaps apply to both siblings and parent/child rows, without
    accumulating nested margins. Vocabulary word groups keep their own layout. */
 .decomposition-tree:not(.vocabulary-parts), .decomposition-tree ul,
