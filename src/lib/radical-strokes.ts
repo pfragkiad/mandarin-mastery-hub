@@ -24,4 +24,15 @@ export function historicalRadicalHeading(glyph: string, familyId?: number): bool
   return (catalog.radicalStrokes.families ?? []).some(family => (familyId === undefined || family.id === familyId) && family.kangxiHeading === glyph && family.canonical !== glyph && family.forms.some(form => form.character === family.canonical));
 }
 export function radicalForm(id: number, key?: string) { return key ? radicalFamily(id)?.forms.find(form => form.key === key) : undefined; }
-export function radicalForms(glyph: string) { return catalog.radicalStrokes.families?.flatMap(family => family.forms.filter(form => form.character === glyph).map(form => ({ family, form }))) ?? []; }
+export function radicalForms(glyph: string) { return catalog.radicalStrokes.families?.flatMap(family => family.forms.filter(form => form.character === glyph).map(form => ({ family, form }))) ?? []; }/** Which exact-form stroke names Practice may show, given the outline's stroke count.
+ *  Recorded and ambiguous sequences show as the source wrote them. Derived sequences (the
+ *  source assembled them from the form's parts and never checked them against the standard)
+ *  are shown too, but flagged `derived` so the Strokes panel labels them as unverified.
+ *  Unrecorded, count-mismatched, or any sequence whose length differs from the outline's
+ *  strokes still fails closed (null): names are never guessed from geometry. */
+export function practiceStrokeNames(record: RadicalStrokeRecord, strokeCount: number): { strokes: RadicalStrokeRecord['strokes']; derived: boolean } | null {
+  if (record.strokes.length !== strokeCount) return null;
+  if (record.status === 'recorded' || record.status === 'ambiguous') return { strokes: record.strokes, derived: false };
+  if (record.status === 'derived') return { strokes: record.strokes, derived: true };
+  return null;
+}

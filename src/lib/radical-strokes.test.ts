@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog-store';
 import { libraryEntries, filterLibrary } from './character-library';
-import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
+import { historicalRadicalHeading, orderedRadicalForms, practiceStrokeNames, radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
 import { strokeNames } from './stroke-names';
 
 describe('Radical-only stroke decompositions', () => {
@@ -86,5 +86,17 @@ describe('Radical-only stroke decompositions', () => {
     const derived = catalog.radicalStrokes.families?.flatMap(family => family.forms).find(form => form.record.status === 'derived');
     expect(derived).toBeDefined();
     if (derived) expect(await strokeNames(derived.character)).toBeNull();
+  });
+  it('lets Practice show derived names only flagged as derived, and only when counts match', () => {
+    const 辵 = radicalStrokes('辵');
+    expect(辵?.status).toBe('derived');
+    if (!辵) return;
+    const shown = practiceStrokeNames(辵, 7);
+    expect(shown?.derived).toBe(true);
+    expect(shown?.strokes.map(s => s.name)).toEqual(['撇', '撇', '撇', '竖', '横', '撇', '捺']);
+    expect(practiceStrokeNames(辵, 6)).toBeNull();
+    expect(practiceStrokeNames({ ...辵, status: 'unrecorded' }, 7)).toBeNull();
+    expect(practiceStrokeNames({ ...辵, status: 'count-mismatch' }, 7)).toBeNull();
+    expect(practiceStrokeNames({ ...辵, status: 'recorded' }, 7)?.derived).toBe(false);
   });
 });
