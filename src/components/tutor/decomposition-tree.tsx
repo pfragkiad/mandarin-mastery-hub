@@ -1,6 +1,7 @@
 import { MeaningText } from './meaning-text';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { useRef } from 'react';
+import { useSharedLabelColumn } from './decomposition-labels';
 import { Link } from '@tanstack/react-router';
 import { Columns2, Columns3, Rows2, Rows3, FlipHorizontal2, RotateCw, Layers2, Minus, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -69,6 +70,16 @@ function sharedFormPresentation(form: { family: number; glyph: string }, heading
   const presentation = record ? glyphPresentation(form.glyph, record.kind, record.pinyin, record.meaning) : null;
   const meaning = (record?.meaning ?? '').split(';').map(part => part.trim()).filter(part => part && !/^(?:Kangxi radical\s*#?|rad\.?|radical)\s*#?\s*\d+$/i.test(part)).join('; ');
   return { destination, spoken: presentation?.speech ?? null, reading: presentation?.reading || null, pinyin: presentation?.reading || '', meaning };
+}
+
+/** The root list of one breakdown tree. Inputs: the tree, its owner character and an
+ *  accessible name. It gives every row of the tree one shared label column
+ *  (useSharedLabelColumn), so long position labels never overlap their tiles and tiles
+ *  at the same depth stay left-aligned. */
+export function DecompositionTreeList({ node, owner, label }: { node: DecompositionNode; owner?: string | undefined; label: string }) {
+  const listRef = useRef<HTMLUListElement | null>(null);
+  useSharedLabelColumn(listRef, node);
+  return <ul ref={listRef} className="decomposition-tree" aria-label={label}><DecompositionTree node={node} owner={owner}/></ul>;
 }
 
 /** One breakdown row. `owner` is the character whose declared radical applies to this node

@@ -39,12 +39,10 @@ export function useSharedLabelColumn(ref: RefObject<HTMLElement | null>, key: un
     let cancelled = false;
     const measure = () => {
       if (cancelled) return;
-      const previous = root.style.getPropertyValue('--decomposition-label-width');
       root.style.removeProperty('--decomposition-label-width');
       const labels = Array.from(root.querySelectorAll<HTMLElement>('.decomposition-node > span:first-child'));
       const next = `${labelColumnWidth(labels.map(label => label.getBoundingClientRect().width))}px`;
       root.style.setProperty('--decomposition-label-width', next);
-      void previous;
     };
     measure();
     void document.fonts?.ready.then(measure);

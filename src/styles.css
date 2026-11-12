@@ -426,7 +426,11 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 /* Position labels share one right-aligned column so the outline icon or glyph sits a uniform,
    short distance to the right of every label (root, top, bottom, stroke numbers). */
 .decomposition-node { display: flex; align-items: center; gap: 10px; min-height: 46px; }
-.decomposition-node > span { width: 42px; flex-shrink: 0; text-align: left; font-size: 11px; color: var(--muted-foreground); }
+/* The label column is shared by the whole tree (--decomposition-label-width, set by
+   useSharedLabelColumn to its widest label) so same-depth tiles stay left-aligned; the
+   min-content floor keeps a wrapped label's longest word ("enclosure") out of its tile
+   even before measurement. */
+.decomposition-node > span { width: max(42px, var(--decomposition-label-width, 0px)); min-width: min-content; flex-shrink: 0; text-align: left; font-size: 11px; color: var(--muted-foreground); overflow-wrap: normal; word-break: normal; }
 .decomposition-node strong { font-size: 32px; font-weight: 400; }
 .decomposition-layout { display: flex; align-items: center; gap: 9px; color: var(--foreground); }
 .decomposition-layout svg { width: 28px; height: 28px; flex: 0 0 28px; margin: 0 6px; }
