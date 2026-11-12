@@ -33,13 +33,17 @@ export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, 
         <DropdownMenuContent align="end"><DropdownMenuItem disabled={printDisabled} onSelect={onPrint}><Printer/>Print sheet</DropdownMenuItem></DropdownMenuContent>
       </DropdownMenu>
     </div>
+    {/* Title on its own line; under it the form tiles (when any) sit on the left and the
+        reading block fills the rest: pinyin + speaker with the pills pushed right, then the
+        translation on its own line so it wraps across the full remaining width. */}
+    <h1 className="practice-title">Write{' '}<span lang="zh-CN" className={`practice-title-glyph ${glyphClassName}${hideGlyph ? ' sr-only' : ''}`}>{glyph}</span></h1>
     <div className="practice-header-main">
+      {forms && <div className="practice-header-forms">{forms}</div>}
       <div className="practice-header-text">
-        <h1 className="practice-title">Write{' '}<span lang="zh-CN" className={`practice-title-glyph ${glyphClassName}${hideGlyph ? ' sr-only' : ''}`}>{glyph}</span></h1>
-        <p className="practice-reading-line">{reading}<span className="practice-reading-dot" aria-hidden="true">·</span><span className="practice-translation">{meaning}</span>{pills}</p>
+        <p className="practice-reading-line"><span className="practice-reading">{reading}</span>{pills}</p>
+        <p className="practice-translation-line"><span className="practice-translation">{meaning}</span></p>
         {after}
       </div>
-      {forms && <div className="practice-header-forms">{forms}</div>}
     </div>
   </header>;
 }
