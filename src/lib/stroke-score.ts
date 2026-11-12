@@ -9,12 +9,20 @@ export function characterScore(scores: (number | null)[]): number | null {
   if (!done.length) return null;
   return Math.round(done.reduce((a, b) => a + b, 0) / done.length);
 }
-// A finished character's result: its total accuracy when at least one stroke was hand-drawn,
-// otherwise "shown" (every stroke was played or clicked, so there is nothing to grade).
-export type CharacterResult = { kind: 'score'; percent: number } | { kind: 'shown' };
-export function finishedResult(scores: (number | null)[]): CharacterResult {
+// A finished character's result: its total accuracy and the mistakes made on the hand-drawn
+// strokes when at least one was drawn, otherwise "shown" (every stroke was played or clicked).
+// `mistakes` runs beside `scores`, one entry per stroke (null for strokes that were not drawn).
+export type CharacterResult = { kind: 'score'; percent: number; mistakes: number } | { kind: 'shown' };
+export function finishedResult(scores: (number | null)[], mistakes: (number | null)[] = []): CharacterResult {
   const percent = characterScore(scores);
-  return percent === null ? { kind: 'shown' } : { kind: 'score', percent };
+  if (percent === null) return { kind: 'shown' };
+  const count = scores.reduce<number>((sum, score, i) => score === null ? sum : sum + (mistakes[i] ?? 0), 0);
+  return { kind: 'score', percent, mistakes: count };
+}
+// The bracketed mistake count after "NN% accuracy": " (1 mistake)", " (3 mistakes)", or nothing
+// for a mistake-free round.
+export function mistakeNote(mistakes: number): string {
+  return mistakes > 0 ? ` (${mistakes} ${mistakes === 1 ? 'mistake' : 'mistakes'})` : '';
 }
 // The one word before "Draw again to start over." once a character is finished.
 export function completionWord(percent: number | null): string {
