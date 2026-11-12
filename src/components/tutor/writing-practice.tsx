@@ -182,8 +182,8 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
 // recorded name, or the finished accuracy) and the bar for the strokes drawn so far, with a
 // tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
-// = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
-// Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
+// = strokes.length when done) and `showStroke`. With the Next stroke switch off the picture shows
+// the whole hanzi in Trace, and in Recall an empty "?" box so the answer never shows; the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
 // already show each form's total), and the sub-line names the stroke just completed.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
