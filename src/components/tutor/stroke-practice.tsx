@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from '@tanstack/react-router';
-import { practiceHint } from '@/lib/tile-hints';
 import { Check, MoveUpRight, Pause, Play, RotateCcw, Volume2 } from 'lucide-react';
 import { PracticeHeader } from './practice-header';
 import type HanziWriter from 'hanzi-writer';
@@ -155,10 +153,6 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
           {practiceMode !== 'recall' && <div className="writer-toggles"><Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${arrows ? ' is-on' : ''}`} aria-pressed={arrows} title={arrows ? 'Hide direction arrows' : 'Show direction arrows'} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}>{arrows ? <Check size={16} aria-hidden="true"/> : <MoveUpRight size={16} aria-hidden="true"/>}Arrows</Button></div>}
         </div>
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
-      <div className="stroke-practice-footer">
-        {practiceMode !== 'recall' && <div className="practice-facts"><span><strong>1</strong>stroke</span><span><strong lang="zh-CN">{strokeName ?? '—'}</strong>name</span><span>{example ? <Link to="/strokes" search={{ character: example.character }} title={practiceHint(example.character)}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}{example ? `example · stroke ${example.strokeIndex + 1}` : 'example'}</span></div>}
-        <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
-      </div>
     </section>
     {sheet && outline && <PracticeSheet text={glyph} pinyin={entry.pinyin || undefined} meaning={entry.meaning || undefined} outlines={{ [glyph]: { strokes: [outline] } }} onClose={() => setSheet(false)}/>}
   </div></div>;
