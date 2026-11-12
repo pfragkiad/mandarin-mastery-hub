@@ -486,11 +486,11 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   const [outlineSource, setOutlineSource] = useState<OutlineSource | undefined>();
   // Set when the shown names are a derived (assembled, unverified) sequence; names its source.
   const [derivedSource, setDerivedSource] = useState<string | null>(null);
-  // Animation speed is chosen in Settings (default 0.5×) and read live here.
+  // Animation speed is chosen in Preferences (default 0.5×) and read live here.
   const speed = strokeSpeed(preferences.animationSpeed);
   const speedRef = useRef(speed);
   speedRef.current = speed;
-  // Per-mode handwriting strictness (Hanzi Writer leniency) from Settings.
+  // Per-mode handwriting strictness (Hanzi Writer leniency) from Preferences.
   const strictness = leniency(mode === 'recall' ? preferences.recallLeniency : preferences.traceLeniency);
   const [groupSelection, setGroupSelection] = useState({ character, id: '' });
   const selectedGroup = groupSelection.character === character ? groupSelection.id : '';
