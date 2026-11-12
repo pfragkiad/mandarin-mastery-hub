@@ -690,3 +690,14 @@ it('a character with no recorded reading keeps the plain "Stroke N / total" titl
   // No control inside, so the read-out stays a plain image label.
   expect(tile?.getAttribute('role')).toBe('img');
 });
+
+it('while Play runs, the progress tile names the stroke being drawn even with the preview hidden', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const tile = () => document.querySelector('.stroke-progress-tile');
+  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden'));
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('Preview hidden'));
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('');
+  expect(tile()?.querySelector('.stroke-shape')).toBeNull();
+});
