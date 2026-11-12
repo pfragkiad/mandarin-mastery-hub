@@ -2690,6 +2690,6 @@ html[data-display-size='comfortable'] .stroke-tab { font-size: 16px; }
 
 /* Single-stroke Practice: the stroke's facts and source sit at the foot of the writing card,
    under a divider, instead of in the old right-hand column. */
-.stroke-practice-footer { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.stroke-practice-footer { margin-top: 8px; display: flex; flex-direction: column; gap: 14px; }
 .stroke-practice-footer .practice-facts { flex-wrap: wrap; white-space: normal; }
 .stroke-practice-footer .source-note { margin: 0; }

@@ -91,7 +91,9 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
             })
             .catch(err => onError(err));
         },
-        onLoadCharDataSuccess: () => { if (active) { setReady(true); setMessage(''); } },
+        // The writer draws at a fixed 300px; a viewBox lets the SVG scale with a narrower square
+        // (phones) instead of clipping the stroke at the right edge.
+        onLoadCharDataSuccess: () => { node.querySelector('svg')?.setAttribute('viewBox', '0 0 300 300'); if (active) { setReady(true); setMessage(''); } },
         onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); },
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
