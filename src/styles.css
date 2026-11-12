@@ -2571,14 +2571,14 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .stroke-progress-unknown { font-size: 18px; color: var(--muted-foreground); }
 .stroke-progress-tile .stroke-shape { width: 46px; height: 46px; }
 html[data-display-size='comfortable'] .stroke-progress-picture { width: 66px; height: 66px; }
-html[data-display-size='comfortable'] .stroke-progress-tile .stroke-shape { width: 52px; height: 52px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-progress-tile .stroke-shape { width: 52px; height: 52px; }
 /* The focused word character's tile is the progress tile (is-word) and wears the selected
    strip tile's tint. */
 .stroke-progress-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
 /* Title line: reading + speaker as one pair, a dot, then the count ("bāo 🔊 · 3 / 5"), or
    "Stroke 3 / 12" for a single character. */
 .stroke-progress-head { grid-area: head; display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 26px; font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
-.practice-progress-row .stroke-progress-head .stroke-index { font-size: inherit; color: var(--foreground); font-variant-numeric: tabular-nums; white-space: nowrap; }
+html .practice-progress-row .stroke-progress-head .stroke-index { font-size: inherit; color: var(--foreground); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .stroke-progress-sep { color: var(--muted-foreground); font-weight: 400; }
 .stroke-progress-head .word-strip-reading { display: inline-flex; align-items: center; gap: 2px; font-weight: 500; }
 /* Status line: the next stroke's name, "Preview hidden", "not started" or "done". */
