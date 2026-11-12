@@ -2648,3 +2648,12 @@ html[data-display-size='comfortable'] .practice-reading-line .pinyin { font-size
 html[data-display-size='comfortable'] .practice-header .form-switch-text b { font-size: 18px; }
 html[data-display-size='comfortable'] .practice-header .form-switch-text small { font-size: 14px; }
 html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
+
+/* Character/word Practice is one centred column: the breakdown opens in the Strokes panel's
+   drawer (Decomposition pill), so the writing card keeps its own width (capped, shrinking on
+   narrow screens) instead of stretching across the old two-column space. */
+.practice-page-content .practice-layout.practice-layout-single { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; max-width: 760px; margin-left: auto; margin-right: auto; }
+.practice-page-content .practice-layout.practice-layout-single > .writing-tool { grid-column: 1; grid-row: auto; }
+/* Inside the drawer the breakdown sits 20px under the pill row, like the stroke tiles. */
+.stroke-drawer-decomposition { margin-top: 20px; }
+.stroke-drawer-decomposition > .decomposition-section { margin-top: 0; border-top: 0; padding-top: 0; }
