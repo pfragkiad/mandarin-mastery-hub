@@ -314,7 +314,8 @@ it('recall keeps stroke tiles and component headings inert, leaving pronunciatio
   fireEvent.click(tile);
   expect(fake.animateStroke).not.toHaveBeenCalled();
   expect(screen.getByRole('button', { name: 'Names' })).toBeEnabled();
-  expect(screen.getByRole('button', { name: 'Arrows' })).toBeEnabled();
+  // Recall never shows direction arrows, so the Arrows switch is disabled there.
+  expect(screen.getByRole('button', { name: 'Arrows' })).toBeDisabled();
 });
 
 it('Step after a component selection clears the highlight and draws the next group\'s first stroke', async () => {
