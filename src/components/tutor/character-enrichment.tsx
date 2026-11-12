@@ -1,10 +1,11 @@
 import { SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
 import { gSourceDecompositions, resolveEnrichment, matchesRecordedGSource, type CharacterEnrichment } from '@/lib/character-enrichment';
 import { Button } from '@/components/ui/button';
 import { DecompositionTree } from './decomposition-tree';
+import { useSharedLabelColumn } from './decomposition-labels';
 import { componentInk } from '@/lib/practice-stroke-groups';
 
 /** Source notation keeps its brackets, operators and separators plain; every hanzi inside it gets
@@ -35,11 +36,16 @@ export function CharacterDecomposition({ character, tree, source, status }: { ch
 /** Display priority never changes the original tree or the geometry-bound stroke mapping.
  *  When known recorded parts agree with G-source (including explicit missing-part gaps),
  *  the duplicate is not repeated; the original source and bindings remain unchanged.
- *  `character` owns the breakdown: its declared radical resolves shared forms such as 阝. */
+ *  `character` owns the breakdown: its declared radical resolves shared forms such as 阝.
+ *  All trees shown here share one position-label column (useSharedLabelColumn on a
+ *  display:contents wrapper, so the surrounding layout is untouched), keeping long labels
+ *  out of their tiles and same-depth tiles left-aligned across both breakdowns. */
 export function RecordedDecomposition({ character, tree, source, status, record }: { character?: string | undefined; tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
   const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree, character));
-  return <>
+  const treesRef = useRef<HTMLDivElement | null>(null);
+  useSharedLabelColumn(treesRef, `${character}|${record ? 'enriched' : 'plain'}|${alternatives.length}|${matchesGSource}`);
+  return <div ref={treesRef} className="decomposition-trees">
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
       <h4 className="library-note">BabelStone · G-source<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>IDS source qualifiers · {alternative.qualifiers}<br/>Structural description · not verified etymology or stroke geometry</SourceInfo></h4>
       {alternative.tree ? <ul className="decomposition-tree" aria-label={`BabelStone G-source ${index + 1}`}><DecompositionTree node={alternative.tree} owner={character}/></ul> : <p className="enrichment-expression"><span lang="zh-CN"><SourceGlyphs text={alternative.expression}/></span><small>Source notation retained; tree unavailable.</small></p>}
@@ -50,7 +56,7 @@ export function RecordedDecomposition({ character, tree, source, status, record 
         <h4 className="library-note">Hanzi graphical structure<SourceInfo inline className="detail-footnote">Source · {source}<br/>{status ?? 'Imported graphical structure · not verified etymology'}</SourceInfo></h4>
         <ul className="decomposition-tree" aria-label="Hanzi graphical structure"><DecompositionTree node={tree} owner={character}/></ul>
       </>}
-  </>;
+  </div>;
 }
 export function ComponentPicker({ record, selected, onSelect }: { groupingSource?: string; onGroupingSourceChange?: ((source: string) => void) | undefined; record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {
   return <div className="enrichment-note"><h4 className="eyebrow"><SquareDashedMousePointer size={13} aria-hidden="true"/>COMPONENT STROKES<SourceInfo inline className="detail-footnote">Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines<br/>Stroke order powered by Hanzi Writer · character data loads online</SourceInfo></h4>
