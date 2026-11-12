@@ -2025,7 +2025,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .writer-board.writer-board-fill .writing-grid { margin-bottom: 12px; }
 
 /* Practice status cue: "Draw again to start over." follows its one-word result on the same line;
-   its colour comes inline from the drawn character's ink. */
+   it is bold only — the grade colour belongs to the result word, not the instruction. */
 .writer-status-text { display: block; max-width: 100%; }
 
 /* Accuracy grade colours for the Practice status percentage: 90%+ green, 80%+ orange, 60%+ brown, lower red. */

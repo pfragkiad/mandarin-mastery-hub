@@ -6,7 +6,7 @@ import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, completionWord, finishedResult, mistakeNote, strokeScore, type CharacterResult } from '@/lib/stroke-score';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { practiceCanvasSize, PRACTICE_CANVAS_MIN, practiceProgressPicture, PRACTICE_PROGRESS_PICTURE_MIN, PRACTICE_PROGRESS_PICTURE_MAX } from '@/lib/learning-preferences';
-import { accuracyGrade } from '@/lib/accuracy-grade';
+import { accuracyGrade, type AccuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate } from '@tanstack/react-router';
@@ -78,24 +78,25 @@ function nameStroke(median: Array<[number, number]>): { name: string; pinyin: st
  *  the stored value after mount; only explicit changes are written back. */
 // Status line under the drawing square. The trailing "start over" instruction
 // (e.g. "Draw again to start over.") is the next action the learner should take,
-// so it is emphasised separately from the result text before it.
+// so it is emphasised (bold only, no colour) separately from the result text before it.
 const START_OVER_CUE = /((?:Draw again|Press \w+) to start over\.)$/;
 /**
  * WriterStatus — the status line under the drawing square.
- * Inputs: `message` (full status text) and `ink` (CSS colour of the drawn character, so the
- * "start over" cue matches the Hanzi ink above it).
+ * Inputs: `message` (full status text) and `grade` (the finished round's accuracy band, so the
+ * completion word — "Perfect!" / "Complete." — wears the same grade colour as the score on the
+ * progress tile; null for every other message).
  * The cue stays on the same line as the short result before it ("Perfect! Draw again to start
  * over."): the character's accuracy lives on its progress tile, so the line is one short sentence.
  */
-function WriterStatus({ message, ink }: { message: string; ink: string }) {
+function WriterStatus({ message, grade = null }: { message: string; grade?: AccuracyGrade | null | undefined }) {
   const match = START_OVER_CUE.exec(message);
   const lead = match ? message.slice(0, match.index).trimEnd() : '';
   return (
     <p className="writer-status" aria-live="polite">
       {match ? (
         <span className="writer-status-text">
-          {lead && <>{gradePercents(lead)}{' '}</>}
-          <strong className="writer-status-cue" style={{ color: ink }}>{match[1]}</strong>
+          {lead && <>{grade ? <span className={`accuracy-grade accuracy-grade-${grade}`}>{lead}</span> : gradePercents(lead)}{' '}</>}
+          <strong className="writer-status-cue">{match[1]}</strong>
         </span>
       ) : gradePercents(message)}
     </p>
@@ -459,7 +460,12 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   // Counts finished writer builds. A rebuild can resolve so fast that ready's false→true
   // flip is batched away, so the mode effect keys on this to re-arm every new writer.
   const [writerBuild, setWriterBuild] = useState(0);
-  const [message, setMessage] = useState('Loading stroke order…');
+  const [messageText, setMessageText] = useState('Loading stroke order…');
+  // The finished round's accuracy band, colouring the completion word ("Perfect!" / "Complete.")
+  // like the tile's score; every other status message clears it.
+  const [messageGrade, setMessageGrade] = useState<AccuracyGrade | null>(null);
+  const setMessage = (text: string, grade: AccuracyGrade | null = null) => { setMessageText(text); setMessageGrade(grade); };
+  const message = messageText;
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   // Arrow preference is remembered; Recall never shows them (guides must not leak into recall).
@@ -779,7 +785,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
           // another character); the line under the square is one word plus what to do next.
           // "Perfect!" needs a whole hand-drawn attempt; a round that began after clicked
           // strokes is only "Complete.", since part of it was not drawn.
-          setMessage(`${completionWord(wholeAttempt ? total : null)} Draw again to start over.`);
+          setMessage(`${completionWord(wholeAttempt ? total : null)} Draw again to start over.`, accuracyGrade(total));
           return prev;
         });
       },
@@ -932,7 +938,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     {canvasSwitch('Next stroke', nextPreview, <Eye size={16} aria-hidden="true"/>, mode === 'recall' ? 'The next stroke stays hidden in Recall' : nextPreview ? 'Hide the next-stroke preview' : 'Preview the next stroke in the progress tile', () => setNextPref(!nextPref), mode === 'recall')}
     {canvasSwitch('Names', !muted, <Volume2 size={16} aria-hidden="true"/>, muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names', () => setMuted(m => !m))}
   </div>;
-  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div>{canvasSwitches}</div><StrokeGuide decomposition={decomposition} panel={panel} onPanelChange={setPanel} decompositionDisabled={mode === 'recall'} outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
+  return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} grade={messageGrade}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div>{canvasSwitches}</div><StrokeGuide decomposition={decomposition} panel={panel} onPanelChange={setPanel} decompositionDisabled={mode === 'recall'} outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
 type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
 
