@@ -767,7 +767,8 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
           const total = characterScore(prev);
           // The accuracy itself is shown on the progress tile (it stays there after moving on to
           // another character); the line under the square only says what to do next.
-          setMessage(`${completionWord(total)} Draw again to start over.`);
+          // A round that began after clicked strokes says so, since only part was hand-drawn.
+          setMessage(`${wholeAttempt ? completionWord(total) : 'Remaining strokes complete.'} Draw again to start over.`);
           return prev;
         });
       },
