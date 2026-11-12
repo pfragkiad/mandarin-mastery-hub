@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { radicalIdentity } from './radical-identities';
+import { breakdownDisplayGlyph, radicalIdentity } from './radical-identities';
 import { filterLibrary, glyphIndex, libraryDestination, libraryEntries } from './character-library';
 import { searchAll } from './site-search';
 import { catalog } from './catalog-store';
@@ -15,6 +15,13 @@ describe('Exact sourced Kangxi identities', () => {
       expect(radicalIdentity(glyph).sourceIds.length).toBeGreaterThan(0);
     });
   }
+  it('breakdown tiles draw a same-form radical code as its radical (⺝ → 月) only', () => {
+    expect(breakdownDisplayGlyph('⺝')).toBe('月');
+    expect(breakdownDisplayGlyph('月')).toBe('月');
+    expect(breakdownDisplayGlyph('⺮')).toBe('⺮');
+    expect(breakdownDisplayGlyph('⺼')).toBe('⺼');
+    expect(breakdownDisplayGlyph('{117}')).toBe('{117}');
+  });
   it('retains exact ordinary/symbol equivalences', () => {
     expect(radicalIdentity('⼁').equivalentGlyphs).toEqual(['丨']);
     expect(radicalIdentity('⺮').equivalentGlyphs).toEqual(['𥫗']);

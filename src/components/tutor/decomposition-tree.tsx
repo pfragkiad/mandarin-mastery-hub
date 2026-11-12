@@ -14,6 +14,7 @@ import { childOwner, contextualRadical } from '@/lib/radical-context';
 import { radicalFamily } from '@/lib/radical-strokes';
 import { BabelStoneComponent } from './babelstone-component';
 import { useGlyphFit } from './glyph-fit';
+import { breakdownDisplayGlyph } from '@/lib/radical-identities';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
 
