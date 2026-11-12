@@ -256,15 +256,12 @@ it.each([['character', <WritingPractice key="a" character="我" mode="trace"/>],
     expect(fake.hideOutline).not.toHaveBeenCalled();
   });
 
-it('the Strokes group holds the arrow control, and turning it on draws the direction arrows', async () => {
+it('the Arrows switch sits with Play/Reset, not in the drawer, and draws the direction arrows', async () => {
   render(<WritingPractice character="我" mode="trace"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Continue tracing after stroke 3' })).toBeEnabled());
-  const group = document.querySelector('.stroke-guide');
-  expect(group).not.toBeNull();
-  expect(screen.queryByText('Stroke tiles')).toBeNull();
-  expect(group?.textContent).toContain('Strokes');
   const arrows = screen.getByRole('button', { name: 'Arrows' });
-  expect(group?.contains(arrows)).toBe(true);
+  expect(arrows.closest('.writer-controls')).not.toBeNull();
+  expect(document.querySelector('.stroke-guide')?.contains(arrows)).toBe(false);
   expect(document.querySelector('.stroke-direction-overlay')).toBeNull();
   fireEvent.click(arrows);
   await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
