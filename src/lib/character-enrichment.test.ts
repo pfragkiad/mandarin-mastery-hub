@@ -130,7 +130,7 @@ describe('bound character enrichment', () => {
   it('treats 有 as matching G-source: recorded alias ⺝ is 月 and the other part is unknown', () => {
     const g = gSourceDecompositions(record('有'))[0]?.tree;
     expect(g?.children?.[1]?.glyph).toBe('⺝');
-    expect(matchesRecordedGSource(g, catalog.trees['有'], '有')).toBe(true);
+    expect(matchesRecordedGSource(g ?? undefined, catalog.trees['有'], '有')).toBe(true);
   });
   it('does not let an alias hide a different known part', () => {
     const g = parseIdsTree('⿸𠂇⺝')!;
