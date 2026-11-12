@@ -5,7 +5,7 @@ import { useWorkspace } from './workspace';
  * Character style picker: three 永 buttons, each drawn in the face it selects
  * (Handwritten kai, Clean sans, Print song), so the choice previews itself.
  * Reads and writes the saved `preferences.font` through the workspace; it holds
- * no state of its own. Used in Settings → Reading & display (the topbar no
+ * no state of its own. Used in Preferences → Reading & display (the topbar no
  * longer carries it); the per-face fonts come from .font-toggle [data-font] CSS.
  */
 const STYLES = [

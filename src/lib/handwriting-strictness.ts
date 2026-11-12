@@ -1,6 +1,6 @@
 // Handwriting strictness = Hanzi Writer's quiz `leniency` (1.0 is the library
 // default; lower values demand strokes closer to the recorded medians).
-// Trace and Recall are set independently in Settings; any unknown saved value
+// Trace and Recall are set independently in Preferences; any unknown saved value
 // falls back to the default so old preferences keep today's behaviour.
 export const STRICTNESS_LEVELS = [
   { value: 1, label: 'Relaxed (default)' },

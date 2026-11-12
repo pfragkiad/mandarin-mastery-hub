@@ -32,7 +32,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     try { const raw = localStorage.getItem('tutor-preferences'); if (raw) stored = JSON.parse(raw) ?? {}; } catch { /* unavailable or invalid storage uses device defaults */ }
     // Apply the mobile default only once, not on resize or after a saved choice.
     const libraryView = restoredLibraryView(stored.libraryView, window.matchMedia('(max-width: 850px)').matches);
-    // Show pinyin / Show word meanings were removed from Settings (the card Hide
+    // Show pinyin / Show word meanings were removed from Preferences (the card Hide
     // modes replace them), so an old saved "off" must not leave them hidden for good.
     setPreferences(p => ({ ...p, ...stored, libraryView, pinyin: true, meaning: true }));
     setLoaded(true);

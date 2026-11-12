@@ -33,9 +33,9 @@ describe('phone tab bar', () => {
     expect(phoneTabFor('/pinyin/sound-alikes')).toBe('games');
     expect(phoneTabFor('/pinyin/type-what-you-hear')).toBe('games');
   });
-  it('Start has its own tab, Settings sits under More, Practice claims no tab', () => {
+  it('Start has its own tab, Preferences sits under More, Practice claims no tab', () => {
     expect(phoneTabFor('/')).toBe('start');
-    expect(phoneTabFor('/settings')).toBe('more');
+    expect(phoneTabFor('/preferences')).toBe('more');
     expect(phoneTabFor('/strokes')).toBeNull();
   });
 });
