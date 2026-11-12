@@ -2629,10 +2629,6 @@ html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
 /* Derived stroke names: shown, but marked as assembled by the source and unverified. */
 .stroke-derived-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid color-mix(in oklab, var(--terracotta) 55%, transparent); border-radius: 999px; font-size: 11px; color: var(--terracotta); white-space: nowrap; cursor: help; }
-.stroke-drawer-toggle { height: 28px; padding: 0 8px 0 10px; gap: 4px; border-radius: 999px; font-size: 12px; color: var(--muted-foreground); }
-.stroke-drawer-toggle:hover, .stroke-drawer-toggle.is-open { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
-.stroke-drawer-toggle svg { transition: transform .2s; }
-.stroke-drawer-toggle.is-open svg { transform: rotate(180deg); }
 .stroke-drawer { animation: stroke-drawer-in .2s ease-out; }
 @keyframes stroke-drawer-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
