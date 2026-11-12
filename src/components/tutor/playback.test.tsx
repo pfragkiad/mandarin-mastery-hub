@@ -566,16 +566,15 @@ it('every Strokes pill starts off on a first visit', async () => {
   expect(container.querySelector('.stroke-direction-overlay')).toBeNull();
 });
 
-it('the Strokes drawer starts closed and Details opens every stroke tile', async () => {
-  localStorage.removeItem('tutor-stroke-drawer-open');
+it('the Strokes pill alone opens every stroke tile, with no separate Details toggle', async () => {
+  localStorage.setItem('tutor-stroke-tiles-visible', '0');
   render(<WritingPractice character="我" mode="trace"/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
-  const details = screen.getByRole('button', { name: 'Details' });
-  expect(details).toHaveAttribute('aria-expanded', 'false');
+  expect(screen.queryByRole('button', { name: /Details/ })).toBeNull();
   expect(document.querySelectorAll('.stroke-chip')).toHaveLength(0);
-  fireEvent.click(details);
+  fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
   expect(await screen.findByRole('button', { name: 'Continue tracing after stroke 3' })).toBeTruthy();
-  expect(localStorage.getItem('tutor-stroke-drawer-open')).toBe('1');
+  expect(localStorage.getItem('tutor-stroke-tiles-visible')).toBe('1');
 });
 
 it('the progress tile shows the next stroke glowing and fills its bar as strokes are drawn', async () => {
