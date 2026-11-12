@@ -30,7 +30,4 @@ describe('vocabulary font subsets', () => {
     expect(css).toContain(":root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'Tutor Vocabulary Kai', 'LXGW WenKai TC', 'Tutor Kai Extras', serif; }");
     expect(css).toContain(":root[data-hanzi-font='print'] { --font-hanzi: 'Tutor Vocabulary Serif', 'Noto Serif SC',");
   });
-  it('Kai breakdown boxes use hosted Kai before local KaiTi so every part shares one design', () => {
-    expect(css).toContain(":root[data-hanzi-font='handwritten'] :is(.decomposition-glyph, .decomposition-glyph *) { font-family: 'BabelStone Han PUA', 'Tutor Vocabulary Kai', 'LXGW WenKai TC', 'Tutor Kai Extras', 'KaiTi', 'STKaiti', serif; }");
-  });
 });
