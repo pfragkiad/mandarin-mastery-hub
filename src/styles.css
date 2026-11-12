@@ -2629,10 +2629,6 @@ html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
 /* Derived stroke names: shown, but marked as assembled by the source and unverified. */
 .stroke-derived-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid color-mix(in oklab, var(--terracotta) 55%, transparent); border-radius: 999px; font-size: 11px; color: var(--terracotta); white-space: nowrap; cursor: help; }
-.stroke-drawer-toggle { height: 28px; padding: 0 8px 0 10px; gap: 4px; border-radius: 999px; font-size: 12px; color: var(--muted-foreground); }
-.stroke-drawer-toggle:hover, .stroke-drawer-toggle.is-open { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
-.stroke-drawer-toggle svg { transition: transform .2s; }
-.stroke-drawer-toggle.is-open svg { transform: rotate(180deg); }
 .stroke-drawer { animation: stroke-drawer-in .2s ease-out; }
 @keyframes stroke-drawer-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
@@ -2648,3 +2644,21 @@ html[data-display-size='comfortable'] .practice-reading-line .pinyin { font-size
 html[data-display-size='comfortable'] .practice-header .form-switch-text b { font-size: 18px; }
 html[data-display-size='comfortable'] .practice-header .form-switch-text small { font-size: 14px; }
 html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
+
+/* Character/word Practice is one centred column: the breakdown opens in the Strokes panel's
+   drawer (Decomposition pill), so the writing card keeps its own width (capped, shrinking on
+   narrow screens) instead of stretching across the old two-column space. */
+.practice-page-content .practice-layout.practice-layout-single { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; max-width: 760px; margin-left: auto; margin-right: auto; }
+.practice-page-content .practice-layout.practice-layout-single > .writing-tool { grid-column: 1; grid-row: auto; }
+/* Inside the drawer the breakdown sits 20px under the pill row, like the stroke tiles. */
+.stroke-drawer-decomposition { margin-top: 20px; }
+.stroke-drawer-decomposition > .decomposition-section { margin-top: 0; border-top: 0; padding-top: 0; }
+/* The title sits over the same centred column, so Back, "Write …" and Print line up with the card. */
+.practice-page-content:has(> .practice-layout-single) > .practice-header { max-width: 760px; margin-left: auto; margin-right: auto; }
+/* Four pills (Arrows, Strokes, Names, Decomposition) fit one row only in a roomy panel; when the
+   panel itself is narrow they form an even 2 × 2 grid instead of overflowing. */
+.writing-tool .stroke-guide { container-type: inline-size; container-name: stroke-guide; }
+@container stroke-guide (max-width: 520px) {
+  .stroke-guide-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .stroke-guide-actions > button { justify-content: center; }
+}

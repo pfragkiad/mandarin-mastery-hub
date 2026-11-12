@@ -78,10 +78,15 @@ const visibleHeadingGlyphs = () => Array.from(practiceHeading().querySelectorAll
 describe('character practice sections by mode', () => {
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   writer.create.mockReturnValue(writer);
-  afterEach(cleanup);
+  // Pill choices are remembered in localStorage; each test starts from the first-visit defaults.
+  afterEach(() => { cleanup(); localStorage.clear(); });
+  const decompositionPill = () => screen.queryByRole('button', { name: 'Decomposition' });
 
-  it('shows the breakdown while watching', () => {
+  it('keeps the breakdown closed until the Decomposition pill opens it', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
+    fireEvent.click(decompositionPill()!);
+    expect(decompositionPill()).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByText('DECOMPOSITION')).toBeInTheDocument();
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(titleGlyph()).not.toHaveClass('sr-only');
@@ -90,15 +95,34 @@ describe('character practice sections by mode', () => {
     expect(document.querySelector('.practice-facts')).toBeNull();
   });
 
-  it('puts the title card above the writing card and the breakdown beside it', () => {
+  it('puts the title above one writing card, with the breakdown inside its Strokes panel', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
     const page = document.querySelector('.practice-page-content')!;
     expect(page.firstElementChild).toHaveClass('practice-header');
-    const blocks = Array.from(document.querySelectorAll('.practice-layout > *')).map(node => node.className);
-    expect(blocks).toHaveLength(2);
-    expect(blocks[0]).toContain('writing-tool');
-    expect(blocks[1]).toContain('practice-detail');
-    expect(document.querySelector('.practice-detail')?.textContent).toContain('DECOMPOSITION');
+    const blocks = Array.from(document.querySelectorAll('.practice-layout > *'));
+    expect(blocks).toHaveLength(1);
+    expect(blocks[0]).toHaveClass('writing-tool');
+    expect(document.querySelector('.practice-detail')).toBeNull();
+    fireEvent.click(decompositionPill()!);
+    expect(blocks[0]?.querySelector('.stroke-guide')?.textContent).toContain('DECOMPOSITION');
+  });
+
+  it('shows Strokes and Decomposition one at a time in the same drawer', async () => {
+    render(<StrokesPage initialCharacter="学" mode="watch"/>);
+    const strokesPill = await screen.findByRole('button', { name: 'Strokes' });
+    // No separate Details toggle: the Strokes pill alone opens the stroke tiles.
+    expect(screen.queryByRole('button', { name: /Details/ })).toBeNull();
+    fireEvent.click(strokesPill);
+    expect(strokesPill).toHaveAttribute('aria-pressed', 'true');
+    expect(document.querySelector('.stroke-drawer .stroke-guide-strip')).not.toBeNull();
+    fireEvent.click(decompositionPill()!);
+    expect(strokesPill).toHaveAttribute('aria-pressed', 'false');
+    expect(document.querySelector('.stroke-guide-strip')).toBeNull();
+    expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
+    fireEvent.click(strokesPill);
+    expect(decompositionPill()).toHaveAttribute('aria-pressed', 'false');
+    expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
+    expect(document.querySelector('.stroke-drawer .stroke-guide-strip')).not.toBeNull();
   });
 
   it('shows no form tiles for a simplified-only character', () => {
@@ -108,6 +132,8 @@ describe('character practice sections by mode', () => {
 
   it('hides the breakdown in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
+    // The pill stays in place but can't be used, so the breakdown never gives the answer away.
+    expect(decompositionPill()).toBeDisabled();
     expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     // Recall keeps "Write" but the glyph is only read aloud by screen readers.
@@ -128,11 +154,10 @@ describe('character practice sections by mode', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
-    const detail = document.querySelector('.practice-detail')?.textContent ?? '';
-    // The family tiles sit in the reading panel without a 'Radical family' label.
-    expect(detail).not.toContain('RADICAL FAMILY');
-    // The writing card already lists every stroke, so the redundant stroke sequence is gone.
-    expect(detail).not.toContain('STROKE DECOMPOSITION');
+    // Radical practice has no breakdown, so there is no Decomposition pill to open one.
+    expect(decompositionPill()).toBeNull();
+    expect(document.body.textContent).not.toContain('RADICAL FAMILY');
+    expect(document.body.textContent).not.toContain('STROKE DECOMPOSITION');
   });
 
   it('labels radical practice with the Radical pill instead of Character', () => {
@@ -159,7 +184,7 @@ describe('character practice sections by mode', () => {
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
     expect(group.querySelectorAll('strong.form-switch-blank').length).toBeGreaterThan(0);
     expect(group.textContent).not.toContain('冂');
-    expect(document.querySelector('.practice-detail')?.children).toHaveLength(0);
+    expect(decompositionPill()).toBeNull();
   });
 
   it('marks the chosen form with one frame that wears that form\'s identity ink', async () => {
@@ -241,9 +266,9 @@ describe('character practice sections by mode', () => {
       return writer;
     });
     const { unmount } = render(<StrokesPage initialCharacter="学" mode="trace"/>);
-    await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
-    const shown = Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
-    expect(shown).toEqual(['0']);
+    // Wait for the round to arm (the overlay can mount a render before the quiz picks stroke 1).
+    const shown = () => Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
+    await waitFor(() => expect(shown()).toEqual(['0']));
     window.localStorage.removeItem('tutor-stroke-arrows');
     unmount();
   });
