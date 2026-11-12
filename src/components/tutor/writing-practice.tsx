@@ -232,12 +232,15 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   // and a finished one carries no count at all — the tick already says it is done.
   const count = done ? '' : `${next + 1} / ${total}`;
   const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
-  // The sub-line always names the stroke you are on (owner's choice), with or without the
-  // picture and in every mode; while Play animates it names the stroke being drawn. A stroke
-  // with no recorded name leaves it empty rather than guessing one.
+  // The sub-line names a stroke in every mode (owner's choice): with the Next stroke switch on
+  // it names the next stroke; with the switch off it names the stroke just completed ("current:
+  // héng"), staying empty until the first stroke is drawn. While Play animates it names the
+  // stroke being drawn. A stroke with no recorded name leaves it empty rather than guessing one.
+  const currentStroke = next > 0 ? strokes[next - 1] : undefined;
   const subLine = result ? <ResultText result={result}/>
     : playing ? stroke?.pinyin ?? ''
-    : stroke?.pinyin ? `next: ${stroke.pinyin}` : '';
+    : showStroke ? (stroke?.pinyin ? `next: ${stroke.pinyin}` : '')
+    : (currentStroke?.pinyin ? `current: ${currentStroke.pinyin}` : '');
   const blank = recall ? <span className="stroke-progress-unknown">?</span> : null;
   return (
     // A tile with a speaker (word character, or a single character's reading) is a group; its read-out is a labelled group (an <img> role
