@@ -785,7 +785,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
           // another character); the line under the square is one word plus what to do next.
           // "Perfect!" needs a whole hand-drawn attempt; a round that began after clicked
           // strokes is only "Complete.", since part of it was not drawn.
-          setMessage(`${completionWord(wholeAttempt ? total : null)} Draw again to start over.`, accuracyGrade(total));
+          setMessage(`${completionWord(wholeAttempt ? total : null)} Draw again to start over.`, total === null ? null : accuracyGrade(total));
           return prev;
         });
       },
