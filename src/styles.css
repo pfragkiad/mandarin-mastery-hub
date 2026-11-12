@@ -2653,3 +2653,12 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 /* Inside the drawer the breakdown sits 20px under the pill row, like the stroke tiles. */
 .stroke-drawer-decomposition { margin-top: 20px; }
 .stroke-drawer-decomposition > .decomposition-section { margin-top: 0; border-top: 0; padding-top: 0; }
+/* The title sits over the same centred column, so Back, "Write …" and Print line up with the card. */
+.practice-page-content:has(> .practice-layout-single) > .practice-header { max-width: 760px; margin-left: auto; margin-right: auto; }
+/* Four pills (Arrows, Strokes, Names, Decomposition) fit one row only in a roomy panel; when the
+   panel itself is narrow they form an even 2 × 2 grid instead of overflowing. */
+.writing-tool .stroke-guide { container-type: inline-size; container-name: stroke-guide; }
+@container stroke-guide (max-width: 520px) {
+  .stroke-guide-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .stroke-guide-actions > button { justify-content: center; }
+}
