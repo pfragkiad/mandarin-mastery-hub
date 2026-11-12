@@ -190,15 +190,15 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
 // recorded name, "Preview hidden" or "done") and the bar for the strokes drawn so far, with a
 // tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
-// = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
+// = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
 // Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
 // already show each form's total), and the sub-line never names a stroke while it is hidden.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
 // title leads with the character's own single reading and speaker (null when it has several),
 // then the count, and `word.label` names the character for screen readers.
-// `recall`: the empty box shows "?" (a quiz), rather than staying plain as with Strokes off.
-// `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
+// `recall`: the empty box shows "?" (a quiz), rather than staying plain as with Next stroke off.
+// `glyph`/`ink` (absent when hidden, e.g. Recall): with Next stroke off in Trace the
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
 // `onError`: where a failed reading goes (the header's audio note), so the tile's speaker never
 // grows the tile with an inline message.
@@ -208,7 +208,7 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
 // only shown once it has been written from memory.
 // `glyph` (single character): the practised character, revealed in place of the empty box once
-// every stroke is drawn while the stroke picture is hidden (Recall or the Strokes pill off).
+// every stroke is drawn while the stroke picture is hidden (Recall or Next stroke off).
 // `stamp`: the 繁 / 部 corner-stamp class of the character's exact identity (omitted in Recall).
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
@@ -462,10 +462,6 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   const [paused, setPaused] = useState(false);
   // Arrow preference is remembered; Recall never shows them (guides must not leak into recall).
   const [arrowsPref, setArrows] = useRememberedFlag('tutor-stroke-arrows', false);
-  // Strokes pill: remembered in Watch/Trace; Recall starts hidden each time it is entered so
-  // nothing reveals the answer by default. It drives both the Strokes drawer and the progress
-  // tile's picture. Off on first visit like the other two pills — the writer alone is the
-  // default view, and the learner opts into tiles, arrows and spoken names.
   // "Next stroke" switch: the progress tile's picture of the stroke to draw next. Remembered, off
   // on a first visit like the other switches, and never shown in Recall (it would be the answer).
   const [nextPref, setNextPref] = useRememberedFlag('tutor-stroke-next-preview', false);
@@ -901,8 +897,6 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     });
   };
   const highlighted = ready && mode !== 'recall' ? selected?.strokeIndices ?? component?.strokeIndices ?? [] : [];
-  // Stroke-name speech toggle: the "Names" pill in the Strokes action row (shares Step's mute state);
-  // pressed/tinted means names are spoken aloud.
   const panel = mode === 'recall' ? recallPanel : panelPref;
   const setPanel = mode === 'recall' ? setRecallPanel : setPanelPref;
   const nextPreview = nextPref && mode !== 'recall';
