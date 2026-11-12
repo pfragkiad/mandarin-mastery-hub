@@ -420,6 +420,11 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .decomposition-tree { list-style: none; margin: 6px 0 4px; padding: 0; }
 /* Box-less wrapper that only carries the shared label width for every tree in a panel. */
 .decomposition-trees { display: contents; }
+/* The second breakdown's heading is a direct child of the wrapper (the BabelStone blocks sit in
+   their own divs), so this selector reaches only "Hanzi graphical structure". It follows a whole
+   tree rather than a section heading, so it gets the panel block gap instead of the 2px note
+   spacing that .decomposition-section .library-note uses. */
+.decomposition-trees > h4.library-note { margin-top: 22px; }
 /* Shared row gaps apply to both siblings and parent/child rows, without
    accumulating nested margins. Vocabulary word groups keep their own layout. */
 .decomposition-tree:not(.vocabulary-parts), .decomposition-tree ul,
