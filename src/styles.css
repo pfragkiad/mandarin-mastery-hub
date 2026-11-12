@@ -684,6 +684,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 /* Every character in a breakdown sits in its own thin-bordered box, like the form tiles on a glyph card. */
 .decomposition-glyph { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 1px solid var(--border); padding: 0; margin: 0; width: 46px; height: 46px; text-align: center; flex-shrink: 0; cursor: pointer; border-radius: 8px; line-height: 1; transition: border-color .15s ease, color .15s ease; }
 .decomposition-glyph-static { cursor: default; }
+/* Breakdown boxes in Kai put the hosted faces before the computer's own KaiTi/STKaiti: a local Kai font may claim radical forms (⺝) or rare components with a different design, so two boxes showing the same part looked different. Hosted Kai covers every breakdown character; the BabelStone class on PUA components still overrides this. */
+:root[data-hanzi-font='handwritten'] .decomposition-glyph { font-family: 'Tutor Vocabulary Kai', 'LXGW WenKai TC', 'Tutor Kai Extras', 'KaiTi', 'STKaiti', serif; }
 /* Unrecorded parts (?) are intentional data gaps: muted text and a dashed
    border so the placeholder never reads as a broken or missing image. */
 .decomposition-glyph-unknown { color: var(--muted-foreground); border-style: dashed; opacity: .8; }
