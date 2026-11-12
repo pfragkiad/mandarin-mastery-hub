@@ -184,7 +184,7 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
 // Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
-// already show each form's total), and the sub-line still names the next stroke.
+// already show each form's total), and the sub-line names the stroke just completed.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
 // title leads with the character's own single reading and speaker (null when it has several),
 // then the count, and `word.label` names the character for screen readers.
