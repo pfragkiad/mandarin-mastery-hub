@@ -80,14 +80,13 @@ describe('character practice sections by mode', () => {
   writer.create.mockReturnValue(writer);
   // Pill choices are remembered in localStorage; each test starts from the first-visit defaults.
   afterEach(() => { cleanup(); localStorage.clear(); });
-  const decompositionPill = () => screen.queryByRole('button', { name: 'Decomposition' });
+  const decompositionPill = () => screen.queryByRole('tab', { name: 'Decomposition' });
 
-  it('keeps the breakdown closed until the Decomposition pill opens it', () => {
+  it('keeps the breakdown closed until the Decomposition tab opens it', () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     fireEvent.click(decompositionPill()!);
-    expect(decompositionPill()).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByText('DECOMPOSITION')).toBeInTheDocument();
+    expect(decompositionPill()).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(titleGlyph()).not.toHaveClass('sr-only');
     expect(visibleHeadingGlyphs()).toEqual(['学']);
@@ -104,23 +103,24 @@ describe('character practice sections by mode', () => {
     expect(blocks[0]).toHaveClass('writing-tool');
     expect(document.querySelector('.practice-detail')).toBeNull();
     fireEvent.click(decompositionPill()!);
-    expect(blocks[0]?.querySelector('.stroke-guide')?.textContent).toContain('DECOMPOSITION');
+    expect(blocks[0]?.querySelector('.stroke-drawer-decomposition')?.textContent).toContain('Hanzi graphical structure');
   });
 
   it('shows Strokes and Decomposition one at a time in the same drawer', async () => {
     render(<StrokesPage initialCharacter="学" mode="watch"/>);
-    const strokesPill = await screen.findByRole('button', { name: 'Strokes' });
-    // No separate Details toggle: the Strokes pill alone opens the stroke tiles.
-    expect(screen.queryByRole('button', { name: /Details/ })).toBeNull();
+    const strokesPill = await screen.findByRole('tab', { name: 'Strokes' });
+    // The drawer tabs are not canvas switches: Arrows, Next stroke and Names sit by Play/Reset.
+    expect(screen.queryByRole('button', { name: 'Strokes' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Next stroke' }).closest('.writer-controls')).not.toBeNull();
     fireEvent.click(strokesPill);
-    expect(strokesPill).toHaveAttribute('aria-pressed', 'true');
+    expect(strokesPill).toHaveAttribute('aria-selected', 'true');
     expect(document.querySelector('.stroke-drawer .stroke-guide-strip')).not.toBeNull();
     fireEvent.click(decompositionPill()!);
-    expect(strokesPill).toHaveAttribute('aria-pressed', 'false');
+    expect(strokesPill).toHaveAttribute('aria-selected', 'false');
     expect(document.querySelector('.stroke-guide-strip')).toBeNull();
     expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     fireEvent.click(strokesPill);
-    expect(decompositionPill()).toHaveAttribute('aria-pressed', 'false');
+    expect(decompositionPill()).toHaveAttribute('aria-selected', 'false');
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     expect(document.querySelector('.stroke-drawer .stroke-guide-strip')).not.toBeNull();
   });
@@ -132,7 +132,7 @@ describe('character practice sections by mode', () => {
 
   it('hides the breakdown in recall, keeping the reading and meaning', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
-    // The pill stays in place but can't be used, so the breakdown never gives the answer away.
+    // The tab stays in place but can't be used, so the breakdown never gives the answer away.
     expect(decompositionPill()).toBeDisabled();
     expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
@@ -154,7 +154,7 @@ describe('character practice sections by mode', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
-    // Radical practice has no breakdown, so there is no Decomposition pill to open one.
+    // Radical practice has no breakdown, so there is no Decomposition tab to open one.
     expect(decompositionPill()).toBeNull();
     expect(document.body.textContent).not.toContain('RADICAL FAMILY');
     expect(document.body.textContent).not.toContain('STROKE DECOMPOSITION');
