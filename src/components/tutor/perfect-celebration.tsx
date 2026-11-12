@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 
 /** Small board-local celebration. Explicit completion events trigger it, never
- * restored answers. The Settings preference is the only switch: because it is an
+ * restored answers. The Preferences setting is the only switch: because it is an
  * explicit opt-in, CSS keeps the flying burst even under reduced motion. */
 export function usePerfectCelebration(enabled: boolean) {
   const [burst, setBurst] = useState(0);

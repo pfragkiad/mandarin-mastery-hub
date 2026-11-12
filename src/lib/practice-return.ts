@@ -62,7 +62,7 @@ export function originLabel(href: string | null): string {
     case '/pinyin/tone-quiz': return 'Tone quiz';
     case '/pinyin/sound-alikes': return 'Sound-alikes';
     case '/pinyin/type-what-you-hear': return 'Type what you hear';
-    case '/settings': return 'Settings';
+    case '/preferences': return 'Preferences';
     default: return 'Back';
   }
 }

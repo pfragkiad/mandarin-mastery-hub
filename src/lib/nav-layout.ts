@@ -40,7 +40,7 @@ export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'pinyin' | 
 /**
  * Which phone tab is lit for a page. All five games count as Games — the two
  * Hanzi games and the three Pinyin quiz pages under /pinyin; the Sound chart
- * (/pinyin itself) is the Pinyin tab. Settings lives under More. Practice has
+ * (/pinyin itself) is the Pinyin tab. Preferences lives under More. Practice has
  * no tab of its own (it is opened from Glyphs, Vocabulary or a game), so no
  * tab claims it.
  */
@@ -51,6 +51,6 @@ export function phoneTabFor(path: string): PhoneTab | null {
   if (path === '/flashcards' || path === '/drawing') return 'games';
   if (path === '/pinyin') return 'pinyin';
   if (path === '/pinyin/tone-quiz' || path === '/pinyin/sound-alikes' || path === '/pinyin/type-what-you-hear') return 'games';
-  if (path === '/settings') return 'more';
+  if (path === '/preferences') return 'more';
   return null;
 }

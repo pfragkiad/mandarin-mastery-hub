@@ -32,7 +32,7 @@ article.word-card { touch-action: manipulation; }
 .perfect-confetti i:nth-child(3n) { background: var(--rank-gold); }
 .perfect-confetti i:nth-child(3n + 1) { background: var(--terracotta); }
 @keyframes perfect-burst { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 35% { opacity: 1; transform: translate(var(--confetti-x), var(--confetti-y)) rotate(var(--confetti-turn)); } 75% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--confetti-x), 100px) rotate(var(--confetti-turn)); } }
-/* Confetti is an explicit Settings opt-in (Show confetti), so it keeps its
+/* Confetti is an explicit Preferences opt-in (Show confetti), so it keeps its
    short flying burst even when the device asks for reduced motion; the global
    reduced-motion reset below would otherwise freeze it into a plain fade. */
 @media(prefers-reduced-motion: reduce) { .perfect-confetti i { animation: perfect-burst 2s ease-out forwards !important; } }
@@ -78,8 +78,8 @@ article.word-card { touch-action: manipulation; }
    with accent text; hover stays background-free (accent colour only). Full menu
    and drawer: sub-items always visible, under one thin guide line aligned with the
    parent icon. The list scrolls on short windows; the bottom block (one divider,
-   then Settings and the shrink/expand button on one row, stacked in the strip)
-   stays put, so Settings is always reachable. */
+   then Preferences and the shrink/expand button on one row, stacked in the strip)
+   stays put, so Preferences is always reachable. */
 .workspace { --nav-active: color-mix(in oklab, var(--primary) 14%, transparent); --nav-row: 38px; --nav-font: 13.5px; --nav-icon: 19px; --nav-sub-row: 32px; --nav-sub-font: 13px; --nav-sub-icon: 17px; }
 html[data-display-size='comfortable'] .workspace { --nav-row: 42px; --nav-font: 15px; --nav-icon: 20px; --nav-sub-row: 36px; --nav-sub-font: 14px; --nav-sub-icon: 18px; }
 .sidebar nav { display: flex; flex-direction: column; gap: 2px; padding: 0 12px 12px; overflow-y: auto; overflow-x: hidden; min-height: 0; flex: 1 1 auto; }
@@ -1553,7 +1553,7 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 @media(max-width:850px) {
   .vocabulary-category-row .vocabulary-saved-filter { margin-left: 0; }
 }
-/* Settings shows the stroke animation speed selector at a comfortable, larger size. */
+/* Preferences shows the stroke animation speed selector at a comfortable, larger size. */
 .settings-row .writer-speed { margin-left: 0; }
 .settings-row .writer-speed-options { padding: 3px; gap: 3px; }
 .settings-row .writer-speed-options button { height: 32px; min-width: 58px; padding: 0 12px; font-size: 13px; }
@@ -2044,7 +2044,7 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .accuracy-grade-fair { color: var(--grade-fair); }
 .accuracy-grade-low { color: var(--grade-low); }
 
-/* Settings → Handwriting & strokes: mini 大 pad for testing strictness. */
+/* Preferences → Handwriting & strokes: mini 大 pad for testing strictness. */
 .settings-row-try { align-items: start; }
 .try-pad { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 200px; }
 .try-pad-modes { align-self: stretch; justify-content: stretch; }
@@ -2417,7 +2417,7 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
   html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
   html[data-display-size='comfortable'] .pinyin-chart-layout > .pinyin-player { display: none; }
 }
-/* Settings → Character style: the 永 picker at a comfortable tap size, with the
+/* Preferences → Character style: the 永 picker at a comfortable tap size, with the
    preview line tucked directly under its row so each tap shows the new face. */
 .settings-row .font-toggle button { width: 46px; height: 38px; font-size: 20px; }
 .settings-row + .font-preview { padding: 0 0 15px; margin-top: -4px; }
@@ -2425,9 +2425,9 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 .game-tabs { margin-bottom: 20px; }
 @media (min-width: 851px) { .game-tabs { display: none; } }
 /* Phone header (≤850px, NAV_PHONE_MAX): just the page title in the display serif,
-   then Search and a Settings gear as 44px targets. Theme, display size and the 学
-   avatar move to Settings there. Wider windows keep the breadcrumb header. */
-.topbar-title, .topbar-settings { display: none; }
+   then Search as a 44px target. Theme, display size and the account avatar move to
+   Preferences there. Wider windows keep the breadcrumb header. */
+.topbar-title { display: none; }
 @media (max-width: 850px) {
   /* The header stays pinned while the page scrolls; scroll-padding keeps scrolled-to
      cards and anchors from landing underneath it, and the floating page bar sits below it. */
@@ -2438,17 +2438,17 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
   .topbar-actions :is(.display-size-trigger, .theme-toggle, .header-divider, .avatar) { display: none; }
   .topbar .topbar-title { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--foreground); }
   .topbar .topbar-actions { gap: 4px; margin-right: -10px; }
-  .topbar-actions :is(.search-trigger, .topbar-settings) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--muted-foreground); }
-  .topbar-actions :is(.search-trigger, .topbar-settings):hover { color: var(--primary); }
-  .topbar-actions :is(.search-trigger, .topbar-settings) > svg { width: 21px; height: 21px; }
+  .topbar-actions .search-trigger) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--muted-foreground); }
+  .topbar-actions .search-trigger):hover { color: var(--primary); }
+  .topbar-actions .search-trigger) > svg { width: 21px; height: 21px; }
   /* Tab bar: the current tab sits in the same soft tinted capsule as the side menu's pill. */
   .phone-tab { margin: 5px 2px; border-radius: 12px; }
   .phone-tab.is-active { background: var(--nav-active); }
 }
-/* Settings Theme row: sun/moon icons inside the shared segmented buttons. */
+/* Preferences Theme row: sun/moon icons inside the shared segmented buttons. */
 .settings-row .writer-speed-options button { gap: 6px; }
 .settings-row .writer-speed-options button > svg { width: 15px; height: 15px; }
-/* Narrow phones: segmented Settings choices sit under their explanation so the text keeps its width. */
+/* Narrow phones: segmented Preferences choices sit under their explanation so the text keeps its width. */
 @media (max-width: 580px) { .settings-row:has(> .writer-speed-options, > .font-toggle) { grid-template-columns: minmax(0,1fr); gap: 12px; justify-items: start; } }
 
 /* Phone page pills: on phones the page's section switchers (Glyphs kinds,

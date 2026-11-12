@@ -16,6 +16,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { searchAll } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
 import { LibraryViewToggle } from './library-view-toggle';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 // Main menu in three blocks: Start, then "Learn" (the reference sections) and
 // "Games" (Hanzi and Pinyin, each a main item with its games as sub-items, like
 // Glyphs and Vocabulary). The block is called "Games", not "Practice", so it never
@@ -36,9 +37,9 @@ const navSections: { label: string | null; items: NavItem[] }[] = [
   ] },
 ];
 const navigation = navSections.flatMap(section => section.items);
-// Settings lives in the menu's bottom row (beside the shrink/expand button, under
+// Preferences lives in the menu's bottom row (beside the shrink/expand button, under
 // the one divider), outside the scrolling list, so it is always reachable.
-const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Settings };
+const settingsItem = { to: '/preferences' as const, name: 'Preferences', icon: Settings };
 // The Sound chart item has no sub-items: it opens the chart itself. Both game lists come
 // from game-catalog so the Start page shows the same games.
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
@@ -46,7 +47,7 @@ const settingsItem = { to: '/settings' as const, name: 'Settings', icon: Setting
 // Game; na sidebar expandida continuam só de texto.
 // Phone bottom tab bar: Start first, then the four main destinations (Vocabulary
 // shortened to "Vocab" so it never clips); "More" (a button, not a link)
-// opens the full menu drawer for Settings and every sub-item.
+// opens the full menu drawer for Preferences and every sub-item.
 const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: GameIcon }[] = [
   { key: 'start', to: '/', label: 'Start', icon: LayoutGrid },
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
@@ -158,7 +159,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         // Icon strip: bring the names and sub-items back.
         : <Button size="icon" variant="ghost" className="sidebar-collapse" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
     </aside>
-    <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span>{/* Phones show only this page title (serif) in place of the breadcrumb trail. */}<span className="topbar-title">{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><span className="header-divider"/><Button asChild variant="ghost" className="avatar" title="Learning preferences"><Link to="/settings" aria-label="Learning preferences">学</Link></Button>{/* Phones: a plain Settings gear beside Search; theme, size and the 学 avatar live in Settings there. */}<Button asChild variant="ghost" size="icon" className="topbar-settings"><Link to="/settings" aria-label="Settings" title="Settings"><Settings/></Link></Button></div></header>
+    <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span>{/* Phones show only this page title (serif) in place of the breadcrumb trail. */}<span className="topbar-title">{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><span className="header-divider"/>{/* Account avatar: a placeholder for now. Its menu opens greyed out, so the
+        spot is real without promising an account that doesn't exist yet. */}<DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="avatar" aria-label="Account" title="Account"><span aria-hidden="true">学</span></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuItem disabled>Account — coming soon</DropdownMenuItem></DropdownMenuContent></DropdownMenu></div></header>
       <main className="main-content">{children}</main></div>
     {/* Phone bottom tab bar (hidden by CSS above 850px). */}
     <nav className="phone-tabs" aria-label="Quick navigation">{phoneTabs.map(t => <Link key={t.key} to={t.to} className={`phone-tab${activePhoneTab === t.key ? ' is-active' : ''}`} aria-current={activePhoneTab === t.key ? 'page' : undefined} onClick={() => setMobileOpen(false)}><t.icon/><span>{t.label}</span></Link>)}

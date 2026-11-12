@@ -344,7 +344,7 @@ it('changing mode cancels an old playback run without remounting the writer', as
   expect(fake.animateStroke).toHaveBeenCalledTimes(1);
   expect(fake.quiz).toHaveBeenCalledTimes(1);
 });
-it('Practice has no speed buttons and plays at the Settings default of 0.5×', async () => {
+it('Practice has no speed buttons and plays at the Preferences default of 0.5×', async () => {
   render(<WritingPractice mode="watch" character="我"/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
   expect(screen.queryByRole('group', { name: 'Animation speed' })).toBeNull();

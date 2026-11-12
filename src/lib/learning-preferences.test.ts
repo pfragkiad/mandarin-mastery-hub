@@ -1,5 +1,5 @@
 // Guards the out-of-the-box state of the "Sound chart links on cards" switch:
-// a fresh browser (and Settings -> Reset preferences, which writes this object)
+// a fresh browser (and Preferences -> Reset preferences, which writes this object)
 // must show the sound-wave link beside every glyph card's speaker. Only an
 // explicit stored `false` hides it, so the default can never drift to hidden.
 import { describe, expect, it } from 'vitest';

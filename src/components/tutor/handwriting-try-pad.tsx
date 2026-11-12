@@ -8,12 +8,12 @@ import { practiceModeOptions } from '@/lib/practice-mode';
 import { useWorkspace } from './workspace';
 
 /**
- * HandwritingTryPad — a small Settings sandbox for feeling the current
+ * HandwritingTryPad — a small Preferences sandbox for feeling the current
  * handwriting strictness before using it in Practice (the handwriting
  * counterpart of "Try audio").
  *
  * Inputs: none; reads Trace/Recall strictness and theme from the workspace.
- * State: the local Trace/Recall switch (not saved — Settings only), and
+ * State: the local Trace/Recall switch (not saved — Preferences only), and
  * per-stroke results for the current attempt.
  *
  * Trace shows the outline and uses Trace strictness; Recall hides it and uses

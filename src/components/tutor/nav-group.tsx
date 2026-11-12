@@ -18,7 +18,7 @@ export type NavSub = { key: string; label: string; to: string; search?: Record<s
  * group, Escape (focus returns to the main item), a tap outside or choosing an item.
  *
  * The current page shows as a tinted pill on its main item and sub-item (styles.css,
- * "Side menu"); Settings is rendered by the shell in the bottom row, not here.
+ * "Side menu"); Preferences is rendered by the shell in the bottom row, not here.
  *
  * Inputs: the main item (`id` — unique, since two items may share a route, e.g.
  * Pinyin and Pinyin games — `name`, `to`, optional `search`, `icon`, `selected`), its `subs`, `rail`,
