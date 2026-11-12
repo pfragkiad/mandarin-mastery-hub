@@ -15,7 +15,7 @@ describe('Exact sourced Kangxi identities', () => {
       expect(radicalIdentity(glyph).sourceIds.length).toBeGreaterThan(0);
     });
   }
-  it('breakdown tiles draw a same-form radical code as its radical (⺝ → 月) only when recorded as that form's code', () => {
+  it('breakdown tiles draw a same-form radical code as its radical (⺝ → 月) only when recorded as that form’s code', () => {
     expect(breakdownDisplayGlyph('⺝')).toBe('月');
     expect(breakdownDisplayGlyph('月')).toBe('月');
     expect(breakdownDisplayGlyph('⺮')).toBe('⺮');
