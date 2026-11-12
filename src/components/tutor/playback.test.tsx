@@ -630,3 +630,28 @@ it('Recall keeps the progress tile to its bar, even with the Strokes pill on', a
   expect(tile()?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('2 / 3');
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
 });
+
+it('a single character\'s progress tile leads with its reading and speaker, then the count', async () => {
+  render(<WritingPractice character="我" mode="trace" reading={{ spoken: '我', reading: 'wǒ' }}/>);
+  await waitFor(() => expect(document.querySelector('.stroke-progress-tile')).not.toBeNull());
+  const tile = document.querySelector('.stroke-progress-tile');
+  // Same title line as a word character's tile: reading, its speaker, then the stroke you are on.
+  expect(tile?.querySelector('.stroke-progress-head .word-strip-pinyin')?.textContent).toBe('wǒ');
+  expect(tile?.querySelector('.stroke-progress-head .tile-speaker')).not.toBeNull();
+  expect(tile?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('1 / 3');
+  // The reading replaces the "Stroke" caption, so both layouts read alike.
+  expect(tile?.querySelector('.stroke-progress-title')).toBeNull();
+  // A tile holding a speaker is a group, so the control stays reachable for screen readers.
+  expect(tile?.getAttribute('role')).toBe('group');
+});
+
+it('a character with no recorded reading keeps the plain "Stroke N / total" title', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(document.querySelector('.stroke-progress-tile')).not.toBeNull());
+  const tile = document.querySelector('.stroke-progress-tile');
+  expect(tile?.querySelector('.stroke-progress-head .word-strip-pinyin')).toBeNull();
+  expect(tile?.querySelector('.stroke-progress-head .stroke-progress-title')?.textContent).toBe('Stroke');
+  expect(tile?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('1 / 3');
+  // No control inside, so the read-out stays a plain image label.
+  expect(tile?.getAttribute('role')).toBe('img');
+});
