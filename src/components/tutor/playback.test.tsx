@@ -95,8 +95,8 @@ describe.each(['我', '口'])('character/radical playback for %s', character => 
 
 it('individual strokes also resume the same correct-writing animation', async () => {
   render(<StrokePractice glyph="㇐"/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Play stroke' })).toBeEnabled());
-  fireEvent.click(screen.getByRole('button', { name: 'Play stroke' }));
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Play' })).toBeEnabled());
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
   fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
   fireEvent.click(screen.getByRole('button', { name: 'Resume' }));
   expect(fake.pauseAnimation).toHaveBeenCalledTimes(1);
