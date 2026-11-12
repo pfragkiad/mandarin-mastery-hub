@@ -36,7 +36,7 @@ describe('glyphInkShift', () => {
   });
 
   it('drops nudges smaller than a pixel so the mark never jitters between fonts', () => {
-    expect(glyphInkShift({ left: -9, right: 8, top: -12, bottom: 12 })).toEqual({ dx: 0.5, dy: 0 });
-    expect(glyphInkShift({ left: -10, right: 9, top: -11, bottom: 13 })).toEqual({ dx: 0.5, dy: -1 });
+    expect(glyphInkShift({ left: -9, right: 8, top: -12, bottom: 12 })).toEqual({ dx: 0, dy: 0 });
+    expect(glyphInkShift({ left: -10, right: 9, top: -11, bottom: 13 })).toEqual({ dx: 0, dy: -1 });
   });
 });
