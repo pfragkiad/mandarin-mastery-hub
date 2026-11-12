@@ -13,7 +13,7 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { childOwner, contextualRadical } from '@/lib/radical-context';
 import { radicalFamily } from '@/lib/radical-strokes';
 import { BabelStoneComponent } from './babelstone-component';
-import { useGlyphFit } from './glyph-fit';
+import { useGlyphFit, useGlyphInkShift } from './glyph-fit';
 import { breakdownDisplayGlyph } from '@/lib/radical-identities';
 
 const IDS_LAYOUTS: Record<string, string> = { '⿰': 'Left–right', '⿱': 'Top–bottom', '⿲': 'Left–middle–right', '⿳': 'Top–middle–bottom', '⿴': 'Surround', '⿵': 'Open below', '⿶': 'Open above', '⿷': 'Open right', '⿸': 'Upper-left wrap', '⿹': 'Upper-right wrap', '⿺': 'Lower-left wrap', '⿻': 'Overlaid', '⿼': 'Open left', '⿽': 'Lower-right wrap', '⿾': 'Mirrored', '⿿': 'Rotated', '㇯': 'Subtracted' };
@@ -41,6 +41,18 @@ function NodeAudio({ glyph, spoken, reading, recording, available }: { glyph: st
   const { preferences } = useWorkspace();
   const label = spoken ?? glyph;
   return <Button variant="ghost" size="icon" className={`decomposition-listen${recording ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${label}` : `No audio available for ${label}`} title={available ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this form' : undefined} onClick={() => { if (spoken) playCharacter(spoken, preferences.slow, reading); }}><Volume2 size={13}/></Button>;
+}
+
+/** The "unknown or missing part" placeholder. The ? is a UI mark, not a Chinese glyph,
+ *  and every font draws it somewhere different inside its advance box (left of centre,
+ *  higher or lower), so flex centring alone leaves it visibly off-centre in the tile.
+ *  Its ink is measured and nudged onto the tile's optical centre; the tile box and its
+ *  dashed border never move because the shift sits on this inner element. */
+function UnknownPartMark({ glyph }: { glyph: string }) {
+  const markRef = useRef<HTMLSpanElement | null>(null);
+  const shift = useGlyphInkShift(markRef, glyph);
+  const style = shift.dx || shift.dy ? { transform: `translate(${shift.dx}px, ${shift.dy}px)` } : undefined;
+  return <span ref={markRef} className="decomposition-unknown-mark" style={style}>{glyph}</span>;
 }
 
 /** Presentation for a shared glyph that context resolved to another family's form (鄱's
@@ -98,6 +110,6 @@ export function DecompositionTree({ node, owner }: { node: DecompositionNode; ow
   const isRadical = context.radicals.length > 0;
   const glyph = (card || shared) && destination
     ? <Button asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}`}><Link to="/characters" search={destination} resetScroll={false} lang="zh-CN" title={openDetailsHint(node.glyph, destination.tab)} aria-label={`${linkTitle} · ${openDetailsHint(node.glyph, destination.tab)}`}><strong ref={tileTextRef} style={glyphFitStyle}>{shownGlyph}</strong></Link></Button>
-    : <strong ref={tileTextRef} style={glyphFitStyle} lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{shownGlyph}</strong>;
+    : <strong ref={tileTextRef} style={glyphFitStyle} lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${traditional ? ' traditional-character' : ''}${isRadical ? ' is-radical' : ''}${unknownPart ? ' decomposition-glyph-unknown' : ''}`} title={unknownPart ? 'Part not recorded in the source data' : undefined} aria-label={unknownPart ? 'Unknown or missing part' : undefined}>{unknownPart ? <UnknownPartMark glyph={shownGlyph}/> : shownGlyph}</strong>;
   return <li><div className="decomposition-node"><span>{node.position}</span>{IDS_LAYOUTS[node.glyph] ? <div className="decomposition-layout" aria-label={`${IDS_LAYOUTS[node.glyph]} structure`}><LayoutIcon operator={node.glyph}/><small>{IDS_LAYOUTS[node.glyph]}</small></div> : <div className="decomposition-part">{glyph}<small className="decomposition-facts"><span className="decomposition-facts-row">{/* Omit the empty pronunciation slot so its flex gap never indents a classification-only row. */}{(pinyin || spoken) ? <span className="decomposition-pronunciation">{spoken && reading && pinyin === reading && isMultiReading(reading) ? <MultiReadingSpeakers spoken={spoken} reading={reading} variant="inline"/> : <>{pinyin ? <span className="pinyin">{pinyin}</span> : null}{spoken ? <NodeAudio glyph={node.glyph} spoken={spoken} reading={reading} recording={Boolean(recording)} available={available}/> : null}</>}</span> : null}{context.radicals.length ? context.radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag" title={radicalTitle}>Radical #{radical.number}</span>) : !dictionary ? <span className="decomposition-classification">{classification}</span> : null}{traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{(dictionary || fallback?.meaning) ? <span className="decomposition-meaning"><MeaningText text={dictionary || fallback?.meaning || ''}/></span> : null}</small></div>}</div>{node.children?.length ? <ul>{node.children.map((child, i) => <DecompositionTree key={`${child.position}-${i}`} node={child} owner={childOwner(node, owner)}/> )}</ul> : null}</li>;
 }
