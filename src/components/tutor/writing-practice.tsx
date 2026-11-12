@@ -182,8 +182,8 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
 // recorded name, or the finished accuracy) and the bar for the strokes drawn so far, with a
 // tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
-// = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
-// Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
+// = strokes.length when done) and `showStroke`. With the Next stroke switch off the picture shows
+// the whole hanzi in Trace, and in Recall an empty "?" box so the answer never shows; the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
 // already show each form's total), and the sub-line names the stroke just completed.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
@@ -199,8 +199,8 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // `hidden` (Recall): the word tile keeps `glyph`, `ink` and `stamp` back until the character is
 // finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
 // only shown once it has been written from memory.
-// `glyph` (single character): the practised character, revealed in place of the empty box once
-// every stroke is drawn while the stroke picture is hidden (Recall or Next stroke off).
+// `glyph` (single character): the practised character, shown in place of the stroke picture when
+// Next stroke is off in Trace, and in Recall only once every stroke is drawn.
 // `stamp`: the 繁 / 部 corner-stamp class of the character's exact identity (omitted in Recall).
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
@@ -221,7 +221,9 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   const wordShown = Boolean(word && (!word.hidden || done));
   const wordGlyph = wordShown ? word?.glyph : undefined;
   const wordStamp = wordShown ? word?.stamp : undefined;
-  const singleGlyph = !word && !showStroke && done ? glyph : undefined;
+  // A single character with the stroke picture off shows its hanzi in Trace (like an unfocused
+  // word tile); Recall keeps the box empty until every stroke is written from memory.
+  const singleGlyph = !word && !showStroke && (done || !recall) ? glyph : undefined;
   const tileInk = word ? (wordShown ? word.ink ?? '' : '') : ink ?? '';
   const fraction = Math.min(1, next / total);
   const result = done ? finishedResult(scores, mistakes) : null;
