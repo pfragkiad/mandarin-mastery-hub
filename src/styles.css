@@ -2590,12 +2590,12 @@ html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-ti
 @media (max-width: 500px) {
   .word-strip { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 8px; }
   .word-strip-tile, .stroke-progress-tile { column-gap: 8px; padding: 8px 8px 8px 7px; }
-  html .practice-progress-row .stroke-progress-picture { width: 42px; height: 42px; }
-  html .practice-page-content .stroke-progress-tile .stroke-shape { width: 34px; height: 34px; }
-  html .practice-progress-row .stroke-progress-picture .word-strip-glyph { font-size: 31px; }
-  html .practice-progress-row .stroke-progress-head { flex-wrap: wrap; column-gap: 5px; row-gap: 0; font-size: 13px; min-height: 22px; }
-  .stroke-progress-sep { display: none; }
-  html .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 12px; white-space: normal; text-overflow: clip; }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture { width: 42px; height: 42px; }
+  html[data-display-size] .practice-page-content .stroke-progress-tile .stroke-shape { width: 34px; height: 34px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture .word-strip-glyph { font-size: 31px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-head { flex-wrap: wrap; column-gap: 5px; row-gap: 0; font-size: 13px; min-height: 22px; }
+  html .stroke-progress-sep { display: none; }
+  html[data-display-size] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 12px; white-space: normal; text-overflow: clip; }
   .practice-progress-row :is(.word-strip-tile, .stroke-progress-tile) .tile-speaker { width: 20px; height: 20px; }
 }
 /* The strip's speaker is the shared embedded-tile speaker (.tile-speaker), sized to sit beside
