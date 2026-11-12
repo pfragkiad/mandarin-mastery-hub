@@ -23,3 +23,20 @@ describe('glyphFitScale', () => {
     expect(glyphFitScale(30, 0, 62)).toBe(1);
   });
 });
+
+describe('glyphInkShift', () => {
+  it('leaves ink that is already centred in its tile untouched', () => {
+    // A full-width ideograph: ink spans -18..18 horizontally and -20..20 vertically.
+    expect(glyphInkShift({ left: -18, right: 18, top: -20, bottom: 20 })).toEqual({ dx: 0, dy: 0 });
+  });
+
+  it('pulls a question mark back onto the tile centre', () => {
+    // The handwriting font draws ? from -2 to 17 of its advance and -23 to 0 in height.
+    expect(glyphInkShift({ left: -2, right: 17, top: -23, bottom: 0 })).toEqual({ dx: -7.5, dy: 11.5 });
+  });
+
+  it('drops nudges smaller than a pixel so the mark never jitters between fonts', () => {
+    expect(glyphInkShift({ left: -9, right: 8, top: -12, bottom: 12 })).toEqual({ dx: 0.5, dy: 0 });
+    expect(glyphInkShift({ left: -10, right: 9, top: -11, bottom: 13 })).toEqual({ dx: 0.5, dy: -1 });
+  });
+});
