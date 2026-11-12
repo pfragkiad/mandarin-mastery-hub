@@ -127,4 +127,14 @@ describe('bound character enrichment', () => {
     expect(matchesRecordedGSource(g, r)).toBe(true);
     expect(matchesRecordedGSource(g, { ...r, children: [r.children[1]!, r.children[0]!] })).toBe(false);
   });
+  it('treats 有 as matching G-source: recorded alias ⺝ is 月 and the other part is unknown', () => {
+    const g = gSourceDecompositions(record('有'))[0]?.tree;
+    expect(g?.children?.[1]?.glyph).toBe('⺝');
+    expect(matchesRecordedGSource(g, catalog.trees['有'], '有')).toBe(true);
+  });
+  it('does not let an alias hide a different known part', () => {
+    const g = parseIdsTree('⿸𠂇⺝')!;
+    expect(matchesRecordedGSource(g, { glyph: '⿸', position: 'root', children: [
+      { glyph: '？', position: 'upper-left-enclosure' }, { glyph: '日', position: 'inside' }] }, '有')).toBe(false);
+  });
 });
