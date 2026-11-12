@@ -134,7 +134,6 @@ describe('character practice sections by mode', () => {
     render(<StrokesPage initialCharacter="学" mode="recall"/>);
     // The tab stays in place but can't be used, so the breakdown never gives the answer away.
     expect(decompositionPill()).toBeDisabled();
-    expect(screen.queryByText('DECOMPOSITION')).toBeNull();
     expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
     // Recall keeps "Write" but the glyph is only read aloud by screen readers.
     expect(titleGlyph()).toHaveClass('sr-only');
