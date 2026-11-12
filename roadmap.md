@@ -1,5 +1,7 @@
 # Roadmap
 
+- [done] Practice progress tiles laid out sideways per mockup (picture left; reading, speaker, count, status and bar right), two word tiles side by side on phones; 67 Practice tests pass, desktop and phone checked.
+
 - [done] Practice progress tile (current stroke + bar, bar-only in Recall), stroke tiles in a closed Details drawer, larger stroke labels wrapping only when needed, 爱 stroke 5 named diǎn; 71 tests pass, 爱/身体 checked live.
 
 - [done] Start game tiles per mock-ups (picture tiles wide, compact rows on phones, whole tile clickable) and pinned phone header; verified desktop/tablet/phone, scroll tests pass.
