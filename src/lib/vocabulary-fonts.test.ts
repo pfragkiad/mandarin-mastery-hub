@@ -27,7 +27,7 @@ describe('vocabulary font subsets', () => {
     });
   }
   it('handwritten and print styles try the subsets before the sliced web fonts', () => {
-    expect(css).toContain(":root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'Tutor Vocabulary Kai', 'LXGW WenKai TC', serif; }");
+    expect(css).toContain(":root[data-hanzi-font='handwritten'] { --font-hanzi: 'KaiTi', 'STKaiti', 'Tutor Vocabulary Kai', 'LXGW WenKai TC', 'Tutor Kai Extras', serif; }");
     expect(css).toContain(":root[data-hanzi-font='print'] { --font-hanzi: 'Tutor Vocabulary Serif', 'Noto Serif SC',");
   });
 });
