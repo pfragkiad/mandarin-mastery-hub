@@ -936,7 +936,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   const canvasSwitch = (label: string, on: boolean, icon: ReactNode, title: string, onClick: () => void, disabled = false) =>
     <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${on ? ' is-on' : ''}`} aria-pressed={on} title={title} disabled={disabled} onClick={onClick}>{on ? <Check size={16} aria-hidden="true"/> : icon}{label}</Button>;
   const canvasSwitches = <div className="writer-toggles">
-    {canvasSwitch('Arrows', arrows, <MoveUpRight size={16} aria-hidden="true"/>, arrows ? 'Hide direction arrows' : 'Show direction arrows', () => setArrows(!arrows), !ready || !medians.some(median => median.length > 1))}
+    {canvasSwitch('Arrows', arrows, <MoveUpRight size={16} aria-hidden="true"/>, mode === 'recall' ? 'Direction arrows stay hidden in Recall' : arrows ? 'Hide direction arrows' : 'Show direction arrows', () => setArrows(!arrows), mode === 'recall' || !ready || !medians.some(median => median.length > 1))}
     {canvasSwitch('Next stroke', nextPreview, <Eye size={16} aria-hidden="true"/>, mode === 'recall' ? 'The next stroke stays hidden in Recall' : nextPreview ? 'Hide the next-stroke preview' : 'Preview the next stroke in the progress tile', () => setNextPref(!nextPref), mode === 'recall')}
     {canvasSwitch('Names', !muted, <Volume2 size={16} aria-hidden="true"/>, muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names', () => setMuted(m => !m))}
   </div>;
