@@ -2688,8 +2688,3 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 .stroke-tabs-collapse:hover { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
 html[data-display-size='comfortable'] .stroke-tab { font-size: 16px; }
 
-/* Single-stroke Practice: the stroke's facts and source sit at the foot of the writing card,
-   under a divider, instead of in the old right-hand column. */
-.stroke-practice-footer { margin-top: 8px; display: flex; flex-direction: column; gap: 14px; }
-.stroke-practice-footer .practice-facts { flex-wrap: wrap; white-space: normal; }
-.stroke-practice-footer .source-note { margin: 0; }

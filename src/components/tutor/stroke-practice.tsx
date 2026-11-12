@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from '@tanstack/react-router';
-import { practiceHint } from '@/lib/tile-hints';
 import { Check, MoveUpRight, Pause, Play, RotateCcw, Volume2 } from 'lucide-react';
 import { PracticeHeader } from './practice-header';
 import type HanziWriter from 'hanzi-writer';
@@ -139,9 +137,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
   const readingLine = <>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button></>;
   return <div className="page-enter practice-page-content"><PracticeHeader glyph={glyph} hideGlyph={practiceMode === 'recall'} reading={readingLine} meaning={entry.meaning || <span className="meaning-missing">No English meaning recorded yet</span>} pills={<span className="practice-pills"><span className="practice-kind">Stroke</span></span>} onPrint={() => setSheet(true)} printDisabled={!outline} after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/><div className="practice-layout practice-layout-single">
-    {/* One centred column like character Practice: the writing card holds the canvas, Play/Reset
-        with the Arrows switch beside them, and — under a divider — the stroke's facts (hidden in
-        Recall) and its source footnote, which used to sit in a separate right-hand column. */}
+    {/* One centred column like character Practice: the writing card holds the canvas and the
+        Play/Reset row with the Arrows switch beside them, and nothing below that row. */}
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
@@ -155,10 +152,6 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
           {practiceMode !== 'recall' && <div className="writer-toggles"><Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${arrows ? ' is-on' : ''}`} aria-pressed={arrows} title={arrows ? 'Hide direction arrows' : 'Show direction arrows'} disabled={!ready || median.length < 2} onClick={() => setArrows(!arrows)}>{arrows ? <Check size={16} aria-hidden="true"/> : <MoveUpRight size={16} aria-hidden="true"/>}Arrows</Button></div>}
         </div>
       </> : <div className="record-gap"><p>No representative brush outline is recorded for this stroke yet, so it can’t be animated. None is inferred.</p></div>}
-      <div className="stroke-practice-footer">
-        {practiceMode !== 'recall' && <div className="practice-facts"><span><strong>1</strong>stroke</span><span><strong lang="zh-CN">{strokeName ?? '—'}</strong>name</span><span>{example ? <Link to="/strokes" search={{ character: example.character }} title={practiceHint(example.character)}><strong lang="zh-CN">{example.character}</strong></Link> : <strong>—</strong>}{example ? `example · stroke ${example.strokeIndex + 1}` : 'example'}</span></div>}
-        <p className="source-note">Stroke inventory · Unicode 18.0 Appendix F. Outline powered by Hanzi Writer Data (Make Me a Hanzi).</p>
-      </div>
     </section>
     {sheet && outline && <PracticeSheet text={glyph} pinyin={entry.pinyin || undefined} meaning={entry.meaning || undefined} outlines={{ [glyph]: { strokes: [outline] } }} onClose={() => setSheet(false)}/>}
   </div></div>;
