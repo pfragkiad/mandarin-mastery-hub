@@ -301,17 +301,15 @@ it('watch mode keeps stroke tiles and component headings clickable', async () =>
   expect(document.querySelector('.stroke-guide')).not.toHaveClass('stroke-guide-readonly');
 });
 
-it('recall keeps stroke tiles and component headings inert, leaving pronunciation controls live', async () => {
-  const mode = 'recall';
-  render(<WritingPractice character="学" mode={mode} enrichment={selectionRecord()}/>);
+it('recall shows the Strokes and Decomposition tabs and the drawer arrow, all disabled, and never opens a drawer', async () => {
+  render(<WritingPractice character="学" mode="recall" enrichment={selectionRecord()}/>);
   await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
-  if (mode === 'recall') fireEvent.click(screen.getByRole('tab', { name: 'Strokes' }));
-  const tile = await screen.findByRole('button', { name: 'Play stroke 1' });
-  expect(tile).toBeDisabled();
-  expect(screen.getByRole('button', { name: 'Highlight ⺍ strokes 1' })).toBeDisabled();
-  expect(document.querySelector('.stroke-guide')).toHaveClass('stroke-guide-readonly');
-  // A tap on an inert tile must never start a writing animation.
-  fireEvent.click(tile);
+  const strokesTab = screen.getByRole('tab', { name: 'Strokes' });
+  expect(strokesTab).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Details are closed in Recall' })).toBeDisabled();
+  fireEvent.click(strokesTab);
+  expect(screen.queryByRole('button', { name: 'Play stroke 1' })).toBeNull();
+  expect(screen.queryByRole('tabpanel')).toBeNull();
   expect(fake.animateStroke).not.toHaveBeenCalled();
   expect(screen.getByRole('button', { name: 'Names' })).toBeEnabled();
   // Recall never shows direction arrows, so the Arrows switch is disabled there.
