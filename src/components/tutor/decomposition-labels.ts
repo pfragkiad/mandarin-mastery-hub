@@ -48,13 +48,7 @@ export function useSharedLabelColumn(ref: RefObject<HTMLElement | null>, key: un
     };
     measure();
     void document.fonts?.ready.then(measure);
-    let last = '';
-    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(entries => {
-      const size = entries.map(entry => `${Math.round(entry.contentRect.width)}x${Math.round(entry.contentRect.height)}`).join();
-      if (size === last) return;
-      last = size;
-      measure();
-    });
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
     root.querySelectorAll('.decomposition-tree').forEach(list => observer?.observe(list));
     return () => { cancelled = true; observer?.disconnect(); };
   }, [ref, key]);
