@@ -14,6 +14,7 @@ import { Route as CharactersRouteImport } from './routes/characters'
 import { Route as DrawingRouteImport } from './routes/drawing'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as PinyinRouteImport } from './routes/pinyin'
+import { Route as PreferencesRouteImport } from './routes/preferences'
 import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StrokesRouteImport } from './routes/strokes'
@@ -45,6 +46,11 @@ const FlashcardsRoute = FlashcardsRouteImport.update({
 const PinyinRoute = PinyinRouteImport.update({
   id: '/pinyin',
   path: '/pinyin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreferencesRoute = PreferencesRouteImport.update({
+  id: '/preferences',
+  path: '/preferences',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReferencesRoute = ReferencesRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
+  '/preferences': typeof PreferencesRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
+  '/preferences': typeof PreferencesRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/drawing': typeof DrawingRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
+  '/preferences': typeof PreferencesRoute
   '/references': typeof ReferencesRoute
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/drawing'
     | '/flashcards'
     | '/pinyin'
+    | '/preferences'
     | '/references'
     | '/settings'
     | '/strokes'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/drawing'
     | '/flashcards'
     | '/pinyin'
+    | '/preferences'
     | '/references'
     | '/settings'
     | '/strokes'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/drawing'
     | '/flashcards'
     | '/pinyin'
+    | '/preferences'
     | '/references'
     | '/settings'
     | '/strokes'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   DrawingRoute: typeof DrawingRoute
   FlashcardsRoute: typeof FlashcardsRoute
   PinyinRoute: typeof PinyinRoute
+  PreferencesRoute: typeof PreferencesRoute
   ReferencesRoute: typeof ReferencesRoute
   SettingsRoute: typeof SettingsRoute
   StrokesRoute: typeof StrokesRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/pinyin'
       fullPath: '/pinyin'
       preLoaderRoute: typeof PinyinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preferences': {
+      id: '/preferences'
+      path: '/preferences'
+      fullPath: '/preferences'
+      preLoaderRoute: typeof PreferencesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/references': {
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   DrawingRoute: DrawingRoute,
   FlashcardsRoute: FlashcardsRoute,
   PinyinRoute: PinyinRoute,
+  PreferencesRoute: PreferencesRoute,
   ReferencesRoute: ReferencesRoute,
   SettingsRoute: SettingsRoute,
   StrokesRoute: StrokesRoute,
