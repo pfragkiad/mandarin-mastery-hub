@@ -30,6 +30,19 @@ export function radicalIdentity(glyph: string): RadicalIdentity {
   return catalog.radicalIdentities.identities[glyph] ?? { glyph, kind: 'unmapped', radicals: [], equivalentGlyphs: [], sourceIds: [] };
 }
 
+/** The glyph a breakdown tile draws for a source token. A Unicode radical symbol (⺝, ⽉)
+ *  whose recorded identity names exactly one Kangxi radical AND lists that radical's own
+ *  glyph as its Unicode equivalent is the same form under another code, so the tile shows
+ *  the radical's glyph (⺝ → 月) and both source trees look identical. Anything else (⺮,
+ *  whose equivalent is 𥫗 rather than 竹) keeps its own source glyph. Display only: source
+ *  trees, links and identities still use the token itself. */
+export function breakdownDisplayGlyph(glyph: string): string {
+  const identity = radicalIdentity(glyph);
+  if (identity.kind !== 'symbol' || identity.radicals.length !== 1) return glyph;
+  const radical = identity.radicals[0]!.glyph;
+  return identity.equivalentGlyphs.includes(radical) ? radical : glyph;
+}
+
 let searchVersion = -1;
 let searchIndex: Record<string, string[]> = {};
 export function radicalSearchGlyphs(glyph: string): string[] {
