@@ -158,11 +158,13 @@ it.each(['trace', 'recall'] as const)('a completed %s round keeps the drawing an
   act(() => first.onComplete({ totalMistakes: 0 }));
   // Completion alone must not erase the drawing or restart the quiz.
   expect(fake.quiz).toHaveBeenCalledTimes(1);
-  expect(screen.getByText(/Character complete/)).toBeInTheDocument();
+  // The line under the square is one short sentence; the accuracy sits on the progress tile.
+  expect(screen.getByText('Perfect!')).toBeInTheDocument();
+  expect(screen.getByText('Draw again to start over.')).toBeInTheDocument();
   // Starting to drag again erases the square and begins the fresh round.
   fireEvent.mouseDown(container.querySelector('.hanzi-target')!);
   expect(fake.quiz).toHaveBeenCalledTimes(2);
-  expect(screen.queryByText(/Character complete/)).not.toBeInTheDocument();
+  expect(screen.queryByText('Perfect!')).not.toBeInTheDocument();
   expect(screen.getByText('Draw the character in the square.')).toBeInTheDocument();
 });
 
@@ -622,9 +624,28 @@ it('a finished character keeps its tick but shows no stroke count', async () => 
     quiz?.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 0 });
     quiz?.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 });
   });
-  await waitFor(() => expect(tile()?.getAttribute('aria-label')).toBe('All 3 strokes drawn'));
+  await waitFor(() => expect(tile()?.getAttribute('aria-label')).toBe('All 3 strokes drawn, 100% accuracy'));
   expect(tile()?.querySelector('.stroke-index')?.textContent).toBe('');
   expect(tile()?.querySelector('.word-strip-done')).not.toBeNull();
+});
+
+it('a finished character shows its total accuracy on the tile instead of "done", coloured by grade', async () => {
+  render(<WritingPractice character="我" mode="trace"/>);
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
+  const tile = () => document.querySelector('.stroke-progress-tile');
+  await waitFor(() => expect(tile()).not.toBeNull());
+  act(() => {
+    const quiz = fake.quiz.mock.calls.at(-1)?.[0];
+    quiz?.onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 });
+    quiz?.onCorrectStroke({ strokeNum: 1, mistakesOnStroke: 1 });
+    quiz?.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 2 });
+    quiz?.onComplete({ totalMistakes: 3 });
+  });
+  // (100 + 75 + 50) / 3 = 75% → the brown "fair" band; the canvas line says only "Complete."
+  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('75%'));
+  expect(tile()?.querySelector('.stroke-pinyin .accuracy-grade-fair')).not.toBeNull();
+  expect(screen.getByText('Complete.')).toBeInTheDocument();
+  expect(screen.queryByText('Perfect!')).not.toBeInTheDocument();
 });
 
 it('Recall keeps the progress tile to its bar, even with Next stroke switched on', async () => {

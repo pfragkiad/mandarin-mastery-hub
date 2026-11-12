@@ -3,7 +3,7 @@ import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { characterScore, strokeScore } from '@/lib/stroke-score';
+import { characterScore, completionWord, finishedResult, strokeScore, type CharacterResult } from '@/lib/stroke-score';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { practiceCanvasSize, PRACTICE_CANVAS_MIN, practiceProgressPicture, PRACTICE_PROGRESS_PICTURE_MIN, PRACTICE_PROGRESS_PICTURE_MAX } from '@/lib/learning-preferences';
 import { accuracyGrade } from '@/lib/accuracy-grade';
