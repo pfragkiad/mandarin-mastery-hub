@@ -5,7 +5,7 @@ import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, strokeScore } from '@/lib/stroke-score';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
-import { practiceCanvasSize, PRACTICE_CANVAS_MIN } from '@/lib/learning-preferences';
+import { practiceCanvasSize, PRACTICE_CANVAS_MIN, practiceProgressPicture, PRACTICE_PROGRESS_PICTURE_MIN, PRACTICE_PROGRESS_PICTURE_MAX } from '@/lib/learning-preferences';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
@@ -377,6 +377,33 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
     window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
   };
   const resetSize = () => { const { practiceCanvasSize: _drop, ...rest } = preferences; setPreferences(rest); };
+  // Progress-tile preview size: the grip under the row drags the small picture box (and the
+  // stroke or hanzi drawn inside it) larger or smaller, which grows the whole row with it.
+  // Dragging only writes a CSS variable on the row, so nothing rerenders per frame; the size
+  // is saved on release, and double-clicking the grip restores the display size's own default.
+  const progressRowNode = useRef<HTMLDivElement>(null);
+  const progressPicture = practiceProgressPicture(preferences.practiceProgressPicture);
+  const startProgressResize = (event: ReactPointerEvent<HTMLButtonElement>) => {
+    const node = progressRowNode.current; if (!node) return;
+    event.preventDefault();
+    // Begin from the box actually on screen, so an unsaved Compact / Comfortable / phone
+    // default is the starting point rather than one hard-coded size.
+    const start = Math.round(node.querySelector('.stroke-progress-picture')?.clientWidth ?? progressPicture ?? 58);
+    node.classList.add('is-resizing');
+    const startY = event.clientY;
+    let size = start;
+    const move = (e: PointerEvent) => {
+      size = Math.min(PRACTICE_PROGRESS_PICTURE_MAX, Math.max(PRACTICE_PROGRESS_PICTURE_MIN, start + (e.clientY - startY)));
+      node.style.setProperty('--practice-progress-picture', `${size}px`);
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
+      node.classList.remove('is-resizing');
+      setPreferences({ ...preferences, practiceProgressPicture: Math.round(size) });
+    };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  const resetProgressPicture = () => { const { practiceProgressPicture: _drop, ...rest } = preferences; setPreferences(rest); };
   useLayoutEffect(() => {
     const node = board.current; if (!node) return;
     const measure = () => { if (resizing.current) return; const w = Math.round(node.clientWidth); if (w > 0) setBoardSize(prev => Math.abs(prev - w) > 2 ? w : prev); };
@@ -846,7 +873,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
   const tileSlot = <div className="stroke-progress-tile is-placeholder" aria-hidden="true"><span className="stroke-progress-picture"/><span className="stroke-progress-head">{'\u00a0'}</span><span className="stroke-pinyin">{'\u00a0'}</span><span className="word-strip-progress"><span/></span></div>;
-  const progressRow = <div className="practice-progress-row">{strip ? strip(progressTile) : progressTile?.() ?? tileSlot}</div>;
+  const progressRow = <div ref={progressRowNode} className="practice-progress-row" style={progressPicture ? { ['--practice-progress-picture' as string]: `${progressPicture}px` } : undefined}>{strip ? strip(progressTile) : progressTile?.() ?? tileSlot}<button type="button" className="practice-progress-grip" title="Drag to resize the preview · double-click to reset" aria-label="Resize the stroke preview" onPointerDown={startProgressResize} onDoubleClick={resetProgressPicture}><svg width="34" height="6" viewBox="0 0 34 6" aria-hidden="true"><rect x="1" y="1.5" width="32" height="3" rx="1.5" fill="currentColor"/></svg></button></div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
   return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} visible={strokesVisible} onVisibleChange={setStrokesVisible} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }

@@ -2559,19 +2559,28 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 :is(.tile-stamp-radical, .tile-stamp-traditional) > .word-strip-done { right: 24px; }
 /* Row under the mode tabs: a word's character strip, then the progress tile (StrokeProgressTile),
    which shares the word tiles' frame and bar but is a read-out, not a button. */
-.practice-progress-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px 18px; margin: 14px 0 2px; }
+.practice-progress-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px 18px; margin: 14px 0 0; }
 .practice-progress-row:empty { display: none; }
 .practice-progress-row > .word-strip { margin: 0; flex: 1 1 100%; }
 .practice-progress-row > .stroke-progress-tile { flex: 1 1 100%; }
+/* Grip on the row's bottom edge: drag it to grow or shrink the preview box (and the row with
+   it); double-click restores the display size's own default. Its own full-width line keeps it
+   centred under the tiles, and it is hidden on phones like the writing square's handle. */
+.practice-progress-grip { flex: 1 1 100%; display: flex; align-items: center; justify-content: center; height: 14px; margin: -6px 0 0; padding: 0; border: 0; background: none; color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); cursor: ns-resize; touch-action: none; }
+.practice-progress-grip svg { transition: color .15s, transform .15s; }
+.practice-progress-grip:hover, .practice-progress-grip:focus-visible { color: var(--primary); outline: none; }
+.practice-progress-grip:hover svg, .practice-progress-grip:focus-visible svg { transform: scaleY(1.5); }
+.practice-progress-row.is-resizing { user-select: none; }
+@media (max-width: 580px) { .practice-progress-grip { display: none; } }
 .stroke-progress-tile { cursor: default; }
 .stroke-progress-tile.is-placeholder { visibility: hidden; }
 .stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--card-ink, var(--primary)) 55%, transparent); }
-.stroke-progress-picture { grid-area: pic; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border: 1px solid var(--border); border-radius: 8px; background: color-mix(in oklab, var(--foreground) 4%, transparent); }
+.stroke-progress-picture { grid-area: pic; display: flex; align-items: center; justify-content: center; width: var(--practice-progress-picture, 58px); height: var(--practice-progress-picture, 58px); border: 1px solid var(--border); border-radius: 8px; background: color-mix(in oklab, var(--foreground) 4%, transparent); }
 .stroke-progress-tile.is-blank .stroke-progress-picture { border-style: dashed; background: none; }
-.stroke-progress-unknown { font-size: 18px; color: var(--muted-foreground); }
-.stroke-progress-tile .stroke-shape { width: 46px; height: 46px; }
-html[data-display-size='comfortable'] .stroke-progress-picture { width: 66px; height: 66px; }
-html[data-display-size='comfortable'] .practice-page-content .stroke-progress-tile .stroke-shape { width: 52px; height: 52px; }
+.stroke-progress-unknown { font-size: calc(var(--practice-progress-picture, 58px) * .31); color: var(--muted-foreground); }
+.stroke-progress-tile .stroke-shape { width: calc(var(--practice-progress-picture, 58px) * .79); height: calc(var(--practice-progress-picture, 58px) * .79); }
+html[data-display-size='comfortable'] .stroke-progress-picture { width: var(--practice-progress-picture, 66px); height: var(--practice-progress-picture, 66px); }
+html[data-display-size='comfortable'] .practice-page-content .stroke-progress-tile .stroke-shape { width: calc(var(--practice-progress-picture, 66px) * .79); height: calc(var(--practice-progress-picture, 66px) * .79); }
 /* The focused word character's tile is the progress tile (is-word) and wears the selected
    strip tile's tint. */
 .stroke-progress-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
@@ -2590,9 +2599,9 @@ html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-ti
 @media (max-width: 500px) {
   .word-strip { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 8px; }
   .word-strip-tile, .stroke-progress-tile { column-gap: 8px; padding: 8px 8px 8px 7px; }
-  html[data-display-size] .practice-progress-row .stroke-progress-picture { width: 42px; height: 42px; }
-  html[data-display-size] .practice-page-content .stroke-progress-tile .stroke-shape { width: 34px; height: 34px; }
-  html[data-display-size] .practice-progress-row .stroke-progress-picture .word-strip-glyph { font-size: 31px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture { width: var(--practice-progress-picture, 42px); height: var(--practice-progress-picture, 42px); }
+  html[data-display-size] .practice-page-content .stroke-progress-tile .stroke-shape { width: calc(var(--practice-progress-picture, 42px) * .8); height: calc(var(--practice-progress-picture, 42px) * .8); }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture .word-strip-glyph { font-size: calc(var(--practice-progress-picture, 42px) * .74); }
   html[data-display-size] .practice-progress-row .stroke-progress-head { flex-wrap: wrap; column-gap: 5px; row-gap: 0; font-size: 13px; min-height: 22px; }
   html .stroke-progress-sep { display: none; }
   html[data-display-size] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 12px; white-space: normal; text-overflow: clip; }
@@ -2615,8 +2624,8 @@ html[data-display-size='comfortable'] .word-strip-tile .tile-speaker svg, html[d
 .word-strip-tile .tile-speaker { pointer-events: auto; }
 .word-strip-tile:has(.word-strip-select:focus-visible) { border-color: var(--card-ink, var(--primary)); }
 .word-strip-tile.stroke-progress-tile { cursor: pointer; }
-.stroke-progress-picture .word-strip-glyph { font-size: 42px; line-height: 1; }
-html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: 48px; }
+.stroke-progress-picture .word-strip-glyph { font-size: calc(var(--practice-progress-picture, 58px) * .72); line-height: 1; }
+html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: calc(var(--practice-progress-picture, 66px) * .72); }
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
 /* Derived stroke names: shown, but marked as assembled by the source and unverified. */
 .stroke-derived-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid color-mix(in oklab, var(--terracotta) 55%, transparent); border-radius: 999px; font-size: 11px; color: var(--terracotta); white-space: nowrap; cursor: help; }
