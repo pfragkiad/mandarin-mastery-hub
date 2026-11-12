@@ -3,7 +3,7 @@ import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
-import { characterScore, completionWord, finishedResult, strokeScore, type CharacterResult } from '@/lib/stroke-score';
+import { characterScore, completionWord, finishedResult, mistakeNote, strokeScore, type CharacterResult } from '@/lib/stroke-score';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { practiceCanvasSize, PRACTICE_CANVAS_MIN, practiceProgressPicture, PRACTICE_PROGRESS_PICTURE_MIN, PRACTICE_PROGRESS_PICTURE_MAX } from '@/lib/learning-preferences';
 import { accuracyGrade } from '@/lib/accuracy-grade';
@@ -104,10 +104,12 @@ function WriterStatus({ message, ink }: { message: string; ink: string }) {
 
 // A finished character's result on its progress tile: the total accuracy in its grade colour,
 // or "shown" when no stroke was hand-drawn. `resultLabel` is the same result for screen readers.
+// A scored result reads "92% accuracy (1 mistake)"; only the percentage wears the grade colour,
+// and a mistake-free round reads just "100% accuracy".
 function ResultText({ result }: { result: CharacterResult }) {
-  return result.kind === 'score' ? <span className={`accuracy-grade accuracy-grade-${accuracyGrade(result.percent)}`}>{result.percent}%</span> : <>shown</>;
+  return result.kind === 'score' ? <><span className={`accuracy-grade accuracy-grade-${accuracyGrade(result.percent)}`}>{result.percent}%</span>{` accuracy${mistakeNote(result.mistakes)}`}</> : <>shown</>;
 }
-const resultLabel = (result: CharacterResult) => result.kind === 'score' ? `${result.percent}% accuracy` : 'shown';
+const resultLabel = (result: CharacterResult) => result.kind === 'score' ? `${result.percent}% accuracy${mistakeNote(result.mistakes)}` : 'shown';
 
 // Colours each "NN%" in a status message by its grade band (see accuracyGrade); the text itself is unchanged.
 function gradePercents(text: string): React.ReactNode {
@@ -177,12 +179,12 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // The progress tile under the mode tabs: a short horizontal read-out (styles.css
 // .stroke-progress-tile) with a small picture on the left and, to its right, a title line
 // ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
-// recorded name, "Preview hidden" or "done") and the bar for the strokes drawn so far, with a
+// recorded name, or the finished accuracy) and the bar for the strokes drawn so far, with a
 // tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
 // = strokes.length when done) and `showStroke`. With the Next stroke switch off — and always in
 // Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
 // title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
-// already show each form's total), and the sub-line never names a stroke while it is hidden.
+// already show each form's total), and the sub-line still names the next stroke.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
 // title leads with the character's own single reading and speaker (null when it has several),
 // then the count, and `word.label` names the character for screen readers.
@@ -204,12 +206,11 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // wins because that frame shows a different character.
 // `reading` (single character): its recorded reading(s) and the glyph to speak, shown on the title
 // line before the count ("de 🔊 · 2 / 8") like a word character's tile, so both layouts read alike.
-// `scores`: the per-stroke accuracies of the current round; once the character is finished the
-// sub-line shows their total (coloured by the same grade bands as the status line) instead of
-// "done", or "shown" when nothing was hand-drawn (Play / clicked strokes only).
-// `playing`: while Play animates, the sub-line names the stroke being drawn even with the
-// preview hidden — the stroke is on the canvas anyway, so naming it gives nothing away.
-function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph, recall, reading, scores = [], playing = false }: { reading?: SingleReading | undefined; strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined; recall?: boolean | undefined; scores?: (number | null)[]; playing?: boolean }) {
+// `scores` / `mistakes`: the per-stroke accuracies and mistake counts of the current round; once
+// the character is finished the sub-line shows "92% accuracy (1 mistake)" (the percentage
+// coloured by the same grade bands as the status line), or "shown" when nothing was hand-drawn.
+// `playing`: while Play animates, the sub-line names the stroke being drawn.
+function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph, recall, reading, scores = [], mistakes = [], playing = false }: { reading?: SingleReading | undefined; strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined; recall?: boolean | undefined; scores?: (number | null)[]; mistakes?: (number | null)[]; playing?: boolean }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
@@ -222,7 +223,7 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   const singleGlyph = !word && !showStroke && done ? glyph : undefined;
   const tileInk = word ? (wordShown ? word.ink ?? '' : '') : ink ?? '';
   const fraction = Math.min(1, next / total);
-  const result = done ? finishedResult(scores) : null;
+  const result = done ? finishedResult(scores, mistakes) : null;
   const status = (showStroke
     ? done ? `All ${total} strokes drawn` : `Next: stroke ${next + 1} of ${total}${stroke?.pinyin ? `, ${stroke.pinyin}` : ''}`
     : `${Math.min(next, total)} of ${total} strokes drawn`) + (result ? `, ${resultLabel(result)}` : '');
@@ -231,11 +232,12 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   // and a finished one carries no count at all — the tick already says it is done.
   const count = done ? '' : `${next + 1} / ${total}`;
   const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
-  // The sub-line names the next stroke only while its picture shows, so a hidden preview never
-  // gives the stroke away by name.
+  // The sub-line always names the stroke you are on (owner's choice), with or without the
+  // picture and in every mode; while Play animates it names the stroke being drawn. A stroke
+  // with no recorded name leaves it empty rather than guessing one.
   const subLine = result ? <ResultText result={result}/>
     : playing ? stroke?.pinyin ?? ''
-    : showStroke ? stroke?.pinyin ? `next: ${stroke.pinyin}` : '' : 'Preview hidden';
+    : stroke?.pinyin ? `next: ${stroke.pinyin}` : '';
   const blank = recall ? <span className="stroke-progress-unknown">?</span> : null;
   return (
     // A tile with a speaker (word character, or a single character's reading) is a group; its read-out is a labelled group (an <img> role
@@ -351,7 +353,7 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, decomposition
 /** One character's tracing/recall progress inside a word: the next undrawn stroke, the
  *  scores and status line, and the mode they were drawn in. Reported by WritingPractice
  *  (onProgress) and handed back (savedProgress) so switching characters keeps each one. */
-export type PracticeProgress = { character: string; mode: PracticeMode; start: number; total: number; scores: (number | null)[]; prefix: number; message: string };
+export type PracticeProgress = { character: string; mode: PracticeMode; start: number; total: number; scores: (number | null)[]; mistakes: (number | null)[]; prefix: number; message: string };
 // `strip` renders under the mode tabs (word practice's character strip); it is called with the
 // live progress tile renderer (null while loading) so the focused character's tile is that tile. `savedProgress`
 // re-arms the quiz where an earlier visit to this character stopped (same mode only);
@@ -485,6 +487,9 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   const [strokes, setStrokes] = useState<StrokeInfo[]>([]);
   const [activeStroke, setActiveStroke] = useState<number | null>(null);
   const [scores, setScores] = useState<(number | null)[]>([]);
+  // Mistakes made on each hand-drawn stroke (null when shown/clicked), kept beside `scores` so a
+  // finished tile can say "(1 mistake)" exactly instead of working it back from a percentage.
+  const [mistakes, setMistakes] = useState<(number | null)[]>([]);
   // A shown prefix is completed visually, but is not a scored learner answer.
   // Keep it separate from the next stroke index used by direction arrows.
   const [tracePrefix, setTracePrefix] = useState(0);
@@ -517,7 +522,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   }, [muted]);
   // Progress carried across a same-character writer rebuild (see the build effect).
   const lastBuild = useRef('');
-  const restoreRef = useRef<{ start: number; scores: (number | null)[]; prefix: number; message: string; mode: PracticeMode } | null>(null);
+  const restoreRef = useRef<{ start: number; scores: (number | null)[]; mistakes: (number | null)[]; prefix: number; message: string; mode: PracticeMode } | null>(null);
   // The character the live writer was built for; progress is reported only for it, so a
   // render that already carries a new character never files the old one's scores under it.
   const builtFor = useRef('');
@@ -538,11 +543,11 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     // or retry starts fresh.
     const buildKey = `${character}|${radicalSelection?.key ?? ''}|${retry}`;
     restoreRef.current = buildKey === lastBuild.current && ready && mode !== 'watch' && tracePos.current > 0
-      ? { start: tracePos.current, scores, prefix: tracePrefix, message, mode }
+      ? { start: tracePos.current, scores, mistakes, prefix: tracePrefix, message, mode }
       : null;
     // A character revisited inside a word resumes where its earlier visit stopped.
     if (!restoreRef.current && savedProgress && savedProgress.character === character && savedProgress.start > 0 && savedProgress.mode !== 'watch')
-      restoreRef.current = { start: savedProgress.start, scores: savedProgress.scores, prefix: savedProgress.prefix, message: savedProgress.message, mode: savedProgress.mode };
+      restoreRef.current = { start: savedProgress.start, scores: savedProgress.scores, mistakes: savedProgress.mistakes, prefix: savedProgress.prefix, message: savedProgress.message, mode: savedProgress.mode };
     // Show the resumed position from the writer's first ready frame: otherwise the tile paints
     // "1 / N" with an empty bar and then sweeps up to the restored stroke.
     tracePos.current = restoreRef.current && restoreRef.current.mode === mode ? restoreRef.current.start : 0;
@@ -586,7 +591,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
       if (color) { color.fillStyle = style.getPropertyValue('--writer-outline').trim(); color.fillRect(0, 0, 1, 1); }
       const outlinePixel = color?.getImageData(0, 0, 1, 1).data;
       const outlineHex = outlinePixel ? `#${Array.from(outlinePixel).slice(0, 3).map(channel => channel.toString(16).padStart(2, '0')).join('')}` : undefined;
-      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { builtFor.current = character; setReady(true); setWriterBuild(n => n + 1); setScores([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
+      const instance = Writer.create(target.current, character, { width: boardSize, height: boardSize, padding: Math.round(22 * boardSize / 300), showCharacter: mode === 'watch', showOutline: practiceModeOptions(mode).showOutline, charDataLoader: (_glyph, onLoad) => { onLoad(data); }, ...(inkHex ? { strokeColor: inkHex, drawingColor: inkHex, radicalColor: inkHex } : {}), ...(outlineHex ? { outlineColor: outlineHex } : {}), strokeAnimationSpeed: speedRef.current, delayBetweenStrokes: 240, onLoadCharDataSuccess: () => { if (active) { builtFor.current = character; setReady(true); setWriterBuild(n => n + 1); setScores([]); setMistakes([]); requestAnimationFrame(paintStrokes); setMessage(''); } }, onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); } });
       writer.current = instance;
       // Capture phase on the container runs before Hanzi Writer's own svg
       // mousedown/touchstart listeners, so re-arming here lets this very drag
@@ -643,7 +648,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     // would erase that prefix and visually restart already completed strokes.
     const run = ++animationRun.current;
     applySpeed(instance);
-    instance.cancelQuiz(); setPaused(false); setPlaying(true); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Follow each stroke in order.');
+    instance.cancelQuiz(); setPaused(false); setPlaying(true); setActiveStroke(null); setScores([]); setMistakes([]); setStepIndex(0); setStepMode(false); setMessage('Follow each stroke in order.');
     // Trace Play marks already-drawn strokes like hand tracing does: cards before
     // the current stroke are highlighted, the current one is the active card.
     if (tracePlay) setTracePrefix(start);
@@ -700,7 +705,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   };
   const reset = () => {
     animationRun.current += 1; writer.current?.cancelQuiz(); if (mode === 'watch') void writer.current?.showCharacter(); else void writer.current?.hideCharacter();
-    setPlaying(false); setPaused(false); setActiveStroke(null); setScores([]); setStepIndex(0); setStepMode(false); setMessage('Ready for a fresh start.');
+    setPlaying(false); setPaused(false); setActiveStroke(null); setScores([]); setMistakes([]); setStepIndex(0); setStepMode(false); setMessage('Ready for a fresh start.');
     if (mode !== 'watch') quiz();
   };
   // A completed round keeps the finished drawing and scores on screen; the
@@ -724,7 +729,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   // only the remaining strokes; displayed strokes deliberately keep null scores.
   // `restored` (after a same-character rebuild) keeps the earlier scores, shown-prefix
   // marker and status line instead of treating the redrawn prefix as clicked/unscored.
-  const quiz = (startStroke = 0, restored?: { scores: (number | null)[]; prefix: number; message: string }) => {
+  const quiz = (startStroke = 0, restored?: { scores: (number | null)[]; mistakes: (number | null)[]; prefix: number; message: string }) => {
     const instance = writer.current;
     if (!instance) return;
     tracePos.current = startStroke;
@@ -733,6 +738,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     setPlaying(false); setPaused(false); setActiveStroke(startStroke < strokes.length ? startStroke : null); // includes stroke 1, so a fresh round shows only its arrow
     setStepIndex(0); setStepMode(false); needsRearm.current = false; pauseAfterStroke.current = false; setPausing(false);
     setScores(strokes.map((_, i) => restored?.scores[i] ?? null));
+    setMistakes(strokes.map((_, i) => restored?.mistakes[i] ?? null));
     setTracePrefix(mode === 'trace' ? restored ? restored.prefix : startStroke : 0);
     // A restored round counts as a whole attempt when nothing was skipped by clicking.
     const wholeAttempt = startStroke === 0 || (restored !== undefined && restored.prefix === 0);
@@ -753,6 +759,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
         tracePos.current = strokeNum + 1;
         const score = strokeScore(mistakesOnStroke);
         setScores(prev => { const next = [...prev]; next[strokeNum] = score; return next; });
+        setMistakes(prev => { const next = [...prev]; next[strokeNum] = mistakesOnStroke; return next; });
         setActiveStroke(strokeNum + 1 < strokes.length ? strokeNum + 1 : null);
         setMessage(`Stroke ${strokeNum + 1}: ${score}% accuracy.`);
       },
@@ -766,9 +773,10 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
         setScores(prev => {
           const total = characterScore(prev);
           // The accuracy itself is shown on the progress tile (it stays there after moving on to
-          // another character); the line under the square only says what to do next.
-          // A round that began after clicked strokes says so, since only part was hand-drawn.
-          setMessage(`${wholeAttempt ? completionWord(total) : 'Remaining strokes complete.'} Draw again to start over.`);
+          // another character); the line under the square is one word plus what to do next.
+          // "Perfect!" needs a whole hand-drawn attempt; a round that began after clicked
+          // strokes is only "Complete.", since part of it was not drawn.
+          setMessage(`${completionWord(wholeAttempt ? total : null)} Draw again to start over.`);
           return prev;
         });
       },
@@ -851,11 +859,11 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
     armedFor.current = { mode, character, build: writerBuild };
     const drawn = tracePos.current;
     const carried = previous?.mode === 'recall' && mode === 'trace' && previous.character === character && previous.build === writerBuild && drawn > 0
-      ? { start: drawn, scores, prefix: 0, mode, message: drawn >= strokes.length ? 'All strokes drawn. Draw again to start over.' : `Continue tracing from stroke ${drawn + 1} of ${strokes.length}, or press Play.` }
+      ? { start: drawn, scores, mistakes, prefix: 0, mode, message: drawn >= strokes.length ? 'All strokes drawn. Draw again to start over.' : `Continue tracing from stroke ${drawn + 1} of ${strokes.length}, or press Play.` }
       : null;
     animationRun.current += 1;
     writer.current.cancelQuiz();
-    setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setTracePrefix(0);
+    setPlaying(false); setPaused(false); setActiveStroke(null); setStepIndex(0); setStepMode(false); setScores([]); setMistakes([]); setTracePrefix(0);
     const outline = practiceModeOptions(mode).showOutline;
     if (outline) void writer.current.showOutline({ duration: 0 }); else void writer.current.hideOutline({ duration: 0 });
     const restore = carried ?? restoreRef.current; restoreRef.current = null;
@@ -865,8 +873,8 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   }, [mode, ready, character, writerBuild]);
   useEffect(() => {
     if (!onProgress || !ready || builtFor.current !== character || !strokes.length || mode === 'watch') return;
-    onProgress({ character, mode, start: Math.min(tracePos.current, strokes.length), total: strokes.length, scores, prefix: tracePrefix, message });
-  }, [scores, tracePrefix, message, ready, mode, strokes.length]);
+    onProgress({ character, mode, start: Math.min(tracePos.current, strokes.length), total: strokes.length, scores, mistakes, prefix: tracePrefix, message });
+  }, [scores, mistakes, tracePrefix, message, ready, mode, strokes.length]);
   const selected = groups.find(group => group.id === selectedGroup);
   const selectGroup = (id: string) => {
     const group = groups.find(group => group.id === id);
@@ -905,7 +913,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} scores={scores} playing={playing} showStroke={nextPreview} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} scores={scores} mistakes={mistakes} playing={playing} showStroke={nextPreview} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
     : null;
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
@@ -1109,7 +1117,7 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       // Every tile shares the progress tile's frame (picture left; reading, speaker and count on
       // the title line; a status line; bar), so the row keeps one height and one look.
       // A finished character keeps its accuracy here, so a word's characters can be compared.
-      const result = done && p ? finishedResult(p.scores) : null;
+      const result = done && p ? finishedResult(p.scores, p.mistakes) : null;
       const status = result ? <ResultText result={result}/> : loading ? '' : drawn > 0 ? `${drawn} of ${total} drawn` : 'not started';
       // The frame is a plain box: the whole tile stays the select target through an invisible
       // button laid under the head (styles.css .word-strip-select), and the reading's speaker is

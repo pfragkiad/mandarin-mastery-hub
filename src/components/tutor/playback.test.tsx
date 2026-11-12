@@ -406,7 +406,8 @@ it('a single tile clears component selection before drawing the selected stroke'
   expect(document.querySelectorAll('.stroke-score')).toHaveLength(1);
   expect(document.querySelectorAll('.stroke-chip')[2]?.textContent).toContain('75%');
   act(() => resumed.onComplete({ totalMistakes: 1 }));
-  expect(document.querySelector('.writer-status')?.textContent).toContain('Remaining strokes complete');
+  // One word before the restart cue; a round that began after clicked strokes is never "Perfect!".
+  expect(document.querySelector('.writer-status')?.textContent).toBe('Complete. Draw again to start over.');
   fireEvent.click(screen.getByRole('button', { name: 'Reset character' }));
   expect(fake.quiz.mock.calls[2]?.[0].quizStartStrokeNum).toBe(0);
   expect(screen.getByRole('button', { name: 'Continue tracing after stroke 1' })).toHaveAttribute('aria-pressed', 'false');
@@ -603,12 +604,14 @@ it('the progress tile shows the next stroke glowing and fills its bar as strokes
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 2 of 3/);
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
-  // Next stroke off leaves the stroke you are on in the title and the bar, and the status
-  // line no longer names the next stroke.
+  // Next stroke off hides only the picture: the title keeps the stroke you are on and the
+  // sub-line still names the next stroke, never "Preview hidden".
+  const named = tile()?.querySelector('.stroke-pinyin')?.textContent;
   fireEvent.click(screen.getByRole('button', { name: 'Next stroke' }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
   expect(tile()?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('2 / 3');
-  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
+  expect(named).toMatch(/^next: \S/);
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe(named);
   expect(tile()?.getAttribute('aria-label')).toBe('1 of 3 strokes drawn');
 });
 
@@ -625,6 +628,8 @@ it('a finished character keeps its tick but shows no stroke count', async () => 
     quiz?.onCorrectStroke({ strokeNum: 2, mistakesOnStroke: 0 });
   });
   await waitFor(() => expect(tile()?.getAttribute('aria-label')).toBe('All 3 strokes drawn, 100% accuracy'));
+  // A mistake-free round adds no bracketed count.
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('100% accuracy');
   expect(tile()?.querySelector('.stroke-index')?.textContent).toBe('');
   expect(tile()?.querySelector('.word-strip-done')).not.toBeNull();
 });
@@ -642,7 +647,7 @@ it('a finished character shows its total accuracy on the tile instead of "done",
     quiz?.onComplete({ totalMistakes: 3 });
   });
   // (100 + 75 + 50) / 3 = 75% → the brown "fair" band; the canvas line says only "Complete."
-  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('75%'));
+  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('75% accuracy (3 mistakes)'));
   expect(tile()?.querySelector('.stroke-pinyin .accuracy-grade-fair')).not.toBeNull();
   expect(screen.getByText('Complete.')).toBeInTheDocument();
   expect(screen.queryByText('Perfect!')).not.toBeInTheDocument();
@@ -657,9 +662,9 @@ it('Recall keeps the progress tile to its bar, even with Next stroke switched on
   expect(screen.getByRole('button', { name: 'Next stroke' })).toBeDisabled();
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
-  // No stroke name leaks: the status line only says the preview is hidden.
-  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
-  expect(tile()?.textContent).not.toContain('next:');
+  // The sub-line always names the next stroke (owner's choice), Recall included.
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toMatch(/^next: \S/);
+  expect(tile()?.textContent).not.toContain('Preview hidden');
   // The empty box reads as a question, and the title keeps the stroke you are on.
   expect(tile()?.querySelector('.stroke-progress-unknown')?.textContent).toBe('?');
   expect(tile()?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('2 / 3');
@@ -697,9 +702,10 @@ it('while Play runs, the progress tile names the stroke being drawn even with th
   const tile = () => document.querySelector('.stroke-progress-tile');
   await waitFor(() => expect(tile()).not.toBeNull());
   fireEvent.click(screen.getByRole('button', { name: 'Next stroke' }));
-  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toMatch(/^next: \S/);
   fireEvent.click(screen.getByRole('button', { name: 'Play' }));
-  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('Preview hidden'));
+  await waitFor(() => expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toMatch(/^next:/));
   expect(tile()?.querySelector('.stroke-pinyin')?.textContent).not.toBe('');
+  expect(tile()?.textContent).not.toContain('Preview hidden');
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
 });
