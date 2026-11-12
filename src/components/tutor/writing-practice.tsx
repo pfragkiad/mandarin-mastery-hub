@@ -10,7 +10,7 @@ import { accuracyGrade, type AccuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, ChevronUp, Play, Pause, RotateCcw, Eye, MoveUpRight, Volume2, StepForward, TriangleAlert } from 'lucide-react';
+import { Check, ChevronUp, ChevronDown, Play, Pause, RotateCcw, Eye, MoveUpRight, Volume2, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
