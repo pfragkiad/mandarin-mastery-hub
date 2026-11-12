@@ -651,6 +651,13 @@ it('a finished character shows its total accuracy on the tile instead of "done",
   expect(tile()?.querySelector('.stroke-pinyin .accuracy-grade-fair')).not.toBeNull();
   expect(screen.getByText('Complete.')).toBeInTheDocument();
   expect(screen.queryByText('Perfect!')).not.toBeInTheDocument();
+  // The completion word wears the same grade colour as the tile's score; the "start over" cue
+  // stays bold but uncoloured.
+  const status = document.querySelector('.writer-status');
+  expect(status?.querySelector('.accuracy-grade-fair')?.textContent).toBe('Complete.');
+  const cue = status?.querySelector('.writer-status-cue') as HTMLElement;
+  expect(cue?.textContent).toBe('Draw again to start over.');
+  expect(cue?.style.color).toBe('');
 });
 
 it('Recall keeps the progress tile to its bar, even with Next stroke switched on', async () => {
