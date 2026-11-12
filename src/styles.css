@@ -2322,7 +2322,7 @@ html[data-display-size='comfortable'] .pinyin-characters-more.pinyin-characters-
    in DOM) keeps the bottom line and the wrapped pill group lands on the line above. This
    follows the row's real width (panel width, display size, Details pill present), not a
    window breakpoint. The pills never wrap among themselves; they shrink instead. */
-.stroke-guide-top { flex-wrap: wrap-reverse; row-gap: 12px; }
+.stroke-guide-top { flex-wrap: wrap-reverse; row-gap: 22px; }
 .stroke-guide-actions { flex-wrap: nowrap; max-width: 100%; }
 .stroke-guide-actions > button { min-width: 0; flex: 0 1 auto; }
 
