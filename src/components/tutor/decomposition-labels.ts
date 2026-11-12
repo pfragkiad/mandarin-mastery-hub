@@ -11,14 +11,16 @@ import type { RefObject } from 'react';
  * own tile right and siblings stop lining up.
  *
  * So the tree measures every label's natural width (never below the 42px default) and
- * publishes the widest as --decomposition-label-width on the tree's root list. All labels
+ * publishes the widest as --decomposition-label-width on a wrapper around every tree in the
+ * panel (both the BabelStone and the graphical-structure breakdown). All labels
  * then share that width, and because each nesting level indents by the same amount,
  * tiles at the same depth are all left-aligned — siblings and cousins alike.
  *
  * Tricky logic:
  * - Labels are measured with the variable cleared, otherwise a previous, wider value
  *   would be read back and the column could never shrink (e.g. after a character change).
- * - It re-measures after web fonts settle and whenever the tree's box resizes (display
+ * - The wrapper is display:contents (no box), so the observer watches each tree list.
+ * - It re-measures after web fonts settle and whenever a tree's box resizes (display
  *   size changes the label font size); setting the same value again is a no-op, so the
  *   resize observer cannot loop.
  * - Without measurement (tests, SSR) the CSS floor still prevents any overlap.
@@ -53,7 +55,7 @@ export function useSharedLabelColumn(ref: RefObject<HTMLElement | null>, key: un
       last = size;
       measure();
     });
-    observer?.observe(root);
+    root.querySelectorAll('.decomposition-tree').forEach(list => observer?.observe(list));
     return () => { cancelled = true; observer?.disconnect(); };
   }, [ref, key]);
 }

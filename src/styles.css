@@ -418,6 +418,8 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 /* Symmetric breathing room around the tree: 6px above the root row matches the
    6px below the last row (4px tree margin + 2px note margin). */
 .decomposition-tree { list-style: none; margin: 6px 0 4px; padding: 0; }
+/* Box-less wrapper that only carries the shared label width for every tree in a panel. */
+.decomposition-trees { display: contents; }
 /* Shared row gaps apply to both siblings and parent/child rows, without
    accumulating nested margins. Vocabulary word groups keep their own layout. */
 .decomposition-tree:not(.vocabulary-parts), .decomposition-tree ul,
