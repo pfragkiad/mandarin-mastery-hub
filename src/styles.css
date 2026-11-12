@@ -2533,8 +2533,11 @@ html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.
 /* Word practice: character strip under the mode tabs (WordCharacterStrip). Each tile
    shows the hanzi, its own single recorded reading, and a progress bar for the current
    mode; a tick marks a finished character. */
-.word-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 2px; }
-.word-strip-tile, .stroke-progress-tile { position: relative; width: 116px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 12px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, background-color .15s; }
+/* Tiles share the row evenly (two to a row for a two-character word), wrapping when narrow. */
+.word-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 10px; margin: 14px 0 2px; }
+/* A short horizontal read-out: the picture on the left, and to its right the title line, the
+   status line and the bar, so the tile row costs little height above the writing square. */
+.word-strip-tile, .stroke-progress-tile { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "pic head" "pic sub" "pic bar"; grid-template-rows: auto auto auto; align-content: center; align-items: center; column-gap: 12px; row-gap: 1px; padding: 9px 12px 9px 9px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); text-align: left; cursor: pointer; transition: border-color .15s, background-color .15s; }
 /* The frame wears the character's identity ink (styles.css `.card-ink-*`, set on the tile
    itself): gold radical, green character, purple traditional, foreground component — the same
    rule as every library card, so hover/selected never reads green on a gold character. */
@@ -2548,7 +2551,7 @@ html[data-display-size='comfortable'] .word-strip-glyph.form-switch-blank { widt
 .tile-count { font-size: 16px; line-height: 1; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
 html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
 .word-strip-pinyin { font-size: 14px; }
-.word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
+.word-strip-progress { display: block; width: 100%; height: 4px; margin-top: 8px; grid-area: bar; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
 .word-strip-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--primary); transition: width .25s; }
 /* Practice word-strip tiles reuse the 繁 / 部 corner stamps (.tile-stamp-*) of every other glyph tile. */
 .word-strip-done { position: absolute; top: 7px; right: 8px; width: 15px; height: 15px; color: var(--primary); pointer-events: none; }
@@ -2558,35 +2561,49 @@ html[data-display-size='comfortable'] .tile-count { font-size: 18px; }
    which shares the word tiles' frame and bar but is a read-out, not a button. */
 .practice-progress-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px 18px; margin: 14px 0 2px; }
 .practice-progress-row:empty { display: none; }
-.practice-progress-row > .word-strip { margin: 0; }
-.stroke-progress-tile { width: 132px; cursor: default; gap: 4px; }
+.practice-progress-row > .word-strip { margin: 0; flex: 1 1 100%; }
+.practice-progress-row > .stroke-progress-tile { flex: 1 1 100%; }
+.stroke-progress-tile { cursor: default; }
 .stroke-progress-tile.is-placeholder { visibility: hidden; }
 .stroke-progress-tile.is-done { border-color: color-mix(in oklab, var(--card-ink, var(--primary)) 55%, transparent); }
-.stroke-progress-tile .stroke-index { min-height: 1.2em; }
-.stroke-progress-picture { display: flex; align-items: center; justify-content: center; width: 68px; height: 68px; }
-.stroke-progress-tile.is-blank .stroke-progress-picture { border: 1px dashed var(--border); border-radius: 8px; }
-/* Bars line up along the bottom of every tile in the row, whatever each tile holds. */
-.practice-progress-row :is(.word-strip-tile, .stroke-progress-tile) .word-strip-progress { margin-top: auto; }
-.practice-progress-row .word-strip-tile { gap: 4px; }
-html[data-display-size='comfortable'] .stroke-progress-tile { width: 144px; }
-html[data-display-size='comfortable'] .stroke-progress-picture { width: 76px; height: 76px; }
-/* Word practice: the focused character's tile is the progress tile (is-word). Its top row keeps
-   the stroke count in the left corner and the character's reading centred, in a 1fr/auto/1fr
-   grid so a long count never overlaps the reading; it wears the selected strip tile's tint. */
-.stroke-progress-tile.is-word { width: 148px; }
+.stroke-progress-picture { grid-area: pic; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border: 1px solid var(--border); border-radius: 8px; background: color-mix(in oklab, var(--foreground) 4%, transparent); }
+.stroke-progress-tile.is-blank .stroke-progress-picture { border-style: dashed; background: none; }
+.stroke-progress-unknown { font-size: 18px; color: var(--muted-foreground); }
+.stroke-progress-tile .stroke-shape { width: 46px; height: 46px; }
+html[data-display-size='comfortable'] .stroke-progress-picture { width: 66px; height: 66px; }
+html[data-display-size='comfortable'] .practice-page-content .stroke-progress-tile .stroke-shape { width: 52px; height: 52px; }
+/* The focused word character's tile is the progress tile (is-word) and wears the selected
+   strip tile's tint. */
 .stroke-progress-tile.is-selected { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklab, var(--card-ink, var(--primary)) 10%, var(--card)); }
-.stroke-progress-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; column-gap: 4px; width: 100%; min-height: 1.35em; }
-.stroke-progress-head .stroke-index { grid-column: 1; justify-self: start; white-space: nowrap; }
-/* The reading and its speaker are one pair in the head's centre column, so the pair — not the
-   pinyin alone — stays centred in the tile and the icon never drifts to the tile's edge. */
-.stroke-progress-head .word-strip-reading { grid-column: 2; display: inline-flex; align-items: center; gap: 3px; }
+/* Title line: reading + speaker as one pair, a dot, then the count ("bāo 🔊 · 3 / 5"), or
+   "Stroke 3 / 12" for a single character. */
+.stroke-progress-head { grid-area: head; display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 26px; font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+html .practice-progress-row .stroke-progress-head .stroke-index { font-size: inherit; color: var(--foreground); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stroke-progress-sep { color: var(--muted-foreground); font-weight: 400; }
+.stroke-progress-head .word-strip-reading { display: inline-flex; align-items: center; gap: 2px; font-weight: 500; }
+/* Status line: the next stroke's name, "Preview hidden", "not started" or "done". */
+html .practice-progress-row .stroke-progress-tile .stroke-pinyin { grid-area: sub; min-height: 0; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; line-height: 1.35; }
+html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-head { font-size: 16px; min-height: 30px; }
+html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 14px; min-height: 0; }
+/* Phones keep two characters side by side: a smaller picture and tighter type, and a long
+   reading lets the count drop under it rather than overflow. */
+@media (max-width: 500px) {
+  .word-strip { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 8px; }
+  .word-strip-tile, .stroke-progress-tile { column-gap: 8px; padding: 8px 8px 8px 7px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture { width: 42px; height: 42px; }
+  html[data-display-size] .practice-page-content .stroke-progress-tile .stroke-shape { width: 34px; height: 34px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-picture .word-strip-glyph { font-size: 31px; }
+  html[data-display-size] .practice-progress-row .stroke-progress-head { flex-wrap: wrap; column-gap: 5px; row-gap: 0; font-size: 13px; min-height: 22px; }
+  html .stroke-progress-sep { display: none; }
+  html[data-display-size] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 12px; white-space: normal; text-overflow: clip; }
+  .practice-progress-row :is(.word-strip-tile, .stroke-progress-tile) .tile-speaker { width: 20px; height: 20px; }
+}
 /* The strip's speaker is the shared embedded-tile speaker (.tile-speaker), sized to sit beside
    the reading without crowding it; Comfortable gives it a little more room. */
 .word-strip-tile .tile-speaker, .stroke-progress-tile .tile-speaker { width: 22px; height: 22px; }
 .word-strip-tile .tile-speaker svg, .stroke-progress-tile .tile-speaker svg { width: 14px; height: 14px; }
 html[data-display-size='comfortable'] .word-strip-tile .tile-speaker, html[data-display-size='comfortable'] .stroke-progress-tile .tile-speaker { width: 26px; height: 26px; }
 html[data-display-size='comfortable'] .word-strip-tile .tile-speaker svg, html[data-display-size='comfortable'] .stroke-progress-tile .tile-speaker svg { width: 16px; height: 16px; }
-html[data-display-size='comfortable'] .stroke-progress-tile.is-word { width: 160px; }
 /* Unfocused strip tiles: the frame is a box, and the whole tile stays the select target through
    an invisible button underneath it. The head sits above that button but lets clicks fall
    through, except on the speaker — so hearing a character never selects it. */
@@ -2598,8 +2615,8 @@ html[data-display-size='comfortable'] .stroke-progress-tile.is-word { width: 160
 .word-strip-tile .tile-speaker { pointer-events: auto; }
 .word-strip-tile:has(.word-strip-select:focus-visible) { border-color: var(--card-ink, var(--primary)); }
 .word-strip-tile.stroke-progress-tile { cursor: pointer; }
-.stroke-progress-picture .word-strip-glyph { font-size: 54px; line-height: 1; }
-html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: 60px; }
+.stroke-progress-picture .word-strip-glyph { font-size: 42px; line-height: 1; }
+html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph { font-size: 48px; }
 /* "Details" beside the Strokes heading opens the drawer holding every stroke tile. */
 /* Derived stroke names: shown, but marked as assembled by the source and unverified. */
 .stroke-derived-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid color-mix(in oklab, var(--terracotta) 55%, transparent); border-radius: 999px; font-size: 11px; color: var(--terracotta); white-space: nowrap; cursor: help; }

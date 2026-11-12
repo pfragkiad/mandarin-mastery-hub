@@ -543,7 +543,7 @@ it('switching Trace to Recall still starts Recall fresh', async () => {
   expect(fake.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(0);
 });
 
-it('word practice shows the progress tile in the focused character\'s place, count top-left and reading on top', async () => {
+it('word practice shows the progress tile in the focused character\'s place, reading then count on its title line', async () => {
   render(<WritingPractice character="我" mode="trace" strip={tile => <div role="group" aria-label="Characters in this word">{tile?.({ reading: 'wǒ', label: 'Character 1 我' })}</div>}/>);
   await waitFor(() => expect(document.querySelector('.stroke-progress-tile')).not.toBeNull());
   // One tile only: the strip's focused tile is the progress tile, not an extra one beside it.
@@ -587,10 +587,12 @@ it('the progress tile shows the next stroke glowing and fills its bar as strokes
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.getAttribute('aria-label')).toMatch(/^Next: stroke 2 of 3/);
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
-  // The Strokes pill off leaves the stroke you are on and the bar.
+  // The Strokes pill off leaves the stroke you are on in the title and the bar, and the status
+  // line no longer names the next stroke.
   fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
-  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('2 / 3');
+  expect(tile()?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('2 / 3');
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
   expect(tile()?.getAttribute('aria-label')).toBe('1 of 3 strokes drawn');
 });
 
@@ -620,8 +622,11 @@ it('Recall keeps the progress tile to its bar, even with the Strokes pill on', a
   fireEvent.click(screen.getByRole('button', { name: 'Strokes' }));
   act(() => fake.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
   expect(tile()?.querySelector('.stroke-shape')).toBeNull();
-  expect(tile()?.textContent).not.toMatch(/\p{Script=Latin}/u);
-  // The blank box carries the stroke you are on, so the tile is never just empty.
-  expect(tile()?.querySelector('.tile-count')?.textContent).toBe('2 / 3');
+  // No stroke name leaks: the status line only says the preview is hidden.
+  expect(tile()?.querySelector('.stroke-pinyin')?.textContent).toBe('Preview hidden');
+  expect(tile()?.textContent).not.toContain('next:');
+  // The empty box reads as a question, and the title keeps the stroke you are on.
+  expect(tile()?.querySelector('.stroke-progress-unknown')?.textContent).toBe('?');
+  expect(tile()?.querySelector('.stroke-progress-head .stroke-index')?.textContent).toBe('2 / 3');
   expect((tile()?.querySelector('.word-strip-progress > span') as HTMLElement).style.width).toBe('33%');
 });

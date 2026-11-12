@@ -177,18 +177,19 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
   );
 }
 
-// The progress tile under the mode tabs (beside a word's character strip): the stroke to
-// draw next as a stroke picture with its number and recorded name, and a bar for the strokes
-// drawn so far, with a tick once the character is finished (the picture then shows the whole
-// character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
+// The progress tile under the mode tabs: a short horizontal read-out (styles.css
+// .stroke-progress-tile) with a small picture on the left and, to its right, a title line
+// ("Stroke 3 / 12", or a word character's "bāo 🔊 · 3 / 5"), a sub-line (the next stroke's
+// recorded name, "Preview hidden" or "done") and the bar for the strokes drawn so far, with a
+// tick once the character is finished (the picture then shows the whole character). Inputs: the recorded strokes and groups, `next` (the next undrawn stroke index,
 // = strokes.length when done) and `showStroke`. With the Strokes pill off — and always in
-// Recall, so the answer never shows — the picture becomes an empty box carrying the stroke you
-// are on ("1 / 6") plus the bar, like the word strip in Recall; a stroke count is not
-// the answer (the form tiles already show each form's total), and the hidden lines keep
-// their space so the tile never changes size.
+// Recall, so the answer never shows — the picture becomes an empty box ("?" in Recall) and the
+// title keeps the stroke you are on ("1 / 6"); a stroke count is not the answer (the form tiles
+// already show each form's total), and the sub-line never names a stroke while it is hidden.
 // In word practice the tile takes the focused character's place in the strip (`word`): the
-// stroke count moves to the top-left corner with the character's own single reading centred
-// beside it (null when it has several), and `word.label` names the character for screen readers.
+// title leads with the character's own single reading and speaker (null when it has several),
+// then the count, and `word.label` names the character for screen readers.
+// `recall`: the empty box shows "?" (a quiz), rather than staying plain as with Strokes off.
 // `glyph`/`ink` (absent when hidden, e.g. Recall): with the Strokes pill off in Trace the
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
 // `onError`: where a failed reading goes (the header's audio note), so the tile's speaker never
@@ -203,7 +204,7 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
 // wins because that frame shows a different character.
-function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined }) {
+function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph, recall }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined; recall?: boolean | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
@@ -223,9 +224,11 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   // Every top tile counts the stroke you are on, so an untouched character reads "1 / 5"
   // and a finished one carries no count at all — the tick already says it is done.
   const count = done ? '' : `${next + 1} / ${total}`;
-  // A blank single tile already shows its count in the centre, so the corner stays empty.
-  const centreCount = !showStroke && !word && !singleGlyph;
-  const index = <span className="stroke-index" aria-hidden="true">{centreCount ? '' : count}</span>;
+  const index = <span className="stroke-index" aria-hidden="true">{count}</span>;
+  // The sub-line names the next stroke only while its picture shows, so a hidden preview never
+  // gives the stroke away by name.
+  const subLine = done ? 'done' : showStroke ? stroke?.pinyin ? `next: ${stroke.pinyin}` : '' : 'Preview hidden';
+  const blank = recall ? <span className="stroke-progress-unknown">?</span> : null;
   return (
     // A word tile hosts a speaker control, so its read-out is a labelled group (an <img> role
     // would hide that control from screen readers); a single-character tile has no control and
@@ -233,17 +236,18 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
     <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
-      {/* The reading and its speaker are one centred pair: the pinyin stays the primary text and
-          the speaker rides immediately after it, inside the head's centre column. */}
+      <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : blank : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : blank}</span>
+      {/* Title line: a word character leads with its reading and speaker (one pair), then the
+          count; a single character reads "Stroke 3 / 12", or "Done" once finished. */}
       {word ? <span className="stroke-progress-head">
-        {index}
         {word.reading && <span className="word-strip-reading">
           <span className="pinyin word-strip-pinyin" aria-hidden="true">{word.reading}</span>
           {word.glyph && <GlyphReadingSpeaker spoken={word.glyph} reading={word.reading} variant="tile" onError={word.onError}/>}
         </span>}
-      </span> : index}
-      <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : null : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : <span className="tile-count" aria-hidden="true">{count}</span>}</span>
-      <span className="stroke-pinyin" aria-hidden="true">{showStroke ? done ? 'done' : stroke?.pinyin : ''}</span>
+        {word.reading && count && <span className="stroke-progress-sep" aria-hidden="true">·</span>}
+        {index}
+      </span> : <span className="stroke-progress-head"><span className="stroke-progress-title" aria-hidden="true">{done ? 'Done' : 'Stroke'}</span>{index}</span>}
+      <span className="stroke-pinyin" aria-hidden="true">{subLine}</span>
       <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
     </div>
   );
@@ -837,11 +841,11 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'}/>
     : null;
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
-  const tileSlot = <div className="stroke-progress-tile is-placeholder" aria-hidden="true"><span className="stroke-index">{'\u00a0'}</span><span className="stroke-progress-picture"/><span className="stroke-pinyin">{'\u00a0'}</span><span className="word-strip-progress"><span/></span></div>;
+  const tileSlot = <div className="stroke-progress-tile is-placeholder" aria-hidden="true"><span className="stroke-progress-picture"/><span className="stroke-progress-head">{'\u00a0'}</span><span className="stroke-pinyin">{'\u00a0'}</span><span className="word-strip-progress"><span/></span></div>;
   const progressRow = <div className="practice-progress-row">{strip ? strip(progressTile) : progressTile?.() ?? tileSlot}</div>;
   const audioControl = <Button variant="ghost" size="sm" className={`stroke-pill${muted ? '' : ' is-on'}`} aria-pressed={!muted} title={muted ? 'Speak stroke names aloud' : 'Stop speaking stroke names'} onClick={() => setMuted(m => !m)}><Volume2 size={16}/>Names</Button>;
   return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={{ ['--writer-size' as string]: `${canvasSize}px` }}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} ink={componentInk(strokeGroupAt(groups, 0)?.palette)}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button></div></div><StrokeGuide outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} visible={strokesVisible} onVisibleChange={setStrokesVisible} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} audioControl={audioControl} arrows={arrows} onArrowsChange={setArrows} arrowsDisabled={!ready || !medians.some(median => median.length > 1)} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
@@ -986,12 +990,12 @@ only the component breakdown; radical practice never shows a decomposition at an
 // reported progress. A tile shows the character, its own pinyin only when the catalogue
 // records exactly one reading (a word reading is never split onto its characters), and a
 // bar for the strokes drawn in the current mode, with a tick once the character is done.
-// Every tile shows the stroke you are on in its top-left corner ("1 / 5") and no count once
+// Every tile shows the stroke you are on after its reading ("1 / 5") and no count once
 // the character is finished: Recall blanks
 // the hanzi (pinyin and progress stay): the total is the character's own recorded stroke count — the same
 // number the Simplified/Traditional form tiles show — so nothing new about the answer leaks.
 // Once the writer is ready, the focused character's tile is the live stroke progress tile
-// (`focusTile`: next stroke picture, count top-left, its reading top-centre), so a word never
+// (`focusTile`: next stroke picture, its reading and count on the title line), so a word never
 // shows a separate progress tile; while loading the focused tile keeps the plain look.
 // `onError` routes a failed reading to the header's audio note (the same place the word's own
 // speaker reports), so a tile never grows with an inline message.
@@ -1029,22 +1033,24 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
       const hidden = !revealed || loading;
       const shownInk = revealed ? ink : '';
       const shownStamp = revealed ? stamp : undefined;
-      // Every tile shares the progress tile's frame (count top-left, reading top-centre,
-      // fixed picture box, name line, bar), so the row keeps one height and one look.
+      // Every tile shares the progress tile's frame (picture left; reading, speaker and count on
+      // the title line; a status line; bar), so the row keeps one height and one look.
+      const status = done ? 'done' : loading ? '' : drawn > 0 ? `${drawn} of ${total} drawn` : 'not started';
       // The frame is a plain box: the whole tile stays the select target through an invisible
       // button laid under the head (styles.css .word-strip-select), and the reading's speaker is
       // a real control above it, so hearing one character never selects another.
       return <div key={`${c}-${i}`} className={`word-strip-tile stroke-progress-tile is-word${shownInk ? ` ${shownInk}` : ''}${loading ? ' is-selected' : ''}${revealed ? '' : ' is-blank'}${done ? ' is-done' : ''}${shownStamp ? ` ${shownStamp}` : ''}`}>
         {done && <Check className="word-strip-done" aria-hidden="true"/>}
+        <span className="stroke-progress-picture" aria-hidden="true">{hidden ? !revealed && !loading ? <span className="stroke-progress-unknown">?</span> : null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
         <span className="stroke-progress-head">
-          <span className="stroke-index tile-count-corner" aria-hidden="true">{count}</span>
           {single && <span className="word-strip-reading">
             <span className="pinyin word-strip-pinyin" aria-hidden="true">{single}</span>
             <GlyphReadingSpeaker spoken={c} reading={single} variant="tile" onError={onError}/>
           </span>}
+          {single && count && <span className="stroke-progress-sep" aria-hidden="true">·</span>}
+          <span className="stroke-index tile-count-corner" aria-hidden="true">{count}</span>
         </span>
-        <span className="stroke-progress-picture" aria-hidden="true">{hidden ? null : <span lang="zh-CN" className="word-strip-glyph">{c}</span>}</span>
-        <span className="stroke-pinyin" aria-hidden="true"/>
+        <span className="stroke-pinyin" aria-hidden="true">{status}</span>
         <span className="word-strip-progress" aria-hidden="true"><span style={{ width: `${Math.round(fraction * 100)}%` }}/></span>
         <button type="button" className="word-strip-select" aria-pressed={i === focus} aria-label={`Practice character ${i + 1}${revealed ? ` ${c}` : ''}${single ? ` (${single})` : ''}${done ? ', done' : ''}${drawnNote ? `, ${drawnNote}` : ''}`} title={!revealed ? `Practise character ${i + 1}${drawnNote ? ` · ${drawnNote}` : ''}` : `Practise ${c}`} onClick={() => onSelect(i)}/>
       </div>;
