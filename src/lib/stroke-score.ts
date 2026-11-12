@@ -9,6 +9,17 @@ export function characterScore(scores: (number | null)[]): number | null {
   if (!done.length) return null;
   return Math.round(done.reduce((a, b) => a + b, 0) / done.length);
 }
+// A finished character's result: its total accuracy when at least one stroke was hand-drawn,
+// otherwise "shown" (every stroke was played or clicked, so there is nothing to grade).
+export type CharacterResult = { kind: 'score'; percent: number } | { kind: 'shown' };
+export function finishedResult(scores: (number | null)[]): CharacterResult {
+  const percent = characterScore(scores);
+  return percent === null ? { kind: 'shown' } : { kind: 'score', percent };
+}
+// The one word before "Draw again to start over." once a character is finished.
+export function completionWord(percent: number | null): string {
+  return percent === 100 ? 'Perfect!' : 'Complete.';
+}
 // Distinct stroke colours chosen for strong contrast against each theme's background.
 const DARK = ['#7dd3fc', '#fca5a5', '#fde047', '#86efac', '#f0abfc', '#fdba74', '#a5b4fc', '#5eead4'];
 const LIGHT = ['#0b5394', '#b42318', '#7a4d00', '#1b6b2f', '#86198f', '#9a3412', '#3730a3', '#115e59'];
