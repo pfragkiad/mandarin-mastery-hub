@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { DecompositionNode } from './character-library';
 import { parseIdsTree } from './ids-tree';
 import { childOwner, sameContextualForm } from './radical-context';
+import { breakdownDisplayGlyph } from './radical-identities';
 import supplementaryOutlines from '@/data/supplementary-outlines.json';
 
 const checksum = z.string().regex(/^[a-f0-9]{64}$/);
@@ -66,8 +67,13 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
     const rChildren = r.children ?? [];
     if (gChildren.length !== rChildren.length) return false;
     const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
+    // Two codepoints are one known part when context resolves them to the same family form,
+    // or when the radical file records one as an alias of the other's family form (有's G-source
+    // ⺝ is the recorded alias of 月, so its 月 part agrees and the duplicate tree is not repeated).
+    const samePart = (a: string, b: string) => sameContextualForm(a, b, r.position, current)
+      || breakdownDisplayGlyph(a) === breakdownDisplayGlyph(b);
     if ((!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph)))
-      && !(isOperator(g.glyph) ? g.glyph === r.glyph : sameContextualForm(g.glyph, r.glyph, r.position, current))) return false;
+      && !(isOperator(g.glyph) ? g.glyph === r.glyph : samePart(g.glyph, r.glyph))) return false;
     // Inside a real component its own declared radical applies (same rule as the renderer).
     const next = childOwner(r, current);
     return rChildren.every((child, index) => {
