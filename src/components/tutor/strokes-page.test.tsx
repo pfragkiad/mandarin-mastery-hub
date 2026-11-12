@@ -266,9 +266,9 @@ describe('character practice sections by mode', () => {
       return writer;
     });
     const { unmount } = render(<StrokesPage initialCharacter="学" mode="trace"/>);
-    await waitFor(() => expect(document.querySelector('.stroke-direction-overlay')).not.toBeNull());
-    const shown = Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
-    expect(shown).toEqual(['0']);
+    // Wait for the round to arm (the overlay can mount a render before the quiz picks stroke 1).
+    const shown = () => Array.from(document.querySelectorAll('[data-direction-stroke]')).map(node => node.getAttribute('data-direction-stroke'));
+    await waitFor(() => expect(shown()).toEqual(['0']));
     window.localStorage.removeItem('tutor-stroke-arrows');
     unmount();
   });
