@@ -137,9 +137,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   if (!entry) return <p className="library-note">{catalogVersion ? 'This stroke is not in the library.' : 'Loading stroke data…'}</p>;
   const readingLine = <>{entry.pinyin ? <span className="pinyin">{entry.pinyin}</span> : <span className="pinyin">Pinyin not recorded</span>}<Button variant="ghost" size="icon" className={`practice-listen${audioAvailable ? '' : ' audio-tts-only'}`} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${strokeName ?? glyph}` : `No audio available for ${strokeName ?? glyph}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this stroke name' : undefined} onClick={listen}><Volume2/></Button></>;
   return <div className="page-enter practice-page-content"><PracticeHeader glyph={glyph} hideGlyph={practiceMode === 'recall'} reading={readingLine} meaning={entry.meaning || <span className="meaning-missing">No English meaning recorded yet</span>} pills={<span className="practice-pills"><span className="practice-kind">Stroke</span></span>} onPrint={() => setSheet(true)} printDisabled={!outline} after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/><div className="practice-layout practice-layout-single">
-    {/* One centred column like character Practice: the writing card holds the canvas, Play/Reset
-        with the Arrows switch beside them, and — under a divider — the stroke's facts (hidden in
-        Recall) and its source footnote, which used to sit in a separate right-hand column. */}
+    {/* One centred column like character Practice: the writing card holds the canvas and the
+        Play/Reset row with the Arrows switch beside them, and nothing below that row. */}
     <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={practiceMode} onChange={changeMode}/>
       {example ? <>
         <div className="writer-board"><div className="writing-grid"><div ref={target} className="hanzi-target" aria-label={`Stroke ${glyph} writing area`}/>{ready && arrows && <StrokeDirectionHints medians={[median]}/>}</div></div>
