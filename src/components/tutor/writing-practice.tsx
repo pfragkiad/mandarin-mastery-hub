@@ -194,6 +194,7 @@ function StrokePicture({ strokes, groups, index, glowId }: { strokes: StrokeInfo
 // focused tile shows its hanzi like the other strip tiles instead of an empty box.
 // `onError`: where a failed reading goes (the header's audio note), so the tile's speaker never
 // grows the tile with an inline message.
+type SingleReading = { spoken: string; reading: string; onError?: ((message: string | null) => void) | undefined };
 type ProgressTileWord = { reading: string | null; label: string; glyph?: string | undefined; ink?: string | undefined; stamp?: string | undefined; hidden?: boolean | undefined; onError?: ((message: string | null) => void) | undefined };
 // `hidden` (Recall): the word tile keeps `glyph`, `ink` and `stamp` back until the character is
 // finished, then reveals the drawn hanzi with its identity colour and stamp — the answer is
@@ -204,7 +205,9 @@ type ProgressTileWord = { reading: string | null; label: string; glyph?: string 
 // `ink`: the identity ink class of the character practised (styles.css `.card-ink-*`), worn by the
 // tile frame so its hover/selected border matches the hanzi's colour; a word tile's own `word.ink`
 // wins because that frame shows a different character.
-function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph, recall }: { strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined; recall?: boolean | undefined }) {
+// `reading` (single character): its recorded reading(s) and the glyph to speak, shown on the title
+// line before the count ("de 🔊 · 2 / 8") like a word character's tile, so both layouts read alike.
+function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyph, recall, reading }: { reading?: SingleReading | undefined; strokes: StrokeInfo[]; groups: PracticeStrokeGroup[]; next: number; showStroke: boolean; word?: ProgressTileWord | undefined; ink?: string | undefined; glyph?: string | undefined; recall?: boolean | undefined }) {
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const total = strokes.length;
   if (!total) return null;
@@ -230,10 +233,10 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
   const subLine = done ? 'done' : showStroke ? stroke?.pinyin ? `next: ${stroke.pinyin}` : '' : 'Preview hidden';
   const blank = recall ? <span className="stroke-progress-unknown">?</span> : null;
   return (
-    // A word tile hosts a speaker control, so its read-out is a labelled group (an <img> role
+    // A tile with a speaker (word character, or a single character's reading) is a group; its read-out is a labelled group (an <img> role
     // would hide that control from screen readers); a single-character tile has no control and
     // stays a plain image read-out.
-    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
+    <div className={`stroke-progress-tile${tileInk ? ` ${tileInk}` : ''}${done ? ' is-done' : ''}${showStroke || wordGlyph || singleGlyph ? '' : ' is-blank'}${word ? ' is-word is-selected' : ''}${wordStamp ? ` ${wordStamp}` : ''}`} role={word || reading ? 'group' : 'img'} aria-label={label} aria-current={word ? 'true' : undefined} title={label}>
       {showStroke && <StrokeGlowFilter id={glowId}/>}
       {done && <Check className="word-strip-done" aria-hidden="true"/>}
       <span className="stroke-progress-picture" aria-hidden="true">{showStroke ? <StrokePicture strokes={strokes} groups={groups} index={next} glowId={glowId}/> : word ? wordGlyph ? <span lang="zh-CN" className="word-strip-glyph">{wordGlyph}</span> : blank : singleGlyph ? <span lang="zh-CN" className="word-strip-glyph">{singleGlyph}</span> : blank}</span>
@@ -245,6 +248,12 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
           {word.glyph && <GlyphReadingSpeaker spoken={word.glyph} reading={word.reading} variant="tile" onError={word.onError}/>}
         </span>}
         {word.reading && count && <span className="stroke-progress-sep" aria-hidden="true">·</span>}
+        {index}
+      </span> : reading ? <span className="stroke-progress-head">
+        <span className="word-strip-reading">{isMultiReading(reading.reading)
+          ? <MultiReadingSpeakers spoken={reading.spoken} reading={reading.reading} variant="tile" textClassName="pinyin word-strip-pinyin" onError={reading.onError}/>
+          : <><span className="pinyin word-strip-pinyin" aria-hidden="true">{reading.reading}</span><GlyphReadingSpeaker spoken={reading.spoken} reading={reading.reading} variant="tile" onError={reading.onError}/></>}</span>
+        {count && <span className="stroke-progress-sep" aria-hidden="true">·</span>}
         {index}
       </span> : <span className="stroke-progress-head"><span className="stroke-progress-title" aria-hidden="true">{done ? 'Done' : 'Stroke'}</span>{index}</span>}
       <span className="stroke-pinyin" aria-hidden="true">{subLine}</span>
@@ -324,7 +333,7 @@ export type PracticeProgress = { character: string; mode: PracticeMode; start: n
 // `onProgress` reports every change so the strip can show per-character progress. `progressInk`
 // is the practised glyph's identity ink (styles.css `.card-ink-*`), worn by the standalone
 // progress tile's frame so its border matches the hanzi's colour (held back in Recall until the character is finished).
-export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress, progressInk }: { enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined; progressInk?: string | undefined }) {
+export function WritingPractice({ character, onStrokeCount, component, radicalSelection, mode: selectedMode, onModeChange, enrichment, singleGroup = false, groupingSource = DEFAULT_GROUPING_SOURCE, strip, savedProgress, onProgress, progressInk, reading }: { reading?: SingleReading | undefined; enrichment?: CharacterEnrichment | null; singleGroup?: boolean; groupingSource?: string; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; character: string; onStrokeCount?: (count: number) => void; component?: ComponentOccurrence | null; radicalSelection?: RadicalForm | undefined; strip?: ((focusTile: ((word: ProgressTileWord) => ReactNode) | null) => ReactNode) | undefined; savedProgress?: PracticeProgress | undefined; onProgress?: ((progress: PracticeProgress) => void) | undefined; progressInk?: string | undefined }) {
   const { theme, preferences, setPreferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const [localMode, setLocalMode] = useState<PracticeMode>('trace');
@@ -868,7 +877,7 @@ export function WritingPractice({ character, onStrokeCount, component, radicalSe
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} showStroke={strokesVisible && mode !== 'recall'} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
     : null;
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
@@ -1007,7 +1016,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
       pills={isWord ? undefined : characterPills} forms={forms} onPrint={() => setSheet(true)}
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
-    <div className="practice-layout"><WritingPractice key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord ? undefined : practiceInk}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
+    <div className="practice-layout"><WritingPractice key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/><section className="practice-info practice-detail">{/* Watch/Trace already show every stroke in the writing card, so the right column keeps
 only the component breakdown; radical practice never shows a decomposition at any width. */}
 {!recall && !familyId && decomposition && <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo></h3><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div>}</section>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }
