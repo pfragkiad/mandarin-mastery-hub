@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog-store';
 import { libraryEntries, filterLibrary } from './character-library';
-import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
+import { historicalRadicalHeading, orderedRadicalForms, practiceStrokeNames, radicalStrokes, radicalFamily, radicalForm } from './radical-strokes';
 import { strokeNames } from './stroke-names';
 
 describe('Radical-only stroke decompositions', () => {
