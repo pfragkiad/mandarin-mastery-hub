@@ -2730,3 +2730,18 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 .stroke-tabs-collapse:hover { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
 html[data-display-size='comfortable'] .stroke-tab { font-size: 16px; }
 
+
+/* Start page search: the Pinyin | English switch (joined segments) and the
+   optional Exact toggle sit together in one trailing group inside the box, laid
+   out by flex rather than the shared absolute toggle offsets. */
+.search-field .search-trailing { position: absolute; top: 50%; right: 7px; transform: translateY(-50%); display: flex; align-items: center; gap: 6px; }
+.search-field .search-trailing .search-toggle { position: static; transform: none; }
+.search-field .search-language { display: flex; }
+.search-field .search-language .search-toggle:first-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.search-field .search-language .search-toggle:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; }
+.search-field .search-language .search-toggle.on { position: relative; z-index: 1; }
+.search-field .search-language .search-toggle:disabled { opacity: .45; }
+.search-field:has(.search-trailing) input { padding-right: 150px; }
+.search-field:has(.search-trailing .search-language + .search-toggle) input { padding-right: 210px; }
+html[data-display-size='comfortable'] .search-field:has(.search-trailing) input { padding-right: 176px; }
+html[data-display-size='comfortable'] .search-field:has(.search-trailing .search-language + .search-toggle) input { padding-right: 250px; }
