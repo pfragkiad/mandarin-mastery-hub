@@ -130,11 +130,28 @@ export function glyphScript(glyph: string): CharacterScript | undefined {
 }
 
 /** Open the exact sourced record on its visible page, without carrying unrelated filters. */
+// libraryDestination is called once per rendered search result, so the unfiltered
+// library order (id → position) is built once per entries array and script
+// preference instead of re-filtering the whole library for every result. The
+// entries array is replaced when the catalogue version changes, so the WeakMap
+// key alone keeps positions current.
+const destinationOrder = new WeakMap<LibraryEntry[], Map<boolean, Map<string, number>>>();
+function libraryPosition(kind: LibraryKind, id: string, includeTraditional: boolean) {
+  const all = libraryEntries(kind);
+  let byScript = destinationOrder.get(all);
+  if (!byScript) { byScript = new Map(); destinationOrder.set(all, byScript); }
+  let order = byScript.get(includeTraditional);
+  if (!order) {
+    order = new Map(filterLibrary(all, '', '', false, includeTraditional).map((entry, index) => [entry.id, index] as const));
+    byScript.set(includeTraditional, order);
+  }
+  return order.get(id) ?? -1;
+}
+
 export function libraryDestination(glyph: string, includeTraditional = false) {
   const hit = glyphIndex()[glyph];
   if (!hit) return undefined;
-  const entries = filterLibrary(libraryEntries(hit.kind), '', '', false, includeTraditional);
-  const index = entries.findIndex(entry => entry.id === hit.id);
+  const index = libraryPosition(hit.kind, hit.id, includeTraditional);
   const page = index < 0 ? 1 : Math.floor(index / LIBRARY_PAGE_SIZE) + 1;
   return { tab: hit.kind, id: hit.id, ...(page > 1 ? { page } : {}) };
 }
