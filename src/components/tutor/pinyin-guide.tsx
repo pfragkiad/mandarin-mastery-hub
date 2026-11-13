@@ -8,13 +8,14 @@
 // the route's search values and navigation callbacks. State: the loaded data,
 // progress and the shared player; the slow switch writes the global "Slower
 // pronunciation" preference.
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { allSounds, IncompletePinyinDataError, loadPinyinData, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import { progressSummary } from '@/lib/pinyin-progress';
 import { useWorkspace } from './workspace';
 import { SourceInfo } from './source-info';
+import { useOneLineTitle } from './one-line-title';
 import { PinyinChart, type ChartFilters } from './pinyin-chart';
 import { SoundAlikeDrill, ToneDrill, TypeDrill, type DrillFilters, type DrillMode } from './pinyin-drills';
 import { usePinyinPlayer, usePinyinProgress, type PinyinPlayer } from './pinyin-shared';
@@ -37,12 +38,15 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   const { progress, record, reset } = usePinyinProgress();
   const player = usePinyinPlayer(data, preferences.slow, id => record(id, 'heard'));
   const [confirming, setConfirming] = useState(false);
+  // The title must stay on one line at every width; the hook lowers its font size as needed.
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  useOneLineTitle(titleRef, headings[mode]);
   const onSlow = (slow: boolean) => setPreferences({ ...preferences, slow });
   const total = data ? allSounds(data).length : 0;
   const summary = progressSummary(progress, total);
 
   return <div className="page-enter library-page pinyin-page">
-    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
+    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
         Recordings · <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.license}<br/>
         {data.audioSource.credits}<br/>
         {data.audioSource.accent} · not listening-reviewed<br/>

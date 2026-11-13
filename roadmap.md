@@ -91,3 +91,5 @@
 - [done] Group simplified/traditional characters (mutual Unihan links) onto one Glyphs card; details show Script forms tiles, each opening that form's own rank, strokes and meaning.
 
 - [done] Menu in Learn / Practice blocks with one Games group (Hanzi + Pinyin games); phone section pills on Glyphs, Vocab and every game page (verified live, 619 tests pass).
+
+- [open] Make the "matches the G-source breakdown above" note the same size as the "BabelStone · G-source" label and keep it italic.
