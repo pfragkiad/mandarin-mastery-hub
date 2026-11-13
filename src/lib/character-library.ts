@@ -1,6 +1,6 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import { kindFromId, sortByUsage, usageGroupFor, usageRank } from './usage-frequency';
+import { kindFromId, sortByUsage, usageGroupFor, usageOrder, usageRank } from './usage-frequency';
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
@@ -134,18 +134,20 @@ export function glyphScript(glyph: string): CharacterScript | undefined {
 // library order (id → position) is built once per entries array and script
 // preference instead of re-filtering the whole library for every result. The
 // entries array is replaced when the catalogue version changes, so the WeakMap
-// key alone keeps positions current.
-const destinationOrder = new WeakMap<LibraryEntry[], Map<boolean, Map<string, number>>>();
+// key keeps positions current; the frequency ranks the order sorts by load
+// separately, so their data object is part of the key too.
+const destinationOrder = new WeakMap<LibraryEntry[], Map<string, { usage: unknown; order: Map<string, number> }>>();
 function libraryPosition(kind: LibraryKind, id: string, includeTraditional: boolean) {
   const all = libraryEntries(kind);
   let byScript = destinationOrder.get(all);
   if (!byScript) { byScript = new Map(); destinationOrder.set(all, byScript); }
-  let order = byScript.get(includeTraditional);
-  if (!order) {
-    order = new Map(filterLibrary(all, '', '', false, includeTraditional).map((entry, index) => [entry.id, index] as const));
-    byScript.set(includeTraditional, order);
+  const key = String(includeTraditional);
+  let cached = byScript.get(key);
+  if (!cached || cached.usage !== usageOrder.data) {
+    cached = { usage: usageOrder.data, order: new Map(filterLibrary(all, '', '', false, includeTraditional).map((entry, index) => [entry.id, index] as const)) };
+    byScript.set(key, cached);
   }
-  return order.get(id) ?? -1;
+  return cached.order.get(id) ?? -1;
 }
 
 export function libraryDestination(glyph: string, includeTraditional = false) {
