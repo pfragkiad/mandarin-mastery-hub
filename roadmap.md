@@ -95,4 +95,4 @@
 - [open] Make the "matches the G-source breakdown above" note the same size as the "BabelStone · G-source" label and keep it italic.
 
 - [done] Global search no longer freezes while typing (cached matching, search window rerenders alone).
-- [open] Global search: Apply button — results update only on Apply/Enter.
+- [done] Global search: Apply button — results update only on Apply/Enter; Enter again opens the first result.
