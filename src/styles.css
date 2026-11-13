@@ -429,6 +429,11 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
    same 22px block gap instead of the 2px note spacing. Direct-child only: the "tree unavailable"
    note sits inside a BabelStone block's own div and keeps its tight spacing. */
 .decomposition-trees > p.enrichment-expression { margin-top: 22px; }
+/* The note stands in for the second breakdown's heading, so it reads like one: the same
+   size as the "BabelStone · G-source" label above it — including the Comfortable bump that
+   label gets — and italic, so it still reads as an explanation rather than a heading. */
+.decomposition-trees > p.enrichment-expression > small { font-style: italic; }
+html[data-display-size='comfortable'] .decomposition-trees > p.enrichment-expression > small { font-size: var(--ui-label-size); }
 /* Shared row gaps apply to both siblings and parent/child rows, without
    accumulating nested margins. Vocabulary word groups keep their own layout. */
 .decomposition-tree:not(.vocabulary-parts), .decomposition-tree ul,
