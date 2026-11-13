@@ -50,7 +50,7 @@ export function OverviewPage() {
  * cards or the games around it. The inline box and the window share one draft,
  * so a search continues unchanged when the window opens or closes.
  */
-function OverviewSearch({ items, includeTraditional, catalogVersion }: { items: ReturnType<typeof useWorkspace>['items']; includeTraditional: boolean; catalogVersion: unknown }) {
+export function OverviewSearch({ items, includeTraditional, catalogVersion }: { items: ReturnType<typeof useWorkspace>['items']; includeTraditional: boolean; catalogVersion: unknown }) {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   // English is the default so meaning searches ("water") keep working as before.
