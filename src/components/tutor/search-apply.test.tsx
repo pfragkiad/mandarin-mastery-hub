@@ -17,7 +17,7 @@ vi.mock('@tanstack/react-router', () => ({
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: words, saved: [], preferences: { includeTraditional: false }, catalogVersion: 1 }) }));
 vi.mock('@/lib/character-library', async importOriginal => ({ ...(await importOriginal<object>()), libraryDestination: () => null }));
 // Long result lists render through an IntersectionObserver sentinel that jsdom lacks.
-vi.mock('./incremental-list', () => ({ IncrementalList: ({ items }: { items: React.ReactNode[] }) => <>{items}</> }));
+vi.mock('./incremental-list', () => ({ IncrementalList: ({ items, renderItem }: { items: unknown[]; renderItem: (item: unknown) => React.ReactNode }) => <>{items.map((item, index) => <div key={index}>{renderItem(item)}</div>)}</> }));
 // The Start page's hero/discovery/games cards are irrelevant to the search box.
 vi.mock('./overview-hero', () => ({ DailyCharacterHero: () => null, SavedStrip: () => null }));
 vi.mock('./overview-discovery', () => ({ DiscoveryTile: () => null }));
