@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { searchAll, type GlobalPinyinMode } from '@/lib/site-search';
 import { SearchHitContent } from './search-hit-content';
+import { IncrementalList } from './incremental-list';
 import { useWorkspace } from './workspace';
 
 /**
@@ -57,7 +58,7 @@ export function GlobalSearch({ open, onOpenChange }: { open: boolean; onOpenChan
       if (changed) apply(); else if (hits[0]) openHit(hits[0]);
     }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
     <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div><Button type="submit" variant="outline" className="global-search-apply" disabled={!changed}><Check/>Apply</Button></form>
-    {applied.query.trim() === '' ? <p className="global-search-hint">Type, then press Apply or Enter to search. Press Enter again to open the first result.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results">{hits.map(hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>)}</div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
+    {applied.query.trim() === '' ? <p className="global-search-hint">Type, then press Apply or Enter to search. Press Enter again to open the first result.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results"><IncrementalList items={hits} resetKey={applied} renderItem={hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>}/></div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
     {applied.query.trim() !== '' && hits.length > 0 && <div className="global-search-foot"><span>{!expanded && allHits.length > 50 ? `50 of ${allHits.length.toLocaleString()} matches` : `${allHits.length.toLocaleString()} ${allHits.length === 1 ? 'match' : 'matches'}`}</span><Button variant="ghost" type="button" aria-expanded={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? <Minimize2/> : <Maximize2/>}{expanded ? 'Compact window' : 'Show all results'}</Button></div>}
   </DialogContent></Dialog>;
 }

@@ -96,3 +96,8 @@
 
 - [done] Global search no longer freezes while typing (cached matching, search window rerenders alone).
 - [done] Global search: Apply button — results update only on Apply/Enter; Enter again opens the first result.
+
+## Search (Start + Search everything)
+- [done] Start search: Apply button, no search while typing; freeze fixed (Apply ~0.3s, Show all ~0.6s for 10k matches)
+- [ ] Never search a single Latin letter
+- [ ] Pinyin/English toggle inside the search box; hanzi input searches hanzi only
