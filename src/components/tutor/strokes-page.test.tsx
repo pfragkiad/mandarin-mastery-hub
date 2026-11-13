@@ -8,8 +8,9 @@ import * as catalogStore from '@/lib/catalog-store';
 vi.mock('@tanstack/react-router', () => ({
   // The mock keeps the classes and the selection marker the real Link gets, so tests can see
   // which form tile is the current one (the sliding frame is chosen from that tile).
-  Link: ({ children, className, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; 'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean | 'true' | 'false' }) =>
-    <a className={className} aria-current={ariaCurrent}>{children}</a>,
+  // `to`/`search` are kept as data attributes so tests can check where a link leads.
+  Link: ({ children, className, to, search, 'aria-current': ariaCurrent }: { children?: React.ReactNode; className?: string; to?: string; search?: unknown; 'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean | 'true' | 'false' }) =>
+    <a className={className} aria-current={ariaCurrent} data-to={to} data-search={typeof search === 'object' ? JSON.stringify(search) : undefined}>{children}</a>,
   useNavigate: () => () => {},
   useRouter: () => ({ history: { back: () => {} } }),
 }));
@@ -288,3 +289,21 @@ describe('character practice sections by mode', () => {
     play.mockRestore();
   });
 });
+
+describe('details link beside the Practice title', () => {
+  afterEach(() => { cleanup(); localStorage.clear(); });
+  const detailsLink = () => document.querySelector('.practice-header .practice-details-link');
+
+  it('opens the practised character’s own Characters card', () => {
+    render(<StrokesPage initialCharacter="学" mode="trace"/>);
+    expect(detailsLink()).toHaveAttribute('data-to', '/characters');
+    expect(JSON.parse(detailsLink()!.getAttribute('data-search')!)).toEqual({ tab: 'Characters', id: 'Characters:学' });
+  });
+
+  it('opens the radical family card focused on the exact form being written', () => {
+    hydrateCatalog({ ...catalogData, radicalStrokes: familyFile } as CatalogFile);
+    render(<StrokesPage initialCharacter="乙" family={5} variant="main" mode="trace"/>);
+    expect(JSON.parse(detailsLink()!.getAttribute('data-search')!)).toEqual({ tab: 'Radicals', id: 'Radicals:乙', variant: 'main' });
+  });
+});
+
