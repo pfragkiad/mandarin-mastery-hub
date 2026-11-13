@@ -278,7 +278,7 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
 // The section under the writer's controls: drawer tabs, not switches. `panel` names the open
 // tab — 'strokes' (every stroke tile, in component groups) or 'decomposition' (the character's
 // recorded breakdown, `decomposition`, built by StrokesPage) — or '' when collapsed, which shows
-// only the tab row. Clicking a tab opens it; the chevron collapses the section. WritingPractice
+// the tab row and a down chevron. Clicking a tab (or that chevron) opens it; the up chevron collapses the section. WritingPractice
 // owns and remembers `panel`. The Decomposition tab is absent when there is no breakdown (e.g.
 // radical practice). In Recall (`locked`) both tabs and the chevron stay visible but disabled
 // and no drawer opens, so neither the stroke tiles nor the breakdown can give the answer away;
@@ -294,10 +294,14 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
   // One shared glow filter for every tile's current stroke (ids must be valid in url(#…)).
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const hasStrokes = strokes.length > 0;
+  // The last tab the learner had open, so the collapsed chevron reopens the same drawer.
+  const lastPanel = useRef<PracticePanel>('');
+  if (panel) lastPanel.current = panel;
   if (!hasStrokes && !decomposition) return null;
   const showDecomposition = Boolean(decomposition) && panel === 'decomposition' && !locked;
   const showStrokes = hasStrokes && panel === 'strokes' && !locked;
   const open = showStrokes || showDecomposition;
+  const reopenPanel: PracticePanel = lastPanel.current === 'decomposition' && decomposition ? 'decomposition' : hasStrokes ? 'strokes' : 'decomposition';
   const strokesInfo = <SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo>;
   const tabId = (name: string) => `${drawerId}-${name}`;
   return (
@@ -316,8 +320,12 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
           </span>}
         </div>
         {/* Recall keeps the chevron in its place, disabled, so the row looks the same but can't open. */}
+        {/* Collapsed (Trace/Watch) keeps the chevron too, pointing down, so the row never loses its
+            control — with a single tab (radical practice has no Decomposition) the tab label alone
+            didn't read as something to open. It reopens the last tab shown, else the first offered. */}
         {locked ? <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Details are closed in Recall" title="Details stay closed in Recall" disabled><ChevronDown size={18} aria-hidden="true"/></Button>
-          : open && <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Collapse details" title="Collapse" onClick={() => onPanelChange('')}><ChevronUp size={18} aria-hidden="true"/></Button>}
+          : open ? <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Collapse details" title="Collapse" aria-expanded="true" onClick={() => onPanelChange('')}><ChevronUp size={18} aria-hidden="true"/></Button>
+          : <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Expand details" title="Expand" aria-expanded="false" onClick={() => onPanelChange(reopenPanel)}><ChevronDown size={18} aria-hidden="true"/></Button>}
       </div>
       {showDecomposition && decomposition && <div className="stroke-drawer stroke-drawer-decomposition" id={drawerId} role="tabpanel" aria-labelledby={tabId('decomposition')}>{decomposition.body}</div>}
       {showStrokes && (
