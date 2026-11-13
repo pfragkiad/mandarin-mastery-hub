@@ -15,8 +15,8 @@ import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { leniency } from '@/lib/handwriting-strictness';
-import { words } from '@/lib/mandarin';
-import { glyphScript, libraryEntries, type LibraryEntry } from '@/lib/character-library';
+import { vocabularyKind, words } from '@/lib/mandarin';
+import { glyphIndex, glyphScript, libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
 import { catalog, playCharacter, characterRecording, characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -26,11 +26,11 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, type OutlineSource } from '@/lib/character-enrichment';
 import { formatStrokeIndices, strokeNames } from '@/lib/stroke-names';
-import { historicalRadicalHeading, practiceStrokeNames, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
+import { historicalRadicalHeading, practiceStrokeNames, radicalFamily, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
 import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
-import { PracticeHeader } from './practice-header';
+import { PracticeHeader, type PracticeDetails } from './practice-header';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { glyphPresentation } from '@/lib/glyph-presentation';
 import { nextStepIndex } from '@/lib/step-playback';
@@ -278,7 +278,7 @@ function StrokeProgressTile({ strokes, groups, next, showStroke, word, ink, glyp
 // The section under the writer's controls: drawer tabs, not switches. `panel` names the open
 // tab — 'strokes' (every stroke tile, in component groups) or 'decomposition' (the character's
 // recorded breakdown, `decomposition`, built by StrokesPage) — or '' when collapsed, which shows
-// only the tab row. Clicking a tab opens it; the chevron collapses the section. WritingPractice
+// the tab row and a down chevron. Clicking a tab (or that chevron) opens it; the up chevron collapses the section. WritingPractice
 // owns and remembers `panel`. The Decomposition tab is absent when there is no breakdown (e.g.
 // radical practice). In Recall (`locked`) both tabs and the chevron stay visible but disabled
 // and no drawer opens, so neither the stroke tiles nor the breakdown can give the answer away;
@@ -294,10 +294,14 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
   // One shared glow filter for every tile's current stroke (ids must be valid in url(#…)).
   const glowId = `stroke-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const hasStrokes = strokes.length > 0;
+  // The last tab the learner had open, so the collapsed chevron reopens the same drawer.
+  const lastPanel = useRef<PracticePanel>('');
+  if (panel) lastPanel.current = panel;
   if (!hasStrokes && !decomposition) return null;
   const showDecomposition = Boolean(decomposition) && panel === 'decomposition' && !locked;
   const showStrokes = hasStrokes && panel === 'strokes' && !locked;
   const open = showStrokes || showDecomposition;
+  const reopenPanel: PracticePanel = lastPanel.current === 'decomposition' && decomposition ? 'decomposition' : hasStrokes ? 'strokes' : 'decomposition';
   const strokesInfo = <SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo>;
   const tabId = (name: string) => `${drawerId}-${name}`;
   return (
@@ -316,8 +320,12 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
           </span>}
         </div>
         {/* Recall keeps the chevron in its place, disabled, so the row looks the same but can't open. */}
+        {/* Collapsed (Trace/Watch) keeps the chevron too, pointing down, so the row never loses its
+            control — with a single tab (radical practice has no Decomposition) the tab label alone
+            didn't read as something to open. It reopens the last tab shown, else the first offered. */}
         {locked ? <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Details are closed in Recall" title="Details stay closed in Recall" disabled><ChevronDown size={18} aria-hidden="true"/></Button>
-          : open && <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Collapse details" title="Collapse" onClick={() => onPanelChange('')}><ChevronUp size={18} aria-hidden="true"/></Button>}
+          : open ? <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Collapse details" title="Collapse" aria-expanded="true" onClick={() => onPanelChange('')}><ChevronUp size={18} aria-hidden="true"/></Button>
+          : <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Expand details" title="Expand" aria-expanded="false" onClick={() => onPanelChange(reopenPanel)}><ChevronDown size={18} aria-hidden="true"/></Button>}
       </div>
       {showDecomposition && decomposition && <div className="stroke-drawer stroke-drawer-decomposition" id={drawerId} role="tabpanel" aria-labelledby={tabId('decomposition')}>{decomposition.body}</div>}
       {showStrokes && (
@@ -1068,12 +1076,30 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // No rank on Practice pages. Traditional is named by the form switch when it is shown,
   // so the pill appears only when there are no tiles.
   const characterPills = <span className="practice-pills">{traditionalPill && !forms && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{radId ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{radId}</span> : <span className="practice-kind">{kindLabel}</span>}</span>;
+  // The title's details link opens the practised record's own card: the radical family card
+  // focused on the exact form (variant key) being written; otherwise the exact record in the
+  // library this form belongs to (Components for component forms, else Characters, else the
+  // glyph index's card); a word or phrase opens its Vocabulary card. Absent when no record exists.
+  const details = ((): PracticeDetails | undefined => {
+    if (isWord) return wordFact ? { to: '/vocabulary', search: { tab: vocabularyKind(wordFact), word: wordFact.id } } : undefined;
+    if (familyId) {
+      const family = radicalFamily(familyId);
+      const heading = family && libraryEntries('Radicals').find(entry => entry.kangxiIndex === familyId && entry.hanzi === family.kangxiHeading);
+      if (!heading) return undefined;
+      const key = radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key;
+      return { to: '/characters', search: { tab: 'Radicals', id: heading.id, ...(key ? { variant: key } : {}) } };
+    }
+    const kind: LibraryKind | undefined = openedFromComponents || pureComponentForm(character) ? 'Components' : undefined;
+    const exact = kind ? libraryEntries(kind).find(entry => entry.hanzi === character) : libraryEntries('Characters').find(entry => entry.hanzi === character);
+    const hit: { kind: LibraryKind; id: string } | undefined = exact ? { kind: kind ?? 'Characters', id: exact.id } : glyphIndex()[character];
+    return hit ? { to: '/characters', search: { tab: hit.kind, id: hit.id } } : undefined;
+  })();
   const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : character} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
       meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
-      pills={isWord ? undefined : characterPills} forms={forms} onPrint={() => setSheet(true)}
+      pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}

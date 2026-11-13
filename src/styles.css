@@ -2528,6 +2528,15 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 html[data-display-size='comfortable'] .practice-translation-line .practice-translation { font-size: 21px; }
 .practice-header-text { min-width: 0; }
 .practice-title { font-family: var(--font-display); font-size: 42px; line-height: 1.2; font-weight: 400; margin: 0; overflow-wrap: anywhere; }
+/* "Write <glyph>" with the details icon right beside it (practice-header.tsx). */
+.practice-title-row { display: flex; align-items: center; gap: 6px 12px; min-width: 0; }
+.practice-title-row > .practice-title { min-width: 0; }
+.practice-details-link { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; color: var(--muted-foreground); transition: color .15s, background-color .15s; }
+.practice-details-link svg { width: 24px; height: 24px; }
+.practice-details-link:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
+.practice-details-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+html[data-display-size='comfortable'] .practice-details-link { width: 44px; height: 44px; }
+html[data-display-size='comfortable'] .practice-details-link svg { width: 28px; height: 28px; }
 .practice-title-glyph { color: var(--card-ink, inherit); }
 .practice-title-glyph.traditional-character { color: var(--traditional); }
 .practice-reading-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; font-size: 18px; }
