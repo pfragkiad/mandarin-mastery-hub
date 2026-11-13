@@ -92,7 +92,7 @@
 
 - [done] Menu in Learn / Practice blocks with one Games group (Hanzi + Pinyin games); phone section pills on Glyphs, Vocab and every game page (verified live, 619 tests pass).
 
-- [open] Make the "matches the G-source breakdown above" note the same size as the "BabelStone · G-source" label and keep it italic.
+- [done] Make the "matches the G-source breakdown above" note the same size as the "BabelStone · G-source" label and keep it italic.
 
 - [done] Global search no longer freezes while typing (cached matching, search window rerenders alone).
 - [done] Global search: Apply button — results update only on Apply/Enter; Enter again opens the first result.
