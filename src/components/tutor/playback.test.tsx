@@ -574,6 +574,8 @@ it('the Strokes tab opens every stroke tile and the chevron collapses the drawer
   await waitFor(() => expect(fake.quiz).toHaveBeenCalled());
   expect(document.querySelectorAll('.stroke-chip')).toHaveLength(0);
   expect(screen.queryByRole('button', { name: 'Collapse details' })).toBeNull();
+  // Collapsed still shows the arrow (pointing down), so the row never loses its control.
+  expect(screen.getByRole('button', { name: 'Expand details' })).toBeEnabled();
   fireEvent.click(screen.getByRole('tab', { name: 'Strokes' }));
   expect(await screen.findByRole('button', { name: 'Continue tracing after stroke 3' })).toBeTruthy();
   expect(localStorage.getItem('tutor-practice-panel')).toBe('strokes');
@@ -582,6 +584,10 @@ it('the Strokes tab opens every stroke tile and the chevron collapses the drawer
   // Collapsed keeps the tab row, with no tab selected.
   expect(screen.getByRole('tab', { name: 'Strokes' })).toHaveAttribute('aria-selected', 'false');
   expect(localStorage.getItem('tutor-practice-panel')).toBe('');
+  // The down arrow reopens the drawer it closed.
+  fireEvent.click(screen.getByRole('button', { name: 'Expand details' }));
+  expect(await screen.findByRole('button', { name: 'Continue tracing after stroke 3' })).toBeTruthy();
+  expect(localStorage.getItem('tutor-practice-panel')).toBe('strokes');
 });
 
 it('the Next stroke switch only changes the progress picture, never the drawer', async () => {
