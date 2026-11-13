@@ -2735,11 +2735,11 @@ html[data-display-size='comfortable'] .stroke-tab { font-size: 16px; }
    optional Exact toggle sit together in one trailing group inside the box, laid
    out by flex rather than the shared absolute toggle offsets. */
 .search-field .search-trailing { position: absolute; top: 50%; right: 7px; transform: translateY(-50%); display: flex; align-items: center; gap: 6px; }
-.search-field .search-trailing .search-toggle { position: static; transform: none; }
+html .search-field .search-trailing .search-toggle { position: static; transform: none; right: auto; }
 .search-field .search-language { display: flex; }
 .search-field .search-language .search-toggle:first-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
 .search-field .search-language .search-toggle:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; }
-.search-field .search-language .search-toggle.on { position: relative; z-index: 1; }
+html .search-field .search-language .search-toggle.on { position: relative; right: auto; z-index: 1; }
 .search-field .search-language .search-toggle:disabled { opacity: .45; }
 .search-field:has(.search-trailing) input { padding-right: 150px; }
 .search-field:has(.search-trailing .search-language + .search-toggle) input { padding-right: 210px; }
