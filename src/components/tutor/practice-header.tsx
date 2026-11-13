@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { focusEntryCard, originLabel, practiceOrigin } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
 import type { CharactersSearch } from './characters-page';
-import type { VocabularySearch } from './vocabulary';
+import type { VocabularySearch } from '@/routes/vocabulary';
 import { DetailsIcon } from './practice-icons';
 
 /** Where the title's details link leads: the practised record's own library card — a Glyphs
