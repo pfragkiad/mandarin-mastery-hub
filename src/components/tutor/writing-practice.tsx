@@ -981,7 +981,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
   const character = wordChars[focus] ?? wordChars[0] ?? '我';
-  const setCharacter = (i: number) => { navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) } }); };
+  const setCharacter = (i: number) => { navigate({ to: '/strokes', search: { character: initialCharacter, mode, ...(i > 0 ? { focus: i } : {}) }, resetScroll: false }); }; // switching word characters stays in place
   const [sheet, setSheet] = useState(false);
   const [audioError, setAudioError] = useState(false);
   // Word practice: each character's progress by its position in the word (StrokesPage is
