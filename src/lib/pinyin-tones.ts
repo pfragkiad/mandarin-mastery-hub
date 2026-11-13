@@ -71,14 +71,28 @@ export const normalizePinyinQuery = (query: string) =>
  * Queries written with tone marks ("shī") carry their tone through the same
  * numbered form, so they keep tone discrimination in both modes.
  */
+// Searches call this once per catalogue row on every keystroke, so the derived
+// forms are cached: each recorded reading is converted once (the set of distinct
+// readings is small), and the query is converted once per new query string.
+// Caching only memoizes these pure conversions; matching is unchanged.
+const readingForms = new Map<string, { plain: string; numbered: string }>();
+let lastQuery: { query: string; q: string; qNumbered: string } | null = null;
+
 export function pinyinReadingMatches(reading: string, query: string, exact: boolean): boolean {
-  const q = normalizePinyinQuery(query);
+  if (lastQuery?.query !== query) {
+    const normalized = normalizePinyinQuery(query);
+    // pinyinNumbered skips digits, so it is only meaningful for tone-marked
+    // queries; tone-number queries already compare directly as strings.
+    lastQuery = { query, q: normalized, qNumbered: [...normalized].some(ch => Boolean(TONE_MARKS[ch])) ? pinyinNumbered(normalized) : '' };
+  }
+  const { q, qNumbered } = lastQuery;
   if (!q) return true;
-  const plain = reading.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[\s'·-]+/g, '');
-  const numbered = pinyinNumbered(reading);
-  // pinyinNumbered skips digits, so it is only meaningful for tone-marked
-  // queries; tone-number queries already compare directly as strings.
-  const qNumbered = [...q].some(ch => Boolean(TONE_MARKS[ch])) ? pinyinNumbered(q) : '';
+  let forms = readingForms.get(reading);
+  if (!forms) {
+    forms = { plain: reading.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[\s'·-]+/g, ''), numbered: pinyinNumbered(reading) };
+    readingForms.set(reading, forms);
+  }
+  const { plain, numbered } = forms;
   return exact
     ? plain === q || numbered === q || (Boolean(qNumbered) && numbered === qNumbered)
     : plain.includes(q) || numbered.includes(q) || (Boolean(qNumbered) && numbered.includes(qNumbered));

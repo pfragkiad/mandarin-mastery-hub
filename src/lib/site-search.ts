@@ -8,6 +8,32 @@ import { pinyinReadingMatches } from './pinyin-tones';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
+// Global search scans every word and catalogue row on each keystroke, so the
+// normalized free text of each record is cached per record object (a WeakMap,
+// so replaced or hydrated rows simply get fresh entries). Reference rows also
+// remember the radical search glyphs they were built with and rebuild when the
+// radical data loads later, so cached text never goes stale.
+const wordText = new WeakMap<Word, { hanziPinyinMeaning: string; all: string; hanzi: string; meaningWords: string[] }>();
+const wordSearchText = (w: Word) => {
+  let text = wordText.get(w);
+  if (!text) {
+    const meaning = normalize(w.meaning);
+    text = { hanziPinyinMeaning: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning}`), all: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`), hanzi: normalize(w.hanzi), meaningWords: meaning.split(/[^a-z]+/) };
+    wordText.set(w, text);
+  }
+  return text;
+};
+const rowText = new WeakMap<object, { glyphs: string; text: string; normalizedPinyin: string; readings: string[] }>();
+const rowSearchText = (row: readonly string[] & object, hanzi: string, pinyin: string, meaning: string, note: string) => {
+  const glyphs = radicalSearchGlyphs(hanzi).join(' ');
+  let text = rowText.get(row);
+  if (!text || text.glyphs !== glyphs) {
+    text = { glyphs, text: normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${glyphs}`), normalizedPinyin: normalize(pinyin), readings: pinyin.split(/[,/;]/) };
+    rowText.set(row, text);
+  }
+  return text;
+};
+
 export type SearchHit =
   | { kind: 'Word'; word: Word }
   | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript };
@@ -22,25 +48,25 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   if (!q) return [];
   // In pinyin modes the hanzi/meaning free text is dropped so only readings decide.
   const wordMatch = pinyinMode === 'any'
-    ? (w: Word) => normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`).includes(q) || pinyinReadingMatches(w.pinyin, query, false)
+    ? (w: Word) => wordSearchText(w).all.includes(q) || pinyinReadingMatches(w.pinyin, query, false)
     : (w: Word) => pinyinReadingMatches(w.pinyin, query, pinyinMode === 'exact');
   const wordHits: SearchHit[] = items
     // Keep free-text discovery while sharing tone-number matching with library filters.
     .filter(w => includeScript(w.script, includeTraditional) && wordMatch(w))
-    .map(word => ({ word, rank: normalize(word.hanzi) === q ? 0 : normalize(word.meaning).split(/[^a-z]+/).includes(q) ? 1 : normalize(`${word.hanzi} ${word.pinyin} ${word.meaning}`).includes(q) ? 2 : 3 }))
+    .map(word => { const text = wordSearchText(word); return { word, rank: text.hanzi === q ? 0 : text.meaningWords.includes(q) ? 1 : text.hanziPinyinMeaning.includes(q) ? 2 : 3 }; })
     .sort((a, b) => a.rank - b.rank)
     .map(({ word }) => ({ kind: 'Word' as const, word }));
   // Mirror the library filters: 'any' keeps loose tone-number reading matches on
   // top of free text; 'pinyin' matches readings loosely; 'exact' whole readings only.
-  const refMatch = (pinyin: string) =>
+  const refMatch = (text: ReturnType<typeof rowSearchText>) =>
     pinyinMode === 'any'
-      ? normalize(pinyin).includes(q) || pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, false))
-      : pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
+      ? text.normalizedPinyin.includes(q) || text.readings.some(reading => pinyinReadingMatches(reading, query, false))
+      : text.readings.some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
   const refHits: SearchHit[] = referenceCatalog.flatMap(({ kind, entries }) =>
     entries
       // Free-text fields belong only to unrestricted search; Pinyin/Exact must
       // not admit translation or source-note matches for reference entries.
-      .filter(([hanzi, pinyin, meaning, note, script]) => includeScript(script, includeTraditional) && (refMatch(pinyin) || (pinyinMode === 'any' && normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${radicalSearchGlyphs(hanzi).join(' ')}`).includes(q))))
+      .filter(row => { const [hanzi, pinyin, meaning, note, script] = row; if (!includeScript(script, includeTraditional)) return false; const text = rowSearchText(row, hanzi, pinyin, meaning, note); return refMatch(text) || (pinyinMode === 'any' && text.text.includes(q)); })
       .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
   // Words lead, phrases follow all glyphs. Compare the recorded numeric ranks
