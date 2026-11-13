@@ -2516,8 +2516,11 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
 .practice-header .practice-print-button svg { width: 16px; height: 16px; }
 .practice-more-button { display: none; }
 @media (max-width: 760px) { .practice-more-button { display: inline-flex; margin-right: -8px; color: var(--muted-foreground); } }
-.practice-header-main { display: flex; align-items: center; gap: 14px 24px; margin-top: 10px; }
-.practice-header-text { flex: 1 1 auto; }
+/* The reading block keeps at least ~300px beside the form tiles; when the tiles (e.g. three
+   radical forms) leave less, the row wraps and the reading drops below them at full width
+   instead of squeezing the translation into a one-word column. */
+.practice-header-main { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 10px; }
+.practice-header-text { flex: 1 1 300px; }
 .practice-reading { display: inline-flex; align-items: center; gap: 6px 10px; flex-wrap: wrap; min-width: 0; }
 .practice-reading-line > .practice-pills { margin-left: auto; }
 .practice-translation-line { margin: 2px 0 0; }
@@ -2539,7 +2542,7 @@ html[data-display-size='comfortable'] .practice-translation-line .practice-trans
 .practice-reading-line .practice-kind { margin-left: 0; font-size: 10px; padding: 4px 10px; }
 .practice-reading-line .word-hsk-id { font-size: 10px; padding: 3px 9px; }
 @media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
-.practice-header-forms { min-width: 0; flex: 0 0 auto; }
+.practice-header-forms { min-width: 0; max-width: 100%; flex: 0 0 auto; }
 @media (max-width: 850px) {
   .practice-header { padding: 0; }
   .practice-header-main { flex-direction: column; align-items: stretch; }
