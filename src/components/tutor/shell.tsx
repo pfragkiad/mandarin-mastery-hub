@@ -1,5 +1,5 @@
 import { rememberOrigin } from '@/lib/practice-return';
-import { Link, useNavigate, useRouterState } from '@tanstack/react-router';
+import { Link, useRouterState } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, PinyinGamesIcon, type GameEntry, type GameIcon } from './game-catalog';
@@ -67,7 +67,6 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
   const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);
   const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
-  const navigate = useNavigate();
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
   // beside the page, full or as the slim icon strip (one remembered choice, no
   // hamburger); phones get the bottom tab bar whose "More" opens the drawer.
