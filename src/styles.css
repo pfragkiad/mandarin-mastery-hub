@@ -2625,9 +2625,11 @@ html .practice-progress-row .stroke-progress-head .stroke-index { font-size: inh
 .stroke-progress-sep { color: var(--muted-foreground); font-weight: 400; }
 .stroke-progress-head .word-strip-reading { display: inline-flex; align-items: center; gap: 2px; font-weight: 500; }
 /* Status line: the next stroke's name, "Preview hidden", "not started" or "done". */
-html .practice-progress-row .stroke-progress-tile .stroke-pinyin { grid-area: sub; min-height: 0; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; line-height: 1.35; }
+/* The status line always keeps one line of height, even while empty (before the first stroke),
+   so the tile and the canvas below never shift when its text appears. */
+html .practice-progress-row .stroke-progress-tile .stroke-pinyin { grid-area: sub; min-height: 1.35em; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; line-height: 1.35; }
 html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-head { font-size: 16px; min-height: 30px; }
-html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 14px; min-height: 0; }
+html[data-display-size='comfortable'] .practice-progress-row .stroke-progress-tile .stroke-pinyin { font-size: 14px; min-height: 1.35em; }
 /* Phones keep two characters side by side: a smaller picture and tighter type, and a long
    reading lets the count drop under it rather than overflow. */
 @media (max-width: 500px) {
