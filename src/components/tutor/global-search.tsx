@@ -19,8 +19,8 @@ import { useWorkspace } from './workspace';
  * Results follow the explicit-apply rule of the library filters: typing only
  * edits the draft; Apply (or Enter) runs the dictionary-wide search. Enter on an
  * already-applied search opens the first result. Emptying the box clears the
- * results at once, like the libraries' X. Apply stays in place (disabled when
- * there is nothing new to apply) so the input never changes width while typing.
+ * results at once, like the libraries' X. Apply appears only while there is
+ * something valid and new to apply, exactly like the library filter bars.
  */
 export function GlobalSearch({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const navigate = useNavigate();

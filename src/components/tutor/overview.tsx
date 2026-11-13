@@ -41,7 +41,7 @@ export function OverviewPage() {
  * Matching: a Pinyin | English switch inside the box picks readings or recorded
  * meanings (Exact, under Pinyin, needs the whole reading); any hanzi in the box
  * searches written forms directly and the switch steps aside. A lone Latin
- * letter is never searched (isSearchableQuery), so Apply stays off for it.
+ * letter is never searched (isSearchableQuery), so Apply never appears for it.
  *
  * Like "Search everything", typing only edits the draft — the dictionary-wide
  * search runs on Apply or Enter, and Enter on an already-applied search opens
