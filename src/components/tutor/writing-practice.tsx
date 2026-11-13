@@ -1080,7 +1080,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // focused on the exact form (variant key) being written; otherwise the exact record in the
   // library this form belongs to (Components for component forms, else Characters, else the
   // glyph index's card); a word or phrase opens its Vocabulary card. Absent when no record exists.
-  const details: PracticeDetails | undefined = (() => {
+  const details = ((): PracticeDetails | undefined => {
     if (isWord) return wordFact ? { to: '/vocabulary', search: { tab: vocabularyKind(wordFact), word: wordFact.id } } : undefined;
     if (familyId) {
       const family = radicalFamily(familyId);
@@ -1091,7 +1091,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
     }
     const kind: LibraryKind | undefined = openedFromComponents || pureComponentForm(character) ? 'Components' : undefined;
     const exact = kind ? libraryEntries(kind).find(entry => entry.hanzi === character) : libraryEntries('Characters').find(entry => entry.hanzi === character);
-    const hit = exact ? { kind: kind ?? 'Characters', id: exact.id } : glyphIndex()[character];
+    const hit: { kind: LibraryKind; id: string } | undefined = exact ? { kind: kind ?? 'Characters', id: exact.id } : glyphIndex()[character];
     return hit ? { to: '/characters', search: { tab: hit.kind, id: hit.id } } : undefined;
   })();
   const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
