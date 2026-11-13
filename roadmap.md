@@ -101,3 +101,5 @@
 - [done] Start search: Apply button, no search while typing; freeze fixed (Apply ~0.3s, Show all ~0.6s for 10k matches)
 - [done] Start search: never search a single Latin letter (single hanzi still searched)
 - [done] Start search: Pinyin/English switch with Exact under Pinyin; hanzi input searches anything containing it
+
+- [done] Practice drawer arrow stays visible when collapsed (down arrow reopens it) for every Practice page; details icon beside "Write <glyph>" opens the exact record's card (radical variants focused). Tests pass; 氺 checked live.
