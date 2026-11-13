@@ -8,13 +8,12 @@ import { NavGroup, type NavSub } from './nav-group';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, Maximize2, Minimize2, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
 import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { searchAll } from '@/lib/site-search';
-import { SearchHitContent } from './search-hit-content';
+import { GlobalSearch } from './global-search';
 import { LibraryViewToggle } from './library-view-toggle';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 // Main menu in three blocks: Start, then "Learn" (the reference sections) and
@@ -111,29 +110,14 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const activePhoneTab = phoneTabFor(path);
   const [help, setHelp] = useState(false);
   const [searching, setSearching] = useState(false);
-  const [expandedSearch, setExpandedSearch] = useState(false);
-  useEffect(() => { if (!searching) setExpandedSearch(false); }, [searching]);
-  const [query, setQuery] = useState('');
-  // Pinyin/Exact toggles inside the global search box, mirroring the library filters.
-  const [py, setPy] = useState<'any' | 'pinyin' | 'exact'>('any');
   const [shortcut, setShortcut] = useState('Ctrl K');
-  const { preferences, setPreferences, theme, setTheme, items, catalogVersion } = useWorkspace();
-  // Keep one ordered result set for both window sizes, including lazy catalogue
-  // hydration. Expansion removes only the preview cap, not matching or ordering.
-  const allHits = useMemo(() => searchAll(items, query, preferences.includeTraditional, Infinity, py), [items, query, preferences.includeTraditional, py, catalogVersion]);
-  const hits = expandedSearch ? allHits : allHits.slice(0, 50);
+  const { theme, setTheme } = useWorkspace();
   useEffect(() => { if (/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent)) setShortcut('⌘K'); }, []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); setSearching(v => !v); } };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
-  const closeSearch = () => { setSearching(false); setQuery(''); };
-  const openHit = (hit: (typeof hits)[number]) => {
-    closeSearch();
-    if (hit.kind === 'Word') navigate({ to: '/vocabulary', search: { q: hit.word.hanzi, word: hit.word.id } });
-    else navigate({ to: '/characters', search: { tab: hit.kind === 'Radical' ? 'Radicals' : hit.kind === 'Component' ? 'Components' : 'Characters', character: hit.hanzi } });
-  };
   return <div className={`workspace nav-${navMode}${navMode === 'rail' ? ' is-collapsed' : ''}${mobileOpen ? ' nav-expanded' : ''}`}>
     {mobileOpen && <div className="mobile-scrim" onClick={() => setMobileOpen(false)} />}
     <aside className={`sidebar ${mobileOpen ? 'is-open' : ''}`}>
@@ -166,10 +150,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     <nav className="phone-tabs" aria-label="Quick navigation">{phoneTabs.map(t => <Link key={t.key} to={t.to} className={`phone-tab${activePhoneTab === t.key ? ' is-active' : ''}`} aria-current={activePhoneTab === t.key ? 'page' : undefined} onClick={() => setMobileOpen(false)}><t.icon/><span>{t.label}</span></Link>)}
       <button ref={moreRef} type="button" className={`phone-tab${activePhoneTab === 'more' || mobileOpen ? ' is-active' : ''}`} aria-expanded={mobileOpen} aria-label="More: open the full menu" title="Open the full menu" onClick={() => setMobileOpen(open => !open)}><MoreHorizontal/><span>More</span></button></nav>
     <Dialog open={help} onOpenChange={setHelp}><DialogContent><DialogTitle className="font-display text-2xl">A little guidance</DialogTitle><DialogDescription>A character, its parts, then a little practice.</DialogDescription><div className="help-content"><p><strong>Study.</strong> Browse characters, radicals and components with sourced breakdowns and usage ranks. Apply filters together; × clears them.</p><p><strong>Practise.</strong> Write in Trace or Recall, or play the Hanzi games and Pinyin games.</p><p><strong>Pinyin.</strong> The Sound chart plays every syllable in each tone it has, recorded by a real speaker. Then test your ear with the Tone quiz, Sound-alikes and Type what you hear. Your progress is remembered in this browser.</p><p><strong>Vocabulary</strong> is a partial HSK 1–2 collection for now.</p><p>A dimmed speaker means your device voice is speaking. Preferences stay saved in this browser.</p><Button asChild onClick={() => setHelp(false)}><Link to="/characters">Explore characters <ArrowRight/></Link></Button></div></DialogContent></Dialog>
-    <Dialog open={searching} onOpenChange={setSearching}><DialogContent className={`global-search${expandedSearch ? ' global-search-expanded' : ''}`}><DialogTitle className="font-display text-xl">Search everything</DialogTitle><DialogDescription>Words, characters, radicals, components, and phrases.</DialogDescription><div className="search-field"><Search/><input autoFocus aria-label="Search everything" placeholder="Search Chinese, pinyin, or meaning…" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && hits[0]) { e.preventDefault(); openHit(hits[0]); } }}/>{/* Same Pinyin/Exact toggles as the library search fields. */}
-      <Button variant="ghost" type="button" className={`search-toggle${py === 'any' ? '' : ' on'}`} aria-pressed={py !== 'any'} title="Search pinyin only" onClick={() => setPy(py === 'any' ? 'pinyin' : 'any')}>Pinyin</Button>{py !== 'any' && <Button variant="ghost" type="button" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => setPy(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>
-      {query.trim() === '' ? <p className="global-search-hint">Start typing — results appear as you go. Press Enter to open the first one.</p> : hits.length ? <div className="global-search-results" role="listbox" aria-label="Search results">{hits.map(hit => <Button variant="ghost" type="button" key={hit.kind === 'Word' ? `w-${hit.word.id}` : `${hit.kind}-${hit.hanzi}`} className="hero-search-hit" role="option" aria-selected={false} onClick={() => openHit(hit)}><SearchHitContent hit={hit}/></Button>)}</div> : <p className="hero-search-empty">No matches yet — try a character, pinyin, or English meaning.</p>}
-      {query.trim() !== '' && hits.length > 0 && <div className="global-search-foot"><span>{!expandedSearch && allHits.length > 50 ? `50 of ${allHits.length.toLocaleString()} matches` : `${allHits.length.toLocaleString()} ${allHits.length === 1 ? 'match' : 'matches'}`}</span><Button variant="ghost" type="button" aria-expanded={expandedSearch} onClick={() => setExpandedSearch(value => !value)}>{expandedSearch ? <Minimize2/> : <Maximize2/>}{expandedSearch ? 'Compact window' : 'Show all results'}</Button></div>}
-    </DialogContent></Dialog>
+    {/* Search lives in its own component so typing never rerenders the menu or page. */}
+    <GlobalSearch open={searching} onOpenChange={setSearching}/>
   </div>;
 }
