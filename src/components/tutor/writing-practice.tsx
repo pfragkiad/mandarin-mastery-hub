@@ -15,8 +15,8 @@ import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { leniency } from '@/lib/handwriting-strictness';
-import { words } from '@/lib/mandarin';
-import { glyphIndex, glyphScript, libraryEntries, type LibraryEntry } from '@/lib/character-library';
+import { vocabularyKind, words } from '@/lib/mandarin';
+import { glyphIndex, glyphScript, libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
 import { catalog, playCharacter, characterRecording, characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
@@ -1081,7 +1081,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // library this form belongs to (Components for component forms, else Characters, else the
   // glyph index's card); a word or phrase opens its Vocabulary card. Absent when no record exists.
   const details: PracticeDetails | undefined = (() => {
-    if (isWord) return wordFact ? { to: '/vocabulary', search: { tab: wordFact.entryKind === 'phrase' ? 'phrase' : 'word', word: wordFact.id } } : undefined;
+    if (isWord) return wordFact ? { to: '/vocabulary', search: { tab: vocabularyKind(wordFact), word: wordFact.id } } : undefined;
     if (familyId) {
       const family = radicalFamily(familyId);
       const heading = family && libraryEntries('Radicals').find(entry => entry.kangxiIndex === familyId && entry.hanzi === family.kangxiHeading);
@@ -1089,7 +1089,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       const key = radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key;
       return { to: '/characters', search: { tab: 'Radicals', id: heading.id, ...(key ? { variant: key } : {}) } };
     }
-    const kind: ReferenceKind | undefined = componentCardTiles ? 'Components' : undefined;
+    const kind: LibraryKind | undefined = openedFromComponents || pureComponentForm(character) ? 'Components' : undefined;
     const exact = kind ? libraryEntries(kind).find(entry => entry.hanzi === character) : libraryEntries('Characters').find(entry => entry.hanzi === character);
     const hit = exact ? { kind: kind ?? 'Characters', id: exact.id } : glyphIndex()[character];
     return hit ? { to: '/characters', search: { tab: hit.kind, id: hit.id } } : undefined;
