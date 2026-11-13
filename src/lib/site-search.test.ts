@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { searchAll } from './site-search';
+import { isSearchableQuery, searchAll, startSearchMode } from './site-search';
 import { words } from './mandarin';
 import * as frequency from './usage-frequency';
 
@@ -88,5 +88,35 @@ describe('Header search across the library', () => {
     // 后 (queen) and 咨 (inquire) contain qu only in their English meanings.
     expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '后')).toBe(false);
     expect(hits.some(hit => hit.kind !== 'Word' && hit.hanzi === '咨')).toBe(false);
+  });
+});
+
+describe('Start page search rules', () => {
+  const water = { id: 'rule-word', hanzi: '水果', pinyin: 'shuǐ guǒ', meaning: 'fruit', translation: 'I like water.', type: 'noun', collection: 'test', level: '', sentence: '', entryKind: 'word' as const };
+  it('never searches a single Latin letter', () => {
+    expect(isSearchableQuery('c')).toBe(false);
+    expect(isSearchableQuery(' c ')).toBe(false);
+    expect(isSearchableQuery('ca')).toBe(true);
+  });
+  it('searches a single hanzi', () => {
+    expect(isSearchableQuery('水')).toBe(true);
+  });
+  it('hanzi input searches written forms whatever the switch says', () => {
+    expect(startSearchMode('水', 'english', false)).toBe('hanzi');
+    expect(startSearchMode('水', 'pinyin', true)).toBe('hanzi');
+    expect(startSearchMode('shui', 'pinyin', true)).toBe('exact');
+    expect(startSearchMode('shui', 'english', true)).toBe('english');
+  });
+  it('hanzi search finds records containing the hanzi', () => {
+    expect(searchAll([water], '水', false, 100, 'hanzi')).toContainEqual({ kind: 'Word', word: water });
+  });
+  it('English search matches meanings, not readings or sentence translations', () => {
+    expect(searchAll([water], 'fruit', false, 100, 'english')).toContainEqual({ kind: 'Word', word: water });
+    expect(searchAll([water], 'shui', false, 100, 'english')).not.toContainEqual({ kind: 'Word', word: water });
+    expect(searchAll([water], 'water', false, 100, 'english')).not.toContainEqual({ kind: 'Word', word: water });
+  });
+  it('Pinyin search matches readings, not meanings', () => {
+    expect(searchAll([water], 'shui', false, 100, 'pinyin')).toContainEqual({ kind: 'Word', word: water });
+    expect(searchAll([water], 'fruit', false, 100, 'pinyin')).not.toContainEqual({ kind: 'Word', word: water });
   });
 });
