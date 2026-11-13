@@ -676,6 +676,10 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .global-search { width: min(560px, calc(100% - 24px)); max-width: 560px; max-height: calc(100dvh - 32px); gap: 13px; display: flex; flex-direction: column; }
 .global-search > :not(.global-search-results) { flex-shrink: 0; }
 .global-search > .search-field { flex: 0 0 auto; }
+/* Search box and its Apply button share one row; Apply matches the 46px box height. */
+.global-search-bar { display: flex; align-items: center; gap: 8px; }
+.global-search-bar > .search-field { flex: 1; min-width: 0; }
+.global-search-bar > .global-search-apply { height: 46px; flex-shrink: 0; }
 .global-search.global-search-expanded { width: min(1040px, calc(100% - 24px)); max-width: 1040px; height: min(1100px, calc(100dvh - 32px)); }
 .global-search.global-search-expanded .global-search-results { flex: 1; max-height: none; }
 .global-search .search-field input { height: 46px; font-size: 13px; }
