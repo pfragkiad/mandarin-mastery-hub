@@ -301,7 +301,7 @@ describe('details link beside the Practice title', () => {
   });
 
   it('opens the radical family card focused on the exact form being written', () => {
-    hydrateCatalog({ ...catalogData, radicalStrokes: familyFile } as CatalogFile);
+    hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="乙" family={5} variant="main" mode="trace"/>);
     expect(JSON.parse(detailsLink()!.getAttribute('data-search')!)).toEqual({ tab: 'Radicals', id: 'Radicals:乙', variant: 'main' });
   });
