@@ -13,22 +13,26 @@ const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u0
 // so replaced or hydrated rows simply get fresh entries). Reference rows also
 // remember the radical search glyphs they were built with and rebuild when the
 // radical data loads later, so cached text never goes stale.
-const wordText = new WeakMap<Word, { hanziPinyinMeaning: string; all: string; hanzi: string; meaningWords: string[] }>();
+const wordText = new WeakMap<Word, { source: string; hanziPinyinMeaning: string; all: string; hanzi: string; meaningWords: string[] }>();
 const wordSearchText = (w: Word) => {
   let text = wordText.get(w);
-  if (!text) {
+  // Session edits may replace a word's fields, so rebuild if the source text changed.
+  if (!text || text.source !== `${w.hanzi}\u0000${w.pinyin}\u0000${w.meaning}\u0000${w.translation}`) {
     const meaning = normalize(w.meaning);
-    text = { hanziPinyinMeaning: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning}`), all: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`), hanzi: normalize(w.hanzi), meaningWords: meaning.split(/[^a-z]+/) };
+    text = { source: `${w.hanzi}\u0000${w.pinyin}\u0000${w.meaning}\u0000${w.translation}`, hanziPinyinMeaning: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning}`), all: normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.translation}`), hanzi: normalize(w.hanzi), meaningWords: meaning.split(/[^a-z]+/) };
     wordText.set(w, text);
   }
   return text;
 };
-const rowText = new WeakMap<object, { glyphs: string; text: string; normalizedPinyin: string; readings: string[] }>();
-const rowSearchText = (row: readonly string[] & object, hanzi: string, pinyin: string, meaning: string, note: string) => {
+type RowText = { source: string[]; text: string; normalizedPinyin: string; readings: string[] };
+const rowText = new WeakMap<object, RowText>();
+const rowSearchText = (row: object, hanzi: string, pinyin: string, meaning: string, note: string) => {
   const glyphs = radicalSearchGlyphs(hanzi).join(' ');
+  const source = [hanzi, pinyin, meaning, note, glyphs];
   let text = rowText.get(row);
-  if (!text || text.glyphs !== glyphs) {
-    text = { glyphs, text: normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${glyphs}`), normalizedPinyin: normalize(pinyin), readings: pinyin.split(/[,/;]/) };
+  // Rebuild whenever any source field differs, so an in-place update is never missed.
+  if (!text || text.source.some((value, index) => value !== source[index])) {
+    text = { source, text: normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${glyphs}`), normalizedPinyin: normalize(pinyin), readings: pinyin.split(/[,/;]/) };
     rowText.set(row, text);
   }
   return text;
@@ -58,7 +62,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
     .map(({ word }) => ({ kind: 'Word' as const, word }));
   // Mirror the library filters: 'any' keeps loose tone-number reading matches on
   // top of free text; 'pinyin' matches readings loosely; 'exact' whole readings only.
-  const refMatch = (text: ReturnType<typeof rowSearchText>) =>
+  const refMatch = (text: RowText) =>
     pinyinMode === 'any'
       ? text.normalizedPinyin.includes(q) || text.readings.some(reading => pinyinReadingMatches(reading, query, false))
       : text.readings.some(reading => pinyinReadingMatches(reading, query, pinyinMode === 'exact'));
