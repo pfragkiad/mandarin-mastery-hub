@@ -689,6 +689,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .global-search-results .hero-search-hit:last-child { border-bottom: 0; }
 .global-search-hint, .global-search .hero-search-empty { margin: 0; font-size: 11px; color: var(--muted-foreground); }
 .global-search-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 10px; color: var(--muted-foreground); }
+/* Inside the Start page results box the count lines up with the result rows (14px inset), not the box edge. */
+.hero-search-results .global-search-foot { padding: 4px 4px 4px 14px; border-bottom: 1px solid var(--border); }
 @media(max-width:850px) { .search-trigger span, .search-trigger kbd { display: none; } .search-trigger { width: 30px; padding: 0; justify-content: center; } }
 .reference-more { grid-column: 1 / -1; justify-self: center; margin-top: 10px; }
 .tile-absent { font-family: var(--font-sans); font-size: 11px; font-style: italic; font-weight: 400; line-height: 1.5; color: color-mix(in oklab, var(--terracotta) 55%, var(--muted-foreground)); letter-spacing: .01em; white-space: nowrap; }
