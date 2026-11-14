@@ -156,6 +156,11 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   // gold radical, green character, text-colour component); Words/Phrases keep the accent.
   const bodyId = `discovery-body-${category}`;
   const ink = entry ? glyphCardInk(category as LibraryKind, entry.script, isRadicalGlyph(entry, category as LibraryKind)) : '';
+  // Phones: the closed row's second line shows the translation or the pinyin (Preferences →
+  // Start random rows). With pinyin chosen, a small listen button joins the shuffle on the
+  // right (CSS shows it only on phone rows); the opened detail is unchanged either way.
+  const rowLine = preferences.discoveryRowLine ?? 'meaning';
+  const rowPinyin = rowLine === 'pinyin' && preferences.pinyin && pinyin !== '—';
 
   return (
     <section className={`discovery-tile${open ? ' is-open' : ''}`} aria-label={`${meta.label}: ${count ?? '…'} records`}>
