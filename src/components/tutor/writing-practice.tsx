@@ -26,7 +26,7 @@ import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, type OutlineSource } from '@/lib/character-enrichment';
 import { formatStrokeIndices, strokeNames } from '@/lib/stroke-names';
-import { historicalRadicalHeading, practiceStrokeNames, radicalFamily, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
+import { historicalRadicalHeading, orderedRadicalForms, practiceStrokeNames, radicalFamily, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
 import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
@@ -1070,8 +1070,10 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // Form switch (right side of the title card): radical-family forms, or script/component
   // card forms when there is more than one; a simplified-only record shows no tiles.
   // Words have no traditional records yet, so word practice never shows tiles.
+  // A one-form radical family shows no switch: the title's single hanzi already is that form.
+  const familyForms = familyId ? radicalFamily(familyId) : undefined;
   const forms = isWord ? undefined
-    : familyId ? <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel layout="switch" hideGlyph={recall}/>
+    : familyId ? familyForms && orderedRadicalForms(familyForms).length > 1 ? <RadicalForms familyId={familyId} selectedKey={radicalSelection?.key ?? radicalForms(character).find(match => match.family.id === familyId)?.form.key} destination="practice" mode={mode} hideLabel layout="switch" hideGlyph={recall}/> : undefined
     : scriptTiles ? <ScriptForms glyph={character} kind={scriptKind} destination="practice" mode={mode} hideLabel grouping={componentCardTiles ? 'card' : 'script'} layout="switch" hideGlyph={recall}/>
     : undefined;
   const characterReading = info.speech && isMultiReading(info.reading)
