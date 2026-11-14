@@ -40,6 +40,7 @@ import { useCharacterEnrichment, RecordedDecomposition } from './character-enric
 import { ComponentPronunciation } from './component-pronunciation';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePerfectCelebration } from './perfect-celebration';
+import { shownGlyph } from '@/lib/radical-display-glyph';
 
 type StrokeInfo = { path: string; name: string; pinyin: string; direction: string; ambiguous?: boolean; estimated?: boolean };
 
@@ -935,7 +936,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   // The progress tile stands alone for a single character; in word practice the strip
   // receives it as a renderer and shows it in the focused character's place.
   const progressTile = ready && strokes.length > 0
-    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} scores={scores} mistakes={mistakes} playing={playing} showStroke={nextPreview} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={character} recall={mode === 'recall'} reading={word ? undefined : reading}/>
+    ? (word?: ProgressTileWord) => <StrokeProgressTile strokes={strokes} groups={groups} next={nextStroke} scores={scores} mistakes={mistakes} playing={playing} showStroke={nextPreview} word={word} ink={mode === 'recall' && nextStroke < strokes.length ? undefined : progressInk} glyph={shownGlyph(character)} recall={mode === 'recall'} reading={word ? undefined : reading}/>
     : null;
   // Until the writer is ready a single character gets an invisible tile of the same frame, so the
   // row keeps its height and the writing square never jumps down when the real tile arrives.
@@ -1099,7 +1100,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   })();
   const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
   return <div className="page-enter practice-page-content">
-    <PracticeHeader glyph={isWord ? initialCharacter : character} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
+    <PracticeHeader glyph={isWord ? initialCharacter : shownGlyph(character)} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
       meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
       pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
