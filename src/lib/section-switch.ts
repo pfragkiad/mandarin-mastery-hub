@@ -40,7 +40,7 @@ export function useSectionStats(scope: string | null): Published {
  * the latest `beforeSwitch` behind a stable wrapper so a new closure each render
  * never republishes. Unmounting clears it, unless another page already replaced it.
  */
-export function usePublishSections(scope: string, stats: Record<string, SectionStat> | null, options: { active?: string; beforeSwitch?: () => void } = {}) {
+export function usePublishSections(scope: string, stats: Record<string, SectionStat> | null, options: { active?: string | undefined; beforeSwitch?: (() => void) | undefined } = {}) {
   const { active, beforeSwitch } = options;
   const hook = useRef(beforeSwitch);
   hook.current = beforeSwitch;

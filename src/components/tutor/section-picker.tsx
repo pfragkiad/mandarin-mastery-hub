@@ -21,7 +21,7 @@ export type SectionOption = { key: string; label: string; icon: GameIcon; to: st
  * Radix owns open/closed; each item is a router Link, so picking a section pushes
  * history exactly like the side menu's sub-items, and Back restores it.
  */
-export function SectionPicker({ page, options, active, stats, beforeSwitch }: { page: string; options: SectionOption[]; active: string; stats?: Record<string, SectionStat>; beforeSwitch?: () => void }) {
+export function SectionPicker({ page, options, active, stats, beforeSwitch }: { page: string; options: SectionOption[]; active: string; stats?: Record<string, SectionStat> | undefined; beforeSwitch?: (() => void) | undefined }) {
   const current = options.find(o => o.key === active) ?? options[0]!;
   return <DropdownMenu modal={false}>
     <DropdownMenuTrigger className="section-picker" aria-label={`${page}: ${current.label}. Switch section`} title={`Switch ${page.toLowerCase()} section`}>
