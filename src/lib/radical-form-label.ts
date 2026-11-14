@@ -1,5 +1,5 @@
 import type { RadicalForm, RadicalFamily } from './radical-strokes';
-import type { CharacterScript } from './character-library';
+import type { CharacterScript } from './learning-preferences';
 
 /**
  * Label for one form tile in a Kangxi radical family (reference card and Practice switch).

@@ -4,6 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { historicalRadicalHeading, orderedRadicalForms, radicalFamily } from '@/lib/radical-strokes';
 import { glyphScript } from '@/lib/character-library';
+import { radicalFormLabel } from '@/lib/radical-form-label';
 import { FormSwitchGlyph } from './script-forms';
 import { FormSwitchThumb } from './form-switch-thumb';
 import type { PracticeMode } from '@/lib/practice-mode';
@@ -30,8 +31,8 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference',
       {orderedRadicalForms(family).map(form => <Button key={form.key} asChild variant="ghost" className={`radical-form-choice is-radical ${historicalRadicalHeading(form.character, family.id) || glyphScript(form.character) === 'Traditional' ? 'is-traditional' : ''} ${selectedKey === form.key ? 'is-selected' : ''}`}>
         <Link to={destination === 'practice' ? '/strokes' : '/characters'} search={destination === 'practice' ? { character: form.character, family: family.id, variant: form.key, ...(mode ? { mode } : {}) } : { tab: 'Radicals', id: `Radicals:${family.kangxiHeading}`, variant: form.key }} resetScroll={false} title={destination === 'practice' ? practiceHint(form.character, selectedKey === form.key) : switchFormHint(form.character, selectedKey === form.key)} aria-label={`${destination === 'practice' ? 'Practice' : 'View'} radical form ${form.character}, ${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'}${family.forms.filter(other => other.character === form.character).length > 1 ? `, ${form.aliases.join(' ')}` : ''}`} aria-current={selectedKey === form.key ? 'true' : undefined}>
           {layout === 'switch'
-            ? <><FormSwitchGlyph glyph={form.character} hidden={hideGlyph}/><span className="form-switch-text"><b>{form.formKind === 'kangxi-heading' ? 'Kangxi heading' : form.character === family.canonical ? 'Mainland form' : 'Variant'}</b><small>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></span></>
-            : <><strong lang="zh-CN">{form.character}</strong><span>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}</span><small>{form.formKind === 'kangxi-heading' ? 'Kangxi heading' : form.character === family.canonical ? 'Mainland form' : 'Variant'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></>}
+            ? <><FormSwitchGlyph glyph={form.character} hidden={hideGlyph}/><span className="form-switch-text"><b>{radicalFormLabel(form, family, glyphScript(form.character))}</b><small>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></span></>
+            : <><strong lang="zh-CN">{form.character}</strong><span>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}</span><small>{radicalFormLabel(form, family, glyphScript(form.character))}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></>}
         </Link>
       </Button>)}
     </div>
