@@ -1552,6 +1552,15 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 /* Source ⓘ pins to the top right of the glyph (or form tiles), larger than the inline variant. */
 .catalog-detail-glyph-row > .source-info-trigger { flex: none; width: 28px; height: 28px; margin-top: 2px; }
 .catalog-detail-glyph-row > .source-info-trigger svg { width: 18px; height: 18px; }
+/* Radical detail cards: the single title hanzi wears its form's gold radical ink; Traditional
+   radical forms take the mixed --trad-radical ink, matching their switch tile and Practice. */
+.catalog-detail-glyph-row > strong.card-ink-radical:not(.traditional-character) { color: var(--card-ink); }
+html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character { color: var(--trad-radical); }
+/* Radical detail cards: Practice's form switch on its own full-width row under the meaning
+   (record-detail-title.tsx formSwitch). The tray reuses the Practice switch styles above via
+   :is(.practice-header, .catalog-detail-forms); only the section spacing is set here. */
+.catalog-detail-forms { margin-top: 14px; min-width: 0; max-width: 100%; }
+.catalog-detail-forms .radical-family-section.form-switch { margin: 0; padding: 0; border: 0; }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-glyph-row > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 /* Detail sheet: tighter vertical rhythm than the practice detail column — the
    floating window reads as one compact card, so section gaps shrink. */
@@ -2566,7 +2575,7 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
 .practice-reading-line .practice-pills { margin-left: auto; }
 .practice-reading-line .practice-kind { margin-left: 0; font-size: 10px; padding: 4px 10px; }
 .practice-reading-line .word-hsk-id { font-size: 10px; padding: 3px 9px; }
-@media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
+@media (max-width: 580px) { html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
 /* The form switch sits on its own full-width row below the reading block. */
 .practice-header-forms { min-width: 0; max-width: 100%; flex: 1 1 100%; }
 @media (max-width: 850px) {
@@ -2590,10 +2599,10 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
 /* Grid tracks size the tiles now, so the flex era's 150px minimum must not hold them
    (it would overflow phone widths); the column count already keeps the rows balanced. */
 .form-switch .radical-form-list[style] .radical-form-choice { min-width: 0; }
-html .practice-header .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
-.practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
-.practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
-.practice-header .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
+:is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
+:is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
+:is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }
 /* The selected form is marked by one sliding frame (form-switch-thumb.tsx) laid behind the
    transparent tiles, so picking another form glides the border across the tray instead of
    dropping a new one. It wears the identity ink of the form it covers, exactly as the tile
@@ -2601,13 +2610,13 @@ html .practice-header .form-switch .radical-form-choice { position: relative; z-
 .form-switch-thumb { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; border: 1px solid transparent; border-radius: 9px; background: transparent; opacity: 0; }
 .form-switch-thumb.is-visible { opacity: 1; }
 .form-switch-thumb.is-gliding { transition: transform .24s cubic-bezier(.22,.75,.3,1), width .24s cubic-bezier(.22,.75,.3,1), height .24s cubic-bezier(.22,.75,.3,1), border-color .2s, background-color .2s; }
-html .practice-header .form-switch-thumb.is-character { background: color-mix(in oklab, var(--primary) 12%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
-html .practice-header .form-switch-thumb.is-traditional { background: color-mix(in oklab, var(--traditional) 14%, var(--card)); border-color: color-mix(in oklab, var(--traditional) 60%, transparent); }
-html .practice-header .form-switch-thumb.is-radical:not(.is-traditional) { background: color-mix(in oklab, var(--hsk-id) 12%, var(--card)); border-color: color-mix(in oklab, var(--hsk-id) 55%, transparent); }
-html .practice-header .form-switch .radical-form-choice:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-character { background: color-mix(in oklab, var(--primary) 12%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-traditional { background: color-mix(in oklab, var(--traditional) 14%, var(--card)); border-color: color-mix(in oklab, var(--traditional) 60%, transparent); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical:not(.is-traditional) { background: color-mix(in oklab, var(--hsk-id) 12%, var(--card)); border-color: color-mix(in oklab, var(--hsk-id) 55%, transparent); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
 .form-switch-text { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; text-align: left; min-width: 0; }
-html .practice-header .form-switch-text b { font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--foreground); }
-html .practice-header .form-switch-text small { font-size: 13px; line-height: 1.3; color: var(--muted-foreground); text-align: left; }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-text b { font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--foreground); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-text small { font-size: 13px; line-height: 1.3; color: var(--muted-foreground); text-align: left; }
 .form-switch-blank { display: inline-block; width: 34px; height: 34px; border: 1px dashed var(--border); border-radius: 6px; }
 .form-switch .association-notes { margin-top: 10px; }
 
@@ -2724,8 +2733,8 @@ html[data-display-size='comfortable'] .stroke-progress-picture .word-strip-glyph
 html[data-display-size='comfortable'] .practice-title { font-size: 48px; }
 html[data-display-size='comfortable'] .practice-reading-line, html[data-display-size='comfortable'] .practice-reading-line .practice-translation { font-size: 21px; }
 html[data-display-size='comfortable'] .practice-reading-line .pinyin { font-size: 22px; }
-html[data-display-size='comfortable'] .practice-header .form-switch-text b { font-size: 18px; }
-html[data-display-size='comfortable'] .practice-header .form-switch-text small { font-size: 14px; }
+html[data-display-size='comfortable'] :is(.practice-header, .catalog-detail-forms) .form-switch-text b { font-size: 18px; }
+html[data-display-size='comfortable'] :is(.practice-header, .catalog-detail-forms) .form-switch-text small { font-size: 14px; }
 html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 
 /* Character/word Practice is one centred column: the breakdown opens in the Strokes panel's
@@ -2849,11 +2858,11 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 /* Practice form switch: every unselected form sits in a thin neutral box so the mainland
    form and its variants read as separate choices; the sliding frame marks the chosen one
    with a bolder 2px border in its identity ink, stronger than any hover. */
-html .practice-header .form-switch .radical-form-choice:not(.is-selected) { border-color: var(--border); }
-html .practice-header .form-switch-thumb { border-width: 2px; }
-html .practice-header .form-switch-thumb.is-character { border-color: var(--primary); }
-html .practice-header .form-switch-thumb.is-traditional { border-color: var(--traditional); }
-html .practice-header .form-switch-thumb.is-radical:not(.is-traditional) { border-color: var(--hsk-id); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-selected) { border-color: var(--border); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb { border-width: 2px; }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-character { border-color: var(--primary); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-traditional { border-color: var(--traditional); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical:not(.is-traditional) { border-color: var(--hsk-id); }
 
 /* Forms that are both a Kangxi radical and Traditional get their own merged identity instead of
    letting purple win: ink and borders in --trad-radical (radical gold mixed with Traditional
@@ -2937,7 +2946,7 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
     background-clip: text, padding-box;
   }
 }
-html .practice-header .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
 
 /* "→ 乾" after a meaning sense owned by a related character: an accent link, no underline;
    the hanzi keeps Traditional purple when its record is Traditional. */

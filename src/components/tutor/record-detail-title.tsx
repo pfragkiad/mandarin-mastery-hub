@@ -7,7 +7,12 @@ import { SourceInfo } from './source-info';
  *  meaning below. Stacking keeps a long phrase from squeezing the translation
  *  into a one-letter-wide column, and the glyph scales down to fit the panel so
  *  a full sentence still reads on one line. */
-export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, pill, source }: {
+export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, formSwitch, glyphClassName = '', pill, source }: {
+  /** Practice-style form switch (RadicalForms layout="switch") shown on its own row below the
+   *  meaning, while the single hanzi above shows the selected form. Radical detail cards use it. */
+  formSwitch?: ReactNode;
+  /** Identity ink for the single hanzi (e.g. card-ink-radical for a radical form's gold). */
+  glyphClassName?: string;
   /** Record source note (e.g. "Unicode Unihan 17.0.0 readings and meanings."), shown behind an ⓘ
    *  right beside the main glyph (or the form tiles), replacing the old bottom "… REFERENCE" label. */
   source?: ReactNode;
@@ -43,10 +48,12 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
       </div>
       {/* Glyph row: the main hanzi (or form tiles) with the record's source ⓘ beside it. */}
       <div className="catalog-detail-glyph-row">
-        {forms ?? <strong lang="zh-CN" className={traditional ? 'traditional-character' : ''}>{hanzi}</strong>}
+        {forms ?? <strong lang="zh-CN" className={[traditional ? 'traditional-character' : '', glyphClassName].filter(Boolean).join(' ') || undefined}>{hanzi}</strong>}
         {source && <SourceInfo inline className="detail-footnote">{source}</SourceInfo>}
       </div>
       {meaningContent ?? <h2><MeaningText text={meaning || meaningFallback}/></h2>}
     </div>
+    {/* Kept outside the head so the head's large-glyph sizing never reaches the switch tiles. */}
+    {formSwitch && <div className="catalog-detail-forms">{formSwitch}</div>}
    </div>;
 }
