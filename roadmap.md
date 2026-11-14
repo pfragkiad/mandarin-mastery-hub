@@ -7,3 +7,5 @@
 - [ ] Other Unicode radical symbols: listed for owner review — waiting on approvals
 - [x] ⺴ hint: formatted note instead of a plain browser tooltip
 - [x] Pinyin games: one-line play bar while playing, new results (tick missed, Practise missed, New round + missed, Change settings), existing speaker styling
+- [x] Hanzi games (Flashcards, Drawing): same slim play bar + results as Pinyin games
+- [x] Drawing game results: Passed / Needed hints pills, per-row bookmark, 'New round' in bar, 'drawn correctly'

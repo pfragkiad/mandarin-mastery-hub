@@ -9,13 +9,22 @@ export type FlashCard = { id: string; hanzi: string; pinyin: string; meaning: st
 /**
  * Everything a running flashcard round needs to continue exactly where it was:
  * the dealt deck, position, whether the current card is turned over, missed cards,
- * round counters and the round options (front side, deck size, pinyin, repeat).
+ * round counters, early end, unticked missed cards, the play-bar summary and the round
+ * options (front side, deck size, pinyin, repeat).
  */
 export type FlashcardSession = {
   direction: 'zh' | 'en'; showFrontPinyin: boolean; deckSize: number | 'all'; repeat: boolean;
   deck: FlashCard[] | null; index: number; flipped: boolean; missed: FlashCard[]; round: number; total: number;
+  /** Ended early with End (results show the cards answered so far). */
+  ended: boolean;
+  /** Missed card ids the learner unticked on the results, left out of the next round. */
+  skipped: string[];
+  /** The play bar's one-line summary of the settings this round was dealt with. */
+  label: string;
+  /** This round replays missed cards only (Restart replays the same cards). */
+  isReview: boolean;
 };
-const empty: FlashcardSession = { direction: 'zh', showFrontPinyin: false, deckSize: 10, repeat: false, deck: null, index: 0, flipped: false, missed: [], round: 1, total: 0 };
+const empty: FlashcardSession = { direction: 'zh', showFrontPinyin: false, deckSize: 10, repeat: false, deck: null, index: 0, flipped: false, missed: [], round: 1, total: 0, ended: false, skipped: [], label: '', isReview: false };
 const Context = createContext<[FlashcardSession, Dispatch<SetStateAction<FlashcardSession>>] | null>(null);
 
 /** Root-owned, session-only round: opening a card's details and coming Back resumes

@@ -2990,45 +2990,68 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .stand-in-hint .hint-rows { margin: 0; padding: 0; list-style: none; }
 .stand-in-hint-source { font-size: 10px; color: var(--muted-foreground); }
 
-/* Pinyin games while playing (pinyin-drills.tsx): one card holding a one-line settings bar
-   (round summary chip, Restart, End / inline "End now?") above the question. The full setup
-   only reopens below the bar when the chip is clicked. */
-.pinyin-play { max-width: 820px; padding: 18px 22px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 18px; }
-.pinyin-play .game-setup { margin: 0; max-width: none; background: var(--background); }
-.pinyin-play .pinyin-drill { max-width: none; }
-.pinyin-play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
-.pinyin-play-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--muted-foreground); font-size: 13px; cursor: pointer; text-align: left; transition: border-color .15s, color .15s; }
-.pinyin-play-chip svg { width: 15px; height: 15px; flex: none; }
-.pinyin-play-chip:hover, .pinyin-play-chip:focus-visible, .pinyin-play-chip[aria-expanded='true'] { border-color: var(--primary); color: var(--foreground); outline: none; }
-.pinyin-play-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
-.pinyin-play-confirm { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-left: 10px; border-left: 1px solid var(--border); font-size: 13px; }
-.pinyin-play-end-yes.pinyin-play-end-yes { color: var(--destructive); border-color: color-mix(in oklab, var(--destructive) 55%, transparent); }
-.pinyin-play-end-yes.pinyin-play-end-yes:hover, .pinyin-play-end-yes.pinyin-play-end-yes:focus-visible { border-color: var(--destructive); color: var(--destructive); background: color-mix(in oklab, var(--destructive) 10%, transparent); }
+/* Every game while playing (game-round.tsx GamePlayBar): one card holding a one-line settings
+   bar (round summary chip, Restart, End / inline "End now?") above the question or card. The
+   full setup only reopens below the bar when the chip is clicked. */
+.game-play { max-width: 820px; padding: 18px 22px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 18px; }
+.game-play .game-setup { margin: 0; max-width: none; background: var(--background); }
+.game-play :is(.pinyin-drill, .flash-stage) { max-width: none; margin: 0; }
+.game-play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.game-play-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; max-width: 100%; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--muted-foreground); font-size: 13px; cursor: pointer; text-align: left; transition: border-color .15s, color .15s; }
+.game-play-chip svg { width: 15px; height: 15px; flex: none; }
+.game-play-chip:hover, .game-play-chip:focus-visible, .game-play-chip[aria-expanded='true'] { border-color: var(--primary); color: var(--foreground); outline: none; }
+.game-play-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
+.game-play-confirm { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-left: 10px; border-left: 1px solid var(--border); font-size: 13px; }
+.game-play-end-yes.game-play-end-yes { color: var(--destructive); border-color: color-mix(in oklab, var(--destructive) 55%, transparent); }
+.game-play-end-yes.game-play-end-yes:hover, .game-play-end-yes.game-play-end-yes:focus-visible { border-color: var(--destructive); color: var(--destructive); background: color-mix(in oklab, var(--destructive) 10%, transparent); }
+.game-play-keys { font-size: 11px; color: var(--muted-foreground); text-align: center; }
 
-/* Pinyin game results: left-aligned card with the score, then each missed sound as a row
-   (tick, speaker, right reading, what was chosen, the correct answer), then the next-round actions. */
-.pinyin-results { max-width: 820px; padding: 24px 26px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 6px; }
-.pinyin-results-eyebrow { font-size: 12px; letter-spacing: .6px; color: var(--muted-foreground); }
-.pinyin-results-score { display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--muted-foreground); }
-.pinyin-results-score strong { font-family: var(--font-display); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--foreground); }
-.pinyin-results-sub { font-size: 13px; color: var(--muted-foreground); }
-.pinyin-results-perfect { margin-top: 12px; font-size: 14px; }
-.pinyin-results-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; margin-top: 18px; font-size: 14px; }
-.pinyin-results-head small { font-size: 12px; color: var(--muted-foreground); }
-.pinyin-missed { margin: 4px 0 0; padding: 0; list-style: none; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.pinyin-missed li { display: grid; grid-template-columns: auto minmax(96px, auto) minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 10px 16px; }
-.pinyin-missed li + li { border-top: 1px solid var(--border); }
-.pinyin-missed li.is-skipped > :not(button[role='checkbox']) { opacity: .45; }
-.pinyin-missed .pinyin { font-size: 20px; font-weight: 400; color: var(--terracotta); }
-.pinyin-missed .example-listen.is-playing { color: var(--terracotta); }
-.pinyin-missed-choice { font-size: 14px; color: var(--foreground); min-width: 0; }
-.pinyin-missed-correct { font-size: 13px; color: var(--grade-high); text-align: right; }
-.pinyin-results-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
-.pinyin-results-note { font-size: 12px; color: var(--muted-foreground); margin-top: 4px; }
+/* Every game's results (game-round.tsx GameResults): left-aligned card with the score, then the
+   missed list (one row per record, columns shared through subgrid so cells line up across rows),
+   then the next-round actions. Sounds: tick, reading+speaker, what was chosen, the right answer.
+   Cards: tick, hanzi (link to its exact record), reading+speaker, meaning. */
+.game-results { max-width: 820px; padding: 24px 26px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 6px; }
+.game-results-eyebrow { font-size: 12px; letter-spacing: .6px; color: var(--muted-foreground); }
+.game-results-score { display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--muted-foreground); }
+.game-results-score strong { font-family: var(--font-display); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--foreground); }
+.game-results-sub { font-size: 13px; color: var(--muted-foreground); }
+.game-results-perfect { margin-top: 12px; font-size: 14px; }
+.game-results-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; margin-top: 18px; font-size: 14px; }
+.game-results-head small { font-size: 12px; color: var(--muted-foreground); }
+.game-missed { display: grid; margin: 4px 0 0; padding: 0; list-style: none; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.game-missed.is-sounds { grid-template-columns: auto minmax(96px, auto) minmax(0, 1fr) auto; }
+.game-missed.is-cards { grid-template-columns: auto auto minmax(110px, auto) minmax(0, 1fr) auto; }
+.game-missed.is-drawn { grid-template-columns: auto auto minmax(90px, auto) minmax(0, 1fr) auto auto; }
+.game-missed-reason { justify-self: end; padding: 2px 10px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.game-missed-reason.is-passed { color: var(--grade-low); background: color-mix(in oklab, var(--grade-low) 16%, transparent); }
+.game-missed-reason.is-guided { color: var(--grade-good); background: color-mix(in oklab, var(--grade-good) 16%, transparent); }
+.game-missed .tile-bookmark { justify-self: end; }
+.game-missed li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; column-gap: 16px; padding: 10px 16px; }
+.game-missed li + li { border-top: 1px solid var(--border); }
+.game-missed li.is-skipped > :not(button[role='checkbox']) { opacity: .45; }
+.game-missed .pinyin { font-size: 18px; font-weight: 400; color: var(--terracotta); }
+.game-missed .example-listen.is-playing { color: var(--terracotta); }
+.game-missed-note { font-size: 14px; color: var(--foreground); min-width: 0; }
+.game-missed-correct { font-size: 13px; color: var(--grade-high); text-align: right; }
+.game-missed-hanzi { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 2px 8px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 24px; line-height: 1.2; color: var(--foreground); text-decoration: none; transition: border-color .2s, color .2s; }
+.game-missed-hanzi.traditional-character { color: var(--traditional); }
+.game-missed-hanzi:hover, .game-missed-hanzi:focus-visible { border-color: var(--primary); outline: none; }
+.game-missed-hanzi small { margin-left: 6px; font-family: var(--font-sans, inherit); font-size: 11px; color: var(--muted-foreground); }
+.game-results-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+.game-results-note { font-size: 12px; color: var(--muted-foreground); margin-top: 4px; }
+.game-results-saved { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; font-size: 12px; color: var(--muted-foreground); }
 .pinyin-drill > .flash-meta, .pinyin-drill > .flash-progress { width: 100%; }
 @media (max-width: 580px) {
-  .pinyin-play, .pinyin-results { padding: 16px; }
-  .pinyin-play-actions { margin-left: 0; }
-  .pinyin-missed li { grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; padding: 10px 12px; }
-  .pinyin-missed-choice, .pinyin-missed-correct { grid-column: 2; text-align: left; }
+  .game-play, .game-results { padding: 16px; }
+  /* Keyboard hints mean nothing on a phone. */
+  .game-play-keys, .pinyin-drill-keys { display: none; }
+  .game-play-actions { margin-left: 0; }
+  .game-missed.is-sounds { grid-template-columns: auto minmax(0, 1fr); }
+  .game-missed:is(.is-cards, .is-drawn) { grid-template-columns: auto auto minmax(0, 1fr) auto; }
+  .game-missed:is(.is-cards, .is-drawn) .game-missed-reading { grid-column: 3; }
+  .game-missed:is(.is-cards, .is-drawn) .tile-bookmark { grid-column: 4; grid-row: 1; }
+  .game-missed.is-drawn .game-missed-reason { grid-column: 3; justify-self: start; }
+  .game-missed li { row-gap: 2px; column-gap: 12px; padding: 10px 12px; }
+  .game-missed.is-sounds :is(.game-missed-note, .game-missed-correct) { grid-column: 2; text-align: left; }
+  .game-missed:is(.is-cards, .is-drawn) .game-missed-note { grid-column: 3; }
 }

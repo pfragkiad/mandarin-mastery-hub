@@ -24,11 +24,11 @@ export function reviewRound<T extends PinyinSound>(missed: readonly T[], random 
 }
 
 /**
- * "New round + missed": every kept missed sound once, topped up with distinct random
- * sounds from the pool (never repeating a missed one) up to the round size, then shuffled.
+ * "New round + missed" (every game): every kept missed record once, topped up with distinct random
+ * records from the pool (never repeating a missed one) up to the round size, then shuffled.
  * When more sounds are kept than the round holds, all of them are dealt, like a review round.
  */
-export function mixedRound<T extends PinyinSound>(pool: readonly T[], size: RoundSize, missed: readonly T[], random = Math.random): T[] {
+export function mixedRound<T extends { id: string }>(pool: readonly T[], size: number, missed: readonly T[], random = Math.random): T[] {
   const kept = [...new Map(missed.map(s => [s.id, s])).values()];
   const ids = new Set(kept.map(s => s.id));
   const fill = shuffle(pool.filter(s => !ids.has(s.id)), random).slice(0, Math.max(0, size - kept.length));

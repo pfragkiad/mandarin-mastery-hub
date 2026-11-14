@@ -19,6 +19,8 @@ const entries = vi.hoisted(() => [] as LibraryEntry[]);
 vi.mock('@/lib/character-library', async importOriginal => ({ ...(await importOriginal<object>()), libraryEntries: () => entries }));
 
 const search = { kind: 'Characters' as const };
+/** While a round runs the setup is folded into the play bar's settings chip. */
+const openSettings = () => fireEvent.click(screen.getByTitle('Change settings for the next round'));
 const onSearch = vi.fn();
 it.each([false, true])('restores the same card after Practice (already passed: %s)', async passed => {
   const view = render(<DrawingSessionProvider><DrawingGamePage search={search} onSearch={onSearch}/></DrawingSessionProvider>);
@@ -56,10 +58,10 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   expect(['你', '好']).toContain(target);
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
-  fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
+  fireEvent.click(screen.getByRole('button', { name: /^Save / }));
   expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
   expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
-  fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Review these (1)' }));
   await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(2));
   expect(fake.create.mock.calls[1]?.[1]).toBe(target);
 });
@@ -103,12 +105,13 @@ it('a review round replays every missed card', async () => {
     fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
-  expect(screen.getByText('0 correct · 5 to review')).toBeTruthy();
-  fireEvent.click(screen.getByRole('button', { name: 'Review cards' }));
+  expect(screen.getByText(/5 of 5 played · 5 passed/)).toBeTruthy();
+  expect(screen.getAllByText('Passed')).toHaveLength(5);
+  fireEvent.click(screen.getByRole('button', { name: 'Review these (5)' }));
   expect(await screen.findByText('Card 1 of 5')).toBeTruthy();
 });
 
-it('offers to bookmark unknown cards after a round, saving only unsaved ids', async () => {
+it('offers a bookmark on every card to review, saving its exact id', async () => {
   const { rerender } = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.change(await screen.findByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
   fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
@@ -118,18 +121,18 @@ it('offers to bookmark unknown cards after a round, saving only unsaved ids', as
     fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
-  fireEvent.click(screen.getByRole('button', { name: 'Save 5 unknown cards' }));
+  screen.getAllByRole('button', { name: /^Save / }).forEach(button => fireEvent.click(button));
   expect(state.toggleSaved).toHaveBeenCalledTimes(5);
   expect(new Set(state.saved).size).toBe(5);
   rerender(<DrawingGamePage search={search} onSearch={onSearch}/>);
-  expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeTruthy();
-  expect(screen.getByText('Bookmarked in Saved for this session.')).toBeTruthy();
+  expect(screen.getAllByRole('button', { name: /^Unsave / })).toHaveLength(5);
 });
 
 it('keeps the active round while filters auto-apply and clears explicitly', async () => {
   const view = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
   await screen.findByText('Card 1 of 10');
+  openSettings();
   fireEvent.change(screen.getByRole('combobox', { name: 'Drawing category' }), { target: { value: 'Words' } });
   await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
   view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
@@ -144,6 +147,7 @@ it('changing deck size does not discard drawing progress', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
   await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(1));
+  openSettings();
   fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
   expect(fake.create).toHaveBeenCalledTimes(1);
