@@ -82,6 +82,19 @@ describe('Unknown-card bookmarks', () => {
   });
 });
 
+describe('Saved deck', () => {
+  it('deals only the category\'s bookmarked cards when Saved is selected', async () => {
+    bookmarks.saved = ['hello'];
+    render(<FlashcardsPage />);
+    // All vocabulary holds 12 mocked words; only 你好 is bookmarked.
+    fireEvent.click(screen.getByRole('button', { name: /^Saved/ }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
+    expect(screen.getByRole('button', { name: /Saved · All vocabulary · Chinese → English · 1 card/ })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+    expect(screen.getByText('hello', { selector: '[aria-hidden="false"] .meaning' })).toBeInTheDocument();
+  });
+});
+
 describe('Card details and Back', () => {
   it('offers Details only on the answer side and Back resumes the same turned-over card', async () => {
     // The provider stays mounted (as at the app root) while the page leaves and returns.
