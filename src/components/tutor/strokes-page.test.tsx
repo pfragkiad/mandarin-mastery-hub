@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
-import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
+import { hydrateCatalog, type CatalogData } from '@/lib/catalog-store';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
 import * as catalogStore from '@/lib/catalog-store';
 
@@ -46,7 +46,7 @@ vi.mock('./character-enrichment', async importOriginal => ({
   useCharacterEnrichment: () => enrichment,
 }));
 
-const catalogData: CatalogFile = {
+const catalogData: CatalogData = {
   version: 1, source: 'test',
   characters: [['学', 'xué', 'learn', '8 strokes · 子 radical'], ['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · 乙 radical']],
   radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']],

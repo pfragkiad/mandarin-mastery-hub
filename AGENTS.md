@@ -10,6 +10,9 @@
 <!-- LOVABLE:END -->
 
 ## Application architecture
+- Glyph catalogue storage and importer handoff are documented beside the data in [public/data/catalog.md](public/data/catalog.md): section rows live in characters.json, components.json, radicals.json and strokes.json; catalog.json retains shared metadata. Keep the unified browser catalogue and exact record identities.
+- Importer-only source files belong under importer/data (see importer/README.md); standalone reports belong under reports. Preserve source bytes/checksums and shared runtime data URLs when reorganizing inputs.
+- Keep a usage README.md in every active data directory and maintain its file purposes, consumers, generators and relative links when files move. The main README links the data guides; keep the catalogue guide beside catalog.json rather than at the repository root.
 - Comment new components' purpose, inputs/state and tricky logic.
 - Share contextual shortcut help and the library paging hook so modal/editing keys stay independent.
 - TanStack leaf routes with shared root navigation/state; selections, applied filters, tabs, pages and Practice focus live in URL search (push selections and filter submissions) so history restores exactly.

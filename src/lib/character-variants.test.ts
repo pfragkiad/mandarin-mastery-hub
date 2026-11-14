@@ -1,3 +1,4 @@
+import { readCatalog } from '@/test/catalog-fixture';
 import { readFileSync } from 'node:fs';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { characterVariants, hydrateCharacterVariants, relatedGroup, scriptGroup, scriptHead, type CharacterVariantFile } from './character-variants';
@@ -39,8 +40,8 @@ describe('one speaker per recorded reading', () => {
     expect(isMultiReading('le')).toBe(false);
   });
   it('了 records le and liǎo, with liǎo bound to its own recording', () => {
-    const catalog = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
-    expect(catalog.characters.find((row: string[]) => row[0] === '了')[1]).toBe('le / liǎo');
-    expect(catalog.readingAudio['了']['liǎo']).toBe('cmn-syl-liao3');
+    const catalog = readCatalog();
+    expect(catalog.characters.find(row => row[0] === '了')?.[1]).toBe('le / liǎo');
+    expect(catalog.readingAudio['了']?.['liǎo']).toBe('cmn-syl-liao3');
   });
 });

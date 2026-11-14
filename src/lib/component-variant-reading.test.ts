@@ -1,3 +1,4 @@
+import { readCatalog } from '@/test/catalog-fixture';
 import { expect, it } from 'vitest';
 import fs from 'fs';
 import { hydrateCatalog } from './catalog-store';
@@ -5,7 +6,7 @@ import { radicalVariantFallback, radicalVariantMeaning } from './character-libra
 
 it('component variants without a name borrow their Kangxi radical reading (扌 → 手, 亻 → 人)', () => {
   const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
   expect(radicalVariantFallback('扌', '')).toMatchObject({ headingGlyph: '手', pinyin: 'shǒu', spoken: '手' });
   expect(radicalVariantFallback('亻', '')).toMatchObject({ headingGlyph: '人', pinyin: 'rén' });
   expect(radicalVariantFallback('土', 'tǔ')).toBeNull();
@@ -13,7 +14,7 @@ it('component variants without a name borrow their Kangxi radical reading (扌 �
 
 it('traditional variant 訁 inherits the family 149 meaning for its practice translation', () => {
   const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
   const fallback = radicalVariantFallback('訁', '', 149);
   expect(fallback).toMatchObject({ headingGlyph: '言', pinyin: 'yán' });
   expect(fallback?.meaning).toBe('words, speech; speak, say');
@@ -21,7 +22,7 @@ it('traditional variant 訁 inherits the family 149 meaning for its practice tra
 
 it('variant with a recorded reading but only a Kangxi placeholder meaning inherits the family translation', () => {
   const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
   // 訁 has its own reading yán, so radicalVariantFallback stays null; the meaning still follows the family.
   expect(radicalVariantFallback('訁', 'yán', 149)).toBeNull();
   expect(radicalVariantMeaning('訁', 'Kangxi radical 149', 149)).toBe('words, speech; speak, say; component form of 言');
@@ -33,7 +34,7 @@ it('variant with a recorded reading but only a Kangxi placeholder meaning inheri
 // from the supplied etymology audit, while the independent character 王 keeps wáng / king.
 it('selected #96 variant 王 presents the jade identity, never wáng or king', async () => {
   const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
   const { libraryEntries, radicalVariantEntry } = await import('./character-library');
   const { radicalForm } = await import('./radical-strokes');
   const fallback = radicalVariantFallback('王', 'wáng', 96, '96-1');
@@ -48,7 +49,7 @@ it('selected #96 variant 王 presents the jade identity, never wáng or king', a
 
 it('王 outside the exact #96 variant selection keeps its own character identity', async () => {
   const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
   const { libraryEntries } = await import('./character-library');
   // No form key (plain Practice of 王, breakdown parts, Components card) → no contextual identity.
   expect(radicalVariantFallback('王', 'wáng', 96)).toBeNull();

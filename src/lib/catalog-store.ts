@@ -1,8 +1,6 @@
-// Imported reference catalogue (characters, radicals, components, strokes, decompositions,
-// character-reading audio). Fetched once in the browser from /data/catalog.json and
-// /data/strokes.json so reference data never sits in the page bundle.
-// Rows are mutated in place so existing
-// synchronous readers see the data after the workspace bumps its catalogue version.
+// Unified reference catalogue, assembled lazily from the shared catalog.json and
+// separate glyph row files (see public/data/catalog.md). Reference data stays out of page bundles.
+// Rows are mutated in place so synchronous readers retain their array references.
 import type { CharacterScript } from './learning-preferences';
 import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest } from './audio';
 import type { DecompositionNode } from './character-library';
@@ -12,10 +10,13 @@ import { hydrateUsageOrder, type UsageOrderFile } from './usage-frequency';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
+export type CharacterFile = { characters: CatalogRow[] };
+export type RadicalFile = { radicals: CatalogRow[] };
+export type ComponentFile = { components: CatalogRow[] };
 export type StrokeFile = { strokes: CatalogRow[] };
+/** Shared on-disk metadata; glyph rows live in their respective section files. */
 export type CatalogFile = {
   version: number; source: string;
-  characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[];
   trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
   /** Unihan kRSUnicode radical for components that are not themselves a radical form. */
   componentRadicals?: Record<string, string>;
@@ -24,6 +25,8 @@ export type CatalogFile = {
   /** Reviewed links from one meaning sense to the related character that owns it (meaning-pointers.ts). */
   meaningPointers?: Record<string, import('./meaning-pointers').MeaningPointerRecord>;
 };
+/** Logical catalogue passed to hydration after joining metadata with the three row files. */
+export type CatalogData = CatalogFile & CharacterFile & RadicalFile & ComponentFile;
 
 /** One owner-reviewed split of a character's combined dictionary meaning by reading.
  *  `combined` is the catalogue meaning the split was reviewed against. */
@@ -39,7 +42,7 @@ export const catalog = {
   radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
 
-export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile, strokeCatalog?: StrokeFile) {
+export function hydrateCatalog(data: CatalogData, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile, strokeCatalog?: StrokeFile) {
   // Preserve array identities held by synchronous readers; the version increment
   // tells workspace consumers to recompute after all sidecars are installed.
   for (const key of ['characters', 'radicals', 'components'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
@@ -76,12 +79,19 @@ export function loadCatalog(): Promise<void> {
   if (catalog.loaded || typeof window === 'undefined') return Promise.resolve();
   pending ??= Promise.all([
     fetch('/data/catalog.json').then(r => { if (!r.ok) throw new Error(`catalog ${r.status}`); return r.json() as Promise<CatalogFile>; }),
+    fetch('/data/characters.json').then(r => { if (!r.ok) throw new Error(`characters ${r.status}`); return r.json() as Promise<CharacterFile>; }),
+    fetch('/data/radicals.json').then(r => { if (!r.ok) throw new Error(`radicals ${r.status}`); return r.json() as Promise<RadicalFile>; }),
+    fetch('/data/components.json').then(r => { if (!r.ok) throw new Error(`components ${r.status}`); return r.json() as Promise<ComponentFile>; }),
     fetch('/data/radical-identities.json').then(r => { if (!r.ok) throw new Error(`radical identities ${r.status}`); return r.json() as Promise<RadicalIdentityFile>; }),
     fetch('/data/radical-strokes.json').then(r => { if (!r.ok) throw new Error(`radical strokes ${r.status}`); return r.json() as Promise<RadicalStrokeFile>; }),
     fetch('/data/usage-order.json').then(r => { if (!r.ok) throw new Error(`usage order ${r.status}`); return r.json() as Promise<UsageOrderFile>; }),
     fetch('/data/character-variants-v1.4.0.json').then(r => { if (!r.ok) throw new Error(`character variants ${r.status}`); return r.json() as Promise<CharacterVariantFile>; }),
     fetch('/data/strokes.json').then(r => { if (!r.ok) throw new Error(`strokes ${r.status}`); return r.json() as Promise<StrokeFile>; }),
-  ]).then(([data, identities, strokes, usage, variants, strokeCatalog]) => { hydrateUsageOrder(usage); hydrateCharacterVariants(variants); hydrateCatalog(data, identities, strokes, strokeCatalog); }).catch(err => { pending = null; throw err; });
+  ]).then(([data, characters, radicals, components, identities, strokes, usage, variants, strokeCatalog]) => {
+    // Commit only after every required file succeeds, so consumers never see a partial catalogue.
+    hydrateUsageOrder(usage); hydrateCharacterVariants(variants);
+    hydrateCatalog({ ...data, characters: characters.characters, radicals: radicals.radicals, components: components.components }, identities, strokes, strokeCatalog);
+  }).catch(err => { pending = null; throw err; });
   return pending;
 }
 

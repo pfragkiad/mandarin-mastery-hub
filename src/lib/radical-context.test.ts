@@ -1,3 +1,4 @@
+import { readCatalog } from '@/test/catalog-fixture';
 // Rules for look-alike radical forms inside a character: the character's declared radical
 // decides; only 阝 has a positional fallback; standalone identities never change.
 import { beforeAll, describe, expect, it } from 'vitest';
@@ -13,7 +14,7 @@ import { glyphParentCharacters } from './glyph-usage';
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
 beforeAll(() => {
   hydrateUsageOrder(read('usage-order.json'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
 });
 const numbers = (glyph: string, position: string, owner?: string) => contextualRadical(glyph, position, owner).radicals.map(radical => radical.number);
 

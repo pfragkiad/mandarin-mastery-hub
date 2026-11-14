@@ -13,7 +13,7 @@ import json, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CATALOG = ROOT / 'public' / 'data' / 'catalog.json'
+CHARACTERS = ROOT / 'public' / 'data' / 'characters.json'
 OUT = ROOT / 'public' / 'data' / 'character-variants.json'
 
 def codepoints(value: str) -> list[str]:
@@ -27,7 +27,7 @@ def main(path: str) -> None:
         glyph = chr(int(parts[0][2:], 16))
         if parts[1] == 'kTraditionalVariant': trad[glyph] = codepoints(parts[2])
         elif parts[1] == 'kSimplifiedVariant': simp[glyph] = codepoints(parts[2])
-    script = {row[0]: (row[4] if len(row) > 4 else None) for row in json.loads(CATALOG.read_text(encoding='utf8'))['characters']}
+    script = {row[0]: (row[4] if len(row) > 4 else None) for row in json.loads(CHARACTERS.read_text(encoding='utf8'))['characters']}
     forward = {s: [t for t in trad.get(s, []) if t != s and script.get(t) == 'Traditional' and s in simp.get(t, [])]
                for s, kind in script.items() if kind == 'Simplified'}
     owners: dict[str, list[str]] = {}

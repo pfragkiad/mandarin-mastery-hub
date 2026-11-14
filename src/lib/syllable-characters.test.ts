@@ -1,3 +1,4 @@
+import { readCatalog } from '@/test/catalog-fixture';
 import { beforeAll, describe, expect, it } from 'vitest';
 import fs from 'fs';
 import { hydrateCatalog } from './catalog-store';
@@ -10,7 +11,7 @@ import { usageRank } from './usage-frequency';
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
 beforeAll(() => {
   hydrateUsageOrder(read('usage-order.json'));
-  hydrateCatalog(read('catalog.json'), read('radical-identities.json'), read('radical-strokes.json'));
+  hydrateCatalog(readCatalog(), read('radical-identities.json'), read('radical-strokes.json'));
 });
 
 describe('Sound chart "In a character"', () => {

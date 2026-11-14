@@ -1,15 +1,16 @@
 // Run with bun scripts/import-radical-strokes.ts. Exact forms only; no outline substitutions.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { cncharStrokeNames } from '../src/lib/stroke-names';
+import type { RadicalFile, StrokeFile } from '../src/lib/catalog-store';
 import type { RadicalFamily, RadicalForm, RadicalStrokeRecord } from '../src/lib/radical-strokes';
 
-const data = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
-const strokeCatalog = JSON.parse(readFileSync('public/data/strokes.json', 'utf8'));
+const { radicals } = JSON.parse(readFileSync('public/data/radicals.json', 'utf8')) as RadicalFile;
+const { strokes } = JSON.parse(readFileSync('public/data/strokes.json', 'utf8')) as StrokeFile;
 const input = JSON.parse(readFileSync('public/data/radical-families-source.json', 'utf8'));
 if (input.schemaVersion !== '2.0.1' || input.radicals.length !== 214) throw new Error('Unexpected radical source version or family count');
-const symbol = (name: string) => strokeCatalog.strokes.find((row: string[]) => row[3]?.split(' · ')[0] === name)?.[0] ?? null;
+const symbol = (name: string) => strokes.find(row => row[3]?.split(' · ')[0] === name)?.[0] ?? null;
 const records: Record<string, RadicalStrokeRecord> = {};
-for (const [glyph, , , note] of data.radicals as string[][]) {
+for (const [glyph, , , note] of radicals) {
   const expected = Number(note?.match(/^(\d+) strokes?/)?.[1]);
   const names = await cncharStrokeNames(glyph);
   records[glyph] = { strokes: names?.length === expected ? names.map(stroke => ({ ...stroke, glyph: symbol(stroke.name) })) : [], status: names?.length === expected ? 'recorded' : names ? 'count-mismatch' : 'unrecorded', source: 'cnchar-order 3.2.6' };
@@ -29,7 +30,7 @@ const CHECKED: Record<string, string[]> = {
 };
 for (const [glyph, codes] of Object.entries(CHECKED)) {
   const current = records[glyph];
-  const row = (data.radicals as string[][]).find(r => r[0] === glyph);
+  const row = radicals.find(r => r[0] === glyph);
   const expected = Number(row?.[3]?.match(/^(\d+) strokes?/)?.[1]);
   if (!current || current.status === 'recorded') continue;
   if (codes.length !== expected) throw new Error(`Checked order for ${glyph} has ${codes.length} strokes, expected ${expected}`);
@@ -62,7 +63,7 @@ for (const family of input.radicals) {
     if (duplicate) { duplicate.aliases = [...new Set([...duplicate.aliases, ...form.unicodeRadicalAliases])]; continue; }
     forms.push({ key: `${family.id}-${index}`, character: form.character, aliases: form.unicodeRadicalAliases, formKind: form.formKind, strokeCount: form.strokeCount, record });
   }
-  const heading = data.radicals.find((row: string[]) => Number(row[3]?.match(/Radical #(\d+)/)?.[1]) === family.id);
+  const heading = radicals.find(row => Number(row[3]?.match(/Radical #(\d+)/)?.[1]) === family.id);
   if (!heading) throw new Error(`Missing Kangxi family ${family.id}`);
   if (!forms.some(form => form.character === heading[0])) forms.unshift({ key: `${family.id}-kangxi`, character: heading[0], aliases: [], formKind: 'kangxi-heading', strokeCount: Number(heading[3]?.match(/^(\d+)/)?.[1]), record: records[heading[0]] });
   families.push({ id: family.id, canonical: family.canonical, kangxiHeading: heading[0], familyPinyin: family.familyPinyin, forms });

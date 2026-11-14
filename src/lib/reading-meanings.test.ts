@@ -1,11 +1,12 @@
+import { readCatalog } from '@/test/catalog-fixture';
 import { beforeAll, describe, expect, it } from 'vitest';
 import fs from 'fs';
-import { catalog, hydrateCatalog, readingMeaning, readingMeanings, type CatalogFile } from './catalog-store';
+import { catalog, hydrateCatalog, readingMeaning, readingMeanings, type CatalogData } from './catalog-store';
 
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
-let data: CatalogFile;
+let data: CatalogData;
 beforeAll(() => {
-  data = read('catalog.json');
+  data = readCatalog();
   hydrateCatalog(data, read('radical-identities.json'), read('radical-strokes.json'));
 });
 

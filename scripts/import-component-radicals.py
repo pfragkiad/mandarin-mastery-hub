@@ -12,6 +12,8 @@ import json, sys
 from pathlib import Path
 
 CATALOG = Path(__file__).resolve().parent.parent / 'public' / 'data' / 'catalog.json'
+RADICALS = CATALOG.with_name('radicals.json')
+COMPONENTS = CATALOG.with_name('components.json')
 
 def main(unihan: str) -> None:
     rs: dict[str, str] = {}
@@ -21,11 +23,11 @@ def main(unihan: str) -> None:
             rs[chr(int(cp[2:], 16))] = value.split()[0]  # first (primary) value only
     catalog = json.loads(CATALOG.read_text(encoding='utf8'))
     radicals = {}
-    for row in catalog['radicals']:
+    for row in json.loads(RADICALS.read_text(encoding='utf8'))['radicals']:
         if 'Radical #' in row[3]:
             radicals[int(row[3].split('Radical #')[1].split()[0])] = row[0]
     out: dict[str, str] = {}
-    for row in catalog['components']:
+    for row in json.loads(COMPONENTS.read_text(encoding='utf8'))['components']:
         value = rs.get(row[0])
         if not value:
             continue

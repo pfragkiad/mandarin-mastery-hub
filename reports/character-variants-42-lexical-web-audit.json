@@ -1,0 +1,2414 @@
+{
+  "schemaVersion": 1,
+  "documentType": "lexical_web_evidence_audit",
+  "reviewDate": "2026-11-09",
+  "sourceFile": "reports/character-variants-42-lexical-notes.json",
+  "sourceSha256": "ded099930371e817d1edd17ae59e3e5a7e0e18134af58f556b87064c2fc65a19",
+  "scope": "Review of the 42 extracted lexical notes, their stated word/phrase examples, and applicable regional or literary qualifications. Direct OpenCC records, dictionary attestations and composed phrases are distinguished. This audit does not certify unconditional character conversions, every English gloss, historical printed editions, or full 2013 mainland-standard classifications.",
+  "summary": {
+    "notesReviewed": 42,
+    "uniqueSimplifiedCharacters": 26,
+    "uniqueExampleInputs": 56,
+    "distinctProposedInputTargetPairs": 58,
+    "supportedNotes": 38,
+    "supportedNotesWithQualification": 4,
+    "notesWithAllExamplesInExactOpenCCPhraseRows": 34,
+    "notesUsingSupplementaryEvidence": 8,
+    "exactInputTargetPairsInSTPhrases": 51,
+    "inputTargetPairsWithSupplementaryEvidence": 7,
+    "unsupportedCoreExamplePairsFound": 0,
+    "sourceChecklistModified": false,
+    "mainland2013PairByPairCertificationPerformed": false,
+    "nativeOpenCCExecutionPerformed": false
+  },
+  "method": [
+    "Verified checklist extraction matches all 42 flagged associationNotes in v1.3.2.",
+    "Downloaded tagged OpenCC ver.1.4.2 dictionary sources from the web and checked exact input/output phrase records.",
+    "Checked supplementary official Taiwan MOE dictionary entries for non-identical spellings, ordinary particle use, hunger alternatives, dirty clothing, grain measure, and classifier use.",
+    "Checked actual literary transcriptions containing 衹要. A transcription attestation does not prove every original print edition uses this glyph.",
+    "Recorded the source SHA-256, OpenCC file SHA-256 values, and exact tagged source line numbers. No native OpenCC converter was run; composition is reported as composition."
+  ],
+  "statusDefinitions": {
+    "supported": "Core example uses supported by explicit source records or identified supplementary evidence.",
+    "supported_with_qualification": "Core uses supported, with a recommended clarification about optional spelling, regional output, literary usage, or source scope."
+  },
+  "sources": {
+    "opencc:STPhrases.txt": {
+      "title": "OpenCC 1.4.2 STPhrases.txt",
+      "kind": "versioned_conversion_dictionary",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt",
+      "rawUrl": "https://raw.githubusercontent.com/BYVoid/OpenCC/ver.1.4.2/data/dictionary/STPhrases.txt",
+      "sha256": "f6eab5e5c6dd7640597878d3dfc6599ee1279d2bc91561eadd8e114194e2925a"
+    },
+    "opencc:STCharacters.txt": {
+      "title": "OpenCC 1.4.2 STCharacters.txt",
+      "kind": "versioned_conversion_dictionary",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STCharacters.txt",
+      "rawUrl": "https://raw.githubusercontent.com/BYVoid/OpenCC/ver.1.4.2/data/dictionary/STCharacters.txt",
+      "sha256": "a0ca1601c70648cf48b33c3c6210ccbecc5c7eead4b4c3daf76587ba2c03582b"
+    },
+    "opencc:TWVariants.txt": {
+      "title": "OpenCC 1.4.2 TWVariants.txt",
+      "kind": "versioned_conversion_dictionary",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/TWVariants.txt",
+      "rawUrl": "https://raw.githubusercontent.com/BYVoid/OpenCC/ver.1.4.2/data/dictionary/TWVariants.txt",
+      "sha256": "e187278e119c427ca561180ac5da5b20e9f8681190458f35c327ce499e95a6a5"
+    },
+    "opencc:HKVariants.txt": {
+      "title": "OpenCC 1.4.2 HKVariants.txt",
+      "kind": "versioned_conversion_dictionary",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/HKVariants.txt",
+      "rawUrl": "https://raw.githubusercontent.com/BYVoid/OpenCC/ver.1.4.2/data/dictionary/HKVariants.txt",
+      "sha256": "e5cd4345303224587102f2c9e4d2b67d2b7e349c6ce9152e4a118f4656cf7302"
+    },
+    "opencc:s2t.json": {
+      "title": "OpenCC 1.4.2 s2t.json",
+      "kind": "versioned_conversion_configuration",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/config/s2t.json",
+      "sha256": "a188392af5ca23e1d602c5a93651f1d852fccdaa24c2b29abed7a0c8ac359048"
+    },
+    "opencc:s2tw.json": {
+      "title": "OpenCC 1.4.2 s2tw.json",
+      "kind": "versioned_conversion_configuration",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/config/s2tw.json",
+      "sha256": "5830ee3440ba3dc6bf1e197205b4248e2d860b8a3680475db4419b0dbf96ac39"
+    },
+    "opencc:s2hk.json": {
+      "title": "OpenCC 1.4.2 s2hk.json",
+      "kind": "versioned_conversion_configuration",
+      "version": "ver.1.4.2",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/config/s2hk.json",
+      "sha256": "b3a4b6c7f5fdd61c4f7e6eaa292d9a0e29eece584c35fe04fc124b1d9796051b"
+    },
+    "moe:liaojie": {
+      "title": "Taiwan MOE 了解",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63145",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Lists 了解 and explicitly accepts 瞭解 as an alternative spelling."
+    },
+    "moe:le": {
+      "title": "Taiwan MOE 了",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3550&la=1&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Defines the completed-action particle le and illustrates it in 吃了再走."
+    },
+    "moe:miantiao": {
+      "title": "Taiwan MOE 麵條",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4700&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Headword 麵條 denotes noodles made from flour."
+    },
+    "moe:penzi": {
+      "title": "Taiwan MOE 盆子",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=23973&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "The dictionary example explicitly contains 髒衣服."
+    },
+    "moe:zang": {
+      "title": "Taiwan MOE 髒",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9585&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Defines the dirty sense, including dirty clothing."
+    },
+    "moe:yidoumi": {
+      "title": "Taiwan MOE 一斗米養個恩人，一石米養個仇人",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=149042&q=1&word=%E6%81%A9",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "The headword and cited proverb contain exact 一斗米 with the grain-measure character 斗."
+    },
+    "moe:zhi": {
+      "title": "Taiwan MOE 隻",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=28976&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Defines 隻 as an animal classifier; examples include a chicken and rabbits. This supports composition, not an exact 一隻貓 phrase-table claim."
+    },
+    "moe:jin": {
+      "title": "Taiwan MOE 儘管",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=94551",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Documents both unrestricted go-ahead and concessive even-though senses of 儘管."
+    },
+    "moe:jie": {
+      "title": "Taiwan MOE 飢餓",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87218&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Headword 飢餓 means being very hungry."
+    },
+    "moe:ji": {
+      "title": "Taiwan MOE 饑",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21266&la=0&powerMode=0",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Documents famine and hunger senses, explicitly illustrating 饑荒 and 饑餓."
+    },
+    "moe:shi": {
+      "title": "Taiwan MOE 什麼",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34679&q=1",
+      "kind": "official_dictionary",
+      "region": "Taiwan",
+      "finding": "Uses 什麼 as a headword with particle me."
+    },
+    "moe:zhi-variant": {
+      "title": "Taiwan MOE 衹",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=70596",
+      "kind": "official_character_dictionary",
+      "region": "Taiwan",
+      "finding": "Documents an adverbial use of 衹 and historical evidence; it has additional senses/readings and should not inherit all lexical properties of 只."
+    },
+    "gutenberg:lengyanguan": {
+      "title": "Project Gutenberg 冷眼觀, chapter 24",
+      "url": "https://www.gutenberg.org/cache/epub/24029/pg24029-images.html",
+      "kind": "literary_text_transcription",
+      "region": "historical/literary",
+      "finding": "Chapter 24 contains exact 衹要 in the clause beginning 第三句煞尾. Attestation of this transcription does not certify an original printed-edition glyph."
+    },
+    "wikisource:liming": {
+      "title": "Li Dazhao, 祝黎明會 (1919), Wikisource transcription",
+      "url": "https://zh.wikisource.org/w/index.php?title=%E7%A5%9D%E9%BB%8E%E6%98%8E%E6%9C%83&oldid=1401479",
+      "kind": "literary_text_transcription",
+      "region": "historical/literary",
+      "finding": "The transcription contains 衹要有了光輝. Evidence of literary usage, not a present-day default conversion policy."
+    }
+  },
+  "openCCRecords": {
+    "STPhrases.txt:皇后": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 35705,
+      "key": "皇后",
+      "values": [
+        "皇后"
+      ],
+      "text": "皇后\t皇后",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L35705"
+    },
+    "STPhrases.txt:以后": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 3630,
+      "key": "以后",
+      "values": [
+        "以後"
+      ],
+      "text": "以后\t以後",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L3630"
+    },
+    "STPhrases.txt:人云亦云": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 3349,
+      "key": "人云亦云",
+      "values": [
+        "人云亦云"
+      ],
+      "text": "人云亦云\t人云亦云",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L3349"
+    },
+    "STPhrases.txt:白云": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 35470,
+      "key": "白云",
+      "values": [
+        "白雲"
+      ],
+      "text": "白云\t白雲",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L35470"
+    },
+    "STPhrases.txt:丑年": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 1456,
+      "key": "丑年",
+      "values": [
+        "丑年"
+      ],
+      "text": "丑年\t丑年",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L1456"
+    },
+    "STPhrases.txt:丑陋": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 1494,
+      "key": "丑陋",
+      "values": [
+        "醜陋"
+      ],
+      "text": "丑陋\t醜陋",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L1494"
+    },
+    "STPhrases.txt:干涉": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 20621,
+      "key": "干涉",
+      "values": [
+        "干涉"
+      ],
+      "text": "干涉\t干涉",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L20621"
+    },
+    "STPhrases.txt:干净": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 20420,
+      "key": "干净",
+      "values": [
+        "乾淨"
+      ],
+      "text": "干净\t乾淨",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L20420"
+    },
+    "STPhrases.txt:干部": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 20766,
+      "key": "干部",
+      "values": [
+        "幹部"
+      ],
+      "text": "干部\t幹部",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L20766"
+    },
+    "STPhrases.txt:发展": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 11031,
+      "key": "发展",
+      "values": [
+        "發展"
+      ],
+      "text": "发展\t發展",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L11031"
+    },
+    "STPhrases.txt:头发": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 17658,
+      "key": "头发",
+      "values": [
+        "頭髮"
+      ],
+      "text": "头发\t頭髮",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L17658"
+    },
+    "STPhrases.txt:理发": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 34907,
+      "key": "理发",
+      "values": [
+        "理髮"
+      ],
+      "text": "理发\t理髮",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L34907"
+    },
+    "STPhrases.txt:柜台": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 30185,
+      "key": "柜台",
+      "values": [
+        "櫃檯"
+      ],
+      "text": "柜台\t櫃檯",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L30185"
+    },
+    "STPhrases.txt:台风": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 12497,
+      "key": "台风",
+      "values": [
+        "颱風"
+      ],
+      "text": "台风\t颱風",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L12497"
+    },
+    "STPhrases.txt:台湾": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 12336,
+      "key": "台湾",
+      "values": [
+        "臺灣"
+      ],
+      "text": "台湾\t臺灣",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L12336"
+    },
+    "STPhrases.txt:日历": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 27752,
+      "key": "日历",
+      "values": [
+        "日曆"
+      ],
+      "text": "日历\t日曆",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L27752"
+    },
+    "STPhrases.txt:历史": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 10392,
+      "key": "历史",
+      "values": [
+        "歷史"
+      ],
+      "text": "历史\t歷史",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L10392"
+    },
+    "STPhrases.txt:冲茶": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 6466,
+      "key": "冲茶",
+      "values": [
+        "沖茶"
+      ],
+      "text": "冲茶\t沖茶",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L6466"
+    },
+    "STPhrases.txt:冲突": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 6454,
+      "key": "冲突",
+      "values": [
+        "衝突"
+      ],
+      "text": "冲突\t衝突",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L6454"
+    },
+    "STPhrases.txt:心脏": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 22662,
+      "key": "心脏",
+      "values": [
+        "心臟"
+      ],
+      "text": "心脏\t心臟",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L22662"
+    },
+    "STCharacters.txt:脏": {
+      "sourceId": "opencc:STCharacters.txt",
+      "line": 1555,
+      "key": "脏",
+      "values": [
+        "髒",
+        "臟"
+      ],
+      "text": "脏\t髒 臟",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STCharacters.txt#L1555"
+    },
+    "STPhrases.txt:了解": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 2539,
+      "key": "了解",
+      "values": [
+        "瞭解"
+      ],
+      "text": "了解\t瞭解",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L2539"
+    },
+    "STPhrases.txt:吃了": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 12756,
+      "key": "吃了",
+      "values": [
+        "喫了"
+      ],
+      "text": "吃了\t喫了",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L12756"
+    },
+    "TWVariants.txt:喫": {
+      "sourceId": "opencc:TWVariants.txt",
+      "line": 12,
+      "key": "喫",
+      "values": [
+        "吃"
+      ],
+      "text": "喫\t吃",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/TWVariants.txt#L12"
+    },
+    "STPhrases.txt:几个人": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 6740,
+      "key": "几个人",
+      "values": [
+        "幾個人"
+      ],
+      "text": "几个人\t幾個人",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L6740"
+    },
+    "STPhrases.txt:茶几": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 40961,
+      "key": "茶几",
+      "values": [
+        "茶几"
+      ],
+      "text": "茶几\t茶几",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L40961"
+    },
+    "STPhrases.txt:面条": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 47780,
+      "key": "面条",
+      "values": [
+        "麪條"
+      ],
+      "text": "面条\t麪條",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L47780"
+    },
+    "TWVariants.txt:麪": {
+      "sourceId": "opencc:TWVariants.txt",
+      "line": 49,
+      "key": "麪",
+      "values": [
+        "麵"
+      ],
+      "text": "麪\t麵",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/TWVariants.txt#L49"
+    },
+    "STPhrases.txt:面子": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 47719,
+      "key": "面子",
+      "values": [
+        "面子"
+      ],
+      "text": "面子\t面子",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L47719"
+    },
+    "STPhrases.txt:斗争": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 27172,
+      "key": "斗争",
+      "values": [
+        "鬥爭"
+      ],
+      "text": "斗争\t鬥爭",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L27172"
+    },
+    "STPhrases.txt:一斗": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 158,
+      "key": "一斗",
+      "values": [
+        "一斗"
+      ],
+      "text": "一斗\t一斗",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L158"
+    },
+    "STPhrases.txt:一只": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 70,
+      "key": "一只",
+      "values": [
+        "一隻"
+      ],
+      "text": "一只\t一隻",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L70"
+    },
+    "STCharacters.txt:猫": {
+      "sourceId": "opencc:STCharacters.txt",
+      "line": 1146,
+      "key": "猫",
+      "values": [
+        "貓"
+      ],
+      "text": "猫\t貓",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STCharacters.txt#L1146"
+    },
+    "STPhrases.txt:只有": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 11896,
+      "key": "只有",
+      "values": [
+        "只有"
+      ],
+      "text": "只有\t只有",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L11896"
+    },
+    "STPhrases.txt:只要": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 11983,
+      "key": "只要",
+      "values": [
+        "只要"
+      ],
+      "text": "只要\t只要",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L11983"
+    },
+    "HKVariants.txt:只": {
+      "sourceId": "opencc:HKVariants.txt",
+      "line": 13,
+      "key": "只",
+      "values": [
+        "只",
+        "衹"
+      ],
+      "text": "只\t只 衹",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/HKVariants.txt#L13"
+    },
+    "STPhrases.txt:尽力": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 19272,
+      "key": "尽力",
+      "values": [
+        "盡力"
+      ],
+      "text": "尽力\t盡力",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L19272"
+    },
+    "STPhrases.txt:尽管": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 19344,
+      "key": "尽管",
+      "values": [
+        "儘管"
+      ],
+      "text": "尽管\t儘管",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L19344"
+    },
+    "STPhrases.txt:关系": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 5934,
+      "key": "关系",
+      "values": [
+        "關係"
+      ],
+      "text": "关系\t關係",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L5934"
+    },
+    "STPhrases.txt:系统": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 37943,
+      "key": "系统",
+      "values": [
+        "系統"
+      ],
+      "text": "系统\t系統",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L37943"
+    },
+    "STPhrases.txt:联系": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 39239,
+      "key": "联系",
+      "values": [
+        "聯繫"
+      ],
+      "text": "联系\t聯繫",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L39239"
+    },
+    "STPhrases.txt:签名": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 37578,
+      "key": "签名",
+      "values": [
+        "簽名"
+      ],
+      "text": "签名\t簽名",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L37578"
+    },
+    "STPhrases.txt:抽签": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 25130,
+      "key": "抽签",
+      "values": [
+        "抽籤"
+      ],
+      "text": "抽签\t抽籤",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L25130"
+    },
+    "STPhrases.txt:获得": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 41289,
+      "key": "获得",
+      "values": [
+        "獲得"
+      ],
+      "text": "获得\t獲得",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L41289"
+    },
+    "STPhrases.txt:收获": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 26787,
+      "key": "收获",
+      "values": [
+        "收穫"
+      ],
+      "text": "收获\t收穫",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L26787"
+    },
+    "STPhrases.txt:山谷": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 19486,
+      "key": "山谷",
+      "values": [
+        "山谷"
+      ],
+      "text": "山谷\t山谷",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L19486"
+    },
+    "STPhrases.txt:五谷": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 3183,
+      "key": "五谷",
+      "values": [
+        "五穀"
+      ],
+      "text": "五谷\t五穀",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L3183"
+    },
+    "STPhrases.txt:表面": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 42305,
+      "key": "表面",
+      "values": [
+        "表面"
+      ],
+      "text": "表面\t表面",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L42305"
+    },
+    "STPhrases.txt:手表": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 23891,
+      "key": "手表",
+      "values": [
+        "手錶"
+      ],
+      "text": "手表\t手錶",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L23891"
+    },
+    "STPhrases.txt:木板": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 28902,
+      "key": "木板",
+      "values": [
+        "木板"
+      ],
+      "text": "木板\t木板",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L28902"
+    },
+    "STPhrases.txt:老板": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 39049,
+      "key": "老板",
+      "values": [
+        "老闆"
+      ],
+      "text": "老板\t老闆",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L39049"
+    },
+    "STPhrases.txt:胡须": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 39738,
+      "key": "胡须",
+      "values": [
+        "鬍鬚"
+      ],
+      "text": "胡须\t鬍鬚",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L39738"
+    },
+    "STPhrases.txt:必须": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 22718,
+      "key": "必须",
+      "values": [
+        "必須"
+      ],
+      "text": "必须\t必須",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L22718"
+    },
+    "STPhrases.txt:饥饿": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 48371,
+      "key": "饥饿",
+      "values": [
+        "飢餓"
+      ],
+      "text": "饥饿\t飢餓",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L48371"
+    },
+    "STPhrases.txt:饥荒": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 48366,
+      "key": "饥荒",
+      "values": [
+        "饑荒"
+      ],
+      "text": "饥荒\t饑荒",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L48366"
+    },
+    "STPhrases.txt:卤味": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 10139,
+      "key": "卤味",
+      "values": [
+        "滷味"
+      ],
+      "text": "卤味\t滷味",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L10139"
+    },
+    "STPhrases.txt:卤素": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 10150,
+      "key": "卤素",
+      "values": [
+        "鹵素"
+      ],
+      "text": "卤素\t鹵素",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L10150"
+    },
+    "STPhrases.txt:叮当": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 12129,
+      "key": "叮当",
+      "values": [
+        "叮噹"
+      ],
+      "text": "叮当\t叮噹",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L12129"
+    },
+    "STPhrases.txt:当然": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 21986,
+      "key": "当然",
+      "values": [
+        "當然"
+      ],
+      "text": "当然\t當然",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L21986"
+    },
+    "STPhrases.txt:什么": {
+      "sourceId": "opencc:STPhrases.txt",
+      "line": 3451,
+      "key": "什么",
+      "values": [
+        "什麼"
+      ],
+      "text": "什么\t什麼",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/STPhrases.txt#L3451"
+    },
+    "HKVariants.txt:檯": {
+      "sourceId": "opencc:HKVariants.txt",
+      "line": 35,
+      "key": "檯",
+      "values": [
+        "枱"
+      ],
+      "text": "檯\t枱",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/HKVariants.txt#L35"
+    },
+    "HKVariants.txt:臺": {
+      "sourceId": "opencc:HKVariants.txt",
+      "line": 59,
+      "key": "臺",
+      "values": [
+        "台"
+      ],
+      "text": "臺\t台",
+      "url": "https://github.com/BYVoid/OpenCC/blob/ver.1.4.2/data/dictionary/HKVariants.txt#L59"
+    }
+  },
+  "examples": [
+    {
+      "input": "皇后",
+      "proposedTargets": [
+        {
+          "target": "皇后",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:皇后"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:皇后"
+    },
+    {
+      "input": "以后",
+      "proposedTargets": [
+        {
+          "target": "以後",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:以后"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:以后"
+    },
+    {
+      "input": "人云亦云",
+      "proposedTargets": [
+        {
+          "target": "人云亦云",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:人云亦云"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:人云亦云"
+    },
+    {
+      "input": "白云",
+      "proposedTargets": [
+        {
+          "target": "白雲",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:白云"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:白云"
+    },
+    {
+      "input": "丑年",
+      "proposedTargets": [
+        {
+          "target": "丑年",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:丑年"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:丑年"
+    },
+    {
+      "input": "丑陋",
+      "proposedTargets": [
+        {
+          "target": "醜陋",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:丑陋"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:丑陋"
+    },
+    {
+      "input": "干涉",
+      "proposedTargets": [
+        {
+          "target": "干涉",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:干涉"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:干涉"
+    },
+    {
+      "input": "干净",
+      "proposedTargets": [
+        {
+          "target": "乾淨",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:干净"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:干净"
+    },
+    {
+      "input": "干部",
+      "proposedTargets": [
+        {
+          "target": "幹部",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:干部"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:干部"
+    },
+    {
+      "input": "发展",
+      "proposedTargets": [
+        {
+          "target": "發展",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:发展"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:发展"
+    },
+    {
+      "input": "头发",
+      "proposedTargets": [
+        {
+          "target": "頭髮",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:头发"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:头发"
+    },
+    {
+      "input": "理发",
+      "proposedTargets": [
+        {
+          "target": "理髮",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:理发"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:理发"
+    },
+    {
+      "input": "柜台",
+      "proposedTargets": [
+        {
+          "target": "櫃檯",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:柜台"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:柜台"
+    },
+    {
+      "input": "台风",
+      "proposedTargets": [
+        {
+          "target": "颱風",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:台风"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:台风"
+    },
+    {
+      "input": "台湾",
+      "proposedTargets": [
+        {
+          "target": "臺灣",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:台湾"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:台湾"
+    },
+    {
+      "input": "日历",
+      "proposedTargets": [
+        {
+          "target": "日曆",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:日历"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:日历"
+    },
+    {
+      "input": "历史",
+      "proposedTargets": [
+        {
+          "target": "歷史",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:历史"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:历史"
+    },
+    {
+      "input": "冲茶",
+      "proposedTargets": [
+        {
+          "target": "沖茶",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:冲茶"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:冲茶"
+    },
+    {
+      "input": "冲突",
+      "proposedTargets": [
+        {
+          "target": "衝突",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:冲突"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:冲突"
+    },
+    {
+      "input": "心脏",
+      "proposedTargets": [
+        {
+          "target": "心臟",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:心脏"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:心脏"
+    },
+    {
+      "input": "脏衣服",
+      "proposedTargets": [
+        {
+          "target": "髒衣服",
+          "status": "supported",
+          "method": "official_dictionary_exact_phrase_attestation_and_character_record",
+          "openCCRecordIds": [
+            "STCharacters.txt:脏"
+          ],
+          "additionalSourceIds": [
+            "moe:penzi",
+            "moe:zang"
+          ]
+        }
+      ],
+      "directOpenCCPhraseRecordId": null
+    },
+    {
+      "input": "了解",
+      "proposedTargets": [
+        {
+          "target": "瞭解",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:了解"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:了解"
+    },
+    {
+      "input": "吃了",
+      "proposedTargets": [
+        {
+          "target": "吃了",
+          "status": "supported",
+          "method": "official_dictionary_particle_attestation_and_regional_variant_records",
+          "openCCRecordIds": [
+            "STPhrases.txt:吃了",
+            "TWVariants.txt:喫"
+          ],
+          "additionalSourceIds": [
+            "moe:le"
+          ],
+          "qualification": "吃了 is supported in Taiwan usage; the base OpenCC phrase row spells the first character 喫. Both spellings retain particle 了."
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:吃了"
+    },
+    {
+      "input": "几个人",
+      "proposedTargets": [
+        {
+          "target": "幾個人",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:几个人"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:几个人"
+    },
+    {
+      "input": "茶几",
+      "proposedTargets": [
+        {
+          "target": "茶几",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:茶几"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:茶几"
+    },
+    {
+      "input": "面条",
+      "proposedTargets": [
+        {
+          "target": "麵條",
+          "status": "supported",
+          "method": "official_dictionary_headword_and_regional_variant_records",
+          "openCCRecordIds": [
+            "STPhrases.txt:面条",
+            "TWVariants.txt:麪"
+          ],
+          "additionalSourceIds": [
+            "moe:miantiao"
+          ],
+          "qualification": "麵條 is a Taiwan MOE headword; the base OpenCC phrase row uses 麪條 and TWVariants records 麪→麵."
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:面条"
+    },
+    {
+      "input": "面子",
+      "proposedTargets": [
+        {
+          "target": "面子",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:面子"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:面子"
+    },
+    {
+      "input": "斗争",
+      "proposedTargets": [
+        {
+          "target": "鬥爭",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:斗争"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:斗争"
+    },
+    {
+      "input": "一斗米",
+      "proposedTargets": [
+        {
+          "target": "一斗米",
+          "status": "supported",
+          "method": "official_dictionary_exact_subphrase_attestation_and_composition",
+          "openCCRecordIds": [
+            "STPhrases.txt:一斗"
+          ],
+          "additionalSourceIds": [
+            "moe:yidoumi"
+          ]
+        }
+      ],
+      "directOpenCCPhraseRecordId": null
+    },
+    {
+      "input": "一只猫",
+      "proposedTargets": [
+        {
+          "target": "一隻貓",
+          "status": "supported",
+          "method": "recorded_phrase_plus_character_composition_and_classifier_definition",
+          "openCCRecordIds": [
+            "STPhrases.txt:一只",
+            "STCharacters.txt:猫"
+          ],
+          "additionalSourceIds": [
+            "moe:zhi"
+          ],
+          "qualification": "The whole three-character phrase is not a direct STPhrases entry; 一只→一隻 plus 猫→貓 supports composition."
+        }
+      ],
+      "directOpenCCPhraseRecordId": null
+    },
+    {
+      "input": "只有",
+      "proposedTargets": [
+        {
+          "target": "只有",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:只有"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:只有"
+    },
+    {
+      "input": "只要",
+      "proposedTargets": [
+        {
+          "target": "只要",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:只要"
+          ],
+          "additionalSourceIds": []
+        },
+        {
+          "target": "衹要",
+          "status": "supported",
+          "method": "historical_literary_attestation_and_character_dictionary",
+          "openCCRecordIds": [
+            "STPhrases.txt:只要",
+            "HKVariants.txt:只"
+          ],
+          "additionalSourceIds": [
+            "moe:zhi-variant",
+            "gutenberg:lengyanguan",
+            "wikisource:liming"
+          ],
+          "qualification": "Attested literary spelling; not the default output of the checked 只要 phrase row. No claim that all regions use it or that original print typography has been inspected."
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:只要"
+    },
+    {
+      "input": "尽力",
+      "proposedTargets": [
+        {
+          "target": "盡力",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:尽力"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:尽力"
+    },
+    {
+      "input": "尽管",
+      "proposedTargets": [
+        {
+          "target": "儘管",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:尽管"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:尽管"
+    },
+    {
+      "input": "关系",
+      "proposedTargets": [
+        {
+          "target": "關係",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:关系"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:关系"
+    },
+    {
+      "input": "系统",
+      "proposedTargets": [
+        {
+          "target": "系統",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:系统"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:系统"
+    },
+    {
+      "input": "联系",
+      "proposedTargets": [
+        {
+          "target": "聯繫",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:联系"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:联系"
+    },
+    {
+      "input": "签名",
+      "proposedTargets": [
+        {
+          "target": "簽名",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:签名"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:签名"
+    },
+    {
+      "input": "抽签",
+      "proposedTargets": [
+        {
+          "target": "抽籤",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:抽签"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:抽签"
+    },
+    {
+      "input": "获得",
+      "proposedTargets": [
+        {
+          "target": "獲得",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:获得"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:获得"
+    },
+    {
+      "input": "收获",
+      "proposedTargets": [
+        {
+          "target": "收穫",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:收获"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:收获"
+    },
+    {
+      "input": "山谷",
+      "proposedTargets": [
+        {
+          "target": "山谷",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:山谷"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:山谷"
+    },
+    {
+      "input": "五谷",
+      "proposedTargets": [
+        {
+          "target": "五穀",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:五谷"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:五谷"
+    },
+    {
+      "input": "表面",
+      "proposedTargets": [
+        {
+          "target": "表面",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:表面"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:表面"
+    },
+    {
+      "input": "手表",
+      "proposedTargets": [
+        {
+          "target": "手錶",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:手表"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:手表"
+    },
+    {
+      "input": "木板",
+      "proposedTargets": [
+        {
+          "target": "木板",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:木板"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:木板"
+    },
+    {
+      "input": "老板",
+      "proposedTargets": [
+        {
+          "target": "老闆",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:老板"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:老板"
+    },
+    {
+      "input": "胡须",
+      "proposedTargets": [
+        {
+          "target": "鬍鬚",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:胡须"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:胡须"
+    },
+    {
+      "input": "必须",
+      "proposedTargets": [
+        {
+          "target": "必須",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:必须"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:必须"
+    },
+    {
+      "input": "饥饿",
+      "proposedTargets": [
+        {
+          "target": "飢餓",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:饥饿"
+          ],
+          "additionalSourceIds": []
+        },
+        {
+          "target": "饑餓",
+          "status": "supported",
+          "method": "official_dictionary_alternative_spelling",
+          "openCCRecordIds": [
+            "STPhrases.txt:饥饿"
+          ],
+          "additionalSourceIds": [
+            "moe:ji",
+            "moe:jie"
+          ],
+          "qualification": "Both forms are attested, including within Taiwan MOE sources. The checked OpenCC phrase row records 飢餓 only; no exclusive region split is established."
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:饥饿"
+    },
+    {
+      "input": "饥荒",
+      "proposedTargets": [
+        {
+          "target": "饑荒",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:饥荒"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:饥荒"
+    },
+    {
+      "input": "卤味",
+      "proposedTargets": [
+        {
+          "target": "滷味",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:卤味"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:卤味"
+    },
+    {
+      "input": "卤素",
+      "proposedTargets": [
+        {
+          "target": "鹵素",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:卤素"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:卤素"
+    },
+    {
+      "input": "叮当",
+      "proposedTargets": [
+        {
+          "target": "叮噹",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:叮当"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:叮当"
+    },
+    {
+      "input": "当然",
+      "proposedTargets": [
+        {
+          "target": "當然",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:当然"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:当然"
+    },
+    {
+      "input": "什么",
+      "proposedTargets": [
+        {
+          "target": "什麼",
+          "status": "supported",
+          "method": "explicit_phrase_record",
+          "openCCRecordIds": [
+            "STPhrases.txt:什么"
+          ],
+          "additionalSourceIds": []
+        }
+      ],
+      "directOpenCCPhraseRecordId": "STPhrases.txt:什么"
+    }
+  ],
+  "notes": [
+    {
+      "sequence": 1,
+      "id": "U+540E_U+5F8C",
+      "association": "后→後",
+      "simplified": "后",
+      "traditional": "後",
+      "originalExplanation": "后 remains 后 when queen",
+      "originalExample": "皇后 → 皇后; 以后 → 以後",
+      "exampleInputRefs": [
+        "皇后",
+        "以后"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 2,
+      "id": "U+4E91_U+96F2",
+      "association": "云→雲",
+      "simplified": "云",
+      "traditional": "雲",
+      "originalExplanation": "云 remains 云 when to say",
+      "originalExample": "人云亦云 → 人云亦云; 白云 → 白雲",
+      "exampleInputRefs": [
+        "人云亦云",
+        "白云"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 3,
+      "id": "U+4E11_U+919C",
+      "association": "丑→醜",
+      "simplified": "丑",
+      "traditional": "醜",
+      "originalExplanation": "丑 remains 丑 for earthly branch",
+      "originalExample": "丑年 → 丑年; 丑陋 → 醜陋",
+      "exampleInputRefs": [
+        "丑年",
+        "丑陋"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 4,
+      "id": "U+5E72_U+4E7E",
+      "association": "干→乾",
+      "simplified": "干",
+      "traditional": "乾",
+      "originalExplanation": "dry vs other meanings",
+      "originalExample": "干涉 → 干涉; 干净 → 乾淨",
+      "exampleInputRefs": [
+        "干涉",
+        "干净"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 5,
+      "id": "U+5E72_U+5E79",
+      "association": "干→幹",
+      "simplified": "干",
+      "traditional": "幹",
+      "originalExplanation": "trunk/manage/cadre vs other meanings",
+      "originalExample": "干部 → 幹部; 干涉 → 干涉",
+      "exampleInputRefs": [
+        "干部",
+        "干涉"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 6,
+      "id": "U+53D1_U+767C",
+      "association": "发→發",
+      "simplified": "发",
+      "traditional": "發",
+      "originalExplanation": "send/develop vs hair",
+      "originalExample": "发展 → 發展; 头发 → 頭髮",
+      "exampleInputRefs": [
+        "发展",
+        "头发"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 7,
+      "id": "U+53D1_U+9AEE",
+      "association": "发→髮",
+      "simplified": "发",
+      "traditional": "髮",
+      "originalExplanation": "hair meaning",
+      "originalExample": "理发 → 理髮",
+      "exampleInputRefs": [
+        "理发"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 8,
+      "id": "U+53F0_U+6AAF",
+      "association": "台→檯",
+      "simplified": "台",
+      "traditional": "檯",
+      "originalExplanation": "table/counter context",
+      "originalExample": "柜台 → 櫃檯; 台风 → 颱風",
+      "exampleInputRefs": [
+        "柜台",
+        "台风"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "additionalRegionalCaveat": {
+        "note": "The source supports 櫃檯. HKVariants separately records 檯→枱, illustrating an additional regional spelling. This is dictionary evidence, not a native s2hk execution result.",
+        "openCCRecordId": "HKVariants.txt:檯"
+      }
+    },
+    {
+      "sequence": 9,
+      "id": "U+53F0_U+81FA",
+      "association": "台→臺",
+      "simplified": "台",
+      "traditional": "臺",
+      "originalExplanation": "platform/terrace context",
+      "originalExample": "台湾 → 臺灣; 台风 → 颱風",
+      "exampleInputRefs": [
+        "台湾",
+        "台风"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "additionalRegionalCaveat": {
+        "note": "The source supports 臺灣. HKVariants separately records 臺→台. Do not infer that every traditional region must replace 台 in the same way.",
+        "openCCRecordId": "HKVariants.txt:臺"
+      }
+    },
+    {
+      "sequence": 10,
+      "id": "U+53F0_U+98B1",
+      "association": "台→颱",
+      "simplified": "台",
+      "traditional": "颱",
+      "originalExplanation": "typhoon only",
+      "originalExample": "台风 → 颱風; 台湾 → 臺灣",
+      "exampleInputRefs": [
+        "台风",
+        "台湾"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 11,
+      "id": "U+5386_U+66C6",
+      "association": "历→曆",
+      "simplified": "历",
+      "traditional": "曆",
+      "originalExplanation": "calendar vs history",
+      "originalExample": "日历 → 日曆; 历史 → 歷史",
+      "exampleInputRefs": [
+        "日历",
+        "历史"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 12,
+      "id": "U+5386_U+6B77",
+      "association": "历→歷",
+      "simplified": "历",
+      "traditional": "歷",
+      "originalExplanation": "history/pass through",
+      "originalExample": "历史 → 歷史; 日历 → 日曆",
+      "exampleInputRefs": [
+        "历史",
+        "日历"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 13,
+      "id": "U+51B2_U+6C96",
+      "association": "冲→沖",
+      "simplified": "冲",
+      "traditional": "沖",
+      "originalExplanation": "rinse/soak",
+      "originalExample": "冲茶 → 沖茶; 冲突 → 衝突",
+      "exampleInputRefs": [
+        "冲茶",
+        "冲突"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 14,
+      "id": "U+51B2_U+885D",
+      "association": "冲→衝",
+      "simplified": "冲",
+      "traditional": "衝",
+      "originalExplanation": "rush/impact",
+      "originalExample": "冲突 → 衝突; 冲茶 → 沖茶",
+      "exampleInputRefs": [
+        "冲突",
+        "冲茶"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 15,
+      "id": "U+810F_U+81DF",
+      "association": "脏→臟",
+      "simplified": "脏",
+      "traditional": "臟",
+      "originalExplanation": "organ sense",
+      "originalExample": "心脏 → 心臟; 脏衣服 → 髒衣服",
+      "exampleInputRefs": [
+        "心脏",
+        "脏衣服"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 16,
+      "id": "U+810F_U+9AD2",
+      "association": "脏→髒",
+      "simplified": "脏",
+      "traditional": "髒",
+      "originalExplanation": "dirty sense",
+      "originalExample": "脏衣服 → 髒衣服; 心脏 → 心臟",
+      "exampleInputRefs": [
+        "脏衣服",
+        "心脏"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 17,
+      "id": "U+4E86_U+77AD",
+      "association": "了→瞭",
+      "simplified": "了",
+      "traditional": "瞭",
+      "originalExplanation": "understand / see clearly; not particle 了",
+      "originalExample": "了解 → 瞭解 (TW); 吃了 → 吃了",
+      "exampleInputRefs": [
+        "了解",
+        "吃了"
+      ],
+      "status": "supported_with_qualification",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "qualification": {
+        "recommendation": "Say 了解 may also be written 瞭解 in Taiwan; do not imply mandatory replacement. Particle 了 remains 了 in 吃了. Cite Taiwan dictionary evidence separately from the base OpenCC 喫了 record.",
+        "sourceIds": [
+          "moe:liaojie",
+          "moe:le"
+        ]
+      }
+    },
+    {
+      "sequence": 18,
+      "id": "U+51E0_U+5E7E",
+      "association": "几→幾",
+      "simplified": "几",
+      "traditional": "幾",
+      "originalExplanation": "how many vs furniture",
+      "originalExample": "几个人 → 幾個人; 茶几 → 茶几",
+      "exampleInputRefs": [
+        "几个人",
+        "茶几"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 19,
+      "id": "U+9762_U+9EB5",
+      "association": "面→麵",
+      "simplified": "面",
+      "traditional": "麵",
+      "originalExplanation": "noodle/flour vs face",
+      "originalExample": "面条 → 麵條; 面子 → 面子",
+      "exampleInputRefs": [
+        "面条",
+        "面子"
+      ],
+      "status": "supported_with_qualification",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "qualification": {
+        "recommendation": "Label 麵條 as Taiwan-supported spelling or cite Taiwan MOE directly. If citing base STPhrases, accurately report 麪條 and the separate TWVariants 麪→麵 record.",
+        "sourceIds": [
+          "moe:miantiao",
+          "opencc:TWVariants.txt"
+        ]
+      }
+    },
+    {
+      "sequence": 20,
+      "id": "U+6597_U+9B25",
+      "association": "斗→鬥",
+      "simplified": "斗",
+      "traditional": "鬥",
+      "originalExplanation": "fight vs capacity measure",
+      "originalExample": "斗争 → 鬥爭; 一斗米 → 一斗米",
+      "exampleInputRefs": [
+        "斗争",
+        "一斗米"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 21,
+      "id": "U+53EA_U+96BB",
+      "association": "只→隻",
+      "simplified": "只",
+      "traditional": "隻",
+      "originalExplanation": "measure word vs only",
+      "originalExample": "一只猫 → 一隻貓; 只有 → 只有",
+      "exampleInputRefs": [
+        "一只猫",
+        "只有"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 22,
+      "id": "U+53EA_U+8879",
+      "association": "只→衹",
+      "simplified": "只",
+      "traditional": "衹",
+      "originalExplanation": "historical/orthographic restriction",
+      "originalExample": "只要 → 只要 or 衹要 in some historical styles",
+      "exampleInputRefs": [
+        "只要"
+      ],
+      "status": "supported_with_qualification",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "qualification": {
+        "recommendation": "Retain 衹要 as an attested literary alternative, with an actual text citation; present 只要 as the ordinary default in the checked conversion dictionary. Keep readings and other senses source-specific.",
+        "sourceIds": [
+          "gutenberg:lengyanguan",
+          "wikisource:liming",
+          "moe:zhi-variant"
+        ]
+      }
+    },
+    {
+      "sequence": 23,
+      "id": "U+5C3D_U+76E1",
+      "association": "尽→盡",
+      "simplified": "尽",
+      "traditional": "盡",
+      "originalExplanation": "exhaust vs notwithstanding",
+      "originalExample": "尽力 → 盡力; 尽管 → 儘管",
+      "exampleInputRefs": [
+        "尽力",
+        "尽管"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "additionalSourceIds": [
+        "moe:jin"
+      ]
+    },
+    {
+      "sequence": 24,
+      "id": "U+5C3D_U+5118",
+      "association": "尽→儘",
+      "simplified": "尽",
+      "traditional": "儘",
+      "originalExplanation": "as much as possible",
+      "originalExample": "尽管 → 儘管; 尽力 → 盡力",
+      "exampleInputRefs": [
+        "尽管",
+        "尽力"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "additionalSourceIds": [
+        "moe:jin"
+      ]
+    },
+    {
+      "sequence": 25,
+      "id": "U+7CFB_U+4FC2",
+      "association": "系→係",
+      "simplified": "系",
+      "traditional": "係",
+      "originalExplanation": "relational usage",
+      "originalExample": "关系 → 關係; 系统 → 系統",
+      "exampleInputRefs": [
+        "关系",
+        "系统"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 26,
+      "id": "U+7CFB_U+7E6B",
+      "association": "系→繫",
+      "simplified": "系",
+      "traditional": "繫",
+      "originalExplanation": "tie/link",
+      "originalExample": "联系 → 聯繫; 系统 → 系統",
+      "exampleInputRefs": [
+        "联系",
+        "系统"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 27,
+      "id": "U+7B7E_U+7C3D",
+      "association": "签→簽",
+      "simplified": "签",
+      "traditional": "簽",
+      "originalExplanation": "sign",
+      "originalExample": "签名 → 簽名; 抽签 → 抽籤",
+      "exampleInputRefs": [
+        "签名",
+        "抽签"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 28,
+      "id": "U+7B7E_U+7C64",
+      "association": "签→籤",
+      "simplified": "签",
+      "traditional": "籤",
+      "originalExplanation": "lots / divination",
+      "originalExample": "抽签 → 抽籤; 签名 → 簽名",
+      "exampleInputRefs": [
+        "抽签",
+        "签名"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 29,
+      "id": "U+83B7_U+7372",
+      "association": "获→獲",
+      "simplified": "获",
+      "traditional": "獲",
+      "originalExplanation": "obtain/capture",
+      "originalExample": "获得 → 獲得; 收获 → 收穫",
+      "exampleInputRefs": [
+        "获得",
+        "收获"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 30,
+      "id": "U+83B7_U+7A6B",
+      "association": "获→穫",
+      "simplified": "获",
+      "traditional": "穫",
+      "originalExplanation": "harvest",
+      "originalExample": "收获 → 收穫; 获得 → 獲得",
+      "exampleInputRefs": [
+        "收获",
+        "获得"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 31,
+      "id": "U+8C37_U+7A40",
+      "association": "谷→穀",
+      "simplified": "谷",
+      "traditional": "穀",
+      "originalExplanation": "valley vs grain",
+      "originalExample": "山谷 → 山谷; 五谷 → 五穀",
+      "exampleInputRefs": [
+        "山谷",
+        "五谷"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 32,
+      "id": "U+8868_U+9336",
+      "association": "表→錶",
+      "simplified": "表",
+      "traditional": "錶",
+      "originalExplanation": "watch vs surface",
+      "originalExample": "表面 → 表面; 手表 → 手錶",
+      "exampleInputRefs": [
+        "表面",
+        "手表"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 33,
+      "id": "U+677F_U+95C6",
+      "association": "板→闆",
+      "simplified": "板",
+      "traditional": "闆",
+      "originalExplanation": "boss vs plank",
+      "originalExample": "木板 → 木板; 老板 → 老闆",
+      "exampleInputRefs": [
+        "木板",
+        "老板"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 34,
+      "id": "U+987B_U+9B1A",
+      "association": "须→鬚",
+      "simplified": "须",
+      "traditional": "鬚",
+      "originalExplanation": "beard vs must",
+      "originalExample": "胡须 → 鬍鬚; 必须 → 必須",
+      "exampleInputRefs": [
+        "胡须",
+        "必须"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 35,
+      "id": "U+987B_U+9808",
+      "association": "须→須",
+      "simplified": "须",
+      "traditional": "須",
+      "originalExplanation": "must vs whiskers",
+      "originalExample": "必须 → 必須; 胡须 → 鬍鬚",
+      "exampleInputRefs": [
+        "必须",
+        "胡须"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 36,
+      "id": "U+9965_U+98E2",
+      "association": "饥→飢",
+      "simplified": "饥",
+      "traditional": "飢",
+      "originalExplanation": "both forms can exist; regional/lexical preference",
+      "originalExample": "饥饿 → 飢餓 / 饑餓",
+      "exampleInputRefs": [
+        "饥饿"
+      ],
+      "status": "supported_with_qualification",
+      "allExamplesCoveredByExactOpenCCPhraseRows": false,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "qualification": {
+        "recommendation": "Both 飢餓 and 饑餓 are attested. Separate the two dictionary attestations from the OpenCC phrase policy, which records 飢餓; do not describe the slash as two OpenCC outputs or an exclusive Taiwan/Hong Kong rule.",
+        "sourceIds": [
+          "moe:jie",
+          "moe:ji"
+        ]
+      }
+    },
+    {
+      "sequence": 37,
+      "id": "U+9965_U+9951",
+      "association": "饥→饑",
+      "simplified": "饥",
+      "traditional": "饑",
+      "originalExplanation": "famine sense",
+      "originalExample": "饥荒 → 饑荒",
+      "exampleInputRefs": [
+        "饥荒"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 38,
+      "id": "U+5364_U+6EF7",
+      "association": "卤→滷",
+      "simplified": "卤",
+      "traditional": "滷",
+      "originalExplanation": "braise/brine vs chemical salt",
+      "originalExample": "卤味 → 滷味; 卤素 → 鹵素",
+      "exampleInputRefs": [
+        "卤味",
+        "卤素"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 39,
+      "id": "U+5364_U+9E75",
+      "association": "卤→鹵",
+      "simplified": "卤",
+      "traditional": "鹵",
+      "originalExplanation": "salt/halogen vs braising",
+      "originalExample": "卤素 → 鹵素; 卤味 → 滷味",
+      "exampleInputRefs": [
+        "卤素",
+        "卤味"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 40,
+      "id": "U+5F53_U+5679",
+      "association": "当→噹",
+      "simplified": "当",
+      "traditional": "噹",
+      "originalExplanation": "onomatopoeia",
+      "originalExample": "叮当 → 叮噹; 当然 → 當然",
+      "exampleInputRefs": [
+        "叮当",
+        "当然"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 41,
+      "id": "U+5F53_U+7576",
+      "association": "当→當",
+      "simplified": "当",
+      "traditional": "當",
+      "originalExplanation": "ordinary verb/adverb",
+      "originalExample": "当然 → 當然; 叮当 → 叮噹",
+      "exampleInputRefs": [
+        "当然",
+        "叮当"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification."
+    },
+    {
+      "sequence": 42,
+      "id": "U+4E48_U+9EBC",
+      "association": "么→麼",
+      "simplified": "么",
+      "traditional": "麼",
+      "originalExplanation": "麼 is an established regional traditional spelling for the me particle, especially in Taiwan/Hong Kong conventions. It is not the traditional-character glyph printed in the 2013 mainland appendix, which uses 麽.",
+      "originalExample": "什么 → 什麼 (regional traditional spelling)",
+      "exampleInputRefs": [
+        "什么"
+      ],
+      "status": "supported",
+      "allExamplesCoveredByExactOpenCCPhraseRows": true,
+      "scope": "The stated example uses are supported; this is not certification of every possible sense, regional norm, or mainland appendix classification.",
+      "additionalSourceIds": [
+        "moe:shi"
+      ]
+    }
+  ]
+}

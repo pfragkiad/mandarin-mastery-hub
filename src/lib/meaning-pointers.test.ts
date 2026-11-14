@@ -1,12 +1,13 @@
+import { readCatalog } from '@/test/catalog-fixture';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { catalog, hydrateCatalog, readingMeanings, type CatalogFile } from './catalog-store';
+import { catalog, hydrateCatalog, readingMeanings } from './catalog-store';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 import { cardMeaningPointers, meaningPointers } from './meaning-pointers';
 import { cardMeaning } from './glyph-presentation';
 
 const read = (name: string) => JSON.parse(readFileSync(`public/data/${name}`, 'utf8'));
-beforeAll(() => { hydrateCharacterVariants(read('character-variants-v1.4.0.json') as CharacterVariantFile); hydrateCatalog(read('catalog.json') as CatalogFile); });
+beforeAll(() => { hydrateCharacterVariants(read('character-variants-v1.4.0.json') as CharacterVariantFile); hydrateCatalog(readCatalog()); });
 
 describe('干 meaning and readings', () => {
   it('keeps the recorded meaning and points "dried" to 乾', () => {

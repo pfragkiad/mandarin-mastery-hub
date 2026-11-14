@@ -1,7 +1,7 @@
 """Export exact sourced radical identities without changing catalogue records.
 
-Inputs: supplied mirror audit, pinned Unicode 17 CJKRadicals.txt and the
-NamesList radical-supplement section. No shape/NFKC/dictionary inference.
+Inputs: review.json and pinned Unicode text files in importer/data/radical-identities/.
+No shape/NFKC/dictionary inference.
 """
 import hashlib
 import json
@@ -9,11 +9,14 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / 'scripts/data/radical-identities'
-audit = json.loads((INPUT / 'review.json').read_text())
+INPUT = ROOT / 'importer/data/radical-identities'
+REVIEW = INPUT / 'review.json'
+audit = json.loads(REVIEW.read_text(encoding='utf8'))
 catalog = json.loads((ROOT / 'public/data/catalog.json').read_text())
+radical_rows = json.loads((ROOT / 'public/data/radicals.json').read_text(encoding='utf8'))['radicals']
+character_rows = json.loads((ROOT / 'public/data/characters.json').read_text(encoding='utf8'))['characters']
 canonical = {}
-for glyph, _, _, note, *_ in catalog['radicals']:
+for glyph, _, _, note, *_ in radical_rows:
     match = re.search(r'Radical #(\d+)\b', note)
     if not match:
         raise ValueError(f'Missing explicit radical number: {glyph}')
@@ -108,7 +111,7 @@ SHARED_FORMS = {
 OPERATORS = set('⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻⿼⿽⿾⿿㇯')
 number_of = {glyph: number for number, glyph in canonical.items()}
 declared = {}
-for glyph, _, _, note, *_ in catalog['characters']:
+for glyph, _, _, note, *_ in character_rows:
     match = re.search(r'·\s*(.+?) radical$', note)
     if match and match[1] in number_of:
         declared.setdefault(glyph, number_of[match[1]])
@@ -158,7 +161,7 @@ for glyph in ['丆', '可', '〡', '㇑', '⿰']:
     assert glyph not in identities, f'False positive: {glyph}'
 output = {'schemaVersion': 1, 'sources': sources, 'identities': identities, 'sharedForms': shared_forms,
           'coverage': {'canonicalRadicals': 214, 'identityGlyphs': len(identities),
-                       'auditSha256': hashlib.sha256((INPUT / 'review.json').read_bytes()).hexdigest()}}
+                       'auditSha256': hashlib.sha256(REVIEW.read_bytes()).hexdigest()}}
 destination = ROOT / 'public/data/radical-identities.json'
 destination.write_text(json.dumps(output, ensure_ascii=False, separators=(',', ':')) + '\n')
 print(f'Exported {len(identities)} exact identities and {len(shared_forms)} shared forms; 214 canonical radicals preserved.')

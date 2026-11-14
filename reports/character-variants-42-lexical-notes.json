@@ -1,0 +1,964 @@
+{
+  "schemaVersion": 1,
+  "documentType": "outstanding_lexical_evidence_audit",
+  "sourceDataset": "character-variants-v1.3.2.json",
+  "sourceDatasetVersion": "1.3.2",
+  "extractionRule": "associationNotes[*][*].lexicalExampleEvidenceStatus == 'not_individually_verified_against_lexical_source'",
+  "purpose": "Separate list of context-dependent conversion notes still awaiting individually cited lexical-example verification. Proposed examples are copied unchanged, not independently validated here.",
+  "summary": {
+    "outstandingNotes": 42,
+    "uniqueSimplifiedCharacters": 26,
+    "pairsAlreadyVerifiedInUnihan170": true,
+    "lexicalExamplesIndividuallyVerified": 0,
+    "lexicalExamplesStillPending": 42,
+    "fullMainland2013PairByPairAuditComplete": false
+  },
+  "reviewGuidance": [
+    "Check each proposed word conversion against an authoritative lexical dictionary or version-pinned OpenCC phrase mapping.",
+    "Check whether a word is unchanged in traditional writing when the note gives an unchanged example.",
+    "Record the exact supporting dictionary entry URL or pinned dataset record for the validated example.",
+    "Distinguish region-specific practices (mainland / Taiwan / Hong Kong) rather than treating them as universal.",
+    "Keep Unihan association verification separate from lexical-example and 2013-standard classification verification."
+  ],
+  "sourceCaveats": [
+    "A generic Unicode TR38 citation documents the Unihan property model, not the particular example used in any note.",
+    "A valid simplified/traditional character association does not prove a word conversion is correct in every region or sense.",
+    "No source evidence or examples have been changed or added during this extraction.",
+    "Other association notes not marked as outstanding are outside the scope of this file; do not infer that all of them have individually verified lexical citations."
+  ],
+  "suggestedVerificationSources": {
+    "openCCPinnedVersion": "https://github.com/BYVoid/OpenCC/tree/ver.1.4.2/data/dictionary",
+    "taiwanMOEDictionary": "https://dict.revised.moe.edu.tw/",
+    "taiwanVariantDictionary": "https://dict.variants.moe.edu.tw/",
+    "mainland2013CharacterStandard": "https://www.moe.gov.cn/jyb_xwfb/moe_2082/siju/yywzxxgls/ztzl_yywzgfbz/201306/t20130601_186002.html",
+    "unihanDocumentation": "https://www.unicode.org/reports/tr38/"
+  },
+  "notes": [
+    {
+      "id": "U+540E_U+5F8C",
+      "simplified": "后",
+      "traditional": "後",
+      "association": "后→後",
+      "simplifiedCodePoint": "U+540E",
+      "traditionalCodePoint": "U+5F8C",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "后 remains 后 when queen",
+        "example": "皇后 → 皇后; 以后 → 以後",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+4E91_U+96F2",
+      "simplified": "云",
+      "traditional": "雲",
+      "association": "云→雲",
+      "simplifiedCodePoint": "U+4E91",
+      "traditionalCodePoint": "U+96F2",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "云 remains 云 when to say",
+        "example": "人云亦云 → 人云亦云; 白云 → 白雲",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+4E11_U+919C",
+      "simplified": "丑",
+      "traditional": "醜",
+      "association": "丑→醜",
+      "simplifiedCodePoint": "U+4E11",
+      "traditionalCodePoint": "U+919C",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "丑 remains 丑 for earthly branch",
+        "example": "丑年 → 丑年; 丑陋 → 醜陋",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5E72_U+4E7E",
+      "simplified": "干",
+      "traditional": "乾",
+      "association": "干→乾",
+      "simplifiedCodePoint": "U+5E72",
+      "traditionalCodePoint": "U+4E7E",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "dry vs other meanings",
+        "example": "干涉 → 干涉; 干净 → 乾淨",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5E72_U+5E79",
+      "simplified": "干",
+      "traditional": "幹",
+      "association": "干→幹",
+      "simplifiedCodePoint": "U+5E72",
+      "traditionalCodePoint": "U+5E79",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "trunk/manage/cadre vs other meanings",
+        "example": "干部 → 幹部; 干涉 → 干涉",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53D1_U+767C",
+      "simplified": "发",
+      "traditional": "發",
+      "association": "发→發",
+      "simplifiedCodePoint": "U+53D1",
+      "traditionalCodePoint": "U+767C",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "send/develop vs hair",
+        "example": "发展 → 發展; 头发 → 頭髮",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53D1_U+9AEE",
+      "simplified": "发",
+      "traditional": "髮",
+      "association": "发→髮",
+      "simplifiedCodePoint": "U+53D1",
+      "traditionalCodePoint": "U+9AEE",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "hair meaning",
+        "example": "理发 → 理髮",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53F0_U+6AAF",
+      "simplified": "台",
+      "traditional": "檯",
+      "association": "台→檯",
+      "simplifiedCodePoint": "U+53F0",
+      "traditionalCodePoint": "U+6AAF",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "table/counter context",
+        "example": "柜台 → 櫃檯; 台风 → 颱風",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53F0_U+81FA",
+      "simplified": "台",
+      "traditional": "臺",
+      "association": "台→臺",
+      "simplifiedCodePoint": "U+53F0",
+      "traditionalCodePoint": "U+81FA",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "platform/terrace context",
+        "example": "台湾 → 臺灣; 台风 → 颱風",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53F0_U+98B1",
+      "simplified": "台",
+      "traditional": "颱",
+      "association": "台→颱",
+      "simplifiedCodePoint": "U+53F0",
+      "traditionalCodePoint": "U+98B1",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "typhoon only",
+        "example": "台风 → 颱風; 台湾 → 臺灣",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5386_U+66C6",
+      "simplified": "历",
+      "traditional": "曆",
+      "association": "历→曆",
+      "simplifiedCodePoint": "U+5386",
+      "traditionalCodePoint": "U+66C6",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "calendar vs history",
+        "example": "日历 → 日曆; 历史 → 歷史",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5386_U+6B77",
+      "simplified": "历",
+      "traditional": "歷",
+      "association": "历→歷",
+      "simplifiedCodePoint": "U+5386",
+      "traditionalCodePoint": "U+6B77",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "history/pass through",
+        "example": "历史 → 歷史; 日历 → 日曆",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+51B2_U+6C96",
+      "simplified": "冲",
+      "traditional": "沖",
+      "association": "冲→沖",
+      "simplifiedCodePoint": "U+51B2",
+      "traditionalCodePoint": "U+6C96",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "rinse/soak",
+        "example": "冲茶 → 沖茶; 冲突 → 衝突",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+51B2_U+885D",
+      "simplified": "冲",
+      "traditional": "衝",
+      "association": "冲→衝",
+      "simplifiedCodePoint": "U+51B2",
+      "traditionalCodePoint": "U+885D",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "rush/impact",
+        "example": "冲突 → 衝突; 冲茶 → 沖茶",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+810F_U+81DF",
+      "simplified": "脏",
+      "traditional": "臟",
+      "association": "脏→臟",
+      "simplifiedCodePoint": "U+810F",
+      "traditionalCodePoint": "U+81DF",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "organ sense",
+        "example": "心脏 → 心臟; 脏衣服 → 髒衣服",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+810F_U+9AD2",
+      "simplified": "脏",
+      "traditional": "髒",
+      "association": "脏→髒",
+      "simplifiedCodePoint": "U+810F",
+      "traditionalCodePoint": "U+9AD2",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "dirty sense",
+        "example": "脏衣服 → 髒衣服; 心脏 → 心臟",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+4E86_U+77AD",
+      "simplified": "了",
+      "traditional": "瞭",
+      "association": "了→瞭",
+      "simplifiedCodePoint": "U+4E86",
+      "traditionalCodePoint": "U+77AD",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "understand / see clearly; not particle 了",
+        "example": "了解 → 瞭解 (TW); 吃了 → 吃了",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+51E0_U+5E7E",
+      "simplified": "几",
+      "traditional": "幾",
+      "association": "几→幾",
+      "simplifiedCodePoint": "U+51E0",
+      "traditionalCodePoint": "U+5E7E",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "how many vs furniture",
+        "example": "几个人 → 幾個人; 茶几 → 茶几",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+9762_U+9EB5",
+      "simplified": "面",
+      "traditional": "麵",
+      "association": "面→麵",
+      "simplifiedCodePoint": "U+9762",
+      "traditionalCodePoint": "U+9EB5",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "noodle/flour vs face",
+        "example": "面条 → 麵條; 面子 → 面子",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+6597_U+9B25",
+      "simplified": "斗",
+      "traditional": "鬥",
+      "association": "斗→鬥",
+      "simplifiedCodePoint": "U+6597",
+      "traditionalCodePoint": "U+9B25",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "fight vs capacity measure",
+        "example": "斗争 → 鬥爭; 一斗米 → 一斗米",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53EA_U+96BB",
+      "simplified": "只",
+      "traditional": "隻",
+      "association": "只→隻",
+      "simplifiedCodePoint": "U+53EA",
+      "traditionalCodePoint": "U+96BB",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "measure word vs only",
+        "example": "一只猫 → 一隻貓; 只有 → 只有",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+53EA_U+8879",
+      "simplified": "只",
+      "traditional": "衹",
+      "association": "只→衹",
+      "simplifiedCodePoint": "U+53EA",
+      "traditionalCodePoint": "U+8879",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "historical/orthographic restriction",
+        "example": "只要 → 只要 or 衹要 in some historical styles",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5C3D_U+76E1",
+      "simplified": "尽",
+      "traditional": "盡",
+      "association": "尽→盡",
+      "simplifiedCodePoint": "U+5C3D",
+      "traditionalCodePoint": "U+76E1",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "exhaust vs notwithstanding",
+        "example": "尽力 → 盡力; 尽管 → 儘管",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5C3D_U+5118",
+      "simplified": "尽",
+      "traditional": "儘",
+      "association": "尽→儘",
+      "simplifiedCodePoint": "U+5C3D",
+      "traditionalCodePoint": "U+5118",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "as much as possible",
+        "example": "尽管 → 儘管; 尽力 → 盡力",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+7CFB_U+4FC2",
+      "simplified": "系",
+      "traditional": "係",
+      "association": "系→係",
+      "simplifiedCodePoint": "U+7CFB",
+      "traditionalCodePoint": "U+4FC2",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "relational usage",
+        "example": "关系 → 關係; 系统 → 系統",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+7CFB_U+7E6B",
+      "simplified": "系",
+      "traditional": "繫",
+      "association": "系→繫",
+      "simplifiedCodePoint": "U+7CFB",
+      "traditionalCodePoint": "U+7E6B",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "tie/link",
+        "example": "联系 → 聯繫; 系统 → 系統",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+7B7E_U+7C3D",
+      "simplified": "签",
+      "traditional": "簽",
+      "association": "签→簽",
+      "simplifiedCodePoint": "U+7B7E",
+      "traditionalCodePoint": "U+7C3D",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "sign",
+        "example": "签名 → 簽名; 抽签 → 抽籤",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+7B7E_U+7C64",
+      "simplified": "签",
+      "traditional": "籤",
+      "association": "签→籤",
+      "simplifiedCodePoint": "U+7B7E",
+      "traditionalCodePoint": "U+7C64",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "lots / divination",
+        "example": "抽签 → 抽籤; 签名 → 簽名",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+83B7_U+7372",
+      "simplified": "获",
+      "traditional": "獲",
+      "association": "获→獲",
+      "simplifiedCodePoint": "U+83B7",
+      "traditionalCodePoint": "U+7372",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "obtain/capture",
+        "example": "获得 → 獲得; 收获 → 收穫",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+83B7_U+7A6B",
+      "simplified": "获",
+      "traditional": "穫",
+      "association": "获→穫",
+      "simplifiedCodePoint": "U+83B7",
+      "traditionalCodePoint": "U+7A6B",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "harvest",
+        "example": "收获 → 收穫; 获得 → 獲得",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+8C37_U+7A40",
+      "simplified": "谷",
+      "traditional": "穀",
+      "association": "谷→穀",
+      "simplifiedCodePoint": "U+8C37",
+      "traditionalCodePoint": "U+7A40",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "valley vs grain",
+        "example": "山谷 → 山谷; 五谷 → 五穀",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+8868_U+9336",
+      "simplified": "表",
+      "traditional": "錶",
+      "association": "表→錶",
+      "simplifiedCodePoint": "U+8868",
+      "traditionalCodePoint": "U+9336",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "watch vs surface",
+        "example": "表面 → 表面; 手表 → 手錶",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+677F_U+95C6",
+      "simplified": "板",
+      "traditional": "闆",
+      "association": "板→闆",
+      "simplifiedCodePoint": "U+677F",
+      "traditionalCodePoint": "U+95C6",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "boss vs plank",
+        "example": "木板 → 木板; 老板 → 老闆",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+987B_U+9B1A",
+      "simplified": "须",
+      "traditional": "鬚",
+      "association": "须→鬚",
+      "simplifiedCodePoint": "U+987B",
+      "traditionalCodePoint": "U+9B1A",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "beard vs must",
+        "example": "胡须 → 鬍鬚; 必须 → 必須",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+987B_U+9808",
+      "simplified": "须",
+      "traditional": "須",
+      "association": "须→須",
+      "simplifiedCodePoint": "U+987B",
+      "traditionalCodePoint": "U+9808",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "must vs whiskers",
+        "example": "必须 → 必須; 胡须 → 鬍鬚",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+9965_U+98E2",
+      "simplified": "饥",
+      "traditional": "飢",
+      "association": "饥→飢",
+      "simplifiedCodePoint": "U+9965",
+      "traditionalCodePoint": "U+98E2",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "both forms can exist; regional/lexical preference",
+        "example": "饥饿 → 飢餓 / 饑餓",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+9965_U+9951",
+      "simplified": "饥",
+      "traditional": "饑",
+      "association": "饥→饑",
+      "simplifiedCodePoint": "U+9965",
+      "traditionalCodePoint": "U+9951",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "famine sense",
+        "example": "饥荒 → 饑荒",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5364_U+6EF7",
+      "simplified": "卤",
+      "traditional": "滷",
+      "association": "卤→滷",
+      "simplifiedCodePoint": "U+5364",
+      "traditionalCodePoint": "U+6EF7",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "braise/brine vs chemical salt",
+        "example": "卤味 → 滷味; 卤素 → 鹵素",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5364_U+9E75",
+      "simplified": "卤",
+      "traditional": "鹵",
+      "association": "卤→鹵",
+      "simplifiedCodePoint": "U+5364",
+      "traditionalCodePoint": "U+9E75",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "salt/halogen vs braising",
+        "example": "卤素 → 鹵素; 卤味 → 滷味",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5F53_U+5679",
+      "simplified": "当",
+      "traditional": "噹",
+      "association": "当→噹",
+      "simplifiedCodePoint": "U+5F53",
+      "traditionalCodePoint": "U+5679",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "onomatopoeia",
+        "example": "叮当 → 叮噹; 当然 → 當然",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+5F53_U+7576",
+      "simplified": "当",
+      "traditional": "當",
+      "association": "当→當",
+      "simplifiedCodePoint": "U+5F53",
+      "traditionalCodePoint": "U+7576",
+      "note": {
+        "classification": "context_dependent_not_error",
+        "explanation": "ordinary verb/adverb",
+        "example": "当然 → 當然; 叮当 → 叮噹",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/tr38-39.html",
+        "evidenceScope": "targeted prior audit; not independent exhaustive lexical verification",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    },
+    {
+      "id": "U+4E48_U+9EBC",
+      "simplified": "么",
+      "traditional": "麼",
+      "association": "么→麼",
+      "simplifiedCodePoint": "U+4E48",
+      "traditionalCodePoint": "U+9EBC",
+      "note": {
+        "classification": "regional_variant",
+        "standardRelation2013": "regional_traditional_form",
+        "explanation": "麼 is an established regional traditional spelling for the me particle, especially in Taiwan/Hong Kong conventions. It is not the traditional-character glyph printed in the 2013 mainland appendix, which uses 麽.",
+        "example": "什么 → 什麼 (regional traditional spelling)",
+        "usageCaveat": "Retained from Unihan; not listed as the traditional glyph for 么 in the 2013 mainland appendix.",
+        "sourceUrl": "https://www.unicode.org/reports/tr38/",
+        "evidenceScope": "Targeted review of individual relationships against 2013 通用规范汉字表 Appendix 1; not a comprehensive audit of every Unihan pair.",
+        "lexicalExampleEvidenceStatus": "not_individually_verified_against_lexical_source",
+        "sourceLimitation": "Unicode Technical Report #38 documents the properties and their limits; it does not independently substantiate this particular lexical example."
+      },
+      "review": {
+        "status": "needs_pair_specific_lexical_evidence",
+        "proposedExampleIsVerified": false,
+        "evidenceToAdd": []
+      }
+    }
+  ]
+}
