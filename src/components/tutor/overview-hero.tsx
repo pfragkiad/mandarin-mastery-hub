@@ -93,7 +93,7 @@ export function DailyCharacterHero({ children }: { children?: React.ReactNode })
       {/* Small hero title at every width: the brand message ("Mandarin. Tutor · 一步一步") enlarged,
           with the greeting below as its second line. No 语 tile here — the side menu (wide) and the
           phone header already carry the mark, so Start never shows the logo twice. */}
-      <p className="start-hero-title"><span className="start-hero-name">Mandarin<span className="brand-dot">.</span> Tutor</span> <span lang="zh-CN" className="start-hero-motto">一步一步</span></p>
+      <div className="start-hero-title"><span className="start-hero-name">Mandarin<span className="brand-dot">.</span> Tutor</span> <span lang="zh-CN" className="start-hero-motto">一步一步</span></div>
       {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
       <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
         <span className="daily-greeting-facts">
