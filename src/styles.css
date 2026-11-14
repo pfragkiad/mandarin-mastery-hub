@@ -3229,3 +3229,12 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 }
 /* Library cards: the Details/Trace/Recall row starts at the tiles' left edge, never centred. */
 .word-card-bottom .card-labelled-actions { justify-content: flex-start !important; margin-left: 0 !important; margin-right: auto !important; }
+/* Phones: the Vocabulary Experimental tag sits right of the title when both fit on one
+   line; otherwise wrap-reverse lifts it onto its own line above the title, right-aligned.
+   The title block never shrinks (flex-shrink 0), so the one-line title fit only reacts to
+   the line it actually lands on and the layout cannot oscillate. */
+@media (max-width: 850px) {
+  .library-page .page-heading:has(> .experimental-tag) { display: flex; flex-wrap: wrap-reverse; align-items: center; column-gap: 12px; row-gap: 8px; }
+  .library-page .page-heading:has(> .experimental-tag) > div:first-child { flex: 0 0 auto; max-width: 100%; min-width: 0; }
+  .library-page .page-heading > .experimental-tag { order: 0; margin-left: auto; flex: none; justify-self: auto; }
+}
