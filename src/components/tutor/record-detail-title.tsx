@@ -1,4 +1,5 @@
-import type { CSSProperties, ReactNode } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
+import { useMeaningPlacement } from './use-meaning-placement';
 import type { CharacterScript } from '@/lib/learning-preferences';
 import { MeaningText } from './meaning-text';
 import { SourceInfo } from './source-info';
@@ -38,6 +39,10 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
   meaningFallback?: string;
 }) {
   const traditional = script === 'Traditional';
+  const rowRef = useRef<HTMLDivElement>(null);
+  const readingRef = useRef<HTMLSpanElement>(null);
+  const meaningRef = useRef<HTMLHeadingElement>(null);
+  const placement = useMeaningPlacement(rowRef, readingRef, meaningRef, meaning || meaningFallback);
   const headStyle = { '--detail-chars': String(hanzi.length || 1) } as CSSProperties;
    return <div className="catalog-detail-title">
     <div className="catalog-detail-head" style={headStyle}>
@@ -52,10 +57,12 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
           {pill && <span className="catalog-detail-pill">{pill}</span>}
         </span>}
       </div>
-      {!readingsInMeaning && <div className="catalog-detail-pinyin-row">
-        {pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}
-        {/* The translation shares the pinyin line and wraps beneath it when long. */}
-        {!meaningContent && <h2><MeaningText text={meaning || meaningFallback}/></h2>}
+      {!readingsInMeaning && <div ref={rowRef} className="catalog-detail-pinyin-row" data-meaning={meaningContent ? undefined : placement}>
+        {/* Pinyin and its audio controls form one unbreakable unit, so a speaker never wraps away from its reading. */}
+        <span ref={readingRef} className="catalog-detail-reading">{pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}</span>
+        {/* Translation beside the pinyin when it fits, whole on the next line when it fits a full
+            line, otherwise flowing on and wrapping underneath (useMeaningPlacement). */}
+        {!meaningContent && <h2 ref={meaningRef}><MeaningText text={meaning || meaningFallback}/></h2>}
       </div>}
       {(meaningContent || readingsInMeaning) && (meaningContent ?? <h2><MeaningText text={meaning || meaningFallback}/></h2>)}
     </div>
