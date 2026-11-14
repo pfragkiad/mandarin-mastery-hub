@@ -3200,14 +3200,22 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .library-page .word-card .word-open[data-stacked] .tile-hanzi-row { width: 100%; font-size: min(1em, calc((100cqi - (var(--forms) - 1) * var(--form-gap)) / var(--forms) / var(--form-ratio))); }
 .library-page .word-card .word-open[data-stacked] .pinyin { grid-column: 1; grid-row: 2; align-self: auto; }
 .library-page .word-card .word-open[data-stacked] :is(.word-meaning, .catalog-entry-meaning) { grid-column: 1; grid-row: 3; }
+/* Compact: a little more room beside the boxes so their corner 部/繁 stamps clear the pinyin. */
+.library-page .word-card .word-open:has(.tile-form) { column-gap: 16px; }
+/* Shrunk stacked rows scale the corner stamps with the glyph (capped at their usual size). */
+.library-page .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(13px, max(8px, .36em)); }
+.library-page .library-list-view .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(14px, max(8px, .234em)); }
+@media (max-width: 580px) {
+  .library-page .word-card { --form-gap: 7px; }
+}
 /* Comfortable: 82px boxes holding 60px glyphs at the 64px body size (in em so a stacked row
    can shrink them), wider gaps, and no reserved height beyond the content. */
 .library-page .library-list-view .word-card { --form-gap: 10px; --form-ratio: 1.28125; grid-template-rows: auto 1fr auto; min-height: 0; }
-.library-page .library-list-view .word-card .word-open { column-gap: 18px; row-gap: 4px; padding-top: 14px; }
+.library-page .library-list-view .word-card .word-open, .library-page .library-list-view .word-card .word-open:has(.tile-form) { column-gap: 18px; row-gap: 4px; padding-top: 14px; }
 .library-page .library-list-view .word-card .word-open[data-stacked] { row-gap: 4px; }
 .library-page .library-list-view .word-card .tile-form { width: 1.3667em; height: 1.3667em; flex: none; font-size: .9375em; }
 @media (max-width: 500px) {
-  .library-page .library-list-view .word-card .word-open { column-gap: 14px; }
+  .library-page .library-list-view .word-card .word-open, .library-page .library-list-view .word-card .word-open:has(.tile-form) { column-gap: 14px; }
 }
 /* Bookmark: an unlabelled icon button at the right end of the Comfortable Details / Trace /
    Recall row, as tall as those buttons (Compact keeps it as the last footer icon). */
