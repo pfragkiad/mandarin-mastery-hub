@@ -90,6 +90,8 @@ export function DailyCharacterHero({ children }: { children?: React.ReactNode })
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;
   return <section className="daily-hero" aria-label="Character of the day">
     <div className="daily-hero-copy">
+      {/* Phones only (CSS, ≤850px): the app's identity lockup, since the side menu that carries it is hidden there. */}
+      <div className="start-brand brand" aria-hidden="true"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></div>
       {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
       <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
         <span className="daily-greeting-facts">

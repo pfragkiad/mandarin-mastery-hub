@@ -159,7 +159,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         // Icon strip: bring the names and sub-items back.
         : <Button size="icon" variant="ghost" className="sidebar-collapse" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
     </aside>
-    <div className="main-shell"><header className="topbar"><div className={`breadcrumbs${pageKey ? ' has-picker' : ''}`}><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/>{pageKey
+    <div className="main-shell"><header className="topbar">{/* Phones only (CSS): the 语 mark left of the page title, a home link. */}<Link to="/" className="topbar-brand brand-mark" aria-label="Mandarin Tutor home" title="Start">语</Link><div className={`breadcrumbs${pageKey ? ' has-picker' : ''}`}><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/>{pageKey
         // Wider windows: the trail is read-only plain text (My workspace › Glyphs ›
         // Components) — navigation lives in the side menu. Phones swap the page step
         // for the plain serif title (the bottom tab bar already switches pages there;
