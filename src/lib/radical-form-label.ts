@@ -13,7 +13,7 @@ import type { CharacterScript } from './learning-preferences';
  *   so a label never claims a script relationship the data does not hold.
  */
 export function radicalFormLabel(form: Pick<RadicalForm, 'character' | 'formKind'>, family: Pick<RadicalFamily, 'canonical'>, script: CharacterScript | undefined): string {
-  if (form.formKind === 'kangxi-heading') return form.character === family.canonical ? 'Kangxi heading' : 'Traditional';
+  if (form.formKind === 'kangxi-heading') return 'Traditional';
   if (form.character === family.canonical) return 'Standard';
   if (script === 'Simplified') return 'Simplified';
   if (script === 'Traditional') return 'Traditional';
