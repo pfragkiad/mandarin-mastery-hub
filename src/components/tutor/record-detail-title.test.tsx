@@ -16,8 +16,9 @@ describe('Record detail heading', () => {
   it('puts the audio control on the pinyin line, vertically centered with it', () => {
     const { container } = render(<RecordDetailTitle hanzi="我" pinyin="wǒ" meaning="I" audio={<button type="button" aria-label="Listen to 我"/>}/>);
     const row = head(container).querySelector('.catalog-detail-pinyin-row') as HTMLElement;
-    const children = [...row.children].map(node => node.className || node.tagName);
-    expect(children[0]).toBe('pinyin');
+    const reading = row.querySelector('.catalog-detail-reading') as HTMLElement;
+    expect(reading.firstElementChild?.className).toBe('pinyin');
+    expect(reading.querySelector('button[aria-label="Listen to 我"]')).not.toBeNull();
     expect(row.querySelector('button[aria-label="Listen to 我"]')).not.toBeNull();
     expect(row.className).toBe('catalog-detail-pinyin-row');
   });

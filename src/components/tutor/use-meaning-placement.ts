@@ -31,10 +31,11 @@ export function useMeaningPlacement(row: RefObject<HTMLElement | null>, reading:
       setPlacement(meaningPlacement(rowEl.clientWidth, readingEl.getBoundingClientRect().width, meaningWidth));
     };
     measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(rowEl);
+    // Fails closed to the inline flow (which still wraps) where ResizeObserver is unavailable.
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
+    observer?.observe(rowEl);
     void document.fonts?.ready.then(measure);
-    return () => observer.disconnect();
+    return () => observer?.disconnect();
   }, [row, reading, meaning, text]);
   return placement;
 }
