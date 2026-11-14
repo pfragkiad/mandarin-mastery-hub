@@ -746,6 +746,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 /* Identity rows reuse the "In a character" layout (.glyph-usage-reference/.glyph-usage-facts):
    tile, then reading + speaker + Radical #N, with the meaning on the line below. */
 .kangxi-identity-rows { display: grid; gap: var(--record-tile-gap); }
+/* Same 14px heading-to-content space as Related characters / In a sentence, so the
+   tile (and its 部 pin, which rises ~8px above the tile) clears the KANGXI IDENTITY label. */
+.kangxi-identity-rows, .kangxi-identity-item ~ .record-gap, .decomposition-section > .eyebrow + .record-gap { margin-top: 14px; }
 /* The Kai font draws hanzi ink slightly below the em-box middle, so a centred strong
    leaves more space above the glyph than below; nudge the ink up by that measured
    offset (em-based so it scales with Compact/Comfortable tile sizes). */
