@@ -2790,3 +2790,12 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
   .topbar .section-picker > svg { width: 15px; height: 15px; }
   .topbar .section-picker.page-picker { font-weight: 500; }
 }
+
+/* Practice form switch: every unselected form sits in a thin neutral box so the mainland
+   form and its variants read as separate choices; the sliding frame marks the chosen one
+   with a bolder 2px border in its identity ink, stronger than any hover. */
+html .practice-header .form-switch .radical-form-choice:not(.is-selected) { border-color: var(--border); }
+html .practice-header .form-switch-thumb { border-width: 2px; }
+html .practice-header .form-switch-thumb.is-character { border-color: var(--primary); }
+html .practice-header .form-switch-thumb.is-traditional { border-color: var(--traditional); }
+html .practice-header .form-switch-thumb.is-radical:not(.is-traditional) { border-color: var(--hsk-id); }
