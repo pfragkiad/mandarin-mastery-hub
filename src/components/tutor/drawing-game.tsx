@@ -26,7 +26,7 @@ import { DrawingBoard } from "./drawing-board";
 import { useWorkspace } from "./workspace";
 import { useDrawingSession } from "./drawing-session";
 
-const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
+const deckSizes = ROUND_SIZES; // shared with every game
 export function DrawingGamePage({
   search,
   onSearch,

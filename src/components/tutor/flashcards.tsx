@@ -29,7 +29,7 @@ type Card = FlashCard;
 const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i] as T; b[i] = b[j] as T; b[j] = t; } return b; };
 
-const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
+const deckSizes = ROUND_SIZES; // shared with every game
 
 export type FlashcardFilters = { category: string; level: string; pos: string; usage: string; saved?: boolean | undefined };
 export function FlashcardsPage({ category: controlledCategory, level: controlledLevel, pos: controlledPos, usage: controlledUsage, saved: controlledSaved, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
