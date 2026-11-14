@@ -1814,7 +1814,7 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    stacked layout because their long hanzi lines need the full card width.
    Hidden faces use visibility, so the grid cells keep their size in Hide modes. */
 .library-list-view:not(.vocab-phrase-grid) .word-card { grid-template-rows: auto 1fr auto; min-height: 0; }
-.library-list-view:not(.vocab-phrase-grid) .word-card .word-open { grid-template-columns: fit-content(55%) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 18px; row-gap: 4px; min-height: 0; padding-block: 14px 18px; align-content: start; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-open { grid-template-columns: fit-content(55%) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 18px; row-gap: 4px; min-height: 0; padding-block: 14px 18px; align-content: center; }
 .library-list-view:not(.vocab-phrase-grid) .word-card .pinyin { grid-column: 2; grid-row: 1; align-self: end; }
 .library-list-view:not(.vocab-phrase-grid) .word-character > [lang], .library-list-view:not(.vocab-phrase-grid) .tile-hanzi-row { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
 /* Radicals with 3+ forms wrap to at most two boxes per row. Capping the row at two
@@ -1868,11 +1868,11 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    buttons below the body — the same .daily-hero-actions trio as Start's random cards —
    so the translation spans the whole width beside the hanzi box. */
   /* Cards in one row share the tallest card's height: the body row takes the spare space and
-     its content starts at the top, so the label row and the body sit at the same height in
-     every card of the row and the action buttons line up along the bottom. */
+     its tiles and text are centred in it, so the label row stays at the top and the buttons at
+     the bottom of every card in the row, and same-height tile blocks share the same top gap. */
   .library-list-view .word-card { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; }
   .library-list-view .word-card > .word-card-top { grid-column: 1; grid-row: 1; }
-  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-bottom: 12px; align-content: start; }
+  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-bottom: 12px; align-content: center; }
   .library-list-view .word-card > .word-card-bottom { grid-column: 1; grid-row: 3; display: block; border: 0; margin: 0; padding: 0 24px 18px; height: auto; min-height: 0; }
   .library-list-view .word-card > .word-card-bottom > span:first-child { display: none; }
   .library-list-view .word-card .card-labelled-actions { margin-top: 0; }
