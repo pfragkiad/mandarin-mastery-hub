@@ -23,8 +23,8 @@ function cssColorToHex(value: string) {
   return `#${Array.from(p).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 }
 
-/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card), which on
- *  phones depends on the screen height. Hanzi Writer's SVG carries width/height attributes but no
+/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card), which is
+ *  smaller on phones. Hanzi Writer's SVG carries width/height attributes but no
  *  viewBox, so CSS cannot scale the drawing — the writer is built at the square's rendered size
  *  (read from layout, since the variable may be a clamp() expression) and re-dimensioned when it changes. */
 function dailyGlyphSize(box: HTMLElement) {
