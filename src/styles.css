@@ -2942,7 +2942,7 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 /* Compact footers carry the same labelled Details/Trace/Recall buttons as Comfortable,
    shrunk to Compact scale; the bookmark stays an icon at the row's right end. */
 .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a {
-  height: 25px; padding: 0 7px; gap: 4px; font-size: 11px; }
+  width: auto; height: 25px; padding: 0 7px; gap: 4px; font-size: 11px; }
 .library-page .word-card .card-footer-bookmark { width: 25px; height: 25px; margin-left: auto; }
 .library-page .word-card .card-footer-actions svg, .library-page .word-card .card-footer-bookmark svg { width: 12px; height: 12px; }
 @media (max-width: 580px) {
