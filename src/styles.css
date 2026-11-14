@@ -3218,3 +3218,14 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   .page-heading > .heading-hanzi { display: block !important; position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 0; margin: 0; padding: 0; font-size: 64px; line-height: 1; opacity: 0.14; pointer-events: none; user-select: none; }
   .page-heading > .heading-hanzi > span { display: none; }
 }
+/* Small-screen libraries: Filters, the saved bookmark and Study share the card action
+   buttons' 40px height (Details/Trace/Recall), and the bookmark sits with equal 8px space
+   on both sides between Filters and Study. */
+@media (max-width: 1280px) {
+  .library-page .mobile-filter-actions { gap: 8px; margin-right: 8px; }
+  .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
+  html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
+  html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { height: 40px; min-height: 40px; }
+}
+/* Library cards: the Details/Trace/Recall row starts at the tiles' left edge, never centred. */
+.word-card-bottom .card-labelled-actions { justify-content: flex-start !important; margin-left: 0 !important; margin-right: auto !important; }
