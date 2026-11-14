@@ -3227,3 +3227,5 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { height: 40px; min-height: 40px; }
 }
+/* Library cards: the Details/Trace/Recall row starts at the tiles' left edge, never centred. */
+:is(.catalog-entry-grid, .word-grid) .daily-hero-actions { justify-content: flex-start; }
