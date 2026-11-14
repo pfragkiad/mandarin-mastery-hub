@@ -3187,7 +3187,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
    container width until up to six boxes fit, keeping the square box and glyph-to-box ratio.
    --forms-per-row comes from the card (min(6, forms)); --form-ratio is box width / row font. */
 .library-page .word-card { --form-gap: 9px; --form-ratio: 1.34; }
-.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; align-content: center; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
+.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; align-content: start; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
 .library-page .word-card .word-open .word-character { display: contents; }
 .library-page .word-card .word-open :is(.tile-hanzi-row, .word-hanzi-tile) { grid-column: 1; grid-row: 1 / 3; align-self: center; margin: 0; }
 .library-page .word-card .word-open .pinyin { grid-column: 2; grid-row: 1; align-self: end; margin: 0; }
@@ -3202,6 +3202,10 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .library-page .word-card .word-open[data-stacked] :is(.word-meaning, .catalog-entry-meaning) { grid-column: 1; grid-row: 3; }
 /* Compact: a little more room beside the boxes so their corner 部/繁 stamps clear the pinyin. */
 .library-page .word-card .word-open:has(.tile-form) { column-gap: 16px; }
+/* Grid cards sit side by side, so a taller neighbour must not push the tiles down: the
+   body hugs the top (align-content: start above), keeping every card's hanzi boxes at the
+   same height. Comfortable cards are one per row, so they keep their vertical centring. */
+.library-page .library-list-view .word-card .word-open { align-content: center; }
 /* Shrunk stacked rows scale the corner stamps with the glyph (capped at their usual size). */
 .library-page .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(13px, max(8px, .36em)); }
 .library-page .library-list-view .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(14px, max(8px, .234em)); }
