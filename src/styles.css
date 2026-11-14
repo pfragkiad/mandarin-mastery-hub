@@ -2297,6 +2297,15 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-compare { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; color: var(--muted-foreground); }
 .pinyin-compare button { color: var(--terracotta); }
 .pinyin-compare button.is-playing { color: var(--primary); }
+/* One shared text baseline across the answer line: the row and each icon+text piece
+   (Right/Not quite, Compare buttons, Next sound) align by their text, icons stay centred
+   on it, and every pinyin reading uses the same size and weight. */
+.pinyin-feedback-line { display: flex; flex-wrap: wrap; gap: 8px 14px; min-width: 0; }
+.pinyin-feedback-line, .pinyin-feedback-line :is(.pinyin-right, .pinyin-wrong, .pinyin-compare, button) { align-items: baseline; }
+.pinyin-drill-feedback svg { align-self: center; }
+/* Compare speakers hug their text so the centred icon sits on the reading, not below it. */
+.pinyin-drill-feedback .pinyin-compare button { height: auto; min-height: 0; padding-block: 4px; line-height: 1.4; }
+.pinyin-drill-feedback :is(.pinyin, [lang='zh-Latn-pinyin']) { font-size: 16px; font-weight: 400; }
 .pinyin-next { margin-left: auto; }
 .pinyin-type-form { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .pinyin-type-input { flex: 0 1 260px; min-width: 0; height: 52px; padding: 0 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--terracotta); font-size: 22px; }
