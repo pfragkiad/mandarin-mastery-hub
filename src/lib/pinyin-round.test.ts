@@ -5,10 +5,10 @@ import type { PinyinSound, Tone } from './pinyin-guide';
 const sounds = (n: number): PinyinSound[] => Array.from({ length: n }, (_, i) => ({ id: `s${i}`, base: `s${i}`, tone: 1 as Tone }));
 
 describe('Pinyin game rounds', () => {
-  it('offers rounds of 10, 20 and 50 sounds', () => {
-    expect([...ROUND_SIZES]).toEqual([10, 20, 50]);
+  it('offers rounds of 5, 10, 15, 20, 30, 40 and 50', () => {
+    expect([...ROUND_SIZES]).toEqual([5, 10, 15, 20, 30, 40, 50]);
   });
-  it.each([10, 20, 50] as const)('deals exactly %i distinct sounds from a larger pool', size => {
+  it.each(ROUND_SIZES)('deals exactly %i distinct sounds from a larger pool', size => {
     const round = dealRound(sounds(1288), size);
     expect(round).toHaveLength(size);
     expect(new Set(round.map(s => s.id)).size).toBe(size);
