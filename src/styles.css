@@ -1865,7 +1865,7 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view.vocab-phrase-grid .word-card .word-open { grid-template-columns: minmax(0, 1fr) auto; }
   .library-list-view.vocab-phrase-grid .word-character > [lang],
   .library-list-view.vocab-phrase-grid .word-card .word-meaning { grid-column: 1 / -1; }
-  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: end; margin-bottom: -3px; justify-self: end; width: 36px; height: 36px; }
+  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: end; margin-bottom: 3px; justify-self: end; width: 36px; height: 36px; }
   .library-list-view .word-card .tile-bookmark svg { width: 22px; height: 22px; }
 @media (max-width: 580px) {
   .library-list-view .word-card > .word-card-bottom { padding: 0 18px 16px; }
