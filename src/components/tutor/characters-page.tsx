@@ -25,7 +25,7 @@ import { glyphUsage } from '@/lib/glyph-usage';
 import { radicalCardAvailability } from '@/lib/radical-card-availability';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { CardTopMeta, RecordCardFooter } from './record-card-footer';
+import { CardTopMeta, RecordCardFooter, TileBookmark } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
@@ -290,6 +290,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Characters/Components whose head glyph is itself a sourced Kangxi radical (白, 口, 刀)
   // wear the gold 部 stamp and ink too; exact source identities only, never shape.
   const radicalTile = isRadicalGlyph(entry, kind);
+  // Comfortable (List) cards: labelled Details/Trace/Recall row, bookmark on the pinyin line.
+  const comfortable = preferences.libraryView === 'list';
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
   // Components cards do the same but only with forms that exist as Components records.
   // Components cards also show their radical-family forms (刀 刂 ⺈, component-families.ts).
@@ -313,6 +315,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
       <span className="word-character">{hasPinyin && spoken && reading && kind !== 'Strokes' && isMultiReading(reading) ? <span className="pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined} onError={setAudioError} chartFrom={preferences.soundChartLinks !== false ? entry.hanzi : undefined}/></span> : hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>{kind !== 'Strokes' && reading && preferences.soundChartLinks !== false && <SoundChartLink reading={reading} from={entry.hanzi} variant="tile"/>}</span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{glyph}</span>)}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{meaningText}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
+      {/* Comfortable: Save sits at the far right of the pinyin line (CSS places it), freeing the body's right column for the translation. */}
+      {comfortable && <TileBookmark hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)}/>}
     </Button>;
   const strokesText = multiStrokes ? <>{multiStrokes.map((form, index) => <Fragment key={form.glyph}>{index > 0 && ' / '}<span className={form.traditional ? 'traditional-character' : undefined} title={form.strokes === undefined ? `Stroke count not recorded for ${form.glyph}` : `${form.glyph}: ${form.strokes} strokes`}>{form.strokes ?? '–'}</span></Fragment>)} strokes</> : <><span className={entry.script === 'Traditional' ? 'traditional-character' : undefined}>{entry.strokes}</span> strokes</>;
   const hasStrokes = multiStrokes ? multiStrokes.some(form => form.strokes !== undefined) : entry.strokes !== undefined;
@@ -340,7 +344,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && !hideMeaning && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head">{!hideHanzi && <strong lang="zh-CN">{entry.hanzi}</strong>}{hidePinyin ? null : hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning ? meaningText : <MeaningText text="No English meaning recorded in this source."/>}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
-    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }} metadata={metadata} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} {...(onDetails ? { onDetails: () => onDetails(entry.id) } : {})}/>
+    <RecordCardFooter practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }} metadata={metadata} hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} comfortable={comfortable} onOpen={() => onSelect(entry.id)} {...(onDetails ? { onDetails: () => onDetails(entry.id) } : {})}/>
     {audioError && <p className="catalog-card-audio-error" role="status">{audioError}</p>}
   </article>;
 }
