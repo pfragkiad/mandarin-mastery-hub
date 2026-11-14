@@ -4,7 +4,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NavigationShortcuts } from './navigation-shortcuts';
-import { detailTrail } from '@/lib/detail-trail';
+import { detailTrail, historyEntry } from '@/lib/detail-trail';
 
 /** True below the width where the library's side detail column stacks under the cards. */
 export function useNarrowLibrary(maxWidth = 850) {
@@ -35,8 +35,10 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
   const trail = useSyncExternalStore(detailTrail.subscribe, detailTrail.get, detailTrail.get);
   const back = trail.at(-1);
   // Reset only the panel's scroll for a different record; also drop a Back step
-  // once history has returned to it (our Back button or the browser's).
-  useEffect(() => { body.current?.scrollTo?.({ top: 0 }); detailTrail.sync(window.location.href); }, [title]);
+  // once history has returned to it (our Back button or the browser's). Steps are
+  // keyed by history entry, not URL: switching 亻 → 人 → 亻 by links is a new entry
+  // for 亻 and must keep Back, not be mistaken for a return.
+  useEffect(() => { body.current?.scrollTo?.({ top: 0 }); detailTrail.sync(historyEntry()); }, [title]);
   const close = () => { detailTrail.clear(); onClose(); };
   const step = (go?: () => void) => go && (() => { detailTrail.clear(); go(); });
   const previous = step(onPrevious), next = step(onNext);
@@ -81,7 +83,9 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
       <div ref={body} className="detail-sheet-body" onClickCapture={event => {
         const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
         if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
-        detailTrail.push({ label: label ?? title, href: window.location.href });
+        // A link to the page already shown (the selected form tile) adds no history entry.
+        if ((link as HTMLAnchorElement).href === window.location.href) return;
+        detailTrail.push({ label: label ?? title, href: historyEntry() });
       }}>{children}</div>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
