@@ -96,7 +96,8 @@ export function DrawingGamePage({
       ...(kind === "Words" && search.collection ? [search.collection] : []),
       ...(kind === "Words" && search.level ? [search.level] : []),
       ...(kind === "Words" && search.pos ? [search.pos] : []),
-      ...(group ? [usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional)] : []),
+      // Only the rank range ("Rank 1–100"); the dropdown's coverage share would crowd the chip.
+      ...(group ? [usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
       ...(search.strokes ? [`${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
     ].join(" · ");
   };
