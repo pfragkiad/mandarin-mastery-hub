@@ -1830,6 +1830,10 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 @media (min-width: 501px) {
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:not([data-wide-meaning]):has(.tile-hanzi-row > .tile-form:nth-child(3)):not(:has(.tile-hanzi-row > .tile-form:nth-child(4))) { grid-template-columns: fit-content(70%) minmax(0, 1fr); }
   .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:not([data-wide-meaning]) .tile-hanzi-row:has(> .tile-form:nth-child(3)):not(:has(> .tile-form:nth-child(4))) { max-width: calc(3 * 82px + 20px); }
+  /* Five or more forms (网: 网 ⺴ 罓 罒 ⺳) balance as 3+2 / 3+3 rather than 2+2+1, keeping the
+     body two rows tall; the third column is the bookmark (see the Comfortable body below). */
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:has(.tile-hanzi-row > .tile-form:nth-child(5)) { grid-template-columns: fit-content(70%) minmax(0, 1fr) auto; }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row:has(> .tile-form:nth-child(5)) { max-width: calc(3 * 82px + 20px); }
 }
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
 .library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2; grid-row: 2; align-self: start; }
@@ -1858,9 +1862,12 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    third body column) and the footer becomes one row of labelled Details / Trace / Recall
    buttons below the body — the same .daily-hero-actions trio as Start's random cards —
    so the translation spans the whole width beside the hanzi box. */
-  .library-list-view .word-card { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; }
+  /* Cards in one row share the tallest card's height: the body row takes the spare space and
+     its content starts at the top, so the label row and the body sit at the same height in
+     every card of the row and the action buttons line up along the bottom. */
+  .library-list-view .word-card { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; }
   .library-list-view .word-card > .word-card-top { grid-column: 1; grid-row: 1; }
-  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-bottom: 12px; }
+  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-bottom: 12px; align-content: start; }
   .library-list-view .word-card > .word-card-bottom { grid-column: 1; grid-row: 3; display: block; border: 0; margin: 0; padding: 0 24px 18px; height: auto; min-height: 0; }
   .library-list-view .word-card > .word-card-bottom > span:first-child { display: none; }
   .library-list-view .word-card .card-labelled-actions { margin-top: 0; }
