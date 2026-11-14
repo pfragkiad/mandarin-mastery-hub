@@ -90,7 +90,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
     const refKind = isReference ? libraryKinds[category.slice(4) as ReferenceKind] : undefined;
     const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
-    const parts = [refKind ?? category, ...(!isReference && !isSaved && level !== 'All levels' ? [level] : []), ...(!isReference && !isSaved && pos !== 'All types' ? [pos] : []), ...(refKind && groupInfo ? [usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const parts = [...(savedOnly ? ['Saved'] : []), refKind ?? category, ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(refKind && groupInfo ? [usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     return parts.join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
