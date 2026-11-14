@@ -75,6 +75,10 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
       ) : (
         <p className="library-note">{failed ? 'Sounds could not load. Reload the page to try again.' : 'Loading sounds…'}</p>
       )}
+      {/* Same labelled Details button as the other random cards (shared .daily-hero-actions); opens this syllable's Sound chart card. */}
+      {syllable && <div className="daily-hero-actions discovery-tile-actions">
+        <Button asChild variant="outline" size="sm"><Link to="/pinyin" search={{ s: syllable.base }}><DetailsIcon aria-hidden="true"/>Details</Link></Button>
+      </div>}
       {player.error && <p className="library-note" role="status">{player.error}</p>}
       </div>
     </section>
