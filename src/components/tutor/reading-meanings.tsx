@@ -13,7 +13,7 @@ import type { MeaningPart } from '@/lib/meaning-pointers';
 // `speaker(reading)` renders that exact reading's own audio (and Sound chart link) right after its
 // pinyin label, so the detail heading drops its separate pinyin line instead of listing readings twice.
 // No state. Lines sit in a two-column grid so meanings align even when labels differ in width.
-export function ReadingMeanings({ items, speaker }: { items: { reading: string; meaning: string; parts?: MeaningPart[] | null }[]; speaker?: (reading: string) => ReactNode }) {
+export function ReadingMeanings({ items, speaker }: { items: { reading: string; meaning: string; parts?: MeaningPart[] | null }[]; speaker?: ((reading: string) => ReactNode) | undefined }) {
   return <h2 className="reading-meanings pointed-meaning">
     {items.map(item => <span key={item.reading} className="reading-meaning">
       <span className="reading-meaning-label"><span className="pinyin" lang="zh-Latn-pinyin">{item.reading}</span>{speaker?.(item.reading)}</span>
