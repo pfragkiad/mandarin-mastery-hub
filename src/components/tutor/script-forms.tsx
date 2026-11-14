@@ -2,8 +2,7 @@ import { useId, useState, type CSSProperties } from 'react';
 import { openDetailsHint, practiceHint, switchFormHint } from '@/lib/tile-hints';
 import { formSwitchColumns } from '@/lib/form-switch-columns';
 import { Link } from '@tanstack/react-router';
-import { ScrollText } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
@@ -129,8 +128,8 @@ export function parseSpellingExamples(example: string): SpellingExample[] | null
 
 /** Recorded notes for every simplified → traditional pair among `forms` (first form is the
  *  simplified key). Learner view: the key caveat in one muted line; the explanation (verbatim) and
- *  the recorded example as a small spelling table sit behind Details; usage caveat, evidence scope
- *  and the source link stay behind the ⓘ. Pairs without a note show nothing. */
+ *  the recorded example as a small spelling table sit behind a "Spelling notes" inline disclosure,
+ *  with the usage caveat, evidence scope and source link as its footnote. Pairs without a note show nothing. */
 function AssociationNotes({ forms }: { forms: string[] }) {
   const [simplified, ...rest] = forms;
   if (!simplified) return null;
@@ -139,25 +138,26 @@ function AssociationNotes({ forms }: { forms: string[] }) {
   return <ul className="association-notes">{notes.map(({ traditional, note }) => <AssociationNoteRow key={traditional} simplified={simplified} traditional={traditional} note={note}/>)}</ul>;
 }
 
-// One pair note. Collapsed (default): the pair, its classification pill, ⓘ and the one-line
-// caveat with a Details toggle. Expanded: the recorded explanation verbatim and the spelling table.
+// One pair note. Collapsed (default): the pair, its classification pill and the one-line
+// caveat with a "Spelling notes" toggle. Expanded: the recorded explanation verbatim, the
+// spelling table and the usage/source footnote, inline under the line (pushing the sections
+// below down, never covering them) with a green left border tying it to the highlighted card.
 // State: `open` is local to this note, so it resets when another card is shown.
 function AssociationNoteRow({ simplified, traditional, note }: { simplified: string; traditional: string; note: AssociationNote }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
   const rows = note.example ? parseSpellingExamples(note.example) : null;
   const contextual = note.classification === CONTEXT_DEPENDENT;
+  const footnote = (note.usageCaveat || note.unchangedSense || note.evidenceScope || note.sourceUrl)
+    ? <p className="association-note-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</p>
+    : null;
   return <li className="association-note">
-    <div className="association-note-head"><span lang="zh-CN">{simplified}</span><span aria-hidden="true">↔</span><span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span>
-      <SourceInfo inline className="detail-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</SourceInfo>
-    </div>
+    <div className="association-note-head"><span lang="zh-CN">{simplified}</span><span aria-hidden="true">↔</span><span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span></div>
     <div className="association-note-summary">
       {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
-      {/* Details opens a floating card (like the hints) so the detail sheet never grows. */}
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger className="association-note-toggle" aria-controls={panelId}><ScrollText aria-hidden="true"/>Details</PopoverTrigger>
-        <PopoverContent id={panelId} align="start" className="source-info-popover association-note-popover">
-    <div className="association-note-details">
+      <button type="button" className="association-note-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>Spelling notes<ChevronDown aria-hidden="true" className={open ? 'is-open' : undefined}/></button>
+    </div>
+    {open && <div className="association-note-details" id={panelId}>
       <p className="association-note-text">{note.explanation}</p>
       {note.example && <div className="spelling-examples">
         <span className="variant-etymology-caption">Spelling examples</span>
@@ -167,10 +167,8 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
               <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
           : <p>{note.example}</p>}
       </div>}
-    </div>
-        </PopoverContent>
-      </Popover>
-    </div>
+      {footnote}
+    </div>}
   </li>;
 }
 
