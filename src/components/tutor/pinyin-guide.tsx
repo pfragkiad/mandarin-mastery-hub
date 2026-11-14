@@ -45,7 +45,7 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   usePublishSections(mode === 'chart' ? 'chart' : 'games', null, { beforeSwitch: () => player.stop() });
 
   return <div className={`page-enter library-page pinyin-page${mode === 'chart' ? '' : ' game-page'}`}>
-    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">LISTEN, COMPARE, REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
+    <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">LISTEN · COMPARE · REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
         Recordings · <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.license}<br/>
         {data.audioSource.credits}<br/>
         {data.audioSource.accent} · not listening-reviewed<br/>
