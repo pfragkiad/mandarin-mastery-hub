@@ -144,8 +144,6 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
     <p className={`drawing-status${state === 'correct' || state === 'guided' ? ' is-correct' : ''}`} role="status">{message}</p>
-    {/* Only a pass shows the answer glyph; after a drawing it would just repeat the canvas. */}
-    {state === 'passed' && <div className="drawing-answer"><span lang="zh-CN">{entry.hanzi}</span><span>Answer</span></div>}
     <div className="drawing-actions">
       {state === 'drawing' && <Button variant="outline" size="icon" aria-label="Reset drawing" title="Reset drawing" onClick={() => setRetry(value => value + 1)}><RotateCcw/></Button>}
       {state === 'unavailable' && <Button variant="outline" onClick={() => setRetry(value => value + 1)}><RotateCcw/>Try again</Button>}
