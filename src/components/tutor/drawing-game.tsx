@@ -1,7 +1,7 @@
-import { useMemo } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { openDetailsHint, practiceHint } from '@/lib/tile-hints';
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Bookmark, Check, Play, RotateCcw } from "lucide-react";
+import { Bookmark, Check, Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
 import { partOfSpeechOptions, vocabularyKind } from "@/lib/mandarin";
@@ -16,6 +16,11 @@ import {
 } from "@/lib/drawing-game";
 import { DraftFilterForm } from "./filter-form";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
+import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from "./game-round";
+import { ExamplePronunciation } from "./example-pronunciation";
+import { MeaningText } from "./meaning-text";
+import { characterAudioRequest } from "@/lib/catalog-store";
+import { mixedRound } from "@/lib/pinyin-round";
 import { DrawingBoard } from "./drawing-board";
 import { useWorkspace } from "./workspace";
 import { useDrawingSession } from "./drawing-session";
@@ -66,23 +71,63 @@ export function DrawingGamePage({
         : drawingPool(entries, { ...search, saved: true }, preferences.includeTraditional, saved).length,
     [kind, words, entries, search, preferences.includeTraditional, saved],
   );
-  const card = deck?.[answers.length];
-  const done = deck !== null && !card;
+  const done = deck !== null && (session.ended === true || answers.length >= deck.length);
+  const card = done ? undefined : deck?.[answers.length];
+  const skipped = session.skipped ?? [];
   const roundSize = deckSize === "all" ? pool.length : Math.min(deckSize, pool.length);
   const review = answers
     .filter((answer) => answer.result === "passed" || answer.result === "guided")
     .map((answer) => answer.entry);
+  const kept = review.filter((entry) => !skipped.includes(entry.id));
   const unsavedReview = review.filter((entry) => !saved.includes(entry.id));
   const correct = answers.filter((answer) => answer.result === "correct").length;
   const unavailable = answers.filter((answer) => answer.result === "unavailable").length;
-  const start = (records: DrawingCard[], next = false) =>
+  const cardsUnit = (n: number) => `${n} ${n === 1 ? "card" : "cards"}`;
+  // Play-bar summary of the settings a round is dealt with, e.g. "Characters · Top 100 · 10 cards".
+  const settingsLabel = () => {
+    const group = kind !== "Words" && search.usage ? usageGroups(kind).find((g) => g.value === search.usage) : undefined;
+    return [
+      kind,
+      ...(kind === "Words" && search.collection ? [search.collection] : []),
+      ...(kind === "Words" && search.level ? [search.level] : []),
+      ...(kind === "Words" && search.pos ? [search.pos] : []),
+      ...(group ? [usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional)] : []),
+      ...(search.strokes ? [`${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
+      ...(search.saved ? ["Saved"] : []),
+    ].join(" · ");
+  };
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  /** Deal a round from `records`: capped to the deck size, or every record for a review. */
+  const deal = (records: DrawingCard[], size: number, isReview: boolean) => {
+    setSettingsOpen(false);
+    const dealt = shuffledDrawingDeck(records, size);
     setSession((previous) => ({
       ...previous,
-      deck: shuffledDrawingDeck(records, next || deckSize === "all" ? records.length : deckSize),
+      deck: dealt,
       answers: [],
       round: previous.round + 1,
       board: undefined,
+      ended: false,
+      skipped: [],
+      isReview,
+      label: isReview ? `Review · ${cardsUnit(dealt.length)}` : `${settingsLabel()} · ${cardsUnit(dealt.length)}`,
     }));
+  };
+  const start = (records: DrawingCard[], next = false) =>
+    deal(records, next || deckSize === "all" ? records.length : deckSize, next);
+  const changeSettings = () => {
+    setSettingsOpen(false);
+    setSession((previous) => ({ ...previous, deck: null, ended: false, board: undefined }));
+  };
+  const end = useRoundEnd({
+    active: Boolean(card),
+    answered: answers.length,
+    onFinish: () => {
+      setSettingsOpen(false);
+      setSession((previous) => ({ ...previous, ended: true, board: undefined }));
+    },
+    onQuit: changeSettings,
+  });
   // Filter changes affect the next deal; keep the current card and answers intact.
   const configure = (next: DrawingSearch) => {
     onSearch(next);
