@@ -165,8 +165,11 @@ function DrillFrame({ mode, data, filters, onFilters, pool, round, size, onSize,
           const reading = toneMark(m.sound.base, m.sound.tone);
           return <li key={m.sound.id} className={round.skipped.has(m.sound.id) ? 'is-skipped' : ''}>
             <Checkbox checked={!round.skipped.has(m.sound.id)} onCheckedChange={() => round.toggleSkip(m.sound.id)} aria-label={`Review ${reading}`} />
-            <Button variant="outline" size="icon" className={`pinyin-missed-play${player.playing === m.sound.id ? ' is-playing' : ''}`} onClick={() => void player.play(m.sound)} aria-label={`Hear ${reading}`}><Volume2 /></Button>
-            <strong className="pinyin" lang="zh-Latn-pinyin">{reading}</strong>
+            {/* Reading with the shared speaker beside it, as in every detail heading. */}
+            <span className="pinyin-missed-reading example-pinyin-row">
+              <strong className="pinyin" lang="zh-Latn-pinyin">{reading}</strong>
+              <Button variant="ghost" size="icon" className={`example-listen${player.playing === m.sound.id ? ' is-playing' : ''}`} onClick={() => void player.play(m.sound)} aria-label={`Listen to ${reading}`} title="Listen · Recording"><Volume2 /></Button>
+            </span>
             <span className="pinyin-missed-choice">{describeChoice(m)}</span>
             <span className="pinyin-missed-correct">{describeCorrect(m)}</span>
           </li>;
