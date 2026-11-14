@@ -53,7 +53,8 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
         </span>}
       </div>
       {!readingsInMeaning && <div className="catalog-detail-pinyin-row">
-        {pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}
+        {/* Pinyin and its audio controls form one unbreakable unit, so a speaker never wraps away from its reading. */}
+        <span className="catalog-detail-reading">{pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}</span>
         {/* The translation shares the pinyin line and wraps beneath it when long. */}
         {!meaningContent && <h2><MeaningText text={meaning || meaningFallback}/></h2>}
       </div>}

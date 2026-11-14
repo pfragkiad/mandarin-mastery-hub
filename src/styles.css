@@ -3329,3 +3329,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .catalog-detail-pinyin-row:has(> h2) { display: block; }
 .catalog-detail-pinyin-row:has(> h2) > :is(button, a, .multi-reading) { display: inline-flex; vertical-align: middle; margin-left: 6px; }
 .catalog-detail-head .catalog-detail-pinyin-row > h2 { display: inline; margin: 0 0 0 10px; }
+/* Reading unit: pinyin + speaker + chart link never split; the translation avoids orphaned last words. */
+.catalog-detail-reading { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; vertical-align: baseline; }
+.catalog-detail-reading > :is(button, a) { flex-shrink: 0; }
+.catalog-detail-head .catalog-detail-pinyin-row > h2 { text-wrap: pretty; }
