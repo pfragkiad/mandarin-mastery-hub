@@ -339,9 +339,9 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 /* One meaning per reading (了 le / liǎo): each reading labels its own line in the pinyin colour. */
 /* One line per reading: pinyin + its own speaker in the first column, meaning in the second, so
    meanings line up even when the readings (and their controls) differ in width. */
-.catalog-detail-head h2.reading-meanings { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 12px; row-gap: 2px; align-items: baseline; }
+.catalog-detail-head h2.reading-meanings { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 14px; row-gap: 2px; align-items: baseline; }
 .reading-meaning { display: contents; }
-.reading-meaning-label { display: inline-flex; align-items: center; gap: 2px; min-width: 3.2em; font-size: 0.85em; font-weight: 500; }
+.reading-meaning-label { display: inline-flex; align-items: center; gap: 6px; min-width: 3.2em; font-size: 0.85em; font-weight: 500; }
 .reading-meaning-label > button { flex-shrink: 0; }
 .catalog-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 16px; padding: 16px 0; border-block: 1px solid var(--border); }
 .catalog-facts dt { color: var(--muted-foreground); font-size: 11px; }
