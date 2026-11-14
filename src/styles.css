@@ -2939,12 +2939,14 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
    bookmark sits alone at the row's right end (the hidden metadata span keeps the
    space-between layout from pulling the actions right). */
 .library-page .word-card .word-card-bottom { justify-content: flex-start; gap: 8px; }
-.library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a,
-.library-page .word-card .card-footer-bookmark { width: 25px; height: 25px; }
+/* Compact footers carry the same labelled Details/Trace/Recall buttons as Comfortable,
+   shrunk to Compact scale; the bookmark stays an icon at the row's right end. */
+.library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a {
+  width: auto; height: 25px; padding: 0 7px; gap: 4px; font-size: 11px; }
+.library-page .word-card .card-footer-bookmark { width: 25px; height: 25px; margin-left: auto; }
 .library-page .word-card .card-footer-actions svg, .library-page .word-card .card-footer-bookmark svg { width: 12px; height: 12px; }
-.library-page .word-card .card-footer-bookmark { margin-left: auto; }
 @media (max-width: 580px) {
-  .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a,
+  .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
   .library-page .word-card .card-footer-bookmark { width: 22px; }
 }
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */

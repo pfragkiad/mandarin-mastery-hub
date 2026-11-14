@@ -90,9 +90,9 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
     </div></div>;
   }
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions card-footer-actions">
-    {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon/></Button>}
-    <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Trace"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon/></Link></Button>
-    <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Recall"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
+    {onDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
+    <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
+    <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
   </div><Button variant="ghost" size="icon" className="card-bookmark-action card-footer-bookmark" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button></div>;
 }
 
