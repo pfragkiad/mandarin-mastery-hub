@@ -21,3 +21,5 @@ Run scripts from the repository root. Importer-only pinned inputs belong in [imp
 Generation can overwrite its documented output files. Review the input version, intended output, and resulting diff. Preserve exact glyph identities, nulls, record IDs, source provenance, and checksum-bound bytes. Media exports contain CDN URLs and attribution; do not add audio binaries to the repository.
 
 Validate changed outputs with the relevant data, pronunciation, geometry, and font-coverage tests. For the full app run `npm test` and `npx tsc --noEmit`; Windows PowerShell may require `npm.cmd` and `npx.cmd`. Importer output comparisons should use temporary output directories when checking a path-only change.
+
+- `import-component-strokes.py` — fills `public/data/components.json` rows that record no stroke count with Unicode Unihan 17.0.0 `kTotalStrokes` (single-valued only); radical supplement symbols Unihan doesn't cover stay uncounted. Run before `import-radical-strokes.ts`, which uses these counts for family forms its source leaves at null.

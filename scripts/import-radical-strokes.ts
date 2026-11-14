@@ -8,6 +8,10 @@ const { radicals } = JSON.parse(readFileSync('public/data/radicals.json', 'utf8'
 const { strokes } = JSON.parse(readFileSync('public/data/strokes.json', 'utf8')) as StrokeFile;
 const input = JSON.parse(readFileSync('public/data/radical-families-source.json', 'utf8'));
 if (input.schemaVersion !== '2.0.1' || input.radicals.length !== 214) throw new Error('Unexpected radical source version or family count');
+// A family form the source leaves at null takes only its exact components.json count
+// (filled from Unihan kTotalStrokes by import-component-strokes.py); otherwise it stays null.
+const { components } = JSON.parse(readFileSync('public/data/components.json', 'utf8')) as { components: string[][] };
+const componentCount = (glyph: string) => { const n = Number(components.find(row => row[0] === glyph)?.[3]?.match(/^(\d+) strokes?/)?.[1]); return Number.isInteger(n) && n > 0 ? n : null; };
 const symbol = (name: string) => strokes.find(row => row[3]?.split(' · ')[0] === name)?.[0] ?? null;
 const records: Record<string, RadicalStrokeRecord> = {};
 for (const [glyph, , , note] of radicals) {
@@ -61,7 +65,7 @@ for (const family of input.radicals) {
     const record: RadicalStrokeRecord = { status, strokes: status === 'count-mismatch' ? [] : strokes, source: form.source.id === 'cnchar' ? 'cnchar-order 3.2.6' : 'cjklib · C-locale strokeorder', sourceStatus: form.status, provenance: form.source, officiallyVerified: form.officiallyVerified === true };
     const duplicate = forms.find(item => item.character === form.character && item.strokeCount === form.strokeCount && JSON.stringify(item.record.strokes) === JSON.stringify(strokes));
     if (duplicate) { duplicate.aliases = [...new Set([...duplicate.aliases, ...form.unicodeRadicalAliases])]; continue; }
-    forms.push({ key: `${family.id}-${index}`, character: form.character, aliases: form.unicodeRadicalAliases, formKind: form.formKind, strokeCount: form.strokeCount, record });
+    forms.push({ key: `${family.id}-${index}`, character: form.character, aliases: form.unicodeRadicalAliases, formKind: form.formKind, strokeCount: form.strokeCount ?? componentCount(form.character), record });
   }
   const heading = radicals.find(row => Number(row[3]?.match(/Radical #(\d+)/)?.[1]) === family.id);
   if (!heading) throw new Error(`Missing Kangxi family ${family.id}`);

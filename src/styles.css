@@ -1822,6 +1822,12 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    pinyin/translation sit the same distance from the forms as with two variants
    (otherwise the wrapping row stretches to the 55% column limit and leaves a gap). */
 .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row { max-width: calc(2 * 82px + 10px); }
+/* Five or more forms (网's family) wrap three boxes per row instead of two, so the
+   tile block stays shorter; the hanzi column widens to fit three boxes. Phones keep one. */
+@media (min-width: 501px) {
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:has(.tile-hanzi-row > .tile-form:nth-child(5)) { grid-template-columns: fit-content(70%) minmax(0, 1fr); }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row:has(> .tile-form:nth-child(5)) { max-width: calc(3 * 82px + 20px); }
+}
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
 .library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2; grid-row: 2; align-self: start; }
 @media (max-width: 760px), (pointer: coarse) {
