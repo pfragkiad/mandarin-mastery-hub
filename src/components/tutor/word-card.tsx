@@ -1,7 +1,7 @@
 import { isPlainCardDoubleClick } from './card-peek';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
-import { useMemo, useState, type CSSProperties } from 'react';
+import { useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Volume2, MessageSquareText } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
 import { SentenceExample } from './sentence-example';
 import { RecordDetailTitle } from './record-detail-title';
+import { useSideFit } from './use-side-fit';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
@@ -107,6 +108,11 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // The Words/Phrases tab already names the kind, so word and Comfortable phrase cards carry no
   // WORD/PHRASE label; Compact phrases keep their recorded level label.
   const levelLabel = wordStyleTop ? '' : word.level.toUpperCase();
+  // Compact Words/Phrases and Comfortable Phrases put pinyin+audio and the translation beside the
+  // hanzi box when both fit uncut (useSideFit marks the body data-stacked otherwise); Comfortable
+  // Words are always side by side, so they skip the measurement.
+  const bodyRef = useRef<HTMLButtonElement>(null);
+  useSideFit(bodyRef, !(comfortableView && headword), [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
   return <><article data-entry-id={word.id} className={`word-card ${headword ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
@@ -114,7 +120,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
         (like the "In a character" icon on glyph cards). Comfortable phrases use the same row;
         Compact phrases keep the level and their footer type. */}
     <div className="word-card-top"><span className="word-level-wrap">{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
-    <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
+    <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
     {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}{/* Comfortable: Save at the far right of the pinyin line (CSS places it). */}{comfortableView && <TileBookmark hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)}/>}</Button>

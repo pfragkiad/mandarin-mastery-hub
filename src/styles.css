@@ -2086,6 +2086,26 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 38px; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: center; align-self: flex-start; width: fit-content; max-width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: min(var(--phrase-max), calc((100cqi - 24px) / var(--tile-per-line, 1))); line-height: 1.15; white-space: nowrap; overflow-wrap: normal; }
 .library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 64px; min-width: 82px; min-height: 82px; }
 .vocab-phrase-grid .word-card .phrase-hanzi-tile .word-hanzi-line { display: block; white-space: nowrap; }
+/* Side-by-side vocabulary bodies (Compact Words and Phrases, Comfortable Phrases): the hanzi box
+   sits left with the pinyin+audio line over the translation on its right, as on single-tile glyph
+   cards and Comfortable Words, saving two text lines. useSideFit (word-card.tsx) marks bodies whose
+   box, pinyin line or translation (max two lines) would be cut there data-stacked, which keeps the
+   stacked pinyin / box / translation layout. Comfortable Words keep their own side rules above. */
+.vocab-grid:not(.library-list-view) .word-card .word-open:not([data-stacked]),
+.vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; align-content: center; justify-items: start; text-align: left; }
+.vocab-grid:not(.library-list-view) .word-card .word-open:not([data-stacked]) .word-character { display: contents; }
+.vocab-grid:not(.library-list-view) .word-card .word-open:not([data-stacked]) .word-hanzi-tile,
+.vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) .word-hanzi-tile { grid-column: 1; grid-row: 1 / 3; align-self: center; margin: 0; }
+.vocab-grid:not(.library-list-view) .word-card .word-open:not([data-stacked]) .pinyin,
+.vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) .pinyin { grid-column: 2; grid-row: 1; align-self: end; margin: 0; }
+.vocab-grid:not(.library-list-view) .word-card .word-open:not([data-stacked]) .word-meaning { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
+/* Comfortable phrases: same gaps as Comfortable Words, plus the bookmark as a third column on the
+   pinyin line; the translation spans under it. */
+.vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) { grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 18px; row-gap: 4px; }
+.vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) .word-meaning { grid-column: 2 / -1; grid-row: 2; align-self: start; margin: 0; }
+@media (max-width: 500px) {
+  .vocab-grid.library-list-view.vocab-phrase-grid .word-card .word-open:not([data-stacked]) { column-gap: 14px; }
+}
 
 /* Shared close/clear "×" treatment (dialogs, sheets, detail window, practice sheet,
    filter clear, open phone menu): never a hover background — the icon only

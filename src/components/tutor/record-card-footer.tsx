@@ -28,6 +28,11 @@ export function bookmarkLabel(bookmarked: boolean, hanzi?: string) {
   return hanzi ? `${action} ${hanzi}` : action;
 }
 
+/** Hover hint for every bookmark toggle: says what a bookmark is for (the study list). */
+export function bookmarkHint(bookmarked: boolean) {
+  return bookmarked ? 'Remove bookmark' : 'Bookmark · add to study list';
+}
+
 /**
  * Bookmark toggle embedded in a Comfortable card's clickable face, at the far right of
  * the pinyin line. The face is a real <button>, so like TileSpeaker this is a
@@ -45,7 +50,7 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
     tabIndex={0}
     aria-label={bookmarkLabel(bookmarked, hanzi)}
     aria-pressed={bookmarked}
-    title={bookmarkLabel(bookmarked)}
+    title={bookmarkHint(bookmarked)}
     className="tile-speaker tile-bookmark"
     onClick={activate}
     onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') activate(event); }}
@@ -85,7 +90,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
     {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon/></Button>}
     <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Trace"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon/></Link></Button>
     <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Recall"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
-    <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarkLabel(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
+    <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
   </div></div>;
 }
 
@@ -99,6 +104,6 @@ export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, o
   return <div className="word-detail-actions">
     <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...practice, mode: 'trace' }} aria-label={`Trace ${hanzi}`} onClick={onNavigate}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
     <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...practice, mode: 'recall' }} aria-label={`Recall ${hanzi}`} onClick={onNavigate}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
-    <Button variant="outline" size="sm" aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark aria-hidden="true" className={bookmarked ? 'bookmark-saved' : ''}/>{bookmarked ? 'Bookmarked' : 'Bookmark'}</Button>
+    <Button variant="outline" size="sm" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark aria-hidden="true" className={bookmarked ? 'bookmark-saved' : ''}/>{bookmarked ? 'Bookmarked' : 'Bookmark'}</Button>
   </div>;
 }
