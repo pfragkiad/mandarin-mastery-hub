@@ -9,12 +9,14 @@ import { useEffect, useRef, useSyncExternalStore } from 'react';
  * Glyphs catalogue and the Vocabulary list compute them) and an optional
  * `beforeSwitch` hook (the Pinyin quizzes stop their player before leaving). The
  * page publishes them here with usePublishSections; the header reads them with
- * useSectionStats. Browser-safe, no data imports. Counts are keyed by the
+ * useSectionStats. A page may also publish the section it actually shows
+ * (`active`), e.g. Vocabulary opening a linked phrase without a `tab` in the URL.
+ * Browser-safe, no data imports. Counts are keyed by the
  * section key the header uses (e.g. 'Components', 'word').
  */
 export type SectionExtra = { count: number; tone: 'traditional' | 'family'; hint: string };
 export type SectionStat = { count: number; extras?: SectionExtra[] };
-type Published = { stats: Record<string, SectionStat>; beforeSwitch?: () => void };
+type Published = { stats: Record<string, SectionStat>; active?: string; beforeSwitch?: () => void };
 
 const EMPTY: Published = { stats: {} };
 let snapshot: Published = EMPTY;
@@ -33,15 +35,16 @@ export function useSectionStats(): Published {
  * the latest `beforeSwitch` behind a stable wrapper so a new closure each render
  * never republishes. Unmounting clears it, unless another page already replaced it.
  */
-export function usePublishSections(stats: Record<string, SectionStat> | null, beforeSwitch?: () => void) {
+export function usePublishSections(stats: Record<string, SectionStat> | null, options: { active?: string; beforeSwitch?: () => void } = {}) {
+  const { active, beforeSwitch } = options;
   const hook = useRef(beforeSwitch);
   hook.current = beforeSwitch;
   const hasHook = Boolean(beforeSwitch);
   const key = JSON.stringify(stats ?? {});
   useEffect(() => {
-    const mine: Published = { stats: JSON.parse(key) as Record<string, SectionStat>, ...(hasHook ? { beforeSwitch: () => hook.current?.() } : {}) };
+    const mine: Published = { stats: JSON.parse(key) as Record<string, SectionStat>, ...(active ? { active } : {}), ...(hasHook ? { beforeSwitch: () => hook.current?.() } : {}) };
     snapshot = mine;
     emit();
     return () => { if (snapshot === mine) { snapshot = EMPTY; emit(); } };
-  }, [key, hasHook]);
+  }, [key, active, hasHook]);
 }
