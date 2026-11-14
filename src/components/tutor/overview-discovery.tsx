@@ -173,7 +173,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           </span>
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
-          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
+          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
+        {rowPinyin && record && <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span>}
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
           <Shuffle />
         </Button>
