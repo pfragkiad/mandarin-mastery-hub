@@ -170,7 +170,7 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
   </li>;
 }
 
-// Variant spelling: a context-dependent association set (了 ↔ 瞭, 发 ↔ 發/髮).
+// Related characters: a context-dependent association set (了 ↔ 瞭, 发 ↔ 發/髮).
 // These forms never share a library card, so each tile opens that form's own card (pushed, so
 // Back returns). Inputs: the shown glyph and its library kind; Traditional forms hide when
 // Include traditional is off. The simplified key adds "Also used in traditional" only
@@ -187,8 +187,8 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
     ? entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
-    <h3 className="eyebrow flex-wrap"><span>VARIANT SPELLING</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
-    <div className="radical-form-list" role="group" aria-label={`Variant spellings of ${glyph}`}>
+    <h3 className="eyebrow flex-wrap"><span>RELATED CHARACTERS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
+    <div className="radical-form-list" role="group" aria-label={`Related characters of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
