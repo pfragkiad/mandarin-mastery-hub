@@ -54,16 +54,16 @@ describe('Unknown-card bookmarks', () => {
   it('saves the unknown vocabulary record and links to that exact record', async () => {
     const view = render(<FlashcardsPage />);
     await finish('Greetings');
-    fireEvent.click(screen.getByRole('button', { name: 'Save 你好' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Bookmark 你好' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith('hello');
     view.rerender(<FlashcardsPage />);
-    expect(screen.getByRole('button', { name: 'Unsave 你好' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('button', { name: 'Remove bookmark 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
   });
   it.each(['Radical', 'Component', 'Character'])('saves an exact %s bookmark and review destination', async kind => {
     render(<FlashcardsPage />);
     await finish(`Ref:${kind}`);
-    fireEvent.click(screen.getByRole('button', { name: 'Save 一' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Bookmark 一' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith(`${kind}s:一`);
     expect(screen.getByRole('link', { name: /一/ })).toHaveAttribute('href', `/characters?tab=${kind}s&id=${kind}s%3A%E4%B8%80`);
   });
@@ -71,13 +71,13 @@ describe('Unknown-card bookmarks', () => {
     bookmarks.saved = ['hello'];
     render(<FlashcardsPage />);
     await finish('Greetings');
-    expect(screen.getByRole('button', { name: 'Unsave 你好' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('button', { name: 'Remove bookmark 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(bookmarks.toggle).not.toHaveBeenCalled();
   });
   it('does not offer to save cards answered correctly', async () => {
     render(<FlashcardsPage />);
     await finish('Greetings', true);
-    expect(screen.queryByRole('button', { name: /^Save / })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Bookmark / })).not.toBeInTheDocument();
     expect(bookmarks.toggle).not.toHaveBeenCalled();
   });
 });
