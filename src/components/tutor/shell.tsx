@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, PinyinGamesIcon, type GameEntry, type GameIcon } from './game-catalog';
 import { NavGroup, type NavSub } from './nav-group';
+import { SectionPicker, type SectionOption } from './section-picker';
+import { useSectionStats } from '@/lib/section-switch';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
@@ -67,6 +69,19 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
   const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);
   const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
+  // Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the five
+  // games the breadcrumb's last step is a dropdown of that page's sections, built
+  // here from the URL so its label is right on the first paint; the page only adds
+  // counts (and the Pinyin quizzes a stop-audio hook) through section-switch.ts.
+  // Glyphs keeps the All/Saved choice when switching kinds, as its old tabs did.
+  const savedStatus = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('status') });
+  const published = useSectionStats(path === '/characters' ? 'glyphs' : path === '/vocabulary' ? 'vocabulary' : currentGame ? 'games' : null);
+  const allGames = [...HANZI_GAMES.map(g => ({ ...g, group: 'Hanzi games' })), ...PINYIN_GAMES.map(g => ({ ...g, group: 'Pinyin games' }))];
+  const picker: { parent: string; phoneParent: string; options: SectionOption[]; active: string } | null =
+    path === '/characters' ? { parent: 'Glyphs', phoneParent: 'Glyphs', active: published.active ?? (characterSections.find(k => k === charactersTab) ?? 'Characters'), options: characterSections.map(k => ({ key: k, label: k, icon: sectionIcons[k], to: '/characters', search: { ...(k === 'Characters' ? {} : { tab: k }), ...(savedStatus === 'saved' ? { status: 'saved' } : {}) } })) }
+    : path === '/vocabulary' ? { parent: 'Vocabulary', phoneParent: 'Vocabulary', active: published.active ?? vocabularyTab, options: vocabularySections.map(v => ({ key: v.tab, label: v.label, icon: sectionIcons[v.label], to: '/vocabulary', search: { tab: v.tab } })) }
+    : currentGame ? { parent: allGames.find(g => g.key === currentGame.key)!.group, phoneParent: 'Games', active: currentGame.key, options: allGames.map(g => ({ key: g.key, label: g.label, icon: g.icon, to: g.to, group: g.group })) }
+    : null;
   // Menu per window size (see src/lib/nav-layout.ts): wide windows keep the menu
   // beside the page, full or as the slim icon strip (one remembered choice, no
   // hamburger); phones get the bottom tab bar whose "More" opens the drawer.
@@ -142,7 +157,11 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
         // Icon strip: bring the names and sub-items back.
         : <Button size="icon" variant="ghost" className="sidebar-collapse" title="Show full menu" aria-label="Show full menu" onClick={() => saveExpanded(true)}><PanelLeftOpen/></Button>)}</div></div>
     </aside>
-    <div className="main-shell"><header className="topbar"><div className="breadcrumbs"><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/><span>{current}</span>{/* Phones show only this page title (serif) in place of the breadcrumb trail. */}<span className="topbar-title">{current}</span></div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button>{/* Preferences gear: phones only (hidden by CSS above 850px, where the menu's bottom row covers it). */}<Button asChild variant="ghost" size="icon" className="prefs-link" title="Preferences" aria-label="Preferences"><Link to="/preferences"><Settings/></Link></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><span className="header-divider"/>{/* Account avatar: a placeholder for now. Its menu opens greyed out, so the
+    <div className="main-shell"><header className="topbar"><div className={`breadcrumbs${picker ? ' has-picker' : ''}`}><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/>{picker
+        // Sectioned pages: page name › section dropdown. Phones keep this pair as the
+        // header title (CSS), with the shorter phone name for the games family.
+        ? <><span className="breadcrumb-parent"><span className="crumb-wide">{picker.parent}</span><span className="crumb-phone">{picker.phoneParent}</span></span><ChevronRight size={14} className="crumb-sep"/><SectionPicker page={picker.parent} options={picker.options} active={picker.active} stats={published.stats} beforeSwitch={published.beforeSwitch}/></>
+        : <><span>{current}</span>{/* Phones show only this page title (serif) in place of the breadcrumb trail. */}<span className="topbar-title">{current}</span></>}</div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button>{/* Preferences gear: phones only (hidden by CSS above 850px, where the menu's bottom row covers it). */}<Button asChild variant="ghost" size="icon" className="prefs-link" title="Preferences" aria-label="Preferences"><Link to="/preferences"><Settings/></Link></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><span className="header-divider"/>{/* Account avatar: a placeholder for now. Its menu opens greyed out, so the
         spot is real without promising an account that doesn't exist yet. */}<DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="avatar" aria-label="Account" title="Account"><span aria-hidden="true">学</span></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuItem disabled>Account — coming soon</DropdownMenuItem></DropdownMenuContent></DropdownMenu></div></header>
       <main className="main-content">{children}</main></div>
     {/* Phone bottom tab bar (hidden by CSS above 850px). */}

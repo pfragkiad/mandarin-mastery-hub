@@ -12,7 +12,7 @@ import { Link } from '@tanstack/react-router';
 import { Search, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Type } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
@@ -49,8 +49,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
-import { useActivePill } from '@/lib/use-active-pill';
-import { PillRow } from './pill-row';
+import { usePublishSections } from '@/lib/section-switch';
 import { useOneLineTitle } from './one-line-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
@@ -100,11 +99,7 @@ const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' 
 function CountHintBody({ count, hint, tone }: { count: number; hint: string; tone: HintTone }) {
   return <HintBody><strong className={`count-hint-title count-hint-${tone}`}>+{count.toLocaleString('en-US')} {hintNoun(tone)}</strong><br/>{hint}</HintBody>;
 }
-function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
-  return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
-    <TooltipContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></TooltipContent></Tooltip>;
-}
-/** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
+/** Page-total "+N" beside the card count, the only place these extras show (the header dropdown lists plain counts). */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
     <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
@@ -456,8 +451,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   });
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
   const rankedTotal = filteredRanks.length;
-  // Phones hide the kind tabs (and their purple "+N"), so the top page counter
-  // repeats it after the card total. Only on the unfiltered All view, where the
+  // The top page counter repeats the kind's purple "+N" after the card total. Only on the unfiltered All view, where the
   // total equals the tab's card count the hint describes.
   const sharedHere = sharedTraditional[kind] ?? 0;
   const traditionalTotalHint = sharedHere > 0 && !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length
@@ -505,19 +499,19 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     if (previous === null || previous === page || selectedId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, selectedId]);
-  // Phones: the kind tabs are a scrolling pill row; keep the current kind in view.
-  const kindPills = useActivePill(kind);
+  // The kind switch lives in the header (section-picker.tsx); hand it each kind's
+  // card count. The coloured "+N" extras stay on the page's count line only.
+  usePublishSections('glyphs', Object.fromEntries(kinds.map(k => [k, { count: tabCounts?.[k] ?? plannedCounts[k] }])), { active: kind });
   // The title must stay on one line at every width; the hook lowers its font size as needed.
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, kind);
-  const updateKind = (value: string) => { const next = kinds.find(k => k === value); if (!next) return; onSearch({ ...(next === 'Characters' ? {} : { tab: next }), ...(savedOnly ? { status: 'saved' } : {}) }); };
   void catalogVersion;
   const sheetIndex = selectedId ? filtered.findIndex(entry => entry.id === (savedOnly ? requestedId : cardSelectedId)) : -1;
   // Modal arrows traverse the full filtered order, not just the visible page.
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1 ref={titleRef}>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><PillRow label="glyph sections"><TabsList ref={kindPills} aria-label="Character library categories" className="page-pills">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}{k === 'Components' && sharedFamily > 0 && <TraditionalTabHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/>}</TabsTrigger>)}</TabsList></PillRow><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
+    <Tabs value={kind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} strokes`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
