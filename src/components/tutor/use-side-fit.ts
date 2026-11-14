@@ -58,7 +58,10 @@ function sideLayoutFits(open: HTMLElement): boolean {
     if (speaker && speaker.getBoundingClientRect().top >= text.getBoundingClientRect().bottom - 1) return false;
   }
   const meaning = open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
-  if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > 2)) return false;
+  // Single-tile glyph cards (one form box) may keep a three-line translation beside the box;
+  // every other card stacks once the translation would need a third line there.
+  const maxLines = open.closest('.catalog-card.single-form') ? 3 : 2;
+  if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > maxLines)) return false;
   return true;
 }
 
