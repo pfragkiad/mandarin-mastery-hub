@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { catalog, hydrateCatalog, type CatalogFile } from './catalog-store';
+import { catalog, hydrateCatalog, readingMeanings, type CatalogFile } from './catalog-store';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 import { meaningPointers } from './meaning-pointers';
 
@@ -13,6 +13,13 @@ describe('干 meaning and readings', () => {
   });
   it('drops the pointer when the recorded meaning changes', () => {
     expect(meaningPointers('干', 'oppose, offend; invade; dry')).toBeNull();
+  });
+  it('splits like 了: gān keeps the recorded senses, gàn reads "to do; trunk"', () => {
+    expect(readingMeanings('干')).toEqual([{ reading: 'gān', meaning: 'oppose, offend; invade; dried' }, { reading: 'gàn', meaning: 'to do; trunk' }]);
+  });
+  it('points gàn "trunk" to 幹 only on the gàn line', () => {
+    expect(meaningPointers('干', 'oppose, offend; invade; dried', 'to do; trunk', 'gàn')).toEqual([{ text: 'to do' }, { text: 'trunk', related: '幹' }]);
+    expect(meaningPointers('干', 'oppose, offend; invade; dried', 'oppose, offend; invade; dried', 'gān')?.find(part => part.related)?.related).toBe('乾');
   });
   it('records both gān and gàn, each bound to its own recording', () => {
     expect(catalog.characters.find(row => row[0] === '干')?.[1]).toBe('gān / gàn');
