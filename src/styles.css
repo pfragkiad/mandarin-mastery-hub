@@ -1823,10 +1823,13 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
    (otherwise the wrapping row stretches to the 55% column limit and leaves a gap). */
 .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row { max-width: calc(2 * 82px + 10px); }
 /* Exactly three forms wrap three boxes per row instead of two (four stays 2+2, which is
-   already compact); the hanzi column widens to fit three boxes. Phones keep one. */
+   already compact); the hanzi column widens to fit three boxes. Phones keep one. Only when
+   the translation still fits beside the wider row: characters-page measure() marks cards
+   whose meaning needs more height than one tile row with data-wide-meaning, reverting to
+   two boxes per row so the translation column keeps its room. */
 @media (min-width: 501px) {
-  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:has(.tile-hanzi-row > .tile-form:nth-child(3)):not(:has(.tile-hanzi-row > .tile-form:nth-child(4))) { grid-template-columns: fit-content(70%) minmax(0, 1fr); }
-  .library-list-view:not(.vocab-phrase-grid) .word-card .tile-hanzi-row:has(> .tile-form:nth-child(3)):not(:has(> .tile-form:nth-child(4))) { max-width: calc(3 * 82px + 20px); }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:not([data-wide-meaning]):has(.tile-hanzi-row > .tile-form:nth-child(3)):not(:has(.tile-hanzi-row > .tile-form:nth-child(4))) { grid-template-columns: fit-content(70%) minmax(0, 1fr); }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open:not([data-wide-meaning]) .tile-hanzi-row:has(> .tile-form:nth-child(3)):not(:has(> .tile-form:nth-child(4))) { max-width: calc(3 * 82px + 20px); }
 }
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
 .library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2; grid-row: 2; align-self: start; }
