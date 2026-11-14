@@ -1360,7 +1360,6 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .example-listen:not(:disabled), .catalog-detail .component-pronunciation button:not(:disabled) { color: var(--foreground); }
 .example-listen:disabled, .catalog-detail .component-pronunciation button:disabled { color: var(--muted-foreground); }
 .catalog-detail .catalog-facts { grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); column-gap: 40px; }
-.catalog-facts .catalog-rank-label { min-height: 14px; line-height: 14px; }
 .catalog-facts .catalog-rank-label .source-info-trigger { width: 14px; height: 14px; }
 .word-character .pinyin { margin-bottom: 6px; }
 /* Fact labels stay on one shared top row; each value centers vertically in the
