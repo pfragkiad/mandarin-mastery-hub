@@ -32,4 +32,24 @@ describe('supplementary handwriting outlines', () => {
     expect(geometry.source).toBeUndefined();
     expect(urls[0]).toContain('hanzi-writer-data');
   });
+
+  // Exact-code-point outlines from the full radical-family scan: AnimCJK records the same glyph,
+  // so the source is marked exact and the stroke count equals the radical file's.
+  it.each([['⺆', 2], ['牜', 4], ['⺶', 6], ['⻏', 2], ['⻗', 8]] as const)('loads %s as its own %i-stroke AnimCJK outline', async (glyph, count) => {
+    stubFetch();
+    const geometry = await loadStrokeGeometry(glyph);
+    expect(geometry.data.strokes).toHaveLength(count);
+    expect(geometry.source).toMatchObject({ name: 'AnimCJK', recordedAs: glyph, style: 'Mainland (ZhHans)', exact: true });
+  });
+
+  it('marks the reviewed ⺿ → 艹 link as not exact', async () => {
+    stubFetch();
+    expect((await loadStrokeGeometry('⺿')).source?.exact).toBe(false);
+  });
+
+  // No source records these exact forms; they must keep failing closed, never borrowing a look-alike.
+  it.each(['⺴', '⺁', '⺧', '⺪', '⺷', '⻊', '𧢲'])('keeps %s off the supplementary list', glyph => {
+    const manifest = JSON.parse(readFileSync('src/data/supplementary-outlines.json', 'utf8'));
+    expect(manifest[glyph]).toBeUndefined();
+  });
 });
