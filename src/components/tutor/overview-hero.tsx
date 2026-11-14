@@ -23,12 +23,13 @@ function cssColorToHex(value: string) {
   return `#${Array.from(p).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 }
 
-/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card).
- *  Hanzi Writer's SVG carries width/height attributes but no viewBox, so CSS cannot scale the
- *  drawing — the writer is built at this exact size and re-dimensioned when the box changes. */
+/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card), which on
+ *  phones depends on the screen height. Hanzi Writer's SVG carries width/height attributes but no
+ *  viewBox, so CSS cannot scale the drawing — the writer is built at the square's rendered size
+ *  (read from layout, since the variable may be a clamp() expression) and re-dimensioned when it changes. */
 function dailyGlyphSize(box: HTMLElement) {
-  const parsed = parseFloat(getComputedStyle(box).getPropertyValue('--daily-glyph-size'));
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : 300;
+  const rendered = Math.round(box.getBoundingClientRect().width);
+  return rendered > 0 ? rendered : 300;
 }
 
 /** Draws the character once in stroke order, then hands over to the learner's chosen font. */
