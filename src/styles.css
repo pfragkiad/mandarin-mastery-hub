@@ -3194,6 +3194,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .library-page .word-card .word-open :is(.word-meaning, .catalog-entry-meaning) { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
 .library-page .word-card .word-open .tile-hanzi-row { --forms: var(--forms-per-row, 1); flex-wrap: nowrap; gap: var(--form-gap); max-width: none; }
 .library-page .word-card .word-open .tile-hanzi-row:has(> .tile-form:nth-child(7)) { flex-wrap: wrap; }
+.library-page .word-card .word-open .tile-form { flex: none; }
 .library-page .word-card .word-open[data-stacked] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; row-gap: 2px; }
 .library-page .word-card .word-open[data-stacked] :is(.tile-hanzi-row, .word-hanzi-tile) { grid-column: 1; grid-row: 1; margin-bottom: 8px; }
 .library-page .word-card .word-open[data-stacked] .tile-hanzi-row { width: 100%; font-size: min(1em, calc((100cqi - (var(--forms) - 1) * var(--form-gap)) / var(--forms) / var(--form-ratio))); }

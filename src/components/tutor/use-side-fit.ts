@@ -46,11 +46,10 @@ function sideLayoutFits(open: HTMLElement): boolean {
   if (getComputedStyle(open).display !== 'grid') return true;
   const tile = open.querySelector<HTMLElement>('.word-hanzi-tile');
   if (tile && tile.scrollWidth > tile.clientWidth + 1) return false;
-  // Form boxes stay in one unwrapped row in the side layout; a row wider than the body pushes
-  // the text column past the card edge.
+  // Form boxes stay in one unwrapped, unshrinking row in the side layout, so a row too wide
+  // for the card pushes the text column past the body's edge. (The row itself is not compared:
+  // the 部/繁 stamps deliberately poke out past its last box.)
   if (open.scrollWidth > open.clientWidth + 1) return false;
-  const row = open.querySelector<HTMLElement>('.tile-hanzi-row');
-  if (row && row.scrollWidth > row.clientWidth + 1) return false;
   const text = open.querySelector<HTMLElement>('.pinyin-text');
   if (text) {
     if (lineCount(text) > 1) return false;
