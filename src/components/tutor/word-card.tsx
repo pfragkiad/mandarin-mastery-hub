@@ -94,7 +94,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const headword = vocabularyKind(word) === 'word';
   const singleGlyph = Array.from(word.hanzi.replace(/\s/g, '')).length === 1;
   const isPhrase = vocabularyKind(word) === 'phrase';
-  // Comfortable phrases share the Words top row (PHRASE · type, merged HSK pill, sentence icon)
+  // Comfortable phrases share the Words top row (type, merged HSK pill, sentence icon)
   // and the 2×2 action block; only their stacked pinyin/box/translation body differs.
   const comfortablePhrase = preferences.libraryView === 'list' && isPhrase;
   const comfortableWord = preferences.libraryView === 'list' && (headword || isPhrase);
@@ -108,13 +108,16 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const phraseLongest = Math.max(1, ...phraseLines.map(line => Array.from(line).length));
   // Recorded HSK level and official id only; either part is omitted when not supplied.
   const hskLevel = word.entry?.hskLevel ?? null;
+  // The Words/Phrases tab already names the kind, so word and Comfortable phrase cards carry no
+  // WORD/PHRASE label; Compact phrases keep their recorded level label.
+  const levelLabel = wordStyleTop ? '' : word.level.toUpperCase();
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
   return <><article data-entry-id={word.id} className={`word-card ${headword ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
-        WORD · type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
-        (like the "In a character" icon on glyph cards). Comfortable phrases use the same row as PHRASE · type;
+        the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
+        (like the "In a character" icon on glyph cards). Comfortable phrases use the same row;
         Compact phrases keep the level and their footer type. */}
-    <div className="word-card-top"><span className="word-level-wrap"><span className="word-level">{headword ? 'WORD' : comfortablePhrase ? 'PHRASE' : word.level.toUpperCase()}</span>{word.type && <CardTopMeta><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
+    <div className="word-card-top"><span className="word-level-wrap">{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
     <Button variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}

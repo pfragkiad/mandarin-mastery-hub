@@ -115,3 +115,5 @@
 - [done] Start cards (random + character of the day): reuse existing tile layout styles, no new ones
 
 - [done] Comfortable library cards: labelled Details/Trace/Recall row below the body, bookmark icon at the far right of the pinyin line, translation uses the freed width; same bookmark on Start random cards.
+
+- [done] Library cards: no category words (gold Variant pill, stroke cards no top row), Compact rank/strokes top-left with equal space around the box, Filters + Study on one line with Study and its chip wrapping together; 693 tests pass, desktop and phone checked.
