@@ -1092,9 +1092,14 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .daily-hero { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: 40px; align-items: stretch; margin-bottom: 28px; min-height: min(60vh, 560px); }
 .daily-hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 0; position: relative; z-index: 21; }
 .daily-hero-copy h1 { display: flex; flex-direction: row; align-items: center; gap: 6px 20px; margin: 4px 0 0; font-weight: 400; }
+/* Start hero title: the brand message enlarged (Lora like the side-menu lockup), greeting as line two. */
+.start-hero-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0; }
+.start-hero-name { font-family: var(--font-display); font-size: clamp(40px, 4.4vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -.015em; color: var(--foreground); }
+.start-hero-motto { font-size: clamp(20px, 1.9vw, 28px); letter-spacing: .12em; color: var(--muted-foreground); }
+.start-hero-title + h1 { margin-top: 0; }
 .daily-greeting-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.daily-greeting-hanzi { font-size: clamp(56px, 6vw, 96px); line-height: 1.05; color: var(--foreground); }
-.daily-greeting-en { font-family: var(--font-display); font-size: clamp(26px, 2.4vw, 38px); line-height: 1.15; letter-spacing: -.01em; color: var(--muted-foreground); }
+.daily-greeting-hanzi { font-size: clamp(48px, 4.8vw, 76px); line-height: 1.05; color: var(--foreground); }
+.daily-greeting-en { font-family: var(--font-display); font-size: clamp(24px, 2.1vw, 32px); line-height: 1.15; letter-spacing: -.01em; color: var(--muted-foreground); }
 .daily-greeting-pinyin { font-size: 15px; }
 .daily-hero-copy > p { color: var(--muted-foreground); font-size: 14px; line-height: 1.7; max-width: 46ch; margin-bottom: 10px; }
 .daily-hero-copy .overview-library-search { margin: 0; }
@@ -1136,8 +1141,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .daily-hero { gap: 16px; margin-bottom: 20px; }
   .daily-hero-copy { gap: 10px; }
   .daily-hero-copy h1 { column-gap: 14px; margin: 0; }
-  .daily-greeting-hanzi { font-size: 44px; }
-  .daily-greeting-en { font-size: 22px; }
+  .start-hero-name { font-size: 34px; }
+  .start-hero-motto { font-size: 17px; }
+  .daily-greeting-hanzi { font-size: 38px; }
+  .daily-greeting-en { font-size: 20px; }
   .daily-hero-copy > p { font-size: 13px; line-height: 1.6; margin-bottom: 2px; }
   .daily-hero-card { padding: 16px 18px; gap: 10px; }
   /* Short phones: shrink the character with the screen height (between 160px and 220px)
@@ -3155,12 +3162,9 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
 }
 
-/* Phone app identity: 语 home mark in the header and the brand lockup atop Start. */
-.topbar-brand, .start-brand { display: none; }
+/* Phone app identity: 语 home mark in the header (Start's hero title carries the brand message). */
+.topbar-brand { display: none; }
 @media (max-width: 850px) {
   .topbar .topbar-brand { display: grid; width: 32px; height: 34px; font-size: 21px; margin-right: 10px; border-radius: 7px 7px 7px 2px; }
   .topbar:has(.topbar-brand) { grid-template-columns: auto minmax(0,1fr) auto; gap: 0; }
-  .start-brand { display: flex; margin: 0 0 18px; }
-  .start-brand .brand-mark { width: 36px; height: 38px; font-size: 24px; }
-  .start-brand .brand-copy strong { font-size: 21px; }
 }

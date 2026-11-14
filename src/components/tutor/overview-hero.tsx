@@ -90,8 +90,10 @@ export function DailyCharacterHero({ children }: { children?: React.ReactNode })
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;
   return <section className="daily-hero" aria-label="Character of the day">
     <div className="daily-hero-copy">
-      {/* Phones only (CSS, ≤850px): the app's identity lockup, since the side menu that carries it is hidden there. */}
-      <div className="start-brand brand" aria-hidden="true"><span className="brand-mark">语</span><span className="brand-copy"><strong>Mandarin<span className="brand-dot">.</span></strong><small>TUTOR / 一步一步</small></span></div>
+      {/* Small hero title at every width: the brand message ("Mandarin. Tutor · 一步一步") enlarged,
+          with the greeting below as its second line. No 语 tile here — the side menu (wide) and the
+          phone header already carry the mark, so Start never shows the logo twice. */}
+      <div className="start-hero-title"><span className="start-hero-name">Mandarin<span className="brand-dot">.</span> Tutor</span> <span lang="zh-CN" className="start-hero-motto">一步一步</span></div>
       {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
       <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
         <span className="daily-greeting-facts">
