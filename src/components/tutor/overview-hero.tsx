@@ -23,12 +23,13 @@ function cssColorToHex(value: string) {
   return `#${Array.from(p).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 }
 
-/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card).
- *  Hanzi Writer's SVG carries width/height attributes but no viewBox, so CSS cannot scale the
- *  drawing — the writer is built at this exact size and re-dimensioned when the box changes. */
+/** The character square is sized by `--daily-glyph-size` (styles.css, .daily-hero-card), which on
+ *  phones depends on the screen height. Hanzi Writer's SVG carries width/height attributes but no
+ *  viewBox, so CSS cannot scale the drawing — the writer is built at the square's rendered size
+ *  (read from layout, since the variable may be a clamp() expression) and re-dimensioned when it changes. */
 function dailyGlyphSize(box: HTMLElement) {
-  const parsed = parseFloat(getComputedStyle(box).getPropertyValue('--daily-glyph-size'));
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : 300;
+  const rendered = Math.round(box.getBoundingClientRect().width);
+  return rendered > 0 ? rendered : 300;
 }
 
 /** Draws the character once in stroke order, then hands over to the learner's chosen font. */
@@ -88,9 +89,13 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;
   return <section className="daily-hero" aria-label="Character of the day">
     <div className="daily-hero-copy">
-      <div className="eyebrow">{now ? now.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).toUpperCase() : '\u00a0'}</div>
-      <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span><span className="daily-greeting-en">{hello.english}.</span></h1>
-      {preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}
+      {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
+      <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
+        <span className="daily-greeting-facts">
+          {preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}
+          <span className="daily-greeting-en">{hello.english}.</span>
+        </span>
+      </h1>
       <p>One character a day, a few words around it, and a little practice.</p>
       {children}
     </div>
