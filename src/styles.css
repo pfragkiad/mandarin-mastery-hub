@@ -2758,3 +2758,16 @@ html .search-field .search-language .search-toggle.on { position: relative; righ
 .search-field:has(.search-trailing .search-language + .search-toggle) input { padding-right: 210px; }
 html[data-display-size='comfortable'] .search-field:has(.search-trailing) input { padding-right: 176px; }
 html[data-display-size='comfortable'] .search-field:has(.search-trailing .search-language + .search-toggle) input { padding-right: 250px; }
+
+/* Card corner indicators (T "In a character", sentence, decomposition) line up with the
+   visible action icons in the bottom row, not with their larger hit boxes: each icon sits
+   centred in a 22–40px button, so the indicator row is pulled in by the gap between the
+   card's content edge and the last action icon's right edge in that layout. */
+.catalog-card .catalog-card-indicators { margin-right: 6.5px; }
+.library-list-view .catalog-card .catalog-card-indicators { margin-right: 4.5px; }
+.word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 10.5px; }
+@media (max-width: 580px) {
+  .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
+  .library-list-view .catalog-card .catalog-card-indicators { margin-right: 10.5px; }
+  .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 6.5px; }
+}
