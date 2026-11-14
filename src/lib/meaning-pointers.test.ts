@@ -2,7 +2,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { catalog, hydrateCatalog, readingMeanings, type CatalogFile } from './catalog-store';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
-import { meaningPointers } from './meaning-pointers';
+import { cardMeaningPointers, meaningPointers } from './meaning-pointers';
 import { cardMeaning } from './glyph-presentation';
 
 const read = (name: string) => JSON.parse(readFileSync(`public/data/${name}`, 'utf8'));
@@ -31,5 +31,11 @@ describe('干 meaning and readings', () => {
   });
   it('keeps the recorded card text when the record has only one of the readings', () => {
     expect(cardMeaning('了', 'le', 'to finish; particle of completed action')).toBe('to finish; particle of completed action');
+  });
+  it('marks dried → 乾 and the gàn line → 幹 on the grid card', () => {
+    expect(cardMeaningPointers('干', 'gān / gàn', 'oppose, offend; invade; dried')).toEqual([
+      [{ text: 'oppose, offend' }, { text: 'invade' }, { text: 'dried', related: '乾' }],
+      [{ text: 'trunk of tree or of human body', related: '幹' }],
+    ]);
   });
 });

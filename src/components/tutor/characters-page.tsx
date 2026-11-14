@@ -30,7 +30,7 @@ import { TileSpeaker } from './tile-speaker';
 import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
 import { PointedMeaning } from './pointed-meaning';
-import { meaningPointers } from '@/lib/meaning-pointers';
+import { cardMeaningPointers, meaningPointers } from '@/lib/meaning-pointers';
 import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
 import { RadicalVariantEtymology } from './radical-variant-etymology';
