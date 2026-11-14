@@ -14,8 +14,7 @@ import { useEffect, useRef, useSyncExternalStore } from 'react';
  * Browser-safe, no data imports. Counts are keyed by the
  * section key the header uses (e.g. 'Components', 'word').
  */
-export type SectionExtra = { count: number; tone: 'traditional' | 'family'; hint: string };
-export type SectionStat = { count: number; extras?: SectionExtra[] };
+export type SectionStat = { count: number };
 type Published = { scope?: string; stats: Record<string, SectionStat>; active?: string; beforeSwitch?: () => void };
 
 const EMPTY: Published = { stats: {} };

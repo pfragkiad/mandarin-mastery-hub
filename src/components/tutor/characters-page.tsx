@@ -49,7 +49,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
-import { usePublishSections, type SectionExtra } from '@/lib/section-switch';
+import { usePublishSections } from '@/lib/section-switch';
 import { useOneLineTitle } from './one-line-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
@@ -99,7 +99,7 @@ const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' 
 function CountHintBody({ count, hint, tone }: { count: number; hint: string; tone: HintTone }) {
   return <HintBody><strong className={`count-hint-title count-hint-${tone}`}>+{count.toLocaleString('en-US')} {hintNoun(tone)}</strong><br/>{hint}</HintBody>;
 }
-/** Page-total version beside the card count (the kind switch moved to the header dropdown, which repeats it). */
+/** Page-total "+N" beside the card count, the only place these extras show (the header dropdown lists plain counts). */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
     <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
@@ -500,14 +500,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, selectedId]);
   // The kind switch lives in the header (section-picker.tsx); hand it each kind's
-  // card count and coloured "+N" extras, the same numbers the old tabs showed.
-  usePublishSections('glyphs', tabCounts ? Object.fromEntries(kinds.map(k => {
-    const traditional = sharedTraditional[k] ?? 0;
-    const extras: SectionExtra[] = [];
-    if (traditional > 0) extras.push({ tone: 'traditional', count: traditional, hint: k === 'Radicals' ? radicalTraditionalCountHint(traditional) : traditionalCountHint(traditional, standaloneTraditional[k] ?? 0, tabCounts[k] ?? plannedCounts[k]) });
-    if (k === 'Components' && sharedFamily > 0) extras.push({ tone: 'family', count: sharedFamily, hint: familyCountHint(sharedFamily) });
-    return [k, { count: tabCounts[k] ?? plannedCounts[k], extras }];
-  })) : Object.fromEntries(kinds.map(k => [k, { count: plannedCounts[k] }])), { active: kind });
+  // card count. The coloured "+N" extras stay on the page's count line only.
+  usePublishSections('glyphs', Object.fromEntries(kinds.map(k => [k, { count: tabCounts?.[k] ?? plannedCounts[k] }])), { active: kind });
   // The title must stay on one line at every width; the hook lowers its font size as needed.
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, kind);

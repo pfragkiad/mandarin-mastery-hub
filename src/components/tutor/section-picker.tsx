@@ -15,8 +15,8 @@ export type SectionOption = { key: string; label: string; icon: GameIcon; to: st
  * width (on phones it sits in the header title, beside the page name).
  *
  * Inputs: `page` (the parent name, for the accessible label), `options`, the
- * `active` key, optional per-section `stats` (count plus coloured "+N" extras,
- * published by the page through section-switch.ts) and `beforeSwitch` (run before
+ * `active` key, optional per-section `stats` (plain record counts, published by
+ * the page through section-switch.ts; the coloured "+N" extras stay on the page) and `beforeSwitch` (run before
  * leaving for another section, e.g. to stop Pinyin audio). No state of its own:
  * Radix owns open/closed; each item is a router Link, so picking a section pushes
  * history exactly like the side menu's sub-items, and Back restores it.
@@ -40,10 +40,7 @@ export function SectionPicker({ page, options, active, stats, beforeSwitch }: { 
             <Link to={o.to} search={o.search ?? {}} aria-current={isActive ? 'page' : undefined} onClick={() => { if (!isActive) beforeSwitch?.(); }}>
               <o.icon className="section-picker-icon"/>
               <span className="section-picker-name">{o.label}</span>
-              {stat && <span className="section-picker-counts">
-                <span className="section-picker-count">{stat.count.toLocaleString('en-US')}</span>
-                {stat.extras?.filter(x => x.count > 0).map(x => <span key={x.tone} className={`section-picker-extra is-${x.tone}`} title={x.hint} aria-label={`plus ${x.count.toLocaleString('en-US')}: ${x.hint}`}>+{x.count.toLocaleString('en-US')}</span>)}
-              </span>}
+              {stat && <span className="section-picker-count">{stat.count.toLocaleString('en-US')}</span>}
               <Check className="section-picker-check" aria-hidden="true"/>
             </Link>
           </DropdownMenuItem>

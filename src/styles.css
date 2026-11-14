@@ -2778,9 +2778,7 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 .section-picker-icon { width: 16px; height: 16px; flex-shrink: 0; color: var(--muted-foreground); }
 .section-picker-item:is([data-highlighted], .is-active) .section-picker-icon { color: inherit; }
 .section-picker-name { flex: 1; min-width: 0; }
-.section-picker-counts { display: inline-flex; align-items: baseline; gap: 5px; font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
-.section-picker-extra.is-traditional { color: var(--traditional); }
-.section-picker-extra.is-family { color: var(--hsk-id); }
+.section-picker-count { font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
 .section-picker-check { width: 15px; height: 15px; flex-shrink: 0; visibility: hidden; }
 .section-picker-item.is-active .section-picker-check { visibility: visible; }
 /* Phones: the page name (serif) and the section button together form the header title. */
