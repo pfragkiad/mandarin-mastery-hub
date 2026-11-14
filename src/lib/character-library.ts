@@ -78,12 +78,18 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   const kind = entries[0] ? kindFromId(entries[0].id) : undefined;
   const variants = kind === 'Radicals' && savedIds ? savedIds.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && entries.some(heading => heading.id === entry.radicalHeadingId) ? [entry] : []; }) : [];
   const q = normalize(query);
+  const hanQuery = /\p{Script=Han}/u.test(query);
   const matchesQuery = (entry: LibraryEntry) => {
     if (pinyinOnly && pinyinExact) return entry.pinyin.split(/[,/;]/).some(reading => pinyinReadingMatches(reading, query, true));
     if (pinyinOnly) return pinyinReadingMatches(entry.pinyin, query, false);
     // Plain (non-Pinyin) mode still honours pinyin input exactly like global
     // search: tone numbers or marks ("shi1", "shī") match readings even though
     // the Hanzi, meaning and note text never contains digits.
+    // A query holding hanzi matches written forms only: the glyph, its sourced radical identity
+    // glyphs and its own family forms. Character notes read "N strokes · 干 radical", so free
+    // text would list every character filed under a radical (年, 平, 幸 for 干). Stroke notes
+    // hold the stroke's own Chinese name (横折), which stays searchable.
+    if (hanQuery) return [entry.hanzi, ...(kind === 'Strokes' ? [entry.note ?? ''] : []), ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ').includes(query.trim());
     return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q) || pinyinReadingMatches(entry.pinyin, query, false);
   };
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));

@@ -73,6 +73,10 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
   if (!q) return [];
   // In pinyin modes the hanzi/meaning free text is dropped so only readings decide.
   const written = query.trim();
+  // A query holding hanzi matches written forms only (the glyph and its sourced radical
+  // identity glyphs), never the source note, whose "· 干 radical" text would otherwise make
+  // every character filed under 干 (年, 平, 幸…) look like a match for 干.
+  const hanQuery = /\p{Script=Han}/u.test(written);
   const wordMatch = pinyinMode === 'any'
     ? (w: Word) => wordSearchText(w).all.includes(q) || pinyinReadingMatches(w.pinyin, query, false)
     : pinyinMode === 'hanzi' ? (w: Word) => w.hanzi.includes(written)
@@ -99,7 +103,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
     entries
       // Free-text fields belong only to unrestricted search; Pinyin/Exact must
       // not admit translation or source-note matches for reference entries.
-      .filter(row => { const [hanzi, pinyin, meaning, note, script] = row; if (!includeScript(script, includeTraditional)) return false; const text = rowSearchText(row, hanzi, pinyin, meaning, note); return refMatch(text) || (pinyinMode === 'any' && text.text.includes(q)); })
+      .filter(row => { const [hanzi, pinyin, meaning, note, script] = row; if (!includeScript(script, includeTraditional)) return false; const text = rowSearchText(row, hanzi, pinyin, meaning, note); return refMatch(text) || (pinyinMode === 'any' && (hanQuery ? text.written.includes(written) : text.text.includes(q))); })
       .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
   );
   // Words lead, phrases follow all glyphs. Compare the recorded numeric ranks
