@@ -40,3 +40,17 @@ describe('干 meaning and readings', () => {
     ]);
   });
 });
+
+describe('发 meaning and readings', () => {
+  it('records both fā and fà, each bound to its own recording', () => {
+    expect(catalog.characters.find(row => row[0] === '发')?.[1]).toBe('fā / fà');
+    expect(catalog.readingAudio['发']).toEqual({ 'fā': 'cmn-syl-fa1', 'fà': 'cmn-syl-fa4' });
+  });
+  it('pairs hair with fà and the other senses with fā', () => {
+    expect(readingMeanings('发')).toEqual([{ reading: 'fā', meaning: 'issue, dispatch, send out' }, { reading: 'fà', meaning: 'hair' }]);
+  });
+  it('points the hair line to 髮 and the fā line to 發', () => {
+    expect(meaningPointers('发', 'issue, dispatch, send out; hair', 'hair', 'fà')).toEqual([{ text: 'hair', related: '髮' }]);
+    expect(meaningPointers('发', 'issue, dispatch, send out; hair', 'issue, dispatch, send out', 'fā')).toEqual([{ text: 'issue, dispatch, send out', related: '發' }]);
+  });
+});
