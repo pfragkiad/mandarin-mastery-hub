@@ -2981,9 +2981,45 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .stand-in-hint .hint-rows { margin: 0; padding: 0; list-style: none; }
 .stand-in-hint-source { font-size: 10px; color: var(--muted-foreground); }
 
-/* Pinyin game round results (pinyin-drills.tsx): each missed sound is a playable row with what was chosen. */
-.pinyin-missed { display: grid; gap: 4px; margin: 4px auto 16px; padding: 0; list-style: none; width: min(100%, 420px); text-align: left; }
-.pinyin-missed li { display: flex; align-items: center; gap: 10px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 10px; }
-.pinyin-missed li > span { color: var(--muted-foreground); font-size: 14px; }
-.pinyin-missed .pinyin { font-size: 18px; }
+/* Pinyin games while playing (pinyin-drills.tsx): one card holding a one-line settings bar
+   (round summary chip, Restart, End / inline "End now?") above the question. The full setup
+   only reopens below the bar when the chip is clicked. */
+.pinyin-play { max-width: 820px; padding: 18px 22px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 18px; }
+.pinyin-play .game-setup { margin: 0; max-width: none; background: var(--background); }
+.pinyin-play .pinyin-drill { max-width: none; }
+.pinyin-play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.pinyin-play-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--muted-foreground); font-size: 13px; cursor: pointer; text-align: left; transition: border-color .15s, color .15s; }
+.pinyin-play-chip svg { width: 15px; height: 15px; flex: none; }
+.pinyin-play-chip:hover, .pinyin-play-chip:focus-visible, .pinyin-play-chip[aria-expanded='true'] { border-color: var(--primary); color: var(--foreground); outline: none; }
+.pinyin-play-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
+.pinyin-play-confirm { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-left: 10px; border-left: 1px solid var(--border); font-size: 13px; }
+.pinyin-play-end-yes.pinyin-play-end-yes { color: var(--destructive); border-color: color-mix(in oklab, var(--destructive) 55%, transparent); }
+.pinyin-play-end-yes.pinyin-play-end-yes:hover, .pinyin-play-end-yes.pinyin-play-end-yes:focus-visible { border-color: var(--destructive); color: var(--destructive); background: color-mix(in oklab, var(--destructive) 10%, transparent); }
+
+/* Pinyin game results: left-aligned card with the score, then each missed sound as a row
+   (tick, speaker, right reading, what was chosen, the correct answer), then the next-round actions. */
+.pinyin-results { max-width: 820px; padding: 24px 26px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 6px; }
+.pinyin-results-eyebrow { font-size: 12px; letter-spacing: .6px; color: var(--muted-foreground); }
+.pinyin-results-score { display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--muted-foreground); }
+.pinyin-results-score strong { font-family: var(--font-display); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--foreground); }
+.pinyin-results-sub { font-size: 13px; color: var(--muted-foreground); }
+.pinyin-results-perfect { margin-top: 12px; font-size: 14px; }
+.pinyin-results-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; margin-top: 18px; font-size: 14px; }
+.pinyin-results-head small { font-size: 12px; color: var(--muted-foreground); }
+.pinyin-missed { margin: 4px 0 0; padding: 0; list-style: none; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.pinyin-missed li { display: grid; grid-template-columns: auto minmax(96px, auto) minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 10px 16px; }
+.pinyin-missed li + li { border-top: 1px solid var(--border); }
+.pinyin-missed li.is-skipped > :not(button[role='checkbox']) { opacity: .45; }
+.pinyin-missed .pinyin { font-size: 20px; font-weight: 400; color: var(--terracotta); }
+.pinyin-missed .example-listen.is-playing { color: var(--terracotta); }
+.pinyin-missed-choice { font-size: 14px; color: var(--foreground); min-width: 0; }
+.pinyin-missed-correct { font-size: 13px; color: var(--grade-high); text-align: right; }
+.pinyin-results-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+.pinyin-results-note { font-size: 12px; color: var(--muted-foreground); margin-top: 4px; }
 .pinyin-drill > .flash-meta, .pinyin-drill > .flash-progress { width: 100%; }
+@media (max-width: 580px) {
+  .pinyin-play, .pinyin-results { padding: 16px; }
+  .pinyin-play-actions { margin-left: 0; }
+  .pinyin-missed li { grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; padding: 10px 12px; }
+  .pinyin-missed-choice, .pinyin-missed-correct { grid-column: 2; text-align: left; }
+}
