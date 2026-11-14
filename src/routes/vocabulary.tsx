@@ -17,7 +17,6 @@ function VocabularyRoute() {
   const search = Route.useSearch();
   const navigate = Route.useNavigate();
   return <VocabularyPage {...search} initialQuery={search.q ?? ''} initialWordId={search.word ?? ''}
-    onTabChange={tab => navigate({ search: { tab }, resetScroll: false })}
     onFiltersChange={(patch, replace = false) => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, ...patch, page: 1 }; }, resetScroll: false, replace })}
     onPageChange={page => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, page }; }, resetScroll: false })}
     onWordOpen={(id, page) => navigate({ search: prev => { const { word: _word, ...rest } = prev; return { ...rest, ...(id ? { word: id } : {}), ...(page ? { page } : {}) }; }, resetScroll: false, replace: !id })} />;
