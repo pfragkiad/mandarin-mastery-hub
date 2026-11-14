@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useWorkspace } from './workspace';
 import { HanziIcon, HANZI_GAMES, PINYIN_GAMES, PinyinGamesIcon, type GameEntry, type GameIcon } from './game-catalog';
 import { NavGroup, type NavSub } from './nav-group';
-import { SectionPicker } from './section-picker';
+import { SectionPicker, type SectionOption } from './section-picker';
 import { useSectionStats } from '@/lib/section-switch';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
