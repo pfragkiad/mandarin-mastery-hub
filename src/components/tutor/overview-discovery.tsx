@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
+import { Bookmark, ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
@@ -46,7 +46,7 @@ function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase
 /** One tile per category: the total count plus a live random record from that category. */
 export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   const meta = CATEGORY_META[category];
-  const { items, preferences, catalogVersion } = useWorkspace();
+  const { items, preferences, catalogVersion, saved, toggleSaved } = useWorkspace();
   const [selectedId, setSelectedId] = useState<string>();
   const [audioError, setAudioError] = useState<string | null>(null);
 
@@ -97,6 +97,11 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       : null;
 
   const record = word ?? entry;
+  // Save toggle at the far right of the pinyin line, same session bookmark as the library cards
+  // (exact Vocabulary word id or exact Glyphs record id), so the pick appears in that section's Saved view.
+  const bookmarkId = record?.id;
+  const bookmarked = bookmarkId ? saved.includes(bookmarkId) : false;
+  const bookmarkButton = bookmarkId && <Button variant="ghost" size="icon" className="discovery-bookmark" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${word ? word.hanzi : entry?.hanzi ?? ''}`} aria-pressed={bookmarked} onClick={() => toggleSaved(bookmarkId)}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>;
   const chartLinks = preferences.soundChartLinks !== false;
   const hanzi = word ? word.hanzi : entry?.hanzi;
   const pinyin = word ? word.pinyin : entry?.pinyin || '—';
@@ -128,6 +133,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
             {preferences.pinyin && <span className="pinyin">{pinyin}</span>}
             <DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError} />
             {!word && entry?.pinyin && chartLinks && <SoundChartLink reading={entry.pinyin} from={entry.hanzi} variant="header"/>}</>}
+            {bookmarkButton}
           </div>
           <Link to={recordLink.to} search={recordLink.search} className={`overview-record-link${ink ? ` ${ink}` : ''}`} title={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
@@ -147,7 +153,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
           <span className="glyph-usage-facts">
             <span className="glyph-usage-facts-row"><span className="example-pinyin-row">{!word && entry && isMultiReading(entry.pinyin)
               ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="example" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'}/>
-              : <>{preferences.pinyin && <span className="pinyin">{pinyin}</span>}<ExamplePronunciation request={word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : characterAudioRequest(hanzi, entry?.pinyin ?? '')} label={hanzi}/></>}</span></span>
+              : <>{preferences.pinyin && <span className="pinyin">{pinyin}</span>}<ExamplePronunciation request={word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : characterAudioRequest(hanzi, entry?.pinyin ?? '')} label={hanzi}/></>}</span>{bookmarkButton}</span>
             {preferences.meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning}/></span>}
           </span>
         </div>

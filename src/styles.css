@@ -820,6 +820,11 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-tile-record .overview-record-link h2 { font-size: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .discovery-tile > .library-note { margin: 0; font-size: 10px; }
 .discovery-tile-phone { display: none; }
+/* Start random cards: the Save toggle sits at the far right of the pinyin line, like the
+   bookmark on Comfortable library cards; the phone tile's reading row stretches to the edge. */
+.discovery-record-pinyin > .discovery-bookmark { margin-left: auto; }
+.discovery-tile-phone .glyph-usage-facts-row { align-self: stretch; flex-wrap: nowrap; }
+.discovery-tile-phone .glyph-usage-facts-row > .discovery-bookmark { margin-left: auto; flex: none; width: 26px; height: 26px; }
 @media (max-width:580px) { .discovery-tile-phone { display: flex; } }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
@@ -1838,20 +1843,31 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 
 /* Footer metadata copy for the top label row; shown only by the rule below. */
 .card-top-meta { display: none; }
-/* Comfortable cards at every width drop the footer row: its metadata joins the
-   top label row after a dot, and the actions form a 2×2 block to the right of the
-   body. The body keeps its own bottom padding so wrapped translations still breathe.
-   Phrases use the same frame; only their pinyin/box/translation body stays stacked. */
-  .library-list-view .word-card { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto; }
-  .library-list-view .word-card > .word-card-top { grid-column: 1 / -1; grid-row: 1; }
-  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-right: 10px; }
-  .library-list-view .word-card > .word-card-bottom { grid-column: 2; grid-row: 2; display: flex; align-items: center; border: 0; margin: 0; padding: 0 14px 0 0; height: auto; min-height: 0; }
+/* Comfortable cards at every width: the footer's metadata joins the top label row after
+   a dot (CardTopMeta), Save sits at the far right of the pinyin line (.tile-bookmark, a
+   third body column) and the footer becomes one row of labelled Details / Trace / Recall
+   buttons below the body — the same .daily-hero-actions trio as Start's random cards —
+   so the translation spans the whole width beside the hanzi box. */
+  .library-list-view .word-card { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; }
+  .library-list-view .word-card > .word-card-top { grid-column: 1; grid-row: 1; }
+  .library-list-view .word-card > .word-open { grid-column: 1; grid-row: 2; padding-bottom: 12px; }
+  .library-list-view .word-card > .word-card-bottom { grid-column: 1; grid-row: 3; display: block; border: 0; margin: 0; padding: 0 24px 18px; height: auto; min-height: 0; }
   .library-list-view .word-card > .word-card-bottom > span:first-child { display: none; }
-  .library-list-view .word-card .word-actions { display: grid; grid-template-columns: repeat(2, 40px); gap: 4px; }
-  .library-list-view .word-card .word-actions :is(button, a) { width: 40px; height: 40px; }
+  .library-list-view .word-card .card-labelled-actions { margin-top: 0; }
   .library-list-view .word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
   .library-list-view .word-card .card-top-meta .component-reuse-label { font-size: 12px; }
-  .library-list-view .word-card > .catalog-card-audio-error { grid-column: 1 / -1; grid-row: 3; }
+  .library-list-view .word-card > .catalog-card-audio-error { grid-column: 1; grid-row: 4; }
+  /* Bookmark column: last body column, first row (the pinyin line), whatever the body layout. */
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-open { grid-template-columns: fit-content(55%) minmax(0, 1fr) auto; }
+  .library-list-view:not(.vocab-phrase-grid) .word-card .word-meaning,
+  .library-list-view:not(.vocab-phrase-grid) .word-card .catalog-entry-meaning { grid-column: 2 / -1; }
+  .library-list-view.vocab-phrase-grid .word-card .word-open { grid-template-columns: minmax(0, 1fr) auto; }
+  .library-list-view.vocab-phrase-grid .word-character > [lang],
+  .library-list-view.vocab-phrase-grid .word-card .word-meaning { grid-column: 1 / -1; }
+  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: center; justify-self: end; }
+@media (max-width: 580px) {
+  .library-list-view .word-card > .word-card-bottom { padding: 0 18px 16px; }
+}
 
 /* Reference typography has one scale per semantic role, shared by sentence,
    parent-character, identity and decomposition renderers in every location.
@@ -1953,14 +1969,6 @@ html[data-display-size='comfortable'] {
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { min-height: 40px; font-size: var(--ui-control-size); }
 }
 
-/* Comfortable card actions (2×2 block, every width): Details and Save share the top
-   row, the two brush practice links sit below. Placement is by grid area so the
-   DOM/tab order stays Details → Practice → Expert → Save on every layout. */
-  .library-list-view .word-card .word-actions { grid-template-areas: "details save" "practice expert"; }
-  .library-list-view .word-card .word-actions .card-details-action { grid-area: details; }
-  .library-list-view .word-card .word-actions .card-bookmark-action { grid-area: save; }
-  .library-list-view .word-card .word-actions .card-practice-action { grid-area: practice; }
-  .library-list-view .word-card .word-actions .card-expert-action { grid-area: expert; }
 
 /* Practice reading card: when a single hanzi is shown (Watch/Trace, non-radical), it
    sits in a bordered tile on the left with the pinyin + speaker line and the
@@ -2764,18 +2772,15 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
    centred in a 22–40px button, so the indicator row is pulled in by the gap between the
    card's content edge and the last action icon's right edge in that layout. */
 .catalog-card .catalog-card-indicators { margin-right: 6.5px; }
-.library-list-view .catalog-card .catalog-card-indicators { margin-right: 4.5px; }
 .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 10.5px; }
-/* Comfortable (List) Words cards keep the headword-card class, so the Grid-only Words pull-in
-   above must not reach them: List rows (Words and Phrases) align at 0.5px above phone width. */
-@media (min-width: 581px) {
-  .word-grid.library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 0.5px; }
-}
 @media (max-width: 580px) {
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
-  .library-list-view .catalog-card .catalog-card-indicators { margin-right: 10.5px; }
-  .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 6.5px; }
 }
+/* Comfortable cards (every width, Glyphs and Vocabulary): the indicators line up with the
+   bookmark on the pinyin line — a 30px .tile-speaker box with a 17px icon, so the icon sits
+   6.5px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
+.library-list-view .catalog-card .catalog-card-indicators > span { width: 17px; flex-basis: 17px; }
+:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 6.5px; }
 
 /* Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the games
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
