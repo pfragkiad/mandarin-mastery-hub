@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { vocabularyKind } from '@/lib/mandarin';
-import { Volume2, Library, BookOpen, Bookmark } from 'lucide-react';
-import { PracticeIcon } from './practice-icons';
+import { Volume2, Bookmark } from 'lucide-react';
+import { DetailsIcon, PracticeIcon } from './practice-icons';
 import type HanziWriter from 'hanzi-writer';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
@@ -107,9 +107,8 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
         <StrokeReveal hanzi={entry.hanzi}/>
         <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>
         <div className="daily-hero-actions">
-          {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><Library/>Open in Characters</Link></Button>}
-          <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi, mode: 'trace' }}><PracticeIcon/>Practice writing</Link></Button>
-          <Button asChild variant="ghost" size="sm"><Link to="/vocabulary" search={{ q: entry.hanzi }}><BookOpen/>Words using it</Link></Button>
+          {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><DetailsIcon aria-hidden="true"/>Details</Link></Button>}
+          <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi, mode: 'trace' }}><PracticeIcon aria-hidden="true"/>Practice</Link></Button>
         </div>
       </> : <div className="daily-glyph is-loading" aria-hidden="true"/>}
     </div>
