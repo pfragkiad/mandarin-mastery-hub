@@ -16,7 +16,7 @@ import { useEffect, useRef, useSyncExternalStore } from 'react';
  */
 export type SectionExtra = { count: number; tone: 'traditional' | 'family'; hint: string };
 export type SectionStat = { count: number; extras?: SectionExtra[] };
-type Published = { stats: Record<string, SectionStat>; active?: string; beforeSwitch?: () => void };
+type Published = { scope?: string; stats: Record<string, SectionStat>; active?: string; beforeSwitch?: () => void };
 
 const EMPTY: Published = { stats: {} };
 let snapshot: Published = EMPTY;
@@ -24,9 +24,14 @@ const listeners = new Set<() => void>();
 const emit = () => listeners.forEach(listener => listener());
 const subscribe = (listener: () => void) => { listeners.add(listener); return () => { listeners.delete(listener); }; };
 
-/** Header side: the counts and hook the current page published (empty when none). */
-export function useSectionStats(): Published {
-  return useSyncExternalStore(subscribe, () => snapshot, () => EMPTY);
+/**
+ * Header side: what the page of `scope` ('glyphs', 'vocabulary', 'games') published,
+ * or nothing. The scope check keeps the previous page's counts from showing for the
+ * one render before it unmounts.
+ */
+export function useSectionStats(scope: string | null): Published {
+  const published = useSyncExternalStore(subscribe, () => snapshot, () => EMPTY);
+  return scope && published.scope === scope ? published : EMPTY;
 }
 
 /**
@@ -35,16 +40,16 @@ export function useSectionStats(): Published {
  * the latest `beforeSwitch` behind a stable wrapper so a new closure each render
  * never republishes. Unmounting clears it, unless another page already replaced it.
  */
-export function usePublishSections(stats: Record<string, SectionStat> | null, options: { active?: string; beforeSwitch?: () => void } = {}) {
+export function usePublishSections(scope: string, stats: Record<string, SectionStat> | null, options: { active?: string; beforeSwitch?: () => void } = {}) {
   const { active, beforeSwitch } = options;
   const hook = useRef(beforeSwitch);
   hook.current = beforeSwitch;
   const hasHook = Boolean(beforeSwitch);
   const key = JSON.stringify(stats ?? {});
   useEffect(() => {
-    const mine: Published = { stats: JSON.parse(key) as Record<string, SectionStat>, ...(active ? { active } : {}), ...(hasHook ? { beforeSwitch: () => hook.current?.() } : {}) };
+    const mine: Published = { scope, stats: JSON.parse(key) as Record<string, SectionStat>, ...(active ? { active } : {}), ...(hasHook ? { beforeSwitch: () => hook.current?.() } : {}) };
     snapshot = mine;
     emit();
     return () => { if (snapshot === mine) { snapshot = EMPTY; emit(); } };
-  }, [key, active, hasHook]);
+  }, [scope, key, active, hasHook]);
 }

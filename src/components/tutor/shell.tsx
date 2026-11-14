@@ -75,7 +75,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // counts (and the Pinyin quizzes a stop-audio hook) through section-switch.ts.
   // Glyphs keeps the All/Saved choice when switching kinds, as its old tabs did.
   const savedStatus = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('status') });
-  const published = useSectionStats();
+  const published = useSectionStats(path === '/characters' ? 'glyphs' : path === '/vocabulary' ? 'vocabulary' : currentGame ? 'games' : null);
   const allGames = [...HANZI_GAMES.map(g => ({ ...g, group: 'Hanzi games' })), ...PINYIN_GAMES.map(g => ({ ...g, group: 'Pinyin games' }))];
   const picker: { parent: string; phoneParent: string; options: SectionOption[]; active: string } | null =
     path === '/characters' ? { parent: 'Glyphs', phoneParent: 'Glyphs', active: published.active ?? (characterSections.find(k => k === charactersTab) ?? 'Characters'), options: characterSections.map(k => ({ key: k, label: k, icon: sectionIcons[k], to: '/characters', search: { ...(k === 'Characters' ? {} : { tab: k }), ...(savedStatus === 'saved' ? { status: 'saved' } : {}) } })) }
