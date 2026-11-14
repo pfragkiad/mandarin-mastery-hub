@@ -2802,6 +2802,4 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
   .topbar .section-picker { gap: 8px; padding: 7px 12px; margin: -7px -12px; border-radius: 10px; }
   .topbar .section-picker > svg { width: 15px; height: 15px; }
   .topbar .section-picker.page-picker { font-weight: 500; }
-  .topbar .breadcrumbs > .crumb-sep { margin-left: 12px; }
-  .topbar .breadcrumbs > .page-picker { margin-left: -12px; }
 }
