@@ -1,3 +1,4 @@
+import { bookmarkLabel } from './record-card-footer';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
@@ -149,11 +150,11 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
       : null;
 
   const record = word ?? entry;
-  // Save toggle at the far right of the pinyin line, same session bookmark as the library cards
+  // Bookmark toggle at the far right of the pinyin line, same session bookmark as the library cards
   // (exact Vocabulary word id or exact Glyphs record id), so the pick appears in that section's Saved view.
   const bookmarkId = record?.id;
   const bookmarked = bookmarkId ? saved.includes(bookmarkId) : false;
-  const bookmarkButton = bookmarkId && <Button variant="ghost" size="icon" className="discovery-bookmark" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${word ? word.hanzi : entry?.hanzi ?? ''}`} aria-pressed={bookmarked} onClick={() => toggleSaved(bookmarkId)}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>;
+  const bookmarkButton = bookmarkId && <Button variant="ghost" size="icon" className="discovery-bookmark" title={bookmarkLabel(bookmarked)} aria-label={bookmarkLabel(bookmarked, word ? word.hanzi : entry?.hanzi ?? '')} aria-pressed={bookmarked} onClick={() => toggleSaved(bookmarkId)}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>;
   const chartLinks = preferences.soundChartLinks !== false;
   const hanzi = word ? word.hanzi : entry?.hanzi;
   const pinyin = word ? word.pinyin : entry?.pinyin || '—';

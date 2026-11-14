@@ -58,7 +58,7 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   expect(['你', '好']).toContain(target);
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
   fireEvent.click(screen.getByRole('button', { name: 'See results' }));
-  fireEvent.click(screen.getByRole('button', { name: /^Save / }));
+  fireEvent.click(screen.getByRole('button', { name: /^Bookmark / }));
   expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
   expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
   fireEvent.click(screen.getByRole('button', { name: 'Review these (1)' }));
@@ -122,11 +122,11 @@ it('offers a bookmark on every card to review, saving its exact id', async () =>
     fireEvent.click(screen.getByRole('button', { name: i < 4 ? 'Next card' : 'See results' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
-  screen.getAllByRole('button', { name: /^Save / }).forEach(button => fireEvent.click(button));
+  screen.getAllByRole('button', { name: /^Bookmark / }).forEach(button => fireEvent.click(button));
   expect(state.toggleSaved).toHaveBeenCalledTimes(5);
   expect(new Set(state.saved).size).toBe(5);
   rerender(<DrawingGamePage search={search} onSearch={onSearch}/>);
-  expect(screen.getAllByRole('button', { name: /^Unsave / })).toHaveLength(5);
+  expect(screen.getAllByRole('button', { name: /^Remove bookmark / })).toHaveLength(5);
 });
 
 it('keeps the active round while filters auto-apply and clears explicitly', async () => {
