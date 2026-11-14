@@ -1132,7 +1132,15 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .daily-hero-card { padding: 16px 18px; gap: 10px; }
   /* Short phones: shrink the character with the screen height (between 160px and 220px)
      so it is never cut off by the bottom tab bar. */
-  .daily-hero-card { --daily-glyph-size: clamp(160px, calc(100dvh - 430px), 220px); }
+  /* Phones: the card reads like a glyph tile — a smaller character on the left, reading over
+     translation on its right, actions below — so the whole card fits with little scrolling. */
+  .daily-hero-card { --daily-glyph-size: 132px; display: grid; grid-template-columns: auto minmax(0,1fr); grid-template-areas: "label label" "glyph pinyin" "glyph meaning" "actions actions"; align-items: center; column-gap: 16px; row-gap: 6px; }
+  .daily-hero-label { grid-area: label; margin-bottom: 4px; }
+  .daily-hero-card > .daily-glyph { grid-area: glyph; }
+  .daily-hero-pinyin { grid-area: pinyin; justify-content: flex-start; margin: 0; align-self: end; flex-wrap: wrap; }
+  .daily-hero-pinyin .pinyin { font-size: 20px; }
+  .daily-hero-meaning { grid-area: meaning; text-align: left; font-size: 17px; align-self: start; }
+  .daily-hero-actions { grid-area: actions; margin-top: 8px; }
 }
 .search-field .search-toggle { position: absolute; top: 50%; transform: translateY(-50%); right: 7px; height: 27px; padding: 0 10px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 5px; background: transparent; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
 /* Two toggles (Pinyin + Exact) sit side by side; the first shifts left. */
