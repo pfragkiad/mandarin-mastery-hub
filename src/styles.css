@@ -3150,3 +3150,13 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
 }
+
+/* Phone app identity: 语 home mark in the header and the brand lockup atop Start. */
+.topbar-brand, .start-brand { display: none; }
+@media (max-width: 850px) {
+  .topbar .topbar-brand { display: grid; width: 32px; height: 34px; font-size: 21px; margin-right: 10px; border-radius: 7px 7px 7px 2px; }
+  .topbar:has(.topbar-brand) { grid-template-columns: auto minmax(0,1fr) auto; gap: 0; }
+  .start-brand { display: flex; margin: 0 0 18px; }
+  .start-brand .brand-mark { width: 36px; height: 38px; font-size: 24px; }
+  .start-brand .brand-copy strong { font-size: 21px; }
+}
