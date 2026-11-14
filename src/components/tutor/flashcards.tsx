@@ -32,6 +32,9 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 const deckSizes = ROUND_SIZES; // shared with every game
 
 export type FlashcardFilters = { category: string; level: string; pos: string; usage: string; saved?: boolean | undefined };
+/** Last answer → results: the bar's 0.3s fill to 100% plus a short hold before the switch. */
+const FINISH_PAUSE_MS = 450;
+
 export function FlashcardsPage({ category: controlledCategory, level: controlledLevel, pos: controlledPos, usage: controlledUsage, saved: controlledSaved, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
   const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
   const [localFilters, setLocalFilters] = useState<FlashcardFilters>({ category: 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' });
@@ -100,15 +103,27 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
     setSession(s => ({ ...s, round: isReview ? s.round + 1 : 1, total: dealt.length, deck: dealt, index: 0, flipped: false, missed: [], ended: false, skipped: [], isReview, label: isReview ? `Review · ${cardsUnit(dealt.length)}` : `${settingsLabel()} · ${cardsUnit(dealt.length)}` }));
   };
   const start = (cards: Card[], next = false) => deal(next ? shuffle(cards) : shuffle(cards).slice(0, deckSize === 'all' ? cards.length : deckSize), next);
+  // Last-card pause: the answer counts at once (counter and results agree), the bar fills
+  // to 100% and holds briefly before the results replace the card, so a round never feels cut off.
+  const [finishing, setFinishing] = useState(false);
   const answer = (known: boolean) => {
-    if (!deck) return;
+    if (!deck || finishing) return;
     const current = deck[index];
+    // In "repeat" mode a missed card goes back in the deck, so only then is the last card not final.
+    if (index === deck.length - 1 && !(repeat && !known)) {
+      setFinishing(true);
+      setSession(s => ({ ...s, missed: !known && current ? [...s.missed, current] : s.missed }));
+      setTimeout(() => { setSession(s => ({ ...s, flipped: false, index: s.index + 1 })); setFinishing(false); }, FINISH_PAUSE_MS);
+      return;
+    }
     setSession(s => ({ ...s, flipped: false, missed: !known && current ? [...s.missed, current] : s.missed }));
     // Advance after the flip-back starts; a repeated miss goes to the end of the deck.
     setTimeout(() => setSession(s => ({ ...s, deck: repeat && !known && current && s.deck ? [...s.deck, current] : s.deck, index: s.index + 1 })), 150);
   };
   const done = Boolean(deck && (index >= deck.length || session.ended));
   const card = done ? undefined : deck?.[index];
+  // Flag the final card (multi-card decks only) so the switch to results never surprises.
+  const lastCard = Boolean(card && deck && deck.length > 1 && index === deck.length - 1);
   const request = { ...characterAudioRequest(card?.hanzi ?? '', card?.pinyin), audio: card?.audio ?? null };
   const source = audioCandidates(request)[0]?.label;
   const audioAvailable = usePronunciationAvailability(audioCandidates(request).some(candidate => candidate.kind === 'recording'), card?.pinyin);
@@ -180,8 +195,8 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
         onRestart={() => session.isReview ? start(uniqueDeck, true) : start(pool)} restartDisabled={!session.isReview && !pool.length} end={end} />
       {settingsOpen && setup(<Button onClick={() => start(pool)} disabled={!pool.length} aria-label={`Restart · ${cardsUnit(roundSize)}`}><RotateCcw />Restart with these</Button>, <>Changes apply to the next round · {deckSummary(roundSize, pool.length)}</>)}
       {card && <div className={`flash-stage ${card.script === 'Traditional' ? 'is-traditional' : ''}`}>
-        <div className="flash-meta"><span>Card {index + 1} of {deck?.length ?? 0}{round > 1 ? ` · round ${round}` : ''}</span><span>{uniqueMissed.length} to review</span></div>
-        <div className="flash-progress"><span style={{ width: `${(index / (deck?.length || 1)) * 100}%` }} /></div>
+        <div className="flash-meta"><span className="flash-meta-count"><span>Card {index + 1} of {deck?.length ?? 0}{round > 1 ? ` · round ${round}` : ''}</span>{lastCard && <span className="flash-last-card">Last card</span>}</span><span>{uniqueMissed.length} {repeat ? 'took extra tries' : 'still learning'}</span></div>
+        <div className="flash-progress"><span style={{ width: `${finishing ? 100 : (index / (deck?.length || 1)) * 100}%` }} /></div>
         <div className={`flash-card ${flipped ? 'is-flipped' : ''}`}>
           <div className="flash-inner">
             <div className="flash-face" aria-hidden={flipped} inert={flipped}>
@@ -198,10 +213,10 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
           </div>
         </div>
         <div className="flash-actions">
-          <Button variant="outline" onClick={() => answer(false)} disabled={!flipped}><X />Still learning</Button>
-          <Button onClick={() => answer(true)} disabled={!flipped}><Check />I knew it</Button>
+          <Button variant="outline" onClick={() => answer(false)} disabled={!flipped || finishing}><X />Still learning</Button>
+          <Button onClick={() => answer(true)} disabled={!flipped || finishing}><Check />I knew it</Button>
         </div>
-        <p className="game-play-keys">Space flips · ← still learning · → I knew it · Esc ends</p>
+        <p className="game-play-keys">{!lastCard ? 'Space flips · ← still learning · → I knew it · Esc ends' : repeat ? 'Space flips · ← still learning (back in the deck) · → I knew it · finish · Esc ends' : 'Space flips · ← still learning · finish · → I knew it · finish · Esc ends'}</p>
       </div>}
     </section>}
 
