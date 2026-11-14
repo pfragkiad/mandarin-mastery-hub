@@ -7,6 +7,7 @@ import { glyphIndex, libraryDestination } from '@/lib/character-library';
 import { ComponentPronunciation } from './component-pronunciation';
 import { stripKangxiLabel } from './characters-page';
 import { radicalIdentity } from '@/lib/radical-identities';
+import { cardMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
 
 export function RadicalIdentityNote({ glyph }: { glyph: string }) {
@@ -17,7 +18,10 @@ export function RadicalIdentityNote({ glyph }: { glyph: string }) {
     <h3 className="eyebrow">KANGXI IDENTITY{identity.radicals.length ? <SourceInfo inline className="detail-footnote identity-footnote">{identity.kind === 'canonical' ? 'Canonical Kangxi radical.' : 'Sourced Kangxi radical form.'}{identity.equivalentGlyphs.length > 0 && <><br/>Unicode-equivalent forms · <span lang="zh-CN">{identity.equivalentGlyphs.join(' · ')}</span></>}<br/>Source · {[...new Set(sources.map(source => `${source.provider} ${source.version}`))].join(' · ')} · Unicode License V3</SourceInfo> : null}</h3>
     {identity.radicals.length ? <div className="kangxi-identity-rows">{identity.radicals.map(radical => {
       const destination = libraryDestination(radical.glyph, preferences.includeTraditional);
-      const meaning = glyphIndex()[radical.glyph]?.meaning;
+      // Reviewed per-reading meanings (干 gān / gàn) join with " / " like the grid card (cardMeaning
+      // fails closed to the recorded text); no related-character pointers on a radical.
+      const record = glyphIndex()[radical.glyph];
+      const meaning = record?.meaning ? cardMeaning(radical.glyph, record.pinyin, record.meaning) : undefined;
       // Same shape as the "In a character" rows: the tile, then two lines beside it —
       // reading + speaker + Radical #N on top, the recorded meaning below.
       return <div key={radical.id} className="glyph-usage-reference kangxi-identity-item">{destination
