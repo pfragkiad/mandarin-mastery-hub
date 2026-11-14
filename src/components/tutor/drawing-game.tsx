@@ -21,7 +21,7 @@ import { TileBookmark } from "./record-card-footer";
 import { ExamplePronunciation } from "./example-pronunciation";
 import { MeaningText } from "./meaning-text";
 import { characterAudioRequest } from "@/lib/catalog-store";
-import { mixedRound } from "@/lib/pinyin-round";
+import { ROUND_SIZES, mixedRound } from "@/lib/pinyin-round";
 import { DrawingBoard } from "./drawing-board";
 import { useWorkspace } from "./workspace";
 import { useDrawingSession } from "./drawing-session";

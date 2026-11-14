@@ -4,7 +4,7 @@ import { GameSetup, GameReady, deckSummary } from './game-setup';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
 import { ExamplePronunciation } from './example-pronunciation';
 import { TileBookmark } from './record-card-footer';
-import { mixedRound } from '@/lib/pinyin-round';
+import { ROUND_SIZES, mixedRound } from '@/lib/pinyin-round';
 import { MeaningText } from './meaning-text';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useFlashcardSession, type FlashCard } from './flashcard-session';
