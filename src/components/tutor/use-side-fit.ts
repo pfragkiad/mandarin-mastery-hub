@@ -31,11 +31,15 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
     };
     measure();
     let alive = true;
-    void document.fonts?.ready.then(() => { if (alive) measure(); });
-    if (typeof ResizeObserver === 'undefined') return () => { alive = false; };
+    const remeasure = () => { if (alive) measure(); };
+    void document.fonts?.ready.then(remeasure);
+    // The card's handwritten web font can load lazily AFTER fonts.ready resolved; without
+    // this, a card that failed the fit check in the wider fallback font stayed stacked forever.
+    document.fonts?.addEventListener('loadingdone', remeasure);
+    if (typeof ResizeObserver === 'undefined') return () => { alive = false; document.fonts?.removeEventListener('loadingdone', remeasure); };
     const observer = new ResizeObserver(measure);
     observer.observe(el);
-    return () => { alive = false; observer.disconnect(); };
+    return () => { alive = false; document.fonts?.removeEventListener('loadingdone', remeasure); observer.disconnect(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, ...deps]);
 }
