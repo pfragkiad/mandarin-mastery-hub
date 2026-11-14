@@ -9,7 +9,7 @@ import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, sc
 import { componentCardGlyphs, componentFamilyGroup } from '@/lib/component-families';
 import { FormSwitchThumb } from './form-switch-thumb';
 import { catalog } from '@/lib/catalog-store';
-import { libraryEntries } from '@/lib/character-library';
+import { libraryEntries, type LibraryEntry } from '@/lib/character-library';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import type { PracticeMode } from '@/lib/practice-mode';
 import { useWorkspace } from './workspace';
