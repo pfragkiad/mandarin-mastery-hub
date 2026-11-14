@@ -2955,7 +2955,7 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
      plus the bookmark on one line: let the row wrap (6px between lines too) so Recall
      is never clipped; the bookmark keeps its right-end spot on the last line. */
   .library-page .word-card .word-card-bottom { flex-wrap: wrap; row-gap: 6px; }
-  .library-page .word-card .card-footer-actions { flex-wrap: wrap; row-gap: 6px; min-width: 0; }
+  .library-page .word-card .card-footer-actions { flex-wrap: wrap; row-gap: 6px; min-width: 0; flex-shrink: 1; }
 }
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */
 .word-card .word-level-wrap > .card-top-meta.is-lead { margin-left: 0; }
