@@ -18,7 +18,7 @@ export type PracticeDetails = { to: '/characters'; search: CharactersSearch } | 
 // Practice title card, shared by character, word and stroke practice.
 // Layout: a top row with Back (named after the page Practice was opened from) and the
 // print action (a "•••" menu on phones), then "Write <glyph>" with the reading line under
-// it on the left and, when the record has other forms, the form switch on the right.
+// it and, when the record has other forms, the form switch below the reading.
 // Inputs:
 // - glyph / glyphClassName: the title glyph and its identity ink (card-ink-*, is-traditional).
 // - hideGlyph: Recall keeps the glyph only for screen readers so the answer never shows.
@@ -45,20 +45,20 @@ export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, 
         <DropdownMenuContent align="end"><DropdownMenuItem disabled={printDisabled} onSelect={onPrint}><Printer/>Print sheet</DropdownMenuItem></DropdownMenuContent>
       </DropdownMenu>
     </div>
-    {/* Title on its own line; under it the form tiles (when any) sit on the left and the
-        reading block fills the rest: pinyin + speaker with the pills pushed right, then the
-        translation on its own line so it wraps across the full remaining width. */}
+    {/* Title on its own line; under it the reading block (pinyin + speaker with the pills
+        pushed right, then the translation on its own line), and the form tiles (when any)
+        on a full-width row below the reading. */}
     <div className="practice-title-row">
       <h1 className="practice-title">Write{' '}<span lang="zh-CN" className={`practice-title-glyph ${glyphClassName}${hideGlyph ? ' sr-only' : ''}`}>{glyph}</span></h1>
       {details && <PracticeDetailsLink details={details} glyph={glyph} hideGlyph={hideGlyph}/>}
     </div>
     <div className="practice-header-main">
-      {forms && <div className="practice-header-forms">{forms}</div>}
       <div className="practice-header-text">
         <p className="practice-reading-line"><span className="practice-reading">{reading}</span>{pills}</p>
         <p className="practice-translation-line"><span className="practice-translation">{meaning}</span></p>
         {after}
       </div>
+      {forms && <div className="practice-header-forms">{forms}</div>}
     </div>
   </header>;
 }
