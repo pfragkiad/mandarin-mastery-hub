@@ -9,5 +9,5 @@ export const Route = createFileRoute('/flashcards')({
 function FlashcardsRoute() {
   const search = Route.useSearch();
   const navigate = Route.useNavigate();
-  return <FlashcardsPage category={search.category ?? 'All vocabulary'} level={search.level ?? 'All levels'} pos={search.pos ?? 'All types'} usage={search.usage ?? ''} onFiltersChange={filters => { void navigate({ search: filters, resetScroll: false }); }} />;
+  return <FlashcardsPage category={search.category ?? 'All vocabulary'} level={search.level ?? 'All levels'} pos={search.pos ?? 'All types'} usage={search.usage ?? ''} saved={search.saved} onFiltersChange={filters => { void navigate({ search: filters, resetScroll: false }); }} />;
 }
