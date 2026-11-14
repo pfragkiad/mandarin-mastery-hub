@@ -3221,3 +3221,10 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
    Recall row, as tall as those buttons (Compact keeps it as the last footer icon). */
 .library-page .word-card .card-labelled-actions .card-bookmark-icon { margin-left: auto; width: 40px; min-width: 40px; padding: 0; }
 .library-page .word-card .card-labelled-actions .card-bookmark-icon svg { width: 19px; height: 19px; }
+/* A stacked Comfortable body has the whole card width, so its translation is never clamped. */
+.library-page .library-list-view .word-card .word-open[data-stacked] .catalog-entry-meaning { display: block; -webkit-line-clamp: unset; overflow: visible; }
+/* Phones: tighter labelled buttons so Details / Trace / Recall and the bookmark share one row. */
+@media (max-width: 500px) {
+  .library-page .word-card .card-labelled-actions { flex-wrap: nowrap; gap: 6px; }
+  .library-page .word-card .card-labelled-actions > :not(.card-bookmark-icon) { padding-inline: 9px; gap: 5px; min-width: 0; }
+}
