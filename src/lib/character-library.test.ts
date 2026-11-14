@@ -177,10 +177,13 @@ describe('Exact pinyin search', () => {
 });
 
 describe('hanzi search ignores the radical note', () => {
-  it('searching 干 in Characters lists 干 but not characters filed under radical 干', async () => {
+  it('searching 干 in Characters lists 干 and its related 乾/幹 but not characters filed under radical 干', async () => {
     const { filterLibrary, libraryEntries } = await import('./character-library');
     const hits = filterLibrary(libraryEntries('Characters'), '干', '', false, true).map(entry => entry.hanzi);
     expect(hits).toContain('干');
+    // 乾 and 幹 are recorded related characters of 干, so they stay in the results.
+    expect(hits).toContain('乾');
+    expect(hits).toContain('幹');
     for (const h of ['年', '平', '幸', '并']) expect(hits).not.toContain(h);
   });
 });

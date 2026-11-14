@@ -3,6 +3,7 @@ import { includeScript, type CharacterScript } from './learning-preferences';
 import { vocabularyKind, type Word } from './mandarin';
 import { usageRank } from './usage-frequency';
 import { radicalSearchGlyphs } from './radical-identities';
+import { relatedGroup } from './character-variants';
 import { displayMeaning } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
 
