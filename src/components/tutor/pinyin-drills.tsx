@@ -8,14 +8,14 @@
 // Local state only: the round's deck, position, answer and misses. Nothing is kept
 // after the round. Filter changes and the round size affect the next round only.
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { ArrowRight, Check, Play, RotateCcw, SlidersHorizontal, Target, Volume2, X } from 'lucide-react';
+import { ArrowRight, Check, Play, RotateCcw, Target, Volume2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Switch } from '@/components/ui/switch';
 import { SPOKEN_TONES, TONE_NAMES, allSounds, checkTyped, finalFilterLabel, findSyllable, initialFilterLabel, hasRecording, isScored, matchesFinal, matchesInitial, soundAlikes, toneMark, type PinyinData, type PinyinSound, type Tone, type TypedVerdict } from '@/lib/pinyin-guide';
 import { ROUND_SIZES, dealRound, mixedRound, reviewRound, shuffle, type RoundSize } from '@/lib/pinyin-round';
 import { DraftFilterForm } from './filter-form';
 import { GameSetup } from './game-setup';
+import { GamePlayBar, GameResults, MissedTick, useRoundEnd } from './game-round';
 import { FinalSelect, InitialSelect } from './pinyin-chart';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 
@@ -97,30 +97,29 @@ type FrameProps = DrillProps & {
  *    in a review drop off the list and nothing outlives the open page.
  * Keys: Space/R hear again, Enter next/start, Esc ends (Esc again keeps going).
  */
-function DrillFrame({ mode, data, filters, onFilters, pool, round, size, onSize, slow, onSlow, player, prompt, describeChoice, describeCorrect, children, footer }: FrameProps) {
+function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round, size, onSize, slow, onSlow, player, prompt, describeChoice, describeCorrect, children, footer }: FrameProps) {
   const active = Boolean(filters.initial || filters.final);
   const roundLength = Math.min(size, pool.length);
-  const [confirming, setConfirming] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const unit = (n: number) => `${n.toLocaleString('en-US')} ${n === 1 ? 'sound' : 'sounds'}`;
   const settingsLabel = `${initialFilterLabel(filters.initial)} · ${finalFilterLabel(filters.final)}`;
-  const reset = () => { setConfirming(false); setSettingsOpen(false); };
-  const startNew = () => { reset(); const dealt = dealRound(pool, size); round.begin(dealt, false, `${settingsLabel} · ${unit(dealt.length)}`); };
+  const startNew = () => { setSettingsOpen(false); const dealt = dealRound(pool, size); round.begin(dealt, false, `${settingsLabel} · ${unit(dealt.length)}`); };
   const uniqueMisses = [...new Map(round.misses.map(m => [m.sound.id, m])).values()];
   const kept = uniqueMisses.filter(m => !round.skipped.has(m.sound.id)).map(m => m.sound);
-  const startReview = () => { reset(); const dealt = reviewRound(kept); round.begin(dealt, true, `Review · ${unit(dealt.length)}`); };
-  const startMixed = () => { reset(); const dealt = mixedRound(pool, size, kept); round.begin(dealt, false, `${settingsLabel} · ${unit(dealt.length)}`); };
-  const requestEnd = () => { if (round.answered === 0) { reset(); round.quit(); } else setConfirming(true); };
-  const confirmEnd = () => { reset(); round.finish(); };
-  const changeSettings = () => { reset(); round.quit(); };
-  const latest = useRef({ round, startNew, requestEnd, confirming });
-  latest.current = { round, startNew, requestEnd, confirming };
+  const startReview = () => { setSettingsOpen(false); const dealt = reviewRound(kept); round.begin(dealt, true, `Review · ${unit(dealt.length)}`); };
+  const restartReview = () => { setSettingsOpen(false); const dealt = reviewRound(round.deck ?? []); round.begin(dealt, true, round.label); };
+  const startMixed = () => { setSettingsOpen(false); const dealt = mixedRound(pool, size, kept); round.begin(dealt, false, `${settingsLabel} · ${unit(dealt.length)}`); };
+  const changeSettings = () => { setSettingsOpen(false); round.quit(); };
+  const end = useRoundEnd({ active: Boolean(round.current), answered: round.answered, onFinish: () => { setSettingsOpen(false); round.finish(); }, onQuit: changeSettings });
+  // Enter = next sound once answered, or a new round from the setup; Space/R = hear it again.
+  // Esc (end) is handled by useRoundEnd; while "End now?" is open its buttons own Enter/Space.
+  const latest = useRef({ round, startNew, confirming: end.confirming });
+  latest.current = { round, startNew, confirming: end.confirming };
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
-      const { round: r, startNew: fresh, requestEnd: end, confirming: asking } = latest.current;
-      if (event.key === 'Escape' && r.current) { event.preventDefault(); if (asking) setConfirming(false); else end(); return; }
-      if (asking) return; // the inline confirmation's own buttons take Enter/Space
+      const { round: r, startNew: fresh, confirming: asking } = latest.current;
+      if (asking || event.key === 'Escape') return;
       if (event.key === 'Enter' && r.result) { event.preventDefault(); r.next(); return; }
       if (event.key === 'Enter' && !r.deck && !editable(event.target)) { event.preventDefault(); fresh(); return; }
       if (editable(event.target)) return;
@@ -155,51 +154,36 @@ function DrillFrame({ mode, data, filters, onFilters, pool, round, size, onSize,
 
   if (finished) {
     const correct = answered - new Set(misses.map(m => m.sound.id)).size;
-    return <section className="pinyin-results" aria-label="Results">
-      <div className="pinyin-results-eyebrow">{round.review ? 'Review complete' : answered < deck.length ? 'Session ended' : 'Session complete'}</div>
-      <p className="pinyin-results-score"><strong>{correct} / {answered}</strong> correct</p>
-      <p className="pinyin-results-sub">{answered} of {deck.length} answered{uniqueMisses.length ? ` · ${kept.length} to review` : ''}</p>
-      {uniqueMisses.length > 0 ? <>
-        <div className="pinyin-results-head"><span>Missed sounds</span><small>Untick any you want to skip</small></div>
-        <ul className="pinyin-missed" aria-label="Missed sounds">{uniqueMisses.map(m => {
-          const reading = toneMark(m.sound.base, m.sound.tone);
-          return <li key={m.sound.id} className={round.skipped.has(m.sound.id) ? 'is-skipped' : ''}>
-            <Checkbox checked={!round.skipped.has(m.sound.id)} onCheckedChange={() => round.toggleSkip(m.sound.id)} aria-label={`Review ${reading}`} />
-            {/* Reading with the shared speaker beside it, as in every detail heading. */}
-            <span className="pinyin-missed-reading example-pinyin-row">
-              <strong className="pinyin" lang="zh-Latn-pinyin">{reading}</strong>
-              <Button variant="ghost" size="icon" className={`example-listen${player.playing === m.sound.id ? ' is-playing' : ''}`} onClick={() => void player.play(m.sound)} aria-label={`Listen to ${reading}`} title="Listen · Recording"><Volume2 /></Button>
-            </span>
-            <span className="pinyin-missed-choice">{describeChoice(m)}</span>
-            <span className="pinyin-missed-correct">{describeCorrect(m)}</span>
-          </li>;
-        })}</ul>
-      </> : <p className="pinyin-results-perfect">{answered ? 'A perfect round — well done.' : 'No answers in this round.'}</p>}
-      {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
-      <div className="pinyin-results-actions">
+    return <GameResults eyebrow={round.review ? 'Review complete' : answered < deck.length ? 'Session ended' : 'Session complete'}
+      score={correct} total={answered} unit="correct" listTitle="Missed sounds" listKind="sounds" hasList={uniqueMisses.length > 0}
+      sub={<>{answered} of {deck.length} answered{uniqueMisses.length ? ` · ${kept.length} to review` : ''}</>}
+      empty={answered ? 'A perfect round — well done.' : 'No answers in this round.'}
+      extra={player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
+      actions={<>
         {uniqueMisses.length > 0 && <Button onClick={startReview} disabled={!kept.length}><Target />Practise missed ({kept.length})</Button>}
         <Button variant={uniqueMisses.length ? 'outline' : 'default'} onClick={startMixed} disabled={!pool.length && !kept.length}><Play />{kept.length ? 'New round + missed' : 'New round'}</Button>
         <Button variant="ghost" onClick={changeSettings}>Change settings</Button>
-      </div>
-      {uniqueMisses.length > 0 && <p className="pinyin-results-note">Sounds you get right in a review round drop off the missed list.</p>}
-    </section>;
+      </>}
+      note={uniqueMisses.length > 0 && 'Sounds you get right in a review round drop off the missed list.'}>
+      {uniqueMisses.map(m => {
+        const reading = toneMark(m.sound.base, m.sound.tone);
+        return <MissedTick key={m.sound.id} label={reading} kept={!round.skipped.has(m.sound.id)} onToggle={() => round.toggleSkip(m.sound.id)}>
+          {/* Reading with the shared speaker beside it, as in every detail heading. */}
+          <span className="game-missed-reading example-pinyin-row">
+            <strong className="pinyin" lang="zh-Latn-pinyin">{reading}</strong>
+            <Button variant="ghost" size="icon" className={`example-listen${player.playing === m.sound.id ? ' is-playing' : ''}`} onClick={() => void player.play(m.sound)} aria-label={`Listen to ${reading}`} title="Listen · Recording"><Volume2 /></Button>
+          </span>
+          <span className="game-missed-note">{describeChoice(m)}</span>
+          <span className="game-missed-correct">{describeCorrect(m)}</span>
+        </MissedTick>;
+      })}
+    </GameResults>;
   }
 
-  return <section className="pinyin-play" aria-label="Game">
-    <div className="pinyin-play-bar">
-      <button type="button" className="pinyin-play-chip" aria-expanded={settingsOpen} onClick={() => setSettingsOpen(o => !o)} title="Change settings for the next round">
-        <SlidersHorizontal />{round.label}{slow ? ' · Slower' : ''}
-      </button>
-      <div className="pinyin-play-actions">
-        <Button variant="outline" onClick={round.review ? startReview : startNew} disabled={!round.review && !pool.length}><RotateCcw />Restart</Button>
-        {confirming ? <span className="pinyin-play-confirm" role="group" aria-label="End this round?">
-          <span>End now?</span>
-          <Button variant="outline" className="pinyin-play-end-yes" onClick={confirmEnd} autoFocus>Yes, end</Button>
-          <Button variant="outline" onClick={() => setConfirming(false)}>Keep going</Button>
-        </span> : <Button variant="ghost" onClick={requestEnd}><X />End</Button>}
-      </div>
-    </div>
-    {settingsOpen && setup(<Button onClick={startNew} disabled={!pool.length}><RotateCcw />Restart with these</Button>, `Changes apply to the next round · ${poolSummary}`)}
+  return <section className="game-play" aria-label="Game">
+    <GamePlayBar summary={<>{round.label}{slow ? ' · Slower' : ''}</>} settingsOpen={settingsOpen} onToggleSettings={() => setSettingsOpen(o => !o)}
+      onRestart={round.review ? restartReview : startNew} restartDisabled={!round.review && !pool.length} end={end} />
+    {settingsOpen && setup(<Button onClick={startNew} disabled={!pool.length} aria-label={`Restart · ${unit(roundLength)}`}><RotateCcw />Restart with these</Button>, `Changes apply to the next round · ${poolSummary}`)}
     {current && <div className="pinyin-drill">
       <div className="flash-meta"><span>Sound {index + 1} of {deck.length}{round.review ? ' · review' : ''}</span><span>{misses.length} wrong</span></div>
       <div className="flash-progress"><span style={{ width: `${(index / (deck.length || 1)) * 100}%` }} /></div>
