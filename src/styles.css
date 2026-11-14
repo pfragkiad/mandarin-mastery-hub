@@ -1460,7 +1460,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
    dropdown height belongs to those forms alone; everywhere else (game setups)
    dropdowns keep the shared 44px Comfortable control height, so every control in
    one row matches. Keep mobile touch sizing. */
-html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form:has(.search-field) .filter-select { height: 58px; }
+html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form:has(.search-field) .filter-select { height: 48px; min-height: 48px; }
 /* No separate ≤1280px dropdown height: on those widths the dropdowns live in the Filters
    sheet, and the inline form only shows briefly (first paint, before the screen-size check
    runs), where a shorter dropdown sat beside the full-height search box. Inline dropdowns
@@ -1471,7 +1471,7 @@ html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-fo
 .saved-filter-toggle { height: 36px; gap: 6px; padding-inline: 10px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .saved-filter-toggle.selected { background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
 .saved-filter-toggle svg { width: 16px; height: 16px; }
-html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form:has(.search-field) > .saved-filter-toggle { height: 58px; padding-inline: 14px; }
+html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form:has(.search-field) > .saved-filter-toggle { height: 48px; padding-inline: 14px; }
 html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; height: 18px; }
 /* "Saved only" row: first option in the phone Filters drawer, framed like a dropdown. */
 .saved-filter-row { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); cursor: pointer; font-size: var(--ui-control-size, 14px); }
@@ -2011,7 +2011,7 @@ html[data-display-size='comfortable'] {
 /* Tablet Comfortable controls retain desktop readability and search height;
    the existing tighter phone sizing below 761px remains unchanged. */
 @media (min-width: 761px) and (max-width: 1280px) {
-  html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field { min-height: 58px; padding: 6px 8px; gap: 8px; }
+  html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field { min-height: 48px; padding: 3px 8px; gap: 8px; }
   html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field input { height: 44px; font-size: var(--ui-control-size); }
   html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field .search-toggle { height: 40px; min-height: 40px; padding-inline: 14px; font-size: 12px; }
   html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
@@ -3180,4 +3180,15 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 @media (max-width: 850px) {
   .topbar .topbar-brand { display: grid; width: 32px; height: 34px; font-size: 21px; margin-right: 10px; border-radius: 7px 7px 7px 2px; }
   .topbar:has(.topbar-brand) { grid-template-columns: auto minmax(0,1fr) auto; gap: 0; }
+}
+
+/* Library search row: slimmer Comfortable search box (48px, matching dropdowns and the
+   saved toggle) and one equal gap above and below the row at every width. */
+html[data-display-size='comfortable'] .library-page .filter-bar .search-field { padding-block: 3px; }
+html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form .search-field input { height: 40px; min-height: 40px; }
+html[data-display-size='comfortable'] .library-page .search-field .search-toggle { height: 34px; min-height: 34px; }
+html[data-display-size='comfortable'] .library-page .mobile-library-filters .search-field input { height: 40px; min-height: 40px; }
+.library-page .filter-bar.shared-filter-form { margin-top: 22px; margin-bottom: 22px; }
+@media (max-width: 1280px) {
+  .library-page .mobile-library-filters > form { margin-top: 14px !important; margin-bottom: 14px !important; }
 }
