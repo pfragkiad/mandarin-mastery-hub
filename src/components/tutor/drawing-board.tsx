@@ -6,6 +6,7 @@ import { PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { loadStrokeGeometry } from '@/lib/character-enrichment';
+import { PRACTICE_CANVAS_MIN } from '@/lib/learning-preferences';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { audioCandidates, audioMessage, playPronunciation } from '@/lib/audio';
@@ -44,6 +45,29 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
   const [guide, setGuide] = useState(false);
   const guideRef = useRef(false); guideRef.current = guide;
   const guideUsed = useRef(false);
+  // Resize grip (same as Practice): the writer is always built at 300px and the
+  // SVG carries a matching viewBox, so dragging only changes the CSS size — the
+  // quiz's pointer mapping scales with it and no rebuild (or lost strokes) is
+  // needed. Capped at 480px so the square never grows to full card width.
+  const DRAWING_CANVAS_MAX = 480;
+  const column = useRef<HTMLDivElement>(null);
+  const [canvasSize, setCanvasSize] = useState(300);
+  const startResize = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const node = column.current; if (!node) return;
+    event.preventDefault();
+    const startX = event.clientX, startY = event.clientY, start = canvasSize;
+    let size = start;
+    const move = (e: PointerEvent) => {
+      size = Math.min(DRAWING_CANVAS_MAX, Math.max(PRACTICE_CANVAS_MIN, start + Math.max(e.clientX - startX, e.clientY - startY)));
+      node.style.setProperty('--drawing-size', `${size}px`);
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
+      setCanvasSize(Math.round(size));
+    };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  const resetSize = () => setCanvasSize(300);
   // Only read the saved terminal snapshot on mount, not when Practice saves it.
   const initialSnapshot = useRef(restored);
   const prompt = entry.word ?? entry;
@@ -69,6 +93,10 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
         drawingWidth: 6, charDataLoader: (_glyph, onLoad) => onLoad(data),
       });
       writer.current = instance;
+      // Give the SVG a viewBox of its 300px build size once, so the resize grip's
+      // CSS scaling keeps the character, ink and quiz coordinates aligned.
+      const drawing = node.querySelector('svg');
+      if (drawing && !drawing.hasAttribute('viewBox')) drawing.setAttribute('viewBox', '0 0 300 300');
       const snapshot = initialSnapshot.current;
       if (snapshot) {
         settled.current = true; setState(snapshot.result); setMistakes(snapshot.mistakes);
@@ -141,9 +169,9 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
     </div>
     {/* The meta row and the canvas share one column so Show guide and the stroke count line up with the square's edges. */}
     <div className={entry.word ? 'drawing-word-layout' : undefined}>
-      <div className="drawing-canvas-column">
+      <div className="drawing-canvas-column" ref={column} style={{ ['--drawing-size' as string]: `${canvasSize}px` }}>
     <div className="drawing-board-meta"><Button variant="ghost" size="sm" disabled={state !== 'drawing'} onClick={toggleGuide}>{guide ? <EyeOff/> : <Eye/>}{guide ? 'Hide guide' : 'Show guide'}</Button><span>{progress.total ? `${progress.completed} / ${progress.total} strokes` : '—'}</span></div>
-      <div className="writing-grid drawing-grid">{celebration}<div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
+      <div className="writing-grid drawing-grid">{celebration}<div ref={target} className="hanzi-target" role="img" aria-label="Hanzi drawing area"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{state === 'loading' && <span className="writer-message">Loading…</span>}</div>
       </div>
       {entry.word && <aside className="drawing-word-context" aria-label="Word characters"><span className="eyebrow">WORD</span><ol className="drawing-word-characters">{drawingWordClues(entry).map(clue => <li key={clue.index} className="drawing-word-clue" aria-current={clue.selected ? 'true' : undefined} aria-label={clue.selected ? `Character ${clue.index + 1} · draw this character` : undefined}><span className="pinyin drawing-character-pinyin">{clue.pinyin}</span><div className={`drawing-word-character${clue.selected ? ' is-selected' : ''}`}><span lang="zh-CN">{clue.glyph}</span><small>{clue.index + 1}</small></div></li>)}</ol></aside>}
     </div>
