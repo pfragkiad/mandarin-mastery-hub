@@ -1,5 +1,4 @@
 import { isPlainCardDoubleClick } from './card-peek';
-import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
 import { useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Volume2, MessageSquareText } from 'lucide-react';
@@ -36,7 +35,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
   return <>
-    <RecordDetailTitle hanzi={word.hanzi} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={word.hanzi} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
@@ -45,8 +44,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </dl>
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
     <VocabularyDecomposition word={word}/>
-    {/* Reference label and the record actions share the bottom row: label left, actions right. */}
-    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
+    {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
+    <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
   </>;
 }
 
