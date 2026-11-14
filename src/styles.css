@@ -2875,3 +2875,9 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
   }
 }
 html .practice-header .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
+
+/* "→ 乾" after a meaning sense owned by a related character: an accent link, no underline;
+   the hanzi keeps Traditional purple when its record is Traditional. */
+.pointed-meaning .meaning-pointer { color: var(--primary); text-decoration: none; white-space: nowrap; }
+.pointed-meaning .meaning-pointer.traditional-character span { color: var(--traditional); }
+.pointed-meaning .meaning-pointer:hover, .pointed-meaning .meaning-pointer:focus-visible { color: var(--accent-foreground); }
