@@ -7751,29 +7751,19 @@
             "⺴"
           ],
           "formKind": "variant",
-          "strokeCount": 6,
+          "strokeCount": 4,
           "record": {
-            "status": "derived",
+            "status": "recorded",
             "strokes": [
               {
-                "name": "竖",
-                "pinyin": "shù",
-                "glyph": "㇑"
+                "name": "点",
+                "pinyin": "diǎn",
+                "glyph": "㇔"
               },
               {
-                "name": "横折钩",
-                "pinyin": "héng zhé gōu",
-                "glyph": "㇆"
-              },
-              {
-                "name": "撇",
-                "pinyin": "piě",
-                "glyph": "㇒"
-              },
-              {
-                "name": "捺",
-                "pinyin": "nà",
-                "glyph": "㇏"
+                "name": "横撇",
+                "pinyin": "héng piě",
+                "glyph": "㇇"
               },
               {
                 "name": "撇",
@@ -7781,21 +7771,21 @@
                 "glyph": "㇒"
               },
               {
-                "name": "捺",
-                "pinyin": "nà",
-                "glyph": "㇏"
+                "name": "横斜钩",
+                "pinyin": "héng xié gōu",
+                "glyph": "㇤"
               }
             ],
-            "source": "cjklib · C-locale strokeorder",
-            "sourceStatus": "derived",
+            "source": "cnchar-order 3.2.6 · recorded for 冗",
+            "sourceStatus": "unicode-equivalent-ideograph",
             "provenance": {
-              "id": "cjklib",
-              "method": "component-decomposition",
-              "record": {
-                "radicalSymbol": "⽹",
-                "glyph": 0,
-                "localeInSource": "C"
-              }
+              "id": "unicode-equivalent-ideograph",
+              "file": "EquivalentUnifiedIdeograph-17.0.0.txt",
+              "sha256": "38619c05a17e771554000fe604afee92e10eb49e0616ecf0c87af3c1eb0f4320",
+              "line": "2EB4 ; 5197",
+              "recordedAs": "冗",
+              "strokeSource": "cnchar-order 3.2.6",
+              "review": "Linked by owner review (Nov 2026); replaces the source family sequence."
             },
             "officiallyVerified": false
           }
@@ -21535,27 +21525,17 @@
       "officiallyVerified": false
     },
     "⺴": {
-      "status": "derived",
+      "status": "recorded",
       "strokes": [
         {
-          "name": "竖",
-          "pinyin": "shù",
-          "glyph": "㇑"
+          "name": "点",
+          "pinyin": "diǎn",
+          "glyph": "㇔"
         },
         {
-          "name": "横折钩",
-          "pinyin": "héng zhé gōu",
-          "glyph": "㇆"
-        },
-        {
-          "name": "撇",
-          "pinyin": "piě",
-          "glyph": "㇒"
-        },
-        {
-          "name": "捺",
-          "pinyin": "nà",
-          "glyph": "㇏"
+          "name": "横撇",
+          "pinyin": "héng piě",
+          "glyph": "㇇"
         },
         {
           "name": "撇",
@@ -21563,21 +21543,21 @@
           "glyph": "㇒"
         },
         {
-          "name": "捺",
-          "pinyin": "nà",
-          "glyph": "㇏"
+          "name": "横斜钩",
+          "pinyin": "héng xié gōu",
+          "glyph": "㇤"
         }
       ],
-      "source": "cjklib · C-locale strokeorder",
-      "sourceStatus": "derived",
+      "source": "cnchar-order 3.2.6 · recorded for 冗",
+      "sourceStatus": "unicode-equivalent-ideograph",
       "provenance": {
-        "id": "cjklib",
-        "method": "component-decomposition",
-        "record": {
-          "radicalSymbol": "⽹",
-          "glyph": 0,
-          "localeInSource": "C"
-        }
+        "id": "unicode-equivalent-ideograph",
+        "file": "EquivalentUnifiedIdeograph-17.0.0.txt",
+        "sha256": "38619c05a17e771554000fe604afee92e10eb49e0616ecf0c87af3c1eb0f4320",
+        "line": "2EB4 ; 5197",
+        "recordedAs": "冗",
+        "strokeSource": "cnchar-order 3.2.6",
+        "review": "Linked by owner review (Nov 2026); replaces the source family sequence."
       },
       "officiallyVerified": false
     },
