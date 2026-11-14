@@ -182,7 +182,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       </GameSetup>
   </>;
   const firstTry = reviewed - uniqueMissed.length;
-  return <div className="page-enter">
+  return <div className="page-enter game-page">
     <div className="page-heading"><div><div className="eyebrow">REMEMBER · RECALL · REPEAT</div><h1>Turn a card, test your memory.</h1></div><span className="heading-hanzi">记<span>jì</span></span></div>
     {/* Game dropdowns apply immediately: filters only shape the next deck, never the active round. */}
     {!deck && <>
