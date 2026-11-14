@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { Bookmark, ChevronRight, Shuffle, Volume2 } from 'lucide-react';
+import { Bookmark, ChevronDown, ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
@@ -13,8 +13,6 @@ import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons';
 import { SoundChartLink } from './sound-chart-link';
-import { ExamplePronunciation } from './example-pronunciation';
-import { MeaningText } from './meaning-text';
 import { historyEntry } from '@/lib/detail-trail';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { sectionIcons } from '@/lib/section-icons';
@@ -43,8 +41,56 @@ function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase
   return category === 'word' || category === 'phrase';
 }
 
+/**
+ * Phone row toggle (≤700px, CSS only — wider screens keep the full cards and never show it).
+ * Inputs: `open` and `onToggle` from the shared row list (DiscoveryRowList) plus the row's
+ * content. On phones each card collapses to one row like the Start games: section icon,
+ * name + count, then the current pick on one line (hanzi then meaning, cut off with an
+ * ellipsis); the round shuffle button and a small chevron sit on the right. The whole row
+ * toggles: this button's ::after stretches over the row (see styles.css "Start random rows")
+ * while the shuffle button sits above it, so the chevron is only a decorative cue.
+ */
+export function DiscoveryRowToggle({ open, onToggle, controls, icon, label, count, pick }: { open: boolean; onToggle: () => void; controls: string; icon: React.ReactNode; label: string; count: number | null; pick: React.ReactNode }) {
+  return <button type="button" className="discovery-row-toggle" aria-expanded={open} aria-controls={controls} onClick={onToggle}>
+    <span className="stat-icon" aria-hidden="true">{icon}</span>
+    <span className="discovery-row-text">
+      <span className="discovery-row-name"><strong>{label}</strong><span>{count === null ? '—' : count.toLocaleString('en-US')}</span></span>
+      <span className="discovery-row-pick">{pick}</span>
+    </span>
+  </button>;
+}
+
+/** The chevron after the shuffle button on phone rows; purely visual (the row toggle owns the click). */
+export const DiscoveryRowChevron = () => <ChevronDown className="discovery-row-chevron" aria-hidden="true"/>;
+
+/** Every Start random card, in order: the five library categories plus the Sounds card. */
+export type DiscoveryRowKey = DiscoveryCategory | 'sound';
+
+// Which phone row is open, remembered per history entry like the picks, so Back from
+// Details returns to the row that was open. Session memory only; new visits start collapsed.
+const openByEntry = new Map<string, DiscoveryRowKey | null>();
+
+/**
+ * The six Start random cards. State: which phone row is expanded (one at a time, all
+ * collapsed by default). Wider screens ignore it — every card is shown in full there.
+ * Inputs: `renderSound` draws the Sounds card (kept in overview-sound.tsx).
+ */
+export function DiscoveryRowList({ categories, renderSound }: { categories: DiscoveryCategory[]; renderSound: (open: boolean, onToggle: () => void) => React.ReactNode }) {
+  const [open, setOpen] = useState<DiscoveryRowKey | null>(null);
+  useEffect(() => { setOpen(openByEntry.get(historyEntry()) ?? null); }, []);
+  const toggle = (key: DiscoveryRowKey) => () => setOpen(current => {
+    const next = current === key ? null : key;
+    openByEntry.set(historyEntry(), next);
+    return next;
+  });
+  return <>
+    {categories.map(category => <DiscoveryTile key={category} category={category} open={open === category} onToggle={toggle(category)}/>)}
+    {renderSound(open === 'sound', toggle('sound'))}
+  </>;
+}
+
 /** One tile per category: the total count plus a live random record from that category. */
-export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
+export function DiscoveryTile({ category, open = false, onToggle = () => {} }: { category: DiscoveryCategory; open?: boolean; onToggle?: () => void }) {
   const meta = CATEGORY_META[category];
   const { items, preferences, catalogVersion, saved, toggleSaved } = useWorkspace();
   const [selectedId, setSelectedId] = useState<string>();
@@ -108,10 +154,11 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
   const meaning = word ? word.meaning : entry?.meaning || '—';
   // Glyph picks wear the same identity ink as their library cards (purple traditional,
   // gold radical, green character, text-colour component); Words/Phrases keep the accent.
+  const bodyId = `discovery-body-${category}`;
   const ink = entry ? glyphCardInk(category as LibraryKind, entry.script, isRadicalGlyph(entry, category as LibraryKind)) : '';
 
   return (
-    <section className="discovery-tile" aria-label={`${meta.label}: ${count ?? '…'} records`}>
+    <section className={`discovery-tile${open ? ' is-open' : ''}`} aria-label={`${meta.label}: ${count ?? '…'} records`}>
       <div className="discovery-tile-top">
         <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
           <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
@@ -120,10 +167,15 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
             <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
           </span>
         </Link>
+        <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
+          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
           <Shuffle />
         </Button>
+        <DiscoveryRowChevron/>
       </div>
+      {/* Phones: everything below is the row's expandable detail (display: contents on wider screens). */}
+      <div className="discovery-tile-body" id={bodyId}>
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
           <div className="discovery-record-pinyin">
@@ -143,21 +195,6 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       ) : (
         <p className="library-note">Loading {meta.label.toLowerCase()}…</p>
       )}
-      {/* Phones only (CSS swaps it in for the block above): the same pick as an "In a character"
-          tile from the detail cards — boxed hanzi, reading + speaker over translation — reusing
-          that tile's classes and shared speaker so both look and behave alike. Single glyphs only:
-          the tile box holds one character, so multi-character words/phrases keep the stacked card. */}
-      {record && recordLink && hanzi && Array.from(hanzi).length === 1 && (
-        <div className="discovery-tile-phone glyph-usage-reference">
-          <Button asChild variant="ghost" className={`decomposition-glyph${entry?.script === 'Traditional' ? ' traditional-character' : ''}${entry && isRadicalGlyph(entry, category as LibraryKind) ? ' is-radical' : ''}`}><Link to={recordLink.to} search={recordLink.search} title={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)}><strong lang="zh-CN">{hanzi}</strong></Link></Button>
-          <span className="glyph-usage-facts">
-            <span className="glyph-usage-facts-row"><span className="example-pinyin-row">{!word && entry && isMultiReading(entry.pinyin)
-              ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="example" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'}/>
-              : <>{preferences.pinyin && <span className="pinyin">{pinyin}</span>}<ExamplePronunciation request={word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : characterAudioRequest(hanzi, entry?.pinyin ?? '')} label={hanzi}/></>}</span>{bookmarkButton}</span>
-            {preferences.meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning}/></span>}
-          </span>
-        </div>
-      )}
       {/* Same labelled Details + Practice pair as the character of the day (shared .daily-hero-actions). */}
       {record && recordLink && hanzi && <div className="daily-hero-actions discovery-tile-actions">
         <Button asChild variant="outline" size="sm"><Link to={recordLink.to} search={recordLink.search}><DetailsIcon aria-hidden="true"/>Details</Link></Button>
@@ -165,6 +202,7 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
         <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: hanzi, mode: 'recall' }}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
       </div>}
       {audioError && <p className="library-note" role="status">{audioError}</p>}
+      </div>
     </section>
   );
 }

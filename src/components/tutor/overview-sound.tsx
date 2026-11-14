@@ -4,6 +4,7 @@ import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { usePinyinPlayer, sound } from './pinyin-shared';
+import { DiscoveryRowChevron, DiscoveryRowToggle } from './overview-discovery';
 import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneMark, type PinyinData, type PinyinSyllable } from '@/lib/pinyin-guide';
 
 /**
@@ -12,9 +13,11 @@ import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneM
  * It shows a random syllable that has at least one human recording; the speaker
  * plays all its recorded tones in order, each tone chip plays just that tone and
  * the syllable opens it in the Sound chart. Neutral tones (never recorded) are not
- * offered.
+ * offered. Phones (≤700px) show it as a collapsible row like the other random cards:
+ * `open`/`onToggle` come from DiscoveryRowList; the row line shows the syllable and how
+ * many tones are recorded, and the speaker + tone chips are its expandable detail.
  */
-export function SoundDiscoveryTile() {
+export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open?: boolean; onToggle?: () => void }) {
   const { preferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
   const [failed, setFailed] = useState(false);
@@ -34,7 +37,7 @@ export function SoundDiscoveryTile() {
   const playAll = () => { if (syllable) void player.sequence(tones.map(t => sound(syllable.base, t))); };
 
   return (
-    <section className="discovery-tile discovery-sound" aria-label={`Sounds: ${count ?? '…'} recordings`}>
+    <section className={`discovery-tile discovery-sound${open ? ' is-open' : ''}`} aria-label={`Sounds: ${count ?? '…'} recordings`}>
       <div className="discovery-tile-top">
         <Link to="/pinyin" className="discovery-tile-heading" aria-label="Open the Pinyin sound chart">
           <span className="stat-icon" aria-hidden="true"><Volume2/></span>
@@ -43,10 +46,14 @@ export function SoundDiscoveryTile() {
             <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
           </span>
         </Link>
+        <DiscoveryRowToggle open={open} onToggle={onToggle} controls="discovery-body-sound" icon={<Volume2/>} label="Sounds" count={count}
+          pick={syllable ? <><span className="discovery-row-syllable">{syllable.base}</span><span className="discovery-row-meaning">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span></> : failed ? 'Sounds could not load' : 'Loading sounds…'}/>
         <Button variant="ghost" size="icon" title="Show another random sound" aria-label="Show another random sound" onClick={shuffle} disabled={!syllable}>
           <Shuffle />
         </Button>
+        <DiscoveryRowChevron/>
       </div>
+      <div className="discovery-tile-body" id="discovery-body-sound">
       {syllable ? (
         <div className="discovery-tile-record" aria-live="polite">
           <div className="discovery-record-pinyin">
@@ -69,6 +76,7 @@ export function SoundDiscoveryTile() {
         <p className="library-note">{failed ? 'Sounds could not load. Reload the page to try again.' : 'Loading sounds…'}</p>
       )}
       {player.error && <p className="library-note" role="status">{player.error}</p>}
+      </div>
     </section>
   );
 }

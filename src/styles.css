@@ -821,14 +821,14 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-tile-record .overview-record-link > strong.is-long { font-size: 22px; line-height: 1.35; }
 .discovery-tile-record .overview-record-link h2 { font-size: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .discovery-tile > .library-note { margin: 0; font-size: 10px; }
-.discovery-tile-phone { display: none; }
 /* Start random cards: the Save toggle sits at the far right of the pinyin line, like the
-   bookmark on Comfortable library cards; the phone tile's reading row stretches to the edge. */
+   bookmark on Comfortable library cards. */
 .discovery-record-pinyin > .discovery-bookmark { margin-left: auto; }
-.discovery-tile-phone .glyph-usage-facts-row { align-self: stretch; flex-wrap: nowrap; }
-.discovery-tile-phone .glyph-usage-facts-row > .discovery-bookmark { margin-left: auto; flex: none; width: 34px; height: 34px; }
 .discovery-bookmark svg { width: 22px; height: 22px; }
-@media (max-width:580px) { .discovery-tile-phone { display: flex; } }
+/* Phone row parts (see "Start random rows" below); wider screens show the full cards, and the
+   body wrapper vanishes from layout so its children stay on the card's subgrid rows. */
+.discovery-row-toggle, .discovery-row-chevron { display: none; }
+.discovery-tile-body { display: contents; }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
 .overview-record-link:hover strong,.overview-record-link:hover h2,.overview-record-link:focus-visible strong,.overview-record-link:focus-visible h2 { color: var(--primary); }
@@ -941,9 +941,6 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 @media (max-width:580px) {
   .overview-heading h1 { font-size: 31px; letter-spacing: -.008em; }
   .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
-  /* Phones: the random pick shows as the detail cards' "In a character" tile (overview-discovery.tsx). */
-  .discovery-tile { grid-row: auto; grid-template-rows: none; display: flex; flex-direction: column; }
-  .discovery-tile:has(.discovery-tile-phone) > .discovery-tile-record { display: none; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
 }
 
@@ -3068,4 +3065,64 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   .game-missed li { row-gap: 2px; column-gap: 12px; padding: 10px 12px; }
   .game-missed.is-sounds :is(.game-missed-note, .game-missed-correct) { grid-column: 2; text-align: left; }
   .game-missed:is(.is-cards, .is-drawn) .game-missed-note { grid-column: 3; }
+}
+
+/* Start random rows (≤700px, both display sizes; overview-discovery.tsx DiscoveryRowList):
+   like the Start games, the six random cards become one bordered panel of rows — section
+   icon, name + count, the pick on one ellipsised line, a round shuffle button and a chevron.
+   The whole row toggles (the toggle's ::after covers it; shuffle sits above), and an open
+   row shows its reading, full meaning and Details/Trace/Recall indented under the text.
+   :is(html, html[data-display-size]) lifts these over the Comfortable card rules; Comfortable still sizes everything up. */
+@media (max-width: 700px) {
+  :is(html, html[data-display-size]) .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 0; padding: 6px 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); }
+  :is(html, html[data-display-size]) .overview-discovery-row > .discovery-tile { display: block; grid-row: auto; padding: 0; border: 0; border-radius: 0; background: transparent; }
+  :is(html, html[data-display-size]) .overview-discovery-row > .discovery-tile + .discovery-tile { border-top: 1px solid var(--border); }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top { position: relative; isolation: isolate; gap: 10px; padding: 10px 6px; margin: 0 -6px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-heading { display: none; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > .discovery-row-toggle { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; width: auto; height: auto; padding: 0; border: 0; background: none; color: var(--foreground); font: inherit; text-align: left; cursor: pointer; }
+  .discovery-row-toggle::after { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 14px; transition: background-color .18s ease; }
+  .discovery-row-toggle:hover::after, .discovery-row-toggle:focus-visible::after { background: color-mix(in oklab, var(--primary) 7%, transparent); }
+  .discovery-row-toggle:focus-visible { outline: none; }
+  .discovery-row-toggle:focus-visible::after { box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary) 45%, transparent); }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-toggle .stat-icon { width: 54px; height: 54px; border-radius: 14px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-toggle .stat-icon svg { width: 24px; height: 24px; }
+  .discovery-row-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+  .discovery-row-name { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+  .discovery-row-name > strong { font-size: 16px; font-weight: 600; }
+  .discovery-row-name > span { font-size: 12px; color: var(--muted-foreground); }
+  .discovery-row-pick { display: flex; align-items: baseline; gap: 8px; min-width: 0; overflow: hidden; white-space: nowrap; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; }
+  .discovery-row-hanzi, .discovery-row-syllable { flex-shrink: 0; max-width: 70%; overflow: hidden; text-overflow: ellipsis; color: var(--foreground); font-size: 20px; line-height: 1.25; }
+  .discovery-row-hanzi { font-family: var(--font-hanzi); }
+  .discovery-row-syllable { font-family: var(--font-display); }
+  .discovery-row-hanzi:is(.is-traditional,.card-ink-radical,.card-ink-character,.card-ink-component) { color: var(--card-ink); }
+  .discovery-row-meaning { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { position: relative; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 18px; height: 18px; }
+  .discovery-row-chevron { display: block; width: 18px; height: 18px; flex-shrink: 0; color: var(--muted-foreground); pointer-events: none; transition: transform .18s ease; }
+  .discovery-tile.is-open .discovery-row-chevron { transform: rotate(180deg); }
+  /* Open row: the detail sits under the row text (icon 54px + 14px gap); the hanzi is
+     already on the row line, so the card's big hanzi and the sound syllable are hidden. */
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-body { display: none; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { display: flex; flex-direction: column; gap: 8px; padding: 0 0 14px 68px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-record { display: flex; flex-direction: column; gap: 6px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-record .overview-record-link > strong, :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound .overview-record-link, .discovery-sound .discovery-sound-count { display: none; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 15px; }
+  .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 15px; line-height: 1.5; display: block; overflow: visible; }
+  /* Sounds: the play-all speaker and the tone chips share one line. */
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound .discovery-tile-record { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-actions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin: 4px 0 0; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-body > .library-note { margin: 0; }
+  /* Comfortable: the same rows, a size up. */
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-row-toggle .stat-icon { width: 60px; height: 60px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-row-toggle .stat-icon svg { width: 26px; height: 26px; }
+  html[data-display-size='comfortable'] .discovery-row-name > strong { font-size: 19px; }
+  html[data-display-size='comfortable'] .discovery-row-name > span { font-size: var(--ui-label-size); }
+  html[data-display-size='comfortable'] .discovery-row-pick { font-size: 16px; }
+  html[data-display-size='comfortable'] :is(.discovery-row-hanzi, .discovery-row-syllable) { font-size: 24px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { width: 50px; height: 50px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 20px; height: 20px; }
+  html[data-display-size='comfortable'] .discovery-row-chevron { width: 20px; height: 20px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
 }
