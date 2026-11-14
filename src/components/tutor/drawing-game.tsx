@@ -16,6 +16,7 @@ import {
   type DrawingSearch,
 } from "@/lib/drawing-game";
 import { DraftFilterForm } from "./filter-form";
+import { SavedFilterToggle } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
 import { TileBookmark } from "./record-card-footer";
@@ -263,6 +264,13 @@ export function DrawingGamePage({
                           ))}
                       </select>
                     )}
+                    {/* Saved-only: the libraries' bookmark + count toggle, last in the row; part of the auto-applied draft. */}
+                    <SavedFilterToggle
+                      on={Boolean(draft.saved)}
+                      count={savedCount}
+                      noun="cards"
+                      onToggle={() => patch({ saved: draft.saved ? undefined : true })}
+                    />
                   </>
                 );
               }}
