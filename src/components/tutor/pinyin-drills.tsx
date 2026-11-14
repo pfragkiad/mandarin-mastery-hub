@@ -210,9 +210,12 @@ function DrillFrame({ mode, data, filters, onFilters, pool, round, size, onSize,
       {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
       {children}
       <div className="pinyin-drill-feedback" aria-live="polite">{result && <>
-        <span className={result.correct ? 'pinyin-right' : 'pinyin-wrong'}>{result.correct ? <Check /> : <X />}{result.correct ? 'Right' : 'Not quite'}</span>
-        <span>It was <strong className="pinyin" lang="zh-Latn-pinyin">{toneMark(current.base, current.tone)}</strong> · {TONE_NAMES[current.tone]}</span>
-        {footer}
+        {/* Text pieces share one baseline; Next sound sits outside, centred on the row. */}
+        <span className="pinyin-feedback-line">
+          <span className={result.correct ? 'pinyin-right' : 'pinyin-wrong'}>{result.correct ? <Check /> : <X />}{result.correct ? 'Right' : 'Not quite'}</span>
+          <span>It was <strong className="pinyin" lang="zh-Latn-pinyin">{toneMark(current.base, current.tone)}</strong> · {TONE_NAMES[current.tone]}</span>
+          {footer}
+        </span>
         <Button size="sm" onClick={round.next} className="pinyin-next">{index + 1 >= deck.length ? 'See results' : 'Next sound'}<ArrowRight /></Button>
       </>}</div>
     </div>}

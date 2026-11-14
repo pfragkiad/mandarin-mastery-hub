@@ -2300,8 +2300,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* One shared text baseline across the answer line: the row and each icon+text piece
    (Right/Not quite, Compare buttons, Next sound) align by their text, icons stay centred
    on it, and every pinyin reading uses the same size and weight. */
-.pinyin-drill-feedback, .pinyin-drill-feedback :is(.pinyin-right, .pinyin-wrong, .pinyin-compare, button:not(.pinyin-next)) { align-items: baseline; }
-/* Next sound keeps its label centred inside; the row aligns it by that label's baseline. */
+.pinyin-feedback-line { display: flex; flex-wrap: wrap; gap: 8px 14px; min-width: 0; }
+.pinyin-feedback-line, .pinyin-feedback-line :is(.pinyin-right, .pinyin-wrong, .pinyin-compare, button) { align-items: baseline; }
 .pinyin-drill-feedback svg { align-self: center; }
 /* Compare speakers hug their text so the centred icon sits on the reading, not below it. */
 .pinyin-drill-feedback .pinyin-compare button { height: auto; min-height: 0; padding-block: 4px; line-height: 1.4; }
