@@ -35,7 +35,8 @@ export function deckSummary(roundSize: number, poolSize: number) {
   return `${roundSize.toLocaleString('en-US')} of ${poolSize.toLocaleString('en-US')} ${poolSize === 1 ? 'card' : 'cards'}`;
 }
 
-/** Both games share a quiet ready state without duplicating matched totals. */
+/** Card games' note under the setup: only loading or an empty selection; no "ready" banner. */
 export function GameReady({ available, loading = false }: { available: boolean; loading?: boolean }) {
+  if (available && !loading) return null;
   return <section className="game-ready" role="status"><h2>{loading ? 'Loading the library…' : available ? 'Ready when you are.' : 'No cards in this selection.'}</h2></section>;
 }
