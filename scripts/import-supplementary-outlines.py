@@ -38,7 +38,7 @@ REVIEWED = [
 # Exact code points (Nov 2026 scan of all 303 radical-family forms): Hanzi Writer Data has no
 # file for these, but AnimCJK's Mainland (ZhHans) set records the SAME code point, and its
 # stroke count equals the radical file's. No look-alike is involved, so recordedAs is the form itself.
-# Forms with no exact-code-point outline in either source (⺁ ⺧ ⺪ ⺷ ⻊ 𧢲) stay unrecorded.
+# Forms with no exact-code-point outline in either source (⺁ ⺧ ⺪ ⺷ ⻊ 𧢲) stay unrecorded unless linked below.
 for _character, _family in [('⺆', 13), ('牜', 93), ('⺶', 123), ('⻏', 163), ('⻗', 173)]:
     REVIEWED.append({
         'character': _character, 'family': _family,
@@ -54,6 +54,18 @@ REVIEWED.append({
     'folder': 'svgsZhHans', 'recordedAs': '冗', 'style': 'Mainland (ZhHans)',
     'reviewNote': 'Unicode EquivalentUnifiedIdeograph maps ⺴ to 冗; AnimCJK records this outline under 冗, linked to ⺴ by owner review.',
 })
+
+# Reviewed by the project owner (Nov 2026): Unicode's EquivalentUnifiedIdeograph 17.0.0 maps each
+# symbol to the ideograph below, fonts draw the pair identically, and AnimCJK's Mainland outline
+# of that ideograph was checked stroke by stroke against the radical file's recorded names
+# (⺪ 横钩 竖 横 竖 提; ⺷ 点 撇 横 横 竖 横; ⻊ 竖 横折 横 竖 横 竖 提, the left-side foot ending in 提).
+# ⺁ → 厂 is NOT linked: ⺁'s recorded first stroke is 撇 while 厂's outline starts with 横.
+for _character, _family, _ideograph in [('⺪', 103, '𤴔'), ('⺷', 123, '𦍌'), ('⻊', 157, '𧾷')]:
+    REVIEWED.append({
+        'character': _character, 'family': _family,
+        'folder': 'svgsZhHans', 'recordedAs': _ideograph, 'style': 'Mainland (ZhHans)',
+        'reviewNote': f'Unicode EquivalentUnifiedIdeograph maps {_character} to {_ideograph}; AnimCJK records this outline under {_ideograph}, linked to {_character} by owner review.',
+    })
 
 PAIR = re.compile(r'(-?\d+(?:\.\d+)?)[ ,]+(-?\d+(?:\.\d+)?)')
 
