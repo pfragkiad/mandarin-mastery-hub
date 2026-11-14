@@ -3,10 +3,11 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { radicalDisplayGlyph } from '@/lib/radical-display-glyph';
 import { HintBody } from './source-info';
 
-// Formatted hover/focus hint for a form box whose exact radical symbol is drawn with a reviewed
-// stand-in shape (⺴ shown as 冗, src/lib/radical-display-glyph.ts). Inputs: `glyph`, the exact
+// Formatted hover/focus hint for a form box whose exact radical symbol has a reviewed note
+// (src/lib/radical-display-glyph.ts): a stand-in shape (⺴ shown as 冗) or a borrowed handwriting
+// outline (⻊ traced with 𧾷's outline). Inputs: `glyph`, the exact
 // symbol, and `children`, the one focusable/hoverable element to attach to (the box's link or
-// span). Glyphs without a stand-in get their child back untouched, so ordinary boxes keep their
+// span). Glyphs without a reviewed note get their child back untouched, so ordinary boxes keep their
 // own title hints. The card reuses the library tile tooltip look: a head row with the drawn
 // stand-in and its label (fonts draw the exact symbol identically, so showing both would repeat it), the explanation as divided hint rows, and a small source line.
 export function StandInHint({ glyph, children }: { glyph: string; children: ReactElement }) {
