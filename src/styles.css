@@ -1552,9 +1552,10 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 /* Source ⓘ pins to the top right of the glyph (or form tiles), larger than the inline variant. */
 .catalog-detail-glyph-row > .source-info-trigger { flex: none; width: 28px; height: 28px; margin-top: 2px; }
 .catalog-detail-glyph-row > .source-info-trigger svg { width: 18px; height: 18px; }
-/* Radical detail cards: the single title hanzi wears its form's gold radical ink (purple
-   Traditional forms keep .traditional-character, which takes precedence). */
+/* Radical detail cards: the single title hanzi wears its form's gold radical ink; Traditional
+   radical forms take the mixed --trad-radical ink, matching their switch tile and Practice. */
 .catalog-detail-glyph-row > strong.card-ink-radical:not(.traditional-character) { color: var(--card-ink); }
+html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character { color: var(--trad-radical); }
 /* Radical detail cards: Practice's form switch on its own full-width row under the meaning
    (record-detail-title.tsx formSwitch). The tray reuses the Practice switch styles above via
    :is(.practice-header, .catalog-detail-forms); only the section spacing is set here. */
