@@ -106,3 +106,4 @@
 
 - [done] Header section dropdown (Glyphs, Vocabulary, games) replaces the page pills at every width; phones show it in the header title
 - [done] Dropdown shows plain counts only; +N hints stay on the page count line
+- [done] Header trail larger on wide screens; page step is a dropdown (Glyphs, Vocabulary, Sound chart, Hanzi games, Pinyin games)
