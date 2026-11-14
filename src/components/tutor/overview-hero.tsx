@@ -10,7 +10,8 @@ import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
 import { libraryEntries, libraryDestination, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { characterRecording, playCharacter } from '@/lib/catalog-store';
+import { characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
+import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
@@ -92,7 +93,8 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
       {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
       <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
         <span className="daily-greeting-facts">
-          {preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}
+          {/* Reading + the shared speaker (same as tiles); no recording exists, so it uses Mandarin speech. */}
+          <span className="example-pinyin-row">{preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}<ExamplePronunciation request={characterAudioRequest(hello.hanzi, hello.pinyin)} label={hello.hanzi}/></span>
           <span className="daily-greeting-en">{hello.english}.</span>
         </span>
       </h1>
