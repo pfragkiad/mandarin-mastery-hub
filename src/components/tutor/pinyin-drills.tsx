@@ -146,10 +146,8 @@ function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round,
 
   if (!deck) return <>
     {setup(<Button onClick={startNew} disabled={!pool.length} aria-label={`Start · ${unit(roundLength)}`}><Play />Start listening</Button>, poolSummary)}
-    <section className="game-ready pinyin-drill-ready" role="status">
-      <h2>{pool.length ? 'Ready when you are.' : 'No sounds in this selection.'}</h2>
-      {pool.length > 0 && <p>{prompt}</p>}
-    </section>
+    {/* No "ready" banner below the settings; only an empty selection gets a note. */}
+    {!pool.length && <section className="game-ready pinyin-drill-ready" role="status"><h2>No sounds in this selection.</h2></section>}
   </>;
 
   if (finished) {
