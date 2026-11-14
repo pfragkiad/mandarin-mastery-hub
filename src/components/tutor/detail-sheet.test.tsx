@@ -74,4 +74,21 @@ describe('Modal detail sheet', () => {
       backSpy.mockRestore();
     }
   });
+  it('keeps Back when links return to a form already seen (亻 → 人 → 亻 are new history entries)', () => {
+    const go = (search: string, key: string) => window.history.pushState({ __TSR_key: key }, '', search);
+    const sheet = (title: string, label: string, to: string) => <DetailSheet open title={title} label={label} onClose={vi.fn()}><a href={to} onClick={event => event.preventDefault()}>switch</a></DetailSheet>;
+    go('?variant=9-1', 'k1');
+    try {
+      const view = render(sheet('人 9-1', '亻', '?variant=9-0'));
+      fireEvent.click(screen.getByText('switch'));
+      go('?variant=9-0', 'k2');
+      view.rerender(sheet('人 9-0', '人', '?variant=9-1'));
+      fireEvent.click(screen.getByText('switch'));
+      go('?variant=9-1', 'k3');
+      view.rerender(sheet('人 9-1', '亻', '?variant=9-0'));
+      expect(screen.getByRole('button', { name: 'Back to 人' })).toBeInTheDocument();
+    } finally {
+      detailTrail.clear();
+    }
+  });
 });
