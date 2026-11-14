@@ -3192,6 +3192,16 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
 @media (max-width: 1280px) {
   .library-page .mobile-library-filters > form { margin-top: 14px !important; margin-bottom: 14px !important; }
 }
+/* Phones: one rhythm at the top of library pages. Header → title, title → search,
+   search → Filters and Filters → a wrapped Study row all share --library-top-gap;
+   the heading drops its 70px min-height so the title no longer floats inside it. */
+@media (max-width: 850px) {
+  .library-page { --library-top-gap: 16px; }
+  .main-content:has(> .library-page) { padding-top: var(--library-top-gap); }
+  .library-page .library-heading { min-height: 0; margin-bottom: 0; }
+  .library-page [role='tabpanel']:has(> .mobile-library-filters) { margin-top: 0; row-gap: var(--library-top-gap); }
+  .library-page .mobile-library-filters > form { margin-top: var(--library-top-gap) !important; margin-bottom: 0 !important; }
+}
 /* Game setups: the saved toggle matches the setup dropdowns' height. */
 .game-setup .saved-filter-toggle { height: 36px; }
 html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height: 44px; min-height: 44px; }
