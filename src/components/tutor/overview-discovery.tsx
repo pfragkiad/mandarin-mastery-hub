@@ -11,7 +11,7 @@ import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { DetailsIcon, PracticeIcon } from './practice-icons';
+import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons';
 import { SoundChartLink } from './sound-chart-link';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MeaningText } from './meaning-text';
@@ -155,7 +155,8 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       {/* Same labelled Details + Practice pair as the character of the day (shared .daily-hero-actions). */}
       {record && recordLink && hanzi && <div className="daily-hero-actions discovery-tile-actions">
         <Button asChild variant="outline" size="sm"><Link to={recordLink.to} search={recordLink.search}><DetailsIcon aria-hidden="true"/>Details</Link></Button>
-        <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: hanzi, mode: 'trace' }}><PracticeIcon aria-hidden="true"/>Practice</Link></Button>
+        <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: hanzi, mode: 'trace' }}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
+        <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: hanzi, mode: 'recall' }}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
       </div>}
       {audioError && <p className="library-note" role="status">{audioError}</p>}
     </section>
