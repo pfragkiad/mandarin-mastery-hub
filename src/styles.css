@@ -2951,6 +2951,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 @media (max-width: 580px) {
   .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
   .library-page .word-card .card-footer-bookmark { width: 22px; }
+  /* Two-column phone cards are ~143px inside, too narrow for three labelled buttons
+     plus the bookmark on one line: let the row wrap (6px between lines too) so Recall
+     is never clipped; the bookmark keeps its right-end spot on the last line. */
+  .library-page .word-card .word-card-bottom { flex-wrap: wrap; row-gap: 6px; }
 }
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */
 .word-card .word-level-wrap > .card-top-meta.is-lead { margin-left: 0; }
