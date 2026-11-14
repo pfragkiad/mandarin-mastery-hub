@@ -29,7 +29,8 @@ export type ComponentOccurrence = z.infer<typeof groupSchema>;
 const geometrySchema = z.object({ strokes: z.array(z.string()), medians: z.array(z.array(z.tuple([z.number(), z.number()]))) }).passthrough();
 export type StrokeGeometry = z.infer<typeof geometrySchema>;
 /** Set only when the outline is not Hanzi Writer Data, so Practice can name the real source. */
-export type OutlineSource = { name: string; recordedAs: string; style: string; license: string };
+/** `exact`: the source records this same code point (no reviewed look-alike link). */
+export type OutlineSource = { name: string; recordedAs: string; style: string; license: string; exact: boolean };
 export type BoundGeometry = { data: StrokeGeometry; checksum: string; source?: OutlineSource };
 
 export async function sha256(bytes: BufferSource): Promise<string> {
@@ -108,7 +109,7 @@ function loadSupplementaryGeometry(character: string, file: string): Promise<Bou
     const record = supplementarySchema.parse(JSON.parse(new TextDecoder().decode(bytes)));
     if (record.character !== character || !record.strokes.length || record.strokes.length !== record.medians.length) throw new Error('Invalid stroke geometry');
     const { name, recordedAs, style, license } = record.source;
-    return { data: { strokes: record.strokes, medians: record.medians }, checksum: await sha256(bytes), source: { name, recordedAs, style, license } };
+    return { data: { strokes: record.strokes, medians: record.medians }, checksum: await sha256(bytes), source: { name, recordedAs, style, license, exact: recordedAs === character } };
   });
 }
 const geometries = new Map<string, Promise<BoundGeometry>>();
