@@ -68,6 +68,18 @@ export function readingMeanings(glyph: string): { reading: string; meaning: stri
   return readings.map(reading => ({ reading, meaning: record.readings[reading] as string }));
 }
 
+/** Consecutive readings that share one reviewed meaning, merged into one line (发 fà / fǎ "hair"),
+ *  so a card or heading never repeats the same sense; readings keep their exact recorded order. */
+export function groupReadingMeanings<T extends { reading: string; meaning: string }>(items: T[]): { readings: string[]; meaning: string; first: T }[] {
+  const groups: { readings: string[]; meaning: string; first: T }[] = [];
+  for (const item of items) {
+    const last = groups[groups.length - 1];
+    if (last && last.meaning === item.meaning) last.readings.push(item.reading);
+    else groups.push({ readings: [item.reading], meaning: item.meaning, first: item });
+  }
+  return groups;
+}
+
 /** Meaning for one exact reading (e.g. 了 liǎo), or undefined when no reviewed split applies. */
 export function readingMeaning(glyph: string, reading: string): string | undefined {
   return readingMeanings(glyph)?.find(item => item.reading === reading.normalize('NFC'))?.meaning;

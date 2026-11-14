@@ -1,4 +1,4 @@
-import { catalog } from './catalog-store';
+import { catalog, groupReadingMeanings } from './catalog-store';
 import { relatedGroup } from './character-variants';
 import { cardReadingSplit } from './glyph-presentation';
 
@@ -43,6 +43,6 @@ export function meaningPointers(glyph: string, recorded: string, shown: string =
 export function cardMeaningPointers(glyph: string, pinyin: string, meaning: string): MeaningPart[][] | null {
   const split = cardReadingSplit(glyph, pinyin, meaning);
   if (!split) { const parts = meaningPointers(glyph, meaning); return parts ? [parts] : null; }
-  const lines = split.map(item => meaningPointers(glyph, meaning, item.meaning, item.reading) ?? [{ text: item.meaning }]);
+  const lines = groupReadingMeanings(split).map(group => meaningPointers(glyph, meaning, group.meaning, group.first.reading) ?? [{ text: group.meaning }]);
   return lines.some(line => line.some(part => part.related)) ? lines : null;
 }

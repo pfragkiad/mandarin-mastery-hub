@@ -1,4 +1,4 @@
-import { catalog, readingMeanings } from './catalog-store';
+import { catalog, groupReadingMeanings, readingMeanings } from './catalog-store';
 import { radicalIdentity } from './radical-identities';
 import { radicalForms } from './radical-strokes';
 
@@ -47,7 +47,7 @@ export function displayMeaning(meaning: string): string {
  * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
 export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
   const split = cardReadingSplit(glyph, pinyin, meaning);
-  return displayMeaning(split ? split.map(item => item.meaning).join(' / ') : meaning);
+  return displayMeaning(split ? groupReadingMeanings(split).map(group => group.meaning).join(' / ') : meaning);
 }
 
 /** The reviewed per-reading split a card may show for this exact record, or null (see cardMeaning). */
