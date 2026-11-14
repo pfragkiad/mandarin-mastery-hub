@@ -50,6 +50,7 @@ import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
 import { useActivePill } from '@/lib/use-active-pill';
+import { PillRow } from './pill-row';
 import { useOneLineTitle } from './one-line-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
