@@ -10,7 +10,7 @@ import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { containsHanzi, isSearchableQuery, searchAll, startSearchMode, type SearchMode } from '@/lib/site-search';
 import { DailyCharacterHero, SavedStrip } from './overview-hero';
-import { DiscoveryTile, type DiscoveryCategory } from './overview-discovery';
+import { DiscoveryRowList, type DiscoveryCategory } from './overview-discovery';
 import { SoundDiscoveryTile } from './overview-sound';
 import { OverviewGames } from './overview-games';
 
@@ -21,9 +21,9 @@ export function OverviewPage() {
   return <div className="page-enter overview-page">
     {/* No search here: the header Search already covers the library. */}<DailyCharacterHero/>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
-      {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
-      {/* Sixth card: a random Pinyin syllable that has at least one recording. */}
-      <SoundDiscoveryTile/>
+      {/* Sixth card: a random Pinyin syllable that has at least one recording. On phones the
+          six cards become collapsible rows (one open at a time) inside one panel. */}
+      <DiscoveryRowList categories={DISCOVERY_CATEGORIES} renderSound={(open, onToggle) => <SoundDiscoveryTile open={open} onToggle={onToggle}/>}/>
     </section>
     <SavedStrip/>
     {/* All five games, grouped as Hanzi games and Pinyin games. */}
