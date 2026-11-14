@@ -4,7 +4,7 @@ import { vocabularyKind, type Word } from './mandarin';
 import { usageRank } from './usage-frequency';
 import { radicalSearchGlyphs } from './radical-identities';
 import { relatedGroup } from './character-variants';
-import { displayMeaning } from './glyph-presentation';
+import { cardMeaning } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -107,7 +107,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
       // Free-text fields belong only to unrestricted search; Pinyin/Exact must
       // not admit translation or source-note matches for reference entries.
       .filter(row => { const [hanzi, pinyin, meaning, note, script] = row; if (!includeScript(script, includeTraditional)) return false; const text = rowSearchText(row, hanzi, pinyin, meaning, note); return refMatch(text) || (pinyinMode === 'any' && (hanQuery ? text.written.includes(written) : text.text.includes(q))); })
-      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: displayMeaning(meaning), note, ...(script ? { script } : {}) })),
+      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), note, ...(script ? { script } : {}) })),
   );
   // Words lead, phrases follow all glyphs. Compare the recorded numeric ranks
   // across glyph kinds rather than letting catalogue groups dictate priority.

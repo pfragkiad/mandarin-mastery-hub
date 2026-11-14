@@ -1,4 +1,4 @@
-import { catalog } from './catalog-store';
+import { catalog, readingMeanings } from './catalog-store';
 import { radicalIdentity } from './radical-identities';
 import { radicalForms } from './radical-strokes';
 
@@ -38,6 +38,18 @@ export function pureComponentForm(glyph: string): boolean {
 export function displayMeaning(meaning: string): string {
   const parts = meaning.split(/;\s*/).filter(part => !/^(?:Kang[xz]i\s+)?rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
   return parts.length ? parts.join('; ') : meaning;
+}
+
+/** One-line card translation for a record whose readings carry reviewed separate meanings
+ * (干 gān / gàn): the per-reading meanings joined with " / " in the record's own reading order,
+ * mirroring its pinyin line, so a card never shows "gān / gàn" with only gān's senses.
+ * Fails closed to the recorded meaning unless this record still has the reviewed combined text
+ * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
+export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
+  const split = readingMeanings(glyph);
+  const readings = pinyin.split('/').map(part => part.trim().normalize('NFC')).filter(Boolean);
+  const matches = split && meaning === catalog.readingMeanings[glyph]?.combined && readings.length === split.length && split.every((item, index) => item.reading === readings[index]);
+  return displayMeaning(matches ? split.map(item => item.meaning).join(' / ') : meaning);
 }
 
 /** Variant translations lead with the original's own translation, then the component-form
