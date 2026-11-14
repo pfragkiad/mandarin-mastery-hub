@@ -94,7 +94,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const headword = vocabularyKind(word) === 'word';
   const singleGlyph = Array.from(word.hanzi.replace(/\s/g, '')).length === 1;
   const isPhrase = vocabularyKind(word) === 'phrase';
-  // Comfortable phrases share the Words top row (PHRASE · type, merged HSK pill, sentence icon)
+  // Comfortable phrases share the Words top row (type, merged HSK pill, sentence icon)
   // and the 2×2 action block; only their stacked pinyin/box/translation body differs.
   const comfortablePhrase = preferences.libraryView === 'list' && isPhrase;
   const comfortableWord = preferences.libraryView === 'list' && (headword || isPhrase);
