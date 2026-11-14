@@ -133,6 +133,166 @@ export function DrawingGamePage({
     onSearch(next);
   };
 
+  const setup = (action: ReactNode, summary: ReactNode) => (
+    <GameSetup
+          summary={summary}
+          action={action}
+          filters={
+            <DraftFilterForm
+              applied={appliedFilters}
+              active={activeFilters}
+              count={pool.length}
+              showCount={false}
+              autoApply
+              onApply={configure}
+              onClear={() => {
+                const empty: DrawingSearch = {
+                  kind,
+                  collection: undefined,
+                  level: undefined,
+                  pos: undefined,
+                  strokes: undefined,
+                  usage: undefined,
+                  saved: undefined,
+                };
+                configure({ kind });
+                return empty;
+              }}
+            >
+              {({ draft, patch, setDraft }) => {
+                const draftKind = draft.kind ?? "Characters";
+                const filtered = draftKind === "Radicals" || draftKind === "Components";
+                return (
+                  <>
+                    <select
+                      className="filter-select"
+                      aria-label="Drawing category"
+                      value={draftKind}
+                      onChange={(event) => {
+                        const next = drawingKinds.find((value) => value === event.target.value);
+                        if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) });
+                      }}
+                    >
+                      {drawingKinds.map((value) => (
+                        <option key={value}>{value}</option>
+                      ))}
+                    </select>
+                    <div className="vocabulary-saved-filter" role="group" aria-label="Saved cards">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        className={!draft.saved ? "selected" : ""}
+                        aria-pressed={!draft.saved}
+                        onClick={() => patch({ saved: undefined })}
+                      >
+                        All
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        className={draft.saved ? "selected" : ""}
+                        aria-pressed={Boolean(draft.saved)}
+                        onClick={() => patch({ saved: true })}
+                      >
+                        Saved<span className="catalog-tab-count">{savedCount}</span>
+                      </Button>
+                    </div>
+                    {draftKind === "Words" && (
+                      <>
+                        <select
+                          className="filter-select"
+                          aria-label="Collection"
+                          value={draft.collection ?? ""}
+                          onChange={(event) => patch({ collection: event.target.value || undefined })}
+                        >
+                          <option value="">All collections</option>
+                          {collections.map((value) => (
+                            <option key={value}>{value}</option>
+                          ))}
+                        </select>
+                        <select
+                          className="filter-select"
+                          aria-label="HSK level"
+                          value={draft.level ?? ""}
+                          onChange={(event) => patch({ level: event.target.value || undefined })}
+                        >
+                          <option value="">All levels</option>
+                          {levels.map((value) => (
+                            <option key={value}>{value}</option>
+                          ))}
+                        </select>
+                        <select
+                          className="filter-select"
+                          aria-label="Part of speech"
+                          value={draft.pos ?? ""}
+                          onChange={(event) => patch({ pos: event.target.value || undefined })}
+                        >
+                          <option value="">All types</option>
+                          {posOptions.map((value) => (
+                            <option key={value}>{value}</option>
+                          ))}
+                        </select>
+                      </>
+                    )}
+                    {draftKind !== "Words" && (
+                      <select
+                        className="filter-select"
+                        aria-label="Frequency"
+                        value={draft.usage ?? ""}
+                        onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value) })}
+                      >
+                        <option value="">All ranks</option>
+                        {usageGroups(draftKind).map((group) => (
+                          <option key={group.value} value={group.value}>
+                            {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    {filtered && (
+                      <select
+                        className="filter-select"
+                        aria-label="Stroke count"
+                        value={draft.strokes ?? ""}
+                        onChange={(event) => patch({ strokes: event.target.value || undefined })}
+                      >
+                        <option value="">All stroke counts</option>
+                        {[
+                          ...new Set(
+                            libraryEntries(draftKind).flatMap((entry) => (entry.strokes ? [entry.strokes] : [])),
+                          ),
+                        ]
+                          .sort((a, b) => a - b)
+                          .map((value) => (
+                            <option key={value} value={value}>
+                              {value} {value === 1 ? "stroke" : "strokes"}
+                            </option>
+                          ))}
+                      </select>
+                    )}
+                  </>
+                );
+              }}
+            </DraftFilterForm>
+          }
+        >
+          <select
+            className="filter-select"
+            aria-label="Deck size"
+            value={String(deckSize)}
+            onChange={(event) => {
+              setDeckSize(event.target.value === "all" ? "all" : Number(event.target.value));
+            }}
+          >
+            {deckSizes.map((n) => (
+              <option key={n} value={n}>
+                {n} cards
+              </option>
+            ))}
+            <option value="all">All cards</option>
+          </select>
+        </GameSetup>
+  );
   return (
     <div className="page-enter">
       <div className="page-heading">
@@ -145,251 +305,94 @@ export function DrawingGamePage({
         </span>
       </div>
       {/* Game dropdowns apply immediately: filters only shape the next deal, never the active round. */}
-      <GameSetup
-        summary={catalogVersion ? deckSummary(roundSize, pool.length) : undefined}
-        action={
-          <Button
-            disabled={!pool.length}
-            onClick={() => start(pool)}
-            aria-label={`${deck ? "New round" : "Start"} · ${roundSize} ${roundSize === 1 ? "card" : "cards"}`}
-          >
-            {deck ? <RotateCcw /> : <Play />}
-            {deck ? "New round" : "Start"}
-          </Button>
-        }
-        filters={
-          <DraftFilterForm
-            applied={appliedFilters}
-            active={activeFilters}
-            count={pool.length}
-            showCount={false}
-            autoApply
-            onApply={configure}
-            onClear={() => {
-              const empty: DrawingSearch = {
-                kind,
-                collection: undefined,
-                level: undefined,
-                pos: undefined,
-                strokes: undefined,
-                usage: undefined,
-                saved: undefined,
-              };
-              configure({ kind });
-              return empty;
-            }}
-          >
-            {({ draft, patch, setDraft }) => {
-              const draftKind = draft.kind ?? "Characters";
-              const filtered = draftKind === "Radicals" || draftKind === "Components";
-              return (
-                <>
-                  <select
-                    className="filter-select"
-                    aria-label="Drawing category"
-                    value={draftKind}
-                    onChange={(event) => {
-                      const next = drawingKinds.find((value) => value === event.target.value);
-                      if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) });
-                    }}
-                  >
-                    {drawingKinds.map((value) => (
-                      <option key={value}>{value}</option>
-                    ))}
-                  </select>
-                  <div className="vocabulary-saved-filter" role="group" aria-label="Saved cards">
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      className={!draft.saved ? "selected" : ""}
-                      aria-pressed={!draft.saved}
-                      onClick={() => patch({ saved: undefined })}
-                    >
-                      All
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      className={draft.saved ? "selected" : ""}
-                      aria-pressed={Boolean(draft.saved)}
-                      onClick={() => patch({ saved: true })}
-                    >
-                      Saved<span className="catalog-tab-count">{savedCount}</span>
-                    </Button>
-                  </div>
-                  {draftKind === "Words" && (
-                    <>
-                      <select
-                        className="filter-select"
-                        aria-label="Collection"
-                        value={draft.collection ?? ""}
-                        onChange={(event) => patch({ collection: event.target.value || undefined })}
-                      >
-                        <option value="">All collections</option>
-                        {collections.map((value) => (
-                          <option key={value}>{value}</option>
-                        ))}
-                      </select>
-                      <select
-                        className="filter-select"
-                        aria-label="HSK level"
-                        value={draft.level ?? ""}
-                        onChange={(event) => patch({ level: event.target.value || undefined })}
-                      >
-                        <option value="">All levels</option>
-                        {levels.map((value) => (
-                          <option key={value}>{value}</option>
-                        ))}
-                      </select>
-                      <select
-                        className="filter-select"
-                        aria-label="Part of speech"
-                        value={draft.pos ?? ""}
-                        onChange={(event) => patch({ pos: event.target.value || undefined })}
-                      >
-                        <option value="">All types</option>
-                        {posOptions.map((value) => (
-                          <option key={value}>{value}</option>
-                        ))}
-                      </select>
-                    </>
-                  )}
-                  {draftKind !== "Words" && (
-                    <select
-                      className="filter-select"
-                      aria-label="Frequency"
-                      value={draft.usage ?? ""}
-                      onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value) })}
-                    >
-                      <option value="">All ranks</option>
-                      {usageGroups(draftKind).map((group) => (
-                        <option key={group.value} value={group.value}>
-                          {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
-                        </option>
-                      ))}
-                    </select>
-                  )}
-                  {filtered && (
-                    <select
-                      className="filter-select"
-                      aria-label="Stroke count"
-                      value={draft.strokes ?? ""}
-                      onChange={(event) => patch({ strokes: event.target.value || undefined })}
-                    >
-                      <option value="">All stroke counts</option>
-                      {[
-                        ...new Set(
-                          libraryEntries(draftKind).flatMap((entry) => (entry.strokes ? [entry.strokes] : [])),
-                        ),
-                      ]
-                        .sort((a, b) => a - b)
-                        .map((value) => (
-                          <option key={value} value={value}>
-                            {value} {value === 1 ? "stroke" : "strokes"}
-                          </option>
-                        ))}
-                    </select>
-                  )}
-                </>
-              );
-            }}
-          </DraftFilterForm>
-        }
-      >
-        <select
-          className="filter-select"
-          aria-label="Deck size"
-          value={String(deckSize)}
-          onChange={(event) => {
-            setDeckSize(event.target.value === "all" ? "all" : Number(event.target.value));
-          }}
-        >
-          {deckSizes.map((n) => (
-            <option key={n} value={n}>
-              {n} cards
-            </option>
-          ))}
-          <option value="all">All cards</option>
-        </select>
-      </GameSetup>
-      {!deck && <GameReady available={pool.length > 0} loading={!catalogVersion} />}
-      {card && (
-        <div className="flash-stage drawing-stage">
-          <div className="flash-meta">
-            <span>
-              Card {answers.length + 1} of {deck?.length}
-            </span>
-            <span>
-              {correct} correct · {review.length} to review
-            </span>
-          </div>
-          <progress
-            className="drawing-progress"
-            value={answers.length}
-            max={deck?.length ?? 1}
-            aria-label="Round progress"
-          />
-          <DrawingBoard
-            key={`${round}:${card.id}`}
-            entry={card}
-            restored={board}
-            onPractice={(snapshot) => setSession((previous) => ({ ...previous, board: snapshot }))}
-            onFinish={(result) =>
-              setSession((previous) => ({
-                ...previous,
-                board: undefined,
-                answers: [...previous.answers, { entry: card, result }],
-              }))
-            }
-          />
-        </div>
+      {!deck && (
+        <>
+          {setup(
+            <Button disabled={!pool.length} onClick={() => start(pool)} aria-label={`Start · ${cardsUnit(roundSize)}`}>
+              <Play />
+              Start
+            </Button>,
+            catalogVersion ? deckSummary(roundSize, pool.length) : undefined,
+          )}
+          <GameReady available={pool.length > 0} loading={!catalogVersion} />
+        </>
       )}
-      {done && (
-        <div className="flash-stage">
-          <section className="drawing-results">
-            <span className="eyebrow">ROUND COMPLETE</span>
-            <strong>
-              {correct} / {answers.length - unavailable}
-            </strong>
-            <p>
-              {correct} correct · {review.length} to review{unavailable ? ` · ${unavailable} without writing data` : ""}
-            </p>
-            {review.length > 0 && (
-              <div className="flash-missed">
-                {review.map((entry) =>
-                  entry.word ? (
-                    <Link
-                      key={entry.id}
-                      to="/vocabulary"
-                      search={{ tab: "word", word: entry.id }}
-                      title={openDetailsHint(entry.word.hanzi, 'word')}
-                    >
-                      <span lang="zh-CN">{entry.word.hanzi}</span>
-                      <small>
-                        {entry.word.pinyin} · {entry.hanzi}
-                      </small>
-                    </Link>
-                  ) : (
-                    <Link
-                      key={entry.id}
-                      to="/strokes"
-                      search={{
-                        character: entry.hanzi,
-                        ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}),
-                      }}
-                      title={practiceHint(entry.hanzi)}
-                    >
-                      <span lang="zh-CN">{entry.hanzi}</span>
-                      <small>{entry.pinyin}</small>
-                    </Link>
-                  ),
-                )}
-              </div>
+      {deck && !done && (
+        <section className="game-play" aria-label="Game">
+          <GamePlayBar
+            summary={session.label}
+            settingsOpen={settingsOpen}
+            onToggleSettings={() => setSettingsOpen((open) => !open)}
+            onRestart={() =>
+              session.isReview ? start([...new Map(deck.map((c) => [c.id, c])).values()], true) : start(pool)
+            }
+            restartDisabled={!session.isReview && !pool.length}
+            end={end}
+          />
+          {settingsOpen &&
+            setup(
+              <Button disabled={!pool.length} onClick={() => start(pool)} aria-label={`Restart · ${cardsUnit(roundSize)}`}>
+                <RotateCcw />
+                Restart with these
+              </Button>,
+              <>Changes apply to the next round · {deckSummary(roundSize, pool.length)}</>,
             )}
-            {review.length > 0 && (
-              <div className="flex justify-center mb-4">
+          {card && (
+            <div className="flash-stage drawing-stage">
+              <div className="flash-meta">
+                <span>
+                  Card {answers.length + 1} of {deck?.length}
+                </span>
+                <span>
+                  {correct} correct · {review.length} to review
+                </span>
+              </div>
+              <progress
+                className="drawing-progress"
+                value={answers.length}
+                max={deck?.length ?? 1}
+                aria-label="Round progress"
+              />
+              <DrawingBoard
+                key={`${round}:${card.id}`}
+                entry={card}
+                restored={board}
+                onPractice={(snapshot) => setSession((previous) => ({ ...previous, board: snapshot }))}
+                onFinish={(result) =>
+                  setSession((previous) => ({
+                    ...previous,
+                    board: undefined,
+                    answers: [...previous.answers, { entry: card, result }],
+                  }))
+                }
+              />
+              <p className="game-play-keys">Esc ends the round</p>
+            </div>
+          )}
+        </section>
+      )}
+      {done && deck && (
+        <GameResults
+          eyebrow={session.isReview ? "Review complete" : session.ended ? "Session ended" : "Session complete"}
+          score={correct}
+          total={answers.length - unavailable}
+          unit="correct"
+          sub={
+            <>
+              {answers.length} of {deck.length} answered{review.length ? ` · ${review.length} to review` : ""}
+              {unavailable ? ` · ${unavailable} without writing data` : ""}
+            </>
+          }
+          listTitle="To review"
+          listKind="cards"
+          hasList={review.length > 0}
+          empty={answers.length ? "Every card drawn — well done." : "No cards answered in this round."}
+          extra={
+            review.length > 0 && (
+              <div className="game-results-saved">
                 <Button
                   variant="outline"
+                  size="sm"
                   disabled={!unsavedReview.length}
                   onClick={() => unsavedReview.forEach((entry) => toggleSaved(entry.id))}
                 >
@@ -398,27 +401,79 @@ export function DrawingGamePage({
                     ? `Save ${unsavedReview.length} unknown ${unsavedReview.length === 1 ? "card" : "cards"}`
                     : "Unknown cards saved"}
                 </Button>
+                {!unsavedReview.length && <span role="status">Bookmarked in Saved for this session.</span>}
               </div>
-            )}
-            {review.length > 0 && !unsavedReview.length && (
-              <p className="text-center mb-4" role="status">
-                Bookmarked in Saved for this session.
-              </p>
-            )}
-            <div className="drawing-actions">
+            )
+          }
+          actions={
+            <>
               {review.length > 0 && (
-                <Button onClick={() => start(review, true)}>
-                  <RotateCcw />
-                  Review cards
+                <Button onClick={() => start(kept, true)} disabled={!kept.length}>
+                  <Target />
+                  Practise missed ({kept.length})
                 </Button>
               )}
-              <Button variant="outline" onClick={() => start(pool)}>
-                New round
-                <ArrowRight />
+              <Button
+                variant={review.length ? "outline" : "default"}
+                disabled={!pool.length && !kept.length}
+                onClick={() => deal(mixedRound(pool, deckSize === "all" ? pool.length : deckSize, kept), Number.MAX_SAFE_INTEGER, false)}
+              >
+                <Play />
+                {kept.length ? "New round + missed" : "New round"}
               </Button>
-            </div>
-          </section>
-        </div>
+              <Button variant="ghost" onClick={changeSettings}>
+                Change settings
+              </Button>
+            </>
+          }
+          note={review.length > 0 && "Cards you draw correctly in a review round drop off the list."}
+        >
+          {review.map((entry) => {
+            const prompt = entry.word ?? entry;
+            const request = { ...characterAudioRequest(prompt.hanzi, prompt.pinyin), audio: entry.word?.audio ?? null };
+            return (
+              <MissedTick
+                key={entry.id}
+                label={prompt.hanzi}
+                kept={!skipped.includes(entry.id)}
+                onToggle={() => setSession((previous) => ({ ...previous, skipped: toggleSkipped(previous.skipped ?? [], entry.id) }))}
+              >
+                {entry.word ? (
+                  <Link
+                    to="/vocabulary"
+                    search={{ tab: "word", word: entry.id }}
+                    className="game-missed-hanzi"
+                    lang="zh-CN"
+                    title={openDetailsHint(entry.word.hanzi, "word")}
+                  >
+                    {entry.word.hanzi}
+                  </Link>
+                ) : (
+                  <Link
+                    to="/strokes"
+                    search={{
+                      character: entry.hanzi,
+                      ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}),
+                    }}
+                    className={`game-missed-hanzi${entry.script === "Traditional" ? " traditional-character" : ""}`}
+                    lang="zh-CN"
+                    title={practiceHint(entry.hanzi)}
+                  >
+                    {entry.hanzi}
+                  </Link>
+                )}
+                <span className="game-missed-reading example-pinyin-row">
+                  <span className="pinyin">{prompt.pinyin}</span>
+                  <ExamplePronunciation request={request} label={prompt.hanzi} />
+                </span>
+                <span className="game-missed-note">
+                  {entry.word ? <>Drew <span lang="zh-CN">{entry.hanzi}</span> · </> : null}
+                  <MeaningText text={prompt.meaning} />
+                </span>
+              </MissedTick>
+            );
+          })}
+        </GameResults>
       )}
     </div>
   );
