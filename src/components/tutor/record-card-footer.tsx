@@ -59,11 +59,12 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
 
 /**
  * Card footer shared by Glyphs and Vocabulary cards.
- * - Compact: four icon actions (Details only in Hide modes, Trace, Recall, Bookmark).
+ * - Compact: icon actions (Details only in Hide modes, Trace, Recall) left-aligned,
+ *   with the bookmark as a separate icon pushed to the row's right end.
  * - Comfortable (`comfortable`): one row of labelled Details / Trace / Recall buttons,
  *   the same trio as Start's random cards (shared .daily-hero-actions), then the bookmark
- *   as an unlabelled icon button at the row's right end, as tall as the labelled buttons
- *   (Compact keeps it as the last icon action, also bottom right). Details uses
+ *   as an unlabelled icon button at the row's right end, as tall as the labelled buttons.
+ *   Both modes keep the bookmark at the far right so its spot is predictable. Details uses
  *   `onDetails` when the card is in a Hide mode, otherwise `onOpen` (the face's own open).
  */
 export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen }: {
@@ -88,12 +89,11 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
       <Button variant="outline" size="sm" className="card-bookmark-action card-bookmark-icon" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''} aria-hidden="true"/></Button>
     </div></div>;
   }
-  return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">
+  return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions card-footer-actions">
     {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon/></Button>}
     <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Trace"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon/></Link></Button>
     <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Recall"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
-    <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
-  </div></div>;
+  </div><Button variant="ghost" size="icon" className="card-bookmark-action card-footer-bookmark" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button></div>;
 }
 
 /**

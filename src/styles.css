@@ -2934,7 +2934,19 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 /* Compact glyph cards: rank · strokes moves from the footer to the top-left label row,
    as on Comfortable cards; the footer keeps only its actions (hidden text holds their place). */
 .catalog-entry-grid:not(.library-list-view) .catalog-card .card-top-meta { display: inline; font-size: 9px; letter-spacing: 0; color: var(--muted-foreground); }
-.catalog-entry-grid:not(.library-list-view) .catalog-card > .word-card-bottom > span:first-child { visibility: hidden; }
+.catalog-entry-grid:not(.library-list-view) .catalog-card > .word-card-bottom > span:first-child { position: absolute; visibility: hidden; }
+/* Compact library footers mirror Comfortable: the icon actions stay left and the
+   bookmark sits alone at the row's right end (the hidden metadata span keeps the
+   space-between layout from pulling the actions right). */
+.library-page .word-card .word-card-bottom { justify-content: flex-start; gap: 8px; }
+.library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a,
+.library-page .word-card .card-footer-bookmark { width: 25px; height: 25px; }
+.library-page .word-card .card-footer-actions svg, .library-page .word-card .card-footer-bookmark svg { width: 12px; height: 12px; }
+.library-page .word-card .card-footer-bookmark { margin-left: auto; }
+@media (max-width: 580px) {
+  .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a,
+  .library-page .word-card .card-footer-bookmark { width: 22px; }
+}
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */
 .word-card .word-level-wrap > .card-top-meta.is-lead { margin-left: 0; }
 /* Compact cards: the top row is only as tall as its labels and any extra row height goes
