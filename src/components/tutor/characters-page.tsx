@@ -50,7 +50,6 @@ import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
 import { useActivePill } from '@/lib/use-active-pill';
-import { PillRow } from './pill-row';
 import { useOneLineTitle } from './one-line-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
@@ -505,8 +504,15 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     if (previous === null || previous === page || selectedId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, selectedId]);
-  // Phones: the kind tabs are a scrolling pill row; keep the current kind in view.
-  const kindPills = useActivePill(kind);
+  // The kind switch lives in the header (section-picker.tsx); hand it each kind's
+  // card count and coloured "+N" extras, the same numbers the old tabs showed.
+  usePublishSections('glyphs', tabCounts ? Object.fromEntries(kinds.map(k => {
+    const traditional = sharedTraditional[k] ?? 0;
+    const extras: SectionExtra[] = [];
+    if (traditional > 0) extras.push({ tone: 'traditional', count: traditional, hint: k === 'Radicals' ? radicalTraditionalCountHint(traditional) : traditionalCountHint(traditional, standaloneTraditional[k] ?? 0, tabCounts[k] ?? plannedCounts[k]) });
+    if (k === 'Components' && sharedFamily > 0) extras.push({ tone: 'family', count: sharedFamily, hint: familyCountHint(sharedFamily) });
+    return [k, { count: tabCounts[k] ?? plannedCounts[k], extras }];
+  })) : Object.fromEntries(kinds.map(k => [k, { count: plannedCounts[k] }])), { active: kind });
   // The title must stay on one line at every width; the hook lowers its font size as needed.
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, kind);
@@ -517,7 +523,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // Store the target page with the selection so closing reveals that record.
   const stepTo = (index: number) => { const target = filtered[index]; if (target) void detailLoading.run(target.id, () => set({ ...savedGlyphDestination(target), variant: target.radicalVariant, page: Math.floor(index / density.size) + 1 })); };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1 ref={titleRef}>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
-    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><PillRow label="glyph sections"><TabsList ref={kindPills} aria-label="Character library categories" className="page-pills">{kinds.map(k => <TabsTrigger key={k} value={k}>{k}<span className="catalog-tab-count">{(tabCounts?.[k] ?? plannedCounts[k]).toLocaleString('en-US')}</span>{(sharedTraditional[k] ?? 0) > 0 && <TraditionalTabHint count={sharedTraditional[k] ?? 0} hint={k === 'Radicals' ? radicalTraditionalCountHint(sharedTraditional[k] ?? 0) : traditionalCountHint(sharedTraditional[k] ?? 0, standaloneTraditional[k] ?? 0, tabCounts?.[k] ?? plannedCounts[k])}/>}{k === 'Components' && sharedFamily > 0 && <TraditionalTabHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/>}</TabsTrigger>)}</TabsList></PillRow><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
+    <Tabs value={kind} onValueChange={updateKind} className="catalog-tabs"><div className="vocabulary-category-row glyph-category-row"><div className="vocabulary-saved-filter" aria-label="Saved glyphs">{['all', 'saved'].map(status => <Button key={status} variant="ghost" className={(status === 'saved') === savedOnly ? 'selected' : ''} aria-pressed={(status === 'saved') === savedOnly} onClick={() => set({ status: status === 'saved' ? 'saved' : undefined, page: 1, id: '' })}>{status === 'saved' ? 'Saved' : 'All'}{status === 'saved' && <span className="catalog-tab-count">{filterLibrary(libraryEntries(kind), '', '', false, preferences.includeTraditional, undefined, saved).length}</span>}</Button>)}</div></div>
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} strokes`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
