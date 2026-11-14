@@ -1360,7 +1360,6 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .example-listen:not(:disabled), .catalog-detail .component-pronunciation button:not(:disabled) { color: var(--foreground); }
 .example-listen:disabled, .catalog-detail .component-pronunciation button:disabled { color: var(--muted-foreground); }
 .catalog-detail .catalog-facts { grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); column-gap: 40px; }
-.catalog-facts .catalog-rank-label { min-height: 14px; line-height: 14px; }
 .catalog-facts .catalog-rank-label .source-info-trigger { width: 14px; height: 14px; }
 .word-character .pinyin { margin-bottom: 6px; }
 /* Fact labels stay on one shared top row; each value centers vertically in the
@@ -1370,9 +1369,10 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .catalog-detail .catalog-facts dd { flex: 1; display: flex; align-items: center; }
 .catalog-facts .catalog-rank-label .source-info-trigger { margin-top: 0; width: 16px; height: 16px; }
 .catalog-facts .catalog-rank-label .source-info-trigger svg { width: 13px; height: 13px; }
-.catalog-facts dt.catalog-rank-label { display: flex; height: 1.5em; line-height: 1.5; }
+/* The Rank label keeps the same line box as its sibling labels (no fixed
+   height/line-height), so its value stays level with the other columns. */
+.catalog-facts dt.catalog-rank-label { display: flex; align-items: center; }
 .catalog-facts .catalog-rank-label .source-info-trigger { margin-block: -4px; }
-.catalog-facts dt.catalog-rank-label + dd { display: flex; align-items: center; min-height: 1.5em; line-height: 1.5; }
 .catalog-facts dt { line-height: 1.5; }
 .catalog-facts dd { line-height: 1.5; }
 .catalog-detail .catalog-detail-title { margin-bottom: 0; }
