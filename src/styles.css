@@ -2556,6 +2556,8 @@ html[data-display-size='comfortable'] .practice-details-link svg { width: 28px; 
 @media (max-width: 850px) {
   .practice-header { padding: 0; }
   .practice-header-main { flex-direction: column; align-items: stretch; }
+  /* Stacked: the row-layout 300px basis would become a height and leave an empty gap. */
+  .practice-header-text { flex: 0 0 auto; }
   .practice-title { font-size: 34px; }
 }
 
