@@ -1,5 +1,6 @@
 import { catalog } from './catalog-store';
 import { relatedGroup } from './character-variants';
+import { cardReadingSplit } from './glyph-presentation';
 
 /**
  * Owner-reviewed pointers from one sense of a character's meaning to the related character
@@ -32,4 +33,16 @@ export function meaningPointers(glyph: string, recorded: string, shown: string =
     return pointer ? { text, related: pointer.related } : { text };
   });
   return linked ? result : null;
+}
+
+/**
+ * Card translation lines with reviewed pointers, for one-line cards (grid tiles): one line per
+ * reading when the record shows a reviewed per-reading split (干 gān / gàn), otherwise the single
+ * recorded meaning. Null when no pointer applies, so callers keep their plain text.
+ */
+export function cardMeaningPointers(glyph: string, pinyin: string, meaning: string): MeaningPart[][] | null {
+  const split = cardReadingSplit(glyph, pinyin, meaning);
+  if (!split) { const parts = meaningPointers(glyph, meaning); return parts ? [parts] : null; }
+  const lines = split.map(item => meaningPointers(glyph, meaning, item.meaning, item.reading) ?? [{ text: item.meaning }]);
+  return lines.some(line => line.some(part => part.related)) ? lines : null;
 }

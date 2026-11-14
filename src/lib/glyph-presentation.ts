@@ -46,10 +46,15 @@ export function displayMeaning(meaning: string): string {
  * Fails closed to the recorded meaning unless this record still has the reviewed combined text
  * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
 export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
+  const split = cardReadingSplit(glyph, pinyin, meaning);
+  return displayMeaning(split ? split.map(item => item.meaning).join(' / ') : meaning);
+}
+
+/** The reviewed per-reading split a card may show for this exact record, or null (see cardMeaning). */
+export function cardReadingSplit(glyph: string, pinyin: string, meaning: string): { reading: string; meaning: string }[] | null {
   const split = readingMeanings(glyph);
   const readings = pinyin.split('/').map(part => part.trim().normalize('NFC')).filter(Boolean);
-  const matches = split && meaning === catalog.readingMeanings[glyph]?.combined && readings.length === split.length && split.every((item, index) => item.reading === readings[index]);
-  return displayMeaning(matches ? split.map(item => item.meaning).join(' / ') : meaning);
+  return split && meaning === catalog.readingMeanings[glyph]?.combined && readings.length === split.length && split.every((item, index) => item.reading === readings[index]) ? split : null;
 }
 
 /** Variant translations lead with the original's own translation, then the component-form
