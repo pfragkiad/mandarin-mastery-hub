@@ -931,6 +931,15 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 @media (max-width:580px) {
   .overview-heading h1 { font-size: 31px; letter-spacing: -.008em; }
   .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  /* Phones: each random card reads like a glyph tile — hanzi on the left, pinyin + audio over
+     the translation on its right. The link box dissolves (display: contents) so its hanzi and
+     translation can sit in separate grid cells while staying one link. Sounds keeps its layout. */
+  .discovery-tile { grid-row: auto; grid-template-rows: none; padding: 12px 14px; row-gap: 6px; }
+  .discovery-tile:not(.discovery-sound) .discovery-tile-record { grid-row: auto; grid-template-rows: none; grid-template-columns: auto minmax(0,1fr); grid-template-areas: "glyph pinyin" "glyph meaning"; column-gap: 14px; row-gap: 2px; align-items: center; }
+  .discovery-tile:not(.discovery-sound) .discovery-tile-record .overview-record-link { display: contents; }
+  .discovery-tile:not(.discovery-sound) .discovery-tile-record .overview-record-link > strong { grid-area: glyph; min-height: 0; }
+  .discovery-tile:not(.discovery-sound) .discovery-record-pinyin { grid-area: pinyin; align-self: end; flex-wrap: wrap; }
+  .discovery-tile:not(.discovery-sound) .discovery-tile-record .overview-record-link h2 { grid-area: meaning; align-self: start; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
 }
 
