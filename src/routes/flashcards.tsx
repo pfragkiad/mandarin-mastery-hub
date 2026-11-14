@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { FlashcardsPage, type FlashcardFilters } from '@/components/tutor/flashcards';
 import { pageHead } from '@/lib/mandarin';
 export const Route = createFileRoute('/flashcards')({
-  validateSearch: (search: Record<string, unknown>): Partial<FlashcardFilters> => Object.fromEntries(['category', 'level', 'pos', 'usage'].flatMap(key => typeof search[key] === 'string' && search[key].trim() ? [[key, search[key]]] : [])),
+  validateSearch: (search: Record<string, unknown>): Partial<FlashcardFilters> => ({ ...Object.fromEntries(['category', 'level', 'pos', 'usage'].flatMap(key => typeof search[key] === 'string' && search[key].trim() ? [[key, search[key]]] : [])), ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) }),
   head: () => pageHead('Flashcards', 'Practise Mandarin vocabulary and characters with shuffled flashcards by category and level.'),
   component: FlashcardsRoute,
 });
