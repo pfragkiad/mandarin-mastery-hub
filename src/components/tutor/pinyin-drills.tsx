@@ -187,7 +187,7 @@ function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round,
       <div className="flash-progress"><span style={{ width: `${(index / (deck.length || 1)) * 100}%` }} /></div>
       <div className="pinyin-drill-listen">
         <Button variant="outline" className={`pinyin-listen-button${player.playing === current.id ? ' is-playing' : ''}`} onClick={round.replay} aria-label="Hear it again"><Volume2 /></Button>
-        <div><p className="pinyin-drill-prompt">{prompt}</p><p className="pinyin-drill-keys">Space hears it again · Enter for the next sound · Esc ends</p></div>
+        <div><p className="pinyin-drill-prompt">{prompt}</p><p className="pinyin-drill-keys">Space hears it again · Enter for {index + 1 >= deck.length ? 'the results' : 'the next sound'} · Esc ends</p></div>
       </div>
       {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
       {children}
