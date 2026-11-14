@@ -19,7 +19,7 @@ const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['Characters', 'Components', '
 export function OverviewPage() {
   const { items, preferences, catalogVersion } = useWorkspace();
   return <div className="page-enter overview-page">
-    <DailyCharacterHero><OverviewSearch items={items} includeTraditional={preferences.includeTraditional} catalogVersion={catalogVersion}/></DailyCharacterHero>
+    {/* No search here: the header Search already covers the library. */}<DailyCharacterHero/>
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {DISCOVERY_CATEGORIES.map(category => <DiscoveryTile key={category} category={category}/>)}
       {/* Sixth card: a random Pinyin syllable that has at least one recording. */}
