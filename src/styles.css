@@ -3192,8 +3192,29 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
 @media (max-width: 1280px) {
   .library-page .mobile-library-filters > form { margin-top: 14px !important; margin-bottom: 14px !important; }
 }
+/* Phones: one rhythm at the top of library pages. Header → title, title → search,
+   search → Filters and Filters → a wrapped Study row all share --library-top-gap;
+   the heading drops its 70px min-height so the title no longer floats inside it. */
+@media (max-width: 850px) {
+  .library-page { --library-top-gap: 16px; }
+  .main-content:has(> .library-page) { padding-top: 16px; }
+  .library-page .library-heading { min-height: 0; margin: 0; padding: 0; }
+  .library-page .catalog-tabs, .library-page .catalog-tabs > [role='tabpanel'] { margin-top: 0; padding-top: 0; gap: 0; }
+  .library-page [role='tabpanel']:has(> .mobile-library-filters) { margin-top: 0; row-gap: var(--library-top-gap); }
+  .library-page .mobile-library-filters > form { margin-top: var(--library-top-gap) !important; margin-bottom: 0 !important; }
+}
 /* Game setups: the saved toggle matches the setup dropdowns' height. */
 .game-setup .saved-filter-toggle { height: 36px; }
 html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height: 44px; min-height: 44px; }
 /* Phones: the all-caps motto line above library titles is hidden to save height. */
 @media (max-width: 850px) { .library-heading .library-eyebrow { display: none; } }
+
+/* Phones: the page's heading hanzi (汉字, 记…) becomes a faint watermark behind the right
+   end of the title. It is taken out of flow (absolute, single grid column), so it reserves
+   no space and the title reads over it; purely decorative, so it never takes clicks. */
+@media (max-width: 850px) {
+  .page-heading { position: relative; grid-template-columns: minmax(0, 1fr); }
+  .page-heading > :not(.heading-hanzi) { position: relative; z-index: 1; }
+  .page-heading > .heading-hanzi { display: block !important; position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 0; margin: 0; padding: 0; font-size: 64px; line-height: 1; opacity: 0.14; pointer-events: none; user-select: none; }
+  .page-heading > .heading-hanzi > span { display: none; }
+}
