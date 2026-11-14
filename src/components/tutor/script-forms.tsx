@@ -1,5 +1,6 @@
-import { useId, useState } from 'react';
+import { useId, useState, type CSSProperties } from 'react';
 import { openDetailsHint, practiceHint, switchFormHint } from '@/lib/tile-hints';
+import { formSwitchColumns } from '@/lib/form-switch-columns';
 import { Link } from '@tanstack/react-router';
 import { ScrollText } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
