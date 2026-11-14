@@ -3319,3 +3319,5 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 /* Detail facts: the rank value is a stat value like Strokes/Radical, so it takes the dd's size
    (never the 10px card label size, which is under the 12px information floor). */
 .catalog-facts dd .component-reuse-label { font-size: inherit; line-height: inherit; }
+/* Detail cards: the main hanzi sits in a thin-bordered box (like card form tiles), slightly larger. */
+.catalog-detail-glyph-row > strong { font-size: min(76px, calc((100cqi - 64px) / var(--detail-chars, 1))); line-height: 1 !important; padding: 8px 12px; border: 1px solid var(--border); border-radius: 12px; }
