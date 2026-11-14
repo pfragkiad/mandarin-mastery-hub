@@ -1392,11 +1392,8 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
     .decomposition-glyph.traditional-character:not(.decomposition-glyph-static),
     .radical-form-choice.is-traditional):is(:hover, :focus-visible) { border-color: var(--traditional); }
 .radical-form-choice.is-traditional:focus-visible { outline-color: var(--traditional); }
-/* The explicit details action contrasts with the green availability indicators.
-   Reuse theme-aware terracotta for legibility in both light and dark palettes. */
-.word-actions .card-details-action { color: var(--terracotta); }
-.word-actions .card-details-action:hover,
-.word-actions .card-details-action:focus-visible { color: var(--terracotta); background: color-mix(in oklab, var(--terracotta) 12%, transparent); }
+/* The details action wears the same neutral ink as the other card actions
+   (Practice, Expert, Save) — its square-arrow shape already distinguishes it. */
 
 /* All library modes use the entire container; card density follows available space. */
 .library-page .catalog-workspace, .library-page .vocabulary-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
