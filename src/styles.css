@@ -2867,6 +2867,10 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
       linear-gradient(90deg, var(--traditional), var(--hsk-id)),
       linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)),
       linear-gradient(90deg, var(--hsk-id), var(--traditional));
+    /* The dark shorthand above resets background-clip with higher specificity, so the
+       text-clip list must be restated here for the pin characters to keep their colours. */
+    -webkit-background-clip: text, padding-box, border-box;
+    background-clip: text, padding-box, border-box;
   }
 }
 html .practice-header .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
