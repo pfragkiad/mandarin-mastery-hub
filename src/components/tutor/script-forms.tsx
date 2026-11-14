@@ -1,5 +1,6 @@
-import { useId, useState } from 'react';
+import { useId, useState, type CSSProperties } from 'react';
 import { openDetailsHint, practiceHint, switchFormHint } from '@/lib/tile-hints';
+import { formSwitchColumns } from '@/lib/form-switch-columns';
 import { Link } from '@tanstack/react-router';
 import { ScrollText } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -56,7 +57,10 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className={`radical-family-section script-forms${layout === 'switch' ? ' form-switch' : ''}`}>
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
-    <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`}>
+    {/* Switch trays with more forms than fit one row set --form-cols so wrapped rows stay
+        balanced and equal-width (formSwitchColumns: five forms wrap 3+2, never 4+1); the
+        CSS also gives those trays the header's full width so the tiles keep their size. */}
+    <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`} style={layout === 'switch' && forms.length > 4 ? { '--form-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
       {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
       {layout === 'switch' && <FormSwitchThumb/>}
       {forms.map(entry => {
