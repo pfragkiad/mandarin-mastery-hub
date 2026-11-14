@@ -3305,3 +3305,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   .library-page .word-card .card-labelled-actions { flex-wrap: nowrap; gap: 6px; }
   .library-page .word-card .card-labelled-actions > :not(.card-bookmark-icon) { padding-inline: 9px; gap: 5px; min-width: 0; }
 }
+
+/* Detail facts: the rank value is a stat value like Strokes/Radical, so it takes the dd's size
+   (never the 10px card label size, which is under the 12px information floor). */
+.catalog-facts dd .component-reuse-label { font-size: inherit; line-height: inherit; }
