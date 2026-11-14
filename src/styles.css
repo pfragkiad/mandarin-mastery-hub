@@ -3143,6 +3143,9 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   /* An open row shows the translation in its detail (pinyin + speaker, translation, buttons),
      so the row line keeps only the hanzi. Sounds keep their tone count, which the detail omits. */
   .discovery-tile.is-open:not(.discovery-sound) .discovery-row-meaning { display: none; }
+  /* With the translation hidden, the 70% cap would resolve against the hanzi's own width
+     (the line shrinks to its content) and clip it, so an open row shows the hanzi in full. */
+  .discovery-tile.is-open .discovery-row-hanzi { max-width: none; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
