@@ -42,15 +42,15 @@ export function useRoundEnd({ active, answered, onFinish, onQuit }: { active: bo
 export type RoundEnd = ReturnType<typeof useRoundEnd>;
 
 /** One-line bar shown instead of the setup while playing. `summary` is the chip text. */
-export function GamePlayBar({ summary, settingsOpen, onToggleSettings, onRestart, restartDisabled, end }: {
-  summary: ReactNode; settingsOpen: boolean; onToggleSettings: () => void; onRestart: () => void; restartDisabled?: boolean; end: RoundEnd;
+export function GamePlayBar({ summary, settingsOpen, onToggleSettings, onRestart, restartDisabled, restartLabel = 'Restart', end }: {
+  summary: ReactNode; settingsOpen: boolean; onToggleSettings: () => void; onRestart: () => void; restartDisabled?: boolean; restartLabel?: string; end: RoundEnd;
 }) {
   return <div className="game-play-bar">
     <button type="button" className="game-play-chip" aria-expanded={settingsOpen} onClick={onToggleSettings} title="Change settings for the next round">
       <SlidersHorizontal />{summary}
     </button>
     <div className="game-play-actions">
-      <Button variant="outline" onClick={onRestart} disabled={restartDisabled}><RotateCcw />Restart</Button>
+      <Button variant="outline" onClick={onRestart} disabled={restartDisabled}><RotateCcw />{restartLabel}</Button>
       {end.confirming ? <span className="game-play-confirm" role="group" aria-label="End this round?">
         <span>End now?</span>
         <Button variant="outline" className="game-play-end-yes" onClick={end.confirmEnd} autoFocus>Yes, end</Button>
@@ -66,7 +66,7 @@ export function GamePlayBar({ summary, settingsOpen, onToggleSettings, onRestart
  * `children` has rows; `empty` replaces it otherwise. `actions` are the next-round buttons.
  */
 export function GameResults({ eyebrow, score, total, unit, sub, listTitle, listKind, children, hasList, empty, extra, actions, note }: {
-  eyebrow: string; score: number; total: number; unit: string; sub: ReactNode; listTitle: string; listKind: 'sounds' | 'cards';
+  eyebrow: string; score: number; total: number; unit: string; sub: ReactNode; listTitle: string; listKind: 'sounds' | 'cards' | 'drawn';
   children?: ReactNode; hasList: boolean; empty?: ReactNode; extra?: ReactNode; actions: ReactNode; note?: ReactNode;
 }) {
   return <section className="game-results" aria-label="Results">
@@ -89,6 +89,11 @@ export function MissedTick({ label, kept, onToggle, children }: { label: string;
     <Checkbox checked={kept} onCheckedChange={onToggle} aria-label={`Keep ${label} for the next round`} />
     {children}
   </li>;
+}
+
+/** Status pill on a drawing review row: why the card is there (passed, or drawn with hints). */
+export function ReviewReason({ reason }: { reason: 'passed' | 'guided' }) {
+  return <span className={`game-missed-reason is-${reason}`}>{reason === 'passed' ? 'Passed' : 'Needed hints'}</span>;
 }
 
 /** Toggle one id in an unticked ("skipped") list. */

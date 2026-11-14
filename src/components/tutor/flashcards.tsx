@@ -3,13 +3,14 @@ import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
 import { ExamplePronunciation } from './example-pronunciation';
+import { TileBookmark } from './record-card-footer';
 import { mixedRound } from '@/lib/pinyin-round';
 import { MeaningText } from './meaning-text';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useFlashcardSession, type FlashCard } from './flashcard-session';
 import { DetailsIcon } from './practice-icons';
 import { detailTrail } from '@/lib/detail-trail';
-import { RotateCcw, Volume2, Check, X, Play, Bookmark, Target } from 'lucide-react';
+import { RotateCcw, Volume2, Check, X, Play, Target } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -109,7 +110,6 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
 
   const uniqueMissed = [...new Map(missed.map(m => [m.id, m])).values()];
   const kept = uniqueMissed.filter(m => !session.skipped.includes(m.id));
-  const unsavedMissed = uniqueMissed.filter(m => !saved.includes(m.id));
   const uniqueDeck = deck ? [...new Map(deck.map(c => [c.id, c])).values()] : [];
   // Cards answered at least once (an early End leaves the rest unanswered).
   const reviewed = deck ? new Set(deck.slice(0, index).map(c => c.id)).size : 0;
@@ -202,10 +202,6 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
       sub={<>{reviewed} of {uniqueDeck.length} reviewed{uniqueMissed.length ? ` · ${uniqueMissed.length} ${repeat ? 'took extra tries' : 'still learning'}` : ''}</>}
       listTitle={repeat ? 'Took extra tries' : 'Still learning'} listKind="cards" hasList={uniqueMissed.length > 0}
       empty={reviewed ? 'Every card known — well done.' : 'No cards answered in this round.'}
-      extra={uniqueMissed.length > 0 && <div className="game-results-saved">
-        <Button variant="outline" size="sm" disabled={!unsavedMissed.length} onClick={() => unsavedMissed.forEach(m => toggleSaved(m.id))}>{unsavedMissed.length ? <Bookmark/> : <Check/>}{unsavedMissed.length ? `Save ${unsavedMissed.length} unknown ${unsavedMissed.length === 1 ? 'card' : 'cards'}` : 'Unknown cards saved'}</Button>
-        {!unsavedMissed.length && <span role="status">Bookmarked in Saved for this session.</span>}
-      </div>}
       actions={<>
         {uniqueMissed.length > 0 && <Button onClick={() => start(kept, true)} disabled={!kept.length}><Target />Review still learning ({kept.length})</Button>}
         <Button variant={uniqueMissed.length ? 'outline' : 'default'} disabled={!pool.length && !kept.length} onClick={() => deal(mixedRound(pool, deckSize === 'all' ? pool.length : deckSize, kept), false)}><Play />{kept.length ? 'New round + these' : 'New round'}</Button>
@@ -220,6 +216,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
             ? <MultiReadingSpeakers spoken={m.hanzi} reading={m.pinyin} variant="header" textClassName="pinyin"/>
             : <><span className="pinyin">{m.pinyin}</span><ExamplePronunciation request={missedRequest} label={m.hanzi}/></>}</span>
           <span className="game-missed-note"><MeaningText text={m.meaning}/></span>
+          <TileBookmark hanzi={m.hanzi} bookmarked={saved.includes(m.id)} onBookmark={() => toggleSaved(m.id)}/>
         </MissedTick>;
       })}
     </GameResults>}

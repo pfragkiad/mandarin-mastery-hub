@@ -1,7 +1,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { openDetailsHint, practiceHint } from '@/lib/tile-hints';
 import { Link } from "@tanstack/react-router";
-import { Bookmark, Check, Play, RotateCcw, Target } from "lucide-react";
+import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
 import { partOfSpeechOptions, vocabularyKind } from "@/lib/mandarin";
@@ -16,7 +16,8 @@ import {
 } from "@/lib/drawing-game";
 import { DraftFilterForm } from "./filter-form";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
-import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from "./game-round";
+import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
+import { TileBookmark } from "./record-card-footer";
 import { ExamplePronunciation } from "./example-pronunciation";
 import { MeaningText } from "./meaning-text";
 import { characterAudioRequest } from "@/lib/catalog-store";
@@ -79,7 +80,10 @@ export function DrawingGamePage({
     .filter((answer) => answer.result === "passed" || answer.result === "guided")
     .map((answer) => answer.entry);
   const kept = review.filter((entry) => !skipped.includes(entry.id));
-  const unsavedReview = review.filter((entry) => !saved.includes(entry.id));
+  // Why each card is on the review list: passed without drawing, or drawn with the guide/hints.
+  const reasons = new Map(answers.flatMap((answer) => (answer.result === "passed" || answer.result === "guided" ? [[answer.entry.id, answer.result] as const] : [])));
+  const passedCount = answers.filter((answer) => answer.result === "passed").length;
+  const guidedCount = answers.filter((answer) => answer.result === "guided").length;
   const correct = answers.filter((answer) => answer.result === "correct").length;
   const unavailable = answers.filter((answer) => answer.result === "unavailable").length;
   const cardsUnit = (n: number) => `${n} ${n === 1 ? "card" : "cards"}`;
@@ -88,12 +92,12 @@ export function DrawingGamePage({
     const group = kind !== "Words" && search.usage ? usageGroups(kind).find((g) => g.value === search.usage) : undefined;
     return [
       kind,
+      search.saved ? "Saved" : "All",
       ...(kind === "Words" && search.collection ? [search.collection] : []),
       ...(kind === "Words" && search.level ? [search.level] : []),
       ...(kind === "Words" && search.pos ? [search.pos] : []),
       ...(group ? [usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional)] : []),
       ...(search.strokes ? [`${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
-      ...(search.saved ? ["Saved"] : []),
     ].join(" · ");
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -327,6 +331,7 @@ export function DrawingGamePage({
               session.isReview ? start([...new Map(deck.map((c) => [c.id, c])).values()], true) : start(pool)
             }
             restartDisabled={!session.isReview && !pool.length}
+            restartLabel="New round"
             end={end}
           />
           {settingsOpen &&
@@ -376,41 +381,25 @@ export function DrawingGamePage({
           eyebrow={session.isReview ? "Review complete" : session.ended ? "Session ended" : "Session complete"}
           score={correct}
           total={answers.length - unavailable}
-          unit="correct"
+          unit="drawn correctly"
           sub={
             <>
-              {answers.length} of {deck.length} answered{review.length ? ` · ${review.length} to review` : ""}
+              {answers.length} of {deck.length} played
+              {passedCount ? ` · ${passedCount} passed` : ""}
+              {guidedCount ? ` · ${guidedCount} needed hints` : ""}
               {unavailable ? ` · ${unavailable} without writing data` : ""}
             </>
           }
           listTitle="To review"
-          listKind="cards"
+          listKind="drawn"
           hasList={review.length > 0}
           empty={answers.length ? "Every card drawn — well done." : "No cards answered in this round."}
-          extra={
-            review.length > 0 && (
-              <div className="game-results-saved">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  disabled={!unsavedReview.length}
-                  onClick={() => unsavedReview.forEach((entry) => toggleSaved(entry.id))}
-                >
-                  {unsavedReview.length ? <Bookmark /> : <Check />}
-                  {unsavedReview.length
-                    ? `Save ${unsavedReview.length} unknown ${unsavedReview.length === 1 ? "card" : "cards"}`
-                    : "Unknown cards saved"}
-                </Button>
-                {!unsavedReview.length && <span role="status">Bookmarked in Saved for this session.</span>}
-              </div>
-            )
-          }
           actions={
             <>
               {review.length > 0 && (
                 <Button onClick={() => start(kept, true)} disabled={!kept.length}>
                   <Target />
-                  Practise missed ({kept.length})
+                  Review these ({kept.length})
                 </Button>
               )}
               <Button
@@ -419,7 +408,7 @@ export function DrawingGamePage({
                 onClick={() => deal(mixedRound(pool, deckSize === "all" ? pool.length : deckSize, kept), Number.MAX_SAFE_INTEGER, false)}
               >
                 <Play />
-                {kept.length ? "New round + missed" : "New round"}
+                {kept.length ? "New round + these" : "New round"}
               </Button>
               <Button variant="ghost" onClick={changeSettings}>
                 Change settings
@@ -470,6 +459,8 @@ export function DrawingGamePage({
                   {entry.word ? <>Drew <span lang="zh-CN">{entry.hanzi}</span> · </> : null}
                   <MeaningText text={prompt.meaning} />
                 </span>
+                <ReviewReason reason={reasons.get(entry.id) ?? "passed"} />
+                <TileBookmark hanzi={prompt.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)} />
               </MissedTick>
             );
           })}
