@@ -57,12 +57,12 @@ const catalogData: CatalogData = {
 
 hydrateCatalog(catalogData);
 
-// A one-form radical family so the page's radical-family section has something to render.
+// 冂 has two forms so Practice's form switch renders; 乙 stays a one-form family (no switch).
 const familyFile: RadicalStrokeFile = {
   schemaVersion: 1, source: 'test family', records: {},
   families: [{
     id: 17, canonical: '冂', kangxiHeading: '冂', familyPinyin: 'jiōng',
-    forms: [{ key: 'main', character: '冂', aliases: [], formKind: 'kangxi-heading', strokeCount: 2, record: { status: 'recorded', strokes: [] } }],
+    forms: [{ key: 'main', character: '冂', aliases: [], formKind: 'kangxi-heading', strokeCount: 2, record: { status: 'recorded', strokes: [] } }, { key: 'alt', character: '⺆', aliases: [], formKind: 'variant', strokeCount: 2, record: { status: 'recorded', strokes: [] } }],
   }, {
     id: 5, canonical: '乙', kangxiHeading: '乙', familyPinyin: 'yǐ',
     forms: [{ key: 'main', character: '乙', aliases: [], formKind: 'kangxi-heading', strokeCount: 1, record: { status: 'recorded', strokes: [] } }],
@@ -158,6 +158,12 @@ describe('character practice sections by mode', () => {
     expect(decompositionPill()).toBeNull();
     expect(document.body.textContent).not.toContain('RADICAL FAMILY');
     expect(document.body.textContent).not.toContain('STROKE DECOMPOSITION');
+  });
+
+  it('omits the form switch for a one-form radical family, whose title already shows that form', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="乙" mode="watch"/>);
+    expect(document.querySelector('.practice-header .form-switch')).toBeNull();
   });
 
   it('labels radical practice with the Radical pill instead of Character', () => {
