@@ -1,10 +1,9 @@
-// Shared pieces of the Pinyin guide: the tone-shape icon, the recording player
-// hook and the browser-remembered progress hook. Every mode (chart and the
-// three quizzes) uses these so playback, slow speed and progress behave alike.
+// Shared pieces of the Pinyin guide: the tone-shape icon and the recording player
+// hook. Every mode (chart and the three games) uses these so playback and slow
+// speed behave alike.
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { playRecordingUrl, stopRecording } from '@/lib/audio';
 import { hasRecording, soundId, type PinyinData, type PinyinSound, type Tone } from '@/lib/pinyin-guide';
-import { PINYIN_PROGRESS_KEY, parseProgress, recordSound, type PinyinProgress } from '@/lib/pinyin-progress';
 
 /** Pitch contour of a tone (high level, rising, dipping, falling; neutral = a light dot). Decorative. */
 export function ToneContour({ tone, className = '' }: { tone: Tone; className?: string }) {
@@ -16,19 +15,16 @@ export function ToneContour({ tone, className = '' }: { tone: Tone; className?: 
 }
 
 /**
- * Play exact recordings only. Inputs: the loaded data, the slow preference and
- * an `onHeard` callback (progress). State: the sound id now playing, whether a
+ * Play exact recordings only. Inputs: the loaded data and the slow preference. State: the sound id now playing, whether a
  * multi-clip sequence is running, and the last error. `sequence` chains clips (all tones) and is cancelled by any new play/stop.
  */
-export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?: (id: string) => void) {
+export function usePinyinPlayer(data: PinyinData | null, slow: boolean) {
   const [playing, setPlaying] = useState<string | null>(null);
   // True only while a chain of several clips (Play all) runs, so callers can offer
   // Stop for a sequence without flashing it during a short single-tone clip.
   const [sequencing, setSequencing] = useState(false);
   const [error, setError] = useState('');
   const ticket = useRef(0);
-  const heard = useRef(onHeard);
-  heard.current = onHeard;
   // Every path that ends playback (done, missing clip, failed clip, stop) also ends the sequence.
   const idle = useCallback(() => { setPlaying(null); setSequencing(false); }, []);
   const playChain = useCallback(async (sounds: PinyinSound[]) => {
@@ -43,7 +39,6 @@ export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?
       const finished = new Promise<void>(resolve => {
         void playRecordingUrl(recording.url, slow, resolve).then(ok => {
           if (!ok) { if (mine === ticket.current) { setError('The recording could not play. Try again.'); idle(); } ticket.current++; resolve(); }
-          else heard.current?.(sound.id);
         });
       });
       await finished;
@@ -58,21 +53,5 @@ export function usePinyinPlayer(data: PinyinData | null, slow: boolean, onHeard?
   return { playing, sequencing, error, play, sequence: playChain, stop, clearError: () => setError('') };
 }
 export type PinyinPlayer = ReturnType<typeof usePinyinPlayer>;
-
-/** Progress lives in this browser; it is read after mount so the server render matches. */
-export function usePinyinProgress() {
-  const [progress, setProgress] = useState<PinyinProgress>({});
-  useEffect(() => { setProgress(parseProgress(window.localStorage.getItem(PINYIN_PROGRESS_KEY))); }, []);
-  const update = useCallback((next: (prior: PinyinProgress) => PinyinProgress) => {
-    setProgress(prior => {
-      const value = next(prior);
-      try { window.localStorage.setItem(PINYIN_PROGRESS_KEY, JSON.stringify(value)); } catch { /* storage full or blocked: keep the session value */ }
-      return value;
-    });
-  }, []);
-  const record = useCallback((id: string, action: 'heard' | 'right' | 'wrong') => update(prior => recordSound(prior, id, action)), [update]);
-  const reset = useCallback(() => update(() => ({})), [update]);
-  return { progress, record, reset };
-}
 
 export const sound = (base: string, tone: Tone): PinyinSound => ({ id: soundId(base, tone), base, tone });
