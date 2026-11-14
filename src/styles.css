@@ -1055,7 +1055,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-card .component-reuse-label { font-size: 9px; }
 .catalog-card .traditional-label { font-size: 7px; }
 .catalog-card .catalog-entry:hover, .catalog-card .catalog-entry:focus-visible { background: transparent; }
-.catalog-card .catalog-entry:hover strong, .catalog-card .catalog-entry:hover .catalog-entry-meaning, .catalog-card .catalog-entry:focus-visible strong, .catalog-card .catalog-entry:focus-visible .catalog-entry-meaning { color: var(--primary); }
+.catalog-card .catalog-entry:hover strong:not(.traditional-character), .catalog-card .catalog-entry:hover .catalog-entry-meaning, .catalog-card .catalog-entry:focus-visible strong:not(.traditional-character), .catalog-card .catalog-entry:focus-visible .catalog-entry-meaning { color: var(--primary); }
 .catalog-card-audio-error { font-size: 10px; color: var(--muted-foreground); padding: 0 16px 10px; }
 @media(max-width:1150px) { .glyph-category-row { flex-wrap: wrap; } .glyph-category-row .vocabulary-saved-filter { flex-basis: 100%; margin-left: 0; } }
 @media(max-width:580px) {
