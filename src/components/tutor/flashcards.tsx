@@ -57,27 +57,31 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const levels = useMemo(() => [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), [items]);
   const posOptions = useMemo(() => partOfSpeechOptions(items), [items]);
   const isReference = category.startsWith('Ref:');
-  const isSaved = category === 'Saved';
 
-  const pool = useMemo<Card[]>(() => {
-    if (isReference || isSaved) {
-      const referenceCards = (kind: ReferenceKind) => {
-        const reference = referenceCatalog.find(c => c.kind === kind);
-        if (!reference) return [];
-        const libraryKind = libraryKinds[reference.kind];
-        return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
-      };
-      if (isSaved) {
-        const kinds = Object.keys(libraryKinds) as ReferenceKind[];
-        return [...items.filter(w => saved.includes(w.id)), ...kinds.flatMap(kind => referenceCards(kind).filter(card => saved.includes(card.id))), ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
-      }
+  // Deck pool for a category; `savedOnly` narrows it to bookmarked records, like the
+  // Drawing game's All/Saved switch. Saved radical variants join the Radicals pool.
+  const buildPool = (savedFilter: boolean): Card[] => {
+    const referenceCards = (kind: ReferenceKind) => {
+      const reference = referenceCatalog.find(c => c.kind === kind);
+      if (!reference) return [];
+      const libraryKind = libraryKinds[reference.kind];
+      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
+    };
+    let base: Card[];
+    if (isReference) {
       const refKind = libraryKinds[category.slice(4) as ReferenceKind];
       const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
       const kangxi = new Map(refKind === 'Radicals' ? referenceCatalog.find(c => c.kind === 'Radical')?.entries.map(row => [row[0], Number((row[3] ?? "").match(/\bRadical #(\d+)\b/i)?.[1]) || undefined] as const) ?? [] : []);
-      return referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional))?.value === group);
+      base = referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional))?.value === group);
+      if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
+    } else {
+      base = items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
     }
-    return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
-  }, [items, category, level, pos, isReference, isSaved, saved, usage, preferences.includeTraditional, catalogVersion]);
+    return savedFilter ? base.filter(card => saved.includes(card.id)) : base;
+  };
+  const pool = useMemo(() => buildPool(savedOnly), [items, category, level, pos, isReference, savedOnly, saved, usage, preferences.includeTraditional, catalogVersion]);
+  // Count shown on the Saved half of the All/Saved switch: bookmarks in this category.
+  const savedCount = useMemo(() => buildPool(true).length, [items, category, level, pos, isReference, saved, usage, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const cardsUnit = (n: number) => `${n} ${n === 1 ? 'card' : 'cards'}`;
