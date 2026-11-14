@@ -175,6 +175,9 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .flash-stage { width: 100%; max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 .flash-progress { height: 4px; background: var(--muted); border-radius: 4px; overflow: hidden; }.flash-progress>span { display: block; height: 100%; background: var(--primary); transition: width .3s; }
 .flash-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted-foreground); }
+/* Flashcards: "Last card" sits beside the counter in the accent colour so the switch to results is expected. */
+.flash-meta-count { display: inline-flex; align-items: baseline; gap: 8px; }
+.flash-last-card { color: var(--primary); font-weight: 600; }
 .flash-card { perspective: 1200px; min-height: 360px; border: 0; background: none; padding: 0; width: 100%; }
 .flash-card:hover { background: none; }
 .flash-inner { position: relative; width: 100%; min-height: inherit; display: grid; transition: transform .5s; transform-style: preserve-3d; }

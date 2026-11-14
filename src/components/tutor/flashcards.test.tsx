@@ -200,3 +200,24 @@ describe('Play bar and results', () => {
     expect(screen.getByRole('button', { name: 'Review still learning (0)' })).toBeDisabled();
   });
 });
+
+describe('Last card and finish', () => {
+  it('labels the last card, counts its miss at once and the results agree', async () => {
+    render(<FlashcardsPage />);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
+    for (let card = 1; card <= 5; card++) {
+      await screen.findByText(`Card ${card} of 5`);
+      expect(screen.queryByText('Last card') !== null).toBe(card === 5);
+      fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+      // Miss cards 2 and 5 (the last one).
+      fireEvent.click(screen.getByRole('button', { name: card === 2 || card === 5 ? 'Still learning' : 'I knew it' }));
+    }
+    // The last miss counts before the results appear, and the answer buttons lock during the pause.
+    expect(screen.getByText('2 still learning')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'I knew it' })).toBeDisabled();
+    expect(screen.queryByText('Session complete')).not.toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText('Session complete')).toBeInTheDocument());
+    expect(screen.getByRole('button', { name: 'Review still learning (2)' })).toBeInTheDocument();
+  });
+});
