@@ -1120,6 +1120,15 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 }
 @media (max-width:580px) {
   .daily-hero-ghost { font-size: 240px; }
+  /* Phones: the greeting block sits above the card, so it is kept compact (greeting on one
+     line when it fits, tighter gaps) to keep the whole character of the day above the tab bar. */
+  .daily-hero { gap: 16px; margin-bottom: 20px; }
+  .daily-hero-copy { gap: 10px; }
+  .daily-hero-copy h1 { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 2px; margin: 0; }
+  .daily-greeting-hanzi { font-size: 44px; }
+  .daily-greeting-en { font-size: 22px; }
+  .daily-hero-copy > p { font-size: 13px; line-height: 1.6; margin-bottom: 2px; }
+  .daily-hero-card { padding: 16px 18px; gap: 10px; }
 }
 .search-field .search-toggle { position: absolute; top: 50%; transform: translateY(-50%); right: 7px; height: 27px; padding: 0 10px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); border: 1px solid var(--border); border-radius: 5px; background: transparent; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
 /* Two toggles (Pinyin + Exact) sit side by side; the first shifts left. */
