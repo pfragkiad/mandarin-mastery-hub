@@ -3155,7 +3155,7 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .topbar-brand, .start-brand { display: none; }
 @media (max-width: 850px) {
   .topbar .topbar-brand { display: grid; width: 32px; height: 34px; font-size: 21px; margin-right: 10px; border-radius: 7px 7px 7px 2px; }
-  .topbar .breadcrumbs { flex: 1 1 auto; }
+  .topbar:has(.topbar-brand) { grid-template-columns: auto minmax(0,1fr) auto; gap: 0; }
   .start-brand { display: flex; margin: 0 0 18px; }
   .start-brand .brand-mark { width: 36px; height: 38px; font-size: 24px; }
   .start-brand .brand-copy strong { font-size: 21px; }
