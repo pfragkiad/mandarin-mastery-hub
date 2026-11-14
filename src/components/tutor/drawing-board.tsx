@@ -59,9 +59,13 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
     Promise.all([import('hanzi-writer'), loadStrokeGeometry(entry.hanzi)]).then(([{ default: Writer }, { data }]) => {
       if (!active) return;
       const ink = writerColor('--primary');
+      // Same gray guide as Practice (--writer-outline); Hanzi Writer's default
+      // outline is near-white and glares on the dark theme.
+      const outline = writerColor('--writer-outline');
       instance = Writer.create(node, entry.hanzi, {
         width: 300, height: 300, padding: 22, showCharacter: false, showOutline: false,
         ...(ink ? { strokeColor: ink, drawingColor: ink, radicalColor: ink } : {}),
+        ...(outline ? { outlineColor: outline } : {}),
         drawingWidth: 6, charDataLoader: (_glyph, onLoad) => onLoad(data),
       });
       writer.current = instance;
