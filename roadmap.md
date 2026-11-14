@@ -5,3 +5,4 @@
 - [ ] Strokes dropdown: offer an "uncounted" option if any remain
 - [ ] ⺴: show 冗 in its boxes (card, details, Practice) with "Unicode variant (U+2EB4)" note; record stays ⺴
 - [ ] List the other Unicode radical symbols with Unicode's mapping and stroke counts for owner review
+- [ ] ⺴ hint: formatted note instead of a plain browser tooltip
