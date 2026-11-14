@@ -14,7 +14,7 @@ import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { CardTopMeta, RecordCardFooter, TileBookmark } from './record-card-footer';
+import { CardTopMeta, DetailRecordActions, RecordCardFooter, TileBookmark } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { SoundChartLink } from './sound-chart-link';
 import { VocabularyDecomposition } from './vocabulary-decomposition';

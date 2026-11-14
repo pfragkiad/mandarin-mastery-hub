@@ -25,7 +25,7 @@ import { glyphUsage } from '@/lib/glyph-usage';
 import { radicalCardAvailability } from '@/lib/radical-card-availability';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { CardTopMeta, RecordCardFooter, TileBookmark } from './record-card-footer';
+import { CardTopMeta, DetailRecordActions, RecordCardFooter, TileBookmark } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';

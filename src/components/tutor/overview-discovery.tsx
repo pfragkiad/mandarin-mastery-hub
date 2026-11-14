@@ -1,3 +1,4 @@
+import { bookmarkLabel } from './record-card-footer';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
