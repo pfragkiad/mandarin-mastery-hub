@@ -78,9 +78,6 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   const savedStatus = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('status') });
   const published = useSectionStats(path === '/characters' ? 'glyphs' : path === '/vocabulary' ? 'vocabulary' : currentGame ? 'games' : null);
   const allGames = [...HANZI_GAMES.map(g => ({ ...g, group: 'Hanzi games' })), ...PINYIN_GAMES.map(g => ({ ...g, group: 'Pinyin games' }))];
-  // The trail's page step is a dropdown too, listing the side menu's Learn and Games
-  // destinations (grouped the same way); Start, Practice and Preferences keep plain text.
-  const pageOptions: SectionOption[] = navSections.flatMap(section => section.label ? section.items.map(n => ({ key: n.key, label: n.name, icon: n.icon, to: n.to, group: section.label! })) : []);
   const pageKey = path === '/characters' ? 'glyphs' : path === '/vocabulary' ? 'vocabulary' : path === '/pinyin' ? 'pinyin' : currentGame ? (HANZI_GAMES.includes(currentGame) ? 'hanzi-games' : 'pinyin-games') : null;
   const picker: { parent: string; phoneParent: string; options: SectionOption[]; active: string } | null =
     path === '/characters' ? { parent: 'Glyphs', phoneParent: 'Glyphs', active: published.active ?? (characterSections.find(k => k === charactersTab) ?? 'Characters'), options: characterSections.map(k => ({ key: k, label: k, icon: sectionIcons[k], to: '/characters', search: { ...(k === 'Characters' ? {} : { tab: k }), ...(savedStatus === 'saved' ? { status: 'saved' } : {}) } })) }
