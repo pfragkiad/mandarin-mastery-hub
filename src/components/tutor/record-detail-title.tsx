@@ -54,8 +54,10 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
       </div>
       {!readingsInMeaning && <div className="catalog-detail-pinyin-row">
         {pinyinContent ?? <><span className="pinyin">{pinyin || pinyinFallback}</span>{audio}{chartLink}</>}
+        {/* The translation shares the pinyin line and wraps beneath it when long. */}
+        {!meaningContent && <h2><MeaningText text={meaning || meaningFallback}/></h2>}
       </div>}
-      {meaningContent ?? <h2><MeaningText text={meaning || meaningFallback}/></h2>}
+      {(meaningContent || readingsInMeaning) && (meaningContent ?? <h2><MeaningText text={meaning || meaningFallback}/></h2>)}
     </div>
     {/* Kept outside the head so the head's large-glyph sizing never reaches the switch tiles. */}
     {formSwitch && <div className="catalog-detail-forms">{formSwitch}</div>}

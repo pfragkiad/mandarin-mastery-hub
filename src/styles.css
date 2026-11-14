@@ -3321,3 +3321,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .catalog-facts dd .component-reuse-label { font-size: inherit; line-height: inherit; }
 /* Detail cards: the main hanzi sits in a thin-bordered box (like card form tiles), slightly larger. */
 .catalog-detail-glyph-row > strong { font-size: min(76px, calc((100cqi - 64px) / var(--detail-chars, 1))); line-height: 1 !important; padding: 8px 12px; border: 1px solid var(--border); border-radius: 12px; }
+/* Pinyin, speaker and translation share one line; the translation wraps below when it runs long. */
+.catalog-detail-pinyin-row { flex-wrap: wrap; align-items: baseline; row-gap: 0; }
+.catalog-detail-pinyin-row > button, .catalog-detail-pinyin-row > a, .catalog-detail-pinyin-row > .multi-reading { align-self: center; }
+.catalog-detail-head .catalog-detail-pinyin-row > h2 { margin: 0 0 0 6px; flex: 1 1 14em; min-width: 0; }
