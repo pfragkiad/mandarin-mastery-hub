@@ -7,13 +7,20 @@
 //
 // ⺴ U+2EB4 CJK RADICAL NET FOUR: a rare top placement of 网; fonts draw it as 冖 over 儿, the
 // same shape as 冗, and Practice uses 冗's four-stroke outline (import-supplementary-outlines.py).
-export type RadicalDisplayGlyph = { shown: string; label: string; note: string };
+export type RadicalDisplayGlyph = { shown: string; codePoint: string; label: string; family: string; rows: string[]; source: string };
 
 const REVIEWED: Record<string, RadicalDisplayGlyph> = {
   '⺴': {
     shown: '冗',
+    codePoint: 'U+2EB4',
     label: 'Unicode variant (U+2EB4)',
-    note: '⺴ (U+2EB4) is an abstract Kangxi radical variant of 网, not a character in use. Fonts draw it like 冗, so 冗 is shown and its handwriting outline is used. It is not the character 冗 (rǒng).',
+    family: '网',
+    rows: [
+      'An abstract Kangxi radical variant of 网, not a character in use.',
+      'Fonts draw it like 冗, so 冗 is shown and its handwriting outline is used.',
+      'It is not the character 冗 (rǒng, “superfluous”).',
+    ],
+    source: 'Unicode EquivalentUnifiedIdeograph 17.0.0 · outline AnimCJK 冗',
   },
 };
 
