@@ -114,4 +114,4 @@
 - [done] Start: "Good afternoon" + pinyin sit to the right of 下午好, tile-style (pinyin over translation)
 - [done] Start cards (random + character of the day): reuse existing tile layout styles, no new ones
 
-- [doing] Comfortable library cards: labelled Details/Trace/Recall row below the body, bookmark icon at the far right of the pinyin line, translation uses the freed width; same bookmark on Start random cards.
+- [done] Comfortable library cards: labelled Details/Trace/Recall row below the body, bookmark icon at the far right of the pinyin line, translation uses the freed width; same bookmark on Start random cards.
