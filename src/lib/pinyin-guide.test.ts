@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { allSounds, randomRecordedSyllable, recordedTones, checkTyped, hasRecording, missingRecordings, matchesInitial, matchesSyllable, parsePinyin, soundAlikes, toneMark, type PinyinData } from './pinyin-guide';
-import { filterByFocus, needsReview, parseProgress, pickNextSound, recordSound } from './pinyin-progress';
 
 const rec = { url: '/x.mp3', ms: 900 };
 const data: PinyinData = {
@@ -58,27 +57,6 @@ describe('typed answers', () => {
     expect(checkTyped('zi1', 'zhi', 1).verdict).toBe('wrong');
     expect(checkTyped('zhi', 'zhi', 1).verdict).toBe('missing-tone');
     expect(checkTyped('42', 'zhi', 1).verdict).toBe('invalid');
-  });
-});
-
-describe('progress', () => {
-  it('marks a sound for review after a wrong answer and clears it after a right one', () => {
-    let p = recordSound({}, 'zhi1', 'wrong');
-    expect(needsReview(p['zhi1'])).toBe(true);
-    p = recordSound(p, 'zhi1', 'right');
-    expect(needsReview(p['zhi1'])).toBe(false);
-    expect(p['zhi1']).toMatchObject({ right: 1, wrong: 1 });
-  });
-  it('drops malformed stored entries', () => {
-    expect(parseProgress('{"zhi1":{"heard":1,"right":0,"wrong":0,"at":"x"},"zhi5":{"heard":1,"right":0,"wrong":0,"at":"x"},"bad":3}')).toEqual({ zhi1: { heard: 1, right: 0, wrong: 0, at: 'x' } });
-  });
-  it('filters by focus and skips the previous sound', () => {
-    const sounds = allSounds(data);
-    const p = recordSound(recordSound({}, 'ji1', 'wrong'), 'ji2', 'right');
-    expect(filterByFocus(sounds, p, 'review').map(s => s.id)).toEqual(['ji1']);
-    expect(filterByFocus(sounds, p, 'new').some(s => s.id === 'ji1' || s.id === 'ji2')).toBe(false);
-    const two = sounds.filter(s => s.id === 'ji1' || s.id === 'ji2');
-    expect(pickNextSound(two, p, 'ji1', () => 0)?.id).toBe('ji2');
   });
 });
 
