@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { Fragment } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { Check, ChevronDown } from 'lucide-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import type { SectionStat } from '@/lib/section-switch';
@@ -9,7 +9,9 @@ import type { GameIcon } from './game-catalog';
 export type SectionOption = { key: string; label: string; icon: GameIcon; to: string; search?: Record<string, string>; group?: string };
 
 /**
- * Header section switcher: the last breadcrumb step ("Components ▾") is a dropdown
+ * Header switchers. `level="page"` is the trail's page step ("Glyphs ▾"), listing the
+ * side menu's Learn and Games destinations; `label` lets it show a shorter phone name.
+ * `level="section"` (default): the last breadcrumb step ("Components ▾") is a dropdown
  * button listing the page's sections — Glyphs kinds, Vocabulary Words/Phrases, or
  * the five games grouped by family — and replaces the page's own pill row at every
  * width (on phones it sits in the header title, beside the page name).
@@ -21,11 +23,12 @@ export type SectionOption = { key: string; label: string; icon: GameIcon; to: st
  * Radix owns open/closed; each item is a router Link, so picking a section pushes
  * history exactly like the side menu's sub-items, and Back restores it.
  */
-export function SectionPicker({ page, options, active, stats, beforeSwitch }: { page: string; options: SectionOption[]; active: string; stats?: Record<string, SectionStat> | undefined; beforeSwitch?: (() => void) | undefined }) {
+export function SectionPicker({ page, options, active, stats, beforeSwitch, level = 'section', label }: { page: string; options: SectionOption[]; active: string; stats?: Record<string, SectionStat> | undefined; beforeSwitch?: (() => void) | undefined; level?: 'page' | 'section'; label?: ReactNode }) {
   const current = options.find(o => o.key === active) ?? options[0]!;
+  const hint = level === 'page' ? 'Switch page' : `Switch ${page.toLowerCase()} section`;
   return <DropdownMenu modal={false}>
-    <DropdownMenuTrigger className="section-picker" aria-label={`${page}: ${current.label}. Switch section`} title={`Switch ${page.toLowerCase()} section`}>
-      <span className="section-picker-label">{current.label}</span><ChevronDown aria-hidden="true"/>
+    <DropdownMenuTrigger className={`section-picker${level === 'page' ? ' page-picker' : ''}`} aria-label={`${level === 'page' ? 'Page' : page}: ${current.label}. ${hint}`} title={hint}>
+      <span className="section-picker-label">{label ?? current.label}</span><ChevronDown aria-hidden="true"/>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="start" sideOffset={8} collisionPadding={12} className="section-picker-menu">
       {options.map((o, i) => {
