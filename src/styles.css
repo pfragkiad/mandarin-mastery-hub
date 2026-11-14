@@ -1532,8 +1532,10 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 /* Detail bottom row: Trace/Recall on the left, Bookmark alone at the far right (as on library cards). */
 .detail-reference-row .detail-bookmark-action { margin-left: auto; }
 /* Title glyph row: main hanzi (or form tiles) with the record's source ⓘ beside it, vertically centred. */
-.catalog-detail-glyph-row { display: flex; align-items: center; gap: 6px; max-width: 100%; }
-.catalog-detail-glyph-row > .source-info-trigger { flex: none; }
+.catalog-detail-glyph-row { display: flex; align-items: flex-start; gap: 6px; max-width: 100%; }
+/* Source ⓘ pins to the top right of the glyph (or form tiles), larger than the inline variant. */
+.catalog-detail-glyph-row > .source-info-trigger { flex: none; width: 28px; height: 28px; margin-top: 2px; }
+.catalog-detail-glyph-row > .source-info-trigger svg { width: 18px; height: 18px; }
 .detail-sheet .detail-sheet-body { padding-top: 14px; }.detail-sheet .catalog-detail > .catalog-detail-title { margin-top: 0; }.detail-sheet .catalog-detail-glyph-row > strong { line-height: 1; }.detail-sheet .catalog-detail-head > h2 { margin-top: 0; }.word-card .word-open:hover, .word-card .word-open:focus-visible { background: transparent; }
 /* Detail sheet: tighter vertical rhythm than the practice detail column — the
    floating window reads as one compact card, so section gaps shrink. */
