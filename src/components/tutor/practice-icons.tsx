@@ -1,4 +1,4 @@
-import { Brush, Icon, type IconNode, type LucideProps } from 'lucide-react';
+import { Brush, Icon, SquareArrowOutUpRight, type IconNode, type LucideProps } from 'lucide-react';
 
 /**
  * Card action icons (Practice, Practice Expert, Details). Practice uses a brush (not a pen, which reads as "edit");
@@ -23,14 +23,9 @@ export function ExpertPracticeIcon(props: LucideProps) {
 }
 
 /**
- * Details action icon: a solid (bold) info disc with the "i" cut out, so it reads
- * differently from the thin outlined (i) source-note buttons elsewhere. The cut-out
- * uses the even-odd fill rule, so it shows the card surface beneath in any theme.
+ * Details action icon: the standard "open record" square-with-arrow glyph, so it
+ * reads as navigation to the detail card and never as the thin outlined (i)
+ * source-note buttons elsewhere. Shared by card footers, flashcards and the
+ * Practice header, so every detail shortcut shows the same mark.
  */
-const detailsNode: IconNode = [
-  ['path', { d: 'M12 1.5a10.5 10.5 0 1 0 0 21a10.5 10.5 0 1 0 0-21Z M10.75 10.25h2.5v7.5h-2.5Z M12 5.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 1 0 0-3Z', fill: 'currentColor', fillRule: 'evenodd', stroke: 'none', key: 'details-disc' }],
-];
-
-export function DetailsIcon(props: LucideProps) {
-  return <Icon iconNode={detailsNode} {...props}/>;
-}
+export const DetailsIcon = SquareArrowOutUpRight;
