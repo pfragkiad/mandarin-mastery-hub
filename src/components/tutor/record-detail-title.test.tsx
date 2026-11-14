@@ -8,7 +8,7 @@ describe('Record detail heading', () => {
   it('stacks pinyin above the characters and the meaning below', () => {
     const { container } = render(<RecordDetailTitle hanzi="今天天气怎么样？" pinyin="Jīntiān tiānqì zěnmeyàng?" meaning="How is the weather today?"/>);
     const order = [...head(container).children].map(node => node.className);
-    expect(order).toEqual(['catalog-detail-pinyin-row', '', '']);
+    expect(order).toEqual(['catalog-detail-pinyin-row', 'catalog-detail-glyph-row', '']);
     expect(head(container).querySelector('strong')?.textContent).toBe('今天天气怎么样？');
     expect(head(container).querySelector('h2')?.textContent).toBe('How is the weather today?');
   });
@@ -34,5 +34,14 @@ describe('Record detail heading', () => {
     expect(head(container).querySelector('.pinyin')?.textContent).toBe('Pinyin not recorded');
     expect(head(container).querySelector('h2')?.textContent).toBe('No English meaning recorded yet');
     expect(head(container).querySelector('.traditional-pill')?.textContent).toBe('Traditional');
+  });
+
+  it('keeps the single selected hanzi in the title and puts a form switch on its own row below the meaning', () => {
+    const { container } = render(<RecordDetailTitle hanzi="钅" pinyin="jīn" meaning="gold" glyphClassName="card-ink-radical" formSwitch={<div className="form-switch">switch</div>}/>);
+    expect(head(container).querySelector('.catalog-detail-glyph-row > strong')?.textContent).toBe('钅');
+    expect(head(container).querySelector('.catalog-detail-glyph-row > strong')?.className).toBe('card-ink-radical');
+    expect(head(container).querySelector('.form-switch')).toBeNull();
+    const title = container.querySelector('.catalog-detail-title') as HTMLElement;
+    expect([...title.children].map(node => node.className)).toEqual(['catalog-detail-head', 'catalog-detail-forms']);
   });
 });
