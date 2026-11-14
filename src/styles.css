@@ -2850,15 +2850,16 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
   .topbar .section-picker { margin: 0; padding: 0 10px 0 12px; height: 34px; font-size: 14px; border: 1px solid var(--border); border-radius: 999px; }
 }
 
-/* Wider windows: the header trail is navigation now (page and section dropdowns),
-   so it reads at menu size rather than as a small caption. */
+/* Wider windows: the header trail is read-only plain text (navigation lives in the
+   side menu), so it reads at menu size rather than as a small caption; the section
+   dropdown pill is phones-only. */
 @media (min-width: 851px) {
   .topbar .breadcrumbs, html[data-display-size='comfortable'] .topbar .breadcrumbs { gap: 12px; font-size: 15px; }
   html[data-display-size='comfortable'] .topbar .breadcrumbs { font-size: 16px; }
   .topbar .breadcrumbs > svg { width: 15px; height: 15px; }
-  .topbar .section-picker { gap: 8px; padding: 7px 12px; margin: -7px -12px; border-radius: 10px; }
-  .topbar .section-picker > svg { width: 15px; height: 15px; }
-  .topbar .section-picker.page-picker { font-weight: 500; }
+  .topbar .breadcrumb-page { font-weight: 500; }
+  .topbar .breadcrumb-section { font-weight: 600; }
+  .topbar .section-picker { display: none; }
 }
 
 /* Practice form switch: every unselected form sits in a thin neutral box so the mainland
