@@ -1081,7 +1081,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 /* Overview: character-of-the-day hero. */
 .daily-hero { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: 40px; align-items: stretch; margin-bottom: 28px; min-height: min(60vh, 560px); }
 .daily-hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 0; position: relative; z-index: 21; }
-.daily-hero-copy h1 { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 0; font-weight: 400; }
+.daily-hero-copy h1 { display: flex; flex-direction: row; align-items: center; gap: 6px 20px; margin: 4px 0 0; font-weight: 400; }
+.daily-greeting-facts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .daily-greeting-hanzi { font-size: clamp(56px, 6vw, 96px); line-height: 1.05; color: var(--foreground); }
 .daily-greeting-en { font-family: var(--font-display); font-size: clamp(26px, 2.4vw, 38px); line-height: 1.15; letter-spacing: -.01em; color: var(--muted-foreground); }
 .daily-greeting-pinyin { font-size: 15px; }
@@ -1124,7 +1125,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
      line when it fits, tighter gaps) to keep the whole character of the day above the tab bar. */
   .daily-hero { gap: 16px; margin-bottom: 20px; }
   .daily-hero-copy { gap: 10px; }
-  .daily-hero-copy h1 { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 2px; margin: 0; }
+  .daily-hero-copy h1 { column-gap: 14px; margin: 0; }
   .daily-greeting-hanzi { font-size: 44px; }
   .daily-greeting-en { font-size: 22px; }
   .daily-hero-copy > p { font-size: 13px; line-height: 1.6; margin-bottom: 2px; }

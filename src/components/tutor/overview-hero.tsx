@@ -89,8 +89,13 @@ export function DailyCharacterHero({ children }: { children: React.ReactNode }) 
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;
   return <section className="daily-hero" aria-label="Character of the day">
     <div className="daily-hero-copy">
-      <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span><span className="daily-greeting-en">{hello.english}.</span></h1>
-      {preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}
+      {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
+      <h1><span lang="zh-CN" className="daily-greeting-hanzi">{hello.hanzi}</span>
+        <span className="daily-greeting-facts">
+          {preferences.pinyin && <span className="pinyin daily-greeting-pinyin">{hello.pinyin}</span>}
+          <span className="daily-greeting-en">{hello.english}.</span>
+        </span>
+      </h1>
       <p>One character a day, a few words around it, and a little practice.</p>
       {children}
     </div>
