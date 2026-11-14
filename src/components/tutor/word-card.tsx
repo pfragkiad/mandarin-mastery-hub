@@ -1,5 +1,4 @@
 import { isPlainCardDoubleClick } from './card-peek';
-import { SourceInfo } from '@/components/tutor/source-info';
 import { MeaningText } from './meaning-text';
 import { useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Volume2, MessageSquareText } from 'lucide-react';
