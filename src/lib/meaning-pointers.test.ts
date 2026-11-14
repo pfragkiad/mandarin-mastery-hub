@@ -14,7 +14,7 @@ describe('干 meaning and readings', () => {
   it('drops the pointer when the recorded meaning changes', () => {
     expect(meaningPointers('干', 'oppose, offend; invade; dry')).toBeNull();
   });
-  it('splits like 了: gān keeps the recorded senses, gàn reads 幹's recorded translation', () => {
+  it('splits like 了: gān keeps the recorded senses, gàn reads the recorded translation of 幹', () => {
     expect(readingMeanings('干')).toEqual([{ reading: 'gān', meaning: 'oppose, offend; invade; dried' }, { reading: 'gàn', meaning: 'trunk of tree or of human body' }]);
   });
   it('points the gàn line to 幹 only on the gàn line', () => {
