@@ -6,3 +6,4 @@
 - [x] ⺴: show 冗 in its boxes (card, details, Practice) with "Unicode variant (U+2EB4)" note; record stays ⺴
 - [ ] Other Unicode radical symbols: listed for owner review — waiting on approvals
 - [x] ⺴ hint: formatted note instead of a plain browser tooltip
+- [ ] Pinyin games: one-line play bar while playing, new results (tick missed, Practise missed, New round + missed, Change settings), existing speaker styling
