@@ -2782,7 +2782,7 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 
 /* Comfortable cards (every width): the top-right indicators line up with the bookmark on
    the pinyin line, a 30px .tile-speaker box with a 17px icon, so the icon sits 6.5px in. */
-:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 6.5px; }
+:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 10.5px; }
 
 /* Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the games
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
