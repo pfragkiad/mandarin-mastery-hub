@@ -19,6 +19,16 @@ export function CardTopMeta({ children, lead = false }: { children: ReactNode; l
 }
 
 /**
+ * One wording for every bookmark toggle (cards, detail panels, Start, game results):
+ * the action is "Bookmark", undoing it is "Remove bookmark". `hanzi` names the record
+ * for screen readers; omit it for a visible button label.
+ */
+export function bookmarkLabel(bookmarked: boolean, hanzi?: string) {
+  const action = bookmarked ? 'Remove bookmark' : 'Bookmark';
+  return hanzi ? `${action} ${hanzi}` : action;
+}
+
+/**
  * Bookmark toggle embedded in a Comfortable card's clickable face, at the far right of
  * the pinyin line. The face is a real <button>, so like TileSpeaker this is a
  * role="button" span that swallows activation (the card neither opens nor reveals).
@@ -33,9 +43,9 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
   return <span
     role="button"
     tabIndex={0}
-    aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${hanzi}`}
+    aria-label={bookmarkLabel(bookmarked, hanzi)}
     aria-pressed={bookmarked}
-    title={bookmarked ? 'Remove bookmark' : 'Bookmark record'}
+    title={bookmarkLabel(bookmarked)}
     className="tile-speaker tile-bookmark"
     onClick={activate}
     onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') activate(event); }}
@@ -44,7 +54,7 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
 
 /**
  * Card footer shared by Glyphs and Vocabulary cards.
- * - Compact: four icon actions (Details only in Hide modes, Practice, Expert, Save).
+ * - Compact: four icon actions (Details only in Hide modes, Trace, Recall, Bookmark).
  * - Comfortable (`comfortable`): one row of labelled Details / Trace / Recall buttons,
  *   the same trio as Start's random cards (shared .daily-hero-actions). Save moves to
  *   the card face (TileBookmark), so the translation gets the freed width. Details uses
@@ -73,8 +83,22 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
   }
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">
     {onDetails && <Button variant="ghost" size="icon" className="card-details-action" title="Open details (shows everything)" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon/></Button>}
-    <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Practice writing"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Practice writing ${hanzi}`}><PracticeIcon/></Link></Button>
-    <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Practice Expert — Recall mode"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Practice Expert (Recall) ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
-    <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarked ? 'Remove bookmark' : 'Bookmark record'} aria-label={`${bookmarked ? 'Unsave' : 'Save'} ${hanzi}`} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
+    <Button asChild variant="ghost" size="icon" className="card-practice-action" title="Trace"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon/></Link></Button>
+    <Button asChild variant="ghost" size="icon" className="card-expert-action" title="Recall"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon/></Link></Button>
+    <Button variant="ghost" size="icon" className="card-bookmark-action" title={bookmarkLabel(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button>
   </div></div>;
+}
+
+/**
+ * Action row of a Glyphs/Vocabulary detail panel: Trace and Recall (the same labelled
+ * buttons as Comfortable cards) plus a labelled Bookmark toggle.
+ * Inputs: the Practice target, the record's hanzi, its bookmark state and toggle, and an
+ * optional `onNavigate` (the panel closes itself before Practice opens).
+ */
+export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, onNavigate }: { practice: PracticeSearch; hanzi: string; bookmarked: boolean; onBookmark: () => void; onNavigate?: () => void }) {
+  return <div className="word-detail-actions">
+    <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...practice, mode: 'trace' }} aria-label={`Trace ${hanzi}`} onClick={onNavigate}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
+    <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...practice, mode: 'recall' }} aria-label={`Recall ${hanzi}`} onClick={onNavigate}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
+    <Button variant="outline" size="sm" aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark aria-hidden="true" className={bookmarked ? 'bookmark-saved' : ''}/>{bookmarked ? 'Bookmarked' : 'Bookmark'}</Button>
+  </div>;
 }

@@ -46,10 +46,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
     <VocabularyDecomposition word={word}/>
     {/* Reference label and the record actions share the bottom row: label left, actions right. */}
-    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div><div className="word-detail-actions">
-      <Button variant="outline" size="sm" asChild><Link to="/strokes" search={{ character: word.hanzi, mode: 'trace' }} onClick={close}><PracticeIcon/>Practice writing</Link></Button>
-      <Button variant="outline" size="sm" onClick={() => toggleSaved(word.id)}>{bookmarked ? <Check/> : <Bookmark/>}{bookmarked ? 'Saved' : 'Save word'}</Button>
-    </div></div>
+    <div className="detail-reference-row"><div className="eyebrow detail-reference-label">{vocabularyKind(word) === 'phrase' ? 'PHRASE REFERENCE' : 'WORD REFERENCE'}<SourceInfo inline className="detail-footnote">{word.entry?.sourceName ?? 'Added this session'} · {source}</SourceInfo></div><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
   </>;
 }
 
