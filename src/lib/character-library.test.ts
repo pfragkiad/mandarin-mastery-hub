@@ -179,6 +179,9 @@ describe('Exact pinyin search', () => {
 describe('hanzi search ignores the radical note', () => {
   it('searching 干 in Characters lists 干 and its related 乾/幹 but not characters filed under radical 干', async () => {
     const { filterLibrary, libraryEntries } = await import('./character-library');
+    const { readFileSync } = await import('node:fs');
+    const { hydrateCharacterVariants } = await import('./character-variants');
+    hydrateCharacterVariants(JSON.parse(readFileSync('public/data/character-variants-v1.4.0.json', 'utf8')));
     const hits = filterLibrary(libraryEntries('Characters'), '干', '', false, true).map(entry => entry.hanzi);
     expect(hits).toContain('干');
     // 乾 and 幹 are recorded related characters of 干, so they stay in the results.
