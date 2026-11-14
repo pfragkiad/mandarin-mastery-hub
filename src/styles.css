@@ -3332,3 +3332,5 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .catalog-detail-reading { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; vertical-align: baseline; }
 .catalog-detail-reading > :is(button, a) { flex-shrink: 0; }
 .catalog-detail-head .catalog-detail-pinyin-row > h2 { text-wrap: pretty; }
+/* Translation fits a full line but not beside the pinyin: it starts whole on the line below. */
+.catalog-detail-head .catalog-detail-pinyin-row[data-meaning='below'] > h2 { display: block; margin: 2px 0 0; max-width: none; }

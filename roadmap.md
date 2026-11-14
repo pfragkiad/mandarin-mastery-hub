@@ -5,3 +5,4 @@
 - [x] Card Details/Trace/Recall row aligns left with the tiles
 - [x] Detail cards: pinyin below the top main hanzi, pills stay top right; per-reading lines carry their own speakers
 - [x] Detail cards: translation on the pinyin line, wrapping below
+- [ ] Detail cards: translation that fits a full line moves whole below
