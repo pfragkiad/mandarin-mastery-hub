@@ -82,7 +82,7 @@ export function useDailyCharacter() {
   return { now, entry: now ? dailyCharacter(entries, items, now) : undefined };
 }
 
-export function DailyCharacterHero({ children }: { children: React.ReactNode }) {
+export function DailyCharacterHero({ children }: { children?: React.ReactNode }) {
   const { preferences } = useWorkspace();
   const { now, entry } = useDailyCharacter();
   const hello = greeting(now?.getHours() ?? 9);
