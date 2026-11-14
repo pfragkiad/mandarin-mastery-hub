@@ -60,7 +60,7 @@ function sideLayoutFits(open: HTMLElement): boolean {
   const meaning = open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
   // Single-tile glyph cards (one form box) may keep a three-line translation beside the box;
   // every other card stacks once the translation would need a third line there.
-  const maxLines = open.closest('.catalog-card.single-form') ? 3 : 2;
+  const maxLines = open.closest('.catalog-card.few-forms') ? 3 : 2;
   if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > maxLines)) return false;
   return true;
 }

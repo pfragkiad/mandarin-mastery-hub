@@ -367,7 +367,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Shared with Start's random cards (src/lib/card-ink.ts); `is-traditional` itself is added below.
   const ink = glyphCardInk(kind, entry.script, radicalTile);
   const cardInk = ink ? `card-ink${ink === 'is-traditional' ? '' : ` ${ink}`}` : '';
-  return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${kind === 'Strokes' ? 'stroke-card' : ''} ${displayedForms.length === 1 ? 'single-form' : ''} ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${cardInk} ${selected ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(entry.id); }}>
+  return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${kind === 'Strokes' ? 'stroke-card' : ''} ${displayedForms.length <= 2 ? 'few-forms' : ''} ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${cardInk} ${selected ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(entry.id); }}>
     {/* The library tab already names the kind, so the top row carries no category word: it opens with
         rank · strokes, then pills (a gold "Variant" pill replaces the old COMPONENT VARIANT label).
         Stroke cards have no metadata or indicators, so they drop the top row entirely. */}
