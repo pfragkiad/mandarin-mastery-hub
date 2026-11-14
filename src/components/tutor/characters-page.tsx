@@ -99,7 +99,6 @@ const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' 
 function CountHintBody({ count, hint, tone }: { count: number; hint: string; tone: HintTone }) {
   return <HintBody><strong className={`count-hint-title count-hint-${tone}`}>+{count.toLocaleString('en-US')} {hintNoun(tone)}</strong><br/>{hint}</HintBody>;
 }
-}
 /** Page-total version beside the card count (the kind switch moved to the header dropdown, which repeats it). */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
