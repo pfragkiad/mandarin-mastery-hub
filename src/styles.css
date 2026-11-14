@@ -827,7 +827,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-bookmark svg { width: 22px; height: 22px; }
 /* Phone row parts (see "Start random rows" below); wider screens show the full cards, and the
    body wrapper vanishes from layout so its children stay on the card's subgrid rows. */
-.discovery-row-toggle, .discovery-row-chevron { display: none; }
+.discovery-row-toggle, .discovery-row-chevron, .discovery-row-audio { display: none; }
 .discovery-tile-body { display: contents; }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
@@ -3096,8 +3096,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   .discovery-row-syllable { font-family: var(--font-display); }
   .discovery-row-hanzi:is(.is-traditional,.card-ink-radical,.card-ink-character,.card-ink-component) { color: var(--card-ink); }
   .discovery-row-meaning { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { position: relative; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; }
-  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 18px; height: 18px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle), :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > .discovery-row-audio > button { position: relative; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg, :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > .discovery-row-audio > button svg { width: 18px; height: 18px; }
+  /* The closed-row listen button (Preferences → Start random rows → Pinyin + audio) sits beside the shuffle. */
+  .discovery-row-audio { display: inline-flex; flex-shrink: 0; }
   .discovery-row-chevron { display: block; width: 18px; height: 18px; flex-shrink: 0; color: var(--muted-foreground); pointer-events: none; transition: transform .18s ease; }
   .discovery-tile.is-open .discovery-row-chevron { transform: rotate(180deg); }
   /* Open row: the detail sits under the row text (icon 54px + 14px gap); the hanzi is
@@ -3119,8 +3121,8 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   html[data-display-size='comfortable'] .discovery-row-name > span { font-size: var(--ui-label-size); }
   html[data-display-size='comfortable'] .discovery-row-pick { font-size: 16px; }
   html[data-display-size='comfortable'] :is(.discovery-row-hanzi, .discovery-row-syllable) { font-size: 24px; }
-  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { width: 50px; height: 50px; }
-  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 20px; height: 20px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle), html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > .discovery-row-audio > button { width: 50px; height: 50px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg, html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > .discovery-row-audio > button svg { width: 20px; height: 20px; }
   html[data-display-size='comfortable'] .discovery-row-chevron { width: 20px; height: 20px; }
   /* The Start games rows below share these row sizes in both display sizes (icon tile, name,
      one-line text, round right-hand button), so Characters and Flashcards read as one list style. */
