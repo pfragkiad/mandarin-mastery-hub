@@ -28,11 +28,13 @@ type RowText = { source: string[]; text: string; normalizedPinyin: string; readi
 const rowText = new WeakMap<object, RowText>();
 const rowSearchText = (row: object, hanzi: string, pinyin: string, meaning: string, note: string) => {
   const glyphs = radicalSearchGlyphs(hanzi).join(' ');
-  const source = [hanzi, pinyin, meaning, note, glyphs];
+  // Related characters (干 ↔ 乾 / 幹) are written forms of one recorded association set.
+  const related = relatedGroup(hanzi).join(' ');
+  const source = [hanzi, pinyin, meaning, note, glyphs, related];
   let text = rowText.get(row);
   // Rebuild whenever any source field differs, so an in-place update is never missed.
   if (!text || text.source.some((value, index) => value !== source[index])) {
-    text = { source, text: normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${glyphs}`), normalizedPinyin: normalize(pinyin), readings: pinyin.split(/[,/;]/), meaning: normalize(meaning), written: `${hanzi} ${glyphs}` };
+    text = { source, text: normalize(`${hanzi} ${pinyin} ${meaning} ${note} ${glyphs}`), normalizedPinyin: normalize(pinyin), readings: pinyin.split(/[,/;]/), meaning: normalize(meaning), written: `${hanzi} ${glyphs} ${related}` };
     rowText.set(row, text);
   }
   return text;

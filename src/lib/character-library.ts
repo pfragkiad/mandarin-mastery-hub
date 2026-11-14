@@ -6,6 +6,7 @@ import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './ra
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
 import { contextualVariantIdentity } from './radical-contextual-identity';
+import { relatedGroup } from './character-variants';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -89,7 +90,9 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
     // glyphs and its own family forms. Character notes read "N strokes · 干 radical", so free
     // text would list every character filed under a radical (年, 平, 幸 for 干). Stroke notes
     // hold the stroke's own Chinese name (横折), which stays searchable.
-    if (hanQuery) return [entry.hanzi, ...(kind === 'Strokes' ? [entry.note ?? ''] : []), ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ').includes(query.trim());
+    // Context-dependent related characters (干 ↔ 乾 / 幹, from the v1.4.0 variants file) are
+    // written forms of one recorded association set, so they still find each other.
+    if (hanQuery) return [entry.hanzi, ...relatedGroup(entry.hanzi), ...(kind === 'Strokes' ? [entry.note ?? ''] : []), ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ').includes(query.trim());
     return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q) || pinyinReadingMatches(entry.pinyin, query, false);
   };
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
