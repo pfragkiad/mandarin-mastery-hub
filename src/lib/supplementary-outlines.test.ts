@@ -42,13 +42,26 @@ describe('supplementary handwriting outlines', () => {
     expect(geometry.source).toMatchObject({ name: 'AnimCJK', recordedAs: glyph, style: 'Mainland (ZhHans)', exact: true });
   });
 
+  // ⺴ (CJK RADICAL NET FOUR): Unicode's EquivalentUnifiedIdeograph maps it to 冗, so the reviewed link
+  // serves 冗's four-stroke outline, marked not exact, matching the radical file's four ⺴ strokes.
+  it('loads ⺴ as the four-stroke 冗 outline linked by review', async () => {
+    stubFetch();
+    const geometry = await loadStrokeGeometry('⺴');
+    expect(geometry.data.strokes).toHaveLength(4);
+    expect(geometry.source).toMatchObject({ name: 'AnimCJK', recordedAs: '冗', style: 'Mainland (ZhHans)', exact: false });
+    const radicalFile = JSON.parse(readFileSync('public/data/radical-strokes.json', 'utf8'));
+    const form = radicalFile.families.find((family: { id: number }) => family.id === 122).forms.find((item: { character: string }) => item.character === '⺴');
+    expect(form.strokeCount).toBe(4);
+    expect(form.record.strokes).toHaveLength(4);
+  });
+
   it('marks the reviewed ⺿ → 艹 link as not exact', async () => {
     stubFetch();
     expect((await loadStrokeGeometry('⺿')).source?.exact).toBe(false);
   });
 
   // No source records these exact forms; they must keep failing closed, never borrowing a look-alike.
-  it.each(['⺴', '⺁', '⺧', '⺪', '⺷', '⻊', '𧢲'])('keeps %s off the supplementary list', glyph => {
+  it.each(['⺁', '⺧', '⺪', '⺷', '⻊', '𧢲'])('keeps %s off the supplementary list', glyph => {
     const manifest = JSON.parse(readFileSync('src/data/supplementary-outlines.json', 'utf8'));
     expect(manifest[glyph]).toBeUndefined();
   });

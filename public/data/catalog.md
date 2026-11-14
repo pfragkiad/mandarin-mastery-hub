@@ -95,7 +95,7 @@ This joined object is an in-memory view. When writing a correction, update the o
 
 | Importer | Catalogue files it reads or updates |
 | --- | --- |
-| `scripts/import-radical-strokes.ts` | Reads heading rows from `radicals.json` and stroke symbols from `strokes.json`, alongside the supplied versioned radical-family source. Writes `radical-strokes.json`. |
+| `scripts/import-radical-strokes.ts` | Reads heading rows from `radicals.json` and stroke symbols from `strokes.json`, alongside the supplied versioned radical-family source; owner-reviewed Unicode EquivalentUnifiedIdeograph links (⺴ → 冗) take the linked ideograph's exact cnchar-order strokes instead of the source sequence, with that provenance. Writes `radical-strokes.json`. |
 | `scripts/import-radical-identities.py` | Reads `radicals.json`, `characters.json`, and shared `catalog.json` fields alongside its pinned sources and radical-stroke sidecar. Writes `radical-identities.json`. |
 | `scripts/import-component-radicals.py` | Reads `components.json` and `radicals.json`; updates only `componentRadicals` in shared `catalog.json`. |
 | `scripts/import-character-variants.py` | Reads `characters.json`. This remains the legacy Unihan exporter; its `character-variants.json` output does not replace the active owner-curated `character-variants-v1.4.0.json`. |
