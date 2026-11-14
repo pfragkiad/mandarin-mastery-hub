@@ -2878,6 +2878,14 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
   background:
     linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)) padding-box;
 }
+/* The combined 繁部 pin is about twice as wide as a lone 部/繁 stamp, so centring it on the
+   corner would pull 部 left of where it sits on a radical-only tile. Shift it right instead,
+   keeping 部 at the same spot as the lone 部 stamp (the pin grows leftwards over the tile). */
+:is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .radical-form-choice.is-radical.is-traditional,
+    .tile-stamp-radical.tile-stamp-traditional)::after { transform: translate(24%, -46%); }
+.tile-form.is-radical.traditional-character::after { transform: translate(30%, -58%); }
 /* The pin's two characters keep their own identity colours — 繁 Traditional purple, 部 radical
    gold — through a text-clipped gradient layered above the pin fill. `text` is not a valid box
    in the background shorthand, so the override uses background-image + a background-clip list;
