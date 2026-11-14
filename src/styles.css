@@ -1888,7 +1888,10 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view.vocab-phrase-grid .word-card .word-open { grid-template-columns: minmax(0, 1fr) auto; }
   .library-list-view.vocab-phrase-grid .word-character > [lang],
   .library-list-view.vocab-phrase-grid .word-card .word-meaning { grid-column: 1 / -1; }
-  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: end; margin-bottom: 3px; justify-self: end; width: 36px; height: 36px; }
+  /* The 36px bookmark box centres under the 17px indicator icon in the top row
+     (both rows share 24px right padding): right-aligning the wider box would leave
+     its middle 9.5px left of the icon's, so pull it right by half the width gap. */
+  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: end; margin-bottom: 3px; margin-right: calc((17px - 36px) / 2); justify-self: end; width: 36px; height: 36px; }
   .library-list-view .word-card .tile-bookmark svg { width: 22px; height: 22px; }
 @media (max-width: 580px) {
   .library-list-view .word-card > .word-card-bottom { padding: 0 18px 16px; }
