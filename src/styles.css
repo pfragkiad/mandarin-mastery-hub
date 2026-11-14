@@ -766,7 +766,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 
 /* Vocabulary categories share the catalogue tabs, with sizes suited to each entry. */
 .vocabulary-category-row { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; gap: 16px; }
-.vocabulary-tabs .vocabulary-category-row > [role='tablist'] { display: flex; justify-content: flex-start; flex: 1; width: auto; height: auto; gap: 8px; background: transparent; border-radius: 0; border: 0; padding: 0; }
+.vocabulary-tabs .vocabulary-category-row > .pill-row > [role='tablist'] { display: flex; justify-content: flex-start; flex: 1; width: auto; height: auto; gap: 8px; background: transparent; border-radius: 0; border: 0; padding: 0; }
 .vocabulary-saved-filter { display: flex; gap: 4px; flex-shrink: 0; }
 .vocabulary-saved-filter button { font-size: 11px; height: 33px; gap: 0.6em; } /* Count spacing scales with the label so Comfortable mode never looks cramped. */
 .vocabulary-saved-filter .selected { background: var(--secondary); color: var(--primary); }
@@ -790,7 +790,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .vocab-grid.list-view .word-meaning { flex: 1; }
 @media(max-width:580px) {
   .vocabulary-category-row { gap: 4px; }
-  .vocabulary-tabs .vocabulary-category-row > [role='tablist'] { display: flex; gap: 4px; }
+  .vocabulary-tabs .vocabulary-category-row > .pill-row > [role='tablist'] { display: flex; gap: 4px; }
   .vocabulary-tabs [role='tab'] { min-height: 36px; padding: 0 8px; font-size: 11px; }
   .vocabulary-saved-filter button { padding: 0 7px; font-size: 10px; gap: 0.6em; }
   .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
@@ -1059,7 +1059,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .catalog-card .catalog-entry:hover, .catalog-card .catalog-entry:focus-visible { background: transparent; }
 .catalog-card .catalog-entry:hover strong, .catalog-card .catalog-entry:hover .catalog-entry-meaning, .catalog-card .catalog-entry:focus-visible strong, .catalog-card .catalog-entry:focus-visible .catalog-entry-meaning { color: var(--primary); }
 .catalog-card-audio-error { font-size: 10px; color: var(--muted-foreground); padding: 0 16px 10px; }
-.glyph-category-row > [role='tablist'] { display: flex; justify-content: flex-start; width: auto; height: auto; padding: 0; gap: 8px; background: transparent; border-radius: 0; flex: 1; min-width: 0; border: 0; flex-wrap: wrap; }
+.glyph-category-row > .pill-row > [role='tablist'] { display: flex; justify-content: flex-start; width: auto; height: auto; padding: 0; gap: 8px; background: transparent; border-radius: 0; flex: 1; min-width: 0; border: 0; flex-wrap: wrap; }
 @media(max-width:1150px) { .glyph-category-row { flex-wrap: wrap; } .glyph-category-row .vocabulary-saved-filter { flex-basis: 100%; margin-left: 0; } }
 @media(max-width:580px) {
   .catalog-entry-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
@@ -1067,8 +1067,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
   .catalog-card .catalog-entry { padding: 10px 12px 14px; }
   .catalog-card .word-character { font-size: 30px; }
   .catalog-card .word-card-bottom { margin: 0 12px; }
-  .glyph-category-row > [role='tablist'] { display: flex; flex-wrap: wrap; flex-basis: 100%; overflow: visible; }
-  .glyph-category-row > [role='tablist'] [role='tab'] { flex: 0 0 auto; }
+  .glyph-category-row > .pill-row > [role='tablist'] { display: flex; flex-wrap: wrap; flex-basis: 100%; overflow: visible; }
+  .glyph-category-row > .pill-row > [role='tablist'] [role='tab'] { flex: 0 0 auto; }
   .glyph-category-row { row-gap: 8px; }
   .glyph-category-row .vocabulary-saved-filter { margin-left: 0; }
   .vocabulary-saved-filter { gap: 6px; }
@@ -2495,13 +2495,29 @@ html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link
    for every `.page-pills` tablist; it sits last so it wins over each page's own
    tab layout rules. Counts hide here — the paging bar shows the total. */
 @media (max-width: 850px) {
+  .catalog-tabs .pill-row { flex: 1 1 100%; min-width: 0; }
   .catalog-tabs [role='tablist'].page-pills { display: flex; flex: 1 1 100%; flex-wrap: nowrap; width: auto; min-width: 0; height: auto; gap: 8px; padding: 0 0 2px; margin: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; background: transparent; border: 0; border-radius: 0; }
   .catalog-tabs [role='tablist'].page-pills::-webkit-scrollbar { display: none; }
   .catalog-tabs .page-pills [role='tab'] { flex: 0 0 auto; min-height: 40px; padding: 0 16px; gap: 0; font-size: 14px; font-weight: 450; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: var(--muted-foreground); box-shadow: none; }
   .catalog-tabs .page-pills [role='tab'][data-state='active'] { background: var(--nav-active); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 35%, var(--border)); font-weight: 600; }
   .catalog-tabs .page-pills .catalog-tab-count { display: none; }
-  .vocabulary-category-row:has(> .page-pills), .glyph-category-row { flex-wrap: wrap; row-gap: 12px; }
-  .game-tabs > [role='tablist'].page-pills { padding-bottom: 2px; }
+  .vocabulary-category-row:has(> .pill-row), .glyph-category-row { flex-wrap: wrap; row-gap: 12px; }
+  .game-tabs .page-pills { padding-bottom: 2px; }
+}
+
+/* PillRow (pill-row.tsx): wraps a .page-pills tablist and adds edge arrows that
+   scroll the row one viewport; each arrow renders only while the row can scroll
+   that way. They show only at phone widths, where the pills actually scroll —
+   wider layouts never overflow, so the component renders no buttons there. */
+.pill-row { position: relative; min-width: 0; }
+.vocabulary-category-row > .pill-row, .glyph-category-row > .pill-row { flex: 1; min-width: 0; }
+.pill-row-arrow { display: none; }
+@media (max-width: 850px) {
+  .pill-row-arrow { display: inline-flex; position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 30px; height: 30px; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--muted-foreground); box-shadow: 0 1px 5px rgba(0,0,0,.22); cursor: pointer; }
+  .pill-row-arrow:hover { color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
+  .pill-row-arrow svg { width: 16px; height: 16px; }
+  .pill-row-prev { left: -5px; }
+  .pill-row-next { right: -5px; }
 }
 
 /* ───────── Practice title card (practice-header.tsx) ─────────

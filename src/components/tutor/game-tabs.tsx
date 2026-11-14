@@ -2,6 +2,7 @@ import { useNavigate } from '@tanstack/react-router';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { HANZI_GAMES, PINYIN_GAMES } from './game-catalog';
 import { useActivePill } from '@/lib/use-active-pill';
+import { PillRow } from './pill-row';
 
 const ALL_GAMES = [...HANZI_GAMES, ...PINYIN_GAMES];
 export type GameKey = (typeof ALL_GAMES)[number]['key'];
@@ -26,6 +27,6 @@ export function GameTabs({ current, onBeforeNavigate }: { current: GameKey; onBe
     onBeforeNavigate?.();
     void navigate({ to: game.to });
   }} className="catalog-tabs game-tabs">
-    <TabsList ref={pills} aria-label="Games" className="page-pills">{ALL_GAMES.map(g => <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>)}</TabsList>
+    <PillRow label="games"><TabsList ref={pills} aria-label="Games" className="page-pills">{ALL_GAMES.map(g => <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>)}</TabsList></PillRow>
   </Tabs>;
 }
