@@ -824,7 +824,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
    bookmark on Comfortable library cards; the phone tile's reading row stretches to the edge. */
 .discovery-record-pinyin > .discovery-bookmark { margin-left: auto; }
 .discovery-tile-phone .glyph-usage-facts-row { align-self: stretch; flex-wrap: nowrap; }
-.discovery-tile-phone .glyph-usage-facts-row > .discovery-bookmark { margin-left: auto; flex: none; width: 26px; height: 26px; }
+.discovery-tile-phone .glyph-usage-facts-row > .discovery-bookmark { margin-left: auto; flex: none; width: 34px; height: 34px; }
+.discovery-bookmark svg { width: 22px; height: 22px; }
 @media (max-width:580px) { .discovery-tile-phone { display: flex; } }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
@@ -1864,7 +1865,8 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .library-list-view.vocab-phrase-grid .word-card .word-open { grid-template-columns: minmax(0, 1fr) auto; }
   .library-list-view.vocab-phrase-grid .word-character > [lang],
   .library-list-view.vocab-phrase-grid .word-card .word-meaning { grid-column: 1 / -1; }
-  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: center; justify-self: end; }
+  .library-list-view .word-card .tile-bookmark { grid-column: -2; grid-row: 1; align-self: center; justify-self: end; width: 36px; height: 36px; }
+  .library-list-view .word-card .tile-bookmark svg { width: 22px; height: 22px; }
 @media (max-width: 580px) {
   .library-list-view .word-card > .word-card-bottom { padding: 0 18px 16px; }
 }
@@ -2777,10 +2779,10 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
 }
 /* Comfortable cards (every width, Glyphs and Vocabulary): the indicators line up with the
-   bookmark on the pinyin line — a 30px .tile-speaker box with a 17px icon, so the icon sits
-   6.5px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
+   bookmark on the pinyin line — a 36px box with a 22px icon, so the icon sits
+   7px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
 .library-list-view .catalog-card .catalog-card-indicators > span { width: 17px; flex-basis: 17px; }
-:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 6.5px; }
+:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 7px; }
 
 /* Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the games
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
