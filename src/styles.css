@@ -337,9 +337,12 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .catalog-detail-head .pinyin { font-size: 15px; }
 .catalog-detail-head h2 { font-family: var(--font-sans); font-size: 18px; font-weight: 500; margin-top: 8px; max-width: 52ch; overflow-wrap: anywhere; }
 /* One meaning per reading (了 le / liǎo): each reading labels its own line in the pinyin colour. */
-.catalog-detail-head h2.reading-meanings { display: grid; gap: 2px; }
-.reading-meaning { display: flex; align-items: baseline; gap: 10px; }
-.reading-meaning-label { flex: none; min-width: 3.2em; font-size: 0.85em; font-weight: 500; }
+/* One line per reading: pinyin + its own speaker in the first column, meaning in the second, so
+   meanings line up even when the readings (and their controls) differ in width. */
+.catalog-detail-head h2.reading-meanings { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 14px; row-gap: 2px; align-items: baseline; }
+.reading-meaning { display: contents; }
+.reading-meaning-label { display: inline-flex; align-items: center; gap: 6px; min-width: 3.2em; font-size: 0.85em; font-weight: 500; }
+.reading-meaning-label > button { flex-shrink: 0; }
 .catalog-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 16px; padding: 16px 0; border-block: 1px solid var(--border); }
 .catalog-facts dt { color: var(--muted-foreground); font-size: 11px; }
 .catalog-facts dd { margin: 6px 0 0; font-size: 14px; }
@@ -1552,7 +1555,10 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 /* Detail bottom row: Trace/Recall on the left, Bookmark alone at the far right (as on library cards). */
 .detail-reference-row .detail-bookmark-action { margin-left: auto; }
 /* Title glyph row: main hanzi (or form tiles) with the record's source ⓘ beside it, vertically centred. */
-.catalog-detail-glyph-row { display: flex; align-items: flex-start; gap: 6px; max-width: 100%; }
+.catalog-detail-glyph-row { display: flex; align-items: flex-start; gap: 6px; width: 100%; max-width: 100%; }
+/* Pills keep the heading's top-right corner now that the pinyin line sits below the hanzi. */
+.catalog-detail-glyph-row > .catalog-detail-pills { align-self: flex-start; margin-top: 2px; }
+.catalog-detail-glyph-row + .catalog-detail-pinyin-row { margin-top: 4px; }
 /* Source ⓘ pins to the top right of the glyph (or form tiles), larger than the inline variant. */
 .catalog-detail-glyph-row > .source-info-trigger { flex: none; width: 28px; height: 28px; margin-top: 2px; }
 .catalog-detail-glyph-row > .source-info-trigger svg { width: 18px; height: 18px; }
