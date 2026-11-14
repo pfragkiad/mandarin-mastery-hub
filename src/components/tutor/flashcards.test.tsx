@@ -14,6 +14,9 @@ vi.mock('@/lib/mandarin', async importOriginal => ({ ...await importOriginal<typ
 vi.mock('@/lib/character-library', () => ({ referenceCatalog: [{ kind: 'Radical', entries: [['一', 'yī', 'one']] }, { kind: 'Component', entries: [['一', 'yī', 'one']] }, { kind: 'Character', entries: [['一', 'yī', 'one']] }] }));
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a>, useNavigate: () => vi.fn() }));
 
+/** While a round runs the setup is folded into the play bar's settings chip. */
+const openSettings = () => fireEvent.click(screen.getByRole('button', { name: /Chinese → English|English → Chinese/ }));
+
 describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', async () => {
     render(<FlashcardsPage />);
@@ -30,6 +33,7 @@ describe('Flashcard front pinyin', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
+    openSettings();
     fireEvent.click(screen.getByRole('switch', { name: 'Show pinyin on card front' }));
     expect(screen.getByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('switch', { name: 'Show pinyin on card front' }));
@@ -45,35 +49,35 @@ describe('Unknown-card bookmarks', () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: known ? 'I knew it' : 'Still learning' }));
-    await waitFor(() => expect(screen.getByText('DECK COMPLETE')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Session complete')).toBeInTheDocument());
   }
   it('saves the unknown vocabulary record and links to that exact record', async () => {
     const view = render(<FlashcardsPage />);
     await finish('Greetings');
-    fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Save 你好' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith('hello');
     view.rerender(<FlashcardsPage />);
-    expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Unsave 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
   });
   it.each(['Radical', 'Component', 'Character'])('saves an exact %s bookmark and review destination', async kind => {
     render(<FlashcardsPage />);
     await finish(`Ref:${kind}`);
-    fireEvent.click(screen.getByRole('button', { name: 'Save 1 unknown card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Save 一' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith(`${kind}s:一`);
     expect(screen.getByRole('link', { name: /一/ })).toHaveAttribute('href', `/characters?tab=${kind}s&id=${kind}s%3A%E4%B8%80`);
   });
-  it('does not toggle off an existing bookmark', async () => {
+  it('shows an existing bookmark as saved without toggling it', async () => {
     bookmarks.saved = ['hello'];
     render(<FlashcardsPage />);
     await finish('Greetings');
-    expect(screen.getByRole('button', { name: 'Unknown cards saved' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Unsave 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(bookmarks.toggle).not.toHaveBeenCalled();
   });
   it('does not offer to save cards answered correctly', async () => {
     render(<FlashcardsPage />);
     await finish('Greetings', true);
-    expect(screen.queryByRole('button', { name: /unknown card/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Save / })).not.toBeInTheDocument();
     expect(bookmarks.toggle).not.toHaveBeenCalled();
   });
 });
@@ -105,6 +109,7 @@ describe('Deck size', () => {
     render(<FlashcardsPage/>);
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     const current = screen.getByText('Card 1 of 10');
+    openSettings();
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
     await screen.findByRole('button', { name: 'Restart · 1 card' });
     expect(current).toBeInTheDocument();
@@ -117,6 +122,7 @@ describe('Deck size', () => {
     expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+    openSettings();
     fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
     expect(screen.getByRole('button', { name: 'Restart · 5 cards' })).toBeInTheDocument();
     fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: 'all' } });
@@ -139,3 +145,45 @@ describe('Deck size', () => {
    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
    expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
+
+describe('Play bar and results', () => {
+  it('hides the setup while playing and shows it again from the settings chip', () => {
+    render(<FlashcardsPage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+    expect(screen.queryByRole('combobox', { name: 'Category' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /All vocabulary · Chinese → English · 10 cards/ })).toBeInTheDocument();
+    openSettings();
+    expect(screen.getByRole('combobox', { name: 'Category' })).toBeInTheDocument();
+  });
+  it('End before any answer goes straight back to the setup', () => {
+    render(<FlashcardsPage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
+  });
+  it('End after an answer asks first, then shows results for the cards answered so far', async () => {
+    render(<FlashcardsPage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Still learning' }));
+    await screen.findByText('Card 2 of 10');
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    expect(screen.getByText('End now?')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Keep going' }));
+    expect(screen.getByText('Card 2 of 10')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Yes, end' }));
+    expect(screen.getByText('Session ended')).toBeInTheDocument();
+    expect(screen.getByText(/1 of 10 reviewed · 1 still learning/)).toBeInTheDocument();
+  });
+  it('an unticked card is left out of the review round', async () => {
+    render(<FlashcardsPage />);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Greetings' } });
+    fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Still learning' }));
+    expect(await screen.findByRole('button', { name: 'Review still learning (1)' })).toBeEnabled();
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Keep 你好 for the next round' }));
+    expect(screen.getByRole('button', { name: 'Review still learning (0)' })).toBeDisabled();
+  });
+});
