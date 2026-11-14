@@ -128,8 +128,8 @@ export function parseSpellingExamples(example: string): SpellingExample[] | null
 
 /** Recorded notes for every simplified → traditional pair among `forms` (first form is the
  *  simplified key). Learner view: the key caveat in one muted line; the explanation (verbatim) and
- *  the recorded example as a small spelling table sit behind Details; usage caveat, evidence scope
- *  and the source link stay behind the ⓘ. Pairs without a note show nothing. */
+ *  the recorded example as a small spelling table sit behind a "Spelling notes" inline disclosure,
+ *  with the usage caveat, evidence scope and source link as its footnote. Pairs without a note show nothing. */
 function AssociationNotes({ forms }: { forms: string[] }) {
   const [simplified, ...rest] = forms;
   if (!simplified) return null;
