@@ -2835,6 +2835,9 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
     .tile-form.is-radical.traditional-character,
     .radical-form-choice.is-radical.is-traditional,
     .tile-stamp-radical.tile-stamp-traditional)::after {
+  /* border-color is restated: the generic dark traditional-stamp rule above outranks the
+     light combined rule and would otherwise recolour the pin border purple. */
+  border-color: var(--trad-radical);
   background:
     linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)) padding-box;
 }
