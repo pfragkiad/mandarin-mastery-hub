@@ -34,8 +34,8 @@ export function bookmarkHint(bookmarked: boolean) {
 }
 
 /**
- * Bookmark toggle embedded in a Comfortable card's clickable face, at the far right of
- * the pinyin line. The face is a real <button>, so like TileSpeaker this is a
+ * Bookmark toggle embedded in a clickable card face (Start's random cards), at the far
+ * right of the pinyin line. The face is a real <button>, so like TileSpeaker this is a
  * role="button" span that swallows activation (the card neither opens nor reveals).
  * Inputs: the record's hanzi (for the label), its saved state and the toggle callback.
  */
@@ -61,8 +61,9 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
  * Card footer shared by Glyphs and Vocabulary cards.
  * - Compact: four icon actions (Details only in Hide modes, Trace, Recall, Bookmark).
  * - Comfortable (`comfortable`): one row of labelled Details / Trace / Recall buttons,
- *   the same trio as Start's random cards (shared .daily-hero-actions). Save moves to
- *   the card face (TileBookmark), so the translation gets the freed width. Details uses
+ *   the same trio as Start's random cards (shared .daily-hero-actions), then the bookmark
+ *   as an unlabelled icon button at the row's right end, as tall as the labelled buttons
+ *   (Compact keeps it as the last icon action, also bottom right). Details uses
  *   `onDetails` when the card is in a Hide mode, otherwise `onOpen` (the face's own open).
  */
 export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen }: {
@@ -84,6 +85,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
       {openDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={openDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
       <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
       <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
+      <Button variant="outline" size="sm" className="card-bookmark-action card-bookmark-icon" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''} aria-hidden="true"/></Button>
     </div></div>;
   }
   return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions">

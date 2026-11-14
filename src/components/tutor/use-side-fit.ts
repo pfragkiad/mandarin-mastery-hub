@@ -1,22 +1,24 @@
 import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
 
 /**
- * Side-by-side vocabulary card bodies (Compact Words/Phrases, Comfortable Phrases).
+ * Side-by-side library card bodies: every Glyphs and Vocabulary card, Compact and Comfortable.
  *
- * Purpose: CSS lays the card body out with the hanzi box on the left and the pinyin+audio
- * line over the translation on its right, which saves two text lines. That only works when
- * both fit there uncut, so this hook measures the side layout and, when it doesn't fit,
- * marks the body `data-stacked` and CSS falls back to pinyin / box / translation stacked.
+ * Purpose: CSS lays the card body out with the hanzi box (or the row of form boxes, one row of
+ * up to six) on the left and the pinyin+audio line over the translation on its right, which
+ * saves two text lines. That only works when everything fits there uncut, so this hook measures
+ * the side layout and, when it doesn't fit, marks the body `data-stacked`; CSS then stacks
+ * box(es) / pinyin+audio / translation (styles.css "Library card body").
  *
- * Inputs: `ref` — the card's `.word-open` body; `enabled` — false where the layout is fixed
- * (Comfortable Words are always side by side); `deps` — whatever changes the text or box size
- * (record, visible lines, font style, view).
+ * Inputs: `ref` — the card's `.word-open` body; `enabled` — false to keep the side layout
+ * unmeasured; `deps` — whatever changes the text or box size (record, visible lines, font
+ * style, view, number of forms).
  * State: only the DOM attribute, set directly (re-measured on every resize and after web
  * fonts settle), so measuring never rerenders the results grid.
  *
- * Fit means: the box isn't squeezed, the pinyin stays on one line with its speaker beside
- * it, and the translation needs at most two lines (so the text column is no taller than
- * the box). The check always starts from the side layout, so the result is stable.
+ * Fit means: the boxes aren't squeezed or pushed past the card edge, the pinyin stays on one
+ * line with its speaker beside it, and the translation needs at most two lines (so the text
+ * column is no taller than the box). The check always starts from the side layout, so the
+ * result is stable.
  */
 export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean, deps: DependencyList) {
   useLayoutEffect(() => {
@@ -44,6 +46,11 @@ function sideLayoutFits(open: HTMLElement): boolean {
   if (getComputedStyle(open).display !== 'grid') return true;
   const tile = open.querySelector<HTMLElement>('.word-hanzi-tile');
   if (tile && tile.scrollWidth > tile.clientWidth + 1) return false;
+  // Form boxes stay in one unwrapped row in the side layout; a row wider than the body pushes
+  // the text column past the card edge.
+  if (open.scrollWidth > open.clientWidth + 1) return false;
+  const row = open.querySelector<HTMLElement>('.tile-hanzi-row');
+  if (row && row.scrollWidth > row.clientWidth + 1) return false;
   const text = open.querySelector<HTMLElement>('.pinyin-text');
   if (text) {
     if (lineCount(text) > 1) return false;
@@ -51,7 +58,7 @@ function sideLayoutFits(open: HTMLElement): boolean {
     const speaker = open.querySelector<HTMLElement>('.pinyin .tile-speaker');
     if (speaker && speaker.getBoundingClientRect().top >= text.getBoundingClientRect().bottom - 1) return false;
   }
-  const meaning = open.querySelector<HTMLElement>('.word-meaning');
+  const meaning = open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
   if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > 2)) return false;
   return true;
 }
