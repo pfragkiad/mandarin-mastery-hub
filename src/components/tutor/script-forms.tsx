@@ -63,7 +63,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
         const scriptName = formLabel(entry.hanzi, entry.script).toLowerCase();
-        const strokes = entry.strokes !== undefined ? `${entry.strokes} strokes` : 'Strokes not recorded';
+        const strokes = entry.strokes !== undefined ? `${entry.strokes} ${entry.strokes === 1 ? 'stroke' : 'strokes'}` : 'Strokes not recorded';
         const content = layout === 'switch'
           ? <><FormSwitchGlyph glyph={entry.hanzi} hidden={hideGlyph}/><span className="form-switch-text"><b>{formLabel(entry.hanzi, entry.script)}</b><small>{strokes}</small></span></>
           : <><strong lang="zh-CN">{entry.hanzi}</strong><span>{strokes}</span><small>{formLabel(entry.hanzi, entry.script)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;

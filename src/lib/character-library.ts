@@ -55,7 +55,7 @@ export function radicalVariantEntry(heading: LibraryEntry, form: RadicalForm): L
   return { ...heading, id: `${heading.id}:variant:${form.key}`, radicalHeadingId: heading.id, radicalVariant: form.key,
     hanzi: form.character, strokes: form.strokeCount, pinyin: fallback?.pinyin ?? exact?.pinyin ?? '',
     meaning: fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : exact?.meaning ?? heading.meaning,
-    note: `${form.strokeCount} strokes · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` };
+    note: `${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'} · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` };
 }
 export function savedGlyphEntry(id: string): LibraryEntry | undefined {
   const [headingId, key] = id.split(':variant:');
