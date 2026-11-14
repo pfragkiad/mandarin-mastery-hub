@@ -738,22 +738,12 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 
 .decomposition-part { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
 /* The Kangxi number stays a plain label outside the character's own box, so every box keeps one size. */
-/* Identity uses the same four-column rhythm as parent examples, preserving
-   its sourced pronunciation control and keeping the badge beside the meaning. */
-.kangxi-identity-rows { display: grid; grid-template-columns: max-content max-content 26px minmax(0, 1fr); align-items: center; gap: var(--record-tile-gap) 12px; }
-/* Unusually long recorded readings wrap rather than widening the section. */
-.kangxi-identity-rows { grid-template-columns: max-content 7ch var(--reference-audio-size) minmax(0, 1fr); }
-.kangxi-identity-item .pinyin, .glyph-usage-reference .pinyin { min-width: 0; overflow-wrap: anywhere; }
-.kangxi-identity-item { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; gap: 4px 12px; min-width: 0; }
-.kangxi-identity-item > .component-pronunciation { display: contents; }
-.kangxi-identity-item .pinyin { grid-column: 2; font-size: 13px; }
-.kangxi-identity-item .decomposition-listen { grid-column: 3; width: 26px; height: 26px; margin: 0; color: var(--primary); }
-.kangxi-identity-item .decomposition-listen svg { width: 14px; height: 14px; }
-.kangxi-identity-description { grid-column: 4; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
-@media (max-width: 580px) {
-  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
-  .kangxi-identity-description { grid-column: 1 / -1; }
-}
+/* Identity rows reuse the "In a character" layout (.glyph-usage-reference/.glyph-usage-facts):
+   tile, then reading + speaker + Radical #N, with the meaning on the line below. */
+.kangxi-identity-rows { display: grid; gap: var(--record-tile-gap); }
+.kangxi-identity-item .component-pronunciation { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.kangxi-identity-item .pinyin { min-width: 0; overflow-wrap: anywhere; }
+.kangxi-identity-item .decomposition-listen { color: var(--primary); }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
 .kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
 .kangxi-identity-badge { font-size: 8px; }
@@ -1882,7 +1872,6 @@ html[data-display-size='comfortable'] {
   height: var(--reference-audio-icon-size);
 }
 @media (max-width: 580px) {
-  .kangxi-identity-rows { grid-template-columns: max-content minmax(0, 1fr) var(--reference-audio-size); }
   .sentence-pinyin { flex-wrap: wrap; }
   .sentence-pinyin > span { min-width: 0; overflow-wrap: anywhere; }
 }
