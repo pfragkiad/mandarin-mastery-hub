@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
@@ -20,7 +20,7 @@ import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo, HintBody } from './source-info';
-import { useActivePill } from '@/lib/use-active-pill';
+import { usePublishSections } from '@/lib/section-switch';
 import { useOneLineTitle } from './one-line-title';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
 // provenance note stays in the (i) beside the title.
@@ -48,7 +48,7 @@ type Filters = { q?: string; collection?: string; level?: string; status?: strin
 // The dialog and session-only addWord stay in place so it can return when storage exists.
 const ADD_WORD_ENABLED = false;
 
-export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', onTabChange, onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
+export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; onTabChange?: (kind: 'word' | 'phrase') => void; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
   const detailLoading = useDetailLoading();
   const query = initialQuery;
