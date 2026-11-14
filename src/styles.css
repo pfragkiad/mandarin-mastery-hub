@@ -1771,7 +1771,9 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
 .library-list-view .word-character > [lang], .library-list-view .tile-hanzi-row { grid-column: 1; grid-row: 2; min-width: 0; overflow-wrap: anywhere; line-height: 1.35; }
 .library-list-view .word-card .tile-hanzi-row { flex-wrap: wrap; gap: 10px; }
 .library-list-view .word-card .tile-form { width: 82px; height: 82px; flex: 0 0 82px; font-size: 60px; }
-.library-list-view .word-card .word-meaning { grid-column: 1; grid-row: 3; width: 100%; display: block; font-size: 20px; line-height: 1.6; white-space: normal; overflow: visible; overflow-wrap: anywhere; -webkit-line-clamp: unset; }
+/* Translation matches the pinyin size (18px) so the reading line and the
+   translation line read as one pair in the side-by-side list rows. */
+.library-list-view .word-card .word-meaning { grid-column: 1; grid-row: 3; width: 100%; display: block; font-size: 18px; line-height: 1.6; white-space: normal; overflow: visible; overflow-wrap: anywhere; -webkit-line-clamp: unset; }
 .library-list-view .word-card .word-card-bottom { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; margin: 0 24px; height: auto; min-height: 62px; font-size: 12px; }
 .library-list-view .word-card .word-card-bottom > span { white-space: normal; overflow: visible; }
 .library-list-view .word-card .component-reuse-label { font-size: 12px; }
