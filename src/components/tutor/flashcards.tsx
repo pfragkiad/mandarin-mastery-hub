@@ -31,13 +31,14 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 
 const deckSizes = [5, 10, 15, 20, 30, 40, 50] as const;
 
-export type FlashcardFilters = { category: string; level: string; pos: string; usage: string };
-export function FlashcardsPage({ category: controlledCategory, level: controlledLevel, pos: controlledPos, usage: controlledUsage, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
+export type FlashcardFilters = { category: string; level: string; pos: string; usage: string; saved?: boolean | undefined };
+export function FlashcardsPage({ category: controlledCategory, level: controlledLevel, pos: controlledPos, usage: controlledUsage, saved: controlledSaved, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
   const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
   const [localFilters, setLocalFilters] = useState<FlashcardFilters>({ category: 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' });
-  const applied = { category: controlledCategory ?? localFilters.category, level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage };
+  const applied: FlashcardFilters = { category: controlledCategory ?? localFilters.category, level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage, saved: controlledSaved ?? localFilters.saved };
   const { category, level, pos, usage } = applied;
-  const activeFilters = Boolean((!category.startsWith('Ref:') && category !== 'All vocabulary') || level !== 'All levels' || pos !== 'All types' || usage);
+  const savedOnly = Boolean(applied.saved);
+  const activeFilters = Boolean((!category.startsWith('Ref:') && category !== 'All vocabulary') || level !== 'All levels' || pos !== 'All types' || usage || savedOnly);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); };
   // The round lives in root session state so opening a card's Details and pressing
   // Back resumes the same card (still turned over) instead of a fresh setup.
@@ -56,27 +57,31 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
   const levels = useMemo(() => [...new Set(items.map(w => w.level))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), [items]);
   const posOptions = useMemo(() => partOfSpeechOptions(items), [items]);
   const isReference = category.startsWith('Ref:');
-  const isSaved = category === 'Saved';
 
-  const pool = useMemo<Card[]>(() => {
-    if (isReference || isSaved) {
-      const referenceCards = (kind: ReferenceKind) => {
-        const reference = referenceCatalog.find(c => c.kind === kind);
-        if (!reference) return [];
-        const libraryKind = libraryKinds[reference.kind];
-        return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
-      };
-      if (isSaved) {
-        const kinds = Object.keys(libraryKinds) as ReferenceKind[];
-        return [...items.filter(w => saved.includes(w.id)), ...kinds.flatMap(kind => referenceCards(kind).filter(card => saved.includes(card.id))), ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
-      }
+  // Deck pool for a category; `savedOnly` narrows it to bookmarked records, like the
+  // Drawing game's All/Saved switch. Saved radical variants join the Radicals pool.
+  const buildPool = (savedFilter: boolean): Card[] => {
+    const referenceCards = (kind: ReferenceKind) => {
+      const reference = referenceCatalog.find(c => c.kind === kind);
+      if (!reference) return [];
+      const libraryKind = libraryKinds[reference.kind];
+      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
+    };
+    let base: Card[];
+    if (isReference) {
       const refKind = libraryKinds[category.slice(4) as ReferenceKind];
       const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
       const kangxi = new Map(refKind === 'Radicals' ? referenceCatalog.find(c => c.kind === 'Radical')?.entries.map(row => [row[0], Number((row[3] ?? "").match(/\bRadical #(\d+)\b/i)?.[1]) || undefined] as const) ?? [] : []);
-      return referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional))?.value === group);
+      base = referenceCards(category.slice(4) as ReferenceKind).filter(card => !group || !refKind || usageGroupFor(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional))?.value === group);
+      if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
+    } else {
+      base = items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
     }
-    return items.filter(w => (category === 'All vocabulary' || w.collection === category) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
-  }, [items, category, level, pos, isReference, isSaved, saved, usage, preferences.includeTraditional, catalogVersion]);
+    return savedFilter ? base.filter(card => saved.includes(card.id)) : base;
+  };
+  const pool = useMemo(() => buildPool(savedOnly), [items, category, level, pos, isReference, savedOnly, saved, usage, preferences.includeTraditional, catalogVersion]);
+  // Count shown on the Saved half of the All/Saved switch: bookmarks in this category.
+  const savedCount = useMemo(() => buildPool(true).length, [items, category, level, pos, isReference, saved, usage, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const cardsUnit = (n: number) => `${n} ${n === 1 ? 'card' : 'cards'}`;
@@ -85,7 +90,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
     const refKind = isReference ? libraryKinds[category.slice(4) as ReferenceKind] : undefined;
     const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
-    const parts = [refKind ?? category, ...(!isReference && !isSaved && level !== 'All levels' ? [level] : []), ...(!isReference && !isSaved && pos !== 'All types' ? [pos] : []), ...(refKind && groupInfo ? [usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const parts = [...(savedOnly ? ['Saved'] : []), refKind ?? category, ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(refKind && groupInfo ? [usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     return parts.join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -133,13 +138,16 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
     return () => window.removeEventListener('keydown', onKey);
   }, [setSession]);
   const setup = (action: ReactNode, summary: ReactNode) => <>
-      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftSaved = draft.category === 'Saved'; return <>
-        <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, level: 'All levels', pos: 'All types', usage: '' })}>
+      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category: isReference ? category : 'All vocabulary', level: 'All levels', pos: 'All types', usage: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); return <>
+        <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, level: 'All levels', pos: 'All types', usage: '', ...(draft.saved ? { saved: true } : {}) })}>
           <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
           <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
-          <optgroup label="Workspace"><option>Saved</option></optgroup>
         </select>
-        {!draftReference && !draftSaved && <>
+        <div className="vocabulary-saved-filter" role="group" aria-label="Saved cards">
+          <Button type="button" variant="ghost" className={!draft.saved ? 'selected' : ''} aria-pressed={!draft.saved} onClick={() => patch({ saved: undefined })}>All</Button>
+          <Button type="button" variant="ghost" className={draft.saved ? 'selected' : ''} aria-pressed={Boolean(draft.saved)} onClick={() => patch({ saved: true })}>Saved<span className="catalog-tab-count">{savedCount}</span></Button>
+        </div>
+        {!draftReference && <>
           <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
           <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
         </>}
