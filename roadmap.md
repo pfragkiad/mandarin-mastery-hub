@@ -110,5 +110,5 @@
 - [done] Phones: plain page title (no page dropdown); bottom bar uses menu names Vocabulary and Sound chart
 - [done] Grid cards, search results and flashcards show every reading's reviewed meaning (干 gān / gàn) joined with " / "
 - [done] Grid cards mark reviewed sense pointers (干: dried → 乾, gàn → 幹) as unlinked markers
-- [open] Start: date removed; phone greeting compact so the whole character of the day stays above the tab bar
-- [open] Start: "Good afternoon" + pinyin sit to the right of 下午好, tile-style (pinyin over translation)
+- [done] Start: date removed; phone greeting compact so the whole character of the day stays above the tab bar
+- [done] Start: "Good afternoon" + pinyin sit to the right of 下午好, tile-style (pinyin over translation)
