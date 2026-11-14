@@ -2,7 +2,9 @@ export type CharacterScript = 'Simplified' | 'Traditional' | 'Common';
 export type CardReveal = 'all' | 'meaning' | 'hanzi' | 'pinyin' | 'pinyin-meaning';
 export type LibraryPerPage = 10 | 20 | 50;
 export type LibraryView = 'grid' | 'list';
-export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal; rememberCardReveals?: boolean; libraryView?: LibraryView; libraryPerPage?: LibraryPerPage; animationSpeed: number; confetti: boolean; traceLeniency?: number; recallLeniency?: number; practiceCanvasSize?: number; /** Practice progress tiles' preview box, dragged from the grip under the row; absent keeps each display size's own default. */ practiceProgressPicture?: number; /** Sound chart links on Glyphs grid cards and Start's glyph cards; absent (older saves) means shown. Details windows always keep them. */ soundChartLinks?: boolean };
+/** What the closed phone row of a Start random card shows next to the hanzi; absent (older saves) means the translation. */
+export type DiscoveryRowLine = 'meaning' | 'pinyin';
+export type Preferences = { pinyin: boolean; meaning: boolean; slow: boolean; font: string; includeTraditional: boolean; cardReveal: CardReveal; rememberCardReveals?: boolean; libraryView?: LibraryView; libraryPerPage?: LibraryPerPage; animationSpeed: number; confetti: boolean; traceLeniency?: number; recallLeniency?: number; practiceCanvasSize?: number; /** Practice progress tiles' preview box, dragged from the grip under the row; absent keeps each display size's own default. */ practiceProgressPicture?: number; /** Sound chart links on Glyphs grid cards and Start's glyph cards; absent (older saves) means shown. Details windows always keep them. */ soundChartLinks?: boolean; discoveryRowLine?: DiscoveryRowLine };
 /** Practice writing square: default and drag limits in CSS px (phones keep their own 250px cap). */
 export const PRACTICE_CANVAS_DEFAULT = 380;
 export const PRACTICE_CANVAS_MIN = 240;
@@ -19,7 +21,7 @@ export function practiceProgressPicture(stored: unknown): number | null {
     ? Math.min(PRACTICE_PROGRESS_PICTURE_MAX, Math.max(PRACTICE_PROGRESS_PICTURE_MIN, Math.round(stored)))
     : null;
 }
-export const defaultPreferences: Preferences = { pinyin: true, meaning: true, slow: false, font: 'Handwritten', includeTraditional: true, cardReveal: 'all', libraryView: 'grid', animationSpeed: 0.5, confetti: true, soundChartLinks: true };
+export const defaultPreferences: Preferences = { pinyin: true, meaning: true, slow: false, font: 'Handwritten', includeTraditional: true, cardReveal: 'all', libraryView: 'grid', animationSpeed: 0.5, confetti: true, soundChartLinks: true, discoveryRowLine: 'meaning' };
 export const defaultTheme = 'dark' as const;
 /** A saved layout wins over device defaults, including older preferences that
  * lack this field. Called after hydration so SSR never reads viewport state. */

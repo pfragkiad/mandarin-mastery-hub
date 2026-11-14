@@ -156,6 +156,11 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   // gold radical, green character, text-colour component); Words/Phrases keep the accent.
   const bodyId = `discovery-body-${category}`;
   const ink = entry ? glyphCardInk(category as LibraryKind, entry.script, isRadicalGlyph(entry, category as LibraryKind)) : '';
+  // Phones: the closed row's second line shows the translation or the pinyin (Preferences →
+  // Start random rows). With pinyin chosen, a small listen button joins the shuffle on the
+  // right (CSS shows it only on phone rows); the opened detail is unchanged either way.
+  const rowLine = preferences.discoveryRowLine ?? 'meaning';
+  const rowPinyin = rowLine === 'pinyin' && preferences.pinyin && pinyin !== '—';
 
   return (
     <section className={`discovery-tile${open ? ' is-open' : ''}`} aria-label={`${meta.label}: ${count ?? '…'} records`}>
@@ -168,7 +173,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           </span>
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
-          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
+          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
+        {rowPinyin && record && <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span>}
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
           <Shuffle />
         </Button>
