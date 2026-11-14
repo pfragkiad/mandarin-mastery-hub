@@ -1746,8 +1746,8 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .phone-tabs { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 28; height: calc(60px + env(safe-area-inset-bottom, 0px)); padding: 0 6px env(safe-area-inset-bottom, 0px); background: var(--card); border-top: 1px solid var(--border); }
   .phone-tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 44px; padding: 6px 2px; color: var(--muted-foreground); font-size: 11px; font-weight: 500; line-height: 1.1; background: transparent; border: 0; border-radius: 10px; cursor: pointer; transition: color .15s; }
   .phone-tab > svg { width: 22px; height: 22px; flex-shrink: 0; }
-  /* Tabs share the width by label length (flex), so the full menu names fit untruncated. */
-  .phone-tab { flex: 1 1 auto; }
+  /* Equal tabs, except a longer name (Vocabulary, Sound chart) never shrinks below its own width, so the menu names fit untruncated. */
+  .phone-tab { flex: 1 1 0; min-width: max-content; }
   .phone-tab > span { white-space: nowrap; }
   .phone-tab:hover, .phone-tab.is-active { color: var(--primary); }
   .phone-tab.is-active { font-weight: 650; }
