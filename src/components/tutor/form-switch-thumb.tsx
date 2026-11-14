@@ -58,7 +58,10 @@ export function FormSwitchThumb() {
       return {
         box: { x: tile.left - row.left - list.clientLeft, y: tile.top - row.top - list.clientTop, w: tile.width, h: tile.height },
         tray: { w: row.width - list.clientLeft * 2, h: row.height - list.clientTop * 2 },
-        ink: selected.classList.contains('is-traditional') ? 'is-traditional'
+        // A form that is both traditional and a radical wears both identity classes, so the
+        // frame takes the mixed ink (styles.css .form-switch-thumb.is-radical.is-traditional).
+        ink: selected.classList.contains('is-traditional')
+          ? selected.classList.contains('is-radical') ? 'is-radical is-traditional' : 'is-traditional'
           : selected.classList.contains('is-radical') ? 'is-radical' : 'is-character',
       };
     };
