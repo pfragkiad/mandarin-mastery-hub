@@ -1196,7 +1196,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-tile-forms { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-width: 0; pointer-events: none; color: var(--muted-foreground); opacity: .7; }
 .radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
 .radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 14px 8px; margin-top: 14px; }
-.radical-form-choice { height: 100px; min-width: 0; padding: 9px 5px; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--border); border-radius: 6px; white-space: normal; }
+/* Glyphs start at the top so a two-line label ("Unicode variant (U+2EB4)") never lifts one tile's glyph above its neighbours. */
+.radical-form-choice { height: 100px; min-width: 0; padding: 9px 5px; display: flex; flex-direction: column; gap: 4px; justify-content: flex-start; border: 1px solid var(--border); border-radius: 6px; white-space: normal; }
 .radical-form-choice strong { font-size: 32px; font-weight: 400; line-height: 1.2; }
 .radical-form-choice>span { font-size: 10px; color: var(--foreground); }
 .radical-form-choice small { font-size: 9px; line-height: 1.4; color: var(--muted-foreground); text-align: center; }
@@ -2981,3 +2982,11 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   .library-page [role='tabpanel']:has(> .mobile-library-filters) > .catalog-tools-row { flex: 0 1 auto; flex-wrap: nowrap; max-width: 100%; min-width: 0; margin: 0; }
   .library-page [role='tabpanel']:has(> .mobile-library-filters) > :is(.catalog-workspace, .vocabulary-workspace) { flex: 1 0 100%; min-width: 0; margin-top: 4px; }
 }
+
+/* StandInHint (stand-in-hint.tsx): the library tile tooltip card, with the drawn stand-in and its label as
+   head, divided explanation rows and a small source line. */
+.stand-in-hint { max-width: 320px; }
+.stand-in-hint .tile-tooltip-head { align-items: center; flex-wrap: wrap; gap: 6px; color: var(--hsk-id); }
+.stand-in-hint-label { margin-left: 4px; font-size: 11px; font-weight: 600; color: var(--foreground); }
+.stand-in-hint .hint-rows { margin: 0; padding: 0; list-style: none; }
+.stand-in-hint-source { font-size: 10px; color: var(--muted-foreground); }
