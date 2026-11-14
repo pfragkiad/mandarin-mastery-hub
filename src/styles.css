@@ -2840,4 +2840,33 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
     linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)) padding-box,
     linear-gradient(90deg, var(--hsk-id), var(--traditional)) border-box;
 }
+/* The pin's two characters keep their own identity colours — 繁 Traditional purple, 部 radical
+   gold — through a text-clipped gradient layered above the pin fill. `text` is not a valid box
+   in the background shorthand, so the override uses background-image + a background-clip list;
+   browsers without background-clip: text keep the plain foreground colour from the rule above. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  html :is(.decomposition-glyph.is-radical.traditional-character,
+      .pinyin-character-glyph.is-radical.is-traditional,
+      .tile-form.is-radical.traditional-character,
+      .radical-form-choice.is-radical.is-traditional,
+      .tile-stamp-radical.tile-stamp-traditional)::after {
+    background-image:
+      linear-gradient(90deg, var(--traditional), var(--hsk-id)),
+      linear-gradient(90deg, oklch(from var(--hsk-id) 0.93 0.03 h), oklch(from var(--traditional) 0.93 0.035 h)),
+      linear-gradient(90deg, var(--hsk-id), var(--traditional));
+    -webkit-background-clip: text, padding-box, border-box;
+    background-clip: text, padding-box, border-box;
+    color: transparent;
+  }
+  :root.dark :is(.decomposition-glyph.is-radical.traditional-character,
+      .pinyin-character-glyph.is-radical.is-traditional,
+      .tile-form.is-radical.traditional-character,
+      .radical-form-choice.is-radical.is-traditional,
+      .tile-stamp-radical.tile-stamp-traditional)::after {
+    background-image:
+      linear-gradient(90deg, var(--traditional), var(--hsk-id)),
+      linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)),
+      linear-gradient(90deg, var(--hsk-id), var(--traditional));
+  }
+}
 html .practice-header .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
