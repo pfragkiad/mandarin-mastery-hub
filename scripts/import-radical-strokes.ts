@@ -4,9 +4,10 @@ import { cncharStrokeNames } from '../src/lib/stroke-names';
 import type { RadicalFamily, RadicalForm, RadicalStrokeRecord } from '../src/lib/radical-strokes';
 
 const data = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
+const strokeCatalog = JSON.parse(readFileSync('public/data/strokes.json', 'utf8'));
 const input = JSON.parse(readFileSync('public/data/radical-families-source.json', 'utf8'));
 if (input.schemaVersion !== '2.0.1' || input.radicals.length !== 214) throw new Error('Unexpected radical source version or family count');
-const symbol = (name: string) => data.strokes.find((row: string[]) => row[3]?.split(' · ')[0] === name)?.[0] ?? null;
+const symbol = (name: string) => strokeCatalog.strokes.find((row: string[]) => row[3]?.split(' · ')[0] === name)?.[0] ?? null;
 const records: Record<string, RadicalStrokeRecord> = {};
 for (const [glyph, , , note] of data.radicals as string[][]) {
   const expected = Number(note?.match(/^(\d+) strokes?/)?.[1]);

@@ -1,0 +1,270 @@
+{
+  "strokes": [
+    [
+      "㇔",
+      "diǎn",
+      "A short dot stroke.",
+      "点 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇐",
+      "héng",
+      "Horizontal, from left to right.",
+      "横 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇏",
+      "nà",
+      "Falling to the right.",
+      "捺 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇒",
+      "piě",
+      "Falling to the left.",
+      "撇 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇑",
+      "shù",
+      "Vertical, from top to bottom.",
+      "竖 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇀",
+      "tí",
+      "Rising from lower left to upper right.",
+      "提 · basic · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇃",
+      "biǎn xié gōu",
+      "A low, slanted curve ending with an upward hook; KaiTi form.",
+      "扁斜钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇖",
+      "héng gōu",
+      "Horizontal ending with a hook.",
+      "横钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇇",
+      "héng piě",
+      "Horizontal followed by a left-falling segment.",
+      "横撇 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇌",
+      "héng piě wān gōu",
+      "Right, fall left, curve right and finish with a hook.",
+      "横撇弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇤",
+      "héng xié gōu",
+      "Right, then a slanted downward curve and finishing hook.",
+      "横斜钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇠",
+      "héng xié wān gōu",
+      "Right, fall left into a slanted curve, then hook upward.",
+      "横斜弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇕",
+      "héng zhé",
+      "Horizontal then a downward turn, in one stroke.",
+      "横折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇆",
+      "héng zhé gōu",
+      "Horizontal, downward turn, then a hook.",
+      "横折钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇊",
+      "héng zhé tí",
+      "Right, down, then rise to the right.",
+      "横折提 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇍",
+      "héng zhé wān",
+      "Right, turn down, then curve right.",
+      "横折弯 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇈",
+      "héng zhé wān gōu",
+      "Right, turn down, curve right and finish with a hook.",
+      "横折弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇅",
+      "héng zhé zhé",
+      "Right, down, then right, in one stroke.",
+      "横折折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇋",
+      "héng zhé zhé piě",
+      "Right, fall left, turn right, then fall left.",
+      "横折折撇 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇎",
+      "héng zhé zhé zhé",
+      "Right, down, right, then down.",
+      "横折折折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇡",
+      "héng zhé zhé zhé gōu",
+      "Right, down, right, then down with a finishing hook.",
+      "横折折折钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇛",
+      "piě diǎn",
+      "Left-falling followed by a dot segment.",
+      "撇点 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇢",
+      "piě gōu",
+      "Fall left and finish with a short hook.",
+      "撇钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇜",
+      "piě zhé",
+      "Left-falling followed by a rising turn.",
+      "撇折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇣",
+      "quān",
+      "A closed circular stroke; used in CJK character forms.",
+      "圈 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇚",
+      "shù gōu",
+      "Vertical with a finishing hook.",
+      "竖钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇓",
+      "shù piě",
+      "Start downward, then fall to the left.",
+      "竖撇 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇙",
+      "shù tí",
+      "Down, then rise to the right.",
+      "竖提 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇄",
+      "shù wān",
+      "Vertical curving toward the right.",
+      "竖弯 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇟",
+      "shù wān gōu",
+      "Vertical curving right and finishing with a hook.",
+      "竖弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇘",
+      "shù wān zuǒ",
+      "Down, curve left and finish toward the left.",
+      "竖弯左 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇗",
+      "shù zhé",
+      "Vertical followed by a rightward turn.",
+      "竖折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇥",
+      "shù zhé piě",
+      "Down, turn right, then fall left; the initial segment may be slanted.",
+      "竖折撇 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇉",
+      "shù zhé wān gōu",
+      "Down, right, then curve down to a finishing hook.",
+      "竖折弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇞",
+      "shù zhé zhé",
+      "Down, right, then down.",
+      "竖折折 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇝",
+      "tí nà",
+      "Rise to the right, then fall right; a stylistic alternative to 捺.",
+      "提捺 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇁",
+      "wān gōu",
+      "Curving downward into a hook.",
+      "弯钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ],
+    [
+      "㇂",
+      "xié gōu",
+      "Slanted curve with a finishing hook.",
+      "斜钩 · form · Unicode 18.0 Appendix F",
+      "Common"
+    ]
+  ]
+}

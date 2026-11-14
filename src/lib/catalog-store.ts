@@ -1,6 +1,7 @@
 // Imported reference catalogue (characters, radicals, components, strokes, decompositions,
-// character-reading audio). Fetched once in the browser from /data/catalog.json so the
-// ~2 MB file never sits in the page bundle. Rows are mutated in place so existing
+// character-reading audio). Fetched once in the browser from /data/catalog.json and
+// /data/strokes.json so reference data never sits in the page bundle.
+// Rows are mutated in place so existing
 // synchronous readers see the data after the workspace bumps its catalogue version.
 import type { CharacterScript } from './learning-preferences';
 import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest } from './audio';
@@ -11,9 +12,10 @@ import { hydrateUsageOrder, type UsageOrderFile } from './usage-frequency';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 
 export type CatalogRow = [string, string, string, string, CharacterScript?];
+export type StrokeFile = { strokes: CatalogRow[] };
 export type CatalogFile = {
   version: number; source: string;
-  characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[]; strokes: CatalogRow[];
+  characters: CatalogRow[]; radicals: CatalogRow[]; components: CatalogRow[];
   trees: Record<string, DecompositionNode>; readingAudio: Record<string, Record<string, string | null>>; audio: Record<string, AudioAttachment>;
   /** Unihan kRSUnicode radical for components that are not themselves a radical form. */
   componentRadicals?: Record<string, string>;
@@ -37,10 +39,11 @@ export const catalog = {
   radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
 
-export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile) {
+export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile, strokeCatalog?: StrokeFile) {
   // Preserve array identities held by synchronous readers; the version increment
   // tells workspace consumers to recompute after all sidecars are installed.
-  for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
+  for (const key of ['characters', 'radicals', 'components'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
+  if (strokeCatalog) catalog.strokes.splice(0, catalog.strokes.length, ...strokeCatalog.strokes);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
   catalog.readingMeanings = data.readingMeanings ?? {};
   catalog.meaningPointers = data.meaningPointers ?? {};
@@ -77,7 +80,8 @@ export function loadCatalog(): Promise<void> {
     fetch('/data/radical-strokes.json').then(r => { if (!r.ok) throw new Error(`radical strokes ${r.status}`); return r.json() as Promise<RadicalStrokeFile>; }),
     fetch('/data/usage-order.json').then(r => { if (!r.ok) throw new Error(`usage order ${r.status}`); return r.json() as Promise<UsageOrderFile>; }),
     fetch('/data/character-variants-v1.4.0.json').then(r => { if (!r.ok) throw new Error(`character variants ${r.status}`); return r.json() as Promise<CharacterVariantFile>; }),
-  ]).then(([data, identities, strokes, usage, variants]) => { hydrateUsageOrder(usage); hydrateCharacterVariants(variants); hydrateCatalog(data, identities, strokes); }).catch(err => { pending = null; throw err; });
+    fetch('/data/strokes.json').then(r => { if (!r.ok) throw new Error(`strokes ${r.status}`); return r.json() as Promise<StrokeFile>; }),
+  ]).then(([data, identities, strokes, usage, variants, strokeCatalog]) => { hydrateUsageOrder(usage); hydrateCharacterVariants(variants); hydrateCatalog(data, identities, strokes, strokeCatalog); }).catch(err => { pending = null; throw err; });
   return pending;
 }
 

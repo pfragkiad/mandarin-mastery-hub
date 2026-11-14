@@ -20,10 +20,9 @@ vi.mock('@/lib/stroke-examples', () => ({ strokeExamples: {} }));
 // One catalogue row as the source records it: the stroke's Chinese name comes first in the note.
 hydrateCatalog({
   version: 1, source: 'test', characters: [], radicals: [], components: [],
-  strokes: [['㇐', 'héng', 'Horizontal, from left to right.', '横 · basic · Unicode 18.0 Appendix F']],
   trees: {}, readingAudio: { 横: { héng: 'heng-rec' } },
   audio: { 'heng-rec': { url: 'https://example.test/heng.mp3', source: 'Test corpus', license: 'CC BY 4.0' } },
-});
+}, undefined, undefined, { strokes: [['㇐', 'héng', 'Horizontal, from left to right.', '横 · basic · Unicode 18.0 Appendix F']] });
 
 describe('stroke practice pronunciation', () => {
   it('speaks the stroke’s Chinese name, never the stroke glyph or an English note', () => {

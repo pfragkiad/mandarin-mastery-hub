@@ -19,9 +19,9 @@ Object.defineProperty(window, "matchMedia", {
   }),
 });
 
-// Tests read the same imported catalogue the browser fetches from /data/catalog.json.
+// Tests read the same imported catalogue and stroke sidecar the browser fetches.
 import { readFileSync } from 'node:fs';
-import { hydrateCatalog, type CatalogFile } from '@/lib/catalog-store';
+import { hydrateCatalog, type CatalogFile, type StrokeFile } from '@/lib/catalog-store';
 import type { RadicalIdentityFile } from '@/lib/radical-identities';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
-hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile, JSON.parse(readFileSync('public/data/radical-identities.json', 'utf8')) as RadicalIdentityFile, JSON.parse(readFileSync('public/data/radical-strokes.json', 'utf8')) as RadicalStrokeFile);
+hydrateCatalog(JSON.parse(readFileSync('public/data/catalog.json', 'utf8')) as CatalogFile, JSON.parse(readFileSync('public/data/radical-identities.json', 'utf8')) as RadicalIdentityFile, JSON.parse(readFileSync('public/data/radical-strokes.json', 'utf8')) as RadicalStrokeFile, JSON.parse(readFileSync('public/data/strokes.json', 'utf8')) as StrokeFile);

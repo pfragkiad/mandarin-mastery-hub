@@ -35,7 +35,7 @@ describe('Rates', () => {
 });
 
 describe('Character recording lookup', () => {
-  hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], strokes: [], trees: {}, readingAudio: { '中': { 'zhōng': 'zhong1' }, '讠': { 'yán': 'cmn-syl-yan2' }, '言': { 'yán': 'cmn-syl-yan2' }, '颜': { 'yán': 'cmn-syl-yan2' }, '门': { 'mén': 'cmn-syl-men2' } }, audio: { zhong1: { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-yan2': { url: '/reported-wrong-yan.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-men2': { url: '/correct-men.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+  hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '中': { 'zhōng': 'zhong1' }, '讠': { 'yán': 'cmn-syl-yan2' }, '言': { 'yán': 'cmn-syl-yan2' }, '颜': { 'yán': 'cmn-syl-yan2' }, '门': { 'mén': 'cmn-syl-men2' } }, audio: { zhong1: { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-yan2': { url: '/reported-wrong-yan.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-men2': { url: '/correct-men.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
   it('excludes the reported mén-sounding yán clip for all its glyph bindings', () => {
     for (const glyph of ['讠', '言', '颜']) {
       expect(characterRecording(glyph, 'yán')).toBeNull();

@@ -50,7 +50,7 @@ const catalogData: CatalogFile = {
   version: 1, source: 'test',
   characters: [['学', 'xué', 'learn', '8 strokes · 子 radical'], ['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · 乙 radical']],
   radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']],
-  components: [], strokes: [],
+  components: [],
   trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] } },
   readingAudio: {}, audio: {},
 };
