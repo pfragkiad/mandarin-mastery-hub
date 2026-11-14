@@ -343,6 +343,9 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .reading-meaning { display: contents; }
 .reading-meaning-label { display: inline-flex; align-items: center; gap: 6px; min-width: 3.2em; font-size: 0.85em; font-weight: 500; }
 .reading-meaning-label > button { flex-shrink: 0; }
+.reading-meaning-reading { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.reading-meaning-reading > button { flex-shrink: 0; }
+.reading-meaning-separator { opacity: .7; }
 .catalog-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 16px; padding: 16px 0; border-block: 1px solid var(--border); }
 .catalog-facts dt { color: var(--muted-foreground); font-size: 11px; }
 .catalog-facts dd { margin: 6px 0 0; font-size: 14px; }
