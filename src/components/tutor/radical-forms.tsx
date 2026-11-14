@@ -19,11 +19,14 @@ import type { PracticeMode } from '@/lib/practice-mode';
 export function RadicalForms({ familyId, selectedKey, destination = 'reference', mode, hideLabel = false, layout = 'tiles', hideGlyph = false }: { familyId: number; selectedKey?: string | undefined; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean; layout?: 'tiles' | 'switch'; hideGlyph?: boolean }) {
   const family = radicalFamily(familyId);
   if (!family) return null;
+  const forms = orderedRadicalForms(family);
   return <div className={`radical-family-section${layout === 'switch' ? ' form-switch' : ''}`}>
     {/* Practice renders the tiles inside its reading panel, where the Kangxi ID
         already appears as a pill — hideLabel drops the redundant heading there. */}
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>RADICAL FAMILY · KANGXI #{family.id}</span><SourceInfo inline className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family readings are shared with variant forms that lack their own recorded name.<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo></h3>}
-    <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`}>
+    {/* Switch trays set --form-cols so wrapped rows stay balanced and equal-width
+        (formSwitchColumns: five forms wrap 3+2, never 4+1). */}
+    <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`} style={layout === 'switch' ? { '--form-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
       {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
       {layout === 'switch' && <FormSwitchThumb/>}
       {/* Purple marks exact recorded Traditional forms: historical Kangxi headings
