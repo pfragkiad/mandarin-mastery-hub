@@ -21,7 +21,6 @@ import { cardRevealClass } from './card-reveal-toggle';
 import { useCardPeek } from './card-peek';
 import { SourceInfo, HintBody } from './source-info';
 import { useActivePill } from '@/lib/use-active-pill';
-import { PillRow } from './pill-row';
 import { useOneLineTitle } from './one-line-title';
 // Motivational small-caps line shared by Words and Phrases; the per-kind
 // provenance note stays in the (i) beside the title.
@@ -63,7 +62,10 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const categoryItems = useMemo(() => items.filter(w => vocabularyKind(w) === kind), [items, kind]);
   const label = kind === 'phrase' ? 'phrases' : 'words';
-  const kindPills = useActivePill(kind);
+  // The Words/Phrases switch lives in the header (section-picker.tsx); hand it the
+  // shown tab (a linked phrase may open without `tab` in the URL) and both counts.
+  const kindCounts = useMemo(() => ({ word: { count: items.filter(w => vocabularyKind(w) === 'word').length }, phrase: { count: items.filter(w => vocabularyKind(w) === 'phrase').length } }), [items]);
+  usePublishSections('vocabulary', kindCounts, { active: kind });
   // The title must stay on one line at every width; the hook lowers its font size as needed.
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, label);
@@ -100,8 +102,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   }, [page, initialWordId]);
   const reset = () => { const empty = { q: '', collection: 'All collections', level: 'All levels', py: undefined, pos: 'All types' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Level 1 practice phrases are unofficial · no syllabus IDs' : 'HSK 3.0 vocabulary · levels as recorded in the source'}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
-    <Tabs className="catalog-tabs vocabulary-tabs" value={kind} onValueChange={value => { if (value === 'word' || value === 'phrase') onTabChange?.(value); }}>
-    <div className="vocabulary-category-row"><PillRow label="vocabulary sections"><TabsList ref={kindPills} aria-label="Vocabulary categories" className="page-pills">{(['word', 'phrase'] as const).map(k => <TabsTrigger key={k} value={k}>{k === 'word' ? 'Words' : 'Phrases'}<span className="catalog-tab-count">{items.filter(w => vocabularyKind(w) === k).length}</span></TabsTrigger>)}</TabsList></PillRow><div className="vocabulary-saved-filter" aria-label="Saved vocabulary">{['All words','Saved words'].map(s => <Button key={s} variant="ghost" aria-pressed={status === s} className={status === s ? 'selected' : ''} onClick={() => setStatus(s)}>{s === 'All words' ? 'All' : 'Saved'}{s === 'Saved words' && <span className="catalog-tab-count">{categoryItems.filter(w => saved.includes(w.id)).length}</span>}</Button>)}</div></div>
+    <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
+    <div className="vocabulary-category-row"><div className="vocabulary-saved-filter" aria-label="Saved vocabulary">{['All words','Saved words'].map(s => <Button key={s} variant="ghost" aria-pressed={status === s} className={status === s ? 'selected' : ''} onClick={() => setStatus(s)}>{s === 'All words' ? 'All' : 'Saved'}{s === 'Saved words' && <span className="catalog-tab-count">{categoryItems.filter(w => saved.includes(w.id)).length}</span>}</Button>)}</div></div>
     <TabsContent value={kind}>
     <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections' } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : [])]} filterFields={({ draft, patch }) => { const facets = vocabularyFacetOptions(facetBase, { collection: draft.collection ?? 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types' }); return <>
       <select className="filter-select" aria-label="Collection" value={draft.collection} onChange={e => patch({ collection: e.target.value })}><option>All collections</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
