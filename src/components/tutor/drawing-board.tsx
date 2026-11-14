@@ -25,13 +25,14 @@ function writerColor(token: string) {
 }
 
 /**
- * One drawing card. Inputs: the card, `onFinish` (Next card / Enter: the card's result moves on),
+ * One drawing card. Inputs: the card, `last` (the round's final card: the move-on button reads
+ * See results), `onFinish` (Next card / Enter: the card's result moves on),
  * `onSettle` (fires the moment the card is answered — drawn or passed — so the game's counter and
  * progress update before Next card), and the restored snapshot / Practice hand-off.
  * Once answered, Show guide is disabled (nothing left to guide) and Replay strokes animates the
  * recorded stroke order of the same Hanzi Writer data; Enter moves to the next card.
  */
-export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }: { entry: DrawingCard; onFinish: (result: DrawingResult) => void; onSettle?: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
+export function DrawingBoard({ entry, last = false, onFinish, onSettle, restored, onPractice }: { entry: DrawingCard; last?: boolean; onFinish: (result: DrawingResult) => void; onSettle?: (result: DrawingResult) => void; restored?: DrawingBoardSnapshot | undefined; onPractice?: (snapshot: DrawingBoardSnapshot) => void }) {
   const { theme, preferences } = useWorkspace();
   const { celebrate, effect: celebration } = usePerfectCelebration(preferences.confetti !== false);
   const target = useRef<HTMLDivElement>(null);
@@ -186,7 +187,7 @@ export function DrawingBoard({ entry, onFinish, onSettle, restored, onPractice }
         // passed, without advancing or falsely awarding a correct answer.
         onPractice?.({ result: answered || state === 'unavailable' ? state as DrawingResult : 'passed', mistakes, progress, guide });
       }} search={entry.word ? { character: entry.word.hanzi, mode: 'trace', ...(entry.characterIndex ? { focus: entry.characterIndex } : {}) } : { character: entry.hanzi, mode: 'trace', ...(entry.radicalVariant ? { family: entry.kangxiIndex, variant: entry.radicalVariant } : {}) }}><PracticeIcon/>Practice</Link></Button>
-      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>Next card<ArrowRight/></Button>}
+      {(answered || state === 'unavailable') && <Button onClick={() => finish(state === 'unavailable' ? 'unavailable' : state as DrawingResult)}>{last ? 'See results' : 'Next card'}<ArrowRight/></Button>}
     </div>
   </section>;
 }

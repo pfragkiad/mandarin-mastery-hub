@@ -370,6 +370,7 @@ export function DrawingGamePage({
               <DrawingBoard
                 key={`${round}:${card.id}`}
                 entry={card}
+                last={answers.length + 1 >= deck.length}
                 restored={board}
                 onSettle={(result) => setSettled({ key: cardKey, result })}
                 onPractice={(snapshot) => setSession((previous) => ({ ...previous, board: snapshot }))}
@@ -381,7 +382,7 @@ export function DrawingGamePage({
                   }))
                 }
               />
-              <p className="game-play-keys">Enter next card · Esc ends the round</p>
+              <p className="game-play-keys">{answers.length + 1 >= deck.length ? "Enter see results" : "Enter next card"} · Esc ends the round</p>
             </div>
           )}
         </section>
