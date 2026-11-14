@@ -30,7 +30,7 @@
 .drawing-meaning { font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; max-width: 100%; }
 .drawing-canvas-column { width: min(100%, 300px); margin-inline: auto; }
 .drawing-canvas-column .writing-grid { width: 100%; }
-.drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: var(--muted-foreground); font-size: 11px; }
+.drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; color: var(--muted-foreground); font-size: 11px; }
 .drawing-board-meta button { height: 30px; padding: 0 10px; margin-left: -10px; font-size: 12px; font-weight: 500; }
 .drawing-grid { touch-action: none; }
 /* Library cards: no double-tap zoom on their plain area (touch double taps never open details either). */
@@ -55,7 +55,7 @@ article.word-card { touch-action: manipulation; }
 .drawing-word-character small { font-size: 10px; }
 .drawing-word-character.is-selected { border: 2px solid var(--primary); color: var(--primary-foreground); background: var(--primary); }
 @media(max-width:580px) { .drawing-word-layout { grid-template-columns: minmax(0,1fr); gap: 0; } .drawing-word-context { grid-row: 1; border-left: 0; padding: 16px 0 0; } .drawing-word-characters { margin-top: 8px; } }
-.drawing-status { min-height: 42px; text-align: center; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
+.drawing-status { min-height: 26px; text-align: center; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
 .drawing-status.is-correct { color: var(--primary); }
 .drawing-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
 .drawing-progress { appearance: none; height: 4px; width: 100%; border: none; background: var(--muted); color: var(--primary); border-radius: 4px; overflow: hidden; }
