@@ -2142,10 +2142,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 
 /* ===== Pinyin guide (/pinyin): sound chart, player panel and listening quizzes ===== */
 .pinyin-page .library-heading { align-items: end; }
-.pinyin-progress { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px 12px; font-size: 12px; color: var(--muted-foreground); }
-.pinyin-progress strong { color: var(--foreground); font-weight: 600; }
-.pinyin-progress .pinyin-review-count { color: var(--grade-low); }
-.pinyin-reset-confirm { display: inline-flex; align-items: center; gap: 6px; color: var(--foreground); }
 .pinyin-body { margin-top: 22px; }
 /* The selected-sound card widens with the window (capped) so rows holding two or three
    script forms still leave their meanings room to breathe. */
@@ -2184,9 +2180,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* Neutral tone: grey, and only ever hollow in the grid (no recordings exist). */
 .pinyin-tile-tones .tone-5 { --tone-ink: var(--muted-foreground); }
 
-.pinyin-tile-state { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 999px; }
-.pinyin-tile-state.done { background: var(--grade-high); }
-.pinyin-tile-state.review { background: var(--grade-low); }
 .pinyin-player { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .pinyin-player-empty { font-family: var(--font-display); font-size: 19px; line-height: 1.5; }
 .pinyin-player-tip { font-size: 12px; color: var(--muted-foreground); }
@@ -2314,7 +2307,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 @media (max-width: 850px) {
   .pinyin-player-empty { font-size: 15px; }
   .pinyin-player-title.pinyin { font-size: 28px; }
-  .pinyin-progress { justify-content: flex-start; }
   .pinyin-page .library-heading { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 580px) {
@@ -2332,7 +2324,6 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    with the same tokens the Glyphs/Vocabulary details use — 13px labels, 16px readings and
    notes, the shared reference hanzi box — and the grid tiles simply get larger. */
 html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) clamp(400px, 34vw, 620px); }
-html[data-display-size='comfortable'] .pinyin-progress { font-size: var(--ui-label-size); }
 html[data-display-size='comfortable'] .pinyin-group-title { font-size: 12px; letter-spacing: 1px; }
 html[data-display-size='comfortable'] .pinyin-group-title span { font-size: 14px; }
 html[data-display-size='comfortable'] .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; }
@@ -2340,7 +2331,6 @@ html[data-display-size='comfortable'] .pinyin-tile { min-height: 68px; gap: 8px;
 html[data-display-size='comfortable'] .pinyin-tile-base { font-size: 18px; }
 html[data-display-size='comfortable'] .pinyin-tile-tones { gap: 3px; }
 html[data-display-size='comfortable'] .pinyin-tile-badge { width: 12px; height: 12px; }
-html[data-display-size='comfortable'] .pinyin-tile-state { width: 7px; height: 7px; }
 html[data-display-size='comfortable'] .pinyin-player { gap: 14px; }
 html[data-display-size='comfortable'] .pinyin-player-empty { font-size: 21px; }
 html[data-display-size='comfortable'] .pinyin-player-tip { font-size: 14px; line-height: 1.6; }
@@ -2990,3 +2980,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .stand-in-hint-label { margin-left: 4px; font-size: 11px; font-weight: 600; color: var(--foreground); }
 .stand-in-hint .hint-rows { margin: 0; padding: 0; list-style: none; }
 .stand-in-hint-source { font-size: 10px; color: var(--muted-foreground); }
+
+/* Pinyin game round results (pinyin-drills.tsx): each missed sound is a playable row with what was chosen. */
+.pinyin-missed { display: grid; gap: 4px; margin: 4px auto 16px; padding: 0; list-style: none; width: min(100%, 420px); text-align: left; }
+.pinyin-missed li { display: flex; align-items: center; gap: 10px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 10px; }
+.pinyin-missed li > span { color: var(--muted-foreground); font-size: 14px; }
+.pinyin-missed .pinyin { font-size: 18px; }
+.pinyin-drill > .flash-meta, .pinyin-drill > .flash-progress { width: 100%; }

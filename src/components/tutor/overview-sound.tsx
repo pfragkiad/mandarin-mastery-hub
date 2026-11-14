@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
-import { usePinyinPlayer, usePinyinProgress, sound } from './pinyin-shared';
+import { usePinyinPlayer, sound } from './pinyin-shared';
 import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneMark, type PinyinData, type PinyinSyllable } from '@/lib/pinyin-guide';
 
 /**
@@ -12,15 +12,14 @@ import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneM
  * It shows a random syllable that has at least one human recording; the speaker
  * plays all its recorded tones in order, each tone chip plays just that tone and
  * the syllable opens it in the Sound chart. Neutral tones (never recorded) are not
- * offered. Playing counts as "heard" in the same browser progress as the Pinyin page.
+ * offered.
  */
 export function SoundDiscoveryTile() {
   const { preferences } = useWorkspace();
   const [data, setData] = useState<PinyinData | null>(null);
   const [failed, setFailed] = useState(false);
   const [syllable, setSyllable] = useState<PinyinSyllable | null>(null);
-  const { record } = usePinyinProgress();
-  const player = usePinyinPlayer(data, preferences.slow, id => record(id, 'heard'));
+  const player = usePinyinPlayer(data, preferences.slow);
 
   // Data loads after mount (it is a separate download), so the server render shows the loading note.
   useEffect(() => {

@@ -1,5 +1,5 @@
 // Sound chart: every attested syllable, grouped by initial, with a player for
-// the selected syllable. Inputs: loaded data, remembered progress, the shared
+// the selected syllable. Inputs: loaded data, the shared
 // player, the applied URL filters and the URL-selected syllable and tone (both live
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
@@ -8,7 +8,6 @@ import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
-import { answered, needsReview, type PinyinProgress } from '@/lib/pinyin-progress';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
@@ -96,8 +95,8 @@ let chartMounts = 0;
 let leftForCharacter = false;
 // A Back step is identified by its history entry (historyEntry), not just its URL.
 
-export function PinyinChart({ data, progress, player, filters, selected, tone, slow, onSlow, onSelect, onTone, onFilters }: {
-  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; tone: Tone | null; slow: boolean;
+export function PinyinChart({ data, player, filters, selected, tone, slow, onSlow, onSelect, onTone, onFilters }: {
+  data: PinyinData; player: PinyinPlayer; filters: ChartFilters; selected?: string | undefined; tone: Tone | null; slow: boolean;
   onSlow: (slow: boolean) => void; onSelect: (base: string | undefined, tone?: Tone) => void; onTone: (tone: Tone | undefined) => void;
   /** `pick`: the sound the applied search names outright (see directSoundMatch), selected in the same history step. */
   onFilters: (filters: ChartFilters, pick?: { base: string; tone: Tone }) => void;
@@ -203,7 +202,7 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
   // The tile whose small-screen window was just closed keeps the hover look (.is-recent)
   // so the eye finds it again; pointing at another tile, or choosing any tile, drops it.
   const [recent, setRecent] = useState<string | null>(null);
-  const panel = (inSheet: boolean) => <PinyinPlayerPanel data={data} progress={progress} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone} inSheet={inSheet}
+  const panel = (inSheet: boolean) => <PinyinPlayerPanel data={data} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone} inSheet={inSheet}
     onPlayAll={() => { if (!syllable) return; onTone(undefined); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }}
     onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }} />;
 
@@ -227,22 +226,19 @@ export function PinyinChart({ data, progress, player, filters, selected, tone, s
       {groups.length === 0 ? <div className="record-gap pinyin-absent"><p>No syllable matches this search.</p></div> : groups.map(group => <section key={group.label} className="pinyin-group" aria-label={group.label}>
         <h2 className="pinyin-group-title">{group.label}{group.initials[0] !== null && <span>{group.initials.join(' ')}</span>}</h2>
         <div className="pinyin-tiles">{group.items.map(s => {
-          const sounds = s.tones.filter(t => t !== 5).map(t => progress[soundId(s.base, t)]);
-          const review = sounds.some(needsReview), done = sounds.some(answered);
           const recorded = s.tones.filter(t => hasRecording(data, s.base, t)).length;
           return <button key={s.base} type="button" data-base={s.base} className={`pinyin-tile${s.base === selected ? ' is-selected' : ''}${s.base === recent ? ' is-recent' : ''}`}
             onPointerEnter={() => { if (recent && recent !== s.base) setRecent(null); }} aria-pressed={s.base === selected}
             // Hovering the card lists the tones this syllable really has (attested spellings)
             // before the click opens the sound card; recording status stays out of the hint.
             title={syllableTonesHint(s)}
-            aria-label={`${s.base}, ${recorded} tone${recorded === 1 ? '' : 's'} recorded${review ? ', needs review' : done ? ', practised' : ''}`}
+            aria-label={`${s.base}, ${recorded} tone${recorded === 1 ? '' : 's'} recorded`}
             // Selecting a tile only opens it in the player — it never plays or highlights
             // a tone by itself; any sound still running from the previous syllable stops.
             // A grid card starts a fresh Back trail, like Previous/Next in the details window.
             onClick={() => { setRecent(null); player.stop(); soundTrail.clear(); onSelect(s.base === selected ? undefined : s.base); }}>
             <span className="pinyin-tile-base" lang="zh-Latn-pinyin">{s.base}</span>
             <TileTones data={data} syllable={s} />
-            {(review || done) && <span className={`pinyin-tile-state ${review ? 'review' : 'done'}`} aria-hidden="true" />}
           </button>;
         })}</div>
       </section>)}
@@ -301,8 +297,8 @@ function toneTileHint(base: string, tone: Tone, playable: boolean): string {
 }
 
 /** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
-function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
-  data: PinyinData; progress: PinyinProgress; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
+function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
+  data: PinyinData; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
   onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string, label: string, current: Tone | null) => void; onLeave: () => void;
   /** Inside the small-screen window, whose bar already carries Back and Close. */
   inSheet?: boolean;
@@ -321,7 +317,6 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
   const title = current !== null ? toneMark(syllable.base, current) : syllable.base;
   const back = trail[trail.length - 1];
   const alikes = current !== null && hasRecording(data, syllable.base, current) ? soundAlikes(data, syllable.base, current) : [...new Set(recorded.flatMap(t => soundAlikes(data, syllable.base, t)))].sort();
-  const totals = (current !== null ? [current] : recorded).map(t => progress[soundId(syllable.base, t)]).reduce((sum, s) => ({ right: sum.right + (s?.right ?? 0), wrong: sum.wrong + (s?.wrong ?? 0) }), { right: 0, wrong: 0 });
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
@@ -377,7 +372,6 @@ function PinyinPlayerPanel({ data, progress, player, syllable, tone, slow, onSlo
     <dl className="pinyin-parts">
       <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
       <div><dt>Final</dt><dd>{syllable.final}</dd></div>
-      <div><dt>You</dt><dd>{totals.right + totals.wrong > 0 ? `${totals.right} right · ${totals.wrong} wrong` : 'Not practised yet'}</dd></div>
     </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
     {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => <button key={base} type="button" className="pinyin-alike" onClick={() => onSelect(base, title, current)} lang="zh-Latn-pinyin">{current !== null && findSyllable(data, base)?.tones.includes(current) ? toneMark(base, current) : base}</button>)}</div></div>}
