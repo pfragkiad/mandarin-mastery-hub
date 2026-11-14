@@ -819,6 +819,8 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .discovery-tile-record .overview-record-link > strong.is-long { font-size: 22px; line-height: 1.35; }
 .discovery-tile-record .overview-record-link h2 { font-size: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .discovery-tile > .library-note { margin: 0; font-size: 10px; }
+.discovery-tile-phone { display: none; }
+@media (max-width:580px) { .discovery-tile-phone { display: flex; } }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
 .overview-record-link:hover strong,.overview-record-link:hover h2,.overview-record-link:focus-visible strong,.overview-record-link:focus-visible h2 { color: var(--primary); }
@@ -931,15 +933,9 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 @media (max-width:580px) {
   .overview-heading h1 { font-size: 31px; letter-spacing: -.008em; }
   .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
-  /* Phones: each random card reads like a glyph tile — hanzi on the left, pinyin + audio over
-     the translation on its right. The link box dissolves (display: contents) so its hanzi and
-     translation can sit in separate grid cells while staying one link. Sounds keeps its layout. */
-  .discovery-tile { grid-row: auto; grid-template-rows: none; padding: 12px 14px; row-gap: 6px; }
-  .discovery-tile:not(.discovery-sound):not(:has(.is-long)) .discovery-tile-record { grid-row: auto; grid-template-rows: none; grid-template-columns: auto minmax(0,1fr); grid-template-areas: "glyph pinyin" "glyph meaning"; column-gap: 14px; row-gap: 2px; align-items: center; }
-  .discovery-tile:not(.discovery-sound):not(:has(.is-long)) .discovery-tile-record .overview-record-link { display: contents; }
-  .discovery-tile:not(.discovery-sound):not(:has(.is-long)) .discovery-tile-record .overview-record-link > strong { grid-area: glyph; min-height: 0; }
-  .discovery-tile:not(.discovery-sound):not(:has(.is-long)) .discovery-record-pinyin { grid-area: pinyin; align-self: end; flex-wrap: wrap; }
-  .discovery-tile:not(.discovery-sound):not(:has(.is-long)) .discovery-tile-record .overview-record-link h2 { grid-area: meaning; align-self: start; }
+  /* Phones: the random pick shows as the detail cards' "In a character" tile (overview-discovery.tsx). */
+  .discovery-tile { grid-row: auto; grid-template-rows: none; }
+  .discovery-tile:has(.discovery-tile-phone) > .discovery-tile-record { display: none; }
   .overview-library-search .search-field input { font-size: 12px; padding-right: 12px; }
 }
 
