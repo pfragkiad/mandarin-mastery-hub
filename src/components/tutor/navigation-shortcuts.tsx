@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
  * Phone layouts hide this optional help, not the navigation or key handlers. */
 export function NavigationShortcuts({ context }: { context: 'pages' | 'records' }) {
   const shortcuts = context === 'pages'
-    ? [['← / →', 'Previous / next page'], ['PageUp / PageDown', 'Back / forward 10 pages'], ['Home / End', 'First / last page']]
+    ? [['← / →', 'Previous / next page'], ['Home / End', 'First / last page']]
     : [['← / →', 'Previous / next record'], ['Esc', 'Close']];
   return <Popover>
     <PopoverTrigger asChild>

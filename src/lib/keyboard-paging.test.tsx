@@ -17,50 +17,40 @@ function Harness({ pages, disabled = false, onPageChange }: { pages: number; dis
 afterEach(cleanup);
 
 describe('useKeyboardPaging', () => {
-  it('moves ten pages on PageDown', () => {
+  it('leaves PageUp/PageDown to the browser for scrolling', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={50} onPageChange={onPageChange} />);
     press('PageDown');
-    expect(onPageChange).toHaveBeenLastCalledWith(12);
-  });
-
-  it('moves back on PageUp and clamps at the first page', () => {
-    const onPageChange = vi.fn();
-    render(<Harness pages={5} onPageChange={onPageChange} />);
     press('PageUp');
-    expect(onPageChange).toHaveBeenLastCalledWith(1);
-    press('PageUp');
-    expect(onPageChange).toHaveBeenLastCalledWith(1);
+    expect(onPageChange).not.toHaveBeenCalled();
   });
 
   it('never goes past the last page', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={3} onPageChange={onPageChange} />);
-    press('PageDown');
-    press('PageDown');
-    press('PageDown');
+    press('ArrowRight');
+    press('ArrowRight');
+    press('ArrowRight');
     expect(onPageChange).toHaveBeenLastCalledWith(3);
   });
 
   it('does nothing when focus is inside a text field', () => {
     const onPageChange = vi.fn();
     const { getByTestId } = render(<Harness pages={5} onPageChange={onPageChange} />);
-    press('PageDown', getByTestId('field'));
+    press('ArrowRight', getByTestId('field'));
     expect(onPageChange).not.toHaveBeenCalled();
   });
 
   it('stays idle on a single page', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={1} onPageChange={onPageChange} />);
-    press('PageDown');
+    press('ArrowRight');
     expect(onPageChange).not.toHaveBeenCalled();
   });
 
-  it('ignores PageUp/PageDown while a record sheet is open', () => {
+  it('ignores paging keys while a record sheet is open', () => {
     const onPageChange = vi.fn();
     render(<Harness pages={5} disabled onPageChange={onPageChange} />);
-    press('PageDown');
-    press('PageUp');
     press('ArrowRight');
     press('Home');
     press('End');
@@ -72,14 +62,6 @@ describe('useKeyboardPaging', () => {
     render(<Harness pages={50} onPageChange={onPageChange}/>);
     press(key);
     expect(onPageChange).toHaveBeenCalledExactlyOnceWith(page);
-  });
-
-  it('moves back exactly ten pages away from the boundary', () => {
-    const onPageChange = vi.fn();
-    function Middle() { useKeyboardPaging({ current: 25, pages: 50, onPageChange }); return null; }
-    render(<Middle/>);
-    press('PageUp');
-    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(15);
   });
 
   it('leaves modified shortcuts and widget keys untouched', () => {
