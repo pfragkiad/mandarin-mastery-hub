@@ -746,10 +746,10 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 /* Identity rows reuse the "In a character" layout (.glyph-usage-reference/.glyph-usage-facts):
    tile, then reading + speaker + Radical #N, with the meaning on the line below. */
 .kangxi-identity-rows { display: grid; gap: var(--record-tile-gap); }
-/* The Kai font draws hanzi ink slightly below the em-box middle; at the Comfortable
-   tile size that leaves ~2px more space above the glyph than below (Compact rasterises
-   evenly), so nudge the ink up by the measured offset there. */
-html[data-display-size='comfortable'] .kangxi-identity-item .decomposition-glyph strong { transform: translateY(-0.025em); }
+/* The Kai font draws hanzi ink slightly below the em-box middle, so a centred strong
+   leaves more space above the glyph than below; nudge the ink up by that measured
+   offset (em-based so it scales with Compact/Comfortable tile sizes). */
+.kangxi-identity-item .decomposition-glyph strong { transform: translateY(-0.025em); }
 .kangxi-identity-item .component-pronunciation { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
 .kangxi-identity-item .pinyin { min-width: 0; overflow-wrap: anywhere; }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
