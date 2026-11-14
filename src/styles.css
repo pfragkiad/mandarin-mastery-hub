@@ -2956,6 +2956,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
    space below it (body padding is equal top and bottom). */
 .vocab-word-grid:not(.list-view):not(.library-list-view) .word-card,
 .catalog-entry-grid:not(.library-list-view) .catalog-card { grid-template-rows: auto 1fr 40px; }
+/* Compact grid cards drop the footer's top divider; the row keeps its 40px height so
+   the gap above the buttons matches the gap below them. */
+.vocab-word-grid:not(.list-view):not(.library-list-view) .word-card .word-card-bottom,
+.catalog-entry-grid:not(.library-list-view) .catalog-card .word-card-bottom { border-top: 0; }
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { padding-top: 12px; }
 /* Stroke cards have no top row: body and footer only. */
 .catalog-entry-grid:not(.library-list-view) .catalog-card.stroke-card { grid-template-rows: 1fr 40px; }
