@@ -2586,6 +2586,9 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
    section grows) so the tiles keep their usual size instead of collapsing to min-width.
    Phones keep the flex wrap below. */
 .form-switch .radical-form-list[style] { display: grid; grid-template-columns: repeat(var(--form-cols), minmax(0, 1fr)); width: 100%; }
+/* Grid tracks size the tiles now, so the flex era's 150px minimum must not hold them
+   (it would overflow phone widths); the column count already keeps the rows balanced. */
+.form-switch .radical-form-list[style] .radical-form-choice { min-width: 0; }
 .practice-header-main:has(.radical-form-list[style]) .practice-header-forms { flex: 1 1 100%; }
 html .practice-header .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
 .practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
