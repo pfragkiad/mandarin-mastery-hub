@@ -2769,5 +2769,5 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 @media (max-width: 580px) {
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
   .library-list-view .catalog-card .catalog-card-indicators { margin-right: 10.5px; }
-  .library-list-view .word-card.comfortable-word-card:has(.word-actions > :last-child[style], .word-actions) .catalog-card-indicators { margin-right: 6.5px; }
+  .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 6.5px; }
 }
