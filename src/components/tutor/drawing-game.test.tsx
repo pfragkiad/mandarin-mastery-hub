@@ -102,7 +102,8 @@ it('a review round replays every missed card', async () => {
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+    // The last card's move-on button leads to the results, not another card.
+    fireEvent.click(screen.getByRole('button', { name: i < 4 ? 'Next card' : 'See results' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
   expect(screen.getByText(/5 of 5 played · 5 passed/)).toBeTruthy();
@@ -118,7 +119,7 @@ it('offers a bookmark on every card to review, saving its exact id', async () =>
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
     fireEvent.click(await screen.findByRole('button', { name: 'Pass card' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+    fireEvent.click(screen.getByRole('button', { name: i < 4 ? 'Next card' : 'See results' }));
     if (i < 4) await screen.findByText(`Card ${i + 2} of 5`);
   }
   screen.getAllByRole('button', { name: /^Save / }).forEach(button => fireEvent.click(button));
