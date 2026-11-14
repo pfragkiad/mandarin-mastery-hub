@@ -2930,13 +2930,14 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .catalog-entry-grid:not(.library-list-view) .catalog-card > .word-card-bottom > span:first-child { visibility: hidden; }
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */
 .word-card .word-level-wrap > .card-top-meta.is-lead { margin-left: 0; }
-/* Compact cards: the top row is only as tall as its labels, so the space above the body
-   matches the space below it (body padding is equal top and bottom). */
+/* Compact cards: the top row is only as tall as its labels and any extra row height goes
+   to the body (1fr), whose content centres, so the space above the hanzi box matches the
+   space below it (body padding is equal top and bottom). */
 .vocab-word-grid:not(.list-view):not(.library-list-view) .word-card,
-.catalog-entry-grid:not(.library-list-view) .catalog-card { grid-template-rows: auto auto 40px; }
+.catalog-entry-grid:not(.library-list-view) .catalog-card { grid-template-rows: auto 1fr 40px; }
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { padding-top: 12px; }
 /* Stroke cards have no top row: body and footer only. */
-.catalog-entry-grid:not(.library-list-view) .catalog-card.stroke-card { grid-template-rows: auto 40px; }
+.catalog-entry-grid:not(.library-list-view) .catalog-card.stroke-card { grid-template-rows: 1fr 40px; }
 .catalog-entry-grid:not(.library-list-view) .catalog-card.stroke-card .catalog-entry { padding-top: 14px; }
 
 /* Small-screen library controls: Filters (with its chips) and Study share one line.
