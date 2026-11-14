@@ -3195,3 +3195,5 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
 /* Game setups: the saved toggle matches the setup dropdowns' height. */
 .game-setup .saved-filter-toggle { height: 36px; }
 html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height: 44px; min-height: 44px; }
+/* Phones: the all-caps motto line above library titles is hidden to save height. */
+@media (max-width: 850px) { .library-heading .library-eyebrow { display: none; } }
