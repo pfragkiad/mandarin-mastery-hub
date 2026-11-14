@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { catalog, hydrateCatalog, readingMeanings, type CatalogFile } from './catalog-store';
 import { hydrateCharacterVariants, type CharacterVariantFile } from './character-variants';
 import { meaningPointers } from './meaning-pointers';
+import { cardMeaning } from './glyph-presentation';
 
 const read = (name: string) => JSON.parse(readFileSync(`public/data/${name}`, 'utf8'));
 beforeAll(() => { hydrateCharacterVariants(read('character-variants-v1.4.0.json') as CharacterVariantFile); hydrateCatalog(read('catalog.json') as CatalogFile); });
@@ -24,5 +25,11 @@ describe('干 meaning and readings', () => {
   it('records both gān and gàn, each bound to its own recording', () => {
     expect(catalog.characters.find(row => row[0] === '干')?.[1]).toBe('gān / gàn');
     expect(catalog.readingAudio['干']).toEqual({ 'gān': 'cmn-syl-gan1', 'gàn': 'cmn-syl-gan4' });
+  });
+  it('shows the gàn translation on the grid card beside gān', () => {
+    expect(cardMeaning('干', 'gān / gàn', 'oppose, offend; invade; dried')).toBe('oppose, offend; invade; dried / trunk of tree or of human body');
+  });
+  it('keeps the recorded card text when the record has only one of the readings', () => {
+    expect(cardMeaning('了', 'le', 'to finish; particle of completed action')).toBe('to finish; particle of completed action');
   });
 });
