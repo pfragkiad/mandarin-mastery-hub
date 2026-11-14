@@ -614,11 +614,13 @@ this keeps the number right beside the stroke tile. */
 .tile-form.traditional-character::after { transform: translate(58%, -58%); }
 /* Bigger boxes take a bigger stamp so the mark stays proportional (see the list view and the
    comfortable display size, which enlarge the same boxes). */
-.library-list-view .word-card .tile-form.traditional-character,
+/* Combined 繁部 pins (radical + traditional) are excluded: their 部 must keep the lone 部
+   stamp's size, which never takes this enlargement. */
+.library-list-view .word-card .tile-form.traditional-character:not(.is-radical),
 html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
-    .pinyin-character-glyph.is-traditional) { --traditional-mark-size: 14px; }
+    .pinyin-character-glyph.is-traditional):not(.is-radical) { --traditional-mark-size: 14px; }
 /* Radical glyph tiles carry the same corner-stamp idea as the traditional 繁 mark, in the
    Radical #N pill's gold: a tiny 部 (bù, "section" — the Chinese term for a Kangxi radical)
    straddling the top-right corner, gold glyph ink and a gold hover/focus border. Marks:
@@ -2878,14 +2880,16 @@ html :is(.decomposition-glyph.is-radical.traditional-character,
   background:
     linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)) padding-box;
 }
-/* The combined 繁部 pin is about twice as wide as a lone 部/繁 stamp, so centring it on the
-   corner would pull 部 left of where it sits on a radical-only tile. Shift it right instead,
-   keeping 部 at the same spot as the lone 部 stamp (the pin grows leftwards over the tile). */
+/* The combined 繁部 pin is about twice as wide as a lone 部 stamp, so a percentage shift of
+   its own width cannot match the lone pin. Its right edge is instead offset by exactly the lone
+   部 stamp's shift — 46% of that stamp's width (1em glyph + 6px padding + 2px border) — and it
+   keeps the same -46% vertical shift and font size, so its 部 lands on the very spot the lone
+   部 occupies and the pin only grows leftwards over the tile. */
 :is(.decomposition-glyph.is-radical.traditional-character,
     .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
     .radical-form-choice.is-radical.is-traditional,
-    .tile-stamp-radical.tile-stamp-traditional)::after { transform: translate(24%, -46%); }
-.tile-form.is-radical.traditional-character::after { transform: translate(30%, -58%); }
+    .tile-stamp-radical.tile-stamp-traditional)::after { transform: translate(calc(.46 * (1em + 8px)), -46%); }
 /* The pin's two characters keep their own identity colours — 繁 Traditional purple, 部 radical
    gold — through a text-clipped gradient layered above the pin fill. `text` is not a valid box
    in the background shorthand, so the override uses background-image + a background-clip list;
