@@ -307,7 +307,7 @@ export function DrawingGamePage({
         </GameSetup>
   );
   return (
-    <div className="page-enter">
+    <div className="page-enter game-page">
       <div className="page-heading">
         <div>
           <div className="eyebrow">RECALL · WRITE · REMEMBER</div>

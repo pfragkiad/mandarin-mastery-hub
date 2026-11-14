@@ -3016,6 +3016,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
    missed list (one row per record, columns shared through subgrid so cells line up across rows),
    then the next-round actions. Sounds: tick, reading+speaker, what was chosen, the right answer.
    Cards: tick, hanzi (link to its exact record), reading+speaker, meaning. */
+/* Game pages: the title row is as wide as the 820px game panels below, so the heading
+   hanzi's right edge lines up with the panel's right border. */
+.game-page > .page-heading { max-width: 820px; }
+.game-page > .page-heading > .heading-hanzi { padding-right: 0; }
 .game-results { max-width: 820px; padding: 24px 26px 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; gap: 6px; }
 .game-results-eyebrow { font-size: 12px; letter-spacing: .6px; color: var(--muted-foreground); }
 .game-results-score { display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--muted-foreground); }
