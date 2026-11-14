@@ -239,7 +239,6 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
             onClick={() => { setRecent(null); player.stop(); soundTrail.clear(); onSelect(s.base === selected ? undefined : s.base); }}>
             <span className="pinyin-tile-base" lang="zh-Latn-pinyin">{s.base}</span>
             <TileTones data={data} syllable={s} />
-            {(review || done) && <span className={`pinyin-tile-state ${review ? 'review' : 'done'}`} aria-hidden="true" />}
           </button>;
         })}</div>
       </section>)}
