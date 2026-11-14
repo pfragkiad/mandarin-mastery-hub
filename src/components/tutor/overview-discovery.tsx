@@ -138,8 +138,9 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
       )}
       {/* Phones only (CSS swaps it in for the block above): the same pick as an "In a character"
           tile from the detail cards — boxed hanzi, reading + speaker over translation — reusing
-          that tile's classes and shared speaker so both look and behave alike. */}
-      {record && recordLink && hanzi && (
+          that tile's classes and shared speaker so both look and behave alike. Single glyphs only:
+          the tile box holds one character, so multi-character words/phrases keep the stacked card. */}
+      {record && recordLink && hanzi && Array.from(hanzi).length === 1 && (
         <div className="discovery-tile-phone glyph-usage-reference">
           <Button asChild variant="ghost" className={`decomposition-glyph${entry?.script === 'Traditional' ? ' traditional-character' : ''}${entry && isRadicalGlyph(entry, category as LibraryKind) ? ' is-radical' : ''}`}><Link to={recordLink.to} search={recordLink.search} title={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)}><strong lang="zh-CN">{hanzi}</strong></Link></Button>
           <span className="glyph-usage-facts">

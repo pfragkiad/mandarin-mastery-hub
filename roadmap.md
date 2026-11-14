@@ -112,4 +112,4 @@
 - [done] Grid cards mark reviewed sense pointers (干: dried → 乾, gàn → 幹) as unlinked markers
 - [done] Start: date removed; phone greeting compact so the whole character of the day stays above the tab bar
 - [done] Start: "Good afternoon" + pinyin sit to the right of 下午好, tile-style (pinyin over translation)
-- [open] Start cards (random + character of the day): reuse existing tile layout styles, no new ones
+- [done] Start cards (random + character of the day): reuse existing tile layout styles, no new ones
