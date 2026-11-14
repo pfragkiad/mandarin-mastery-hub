@@ -23,18 +23,26 @@ describe('Vocabulary keyboard paging', () => {
   it.each(['word', 'phrase'] as const)('pages %s records with no selection', tab => {
     const onPageChange = vi.fn();
     render(<VocabularyPage tab={tab} page={2} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
-    fireEvent.keyDown(window, { key: 'PageDown' });
-    expect(onPageChange).toHaveBeenLastCalledWith(12);
-    fireEvent.keyDown(window, { key: 'PageUp' });
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
+    expect(onPageChange).toHaveBeenLastCalledWith(3);
+    fireEvent.keyDown(window, { key: 'ArrowLeft' });
     expect(onPageChange).toHaveBeenLastCalledWith(1);
+  });
+
+  it('leaves PageUp/PageDown to the browser for scrolling', () => {
+    const onPageChange = vi.fn();
+    render(<VocabularyPage tab="word" page={2} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
+    fireEvent.keyDown(window, { key: 'PageDown' });
+    fireEvent.keyDown(window, { key: 'PageUp' });
+    expect(onPageChange).not.toHaveBeenCalled();
   });
 
   it('blocks paging while a matching reference is open', () => {    const onPageChange = vi.fn();
     const record = words.find(word => word.hanzi === '意思');
     if (!record) throw new Error('Missing 意思');
     render(<VocabularyPage initialWordId={record.id} onPageChange={onPageChange} onWordOpen={vi.fn()}/>);
-    fireEvent.keyDown(window, { key: 'PageDown' });
-    fireEvent.keyDown(window, { key: 'PageUp' });
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
+    fireEvent.keyDown(window, { key: 'ArrowLeft' });
     expect(onPageChange).not.toHaveBeenCalled();
   });
 });
