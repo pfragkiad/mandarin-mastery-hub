@@ -5,10 +5,10 @@ import { RecordDetailTitle } from './record-detail-title';
 const head = (container: HTMLElement) => container.querySelector('.catalog-detail-head') as HTMLElement;
 
 describe('Record detail heading', () => {
-  it('stacks pinyin above the characters and the meaning below', () => {
+  it('puts the characters first, then the pinyin line, then the meaning', () => {
     const { container } = render(<RecordDetailTitle hanzi="今天天气怎么样？" pinyin="Jīntiān tiānqì zěnmeyàng?" meaning="How is the weather today?"/>);
     const order = [...head(container).children].map(node => node.className);
-    expect(order).toEqual(['catalog-detail-pinyin-row', 'catalog-detail-glyph-row', '']);
+    expect(order).toEqual(['catalog-detail-glyph-row', 'catalog-detail-pinyin-row', '']);
     expect(head(container).querySelector('strong')?.textContent).toBe('今天天气怎么样？');
     expect(head(container).querySelector('h2')?.textContent).toBe('How is the weather today?');
   });
@@ -34,6 +34,18 @@ describe('Record detail heading', () => {
     expect(head(container).querySelector('.pinyin')?.textContent).toBe('Pinyin not recorded');
     expect(head(container).querySelector('h2')?.textContent).toBe('No English meaning recorded yet');
     expect(head(container).querySelector('.traditional-pill')?.textContent).toBe('Traditional');
+  });
+
+  it('keeps the identity pills in the hanzi row (top right), not on the pinyin line', () => {
+    const { container } = render(<RecordDetailTitle hanzi="一" pinyin="yī" meaning="one" pill={<span>Radical #1</span>}/>);
+    expect(head(container).querySelector('.catalog-detail-glyph-row > .catalog-detail-pills')?.textContent).toBe('Radical #1');
+    expect(head(container).querySelector('.catalog-detail-pinyin-row .catalog-detail-pills')).toBeNull();
+  });
+
+  it('drops the separate pinyin line when each reading line carries its own speaker', () => {
+    const { container } = render(<RecordDetailTitle hanzi="了" pinyin="le / liǎo" readingsInMeaning meaningContent={<h2 className="reading-meanings">lines</h2>}/>);
+    expect(head(container).querySelector('.catalog-detail-pinyin-row')).toBeNull();
+    expect([...head(container).children].map(node => node.className)).toEqual(['catalog-detail-glyph-row', 'reading-meanings']);
   });
 
   it('keeps the single selected hanzi in the title and puts a form switch on its own row below the meaning', () => {
