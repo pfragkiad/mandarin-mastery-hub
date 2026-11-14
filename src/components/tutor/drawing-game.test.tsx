@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { DrawingGamePage } from './drawing-game';
 import { DrawingSessionProvider } from './drawing-session';
 import type { LibraryEntry } from '@/lib/character-library';
@@ -7,7 +7,7 @@ import type { Word } from '@/lib/mandarin';
 
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props} onClick={event => { event.preventDefault(); (props as { onClick?: () => void }).onClick?.(); }}>{children}</a>, useNavigate: () => vi.fn() }));
 
-const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn() }));
+const fake = vi.hoisted(() => ({ create: vi.fn(), cancelQuiz: vi.fn(), showCharacter: vi.fn(), showOutline: vi.fn(), hideOutline: vi.fn(), quiz: vi.fn(), animateCharacter: vi.fn() }));
 vi.mock('hanzi-writer', () => ({ default: { create: fake.create } }));
 const state = vi.hoisted(() => ({ saved: [] as string[], toggleSaved: vi.fn() }));
 const workspace = vi.hoisted(() => ({ useWorkspace: vi.fn() }));
@@ -151,4 +151,29 @@ it('changing deck size does not discard drawing progress', async () => {
   fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
   expect(fake.create).toHaveBeenCalledTimes(1);
+});
+
+it('counts a completed card and fills the progress the moment it is drawn, before Next card', async () => {
+  render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  expect(screen.getByText('0 correct · 0 to review')).toBeInTheDocument();
+  act(() => fake.quiz.mock.calls[0]?.[0].onComplete({ totalMistakes: 0 }));
+  expect(screen.getByText('1 correct · 0 to review')).toBeInTheDocument();
+  expect(screen.getByLabelText('Round progress')).toHaveAttribute('value', '1');
+  expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /Show guide/ })).toBeDisabled();
+  fireEvent.keyDown(window, { key: 'Enter' });
+  expect(screen.getByText('Card 2 of 10')).toBeInTheDocument();
+  expect(screen.getByText('1 correct · 0 to review')).toBeInTheDocument();
+});
+
+it('asks before ending once the first card is answered, and keeps that card in the results', async () => {
+  render(<DrawingGamePage search={search} onSearch={onSearch}/>);
+  fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
+  await waitFor(() => expect(fake.quiz).toHaveBeenCalledTimes(1));
+  act(() => fake.quiz.mock.calls[0]?.[0].onComplete({ totalMistakes: 0 }));
+  fireEvent.click(screen.getByRole('button', { name: 'End' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Yes, end' }));
+  expect(screen.getByText('1 / 1')).toBeInTheDocument();
 });

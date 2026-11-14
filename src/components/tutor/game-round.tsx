@@ -9,7 +9,7 @@
 //    a tick per record (untick to leave it out of the next round) and the next-round actions.
 // Owns no round data: each game keeps its own deck/answers and passes callbacks in.
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { RotateCcw, SlidersHorizontal, X } from 'lucide-react';
+import { ChevronDown, RotateCcw, SlidersHorizontal, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 
@@ -41,13 +41,14 @@ export function useRoundEnd({ active, answered, onFinish, onQuit }: { active: bo
 }
 export type RoundEnd = ReturnType<typeof useRoundEnd>;
 
-/** One-line bar shown instead of the setup while playing. `summary` is the chip text. */
+/** One-line bar shown instead of the setup while playing. `summary` is the chip text; the chip
+ * expands the setup below, so it carries a chevron that flips while open. */
 export function GamePlayBar({ summary, settingsOpen, onToggleSettings, onRestart, restartDisabled, restartLabel = 'Restart', end }: {
   summary: ReactNode; settingsOpen: boolean; onToggleSettings: () => void; onRestart: () => void; restartDisabled?: boolean; restartLabel?: string; end: RoundEnd;
 }) {
   return <div className="game-play-bar">
     <button type="button" className="game-play-chip" aria-expanded={settingsOpen} onClick={onToggleSettings} title="Change settings for the next round">
-      <SlidersHorizontal />{summary}
+      <SlidersHorizontal />{summary}<ChevronDown className="game-play-chevron" aria-hidden />
     </button>
     <div className="game-play-actions">
       <Button variant="outline" onClick={onRestart} disabled={restartDisabled}><RotateCcw />{restartLabel}</Button>

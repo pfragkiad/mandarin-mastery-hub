@@ -28,8 +28,10 @@
 .drawing-prompt .flash-pinyin { font-size: 20px; }
 .drawing-prompt .flash-pinyin-row { gap: 4px; }
 .drawing-meaning { font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; max-width: 100%; }
+.drawing-canvas-column { width: min(100%, 300px); margin-inline: auto; }
+.drawing-canvas-column .writing-grid { width: 100%; }
 .drawing-board-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: var(--muted-foreground); font-size: 11px; }
-.drawing-board-meta button { height: 30px; padding: 0 10px; font-size: 12px; font-weight: 500; }
+.drawing-board-meta button { height: 30px; padding: 0 10px; margin-left: -10px; font-size: 12px; font-weight: 500; }
 .drawing-grid { touch-action: none; }
 /* Library cards: no double-tap zoom on their plain area (touch double taps never open details either). */
 article.word-card { touch-action: manipulation; }
@@ -2999,6 +3001,8 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .game-play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
 .game-play-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; max-width: 100%; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--muted-foreground); font-size: 13px; cursor: pointer; text-align: left; transition: border-color .15s, color .15s; }
 .game-play-chip svg { width: 15px; height: 15px; flex: none; }
+.game-play-chip .game-play-chevron { margin-left: 2px; transition: transform .15s; }
+.game-play-chip[aria-expanded='true'] .game-play-chevron { transform: rotate(180deg); }
 .game-play-chip:hover, .game-play-chip:focus-visible, .game-play-chip[aria-expanded='true'] { border-color: var(--primary); color: var(--foreground); outline: none; }
 .game-play-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
 .game-play-confirm { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-left: 10px; border-left: 1px solid var(--border); font-size: 13px; }
