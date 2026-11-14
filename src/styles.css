@@ -2567,7 +2567,8 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
 .practice-reading-line .practice-kind { margin-left: 0; font-size: 10px; padding: 4px 10px; }
 .practice-reading-line .word-hsk-id { font-size: 10px; padding: 3px 9px; }
 @media (max-width: 580px) { html .practice-header .form-switch .radical-form-choice { min-width: 0; flex-basis: 0; padding: 8px 10px; gap: 10px; } .form-switch .radical-form-list { flex-wrap: nowrap; } .form-switch .radical-form-list:has(> :nth-child(3)) { flex-wrap: wrap; } }
-.practice-header-forms { min-width: 0; max-width: 100%; flex: 0 0 auto; }
+/* The form switch sits on its own full-width row below the reading block. */
+.practice-header-forms { min-width: 0; max-width: 100%; flex: 1 1 100%; }
 @media (max-width: 850px) {
   .practice-header { padding: 0; }
   .practice-header-main { flex-direction: column; align-items: stretch; }
@@ -2582,14 +2583,13 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
 .form-switch .radical-form-list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
 /* Switch trays carry --form-cols (form-switch-columns.ts) once forms wrap: an equal-width
    grid whose column count balances the rows, so five forms wrap 3+2 instead of 4+1 and no
-   tile stretches wider than its siblings. The tray takes the header's full width (its flex
-   section grows) so the tiles keep their usual size instead of collapsing to min-width.
-   Phones keep the flex wrap below. */
+   tile stretches wider than its siblings. The tray spans the header's full width (the
+   forms section is a full-width row below the reading) so the tiles keep their usual size
+   instead of collapsing to min-width. Phones keep the flex wrap below. */
 .form-switch .radical-form-list[style] { display: grid; grid-template-columns: repeat(var(--form-cols), minmax(0, 1fr)); width: 100%; }
 /* Grid tracks size the tiles now, so the flex era's 150px minimum must not hold them
    (it would overflow phone widths); the column count already keeps the rows balanced. */
 .form-switch .radical-form-list[style] .radical-form-choice { min-width: 0; }
-.practice-header-main:has(.radical-form-list[style]) .practice-header-forms { flex: 1 1 100%; }
 html .practice-header .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
 .practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
 .practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
