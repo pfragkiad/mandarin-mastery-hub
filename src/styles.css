@@ -2907,4 +2907,4 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .pointed-meaning .meaning-pointer { color: var(--primary); text-decoration: none; white-space: nowrap; }
 .pointed-meaning .meaning-pointer.traditional-character span { color: var(--traditional); }
 .pointed-meaning .meaning-pointer:hover, .pointed-meaning .meaning-pointer:focus-visible { color: var(--accent-foreground); }
-.discovery-tile-actions { margin-top: 4px; align-self: end; }
+.discovery-tile-actions { margin-top: 4px; align-self: stretch; }
