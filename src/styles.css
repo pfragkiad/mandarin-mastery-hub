@@ -2767,22 +2767,15 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
    centred in a 22–40px button, so the indicator row is pulled in by the gap between the
    card's content edge and the last action icon's right edge in that layout. */
 .catalog-card .catalog-card-indicators { margin-right: 6.5px; }
-.library-list-view .catalog-card .catalog-card-indicators { margin-right: 4.5px; }
 .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 10.5px; }
-/* Comfortable (List) Words cards keep the headword-card class, so the Grid-only Words pull-in
-   above must not reach them: List rows (Words and Phrases) align at 0.5px above phone width. */
-@media (min-width: 581px) {
-  .word-grid.library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 0.5px; }
-}
 @media (max-width: 580px) {
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
-  .library-list-view .catalog-card .catalog-card-indicators { margin-right: 10.5px; }
-  .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 6.5px; }
 }
-
-/* Comfortable cards (every width): the top-right indicators line up with the bookmark on
-   the pinyin line, a 30px .tile-speaker box with a 17px icon, so the icon sits 6.5px in. */
-:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 10.5px; }
+/* Comfortable cards (every width, Glyphs and Vocabulary): the indicators line up with the
+   bookmark on the pinyin line — a 30px .tile-speaker box with a 17px icon, so the icon sits
+   6.5px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
+.library-list-view .catalog-card .catalog-card-indicators > span { width: 17px; flex-basis: 17px; }
+:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 6.5px; }
 
 /* Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the games
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
