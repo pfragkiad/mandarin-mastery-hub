@@ -19,7 +19,7 @@ import { useOneLineTitle } from './one-line-title';
 import { PinyinChart, type ChartFilters } from './pinyin-chart';
 import { SoundAlikeDrill, ToneDrill, TypeDrill, type DrillFilters, type DrillMode } from './pinyin-drills';
 import { usePinyinPlayer, usePinyinProgress, type PinyinPlayer } from './pinyin-shared';
-import { GameTabs } from './game-tabs';
+import { usePublishSections } from '@/lib/section-switch';
 import type { PinyinProgress } from '@/lib/pinyin-progress';
 
 export type PinyinMode = 'chart' | DrillMode;
@@ -44,6 +44,9 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   const onSlow = (slow: boolean) => setPreferences({ ...preferences, slow });
   const total = data ? allSounds(data).length : 0;
   const summary = progressSummary(progress, total);
+  // In a quiz the header's game switcher (section-picker.tsx) stops this player
+  // before moving to another game; the Sound chart has no switcher.
+  usePublishSections(mode === 'chart' ? 'chart' : 'games', null, { beforeSwitch: () => player.stop() });
 
   return <div className="page-enter library-page pinyin-page">
     <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
@@ -60,9 +63,6 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
           : <Button size="sm" variant="ghost" onClick={() => setConfirming(true)}><RotateCcw />Reset progress</Button>)}
       </div>}
     </div>
-    {/* In a quiz the five-game pill row (phone only) switches games, since the
-        phone Games tab covers all five; wider screens use the side menu. */}
-    {mode !== 'chart' && <GameTabs current={mode} onBeforeNavigate={() => player.stop()}/>}
     <div className="pinyin-body">
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
       : failed ? <div className="record-gap pinyin-absent"><p>The pronunciation guide couldn’t load. <Button variant="link" size="sm" onClick={() => setAttempt(a => a + 1)}>Try again</Button></p></div>

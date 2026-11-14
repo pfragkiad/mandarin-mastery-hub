@@ -1,4 +1,3 @@
-import { GameTabs } from './game-tabs';
 import { useMemo } from "react";
 import { openDetailsHint, practiceHint } from '@/lib/tile-hints';
 import { Link } from "@tanstack/react-router";
@@ -100,7 +99,6 @@ export function DrawingGamePage({
           写<span>xiě</span>
         </span>
       </div>
-      <GameTabs current="drawing" />
       {/* Game dropdowns apply immediately: filters only shape the next deal, never the active round. */}
       <GameSetup
         summary={catalogVersion ? deckSummary(roundSize, pool.length) : undefined}
