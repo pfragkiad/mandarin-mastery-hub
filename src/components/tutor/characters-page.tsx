@@ -323,10 +323,11 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
       const meaning = el.querySelector<HTMLElement>('.catalog-entry-meaning');
       if (meaning && getComputedStyle(el).display === 'grid' && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['stacked'] = '';
       // List view, exactly three forms: CSS wraps them three per row only while the
-      // translation fits within one tile row's height beside them; a longer translation
-      // keeps the 2+1 wrap so its column stays wide enough (see styles.css data-wide-meaning).
+      // translation still fits its two-line clamp beside the wider row; a clipped
+      // translation keeps the 2+1 wrap so its column stays wide enough (styles.css
+      // data-wide-meaning).
       const row = el.querySelector<HTMLElement>('.tile-hanzi-row');
-      if (meaning && row && row.querySelectorAll('.tile-form').length === 3 && el.closest('.library-list-view') && meaning.offsetHeight > row.offsetHeight + 2) el.dataset['wideMeaning'] = '';
+      if (meaning && row && row.querySelectorAll('.tile-form').length === 3 && el.closest('.library-list-view') && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['wideMeaning'] = '';
     };
     measure(); const observer = new ResizeObserver(measure); observer.observe(el); return () => observer.disconnect();
   }, [tileMeaning, displayedForms.length]);
