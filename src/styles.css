@@ -2923,4 +2923,3 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .catalog-entry-grid:not(.library-list-view) .word-open:not([data-stacked]):has(.tile-hanzi-row > .tile-form:only-child) .tile-hanzi-row { grid-column: 1; grid-row: 1 / 3; margin: 0; }
 .catalog-entry-grid:not(.library-list-view) .word-open:not([data-stacked]):has(.tile-hanzi-row > .tile-form:only-child) .pinyin { grid-column: 2; grid-row: 1; align-self: end; margin: 0; }
 .catalog-entry-grid:not(.library-list-view) .word-open:not([data-stacked]):has(.tile-hanzi-row > .tile-form:only-child) .word-meaning { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
-.catalog-entry-grid:not(.library-list-view) .word-open:not([data-stacked]):has(.tile-hanzi-row > .tile-form:only-child) .word-meaning { -webkit-line-clamp: 4; line-clamp: 4; }
