@@ -2799,3 +2799,45 @@ html .practice-header .form-switch-thumb { border-width: 2px; }
 html .practice-header .form-switch-thumb.is-character { border-color: var(--primary); }
 html .practice-header .form-switch-thumb.is-traditional { border-color: var(--traditional); }
 html .practice-header .form-switch-thumb.is-radical:not(.is-traditional) { border-color: var(--hsk-id); }
+
+/* Forms that are both a Kangxi radical and Traditional get their own merged identity instead of
+   letting purple win: ink and borders in --trad-radical (radical gold mixed with Traditional
+   purple), and one corner pin reading 繁部 whose fill and border run gold → purple, so the tile
+   reads the same wherever it appears (breakdowns, library forms, Sound chart, form switches). */
+:root { --trad-radical: color-mix(in oklch, var(--hsk-id) 50%, var(--traditional)); }
+html :is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
+    .radical-form-choice.is-radical.is-traditional),
+html :is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
+    .radical-form-choice.is-radical.is-traditional) strong { color: var(--trad-radical); }
+html :is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
+    .radical-form-choice.is-radical.is-traditional):not(.is-selected):is(:hover, :focus-visible),
+html .radical-form-choice.is-radical.is-traditional.is-selected { border-color: var(--trad-radical); }
+html :is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
+    .radical-form-choice.is-radical.is-traditional,
+    .tile-stamp-radical.tile-stamp-traditional)::after {
+  content: "繁部";
+  color: var(--foreground);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(90deg, oklch(from var(--hsk-id) 0.93 0.03 h), oklch(from var(--traditional) 0.93 0.035 h)) padding-box,
+    linear-gradient(90deg, var(--hsk-id), var(--traditional)) border-box;
+}
+:root.dark :is(.decomposition-glyph.is-radical.traditional-character,
+    .pinyin-character-glyph.is-radical.is-traditional,
+    .tile-form.is-radical.traditional-character,
+    .radical-form-choice.is-radical.is-traditional,
+    .tile-stamp-radical.tile-stamp-traditional)::after {
+  border-color: transparent;
+  background:
+    linear-gradient(90deg, oklch(from var(--hsk-id) 0.3 0.05 h), oklch(from var(--traditional) 0.3 0.055 h)) padding-box,
+    linear-gradient(90deg, var(--hsk-id), var(--traditional)) border-box;
+}
+html .practice-header .form-switch-thumb.is-radical.is-traditional { background: color-mix(in oklab, var(--trad-radical) 12%, var(--card)); border-color: var(--trad-radical); }
