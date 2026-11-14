@@ -1,3 +1,4 @@
+import { SavedFilterToggle } from './saved-filter';
 import { DraftFilterForm } from './filter-form';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
@@ -158,15 +159,13 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
           <optgroup label="Vocabulary"><option>All vocabulary</option>{collections.map(c => <option key={c}>{c}</option>)}</optgroup>
           <optgroup label="Library">{referenceCatalog.map(c => <option key={c.kind} value={`Ref:${c.kind}`}>{c.kind}s</option>)}</optgroup>
         </select>
-        <div className="vocabulary-saved-filter" role="group" aria-label="Saved cards">
-          <Button type="button" variant="ghost" className={!draft.saved ? 'selected' : ''} aria-pressed={!draft.saved} onClick={() => patch({ saved: undefined })}>All</Button>
-          <Button type="button" variant="ghost" className={draft.saved ? 'selected' : ''} aria-pressed={Boolean(draft.saved)} onClick={() => patch({ saved: true })}>Saved<span className="catalog-tab-count">{savedCount}</span></Button>
-        </div>
         {!draftReference && <>
           <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{levels.map(l => <option key={l}>{l}</option>)}</select>
           <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{posOptions.map(p => <option key={p}>{p}</option>)}</select>
         </>}
         {draftReference && <select className="filter-select" aria-label="Frequency" value={parseUsageGroup(libraryKinds[draft.category.slice(4) as ReferenceKind], draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value })}><option value="">All ranks</option>{usageGroups(libraryKinds[draft.category.slice(4) as ReferenceKind]).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, libraryKinds[draft.category.slice(4) as ReferenceKind], preferences.includeTraditional)}</option>)}</select>}
+        {/* Saved-only: the same bookmark + count toggle as the libraries, last in the row; it stays part of the auto-applied draft. */}
+        <SavedFilterToggle on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
       </>; }}</DraftFilterForm>}>
         <div className="game-option-row">
         <select className="filter-select" aria-label="Card front" value={direction} onChange={e => patch({ direction: e.target.value as 'zh' | 'en', flipped: false })}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>

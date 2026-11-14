@@ -3192,3 +3192,6 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
 @media (max-width: 1280px) {
   .library-page .mobile-library-filters > form { margin-top: 14px !important; margin-bottom: 14px !important; }
 }
+/* Game setups: the saved toggle matches the setup dropdowns' height. */
+.game-setup .saved-filter-toggle { height: 36px; }
+html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height: 44px; min-height: 44px; }

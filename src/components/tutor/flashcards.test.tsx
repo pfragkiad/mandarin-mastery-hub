@@ -87,7 +87,7 @@ describe('Saved deck', () => {
     bookmarks.saved = ['hello'];
     render(<FlashcardsPage />);
     // All vocabulary holds 12 mocked words; only 你好 is bookmarked.
-    fireEvent.click(screen.getByRole('button', { name: /^Saved/ }));
+    fireEvent.click(screen.getByRole('button', { name: /^Show only saved cards/ }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.getByRole('button', { name: /Saved · All vocabulary · Chinese → English · 1 card/ })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
