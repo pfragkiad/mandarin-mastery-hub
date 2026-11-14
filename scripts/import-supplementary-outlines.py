@@ -9,7 +9,7 @@ AnimCJK SVGs are Make Me a Hanzi geometry flipped into SVG space
 (svgY = 900 - hanziWriterY), so every coordinate pair is flipped back without any
 other change. Outline paths come from the numbered `d` paths; medians come from the
 clip-path animation paths in the same stroke order. The script fails closed when the
-stroke count differs from the radical file's recorded sequence for that exact form.
+stroke count differs from the radical file's (radical-strokes.json) recorded sequence for that exact form.
 
 Outputs:
   public/data/supplementary-outlines/<hex>.json  — geometry + provenance (lazy loaded)
@@ -38,13 +38,22 @@ REVIEWED = [
 # Exact code points (Nov 2026 scan of all 303 radical-family forms): Hanzi Writer Data has no
 # file for these, but AnimCJK's Mainland (ZhHans) set records the SAME code point, and its
 # stroke count equals the radical file's. No look-alike is involved, so recordedAs is the form itself.
-# Forms with no exact-code-point outline in either source (⺁ ⺧ ⺪ ⺴ ⺷ ⻊ 𧢲) stay unrecorded.
+# Forms with no exact-code-point outline in either source (⺁ ⺧ ⺪ ⺷ ⻊ 𧢲) stay unrecorded.
 for _character, _family in [('⺆', 13), ('牜', 93), ('⺶', 123), ('⻏', 163), ('⻗', 173)]:
     REVIEWED.append({
         'character': _character, 'family': _family,
         'folder': 'svgsZhHans', 'recordedAs': _character, 'style': 'Mainland (ZhHans)',
         'reviewNote': 'AnimCJK records this exact code point; stroke count matches the radical file.',
     })
+
+# Reviewed by the project owner (Nov 2026): Unicode's EquivalentUnifiedIdeograph 17.0.0 maps
+# ⺴ (2EB4 CJK RADICAL NET FOUR) to 冗 (5197); import-radical-strokes.ts records ⺴ with 冗's
+# four cnchar-order strokes, so 冗's Mainland outline is linked to it (not the same code point).
+REVIEWED.append({
+    'character': '⺴', 'family': 122,
+    'folder': 'svgsZhHans', 'recordedAs': '冗', 'style': 'Mainland (ZhHans)',
+    'reviewNote': 'Unicode EquivalentUnifiedIdeograph maps ⺴ to 冗; AnimCJK records this outline under 冗, linked to ⺴ by owner review.',
+})
 
 PAIR = re.compile(r'(-?\d+(?:\.\d+)?)[ ,]+(-?\d+(?:\.\d+)?)')
 
@@ -65,13 +74,16 @@ def flip_median(d: str) -> list[list[float]]:
 
 
 def recorded_count(character: str, family: int) -> int:
-    source = json.loads((ROOT / 'public/data/radical-families-source.json').read_text())
-    for fam in source['radicals']:
+    """Stroke count of the exact form in the generated radical file (public/data/radical-strokes.json,
+    import-radical-strokes.ts), which includes reviewed links such as ⺴ → 冗; Practice binds the
+    outline to that record, so the two must agree."""
+    radical_file = json.loads((ROOT / 'public/data/radical-strokes.json').read_text())
+    for fam in radical_file['families']:
         if fam['id'] == family:
-            for form in fam.get('forms', []):
-                if form.get('character') == character:
-                    return len(form['strokeSequence'])
-    sys.exit(f'{character} is not a recorded form of radical #{family}')
+            for form in fam['forms']:
+                if form['character'] == character and form['strokeCount']:
+                    return form['strokeCount']
+    sys.exit(f'{character} has no recorded stroke count in radical #{family}')
 
 
 def main() -> None:

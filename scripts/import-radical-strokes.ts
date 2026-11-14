@@ -40,6 +40,22 @@ for (const [glyph, codes] of Object.entries(CHECKED)) {
   if (codes.length !== expected) throw new Error(`Checked order for ${glyph} has ${codes.length} strokes, expected ${expected}`);
   records[glyph] = { status: 'recorded', source: 'Standard stroke order · manually checked', strokes: codes.map(code => { const d = input.strokeDefinitions[code]; if (!d?.name) throw new Error(`Unknown code ${code}`); return { name: d.name, pinyin: d.pinyin, glyph: d.symbol ?? symbol(d.name) }; }) };
 }
+// Owner-reviewed links (Nov 2026) for family forms whose source sequence belongs to a different
+// shape: Unicode's EquivalentUnifiedIdeograph table names the unified ideograph a radical symbol
+// stands for, and that ideograph's exact cnchar-order record (names verbatim, never corrected
+// from components) replaces the form's sequence. ⺴ CJK RADICAL NET FOUR → 冗: the family source
+// gave it the full six-stroke 网 sequence (cjklib decomposition of ⽹), not its own four strokes.
+// Fails closed when cnchar-order has no record for the linked ideograph.
+const EQUIVALENT_IDEOGRAPH = { file: 'EquivalentUnifiedIdeograph-17.0.0.txt', sha256: '38619c05a17e771554000fe604afee92e10eb49e0616ecf0c87af3c1eb0f4320' };
+const LINKED: Record<string, { family: number; codePoint: string; recordedAs: string }> = {
+  '⺴': { family: 122, codePoint: '2EB4 ; 5197', recordedAs: '冗' },
+};
+const linkedRecords: Record<string, { strokeCount: number; record: RadicalStrokeRecord }> = {};
+for (const [glyph, link] of Object.entries(LINKED)) {
+  const names = await cncharStrokeNames(link.recordedAs);
+  if (!names?.length) throw new Error(`cnchar-order has no record for ${link.recordedAs} (linked to ${glyph})`);
+  linkedRecords[glyph] = { strokeCount: names.length, record: { status: 'recorded', strokes: names.map(stroke => ({ ...stroke, glyph: symbol(stroke.name) })), source: `cnchar-order 3.2.6 · recorded for ${link.recordedAs}`, sourceStatus: 'unicode-equivalent-ideograph', provenance: { id: 'unicode-equivalent-ideograph', ...EQUIVALENT_IDEOGRAPH, line: link.codePoint, recordedAs: link.recordedAs, strokeSource: 'cnchar-order 3.2.6', review: 'Linked by owner review (Nov 2026); replaces the source family sequence.' }, officiallyVerified: false } };
+}
 const families: RadicalFamily[] = [];
 for (const family of input.radicals) {
   const forms: RadicalForm[] = [];
@@ -65,7 +81,8 @@ for (const family of input.radicals) {
     const record: RadicalStrokeRecord = { status, strokes: status === 'count-mismatch' ? [] : strokes, source: form.source.id === 'cnchar' ? 'cnchar-order 3.2.6' : 'cjklib · C-locale strokeorder', sourceStatus: form.status, provenance: form.source, officiallyVerified: form.officiallyVerified === true };
     const duplicate = forms.find(item => item.character === form.character && item.strokeCount === form.strokeCount && JSON.stringify(item.record.strokes) === JSON.stringify(strokes));
     if (duplicate) { duplicate.aliases = [...new Set([...duplicate.aliases, ...form.unicodeRadicalAliases])]; continue; }
-    forms.push({ key: `${family.id}-${index}`, character: form.character, aliases: form.unicodeRadicalAliases, formKind: form.formKind, strokeCount: form.strokeCount ?? componentCount(form.character), record });
+    const linked = LINKED[form.character]?.family === family.id ? linkedRecords[form.character] : undefined;
+    forms.push({ key: `${family.id}-${index}`, character: form.character, aliases: form.unicodeRadicalAliases, formKind: form.formKind, strokeCount: linked?.strokeCount ?? form.strokeCount ?? componentCount(form.character), record: linked?.record ?? record });
   }
   const heading = radicals.find(row => Number(row[3]?.match(/Radical #(\d+)/)?.[1]) === family.id);
   if (!heading) throw new Error(`Missing Kangxi family ${family.id}`);
