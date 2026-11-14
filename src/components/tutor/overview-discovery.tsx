@@ -12,6 +12,8 @@ import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } fr
 import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
+import { ExamplePronunciation } from './example-pronunciation';
+import { MeaningText } from './meaning-text';
 import { historyEntry } from '@/lib/detail-trail';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { sectionIcons } from '@/lib/section-icons';
@@ -133,6 +135,21 @@ export function DiscoveryTile({ category }: { category: DiscoveryCategory }) {
         </div>
       ) : (
         <p className="library-note">Loading {meta.label.toLowerCase()}…</p>
+      )}
+      {/* Phones only (CSS swaps it in for the block above): the same pick as an "In a character"
+          tile from the detail cards — boxed hanzi, reading + speaker over translation — reusing
+          that tile's classes and shared speaker so both look and behave alike. Single glyphs only:
+          the tile box holds one character, so multi-character words/phrases keep the stacked card. */}
+      {record && recordLink && hanzi && Array.from(hanzi).length === 1 && (
+        <div className="discovery-tile-phone glyph-usage-reference">
+          <Button asChild variant="ghost" className={`decomposition-glyph${entry?.script === 'Traditional' ? ' traditional-character' : ''}${entry && isRadicalGlyph(entry, category as LibraryKind) ? ' is-radical' : ''}`}><Link to={recordLink.to} search={recordLink.search} title={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi, word ? vocabularyKind(word) : category)}><strong lang="zh-CN">{hanzi}</strong></Link></Button>
+          <span className="glyph-usage-facts">
+            <span className="glyph-usage-facts-row"><span className="example-pinyin-row">{!word && entry && isMultiReading(entry.pinyin)
+              ? <MultiReadingSpeakers spoken={entry.hanzi} reading={entry.pinyin} variant="example" textClassName={preferences.pinyin ? 'pinyin' : 'sr-only'}/>
+              : <>{preferences.pinyin && <span className="pinyin">{pinyin}</span>}<ExamplePronunciation request={word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : characterAudioRequest(hanzi, entry?.pinyin ?? '')} label={hanzi}/></>}</span></span>
+            {preferences.meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning}/></span>}
+          </span>
+        </div>
       )}
       {audioError && <p className="library-note" role="status">{audioError}</p>}
     </section>
