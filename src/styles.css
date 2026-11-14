@@ -3122,6 +3122,16 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { width: 50px; height: 50px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 20px; height: 20px; }
   html[data-display-size='comfortable'] .discovery-row-chevron { width: 20px; height: 20px; }
+  /* The Start games rows below share these row sizes in both display sizes (icon tile, name,
+     one-line text, round right-hand button), so Characters and Flashcards read as one list style. */
+  html[data-display-size='comfortable'] .overview-game-icon { width: 60px; height: 60px; }
+  html[data-display-size='comfortable'] .overview-game-icon svg { width: 26px; height: 26px; }
+  html[data-display-size='comfortable'] .overview-game-text > strong { font-size: 19px; }
+  html[data-display-size='comfortable'] .overview-game-line { font-size: 16px; }
+  html[data-display-size='comfortable'] :is(.overview-game-play-dot, .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot) { width: 50px; height: 50px; }
+  /* An open row shows the translation in its detail (pinyin + speaker, translation, buttons),
+     so the row line keeps only the hanzi. Sounds keep their tone count, which the detail omits. */
+  .discovery-tile.is-open:not(.discovery-sound) .discovery-row-meaning { display: none; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
