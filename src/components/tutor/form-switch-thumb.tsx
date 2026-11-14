@@ -7,7 +7,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
  *
  * Inputs: none. It finds the tray it is rendered in (`.radical-form-list`) and the tile marked
  * `.is-selected`, so the script picker (Simplified/Traditional) and the radical-family picker
- * (Kangxi heading / Standard / Simplified / Traditional / Variant) share one implementation and one colour rule.
+ * (Standard / Simplified / Traditional / Variant) share one implementation and one colour rule.
  *
  * State: the frame's box inside the tray, the identity ink of the tile it covers (green
  * character, gold radical, purple traditional) and whether it may animate right now.
