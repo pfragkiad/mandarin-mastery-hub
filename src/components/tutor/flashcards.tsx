@@ -216,7 +216,7 @@ export function FlashcardsPage({ category: controlledCategory, level: controlled
           <Button variant="outline" onClick={() => answer(false)} disabled={!flipped || finishing}><X />Still learning</Button>
           <Button onClick={() => answer(true)} disabled={!flipped || finishing}><Check />I knew it</Button>
         </div>
-        <p className="game-play-keys">{!lastCard ? 'Space flips · ← still learning · → I knew it · Esc ends' : repeat ? 'Space flips · ← still learning (back in the deck) · → I knew it · finish · Esc ends' : 'Space flips · ← still learning · finish · → I knew it · finish · Esc ends'}</p>
+        <p className="game-play-keys">{!lastCard ? 'Space flips · ← still learning · → I knew it · Esc ends' : repeat ? 'Space flips · ← still learning (back in the deck) · → I knew it · finish · Esc ends' : 'Space flips · ← still learning · → I knew it · either one finishes · Esc ends'}</p>
       </div>}
     </section>}
 
