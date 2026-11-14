@@ -3197,8 +3197,7 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
    the heading drops its 70px min-height so the title no longer floats inside it. */
 @media (max-width: 850px) {
   .library-page { --library-top-gap: 16px; }
-  .main-content:has(> .library-page) { padding-top: var(--library-top-gap); }
-  .library-page .library-heading { min-height: 0; margin-bottom: 0; }
+  .library-page .library-heading { min-height: 0; margin-bottom: 0; padding-top: var(--library-top-gap); }
   .library-page [role='tabpanel']:has(> .mobile-library-filters) { margin-top: 0; row-gap: var(--library-top-gap); }
   .library-page .mobile-library-filters > form { margin-top: var(--library-top-gap) !important; margin-bottom: 0 !important; }
 }
