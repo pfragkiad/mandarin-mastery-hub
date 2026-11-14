@@ -82,7 +82,7 @@ export function CatalogPagination({ range, total, totalExtra, current, pages, on
     </div>
     <div className="catalog-pagination-summary">
       {perPage && onPerPageChange && <div className="library-per-page" role="group" aria-label="Records per page"><span className="library-per-page-label">Per page</span>{([10, 20, 50] as const).map(value => <Button key={value} variant="ghost" size="sm" aria-label={`${value} per page`} aria-pressed={perPage === value} onClick={() => onPerPageChange(value)}>{value}</Button>)}</div>}
-      {pages >= 7 && <NavigationShortcuts context="pages"/>}
+      <NavigationShortcuts context="pages"/>
     </div>
     <Dialog open={open} onOpenChange={setOpen}><DialogContent className="catalog-jump-dialog"><DialogTitle>Go to</DialogTitle>
       <div className="catalog-jump-modes" role="group" aria-label="Jump by"><Button type="button" variant={mode === 'page' ? 'secondary' : 'ghost'} aria-pressed={mode === 'page'} onClick={() => chooseMode('page')}>Page</Button>{onRankChange && <Button type="button" variant={mode === 'rank' ? 'secondary' : 'ghost'} aria-pressed={mode === 'rank'} disabled={!rankAvailable} onClick={() => chooseMode('rank')}>Rank</Button>}</div>
