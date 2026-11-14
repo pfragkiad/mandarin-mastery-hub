@@ -13,14 +13,16 @@ it('the Expert action still opens Practice in Recall', () => {
   render(<RecordCardFooter metadata="" hanzi="好" bookmarked={false} onBookmark={vi.fn()}/>);
   expect(screen.getByRole('link', { name: 'Recall 好' }).getAttribute('href')).toBe('/strokes?character=%E5%A5%BD&mode=recall');
 });
-it('Comfortable cards show labelled Details, Trace and Recall, with Save moved to the card face', () => {
+it('Comfortable cards show labelled Details, Trace and Recall, plus an icon-only Bookmark at the end of that row', () => {
   const open = vi.fn();
   render(<RecordCardFooter metadata="" hanzi="好" bookmarked={false} onBookmark={vi.fn()} comfortable onOpen={open}/>);
   expect(screen.getByRole('link', { name: 'Trace 好' }).getAttribute('href')).toBe('/strokes?character=%E5%A5%BD&mode=trace');
   expect(screen.getByRole('link', { name: 'Recall 好' }).getAttribute('href')).toBe('/strokes?character=%E5%A5%BD&mode=recall');
   screen.getByRole('button', { name: 'Open details for 好' }).click();
   expect(open).toHaveBeenCalledTimes(1);
-  expect(screen.queryByRole('button', { name: 'Bookmark 好' })).toBeNull();
+  const bookmark = screen.getByRole('button', { name: 'Bookmark 好' });
+  expect(bookmark.textContent).toBe('');
+  expect(bookmark.parentElement?.lastElementChild).toBe(bookmark);
 });
 it('detail panels offer Trace, Recall and a Bookmark toggle for the exact form', () => {
   const toggle = vi.fn();

@@ -2,7 +2,8 @@ import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { HintBody, SourceInfo } from '@/components/tutor/source-info';
-import { Fragment, memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useSideFit } from './use-side-fit';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { nearestRecordedRank } from '@/lib/rank-jump';
@@ -24,7 +25,7 @@ import { glyphUsage } from '@/lib/glyph-usage';
 import { radicalCardAvailability } from '@/lib/radical-card-availability';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { CardTopMeta, DetailRecordActions, RecordCardFooter, TileBookmark } from './record-card-footer';
+import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { RecordDetailTitle } from './record-detail-title';
@@ -290,7 +291,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Characters/Components whose head glyph is itself a sourced Kangxi radical (白, 口, 刀)
   // wear the gold 部 stamp and ink too; exact source identities only, never shape.
   const radicalTile = isRadicalGlyph(entry, kind);
-  // Comfortable (List) cards: labelled Details/Trace/Recall row, bookmark on the pinyin line.
+  // Comfortable (List) cards: labelled Details/Trace/Recall row with the bookmark icon at its right end.
   const comfortable = preferences.libraryView === 'list';
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
   // Components cards do the same but only with forms that exist as Components records.
@@ -312,30 +313,14 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // because the tile face is one button; the detail card keeps the clickable links.
   const pointerLines = formMeanings.length <= 1 && !info.component && !fallback && kind !== 'Strokes' ? cardMeaningPointers(entry.hanzi, entry.pinyin, entry.meaning) : null;
   const meaningText = pointerLines ? <>{pointerLines.map((line, index) => <Fragment key={index}>{index > 0 && ' / '}<PointedParts parts={line} plain/></Fragment>)}</> : formMeanings.length > 1 ? <>{formMeanings.map((item, index) => <Fragment key={item.text}>{index > 0 && ' / '}<span className={item.traditional ? 'traditional-character' : undefined}><MeaningText text={item.text}/></span></Fragment>)}</> : <MeaningText text={tileMeaning}/>;
-  // Compact single-tile cards put pinyin and translation beside the box; when the translation would be
-  // cut off there, data-stacked switches the card back to the multi-tile stacked layout (CSS). Set on the
-  // DOM directly (re-measured on every resize) so measuring never rerenders the results grid.
-  useLayoutEffect(() => {
-    const el = tileRef.current; if (!el || typeof ResizeObserver === 'undefined') return;
-    const measure = () => {
-      delete el.dataset['stacked'];
-      delete el.dataset['wideMeaning'];
-      const meaning = el.querySelector<HTMLElement>('.catalog-entry-meaning');
-      if (meaning && getComputedStyle(el).display === 'grid' && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['stacked'] = '';
-      // List view, exactly three forms: CSS wraps them three per row only while the
-      // translation still fits its two-line clamp beside the wider row; a clipped
-      // translation keeps the 2+1 wrap so its column stays wide enough (styles.css
-      // data-wide-meaning).
-      const row = el.querySelector<HTMLElement>('.tile-hanzi-row');
-      if (meaning && row && row.querySelectorAll('.tile-form').length === 3 && el.closest('.library-list-view') && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['wideMeaning'] = '';
-    };
-    measure(); const observer = new ResizeObserver(measure); observer.observe(el); return () => observer.disconnect();
-  }, [tileMeaning, displayedForms.length]);
+  // Every card body (Compact and Comfortable) first tries the side layout: the form boxes in one row
+  // on the left, pinyin+audio over the translation on the right. useSideFit marks it data-stacked
+  // when the boxes, the one-line pinyin or the two-line translation would be cut there, and CSS then
+  // stacks boxes / pinyin+audio / translation (styles.css "Library card body").
+  useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional]);
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
-      <span className="word-character">{hasPinyin && spoken && reading && kind !== 'Strokes' && isMultiReading(reading) ? <span className="pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined} onError={setAudioError} chartFrom={preferences.soundChartLinks !== false ? entry.hanzi : undefined}/></span> : hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>{kind !== 'Strokes' && reading && preferences.soundChartLinks !== false && <SoundChartLink reading={reading} from={entry.hanzi} variant="tile"/>}</span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row"><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{shownGlyph(glyph)}</span>)}</span></span>
+      <span className="word-character">{hasPinyin && spoken && reading && kind !== 'Strokes' && isMultiReading(reading) ? <span className="pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined} onError={setAudioError} chartFrom={preferences.soundChartLinks !== false ? entry.hanzi : undefined}/></span> : hasPinyin ? <span className="pinyin"><span className="pinyin-text">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/>{kind !== 'Strokes' && reading && preferences.soundChartLinks !== false && <SoundChartLink reading={reading} from={entry.hanzi} variant="tile"/>}</span> : <span className="pinyin"><span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? entry.hanzi}`} unavailableLabel={`No audio available for ${spoken ?? entry.hanzi}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => setAudioError(spoken ? await playCharacter(spoken, preferences.slow, reading) : null)}/></span>}<span className="tile-hanzi-row" style={{ '--forms-per-row': Math.min(6, displayedForms.length) } as CSSProperties}><strong lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(primaryForm, family.id, true) : entry.script === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{primaryForm}</strong>{displayedForms.slice(1).map(glyph => <span key={glyph} lang="zh-CN" className={`tile-form ${(family ? radicalFormIsTraditional(glyph, family.id, false) : historicalRadicalHeading(glyph, entry.kangxiIndex) || glyphScript(glyph) === 'Traditional') ? 'traditional-character' : ''}${radicalTile ? ' is-radical' : ''}`}>{shownGlyph(glyph)}</span>)}</span></span>
       {hasMeaning ? <span className="word-meaning catalog-entry-meaning">{meaningText}</span> : <span className="tile-absent catalog-entry-meaning">no meaning</span>}
-      {/* Comfortable: Save sits at the far right of the pinyin line (CSS places it), freeing the body's right column for the translation. */}
-      {comfortable && <TileBookmark hanzi={entry.hanzi} bookmarked={saved.includes(entry.id)} onBookmark={() => toggleSaved(entry.id)}/>}
     </Button>;
   const strokesText = multiStrokes ? <>{multiStrokes.map((form, index) => <Fragment key={form.glyph}>{index > 0 && ' / '}<span className={form.traditional ? 'traditional-character' : undefined} title={form.strokes === undefined ? `Stroke count not recorded for ${form.glyph}` : `${form.glyph}: ${form.strokes} strokes`}>{form.strokes ?? '–'}</span></Fragment>)} {multiStrokes.every(form => form.strokes === 1) ? 'stroke' : 'strokes'}</> : <><span className={entry.script === 'Traditional' ? 'traditional-character' : undefined}>{entry.strokes}</span> {entry.strokes === 1 ? 'stroke' : 'strokes'}</>;
   const hasStrokes = multiStrokes ? multiStrokes.some(form => form.strokes !== undefined) : entry.strokes !== undefined;

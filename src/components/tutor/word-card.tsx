@@ -13,7 +13,7 @@ import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
-import { CardTopMeta, DetailRecordActions, RecordCardFooter, TileBookmark } from './record-card-footer';
+import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { SoundChartLink } from './sound-chart-link';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
@@ -95,7 +95,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // and the 2×2 action block; only their stacked pinyin/box/translation body differs.
   const comfortablePhrase = preferences.libraryView === 'list' && isPhrase;
   const comfortableWord = preferences.libraryView === 'list' && (headword || isPhrase);
-  // Every Comfortable card (words, phrases, session additions) uses the labelled action row + face bookmark.
+  // Every Comfortable card (words, phrases, session additions) uses the labelled action row, bookmark icon at its right end.
   const comfortableView = preferences.libraryView === 'list';
   const wordStyleTop = headword || comfortablePhrase;
   const tileFit = wordTileFit(word.hanzi);
@@ -108,11 +108,11 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // The Words/Phrases tab already names the kind, so word and Comfortable phrase cards carry no
   // WORD/PHRASE label; Compact phrases keep their recorded level label.
   const levelLabel = wordStyleTop ? '' : word.level.toUpperCase();
-  // Compact Words/Phrases and Comfortable Phrases put pinyin+audio and the translation beside the
-  // hanzi box when both fit uncut (useSideFit marks the body data-stacked otherwise); Comfortable
-  // Words are always side by side, so they skip the measurement.
+  // Every Words/Phrases card (Compact and Comfortable) puts pinyin+audio and the translation beside
+  // the hanzi box when both fit uncut; otherwise useSideFit marks the body data-stacked and CSS
+  // stacks box / pinyin+audio / translation, as on glyph cards.
   const bodyRef = useRef<HTMLButtonElement>(null);
-  useSideFit(bodyRef, !(comfortableView && headword), [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
+  useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
   return <><article data-entry-id={word.id} className={`word-card ${headword ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
@@ -123,7 +123,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
-    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}{/* Comfortable: Save at the far right of the pinyin line (CSS places it). */}{comfortableView && <TileBookmark hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)}/>}</Button>
+    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
