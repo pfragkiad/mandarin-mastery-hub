@@ -3027,7 +3027,10 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .game-missed-reason { justify-self: end; padding: 2px 10px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
 .game-missed-reason.is-passed { color: var(--grade-low); background: color-mix(in oklab, var(--grade-low) 16%, transparent); }
 .game-missed-reason.is-guided { color: var(--grade-good); background: color-mix(in oklab, var(--grade-good) 16%, transparent); }
-.game-missed .tile-bookmark { justify-self: end; }
+/* Results-row Save matches the library cards' bookmark: a 36px box with a 22px
+   icon, large enough to read and tap beside the missed-entry rows. */
+.game-missed .tile-bookmark { justify-self: end; width: 36px; height: 36px; }
+.game-missed .tile-bookmark svg { width: 22px; height: 22px; }
 .game-missed li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; column-gap: 16px; padding: 10px 16px; }
 .game-missed li + li { border-top: 1px solid var(--border); }
 .game-missed li.is-skipped > :not(button[role='checkbox']) { opacity: .45; }
