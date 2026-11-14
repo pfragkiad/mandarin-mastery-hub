@@ -1059,7 +1059,10 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // foreground component, green character. Stroke records keep the plain text colour, as
   // their library cards do.
   const traditionalRecord = traditionalPill || script === 'Traditional';
-  const practiceInk = traditionalRecord ? 'is-traditional' : radId || kindLabel === 'Radical' ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
+  // A form that is both a radical and Traditional (訁, 糹, 戶…) carries both classes so the
+  // title glyph takes the merged --trad-radical ink, matching its form tile.
+  const radicalInk = Boolean(radId) || kindLabel === 'Radical';
+  const practiceInk = traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   // Radical cards break down into strokes, so the character-level mapping and BabelStone comparison don't apply there.
   const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
   const recall = mode === 'recall';

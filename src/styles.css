@@ -2508,6 +2508,8 @@ html[data-display-size='comfortable'] .practice-details-link { width: 44px; heig
 html[data-display-size='comfortable'] .practice-details-link svg { width: 28px; height: 28px; }
 .practice-title-glyph { color: var(--card-ink, inherit); }
 .practice-title-glyph.traditional-character { color: var(--traditional); }
+/* Radical + Traditional forms use the merged identity ink, like their form tiles. */
+html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical); }
 .practice-reading-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; font-size: 18px; }
 .practice-reading-line .pinyin { font-size: 20px; }
 /* The reading line's speaker is the standard audio control: same plain icon, same

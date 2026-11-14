@@ -19,7 +19,7 @@ export function orderedRadicalForms(family: RadicalFamily): RadicalForm[] {
   const priority = (form: RadicalForm) => form.character === family.canonical ? 0 : form.formKind === 'kangxi-heading' ? 1 : 2;
   return [...family.forms].sort((a, b) => priority(a) - priority(b));
 }
-/** Historical colour is scoped to an exact recorded heading with a distinct Mainland form. */
+/** Historical colour is scoped to an exact recorded heading with a distinct Standard form. */
 export function historicalRadicalHeading(glyph: string, familyId?: number): boolean {
   return (catalog.radicalStrokes.families ?? []).some(family => (familyId === undefined || family.id === familyId) && family.kangxiHeading === glyph && family.canonical !== glyph && family.forms.some(form => form.character === family.canonical));
 }
