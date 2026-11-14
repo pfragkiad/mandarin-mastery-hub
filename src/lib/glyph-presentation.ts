@@ -31,10 +31,12 @@ export function pureComponentForm(glyph: string): boolean {
   return radicalIdentity(glyph).kind === 'variant' && !DUAL_CHARACTERS.has(glyph);
 }
 
-/** Drop source "rad. 53" / "radical number 94" notes from displayed translations; the
- * Kangxi index already appears in its own places. Keeps the original when nothing else remains. */
+/** Drop source "rad. 53" / "radical number 94" / "Kangxi radical 134" notes from displayed
+ * translations; the Kangxi index already appears in its own places. The source data also
+ * carries the misspelling "Kangzi radical 134" (臼), so both spellings are dropped.
+ * Keeps the original when nothing else remains. */
 export function displayMeaning(meaning: string): string {
-  const parts = meaning.split(/;\s*/).filter(part => !/^(?:Kangxi\s+)?rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
+  const parts = meaning.split(/;\s*/).filter(part => !/^(?:Kang[xz]i\s+)?rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
   return parts.length ? parts.join('; ') : meaning;
 }
 
@@ -43,7 +45,7 @@ export function displayMeaning(meaning: string): string {
 export function variantMeaning(glyphs: string[]): string {
   const originals = [...new Set(glyphs.map(glyph => {
     const heading = radicalForms(glyph)[0]?.family.kangxiHeading ?? glyph;
-    return displayMeaning(catalog.radicals.find(row => row[0] === heading)?.[2] ?? '').split(/;\s*/).filter(part => !/^(?:Kangxi )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ');
+    return displayMeaning(catalog.radicals.find(row => row[0] === heading)?.[2] ?? '').split(/;\s*/).filter(part => !/^(?:Kang[xz]i )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ');
   }).filter(Boolean))];
   const forms = glyphs.join(' / ');
   return originals.length ? `${originals.join('; ')}; component form of ${forms}` : `Component form of ${forms}`;
