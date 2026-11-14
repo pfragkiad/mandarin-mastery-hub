@@ -3044,7 +3044,7 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .game-missed li.is-skipped > :not(button[role='checkbox']) { opacity: .45; }
 .game-missed .pinyin { font-size: 18px; font-weight: 400; color: var(--terracotta); }
 .game-missed .example-listen.is-playing { color: var(--terracotta); }
-.game-missed-note { font-size: 14px; color: var(--foreground); min-width: 0; }
+.game-missed-note { font-size: 18px; color: var(--foreground); min-width: 0; }
 .game-missed-correct { font-size: 13px; color: var(--grade-high); text-align: right; }
 .game-missed-hanzi { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 2px 8px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 24px; line-height: 1.2; color: var(--foreground); text-decoration: none; transition: border-color .2s, color .2s; }
 .game-missed-hanzi.traditional-character { color: var(--traditional); }
