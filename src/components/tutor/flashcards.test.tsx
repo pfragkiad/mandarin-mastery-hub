@@ -91,7 +91,7 @@ describe('Saved deck', () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.getByRole('button', { name: /Saved · All vocabulary · Chinese → English · 1 card/ })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
-    expect(screen.getByText('hello', { selector: '[aria-hidden="false"] .meaning' })).toBeInTheDocument();
+    expect(screen.getByText('hello', { selector: '[aria-hidden="false"] .flash-word' })).toBeInTheDocument();
   });
 });
 
