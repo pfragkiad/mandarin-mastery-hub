@@ -3327,7 +3327,6 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .catalog-detail-head .catalog-detail-pinyin-row > h2 { margin: 0 0 0 6px; flex: 1 1 14em; min-width: 0; }
 /* Inline flow so a long translation continues after the speaker and wraps underneath the pinyin. */
 .catalog-detail-pinyin-row:has(> h2) { display: block; }
-.catalog-detail-pinyin-row:has(> h2) > :is(button, a, .multi-reading) { display: inline-flex; vertical-align: middle; margin-left: 6px; }
 .catalog-detail-head .catalog-detail-pinyin-row > h2 { display: inline; margin: 0 0 0 10px; }
 /* Reading unit: pinyin + speaker + chart link never split; the translation avoids orphaned last words. */
 .catalog-detail-reading { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; vertical-align: baseline; }
