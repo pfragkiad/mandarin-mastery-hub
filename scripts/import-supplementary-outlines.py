@@ -81,9 +81,9 @@ def recorded_count(character: str, family: int) -> int:
     for fam in radical_file['families']:
         if fam['id'] == family:
             for form in fam['forms']:
-                if form['character'] == character and form['record']['status'] == 'recorded':
-                    return len(form['record']['strokes'])
-    sys.exit(f'{character} has no recorded stroke sequence in radical #{family}')
+                if form['character'] == character and form['strokeCount']:
+                    return form['strokeCount']
+    sys.exit(f'{character} has no recorded stroke count in radical #{family}')
 
 
 def main() -> None:
