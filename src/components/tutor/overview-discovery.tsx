@@ -47,17 +47,23 @@ function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase
  * content. On phones each card collapses to one row like the Start games: section icon,
  * name + count, then the current pick on one line (hanzi then meaning, cut off with an
  * ellipsis); the round shuffle button and a small chevron sit on the right. The whole row
- * toggles: this button's ::after stretches over the row (see styles.css "Start random rows")
- * while the shuffle button sits above it, so the chevron is only a decorative cue.
+ * toggles: the toggle button (the name line) has an ::after that stretches over the row (see
+ * styles.css "Start random rows"), and the icon and pick line let clicks fall through to it
+ * (pointer-events: none), while the shuffle button sits above it, so the chevron is only a
+ * decorative cue. `pickAction` (the pinyin line's listen button) sits inline right after the
+ * pick text; it lives outside the toggle button because buttons cannot nest.
  */
-export function DiscoveryRowToggle({ open, onToggle, controls, icon, label, count, pick }: { open: boolean; onToggle: () => void; controls: string; icon: React.ReactNode; label: string; count: number | null; pick: React.ReactNode }) {
-  return <button type="button" className="discovery-row-toggle" aria-expanded={open} aria-controls={controls} onClick={onToggle}>
+export function DiscoveryRowToggle({ open, onToggle, controls, icon, label, count, pick, pickAction }: { open: boolean; onToggle: () => void; controls: string; icon: React.ReactNode; label: string; count: number | null; pick: React.ReactNode; pickAction?: React.ReactNode }) {
+  const pickId = `${controls}-pick`;
+  return <div className="discovery-row-main">
     <span className="stat-icon" aria-hidden="true">{icon}</span>
     <span className="discovery-row-text">
-      <span className="discovery-row-name"><strong>{label}</strong><span>{count === null ? '—' : count.toLocaleString('en-US')}</span></span>
-      <span className="discovery-row-pick">{pick}</span>
+      <button type="button" className="discovery-row-toggle" aria-expanded={open} aria-controls={controls} aria-describedby={pickId} onClick={onToggle}>
+        <span className="discovery-row-name"><strong>{label}</strong><span>{count === null ? '—' : count.toLocaleString('en-US')}</span></span>
+      </button>
+      <span className="discovery-row-pick"><span id={pickId} className="discovery-row-pick-text">{pick}</span>{pickAction}</span>
     </span>
-  </button>;
+  </div>;
 }
 
 /** The chevron after the shuffle button on phone rows; purely visual (the row toggle owns the click). */
@@ -157,8 +163,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   const bodyId = `discovery-body-${category}`;
   const ink = entry ? glyphCardInk(category as LibraryKind, entry.script, isRadicalGlyph(entry, category as LibraryKind)) : '';
   // Phones: the closed row's second line shows the translation or the pinyin (Preferences →
-  // Start random rows). With pinyin chosen, a small listen button joins the shuffle on the
-  // right (CSS shows it only on phone rows); the opened detail is unchanged either way.
+  // Start random rows). With pinyin chosen, a small listen button sits right after the pinyin
+  // (CSS shows it only on closed phone rows); the opened detail is unchanged either way.
   const rowLine = preferences.discoveryRowLine ?? 'meaning';
   const rowPinyin = rowLine === 'pinyin' && preferences.pinyin && pinyin !== '—';
 
@@ -173,8 +179,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           </span>
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
-          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}/>
-        {rowPinyin && record && <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span>}
+          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}
+          pickAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
           <Shuffle />
         </Button>
