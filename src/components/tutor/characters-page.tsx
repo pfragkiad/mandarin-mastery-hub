@@ -36,7 +36,7 @@ import { RadicalIdentityNote } from './radical-identity';
 import { RadicalVariantEtymology } from './radical-variant-etymology';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
-import { glyphPresentation } from '@/lib/glyph-presentation';
+import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
 import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
@@ -253,7 +253,9 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const [audioError, setAudioError] = useState<string | null>(null);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
-  const tileMeaning = kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(info.meaning) : info.meaning;
+  // Reviewed per-reading meanings (干 gān / gàn) show every reading's senses on the grid card.
+  const splitMeaning = !info.component && !fallback ? cardMeaning(entry.hanzi, entry.pinyin, entry.meaning) : info.meaning;
+  const tileMeaning = kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(splitMeaning) : splitMeaning;
   const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : info.canonicalRadical ? [info.canonicalRadical] : [];
   // Radicals never show a breakdown (their strokes live in Practice), so their cards carry no indicator either.
   const hideDecomposition = kind === 'Radicals' || ((kind === 'Characters' || kind === 'Components') && radicalIdentity(entry.hanzi).radicals.length > 0);
