@@ -1465,6 +1465,19 @@ html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-fo
    sheet, and the inline form only shows briefly (first paint, before the screen-size check
    runs), where a shorter dropdown sat beside the full-height search box. Inline dropdowns
    therefore always match the search box at every width. */
+/* Saved-only bookmark toggle (saved-filter.tsx): sits right after the last dropdown on wide
+   screens and beside the phone Filters button; pressed = secondary tint + filled bookmark.
+   Matches the dropdown height it sits beside (58px in Comfortable library forms). */
+.saved-filter-toggle { height: 36px; gap: 6px; padding-inline: 10px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.saved-filter-toggle.selected { background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
+.saved-filter-toggle svg { width: 16px; height: 16px; }
+html[data-display-size='comfortable'] .library-page .filter-bar.shared-filter-form:has(.search-field) > .saved-filter-toggle { height: 58px; padding-inline: 14px; }
+html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; height: 18px; }
+/* "Saved only" row: first option in the phone Filters drawer, framed like a dropdown. */
+.saved-filter-row { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); cursor: pointer; font-size: var(--ui-control-size, 14px); }
+.saved-filter-row > svg { width: 18px; height: 18px; flex-shrink: 0; }
+.saved-filter-row-label { flex: 1 1 auto; min-width: 0; }
+.saved-filter-row-count { color: var(--muted-foreground); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .filter-submit { display: flex; gap: 2px; align-items: center; }
 .filter-submit button { height: 36px; }
 .filter-submit button[type='button'] { width: 32px; }
