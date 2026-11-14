@@ -26,9 +26,10 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference',
     {/* Practice renders the tiles inside its reading panel, where the Kangxi ID
         already appears as a pill — hideLabel drops the redundant heading there. */}
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>RADICAL FAMILY · KANGXI #{family.id}</span><SourceInfo inline className="detail-footnote">Family meaning · Unicode Unihan 17.0.0<br/>Forms · cjklib C-locale · cnchar-order 3.2.6<br/>Family readings are shared with variant forms that lack their own recorded name.<br/><a href="/data/radical-families-source.json" target="_blank" rel="noreferrer">Source records and license notices</a></SourceInfo></h3>}
-    {/* Switch trays set --form-cols so wrapped rows stay balanced and equal-width
-        (formSwitchColumns: five forms wrap 3+2, never 4+1). */}
-    <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`} style={layout === 'switch' ? { '--form-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
+    {/* Switch trays with more forms than fit one row set --form-cols so wrapped rows stay
+        balanced and equal-width (formSwitchColumns: five forms wrap 3+2, never 4+1); the
+        CSS also gives those trays the header's full width so the tiles keep their size. */}
+    <div className="radical-form-list" role="group" aria-label={`Forms of Kangxi radical ${family.id}`} style={layout === 'switch' && forms.length > 4 ? { '--form-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
       {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
       {layout === 'switch' && <FormSwitchThumb/>}
       {/* Purple marks exact recorded Traditional forms: historical Kangxi headings

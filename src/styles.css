@@ -2580,10 +2580,13 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
    tiles (glyph beside label + strokes) in one tray. Recall blanks the glyph box. */
 .form-switch { margin: 0; border: 0; padding: 0; }
 .form-switch .radical-form-list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--background) 45%, var(--card)); }
-/* Switch trays carry --form-cols (form-switch-columns.ts): an equal-width grid whose
-   column count balances wrapped rows, so five forms wrap 3+2 instead of 4+1 and no tile
-   stretches wider than its siblings. Phones keep the flex wrap below. */
-.form-switch .radical-form-list[style] { display: grid; grid-template-columns: repeat(var(--form-cols), minmax(0, 1fr)); }
+/* Switch trays carry --form-cols (form-switch-columns.ts) once forms wrap: an equal-width
+   grid whose column count balances the rows, so five forms wrap 3+2 instead of 4+1 and no
+   tile stretches wider than its siblings. The tray takes the header's full width (its flex
+   section grows) so the tiles keep their usual size instead of collapsing to min-width.
+   Phones keep the flex wrap below. */
+.form-switch .radical-form-list[style] { display: grid; grid-template-columns: repeat(var(--form-cols), minmax(0, 1fr)); width: 100%; }
+.practice-header-main:has(.radical-form-list[style]) .practice-header-forms { flex: 1 1 100%; }
 html .practice-header .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: 9px; background: transparent; color: var(--foreground); }
 .practice-header .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
 .practice-header .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
