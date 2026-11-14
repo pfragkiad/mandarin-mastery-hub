@@ -9,12 +9,13 @@ export type PracticeSearch = { character?: string; stroke?: string; family?: num
 
 /**
  * CardTopMeta repeats the footer metadata (rank · strokes, word type) inside the
- * card's top label row, prefixed by a dot. It is display:none everywhere except
- * Comfortable cards (and Compact word cards), where the footer text is hidden instead,
- * so only one copy is ever visible or read aloud.
+ * card's top label row, prefixed by a dot when a label precedes it. Glyph cards and
+ * Words cards show it in both Compact and Comfortable (the footer text is hidden
+ * instead), so only one copy is ever visible or read aloud.
  */
-export function CardTopMeta({ children }: { children: ReactNode }) {
-  return <span className="card-top-meta"><span aria-hidden="true">· </span>{children}</span>;
+export function CardTopMeta({ children, lead = false }: { children: ReactNode; lead?: boolean }) {
+  // `lead`: the metadata opens the label row (no category word before it), so it drops the dot.
+  return <span className={`card-top-meta${lead ? ' is-lead' : ''}`}>{!lead && <span aria-hidden="true">· </span>}{children}</span>;
 }
 
 /**
