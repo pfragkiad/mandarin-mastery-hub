@@ -8,7 +8,7 @@ import type { MeaningPart } from '@/lib/meaning-pointers';
 // Input: `items`, the exact recorded readings in their catalogue order with their reviewed
 // meanings (catalog-store readingMeanings, which fails closed to the combined meaning).
 // An item may carry `parts` (meaningPointers for that reading) to add "→ 幹" links to
-// senses owned by a related character (干 gàn "to do; trunk").
+// senses owned by a related character (干 gàn shows 幹's recorded "trunk of tree or of human body").
 // No state; the speakers stay in the pinyin row above, so this only labels each meaning.
 export function ReadingMeanings({ items }: { items: { reading: string; meaning: string; parts?: MeaningPart[] | null }[] }) {
   return <h2 className="reading-meanings pointed-meaning">

@@ -14,11 +14,11 @@ describe('干 meaning and readings', () => {
   it('drops the pointer when the recorded meaning changes', () => {
     expect(meaningPointers('干', 'oppose, offend; invade; dry')).toBeNull();
   });
-  it('splits like 了: gān keeps the recorded senses, gàn reads "to do; trunk"', () => {
-    expect(readingMeanings('干')).toEqual([{ reading: 'gān', meaning: 'oppose, offend; invade; dried' }, { reading: 'gàn', meaning: 'to do; trunk' }]);
+  it('splits like 了: gān keeps the recorded senses, gàn reads 幹's recorded translation', () => {
+    expect(readingMeanings('干')).toEqual([{ reading: 'gān', meaning: 'oppose, offend; invade; dried' }, { reading: 'gàn', meaning: 'trunk of tree or of human body' }]);
   });
-  it('points gàn "trunk" to 幹 only on the gàn line', () => {
-    expect(meaningPointers('干', 'oppose, offend; invade; dried', 'to do; trunk', 'gàn')).toEqual([{ text: 'to do' }, { text: 'trunk', related: '幹' }]);
+  it('points the gàn line to 幹 only on the gàn line', () => {
+    expect(meaningPointers('干', 'oppose, offend; invade; dried', 'trunk of tree or of human body', 'gàn')).toEqual([{ text: 'trunk of tree or of human body', related: '幹' }]);
     expect(meaningPointers('干', 'oppose, offend; invade; dried', 'oppose, offend; invade; dried', 'gān')?.find(part => part.related)?.related).toBe('乾');
   });
   it('records both gān and gàn, each bound to its own recording', () => {
