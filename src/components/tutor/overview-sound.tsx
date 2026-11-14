@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { DetailsIcon } from './practice-icons';
 import { useWorkspace } from './workspace';
 import { usePinyinPlayer, sound } from './pinyin-shared';
 import { DiscoveryRowChevron, DiscoveryRowToggle } from './overview-discovery';
