@@ -57,7 +57,7 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   const target = fake.create.mock.calls[0]?.[1];
   expect(['你', '好']).toContain(target);
   fireEvent.click(screen.getByRole('button', { name: 'Pass card' }));
-  fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+  fireEvent.click(screen.getByRole('button', { name: 'See results' }));
   fireEvent.click(screen.getByRole('button', { name: /^Save / }));
   expect(state.toggleSaved).toHaveBeenCalledWith('word-hello');
   expect(screen.getByRole('link').getAttribute('href')).toBe('/vocabulary?tab=word&word=word-hello');
