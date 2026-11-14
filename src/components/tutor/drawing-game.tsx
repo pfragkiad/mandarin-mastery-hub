@@ -12,6 +12,7 @@ import {
   drawingWordPool,
   shuffledDrawingDeck,
   type DrawingCard,
+  type DrawingResult,
   type DrawingSearch,
 } from "@/lib/drawing-game";
 import { DraftFilterForm } from "./filter-form";
@@ -75,16 +76,22 @@ export function DrawingGamePage({
   const done = deck !== null && (session.ended === true || answers.length >= deck.length);
   const card = done ? undefined : deck?.[answers.length];
   const skipped = session.skipped ?? [];
+  // The current card's answer as soon as it is drawn or passed (before Next card), keyed by round
+  // and position so a later card never inherits it. Counter, progress and End confirmation use it.
+  const [settled, setSettled] = useState<{ key: string; result: DrawingResult } | null>(null);
+  const cardKey = `${round}:${answers.length}`;
+  const pending = card && settled?.key === cardKey ? settled.result : undefined;
+  const live = card && pending ? [...answers, { entry: card, result: pending }] : answers;
   const roundSize = deckSize === "all" ? pool.length : Math.min(deckSize, pool.length);
-  const review = answers
+  const review = live
     .filter((answer) => answer.result === "passed" || answer.result === "guided")
     .map((answer) => answer.entry);
   const kept = review.filter((entry) => !skipped.includes(entry.id));
   // Why each card is on the review list: passed without drawing, or drawn with the guide/hints.
-  const reasons = new Map(answers.flatMap((answer) => (answer.result === "passed" || answer.result === "guided" ? [[answer.entry.id, answer.result] as const] : [])));
+  const reasons = new Map(live.flatMap((answer) => (answer.result === "passed" || answer.result === "guided" ? [[answer.entry.id, answer.result] as const] : [])));
   const passedCount = answers.filter((answer) => answer.result === "passed").length;
   const guidedCount = answers.filter((answer) => answer.result === "guided").length;
-  const correct = answers.filter((answer) => answer.result === "correct").length;
+  const correct = live.filter((answer) => answer.result === "correct").length;
   const unavailable = answers.filter((answer) => answer.result === "unavailable").length;
   const cardsUnit = (n: number) => `${n} ${n === 1 ? "card" : "cards"}`;
   // Play-bar summary of the settings a round is dealt with, e.g. "Characters · Top 100 · 10 cards".
@@ -126,10 +133,11 @@ export function DrawingGamePage({
   };
   const end = useRoundEnd({
     active: Boolean(card),
-    answered: answers.length,
+    answered: live.length,
     onFinish: () => {
       setSettingsOpen(false);
-      setSession((previous) => ({ ...previous, ended: true, board: undefined }));
+      // Ending keeps a card that was already answered but not yet moved past.
+      setSession((previous) => ({ ...previous, answers: live, ended: true, board: undefined }));
     },
     onQuit: changeSettings,
   });
@@ -355,7 +363,7 @@ export function DrawingGamePage({
               </div>
               <progress
                 className="drawing-progress"
-                value={answers.length}
+                value={live.length}
                 max={deck?.length ?? 1}
                 aria-label="Round progress"
               />
@@ -363,6 +371,7 @@ export function DrawingGamePage({
                 key={`${round}:${card.id}`}
                 entry={card}
                 restored={board}
+                onSettle={(result) => setSettled({ key: cardKey, result })}
                 onPractice={(snapshot) => setSession((previous) => ({ ...previous, board: snapshot }))}
                 onFinish={(result) =>
                   setSession((previous) => ({
@@ -372,7 +381,7 @@ export function DrawingGamePage({
                   }))
                 }
               />
-              <p className="game-play-keys">Esc ends the round</p>
+              <p className="game-play-keys">Enter next card · Esc ends the round</p>
             </div>
           )}
         </section>
