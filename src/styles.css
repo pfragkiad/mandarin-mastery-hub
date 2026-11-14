@@ -2302,6 +2302,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    on it, and every pinyin reading uses the same size and weight. */
 .pinyin-drill-feedback, .pinyin-drill-feedback :is(.pinyin-right, .pinyin-wrong, .pinyin-compare, button) { align-items: baseline; }
 .pinyin-drill-feedback svg { align-self: center; }
+/* Compare speakers hug their text so the centred icon sits on the reading, not below it. */
+.pinyin-drill-feedback .pinyin-compare button { height: auto; min-height: 0; padding-block: 4px; line-height: 1.4; }
 .pinyin-drill-feedback :is(.pinyin, [lang='zh-Latn-pinyin']) { font-size: 16px; font-weight: 400; }
 .pinyin-next { margin-left: auto; }
 .pinyin-type-form { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
