@@ -19,6 +19,8 @@ export type CatalogFile = {
   componentRadicals?: Record<string, string>;
   /** Reviewed meaning for each reading of a multi-reading character (see readingMeaning). */
   readingMeanings?: Record<string, ReadingMeaningRecord>;
+  /** Reviewed links from one meaning sense to the related character that owns it (meaning-pointers.ts). */
+  meaningPointers?: Record<string, import('./meaning-pointers').MeaningPointerRecord>;
 };
 
 /** One owner-reviewed split of a character's combined dictionary meaning by reading.
@@ -30,6 +32,7 @@ export const catalog = {
   characters: [] as CatalogRow[], radicals: [] as CatalogRow[], components: [] as CatalogRow[], strokes: [] as CatalogRow[],
   trees: {} as Record<string, DecompositionNode>, readingAudio: {} as CatalogFile['readingAudio'], audio: {} as CatalogFile['audio'], componentRadicals: {} as Record<string, string>,
   readingMeanings: {} as Record<string, ReadingMeaningRecord>,
+  meaningPointers: {} as NonNullable<CatalogFile['meaningPointers']>,
   radicalIdentities: { schemaVersion: 1, sources: {}, identities: {} } as RadicalIdentityFile,
   radicalStrokes: { schemaVersion: 1, source: '', records: {} } as RadicalStrokeFile,
 };
@@ -40,6 +43,7 @@ export function hydrateCatalog(data: CatalogFile, identities?: RadicalIdentityFi
   for (const key of ['characters', 'radicals', 'components', 'strokes'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
   catalog.readingMeanings = data.readingMeanings ?? {};
+  catalog.meaningPointers = data.meaningPointers ?? {};
   if (identities) catalog.radicalIdentities = identities;
   if (strokes) catalog.radicalStrokes = strokes;
   catalog.loaded = true; catalog.version += 1;
