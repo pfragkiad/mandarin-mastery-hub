@@ -44,7 +44,7 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   // before moving to another game; the Sound chart has no switcher.
   usePublishSections(mode === 'chart' ? 'chart' : 'games', null, { beforeSwitch: () => player.stop() });
 
-  return <div className="page-enter library-page pinyin-page">
+  return <div className={`page-enter library-page pinyin-page${mode === 'chart' ? '' : ' game-page'}`}>
     <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">PINYIN · 拼音 · LISTEN, COMPARE, REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">
         Recordings · <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.license}<br/>
         {data.audioSource.credits}<br/>
@@ -52,6 +52,8 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
         Neutral-tone recordings withdrawn by the source<br/>
         Syllables and tones · <a href={data.inventorySource.url} target="_blank" rel="noreferrer">CC-CEDICT</a> · {data.inventorySource.license}
       </SourceInfo>}</h1></div>
+      {/* Games only (like the Hanzi games' 记/写); the Sound chart keeps its plain title. */}
+      {mode !== 'chart' && <span className="heading-hanzi">听<span>tīng</span></span>}
     </div>
     <div className="pinyin-body">
       {failed === 'stale' ? <div className="record-gap pinyin-absent"><p>This page is holding an out-of-date list of recordings. <Button variant="link" size="sm" onClick={() => window.location.reload()}>Reload the page</Button></p></div>
