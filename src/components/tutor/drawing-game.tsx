@@ -190,26 +190,6 @@ export function DrawingGamePage({
                         <option key={value}>{value}</option>
                       ))}
                     </select>
-                    <div className="vocabulary-saved-filter" role="group" aria-label="Saved cards">
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        className={!draft.saved ? "selected" : ""}
-                        aria-pressed={!draft.saved}
-                        onClick={() => patch({ saved: undefined })}
-                      >
-                        All
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        className={draft.saved ? "selected" : ""}
-                        aria-pressed={Boolean(draft.saved)}
-                        onClick={() => patch({ saved: true })}
-                      >
-                        Saved<span className="catalog-tab-count">{savedCount}</span>
-                      </Button>
-                    </div>
                     {draftKind === "Words" && (
                       <>
                         <select
