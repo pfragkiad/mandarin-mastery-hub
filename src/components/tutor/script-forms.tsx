@@ -55,7 +55,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   if (forms.length < 2) return null;
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className={`radical-family-section script-forms${layout === 'switch' ? ' form-switch' : ''}`}>
-    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote">{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</SourceInfo></h3>}
+    {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote"><ScriptFormsNote forms={forms} family={family}/></SourceInfo></h3>}
     {/* Switch trays with more forms than fit one row set --form-cols so wrapped rows stay
         balanced and equal-width (formSwitchColumns: five forms wrap 3+2, never 4+1); the
         CSS also gives those trays the header's full width so the tiles keep their size. */}
@@ -79,6 +79,22 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
     </div>
     {!family && <AssociationNotes forms={forms.map(entry => entry.hanzi)}/>}
   </div>;
+}
+
+/** Provenance of a form group (script links, or the radical family behind component forms).
+ *  Shown in the SCRIPT/COMPONENT FORMS heading's ⓘ, or — when the heading is hidden, as on
+ *  the detail card's form switch — merged into the title's single source ⓘ via
+ *  scriptFormsSourceNote, so a card never shows two separate ⓘ for one record. */
+function ScriptFormsNote({ forms, family }: { forms: LibraryEntry[]; family: ReturnType<typeof componentFamilyGroup> }) {
+  return <>{family ? <>Forms of Kangxi radical #{family.familyId} that share its reading · {catalog.radicalStrokes.source}{forms.some(entry => entry.script === 'Traditional') ? <><br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</> : null}</> : <>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}{forms.slice(1).some(entry => !associationNote(forms[0]!.hanzi, entry.hanzi)) && <><br/>No usage qualification is recorded for this pair. That does not prove the forms are interchangeable in every context.</>}</>}</>;
+}
+
+/** The form-group note for `glyph`'s card group, or null when the group has a single form. */
+export function useScriptFormsSourceNote(glyph: string, kind: ScriptFormKind) {
+  const { preferences } = useWorkspace();
+  const forms = cardFormRecords(glyph, kind, preferences.includeTraditional);
+  if (forms.length < 2) return null;
+  return <ScriptFormsNote forms={forms} family={kind === 'Components' ? componentFamilyGroup(glyph) : undefined}/>;
 }
 
 /** Hanzi of a form-switch tile. In Recall the glyph is replaced by an empty box of the
