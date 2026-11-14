@@ -12,7 +12,7 @@ import { Link } from '@tanstack/react-router';
 import { Search, Volume2, Bookmark, Check, GitBranch, MessageSquareText, Type } from 'lucide-react';
 import { PracticeIcon } from './practice-icons';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
@@ -49,7 +49,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
-import { useActivePill } from '@/lib/use-active-pill';
+import { usePublishSections, type SectionExtra } from '@/lib/section-switch';
 import { useOneLineTitle } from './one-line-title';
 
 const kinds: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
@@ -99,11 +99,8 @@ const hintNoun = (tone: HintTone) => tone === 'family' ? 'radical-family forms' 
 function CountHintBody({ count, hint, tone }: { count: number; hint: string; tone: HintTone }) {
   return <HintBody><strong className={`count-hint-title count-hint-${tone}`}>+{count.toLocaleString('en-US')} {hintNoun(tone)}</strong><br/>{hint}</HintBody>;
 }
-function TraditionalTabHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
-  return <Tooltip><TooltipTrigger asChild><span className={`catalog-tab-count catalog-tab-${tone}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</span></TooltipTrigger>
-    <TooltipContent side="bottom" align="start" collisionPadding={12} className={traditionalHintClass}><CountHintBody count={count} hint={hint} tone={tone}/></TooltipContent></Tooltip>;
 }
-/** Small-screen page-total version; hidden above 850px by CSS, where the tabs show the count. */
+/** Page-total version beside the card count (the kind switch moved to the header dropdown, which repeats it). */
 function TraditionalTotalHint({ count, hint, tone = 'traditional' }: { count: number; hint: string; tone?: HintTone }) {
   return <Popover>
     <PopoverTrigger className={`catalog-total-traditional${tone === 'family' ? ' catalog-total-family' : ''}`} aria-label={`Plus ${count.toLocaleString('en-US')} ${hintNoun(tone)}. ${hint}`}>+{count.toLocaleString('en-US')}</PopoverTrigger>
@@ -455,8 +452,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   });
   const rankSummary = filteredRanks.length ? { count: filteredRanks.length, min: Math.min(...filteredRanks), max: Math.max(...filteredRanks) } : undefined;
   const rankedTotal = filteredRanks.length;
-  // Phones hide the kind tabs (and their purple "+N"), so the top page counter
-  // repeats it after the card total. Only on the unfiltered All view, where the
+  // The top page counter repeats the kind's purple "+N" after the card total. Only on the unfiltered All view, where the
   // total equals the tab's card count the hint describes.
   const sharedHere = sharedTraditional[kind] ?? 0;
   const traditionalTotalHint = sharedHere > 0 && !savedOnly && !query && !strokeCount && !usage && tabCounts?.[kind] === filtered.length
