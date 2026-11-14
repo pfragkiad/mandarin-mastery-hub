@@ -2762,7 +2762,7 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
    page's own section pills at every width. Hover follows the shared tinted-badge
    feedback; the current section in the menu wears the side menu's --nav-active. */
-.breadcrumb-parent .crumb-phone { display: none; }
+.page-picker .crumb-phone { display: none; }
 .section-picker { display: inline-flex; align-items: center; gap: 6px; min-width: 0; margin: -6px -10px; padding: 6px 10px; border: 0; border-radius: 8px; background: transparent; color: var(--foreground); font: inherit; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; }
 .section-picker:hover, .section-picker[data-state='open'] { background: var(--nav-active); color: var(--primary); }
 .section-picker:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
@@ -2783,11 +2783,25 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 .section-picker-item.is-active .section-picker-check { visibility: visible; }
 /* Phones: the page name (serif) and the section button together form the header title. */
 @media (max-width: 850px) {
-  .topbar .breadcrumbs.has-picker > :is(.breadcrumb-parent, .crumb-sep, .section-picker) { display: inline-flex; }
+  .topbar .breadcrumbs.has-picker > :is(.crumb-sep, .section-picker) { display: inline-flex; }
   .topbar .breadcrumbs.has-picker { gap: 6px; min-width: 0; }
-  .breadcrumb-parent { flex-shrink: 0; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--foreground); }
-  .breadcrumb-parent .crumb-wide { display: none; }
-  .breadcrumb-parent .crumb-phone { display: inline; }
+  .page-picker .crumb-wide { display: none; }
+  .page-picker .crumb-phone { display: inline; }
   .topbar .breadcrumbs > .crumb-sep { width: 14px; color: var(--muted-foreground); flex-shrink: 0; }
   .topbar .section-picker { margin: 0; padding: 0 10px 0 12px; height: 34px; font-size: 14px; border: 1px solid var(--border); border-radius: 999px; }
+  /* The page step stays the serif header title, with only a small chevron as its affordance. */
+  .topbar .section-picker.page-picker { flex-shrink: 0; height: 40px; margin-left: -8px; padding: 0 6px 0 8px; border: 0; border-radius: 10px; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; }
+}
+
+/* Wider windows: the header trail is navigation now (page and section dropdowns),
+   so it reads at menu size rather than as a small caption. */
+@media (min-width: 851px) {
+  .topbar .breadcrumbs, html[data-display-size='comfortable'] .topbar .breadcrumbs { gap: 12px; font-size: 15px; }
+  html[data-display-size='comfortable'] .topbar .breadcrumbs { font-size: 16px; }
+  .topbar .breadcrumbs > svg { width: 15px; height: 15px; }
+  .topbar .section-picker { gap: 8px; padding: 7px 12px; margin: -7px -12px; border-radius: 10px; }
+  .topbar .section-picker > svg { width: 15px; height: 15px; }
+  .topbar .section-picker.page-picker { font-weight: 500; }
+  .topbar .breadcrumbs > .crumb-sep { margin-left: 12px; }
+  .topbar .breadcrumbs > .page-picker { margin-left: -12px; }
 }
