@@ -109,3 +109,4 @@
 - [done] Header trail larger on wide screens; page step is a dropdown (Glyphs, Vocabulary, Sound chart, Hanzi games, Pinyin games)
 - [done] Phones: plain page title (no page dropdown); bottom bar uses menu names Vocabulary and Sound chart
 - [done] Grid cards, search results and flashcards show every reading's reviewed meaning (干 gān / gàn) joined with " / "
+- [done] Grid cards mark reviewed sense pointers (干: dried → 乾, gàn → 幹) as unlinked markers
