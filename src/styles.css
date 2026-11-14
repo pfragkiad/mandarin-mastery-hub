@@ -242,7 +242,7 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
-.example-listen { width: 26px; height: 26px; flex: none; color: var(--primary); }
+.example-listen { width: 26px; height: 26px; flex: none; }
 .example-listen svg { width: 14px; height: 14px; }
 .example-audio-error { font-size: 11px; color: var(--foreground); }
 .glyph-usage-reference .pinyin { font-size: 13px; }
@@ -746,7 +746,6 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .kangxi-identity-rows { display: grid; gap: var(--record-tile-gap); }
 .kangxi-identity-item .component-pronunciation { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
 .kangxi-identity-item .pinyin { min-width: 0; overflow-wrap: anywhere; }
-.kangxi-identity-item .decomposition-listen { color: var(--primary); }
 .kangxi-identity-item small { font-size: 10px; color: var(--muted-foreground); }
 .kangxi-identity-meaning { font-size: 13px; color: var(--foreground); }
 .kangxi-identity-badge { font-size: 8px; }
@@ -1327,8 +1326,10 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .practice-page-content .practice-detail:empty { display: none; }
 .radical-tag { font-size: 8px; vertical-align: middle; }
 .catalog-rank-label { display: inline-flex; align-items: center; gap: 4px; }
-.catalog-detail .example-listen:not(:disabled), .catalog-detail .component-pronunciation button:not(:disabled) { color: var(--foreground); }
-.catalog-detail .example-listen:disabled, .catalog-detail .component-pronunciation button:disabled { color: var(--muted-foreground); }
+/* One speaker style everywhere (details, Start, game results…): white for a recording,
+   greyed by .audio-tts-only for browser speech, muted when unavailable. */
+.example-listen:not(:disabled), .catalog-detail .component-pronunciation button:not(:disabled) { color: var(--foreground); }
+.example-listen:disabled, .catalog-detail .component-pronunciation button:disabled { color: var(--muted-foreground); }
 .catalog-detail .catalog-facts { grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); column-gap: 40px; }
 .catalog-facts .catalog-rank-label { min-height: 14px; line-height: 14px; }
 .catalog-facts .catalog-rank-label .source-info-trigger { width: 14px; height: 14px; }
