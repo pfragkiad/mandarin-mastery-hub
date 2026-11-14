@@ -60,8 +60,19 @@ describe('supplementary handwriting outlines', () => {
     expect((await loadStrokeGeometry('⺿')).source?.exact).toBe(false);
   });
 
-  // No source records these exact forms; they must keep failing closed, never borrowing a look-alike.
-  it.each(['⺁', '⺧', '⺪', '⺷', '⻊', '𧢲'])('keeps %s off the supplementary list', glyph => {
+  // Owner-reviewed Unicode EquivalentUnifiedIdeograph links whose AnimCJK outlines matched the
+  // radical file's recorded stroke names: marked not exact, counts equal to the radical file's.
+  it.each([['⺪', '𤴔', 5], ['⺷', '𦍌', 6], ['⻊', '𧾷', 7]] as const)('loads %s as the %s outline linked by review', async (glyph, ideograph, count) => {
+    stubFetch();
+    const geometry = await loadStrokeGeometry(glyph);
+    expect(geometry.data.strokes).toHaveLength(count);
+    expect(geometry.data.medians).toHaveLength(count);
+    expect(geometry.source).toMatchObject({ name: 'AnimCJK', recordedAs: ideograph, style: 'Mainland (ZhHans)', exact: false });
+  });
+
+  // No reviewed outline exists for these exact forms (⺁'s recorded 撇 start conflicts with 厂's 横);
+  // they must keep failing closed, never borrowing a look-alike.
+  it.each(['⺁', '⺧', '𧢲'])('keeps %s off the supplementary list', glyph => {
     const manifest = JSON.parse(readFileSync('src/data/supplementary-outlines.json', 'utf8'));
     expect(manifest[glyph]).toBeUndefined();
   });
