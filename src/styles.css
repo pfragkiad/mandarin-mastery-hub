@@ -2769,7 +2769,7 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 /* Comfortable (List) Words cards keep the headword-card class, so the Grid-only Words pull-in
    above must not reach them: List rows (Words and Phrases) align at 0.5px above phone width. */
 @media (min-width: 581px) {
-  .library-list-view .word-grid .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 0.5px; }
+  .word-grid.library-list-view .word-card.comfortable-word-card .catalog-card-indicators { margin-right: 0.5px; }
 }
 @media (max-width: 580px) {
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
