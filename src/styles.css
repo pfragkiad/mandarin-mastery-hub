@@ -3108,6 +3108,8 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-record .overview-record-link > strong, :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound .overview-record-link, .discovery-sound .discovery-sound-count { display: none; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 15px; }
   .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 15px; line-height: 1.5; display: block; overflow: visible; }
+  /* Sounds: the play-all speaker and the tone chips share one line. */
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound .discovery-tile-record { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-actions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin: 4px 0 0; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-body > .library-note { margin: 0; }
   /* Comfortable: the same rows, a size up. */
@@ -3121,5 +3123,6 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 20px; height: 20px; }
   html[data-display-size='comfortable'] .discovery-row-chevron { width: 20px; height: 20px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
-  html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: var(--ui-control-size); }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
 }
