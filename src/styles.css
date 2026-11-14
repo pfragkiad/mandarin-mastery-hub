@@ -3220,16 +3220,16 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
    container width until up to six boxes fit, keeping the square box and glyph-to-box ratio.
    --forms-per-row comes from the card (min(6, forms)); --form-ratio is box width / row font. */
 .library-page .word-card { --form-gap: 9px; --form-ratio: 1.34; }
-.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: 1fr auto auto 1fr; column-gap: 12px; row-gap: 2px; align-items: center; align-content: start; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
+.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 12px; row-gap: 2px; align-items: center; align-content: start; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
 .library-page .word-card .word-open .word-character { display: contents; }
 /* Boxes hug the top (not centred against a taller two-line translation) so every card's
    boxes start the same distance below the label row. */
 .library-page .word-card .word-open :is(.tile-hanzi-row, .word-hanzi-tile) { grid-column: 1; grid-row: 1 / -1; align-self: start; margin: 0; }
-/* Pinyin and translation sit in the two middle rows; the 1fr rows above and below absorb
-   the box's extra height, so the pair stays centred beside the box with the same row gap
-   between them as in the stacked layout (instead of the gap widening with the box). */
-.library-page .word-card .word-open .pinyin { grid-column: 2; grid-row: 2; align-self: end; margin: 0; }
-.library-page .word-card .word-open :is(.word-meaning, .catalog-entry-meaning) { grid-column: 2; grid-row: 3; align-self: start; margin: 0; }
+/* Pinyin starts level with the top of the box(es) and the translation follows it with the
+   same row gap as the stacked layout; the trailing 1fr row absorbs any extra height (a taller
+   box, or a card stretched by a taller neighbour), so the pinyin never drifts down. */
+.library-page .word-card .word-open .pinyin { grid-column: 2; grid-row: 1; align-self: start; margin: 0; }
+.library-page .word-card .word-open :is(.word-meaning, .catalog-entry-meaning) { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
 .library-page .word-card .word-open .tile-hanzi-row { --forms: var(--forms-per-row, 1); flex-wrap: nowrap; gap: var(--form-gap); max-width: none; }
 .library-page .word-card .word-open .tile-hanzi-row:has(> .tile-form:nth-child(7)) { flex-wrap: wrap; }
 .library-page .word-card .word-open .tile-form { flex: none; }
