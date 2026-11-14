@@ -35,6 +35,17 @@ REVIEWED = [
     },
 ]
 
+# Exact code points (Nov 2026 scan of all 303 radical-family forms): Hanzi Writer Data has no
+# file for these, but AnimCJK's Mainland (ZhHans) set records the SAME code point, and its
+# stroke count equals the radical file's. No look-alike is involved, so recordedAs is the form itself.
+# Forms with no exact-code-point outline in either source (⺁ ⺧ ⺪ ⺴ ⺷ ⻊ 𧢲) stay unrecorded.
+for _character, _family in [('⺆', 13), ('牜', 93), ('⺶', 123), ('⻏', 163), ('⻗', 173)]:
+    REVIEWED.append({
+        'character': _character, 'family': _family,
+        'folder': 'svgsZhHans', 'recordedAs': _character, 'style': 'Mainland (ZhHans)',
+        'reviewNote': 'AnimCJK records this exact code point; stroke count matches the radical file.',
+    })
+
 PAIR = re.compile(r'(-?\d+(?:\.\d+)?)[ ,]+(-?\d+(?:\.\d+)?)')
 
 

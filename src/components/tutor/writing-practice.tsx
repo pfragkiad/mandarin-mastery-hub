@@ -302,7 +302,7 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
   const showStrokes = hasStrokes && panel === 'strokes' && !locked;
   const open = showStrokes || showDecomposition;
   const reopenPanel: PracticePanel = lastPanel.current === 'decomposition' && decomposition ? 'decomposition' : hasStrokes ? 'strokes' : 'decomposition';
-  const strokesInfo = <SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, linked to this form by review · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo>;
+  const strokesInfo = <SourceInfo inline className="detail-footnote">Stroke order powered by Hanzi Writer · character data loads online{outlineSource && <><br/>Outline: {outlineSource.name} · {outlineSource.style} {outlineSource.recordedAs}, {outlineSource.exact ? 'this exact form' : 'linked to this form by review'} · {outlineSource.license}</>}{mapped && <><br/>Make Me a Hanzi · Hanzi Writer Data 2.0.1<br/>Unreviewed mapping · actual character strokes, not substituted component outlines</>}</SourceInfo>;
   const tabId = (name: string) => `${drawerId}-${name}`;
   return (
     <div className={`stroke-guide${interactive ? '' : ' stroke-guide-readonly'}${open ? ' is-open' : ''}`}>
