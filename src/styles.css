@@ -3202,10 +3202,9 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .library-page .word-card .word-open[data-stacked] :is(.word-meaning, .catalog-entry-meaning) { grid-column: 1; grid-row: 3; }
 /* Compact: a little more room beside the boxes so their corner 部/繁 stamps clear the pinyin. */
 .library-page .word-card .word-open:has(.tile-form) { column-gap: 16px; }
-/* Grid cards sit side by side, so a taller neighbour must not push the tiles down: the
-   body hugs the top (align-content: start above), keeping every card's hanzi boxes at the
-   same height. Comfortable cards are one per row, so they keep their vertical centring. */
-.library-page .library-list-view .word-card .word-open { align-content: center; }
+/* Cards sit side by side, so a taller neighbour must not push the tiles down: the body
+   hugs the top (align-content: start above) in Compact AND Comfortable, keeping every
+   card's hanzi boxes at the same height across a row. */
 /* Shrunk stacked rows scale the corner stamps with the glyph (capped at their usual size). */
 .library-page .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(13px, max(8px, .36em)); }
 .library-page .library-list-view .word-card .word-open[data-stacked] .tile-form { --traditional-mark-size: min(14px, max(8px, .234em)); }
