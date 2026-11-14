@@ -2915,3 +2915,11 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
 .pointed-meaning .meaning-pointer.traditional-character span { color: var(--traditional); }
 .pointed-meaning .meaning-pointer:hover, .pointed-meaning .meaning-pointer:focus-visible { color: var(--accent-foreground); }
 .discovery-tile-actions { margin-top: 4px; align-self: stretch; }
+
+/* Compact glyph cards with a single form tile: pinyin over translation to the right of the
+   tile (the shared tile layout); cards with several form tiles keep the stacked layout. */
+.catalog-entry-grid:not(.library-list-view) .word-open:has(.tile-hanzi-row > .tile-form:only-child) { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; justify-items: start; text-align: left; }
+.catalog-entry-grid:not(.library-list-view) .word-open:has(.tile-hanzi-row > .tile-form:only-child) .word-character { display: contents; }
+.catalog-entry-grid:not(.library-list-view) .word-open:has(.tile-hanzi-row > .tile-form:only-child) .tile-hanzi-row { grid-column: 1; grid-row: 1 / 3; margin: 0; }
+.catalog-entry-grid:not(.library-list-view) .word-open:has(.tile-hanzi-row > .tile-form:only-child) .pinyin { grid-column: 2; grid-row: 1; align-self: end; margin: 0; }
+.catalog-entry-grid:not(.library-list-view) .word-open:has(.tile-hanzi-row > .tile-form:only-child) .word-meaning { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
