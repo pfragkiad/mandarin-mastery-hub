@@ -2939,6 +2939,9 @@ html .practice-header .form-switch-thumb.is-radical.is-traditional { background:
    bookmark sits alone at the row's right end (the hidden metadata span keeps the
    space-between layout from pulling the actions right). */
 .library-page .word-card .word-card-bottom { justify-content: flex-start; gap: 8px; }
+/* The labelled Compact buttons inherit the old 1px icon gap from .word-actions;
+   give them a readable 6px separation instead. */
+.library-page .word-card .card-footer-actions { gap: 6px; }
 /* Compact footers carry the same labelled Details/Trace/Recall buttons as Comfortable,
    shrunk to Compact scale; the bookmark stays an icon at the row's right end. */
 .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a {
