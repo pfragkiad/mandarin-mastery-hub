@@ -1743,10 +1743,12 @@ html[data-display-size='comfortable'] .filter-bar .reuse-filter { flex-shrink: 1
   .drawer-close > svg { width: 22px; height: 22px; }
   .mobile-scrim { position: fixed; inset: 0; background: var(--overlay); z-index: 29; }
   /* Bottom tab bar: four destinations plus More, each a 44px+ tap target. */
-  .phone-tabs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); position: fixed; left: 0; right: 0; bottom: 0; z-index: 28; height: calc(60px + env(safe-area-inset-bottom, 0px)); padding: 0 6px env(safe-area-inset-bottom, 0px); background: var(--card); border-top: 1px solid var(--border); }
+  .phone-tabs { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 28; height: calc(60px + env(safe-area-inset-bottom, 0px)); padding: 0 6px env(safe-area-inset-bottom, 0px); background: var(--card); border-top: 1px solid var(--border); }
   .phone-tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 44px; padding: 6px 2px; color: var(--muted-foreground); font-size: 11px; font-weight: 500; line-height: 1.1; background: transparent; border: 0; border-radius: 10px; cursor: pointer; transition: color .15s; }
   .phone-tab > svg { width: 22px; height: 22px; flex-shrink: 0; }
-  .phone-tab > span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* Tabs share the width by label length (flex), so the full menu names fit untruncated. */
+  .phone-tab { flex: 1 1 auto; }
+  .phone-tab > span { white-space: nowrap; }
   .phone-tab:hover, .phone-tab.is-active { color: var(--primary); }
   .phone-tab.is-active { font-weight: 650; }
   .phone-tab:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
@@ -2762,7 +2764,6 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the
    page's own section pills at every width. Hover follows the shared tinted-badge
    feedback; the current section in the menu wears the side menu's --nav-active. */
-.page-picker .crumb-phone { display: none; }
 .section-picker { display: inline-flex; align-items: center; gap: 6px; min-width: 0; margin: -6px -10px; padding: 6px 10px; border: 0; border-radius: 8px; background: transparent; color: var(--foreground); font: inherit; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; }
 .section-picker:hover, .section-picker[data-state='open'] { background: var(--nav-active); color: var(--primary); }
 .section-picker:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
@@ -2783,14 +2784,11 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
 .section-picker-item.is-active .section-picker-check { visibility: visible; }
 /* Phones: the page name (serif) and the section button together form the header title. */
 @media (max-width: 850px) {
-  .topbar .breadcrumbs.has-picker > :is(.crumb-sep, .section-picker) { display: inline-flex; }
+  .topbar .breadcrumbs.has-picker > :is(.crumb-sep, .section-picker:not(.page-picker)) { display: inline-flex; }
   .topbar .breadcrumbs.has-picker { gap: 6px; min-width: 0; }
-  .page-picker .crumb-wide { display: none; }
-  .page-picker .crumb-phone { display: inline; }
+  .topbar .breadcrumbs.has-picker > .topbar-title { flex-shrink: 0; }
   .topbar .breadcrumbs > .crumb-sep { width: 14px; color: var(--muted-foreground); flex-shrink: 0; }
   .topbar .section-picker { margin: 0; padding: 0 10px 0 12px; height: 34px; font-size: 14px; border: 1px solid var(--border); border-radius: 999px; }
-  /* The page step stays the serif header title, with only a small chevron as its affordance. */
-  .topbar .section-picker.page-picker { flex-shrink: 0; height: 40px; margin-left: -8px; padding: 0 6px 0 8px; border: 0; border-radius: 10px; font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.2; }
 }
 
 /* Wider windows: the header trail is navigation now (page and section dropdowns),

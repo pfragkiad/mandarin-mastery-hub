@@ -46,15 +46,16 @@ const settingsItem = { to: '/preferences' as const, name: 'Preferences', icon: S
 // Pequeno ícone por secção da biblioteca/vocabulário: cada secção fica assim
 // alcançável no trilho de ícones (sidebar colapsada), tal como os sub-itens de
 // Game; na sidebar expandida continuam só de texto.
-// Phone bottom tab bar: Start first, then the four main destinations (Vocabulary
-// shortened to "Vocab" so it never clips); "More" (a button, not a link)
+// Phone bottom tab bar: Start first, then the four main destinations under the
+// side menu's own names (Vocabulary, Sound chart; tabs size to their labels in CSS
+// so none clips; Games is the menu block name); "More" (a button, not a link)
 // opens the full menu drawer for Preferences and every sub-item.
 const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: GameIcon }[] = [
   { key: 'start', to: '/', label: 'Start', icon: LayoutGrid },
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
-  { key: 'vocabulary', to: '/vocabulary', label: 'Vocab', icon: BookOpen },
+  { key: 'vocabulary', to: '/vocabulary', label: 'Vocabulary', icon: BookOpen },
   { key: 'games', to: '/flashcards', label: 'Games', icon: Gamepad2 },
-  { key: 'pinyin', to: '/pinyin', label: 'Pinyin', icon: AudioLines },
+  { key: 'pinyin', to: '/pinyin', label: 'Sound chart', icon: AudioLines },
 ];
 export function TutorShell({ children }: { children: React.ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
@@ -163,8 +164,9 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
     </aside>
     <div className="main-shell"><header className="topbar"><div className={`breadcrumbs${pageKey ? ' has-picker' : ''}`}><span className="breadcrumb-home">My workspace</span><ChevronRight size={14}/>{pageKey
         // Page step (Glyphs ▾), then on sectioned pages the section step (Components ▾).
-        // Phones keep both as the header title (CSS); games say "Games" there.
-        ? <><SectionPicker level="page" page="Page" options={pageOptions} active={pageKey} beforeSwitch={published.beforeSwitch} label={picker ? <><span className="crumb-wide">{picker.parent}</span><span className="crumb-phone">{picker.phoneParent}</span></> : undefined}/>
+        // Phones swap the page dropdown for the plain serif title (the bottom tab bar
+        // already switches pages there); games say "Games" there, as the tab does.
+        ? <><SectionPicker level="page" page="Page" options={pageOptions} active={pageKey} beforeSwitch={published.beforeSwitch}/><span className="topbar-title">{picker?.phoneParent ?? current}</span>
           {picker && <><ChevronRight size={14} className="crumb-sep"/><SectionPicker page={picker.parent} options={picker.options} active={picker.active} stats={published.stats} beforeSwitch={published.beforeSwitch}/></>}</>
         : <><span>{current}</span>{/* Phones show only this page title (serif) in place of the breadcrumb trail. */}<span className="topbar-title">{current}</span></>}</div><div className="topbar-actions"><Button variant="ghost" className="search-trigger" title={`Search everything (${shortcut})`} aria-label={`Search everything (${shortcut})`} onClick={() => setSearching(true)}><Search/><span>Search</span><kbd>{shortcut}</kbd></Button>{/* Preferences gear: phones only (hidden by CSS above 850px, where the menu's bottom row covers it). */}<Button asChild variant="ghost" size="icon" className="prefs-link" title="Preferences" aria-label="Preferences"><Link to="/preferences"><Settings/></Link></Button><LibraryViewToggle/><span className="header-divider"/><Button variant="ghost" size="icon" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme === 'dark' ? <Sun/> : <Moon/>}</Button><span className="header-divider"/>{/* Account avatar: a placeholder for now. Its menu opens greyed out, so the
         spot is real without promising an account that doesn't exist yet. */}<DropdownMenu><DropdownMenuTrigger asChild><Button variant="ghost" className="avatar" aria-label="Account" title="Account"><span aria-hidden="true">学</span></Button></DropdownMenuTrigger><DropdownMenuContent align="end"><DropdownMenuItem disabled>Account — coming soon</DropdownMenuItem></DropdownMenuContent></DropdownMenu></div></header>
