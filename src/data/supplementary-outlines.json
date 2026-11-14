@@ -3,5 +3,30 @@
   "file": "/data/supplementary-outlines/2ebf.json",
   "recordedAs": "艹",
   "style": "Taiwan (ZhHant)"
+ },
+ "⺆": {
+  "file": "/data/supplementary-outlines/2e86.json",
+  "recordedAs": "⺆",
+  "style": "Mainland (ZhHans)"
+ },
+ "牜": {
+  "file": "/data/supplementary-outlines/725c.json",
+  "recordedAs": "牜",
+  "style": "Mainland (ZhHans)"
+ },
+ "⺶": {
+  "file": "/data/supplementary-outlines/2eb6.json",
+  "recordedAs": "⺶",
+  "style": "Mainland (ZhHans)"
+ },
+ "⻏": {
+  "file": "/data/supplementary-outlines/2ecf.json",
+  "recordedAs": "⻏",
+  "style": "Mainland (ZhHans)"
+ },
+ "⻗": {
+  "file": "/data/supplementary-outlines/2ed7.json",
+  "recordedAs": "⻗",
+  "style": "Mainland (ZhHans)"
  }
 }
