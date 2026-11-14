@@ -319,8 +319,15 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
     const el = tileRef.current; if (!el || typeof ResizeObserver === 'undefined') return;
     const measure = () => {
       delete el.dataset['stacked'];
+      delete el.dataset['wideMeaning'];
       const meaning = el.querySelector<HTMLElement>('.catalog-entry-meaning');
       if (meaning && getComputedStyle(el).display === 'grid' && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['stacked'] = '';
+      // List view, exactly three forms: CSS wraps them three per row only while the
+      // translation still fits its two-line clamp beside the wider row; a clipped
+      // translation keeps the 2+1 wrap so its column stays wide enough (styles.css
+      // data-wide-meaning).
+      const row = el.querySelector<HTMLElement>('.tile-hanzi-row');
+      if (meaning && row && row.querySelectorAll('.tile-form').length === 3 && el.closest('.library-list-view') && meaning.scrollHeight > meaning.clientHeight + 1) el.dataset['wideMeaning'] = '';
     };
     measure(); const observer = new ResizeObserver(measure); observer.observe(el); return () => observer.disconnect();
   }, [tileMeaning, displayedForms.length]);
