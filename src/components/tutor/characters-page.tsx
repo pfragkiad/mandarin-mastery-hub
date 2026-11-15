@@ -5,7 +5,7 @@ import { DetailSheet } from './detail-sheet';
 import { HintBody, SourceInfo } from '@/components/tutor/source-info';
 import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useSideFit } from './use-side-fit';
-import { useRadicalPillLabel } from './use-radical-pill-label';
+import { useCardChromeFit } from './use-card-chrome-fit';
 import { RadicalPill } from './radical-pill';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';

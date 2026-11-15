@@ -20,6 +20,7 @@ import { SentenceExample } from './sentence-example';
 import { SentenceSection, TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { useSideFit } from './use-side-fit';
+import { useCardChromeFit } from './use-card-chrome-fit';
 import { usePhrasePairing } from './phrase-pairing';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
@@ -127,11 +128,16 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const bodyRef = useRef<HTMLButtonElement>(null);
   useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
+  // Words/Phrases top rows keep one line too: the card chrome font steps down before the row
+  // wraps (use-card-chrome-fit.ts). No Radical pill on these cards, so the abbreviation step
+  // is switched off and only the font steps apply.
+  const rowRef = useRef<HTMLSpanElement>(null);
+  useCardChromeFit(rowRef, false, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
   return <><article data-entry-id={word.id} className={`word-card ${wordStyleTop ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    <div className="word-card-top"><span className="word-level-wrap">{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
+    <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
