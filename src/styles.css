@@ -1480,7 +1480,9 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 
 /* All library modes use the entire container; card density follows available space. */
 .library-page .catalog-workspace, .library-page .vocabulary-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
-.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); gap: 20px; }
+/* Compact cards drop to fewer per row before Details / Trace / Recall and the bookmark
+   (~265px with the card padding) stop fitting on one line, with a little slack for wider fonts. */
+.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 20px; }
 .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 20px; }
 @media(max-width:580px) {
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
@@ -3015,6 +3017,9 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
    as on Comfortable cards; the footer keeps only its actions (hidden text holds their place). */
 .catalog-entry-grid:not(.library-list-view) .catalog-card .card-top-meta { display: inline; font-size: 9px; letter-spacing: 0; color: var(--muted-foreground); }
 .catalog-entry-grid:not(.library-list-view) .catalog-card > .word-card-bottom > span:first-child { position: absolute; visibility: hidden; }
+/* Same for Compact Words/Phrases cards, whose footer metadata is already hidden: taken out of
+   the row so it never pushes Details / Trace / Recall right by the word type's width. */
+.library-page .word-grid:not(.library-list-view) .word-card.headword-card > .word-card-bottom > span:first-child { position: absolute; visibility: hidden; }
 /* Compact library footers mirror Comfortable: the icon actions stay left and the
    bookmark sits alone at the row's right end (the hidden metadata span keeps the
    space-between layout from pulling the actions right). */
@@ -3028,14 +3033,19 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   width: auto; height: 25px; padding: 0 7px; gap: 4px; font-size: 11px; }
 .library-page .word-card .card-footer-bookmark { width: 25px; height: 25px; margin-left: auto; }
 .library-page .word-card .card-footer-actions svg, .library-page .word-card .card-footer-bookmark svg { width: 12px; height: 12px; }
+/* Whenever a card is too narrow for Details / Trace / Recall plus the bookmark on one line
+   (two-column phone cards, or a font that draws the labels wider than expected), the
+   buttons wrap onto a second line (6px between lines too) instead of squeezing the
+   bookmark against — or past — the card edge; the bookmark keeps its right-end spot,
+   inside the card padding, on the last line. */
+/* The actions take the row's remaining width (flex-basis 0) so the bookmark never drops
+   onto a line of its own: it stays beside the last line of buttons, bottom-aligned. */
+.library-page .word-card .word-card-bottom { flex-wrap: nowrap; }
+.library-page .word-card .card-footer-actions { flex: 1 1 0; flex-wrap: wrap; row-gap: 6px; min-width: 0; }
+.library-page .word-card .card-footer-bookmark { flex-shrink: 0; align-self: flex-end; }
 @media (max-width: 580px) {
   .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
   .library-page .word-card .card-footer-bookmark { width: 22px; }
-  /* Two-column phone cards are ~143px inside, too narrow for three labelled buttons
-     plus the bookmark on one line: let the row wrap (6px between lines too) so Recall
-     is never clipped; the bookmark keeps its right-end spot on the last line. */
-  .library-page .word-card .word-card-bottom { flex-wrap: wrap; row-gap: 6px; }
-  .library-page .word-card .card-footer-actions { flex-wrap: wrap; row-gap: 6px; min-width: 0; flex-shrink: 1; }
 }
 /* Metadata that opens the label row (no category word before it) needs no dot offset. */
 .word-card .word-level-wrap > .card-top-meta.is-lead { margin-left: 0; }
