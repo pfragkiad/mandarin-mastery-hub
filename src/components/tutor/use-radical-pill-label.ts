@@ -32,12 +32,17 @@ export function useRadicalPillLabel(ref: RefObject<HTMLElement | null>, enabled:
       const width = row.clientWidth;
       if (!force && width === lastWidth) return;
       lastWidth = width;
+      // Decide from the full label: the abbreviation is only shown when it keeps the row on
+      // one line that the full label could not fit (styles.css "Radical pill abbreviation").
       delete row.dataset['radicalShort'];
-      if (!rowItemsWrap(row)) return;
-      row.dataset['radicalShort'] = '';
-      // The abbreviation is only worth showing when it actually keeps the row on one line;
-      // if the row still wraps with it, the full label stays and the row wraps as before.
-      if (rowItemsWrap(row)) delete row.dataset['radicalShort'];
+      const fullWraps = rowItemsWrap(row);
+      let shortWraps = fullWraps;
+      if (fullWraps) {
+        row.dataset['radicalShort'] = '';
+        shortWraps = rowItemsWrap(row);
+      }
+      if (shouldShortenRadicalPill(fullWraps, shortWraps)) row.dataset['radicalShort'] = '';
+      else delete row.dataset['radicalShort'];
     };
     measure(true);
     let alive = true;
@@ -52,6 +57,15 @@ export function useRadicalPillLabel(ref: RefObject<HTMLElement | null>, enabled:
     return () => { alive = false; document.fonts?.removeEventListener('loadingdone', remeasure); observer.disconnect(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, ...deps]);
+}
+
+/**
+ * True when the abbreviated label is the better presentation: the full "Radical #N" label wraps
+ * the row, and the shorter "Rad. #N" label does not. A row that wraps either way keeps the full
+ * label, so shortening never happens for nothing.
+ */
+export function shouldShortenRadicalPill(fullWraps: boolean, shortWraps: boolean): boolean {
+  return fullWraps && !shortWraps;
 }
 
 /**
