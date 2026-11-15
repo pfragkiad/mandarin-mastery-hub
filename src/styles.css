@@ -3177,7 +3177,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   /* Open row: the detail sits under the row text (icon 54px + 14px gap); the hanzi is
      already on the row line, so the card's big hanzi and the sound syllable are hidden. */
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-body { display: none; }
-  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { display: flex; flex-direction: column; gap: 8px; padding: 0 0 14px 68px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { display: flex; flex-direction: column; gap: 8px; padding: 0 0 14px; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-record { display: flex; flex-direction: column; gap: 6px; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-record .overview-record-link > strong, :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound .overview-record-link, .discovery-sound .discovery-sound-count { display: none; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 15px; }
@@ -3207,7 +3207,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   /* An open row shows the translation in its detail (pinyin + speaker, translation, buttons),
      so the row line keeps only the hanzi. Sounds keep their tone count, which the detail omits. */
   .discovery-tile.is-open:not(.discovery-sound) .discovery-row-line { display: none; }
-  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { gap: 10px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
 }
