@@ -24,6 +24,9 @@ import type { AudioRequest } from '@/lib/audio';
  *   word's own recording, a single character's exact-reading recording, or browser speech
  *   for the recorded pinyin through the shared audio pipeline.
  *
+ * LessonText also pairs prose "hanzi (pinyin)" terms (inlineSegments + useLessonPairing), so
+ * hovering 过 or its bracketed "guo" rings the other side, independent of the hints switch.
+ *
  * Inside a lesson page (LessonHintsProvider) LessonText and LessonHanzi hand every Han
  * character to the lesson character hints (lesson-hints.tsx) instead: a hover ring and a
  * click-to-open quick card while hints are on, plain text (no link) while they are off.
@@ -75,13 +78,47 @@ export function LessonHeadword({ hanzi, pinyin }: { hanzi: string; pinyin: strin
   </div>;
 }
 
+/**
+ * Prose segments: plain text, or a Han run directly followed by a parenthesised reading —
+ * "过 (guo)", "我去过北京一次 (Wǒ qù guo Běijīng yí cì)", full-width （）too. The bracket must
+ * hold only pinyin-like Latin text; anything else stays a plain segment. Whether the reading
+ * really pairs with the characters is decided later by the syllable alignment (fail closed).
+ */
+export type InlineSegment = { kind: 'text'; text: string } | { kind: 'term'; hanzi: string; gap: string; open: string; pinyin: string; close: string };
+const INLINE_TERM = /(\p{Script=Han}+)(\s*)([(（])([^()（）\n]+)([)）])/gu;
+const PINYIN_LIKE = /^(?=.*\p{Letter})[\p{Script=Latin}\p{Mark}\s'’,.!?;:-]+$/u;
+export function inlineSegments(text: string): InlineSegment[] {
+  const out: InlineSegment[] = [];
+  let last = 0;
+  for (const m of text.matchAll(INLINE_TERM)) {
+    const [whole, hanzi, gap, open, pinyin, close] = m as unknown as [string, string, string, string, string, string];
+    if (!PINYIN_LIKE.test(pinyin.trim())) continue;
+    const at = m.index ?? 0;
+    if (at > last) out.push({ kind: 'text', text: text.slice(last, at) });
+    out.push({ kind: 'term', hanzi, gap, open, pinyin, close });
+    last = at + whole.length;
+  }
+  if (last < text.length) out.push({ kind: 'text', text: text.slice(last) });
+  return out;
+}
+
+/** A prose "hanzi (pinyin)" pair: the characters and the bracketed syllables hover-pair
+ *  both ways (useLessonPairing; plain recorded text when they do not align). */
+function InlinePairedTerm({ hanzi, gap, open, pinyin, close }: Extract<InlineSegment, { kind: 'term' }>) {
+  const pair = useLessonPairing(hanzi, pinyin.trim(), false);
+  const lead = pinyin.match(/^\s*/)?.[0] ?? '';
+  const trail = pinyin.match(/\s*$/)?.[0] ?? '';
+  return <><span lang="zh-CN" className="lesson-inline-hanzi">{pair.hanziBody}</span>{gap}{open}{lead}{pair.pinyinBody}{trail}{close}</>;
+}
+
 export function LessonText({ text }: { text: string | null | undefined }) {
   const hints = useLessonHints();
   if (!text) return null;
-  // Split on *emphasis* first, then mark Han runs inside every piece.
+  const hanRuns = (piece: string) => piece.split(HAN).map((part, j) => HAN_TEST.test(part) ? <span key={j} lang="zh-CN" className="lesson-inline-hanzi">{hints ? <HintGlyphs text={part} focusable={false}/> : part}</span> : <Fragment key={j}>{part}</Fragment>);
+  // Split on *emphasis* first, then pair "hanzi (pinyin)" terms, then mark the remaining Han runs.
   return <>{text.split(/(\*[^*\n]+\*)/).map((piece, i) => {
     const emphasis = /^\*[^*\n]+\*$/.test(piece);
-    const body = (emphasis ? piece.slice(1, -1) : piece).split(HAN).map((part, j) => HAN_TEST.test(part) ? <span key={j} lang="zh-CN" className="lesson-inline-hanzi">{hints ? <HintGlyphs text={part} focusable={false}/> : part}</span> : <Fragment key={j}>{part}</Fragment>);
+    const body = inlineSegments(emphasis ? piece.slice(1, -1) : piece).map((seg, k) => seg.kind === 'term' ? <InlinePairedTerm key={k} {...seg}/> : <Fragment key={k}>{hanRuns(seg.text)}</Fragment>);
     return emphasis ? <em key={i}>{body}</em> : <Fragment key={i}>{body}</Fragment>;
   })}</>;
 }
