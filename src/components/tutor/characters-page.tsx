@@ -358,8 +358,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // Hiding the translation suppresses the hint entirely, since the hint is the translation.
   const hiddenFace = revealed ? 'all' : preferences.cardReveal;
   const hideMeaning = hiddenFace === 'meaning' || hiddenFace === 'pinyin-meaning';
-  const hideHanzi = hiddenFace === 'hanzi';
-  const hidePinyin = hiddenFace === 'pinyin' || hiddenFace === 'pinyin-meaning';
+  const hideHanzi = hiddenFace === 'hanzi' || hiddenFace === 'hanzi-pinyin';
+  const hidePinyin = hiddenFace === 'pinyin' || hiddenFace === 'pinyin-meaning' || hiddenFace === 'hanzi-pinyin';
   // `is-traditional` marks traditional-script records so hover/selected/reveal frames tint purple (see styles.css `.word-card.is-traditional`).
   // Every other glyph card takes one identity ink (styles.css `.card-ink-*`) for its hanzi, hover/selected
   // frame and hovered translation: gold for sourced Kangxi radicals (radicalTile, so a Character or Component

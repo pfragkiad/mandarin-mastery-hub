@@ -1,5 +1,5 @@
 export type CharacterScript = 'Simplified' | 'Traditional' | 'Common';
-export type CardReveal = 'all' | 'meaning' | 'hanzi' | 'pinyin' | 'pinyin-meaning';
+export type CardReveal = 'all' | 'meaning' | 'hanzi' | 'pinyin' | 'pinyin-meaning' | 'hanzi-pinyin';
 export type LibraryPerPage = 10 | 20 | 50;
 export type LibraryView = 'grid' | 'list';
 /** What the closed phone row of a Start random card shows next to the hanzi; absent (older saves) means the translation. */

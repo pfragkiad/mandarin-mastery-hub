@@ -1432,13 +1432,15 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .catalog-tools-row .card-visibility-menu { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
 .card-visibility-menu span { min-width: 0; text-align: left; overflow-wrap: anywhere; }
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .catalog-entry-meaning { visibility: hidden; }
-.reveal-hide-hanzi .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .tile-hanzi-row { visibility: hidden; }
-.reveal-hide-hanzi .usage-strokes { visibility: hidden; }
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning) .word-character .pinyin { visibility: hidden; }
+/* Hanzi hiding covers both "Hide hanzi" and "Show only translation" (hanzi + pinyin away). */
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .tile-hanzi-row { visibility: hidden; }
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .usage-strokes { visibility: hidden; }
+/* Pronunciation hiding covers "Hide pronunciation", "Show only Hanzi" and "Show only translation". */
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { visibility: hidden; }
 /* Peeked card in a Hide mode: its hidden face shows again, marked by a subtle dashed outline. */
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .catalog-entry-meaning,
-.reveal-hide-hanzi .is-revealed .word-character > span[lang="zh-CN"], .reveal-hide-hanzi .is-revealed .tile-hanzi-row, .reveal-hide-hanzi .is-revealed .usage-strokes,
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning) .is-revealed .word-character .pinyin { visibility: visible; }
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .usage-strokes,
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { visibility: visible; }
 /* Compact grid cards keep rank · strokes in the top label row only: their footer copy is
    hidden (below), and a child set to visibility:visible would poke through its hidden
    parent, so the peeked-card unhide above must never reach the footer. */
