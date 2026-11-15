@@ -3649,3 +3649,13 @@ html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :
 /* Pill height = line + 2 × padding + 2 × 1px border; every top row reserves exactly that. */
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-chrome-line) + 2 * var(--card-pill-pad-y) + 2px); }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-chrome-size); }
+
+/* Comfortable libraries (Glyphs, Words, Phrases): from 700px up, two cards per row, and a
+   third once each of three cards can be at least 380px wide (wide screens). The track
+   minimum is min(half the row, max(380px, a third of the row)), so the grid never drops
+   below two columns nor rises above three; the density hook reads the resolved tracks. */
+@media (min-width: 700px) {
+  .catalog-results .catalog-entry-grid.library-list-view,
+  .vocab-grid.vocab-word-grid.library-list-view,
+  .vocab-grid.vocab-phrase-grid.library-list-view { grid-template-columns: repeat(auto-fill, minmax(min(calc((100% - 18px) / 2), max(380px, calc((100% - 36px) / 3))), 1fr)); gap: 18px; }
+}
