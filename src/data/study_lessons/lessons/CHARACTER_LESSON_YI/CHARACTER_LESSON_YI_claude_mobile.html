@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chinese character lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@400;700&display=swap">
+<style>
+:root{--bg:#f1f4f2;--surf:#fff;--ink:#14202b;--mut:#5a6873;--line:#d6dde0;--acc:#0e7a6b;--soft:#dcefea;--bad:#b3412f;--badsoft:#f7e4df;--hero:#10222b;--heroink:#e9f1ee;
+--sans:"Instrument Sans",system-ui,sans-serif;--zh:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e161b;--surf:#16222a;--ink:#e8eef0;--mut:#9db0b9;--line:#283840;--acc:#4cc3ae;--soft:#173a37;--bad:#e8826f;--badsoft:#3a211d;--hero:#0a1419;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e161b;--surf:#16222a;--ink:#e8eef0;--mut:#9db0b9;--line:#283840;--acc:#4cc3ae;--soft:#173a37;--bad:#e8826f;--badsoft:#3a211d;--hero:#0a1419;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+.zh{font-family:var(--zh);font-weight:700}
+.py{color:var(--mut);font-size:.9em}
+.nopy .py{display:none}
+a{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+button{font:inherit;color:inherit;cursor:pointer}
+.hero{background:var(--hero);color:var(--heroink);padding:clamp(28px,6vw,72px) clamp(20px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,5vw,64px);align-items:center}
+.hero .big{font-family:var(--zh);font-weight:700;font-size:clamp(120px,24vw,300px);line-height:1;color:#7fd8c6}
+.hero .bigpy{text-align:center;font-size:1.4rem;letter-spacing:.04em;opacity:.8;margin-top:-6px}
+.hero h1{font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:1.1;margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+.hero .sub{font-size:1.2rem;opacity:.85;margin:0 0 16px}
+.hero p{max-width:60ch;opacity:.85;margin:0 0 18px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.8rem;padding:2px 10px;border-radius:99px;border:1px solid currentColor;opacity:.85;white-space:nowrap}
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:clamp(20px,4vw,56px);max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding:28px 0;max-height:100vh;overflow:auto}
+nav.toc a{display:block;padding:5px 12px;margin-left:-12px;border-left:2px solid var(--line);color:var(--mut);text-decoration:none;font-size:.92rem}
+nav.toc a.on{border-color:var(--acc);color:var(--ink);font-weight:600}
+.tools{margin-top:18px;display:flex;flex-direction:column;gap:8px}
+.tog{background:var(--surf);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.85rem;text-align:left}
+main{padding:28px 0 80px;min-width:0}
+section{padding:36px 0;border-top:1px solid var(--line)}
+section:first-child{border-top:0}
+h2{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.01em;line-height:1.2}
+.lede{color:var(--mut);margin:0 0 22px;max-width:62ch}
+h3{font-size:1.05rem;margin:0 0 4px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.principle{font-family:var(--zh);font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.6;border-left:4px solid var(--acc);padding:4px 0 4px 20px;margin:0 0 20px;max-width:56ch}
+.take{margin:0 0 24px;max-width:62ch}
+.map{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surf)}
+.row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:center;padding:14px 20px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .zh{font-size:1.5rem}
+.row.dim{opacity:.6}
+.tag{font-size:.78rem;padding:2px 9px;border-radius:6px;background:var(--soft);color:var(--ink);white-space:nowrap}
+.tag.w{background:var(--badsoft)}
+.filters{display:flex;gap:8px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.f{border:1px solid var(--line);background:var(--surf);border-radius:99px;padding:3px 14px;font-size:.88rem}
+.f[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:var(--surf)}
+.v .zh{font-size:2rem;line-height:1.2}
+.v .m{font-weight:600;margin:6px 0 2px}
+.v .n{color:var(--mut);font-size:.9rem;margin:6px 0 10px}
+.pat{font-family:var(--zh);font-weight:700;font-size:1.7rem;line-height:1.3}
+.slot{font-style:normal;color:var(--acc);border-bottom:2px solid var(--acc);padding:0 2px}
+.ex{display:grid;gap:14px}
+.ex .card{display:grid;grid-template-columns:1fr;gap:2px}
+.ex .zh{font-size:1.5rem;line-height:1.4}
+.ex .en{font-size:1.02rem}
+.ex .ctx{color:var(--mut);font-size:.88rem;margin-top:8px}
+.cmp{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.cmp .head{font-family:var(--zh);font-size:1.8rem;font-weight:700}
+.cmp .lim{font-size:.88rem;color:var(--mut);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+.bars{margin-top:22px}
+.bar{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;margin:10px 0}
+.bar .zh{font-size:1.6rem;text-align:center}
+.track{display:flex;height:34px;border-radius:8px;overflow:hidden;background:var(--line)}
+.track>div{display:flex;align-items:center;padding:0 10px;font-size:.82rem;color:#fff;white-space:nowrap}
+.a{background:var(--acc)}.c{background:#6b7c88}
+.key{font-size:.85rem;color:var(--mut);display:flex;gap:16px;margin-left:60px}
+.key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.mis{display:grid;gap:12px}
+.mis .card{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mis .x{color:var(--bad)}.mis .x s{text-decoration-thickness:1px}
+.mis .ok{color:var(--acc)}
+.mis small{display:block;font-weight:600;margin-bottom:2px}
+.mis .why{grid-column:1/-1;color:var(--mut);font-size:.9rem;border-top:1px dashed var(--line);padding-top:8px}
+.q{margin-bottom:14px}
+.q .pr{font-weight:600;margin:6px 0 12px}
+.ch{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.ch button{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 14px;text-align:left}
+.ch button.right{border-color:var(--acc);background:var(--soft)}
+.ch button.wrong{border-color:var(--bad);background:var(--badsoft)}
+.ans{display:none;margin-top:10px;padding:10px 14px;background:var(--soft);border-radius:8px}
+.q.open .ans{display:block}
+.show{background:none;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.88rem}
+details{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:14px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600}
+ul.plain{list-style:none;padding:0;margin:8px 0 0}
+ul.plain li{padding:5px 0 5px 26px;position:relative}
+ul.plain li::before{content:"○";position:absolute;left:0;color:var(--mut)}
+ul.plain li.ok::before{content:"✓";color:var(--acc);font-weight:700}
+.src{padding:10px 0;border-top:1px solid var(--line)}
+.src:first-of-type{border-top:0}
+.src .meta{color:var(--mut);font-size:.88rem}
+footer{color:var(--mut);font-size:.85rem;padding:0 0 40px;max-width:62ch}
+@media(max-width:820px){
+.hero{grid-template-columns:1fr;text-align:left}
+.layout{grid-template-columns:1fr;gap:0}
+nav.toc{display:flex;gap:4px;overflow-x:auto;padding:8px 0;max-height:none;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);flex-wrap:nowrap;top:0;padding-top:calc(env(safe-area-inset-top,0px) + 8px)}
+nav.toc a{border:0;margin:0;white-space:nowrap;border-radius:99px;padding:4px 12px}
+nav.toc a.on{background:var(--soft)}
+.tools{flex-direction:row;margin:0 0 0 8px}.tog{white-space:nowrap}
+.row{grid-template-columns:1fr;gap:4px}
+.mis .card{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<style>
+/* mobile-first overrides */
+:root{scroll-padding-top:0}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 58px)}
+body{font-size:17px;-webkit-text-size-adjust:100%}
+.hero{grid-template-columns:auto 1fr;gap:16px;padding:calc(env(safe-area-inset-top,0px) + 22px) 18px 22px;align-items:start}
+.hero .big{font-size:104px}.hero .bigpy{font-size:1.05rem;margin-top:-2px}
+.hero h1{font-size:1.45rem;margin-bottom:4px}.hero .sub{font-size:1rem;margin-bottom:10px}
+.hero p{font-size:.92rem;grid-column:1/-1}
+.hero>div:last-child{display:contents}
+.hero h1,.hero .sub{grid-column:2}
+.hero>div:first-child{grid-row:1/3}
+.hero .chips{grid-column:1/-1}
+.layout{display:block;max-width:640px;padding:0}
+nav.toc{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px;max-height:none;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{border:0;margin:0;white-space:nowrap;border-radius:99px;padding:6px 14px;background:var(--surf);border:1px solid var(--line)}
+nav.toc a.on{background:var(--acc);border-color:var(--acc);color:var(--surf)}
+.tools{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:20;margin:0;flex-direction:column;gap:8px}
+.tog{box-shadow:0 2px 10px rgba(0,0,0,.18);border-radius:99px;padding:10px 16px;min-height:44px;font-weight:500}
+main{padding:12px 16px 110px}
+.principle{font-size:1.1rem;margin:8px 0 14px}
+section{padding:0;border-top:0;margin-bottom:10px}
+section details{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:0}
+summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:12px 16px;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:9px;height:9px;border:solid var(--mut);border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .2s;flex:none;margin-right:4px}
+details[open]>summary::after{transform:rotate(-135deg)}
+summary h2{font-size:1.2rem;margin:0}
+summary small{color:var(--mut);font-size:.84rem}
+.bd{padding:2px 14px 18px}
+section .card,section .map{background:var(--bg)}
+.lede{font-size:.95rem}
+.grid,.cmp{grid-template-columns:1fr}
+#vocabulary .grid{grid-template-columns:1fr 1fr;gap:10px}
+#vocabulary .card{padding:12px}
+.v .zh{font-size:1.9rem}
+.row{grid-template-columns:1fr;gap:6px;padding:14px}
+.mis .card{grid-template-columns:1fr}
+.pat{font-size:1.5rem}
+.ex .zh{font-size:1.4rem}
+.f,.show,.ch button{min-height:44px}
+.f{padding:6px 18px}
+.ch{flex-direction:column}.ch button{width:100%}
+.track>div{font-size:.72rem;padding:0 6px}
+.key{margin-left:0;flex-wrap:wrap;gap:8px 16px}
+.bar{grid-template-columns:36px 1fr;gap:8px}
+details details{margin:0}
+footer{padding:0 16px 24px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="application/json" id="data">{"schema_version": "mandarin-character-lesson/2.5.0", "lesson_id": "char-4EE5", "lesson": {"title": "Common Words & Grammatical Uses", "subtitle": "Everyday compounds, formal patterns, and register", "description": "Learn established words containing 以 (yǐ), including 可以 (kěyǐ), 所以 (suǒyǐ), and 以为 (yǐwéi), then explore formal grammatical constructions, lexicalization, and register differences from 用 (yòng).", "categories": ["vocabulary-grammar-patterns"], "primary_category_id": "vocabulary-grammar-patterns", "tags": ["lexicalization", "formal-register", "prepositions"], "slug": "common-words-grammatical-uses"}, "metadata": {"status": "reviewed", "template_version": "2.5.0", "audience": "HSK beginner core; intermediate extension", "language": "zh-CN", "date_reviewed": "2026-11-15", "hsk": {"level": null, "edition": null, "official_id": null}, "frequency": {"rank": null, "corpus": null, "unit": null}, "catalog_character_id": null}, "headword": {"hanzi": "以", "pinyin": "yǐ", "simplified": "以", "traditional": [{"hanzi": "以", "pinyin": "yǐ"}], "readings": [{"pinyin": "yǐ", "context": "Modern compounds and formal grammatical constructions"}], "mapping_type": "same_written_form"}, "intro": {"lesson_focus": "Learn common complete words containing 以 (yǐ), then recognize formal patterns expressing means or taking one thing as another.", "core_principle": "A character is a writing unit, a morpheme is a meaningful unit, a word is a lexical item, and a construction is a reusable grammatical pattern. Do not conflate them.", "learning_priority": "Study natural modern words first; formal constructions come second, and Classical Chinese is optional."}, "sections": {"overview": {"core_takeaway": "Occurs frequently in established words such as 可以 (kěyǐ), 所以 (suǒyǐ), 以前 (yǐqián), and 以后 (yǐhòu).", "independent_usage": "Most accessible in established words; independent grammatical use is especially formal or written.", "modern_roles": ["Element of compound words", "Preposition in formal Mandarin", "Part of productive constructions"], "teaching_priority": "High for learners of common modern vocabulary.", "meaning_map": [{"id": "lexical", "reading": "yǐ", "function_en": "Element in established lexicalized words", "register": "Spoken and written", "example": {"hanzi": "可以", "pinyin": "kěyǐ", "meaning_en": "may; can"}}, {"id": "instrumental", "reading": "yǐ", "function_en": "By; by means of", "register": "Relatively formal/written", "example": {"hanzi": "以书面形式", "pinyin": "yǐ shūmiàn xíngshì", "meaning_en": "in written form"}}, {"id": "construction", "reading": "yǐ", "function_en": "Take X as Y", "register": "Formal/written; some common subpatterns", "example": {"hanzi": "以他为榜样", "pinyin": "yǐ tā wéi bǎngyàng", "meaning_en": "take him as a role model"}}, {"id": "classical", "reading": "yǐ", "function_en": "Historical grammatical functions", "register": "Classical Chinese only", "example": null}], "one_minute_explanation": "The character does not map to one English word in every context. It participates in many complete words and some reusable constructions; learn the complete modern words before trying to interpret the character in isolation."}, "vocabulary": {"items": [{"id": "keyi", "catalog_id": null, "hanzi": "可以", "pinyin": "kěyǐ", "part_of_speech": "modal verb", "meaning_en": "Can; may; be permitted to", "priority": "A", "register": "everyday", "lexical_status": "lexicalized", "usage_note": "Lexicalized modal verb; the historical components are not a productive modern rule.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "suoyi", "catalog_id": null, "hanzi": "所以", "pinyin": "suǒyǐ", "part_of_speech": "conjunction", "meaning_en": "So; therefore", "priority": "A", "register": "everyday", "lexical_status": "lexicalized", "usage_note": "An established connective expressing a result or conclusion.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yihou", "catalog_id": null, "hanzi": "以后", "pinyin": "yǐhòu", "part_of_speech": "temporal expression", "meaning_en": "After; later; in the future", "priority": "A", "register": "everyday", "lexical_status": "established_word", "usage_note": "Often follows a time phrase or an event.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yiqian", "catalog_id": null, "hanzi": "以前", "pinyin": "yǐqián", "part_of_speech": "temporal expression", "meaning_en": "Before; previously; in the past", "priority": "A", "register": "everyday", "lexical_status": "established_word", "usage_note": "Often used before or after a temporal reference.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yiwei", "catalog_id": null, "hanzi": "以为", "pinyin": "yǐwéi", "part_of_speech": "verb", "meaning_en": "Think; assume", "priority": "A", "register": "everyday", "lexical_status": "lexicalized", "usage_note": "Often implies that an assumption was wrong, but this is a tendency, not a rule.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yishang", "catalog_id": null, "hanzi": "以上", "pinyin": "yǐshàng", "part_of_speech": "localizer / range expression", "meaning_en": "Above; at least; or more", "priority": "B", "register": "neutral", "lexical_status": "established_word", "usage_note": "Boundary inclusion can depend on the construction and context.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yixia", "catalog_id": null, "hanzi": "以下", "pinyin": "yǐxià", "part_of_speech": "localizer / range expression", "meaning_en": "Below; at most; or less", "priority": "B", "register": "neutral", "lexical_status": "established_word", "usage_note": "Boundary interpretation depends on context.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yinei", "catalog_id": null, "hanzi": "以内", "pinyin": "yǐnèi", "part_of_speech": "range expression", "meaning_en": "Within; inside a limit", "priority": "B", "register": "neutral", "lexical_status": "established_word", "usage_note": "Time, space, or quantity.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yiwai", "catalog_id": null, "hanzi": "以外", "pinyin": "yǐwài", "part_of_speech": "range expression", "meaning_en": "Outside; apart from; except", "priority": "B", "register": "neutral", "lexical_status": "established_word", "usage_note": "Location or exclusion depends on context.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yiji", "catalog_id": null, "hanzi": "以及", "pinyin": "yǐjí", "part_of_speech": "conjunction", "meaning_en": "As well as; and", "priority": "C", "register": "written/formal", "lexical_status": "established_word", "usage_note": "Connects parallel terms or groups.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yibian", "catalog_id": null, "hanzi": "以便", "pinyin": "yǐbiàn", "part_of_speech": "conjunction", "meaning_en": "So that; in order to", "priority": "C", "register": "written/formal", "lexical_status": "established_word", "usage_note": "Expresses a desirable purpose or convenience.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}, {"id": "yimian", "catalog_id": null, "hanzi": "以免", "pinyin": "yǐmiǎn", "part_of_speech": "conjunction", "meaning_en": "So as to avoid; lest", "priority": "C", "register": "written/formal", "lexical_status": "established_word", "usage_note": "Introduces an undesirable outcome to prevent.", "hsk_level": null, "hsk_syllabus_id": null, "frequency_rank": null}], "notes": "以为 (yǐwéi) is one lexical verb, not a shortened instance of 以 X 为 Y (yǐ X wéi Y). 可以 (kěyǐ) is likewise an established lexicalized modal; neither provides a freely productive pattern based on historical component meanings."}, "constructions": {"enabled": true, "items": [{"id": "means", "category": "prepositional use", "pattern_hanzi": "以 + 名词短语", "pattern_pinyin": "yǐ + míngcí duǎnyǔ", "function_en": "Using or by a particular means", "example": {"hanzi": "以书面形式提交", "pinyin": "yǐ shūmiàn xíngshì tíjiā", "meaning_en": "Submit in writing"}, "register": "formal/written", "usage_note": "Abstract means and manner are frequent; it is not restricted to abstract nouns."}, {"id": "general", "category": "general construction", "pattern_hanzi": "以 X 为 Y", "pattern_pinyin": "yǐ X wéi Y", "function_en": "Take or treat X as Y", "example": {"hanzi": "以他为榜样", "pinyin": "yǐ tā wéi bǎngyàng", "meaning_en": "Take him as a role model"}, "register": "mainly written/formal", "usage_note": "X and Y denote variable constituents, not necessarily single characters."}, {"id": "primary", "category": "established subpattern", "pattern_hanzi": "以 X 为主", "pattern_pinyin": "yǐ X wéi zhǔ", "function_en": "Make X the principal focus", "example": {"hanzi": "以学习为主", "pinyin": "yǐ xuéxí wéi zhǔ", "meaning_en": "Focus mainly on studying"}, "register": "neutral-to-formal", "usage_note": "Keep the fixed element 为主 (wéi zhǔ) distinct from the general slots."}, {"id": "example", "category": "established subpattern", "pattern_hanzi": "以 X 为例", "pattern_pinyin": "yǐ X wéi lì", "function_en": "Use X as an example", "example": {"hanzi": "以中国为例", "pinyin": "yǐ Zhōngguó wéi lì", "meaning_en": "Take China as an example"}, "register": "expository/formal", "usage_note": "Keep the fixed element 为例 (wéi lì) distinct from the general slots."}], "structural_note": "The reusable pattern 以 X 为 Y (yǐ X wéi Y) permits variable constituents; 以 X 为主 (yǐ X wéi zhǔ) and 以 X 为例 (yǐ X wéi lì) are recurring subpatterns. The standalone lexicalized verb 以为 (yǐwéi) is a different grammatical unit."}, "examples": {"items": [{"id": "ex-01", "title": "Asking permission", "hanzi": "我可以进去吗？", "pinyin": "Wǒ kěyǐ jìnqù ma?", "english": "May I come in?", "context": "Asking to enter a room.", "register": "spoken; everyday", "teaching_note": "Treat the two-character modal as a single word."}, {"id": "ex-02", "title": "Explaining a result", "hanzi": "今天下雨，所以我不出去。", "pinyin": "Jīntiān xià yǔ, suǒyǐ wǒ bù chūqù.", "english": "It's raining today, so I'm not going out.", "context": "Explaining a decision.", "register": "spoken; everyday", "teaching_note": "A connective linking reason and result."}, {"id": "ex-03", "title": "After a time", "hanzi": "我三点以后有时间。", "pinyin": "Wǒ sān diǎn yǐhòu yǒu shíjiān.", "english": "I'm free after three o'clock.", "context": "Arranging a meeting.", "register": "spoken; everyday", "teaching_note": "The temporal word follows a time expression."}, {"id": "ex-04", "title": "Talking about the past", "hanzi": "我以前住在北京。", "pinyin": "Wǒ yǐqián zhù zài Běijīng.", "english": "I used to live in Beijing.", "context": "Discussing former residence.", "register": "spoken; everyday", "teaching_note": "Marks an earlier period; the present location remains unspecified."}, {"id": "ex-05", "title": "A potentially wrong assumption", "hanzi": "我以为你不来了。", "pinyin": "Wǒ yǐwéi nǐ bù lái le.", "english": "I thought you weren't coming.", "context": "Someone unexpectedly shows up.", "register": "spoken; everyday", "teaching_note": "The assumption commonly turns out wrong in such contexts, but this is not mandatory."}, {"id": "ex-06", "title": "Formal instructions", "hanzi": "请以书面形式提交申请。", "pinyin": "Qǐng yǐ shūmiàn xíngshì tíjiā shēnqǐng.", "english": "Please submit your application in writing.", "context": "Institutional instructions.", "register": "formal/written", "teaching_note": "A means or manner prepositional phrase."}, {"id": "ex-07", "title": "Main focus of a course", "hanzi": "这门课以口语练习为主。", "pinyin": "Zhè mén kè yǐ kǒuyǔ liànxí wéi zhǔ.", "english": "This course focuses mainly on speaking practice.", "context": "Course description.", "register": "neutral-to-formal", "teaching_note": "Recognize the established subpattern as a unit."}]}, "contrasts": {"items": [{"id": "contrast-yong", "hanzi": "用", "pinyin": "yòng", "meaning_en": "Use; with", "example": {"hanzi": "用筷子吃饭", "pinyin": "yòng kuàizi chīfàn", "meaning_en": "Eat with chopsticks"}, "usage": "Natural with concrete instruments in ordinary speech.", "limitation": "Frequently conversational; not freely interchangeable with formal means-constructions."}, {"id": "contrast-yi", "hanzi": "以", "pinyin": "yǐ", "meaning_en": "By; by means of", "example": {"hanzi": "以这种方式", "pinyin": "yǐ zhè zhǒng fāngshì", "meaning_en": "In this way"}, "usage": "Often describes abstract means or manners.", "limitation": "Especially written/formal in instrumental use; concrete nouns are not categorically excluded."}, {"id": "contrast-yiwei", "hanzi": "以为", "pinyin": "yǐwéi", "meaning_en": "Think; assume", "example": {"hanzi": "我以为你不来了", "pinyin": "Wǒ yǐwéi nǐ bù lái le", "meaning_en": "I thought you weren't coming."}, "usage": "Often used when an expectation is contradicted.", "limitation": "That implication is common but not obligatory."}, {"id": "contrast-renwei", "hanzi": "认为", "pinyin": "rènwéi", "meaning_en": "Consider; hold the opinion", "example": {"hanzi": "我认为这个办法不错", "pinyin": "Wǒ rènwéi zhège bànfǎ búcuò", "meaning_en": "I think this approach is good."}, "usage": "Often for an assessment or opinion.", "limitation": "Does not inherently carry the same mistaken-expectation tendency."}, {"id": "contrast-juede", "hanzi": "觉得", "pinyin": "juéde", "meaning_en": "Feel; think", "example": {"hanzi": "我觉得很好", "pinyin": "Wǒ juéde hěn hǎo", "meaning_en": "I think it's good."}, "usage": "Common for subjective impressions.", "limitation": "Different usage emphasis from holding an argued opinion."}], "preference_vs_rule": {"statement": "In the instrumental-preposition subset of Sun Dejin’s corpus, abstract nouns followed 以 (yǐ) in 166 of 189 occurrences (about 88%) and 用 (yòng) in 146 of 319 (about 46%). Concrete-noun observations were 23 and 173 respectively. These are corpus-specific collocational preferences, not universal restrictions or contemporary language-wide frequency estimates.", "data": {"sample": "instrumental-preposition subset of approximately 2-million-character historical written corpus", "categories": [{"form_hanzi": "以", "form_pinyin": "yǐ", "abstract": 166, "concrete": 23}, {"form_hanzi": "用", "form_pinyin": "yòng", "abstract": 146, "concrete": 173}]}}}, "mistakes": {"items": [{"id": "m-01", "incorrect_inference": "Translate every occurrence of 以 (yǐ) as “using”.", "correction": "Identify the complete word or grammatical construction first.", "reason": "For instance, 所以 (suǒyǐ) is an established conjunction meaning “so; therefore”."}, {"id": "m-02", "incorrect_inference": "Apply 可 (kě) + 以 (yǐ) as a productive rule to form new modal verbs.", "correction": "Learn 可以 (kěyǐ) as one word.", "reason": "Historical lexicalization does not create a general productive beginner rule."}, {"id": "m-03", "incorrect_inference": "Treat 以为 (yǐwéi) as an unfilled 以 X 为 Y (yǐ X wéi Y) pattern.", "correction": "Differentiate lexicalized words and grammatical constructions.", "reason": "The modern verb is a lexical unit, whereas the pattern is a construction."}, {"id": "m-04", "incorrect_inference": "Assume 以为 (yǐwéi) *always* means a mistaken assumption.", "correction": "Interpret the discourse context.", "reason": "Often—but not invariably—suggests a contradicted assumption."}, {"id": "m-05", "incorrect_inference": "Swap 以 (yǐ) and 用 (yòng) in every sentence.", "correction": "Check register and noun collocations.", "reason": "Comparable English glosses do not imply unrestricted interchangeability."}]}, "historical": {"enabled": true, "intro": "Optional Classical Chinese reference. Pinyin shown is a modern Mandarin reading, not reconstructed ancient pronunciation.", "items": [{"id": "classical-01", "function_en": "Marks the thing transferred or handled; approximate overlap with some modern 把 (bǎ) constructions.", "hanzi": "秦亦不以城予赵。", "pinyin": "Qín yì bù yǐ chéng yǔ Zhào.", "translation_en": "Qin likewise did not give the cities to Zhao.", "explanation": "The phrase 以城 (yǐ chéng) identifies what would be given. The comparison with 把 (bǎ) is restricted to this kind of construction."}], "caution": "Do not treat classical 以 (yǐ) and modern 把 (bǎ) as generally synonymous or freely interchangeable."}, "practice": {"enabled": true, "questions": [{"id": "q-01", "kind": "comprehension", "prompt": "In 我以前住在北京 (Wǒ yǐqián zhù zài Běijīng), does the speaker refer to present or earlier residence?", "choices": [], "answer": "Earlier residence; current location is unspecified.", "explanation": "The temporal expression 以前 (yǐqián) points to an earlier period."}, {"id": "q-02", "kind": "selection", "prompt": "Which sounds natural for casual “eat with chopsticks”?", "choices": [{"hanzi": "用筷子吃饭", "pinyin": "yòng kuàizi chīfàn", "meaning_en": "Eat with chopsticks"}, {"hanzi": "以筷子吃饭", "pinyin": "yǐ kuàizi chīfàn", "meaning_en": "Unnatural as an everyday conversational phrasing"}], "answer": "用筷子吃饭 (yòng kuàizi chīfàn).", "explanation": "用 (yòng) is the ordinary choice with a concrete tool in this casual context."}, {"id": "q-03", "kind": "production", "prompt": "Translate “May I come in?” using 可以 (kěyǐ).", "choices": [], "answer": "我可以进去吗？(Wǒ kěyǐ jìnqù ma?)", "explanation": "The complete modal verb expresses permission."}]}, "extensions": {"intro": "Additional linguistic notes and usage distinctions.", "items": []}}}</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const S=D.sections||{},L=D.lesson||{},H=D.headword||{},M=D.metadata||{};
+const e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const t=s=>e(s).replace(/\*([^*]+)\*/g,'<em>$1</em>');
+const zh=(h,p)=>`<span class="zh">${e(h)}</span>${p?` <span class="py">${e(p)}</span>`:''}`;
+const nice=s=>String(s||'').replace(/[_-]/g,' ').replace(/^./,c=>c.toUpperCase());
+const pat=(s,py)=>e(s).replace(/\b([XY])\b/g,'<i class="slot">$1</i>');
+const exBlock=x=>x?`<div>${zh(x.hanzi,x.pinyin)}<div>${t(x.meaning_en)}</div></div>`:'';
+const R={};
+const T={overview:['Overview','What this character does'],vocabulary:['Words','Learn complete words first'],constructions:['Patterns','Reusable formal constructions'],examples:['Sentences','Constructed teaching examples'],contrasts:['Compare','Easily confused neighbours'],mistakes:['Mistakes','Wrong inferences to avoid'],practice:['Practice','Check yourself'],writing:['Writing','Form, strokes and origin'],historical:['Classical','Optional historical reference'],sources:['Sources','Where the claims come from'],checklist:['Review','Editorial checklist'],extensions:['More','Supplementary material']};
+
+R.overview=o=>`${o.core_takeaway?`<p class="take">${t(o.core_takeaway)}</p>`:''}
+${o.one_minute_explanation?`<div class="card" style="margin-bottom:20px"><h3>In one minute</h3>${t(o.one_minute_explanation)}</div>`:''}
+<div class="map">${(o.meaning_map||[]).map(m=>`<div class="row ${m.example?'':'dim'}">
+<div>${m.example?zh(m.example.hanzi):'<span class="zh">古</span>'}${m.example?`<div class="py">${e(m.example.pinyin)}</div>`:''}</div>
+<div><b>${t(m.function_en)}</b><div class="py">${[m.example&&t(m.example.meaning_en),m.evidence&&t(m.evidence)].filter(Boolean).join(' · ')}</div></div>
+<span class="tag">${e(m.register)}</span></div>`).join('')}</div>
+${o.independent_usage?`<p class="lede" style="margin-top:16px">${t(o.independent_usage)}</p>`:''}`;
+
+R.vocabulary=v=>{const items=v.items||[],pr=[...new Set(items.map(i=>i.priority))].sort();
+return `<div class="filters"><span class="py">Priority</span><button class="f" aria-pressed="true" data-p="">All</button>${pr.map(p=>`<button class="f" aria-pressed="false" data-p="${e(p)}">${e(p)}</button>`).join('')}</div>
+<div class="grid" id="vgrid">${items.map(i=>`<div class="card v" data-p="${e(i.priority)}">${zh(i.hanzi)}<div class="py">${e(i.pinyin)}</div>
+<div class="m">${t(i.meaning_en)}</div><div class="py">${e(i.part_of_speech)}</div><div class="n">${t(i.usage_note)}</div>
+<div class="chips"><span class="tag">${e(i.register)}</span><span class="tag">${e(nice(i.lexical_status))}</span></div></div>`).join('')}</div>
+${v.notes?`<p class="lede" style="margin-top:18px">${t(v.notes)}</p>`:''}`};
+
+R.constructions=c=>`<div class="grid">${(c.items||[]).map(i=>`<div class="card"><div class="tag" style="display:inline-block;margin-bottom:8px">${e(i.category)}</div>
+<div class="pat">${pat(i.pattern_hanzi)}</div><div class="py">${e(i.pattern_pinyin)}</div>
+<p style="margin:10px 0 6px"><b>${t(i.function_en)}</b></p>${exBlock(i.example)}
+<p class="py" style="margin:10px 0 0">${t(i.usage_note)} <i>(${e(i.register)})</i></p></div>`).join('')}</div>
+${c.structural_note?`<p class="lede" style="margin-top:18px">${t(c.structural_note)}</p>`:''}`;
+
+R.examples=x=>`${x.default_provenance?`<p class="lede">${t(x.default_provenance)}</p>`:''}<div class="ex">${(x.items||[]).map(i=>`<div class="card"><h3>${t(i.title)}</h3>
+<div class="zh">${e(i.hanzi)}</div><div class="py">${e(i.pinyin)}</div><div class="en">${t(i.english)}</div>
+<div class="ctx">${t(i.context)} · ${t(i.teaching_note)}</div><div class="chips" style="margin-top:8px"><span class="tag">${e(i.register)}</span></div></div>`).join('')}</div>`;
+
+R.contrasts=c=>{const p=c.preference_vs_rule,cats=p?.data?.categories||[];
+return `<div class="cmp">${(c.items||[]).map(i=>`<div class="card"><div class="head">${e(i.hanzi)}</div><div class="py">${e(i.pinyin)}</div><div><b>${t(i.meaning_en)}</b></div>
+<div style="margin:8px 0">${exBlock(i.example)}</div><div style="font-size:.92rem">${t(i.usage)}</div><div class="lim">${t(i.limitation)}</div></div>`).join('')}</div>
+${p?`<div class="card bars"><h3>Preference, not a rule</h3><p class="py" style="margin:0 0 12px">Instrumental use in a historical written corpus: abstract vs concrete nouns</p>
+${cats.map(k=>{const tot=k.abstract+k.concrete,pa=Math.round(k.abstract/tot*100);return `<div class="bar"><span class="zh">${e(k.form_hanzi)}</span><div class="track" title="${tot} occurrences"><div class="a" style="width:${pa}%">${pa}% abstract (${k.abstract})</div><div class="c" style="width:${100-pa}%">${k.concrete}</div></div></div>`}).join('')}
+<div class="key"><span><i class="a"></i>Abstract noun</span><span><i class="c"></i>Concrete noun</span></div>
+<p style="margin:14px 0 0;font-size:.92rem">${t(p.statement)}</p></div>`:''}`};
+
+R.mistakes=m=>`<div class="mis">${(m.items||[]).map(i=>`<div class="card"><div class="x"><small>Don’t</small><s>${t(i.incorrect_inference)}</s></div><div class="ok"><small>Do</small>${t(i.correction)}</div><div class="why">${t(i.reason)}</div></div>`).join('')}</div>`;
+
+R.practice=p=>(p.questions||[]).map(q=>`<div class="card q"><span class="tag">${e(nice(q.kind))}</span><div class="pr">${t(q.prompt)}</div>
+${(q.choices||[]).length?`<div class="ch">${q.choices.map(c=>`<button data-ok="${q.answer.includes(c.hanzi)}"><span class="zh">${e(c.hanzi)}</span><br><span class="py">${e(c.pinyin)}</span></button>`).join('')}</div>`:''}
+<button class="show">Show answer</button><div class="ans"><b>${t(q.answer)}</b><div>${t(q.explanation)}</div></div></div>`).join('');
+
+R.writing=w=>`<div class="grid"><div class="card"><h3>Forms</h3>${t(w.mapping_note)}</div><div class="card"><h3>Pronunciation</h3>${t(w.pronunciation_note)}</div></div>
+${(w.pending_checks||[]).length?`<div class="card" style="margin-top:14px"><h3>Still to verify</h3><ul class="plain">${w.pending_checks.map(x=>`<li>${t(x)}</li>`).join('')}</ul></div>`:''}`;
+
+R.historical=h=>`<details><summary>Show classical reference</summary><p class="lede" style="margin-top:12px">${t(h.intro)}</p>${(h.items||[]).map(i=>`<div class="card"><div class="zh" style="font-size:1.4rem">${e(i.hanzi)}</div><div class="py">${e(i.pinyin)}</div><p><b>${t(i.translation_en)}</b></p><p>${t(i.function_en)}</p><p class="py">${t(i.explanation)}</p></div>`).join('')}
+${h.caution?`<p class="py" style="margin-top:12px">⚠ ${t(h.caution)}</p>`:''}</details>`;
+
+R.sources=s=>`<div class="card">${(s.items||[]).map(i=>`<div class="src"><b>${t(i.claim)}</b><div class="meta">${t(i.author)}, ${t(i.title)}. ${t(i.publication)}</div>
+<div class="meta">${e(nice(i.evidence_type))} · ${e(nice(i.verification_status))} · <a href="${e(i.url)}" target="_blank" rel="noopener">Open source</a></div><div class="meta">${t(i.scope_note)}</div></div>`).join('')}</div>
+${s.editorial_status?`<p class="lede" style="margin-top:14px">${t(s.editorial_status)} ${t(s.licensing||'')}</p>`:''}`;
+
+R.checklist=c=>{const it=c.items||[],n=it.filter(x=>x.passed).length;
+return `<p class="lede">${n} of ${it.length} checks passed.</p><div class="card"><ul class="plain">${it.map(x=>`<li class="${x.passed?'ok':''}">${t(x.label)}</li>`).join('')}</ul></div>`};
+
+R.extensions=x=>(x.items||[]).length?`<p class="lede">${t(x.intro)}</p><pre>${e(JSON.stringify(x.items,null,2))}</pre>`:'';
+
+const keys=Object.keys(S);
+let secs='',nav='',first=true;
+keys.forEach(k=>{const d=S[k];if(!d||d.enabled===false)return;const fn=R[k]||(x=>`<pre>${e(JSON.stringify(x,null,2))}</pre>`);const body=fn(d);if(!body)return;
+const [ti,su]=T[k]||[nice(k),''];secs+=`<section id="${k}"><details${first?' open':''}><summary><span><h2>${ti}</h2><small>${su}</small></span></summary><div class="bd">${body}</div></details></section>`;first=false;nav+=`<a href="#${k}">${ti}</a>`});
+const I=D.intro||{};
+document.title=`${H.hanzi||''} · ${L.title||'Lesson'}`;
+document.getElementById('app').innerHTML=`
+<header class="hero"><div><div class="big" aria-hidden="true">${e(H.hanzi)}</div><div class="bigpy py" style="color:inherit">${e(H.pinyin)}</div></div>
+<div><h1>${t(L.title)}</h1><p class="sub">${t(L.subtitle)}</p><p>${t(L.description)}</p>
+<div class="chips">${(L.tags||[]).map(x=>`<span class="chip">${e(x)}</span>`).join('')}${M.audience?`<span class="chip">${e(M.audience)}</span>`:''}</div></div></header>
+<div class="layout"><nav class="toc" aria-label="Sections">${nav}<div class="tools"><button class="tog" id="tp">Hide pinyin</button><button class="tog" id="tt">Toggle theme</button></div></nav>
+<main>${I.core_principle?`<blockquote class="principle" style="margin-top:12px">${t(I.core_principle)}</blockquote>`:''}
+${I.lesson_focus?`<p class="take"><b>Focus.</b> ${t(I.lesson_focus)} ${t(I.learning_priority||'')}</p>`:''}
+${secs}<footer>${M.status?`Status: ${e(M.status)}`:''}${M.date_reviewed?` · reviewed ${e(M.date_reviewed)}`:''}. ${t(M.license_note||'')}</footer></main></div>`;
+
+document.querySelectorAll('.f').forEach(b=>b.onclick=()=>{document.querySelectorAll('.f').forEach(x=>x.setAttribute('aria-pressed',x===b));
+document.querySelectorAll('#vgrid .v').forEach(c=>c.hidden=b.dataset.p&&c.dataset.p!==b.dataset.p)});
+document.querySelectorAll('.show').forEach(b=>b.onclick=()=>{const q=b.closest('.q');q.classList.toggle('open');b.textContent=q.classList.contains('open')?'Hide answer':'Show answer'});
+document.querySelectorAll('.ch button').forEach(b=>b.onclick=()=>{b.classList.add(b.dataset.ok==='true'?'right':'wrong');b.closest('.q').classList.add('open')});
+const tp=document.getElementById('tp');tp.onclick=()=>{const h=document.body.classList.toggle('nopy');tp.textContent=h?'Show pinyin':'Hide pinyin'};
+document.getElementById('tt').onclick=()=>{const r=document.documentElement,d=r.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.dataset.theme=d==='dark'?'light':'dark'};
+const links=[...document.querySelectorAll('nav.toc a')];
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}),{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+
+document.querySelectorAll('nav.toc a').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true}));
+const nv=document.querySelector('nav.toc');
+new MutationObserver(()=>{const a=nv.querySelector('a.on');if(a)nv.scrollTo({left:a.offsetLeft-nv.clientWidth/2+a.clientWidth/2,behavior:'smooth'})}).observe(nv,{attributes:true,subtree:true,attributeFilter:['class']});
+</script>
+</body>
+</html>

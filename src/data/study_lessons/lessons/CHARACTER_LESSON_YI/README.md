@@ -6,6 +6,7 @@
 | `CHARACTER_LESSON_YI.md` | Markdown companion to the JSON; not loaded by the application. |
 | `CHARACTER_LESSON_YI.html` | Supplied standalone lesson page with quiz interactions; open directly in a browser. Not loaded by the application. |
 | `CHARACTER_LESSON_YI_claude.html` | Standalone design prototype; not loaded by the application. |
+| `CHARACTER_LESSON_YI_claude_mobile.html` | Supplied standalone mobile design prototype with embedded lesson data and interactions; open directly in a browser. Not loaded by the application. |
 | `report.md` | Supplied references and editorial provenance; authoring reference only. |
 
 No repository generator is provided. Keep the authored JSON and Markdown aligned;
