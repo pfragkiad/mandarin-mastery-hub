@@ -3035,8 +3035,10 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
    buttons wrap onto a second line (6px between lines too) instead of squeezing the
    bookmark against — or past — the card edge; the bookmark keeps its right-end spot,
    inside the card padding, on the last line. */
-.library-page .word-card .word-card-bottom { flex-wrap: wrap; row-gap: 6px; }
-.library-page .word-card .card-footer-actions { flex-wrap: wrap; row-gap: 6px; min-width: 0; flex-shrink: 1; }
+/* The actions take the row's remaining width (flex-basis 0) so the bookmark never drops
+   onto a line of its own: it stays beside the last line of buttons, bottom-aligned. */
+.library-page .word-card .word-card-bottom { flex-wrap: nowrap; }
+.library-page .word-card .card-footer-actions { flex: 1 1 0; flex-wrap: wrap; row-gap: 6px; min-width: 0; }
 .library-page .word-card .card-footer-bookmark { flex-shrink: 0; align-self: flex-end; }
 @media (max-width: 580px) {
   .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
