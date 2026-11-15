@@ -77,7 +77,7 @@ function useActiveSection(ids: string[]) {
       let current = ids[0] ?? null;
       for (const id of ids) {
         const el = document.getElementById(`lesson-${id}`);
-        if (el && el.getBoundingClientRect().top <= 140) current = id;
+        if (el && el.getBoundingClientRect().top <= 150) current = id;
       }
       setActive(current);
     };
