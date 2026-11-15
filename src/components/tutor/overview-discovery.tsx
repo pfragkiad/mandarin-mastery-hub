@@ -88,11 +88,20 @@ export type DiscoveryRowKey = DiscoveryCategory | 'sound';
 const openByEntry = new Map<string, DiscoveryRowKey | null>();
 
 /**
- * The six Start random cards. State: which phone row is expanded (one at a time, all
- * collapsed by default). Wider screens ignore it — every card is shown in full there.
- * Inputs: `renderSound` draws the Sounds card (kept in overview-sound.tsx).
+ * Library group of the Start random rows; on phones it gets a small uppercase label like the
+ * Start games groups ("Hanzi games"), named and iconed after its side-menu item.
  */
-export function DiscoveryRowList({ categories, renderSound }: { categories: DiscoveryCategory[]; renderSound: (open: boolean, onToggle: () => void) => React.ReactNode }) {
+export interface DiscoveryGroup { title: string; icon: React.ReactNode; categories: DiscoveryCategory[]; sound?: boolean }
+
+/**
+ * The six Start random cards. State: which phone row is expanded (one at a time, all
+ * collapsed by default, across every group). Wider screens ignore it — every card is shown in
+ * full there, and the group wrappers are display: contents with their labels hidden, so the
+ * six-card grid is unchanged; only the ≤700px compact list shows the group labels.
+ * Inputs: `groups` (order of labels and rows) and `renderSound`, which draws the Sounds card
+ * (kept in overview-sound.tsx) in the group marked `sound`.
+ */
+export function DiscoveryRowList({ groups, renderSound }: { groups: DiscoveryGroup[]; renderSound: (open: boolean, onToggle: () => void) => React.ReactNode }) {
   const [open, setOpen] = useState<DiscoveryRowKey | null>(null);
   useEffect(() => { setOpen(openByEntry.get(historyEntry()) ?? null); }, []);
   const toggle = (key: DiscoveryRowKey) => () => setOpen(current => {
@@ -101,8 +110,11 @@ export function DiscoveryRowList({ categories, renderSound }: { categories: Disc
     return next;
   });
   return <>
-    {categories.map(category => <DiscoveryTile key={category} category={category} open={open === category} onToggle={toggle(category)}/>)}
-    {renderSound(open === 'sound', toggle('sound'))}
+    {groups.map(group => <div key={group.title} className="discovery-row-group" role="group" aria-label={group.title}>
+      <h2 className="discovery-row-group-title"><span className="overview-game-group-icon" aria-hidden="true">{group.icon}</span>{group.title}</h2>
+      {group.categories.map(category => <DiscoveryTile key={category} category={category} open={open === category} onToggle={toggle(category)}/>)}
+      {group.sound && renderSound(open === 'sound', toggle('sound'))}
+    </div>)}
   </>;
 }
 
