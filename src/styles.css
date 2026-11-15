@@ -1489,7 +1489,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Container-driven: when the results area is too narrow for two such cards, each track
    shrinks to half the width instead, so the grid goes straight from two cards to more and
    never drops to a single over-wide Compact card. */
-.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(280px,calc((100% - 20px) / 2)),1fr)); gap: 20px; }
+.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(230px,calc((100% - 20px) / 2)),1fr)); gap: 20px; }
 .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(300px,calc((100% - 20px) / 2)),1fr)); gap: 20px; }
 @media(max-width:580px) {
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
