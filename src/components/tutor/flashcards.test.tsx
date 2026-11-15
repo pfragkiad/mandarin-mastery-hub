@@ -58,7 +58,7 @@ describe('Unknown-card bookmarks', () => {
     await finish('Greetings');
     fireEvent.click(screen.getByRole('button', { name: 'Bookmark 你好' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith('hello');
-    view.reawait renderWords();
+    view.rerender(<FlashcardsPage />);
     expect(screen.getByRole('button', { name: 'Remove bookmark 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
   });
@@ -112,7 +112,7 @@ describe('Card details and Back', () => {
     expect(detailTrail.get()).toEqual([{ label: 'Flashcards', href: window.location.href }]);
     // Leaving for the details page and coming Back remounts the game.
     view.rerender(page(false));
-    view.reawait renderWords(page(true));
+    view.rerender(page(true));
     expect(screen.getByText('Card 1 of 1')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
     expect(detailTrail.get()).toEqual([]);
