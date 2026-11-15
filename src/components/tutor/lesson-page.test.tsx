@@ -6,11 +6,12 @@ import { lessonSummaries, loadLesson } from '@/lib/lessons';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children, className, to }: { children?: React.ReactNode; className?: string; to?: string }) => <a className={className} data-to={to}>{children}</a>,
 }));
+const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined }));
 vi.mock('./workspace', () => ({
-  useWorkspace: () => ({ items: [], saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false }, catalogVersion: 0, theme: 'light' }),
+  useWorkspace: () => ({ items: [], saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
 }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => true }));
-afterEach(cleanup);
+afterEach(() => { cleanup(); prefs.lessonHints = undefined; });
 
 describe('LessonPage', () => {
   it.each(lessonSummaries.map(s => s.id))('renders lesson %s from its JSON', async id => {
@@ -109,5 +110,28 @@ describe('LessonPage', () => {
     const a = lesson.sections.vocabulary!.items.filter(v => v.priority === 'A').length;
     const { container } = render(<LessonPage lesson={lesson} priority="A" onPriority={() => {}}/>);
     expect(container.querySelectorAll('.lesson-vocab')).toHaveLength(a);
+  });
+
+  it('character hints: every hanzi is a hint target by default, plain text with no links when switched off', async () => {
+    const lesson = (await loadLesson('char-6B21'))!;
+    const on = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const headword = on.container.querySelector('.lesson-headword-glyph')!;
+    expect(headword.querySelectorAll('[data-lesson-hint]')).toHaveLength(Array.from(lesson.headword!.hanzi).length);
+    expect(on.container.querySelector('.lesson-example [data-lesson-hint]')).not.toBeNull();
+    cleanup();
+    prefs.lessonHints = false;
+    const off = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(off.container.querySelector('[data-lesson-hint]')).toBeNull();
+    expect(off.container.querySelector('.lesson-main a.lesson-hanzi, .lesson-example a.sentence-char')).toBeNull();
+    expect(off.container.querySelector('.lesson-headword-glyph')?.textContent).toBe(lesson.headword!.hanzi);
+  });
+
+  it('character hints appear in a practice question only after it is answered', async () => {
+    const lesson = (await loadLesson('char-6B21'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const question = container.querySelectorAll('.lesson-question')[1]!;
+    expect(question.querySelector('[data-lesson-hint]')).toBeNull();
+    fireEvent.click(question.querySelectorAll('.lesson-choice')[1]!);
+    expect(question.querySelector('[data-lesson-hint]')).not.toBeNull();
   });
 });
