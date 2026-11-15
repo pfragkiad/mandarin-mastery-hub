@@ -3549,6 +3549,19 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-choice .pinyin { font-size: 13px; }
 .lesson-choice small { font-size: 12px; color: var(--muted-foreground); }
 .lesson-answer-toggle { align-self: flex-start; }
+/* Graded quiz choices reuse the accuracy grade hues: green for a right pick or the marked answer, red for a wrong pick. */
+.lesson-choice[aria-disabled="true"] { cursor: default; }
+.lesson-choice.is-correct, .lesson-choice.is-answer { border-color: var(--grade-high); box-shadow: inset 0 0 0 1px var(--grade-high); }
+.lesson-choice.is-correct .lesson-hanzi, .lesson-choice.is-answer .lesson-hanzi { color: var(--grade-high); }
+.lesson-choice.is-wrong { border-color: var(--grade-low); box-shadow: inset 0 0 0 1px var(--grade-low); }
+.lesson-choice.is-wrong .lesson-hanzi { color: var(--grade-low); }
+.lesson-choice.is-dimmed { opacity: .6; }
+.lesson-choice.is-correct:hover, .lesson-choice.is-answer:hover { border-color: var(--grade-high); }
+.lesson-choice.is-wrong:hover { border-color: var(--grade-low); }
+.lesson-verdict { margin: 0; font-size: 14px; font-weight: 600; }
+.lesson-verdict.is-right { color: var(--grade-high); }
+.lesson-verdict.is-wrong { color: var(--grade-low); }
+.lesson-question-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .lesson-answer { border-top: 1px solid var(--border); padding-top: 10px; display: grid; gap: 4px; }
 .lesson-preference { margin-top: 14px; }
 .lesson-bar-row { display: grid; grid-template-columns: minmax(90px, auto) minmax(80px, 1fr) auto; gap: 12px; align-items: center; }

@@ -16,9 +16,9 @@ import { SentenceExample } from './sentence-example';
  * and each practice card's revealed answer (both reset when the page is left).
  *
  * Sections follow the schema order and appear only when they carry content (disabled
- * sections, empty lists and editorial-only extensions are skipped). Practice choices
- * reveal the recorded answer and explanation. v2.6 selected answers resolve through
- * explicit choice IDs; older and open-ended questions retain their answer text.
+ * sections, empty lists and editorial-only extensions are skipped). v2.6 selection
+ * questions are graded only through their recorded correct_choice_ids; older and
+ * open-ended questions reveal their recorded answer text without grading.
  */
 
 const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character lesson', word: 'Word lesson', phrase: 'Phrase lesson', topic: 'Topic lesson' };
@@ -196,20 +196,55 @@ function VocabCard({ item }: { item: LessonVocabItem }) {
   </div>;
 }
 
-/** A practice question: choices (if any) and Show answer both reveal the recorded answer; nothing is graded. */
+/** A practice question. Inputs: the recorded question and its display number.
+ * State: picked choice indexes, whether the answer is shown, and (multi-selection only)
+ * whether the picks were checked. Grading happens only when correctLessonChoices resolves
+ * the recorded correct_choice_ids; questions without valid IDs (legacy files, broken
+ * references) keep the ungraded reveal so no answer is ever guessed from text.
+ * Single selection grades on the first click; multi-selection toggles picks and grades on Check. */
 function QuestionCard({ question, index }: { question: LessonQuestion; index: number }) {
   const [open, setOpen] = useState(false);
-  const [picked, setPicked] = useState<number | null>(null);
+  const [picked, setPicked] = useState<number[]>([]);
+  const [checked, setChecked] = useState(false);
   const correctChoices = correctLessonChoices(question);
+  const graded = correctChoices.length > 0;
+  const multi = graded && question.kind === 'multi_selection';
+  const isCorrect = (i: number) => correctChoices.includes(question.choices[i]!);
+  // Single selection: one click answers. Multi: answered once checked.
+  const answered = graded && (multi ? checked : picked.length > 0);
+  const right = answered && picked.length === correctChoices.length && picked.every(isCorrect);
+  const choose = (i: number) => {
+    if (!graded) { setPicked([i]); setOpen(true); return; }
+    if (answered) return;
+    if (multi) setPicked(p => p.includes(i) ? p.filter(x => x !== i) : [...p, i]);
+    else { setPicked([i]); setOpen(true); }
+  };
+  const check = () => { setChecked(true); setOpen(true); };
+  const retry = () => { setPicked([]); setChecked(false); setOpen(false); };
+  const choiceState = (i: number) => {
+    const on = picked.includes(i);
+    if (!answered && !(graded && open)) return on ? ' is-picked' : '';
+    if (isCorrect(i)) return on ? ' is-correct' : ' is-answer';
+    return on ? ' is-wrong' : ' is-dimmed';
+  };
+  const hint = !question.choices.length ? null
+    : multi ? (!answered ? 'Pick every answer that fits, then check.' : null)
+    : graded ? (!answered && !open ? 'Pick one.' : null)
+    : (!picked.length && !open ? 'Pick one, then compare with the answer.' : null);
   return <div className={`lesson-card lesson-question${open ? ' is-open' : ''}`}>
-    <div className="lesson-card-top"><span className="lesson-register">Question {index} · {question.kind}</span></div>
+    <div className="lesson-card-top"><span className="lesson-register">Question {index} · {plain(question.kind)}</span></div>
     <p className="lesson-card-title"><LessonText text={question.prompt}/></p>
-    {question.choices.length > 0 && <div className="lesson-choices" role="group" aria-label="Choices">{question.choices.map((c, i) => <button key={c.id ?? i} type="button" className={`lesson-choice${picked === i ? ' is-picked' : ''}`} aria-pressed={picked === i} onClick={() => { setPicked(i); setOpen(true); }}>
-      <QuestionChoice choice={c} showMeaning={open}/>
+    {question.choices.length > 0 && <div className="lesson-choices" role="group" aria-label="Choices">{question.choices.map((c, i) => <button key={c.id ?? i} type="button" className={`lesson-choice${choiceState(i)}`} aria-pressed={picked.includes(i)} aria-disabled={answered || undefined} onClick={() => choose(i)}>
+      <QuestionChoice choice={c} showMeaning={open || answered}/>
     </button>)}</div>}
-    {question.choices.length > 0 && picked === null && !open && <p className="lesson-muted">Pick one, then compare with the answer.</p>}
-    <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>
-    {open && <div className="lesson-answer" role="status">{correctChoices.length ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
+    {hint && <p className="lesson-muted">{hint}</p>}
+    {answered && <p className={`lesson-verdict ${right ? 'is-right' : 'is-wrong'}`} role="status">{right ? 'Correct!' : multi ? 'Not quite. The correct answers are marked.' : 'Not quite. The correct answer is marked.'}</p>}
+    <div className="lesson-question-actions">
+      {multi && !answered && <Button size="sm" disabled={!picked.length} onClick={check}>Check</Button>}
+      {answered ? <Button size="sm" variant="outline" onClick={retry}>Try again</Button>
+        : <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>}
+    </div>
+    {(open || answered) && <div className="lesson-answer">{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
   </div>;
 }
 

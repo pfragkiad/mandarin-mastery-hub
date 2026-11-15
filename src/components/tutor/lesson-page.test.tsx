@@ -39,13 +39,56 @@ describe('LessonPage', () => {
     expect(container.querySelector('#lesson-more')?.textContent).toContain('needs review');
   });
 
-  it('a practice choice reveals the recorded answer without grading it', async () => {
+  it('a wrong pick is marked wrong and the recorded answer is marked', async () => {
     const lesson = (await loadLesson('char-6B21'))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     const question = container.querySelectorAll('.lesson-question')[1]!;
-    fireEvent.click(question.querySelectorAll('.lesson-choice')[1]!);
-    expect(question.querySelector('.lesson-answer')?.textContent).toContain('下次');
-    expect(question.querySelector('.is-correct, .is-wrong')).toBeNull();
+    const choices = question.querySelectorAll('.lesson-choice');
+    fireEvent.click(choices[1]!); // 上次 — recorded correct ID is "a" (下次)
+    expect(choices[1]!.classList.contains('is-wrong')).toBe(true);
+    expect(choices[0]!.classList.contains('is-answer')).toBe(true);
+    expect(question.querySelector('.lesson-verdict')?.textContent).toContain('Not quite');
+    fireEvent.click(choices[0]!); // locked after answering
+    expect(choices[0]!.classList.contains('is-correct')).toBe(false);
+  });
+
+  it('a right pick is marked correct and Try again resets', async () => {
+    const lesson = (await loadLesson('char-6B21'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const question = container.querySelectorAll('.lesson-question')[1]!;
+    fireEvent.click(question.querySelectorAll('.lesson-choice')[0]!);
+    expect(question.querySelector('.lesson-choice.is-correct')).not.toBeNull();
+    expect(question.querySelector('.lesson-verdict')?.textContent).toBe('Correct!');
+    fireEvent.click(screen.getAllByRole('button', { name: 'Try again' })[0]!);
+    expect(question.querySelector('.is-correct, .is-wrong, .lesson-verdict')).toBeNull();
+  });
+
+  it('multi-selection grades only on Check and needs every correct choice', async () => {
+    const lesson = structuredClone((await loadLesson('char-6B21'))!);
+    lesson.sections.practice = { enabled: true, questions: [
+      { id: 'multi', kind: 'multi_selection', prompt: 'Which mean a time?', choices: [{ id: 'a', text: 'Next' }, { id: 'b', text: 'Apple' }, { id: 'c', text: 'Last' }], correct_choice_ids: ['a', 'c'], explanation: '' },
+    ] };
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(container.querySelector('.lesson-verdict')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(container.querySelector('.lesson-verdict')?.textContent).toContain('Not quite');
+    fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Last' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(container.querySelector('.lesson-verdict')?.textContent).toBe('Correct!');
+  });
+
+  it('legacy questions without answer IDs are never graded', async () => {
+    const lesson = structuredClone((await loadLesson('char-6B21'))!);
+    lesson.sections.practice = { enabled: true, questions: [
+      { id: 'legacy', kind: 'selection', prompt: 'Choose.', choices: [{ hanzi: '下次', pinyin: 'xià cì' }, { hanzi: '上次', pinyin: 'shàng cì' }], answer: '下次', explanation: '' },
+    ] };
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    fireEvent.click(container.querySelectorAll('.lesson-choice')[1]!);
+    expect(container.querySelector('.lesson-answer')?.textContent).toContain('下次');
+    expect(container.querySelector('.is-correct, .is-wrong, .lesson-verdict')).toBeNull();
   });
 
   it('reveals recorded text choices and legacy answer text', async () => {
