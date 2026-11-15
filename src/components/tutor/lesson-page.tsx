@@ -186,7 +186,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>
         <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
           <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-describedby="lesson-hints-help"/>
-          <span><strong>Character hints</strong><small id="lesson-hints-help">Tap a character for a quick card</small></span>
+          <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
         </label>
       </nav>
       <div className="lesson-main">
