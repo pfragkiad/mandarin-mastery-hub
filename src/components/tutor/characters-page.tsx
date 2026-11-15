@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
-import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
+import { UNRANKED, usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, glyphScript, plannedCounts, radicalVariantFallback, radicalVariantMeaning, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog, readingMeanings } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
@@ -383,7 +383,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
 
 const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect && a.revealed === b.revealed && a.onDetails === b.onDetails);
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -397,17 +397,19 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const pinyinOnly = Boolean(search.py);
   const hasUsage = kind !== 'Strokes';
   const usage = hasUsage ? parseUsageGroup(kind, search.usage) : undefined;
+  const usageUpTo = search.usageUpTo === '1';
+  const strokesUpTo = search.strokesUpTo === '1';
   const savedOnly = search.status === 'saved';
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   // No first-row fallback: ordinary visits and tab changes must not open a modal.
   // Explicit record IDs take precedence over glyph-only links to preserve kind.
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py };
+  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
-  const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py };
+  const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo };
   const activeFilters = Boolean(query || strokeCount || usage || search.py || savedOnly);
-  const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined }); };
+  const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined, usageUpTo: undefined, strokesUpTo: undefined }); };
   const setPage = (p: number) => set({ page: p, id: '' });
   const detailLoading = useDetailLoading();
   const setSelectedId = (id: string) => { void detailLoading.run(id, () => { const entry = savedGlyphEntry(id); return set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); }); };
@@ -415,13 +417,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const compatibleFilters = kind === 'Characters' || kind === 'Components';
   // Only applied opposite filters drive availability. Draft edits stay inside
   // the form, keeping the scan independent of typing and detail selection.
-  const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount), [entries, kind, preferences.includeTraditional, usage, strokeCount, catalogVersion]);
+  const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo), [entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo, catalogVersion]);
   const strokeCounts = useMemo(() => compatibleFilters ? availableOptions.strokes : Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b), [entries, compatibleFilters, availableOptions]);
   const rankGroups = compatibleFilters ? availableOptions.ranks : usageGroups(kind);
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
-  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact');
+  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact', usageUpTo, strokesUpTo);
   // Grouped traditional records share their simplified card (a search hitting only 爺 shows 爷's card).
   // Saved browsing keeps exact bookmarked records, so a saved 爺 stays its own card there.
   // Applies to Characters and Components alike (each groups only within its own library).
