@@ -351,8 +351,8 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // stacks boxes / pinyin+audio / translation (styles.css "Library card body").
   useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional]);
   // A row too narrow for its labels gets two attempts before it drops one onto a second line:
-  // first the gold Radical pill's abbreviated "Rad. #N", then a smaller card chrome font
-  // (use-card-chrome-fit.ts).
+  // first the gold Radical pill's abbreviated "Rad. #N", then a smaller header font
+  // (use-card-top-row-fit.ts).
   const rowRef = useRef<HTMLSpanElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   useCardTopRowFit(rowRef, entry.kangxiIndex !== undefined || (componentRadical.length === 1 && Boolean(componentRadical[0])), [entry.id, entry.kangxiIndex, componentRadical.length, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional, preferences.cardReveal, revealed]);

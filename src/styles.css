@@ -3642,21 +3642,27 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
    The footer buttons set the size (Compact 11px, Comfortable 15px). Fixed px line-heights
    and a top row whose height equals the pill's own height keep the row identical whether
    or not a card carries a pill; only a row too long for its card wraps (content-driven). */
-:root { --card-chrome-size: 11px; --card-chrome-line: 14px; --card-pill-pad-y: 2px; --card-pill-pad-x: 6px; }
-html[data-display-size='comfortable'] { --card-chrome-size: 15px; --card-chrome-line: 20px; --card-pill-pad-y: 2px; --card-pill-pad-x: 9px; }
-html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-level-wrap, .card-top-meta, .component-reuse-label, .usage-strokes, .usage-strokes *, .card-top-pos, .word-level, .word-hsk-id, .practice-kind) { font-size: var(--card-chrome-size); line-height: var(--card-chrome-line); letter-spacing: 0; }
+:root { --card-head-size: 11px; --card-head-line: 14px; --card-foot-size: 11px; --card-pill-pad-y: 2px; --card-pill-pad-x: 6px; }
+html[data-display-size='comfortable'] { --card-head-size: 15px; --card-head-line: 20px; --card-foot-size: 15px; --card-pill-pad-y: 2px; --card-pill-pad-x: 9px; }
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-level-wrap, .card-top-meta, .component-reuse-label, .usage-strokes, .usage-strokes *, .card-top-pos, .word-level, .word-hsk-id, .practice-kind) { font-size: var(--card-head-size); line-height: var(--card-head-line); letter-spacing: 0; }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-hsk-id, .practice-kind) { padding: var(--card-pill-pad-y) var(--card-pill-pad-x); }
 /* Pill height = line + 2 × padding + 2 × 1px border; every top row reserves exactly that. */
-html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-chrome-line) + 2 * var(--card-pill-pad-y) + 2px); }
-html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-chrome-size); }
-/* Card chrome font steps: the second attempt before a top row wraps (use-card-chrome-fit.ts).
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-head-line) + 2 * var(--card-pill-pad-y) + 2px); }
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-foot-size); }
+/* Card header font steps: the second attempt before a top row wraps (use-card-top-row-fit.ts).
    The step is written on the card element itself, so the custom property inherits into the top
-   row AND the footer buttons — the whole card chrome shrinks together, never the header alone.
-   Floors at 9px (Compact) / 13px (Comfortable); past that the row wraps. */
-.word-card[data-card-chrome-step='1'] { --card-chrome-size: 10px; --card-chrome-line: 13px; }
-.word-card[data-card-chrome-step='2'] { --card-chrome-size: 9px; --card-chrome-line: 12px; }
-html[data-display-size='comfortable'] .word-card[data-card-chrome-step='1'] { --card-chrome-size: 14px; --card-chrome-line: 19px; }
-html[data-display-size='comfortable'] .word-card[data-card-chrome-step='2'] { --card-chrome-size: 13px; --card-chrome-line: 18px; }
+   row only. Floors at 9px (Compact) / 13px (Comfortable); past that the row wraps. */
+.word-card[data-card-head-step='1'] { --card-head-size: 10px; --card-head-line: 13px; }
+.word-card[data-card-head-step='2'] { --card-head-size: 9px; --card-head-line: 12px; }
+html[data-display-size='comfortable'] .word-card[data-card-head-step='1'] { --card-head-size: 14px; --card-head-line: 19px; }
+html[data-display-size='comfortable'] .word-card[data-card-head-step='2'] { --card-head-size: 13px; --card-head-line: 18px; }
+/* Card footer font steps: the footer's own, independent attempt before its buttons wrap
+   (use-card-footer-fit.ts) — a smaller header never shrinks these buttons, and vice versa.
+   Same floors: 9px (Compact) / 13px (Comfortable); past that the button row wraps. */
+.word-card[data-card-foot-step='1'] { --card-foot-size: 10px; }
+.word-card[data-card-foot-step='2'] { --card-foot-size: 9px; }
+html[data-display-size='comfortable'] .word-card[data-card-foot-step='1'] { --card-foot-size: 14px; }
+html[data-display-size='comfortable'] .word-card[data-card-foot-step='2'] { --card-foot-size: 13px; }
 
 /* Radical pill abbreviation: the full "Radical #N" label shows by default; when the card's top
    row is too narrow for it, useCardChromeFit measured that the row wraps and that the

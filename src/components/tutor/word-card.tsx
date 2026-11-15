@@ -129,8 +129,8 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const bodyRef = useRef<HTMLButtonElement>(null);
   useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
-  // Words/Phrases top rows keep one line too: the card chrome font steps down before the row
-  // wraps (use-card-chrome-fit.ts). No Radical pill on these cards, so the abbreviation step
+  // Words/Phrases top rows keep one line too: the header font steps down before the row
+  // wraps (use-card-top-row-fit.ts). No Radical pill on these cards, so the abbreviation step
   // is switched off and only the font steps apply.
   const rowRef = useRef<HTMLSpanElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
