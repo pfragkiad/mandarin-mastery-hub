@@ -15,13 +15,13 @@ vi.mock('@/lib/character-library', () => ({ referenceCatalog: [{ kind: 'Radical'
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a>, useNavigate: () => vi.fn() }));
 
 /** Most tests deal from the Words kind (Characters is the first, default kind). */
-const renderWords = (ui: React.ReactElement = <FlashcardsPage />) => { const view = render(ui); fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Words' } }); return view; };
+const renderWords = async (ui: React.ReactElement = <FlashcardsPage />) => { const view = render(ui); fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Words' } }); await screen.findByRole('button', { name: 'Start · 10 cards' }); return view; };
 /** While a round runs the setup is folded into the play bar's settings chip. */
 const openSettings = () => fireEvent.click(screen.getByRole('button', { name: /Chinese → English|English → Chinese/ }));
 
 describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
@@ -31,7 +31,7 @@ describe('Flashcard front pinyin', () => {
     expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
   });
   it('can reveal and hide pinyin on the Chinese front without restarting the deck', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
@@ -54,16 +54,16 @@ describe('Unknown-card bookmarks', () => {
     await waitFor(() => expect(screen.getByText('Session complete')).toBeInTheDocument());
   }
   it('saves the unknown vocabulary record and links to that exact record', async () => {
-    const view = renderWords();
+    const view = await renderWords();
     await finish('Greetings');
     fireEvent.click(screen.getByRole('button', { name: 'Bookmark 你好' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith('hello');
-    view.rerenderWords();
+    view.reawait renderWords();
     expect(screen.getByRole('button', { name: 'Remove bookmark 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('link', { name: /你好/ })).toHaveAttribute('href', '/vocabulary?word=hello&tab=word');
   });
   it.each(['Radical', 'Component', 'Character'])('saves an exact %s bookmark and review destination', async kind => {
-    renderWords();
+    await renderWords();
     await finish(`Ref:${kind}`);
     fireEvent.click(screen.getByRole('button', { name: 'Bookmark 一' }));
     expect(bookmarks.toggle).toHaveBeenCalledExactlyOnceWith(`${kind}s:一`);
@@ -71,13 +71,13 @@ describe('Unknown-card bookmarks', () => {
   });
   it('shows an existing bookmark as saved without toggling it', async () => {
     bookmarks.saved = ['hello'];
-    renderWords();
+    await renderWords();
     await finish('Greetings');
     expect(screen.getByRole('button', { name: 'Remove bookmark 你好' })).toHaveAttribute('aria-pressed', 'true');
     expect(bookmarks.toggle).not.toHaveBeenCalled();
   });
   it('does not offer to save cards answered correctly', async () => {
-    renderWords();
+    await renderWords();
     await finish('Greetings', true);
     expect(screen.queryByRole('button', { name: /^Bookmark / })).not.toBeInTheDocument();
     expect(bookmarks.toggle).not.toHaveBeenCalled();
@@ -87,7 +87,7 @@ describe('Unknown-card bookmarks', () => {
 describe('Saved deck', () => {
   it('deals only the category\'s bookmarked cards when Saved is selected', async () => {
     bookmarks.saved = ['hello'];
-    renderWords();
+    await renderWords();
     // Words holds 12 mocked words; only 你好 is bookmarked.
     fireEvent.click(screen.getByRole('button', { name: /^Show only saved cards/ }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
@@ -101,7 +101,7 @@ describe('Card details and Back', () => {
   it('offers Details only on the answer side and Back resumes the same turned-over card', async () => {
     // The provider stays mounted (as at the app root) while the page leaves and returns.
     const page = (shown: boolean) => <FlashcardSessionProvider>{shown && <FlashcardsPage />}</FlashcardSessionProvider>;
-    const view = renderWords(page(true));
+    const view = await renderWords(page(true));
     fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('link', { name: 'Open details for 你好' })).not.toBeInTheDocument();
@@ -112,7 +112,7 @@ describe('Card details and Back', () => {
     expect(detailTrail.get()).toEqual([{ label: 'Flashcards', href: window.location.href }]);
     // Leaving for the details page and coming Back remounts the game.
     view.rerender(page(false));
-    view.rerenderWords(page(true));
+    view.reawait renderWords(page(true));
     expect(screen.getByText('Card 1 of 1')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'I knew it' })).toBeEnabled();
     expect(detailTrail.get()).toEqual([]);
@@ -121,7 +121,7 @@ describe('Card details and Back', () => {
 
 describe('Deck size', () => {
   it('preserves the active card when filters are applied or cleared', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     const current = screen.getByText('Card 1 of 10');
     openSettings();
@@ -132,8 +132,8 @@ describe('Deck size', () => {
     await screen.findByRole('button', { name: 'Restart · 10 cards' });
     expect(current).toBeInTheDocument();
   });
-  it('deals a capped deck by default and honours the deck-size selection', () => {
-    renderWords();
+  it('deals a capped deck by default and honours the deck-size selection', async () => {
+    await renderWords();
     expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
@@ -143,8 +143,8 @@ describe('Deck size', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: 'all' } });
     expect(screen.getByRole('button', { name: 'Restart · 12 cards' })).toBeInTheDocument();
   });
-  it('caps the round size to the filtered pool', () => {
-    renderWords();
+  it('caps the round size to the filtered pool', async () => {
+    await renderWords();
     fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '50' } });
     expect(screen.getByRole('button', { name: 'Start · 12 cards' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 12 cards' }));
@@ -153,7 +153,7 @@ describe('Deck size', () => {
 });
 
  it('applies filter changes immediately and clears immediately with X', async () => {
-   renderWords();
+   await renderWords();
    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
@@ -162,22 +162,22 @@ describe('Deck size', () => {
   });
 
 describe('Play bar and results', () => {
-  it('hides the setup while playing and shows it again from the settings chip', () => {
-    renderWords();
+  it('hides the setup while playing and shows it again from the settings chip', async () => {
+    await renderWords();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     expect(screen.queryByRole('combobox', { name: 'Category' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Words · Chinese → English · 10 cards/ })).toBeInTheDocument();
     openSettings();
     expect(screen.getByRole('combobox', { name: 'Category' })).toBeInTheDocument();
   });
-  it('End before any answer goes straight back to the setup', () => {
-    renderWords();
+  it('End before any answer goes straight back to the setup', async () => {
+    await renderWords();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     fireEvent.click(screen.getByRole('button', { name: 'End' }));
     expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
   it('End after an answer asks first, then shows results for the cards answered so far', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Still learning' }));
@@ -192,7 +192,7 @@ describe('Play bar and results', () => {
     expect(screen.getByText(/1 of 10 reviewed · 1 still learning/)).toBeInTheDocument();
   });
   it('an unticked card is left out of the review round', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -205,7 +205,7 @@ describe('Play bar and results', () => {
 
 describe('Last card and finish', () => {
   it('labels the last card, counts its miss at once and the results agree', async () => {
-    renderWords();
+    await renderWords();
     fireEvent.change(screen.getByRole('combobox', { name: 'Deck size' }), { target: { value: '5' } });
     fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
     for (let card = 1; card <= 5; card++) {
@@ -225,7 +225,7 @@ describe('Last card and finish', () => {
 });
 
 describe('What to practise kinds', () => {
-  it('lists glyph kinds first, then Words and Phrases, defaulting to Characters', () => {
+  it('lists glyph kinds first, then Words and Phrases, defaulting to Characters', async () => {
     render(<FlashcardsPage />);
     const select = screen.getByRole('combobox', { name: 'Category' });
     expect(Array.from((select as HTMLSelectElement).options).map(o => o.textContent)).toEqual(['Characters', 'Components', 'Radicals', 'Words', 'Phrases']);
