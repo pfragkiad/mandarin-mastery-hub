@@ -72,9 +72,9 @@ describe('topRowFitPlan', () => {
     expect(tried).toEqual([{ abbreviate: false, step: 0 }, { abbreviate: false, step: 1 }]);
   });
 
-  it('keeps the smallest header size when nothing fits, so the row wraps as the last fallback', () => {
-    expect(topRowFitPlan(() => false, true)).toEqual({ abbreviate: true, step: HEAD_FONT_STEPS[HEAD_FONT_STEPS.length - 1] });
-    expect(topRowFitPlan(() => false, false)).toEqual({ abbreviate: false, step: HEAD_FONT_STEPS[HEAD_FONT_STEPS.length - 1] });
+  it('reverts to the full label and the view header size when nothing fits', () => {
+    expect(topRowFitPlan(() => false, true)).toEqual({ abbreviate: false, step: 0 });
+    expect(topRowFitPlan(() => false, false)).toEqual({ abbreviate: false, step: 0 });
   });
 
   it('never offers a header size below the 9px / 13px floors', () => {

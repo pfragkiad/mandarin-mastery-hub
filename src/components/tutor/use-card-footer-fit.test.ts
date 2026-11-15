@@ -43,15 +43,15 @@ describe('footerItemsWrap', () => {
 
 describe('footerFontPlan', () => {
   it('keeps the view button size when the row already fits', () => {
-    expect(footerFontPlan(() => true)).toBe(FOOT_FONT_STEPS[0]);
+    expect(footerFontPlan(() => true)).toBe(0);
   });
 
   it('takes the first smaller size that puts the row back on one line', () => {
     expect(footerFontPlan(step => step === 2)).toBe(2);
   });
 
-  it('keeps the smallest size when the row wraps anyway', () => {
-    expect(footerFontPlan(() => false)).toBe(FOOT_FONT_STEPS[FOOT_FONT_STEPS.length - 1]);
+  it('returns to the view size when the row wraps anyway', () => {
+    expect(footerFontPlan(() => false)).toBe(0);
   });
 
   it('never offers a button size below the 9px / 13px floors', () => {

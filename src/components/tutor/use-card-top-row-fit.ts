@@ -10,9 +10,9 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  *      one — the full "Radical #N" stays everywhere else);
  *   2. the top row's own font steps down one size at a time (HEAD_FONT_STEPS, styles.css "Card
  *      header font steps").
- * If neither attempt fits the row, the last (smallest) size stays and the row wraps — wrapping is
- * the final fallback the user chose, and the smaller text gives the wrapped lines the best chance
- * of holding their content.
+ * If neither attempt fits the row, the row keeps the full label and the view's own size and
+ * wraps — an attempt is only kept when it actually avoids the wrap, so the header is never left
+ * smaller for nothing. Wrapping is the final fallback the user chose.
  *
  * The footer's Details/Trace/Recall buttons are NOT part of this: they get their own, independent
  * attempt (use-card-footer-fit.ts), so shrinking the header never shrinks the buttons.
@@ -70,13 +70,13 @@ export type TopRowFit = { abbreviate: boolean; step: number };
  * The first top-row presentation that fits, tried in the user's order: full label at the view's
  * header size, then the abbreviated Radical label, then one header font step at a time (the
  * abbreviation kept, since it was already accepted). `fits` is called once per candidate, in
- * order, and the last candidate is returned when none fits.
+ * order. When none fits, the row keeps the full label at the view's own size.
  */
 export function topRowFitPlan(fits: (fit: TopRowFit) => boolean, allowRadicalAbbreviation: boolean): TopRowFit {
   const ladder: TopRowFit[] = [{ abbreviate: false, step: 0 }];
   if (allowRadicalAbbreviation) ladder.push({ abbreviate: true, step: 0 });
   for (const step of HEAD_FONT_STEPS) ladder.push({ abbreviate: allowRadicalAbbreviation, step });
-  return ladder.find(fit => fits(fit)) ?? ladder[ladder.length - 1]!;
+  return ladder.find(fit => fits(fit)) ?? { abbreviate: false, step: 0 };
 }
 
 /** Write one presentation to the DOM: the row's Radical label and the card's header font step. */

@@ -6,8 +6,9 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * Purpose: the footer row holds Details / Trace / Recall and the bookmark. When the card is too
  * narrow, Recall and the bookmark drop to a second line (their shared wrap group). Before that
  * happens, the footer's own attempt is to set the buttons one pixel smaller at a time
- * (FOOT_FONT_STEPS, never below FOOT_FONT_FLOOR) and keep the first size that puts every action
- * back on one line. If none does, the buttons keep the view's size and the row wraps.
+ * (FOOT_FONT_STEPS, never below the 9px / 13px floors) and keep the first size that puts every
+ * action back on one line. If none does, the buttons keep the view's size and the row wraps —
+ * a smaller font is only kept when it actually avoided the wrap.
  *
  * This is deliberately independent of the card's top row: shrinking the header text never shrinks
  * these buttons (use-card-top-row-fit.ts owns the header), and shrinking the buttons never
@@ -59,9 +60,12 @@ export function useCardFooterFit(ref: RefObject<HTMLElement | null>, deps: Depen
 /** One footer size below the view's own, then two: the floors are 9px (Compact) / 13px (Comfortable). */
 export const FOOT_FONT_STEPS = [1, 2] as const;
 
-/** The first button font step that fits the row, or the last one when the row wraps anyway. */
+/**
+ * The view's own button size first, then one pixel smaller at a time; 0 (the view's own size)
+ * when the row wraps anyway, so the buttons are never left smaller for nothing.
+ */
 export function footerFontPlan(fits: (step: number) => boolean): number {
-  return FOOT_FONT_STEPS.find(step => fits(step)) ?? FOOT_FONT_STEPS[FOOT_FONT_STEPS.length - 1]!;
+  return [0, ...FOOT_FONT_STEPS].find(step => fits(step)) ?? 0;
 }
 
 /** Write one button font step to the card (0 hands the buttons back to the view's own size). */
