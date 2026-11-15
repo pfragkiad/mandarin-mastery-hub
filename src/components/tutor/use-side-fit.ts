@@ -12,22 +12,46 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * Inputs: `ref` — the card's `.word-open` body; `enabled` — false to keep the side layout
  * unmeasured; `deps` — whatever changes the text or box size (record, visible lines, font
  * style, view, number of forms).
- * State: only the DOM attribute, set directly (re-measured on every resize and after web
- * fonts settle), so measuring never rerenders the results grid.
+ * State: only DOM attributes and one inline font size on the translation, set directly (re-measured
+ * on every resize and after web fonts settle), so measuring never rerenders the results grid.
  *
  * Fit means: the boxes aren't squeezed or pushed past the card edge, the pinyin stays on one
  * line with its speaker beside it, and the translation needs at most two lines (so the text
  * column is no taller than the box). The check always starts from the side layout, so the
  * result is stable.
+ *
+ * Translation font steps: a translation whose last line carries only one or two words costs the
+ * card a whole line for almost nothing, so before that line is accepted the hook tries the
+ * translation one pixel smaller at a time (MEANING_FONT_STEPS, never below MEANING_FONT_FLOOR)
+ * until the short line joins the line above. It is tried first while deciding whether the side
+ * layout can be kept at all — one line fewer is often exactly what the side layout needed — and
+ * then again in whichever layout won. If no step removes the line, the translation keeps the
+ * view's own size.
+ *
+ * Tricky logic: the CSS base size has to be read with the inline override removed, so every step
+ * starts by clearing it; the last line's word count is inferred from its measured width against
+ * clones of the last one and two words, because the translation is rendered through MeaningText
+ * and its text is split across nested spans.
  */
 export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean, deps: DependencyList) {
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (!enabled) { delete el.dataset['stacked']; return; }
+    if (!enabled) { delete el.dataset['stacked']; resetMeaningFont(el); return; }
     const measure = () => {
       delete el.dataset['stacked'];
-      if (!sideLayoutFits(el)) el.dataset['stacked'] = '';
+      resetMeaningFont(el);
+      if (!sideLayoutFits(el)) {
+        // The side layout is lost because something is cut or too tall: a smaller translation may
+        // need one line fewer and keep it, so try those steps before stacking.
+        let fitted = false;
+        for (const step of MEANING_FONT_STEPS) {
+          if (!applyMeaningFont(el, step)) continue;
+          if (sideLayoutFits(el)) { fitted = true; break; }
+        }
+        if (!fitted) { el.dataset['stacked'] = ''; resetMeaningFont(el); }
+      }
+      shrinkTrailingLine(el);
     };
     measure();
     let alive = true;
@@ -61,12 +85,133 @@ function sideLayoutFits(open: HTMLElement): boolean {
     const speaker = open.querySelector<HTMLElement>('.pinyin .tile-speaker');
     if (speaker && speaker.getBoundingClientRect().top >= text.getBoundingClientRect().bottom - 1) return false;
   }
-  const meaning = open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
+  const meaning = meaningElement(open);
   // Single-tile glyph cards (one form box) may keep a three-line translation beside the box;
   // every other card stacks once the translation would need a third line there.
   const maxLines = open.closest('.catalog-card.few-forms') ? 3 : 2;
   if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > maxLines)) return false;
   return true;
+}
+
+/** How many pixels smaller the translation may go, and no smaller than this. */
+export const MEANING_FONT_STEPS = [1, 2] as const;
+export const MEANING_FONT_FLOOR = 10;
+/** A last line of at most this many words is worth shrinking the translation for. */
+export const MAX_TRAILING_WORDS = 2;
+
+/** The translation's size at one step below the view's own, or null once the floor is reached. */
+export function meaningFontSize(basePx: number, step: number): number | null {
+  const size = basePx - step;
+  return size >= MEANING_FONT_FLOOR ? size : null;
+}
+
+/**
+ * How many words sit on the translation's last line, from its measured width: the first of the
+ * supplied widths (the last word, then the last two words) that the line fits inside wins, and a
+ * line wider than all of them holds more words than measured.
+ */
+export function trailingWordCount(lastLineWidth: number, lastWordWidths: number[], tolerance = 1): number {
+  for (let index = 0; index < lastWordWidths.length; index += 1) {
+    if (lastLineWidth <= (lastWordWidths[index] ?? 0) + tolerance) return index + 1;
+  }
+  return lastWordWidths.length + 1;
+}
+
+function meaningElement(open: HTMLElement): HTMLElement | null {
+  return open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
+}
+
+/** Put the translation one step below the view's size; false when that would cross the floor. */
+function applyMeaningFont(open: HTMLElement, step: number): boolean {
+  const meaning = meaningElement(open);
+  if (!meaning) return false;
+  const size = meaningFontSize(parseFloat(getComputedStyle(meaning).fontSize) || 0, step);
+  if (size === null) return false;
+  meaning.style.fontSize = `${size}px`;
+  return true;
+}
+
+/** Hand the translation back to the size the view's own CSS gives it. */
+function resetMeaningFont(open: HTMLElement) {
+  meaningElement(open)?.style.removeProperty('font-size');
+}
+
+/**
+ * Shrink the translation until a last line of one or two words joins the line above, keeping the
+ * first size that removes it. The trigger is measured once, at the view's size, so the search
+ * only ever aims at the line the user is asking about.
+ */
+function shrinkTrailingLine(open: HTMLElement) {
+  const meaning = meaningElement(open);
+  if (!meaning) return;
+  resetMeaningFont(open);
+  const lines = lineCount(meaning);
+  if (lines < 2) return;
+  const trailing = trailingWordsOnLastLine(meaning);
+  if (trailing === null || trailing > MAX_TRAILING_WORDS) return;
+  for (const step of MEANING_FONT_STEPS) {
+    resetMeaningFont(open);
+    if (!applyMeaningFont(open, step)) continue;
+    if (lineCount(meaning) < lines) return;
+  }
+  resetMeaningFont(open);
+}
+
+/** Words on the translation's last line, or null when either measurement is unavailable. */
+function trailingWordsOnLastLine(el: HTMLElement): number | null {
+  const words = (el.textContent ?? '').trim().split(/\s+/).filter(Boolean);
+  if (words.length < 2) return null;
+  const lastWidth = lastLineWidth(el);
+  if (lastWidth === null) return null;
+  const widths: number[] = [];
+  for (let count = 1; count <= MAX_TRAILING_WORDS && count <= words.length; count += 1) {
+    const width = inlineWidth(el, words.slice(-count).join(' '));
+    if (width === null) return null;
+    widths.push(width);
+  }
+  return trailingWordCount(lastWidth, widths);
+}
+
+/** Width of the translation's lowest line box, or null when nothing is laid out. */
+function lastLineWidth(el: HTMLElement): number | null {
+  try {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const rects = Array.from(range.getClientRects()).filter(rect => rect.width > 0);
+    if (!rects.length) return null;
+    const step = (parseFloat(getComputedStyle(el).fontSize) || 12) * 0.6;
+    const bottom = Math.max(...rects.map(rect => rect.top));
+    const onLast = rects.filter(rect => rect.top >= bottom - step);
+    return Math.max(...onLast.map(rect => rect.right)) - Math.min(...onLast.map(rect => rect.left));
+  } catch {
+    return null; // measurement unavailable (tests)
+  }
+}
+
+/** Width the same text would need on one line, in the translation's own font. */
+function inlineWidth(el: HTMLElement, text: string): number | null {
+  try {
+    const style = getComputedStyle(el);
+    const probe = document.createElement('span');
+    probe.style.fontFamily = style.fontFamily;
+    probe.style.fontSize = style.fontSize;
+    probe.style.fontWeight = style.fontWeight;
+    probe.style.fontStyle = style.fontStyle;
+    probe.style.fontVariant = style.fontVariant;
+    probe.style.letterSpacing = style.letterSpacing;
+    probe.style.textTransform = style.textTransform;
+    probe.style.whiteSpace = 'pre';
+    probe.style.position = 'absolute';
+    probe.style.visibility = 'hidden';
+    probe.style.left = '-9999px';
+    probe.textContent = text;
+    document.body.appendChild(probe);
+    const width = probe.getBoundingClientRect().width;
+    probe.remove();
+    return width;
+  } catch {
+    return null;
+  }
 }
 
 /** Rendered line count of an element's inline content (clusters line-box tops). */
