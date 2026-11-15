@@ -3051,7 +3051,9 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
 .library-page .word-card .word-card-bottom { flex-wrap: nowrap; }
 .library-page .word-card .card-footer-actions { flex: 1 1 0; flex-wrap: wrap; row-gap: 6px; min-width: 0; }
 .library-page .word-card .card-footer-bookmark { flex-shrink: 0; align-self: flex-end; }
-@media (max-width: 580px) {
+/* Up to 640px Compact cards sit two per row at 250–285px, so the buttons tighten enough
+   for Details / Trace / Recall and the bookmark to share one line there. */
+@media (max-width: 640px) {
   .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
   .library-page .word-card .card-footer-bookmark { width: 22px; }
 }
