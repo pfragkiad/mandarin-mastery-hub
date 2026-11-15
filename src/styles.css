@@ -3635,3 +3635,17 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .word-grid:not(.library-list-view) .word-card-top .word-level-wrap,
 .catalog-entry-grid:not(.library-list-view) .word-card-top .word-level-wrap { min-height: 18px; }
 .library-list-view .word-card-top .word-level-wrap { min-height: 26px; }
+
+/* One type size for a library card's chrome — every text in the top row (rank, strokes,
+   part of speech, HSK/ID, Radical #, Variant and Traditional pills) and the footer's
+   Details / Trace / Recall buttons — per view, the same for glyph, word and phrase cards.
+   The footer buttons set the size (Compact 11px, Comfortable 15px). Fixed px line-heights
+   and a top row whose height equals the pill's own height keep the row identical whether
+   or not a card carries a pill; only a row too long for its card wraps (content-driven). */
+:root { --card-chrome-size: 11px; --card-chrome-line: 14px; --card-pill-pad-y: 2px; --card-pill-pad-x: 6px; }
+html[data-display-size='comfortable'] { --card-chrome-size: 15px; --card-chrome-line: 20px; --card-pill-pad-y: 2px; --card-pill-pad-x: 9px; }
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-level-wrap, .card-top-meta, .component-reuse-label, .usage-strokes, .usage-strokes *, .card-top-pos, .word-level, .word-hsk-id, .practice-kind) { font-size: var(--card-chrome-size); line-height: var(--card-chrome-line); letter-spacing: 0; }
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-hsk-id, .practice-kind) { padding: var(--card-pill-pad-y) var(--card-pill-pad-x); }
+/* Pill height = line + 2 × padding + 2 × 1px border; every top row reserves exactly that. */
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-chrome-line) + 2 * var(--card-pill-pad-y) + 2px); }
+html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-chrome-size); }
