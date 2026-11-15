@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState, type HTMLAttributes, type ReactNode } from 'react';
 import { alignPhrasePinyin } from '@/lib/phrase-pinyin-align';
 import { useSyllableInventory } from './use-syllable-inventory';
 
@@ -34,6 +34,13 @@ export function usePhrasePairing(hanzi: string, pinyin: string | null | undefine
     return pair == null ? ch : <span key={index} {...props(pair, 'phrase-pair-glyph')}>{ch}</span>;
   };
 
+  /** Raw pair props for one glyph index, for callers that render their own glyph
+   *  element (lesson hint targets) and merge the class/handlers into it. */
+  const glyphProps = (index: number): HTMLAttributes<HTMLElement> => {
+    const pair = pairing?.glyphPairs[index];
+    return pair == null ? {} : props(pair, 'phrase-pair-glyph');
+  };
+
   /** The recorded pinyin with each syllable hoverable, or the plain reading without a pairing. */
   const pinyinText: ReactNode = pairing
     ? pairing.tokens.map((token, t) => <span key={t}>
@@ -44,5 +51,5 @@ export function usePhrasePairing(hanzi: string, pinyin: string | null | undefine
       </span>)
     : pinyin;
 
-  return { paired: pairing != null, glyph, pinyinText };
+  return { paired: pairing != null, glyph, glyphProps, pinyinText };
 }
