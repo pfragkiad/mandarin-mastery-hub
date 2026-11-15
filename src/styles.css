@@ -1483,6 +1483,11 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Compact cards drop to fewer per row before Details / Trace / Recall and the bookmark
    (~265px with the card padding) stop fitting on one line, with a little slack for wider fonts. */
 .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 20px; }
+/* Comfortable keeps the earlier 230px minimum so two cards still share a row at tablet
+   widths; when a card is too narrow for its buttons on one line, the shared wrap rule
+   below moves them onto a second line with the bookmark inside the card. */
+html[data-display-size='comfortable'] .library-page .catalog-entry-grid,
+html[data-display-size='comfortable'] .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); }
 .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 20px; }
 @media(max-width:580px) {
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
