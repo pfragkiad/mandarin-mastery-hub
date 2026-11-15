@@ -2,7 +2,7 @@ import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
 import { kindFromId, sortByUsage, usageOrder, usageRank, usageRankMatches } from './usage-frequency';
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
-import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
+import { radicalFamily, radicalForms, radicalForm, radicalFormStrokeCount, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
 import { contextualVariantIdentity } from './radical-contextual-identity';
@@ -38,8 +38,10 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
     const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
     const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
+    // A Components row with no stroke count (⺗, ⺈, ⺮…) takes its exact form's count from the radical
+    // family file, where the same code point is recorded; its own count always wins when present.
     const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
-    return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || undefined,
+    return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || (kind === 'Components' ? radicalFormStrokeCount(hanzi) : undefined),
       ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
   });
   cache.set(kind, { version: catalog.version, entries });

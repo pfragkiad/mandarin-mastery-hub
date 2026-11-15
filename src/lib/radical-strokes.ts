@@ -24,6 +24,14 @@ export function historicalRadicalHeading(glyph: string, familyId?: number): bool
   return (catalog.radicalStrokes.families ?? []).some(family => (familyId === undefined || family.id === familyId) && family.kangxiHeading === glyph && family.canonical !== glyph && family.forms.some(form => form.character === family.canonical));
 }
 export function radicalForm(id: number, key?: string) { return key ? radicalFamily(id)?.forms.find(form => form.key === key) : undefined; }
+/** Stroke count of a glyph recorded as a radical-family form, used only when the glyph's own
+ *  record has none (component variants such as ⺗ in the 心 family). Exact code point only, never
+ *  aliases or look-alikes; when the families record different counts for the glyph it stays
+ *  undefined, so an ambiguous count is never picked. */
+export function radicalFormStrokeCount(glyph: string): number | undefined {
+  const counts = new Set(radicalForms(glyph).map(({ form }) => form.strokeCount).filter(count => Number.isInteger(count) && count > 0));
+  return counts.size === 1 ? [...counts][0] : undefined;
+}
 export function radicalForms(glyph: string) { return catalog.radicalStrokes.families?.flatMap(family => family.forms.filter(form => form.character === glyph).map(form => ({ family, form }))) ?? []; }/** Which exact-form stroke names Practice may show, given the outline's stroke count.
  *  Recorded and ambiguous sequences show as the source wrote them. Derived sequences (the
  *  source assembled them from the form's parts and never checked them against the standard)
