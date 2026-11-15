@@ -91,7 +91,8 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
           down with the bookmark, so the bookmark never sits alone on a second line. */}
       <span className="card-actions-tail">
         <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
-        <Button variant="outline" size="sm" className="card-bookmark-action card-bookmark-icon" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''} aria-hidden="true"/></Button>
+        {/* A plain toggle icon (no button frame), like every other bookmark; filled when saved. */}
+        <Button variant="ghost" size="sm" className="card-bookmark-action card-bookmark-icon" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''} aria-hidden="true"/></Button>
       </span>
     </div></div>;
   }
