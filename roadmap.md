@@ -21,3 +21,4 @@
 - [x] Comfortable cards: up to three per row on wide screens (each ≥380px), two from 700px
 - [x] Card top row: shorten the Radical pill ("Rad. #53"), then step the card chrome font down (header + footer buttons together) before the row wraps
 - [ ] Grid cards: when the translation's last line holds only 1-2 words (it adds a line), shrink the translation font instead
+- [ ] Footer buttons: reduce their font independently of the header as the first attempt before the button row wraps
