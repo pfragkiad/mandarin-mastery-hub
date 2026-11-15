@@ -307,7 +307,7 @@
           "function_en": "Using or by a particular means",
           "example": {
             "hanzi": "以书面形式提交",
-            "pinyin": "yǐ shūmiàn xíngshì tíjiā",
+            "pinyin": "yǐ shūmiàn xíngshì tíjiāo",
             "meaning_en": "Submit in writing"
           },
           "register": "formal/written",
@@ -414,7 +414,7 @@
           "id": "ex-06",
           "title": "Formal instructions",
           "hanzi": "请以书面形式提交申请。",
-          "pinyin": "Qǐng yǐ shūmiàn xíngshì tíjiā shēnqǐng.",
+          "pinyin": "Qǐng yǐ shūmiàn xíngshì tíjiāo shēnqǐng.",
           "english": "Please submit your application in writing.",
           "context": "Institutional instructions.",
           "register": "formal/written",

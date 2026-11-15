@@ -77,7 +77,7 @@ The character does not map to one English word in every context. It participates
 
 | Pattern | Function | Example | Register | Usage note |
 | --- | --- | --- | --- | --- |
-| **以 + 名词短语** (yǐ + míngcí duǎnyǔ) | Using or by a particular means | **以书面形式提交 (yǐ shūmiàn xíngshì tíjiā)** — Submit in writing | formal/written | Abstract means and manner are frequent; it is not restricted to abstract nouns. |
+| **以 + 名词短语** (yǐ + míngcí duǎnyǔ) | Using or by a particular means | **以书面形式提交 (yǐ shūmiàn xíngshì tíjiāo)** — Submit in writing | formal/written | Abstract means and manner are frequent; it is not restricted to abstract nouns. |
 | **以 X 为 Y** (yǐ X wéi Y) | Take or treat X as Y | **以他为榜样 (yǐ tā wéi bǎngyàng)** — Take him as a role model | mainly written/formal | X and Y denote variable constituents, not necessarily single characters. |
 | **以 X 为主** (yǐ X wéi zhǔ) | Make X the principal focus | **以学习为主 (yǐ xuéxí wéi zhǔ)** — Focus mainly on studying | neutral-to-formal | Keep the fixed element 为主 (wéi zhǔ) distinct from the general slots. |
 | **以 X 为例** (yǐ X wéi lì) | Use X as an example | **以中国为例 (yǐ Zhōngguó wéi lì)** — Take China as an example | expository/formal | Keep the fixed element 为例 (wéi lì) distinct from the general slots. |
@@ -150,7 +150,7 @@ I thought you weren't coming.
 
 **请以书面形式提交申请。**
 
-*Qǐng yǐ shūmiàn xíngshì tíjiā shēnqǐng.*
+*Qǐng yǐ shūmiàn xíngshì tíjiāo shēnqǐng.*
 
 Please submit your application in writing.
 
