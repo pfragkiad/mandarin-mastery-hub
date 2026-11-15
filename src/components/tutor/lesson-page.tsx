@@ -55,7 +55,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {overview?.meaning_map?.length ? <><h3 className="lesson-subheading">Reading and meaning map</h3><div className="lesson-grid">{overview.meaning_map.map(m => <div key={m.id} className="lesson-card">
       <div className="lesson-card-top"><span className="pinyin">{m.reading}</span><span className="lesson-register"><LessonText text={m.register}/></span></div>
       <p className="lesson-card-title"><LessonText text={m.function_en}/></p>
-      <LessonTerm hanzi={m.example.hanzi} pinyin={m.example.pinyin} meaning={m.example.meaning_en}/>
+      {m.example && <LessonTerm hanzi={m.example.hanzi} pinyin={m.example.pinyin} meaning={m.example.meaning_en}/>}
       {m.evidence && <p className="lesson-footnote">{sourceById.get(m.evidence)?.title ?? m.evidence}</p>}
     </div>)}</div></> : null}
   </> });

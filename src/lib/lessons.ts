@@ -38,6 +38,8 @@ export type LessonSummary = {
   dateReviewed: string | null;
   /** The recorded headword, when the lesson is about one written form. */
   headword: { hanzi: string; pinyin: string } | null;
+  /** metadata.catalog_character_id: an explicit Characters record ID (e.g. "Characters:次"), when recorded. */
+  catalogCharacterId: string | null;
 };
 
 /* ---------- Full lesson document (mirrors core/character_lesson.schema.json) ---------- */
@@ -61,7 +63,7 @@ export type LessonReport = { id: string; title: string; source_type: string; sou
 export type LessonMaterial = { id: string; report_id: string; source_location: string; content_summary: string; handling: string; destinations: { section: string; item_id: string }[]; decision_note: string };
 
 export type LessonSections = {
-  overview?: { core_takeaway: string; independent_usage: string; modern_roles: string[]; teaching_priority: string; meaning_map: { id: string; reading: string; function_en: string; register: string; example: LessonTerm; evidence: string }[]; one_minute_explanation: string };
+  overview?: { core_takeaway: string; independent_usage: string; modern_roles: string[]; teaching_priority: string; meaning_map: { id: string; reading: string; function_en: string; register: string; example: LessonTerm | null; evidence: string }[]; one_minute_explanation: string };
   vocabulary?: { items: LessonVocabItem[]; notes: string };
   constructions?: { enabled: boolean; items: LessonConstruction[]; structural_note: string };
   examples?: { default_provenance: string; items: LessonExample[] };
@@ -124,6 +126,7 @@ export function summarizeLesson(raw: RawLesson, categories: LessonCategory[] = l
     tags: strList(lesson['tags']), status: str(metadata['status']) || 'draft', audience: str(metadata['audience']),
     dateReviewed: typeof metadata['date_reviewed'] === 'string' ? metadata['date_reviewed'] : null,
     headword,
+    catalogCharacterId: str(metadata['catalog_character_id']) || null,
   };
 }
 
@@ -177,8 +180,12 @@ const index = buildLessonIndex(raws);
 /** Every lesson, in stable file order. */
 export const lessonSummaries: LessonSummary[] = index.summaries;
 export const lessonSummary = (id: string) => lessonSummaries.find(s => s.id === id);
-/** Character lessons for a Characters record with exactly this hanzi. */
-export const characterLessons = (hanzi: string) => lessonsForHeadword(lessonSummaries, hanzi, ['character']);
+/** Character lessons for one Characters record: a recorded catalog_character_id must equal the
+ *  record ID; without one, the lesson's headword must equal the record's exact hanzi. */
+export function lessonsForCharacterRecord(summaries: LessonSummary[], recordId: string, hanzi: string): LessonSummary[] {
+  return summaries.filter(s => s.kind === 'character' && (s.catalogCharacterId ? s.catalogCharacterId === recordId : s.headword?.hanzi === hanzi));
+}
+export const characterLessons = (recordId: string, hanzi: string) => lessonsForCharacterRecord(lessonSummaries, recordId, hanzi);
 
 /** Loads one whole lesson (its own lazy chunk); null when no lesson has this ID. */
 export async function loadLesson(id: string): Promise<LessonDocument | null> {
