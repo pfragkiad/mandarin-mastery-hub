@@ -32,6 +32,12 @@ export function isHanziChar(ch: string): boolean {
  * so the syllable itself can be highlighted without the punctuation.
  */
 export function splitPinyinTokens(pinyin: string): { syllable: string; leading: string; trailing: string }[] {
+  return splitPinyinDisplayTokens(pinyin).filter(t => t.syllable.length > 0);
+}
+
+/** Every whitespace-separated token, including ones without pinyin letters ("+", "...") whose
+ *  whole text sits in `trailing` — for renderers that must show the recorded text unchanged. */
+export function splitPinyinDisplayTokens(pinyin: string): { syllable: string; leading: string; trailing: string }[] {
   const strip = new RegExp(`^[^${PINYIN_LETTER}]+|[^${PINYIN_LETTER}']+$`, 'g');
   return pinyin
     .trim()
@@ -39,10 +45,9 @@ export function splitPinyinTokens(pinyin: string): { syllable: string; leading: 
     .filter(Boolean)
     .map(token => {
       const syllable = token.replace(strip, '');
-      const start = token.indexOf(syllable);
+      const start = syllable ? token.indexOf(syllable) : 0;
       return { syllable, leading: token.slice(0, start), trailing: token.slice(start + syllable.length) };
-    })
-    .filter(t => t.syllable.length > 0);
+    });
 }
 
 /**

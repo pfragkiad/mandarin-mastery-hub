@@ -14,9 +14,13 @@
  * - the total piece count must equal the number of Han characters;
  * - exactly one such split may exist — two different valid splits (e.g. fang|an vs
  *   fan|gan) mean the spelling is ambiguous, so nothing is paired.
+ * Lesson patterns ("再 + 动词 + 一次" / "zài + dòngcí + yí cì", "以 X 为 Y" / "yǐ X wéi Y"):
+ * pinyin tokens without letters ("+", "...") and Latin slot tokens that appear verbatim in
+ * the hanzi (X, Y) are shown unchanged and never paired; hanzi-side separators and slots
+ * are non-Han glyphs, so they stay unpaired too.
  */
 
-import { alignSentencePinyin, splitPinyinTokens } from './sentence-align';
+import { alignSentencePinyin, splitPinyinDisplayTokens, splitPinyinTokens } from './sentence-align';
 
 /** One displayed piece of a pinyin token: a syllable (paired) or a separator such as an apostrophe. */
 export interface PinyinPiece { text: string; pair: number | null }
@@ -69,9 +73,12 @@ function tokenSplits(token: string, inventory: ReadonlySet<string>): Array<Array
 export function alignPhrasePinyin(hanzi: string, pinyin: string, inventory: ReadonlySet<string>): PhrasePairing | null {
   const glyphs = Array.from(hanzi);
   const hanIndexes = glyphs.map((g, i) => (HAN.test(g) ? i : -1)).filter(i => i >= 0);
-  const tokens = splitPinyinTokens(pinyin);
-  if (!hanIndexes.length || !tokens.length) return null;
-  const options = tokens.map(t => tokenSplits(t.syllable, inventory));
+  const tokens = splitPinyinDisplayTokens(pinyin);
+  if (!hanIndexes.length || !tokens.some(t => t.syllable)) return null;
+  // Latin words written in the hanzi itself (pattern slots such as X and Y).
+  const slots = new Set(hanzi.split(/\s+/).filter(w => /^[A-Za-z]+$/.test(w)));
+  const passThrough = (t: { syllable: string }) => !t.syllable || slots.has(t.syllable);
+  const options = tokens.map(t => passThrough(t) ? [[]] as Array<Array<[number, number]>> : tokenSplits(t.syllable, inventory));
   if (options.some(o => o.length === 0)) return null;
 
   // Combine one split per token so the pieces cover the Han characters exactly; erhua "r"

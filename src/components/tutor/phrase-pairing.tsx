@@ -10,15 +10,16 @@ import { useSyllableInventory } from './use-syllable-inventory';
  * Inputs: the recorded hanzi and pinyin, and `enabled` (phrases only).
  * State: the hovered pair index. The pairing itself comes from alignPhrasePinyin over the
  * lazily loaded syllable inventory and fails closed — until the inventory loads, for a
- * headword containing whitespace, or for an ambiguous spelling, `glyph`/`pinyin` render
+ * headword containing whitespace (unless `allowSpaces`: lesson patterns such as
+ * "再 + 动词 + 一次"), or for an ambiguous spelling, `glyph`/`pinyin` render
  * the plain recorded text.
  */
-export function usePhrasePairing(hanzi: string, pinyin: string | null | undefined, enabled: boolean) {
+export function usePhrasePairing(hanzi: string, pinyin: string | null | undefined, enabled: boolean, allowSpaces = false) {
   const syllables = useSyllableInventory();
   const inventory = useMemo(() => (syllables ? new Set(syllables.map(s => s.base)) : null), [syllables]);
   const pairing = useMemo(
-    () => (enabled && inventory && pinyin && !/\s/.test(hanzi) ? alignPhrasePinyin(hanzi, pinyin, inventory) : null),
-    [enabled, inventory, hanzi, pinyin],
+    () => (enabled && inventory && pinyin && (allowSpaces || !/\s/.test(hanzi)) ? alignPhrasePinyin(hanzi, pinyin, inventory) : null),
+    [enabled, inventory, hanzi, pinyin, allowSpaces],
   );
   const [hovered, setHovered] = useState<number | null>(null);
 
