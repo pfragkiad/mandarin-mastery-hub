@@ -59,7 +59,8 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }:
   }, [words]);
   const close = useCallback(() => setState(null), []);
   const open = useCallback((el: HTMLElement, glyph: string, word: HintWord | null) => {
-    setState(current => current?.el === el ? null : { el, glyph, word });
+    console.log('[hint-debug] open called', glyph);
+    setState(current => { console.log('[hint-debug] setState, current:', current?.glyph ?? null); return current?.el === el ? null : { el, glyph, word }; });
   }, []);
   // Mark the open character (ring stays while its card is open).
   useEffect(() => {
