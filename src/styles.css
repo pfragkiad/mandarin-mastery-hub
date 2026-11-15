@@ -3523,6 +3523,48 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-hanzi.is-linked { color: var(--primary); border-radius: 4px; }
 .lesson-hanzi.is-linked:hover, .lesson-hanzi.is-linked:focus-visible { background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .lesson-inline-hanzi { font-family: var(--font-hanzi); }
+/* Lesson character hints (lesson-hints.tsx): every hanzi rings on hover/focus and while its
+   quick card is open (data-hint-active). A box-shadow ring, never a border, so text never moves. */
+.lesson-hint-char { cursor: pointer; border-radius: 4px; transition: box-shadow .12s ease, background .12s ease; }
+.lesson-hint-char:hover, .lesson-hint-char:focus-visible { box-shadow: 0 0 0 1px var(--primary); outline: none; }
+.lesson-hint-char[data-hint-active] { box-shadow: 0 0 0 1px var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); }
+.sentence-char.lesson-hint-char:hover, .sentence-char.lesson-hint-char:focus-visible { color: inherit; background: transparent; }
+.lesson-hints-toggle { display: flex; align-items: center; gap: 10px; margin-top: 14px; cursor: pointer; }
+.lesson-hints-toggle > span { display: flex; flex-direction: column; gap: 1px; }
+.lesson-hints-toggle strong { font-size: 13px; font-weight: 600; }
+.lesson-hints-toggle small { font-size: 12px; color: var(--muted-foreground); line-height: 1.35; }
+/* The quick card: a light, rounded floating card with a soft glass surface. */
+.lesson-hint-card.lesson-hint-card { width: min(320px, calc(100vw - 24px)); padding: 0; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%); background: color-mix(in oklab, var(--card) 94%, transparent); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: var(--shadow-popover); outline: none; }
+.lesson-hint-body { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px 14px; }
+.lesson-hint-close { position: absolute; top: 8px; right: 8px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 999px; border: 0; background: transparent; color: var(--muted-foreground); cursor: pointer; }
+.lesson-hint-close:hover, .lesson-hint-close:focus-visible { color: var(--foreground); background: color-mix(in oklch, var(--primary) 10%, transparent); outline: none; }
+.lesson-hint-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; padding-right: 22px; }
+.lesson-hint-glyph { width: 68px; height: 68px; display: grid; place-items: center; font-family: var(--font-hanzi); font-size: 46px; line-height: 1; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.lesson-hint-glyph.is-radical:not(.traditional-character) { color: var(--rank-gold); }
+.lesson-hint-reading { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.lesson-hint-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+.lesson-hint-pill { font-size: 11px; line-height: 18px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted-foreground); white-space: nowrap; }
+.lesson-hint-pill.is-traditional { color: var(--traditional); border-color: color-mix(in oklab, var(--traditional) 40%, transparent); }
+.lesson-hint-pill.is-radical { color: var(--rank-gold); border-color: color-mix(in oklab, var(--rank-gold) 40%, transparent); }
+.lesson-hint-pinyin { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0 2px; white-space: nowrap; }
+.lesson-hint-pinyin .pinyin { font-size: 16px; }
+.lesson-hint-pinyin .example-listen { width: 28px; height: 28px; }
+.lesson-hint-meaning { font-size: 14px; line-height: 1.45; margin: 0; overflow-wrap: anywhere; }
+.lesson-hint-meaning.is-absent { color: var(--muted-foreground); }
+.lesson-hint-facts { font-size: 12px; color: var(--muted-foreground); margin: 0; }
+.lesson-hint-word { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--secondary); }
+.lesson-hint-word-label { font-size: 11px; color: var(--muted-foreground); }
+.lesson-hint-word-row { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+.lesson-hint-word-link { display: inline-flex; align-items: baseline; gap: 8px; color: var(--primary); text-decoration: none; border-radius: 6px; }
+.lesson-hint-word-link:hover .lesson-hint-word-hanzi, .lesson-hint-word-link:focus-visible .lesson-hint-word-hanzi { box-shadow: 0 0 0 1px var(--primary); outline: none; }
+.lesson-hint-word-link:focus-visible { outline: none; }
+.lesson-hint-word-link svg { align-self: center; }
+.lesson-hint-word-hanzi { font-family: var(--font-hanzi); font-size: 22px; line-height: 1.2; border-radius: 4px; padding: 0 2px; }
+.lesson-hint-word-link .pinyin { font-size: 14px; }
+.lesson-hint-word-row .example-listen { width: 28px; height: 28px; }
+.lesson-hint-word-meaning { font-size: 13px; line-height: 1.4; }
+.lesson-hint-open { align-self: flex-end; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 4px 10px; border-radius: 999px; transition: background .12s ease; }
+.lesson-hint-open:hover, .lesson-hint-open:focus-visible { background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .lesson-term { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; min-width: 0; }
 .lesson-term .lesson-hanzi { font-size: 24px; line-height: 1.3; }
 .lesson-term.is-lg .lesson-hanzi { font-size: 32px; }
@@ -3601,6 +3643,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   .lesson-toc .eyebrow { flex-basis: 100%; margin-bottom: 2px; }
   .lesson-toc a { border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
   .lesson-pinyin-toggle { margin-top: 0; }
+  .lesson-hints-toggle { margin-top: 0; }
   .lesson-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @container lesson-page (max-width: 520px) {
