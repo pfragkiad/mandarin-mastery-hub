@@ -190,3 +190,14 @@ describe('hanzi search ignores the radical note', () => {
     for (const h of ['年', '平', '幸', '并']) expect(hits).not.toContain(h);
   });
 });
+describe('Component stroke counts from radical forms', () => {
+  it('gives ⺗ the 4 strokes recorded for its 心 family form', () => {
+    expect(libraryEntries('Components').find(entry => entry.hanzi === '⺗')?.strokes).toBe(4);
+  });
+  it('gives ⺈ the 2 strokes recorded for its 刀 family form', () => {
+    expect(libraryEntries('Components').find(entry => entry.hanzi === '⺈')?.strokes).toBe(2);
+  });
+  it('keeps a component’s own recorded count (忄 3 strokes)', () => {
+    expect(libraryEntries('Components').find(entry => entry.hanzi === '忄')?.strokes).toBe(3);
+  });
+});
