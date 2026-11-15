@@ -3661,6 +3661,123 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   .lesson-table td { border: 0; padding: 2px 0; }
   .lesson-table td::before { content: attr(data-label); display: block; font-size: 12px; color: var(--muted-foreground); }
 }
+/* Lesson section list: the section under the sticky header is highlighted (useActiveSection). */
+.lesson-toc a[aria-current] { color: var(--foreground); border-left-color: var(--primary); font-weight: 600; }
+
+/* Narrow lesson layout (lesson-page.tsx useNarrowLesson: the page's own width ≤ 760px, a layout
+   condition, never a device): the mobile prototype in the site's styling. Sticky pill row under
+   the phone header, collapsible section cards (inner cards on the page colour for contrast),
+   headword beside the title, two-column words, full-width quiz choices, 44px tap targets and
+   the study controls floating bottom-right above the phone tab bar. */
+.lesson-page { --lesson-sticky-top: 0px; }
+@media (max-width: 850px) { .lesson-page { --lesson-sticky-top: 60px; } }
+.lesson-page.is-narrow .lesson-back { margin-bottom: 12px; }
+.lesson-page.is-narrow .lesson-hero { padding-bottom: 18px; }
+.lesson-page.is-narrow .lesson-hero.has-headword { grid-template-columns: auto minmax(0, 1fr); gap: 2px 16px; align-items: start; }
+.lesson-page.is-narrow .lesson-hero.has-headword .lesson-hero-copy { display: contents; }
+.lesson-page.is-narrow .lesson-hero.has-headword .lesson-headword { grid-row: 1 / span 3; flex-direction: column; align-items: center; gap: 6px; }
+.lesson-page.is-narrow .lesson-hero.has-headword :is(.eyebrow, h1, .lesson-subtitle) { grid-column: 2; min-width: 0; }
+.lesson-page.is-narrow .lesson-hero.has-headword :is(.lesson-description, .lesson-chips) { grid-column: 1 / -1; }
+.lesson-page.is-narrow .lesson-headword-glyph { width: 96px; height: 96px; font-size: 64px; }
+.lesson-page.is-narrow .lesson-headword-reading .pinyin { font-size: 16px; }
+.lesson-page.is-narrow .lesson-hero-copy h1 { font-size: 24px; line-height: 1.25; margin: 4px 0 4px; }
+.lesson-page.is-narrow .lesson-subtitle { font-size: 15px; }
+.lesson-page.is-narrow .lesson-description { font-size: 14px; margin-top: 12px; }
+.lesson-page.is-narrow .lesson-intro { margin: 16px 0 0; padding: 14px 16px; border-radius: 14px; }
+.lesson-page.is-narrow .lesson-intro p { font-size: 15px; }
+.lesson-page.is-narrow .lesson-layout { margin-top: 12px; gap: 0; }
+.lesson-page.is-narrow .lesson-toc { position: sticky; top: var(--lesson-sticky-top); z-index: 6; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 12px; padding: 10px 16px; background: var(--background); border-bottom: 1px solid var(--border); }
+.lesson-page.is-narrow .lesson-toc::-webkit-scrollbar { display: none; }
+.lesson-page.is-narrow .lesson-toc .eyebrow { display: none; }
+.lesson-page.is-narrow .lesson-toc a { flex: none; white-space: nowrap; font-size: 14px; line-height: 1.3; padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); font-weight: 400; }
+.lesson-page.is-narrow .lesson-toc a:hover, .lesson-page.is-narrow .lesson-toc a:focus-visible { border-color: var(--primary); color: var(--primary); }
+.lesson-page.is-narrow .lesson-toc a[aria-current] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); font-weight: 600; }
+.lesson-page.is-narrow .lesson-section { padding: 0; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); scroll-margin-top: calc(var(--lesson-sticky-top) + 70px); }
+.lesson-page.is-narrow .lesson-section + .lesson-section { padding-top: 0; border-top: 1px solid var(--border); }
+.lesson-page.is-narrow .lesson-section > h2 { margin: 0; font: inherit; }
+.lesson-section-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; padding: 12px 16px; border: 0; border-radius: 14px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.lesson-section-toggle > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.lesson-section-title { font-family: var(--font-display); font-weight: 400; font-size: 20px; line-height: 1.3; transition: color .15s; }
+.lesson-section-toggle small { font-size: 13px; line-height: 1.4; color: var(--muted-foreground); }
+.lesson-section-toggle > svg { flex: none; color: var(--muted-foreground); transition: transform .2s ease; }
+.lesson-section.is-open .lesson-section-toggle > svg { transform: rotate(180deg); }
+.lesson-section-toggle:hover .lesson-section-title, .lesson-section-toggle:focus-visible .lesson-section-title { color: var(--primary); }
+.lesson-section-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+.lesson-section-body { padding: 0 14px 18px; }
+.lesson-section-body > :first-child { margin-top: 0; }
+.lesson-page.is-narrow .lesson-section-body :is(.lesson-card, .lesson-details) { background: var(--background); }
+.lesson-page.is-narrow .lesson-section-body .lesson-minute { background: var(--secondary); }
+.lesson-page.is-narrow .lesson-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.lesson-page.is-narrow .lesson-grid.lesson-vocab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.lesson-page.is-narrow .lesson-vocab { padding: 12px; }
+.lesson-page.is-narrow .lesson-stack { gap: 10px; }
+.lesson-page.is-narrow .lesson-card { padding: 14px; border-radius: 10px; }
+.lesson-page.is-narrow .lesson-card p { font-size: 15px; }
+.lesson-page.is-narrow .lesson-choices { flex-direction: column; gap: 8px; }
+.lesson-page.is-narrow .lesson-choice { width: 100%; min-width: 0; min-height: 48px; padding: 10px 14px; border-radius: 10px; }
+.lesson-page.is-narrow :is(.lesson-filter, .lesson-question-actions) [data-ui-button] { min-height: 44px; padding-inline: 16px; border-radius: 999px; }
+.lesson-page.is-narrow .lesson-main { padding-bottom: 96px; }
+@container lesson-page (max-width: 360px) {
+  .lesson-page.is-narrow .lesson-grid.lesson-vocab-grid { grid-template-columns: minmax(0, 1fr); }
+  .lesson-page.is-narrow .lesson-headword-glyph { width: 80px; height: 80px; font-size: 52px; }
+}
+.lesson-float-tools { position: fixed; right: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 26; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+@media (max-width: 850px) { .lesson-float-tools { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
+.lesson-float-tools .lesson-pinyin-toggle { margin: 0; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow-popover); }
+.lesson-float-tools .lesson-hints-toggle { margin: 0; min-height: 44px; padding: 0 16px 0 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); box-shadow: var(--shadow-popover); }
+.lesson-float-tools .lesson-hints-toggle small { display: none; }
+.lesson-float-tools .lesson-hints-toggle strong { font-size: 14px; font-weight: 500; }
+
+/* Comfortable on wide lesson pages: the same layout with larger text and glyphs (the narrow
+   layout keeps its own sizes). Queries the page container, so only its descendants change. */
+@container lesson-page (min-width: 761px) {
+  html[data-display-size='comfortable'] .lesson-back { font-size: 15px; }
+  html[data-display-size='comfortable'] .lesson-headword-glyph { width: 148px; height: 148px; font-size: 98px; }
+  html[data-display-size='comfortable'] .lesson-headword-reading .pinyin { font-size: 21px; }
+  html[data-display-size='comfortable'] .lesson-hero-copy h1 { font-size: 40px; }
+  html[data-display-size='comfortable'] .lesson-subtitle { font-size: 19px; }
+  html[data-display-size='comfortable'] .lesson-description { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-chips li { font-size: 14px; padding: 4px 12px; }
+  html[data-display-size='comfortable'] .lesson-intro p { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-intro strong { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-layout { grid-template-columns: 230px minmax(0, 1fr); }
+  html[data-display-size='comfortable'] .lesson-toc a { font-size: 15px; padding-block: 6px; }
+  html[data-display-size='comfortable'] .lesson-hints-toggle strong { font-size: 15px; }
+  html[data-display-size='comfortable'] .lesson-hints-toggle small { font-size: 13px; }
+  html[data-display-size='comfortable'] .lesson-section h2 { font-size: 26px; }
+  html[data-display-size='comfortable'] :is(.lesson-section h3, .lesson-subheading) { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-lead { font-size: 18px; }
+  html[data-display-size='comfortable'] :is(.lesson-note, .lesson-muted, .lesson-teaching, .lesson-caution) { font-size: 15px; }
+  html[data-display-size='comfortable'] .lesson-facts dt { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-facts dd, html[data-display-size='comfortable'] .lesson-facts .pinyin { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-card { padding: 20px; }
+  html[data-display-size='comfortable'] .lesson-card p, html[data-display-size='comfortable'] .lesson-card-title { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-register { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-card .lesson-footnote { font-size: 11px; }
+  html[data-display-size='comfortable'] .lesson-term .lesson-hanzi { font-size: 28px; }
+  html[data-display-size='comfortable'] .lesson-term.is-lg .lesson-hanzi { font-size: 38px; }
+  html[data-display-size='comfortable'] .lesson-term-reading .pinyin { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-term-meaning { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-priority { min-width: 28px; height: 28px; font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-pattern-line .lesson-hanzi { font-size: 28px; }
+  html[data-display-size='comfortable'] .lesson-pattern-line .pinyin { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-example .sentence p { font-size: 28px; }
+  html[data-display-size='comfortable'] .lesson-example .sentence-pinyin { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-example .sentence > span:last-child { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-mistake small { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-mistake p { grid-template-columns: 74px minmax(0, 1fr); }
+  html[data-display-size='comfortable'] .lesson-mistake .lesson-muted { padding-left: 84px; }
+  html[data-display-size='comfortable'] .lesson-choice { padding: 12px 16px; }
+  html[data-display-size='comfortable'] .lesson-choice .lesson-hanzi { font-size: 26px; }
+  html[data-display-size='comfortable'] .lesson-choice .pinyin { font-size: 15px; }
+  html[data-display-size='comfortable'] .lesson-choice small { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-verdict { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-bar-label .lesson-hanzi { font-size: 24px; }
+  html[data-display-size='comfortable'] .lesson-bar-label .pinyin { font-size: 15px; }
+  html[data-display-size='comfortable'] .lesson-bar-count { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-list { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-table { font-size: 15px; }
+}
 /* Details card "Lessons" list (characters-page.tsx). */
 .lesson-links { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
 .lesson-link { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; color: inherit; text-decoration: none; transition: border-color .15s; }
