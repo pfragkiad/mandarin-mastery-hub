@@ -33,7 +33,11 @@ export function useRadicalPillLabel(ref: RefObject<HTMLElement | null>, enabled:
       if (!force && width === lastWidth) return;
       lastWidth = width;
       delete row.dataset['radicalShort'];
-      if (rowItemsWrap(row)) row.dataset['radicalShort'] = '';
+      if (!rowItemsWrap(row)) return;
+      row.dataset['radicalShort'] = '';
+      // The abbreviation is only worth showing when it actually keeps the row on one line;
+      // if the row still wraps with it, the full label stays and the row wraps as before.
+      if (rowItemsWrap(row)) delete row.dataset['radicalShort'];
     };
     measure(true);
     let alive = true;

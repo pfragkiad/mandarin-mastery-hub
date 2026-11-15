@@ -14,7 +14,7 @@
  * so shortening the visible text never changes what a screen reader announces.
  */
 export function RadicalPill({ number, title }: { number: number; title: string }) {
-  return <span className="word-hsk-id radical-tag" title={title} aria-label={`Kangxi radical ${number}`}>
+  return <span className="word-hsk-id" title={title} aria-label={`Kangxi radical ${number}`}>
     <span className="radical-pill-full" aria-hidden="true">Radical #{number}</span>
     <span className="radical-pill-short" aria-hidden="true">Rad. #{number}</span>
   </span>;
