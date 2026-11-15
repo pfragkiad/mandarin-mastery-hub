@@ -1,7 +1,8 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, BookText, Check, ExternalLink, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHanzi, LessonSpeaker, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
@@ -43,6 +44,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const { preferences, setPreferences } = useWorkspace();
   const hintsOn = preferences.lessonHints !== false;
   const learnerExtensions = (S.extensions?.items ?? []).filter(item => item.visibility === 'learner' && item.blocks.length > 0);
+  // A hint card's "Open full card" records its own Back step; start clean here so
+  // a stale step from an earlier window never offers a wrong Back (as Practice does).
+  useEffect(() => { detailTrail.clear(); }, []);
   const sourceById = new Map((S.sources?.items ?? []).map(s => [s.id, s]));
 
   const sections: SectionDef[] = [];
@@ -161,7 +165,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {(S.sources.editorial_status || S.sources.licensing) && <p className="lesson-note">{[S.sources.editorial_status, S.sources.licensing].filter(Boolean).join(' ')}</p>}
   </> });
 
-  return <LessonHintsProvider enabled={hintsOn}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <div className="lesson-headword"><LessonHanzi hanzi={headword.hanzi} className="lesson-headword-glyph"/><span className="lesson-headword-reading"><span className="pinyin">{headword.pinyin}</span><LessonSpeaker hanzi={headword.hanzi} pinyin={headword.pinyin}/></span></div>}
