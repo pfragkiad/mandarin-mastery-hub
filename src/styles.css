@@ -810,7 +810,6 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
 .vocab-grid .word-character > [lang] { overflow-wrap: anywhere; white-space: normal; text-align: left; }
 .vocab-grid .pinyin { white-space: normal; text-align: left; overflow-wrap: anywhere; }
 .vocab-grid:not(.list-view) .word-character { font-size: 36px; }
-.vocab-phrase-grid:not(.list-view) .word-character { font-size: 38px; }
 .vocab-grid .word-meaning { white-space: normal; text-align: left; overflow-wrap: anywhere; }
 .vocab-grid:not(.list-view) .word-meaning { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 16px; min-height: 40px; gap: 6px; }
@@ -825,8 +824,8 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
   .vocabulary-saved-filter button { padding: 0 7px; font-size: 10px; gap: 0.6em; }
   .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-  .vocab-word-grid:not(.list-view) .word-open { padding: 10px 12px 14px; min-height: 128px; }
-  .vocab-word-grid:not(.list-view) .word-character { font-size: 30px; }
+  .vocab-grid:not(.list-view) .word-open { padding: 10px 12px 14px; min-height: 128px; }
+  .vocab-grid:not(.list-view) .word-character { font-size: 30px; }
   .vocab-grid:not(.list-view) .word-card-top { padding-left: 12px; }
   .vocab-grid:not(.list-view) .word-card-bottom { margin: 0 12px; }
 }
@@ -2102,8 +2101,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .word-grid:not(.library-list-view) .word-card.headword-card .catalog-card-indicators { display: flex; align-items: center; gap: 8px; min-height: 18px; }
 .word-grid:not(.library-list-view) .word-card.headword-card .catalog-source-icon { position: static; display: block; width: 13px; height: 13px; color: var(--primary); }
 /* Compact word headwords get the same thin box as Compact glyph tiles (.tile-form:
-   1.18em tall, same radius); longer words widen it on one line. */
-.word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 1.18em; height: 1.18em; padding: 0 .12em; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; white-space: nowrap; }
+   1.34em square, same radius); longer words widen it on one line. */
+.word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 1.34em; height: 1.34em; padding: 0 calc(.17em - 1px); line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; white-space: nowrap; }
 .library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
 .library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
@@ -2113,14 +2112,14 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    matching the glyph cards' hanzi tile (same minimum size and radius); long phrases
    simply widen or wrap inside it. The part of speech after "WORD ·" is fainter than
    the dot so it doesn't read as part of the WORD label. */
-.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 8px 10px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 10px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
 .library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
 /* Phrases stack their headword under the pinyin; the box hugs the characters instead of spanning the card. */
 .library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile { align-self: flex-start; width: fit-content; max-width: 100%; }
 /* Comfortable word boxes keep the glyph tile's 82px height: wordTileFit() sets the
    size per character count — one line up to 4 characters, otherwise exactly two
    evenly split lines (width = characters per line). */
-.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile { height: 82px; font-size: var(--tile-size, 64px); white-space: nowrap; }
+.library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile { height: 82px; font-size: var(--tile-size, 60px); white-space: nowrap; }
 .library-list-view:not(.vocab-phrase-grid) .word-card .word-hanzi-tile.is-two-line { flex-direction: column; white-space: nowrap; text-align: center; flex-shrink: 0; width: calc(var(--tile-per-line) * var(--tile-size) + 28px); line-height: 1.05; }
 /* wordTileFit() splits 5+ glyphs into two explicit lines (3+2, 3+3, 4+3, 4+4), so a box
    squeezed by the row can never wrap a lone glyph; text-wrap: balance is a safety net. */
@@ -2130,8 +2129,12 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    glyph size shrinks so the longest line (--tile-per-line) fits the card's inner width,
    capped at the view's normal phrase size. Longer phrases add lines, so the card grows. */
 .vocab-phrase-grid .word-card .word-open { container-type: inline-size; }
-.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 38px; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: center; align-self: flex-start; width: fit-content; max-width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: min(var(--phrase-max), calc((100cqi - 24px) / var(--tile-per-line, 1))); line-height: 1.15; white-space: nowrap; overflow-wrap: normal; }
-.library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 64px; min-width: 82px; min-height: 82px; }
+/* The phrase box reuses the word box's exact metrics in each view, so all library cards share
+   one tile style with the glyph cards' .tile-form: Compact = a 1.34em-tall line with .17em side
+   padding (font = the card's hanzi size, 1em; one glyph = a 1.34em square); Comfortable = 10px padding, 60px glyphs, 82px per line.
+   Extra lines stack with a small fixed gap instead of a taller line-height. */
+.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 1em; display: inline-flex; flex-direction: column; row-gap: .08em; align-items: flex-start; justify-content: center; align-self: flex-start; width: fit-content; max-width: 100%; min-width: 1.34em; padding: calc(.17em - 1px); border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: min(var(--phrase-max), calc((100cqi - 28px) / var(--tile-per-line, 1))); line-height: 1; white-space: nowrap; overflow-wrap: normal; }
+.library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile.phrase-hanzi-tile { --phrase-max: 60px; min-width: 82px; min-height: 82px; padding: 10px; }
 .vocab-phrase-grid .word-card .phrase-hanzi-tile .word-hanzi-line { display: block; white-space: nowrap; }
 /* Shared close/clear "×" treatment (dialogs, sheets, detail window, practice sheet,
    filter clear, open phone menu): never a hover background — the icon only
@@ -3088,7 +3091,8 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
 .vocab-phrase-grid:not(.list-view):not(.library-list-view) .word-card .word-card-bottom,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .word-card-bottom { border-top: 0; min-height: 0; height: auto; padding-bottom: 10px; }
 /* Phones gave Compact word cards a 10px top pad; keep it equal to the 12px bottom pad. */
-.vocab-word-grid:not(.list-view):not(.library-list-view) .word-card .word-open { padding-top: 12px; padding-bottom: 12px; }
+.vocab-word-grid:not(.list-view):not(.library-list-view) .word-card .word-open,
+.vocab-phrase-grid:not(.list-view):not(.library-list-view) .word-card .word-open { padding-top: 12px; padding-bottom: 12px; }
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { padding-top: 12px; }
 /* Stroke cards have no top row: body and footer only. */
 .catalog-entry-grid:not(.library-list-view) .catalog-card.stroke-card { grid-template-rows: 1fr auto; }
@@ -3624,3 +3628,10 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-link:hover, .lesson-link:focus-visible { border-color: var(--primary); outline: none; }
 .lesson-card .lesson-footnote { font-size: 9px; line-height: 1.6; }
 .lesson-facts .pinyin { font-size: 14px; }
+
+/* Every library card (glyph, word, phrase) keeps one label-row height per view, whether or not
+   it carries an HSK/ID pill or indicator icons, so rows of mixed cards line up and no kind gets
+   its own spacing: Compact = the 18px pill height, Comfortable = the 26px pill height. */
+.word-grid:not(.library-list-view) .word-card-top .word-level-wrap,
+.catalog-entry-grid:not(.library-list-view) .word-card-top .word-level-wrap { min-height: 18px; }
+.library-list-view .word-card-top .word-level-wrap { min-height: 26px; }

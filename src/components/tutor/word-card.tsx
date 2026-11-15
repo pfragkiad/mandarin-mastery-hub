@@ -71,7 +71,8 @@ export function wordTileFit(hanzi: string): { lines: 1 | 2; style: CSSProperties
   const count = glyphs.length;
   const maxInner = 160; // widest box content, leaving room for the pinyin/translation column
   if (count <= 4) {
-    const size = count <= 2 ? 64 : Math.min(64, Math.floor(maxInner / count));
+    // 60px = the glyph cards' Comfortable tile size, so one- and two-character words match them.
+    const size = count <= 2 ? 60 : Math.min(60, Math.floor(maxInner / count));
     return { lines: 1, style: { '--tile-size': `${size}px`, '--tile-per-line': count } as CSSProperties, parts: [hanzi] };
   }
   const perLine = Math.ceil(count / 2);
