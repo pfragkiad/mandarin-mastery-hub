@@ -45,24 +45,34 @@ function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase
 /**
  * Phone row toggle (≤700px, CSS only — wider screens keep the full cards and never show it).
  * Inputs: `open` and `onToggle` from the shared row list (DiscoveryRowList) plus the row's
- * content. On phones each card collapses to one row like the Start games: section icon,
- * name + count, then the current pick on one line (hanzi then meaning, cut off with an
- * ellipsis); the round shuffle button and a small chevron sit on the right. The whole row
- * toggles: the toggle button (the name line) has an ::after that stretches over the row (see
- * styles.css "Start random rows"), and the icon and pick line let clicks fall through to it
+ * content: `pick` (the main hanzi or syllable), an optional secondary `line` (translation,
+ * pinyin or tone count) and `lineAction` (the pinyin line's listen button). On phones each card
+ * collapses to one row like the Start games: section icon, name + count, then the pick line;
+ * the round shuffle button and a small chevron sit on the right. The whole row toggles: the
+ * toggle button (the name line) has an ::after that stretches over the row (see styles.css
+ * "Start random rows"), and the icon and pick line let clicks fall through to it
  * (pointer-events: none), while the shuffle button sits above it, so the chevron is only a
- * decorative cue. `pickAction` (the pinyin line's listen button) sits inline right after the
- * pick text; it lives outside the toggle button because buttons cannot nest.
+ * decorative cue. The listen button lives outside the toggle button because buttons cannot nest.
+ *
+ * Fit rule (no ellipsis): the pick is always shown whole — CSS shrinks a long hanzi to the
+ * line width via `--pick-chars` (set by the caller) — while `line` + `lineAction` form one
+ * unbreakable unit that wraps onto a clipped second flex line when it does not fit beside the
+ * pick, so it is hidden entirely rather than cut off. Both stay in the accessible description.
  */
-export function DiscoveryRowToggle({ open, onToggle, controls, icon, label, count, pick, pickAction }: { open: boolean; onToggle: () => void; controls: string; icon: React.ReactNode; label: string; count: number | null; pick: React.ReactNode; pickAction?: React.ReactNode }) {
+export function DiscoveryRowToggle({ open, onToggle, controls, icon, label, count, pick, line, lineAction }: { open: boolean; onToggle: () => void; controls: string; icon: React.ReactNode; label: string; count: number | null; pick: React.ReactNode; line?: React.ReactNode; lineAction?: React.ReactNode }) {
   const pickId = `${controls}-pick`;
+  const lineId = `${controls}-line`;
+  const hasLine = line !== undefined && line !== null && line !== false;
   return <div className="discovery-row-main">
     <span className="stat-icon" aria-hidden="true">{icon}</span>
     <span className="discovery-row-text">
-      <button type="button" className="discovery-row-toggle" aria-expanded={open} aria-controls={controls} aria-describedby={pickId} onClick={onToggle}>
+      <button type="button" className="discovery-row-toggle" aria-expanded={open} aria-controls={controls} aria-describedby={hasLine ? `${pickId} ${lineId}` : pickId} onClick={onToggle}>
         <span className="discovery-row-name"><strong>{label}</strong><span>{count === null ? '—' : count.toLocaleString('en-US')}</span></span>
       </button>
-      <span className="discovery-row-pick"><span id={pickId} className="discovery-row-pick-text">{pick}</span>{pickAction}</span>
+      <span className="discovery-row-pick">
+        <span id={pickId} className="discovery-row-pick-text">{pick}</span>
+        {(hasLine || lineAction) && <span className="discovery-row-line">{hasLine && <span id={lineId}>{line}</span>}{lineAction}</span>}
+      </span>
     </span>
   </div>;
 }
@@ -180,8 +190,9 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           </span>
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
-          pick={record ? <><span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`}>{hanzi}</span>{rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>}</> : `Loading ${meta.label.toLowerCase()}…`}
-          pickAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
+          pick={record ? <span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`} style={{ '--pick-chars': Array.from(hanzi ?? '').length || 1 } as React.CSSProperties}>{hanzi}</span> : `Loading ${meta.label.toLowerCase()}…`}
+          line={record ? (rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>) : undefined}
+          lineAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
         <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
           <Shuffle />
         </Button>
