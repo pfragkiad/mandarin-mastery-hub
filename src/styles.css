@@ -2785,7 +2785,9 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
      square's right edge as it does side-by-side. */
   .writing-tool-tabbed .writer-controls-arranged .writer-playback { width: 100%; margin-left: 0; margin-right: 0; justify-content: flex-start; }
   .writing-tool-tabbed .writer-controls-arranged .writer-playback > button:last-child { margin-left: 0; }
-  .writer-toggles { justify-content: flex-start; max-width: 100%; }
+  /* The toggles block is only as wide as its pills, so it must be pulled to the
+     column's left edge too (align-self beats the row's centring). */
+  .writer-toggles { align-self: stretch; justify-content: flex-start; max-width: 100%; }
   .writer-toggles > .stroke-pill { padding-left: 10px; padding-right: 11px; gap: 6px; min-width: 0; }
 }
 
