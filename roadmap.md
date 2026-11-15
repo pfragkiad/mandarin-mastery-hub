@@ -11,4 +11,4 @@
 - [x] Characters/Words cards: Examples icon beside the pinyin speaker (moved from the button row)
 - [x] Flashcards: kind dropdown in glyphs-first order (Characters, Components, Radicals, Words, Phrases) with a vocabulary collection dropdown; two setup rows (kind + collection/level/type, then filters)
 - [x] Drawing game: same two-row setup
-- [ ] Card layout policies independent: button wrap follows card width (always applies); cards-per-row is separate. Reverted Compact min-width 280→230px; verify both at tablet widths.
+- [x] Card layout policies independent: button wrap follows card width (always applies); cards-per-row separate. Compact min-width back to 230px; verified 820px (3/row, Recall+bookmark wrap) and 700px (2/row, one line).
