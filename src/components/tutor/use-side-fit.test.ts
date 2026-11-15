@@ -21,7 +21,8 @@ describe('meaningFontSize', () => {
 
 describe('trailingWordCount', () => {
   it('reads a last line as wide as its final word', () => {
-    expect(trailingWordCount(40, [38, 80])).toBe(1);
+    expect(trailingWordCount(38, [38, 80])).toBe(1);
+    expect(trailingWordCount(39, [38, 80])).toBe(1);
   });
 
   it('reads a last line holding the final two words', () => {
