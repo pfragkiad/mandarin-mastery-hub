@@ -100,7 +100,7 @@ export function HintChar({ glyph, word, focusable = true, className = '', ...res
   const hints = useLessonHints();
   const activate = (el: HTMLElement) => hints?.open(el, glyph, word ?? null);
   return <span {...rest} role="button" tabIndex={focusable ? 0 : -1} data-lesson-hint="" className={`lesson-hint-char ${className}`.trim()} aria-label={`${glyph}: quick card`}
-    onClick={(e: MouseEvent<HTMLSpanElement>) => { e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); }}
+    onClick={(e: MouseEvent<HTMLSpanElement>) => { console.log('[hint-debug] span click', glyph, 'hints:', Boolean(hints)); e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); }}
     onKeyDown={(e: KeyboardEvent<HTMLSpanElement>) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); } }}>{glyph}</span>;
 }
 
