@@ -89,7 +89,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.examples?.items.length) sections.push({ id: 'examples', title: 'Example sentences', body: <>
     {S.examples.default_provenance && <p className="lesson-note"><LessonText text={S.examples.default_provenance}/></p>}
     <div className="lesson-stack">{S.examples.items.map(e => <div key={e.id} className="lesson-card lesson-example">
-      <div className="lesson-card-top"><strong className="lesson-card-title"><LessonText text={e.title}/></strong><span className="lesson-register">{plain(e.provenance)}</span></div>
+      <div className="lesson-card-top"><strong className="lesson-card-title"><LessonText text={e.title}/></strong>{e.provenance && <span className="lesson-register">{plain(e.provenance)}</span>}</div>
       <SentenceExample sentence={e.hanzi} pinyin={e.pinyin} translation={e.english} heading=""/>
       {(e.context || e.register) && <p className="lesson-muted">{e.context && <LessonText text={e.context}/>}{e.context && e.register ? ' · ' : ''}{e.register && <LessonText text={e.register}/>}</p>}
       {e.teaching_note && <p className="lesson-teaching"><LessonText text={e.teaching_note}/></p>}
@@ -137,7 +137,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <div className="lesson-stack">{learnerExtensions.map(x => <div key={x.id} className="lesson-card">
       <h3><LessonText text={x.title}/></h3>
       {x.blocks.map((b, i) => <ExtensionBlock key={i} block={b}/>)}
-      {x.verification_status !== 'verified' && <p className="lesson-footnote">{plain(x.verification_status)}</p>}
+      {x.verification_status && x.verification_status !== 'verified' && <p className="lesson-footnote">{plain(x.verification_status)}</p>}
     </div>)}</div>
   </> });
 
@@ -222,7 +222,7 @@ function PreferenceChart({ preference, sources }: { preference: LessonPreference
       <span className="lesson-bar-count">{c.abstract} abstract · {c.concrete} concrete</span>
     </div>; })}
     <p><LessonText text={preference.statement}/></p>
-    <p className="lesson-footnote">{preference.data.sample}{preference.source_ids.length ? ` · ${preference.source_ids.map(sources).join(', ')}` : ''}</p>
+    <p className="lesson-footnote">{preference.data.sample}{preference.source_ids?.length ? ` · ${preference.source_ids.map(sources).join(', ')}` : ''}</p>
   </div>;
 }
 

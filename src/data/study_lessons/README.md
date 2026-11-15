@@ -3,6 +3,16 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
+The current templates and both supplied lessons use `mandarin-character-lesson/2.5.0`.
+This version stores learner content only: examples, corpus comparisons and extensions
+do not require provenance or verification fields. Editorial references belong in a
+separate `report.md` beside a lesson when supplied; no reports are currently included.
+Reports are not loaded by the application. Earlier lesson documents may still carry
+their recorded inline provenance, which the shared reader continues to support.
+
+See [core/README.md](core/README.md) for schemas and templates and
+[lessons/README.md](lessons/README.md) for the supplied lesson directories.
+
 | Path | Purpose | Consumer |
 | --- | --- | --- |
 | `core/lesson_categories.json` | Shared category registry (`id`, `label`, `description`, `status`). Lessons reference categories by ID; only `active` entries are shown. | Static import in `lessons.ts` (index grouping and filter). |

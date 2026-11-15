@@ -15,8 +15,28 @@ afterEach(cleanup);
 describe('LessonPage', () => {
   it.each(lessonSummaries.map(s => s.id))('renders lesson %s from its JSON', async id => {
     const lesson = (await loadLesson(id))!;
-    render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(screen.getByRole('heading', { level: 1, name: lesson.summary.title })).toBeTruthy();
+    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.5.0');
+    expect(container.querySelectorAll('.lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
+    expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
+  });
+
+  it('renders the recorded corpus comparison without source IDs in v2.5', async () => {
+    const lesson = (await loadLesson('char-4EE5'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(container.querySelector('.lesson-preference')?.textContent).toContain('166 abstract · 23 concrete');
+    expect(container.querySelector('.lesson-preference')?.textContent).toContain('146 abstract · 173 concrete');
+  });
+
+  it('still displays provenance when an older lesson records it', async () => {
+    const lesson = structuredClone((await loadLesson('char-6B21'))!);
+    lesson.summary.schemaVersion = 'mandarin-character-lesson/2.4.0';
+    lesson.sections.examples!.items[0]!.provenance = 'report_extracted';
+    lesson.sections.extensions!.items[0]!.verification_status = 'needs_review';
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(container.querySelector('.lesson-example .lesson-register')?.textContent).toBe('report extracted');
+    expect(container.querySelector('#lesson-more')?.textContent).toContain('needs review');
   });
 
   it('a practice choice reveals the recorded answer without grading it', async () => {

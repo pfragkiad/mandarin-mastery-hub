@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/2.4.0",
+  "schema_version": "mandarin-character-lesson/2.5.0",
   "lesson_id": "char-4EE5",
   "lesson": {
     "title": "Common Words & Grammatical Uses",
@@ -18,24 +18,21 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "2.4.0",
+    "template_version": "2.5.0",
     "audience": "HSK beginner core; intermediate extension",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
     "hsk": {
       "level": null,
       "edition": null,
-      "official_id": null,
-      "source_id": null
+      "official_id": null
     },
     "frequency": {
       "rank": null,
       "corpus": null,
-      "unit": null,
-      "source_id": null
+      "unit": null
     },
-    "catalog_character_id": null,
-    "license_note": ""
+    "catalog_character_id": null
   },
   "headword": {
     "hanzi": "以",
@@ -69,7 +66,7 @@
         "Preposition in formal Mandarin",
         "Part of productive constructions"
       ],
-      "teaching_priority": "high (editorial priority, not a measured frequency)",
+      "teaching_priority": "High for learners of common modern vocabulary.",
       "meaning_map": [
         {
           "id": "lexical",
@@ -80,8 +77,7 @@
             "hanzi": "可以",
             "pinyin": "kěyǐ",
             "meaning_en": "may; can"
-          },
-          "evidence": "Conventional modern usage"
+          }
         },
         {
           "id": "instrumental",
@@ -92,8 +88,7 @@
             "hanzi": "以书面形式",
             "pinyin": "yǐ shūmiàn xíngshì",
             "meaning_en": "in written form"
-          },
-          "evidence": "src-sun"
+          }
         },
         {
           "id": "construction",
@@ -104,16 +99,14 @@
             "hanzi": "以他为榜样",
             "pinyin": "yǐ tā wéi bǎngyàng",
             "meaning_en": "take him as a role model"
-          },
-          "evidence": "Established grammatical construction"
+          }
         },
         {
           "id": "classical",
           "reading": "yǐ",
           "function_en": "Historical grammatical functions",
           "register": "Classical Chinese only",
-          "example": null,
-          "evidence": "src-shiji"
+          "example": null
         }
       ],
       "one_minute_explanation": "The character does not map to one English word in every context. It participates in many complete words and some reusable constructions; learn the complete modern words before trying to interpret the character in isolation."
@@ -366,7 +359,6 @@
       "structural_note": "The reusable pattern 以 X 为 Y (yǐ X wéi Y) permits variable constituents; 以 X 为主 (yǐ X wéi zhǔ) and 以 X 为例 (yǐ X wéi lì) are recurring subpatterns. The standalone lexicalized verb 以为 (yǐwéi) is a different grammatical unit."
     },
     "examples": {
-      "default_provenance": "Original constructed teaching sentences, not attested quotations or native-checked corpus examples.",
       "items": [
         {
           "id": "ex-01",
@@ -376,9 +368,7 @@
           "english": "May I come in?",
           "context": "Asking to enter a room.",
           "register": "spoken; everyday",
-          "teaching_note": "Treat the two-character modal as a single word.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "Treat the two-character modal as a single word."
         },
         {
           "id": "ex-02",
@@ -388,9 +378,7 @@
           "english": "It's raining today, so I'm not going out.",
           "context": "Explaining a decision.",
           "register": "spoken; everyday",
-          "teaching_note": "A connective linking reason and result.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "A connective linking reason and result."
         },
         {
           "id": "ex-03",
@@ -400,9 +388,7 @@
           "english": "I'm free after three o'clock.",
           "context": "Arranging a meeting.",
           "register": "spoken; everyday",
-          "teaching_note": "The temporal word follows a time expression.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "The temporal word follows a time expression."
         },
         {
           "id": "ex-04",
@@ -412,9 +398,7 @@
           "english": "I used to live in Beijing.",
           "context": "Discussing former residence.",
           "register": "spoken; everyday",
-          "teaching_note": "Marks an earlier period; the present location remains unspecified.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "Marks an earlier period; the present location remains unspecified."
         },
         {
           "id": "ex-05",
@@ -424,11 +408,7 @@
           "english": "I thought you weren't coming.",
           "context": "Someone unexpectedly shows up.",
           "register": "spoken; everyday",
-          "teaching_note": "The assumption commonly turns out wrong in such contexts, but this is not mandatory.",
-          "provenance": "constructed",
-          "source_ids": [
-            "src-zhang"
-          ]
+          "teaching_note": "The assumption commonly turns out wrong in such contexts, but this is not mandatory."
         },
         {
           "id": "ex-06",
@@ -438,9 +418,7 @@
           "english": "Please submit your application in writing.",
           "context": "Institutional instructions.",
           "register": "formal/written",
-          "teaching_note": "A means or manner prepositional phrase.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "A means or manner prepositional phrase."
         },
         {
           "id": "ex-07",
@@ -450,9 +428,7 @@
           "english": "This course focuses mainly on speaking practice.",
           "context": "Course description.",
           "register": "neutral-to-formal",
-          "teaching_note": "Recognize the established subpattern as a unit.",
-          "provenance": "constructed",
-          "source_ids": []
+          "teaching_note": "Recognize the established subpattern as a unit."
         }
       ]
     },
@@ -526,9 +502,6 @@
       ],
       "preference_vs_rule": {
         "statement": "In the instrumental-preposition subset of Sun Dejin’s corpus, abstract nouns followed 以 (yǐ) in 166 of 189 occurrences (about 88%) and 用 (yòng) in 146 of 319 (about 46%). Concrete-noun observations were 23 and 173 respectively. These are corpus-specific collocational preferences, not universal restrictions or contemporary language-wide frequency estimates.",
-        "source_ids": [
-          "src-sun"
-        ],
         "data": {
           "sample": "instrumental-preposition subset of approximately 2-million-character historical written corpus",
           "categories": [
@@ -592,10 +565,7 @@
           "hanzi": "秦亦不以城予赵。",
           "pinyin": "Qín yì bù yǐ chéng yǔ Zhào.",
           "translation_en": "Qin likewise did not give the cities to Zhao.",
-          "explanation": "The phrase 以城 (yǐ chéng) identifies what would be given. The comparison with 把 (bǎ) is restricted to this kind of construction.",
-          "source_ids": [
-            "src-shiji"
-          ]
+          "explanation": "The phrase 以城 (yǐ chéng) identifies what would be given. The comparison with 把 (bǎ) is restricted to this kind of construction."
         }
       ],
       "caution": "Do not treat classical 以 (yǐ) and modern 把 (bǎ) as generally synonymous or freely interchangeable."
@@ -640,51 +610,9 @@
         }
       ]
     },
-    "sources": {
-      "items": [
-        {
-          "id": "src-zhang",
-          "claim": "Judgment and opposition-related uses of 以为 (yǐwéi)",
-          "author": "张邱林 (Zhāng Qiūlín)",
-          "title": "An Examination of the Verb “Yiwei”",
-          "publication": "Linguistic Research 1999(1), 133–141",
-          "url": "https://yyyj.cbpt.cnki.net/portal/journal/portal/client/paper/1efd0549655e468f9e2ab1e95076628c",
-          "evidence_type": "scholarly journal abstract",
-          "verification_status": "checked_in_previous_draft",
-          "scope_note": "Supports tendency-based rather than categorical interpretation; do not overstate from abstract alone."
-        },
-        {
-          "id": "src-sun",
-          "claim": "Instrumental 以 (yǐ) versus 用 (yòng) register/collocation and reported counts",
-          "author": "孙德金 (Sūn Déjīn)",
-          "title": "The Linguistic Value of Classical Grammatical Elements in Modern Written Chinese: The Preposition Yi",
-          "publication": "Chinese Language and Culture Teaching and Research IV",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/SSID-11817331_%E8%AA%9E%E8%A8%80%E6%96%87%E5%8C%96%E6%95%99%E5%AD%B8%E7%A0%94%E7%A9%B6%E9%9B%86%E5%88%8A_%E7%AC%AC4%E9%9B%86_IV.pdf",
-          "evidence_type": "corpus-based research",
-          "verification_status": "checked_in_previous_draft",
-          "scope_note": "The counts refer to the instrumental-preposition subset of the study corpus and are not universal proportions."
-        },
-        {
-          "id": "src-shiji",
-          "claim": "Classical example about Qin and Zhao",
-          "author": "司马迁 (Sīmǎ Qiān)",
-          "title": "史记 (Shǐjì) — 廉颇蔺相如列传 (Lián Pō Lìn Xiāngrú lièzhuàn)",
-          "publication": "Classical primary text; online Wikisource edition",
-          "url": "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7081",
-          "evidence_type": "primary classical source",
-          "verification_status": "checked_in_previous_draft",
-          "scope_note": "Modern Mandarin pinyin is for reading, not reconstruction of Classical Chinese pronunciation."
-        }
-      ],
-      "example_provenance": "Modern full sentences are original constructed teaching examples, not corpus quotations or independently certified native-speaker examples."
-    },
     "extensions": {
-      "intro": "Additional report-specific material is stored here when present; no supplementary entries are needed for this lesson.",
+      "intro": "Additional linguistic notes and usage distinctions.",
       "items": []
     }
-  },
-  "report_intake": {
-    "reports": [],
-    "material": []
   }
 }

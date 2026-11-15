@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.4.0.json",
-  "title": "Mandarin character learning lesson",
-  "description": "Canonical lesson learning content with controlled categories, structured report provenance and optional supplementary extensions. Character stroke/radical/etymology data is managed separately; no unsolicited verification workflows.",
+  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.5.0.json",
+  "title": "Mandarin character lesson data — content-only v2.5",
+  "description": "Canonical learner content; input provenance and references are kept exclusively in a separate report.md file.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -20,7 +20,8 @@
         "mandarin-character-lesson/2.1.0",
         "mandarin-character-lesson/2.2.0",
         "mandarin-character-lesson/2.3.0",
-        "mandarin-character-lesson/2.4.0"
+        "mandarin-character-lesson/2.4.0",
+        "mandarin-character-lesson/2.5.0"
       ]
     },
     "lesson_id": {
@@ -38,8 +39,7 @@
         "date_reviewed",
         "hsk",
         "frequency",
-        "catalog_character_id",
-        "license_note"
+        "catalog_character_id"
       ],
       "properties": {
         "status": {
@@ -55,7 +55,8 @@
             "2.1.0",
             "2.2.0",
             "2.3.0",
-            "2.4.0"
+            "2.4.0",
+            "2.5.0"
           ]
         },
         "audience": {
@@ -161,7 +162,7 @@
         "mistakes",
         "historical",
         "practice",
-        "sources"
+        "extensions"
       ],
       "properties": {
         "overview": {
@@ -248,7 +249,6 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "default_provenance",
             "items"
           ],
           "properties": {
@@ -372,8 +372,7 @@
                 "type": "string"
               }
             }
-          },
-          "description": "Legacy optional; character reference data is managed outside this lesson system; not needed in new files."
+          }
         },
         "historical": {
           "type": "object",
@@ -425,7 +424,11 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "items"
+            "items",
+            "editorial_status",
+            "outstanding_checks",
+            "example_provenance",
+            "licensing"
           ],
           "properties": {
             "items": {
@@ -435,15 +438,13 @@
               }
             },
             "editorial_status": {
-              "type": "string",
-              "description": "Legacy optional; do not generate boilerplate review status."
+              "type": "string"
             },
             "outstanding_checks": {
               "type": "array",
               "items": {
                 "type": "string"
-              },
-              "description": "Legacy optional; not part of generated learning materials."
+              }
             },
             "example_provenance": {
               "type": "string"
@@ -466,8 +467,7 @@
                 "$ref": "#/$defs/check"
               }
             }
-          },
-          "description": "Legacy optional; new lessons should not add unsolicited external verification checklists."
+          }
         },
         "extensions": {
           "$ref": "#/$defs/extensions"
@@ -528,18 +528,16 @@
         },
         "categories": {
           "type": "array",
-          "uniqueItems": true,
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
-          },
-          "description": "Reusable category IDs from lesson_categories.json. Use multiple only when central to the lesson."
+          }
         },
         "primary_category_id": {
           "type": "string",
-          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-          "description": "One of the lesson.categories IDs; main navigation topic."
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
         },
         "tags": {
           "type": "array",
@@ -547,8 +545,7 @@
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
-          },
-          "description": "Specific topics not deserving a new broad category."
+          }
         }
       }
     }
@@ -595,8 +592,7 @@
       "required": [
         "level",
         "edition",
-        "official_id",
-        "source_id"
+        "official_id"
       ],
       "properties": {
         "level": {
@@ -633,8 +629,7 @@
       "required": [
         "rank",
         "corpus",
-        "unit",
-        "source_id"
+        "unit"
       ],
       "properties": {
         "rank": {
@@ -672,8 +667,7 @@
         "reading",
         "function_en",
         "register",
-        "example",
-        "evidence"
+        "example"
       ],
       "properties": {
         "id": {
@@ -833,9 +827,7 @@
         "english",
         "context",
         "register",
-        "teaching_note",
-        "provenance",
-        "source_ids"
+        "teaching_note"
       ],
       "properties": {
         "id": {
@@ -919,7 +911,6 @@
       "additionalProperties": false,
       "required": [
         "statement",
-        "source_ids",
         "data"
       ],
       "properties": {
@@ -1030,8 +1021,7 @@
         "hanzi",
         "pinyin",
         "translation_en",
-        "explanation",
-        "source_ids"
+        "explanation"
       ],
       "properties": {
         "id": {
@@ -1479,10 +1469,6 @@
         "category",
         "classification",
         "visibility",
-        "verification_status",
-        "source_ids",
-        "report_ids",
-        "rationale",
         "blocks"
       ],
       "properties": {
@@ -1579,11 +1565,6 @@
           "lesson"
         ],
         "properties": {
-          "lesson": {
-            "required": [
-              "category"
-            ]
-          },
           "metadata": {
             "properties": {
               "template_version": {
@@ -1598,7 +1579,7 @@
       "if": {
         "properties": {
           "schema_version": {
-            "const": "mandarin-character-lesson/2.3.0"
+            "const": "mandarin-character-lesson/2.5.0"
           }
         },
         "required": [
@@ -1607,62 +1588,57 @@
       },
       "then": {
         "required": [
-          "lesson",
-          "report_intake"
+          "lesson"
         ],
-        "properties": {
-          "lesson": {
-            "required": [
-              "categories",
-              "primary_category_id",
-              "tags"
-            ]
-          },
-          "metadata": {
-            "properties": {
-              "template_version": {
-                "const": "2.3.0"
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
               }
             }
-          },
-          "sections": {
-            "required": [
-              "extensions"
-            ]
-          }
-        }
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "schema_version": {
-            "const": "mandarin-character-lesson/2.4.0"
-          }
+          ]
         },
-        "required": [
-          "schema_version"
-        ]
-      },
-      "then": {
-        "required": [
-          "lesson",
-          "report_intake"
-        ],
         "properties": {
-          "lesson": {
-            "required": [
-              "categories",
-              "primary_category_id",
-              "tags"
-            ]
-          },
           "metadata": {
             "properties": {
               "template_version": {
-                "const": "2.4.0"
+                "const": "2.5.0"
               }
             }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "categories",
+              "primary_category_id",
+              "tags",
+              "slug"
+            ]
           },
           "sections": {
             "required": [

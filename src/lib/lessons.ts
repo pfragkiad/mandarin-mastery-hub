@@ -45,11 +45,13 @@ export type LessonSummary = {
 /* ---------- Full lesson document (mirrors core/character_lesson.schema.json) ---------- */
 export type LessonVocabItem = { id: string; catalog_id: string | null; hanzi: string; pinyin: string; part_of_speech: string; meaning_en: string; priority: 'A' | 'B' | 'C'; register: string; lexical_status: string; usage_note: string; hsk_level: number | null; hsk_syllabus_id: string | null; frequency_rank: number | null };
 export type LessonConstruction = { id: string; category: string; pattern_hanzi: string; pattern_pinyin: string; function_en: string; example: LessonTerm; register: string; usage_note: string };
-export type LessonExample = { id: string; title: string; hanzi: string; pinyin: string; english: string; context: string; register: string; teaching_note: string; provenance: string; source_ids: string[] };
+// v2.5 keeps learner content in JSON and editorial provenance in a separate report.
+// Optional provenance fields retain compatibility with earlier lesson documents.
+export type LessonExample = { id: string; title: string; hanzi: string; pinyin: string; english: string; context: string; register: string; teaching_note: string; provenance?: string; source_ids?: string[] };
 export type LessonContrast = { id: string; hanzi: string; pinyin: string; meaning_en: string; example: LessonTerm; usage: string; limitation: string };
-export type LessonPreference = { statement: string; source_ids: string[]; data: { sample: string; categories: { form_hanzi: string; form_pinyin: string; abstract: number; concrete: number }[] } };
+export type LessonPreference = { statement: string; source_ids?: string[]; data: { sample: string; categories: { form_hanzi: string; form_pinyin: string; abstract: number; concrete: number }[] } };
 export type LessonMistake = { id: string; incorrect_inference: string; correction: string; reason: string };
-export type LessonHistorical = { id: string; function_en: string; hanzi: string; pinyin: string; translation_en: string; explanation: string; source_ids: string[] };
+export type LessonHistorical = { id: string; function_en: string; hanzi: string; pinyin: string; translation_en: string; explanation: string; source_ids?: string[] };
 export type LessonQuestion = { id: string; kind: 'comprehension' | 'selection' | 'production' | string; prompt: string; choices: LessonTerm[]; answer: string; explanation: string };
 export type LessonSource = { id: string; claim: string; author: string; title: string; publication: string; url: string | null; evidence_type: string; verification_status: string; scope_note: string };
 export type LessonBlock =
@@ -58,15 +60,15 @@ export type LessonBlock =
   | { kind: 'example'; hanzi: string; pinyin: string; english: string; usage_note: string }
   | { kind: 'list'; items: string[] }
   | { kind: 'table'; headers: string[]; rows: string[][] };
-export type LessonExtension = { id: string; title: string; category: string; classification: string; visibility: 'learner' | 'editorial' | string; verification_status: string; source_ids: string[]; report_ids: string[]; rationale: string; blocks: LessonBlock[] };
+export type LessonExtension = { id: string; title: string; category: string; classification: string; visibility: 'learner' | 'editorial' | string; verification_status?: string; source_ids?: string[]; report_ids?: string[]; rationale?: string; blocks: LessonBlock[] };
 export type LessonReport = { id: string; title: string; source_type: string; source_locator: string; received_date: string; notes: string };
 export type LessonMaterial = { id: string; report_id: string; source_location: string; content_summary: string; handling: string; destinations: { section: string; item_id: string }[]; decision_note: string };
 
 export type LessonSections = {
-  overview?: { core_takeaway: string; independent_usage: string; modern_roles: string[]; teaching_priority: string; meaning_map: { id: string; reading: string; function_en: string; register: string; example: LessonTerm | null; evidence: string }[]; one_minute_explanation: string };
+  overview?: { core_takeaway: string; independent_usage: string; modern_roles: string[]; teaching_priority: string; meaning_map: { id: string; reading: string; function_en: string; register: string; example: LessonTerm | null; evidence?: string }[]; one_minute_explanation: string };
   vocabulary?: { items: LessonVocabItem[]; notes: string };
   constructions?: { enabled: boolean; items: LessonConstruction[]; structural_note: string };
-  examples?: { default_provenance: string; items: LessonExample[] };
+  examples?: { default_provenance?: string; items: LessonExample[] };
   contrasts?: { items: LessonContrast[]; preference_vs_rule: LessonPreference | null };
   mistakes?: { items: LessonMistake[] };
   /** Legacy optional (schema ≤2.3); rendered only when a lesson still carries it. */
