@@ -3650,6 +3650,15 @@ html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-chrome-line) + 2 * var(--card-pill-pad-y) + 2px); }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-chrome-size); }
 
+/* Radical pill abbreviation: the full "Radical #N" label shows by default; when the card's top
+   row is too narrow for it, useRadicalPillLabel measured that the row wraps and that the
+   abbreviation keeps it on one line, and marks the row data-radical-short (see
+   src/components/tutor/use-radical-pill-label.ts). Both labels are in the DOM, so this swap is
+   pure CSS and never rerenders the results grid. */
+.word-card .word-level-wrap .radical-pill-short { display: none; }
+.word-card .word-level-wrap[data-radical-short] .radical-pill-full { display: none; }
+.word-card .word-level-wrap[data-radical-short] .radical-pill-short { display: inline; }
+
 /* Comfortable libraries (Glyphs, Words, Phrases): from 700px up, two cards per row, and a
    third once each of three cards can be at least 380px wide (wide screens). The track
    minimum is min(half the row, max(380px, a third of the row)), so the grid never drops
