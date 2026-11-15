@@ -259,7 +259,7 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .find-examples-link { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; padding: 2px 6px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
 .find-examples-link:hover, .find-examples-link:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
-.find-examples-link .find-examples-icon { flex: none; width: 13px; height: 13px; }
+.find-examples-link .find-examples-icon { color: var(--examples-link); flex: none; width: 13px; height: 13px; }
 html[data-display-size='comfortable'] .find-examples-link { font-size: 13px; }
 html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { width: 15px; height: 15px; }
 .characters-library { margin-bottom: 34px; }
@@ -289,6 +289,8 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
   --banner-ink: oklch(.96 .009 140); --banner-surface: oklch(.19 .008 155); --banner-accent: oklch(.85 .075 65); --traditional: oklch(.81 .12 305);
   /* Cyan Sound chart link: separate from the green (Simplified/link) and purple (Traditional) script colours. */
   --sound-link: oklch(.82 .11 198);
+  /* Blue external-examples arrow: distinct from the cyan Sound chart link, high contrast on dark cards. */
+  --examples-link: oklch(.75 .14 255);
   --background: oklch(.19 .008 155); --foreground: oklch(.94 .009 140);
   --card: oklch(.235 .009 155); --sidebar-bg: oklch(.215 .008 155);
   --primary: oklch(.8 .09 158); --primary-foreground: oklch(.19 .022 158);
@@ -2503,9 +2505,10 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
 /* Card-face external examples icon (Characters/Words), sized like the Sound chart link beside it
    but neutral-coloured, turning accent on hover with a tinted badge. */
-.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -2px; border-radius: 5px; color: var(--muted-foreground); cursor: pointer; transition: color .15s ease, background .15s ease; }
+html:not(.dark) { --examples-link: oklch(.5 .18 260); }
+.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -2px; border-radius: 5px; color: var(--examples-link); cursor: pointer; transition: color .15s ease, background .15s ease; }
 .examples-link.is-tile svg { width: 12px; height: 12px; }
-.examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+.examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { background: color-mix(in oklch, var(--examples-link) 16%, transparent); outline: none; }
 .library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -4px; }
 .library-list-view .examples-link.is-tile svg { width: 18px; height: 18px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
