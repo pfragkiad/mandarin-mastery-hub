@@ -16,9 +16,9 @@ import { SentenceExample } from './sentence-example';
  * and each practice card's revealed answer (both reset when the page is left).
  *
  * Sections follow the schema order and appear only when they carry content (disabled
- * sections, empty lists and editorial-only extensions are skipped). Practice choices
- * reveal the recorded answer and explanation. v2.6 selected answers resolve through
- * explicit choice IDs; older and open-ended questions retain their answer text.
+ * sections, empty lists and editorial-only extensions are skipped). v2.6 selection
+ * questions are graded only through their recorded correct_choice_ids; older and
+ * open-ended questions reveal their recorded answer text without grading.
  */
 
 const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character lesson', word: 'Word lesson', phrase: 'Phrase lesson', topic: 'Topic lesson' };
