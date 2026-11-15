@@ -349,9 +349,9 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
   // when the boxes, the one-line pinyin or the two-line translation would be cut there, and CSS then
   // stacks boxes / pinyin+audio / translation (styles.css "Library card body").
   useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional]);
-  // The gold Radical pill is the widest label in this row, so a row too narrow for the full
-  // "Radical #N" first tries the abbreviated "Rad. #N" before dropping the pill onto a second
-  // line (use-radical-pill-label.ts).
+  // A row too narrow for its labels gets two attempts before it drops one onto a second line:
+  // first the gold Radical pill's abbreviated "Rad. #N", then a smaller card chrome font
+  // (use-card-chrome-fit.ts).
   const rowRef = useRef<HTMLSpanElement>(null);
   useCardChromeFit(rowRef, entry.kangxiIndex !== undefined || (componentRadical.length === 1 && Boolean(componentRadical[0])), [entry.id, entry.kangxiIndex, componentRadical.length, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional, preferences.cardReveal, revealed]);
   const tile = <Button ref={tileRef} variant="ghost" className="word-open catalog-entry" aria-label={label} aria-pressed={selected} onPointerEnter={() => setEngaged(true)} onPointerLeave={() => setEngaged(false)} onFocus={() => setEngaged(true)} onBlur={() => setEngaged(false)} onClick={() => onSelect(entry.id)}>
