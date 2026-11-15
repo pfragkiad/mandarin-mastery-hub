@@ -47,6 +47,8 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
         // need one line fewer and keep it, so try those steps before stacking.
         let fitted = false;
         for (const step of MEANING_FONT_STEPS) {
+          // Each step is measured from the view's own size, so clear the previous step first.
+          resetMeaningFont(el);
           if (!applyMeaningFont(el, step)) continue;
           if (sideLayoutFits(el)) { fitted = true; break; }
         }
