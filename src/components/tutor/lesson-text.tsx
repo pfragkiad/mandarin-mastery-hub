@@ -6,7 +6,8 @@ import { vocabularyKind } from '@/lib/mandarin';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { useWorkspace } from './workspace';
 import { ExamplePronunciation } from './example-pronunciation';
-import { HintGlyphs, useLessonHints } from './lesson-hints';
+import { HintChar, HintGlyphs, useLessonHints } from './lesson-hints';
+import { usePhrasePairing } from './phrase-pairing';
 import type { AudioRequest } from '@/lib/audio';
 
 /**
@@ -32,6 +33,47 @@ import type { AudioRequest } from '@/lib/audio';
 
 const HAN = /(\p{Script=Han}+)/u;
 const HAN_TEST = /^\p{Script=Han}+$/u;
+const HAN_CHAR = /^\p{Script=Han}$/u;
+
+/**
+ * One hover pairing shared by a recorded hanzi field and its recorded pinyin
+ * (phrase-pairing.tsx): hovering either side rings its counterpart, exactly like the
+ * phrase cards and the "In a sentence" cross-highlight. This is independent of the
+ * character-hints switch — hints own click (quick card), pairing owns hover — so the
+ * borders work with hints on or off. Fails closed to the plain recorded text until the
+ * syllable inventory loads or the recorded pinyin does not align with the characters.
+ * With hints on, each character stays a hint target (quick card, word context) and the
+ * pair class/handlers merge into it.
+ */
+export function useLessonPairing(hanzi: string, pinyin: string | null | undefined, focusable = true) {
+  const hints = useLessonHints();
+  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin));
+  const word = hints?.enabled ? hints.wordFor(hanzi) : null;
+  const hanziBody = Array.from(hanzi).map((ch, i) => {
+    if (!HAN_CHAR.test(ch)) return ch;
+    if (hints?.enabled) return <HintChar key={i} glyph={ch} word={word} focusable={focusable} {...pairing.glyphProps(i)}/>;
+    return pairing.paired ? pairing.glyph(ch, i) : ch;
+  });
+  return { hanziBody, pinyinBody: pairing.pinyinText };
+}
+
+/** A recorded hanzi field shown beside its recorded pinyin, hover-paired both ways. */
+export function LessonPairedLine({ hanzi, pinyin, className = 'lesson-hanzi', focusable = true }: { hanzi: string; pinyin?: string | undefined; className?: string; focusable?: boolean }) {
+  const pair = useLessonPairing(hanzi, pinyin, focusable);
+  return <>
+    <span className={className} lang="zh-CN">{pair.hanziBody}</span>
+    {pinyin && <span className="pinyin">{pair.pinyinBody}</span>}
+  </>;
+}
+
+/** The lesson hero's headword: big glyph + reading + speaker, hover-paired. */
+export function LessonHeadword({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
+  const pair = useLessonPairing(hanzi, pinyin);
+  return <div className="lesson-headword">
+    <span className="lesson-hanzi lesson-headword-glyph" lang="zh-CN">{pair.hanziBody}</span>
+    <span className="lesson-headword-reading"><span className="pinyin">{pair.pinyinBody}</span><LessonSpeaker hanzi={hanzi} pinyin={pinyin}/></span>
+  </div>;
+}
 
 export function LessonText({ text }: { text: string | null | undefined }) {
   const hints = useLessonHints();
@@ -82,9 +124,10 @@ export function LessonSpeaker({ hanzi, pinyin }: { hanzi: string; pinyin: string
 }
 
 export function LessonTerm({ hanzi, pinyin, meaning, size = 'md', after }: { hanzi: string; pinyin?: string | undefined; meaning?: string | undefined; size?: 'md' | 'lg'; after?: ReactNode }) {
+  const pair = useLessonPairing(hanzi, pinyin);
   return <span className={`lesson-term is-${size}`}>
-    <LessonHanzi hanzi={hanzi}/>
-    {pinyin && <span className="lesson-term-reading"><span className="pinyin">{pinyin}</span><LessonSpeaker hanzi={hanzi} pinyin={pinyin}/></span>}
+    <span className="lesson-hanzi" lang="zh-CN">{pair.hanziBody}</span>
+    {pinyin && <span className="lesson-term-reading"><span className="pinyin">{pair.pinyinBody}</span><LessonSpeaker hanzi={hanzi} pinyin={pinyin}/></span>}
     {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
     {after}
   </span>;
