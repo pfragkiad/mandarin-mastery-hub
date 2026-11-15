@@ -56,6 +56,8 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
       }
       // Stacked (or side) translations still clamp in grid cards: a clipped one tries the same
       // smaller steps before the ellipsis is accepted.
+      // A step that just saved the side layout is final (re-trying would clear it).
+      if (el.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning')?.style.fontSize) return;
       if (meaningClipped(el)) shrinkUntilUnclipped(el);
       else shrinkTrailingLine(el);
     };
