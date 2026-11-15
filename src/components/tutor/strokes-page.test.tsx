@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
 import { hydrateCatalog, type CatalogData } from '@/lib/catalog-store';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
@@ -263,8 +263,7 @@ describe('character practice sections by mode', () => {
     unmount();
   });
 
-  it('shows only the first stroke\'s arrow when a Trace round starts', async () => {
-    // Arrows are a remembered preference; turn them on before the page mounts.
+  it('shows only the first stroke\'s arrow when a Trace round starts', async () => {    // Arrows are a remembered preference; turn them on before the page mounts.
     window.localStorage.setItem('tutor-stroke-arrows', '1');
     // Let the stand-in writer report its stroke data as loaded, so the round actually starts.
     writer.create.mockImplementationOnce((_el: unknown, _glyph: string, options: { onLoadCharDataSuccess?: () => void }) => {
