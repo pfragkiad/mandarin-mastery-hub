@@ -59,8 +59,7 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }:
   }, [words]);
   const close = useCallback(() => setState(null), []);
   const open = useCallback((el: HTMLElement, glyph: string, word: HintWord | null) => {
-    console.log('[hint-debug] open called', glyph);
-    setState(current => { console.log('[hint-debug] setState, current:', current?.glyph ?? null); return current?.el === el ? null : { el, glyph, word }; });
+    setState(current => current?.el === el ? null : { el, glyph, word });
   }, []);
   // Mark the open character (ring stays while its card is open).
   useEffect(() => {
@@ -100,7 +99,7 @@ export function HintChar({ glyph, word, focusable = true, className = '', ...res
   const hints = useLessonHints();
   const activate = (el: HTMLElement) => hints?.open(el, glyph, word ?? null);
   return <span {...rest} role="button" tabIndex={focusable ? 0 : -1} data-lesson-hint="" className={`lesson-hint-char ${className}`.trim()} aria-label={`${glyph}: quick card`}
-    onClick={(e: MouseEvent<HTMLSpanElement>) => { console.log('[hint-debug] span click', glyph, 'hints:', Boolean(hints)); e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); }}
+    onClick={(e: MouseEvent<HTMLSpanElement>) => { e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); }}
     onKeyDown={(e: KeyboardEvent<HTMLSpanElement>) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); activate(e.currentTarget); } }}>{glyph}</span>;
 }
 
