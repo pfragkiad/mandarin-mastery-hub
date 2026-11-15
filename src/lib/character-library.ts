@@ -1,6 +1,6 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import { kindFromId, sortByUsage, usageGroupFor, usageOrder, usageRank } from './usage-frequency';
+import { kindFromId, sortByUsage, UNRANKED, usageGroupFor, usageGroups, usageOrder, usageRank } from './usage-frequency';
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
@@ -72,7 +72,7 @@ export function savedGlyphDestination(entry: LibraryEntry) {
 // pinyinExact (only with pinyinOnly) requires a whole tone-stripped reading to
 // equal the query — "qi" matches 七 (qī) but not readings merely containing it.
 // Tone numbers are accepted too: "shi1" matches only shī, never shí/shǐ/shì.
-export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false, pinyinExact = false) {
+export function filterLibrary(entries: LibraryEntry[], query: string, strokeCount = '', sourceOnly = false, includeTraditional = false, usage?: string, savedIds?: readonly string[], pinyinOnly = false, pinyinExact = false, usageUpTo = false, strokesUpTo = false) {
   // Only Saved browsing expands family-qualified variant bookmarks. The normal
   // radical catalogue remains one card per family instead of duplicating forms.
   const saved = savedIds ? new Set(savedIds) : undefined;
@@ -95,7 +95,18 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
     if (hanQuery) return [entry.hanzi, ...relatedGroup(entry.hanzi), ...(kind === 'Strokes' ? [entry.note ?? ''] : []), ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ').includes(query.trim());
     return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q) || pinyinReadingMatches(entry.pinyin, query, false);
   };
-  const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && (!strokeCount || entry.strokes === Number(strokeCount)) && (!sourceOnly || Boolean(entry.decomposition)) && (!usage || !kind || usageGroupFor(kind, usageRank(entry, kind, includeTraditional))?.value === usage));
+  // "Include lower ranks" widens a rank group into rank 1..group.max; unranked
+  // records have no rank and stay out, and Unranked itself has nothing below it.
+  const usageGroup = usage && kind ? usageGroups(kind).find(group => group.value === usage) : undefined;
+  const usageMax = usageUpTo && usageGroup && usageGroup.value !== UNRANKED && Number.isFinite(usageGroup.max) ? usageGroup.max : null;
+  const matchesUsage = (entry: LibraryEntry) => {
+    if (!usage || !kind) return true;
+    const rank = usageRank(entry, kind, includeTraditional);
+    return usageMax !== null ? rank !== null && rank <= usageMax : usageGroupFor(kind, rank)?.value === usage;
+  };
+  // "Include fewer strokes" widens an exact stroke count into 1..count.
+  const matchesStrokes = (entry: LibraryEntry) => !strokeCount || (strokesUpTo ? entry.strokes !== undefined && entry.strokes <= Number(strokeCount) : entry.strokes === Number(strokeCount));
+  const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && matchesStrokes(entry) && (!sourceOnly || Boolean(entry.decomposition)) && matchesUsage(entry));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
 }
 export const LIBRARY_PAGE_SIZE = 48;

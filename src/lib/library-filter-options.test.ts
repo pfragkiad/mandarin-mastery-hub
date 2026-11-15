@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { LibraryEntry } from './character-library';
+import { filterLibrary } from './character-library';
 import { libraryFilterOptions } from './library-filter-options';
 
 vi.mock('./usage-frequency', async importOriginal => ({
@@ -39,5 +40,26 @@ describe('applied rank/stroke availability', () => {
     ];
     expect(libraryFilterOptions(forms, 'Components', false).strokes).toEqual([]);
     expect(libraryFilterOptions(forms, 'Components', true).strokes).toEqual([9]);
+  });
+});
+
+describe('cumulative "lower ranks" / "fewer strokes" widening', () => {
+  it('rank group alone matches only the group; widened adds every more frequent rank', () => {
+    expect(libraryFilterOptions(entries, 'Components', false, '101-200').strokes).toEqual([]);
+    expect(libraryFilterOptions(entries, 'Components', false, '101-200', '', true).strokes).toEqual([3]);
+  });
+  it('widened ranks still exclude unranked records, which have no rank', () => {
+    expect(libraryFilterOptions(entries, 'Components', false, '501-1000').strokes).toEqual([26]);
+    expect(libraryFilterOptions(entries, 'Components', false, '501-1000', '', true).strokes).toEqual([3, 7, 26]);
+  });
+  it('stroke count alone matches exactly; widened adds every smaller count', () => {
+    expect(libraryFilterOptions(entries, 'Components', false, undefined, '7').ranks.map(group => group.value)).toEqual(['301-500']);
+    expect(libraryFilterOptions(entries, 'Components', false, undefined, '7', false, true).ranks.map(group => group.value)).toEqual(['51-100', '301-500']);
+  });
+  it('filterLibrary applies the same widening', () => {
+    expect(filterLibrary(entries, '', '7', false, false).map(entry => entry.hanzi)).toEqual(['500']);
+    expect(filterLibrary(entries, '', '7', false, false, undefined, undefined, false, false, false, true).map(entry => entry.hanzi).sort()).toEqual(['100', '301', '500']);
+    expect(filterLibrary(entries, '', '', false, false, '101-200')).toEqual([]);
+    expect(filterLibrary(entries, '', '', false, false, '101-200', undefined, false, false, true).map(entry => entry.hanzi)).toEqual(['100']);
   });
 });

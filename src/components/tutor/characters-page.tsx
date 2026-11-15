@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
-import { usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
+import { UNRANKED, usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
 import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, glyphScript, plannedCounts, radicalVariantFallback, radicalVariantMeaning, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog, readingMeanings } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
@@ -383,7 +383,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
 
 const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect && a.revealed === b.revealed && a.onDetails === b.onDetails);
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined };
+export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -397,17 +397,19 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const pinyinOnly = Boolean(search.py);
   const hasUsage = kind !== 'Strokes';
   const usage = hasUsage ? parseUsageGroup(kind, search.usage) : undefined;
+  const usageUpTo = search.usageUpTo === '1';
+  const strokesUpTo = search.strokesUpTo === '1';
   const savedOnly = search.status === 'saved';
   const page = search.page ?? 1;
   const selectedId = search.id ?? glyphHit?.id ?? '';
   // No first-row fallback: ordinary visits and tab changes must not open a modal.
   // Explicit record IDs take precedence over glyph-only links to preserve kind.
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py };
+  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
-  const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py };
+  const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo };
   const activeFilters = Boolean(query || strokeCount || usage || search.py || savedOnly);
-  const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined }); };
+  const clearFilters = () => { set({ q: '', strokes: '', usage: undefined, py: undefined, status: undefined, page: 1, id: '', variant: undefined, usageUpTo: undefined, strokesUpTo: undefined }); };
   const setPage = (p: number) => set({ page: p, id: '' });
   const detailLoading = useDetailLoading();
   const setSelectedId = (id: string) => { void detailLoading.run(id, () => { const entry = savedGlyphEntry(id); return set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); }); };
@@ -415,13 +417,13 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const compatibleFilters = kind === 'Characters' || kind === 'Components';
   // Only applied opposite filters drive availability. Draft edits stay inside
   // the form, keeping the scan independent of typing and detail selection.
-  const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount), [entries, kind, preferences.includeTraditional, usage, strokeCount, catalogVersion]);
+  const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo), [entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo, catalogVersion]);
   const strokeCounts = useMemo(() => compatibleFilters ? availableOptions.strokes : Array.from(new Set(entries.flatMap(e => e.strokes ? [e.strokes] : []))).sort((a,b) => a-b), [entries, compatibleFilters, availableOptions]);
   const rankGroups = compatibleFilters ? availableOptions.ranks : usageGroups(kind);
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
-  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact');
+  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact', usageUpTo, strokesUpTo);
   // Grouped traditional records share their simplified card (a search hitting only 爺 shows 爷's card).
   // Saved browsing keeps exact bookmarked records, so a saved 爺 stays its own card there.
   // Applies to Characters and Components alike (each groups only within its own library).
@@ -560,9 +562,11 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : glyphsMotto) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</div><h1 ref={titleRef}>Get to know the {kind.toLowerCase()}.<SourceInfo inline className="detail-footnote">{catalogReady ? (kind === 'Characters' && !preferences.includeTraditional ? 'Traditional forms hidden · enable them in Preferences.' : kindNotes[kind]) : `Loading ${plannedCounts[kind].toLocaleString('en-US')} records…`}</SourceInfo></h1></div><span className="heading-hanzi">汉字<span>hàn zì</span></span></div>
     <Tabs value={kind} className="catalog-tabs">
       {kinds.map(k => <TabsContent value={k} key={k}>
-        <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={savedFilter} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: `${appliedFilters.strokes} ${appliedFilters.strokes === '1' ? 'stroke' : 'strokes'}`, clear: { strokes: '' } }] : [])]} filterFields={({ draft, patch }) => <>
+        <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={savedFilter} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined, usageUpTo: undefined, strokesUpTo: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: usageUpTo ? `Rank 1–${(usageGroups(kind).find(group => group.value === appliedFilters.usage)?.max ?? 0).toLocaleString('en-US')}` : usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage, clear: { usage: undefined, usageUpTo: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: strokesUpTo ? `Up to ${appliedFilters.strokes} ${appliedFilters.strokes === '1' ? 'stroke' : 'strokes'}` : `${appliedFilters.strokes} ${appliedFilters.strokes === '1' ? 'stroke' : 'strokes'}`, clear: { strokes: '', strokesUpTo: undefined } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <Select value={draft.usage ?? 'all'} onValueChange={value => patch({ usage: parseUsageGroup(kind, value) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draft.usage ? usageGroups(kind).find(group => group.value === draft.usage)?.label : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value="all">All ranks</SelectItem>{draft.usage && !rankGroups.some(group => group.value === draft.usage) && <SelectItem value={draft.usage} disabled>{usageGroups(kind).find(group => group.value === draft.usage)?.label} · No matches</SelectItem>}{rankGroups.map(group => <SelectItem key={group.value} value={group.value}>{usageGroupLabel(group, kind, preferences.includeTraditional)}</SelectItem>)}</SelectContent></Select>}
+          {hasUsage && draft.usage && draft.usage !== UNRANKED && <button type="button" className={`filter-upto-toggle${draft.usageUpTo ? ' active' : ''}`} aria-pressed={draft.usageUpTo === '1'} title="Also include every more frequent rank above the selected group" onClick={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })}>+ lower ranks</button>}
           {k !== 'Strokes' && <select className="filter-select" aria-label="Filter by stroke count" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="">All stroke counts</option>{draft.strokes && !strokeCounts.includes(Number(draft.strokes)) && <option value={draft.strokes} disabled>{draft.strokes} strokes · No matches</option>}{strokeCounts.map(n => <option key={n} value={n}>{n} {n === 1 ? 'stroke' : 'strokes'}</option>)}</select>}
+          {k !== 'Strokes' && draft.strokes && <button type="button" className={`filter-upto-toggle${draft.strokesUpTo ? ' active' : ''}`} aria-pressed={draft.strokesUpTo === '1'} title="Also include every smaller stroke count" onClick={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })}>+ fewer strokes</button>}
         </>}>{({ draft, patch }) => <>
           <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button variant="ghost" type="button" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
         </>}</DraftFilterForm>

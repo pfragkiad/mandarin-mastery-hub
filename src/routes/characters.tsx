@@ -14,6 +14,8 @@ export const Route = createFileRoute('/characters')({
     const usage = (['Characters', 'Radicals', 'Components'] as const).flatMap(k => usageGroups(k)).find(group => group.value === search['usage']); if (usage) out.usage = usage.value;
     if (search['status'] === 'saved') out.status = 'saved';
     if (search['py'] === 'pinyin' || search['py'] === 'exact') out.py = search['py'];
+    if (search['usageUpTo'] === '1' || search['usageUpTo'] === true) out.usageUpTo = '1';
+    if (search['strokesUpTo'] === '1' || search['strokesUpTo'] === true) out.strokesUpTo = '1';
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;
