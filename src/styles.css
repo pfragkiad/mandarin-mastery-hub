@@ -3752,7 +3752,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   html[data-display-size='comfortable'] .lesson-facts dd, html[data-display-size='comfortable'] .lesson-facts .pinyin { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-card { padding: 20px; }
   html[data-display-size='comfortable'] .lesson-card p:not(.sentence-hanzi), html[data-display-size='comfortable'] .lesson-card-title { font-size: 16px; }
-  html[data-display-size='comfortable'] .lesson-register { font-size: 14px; }
+  html[data-display-size='comfortable'] .lesson-register, html[data-display-size='comfortable'] .lesson-card-top .pinyin { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-card .lesson-footnote { font-size: 11px; }
   html[data-display-size='comfortable'] .lesson-term .lesson-hanzi { font-size: 28px; }
   html[data-display-size='comfortable'] .lesson-term.is-lg .lesson-hanzi { font-size: 38px; }
