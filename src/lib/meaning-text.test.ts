@@ -33,3 +33,9 @@ describe('trimTranslationPeriod', () => {
     expect(trimTranslationPeriod('jade; precious stone')).toBe('jade; precious stone');
   });
 });
+
+describe('sentence phrase translations', () => {
+  it('keeps the period when the phrase ends with 。', () => {
+    expect(trimTranslationPeriod('My surname is Wang.')).toBe('My surname is Wang.');
+  });
+});

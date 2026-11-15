@@ -1,4 +1,4 @@
-// ============= Full file contents =============
+import { vocabularyData } from '@/lib/data-contract';
 
 /** Split points: form descriptions and parenthesised spans are not lexical translations. */
 const SPLIT = /(component form of[^;·\n]*|[（(][^（）()·\n]*[）)])/gi;
@@ -16,8 +16,17 @@ const KEEP_FINAL_PERIOD = /(?:\b(?:etc|e\.g|i\.e|cf|esp|approx|lit|fig|abbr|usu|
  * ("King, ruler, surname." → "King, ruler, surname"), keeping "etc.", "e.g." and "...".
  * Display-only — the recorded text is never rewritten.
  */
+/**
+ * Translations of recorded vocabulary entries whose Chinese ends with sentence punctuation
+ * (我姓王。) are full sentences, so their final period is kept. Exact text match only.
+ */
+const SENTENCE_TRANSLATIONS = new Set(vocabularyData.entries
+  .filter(entry => /[。！？.!?]$/.test(entry.simplified.trim()))
+  .flatMap(entry => [...entry.meanings.map(meaning => meaning.trim()), entry.meanings.join(' · ').trim()]));
+
 export function trimTranslationPeriod(text: string): string {
   const trimmed = text.trimEnd();
+  if (SENTENCE_TRANSLATIONS.has(trimmed)) return trimmed;
   return trimmed.endsWith('.') && !KEEP_FINAL_PERIOD.test(trimmed) ? trimmed.slice(0, -1).trimEnd() : trimmed;
 }
 
