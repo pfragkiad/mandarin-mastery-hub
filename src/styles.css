@@ -427,6 +427,9 @@ button[data-ui-button][aria-pressed='false']:is(:hover, :focus, :focus-visible, 
   /* Play sits on the square's left edge, Reset (always last) on its right edge. */
   .writing-tool-tabbed .writer-playback { flex-wrap: nowrap; }
   .writing-tool-tabbed .writer-playback > button:last-child { margin-left: auto; }
+  /* Word practice adds a third button (Reset all): the narrow square cannot hold three 7rem
+     buttons, so the row wraps and both reset controls keep the square's right edge. */
+  .writing-tool-tabbed .writer-playback:has(> button:nth-child(3)) { flex-wrap: wrap; }
 }
 .catalog-card-indicators { display: flex; align-items: center; gap: 8px; }
 /* One shared style for the first content line directly under a section heading:

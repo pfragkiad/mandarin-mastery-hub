@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { StrokesPage } from './writing-practice';
 import { hydrateCatalog, type CatalogData } from '@/lib/catalog-store';
 import type { RadicalStrokeFile } from '@/lib/radical-strokes';
@@ -261,6 +261,36 @@ describe('character practice sections by mode', () => {
     expect(strip.querySelector('.word-strip-select[aria-pressed="true"]')?.getAttribute('aria-label')).toContain('Practice character 1');
     play.mockRestore();
     unmount();
+  });
+
+  it('offers Reset all beside Reset in word practice, clearing every character', async () => {
+    // Every writer build reports its stroke data as loaded, so each character's round arms.
+    writer.create.mockImplementation((_el: unknown, _glyph: string, options: { onLoadCharDataSuccess?: () => void }) => {
+      queueMicrotask(() => options.onLoadCharDataSuccess?.());
+      return writer;
+    });
+    const { rerender } = render(<StrokesPage initialCharacter="学乙" focus={1} mode="trace"/>);
+    await waitFor(() => expect(writer.quiz).toHaveBeenCalled());
+    // Draw 乙's first stroke, then move back to 学: 乙 keeps that drawn stroke in the strip.
+    act(() => writer.quiz.mock.calls.at(-1)?.[0].onCorrectStroke({ strokeNum: 0, mistakesOnStroke: 0 }));
+    rerender(<StrokesPage initialCharacter="学乙" focus={0} mode="trace"/>);
+    const secondTile = () => (screen.getByRole('button', { name: /^Practice character 2/ }).closest('.word-strip-tile') as HTMLElement);
+    await waitFor(() => expect(secondTile().querySelector('.stroke-pinyin')?.textContent).toBe('1 of 2 drawn'));
+    // Both reset controls live in the same playback row under the square.
+    const resetAll = screen.getByRole('button', { name: 'Reset all characters' });
+    expect(resetAll.closest('.writer-playback')).not.toBeNull();
+    expect(screen.getByRole('button', { name: 'Reset character' }).closest('.writer-playback')).toBe(resetAll.closest('.writer-playback'));
+    fireEvent.click(resetAll);
+    // The other character's drawn stroke is gone and the live writer re-armed at its first stroke.
+    expect(secondTile().querySelector('.stroke-pinyin')?.textContent).toBe('not started');
+    expect(writer.quiz.mock.calls.at(-1)?.[0].quizStartStrokeNum).toBe(0);
+    writer.create.mockReturnValue(writer);
+  });
+
+  it('shows no Reset all for a single character', () => {
+    render(<StrokesPage initialCharacter="学" mode="trace"/>);
+    expect(screen.getByRole('button', { name: 'Reset character' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Reset all characters' })).toBeNull();
   });
 
   it('shows only the first stroke\'s arrow when a Trace round starts', async () => {
