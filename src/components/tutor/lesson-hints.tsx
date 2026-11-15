@@ -137,13 +137,15 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
         {facts && <p className="lesson-hint-facts">{facts}</p>}
       </div>
     </div>
-    {word && <Link to="/vocabulary" search={word.search} className="lesson-hint-word">
+    {word && <div className="lesson-hint-word">
       <span className="lesson-hint-word-label">In the word</span>
-      <span className="lesson-hint-word-main"><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span></span>
+      <span className="lesson-hint-word-row">
+        <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
+        {/* Speaker stays outside the link so listening never navigates. */}
+        {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
+      </span>
       {word.meaning && <span className="lesson-hint-word-meaning"><MeaningText text={word.meaning}/></span>}
-      <ArrowUpRight size={14} aria-hidden="true" className="lesson-hint-word-arrow"/>
-    </Link>}
-    {word && word.pinyin && <span className="lesson-hint-word-audio"><ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/></span>}
+    </div>}
     {hint && <Link to="/characters" search={hint.search} className="lesson-hint-open">Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
   </div>;
 }
