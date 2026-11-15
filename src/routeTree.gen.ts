@@ -19,6 +19,8 @@ import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StrokesRouteImport } from './routes/strokes'
 import { Route as VocabularyRouteImport } from './routes/vocabulary'
+import { Route as LessonsIndexRouteImport } from './routes/lessons.index'
+import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 import { Route as PinyinSoundAlikesRouteImport } from './routes/pinyin_.sound-alikes'
 import { Route as PinyinToneQuizRouteImport } from './routes/pinyin_.tone-quiz'
 import { Route as PinyinTypeWhatYouHearRouteImport } from './routes/pinyin_.type-what-you-hear'
@@ -73,6 +75,16 @@ const VocabularyRoute = VocabularyRouteImport.update({
   path: '/vocabulary',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LessonsIndexRoute = LessonsIndexRouteImport.update({
+  id: '/lessons/',
+  path: '/lessons/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
+  id: '/lessons/$lessonId',
+  path: '/lessons/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PinyinSoundAlikesRoute = PinyinSoundAlikesRouteImport.update({
   id: '/pinyin_/sound-alikes',
   path: '/pinyin/sound-alikes',
@@ -100,9 +112,11 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/pinyin/sound-alikes': typeof PinyinSoundAlikesRoute
   '/pinyin/tone-quiz': typeof PinyinToneQuizRoute
   '/pinyin/type-what-you-hear': typeof PinyinTypeWhatYouHearRoute
+  '/lessons/': typeof LessonsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -115,9 +129,11 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/pinyin/sound-alikes': typeof PinyinSoundAlikesRoute
   '/pinyin/tone-quiz': typeof PinyinToneQuizRoute
   '/pinyin/type-what-you-hear': typeof PinyinTypeWhatYouHearRoute
+  '/lessons': typeof LessonsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -131,9 +147,11 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/strokes': typeof StrokesRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/pinyin_/sound-alikes': typeof PinyinSoundAlikesRoute
   '/pinyin_/tone-quiz': typeof PinyinToneQuizRoute
   '/pinyin_/type-what-you-hear': typeof PinyinTypeWhatYouHearRoute
+  '/lessons/': typeof LessonsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -148,9 +166,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strokes'
     | '/vocabulary'
+    | '/lessons/$lessonId'
     | '/pinyin/sound-alikes'
     | '/pinyin/tone-quiz'
     | '/pinyin/type-what-you-hear'
+    | '/lessons/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -163,9 +183,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strokes'
     | '/vocabulary'
+    | '/lessons/$lessonId'
     | '/pinyin/sound-alikes'
     | '/pinyin/tone-quiz'
     | '/pinyin/type-what-you-hear'
+    | '/lessons'
   id:
     | '__root__'
     | '/'
@@ -178,9 +200,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strokes'
     | '/vocabulary'
+    | '/lessons/$lessonId'
     | '/pinyin_/sound-alikes'
     | '/pinyin_/tone-quiz'
     | '/pinyin_/type-what-you-hear'
+    | '/lessons/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -194,9 +218,11 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   StrokesRoute: typeof StrokesRoute
   VocabularyRoute: typeof VocabularyRoute
+  LessonsLessonIdRoute: typeof LessonsLessonIdRoute
   PinyinSoundAlikesRoute: typeof PinyinSoundAlikesRoute
   PinyinToneQuizRoute: typeof PinyinToneQuizRoute
   PinyinTypeWhatYouHearRoute: typeof PinyinTypeWhatYouHearRoute
+  LessonsIndexRoute: typeof LessonsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -271,6 +297,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VocabularyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lessons/': {
+      id: '/lessons/'
+      path: '/lessons'
+      fullPath: '/lessons/'
+      preLoaderRoute: typeof LessonsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lessons/$lessonId': {
+      id: '/lessons/$lessonId'
+      path: '/lessons/$lessonId'
+      fullPath: '/lessons/$lessonId'
+      preLoaderRoute: typeof LessonsLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pinyin_/sound-alikes': {
       id: '/pinyin_/sound-alikes'
       path: '/pinyin/sound-alikes'
@@ -306,9 +346,11 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   StrokesRoute: StrokesRoute,
   VocabularyRoute: VocabularyRoute,
+  LessonsLessonIdRoute: LessonsLessonIdRoute,
   PinyinSoundAlikesRoute: PinyinSoundAlikesRoute,
   PinyinToneQuizRoute: PinyinToneQuizRoute,
   PinyinTypeWhatYouHearRoute: PinyinTypeWhatYouHearRoute,
+  LessonsIndexRoute: LessonsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
