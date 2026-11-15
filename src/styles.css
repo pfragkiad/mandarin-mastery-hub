@@ -1979,6 +1979,15 @@ html[data-display-size='comfortable'] {
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
+/* Cross-highlight between a sentence's hanzi characters and pinyin syllables:
+   hovering/focusing one side draws a small border around its counterpart.
+   A box-shadow ring (not border) so the pairing never shifts the layout. */
+.sentence-syllable { border-radius: 4px; padding: 0 1px; cursor: default; }
+.sentence-char-plain { border-radius: 4px; padding: 0 1px; }
+.sentence-pair-hover {
+  box-shadow: 0 0 0 1px var(--primary);
+  border-radius: 4px;
+}
 /* Match hit targets and actual SVG sizes; preserve each control's availability,
    colours and recorded pronunciation pipeline. */
 :is(.sentence, .glyph-usage-reference, .kangxi-identity-item, .decomposition-part, .vocabulary-part-facts, .stroke-component-heading) :is(.example-listen, .decomposition-listen) {
