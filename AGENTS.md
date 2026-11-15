@@ -62,4 +62,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- External example-sentence searches come only from src/lib/external-examples.ts as plain new-window links (exact hanzi as the query), rendered by the shared SentenceSection; nothing from those sites is fetched or stored, so external sentences never become recorded examples.
