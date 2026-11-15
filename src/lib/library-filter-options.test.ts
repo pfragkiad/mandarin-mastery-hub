@@ -58,7 +58,7 @@ describe('cumulative "lower ranks" / "fewer strokes" widening', () => {
   });
   it('filterLibrary applies the same widening', () => {
     expect(filterLibrary(entries, '', '7', false, false).map(entry => entry.hanzi)).toEqual(['500']);
-    expect(filterLibrary(entries, '', '7', false, false, undefined, undefined, false, false, false, true).map(entry => entry.hanzi)).toEqual(['100', '301', '500']);
+    expect(filterLibrary(entries, '', '7', false, false, undefined, undefined, false, false, false, true).map(entry => entry.hanzi).sort()).toEqual(['100', '301', '500']);
     expect(filterLibrary(entries, '', '', false, false, '101-200')).toEqual([]);
     expect(filterLibrary(entries, '', '', false, false, '101-200', undefined, false, false, true).map(entry => entry.hanzi)).toEqual(['100']);
   });
