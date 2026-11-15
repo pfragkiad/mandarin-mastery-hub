@@ -17,3 +17,5 @@
 - [x] Lessons: not only character lessons — word, phrase or category-only lessons render without a character headword
 - [x] Lessons: a character's details card lists the lessons about that exact character (Lessons section, book icon)
 - [x] Lessons: library cards with a lesson show a book icon in the top indicator row beside the "In a sentence"/decomposition icons
+- [x] Library cards: top row same height with or without a pill; top-row text, pills and footer buttons share one font size per view
+- [ ] Comfortable cards: allow three per row when they fit
