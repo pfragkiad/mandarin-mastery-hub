@@ -8,17 +8,20 @@ import { useWorkspace } from './workspace';
 import type { AudioRequest } from '@/lib/audio';
 import { ExamplePronunciation } from './example-pronunciation';
 import { HintChar, useLessonHints } from './lesson-hints';
-import { alignSentencePinyin, isHanziChar, splitPinyinTokens } from '@/lib/sentence-align';
+import { alignSentencePinyin, isHanziChar } from '@/lib/sentence-align';
+import { alignSentence } from '@/lib/phrase-pinyin-align';
+import { useSyllableInventory } from './use-syllable-inventory';
 
 /**
  * One recorded example sentence: pinyin line with its speaker, the hanzi line
  * (each known character linked to its record) and the translation.
  *
  * Cross-highlight: hovering (or keyboard-focusing) a hanzi character or a pinyin
- * syllable draws a small border around its counterpart, using the positional
- * pairing from alignSentencePinyin. The pairing is presentation only and fails
- * closed — when the recorded pinyin token count does not match the hanzi count,
- * the sentence renders exactly as before with no pairing.
+ * syllable draws a small border around its counterpart, using alignSentence: one
+ * pinyin token per character pairs by position; word-by-word pinyin ("Běijīng") is
+ * split at syllable edges against the Sound chart inventory, which is fetched only
+ * for such sentences. The pairing is presentation only and fails closed — on any
+ * count mismatch or ambiguous split the sentence renders plain, with no pairing.
  *
  * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
  * links while hints are on, and plain text while they are off; pairing works either way.
@@ -29,13 +32,10 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
   // Pairing state: the index of the hovered/focused pair, or null. Both sides
   // (character and syllable) set and clear it, so leaving either removes the border.
   const [hoveredPair, setHoveredPair] = useState<number | null>(null);
-  const pairs = useMemo(() => (pinyin ? alignSentencePinyin(sentence, pinyin) : null), [sentence, pinyin]);
-  const tokens = useMemo(() => (pairs && pinyin ? splitPinyinTokens(pinyin) : null), [pairs, pinyin]);
-  const pairByChar = useMemo(() => {
-    const map = new Map<number, number>();
-    pairs?.forEach((p, i) => map.set(p.charIndex, i));
-    return map;
-  }, [pairs]);
+  const positional = useMemo(() => (pinyin ? alignSentencePinyin(sentence, pinyin) != null : true), [sentence, pinyin]);
+  const syllables = useSyllableInventory(!positional);
+  const inventory = useMemo(() => (syllables ? new Set(syllables.map(s => s.base)) : null), [syllables]);
+  const pairing = useMemo(() => (pinyin ? alignSentence(sentence, pinyin, inventory) : null), [sentence, pinyin, inventory]);
 
   const pairHandlers = (pair: number) => ({
     onMouseEnter: () => setHoveredPair(pair),
@@ -43,22 +43,22 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
     onFocus: () => setHoveredPair(pair),
     onBlur: () => setHoveredPair(current => (current === pair ? null : current)),
   });
-  const pairClass = (pair: number | undefined) =>
-    pair !== undefined && hoveredPair === pair ? ' sentence-pair-hover' : '';
+  const pairClass = (pair: number | null | undefined) =>
+    pair != null && hoveredPair === pair ? ' sentence-pair-hover' : '';
 
   return <div className="sentence">
     {heading && <span className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>{heading}</span>}
     {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
-      {tokens ? <span>{tokens.map((t, i) => <span key={i}>
+      {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
         {i > 0 && ' '}
         {t.leading}
-        <span className={`sentence-syllable${pairClass(i)}`} {...pairHandlers(i)}>{t.syllable}</span>
+        {t.pieces.map((piece, p) => piece.pair == null ? <span key={p}>{piece.text}</span> : <span key={p} className={`sentence-syllable${pairClass(piece.pair)}`} {...pairHandlers(piece.pair)}>{piece.text}</span>)}
         {t.trailing}
       </span>)}</span> : <span>{pinyin}</span>}
       <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
     </span>}
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
-      const pair = pairByChar.get(i);
+      const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
       if (hints) return hints.enabled && isHanziChar(ch)
         ? <HintChar key={i} glyph={ch} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>

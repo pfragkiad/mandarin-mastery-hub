@@ -16,7 +16,7 @@
  *   fan|gan) mean the spelling is ambiguous, so nothing is paired.
  */
 
-import { splitPinyinTokens } from './sentence-align';
+import { alignSentencePinyin, splitPinyinTokens } from './sentence-align';
 
 /** One displayed piece of a pinyin token: a syllable (paired) or a separator such as an apostrophe. */
 export interface PinyinPiece { text: string; pair: number | null }
@@ -107,4 +107,22 @@ export function alignPhrasePinyin(hanzi: string, pinyin: string, inventory: Read
     return { leading: token.leading, trailing: token.trailing, pieces };
   });
   return { tokens: pieced, glyphPairs };
+}
+
+/**
+ * Pairing for a recorded example sentence ("In a sentence", lesson examples). Sentence
+ * pinyin is recorded either one token per character ("Shàng yí cì wǒ…"), which pairs by
+ * position (alignSentencePinyin), or word by word ("Wǒ qù guo Běijīng yí cì."), which is
+ * split into syllables exactly like phrase pinyin (alignPhrasePinyin, needs the inventory).
+ * Both return the same shape; any mismatch or ambiguity fails closed to null.
+ */
+export function alignSentence(sentence: string, pinyin: string, inventory: ReadonlySet<string> | null): PhrasePairing | null {
+  const pairs = alignSentencePinyin(sentence, pinyin);
+  if (pairs) {
+    const glyphPairs: (number | null)[] = Array.from(sentence).map(() => null);
+    pairs.forEach((p, i) => { glyphPairs[p.charIndex] = i; });
+    const tokens = splitPinyinTokens(pinyin).map((t, i) => ({ leading: t.leading, trailing: t.trailing, pieces: [{ text: t.syllable, pair: i }] }));
+    return { tokens, glyphPairs };
+  }
+  return inventory ? alignPhrasePinyin(sentence, pinyin, inventory) : null;
 }

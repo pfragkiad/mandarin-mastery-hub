@@ -1,6 +1,6 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowLeft, BookText, Check, ExternalLink, EyeOff, Eye } from 'lucide-react';
+import { ArrowLeft, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
@@ -21,6 +21,15 @@ import { useWorkspace } from './workspace';
  * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
+ * Narrow layout (the page's own width ≤ 760px, the same threshold as its container
+ * queries — a layout condition, never a device): the mobile prototype's design in the
+ * site's styling. Sections become collapsible cards (the first open), the section list
+ * becomes a sticky row of pills that opens and scrolls to its section, and the Pinyin /
+ * Character hints controls float bottom-right (rendered outside .lesson-page, whose
+ * container query makes it the containing block of fixed children). Wide layouts keep
+ * the side list and always-open sections; Comfortable only enlarges text (styles.css).
+ * The pill / side-list highlight follows the section under the sticky header.
+ *
  * Sections follow the schema order and appear only when they carry content (disabled
  * sections, empty lists and editorial-only extensions are skipped). v2.6 selection
  * questions are graded only through their recorded correct_choice_ids; older and
@@ -36,12 +45,58 @@ export function LessonStatusPill({ status }: { status: string }) {
   return status === 'draft' ? <span className="word-hsk-id lesson-draft-pill" title="Draft lesson: not reviewed yet">Draft</span> : null;
 }
 
-type SectionDef = { id: string; title: string; body: ReactNode };
+type SectionDef = { id: string; title: string; hint: string; body: ReactNode };
+
+/** Matches the `@container lesson-page (max-width: 760px)` rules in styles.css. */
+const NARROW_MAX = 760;
+const count = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+
+/** True while the element's own content width is at most NARROW_MAX (ResizeObserver; false where unavailable). */
+function useNarrowLesson(ref: RefObject<HTMLElement | null>) {
+  const [narrow, setNarrow] = useState(false);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const update = (width: number) => setNarrow(width <= NARROW_MAX);
+    update(el.clientWidth);
+    const ro = new ResizeObserver(entries => { const e = entries[0]; if (e) update(e.contentRect.width); });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [ref]);
+  return narrow;
+}
+
+/** Id of the last section whose top has passed below the sticky header (scroll position), or the first. */
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState<string | null>(ids[0] ?? null);
+  const key = ids.join(' ');
+  useEffect(() => {
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      let current = ids[0] ?? null;
+      for (const id of ids) {
+        const el = document.getElementById(`lesson-${id}`);
+        if (el && el.getBoundingClientRect().top <= 150) current = id;
+      }
+      setActive(current);
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(measure); };
+    measure();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); if (frame) cancelAnimationFrame(frame); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+  return active;
+}
 
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
   const [hidePinyin, setHidePinyin] = useState(false);
   const { preferences, setPreferences } = useWorkspace();
+  const pageRef = useRef<HTMLDivElement>(null);
+  const narrow = useNarrowLesson(pageRef);
   const hintsOn = preferences.lessonHints !== false;
   const learnerExtensions = (S.extensions?.items ?? []).filter(item => item.visibility === 'learner' && item.blocks.length > 0);
   // A hint card's "Open full card" records its own Back step; start clean here so
@@ -51,7 +106,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
 
   const sections: SectionDef[] = [];
   const overview = S.overview;
-  if (overview || headword) sections.push({ id: 'overview', title: 'At a glance', body: <>
+  if (overview || headword) sections.push({ id: 'overview', title: 'At a glance', hint: 'Key facts and the meaning map', body: <>
     {overview?.core_takeaway && <p className="lesson-lead"><LessonText text={overview.core_takeaway}/></p>}
     <dl className="lesson-facts">
       {headword?.simplified && <div><dt>Simplified</dt><dd><LessonTerm hanzi={headword.simplified} pinyin={headword.pinyin}/></dd></div>}
@@ -75,7 +130,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (vocab.length) {
     const levels = (['A', 'B', 'C'] as const).filter(p => vocab.some(v => v.priority === p));
     const shown = priority ? vocab.filter(v => v.priority === priority) : vocab;
-    sections.push({ id: 'vocabulary', title: 'Words to learn first', body: <>
+    sections.push({ id: 'vocabulary', title: 'Words to learn first', hint: count(vocab.length, 'word'), body: <>
       <p className="lesson-note">Learn these established words whole. Priority A, B and C is the lesson’s editorial order, not a frequency rank.</p>
       {levels.length > 1 && <div className="lesson-filter" role="group" aria-label="Filter words by priority">
         <Button size="sm" variant={priority ? 'outline' : 'default'} aria-pressed={!priority} onClick={() => onPriority(undefined)}>All {vocab.length}</Button>
@@ -86,7 +141,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </> });
   }
 
-  if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', body: <>
+  if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', hint: count(S.constructions.items.length, 'reusable construction'), body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
       <p className="lesson-pattern-line"><LessonPairedLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
@@ -97,7 +152,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {S.constructions.structural_note && <p className="lesson-note"><LessonText text={S.constructions.structural_note}/></p>}
   </> });
 
-  if (S.examples?.items.length) sections.push({ id: 'examples', title: 'Example sentences', body: <>
+  if (S.examples?.items.length) sections.push({ id: 'examples', title: 'Example sentences', hint: count(S.examples.items.length, 'sentence'), body: <>
     {S.examples.default_provenance && <p className="lesson-note"><LessonText text={S.examples.default_provenance}/></p>}
     <div className="lesson-stack">{S.examples.items.map(e => <div key={e.id} className="lesson-card lesson-example">
       <div className="lesson-card-top"><strong className="lesson-card-title"><LessonText text={e.title}/></strong>{e.provenance && <span className="lesson-register">{plain(e.provenance)}</span>}</div>
@@ -107,7 +162,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>)}</div>
   </> });
 
-  if (S.contrasts && (S.contrasts.items.length || S.contrasts.preference_vs_rule)) sections.push({ id: 'contrasts', title: 'Similar words and contrasts', body: <>
+  if (S.contrasts && (S.contrasts.items.length || S.contrasts.preference_vs_rule)) sections.push({ id: 'contrasts', title: 'Similar words and contrasts', hint: 'Easily confused neighbours', body: <>
     <div className="lesson-grid">{S.contrasts.items.map(c => <div key={c.id} className="lesson-card">
       <LessonTerm hanzi={c.hanzi} pinyin={c.pinyin} meaning={c.meaning_en} size="lg"/>
       <div className="lesson-example-term"><LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/></div>
@@ -117,21 +172,21 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {S.contrasts.preference_vs_rule && <PreferenceChart preference={S.contrasts.preference_vs_rule} sources={source => sourceById.get(source)?.title ?? source}/>}
   </> });
 
-  if (S.mistakes?.items.length) sections.push({ id: 'mistakes', title: 'Common mistakes', body: <div className="lesson-stack">{S.mistakes.items.map(m => <div key={m.id} className="lesson-card lesson-mistake">
+  if (S.mistakes?.items.length) sections.push({ id: 'mistakes', title: 'Common mistakes', hint: 'Wrong inferences to avoid', body: <div className="lesson-stack">{S.mistakes.items.map(m => <div key={m.id} className="lesson-card lesson-mistake">
     <p className="lesson-mistake-dont"><small>Avoid</small><span><LessonText text={m.incorrect_inference}/></span></p>
     <p className="lesson-mistake-do"><small>Instead</small><span><LessonText text={m.correction}/></span></p>
     {m.reason && <p className="lesson-muted"><LessonText text={m.reason}/></p>}
   </div>)}</div> });
 
-  if (S.practice?.enabled && S.practice.questions.length) sections.push({ id: 'practice', title: 'Check yourself', body: <div className="lesson-stack">{S.practice.questions.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
+  if (S.practice?.enabled && S.practice.questions.length) sections.push({ id: 'practice', title: 'Check yourself', hint: count(S.practice.questions.length, 'question'), body: <div className="lesson-stack">{S.practice.questions.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
 
-  if (S.writing && (S.writing.mapping_note || S.writing.pronunciation_note || S.writing.pending_checks?.length)) sections.push({ id: 'writing', title: 'Forms and pronunciation', body: <div className="lesson-grid">
+  if (S.writing && (S.writing.mapping_note || S.writing.pronunciation_note || S.writing.pending_checks?.length)) sections.push({ id: 'writing', title: 'Forms and pronunciation', hint: 'Script forms and readings', body: <div className="lesson-grid">
     {S.writing.mapping_note && <div className="lesson-card"><h3>Forms</h3><p><LessonText text={S.writing.mapping_note}/></p></div>}
     {S.writing.pronunciation_note && <div className="lesson-card"><h3>Pronunciation</h3><p><LessonText text={S.writing.pronunciation_note}/></p></div>}
     {S.writing.pending_checks?.length ? <div className="lesson-card"><h3>Still to verify</h3><ul className="lesson-list">{S.writing.pending_checks.map(x => <li key={x}><LessonText text={x}/></li>)}</ul></div> : null}
   </div> });
 
-  if (S.historical?.enabled && S.historical.items.length) sections.push({ id: 'historical', title: 'Classical Chinese (optional)', body: <details className="lesson-details">
+  if (S.historical?.enabled && S.historical.items.length) sections.push({ id: 'historical', title: 'Classical Chinese (optional)', hint: 'Optional historical reference', body: <details className="lesson-details">
     <summary>Show the classical reference</summary>
     {S.historical.intro && <p className="lesson-note"><LessonText text={S.historical.intro}/></p>}
     {S.historical.items.map(h => <div key={h.id} className="lesson-card">
@@ -143,7 +198,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {S.historical.caution && <p className="lesson-caution"><LessonText text={S.historical.caution}/></p>}
   </details> });
 
-  if (learnerExtensions.length) sections.push({ id: 'more', title: 'More from the lesson notes', body: <>
+  if (learnerExtensions.length) sections.push({ id: 'more', title: 'More from the lesson notes', hint: 'Supplementary notes', body: <>
     {S.extensions?.intro && <p className="lesson-note"><LessonText text={S.extensions.intro}/></p>}
     <div className="lesson-stack">{learnerExtensions.map(x => <div key={x.id} className="lesson-card">
       <h3><LessonText text={x.title}/></h3>
@@ -152,9 +207,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>)}</div>
   </> });
 
-  if (S.checklist?.items.length) sections.push({ id: 'checklist', title: 'Review checklist', body: <ul className="lesson-list lesson-checklist">{S.checklist.items.map(c => <li key={c.id} className={c.passed ? 'is-passed' : ''}>{c.passed && <Check aria-label="Passed" size={14}/>}<LessonText text={c.label}/></li>)}</ul> });
+  if (S.checklist?.items.length) sections.push({ id: 'checklist', title: 'Review checklist', hint: 'Editorial checks', body: <ul className="lesson-list lesson-checklist">{S.checklist.items.map(c => <li key={c.id} className={c.passed ? 'is-passed' : ''}>{c.passed && <Check aria-label="Passed" size={14}/>}<LessonText text={c.label}/></li>)}</ul> });
 
-  if (S.sources?.items.length) sections.push({ id: 'sources', title: 'Sources', body: <>
+  if (S.sources?.items.length) sections.push({ id: 'sources', title: 'Sources', hint: 'Where the claims come from', body: <>
     <div className="lesson-stack">{S.sources.items.map(s => <div key={s.id} className="lesson-card lesson-source">
       <p><LessonText text={s.claim}/></p>
       <p className="lesson-muted">{[s.author, s.title, s.publication].filter(Boolean).join(' · ')}</p>
@@ -165,7 +220,28 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {(S.sources.editorial_status || S.sources.licensing) && <p className="lesson-note">{[S.sources.editorial_status, S.sources.licensing].filter(Boolean).join(' ')}</p>}
   </> });
 
-  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
+  const ids = sections.map(s => s.id);
+  // Narrow layout state: which collapsible sections are open (the first one to begin with).
+  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set(ids.slice(0, 1)));
+  const active = useActiveSection(ids);
+  const toc = useRef<HTMLElement>(null);
+  // Keep the active pill in view inside the horizontally scrolling pill row (never scrolls the page).
+  useEffect(() => {
+    const nav = toc.current;
+    const pill = nav?.querySelector<HTMLElement>(`a[data-section="${active}"]`);
+    if (!narrow || !nav || !pill) return;
+    if (pill.offsetLeft < nav.scrollLeft || pill.offsetLeft + pill.offsetWidth > nav.scrollLeft + nav.clientWidth) nav.scrollTo({ left: Math.max(0, pill.offsetLeft - 12), behavior: 'smooth' });
+  }, [active, narrow]);
+  const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
+
+  const pinyinToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>;
+  // compact = the floating capsule's short label (its helper line is the label's title there).
+  const hintsToggle = (compact: boolean) => <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
+    <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-label={compact ? 'Character hints' : undefined} aria-describedby={compact ? undefined : 'lesson-hints-help'}/>
+    <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
+  </label>;
+
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
@@ -183,23 +259,34 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       {intro.learning_priority && <p><strong>Study order</strong><LessonText text={intro.learning_priority}/></p>}
     </div>}
     <div className="lesson-layout">
-      <nav className="lesson-toc" aria-label="Lesson sections">
+      <nav ref={toc} className="lesson-toc" aria-label="Lesson sections">
         <span className="eyebrow">IN THIS LESSON</span>
-        {/* In-page jump links only (hash anchors scroll within this one page). */}
-        {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`}>{s.title}</a>)}
-        <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>
-        <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
-          <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-describedby="lesson-hints-help"/>
-          <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
-        </label>
+        {/* In-page jump links only (hash anchors scroll within this one page). In the
+            narrow layout a pill also opens its collapsed section before the jump. */}
+        {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}</a>)}
+        {!narrow && pinyinToggle}
+        {!narrow && hintsToggle(false)}
       </nav>
       <div className="lesson-main">
-        {sections.map(s => <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}</section>)}
+        {sections.map(s => {
+          if (!narrow) return <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}</section>;
+          const open = openIds.has(s.id);
+          return <section key={s.id} id={`lesson-${s.id}`} className={`lesson-section is-collapsible${open ? ' is-open' : ''}`} aria-labelledby={`lesson-${s.id}-title`}>
+            <h2 id={`lesson-${s.id}-title`}><button type="button" className="lesson-section-toggle" aria-expanded={open} aria-controls={`lesson-${s.id}-body`} onClick={() => toggle(s.id)}>
+              <span><span className="lesson-section-title">{s.title}</span><small>{s.hint}</small></span>
+              <ChevronDown size={18} aria-hidden="true"/>
+            </button></h2>
+            <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}</div>
+          </section>;
+        })}
         <ReportProvenance lesson={lesson}/>
         <p className="source-note">{kindLabel[summary.kind]} · {summary.status}{summary.dateReviewed ? ` · reviewed ${summary.dateReviewed}` : ''}{lesson.metadata.license_note ? ` · ${lesson.metadata.license_note}` : ''}</p>
       </div>
     </div>
-  </div></LessonHintsProvider>;
+  </div>
+  {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
+  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{pinyinToggle}{hintsToggle(true)}</div>}
+  </LessonHintsProvider>;
 }
 
 function VocabCard({ item }: { item: LessonVocabItem }) {
