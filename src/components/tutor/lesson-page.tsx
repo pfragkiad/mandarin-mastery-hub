@@ -4,7 +4,7 @@ import { ArrowLeft, BookText, Check, ExternalLink, EyeOff, Eye } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHanzi, LessonHeadword, LessonPairedLine, LessonSpeaker, LessonTerm, LessonText } from './lesson-text';
+import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
