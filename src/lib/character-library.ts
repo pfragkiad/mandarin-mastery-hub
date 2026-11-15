@@ -1,6 +1,6 @@
 import { catalog, type CatalogRow } from './catalog-store';
 import { includeScript, type CharacterScript } from './learning-preferences';
-import { kindFromId, sortByUsage, UNRANKED, usageGroupFor, usageGroups, usageOrder, usageRank } from './usage-frequency';
+import { kindFromId, sortByUsage, usageOrder, usageRank, usageRankMatches } from './usage-frequency';
 import { radicalIdentity, radicalSearchGlyphs } from './radical-identities';
 import { radicalFamily, radicalForms, radicalForm, type RadicalForm } from './radical-strokes';
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
@@ -95,15 +95,9 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
     if (hanQuery) return [entry.hanzi, ...relatedGroup(entry.hanzi), ...(kind === 'Strokes' ? [entry.note ?? ''] : []), ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ').includes(query.trim());
     return normalize([entry.hanzi, entry.pinyin, entry.meaning, entry.note, ...radicalSearchGlyphs(entry.hanzi), ...(entry.kangxiIndex ? radicalFamily(entry.kangxiIndex)?.forms.flatMap(form => [form.character, ...form.aliases]) ?? [] : [])].join(' ')).includes(q) || pinyinReadingMatches(entry.pinyin, query, false);
   };
-  // "Include lower ranks" widens a rank group into rank 1..group.max; unranked
-  // records have no rank and stay out, and Unranked itself has nothing below it.
-  const usageGroup = usage && kind ? usageGroups(kind).find(group => group.value === usage) : undefined;
-  const usageMax = usageUpTo && usageGroup && usageGroup.value !== UNRANKED && Number.isFinite(usageGroup.max) ? usageGroup.max : null;
-  const matchesUsage = (entry: LibraryEntry) => {
-    if (!usage || !kind) return true;
-    const rank = usageRank(entry, kind, includeTraditional);
-    return usageMax !== null ? rank !== null && rank <= usageMax : usageGroupFor(kind, rank)?.value === usage;
-  };
+  // "Include lower ranks" widens a rank group into rank 1..group.max (usage-frequency
+  // usageRankMatches); unranked records have no rank and stay out.
+  const matchesUsage = (entry: LibraryEntry) => !usage || !kind || usageRankMatches(kind, usageRank(entry, kind, includeTraditional), usage, usageUpTo);
   // "Include fewer strokes" widens an exact stroke count into 1..count.
   const matchesStrokes = (entry: LibraryEntry) => !strokeCount || (strokesUpTo ? entry.strokes !== undefined && entry.strokes <= Number(strokeCount) : entry.strokes === Number(strokeCount));
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && matchesStrokes(entry) && (!sourceOnly || Boolean(entry.decomposition)) && matchesUsage(entry));

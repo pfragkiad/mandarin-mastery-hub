@@ -5,7 +5,7 @@ import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Components', 'Radicals', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
-export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: string | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined };
+export type DrawingSearch = { kind?: DrawingKind | undefined; strokes?: string | undefined; usage?: string | undefined; collection?: string | undefined; level?: string | undefined; pos?: string | undefined; saved?: boolean | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined };
 export type DrawingCard = LibraryEntry & { word?: Word; characterIndex?: number };
 export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
@@ -19,13 +19,15 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
     ...(kind === 'Words' && typeof search['pos'] === 'string' && search['pos'].trim() ? { pos: search['pos'] } : {}),
     ...(usage ? { usage } : {}),
+    ...(usage && (search['usageUpTo'] === '1' || search['usageUpTo'] === true) ? { usageUpTo: '1' as const } : {}),
+    ...(filtered && /^[1-9]\d*$/.test(strokes) && (search['strokesUpTo'] === '1' || search['strokesUpTo'] === true) ? { strokesUpTo: '1' as const } : {}),
     ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) };
 }
 
 /** Use actual recorded clues, explicit script flags and the library's corpus frequency groups. */
 export function drawingPool(entries: LibraryEntry[], search: DrawingSearch, includeTraditional: boolean, savedIds?: readonly string[]) {
   const filtered = search.kind === 'Radicals' || search.kind === 'Components';
-  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, search.kind === 'Words' ? undefined : search.usage, search.saved ? savedIds : undefined)
+  return filterLibrary(entries, '', filtered ? search.strokes : '', false, includeTraditional, search.kind === 'Words' ? undefined : search.usage, search.saved ? savedIds : undefined, false, false, search.usageUpTo === '1', search.strokesUpTo === '1')
     .filter(entry => Array.from(entry.hanzi).length === 1 && entry.pinyin.trim() && entry.meaning.trim());
 }
 

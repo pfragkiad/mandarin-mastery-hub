@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import usage from '../../public/data/usage-order.json';
-import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, sortByUsage, type UsageOrderFile } from './usage-frequency';
+import { hydrateUsageOrder, usageGroups, usageGroupLabel, usageCumulative, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, usageRankMatches, sortByUsage, type UsageOrderFile } from './usage-frequency';
 
 hydrateUsageOrder(usage as UsageOrderFile);
 describe('frequency ranks', () => {
@@ -69,5 +69,20 @@ describe('frequency ranks', () => {
   it('sorts most frequent first with unranked last', () => {
     const rows = ['龘', '人', '的'].map(hanzi => ({ id: `Characters:${hanzi}`, hanzi }));
     expect(sortByUsage(rows, 'Characters', true).map(r => r.hanzi)).toEqual(['的', '人', '龘']);
+  });
+  it('usageRankMatches matches the exact group by default', () => {
+    expect(usageRankMatches('Characters', 150, '101-300')).toBe(true);
+    expect(usageRankMatches('Characters', 50, '101-300')).toBe(false);
+    expect(usageRankMatches('Characters', 400, '101-300')).toBe(false);
+  });
+  it('usageRankMatches widened includes every more frequent rank but never unranked', () => {
+    expect(usageRankMatches('Characters', 50, '101-300', true)).toBe(true);
+    expect(usageRankMatches('Characters', 300, '101-300', true)).toBe(true);
+    expect(usageRankMatches('Characters', 301, '101-300', true)).toBe(false);
+    expect(usageRankMatches('Characters', null, '101-300', true)).toBe(false);
+  });
+  it('usageRankMatches never widens the Unranked group', () => {
+    expect(usageRankMatches('Characters', null, 'unranked', true)).toBe(true);
+    expect(usageRankMatches('Characters', 5, 'unranked', true)).toBe(false);
   });
 });

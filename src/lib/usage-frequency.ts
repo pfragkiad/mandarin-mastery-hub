@@ -63,6 +63,15 @@ export function usageGroupFor(kind: LibraryKind, rank: number | null): UsageGrou
   const groups = usageGroups(kind);
   return rank === null ? groups.find(group => group.value === UNRANKED) : groups.find(group => rank >= group.min && rank <= group.max);
 }
+/** "Include lower ranks" widening shared by the libraries and the games: a rank
+ * group becomes rank 1..group.max. Unranked records (no rank) stay out, and the
+ * Unranked group itself has nothing below it, so the flag never changes it. */
+export function usageRankMatches(kind: string, rank: number | null, usage: string, upTo = false): boolean {
+  const group = usageGroups(kind).find(g => g.value === usage);
+  if (!group) return false;
+  if (upTo && group.value !== UNRANKED && Number.isFinite(group.max)) return rank !== null && rank <= group.max;
+  return usageGroupFor(kind as LibraryKind, rank)?.value === usage;
+}
 /** Most frequent first; unranked last; otherwise the existing catalogue order is kept (stable sort). */
 export function sortByUsage<T extends Pick<LibraryEntry, 'hanzi' | 'kangxiIndex' | 'id'>>(entries: T[], kind: LibraryKind, includeTraditional: boolean): T[] {
   if (!hasUsageGroups(kind) || !usageOrder.data) return entries;
