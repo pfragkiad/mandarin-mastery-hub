@@ -37,8 +37,8 @@ export function LessonsIndex({ category, onCategory }: { category: string | unde
   const uncategorised = lessonSummaries.filter(s => !s.primaryCategory);
   const groups = used.filter(c => !category || c.id === category).map(c => ({ id: c.id, label: c.label, description: c.description, lessons: lessonSummaries.filter(s => s.primaryCategory?.id === c.id) }));
   if (!category && uncategorised.length) groups.push({ id: 'other', label: 'Other lessons', description: '', lessons: uncategorised });
-  return <div className="lessons-index">
-    <div className="page-heading library-heading"><div><div className="eyebrow">READ · LISTEN · CHECK YOURSELF</div><h1>Lessons</h1><p>Short guided lessons on how characters, words and patterns are really used, with examples to listen to and questions to check yourself.</p></div></div>
+  return <div className="lessons-index library-page">
+    <div className="page-heading library-heading"><div><div className="eyebrow">READ · LISTEN · CHECK YOURSELF</div><h1>Lessons</h1><p>Short guided lessons on how characters, words and patterns are really used, with examples to listen to and questions to check yourself.</p></div><ExperimentalTag/></div>
     {used.length > 1 && <div className="lesson-filter" role="group" aria-label="Filter lessons by category">
       <Button size="sm" variant={category ? 'outline' : 'default'} aria-pressed={!category} onClick={() => onCategory(undefined)}>All · {lessonSummaries.length}</Button>
       {used.map(c => <Button key={c.id} size="sm" variant={category === c.id ? 'default' : 'outline'} aria-pressed={category === c.id} onClick={() => onCategory(c.id)}>{c.label} · {lessonSummaries.filter(s => s.primaryCategory?.id === c.id).length}</Button>)}
