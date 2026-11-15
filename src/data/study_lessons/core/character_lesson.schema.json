@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.5.0.json",
-  "title": "Mandarin character lesson data — content-only v2.5",
+  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.6.0.json",
+  "title": "Mandarin character lesson data — content-only v2.6",
   "description": "Canonical learner content; input provenance and references are kept exclusively in a separate report.md file.",
   "type": "object",
   "additionalProperties": false,
@@ -21,7 +21,8 @@
         "mandarin-character-lesson/2.2.0",
         "mandarin-character-lesson/2.3.0",
         "mandarin-character-lesson/2.4.0",
-        "mandarin-character-lesson/2.5.0"
+        "mandarin-character-lesson/2.5.0",
+        "mandarin-character-lesson/2.6.0"
       ]
     },
     "lesson_id": {
@@ -56,7 +57,8 @@
             "2.2.0",
             "2.3.0",
             "2.4.0",
-            "2.5.0"
+            "2.5.0",
+            "2.6.0"
           ]
         },
         "audience": {
@@ -1051,43 +1053,14 @@
       }
     },
     "question": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "kind",
-        "prompt",
-        "choices",
-        "answer",
-        "explanation"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
+      "oneOf": [
+        {
+          "$ref": "#/$defs/question_legacy"
         },
-        "kind": {
-          "enum": [
-            "comprehension",
-            "selection",
-            "production"
-          ]
-        },
-        "prompt": {
-          "type": "string"
-        },
-        "choices": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/term"
-          }
-        },
-        "answer": {
-          "type": "string"
-        },
-        "explanation": {
-          "type": "string"
+        {
+          "$ref": "#/$defs/question_v26"
         }
-      }
+      ]
     },
     "source": {
       "type": "object",
@@ -1546,6 +1519,213 @@
           }
         }
       }
+    },
+    "quiz_choice_v26": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning_en": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "hanzi",
+            "pinyin"
+          ]
+        }
+      ]
+    },
+    "question_v26": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "choices",
+        "correct_choice_ids",
+        "explanation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "comprehension",
+            "selection",
+            "multi_selection",
+            "production"
+          ]
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quiz_choice_v26"
+          }
+        },
+        "correct_choice_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "selection"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "choices": {
+                "minItems": 2
+              },
+              "correct_choice_ids": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "multi_selection"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "choices": {
+                "minItems": 3
+              },
+              "correct_choice_ids": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comprehension",
+                  "production"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "answer"
+            ],
+            "properties": {
+              "choices": {
+                "maxItems": 0
+              },
+              "correct_choice_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "question_legacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "choices",
+        "answer",
+        "explanation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "comprehension",
+            "selection",
+            "production"
+          ]
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/term"
+          }
+        },
+        "answer": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      }
     }
   },
   "allOf": [
@@ -1644,6 +1824,90 @@
             "required": [
               "extensions"
             ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.6.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.6.0"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "categories",
+              "primary_category_id",
+              "tags",
+              "slug"
+            ]
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ],
+            "properties": {
+              "practice": {
+                "properties": {
+                  "questions": {
+                    "items": {
+                      "$ref": "#/$defs/question_v26"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

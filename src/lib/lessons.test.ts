@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildLessonIndex, lessonCategories, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson } from './lessons';
+import { buildLessonIndex, correctLessonChoices, lessonCategories, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
 
 // Rules for the study lessons: kinds come from the explicit schema id, categories only from
 // the shared registry, lesson IDs are unique, and a lesson attaches to a Characters record
@@ -64,5 +64,47 @@ describe('loading a lesson', () => {
     expect(lesson?.headword?.hanzi).toBe('以');
     expect(lesson?.sections.vocabulary?.items.length).toBe(12);
     expect(await loadLesson('char-0000')).toBeNull();
+  });
+});
+
+describe('recorded quiz answers', () => {
+  const question: LessonQuestion = {
+    id: 'q-choice', kind: 'selection', prompt: 'Next time?', explanation: '',
+    choices: [{ id: 'previous', hanzi: '上次', pinyin: 'shàng cì' }, { id: 'next', hanzi: '下次', pinyin: 'xià cì' }],
+    correct_choice_ids: ['next'],
+  };
+
+  it('resolves answers by ID even when choices are reordered', () => {
+    expect(correctLessonChoices(question).map(c => c.hanzi)).toEqual(['下次']);
+    expect(correctLessonChoices({ ...question, choices: [...question.choices].reverse() }).map(c => c.hanzi)).toEqual(['下次']);
+  });
+
+  it('fails closed on missing references, duplicate choice IDs or invalid answer counts', () => {
+    expect(correctLessonChoices({ ...question, correct_choice_ids: ['missing'] })).toEqual([]);
+    expect(correctLessonChoices({ ...question, choices: [question.choices[1]!, question.choices[1]!] })).toEqual([]);
+    expect(correctLessonChoices({ ...question, correct_choice_ids: ['next', 'next'] })).toEqual([]);
+    expect(correctLessonChoices({ ...question, correct_choice_ids: ['previous', 'next'] })).toEqual([]);
+  });
+
+  it('supports recorded text options and multiple correct answers', () => {
+    const choices = [{ id: 'a', text: 'First' }, { id: 'b', text: 'Second' }, { id: 'c', text: 'Third' }];
+    expect(correctLessonChoices({ ...question, kind: 'multi_selection', choices, correct_choice_ids: ['a', 'c'] }).map(c => c.text)).toEqual(['First', 'Third']);
+  });
+
+  it('does not infer choice identity from legacy answer text', () => {
+    const { correct_choice_ids, ...legacy } = question;
+    expect(correctLessonChoices({ ...legacy, answer: '下次' })).toEqual([]);
+  });
+
+  it('every supplied selection question references an existing unique choice', async () => {
+    for (const summary of lessonSummaries) {
+      const lesson = (await loadLesson(summary.id))!;
+      for (const q of lesson.sections.practice?.questions ?? []) {
+        if (q.kind === 'selection' || q.kind === 'multi_selection') {
+          expect(correctLessonChoices(q).map(c => c.id).sort()).toEqual([...q.correct_choice_ids!].sort());
+          expect(correctLessonChoices(q).length).toBeGreaterThan(0);
+        }
+      }
+    }
   });
 });

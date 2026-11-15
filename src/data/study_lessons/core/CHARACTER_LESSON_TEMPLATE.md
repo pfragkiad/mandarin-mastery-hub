@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.5.0
+schema: mandarin-character-lesson/2.6.0
 lesson_id: char-<HEX_CODEPOINT>
 title: <DESCRIPTIVE_LESSON_TITLE>
 subtitle: <ONE_LINE_TOPIC_SUMMARY>
@@ -73,3 +73,41 @@ hsk_3_level: null
 | Mistake | Correct approach | Explanation |
 | --- | --- | --- |
 | &lt;MISCONCEPTION&gt; | &lt;BETTER_EXPLANATION&gt; | &lt;WHY&gt; |
+
+## 5. Practice
+
+### Question 1
+
+&lt;CLEAR_MULTIPLE_CHOICE_PROMPT&gt;
+
+- A. &lt;CORRECT_HANZI&gt; (&lt;CORRECT_PINYIN&gt;) — &lt;CORRECT_MEANING&gt;
+- B. &lt;DISTRACTOR_HANZI&gt; (&lt;DISTRACTOR_PINYIN&gt;) — &lt;DISTRACTOR_MEANING&gt;
+
+### Question 2
+
+&lt;OPEN_ENDED_QUESTION&gt;
+
+### Suggested answers
+
+1. A. &lt;CORRECT_HANZI&gt; (&lt;CORRECT_PINYIN&gt;) — &lt;CORRECT_MEANING&gt; — &lt;WHY_A_IS_CORRECT&gt;
+2. &lt;SUGGESTED_FREE_TEXT_ANSWER&gt; — &lt;WHY_THIS_ANSWER_IS_VALID&gt;
+
+## Quiz authoring reference (template only)
+
+For single-choice questions, use unique `choices[].id` values and the authoritative `correct_choice_ids` key. Do not store a duplicate `answer` string for selected choices. Open-ended questions instead use `choices: []`, `correct_choice_ids: []`, and an `answer` string.
+
+```json
+{
+  "id": "q-next-time",
+  "kind": "selection",
+  "prompt": "Which expression means next time?",
+  "choices": [
+    {"id": "a", "hanzi": "下次", "pinyin": "xià cì", "meaning_en": "next time"},
+    {"id": "b", "hanzi": "上次", "pinyin": "shàng cì", "meaning_en": "last time"}
+  ],
+  "correct_choice_ids": ["a"],
+  "explanation": "下 (xià) indicates the following occasion."
+}
+```
+
+A plain-text option can be `{"id":"a","text":"How many times?"}`. For a `multi_selection` question, provide two or more correct IDs. Every selected ID must match one of that question’s choices.

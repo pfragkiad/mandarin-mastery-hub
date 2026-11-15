@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, BookText, Check, ExternalLink, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import type { LessonBlock, LessonDocument, LessonPreference, LessonQuestion, LessonSummary, LessonVocabItem } from '@/lib/lessons';
+import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHanzi, LessonSpeaker, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
 
@@ -16,9 +16,9 @@ import { SentenceExample } from './sentence-example';
  * and each practice card's revealed answer (both reset when the page is left).
  *
  * Sections follow the schema order and appear only when they carry content (disabled
- * sections, empty lists and editorial-only extensions are skipped). Practice choices are
- * never marked right or wrong: the files record the answer as text, not which choice is
- * correct, so picking a choice only reveals the recorded answer and explanation.
+ * sections, empty lists and editorial-only extensions are skipped). Practice choices
+ * reveal the recorded answer and explanation. v2.6 selected answers resolve through
+ * explicit choice IDs; older and open-ended questions retain their answer text.
  */
 
 const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character lesson', word: 'Word lesson', phrase: 'Phrase lesson', topic: 'Topic lesson' };
@@ -200,16 +200,26 @@ function VocabCard({ item }: { item: LessonVocabItem }) {
 function QuestionCard({ question, index }: { question: LessonQuestion; index: number }) {
   const [open, setOpen] = useState(false);
   const [picked, setPicked] = useState<number | null>(null);
+  const correctChoices = correctLessonChoices(question);
   return <div className={`lesson-card lesson-question${open ? ' is-open' : ''}`}>
     <div className="lesson-card-top"><span className="lesson-register">Question {index} · {question.kind}</span></div>
     <p className="lesson-card-title"><LessonText text={question.prompt}/></p>
-    {question.choices.length > 0 && <div className="lesson-choices" role="group" aria-label="Choices">{question.choices.map((c, i) => <button key={i} type="button" className={`lesson-choice${picked === i ? ' is-picked' : ''}`} aria-pressed={picked === i} onClick={() => { setPicked(i); setOpen(true); }}>
-      <span lang="zh-CN" className="lesson-hanzi">{c.hanzi}</span><span className="pinyin">{c.pinyin}</span>{open && c.meaning_en && <small><LessonText text={c.meaning_en}/></small>}
+    {question.choices.length > 0 && <div className="lesson-choices" role="group" aria-label="Choices">{question.choices.map((c, i) => <button key={c.id ?? i} type="button" className={`lesson-choice${picked === i ? ' is-picked' : ''}`} aria-pressed={picked === i} onClick={() => { setPicked(i); setOpen(true); }}>
+      <QuestionChoice choice={c} showMeaning={open}/>
     </button>)}</div>}
     {question.choices.length > 0 && picked === null && !open && <p className="lesson-muted">Pick one, then compare with the answer.</p>}
     <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>
-    {open && <div className="lesson-answer" role="status"><p><strong><LessonText text={question.answer}/></strong></p>{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
+    {open && <div className="lesson-answer" role="status">{correctChoices.length ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
   </div>;
+}
+
+/** The same recorded choice content appears in the options and revealed answer;
+ * v2.6 supports either plain text or a hanzi/pinyin pair. No text is inferred. */
+function QuestionChoice({ choice, showMeaning }: { choice: LessonChoice; showMeaning: boolean }) {
+  return <>
+    {choice.text ? <LessonText text={choice.text}/> : <>{choice.hanzi && <span lang="zh-CN" className="lesson-hanzi">{choice.hanzi}</span>}{choice.pinyin && <span className="pinyin">{choice.pinyin}</span>}</>}
+    {showMeaning && choice.meaning_en && <small><LessonText text={choice.meaning_en}/></small>}
+  </>;
 }
 
 /** Recorded corpus counts drawn as proportional bars; the numbers are printed beside each bar. */

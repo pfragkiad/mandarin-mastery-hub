@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.5.0
+schema: mandarin-character-lesson/2.6.0
 lesson_id: char-4EE5
 title: Common Words & Grammatical Uses
 subtitle: Everyday compounds, formal patterns, and register
@@ -219,8 +219,8 @@ In 我以前住在北京 (Wǒ yǐqián zhù zài Běijīng), does the speaker re
 
 Which sounds natural for casual “eat with chopsticks”?
 
-- 用筷子吃饭 (yòng kuàizi chīfàn) — Eat with chopsticks
-- 以筷子吃饭 (yǐ kuàizi chīfàn) — Unnatural as an everyday conversational phrasing
+- A. 用筷子吃饭 (yòng kuàizi chīfàn) — Eat with chopsticks
+- B. 以筷子吃饭 (yǐ kuàizi chīfàn) — Unnatural as an everyday conversational phrasing
 
 ### Question 3
 
@@ -229,5 +229,5 @@ Translate “May I come in?” using 可以 (kěyǐ).
 ### Suggested answers
 
 1. Earlier residence; current location is unspecified. — The temporal expression 以前 (yǐqián) points to an earlier period.
-2. 用筷子吃饭 (yòng kuàizi chīfàn). — 用 (yòng) is the ordinary choice with a concrete tool in this casual context.
+2. A. 用筷子吃饭 (yòng kuàizi chīfàn) — Eat with chopsticks — 用 (yòng) is the ordinary choice with a concrete tool in this casual context.
 3. 我可以进去吗？(Wǒ kěyǐ jìnqù ma?) — The complete modal verb expresses permission.

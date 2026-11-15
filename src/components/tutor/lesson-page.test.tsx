@@ -17,7 +17,7 @@ describe('LessonPage', () => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(screen.getByRole('heading', { level: 1, name: lesson.summary.title })).toBeTruthy();
-    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.5.0');
+    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.6.0');
     expect(container.querySelectorAll('.lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
   });
@@ -46,6 +46,19 @@ describe('LessonPage', () => {
     fireEvent.click(question.querySelectorAll('.lesson-choice')[1]!);
     expect(question.querySelector('.lesson-answer')?.textContent).toContain('下次');
     expect(question.querySelector('.is-correct, .is-wrong')).toBeNull();
+  });
+
+  it('reveals recorded text choices and legacy answer text', async () => {
+    const lesson = structuredClone((await loadLesson('char-6B21'))!);
+    lesson.sections.practice = { enabled: true, questions: [
+      { id: 'text-choice', kind: 'selection', prompt: 'What does it count?', choices: [{ id: 'a', text: 'Occurrences' }, { id: 'b', text: 'Objects' }], correct_choice_ids: ['a'], explanation: 'An action count.' },
+      { id: 'legacy-choice', kind: 'selection', prompt: 'Choose next time.', choices: [{ hanzi: '下次', pinyin: 'xià cì' }], answer: 'Recorded legacy answer.', explanation: '' },
+    ] };
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Objects' }));
+    expect(container.querySelector('.lesson-answer')?.textContent).toContain('Occurrences');
+    fireEvent.click(screen.getByRole('button', { name: '下次 xià cì' }));
+    expect(container.querySelectorAll('.lesson-answer')[1]?.textContent).toContain('Recorded legacy answer.');
   });
 
   it('the priority filter shows only that priority\'s words', async () => {

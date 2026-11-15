@@ -1,13 +1,13 @@
 # Lesson documents
 
 Each directory holds one canonical lesson JSON and its Markdown companion. Current
-lessons use the content-only v2.5 format:
+lessons use the content-only v2.6 format, with explicit quiz choice IDs:
 
 - [CHARACTER_LESSON_CI](CHARACTER_LESSON_CI/README.md): 次 (cì), times and occasions.
 - [CHARACTER_LESSON_YI](CHARACTER_LESSON_YI/README.md): 以 (yǐ), words and constructions.
 
 `src/lib/lessons.ts` discovers `*/*.json`: summary keys load eagerly and each full
-document loads lazily on its lesson route. Markdown, HTML prototypes and editorial
+document loads lazily on its lesson route. Markdown, standalone HTML pages and editorial
 `report.md` files are not runtime inputs. There is no repository generator; keep
 Markdown companions aligned with their authored JSON.
 

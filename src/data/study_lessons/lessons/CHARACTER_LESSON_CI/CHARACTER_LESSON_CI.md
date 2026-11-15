@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.5.0
+schema: mandarin-character-lesson/2.6.0
 lesson_id: char-6B21
 title: Talking About Times & Occasions
 subtitle: Once, last time, this time, next time, every time, and again
@@ -204,9 +204,9 @@ In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) 
 
 Choose the common shorter form of 下一次 (xià yí cì).
 
-- 下次 (xià cì) — next time
-- 上次 (shàng cì) — last time
-- 这次 (zhè cì) — this time
+- A. 下次 (xià cì) — next time
+- B. 上次 (shàng cì) — last time
+- C. 这次 (zhè cì) — this time
 
 ### Question 3
 
@@ -216,8 +216,8 @@ Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin?
 
 Which expression means “try one more time”?
 
-- 再试一次 (zài shì yí cì) — try one more time
-- 我在学习 (Wǒ zài xuéxí) — I am studying
+- A. 再试一次 (zài shì yí cì) — try one more time
+- B. 我在学习 (Wǒ zài xuéxí) — I am studying
 
 ### Question 5
 
@@ -226,9 +226,9 @@ Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) 
 ### Suggested answers
 
 1. How many times: once. — 一次 (yí cì) is a postverbal frequency complement.
-2. 下次 (xià cì). — The initial 下 (xià) marks the following occasion.
+2. A. 下次 (xià cì) — next time — The initial 下 (xià) marks the following occasion.
 3. Because 次 (cì) has fourth tone, which normally changes 一 (yī) to yí. — Distinguish dictionary pronunciation from contextual tone sandhi.
-4. 再试一次 (zài shì yí cì). — Use 再 (zài) for repetition rather than 在 (zài).
+4. A. 再试一次 (zài shì yí cì) — try one more time — Use 再 (zài) for repetition rather than 在 (zài).
 5. 每一次见到你，我都很开心。(Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.) — A temporal every-time phrase and a main clause with 都 (dōu) express recurrence.
 
 ## 8. Additional language notes

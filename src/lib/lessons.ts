@@ -52,7 +52,8 @@ export type LessonContrast = { id: string; hanzi: string; pinyin: string; meanin
 export type LessonPreference = { statement: string; source_ids?: string[]; data: { sample: string; categories: { form_hanzi: string; form_pinyin: string; abstract: number; concrete: number }[] } };
 export type LessonMistake = { id: string; incorrect_inference: string; correction: string; reason: string };
 export type LessonHistorical = { id: string; function_en: string; hanzi: string; pinyin: string; translation_en: string; explanation: string; source_ids?: string[] };
-export type LessonQuestion = { id: string; kind: 'comprehension' | 'selection' | 'production' | string; prompt: string; choices: LessonTerm[]; answer: string; explanation: string };
+export type LessonChoice = { id?: string; text?: string; hanzi?: string; pinyin?: string; meaning_en?: string };
+export type LessonQuestion = { id: string; kind: 'comprehension' | 'selection' | 'multi_selection' | 'production' | string; prompt: string; choices: LessonChoice[]; correct_choice_ids?: string[]; answer?: string; explanation: string };
 export type LessonSource = { id: string; claim: string; author: string; title: string; publication: string; url: string | null; evidence_type: string; verification_status: string; scope_note: string };
 export type LessonBlock =
   | { kind: 'paragraph'; text: string }
@@ -91,6 +92,17 @@ export type LessonDocument = {
 };
 
 /* ---------- Pure helpers (tested directly) ---------- */
+/** Resolve v2.6 answers only through unique, recorded choice IDs. Invalid references
+ * fail closed; legacy questions continue to use their recorded answer text. */
+export function correctLessonChoices(question: LessonQuestion): LessonChoice[] {
+  const correctIds = question.correct_choice_ids ?? [];
+  const ids = question.choices.map(choice => choice.id);
+  if (!correctIds.length || ids.some(id => !id) || new Set(ids).size !== ids.length || new Set(correctIds).size !== correctIds.length) return [];
+  if (question.kind === 'selection' ? correctIds.length !== 1 : question.kind !== 'multi_selection' || correctIds.length < 2) return [];
+  if (correctIds.some(id => !ids.includes(id))) return [];
+  return question.choices.filter(choice => choice.id && correctIds.includes(choice.id));
+}
+
 type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson?: Record<string, unknown> | undefined; metadata?: Record<string, unknown> | undefined; headword?: Record<string, unknown> | null | undefined };
 const str = (value: unknown) => (typeof value === 'string' ? value : '');
 const strList = (value: unknown) => (Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []);

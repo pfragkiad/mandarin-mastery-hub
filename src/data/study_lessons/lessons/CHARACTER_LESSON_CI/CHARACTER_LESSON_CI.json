@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/2.5.0",
+  "schema_version": "mandarin-character-lesson/2.6.0",
   "lesson_id": "char-6B21",
   "lesson": {
     "title": "Talking About Times & Occasions",
@@ -19,7 +19,7 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "2.5.0",
+    "template_version": "2.6.0",
     "audience": "HSK beginner; foundational Mandarin grammar",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
@@ -592,7 +592,8 @@
           "prompt": "In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”?",
           "choices": [],
           "answer": "How many times: once.",
-          "explanation": "一次 (yí cì) is a postverbal frequency complement."
+          "explanation": "一次 (yí cì) is a postverbal frequency complement.",
+          "correct_choice_ids": []
         },
         {
           "id": "q-short",
@@ -602,21 +603,26 @@
             {
               "hanzi": "下次",
               "pinyin": "xià cì",
-              "meaning_en": "next time"
+              "meaning_en": "next time",
+              "id": "a"
             },
             {
               "hanzi": "上次",
               "pinyin": "shàng cì",
-              "meaning_en": "last time"
+              "meaning_en": "last time",
+              "id": "b"
             },
             {
               "hanzi": "这次",
               "pinyin": "zhè cì",
-              "meaning_en": "this time"
+              "meaning_en": "this time",
+              "id": "c"
             }
           ],
-          "answer": "下次 (xià cì).",
-          "explanation": "The initial 下 (xià) marks the following occasion."
+          "explanation": "The initial 下 (xià) marks the following occasion.",
+          "correct_choice_ids": [
+            "a"
+          ]
         },
         {
           "id": "q-tone",
@@ -624,7 +630,8 @@
           "prompt": "Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin?",
           "choices": [],
           "answer": "Because 次 (cì) has fourth tone, which normally changes 一 (yī) to yí.",
-          "explanation": "Distinguish dictionary pronunciation from contextual tone sandhi."
+          "explanation": "Distinguish dictionary pronunciation from contextual tone sandhi.",
+          "correct_choice_ids": []
         },
         {
           "id": "q-zai",
@@ -634,16 +641,20 @@
             {
               "hanzi": "再试一次",
               "pinyin": "zài shì yí cì",
-              "meaning_en": "try one more time"
+              "meaning_en": "try one more time",
+              "id": "a"
             },
             {
               "hanzi": "我在学习",
               "pinyin": "Wǒ zài xuéxí",
-              "meaning_en": "I am studying"
+              "meaning_en": "I am studying",
+              "id": "b"
             }
           ],
-          "answer": "再试一次 (zài shì yí cì).",
-          "explanation": "Use 再 (zài) for repetition rather than 在 (zài)."
+          "explanation": "Use 再 (zài) for repetition rather than 在 (zài).",
+          "correct_choice_ids": [
+            "a"
+          ]
         },
         {
           "id": "q-produce",
@@ -651,7 +662,8 @@
           "prompt": "Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).",
           "choices": [],
           "answer": "每一次见到你，我都很开心。(Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.)",
-          "explanation": "A temporal every-time phrase and a main clause with 都 (dōu) express recurrence."
+          "explanation": "A temporal every-time phrase and a main clause with 都 (dōu) express recurrence.",
+          "correct_choice_ids": []
         }
       ]
     },
