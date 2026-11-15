@@ -1,9 +1,10 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, BookText, Check, ExternalLink, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHanzi, LessonSpeaker, LessonTerm, LessonText } from './lesson-text';
+import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
@@ -43,6 +44,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const { preferences, setPreferences } = useWorkspace();
   const hintsOn = preferences.lessonHints !== false;
   const learnerExtensions = (S.extensions?.items ?? []).filter(item => item.visibility === 'learner' && item.blocks.length > 0);
+  // A hint card's "Open full card" records its own Back step; start clean here so
+  // a stale step from an earlier window never offers a wrong Back (as Practice does).
+  useEffect(() => { detailTrail.clear(); }, []);
   const sourceById = new Map((S.sources?.items ?? []).map(s => [s.id, s]));
 
   const sections: SectionDef[] = [];
@@ -85,7 +89,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
-      <p className="lesson-pattern-line"><LessonHanzi hanzi={c.pattern_hanzi}/><span className="pinyin">{c.pattern_pinyin}</span></p>
+      <p className="lesson-pattern-line"><LessonPairedLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
       <p className="lesson-card-title"><LessonText text={c.function_en}/></p>
       <LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/>
       {c.usage_note && <p className="lesson-muted"><LessonText text={c.usage_note}/></p>}
@@ -131,7 +135,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <summary>Show the classical reference</summary>
     {S.historical.intro && <p className="lesson-note"><LessonText text={S.historical.intro}/></p>}
     {S.historical.items.map(h => <div key={h.id} className="lesson-card">
-      <p className="lesson-pattern-line"><LessonHanzi hanzi={h.hanzi}/><span className="pinyin">{h.pinyin}</span></p>
+      <p className="lesson-pattern-line"><LessonPairedLine hanzi={h.hanzi} pinyin={h.pinyin}/></p>
       <p className="lesson-card-title"><LessonText text={h.translation_en}/></p>
       <p><LessonText text={h.function_en}/></p>
       <p className="lesson-muted"><LessonText text={h.explanation}/></p>
@@ -161,10 +165,10 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {(S.sources.editorial_status || S.sources.licensing) && <p className="lesson-note">{[S.sources.editorial_status, S.sources.licensing].filter(Boolean).join(' ')}</p>}
   </> });
 
-  return <LessonHintsProvider enabled={hintsOn}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
-      {headword && <div className="lesson-headword"><LessonHanzi hanzi={headword.hanzi} className="lesson-headword-glyph"/><span className="lesson-headword-reading"><span className="pinyin">{headword.pinyin}</span><LessonSpeaker hanzi={headword.hanzi} pinyin={headword.pinyin}/></span></div>}
+      {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
         <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{kindLabel[summary.kind].toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
         <h1>{summary.title}<LessonStatusPill status={summary.status}/></h1>
@@ -266,7 +270,7 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
 function QuestionChoice({ choice, showMeaning, inButton = false }: { choice: LessonChoice; showMeaning: boolean; inButton?: boolean }) {
   // Inside a choice button the hanzi are not separate tab stops (the button already is one).
   return <>
-    {choice.text ? <LessonText text={choice.text}/> : <>{choice.hanzi && <LessonHanzi hanzi={choice.hanzi} focusable={!inButton}/>}{choice.pinyin && <span className="pinyin">{choice.pinyin}</span>}</>}
+    {choice.text ? <LessonText text={choice.text}/> : choice.hanzi ? <LessonPairedLine hanzi={choice.hanzi} pinyin={choice.pinyin} focusable={!inButton}/> : choice.pinyin && <span className="pinyin">{choice.pinyin}</span>}
     {showMeaning && choice.meaning_en && <small><LessonText text={choice.meaning_en}/></small>}
   </>;
 }
@@ -276,7 +280,7 @@ function PreferenceChart({ preference, sources }: { preference: LessonPreference
   return <div className="lesson-card lesson-preference">
     <h3>Preference, not a rule</h3>
     {preference.data.categories.map(c => { const total = c.abstract + c.concrete; const share = total ? Math.round((c.abstract / total) * 100) : 0; return <div key={c.form_hanzi} className="lesson-bar-row">
-      <span className="lesson-bar-label"><LessonHanzi hanzi={c.form_hanzi}/><span className="pinyin">{c.form_pinyin}</span></span>
+      <span className="lesson-bar-label"><LessonPairedLine hanzi={c.form_hanzi} pinyin={c.form_pinyin}/></span>
       <span className="lesson-bar" title={`${total} occurrences`}><span className="lesson-bar-abstract" style={{ width: `${share}%` }}/></span>
       <span className="lesson-bar-count">{c.abstract} abstract · {c.concrete} concrete</span>
     </div>; })}

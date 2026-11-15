@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
+import { detailTrail, historyEntry } from '@/lib/detail-trail';
 import { lessonGlyphHint } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
@@ -34,14 +35,14 @@ import { MeaningText } from './meaning-text';
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null };
 
 const Ctx = createContext<HintsContext | null>(null);
 export const useLessonHints = () => useContext(Ctx);
 
 const HAN_CHAR = /^\p{Script=Han}$/u;
 
-export function LessonHintsProvider({ enabled, children }: { enabled: boolean; children: ReactNode }) {
+export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }: { enabled: boolean; backLabel?: string; children: ReactNode }) {
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
@@ -69,7 +70,7 @@ export function LessonHintsProvider({ enabled, children }: { enabled: boolean; c
   }, [state]);
   // Turning hints off closes any open card.
   useEffect(() => { if (!enabled) setState(null); }, [enabled]);
-  const value = useMemo(() => ({ enabled, open, wordFor }), [enabled, open, wordFor]);
+  const value = useMemo(() => ({ enabled, backLabel, open, wordFor }), [enabled, backLabel, open, wordFor]);
   return <Ctx.Provider value={value}>
     {children}
     <Popover open={Boolean(state)} onOpenChange={next => { if (!next) close(); }}>
@@ -114,6 +115,10 @@ export function HintGlyphs({ text, focusable = true, wordHanzi }: { text: string
 /** The popup body: minimal facts for one exact record, plus the containing word. */
 function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | null; onClose: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
+  const hints = useLessonHints();
+  // Leaving the lesson for a full card records one Back step (like Practice does),
+  // so the details window's Back returns here. Keyed by history entry, not URL.
+  const rememberReturn = () => detailTrail.replace({ label: hints?.backLabel ?? 'Lesson', href: historyEntry() });
   // catalogVersion: the catalogue loads lazily; recompute once it arrives.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const hint = useMemo(() => lessonGlyphHint(glyph, preferences.includeTraditional), [glyph, preferences.includeTraditional, catalogVersion]);
@@ -140,12 +145,12 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
     {word && <div className="lesson-hint-word">
       <span className="lesson-hint-word-label">In the word</span>
       <span className="lesson-hint-word-row">
-        <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
+        <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
         {/* Speaker stays outside the link so listening never navigates. */}
         {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
       </span>
       {word.meaning && <span className="lesson-hint-word-meaning"><MeaningText text={word.meaning}/></span>}
     </div>}
-    {hint && <Link to="/characters" search={hint.search} className="lesson-hint-open">Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
+    {hint && <Link to="/characters" search={hint.search} className="lesson-hint-open" onClick={rememberReturn}>Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
   </div>;
 }
