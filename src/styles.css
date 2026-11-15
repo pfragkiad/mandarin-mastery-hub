@@ -1483,11 +1483,6 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 /* Compact cards drop to fewer per row before Details / Trace / Recall and the bookmark
    (~265px with the card padding) stop fitting on one line, with a little slack for wider fonts. */
 .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 20px; }
-/* Comfortable keeps the earlier 230px minimum so two cards still share a row at tablet
-   widths; when a card is too narrow for its buttons on one line, the shared wrap rule
-   below moves them onto a second line with the bookmark inside the card. */
-html[data-display-size='comfortable'] .library-page .catalog-entry-grid,
-html[data-display-size='comfortable'] .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); }
 .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 20px; }
 @media(max-width:580px) {
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
@@ -2133,10 +2128,11 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .catalog-entry-grid:not(.library-list-view) .catalog-card { height: auto; grid-template-rows: 33px auto 40px; }
 .vocab-word-grid:not(.library-list-view) .word-card .word-open,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .catalog-entry { height: auto; padding-bottom: 12px; }
-/* Comfortable view on larger screens: Words and Glyph cards sit two per row at most.
-   Page content stops widening (main-content max-width), so a third column would always
-   be too narrow beside two hanzi tiles (预 預) and cut the translation. */
-@media (min-width: 1200px) {
+/* Comfortable view from small-tablet widths up: Words and Glyph cards sit two per row
+   at most. Page content stops widening (main-content max-width), so a third column would
+   always be too narrow beside two hanzi tiles (预 預) and cut the translation. Below
+   700px (phones, where controls wrap) cards stay one per row. */
+@media (min-width: 700px) {
   .catalog-results .catalog-entry-grid.library-list-view,
   .vocab-grid.vocab-word-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 }
@@ -2144,10 +2140,10 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* Comfortable phrases: no footer row, so the card and body fit their content like Words. */
 .library-list-view.vocab-phrase-grid .word-card { min-height: 0; }
 .library-list-view.vocab-phrase-grid .word-card > .word-open { min-height: 0; }
-/* Larger screens: Phrases go two per row at most, like Words/Glyphs, so every
-   Comfortable library reads consistently. The phrase box still shrinks via its
+/* From small-tablet widths up: Phrases go two per row at most, like Words/Glyphs, so
+   every Comfortable library reads consistently. The phrase box still shrinks via its
    container query, so long sentences stay inside. */
-@media (min-width: 1200px) {
+@media (min-width: 700px) {
   .vocab-grid.vocab-phrase-grid.library-list-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 }
 
