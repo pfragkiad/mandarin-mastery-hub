@@ -3439,3 +3439,174 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .game-setup .game-filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-width: 0; max-width: 100%; }
 .game-setup .game-filter-row:first-child { flex: 1 0 100%; }
 .game-setup .game-filter-row:empty { display: none; }
+
+/* ===== Study lessons (lessons-index.tsx, lesson-page.tsx, lesson-links.tsx) =====
+   One template for every lesson. Readable text stays ≥13px; provenance uses the
+   shared small-capitals footnote treatment. Columns wrap by the lesson's own
+   container width (container queries), never by an assumed device width. */
+.lessons-index, .lesson-page { max-width: 1100px; }
+.lesson-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 22px; }
+.lessons-group { margin-top: 26px; }
+.lessons-group h2, .lesson-section h2 { font-family: var(--font-display); font-weight: 400; font-size: 22px; margin-bottom: 6px; }
+.lessons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 14px; margin-top: 14px; }
+.lesson-index-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; align-items: start; padding: 16px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: inherit; text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.lesson-index-card:hover, .lesson-index-card:focus-visible { border-color: var(--primary); box-shadow: var(--shadow-soft); transform: translateY(-2px); outline: none; }
+.lesson-index-card:hover strong, .lesson-index-card:focus-visible strong { color: var(--primary); }
+.lesson-index-glyph { width: 76px; height: 76px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-hanzi); font-size: 46px; line-height: 1; color: var(--primary); }
+.lesson-index-glyph.is-topic svg { width: 30px; height: 30px; }
+.lesson-index-copy { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.lesson-index-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: var(--muted-foreground); }
+.lesson-index-meta .pinyin { font-size: 12px; }
+.lesson-index-copy strong { font-family: var(--font-display); font-weight: 400; font-size: 18px; line-height: 1.35; transition: color .15s; }
+.lesson-index-subtitle { font-size: 13px; line-height: 1.5; }
+.lesson-index-copy small { font-size: 12px; color: var(--muted-foreground); }
+.lesson-draft-pill { color: var(--experimental); border-color: color-mix(in oklab, var(--experimental) 40%, transparent); margin-left: 8px; vertical-align: middle; }
+
+.lesson-page { container: lesson-page / inline-size; }
+.lesson-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted-foreground); text-decoration: none; margin-bottom: 18px; }
+.lesson-back:hover, .lesson-back:focus-visible { color: var(--primary); }
+.lesson-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.lesson-hero.has-headword { grid-template-columns: auto minmax(0, 1fr); }
+.lesson-headword { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.lesson-headword-glyph { width: 128px; height: 128px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-hanzi); font-size: 84px; line-height: 1; color: var(--foreground); }
+.lesson-headword-glyph.is-linked { color: var(--primary); }
+.lesson-headword-glyph.is-linked:hover, .lesson-headword-glyph.is-linked:focus-visible { border-color: var(--primary); outline: none; }
+.lesson-headword-reading { display: inline-flex; align-items: center; gap: 2px; }
+.lesson-headword-reading .pinyin { font-size: 18px; }
+.lesson-hero-copy h1 { font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1.3; margin: 10px 0 6px; }
+.lesson-subtitle { font-size: 16px; color: var(--foreground); }
+.lesson-description { font-size: 14px; line-height: 1.7; color: var(--muted-foreground); margin-top: 10px; max-width: 68ch; }
+.lesson-chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 12px 0 0; padding: 0; }
+.lesson-chips li { font-size: 12px; padding: 3px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted-foreground); }
+.lesson-chips li.is-audience { color: var(--primary); border-color: color-mix(in oklab, var(--primary) 35%, transparent); }
+.lesson-intro { display: grid; gap: 10px; margin: 22px 0 6px; padding: 18px 20px; border-radius: 7px; background: var(--secondary); }
+.lesson-intro p { font-size: 14px; line-height: 1.65; }
+.lesson-intro strong { display: block; font-size: 12px; font-weight: 600; color: var(--primary); margin-bottom: 2px; }
+.lesson-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 36px; margin-top: 26px; align-items: start; }
+.lesson-toc { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 2px; }
+.lesson-toc .eyebrow { margin-bottom: 8px; }
+.lesson-toc a { font-size: 13px; color: var(--muted-foreground); text-decoration: none; padding: 5px 0 5px 10px; border-left: 2px solid var(--border); }
+.lesson-toc a:hover, .lesson-toc a:focus-visible { color: var(--primary); border-left-color: var(--primary); outline: none; }
+.lesson-pinyin-toggle { margin-top: 14px; align-self: flex-start; }
+.lesson-main { min-width: 0; }
+.lesson-section { padding: 6px 0 30px; scroll-margin-top: 88px; }
+.lesson-section + .lesson-section { border-top: 1px solid var(--border); padding-top: 26px; }
+.lesson-section h3, .lesson-subheading { font-size: 14px; font-weight: 600; margin: 0 0 8px; }
+.lesson-subheading { margin-top: 22px; }
+.lesson-lead { font-size: 16px; line-height: 1.6; margin: 8px 0 16px; }
+.lesson-note { font-size: 13px; line-height: 1.65; color: var(--muted-foreground); margin: 8px 0 14px; max-width: 72ch; }
+.lesson-muted { font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.lesson-teaching { font-size: 13px; line-height: 1.6; padding-left: 10px; border-left: 2px solid var(--primary); }
+.lesson-caution { font-size: 13px; color: var(--terracotta); margin-top: 12px; }
+.lesson-footnote { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); border-top: 1px solid var(--border); padding-top: 8px; margin-top: auto; }
+.lesson-footnote a { color: var(--primary); text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
+.lesson-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 20px; margin: 0 0 18px; }
+.lesson-facts > div.is-wide { grid-column: 1 / -1; }
+.lesson-facts dt { font-size: 12px; color: var(--muted-foreground); margin-bottom: 3px; }
+.lesson-facts dd { font-size: 14px; line-height: 1.6; margin: 0; }
+.lesson-fact-terms { display: flex; flex-wrap: wrap; gap: 12px; }
+.lesson-chips + .lesson-chips { margin-top: 6px; }
+.lesson-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.lesson-stack { display: grid; gap: 12px; }
+.lesson-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); }
+.lesson-card p { font-size: 14px; line-height: 1.6; }
+.lesson-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; }
+.lesson-card-title { font-size: 14px; font-weight: 600; line-height: 1.5; }
+.lesson-register { font-size: 12px; color: var(--muted-foreground); }
+.lesson-minute { background: var(--secondary); border-color: transparent; margin-bottom: 4px; }
+.lesson-hanzi { font-family: var(--font-hanzi); color: inherit; text-decoration: none; }
+.lesson-hanzi.is-linked { color: var(--primary); border-radius: 4px; }
+.lesson-hanzi.is-linked:hover, .lesson-hanzi.is-linked:focus-visible { background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+.lesson-inline-hanzi { font-family: var(--font-hanzi); }
+.lesson-term { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; min-width: 0; }
+.lesson-term .lesson-hanzi { font-size: 24px; line-height: 1.3; }
+.lesson-term.is-lg .lesson-hanzi { font-size: 32px; }
+.lesson-term-reading { display: inline-flex; align-items: center; white-space: nowrap; }
+.lesson-term-reading .pinyin { font-size: 14px; }
+.lesson-term-reading .example-listen { width: 28px; height: 28px; }
+.lesson-term-meaning { flex-basis: 100%; font-size: 14px; line-height: 1.5; }
+.lesson-priority { min-width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); color: var(--muted-foreground); }
+.lesson-priority.is-a { color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, transparent); }
+.lesson-priority.is-b { color: var(--rank-gold); border-color: color-mix(in oklab, var(--rank-gold) 45%, transparent); }
+.lesson-pattern-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.lesson-pattern-line .lesson-hanzi { font-size: 24px; }
+.lesson-pattern-line .pinyin { font-size: 14px; }
+.lesson-example .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
+.lesson-example .sentence p { font-size: 24px; margin-top: 4px; }
+.lesson-example .sentence-pinyin { margin-top: 0; font-size: 14px; }
+.lesson-example-term { padding: 8px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.lesson-mistake p { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.lesson-mistake small { font-size: 12px; font-weight: 600; }
+.lesson-mistake-dont small { color: var(--destructive); }
+.lesson-mistake-dont span { text-decoration: line-through; text-decoration-color: color-mix(in oklab, var(--destructive) 55%, transparent); color: var(--muted-foreground); }
+.lesson-mistake-do small { color: var(--primary); }
+.lesson-mistake .lesson-muted { display: block; padding-left: 74px; }
+.lesson-choices { display: flex; flex-wrap: wrap; gap: 10px; }
+.lesson-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 150px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: inherit; cursor: pointer; text-align: left; transition: border-color .15s; }
+.lesson-choice:hover, .lesson-choice:focus-visible { border-color: var(--primary); outline: none; }
+.lesson-choice.is-picked { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.lesson-choice .lesson-hanzi { font-size: 22px; }
+.lesson-choice .pinyin { font-size: 13px; }
+.lesson-choice small { font-size: 12px; color: var(--muted-foreground); }
+.lesson-answer-toggle { align-self: flex-start; }
+.lesson-answer { border-top: 1px solid var(--border); padding-top: 10px; display: grid; gap: 4px; }
+.lesson-preference { margin-top: 14px; }
+.lesson-bar-row { display: grid; grid-template-columns: minmax(90px, auto) minmax(80px, 1fr) auto; gap: 12px; align-items: center; }
+.lesson-bar-label { display: inline-flex; align-items: baseline; gap: 6px; }
+.lesson-bar-label .lesson-hanzi { font-size: 20px; }
+.lesson-bar-label .pinyin { font-size: 13px; }
+.lesson-bar { height: 10px; border-radius: 999px; background: var(--muted); overflow: hidden; }
+.lesson-bar-abstract { display: block; height: 100%; background: var(--primary); }
+.lesson-bar-count { font-size: 12px; color: var(--muted-foreground); white-space: nowrap; }
+.lesson-list { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; line-height: 1.6; }
+.lesson-checklist { list-style: none; padding: 0; }
+.lesson-checklist li { display: flex; gap: 6px; align-items: baseline; color: var(--muted-foreground); }
+.lesson-checklist li.is-passed { color: var(--foreground); }
+.lesson-table-wrap { overflow-x: auto; }
+.lesson-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.5; }
+.lesson-table th { text-align: left; font-size: 12px; font-weight: 600; color: var(--muted-foreground); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--border); }
+.lesson-table td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+.lesson-table .lesson-inline-hanzi { font-size: 16px; }
+.lesson-details > summary { cursor: pointer; font-size: 13px; color: var(--primary); width: fit-content; }
+.lesson-details[open] > summary { margin-bottom: 10px; }
+.lesson-details .lesson-card + .lesson-card { margin-top: 10px; }
+.lesson-provenance { margin-top: 12px; padding-top: 14px; border-top: 1px solid var(--border); }
+.lesson-provenance > summary { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); }
+.lesson-provenance-report { margin-bottom: 12px; display: grid; gap: 3px; font-size: 13px; }
+.lesson-missing { margin-top: 24px; display: grid; gap: 12px; justify-items: start; }
+/* "Hide pinyin" study switch: readings blur until hovered or focused (speakers stay usable). */
+.lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child { filter: blur(5px); transition: filter .15s; }
+.lesson-hide-pinyin .pinyin:not(.sentence-pinyin):hover, .lesson-hide-pinyin .sentence-pinyin > span:first-child:hover { filter: none; }
+@container lesson-page (max-width: 760px) {
+  .lesson-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .lesson-toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .lesson-toc .eyebrow { flex-basis: 100%; margin-bottom: 2px; }
+  .lesson-toc a { border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+  .lesson-pinyin-toggle { margin-top: 0; }
+  .lesson-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container lesson-page (max-width: 520px) {
+  .lesson-hero.has-headword { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .lesson-headword { flex-direction: row; align-items: center; gap: 14px; }
+  .lesson-headword-glyph { width: 88px; height: 88px; font-size: 58px; }
+  .lesson-hero-copy h1 { font-size: 27px; }
+  .lesson-facts { grid-template-columns: minmax(0, 1fr); }
+  .lesson-mistake p { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .lesson-mistake .lesson-muted { padding-left: 0; }
+  .lesson-bar-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .lesson-bar { grid-column: 1 / -1; grid-row: 2; }
+  .lesson-table thead { display: none; }
+  .lesson-table tr { display: grid; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .lesson-table td { border: 0; padding: 2px 0; }
+  .lesson-table td::before { content: attr(data-label); display: block; font-size: 12px; color: var(--muted-foreground); }
+}
+/* Details card "Lessons" list (characters-page.tsx). */
+.lesson-links { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+.lesson-link { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; color: inherit; text-decoration: none; transition: border-color .15s; }
+.lesson-link svg { color: var(--primary); flex: none; margin-top: 2px; }
+.lesson-link span { display: grid; gap: 2px; min-width: 0; }
+.lesson-link strong { font-size: 14px; font-weight: 500; color: var(--primary); }
+.lesson-link small { font-size: 13px; color: var(--muted-foreground); line-height: 1.5; }
+.lesson-link:hover, .lesson-link:focus-visible { border-color: var(--primary); outline: none; }
+.lesson-card .lesson-footnote { font-size: 9px; line-height: 1.6; }
+.lesson-facts .pinyin { font-size: 14px; }

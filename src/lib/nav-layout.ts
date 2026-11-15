@@ -51,6 +51,7 @@ export function phoneTabFor(path: string): PhoneTab | null {
   if (path === '/flashcards' || path === '/drawing') return 'games';
   if (path === '/pinyin') return 'pinyin';
   if (path === '/pinyin/tone-quiz' || path === '/pinyin/sound-alikes' || path === '/pinyin/type-what-you-hear') return 'games';
-  if (path === '/preferences') return 'more';
+  // Lessons have no tab of their own; they are reached from the More drawer.
+  if (path === '/preferences' || path === '/lessons' || path.startsWith('/lessons/')) return 'more';
   return null;
 }

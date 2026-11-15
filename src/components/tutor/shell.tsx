@@ -10,7 +10,7 @@ import { useSectionStats } from '@/lib/section-switch';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { LayoutGrid, BookOpen, BookText, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
 import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
@@ -28,10 +28,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 // small uppercase heading; the icon strip draws it as a thin line.
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
-type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin'; name: string; icon: GameIcon; games?: GameEntry[] };
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin' | '/lessons'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
     { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
@@ -69,7 +69,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
   const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);
-  const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : 'Start');
+  const current = currentGame?.label ?? [...navigation, settingsItem].find(n => n.to === path)?.name ?? (path === '/strokes' ? 'Practice' : path.startsWith('/lessons/') ? 'Lessons' : 'Start');
   // Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the five
   // games the breadcrumb's last step is a dropdown of that page's sections, built
   // here from the URL so its label is right on the first paint; the page only adds
@@ -149,8 +149,8 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
           : n.to === '/vocabulary' ? vocabularySections.map(s => ({ key: s.label, label: s.label, to: n.to, search: s.tab === 'word' ? {} : { tab: s.tab }, active: s.tab === (vocabularyTab ?? 'word'), icon: sectionIcons[s.label], cls: 'nav-sub-tab' }))
           : n.games ? n.games.map(g => ({ key: g.key, label: g.label, to: g.to, active: currentGame?.key === g.key, icon: g.icon, cls: 'nav-sub-game' }))
           : null;
-        // A game family owns its own game pages; the Sound chart owns /pinyin.
-        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : path === n.to;
+        // A game family owns its own game pages; the Sound chart owns /pinyin; Lessons owns every lesson page.
+        const selected = n.games ? Boolean(currentGame && n.games.includes(currentGame)) : n.to === '/lessons' ? path === '/lessons' || path.startsWith('/lessons/') : path === n.to;
         return <NavGroup key={n.key} id={n.key} name={n.name} to={n.to} icon={n.icon} selected={selected} subs={subs} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={flyout === n.key} onOpenChange={open => setFlyout(current => open ? n.key : current === n.key ? null : current)}/>;
         })}</div>)}</nav>
       <div className="sidebar-bottom"><Button variant="ghost" onClick={() => setHelp(true)} className="help-link" title="About this workspace"><CircleHelp /><span>A little guidance</span><ArrowUpRight size={14}/></Button><div className="sidebar-bottom-row"><NavGroup id="settings" name={settingsItem.name} to={settingsItem.to} icon={settingsItem.icon} selected={path === settingsItem.to} subs={null} rail={navMode === 'rail'} onNavigate={() => setMobileOpen(false)} open={false} onOpenChange={() => setFlyout(null)}/>{navSize === 'wide' && (expanded
