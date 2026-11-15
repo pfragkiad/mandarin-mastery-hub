@@ -26,7 +26,8 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * until the short line joins the line above. It is tried first while deciding whether the side
  * layout can be kept at all — one line fewer is often exactly what the side layout needed — and
  * then again in whichever layout won. If no step removes the line, the translation keeps the
- * view's own size.
+ * view's own size. The same steps run before an ellipsis is accepted: a translation still clipped
+ * in the chosen layout (clamped lines, or one word wider than its column) is tried smaller first.
  *
  * Tricky logic: the CSS base size has to be read with the inline override removed, so every step
  * starts by clearing it; the last line's word count is inferred from its measured width against
@@ -46,12 +47,19 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
         // need one line fewer and keep it, so try those steps before stacking.
         let fitted = false;
         for (const step of MEANING_FONT_STEPS) {
+          // Each step is measured from the view's own size, so clear the previous step first.
+          resetMeaningFont(el);
           if (!applyMeaningFont(el, step)) continue;
           if (sideLayoutFits(el)) { fitted = true; break; }
         }
         if (!fitted) { el.dataset['stacked'] = ''; resetMeaningFont(el); }
       }
-      shrinkTrailingLine(el);
+      // Stacked (or side) translations still clamp in grid cards: a clipped one tries the same
+      // smaller steps before the ellipsis is accepted.
+      // A step that just saved the side layout is final (re-trying would clear it).
+      if (el.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning')?.style.fontSize) return;
+      if (meaningClipped(el)) shrinkUntilUnclipped(el);
+      else shrinkTrailingLine(el);
     };
     measure();
     let alive = true;
@@ -89,8 +97,29 @@ function sideLayoutFits(open: HTMLElement): boolean {
   // Single-tile glyph cards (one form box) may keep a three-line translation beside the box;
   // every other card stacks once the translation would need a third line there.
   const maxLines = open.closest('.catalog-card.few-forms') ? 3 : 2;
-  if (meaning && (meaning.scrollHeight > meaning.clientHeight + 1 || lineCount(meaning) > maxLines)) return false;
+  if (meaning && (meaningClipped(open) || lineCount(meaning) > maxLines)) return false;
   return true;
+}
+
+/**
+ * True when the translation shows an ellipsis: lines hidden by the line clamp (taller than its
+ * box), or a single word wider than the column (e.g. "insignificant" beside three form boxes),
+ * which the clamp cuts horizontally with an ellipsis instead of wrapping.
+ */
+function meaningClipped(open: HTMLElement): boolean {
+  const meaning = meaningElement(open);
+  if (!meaning) return false;
+  return meaning.scrollHeight > meaning.clientHeight + 1 || meaning.scrollWidth > meaning.clientWidth + 1;
+}
+
+/** Try the smaller translation sizes until nothing is clipped; keep the view's size if none helps. */
+function shrinkUntilUnclipped(open: HTMLElement) {
+  for (const step of MEANING_FONT_STEPS) {
+    resetMeaningFont(open);
+    if (!applyMeaningFont(open, step)) continue;
+    if (!meaningClipped(open)) return;
+  }
+  resetMeaningFont(open);
 }
 
 /** How many pixels smaller the translation may go, and no smaller than this. */
