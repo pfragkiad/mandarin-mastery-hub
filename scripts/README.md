@@ -4,6 +4,7 @@ Run scripts from the repository root. Importer-only pinned inputs belong in [imp
 
 | Script | Usage and output |
 | --- | --- |
+| `export-catalog-ids.mjs` | Run `node scripts/export-catalog-ids.mjs` to write `public/data/catalog_ids.json`; add `--check` to verify it without writing. Joins shared `catalog.json` metadata with section files and recorded radical sidecars, then uses the shared library adapter to export exact selectable Characters IDs. Uses the existing toolchain's `jiti` loader; no network access required. |
 | `import-radical-identities.py` | Reads the pinned inputs under `importer/data/radical-identities/` plus current catalogue records; writes exact sourced `public/data/radical-identities.json`. |
 | `import-radical-strokes.ts` | Run with `bun scripts/import-radical-strokes.ts`. Reads `radicals.json`, `strokes.json`, and the shared versioned radical-family source; writes `public/data/radical-strokes.json`. |
 | `import-component-radicals.py` | Takes a supplied Unihan IRG source path; updates shared `catalog.json` component radical assignments from recorded kRSUnicode values. |

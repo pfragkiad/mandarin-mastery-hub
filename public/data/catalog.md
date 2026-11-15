@@ -58,6 +58,17 @@ Preserve tuple positions, optional fields, exact Unicode strings, and source ord
 
 The library still creates record IDs as `${kind}:${glyph}`, where `kind` is `Characters`, `Components`, `Radicals`, or `Strokes`. Do not merge same-glyph records across kinds. A saved radical variant additionally retains its heading and exact family form key. File separation must never change bookmarks, URL selections, record links, or variant identities.
 
+For lesson authoring and external consumers, [catalog_ids.json](catalog_ids.json)
+exports the exact selectable Characters records as `{ "characters": { "次": "Characters:次" } }`.
+Generate it with `node scripts/export-catalog-ids.mjs`, or verify it with the same
+command followed by `--check`. The exporter joins the shared metadata and section
+files and uses `libraryEntries('Characters')` so component-only forms are excluded
+while ordinary characters that also have radical identities remain Characters.
+Keys are exact recorded glyphs, without normalization or simplified/traditional
+substitution; values are the adapter's record IDs. The app does not automatically
+fetch this authoring export. Regenerate it after character membership or identity
+rules change; the catalogue source files remain authoritative.
+
 ## Browser loading and the shared interface
 
 `loadCatalog()` in `src/lib/catalog-store.ts` fetches the shared file, all four row files, and the existing required sidecars concurrently. Loading remains lazy at the catalogue level: the JSON files are fetched at runtime and are never imported into page bundles. This migration does not introduce independent per-tab loading, because cross-section search, lookups, and practice need a coherent catalogue.
