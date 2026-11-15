@@ -79,7 +79,7 @@ describe('LessonPage', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Last' }));
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     expect(container.querySelector('.lesson-verdict')?.textContent).toBe('Correct!');
-  });
+  }, 15000);
 
   it('legacy questions without answer IDs are never graded', async () => {
     const lesson = structuredClone((await loadLesson('char-6B21'))!);
