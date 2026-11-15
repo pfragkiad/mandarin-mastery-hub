@@ -1988,6 +1988,9 @@ html[data-display-size='comfortable'] {
   box-shadow: 0 0 0 1px var(--primary);
   border-radius: 4px;
 }
+/* Phrase headword pairing (cards' hanzi box, detail heading): ring only, no padding, so the
+   fitted box, word-grouped pinyin spelling and side-fit measurements never move. */
+.phrase-pair-glyph, .phrase-pair-syllable { border-radius: 4px; cursor: default; }
 /* Match hit targets and actual SVG sizes; preserve each control's availability,
    colours and recorded pronunciation pipeline. */
 :is(.sentence, .glyph-usage-reference, .kangxi-identity-item, .decomposition-part, .vocabulary-part-facts, .stroke-component-heading) :is(.example-listen, .decomposition-listen) {

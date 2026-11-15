@@ -20,6 +20,7 @@ import { SentenceExample } from './sentence-example';
 import { SentenceSection, TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { useSideFit } from './use-side-fit';
+import { usePhrasePairing } from './phrase-pairing';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
@@ -35,8 +36,11 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const bookmarked = saved.includes(word.id);
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
+  // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
+  const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase');
+  const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
   return <>
-    <RecordDetailTitle hanzi={word.hanzi} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={<Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(pairing.paired ? { glyphContent: Array.from(word.hanzi).map(pairing.glyph), pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
@@ -107,6 +111,10 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // (the same textual word matching as the phrase breakdown); CSS sizes the box from the longest line.
   const phraseLines = useMemo(() => isPhrase ? phraseTileLines(word.hanzi, matchedWordSpans(phraseParts(word, vocabularyWords).map(part => ({ text: part.text, matched: Boolean(part.word) })))) : [], [isPhrase, word]);
   const phraseLongest = Math.max(1, ...phraseLines.map(line => Array.from(line).length));
+  // Phrase cards pair each box character with its pinyin syllable on hover; line glyphs are
+  // indexed through the whole headword so the pairing survives the box's line breaks.
+  const pairing = usePhrasePairing(word.hanzi, word.pinyin, isPhrase);
+  const lineStarts = phraseLines.reduce<number[]>((starts, line, i) => [...starts, i === 0 ? 0 : starts[i - 1]! + Array.from(phraseLines[i - 1]!).length], []);
   // Recorded HSK level and official id only; either part is omitted when not supplied.
   const hskLevel = word.entry?.hskLevel ?? null;
   // The Words/Phrases tab already names the kind, so word and Comfortable phrase cards carry no
@@ -124,10 +132,10 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
         (like the "In a character" icon on glyph cards). Comfortable phrases use the same row;
         Compact phrases keep the level and their footer type. */}
     <div className="word-card-top"><span className="word-level-wrap">{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
-    <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
+    <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
-    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
+    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired ? Array.from(line).map((ch, i) => pairing.glyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{tileFit.lines === 2 ? <><span className="word-hanzi-line">{tileFit.parts[0]}</span><span className="word-hanzi-line">{tileFit.parts[1]}</span></> : word.hanzi}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
     <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }
