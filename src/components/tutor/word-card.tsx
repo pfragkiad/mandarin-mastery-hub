@@ -94,18 +94,17 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const { saved, toggleSaved, preferences } = useWorkspace();
   const bookmarked = saved.includes(word.id);
   const listen = async () => { await playPronunciation(request, preferences.slow); };
-  // Word (not phrase) cards use the same top-row labels in Compact and Comfortable;
+  // Word and phrase cards use the same top-row labels in Compact and Comfortable;
   // only the Comfortable class changes the layout around them.
   const headword = vocabularyKind(word) === 'word';
   const singleGlyph = Array.from(word.hanzi.replace(/\s/g, '')).length === 1;
   const isPhrase = vocabularyKind(word) === 'phrase';
-  // Comfortable phrases share the Words top row (type, merged HSK pill, sentence icon)
-  // and the 2×2 action block; only their stacked pinyin/box/translation body differs.
-  const comfortablePhrase = preferences.libraryView === 'list' && isPhrase;
   const comfortableWord = preferences.libraryView === 'list' && (headword || isPhrase);
   // Every Comfortable card (words, phrases, session additions) uses the labelled action row, bookmark icon at its right end.
   const comfortableView = preferences.libraryView === 'list';
-  const wordStyleTop = headword || comfortablePhrase;
+  // Compact phrases share the exact Words/Comfortable top row (type, merged HSK pill, sentence
+  // icon) and hide the footer type, so the labels sit in the same place in every view.
+  const wordStyleTop = headword || isPhrase;
   const tileFit = wordTileFit(word.hanzi);
   // Phrases: up to 12 glyphs per line, breaking after punctuation or at matched word edges
   // (the same textual word matching as the phrase breakdown); CSS sizes the box from the longest line.
@@ -117,8 +116,8 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const lineStarts = phraseLines.reduce<number[]>((starts, line, i) => [...starts, i === 0 ? 0 : starts[i - 1]! + Array.from(phraseLines[i - 1]!).length], []);
   // Recorded HSK level and official id only; either part is omitted when not supplied.
   const hskLevel = word.entry?.hskLevel ?? null;
-  // The Words/Phrases tab already names the kind, so word and Comfortable phrase cards carry no
-  // WORD/PHRASE label; Compact phrases keep their recorded level label.
+  // The Words/Phrases tab already names the kind, so word and phrase cards carry no
+  // WORD/PHRASE label; only session additions (neither kind) keep their level label.
   const levelLabel = wordStyleTop ? '' : word.level.toUpperCase();
   // Every Words/Phrases card (Compact and Comfortable) puts pinyin+audio and the translation beside
   // the hanzi box when both fit uncut; otherwise useSideFit marks the body data-stacked and CSS
@@ -126,11 +125,10 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const bodyRef = useRef<HTMLButtonElement>(null);
   useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
-  return <><article data-entry-id={word.id} className={`word-card ${headword ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
+  return <><article data-entry-id={word.id} className={`word-card ${wordStyleTop ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
-        (like the "In a character" icon on glyph cards). Comfortable phrases use the same row;
-        Compact phrases keep the level and their footer type. */}
+        (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
     <div className="word-card-top"><span className="word-level-wrap">{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
