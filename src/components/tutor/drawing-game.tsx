@@ -233,40 +233,66 @@ export function DrawingGamePage({
                       </>
                     )}
                     {draftKind !== "Words" && (
-                      <select
-                        className="filter-select"
-                        aria-label="Frequency"
-                        value={draft.usage ?? ""}
-                        onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value) })}
-                      >
-                        <option value="">All ranks</option>
-                        {usageGroups(draftKind).map((group) => (
-                          <option key={group.value} value={group.value}>
-                            {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-                    {filtered && (
-                      <select
-                        className="filter-select"
-                        aria-label="Stroke count"
-                        value={draft.strokes ?? ""}
-                        onChange={(event) => patch({ strokes: event.target.value || undefined })}
-                      >
-                        <option value="">All stroke counts</option>
-                        {[
-                          ...new Set(
-                            libraryEntries(draftKind).flatMap((entry) => (entry.strokes ? [entry.strokes] : [])),
-                          ),
-                        ]
-                          .sort((a, b) => a - b)
-                          .map((value) => (
-                            <option key={value} value={value}>
-                              {value} {value === 1 ? "stroke" : "strokes"}
+                      <span className="filter-field-row">
+                        <select
+                          className="filter-select"
+                          aria-label="Frequency"
+                          value={draft.usage ?? ""}
+                          onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value), usageUpTo: undefined })}
+                        >
+                          <option value="">All ranks</option>
+                          {usageGroups(draftKind).map((group) => (
+                            <option key={group.value} value={group.value}>
+                              {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
                             </option>
                           ))}
-                      </select>
+                        </select>
+                        {draft.usage && draft.usage !== UNRANKED && (
+                          <button
+                            type="button"
+                            className={`filter-upto-toggle${draft.usageUpTo ? " active" : ""}`}
+                            aria-pressed={draft.usageUpTo === "1"}
+                            title="Also include every more frequent rank above the selected group"
+                            onClick={() => patch({ usageUpTo: draft.usageUpTo ? undefined : "1" })}
+                          >
+                            + lower ranks
+                          </button>
+                        )}
+                      </span>
+                    )}
+                    {filtered && (
+                      <span className="filter-field-row">
+                        <select
+                          className="filter-select"
+                          aria-label="Stroke count"
+                          value={draft.strokes ?? ""}
+                          onChange={(event) => patch({ strokes: event.target.value || undefined, strokesUpTo: undefined })}
+                        >
+                          <option value="">All stroke counts</option>
+                          {[
+                            ...new Set(
+                              libraryEntries(draftKind).flatMap((entry) => (entry.strokes ? [entry.strokes] : [])),
+                            ),
+                          ]
+                            .sort((a, b) => a - b)
+                            .map((value) => (
+                              <option key={value} value={value}>
+                                {value} {value === 1 ? "stroke" : "strokes"}
+                              </option>
+                            ))}
+                        </select>
+                        {draft.strokes && (
+                          <button
+                            type="button"
+                            className={`filter-upto-toggle${draft.strokesUpTo ? " active" : ""}`}
+                            aria-pressed={draft.strokesUpTo === "1"}
+                            title="Also include every smaller stroke count"
+                            onClick={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : "1" })}
+                          >
+                            + fewer strokes
+                          </button>
+                        )}
+                      </span>
                     )}
                     {/* Saved-only: the libraries' bookmark + count toggle, last in the row; part of the auto-applied draft. */}
                     <SavedFilterToggle
