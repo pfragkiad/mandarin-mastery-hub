@@ -91,13 +91,13 @@ type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson?: Recor
 const str = (value: unknown) => (typeof value === 'string' ? value : '');
 const strList = (value: unknown) => (Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []);
 
-/** Explicit schema id → kind. Unknown families fall back to topic (or character only for the known schema). */
-export function lessonKindFor(schemaVersion: string, hasHeadword: boolean): LessonKind {
+/** Explicit schema id → kind; any other schema family is a topic lesson (never guessed from the headword). */
+export function lessonKindFor(schemaVersion: string): LessonKind {
   const family = schemaVersion.split('/')[0] ?? '';
   if (family === 'mandarin-character-lesson') return 'character';
   if (family === 'mandarin-word-lesson') return 'word';
   if (family === 'mandarin-phrase-lesson') return 'phrase';
-  return hasHeadword ? 'topic' : 'topic';
+  return 'topic';
 }
 
 export const lessonCategories: LessonCategory[] = (categoryRegistry.categories ?? [])
@@ -118,7 +118,7 @@ export function summarizeLesson(raw: RawLesson, categories: LessonCategory[] = l
   const lessonCats = strList(lesson['categories']).flatMap(cid => { const c = byId.get(cid); return c ? [c] : []; });
   const primaryId = str(lesson['primary_category_id']);
   return {
-    id, kind: lessonKindFor(schemaVersion, Boolean(headword)), schemaVersion, title,
+    id, kind: lessonKindFor(schemaVersion), schemaVersion, title,
     subtitle: str(lesson['subtitle']), description: str(lesson['description']),
     categories: lessonCats, primaryCategory: byId.get(primaryId) ?? lessonCats[0] ?? null,
     tags: strList(lesson['tags']), status: str(metadata['status']) || 'draft', audience: str(metadata['audience']),
@@ -162,14 +162,13 @@ export function toLessonDocument(raw: Record<string, unknown>, summary: LessonSu
 }
 
 /* ---------- Project data ---------- */
-const glob = '/src/data/study_lessons/lessons/*/*.json';
+// Vite needs a literal pattern in every glob call, so the path repeats.
 const ids = import.meta.glob<string>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'lesson_id' });
 const schemas = import.meta.glob<string>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'schema_version' });
 const lessonKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'lesson' });
 const metadataKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'metadata' });
 const headwordKeys = import.meta.glob<Record<string, unknown> | null>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'headword' });
 const loaders = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { import: 'default' });
-void glob;
 
 const raws: Record<string, RawLesson> = Object.fromEntries(Object.keys(ids).map(path => [path, {
   lesson_id: ids[path], schema_version: schemas[path], lesson: lessonKeys[path], metadata: metadataKeys[path], headword: headwordKeys[path] ?? null,
