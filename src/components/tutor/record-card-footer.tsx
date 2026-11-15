@@ -1,4 +1,6 @@
 import { Bookmark } from 'lucide-react';
+import { ExternalExamplesIcon } from './sentence-section';
+import { externalExampleSources } from '@/lib/external-examples';
 import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -67,7 +69,17 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
  *   Both modes keep the bookmark at the far right so its spot is predictable. Details uses
  *   `onDetails` when the card is in a Hide mode, otherwise `onOpen` (the face's own open).
  */
-export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen }: {
+/**
+ * "Examples" card button (Characters and Words only): opens the external example-sentence
+ * search for the exact hanzi in a new window, like the detail card's "Find more examples".
+ */
+function ExamplesAction({ hanzi }: { hanzi: string }) {
+  const source = externalExampleSources(hanzi)[0];
+  if (!source) return null;
+  return <Button asChild variant="outline" size="sm" className="card-examples-action"><a href={source.url} target="_blank" rel="noopener noreferrer" title={`Search ${source.name} for example sentences with ${hanzi} (opens in a new window)`} aria-label={`Find example sentences for ${hanzi} (opens in a new window)`}><ExternalExamplesIcon/>Examples</a></Button>;
+}
+
+export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen, examples = false }: {
   metadata: ReactNode;
   hanzi: string;
   bookmarked: boolean;
@@ -78,19 +90,23 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
   comfortable?: boolean;
   /** Comfortable only: what the card face does when no Hide mode applies (opens details). */
   onOpen?: () => void;
+  /** Characters/Words only: show the external "Examples" search button after Details. */
+  examples?: boolean;
 }) {
   const target = practice ?? { character: hanzi };
   if (comfortable) {
     const openDetails = onDetails ?? onOpen;
-    return <div className="word-card-bottom"><span>{metadata}</span><div className="daily-hero-actions card-labelled-actions">
+    return <div className="word-card-bottom"><span>{metadata}</span><div className={`daily-hero-actions card-labelled-actions${examples ? ' has-examples' : ''}`}>
       {openDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={openDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
+      {examples && <ExamplesAction hanzi={hanzi}/>}
       <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
       <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
       <Button variant="outline" size="sm" className="card-bookmark-action card-bookmark-icon" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''} aria-hidden="true"/></Button>
     </div></div>;
   }
-  return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions card-footer-actions">
+  return <div className="word-card-bottom"><span>{metadata}</span><div className={`word-actions card-footer-actions${examples ? ' has-examples' : ''}`}>
     {onDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
+    {examples && <ExamplesAction hanzi={hanzi}/>}
     <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
     <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
   </div><Button variant="ghost" size="icon" className="card-bookmark-action card-footer-bookmark" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark className={bookmarked ? 'bookmark-saved' : ''}/></Button></div>;

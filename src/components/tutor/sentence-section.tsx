@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { MessageSquareText } from 'lucide-react';
+import { ArrowUpRight, MessageSquareText } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
 
 /**
@@ -20,16 +20,15 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
     <div className="sentence-section-head">
       <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
       {source && <a className="find-examples-link" href={source.url} target="_blank" rel="noopener noreferrer" title={`Search ${source.name} for example sentences with ${hanzi} (opens in a new window)`}>
-        <SearchExternalIcon/>Find more examples
+        Find more examples<ExternalExamplesIcon/>
       </a>}
     </div>
     {hasExamples ? children : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}
   </section>;
 }
 
-/** Magnifier with an up-right arrow: "search, and leave the app" (designer option C). */
-function SearchExternalIcon() {
-  return <svg className="find-examples-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="10" cy="14" r="6"/><path d="M14.4 18.4 19 23"/><path d="M15 9l6-6"/><path d="M16 3h5v5"/>
-  </svg>;
+/** External-search icon shared by "Find more examples" and the cards' "Examples" button:
+ *  the familiar up-right arrow that says "opens outside the app". */
+export function ExternalExamplesIcon() {
+  return <ArrowUpRight className="find-examples-icon" aria-hidden="true"/>;
 }
