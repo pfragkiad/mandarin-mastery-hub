@@ -101,7 +101,9 @@ describe('LessonPage', () => {
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Objects' }));
     expect(container.querySelector('.lesson-answer')?.textContent).toContain('Occurrences');
-    fireEvent.click(screen.getByRole('button', { name: '下次 xià cì' }));
+    // Class locator: once the syllable inventory is warm, hover pairing wraps each
+    // choice glyph in its own span, which changes the button's computed name.
+    fireEvent.click(container.querySelectorAll('.lesson-choice')[2]!);
     expect(container.querySelectorAll('.lesson-answer')[1]?.textContent).toContain('Recorded legacy answer.');
   });
 
