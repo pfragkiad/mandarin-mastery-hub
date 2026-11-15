@@ -5,7 +5,7 @@ import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
 import { partOfSpeechOptions, vocabularyKind } from "@/lib/mandarin";
-import { usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
+import { UNRANKED, usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
 import {
   drawingKinds,
   drawingPool,
@@ -46,6 +46,8 @@ export function DrawingGamePage({
     strokes: search.strokes,
     usage: search.usage,
     saved: search.saved,
+    usageUpTo: search.usageUpTo,
+    strokesUpTo: search.strokesUpTo,
   };
   const activeFilters = Boolean(
     search.collection || search.level || search.pos || search.strokes || search.usage || search.saved,
@@ -105,8 +107,8 @@ export function DrawingGamePage({
       ...(kind === "Words" && search.level ? [search.level] : []),
       ...(kind === "Words" && search.pos ? [search.pos] : []),
       // Only the rank range ("Rank 1–100"); the dropdown's coverage share would crowd the chip.
-      ...(group ? [usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
-      ...(search.strokes ? [`${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
+      ...(group ? [search.usageUpTo === '1' && group.value !== UNRANKED ? `Rank 1–${group.max.toLocaleString("en-US")}` : usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
+      ...(search.strokes ? [search.strokesUpTo === '1' ? `Up to ${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}` : `${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
     ].join(" · ");
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -168,6 +170,8 @@ export function DrawingGamePage({
                   strokes: undefined,
                   usage: undefined,
                   saved: undefined,
+                  usageUpTo: undefined,
+                  strokesUpTo: undefined,
                 };
                 configure({ kind });
                 return empty;
