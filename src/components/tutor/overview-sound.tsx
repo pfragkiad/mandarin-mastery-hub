@@ -48,7 +48,8 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
           </span>
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls="discovery-body-sound" icon={<Volume2/>} label="Sounds" count={count}
-          pick={syllable ? <><span className="discovery-row-syllable">{syllable.base}</span><span className="discovery-row-meaning">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span></> : failed ? 'Sounds could not load' : 'Loading sounds…'}/>
+          pick={syllable ? <span className="discovery-row-syllable">{syllable.base}</span> : failed ? 'Sounds could not load' : 'Loading sounds…'}
+          line={syllable ? <span className="discovery-row-meaning">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span> : undefined}/>
         <Button variant="ghost" size="icon" title="Show another random sound" aria-label="Show another random sound" onClick={shuffle} disabled={!syllable}>
           <Shuffle />
         </Button>

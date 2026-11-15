@@ -3134,13 +3134,18 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   .discovery-row-name { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
   .discovery-row-name > strong { font-size: 16px; font-weight: 600; }
   .discovery-row-name > span { font-size: 12px; color: var(--muted-foreground); }
-  .discovery-row-pick { display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; white-space: nowrap; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; }
-  .discovery-row-hanzi, .discovery-row-syllable { flex-shrink: 0; max-width: 70%; overflow: hidden; text-overflow: ellipsis; color: var(--foreground); font-size: 20px; line-height: 1.25; }
+  /* Pick line fit (no ellipsis): one visible flex line of --pick-h; the translation/pinyin unit
+     (.discovery-row-line, never shrinking) wraps onto a second line pushed far below by the big
+     row-gap and clipped, so it is either shown whole beside the hanzi or hidden. The hanzi always
+     shows whole: its font shrinks to the line width (100cqi) over its glyph count (--pick-chars). */
+  .discovery-row-pick { --pick-h: 28px; --pick-hanzi: 20px; container-type: inline-size; display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; column-gap: 8px; row-gap: 100px; height: var(--pick-h); min-width: 0; overflow: hidden; white-space: nowrap; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; }
+  .discovery-row-line { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; min-height: var(--pick-h); }
+  .discovery-row-hanzi, .discovery-row-syllable { flex-shrink: 0; color: var(--foreground); font-size: var(--pick-hanzi); line-height: 1.25; }
+  .discovery-row-hanzi { font-size: min(var(--pick-hanzi), calc(100cqi / (var(--pick-chars, 1) + .25))); }
   .discovery-row-hanzi { font-family: var(--font-hanzi); }
   .discovery-row-syllable { font-family: var(--font-display); }
   .discovery-row-hanzi:is(.is-traditional,.card-ink-radical,.card-ink-character,.card-ink-component) { color: var(--card-ink); }
-  .discovery-row-pick-text { display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; }
-  .discovery-row-meaning { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .discovery-row-pick-text { display: flex; align-items: center; flex: 0 0 auto; max-width: 100%; min-height: var(--pick-h); }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { position: relative; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 18px; height: 18px; }
   /* The closed-row listen button (Preferences → Start random rows → Pinyin + audio) sits right after the pinyin. */
@@ -3167,8 +3172,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-row-main .stat-icon svg { width: 26px; height: 26px; }
   html[data-display-size='comfortable'] .discovery-row-name > strong { font-size: 19px; }
   html[data-display-size='comfortable'] .discovery-row-name > span { font-size: var(--ui-label-size); }
-  html[data-display-size='comfortable'] .discovery-row-pick { font-size: 16px; }
-  html[data-display-size='comfortable'] :is(.discovery-row-hanzi, .discovery-row-syllable) { font-size: 24px; }
+  html[data-display-size='comfortable'] .discovery-row-pick { --pick-h: 32px; --pick-hanzi: 24px; font-size: 16px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) { width: 50px; height: 50px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-top > button:not(.discovery-row-toggle) svg { width: 20px; height: 20px; }
   html[data-display-size='comfortable'] .discovery-row-chevron { width: 20px; height: 20px; }
@@ -3183,10 +3187,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   html[data-display-size='comfortable'] :is(.overview-game-play-dot, .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot) { width: 50px; height: 50px; }
   /* An open row shows the translation in its detail (pinyin + speaker, translation, buttons),
      so the row line keeps only the hanzi. Sounds keep their tone count, which the detail omits. */
-  .discovery-tile.is-open:not(.discovery-sound) .discovery-row-meaning { display: none; }
-  /* With the translation hidden, the 70% cap would resolve against the hanzi's own width
-     (the line shrinks to its content) and clip it, so an open row shows the hanzi in full. */
-  .discovery-tile.is-open .discovery-row-hanzi { max-width: none; }
+  .discovery-tile.is-open:not(.discovery-sound) .discovery-row-line { display: none; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile.is-open > .discovery-tile-body { padding-left: 74px; gap: 10px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-record-pinyin .pinyin { font-size: 17px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-tile-record .overview-record-link h2 { font-size: 17px; }
