@@ -6,6 +6,7 @@ import { vocabularyKind } from '@/lib/mandarin';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { useWorkspace } from './workspace';
 import { ExamplePronunciation } from './example-pronunciation';
+import { HintGlyphs, useLessonHints } from './lesson-hints';
 import type { AudioRequest } from '@/lib/audio';
 
 /**
@@ -21,17 +22,24 @@ import type { AudioRequest } from '@/lib/audio';
  * - LessonTerm: hanzi + orange pinyin + speaker (+ meaning). The speaker uses the matched
  *   word's own recording, a single character's exact-reading recording, or browser speech
  *   for the recorded pinyin through the shared audio pipeline.
+ *
+ * Inside a lesson page (LessonHintsProvider) LessonText and LessonHanzi hand every Han
+ * character to the lesson character hints (lesson-hints.tsx) instead: a hover ring and a
+ * click-to-open quick card while hints are on, plain text (no link) while they are off.
+ * Prose runs are mouse/touch targets only (not tab stops), so a long lesson never fills
+ * the keyboard order with hundreds of characters; recorded hanzi fields stay focusable.
  */
 
 const HAN = /(\p{Script=Han}+)/u;
 const HAN_TEST = /^\p{Script=Han}+$/u;
 
 export function LessonText({ text }: { text: string | null | undefined }) {
+  const hints = useLessonHints();
   if (!text) return null;
   // Split on *emphasis* first, then mark Han runs inside every piece.
   return <>{text.split(/(\*[^*\n]+\*)/).map((piece, i) => {
     const emphasis = /^\*[^*\n]+\*$/.test(piece);
-    const body = (emphasis ? piece.slice(1, -1) : piece).split(HAN).map((part, j) => HAN_TEST.test(part) ? <span key={j} lang="zh-CN" className="lesson-inline-hanzi">{part}</span> : <Fragment key={j}>{part}</Fragment>);
+    const body = (emphasis ? piece.slice(1, -1) : piece).split(HAN).map((part, j) => HAN_TEST.test(part) ? <span key={j} lang="zh-CN" className="lesson-inline-hanzi">{hints ? <HintGlyphs text={part} focusable={false}/> : part}</span> : <Fragment key={j}>{part}</Fragment>);
     return emphasis ? <em key={i}>{body}</em> : <Fragment key={i}>{body}</Fragment>;
   })}</>;
 }
@@ -53,9 +61,12 @@ export function useHanziTarget(hanzi: string): HanziTarget | null {
   }, [hanzi, items, preferences.includeTraditional, catalogVersion]);
 }
 
-export function LessonHanzi({ hanzi, className = '' }: { hanzi: string; className?: string }) {
+export function LessonHanzi({ hanzi, className = '', focusable = true }: { hanzi: string; className?: string; focusable?: boolean }) {
   const target = useHanziTarget(hanzi);
+  const hints = useLessonHints();
   const cls = `lesson-hanzi ${className}`.trim();
+  // Lesson page: hints replace the direct links (popup carries the full-card link).
+  if (hints) return <span className={cls} lang="zh-CN"><HintGlyphs text={hanzi} focusable={focusable}/></span>;
   if (target?.kind === 'glyph') return <Link to="/characters" search={target.search} className={`${cls} is-linked`} lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>;
   if (target?.kind === 'word') return <Link to="/vocabulary" search={target.search} className={`${cls} is-linked`} lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>;
   return <span className={cls} lang="zh-CN">{hanzi}</span>;

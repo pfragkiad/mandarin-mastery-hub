@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHanzi, LessonSpeaker, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
+import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
+import { Switch } from '@/components/ui/switch';
+import { useWorkspace } from './workspace';
 
 /**
  * One study lesson page, rendered entirely from its JSON document (src/lib/lessons.ts),
@@ -13,7 +16,9 @@ import { SentenceExample } from './sentence-example';
  *
  * Inputs: `lesson` — the loaded document; `priority` / `onPriority` — the URL-backed
  * vocabulary priority filter (A/B/C or all). Local state: the "Hide pinyin" study switch
- * and each practice card's revealed answer (both reset when the page is left).
+ * and each practice card's revealed answer (both reset when the page is left). The
+ * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
+ * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
  * Sections follow the schema order and appear only when they carry content (disabled
  * sections, empty lists and editorial-only extensions are skipped). v2.6 selection
@@ -35,6 +40,8 @@ type SectionDef = { id: string; title: string; body: ReactNode };
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
   const [hidePinyin, setHidePinyin] = useState(false);
+  const { preferences, setPreferences } = useWorkspace();
+  const hintsOn = preferences.lessonHints !== false;
   const learnerExtensions = (S.extensions?.items ?? []).filter(item => item.visibility === 'learner' && item.blocks.length > 0);
   const sourceById = new Map((S.sources?.items ?? []).map(s => [s.id, s]));
 
@@ -78,7 +85,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
-      <p className="lesson-pattern-line"><span lang="zh-CN" className="lesson-hanzi">{c.pattern_hanzi}</span><span className="pinyin">{c.pattern_pinyin}</span></p>
+      <p className="lesson-pattern-line"><LessonHanzi hanzi={c.pattern_hanzi}/><span className="pinyin">{c.pattern_pinyin}</span></p>
       <p className="lesson-card-title"><LessonText text={c.function_en}/></p>
       <LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/>
       {c.usage_note && <p className="lesson-muted"><LessonText text={c.usage_note}/></p>}
@@ -154,7 +161,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {(S.sources.editorial_status || S.sources.licensing) && <p className="lesson-note">{[S.sources.editorial_status, S.sources.licensing].filter(Boolean).join(' ')}</p>}
   </> });
 
-  return <div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <div className="lesson-headword"><LessonHanzi hanzi={headword.hanzi} className="lesson-headword-glyph"/><span className="lesson-headword-reading"><span className="pinyin">{headword.pinyin}</span><LessonSpeaker hanzi={headword.hanzi} pinyin={headword.pinyin}/></span></div>}
@@ -177,6 +184,10 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         {/* In-page jump links only (hash anchors scroll within this one page). */}
         {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`}>{s.title}</a>)}
         <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>
+        <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
+          <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-describedby="lesson-hints-help"/>
+          <span><strong>Character hints</strong><small id="lesson-hints-help">Tap a character for a quick card</small></span>
+        </label>
       </nav>
       <div className="lesson-main">
         {sections.map(s => <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}</section>)}
@@ -184,7 +195,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <p className="source-note">{kindLabel[summary.kind]} · {summary.status}{summary.dateReviewed ? ` · reviewed ${summary.dateReviewed}` : ''}{lesson.metadata.license_note ? ` · ${lesson.metadata.license_note}` : ''}</p>
       </div>
     </div>
-  </div>;
+  </div></LessonHintsProvider>;
 }
 
 function VocabCard({ item }: { item: LessonVocabItem }) {
@@ -231,11 +242,13 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
     : multi ? (!answered ? 'Pick every answer that fits, then check.' : null)
     : graded ? (!answered && !open ? 'Pick one.' : null)
     : (!picked.length && !open ? 'Pick one, then compare with the answer.' : null);
-  return <div className={`lesson-card lesson-question${open ? ' is-open' : ''}`}>
+  // Character hints only once the question is answered or its answer shown, so a quick
+  // card's meaning never gives the answer away.
+  return <LessonHintsGate enabled={answered || open}><div className={`lesson-card lesson-question${open ? ' is-open' : ''}`}>
     <div className="lesson-card-top"><span className="lesson-register">Question {index} · {plain(question.kind)}</span></div>
     <p className="lesson-card-title"><LessonText text={question.prompt}/></p>
     {question.choices.length > 0 && <div className="lesson-choices" role="group" aria-label="Choices">{question.choices.map((c, i) => <button key={c.id ?? i} type="button" className={`lesson-choice${choiceState(i)}`} aria-pressed={picked.includes(i)} aria-disabled={answered || undefined} onClick={() => choose(i)}>
-      <QuestionChoice choice={c} showMeaning={open || answered}/>
+      <QuestionChoice choice={c} showMeaning={open || answered} inButton/>
     </button>)}</div>}
     {hint && <p className="lesson-muted">{hint}</p>}
     {answered && <p className={`lesson-verdict ${right ? 'is-right' : 'is-wrong'}`} role="status">{right ? 'Correct!' : multi ? 'Not quite. The correct answers are marked.' : 'Not quite. The correct answer is marked.'}</p>}
@@ -245,14 +258,15 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
         : <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>}
     </div>
     {(open || answered) && <div className="lesson-answer">{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
-  </div>;
+  </div></LessonHintsGate>;
 }
 
 /** The same recorded choice content appears in the options and revealed answer;
  * v2.6 supports either plain text or a hanzi/pinyin pair. No text is inferred. */
-function QuestionChoice({ choice, showMeaning }: { choice: LessonChoice; showMeaning: boolean }) {
+function QuestionChoice({ choice, showMeaning, inButton = false }: { choice: LessonChoice; showMeaning: boolean; inButton?: boolean }) {
+  // Inside a choice button the hanzi are not separate tab stops (the button already is one).
   return <>
-    {choice.text ? <LessonText text={choice.text}/> : <>{choice.hanzi && <span lang="zh-CN" className="lesson-hanzi">{choice.hanzi}</span>}{choice.pinyin && <span className="pinyin">{choice.pinyin}</span>}</>}
+    {choice.text ? <LessonText text={choice.text}/> : <>{choice.hanzi && <LessonHanzi hanzi={choice.hanzi} focusable={!inButton}/>}{choice.pinyin && <span className="pinyin">{choice.pinyin}</span>}</>}
     {showMeaning && choice.meaning_en && <small><LessonText text={choice.meaning_en}/></small>}
   </>;
 }
@@ -262,7 +276,7 @@ function PreferenceChart({ preference, sources }: { preference: LessonPreference
   return <div className="lesson-card lesson-preference">
     <h3>Preference, not a rule</h3>
     {preference.data.categories.map(c => { const total = c.abstract + c.concrete; const share = total ? Math.round((c.abstract / total) * 100) : 0; return <div key={c.form_hanzi} className="lesson-bar-row">
-      <span className="lesson-bar-label"><span lang="zh-CN" className="lesson-hanzi">{c.form_hanzi}</span><span className="pinyin">{c.form_pinyin}</span></span>
+      <span className="lesson-bar-label"><LessonHanzi hanzi={c.form_hanzi}/><span className="pinyin">{c.form_pinyin}</span></span>
       <span className="lesson-bar" title={`${total} occurrences`}><span className="lesson-bar-abstract" style={{ width: `${share}%` }}/></span>
       <span className="lesson-bar-count">{c.abstract} abstract · {c.concrete} concrete</span>
     </div>; })}
