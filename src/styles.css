@@ -3387,3 +3387,10 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .catalog-detail-head .catalog-detail-pinyin-row > h2 { text-wrap: pretty; }
 /* Translation fits a full line but not beside the pinyin: it starts whole on the line below. */
 .catalog-detail-head .catalog-detail-pinyin-row[data-meaning='below'] > h2 { display: block; margin: 2px 0 0; max-width: none; }
+
+/* Game setup "What to practise": row 1 picks the kind (and vocabulary collection/level/type),
+   row 2 holds the narrowing filters (rank, strokes, Saved). The clear X follows row 2 inline. */
+.game-setup .shared-filter-form { flex-wrap: wrap; }
+.game-setup .game-filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-width: 0; max-width: 100%; }
+.game-setup .game-filter-row:first-child { flex: 1 0 100%; }
+.game-setup .game-filter-row:empty { display: none; }
