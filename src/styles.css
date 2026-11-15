@@ -3085,6 +3085,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
 /* Compact grid cards drop the footer's top divider and its fixed 40px height (which added
    centring space above the buttons); the padding below matches the label row's top padding. */
 .vocab-word-grid:not(.list-view):not(.library-list-view) .word-card .word-card-bottom,
+.vocab-phrase-grid:not(.list-view):not(.library-list-view) .word-card .word-card-bottom,
 .catalog-entry-grid:not(.library-list-view) .catalog-card .word-card-bottom { border-top: 0; min-height: 0; height: auto; padding-bottom: 10px; }
 /* Phones gave Compact word cards a 10px top pad; keep it equal to the 12px bottom pad. */
 .vocab-word-grid:not(.list-view):not(.library-list-view) .word-card .word-open { padding-top: 12px; padding-bottom: 12px; }
