@@ -165,7 +165,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {(S.sources.editorial_status || S.sources.licensing) && <p className="lesson-note">{[S.sources.editorial_status, S.sources.licensing].filter(Boolean).join(' ')}</p>}
   </> });
 
-  return <LessonHintsProvider enabled={hintsOn} backLabel={`Lesson (${summary.title})`}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <div className="lesson-headword"><LessonHanzi hanzi={headword.hanzi} className="lesson-headword-glyph"/><span className="lesson-headword-reading"><span className="pinyin">{headword.pinyin}</span><LessonSpeaker hanzi={headword.hanzi} pinyin={headword.pinyin}/></span></div>}
