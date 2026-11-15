@@ -1,8 +1,9 @@
-import { useEffect, useState, type MouseEvent, type SyntheticEvent } from 'react';
+import { type MouseEvent, type SyntheticEvent } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { AudioLines } from 'lucide-react';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
-import { loadSyllableInventory, soundChartTarget, toneMark, type PinyinSyllable } from '@/lib/pinyin-guide';
+import { soundChartTarget, toneMark } from '@/lib/pinyin-guide';
+import { useSyllableInventory } from './use-syllable-inventory';
 
 // Sound chart link shown beside a glyph's speaker (Glyphs cards and details windows only,
 // never decomposition tiles). Purpose: open the exact syllable + tone card of the reading
@@ -18,22 +19,10 @@ import { loadSyllableInventory, soundChartTarget, toneMark, type PinyinSyllable 
 // so the Sound card shows "← 了" and its Back (browser history) returns to the card/details;
 // it also asks the chart to line the syllable's grid card up with the Selected sound card.
 
-let cached: PinyinSyllable[] | null = null;
-function useSyllables() {
-  const [syllables, setSyllables] = useState(cached);
-  useEffect(() => {
-    if (cached) return;
-    let live = true;
-    loadSyllableInventory().then(list => { cached = list; if (live) setSyllables(list); }, () => undefined);
-    return () => { live = false; };
-  }, []);
-  return syllables;
-}
-
 const plainClick = (event: MouseEvent) => event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 
 export function SoundChartLink({ reading, from, variant }: { reading: string; from: string; variant: 'tile' | 'header' }) {
-  const syllables = useSyllables();
+  const syllables = useSyllableInventory();
   const navigate = useNavigate();
   const target = syllables ? soundChartTarget({ syllables }, reading) : null;
   if (!target) return null;
