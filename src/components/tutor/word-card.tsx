@@ -20,7 +20,8 @@ import { SentenceExample } from './sentence-example';
 import { SentenceSection, TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { useSideFit } from './use-side-fit';
-import { useCardChromeFit } from './use-card-chrome-fit';
+import { useCardTopRowFit } from './use-card-top-row-fit';
+import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
@@ -132,7 +133,11 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // wraps (use-card-chrome-fit.ts). No Radical pill on these cards, so the abbreviation step
   // is switched off and only the font steps apply.
   const rowRef = useRef<HTMLSpanElement>(null);
-  useCardChromeFit(rowRef, false, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
+  const footerRef = useRef<HTMLDivElement>(null);
+  useCardTopRowFit(rowRef, false, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
+  // The button row gets its own, independent attempt: a smaller button font before Recall and
+  // the bookmark drop to a second line.
+  useCardFooterFit(footerRef, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, comfortableView, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
   return <><article data-entry-id={word.id} className={`word-card ${wordStyleTop ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
@@ -142,6 +147,6 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
     {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired ? Array.from(line).map((ch, i) => pairing.glyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired ? Array.from(text).map((ch, i) => pairing.glyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={word.meaning}/></span>}</Button>
-    <RecordCardFooter metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
+    <RecordCardFooter footerRef={footerRef} metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }

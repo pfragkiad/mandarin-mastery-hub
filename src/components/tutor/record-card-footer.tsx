@@ -3,7 +3,7 @@ import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons'
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import type { PracticeMode } from '@/lib/practice-mode';
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { ReactNode, RefObject, SyntheticEvent } from 'react';
 
 export type PracticeSearch = { character?: string; stroke?: string; family?: number; variant?: string; mode?: PracticeMode };
 
@@ -69,7 +69,7 @@ export function TileBookmark({ hanzi, bookmarked, onBookmark }: { hanzi: string;
  *   Both modes keep the bookmark at the far right so its spot is predictable. Details uses
  *   `onDetails` when the card is in a Hide mode, otherwise `onOpen` (the face's own open).
  */
-export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen }: {
+export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, practice, onDetails, comfortable = false, onOpen, footerRef }: {
   metadata: ReactNode;
   hanzi: string;
   bookmarked: boolean;
@@ -80,11 +80,13 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
   comfortable?: boolean;
   /** Comfortable only: what the card face does when no Hide mode applies (opens details). */
   onOpen?: () => void;
+  /** Library cards pass the row's ref so the button row can measure its own wrap (use-card-footer-fit.ts). */
+  footerRef?: RefObject<HTMLDivElement | null>;
 }) {
   const target = practice ?? { character: hanzi };
   if (comfortable) {
     const openDetails = onDetails ?? onOpen;
-    return <div className="word-card-bottom"><span>{metadata}</span><div className="daily-hero-actions card-labelled-actions">
+    return <div className="word-card-bottom" ref={footerRef}><span>{metadata}</span><div className="daily-hero-actions card-labelled-actions">
       {openDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={openDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
       <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
       {/* Recall and the bookmark wrap as one unit: when the row is too narrow, Recall moves
@@ -96,7 +98,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
       </span>
     </div></div>;
   }
-  return <div className="word-card-bottom"><span>{metadata}</span><div className="word-actions card-footer-actions">
+  return <div className="word-card-bottom" ref={footerRef}><span>{metadata}</span><div className="word-actions card-footer-actions">
     {onDetails && <Button variant="outline" size="sm" className="card-details-action" aria-label={`Open details for ${hanzi}`} onClick={onDetails}><DetailsIcon aria-hidden="true"/>Details</Button>}
     <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...target, mode: 'trace' }} aria-label={`Trace ${hanzi}`}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
     <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...target, mode: 'recall' }} aria-label={`Recall ${hanzi}`}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
