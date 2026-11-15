@@ -9,7 +9,8 @@
  * list). This only cuts the recorded spelling at syllable edges; it never adds, changes or
  * looks up a reading. Rules, all fail closed (null → no pairing, plain rendering):
  * - every piece must be an attested syllable base with at most one tone mark; an apostrophe
- *   is a forced boundary; a token-final "r" (erhua) is its own piece and must pair with 儿;
+ *   is a forced boundary and, as pinyin spelling requires, an a/o/e-initial syllable can only
+ *   start a token or follow an apostrophe; a token-final "r" (erhua) is its own piece and must pair with 儿;
  * - the total piece count must equal the number of Han characters;
  * - exactly one such split may exist — two different valid splits (e.g. fang|an vs
  *   fan|gan) mean the spelling is ambiguous, so nothing is paired.
@@ -54,7 +55,11 @@ function tokenSplits(token: string, inventory: ReadonlySet<string>): Array<Array
       const marks = piece.filter(l => l.marked).length;
       // Token-final "r" after a syllable is erhua (written 儿 in the headword).
       const erhua = text === 'r' && end === letters.length && acc.length > 0;
-      if (marks <= 1 && (inventory.has(text) || erhua)) walk(end, [...acc, [start, end]]);
+      // Pinyin orthography: a syllable starting with a, o or e inside a run is always written
+      // after an apostrophe (Xī'ān), so without one it cannot start there (hǎo is never hǎ|o).
+      const afterApostrophe = start > 0 && (letters[start - 1]!.base === "'" || letters[start - 1]!.base === '’');
+      const vowelStart = start > 0 && !afterApostrophe && 'aoe'.includes(text[0]!);
+      if (marks <= 1 && !vowelStart && (inventory.has(text) || erhua)) walk(end, [...acc, [start, end]]);
     }
   };
   walk(0, []);

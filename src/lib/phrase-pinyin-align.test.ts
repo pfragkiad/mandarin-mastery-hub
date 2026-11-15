@@ -25,8 +25,9 @@ describe('alignPhrasePinyin', () => {
     expect(syllableTexts('西安', "Xī'ān")).toEqual([['0:Xī', '1:ān']]);
   });
 
-  it('fails closed when two different splits fit (fang|an vs fan|gan)', () => {
-    expect(alignPhrasePinyin('方案', 'fangan', syllables)).toBeNull();
+  it('never starts an a/o/e syllable inside a run without an apostrophe (hǎo is not hǎ|o)', () => {
+    expect(syllableTexts('你好', 'nǐhǎo')).toEqual([['0:nǐ', '1:hǎo']]);
+    expect(alignPhrasePinyin('你好吗', 'nǐ hǎo', syllables)).toBeNull();
   });
 
   it('fails closed when the syllables cannot cover the characters', () => {
