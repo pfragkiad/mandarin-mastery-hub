@@ -61,15 +61,17 @@ export type GameIcon = React.ComponentType<{ className?: string }>;
  * page both read this list, so a game's name, icon and destination never drift between
  * them. Every game has its own route; the Pinyin quizzes live under /pinyin.
  */
-export type GameEntry = { key: string; label: string; line: string; icon: GameIcon; to: '/flashcards' | '/drawing' | '/pinyin/tone-quiz' | '/pinyin/sound-alikes' | '/pinyin/type-what-you-hear' };
+// `line` describes the game on wide Start cards; `short` is the phone list's version, written to fit
+// one line beside the icon and Play button (it may wrap to a second line, never an ellipsis).
+export type GameEntry = { key: string; label: string; line: string; short: string; icon: GameIcon; to: '/flashcards' | '/drawing' | '/pinyin/tone-quiz' | '/pinyin/sound-alikes' | '/pinyin/type-what-you-hear' };
 
 export const HANZI_GAMES: GameEntry[] = [
-  { key: 'flashcards', label: 'Flashcards', line: 'A second chance at the ones you miss.', icon: FlashcardsIcon, to: '/flashcards' },
-  { key: 'drawing', label: 'Drawing game', line: 'Write characters without the guide.', icon: PracticeIcon, to: '/drawing' },
+  { key: 'flashcards', label: 'Flashcards', line: 'A second chance at the ones you miss.', short: 'Retry what you miss.', icon: FlashcardsIcon, to: '/flashcards' },
+  { key: 'drawing', label: 'Drawing game', line: 'Write characters without the guide.', short: 'Write with no guide.', icon: PracticeIcon, to: '/drawing' },
 ];
 
 export const PINYIN_GAMES: GameEntry[] = [
-  { key: 'tones', label: 'Tone quiz', line: 'Hear a syllable, pick its tone.', icon: ToneIcon, to: '/pinyin/tone-quiz' },
-  { key: 'alikes', label: 'Sound-alikes', line: 'Tell close syllables apart.', icon: Ear, to: '/pinyin/sound-alikes' },
-  { key: 'type', label: 'Type what you hear', line: 'Listen, then type the pinyin.', icon: Keyboard, to: '/pinyin/type-what-you-hear' },
+  { key: 'tones', label: 'Tone quiz', line: 'Hear a syllable, pick its tone.', short: 'Hear it, pick the tone.', icon: ToneIcon, to: '/pinyin/tone-quiz' },
+  { key: 'alikes', label: 'Sound-alikes', line: 'Tell close syllables apart.', short: 'Spot similar sounds.', icon: Ear, to: '/pinyin/sound-alikes' },
+  { key: 'type', label: 'Type what you hear', line: 'Listen, then type the pinyin.', short: 'Listen, type the pinyin.', icon: Keyboard, to: '/pinyin/type-what-you-hear' },
 ];

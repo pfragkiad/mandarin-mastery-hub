@@ -36,7 +36,7 @@ function GameGroup({ title, note, icon, games }: { title: string; note: string; 
       <span className="overview-game-icon" aria-hidden="true"><game.icon/></span>
       <span className="overview-game-text">
         <strong>{game.label}</strong>
-        <span className="overview-game-line">{game.line}</span>
+        <span className="overview-game-line"><span className="overview-game-line-full">{game.line}</span><span className="overview-game-line-short">{game.short}</span></span>
       </span>
       <span className="overview-game-play" aria-hidden="true"><span className="overview-game-play-dot"><Play/></span><span className="overview-game-play-label">Play</span></span>
     </Link>)}</div>

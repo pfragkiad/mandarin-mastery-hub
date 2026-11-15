@@ -891,6 +891,7 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
 .overview-game-text { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 0; padding: 0 4px; }
 .overview-game-text > strong { font-size: 17px; font-weight: 600; }
 .overview-game-line { color: var(--muted-foreground); font-size: 14px; line-height: 1.55; }
+.overview-game-line-short { display: none; }
 .overview-game-play { display: inline-flex; align-items: center; gap: 0; align-self: flex-start; margin: 8px 4px 0; color: var(--primary); font-size: 14px; font-weight: 500; }
 .overview-game-play-dot { width: 0; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); opacity: 0; transition: width .18s ease, opacity .18s ease; overflow: hidden; }
 .overview-game-play-dot svg { width: 13px; height: 13px; fill: currentColor; }
@@ -947,7 +948,10 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
   .overview-game-icon svg { width: 24px; height: 24px; }
   .overview-game-text { gap: 2px; padding: 0; }
   .overview-game-text > strong { font-size: 16px; }
-  .overview-game-line { font-size: 13px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Phones show the short description, a size smaller; it wraps rather than ending in an ellipsis. */
+  .overview-game-line { font-size: 12px; line-height: 1.35; text-wrap: balance; }
+  .overview-game-line-full { display: none; }
+  .overview-game-line-short { display: inline; }
   .overview-game-play, .overview-game-card:is(:hover, :focus-visible) .overview-game-play { margin: 0; gap: 0; align-self: center; }
   .overview-game-play-dot, .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot { width: 44px; height: 44px; opacity: 1; background: var(--secondary); color: var(--primary); }
   .overview-game-play-dot svg { width: 15px; height: 15px; }
@@ -3198,7 +3202,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   html[data-display-size='comfortable'] .overview-game-icon { width: 60px; height: 60px; }
   html[data-display-size='comfortable'] .overview-game-icon svg { width: 26px; height: 26px; }
   html[data-display-size='comfortable'] .overview-game-text > strong { font-size: 19px; }
-  html[data-display-size='comfortable'] .overview-game-line { font-size: 16px; }
+  html[data-display-size='comfortable'] .overview-game-line { font-size: 14px; }
   html[data-display-size='comfortable'] :is(.overview-game-play-dot, .overview-game-card:is(:hover, :focus-visible) .overview-game-play-dot) { width: 50px; height: 50px; }
   /* An open row shows the translation in its detail (pinyin + speaker, translation, buttons),
      so the row line keeps only the hanzi. Sounds keep their tone count, which the detail omits. */
