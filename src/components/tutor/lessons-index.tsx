@@ -1,9 +1,27 @@
 import { Link } from '@tanstack/react-router';
-import { BookText } from 'lucide-react';
+import { BookText, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { lessonCategories, lessonSummaries, type LessonSummary } from '@/lib/lessons';
 import { LessonText } from './lesson-text';
 import { LessonStatusPill } from './lesson-page';
+import { HintBody } from './source-info';
+
+/** Lessons' status pill in the page heading: the collection is partial material, so the
+ *  tag says so and opens the shared hint card explaining exactly what is missing. No
+ *  inputs or state — the copy restates only what the data holds today (a handful of
+ *  character lessons), so the tag can never read as a claim of complete coverage. */
+function ExperimentalTag() {
+  return <Popover>
+    <PopoverTrigger className="experimental-tag" aria-label="Lessons are experimental — what this means">
+      <FlaskConical aria-hidden="true"/>Experimental
+    </PopoverTrigger>
+    <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
+      <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
+      Still being built: only a few character lessons so far; word, phrase and topic lessons are not in the collection yet.
+    </HintBody></PopoverContent>
+  </Popover>;
+}
 
 /**
  * The Lessons index (/lessons): every lesson from src/lib/lessons.ts, grouped under the
