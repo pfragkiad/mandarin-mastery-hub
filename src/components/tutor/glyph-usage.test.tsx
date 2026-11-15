@@ -34,10 +34,15 @@ vi.mock('./workspace', () => ({
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
 describe('Absent-record notes', () => {
-  it('hides the whole sentence section when there is no example', () => {
-    render(<GlyphUsageExamples entry={strokeForm} kind="Strokes" />);
-    expect(screen.queryByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toBeNull();
-    expect(screen.queryByText('No recorded stroke-to-character usage examples available.')).toBeNull();
+  it('keeps the sentence section with an external search when a character has no example', () => {
+    const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
+    render(<GlyphUsageExamples entry={he} kind="Characters" />);
+    expect(screen.getByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toBeInTheDocument();
+    expect(screen.getByText('No recorded example sentence yet.')).toBeInTheDocument();
+    const link = screen.getByRole('link', { name: /Find more examples/ });
+    expect(decodeURI(link.getAttribute('href') ?? '')).toBe('https://www.purpleculture.net/sample-sentences/?word=和');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link.getAttribute('rel')).toContain('noopener');
   });
 
   it('omits the decomposition section for individual strokes', () => {
