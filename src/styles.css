@@ -2501,6 +2501,13 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .sound-chart-link:focus-visible { outline: 2px solid var(--sound-link); outline-offset: 1px; }
 .sound-chart-link.is-tile { width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
+/* Card-face external examples icon (Characters/Words), sized like the Sound chart link beside it
+   but neutral-coloured, turning accent on hover with a tinted badge. */
+.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -2px; border-radius: 5px; color: var(--muted-foreground); cursor: pointer; transition: color .15s ease, background .15s ease; }
+.examples-link.is-tile svg { width: 12px; height: 12px; }
+.examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+.library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -4px; }
+.library-list-view .examples-link.is-tile svg { width: 18px; height: 18px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .sound-chart-link.is-tile svg { width: 17px; height: 17px; }
 

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
 import { ArrowUpRight, MessageSquareText } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
 
@@ -31,4 +31,20 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
  *  the familiar up-right arrow that says "opens outside the app". */
 export function ExternalExamplesIcon() {
   return <ArrowUpRight className="find-examples-icon" aria-hidden="true"/>;
+}
+
+/**
+ * Card-face "examples" icon beside the pinyin speaker (Characters and Words cards only).
+ * The card face is itself a <button>, so a real <a> would be invalid markup: like the
+ * tile speaker and Sound chart link, this is a role="link" span that swallows activation
+ * (the card neither opens nor reveals) and opens the external search in a new window.
+ * Input: the exact hanzi searched.
+ */
+export function TileExamplesLink({ hanzi }: { hanzi: string }) {
+  const source = externalExampleSources(hanzi)[0];
+  if (!source) return null;
+  const label = `Find example sentences for ${hanzi} on ${source.name} (opens in a new window)`;
+  const open = (event: SyntheticEvent) => { event.stopPropagation(); event.preventDefault(); window.open(source.url, '_blank', 'noopener,noreferrer'); };
+  return <span role="link" tabIndex={0} className="examples-link is-tile" aria-label={label} title={label}
+    onClick={open} onKeyDown={event => { if (event.key === 'Enter') open(event); }}><ExternalExamplesIcon/></span>;
 }
