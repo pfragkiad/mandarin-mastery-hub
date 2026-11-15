@@ -2770,7 +2770,8 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 
 /* Practice controls row: Play/Reset on the left, the canvas switches (Arrows, Next stroke, Names)
    on the right — switches change the square, so they live with the playback buttons rather
-   than with the drawer tabs below. A narrow card stacks them as two centred rows. */
+   than with the drawer tabs below. A narrow card stacks them as two rows, both starting at the
+   card's left edge, so Reset sits above the toggles' left end. */
 .writing-tool-tabbed { container-type: inline-size; container-name: practice-card; }
 .writing-tool-tabbed .writer-controls-arranged { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; }
 .writing-tool-tabbed .writer-controls-arranged .writer-playback { flex: 0 0 auto; }
@@ -2784,7 +2785,7 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
      square's right edge as it does side-by-side. */
   .writing-tool-tabbed .writer-controls-arranged .writer-playback { width: 100%; margin-left: 0; margin-right: 0; justify-content: flex-start; }
   .writing-tool-tabbed .writer-controls-arranged .writer-playback > button:last-child { margin-left: 0; }
-  .writer-toggles { justify-content: center; max-width: 100%; }
+  .writer-toggles { justify-content: flex-start; max-width: 100%; }
   .writer-toggles > .stroke-pill { padding-left: 10px; padding-right: 11px; gap: 6px; min-width: 0; }
 }
 
