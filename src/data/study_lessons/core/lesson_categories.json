@@ -1,0 +1,30 @@
+{
+  "registry_version": "1.0.0",
+  "description": "Controlled, reusable lesson categories. Reuse a category by ID whenever its scope fits; tags capture narrower concepts. Do not create near-duplicate categories.",
+  "categories": [
+    {
+      "id": "time-frequency-repetition",
+      "label": "Time, Frequency & Repetition",
+      "description": "Communicating temporal references, the number of occurrences, recurring events and repetition.",
+      "aliases": [
+        "time expressions",
+        "frequency",
+        "occurrences",
+        "repetition",
+        "times and occasions"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "vocabulary-grammar-patterns",
+      "label": "Vocabulary & Grammar Patterns",
+      "description": "Exploring established words and reusable grammatical constructions, lexicalization, register and usage distinctions.",
+      "aliases": [
+        "word formation and grammar",
+        "grammar and vocabulary",
+        "usage patterns"
+      ],
+      "status": "active"
+    }
+  ]
+}

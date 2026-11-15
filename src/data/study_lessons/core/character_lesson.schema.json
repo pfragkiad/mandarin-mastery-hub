@@ -1,0 +1,1676 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.4.0.json",
+  "title": "Mandarin character learning lesson",
+  "description": "Canonical lesson learning content with controlled categories, structured report provenance and optional supplementary extensions. Character stroke/radical/etymology data is managed separately; no unsolicited verification workflows.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lesson_id",
+    "metadata",
+    "headword",
+    "intro",
+    "sections"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "mandarin-character-lesson/2.0.0",
+        "mandarin-character-lesson/2.1.0",
+        "mandarin-character-lesson/2.2.0",
+        "mandarin-character-lesson/2.3.0",
+        "mandarin-character-lesson/2.4.0"
+      ]
+    },
+    "lesson_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "template_version",
+        "audience",
+        "language",
+        "date_reviewed",
+        "hsk",
+        "frequency",
+        "catalog_character_id",
+        "license_note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "reviewed",
+            "approved"
+          ]
+        },
+        "template_version": {
+          "enum": [
+            "2.0.0",
+            "2.1.0",
+            "2.2.0",
+            "2.3.0",
+            "2.4.0"
+          ]
+        },
+        "audience": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "date_reviewed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hsk": {
+          "$ref": "#/$defs/hsk"
+        },
+        "frequency": {
+          "$ref": "#/$defs/frequency"
+        },
+        "catalog_character_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license_note": {
+          "type": "string"
+        }
+      }
+    },
+    "headword": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hanzi",
+        "pinyin",
+        "simplified",
+        "traditional",
+        "readings",
+        "mapping_type"
+      ],
+      "properties": {
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "simplified": {
+          "type": "string"
+        },
+        "traditional": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "minItems": 1
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reading"
+          },
+          "minItems": 1
+        },
+        "mapping_type": {
+          "type": "string"
+        }
+      }
+    },
+    "intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lesson_focus",
+        "core_principle",
+        "learning_priority"
+      ],
+      "properties": {
+        "lesson_focus": {
+          "type": "string"
+        },
+        "core_principle": {
+          "type": "string"
+        },
+        "learning_priority": {
+          "type": "string"
+        }
+      }
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "vocabulary",
+        "constructions",
+        "examples",
+        "contrasts",
+        "mistakes",
+        "historical",
+        "practice",
+        "sources"
+      ],
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "core_takeaway",
+            "independent_usage",
+            "modern_roles",
+            "teaching_priority",
+            "meaning_map",
+            "one_minute_explanation"
+          ],
+          "properties": {
+            "core_takeaway": {
+              "type": "string"
+            },
+            "independent_usage": {
+              "type": "string"
+            },
+            "modern_roles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "teaching_priority": {
+              "type": "string"
+            },
+            "meaning_map": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/meaning"
+              }
+            },
+            "one_minute_explanation": {
+              "type": "string"
+            }
+          }
+        },
+        "vocabulary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items",
+            "notes"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/vocab"
+              }
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "constructions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "items",
+            "structural_note"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/construction"
+              }
+            },
+            "structural_note": {
+              "type": "string"
+            }
+          }
+        },
+        "examples": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "default_provenance",
+            "items"
+          ],
+          "properties": {
+            "default_provenance": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/example"
+              }
+            }
+          }
+        },
+        "contrasts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items",
+            "preference_vs_rule"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/contrast"
+              }
+            },
+            "preference_vs_rule": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/preference"
+                }
+              ]
+            }
+          }
+        },
+        "mistakes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/mistake"
+              }
+            }
+          }
+        },
+        "writing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mapping_note",
+            "pronunciation_note",
+            "stroke_count",
+            "stroke_standard",
+            "dictionary_radical",
+            "components",
+            "etymology",
+            "stroke_order_sources",
+            "pending_checks"
+          ],
+          "properties": {
+            "mapping_note": {
+              "type": "string"
+            },
+            "pronunciation_note": {
+              "type": "string"
+            },
+            "stroke_count": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "stroke_standard": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dictionary_radical": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/term"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "components": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/term"
+              }
+            },
+            "etymology": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "stroke_order_sources": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/urlSource"
+              }
+            },
+            "pending_checks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Legacy optional; character reference data is managed outside this lesson system; not needed in new files."
+        },
+        "historical": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "intro",
+            "items",
+            "caution"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "intro": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/historical"
+              }
+            },
+            "caution": {
+              "type": "string"
+            }
+          }
+        },
+        "practice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "questions"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/question"
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/source"
+              }
+            },
+            "editorial_status": {
+              "type": "string",
+              "description": "Legacy optional; do not generate boilerplate review status."
+            },
+            "outstanding_checks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Legacy optional; not part of generated learning materials."
+            },
+            "example_provenance": {
+              "type": "string"
+            },
+            "licensing": {
+              "type": "string"
+            }
+          }
+        },
+        "checklist": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/check"
+              }
+            }
+          },
+          "description": "Legacy optional; new lessons should not add unsolicited external verification checklists."
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "report_intake": {
+      "$ref": "#/$defs/report_intake"
+    },
+    "lesson": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Learner-facing title and discovery metadata; stable lesson_id and headword remain at root.",
+      "required": [
+        "title",
+        "description",
+        "slug"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 4,
+          "description": "Short, communicative learning goal; never merely a Hanzi gloss."
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Optional concise explanation, suitable for a card."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 20,
+          "description": "A complete, searchable summary covering the main domains actually taught."
+        },
+        "category": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "label"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "description": "Stable machine-readable taxonomy key."
+            },
+            "label": {
+              "type": "string",
+              "minLength": 4,
+              "description": "Human readable category label, shared across related lessons."
+            }
+          }
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "URL-friendly lesson slug; not the permanent unique lesson_id."
+        },
+        "categories": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "description": "Reusable category IDs from lesson_categories.json. Use multiple only when central to the lesson."
+        },
+        "primary_category_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "One of the lesson.categories IDs; main navigation topic."
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "description": "Specific topics not deserving a new broad category."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hanzi",
+        "pinyin"
+      ],
+      "properties": {
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "meaning_en": {
+          "type": "string"
+        }
+      }
+    },
+    "reading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pinyin",
+        "context"
+      ],
+      "properties": {
+        "pinyin": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string"
+        }
+      }
+    },
+    "hsk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "edition",
+        "official_id",
+        "source_id"
+      ],
+      "properties": {
+        "level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 9
+        },
+        "edition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "official_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "frequency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rank",
+        "corpus",
+        "unit",
+        "source_id"
+      ],
+      "properties": {
+        "rank": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "corpus": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "meaning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "reading",
+        "function_en",
+        "register",
+        "example",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "reading": {
+          "type": "string"
+        },
+        "function_en": {
+          "type": "string"
+        },
+        "register": {
+          "type": "string"
+        },
+        "example": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/term"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    },
+    "vocab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catalog_id",
+        "hanzi",
+        "pinyin",
+        "part_of_speech",
+        "meaning_en",
+        "priority",
+        "register",
+        "lexical_status",
+        "usage_note",
+        "hsk_level",
+        "hsk_syllabus_id",
+        "frequency_rank"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "catalog_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "part_of_speech": {
+          "type": "string"
+        },
+        "meaning_en": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "register": {
+          "type": "string"
+        },
+        "lexical_status": {
+          "type": "string"
+        },
+        "usage_note": {
+          "type": "string"
+        },
+        "hsk_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 9
+        },
+        "hsk_syllabus_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "frequency_rank": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "construction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category",
+        "pattern_hanzi",
+        "pattern_pinyin",
+        "function_en",
+        "example",
+        "register",
+        "usage_note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "pattern_hanzi": {
+          "type": "string"
+        },
+        "pattern_pinyin": {
+          "type": "string"
+        },
+        "function_en": {
+          "type": "string"
+        },
+        "example": {
+          "$ref": "#/$defs/term"
+        },
+        "register": {
+          "type": "string"
+        },
+        "usage_note": {
+          "type": "string"
+        }
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "hanzi",
+        "pinyin",
+        "english",
+        "context",
+        "register",
+        "teaching_note",
+        "provenance",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "english": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string"
+        },
+        "register": {
+          "type": "string"
+        },
+        "teaching_note": {
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "constructed",
+            "corpus_attested",
+            "native_checked",
+            "quoted_with_permission"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contrast": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "hanzi",
+        "pinyin",
+        "meaning_en",
+        "example",
+        "usage",
+        "limitation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "meaning_en": {
+          "type": "string"
+        },
+        "example": {
+          "$ref": "#/$defs/term"
+        },
+        "usage": {
+          "type": "string"
+        },
+        "limitation": {
+          "type": "string"
+        }
+      }
+    },
+    "preference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "source_ids",
+        "data"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sample",
+            "categories"
+          ],
+          "properties": {
+            "sample": {
+              "type": "string"
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "form_hanzi",
+                  "form_pinyin",
+                  "abstract",
+                  "concrete"
+                ],
+                "properties": {
+                  "form_hanzi": {
+                    "type": "string"
+                  },
+                  "form_pinyin": {
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "concrete": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mistake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "incorrect_inference",
+        "correction",
+        "reason"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "incorrect_inference": {
+          "type": "string"
+        },
+        "correction": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "urlSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "license",
+        "description"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "historical": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "function_en",
+        "hanzi",
+        "pinyin",
+        "translation_en",
+        "explanation",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "function_en": {
+          "type": "string"
+        },
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "translation_en": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "choices",
+        "answer",
+        "explanation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "comprehension",
+            "selection",
+            "production"
+          ]
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/term"
+          }
+        },
+        "answer": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "claim",
+        "author",
+        "title",
+        "publication",
+        "url",
+        "evidence_type",
+        "verification_status",
+        "scope_note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "claim": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "publication": {
+          "type": "string"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_type": {
+          "type": "string"
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "checked_in_previous_draft",
+            "pending",
+            "disputed"
+          ]
+        },
+        "scope_note": {
+          "type": "string"
+        }
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "passed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "source_type",
+        "source_locator",
+        "received_date",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "enum": [
+            "user_report",
+            "chat_text",
+            "file",
+            "transcript",
+            "review",
+            "other"
+          ]
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "received_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section",
+        "item_id"
+      ],
+      "properties": {
+        "section": {
+          "enum": [
+            "overview",
+            "vocabulary",
+            "constructions",
+            "examples",
+            "contrasts",
+            "mistakes",
+            "writing",
+            "historical",
+            "practice",
+            "sources",
+            "checklist",
+            "extensions"
+          ]
+        },
+        "item_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "material": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "report_id",
+        "source_location",
+        "content_summary",
+        "handling",
+        "destinations",
+        "decision_note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handling": {
+          "enum": [
+            "mapped",
+            "extension",
+            "needs_review",
+            "excluded_duplicate",
+            "excluded_out_of_scope"
+          ]
+        },
+        "destinations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/destination"
+          }
+        },
+        "decision_note": {
+          "type": "string"
+        }
+      }
+    },
+    "report_intake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reports",
+        "material"
+      ],
+      "properties": {
+        "reports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/report"
+          }
+        },
+        "material": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/material"
+          }
+        }
+      }
+    },
+    "extension_block": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text"
+          ],
+          "properties": {
+            "kind": {
+              "const": "paragraph"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "hanzi",
+            "pinyin",
+            "meaning_en",
+            "note"
+          ],
+          "properties": {
+            "kind": {
+              "const": "term"
+            },
+            "hanzi": {
+              "type": "string"
+            },
+            "pinyin": {
+              "type": "string"
+            },
+            "meaning_en": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "hanzi",
+            "pinyin",
+            "english",
+            "usage_note"
+          ],
+          "properties": {
+            "kind": {
+              "const": "example"
+            },
+            "hanzi": {
+              "type": "string"
+            },
+            "pinyin": {
+              "type": "string"
+            },
+            "english": {
+              "type": "string"
+            },
+            "usage_note": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "items"
+          ],
+          "properties": {
+            "kind": {
+              "const": "list"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "headers",
+            "rows"
+          ],
+          "properties": {
+            "kind": {
+              "const": "table"
+            },
+            "headers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "raw_content",
+            "interpretation_note"
+          ],
+          "properties": {
+            "kind": {
+              "const": "unclassified"
+            },
+            "raw_content": {
+              "type": "string",
+              "minLength": 1
+            },
+            "interpretation_note": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "category",
+        "classification",
+        "visibility",
+        "verification_status",
+        "source_ids",
+        "report_ids",
+        "rationale",
+        "blocks"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "classification": {
+          "enum": [
+            "established",
+            "provisional",
+            "unclassified"
+          ]
+        },
+        "visibility": {
+          "enum": [
+            "learner",
+            "editorial"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "pending",
+            "disputed"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/extension_block"
+          }
+        }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "intro",
+        "items"
+      ],
+      "properties": {
+        "intro": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/extension"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.2.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson"
+        ],
+        "properties": {
+          "lesson": {
+            "required": [
+              "category"
+            ]
+          },
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.2.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.3.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "report_intake"
+        ],
+        "properties": {
+          "lesson": {
+            "required": [
+              "categories",
+              "primary_category_id",
+              "tags"
+            ]
+          },
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.3.0"
+              }
+            }
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.4.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "report_intake"
+        ],
+        "properties": {
+          "lesson": {
+            "required": [
+              "categories",
+              "primary_category_id",
+              "tags"
+            ]
+          },
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.4.0"
+              }
+            }
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

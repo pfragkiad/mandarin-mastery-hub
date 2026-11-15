@@ -1,0 +1,164 @@
+{
+  "schema_version": "mandarin-character-lesson/2.4.0",
+  "lesson_id": "char-<HEX_CODEPOINT>",
+  "lesson": {
+    "title": "<DESCRIPTIVE_LESSON_TITLE>",
+    "subtitle": "<ONE_LINE_TOPIC_SUMMARY>",
+    "description": "<FULL_LESSON_DESCRIPTION_EXPLAINING_SCOPE_AND_SKILLS>",
+    "categories": [
+      "vocabulary-grammar-patterns"
+    ],
+    "primary_category_id": "vocabulary-grammar-patterns",
+    "tags": [],
+    "slug": "lesson-topic"
+  },
+  "metadata": {
+    "status": "draft",
+    "template_version": "2.4.0",
+    "audience": "<TARGET_LEARNER>",
+    "language": "zh-CN",
+    "date_reviewed": null,
+    "hsk": {
+      "level": null,
+      "edition": null,
+      "official_id": null,
+      "source_id": null
+    },
+    "frequency": {
+      "rank": null,
+      "corpus": null,
+      "unit": null,
+      "source_id": null
+    },
+    "catalog_character_id": null,
+    "license_note": ""
+  },
+  "headword": {
+    "hanzi": "<HANZI>",
+    "pinyin": "<PINYIN>",
+    "simplified": "<SIMPLIFIED>",
+    "traditional": [
+      {
+        "hanzi": "<TRADITIONAL>",
+        "pinyin": "<PINYIN>"
+      }
+    ],
+    "readings": [
+      {
+        "pinyin": "<PINYIN>",
+        "context": "<WHEN_USED>"
+      }
+    ],
+    "mapping_type": "<same_written_form | one_to_one | context_dependent | multiple_targets>"
+  },
+  "intro": {
+    "lesson_focus": "<ONE SENTENCE>",
+    "core_principle": "<KEY_TEACHING_PRINCIPLE_FROM_REPORT>",
+    "learning_priority": "<ORDER OF STUDY>"
+  },
+  "sections": {
+    "overview": {
+      "core_takeaway": "<MAIN_TAKEAWAY>",
+      "independent_usage": "<COMMON | LIMITED | FORMAL | NONE>",
+      "modern_roles": [
+        "<ROLE>"
+      ],
+      "teaching_priority": "<HIGH | MEDIUM | LOW - editorial only>",
+      "meaning_map": [
+        {
+          "id": "meaning-01",
+          "reading": "<PINYIN>",
+          "function_en": "<FUNCTION>",
+          "register": "<REGISTER>",
+          "example": {
+            "hanzi": "<WORD>",
+            "pinyin": "<PINYIN>",
+            "meaning_en": "<MEANING>"
+          },
+          "evidence": "<SOURCE_ID_OR_NOTE>"
+        }
+      ],
+      "one_minute_explanation": "<EXPLANATION>"
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "word-01",
+          "catalog_id": null,
+          "hanzi": "<WORD>",
+          "pinyin": "<PINYIN>",
+          "part_of_speech": "<POS>",
+          "meaning_en": "<MEANING>",
+          "priority": "A",
+          "register": "<REGISTER>",
+          "lexical_status": "established_word",
+          "usage_note": "<USAGE NOTE>",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        }
+      ],
+      "notes": "<BOUNDARIES_AND_LEXICALIZATION>"
+    },
+    "constructions": {
+      "enabled": false,
+      "items": [],
+      "structural_note": "<ONLY_IF_APPLICABLE>"
+    },
+    "examples": {
+      "default_provenance": "Identify what is extracted from the report and what is supplementary learning material.",
+      "items": [
+        {
+          "id": "ex-01",
+          "title": "<USAGE_TITLE>",
+          "hanzi": "<FULL_HANZI_SENTENCE>",
+          "pinyin": "<FULL_TONE_MARKED_PINYIN>",
+          "english": "<IDIOMATIC_ENGLISH>",
+          "context": "<CONTEXT>",
+          "register": "<REGISTER>",
+          "teaching_note": "<TEACHING_NOTE>",
+          "provenance": "constructed",
+          "source_ids": []
+        }
+      ]
+    },
+    "contrasts": {
+      "items": [],
+      "preference_vs_rule": null
+    },
+    "mistakes": {
+      "items": [
+        {
+          "id": "m-01",
+          "incorrect_inference": "<MISCONCEPTION>",
+          "correction": "<BETTER_EXPLANATION>",
+          "reason": "<WHY>"
+        }
+      ]
+    },
+    "historical": {
+      "enabled": false,
+      "intro": "<OPTIONAL_HISTORICAL_CONTEXT>",
+      "items": [],
+      "caution": "<MODERN_VS_CLASSICAL_WARNING>"
+    },
+    "practice": {
+      "enabled": false,
+      "questions": []
+    },
+    "sources": {
+      "items": [],
+      "editorial_status": "",
+      "example_provenance": "Distinguish material extracted from the report from supplementary examples.",
+      "licensing": ""
+    },
+    "extensions": {
+      "intro": "Preserve relevant report material that does not fit an existing structured section; extend the template when recurring types arise.",
+      "items": []
+    }
+  },
+  "report_intake": {
+    "reports": [],
+    "material": []
+  }
+}

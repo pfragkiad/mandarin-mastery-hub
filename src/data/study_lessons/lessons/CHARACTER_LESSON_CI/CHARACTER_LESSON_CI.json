@@ -1,0 +1,1262 @@
+{
+  "schema_version": "mandarin-character-lesson/2.4.0",
+  "lesson_id": "char-6B21",
+  "lesson": {
+    "title": "Talking About Times & Occasions",
+    "subtitle": "Once, last time, this time, next time, every time, and again",
+    "description": "Learn how 次 (cì) is used to count action occurrences, identify previous, current, and future occasions, express every time and repetition, and choose natural shorter forms in conversation. Includes 一 (yī) tone sandhi.",
+    "categories": [
+      "time-frequency-repetition"
+    ],
+    "primary_category_id": "time-frequency-repetition",
+    "tags": [
+      "measure-words",
+      "frequency-complements",
+      "temporal-expressions",
+      "tone-sandhi"
+    ],
+    "slug": "times-and-occasions"
+  },
+  "metadata": {
+    "status": "reviewed",
+    "template_version": "2.4.0",
+    "audience": "HSK beginner; foundational Mandarin grammar",
+    "language": "zh-CN",
+    "date_reviewed": "2026-11-15",
+    "hsk": {
+      "level": null,
+      "edition": null,
+      "official_id": null,
+      "source_id": null
+    },
+    "frequency": {
+      "rank": null,
+      "corpus": null,
+      "unit": null,
+      "source_id": null
+    },
+    "catalog_character_id": null,
+    "license_note": ""
+  },
+  "headword": {
+    "hanzi": "次",
+    "pinyin": "cì",
+    "simplified": "次",
+    "traditional": [
+      {
+        "hanzi": "次",
+        "pinyin": "cì"
+      }
+    ],
+    "readings": [
+      {
+        "pinyin": "cì",
+        "context": "Modern Mandarin measure word for occurrences; also appears in other lexical senses outside this lesson."
+      }
+    ],
+    "mapping_type": "same_written_form"
+  },
+  "intro": {
+    "lesson_focus": "Count occurrences with 次 (cì), identify particular occasions, and express repetition with 再 (zài); six expressions are reported as extracted from one_time.mp4 (14 seconds).",
+    "core_principle": "Distinguish the character 次 (cì), the counting phrase 一次 (yí cì), temporal expressions such as 上一次 (shàng yí cì), and adverbial repetition such as 再一次 (zài yí cì).",
+    "learning_priority": "Begin with the six reported video expressions; practice the six constructed sentences; then learn conversational shortenings, frequency complements, and tone sandhi."
+  },
+  "sections": {
+    "overview": {
+      "core_takeaway": "次 (cì) counts occurrences of actions; 一次 (yí cì) can count one occurrence, while 上一次 (shàng yí cì), 这一次 (zhè yí cì), and 下一次 (xià yí cì) identify particular occasions.",
+      "independent_usage": "Common as a measure word after a numeral and in occurrence-related phrases; not typically used alone to say “once.”",
+      "modern_roles": [
+        "Verbal measure word / frequency complement",
+        "Component of temporal noun phrases",
+        "Component of quantified every-time expressions",
+        "Component of repetition adverbials"
+      ],
+      "teaching_priority": "high for this beginner lesson (editorial priority, not a measured frequency rank)",
+      "meaning_map": [
+        {
+          "id": "meaning-occurrences",
+          "reading": "cì",
+          "function_en": "Count occurrences of an action",
+          "register": "everyday",
+          "example": {
+            "hanzi": "去一次",
+            "pinyin": "qù yí cì",
+            "meaning_en": "go once"
+          },
+          "evidence": "src-user-report; report section 5.1"
+        },
+        {
+          "id": "meaning-occasion",
+          "reading": "cì",
+          "function_en": "Refer to a particular occasion",
+          "register": "everyday",
+          "example": {
+            "hanzi": "上一次",
+            "pinyin": "shàng yí cì",
+            "meaning_en": "last time"
+          },
+          "evidence": "src-user-report; report section 5.2"
+        },
+        {
+          "id": "meaning-repetition",
+          "reading": "cì",
+          "function_en": "Contribute an occurrence count inside a repetition phrase",
+          "register": "everyday to slightly emphatic",
+          "example": {
+            "hanzi": "再一次",
+            "pinyin": "zài yí cì",
+            "meaning_en": "once again"
+          },
+          "evidence": "src-user-report; report section 2"
+        }
+      ],
+      "one_minute_explanation": "After a verb, 一次 (yí cì) answers “how many times?” In expressions like 上一次 (shàng yí cì), 这一次 (zhè yí cì), or 下一次 (xià yí cì), it answers “which occasion?” 再一次 (zài yí cì) generally means “once again.” In all these expressions, 一 (yī) is pronounced yí before the fourth-tone word 次 (cì)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "once",
+          "catalog_id": null,
+          "hanzi": "一次",
+          "pinyin": "yí cì",
+          "part_of_speech": "numeral + verbal measure-word phrase",
+          "meaning_en": "Once; one time",
+          "priority": "A",
+          "register": "everyday",
+          "lexical_status": "compositional_frequency_phrase",
+          "usage_note": "VIDEO-REPORTED: one of six expressions reported extracted directly from one_time.mp4; after a verb, counts one action occurrence.",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "last-time",
+          "catalog_id": null,
+          "hanzi": "上一次",
+          "pinyin": "shàng yí cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "Last time; previous occasion",
+          "priority": "A",
+          "register": "everyday",
+          "lexical_status": "compositional_temporal_expression",
+          "usage_note": "VIDEO-REPORTED: previous occasion; often shortened to 上次 (shàng cì) in conversation.",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "this-time",
+          "catalog_id": null,
+          "hanzi": "这一次",
+          "pinyin": "zhè yí cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "This time",
+          "priority": "A",
+          "register": "everyday",
+          "lexical_status": "compositional_temporal_expression",
+          "usage_note": "VIDEO-REPORTED: present or contextually relevant occasion; often shortened to 这次 (zhè cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "next-time",
+          "catalog_id": null,
+          "hanzi": "下一次",
+          "pinyin": "xià yí cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "Next time",
+          "priority": "A",
+          "register": "everyday",
+          "lexical_status": "compositional_temporal_expression",
+          "usage_note": "VIDEO-REPORTED: following occasion; often shortened to 下次 (xià cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "every-time",
+          "catalog_id": null,
+          "hanzi": "每一次",
+          "pinyin": "měi yí cì",
+          "part_of_speech": "quantified temporal phrase",
+          "meaning_en": "Every time",
+          "priority": "A",
+          "register": "everyday",
+          "lexical_status": "compositional_distributive_expression",
+          "usage_note": "VIDEO-REPORTED: each occasion; shorter 每次 (měi cì) is common; often paired with 都 (dōu).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "once-again",
+          "catalog_id": null,
+          "hanzi": "再一次",
+          "pinyin": "zài yí cì",
+          "part_of_speech": "adverbial expression",
+          "meaning_en": "Once again; one more time",
+          "priority": "A",
+          "register": "everyday; can be emphatic",
+          "lexical_status": "conventional_repetition_expression",
+          "usage_note": "VIDEO-REPORTED: indicates repetition before a verb, distinct from the verb phrase 再来一次 (zài lái yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "last-time-short",
+          "catalog_id": null,
+          "hanzi": "上次",
+          "pinyin": "shàng cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "Last time",
+          "priority": "B",
+          "register": "conversational",
+          "lexical_status": "established_shorter_expression",
+          "usage_note": "SUPPLEMENTARY: shorter everyday alternative to 上一次 (shàng yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "this-time-short",
+          "catalog_id": null,
+          "hanzi": "这次",
+          "pinyin": "zhè cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "This time",
+          "priority": "B",
+          "register": "conversational",
+          "lexical_status": "established_shorter_expression",
+          "usage_note": "SUPPLEMENTARY: shorter everyday alternative to 这一次 (zhè yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "next-time-short",
+          "catalog_id": null,
+          "hanzi": "下次",
+          "pinyin": "xià cì",
+          "part_of_speech": "temporal noun phrase",
+          "meaning_en": "Next time",
+          "priority": "B",
+          "register": "conversational",
+          "lexical_status": "established_shorter_expression",
+          "usage_note": "SUPPLEMENTARY: shorter everyday alternative to 下一次 (xià yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "every-time-short",
+          "catalog_id": null,
+          "hanzi": "每次",
+          "pinyin": "měi cì",
+          "part_of_speech": "quantified temporal phrase",
+          "meaning_en": "Every time",
+          "priority": "B",
+          "register": "conversational",
+          "lexical_status": "established_shorter_expression",
+          "usage_note": "SUPPLEMENTARY: shorter everyday alternative to 每一次 (měi yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        },
+        {
+          "id": "do-one-more-time",
+          "catalog_id": null,
+          "hanzi": "再来一次",
+          "pinyin": "zài lái yí cì",
+          "part_of_speech": "verb phrase / request",
+          "meaning_en": "Do it one more time; have another go",
+          "priority": "B",
+          "register": "conversational",
+          "lexical_status": "productive_verb_phrase",
+          "usage_note": "SUPPLEMENTARY: a related verb phrase containing 来 (lái); not a shortening of 再一次 (zài yí cì).",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        }
+      ],
+      "notes": "Exactly six expressions (priority A) are identified as extracted from the 14-second video in the reviewed user report. Four shortened alternatives and one related verb phrase (priority B) were added as supplementary learning material. Most are compositional phrases rather than indivisible lexicalized words; the part-of-speech field describes the phrase-level role. Seven component-character vocabulary items appear separately in extension ext-components, not as character-shape decomposition."
+    },
+    "constructions": {
+      "enabled": true,
+      "items": [
+        {
+          "id": "v-plus-count",
+          "category": "frequency complement",
+          "pattern_hanzi": "动词 + 一次",
+          "pattern_pinyin": "dòngcí + yí cì",
+          "function_en": "Count one occurrence of a verb",
+          "example": {
+            "hanzi": "去一次",
+            "pinyin": "qù yí cì",
+            "meaning_en": "Go once"
+          },
+          "register": "neutral; spoken",
+          "usage_note": "一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo)."
+        },
+        {
+          "id": "last-time-pattern",
+          "category": "temporal noun phrase",
+          "pattern_hanzi": "上一次",
+          "pattern_pinyin": "shàng yí cì",
+          "function_en": "Identify a previous occasion",
+          "example": {
+            "hanzi": "上一次我没听懂",
+            "pinyin": "Shàng yí cì wǒ méi tīng dǒng",
+            "meaning_en": "Last time I did not understand what I heard"
+          },
+          "register": "everyday",
+          "usage_note": "Often appears at the start of a sentence as a time expression."
+        },
+        {
+          "id": "this-time-pattern",
+          "category": "temporal noun phrase",
+          "pattern_hanzi": "这一次",
+          "pattern_pinyin": "zhè yí cì",
+          "function_en": "Identify this occasion",
+          "example": {
+            "hanzi": "这一次我明白了",
+            "pinyin": "Zhè yí cì wǒ míngbai le",
+            "meaning_en": "This time I understood"
+          },
+          "register": "everyday",
+          "usage_note": "A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening."
+        },
+        {
+          "id": "next-time-pattern",
+          "category": "temporal noun phrase",
+          "pattern_hanzi": "下一次",
+          "pattern_pinyin": "xià yí cì",
+          "function_en": "Identify the following occasion",
+          "example": {
+            "hanzi": "下一次我们一起去吧",
+            "pinyin": "Xià yí cì wǒmen yìqǐ qù ba",
+            "meaning_en": "Let’s go together next time"
+          },
+          "register": "everyday",
+          "usage_note": "A sentence-initial temporal phrase; 下次 (xià cì) is common in speech."
+        },
+        {
+          "id": "every-dou",
+          "category": "distributive temporal pattern",
+          "pattern_hanzi": "每一次 + 动作，……都……",
+          "pattern_pinyin": "měi yí cì + dòngzuò, ... dōu ...",
+          "function_en": "Apply a statement to each occurrence",
+          "example": {
+            "hanzi": "每一次见到你，我都很开心",
+            "pinyin": "Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn",
+            "meaning_en": "Every time I see you, I am happy"
+          },
+          "register": "everyday",
+          "usage_note": "每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory."
+        },
+        {
+          "id": "once-again-adverbial",
+          "category": "repetition adverbial",
+          "pattern_hanzi": "再一次 + 动词",
+          "pattern_pinyin": "zài yí cì + dòngcí",
+          "function_en": "Express one more repetition before a verb",
+          "example": {
+            "hanzi": "我想再一次感谢你",
+            "pinyin": "Wǒ xiǎng zài yí cì gǎnxiè nǐ",
+            "meaning_en": "I want to thank you once again"
+          },
+          "register": "neutral; slightly emphatic",
+          "usage_note": "再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè)."
+        },
+        {
+          "id": "repeat-v-count",
+          "category": "repetition + frequency complement",
+          "pattern_hanzi": "再 + 动词 + 一次",
+          "pattern_pinyin": "zài + dòngcí + yí cì",
+          "function_en": "Ask for or describe one more occurrence",
+          "example": {
+            "hanzi": "再试一次",
+            "pinyin": "zài shì yí cì",
+            "meaning_en": "Try one more time"
+          },
+          "register": "everyday",
+          "usage_note": "Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì)."
+        }
+      ],
+      "structural_note": "Do not equate a postverbal frequency complement, a temporal noun phrase, a quantified temporal phrase, and a preverbal repetition adverbial. Similar surface vocabulary can fulfill different grammatical slots."
+    },
+    "examples": {
+      "default_provenance": "The first six sentences are supplementary, constructed teaching examples supplied in the reviewed report, NOT quotations from one_time.mp4. The seventh is an additional constructed contrast sentence from report section 5.2.",
+      "items": [
+        {
+          "id": "ex-once",
+          "title": "Once: count an experience",
+          "hanzi": "我去过北京一次。",
+          "pinyin": "Wǒ qù guo Běijīng yí cì.",
+          "english": "I’ve been to Beijing once.",
+          "context": "Describing a past personal experience.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "过 (guo) marks experiential aspect, while 一次 (yí cì) counts the occurrence.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-last-time",
+          "title": "Last time: did not understand",
+          "hanzi": "上一次我没听懂。",
+          "pinyin": "Shàng yí cì wǒ méi tīng dǒng.",
+          "english": "Last time, I didn’t understand what I heard.",
+          "context": "Reflecting on a previous listening situation.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "没听懂 (méi tīng dǒng) indicates failure to achieve understanding by listening.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-this-time",
+          "title": "This time: understood",
+          "hanzi": "这一次我明白了。",
+          "pinyin": "Zhè yí cì wǒ míngbai le.",
+          "english": "This time, I understood.",
+          "context": "Contrasting current comprehension with an earlier occasion.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "Sentence-final 了 (le) presents a newly attained state of understanding.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-next-time",
+          "title": "Next time: a suggestion",
+          "hanzi": "下一次我们一起去吧。",
+          "pinyin": "Xià yí cì wǒmen yìqǐ qù ba.",
+          "english": "Let’s go together next time.",
+          "context": "Suggesting a future outing.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "吧 (ba) softens the statement into a suggestion.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-every-time",
+          "title": "Every time: repeated experience",
+          "hanzi": "每一次见到你，我都很开心。",
+          "pinyin": "Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.",
+          "english": "Every time I see you, I’m very happy.",
+          "context": "Talking about recurring encounters.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "每一次 (měi yí cì) and 都 (dōu) form a conventional distributive pattern.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-once-again",
+          "title": "Once again: gratitude",
+          "hanzi": "我想再一次感谢你。",
+          "pinyin": "Wǒ xiǎng zài yí cì gǎnxiè nǐ.",
+          "english": "I want to thank you once again.",
+          "context": "Repeating an expression of thanks.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "再一次 (zài yí cì) modifies 感谢 (gǎnxiè) and expresses repetition.",
+          "provenance": "constructed",
+          "source_ids": []
+        },
+        {
+          "id": "ex-comparison-last-time",
+          "title": "Extra illustration: a particular occasion",
+          "hanzi": "上一次我去了北京。",
+          "pinyin": "Shàng yí cì wǒ qù le Běijīng.",
+          "english": "Last time, I went to Beijing.",
+          "context": "Contrasts identifying an occasion with counting occurrences.",
+          "register": "natural everyday Mandarin",
+          "teaching_note": "上一次 (shàng yí cì) identifies the occasion; compare 我去过北京一次 (Wǒ qù guo Běijīng yí cì), which counts occurrences.",
+          "provenance": "constructed",
+          "source_ids": []
+        }
+      ]
+    },
+    "contrasts": {
+      "items": [
+        {
+          "id": "short-last",
+          "hanzi": "上次",
+          "pinyin": "shàng cì",
+          "meaning_en": "last time",
+          "example": {
+            "hanzi": "上次",
+            "pinyin": "shàng cì",
+            "meaning_en": "last time"
+          },
+          "usage": "Shorter form of 上一次 (shàng yí cì), often conversational.",
+          "limitation": "Longer form can give emphasis to a specific occasion, not a different grammatical meaning."
+        },
+        {
+          "id": "short-this",
+          "hanzi": "这次",
+          "pinyin": "zhè cì",
+          "meaning_en": "this time",
+          "example": {
+            "hanzi": "这次",
+            "pinyin": "zhè cì",
+            "meaning_en": "this time"
+          },
+          "usage": "Shorter form of 这一次 (zhè yí cì), often conversational.",
+          "limitation": "Shortened expressions are not obligatory; full forms are correct."
+        },
+        {
+          "id": "short-next",
+          "hanzi": "下次",
+          "pinyin": "xià cì",
+          "meaning_en": "next time",
+          "example": {
+            "hanzi": "下次",
+            "pinyin": "xià cì",
+            "meaning_en": "next time"
+          },
+          "usage": "Shorter form of 下一次 (xià yí cì), often conversational.",
+          "limitation": "Both are natural; longer expression can be emphatic."
+        },
+        {
+          "id": "short-every",
+          "hanzi": "每次",
+          "pinyin": "měi cì",
+          "meaning_en": "every time",
+          "example": {
+            "hanzi": "每次",
+            "pinyin": "měi cì",
+            "meaning_en": "every time"
+          },
+          "usage": "Shorter form of 每一次 (měi yí cì), often conversational.",
+          "limitation": "This is not a one-occurrence frequency complement when used as a temporal phrase."
+        },
+        {
+          "id": "zai-repetition",
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning_en": "again; one more time",
+          "example": {
+            "hanzi": "再试一次",
+            "pinyin": "zài shì yí cì",
+            "meaning_en": "try once more"
+          },
+          "usage": "Adverb indicating repetition, often before a verb.",
+          "limitation": "Not identical to 在 (zài), despite identical pronunciation."
+        },
+        {
+          "id": "zai-location",
+          "hanzi": "在",
+          "pinyin": "zài",
+          "meaning_en": "at; in; progressive marker",
+          "example": {
+            "hanzi": "我在学习",
+            "pinyin": "Wǒ zài xuéxí",
+            "meaning_en": "I am studying"
+          },
+          "usage": "Marks location or an ongoing action in this example.",
+          "limitation": "Not interchangeable with 再 (zài)."
+        }
+      ],
+      "preference_vs_rule": null
+    },
+    "mistakes": {
+      "items": [
+        {
+          "id": "m-count-vs-occasion",
+          "incorrect_inference": "Treat 去一次 (qù yí cì) and 上一次 (shàng yí cì) as the same syntactic structure.",
+          "correction": "Identify the slot: after a verb, 一次 (yí cì) counts how many times; before a clause, 上一次 (shàng yí cì) can identify when.",
+          "reason": "One is a frequency complement; the other is a temporal noun phrase."
+        },
+        {
+          "id": "m-tone-one",
+          "incorrect_inference": "Write the contextual pronunciation of 一次 as yī cì in tone-marked learning examples.",
+          "correction": "Write 一次 (yí cì) when teaching its ordinary spoken pronunciation; retain 一 (yī) as the dictionary reading of the individual character.",
+          "reason": "一 (yī) becomes yí before fourth tone 次 (cì)."
+        },
+        {
+          "id": "m-zai",
+          "incorrect_inference": "Confuse 再 (zài, again) and 在 (zài, at/in or ongoing action).",
+          "correction": "Use 再试一次 (zài shì yí cì) for “try again” and 我在学习 (Wǒ zài xuéxí) for “I am studying”.",
+          "reason": "They are homophones with different grammatical functions."
+        },
+        {
+          "id": "m-shorter",
+          "incorrect_inference": "Assume 上一次 (shàng yí cì) is incorrect because speakers often say 上次 (shàng cì).",
+          "correction": "Both are correct; the shorter alternative is especially common in conversation.",
+          "reason": "The longer variant can emphasize one particular occasion."
+        },
+        {
+          "id": "m-every-dou",
+          "incorrect_inference": "Treat 都 (dōu) as mandatory after every use of 每一次 (měi yí cì).",
+          "correction": "Learn 每……都…… (měi ... dōu ...) as a highly conventional pattern, not an absolute requirement.",
+          "reason": "Other syntactic configurations are also possible."
+        },
+        {
+          "id": "m-related",
+          "incorrect_inference": "Describe 再来一次 (zài lái yí cì) as a shortened form of 再一次 (zài yí cì).",
+          "correction": "Teach it as a related verb phrase with 来 (lái), not a shortening.",
+          "reason": "The form and syntactic structure are different."
+        }
+      ]
+    },
+    "historical": {
+      "enabled": false,
+      "intro": "",
+      "items": [],
+      "caution": ""
+    },
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-how-many",
+          "kind": "comprehension",
+          "prompt": "In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”?",
+          "choices": [],
+          "answer": "How many times: once.",
+          "explanation": "一次 (yí cì) is a postverbal frequency complement."
+        },
+        {
+          "id": "q-short",
+          "kind": "selection",
+          "prompt": "Choose the common shorter form of 下一次 (xià yí cì).",
+          "choices": [
+            {
+              "hanzi": "下次",
+              "pinyin": "xià cì",
+              "meaning_en": "next time"
+            },
+            {
+              "hanzi": "上次",
+              "pinyin": "shàng cì",
+              "meaning_en": "last time"
+            },
+            {
+              "hanzi": "这次",
+              "pinyin": "zhè cì",
+              "meaning_en": "this time"
+            }
+          ],
+          "answer": "下次 (xià cì).",
+          "explanation": "The initial 下 (xià) marks the following occasion."
+        },
+        {
+          "id": "q-tone",
+          "kind": "comprehension",
+          "prompt": "Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin?",
+          "choices": [],
+          "answer": "Because 次 (cì) has fourth tone, which normally changes 一 (yī) to yí.",
+          "explanation": "Distinguish dictionary pronunciation from contextual tone sandhi."
+        },
+        {
+          "id": "q-zai",
+          "kind": "selection",
+          "prompt": "Which expression means “try one more time”?",
+          "choices": [
+            {
+              "hanzi": "再试一次",
+              "pinyin": "zài shì yí cì",
+              "meaning_en": "try one more time"
+            },
+            {
+              "hanzi": "我在学习",
+              "pinyin": "Wǒ zài xuéxí",
+              "meaning_en": "I am studying"
+            }
+          ],
+          "answer": "再试一次 (zài shì yí cì).",
+          "explanation": "Use 再 (zài) for repetition rather than 在 (zài)."
+        },
+        {
+          "id": "q-produce",
+          "kind": "production",
+          "prompt": "Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).",
+          "choices": [],
+          "answer": "每一次见到你，我都很开心。(Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.)",
+          "explanation": "A temporal every-time phrase and a main clause with 都 (dōu) express recurrence."
+        }
+      ]
+    },
+    "sources": {
+      "items": [
+        {
+          "id": "src-user-report",
+          "claim": "The reviewed report identifies six main expressions from one_time.mp4 and distinguishes them from supplementary examples, shortened alternatives and grammar explanations.",
+          "author": "User-provided linguistic report",
+          "title": "Mandarin Learning Report: 次 (cì) — Times and Occurrences",
+          "publication": "User-supplied reviewed report dated 2026-11-15, based on a 14-second video.",
+          "url": null,
+          "evidence_type": "reviewed user-supplied learning report",
+          "verification_status": "checked_in_previous_draft",
+          "scope_note": "The supplied report is the authoritative content source for this lesson."
+        },
+        {
+          "id": "src-video",
+          "claim": "The six main vocabulary expressions are identified in the reviewed report as extracted directly from one_time.mp4.",
+          "author": "Not specified",
+          "title": "one_time.mp4",
+          "publication": "14-second lesson video identified in the reviewed report.",
+          "url": null,
+          "evidence_type": "source video identified in reviewed report",
+          "verification_status": "checked_in_previous_draft",
+          "scope_note": "Only the six main expressions are attributed to the video. Other examples and explanations are supplementary."
+        }
+      ],
+      "example_provenance": "The six primary sentences and the additional comparison sentence are supplementary examples in the reviewed report, not video quotations."
+    },
+    "extensions": {
+      "intro": "Structured, report-derived supplementary material: contextual component glossary, conversational mapping, syntactic classification, short practice phrases, pronunciation conditions, and extraction counts. All six main expressions are reported video-derived, whereas examples and explanations are supplementary.",
+      "items": [
+        {
+          "id": "ext-components",
+          "title": "Constituent vocabulary and contextual roles",
+          "category": "constituent_vocabulary",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "The seven constituent vocabulary items from the report are supplementary lexical information rather than graphical character decomposition.",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Character + pinyin",
+                "English in this context",
+                "Role"
+              ],
+              "rows": [
+                [
+                  "一 (yī)",
+                  "one",
+                  "numeral; pronounced yí before 次 (cì)"
+                ],
+                [
+                  "次 (cì)",
+                  "time; occurrence",
+                  "verbal measure word"
+                ],
+                [
+                  "上 (shàng)",
+                  "previous; preceding",
+                  "contextual modifier; separately also “up/above”"
+                ],
+                [
+                  "这 (zhè)",
+                  "this",
+                  "demonstrative"
+                ],
+                [
+                  "下 (xià)",
+                  "next; following",
+                  "contextual modifier; separately also “down/below”"
+                ],
+                [
+                  "每 (měi)",
+                  "every; each",
+                  "distributive determiner"
+                ],
+                [
+                  "再 (zài)",
+                  "again; once more",
+                  "adverb"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ext-conversational",
+          "title": "Full expressions and conversational shortenings",
+          "category": "conversational_alternatives",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "Explicitly preserve the four full-to-short pairings from report section 4 as a typed one-to-one mapping.",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Full expression + pinyin",
+                "Shorter form + pinyin",
+                "English"
+              ],
+              "rows": [
+                [
+                  "上一次 (shàng yí cì)",
+                  "上次 (shàng cì)",
+                  "last time"
+                ],
+                [
+                  "这一次 (zhè yí cì)",
+                  "这次 (zhè cì)",
+                  "this time"
+                ],
+                [
+                  "下一次 (xià yí cì)",
+                  "下次 (xià cì)",
+                  "next time"
+                ],
+                [
+                  "每一次 (měi yí cì)",
+                  "每次 (měi cì)",
+                  "every time"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ext-grammar-roles",
+          "title": "Six expressions by grammatical function",
+          "category": "syntactic_classification",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "The table preserves the report’s explicit six-way distinction not representable as a single grammatical role for 次 (cì).",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Expression + pinyin",
+                "Grammatical role",
+                "Function"
+              ],
+              "rows": [
+                [
+                  "去一次 (qù yí cì)",
+                  "verb + frequency complement",
+                  "count action occurrences"
+                ],
+                [
+                  "上一次 (shàng yí cì)",
+                  "temporal noun phrase",
+                  "identify previous occasion"
+                ],
+                [
+                  "这一次 (zhè yí cì)",
+                  "temporal noun phrase",
+                  "identify this occasion"
+                ],
+                [
+                  "下一次 (xià yí cì)",
+                  "temporal noun phrase",
+                  "identify following occasion"
+                ],
+                [
+                  "每一次 (měi yí cì)",
+                  "quantified temporal phrase",
+                  "refer to each occurrence"
+                ],
+                [
+                  "再一次 (zài yí cì)",
+                  "repetition adverbial",
+                  "indicate repetition"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ext-mini-examples",
+          "title": "Short action-counting expressions",
+          "category": "phrase_examples",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "Preserve all four short verb-based grammar examples from section 5.1; they are not complete sentences.",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Expression + pinyin",
+                "English"
+              ],
+              "rows": [
+                [
+                  "去一次 (qù yí cì)",
+                  "go once"
+                ],
+                [
+                  "看一次 (kàn yí cì)",
+                  "watch/see once"
+                ],
+                [
+                  "试一次 (shì yí cì)",
+                  "try once"
+                ],
+                [
+                  "再试一次 (zài shì yí cì)",
+                  "try one more time"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ext-tone-sandhi",
+          "title": "Tone sandhi reference for 一 (yī)",
+          "category": "pronunciation_reference",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "A multi-condition table for contextual pronunciation cannot be represented by a single headword reading; preserve it separately.",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Context",
+                "Pronunciation",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Before fourth tone",
+                  "yí",
+                  "一次 (yí cì)"
+                ],
+                [
+                  "Before first-, second-, or third-tone syllables",
+                  "yì",
+                  "一天 (yì tiān)"
+                ],
+                [
+                  "Standalone, counting, or number naming",
+                  "yī",
+                  "一 (yī)"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ext-intake-summary",
+          "title": "Extraction and supplement counts",
+          "category": "source_inventory",
+          "classification": "established",
+          "visibility": "learner",
+          "verification_status": "verified",
+          "source_ids": [
+            "src-user-report"
+          ],
+          "report_ids": [
+            "report-01"
+          ],
+          "rationale": "Explicitly preserve the original report counts and attribution; these are report counts, not global unique-item counts.",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "Category",
+                "Count",
+                "Source"
+              ],
+              "rows": [
+                [
+                  "Main vocabulary expressions",
+                  "6",
+                  "Reported video extraction"
+                ],
+                [
+                  "Constituent vocabulary items",
+                  "7",
+                  "Analysis of extracted expressions"
+                ],
+                [
+                  "Complete example sentences (main set)",
+                  "6",
+                  "Added teaching examples"
+                ],
+                [
+                  "Conversational shortened alternatives",
+                  "4",
+                  "Supplementary analysis"
+                ],
+                [
+                  "Related verb phrase",
+                  "1",
+                  "Supplementary analysis"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "report_intake": {
+    "reports": [
+      {
+        "id": "report-01",
+        "title": "Mandarin Learning Report: 次 (cì) — Times and Occurrences",
+        "source_type": "user_report",
+        "source_locator": "one_time.mp4 (14 seconds; cited by user report)",
+        "received_date": "2026-11-15",
+        "notes": "User-reviewed and validated report: six expressions are video-derived; example sentences, conversational alternatives, and grammar explanations are supplementary."
+      }
+    ],
+    "material": [
+      {
+        "id": "material-01",
+        "report_id": "report-01",
+        "source_location": "Section 1",
+        "content_summary": "Six video-reported core expressions and their Mandarin readings and English meanings.",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "vocabulary",
+            "item_id": "once"
+          },
+          {
+            "section": "vocabulary",
+            "item_id": "last-time"
+          },
+          {
+            "section": "vocabulary",
+            "item_id": "this-time"
+          },
+          {
+            "section": "vocabulary",
+            "item_id": "next-time"
+          },
+          {
+            "section": "vocabulary",
+            "item_id": "every-time"
+          },
+          {
+            "section": "vocabulary",
+            "item_id": "once-again"
+          }
+        ],
+        "decision_note": "Mapped to priority A vocabulary; provenance noted per item."
+      },
+      {
+        "id": "material-02",
+        "report_id": "report-01",
+        "source_location": "Section 2",
+        "content_summary": "Six constructed teaching sentences and sentence-specific grammar notes.",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "examples",
+            "item_id": "ex-once"
+          },
+          {
+            "section": "examples",
+            "item_id": "ex-last-time"
+          },
+          {
+            "section": "examples",
+            "item_id": "ex-this-time"
+          },
+          {
+            "section": "examples",
+            "item_id": "ex-next-time"
+          },
+          {
+            "section": "examples",
+            "item_id": "ex-every-time"
+          },
+          {
+            "section": "examples",
+            "item_id": "ex-once-again"
+          }
+        ],
+        "decision_note": "Marked constructed rather than quoted from video."
+      },
+      {
+        "id": "material-03",
+        "report_id": "report-01",
+        "source_location": "Section 3",
+        "content_summary": "Seven constituent characters, meanings, and contextual grammatical roles.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-components"
+          }
+        ],
+        "decision_note": "Preserved as constituent vocabulary, not glyph components."
+      },
+      {
+        "id": "material-04",
+        "report_id": "report-01",
+        "source_location": "Section 4",
+        "content_summary": "Four shortened conversational alternatives.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-conversational"
+          }
+        ],
+        "decision_note": "Explicit full-to-short pair mapping; short forms additionally in vocabulary."
+      },
+      {
+        "id": "material-05",
+        "report_id": "report-01",
+        "source_location": "Section 4 related expression",
+        "content_summary": "Related verb phrase 再来一次 (zài lái yí cì).",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "vocabulary",
+            "item_id": "do-one-more-time"
+          }
+        ],
+        "decision_note": "Kept separate from shortened expressions."
+      },
+      {
+        "id": "material-06",
+        "report_id": "report-01",
+        "source_location": "Section 5.1",
+        "content_summary": "Four short action-counting examples.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-mini-examples"
+          }
+        ],
+        "decision_note": "Short phrases preserved separately from full sentences."
+      },
+      {
+        "id": "material-07",
+        "report_id": "report-01",
+        "source_location": "Section 5.2",
+        "content_summary": "Syntactic categories distinguishing frequency complement, time phrase, quantified phrase, and repetition adverbial.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-grammar-roles"
+          }
+        ],
+        "decision_note": "Also explained by construction items."
+      },
+      {
+        "id": "material-08",
+        "report_id": "report-01",
+        "source_location": "Section 5.2 comparison",
+        "content_summary": "Contrasting example 上一次我去了北京 (Shàng yí cì wǒ qù le Běijīng).",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "examples",
+            "item_id": "ex-comparison-last-time"
+          }
+        ],
+        "decision_note": "Added constructed example beyond six main teaching sentences."
+      },
+      {
+        "id": "material-09",
+        "report_id": "report-01",
+        "source_location": "Section 5.3",
+        "content_summary": "Tone sandhi of 一 (yī) in three contexts.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-tone-sandhi"
+          }
+        ],
+        "decision_note": "Tone-sandhi conditions retained in a dedicated structured extension."
+      },
+      {
+        "id": "material-10",
+        "report_id": "report-01",
+        "source_location": "Section 5.4",
+        "content_summary": "Distinction between 再 (zài) and 在 (zài), with examples.",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "contrasts",
+            "item_id": "zai-repetition"
+          },
+          {
+            "section": "contrasts",
+            "item_id": "zai-location"
+          }
+        ],
+        "decision_note": "Preserved homophone contrast, roles and example readings."
+      },
+      {
+        "id": "material-11",
+        "report_id": "report-01",
+        "source_location": "Section 5.5",
+        "content_summary": "Distributive 每……都…… (měi ... dōu ...) pattern and non-obligatoriness caveat.",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "constructions",
+            "item_id": "every-dou"
+          }
+        ],
+        "decision_note": "Grammar pattern with a natural example and scope caution."
+      },
+      {
+        "id": "material-12",
+        "report_id": "report-01",
+        "source_location": "Section 6",
+        "content_summary": "Validation and provenance totals for the five categories.",
+        "handling": "extension",
+        "destinations": [
+          {
+            "section": "extensions",
+            "item_id": "ext-intake-summary"
+          }
+        ],
+        "decision_note": "Retained the exact reported counts without attributing supplements to video."
+      },
+      {
+        "id": "material-13",
+        "report_id": "report-01",
+        "source_location": "Lesson goal / summary",
+        "content_summary": "Contrast counting events, identifying occasions, and marking repetition.",
+        "handling": "mapped",
+        "destinations": [
+          {
+            "section": "overview",
+            "item_id": "meaning-occurrences"
+          },
+          {
+            "section": "overview",
+            "item_id": "meaning-occasion"
+          },
+          {
+            "section": "overview",
+            "item_id": "meaning-repetition"
+          }
+        ],
+        "decision_note": "Organized as overview meaning map."
+      }
+    ]
+  }
+}
