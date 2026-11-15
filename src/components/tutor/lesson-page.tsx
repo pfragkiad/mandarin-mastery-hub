@@ -235,9 +235,10 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
 
   const pinyinToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>;
-  const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
-    <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-describedby="lesson-hints-help"/>
-    <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
+  // compact = the floating capsule's short label (its helper line is the label's title there).
+  const hintsToggle = (compact: boolean) => <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
+    <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-label={compact ? 'Character hints' : undefined} aria-describedby={compact ? undefined : 'lesson-hints-help'}/>
+    <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
   </label>;
 
   return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
@@ -264,7 +265,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
             narrow layout a pill also opens its collapsed section before the jump. */}
         {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}</a>)}
         {!narrow && pinyinToggle}
-        {!narrow && hintsToggle}
+        {!narrow && hintsToggle(false)}
       </nav>
       <div className="lesson-main">
         {sections.map(s => {
@@ -284,7 +285,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>
   </div>
   {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
-  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{pinyinToggle}{hintsToggle}</div>}
+  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{pinyinToggle}{hintsToggle(true)}</div>}
   </LessonHintsProvider>;
 }
 

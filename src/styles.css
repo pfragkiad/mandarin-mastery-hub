@@ -3712,7 +3712,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-page.is-narrow .lesson-vocab { padding: 12px; }
 .lesson-page.is-narrow .lesson-stack { gap: 10px; }
 .lesson-page.is-narrow .lesson-card { padding: 14px; border-radius: 10px; }
-.lesson-page.is-narrow .lesson-card p { font-size: 15px; }
+.lesson-page.is-narrow .lesson-card p:not(.sentence-hanzi) { font-size: 15px; }
 .lesson-page.is-narrow .lesson-choices { flex-direction: column; gap: 8px; }
 .lesson-page.is-narrow .lesson-choice { width: 100%; min-width: 0; min-height: 48px; padding: 10px 14px; border-radius: 10px; }
 .lesson-page.is-narrow :is(.lesson-filter, .lesson-question-actions) [data-ui-button] { min-height: 44px; padding-inline: 16px; border-radius: 999px; }
@@ -3721,11 +3721,11 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   .lesson-page.is-narrow .lesson-grid.lesson-vocab-grid { grid-template-columns: minmax(0, 1fr); }
   .lesson-page.is-narrow .lesson-headword-glyph { width: 80px; height: 80px; font-size: 52px; }
 }
-.lesson-float-tools { position: fixed; right: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 26; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.lesson-float-tools { position: fixed; right: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 26; display: flex; align-items: center; gap: 2px; padding: 4px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); box-shadow: var(--shadow-popover); }
 @media (max-width: 850px) { .lesson-float-tools { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
-.lesson-float-tools .lesson-pinyin-toggle { margin: 0; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow-popover); }
-.lesson-float-tools .lesson-hints-toggle { margin: 0; min-height: 44px; padding: 0 16px 0 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); box-shadow: var(--shadow-popover); }
-.lesson-float-tools .lesson-hints-toggle small { display: none; }
+.lesson-float-tools .lesson-pinyin-toggle { margin: 0; height: 40px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; font-size: 14px; }
+.lesson-float-tools .lesson-pinyin-toggle:hover { background: color-mix(in oklch, var(--primary) 10%, transparent); }
+.lesson-float-tools .lesson-hints-toggle { margin: 0; height: 40px; gap: 8px; padding: 0 12px 0 10px; border-left: 1px solid var(--border); border-radius: 0 999px 999px 0; }
 .lesson-float-tools .lesson-hints-toggle strong { font-size: 14px; font-weight: 500; }
 
 /* Comfortable on wide lesson pages: the same layout with larger text and glyphs (the narrow
@@ -3751,7 +3751,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
   html[data-display-size='comfortable'] .lesson-facts dt { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-facts dd, html[data-display-size='comfortable'] .lesson-facts .pinyin { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-card { padding: 20px; }
-  html[data-display-size='comfortable'] .lesson-card p, html[data-display-size='comfortable'] .lesson-card-title { font-size: 16px; }
+  html[data-display-size='comfortable'] .lesson-card p:not(.sentence-hanzi), html[data-display-size='comfortable'] .lesson-card-title { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-register { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-card .lesson-footnote { font-size: 11px; }
   html[data-display-size='comfortable'] .lesson-term .lesson-hanzi { font-size: 28px; }
