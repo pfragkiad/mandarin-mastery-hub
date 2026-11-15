@@ -8,7 +8,7 @@ import { SourceInfo } from './source-info';
  *  right), then the pinyin line, then the English meaning. Stacking keeps a long phrase from squeezing the translation
  *  into a one-letter-wide column, and the glyph scales down to fit the panel so
  *  a full sentence still reads on one line. */
-export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, readingsInMeaning = false, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, formSwitch, glyphClassName = '', pill, source }: {
+export function RecordDetailTitle({ hanzi, glyphContent, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, readingsInMeaning = false, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, formSwitch, glyphClassName = '', pill, source }: {
   /** Practice-style form switch (RadicalForms layout="switch") shown on its own row below the
    *  meaning, while the single hanzi above shows the selected form. Radical detail cards use it. */
   formSwitch?: ReactNode;
@@ -29,6 +29,8 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
   /** Radical family tiles: when given they replace the single hanzi, sitting between pinyin and meaning (as in Practice). */
   forms?: ReactNode;
   hanzi: string;
+  /** Replaces the plain hanzi text inside the main glyph (e.g. phrase characters wrapped for hover pairing). */
+  glyphContent?: ReactNode;
   pinyin?: string | null;
   meaning?: string | null;
   script?: CharacterScript | undefined;
@@ -49,7 +51,7 @@ export function RecordDetailTitle({ hanzi, pinyin, meaning, script, audio, chart
       {/* Glyph row: the main hanzi (or form tiles) with the record's source ⓘ beside it and the
           identity pills pushed to the far right, so they keep the heading's top-right corner. */}
       <div className="catalog-detail-glyph-row">
-        {forms ?? <strong lang="zh-CN" className={[traditional ? 'traditional-character' : '', glyphClassName].filter(Boolean).join(' ') || undefined}>{hanzi}</strong>}
+        {forms ?? <strong lang="zh-CN" className={[traditional ? 'traditional-character' : '', glyphClassName].filter(Boolean).join(' ') || undefined}>{glyphContent ?? hanzi}</strong>}
         {source && <SourceInfo inline className="detail-footnote">{source}</SourceInfo>}
         {/* All header pills share one right-aligned group so Traditional sits tight against the kind pill. */}
         {(traditional || pill) && <span className="catalog-detail-pills">
