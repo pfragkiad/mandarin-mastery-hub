@@ -406,6 +406,11 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
 .stroke-pill svg { flex-shrink: 0; }
 .stroke-pill.is-on { border-color: color-mix(in srgb, var(--primary) 45%, transparent); background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary); }
 .stroke-pill.is-on:hover { background: color-mix(in srgb, var(--primary) 18%, transparent); color: var(--primary); }
+/* Push buttons (aria-pressed switches like Arrows/Next stroke/Names): only the pressed
+   state paints a background. The ghost button's hover tint otherwise lingers on the
+   focused button after a click (and as sticky hover on touch), looking like "on".
+   Hover/focus may still change text colour; the background stays transparent while off. */
+button[data-ui-button][aria-pressed='false']:is(:hover, :focus, :focus-visible, :active) { background-color: transparent; }
 .writing-tool-tabbed { align-self: start; }
 .practice-mode-tabs { margin-bottom: 18px; }
 .writing-tool .writer-display { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
