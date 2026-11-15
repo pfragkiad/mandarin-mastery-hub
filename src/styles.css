@@ -3663,6 +3663,10 @@ html[data-display-size='comfortable'] .word-card[data-card-head-step='2'] { --ca
 .word-card[data-card-foot-step='2'] { --card-foot-size: 9px; }
 html[data-display-size='comfortable'] .word-card[data-card-foot-step='1'] { --card-foot-size: 14px; }
 html[data-display-size='comfortable'] .word-card[data-card-foot-step='2'] { --card-foot-size: 13px; }
+/* Comfortable forces every UI button's font with !important (html[data-display-size='comfortable']
+   [data-ui-button]), so the footer step answers in the same voice — scoped to the footer's own
+   controls, so the card face and its text are never touched. */
+html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card-bottom [data-ui-button] { font-size: var(--card-foot-size) !important; }
 
 /* Radical pill abbreviation: the full "Radical #N" label shows by default; when the card's top
    row is too narrow for it, useCardTopRowFit measured that the row wraps and that the
