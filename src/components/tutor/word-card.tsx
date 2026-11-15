@@ -17,6 +17,7 @@ import { TileSpeaker } from './tile-speaker';
 import { SoundChartLink } from './sound-chart-link';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
 import { SentenceExample } from './sentence-example';
+import { SentenceSection } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { useSideFit } from './use-side-fit';
 
@@ -42,7 +43,11 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
       {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collection}</dd></div>}
     </dl>
-    {word.sentence && <SentenceExample sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} />}
+    {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
+        sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
+    {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
+      {word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} /></div>}
+    </SentenceSection>}
     <VocabularyDecomposition word={word}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
     <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>

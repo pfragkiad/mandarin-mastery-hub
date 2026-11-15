@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { MessageSquareText, Type } from 'lucide-react';
+import { Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource } from '@/lib/glyph-usage';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
+import { SentenceSection } from './sentence-section';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -36,7 +37,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const radicalParents = useMemo(() => kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional, familyGlyph) : [], [entry, kind, familyGlyph, preferences.includeTraditional, catalogVersion]);
   const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
   // No sourced parent characters (or the component sidecar is still loading): hide the whole
-  // "In a character" section (owner choice), like "In a sentence".
+  // "In a character" section (owner choice).
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
@@ -59,13 +60,11 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       </span>
     </div>)}</div>
   </section>;
-  // No recorded sentence or word example: the whole "In a sentence" section is hidden (owner choice),
-  // unlike other empty blocks that keep their label and a note.
-  if (!examples.length) return null;
-  return <section className="glyph-usage-section" aria-label="In a sentence">
-    <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
+  // "In a sentence" always shows for characters, even with no recorded example, so
+  // "Find more examples" (external search of the exact hanzi) is always reachable.
+  return <SentenceSection hanzi={entry.hanzi}>
     {examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
       <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} />
     </div>)}
-  </section>;
+  </SentenceSection>;
 }
