@@ -15,4 +15,5 @@
 - [ ] Lessons: "Lessons" under Learn; /lessons index + /lessons/<lesson ID> pages rendered from the lesson JSON (Markdown not needed)
 - [ ] Lessons: hanzi link to Glyphs/Vocabulary only on an exact written-form match; interactive practice questions
 - [ ] Lessons: not only character lessons — word, phrase or category-only lessons render without a character headword
-- [ ] Lessons: a character's details card lists the lessons about that exact character, under a "Lessons" heading with a book icon in the same place as the "In a sentence" icon
+- [ ] Lessons: a character's details card lists the lessons about that exact character (Lessons section, book icon)
+- [ ] Lessons: library cards with a lesson show a book icon in the top indicator row beside the "In a sentence"/decomposition icons
