@@ -87,7 +87,7 @@ export type LessonDocument = {
 };
 
 /* ---------- Pure helpers (tested directly) ---------- */
-type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson?: Record<string, unknown>; metadata?: Record<string, unknown>; headword?: Record<string, unknown> | null };
+type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson?: Record<string, unknown> | undefined; metadata?: Record<string, unknown> | undefined; headword?: Record<string, unknown> | null | undefined };
 const str = (value: unknown) => (typeof value === 'string' ? value : '');
 const strList = (value: unknown) => (Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []);
 
