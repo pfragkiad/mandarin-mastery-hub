@@ -7,6 +7,7 @@ import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 import type { AudioRequest } from '@/lib/audio';
 import { ExamplePronunciation } from './example-pronunciation';
+import { HintChar, useLessonHints } from './lesson-hints';
 import { alignSentencePinyin, isHanziChar, splitPinyinTokens } from '@/lib/sentence-align';
 
 /**
@@ -18,9 +19,13 @@ import { alignSentencePinyin, isHanziChar, splitPinyinTokens } from '@/lib/sente
  * pairing from alignSentencePinyin. The pairing is presentation only and fails
  * closed — when the recorded pinyin token count does not match the hanzi count,
  * the sentence renders exactly as before with no pairing.
+ *
+ * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
+ * links while hints are on, and plain text while they are off; pairing works either way.
  */
 export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
   const { preferences } = useWorkspace();
+  const hints = useLessonHints();
   // Pairing state: the index of the hovered/focused pair, or null. Both sides
   // (character and syllable) set and clear it, so leaving either removes the border.
   const [hoveredPair, setHoveredPair] = useState<number | null>(null);
@@ -54,6 +59,10 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
     </span>}
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const pair = pairByChar.get(i);
+      const pairProps = pair !== undefined ? pairHandlers(pair) : {};
+      if (hints) return hints.enabled && isHanziChar(ch)
+        ? <HintChar key={i} glyph={ch} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>
+        : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...pairProps}>{ch}</span>;
       const dest = isHanziChar(ch) ? libraryDestination(ch, preferences.includeTraditional) : undefined;
       return dest
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
