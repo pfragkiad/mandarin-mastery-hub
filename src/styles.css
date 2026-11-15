@@ -1486,8 +1486,11 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .library-page .catalog-workspace, .library-page .vocabulary-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
 /* Compact cards drop to fewer per row before Details / Trace / Recall and the bookmark
    (~265px with the card padding) stop fitting on one line, with a little slack for wider fonts. */
-.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 20px; }
-.library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 20px; }
+/* Container-driven: when the results area is too narrow for two such cards, each track
+   shrinks to half the width instead, so the grid goes straight from two cards to more and
+   never drops to a single over-wide Compact card. */
+.library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(280px,calc((100% - 20px) / 2)),1fr)); gap: 20px; }
+.library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(auto-fit,minmax(min(300px,calc((100% - 20px) / 2)),1fr)); gap: 20px; }
 @media(max-width:580px) {
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
   .detail-sheet { top: 16px; width: calc(100% - 24px); max-height: calc(100dvh - 32px); }
@@ -3048,7 +3051,9 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
 .library-page .word-card .word-card-bottom { flex-wrap: nowrap; }
 .library-page .word-card .card-footer-actions { flex: 1 1 0; flex-wrap: wrap; row-gap: 6px; min-width: 0; }
 .library-page .word-card .card-footer-bookmark { flex-shrink: 0; align-self: flex-end; }
-@media (max-width: 580px) {
+/* Up to 640px Compact cards sit two per row at 250–285px, so the buttons tighten enough
+   for Details / Trace / Recall and the bookmark to share one line there. */
+@media (max-width: 640px) {
   .library-page .word-card .card-footer-actions button, .library-page .word-card .card-footer-actions a { width: auto; padding: 0 5px; font-size: 10px; }
   .library-page .word-card .card-footer-bookmark { width: 22px; }
 }
@@ -3379,6 +3384,9 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 }
 /* Bookmark: an unlabelled icon button at the right end of the Comfortable Details / Trace /
    Recall row, as tall as those buttons (Compact keeps it as the last footer icon). */
+/* Recall + bookmark (.card-actions-tail) never split: the group takes the rest of the row,
+   so the bookmark stays at its right end on one line or beside Recall on the second. */
+.library-page .word-card .card-labelled-actions .card-actions-tail { display: flex; flex: 1 0 auto; align-items: center; gap: inherit; min-width: 0; }
 .library-page .word-card .card-labelled-actions .card-bookmark-icon { margin-left: auto; width: 40px; min-width: 40px; padding: 0; }
 .library-page .word-card .card-labelled-actions .card-bookmark-icon svg { width: 19px; height: 19px; }
 /* A stacked Comfortable body has the whole card width, so its translation is never clamped. */
@@ -3386,7 +3394,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 /* Phones: tighter labelled buttons so Details / Trace / Recall and the bookmark share one row. */
 @media (max-width: 500px) {
   .library-page .word-card .card-labelled-actions { flex-wrap: nowrap; gap: 6px; }
-  .library-page .word-card .card-labelled-actions > :not(.card-bookmark-icon) { padding-inline: 9px; gap: 5px; min-width: 0; }
+  .library-page .word-card .card-labelled-actions [data-ui-button]:not(.card-bookmark-icon) { padding-inline: 9px; gap: 5px; min-width: 0; }
 }
 
 /* Detail facts: the rank value is a stat value like Strokes/Radical, so it takes the dd's size
