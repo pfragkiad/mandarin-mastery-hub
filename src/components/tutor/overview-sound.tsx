@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,10 @@ import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneM
  * the syllable opens it in the Sound chart. Neutral tones (never recorded) are not
  * offered. Phones (≤700px) show it as a collapsible row like the other random cards:
  * `open`/`onToggle` come from DiscoveryRowList; the row line shows the syllable and how
- * many tones are recorded, and the speaker + tone chips are its expandable detail.
+ * many tones are recorded, and the speaker + tone chips are its expandable detail. When the
+ * speaker + chips fit whole on the row line beside the syllable they replace the "N recorded
+ * tones" text there (and the open detail then drops its duplicate copy); `lineTones` is decided
+ * by measurement (see useLineTonesFit), never by a guessed width.
  */
 export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open?: boolean; onToggle?: () => void }) {
   const { preferences } = useWorkspace();
@@ -36,9 +39,16 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
   const tones = data && syllable ? recordedTones(data, syllable) : [];
   const shuffle = () => { if (!data) return; player.stop(); setSyllable(randomRecordedSyllable(data, syllable?.base)); };
   const playAll = () => { if (syllable) void player.sequence(tones.map(t => sound(syllable.base, t))); };
+  const sectionRef = useRef<HTMLElement>(null);
+  const lineTones = useLineTonesFit(sectionRef, `${syllable?.base ?? ''}|${tones.join('')}`);
+  const countText = tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`;
+  const toneButtons = (className: string) => syllable ? tones.map(t => {
+    const id = sound(syllable.base, t).id;
+    return <button key={t} type="button" className={`${className}${player.playing === id ? ' is-playing' : ''}`} aria-label={`Play ${toneMark(syllable.base, t)}, tone ${t}`} aria-pressed={player.playing === id} onClick={() => void player.play(sound(syllable.base, t))}>{toneMark(syllable.base, t)}</button>;
+  }) : null;
 
   return (
-    <section className={`discovery-tile discovery-sound${open ? ' is-open' : ''}`} aria-label={`Sounds: ${count ?? '…'} recordings`}>
+    <section ref={sectionRef} className={`discovery-tile discovery-sound${open ? ' is-open' : ''}${lineTones ? ' has-line-tones' : ''}`} aria-label={`Sounds: ${count ?? '…'} recordings`}>
       <div className="discovery-tile-top">
         <Link to="/pinyin" className="discovery-tile-heading" aria-label="Open the Pinyin sound chart">
           <span className="stat-icon" aria-hidden="true"><Volume2/></span>
@@ -49,7 +59,11 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
         </Link>
         <DiscoveryRowToggle open={open} onToggle={onToggle} controls="discovery-body-sound" icon={<Volume2/>} label="Sounds" count={count}
           pick={syllable ? <span className="discovery-row-syllable">{syllable.base}</span> : failed ? 'Sounds could not load' : 'Loading sounds…'}
-          line={syllable ? <span className="discovery-row-meaning">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span> : undefined}/>
+          line={syllable && !lineTones ? <span className="discovery-row-meaning">{countText}</span> : undefined}
+          lineAction={syllable ? <span className={`discovery-row-tones${lineTones ? '' : ' is-measuring'}`} role="group" aria-label={`Tones of ${syllable.base}`} aria-hidden={lineTones ? undefined : true}>
+            <Button variant="ghost" size="icon" aria-label={`Play every recorded tone of ${syllable.base}`} title="Play all tones · Recording" tabIndex={lineTones ? undefined : -1} onClick={player.sequencing ? player.stop : playAll}><Volume2/></Button>
+            {toneButtons('discovery-sound-tone')}
+          </span> : undefined}/>
         <Button variant="ghost" size="icon" title="Show another random sound" aria-label="Show another random sound" onClick={shuffle} disabled={!syllable}>
           <Shuffle />
         </Button>
@@ -59,7 +73,7 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
       {syllable ? (
         <div className="discovery-tile-record" aria-live="polite">
           <div className="discovery-record-pinyin">
-            <span className="discovery-sound-count">{tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`}</span>
+            <span className="discovery-sound-count">{countText}</span>
             <Button variant="ghost" size="icon" aria-label={`Play every recorded tone of ${syllable.base}`} title="Play all tones · Recording" onClick={player.sequencing ? player.stop : playAll}>
               <Volume2 />
             </Button>
@@ -68,10 +82,7 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
             <strong className="discovery-sound-syllable">{syllable.base}</strong>
           </Link>
           <div className="discovery-sound-tones" role="group" aria-label={`Tones of ${syllable.base}`}>
-            {tones.map(t => {
-              const id = sound(syllable.base, t).id;
-              return <button key={t} type="button" className={`discovery-sound-tone${player.playing === id ? ' is-playing' : ''}`} aria-label={`Play ${toneMark(syllable.base, t)}, tone ${t}`} aria-pressed={player.playing === id} onClick={() => void player.play(sound(syllable.base, t))}>{toneMark(syllable.base, t)}</button>;
-            })}
+            {toneButtons('discovery-sound-tone')}
           </div>
         </div>
       ) : (
@@ -85,4 +96,33 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
       </div>
     </section>
   );
+}
+
+/**
+ * Phone Sounds row: do the speaker + tone chips fit whole on the row line beside the syllable?
+ * The chips are always rendered in the line (out of flow and invisible while they do not fit,
+ * class is-measuring), so their width is read the same either way and the answer never flips
+ * back and forth. Re-checks on resize, font loads and a new syllable (`key`). Wide screens hide
+ * the row entirely (zero widths), which reads as "does not fit" and changes nothing there.
+ */
+function useLineTonesFit(sectionRef: React.RefObject<HTMLElement | null>, key: string) {
+  const [fits, setFits] = useState(false);
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const pick = section?.querySelector<HTMLElement>('.discovery-row-pick');
+    if (!section || !pick) return;
+    const measure = () => {
+      const text = pick.querySelector<HTMLElement>('.discovery-row-pick-text');
+      const chips = pick.querySelector<HTMLElement>('.discovery-row-tones');
+      if (!text || !chips || pick.clientWidth === 0) { setFits(false); return; }
+      const gap = parseFloat(getComputedStyle(pick).columnGap) || 0;
+      setFits(chips.offsetWidth > 0 && text.offsetWidth + gap + chips.offsetWidth <= pick.clientWidth);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(pick);
+    document.fonts?.addEventListener('loadingdone', measure);
+    return () => { observer.disconnect(); document.fonts?.removeEventListener('loadingdone', measure); };
+  }, [sectionRef, key]);
+  return fits;
 }

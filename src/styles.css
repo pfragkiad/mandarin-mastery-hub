@@ -847,7 +847,7 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
 .discovery-bookmark svg { width: 22px; height: 22px; }
 /* Phone row parts (see "Start random rows" below); wider screens show the full cards, and the
    body wrapper vanishes from layout so its children stay on the card's subgrid rows. */
-.discovery-row-main, .discovery-row-chevron, .discovery-row-audio { display: none; }
+.discovery-row-main, .discovery-row-chevron, .discovery-row-audio, .discovery-row-tones { display: none; }
 .discovery-tile-body { display: contents; }
 .overview-record-link { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--foreground); min-width: 0; }
 .overview-record-link strong,.overview-record-link h2 { transition: color .18s ease; }
@@ -3160,6 +3160,14 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-audio > button { width: 28px; height: 28px; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-audio > button svg { width: 16px; height: 16px; }
   .discovery-tile.is-open .discovery-row-audio { display: none; }
+  /* Sounds row: speaker + tone chips replace "N recorded tones" when they fit whole (overview-sound.tsx
+     useLineTonesFit); while measuring they sit out of flow and invisible. The open detail then drops its copy. */
+  .discovery-row-tones { display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; pointer-events: auto; }
+  .discovery-row-tones.is-measuring { position: absolute; visibility: hidden; pointer-events: none; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-tones > button:first-child { width: 28px; height: 28px; margin-right: 2px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-row-tones > button:first-child svg { width: 16px; height: 16px; }
+  .discovery-row-tones > .discovery-sound-tone { min-height: 24px; padding: 0 8px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-sound.has-line-tones .discovery-tile-record { display: none; }
   .discovery-row-chevron { display: block; width: 18px; height: 18px; flex-shrink: 0; color: var(--muted-foreground); pointer-events: none; transition: transform .18s ease; }
   .discovery-tile.is-open .discovery-row-chevron { transform: rotate(180deg); }
   /* Open row: the detail sits under the row text (icon 54px + 14px gap); the hanzi is
