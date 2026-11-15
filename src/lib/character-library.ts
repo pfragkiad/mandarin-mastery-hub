@@ -98,11 +98,11 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   // "Include lower ranks" widens a rank group into rank 1..group.max; unranked
   // records have no rank and stay out, and Unranked itself has nothing below it.
   const usageGroup = usage && kind ? usageGroups(kind).find(group => group.value === usage) : undefined;
-  const cumulativeUsage = Boolean(usageUpTo && usageGroup && usageGroup.value !== UNRANKED && Number.isFinite(usageGroup.max));
+  const usageMax = usageUpTo && usageGroup && usageGroup.value !== UNRANKED && Number.isFinite(usageGroup.max) ? usageGroup.max : null;
   const matchesUsage = (entry: LibraryEntry) => {
     if (!usage || !kind) return true;
     const rank = usageRank(entry, kind, includeTraditional);
-    return cumulativeUsage ? rank !== null && rank <= usageGroup.max : usageGroupFor(kind, rank)?.value === usage;
+    return usageMax !== null ? rank !== null && rank <= usageMax : usageGroupFor(kind, rank)?.value === usage;
   };
   // "Include fewer strokes" widens an exact stroke count into 1..count.
   const matchesStrokes = (entry: LibraryEntry) => !strokeCount || (strokesUpTo ? entry.strokes !== undefined && entry.strokes <= Number(strokeCount) : entry.strokes === Number(strokeCount));
