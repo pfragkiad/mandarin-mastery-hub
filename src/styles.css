@@ -3649,6 +3649,14 @@ html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :
 /* Pill height = line + 2 × padding + 2 × 1px border; every top row reserves exactly that. */
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top .word-level-wrap { min-height: calc(var(--card-chrome-line) + 2 * var(--card-pill-pad-y) + 2px); }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-bottom :is(.card-footer-actions, .card-labelled-actions) :is(a, button) { font-size: var(--card-chrome-size); }
+/* Card chrome font steps: the second attempt before a top row wraps (use-card-chrome-fit.ts).
+   The step is written on the card element itself, so the custom property inherits into the top
+   row AND the footer buttons — the whole card chrome shrinks together, never the header alone.
+   Floors at 9px (Compact) / 13px (Comfortable); past that the row wraps. */
+.word-card[data-card-chrome-step='1'] { --card-chrome-size: 10px; --card-chrome-line: 13px; }
+.word-card[data-card-chrome-step='2'] { --card-chrome-size: 9px; --card-chrome-line: 12px; }
+html[data-display-size='comfortable'] .word-card[data-card-chrome-step='1'] { --card-chrome-size: 14px; --card-chrome-line: 19px; }
+html[data-display-size='comfortable'] .word-card[data-card-chrome-step='2'] { --card-chrome-size: 13px; --card-chrome-line: 18px; }
 
 /* Radical pill abbreviation: the full "Radical #N" label shows by default; when the card's top
    row is too narrow for it, useRadicalPillLabel measured that the row wraps and that the
