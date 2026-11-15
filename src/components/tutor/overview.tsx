@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
-import { Check, Search, Maximize2, Minimize2 } from 'lucide-react';
+import { Check, Search, Maximize2, Minimize2, Library, BookOpen, AudioLines } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useWorkspace } from './workspace';
@@ -10,11 +10,16 @@ import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { containsHanzi, isSearchableQuery, searchAll, startSearchMode, type SearchMode } from '@/lib/site-search';
 import { DailyCharacterHero, SavedStrip } from './overview-hero';
-import { DiscoveryRowList, type DiscoveryCategory } from './overview-discovery';
+import { DiscoveryRowList, type DiscoveryGroup } from './overview-discovery';
 import { SoundDiscoveryTile } from './overview-sound';
 import { OverviewGames } from './overview-games';
 
-const DISCOVERY_CATEGORIES: DiscoveryCategory[] = ['Characters', 'Components', 'Radicals', 'word', 'phrase'];
+// Phone list labels follow the side menu's Learn items (names and icons from shell.tsx).
+const DISCOVERY_GROUPS: DiscoveryGroup[] = [
+  { title: 'Glyphs', icon: <Library/>, categories: ['Characters', 'Components', 'Radicals'] },
+  { title: 'Vocabulary', icon: <BookOpen/>, categories: ['word', 'phrase'] },
+  { title: 'Sound chart', icon: <AudioLines/>, categories: [], sound: true },
+];
 
 export function OverviewPage() {
   const { items, preferences, catalogVersion } = useWorkspace();
@@ -23,7 +28,7 @@ export function OverviewPage() {
     <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {/* Sixth card: a random Pinyin syllable that has at least one recording. On phones the
           six cards become collapsible rows (one open at a time) inside one panel. */}
-      <DiscoveryRowList categories={DISCOVERY_CATEGORIES} renderSound={(open, onToggle) => <SoundDiscoveryTile open={open} onToggle={onToggle}/>}/>
+      <DiscoveryRowList groups={DISCOVERY_GROUPS} renderSound={(open, onToggle) => <SoundDiscoveryTile open={open} onToggle={onToggle}/>}/>
     </section>
     <SavedStrip/>
     {/* All five games, grouped as Hanzi games and Pinyin games. */}

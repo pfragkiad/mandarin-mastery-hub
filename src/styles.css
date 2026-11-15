@@ -812,6 +812,9 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
 .overview-heading { grid-template-columns: minmax(0,1fr); margin-bottom: 24px; }
 .overview-heading h1 { font-family: var(--font-display); font-size: 46px; font-weight: 400; line-height: 1.12; letter-spacing: -.012em; margin-top: 0; }
 .overview-discovery-row { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 14px; margin: 20px 0 36px; }
+/* Group wrappers (Glyphs / Vocabulary / Sound chart) only label the ≤700px compact list; elsewhere they vanish from the grid. */
+.discovery-row-group { display: contents; }
+.discovery-row-group-title { display: none; }
 .discovery-tile { border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 14px 16px; min-width: 0; display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 8px; }
 .discovery-tile-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .discovery-tile-top > button { width: 28px; height: 28px; flex-shrink: 0; }
@@ -3115,9 +3118,13 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
    row shows its reading, full meaning and Details/Trace/Recall indented under the text.
    :is(html, html[data-display-size]) lifts these over the Comfortable card rules; Comfortable still sizes everything up. */
 @media (max-width: 700px) {
-  :is(html, html[data-display-size]) .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 0; padding: 6px 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); }
-  :is(html, html[data-display-size]) .overview-discovery-row > .discovery-tile { display: block; grid-row: auto; padding: 0; border: 0; border-radius: 0; background: transparent; }
-  :is(html, html[data-display-size]) .overview-discovery-row > .discovery-tile + .discovery-tile { border-top: 1px solid var(--border); }
+  :is(html, html[data-display-size]) .overview-discovery-row { grid-template-columns: minmax(0,1fr); gap: 10px; padding: 18px 16px 8px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); }
+  /* Group labels match the Start games' "Hanzi games" / "Pinyin games" labels. */
+  .discovery-row-group { display: block; min-width: 0; }
+  .discovery-row-group-title { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted-foreground); }
+  .discovery-row-group-title .overview-game-group-icon svg { width: 20px; height: 20px; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile { display: block; grid-row: auto; padding: 0; border: 0; border-radius: 0; background: transparent; }
+  :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile + .discovery-tile { border-top: 1px solid var(--border); }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-top { position: relative; isolation: isolate; gap: 10px; padding: 10px 6px; margin: 0 -6px; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-tile-heading { display: none; }
   /* Only the toggle button (name line) and the inline listen button take clicks; the icon and pick
