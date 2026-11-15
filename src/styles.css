@@ -3665,9 +3665,9 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step='1'] { --ca
 html[data-display-size='comfortable'] .word-card[data-card-foot-step='2'] { --card-foot-size: 13px; }
 
 /* Radical pill abbreviation: the full "Radical #N" label shows by default; when the card's top
-   row is too narrow for it, useCardChromeFit measured that the row wraps and that the
+   row is too narrow for it, useCardTopRowFit measured that the row wraps and that the
    abbreviation keeps it on one line, and marks the row data-radical-short (see
-   src/components/tutor/use-card-chrome-fit.ts). Both labels are in the DOM, so this swap is
+    src/components/tutor/use-card-top-row-fit.ts). Both labels are in the DOM, so this swap is
    pure CSS and never rerenders the results grid. */
 .word-card .word-level-wrap .radical-pill-short { display: none; }
 .word-card .word-level-wrap[data-radical-short] .radical-pill-full { display: none; }
