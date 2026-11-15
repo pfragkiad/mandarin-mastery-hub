@@ -3017,6 +3017,9 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
    as on Comfortable cards; the footer keeps only its actions (hidden text holds their place). */
 .catalog-entry-grid:not(.library-list-view) .catalog-card .card-top-meta { display: inline; font-size: 9px; letter-spacing: 0; color: var(--muted-foreground); }
 .catalog-entry-grid:not(.library-list-view) .catalog-card > .word-card-bottom > span:first-child { position: absolute; visibility: hidden; }
+/* Same for Compact Words/Phrases cards, whose footer metadata is already hidden: taken out of
+   the row so it never pushes Details / Trace / Recall right by the word type's width. */
+.library-page .word-grid:not(.library-list-view) .word-card.headword-card > .word-card-bottom > span:first-child { position: absolute; visibility: hidden; }
 /* Compact library footers mirror Comfortable: the icon actions stay left and the
    bookmark sits alone at the row's right end (the hidden metadata span keeps the
    space-between layout from pulling the actions right). */
