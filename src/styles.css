@@ -255,7 +255,6 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
    when the card is too narrow for both. The link reads by accent colour on hover, no underline. */
 .sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; }
 .sentence-section-head > .eyebrow { margin: 0; }
-.sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { margin-top: 12px; }
 .find-examples-link { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 3px 8px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
 .find-examples-link:hover, .find-examples-link:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .find-examples-icon { flex: none; width: 15px; height: 15px; }
