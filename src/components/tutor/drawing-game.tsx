@@ -182,6 +182,8 @@ export function DrawingGamePage({
                 const filtered = draftKind === "Radicals" || draftKind === "Components";
                 return (
                   <>
+                    {/* Row 1: what to draw, plus collection / level / type for Words. */}
+                    <div className="game-filter-row">
                     <select
                       className="filter-select"
                       aria-label="Drawing category"
@@ -232,6 +234,9 @@ export function DrawingGamePage({
                         </select>
                       </>
                     )}
+                    </div>
+                    {/* Row 2: narrowing filters — rank and stroke count (glyphs) and Saved only. */}
+                    <div className="game-filter-row">
                     {draftKind !== "Words" && (
                       <span className="filter-field-row">
                         <select
@@ -301,6 +306,7 @@ export function DrawingGamePage({
                       noun="cards"
                       onToggle={() => patch({ saved: draft.saved ? undefined : true })}
                     />
+                    </div>
                   </>
                 );
               }}

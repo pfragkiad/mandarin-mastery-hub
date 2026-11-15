@@ -9,3 +9,5 @@
 - [x] Detail "In a sentence": always shown on Characters/Words with "Find more examples" (Purple Culture, new window)
 - [x] Clearer up-right arrow icon for external examples
 - [x] Characters/Words cards: Examples icon beside the pinyin speaker (moved from the button row)
+- [x] Flashcards: kind dropdown in glyphs-first order (Characters, Components, Radicals, Words, Phrases) with a vocabulary collection dropdown; two setup rows (kind + collection/level/type, then filters)
+- [x] Drawing game: same two-row setup
