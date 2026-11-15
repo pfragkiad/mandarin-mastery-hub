@@ -50,7 +50,7 @@ const HAN_CHAR = /^\p{Script=Han}$/u;
  */
 export function useLessonPairing(hanzi: string, pinyin: string | null | undefined, focusable = true) {
   const hints = useLessonHints();
-  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin));
+  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin), true);
   const word = hints?.enabled ? hints.wordFor(hanzi) : null;
   const hanziBody = Array.from(hanzi).map((ch, i) => {
     if (!HAN_CHAR.test(ch)) return ch;

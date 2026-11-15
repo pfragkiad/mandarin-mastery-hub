@@ -54,3 +54,24 @@ describe('alignSentence', () => {
     expect(alignSentence('我去过北京一次。', 'Wǒ qù Běijīng yí cì.', syllables)).toBeNull();
   });
 });
+
+describe('alignPhrasePinyin on lesson patterns', () => {
+  const paired = (hanzi: string, pinyin: string) =>
+    alignPhrasePinyin(hanzi, pinyin, syllables)?.tokens.map(t => `${t.leading}${t.pieces.map(p => p.pair == null ? p.text : `[${p.pair}:${p.text}]`).join('')}${t.trailing}`).join(' ');
+
+  it('pairs across any number of plus signs and keeps them in the shown pinyin', () => {
+    expect(paired('再 + 动词 + 一次', 'zài + dòngcí + yí cì')).toBe('[0:zài] + [1:dòng][2:cí] + [3:yí] [4:cì]');
+    expect(paired('以 + 名词短语', 'yǐ + míngcí duǎnyǔ')).toBe('[0:yǐ] + [1:míng][2:cí] [3:duǎn][4:yǔ]');
+  });
+
+  it('leaves X/Y slots and ellipses unpaired', () => {
+    expect(paired('以 X 为 Y', 'yǐ X wéi Y')).toBe('[0:yǐ] X [1:wéi] Y');
+    const pairing = alignPhrasePinyin('每一次 + 动作，……都……', 'měi yí cì + dòngzuò, ... dōu ...', syllables);
+    expect(pairing?.glyphPairs.filter(p => p != null)).toEqual([0, 1, 2, 3, 4, 5]);
+    expect(paired('每一次 + 动作，……都……', 'měi yí cì + dòngzuò, ... dōu ...')).toBe('[0:měi] [1:yí] [2:cì] + [3:dòng][4:zuò], ... [5:dōu] ...');
+  });
+
+  it('still fails closed when the syllables do not cover the characters', () => {
+    expect(alignPhrasePinyin('再 + 动词 + 一次', 'zài + dòngcí + cì', syllables)).toBeNull();
+  });
+});
