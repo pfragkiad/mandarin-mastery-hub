@@ -6,3 +6,6 @@
 - [x] Detail cards: pinyin below the top main hanzi, pills stay top right; per-reading lines carry their own speakers
 - [x] Detail cards: translation on the pinyin line, wrapping below
 - [x] Detail cards: translation that fits a full line moves whole below
+- [x] Detail "In a sentence": always shown on Characters/Words with "Find more examples" (Purple Culture, new window)
+- [x] Clearer up-right arrow icon for external examples
+- [x] Characters/Words cards: Examples icon beside the pinyin speaker (moved from the button row)

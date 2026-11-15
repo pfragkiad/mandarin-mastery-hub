@@ -253,15 +253,15 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .glyph-usage-section > .glyph-usage-example:first-of-type > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 /* "In a sentence" label row: label left, "Find more examples" right; wraps under the label
    when the card is too narrow for both. The link reads by accent colour on hover, no underline. */
-.sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; }
+.sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; min-height: 24px; justify-content: space-between; gap: 6px 14px; }
 .sentence-section-head > .eyebrow { margin: 0; }
 /* The label row is a div too, so :first-of-type above misses the first example here. */
 .sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
-.find-examples-link { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 3px 8px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
+.find-examples-link { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; padding: 2px 6px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
 .find-examples-link:hover, .find-examples-link:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
-.find-examples-icon { flex: none; width: 15px; height: 15px; }
+.find-examples-link .find-examples-icon { flex: none; width: 13px; height: 13px; }
 html[data-display-size='comfortable'] .find-examples-link { font-size: 13px; }
-html[data-display-size='comfortable'] .find-examples-icon { width: 17px; height: 17px; }
+html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { width: 15px; height: 15px; }
 .characters-library { margin-bottom: 34px; }
 .character-tile {
   display: inline-flex; align-items: center; justify-content: center;
@@ -2501,6 +2501,13 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .sound-chart-link:focus-visible { outline: 2px solid var(--sound-link); outline-offset: 1px; }
 .sound-chart-link.is-tile { width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; }
 .sound-chart-link.is-tile svg { width: 11px; height: 11px; }
+/* Card-face external examples icon (Characters/Words), sized like the Sound chart link beside it
+   but neutral-coloured, turning accent on hover with a tinted badge. */
+.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -2px; border-radius: 5px; color: var(--muted-foreground); cursor: pointer; transition: color .15s ease, background .15s ease; }
+.examples-link.is-tile svg { width: 12px; height: 12px; }
+.examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+.library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -4px; }
+.library-list-view .examples-link.is-tile svg { width: 18px; height: 18px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .sound-chart-link.is-tile svg { width: 17px; height: 17px; }
 
