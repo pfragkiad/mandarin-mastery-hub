@@ -53,7 +53,7 @@ function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries
     strokes: entry.strokes,
     rank: usageRank(entry, kind, includeTraditional),
     script: entry.script,
-    radicalNumber: entry.kangxiIndex ?? info.canonicalRadical?.number,
+    radicalNumber: entry.kangxiIndex ?? info.characterRadical?.number,
     search: { tab: kind, id: entry.id },
   };
 }
