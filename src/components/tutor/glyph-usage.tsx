@@ -17,7 +17,7 @@ import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
-export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
+export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind | null, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
   const [parents, setParents] = useState<LibraryEntry[] | null>(null);
   useEffect(() => {
     if (kind !== 'Components') { setParents(null); return; }

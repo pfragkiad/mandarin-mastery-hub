@@ -1,6 +1,6 @@
 import { isPlainCardDoubleClick } from './card-peek';
 import { MeaningText } from './meaning-text';
-import { useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Volume2, MessageSquareText } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -93,7 +93,9 @@ export function wordTileFit(hanzi: string): { lines: 1 | 2; style: CSSProperties
 
 // `revealed` marks a card peeked in a Hide mode; in panel mode clicks never open the panel —
 // the page's onOpenChange reveals only, and `onDetails` is the sole way into the detail sheet.
-export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false, revealed = false, onDetails }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean; revealed?: boolean; onDetails?: () => void }) {
+// `header` (Start's random cards only) replaces the top label row (type, HSK pill, sentence icon)
+// with the caller's own row (section link + shuffle); body and footer stay the exact grid card.
+export function WordCard({ word, list = false, initiallyOpen = false, open: controlledOpen, onOpenChange, panel = false, revealed = false, onDetails, header }: { word: Word; list?: boolean; initiallyOpen?: boolean; open?: boolean; onOpenChange?: (open: boolean) => void; panel?: boolean; revealed?: boolean; onDetails?: () => void; header?: ReactNode }) {
   const [internalOpen, setInternalOpen] = useState(initiallyOpen);
   const open = controlledOpen ?? internalOpen;
   const setOpen = onOpenChange ?? setInternalOpen;
@@ -148,7 +150,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>
+    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id" title="HSK 3.0 level / official ID in the syllabus">{hskPill}</span> : word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span>{wordStyleTop && word.sentence && <span className="catalog-card-indicators"><span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span></span>}</div>}
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
