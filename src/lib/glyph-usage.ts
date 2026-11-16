@@ -1,4 +1,4 @@
-import { radicalFamily } from './radical-strokes';
+import { radicalFamily, radicalForms } from './radical-strokes';
 import type { DecompositionNode, LibraryEntry, LibraryKind } from './character-library';
 import { gSourceDecompositions, loadRecord, type CharacterEnrichment } from './character-enrichment';
 import { includeScript } from './learning-preferences';
@@ -11,11 +11,28 @@ const containsComponent = (node: DecompositionNode, glyph: string): boolean => n
 
 export type EnrichmentLoader = (character: string) => Promise<CharacterEnrichment | null>;
 
+/** Every form of each radical family the glyph belongs to (exact recorded forms plus the
+ * family heading): 聿 and 肀 are one family, so neither is ever a parent character of the
+ * other. A radical is the family itself, never a compound built from its own forms, even
+ * when BabelStone draws 聿 as ⿻肀二. Exact form identity only, never shape similarity. */
+export function ownRadicalFamilyForms(glyph: string, kangxiIndex?: number): Set<string> {
+  const families = [...(kangxiIndex !== undefined ? [radicalFamily(kangxiIndex)] : []), ...radicalForms(glyph).map(match => match.family)];
+  const forms = new Set([glyph]);
+  for (const family of families) {
+    if (!family) continue;
+    forms.add(family.kangxiHeading);
+    forms.add(family.canonical);
+    for (const form of family.forms) forms.add(form.character);
+  }
+  return forms;
+}
+
 /** Component parents come only from recorded BabelStone direct-G trees, never the Hanzi structure. */
 export async function glyphParentCharactersGSource(entry: LibraryEntry, characters: LibraryEntry[], includeTraditional = false, load: EnrichmentLoader = loadRecord): Promise<LibraryEntry[]> {
   const seen = new Set<string>();
+  const own = ownRadicalFamilyForms(entry.hanzi);
   const candidates = characters.filter(parent => {
-    if (parent.hanzi === entry.hanzi || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
+    if (own.has(parent.hanzi) || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
     seen.add(parent.id);
     return true;
   });
@@ -27,24 +44,48 @@ export async function glyphParentCharactersGSource(entry: LibraryEntry, characte
   return sortByUsage(matches.filter((parent): parent is LibraryEntry => parent !== null), 'Characters', includeTraditional);
 }
 
-/** Exact recorded relationships only; exclude self, hidden scripts and duplicate records. */
-/** Radical examples: characters whose dictionary radical is the family heading. When the
+/** Recorded BabelStone direct-G trees per character, already loaded by the caller. */
+export type GSourceTrees = (character: string) => DecompositionNode[];
+
+const isMultiFormRadical = (entry: LibraryEntry) => entry.kangxiIndex !== undefined && new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character) ?? []).size > 1;
+
+/** Exact recorded relationships only; exclude the glyph's own radical family, hidden scripts
+ * and duplicate records.
+ * Radical examples: characters whose dictionary radical is the family heading. When the
  * family has several forms (刀 / 刂 / ⺈), the parent must also contain the exact selected
- * form in its recorded breakdown, so each variant only lists characters that use that form. */
-export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, characters: LibraryEntry[], includeTraditional = false, familyGlyph?: string): LibraryEntry[] {
+ * form in a recorded BabelStone direct-G tree (`gSource`, loaded by radicalParentCharacters),
+ * so each variant only lists characters that use that form. Without those trees a
+ * multi-form variant lists nothing (fail closed) — the Hanzi graphical structure is never
+ * consulted for radicals. */
+export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, characters: LibraryEntry[], includeTraditional = false, familyGlyph?: string, gSource?: GSourceTrees): LibraryEntry[] {
   if (kind !== 'Components' && kind !== 'Radicals') return [];
   const seen = new Set<string>();
   const assigned = familyGlyph ?? entry.hanzi;
-  const multiForm = kind === 'Radicals' && entry.kangxiIndex !== undefined && new Set(radicalFamily(entry.kangxiIndex)?.forms.map(form => form.character) ?? []).size > 1;
+  const own = ownRadicalFamilyForms(entry.hanzi, kind === 'Radicals' ? entry.kangxiIndex : undefined);
+  const multiForm = kind === 'Radicals' && isMultiFormRadical(entry);
   return sortByUsage(characters.filter(parent => {
-    if (parent.hanzi === entry.hanzi || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
+    if (own.has(parent.hanzi) || seen.has(parent.id) || !includeScript(parent.script, includeTraditional)) return false;
     const related = kind === 'Radicals'
       // Shared glyphs count for the form their context resolves to (鄱's right-side 阝 → ⻏ of 邑).
-      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned && (!multiForm || Boolean(parent.decomposition && entry.kangxiIndex !== undefined && breakdownUsesForm(parent.decomposition.root, parent.hanzi, entry.kangxiIndex, entry.hanzi)))
+      ? parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned && (!multiForm || Boolean(gSource && entry.kangxiIndex !== undefined && gSource(parent.hanzi).some(tree => breakdownUsesForm(tree, parent.hanzi, entry.kangxiIndex!, entry.hanzi))))
       : Boolean(parent.decomposition && containsComponent(parent.decomposition.root, entry.hanzi));
     if (related) seen.add(parent.id);
     return related;
   }), 'Characters', includeTraditional);
+}
+
+/** Radical "In a character" examples: dictionary-assigned candidates, with multi-form
+ * families checked against lazily loaded BabelStone direct-G trees (only the candidates'
+ * sidecars are fetched, never the whole catalogue). */
+export async function radicalParentCharacters(entry: LibraryEntry, characters: LibraryEntry[], includeTraditional = false, familyGlyph?: string, load: EnrichmentLoader = loadRecord): Promise<LibraryEntry[]> {
+  if (!isMultiFormRadical(entry)) return glyphParentCharacters(entry, 'Radicals', characters, includeTraditional, familyGlyph);
+  const assigned = familyGlyph ?? entry.hanzi;
+  const candidates = characters.filter(parent => parent.note.match(/·\s*(.+?) radical$/)?.[1] === assigned);
+  const trees = new Map<string, DecompositionNode[]>();
+  await Promise.all([...new Set(candidates.map(parent => parent.hanzi))].map(async hanzi => {
+    trees.set(hanzi, gSourceDecompositions(await load(hanzi)).flatMap(alternative => alternative.tree ? [alternative.tree] : []));
+  }));
+  return glyphParentCharacters(entry, 'Radicals', candidates, includeTraditional, familyGlyph, hanzi => trees.get(hanzi) ?? []);
 }
 
 /** Existing text and explicit source relationships only; no inferred stroke shapes. */
