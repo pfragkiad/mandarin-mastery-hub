@@ -107,7 +107,7 @@ export function sentencePhraseEntries(entries: Entry[]): Entry[] {
     const topics = [...new Set(words.flatMap(word => [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id))))];
     phrases.push({
       id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? first.sourceName, sourceVersion: example.source?.sourceVersion ?? first.sourceVersion,
-      simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [example.english],
+      simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [alignSentenceEnding(examplePinyin(example), example.english)],
       entryKind: 'phrase', hskLevel: owner.hskLevel, hskVersion: owner.hskVersion, hsk_index: owner.hsk_index, hskSource: owner.hskSource,
       categoryId: first.categoryId, categoryIds: topics, partOfSpeech: null, contentStatus: 'draft',
       audio: example.audio ?? null, examples: [], createdAt: first.createdAt, updatedAt: first.updatedAt,
@@ -144,7 +144,7 @@ export function entryToWord(e: Entry, categories: Category[]): Word {
       return category ? [categoryName(category.name)] : [];
     }))],
     hskId: e.hsk_index ?? null,
-    sentence: first?.simplified ?? '', translation: first?.english ?? '',
+    sentence: first?.simplified ?? '', translation: first ? alignSentenceEnding(examplePinyin(first), first.english) : '',
     sentencePinyin: first ? examplePinyin(first) : '',
     audio: e.audio, entry: e,
   };
