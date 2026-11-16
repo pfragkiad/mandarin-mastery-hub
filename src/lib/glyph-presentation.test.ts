@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { displayMeaning } from './glyph-presentation';
+import { displayMeaning, glyphPresentation } from './glyph-presentation';
 
 // Displayed translations never repeat the Kangxi index — the card already shows it
 // as the "Radical #N" pill. The source data also carries the misspelling "Kangzi"
@@ -27,5 +27,31 @@ describe('displayMeaning', () => {
 
   it('leaves ordinary translations untouched', () => {
     expect(displayMeaning('woman, girl; feminine')).toBe('woman, girl; feminine');
+  });
+});
+
+describe('simplified radical forms on Characters cards', () => {
+  it('drops "simplified form of Kangxi radical N" so 麦 and 麥 read alike', () => {
+    expect(displayMeaning('wheat, barley, oats; simplified form of Kangxi radical 199')).toBe('wheat, barley, oats');
+    expect(displayMeaning('teeth; gears, cogs; age; simplified form of the Kangxi radical 211')).toBe('teeth; gears, cogs; age');
+  });
+
+  it('keeps "variant of Kangxi radical N" when it is the only meaning (耂)', () => {
+    expect(displayMeaning('variant of Kangxi radical 125')).toBe('variant of Kangxi radical 125');
+  });
+
+  it('gives the simplified dual forms their Radical #N pill', () => {
+    expect(glyphPresentation('麦', 'Characters').characterRadical?.number).toBe(199);
+    expect(glyphPresentation('门', 'Characters').characterRadical?.number).toBe(169);
+    expect(glyphPresentation('马', 'Characters').characterRadical?.number).toBe(187);
+    expect(glyphPresentation('一', 'Characters').characterRadical?.number).toBe(1);
+  });
+
+  it('never turns them into canonical radicals, so 麦 keeps 麥 as its dictionary radical box', () => {
+    expect(glyphPresentation('麦', 'Characters').canonicalRadical).toBeUndefined();
+  });
+
+  it('leaves ordinary characters without a pill', () => {
+    expect(glyphPresentation('好', 'Characters').characterRadical).toBeUndefined();
   });
 });
