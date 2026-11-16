@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string };
+export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
 export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
   ...(search['tab'] === 'word' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}),
   ...(search['py'] === 'pinyin' || search['py'] === 'exact' ? { py: search['py'] } : {}),
@@ -12,6 +12,7 @@ export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: R
   ...(typeof search['level'] === 'string' ? { level: search['level'] } : {}),
   ...(typeof search['status'] === 'string' ? { status: search['status'] } : {}),
   ...(typeof search['pos'] === 'string' && search['pos'] ? { pos: search['pos'] } : {}),
+  ...(typeof search['style'] === 'string' && search['style'] ? { style: search['style'] } : {}),
 }), head: () => pageHead('Vocabulary', 'Discover Mandarin words and phrases, listen to pronunciation, and collect vocabulary for everyday life.'), component: VocabularyRoute });
 function VocabularyRoute() {
   const search = Route.useSearch();

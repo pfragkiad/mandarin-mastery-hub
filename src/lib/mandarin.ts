@@ -1,7 +1,7 @@
 import type { CharacterScript } from "./learning-preferences";
 import { pinyinReadingMatches } from "./pinyin-tones";
 import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from "./audio";
-import { entryToWord, categoryName, vocabularyData, type Entry } from "./data-contract";
+import { entryToWord, categoryName, vocabularyData, sentencePhraseEntries, type Entry } from "./data-contract";
 export type Word = {
   id: string;
   hanzi: string;
@@ -22,7 +22,7 @@ export type Word = {
 };
 export const vocabularyKind = (word: Word): "word" | "phrase" => word.entry?.entryKind ?? word.entryKind ?? "word";
 // Real vocabulary imported from the Mandarin Tutor database, adapted through the API contract.
-export const words: Word[] = vocabularyData.entries.map((e) => entryToWord(e, vocabularyData.categories));
+export const words: Word[] = [...vocabularyData.entries, ...sentencePhraseEntries(vocabularyData.entries)].map((e) => entryToWord(e, vocabularyData.categories));
 /** Primary and secondary recorded topics share the same library/game filters. */
 export const wordCollections = (word: Word): string[] => word.collections?.length ? word.collections : [word.collection];
 export const collections = vocabularyData.categories
