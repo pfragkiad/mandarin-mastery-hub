@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource } from './glyph-usage';
+import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource, radicalParentCharacters } from './glyph-usage';
 import type { LibraryEntry } from './character-library';
 import type { CharacterEnrichment } from './character-enrichment';
 import type { Word } from './mandarin';
@@ -66,16 +66,23 @@ describe('Existing glyph usage', () => {
   });
 });
 describe('Radical variant examples', () => {
-  const tree = (...parts: string[]) => ({ root: { glyph: '⿰', position: '', children: parts.map(glyph => ({ glyph, position: '' })) }, source: 'recorded', status: 'recorded' });
+  // Hanzi structure deliberately disagrees with BabelStone: radical variants must follow
+  // BabelStone direct-G trees, never the Hanzi graphical structure.
+  const hanzi = (...parts: string[]) => ({ root: { glyph: '⿰', position: '', children: parts.map(glyph => ({ glyph, position: '' })) }, source: 'recorded', status: 'recorded' });
   const parents = [
-    { ...glyph('分', '4 strokes · 刀 radical'), decomposition: tree('八', '刀') },
-    { ...glyph('到', '8 strokes · 刀 radical'), decomposition: tree('至', '刂') },
-    { ...glyph('刍', '5 strokes · 刀 radical'), decomposition: tree('⺈', '彐') },
+    { ...glyph('分', '4 strokes · 刀 radical'), decomposition: hanzi('八', '刂') },
+    { ...glyph('到', '8 strokes · 刀 radical'), decomposition: hanzi('至', '刀') },
+    { ...glyph('刍', '5 strokes · 刀 radical'), decomposition: hanzi('刀', '彐') },
   ];
+  const load = loaderFor({ 分: gSourceRecord('⿱八刀'), 到: gSourceRecord('⿰至刂'), 刍: gSourceRecord('⿱⺈彐') });
   const form = (hanzi: string) => ({ ...glyph(hanzi), kangxiIndex: 18 });
-  it('lists only characters whose breakdown uses the exact selected form', () => {
-    expect(glyphParentCharacters(form('刀'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['分']);
-    expect(glyphParentCharacters(form('刂'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['到']);
-    expect(glyphParentCharacters(form('⺈'), 'Radicals', parents, false, '刀').map(row => row.hanzi)).toEqual(['刍']);
+  it('lists only characters whose BabelStone tree uses the exact selected form', async () => {
+    expect((await radicalParentCharacters(form('刀'), parents, false, '刀', load)).map(row => row.hanzi)).toEqual(['分']);
+    expect((await radicalParentCharacters(form('刂'), parents, false, '刀', load)).map(row => row.hanzi)).toEqual(['到']);
+    expect((await radicalParentCharacters(form('⺈'), parents, false, '刀', load)).map(row => row.hanzi)).toEqual(['刍']);
+  });
+  it('fails closed for multi-form variants without BabelStone trees', async () => {
+    expect(glyphParentCharacters(form('刀'), 'Radicals', parents, false, '刀')).toEqual([]);
+    expect(await radicalParentCharacters(form('刀'), parents, false, '刀', loaderFor({}))).toEqual([]);
   });
 });

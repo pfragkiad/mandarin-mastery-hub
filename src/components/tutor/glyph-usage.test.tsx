@@ -23,6 +23,13 @@ vi.mock('@/lib/character-library', async importOriginal => ({
   ...(await importOriginal<typeof import('@/lib/character-library')>()),
   libraryEntries: (kind: string) => (kind === 'Characters' ? [catalogState.xian] : []),
 }));
+// Radical variants match through BabelStone direct-G trees; serve 鮮's recorded ⿰魚羊.
+vi.mock('@/lib/character-enrichment', async importOriginal => ({
+  ...(await importOriginal<typeof import('@/lib/character-enrichment')>()),
+  loadRecord: async (character: string) => character === '鮮'
+    ? { comparison: { alternatives: [{ expression: '⿰魚羊', qualifiers: 'GHT', directG: true, virtualG: false }] } }
+    : null,
+}));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
     items: [], saved: [], toggleSaved: () => {},
@@ -53,12 +60,12 @@ describe('Absent-record notes', () => {
 });
 
 describe('Traditional parent characters', () => {
-  it('draws a traditional example tile with the purple traditional style', () => {
+  it('draws a traditional example tile with the purple traditional style', async () => {
     workspaceState.includeTraditional = true;
     // 鮮 is a recorded Traditional character whose dictionary radical is 魚 (Kangxi #195).
     const radical: LibraryEntry = { id: 'Radicals:魚', hanzi: '魚', pinyin: 'yú', meaning: 'fish; surname', note: '11 strokes · Radical #195', kangxiIndex: 195 };
     render(<GlyphUsageExamples entry={radical} kind="Radicals" familyGlyph="魚" />);
-    const tile = screen.getByText('鮮').closest('.decomposition-glyph');
+    const tile = (await screen.findByText('鮮')).closest('.decomposition-glyph');
     expect(tile).toHaveClass('traditional-character');
     workspaceState.includeTraditional = false;
   });
