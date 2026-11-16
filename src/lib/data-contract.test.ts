@@ -18,7 +18,7 @@ describe('Entry adapter', () => {
 });
 
 describe('orderExamples', () => {
-  const ex = (id: string, style?: 'conversational' | 'written') => ({ id, simplified: id, english: id, tokens: [], style }) as unknown as import('./data-contract').Example extends never ? never : any;
+  const ex = (id: string, style?: 'conversational' | 'written') => ({ id, simplified: id, english: id, tokens: [], style }) as unknown as Example;
   it('puts conversational sentences first, keeping recorded order within each style', () => {
     const ordered = orderExamples([ex('w1', 'written'), ex('c1', 'conversational'), ex('w2', 'written'), ex('c2', 'conversational')]);
     expect(ordered.map((e: { id: string }) => e.id)).toEqual(['c1', 'c2', 'w1', 'w2']);
