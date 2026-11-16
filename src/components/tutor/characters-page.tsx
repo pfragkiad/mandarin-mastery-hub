@@ -364,8 +364,10 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Every card body (Compact and Comfortable) first tries the side layout: the form boxes in one row
   // on the left, pinyin+audio over the translation on the right. useSideFit marks it data-stacked
   // when the boxes, the one-line pinyin or the two-line translation would be cut there, and CSS then
-  // stacks boxes / pinyin+audio / translation (styles.css "Library card body").
-  useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional]);
+  // stacks boxes / pinyin+audio / translation (styles.css "Library card body"). Same rules as the
+  // Words/Phrases cards: pinyin and translation shrink a little before stacking, and once one card
+  // of a grid row stacks, the whole row stacks so neighbours never mix layouts.
+  useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional], { shrinkText: true, rowSync: true });
   // A row too narrow for its labels gets two attempts before it drops one onto a second line:
   // first the gold Radical pill's abbreviated "Rad. #N", then a smaller header font
   // (use-card-top-row-fit.ts).

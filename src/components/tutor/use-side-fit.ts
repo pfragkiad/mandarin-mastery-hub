@@ -29,16 +29,17 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * view's own size. The same steps run before an ellipsis is accepted: a translation still clipped
  * in the chosen layout (clamped lines, or one word wider than its column) is tried smaller first.
  *
- * Options (Vocabulary cards): `shrinkText` adds a last attempt before stacking with pinyin and
- * translation together up to SIDE_TEXT_MAX_SHRINK smaller; `rowSync` stacks a whole grid row once
- * any of its cards stacks (see "Row sync" below).
+ * Options (every library grid card — Glyphs, Words/Phrases and the Start random cards): `shrinkText`
+ * adds a last attempt before stacking with pinyin and translation together up to
+ * SIDE_TEXT_MAX_SHRINK smaller; `rowSync` stacks a whole grid row once any of its cards stacks
+ * (see "Row sync" below).
  *
  * Tricky logic: the CSS base size has to be read with the inline override removed, so every step
  * starts by clearing it; the last line's word count is inferred from its measured width against
  * clones of the last one and two words, because the translation is rendered through MeaningText
  * and its text is split across nested spans.
  */
-/** Opt-in extras for the Vocabulary word/phrase cards (glyph cards keep the plain behaviour). */
+/** Opt-in extras used by the library grid cards (glyph and word/phrase cards alike). */
 export type SideFitOptions = {
   /** Before stacking, also try the pinyin and translation together a few pixels smaller. */
   shrinkText?: boolean;
@@ -145,9 +146,13 @@ function sharedObserver(): ResizeObserver | null {
   return observer;
 }
 
-/** The grid a card lays out with: the parent of its `.word-card` (one host per Start tile). */
+/**
+ * The grid a card lays out with: the parent of its `.word-card`. Start random cards each sit in
+ * their own one-card wrapper, so there the real grid is the Start row (.overview-discovery-row)
+ * holding glyph and word cards side by side, and they sync across it like library cards.
+ */
 function gridOf(el: HTMLElement): Element {
-  return el.closest('.word-card')?.parentElement ?? el;
+  return el.closest('.overview-discovery-row') ?? el.closest('.word-card')?.parentElement ?? el;
 }
 
 function scheduleRow(card: FitCard) {
@@ -189,19 +194,26 @@ function pinyinElement(open: HTMLElement): HTMLElement | null {
   return open.querySelector<HTMLElement>('.pinyin-text');
 }
 
+/** Every reading's pinyin (glyph cards with several readings show one .pinyin-text per reading). */
+function pinyinElements(open: HTMLElement): HTMLElement[] {
+  return Array.from(open.querySelectorAll<HTMLElement>('.pinyin-text'));
+}
+
 function fontPx(el: HTMLElement | null): number {
   return el ? parseFloat(getComputedStyle(el).fontSize) || 0 : 0;
 }
 
 function applyPinyinFont(open: HTMLElement, step: number) {
-  const pinyin = pinyinElement(open);
-  if (pinyin && step > 0) pinyin.style.fontSize = `${fontPx(pinyin) - step}px`;
+  if (step <= 0) return;
+  // Read every size first, then write, so all readings shrink by the same step from their own size.
+  const sizes = pinyinElements(open).map(pinyin => [pinyin, fontPx(pinyin)] as const);
+  for (const [pinyin, size] of sizes) pinyin.style.fontSize = `${size - step}px`;
 }
 
 /** Hand pinyin and translation back to the view's own sizes. */
 function resetTextFonts(open: HTMLElement) {
   resetMeaningFont(open);
-  pinyinElement(open)?.style.removeProperty('font-size');
+  for (const pinyin of pinyinElements(open)) pinyin.style.removeProperty('font-size');
 }
 
 /** True when the body (already in its side layout) shows the box, pinyin and translation uncut. */
