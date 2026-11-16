@@ -84,6 +84,8 @@ function sourcedFormGlyph(token: string): string {
   const identity = radicalIdentity(token);
   if (identity.radicals.length === 1) {
     const family = radicalFamily(identity.radicals[0]!.number);
+    // A token that is itself a recorded form (肉, ⺼) keeps its own identity.
+    if (family?.forms.some(item => item.character === token)) return token;
     const form = family?.forms.find(item => item.character !== token && identity.equivalentGlyphs.includes(item.character));
     if (form) return form.character;
   }
