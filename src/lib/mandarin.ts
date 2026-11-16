@@ -1,7 +1,7 @@
 import type { CharacterScript } from "./learning-preferences";
 import { pinyinReadingMatches } from "./pinyin-tones";
 import { speakTts, SLOW_RATE, NORMAL_RATE, type AudioAttachment } from "./audio";
-import { entryToWord, categoryName, vocabularyData, sentencePhraseEntries, type Entry } from "./data-contract";
+import { entryToWord, categoryName, vocabularyData, sentencePhraseEntries, phraseStyle, PHRASE_STYLES, type Entry } from "./data-contract";
 export type Word = {
   id: string;
   hanzi: string;
@@ -86,22 +86,31 @@ export function filterWords(
  * A dropdown never filters by its own value (so you can still switch it), and
  * the current selection always stays listed so the select never goes blank.
  */
-export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string }) {
+/** Dropdown choices for the vocabulary filters (libraries and games). Every
+ * dropdown is narrowed by all the *other* current picks (never by its own, so
+ * it can still be changed), and a current pick with no records stays listed.
+ * `style` (Phrases only) takes part like the others: picking a level narrows
+ * the styles, and picking a style narrows collections, levels and types. */
+export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string; style?: string }) {
   const { collection, level, pos } = selection;
+  const style = selection.style || "All styles";
   const inCollection = (w: Word) => collection === "All collections" || wordCollections(w).includes(collection);
   const inLevel = (w: Word) => level === "All levels" || w.level === level;
   const inPos = (w: Word) => pos === "All types" || partOfSpeechList(w).includes(pos);
+  const inStyle = (w: Word) => style === "All styles" || phraseStyle(w.entry) === style;
   const keep = (options: string[], current: string, all: string) =>
     current === all || options.includes(current) ? options : [...options, current];
   const levelSort = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
+  const styleItems = items.filter((w) => inCollection(w) && inLevel(w) && inPos(w));
   return {
-    collections: keep(collectionOptions(items.filter((w) => inLevel(w) && inPos(w))), collection, "All collections"),
+    collections: keep(collectionOptions(items.filter((w) => inLevel(w) && inPos(w) && inStyle(w))), collection, "All collections"),
     levels: keep(
-      [...new Set(items.filter((w) => inCollection(w) && inPos(w)).map((w) => w.level))].sort(levelSort),
+      [...new Set(items.filter((w) => inCollection(w) && inPos(w) && inStyle(w)).map((w) => w.level).filter(Boolean))].sort(levelSort),
       level,
       "All levels",
     ),
-    pos: keep(partOfSpeechOptions(items.filter((w) => inCollection(w) && inLevel(w))), pos, "All types"),
+    pos: keep(partOfSpeechOptions(items.filter((w) => inCollection(w) && inLevel(w) && inStyle(w))), pos, "All types"),
+    styles: keep(PHRASE_STYLES.filter((st) => styleItems.some((w) => phraseStyle(w.entry) === st)), style, "All styles"),
   };
 }
 /** Browser TTS only (last fallback); validated Mandarin voice. Prefer playPronunciation from ./audio. */
