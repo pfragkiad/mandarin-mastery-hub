@@ -12,6 +12,7 @@ import { CatalogPagination, StickyPagination } from './catalog-pagination';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { nearestRecordedRank } from '@/lib/rank-jump';
 import { useLibraryDensity } from './use-library-density';
+import { useFooterFitColumns } from './use-footer-fit-columns';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { Link } from '@tanstack/react-router';
 import { Search, Volume2, GitBranch, MessageSquareText, Type } from 'lucide-react';
@@ -470,6 +471,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // density-aware paging then reveals their exact card, including saved variants.
   const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : cardSelectedId);
+  // Fewer cards per row rather than wrapped Details/Trace/Recall buttons (use-footer-fit-columns.ts).
+  const gridRef = useRef<HTMLDivElement>(null);
+  useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind]);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
@@ -599,7 +603,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
           <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button variant="ghost" type="button" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
         </>}</DraftFilterForm>
         <LibraryTools flashcards={k !== 'Strokes' ? { category: `Ref:${k.slice(0, -1)}`, ...(savedOnly ? { saved: true } : {}) } : undefined} drawing={k !== 'Strokes' ? { kind: k, ...(savedOnly ? { saved: true } : {}) } : undefined}/>
-        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} totalExtra={traditionalTotalExtra} />}<div className={`catalog-entry-grid ${preferences.libraryView === 'list' ? 'library-list-view' : ''}`}>{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
+        <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${k} results`}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} totalExtra={traditionalTotalExtra} />}<div ref={gridRef} className={`catalog-entry-grid ${preferences.libraryView === 'list' ? 'library-list-view' : ''}`}>{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination {...paginationProps} />
         </section></div>
       </TabsContent>)}
