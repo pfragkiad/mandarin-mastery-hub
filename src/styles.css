@@ -2042,7 +2042,8 @@ html[data-display-size='comfortable'] {
 .library-control-sheet { max-height: 85dvh; overflow-y: auto; display: grid; gap: 18px; padding: 20px; border-radius: 8px 8px 0 0; }
 .library-sheet-fields { display: grid; min-width: 0; gap: 12px; }
 .library-sheet-fields .filter-select { width: 100%; min-width: 0; max-width: none; }
-.library-sheet-actions { display: flex; justify-content: flex-end; gap: 8px; }
+/* Reserves one button row (h-9) even when no action is offered, so the sheet never grows on edit. */
+.library-sheet-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; min-height: 2.25rem; }
 .library-study-section { display: grid; gap: 8px; }
 .library-study-section h3 { font-size: var(--ui-label-size, 13px); color: var(--muted-foreground); }
 .library-study-section > button, .library-study-section > div > button { justify-content: flex-start; width: 100%; min-height: 40px; white-space: normal; text-align: left; }
