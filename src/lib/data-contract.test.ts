@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle } from './data-contract';
+import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle, alignSentenceEnding, examplePinyin } from './data-contract';
 import type { Example } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
