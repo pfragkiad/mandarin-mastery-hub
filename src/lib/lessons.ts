@@ -186,6 +186,7 @@ const lessonKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_le
 const metadataKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'metadata' });
 const headwordKeys = import.meta.glob<Record<string, unknown> | null>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'headword' });
 const loaders = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { import: 'default' });
+const refsKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'catalog_character_refs' });
 
 const raws: Record<string, RawLesson> = Object.fromEntries(Object.keys(ids).map(path => [path, {
   lesson_id: ids[path], schema_version: schemas[path], lesson: lessonKeys[path], metadata: metadataKeys[path], headword: headwordKeys[path] ?? null,
