@@ -234,7 +234,7 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           <article className="word-card discovery-card-loading">{header}<p className="library-note">Loading {meta.label.toLowerCase()}…</p></article>
         </div>}
       </div>
-      {/* Phones: everything below is the row's expandable detail (display: contents on wider screens). */}
+      {/* Phones only: the open row's detail (hidden on wider screens, where the card above shows it). */}
       <div className="discovery-tile-body" id={bodyId}>
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
