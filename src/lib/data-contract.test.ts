@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples } from './data-contract';
+import type { Example } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
   it('keeps the server UUID as identity', () => { expect(w.id).toBe('5b1d3c2a-0000-4000-8000-000000000289'); });
