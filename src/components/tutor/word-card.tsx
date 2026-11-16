@@ -23,7 +23,7 @@ import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
-import { examplePinyin } from '@/lib/data-contract';
+import { examplePinyin, orderExamples } from '@/lib/data-contract';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
@@ -55,9 +55,9 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
         sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
     {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
-      {/* The first recorded example is always visible; further ones (e.g. the written-style
-          sentence) open from the show-more arrow. Each keeps its own exact audio and note. */}
-      {word.entry?.examples.length ? <MoreExamples key={word.id} examples={word.entry.examples.map(example => <div className="glyph-usage-example" key={example.id}>
+      {/* The first conversational example is always visible (orderExamples, stable);
+          further ones open from the show-more arrow. Each keeps its own exact audio and note. */}
+      {word.entry?.examples.length ? <MoreExamples key={word.id} examples={orderExamples(word.entry.examples).map(example => <div className="glyph-usage-example" key={example.id}>
         <SentenceExample heading={example.style === 'conversational' ? 'Conversational' : example.style === 'written' ? 'Written' : ''} sentence={example.simplified} pinyin={examplePinyin(example)} translation={example.english} note={example.notes} onNavigate={close} audioRequest={{ text: example.simplified, reading: examplePinyin(example), audio: example.audio ?? null }}/>
       </div>)}/> : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
     </SentenceSection>}
