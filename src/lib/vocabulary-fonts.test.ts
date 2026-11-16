@@ -7,10 +7,10 @@ const css = readFileSync('src/styles.css', 'utf8');
 const vocabulary = readFileSync('src/data/vocabulary.json', 'utf8');
 
 function coverage(family: string): Set<number> {
-  const face = css.match(new RegExp(`@font-face \\{ font-family: '${family}';[^}]*unicode-range: ([^;]+);`));
-  if (!face?.[1]) throw new Error(`${family} @font-face missing`);
+  const faces = [...css.matchAll(new RegExp(`@font-face \\{ font-family: '${family}';[^}]*unicode-range: ([^;]+);`, 'g'))];
+  if (!faces.length) throw new Error(`${family} @font-face missing`);
   const points = new Set<number>();
-  for (const part of face[1].split(',')) {
+  for (const face of faces) for (const part of face[1]!.split(',')) {
     const [a, b] = part.trim().slice(2).split('-').map(h => parseInt(h, 16));
     for (let p = a!; p <= (b ?? a!); p++) points.add(p);
   }

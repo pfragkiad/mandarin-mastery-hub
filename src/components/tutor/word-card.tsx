@@ -23,6 +23,7 @@ import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
+import { examplePinyin } from '@/lib/data-contract';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
@@ -48,12 +49,16 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}</dd></div>
       <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
-      {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collection}</dd></div>}
+      {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collections?.join(' · ') || word.collection}</dd></div>}
     </dl>
+    {word.entry?.studyMetadata?.posNote && <p className="library-note">{word.entry.studyMetadata.posNote}</p>}
     {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
         sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
     {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
-      {word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null }} /></div>}
+      {/* Keep both source example styles visible, each with its own exact audio. */}
+      {word.entry?.examples.length ? word.entry.examples.map(example => <div className="glyph-usage-example" key={example.id}>
+        <SentenceExample heading={example.style === 'conversational' ? 'Conversational' : example.style === 'written' ? 'Written' : ''} sentence={example.simplified} pinyin={examplePinyin(example)} translation={example.english} onNavigate={close} audioRequest={{ text: example.simplified, reading: examplePinyin(example), audio: example.audio ?? null }}/>
+      </div>) : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
     </SentenceSection>}
     <VocabularyDecomposition word={word}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}

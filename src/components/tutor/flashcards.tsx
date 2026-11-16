@@ -16,7 +16,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript } from '@/lib/learning-preferences';
-import { collectionOptions, partOfSpeechList, partOfSpeechOptions, vocabularyKind, type Word } from '@/lib/mandarin';
+import { collectionOptions, partOfSpeechList, partOfSpeechOptions, vocabularyKind, wordCollections, type Word } from '@/lib/mandarin';
 import { DEFAULT_FLASHCARD_KIND, flashcardKindLabel, flashcardKinds, flashcardVocabularyKind } from '@/lib/flashcard-filters';
 import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -94,7 +94,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
     } else {
       const vocabKind = flashcardVocabularyKind(category);
-      base = items.filter(w => vocabularyKind(w) === vocabKind && (!collection || w.collection === collection) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
+      base = items.filter(w => vocabularyKind(w) === vocabKind && (!collection || wordCollections(w).includes(collection)) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
     }
     return savedFilter ? base.filter(card => saved.includes(card.id)) : base;
   };

@@ -5,7 +5,11 @@ import { VocabularyPage } from './vocabulary';
 
 // Isolate the page's real keyboard wiring from data loading and card rendering;
 // URL callbacks and selected record identity remain the inputs under test.
-vi.mock('./workspace', () => ({ useSessionCardReveals: () => null, useWorkspace: () => ({ items: words, saved: [], preferences: { cardReveal: 'all' }, addWord: vi.fn() }) }));
+vi.mock('./workspace', () => ({ useSessionCardReveals: () => null, useWorkspace: () => ({
+  // Keyboard pagination needs several pages independently of the imported phrase count.
+  items: [...words, ...Array.from({ length: 40 }, (_, index) => ({ ...words.find(word => word.entry?.entryKind === 'phrase')!, id: `paging-phrase-${index}` }))],
+  saved: [], preferences: { cardReveal: 'all' }, addWord: vi.fn(),
+}) }));
 vi.mock('./use-library-density', () => ({ useLibraryDensity: () => ({ size: 12, onPerPageChange: vi.fn() }) }));
 vi.mock('@/lib/selection-scroll', () => ({ useRecordScroll: vi.fn() }));
 vi.mock('./detail-loading', () => ({ useDetailLoading: () => ({ run: vi.fn() }), DetailLoading: () => null }));
@@ -53,6 +57,6 @@ describe('Vocabulary experimental status tag', () => {
     render(<VocabularyPage tab="word" onPageChange={vi.fn()}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Vocabulary is experimental — what this means' }));
     expect(await screen.findByText(/levels 3 and above are not in the collection yet/)).toBeInTheDocument();
-    expect(screen.getByText(/Example sentences cover some entries only/)).toBeInTheDocument();
+    expect(screen.getByText(/Level 1 has two examples per word/)).toBeInTheDocument();
   });
 });

@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
-import { partOfSpeechOptions, vocabularyKind } from "@/lib/mandarin";
+import { partOfSpeechOptions, vocabularyKind, wordCollections } from "@/lib/mandarin";
 import { UNRANKED, usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
 import {
   drawingKinds,
@@ -57,7 +57,7 @@ export function DrawingGamePage({
   const setDeckSize = (value: number | "all") => setSession((previous) => ({ ...previous, deckSize: value }));
   const entries = useMemo(() => (kind === "Words" ? [] : libraryEntries(kind)), [kind, catalogVersion]);
   const words = useMemo(() => (items ?? []).filter((word) => vocabularyKind(word) === "word"), [items]);
-  const collections = [...new Set(words.map((word) => word.collection))].sort((a, b) => a.localeCompare(b));
+  const collections = [...new Set(words.flatMap(wordCollections))].sort((a, b) => a.localeCompare(b));
   const posOptions = partOfSpeechOptions(words);
   const levels = [...new Set(words.map((word) => word.level))].sort((a, b) =>
     a.localeCompare(b, undefined, { numeric: true }),

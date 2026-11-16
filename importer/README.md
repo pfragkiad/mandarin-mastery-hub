@@ -2,6 +2,8 @@
 
 Store importer-only source files under `importer/data/`, grouped by dataset. Importer scripts currently remain under `scripts/`; generated application data remains under `public/data/` or `src/data/` according to its loading method. Standalone analysis reports and notes remain under `reports/`.
 
+The owner-supplied [HSK Level 1 handoff](hsk/README.md) retains its explicitly supplied `importer/hsk/` paths and raw bytes. `scripts/import-hsk-level1.mjs` validates its 300 words, 600 example readings and updated topic sidecar before replacing Level 1 runtime data. See that guide for audit/write commands and provenance limits.
+
 ## Radical identities
 
 `scripts/import-radical-identities.py` reads these pinned inputs from `importer/data/radical-identities/`:

@@ -6,8 +6,12 @@ import vocabularyJson from '@/data/vocabulary.json';
 
 export type TextToken = { kind: 'hanzi' | 'punctuation' | 'space'; text: string; pinyin: string | null; reviewed: boolean };
 export type SourceRef = { sourceName: string; sourceVersion: string; sourceId: string };
-export type Example = { id: string; simplified: string; tokens: TextToken[]; english: string; notes?: string | null; audio?: AudioAttachment | null };
-export type Category = { id: string; name: string };
+export type Example = {
+  id: string; simplified: string; tokens: TextToken[]; english: string; notes?: string | null; audio?: AudioAttachment | null;
+  pinyinDisplay?: string; source?: SourceRef; style?: 'conversational' | 'written'; register?: string;
+  reviewStatus?: string; provenance?: string; linguisticSource?: string;
+};
+export type Category = { id: string; name: string; description?: string };
 export type Entry = {
   id: string; sourceId: string | null; sourceName: string | null; sourceVersion: string | null; secondarySources?: SourceRef[];
   simplified: string; traditional: string | null; tokens: TextToken[]; pinyinDisplay: string; meanings: string[];
@@ -15,6 +19,11 @@ export type Entry = {
   categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; partOfSpeechSource?: SourceRef; tags?: string[]; contentStatus: 'draft' | 'reviewed';
   audio: AudioAttachment | null; examples: Example[]; createdAt: string; updatedAt: string;
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
+  studyMetadata?: {
+    source: SourceRef; sourceSha256: string; taxonomyVersion: string;
+    primaryTopicId: string; topicIds: string[]; primaryPosId: string; posIds: string[]; posLabels: string[];
+    posNote: string | null; verificationStatus: string;
+  };
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };
 
@@ -32,18 +41,25 @@ const LATIN_PUNCTUATION: Record<string, string> = {
   '。': '.', '？': '?', '！': '!', '，': ',', '、': ',', '；': ';', '：': ':', '（': '(', '）': ')', '《': '«', '》': '»',
 };
 
+/** Prefer the source's whole sentence reading; legacy exports carry only tokens. */
+export function examplePinyin(example: Example): string {
+  return example.pinyinDisplay ?? example.tokens.map(tok => tok.pinyin ?? tok.text).join(' ')
+    .replace(/\s+([,.!?;:%，。！？；：、])/g, '$1')
+    .replace(/[。！？，、；：()]/g, c => LATIN_PUNCTUATION[c] ?? c);
+}
+
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = e.examples[0];
   return {
     id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
+    collections: [...new Set([e.categoryId, ...(e.categoryIds ?? [])].flatMap(id => {
+      const category = categories.find(c => c.id === id);
+      return category ? [categoryName(category.name)] : [];
+    }))],
     hskId: e.hsk_index ?? null,
     sentence: first?.simplified ?? '', translation: first?.english ?? '',
-    sentencePinyin: first
-      ? first.tokens.map(tok => tok.pinyin ?? tok.text).join(' ')
-          .replace(/\s+([,.!?;:%，。！？；：、])/g, '$1')
-          .replace(/[。！？，、；：()]/g, c => LATIN_PUNCTUATION[c] ?? c)
-      : '',
+    sentencePinyin: first ? examplePinyin(first) : '',
     audio: e.audio, entry: e,
   };
 }

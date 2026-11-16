@@ -9,6 +9,7 @@ export type Word = {
   meaning: string;
   type: string;
   collection: string;
+  collections?: string[];
   level: string;
   sentence: string;
   translation: string;
@@ -22,16 +23,19 @@ export type Word = {
 export const vocabularyKind = (word: Word): "word" | "phrase" => word.entry?.entryKind ?? word.entryKind ?? "word";
 // Real vocabulary imported from the Mandarin Tutor database, adapted through the API contract.
 export const words: Word[] = vocabularyData.entries.map((e) => entryToWord(e, vocabularyData.categories));
+/** Primary and secondary recorded topics share the same library/game filters. */
+export const wordCollections = (word: Word): string[] => word.collections?.length ? word.collections : [word.collection];
 export const collections = vocabularyData.categories
   .map((c) => categoryName(c.name))
-  .filter((name) => words.some((w) => w.collection === name))
+  .filter((name) => words.some((w) => wordCollections(w).includes(name)))
+  .filter((name, index, names) => names.indexOf(name) === index)
   .sort((a, b) => a.localeCompare(b));
 /** Collections that actually contain records of the given list (e.g. only Words or only Phrases), keeping the global order. */
 export const collectionOptions = (items: Word[]): string[] =>
-  collections.filter((name) => items.some((w) => w.collection === name));
-/** Base part-of-speech labels of a word: split recorded combos, drop "(additional sense)" notes, normalize case. */
+  collections.filter((name) => items.some((w) => wordCollections(w).includes(name)));
+/** Keep controlled taxonomy labels intact; legacy labels split combos and sense notes. */
 export const partOfSpeechList = (word: Word): string[] =>
-  (word.type ?? "")
+  word.entry?.studyMetadata?.posLabels ?? (word.type ?? "")
     .split("/")
     .map((part) => part.replace(/\(additional sense\)/i, "").trim())
     .filter(Boolean)
@@ -69,7 +73,7 @@ export function filterWords(
   return items.filter(
     (w) =>
       matches(w) &&
-      (collection === "All collections" || w.collection === collection) &&
+      (collection === "All collections" || wordCollections(w).includes(collection)) &&
       (level === "All levels" || w.level === level) &&
       (status === "All words" || saved.includes(w.id)) &&
       (pos === "All types" || partOfSpeechList(w).includes(pos)),
@@ -84,7 +88,7 @@ export function filterWords(
  */
 export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string }) {
   const { collection, level, pos } = selection;
-  const inCollection = (w: Word) => collection === "All collections" || w.collection === collection;
+  const inCollection = (w: Word) => collection === "All collections" || wordCollections(w).includes(collection);
   const inLevel = (w: Word) => level === "All levels" || w.level === level;
   const inPos = (w: Word) => pos === "All types" || partOfSpeechList(w).includes(pos);
   const keep = (options: string[], current: string, all: string) =>

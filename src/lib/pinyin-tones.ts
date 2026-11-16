@@ -79,6 +79,8 @@ const readingForms = new Map<string, { plain: string; numbered: string }>();
 let lastQuery: { query: string; q: string; qNumbered: string } | null = null;
 
 export function pinyinReadingMatches(reading: string, query: string, exact: boolean): boolean {
+  // Recorded alternative readings each remain searchable without combining syllables.
+  if (reading.includes('/')) return reading.split('/').some(value => pinyinReadingMatches(value.trim(), query, exact));
   if (lastQuery?.query !== query) {
     const normalized = normalizePinyinQuery(query);
     // pinyinNumbered skips digits, so it is only meaningful for tone-marked

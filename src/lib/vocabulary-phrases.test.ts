@@ -1,53 +1,22 @@
 import { describe, expect, it } from 'vitest';
-import { entryToWord, vocabularyData } from './data-contract';
-import { filterWords, vocabularyKind, words } from './mandarin';
+import { vocabularyData } from './data-contract';
+import { vocabularyKind, words } from './mandarin';
 
-describe('Unofficial Level 1 phrase import', () => {
-  const phrases = vocabularyData.entries.filter(e => e.phraseMetadata);
-  it('imports all 240 unique internal phrase IDs exactly once', () => {
-    expect(phrases).toHaveLength(240);
-    expect(new Set(phrases.map(e => e.id)).size).toBe(240);
-    expect(phrases.map(e => e.phraseMetadata?.internalId)).toEqual(
-      Array.from({ length: 240 }, (_, index) => `L1-P${String(index + 1).padStart(3, '0')}`),
-    );
+describe('Full Level 1 replacement', () => {
+  it('removes all unofficial Level 1 phrase records and their orphan collections', () => {
+    expect(vocabularyData.entries.filter(e => e.hskLevel === 1)).toHaveLength(300);
+    expect(vocabularyData.entries.some(e => e.phraseMetadata || (e.hskLevel === 1 && e.entryKind === 'phrase'))).toBe(false);
+    expect(vocabularyData.categories.some(c => c.name.includes('L1 practice phrases'))).toBe(false);
   });
-  it('never treats internal phrase IDs or vocabulary matches as official HSK IDs', () => {
-    for (const entry of phrases) {
-      expect(entry.hsk_index).toBeNull();
-      expect(entry.hskSource).toBeNull();
-      expect(entry.sourceId).toBeNull();
-      expect(entryToWord(entry, vocabularyData.categories).hskId).toBeNull();
-    }
-    expect(phrases[0]?.phraseMetadata?.matchedVocabularyIds).toEqual([71, 146, 147]);
+  it('keeps the four Level 2 phrases and the unclassified phrase', () => {
+    const phrases = vocabularyData.entries.filter(e => e.entryKind === 'phrase');
+    expect(phrases).toHaveLength(5);
+    expect(phrases.filter(e => e.hskLevel === 2).map(e => e.simplified)).toEqual(['不好意思', '没意思', '为什么', '有意思']);
+    expect(phrases.find(e => e.hskLevel == null)?.id).toBe('63c1c762-a714-4778-a662-718f2872c8ef');
   });
-  it('classifies every supplied entry as a Level 1 phrase', () => {
-    for (const entry of phrases) {
-      expect(entry.entryKind).toBe('phrase');
-      expect(entry.hskLevel).toBe(1);
-      expect(entry.hskVersion).toBe('3.0');
-      expect(vocabularyKind(entryToWord(entry, vocabularyData.categories))).toBe('phrase');
-    }
-  });
-  it('retains pinyin and translations without inventing recordings or character readings', () => {
-    expect(phrases[0]?.simplified).toBe('你好！');
-    expect(phrases[0]?.pinyinDisplay).toBe('Nǐ hǎo!');
-    expect(phrases[0]?.meanings).toEqual(['Hello!']);
-    expect(phrases[239]?.pinyinDisplay).toBe('Wǒ xǐhuan gǒu, yě xǐhuan māo.');
-    expect(phrases.find(e => e.phraseMetadata?.internalId === 'L1-P239')?.pinyinDisplay).toBe('Nǐ gèng xǐhuan māo háishi gǒu?');
-    for (const entry of phrases) {
-      expect(entry.audio).toBeNull();
-      expect(entry.pinyinDisplay).not.toMatch(/[。？！]/);
-      expect(entry.tokens.map(t => t.text).join('')).toBe(entry.simplified);
-    }
-    expect(filterWords(words, 'ni hao').map(w => w.hanzi)).toContain('你好！');
-  });
-  it('retains twelve topics with twenty phrases each and editorial provenance', () => {
-    const counts = new Map<string | null, number>();
-    for (const entry of phrases) counts.set(entry.categoryId, (counts.get(entry.categoryId) ?? 0) + 1);
-    expect(counts.size).toBe(12);
-    expect([...counts.values()]).toEqual(Array(12).fill(20));
-    expect(phrases.find(e => e.phraseMetadata?.internalId === 'L1-P020')?.phraseMetadata?.reviewNotes).toContain('Welcome');
-    expect(phrases.every(e => e.secondarySources?.[0]?.sourceName === 'HSK3_Level1_240_Phrases_Pinyin_Translations-2.xlsx')).toBe(true);
-    expect(phrases.filter(e => e.phraseMetadata?.editorialCorrection)).toHaveLength(24);
+  it('keeps the greeting headword as its exact word record', () => {
+    const greeting = words.find(w => w.hanzi === '你好')!;
+    expect(vocabularyKind(greeting)).toBe('word');
+    expect(words.some(w => w.hanzi === '你好！')).toBe(false);
   });
 });

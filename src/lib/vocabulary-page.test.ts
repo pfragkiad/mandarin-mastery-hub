@@ -4,7 +4,8 @@ import { vocabularyPage } from './vocabulary-page';
 
 describe('vocabulary pagination', () => {
   const wordEntries = words.filter(word => vocabularyKind(word) === 'word');
-  const phraseEntries = words.filter(word => vocabularyKind(word) === 'phrase');
+  // Pagination needs a multi-page phrase pool even when the imported dataset is small.
+  const phraseEntries = Array.from({ length: 80 }, (_, index) => ({ ...words.find(word => vocabularyKind(word) === 'phrase')!, id: `phrase-page-${index}` }));
   it('bounds word pages to 24 entries without overlaps', () => {
     const first = vocabularyPage(wordEntries, 'word', 1);
     const second = vocabularyPage(wordEntries, 'word', 2);

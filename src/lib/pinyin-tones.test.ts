@@ -14,6 +14,11 @@ describe('pinyinNumbered', () => {
 });
 
 describe('pinyinReadingMatches', () => {
+  it('searches recorded alternative readings independently in exact mode', () => {
+    expect(pinyinReadingMatches('shéi / shuí', 'shei2', true)).toBe(true);
+    expect(pinyinReadingMatches('shéi / shuí', 'shui2', true)).toBe(true);
+    expect(pinyinReadingMatches('shéi / shuí', 'shui3', true)).toBe(false);
+  });
   it('exact mode accepts tone numbers and rejects other tones', () => {
     expect(pinyinReadingMatches('shī', 'shi1', true)).toBe(true);
     expect(pinyinReadingMatches('shí', 'shi1', true)).toBe(false);

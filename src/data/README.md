@@ -4,7 +4,7 @@ JSON here is imported by application modules. Static imports make data available
 
 | File or directory | Loading and purpose | Producer |
 | --- | --- | --- |
-| `vocabulary.json` | Static import in `src/lib/data-contract.ts`. Holds categories and vocabulary entries in the Mandarin Tutor API shape. Session additions remain separate from the imported records. | Vocabulary export; `scripts/import-hsk-phrases.py` adds the supplied unofficial phrase records. |
+| `vocabulary.json` | Static import in `src/lib/data-contract.ts`. Holds categories and vocabulary entries in the Mandarin Tutor API shape, with optional sourced study/example metadata. Session additions remain separate from the imported records. | Original vocabulary export; `scripts/import-hsk-level1.mjs` replaces all Level 1 data from the [versioned handoff and topic sidecar](../../importer/hsk/README.md). The earlier unofficial phrase import has been removed from Level 1. |
 | `radical-contextual-identities.json` | Static import in `src/lib/radical-contextual-identity.ts`. Small reviewed identity subset needed synchronously for exact family/form/glyph presentation. | `scripts/import-radical-contextual-identities.py` extracts recorded fields from the public etymology audit. |
 | `supplementary-outlines.json` | Static manifest import in `src/lib/character-enrichment.ts`. Lists covered exact glyphs and public geometry URLs; contains no inferred outlines. | `scripts/import-supplementary-outlines.py`. |
 | `babelstone-components.json` | Dynamic import in `src/lib/babelstone-components.ts`. Resolves numbered source tokens on demand without replacing their source identities. | `scripts/import-babelstone-components.py` reads a supplied IDS source. |

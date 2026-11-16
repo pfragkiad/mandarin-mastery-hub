@@ -28,7 +28,7 @@ const vocabularyMotto = 'WORDS BUILT FROM THE CHARACTERS YOU KNOW';
 /** Vocabulary's status pill in the page heading: the collection is partial material, so
  *  the tag says so and opens the shared hint card explaining exactly what is missing.
  *  No inputs or state — the copy restates only what the data holds today (HSK 3.0 levels
- *  1–2, examples on some entries, no way to add your own sentences yet), so the tag can
+ *  1–2, two examples per Level 1 word, no way to add your own sentences yet), so the tag can
  *  never read as a claim of complete coverage. */
 function ExperimentalTag() {
   return <Popover>
@@ -38,7 +38,7 @@ function ExperimentalTag() {
     <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
       <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
       Still being built: HSK 3.0 levels 1–2 so far; levels 3 and above are not in the collection yet.<br/>
-      Example sentences cover some entries only, and your own sentences cannot be added yet.
+      Level 1 has two examples per word; Level 2 examples are also included. Your own sentences cannot be added yet.
     </HintBody></PopoverContent>
   </Popover>;
 }
@@ -101,7 +101,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, initialWordId]);
   const reset = () => { const empty = { q: '', collection: 'All collections', level: 'All levels', py: undefined, pos: 'All types' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
-  return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Level 1 practice phrases are unofficial · no syllabus IDs' : 'HSK 3.0 vocabulary · levels as recorded in the source'}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
+  return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
     <TabsContent value={kind}>
     <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections' } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : [])]} filterFields={({ draft, patch }) => { const facets = vocabularyFacetOptions(facetBase, { collection: draft.collection ?? 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types' }); return <>

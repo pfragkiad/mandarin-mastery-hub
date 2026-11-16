@@ -26,8 +26,10 @@ describe('vocabulary decomposition', () => {
     expect(wordCharacters(word)).toEqual([{ text: '爸', pinyin: 'bà' }, { text: '爸', pinyin: 'ba' }]);
   });
   it('matches phrase words to real records while retaining punctuation', () => {
-    const phrase = words.find(item => item.hanzi === '你好！');
-    if (!phrase) throw new Error('Missing 你好！');
+    const headword = words.find(item => item.hanzi === '你好');
+    if (!headword) throw new Error('Missing 你好');
+    const { entry, ...sessionWord } = headword;
+    const phrase = { ...sessionWord, id: 'session-hello', hanzi: '你好！', entryKind: 'phrase' as const };
     const parts = phraseParts(phrase, words);
     expect(parts.map(part => part.text).join('')).toBe('你好！');
     expect(parts.filter(part => part.word).map(part => part.word?.hanzi)).toEqual(['你好']);

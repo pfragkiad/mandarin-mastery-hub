@@ -1,6 +1,6 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
 import { parseUsageGroup } from './usage-frequency';
-import { partOfSpeechList, vocabularyKind, type Word } from './mandarin';
+import { partOfSpeechList, vocabularyKind, wordCollections, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 
 export const drawingKinds = ['Characters', 'Components', 'Radicals', 'Words'] as const;
@@ -49,7 +49,7 @@ export function drawingWordClues(card: DrawingCard) {
 export function drawingWordPool(items: Word[], search: DrawingSearch, includeTraditional: boolean, savedIds?: readonly string[]): DrawingCard[] {
   return items.filter(word => vocabularyKind(word) === 'word' && includeScript(word.script, includeTraditional)
     && (!search.saved || (savedIds ?? []).includes(word.id))
-    && (!search.collection || word.collection === search.collection) && (!search.level || word.level === search.level)
+    && (!search.collection || wordCollections(word).includes(search.collection)) && (!search.level || word.level === search.level)
     && (!search.pos || partOfSpeechList(word).includes(search.pos))
     && word.pinyin.trim() && word.meaning.trim() && wordCharacters(word).length > 0)
     .map(word => ({ id: word.id, hanzi: wordCharacters(word)[0]?.hanzi ?? '', pinyin: word.pinyin, meaning: word.meaning, note: '', word }));

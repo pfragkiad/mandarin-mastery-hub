@@ -15,7 +15,8 @@ Run scripts from the repository root. Importer-only pinned inputs belong in [imp
 | `import-babelstone-components.py` | Takes a supplied IDS text path; writes numbered component definitions to `src/data/babelstone-components.json`. |
 | `import-usage-order.py` | Takes a usage-order directory and optional component-classes directory; writes sourced ranks and exposure statistics to `public/data/usage-order.json`. |
 | `import-pinyin-audio.py` | Takes supplied material and upload-manifest directories; verifies recordings and writes CDN-reference sidecars under `src/data/pinyin/`. |
-| `import-hsk-phrases.py` | Reads the supplied phrase workbook and vocabulary export; adds unofficial practice phrases while preserving existing entries. Requires `openpyxl`; see the script's argument parser for paths. |
+| `import-hsk-level1.mjs` | Audits the supplied versioned JSON and topics sidecar; `--write` replaces every Level 1 record, including removing legacy unofficial phrases, with exact identities/audio retained and validated pinyin tokens. See [the HSK source guide](../importer/hsk/README.md). Run `node --test scripts/import-hsk-level1.test.mjs` for importer boundary checks. |
+| `import-hsk-phrases.py` | Legacy XLSX importer for the former unofficial practice phrases; not compatible with the v1.6.0 JSON handoff. Running it explicitly re-adds that legacy phrase set. Requires `openpyxl`; see its argument parser for paths. |
 | `build-vocabulary-fonts.py` | Builds the vocabulary's self-hosted font subsets from the recorded web-font designs. Requires fontTools and network access. |
 | `build-supplement-fonts.py` | Builds extra font coverage for recorded code points outside the Google Fonts slices. Requires fontTools and network access. |
 

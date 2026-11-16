@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions } from './mandarin';
 describe('Vocabulary filtering', () => {
- it('loads all 741 imported vocabulary entries', () => { expect(words).toHaveLength(741); });
+ it('loads 501 entries after replacing Level 1 and removing its unofficial phrases', () => { expect(words).toHaveLength(501); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
  it('matches tone-number pinyin even without the pinyin toggle', () => {
    expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');
@@ -13,7 +13,7 @@ describe('Vocabulary filtering', () => {
    expect(filterWords(words, 'water', 'All collections', 'All levels', 'All words', [], true).map(w => w.hanzi)).not.toContain('水');
  });
  it('restricts results to saved words', () => { const id = words[0]!.id; expect(filterWords(words,'','All collections','All levels','Saved words',[id]).map(w => w.id)).toEqual([id]); });
- it('shows category names without the sort prefix', () => { expect(collections).toContain('Numbers & quantities'); });
+ it('shows the updated topic labels without a sort prefix', () => { expect(collections).toContain('Numbers & Quantities'); });
  it('every imported word carries a recorded part of speech', () => { expect(words.every(w => w.type.trim())).toBe(true); });
  it('filters by base part of speech, matching combos and ignoring sense notes and case', () => {
    const verbs = filterWords(words, '', 'All collections', 'All levels', 'All words', [], false, 'Verb');
