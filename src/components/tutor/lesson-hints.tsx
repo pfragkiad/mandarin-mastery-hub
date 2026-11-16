@@ -35,14 +35,14 @@ import { MeaningText } from './meaning-text';
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; refFor: (glyph: string) => string | null };
 
 const Ctx = createContext<HintsContext | null>(null);
 export const useLessonHints = () => useContext(Ctx);
 
 const HAN_CHAR = /^\p{Script=Han}$/u;
 
-export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }: { enabled: boolean; backLabel?: string; children: ReactNode }) {
+export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRefs, children }: { enabled: boolean; backLabel?: string; characterRefs?: Record<string, string>; children: ReactNode }) {
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
