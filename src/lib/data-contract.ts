@@ -48,8 +48,19 @@ export function examplePinyin(example: Example): string {
     .replace(/[。！？，、；：()]/g, c => LATIN_PUNCTUATION[c] ?? c);
 }
 
+/**
+ * Display order for a record's example sentences: conversational style first, then the
+ * rest in recorded order (stable). Presentation only — the recorded array is never
+ * mutated, so provenance and IDs stay exactly as imported.
+ */
+export function orderExamples(examples: Example[]): Example[] {
+  return examples.map((example, index) => ({ example, index }))
+    .sort((a, b) => (a.example.style === 'conversational' ? 0 : 1) - (b.example.style === 'conversational' ? 0 : 1) || a.index - b.index)
+    .map(({ example }) => example);
+}
+
 export function entryToWord(e: Entry, categories: Category[]): Word {
-  const first = e.examples[0];
+  const first = orderExamples(e.examples)[0];
   return {
     id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),

@@ -23,7 +23,7 @@ import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
-import { examplePinyin } from '@/lib/data-contract';
+import { examplePinyin, orderExamples } from '@/lib/data-contract';
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
