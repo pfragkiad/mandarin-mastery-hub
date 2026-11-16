@@ -16,9 +16,10 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript } from '@/lib/learning-preferences';
-import { collectionOptions, partOfSpeechList, partOfSpeechOptions, vocabularyKind, wordCollections, type Word } from '@/lib/mandarin';
+import { partOfSpeechList, vocabularyFacetOptions, vocabularyKind, wordCollections, type Word } from '@/lib/mandarin';
+import { libraryFilterOptions } from '@/lib/library-filter-options';
 import { DEFAULT_FLASHCARD_KIND, flashcardKindLabel, flashcardKinds, flashcardVocabularyKind } from '@/lib/flashcard-filters';
-import { PHRASE_STYLES, matchesPhraseStyle, phraseStyle } from '@/lib/data-contract';
+import { matchesPhraseStyle } from '@/lib/data-contract';
 import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
@@ -64,12 +65,27 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     ? { to: '/characters' as const, search: c.radicalVariant ? savedGlyphDestination(c as LibraryEntry) : { tab: c.libraryKind, id: c.id } }
     : { to: '/vocabulary' as const, search: { word: c.id, tab: vocabularyKind(c as unknown as Word) } };
   const rememberReturn = () => detailTrail.replace({ label: 'Flashcards', href: window.location.href });
-  // Collection / level / type options come from the records of the chosen vocabulary kind
-  // (Words or Phrases), so a dropdown never offers a choice with no cards behind it.
-  const vocabularyFacets = (kind: string) => {
-    const vocabKind = flashcardVocabularyKind(kind);
-    const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind) : [];
-    return { styles: vocabKind === 'phrase' ? PHRASE_STYLES.filter(st => kindItems.some(w => phraseStyle(w.entry) === st)) : [], collections: collectionOptions(kindItems), levels: [...new Set(kindItems.map(w => w.level).filter(Boolean))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), posOptions: partOfSpeechOptions(kindItems) };
+  // Collection / level / type / style options come from the records of the chosen
+  // vocabulary kind (Words or Phrases) under the draft's Saved-only choice, and each
+  // dropdown is narrowed by the other current picks (shared vocabularyFacetOptions),
+  // so a dropdown never offers a choice with no cards behind it.
+  const vocabularyFacets = (draft: FlashcardFilters) => {
+    const vocabKind = flashcardVocabularyKind(draft.category);
+    const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind && (!draft.saved || saved.includes(w.id))) : [];
+    const facets = vocabularyFacetOptions(kindItems, { collection: draft.collection || 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: vocabKind === 'phrase' ? draft.style : undefined });
+    return { styles: vocabKind === 'phrase' && kindItems.length ? facets.styles : [], collections: facets.collections, levels: facets.levels, posOptions: facets.pos };
+  };
+  // Glyph decks: rank groups and stroke counts narrow each other the same way the
+  // Glyphs library does (Characters and Components; Radicals list every choice).
+  const glyphFacets = (draft: FlashcardFilters, refKind: LibraryKind) => {
+    const entries = libraryEntries(refKind);
+    const allStrokes = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
+    if (refKind !== 'Characters' && refKind !== 'Components') return { strokes: allStrokes, ranks: usageGroups(refKind) };
+    const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseUsageGroup(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
+    const current = parseUsageGroup(refKind, draft.usage);
+    const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
+    const ranks = current && !options.ranks.some(g => g.value === current) ? usageGroups(refKind).filter(g => g.value === current || options.ranks.some(o => o.value === g.value)) : options.ranks;
+    return { strokes, ranks };
   };
   const isReference = category.startsWith('Ref:');
 
@@ -172,7 +188,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     return () => window.removeEventListener('keydown', onKey);
   }, [setSession]);
   const setup = (action: ReactNode, summary: ReactNode) => <>
-      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft.category); return <>
+      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; return <>
         {/* Row 1: what kind of card, plus the vocabulary collection / level / type for Words and Phrases. */}
         <div className="game-filter-row">
           <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '', ...(draft.saved ? { saved: true } : {}) })}>
@@ -189,8 +205,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
         </div>
         {/* Row 2: narrowing filters — rank and stroke count (glyphs) and Saved only. */}
         <div className="game-filter-row">
-        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value, usageUpTo: undefined })}><option value="">All ranks</option>{usageGroups(draftRefKind).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, draftRefKind, preferences.includeTraditional)}</option>)}</select>{draft.usage && draft.usage !== UNRANKED && <button type="button" className={`filter-upto-toggle${draft.usageUpTo ? ' active' : ''}`} aria-pressed={draft.usageUpTo === '1'} title="Also include every more frequent rank above the selected group" onClick={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })}>+ lower ranks</button>}</span>}
-        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Stroke count" value={draft.strokes ?? ''} onChange={e => patch({ strokes: e.target.value, strokesUpTo: undefined })}><option value="">All stroke counts</option>{[...new Set(libraryEntries(draftRefKind).flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b).map(n => <option key={n} value={n}>{n} {n === 1 ? 'stroke' : 'strokes'}</option>)}</select>{draft.strokes && <button type="button" className={`filter-upto-toggle${draft.strokesUpTo ? ' active' : ''}`} aria-pressed={draft.strokesUpTo === '1'} title="Also include every smaller stroke count" onClick={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })}>+ fewer strokes</button>}</span>}
+        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value, usageUpTo: undefined })}><option value="">All ranks</option>{(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, draftRefKind, preferences.includeTraditional)}</option>)}</select>{draft.usage && draft.usage !== UNRANKED && <button type="button" className={`filter-upto-toggle${draft.usageUpTo ? ' active' : ''}`} aria-pressed={draft.usageUpTo === '1'} title="Also include every more frequent rank above the selected group" onClick={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })}>+ lower ranks</button>}</span>}
+        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Stroke count" value={draft.strokes ?? ''} onChange={e => patch({ strokes: e.target.value, strokesUpTo: undefined })}><option value="">All stroke counts</option>{(glyph?.strokes ?? []).map(n => <option key={n} value={n}>{n} {n === 1 ? 'stroke' : 'strokes'}</option>)}</select>{draft.strokes && <button type="button" className={`filter-upto-toggle${draft.strokesUpTo ? ' active' : ''}`} aria-pressed={draft.strokesUpTo === '1'} title="Also include every smaller stroke count" onClick={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })}>+ fewer strokes</button>}</span>}
         {/* Saved-only: the same bookmark + count toggle as the libraries, last in the row; it stays part of the auto-applied draft. */}
         <SavedFilterToggle on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
         </div>
