@@ -21,7 +21,7 @@ export type Entry = {
   /** Set only on phrases derived from a word's recorded example sentence (sentencePhraseEntries). */
   /** Optional recorded style for a standalone phrase ("conversational" | "written"); absent = Unclassified. */
   style?: 'conversational' | 'written';
-  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null };
+  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null; hskFromWord: string | null };
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
   studyMetadata?: {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
@@ -66,35 +66,41 @@ export function orderExamples(examples: Example[]): Example[] {
 /**
  * Phrases derived from the recorded example sentences of every word (presentation only,
  * no new data file): each distinct sentence becomes one phrase record carrying the exact
- * recorded tokens, pinyin, translation, audio and style. It inherits the parent words'
- * HSK level and topics, but never an HSK syllabus index or source, because a sentence is
- * not a syllabus item. A sentence recorded under several words appears once, listing
- * every parent word's topics. IDs derive from the first example ID, so links stay stable.
+ * recorded tokens, pinyin, translation, audio and style. It inherits every parent word's
+ * topics, plus the HSK level, syllabus index and source of one owning parent — the parent
+ * with the highest recorded level (ties: the first recorded) — so the card's
+ * "HSK L<level>/#<index>" pill always states one word's own recorded identity instead of
+ * mixing one word's level with another word's index. The owner is named in
+ * sentenceSource.hskFromWord so the pill can say where the index came from. A sentence
+ * recorded under several words appears once, listing every parent word. IDs derive from
+ * the first example ID, so links stay stable.
  */
 export function sentencePhraseEntries(entries: Entry[]): Entry[] {
-  const bySentence = new Map<string, Entry>();
+  // One group per distinct sentence, in first-recorded order, keeping every parent word.
+  const groups = new Map<string, { example: Example; words: Entry[] }>();
   for (const word of entries) {
     if (word.entryKind !== 'word') continue;
     for (const example of word.examples) {
-      const topics = [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id));
-      const existing = bySentence.get(example.simplified);
-      if (existing) {
-        existing.sentenceSource!.wordIds.push(word.id);
-        existing.categoryIds = [...new Set([...(existing.categoryIds ?? []), ...topics])];
-        if (existing.hskLevel !== word.hskLevel) existing.hskLevel = Math.max(existing.hskLevel ?? 0, word.hskLevel ?? 0) || null;
-        continue;
-      }
-      bySentence.set(example.simplified, {
-        id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? word.sourceName, sourceVersion: example.source?.sourceVersion ?? word.sourceVersion,
-        simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [example.english],
-        entryKind: 'phrase', hskLevel: word.hskLevel, hskVersion: word.hskVersion, hsk_index: null, hskSource: null,
-        categoryId: word.categoryId, categoryIds: [...new Set(topics)], partOfSpeech: null, contentStatus: 'draft',
-        audio: example.audio ?? null, examples: [], createdAt: word.createdAt, updatedAt: word.updatedAt,
-        sentenceSource: { exampleId: example.id, wordIds: [word.id], style: example.style ?? null, notes: example.notes ?? null },
-      });
+      const group = groups.get(example.simplified);
+      if (!group) groups.set(example.simplified, { example, words: [word] });
+      else if (!group.words.some(parent => parent.id === word.id)) group.words.push(word);
     }
   }
-  return [...bySentence.values()];
+  const phrases: Entry[] = [];
+  for (const { example, words } of groups.values()) {
+    const first = words[0]!;
+    const owner = words.reduce((best, word) => ((word.hskLevel ?? 0) > (best.hskLevel ?? 0) ? word : best), first);
+    const topics = [...new Set(words.flatMap(word => [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id))))];
+    phrases.push({
+      id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? first.sourceName, sourceVersion: example.source?.sourceVersion ?? first.sourceVersion,
+      simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [example.english],
+      entryKind: 'phrase', hskLevel: owner.hskLevel, hskVersion: owner.hskVersion, hsk_index: owner.hsk_index, hskSource: owner.hskSource,
+      categoryId: first.categoryId, categoryIds: topics, partOfSpeech: null, contentStatus: 'draft',
+      audio: example.audio ?? null, examples: [], createdAt: first.createdAt, updatedAt: first.updatedAt,
+      sentenceSource: { exampleId: example.id, wordIds: words.map(word => word.id), style: example.style ?? null, notes: example.notes ?? null, hskFromWord: owner.simplified },
+    });
+  }
+  return phrases;
 }
 
 export type PhraseStyle = 'Conversational' | 'Written' | 'Unclassified';
