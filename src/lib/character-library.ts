@@ -8,7 +8,7 @@ import { pinyinReadingMatches } from './pinyin-tones';
 import { contextualVariantIdentity } from './radical-contextual-identity';
 import { relatedGroup, scriptHead } from './character-variants';
 import { componentCardHead } from './component-families';
-import { isRadicalGlyph } from './card-ink';
+import { glyphCardInk, isRadicalGlyph } from './card-ink';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -73,23 +73,24 @@ export function savedGlyphDestination(entry: LibraryEntry) {
   const kind = kindFromId(entry.id);
   return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
 }
-/** Glyphs of one library, cached per entry list, so a card-head lookup stays O(1). */
-const libraryGlyphSets = new WeakMap<readonly LibraryEntry[], Set<string>>();
-function libraryGlyphs(all: readonly LibraryEntry[]): Set<string> {
-  let set = libraryGlyphSets.get(all);
-  if (!set) { set = new Set(all.map(entry => entry.hanzi)); libraryGlyphSets.set(all, set); }
-  return set;
+/** Records of one library by glyph, cached per entry list, so a card-head lookup stays O(1). */
+const libraryRecordMaps = new WeakMap<readonly LibraryEntry[], Map<string, LibraryEntry>>();
+function libraryRecords(all: readonly LibraryEntry[]): Map<string, LibraryEntry> {
+  let map = libraryRecordMaps.get(all);
+  if (!map) { map = new Map(all.map(entry => [entry.hanzi, entry])); libraryRecordMaps.set(all, map); }
+  return map;
 }
 
-/** Whether this record belongs to a radical card: its own glyph is a sourced Kangxi radical
- *  (card-ink.ts / radical-identities), or the head of the card it folds into is — 刂 rides on
- *  刀's family card and 屍 on 尸's script card. A head only owns the card when it is itself a
- *  record of this library (collapseScriptForms' rule), so a record whose head is missing keeps
- *  its own card and stays visible. `all` is that library's full entry list. */
+/** Whether this record belongs to a radical card: the card it is shown on reads as a radical by
+ *  the app's own ink rule (glyphCardInk → gold), so 刀 counts and every form folded onto it does
+ *  too (刂 on 刀's family card, 屍 on 尸's script card), while a Traditional form keeps its purple
+ *  card (兒 beside 儿). A head only owns the card when it is itself a record of this library
+ *  (collapseScriptForms' rule), so a record whose head is missing keeps its own card.
+ *  `all` is that library's full entry list. */
 export function radicalCardRecord(entry: LibraryEntry, kind: LibraryKind, all: readonly LibraryEntry[], includeTraditional = false): boolean {
-  if (isRadicalGlyph(entry, kind)) return true;
   const head = kind === 'Components' ? componentCardHead(entry.hanzi, includeTraditional) : kind === 'Characters' ? scriptHead(entry.hanzi) : entry.hanzi;
-  return head !== entry.hanzi && libraryGlyphs(all).has(head) && isRadicalGlyph({ hanzi: head }, kind);
+  const card = libraryRecords(all).get(head) ?? entry;
+  return glyphCardInk(kind, card.script, isRadicalGlyph(card, kind)) === 'card-ink-radical';
 }
 
 // pinyinExact (only with pinyinOnly) requires a whole tone-stripped reading to
