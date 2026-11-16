@@ -24,7 +24,7 @@ describe('Full Level 1 replacement', () => {
 describe('Sentence phrases', () => {
   const derived = words.filter(w => w.entry?.sentenceSource);
   it('turns every distinct recorded example sentence into one phrase', () => {
-    const sentences = new Set(vocabularyData.entries.flatMap(e => e.examples.map(x => x.simplified)));
+    const sentences = new Set(vocabularyData.entries.filter(e => e.entryKind === 'word').flatMap(e => e.examples.map(x => x.simplified)));
     expect(derived).toHaveLength(sentences.size);
     expect(derived.every(w => vocabularyKind(w) === 'phrase' && w.hskId == null)).toBe(true);
   });
@@ -33,5 +33,7 @@ describe('Sentence phrases', () => {
     expect(phraseStyle(love.entry)).toBe('Conversational');
     expect(phraseStyle(words.find(w => w.hanzi === '不好意思')!.entry)).toBe('Unclassified');
     expect(derived.some(w => phraseStyle(w.entry) === 'Written')).toBe(true);
+    const standalone = words.find(w => w.hanzi === '不好意思')!.entry!;
+    expect(phraseStyle({ ...standalone, style: 'conversational' })).toBe('Conversational');
   });
 });

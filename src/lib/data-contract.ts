@@ -19,6 +19,8 @@ export type Entry = {
   categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; partOfSpeechSource?: SourceRef; tags?: string[]; contentStatus: 'draft' | 'reviewed';
   audio: AudioAttachment | null; examples: Example[]; createdAt: string; updatedAt: string;
   /** Set only on phrases derived from a word's recorded example sentence (sentencePhraseEntries). */
+  /** Optional recorded style for a standalone phrase ("conversational" | "written"); absent = Unclassified. */
+  style?: 'conversational' | 'written';
   sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null };
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
   studyMetadata?: {
@@ -98,8 +100,10 @@ export function sentencePhraseEntries(entries: Entry[]): Entry[] {
 export type PhraseStyle = 'Conversational' | 'Written' | 'Unclassified';
 export const PHRASE_STYLES: PhraseStyle[] = ['Conversational', 'Written', 'Unclassified'];
 /** Recorded sentence style of a phrase; syllabus phrases and unstyled sentences are Unclassified. */
-export const phraseStyle = (e: Entry | undefined): PhraseStyle =>
-  e?.sentenceSource?.style === 'conversational' ? 'Conversational' : e?.sentenceSource?.style === 'written' ? 'Written' : 'Unclassified';
+export const phraseStyle = (e: Entry | undefined): PhraseStyle => {
+  const recorded = e?.sentenceSource?.style ?? e?.style;
+  return recorded === 'conversational' ? 'Conversational' : recorded === 'written' ? 'Written' : 'Unclassified';
+};
 
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = orderExamples(e.examples)[0];
