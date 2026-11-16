@@ -8,6 +8,7 @@ import type { AudioRequest } from '@/lib/audio';
 import { ExamplePronunciation } from './example-pronunciation';
 import { HintChar, useLessonHints } from './lesson-hints';
 import { alignSentencePinyin, isHanziChar } from '@/lib/sentence-align';
+import { alignSentenceEnding } from '@/lib/data-contract';
 import { alignSentence } from '@/lib/phrase-pinyin-align';
 import { useSyllableInventory } from './use-syllable-inventory';
 
@@ -76,7 +77,9 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         </span>)}</span> : <span>{pinyin}</span>}
         <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
       </span>}
-      {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+      {/* The translation ends with the pinyin's terminal mark (. ! ?) — display rule
+          from alignSentenceEnding; the recorded text is never rewritten. */}
+      {translation && <span className="sentence-meaning"><MeaningText text={pinyin ? alignSentenceEnding(pinyin, translation) : translation} sentence/></span>}
     </span>
     {/* The source's editorial note for this sentence, shown exactly as recorded (never
         generated). A div, not a span/p, so the translation keeps its own styling rules. */}

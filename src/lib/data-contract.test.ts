@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle } from './data-contract';
+import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle, alignSentenceEnding, examplePinyin } from './data-contract';
 import type { Example } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
@@ -52,5 +52,29 @@ describe('phrase style filter (Phrases library and Flashcards)', () => {
   });
   it('no style keeps every phrase', () => {
     expect(phrases.every(e => matchesPhraseStyle(e, '') && matchesPhraseStyle(e, 'All styles'))).toBe(true);
+  });
+});
+
+describe('alignSentenceEnding (translation ends with the pinyin terminal mark)', () => {
+  it('appends the pinyin mark when the translation has none', () => {
+    expect(alignSentenceEnding('wǒ ài wǒ de jiā.', 'I love my family')).toBe('I love my family.');
+    expect(alignSentenceEnding('nǐ hǎo ma?', 'How are you')).toBe('How are you?');
+  });
+  it('replaces a different terminal mark', () => {
+    expect(alignSentenceEnding('nǐ hǎo ma?', 'How are you.')).toBe('How are you?');
+    expect(alignSentenceEnding('tài hǎo le!', 'Great?')).toBe('Great!');
+  });
+  it('keeps a matching ending and trailing whitespace untouched', () => {
+    expect(alignSentenceEnding('wǒ ài wǒ de jiā.', 'I love my family.')).toBe('I love my family.');
+  });
+  it('leaves the translation alone when the pinyin has no terminal mark', () => {
+    expect(alignSentenceEnding('wǒ ài wǒ de jiā', 'I love my family!')).toBe('I love my family!');
+  });
+  it('every recorded example already ends consistently (rule is a no-op on current data)', () => {
+    for (const entry of vocabularyData.entries) {
+      for (const example of entry.examples) {
+        expect(alignSentenceEnding(examplePinyin(example), example.english)).toBe(example.english);
+      }
+    }
   });
 });

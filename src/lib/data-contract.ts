@@ -53,6 +53,20 @@ export function examplePinyin(example: Example): string {
 }
 
 /**
+ * Display rule: a sentence's translation ends with the same terminal mark as its pinyin
+ * (. ! ?). If the recorded translation ends with a different mark it is replaced; if it
+ * has none, the pinyin's mark is appended. A pinyin without a terminal mark leaves the
+ * translation untouched. Presentation only — recorded JSON is never rewritten.
+ */
+export function alignSentenceEnding(pinyin: string, translation: string): string {
+  const mark = pinyin.trimEnd().match(/[.!?]$/)?.[0];
+  if (!mark) return translation;
+  const trimmed = translation.trimEnd();
+  if (trimmed.endsWith(mark)) return translation;
+  return /[.!?]$/.test(trimmed) ? trimmed.slice(0, -1) + mark : trimmed + mark;
+}
+
+/**
  * Display order for a record's example sentences: conversational style first, then the
  * rest in recorded order (stable). Presentation only — the recorded array is never
  * mutated, so provenance and IDs stay exactly as imported.
@@ -93,7 +107,7 @@ export function sentencePhraseEntries(entries: Entry[]): Entry[] {
     const topics = [...new Set(words.flatMap(word => [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id))))];
     phrases.push({
       id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? first.sourceName, sourceVersion: example.source?.sourceVersion ?? first.sourceVersion,
-      simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [example.english],
+      simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [alignSentenceEnding(examplePinyin(example), example.english)],
       entryKind: 'phrase', hskLevel: owner.hskLevel, hskVersion: owner.hskVersion, hsk_index: owner.hsk_index, hskSource: owner.hskSource,
       categoryId: first.categoryId, categoryIds: topics, partOfSpeech: null, contentStatus: 'draft',
       audio: example.audio ?? null, examples: [], createdAt: first.createdAt, updatedAt: first.updatedAt,
@@ -130,7 +144,7 @@ export function entryToWord(e: Entry, categories: Category[]): Word {
       return category ? [categoryName(category.name)] : [];
     }))],
     hskId: e.hsk_index ?? null,
-    sentence: first?.simplified ?? '', translation: first?.english ?? '',
+    sentence: first?.simplified ?? '', translation: first ? alignSentenceEnding(examplePinyin(first), first.english) : '',
     sentencePinyin: first ? examplePinyin(first) : '',
     audio: e.audio, entry: e,
   };
