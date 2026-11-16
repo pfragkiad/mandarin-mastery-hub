@@ -77,10 +77,26 @@ export function glyphParentCharacters(entry: LibraryEntry, kind: LibraryKind, ch
 
 /** BabelStone often writes a radical form with another code point (𥫗 for ⺮, ⺝ for 月).
  * A token counts as a family form only through recorded links: the radical file's alias list
- * (breakdownDisplayGlyph, ⺝ → 月) or a Unihan equivalent glyph that is itself a form of the
- * token's single recorded Kangxi family (𥫗 ↔ ⺮). Unlinked look-alikes (𤣩) keep their code
- * point, so no shape similarity ever creates a match. The source tree is not mutated. */
+ * (breakdownDisplayGlyph, ⺝ → 月), an owner-reviewed link (REVIEWED_RADICAL_FORM_LINKS, 𤣩 → 王)
+ * or a Unihan equivalent glyph that is itself a form of the token's single recorded Kangxi family
+ * (𥫗 ↔ ⺮). Unlinked look-alikes keep their code point, so no shape similarity ever creates a match. The source tree is not mutated. */
+/** Owner-reviewed BabelStone token links (confirmed by the owner, 2026-11-16). No Unihan field
+ * records these, so they are listed here explicitly rather than derived: each is the compressed
+ * shape BabelStone writes for a radical form in position. Only radical "In a character" matching
+ * reads them (through sourcedFormGlyph); source trees, breakdown display and identities keep the
+ * exact BabelStone code point. 𫇦 is 艹 over 冖 (茔, 营), so it counts as containing 艹; 艸, 艹
+ * and ⺿ stay separate recorded forms of #140 and are never merged into one another. */
+export const REVIEWED_RADICAL_FORM_LINKS: Readonly<Record<string, { family: number; form: string }>> = {
+  '𤣩': { family: 96, form: '王' }, // jade 王 on the left: 玩 = ⿰𤣩元
+  '𠆢': { family: 9, form: '人' }, // top 人: 今, 会
+  '𧘇': { family: 145, form: '衣' }, // lower 衣: 表
+  '𫜹': { family: 58, form: '彐' }, // 归, 当, 彗
+  '𫇦': { family: 140, form: '艹' }, // 艹 over 冖: 茔, 营 (contains 艹)
+};
+
 function sourcedFormGlyph(token: string): string {
+  const reviewed = REVIEWED_RADICAL_FORM_LINKS[token];
+  if (reviewed && radicalFamily(reviewed.family)?.forms.some(item => item.character === reviewed.form)) return reviewed.form;
   const identity = radicalIdentity(token);
   if (identity.radicals.length === 1) {
     const family = radicalFamily(identity.radicals[0]!.number);
