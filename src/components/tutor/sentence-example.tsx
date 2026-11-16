@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { MeaningText } from './meaning-text';
-import { MessageSquareText } from 'lucide-react';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 import type { AudioRequest } from '@/lib/audio';
@@ -47,17 +46,13 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   const pairClass = (pair: number | null | undefined) =>
     pair != null && hoveredPair === pair ? ' sentence-pair-hover' : '';
 
+  {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
+      the pinyin with its speaker and the translation. The row wraps, so the translation
+      shares the pinyin line only when it fits; otherwise it takes its own third line. */}
   return <div className="sentence">
-    {heading && <span className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>{heading}</span>}
-    {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
-      {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
-        {i > 0 && ' '}
-        {t.leading}
-        {t.pieces.map((piece, p) => piece.pair == null ? <span key={p}>{piece.text}</span> : <span key={p} className={`sentence-syllable${pairClass(piece.pair)}`} {...pairHandlers(piece.pair)}>{piece.text}</span>)}
-        {t.trailing}
-      </span>)}</span> : <span>{pinyin}</span>}
-      <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
-    </span>}
+    {/* The style label (Conversational/Written) is a pill on the hanzi line's right,
+        not an eyebrow above it, so the sentence block stays hanzi → pinyin → translation. */}
+    <div className="sentence-hanzi-row">
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
@@ -69,7 +64,20 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
-    {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+    {heading && <span className="sentence-style-pill">{heading}</span>}
+    </div>
+    <span className="sentence-reading">
+      {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
+        {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
+          {i > 0 && ' '}
+          {t.leading}
+          {t.pieces.map((piece, p) => piece.pair == null ? <span key={p}>{piece.text}</span> : <span key={p} className={`sentence-syllable${pairClass(piece.pair)}`} {...pairHandlers(piece.pair)}>{piece.text}</span>)}
+          {t.trailing}
+        </span>)}</span> : <span>{pinyin}</span>}
+        <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
+      </span>}
+      {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+    </span>
     {/* The source's editorial note for this sentence, shown exactly as recorded (never
         generated). A div, not a span/p, so the translation keeps its own styling rules. */}
     {note && <div className="sentence-note"><span className="sentence-note-label">Note</span>{note}</div>}
