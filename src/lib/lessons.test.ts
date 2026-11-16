@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { buildLessonIndex, correctLessonChoices, lessonCategories, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
+import { buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
+import { lessonGlyphHintById } from './lesson-hints';
 
 // Rules for the study lessons: kinds come from the explicit schema id, categories only from
 // the shared registry, lesson IDs are unique, and a lesson attaches to a Characters record
@@ -104,6 +105,18 @@ describe('recorded quiz answers', () => {
           expect(correctLessonChoices(q).map(c => c.id).sort()).toEqual([...q.correct_choice_ids!].sort());
           expect(correctLessonChoices(q).length).toBeGreaterThan(0);
         }
+      }
+    }
+  });
+
+  it('every recorded catalog_character_refs entry names a real exact record', () => {
+    for (const summary of lessonSummaries) {
+      const refs = lessonCharacterRefs[summary.id];
+      expect(refs, `lesson ${summary.id} records character refs`).toBeDefined();
+      for (const [glyph, id] of Object.entries(refs!)) {
+        expect(Array.from(glyph)).toHaveLength(1);
+        expect(id.endsWith(`:${glyph}`)).toBe(true);
+        expect(lessonGlyphHintById(id, false), `${id} resolves`).not.toBeNull();
       }
     }
   });
