@@ -18,6 +18,10 @@ export type Entry = {
   entryKind: 'word' | 'phrase'; hskLevel: number | null; hskVersion: '3.0' | null; hsk_index: number | null; hskSource: SourceRef | null;
   categoryId: string | null; categoryIds?: string[]; partOfSpeech: string | null; partOfSpeechSource?: SourceRef; tags?: string[]; contentStatus: 'draft' | 'reviewed';
   audio: AudioAttachment | null; examples: Example[]; createdAt: string; updatedAt: string;
+  /** Set only on phrases derived from a word's recorded example sentence (sentencePhraseEntries). */
+  /** Optional recorded style for a standalone phrase ("conversational" | "written"); absent = Unclassified. */
+  style?: 'conversational' | 'written';
+  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null };
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
   studyMetadata?: {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
@@ -58,6 +62,48 @@ export function orderExamples(examples: Example[]): Example[] {
     .sort((a, b) => (a.example.style === 'conversational' ? 0 : 1) - (b.example.style === 'conversational' ? 0 : 1) || a.index - b.index)
     .map(({ example }) => example);
 }
+
+/**
+ * Phrases derived from the recorded example sentences of every word (presentation only,
+ * no new data file): each distinct sentence becomes one phrase record carrying the exact
+ * recorded tokens, pinyin, translation, audio and style. It inherits the parent words'
+ * HSK level and topics, but never an HSK syllabus index or source, because a sentence is
+ * not a syllabus item. A sentence recorded under several words appears once, listing
+ * every parent word's topics. IDs derive from the first example ID, so links stay stable.
+ */
+export function sentencePhraseEntries(entries: Entry[]): Entry[] {
+  const bySentence = new Map<string, Entry>();
+  for (const word of entries) {
+    if (word.entryKind !== 'word') continue;
+    for (const example of word.examples) {
+      const topics = [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id));
+      const existing = bySentence.get(example.simplified);
+      if (existing) {
+        existing.sentenceSource!.wordIds.push(word.id);
+        existing.categoryIds = [...new Set([...(existing.categoryIds ?? []), ...topics])];
+        if (existing.hskLevel !== word.hskLevel) existing.hskLevel = Math.max(existing.hskLevel ?? 0, word.hskLevel ?? 0) || null;
+        continue;
+      }
+      bySentence.set(example.simplified, {
+        id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? word.sourceName, sourceVersion: example.source?.sourceVersion ?? word.sourceVersion,
+        simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [example.english],
+        entryKind: 'phrase', hskLevel: word.hskLevel, hskVersion: word.hskVersion, hsk_index: null, hskSource: null,
+        categoryId: word.categoryId, categoryIds: [...new Set(topics)], partOfSpeech: null, contentStatus: 'draft',
+        audio: example.audio ?? null, examples: [], createdAt: word.createdAt, updatedAt: word.updatedAt,
+        sentenceSource: { exampleId: example.id, wordIds: [word.id], style: example.style ?? null, notes: example.notes ?? null },
+      });
+    }
+  }
+  return [...bySentence.values()];
+}
+
+export type PhraseStyle = 'Conversational' | 'Written' | 'Unclassified';
+export const PHRASE_STYLES: PhraseStyle[] = ['Conversational', 'Written', 'Unclassified'];
+/** Recorded sentence style of a phrase; syllabus phrases and unstyled sentences are Unclassified. */
+export const phraseStyle = (e: Entry | undefined): PhraseStyle => {
+  const recorded = e?.sentenceSource?.style ?? e?.style;
+  return recorded === 'conversational' ? 'Conversational' : recorded === 'written' ? 'Written' : 'Unclassified';
+};
 
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = orderExamples(e.examples)[0];
