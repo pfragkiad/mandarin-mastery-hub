@@ -57,7 +57,15 @@ describe('breakdown character boxes', () => {
 
   it('boxes a part that has no library card instead of leaving it bare', () => {
     const { container } = render(<DecompositionTree node={{ glyph: '?', position: '' }}/>);
-    expect(container.querySelector('strong.decomposition-glyph.decomposition-glyph-static')?.textContent).toBe('?');
+    expect(container.querySelector('.decomposition-glyph.decomposition-glyph-static')?.textContent).toBe('?');
+  });
+
+  it('keeps an unlinked part in the same box/text split as linked parts, so scaling never resizes its border', () => {
+    const { container } = render(<DecompositionTree node={{ glyph: 'ㄅ', position: 'right' }}/>);
+    const box = container.querySelector('.decomposition-glyph.decomposition-glyph-static');
+    expect(box?.tagName).toBe('SPAN');
+    expect(box?.querySelector(':scope > strong')?.textContent).toBe('ㄅ');
+    expect((box as HTMLElement)?.style.transform ?? '').toBe('');
   });
 
   it('never scales a tile glyph when ink measurement is unavailable (fail closed)', () => {
