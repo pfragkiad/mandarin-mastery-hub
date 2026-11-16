@@ -9,10 +9,12 @@ import type { CharacterScript } from './learning-preferences';
  * learner needs when tapping one hanzi inside a lesson. Browser-safe and pure over the
  * lazily hydrated catalogue; returns null until it loads or when no exact record exists.
  *
- * Record choice is by exact written form only — the Characters record first (the lexical
- * character a lesson's prose is about), then Components, then a Radicals card whose own
- * glyph is the clicked form. Unlike libraryDestination, no canonical-identity link or
- * look-alike stands in, so the card never shows another glyph's reading or meaning.
+ * Record choice: when the lesson records a catalog_character_refs ID for the character
+ * (lessonGlyphHintById), that exact record wins. Otherwise the exact written form is
+ * looked up — the Characters record first (the lexical character a lesson's prose is
+ * about), then Components, then a Radicals card whose own glyph is the clicked form.
+ * Unlike libraryDestination, no canonical-identity link or look-alike stands in, so the
+ * card never shows another glyph's reading or meaning.
  */
 export type LessonGlyphHint = {
   glyph: string; kind: LibraryKind; id: string;

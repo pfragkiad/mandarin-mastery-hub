@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
-import { lessonGlyphHint } from '@/lib/lesson-hints';
+import { lessonGlyphHint, lessonGlyphHintById } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
