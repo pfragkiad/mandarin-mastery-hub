@@ -53,6 +53,20 @@ export function examplePinyin(example: Example): string {
 }
 
 /**
+ * Display rule: a sentence's translation ends with the same terminal mark as its pinyin
+ * (. ! ?). If the recorded translation ends with a different mark it is replaced; if it
+ * has none, the pinyin's mark is appended. A pinyin without a terminal mark leaves the
+ * translation untouched. Presentation only — recorded JSON is never rewritten.
+ */
+export function alignSentenceEnding(pinyin: string, translation: string): string {
+  const mark = pinyin.trimEnd().match(/[.!?]$/)?.[0];
+  if (!mark) return translation;
+  const trimmed = translation.trimEnd();
+  if (trimmed.endsWith(mark)) return translation;
+  return /[.!?]$/.test(trimmed) ? trimmed.slice(0, -1) + mark : trimmed + mark;
+}
+
+/**
  * Display order for a record's example sentences: conversational style first, then the
  * rest in recorded order (stable). Presentation only — the recorded array is never
  * mutated, so provenance and IDs stay exactly as imported.
