@@ -2,7 +2,7 @@
 
 Store importer-only source files under `importer/data/`, grouped by dataset. Importer scripts currently remain under `scripts/`; generated application data remains under `public/data/` or `src/data/` according to its loading method. Standalone analysis reports and notes remain under `reports/`.
 
-The owner-supplied [HSK Level 1 handoff](hsk/README.md) retains its explicitly supplied `importer/hsk/` paths and raw bytes. `scripts/import-hsk-level1.mjs` validates its 300 words, 600 example readings and updated topic sidecar before replacing Level 1 runtime data. See that guide for audit/write commands and provenance limits.
+The owner-supplied [HSK Level 1 handoff](hsk/README.md) remains under `importer/hsk/` with its original raw bytes. Its shared topic sidecar is named [hsk3_topics.json](hsk/hsk3_topics.json) and defines the taxonomy used by Level 1 and Level 2. `scripts/import-hsk-level1.mjs` validates its 300 words, 600 example readings and topic sidecar before replacing Level 1 runtime data. See that guide for audit/write commands and provenance limits.
 
 ## Radical identities
 

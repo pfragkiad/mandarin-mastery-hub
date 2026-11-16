@@ -5,7 +5,7 @@
     "dataVersion": "1.6.0"
   },
   "topics": {
-    "path": "importer/hsk/hsk3_level1_topics_1.6.0.json",
+    "path": "importer/hsk/hsk3_topics.json",
     "sha256": "b3d5ef85064afb3fd7a7e835b47ff3d43e693e7751190dc30a9de3c06da5165d",
     "count": 20,
     "matchesEmbeddedTaxonomy": true

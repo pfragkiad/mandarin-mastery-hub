@@ -13,4 +13,6 @@ JSON here is imported by application modules. Static imports make data available
 
 Use existing adapters rather than importing the same dataset into new UI components. Preserve API entry IDs, explicit word/phrase kinds, field-level provenance, exact readings, and CDN audio attachments. Vocabulary changes may require rebuilding font subsets; the font coverage tests check this.
 
+Level 1 and Level 2 share the 20-topic taxonomy v1.1.0 defined in the [HSK topic sidecar](../../importer/hsk/hsk3_topics.json). Level 1 assignments come from the versioned handoff; Level 2's 196 words and four phrases have local editorial assignments based on each exact record's meanings and examples, with secondary topics in `categoryIds` and the primary topic first, matching `categoryId`. These category assignments do not change or extend the recorded spreadsheet/syllabus provenance. The 12 unused legacy categories have been removed; `Sample collection` remains for the unclassified sample phrase. No additional Level 2 topics were needed.
+
 The larger fetched glyph catalogue lives in [public/data/](../../public/data/README.md). Importer-only inputs live in [importer/data/](../../importer/data/README.md). See [catalog.md](../../public/data/catalog.md) for the shared catalogue contract and [scripts/README.md](../../scripts/README.md) for generators.

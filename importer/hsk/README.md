@@ -1,11 +1,11 @@
 # HSK Level 1 handoff
 
-These owner-supplied source files retain their supplied paths and original UTF-8 bytes. They are offline importer inputs, never imported by browser modules. Future importer-only datasets normally belong under [../data/](../data/README.md).
+These owner-supplied source files retain their original UTF-8 bytes. The main handoff keeps its versioned filename; the shared topic sidecar is named `hsk3_topics.json` because Level 1 and Level 2 use the same taxonomy. They are offline inputs read by the importer and compatibility tests, never imported by browser modules. Future importer-only datasets normally belong under [../data/](../data/README.md).
 
 | File | Purpose and consumers | Producer |
 | --- | --- | --- |
 | [hsk3_level1_1.6.0.json](hsk3_level1_1.6.0.json) | 300 headwords, meanings, whole-word readings, 600 examples, editorial notes, topic/POS facets and verification limits. Read by `scripts/import-hsk-level1.mjs` and compatibility tests. | Supplied `hsk-example-pairs/1.2.0` handoff, data version 1.6.0. |
-| [hsk3_level1_topics_1.6.0.json](hsk3_level1_topics_1.6.0.json) | 20 topic IDs, labels and descriptions. The importer requires exact agreement with the main file's embedded topics. | Supplied taxonomy sidecar, taxonomy version 1.1.0. |
+| [hsk3_topics.json](hsk3_topics.json) | Shared 20-topic taxonomy for Level 1 and Level 2: IDs, labels and descriptions. Read by `scripts/import-hsk-level1.mjs` and its boundary tests; the importer requires exact agreement with the main file's embedded topics. | Supplied taxonomy sidecar, taxonomy version 1.1.0; renamed without changing its bytes or checksum. |
 | `.gitattributes` | Disables Git line-ending conversion for the two checksum-bound source files. | Maintained alongside the pinned inputs. |
 
 Source SHA-256 values:

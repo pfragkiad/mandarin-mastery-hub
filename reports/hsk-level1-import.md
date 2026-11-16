@@ -1,6 +1,6 @@
 # HSK Level 1 v1.6.0 compatibility and replacement
 
-The supplied [main handoff](../importer/hsk/hsk3_level1_1.6.0.json) and [topics sidecar](../importer/hsk/hsk3_level1_topics_1.6.0.json) can replace the current Level 1 material through [the dedicated importer](../scripts/import-hsk-level1.mjs). They are not directly compatible with the vocabulary API shape or the legacy XLSX phrase importer.
+The supplied [main handoff](../importer/hsk/hsk3_level1_1.6.0.json) and [topics sidecar](../importer/hsk/hsk3_topics.json) can replace the current Level 1 material through [the dedicated importer](../scripts/import-hsk-level1.mjs). They are not directly compatible with the vocabulary API shape or the legacy XLSX phrase importer.
 
 | Check | Result |
 | --- | --- |

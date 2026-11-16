@@ -9,7 +9,7 @@ import { importLevel1 } from './import-hsk-level1.mjs';
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.6.0.json', 'utf8');
 const source = JSON.parse(sourceRaw);
-const topics = read('importer/hsk/hsk3_level1_topics_1.6.0.json');
+const topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = read('src/data/vocabulary.json');
 
 function fixture(t, edit = () => {}) {
