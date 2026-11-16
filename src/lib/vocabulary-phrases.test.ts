@@ -32,7 +32,8 @@ describe('Sentence phrases', () => {
   it('a styled standalone phrase without a recorded type also reads Example Phrase', () => {
     const entry = { ...vocabularyData.entries.find(e => e.entryKind === 'phrase' && e.hskLevel == null)!, partOfSpeech: null, style: 'written' as const };
     expect(entryTypeLabel(entry)).toBe('Example Phrase');
-    expect(entryTypeLabel({ ...entry, style: undefined })).not.toBe('Example Phrase');
+    const { style: _style, ...unstyled } = entry;
+    expect(entryTypeLabel(unstyled)).not.toBe('Example Phrase');
   });
   it('turns every distinct recorded example sentence into one phrase', () => {
     const sentences = new Set(vocabularyData.entries.filter(e => e.entryKind === 'word').flatMap(e => e.examples.map(x => x.simplified)));
