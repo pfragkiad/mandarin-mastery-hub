@@ -7,12 +7,9 @@ describe('collectionOptions', () => {
   const wordCollections = collectionOptions(words.filter(w => vocabularyKind(w) === 'word'));
   it('lists only phrase collections on the Phrases tab', () => {
     expect(phraseCollections).not.toContain('Family and relationships · L1 practice phrases');
-    expect(phraseCollections).toEqual([
-      'Communication & Social Language',
-      'Pronouns, Questions & Pointing',
-      'Qualities, Feelings & Evaluation',
-      'Sample collection',
-    ]);
+    // Sentence phrases inherit their words' topics, so every topic plus the sample collection appears.
+    expect(phraseCollections).toContain('Sample collection');
+    expect(phraseCollections).toContain('Food, Drinks & Meals');
     for (const name of phraseCollections) expect(words.some(w => w.collection === name && vocabularyKind(w) === 'phrase')).toBe(true);
   });
   it('lists only word collections on the Words tab', () => {

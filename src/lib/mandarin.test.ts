@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions } from './mandarin';
 describe('Vocabulary filtering', () => {
- it('loads 501 entries after replacing Level 1 and removing its unofficial phrases', () => { expect(words).toHaveLength(501); });
+ it('loads the 501 recorded entries plus one phrase per distinct word example sentence', () => { expect(words).toHaveLength(501 + 790); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
  it('matches tone-number pinyin even without the pinyin toggle', () => {
    expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');
