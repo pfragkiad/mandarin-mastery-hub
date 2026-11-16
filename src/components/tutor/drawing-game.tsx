@@ -4,7 +4,9 @@ import { Link } from "@tanstack/react-router";
 import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
-import { partOfSpeechOptions, vocabularyKind, wordCollections } from "@/lib/mandarin";
+import { vocabularyFacetOptions, vocabularyKind } from "@/lib/mandarin";
+import { libraryFilterOptions } from "@/lib/library-filter-options";
+import { includeScript } from "@/lib/learning-preferences";
 import { UNRANKED, usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
 import {
   drawingKinds,
@@ -57,11 +59,27 @@ export function DrawingGamePage({
   const setDeckSize = (value: number | "all") => setSession((previous) => ({ ...previous, deckSize: value }));
   const entries = useMemo(() => (kind === "Words" ? [] : libraryEntries(kind)), [kind, catalogVersion]);
   const words = useMemo(() => (items ?? []).filter((word) => vocabularyKind(word) === "word"), [items]);
-  const collections = [...new Set(words.flatMap(wordCollections))].sort((a, b) => a.localeCompare(b));
-  const posOptions = partOfSpeechOptions(words);
-  const levels = [...new Set(words.map((word) => word.level))].sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true }),
-  );
+  // Setup dropdown choices, each narrowed by the other current (draft) picks so a
+  // dropdown never offers a choice with no cards behind it. Words share the
+  // libraries' vocabularyFacetOptions over the playable words (script preference
+  // and Saved only included); glyph ranks/strokes follow the Glyphs library, which
+  // narrows Characters and Components and lists every choice for Radicals.
+  const wordFacets = (draft: DrawingSearch) =>
+    vocabularyFacetOptions(
+      words.filter((word) => includeScript(word.script, preferences.includeTraditional) && (!draft.saved || saved.includes(word.id))),
+      { collection: draft.collection || "All collections", level: draft.level || "All levels", pos: draft.pos || "All types" },
+    );
+  const glyphFacets = (draft: DrawingSearch, draftKind: Exclude<DrawingSearch["kind"], "Words" | undefined>) => {
+    const all = libraryEntries(draftKind);
+    const allStrokes = [...new Set(all.flatMap((entry) => (entry.strokes ? [entry.strokes] : [])))].sort((a, b) => a - b);
+    if (draftKind === "Radicals") return { strokes: allStrokes, ranks: usageGroups(draftKind) };
+    const strokeFilter = draftKind === "Components" ? draft.strokes ?? "" : "";
+    const options = libraryFilterOptions(all, draftKind, preferences.includeTraditional, draft.usage, strokeFilter, draft.usageUpTo === "1", draft.strokesUpTo === "1");
+    // A current pick that no longer matches stays listed so the dropdown still shows it.
+    const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
+    const ranks = usageGroups(draftKind).filter((group) => group.value === draft.usage || options.ranks.some((option) => option.value === group.value));
+    return { strokes, ranks };
+  };
   const pool = useMemo(
     () =>
       kind === "Words"
@@ -180,6 +198,8 @@ export function DrawingGamePage({
               {({ draft, patch, setDraft }) => {
                 const draftKind = draft.kind ?? "Characters";
                 const filtered = draftKind === "Radicals" || draftKind === "Components";
+                const facets = draftKind === "Words" ? wordFacets(draft) : undefined;
+                const glyph = draftKind === "Words" ? undefined : glyphFacets(draft, draftKind);
                 return (
                   <>
                     {/* Row 1: what to draw, plus collection / level / type for Words. */}
@@ -206,7 +226,7 @@ export function DrawingGamePage({
                           onChange={(event) => patch({ collection: event.target.value || undefined })}
                         >
                           <option value="">All collections</option>
-                          {collections.map((value) => (
+                          {(facets?.collections ?? []).map((value) => (
                             <option key={value}>{value}</option>
                           ))}
                         </select>
@@ -217,7 +237,7 @@ export function DrawingGamePage({
                           onChange={(event) => patch({ level: event.target.value || undefined })}
                         >
                           <option value="">All levels</option>
-                          {levels.map((value) => (
+                          {(facets?.levels ?? []).map((value) => (
                             <option key={value}>{value}</option>
                           ))}
                         </select>
@@ -228,7 +248,7 @@ export function DrawingGamePage({
                           onChange={(event) => patch({ pos: event.target.value || undefined })}
                         >
                           <option value="">All types</option>
-                          {posOptions.map((value) => (
+                          {(facets?.pos ?? []).map((value) => (
                             <option key={value}>{value}</option>
                           ))}
                         </select>
@@ -246,7 +266,7 @@ export function DrawingGamePage({
                           onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value), usageUpTo: undefined })}
                         >
                           <option value="">All ranks</option>
-                          {usageGroups(draftKind).map((group) => (
+                          {(glyph?.ranks ?? []).map((group) => (
                             <option key={group.value} value={group.value}>
                               {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
                             </option>
@@ -274,13 +294,7 @@ export function DrawingGamePage({
                           onChange={(event) => patch({ strokes: event.target.value || undefined, strokesUpTo: undefined })}
                         >
                           <option value="">All stroke counts</option>
-                          {[
-                            ...new Set(
-                              libraryEntries(draftKind).flatMap((entry) => (entry.strokes ? [entry.strokes] : [])),
-                            ),
-                          ]
-                            .sort((a, b) => a - b)
-                            .map((value) => (
+                          {(glyph?.strokes ?? []).map((value) => (
                               <option key={value} value={value}>
                                 {value} {value === 1 ? "stroke" : "strokes"}
                               </option>
