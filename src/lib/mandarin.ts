@@ -91,7 +91,7 @@ export function filterWords(
  * it can still be changed), and a current pick with no records stays listed.
  * `style` (Phrases only) takes part like the others: picking a level narrows
  * the styles, and picking a style narrows collections, levels and types. */
-export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string; style?: string }) {
+export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string; style?: string | undefined }) {
   const { collection, level, pos } = selection;
   const style = selection.style || "All styles";
   const inCollection = (w: Word) => collection === "All collections" || wordCollections(w).includes(collection);
