@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { MeaningText } from './meaning-text';
-import { MessageSquareText } from 'lucide-react';
 import { libraryDestination } from '@/lib/character-library';
 import { useWorkspace } from './workspace';
 import type { AudioRequest } from '@/lib/audio';
