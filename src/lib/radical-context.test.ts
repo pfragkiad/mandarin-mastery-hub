@@ -9,7 +9,8 @@ import { libraryEntries, radicalVariantEntry } from './character-library';
 import { radicalFamily } from './radical-strokes';
 import { radicalIdentity } from './radical-identities';
 import { contextualRadical } from './radical-context';
-import { glyphParentCharacters } from './glyph-usage';
+import { radicalParentCharacters } from './glyph-usage';
+import { readEnrichment } from '@/test/enrichment-fixture';
 
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
 beforeAll(() => {
@@ -56,21 +57,34 @@ describe('Radical variant cards use contextual forms', () => {
     const form = radicalFamily(family)!.forms.find(item => item.character === glyph)!;
     return { heading, entry: radicalVariantEntry(heading, form) };
   };
-  it('lists right-side 阝 characters such as 鄱 and 郊 under 邑 ⻏', () => {
-    const { heading, entry } = variant(163, '⻏');
-    const parents = glyphParentCharacters(entry, 'Radicals', characters(), true, heading.hanzi).map(row => row.hanzi);
+  const parentsOf = async (family: number, glyph: string) => {
+    const { heading, entry } = variant(family, glyph);
+    return (await radicalParentCharacters(entry, characters(), true, heading.hanzi, readEnrichment)).map(row => row.hanzi);
+  };
+  it('lists right-side 阝 characters such as 鄱 and 郊 under 邑 ⻏', async () => {
+    const parents = await parentsOf(163, '⻏');
     expect(parents).toEqual(expect.arrayContaining(['鄱', '郊', '都']));
     expect(parents).not.toContain('阳');
   });
-  it('keeps 阜 阝 characters such as 阳 and excludes 邑 characters', () => {
-    const { heading, entry } = variant(170, '阝');
-    const parents = glyphParentCharacters(entry, 'Radicals', characters(), true, heading.hanzi).map(row => row.hanzi);
+  it('keeps 阜 阝 characters such as 阳 and excludes 邑 characters', async () => {
+    const parents = await parentsOf(170, '阝');
     expect(parents).toContain('阳');
     expect(parents).not.toContain('鄱');
   });
-  it('lists 胧 under 肉 ⺼', () => {
-    const { heading, entry } = variant(130, '⺼');
-    expect(glyphParentCharacters(entry, 'Radicals', characters(), true, heading.hanzi).map(row => row.hanzi)).toContain('胧');
+  it('lists 胧 under 肉 ⺼', async () => {
+    expect(await parentsOf(130, '⺼')).toContain('胧');
+  });
+  // BabelStone draws 聿 as ⿻肀二, but a radical is its family, never a compound of its own forms.
+  it('never lists 聿 under its own variant 肀, while BabelStone-matched 肃 stays', async () => {
+    const parents = await parentsOf(129, '肀');
+    expect(parents).not.toContain('聿');
+    expect(parents).toContain('肃');
+  });
+  it.each([129, 96, 125, 141, 183])('never lists a family form under its own family #%i', async family => {
+    const forms = new Set([radicalFamily(family)!.kangxiHeading, ...radicalFamily(family)!.forms.map(form => form.character)]);
+    for (const form of radicalFamily(family)!.forms) {
+      expect((await parentsOf(family, form.character)).filter(hanzi => forms.has(hanzi))).toEqual([]);
+    }
   });
 });
 
