@@ -76,11 +76,11 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     return { styles: vocabKind === 'phrase' && kindItems.length ? facets.styles : [], collections: facets.collections, levels: facets.levels, posOptions: facets.pos };
   };
   // Glyph decks: rank groups and stroke counts narrow each other the same way the
-  // Glyphs library does (Characters and Components; Radicals list every choice).
+  // Glyphs library does, for Characters, Components and Radicals alike.
   const glyphFacets = (draft: FlashcardFilters, refKind: LibraryKind) => {
     const entries = libraryEntries(refKind);
     const allStrokes = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
-    if (refKind !== 'Characters' && refKind !== 'Components') return { strokes: allStrokes, ranks: usageGroups(refKind) };
+    if (refKind !== 'Characters' && refKind !== 'Components' && refKind !== 'Radicals') return { strokes: allStrokes, ranks: usageGroups(refKind) };
     const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseUsageGroup(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
     const current = parseUsageGroup(refKind, draft.usage);
     const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
