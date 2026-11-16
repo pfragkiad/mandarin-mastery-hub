@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { meaningParts, trimTranslationPeriod } from '@/components/tutor/meaning-text';
+import { vocabularyData } from '@/lib/data-contract';
 
 describe('meaningParts', () => {
   it('italicizes parenthesised spans and keeps surrounding text', () => {
