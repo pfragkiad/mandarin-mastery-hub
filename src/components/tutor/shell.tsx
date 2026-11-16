@@ -31,7 +31,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin' | '/lessons'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
     { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
@@ -50,11 +50,12 @@ const settingsItem = { to: '/preferences' as const, name: 'Preferences', icon: S
 // side menu's own names (Vocabulary, Sound chart; tabs size to their labels in CSS
 // so none clips; Games is the menu block name); "More" (a button, not a link)
 // opens the full menu drawer for Preferences and every sub-item.
-const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/pinyin'; label: string; icon: GameIcon }[] = [
+const phoneTabs: { key: Exclude<PhoneTab, 'more'>; to: '/' | '/characters' | '/vocabulary' | '/flashcards' | '/lessons' | '/pinyin'; label: string; icon: GameIcon }[] = [
   { key: 'start', to: '/', label: 'Start', icon: LayoutGrid },
   { key: 'glyphs', to: '/characters', label: 'Glyphs', icon: Library },
   { key: 'vocabulary', to: '/vocabulary', label: 'Vocabulary', icon: BookOpen },
   { key: 'games', to: '/flashcards', label: 'Games', icon: Gamepad2 },
+  { key: 'lessons', to: '/lessons', label: 'Lessons', icon: BookText },
   { key: 'pinyin', to: '/pinyin', label: 'Sound chart', icon: AudioLines },
 ];
 export function TutorShell({ children }: { children: React.ReactNode }) {
