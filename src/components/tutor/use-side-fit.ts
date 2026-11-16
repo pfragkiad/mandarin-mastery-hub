@@ -178,9 +178,9 @@ function rowKey(card: FitCard): number {
 }
 
 /** At most this share of the view's own size is taken off pinyin + translation to keep the side layout. */
-export const SIDE_TEXT_MAX_SHRINK = 0.18;
+export const SIDE_TEXT_MAX_SHRINK = 0.25;
 
-/** Largest whole-pixel step for the pinyin (18px Comfortable → 3, 11px Compact → 1), never below the floor. */
+/** Largest whole-pixel step for the pinyin (18px Comfortable → 4, 11px Compact → 1), never below the floor. */
 export function sideTextMaxStep(basePx: number): number {
   return Math.max(0, Math.min(Math.floor(basePx * SIDE_TEXT_MAX_SHRINK), Math.floor(basePx) - MEANING_FONT_FLOOR));
 }
