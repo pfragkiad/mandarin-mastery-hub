@@ -38,7 +38,19 @@ describe('Sentence phrases', () => {
   it('turns every distinct recorded example sentence into one phrase', () => {
     const sentences = new Set(vocabularyData.entries.filter(e => e.entryKind === 'word').flatMap(e => e.examples.map(x => x.simplified)));
     expect(derived).toHaveLength(sentences.size);
-    expect(derived.every(w => vocabularyKind(w) === 'phrase' && w.hskId == null)).toBe(true);
+    expect(derived.every(w => vocabularyKind(w) === 'phrase')).toBe(true);
+  });
+  it('carries the HSK level and syllabus index recorded for one owning parent word', () => {
+    // Level and index always come from the same recorded word, never a mixture of two parents.
+    expect(derived.every(w => {
+      const owner = vocabularyData.entries.find(e => e.simplified === w.entry?.sentenceSource?.hskFromWord);
+      return owner != null && w.hskId === owner.hsk_index && w.entry?.hskLevel === owner.hskLevel;
+    })).toBe(true);
+    // 我们走吧。 is recorded under 吧 (level 1, #4) and 走 (level 2, #495): the higher-level word owns it.
+    const go = derived.find(w => w.hanzi === '我们走吧。')!;
+    expect(go.entry?.sentenceSource?.hskFromWord).toBe('走');
+    expect(go.hskId).toBe(495);
+    expect(go.entry?.hskLevel).toBe(2);
   });
   it('classifies phrases as Conversational, Written or Unclassified from the recorded style', () => {
     const love = derived.find(w => w.hanzi === '我爱我的家。')!;
