@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
-import { lessonGlyphHint } from '@/lib/lesson-hints';
+import { lessonGlyphHint, lessonGlyphHintById } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
@@ -35,14 +35,14 @@ import { MeaningText } from './meaning-text';
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; refFor: (glyph: string) => string | null };
 
 const Ctx = createContext<HintsContext | null>(null);
 export const useLessonHints = () => useContext(Ctx);
 
 const HAN_CHAR = /^\p{Script=Han}$/u;
 
-export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }: { enabled: boolean; backLabel?: string; children: ReactNode }) {
+export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRefs, children }: { enabled: boolean; backLabel?: string; characterRefs?: Record<string, string> | undefined; children: ReactNode }) {
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
@@ -70,7 +70,9 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', children }:
   }, [state]);
   // Turning hints off closes any open card.
   useEffect(() => { if (!enabled) setState(null); }, [enabled]);
-  const value = useMemo(() => ({ enabled, backLabel, open, wordFor }), [enabled, backLabel, open, wordFor]);
+  // The lesson's recorded catalog_character_refs: an exact record ID per character, or null.
+  const refFor = useCallback((glyph: string) => characterRefs?.[glyph] ?? null, [characterRefs]);
+  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, refFor }), [enabled, backLabel, open, wordFor, refFor]);
   return <Ctx.Provider value={value}>
     {children}
     <Popover open={Boolean(state)} onOpenChange={next => { if (!next) close(); }}>
@@ -121,7 +123,13 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   const rememberReturn = () => detailTrail.replace({ label: hints?.backLabel ?? 'Lesson', href: historyEntry() });
   // catalogVersion: the catalogue loads lazily; recompute once it arrives.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const hint = useMemo(() => lessonGlyphHint(glyph, preferences.includeTraditional), [glyph, preferences.includeTraditional, catalogVersion]);
+  // A recorded catalog_character_refs ID names the exact record; without one the exact
+  // written form is looked up. Either way the card never shows another glyph's data.
+  const hint = useMemo(() => {
+    const refId = hints?.refFor(glyph);
+    return (refId ? lessonGlyphHintById(refId, preferences.includeTraditional) : null) ?? lessonGlyphHint(glyph, preferences.includeTraditional);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [glyph, preferences.includeTraditional, catalogVersion, hints]);
   const traditional = hint?.script === 'Traditional';
   const facts = hint ? [hint.rank ? `Rank #${hint.rank}` : null, hint.strokes ? `${hint.strokes} ${hint.strokes === 1 ? 'stroke' : 'strokes'}` : null].filter(Boolean).join(' · ') : '';
   return <div className="lesson-hint-body">

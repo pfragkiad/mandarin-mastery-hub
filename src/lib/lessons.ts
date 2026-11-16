@@ -186,6 +186,7 @@ const lessonKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_le
 const metadataKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'metadata' });
 const headwordKeys = import.meta.glob<Record<string, unknown> | null>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'headword' });
 const loaders = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { import: 'default' });
+const refsKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'catalog_character_refs' });
 
 const raws: Record<string, RawLesson> = Object.fromEntries(Object.keys(ids).map(path => [path, {
   lesson_id: ids[path], schema_version: schemas[path], lesson: lessonKeys[path], metadata: metadataKeys[path], headword: headwordKeys[path] ?? null,
@@ -200,6 +201,27 @@ export function lessonsForCharacterRecord(summaries: LessonSummary[], recordId: 
   return summaries.filter(s => s.kind === 'character' && (s.catalogCharacterId ? s.catalogCharacterId === recordId : s.headword?.hanzi === hanzi));
 }
 export const characterLessons = (recordId: string, hanzi: string) => lessonsForCharacterRecord(lessonSummaries, recordId, hanzi);
+
+/** A lesson's recorded catalog_character_refs, validated: single-character keys mapped to
+ *  exact "Kind:glyph" record IDs. Anything malformed is dropped, never repaired. */
+function validCharacterRefs(raw: unknown): Record<string, string> {
+  const refs: Record<string, string> = {};
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return refs;
+  for (const [glyph, id] of Object.entries(raw as Record<string, unknown>)) {
+    if (Array.from(glyph).length !== 1 || typeof id !== 'string') continue;
+    const sep = id.indexOf(':');
+    if (sep <= 0 || id.slice(sep + 1) !== glyph) continue;
+    refs[glyph] = id;
+  }
+  return refs;
+}
+/** Per-lesson exact character → record ID tables (top-level catalog_character_refs). */
+export const lessonCharacterRefs: Record<string, Record<string, string>> = Object.fromEntries(
+  Object.entries(refsKeys).flatMap(([path, raw]) => {
+    const id = ids[path];
+    return id ? [[id, validCharacterRefs(raw)]] : [];
+  }),
+);
 
 /** Loads one whole lesson (its own lazy chunk); null when no lesson has this ID. */
 export async function loadLesson(id: string): Promise<LessonDocument | null> {

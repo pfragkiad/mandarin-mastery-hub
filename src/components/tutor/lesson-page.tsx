@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowLeft, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
-import { correctLessonChoices, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
+import { correctLessonChoices, lessonCharacterRefs, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText } from './lesson-text';
 import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
@@ -241,7 +241,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
   </label>;
 
-  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
