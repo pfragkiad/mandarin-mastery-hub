@@ -202,6 +202,27 @@ export function lessonsForCharacterRecord(summaries: LessonSummary[], recordId: 
 }
 export const characterLessons = (recordId: string, hanzi: string) => lessonsForCharacterRecord(lessonSummaries, recordId, hanzi);
 
+/** A lesson's recorded catalog_character_refs, validated: single-character keys mapped to
+ *  exact "Kind:glyph" record IDs. Anything malformed is dropped, never repaired. */
+function validCharacterRefs(raw: unknown): Record<string, string> {
+  const refs: Record<string, string> = {};
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return refs;
+  for (const [glyph, id] of Object.entries(raw as Record<string, unknown>)) {
+    if (Array.from(glyph).length !== 1 || typeof id !== 'string') continue;
+    const sep = id.indexOf(':');
+    if (sep <= 0 || id.slice(sep + 1) !== glyph) continue;
+    refs[glyph] = id;
+  }
+  return refs;
+}
+/** Per-lesson exact character → record ID tables (top-level catalog_character_refs). */
+export const lessonCharacterRefs: Record<string, Record<string, string>> = Object.fromEntries(
+  Object.entries(refsKeys).flatMap(([path, raw]) => {
+    const id = ids[path];
+    return id ? [[id, validCharacterRefs(raw)]] : [];
+  }),
+);
+
 /** Loads one whole lesson (its own lazy chunk); null when no lesson has this ID. */
 export async function loadLesson(id: string): Promise<LessonDocument | null> {
   const summary = lessonSummary(id);
