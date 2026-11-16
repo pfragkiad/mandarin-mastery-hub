@@ -33,6 +33,17 @@ describe('applied rank/stroke availability', () => {
       expect(libraryFilterOptions(entries, kind, false).strokes).toEqual([3, 7, 26]);
     });
   }
+  it('Radicals: rank and stroke lists narrow each other too', () => {
+    const radicals: LibraryEntry[] = [
+      { id: 'Radicals:a', hanzi: '5', strokes: 2, pinyin: '', meaning: '', note: '' },
+      { id: 'Radicals:b', hanzi: '20', strokes: 4, pinyin: '', meaning: '', note: '' },
+      { id: 'Radicals:c', hanzi: '120', strokes: 4, pinyin: '', meaning: '', note: '' },
+      { id: 'Radicals:d', hanzi: '?', strokes: 17, pinyin: '', meaning: '', note: '' },
+    ];
+    expect(libraryFilterOptions(radicals, 'Radicals', false, '1-10').strokes).toEqual([2]);
+    expect(libraryFilterOptions(radicals, 'Radicals', false, undefined, '4').ranks.map(group => group.value)).toEqual(['11-25', '101-150']);
+    expect(libraryFilterOptions(radicals, 'Radicals', false, undefined, '17').ranks.map(group => group.value)).toEqual(['unranked']);
+  });
   it('respects exact script visibility and omits missing stroke counts', () => {
     const forms: LibraryEntry[] = [
       { ...entries[0], id: 'Components:traditional', hanzi: '301', strokes: 9, pinyin: '', meaning: '', note: '', script: 'Traditional' },
