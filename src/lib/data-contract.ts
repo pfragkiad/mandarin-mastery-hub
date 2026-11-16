@@ -104,6 +104,9 @@ export const phraseStyle = (e: Entry | undefined): PhraseStyle => {
   const recorded = e?.sentenceSource?.style ?? e?.style;
   return recorded === 'conversational' ? 'Conversational' : recorded === 'written' ? 'Written' : 'Unclassified';
 };
+/** Shared by the Phrases library and the Flashcards Phrases deck: '' / 'All styles' keeps every phrase. */
+export const matchesPhraseStyle = (e: Entry | undefined, style: string | undefined): boolean =>
+  !style || style === 'All styles' || phraseStyle(e) === style;
 
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = orderExamples(e.examples)[0];

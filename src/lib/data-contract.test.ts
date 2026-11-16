@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples } from './data-contract';
+import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle } from './data-contract';
 import type { Example } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
@@ -32,5 +32,25 @@ describe('orderExamples', () => {
   it('makes the card-face sentence the first conversational example', () => {
     const entry = vocabularyData.entries.find(e => e.examples.some(x => x.style === 'conversational') && e.examples[0]?.style !== 'conversational');
     if (entry) expect(entryToWord(entry, vocabularyData.categories).sentence).toBe(orderExamples(entry.examples)[0]!.simplified);
+  });
+});
+
+describe('phrase style filter (Phrases library and Flashcards)', () => {
+  const phrases = [...vocabularyData.entries, ...sentencePhraseEntries(vocabularyData.entries)].filter(e => e.entryKind === 'phrase');
+  const bySimplified = (text: string) => phrases.find(e => e.simplified === text);
+  it('a sentence phrase keeps its recorded style', () => {
+    const written = phrases.find(e => e.sentenceSource?.style === 'written')!;
+    expect(matchesPhraseStyle(written, 'Written')).toBe(true);
+    expect(matchesPhraseStyle(written, 'Conversational')).toBe(false);
+  });
+  it('a syllabus phrase without a style tag is Unclassified', () => {
+    expect(phraseStyle(bySimplified('不好意思'))).toBe('Unclassified');
+    expect(matchesPhraseStyle(bySimplified('不好意思'), 'Unclassified')).toBe(true);
+  });
+  it('a standalone phrase with a style tag uses it', () => {
+    expect(phraseStyle({ ...bySimplified('我受够了')!, style: 'conversational' })).toBe('Conversational');
+  });
+  it('no style keeps every phrase', () => {
+    expect(phrases.every(e => matchesPhraseStyle(e, '') && matchesPhraseStyle(e, 'All styles'))).toBe(true);
   });
 });
