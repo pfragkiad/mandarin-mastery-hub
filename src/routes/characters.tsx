@@ -16,6 +16,7 @@ export const Route = createFileRoute('/characters')({
     if (search['py'] === 'pinyin' || search['py'] === 'exact') out.py = search['py'];
     if (search['usageUpTo'] === '1' || search['usageUpTo'] === true) out.usageUpTo = '1';
     if (search['strokesUpTo'] === '1' || search['strokesUpTo'] === true) out.strokesUpTo = '1';
+    if (search['hideRadicals'] === '1' || search['hideRadicals'] === true) out.hideRadicals = '1';
     const q = str(search['q']); if (q) out.q = q;
     const strokes = str(typeof search['strokes'] === 'number' ? String(search['strokes']) : search['strokes']); if (strokes) out.strokes = strokes;
     const page = Number(search['page']); if (Number.isInteger(page) && page > 1) out.page = page;

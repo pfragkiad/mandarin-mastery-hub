@@ -74,3 +74,18 @@ describe('cumulative "lower ranks" / "fewer strokes" widening', () => {
     expect(filterLibrary(entries, '', '', false, false, '101-200', undefined, false, false, true).map(entry => entry.hanzi)).toEqual(['100']);
   });
 });
+// Real records: 刀 (Kangxi #18) and 木 (#75) are radicals, 我 is not, so hiding radicals must
+// drop their stroke counts from the dropdown instead of offering a choice with no cards.
+describe('hide radicals narrows the other dropdowns', () => {
+  const glyphEntries: LibraryEntry[] = [
+    { id: 'Characters:刀', hanzi: '刀', strokes: 2, pinyin: '', meaning: '', note: '' },
+    { id: 'Characters:我', hanzi: '我', strokes: 7, pinyin: '', meaning: '', note: '' },
+    { id: 'Characters:木', hanzi: '木', strokes: 4, pinyin: '', meaning: '', note: '' },
+  ];
+  it('keeps every stroke count while radicals are shown', () => {
+    expect(libraryFilterOptions(glyphEntries, 'Characters', false).strokes).toEqual([2, 4, 7]);
+  });
+  it('drops the counts only hidden radical cards contributed', () => {
+    expect(libraryFilterOptions(glyphEntries, 'Characters', false, undefined, '', false, false, true).strokes).toEqual([7]);
+  });
+});

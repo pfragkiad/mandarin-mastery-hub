@@ -6,7 +6,9 @@ import { radicalFamily, radicalForms, radicalForm, radicalFormStrokeCount, type 
 import { glyphPresentation, pureComponentForm } from './glyph-presentation';
 import { pinyinReadingMatches } from './pinyin-tones';
 import { contextualVariantIdentity } from './radical-contextual-identity';
-import { relatedGroup } from './character-variants';
+import { relatedGroup, scriptHead } from './character-variants';
+import { componentCardHead } from './component-families';
+import { isRadicalGlyph } from './card-ink';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -71,6 +73,25 @@ export function savedGlyphDestination(entry: LibraryEntry) {
   const kind = kindFromId(entry.id);
   return { ...(kind ? { tab: kind } : {}), id: entry.radicalHeadingId ?? entry.id, ...(entry.radicalVariant ? { variant: entry.radicalVariant } : {}) };
 }
+/** Glyphs of one library, cached per entry list, so a card-head lookup stays O(1). */
+const libraryGlyphSets = new WeakMap<readonly LibraryEntry[], Set<string>>();
+function libraryGlyphs(all: readonly LibraryEntry[]): Set<string> {
+  let set = libraryGlyphSets.get(all);
+  if (!set) { set = new Set(all.map(entry => entry.hanzi)); libraryGlyphSets.set(all, set); }
+  return set;
+}
+
+/** Whether this record belongs to a radical card: its own glyph is a sourced Kangxi radical
+ *  (card-ink.ts / radical-identities), or the head of the card it folds into is — 刂 rides on
+ *  刀's family card and 屍 on 尸's script card. A head only owns the card when it is itself a
+ *  record of this library (collapseScriptForms' rule), so a record whose head is missing keeps
+ *  its own card and stays visible. `all` is that library's full entry list. */
+export function radicalCardRecord(entry: LibraryEntry, kind: LibraryKind, all: readonly LibraryEntry[], includeTraditional = false): boolean {
+  if (isRadicalGlyph(entry, kind)) return true;
+  const head = kind === 'Components' ? componentCardHead(entry.hanzi, includeTraditional) : kind === 'Characters' ? scriptHead(entry.hanzi) : entry.hanzi;
+  return head !== entry.hanzi && libraryGlyphs(all).has(head) && isRadicalGlyph({ hanzi: head }, kind);
+}
+
 // pinyinExact (only with pinyinOnly) requires a whole tone-stripped reading to
 // equal the query — "qi" matches 七 (qī) but not readings merely containing it.
 // Tone numbers are accepted too: "shi1" matches only shī, never shí/shǐ/shì.
