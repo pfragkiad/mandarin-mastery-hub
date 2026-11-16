@@ -30,3 +30,4 @@
 - [x] Flashcards Phrases deck: Sentence style choice (Conversational / Written / Unclassified), same rule as the Phrases library
 - [x] Phrase cards: shrink pinyin + translation a little before moving them under the characters
 - [x] Vocabulary cards: if one card in a row stacks its text under the characters, stack the whole row
+- [x] Glyph and Start random cards share per-row stacking with Vocabulary cards
