@@ -262,6 +262,17 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .sentence-section-head > .eyebrow { margin: 0; }
 /* The label row is a div too, so :first-of-type above misses the first example here. */
 .sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
+/* Editorial note under a recorded sentence: quiet, readable, set off by a thin accent rule. */
+.sentence > .sentence-note { display: block; margin-top: 10px; padding: 6px 0 6px 10px; border-left: 2px solid color-mix(in oklch, var(--primary) 45%, var(--border)); color: var(--muted-foreground); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }
+.sentence-note-label { display: inline-block; margin-right: 6px; color: var(--foreground); font-size: 12px; font-weight: 600; }
+/* Show-more arrow under the first example; the chevron turns when the drawer is open. */
+.more-examples-toggle { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 4px 10px 4px 6px; border-radius: 7px; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; background: transparent; transition: color .15s ease, background .15s ease; }
+.more-examples-toggle:hover, .more-examples-toggle:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+.more-examples-icon { width: 16px; height: 16px; transition: transform .2s ease; }
+.more-examples-toggle.is-open .more-examples-icon { transform: rotate(180deg); }
+.more-examples-panel { animation: more-examples-in .2s ease; }
+@keyframes more-examples-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .more-examples-panel { animation: none; } .more-examples-icon { transition: none; } }
 .find-examples-link { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; padding: 3px 8px; border-radius: 7px; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
 .find-examples-link:hover, .find-examples-link:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .find-examples-link .find-examples-icon { color: var(--examples-link); flex: none; width: 15px; height: 15px; }
