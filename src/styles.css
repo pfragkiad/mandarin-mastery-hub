@@ -3857,8 +3857,9 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 
 /* Comfortable libraries (Glyphs, Words, Phrases): from 700px up, two cards per row, and a
    third once each of three cards can be at least 380px wide (wide screens). The track
-   minimum is min(half the row, max(380px, a third of the row)), so the grid never drops
-   below two columns nor rises above three; the density hook reads the resolved tracks. */
+   minimum is min(half the row, max(380px, a third of the row)), so this rule never rises
+   above three columns; use-footer-fit-columns.ts may still lower the count (down to one)
+   whenever the cards' Details/Trace/Recall buttons would wrap. */
 @media (min-width: 700px) {
   .catalog-results .catalog-entry-grid.library-list-view,
   .vocab-grid.vocab-word-grid.library-list-view,
