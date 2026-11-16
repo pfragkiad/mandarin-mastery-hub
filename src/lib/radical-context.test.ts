@@ -86,6 +86,18 @@ describe('Radical variant cards use contextual forms', () => {
     expect(await parentsOf(157, '⻊')).toContain('跃');
     expect(await parentsOf(157, '足')).not.toContain('跃');
   });
+  // Owner-reviewed BabelStone links: compressed shapes no Unihan field records.
+  it('counts the owner-reviewed BabelStone shapes for their radical forms', async () => {
+    expect(await parentsOf(96, '王')).toEqual(expect.arrayContaining(['玩', '珠']));
+    expect(await parentsOf(9, '人')).toEqual(expect.arrayContaining(['今']));
+    expect(await parentsOf(145, '衣')).toContain('表');
+    expect(await parentsOf(58, '彐')).toContain('归');
+    expect(await parentsOf(140, '艹')).toContain('茔');
+  });
+  it('keeps the reviewed links form-exact (top 人 never lists under 亻, 𫇦 never under ⺿)', async () => {
+    expect(await parentsOf(9, '亻')).not.toContain('今');
+    expect(await parentsOf(140, '⺿')).not.toContain('茔');
+  });
   it.each([129, 96, 125, 141, 183])('never lists a family form under its own family #%i', async family => {
     const forms = new Set([radicalFamily(family)!.kangxiHeading, ...radicalFamily(family)!.forms.map(form => form.character)]);
     for (const form of radicalFamily(family)!.forms) {

@@ -23,3 +23,5 @@
 - [x] Grid cards: when the translation's last line holds only 1-2 words (it adds a line), shrink the translation font instead
 - [x] Footer buttons: reduce their font independently of the header as the first attempt before the button row wraps
 - [x] Lessons: every hanzi rings on hover and opens a quick character card on click (word link, full-card link); quiz only after answering; remembered side switch
+- [x] Start random cards (wide screens): exact library grid cards, header = section link + shuffle
+- [ ] Radical "In a character": owner-reviewed BabelStone links 𤣩→王 (jade), 𠆢→人 (top), 𧘇→衣, 𫜹→彐, 𫇦 (艹 over 冖) → contains 艹
