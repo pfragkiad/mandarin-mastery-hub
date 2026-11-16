@@ -227,10 +227,16 @@ describe('Radical card records', () => {
     expect(radicalCardRecord(record('Characters', '尸'), 'Characters', characters)).toBe(true);
     expect(radicalCardRecord(record('Characters', '屍'), 'Characters', characters)).toBe(true);
   });
-  it('keeps a context-dependent related form, which has its own card (兒 beside 儿)', () => {
+  it('hides a traditional form folded onto a radical card (兒 on 儿)', () => {
     const characters = libraryEntries('Characters');
     expect(radicalCardRecord(record('Characters', '儿'), 'Characters', characters)).toBe(true);
-    expect(radicalCardRecord(record('Characters', '兒'), 'Characters', characters)).toBe(false);
+    expect(radicalCardRecord(record('Characters', '兒'), 'Characters', characters)).toBe(true);
+  });
+  it('keeps a context-dependent related form, which has its own card (乾 beside 干)', () => {
+    const characters = libraryEntries('Characters');
+    expect(radicalCardRecord(record('Characters', '干'), 'Characters', characters)).toBe(true);
+    expect(radicalCardRecord(record('Characters', '乾'), 'Characters', characters)).toBe(false);
+    expect(radicalCardRecord(record('Characters', '幹'), 'Characters', characters)).toBe(false);
   });
   it('hides a Kangxi family heading on the Radicals tab', () => {
     const radicals = libraryEntries('Radicals');
