@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData } from './data-contract';
+import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
   it('keeps the server UUID as identity', () => { expect(w.id).toBe('5b1d3c2a-0000-4000-8000-000000000289'); });
@@ -14,5 +14,22 @@ describe('Entry adapter', () => {
       expect(pinyin, `${e.simplified} pinyin "${pinyin}"`).not.toMatch(/[。！？，、；：]/);
       expect(pinyin.endsWith('.')).toBe(true);
     }
+  });
+});
+
+describe('orderExamples', () => {
+  const ex = (id: string, style?: 'conversational' | 'written') => ({ id, simplified: id, english: id, tokens: [], style }) as unknown as import('./data-contract').Example extends never ? never : any;
+  it('puts conversational sentences first, keeping recorded order within each style', () => {
+    const ordered = orderExamples([ex('w1', 'written'), ex('c1', 'conversational'), ex('w2', 'written'), ex('c2', 'conversational')]);
+    expect(ordered.map((e: { id: string }) => e.id)).toEqual(['c1', 'c2', 'w1', 'w2']);
+  });
+  it('leaves a single-style list in recorded order and does not mutate the source', () => {
+    const source = [ex('a', 'written'), ex('b', 'written')];
+    expect(orderExamples(source).map((e: { id: string }) => e.id)).toEqual(['a', 'b']);
+    expect(source.map((e: { id: string }) => e.id)).toEqual(['a', 'b']);
+  });
+  it('makes the card-face sentence the first conversational example', () => {
+    const entry = vocabularyData.entries.find(e => e.examples.some(x => x.style === 'conversational') && e.examples[0]?.style !== 'conversational');
+    if (entry) expect(entryToWord(entry, vocabularyData.categories).sentence).toBe(orderExamples(entry.examples)[0]!.simplified);
   });
 });
