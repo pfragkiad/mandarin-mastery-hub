@@ -63,7 +63,18 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
-    {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+    <span className="sentence-reading">
+      {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
+        {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
+          {i > 0 && ' '}
+          {t.leading}
+          {t.pieces.map((piece, p) => piece.pair == null ? <span key={p}>{piece.text}</span> : <span key={p} className={`sentence-syllable${pairClass(piece.pair)}`} {...pairHandlers(piece.pair)}>{piece.text}</span>)}
+          {t.trailing}
+        </span>)}</span> : <span>{pinyin}</span>}
+        <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
+      </span>}
+      {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+    </span>
     {/* The source's editorial note for this sentence, shown exactly as recorded (never
         generated). A div, not a span/p, so the translation keeps its own styling rules. */}
     {note && <div className="sentence-note"><span className="sentence-note-label">Note</span>{note}</div>}
