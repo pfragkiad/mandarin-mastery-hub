@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.6.0
+schema: mandarin-character-lesson/2.8.0
 lesson_id: char-6B21
 title: Talking About Times & Occasions
 subtitle: Once, last time, this time, next time, every time, and again
@@ -16,6 +16,49 @@ tags:
 slug: times-and-occasions
 hanzi: 次
 pinyin: cì
+catalog_character_id: Characters:次
+catalog_character_refs:
+  一: Characters:一
+  上: Characters:上
+  下: Characters:下
+  习: Characters:习
+  了: Characters:了
+  京: Characters:京
+  们: Characters:们
+  作: Characters:作
+  你: Characters:你
+  再: Characters:再
+  到: Characters:到
+  动: Characters:动
+  北: Characters:北
+  去: Characters:去
+  吧: Characters:吧
+  听: Characters:听
+  在: Characters:在
+  天: Characters:天
+  学: Characters:学
+  开: Characters:开
+  很: Characters:很
+  心: Characters:心
+  想: Characters:想
+  感: Characters:感
+  懂: Characters:懂
+  我: Characters:我
+  明: Characters:明
+  来: Characters:来
+  次: Characters:次
+  每: Characters:每
+  没: Characters:没
+  白: Characters:白
+  看: Characters:看
+  见: Characters:见
+  词: Characters:词
+  试: Characters:试
+  谢: Characters:谢
+  起: Characters:起
+  过: Characters:过
+  这: Characters:这
+  都: Characters:都
 hsk_3_level: null
 ---
 
@@ -80,7 +123,7 @@ The six central expressions include occurrence counts, temporal phrases, and rep
 | **上一次** (shàng yí cì) | Identify a previous occasion | **上一次我没听懂 (Shàng yí cì wǒ méi tīng dǒng)** — Last time I did not understand what I heard | everyday | Often appears at the start of a sentence as a time expression. |
 | **这一次** (zhè yí cì) | Identify this occasion | **这一次我明白了 (Zhè yí cì wǒ míngbai le)** — This time I understood | everyday | A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening. |
 | **下一次** (xià yí cì) | Identify the following occasion | **下一次我们一起去吧 (Xià yí cì wǒmen yìqǐ qù ba)** — Let’s go together next time | everyday | A sentence-initial temporal phrase; 下次 (xià cì) is common in speech. |
-| **每一次 + 动作，……都……** (měi yí cì + dòngzuò, ... dōu ...) | Apply a statement to each occurrence | **每一次见到你，我都很开心 (Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn)** — Every time I see you, I am happy | everyday | 每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory. |
+| **每一次 + 动作, ... 都 ...** (měi yí cì + dòngzuò, ... dōu ...) | Apply a statement to each occurrence | **每一次见到你，我都很开心 (Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn)** — Every time I see you, I am happy | everyday | 每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory. |
 | **再一次 + 动词** (zài yí cì + dòngcí) | Express one more repetition before a verb | **我想再一次感谢你 (Wǒ xiǎng zài yí cì gǎnxiè nǐ)** — I want to thank you once again | neutral; slightly emphatic | 再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè). |
 | **再 + 动词 + 一次** (zài + dòngcí + yí cì) | Ask for or describe one more occurrence | **再试一次 (zài shì yí cì)** — Try one more time | everyday | Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì). |
 

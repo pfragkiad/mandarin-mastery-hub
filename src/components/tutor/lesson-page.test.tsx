@@ -18,7 +18,7 @@ describe('LessonPage', () => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(screen.getByRole('heading', { level: 1, name: lesson.summary.title })).toBeTruthy();
-    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.6.0');
+    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.8.0');
     expect(container.querySelectorAll('.lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
   });

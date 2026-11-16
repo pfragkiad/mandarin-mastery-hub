@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.6.0
+schema: mandarin-character-lesson/2.8.0
 lesson_id: char-<HEX_CODEPOINT>
 title: <DESCRIPTIVE_LESSON_TITLE>
 subtitle: <ONE_LINE_TOPIC_SUMMARY>
@@ -11,6 +11,8 @@ tags: []
 slug: lesson-topic
 hanzi: <HANZI>
 pinyin: <PINYIN>
+catalog_character_id: null
+catalog_character_refs: {}
 hsk_3_level: null
 ---
 
@@ -111,3 +113,13 @@ For single-choice questions, use unique `choices[].id` values and the authoritat
 ```
 
 A plain-text option can be `{"id":"a","text":"How many times?"}`. For a `multi_selection` question, provide two or more correct IDs. Every selected ID must match one of that question’s choices.
+
+## JSON authoring quality rules (template only)
+
+- Use accurate tone-marked Hanyu Pinyin with standard word spacing; do not split normal multi-syllable words into unnatural fragments. Keep apostrophes where syllable boundaries require them. The application should validate syllable alignment separately.
+- Keep non-Hanzi structural tokens **identical** between `pattern_hanzi` and `pattern_pinyin`: `+`, placeholders such as `X`/`Y`, commas, and ellipses.
+- For choice questions, always key `correct_choice_ids` to existing, unique `choices[].id` values; open-ended questions retain a reference `answer`.
+- Write natural, complete English translations with appropriate sentence-ending punctuation.
+- Resolve exact per-character catalog IDs from the authoritative `catalog_ids.json` using `--sync-catalog-refs --catalog-ids catalog_ids.json`. This populates `metadata.catalog_character_id` and `catalog_character_refs`; never invent or infer catalog IDs.
+- `catalog_character_refs` keys are individual written characters, not words or pinyin. For example, character 一 (yī) retains its written-character ID even when pronounced yí in 一次 (yí cì).
+- The HTML exposes `data-catalog-id` on each known character; the application decides which internal route to open. No external URL is invented.

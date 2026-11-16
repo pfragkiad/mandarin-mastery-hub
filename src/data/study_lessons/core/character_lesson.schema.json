@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.6.0.json",
-  "title": "Mandarin character lesson data — content-only v2.6",
-  "description": "Canonical learner content; input provenance and references are kept exclusively in a separate report.md file.",
+  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.8.0.json",
+  "title": "Mandarin character lesson data — v2.8.0",
+  "description": "Canonical learner content with keyed quizzes and catalog-backed character IDs. Provenance belongs only to independent report.md; the generator emits HTML and Markdown without extraneous TXT files.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -22,7 +22,10 @@
         "mandarin-character-lesson/2.3.0",
         "mandarin-character-lesson/2.4.0",
         "mandarin-character-lesson/2.5.0",
-        "mandarin-character-lesson/2.6.0"
+        "mandarin-character-lesson/2.6.0",
+        "mandarin-character-lesson/2.6.1",
+        "mandarin-character-lesson/2.7.0",
+        "mandarin-character-lesson/2.8.0"
       ]
     },
     "lesson_id": {
@@ -58,7 +61,10 @@
             "2.3.0",
             "2.4.0",
             "2.5.0",
-            "2.6.0"
+            "2.6.0",
+            "2.6.1",
+            "2.7.0",
+            "2.8.0"
           ]
         },
         "audience": {
@@ -83,7 +89,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "description": "The exact ID of headword.hanzi from catalog_ids.json, or null if unavailable. Never synthesize or translate an ID."
         },
         "license_note": {
           "type": "string"
@@ -108,7 +115,8 @@
         },
         "pinyin": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Tone-marked Hanyu Pinyin for the headword. Pinyin words may contain multiple syllables without spaces; character-to-syllable alignment must account for that orthography."
         },
         "simplified": {
           "type": "string"
@@ -550,6 +558,19 @@
           }
         }
       }
+    },
+    "catalog_character_refs": {
+      "type": "object",
+      "description": "Lookup table for every catalog-resolvable Chinese character appearing in the learner-visible lesson. Keys are individual written characters (not words); values are exact catalog_ids.json IDs. Missing catalog entries are omitted, not guessed. Neither pinyin nor lexical word IDs are derived from this table.",
+      "propertyNames": {
+        "minLength": 1,
+        "maxLength": 2
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^Characters:.+$"
+      }
     }
   },
   "$defs": {
@@ -565,7 +586,8 @@
           "type": "string"
         },
         "pinyin": {
-          "type": "string"
+          "type": "string",
+          "description": "Tone-marked Hanyu Pinyin; standard word segmentation and apostrophes when needed for syllable boundaries."
         },
         "meaning_en": {
           "type": "string"
@@ -731,7 +753,8 @@
           "type": "string"
         },
         "pinyin": {
-          "type": "string"
+          "type": "string",
+          "description": "Tone-marked Hanyu Pinyin with standard word spacing and apostrophes at ambiguous syllable boundaries."
         },
         "part_of_speech": {
           "type": "string"
@@ -799,10 +822,12 @@
           "type": "string"
         },
         "pattern_hanzi": {
-          "type": "string"
+          "type": "string",
+          "description": "Hanzi grammar pattern; use identical structural symbols and placeholders in pattern_pinyin (e.g. X, Y, +, commas, ellipses)."
         },
         "pattern_pinyin": {
-          "type": "string"
+          "type": "string",
+          "description": "Pinyin equivalent of pattern_hanzi; copy placeholders and structural punctuation exactly; romanize Chinese words."
         },
         "function_en": {
           "type": "string"
@@ -842,10 +867,12 @@
           "type": "string"
         },
         "pinyin": {
-          "type": "string"
+          "type": "string",
+          "description": "Full sentence in standard tone-marked Hanyu Pinyin, corresponding to the Chinese reading; preserve word spacing and needed apostrophes. Character/syllable alignment is a separate linguistic check, not guaranteed by JSON Schema alone."
         },
         "english": {
-          "type": "string"
+          "type": "string",
+          "description": "Natural, complete English sentence with final punctuation matching its discourse function."
         },
         "context": {
           "type": "string"
@@ -1602,7 +1629,8 @@
             "type": "string",
             "minLength": 1
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "description": "Authoritative answer key. Each ID must exist in choices, with unique choice IDs. In single selection exactly one key, multiple selection two or more; no answer string duplicates for choice questions. Cross-field validation is performed by the generator."
         },
         "answer": {
           "type": "string",
@@ -1880,6 +1908,260 @@
             "properties": {
               "template_version": {
                 "const": "2.6.0"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "categories",
+              "primary_category_id",
+              "tags",
+              "slug"
+            ]
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ],
+            "properties": {
+              "practice": {
+                "properties": {
+                  "questions": {
+                    "items": {
+                      "$ref": "#/$defs/question_v26"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.6.1"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.6.1"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "categories",
+              "primary_category_id",
+              "tags",
+              "slug"
+            ]
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ],
+            "properties": {
+              "practice": {
+                "properties": {
+                  "questions": {
+                    "items": {
+                      "$ref": "#/$defs/question_v26"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.7.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "catalog_character_refs"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.7.0"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "categories",
+              "primary_category_id",
+              "tags",
+              "slug"
+            ]
+          },
+          "sections": {
+            "required": [
+              "extensions"
+            ],
+            "properties": {
+              "practice": {
+                "properties": {
+                  "questions": {
+                    "items": {
+                      "$ref": "#/$defs/question_v26"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/2.8.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "catalog_character_refs"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "2.8.0"
               }
             }
           },

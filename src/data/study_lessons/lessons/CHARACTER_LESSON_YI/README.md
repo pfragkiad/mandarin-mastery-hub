@@ -2,7 +2,7 @@
 
 | File | Purpose and consumer |
 | --- | --- |
-| `CHARACTER_LESSON_YI.json` | Canonical v2.6 learner content for `char-4EE5`. Discovered by `src/lib/lessons.ts`; summary keys load eagerly and the full lesson loads lazily at `/lessons/char-4EE5`. |
+| `CHARACTER_LESSON_YI.json` | Canonical v2.8 learner content for `char-4EE5`, including exact headword and per-character catalogue references. Discovered by `src/lib/lessons.ts`; summary keys load eagerly and the full lesson loads lazily at `/lessons/char-4EE5`. |
 | `CHARACTER_LESSON_YI.md` | Markdown companion to the JSON; not loaded by the application. |
 | `CHARACTER_LESSON_YI.html` | Supplied standalone lesson page with quiz interactions; open directly in a browser. Not loaded by the application. |
 | `CHARACTER_LESSON_YI_claude.html` | Standalone design prototype; not loaded by the application. |

@@ -1,5 +1,5 @@
 ---
-schema: mandarin-character-lesson/2.6.0
+schema: mandarin-character-lesson/2.8.0
 lesson_id: char-4EE5
 title: Common Words & Grammatical Uses
 subtitle: Everyday compounds, formal patterns, and register
@@ -15,6 +15,90 @@ tags:
 slug: common-words-grammatical-uses
 hanzi: 以
 pinyin: yǐ
+catalog_character_id: Characters:以
+catalog_character_refs:
+  三: Characters:三
+  上: Characters:上
+  下: Characters:下
+  不: Characters:不
+  个: Characters:个
+  中: Characters:中
+  为: Characters:为
+  主: Characters:主
+  习: Characters:习
+  书: Characters:书
+  了: Characters:了
+  予: Characters:予
+  交: Characters:交
+  亦: Characters:亦
+  京: Characters:京
+  今: Characters:今
+  他: Characters:他
+  以: Characters:以
+  住: Characters:住
+  你: Characters:你
+  例: Characters:例
+  便: Characters:便
+  免: Characters:免
+  内: Characters:内
+  出: Characters:出
+  前: Characters:前
+  办: Characters:办
+  北: Characters:北
+  去: Characters:去
+  及: Characters:及
+  口: Characters:口
+  可: Characters:可
+  吃: Characters:吃
+  名: Characters:名
+  后: Characters:后
+  吗: Characters:吗
+  国: Characters:国
+  在: Characters:在
+  城: Characters:城
+  外: Characters:外
+  天: Characters:天
+  好: Characters:好
+  子: Characters:子
+  学: Characters:学
+  式: Characters:式
+  形: Characters:形
+  很: Characters:很
+  得: Characters:得
+  我: Characters:我
+  所: Characters:所
+  把: Characters:把
+  提: Characters:提
+  方: Characters:方
+  时: Characters:时
+  有: Characters:有
+  来: Characters:来
+  样: Characters:样
+  榜: Characters:榜
+  法: Characters:法
+  点: Characters:点
+  用: Characters:用
+  申: Characters:申
+  短: Characters:短
+  种: Characters:种
+  秦: Characters:秦
+  筷: Characters:筷
+  练: Characters:练
+  觉: Characters:觉
+  认: Characters:认
+  词: Characters:词
+  语: Characters:语
+  请: Characters:请
+  课: Characters:课
+  赵: Characters:赵
+  这: Characters:这
+  进: Characters:进
+  错: Characters:错
+  门: Characters:门
+  间: Characters:间
+  雨: Characters:雨
+  面: Characters:面
+  饭: Characters:饭
 hsk_3_level: null
 ---
 

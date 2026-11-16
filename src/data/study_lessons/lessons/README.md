@@ -1,7 +1,8 @@
 # Lesson documents
 
 Each directory holds one canonical lesson JSON and its Markdown companion. Current
-lessons use the content-only v2.6 format, with explicit quiz choice IDs:
+lessons use the content-only v2.8 format, with explicit quiz choice IDs and
+catalogue-backed per-character references:
 
 - [CHARACTER_LESSON_CI](CHARACTER_LESSON_CI/README.md): 次 (cì), times and occasions.
 - [CHARACTER_LESSON_YI](CHARACTER_LESSON_YI/README.md): 以 (yǐ), words and constructions.

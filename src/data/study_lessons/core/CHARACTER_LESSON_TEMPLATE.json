@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/2.6.0",
+  "schema_version": "mandarin-character-lesson/2.8.0",
   "lesson_id": "char-<HEX_CODEPOINT>",
   "lesson": {
     "title": "<DESCRIPTIVE_LESSON_TITLE>",
@@ -14,7 +14,7 @@
   },
   "metadata": {
     "status": "draft",
-    "template_version": "2.6.0",
+    "template_version": "2.8.0",
     "audience": "<TARGET_LEARNER>",
     "language": "zh-CN",
     "date_reviewed": null,
@@ -48,6 +48,7 @@
     ],
     "mapping_type": "<same_written_form | one_to_one | context_dependent | multiple_targets>"
   },
+  "catalog_character_refs": {},
   "intro": {
     "lesson_focus": "<ONE_SENTENCE_LEARNER_FOCUS>",
     "core_principle": "A character, morpheme, word, and construction are distinct linguistic units.",

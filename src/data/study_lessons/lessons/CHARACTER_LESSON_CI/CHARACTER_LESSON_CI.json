@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/2.6.0",
+  "schema_version": "mandarin-character-lesson/2.8.0",
   "lesson_id": "char-6B21",
   "lesson": {
     "title": "Talking About Times & Occasions",
@@ -19,7 +19,7 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "2.6.0",
+    "template_version": "2.8.0",
     "audience": "HSK beginner; foundational Mandarin grammar",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
@@ -33,7 +33,7 @@
       "corpus": null,
       "unit": null
     },
-    "catalog_character_id": null
+    "catalog_character_id": "Characters:次"
   },
   "headword": {
     "hanzi": "次",
@@ -52,6 +52,49 @@
       }
     ],
     "mapping_type": "same_written_form"
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "京": "Characters:京",
+    "们": "Characters:们",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "再": "Characters:再",
+    "到": "Characters:到",
+    "动": "Characters:动",
+    "北": "Characters:北",
+    "去": "Characters:去",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "学": "Characters:学",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "心": "Characters:心",
+    "想": "Characters:想",
+    "感": "Characters:感",
+    "懂": "Characters:懂",
+    "我": "Characters:我",
+    "明": "Characters:明",
+    "来": "Characters:来",
+    "次": "Characters:次",
+    "每": "Characters:每",
+    "没": "Characters:没",
+    "白": "Characters:白",
+    "看": "Characters:看",
+    "见": "Characters:见",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "都": "Characters:都"
   },
   "intro": {
     "lesson_focus": "Count occurrences with 次 (cì), identify particular occasions, and express repetition with 再 (zài).",
@@ -338,7 +381,7 @@
         {
           "id": "every-dou",
           "category": "distributive temporal pattern",
-          "pattern_hanzi": "每一次 + 动作，……都……",
+          "pattern_hanzi": "每一次 + 动作, ... 都 ...",
           "pattern_pinyin": "měi yí cì + dòngzuò, ... dōu ...",
           "function_en": "Apply a statement to each occurrence",
           "example": {

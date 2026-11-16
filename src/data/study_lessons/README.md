@@ -3,12 +3,19 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The current templates and both supplied lessons use `mandarin-character-lesson/2.6.0`.
+The current templates and both supplied lessons use `mandarin-character-lesson/2.8.0`.
 This version stores learner content only: examples, corpus comparisons and extensions
 do not require provenance or verification fields. Editorial references belong in a
 separate `report.md` beside each supplied lesson.
 Reports are not loaded by the application. Earlier lesson documents may still carry
 their recorded inline provenance, which the shared reader continues to support.
+
+v2.8 records the headword's exact ID in `metadata.catalog_character_id` and a
+lesson-wide `catalog_character_refs` map of individual written characters to IDs
+from [catalog_ids.json](../../../public/data/catalog_ids.json). This covers characters
+inside vocabulary, patterns and sentences without assigning a character ID to a word.
+The supplied HTML pages expose these references as `data-catalog-id` attributes;
+the application currently resolves in-text hints through its shared catalogue adapters.
 
 See [core/README.md](core/README.md) for schemas and templates and
 [lessons/README.md](lessons/README.md) for the supplied lesson directories.
@@ -31,4 +38,4 @@ See [core/README.md](core/README.md) for schemas and templates and
 - The schema family in `schema_version` decides the lesson kind: `mandarin-character-lesson` → character, `mandarin-word-lesson` → word, `mandarin-phrase-lesson` → phrase, anything else → topic. A lesson without a `headword` is shown as a topic lesson.
 - A character lesson appears on that character's Glyphs card and details only when `metadata.catalog_character_id` equals the record ID (for example `Characters:次`), or, when that is null, when `headword.hanzi` is exactly the record's character.
 - Hanzi in lesson fields link to Glyphs or Vocabulary only on an exact written-form match; nothing is inferred.
-- v2.6 selection questions record stable `choices[].id` values and `correct_choice_ids`. Each correct ID must refer to a unique choice in that question. Selected answers are revealed from those exact choices; open-ended questions retain their `answer` text. The current reader remains reveal-only.
+- Selection questions record stable `choices[].id` values and `correct_choice_ids`. Each correct ID must refer to a unique choice in that question. The application grades selections only against validated recorded IDs; open-ended and legacy questions retain their reference-answer behavior.
