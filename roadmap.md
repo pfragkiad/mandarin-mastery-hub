@@ -32,3 +32,4 @@
 - [x] Vocabulary cards: if one card in a row stacks its text under the characters, stack the whole row
 - [x] Glyph and Start random cards share per-row stacking with Vocabulary cards
 - [x] Characters/Components: "Hide radicals" filter switch (default radicals shown), URL-backed, cross-narrowed dropdowns
+- [ ] 麦: Radical #199 pill like 一, and drop the "simplified form of Kangxi radical 199" wording (display only) — scope pending user answer
