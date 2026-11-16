@@ -21,7 +21,7 @@ export type Entry = {
   /** Set only on phrases derived from a word's recorded example sentence (sentencePhraseEntries). */
   /** Optional recorded style for a standalone phrase ("conversational" | "written"); absent = Unclassified. */
   style?: 'conversational' | 'written';
-  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null; hskFromWord: string | null };
+  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null; hskFromWord: string | null; hskFromWordId: string | null };
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
   studyMetadata?: {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
@@ -97,7 +97,7 @@ export function sentencePhraseEntries(entries: Entry[]): Entry[] {
       entryKind: 'phrase', hskLevel: owner.hskLevel, hskVersion: owner.hskVersion, hsk_index: owner.hsk_index, hskSource: owner.hskSource,
       categoryId: first.categoryId, categoryIds: topics, partOfSpeech: null, contentStatus: 'draft',
       audio: example.audio ?? null, examples: [], createdAt: first.createdAt, updatedAt: first.updatedAt,
-      sentenceSource: { exampleId: example.id, wordIds: words.map(word => word.id), style: example.style ?? null, notes: example.notes ?? null, hskFromWord: owner.simplified },
+      sentenceSource: { exampleId: example.id, wordIds: words.map(word => word.id), style: example.style ?? null, notes: example.notes ?? null, hskFromWord: owner.simplified, hskFromWordId: owner.id },
     });
   }
   return phrases;

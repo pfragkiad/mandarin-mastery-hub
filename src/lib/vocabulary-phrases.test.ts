@@ -42,8 +42,9 @@ describe('Sentence phrases', () => {
   });
   it('carries the HSK level and syllabus index recorded for one owning parent word', () => {
     // Level and index always come from the same recorded word, never a mixture of two parents.
+    // Matched by record id: 点, 过 and 花 are recorded as two headwords each, so the written form is ambiguous.
     expect(derived.every(w => {
-      const owner = vocabularyData.entries.find(e => e.simplified === w.entry?.sentenceSource?.hskFromWord);
+      const owner = vocabularyData.entries.find(e => e.id === w.entry?.sentenceSource?.hskFromWordId);
       return owner != null && w.hskId === owner.hsk_index && w.entry?.hskLevel === owner.hskLevel;
     })).toBe(true);
     // 我们走吧。 is recorded under 吧 (level 1, #4) and 走 (level 2, #495): the higher-level word owns it.
