@@ -18,6 +18,7 @@ import { Switch } from '@/components/ui/switch';
 import { includeScript } from '@/lib/learning-preferences';
 import { collectionOptions, partOfSpeechList, partOfSpeechOptions, vocabularyKind, wordCollections, type Word } from '@/lib/mandarin';
 import { DEFAULT_FLASHCARD_KIND, flashcardKindLabel, flashcardKinds, flashcardVocabularyKind } from '@/lib/flashcard-filters';
+import { PHRASE_STYLES, matchesPhraseStyle, phraseStyle } from '@/lib/data-contract';
 import { audioCandidates, playPronunciation } from '@/lib/audio';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
