@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { defaultPreferences } from './learning-preferences';
-import { filterLibrary, libraryEntries, libraryPage, libraryDestination, glyphScript, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination } from './character-library';
+import { filterLibrary, libraryEntries, libraryPage, libraryDestination, glyphScript, radicalCardRecord, radicalVariantFallback, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination } from './character-library';
 import { radicalForm } from './radical-strokes';
 describe('Catalogue requirements', () => {
   it('preserves exact traditional script for lion in Practice', () => {
@@ -199,5 +199,47 @@ describe('Component stroke counts from radical forms', () => {
   });
   it('keeps a component’s own recorded count (忄 3 strokes)', () => {
     expect(libraryEntries('Components').find(entry => entry.hanzi === '忄')?.strokes).toBe(3);
+  });
+});
+// "Hide radicals" (Glyphs' Characters and Components tabs) removes whole cards, so the predicate
+// has to see the card a record rides on, not only the record itself.
+describe('Radical card records', () => {
+  const record = (kind: 'Characters' | 'Components' | 'Radicals', glyph: string) => {
+    const entry = libraryEntries(kind).find(item => item.hanzi === glyph);
+    if (!entry) throw new Error(`Missing ${kind} record for ${glyph}`);
+    return entry;
+  };
+  it('hides a radical record in both libraries', () => {
+    const characters = libraryEntries('Characters');
+    const components = libraryEntries('Components');
+    expect(radicalCardRecord(record('Characters', '刀'), 'Characters', characters)).toBe(true);
+    expect(radicalCardRecord(record('Components', '刀'), 'Components', components)).toBe(true);
+    expect(radicalCardRecord(record('Characters', '我'), 'Characters', characters)).toBe(false);
+    expect(radicalCardRecord(record('Components', '我'), 'Components', components)).toBe(false);
+  });
+  it('hides every form folded onto a radical card (刂 and ⺈ ride on 刀)', () => {
+    const components = libraryEntries('Components');
+    expect(radicalCardRecord(record('Components', '刂'), 'Components', components)).toBe(true);
+    expect(radicalCardRecord(record('Components', '⺈'), 'Components', components)).toBe(true);
+  });
+  it('hides a traditional form sharing a radical card (屍 on 尸)', () => {
+    const characters = libraryEntries('Characters');
+    expect(radicalCardRecord(record('Characters', '尸'), 'Characters', characters)).toBe(true);
+    expect(radicalCardRecord(record('Characters', '屍'), 'Characters', characters)).toBe(true);
+  });
+  it('hides a traditional form folded onto a radical card (兒 on 儿)', () => {
+    const characters = libraryEntries('Characters');
+    expect(radicalCardRecord(record('Characters', '儿'), 'Characters', characters)).toBe(true);
+    expect(radicalCardRecord(record('Characters', '兒'), 'Characters', characters)).toBe(true);
+  });
+  it('keeps a context-dependent related form, which has its own card (乾 beside 干)', () => {
+    const characters = libraryEntries('Characters');
+    expect(radicalCardRecord(record('Characters', '干'), 'Characters', characters)).toBe(true);
+    expect(radicalCardRecord(record('Characters', '乾'), 'Characters', characters)).toBe(false);
+    expect(radicalCardRecord(record('Characters', '幹'), 'Characters', characters)).toBe(false);
+  });
+  it('hides a Kangxi family heading on the Radicals tab', () => {
+    const radicals = libraryEntries('Radicals');
+    expect(radicalCardRecord(record('Radicals', '人'), 'Radicals', radicals)).toBe(true);
   });
 });
