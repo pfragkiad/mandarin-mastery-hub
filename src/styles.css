@@ -3898,3 +3898,6 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-card-host .word-card { display: contents; }
   :is(html, html[data-display-size]) .overview-discovery-row .discovery-card-host .word-card > :not(.discovery-tile-top) { display: none; }
 }
+@media (min-width: 701px) {
+  html[data-display-size='comfortable'] .overview-discovery-row .discovery-sound-open .discovery-sound-tone { min-height: 32px; padding: 0 12px; font-size: var(--ui-label-size, 14px); }
+}

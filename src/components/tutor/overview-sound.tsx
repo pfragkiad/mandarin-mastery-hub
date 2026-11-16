@@ -84,7 +84,7 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
             {header}
             {syllable ? <div className="word-open catalog-entry discovery-sound-open">
               <span className="word-character">
-                <span className="pinyin"><span className="pinyin-text discovery-sound-count">{countText}</span>
+                <span className="pinyin"><span className="pinyin-text">{countText}</span>
                   <Button variant="ghost" size="icon" className="tile-speaker" aria-label={`Play every recorded tone of ${syllable.base}`} title="Play all tones · Recording" onClick={player.sequencing ? player.stop : playAll}><Volume2/></Button>
                 </span>
                 <span className="tile-hanzi-row"><Link to="/pinyin" search={{ s: syllable.base }} className="tile-form discovery-syllable-form" title={`Open ${syllable.base} in the sound chart`} aria-label={`Open ${syllable.base} in the sound chart`}><span>{syllable.base}</span></Link></span>
