@@ -47,17 +47,11 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   const pairClass = (pair: number | null | undefined) =>
     pair != null && hoveredPair === pair ? ' sentence-pair-hover' : '';
 
+  {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
+      the pinyin with its speaker and the translation. The row wraps, so the translation
+      shares the pinyin line only when it fits; otherwise it takes its own third line. */}
   return <div className="sentence">
     {heading && <span className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>{heading}</span>}
-    {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
-      {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
-        {i > 0 && ' '}
-        {t.leading}
-        {t.pieces.map((piece, p) => piece.pair == null ? <span key={p}>{piece.text}</span> : <span key={p} className={`sentence-syllable${pairClass(piece.pair)}`} {...pairHandlers(piece.pair)}>{piece.text}</span>)}
-        {t.trailing}
-      </span>)}</span> : <span>{pinyin}</span>}
-      <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
-    </span>}
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
