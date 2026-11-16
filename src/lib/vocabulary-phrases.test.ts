@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { vocabularyData, phraseStyle } from './data-contract';
+import { vocabularyData, phraseStyle, entryTypeLabel } from './data-contract';
 import { vocabularyKind, words } from './mandarin';
 
 describe('Full Level 1 replacement', () => {
@@ -23,6 +23,18 @@ describe('Full Level 1 replacement', () => {
 
 describe('Sentence phrases', () => {
   const derived = words.filter(w => w.entry?.sentenceSource);
+  it('Conversational and Written sentences default to the Example Phrase type; unclassified ones do not', () => {
+    const styled = derived.filter(w => phraseStyle(w.entry) !== 'Unclassified');
+    expect(styled.length).toBeGreaterThan(0);
+    expect(styled.every(w => w.type === 'Example Phrase')).toBe(true);
+    expect(derived.filter(w => phraseStyle(w.entry) === 'Unclassified').some(w => w.type === 'Example Phrase')).toBe(false);
+  });
+  it('a styled standalone phrase without a recorded type also reads Example Phrase', () => {
+    const entry = { ...vocabularyData.entries.find(e => e.entryKind === 'phrase' && e.hskLevel == null)!, partOfSpeech: null, style: 'written' as const };
+    expect(entryTypeLabel(entry)).toBe('Example Phrase');
+    const { style: _style, ...unstyled } = entry;
+    expect(entryTypeLabel(unstyled)).not.toBe('Example Phrase');
+  });
   it('turns every distinct recorded example sentence into one phrase', () => {
     const sentences = new Set(vocabularyData.entries.filter(e => e.entryKind === 'word').flatMap(e => e.examples.map(x => x.simplified)));
     expect(derived).toHaveLength(sentences.size);
