@@ -17,7 +17,7 @@ import { TileSpeaker } from './tile-speaker';
 import { SoundChartLink } from './sound-chart-link';
 import { VocabularyDecomposition } from './vocabulary-decomposition';
 import { SentenceExample } from './sentence-example';
-import { SentenceSection, TileExamplesLink } from './sentence-section';
+import { MoreExamples, SentenceSection, TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
@@ -55,10 +55,11 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
         sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
     {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
-      {/* Keep both source example styles visible, each with its own exact audio. */}
-      {word.entry?.examples.length ? word.entry.examples.map(example => <div className="glyph-usage-example" key={example.id}>
-        <SentenceExample heading={example.style === 'conversational' ? 'Conversational' : example.style === 'written' ? 'Written' : ''} sentence={example.simplified} pinyin={examplePinyin(example)} translation={example.english} onNavigate={close} audioRequest={{ text: example.simplified, reading: examplePinyin(example), audio: example.audio ?? null }}/>
-      </div>) : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
+      {/* The first recorded example is always visible; further ones (e.g. the written-style
+          sentence) open from the show-more arrow. Each keeps its own exact audio and note. */}
+      {word.entry?.examples.length ? <MoreExamples key={word.id} examples={word.entry.examples.map(example => <div className="glyph-usage-example" key={example.id}>
+        <SentenceExample heading={example.style === 'conversational' ? 'Conversational' : example.style === 'written' ? 'Written' : ''} sentence={example.simplified} pinyin={examplePinyin(example)} translation={example.english} note={example.notes} onNavigate={close} audioRequest={{ text: example.simplified, reading: examplePinyin(example), audio: example.audio ?? null }}/>
+      </div>)}/> : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
     </SentenceSection>}
     <VocabularyDecomposition word={word}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}

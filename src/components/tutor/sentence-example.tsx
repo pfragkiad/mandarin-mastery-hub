@@ -14,7 +14,8 @@ import { useSyllableInventory } from './use-syllable-inventory';
 
 /**
  * One recorded example sentence: pinyin line with its speaker, the hanzi line
- * (each known character linked to its record) and the translation.
+ * (each known character linked to its record), the translation and, when the source
+ * records one, its editorial note (`note`).
  *
  * Cross-highlight: hovering (or keyboard-focusing) a hanzi character or a pinyin
  * syllable draws a small border around its counterpart, using alignSentence: one
@@ -26,7 +27,7 @@ import { useSyllableInventory } from './use-syllable-inventory';
  * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
  * links while hints are on, and plain text while they are off; pairing works either way.
  */
-export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
+export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
   const { preferences } = useWorkspace();
   const hints = useLessonHints();
   // Pairing state: the index of the hovered/focused pair, or null. Both sides
@@ -69,5 +70,8 @@ export function SentenceExample({ sentence, pinyin, translation, heading = 'IN A
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
     {translation && <span className="sentence-meaning"><MeaningText text={translation} sentence/></span>}
+    {/* The source's editorial note for this sentence, shown exactly as recorded (never
+        generated). A div, not a span/p, so the translation keeps its own styling rules. */}
+    {note && <div className="sentence-note"><span className="sentence-note-label">Note</span>{note}</div>}
   </div>;
 }

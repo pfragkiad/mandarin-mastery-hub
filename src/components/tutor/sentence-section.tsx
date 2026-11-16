@@ -1,5 +1,5 @@
-import type { ReactNode, SyntheticEvent } from 'react';
-import { ArrowUpRight, MessageSquareText } from 'lucide-react';
+import { useId, useState, type ReactNode, type SyntheticEvent } from 'react';
+import { ArrowUpRight, ChevronDown, MessageSquareText } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
 
 /**
@@ -25,6 +25,30 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
     </div>
     {hasExamples ? children : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}
   </section>;
+}
+
+/**
+ * Show-more drawer for a card's recorded example sentences.
+ *
+ * Inputs: `examples` — the rendered examples in source order. The first stays visible;
+ * the rest sit behind one arrow toggle ("Show 1 more example" / "Show fewer examples").
+ * State: `open`, local and starting closed, so every detail card opens compact. Callers
+ * key this by the record so moving to another card starts closed again. Collapsed
+ * examples are not rendered at all, so their links and speakers cannot take focus.
+ */
+export function MoreExamples({ examples }: { examples: ReactNode[] }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const [first, ...rest] = examples;
+  if (!rest.length) return <>{first}</>;
+  const label = open ? `Show fewer examples` : `Show ${rest.length} more example${rest.length === 1 ? '' : 's'}`;
+  return <>
+    {first}
+    {open && <div id={panelId} className="more-examples-panel">{rest}</div>}
+    <button type="button" className={`more-examples-toggle${open ? ' is-open' : ''}`} aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={() => setOpen(value => !value)}>
+      <ChevronDown className="more-examples-icon" aria-hidden="true"/>{label}
+    </button>
+  </>;
 }
 
 /** External-search icon shared by "Find more examples" and the cards' "Examples" button:
