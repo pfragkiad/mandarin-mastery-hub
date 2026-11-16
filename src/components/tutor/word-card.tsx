@@ -23,7 +23,16 @@ import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
-import { examplePinyin, orderExamples } from '@/lib/data-contract';
+import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
+
+/** Recorded sentence style of a phrase (Conversational / Written) as a card or detail pill.
+ *  Input: the phrase's Word. Unclassified phrases render nothing, so no pill implies a style
+ *  that was never recorded. */
+function PhraseStylePill({ word }: { word: Word }) {
+  const style = phraseStyle(word.entry);
+  if (style === 'Unclassified') return null;
+  return <span className="word-hsk-id" title={`${style} style, as recorded with the sentence`}>{style}</span>;
+}
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
