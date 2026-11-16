@@ -34,46 +34,170 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * clones of the last one and two words, because the translation is rendered through MeaningText
  * and its text is split across nested spans.
  */
-export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean, deps: DependencyList) {
+/** Opt-in extras for the Vocabulary word/phrase cards (glyph cards keep the plain behaviour). */
+export type SideFitOptions = {
+  /** Before stacking, also try the pinyin and translation together a few pixels smaller. */
+  shrinkText?: boolean;
+  /** Stack every card of a grid row once any card in that row needs to stack. */
+  rowSync?: boolean;
+};
+
+export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean, deps: DependencyList, options: SideFitOptions = {}) {
+  const { shrinkText = false, rowSync = false } = options;
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (!enabled) { delete el.dataset['stacked']; resetMeaningFont(el); return; }
-    const measure = () => {
-      delete el.dataset['stacked'];
-      resetMeaningFont(el);
-      if (!sideLayoutFits(el)) {
-        // The side layout is lost because something is cut or too tall: a smaller translation may
-        // need one line fewer and keep it, so try those steps before stacking.
-        let fitted = false;
-        for (const step of MEANING_FONT_STEPS) {
-          // Each step is measured from the view's own size, so clear the previous step first.
-          resetMeaningFont(el);
-          if (!applyMeaningFont(el, step)) continue;
-          if (sideLayoutFits(el)) { fitted = true; break; }
-        }
-        if (!fitted) { el.dataset['stacked'] = ''; resetMeaningFont(el); }
-      }
-      // Stacked (or side) translations still clamp in grid cards: a clipped one tries the same
-      // smaller steps before the ellipsis is accepted.
-      // A step that just saved the side layout is final (re-trying would clear it).
-      if (el.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning')?.style.fontSize) return;
-      if (meaningClipped(el)) shrinkUntilUnclipped(el);
-      else shrinkTrailingLine(el);
-    };
-    measure();
+    if (!enabled) { delete el.dataset['stacked']; resetTextFonts(el); return; }
+    const card: FitCard = { el, shrinkText };
     let alive = true;
-    const remeasure = () => { if (alive) measure(); };
-    void document.fonts?.ready.then(remeasure);
+    // Row-synced cards are laid out together per grid (see flushRows); others measure alone.
+    const measure = () => { if (!alive) return; if (rowSync) scheduleRow(card); else { fitSelf(card); finishFit(el); } };
+    if (rowSync) { rowCards.add(card); sharedObserver()?.observe(el); }
+    measure();
+    void document.fonts?.ready.then(measure);
     // The card's handwritten web font can load lazily AFTER fonts.ready resolved; without
     // this, a card that failed the fit check in the wider fallback font stayed stacked forever.
-    document.fonts?.addEventListener('loadingdone', remeasure);
-    if (typeof ResizeObserver === 'undefined') return () => { alive = false; document.fonts?.removeEventListener('loadingdone', remeasure); };
-    const observer = new ResizeObserver(measure);
-    observer.observe(el);
-    return () => { alive = false; document.fonts?.removeEventListener('loadingdone', remeasure); observer.disconnect(); };
+    document.fonts?.addEventListener('loadingdone', measure);
+    const observer = !rowSync && typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    observer?.observe(el);
+    return () => {
+      alive = false;
+      document.fonts?.removeEventListener('loadingdone', measure);
+      observer?.disconnect();
+      if (rowSync) { rowCards.delete(card); sharedObserver()?.unobserve(el); }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [enabled, ...deps]);
+  }, [enabled, shrinkText, rowSync, ...deps]);
+}
+
+type FitCard = { el: HTMLElement; shrinkText: boolean };
+
+/**
+ * One card's own best layout, starting from the side layout: keep it as is, else a smaller
+ * translation, else (shrinkText) pinyin and translation together a few pixels smaller, else stack.
+ * Returns true when the card had to stack. Leaves the winning font sizes applied.
+ */
+function fitSelf({ el, shrinkText }: FitCard): boolean {
+  delete el.dataset['stacked'];
+  resetTextFonts(el);
+  if (sideLayoutFits(el)) return false;
+  // The side layout is lost because something is cut or too tall: a smaller translation may
+  // need one line fewer and keep it, so try those steps before stacking.
+  for (const step of MEANING_FONT_STEPS) {
+    // Each step is measured from the view's own size, so clear the previous step first.
+    resetTextFonts(el);
+    if (!applyMeaningFont(el, step)) continue;
+    if (sideLayoutFits(el)) return false;
+  }
+  if (shrinkText) {
+    // Usually the pinyin line is what's too wide beside the box ("wǒ shòu gòu le" + speaker):
+    // shrink pinyin and translation by the same few pixels, never more than SIDE_TEXT_MAX_SHRINK.
+    resetTextFonts(el);
+    const max = sideTextMaxStep(fontPx(pinyinElement(el)));
+    for (let step = 1; step <= max; step += 1) {
+      resetTextFonts(el);
+      applyPinyinFont(el, step);
+      applyMeaningFont(el, Math.min(step, Math.max(0, fontPx(meaningElement(el)) - MEANING_FONT_FLOOR)));
+      if (sideLayoutFits(el)) return false;
+    }
+  }
+  el.dataset['stacked'] = '';
+  resetTextFonts(el);
+  return true;
+}
+
+/**
+ * Second pass in the chosen layout: stacked (or side) translations still clamp in grid cards, so a
+ * clipped one tries the smaller steps before the ellipsis is accepted, and a 1-2 word last line
+ * tries to join the line above. A size that just saved the side layout is final.
+ */
+function finishFit(el: HTMLElement) {
+  if (meaningElement(el)?.style.fontSize || pinyinElement(el)?.style.fontSize) return;
+  if (meaningClipped(el)) shrinkUntilUnclipped(el);
+  else shrinkTrailingLine(el);
+}
+
+/* ---- Row sync -------------------------------------------------------------------------------
+ * Tricky logic: whether a card stacks depends on its own text, so neighbours in one row could
+ * mix side and stacked bodies. Row-synced cards are therefore laid out per grid in one
+ * microtask (before paint, so no flicker): every card first finds its own layout (fitSelf), then
+ * cards are grouped into rows by their top edge and, if any card of a row stacked, the others are
+ * stacked too with their font steps cleared, and finally each card runs its stacked/side
+ * finishing pass. One shared ResizeObserver feeds all of them, so a window resize lays a grid out
+ * once rather than once per card. The end state is deterministic, so the observer settles. */
+const rowCards = new Set<FitCard>();
+const pendingGrids = new Set<Element>();
+let flushQueued = false;
+let observer: ResizeObserver | null | undefined;
+
+function sharedObserver(): ResizeObserver | null {
+  if (observer !== undefined) return observer;
+  observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(entries => {
+    for (const entry of entries) {
+      const card = Array.from(rowCards).find(c => c.el === entry.target);
+      if (card) scheduleRow(card);
+    }
+  });
+  return observer;
+}
+
+/** The grid a card lays out with: the parent of its `.word-card` (one host per Start tile). */
+function gridOf(el: HTMLElement): Element {
+  return el.closest('.word-card')?.parentElement ?? el;
+}
+
+function scheduleRow(card: FitCard) {
+  pendingGrids.add(gridOf(card.el));
+  if (flushQueued) return;
+  flushQueued = true;
+  queueMicrotask(flushRows);
+}
+
+function flushRows() {
+  flushQueued = false;
+  const grids = Array.from(pendingGrids);
+  pendingGrids.clear();
+  for (const grid of grids) {
+    const cards = Array.from(rowCards).filter(c => c.el.isConnected && gridOf(c.el) === grid);
+    const own = new Map(cards.map(c => [c, fitSelf(c)] as const));
+    const stackedRows = new Set(cards.filter(c => own.get(c)).map(rowKey));
+    for (const c of cards) {
+      if (!own.get(c) && stackedRows.has(rowKey(c))) { c.el.dataset['stacked'] = ''; resetTextFonts(c.el); }
+    }
+    for (const c of cards) finishFit(c.el);
+  }
+}
+
+/** Cards of one visual row share their top edge (rounded against sub-pixel layout). */
+function rowKey(card: FitCard): number {
+  return Math.round((card.el.closest('.word-card') ?? card.el).getBoundingClientRect().top);
+}
+
+/** At most this share of the view's own size is taken off pinyin + translation to keep the side layout. */
+export const SIDE_TEXT_MAX_SHRINK = 0.18;
+
+/** Largest whole-pixel step for the pinyin (18px Comfortable → 3, 11px Compact → 1), never below the floor. */
+export function sideTextMaxStep(basePx: number): number {
+  return Math.max(0, Math.min(Math.floor(basePx * SIDE_TEXT_MAX_SHRINK), Math.floor(basePx) - MEANING_FONT_FLOOR));
+}
+
+function pinyinElement(open: HTMLElement): HTMLElement | null {
+  return open.querySelector<HTMLElement>('.pinyin-text');
+}
+
+function fontPx(el: HTMLElement | null): number {
+  return el ? parseFloat(getComputedStyle(el).fontSize) || 0 : 0;
+}
+
+function applyPinyinFont(open: HTMLElement, step: number) {
+  const pinyin = pinyinElement(open);
+  if (pinyin && step > 0) pinyin.style.fontSize = `${fontPx(pinyin) - step}px`;
+}
+
+/** Hand pinyin and translation back to the view's own sizes. */
+function resetTextFonts(open: HTMLElement) {
+  resetMeaningFont(open);
+  pinyinElement(open)?.style.removeProperty('font-size');
 }
 
 /** True when the body (already in its side layout) shows the box, pinyin and translation uncut. */
@@ -154,6 +278,7 @@ function meaningElement(open: HTMLElement): HTMLElement | null {
 function applyMeaningFont(open: HTMLElement, step: number): boolean {
   const meaning = meaningElement(open);
   if (!meaning) return false;
+  if (step <= 0) return true;
   const size = meaningFontSize(parseFloat(getComputedStyle(meaning).fontSize) || 0, step);
   if (size === null) return false;
   meaning.style.fontSize = `${size}px`;
