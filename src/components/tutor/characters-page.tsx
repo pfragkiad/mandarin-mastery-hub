@@ -3,7 +3,7 @@ import { CharacterLessonIndicator, CharacterLessonsSection } from './lesson-link
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { HintBody, SourceInfo } from '@/components/tutor/source-info';
-import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useSideFit } from './use-side-fit';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
@@ -271,18 +271,26 @@ function componentCardRank(entry: LibraryEntry, forms: string[], includeTraditio
 }
 
 // `revealed` marks a card peeked in a Hide mode; `onDetails` is the only way to open the panel.
-function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
+/**
+ * One Glyphs grid card (Compact and Comfortable). Inputs: the exact record and its library kind,
+ * selection state, `onSelect` (card face) and `onDetails` (Details button). `header` (Start's random
+ * cards only) replaces the top label row — rank, pills and availability icons — with the caller's
+ * own row (section link + shuffle), so Start shows the exact grid card body and footer; the
+ * indicator lookups (BabelStone parents, radical availability) are skipped since nothing shows them.
+ */
+export function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails, header }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void; header?: ReactNode }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
-  const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
+  const indicators = header === undefined;
+  const gSourceParents = useGSourceParents(entry, indicators ? kind : null, preferences.includeTraditional, catalogVersion);
   // Resolved asynchronously (BabelStone sidecars for multi-form families); null while loading.
   const [familyAvailability, setFamilyAvailability] = useState<{ example: boolean; decomposition: boolean } | null>(null);
   useEffect(() => {
-    if (kind !== 'Radicals') { setFamilyAvailability(null); return; }
+    if (kind !== 'Radicals' || !indicators) { setFamilyAvailability(null); return; }
     let cancelled = false;
     radicalCardAvailability(entry, libraryEntries('Characters'), preferences.includeTraditional).then(result => { if (!cancelled) setFamilyAvailability(result); });
     return () => { cancelled = true; };
-  }, [entry, kind, preferences.includeTraditional, catalogVersion]);
-  const hasExample = useMemo(() => kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : kind === 'Radicals' ? Boolean(familyAvailability?.example) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents, familyAvailability]);
+  }, [entry, kind, preferences.includeTraditional, catalogVersion, indicators]);
+  const hasExample = useMemo(() => !indicators ? false : kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : kind === 'Radicals' ? Boolean(familyAvailability?.example) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents, familyAvailability, indicators]);
   // Saved variant cards carry their exact family + form key; ordinary cards pass neither.
   const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin, entry.radicalVariant ? entry.kangxiIndex : undefined, entry.radicalVariant) : null;
   const base = speechTarget(entry, kind);
@@ -394,7 +402,7 @@ function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDeta
     {/* The library tab already names the kind, so the top row carries no category word: it opens with
         rank · strokes, then pills (a gold "Variant" pill replaces the old COMPONENT VARIANT label).
         Stroke cards have no metadata or indicators, so they drop the top row entirely. */}
-    {kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{!hideDecomposition && entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
+    {header !== undefined ? header : kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{!hideDecomposition && entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && !hideMeaning && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head">{!hideHanzi && <strong lang="zh-CN">{entry.hanzi}</strong>}{hidePinyin ? null : hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning ? meaningText : <MeaningText text="No English meaning recorded in this source."/>}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>

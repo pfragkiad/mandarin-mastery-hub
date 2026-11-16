@@ -1,6 +1,8 @@
 import { bookmarkHint, bookmarkLabel } from './record-card-footer';
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
+import { CatalogTile } from './characters-page';
+import { WordCard } from './word-card';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Bookmark, ChevronDown, ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -122,6 +124,7 @@ export function DiscoveryRowList({ groups, renderSound }: { groups: DiscoveryGro
 export function DiscoveryTile({ category, open = false, onToggle = () => {} }: { category: DiscoveryCategory; open?: boolean; onToggle?: () => void }) {
   const meta = CATEGORY_META[category];
   const { items, preferences, catalogVersion, saved, toggleSaved } = useWorkspace();
+  const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState<string>();
   const [audioError, setAudioError] = useState<string | null>(null);
 
@@ -191,26 +194,47 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   const rowLine = preferences.discoveryRowLine ?? 'meaning';
   const rowPinyin = rowLine === 'pinyin' && preferences.pinyin && pinyin !== '—';
 
+  // Wider screens: the exact Glyphs/Vocabulary grid card (body, footer, fit rules) inside the same
+  // library wrappers the grids use, with this row (section link, phone toggle, shuffle) as its
+  // header instead of the rank/pill row. Phones (≤700px) flatten the card to just this row and
+  // show .discovery-tile-body as the open row's detail (styles.css "Start random rows").
+  const header = (
+  <div className="discovery-tile-top discovery-card-top">
+    <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
+      <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
+      <span className="discovery-tile-count">
+        <strong>{meta.label}<ChevronRight aria-hidden="true"/></strong>
+        <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
+      </span>
+    </Link>
+    <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
+      pick={record ? <span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`} style={{ '--pick-chars': Array.from(hanzi ?? '').length || 1 } as React.CSSProperties}>{hanzi}</span> : `Loading ${meta.label.toLowerCase()}…`}
+      line={record ? (rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>) : undefined}
+      lineAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
+    <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
+      <Shuffle />
+    </Button>
+    <DiscoveryRowChevron/>
+  </div>
+  );
+  const comfortable = preferences.libraryView === 'list';
+  const openRecord = () => {
+    if (word) void navigate({ to: '/vocabulary', search: overviewWordDestination(word) });
+    else if (entry) void navigate({ to: '/characters', search: overviewCharacterDestination(entry, entries, preferences.includeTraditional, category as LibraryKind) });
+  };
+
   return (
     <section className={`discovery-tile${open ? ' is-open' : ''}`} aria-label={`${meta.label}: ${count ?? '…'} records`}>
-      <div className="discovery-tile-top">
-        <Link to={browseTo} search={browseSearch} className="discovery-tile-heading" aria-label={`Browse ${meta.label.toLowerCase()}`}>
-          <span className="stat-icon" aria-hidden="true"><meta.icon/></span>
-          <span className="discovery-tile-count">
-            <strong>{meta.label}<ChevronRight aria-hidden="true"/></strong>
-            <span>{count === null ? '—' : count.toLocaleString('en-US')}</span>
-          </span>
-        </Link>
-        <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
-          pick={record ? <span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`} style={{ '--pick-chars': Array.from(hanzi ?? '').length || 1 } as React.CSSProperties}>{hanzi}</span> : `Loading ${meta.label.toLowerCase()}…`}
-          line={record ? (rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>) : undefined}
-          lineAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
-        <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
-          <Shuffle />
-        </Button>
-        <DiscoveryRowChevron/>
+      <div className="library-page discovery-card-host">
+        {word ? <div className={`word-grid vocab-grid vocab-${category}-grid${comfortable ? ' list-view library-list-view' : ''}`}>
+          <WordCard word={word} panel open={false} onOpenChange={next => { if (next) openRecord(); }} onDetails={openRecord} header={header}/>
+        </div> : entry ? <div className={`catalog-entry-grid${comfortable ? ' library-list-view' : ''}`}>
+          <CatalogTile entry={entry} kind={category as LibraryKind} selected={false} onSelect={openRecord} onDetails={openRecord} header={header}/>
+        </div> : <div className={`catalog-entry-grid${comfortable ? ' library-list-view' : ''}`}>
+          <article className="word-card discovery-card-loading">{header}<p className="library-note">Loading {meta.label.toLowerCase()}…</p></article>
+        </div>}
       </div>
-      {/* Phones: everything below is the row's expandable detail (display: contents on wider screens). */}
+      {/* Phones only: the open row's detail (hidden on wider screens, where the card above shows it). */}
       <div className="discovery-tile-body" id={bodyId}>
       {record && recordLink ? (
         <div className="discovery-tile-record" aria-live="polite">
