@@ -82,7 +82,7 @@ export function cardWidth(width: number, gap: number, columns: number): number {
  * whose cards are wider than `needed`, the widest card width known to wrap its buttons.
  * With `choices`, only those counts are used.
  */
-export function gridColumnsFor({ natural, width, gap, needed, choices }: { natural: number; width: number; gap: number; needed: number; choices?: readonly number[] }): number {
+export function gridColumnsFor({ natural, width, gap, needed, choices }: { natural: number; width: number; gap: number; needed: number; choices?: readonly number[] | undefined }): number {
   const allowed = (choices?.length ? [...choices] : Array.from({ length: natural }, (_, i) => i + 1))
     .filter(count => count >= 1 && count <= natural)
     .sort((a, b) => b - a);
