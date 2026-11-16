@@ -108,10 +108,16 @@ export const phraseStyle = (e: Entry | undefined): PhraseStyle => {
 export const matchesPhraseStyle = (e: Entry | undefined, style: string | undefined): boolean =>
   !style || style === 'All styles' || phraseStyle(e) === style;
 
+/** Default type of a phrase with a recorded Conversational/Written style and no recorded part of
+ *  speech (example sentences, styled standalone phrases); unclassified phrases keep posLabel. */
+export const EXAMPLE_PHRASE_TYPE = 'Example Phrase';
+export const entryTypeLabel = (e: Entry): string =>
+  !e.partOfSpeech?.trim() && e.entryKind === 'phrase' && phraseStyle(e) !== 'Unclassified' ? EXAMPLE_PHRASE_TYPE : posLabel(e.partOfSpeech);
+
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = orderExamples(e.examples)[0];
   return {
-    id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: posLabel(e.partOfSpeech),
+    id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: entryTypeLabel(e),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
     collections: [...new Set([e.categoryId, ...(e.categoryIds ?? [])].flatMap(id => {
       const category = categories.find(c => c.id === id);
