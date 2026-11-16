@@ -35,7 +35,18 @@ describe('trimTranslationPeriod', () => {
 });
 
 describe('sentence phrase translations', () => {
-  it('keeps the period when the phrase ends with 。', () => {
-    expect(trimTranslationPeriod('My surname is Wang.')).toBe('My surname is Wang.');
+  // The keep-the-period rule covers translations of entries whose Chinese ends with
+  // sentence punctuation (我姓王。). The current HSK 1 revision has no such entry, so
+  // this iterates whatever the data holds: any qualifying translation must keep its
+  // period, and the same text without a qualifying entry must trim.
+  it('keeps the period exactly for translations of sentence-punctuation entries', () => {
+    const sentenceEntries = vocabularyData.entries.filter(entry => /[。！？.!?]$/.test(entry.simplified.trim()));
+    for (const entry of sentenceEntries) {
+      for (const meaning of entry.meanings) {
+        const text = meaning.trim();
+        expect(trimTranslationPeriod(text)).toBe(text);
+      }
+    }
+    expect(trimTranslationPeriod('My surname is Wang.')).toBe('My surname is Wang');
   });
 });
