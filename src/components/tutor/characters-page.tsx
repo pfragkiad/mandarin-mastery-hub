@@ -445,7 +445,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const detailLoading = useDetailLoading();
   const setSelectedId = (id: string) => { void detailLoading.run(id, () => { const entry = savedGlyphEntry(id); return set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); }); };
   const entries = useMemo(() => libraryEntries(kind), [kind, catalogVersion]);
-  const compatibleFilters = kind === 'Characters' || kind === 'Components';
+  // Characters, Components and Radicals: rank and stroke lists narrow each other
+  // (Strokes has no rank filter, so it lists every recorded count).
+  const compatibleFilters = kind !== 'Strokes';
   // Only applied opposite filters drive availability. Draft edits stay inside
   // the form, keeping the scan independent of typing and detail selection.
   const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo), [entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo, catalogVersion]);
