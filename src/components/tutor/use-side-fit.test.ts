@@ -38,3 +38,13 @@ describe('trailingWordCount', () => {
     expect(trailingWordCount(120, [38, 80]) <= MAX_TRAILING_WORDS).toBe(false);
   });
 });
+
+describe('side text shrink before stacking', () => {
+  it('takes at most a few pixels off, never below the floor', async () => {
+    const { sideTextMaxStep } = await import('./use-side-fit');
+    expect(sideTextMaxStep(18)).toBe(3);
+    expect(sideTextMaxStep(12)).toBe(2);
+    expect(sideTextMaxStep(11)).toBe(1);
+    expect(sideTextMaxStep(10)).toBe(0);
+  });
+});

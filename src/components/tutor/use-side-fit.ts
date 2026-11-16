@@ -29,6 +29,10 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
  * view's own size. The same steps run before an ellipsis is accepted: a translation still clipped
  * in the chosen layout (clamped lines, or one word wider than its column) is tried smaller first.
  *
+ * Options (Vocabulary cards): `shrinkText` adds a last attempt before stacking with pinyin and
+ * translation together up to SIDE_TEXT_MAX_SHRINK smaller; `rowSync` stacks a whole grid row once
+ * any of its cards stacks (see "Row sync" below).
+ *
  * Tricky logic: the CSS base size has to be read with the inline override removed, so every step
  * starts by clearing it; the last line's word count is inferred from its measured width against
  * clones of the last one and two words, because the translation is rendered through MeaningText
