@@ -7,6 +7,7 @@ import { useWorkspace } from './workspace';
 import { usePinyinPlayer, sound } from './pinyin-shared';
 import { DiscoveryRowChevron, DiscoveryRowToggle } from './overview-discovery';
 import { allSounds, loadPinyinData, randomRecordedSyllable, recordedTones, toneMark, type PinyinData, type PinyinSyllable } from '@/lib/pinyin-guide';
+import { useSideFit } from './use-side-fit';
 
 /**
  * Start page "Sounds" discovery card, the sixth beside Characters…Phrases.
@@ -41,6 +42,10 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
   const playAll = () => { if (syllable) void player.sequence(tones.map(t => sound(syllable.base, t))); };
   const sectionRef = useRef<HTMLElement>(null);
   const lineTones = useLineTonesFit(sectionRef, `${syllable?.base ?? ''}|${tones.join('')}`);
+  // The wide-screen card body joins its Start row's side-fit sync (use-side-fit.ts): when any
+  // neighbouring card in the row stacks its text under the boxes, this one stacks too.
+  const openRef = useRef<HTMLDivElement>(null);
+  useSideFit(openRef, Boolean(syllable), [syllable?.base, tones.join(''), preferences.libraryView, preferences.font], { rowSync: true });
   const countText = tones.length === 1 ? '1 recorded tone' : `${tones.length} recorded tones`;
   const toneButtons = (className: string) => syllable ? tones.map(t => {
     const id = sound(syllable.base, t).id;
@@ -82,7 +87,7 @@ export function SoundDiscoveryTile({ open = false, onToggle = () => {} }: { open
         <div className={`catalog-entry-grid${comfortable ? ' library-list-view' : ''}`}>
           <article className="word-card catalog-card discovery-sound-card">
             {header}
-            {syllable ? <div className="word-open catalog-entry discovery-sound-open">
+            {syllable ? <div ref={openRef} className="word-open catalog-entry discovery-sound-open">
               <span className="word-character">
                 <span className="pinyin"><span className="pinyin-text">{countText}</span>
                   <Button variant="ghost" size="icon" className="tile-speaker" aria-label={`Play every recorded tone of ${syllable.base}`} title="Play all tones · Recording" onClick={player.sequencing ? player.stop : playAll}><Volume2/></Button>

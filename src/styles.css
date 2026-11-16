@@ -3894,6 +3894,8 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
   .overview-discovery-row .discovery-card-loading > .library-note { margin: 0; padding: 12px 16px; }
   /* Sounds card: syllable box left (rows 1–2), "N recorded tones" + speaker, then the tone chips. */
   :is(html) .overview-discovery-row .discovery-sound-open .discovery-sound-tones { grid-column: 2; grid-row: 2; align-self: start; margin-top: 2px; }
+  /* Stacked with its row (use-side-fit row sync): box, then count + speaker, then the chips. */
+  :is(html) .overview-discovery-row .discovery-sound-open[data-stacked] .discovery-sound-tones { grid-column: 1; grid-row: 3; }
   :is(html) .overview-discovery-row .discovery-sound-open .pinyin { display: flex; align-items: center; gap: 4px; color: var(--muted-foreground); }
   :is(html) .overview-discovery-row .discovery-sound-open .pinyin > button { width: 24px; height: 24px; }
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-sound-open .pinyin > button { width: 32px; height: 32px; }
