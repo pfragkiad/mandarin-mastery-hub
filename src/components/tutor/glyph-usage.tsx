@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource } from '@/lib/glyph-usage';
+import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
@@ -30,13 +30,29 @@ export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind, includ
   return parents;
 }
 
+/** Radical parents: dictionary radical assignment, with multi-form families checked against
+ * lazily loaded BabelStone G-source trees; null while loading. `familyGlyph` is the family
+ * heading the dictionary assignment names (variant cards pass it). */
+export function useRadicalParents(entry: LibraryEntry, kind: LibraryKind, includeTraditional: boolean, catalogVersion: number, familyGlyph?: string): LibraryEntry[] | null {
+  const [parents, setParents] = useState<LibraryEntry[] | null>(null);
+  useEffect(() => {
+    if (kind !== 'Radicals') { setParents(null); return; }
+    let cancelled = false;
+    setParents(null);
+    radicalParentCharacters(entry, libraryEntries('Characters'), includeTraditional, familyGlyph)
+      .then(rows => { if (!cancelled) setParents(rows); });
+    return () => { cancelled = true; };
+  }, [entry, kind, includeTraditional, catalogVersion, familyGlyph]);
+  return parents;
+}
+
 export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string | undefined }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
-  const radicalParents = useMemo(() => kind === 'Radicals' ? glyphParentCharacters(entry, kind, libraryEntries('Characters'), preferences.includeTraditional, familyGlyph) : [], [entry, kind, familyGlyph, preferences.includeTraditional, catalogVersion]);
+  const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
-  // No sourced parent characters (or the component sidecar is still loading): hide the whole
+  // No sourced parent characters (or the BabelStone sidecars are still loading): hide the whole
   // "In a character" section (owner choice).
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">

@@ -274,8 +274,15 @@ function componentCardRank(entry: LibraryEntry, forms: string[], includeTraditio
 function CatalogTile({ entry, kind, selected, onSelect, revealed = false, onDetails }: { entry: LibraryEntry; kind: LibraryKind; selected: boolean; onSelect: (id: string) => void; revealed?: boolean; onDetails?: (id: string) => void }) {
   const { preferences, saved, toggleSaved, items, catalogVersion } = useWorkspace();
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
-  const familyAvailability = useMemo(() => kind === 'Radicals' ? radicalCardAvailability(entry, libraryEntries('Characters'), preferences.includeTraditional) : null, [entry, kind, preferences.includeTraditional, catalogVersion]);
-  const hasExample = useMemo(() => kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : familyAvailability ? familyAvailability.example : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents, familyAvailability]);
+  // Resolved asynchronously (BabelStone sidecars for multi-form families); null while loading.
+  const [familyAvailability, setFamilyAvailability] = useState<{ example: boolean; decomposition: boolean } | null>(null);
+  useEffect(() => {
+    if (kind !== 'Radicals') { setFamilyAvailability(null); return; }
+    let cancelled = false;
+    radicalCardAvailability(entry, libraryEntries('Characters'), preferences.includeTraditional).then(result => { if (!cancelled) setFamilyAvailability(result); });
+    return () => { cancelled = true; };
+  }, [entry, kind, preferences.includeTraditional, catalogVersion]);
+  const hasExample = useMemo(() => kind === 'Components' ? (gSourceParents?.length ?? 0) > 0 : kind === 'Radicals' ? Boolean(familyAvailability?.example) : glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional).length > 0, [entry, kind, items, preferences.includeTraditional, catalogVersion, gSourceParents, familyAvailability]);
   // Saved variant cards carry their exact family + form key; ordinary cards pass neither.
   const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(entry.hanzi, entry.pinyin, entry.radicalVariant ? entry.kangxiIndex : undefined, entry.radicalVariant) : null;
   const base = speechTarget(entry, kind);
