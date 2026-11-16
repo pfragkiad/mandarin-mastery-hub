@@ -80,6 +80,12 @@ describe('Radical variant cards use contextual forms', () => {
     expect(parents).not.toContain('聿');
     expect(parents).toContain('肃');
   });
+  // BabelStone writes 笑 as ⿱𥫗夭 and 跃 as ⿰𧾷夭; Unihan records 𥫗 ≡ ⺮ and 𧾷 ≡ ⻊.
+  it('counts BabelStone code points only through recorded equivalents (𥫗 → ⺮, 𧾷 → ⻊)', async () => {
+    expect(await parentsOf(118, '⺮')).toContain('笑');
+    expect(await parentsOf(157, '⻊')).toContain('跃');
+    expect(await parentsOf(157, '足')).not.toContain('跃');
+  });
   it.each([129, 96, 125, 141, 183])('never lists a family form under its own family #%i', async family => {
     const forms = new Set([radicalFamily(family)!.kangxiHeading, ...radicalFamily(family)!.forms.map(form => form.character)]);
     for (const form of radicalFamily(family)!.forms) {
