@@ -31,12 +31,15 @@ export function pureComponentForm(glyph: string): boolean {
   return radicalIdentity(glyph).kind === 'variant' && !DUAL_CHARACTERS.has(glyph);
 }
 
-/** Drop source "rad. 53" / "radical number 94" / "Kangxi radical 134" notes from displayed
+/** Drop source "rad. 53" / "radical number 94" / "Kangxi radical 134" / "simplified form of Kangxi
+ * radical 199" notes from displayed
  * translations; the Kangxi index already appears in its own places. The source data also
  * carries the misspelling "Kangzi radical 134" (臼), so both spellings are dropped.
  * Keeps the original when nothing else remains. */
 export function displayMeaning(meaning: string): string {
-  const parts = meaning.split(/;\s*/).filter(part => !/^(?:Kang[xz]i\s+)?rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
+  // "simplified form of (the) Kangxi radical 199" (麦, 韦, 齿) is the same kind of index note:
+  // the card's Radical #N pill now names it, so the simplified and traditional tiles read alike.
+  const parts = meaning.split(/;\s*/).filter(part => !/^(?:(?:simplified\s+form\s+of\s+(?:the\s+)?)?Kang[xz]i\s+)?rad(?:ical)?\.?\s*(?:no\.?|number)?\s*#?\s*\d+$/i.test(part.trim()));
   return parts.length ? parts.join('; ') : meaning;
 }
 
@@ -88,11 +91,15 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   // its lexical reading, but its record pill names the radical identity with the official
   // index. Simplified dual forms (门, 马) are variant identities and stay ordinary characters.
   const canonicalRadical = !component && (kind === 'Characters' || kind === 'Character') && identity.kind === 'canonical' && identity.radicals.length > 0 ? identity.radicals[0] : undefined;
+  // The Radical #N pill on a Characters card: canonical radicals (一, 心) and the simplified dual
+  // forms (门 #169, 马 #187, 麦 #199), which are Kangxi radical forms in their own right. Unlike
+  // canonicalRadical it never replaces the detail card's dictionary-radical box (麦 keeps 麥).
+  const characterRadical = canonicalRadical ?? (dualGlyph && (kind === 'Characters' || kind === 'Character') && identity.radicals.length === 1 ? identity.radicals[0] : undefined);
   const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;
   return {
-    label, canonicalRadical, component, componentName, characterPinyin,
+    label, canonicalRadical, characterRadical, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
     readingFallback: component ? 'Component name not recorded' : 'Pinyin not recorded',
     meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : displayMeaning(meaning),

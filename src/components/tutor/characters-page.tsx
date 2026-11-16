@@ -304,7 +304,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Reviewed per-reading meanings (干 gān / gàn) show every reading's senses on the grid card.
   const splitMeaning = !info.component && !fallback ? cardMeaning(entry.hanzi, entry.pinyin, entry.meaning) : info.meaning;
   const tileMeaning = kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(splitMeaning) : splitMeaning;
-  const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : info.canonicalRadical ? [info.canonicalRadical] : [];
+  const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : info.characterRadical ? [info.characterRadical] : [];
   // Radicals never show a breakdown (their strokes live in Practice), so their cards carry no indicator either.
   const hideDecomposition = kind === 'Radicals' || ((kind === 'Characters' || kind === 'Components') && radicalIdentity(entry.hanzi).radicals.length > 0);
   const hasPinyin = Boolean(info.reading || fallback?.pinyin);
