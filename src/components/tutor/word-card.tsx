@@ -144,7 +144,9 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // the hanzi box when both fit uncut; otherwise useSideFit marks the body data-stacked and CSS
   // stacks box / pinyin+audio / translation, as on glyph cards.
   const bodyRef = useRef<HTMLButtonElement>(null);
-  useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView]);
+  // Before stacking, the pinyin and translation may shrink a few pixels; and once any card of a
+  // grid row stacks, the whole row stacks so neighbouring cards never mix layouts.
+  useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView], { shrinkText: true, rowSync: true });
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
   // A sentence phrase shows the level and syllabus index recorded for its owning parent word.
   const hskFrom = word.entry?.sentenceSource?.hskFromWord ?? null;
