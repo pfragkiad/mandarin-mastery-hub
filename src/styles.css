@@ -2541,10 +2541,11 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 /* Card-face external examples icon (Characters/Words), sized like the Sound chart link beside it
    but neutral-coloured, turning accent on hover with a tinted badge. */
 html:not(.dark) { --examples-link: oklch(.5 .18 260); }
-.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -2px; border-radius: 5px; color: var(--examples-link); cursor: pointer; transition: color .15s ease, background .15s ease; }
+/* Margin matches the Sound chart link's so the speaker → chart → arrow gaps read evenly. */
+.examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; color: var(--examples-link); cursor: pointer; transition: color .15s ease, background .15s ease; }
 .examples-link.is-tile svg { width: 12px; height: 12px; }
 .examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { background: color-mix(in oklch, var(--examples-link) 16%, transparent); outline: none; }
-.library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -4px; }
+.library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .examples-link.is-tile svg { width: 18px; height: 18px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .sound-chart-link.is-tile svg { width: 17px; height: 17px; }
