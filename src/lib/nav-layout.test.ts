@@ -36,8 +36,8 @@ describe('phone tab bar', () => {
   it('Start has its own tab, Preferences sits under More, Practice claims no tab', () => {
     expect(phoneTabFor('/')).toBe('start');
     expect(phoneTabFor('/preferences')).toBe('more');
-    expect(phoneTabFor('/lessons')).toBe('more');
-    expect(phoneTabFor('/lessons/char-6B21')).toBe('more');
+    expect(phoneTabFor('/lessons')).toBe('lessons');
+    expect(phoneTabFor('/lessons/char-6B21')).toBe('lessons');
     expect(phoneTabFor('/strokes')).toBeNull();
   });
 });
