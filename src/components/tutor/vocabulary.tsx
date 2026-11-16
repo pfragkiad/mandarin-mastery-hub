@@ -10,7 +10,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
-import { PHRASE_STYLES, phraseStyle } from '@/lib/data-contract';
+import { PHRASE_STYLES, matchesPhraseStyle } from '@/lib/data-contract';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
 import { useKeyboardPaging } from '@/lib/keyboard-paging';
@@ -64,7 +64,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const kind = linkedWord ? vocabularyKind(linkedWord) : tab === 'phrase' ? 'phrase' : 'word';
   const kindItems = useMemo(() => items.filter(w => vocabularyKind(w) === kind), [items, kind]);
   // Phrases only: the recorded sentence style (Conversational/Written/Unclassified) narrows the pool before every other filter.
-  const categoryItems = useMemo(() => kind === 'phrase' && style !== 'All styles' ? kindItems.filter(w => phraseStyle(w.entry) === style) : kindItems, [kindItems, kind, style]);
+  const categoryItems = useMemo(() => kind === 'phrase' && style !== 'All styles' ? kindItems.filter(w => matchesPhraseStyle(w.entry, style)) : kindItems, [kindItems, kind, style]);
   const label = kind === 'phrase' ? 'phrases' : 'words';
   // The Words/Phrases switch lives in the header (section-picker.tsx); hand it the
   // shown tab (a linked phrase may open without `tab` in the URL) and both counts.

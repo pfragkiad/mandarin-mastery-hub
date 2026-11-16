@@ -34,18 +34,20 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 const deckSizes = ROUND_SIZES; // shared with every game
 
 /** `category` is a flashcardKinds value (glyph kind or Words/Phrases); `collection` narrows vocabulary ('' = all collections). */
-export type FlashcardFilters = { category: string; collection?: string | undefined; level: string; pos: string; usage: string; strokes?: string | undefined; saved?: boolean | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined };
+export type FlashcardFilters = { category: string; collection?: string | undefined; level: string; pos: string; usage: string; strokes?: string | undefined; saved?: boolean | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** Phrases only: recorded sentence style (Conversational / Written / Unclassified); empty = all styles. */ style?: string | undefined };
 /** Last answer → results: the bar's 0.3s fill to 100% plus a short hold before the switch. */
 const FINISH_PAUSE_MS = 450;
 
-export function FlashcardsPage({ category: controlledCategory, collection: controlledCollection, level: controlledLevel, pos: controlledPos, usage: controlledUsage, strokes: controlledStrokes, saved: controlledSaved, usageUpTo: controlledUsageUpTo, strokesUpTo: controlledStrokesUpTo, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
+export function FlashcardsPage({ category: controlledCategory, collection: controlledCollection, level: controlledLevel, pos: controlledPos, usage: controlledUsage, strokes: controlledStrokes, saved: controlledSaved, usageUpTo: controlledUsageUpTo, strokesUpTo: controlledStrokesUpTo, style: controlledStyle, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
   const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
   const [localFilters, setLocalFilters] = useState<FlashcardFilters>({ category: DEFAULT_FLASHCARD_KIND, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' });
-  const applied: FlashcardFilters = { category: controlledCategory ?? localFilters.category, collection: controlledCollection ?? localFilters.collection ?? '', level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage, strokes: controlledStrokes ?? localFilters.strokes, saved: controlledSaved ?? localFilters.saved, usageUpTo: controlledUsageUpTo ?? localFilters.usageUpTo, strokesUpTo: controlledStrokesUpTo ?? localFilters.strokesUpTo };
+  const applied: FlashcardFilters = { category: controlledCategory ?? localFilters.category, collection: controlledCollection ?? localFilters.collection ?? '', level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage, strokes: controlledStrokes ?? localFilters.strokes, saved: controlledSaved ?? localFilters.saved, usageUpTo: controlledUsageUpTo ?? localFilters.usageUpTo, strokesUpTo: controlledStrokesUpTo ?? localFilters.strokesUpTo, style: controlledStyle ?? localFilters.style };
   const { category, level, pos, usage, strokes, usageUpTo, strokesUpTo } = applied;
+  // Style only narrows the Phrases deck; a stale value never empties another kind.
+  const style = flashcardVocabularyKind(category) === 'phrase' ? applied.style ?? '' : '';
   const collection = applied.collection ?? '';
   const savedOnly = Boolean(applied.saved);
-  const activeFilters = Boolean(collection || level !== 'All levels' || pos !== 'All types' || usage || strokes || savedOnly);
+  const activeFilters = Boolean(collection || level !== 'All levels' || pos !== 'All types' || style || usage || strokes || savedOnly);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); };
   // The round lives in root session state so opening a card's Details and pressing
   // Back resumes the same card (still turned over) instead of a fresh setup.
@@ -66,7 +68,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
   const vocabularyFacets = (kind: string) => {
     const vocabKind = flashcardVocabularyKind(kind);
     const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind) : [];
-    return { collections: collectionOptions(kindItems), levels: [...new Set(kindItems.map(w => w.level).filter(Boolean))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), posOptions: partOfSpeechOptions(kindItems) };
+    return { styles: vocabKind === 'phrase' ? PHRASE_STYLES.filter(st => kindItems.some(w => phraseStyle(w.entry) === st)) : [], collections: collectionOptions(kindItems), levels: [...new Set(kindItems.map(w => w.level).filter(Boolean))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })), posOptions: partOfSpeechOptions(kindItems) };
   };
   const isReference = category.startsWith('Ref:');
 
@@ -94,13 +96,13 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
     } else {
       const vocabKind = flashcardVocabularyKind(category);
-      base = items.filter(w => vocabularyKind(w) === vocabKind && (!collection || wordCollections(w).includes(collection)) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)));
+      base = items.filter(w => vocabularyKind(w) === vocabKind && (!collection || wordCollections(w).includes(collection)) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)) && matchesPhraseStyle(w.entry, style));
     }
     return savedFilter ? base.filter(card => saved.includes(card.id)) : base;
   };
-  const pool = useMemo(() => buildPool(savedOnly), [items, category, collection, level, pos, isReference, savedOnly, saved, usage, strokes, usageUpTo, strokesUpTo, preferences.includeTraditional, catalogVersion]);
+  const pool = useMemo(() => buildPool(savedOnly), [items, category, collection, level, pos, isReference, savedOnly, saved, usage, strokes, usageUpTo, strokesUpTo, style, preferences.includeTraditional, catalogVersion]);
   // Count shown on the Saved half of the All/Saved switch: bookmarks in this category.
-  const savedCount = useMemo(() => buildPool(true).length, [items, category, collection, level, pos, isReference, saved, usage, strokes, usageUpTo, strokesUpTo, preferences.includeTraditional, catalogVersion]);
+  const savedCount = useMemo(() => buildPool(true).length, [items, category, collection, level, pos, isReference, saved, usage, strokes, usageUpTo, strokesUpTo, style, preferences.includeTraditional, catalogVersion]);
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const cardsUnit = (n: number) => `${n} ${n === 1 ? 'card' : 'cards'}`;
@@ -109,7 +111,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     const refKind = isReference ? libraryKinds[category.slice(4) as ReferenceKind] : undefined;
     const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
-    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [strokesUpTo === '1' ? `Up to ${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}` : `${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}`] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [strokesUpTo === '1' ? `Up to ${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}` : `${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}`] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     return parts.join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -180,6 +182,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             {facets.collections.length > 0 && <select className="filter-select" aria-label="Collection" value={draft.collection ?? ''} onChange={e => patch({ collection: e.target.value })}><option value="">All collections</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>}
             {facets.levels.length > 0 && <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>}
             {facets.posOptions.length > 0 && <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.posOptions.map(p => <option key={p}>{p}</option>)}</select>}
+            {/* Phrases only: the same Sentence style choice as the Phrases library. */}
+            {facets.styles.length > 0 && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? ''} onChange={e => patch({ style: e.target.value || undefined })}><option value="">All styles</option>{facets.styles.map(st => <option key={st}>{st}</option>)}</select>}
           </>}
         </div>
         {/* Row 2: narrowing filters — rank and stroke count (glyphs) and Saved only. */}
