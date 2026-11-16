@@ -70,7 +70,9 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
   }, [state]);
   // Turning hints off closes any open card.
   useEffect(() => { if (!enabled) setState(null); }, [enabled]);
-  const value = useMemo(() => ({ enabled, backLabel, open, wordFor }), [enabled, backLabel, open, wordFor]);
+  // The lesson's recorded catalog_character_refs: an exact record ID per character, or null.
+  const refFor = useCallback((glyph: string) => characterRefs?.[glyph] ?? null, [characterRefs]);
+  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, refFor }), [enabled, backLabel, open, wordFor, refFor]);
   return <Ctx.Provider value={value}>
     {children}
     <Popover open={Boolean(state)} onOpenChange={next => { if (!next) close(); }}>
@@ -121,7 +123,13 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   const rememberReturn = () => detailTrail.replace({ label: hints?.backLabel ?? 'Lesson', href: historyEntry() });
   // catalogVersion: the catalogue loads lazily; recompute once it arrives.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const hint = useMemo(() => lessonGlyphHint(glyph, preferences.includeTraditional), [glyph, preferences.includeTraditional, catalogVersion]);
+  // A recorded catalog_character_refs ID names the exact record; without one the exact
+  // written form is looked up. Either way the card never shows another glyph's data.
+  const hint = useMemo(() => {
+    const refId = hints?.refFor(glyph);
+    return (refId ? lessonGlyphHintById(refId, preferences.includeTraditional) : null) ?? lessonGlyphHint(glyph, preferences.includeTraditional);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [glyph, preferences.includeTraditional, catalogVersion, hints]);
   const traditional = hint?.script === 'Traditional';
   const facts = hint ? [hint.rank ? `Rank #${hint.rank}` : null, hint.strokes ? `${hint.strokes} ${hint.strokes === 1 ? 'stroke' : 'strokes'}` : null].filter(Boolean).join(' · ') : '';
   return <div className="lesson-hint-body">
