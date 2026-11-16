@@ -42,7 +42,7 @@ export const useLessonHints = () => useContext(Ctx);
 
 const HAN_CHAR = /^\p{Script=Han}$/u;
 
-export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRefs, children }: { enabled: boolean; backLabel?: string; characterRefs?: Record<string, string>; children: ReactNode }) {
+export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRefs, children }: { enabled: boolean; backLabel?: string; characterRefs?: Record<string, string> | undefined; children: ReactNode }) {
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
