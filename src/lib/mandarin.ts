@@ -79,13 +79,6 @@ export function filterWords(
       (pos === "All types" || partOfSpeechList(w).includes(pos)),
   );
 }
-/**
- * Faceted dropdown options for Vocabulary: each list (collection, level, type)
- * only offers values that still have records under the *other* current
- * choices, so picking "Unclassified" narrows Types to what exists there.
- * A dropdown never filters by its own value (so you can still switch it), and
- * the current selection always stays listed so the select never goes blank.
- */
 /** Dropdown choices for the vocabulary filters (libraries and games). Every
  * dropdown is narrowed by all the *other* current picks (never by its own, so
  * it can still be changed), and a current pick with no records stays listed.
