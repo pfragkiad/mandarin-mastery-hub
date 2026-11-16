@@ -35,7 +35,7 @@ export function readNavExpanded(storage: Pick<Storage, 'getItem'> | undefined) {
   try { return storage?.getItem(NAV_EXPANDED_KEY) !== 'false'; } catch { return true; }
 }
 
-export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'pinyin' | 'more';
+export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'lessons' | 'pinyin' | 'more';
 
 /**
  * Which phone tab is lit for a page. All five games count as Games — the two
@@ -49,6 +49,7 @@ export function phoneTabFor(path: string): PhoneTab | null {
   if (path === '/characters') return 'glyphs';
   if (path === '/vocabulary') return 'vocabulary';
   if (path === '/flashcards' || path === '/drawing') return 'games';
+  if (path === '/lessons' || path.startsWith('/lessons/')) return 'lessons';
   if (path === '/pinyin') return 'pinyin';
   if (path === '/pinyin/tone-quiz' || path === '/pinyin/sound-alikes' || path === '/pinyin/type-what-you-hear') return 'games';
   // Lessons have no tab of their own; they are reached from the More drawer.
