@@ -27,7 +27,7 @@ import { useSyllableInventory } from './use-syllable-inventory';
  * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
  * links while hints are on, and plain text while they are off; pairing works either way.
  */
-export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
+export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null | undefined; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
   const { preferences } = useWorkspace();
   const hints = useLessonHints();
   // Pairing state: the index of the hovered/focused pair, or null. Both sides
