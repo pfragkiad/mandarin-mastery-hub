@@ -65,6 +65,8 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
+    {heading && <span className="sentence-style-pill">{heading}</span>}
+    </div>
     <span className="sentence-reading">
       {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
         {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
