@@ -51,7 +51,9 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
       the pinyin with its speaker and the translation. The row wraps, so the translation
       shares the pinyin line only when it fits; otherwise it takes its own third line. */}
   return <div className="sentence">
-    {heading && <span className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>{heading}</span>}
+    {/* The style label (Conversational/Written) is a pill on the hanzi line's right,
+        not an eyebrow above it, so the sentence block stays hanzi → pinyin → translation. */}
+    <div className="sentence-hanzi-row">
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
