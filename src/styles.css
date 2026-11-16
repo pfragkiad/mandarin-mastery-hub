@@ -75,7 +75,7 @@ article.word-card { touch-action: manipulation; }
  --font-sans: 'DM Sans', sans-serif; --font-display: 'Lora', Georgia, serif;
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
 }
-:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --hsk-level: oklch(.5 .08 200); --phrase-style: oklch(.56 .11 95); --experimental: oklch(.55 .12 80); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
+:root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --hsk-level: oklch(.52 .19 28); --phrase-style: oklch(.3 0 0); --experimental: oklch(.55 .12 80); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
 @layer base { * { border-color: var(--border); } body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 14px; letter-spacing: 0; } button,a,input,select { -webkit-tap-highlight-color: transparent; } button,a { touch-action: manipulation; } button { cursor: pointer; } h1,h2,h3,p { margin: 0; } a { text-decoration: none; } input,select { font: inherit; } :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
 .workspace { --sidebar-width: 238px; min-height: 100vh; }
 .workspace.is-collapsed { --sidebar-width: 80px; }
@@ -315,7 +315,7 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
   --border: oklch(.43 .012 155); --terracotta: oklch(.79 .08 48); --reveal-ring: oklch(.8 .09 158);
   /* Rank bands brighten for the dark background so every tier keeps its hue. */
   --rank-gold: oklch(.82 .11 90); --expert-gold: oklch(.85 .16 90);
-  --hsk-id: oklch(.84 .09 72); --hsk-level: oklch(.8 .1 200); --phrase-style: oklch(.82 .12 95); --experimental: oklch(.80 .12 85); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
+  --hsk-id: oklch(.84 .09 72); --hsk-level: oklch(.72 .17 27); --phrase-style: oklch(.97 0 0); --experimental: oklch(.80 .12 85); --destructive: oklch(.73 .15 30); --writer-outline: oklch(.43 .012 155);
   --overlay: oklch(.1 .01 155 / .75); --shadow-soft: 0 4px 18px oklch(.1 0 0 / .2);
 }
 .journey-banner { background: var(--banner-surface); }
@@ -590,10 +590,12 @@ this keeps the number right beside the stroke tile. */
 .traditional-character, .is-traditional [lang="zh-CN"], .is-traditional .word-level { color: var(--traditional); }
 /* Traditional marker as a pill matching the Radical pill shape, in the record's own colour. */
 .word-hsk-id.traditional-pill { font-size: 8px; color: var(--traditional); border-color: color-mix(in oklab, var(--traditional) 40%, transparent); }
-/* HSK syllabus pills (level / official ID) wear their own cyan, so they never read as the
-   gold Radical #N pill they share the shape and base token with. */
+/* HSK syllabus pills (level / official ID) wear their own China red (deeper on light, brighter
+   on dark for contrast), so they never read as the gold Radical #N pill they share the shape and
+   base token with. */
 .word-hsk-id.hsk-level-pill { color: var(--hsk-level); border-color: color-mix(in oklab, var(--hsk-level) 40%, transparent); }
-/* Sentence style (Conversational / Written) as a yellowish pill, distinct from the cyan
+/* Sentence style (Conversational / Written) as a neutral white pill on the dark theme; the light
+   theme uses near-black ink because white would vanish on a white card. Distinct from the red
    syllabus pill, the gold radical pill and the purple Traditional pill. */
 .word-hsk-id.phrase-style-pill { color: var(--phrase-style); border-color: color-mix(in oklab, var(--phrase-style) 40%, transparent); }
 .search-hit-badges { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 5px; flex-shrink: 0; }
