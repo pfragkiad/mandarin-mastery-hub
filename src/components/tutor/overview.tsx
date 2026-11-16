@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { Check, Search, Maximize2, Minimize2, Library, BookOpen, AudioLines } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,7 @@ import { overviewWordDestination } from '@/lib/overview';
 import { libraryDestination } from '@/lib/character-library';
 import { containsHanzi, isSearchableQuery, searchAll, startSearchMode, type SearchMode } from '@/lib/site-search';
 import { DailyCharacterHero, SavedStrip } from './overview-hero';
+import { useFooterFitColumns } from './use-footer-fit-columns';
 import { DiscoveryRowList, type DiscoveryGroup } from './overview-discovery';
 import { SoundDiscoveryTile } from './overview-sound';
 import { OverviewGames } from './overview-games';
@@ -21,11 +22,16 @@ const DISCOVERY_GROUPS: DiscoveryGroup[] = [
   { title: 'Sound chart', icon: <AudioLines/>, categories: [], sound: true },
 ];
 
+const START_CARD_COLUMNS = [6, 3, 2, 1] as const;
+
 export function OverviewPage() {
   const { items, preferences, catalogVersion } = useWorkspace();
+  // Start's six cards: 6, 3, 2 or 1 per row, dropping a step whenever a card's buttons would wrap.
+  const discoveryRef = useRef<HTMLElement>(null);
+  useFooterFitColumns(discoveryRef, [preferences.libraryView, preferences.font], START_CARD_COLUMNS);
   return <div className="page-enter overview-page">
     {/* No search here: the header Search already covers the library. */}<DailyCharacterHero/>
-    <section className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
+    <section ref={discoveryRef} className="overview-discovery-row" aria-label="Learning library — totals and a random record per category">
       {/* Sixth card: a random Pinyin syllable that has at least one recording. On phones the
           six cards become collapsible rows (one open at a time) inside one panel. */}
       <DiscoveryRowList groups={DISCOVERY_GROUPS} renderSound={(open, onToggle) => <SoundDiscoveryTile open={open} onToggle={onToggle}/>}/>
