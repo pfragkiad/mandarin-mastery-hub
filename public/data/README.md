@@ -17,6 +17,7 @@ The complete glyph file layout and migration contract are in [catalog.md](catalo
 | `radical_variant_etymology_audit.json` | Lazily fetched by variant details; also supplies the contextual-identity importer and provenance tests. Its audit filename does not make it an offline-only report. |
 | [character-enrichment/](character-enrichment/README.md) | Optional per-glyph decomposition/stroke mappings, validated against source checksums. |
 | [supplementary-outlines/](supplementary-outlines/README.md) | Owner-reviewed supplementary handwriting geometry for explicitly recorded forms. |
+| `finder-medians.json` | Hanzi finder comparison index: each catalogue glyph's recorded Hanzi Writer Data stroke medians (plus exact-code-point supplementary outlines), resampled and quantised. Built by `python3 scripts/build-finder-medians.py`, which checks the pinned hanzi-writer-data tarball checksum; glyphs without recorded geometry are listed under `missing`. Lazily fetched only by the Hanzi finder page (`src/lib/hanzi-finder.ts`). |
 
 Keep exact recorded glyphs, row order, IDs, source fields, and nulls intact. Do not infer missing pronunciations, script identities, or stroke paths. Audio attachments contain CDN URLs and attribution, never repository media binaries.
 
