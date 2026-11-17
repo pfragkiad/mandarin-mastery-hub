@@ -6,9 +6,14 @@ import { findMatches, FINDER_MIN_SCORE, loadFinderIndex, type FinderIndex, type 
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
-import { cardMeaning } from '@/lib/glyph-presentation';
+import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
+import { radicalVariantFallback, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
+import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { IncrementalList } from './incremental-list';
+import { TileSpeaker } from './tile-speaker';
+import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
+import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 
 /**
