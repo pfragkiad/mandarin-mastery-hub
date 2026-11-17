@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointer
 import { useNavigate } from '@tanstack/react-router';
 import { Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { findMatches, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
+import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
@@ -26,7 +26,8 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  * pushes the choice into the URL so Back restores it.
  * State: the drawn strokes (kept in a module variable too, so opening a result
  * and coming Back shows the same drawing), the lazily loaded comparison index,
- * the remembered "Live results" switch and the last searched drawing.
+ * the remembered "Live results" switch, the remembered similarity cutoff
+ * (40/50/60%, default 50) and the last searched drawing.
  *
  * Tricky parts:
  * - Live on (default): every finished stroke re-runs the search after a paint,
@@ -76,6 +77,7 @@ function outlineTransform(medians: StrokeGeometry['medians']): string {
   return `translate(${(BOARD / 2 - k * cx).toFixed(2)} ${(k * (900 - cy) + BOARD / 2).toFixed(2)}) scale(${k.toFixed(5)} ${(-k).toFixed(5)})`;
 }
 const LIVE_KEY = 'tutor-finder-live';
+const CAP_KEY = 'tutor-finder-cap';
 const BOARD = 300;
 
 type FinderHit = { glyph: string; score: number; kind: LibraryKind; kindLabel: string; entry: LibraryEntry };
@@ -122,6 +124,10 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   const [searched, setSearched] = useState<FinderStroke[]>(initial);
   useEffect(() => { try { const saved = localStorage.getItem(LIVE_KEY); if (saved !== null) setLiveState(saved === '1'); } catch { /* storage unavailable */ } }, []);
   const setLive = (value: boolean) => { setLiveState(value); try { localStorage.setItem(LIVE_KEY, value ? '1' : '0'); } catch { /* ignore */ } if (value) setSearched(strokes); };
+  // Similarity cutoff (40/50/60%), remembered like Live results; only listed matches change, never the scores.
+  const [cap, setCapState] = useState<number>(FINDER_MIN_SCORE);
+  useEffect(() => { try { const saved = Number(localStorage.getItem(CAP_KEY)); if ((FINDER_CAP_OPTIONS as readonly number[]).includes(saved)) setCapState(saved); } catch { /* storage unavailable */ } }, []);
+  const setCap = (value: number) => { setCapState(value); try { localStorage.setItem(CAP_KEY, String(value)); } catch { /* ignore */ } };
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
   const [outlineGlyph, setOutlineGlyphState] = useState<string | undefined>(similar && rememberedFor !== similar ? undefined : rememberedOutlineGlyph);
   const setOutlineGlyph = (glyph: string | undefined) => { rememberedOutlineGlyph = glyph; setOutlineGlyphState(glyph); };
@@ -162,11 +168,11 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     if (!index || !searched.length) { setResults([]); return; }
     const timer = window.setTimeout(() => {
       const accept = (glyph: string) => glyph !== similar && finderRecord(glyph, scope, preferences.includeTraditional) !== null;
-      setResults(findMatches(searched, index, accept));
+      setResults(findMatches(searched, index, accept, cap));
     }, 16);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion re-runs the search once the catalogue hydrates
-  }, [index, searched, scope, similar, preferences.includeTraditional, catalogVersion]);
+  }, [index, searched, scope, similar, cap, preferences.includeTraditional, catalogVersion]);
   const hits = useMemo(() => results.flatMap(r => { const record = finderRecord(r.glyph, scope, preferences.includeTraditional); return record ? [{ ...r, ...record }] : []; }),
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion: records resolve after hydration
     [results, scope, preferences.includeTraditional, catalogVersion]);
@@ -208,12 +214,15 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
     navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
   };
-  const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${FINDER_MIN_SCORE}% or more yet. Keep drawing, or Clear and try again.` : null;
+  const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
     <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder</h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
     <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
       {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
+      <span className="finder-cap" role="group" aria-label="Minimum similarity">
+        {FINDER_CAP_OPTIONS.map(c => <Button key={c} size="sm" variant={cap === c ? 'default' : 'outline'} aria-pressed={cap === c} title={`Show matches scoring ${c}% or more`} onClick={() => setCap(c)}>{c}%+</Button>)}
+      </span>
     </div>
     {/* "Find similar" banner: names the glyph whose recorded strokes are on the board and opens its card. */}
     {similar && <p className="finder-similar-note">
@@ -244,7 +253,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
         <p className="library-source-note">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi). Glyphs without recorded strokes can’t be found. Percentages show similarity, not certainty.</p>
       </section>
       <section className="finder-results" aria-label="Matches">
-        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {FINDER_MIN_SCORE}% or more</span>}</div>
+        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
           : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)}/>}/></div>}

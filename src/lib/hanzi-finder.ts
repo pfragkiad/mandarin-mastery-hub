@@ -38,7 +38,10 @@ const REVERSED = 0.08;
 const ORDER_FREE = 0.025;
 /** Mean per-stroke cost that scores 0%; 0 cost scores 100%. */
 const ZERO_AT = 0.32;
-export const FINDER_MIN_SCORE = 40;
+/** Default similarity cutoff; the page offers FINDER_CAP_OPTIONS as a switch. */
+export const FINDER_MIN_SCORE = 50;
+/** The cutoffs the finder page's switch offers, lowest first. */
+export const FINDER_CAP_OPTIONS = [40, 50, 60] as const;
 
 /** Equidistant resampling along a polyline, as the build script does. */
 export function resampleStroke(stroke: FinderStroke, n: number): [number, number][] {

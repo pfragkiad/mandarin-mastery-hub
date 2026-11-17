@@ -3917,6 +3917,8 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 /* Hanzi finder (hanzi-finder.tsx): drawing board beside the matches; the two wrap onto
    one column when the results no longer fit beside the board (a container condition, no device width). */
 .finder-scope { margin: 0 0 18px; }
+/* The similarity cutoff switch sits after the scope buttons with a clear gap, wrapping with them on narrow screens. */
+.finder-cap { display: inline-flex; gap: 6px; margin-left: 18px; }
 .finder-layout { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; }
 .finder-board-column { flex: 0 1 380px; min-width: min(100%, 260px); }
 .finder-board { width: min(100%, 380px); margin: 0; }
