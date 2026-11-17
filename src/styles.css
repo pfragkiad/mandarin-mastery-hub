@@ -3937,6 +3937,8 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-hit-rank { position: absolute; top: 7px; left: 9px; font-size: 12px; font-weight: 600; color: var(--muted-foreground); }
 .finder-hit-score { position: absolute; top: 7px; right: 9px; font-size: 12px; font-weight: 600; }
 .finder-hit > .pinyin { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; }
-.finder-hit-meaning { font-size: 11px; color: var(--muted-foreground); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 100%; }
+.finder-hit-pinyin { display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
+.finder-hit-pinyin .pinyin-text { min-width: 0; }
+.finder-hit-meaning { font-size: 11px; color: var(--foreground); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 100%; }
 .finder-hit > .hit-kind { font-size: 10px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
 .global-search-bar > .global-search-draw { height: 46px; flex-shrink: 0; }
