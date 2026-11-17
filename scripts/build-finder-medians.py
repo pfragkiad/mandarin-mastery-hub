@@ -32,6 +32,7 @@ POINTS = 8
 GRID = 64
 ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
 OUT = os.path.join(ROOT, 'public', 'data', 'finder-medians.json')
+MISSING_OUT = os.path.join(ROOT, 'src', 'data', 'finder-missing.json')
 
 
 def resample(points, n=POINTS):
