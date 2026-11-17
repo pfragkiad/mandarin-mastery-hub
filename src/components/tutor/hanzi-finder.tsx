@@ -264,7 +264,10 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
     const p = point(e), last = current[current.length - 1]!;
     if (Math.hypot(p[0] - last[0], p[1] - last[1]) > 0.004) setCurrent([...current, p]);
   };
-  const up = () => { if (!current) return; commit([...strokes, current]); setCurrent(null); };
+  // The board's strokes are appended from `rememberedStrokes` (updated synchronously), never from
+  // the `strokes` state: two strokes finished inside one render would otherwise read the same
+  // stale value and the earlier one would be replaced instead of kept.
+  const up = () => { if (!current) return; commit([...rememberedStrokes, current]); setCurrent(null); };
   const path = (s: FinderStroke) => s.length === 1 ? `M${s[0]![0] * BOARD} ${s[0]![1] * BOARD}h0.1` : s.map((p, i) => `${i ? 'L' : 'M'}${(p[0] * BOARD).toFixed(1)} ${(p[1] * BOARD).toFixed(1)}`).join('');
 
   // The finder's own mount clears any stale detail trail; opening a match records
@@ -306,7 +309,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         </div></div>
         <div className="finder-controls">
           <span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'}</span>
-          <Button variant="outline" disabled={!strokes.length} title="Undo the last stroke (Ctrl/⌘Z)" onClick={() => commit(strokes.slice(0, -1))}><Undo2/>Undo</Button>
+          <Button variant="outline" disabled={!strokes.length} title="Undo the last stroke (Ctrl/⌘Z)" onClick={() => commit(rememberedStrokes.slice(0, -1))}><Undo2/>Undo</Button>
           <Button variant="outline" disabled={!strokes.length} title="Clear the board" onClick={() => commit([])}><Eraser/>Clear</Button>
           <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${live ? ' is-on' : ''}`} aria-pressed={live} title={live ? 'Stop updating results after every stroke' : 'Update results after every stroke'} onClick={() => setLive(!live)}>{live ? <Check size={16} aria-hidden="true"/> : <Radio size={16} aria-hidden="true"/>}Live results</Button>
           {!live && <Button disabled={!strokes.length || !stale || !index} onClick={() => setSearched(strokes)}><Search/>Find</Button>}
