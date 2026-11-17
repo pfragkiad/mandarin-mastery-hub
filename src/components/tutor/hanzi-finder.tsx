@@ -153,7 +153,7 @@ function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () 
   </div>;
 }
 
-export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void }) {
+export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void; onSimilar: (glyph: string) => void }) {
   const navigate = useNavigate();
   const { preferences, catalogVersion } = useWorkspace();
   const initial = similar && rememberedFor !== similar ? [] : rememberedStrokes;
@@ -299,7 +299,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
         <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
-          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)}/>}/></div>}
+          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>}/></div>}
       </section>
     </div>
   </div>;
