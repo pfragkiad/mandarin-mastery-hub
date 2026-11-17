@@ -130,7 +130,7 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  makes this match the finder's reference instead — the same action a detail
  *  card's "Find similar" performs, so the board takes this glyph's recorded
  *  strokes and the results become "Similar to <glyph>". */
-function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
+export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
   const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
