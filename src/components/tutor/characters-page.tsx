@@ -31,6 +31,7 @@ import { radicalCardAvailability } from '@/lib/radical-card-availability';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
 import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
+import { finderCoversGlyph } from '@/lib/hanzi-finder-records';
 import { TileSpeaker } from './tile-speaker';
 import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { TileExamplesLink } from './sentence-section';
