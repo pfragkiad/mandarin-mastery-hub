@@ -82,6 +82,39 @@ const BOARD = 300;
 
 type FinderHit = { glyph: string; score: number; kind: LibraryKind; kindLabel: string; entry: LibraryEntry };
 
+/** The match's hanzi drawn as its exact recorded Hanzi Writer outline in a small
+ *  grid square (same 1024 box and baseline Trace uses), as static SVG paths, so
+ *  a long list never runs a writer per tile. Inputs: the exact glyph and whether
+ *  it is a Traditional form (purple ink). Geometry is fetched only once the tile
+ *  scrolls near view (shared per-glyph cache). While it loads the square stays
+ *  empty; if no exact code-point outline exists (404, non-exact supplementary
+ *  source, failed load) the glyph is shown as text instead, never a substituted
+ *  shape. */
+function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: boolean }) {
+  const box = useRef<HTMLSpanElement>(null);
+  const [visible, setVisible] = useState(false);
+  const [paths, setPaths] = useState<string[] | null | 'failed'>(null);
+  useEffect(() => {
+    const el = box.current;
+    if (!el || typeof IntersectionObserver === 'undefined') { setVisible(true); return; }
+    const io = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting)) { setVisible(true); io.disconnect(); } }, { rootMargin: '200px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  useEffect(() => {
+    if (!visible) return;
+    let active = true;
+    setPaths(null);
+    loadStrokeGeometry(glyph).then(({ data, source }) => { if (active) setPaths(source && !source.exact ? 'failed' : data.strokes); }, () => { if (active) setPaths('failed'); });
+    return () => { active = false; };
+  }, [glyph, visible]);
+  const cls = `finder-hit-glyph${traditional ? ' traditional-character' : ''}`;
+  return <span ref={box} className={cls} lang="zh-CN" role="img" aria-label={glyph}>
+    {paths === 'failed' ? <strong aria-hidden="true">{glyph}</strong>
+      : paths && <svg viewBox="0 0 1024 1024" aria-hidden="true"><g transform="scale(1, -1) translate(0, -900)">{paths.map((d, i) => <path key={i} d={d}/>)}</g></svg>}
+  </span>;
+}
+
 /** One match tile. The speaker uses the same audio pipeline as the library grid
  *  cards (exact-reading recording first, then validated Mandarin TTS; radical
  *  variants inherit their family reading via radicalVariantFallback), so an
@@ -101,7 +134,7 @@ function FinderHitTile({ hit, onOpen }: { hit: FinderHit; onOpen: () => void }) 
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
-    <strong lang="zh-CN" className={hit.entry.script === 'Traditional' ? 'traditional-character' : undefined}>{hit.glyph}</strong>
+    <FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/>
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
       : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
