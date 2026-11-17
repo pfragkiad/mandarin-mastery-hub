@@ -113,7 +113,7 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
  * `similar` (glyph details only, when the finder has this exact glyph's recorded
  * strokes) adds "Find similar", opening the Hanzi finder with those strokes on the board.
  */
-export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, onNavigate, similar }: { practice: PracticeSearch; hanzi: string; bookmarked: boolean; onBookmark: () => void; onNavigate?: () => void; similar?: string }) {
+export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, onNavigate, similar }: { practice: PracticeSearch; hanzi: string; bookmarked: boolean; onBookmark: () => void; onNavigate?: () => void; similar?: string | undefined }) {
   return <div className="word-detail-actions">
     <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...practice, mode: 'trace' }} aria-label={`Trace ${hanzi}`} onClick={onNavigate}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
     <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...practice, mode: 'recall' }} aria-label={`Recall ${hanzi}`} onClick={onNavigate}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
