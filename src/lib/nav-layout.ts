@@ -52,6 +52,7 @@ export function phoneTabFor(path: string): PhoneTab | null {
   if (path === '/lessons' || path.startsWith('/lessons/')) return 'lessons';
   if (path === '/pinyin') return 'pinyin';
   if (path === '/pinyin/tone-quiz' || path === '/pinyin/sound-alikes' || path === '/pinyin/type-what-you-hear') return 'games';
-  if (path === '/preferences') return 'more';
+  // The Hanzi finder has no tab of its own: it lives in the More drawer (and Search's Draw button).
+  if (path === '/preferences' || path === '/finder') return 'more';
   return null;
 }
