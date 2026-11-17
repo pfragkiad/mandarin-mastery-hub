@@ -59,6 +59,10 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   load) the centre lines show instead of a substituted shape.
  */
 let rememberedStrokes: FinderStroke[] = [];
+// The learner's own drawing (every draw/Undo/Clear), kept so Back from a tile's
+// "Find similar" switch can put it back on the board instead of leaving the
+// reference glyph's strokes with no banner to explain them.
+let rememberedOwn: FinderStroke[] = [];
 // Which `similar` glyph rememberedStrokes belongs to, so Back from a match shows it without a blank frame.
 let rememberedFor: string | undefined;
 // Which glyph's recorded outline the board's reference strokes belong to (survives leaving "similar" mode and Back).
@@ -178,7 +182,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
   const [outlineGlyph, setOutlineGlyphState] = useState<string | undefined>(similar && rememberedFor !== similar ? undefined : rememberedOutlineGlyph);
   const setOutlineGlyph = (glyph: string | undefined) => { rememberedOutlineGlyph = glyph; setOutlineGlyphState(glyph); };
-  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedFor = undefined; setStrokes(next); if (!next.length) setOutlineGlyph(undefined); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
+  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedOwn = next; rememberedFor = undefined; setStrokes(next); if (!next.length) setOutlineGlyph(undefined); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
   // "Find similar": the exact glyph's recorded strokes become the drawing (null = none recorded).
   const reference = useMemo(() => index && similar ? stableReference(index, similar) : null, [index, similar]);
   useEffect(() => {
