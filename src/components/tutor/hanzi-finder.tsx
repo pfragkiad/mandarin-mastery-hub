@@ -191,6 +191,16 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
     rememberedStrokes = next; rememberedFor = similar; setStrokes(next); setSearched(next);
     setOutlineGlyph(reference ? similar : undefined);
   }, [index, similar, reference]);
+  // Back from a match tile's "Find similar" switch: the URL no longer names a reference, but the
+  // board still holds that glyph's recorded strokes, so the learner's own drawing goes back on it.
+  useEffect(() => {
+    if (!index || similar || rememberedFor === undefined) return;
+    rememberedFor = undefined;
+    rememberedStrokes = rememberedOwn;
+    setStrokes(rememberedOwn);
+    setSearched(rememberedOwn);
+    setOutlineGlyph(undefined);
+  }, [index, similar]);
   // The exact recorded outline for the reference strokes (see the header note).
   const [outline, setOutline] = useState<BoardOutline | null>(null);
   useEffect(() => {
