@@ -86,27 +86,35 @@ function outlineTransform(medians: StrokeGeometry['medians']): string {
   return `translate(${(BOARD / 2 - k * cx).toFixed(2)} ${(k * (900 - cy) + BOARD / 2).toFixed(2)}) scale(${k.toFixed(5)} ${(-k).toFixed(5)})`;
 }
 const LIVE_KEY = 'tutor-finder-live';
-// Smaller screens: when the board (380px) and a usable results column (320px) no longer fit side by
-// side, the first SIDE_MATCHES matches sit beside a narrower board as rows and the rest continue
-// below at full width; only under STACK_BELOW px does the board take the whole width with matches below.
-const SIDE_BELOW = 728;
-const STACK_BELOW = 440;
-const SIDE_MATCHES = 3;
-type FinderLayout = 'wide' | 'side' | 'stack';
-/** Which finder layout the container's own width allows (a container condition, never a device width). */
+// The board and the first matches split the row in half: each takes one of two equal columns, so the
+// drawing square is exactly as wide as the list beside it. Only when one half would be too small to
+// draw on does the board take the whole width with every match below it (a container condition).
+const SPLIT_BELOW = 620;
+// The gap between the two halves; kept in step with the CSS grid gap so a half's usable width is exact.
+const SPLIT_GAP = 24;
+// A half this wide shows four match rows beside the board; a narrower one shows three.
+const ROWS_WIDE_HALF = 360;
+type FinderLayout = 'split' | 'stack';
+/** Usable width of one half when the layout is split: the container minus the gap, halved. */
+export function finderHalfFor(width: number) { return (width - SPLIT_GAP) / 2; }
+/** Which layout the container's own width allows (a container condition, never a device width). */
+export function finderLayoutFor(width: number): FinderLayout { return width >= SPLIT_BELOW ? 'split' : 'stack'; }
+/** How many matches sit beside the board: four in a wide half, three in a narrower one. */
+export function finderRowsFor(width: number) { return finderHalfFor(width) >= ROWS_WIDE_HALF ? 4 : 3; }
+/** Layout and row count measured on the finder's own container, never on a screen width. */
 function useFinderLayout() {
   const ref = useRef<HTMLDivElement>(null);
-  const [layout, setLayout] = useState<FinderLayout>('wide');
+  const [state, setState] = useState<{ layout: FinderLayout; rows: number }>({ layout: 'split', rows: 4 });
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof ResizeObserver === 'undefined') return;
-    const measure = () => { const w = el.clientWidth; if (!w) return; setLayout(w >= SIDE_BELOW ? 'wide' : w >= STACK_BELOW ? 'side' : 'stack'); };
+    const measure = () => { const w = el.clientWidth; if (!w) return; setState({ layout: finderLayoutFor(w), rows: finderRowsFor(w) }); };
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
-  return [ref, layout] as const;
+  return [ref, state] as const;
 }
 const CAP_KEY = 'tutor-finder-cap';
 const BOARD = 300;
@@ -158,9 +166,9 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  card's "Find similar" performs, so the board takes this glyph's recorded
  *  strokes and the results become "Similar to <glyph>".
  *
- *  `row`: the horizontal variant used for the first matches beside the board
- *  on smaller screens (glyph square left, reading and meaning right, score and
- *  reference button on the right edge); same controls and data as the tile. */
+ *  `row`: the horizontal variant used for the matches that sit beside the board
+ *  (glyph square left, reading and meaning right, score and reference button on
+ *  the right edge); same controls and data as the tile. */
 export function FinderHitTile({ hit, onOpen, onSimilar, row = false }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void; row?: boolean }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
@@ -326,8 +334,8 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
     navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
   };
-  const [layoutRef, layout] = useFinderLayout();
-  const side = layout === 'side';
+  const [layoutRef, { layout, rows }] = useFinderLayout();
+  const split = layout === 'split';
   const tile = (hit: (typeof hits)[number], row = false) => <FinderHitTile key={hit.glyph} hit={hit} row={row} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>;
   const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
@@ -347,8 +355,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         : <strong lang="zh-CN" className="finder-similar-glyph">{similar}</strong>}
       <span>{reference ? 'Its recorded strokes are on the board and compared like a drawing. Draw, Undo or Clear to search your own drawing instead.' : ''}</span>
     </p>}
-    {/* Wide: board left, every match in the grid on the right. Side (smaller screens): the first
-        matches as rows beside a narrower board, the rest in the grid below across the full width. */}
+    {/* Split: the board and the first matches each take half the width, the rest of the matches
+        continue below across both halves. Stack (a half too small to draw on): the board takes the
+        whole width and every match sits below it. */}
     <div ref={layoutRef} className={`finder-layout is-${layout}`}>
       <section className="finder-board-column" aria-label="Drawing board">
         <div className="writer-board finder-board"><div className="writing-grid">
@@ -372,11 +381,11 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
-          : side ? <div className="finder-hits finder-hits-side">{hits.slice(0, SIDE_MATCHES).map(hit => tile(hit, true))}</div>
+          : split ? <div className="finder-hits finder-hits-side">{hits.slice(0, rows).map(hit => tile(hit, true))}</div>
           : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => tile(hit)}/></div>}
       </section>
-      {side && !status && !loadError && hits.length > SIDE_MATCHES && <section className="finder-hits finder-rest" aria-label="More matches">
-        <IncrementalList items={hits.slice(SIDE_MATCHES)} resetKey={results} chunk={60} renderItem={hit => tile(hit)}/>
+      {split && !status && !loadError && hits.length > rows && <section className="finder-hits finder-rest" aria-label="More matches">
+        <IncrementalList items={hits.slice(rows)} resetKey={results} chunk={60} renderItem={hit => tile(hit)}/>
       </section>}
     </div>
   </div>;

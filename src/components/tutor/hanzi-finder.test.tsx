@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { FinderHitTile } from './hanzi-finder';
+import { FinderHitTile, finderHalfFor, finderLayoutFor, finderRowsFor } from './hanzi-finder';
 import { WorkspaceProvider } from './workspace';
 import type { LibraryEntry } from '@/lib/character-library';
 
@@ -50,5 +50,28 @@ describe('finder match tile', () => {
     fireEvent.click(screen.getByTitle('Open 大 in Characters'));
     expect(onOpen).toHaveBeenCalledTimes(1);
     expect(onSimilar).not.toHaveBeenCalled();
+  });
+});
+
+// The board and the first matches share the row in two equal halves; the rules below are the
+// container-driven decisions behind that (no screen width is ever read), so they are tested as
+// plain functions on the measured container width.
+describe('finder layout rules', () => {
+  it('gives each half the container width minus the 24px gap, halved', () => {
+    expect(finderHalfFor(620)).toBe(298);
+    expect(finderHalfFor(1009)).toBeCloseTo(492.5, 1);
+  });
+
+  it('splits the row only when a half is still wide enough to draw on', () => {
+    expect(finderLayoutFor(620)).toBe('split');
+    expect(finderLayoutFor(619)).toBe('stack');
+    expect(finderLayoutFor(1009)).toBe('split');
+  });
+
+  it('shows four match rows in a wide half and three in a narrower one', () => {
+    expect(finderRowsFor(744)).toBe(4); // half exactly 360px
+    expect(finderRowsFor(1009)).toBe(4); // half ~493px
+    expect(finderRowsFor(743)).toBe(3); // half 359.5px
+    expect(finderRowsFor(640)).toBe(3); // half 308px
   });
 });

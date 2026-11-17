@@ -3914,8 +3914,9 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-sound-open .discovery-sound-tone { min-height: 32px; padding: 0 12px; font-size: var(--ui-label-size, 14px); }
 }
 
-/* Hanzi finder (hanzi-finder.tsx): drawing board beside the matches; the two wrap onto
-   one column when the results no longer fit beside the board (a container condition, no device width). */
+/* Hanzi finder (hanzi-finder.tsx): the drawing board and the first matches each take half the
+   width; when a half would be too small to draw on, the board takes the whole width and every
+   match sits below it (a container condition, no device width). */
 .finder-scope { margin: 0 0 18px; }
 /* The similarity cutoff switch follows the scope buttons with the same 8px gap every finder button row uses, wrapping with them. */
 .finder-scope { gap: 8px; }
@@ -3932,12 +3933,13 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-controls > [data-ui-button] { margin: 0; }
 .finder-count { color: var(--muted-foreground); font-size: 12px; min-width: 62px; }
 .finder-results { flex: 1 1 320px; min-width: 0; }
-/* Smaller screens (useFinderLayout, measured on this container): a narrower board with the first
-   matches as rows beside it, the rest of the grid below across both columns. */
-.finder-layout.is-side { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 20px; }
-.finder-layout.is-side .finder-board-column { min-width: 0; }
-.finder-layout.is-side .finder-board { width: 100%; }
-.finder-layout.is-side .finder-rest { grid-column: 1 / -1; }
+/* Split (useFinderLayout, measured on this container): two equal halves - the board square fills
+   the left one, the first matches as rows fill the right one - and the rest of the grid below
+   across both halves. The gap matches SPLIT_GAP in hanzi-finder.tsx. */
+.finder-layout.is-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 24px; }
+.finder-layout.is-split .finder-board-column { min-width: 0; }
+.finder-layout.is-split .finder-board { width: 100%; }
+.finder-layout.is-split .finder-rest { grid-column: 1 / -1; }
 .finder-hits.finder-hits-side { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .finder-hit.finder-hit-row { flex-direction: row; align-items: stretch; padding: 10px 12px; text-align: left; }
 .finder-hit-row .finder-hit-open { display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; justify-items: start; column-gap: 12px; row-gap: 2px; padding-right: 30px; text-align: left; }
