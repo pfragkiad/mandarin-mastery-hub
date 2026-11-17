@@ -26,7 +26,8 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  * pushes the choice into the URL so Back restores it.
  * State: the drawn strokes (kept in a module variable too, so opening a result
  * and coming Back shows the same drawing), the lazily loaded comparison index,
- * the remembered "Live results" switch and the last searched drawing.
+ * the remembered "Live results" switch, the remembered similarity cutoff
+ * (40/50/60%, default 50) and the last searched drawing.
  *
  * Tricky parts:
  * - Live on (default): every finished stroke re-runs the search after a paint,
@@ -213,7 +214,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
     navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
   };
-  const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${FINDER_MIN_SCORE}% or more yet. Keep drawing, or Clear and try again.` : null;
+  const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
     <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder</h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
@@ -252,7 +253,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
         <p className="library-source-note">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi). Glyphs without recorded strokes can’t be found. Percentages show similarity, not certainty.</p>
       </section>
       <section className="finder-results" aria-label="Matches">
-        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {FINDER_MIN_SCORE}% or more</span>}</div>
+        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
           : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)}/>}/></div>}
