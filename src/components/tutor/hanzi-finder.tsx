@@ -258,16 +258,37 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
     const box = svg.current!.getBoundingClientRect();
     return [Math.min(1, Math.max(0, (e.clientX - box.left) / box.width)), Math.min(1, Math.max(0, (e.clientY - box.top) / box.height))];
   };
-  const down = (e: ReactPointerEvent<SVGSVGElement>) => { if (e.button !== 0) return; e.currentTarget.setPointerCapture(e.pointerId); setCurrent([point(e)]); };
-  const move = (e: ReactPointerEvent<SVGSVGElement>) => {
-    if (!current) return;
-    const p = point(e), last = current[current.length - 1]!;
-    if (Math.hypot(p[0] - last[0], p[1] - last[1]) > 0.004) setCurrent([...current, p]);
+  // The stroke being drawn lives in a ref as well as in state: pointer handlers
+  // can fire several times before React commits the previous update, and a
+  // handler reading the `current` state from its own render would then see the
+  // stroke it has not yet recorded (or none at all) and drop it. The ref is the
+  // live source of truth; `current` state only mirrors it for painting.
+  const currentRef = useRef<[number, number][] | null>(null);
+  const down = (e: ReactPointerEvent<SVGSVGElement>) => {
+    if (e.button !== 0) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    const start = [point(e)];
+    currentRef.current = start;
+    setCurrent(start);
   };
-  // The board's strokes are appended from `rememberedStrokes` (updated synchronously), never from
-  // the `strokes` state: two strokes finished inside one render would otherwise read the same
-  // stale value and the earlier one would be replaced instead of kept.
-  const up = () => { if (!current) return; commit([...rememberedStrokes, current]); setCurrent(null); };
+  const move = (e: ReactPointerEvent<SVGSVGElement>) => {
+    const drawing = currentRef.current;
+    if (!drawing) return;
+    const p = point(e), last = drawing[drawing.length - 1]!;
+    if (Math.hypot(p[0] - last[0], p[1] - last[1]) <= 0.004) return;
+    const next = [...drawing, p];
+    currentRef.current = next;
+    setCurrent(next);
+  };
+  // Finished strokes are appended from `rememberedStrokes` (updated synchronously), never from the
+  // `strokes` state: two strokes finished inside one render would otherwise read the same stale
+  // value and the earlier one would be replaced instead of kept.
+  const up = () => {
+    const drawing = currentRef.current;
+    currentRef.current = null;
+    setCurrent(null);
+    if (drawing) commit([...rememberedStrokes, drawing]);
+  };
   const path = (s: FinderStroke) => s.length === 1 ? `M${s[0]![0] * BOARD} ${s[0]![1] * BOARD}h0.1` : s.map((p, i) => `${i ? 'L' : 'M'}${(p[0] * BOARD).toFixed(1)} ${(p[1] * BOARD).toFixed(1)}`).join('');
 
   // The finder's own mount clears any stale detail trail; opening a match records
