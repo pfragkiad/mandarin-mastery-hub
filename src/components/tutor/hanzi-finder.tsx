@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointer
 import { useNavigate } from '@tanstack/react-router';
 import { PenLine, Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SourceInfo } from './source-info';
 import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
@@ -37,7 +38,7 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   libraries (finderRecord: the radical card wins, as glyph links do), and the
  *   Traditional preference applies before any comparison.
  * - Only glyphs with recorded Hanzi Writer geometry can match; the rest are
- *   never guessed (the source note says so).
+ *   never guessed (the title's (i) note says so).
  * - `similar` (URL, from a detail card's "Find similar"): once the index loads,
  *   that exact glyph's recorded strokes become the drawing and are searched at
  *   once (even with Live off), with the glyph itself left out of its own
@@ -302,7 +303,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
   const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
-    <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder</h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
+    <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder<SourceInfo inline className="detail-footnote">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi)<br/>Glyphs without recorded strokes can’t be found<br/>Percentages show similarity, not certainty</SourceInfo></h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
     <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
       {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
       <span className="finder-cap" role="group" aria-label="Minimum similarity">
@@ -335,7 +336,6 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
           <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${live ? ' is-on' : ''}`} aria-pressed={live} title={live ? 'Stop updating results after every stroke' : 'Update results after every stroke'} onClick={() => setLive(!live)}>{live ? <Check size={16} aria-hidden="true"/> : <Radio size={16} aria-hidden="true"/>}Live results</Button>
           {!live && <Button disabled={!strokes.length || !stale || !index} onClick={() => setSearched(strokes)}><Search/>Find</Button>}
         </div>
-        <p className="library-source-note">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi). Glyphs without recorded strokes can’t be found. Percentages show similarity, not certainty.</p>
       </section>
       <section className="finder-results" aria-label="Matches">
         <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
