@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointer
 import { useNavigate } from '@tanstack/react-router';
 import { Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { findMatches, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
+import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
