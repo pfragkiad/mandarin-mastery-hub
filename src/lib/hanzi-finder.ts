@@ -38,7 +38,7 @@ const REVERSED = 0.08;
 const ORDER_FREE = 0.025;
 /** Mean per-stroke cost that scores 0%; 0 cost scores 100%. */
 const ZERO_AT = 0.32;
-export const FINDER_MIN_SCORE = 50;
+export const FINDER_MIN_SCORE = 40;
 
 /** Equidistant resampling along a polyline, as the build script does. */
 export function resampleStroke(stroke: FinderStroke, n: number): [number, number][] {
