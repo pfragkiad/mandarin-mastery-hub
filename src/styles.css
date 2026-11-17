@@ -3339,6 +3339,9 @@ html[data-display-size='comfortable'] .library-page .mobile-library-filters .sea
 @media (max-width: 850px) {
   .library-page { --library-top-gap: 16px; }
   .main-content:has(> .library-page) { padding-top: 16px; }
+  /* The finder's title gets extra air under the sticky header, so a small scroll never
+     leaves it touching the header's bottom edge. */
+  .main-content:has(> .finder-page) { padding-top: 26px; }
   .library-page .library-heading { min-height: 0; margin: 0; padding: 0; }
   .library-page .catalog-tabs, .library-page .catalog-tabs > [role='tabpanel'] { margin-top: 0; padding-top: 0; gap: 0; }
   .library-page [role='tabpanel']:has(> .mobile-library-filters) { margin-top: 0; row-gap: var(--library-top-gap); }
@@ -3936,11 +3939,13 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-controls > [data-ui-button] { margin: 0; }
 .finder-results { min-width: 0; }
 .finder-rest { grid-column: 1 / -1; }
-.finder-results-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; margin-bottom: 12px; }
-.finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; }
-/* The drawn-stroke count lives beside the Matches title (the board column stays buttons only). */
+/* The Matches head stacks its lines with clear air: title, then the drawn-stroke count,
+   then the match count — each on its own row, never squeezed beside the title. */
+.finder-results-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 12px; margin-bottom: 16px; }
+.finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; flex-basis: 100%; }
+/* The drawn-stroke count lives under the Matches title (the board column stays buttons only). */
 .finder-count { color: var(--muted-foreground); font-size: 13px; }
-.finder-results-count { color: var(--muted-foreground); font-size: 12px; margin-left: auto; }
+.finder-results-count { color: var(--muted-foreground); font-size: 12px; }
 /* The message under Matches (start hint, no-matches note) reads as a full line, not a caption;
    the .record-gap prefix outranks the shared small-muted note rule. */
 .record-gap > p.finder-status { font-size: 16px; line-height: 1.55; color: var(--foreground); }
