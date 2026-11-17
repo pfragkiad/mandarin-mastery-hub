@@ -3940,7 +3940,7 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
    gradients as .writing-grid: plain text over a CSS background, so a long result list never
    mounts a Hanzi Writer instance per tile. */
 /* Match glyph: a small grid square (board diagonals + centre lines) holding the exact recorded outline as SVG; text only when no exact outline exists. */
-.finder-hit-glyph { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; margin: 4px 0 3px; border: 1px solid var(--border); background-color: var(--background); background-image: linear-gradient(45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(-45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to right, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to bottom, transparent 49.6%, var(--border) 50%, transparent 50.4%); color: var(--card-ink, var(--foreground)); }
+.finder-hit-glyph { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; margin: 4px 0 3px; border: 1px solid var(--border); background-image: linear-gradient(45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(-45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to right, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to bottom, transparent 49.6%, var(--border) 50%, transparent 50.4%); color: var(--card-ink, var(--foreground)); }
 .finder-hit-glyph.traditional-character { color: var(--traditional, var(--card-ink)); }
 .finder-hit-glyph svg { width: 100%; height: 100%; display: block; }
 .finder-hit-glyph path { fill: currentColor; }
