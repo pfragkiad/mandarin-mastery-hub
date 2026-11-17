@@ -136,17 +136,21 @@ function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () 
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const rank = usageOrder.loaded ? usageRank(hit.entry, hit.kind, preferences.includeTraditional) : null;
-  return <button type="button" className={`finder-hit ${ink}`} title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
+  return <div className={`finder-hit ${ink}`}>
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
+    {/* Make this match the reference: its recorded strokes go on the board and the results re-run. */}
+    <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={13} aria-hidden="true"/></button>
+    <button type="button" className="finder-hit-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
     <FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/>
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
       : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
     <span className="finder-hit-meaning">{cardMeaning(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
     <span className="hit-kind">{hit.kindLabel}</span>
-  </button>;
+    </button>
+  </div>;
 }
 
 export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void }) {
