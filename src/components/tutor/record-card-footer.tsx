@@ -1,4 +1,4 @@
-import { Bookmark } from 'lucide-react';
+import { Bookmark, PenLine } from 'lucide-react';
 import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -110,11 +110,14 @@ export function RecordCardFooter({ metadata, hanzi, bookmarked, onBookmark, prac
  * buttons as Comfortable cards) plus a labelled Bookmark toggle.
  * Inputs: the Practice target, the record's hanzi, its bookmark state and toggle, and an
  * optional `onNavigate` (the panel closes itself before Practice opens).
+ * `similar` (glyph details only, when the finder has this exact glyph's recorded
+ * strokes) adds "Find similar", opening the Hanzi finder with those strokes on the board.
  */
-export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, onNavigate }: { practice: PracticeSearch; hanzi: string; bookmarked: boolean; onBookmark: () => void; onNavigate?: () => void }) {
+export function DetailRecordActions({ practice, hanzi, bookmarked, onBookmark, onNavigate, similar }: { practice: PracticeSearch; hanzi: string; bookmarked: boolean; onBookmark: () => void; onNavigate?: () => void; similar?: string | undefined }) {
   return <div className="word-detail-actions">
     <Button asChild variant="outline" size="sm" className="card-practice-action"><Link to="/strokes" search={{ ...practice, mode: 'trace' }} aria-label={`Trace ${hanzi}`} onClick={onNavigate}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>
     <Button asChild variant="outline" size="sm" className="card-expert-action"><Link to="/strokes" search={{ ...practice, mode: 'recall' }} aria-label={`Recall ${hanzi}`} onClick={onNavigate}><ExpertPracticeIcon aria-hidden="true"/>Recall</Link></Button>
+    {similar && <Button asChild variant="outline" size="sm" className="detail-similar-action"><Link to="/finder" search={{ similar }} title={`Hanzi finder · glyphs whose recorded strokes look like ${similar}`} onClick={onNavigate}><PenLine aria-hidden="true"/>Find similar</Link></Button>}
     <Button variant="outline" size="sm" className="detail-bookmark-action" title={bookmarkHint(bookmarked)} aria-label={bookmarkLabel(bookmarked, hanzi)} aria-pressed={bookmarked} onClick={onBookmark}><Bookmark aria-hidden="true" className={bookmarked ? 'bookmark-saved' : ''}/>{bookmarked ? 'Bookmarked' : 'Bookmark'}</Button>
   </div>;
 }

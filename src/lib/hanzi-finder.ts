@@ -27,7 +27,7 @@ export type FinderPoint = readonly [number, number];
 export type FinderStroke = readonly FinderPoint[];
 export type FinderIndexFile = { points: number; grid: number; alphabet: string; glyphs: Record<string, string>; source: { name: string; version: string; derivedFrom: string; license: string } };
 export type FinderCandidate = { glyph: string; strokes: Float32Array[] };
-export type FinderIndex = { points: number; candidates: FinderCandidate[]; byCount: Map<number, FinderCandidate[]>; source: FinderIndexFile['source'] };
+export type FinderIndex = { points: number; candidates: FinderCandidate[]; byCount: Map<number, FinderCandidate[]>; byGlyph: Map<string, FinderCandidate>; source: FinderIndexFile['source'] };
 export type FinderMatch = { glyph: string; score: number };
 
 /** Cost of an unmatched (extra or missing) stroke, in bounding-box units. */
@@ -85,6 +85,7 @@ export function decodeFinderIndex(file: FinderIndexFile): FinderIndex {
   const per = file.points * 2;
   const candidates: FinderCandidate[] = [];
   const byCount = new Map<number, FinderCandidate[]>();
+  const byGlyph = new Map<string, FinderCandidate>();
   for (const [glyph, packed] of Object.entries(file.glyphs)) {
     if (!packed.length || packed.length % per) continue;
     const strokes: [number, number][][] = [];
@@ -95,10 +96,11 @@ export function decodeFinderIndex(file: FinderIndexFile): FinderIndex {
     }
     const candidate = { glyph, strokes: normalize(strokes) };
     candidates.push(candidate);
+    byGlyph.set(glyph, candidate);
     const list = byCount.get(strokes.length);
     if (list) list.push(candidate); else byCount.set(strokes.length, [candidate]);
   }
-  return { points: file.points, candidates, byCount, source: file.source };
+  return { points: file.points, candidates, byCount, byGlyph, source: file.source };
 }
 
 function strokeCost(a: Float32Array, b: Float32Array): number {
@@ -164,6 +166,18 @@ export function findMatches(drawing: readonly FinderStroke[], index: FinderIndex
     }
   }
   return out.sort((a, b) => b.score - a.score);
+}
+
+/**
+ * "Find similar": an exact glyph's own recorded strokes as a board drawing
+ * (board units, 10% margin), so it is compared with the same metric as a
+ * learner's drawing. Null when the index has no recorded geometry for that
+ * exact code point — never a look-alike's strokes.
+ */
+export function referenceDrawing(index: FinderIndex, glyph: string): FinderStroke[] | null {
+  const candidate = index.byGlyph.get(glyph);
+  if (!candidate) return null;
+  return candidate.strokes.map(flat => Array.from({ length: flat.length / 2 }, (_, i) => [flat[i * 2]! * 0.8 + 0.1, flat[i * 2 + 1]! * 0.8 + 0.1] as const));
 }
 
 let loading: Promise<FinderIndex> | null = null;

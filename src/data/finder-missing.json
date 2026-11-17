@@ -1,0 +1,27 @@
+{
+ "about": "Catalogue glyphs without recorded finder geometry; copy of finder-medians.json missing, written by scripts/build-finder-medians.py.",
+ "missing": [
+  "鸛",
+  "亀",
+  "斉",
+  "歯",
+  "竜",
+  "鼡",
+  "𠘨",
+  "𡯂",
+  "𤴔",
+  "𥫗",
+  "𦉫",
+  "𦍋",
+  "𦍌",
+  "𦥑",
+  "𧢲",
+  "𧾷",
+  "𨸏",
+  "𩙿",
+  "𩠐",
+  "𫜹",
+  "𱷥",
+  "𲋄"
+ ]
+}
