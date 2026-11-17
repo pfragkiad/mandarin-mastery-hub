@@ -7,6 +7,7 @@ import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finde
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning } from '@/lib/glyph-presentation';
+import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { IncrementalList } from './incremental-list';
 import { useWorkspace } from './workspace';
 
@@ -126,6 +127,8 @@ export function HanziFinderPage({ scope, onScope }: { scope: FinderScope; onScop
           : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => {
             const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
             return <button key={hit.glyph} type="button" className={`finder-hit ${ink}`} title={`Open ${hit.glyph} in ${hit.kind}`} onClick={() => open(hit)}>
+              {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
+              {usageOrder.loaded && (() => { const rank = usageRank(hit.entry, hit.kind, preferences.includeTraditional); return rank === null ? null : <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>; })()}
               <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
               <strong lang="zh-CN" className={hit.entry.script === 'Traditional' ? 'traditional-character' : undefined}>{hit.glyph}</strong>
               <span className="pinyin">{hit.entry.pinyin}</span>
