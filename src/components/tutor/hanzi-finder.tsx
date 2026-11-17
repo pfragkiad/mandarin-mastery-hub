@@ -167,11 +167,11 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     if (!index || !searched.length) { setResults([]); return; }
     const timer = window.setTimeout(() => {
       const accept = (glyph: string) => glyph !== similar && finderRecord(glyph, scope, preferences.includeTraditional) !== null;
-      setResults(findMatches(searched, index, accept));
+      setResults(findMatches(searched, index, accept, cap));
     }, 16);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion re-runs the search once the catalogue hydrates
-  }, [index, searched, scope, similar, preferences.includeTraditional, catalogVersion]);
+  }, [index, searched, scope, similar, cap, preferences.includeTraditional, catalogVersion]);
   const hits = useMemo(() => results.flatMap(r => { const record = finderRecord(r.glyph, scope, preferences.includeTraditional); return record ? [{ ...r, ...record }] : []; }),
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion: records resolve after hydration
     [results, scope, preferences.includeTraditional, catalogVersion]);
@@ -219,6 +219,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder</h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
     <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
       {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
+      <span className="finder-cap" role="group" aria-label="Minimum similarity">
+        {FINDER_CAP_OPTIONS.map(c => <Button key={c} size="sm" variant={cap === c ? 'default' : 'outline'} aria-pressed={cap === c} title={`Show matches scoring ${c}% or more`} onClick={() => setCap(c)}>{c}%+</Button>)}
+      </span>
     </div>
     {/* "Find similar" banner: names the glyph whose recorded strokes are on the board and opens its card. */}
     {similar && <p className="finder-similar-note">
