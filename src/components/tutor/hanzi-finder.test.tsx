@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { FinderHitTile } from './hanzi-finder';
 import { WorkspaceProvider } from './workspace';
 import type { LibraryEntry } from '@/lib/character-library';
@@ -19,14 +19,17 @@ const hit = {
   entry: { id: 'characters:大', hanzi: '大', pinyin: 'dà', meaning: 'big; large', note: '' } as LibraryEntry,
 };
 
-function renderTile(onOpen = vi.fn(), onSimilar = vi.fn()) {
+/** Render one tile and let the stubbed outline load settle inside act, so the
+ *  tile's own state update never leaks out of the test. */
+async function renderTile(onOpen = vi.fn(), onSimilar = vi.fn()) {
   render(<WorkspaceProvider><FinderHitTile hit={hit} onOpen={onOpen} onSimilar={onSimilar}/></WorkspaceProvider>);
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); });
   return { onOpen, onSimilar };
 }
 
 describe('finder match tile', () => {
-  it('offers opening the card and making the match the reference as two separate controls', () => {
-    renderTile();
+  it('offers opening the card and making the match the reference as two separate controls', async () => {
+    await renderTile();
     const open = screen.getByTitle('Open 大 in Characters');
     const similar = screen.getByRole('button', { name: 'Find similar to 大' });
     // Siblings, never nested: a button inside a button is invalid and would make
@@ -35,15 +38,15 @@ describe('finder match tile', () => {
     expect(similar.contains(open)).toBe(false);
   });
 
-  it('the top button switches the reference to this match without opening its card', () => {
-    const { onOpen, onSimilar } = renderTile();
+  it('the top button switches the reference to this match without opening its card', async () => {
+    const { onOpen, onSimilar } = await renderTile();
     fireEvent.click(screen.getByRole('button', { name: 'Find similar to 大' }));
     expect(onSimilar).toHaveBeenCalledTimes(1);
     expect(onOpen).not.toHaveBeenCalled();
   });
 
-  it('the tile body still opens the glyph card and never switches the reference', () => {
-    const { onOpen, onSimilar } = renderTile();
+  it('the tile body still opens the glyph card and never switches the reference', async () => {
+    const { onOpen, onSimilar } = await renderTile();
     fireEvent.click(screen.getByTitle('Open 大 in Characters'));
     expect(onOpen).toHaveBeenCalledTimes(1);
     expect(onSimilar).not.toHaveBeenCalled();
