@@ -16,6 +16,7 @@ import { TileSpeaker } from './tile-speaker';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
+import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichment';
 
 /**
  * HanziFinderPage — draw a character on the board and see the catalogue glyphs
@@ -42,10 +43,38 @@ import { useWorkspace } from './workspace';
  *   results. Any edit (draw, Undo, Clear) calls `onLeaveSimilar`, so the URL
  *   then describes an ordinary drawing and the glyph can match again. A glyph
  *   without recorded strokes empties the board and says so instead of guessing.
+ * - What the board SHOWS for those reference strokes is the glyph's exact
+ *   recorded Hanzi Writer outline (the same shapes Trace draws), not the
+ *   8-point centre lines used for matching. A stroke shows its outline only
+ *   while it is still the very same reference stroke object (identity check),
+ *   so Undo keeps the remaining outline strokes and anything the learner adds
+ *   is drawn as their own line. The outline is fitted with the same bounding-
+ *   box transform referenceDrawing applies, and it is shown only for an exact
+ *   code-point record with a matching stroke count; otherwise (or on a failed
+ *   load) the centre lines show instead of a substituted shape.
  */
 let rememberedStrokes: FinderStroke[] = [];
 // Which `similar` glyph rememberedStrokes belongs to, so Back from a match shows it without a blank frame.
 let rememberedFor: string | undefined;
+// Which glyph's recorded outline the board's reference strokes belong to (survives leaving "similar" mode and Back).
+let rememberedOutlineGlyph: string | undefined;
+// One stable reference drawing per glyph, so stroke identity (outline vs own line) survives remounts.
+const referenceCache = new Map<string, FinderStroke[] | null>();
+function stableReference(index: FinderIndex, glyph: string): FinderStroke[] | null {
+  if (!referenceCache.has(glyph)) referenceCache.set(glyph, referenceDrawing(index, glyph));
+  return referenceCache.get(glyph) ?? null;
+}
+type BoardOutline = { glyph: string; ready: true; transform: string; paths: string[] } | { glyph: string; ready: false };
+/** SVG transform placing Hanzi Writer outlines (1024 box, y up, baseline 900) exactly where
+ *  referenceDrawing puts the same glyph's medians: joint median bounding box, aspect kept,
+ *  centred, 80% of the board. */
+function outlineTransform(medians: StrokeGeometry['medians']): string {
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (const stroke of medians) for (const [x, y] of stroke) { const yd = 900 - y; minX = Math.min(minX, x); maxX = Math.max(maxX, x); minY = Math.min(minY, yd); maxY = Math.max(maxY, yd); }
+  const size = Math.max(maxX - minX, maxY - minY, 1);
+  const k = 0.8 * BOARD / size, cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+  return `translate(${(BOARD / 2 - k * cx).toFixed(2)} ${(k * (900 - cy) + BOARD / 2).toFixed(2)}) scale(${k.toFixed(5)} ${(-k).toFixed(5)})`;
+}
 const LIVE_KEY = 'tutor-finder-live';
 const BOARD = 300;
 
@@ -94,14 +123,34 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   useEffect(() => { try { const saved = localStorage.getItem(LIVE_KEY); if (saved !== null) setLiveState(saved === '1'); } catch { /* storage unavailable */ } }, []);
   const setLive = (value: boolean) => { setLiveState(value); try { localStorage.setItem(LIVE_KEY, value ? '1' : '0'); } catch { /* ignore */ } if (value) setSearched(strokes); };
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
-  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedFor = undefined; setStrokes(next); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
+  const [outlineGlyph, setOutlineGlyphState] = useState<string | undefined>(similar && rememberedFor !== similar ? undefined : rememberedOutlineGlyph);
+  const setOutlineGlyph = (glyph: string | undefined) => { rememberedOutlineGlyph = glyph; setOutlineGlyphState(glyph); };
+  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedFor = undefined; setStrokes(next); if (!next.length) setOutlineGlyph(undefined); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
   // "Find similar": the exact glyph's recorded strokes become the drawing (null = none recorded).
-  const reference = useMemo(() => index && similar ? referenceDrawing(index, similar) : null, [index, similar]);
+  const reference = useMemo(() => index && similar ? stableReference(index, similar) : null, [index, similar]);
   useEffect(() => {
     if (!index || !similar) return;
     const next = reference ?? [];
     rememberedStrokes = next; rememberedFor = similar; setStrokes(next); setSearched(next);
+    setOutlineGlyph(reference ? similar : undefined);
   }, [index, similar, reference]);
+  // The exact recorded outline for the reference strokes (see the header note).
+  const [outline, setOutline] = useState<BoardOutline | null>(null);
+  useEffect(() => {
+    if (!outlineGlyph) { setOutline(null); return; }
+    let active = true;
+    setOutline({ glyph: outlineGlyph, ready: false });
+    const fail = () => { if (active) setOutline({ glyph: outlineGlyph, ready: false }); };
+    loadStrokeGeometry(outlineGlyph).then(({ data, source }) => {
+      if (!active) return;
+      const ref = referenceCache.get(outlineGlyph);
+      if ((source && !source.exact) || !ref || data.strokes.length !== ref.length) { fail(); return; }
+      setOutline({ glyph: outlineGlyph, ready: true, transform: outlineTransform(data.medians), paths: data.strokes });
+    }).catch(fail);
+    return () => { active = false; };
+  }, [outlineGlyph]);
+  const outlineStrokes = outline?.ready ? referenceCache.get(outline.glyph) ?? null : null;
+  const isOutlined = (s: FinderStroke, i: number) => Boolean(outlineStrokes && outlineStrokes[i] === s);
   const similarRecord = similar ? finderRecord(similar, 'all', true) : null;
 
   // Results: computed after the stroke has painted, so pointer-up never waits for the search.
@@ -175,7 +224,10 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
       <section className="finder-board-column" aria-label="Drawing board">
         <div className="writer-board finder-board"><div className="writing-grid">
           <svg ref={svg} className="finder-canvas" viewBox={`0 0 ${BOARD} ${BOARD}`} role="img" aria-label={`Drawing board, ${strokes.length} ${strokes.length === 1 ? 'stroke' : 'strokes'} drawn`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
-            {strokes.map((s, i) => <path key={i} d={path(s)}/>)}
+            {outline?.ready && <g className="finder-outline" transform={outline.transform} aria-hidden="true">
+              {strokes.map((s, i) => isOutlined(s, i) ? <path key={i} d={outline.paths[i]}/> : null)}
+            </g>}
+            {strokes.map((s, i) => isOutlined(s, i) ? null : <path key={i} d={path(s)}/>)}
             {current && <path d={path(current)}/>}
           </svg>
         </div></div>
