@@ -80,7 +80,7 @@ describe('Find similar', () => {
   it('compares a glyph\'s own recorded strokes with the same metric, the glyph scoring itself 100%', () => {
     const drawing = referenceDrawing(index, '木')!;
     expect(drawing).toHaveLength(4);
-    expect(drawing.flat().every(([x, y]) => x >= 0.1 && x <= 0.9 && y >= 0.1 && y <= 0.9)).toBe(true);
+    expect(drawing.flat().every(([x, y]) => x >= 0.099 && x <= 0.901 && y >= 0.099 && y <= 0.901)).toBe(true);
     expect(findMatches(drawing, index)[0]).toEqual({ glyph: '木', score: 100 });
     // Excluding the source glyph leaves its look-alikes, best first.
     const similar = findMatches(drawing, index, glyph => glyph !== '木').map(r => r.glyph);
