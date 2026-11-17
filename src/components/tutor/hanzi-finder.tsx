@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointer
 import { useNavigate } from '@tanstack/react-router';
 import { Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { findMatches, FINDER_MIN_SCORE, loadFinderIndex, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
+import { findMatches, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
@@ -36,8 +36,16 @@ import { useWorkspace } from './workspace';
  *   Traditional preference applies before any comparison.
  * - Only glyphs with recorded Hanzi Writer geometry can match; the rest are
  *   never guessed (the source note says so).
+ * - `similar` (URL, from a detail card's "Find similar"): once the index loads,
+ *   that exact glyph's recorded strokes become the drawing and are searched at
+ *   once (even with Live off), with the glyph itself left out of its own
+ *   results. Any edit (draw, Undo, Clear) calls `onLeaveSimilar`, so the URL
+ *   then describes an ordinary drawing and the glyph can match again. A glyph
+ *   without recorded strokes empties the board and says so instead of guessing.
  */
 let rememberedStrokes: FinderStroke[] = [];
+// Which `similar` glyph rememberedStrokes belongs to, so Back from a match shows it without a blank frame.
+let rememberedFor: string | undefined;
 const LIVE_KEY = 'tutor-finder-live';
 const BOARD = 300;
 
@@ -71,33 +79,42 @@ function FinderHitTile({ hit, onOpen }: { hit: FinderHit; onOpen: () => void }) 
   </button>;
 }
 
-export function HanziFinderPage({ scope, onScope }: { scope: FinderScope; onScope: (scope: FinderScope) => void }) {
+export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void }) {
   const navigate = useNavigate();
   const { preferences, catalogVersion } = useWorkspace();
-  const [strokes, setStrokes] = useState<FinderStroke[]>(rememberedStrokes);
+  const initial = similar && rememberedFor !== similar ? [] : rememberedStrokes;
+  const [strokes, setStrokes] = useState<FinderStroke[]>(initial);
   const [current, setCurrent] = useState<[number, number][] | null>(null);
   const [index, setIndex] = useState<FinderIndex | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [retry, setRetry] = useState(0);
   const [live, setLiveState] = useState(true);
   // The drawing the shown results belong to; Live keeps it equal to `strokes`.
-  const [searched, setSearched] = useState<FinderStroke[]>(rememberedStrokes);
+  const [searched, setSearched] = useState<FinderStroke[]>(initial);
   useEffect(() => { try { const saved = localStorage.getItem(LIVE_KEY); if (saved !== null) setLiveState(saved === '1'); } catch { /* storage unavailable */ } }, []);
   const setLive = (value: boolean) => { setLiveState(value); try { localStorage.setItem(LIVE_KEY, value ? '1' : '0'); } catch { /* ignore */ } if (value) setSearched(strokes); };
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
-  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; setStrokes(next); if (live || next.length === 0) setSearched(next); };
+  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedFor = undefined; setStrokes(next); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
+  // "Find similar": the exact glyph's recorded strokes become the drawing (null = none recorded).
+  const reference = useMemo(() => index && similar ? referenceDrawing(index, similar) : null, [index, similar]);
+  useEffect(() => {
+    if (!index || !similar) return;
+    const next = reference ?? [];
+    rememberedStrokes = next; rememberedFor = similar; setStrokes(next); setSearched(next);
+  }, [index, similar, reference]);
+  const similarRecord = similar ? finderRecord(similar, 'all', true) : null;
 
   // Results: computed after the stroke has painted, so pointer-up never waits for the search.
   const [results, setResults] = useState<{ glyph: string; score: number }[]>([]);
   useEffect(() => {
     if (!index || !searched.length) { setResults([]); return; }
     const timer = window.setTimeout(() => {
-      const accept = (glyph: string) => finderRecord(glyph, scope, preferences.includeTraditional) !== null;
+      const accept = (glyph: string) => glyph !== similar && finderRecord(glyph, scope, preferences.includeTraditional) !== null;
       setResults(findMatches(searched, index, accept));
     }, 16);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion re-runs the search once the catalogue hydrates
-  }, [index, searched, scope, preferences.includeTraditional, catalogVersion]);
+  }, [index, searched, scope, similar, preferences.includeTraditional, catalogVersion]);
   const hits = useMemo(() => results.flatMap(r => { const record = finderRecord(r.glyph, scope, preferences.includeTraditional); return record ? [{ ...r, ...record }] : []; }),
     // eslint-disable-next-line react-hooks/exhaustive-deps -- catalogVersion: records resolve after hydration
     [results, scope, preferences.includeTraditional, catalogVersion]);
@@ -139,13 +156,21 @@ export function HanziFinderPage({ scope, onScope }: { scope: FinderScope; onScop
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
     navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
   };
-  const status = loadError ? null : !index ? 'Loading stroke data…' : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${FINDER_MIN_SCORE}% or more yet. Keep drawing, or Clear and try again.` : null;
+  const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${FINDER_MIN_SCORE}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
     <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder</h1><p>Draw a character you don’t know how to type. The finder compares your strokes with every recorded character, component and radical and shows each match’s similarity.</p></div></div>
     <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
       {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
     </div>
+    {/* "Find similar" banner: names the glyph whose recorded strokes are on the board and opens its card. */}
+    {similar && <p className="finder-similar-note">
+      <span>Similar to</span>
+      {similarRecord
+        ? <button type="button" className={`finder-similar-glyph ${glyphCardInk(similarRecord.kind, similarRecord.entry.script, isRadicalGlyph(similarRecord.entry, similarRecord.kind))}`} title={`Open ${similar} in ${similarRecord.kind}`} onClick={() => open({ glyph: similar, score: 100, ...similarRecord })}><strong lang="zh-CN">{similar}</strong></button>
+        : <strong lang="zh-CN" className="finder-similar-glyph">{similar}</strong>}
+      <span>{reference ? 'Its recorded strokes are on the board and compared like a drawing. Draw, Undo or Clear to search your own drawing instead.' : ''}</span>
+    </p>}
     <div className="finder-layout">
       <section className="finder-board-column" aria-label="Drawing board">
         <div className="writer-board finder-board"><div className="writing-grid">
@@ -164,7 +189,7 @@ export function HanziFinderPage({ scope, onScope }: { scope: FinderScope; onScop
         <p className="library-source-note">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi). Glyphs without recorded strokes can’t be found. Percentages show similarity, not certainty.</p>
       </section>
       <section className="finder-results" aria-label="Matches">
-        <div className="finder-results-head"><h2>Matches</h2>{!status && <span className="finder-results-count">{hits.length} at {FINDER_MIN_SCORE}% or more</span>}</div>
+        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {FINDER_MIN_SCORE}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
           : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)}/>}/></div>}
