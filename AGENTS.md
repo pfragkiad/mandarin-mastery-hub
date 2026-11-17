@@ -62,4 +62,3 @@
 
 - Library detail loading uses an independently subscribed feedback boundary: highlight the clicked exact record before yielding a paint, await navigation, and keep the current content with a wait cursor until the new detail commit without rerendering results for feedback.
 - Libraries share a density hook that multiplies row preferences by resolved CSS grid tracks; use that capacity for paging and exact-record navigation to keep responsive card rows consistent without URL display settings.
-- The Hanzi finder (/finder) matches drawings only against recorded stroke medians packed by scripts/build-finder-medians.py into a lazily fetched public/data/finder-medians.json (never per-glyph fetches or inferred geometry); matching is pure in src/lib/hanzi-finder.ts and each exact glyph resolves to one record through hanzi-finder-records.ts (glyphIndex: radical card wins), so a form in several libraries is listed once and scores read as similarity, not certainty.
