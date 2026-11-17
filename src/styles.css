@@ -3930,14 +3930,20 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-canvas path { fill: none; stroke: var(--foreground); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
 /* Find similar: the reference glyph's exact recorded outline (filled shapes, like Trace), not centre lines. */
 .finder-canvas .finder-outline path { fill: var(--foreground); stroke: none; }
-.finder-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+/* Board controls sit on their own row with clear air above and below, so a wrapped
+   button never sticks to the board's bottom line or the tiles that follow. */
+.finder-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 14px 0 0; }
 .finder-controls > [data-ui-button] { margin: 0; }
-.finder-count { color: var(--muted-foreground); font-size: 12px; min-width: 62px; }
 .finder-results { min-width: 0; }
 .finder-rest { grid-column: 1 / -1; }
-.finder-results-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; margin-bottom: 12px; }
+.finder-results-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; margin-bottom: 12px; }
 .finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; }
-.finder-results-count { color: var(--muted-foreground); font-size: 12px; }
+/* The drawn-stroke count lives beside the Matches title (the board column stays buttons only). */
+.finder-count { color: var(--muted-foreground); font-size: 13px; }
+.finder-results-count { color: var(--muted-foreground); font-size: 12px; margin-left: auto; }
+/* The message under Matches (start hint, no-matches note) reads as a full line, not a caption;
+   the .record-gap prefix outranks the shared small-muted note rule. */
+.record-gap > p.finder-status { font-size: 16px; line-height: 1.55; color: var(--foreground); }
 /* The finder's one-line intro: short and readable (the page-heading default is a small muted caption). */
 .page-heading p.finder-intro { font-size: 15px; line-height: 1.5; color: var(--foreground); max-width: none; }
 .finder-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }

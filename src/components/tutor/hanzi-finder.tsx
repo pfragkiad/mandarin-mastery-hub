@@ -395,7 +395,6 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
           </svg>
         </div></div>
         <div className="finder-controls">
-          <span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'}</span>
           <Button variant="outline" disabled={!strokes.length} title="Undo the last stroke (Ctrl/⌘Z)" onClick={() => commit(rememberedStrokes.slice(0, -1))}><Undo2/>Undo</Button>
           <Button variant="outline" disabled={!strokes.length} title="Clear the board" onClick={() => commit([])}><Eraser/>Clear</Button>
           <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${live ? ' is-on' : ''}`} aria-pressed={live} title={live ? 'Stop updating results after every stroke' : 'Update results after every stroke'} onClick={() => setLive(!live)}>{live ? <Check size={16} aria-hidden="true"/> : <Radio size={16} aria-hidden="true"/>}Live results</Button>
@@ -403,9 +402,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         </div>
       </section>
       <section className="finder-results" aria-label="Matches">
-        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
-        {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
-          : status ? <div className="record-gap"><p>{status}</p></div>
+        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2><span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'} drawn</span>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
+        {loadError ? <div className="record-gap"><p className="finder-status">Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
+          : status ? <div className="record-gap"><p className="finder-status">{status}</p></div>
           : <div ref={sideRef} className="finder-hits finder-hits-side">{hits.slice(0, beside).map(hit => tile(hit))}</div>}
       </section>
       {!status && !loadError && hits.length > beside && <section className="finder-hits finder-rest" aria-label="More matches">
