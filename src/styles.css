@@ -3934,8 +3934,12 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; }
 .finder-results-count { color: var(--muted-foreground); font-size: 12px; }
 .finder-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }
-.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; padding: 22px 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; cursor: pointer; transition: border-color .2s; }
-.finder-hit:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); outline: none; }
+.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 22px 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; transition: border-color .2s; }
+.finder-hit:is(:hover, :focus-within) { border-color: var(--card-ink, var(--primary)); }
+/* The tile body opens the glyph's card; the small button at the tile's top makes this match the finder's reference (the same action as a detail card's "Find similar"), so the two controls are siblings, never nested. */
+.finder-hit-open { display: flex; flex-direction: column; align-items: center; gap: 3px; width: 100%; min-width: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: center; cursor: pointer; outline: none; }
+.finder-hit-similar { position: absolute; top: 5px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 0; border: 1px solid transparent; border-radius: 5px; background: none; color: var(--muted-foreground); cursor: pointer; outline-offset: 1px; transition: border-color .2s, color .2s; }
+.finder-hit-similar:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); color: var(--card-ink, var(--primary)); }
 /* Match glyph sits in a 米字格 square (border, diagonals, centre lines) drawn with the same
    gradients as .writing-grid: plain text over a CSS background, so a long result list never
    mounts a Hanzi Writer instance per tile. */
@@ -3947,11 +3951,11 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-hit-glyph strong { font-family: var(--font-hanzi); font-size: 50px; font-weight: 400; line-height: 1; }
 .finder-hit-rank { position: absolute; top: 7px; left: 9px; font-size: 12px; font-weight: 600; color: var(--muted-foreground); }
 .finder-hit-score { position: absolute; top: 7px; right: 9px; font-size: 12px; font-weight: 600; }
-.finder-hit > .pinyin { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; }
+.finder-hit-open > .pinyin { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; }
 .finder-hit-pinyin { display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
 .finder-hit-pinyin .pinyin-text { min-width: 0; }
 .finder-hit-meaning { font-size: 11px; color: var(--foreground); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 100%; }
-.finder-hit > .hit-kind { font-size: 10px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
+.finder-hit-open > .hit-kind { font-size: 10px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
 /* "Find similar" banner above the finder board: the source glyph in its card ink, as a bordered box. */
 .finder-similar-note { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: -6px 0 18px; color: var(--muted-foreground); font-size: 13px; }
 .finder-similar-glyph { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--card-ink, var(--foreground)); cursor: pointer; transition: border-color .2s; }

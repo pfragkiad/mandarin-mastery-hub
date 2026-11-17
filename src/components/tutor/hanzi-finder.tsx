@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
+import { PenLine, Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
@@ -44,6 +44,10 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   results. Any edit (draw, Undo, Clear) calls `onLeaveSimilar`, so the URL
  *   then describes an ordinary drawing and the glyph can match again. A glyph
  *   without recorded strokes empties the board and says so instead of guessing.
+ * - Every match tile repeats that action at its top (FinderHitTile's
+ *   `finder-hit-similar` button), so a match can become the reference without
+ *   opening its card first: `onSimilar` writes the same `similar` URL, the board
+ *   takes that glyph's recorded strokes and the results re-run without it.
  * - What the board SHOWS for those reference strokes is the glyph's exact
  *   recorded Hanzi Writer outline (the same shapes Trace draws), not the
  *   8-point centre lines used for matching. A stroke shows its outline only
@@ -55,6 +59,10 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   load) the centre lines show instead of a substituted shape.
  */
 let rememberedStrokes: FinderStroke[] = [];
+// The learner's own drawing (every draw/Undo/Clear), kept so Back from a tile's
+// "Find similar" switch can put it back on the board instead of leaving the
+// reference glyph's strokes with no banner to explain them.
+let rememberedOwn: FinderStroke[] = [];
 // Which `similar` glyph rememberedStrokes belongs to, so Back from a match shows it without a blank frame.
 let rememberedFor: string | undefined;
 // Which glyph's recorded outline the board's reference strokes belong to (survives leaving "similar" mode and Back).
@@ -119,8 +127,14 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  cards (exact-reading recording first, then validated Mandarin TTS; radical
  *  variants inherit their family reading via radicalVariantFallback), so an
  *  unrecorded glyph never promises audio. Multi-reading glyphs get one speaker
- *  per exact reading, like the library tiles. */
-function FinderHitTile({ hit, onOpen }: { hit: FinderHit; onOpen: () => void }) {
+ *  per exact reading, like the library tiles.
+ *
+ *  Two controls, never nested: the tile body (`finder-hit-open`) opens the
+ *  glyph's card, and the small button at the top of the tile (`finder-hit-similar`)
+ *  makes this match the finder's reference instead — the same action a detail
+ *  card's "Find similar" performs, so the board takes this glyph's recorded
+ *  strokes and the results become "Similar to <glyph>". */
+export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
   const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
@@ -130,20 +144,24 @@ function FinderHitTile({ hit, onOpen }: { hit: FinderHit; onOpen: () => void }) 
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const rank = usageOrder.loaded ? usageRank(hit.entry, hit.kind, preferences.includeTraditional) : null;
-  return <button type="button" className={`finder-hit ${ink}`} title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
+  return <div className={`finder-hit ${ink}`}>
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
+    {/* Make this match the reference: its recorded strokes go on the board and the results re-run. */}
+    <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={13} aria-hidden="true"/></button>
+    <button type="button" className="finder-hit-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
     <FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/>
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
       : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
     <span className="finder-hit-meaning">{cardMeaning(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
     <span className="hit-kind">{hit.kindLabel}</span>
-  </button>;
+    </button>
+  </div>;
 }
 
-export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void }) {
+export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSimilar }: { scope: FinderScope; similar?: string | undefined; onScope: (scope: FinderScope) => void; onLeaveSimilar: () => void; onSimilar: (glyph: string) => void }) {
   const navigate = useNavigate();
   const { preferences, catalogVersion } = useWorkspace();
   const initial = similar && rememberedFor !== similar ? [] : rememberedStrokes;
@@ -164,7 +182,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
   const [outlineGlyph, setOutlineGlyphState] = useState<string | undefined>(similar && rememberedFor !== similar ? undefined : rememberedOutlineGlyph);
   const setOutlineGlyph = (glyph: string | undefined) => { rememberedOutlineGlyph = glyph; setOutlineGlyphState(glyph); };
-  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedFor = undefined; setStrokes(next); if (!next.length) setOutlineGlyph(undefined); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
+  const commit = (next: FinderStroke[]) => { rememberedStrokes = next; rememberedOwn = next; rememberedFor = undefined; setStrokes(next); if (!next.length) setOutlineGlyph(undefined); if (live || next.length === 0) setSearched(next); if (similar) onLeaveSimilar(); };
   // "Find similar": the exact glyph's recorded strokes become the drawing (null = none recorded).
   const reference = useMemo(() => index && similar ? stableReference(index, similar) : null, [index, similar]);
   useEffect(() => {
@@ -173,6 +191,16 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     rememberedStrokes = next; rememberedFor = similar; setStrokes(next); setSearched(next);
     setOutlineGlyph(reference ? similar : undefined);
   }, [index, similar, reference]);
+  // Back from a match tile's "Find similar" switch: the URL no longer names a reference, but the
+  // board still holds that glyph's recorded strokes, so the learner's own drawing goes back on it.
+  useEffect(() => {
+    if (!index || similar || rememberedFor === undefined) return;
+    rememberedFor = undefined;
+    rememberedStrokes = rememberedOwn;
+    setStrokes(rememberedOwn);
+    setSearched(rememberedOwn);
+    setOutlineGlyph(undefined);
+  }, [index, similar]);
   // The exact recorded outline for the reference strokes (see the header note).
   const [outline, setOutline] = useState<BoardOutline | null>(null);
   useEffect(() => {
@@ -230,13 +258,37 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
     const box = svg.current!.getBoundingClientRect();
     return [Math.min(1, Math.max(0, (e.clientX - box.left) / box.width)), Math.min(1, Math.max(0, (e.clientY - box.top) / box.height))];
   };
-  const down = (e: ReactPointerEvent<SVGSVGElement>) => { if (e.button !== 0) return; e.currentTarget.setPointerCapture(e.pointerId); setCurrent([point(e)]); };
-  const move = (e: ReactPointerEvent<SVGSVGElement>) => {
-    if (!current) return;
-    const p = point(e), last = current[current.length - 1]!;
-    if (Math.hypot(p[0] - last[0], p[1] - last[1]) > 0.004) setCurrent([...current, p]);
+  // The stroke being drawn lives in a ref as well as in state: pointer handlers
+  // can fire several times before React commits the previous update, and a
+  // handler reading the `current` state from its own render would then see the
+  // stroke it has not yet recorded (or none at all) and drop it. The ref is the
+  // live source of truth; `current` state only mirrors it for painting.
+  const currentRef = useRef<[number, number][] | null>(null);
+  const down = (e: ReactPointerEvent<SVGSVGElement>) => {
+    if (e.button !== 0) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    const start = [point(e)];
+    currentRef.current = start;
+    setCurrent(start);
   };
-  const up = () => { if (!current) return; commit([...strokes, current]); setCurrent(null); };
+  const move = (e: ReactPointerEvent<SVGSVGElement>) => {
+    const drawing = currentRef.current;
+    if (!drawing) return;
+    const p = point(e), last = drawing[drawing.length - 1]!;
+    if (Math.hypot(p[0] - last[0], p[1] - last[1]) <= 0.004) return;
+    const next = [...drawing, p];
+    currentRef.current = next;
+    setCurrent(next);
+  };
+  // Finished strokes are appended from `rememberedStrokes` (updated synchronously), never from the
+  // `strokes` state: two strokes finished inside one render would otherwise read the same stale
+  // value and the earlier one would be replaced instead of kept.
+  const up = () => {
+    const drawing = currentRef.current;
+    currentRef.current = null;
+    setCurrent(null);
+    if (drawing) commit([...rememberedStrokes, drawing]);
+  };
   const path = (s: FinderStroke) => s.length === 1 ? `M${s[0]![0] * BOARD} ${s[0]![1] * BOARD}h0.1` : s.map((p, i) => `${i ? 'L' : 'M'}${(p[0] * BOARD).toFixed(1)} ${(p[1] * BOARD).toFixed(1)}`).join('');
 
   // The finder's own mount clears any stale detail trail; opening a match records
@@ -278,7 +330,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
         </div></div>
         <div className="finder-controls">
           <span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'}</span>
-          <Button variant="outline" disabled={!strokes.length} title="Undo the last stroke (Ctrl/⌘Z)" onClick={() => commit(strokes.slice(0, -1))}><Undo2/>Undo</Button>
+          <Button variant="outline" disabled={!strokes.length} title="Undo the last stroke (Ctrl/⌘Z)" onClick={() => commit(rememberedStrokes.slice(0, -1))}><Undo2/>Undo</Button>
           <Button variant="outline" disabled={!strokes.length} title="Clear the board" onClick={() => commit([])}><Eraser/>Clear</Button>
           <Button variant="ghost" size="sm" className={`stroke-pill canvas-switch${live ? ' is-on' : ''}`} aria-pressed={live} title={live ? 'Stop updating results after every stroke' : 'Update results after every stroke'} onClick={() => setLive(!live)}>{live ? <Check size={16} aria-hidden="true"/> : <Radio size={16} aria-hidden="true"/>}Live results</Button>
           {!live && <Button disabled={!strokes.length || !stale || !index} onClick={() => setSearched(strokes)}><Search/>Find</Button>}
@@ -289,7 +341,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
         <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
-          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)}/>}/></div>}
+          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>}/></div>}
       </section>
     </div>
   </div>;
