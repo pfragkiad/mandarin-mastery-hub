@@ -3917,8 +3917,9 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 /* Hanzi finder (hanzi-finder.tsx): drawing board beside the matches; the two wrap onto
    one column when the results no longer fit beside the board (a container condition, no device width). */
 .finder-scope { margin: 0 0 18px; }
-/* The similarity cutoff switch sits after the scope buttons with a clear gap, wrapping with them on narrow screens. */
-.finder-cap { display: inline-flex; gap: 6px; margin-left: 18px; }
+/* The similarity cutoff switch follows the scope buttons with the same 8px gap every finder button row uses, wrapping with them. */
+.finder-scope { gap: 8px; }
+.finder-cap { display: inline-flex; flex-wrap: wrap; gap: 8px; }
 .finder-layout { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; }
 .finder-board-column { flex: 0 1 380px; min-width: min(100%, 260px); }
 .finder-board { width: min(100%, 380px); margin: 0; }
@@ -3928,8 +3929,25 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 /* Find similar: the reference glyph's exact recorded outline (filled shapes, like Trace), not centre lines. */
 .finder-canvas .finder-outline path { fill: var(--foreground); stroke: none; }
 .finder-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.finder-controls > [data-ui-button] { margin: 0; }
 .finder-count { color: var(--muted-foreground); font-size: 12px; min-width: 62px; }
 .finder-results { flex: 1 1 320px; min-width: 0; }
+/* Smaller screens (useFinderLayout, measured on this container): a narrower board with the first
+   matches as rows beside it, the rest of the grid below across both columns. */
+.finder-layout.is-side { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 20px; }
+.finder-layout.is-side .finder-board-column { min-width: 0; }
+.finder-layout.is-side .finder-board { width: 100%; }
+.finder-layout.is-side .finder-rest { grid-column: 1 / -1; }
+.finder-hits.finder-hits-side { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.finder-hit.finder-hit-row { flex-direction: row; align-items: stretch; padding: 10px 12px; text-align: left; }
+.finder-hit-row .finder-hit-open { display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; justify-items: start; column-gap: 12px; row-gap: 2px; padding-right: 30px; text-align: left; }
+.finder-hit-row .finder-hit-glyph { grid-row: 1 / span 4; width: 64px; height: 64px; margin: 0; }
+.finder-hit-row .finder-hit-open > :not(.finder-hit-glyph) { grid-column: 2; }
+.finder-hit-row .finder-hit-open > .finder-hit-pinyin { justify-content: flex-start; margin-top: 18px; }
+.finder-hit-row .finder-hit-meaning { font-size: 12px; text-align: left; }
+.finder-hit-row .finder-hit-rank { top: 10px; left: calc(12px + 64px + 12px); }
+.finder-hit-row .finder-hit-score { top: 10px; right: 12px; }
+.finder-hit-row .finder-hit-similar { top: auto; bottom: 8px; left: auto; right: 8px; transform: none; }
 .finder-results-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; }
 .finder-results-count { color: var(--muted-foreground); font-size: 12px; }

@@ -86,6 +86,28 @@ function outlineTransform(medians: StrokeGeometry['medians']): string {
   return `translate(${(BOARD / 2 - k * cx).toFixed(2)} ${(k * (900 - cy) + BOARD / 2).toFixed(2)}) scale(${k.toFixed(5)} ${(-k).toFixed(5)})`;
 }
 const LIVE_KEY = 'tutor-finder-live';
+// Smaller screens: when the board (380px) and a usable results column (320px) no longer fit side by
+// side, the first SIDE_MATCHES matches sit beside a narrower board as rows and the rest continue
+// below at full width; only under STACK_BELOW px does the board take the whole width with matches below.
+const SIDE_BELOW = 728;
+const STACK_BELOW = 440;
+const SIDE_MATCHES = 3;
+type FinderLayout = 'wide' | 'side' | 'stack';
+/** Which finder layout the container's own width allows (a container condition, never a device width). */
+function useFinderLayout() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [layout, setLayout] = useState<FinderLayout>('wide');
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const measure = () => { const w = el.clientWidth; if (!w) return; setLayout(w >= SIDE_BELOW ? 'wide' : w >= STACK_BELOW ? 'side' : 'stack'); };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  return [ref, layout] as const;
+}
 const CAP_KEY = 'tutor-finder-cap';
 const BOARD = 300;
 
@@ -134,8 +156,12 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  glyph's card, and the small button at the top of the tile (`finder-hit-similar`)
  *  makes this match the finder's reference instead — the same action a detail
  *  card's "Find similar" performs, so the board takes this glyph's recorded
- *  strokes and the results become "Similar to <glyph>". */
-export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
+ *  strokes and the results become "Similar to <glyph>".
+ *
+ *  `row`: the horizontal variant used for the first matches beside the board
+ *  on smaller screens (glyph square left, reading and meaning right, score and
+ *  reference button on the right edge); same controls and data as the tile. */
+export function FinderHitTile({ hit, onOpen, onSimilar, row = false }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void; row?: boolean }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
   const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
@@ -145,7 +171,7 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
   const recording = spoken ? characterRecording(spoken, reading) : null;
   const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const rank = usageOrder.loaded ? usageRank(hit.entry, hit.kind, preferences.includeTraditional) : null;
-  return <div className={`finder-hit ${ink}`}>
+  return <div className={`finder-hit${row ? ' finder-hit-row' : ''} ${ink}`}>
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
@@ -300,6 +326,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
     navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
   };
+  const [layoutRef, layout] = useFinderLayout();
+  const side = layout === 'side';
+  const tile = (hit: (typeof hits)[number], row = false) => <FinderHitTile key={hit.glyph} hit={hit} row={row} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>;
   const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
@@ -318,7 +347,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         : <strong lang="zh-CN" className="finder-similar-glyph">{similar}</strong>}
       <span>{reference ? 'Its recorded strokes are on the board and compared like a drawing. Draw, Undo or Clear to search your own drawing instead.' : ''}</span>
     </p>}
-    <div className="finder-layout">
+    {/* Wide: board left, every match in the grid on the right. Side (smaller screens): the first
+        matches as rows beside a narrower board, the rest in the grid below across the full width. */}
+    <div ref={layoutRef} className={`finder-layout is-${layout}`}>
       <section className="finder-board-column" aria-label="Drawing board">
         <div className="writer-board finder-board"><div className="writing-grid">
           <svg ref={svg} className="finder-canvas" viewBox={`0 0 ${BOARD} ${BOARD}`} role="img" aria-label={`Drawing board, ${strokes.length} ${strokes.length === 1 ? 'stroke' : 'strokes'} drawn`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
@@ -341,8 +372,12 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p>Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p>{status}</p></div>
-          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>}/></div>}
+          : side ? <div className="finder-hits finder-hits-side">{hits.slice(0, SIDE_MATCHES).map(hit => tile(hit, true))}</div>
+          : <div className="finder-hits"><IncrementalList items={hits} resetKey={results} chunk={60} renderItem={hit => tile(hit)}/></div>}
       </section>
+      {side && !status && !loadError && hits.length > SIDE_MATCHES && <section className="finder-hits finder-rest" aria-label="More matches">
+        <IncrementalList items={hits.slice(SIDE_MATCHES)} resetKey={results} chunk={60} renderItem={hit => tile(hit)}/>
+      </section>}
     </div>
   </div>;
 }
