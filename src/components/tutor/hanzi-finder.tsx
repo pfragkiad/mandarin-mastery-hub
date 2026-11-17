@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
+import { PenLine, Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
 import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
@@ -119,8 +119,14 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  cards (exact-reading recording first, then validated Mandarin TTS; radical
  *  variants inherit their family reading via radicalVariantFallback), so an
  *  unrecorded glyph never promises audio. Multi-reading glyphs get one speaker
- *  per exact reading, like the library tiles. */
-function FinderHitTile({ hit, onOpen }: { hit: FinderHit; onOpen: () => void }) {
+ *  per exact reading, like the library tiles.
+ *
+ *  Two controls, never nested: the tile body (`finder-hit-open`) opens the
+ *  glyph's card, and the small button at the top of the tile (`finder-hit-similar`)
+ *  makes this match the finder's reference instead — the same action a detail
+ *  card's "Find similar" performs, so the board takes this glyph's recorded
+ *  strokes and the results become "Similar to <glyph>". */
+function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
   const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
