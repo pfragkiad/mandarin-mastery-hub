@@ -44,6 +44,10 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   results. Any edit (draw, Undo, Clear) calls `onLeaveSimilar`, so the URL
  *   then describes an ordinary drawing and the glyph can match again. A glyph
  *   without recorded strokes empties the board and says so instead of guessing.
+ * - Every match tile repeats that action at its top (FinderHitTile's
+ *   `finder-hit-similar` button), so a match can become the reference without
+ *   opening its card first: `onSimilar` writes the same `similar` URL, the board
+ *   takes that glyph's recorded strokes and the results re-run without it.
  * - What the board SHOWS for those reference strokes is the glyph's exact
  *   recorded Hanzi Writer outline (the same shapes Trace draws), not the
  *   8-point centre lines used for matching. A stroke shows its outline only

@@ -25,5 +25,7 @@ function FinderRoute() {
   return <HanziFinderPage scope={scope ?? 'all'} similar={similar}
     onScope={next => { void navigate({ search: { ...(next === 'all' ? {} : { scope: next }), ...(similar ? { similar } : {}) }, resetScroll: false }); }}
     // Editing the forwarded strokes makes it the learner's own drawing: replace (not push) so Back skips the half-edited state.
-    onLeaveSimilar={() => { void navigate({ search: scope ? { scope } : {}, replace: true, resetScroll: false }); }}/>;
+    onLeaveSimilar={() => { void navigate({ search: scope ? { scope } : {}, replace: true, resetScroll: false }); }}
+    // A match tile's "Find similar" button: that glyph becomes the reference. Pushed, so Back returns to the previous one.
+    onSimilar={next => { void navigate({ search: { ...(scope ? { scope } : {}), similar: next }, resetScroll: false }); }}/>;
 }
