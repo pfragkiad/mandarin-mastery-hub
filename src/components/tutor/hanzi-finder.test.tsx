@@ -4,14 +4,9 @@ import { FinderHitTile } from './hanzi-finder';
 import { WorkspaceProvider } from './workspace';
 import type { LibraryEntry } from '@/lib/character-library';
 
-// The tile only needs the catalogue's audio lookup and the glyph's own outline;
-// neither is what these tests are about, so both are stubbed to fixed answers.
-vi.mock('@/lib/catalog-store', () => ({
-  loadCatalog: async () => {},
-  catalog: { version: 1 },
-  characterRecording: () => null,
-  playCharacter: async () => {},
-}));
+// The glyph's own outline would be fetched from the enrichment sidecar; that is
+// not what these tests are about, so it is stubbed to a fixed answer. The real
+// catalogue module stays in place (its data is lazy, so nothing is fetched here).
 vi.mock('@/lib/character-enrichment', () => ({
   loadStrokeGeometry: async () => ({ data: { strokes: ['M0 0h10'], medians: [[[0, 0], [10, 10]]] }, source: null }),
 }));
