@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { FinderHitTile, finderHalfFor, finderLayoutFor, finderRowsFor } from './hanzi-finder';
+import { FinderHitTile, finderBesideCount, finderBoardFor, finderSideColumnsFor } from './hanzi-finder';
 import { WorkspaceProvider } from './workspace';
 import type { LibraryEntry } from '@/lib/character-library';
 
@@ -53,25 +53,35 @@ describe('finder match tile', () => {
   });
 });
 
-// The board and the first matches share the row in two equal halves; the rules below are the
-// container-driven decisions behind that (no screen width is ever read), so they are tested as
-// plain functions on the measured container width.
+// The board and the first matches always share the row so results stay visible while drawing;
+// these are the container-driven rules behind that (no screen width is ever read).
 describe('finder layout rules', () => {
-  it('gives each half the container width minus the 24px gap, halved', () => {
-    expect(finderHalfFor(620)).toBe(298);
-    expect(finderHalfFor(1009)).toBeCloseTo(492.5, 1);
+  it('gives the board half the row on wide containers', () => {
+    expect(finderBoardFor(1009)).toBe(496); // (1009 - 16) / 2
+    expect(finderBoardFor(700)).toBe(342);
   });
 
-  it('splits the row only when a half is still wide enough to draw on', () => {
-    expect(finderLayoutFor(620)).toBe('split');
-    expect(finderLayoutFor(619)).toBe('stack');
-    expect(finderLayoutFor(1009)).toBe('split');
+  it('keeps a 300px board on narrower containers while one tile column fits beside it', () => {
+    expect(finderBoardFor(500)).toBe(300);
+    expect(finderBoardFor(360)).toBe(220); // 360 - 124px tile - 16px gap
   });
 
-  it('shows four match rows in a wide half and three in a narrower one', () => {
-    expect(finderRowsFor(744)).toBe(4); // half exactly 360px
-    expect(finderRowsFor(1009)).toBe(4); // half ~493px
-    expect(finderRowsFor(743)).toBe(3); // half 359.5px
-    expect(finderRowsFor(640)).toBe(3); // half 308px
+  it('never makes the board jump as the container narrows past the half/300px switch', () => {
+    expect(finderBoardFor(616)).toBe(300);
+    expect(finderBoardFor(615)).toBe(300);
+    expect(finderBoardFor(617)).toBe(300);
+  });
+
+  it('fits as many 124px tile columns beside the board as the space allows, at least one', () => {
+    expect(finderSideColumnsFor(124)).toBe(1);
+    expect(finderSideColumnsFor(100)).toBe(1);
+    expect(finderSideColumnsFor(258)).toBe(2);
+    expect(finderSideColumnsFor(497)).toBe(3);
+  });
+
+  it('places full rows of tiles that fit next to the board column, at least one row', () => {
+    expect(finderBesideCount(1, 280, 196)).toBe(1);
+    expect(finderBesideCount(3, 550, 196)).toBe(6);
+    expect(finderBesideCount(2, 100, 196)).toBe(2);
   });
 });
