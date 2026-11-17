@@ -64,7 +64,7 @@ function stableReference(index: FinderIndex, glyph: string): FinderStroke[] | nu
   if (!referenceCache.has(glyph)) referenceCache.set(glyph, referenceDrawing(index, glyph));
   return referenceCache.get(glyph) ?? null;
 }
-type BoardOutline = { glyph: string; ready: true; transform: string; paths: string[] } | { glyph: string; ready: false };
+type BoardOutline = { glyph: string; ready: true; transform: string; paths: string[] } | { glyph: string; ready: false; failed: boolean };
 /** SVG transform placing Hanzi Writer outlines (1024 box, y up, baseline 900) exactly where
  *  referenceDrawing puts the same glyph's medians: joint median bounding box, aspect kept,
  *  centred, 80% of the board. */
@@ -139,8 +139,8 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   useEffect(() => {
     if (!outlineGlyph) { setOutline(null); return; }
     let active = true;
-    setOutline({ glyph: outlineGlyph, ready: false });
-    const fail = () => { if (active) setOutline({ glyph: outlineGlyph, ready: false }); };
+    setOutline({ glyph: outlineGlyph, ready: false, failed: false });
+    const fail = () => { if (active) setOutline({ glyph: outlineGlyph, ready: false, failed: true }); };
     loadStrokeGeometry(outlineGlyph).then(({ data, source }) => {
       if (!active) return;
       const ref = referenceCache.get(outlineGlyph);
@@ -151,6 +151,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   }, [outlineGlyph]);
   const outlineStrokes = outline?.ready ? referenceCache.get(outline.glyph) ?? null : null;
   const isOutlined = (s: FinderStroke, i: number) => Boolean(outlineStrokes && outlineStrokes[i] === s);
+  // While the outline loads, its reference strokes stay blank (no centre-line flash); a failed load shows the centre lines.
+  const pendingStrokes = outline && !outline.ready && !outline.failed ? referenceCache.get(outline.glyph) ?? null : null;
+  const isPending = (s: FinderStroke, i: number) => Boolean(pendingStrokes && pendingStrokes[i] === s);
   const similarRecord = similar ? finderRecord(similar, 'all', true) : null;
 
   // Results: computed after the stroke has painted, so pointer-up never waits for the search.
@@ -227,7 +230,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
             {outline?.ready && <g className="finder-outline" transform={outline.transform} aria-hidden="true">
               {strokes.map((s, i) => isOutlined(s, i) ? <path key={i} d={outline.paths[i]}/> : null)}
             </g>}
-            {strokes.map((s, i) => isOutlined(s, i) ? null : <path key={i} d={path(s)}/>)}
+            {strokes.map((s, i) => isOutlined(s, i) || isPending(s, i) ? null : <path key={i} d={path(s)}/>)}
             {current && <path d={path(current)}/>}
           </svg>
         </div></div>
