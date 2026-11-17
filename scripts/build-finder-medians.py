@@ -109,6 +109,11 @@ def main():
     }
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
+    # Tiny static copy of `missing` so detail cards can offer "Find similar" only for
+    # glyphs the index covers, without fetching the whole index.
+    with open(MISSING_OUT, 'w', encoding='utf-8') as f:
+        json.dump({'about': 'Catalogue glyphs without recorded finder geometry; copy of finder-medians.json missing, written by scripts/build-finder-medians.py.', 'missing': missing}, f, ensure_ascii=False, indent=1)
+        f.write('\n')
     print(f'{len(index)} glyphs, {len(missing)} without recorded geometry, {os.path.getsize(OUT) // 1024} KB')
 
 
