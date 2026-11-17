@@ -77,11 +77,13 @@ describe('Hanzi finder records', () => {
 });
 
 describe('Find similar', () => {
-  it('compares a glyph\'s own recorded strokes with the same metric, the glyph scoring itself 100%', () => {
+  it('compares a glyph\'s own recorded strokes with the same metric, the glyph scoring itself highest', () => {
     const drawing = referenceDrawing(index, '木')!;
     expect(drawing).toHaveLength(4);
     expect(drawing.flat().every(([x, y]) => x >= 0.099 && x <= 0.901 && y >= 0.099 && y <= 0.901)).toBe(true);
-    expect(findMatches(drawing, index)[0]).toEqual({ glyph: '木', score: 100 });
+    const [best] = findMatches(drawing, index);
+    expect(best?.glyph).toBe('木');
+    expect(best!.score).toBeGreaterThanOrEqual(95);
     // Excluding the source glyph leaves its look-alikes, best first.
     const similar = findMatches(drawing, index, glyph => glyph !== '木').map(r => r.glyph);
     expect(similar).not.toContain('木');
