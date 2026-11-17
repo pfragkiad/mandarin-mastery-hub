@@ -3913,3 +3913,29 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 @media (min-width: 701px) {
   html[data-display-size='comfortable'] .overview-discovery-row .discovery-sound-open .discovery-sound-tone { min-height: 32px; padding: 0 12px; font-size: var(--ui-label-size, 14px); }
 }
+
+/* Hanzi finder (hanzi-finder.tsx): drawing board beside the matches; the two wrap onto
+   one column when the results no longer fit beside the board (a container condition, no device width). */
+.finder-scope { margin: 0 0 18px; }
+.finder-layout { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; }
+.finder-board-column { flex: 0 1 380px; min-width: min(100%, 260px); }
+.finder-board { width: min(100%, 380px); margin: 0; }
+.finder-board .writing-grid { margin: 0 0 12px; background-color: var(--card); }
+.finder-canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+.finder-canvas path { fill: none; stroke: var(--foreground); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.finder-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.finder-count { color: var(--muted-foreground); font-size: 12px; min-width: 62px; }
+.finder-results { flex: 1 1 320px; min-width: 0; }
+.finder-results-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.finder-results-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin: 0; }
+.finder-results-count { color: var(--muted-foreground); font-size: 12px; }
+.finder-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }
+.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; padding: 22px 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; cursor: pointer; transition: border-color .2s; }
+.finder-hit:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); outline: none; }
+.finder-hit > strong { font-family: var(--font-hanzi); font-size: 42px; font-weight: 400; line-height: 1.2; color: var(--card-ink, var(--foreground)); }
+.finder-hit > strong.traditional-character { color: var(--traditional, var(--card-ink)); }
+.finder-hit-score { position: absolute; top: 7px; right: 9px; font-size: 12px; font-weight: 600; }
+.finder-hit > .pinyin { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; }
+.finder-hit-meaning { font-size: 11px; color: var(--muted-foreground); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 100%; }
+.finder-hit > .hit-kind { font-size: 10px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
+.global-search-bar > .global-search-draw { height: 46px; flex-shrink: 0; }

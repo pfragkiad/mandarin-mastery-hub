@@ -1,0 +1,76 @@
+import { readFileSync } from 'node:fs';
+import { describe, expect, it } from 'vitest';
+import { comparableCounts, decodeFinderIndex, findMatches, FINDER_MIN_SCORE, type FinderIndexFile, type FinderStroke } from './hanzi-finder';
+import { finderRecord } from './hanzi-finder-records';
+
+const file = JSON.parse(readFileSync('public/data/finder-medians.json', 'utf8')) as FinderIndexFile;
+const index = decodeFinderIndex(file);
+
+/** A learner-like drawing of `glyph`: its recorded strokes, shrunk, shifted and wobbled. */
+function drawingOf(glyph: string, { swapFirstTwo = false, reverseFirst = false } = {}): FinderStroke[] {
+  const packed = file.glyphs[glyph]!;
+  const per = file.points * 2;
+  let seed = 11;
+  const jitter = () => { seed = (seed * 16807) % 2147483647; return (seed / 2147483647 - 0.5) * 0.04; };
+  const strokes: [number, number][][] = [];
+  for (let s = 0; s < packed.length; s += per) {
+    const stroke: [number, number][] = [];
+    for (let p = 0; p < per; p += 2) stroke.push([0.15 + file.alphabet.indexOf(packed[s + p]!) / 63 * 0.7 + jitter(), 0.1 + file.alphabet.indexOf(packed[s + p + 1]!) / 63 * 0.75 + jitter()]);
+    strokes.push(stroke);
+  }
+  if (reverseFirst) strokes[0]!.reverse();
+  if (swapFirstTwo && strokes.length > 1) [strokes[0], strokes[1]] = [strokes[1]!, strokes[0]!];
+  return strokes;
+}
+
+describe('Hanzi finder matching', () => {
+  it('ranks the drawn character first with a high similarity', () => {
+    for (const glyph of ['永', '我', '国', '木', '氵', '门']) {
+      const [best] = findMatches(drawingOf(glyph), index);
+      expect(best?.glyph).toBe(glyph);
+      expect(best!.score).toBeGreaterThanOrEqual(80);
+    }
+  });
+
+  it('still finds a character drawn in a slightly wrong order or direction', () => {
+    expect(findMatches(drawingOf('字', { swapFirstTwo: true }), index)[0]?.glyph).toBe('字');
+    expect(findMatches(drawingOf('大', { reverseFirst: true }), index)[0]?.glyph).toBe('大');
+  });
+
+  it('lists only matches at the minimum score or more, best first', () => {
+    const results = findMatches(drawingOf('林'), index);
+    expect(results.every(r => r.score >= FINDER_MIN_SCORE && r.score <= 100)).toBe(true);
+    expect(results.map(r => r.score)).toEqual([...results.map(r => r.score)].sort((a, b) => b - a));
+  });
+
+  it('only compares glyphs with a nearby stroke count', () => {
+    expect(comparableCounts(1)).toEqual([1, 2, 3]);
+    expect(comparableCounts(12)).toEqual([8, 9, 10, 11, 12, 13, 14, 15, 16]);
+  });
+
+  it('returns nothing for an empty board', () => {
+    expect(findMatches([], index)).toEqual([]);
+  });
+
+  it('holds recorded geometry for one entry per exact glyph only', () => {
+    expect(Object.keys(file.glyphs).length).toBe(new Set(Object.keys(file.glyphs)).size);
+    expect(file.source.name).toBe('hanzi-writer-data');
+  });
+});
+
+describe('Hanzi finder records', () => {
+  it('opens a glyph recorded in several libraries once, on its radical card', () => {
+    expect(finderRecord('木', 'all', false)?.kind).toBe('Radicals');
+    expect(finderRecord('木', 'Characters', false)?.kind).toBe('Characters');
+  });
+
+  it('keeps a single-library scope to that library\'s own records', () => {
+    expect(finderRecord('你', 'Radicals', false)).toBeNull();
+    expect(finderRecord('你', 'all', false)?.kind).toBe('Characters');
+  });
+
+  it('leaves Traditional records out unless the preference includes them', () => {
+    expect(finderRecord('國', 'Characters', false)).toBeNull();
+    expect(finderRecord('國', 'Characters', true)?.kind).toBe('Characters');
+  });
+});

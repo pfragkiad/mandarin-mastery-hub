@@ -10,7 +10,7 @@ import { useSectionStats } from '@/lib/section-switch';
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
 const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
-import { LayoutGrid, BookOpen, BookText, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
+import { LayoutGrid, BookOpen, BookText, PenLine, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
 import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
 import { Button } from '@/components/ui/button';
@@ -28,10 +28,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 // small uppercase heading; the icon strip draws it as a thin line.
 // `games` marks a game family: its sub-items are that family's games, and it is
 // the current item on any of those game pages.
-type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin' | '/lessons'; name: string; icon: GameIcon; games?: GameEntry[] };
+type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin' | '/lessons' | '/finder'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'finder', to: '/finder', name: 'Hanzi finder', icon: PenLine }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
     { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },

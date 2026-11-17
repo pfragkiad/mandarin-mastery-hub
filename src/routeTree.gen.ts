@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CharactersRouteImport } from './routes/characters'
 import { Route as DrawingRouteImport } from './routes/drawing'
+import { Route as FinderRouteImport } from './routes/finder'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as PinyinRouteImport } from './routes/pinyin'
 import { Route as PreferencesRouteImport } from './routes/preferences'
@@ -38,6 +39,11 @@ const CharactersRoute = CharactersRouteImport.update({
 const DrawingRoute = DrawingRouteImport.update({
   id: '/drawing',
   path: '/drawing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinderRoute = FinderRouteImport.update({
+  id: '/finder',
+  path: '/finder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FlashcardsRoute = FlashcardsRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/drawing': typeof DrawingRoute
+  '/finder': typeof FinderRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
   '/preferences': typeof PreferencesRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/drawing': typeof DrawingRoute
+  '/finder': typeof FinderRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
   '/preferences': typeof PreferencesRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/characters': typeof CharactersRoute
   '/drawing': typeof DrawingRoute
+  '/finder': typeof FinderRoute
   '/flashcards': typeof FlashcardsRoute
   '/pinyin': typeof PinyinRoute
   '/preferences': typeof PreferencesRoute
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/drawing'
+    | '/finder'
     | '/flashcards'
     | '/pinyin'
     | '/preferences'
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/drawing'
+    | '/finder'
     | '/flashcards'
     | '/pinyin'
     | '/preferences'
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '/'
     | '/characters'
     | '/drawing'
+    | '/finder'
     | '/flashcards'
     | '/pinyin'
     | '/preferences'
@@ -211,6 +223,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CharactersRoute: typeof CharactersRoute
   DrawingRoute: typeof DrawingRoute
+  FinderRoute: typeof FinderRoute
   FlashcardsRoute: typeof FlashcardsRoute
   PinyinRoute: typeof PinyinRoute
   PreferencesRoute: typeof PreferencesRoute
@@ -246,6 +259,13 @@ declare module '@tanstack/react-router' {
       path: '/drawing'
       fullPath: '/drawing'
       preLoaderRoute: typeof DrawingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finder': {
+      id: '/finder'
+      path: '/finder'
+      fullPath: '/finder'
+      preLoaderRoute: typeof FinderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/flashcards': {
@@ -339,6 +359,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CharactersRoute: CharactersRoute,
   DrawingRoute: DrawingRoute,
+  FinderRoute: FinderRoute,
   FlashcardsRoute: FlashcardsRoute,
   PinyinRoute: PinyinRoute,
   PreferencesRoute: PreferencesRoute,
