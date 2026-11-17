@@ -76,6 +76,7 @@ function outlineTransform(medians: StrokeGeometry['medians']): string {
   return `translate(${(BOARD / 2 - k * cx).toFixed(2)} ${(k * (900 - cy) + BOARD / 2).toFixed(2)}) scale(${k.toFixed(5)} ${(-k).toFixed(5)})`;
 }
 const LIVE_KEY = 'tutor-finder-live';
+const CAP_KEY = 'tutor-finder-cap';
 const BOARD = 300;
 
 type FinderHit = { glyph: string; score: number; kind: LibraryKind; kindLabel: string; entry: LibraryEntry };
@@ -122,6 +123,10 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar }: { s
   const [searched, setSearched] = useState<FinderStroke[]>(initial);
   useEffect(() => { try { const saved = localStorage.getItem(LIVE_KEY); if (saved !== null) setLiveState(saved === '1'); } catch { /* storage unavailable */ } }, []);
   const setLive = (value: boolean) => { setLiveState(value); try { localStorage.setItem(LIVE_KEY, value ? '1' : '0'); } catch { /* ignore */ } if (value) setSearched(strokes); };
+  // Similarity cutoff (40/50/60%), remembered like Live results; only listed matches change, never the scores.
+  const [cap, setCapState] = useState<number>(FINDER_MIN_SCORE);
+  useEffect(() => { try { const saved = Number(localStorage.getItem(CAP_KEY)); if ((FINDER_CAP_OPTIONS as readonly number[]).includes(saved)) setCapState(saved); } catch { /* storage unavailable */ } }, []);
+  const setCap = (value: number) => { setCapState(value); try { localStorage.setItem(CAP_KEY, String(value)); } catch { /* ignore */ } };
   useEffect(() => { let active = true; setLoadError(false); loadFinderIndex().then(i => { if (active) setIndex(i); }).catch(() => { if (active) setLoadError(true); }); return () => { active = false; }; }, [retry]);
   const [outlineGlyph, setOutlineGlyphState] = useState<string | undefined>(similar && rememberedFor !== similar ? undefined : rememberedOutlineGlyph);
   const setOutlineGlyph = (glyph: string | undefined) => { rememberedOutlineGlyph = glyph; setOutlineGlyphState(glyph); };
