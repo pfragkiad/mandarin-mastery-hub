@@ -31,7 +31,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 type NavItem = { key: string; to: '/' | '/characters' | '/vocabulary' | GameEntry['to'] | '/pinyin' | '/lessons' | '/finder'; name: string; icon: GameIcon; games?: GameEntry[] };
 const navSections: { label: string | null; items: NavItem[] }[] = [
   { label: null, items: [{ key: 'start', to: '/', name: 'Start', icon: LayoutGrid }] },
-  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'finder', to: '/finder', name: 'Hanzi finder', icon: PenLine }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
+  { label: 'Learn', items: [{ key: 'glyphs', to: '/characters', name: 'Glyphs', icon: Library }, { key: 'vocabulary', to: '/vocabulary', name: 'Vocabulary', icon: BookOpen }, { key: 'finder', to: '/finder', name: 'Hanzi finder', icon: PenLine }, { key: 'lessons', to: '/lessons', name: 'Lessons', icon: BookText }, { key: 'pinyin', to: '/pinyin', name: 'Sound chart', icon: AudioLines }] },
   { label: 'Games', items: [
     { key: 'hanzi-games', to: HANZI_GAMES[0]!.to, name: 'Hanzi games', icon: HanziIcon, games: HANZI_GAMES },
     { key: 'pinyin-games', to: PINYIN_GAMES[0]!.to, name: 'Pinyin games', icon: PinyinGamesIcon, games: PINYIN_GAMES },
