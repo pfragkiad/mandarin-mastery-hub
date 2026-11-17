@@ -1,5 +1,6 @@
 import { glyphIndex, libraryEntries, type LibraryEntry, type LibraryKind } from './character-library';
 import { includeScript } from './learning-preferences';
+import finderMissing from '@/data/finder-missing.json';
 
 /**
  * Which library record a Hanzi finder match opens (browser-safe).
@@ -30,4 +31,17 @@ export function finderRecord(glyph: string, scope: FinderScope, includeTradition
   const entry = kind ? record(kind, glyph) : undefined;
   if (!kind || !entry || !includeScript(entry.script, includeTraditional)) return null;
   return { kind, kindLabel: kindLabels[kind], entry };
+}
+
+const missing = new Set(finderMissing.missing);
+/**
+ * Whether the finder index holds recorded strokes for this exact glyph, decided
+ * without fetching the index: the index covers exactly the Characters,
+ * Components and Radicals record glyphs minus finder-missing.json (both written
+ * by scripts/build-finder-medians.py). Radical-identity aliases and unrecorded
+ * variant forms are not records, so they return false and offer no "Find similar".
+ */
+export function finderCoversGlyph(glyph: string): boolean {
+  if (missing.has(glyph)) return false;
+  return (['Radicals', 'Characters', 'Components'] as LibraryKind[]).some(kind => record(kind, glyph) !== undefined);
 }

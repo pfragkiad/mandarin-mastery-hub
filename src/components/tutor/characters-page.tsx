@@ -226,7 +226,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       {entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>This record has no breakdown in the imported sources. None is inferred.</small></div>}
     </div>}
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
-    <div className="detail-reference-row"><DetailRecordActions practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }} hanzi={entry.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(bookmarkId)}/></div>
+    <div className="detail-reference-row"><DetailRecordActions practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }} hanzi={entry.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(bookmarkId)} similar={kind !== 'Strokes' && finderCoversGlyph(entry.hanzi) ? entry.hanzi : undefined}/></div>
   </section>;
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */
