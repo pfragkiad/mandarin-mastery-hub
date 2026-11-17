@@ -9,6 +9,7 @@ import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
 import { radicalVariantFallback, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
+import { detailTrail } from '@/lib/detail-trail';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { IncrementalList } from './incremental-list';
 import { TileSpeaker } from './tile-speaker';
@@ -130,7 +131,14 @@ export function HanziFinderPage({ scope, onScope }: { scope: FinderScope; onScop
   const up = () => { if (!current) return; commit([...strokes, current]); setCurrent(null); };
   const path = (s: FinderStroke) => s.length === 1 ? `M${s[0]![0] * BOARD} ${s[0]![1] * BOARD}h0.1` : s.map((p, i) => `${i ? 'L' : 'M'}${(p[0] * BOARD).toFixed(1)} ${(p[1] * BOARD).toFixed(1)}`).join('');
 
-  const open = (hit: (typeof hits)[number]) => navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
+  // The finder's own mount clears any stale detail trail; opening a match records
+  // the finder as the single return step, so the details window's Back button
+  // returns here (with the drawing kept in rememberedStrokes), like Practice does.
+  useEffect(() => { detailTrail.clear(); }, []);
+  const open = (hit: (typeof hits)[number]) => {
+    detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
+    navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
+  };
   const status = loadError ? null : !index ? 'Loading stroke data…' : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${FINDER_MIN_SCORE}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
