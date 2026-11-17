@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { comparableCounts, decodeFinderIndex, findMatches, FINDER_MIN_SCORE, type FinderIndexFile, type FinderStroke } from './hanzi-finder';
-import { finderRecord } from './hanzi-finder-records';
+import { comparableCounts, decodeFinderIndex, findMatches, FINDER_MIN_SCORE, referenceDrawing, type FinderIndexFile, type FinderStroke } from './hanzi-finder';
+import { finderCoversGlyph, finderRecord } from './hanzi-finder-records';
+import finderMissing from '@/data/finder-missing.json';
 
 const file = JSON.parse(readFileSync('public/data/finder-medians.json', 'utf8')) as FinderIndexFile;
 const index = decodeFinderIndex(file);
@@ -72,5 +73,29 @@ describe('Hanzi finder records', () => {
   it('leaves Traditional records out unless the preference includes them', () => {
     expect(finderRecord('國', 'Characters', false)).toBeNull();
     expect(finderRecord('國', 'Characters', true)?.kind).toBe('Characters');
+  });
+});
+
+describe('Find similar', () => {
+  it('compares a glyph\'s own recorded strokes with the same metric, the glyph scoring itself 100%', () => {
+    const drawing = referenceDrawing(index, '木')!;
+    expect(drawing).toHaveLength(4);
+    expect(drawing.flat().every(([x, y]) => x >= 0.1 && x <= 0.9 && y >= 0.1 && y <= 0.9)).toBe(true);
+    expect(findMatches(drawing, index)[0]).toEqual({ glyph: '木', score: 100 });
+    // Excluding the source glyph leaves its look-alikes, best first.
+    const similar = findMatches(drawing, index, glyph => glyph !== '木').map(r => r.glyph);
+    expect(similar).not.toContain('木');
+    expect(similar.slice(0, 5)).toContain('术');
+  });
+
+  it('never substitutes strokes for a glyph without recorded geometry', () => {
+    expect(referenceDrawing(index, '鸛')).toBeNull();
+    expect(finderCoversGlyph('鸛')).toBe(false);
+  });
+
+  it('offers Find similar exactly for glyphs the index holds', () => {
+    expect(finderMissing.missing).toEqual((file as FinderIndexFile & { missing: string[] }).missing);
+    expect(finderCoversGlyph('木')).toBe(true);
+    expect(finderCoversGlyph('肀')).toBe(Boolean(file.glyphs['肀']));
   });
 });
