@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE, pronunciationAvailable } from './audio';
-import { characterAudioRequest, characterRecording, hydrateCatalog } from './catalog-store';
+import { characterAudioRequest, characterRecording, hydrateCatalog, isNeutralReading } from './catalog-store';
 const rec = { url: '/api/media/a.mp3', source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
 const char = { url: '/api/media/zhong1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0', recordingKind: 'syllable', glyph: '中', reading: 'zhōng' };
 describe('Audio fallback order', () => {
@@ -48,5 +48,16 @@ describe('Character recording lookup', () => {
     expect(characterRecording('中', 'zhòng')).toBeNull();
     expect(characterRecording('中')).toBeNull();
     expect(characterRecording('水', 'shuǐ')).toBeNull();
+  });
+});
+
+describe('Neutral-tone character readings', () => {
+  it('never plays a recording for a neutral-tone reading (吧 ba uses TTS)', () => {
+    hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5', 'bā': 'cmn-syl-ba1' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-ba1': { url: '/ba1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+    expect(characterRecording('吧', 'ba')).toBeNull();
+    expect(audioCandidates(characterAudioRequest('吧', 'ba')).map(c => c.kind)).toEqual(['tts']);
+    expect(characterRecording('吧', 'bā')?.url).toBe('/ba1.mp3');
+    expect(isNeutralReading('ba')).toBe(true);
+    expect(isNeutralReading('bā')).toBe(false);
   });
 });

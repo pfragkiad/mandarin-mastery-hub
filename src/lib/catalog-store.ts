@@ -113,10 +113,16 @@ export function loadCatalog(): Promise<void> {
 // across every glyph binding until its source audio is corrected; preserve raw
 // imported provenance and choose labelled Mandarin TTS before playback instead.
 const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
+// Neutral-tone syllables (no tone mark, e.g. 吧 ba, 啊 a) are never played from a
+// recording, matching the Sound chart's "no recording" rule: the imported tone-5
+// clips turned out to be unrelated French speech and were removed. Any neutral
+// reading therefore always uses labelled Mandarin TTS, even if a binding reappears.
+const TONE_MARK = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]|[\u0304\u0301\u030C\u0300]/i;
+export function isNeutralReading(reading: string) { return /[a-zü]/i.test(reading) && !TONE_MARK.test(reading.normalize('NFC')) && !TONE_MARK.test(reading.normalize('NFD')); }
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
   const chosen = reading ?? null;
-  const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id && !excludedCharacterRecordings.has(id) ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
+  const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id && !excludedCharacterRecordings.has(id) && !isNeutralReading(r) ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
   return { text: glyph, reading: chosen, characterAudio };
 }
 
