@@ -8,7 +8,9 @@ import { SourceInfo } from './source-info';
  *  right), then the pinyin line, then the English meaning. Stacking keeps a long phrase from squeezing the translation
  *  into a one-letter-wide column, and the glyph scales down to fit the panel so
  *  a full sentence still reads on one line. */
-export function RecordDetailTitle({ hanzi, glyphContent, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, readingsInMeaning = false, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, formSwitch, glyphClassName = '', pill, source }: {
+export function RecordDetailTitle({ hanzi, glyphContent, pinyin, meaning, script, audio, chartLink, pinyinContent, meaningContent, readingsInMeaning = false, pinyinFallback = 'Pinyin not recorded', meaningFallback = 'No English meaning recorded yet', forms, formSwitch, glyphClassName = '', pill, source, glyphAside }: {
+  /** Shown right after the main hanzi and its source ⓘ (e.g. the memory-picture preview). */
+  glyphAside?: ReactNode;
   /** Practice-style form switch (RadicalForms layout="switch") shown on its own row below the
    *  meaning, while the single hanzi above shows the selected form. Radical detail cards use it. */
   formSwitch?: ReactNode;
@@ -53,6 +55,7 @@ export function RecordDetailTitle({ hanzi, glyphContent, pinyin, meaning, script
       <div className="catalog-detail-glyph-row">
         {forms ?? <strong lang="zh-CN" className={[traditional ? 'traditional-character' : '', glyphClassName].filter(Boolean).join(' ') || undefined}>{glyphContent ?? hanzi}</strong>}
         {source && <SourceInfo inline className="detail-footnote">{source}</SourceInfo>}
+        {glyphAside}
         {/* All header pills share one right-aligned group so Traditional sits tight against the kind pill. */}
         {(traditional || pill) && <span className="catalog-detail-pills">
           {traditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
