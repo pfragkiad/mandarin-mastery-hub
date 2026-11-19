@@ -551,7 +551,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   // The character the live writer was built for; progress is reported only for it, so a
   // render that already carries a new character never files the old one's scores under it.
   const builtFor = useRef('');
-  const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup || Boolean(radicalSelection) || Boolean(radicalStrokes(character)), groupingSource);
+  const groups = practiceStrokeGroups(character, strokes.length, enrichment, singleGroup, groupingSource);
   const groupRef = useRef(groups);
   groupRef.current = groups;
   const paintStrokes = () => {
@@ -1066,10 +1066,13 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // title glyph takes the merged --trad-radical ink, matching its form tile.
   const radicalInk = Boolean(radId) || kindLabel === 'Radical';
   const practiceInk = traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
-  // Radicals practise their recorded stroke sequence as one group, so the character-level
-  // component-stroke mapping doesn't apply there. The Decomposition tab still shows the BabelStone
-  // comparison for every glyph (record={enrichment} below): it is structure only, never strokes.
-  const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
+  // Radicals split their strokes by their own decomposition exactly like characters (止 → 上 1,2,4 +
+  // 丨 3, owner's choice). Only the exact glyph's own enrichment is used, and useCharacterEnrichment
+  // has already validated it against this glyph's tree and the very stroke geometry the writer
+  // draws (SHA-256 checksums), so a variant never borrows its heading's mapping and a form drawn from
+  // supplementary outlines fails closed to one group. Without a validated mapping the recorded
+  // stroke sequence stays one group.
+  const showEnrichment = Boolean(enrichment);
   const recall = mode === 'recall';
   // Form switch (right side of the title card): radical-family forms, or script/component
   // card forms when there is more than one; a simplified-only record shows no tiles.
@@ -1113,7 +1116,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}
-    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={decomposition ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={enrichment}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={decomposition ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={enrichment}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }
 
 // Word practice's character strip, inside the writing card under the mode tabs.

@@ -10,8 +10,12 @@ describe('component stroke grouping', () => {
       ['⺍', [0, 1, 2]], ['冖', [3, 4]], ['子', [5, 6, 7]],
     ]);
   });
-  it('uses one group for radicals even with a component mapping', () => {
+  it('uses one group when a single group is explicitly requested', () => {
     expect(practiceStrokeGroups('学', 8, record, true).map(g => g.strokeIndices)).toEqual([[0, 1, 2, 3, 4, 5, 6, 7]]);
+  });
+  it('splits the 止 radical by its own decomposition: 上 strokes 1, 2, 4 and 丨 stroke 3', () => {
+    const zhi = JSON.parse(readFileSync('public/data/character-enrichment/6b62.json', 'utf8')).record as CharacterEnrichment;
+    expect(practiceStrokeGroups('止', 4, zhi).map(g => [g.glyph, g.strokeIndices])).toEqual([['上', [0, 1, 3]], ['丨', [2]]]);
   });
   it('uses one whole-form group without a mapping', () => {
     expect(practiceStrokeGroups('非', 8, null).map(g => g.glyph)).toEqual(['非']);
