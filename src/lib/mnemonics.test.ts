@@ -14,6 +14,9 @@ describe('memory pictures', () => {
     expect(cardMnemonic(['辵', '辶'])?.glyph).toBe('辶');
     expect(cardMnemonic(['辵'])).toBeNull();
   });
+  it('gives the whole #162 family (辵 first) the 辶 picture for its details', () => {
+    expect(mnemonicFor('辵') ?? cardMnemonic(['辵', '辶'])).toMatchObject({ glyph: '辶' });
+  });
   it('reads only lowercase-hex code point names', () => {
     expect(codePointFromFileName('8fb6.webp.asset.json')).toBe('8fb6');
     expect(codePointFromFileName('辶.png.asset.json')).toBeNull();

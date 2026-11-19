@@ -39,11 +39,14 @@ export function TileMnemonicButton({ mnemonic }: { mnemonic: Mnemonic }) {
   </>;
 }
 
-export function MnemonicPreview({ mnemonic }: { mnemonic: Mnemonic }) {
+/** `labelled`: the picture belongs to another form of the family (辶 shown on 辵), so a corner chip
+ *  names that form and the picture is never read as the selected form's own. */
+export function MnemonicPreview({ mnemonic, labelled = false }: { mnemonic: Mnemonic; labelled?: boolean }) {
   const [open, setOpen] = useState(false);
   return <>
-    <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title="Memory picture · click to enlarge" onClick={() => setOpen(true)}>
+    <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title={labelled ? `Memory picture for ${mnemonic.glyph} · click to enlarge` : 'Memory picture · click to enlarge'} onClick={() => setOpen(true)}>
       <img src={mnemonic.url} alt="" width={1024} height={1024} loading="lazy" decoding="async"/>
+      {labelled && <span className="mnemonic-preview-form" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
     </button>
     {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen}/>}
   </>;
