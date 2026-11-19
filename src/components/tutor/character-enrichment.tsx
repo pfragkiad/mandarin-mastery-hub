@@ -2,7 +2,7 @@ import { SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useRef, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
-import { gSourceDecompositions, resolveEnrichment, matchesRecordedGSource, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { gSourceDecompositions, resolveEnrichment, recordedLayoutDifferences, type CharacterEnrichment } from '@/lib/character-enrichment';
 import { Button } from '@/components/ui/button';
 import { DecompositionTree } from './decomposition-tree';
 import { useSharedLabelColumn } from './decomposition-labels';
@@ -42,7 +42,10 @@ export function CharacterDecomposition({ character, tree, source, status }: { ch
  *  out of their tiles and same-depth tiles left-aligned across both breakdowns. */
 export function RecordedDecomposition({ character, tree, source, status, record }: { character?: string | undefined; tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
   const alternatives = gSourceDecompositions(record);
-  const matchesGSource = alternatives.some(alternative => alternative.tree && matchesRecordedGSource(alternative.tree, tree, character));
+  // Agreement with any G-source tree: the same parts in the same order count as a match even when
+  // only the layout operator differs (止 ⿽上丨 vs ⿻上丨), so the G-source tree shows alone with the
+  // usual "matches" line (owner's choice); a real part difference (null) keeps both trees.
+  const matchesGSource = alternatives.some(alternative => recordedLayoutDifferences(alternative.tree ?? undefined, tree, character) !== null);
   const treesRef = useRef<HTMLDivElement | null>(null);
   useSharedLabelColumn(treesRef, `${character}|${record ? 'enriched' : 'plain'}|${alternatives.length}|${matchesGSource}`);
   return <div ref={treesRef} className="decomposition-trees">

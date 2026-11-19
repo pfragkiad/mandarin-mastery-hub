@@ -59,7 +59,17 @@ export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNo
  * With the owner character, two codepoints for one radical form in that character's context
  * (胖: G-source 月, recorded ⺼, both 肉 #130's ⺼) agree — see sameContextualForm. */
 export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode, owner?: string): boolean {
-  if (!gSource || !recorded) return false;
+  return recordedLayoutDifferences(gSource, recorded, owner)?.length === 0;
+}
+/** Same agreement test, except that two layout operators at the same place may differ
+ *  (止: G-source ⿽上丨 "Lower-right wrap", recorded ⿻上丨 "Overlaid"). Returns null when the trees
+ *  disagree on parts, child counts or nesting; otherwise the recorded tree's operators that differ
+ *  from G-source, in tree order ([] = full agreement). Parts must still be the same tiles in the
+ *  same order, so only the layout name is ever set aside — display only, never checksums or bindings. */
+export function recordedLayoutDifferences(gSource?: DecompositionNode, recorded?: DecompositionNode, owner?: string): string[] | null {
+  if (!gSource || !recorded) return null;
+  const differences: string[] = [];
+  const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
   function matches(g: DecompositionNode, r: DecompositionNode, root = false, current = owner): boolean {
     // Slot names differ between sources (outer/inner vs upper-right-enclosure/inside);
     // structure is fixed by the operator plus child order, so names are not compared.
@@ -67,14 +77,15 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
     const gChildren = g.children ?? [];
     const rChildren = r.children ?? [];
     if (gChildren.length !== rChildren.length) return false;
-    const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
     // Two codepoints are one known part when context resolves them to the same family form,
     // or when the radical file records one as an alias of the other's family form (有's G-source
     // ⺝ is the recorded alias of 月, so its 月 part agrees and the duplicate tree is not repeated).
     const samePart = (a: string, b: string) => sameContextualForm(a, b, r.position, current)
       || breakdownDisplayGlyph(a) === breakdownDisplayGlyph(b);
-    if ((!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph)))
-      && !(isOperator(g.glyph) ? g.glyph === r.glyph : samePart(g.glyph, r.glyph))) return false;
+    if (!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph))) {
+      if (isOperator(g.glyph) && isOperator(r.glyph)) { if (g.glyph !== r.glyph) differences.push(r.glyph); }
+      else if (isOperator(g.glyph) || isOperator(r.glyph) || !samePart(g.glyph, r.glyph)) return false;
+    }
     // Inside a real component its own declared radical applies (same rule as the renderer).
     const next = childOwner(r, current);
     return rChildren.every((child, index) => {
@@ -82,7 +93,7 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
       return gChild !== undefined && matches(gChild, child, false, next);
     });
   }
-  return matches(gSource, recorded, true);
+  return matches(gSource, recorded, true) ? differences : null;
 }
 /**
  * Hanzi Writer Data has no file for this exact glyph (HTTP 404) and no reviewed supplementary outline exists.

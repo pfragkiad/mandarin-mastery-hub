@@ -125,3 +125,20 @@ describe('Breakdown agreement through contextual radical forms', () => {
     expect(sameContextualForm('月', '⺼', 'left', '朋')).toBe(false);
   });
 });
+
+// Same parts in the same order, different layout name: one breakdown shows, naming the recorded layout.
+describe('Breakdowns that differ only by layout', () => {
+  const tree = (character: string) => JSON.parse(fs.readFileSync('public/data/catalog.json', 'utf8')).trees[character];
+  it('reports 止 G-source ⿽上丨 against the recorded ⿻上丨 as an Overlaid-only difference', async () => {
+    const { recordedLayoutDifferences, matchesRecordedGSource } = await import('./character-enrichment');
+    const { parseIdsTree } = await import('./ids-tree');
+    expect(recordedLayoutDifferences(parseIdsTree('⿽上丨') ?? undefined, tree('止'), '止')).toEqual(['⿻']);
+    // Strict agreement is unchanged.
+    expect(matchesRecordedGSource(parseIdsTree('⿽上丨') ?? undefined, tree('止'), '止')).toBe(false);
+  });
+  it('still keeps both breakdowns when a part differs', async () => {
+    const { recordedLayoutDifferences } = await import('./character-enrichment');
+    const { parseIdsTree } = await import('./ids-tree');
+    expect(recordedLayoutDifferences(parseIdsTree('⿽上亅') ?? undefined, tree('止'), '止')).toBeNull();
+  });
+});
