@@ -35,4 +35,25 @@ describe('memory picture character band', () => {
     expect(mnemonicBand({ band: 1.2 })).toBe(0.46);
     expect(mnemonicBand(undefined)).toBe(0.46);
   });
+  it('draws the glyph only where a band was covered, unless the record says otherwise', async () => {
+    const { mnemonicDrawsHanzi } = await import('./mnemonics');
+    // A picture that draws its own character (band 0.46) needs the replacement; one that covers
+    // nothing (band 0) does not, until the record asks for it — as 心's empty-topped picture does.
+    expect(mnemonicDrawsHanzi({ band: 0.46 }, 0.46)).toBe(true);
+    expect(mnemonicDrawsHanzi({ band: 0 }, 0)).toBe(false);
+    expect(mnemonicDrawsHanzi({ band: 0, draw: true }, 0)).toBe(true);
+    expect(mnemonicDrawsHanzi({ band: 0.46, draw: false }, 0.46)).toBe(false);
+    expect(mnemonicFor('心')).toMatchObject({ band: 0, drawHanzi: true });
+    expect(mnemonicFor('辶')).toMatchObject({ band: 0.46, drawHanzi: true });
+  });
+  it('keeps each picture’s own paper colour and rejects anything malformed', async () => {
+    const { mnemonicPaper } = await import('./mnemonics');
+    expect(mnemonicPaper({ paper: '#FDEBCC' })).toBe('#fdebcc');
+    expect(mnemonicPaper({ paper: '#f8e' })).toBe('#f8e');
+    expect(mnemonicPaper({ paper: 'papayawhip' })).toBeNull();
+    expect(mnemonicPaper({ paper: 'fdebcc' })).toBeNull();
+    expect(mnemonicPaper(undefined)).toBeNull();
+    expect(mnemonicFor('心')?.paper).toBe('#fdebcc');
+    expect(mnemonicFor('辶')?.paper).toBe('#fdf1dc');
+  });
 });

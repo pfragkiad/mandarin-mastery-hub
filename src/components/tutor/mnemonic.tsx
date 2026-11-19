@@ -1,4 +1,4 @@
-import { useState, type ReactNode, type SyntheticEvent } from 'react';
+import { useState, type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
 import { Image as ImageIcon, Volume2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import type { Mnemonic } from '@/lib/mnemonics';
@@ -15,24 +15,31 @@ import type { Mnemonic } from '@/lib/mnemonics';
  *   <button>, so like TileSpeaker it is a role="button" span that swallows activation, so using
  *   it never selects the card.
  * - MnemonicPreview: the small thumbnail beside the hanzi in the detail card; click to enlarge.
- * - MnemonicPicture: the picture itself with the live character overlay. The owner's pictures all
- *   draw their character in the top band on one fixed paper colour, so a paper-coloured band
- *   (mnemonic.band of the height) covers that drawing and the glyph is re-drawn in the learner's
- *   current Character style font (var(--font-hanzi)), placed where the pictures draw it. The
- *   overlay text is the picture's own exact glyph, never the selected form, and is aria-hidden
- *   because the popup title already names it. Sizes use container units so the thumbnail and the
- *   popup scale identically.
+ *   It shows only the picture's bottom half (its illustration), because the top half holds the
+ *   character the card already prints large beside it.
+ * - MnemonicPicture: the picture itself, plus the live character drawn in its top area. The
+ *   owner's pictures either draw their own character there (covered by a paper-coloured band,
+ *   mnemonic.band) or leave that area empty (band 0, draw true), and in both cases the glyph is
+ *   re-drawn in the learner's current Character style font (var(--font-hanzi)) where the pictures
+ *   place it. The overlay text is the picture's own exact glyph, never the selected form, and is
+ *   aria-hidden because the popup title already names it. Sizes use container units so the
+ *   thumbnail and the popup scale identically. A cropped picture (the preview) shows only the
+ *   bottom half, so neither the cover nor the drawn glyph is rendered there — the popup keeps the
+ *   full picture with the character in it. The paper colour comes from the record (mnemonic.paper)
+ *   as an inline custom property, because the class default is only the fallback for a picture
+ *   whose own background was never recorded.
  * - MnemonicFacts (optional on all three): the card's own pinyin, a listen callback and the
  *   translation, shown in the popup header (hanzi · pinyin · speaker) and under the picture. They
  *   are passed in by the card that opened the popup, never looked up here, so the popup repeats
  *   exactly what that card shows.
  */
-export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false }: { mnemonic: Mnemonic; className?: string; alt?: string; lazy?: boolean }) {
-  return <span className={`mnemonic-picture${className ? ` ${className}` : ''}`}>
+const paperStyle = (mnemonic: Mnemonic) => (mnemonic.paper ? { '--mnemonic-paper': mnemonic.paper } as CSSProperties : undefined);
+
+export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false, crop = false }: { mnemonic: Mnemonic; className?: string; alt?: string; lazy?: boolean; crop?: boolean }) {
+  return <span className={`mnemonic-picture${className ? ` ${className}` : ''}`} style={paperStyle(mnemonic)}>
     <img src={mnemonic.url} alt={alt} width={1024} height={1024} {...(lazy ? { loading: 'lazy' as const, decoding: 'async' as const } : {})}/>
-    {mnemonic.band > 0 && <span className="mnemonic-picture-band" style={{ height: `${mnemonic.band * 100}%` }} aria-hidden="true">
-      <span className="mnemonic-picture-hanzi" lang="zh-CN">{mnemonic.glyph}</span>
-    </span>}
+    {!crop && mnemonic.band > 0 && <span className="mnemonic-picture-band" style={{ height: `${mnemonic.band * 100}%` }} aria-hidden="true"/>}
+    {!crop && mnemonic.drawHanzi && <span className="mnemonic-picture-hanzi" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
   </span>;
 }
 
@@ -66,8 +73,8 @@ export function TileMnemonicButton({ mnemonic, facts }: { mnemonic: Mnemonic; fa
 export function MnemonicPreview({ mnemonic, labelled = false, facts }: { mnemonic: Mnemonic; labelled?: boolean; facts?: MnemonicFacts }) {
   const [open, setOpen] = useState(false);
   return <>
-    <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title={labelled ? `Memory picture for ${mnemonic.glyph} · click to enlarge` : 'Memory picture · click to enlarge'} onClick={() => setOpen(true)}>
-      <MnemonicPicture mnemonic={mnemonic} lazy/>
+    <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title={labelled ? `Memory picture for ${mnemonic.glyph} · click to enlarge` : 'Memory picture · click to enlarge'} onClick={() => setOpen(true)} style={paperStyle(mnemonic)}>
+      <MnemonicPicture mnemonic={mnemonic} lazy crop/>
       {labelled && <span className="mnemonic-preview-form" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
     </button>
     {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts}/>}

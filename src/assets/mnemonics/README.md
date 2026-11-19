@@ -15,19 +15,34 @@ etymology or lexical data.
   `lovable-assets create --file <image> --filename <code point>.webp > src/assets/mnemonics/<code point>.webp.asset.json`.
 - Prefer a square image resized to 1024 px, saved as WebP.
 
-## Captions
+## Per-picture records
 
-Optional alt text lives in [src/data/mnemonics.json](../../data/mnemonics.json), keyed by the same
-code point (`{ "8fb6": { "caption": "Walk along a path" } }`).
+[src/data/mnemonics.json](../../data/mnemonics.json) is keyed by the same code point and holds
+optional fields for one picture:
+
+| field | meaning |
+| --- | --- |
+| `caption` | alt text, e.g. `{ "8fb6": { "caption": "Walk along a path" } }` |
+| `band` | the fraction of the height, from the top, where the picture draws its own character and must be covered (default 0.46; `0` covers nothing) |
+| `draw` | whether the glyph is drawn at the top at all (default: only where a band was covered) — `true` lets a picture whose top is simply empty still carry the character |
+| `paper` | the picture's own background colour, used for the covered band and the preview's letterbox (recorded automatically by the import script) |
 
 ## The character at the top
 
-Every picture draws its character in the top band on the same paper colour (#FDF1DD). The app
-covers that band with the paper colour and re-draws the exact glyph in the learner's current
-Character style font, so the picture always matches the rest of the app. The band defaults to the
-top 46% of the height; a picture laid out differently can record its own fraction
-(`{ "8fb6": { "band": 0.46 } }`, `0` turns the overlay off) in src/data/mnemonics.json. The
-uploaded image itself is never edited.
+The app never edits the uploaded image. It covers the picture's own character band with the
+picture's `paper` colour and re-draws the exact glyph in the learner's current Character style
+font, so the drawn character always follows the Character style preference (辶: its own drawing
+covered; 心: its empty top simply receives the character).
+
+The detail card's small preview shows only the picture's **bottom half** — the illustration —
+because the top half holds the character the card already prints large beside it. The popup keeps
+the full picture, character included.
+
+## Importing
+
+Drop the images in `importer/data/mnemonics/` (named by the glyph or its code point) and run
+`python3 scripts/import-mnemonics.py`; it resizes, uploads, writes the pointer and records each
+picture's paper colour. See [importer/data/mnemonics/README.md](../../../importer/data/mnemonics/README.md).
 
 ## Consumers
 

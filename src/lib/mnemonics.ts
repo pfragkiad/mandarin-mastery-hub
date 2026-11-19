@@ -7,25 +7,38 @@
  * Identity comes only from the pointer file name: src/assets/mnemonics/<code point>.<ext>.asset.json,
  * the exact Unicode code point in lowercase hex (辶 → 8fb6). Look-alike forms (辶 U+8FB6, ⻌ U+2ECC,
  * ⻍ U+2ECD) therefore never share a picture, and nothing is matched by shape or normalisation.
- * Optional alt captions live in src/data/mnemonics.json under the same code point key, as does an
- * optional "band": the fraction of the picture's height (from the top) where the picture draws its
- * character. The app covers that band with the picture's paper colour and re-draws the glyph in
- * the learner's current font (mnemonic.tsx). Default DEFAULT_MNEMONIC_BAND; 0 turns it off.
+ * Optional alt captions live in src/data/mnemonics.json under the same code point key, with three
+ * optional per-picture fields: "band" — the fraction of the picture's height, from the top, where
+ * the picture draws its own character; that band is covered and the glyph re-drawn in the
+ * learner's current font (default DEFAULT_MNEMONIC_BAND; 0 covers nothing). "draw" — whether the
+ * glyph is drawn at the top at all (default: only where a band was covered, so a picture whose top
+ * is simply empty can still carry the character). "paper" — the picture's own background colour,
+ * used for that cover and for the detail preview's letterbox, so neither shows a seam.
  * The pointer files are tiny, so they load eagerly; the images themselves stay on the CDN and load
  * only when a preview or popup renders.
  */
 import captions from '@/data/mnemonics.json';
 
-export type Mnemonic = { glyph: string; codePoint: string; url: string; caption: string | null; band: number };
+export type Mnemonic = { glyph: string; codePoint: string; url: string; caption: string | null; band: number; paper: string | null; drawHanzi: boolean };
 
 /** The owner's pictures draw the character within the top 46% (measured on 辶: ink ends at 43%,
  *  the illustration starts at 48%). */
 export const DEFAULT_MNEMONIC_BAND = 0.46;
-type CaptionEntry = { caption?: string; band?: number };
+type CaptionEntry = { caption?: string; band?: number; paper?: string; draw?: boolean };
 /** A recorded band must be a fraction in [0, 0.9]; anything else falls back to the default. */
 export function mnemonicBand(entry: CaptionEntry | undefined): number {
   const band = entry?.band;
   return typeof band === 'number' && Number.isFinite(band) && band >= 0 && band <= 0.9 ? band : DEFAULT_MNEMONIC_BAND;
+}
+/** The picture's own paper colour (#rgb/#rrggbb), or null for the shared default. */
+export function mnemonicPaper(entry: CaptionEntry | undefined): string | null {
+  const paper = entry?.paper?.trim();
+  return paper && /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(paper) ? paper.toLowerCase() : null;
+}
+/** Whether the glyph is drawn in the picture's top area: a recorded "draw" decides, otherwise it
+ *  follows the band, because a picture whose own character was covered needs the replacement. */
+export function mnemonicDrawsHanzi(entry: CaptionEntry | undefined, band: number): boolean {
+  return typeof entry?.draw === 'boolean' ? entry.draw : band > 0;
 }
 
 type AssetPointer = { url: string };
@@ -49,7 +62,8 @@ for (const [path, pointer] of Object.entries(pointers)) {
   // One picture per glyph for now: the first file (sorted path order) wins.
   if (!codePoint || byCodePoint.has(codePoint) || !pointer?.url) continue;
   const entry = (captions as Record<string, CaptionEntry>)[codePoint];
-  byCodePoint.set(codePoint, { glyph: String.fromCodePoint(parseInt(codePoint, 16)), codePoint, url: pointer.url, caption: entry?.caption ?? null, band: mnemonicBand(entry) });
+  const band = mnemonicBand(entry);
+  byCodePoint.set(codePoint, { glyph: String.fromCodePoint(parseInt(codePoint, 16)), codePoint, url: pointer.url, caption: entry?.caption ?? null, band, paper: mnemonicPaper(entry), drawHanzi: mnemonicDrawsHanzi(entry, band) });
 }
 
 /** The memory picture recorded for this exact glyph, if any. */
