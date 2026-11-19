@@ -3984,8 +3984,10 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 /* Memory pictures (mnemonic.tsx): icon beside a grid card's pinyin, thumbnail beside the detail
    hanzi, enlarged popup. The icon matches the tile speaker's size and hover treatment. */
 .mnemonic-dialog-scope { display: contents; }
-.tile-mnemonic { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; flex: none; border-radius: 5px; color: var(--terracotta); cursor: zoom-in; }
-.tile-mnemonic svg { width: 11px; height: 11px; }
+.tile-mnemonic { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; flex: none; border-radius: 5px; color: var(--terracotta); cursor: zoom-in; }
+.tile-mnemonic svg { width: 15px; height: 15px; }
+.library-list-view .tile-mnemonic { width: 30px; height: 30px; }
+.library-list-view .tile-mnemonic svg { width: 20px; height: 20px; }
 .tile-mnemonic:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
 .tile-mnemonic:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
 .mnemonic-preview { flex: none; align-self: center; width: 88px; height: 88px; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--muted); cursor: zoom-in; transition: border-color .15s ease, transform .15s ease; }
@@ -3995,7 +3997,12 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-preview:hover { border-color: var(--primary); transform: scale(1.03); }
 .mnemonic-preview:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 .mnemonic-dialog { width: min(92vw, 560px); max-width: min(92vw, 560px); gap: 12px; padding: 18px; }
-.mnemonic-dialog-title { display: flex; align-items: baseline; gap: 10px; font-size: 15px; font-weight: 550; color: var(--muted-foreground); }
-.mnemonic-dialog-title strong { font-size: 26px; font-weight: 500; color: var(--foreground); }
+.mnemonic-dialog-title { display: flex; align-items: center; gap: 12px; padding-right: 36px; font-size: 15px; font-weight: 550; color: var(--muted-foreground); }
+.mnemonic-dialog-title strong { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-hanzi); font-size: 30px; font-weight: 400; line-height: 1; color: var(--foreground); }
+.mnemonic-dialog-pinyin { font-size: 20px; font-weight: 500; }
+.mnemonic-dialog-listen { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 7px; color: var(--foreground); cursor: pointer; }
+.mnemonic-dialog-listen svg { width: 20px; height: 20px; }
+.mnemonic-dialog-listen:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
+.mnemonic-dialog-meaning { font-size: 17px; line-height: 1.45; color: var(--foreground); }
 .mnemonic-dialog-image { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; border-radius: 10px; background: var(--muted); }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
