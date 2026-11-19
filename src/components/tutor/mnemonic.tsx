@@ -20,7 +20,7 @@ import type { Mnemonic } from '@/lib/mnemonics';
  *   are passed in by the card that opened the popup, never looked up here, so the popup repeats
  *   exactly what that card shows.
  */
-export type MnemonicFacts = { pinyin?: string; meaning?: ReactNode; onListen?: () => void; listenLabel?: string };
+export type MnemonicFacts = { pinyin?: string | undefined; meaning?: ReactNode; onListen?: (() => void) | undefined; listenLabel?: string | undefined };
 export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined }) {
   // React events from the portal still bubble through this component's ancestors (the grid card's
   // face button, the DetailSheet's arrow-key handler), so the scope span stops them here.
