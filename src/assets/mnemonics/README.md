@@ -20,6 +20,15 @@ etymology or lexical data.
 Optional alt text lives in [src/data/mnemonics.json](../../data/mnemonics.json), keyed by the same
 code point (`{ "8fb6": { "caption": "Walk along a path" } }`).
 
+## The character at the top
+
+Every picture draws its character in the top band on the same paper colour (#FDF1DD). The app
+covers that band with the paper colour and re-draws the exact glyph in the learner's current
+Character style font, so the picture always matches the rest of the app. The band defaults to the
+top 46% of the height; a picture laid out differently can record its own fraction
+(`{ "8fb6": { "band": 0.46 } }`, `0` turns the overlay off) in src/data/mnemonics.json. The
+uploaded image itself is never edited.
+
 ## Consumers
 
 [src/lib/mnemonics.ts](../../lib/mnemonics.ts) reads these pointers (eager glob) and

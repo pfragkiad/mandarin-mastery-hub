@@ -15,11 +15,27 @@ import type { Mnemonic } from '@/lib/mnemonics';
  *   <button>, so like TileSpeaker it is a role="button" span that swallows activation, so using
  *   it never selects the card.
  * - MnemonicPreview: the small thumbnail beside the hanzi in the detail card; click to enlarge.
+ * - MnemonicPicture: the picture itself with the live character overlay. The owner's pictures all
+ *   draw their character in the top band on one fixed paper colour, so a paper-coloured band
+ *   (mnemonic.band of the height) covers that drawing and the glyph is re-drawn in the learner's
+ *   current Character style font (var(--font-hanzi)), placed where the pictures draw it. The
+ *   overlay text is the picture's own exact glyph, never the selected form, and is aria-hidden
+ *   because the popup title already names it. Sizes use container units so the thumbnail and the
+ *   popup scale identically.
  * - MnemonicFacts (optional on all three): the card's own pinyin, a listen callback and the
  *   translation, shown in the popup header (hanzi · pinyin · speaker) and under the picture. They
  *   are passed in by the card that opened the popup, never looked up here, so the popup repeats
  *   exactly what that card shows.
  */
+export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false }: { mnemonic: Mnemonic; className?: string; alt?: string; lazy?: boolean }) {
+  return <span className={`mnemonic-picture${className ? ` ${className}` : ''}`}>
+    <img src={mnemonic.url} alt={alt} width={1024} height={1024} {...(lazy ? { loading: 'lazy' as const, decoding: 'async' as const } : {})}/>
+    {mnemonic.band > 0 && <span className="mnemonic-picture-band" style={{ height: `${mnemonic.band * 100}%` }} aria-hidden="true">
+      <span className="mnemonic-picture-hanzi" lang="zh-CN">{mnemonic.glyph}</span>
+    </span>}
+  </span>;
+}
+
 export type MnemonicFacts = { pinyin?: string | undefined; meaning?: ReactNode; onListen?: (() => void) | undefined; listenLabel?: string | undefined };
 export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined }) {
   // React events from the portal still bubble through this component's ancestors (the grid card's
@@ -28,7 +44,7 @@ export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemon
   return <span className="mnemonic-dialog-scope" onClick={stop} onDoubleClick={stop} onKeyDown={stop} onPointerDown={stop}><Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className="mnemonic-dialog">
       <DialogTitle className="mnemonic-dialog-title"><strong lang="zh-CN">{mnemonic.glyph}</strong>{facts?.pinyin ? <span className="mnemonic-dialog-pinyin pinyin">{facts.pinyin}</span> : <span>Memory picture</span>}{facts?.onListen && <button type="button" className="mnemonic-dialog-listen" aria-label={facts.listenLabel ?? `Listen to ${mnemonic.glyph}`} title="Listen" onClick={facts.onListen}><Volume2/></button>}</DialogTitle>
-      <img className="mnemonic-dialog-image" src={mnemonic.url} alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`} width={1024} height={1024}/>
+      <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`}/>
       {facts?.meaning && <p className="mnemonic-dialog-meaning">{facts.meaning}</p>}
       <DialogDescription className="mnemonic-dialog-note">Memory helper for <span lang="zh-CN">{mnemonic.glyph}</span> · not its etymology.</DialogDescription>
     </DialogContent>
@@ -51,7 +67,7 @@ export function MnemonicPreview({ mnemonic, labelled = false, facts }: { mnemoni
   const [open, setOpen] = useState(false);
   return <>
     <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title={labelled ? `Memory picture for ${mnemonic.glyph} · click to enlarge` : 'Memory picture · click to enlarge'} onClick={() => setOpen(true)}>
-      <img src={mnemonic.url} alt="" width={1024} height={1024} loading="lazy" decoding="async"/>
+      <MnemonicPicture mnemonic={mnemonic} lazy/>
       {labelled && <span className="mnemonic-preview-form" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
     </button>
     {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts}/>}

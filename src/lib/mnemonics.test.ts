@@ -25,3 +25,14 @@ describe('memory pictures', () => {
     expect(glyphCodePoint('辶辶')).toBeNull();
   });
 });
+
+describe('memory picture character band', () => {
+  it('covers the top 46% by default and accepts only a recorded fraction up to 0.9', async () => {
+    const { mnemonicBand } = await import('./mnemonics');
+    expect(mnemonicFor('辶')?.band).toBe(0.46);
+    expect(mnemonicBand({ band: 0.3 })).toBe(0.3);
+    expect(mnemonicBand({ band: 0 })).toBe(0);
+    expect(mnemonicBand({ band: 1.2 })).toBe(0.46);
+    expect(mnemonicBand(undefined)).toBe(0.46);
+  });
+});
