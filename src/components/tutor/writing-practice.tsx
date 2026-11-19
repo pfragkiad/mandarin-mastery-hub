@@ -16,12 +16,12 @@ import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { leniency } from '@/lib/handwriting-strictness';
 import { vocabularyKind, words } from '@/lib/mandarin';
-import { glyphIndex, glyphScript, libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
+import { glyphDecomposition, glyphIndex, glyphScript, libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { pureComponentForm } from '@/lib/glyph-presentation';
 import { catalog, playCharacter, characterRecording, characterAudioRequest } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
-import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, TREE_SOURCE, type ReferenceKind } from '@/lib/character-library';
+import { referenceCatalog, radicalVariantFallback, radicalVariantMeaning, type ReferenceKind } from '@/lib/character-library';
 import { PracticeSheet } from './practice-sheet';
 import type HanziWriter from 'hanzi-writer';
 import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, type OutlineSource } from '@/lib/character-enrichment';
@@ -978,10 +978,10 @@ function charFacts(): Record<string, CharFact> {
 
 // Sourced decomposition trees, indexed by character so the practice page can show the
 // same provenance-attached structure the Characters page shows — without inferring any.
+/** The practised glyph's own recorded tree — radicals and their variant forms included, each by
+ *  its exact code point (glyphDecomposition), so a variant never shows its heading's breakdown. */
 function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
-  if (catalog.radicals.some(row => row[0] === glyph)) return undefined;
-  const root = catalog.trees[glyph];
-  return root ? { root, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } : undefined;
+  return glyphDecomposition(glyph).decomposition;
 }
 
 
@@ -1066,7 +1066,9 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // title glyph takes the merged --trad-radical ink, matching its form tile.
   const radicalInk = Boolean(radId) || kindLabel === 'Radical';
   const practiceInk = traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
-  // Radical cards break down into strokes, so the character-level mapping and BabelStone comparison don't apply there.
+  // Radicals practise their recorded stroke sequence as one group, so the character-level
+  // component-stroke mapping doesn't apply there. The Decomposition tab still shows the BabelStone
+  // comparison for every glyph (record={enrichment} below): it is structure only, never strokes.
   const showEnrichment = !familyId && !radicalStrokes(character) && Boolean(enrichment);
   const recall = mode === 'recall';
   // Form switch (right side of the title card): radical-family forms, or script/component
@@ -1111,7 +1113,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}
-    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={!familyId && decomposition ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={showEnrichment ? enrichment : null}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
+    <div className="practice-layout practice-layout-single"><WritingPractice decomposition={decomposition ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={enrichment}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} singleGroup={Boolean(familyId)} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
 }
 
 // Word practice's character strip, inside the writing card under the mode tabs.

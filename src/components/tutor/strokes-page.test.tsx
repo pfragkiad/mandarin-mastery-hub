@@ -51,7 +51,7 @@ const catalogData: CatalogData = {
   characters: [['学', 'xué', 'learn', '8 strokes · 子 radical'], ['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · 乙 radical']],
   radicals: [['乙', 'yǐ', 'second; 2nd heavenly stem', '1 stroke · Radical #5']],
   components: [],
-  trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] } },
+  trees: { 学: { glyph: '学', position: 'top', children: [{ glyph: '子', position: 'bottom' }] }, 冂: { glyph: '⿰', position: 'root', children: [{ glyph: '丨', position: 'left' }, { glyph: '𠃌', position: 'right' }] } },
   readingAudio: {}, audio: {},
 };
 
@@ -150,14 +150,21 @@ describe('character practice sections by mode', () => {
     expect(writer.create.mock.calls[0]?.[2]).toMatchObject({ showCharacter: false, showOutline: false });
   });
 
-  it('shows the radical family and no stroke decomposition while watching a radical form', () => {
+  it('shows the radical family and its recorded graphical breakdown, never a stroke breakdown', () => {
     hydrateCatalog(catalogData, undefined, familyFile);
     render(<StrokesPage initialCharacter="冂" mode="watch"/>);
     expect(screen.getByRole('group', { name: 'Forms of Kangxi radical 17' })).toBeInTheDocument();
-    // Radical practice has no breakdown, so there is no Decomposition tab to open one.
-    expect(decompositionPill()).toBeNull();
+    // A radical with a recorded tree gets the same Decomposition tab as characters.
+    fireEvent.click(decompositionPill()!);
+    expect(screen.getByText('Hanzi graphical structure')).toBeInTheDocument();
     expect(document.body.textContent).not.toContain('RADICAL FAMILY');
     expect(document.body.textContent).not.toContain('STROKE DECOMPOSITION');
+  });
+
+  it('never lends a radical heading’s breakdown to a variant form without its own tree', () => {
+    hydrateCatalog(catalogData, undefined, familyFile);
+    render(<StrokesPage initialCharacter="⺆" family={17} variant="alt" mode="watch"/>);
+    expect(decompositionPill()).toBeNull();
   });
 
   it('omits the form switch for a one-form radical family, whose title already shows that form', () => {
@@ -190,7 +197,9 @@ describe('character practice sections by mode', () => {
     const group = screen.getByRole('group', { name: 'Forms of Kangxi radical 17' });
     expect(group.querySelectorAll('strong.form-switch-blank').length).toBeGreaterThan(0);
     expect(group.textContent).not.toContain('冂');
-    expect(decompositionPill()).toBeNull();
+    // Recall keeps the radical's breakdown tab in place but unusable, like characters.
+    expect(decompositionPill()).toBeDisabled();
+    expect(screen.queryByText('Hanzi graphical structure')).toBeNull();
   });
 
   it('marks the chosen form with one frame that wears that form\'s identity ink', async () => {
