@@ -242,4 +242,19 @@ describe('Radical card records', () => {
     const radicals = libraryEntries('Radicals');
     expect(radicalCardRecord(record('Radicals', '人'), 'Radicals', radicals)).toBe(true);
   });
+  it('gives each radical variant only its own exact recorded breakdown', () => {
+    const heading = (n: number) => libraryEntries('Radicals').find(entry => entry.kangxiIndex === n);
+    const dao = heading(18), jiong = heading(13);
+    const knife = radicalForm(18, '18-1'), frame = jiong?.kangxiIndex ? radicalForm(13, '13-1') : undefined;
+    if (!dao || !jiong || !knife || !frame) throw new Error('Missing radical forms');
+    // 刀 and its side form 刂 each keep their own tree.
+    expect(dao.decomposition).toBeDefined();
+    expect(knife.character).toBe('刂');
+    expect(radicalVariantEntry(dao, knife).decomposition?.root).toEqual(libraryEntries('Components').find(e => e.hanzi === '刂')?.decomposition?.root);
+    expect(radicalVariantEntry(dao, knife).decomposition?.root).not.toEqual(dao.decomposition?.root);
+    // ⺆ has no recorded tree, so it never borrows 冂's.
+    expect(frame.character).toBe('⺆');
+    expect(jiong.decomposition).toBeDefined();
+    expect(radicalVariantEntry(jiong, frame).decomposition).toBeUndefined();
+  });
 });

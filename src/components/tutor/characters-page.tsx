@@ -21,7 +21,7 @@ import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { UNRANKED, usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
-import { libraryEntries, filterLibrary, libraryPage, libraryDestination, glyphIndex, glyphScript, plannedCounts, radicalCardRecord, radicalVariantFallback, radicalVariantMeaning, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
+import { libraryEntries, glyphDecomposition, filterLibrary, libraryPage, libraryDestination, glyphIndex, glyphScript, plannedCounts, radicalCardRecord, radicalVariantFallback, radicalVariantMeaning, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog, readingMeanings } from '@/lib/catalog-store';
 import { strokeSpeech } from './stroke-practice';
 import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
@@ -138,8 +138,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const form = kind === 'Radicals' && heading.kangxiIndex ? radicalForm(heading.kangxiIndex, selectedVariant) : undefined;
   const exact = form ? ['Radicals', 'Characters', 'Components'].flatMap(k => libraryEntries(k as LibraryKind)).find(item => item.hanzi === form.character) : undefined;
   // An exact variant never inherits the heading's script classification.
-  const { script: headingScript, ...headingWithoutScript } = heading;
-  const entry = form ? { ...headingWithoutScript, ...(exact?.script ? { script: exact.script } : {}), hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'} · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
+  // Nor its breakdown: the selected form shows only its own exact glyph's recorded tree.
+  const { script: headingScript, decomposition: headingTree, ...headingWithoutScript } = heading;
+  const entry = form ? { ...headingWithoutScript, ...glyphDecomposition(form.character), ...(exact?.script ? { script: exact.script } : {}), hanzi: form.character, strokes: form.strokeCount, pinyin: exact?.pinyin ?? '', meaning: exact?.meaning ?? '', note: `${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'} · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` } : heading;
   const { preferences, saved, toggleSaved } = useWorkspace();
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
@@ -222,8 +223,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {kind !== 'Strokes' && <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>}
     {/* Lessons whose recorded headword is exactly this character (Characters records only). */}
     {kind === 'Characters' && <CharacterLessonsSection recordId={entry.id} hanzi={entry.hanzi}/>}
-    {/* Radical detail cards (every form) omit the stroke breakdown; Practice keeps the recorded strokes. */}
-    {kind !== 'Strokes' && kind !== 'Radicals' && !((kind === 'Components' || kind === 'Characters') && kangxiNumber) && entry.decomposition && <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{entry.decomposition && <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>}</h3>
+    {/* Every glyph card with a recorded tree — Characters, Components and Radicals (each form its own
+        exact tree) — shows the same BabelStone + Hanzi graphical structure breakdown; strokes never do. */}
+    {kind !== 'Strokes' && entry.decomposition && <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{entry.decomposition && <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>}</h3>
       {entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>This record has no breakdown in the imported sources. None is inferred.</small></div>}
     </div>}
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
@@ -285,7 +287,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   const indicators = header === undefined;
   const gSourceParents = useGSourceParents(entry, indicators ? kind : null, preferences.includeTraditional, catalogVersion);
   // Resolved asynchronously (BabelStone sidecars for multi-form families); null while loading.
-  const [familyAvailability, setFamilyAvailability] = useState<{ example: boolean; decomposition: boolean } | null>(null);
+  const [familyAvailability, setFamilyAvailability] = useState<{ example: boolean } | null>(null);
   useEffect(() => {
     if (kind !== 'Radicals' || !indicators) { setFamilyAvailability(null); return; }
     let cancelled = false;
@@ -306,8 +308,6 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   const splitMeaning = !info.component && !fallback ? cardMeaning(entry.hanzi, entry.pinyin, entry.meaning) : info.meaning;
   const tileMeaning = kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning} · ${info.meaning}`) : kind === 'Radicals' || kind === 'Components' ? stripKangxiLabel(splitMeaning) : splitMeaning;
   const componentRadical = kind === 'Components' ? radicalIdentity(entry.hanzi).radicals : info.characterRadical ? [info.characterRadical] : [];
-  // Radicals never show a breakdown (their strokes live in Practice), so their cards carry no indicator either.
-  const hideDecomposition = kind === 'Radicals' || ((kind === 'Characters' || kind === 'Components') && radicalIdentity(entry.hanzi).radicals.length > 0);
   const hasPinyin = Boolean(info.reading || fallback?.pinyin);
   const hasMeaning = Boolean(info.meaning);
   const [side, setSide] = useState<'top' | 'bottom'>('top');
@@ -406,7 +406,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
     {/* The library tab already names the kind, so the top row carries no category word: it opens with
         rank · strokes, then pills (a gold "Variant" pill replaces the old COMPONENT VARIANT label).
         Stroke cards have no metadata or indicators, so they drop the top row entirely. */}
-    {header !== undefined ? header : kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{!hideDecomposition && entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
+    {header !== undefined ? header : kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && !hideMeaning && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head">{!hideHanzi && <strong lang="zh-CN">{entry.hanzi}</strong>}{hidePinyin ? null : hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning ? meaningText : <MeaningText text="No English meaning recorded in this source."/>}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>

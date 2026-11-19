@@ -26,6 +26,14 @@ export const referenceCatalog: { kind: ReferenceKind; entries: CatalogRow[] }[] 
 const strokeSamples = [ ['丶', 'diǎn', 'Dot'], ['一', 'héng', 'Horizontal'], ['丨', 'shù', 'Vertical'], ['丿', 'piě', 'Left-falling'], ['㇏', 'nà', 'Right-falling'], ['㇀', 'tí', 'Rising'] ];
 const cache = new Map<LibraryKind, { version: number; entries: LibraryEntry[] }>();
 export const TREE_SOURCE = 'Make Me a Hanzi IDS (bddc96d)';
+/** The recorded Make Me a Hanzi tree of exactly this glyph, as a spreadable `decomposition` field
+ *  (empty when none is recorded). Radical variant forms take their own glyph's tree through this,
+ *  never the family heading's, so ⺅ never shows 人's breakdown. BabelStone alternatives load
+ *  separately by the same exact glyph (CharacterDecomposition). */
+export function glyphDecomposition(glyph: string): Pick<LibraryEntry, 'decomposition'> {
+  const tree = glyph ? catalog.trees[glyph] : undefined;
+  return tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {};
+}
 export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   // Stable cached entries support memoized tiles; a catalogue version change
   // invalidates them after lazy hydration installs the current source data.
@@ -38,13 +46,14 @@ export function libraryEntries(kind: LibraryKind): LibraryEntry[] {
   const visible = kind === 'Characters' ? rows.filter(row => !pureComponentForm(row[0] ?? '')) : rows;
   const entries = visible.map(([hanzi = '', pinyin = '', meaning = '', note = '', script]) => {
     const presentation = glyphPresentation(hanzi, kind, pinyin, meaning);
-    const tree = kind === 'Strokes' || kind === 'Radicals' ? undefined : catalog.trees[hanzi];
+    // Radicals carry their own exact-glyph tree too, like Characters and Components; strokes never do.
+    const tree = kind === 'Strokes' ? undefined : catalog.trees[hanzi];
     // Read the source's explicit number, never the row position or a glyph guess.
     // A Components row with no stroke count (⺗, ⺈, ⺮…) takes its exact form's count from the radical
     // family file, where the same code point is recorded; its own count always wins when present.
     const kangxiIndex = kind === 'Radicals' ? Number(note.match(/\bRadical #(\d+)\b/i)?.[1]) : NaN;
     return { id: `${kind}:${hanzi}`, hanzi, pinyin: presentation.characterPinyin, meaning: presentation.meaning, note, ...(Number.isInteger(kangxiIndex) && kangxiIndex >= 1 && kangxiIndex <= 214 ? { kangxiIndex } : {}), ...(script ? { script: script as CharacterScript } : {}), strokes: kind === 'Strokes' ? undefined : Number(note.match(/^(\d+) strokes?/)?.[1]) || (kind === 'Components' ? radicalFormStrokeCount(hanzi) : undefined),
-      ...(tree ? { decomposition: { root: tree, source: TREE_SOURCE, status: 'Imported graphical structure · not verified etymology' } } : {}) };
+      ...glyphDecomposition(tree ? hanzi : '') };
   });
   cache.set(kind, { version: catalog.version, entries });
   return entries;
@@ -56,7 +65,9 @@ export function radicalVariantEntry(heading: LibraryEntry, form: RadicalForm): L
   if (form.character === heading.hanzi && first?.key === form.key) return heading;
   const exact = libraryEntries('Components').find(item => item.hanzi === form.character) ?? libraryEntries('Characters').find(item => item.hanzi === form.character);
   const fallback = radicalVariantFallback(form.character, exact?.pinyin ?? '', heading.kangxiIndex, form.key);
-  return { ...heading, id: `${heading.id}:variant:${form.key}`, radicalHeadingId: heading.id, radicalVariant: form.key,
+  // Drop the heading's tree: the variant shows only its own exact glyph's recorded breakdown.
+  const { decomposition: _headingTree, ...headingRecord } = heading;
+  return { ...headingRecord, ...glyphDecomposition(form.character), id: `${heading.id}:variant:${form.key}`, radicalHeadingId: heading.id, radicalVariant: form.key,
     hanzi: form.character, strokes: form.strokeCount, pinyin: fallback?.pinyin ?? exact?.pinyin ?? '',
     meaning: fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : exact?.meaning ?? heading.meaning,
     note: `${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'} · Kangxi family #${heading.kangxiIndex} · ${form.formKind}` };

@@ -8,6 +8,7 @@ import type { LibraryEntry } from '@/lib/character-library';
 vi.mock('@tanstack/react-router', () => ({
   // Forward props so Button asChild classes (e.g. traditional-character) reach the anchor.
   Link: ({ children, ...props }: { children?: ReactNode } & Record<string, unknown>) => <a {...props}>{children}</a>,
+  useNavigate: () => () => {},
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false }));
 // Controlled catalogue: 鮮 is a Traditional character whose dictionary radical is 魚
@@ -50,6 +51,14 @@ describe('Absent-record notes', () => {
     expect(decodeURI(link.getAttribute('href') ?? '')).toBe('https://www.purpleculture.net/sample-sentences/?word=和');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link.getAttribute('rel')).toContain('noopener');
+  });
+
+  it('shows the recorded breakdown on a radical card, like characters and components', () => {
+    const mai: LibraryEntry = { id: 'Radicals:麥', hanzi: '麥', pinyin: 'mài', meaning: 'wheat', note: '11 strokes · Radical #199', kangxiIndex: 199, strokes: 11,
+      decomposition: { root: { glyph: '⿱', position: 'root', children: [{ glyph: '來', position: 'top' }, { glyph: '夂', position: 'bottom' }] }, source: 'test', status: 'test' } };
+    render(<CharacterDetails entry={mai} kind="Radicals" />);
+    expect(screen.getByRole('heading', { level: 3, name: /DECOMPOSITION/ })).toBeInTheDocument();
+    expect(screen.getByRole('list', { name: 'Hanzi graphical structure' }).textContent).toContain('來');
   });
 
   it('omits the decomposition section for individual strokes', () => {

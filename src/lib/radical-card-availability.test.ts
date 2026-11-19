@@ -5,10 +5,10 @@ import { radicalCardAvailability } from './radical-card-availability';
 import { readEnrichment } from '@/test/enrichment-fixture';
 
 describe('Radical card availability', () => {
-  it('includes 見 family variant 见 examples and recorded stroke decomposition', async () => {
+  it('includes 見 family variant 见 examples', async () => {
     const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === 147);
     if (!heading) throw new Error('Missing radical 147');
-    expect(await radicalCardAvailability(heading, libraryEntries('Characters'), false, readEnrichment)).toEqual({ example: true, decomposition: true });
+    expect(await radicalCardAvailability(heading, libraryEntries('Characters'), false, readEnrichment)).toEqual({ example: true });
   });
   it('does not borrow other forms’ content for a separately saved variant', async () => {
     const heading = libraryEntries('Radicals').find(entry => entry.kangxiIndex === 147);

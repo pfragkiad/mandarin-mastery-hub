@@ -32,10 +32,13 @@ describe('Radical-only stroke decompositions', () => {
     expect(radicalStrokes('水')?.strokes.map(({ name, pinyin }) => ({ name, pinyin }))).toEqual(await strokeNames('水'));
     expect(radicalStrokes('口')?.strokes.map(s => s.glyph)).toEqual(['㇑', '㇕', '㇐']);
   });
-  it('never attaches IDS component trees to radical records', () => {
+  it('attaches only each radical’s own exact recorded tree', () => {
     const radicals = libraryEntries('Radicals');
     expect(radicals).toHaveLength(214);
-    expect(radicals.filter(r => r.decomposition)).toEqual([]);
+    // 175 headings have a recorded tree; elementary ones (一, 丨, 人) have none and stay bare.
+    expect(radicals.filter(r => r.decomposition)).toHaveLength(175);
+    expect(radicals.find(r => r.hanzi === '一')?.decomposition).toBeUndefined();
+    expect(radicals.find(r => r.hanzi === '麥')?.decomposition?.root.children?.map(c => c.glyph)).toEqual(['來', '夂']);
     expect(Object.keys(catalog.radicalStrokes.records)).toHaveLength(214);
     for (const radical of radicals) {
       const row = radicalStrokes(radical.hanzi);
