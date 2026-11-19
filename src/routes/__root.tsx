@@ -13,6 +13,7 @@ import { watchClipPaths } from "@/lib/svg-clip-paths";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { isStaleBuildError, reloadForStaleBuild, STALE_BUILD_RELOAD_SCRIPT } from "../lib/stale-build-reload";
 import { TutorShell } from "@/components/tutor/shell";
 import { WorkspaceProvider } from "@/components/tutor/workspace";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -42,28 +43,33 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
+  // A page file from an earlier publish is gone: reload once to pick up the current one
+  // (stale-build-reload.ts guards against loops); otherwise report as usual.
+  const stale = isStaleBuildError(error);
   useEffect(() => {
+    if (stale && reloadForStaleBuild()) return;
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+  }, [error, stale]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          {stale ? "A newer version is available" : "This page didn't load"}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          {stale ? "The app was updated since this tab opened. Refresh the page to load the latest version." : "Something went wrong on our end. You can try refreshing or head back home."}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
+              if (stale) { window.location.reload(); return; }
               router.invalidate();
               reset();
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            {stale ? "Refresh" : "Try again"}
           </button>
           <a
             href="/"
@@ -117,6 +123,8 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" data-hanzi-font="handwritten" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: savedHanziFontScript }} />
+        {/* Before any module loads: recover tabs left on an earlier publish (stale-build-reload.ts). */}
+        <script dangerouslySetInnerHTML={{ __html: STALE_BUILD_RELOAD_SCRIPT }} />
         <HeadContent />
       </head>
       <body>
