@@ -17,6 +17,14 @@ describe('memory pictures', () => {
   it('gives the whole #162 family (辵 first) the 辶 picture for its details', () => {
     expect(mnemonicFor('辵') ?? cardMnemonic(['辵', '辶'])).toMatchObject({ glyph: '辶' });
   });
+  it('lets a form keep its own picture when the family has several, with no picture required per form', () => {
+    // 心 has its own picture; a family form with one must win over the family fallback, and a
+    // family where only some forms have pictures still resolves for the rest.
+    const own = mnemonicFor('心');
+    expect(own?.glyph).toBe('心');
+    expect(mnemonicFor('心') ?? cardMnemonic(['心'])).toBe(own);
+    expect(cardMnemonic(['⻌', '辶'])?.glyph).toBe('辶');
+  });
   it('reads only lowercase-hex code point names', () => {
     expect(codePointFromFileName('8fb6.webp.asset.json')).toBe('8fb6');
     expect(codePointFromFileName('辶.png.asset.json')).toBeNull();
