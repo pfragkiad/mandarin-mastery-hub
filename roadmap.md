@@ -51,3 +51,4 @@
 - [x] Find similar on radical variant forms such as ⻏ (traceable forms should open the Hanzi finder)
 - [x] Hanzi finder "Similar to": the reference glyph's pinyin + speaker beside its tile and repeated in the results heading
 - [x] Hanzi finder: gold radical-form matches (阝, ⺊) read "Component · Radical" so the label matches the colour
+- [x] Hanzi finder: the Radicals filter also shows component-radicals (阝) and character-radicals (门)

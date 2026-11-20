@@ -10,7 +10,13 @@ import finderMissing from '@/data/finder-missing.json';
  * One exact glyph is one result: in "All", a glyph recorded in several
  * libraries resolves like every glyph link (glyphIndex: the radical card wins,
  * then Characters, then Components), so the same form never appears twice.
- * A single-library scope only accepts glyphs that are records of that library.
+ * Characters and Components scopes only accept glyphs that are records of that
+ * library. The Radicals scope accepts every match that wears radical gold: it
+ * resolves exactly like "All" (so the tile, label and destination never differ
+ * between the two filters) and keeps the radical cards, the family variant forms
+ * (⻏) and any Components/Characters record with an exact radical identity
+ * (isRadicalGlyph, the same test as the ink): 阝 "Component · Radical", 门
+ * "Character · Radical". Nothing is added by shape, only by recorded identity.
  * The Traditional preference filters by the exact record's script. Returns null
  * for glyphs outside the scope, never a look-alike substitute.
  *
@@ -41,8 +47,10 @@ function record(kind: LibraryKind, glyph: string) {
 }
 
 export function finderRecord(glyph: string, scope: FinderScope, includeTraditional: boolean): { kind: LibraryKind; kindLabel: string; entry: LibraryEntry } | null {
-  const kind: LibraryKind | undefined = scope === 'all' ? glyphIndex()[glyph]?.kind : scope;
+  const kind: LibraryKind | undefined = scope === 'all' || scope === 'Radicals' ? glyphIndex()[glyph]?.kind : scope;
   const entry = kind ? record(kind, glyph) : undefined;
+  // Radicals keeps only gold matches; anything else (你) stays out of that filter.
+  if (entry && kind && scope === 'Radicals' && kind !== 'Radicals' && !isRadicalGlyph(entry, kind)) return null;
   if (!entry) {
     const variant = scope === 'all' || scope === 'Radicals' ? radicalVariantRecord(glyph) : undefined;
     return variant && includeScript(variant.script, includeTraditional) ? { kind: 'Radicals', kindLabel: kindLabels.Radicals, entry: variant } : null;

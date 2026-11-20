@@ -77,6 +77,14 @@ describe('Hanzi finder records', () => {
     expect(finderRecord('你', 'all', false)?.kindLabel).toBe('Character');
   });
 
+  it('the Radicals filter shows every gold match: radical cards, component-radicals and character-radicals', () => {
+    expect(finderRecord('木', 'Radicals', false)?.kindLabel).toBe('Radical');
+    expect(finderRecord('阝', 'Radicals', false)?.kindLabel).toBe('Component · Radical');
+    expect(finderRecord('⺊', 'Radicals', false)?.kindLabel).toBe('Component · Radical');
+    expect(finderRecord('门', 'Radicals', false)?.kindLabel).toBe('Character · Radical');
+    expect(finderRecord('你', 'Radicals', false)).toBeNull();
+  });
+
   it('leaves Traditional records out unless the preference includes them', () => {
     expect(finderRecord('國', 'Characters', false)).toBeNull();
     expect(finderRecord('國', 'Characters', true)?.kind).toBe('Characters');
