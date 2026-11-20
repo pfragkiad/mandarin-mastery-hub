@@ -185,11 +185,37 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
   </span>;
 }
 
-/** One match tile. The speaker uses the same audio pipeline as the library grid
- *  cards (exact-reading recording first, then validated Mandarin TTS; radical
- *  variants inherit their family reading via radicalVariantFallback), so an
- *  unrecorded glyph never promises audio. Multi-reading glyphs get one speaker
- *  per exact reading, like the library tiles.
+/** Pinyin + speaker for one exact catalogue record, shared by the match tiles and the
+ *  "Similar to" reference banner so the reference reads and sounds like its own match.
+ *  The audio goes through the same pipeline as the library grid cards (exact-reading
+ *  recording first, then validated Mandarin TTS), and a radical variant form (⻏) inherits
+ *  its family reading through radicalVariantFallback, so an unrecorded glyph never
+ *  promises audio. Multi-reading glyphs ("liào / liǎo") get one speaker per reading.
+ *  Inputs: the exact glyph, its library kind and record; `textClassName` styles the
+ *  reading text like the surrounding surface's pinyin. Renders nothing when the record
+ *  has neither a reading nor a pinyin, so an empty line never appears. */
+export function RecordReading({ glyph, kind, entry, textClassName }: { glyph: string; kind: LibraryKind; entry: LibraryEntry; textClassName: string }) {
+  const { preferences } = useWorkspace();
+  const info = glyphPresentation(glyph, kind, entry.pinyin, entry.meaning);
+  // A variant form is qualified by its exact family + form key, as on its card.
+  const fallback = kind === 'Radicals' || kind === 'Components' ? radicalVariantFallback(glyph, entry.pinyin, entry.radicalVariant ? entry.kangxiIndex : undefined, entry.radicalVariant) : null;
+  const spoken = fallback ? fallback.spoken : info.speech;
+  const reading = fallback ? fallback.reading : info.reading || null;
+  const recording = spoken ? characterRecording(spoken, reading) : null;
+  const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
+  const pinyin = entry.pinyin || fallback?.pinyin || '';
+  if (!spoken && !pinyin) return null;
+  return <span className={`pinyin ${textClassName}`}>
+    {spoken && reading && isMultiReading(reading)
+      ? <MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/>
+      : <><span className="pinyin-text">{pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? glyph}`} unavailableLabel={`No audio available for ${spoken ?? glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></>}
+  </span>;
+}
+
+/** One match tile. Its reading line is the shared RecordReading block (exact-reading
+ *  recording first, then validated Mandarin TTS; radical variants inherit their family
+ *  reading via radicalVariantFallback), so an unrecorded glyph never promises audio and
+ *  multi-reading glyphs get one speaker per exact reading, like the library tiles.
  *
  *  Two controls, never nested: the character box and the reading/meaning block are
  *  each a `finder-hit-open` button that opens the glyph's card (one button cannot
@@ -201,13 +227,6 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
 export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
-  const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
-  // A variant-form match (⻏) is qualified by its exact family + form key, as on its card.
-  const fallback = hit.kind === 'Radicals' || hit.kind === 'Components' ? radicalVariantFallback(hit.glyph, hit.entry.pinyin, hit.entry.radicalVariant ? hit.entry.kangxiIndex : undefined, hit.entry.radicalVariant) : null;
-  const spoken = fallback ? fallback.spoken : info.speech;
-  const reading = fallback ? fallback.reading : info.reading || null;
-  const recording = spoken ? characterRecording(spoken, reading) : null;
-  const audioAvailable = usePronunciationAvailability(Boolean(recording), reading);
   const rank = usageOrder.loaded ? usageRank(hit.entry, hit.kind, preferences.includeTraditional) : null;
   return <div className={`finder-hit ${ink}`}>
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
@@ -220,9 +239,7 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
     <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={16} aria-hidden="true"/></button>
     <button type="button" className="finder-hit-open finder-hit-glyph-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}><FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/></button>
     <button type="button" className="finder-hit-open finder-hit-text" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
-    {spoken && reading && isMultiReading(reading)
-      ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
-      : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
+    <RecordReading glyph={hit.glyph} kind={hit.kind} entry={hit.entry} textClassName="finder-hit-pinyin"/>
     <span className="finder-hit-meaning">{(hit.kind === 'Characters' ? characterMeaning : cardMeaning)(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
     <span className="hit-kind">{hit.kindLabel}</span>
     </button>
@@ -385,6 +402,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
       {similarRecord
         ? <button type="button" className={`finder-similar-glyph ${glyphCardInk(similarRecord.kind, similarRecord.entry.script, isRadicalGlyph(similarRecord.entry, similarRecord.kind))}`} title={`Open ${similar} in ${similarRecord.kind}`} onClick={() => open({ glyph: similar, score: 100, ...similarRecord })}><strong lang="zh-CN">{similar}</strong></button>
         : <strong lang="zh-CN" className="finder-similar-glyph">{similar}</strong>}
+      {/* The reference's own reading, right beside its tile: the same pinyin + speaker a
+          match tile shows, so the glyph being compared can be heard without opening it. */}
+      {similarRecord && <RecordReading glyph={similar} kind={similarRecord.kind} entry={similarRecord.entry} textClassName="finder-similar-pinyin"/>}
       <span>{reference ? 'Its recorded strokes are on the board and compared like a drawing. Draw, Undo or Clear to search your own drawing instead.' : ''}</span>
     </p>}
     {/* The board (left) and the first matches (right, as many small tiles as fit beside the board
@@ -408,7 +428,7 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
         </div>
       </section>
       <section className="finder-results" aria-label="Matches">
-        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span></> : 'Matches'}</h2><span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'} drawn</span>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
+        <div className="finder-results-head"><h2>{similar && reference ? <>Similar to <span lang="zh-CN">{similar}</span>{similarRecord && <RecordReading glyph={similar} kind={similarRecord.kind} entry={similarRecord.entry} textClassName="finder-heading-pinyin"/>}</> : 'Matches'}</h2><span className="finder-count" aria-live="polite">{strokes.length} {strokes.length === 1 ? 'stroke' : 'strokes'} drawn</span>{!status && <span className="finder-results-count">{hits.length} at {cap}% or more</span>}</div>
         {loadError ? <div className="record-gap"><p className="finder-status">Stroke data couldn’t load.</p><Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button></div>
           : status ? <div className="record-gap"><p className="finder-status">{status}</p></div>
           : <div ref={sideRef} className="finder-hits finder-hits-side">{hits.slice(0, beside).map(hit => tile(hit))}</div>}

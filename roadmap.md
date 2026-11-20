@@ -49,3 +49,4 @@
 - [x] Substitute identity colour: reddish deep brick, clear of radical gold AND the Traditional purple (dark splits deep glyph / lighter small label)
 - [x] 瞭 detail card: two reviewed per-reading lines (liào look from afar; liǎo to understand), like 了
 - [x] Find similar on radical variant forms such as ⻏ (traceable forms should open the Hanzi finder)
+- [x] Hanzi finder "Similar to": the reference glyph's pinyin + speaker beside its tile and repeated in the results heading

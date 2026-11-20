@@ -4010,6 +4010,13 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-similar-glyph { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--card-ink, var(--foreground)); cursor: pointer; transition: border-color .2s; }
 button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); outline: none; }
 .finder-similar-glyph strong { font-family: var(--font-hanzi); font-size: 26px; font-weight: 400; line-height: 1; }
+/* The reference tile's own reading, right beside it (shared RecordReading): the same
+   pinyin + speaker a match tile shows, a touch larger than the banner's 13px caption so
+   it reads as the glyph's rather than the sentence's. */
+.finder-similar-pinyin { display: inline-flex; align-items: center; gap: 4px; font-size: 15px; }
+/* The same reading repeated in the results heading, inline after the glyph: sized under the
+   22px title so the title still leads, with the speaker on the pinyin's own line. */
+.finder-heading-pinyin { display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; font-size: 15px; }
 .global-search-bar > .global-search-draw { height: 46px; flex-shrink: 0; }
 
 /* Memory pictures (mnemonic.tsx): icon beside a grid card's pinyin, thumbnail beside the detail

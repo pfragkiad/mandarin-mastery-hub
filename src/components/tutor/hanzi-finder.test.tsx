@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { FinderHitTile, finderBesideCount, finderBoardFor, finderSideColumnsFor } from './hanzi-finder';
+import { FinderHitTile, RecordReading, finderBesideCount, finderBoardFor, finderSideColumnsFor } from './hanzi-finder';
 import { WorkspaceProvider } from './workspace';
 import type { LibraryEntry } from '@/lib/character-library';
 
@@ -91,5 +91,28 @@ describe('finder layout rules', () => {
     expect(finderBesideCount(1, 280, 196)).toBe(1);
     expect(finderBesideCount(3, 550, 196)).toBe(6);
     expect(finderBesideCount(2, 100, 196)).toBe(2);
+  });
+});
+
+// The "Similar to" banner shows the reference glyph's own reading beside its tile, through
+// the same block a match tile's reading line uses (RecordReading).
+describe('finder reference reading', () => {
+  const sun = { id: 'radicals:日', hanzi: '日', pinyin: 'rì', meaning: 'sun; day', note: '' } as LibraryEntry;
+
+  it('shows the reference pinyin with its own speaker beside the tile', async () => {
+    render(<WorkspaceProvider><RecordReading glyph="日" kind="Radicals" entry={sun} textClassName="finder-similar-pinyin"/></WorkspaceProvider>);
+    await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); });
+    expect(screen.getByText('rì')).toBeTruthy();
+    // The speaker is the tile speaker's role="button" span, so the banner (a <p>) never
+    // nests a real button inside the reference tile's button.
+    const speaker = document.querySelector<HTMLElement>('.finder-similar-pinyin .tile-speaker');
+    if (!speaker) throw new Error('the reference reading has no speaker beside the pinyin');
+    expect(speaker.getAttribute('aria-label')).toContain('日');
+  });
+
+  it('renders nothing when the record has no reading and no pinyin to show', async () => {
+    const { container } = render(<WorkspaceProvider><RecordReading glyph="⺁" kind="Characters" entry={{ id: 'characters:⺁', hanzi: '⺁', pinyin: '', meaning: '', note: '' } as LibraryEntry} textClassName="finder-similar-pinyin"/></WorkspaceProvider>);
+    await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); });
+    expect(container.textContent).toBe('');
   });
 });
