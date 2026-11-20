@@ -1634,7 +1634,11 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 /* Detail bottom row: Trace/Recall on the left, Bookmark alone at the far right (as on library cards). */
 .detail-reference-row .detail-bookmark-action { margin-left: auto; }
 /* Title glyph row: main hanzi (or form tiles) with the record's source ⓘ beside it, vertically centred. */
-.catalog-detail-glyph-row { display: flex; align-items: flex-start; gap: 6px; width: 100%; max-width: 100%; }
+/* The header row wraps so a preview that cannot fit beside the glyph and the identity pills drops
+   onto its own line instead of being squeezed to nothing on a narrow card. The pills are ordered
+   ahead of the tile (order: 1 vs 2) so they keep the top-right corner when the tile moves down. */
+.catalog-detail-glyph-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; width: 100%; max-width: 100%; }
+.catalog-detail-glyph-row > .catalog-detail-pills { order: 1; }
 /* Pills keep the heading's top-right corner now that the pinyin line sits below the hanzi. */
 .catalog-detail-glyph-row > .catalog-detail-pills { align-self: flex-start; margin-top: 2px; }
 .catalog-detail-glyph-row + .catalog-detail-pinyin-row { margin-top: 4px; }
@@ -4017,14 +4021,19 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .library-list-view .tile-mnemonic svg { width: 20px; height: 20px; }
 .tile-mnemonic:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
 .tile-mnemonic:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
-.mnemonic-preview { flex: none; align-self: center; width: 88px; height: 88px; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--mnemonic-paper, var(--muted)); cursor: zoom-in; transition: border-color .15s ease, transform .15s ease; }
+/* The preview is a 2:1 tile — exactly double the width of the old square, at every width so the
+   header never swings between a sliver and a banner. It shows only the picture's bottom half,
+   which is itself a 2:1 region of the square artwork, so that crop fills the tile undistorted.
+   The tile neither grows nor shrinks: when glyph + source + pills leave less than 176px it moves
+   onto its own line (see .catalog-detail-glyph-row) instead of being squeezed. */
+.mnemonic-preview { order: 2; flex: 0 0 176px; align-self: center; aspect-ratio: 2; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--mnemonic-paper, var(--muted)); cursor: zoom-in; transition: border-color .15s ease, transform .15s ease; }
 .mnemonic-preview { position: relative; }
 .mnemonic-preview-form { position: absolute; right: 4px; bottom: 4px; min-width: 22px; padding: 1px 4px; border-radius: 6px; font-size: 14px; line-height: 1.3; color: var(--hsk-id); background: color-mix(in oklab, var(--background) 88%, transparent); border: 1px solid var(--border); }
-/* The preview reveals only the picture's bottom half (its illustration): the picture element is
-   half the box's height and its image is bottom-aligned, so cover draws the lower half at full
-   width with no distortion, and the button's own paper (inline var(--mnemonic-paper) from the
-   record) fills the rest of the square. */
-.mnemonic-preview .mnemonic-picture { position: absolute; left: 0; top: 25%; width: 100%; height: 50%; }
+/* The tile's 2:1 box is exactly the picture's bottom half (a square artwork's lower 1024×512
+   region), so the picture element covers the whole tile with its image bottom-aligned: cover
+   scales the square up to the tile width and the crop keeps the lower half — undistorted, and with
+   no paper letterboxing above or below as the old square tile had. */
+.mnemonic-preview .mnemonic-picture { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
 .mnemonic-preview .mnemonic-picture img { object-position: bottom; }
 /* MnemonicPicture: the picture plus the live character overlay. The paper and ink colours belong
    to the owner's pictures (always the same paper), not to the app theme, so they stay fixed in
