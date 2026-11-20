@@ -51,8 +51,11 @@ describe('finder match tile', () => {
 
   it('the tile body still opens the glyph card and never switches the reference', async () => {
     const { onOpen, onSimilar } = await renderTile();
-    // The reading/meaning block is the second open target (the character box is the first).
-    fireEvent.click(screen.getAllByTitle('Open 大 in Characters')[1]);
+    // The reading/meaning block is the tile's `.finder-hit-text` open target
+    // (the character box is the other one sharing the same title).
+    const body = document.querySelector<HTMLElement>('.finder-hit-text');
+    if (!body) throw new Error('the tile body open target is missing');
+    fireEvent.click(body);
     expect(onOpen).toHaveBeenCalledTimes(1);
     expect(onSimilar).not.toHaveBeenCalled();
   });
