@@ -40,6 +40,13 @@ describe('simplified radical forms on Characters cards', () => {
     expect(displayMeaning('variant of Kangxi radical 125')).toBe('variant of Kangxi radical 125');
   });
 
+  it('reads the family translation for a lone "variant of Kangxi radical N" (耂, 覀)', () => {
+    expect(glyphPresentation('耂', 'Characters', 'lǎo', 'variant of Kangxi radical 125').meaning).toMatch(/; component form of 老$/);
+    expect(glyphPresentation('覀', 'Characters', 'xī', 'variant of Kangxi radical 146').meaning).toMatch(/; component form of 襾$/);
+    // A mismatched family number keeps the recorded note.
+    expect(glyphPresentation('耂', 'Characters', 'lǎo', 'variant of Kangxi radical 1').meaning).toBe('variant of Kangxi radical 1');
+  });
+
   it('gives the simplified dual forms their Radical #N pill', () => {
     expect(glyphPresentation('麦', 'Characters').characterRadical?.number).toBe(199);
     expect(glyphPresentation('门', 'Characters').characterRadical?.number).toBe(169);

@@ -71,6 +71,19 @@ export function variantMeaning(glyphs: string[]): string {
   return originals.length ? `${originals.join('; ')}; component form of ${forms}` : `Component form of ${forms}`;
 }
 
+/** A record whose whole meaning is the source note "variant of Kangxi radical N" (耂 → 125,
+ * 覀 → 146) reads its family's translation instead, as "old; component form of 老". Only when the
+ * glyph is a recorded form of exactly that family (radicalForms, exact code point) and the
+ * family heading records a meaning; otherwise null and the note stays as recorded. Display only. */
+export function radicalNoteMeaning(glyph: string, meaning: string): string | null {
+  const note = meaning.trim().match(/^variant of (?:the )?Kang[xz]i radical\s*#?\s*(\d+)$/i);
+  if (!note) return null;
+  const family = radicalForms(glyph).find(item => item.family.id === Number(note[1]) && item.form.character === glyph)?.family;
+  if (!family || family.kangxiHeading === glyph) return null;
+  const heading = displayMeaning(catalog.radicals.find(row => row[0] === family.kangxiHeading)?.[2] ?? '').split(/;\s*/).filter(part => part && !/^(?:Kang[xz]i )?radical\s*#?\s*\d+$/i.test(part.trim())).join('; ');
+  return heading ? `${heading}; component form of ${family.kangxiHeading}` : null;
+}
+
 /** Preserve exact record IDs and library membership; separate lexical readings from names. */
 export function glyphPresentation(glyph: string, kind: string, pinyin = '', meaning = '') {
   // This is a display adapter, not an import correction: classification, names
@@ -102,7 +115,7 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
     label, canonicalRadical, characterRadical, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
     readingFallback: component ? 'Component name not recorded' : 'Pinyin not recorded',
-    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : displayMeaning(meaning),
+    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : radicalNoteMeaning(glyph, meaning) ?? displayMeaning(meaning),
     speech: pureForm ? componentName?.text ?? null : glyph,
     codePoint: codePoint === undefined ? '' : `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')}`,
     source: pureForm ? `Unicode NamesList 17.0.0${reviewed ? ` · ${reviewed.unicodeName}` : ''}${componentName ? ` · ${componentName.source}` : ''}` : null,
