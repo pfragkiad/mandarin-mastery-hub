@@ -192,10 +192,9 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *
  *  Two controls, never nested: the character box and the reading/meaning block are
  *  each a `finder-hit-open` button that opens the glyph's card (one button cannot
- *  hold another, and the pen must sit beside the character, so the tile's open
- *  target is split in two around it), and the small button to the right of the
- *  character (`finder-hit-similar`) makes this match the finder's reference
- *  instead — the same action a detail card's "Find similar" performs, so the board
+ *  hold another, so the tile's open target is split in two), and the small button
+ *  pinned to the tile's top-right corner (`finder-hit-similar`) makes this match the
+ *  finder's reference instead — the same action a detail card's "Find similar" performs, so the board
  *  takes this glyph's recorded strokes and the results become "Similar to <glyph>".
  *  The same tile is used beside the board and in the list below it. */
 export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
@@ -211,13 +210,13 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
   return <div className={`finder-hit ${ink}`}>
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
+    {/* The match percentage sits centred in the tile's header row, between the rank
+        (top-left) and the reference pen (top-right). */}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
-    {/* The character and the pen sit side by side: the box opens the card, the pen
-        makes this match the reference, so the two never share one clickable target. */}
-    <span className="finder-hit-figure">
-      <button type="button" className="finder-hit-open finder-hit-glyph-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}><FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/></button>
-      <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={13} aria-hidden="true"/></button>
-    </span>
+    {/* The pen is a sibling of both open buttons (a button cannot hold another) and is
+        pinned to the header's right edge, so it never shares the card's clickable target. */}
+    <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={16} aria-hidden="true"/></button>
+    <button type="button" className="finder-hit-open finder-hit-glyph-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}><FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/></button>
     <button type="button" className="finder-hit-open finder-hit-text" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>

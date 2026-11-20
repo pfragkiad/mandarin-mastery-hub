@@ -3952,16 +3952,17 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 /* The finder's one-line intro: short and readable (the page-heading default is a small muted caption). */
 .page-heading p.finder-intro { font-size: 15px; line-height: 1.5; color: var(--foreground); max-width: none; }
 .finder-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }
-.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 26px 8px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; transition: border-color .2s; }
+.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 32px 8px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; transition: border-color .2s; }
 .finder-hit:is(:hover, :focus-within) { border-color: var(--card-ink, var(--primary)); }
-/* The character box and the reading/meaning block are each a button opening the glyph's card, split
-   around the reference pen (a button cannot hold another); the pen itself is a sibling of both. */
+/* The character box and the reading/meaning block are each a button opening the glyph's card (a button
+   cannot hold another); the rank, percentage and reference pen sit in the header row above them. */
 .finder-hit-open { display: flex; flex-direction: column; align-items: center; gap: 3px; width: 100%; min-width: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: center; cursor: pointer; outline: none; }
-/* Character + pen share one centred row, so the pen reads as belonging to the hanzi it sits right of. */
-.finder-hit-figure { display: flex; align-items: center; justify-content: center; gap: 4px; width: 100%; min-width: 0; }
+/* The pen is pinned to the header's right edge (see .finder-hit-rank / .finder-hit-score), so it reads
+   as a tile-level action rather than part of the character. It wears the same white as a recording's
+   speaker (.tile-speaker), never the muted grey of a disabled control. */
 .finder-hit-glyph-open { width: auto; flex: none; }
 .finder-hit-text { margin-top: 6px; }
-.finder-hit-similar { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 0; border: 1px solid transparent; border-radius: 5px; background: none; color: var(--muted-foreground); cursor: pointer; outline-offset: 1px; transition: border-color .2s, color .2s; }
+.finder-hit-similar { position: absolute; top: 4px; right: 5px; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 1px solid transparent; border-radius: 6px; background: none; color: var(--foreground); cursor: pointer; outline-offset: 1px; transition: border-color .2s, color .2s; }
 .finder-hit-similar:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); color: var(--card-ink, var(--primary)); }
 /* Match glyph sits in a 米字格 square (border, diagonals, centre lines) drawn with the same
    gradients as .writing-grid: plain text over a CSS background, so a long result list never
@@ -3973,7 +3974,9 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-hit-glyph path { fill: currentColor; }
 .finder-hit-glyph strong { font-family: var(--font-hanzi); font-size: 50px; font-weight: 400; line-height: 1; }
 .finder-hit-rank { position: absolute; top: 7px; left: 9px; font-size: 12px; font-weight: 600; color: var(--muted-foreground); }
-.finder-hit-score { position: absolute; top: 7px; right: 9px; font-size: 12px; font-weight: 600; }
+/* The percentage owns the centre of the header row; it is translate-centred rather than
+   left:0/right:0 because the tile's own width varies with the grid column. */
+.finder-hit-score { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 600; }
 .finder-hit-open > .pinyin { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; }
 .finder-hit-pinyin { display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
 .finder-hit-pinyin .pinyin-text { min-width: 0; }

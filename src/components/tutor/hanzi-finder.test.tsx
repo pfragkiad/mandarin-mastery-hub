@@ -30,12 +30,16 @@ async function renderTile(onOpen = vi.fn(), onSimilar = vi.fn()) {
 describe('finder match tile', () => {
   it('offers opening the card and making the match the reference as two separate controls', async () => {
     await renderTile();
-    const open = screen.getByTitle('Open 大 in Characters');
+    // Both open targets (character box, reading/meaning block) and the pen must be
+    // siblings: a button inside a button is invalid and would make the reference
+    // action unclickable.
+    const opens = screen.getAllByTitle('Open 大 in Characters');
     const similar = screen.getByRole('button', { name: 'Find similar to 大' });
-    // Siblings, never nested: a button inside a button is invalid and would make
-    // the reference action unclickable.
-    expect(open.contains(similar)).toBe(false);
-    expect(similar.contains(open)).toBe(false);
+    expect(opens).toHaveLength(2);
+    for (const open of opens) {
+      expect(open.contains(similar)).toBe(false);
+      expect(similar.contains(open)).toBe(false);
+    }
   });
 
   it('the top button switches the reference to this match without opening its card', async () => {
@@ -47,7 +51,8 @@ describe('finder match tile', () => {
 
   it('the tile body still opens the glyph card and never switches the reference', async () => {
     const { onOpen, onSimilar } = await renderTile();
-    fireEvent.click(screen.getByTitle('Open 大 in Characters'));
+    // The reading/meaning block is the second open target (the character box is the first).
+    fireEvent.click(screen.getAllByTitle('Open 大 in Characters')[1]);
     expect(onOpen).toHaveBeenCalledTimes(1);
     expect(onSimilar).not.toHaveBeenCalled();
   });
