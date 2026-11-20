@@ -4041,11 +4041,15 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-dialog { width: min(92vw, 560px); max-width: min(92vw, 560px); gap: 12px; padding: 18px; }
 .mnemonic-dialog-title { display: flex; align-items: center; gap: 12px; padding-right: 36px; font-size: 15px; font-weight: 550; color: var(--muted-foreground); }
 .mnemonic-dialog-title strong { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-hanzi); font-size: 30px; font-weight: 400; line-height: 1; color: var(--foreground); }
-.mnemonic-dialog-pinyin { font-size: 20px; font-weight: 500; }
-.mnemonic-dialog-listen { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 7px; color: var(--foreground); cursor: pointer; }
-.mnemonic-dialog-listen svg { width: 20px; height: 20px; }
-.mnemonic-dialog-listen:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
-.mnemonic-dialog-meaning { font-size: 17px; line-height: 1.45; color: var(--foreground); }
+/* The popup's facts live on the picture's empty top area, right of the drawn hanzi (which
+   occupies the left ~52cqw). Everything is in container units so popup and picture scale
+   together, and the block is capped at the top half so it never reaches the illustration. */
+.mnemonic-picture-facts { position: absolute; left: 56%; top: 3.2cqw; width: 41%; max-height: 44cqw; overflow: hidden; display: flex; flex-direction: column; gap: 1.6cqw; color: var(--mnemonic-ink); }
+.mnemonic-picture-pinyin { display: inline-flex; align-items: center; gap: 2cqw; font-size: 8cqw; font-weight: 500; line-height: 1.1; }
+.mnemonic-picture-listen { display: inline-flex; align-items: center; justify-content: center; width: 9cqw; height: 9cqw; border-radius: 2cqw; color: var(--mnemonic-ink); cursor: pointer; }
+.mnemonic-picture-listen svg { width: 6.5cqw; height: 6.5cqw; }
+.mnemonic-picture-listen:hover { background: color-mix(in oklab, var(--mnemonic-ink) 10%, transparent); }
+.mnemonic-picture-meaning { font-size: 4.6cqw; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .mnemonic-dialog-image { width: min(100%, 72vh); margin-inline: auto; border-radius: 10px; }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
 

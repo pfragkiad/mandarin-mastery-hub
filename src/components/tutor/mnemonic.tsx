@@ -35,24 +35,31 @@ import type { Mnemonic } from '@/lib/mnemonics';
  */
 const paperStyle = (mnemonic: Mnemonic) => (mnemonic.paper ? { '--mnemonic-paper': mnemonic.paper } as CSSProperties : undefined);
 
-export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false, crop = false }: { mnemonic: Mnemonic; className?: string; alt?: string; lazy?: boolean; crop?: boolean }) {
+export type MnemonicFacts = { pinyin?: string | undefined; meaning?: ReactNode; onListen?: (() => void) | undefined; listenLabel?: string | undefined };
+export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false, crop = false, facts }: { mnemonic: Mnemonic; className?: string; alt?: string; lazy?: boolean; crop?: boolean; facts?: MnemonicFacts | undefined }) {
   return <span className={`mnemonic-picture${className ? ` ${className}` : ''}`} style={paperStyle(mnemonic)}>
     <img src={mnemonic.url} alt={alt} width={1024} height={1024} {...(lazy ? { loading: 'lazy' as const, decoding: 'async' as const } : {})}/>
     {!crop && mnemonic.band > 0 && <span className="mnemonic-picture-band" style={{ height: `${mnemonic.band * 100}%` }} aria-hidden="true"/>}
     {!crop && mnemonic.drawHanzi && <span className="mnemonic-picture-hanzi" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
+    {/* The popup repeats the card's facts on the picture's empty top area, right of the drawn
+        hanzi, so the artwork stays the focus; the cropped preview never shows them. */}
+    {!crop && facts && <span className="mnemonic-picture-facts">
+      {facts.pinyin && <span className="mnemonic-picture-pinyin pinyin">{facts.pinyin}{facts.onListen && <button type="button" className="mnemonic-picture-listen" aria-label={facts.listenLabel ?? `Listen to ${mnemonic.glyph}`} title="Listen" onClick={facts.onListen}><Volume2/></button>}</span>}
+      {facts.meaning && <span className="mnemonic-picture-meaning">{facts.meaning}</span>}
+    </span>}
   </span>;
 }
 
-export type MnemonicFacts = { pinyin?: string | undefined; meaning?: ReactNode; onListen?: (() => void) | undefined; listenLabel?: string | undefined };
 export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined }) {
   // React events from the portal still bubble through this component's ancestors (the grid card's
   // face button, the DetailSheet's arrow-key handler), so the scope span stops them here.
   const stop = (event: SyntheticEvent) => event.stopPropagation();
   return <span className="mnemonic-dialog-scope" onClick={stop} onDoubleClick={stop} onKeyDown={stop} onPointerDown={stop}><Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className="mnemonic-dialog">
-      <DialogTitle className="mnemonic-dialog-title"><strong lang="zh-CN">{mnemonic.glyph}</strong>{facts?.pinyin ? <span className="mnemonic-dialog-pinyin pinyin">{facts.pinyin}</span> : <span>Memory picture</span>}{facts?.onListen && <button type="button" className="mnemonic-dialog-listen" aria-label={facts.listenLabel ?? `Listen to ${mnemonic.glyph}`} title="Listen" onClick={facts.onListen}><Volume2/></button>}</DialogTitle>
-      {facts?.meaning && <p className="mnemonic-dialog-meaning">{facts.meaning}</p>}
-      <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`}/>
+      {/* The title keeps only the glyph for context; the pinyin, speaker and translation are
+          drawn on the picture itself, right of its hanzi (MnemonicPicture facts). */}
+      <DialogTitle className="mnemonic-dialog-title"><strong lang="zh-CN">{mnemonic.glyph}</strong><span>Memory picture</span></DialogTitle>
+      <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`} facts={facts}/>
       <DialogDescription className="mnemonic-dialog-note">Memory helper for <span lang="zh-CN">{mnemonic.glyph}</span> · not its etymology.</DialogDescription>
     </DialogContent>
   </Dialog></span>;
