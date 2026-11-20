@@ -4035,7 +4035,7 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 /* The drawn glyph sits in the pictures' character area (left 7%–52%, top 3.2%–39% of the height),
    which is where their own ink was covered; top is in container units so it never depends on the
    band height, and the picture is square so 1cqw is 1% of its height too. */
-.mnemonic-picture-hanzi { position: absolute; left: 7%; top: 3.2cqw; width: 45cqw; height: 36cqw; display: flex; align-items: center; justify-content: center; font-family: var(--font-hanzi); font-size: 38cqw; font-weight: 400; line-height: 1; color: var(--mnemonic-ink); }
+.mnemonic-picture-hanzi { position: absolute; left: 3%; top: 3.2cqw; width: 36cqw; height: 36cqw; display: flex; align-items: center; justify-content: center; font-family: var(--font-hanzi); font-size: 31cqw; font-weight: 400; line-height: 1; color: var(--mnemonic-ink); }
 .mnemonic-preview:hover { border-color: var(--primary); transform: scale(1.03); }
 .mnemonic-preview:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 .mnemonic-dialog { width: min(92vw, 560px); max-width: min(92vw, 560px); gap: 12px; padding: 18px; }
@@ -4044,7 +4044,7 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 /* The popup's facts live on the picture's empty top area, right of the drawn hanzi (which
    occupies the left ~52cqw). Everything is in container units so popup and picture scale
    together, and the block is capped at the top half so it never reaches the illustration. */
-.mnemonic-picture-facts { position: absolute; left: 56%; top: 3.2cqw; width: 41%; max-height: 44cqw; overflow: hidden; display: flex; flex-direction: column; gap: 1.6cqw; color: var(--mnemonic-ink); }
+.mnemonic-picture-facts { position: absolute; left: 42%; top: 3.2cqw; width: 55%; max-height: 44cqw; overflow: hidden; display: flex; flex-direction: column; gap: 1.6cqw; color: var(--mnemonic-ink); }
 .mnemonic-picture-pinyin { display: inline-flex; align-items: center; gap: 2cqw; font-size: 8cqw; font-weight: 500; line-height: 1.1; }
 .mnemonic-picture-listen { display: inline-flex; align-items: center; justify-content: center; width: 9cqw; height: 9cqw; border-radius: 2cqw; color: var(--mnemonic-ink); cursor: pointer; }
 .mnemonic-picture-listen svg { width: 6.5cqw; height: 6.5cqw; }
