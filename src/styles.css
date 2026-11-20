@@ -1708,6 +1708,13 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   .library-per-page > .library-per-page-label { margin-right: 4px; }
   html .catalog-pagination .catalog-pagination-summary .library-per-page button { width: auto; min-width: 24px; padding: 0 2px; }
   .library-per-page button[aria-label='50 per page']:not([aria-pressed='true']) { display: none; }
+  /* Long catalogues ("241 of 763", "2401–2410 of 7,622 +1,915") no longer fit one line: the
+     row wraps instead of overlapping. The left cluster dissolves into the row so the pager,
+     the range and Per page wrap as separate pieces in reading order — the range drops under
+     the pager and Per page stays at the right end of whichever line it lands on. */
+  .catalog-pagination, html[data-display-size='comfortable'] .catalog-pagination { flex-wrap: wrap; row-gap: 2px; }
+  .catalog-pagination > .catalog-pagination-left { display: contents; }
+  .catalog-pagination > .catalog-pagination-summary { margin-left: auto; }
 }
 @media (max-width: 480px) {
   /* Narrow phones drop the "Page" and "Per page" words; both groups keep their accessible names. */
