@@ -28,6 +28,7 @@ import { loadStrokeGeometry, StrokeDataUnavailable, type ComponentOccurrence, ty
 import { formatStrokeIndices, strokeNames } from '@/lib/stroke-names';
 import { historicalRadicalHeading, orderedRadicalForms, practiceStrokeNames, radicalFamily, radicalForm, radicalForms, radicalStrokes, type RadicalForm } from '@/lib/radical-strokes';
 import { RadicalForms } from './radical-forms';
+import { isRadicalSubstitute } from '@/lib/radical-substitute';
 import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms';
 import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
 import { PracticeHeader, type PracticeDetails } from './practice-header';
@@ -1077,7 +1078,9 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // A form that is both a radical and Traditional (訁, 糹, 戶…) carries both classes so the
   // title glyph takes the merged --trad-radical ink, matching its form tile.
   const radicalInk = Boolean(radId) || kindLabel === 'Radical';
-  const practiceInk = traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
+  // A selected radical-family substitute (西 under 襾) wears its own brown ink, matching its form tile.
+  const substituteInk = Boolean(familyId && radicalSelection && isRadicalSubstitute(familyId, radicalSelection.key));
+  const practiceInk = substituteInk ? 'card-ink-substitute' : traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   // Radicals split their strokes by their own decomposition exactly like characters (止 → 上 1,2,4 +
   // 丨 3, owner's choice). Only the exact glyph's own enrichment is used, and useCharacterEnrichment
   // has already validated it against this glyph's tree and the very stroke geometry the writer

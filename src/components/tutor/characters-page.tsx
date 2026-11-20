@@ -50,6 +50,7 @@ import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning, cardReadingSplit, glyphPresentation } from '@/lib/glyph-presentation';
 import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
+import { isRadicalSubstitute, radicalSubstituteEntries } from '@/lib/radical-substitute';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { DraftFilterForm } from './filter-form';
 import { LibraryTools } from './library-tools';
@@ -91,10 +92,11 @@ function radicalFormIsTraditional(glyph: string, familyId: number, head: boolean
   return historicalRadicalHeading(glyph, familyId) || (!head && glyphScript(glyph) === 'Traditional');
 }
 /** Distinct forms shown on a radical family card, in the reference selector's order,
- * each flagged with the purple rule above. */
+ * each flagged with the purple rule above. Substitutes (radical-substitute.ts, 西 under 襾)
+ * have their own card, so the family card never shows them beside its own reading. */
 function radicalCardForms(familyId: number) {
   const family = radicalFamily(familyId);
-  const glyphs = family ? [...new Set(orderedRadicalForms(family).map(form => form.character))] : [];
+  const glyphs = family ? [...new Set(orderedRadicalForms(family).filter(form => !isRadicalSubstitute(familyId, form.key)).map(form => form.character))] : [];
   return glyphs.map((glyph, index) => ({ glyph, traditional: radicalFormIsTraditional(glyph, familyId, index === 0) }));
 }
 /**
@@ -109,7 +111,8 @@ function radicalMnemonicFamily(heading: LibraryEntry, slow: boolean, onError: (e
   const family = heading.kangxiIndex ? radicalFamily(heading.kangxiIndex) : undefined;
   if (!family) return undefined;
   const seen = new Set<string>();
-  const pictured = orderedRadicalForms(family).filter(form => !seen.has(form.character) && seen.add(form.character) && mnemonicFor(form.character));
+  // Substitutes keep their own picture on their own card, never in the family's popup.
+  const pictured = orderedRadicalForms(family).filter(form => !isRadicalSubstitute(family.id, form.key) && !seen.has(form.character) && seen.add(form.character) && mnemonicFor(form.character));
   if (pictured.length < 2) return undefined;
   return { familyId: family.id, choices: () => pictured.map((form): MnemonicChoice => {
     const mnemonic = mnemonicFor(form.character)!;
@@ -232,7 +235,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   // heading or a Traditional-script form in Practice's mixed radical-Traditional ink
   // (--trad-radical, as on its tile and Practice's title), gold otherwise.
   const radicalFamilyRecord = kind === 'Radicals' && heading.kangxiIndex ? radicalFamily(heading.kangxiIndex) : undefined;
-  const radicalTitleInk = radicalFamilyRecord ? (historicalRadicalHeading(entry.hanzi, radicalFamilyRecord.id) || glyphScript(entry.hanzi) === 'Traditional' ? 'traditional-character card-ink-radical' : 'card-ink-radical') : '';
+  // A selected substitute (西 under 襾) wears its own brown ink instead: an associated glyph, not a variant.
+  const substituteSelected = Boolean(radicalFamilyRecord && form && isRadicalSubstitute(radicalFamilyRecord.id, form.key));
+  const radicalTitleInk = substituteSelected ? 'card-ink-substitute' : radicalFamilyRecord ? (historicalRadicalHeading(entry.hanzi, radicalFamilyRecord.id) || glyphScript(entry.hanzi) === 'Traditional' ? 'traditional-character card-ink-radical' : 'card-ink-radical') : '';
   const radicalSwitch = radicalFamilyRecord && orderedRadicalForms(radicalFamilyRecord).length > 1 ? <RadicalForms familyId={radicalFamilyRecord.id} selectedKey={form?.key ?? radicalFamilyRecord.forms.find(item => item.character === heading.hanzi)?.key} hideLabel layout="switch"/> : undefined;
   // Characters/Components with other script (or component-family) forms follow the same
   // pattern: the record's own hanzi in the title, Practice's form switch below the meaning
@@ -245,12 +250,12 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   // Memory picture: the shown form's own picture first; otherwise a radical family shares its one
   // picture across every form (owner's choice: #162 shows 辶's picture on 辵 too), labelled with the
   // form it belongs to, so it is never presented as the selected form's own.
-  const mnemonic = kind === 'Strokes' ? null : mnemonicFor(entry.hanzi) ?? (radicalFamilyRecord ? cardMnemonic(radicalCardForms(radicalFamilyRecord.id).map(item => item.glyph)) : null);
+  const mnemonic = kind === 'Strokes' ? null : mnemonicFor(entry.hanzi) ?? (radicalFamilyRecord && !substituteSelected ? cardMnemonic(radicalCardForms(radicalFamilyRecord.id).map(item => item.glyph)) : null);
   // The popup repeats the title's own translation, including a radical form's component-form meaning.
   const detailMnemonicMeaning = kind === 'Radicals' && form ? fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : shownMeaning;
   const detailMnemonicFacts: MnemonicFacts = { pinyin: fallback ? fallback.pinyin : info.reading || undefined, meaning: detailMnemonicMeaning || undefined, ...(audioAvailable ? { onListen: () => { void listen(); } } : {}) };
   return <section className={`catalog-detail ${kind === 'Radicals' && historicalRadicalHeading(entry.hanzi, heading.kangxiIndex) ? 'historical-radical-detail' : ''}`} aria-label={`Details for ${entry.hanzi}`}>
-    <RecordDetailTitle glyphAside={mnemonic ? <MnemonicPreview mnemonic={mnemonic} labelled={mnemonic.glyph !== entry.hanzi} facts={detailMnemonicFacts} family={kind === 'Radicals' ? radicalMnemonicFamily(heading, preferences.slow, setAudioError, { glyph: entry.hanzi, facts: detailMnemonicFacts }) : undefined}/> : undefined} hanzi={kind === 'Radicals' ? shownGlyph(entry.hanzi) : entry.hanzi} source={scriptNote ? <>{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}<br/>{scriptNote}</> : info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined}  glyphClassName={radicalTitleInk} formSwitch={radicalSwitch ?? scriptSwitch} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning}; ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : shownMeaning} script={entry.script} readingsInMeaning={readingsInMeaning} meaningContent={perReading ? <ReadingMeanings items={perReading.map(item => ({ ...item, parts: kind === 'Radicals' ? null : meaningPointers(entry.hanzi, entry.meaning, item.meaning, item.reading) }))} speaker={readingsInMeaning && spoken ? reading => <><GlyphReadingSpeaker spoken={spoken} reading={reading} variant="header" onError={setAudioError}/><SoundChartLink reading={reading} from={entry.hanzi} variant="header"/></> : undefined}/> : pointedMeaning ? <PointedMeaning parts={pointedMeaning}/> : undefined} pinyinContent={spoken && reading && isMultiReading(reading) ? <MultiReadingSpeakers spoken={spoken} reading={reading} variant="header" prefix={!fallback && info.componentName ? 'Component name · ' : undefined} onError={setAudioError} chartFrom={kind !== 'Strokes' ? entry.hanzi : undefined}/> : undefined} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}
+    <RecordDetailTitle glyphAside={mnemonic ? <MnemonicPreview mnemonic={mnemonic} labelled={mnemonic.glyph !== entry.hanzi} facts={detailMnemonicFacts} family={kind === 'Radicals' && !substituteSelected ? radicalMnemonicFamily(heading, preferences.slow, setAudioError, { glyph: entry.hanzi, facts: detailMnemonicFacts }) : undefined}/> : undefined} hanzi={kind === 'Radicals' ? shownGlyph(entry.hanzi) : entry.hanzi} source={scriptNote ? <>{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}<br/>{scriptNote}</> : info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'} pill={kind === 'Radicals' && kangxiNumber ? <span className="word-hsk-id" title="Official Kangxi radical index">Radical #{kangxiNumber}</span> : kind === 'Characters' || kind === 'Components' ? <span className="practice-kind">{kind === 'Components' ? 'Component' : info.label}</span> : undefined}  glyphClassName={radicalTitleInk} formSwitch={radicalSwitch ?? scriptSwitch} pinyin={fallback ? fallback.pinyin : info.componentName ? `Component name · ${info.reading}` : info.reading} pinyinFallback={fallback ? '' : info.readingFallback} meaning={kind === 'Radicals' && form && fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : kind === 'Radicals' && form ? radicalVariantMeaning(entry.hanzi, info.meaning, heading.kangxiIndex) ?? info.meaning : kind === 'Components' && fallback?.meaning ? (/component form of/i.test(info.meaning) ? info.meaning : `${fallback.meaning}; ${info.meaning}`) : kind === 'Components' ? stripKangxiLabel(info.meaning) : shownMeaning} script={entry.script} readingsInMeaning={readingsInMeaning} meaningContent={perReading ? <ReadingMeanings items={perReading.map(item => ({ ...item, parts: kind === 'Radicals' ? null : meaningPointers(entry.hanzi, entry.meaning, item.meaning, item.reading) }))} speaker={readingsInMeaning && spoken ? reading => <><GlyphReadingSpeaker spoken={spoken} reading={reading} variant="header" onError={setAudioError}/><SoundChartLink reading={reading} from={entry.hanzi} variant="header"/></> : undefined}/> : pointedMeaning ? <PointedMeaning parts={pointedMeaning}/> : undefined} pinyinContent={spoken && reading && isMultiReading(reading) ? <MultiReadingSpeakers spoken={spoken} reading={reading} variant="header" prefix={!fallback && info.componentName ? 'Component name · ' : undefined} onError={setAudioError} chartFrom={kind !== 'Strokes' ? entry.hanzi : undefined}/> : undefined} audio={<Button variant="ghost" size="icon" className={recording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${spoken ?? entry.hanzi}` : `No audio available for ${spoken ?? entry.hanzi}`} title={audioAvailable ? recording ? 'Listen to pronunciation' : 'Browser speech · no recording for this character' : undefined} onClick={listen}><Volume2/></Button>}
       // Beside the speaker: this exact reading's Sound chart card (Glyphs only, never Strokes).
       chartLink={kind !== 'Strokes' && reading ? <SoundChartLink reading={reading} from={entry.hanzi} variant="header"/> : undefined}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
@@ -381,7 +386,10 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
   // Characters/Components whose head glyph is itself a sourced Kangxi radical (白, 口, 刀)
   // wear the gold 部 stamp and ink too; exact source identities only, never shape.
-  const radicalTile = isRadicalGlyph(entry, kind);
+  // A substitute card (radical-substitute.ts: 西 under 襾, its own sound and meaning) is an
+  // associated glyph, not a radical form: brown identity ink and a "Substitute" pill, no gold stamp.
+  const substitute = kind === 'Radicals' && isRadicalSubstitute(entry.kangxiIndex, entry.radicalVariant);
+  const radicalTile = !substitute && isRadicalGlyph(entry, kind);
   // Comfortable (List) cards: labelled Details/Trace/Recall row with the bookmark icon at its right end.
   const comfortable = preferences.libraryView === 'list';
   // Characters cards also show their recorded traditional forms (Unihan script groups) beside the simplified head;
@@ -462,13 +470,13 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // that is itself a radical reads gold), green for Characters, foreground for Components. Traditional wins,
   // then radical; Strokes cards keep the default accent.
   // Shared with Start's random cards (src/lib/card-ink.ts); `is-traditional` itself is added below.
-  const ink = glyphCardInk(kind, entry.script, radicalTile);
+  const ink = substitute ? 'card-ink-substitute' : glyphCardInk(kind, entry.script, radicalTile);
   const cardInk = ink ? `card-ink${ink === 'is-traditional' ? '' : ` ${ink}`}` : '';
   return <article data-entry-id={entry.id} className={`word-card catalog-card ${kind === 'Radicals' ? 'radical-family-card' : ''} ${kind === 'Strokes' ? 'stroke-card' : ''} ${displayedForms.length <= 2 ? 'few-forms' : ''} ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${cardInk} ${selected ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(entry.id); }}>
     {/* The library tab already names the kind, so the top row carries no category word: it opens with
         rank · strokes, then pills (a gold "Variant" pill replaces the old COMPONENT VARIANT label).
         Stroke cards have no metadata or indicators, so they drop the top row entirely. */}
-    {header !== undefined ? header : kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
+    {header !== undefined ? header : kind !== 'Strokes' && <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{metadata !== null && <CardTopMeta lead>{metadata}</CardTopMeta>}{entry.kangxiIndex !== undefined && <RadicalPill number={entry.kangxiIndex} title="Official Kangxi radical index"/>}{componentRadical.length === 1 && componentRadical[0] && <RadicalPill number={componentRadical[0].number} title="Sourced Kangxi radical identity"/>}{substitute ? <span className="word-hsk-id substitute-pill" title="Substitute: an independent character with its own sound and meaning, classified under this radical">Substitute</span> : info.label === 'Component variant' && <span className="word-hsk-id" title="Component variant form">Variant</span>}{entry.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</span><span className="catalog-card-indicators">{kind === 'Characters' && <CharacterLessonIndicator recordId={entry.id} hanzi={entry.hanzi}/>}{hasExample && (kind === 'Components' || kind === 'Radicals' ? <span title="In a character available"><Type className="catalog-source-icon" aria-label="In a character available"/></span> : <span title="In a sentence available"><MessageSquareText className="catalog-source-icon" aria-label="In a sentence available"/></span>)}{entry.decomposition && <span title="Decomposition available"><GitBranch className="catalog-source-icon" aria-label="Decomposition available"/></span>}</span></div>}
     <Tooltip open={clipped && engaged}><TooltipTrigger asChild>{tile}</TooltipTrigger>
     {clipped && !hideMeaning && <TooltipContent side={side} className="tile-tooltip"><span className="tile-tooltip-head">{!hideHanzi && <strong lang="zh-CN">{entry.hanzi}</strong>}{hidePinyin ? null : hasPinyin ? <span className="pinyin">{fallback ? fallback.pinyin : info.componentName ? `Name · ${info.reading}` : info.reading}</span> : <span className="tile-absent">{info.component ? 'name not recorded' : 'no pinyin'}</span>}</span><p className="tile-tooltip-meaning">{tileMeaning ? meaningText : <MeaningText text="No English meaning recorded in this source."/>}</p>{entry.script === 'Traditional' && <small className="traditional-label">Traditional</small>}</TooltipContent>}
   </Tooltip>
@@ -516,6 +524,9 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const detailLoading = useDetailLoading();
   const setSelectedId = (id: string) => { void detailLoading.run(id, () => { const entry = savedGlyphEntry(id); return set(entry ? { ...savedGlyphDestination(entry), variant: entry.radicalVariant } : { id, variant: undefined }); }); };
   const entries = useMemo(() => libraryEntries(kind), [kind, catalogVersion]);
+  // The Radicals grid adds one card per substitute (radical-substitute.ts), placed by the family's
+  // rank right after its family card; Saved browsing already lists saved forms by their own IDs.
+  const browsable = useMemo(() => kind === 'Radicals' ? [...entries, ...radicalSubstituteEntries()] : entries, [kind, entries, catalogVersion]);
   // Characters, Components and Radicals: rank and stroke lists narrow each other
   // (Strokes has no rank filter, so it lists every recorded count).
   const compatibleFilters = kind !== 'Strokes';
@@ -527,7 +538,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
-  const browsedRecords = filterLibrary(entries, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact', usageUpTo, strokesUpTo);
+  const browsedRecords = filterLibrary(savedOnly ? entries : browsable, query, strokeCount, false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact', usageUpTo, strokesUpTo);
   // Grouped traditional records share their simplified card (a search hitting only 爺 shows 爷's card).
   // Saved browsing keeps exact bookmarked records, so a saved 爺 stays its own card there.
   // Applies to Characters and Components alike (each groups only within its own library).
@@ -542,7 +553,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const browsed = groupScripts ? collapseScriptForms(keptRecords, entries, cardHead) : keptRecords;
   // A selected traditional form is shown in the sheet, but its card, paging and arrows are the head's
   // (when the head exists in this library; otherwise the form keeps its own card).
-  const cardSelectedId = groupScripts && selectedId.startsWith(`${kind}:`) && entries.some(entry => entry.id === `${kind}:${cardHead(selectedId.slice(kind.length + 1))}`) ? `${kind}:${cardHead(selectedId.slice(kind.length + 1))}` : selectedId;
+  // A selected substitute is its own card, so paging, highlight and arrows follow that card.
+  const cardSelectedId = requestedHeading && requestedForm && isRadicalSubstitute(requestedHeading.kangxiIndex, requestedForm.key) ? requestedId : groupScripts && selectedId.startsWith(`${kind}:`) && entries.some(entry => entry.id === `${kind}:${cardHead(selectedId.slice(kind.length + 1))}`) ? `${kind}:${cardHead(selectedId.slice(kind.length + 1))}` : selectedId;
   const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : cardSelectedId);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
@@ -573,7 +585,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     const standalone: Record<string, number> = {};
     let family = 0;
     const counts = Object.fromEntries(kinds.map(k => {
-      const list = filterLibrary(libraryEntries(k), '', '', false, preferences.includeTraditional);
+      const list = filterLibrary(k === 'Radicals' ? [...libraryEntries(k), ...radicalSubstituteEntries()] : libraryEntries(k), '', '', false, preferences.includeTraditional);
       if (k === 'Radicals') {
         // Radical family cards always show every recorded form (independent of the
         // script preference), so the purple count follows the cards themselves.

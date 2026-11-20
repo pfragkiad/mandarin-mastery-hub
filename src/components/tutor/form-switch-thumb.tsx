@@ -60,7 +60,8 @@ export function FormSwitchThumb() {
         tray: { w: row.width - list.clientLeft * 2, h: row.height - list.clientTop * 2 },
         // A form that is both traditional and a radical wears both identity classes, so the
         // frame takes the mixed ink (styles.css .form-switch-thumb.is-radical.is-traditional).
-        ink: selected.classList.contains('is-traditional')
+        // A radical-family substitute (西 under 襾) wears its own brown ink.
+        ink: selected.classList.contains('is-substitute') ? 'is-substitute' : selected.classList.contains('is-traditional')
           ? selected.classList.contains('is-radical') ? 'is-radical is-traditional' : 'is-traditional'
           : selected.classList.contains('is-radical') ? 'is-radical' : 'is-character',
       };

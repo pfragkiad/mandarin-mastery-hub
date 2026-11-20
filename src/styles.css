@@ -4074,3 +4074,22 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 
 /* Practice: the HSK word spelt with this single character, on its own line under the card meaning. */
 .practice-hsk-word { display: block; margin-top: 4px; font-size: 0.9em; color: var(--muted-foreground); }
+
+/* Radical-family substitutes (radical-substitute.ts: 西 under 襾 — an independent character with its
+   own sound and meaning, classified under the radical): one muted brown identity, kept darker and
+   less saturated than radical gold (--hsk-id) and the terracotta pinyin so it never reads as either.
+   It colours the grid card (hanzi, frame, "Substitute" pill), the form-switch tile and its sliding
+   frame, and the detail / Practice title glyph. */
+:root { --substitute: oklch(.43 .06 42); }
+:root.dark { --substitute: oklch(.64 .062 45); }
+.card-ink-substitute { --card-ink: var(--substitute); }
+.word-hsk-id.substitute-pill { color: var(--substitute); border-color: color-mix(in oklab, var(--substitute) 45%, transparent); }
+.catalog-detail-glyph-row > strong.card-ink-substitute { color: var(--card-ink); }
+.radical-form-choice.is-substitute strong { color: var(--substitute); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-traditional):not(.is-radical) strong { color: var(--substitute); }
+.radical-form-choice.is-substitute:is(:hover, :focus-visible) { border-color: var(--substitute); }
+.radical-form-choice.is-substitute:focus-visible { outline-color: var(--substitute); }
+.radical-form-choice.is-substitute.is-selected { color: var(--substitute); border-color: var(--substitute); background: color-mix(in oklab, var(--substitute) 10%, var(--card)); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute { border-color: transparent; background: transparent; }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
+html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitute { background: color-mix(in oklab, var(--substitute) 12%, var(--card)); border-color: var(--substitute); border-width: 2px; }

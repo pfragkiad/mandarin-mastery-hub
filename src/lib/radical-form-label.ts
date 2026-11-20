@@ -10,11 +10,14 @@ import type { CharacterScript } from './learning-preferences';
  *   (貝 beside 贝), and there it is the family's traditional form;
  * - other forms read "Simplified" / "Traditional" only when their own script metadata says so
  *   (讠 / 訁); positional variants such as 氵 or 亻 have no such record and stay "Variant",
- *   so a label never claims a script relationship the data does not hold.
+ *   so a label never claims a script relationship the data does not hold;
+ * - a recorded substitute (radical-substitute.ts: own sound and meaning, 西 under 襾) reads
+ *   "Substitute" — an associated glyph, not a true variant.
  */
-export function radicalFormLabel(form: Pick<RadicalForm, 'character' | 'formKind'>, family: Pick<RadicalFamily, 'canonical'>, script: CharacterScript | undefined): string {
+export function radicalFormLabel(form: Pick<RadicalForm, 'character' | 'formKind'>, family: Pick<RadicalFamily, 'canonical'>, script: CharacterScript | undefined, substitute = false): string {
   if (form.formKind === 'kangxi-heading') return 'Traditional';
   if (form.character === family.canonical) return 'Standard';
+  if (substitute) return 'Substitute';
   if (script === 'Simplified') return 'Simplified';
   if (script === 'Traditional') return 'Traditional';
   return 'Variant';
