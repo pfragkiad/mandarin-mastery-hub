@@ -70,6 +70,13 @@ describe('Hanzi finder records', () => {
     expect(finderRecord('你', 'all', false)?.kind).toBe('Characters');
   });
 
+  it('labels a gold radical form by its library and as a radical (阝 Component · Radical)', () => {
+    expect(finderRecord('阝', 'all', false)?.kindLabel).toBe('Component · Radical');
+    expect(finderRecord('口', 'Characters', false)?.kindLabel).toBe('Character · Radical');
+    expect(finderRecord('木', 'all', false)?.kindLabel).toBe('Radical');
+    expect(finderRecord('你', 'all', false)?.kindLabel).toBe('Character');
+  });
+
   it('leaves Traditional records out unless the preference includes them', () => {
     expect(finderRecord('國', 'Characters', false)).toBeNull();
     expect(finderRecord('國', 'Characters', true)?.kind).toBe('Characters');

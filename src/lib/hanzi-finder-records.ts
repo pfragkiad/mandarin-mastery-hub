@@ -1,5 +1,6 @@
 import { glyphIndex, libraryEntries, radicalVariantEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from './character-library';
 import { catalog } from './catalog-store';
+import { isRadicalGlyph } from './card-ink';
 import { includeScript } from './learning-preferences';
 import finderMissing from '@/data/finder-missing.json';
 
@@ -24,6 +25,12 @@ export const FINDER_SCOPES: { key: FinderScope; label: string }[] = [
   { key: 'all', label: 'All' }, { key: 'Characters', label: 'Characters' }, { key: 'Components', label: 'Components' }, { key: 'Radicals', label: 'Radicals' },
 ];
 const kindLabels: Record<LibraryKind, string> = { Characters: 'Character', Components: 'Component', Radicals: 'Radical', Strokes: 'Stroke' };
+/** The tile label: the library the match opens, plus "· Radical" whenever the tile wears
+ *  radical gold for another library (isRadicalGlyph, the same exact-identity test as the
+ *  ink), so 阝 reads "Component · Radical" and its colour never contradicts its label. */
+function matchLabel(kind: LibraryKind, entry: LibraryEntry): string {
+  return kind !== 'Radicals' && isRadicalGlyph(entry, kind) ? `${kindLabels[kind]} · ${kindLabels.Radicals}` : kindLabels[kind];
+}
 
 const byKind = new WeakMap<LibraryEntry[], Map<string, LibraryEntry>>();
 function record(kind: LibraryKind, glyph: string) {
@@ -41,7 +48,7 @@ export function finderRecord(glyph: string, scope: FinderScope, includeTradition
     return variant && includeScript(variant.script, includeTraditional) ? { kind: 'Radicals', kindLabel: kindLabels.Radicals, entry: variant } : null;
   }
   if (!kind || !includeScript(entry.script, includeTraditional)) return null;
-  return { kind, kindLabel: kindLabels[kind], entry };
+  return { kind, kindLabel: matchLabel(kind, entry), entry };
 }
 
 /** Where a finder match opens: a variant form opens its family card with that exact form
