@@ -3952,17 +3952,22 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 /* The finder's one-line intro: short and readable (the page-heading default is a small muted caption). */
 .page-heading p.finder-intro { font-size: 15px; line-height: 1.5; color: var(--foreground); max-width: none; }
 .finder-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }
-.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 22px 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; transition: border-color .2s; }
+.finder-hit { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 26px 8px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); text-align: center; transition: border-color .2s; }
 .finder-hit:is(:hover, :focus-within) { border-color: var(--card-ink, var(--primary)); }
-/* The tile body opens the glyph's card; the small button at the tile's top makes this match the finder's reference (the same action as a detail card's "Find similar"), so the two controls are siblings, never nested. */
+/* The character box and the reading/meaning block are each a button opening the glyph's card, split
+   around the reference pen (a button cannot hold another); the pen itself is a sibling of both. */
 .finder-hit-open { display: flex; flex-direction: column; align-items: center; gap: 3px; width: 100%; min-width: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: center; cursor: pointer; outline: none; }
-.finder-hit-similar { position: absolute; top: 5px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 0; border: 1px solid transparent; border-radius: 5px; background: none; color: var(--muted-foreground); cursor: pointer; outline-offset: 1px; transition: border-color .2s, color .2s; }
+/* Character + pen share one centred row, so the pen reads as belonging to the hanzi it sits right of. */
+.finder-hit-figure { display: flex; align-items: center; justify-content: center; gap: 4px; width: 100%; min-width: 0; }
+.finder-hit-glyph-open { width: auto; flex: none; }
+.finder-hit-text { margin-top: 6px; }
+.finder-hit-similar { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 0; border: 1px solid transparent; border-radius: 5px; background: none; color: var(--muted-foreground); cursor: pointer; outline-offset: 1px; transition: border-color .2s, color .2s; }
 .finder-hit-similar:is(:hover, :focus-visible) { border-color: var(--card-ink, var(--primary)); color: var(--card-ink, var(--primary)); }
 /* Match glyph sits in a 米字格 square (border, diagonals, centre lines) drawn with the same
    gradients as .writing-grid: plain text over a CSS background, so a long result list never
    mounts a Hanzi Writer instance per tile. */
 /* Match glyph: a small grid square (board diagonals + centre lines) holding the exact recorded outline as SVG; text only when no exact outline exists. */
-.finder-hit-glyph { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; margin: 4px 0 3px; border: 1px solid var(--border); background-image: linear-gradient(45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(-45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to right, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to bottom, transparent 49.6%, var(--border) 50%, transparent 50.4%); color: var(--card-ink, var(--foreground)); }
+.finder-hit-glyph { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; border: 1px solid var(--border); background-image: linear-gradient(45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(-45deg, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to right, transparent 49.6%, var(--border) 50%, transparent 50.4%), linear-gradient(to bottom, transparent 49.6%, var(--border) 50%, transparent 50.4%); color: var(--card-ink, var(--foreground)); }
 .finder-hit-glyph.traditional-character { color: var(--traditional, var(--card-ink)); }
 .finder-hit-glyph svg { width: 100%; height: 100%; display: block; }
 .finder-hit-glyph path { fill: currentColor; }

@@ -45,7 +45,7 @@ import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichm
  *   results. Any edit (draw, Undo, Clear) calls `onLeaveSimilar`, so the URL
  *   then describes an ordinary drawing and the glyph can match again. A glyph
  *   without recorded strokes empties the board and says so instead of guessing.
- * - Every match tile repeats that action at its top (FinderHitTile's
+ * - Every match tile repeats that action beside the drawn character (FinderHitTile's
  *   `finder-hit-similar` button), so a match can become the reference without
  *   opening its card first: `onSimilar` writes the same `similar` URL, the board
  *   takes that glyph's recorded strokes and the results re-run without it.
@@ -190,11 +190,13 @@ function FinderHitGlyph({ glyph, traditional }: { glyph: string; traditional: bo
  *  unrecorded glyph never promises audio. Multi-reading glyphs get one speaker
  *  per exact reading, like the library tiles.
  *
- *  Two controls, never nested: the tile body (`finder-hit-open`) opens the
- *  glyph's card, and the small button at the top of the tile (`finder-hit-similar`)
- *  makes this match the finder's reference instead — the same action a detail
- *  card's "Find similar" performs, so the board takes this glyph's recorded
- *  strokes and the results become "Similar to <glyph>".
+ *  Two controls, never nested: the character box and the reading/meaning block are
+ *  each a `finder-hit-open` button that opens the glyph's card (one button cannot
+ *  hold another, and the pen must sit beside the character, so the tile's open
+ *  target is split in two around it), and the small button to the right of the
+ *  character (`finder-hit-similar`) makes this match the finder's reference
+ *  instead — the same action a detail card's "Find similar" performs, so the board
+ *  takes this glyph's recorded strokes and the results become "Similar to <glyph>".
  *  The same tile is used beside the board and in the list below it. */
 export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOpen: () => void; onSimilar: () => void }) {
   const { preferences } = useWorkspace();
@@ -210,10 +212,13 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
     {/* Frequency rank of the exact record the tile opens (sourced usage order only; unranked shows nothing). */}
     {rank !== null && <span className="finder-hit-rank" title={`${hit.kind === 'Characters' ? 'Corpus frequency' : hit.kind === 'Radicals' ? 'Radical assignment' : 'Component exposure'} rank`}>#{rank.toLocaleString('en-US')}</span>}
     <span className={`accuracy-grade accuracy-grade-${accuracyGrade(hit.score)} finder-hit-score`}>{hit.score}%</span>
-    {/* Make this match the reference: its recorded strokes go on the board and the results re-run. */}
-    <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={13} aria-hidden="true"/></button>
-    <button type="button" className="finder-hit-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
-    <FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/>
+    {/* The character and the pen sit side by side: the box opens the card, the pen
+        makes this match the reference, so the two never share one clickable target. */}
+    <span className="finder-hit-figure">
+      <button type="button" className="finder-hit-open finder-hit-glyph-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}><FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/></button>
+      <button type="button" className="finder-hit-similar" title={`Find similar to ${hit.glyph}`} aria-label={`Find similar to ${hit.glyph}`} onClick={onSimilar}><PenLine size={13} aria-hidden="true"/></button>
+    </span>
+    <button type="button" className="finder-hit-open finder-hit-text" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
       : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
