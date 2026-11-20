@@ -32,7 +32,8 @@ import { ScriptForms, scriptFormRecords, cardFormRecords } from './script-forms'
 import { audioCandidates, audioMessage, playPronunciation, speakTts, stopAllAudio } from '@/lib/audio';
 import { PracticeHeader, type PracticeDetails } from './practice-header';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
-import { glyphPresentation } from '@/lib/glyph-presentation';
+import { cardReadingSplit, glyphPresentation } from '@/lib/glyph-presentation';
+import { vocabularyLedMeaning } from '@/lib/vocabulary-meaning';
 import { nextStepIndex } from '@/lib/step-playback';
 import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
@@ -1034,6 +1035,12 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // the same translation the reference detail card shows (e.g. 訁 follows 讠/言).
   const variantMeaning = familyId ? radicalVariantMeaning(character, ownInfo.meaning, familyId) : null;
   const info = fallback ? { ...ownInfo, reading: fallback.pinyin, speech: fallback.spoken, ...(fallback.meaning ? { meaning: `${fallback.meaning}; component form of ${fallback.headingGlyph}` } : {}) } : variantMeaning ? { ...ownInfo, meaning: variantMeaning } : ownInfo;
+  // A plain character translation leads with its same-glyph HSK word, exactly like its card
+  // (vocabulary-meaning.ts); the separate "HSK word" line stays only for a word read differently
+  // from every recorded reading (长 cháng on a zhǎng record), which the card never combines.
+  const plainCharacter = fact?.kind === 'Character' && !fallback && !variantMeaning && !cardReadingSplit(character, fact.pinyin, fact.meaning);
+  const practiceMeaning = plainCharacter ? vocabularyLedMeaning(character, info.reading, info.meaning) : info.meaning;
+  const wordReadingShown = plainCharacter && Boolean(fact?.word) && info.reading.split('/').some(part => part.trim().normalize('NFC') === fact?.word?.pinyin.trim().normalize('NFC'));
   // Glyphs such as 丷 have both a Characters and a Components record; Practice is per glyph,
   // so it labels the record the learner opened it from (the Components tab), not a guess.
   const openedFromComponents = (() => { const origin = practiceOrigin(); if (!origin) return false; const url = new URL(origin, 'http://x'); return url.pathname === '/characters' && url.searchParams.get('tab') === 'Components'; })();
@@ -1116,7 +1123,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : shownGlyph(character)} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
-      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : <>{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}{fact?.word && fact.word.meaning !== info.meaning && <span className="practice-hsk-word">HSK word{fact.word.pinyin !== info.reading ? <> (<span className="pinyin">{fact.word.pinyin}</span>)</> : null}: {fact.word.meaning}</span>}</>}
+      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : <>{practiceMeaning ? <MeaningText text={practiceMeaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}{fact?.word && fact.word.meaning !== info.meaning && !wordReadingShown && <span className="practice-hsk-word">HSK word{fact.word.pinyin !== info.reading ? <> (<span className="pinyin">{fact.word.pinyin}</span>)</> : null}: {fact.word.meaning}</span>}</>}
       pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes

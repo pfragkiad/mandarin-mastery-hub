@@ -8,6 +8,7 @@ import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finde
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
+import { characterMeaning } from '@/lib/vocabulary-meaning';
 import { radicalVariantFallback, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { detailTrail } from '@/lib/detail-trail';
@@ -221,7 +222,7 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
     {spoken && reading && isMultiReading(reading)
       ? <span className="pinyin finder-hit-pinyin"><MultiReadingSpeakers spoken={spoken} reading={reading} variant="tile" textClassName="pinyin-text" prefix={!fallback && info.componentName ? 'Name · ' : undefined}/></span>
       : <span className="pinyin finder-hit-pinyin"><span className="pinyin-text">{hit.entry.pinyin || fallback?.pinyin || ''}</span><TileSpeaker available={audioAvailable} hasRecording={Boolean(recording)} label={`Listen to ${spoken ?? hit.glyph}`} unavailableLabel={`No audio available for ${spoken ?? hit.glyph}`} title={recording ? 'Listen · Recording' : 'Browser speech · no recording'} onActivate={async () => { if (spoken) await playCharacter(spoken, preferences.slow, reading); }}/></span>}
-    <span className="finder-hit-meaning">{cardMeaning(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
+    <span className="finder-hit-meaning">{(hit.kind === 'Characters' ? characterMeaning : cardMeaning)(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
     <span className="hit-kind">{hit.kindLabel}</span>
     </button>
   </div>;

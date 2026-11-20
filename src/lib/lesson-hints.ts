@@ -1,6 +1,7 @@
 import { catalog } from './catalog-store';
 import { libraryEntries, radicalVariantFallback, type LibraryKind } from './character-library';
-import { cardMeaning, glyphPresentation } from './glyph-presentation';
+import { glyphPresentation } from './glyph-presentation';
+import { characterMeaning } from './vocabulary-meaning';
 import { usageRank } from './usage-frequency';
 import type { CharacterScript } from './learning-preferences';
 
@@ -43,7 +44,7 @@ function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries
   const info = glyphPresentation(glyph, kind, row?.[1] ?? '', row?.[2] ?? '');
   // Components with no own reading inherit their radical family's reading, as in reference cards.
   const fallback = kind === 'Components' && !entry.pinyin ? radicalVariantFallback(glyph, '') : null;
-  const meaning = kind === 'Characters' && row ? cardMeaning(glyph, row[1], row[2]) : fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : entry.meaning;
+  const meaning = kind === 'Characters' && row ? characterMeaning(glyph, row[1], row[2]) : fallback ? `${fallback.meaning}; component form of ${fallback.headingGlyph}` : entry.meaning;
   return {
     glyph, kind, id: entry.id,
     pinyin: fallback?.pinyin ?? entry.pinyin,

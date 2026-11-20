@@ -1,6 +1,7 @@
 import { useLayoutEffect, useMemo, useState, type RefObject } from 'react';
 import { flushSync } from 'react-dom';
 import { lineCount } from './use-side-fit';
+import { splitTopLevel } from '@/lib/vocabulary-meaning';
 
 /**
  * Library-card translation trimming: a translation that would wrap to more than `maxLines`
@@ -54,17 +55,7 @@ export function useSenseTrim(ref: RefObject<HTMLElement | null>, text: string, m
 
 /** Top-level semicolon senses ("heart; mind; soul"); semicolons inside brackets never split. */
 export function splitSenses(text: string): string[] {
-  const senses: string[] = [];
-  let depth = 0;
-  let start = 0;
-  for (let index = 0; index < text.length; index += 1) {
-    const ch = text[index];
-    if (ch === '(' || ch === '（' || ch === '[') depth += 1;
-    else if ((ch === ')' || ch === '）' || ch === ']') && depth > 0) depth -= 1;
-    else if ((ch === ';' || ch === '；') && depth === 0) { senses.push(text.slice(start, index)); start = index + 1; }
-  }
-  senses.push(text.slice(start));
-  return senses.map(sense => sense.trim()).filter(Boolean);
+  return splitTopLevel(text, /[;；]/);
 }
 
 export function joinSenses(senses: string[]): string {

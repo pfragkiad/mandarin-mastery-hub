@@ -26,6 +26,7 @@ import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { referenceCatalog, libraryEntries, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind, type ReferenceKind } from '@/lib/character-library';
 import { cardMeaning } from '@/lib/glyph-presentation';
+import { characterMeaning } from '@/lib/vocabulary-meaning';
 import { useWorkspace } from './workspace';
 import { UNRANKED, usageGroupLabel, usageGroups, usageRank, usageRankMatches, parseUsageGroup } from '@/lib/usage-frequency';
 
@@ -96,7 +97,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       const reference = referenceCatalog.find(c => c.kind === kind);
       if (!reference) return [];
       const libraryKind = libraryKinds[reference.kind];
-      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: cardMeaning(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
+      return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: (libraryKind === 'Characters' ? characterMeaning : cardMeaning)(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
     };
     let base: Card[];
     if (isReference) {
