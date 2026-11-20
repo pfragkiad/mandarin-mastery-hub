@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
+import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
 import { Image as ImageIcon, Volume2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import type { Mnemonic } from '@/lib/mnemonics';
@@ -45,9 +45,26 @@ export function MnemonicPicture({ mnemonic, className, alt = '', lazy = false, c
         hanzi, so the artwork stays the focus; the cropped preview never shows them. */}
     {!crop && facts && <span className="mnemonic-picture-facts">
       {facts.pinyin && <span className="mnemonic-picture-pinyin pinyin">{facts.pinyin}{facts.onListen && <button type="button" className="mnemonic-picture-listen" aria-label={facts.listenLabel ?? `Listen to ${mnemonic.glyph}`} title="Listen" onClick={facts.onListen}><Volume2/></button>}</span>}
-      {facts.meaning && <span className="mnemonic-picture-meaning">{facts.meaning}</span>}
+      {facts.meaning && <FittedMeaning meaning={facts.meaning}/>}
     </span>}
   </span>;
+}
+
+/** FittedMeaning: the popup translation on the picture. Input: the card's meaning. A plain-text
+ *  meaning is split at its semicolons into alternative senses and whole senses are dropped from
+ *  the end until the rest fits the 4-line box, so the picture never shows a sense cut off with an
+ *  ellipsis (the first sense always stays). Other content renders as-is. */
+function FittedMeaning({ meaning }: { meaning: ReactNode }) {
+  const senses = typeof meaning === 'string' ? meaning.split(/\s*;\s*/).filter(Boolean) : null;
+  const [shown, setShown] = useState(senses?.length ?? 0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const key = typeof meaning === 'string' ? meaning : '';
+  useLayoutEffect(() => { setShown(senses?.length ?? 0); }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (el && senses && shown > 1 && el.scrollHeight > el.clientHeight + 1) setShown(shown - 1);
+  });
+  return <span ref={ref} className="mnemonic-picture-meaning">{senses ? senses.slice(0, shown).join('; ') : meaning}</span>;
 }
 
 export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined }) {

@@ -4049,7 +4049,7 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-picture-listen { display: inline-flex; align-items: center; justify-content: center; width: 9cqw; height: 9cqw; border-radius: 2cqw; color: var(--mnemonic-ink); cursor: pointer; }
 .mnemonic-picture-listen svg { width: 6.5cqw; height: 6.5cqw; }
 .mnemonic-picture-listen:hover { background: color-mix(in oklab, var(--mnemonic-ink) 10%, transparent); }
-.mnemonic-picture-meaning { font-size: 4.6cqw; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.mnemonic-picture-meaning { font-size: 4.6cqw; line-height: 1.35; max-height: calc(4.6cqw * 1.35 * 4); overflow: hidden; }
 .mnemonic-dialog-image { width: min(100%, 72vh); margin-inline: auto; border-radius: 10px; }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
 
