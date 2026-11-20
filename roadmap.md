@@ -44,3 +44,4 @@
 - [x] Memory pictures: each picture records its own paper colour (sampled at import), so the covered character band and the preview's letterbox never show a seam; a picture with an empty top can still carry the character (draw true)
 
 - [x] Hanzi finder match tile: percentage centred in the header, pen at the header top-right in the speaker white and slightly larger
+- [x] Memory picture pinyin: darkened terracotta on the cream paper, at least 4.5:1 contrast (WCAG AA)

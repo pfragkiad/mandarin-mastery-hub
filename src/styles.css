@@ -4029,7 +4029,7 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 /* MnemonicPicture: the picture plus the live character overlay. The paper and ink colours belong
    to the owner's pictures (always the same paper), not to the app theme, so they stay fixed in
    both themes. The glyph sits where the pictures draw theirs (left 7%–52%, top 7%–43%). */
-.mnemonic-picture { --mnemonic-paper: #fdf1dd; --mnemonic-ink: #0f4743; position: relative; display: block; aspect-ratio: 1; overflow: hidden; container-type: inline-size; background: var(--mnemonic-paper); }
+.mnemonic-picture { --mnemonic-paper: #fdf1dd; --mnemonic-ink: #0f4743; --mnemonic-pinyin: #8f2f12; position: relative; display: block; aspect-ratio: 1; overflow: hidden; container-type: inline-size; background: var(--mnemonic-paper); }
 .mnemonic-picture img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .mnemonic-picture-band { position: absolute; inset: 0 0 auto 0; background: var(--mnemonic-paper); }
 /* The drawn glyph sits in the pictures' character area (left 7%–52%, top 3.2%–39% of the height),
@@ -4045,6 +4045,10 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
    occupies the left ~52cqw). Everything is in container units so popup and picture scale
    together, and the block is capped at the top half so it never reaches the illustration. */
 .mnemonic-picture-facts { position: absolute; left: 42%; top: 3.2cqw; width: 55%; max-height: 44cqw; overflow: hidden; display: flex; flex-direction: column; gap: 1.6cqw; color: var(--mnemonic-ink); }
+/* Pinyin keeps the app's terracotta identity but darkened for the fixed cream paper: #8f2f12
+   measures at least 6.5:1 on every recorded paper colour (WCAG AA needs 4.5:1); the theme's
+   own pinyin colour is tuned for the dark/light app surfaces, not this paper. */
+.mnemonic-picture-pinyin.pinyin { color: var(--mnemonic-pinyin); }
 .mnemonic-picture-pinyin { display: inline-flex; align-items: center; gap: 2cqw; font-size: 8cqw; font-weight: 500; line-height: 1.1; }
 .mnemonic-picture-listen { display: inline-flex; align-items: center; justify-content: center; width: 9cqw; height: 9cqw; border-radius: 2cqw; color: var(--mnemonic-ink); cursor: pointer; }
 .mnemonic-picture-listen svg { width: 6.5cqw; height: 6.5cqw; }
