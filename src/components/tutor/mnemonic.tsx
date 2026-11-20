@@ -51,8 +51,8 @@ export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemon
   return <span className="mnemonic-dialog-scope" onClick={stop} onDoubleClick={stop} onKeyDown={stop} onPointerDown={stop}><Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className="mnemonic-dialog">
       <DialogTitle className="mnemonic-dialog-title"><strong lang="zh-CN">{mnemonic.glyph}</strong>{facts?.pinyin ? <span className="mnemonic-dialog-pinyin pinyin">{facts.pinyin}</span> : <span>Memory picture</span>}{facts?.onListen && <button type="button" className="mnemonic-dialog-listen" aria-label={facts.listenLabel ?? `Listen to ${mnemonic.glyph}`} title="Listen" onClick={facts.onListen}><Volume2/></button>}</DialogTitle>
-      <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`}/>
       {facts?.meaning && <p className="mnemonic-dialog-meaning">{facts.meaning}</p>}
+      <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`}/>
       <DialogDescription className="mnemonic-dialog-note">Memory helper for <span lang="zh-CN">{mnemonic.glyph}</span> · not its etymology.</DialogDescription>
     </DialogContent>
   </Dialog></span>;
