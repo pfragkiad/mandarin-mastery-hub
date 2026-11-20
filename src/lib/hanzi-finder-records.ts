@@ -1,4 +1,5 @@
-import { glyphIndex, libraryEntries, type LibraryEntry, type LibraryKind } from './character-library';
+import { glyphIndex, libraryEntries, radicalVariantEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from './character-library';
+import { catalog } from './catalog-store';
 import { includeScript } from './learning-preferences';
 import finderMissing from '@/data/finder-missing.json';
 
@@ -11,6 +12,12 @@ import finderMissing from '@/data/finder-missing.json';
  * A single-library scope only accepts glyphs that are records of that library.
  * The Traditional preference filters by the exact record's script. Returns null
  * for glyphs outside the scope, never a look-alike substitute.
+ *
+ * Radical variant forms that are not library records (⻏ in family #163) resolve
+ * to their exact family form instead (radicalVariantEntry, Radicals kind), so the
+ * match opens the family card with that form selected. Only a form recorded in
+ * exactly one family qualifies: a glyph shared by several families stays out
+ * rather than picking one.
  */
 export type FinderScope = 'all' | 'Characters' | 'Components' | 'Radicals';
 export const FINDER_SCOPES: { key: FinderScope; label: string }[] = [
@@ -29,8 +36,42 @@ function record(kind: LibraryKind, glyph: string) {
 export function finderRecord(glyph: string, scope: FinderScope, includeTraditional: boolean): { kind: LibraryKind; kindLabel: string; entry: LibraryEntry } | null {
   const kind: LibraryKind | undefined = scope === 'all' ? glyphIndex()[glyph]?.kind : scope;
   const entry = kind ? record(kind, glyph) : undefined;
-  if (!kind || !entry || !includeScript(entry.script, includeTraditional)) return null;
+  if (!entry) {
+    const variant = scope === 'all' || scope === 'Radicals' ? radicalVariantRecord(glyph) : undefined;
+    return variant && includeScript(variant.script, includeTraditional) ? { kind: 'Radicals', kindLabel: kindLabels.Radicals, entry: variant } : null;
+  }
+  if (!kind || !includeScript(entry.script, includeTraditional)) return null;
   return { kind, kindLabel: kindLabels[kind], entry };
+}
+
+/** Where a finder match opens: a variant form opens its family card with that exact form
+ *  selected (family-qualified, like a saved variant); any record opens itself. */
+export function finderDestination(kind: LibraryKind, entry: LibraryEntry) {
+  return entry.radicalVariant ? savedGlyphDestination(entry) : { tab: kind, character: entry.hanzi };
+}
+
+// Variant-only forms by exact glyph, rebuilt when the catalogue (and its radical sidecar) changes.
+const variantCache: { version: number; map: Map<string, LibraryEntry> | null } = { version: -1, map: null };
+/** The exact family-qualified variant entry for a glyph that is a radical-family form but no
+ *  library record, or undefined (not a form, a record already, or a form of several families). */
+function radicalVariantRecord(glyph: string): LibraryEntry | undefined {
+  if (variantCache.version !== catalog.version || !variantCache.map) {
+    const owners = new Map<string, { familyId: number; key: string }[]>();
+    for (const family of catalog.radicalStrokes.families ?? []) for (const form of family.forms) {
+      owners.set(form.character, [...(owners.get(form.character) ?? []), { familyId: family.id, key: form.key }]);
+    }
+    const map = new Map<string, LibraryEntry>();
+    for (const [character, list] of owners) {
+      const only = list.length === 1 ? list[0] : undefined;
+      if (!only || (['Radicals', 'Characters', 'Components'] as LibraryKind[]).some(kind => record(kind, character))) continue;
+      const family = (catalog.radicalStrokes.families ?? []).find(item => item.id === only.familyId);
+      const heading = family && libraryEntries('Radicals').find(entry => entry.kangxiIndex === family.id && entry.hanzi === family.kangxiHeading);
+      const form = family?.forms.find(item => item.key === only.key);
+      if (heading && form) map.set(character, radicalVariantEntry(heading, form));
+    }
+    variantCache.version = catalog.version; variantCache.map = map;
+  }
+  return variantCache.map.get(glyph);
 }
 
 const missing = new Set(finderMissing.missing);
@@ -38,10 +79,12 @@ const missing = new Set(finderMissing.missing);
  * Whether the finder index holds recorded strokes for this exact glyph, decided
  * without fetching the index: the index covers exactly the Characters,
  * Components and Radicals record glyphs minus finder-missing.json (both written
- * by scripts/build-finder-medians.py). Radical-identity aliases and unrecorded
- * variant forms are not records, so they return false and offer no "Find similar".
+ * by scripts/build-finder-medians.py), plus every radical-family form (⻏), which
+ * Practice traces too. Forms without exact recorded geometry (⺿, outlined only
+ * through a reviewed look-alike) are in `missing`, so they offer no "Find similar".
  */
 export function finderCoversGlyph(glyph: string): boolean {
   if (missing.has(glyph)) return false;
-  return (['Radicals', 'Characters', 'Components'] as LibraryKind[]).some(kind => record(kind, glyph) !== undefined);
+  return (['Radicals', 'Characters', 'Components'] as LibraryKind[]).some(kind => record(kind, glyph) !== undefined)
+    || (catalog.radicalStrokes.families ?? []).some(family => family.forms.some(form => form.character === glyph));
 }

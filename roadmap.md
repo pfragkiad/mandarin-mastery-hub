@@ -47,3 +47,5 @@
 - [x] Memory picture pinyin: darkened terracotta on the cream paper, at least 4.5:1 contrast (WCAG AA)
 
 - [x] Substitute identity colour: reddish deep brick, clear of radical gold AND the Traditional purple (dark splits deep glyph / lighter small label)
+- [x] 瞭 detail card: two reviewed per-reading lines (liào look from afar; liǎo to understand), like 了
+- [x] Find similar on radical variant forms such as ⻏ (traceable forms should open the Hanzi finder)

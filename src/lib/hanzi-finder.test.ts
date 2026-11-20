@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { comparableCounts, decodeFinderIndex, findMatches, FINDER_MIN_SCORE, referenceDrawing, type FinderIndexFile, type FinderStroke } from './hanzi-finder';
-import { finderCoversGlyph, finderRecord } from './hanzi-finder-records';
+import { finderCoversGlyph, finderDestination, finderRecord } from './hanzi-finder-records';
 import finderMissing from '@/data/finder-missing.json';
 
 const file = JSON.parse(readFileSync('public/data/finder-medians.json', 'utf8')) as FinderIndexFile;
@@ -99,5 +99,25 @@ describe('Find similar', () => {
     expect(finderMissing.missing).toEqual((file as FinderIndexFile & { missing: string[] }).missing);
     expect(finderCoversGlyph('木')).toBe(true);
     expect(finderCoversGlyph('肀')).toBe(Boolean(file.glyphs['肀']));
+  });
+});
+
+describe('Radical variant forms in the finder', () => {
+  it('⻏ (family #163 right-side form) has its own recorded strokes, so Find similar is offered', () => {
+    expect(referenceDrawing(index, '⻏')).toHaveLength(2);
+    expect(finderCoversGlyph('⻏')).toBe(true);
+  });
+
+  it('a ⻏ match opens the #163 card with exactly that form selected', () => {
+    const hit = finderRecord('⻏', 'all', false);
+    expect(hit?.kind).toBe('Radicals');
+    expect(hit?.entry.radicalVariant).toBe('163-1');
+    expect(finderDestination(hit!.kind, hit!.entry)).toEqual({ tab: 'Radicals', id: 'Radicals:邑', variant: '163-1' });
+    expect(finderRecord('⻏', 'Characters', false)).toBeNull();
+  });
+
+  it('a form outlined only through a look-alike (⺿ via 艹) offers no Find similar', () => {
+    expect(referenceDrawing(index, '⺿')).toBeNull();
+    expect(finderCoversGlyph('⺿')).toBe(false);
   });
 });

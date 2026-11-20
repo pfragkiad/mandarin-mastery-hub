@@ -13,7 +13,9 @@ Sources (recorded geometry only, never inferred):
     but only those recorded under the same exact code point (recordedAs == glyph);
     reviewed look-alike links stay Practice-only so a drawing of 冗 never "finds" ⺴.
 
-Glyph list: every exact glyph in characters.json, components.json and radicals.json.
+Glyph list: every exact glyph in characters.json, components.json and radicals.json,
+then every radical-family form in radical-strokes.json (variant forms such as ⻏ are
+not library records, but Practice traces them, so "Find similar" can use them too).
 Glyphs with no recorded geometry are left out (fail closed) and listed in `missing`.
 
 Encoding: each stroke's median is resampled to POINTS equidistant points in
@@ -86,6 +88,8 @@ def main():
         for file, key in (('characters', 'characters'), ('components', 'components'), ('radicals', 'radicals')):
             rows = json.load(open(os.path.join(ROOT, 'public', 'data', f'{file}.json'), encoding='utf-8'))[key]
             glyphs += [row[0] for row in rows]
+        families = json.load(open(os.path.join(ROOT, 'public', 'data', 'radical-strokes.json'), encoding='utf-8'))['families']
+        glyphs += [form['character'] for family in families for form in family['forms']]
         manifest = json.load(open(os.path.join(ROOT, 'src', 'data', 'supplementary-outlines.json'), encoding='utf-8'))
         index, sources, missing = {}, {}, []
         for glyph in dict.fromkeys(glyphs):

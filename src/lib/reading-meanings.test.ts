@@ -25,7 +25,19 @@ describe('meaning for each reading', () => {
 
   it('a character without a reviewed split keeps its combined meaning (no split)', () => {
     expect(readingMeanings('万')).toBeNull();
-    expect(readingMeaning('瞭', 'liǎo')).toBeUndefined();
+    expect(readingMeaning('万', 'wàn')).toBeUndefined();
+  });
+
+  it('瞭 liǎo means to understand (as in 瞭解), its first listed sense', () => {
+    expect(readingMeaning('瞭', 'liǎo')).toBe('to understand (as in 瞭解); bright, clear');
+  });
+
+  it('瞭 liào means to look from afar (as in 瞭望)', () => {
+    expect(readingMeaning('瞭', 'liào')).toBe('to look from afar (as in 瞭望); clear-sighted');
+  });
+
+  it('瞭 details list liào then liǎo, as recorded', () => {
+    expect(readingMeanings('瞭')?.map(item => item.reading)).toEqual(['liào', 'liǎo']);
   });
 
   it('a later change to the recorded meaning drops the stale split', () => {

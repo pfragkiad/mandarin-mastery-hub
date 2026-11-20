@@ -4,7 +4,7 @@ import { PenLine, Check, Eraser, Radio, Search, Undo2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from './source-info';
 import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, referenceDrawing, type FinderIndex, type FinderStroke } from '@/lib/hanzi-finder';
-import { finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
+import { finderDestination, finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
@@ -202,7 +202,8 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
   const { preferences } = useWorkspace();
   const ink = glyphCardInk(hit.kind, hit.entry.script, isRadicalGlyph(hit.entry, hit.kind));
   const info = glyphPresentation(hit.glyph, hit.kind, hit.entry.pinyin, hit.entry.meaning);
-  const fallback = hit.kind === 'Radicals' || hit.kind === 'Components' ? radicalVariantFallback(hit.glyph, hit.entry.pinyin) : null;
+  // A variant-form match (⻏) is qualified by its exact family + form key, as on its card.
+  const fallback = hit.kind === 'Radicals' || hit.kind === 'Components' ? radicalVariantFallback(hit.glyph, hit.entry.pinyin, hit.entry.radicalVariant ? hit.entry.kangxiIndex : undefined, hit.entry.radicalVariant) : null;
   const spoken = fallback ? fallback.spoken : info.speech;
   const reading = fallback ? fallback.reading : info.reading || null;
   const recording = spoken ? characterRecording(spoken, reading) : null;
@@ -364,14 +365,14 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
   useEffect(() => { detailTrail.clear(); }, []);
   const open = (hit: (typeof hits)[number]) => {
     detailTrail.replace({ label: 'Hanzi finder', href: window.location.href });
-    navigate({ to: '/characters', search: { tab: hit.kind, character: hit.glyph } });
+    navigate({ to: '/characters', search: finderDestination(hit.kind, hit.entry) });
   };
   const { layoutRef, boardRef, sideRef, board, beside } = useFinderLayout();
   const tile = (hit: (typeof hits)[number]) => <FinderHitTile key={hit.glyph} hit={hit} onOpen={() => open(hit)} onSimilar={() => onSimilar(hit.glyph)}/>;
   const status = loadError ? null : !index ? 'Loading stroke data…' : similar && !reference ? `${similar} has no recorded stroke data, so the finder can’t compare it. Draw it on the board instead.` : strokes.length === 0 ? 'Draw a character on the board, one stroke at a time.' : stale ? 'Press Find to compare this drawing.' : hits.length === 0 ? `No glyph matches ${cap}% or more yet. Keep drawing, or Clear and try again.` : null;
 
   return <div className="finder-page library-page">
-    <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder<SourceInfo inline className="detail-footnote">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi)<br/>Glyphs without recorded strokes can’t be found<br/>Percentages show similarity, not certainty</SourceInfo></h1><p className="finder-intro">Draw a character to find it. Each match shows how similar it looks.</p></div></div>
+    <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder<SourceInfo inline className="detail-footnote">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi), plus AnimCJK outlines for a few radical forms<br/>Glyphs without recorded strokes can’t be found<br/>Percentages show similarity, not certainty</SourceInfo></h1><p className="finder-intro">Draw a character to find it. Each match shows how similar it looks.</p></div></div>
     <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
       {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
       <span className="finder-cap" role="group" aria-label="Minimum similarity">
