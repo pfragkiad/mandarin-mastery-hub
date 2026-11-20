@@ -400,9 +400,13 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Characters cards grouping script forms (郁 / 鬱) show each form's own recorded translation when they
   // differ, joined by " / " in tile order, traditional ones purple; identical or empty ones collapse
   // (预 / 預 keeps one line). Components and radical family cards keep their single family meaning.
-  const formMeanings = kind === 'Characters' && multiStrokes ? multiStrokes.reduce<{ text: string; traditional: boolean }[]>((list, form, index) => {
-    const text = index === 0 ? tileMeaning : libraryRecords('Characters').get(form.glyph)?.meaning ?? '';
-    return text && !list.some(item => item.text === text) ? [...list, { text, traditional: form.traditional }] : list;
+  const formMeanings = kind === 'Characters' && multiStrokes ? multiStrokes.reduce<{ text: string; recorded: string; traditional: boolean }[]>((list, form, index) => {
+    // Forms collapse by their own recorded translations: the head's shown text may lead with its
+    // HSK word (vocabulary-meaning.ts), which a traditional form sharing the head's recorded
+    // translation (这 / 這) must not repeat.
+    const recorded = index === 0 ? entry.meaning : libraryRecords('Characters').get(form.glyph)?.meaning ?? '';
+    const text = index === 0 ? tileMeaning : recorded;
+    return text && !list.some(item => item.text === text || item.recorded === recorded) ? [...list, { text, recorded, traditional: form.traditional }] : list;
   }, []) : [];
   // Reviewed sense pointers (干: "dried → 乾", gàn "trunk of tree… → 幹") also mark the grid tile, unlinked
   // because the tile face is one button; the detail card keeps the clickable links.
