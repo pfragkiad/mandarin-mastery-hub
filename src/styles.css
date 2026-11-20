@@ -4025,8 +4025,10 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
    header never swings between a sliver and a banner. It shows only the picture's bottom half,
    which is itself a 2:1 region of the square artwork, so that crop fills the tile undistorted.
    The tile neither grows nor shrinks: when glyph + source + pills leave less than 176px it moves
-   onto its own line (see .catalog-detail-glyph-row) instead of being squeezed. */
-.mnemonic-preview { order: 2; flex: 0 0 176px; align-self: center; aspect-ratio: 2; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--mnemonic-paper, var(--muted)); cursor: zoom-in; transition: border-color .15s ease, transform .15s ease; }
+   onto its own line (see .catalog-detail-glyph-row) instead of being squeezed. It keeps its DOM
+   position right after the source ⓘ (no order override), so the identity pills' margin-left:auto
+   alone pins them to the far right. */
+.mnemonic-preview { flex: 0 0 176px; align-self: center; aspect-ratio: 2; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--mnemonic-paper, var(--muted)); cursor: zoom-in; transition: border-color .15s ease, transform .15s ease; }
 .mnemonic-preview { position: relative; }
 .mnemonic-preview-form { position: absolute; right: 4px; bottom: 4px; min-width: 22px; padding: 1px 4px; border-radius: 6px; font-size: 14px; line-height: 1.3; color: var(--hsk-id); background: color-mix(in oklab, var(--background) 88%, transparent); border: 1px solid var(--border); }
 /* The tile's 2:1 box is exactly the picture's bottom half (a square artwork's lower 1024×512
