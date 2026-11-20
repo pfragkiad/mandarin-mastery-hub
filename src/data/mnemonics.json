@@ -1,4 +1,26 @@
 {
-  "5fc3": { "caption": "Heart and mind", "band": 0, "draw": true, "paper": "#fdebcc" },
-  "8fb6": { "caption": "Walk along a path", "paper": "#fdf1dc" }
+  "2e88": {
+    "caption": "A knife with a bend",
+    "paper": "#fce5c1"
+  },
+  "5200": {
+    "caption": "A woodcarver’s knife",
+    "paper": "#fce4c1",
+    "band": 0,
+    "draw": true
+  },
+  "5202": {
+    "caption": "Two upright blades",
+    "paper": "#fde6c4"
+  },
+  "5fc3": {
+    "caption": "Heart and mind",
+    "band": 0,
+    "draw": true,
+    "paper": "#fdebcc"
+  },
+  "8fb6": {
+    "caption": "Walk along a path",
+    "paper": "#fdf1dc"
+  }
 }

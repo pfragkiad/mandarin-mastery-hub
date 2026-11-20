@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, 
 import { Image as ImageIcon, Volume2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import type { Mnemonic } from '@/lib/mnemonics';
+import { RadicalForms } from './radical-forms';
 
 /**
  * Memory-picture UI (src/lib/mnemonics.ts supplies the exact-glyph pictures).
@@ -32,6 +33,12 @@ import type { Mnemonic } from '@/lib/mnemonics';
  *   translation, shown in the popup header (hanzi · pinyin · speaker) and under the picture. They
  *   are passed in by the card that opened the popup, never looked up here, so the popup repeats
  *   exactly what that card shows.
+ * - MnemonicFamily (optional, radical cards only): the family's forms that own a picture, each with
+ *   its own exact picture and facts, built by the opening card only when the popup opens. With two
+ *   or more, the popup shows the detail card's form switch (RadicalForms layout="switch", limited
+ *   to those forms, pick mode) and picking a tile swaps the picture and facts locally — no
+ *   navigation, so the card behind it keeps its own selection. The tray is keyed by the picked
+ *   form: FormSwitchThumb measures on mount and slides from the previous tile's note.
  */
 const paperStyle = (mnemonic: Mnemonic) => (mnemonic.paper ? { '--mnemonic-paper': mnemonic.paper } as CSSProperties : undefined);
 
@@ -67,7 +74,16 @@ function FittedMeaning({ meaning }: { meaning: ReactNode }) {
   return <span ref={ref} className="mnemonic-picture-meaning">{senses ? senses.slice(0, shown).join('; ') : meaning}</span>;
 }
 
-export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined }) {
+export type MnemonicChoice = { formKey: string; mnemonic: Mnemonic; facts?: MnemonicFacts | undefined };
+export type MnemonicFamily = { familyId: number; choices: () => MnemonicChoice[] };
+
+export function MnemonicDialog({ mnemonic: opened, open, onOpenChange, facts: openedFacts, family }: { mnemonic: Mnemonic; open: boolean; onOpenChange: (open: boolean) => void; facts?: MnemonicFacts | undefined; family?: MnemonicFamily | undefined }) {
+  // Built once per opening; the opened picture starts selected (its exact code point).
+  const [choices] = useState(() => family ? family.choices() : []);
+  const [pickedKey, setPickedKey] = useState(() => choices.find(choice => choice.mnemonic.codePoint === opened.codePoint)?.formKey);
+  const picked = choices.length > 1 ? choices.find(choice => choice.formKey === pickedKey) : undefined;
+  const mnemonic = picked?.mnemonic ?? opened;
+  const facts = picked ? picked.facts : openedFacts;
   // React events from the portal still bubble through this component's ancestors (the grid card's
   // face button, the DetailSheet's arrow-key handler), so the scope span stops them here.
   const stop = (event: SyntheticEvent) => event.stopPropagation();
@@ -76,31 +92,32 @@ export function MnemonicDialog({ mnemonic, open, onOpenChange, facts }: { mnemon
       {/* The title keeps only the glyph for context; the pinyin, speaker and translation are
           drawn on the picture itself, right of its hanzi (MnemonicPicture facts). */}
       <DialogTitle className="mnemonic-dialog-title"><strong lang="zh-CN">{mnemonic.glyph}</strong><span>Memory picture</span></DialogTitle>
+      {family && picked && <div className="catalog-detail-forms mnemonic-dialog-forms"><RadicalForms key={picked.formKey} familyId={family.familyId} selectedKey={picked.formKey} hideLabel layout="switch" onlyKeys={new Set(choices.map(choice => choice.formKey))} onPick={form => setPickedKey(form.key)}/></div>}
       <MnemonicPicture mnemonic={mnemonic} className="mnemonic-dialog-image" alt={mnemonic.caption ?? `Memory picture for ${mnemonic.glyph}`} facts={facts}/>
       <DialogDescription className="mnemonic-dialog-note">Memory helper for <span lang="zh-CN">{mnemonic.glyph}</span> · not its etymology.</DialogDescription>
     </DialogContent>
   </Dialog></span>;
 }
 
-export function TileMnemonicButton({ mnemonic, facts }: { mnemonic: Mnemonic; facts?: MnemonicFacts }) {
+export function TileMnemonicButton({ mnemonic, facts, family }: { mnemonic: Mnemonic; facts?: MnemonicFacts; family?: MnemonicFamily | undefined }) {
   const [open, setOpen] = useState(false);
   const activate = (event: SyntheticEvent) => { event.stopPropagation(); event.preventDefault(); setOpen(true); };
   return <>
     <span role="button" tabIndex={0} className="tile-mnemonic" aria-label={`Show the memory picture for ${mnemonic.glyph}`} title="Memory picture"
       onClick={activate} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') activate(event); }}><ImageIcon/></span>
-    {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts}/>}
+    {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts} family={family}/>}
   </>;
 }
 
 /** `labelled`: the picture belongs to another form of the family (辶 shown on 辵), so a corner chip
  *  names that form and the picture is never read as the selected form's own. */
-export function MnemonicPreview({ mnemonic, labelled = false, facts }: { mnemonic: Mnemonic; labelled?: boolean; facts?: MnemonicFacts }) {
+export function MnemonicPreview({ mnemonic, labelled = false, facts, family }: { mnemonic: Mnemonic; labelled?: boolean; facts?: MnemonicFacts; family?: MnemonicFamily | undefined }) {
   const [open, setOpen] = useState(false);
   return <>
     <button type="button" className="mnemonic-preview" aria-label={`Enlarge the memory picture for ${mnemonic.glyph}`} title={labelled ? `Memory picture for ${mnemonic.glyph} · click to enlarge` : 'Memory picture · click to enlarge'} onClick={() => setOpen(true)} style={paperStyle(mnemonic)}>
       <MnemonicPicture mnemonic={mnemonic} lazy crop/>
       {labelled && <span className="mnemonic-preview-form" lang="zh-CN" aria-hidden="true">{mnemonic.glyph}</span>}
     </button>
-    {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts}/>}
+    {open && <MnemonicDialog mnemonic={mnemonic} open={open} onOpenChange={setOpen} facts={facts} family={family}/>}
   </>;
 }

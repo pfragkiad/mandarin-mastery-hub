@@ -4052,6 +4052,8 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-picture-meaning { font-size: 4.6cqw; line-height: 1.35; max-height: calc(4.6cqw * 1.35 * 4); overflow: hidden; }
 .mnemonic-dialog-image { width: min(100%, 72vh); margin-inline: auto; border-radius: 10px; }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
+/* The radical family's form switch in the popup (same tray as the detail card), left-aligned under the title. */
+.mnemonic-dialog-forms { display: flex; min-width: 0; margin-top: 0; }
 
 /* Practice: the HSK word spelt with this single character, on its own line under the card meaning. */
 .practice-hsk-word { display: block; margin-top: 4px; font-size: 0.9em; color: var(--muted-foreground); }

@@ -4,7 +4,7 @@ import { formSwitchColumns } from '@/lib/form-switch-columns';
 import type { CSSProperties } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
-import { historicalRadicalHeading, orderedRadicalForms, radicalFamily } from '@/lib/radical-strokes';
+import { historicalRadicalHeading, orderedRadicalForms, radicalFamily, type RadicalForm } from '@/lib/radical-strokes';
 import { glyphScript } from '@/lib/character-library';
 import { radicalFormLabel } from '@/lib/radical-form-label';
 import { radicalDisplayGlyph, shownGlyph, standInFormLabel } from '@/lib/radical-display-glyph';
@@ -24,10 +24,13 @@ import type { PracticeMode } from '@/lib/practice-mode';
 // hint: font relics (⺴) also draw their stand-in shape (冗) with a "Unicode variant" label, while
 // borrowed-outline symbols (⺪ ⺷ ⻊) keep their own glyph and usual label; links, keys and aria
 // labels always keep the exact symbol.
-export function RadicalForms({ familyId, selectedKey, destination = 'reference', mode, hideLabel = false, layout = 'tiles', hideGlyph = false }: { familyId: number; selectedKey?: string | undefined; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean; layout?: 'tiles' | 'switch'; hideGlyph?: boolean }) {
+// `onPick` + `onlyKeys` (memory-picture popup): the same switch, limited to the listed form keys,
+// whose tiles are plain buttons calling onPick instead of links, so picking a form changes only
+// the owner's local state (the popup's picture) and never the URL or the card behind it.
+export function RadicalForms({ familyId, selectedKey, destination = 'reference', mode, hideLabel = false, layout = 'tiles', hideGlyph = false, onPick, onlyKeys }: { familyId: number; selectedKey?: string | undefined; destination?: 'reference' | 'practice'; mode?: PracticeMode; hideLabel?: boolean; layout?: 'tiles' | 'switch'; hideGlyph?: boolean; onPick?: ((form: RadicalForm) => void) | undefined; onlyKeys?: ReadonlySet<string> | undefined }) {
   const family = radicalFamily(familyId);
   if (!family) return null;
-  const forms = orderedRadicalForms(family);
+  const forms = orderedRadicalForms(family).filter(form => !onlyKeys || onlyKeys.has(form.key));
   return <div className={`radical-family-section${layout === 'switch' ? ' form-switch' : ''}`}>
     {/* Practice renders the tiles inside its reading panel, where the Kangxi ID
         already appears as a pill — hideLabel drops the redundant heading there. */}
@@ -40,13 +43,16 @@ export function RadicalForms({ familyId, selectedKey, destination = 'reference',
       {layout === 'switch' && <FormSwitchThumb/>}
       {/* Purple marks exact recorded Traditional forms: historical Kangxi headings
           and any variant whose own script metadata says Traditional (e.g. 訁). */}
-      {forms.map(form => <StandInHint key={form.key} glyph={form.character}><Button asChild variant="ghost" className={`radical-form-choice is-radical ${historicalRadicalHeading(form.character, family.id) || glyphScript(form.character) === 'Traditional' ? 'is-traditional' : ''} ${selectedKey === form.key ? 'is-selected' : ''}`}>
-        <Link to={destination === 'practice' ? '/strokes' : '/characters'} search={destination === 'practice' ? { character: form.character, family: family.id, variant: form.key, ...(mode ? { mode } : {}) } : { tab: 'Radicals', id: `Radicals:${family.kangxiHeading}`, variant: form.key }} resetScroll={false} title={radicalDisplayGlyph(form.character) ? undefined : destination === 'practice' ? practiceHint(form.character, selectedKey === form.key) : switchFormHint(form.character, selectedKey === form.key)} aria-label={`${destination === 'practice' ? 'Practice' : 'View'} radical form ${form.character}, ${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'}${family.forms.filter(other => other.character === form.character).length > 1 ? `, ${form.aliases.join(' ')}` : ''}`} aria-current={selectedKey === form.key ? 'true' : undefined}>
-          {layout === 'switch'
+      {forms.map(form => {
+        const className = `radical-form-choice is-radical ${historicalRadicalHeading(form.character, family.id) || glyphScript(form.character) === 'Traditional' ? 'is-traditional' : ''} ${selectedKey === form.key ? 'is-selected' : ''}`;
+        const strokes = `${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'}`;
+        const content = <>{layout === 'switch'
             ? <><FormSwitchGlyph glyph={shownGlyph(form.character)} hidden={hideGlyph}/><span className="form-switch-text"><b>{standInFormLabel(form.character) ?? radicalFormLabel(form, family, glyphScript(form.character))}</b><small>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></span></>
-            : <><strong lang="zh-CN">{shownGlyph(form.character)}</strong><span>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}</span><small>{standInFormLabel(form.character) ?? radicalFormLabel(form, family, glyphScript(form.character))}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></>}
-        </Link>
-      </Button></StandInHint>)}
+            : <><strong lang="zh-CN">{shownGlyph(form.character)}</strong><span>{form.strokeCount} {form.strokeCount === 1 ? 'stroke' : 'strokes'}</span><small>{standInFormLabel(form.character) ?? radicalFormLabel(form, family, glyphScript(form.character))}{family.forms.filter(other => other.character === form.character).length > 1 && <span lang="zh-CN"> · {form.aliases.join(' ')}</span>}</small></>}</>;
+        return <StandInHint key={form.key} glyph={form.character}>{onPick
+          ? <Button type="button" variant="ghost" className={className} title={radicalDisplayGlyph(form.character) ? undefined : selectedKey === form.key ? `Showing the picture for ${form.character}` : `Show the picture for ${form.character}`} aria-label={`Memory picture for radical form ${form.character}, ${strokes}`} aria-pressed={selectedKey === form.key} onClick={() => onPick(form)}>{content}</Button>
+          : <Button asChild variant="ghost" className={className}><Link to={destination === 'practice' ? '/strokes' : '/characters'} search={destination === 'practice' ? { character: form.character, family: family.id, variant: form.key, ...(mode ? { mode } : {}) } : { tab: 'Radicals', id: `Radicals:${family.kangxiHeading}`, variant: form.key }} resetScroll={false} title={radicalDisplayGlyph(form.character) ? undefined : destination === 'practice' ? practiceHint(form.character, selectedKey === form.key) : switchFormHint(form.character, selectedKey === form.key)} aria-label={`${destination === 'practice' ? 'Practice' : 'View'} radical form ${form.character}, ${form.strokeCount} ${form.strokeCount === 1 ? 'stroke' : 'strokes'}${family.forms.filter(other => other.character === form.character).length > 1 ? `, ${form.aliases.join(' ')}` : ''}`} aria-current={selectedKey === form.key ? 'true' : undefined}>{content}</Link></Button>}</StandInHint>;
+      })}
     </div>
   </div>;
 }

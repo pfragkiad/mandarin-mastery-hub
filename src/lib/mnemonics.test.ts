@@ -65,3 +65,17 @@ describe('memory picture character band', () => {
     expect(mnemonicFor('辶')?.paper).toBe('#fdf1dc');
   });
 });
+
+// Owner's #18 pictures: each knife form keeps its own exact picture (named by code point), so the
+// popup's form switch shows 刀, 刂 and ⺈ separately and never one picture for another.
+describe('radical #18 memory pictures', () => {
+  it('gives 刀, 刂 and ⺈ their own pictures', () => {
+    expect(mnemonicFor('刀')?.codePoint).toBe('5200');
+    expect(mnemonicFor('刂')?.codePoint).toBe('5202');
+    expect(mnemonicFor('⺈')?.codePoint).toBe('2e88');
+  });
+  it('draws 刀 on its empty top without covering it', () => {
+    expect(mnemonicFor('刀')?.band).toBe(0);
+    expect(mnemonicFor('刀')?.drawHanzi).toBe(true);
+  });
+});
