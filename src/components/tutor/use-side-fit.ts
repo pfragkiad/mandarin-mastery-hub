@@ -385,7 +385,7 @@ function inlineWidth(el: HTMLElement, text: string): number | null {
 }
 
 /** Rendered line count of an element's inline content (clusters line-box tops). */
-function lineCount(el: HTMLElement): number {
+export function lineCount(el: HTMLElement): number {
   try {
     const range = document.createRange();
     range.selectNodeContents(el);
