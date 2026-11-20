@@ -4052,8 +4052,12 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-picture-meaning { font-size: 4.6cqw; line-height: 1.35; max-height: calc(4.6cqw * 1.35 * 4); overflow: hidden; }
 .mnemonic-dialog-image { width: min(100%, 72vh); margin-inline: auto; border-radius: 10px; }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
-/* The radical family's form switch in the popup (same tray as the detail card), left-aligned under the title. */
-.mnemonic-dialog-forms { display: flex; min-width: 0; margin-top: 0; }
+/* The radical family's form switch in the popup (same tray as the detail card). It takes the
+   picture's own width rule so its left and right edges line up with the artwork beneath it, and
+   the tray stretches across that width instead of shrinking to its tiles. */
+.mnemonic-dialog-forms { display: flex; min-width: 0; margin-top: 0; width: min(100%, 72vh); margin-inline: auto; }
+.mnemonic-dialog-forms .radical-family-section { flex: 1 1 auto; min-width: 0; width: 100%; }
+.mnemonic-dialog-forms .form-switch .radical-form-list { width: 100%; }
 
 /* Practice: the HSK word spelt with this single character, on its own line under the card meaning. */
 .practice-hsk-word { display: block; margin-top: 4px; font-size: 0.9em; color: var(--muted-foreground); }
