@@ -1078,7 +1078,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   // A form that is both a radical and Traditional (訁, 糹, 戶…) carries both classes so the
   // title glyph takes the merged --trad-radical ink, matching its form tile.
   const radicalInk = Boolean(radId) || kindLabel === 'Radical';
-  // A selected radical-family substitute (西 under 襾) wears its own brown ink, matching its form tile.
+  // A selected radical-family substitute (西 under 襾) wears its own olive ink, matching its form tile.
   const substituteInk = Boolean(familyId && radicalSelection && isRadicalSubstitute(familyId, radicalSelection.key));
   const practiceInk = substituteInk ? 'card-ink-substitute' : traditionalRecord ? (radicalInk ? 'is-traditional is-radical' : 'is-traditional') : radicalInk ? 'card-ink-radical' : kindLabel.startsWith('Component') ? 'card-ink-component' : kindLabel === 'Stroke' ? '' : 'card-ink-character';
   // Radicals split their strokes by their own decomposition exactly like characters (止 → 上 1,2,4 +

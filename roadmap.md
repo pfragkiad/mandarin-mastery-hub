@@ -45,3 +45,5 @@
 
 - [x] Hanzi finder match tile: percentage centred in the header, pen at the header top-right in the speaker white and slightly larger
 - [x] Memory picture pinyin: darkened terracotta on the cream paper, at least 4.5:1 contrast (WCAG AA)
+
+- [x] Substitute identity colour: reddish deep brick, clear of radical gold AND the Traditional purple (dark splits deep glyph / lighter small label)

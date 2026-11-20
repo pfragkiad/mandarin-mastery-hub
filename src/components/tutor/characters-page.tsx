@@ -235,7 +235,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   // heading or a Traditional-script form in Practice's mixed radical-Traditional ink
   // (--trad-radical, as on its tile and Practice's title), gold otherwise.
   const radicalFamilyRecord = kind === 'Radicals' && heading.kangxiIndex ? radicalFamily(heading.kangxiIndex) : undefined;
-  // A selected substitute (西 under 襾) wears its own brown ink instead: an associated glyph, not a variant.
+  // A selected substitute (西 under 襾) wears its own olive ink instead: an associated glyph, not a variant.
   const substituteSelected = Boolean(radicalFamilyRecord && form && isRadicalSubstitute(radicalFamilyRecord.id, form.key));
   const radicalTitleInk = substituteSelected ? 'card-ink-substitute' : radicalFamilyRecord ? (historicalRadicalHeading(entry.hanzi, radicalFamilyRecord.id) || glyphScript(entry.hanzi) === 'Traditional' ? 'traditional-character card-ink-radical' : 'card-ink-radical') : '';
   const radicalSwitch = radicalFamilyRecord && orderedRadicalForms(radicalFamilyRecord).length > 1 ? <RadicalForms familyId={radicalFamilyRecord.id} selectedKey={form?.key ?? radicalFamilyRecord.forms.find(item => item.character === heading.hanzi)?.key} hideLabel layout="switch"/> : undefined;
@@ -387,7 +387,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Characters/Components whose head glyph is itself a sourced Kangxi radical (白, 口, 刀)
   // wear the gold 部 stamp and ink too; exact source identities only, never shape.
   // A substitute card (radical-substitute.ts: 西 under 襾, its own sound and meaning) is an
-  // associated glyph, not a radical form: brown identity ink and a "Substitute" pill, no gold stamp.
+  // associated glyph, not a radical form: olive identity ink and a "Substitute" pill, no gold stamp.
   const substitute = kind === 'Radicals' && isRadicalSubstitute(entry.kangxiIndex, entry.radicalVariant);
   const radicalTile = !substitute && isRadicalGlyph(entry, kind);
   // Comfortable (List) cards: labelled Details/Trace/Recall row with the bookmark icon at its right end.

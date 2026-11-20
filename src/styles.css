@@ -4076,20 +4076,28 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .practice-hsk-word { display: block; margin-top: 4px; font-size: 0.9em; color: var(--muted-foreground); }
 
 /* Radical-family substitutes (radical-substitute.ts: 西 under 襾 — an independent character with its
-   own sound and meaning, classified under the radical): one muted brown identity, kept darker and
-   less saturated than radical gold (--hsk-id) and the terracotta pinyin so it never reads as either.
-   It colours the grid card (hanzi, frame, "Substitute" pill), the form-switch tile and its sliding
-   frame, and the detail / Practice title glyph. */
-:root { --substitute: oklch(.43 .06 42); }
-:root.dark { --substitute: oklch(.64 .062 45); }
+   own sound and meaning, classified under the radical): one deep brick identity, unmistakably red.
+   It measures ΔE 25/26 (CIEDE2000, light/dark) from radical gold (--hsk-id) and 33 from the
+   Traditional purple, so it reads as "the radical family's own red" without echoing either. Dark
+   mode splits it in two, because the dark card's AA floor forces small text to be light — and a
+   light red *is* pink: `--substitute` (oklch .57 .17 16, 3.4:1) is the deep brick used wherever the
+   ink is large (the card and detail hanzi, the form tile's glyph, borders, frames, tints), while
+   `--substitute-ink` (oklch .78 .13 16, 7.9:1) carries the small labels (the "Substitute" pill, a
+   selected tile's caption). Rejected by eye along the way: a brown at hue 42-45 (ΔE 14/22 from gold,
+   "almost the same"), a rust at hue 8 (read as pink next to the Traditional purple), and single
+   light reds at C .12 and C .22 (both dusty rose). Weakest neighbour is the terracotta pinyin at
+   ΔE 15. It colours the grid card (hanzi, frame, "Substitute" pill), the form-switch tile and its
+   sliding frame, and the detail / Practice title glyph. */
+:root { --substitute: oklch(.43 .11 14); --substitute-ink: var(--substitute); }
+:root.dark { --substitute: oklch(.57 .17 16); --substitute-ink: oklch(.78 .13 16); }
 .card-ink-substitute { --card-ink: var(--substitute); }
-.word-hsk-id.substitute-pill { color: var(--substitute); border-color: color-mix(in oklab, var(--substitute) 45%, transparent); }
+.word-hsk-id.substitute-pill { color: var(--substitute-ink); border-color: color-mix(in oklab, var(--substitute) 55%, transparent); }
 .catalog-detail-glyph-row > strong.card-ink-substitute { color: var(--card-ink); }
 .radical-form-choice.is-substitute strong { color: var(--substitute); }
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-traditional):not(.is-radical) strong { color: var(--substitute); }
 .radical-form-choice.is-substitute:is(:hover, :focus-visible) { border-color: var(--substitute); }
 .radical-form-choice.is-substitute:focus-visible { outline-color: var(--substitute); }
-.radical-form-choice.is-substitute.is-selected { color: var(--substitute); border-color: var(--substitute); background: color-mix(in oklab, var(--substitute) 10%, var(--card)); }
+.radical-form-choice.is-substitute.is-selected { color: var(--substitute-ink); border-color: var(--substitute); background: color-mix(in oklab, var(--substitute) 10%, var(--card)); }
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute { border-color: transparent; background: transparent; }
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
 html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitute { background: color-mix(in oklab, var(--substitute) 12%, var(--card)); border-color: var(--substitute); border-width: 2px; }
