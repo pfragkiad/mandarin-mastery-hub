@@ -64,3 +64,25 @@ export function splitTopLevel(text: string, separator: RegExp): string[] {
   parts.push(text.slice(start));
   return parts.map(part => part.trim()).filter(Boolean);
 }
+
+/** Comparison key for one translation term: case, a leading "to"/"a"/"an"/"the" and trailing
+ *  punctuation are ignored, so "to assemble" matches "assemble" and "a meeting" matches "meeting". */
+export function termKey(term: string): string {
+  return norm(term).replace(/^(?:to|a|an|the)\s+/, '').replace(/[.。!?]+$/, '').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Script-form translation merging (会 / 會): a further form on a shared Characters card shows only
+ * the comma terms that none of the earlier forms' shown translations already give (compared by
+ * termKey); senses left empty disappear. Returns '' when everything is already covered, so the
+ * card collapses to one translation. Display-only — each form's record keeps its own text.
+ * Example: "can; know how; assemble, meet together; meeting" + "to assemble, meet together;
+ * a meeting; an organization" → "an organization".
+ */
+export function uniqueFormSenses(shown: string[], meaning: string): string {
+  const given = new Set(shown.flatMap(text => splitTopLevel(text, /[·;；,，]/)).map(termKey));
+  return splitTopLevel(meaning, /[;；]/)
+    .map(sense => splitTopLevel(sense, /[,，]/).filter(term => !given.has(termKey(term))).join(', '))
+    .filter(Boolean)
+    .join(TRANSLATION_SEPARATOR);
+}

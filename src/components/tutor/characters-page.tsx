@@ -9,7 +9,7 @@ import { HintBody, SourceInfo } from '@/components/tutor/source-info';
 import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
-import { characterMeaning, vocabularyLedMeaning } from '@/lib/vocabulary-meaning';
+import { characterMeaning, uniqueFormSenses, vocabularyLedMeaning } from '@/lib/vocabulary-meaning';
 import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { RadicalPill } from './radical-pill';
@@ -398,14 +398,16 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Several tiles: one count per tile in tile order ("10 / 15 strokes"), traditional counts purple.
   const multiStrokes = displayedForms.length > 1 ? formStrokeCounts(displayedForms, entry, kind, family?.id) : null;
   // Characters cards grouping script forms (郁 / 鬱) show each form's own recorded translation when they
-  // differ, joined by " / " in tile order, traditional ones purple; identical or empty ones collapse
+  // differ, joined by " / " in tile order, traditional ones purple; identical, already-covered or empty ones collapse
   // (预 / 預 keeps one line). Components and radical family cards keep their single family meaning.
   const formMeanings = kind === 'Characters' && multiStrokes ? multiStrokes.reduce<{ text: string; recorded: string; traditional: boolean }[]>((list, form, index) => {
     // Forms collapse by their own recorded translations: the head's shown text may lead with its
     // HSK word (vocabulary-meaning.ts), which a traditional form sharing the head's recorded
-    // translation (这 / 這) must not repeat.
+    // translation (这 / 這) must not repeat. A further form adds only the terms the earlier forms
+    // don't already give (会 / 會 → "… meeting / an organization"; uniqueFormSenses), and nothing
+    // when all of them are covered.
     const recorded = index === 0 ? entry.meaning : libraryRecords('Characters').get(form.glyph)?.meaning ?? '';
-    const text = index === 0 ? tileMeaning : recorded;
+    const text = index === 0 ? tileMeaning : uniqueFormSenses(list.map(item => item.text), recorded);
     return text && !list.some(item => item.text === text || item.recorded === recorded) ? [...list, { text, recorded, traditional: form.traditional }] : list;
   }, []) : [];
   // Reviewed sense pointers (干: "dried → 乾", gàn "trunk of tree… → 幹") also mark the grid tile, unlinked
