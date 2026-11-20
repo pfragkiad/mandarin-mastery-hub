@@ -1,17 +1,18 @@
 import { cardMeaning, cardReadingSplit } from './glyph-presentation';
 import { vocabularyKind, words, type Word } from './mandarin';
+import { TRANSLATION_SEPARATOR } from './data-contract';
 
 /**
  * Vocabulary-led character translations: when a Characters record's exact glyph is also an HSK
- * vocabulary word (和 hé "and · with") whose translation differs from the glyph's own, the
- * word's translation leads and the glyph's senses follow ("and · with; harmony, peace; peaceful,
+ * vocabulary word (和 hé "and; with") whose translation differs from the glyph's own, the
+ * word's translation leads and the glyph's senses follow ("and; with; harmony, peace; peaceful,
  * calm"). Display-only — no record is rewritten.
  *
  * Rules:
  * - Exact glyph match on single-character vocabulary words (never phrases), whose reading is
  *   exactly one of the record's readings; a word read differently (长 cháng on a zhǎng card) is
  *   skipped so the card's pinyin never fronts another reading's meaning.
- * - Glyph comma terms that the vocabulary already gives are removed (爱 → "love · like; be fond
+ * - Glyph comma terms that the vocabulary already gives are removed (爱 → "love; like; be fond
  *   of"), and a glyph sense left empty disappears.
  * - Records with a reviewed per-reading split (了 le / liǎo) keep that split unchanged.
  */
@@ -34,7 +35,7 @@ export function vocabularyLedMeaning(glyph: string, readings: string, meaning: s
   const recorded = new Set(readings.split('/').map(norm).filter(Boolean));
   const leading = [...new Set(vocabulary.filter(word => recorded.has(norm(word.pinyin)) && word.meaning.trim()).map(word => word.meaning.trim()))];
   if (!leading.length || leading.length === 1 && norm(leading[0]!) === norm(meaning)) return meaning;
-  const vocab = leading.join(' · ');
+  const vocab = leading.join(TRANSLATION_SEPARATOR);
   const given = new Set(leading.flatMap(text => splitTopLevel(text, /[·;,]/)).map(norm));
   const rest = splitTopLevel(meaning, /[;；]/)
     .map(sense => splitTopLevel(sense, /[,，]/).filter(term => !given.has(norm(term))).join(', '))

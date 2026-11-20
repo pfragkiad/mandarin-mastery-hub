@@ -22,7 +22,7 @@ const KEEP_FINAL_PERIOD = /(?:\b(?:etc|e\.g|i\.e|cf|esp|approx|lit|fig|abbr|usu|
  */
 const SENTENCE_TRANSLATIONS = new Set(vocabularyData.entries
   .filter(entry => /[。！？.!?]$/.test(entry.simplified.trim()))
-  .flatMap(entry => [...entry.meanings.map(meaning => meaning.trim()), entry.meanings.join(' · ').trim()]));
+  .flatMap(entry => [...entry.meanings.map(meaning => meaning.trim()), entry.meanings.join(' · ').trim(), entry.meanings.join('; ').trim()]));
 
 export function trimTranslationPeriod(text: string): string {
   const trimmed = text.trimEnd();

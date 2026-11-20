@@ -31,6 +31,9 @@ export type Entry = {
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };
 
+/** Alternative translations of one record are joined with "; " everywhere (vocabulary words,
+ *  glyph cards, Practice), matching the glyph sources' own sense separator. */
+export const TRANSLATION_SEPARATOR = '; ';
 export const levelLabel = (e: Pick<Entry, 'hskLevel' | 'hskVersion'>) => (e.hskLevel && e.hskVersion ? `HSK ${e.hskVersion} · ${e.hskLevel}` : 'Unclassified');
 export const posLabel = (pos: string | null) => pos?.trim() || 'Unspecified';
 
@@ -137,7 +140,7 @@ export const entryTypeLabel = (e: Entry): string =>
 export function entryToWord(e: Entry, categories: Category[]): Word {
   const first = orderExamples(e.examples)[0];
   return {
-    id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(' · '), type: entryTypeLabel(e),
+    id: e.id, hanzi: e.simplified, pinyin: e.pinyinDisplay, meaning: e.meanings.join(TRANSLATION_SEPARATOR), type: entryTypeLabel(e),
     collection: categoryName(categories.find(c => c.id === e.categoryId)?.name ?? 'Uncategorized'), level: levelLabel(e),
     collections: [...new Set([e.categoryId, ...(e.categoryIds ?? [])].flatMap(id => {
       const category = categories.find(c => c.id === id);

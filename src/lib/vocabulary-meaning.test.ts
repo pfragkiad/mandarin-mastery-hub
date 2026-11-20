@@ -3,10 +3,10 @@ import { characterMeaning, vocabularyLedMeaning } from './vocabulary-meaning';
 
 describe('vocabulary-led character translations', () => {
   it('puts the same-glyph vocabulary translation before the character translation (和)', () => {
-    expect(characterMeaning('和', 'hé', 'harmony, peace; peaceful, calm')).toBe('and · with; harmony, peace; peaceful, calm');
+    expect(characterMeaning('和', 'hé', 'harmony, peace; peaceful, calm')).toBe('and; with; harmony, peace; peaceful, calm');
   });
   it('removes character meanings the vocabulary already gives (爱, 八)', () => {
-    expect(vocabularyLedMeaning('爱', 'ài', 'love, be fond of, like', [{ pinyin: 'ài', meaning: 'love · like' }])).toBe('love · like; be fond of');
+    expect(vocabularyLedMeaning('爱', 'ài', 'love, be fond of, like', [{ pinyin: 'ài', meaning: 'love; like' }])).toBe('love; like; be fond of');
     expect(vocabularyLedMeaning('八', 'bā', 'eight; all around, all sides', [{ pinyin: 'bā', meaning: 'eight' }])).toBe('eight; all around, all sides');
   });
   it('leaves an identical translation unchanged', () => {
