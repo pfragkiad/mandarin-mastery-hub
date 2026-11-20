@@ -956,7 +956,7 @@ export function WritingPractice({ decomposition = null, character, onStrokeCount
   </div>;
   return <section className="writing-tool writing-tool-tabbed"><PracticeModeTabs mode={mode} onChange={changeMode}/>{progressRow}<div ref={board} className="writer-board writer-board-fill" style={typeof preferences.practiceCanvasSize === 'number' ? { ['--writer-size' as string]: `${canvasSize}px` } : undefined}><div className="writing-grid">{celebration}<div ref={target} className="hanzi-target"/><button type="button" className="writer-resize-handle" title="Drag to resize · double-click to reset" aria-label="Resize writing square" onPointerDown={startResize} onDoubleClick={resetSize}><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 2.5 2.5 10.5M10.5 6.5 6.5 10.5M10.5 10.5h0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>{highlighted.length > 0 && <svg className="component-stroke-overlay" viewBox="0 0 300 300" aria-label={`Highlighted strokes for ${selected?.glyph ?? component?.glyph}`}><g transform="translate(22, 247) scale(0.25, -0.25)">{highlighted.map(index => <path key={index} data-stroke-index={index} d={strokes[index]?.path}/>)}</g></svg>}{ready && arrows && <StrokeDirectionHints medians={medians} activeStroke={activeStroke}/>} {!ready && <div className="writer-message">{message.includes('couldn’t') ? <Button variant="outline" onClick={() => setRetry(n => n + 1)}>Try again</Button> : message.startsWith('No handwriting outline') ? null : 'Loading…'}</div>}</div></div><WriterStatus message={message} grade={messageGrade}/><div className="writer-controls writer-controls-arranged"><div className="writer-playback">{mode !== 'recall' && <Button disabled={!ready || pausing || (playing && stepMode)} onClick={playing ? pause : play}>{playing ? <Pause/> : <Play/>}<span className="writer-play-label">{playing ? 'Pause' : paused ? 'Resume' : 'Play'}</span></Button>}{mode === 'watch' && <><Button disabled={!ready || playing} variant="outline" title="Draw one stroke at a time" onClick={step}><StepForward/>Step</Button></>}<Button disabled={!ready} variant="outline" title="Reset character" aria-label="Reset character" onClick={reset}><RotateCcw/>Reset</Button>{onResetAll && <Button disabled={!ready} variant="outline" title="Reset every character in this word" aria-label="Reset all characters" onClick={() => { onResetAll(); reset(); }}><RotateCcw/>Reset all</Button>}</div>{canvasSwitches}</div><StrokeGuide decomposition={decomposition} panel={panel} onPanelChange={setPanel} locked={mode === 'recall'} outlineSource={outlineSource} derivedSource={derivedSource} selectedGroup={selectedGroup} onGroupSelect={selectGroup} mapped={groups.some(group => group.id !== 'whole')} key={mode} strokes={strokes} onPlay={playStroke} activeStroke={activeStroke} componentIndices={mode === 'trace' ? strokes.flatMap((_, i) => i < tracePrefix || scores[i] != null ? [i] : []) : highlighted} scores={scores} groups={groups} playing={playing} interactive={mode !== 'recall'} mode={mode}/></section>;
 }
-type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string };
+type CharFact = { pinyin: string; meaning: string; kind: ReferenceKind; note: string; word?: { pinyin: string; meaning: string } };
 
 // Vocabulary and the reference catalog each describe characters. Merge the two so the
 // practice page can show pinyin and a translation for whatever the reader arrives with.
@@ -970,7 +970,12 @@ function charFacts(): Record<string, CharFact> {
   for (const word of words) {
     if (word.hanzi.length > 1) continue;
     const known = index[word.hanzi];
-    index[word.hanzi] = { pinyin: word.pinyin, meaning: word.meaning, kind: known?.kind ?? 'Character', note: known?.note ?? `${word.type} · ${word.collection}` };
+    // The character's own record wins (the card and Practice must agree, 和 hé "harmony");
+    // the HSK word that is spelt with it rides along as `word` for a separate line. Only a
+    // glyph with no catalogue record takes the word's reading and meaning as its own.
+    index[word.hanzi] = known
+      ? { ...known, word: known.word ?? { pinyin: word.pinyin, meaning: word.meaning } }
+      : { pinyin: word.pinyin, meaning: word.meaning, kind: 'Character', note: `${word.type} · ${word.collection}` };
   }
   factsCache = { version: catalog.version, index };
   return index;
@@ -1111,7 +1116,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : shownGlyph(character)} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
-      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}
+      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : <>{info.meaning ? <MeaningText text={info.meaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}{fact?.word && fact.word.meaning !== info.meaning && <span className="practice-hsk-word">HSK word{fact.word.pinyin !== info.reading ? <> (<span className="pinyin">{fact.word.pinyin}</span>)</> : null}: {fact.word.meaning}</span>}</>}
       pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
       after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes

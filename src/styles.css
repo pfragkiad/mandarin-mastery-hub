@@ -4041,3 +4041,6 @@ button.finder-similar-glyph:is(:hover, :focus-visible) { border-color: var(--car
 .mnemonic-dialog-meaning { font-size: 17px; line-height: 1.45; color: var(--foreground); }
 .mnemonic-dialog-image { width: min(100%, 72vh); margin-inline: auto; border-radius: 10px; }
 .mnemonic-dialog-note { font-size: 13px; color: var(--muted-foreground); }
+
+/* Practice: the HSK word spelt with this single character, on its own line under the card meaning. */
+.practice-hsk-word { display: block; margin-top: 4px; font-size: 0.9em; color: var(--muted-foreground); }
