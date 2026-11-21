@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions } from './mandarin';
 describe('Vocabulary filtering', () => {
- it('loads the 501 recorded entries plus one phrase per distinct word example sentence', () => { expect(words).toHaveLength(501 + 790); });
+ it('loads the 501 recorded entries plus one phrase per distinct word example sentence', () => { expect(words).toHaveLength(501 + 991); });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
  it('matches tone-number pinyin even without the pinyin toggle', () => {
    expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');
@@ -26,7 +26,7 @@ describe('Vocabulary filtering', () => {
  it('lists each base part of speech once in the filter options', () => {
    const options = partOfSpeechOptions(words);
    expect(options).toContain('Verb');
-   expect(options).toContain('Measure word');
+   expect(options).toContain('Classifier / Measure Word');
    expect(new Set(options).size).toBe(options.length);
    expect(options.some(o => o.includes('(additional sense)'))).toBe(false);
  });

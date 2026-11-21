@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @source "../src";
 @custom-variant dark (&:is(.dark *));
+/* Level 2 syllabus annotations: 代副形数缀连量, requested as exact Google Fonts text subsets. */
+@font-face { font-family: 'Tutor Vocabulary Kai'; src: url('https://fonts.gstatic.com/l/font?kit=w8gDH20td8wNsI3f40DmtXZb48uPNczN3Y6lg5FDnQn8SL3O5t_fJcZn72A&skey=48fda7aef9028035&v=v11') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+4EE3, U+526F, U+5F62, U+6570, U+7F00, U+8FDE, U+91CF; }
+@font-face { font-family: 'Tutor Vocabulary Serif'; src: url('https://fonts.gstatic.com/l/font?kit=H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWq658Nzo5myOkvPfktQFdj3zWBHcygyuE&skey=37fe335b8fd815cc&v=v36') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+4EE3, U+526F, U+5F62, U+6570, U+7F00, U+8FDE, U+91CF; }
 @font-face {
   font-family: 'BabelStone Han PUA';
   src: url('/__l5e/assets-v1/5c65b901-5acd-4d6b-86e1-a8dc04962204/BabelStoneHanPUA.woff2') format('woff2');

@@ -27,6 +27,7 @@ export type Entry = {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
     primaryTopicId: string; topicIds: string[]; primaryPosId: string; posIds: string[]; posLabels: string[];
     posNote: string | null; verificationStatus: string;
+    syllabusHeadword?: string; syllabusPosZh?: string;
   };
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };

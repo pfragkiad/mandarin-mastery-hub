@@ -47,10 +47,10 @@ describe('Sentence phrases', () => {
       const owner = vocabularyData.entries.find(e => e.id === w.entry?.sentenceSource?.hskFromWordId);
       return owner != null && w.hskId === owner.hsk_index && w.entry?.hskLevel === owner.hskLevel;
     })).toBe(true);
-    // 我们走吧。 is recorded under 吧 (level 1, #4) and 走 (level 2, #495): the higher-level word owns it.
-    const go = derived.find(w => w.hanzi === '我们走吧。')!;
-    expect(go.entry?.sentenceSource?.hskFromWord).toBe('走');
-    expect(go.hskId).toBe(495);
+    // 请开门。 is recorded under 开 (level 1, #97) and 门 (level 2, #400): the higher-level word owns it.
+    const go = derived.find(w => w.hanzi === '请开门。')!;
+    expect(go.entry?.sentenceSource?.hskFromWord).toBe('门');
+    expect(go.hskId).toBe(400);
     expect(go.entry?.hskLevel).toBe(2);
   });
   it('classifies phrases as Conversational, Written or Unclassified from the recorded style', () => {

@@ -3,7 +3,7 @@ import { vocabularyData, entryToWord } from './data-contract';
 
 describe('HSK recorded parts of speech', () => {
   const l1 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level1_1.6.0.json');
-  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx');
+  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level2_1.0.2.json');
   it('enriches all 300 HSK 1 and 200 HSK 2 entries without adding duplicates', () => {
     expect(l1).toHaveLength(300);
     expect(l2).toHaveLength(200);
@@ -25,7 +25,7 @@ describe('HSK recorded parts of speech', () => {
   it('adds Level 2 entries with POS, example sentences, and example pinyin', () => {
     const a = l2.find(e => e.simplified === '啊');
     expect(a?.partOfSpeech).toBe('Particle');
-    expect(a?.examples[0]?.simplified).toBe('啊，原来是你！');
+    expect(a?.examples[0]?.simplified).toBe('你来了啊！');
     expect(a?.examples[0]?.tokens.filter(t => t.kind === 'hanzi').every(t => t.pinyin)).toBe(true);
     expect(l2.every(e => e.examples[0]?.tokens.some(t => t.kind === 'hanzi' && t.pinyin))).toBe(true);
   });

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /** Adapt the versioned HSK example-pairs handoff to the vocabulary API shape.
- * Audits by default; --write replaces every Level 1 record, including phrases.
+ * Shared boundary for the pinned Level 1/2 handoffs; the CLI defaults to Level 1.
+ * Audits by default; --write replaces the selected level's study content.
  * Recorded UUIDs, syllabus identities and audio survive exact ID/headword matches.
  * Pinyin tokenization uses the same fail-closed alignment as sentence rendering.
  */
@@ -18,31 +19,43 @@ const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex
 const requireThat = (condition, message) => { if (!condition) throw new Error(message); };
 const compactReading = value => value.normalize('NFC').toLowerCase().replace(/[\s'’]/g, '');
 // Stable UUIDv5 namespace for new topics and sentences; never regenerate entry UUIDs.
-function identity(value) {
+function identity(value, level = 1) {
   const namespace = Buffer.from('6ba7b8119dad11d180b400c04fd430c8', 'hex');
-  const bytes = createHash('sha1').update(namespace).update(`mandarin-tutor:hsk3-level1:${value}`).digest().subarray(0, 16);
+  const bytes = createHash('sha1').update(namespace).update(`mandarin-tutor:hsk3-level${level}:${value}`).digest().subarray(0, 16);
   bytes[6] = (bytes[6] & 15) | 80; bytes[8] = (bytes[8] & 63) | 128;
   const h = bytes.toString('hex');
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
 }
 
-export function importLevel1({ sourcePath, topicsPath, vocabularyPath, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
+export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
+
+/** Preserve syllabus identities/kinds while replacing only the selected handoff's content.
+ * Level 1 removes legacy unofficial phrases; Level 2 retains all 200 syllabus entries,
+ * including its four explicitly classified phrases, and retires every legacy example.
+ */
+export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
+  requireThat(level === 1 || level === 2, 'Unsupported HSK level');
+  const count = level === 1 ? 300 : 200;
+  const firstId = level === 1 ? 1 : 301, lastId = firstId + count - 1;
   const source = read(sourcePath), topics = read(topicsPath), original = read(vocabularyPath);
   const data = structuredClone(original);
   const inventory = new Set(read(inventoryPath).syllables.map(s => s.base));
   requireThat(source.schema_version === 'hsk-example-pairs/1.2.0', 'Unsupported handoff schema');
-  requireThat(source.data_version === '1.6.0' && source.syllabus.level === 1 && source.syllabus.edition === '2025-11', 'Unexpected dataset version or syllabus');
-  requireThat(source.entries.length === 300 && source.syllabus.entry_count === 300, 'Expected 300 words');
-  requireThat(new Set(source.entries.map(e => e.id)).size === 300 && source.entries.every(e => Number.isInteger(e.id) && e.id >= 1 && e.id <= 300), 'Expected unique IDs 1–300');
-  requireThat(new Set(source.entries.map(e => e.headword)).size === 300, 'Duplicate headwords');
+  requireThat(source.data_version === (level === 1 ? '1.6.0' : '1.0.2') && source.syllabus.level === level && source.syllabus.edition === '2025-11', 'Unexpected dataset version or syllabus');
+  requireThat(source.entries.length === count && source.syllabus.entry_count === count, `Expected ${count} entries`);
+  requireThat(JSON.stringify(source.syllabus.id_range) === JSON.stringify([firstId, lastId]), 'Unexpected syllabus ID range');
+  requireThat(new Set(source.entries.map(e => e.id)).size === count && source.entries.every(e => Number.isInteger(e.id) && e.id >= firstId && e.id <= lastId), `Expected unique IDs ${firstId}–${lastId}`);
+  // Level 2's 过 and 花 each have two sourced entries. The ID/headword check below
+  // preserves those separate records; the displayed form alone is not an identity.
+  if (level === 1) requireThat(new Set(source.entries.map(e => e.headword)).size === count, 'Duplicate headwords');
   requireThat(JSON.stringify(topics) === JSON.stringify(source.taxonomy.topics), 'Topic sidecar differs from the embedded taxonomy');
   const topicMap = new Map(topics.map(t => [t.id, t]));
   const posMap = new Map(source.taxonomy.parts_of_speech.map(p => [p.id, p]));
   requireThat(topicMap.size === topics.length && posMap.size === source.taxonomy.parts_of_speech.length, 'Duplicate taxonomy IDs');
-  const oldLevel = original.entries.filter(e => e.hskLevel === 1);
-  const oldWords = oldLevel.filter(e => e.entryKind === 'word');
-  const byId = new Map(oldWords.map(e => [e.hsk_index, e]));
-  requireThat(oldWords.length === 300 && byId.size === 300, 'Existing Level 1 word identities must be complete and unique');
+  const oldLevel = original.entries.filter(e => e.hskLevel === level);
+  const oldEntries = level === 1 ? oldLevel.filter(e => e.entryKind === 'word') : oldLevel;
+  const byId = new Map(oldEntries.map(e => [e.hsk_index, e]));
+  requireThat(oldEntries.length === count && byId.size === count, `Existing Level ${level} identities must be complete and unique`);
   const sourceRef = id => ({ sourceName: basename(sourcePath), sourceVersion: source.data_version, sourceId: String(id) });
   const inputSha256 = hash(sourcePath);
   const importedAt = new Date().toISOString();
@@ -74,9 +87,12 @@ export function importLevel1({ sourcePath, topicsPath, vocabularyPath, inventory
     requireThat(e.examples.length === 2 && e.examples[0].style === 'conversational' && e.examples[1].style === 'written', `Expected two ordered example styles: ${e.id}`);
     const examples = e.examples.map(ex => {
       requireThat(ex.hanzi?.trim() && ex.english?.trim() && ex.pinyin?.trim(), `Incomplete example: ${e.id}/${ex.style}`);
-      const previous = old.examples.find(x => x.simplified === ex.hanzi);
+      // Level 2 replaces legacy examples even when text matches. Only recordings already
+      // attached to this handoff's exact sentence ID and reading survive a later import.
+      const exampleId = identity(`example:${old.id}:${ex.style}:${ex.hanzi}`, level);
+      const previous = old.examples.find(x => x.simplified === ex.hanzi && (level === 1 || (x.id === exampleId && x.pinyinDisplay === ex.pinyin)));
       return {
-        id: previous?.id ?? identity(`example:${old.id}:${ex.style}:${ex.hanzi}`),
+        id: previous?.id ?? exampleId,
         simplified: ex.hanzi, tokens: tokens(ex.hanzi, ex.pinyin, `${e.id}/${ex.style}`),
         pinyinDisplay: ex.pinyin, english: ex.english, notes: ex.note,
         audio: previous?.audio ?? null,
@@ -96,6 +112,8 @@ export function importLevel1({ sourcePath, topicsPath, vocabularyPath, inventory
         primaryTopicId: e.primary_topic_id, topicIds: e.topic_ids,
         primaryPosId: e.primary_pos_id, posIds: e.pos_ids, posLabels: e.pos_ids.map(id => posMap.get(id).label), posNote: e.pos_note ?? null,
         verificationStatus: source.verification.status,
+        ...(e.syllabus_headword != null ? { syllabusHeadword: e.syllabus_headword } : {}),
+        ...(e.syllabus_pos_zh != null ? { syllabusPosZh: e.syllabus_pos_zh } : {}),
       },
     };
     // Importing an unchanged handoff twice must not churn modification timestamps.
@@ -105,9 +123,10 @@ export function importLevel1({ sourcePath, topicsPath, vocabularyPath, inventory
     return result;
   });
   const imported = new Map(entries.map(e => [e.id, e]));
-  data.entries = original.entries.filter(e => e.hskLevel !== 1 || e.entryKind === 'word').map(e => imported.get(e.id) ?? e);
+  data.entries = original.entries.filter(e => level !== 1 || e.hskLevel !== 1 || e.entryKind === 'word').map(e => imported.get(e.id) ?? e);
   const used = new Set(data.entries.flatMap(e => [e.categoryId, ...(e.categoryIds ?? [])]).filter(Boolean));
-  // Drop only newly orphaned Level 1 topics; other-level category rows stay exact.
+  // Topic IDs deliberately retain the Level 1 namespace: both levels share one taxonomy.
+  // Drop only newly orphaned topics of this level; other-level rows stay exact.
   const previousCategories = new Set(oldLevel.flatMap(e => [e.categoryId, ...(e.categoryIds ?? [])]));
   data.categories = data.categories.filter(c => !categoryMapHas(c.id) && (!previousCategories.has(c.id) || used.has(c.id)));
   data.categories.push(...topicCategories);
@@ -119,10 +138,14 @@ export function importLevel1({ sourcePath, topicsPath, vocabularyPath, inventory
     source: { path: relative(root, sourcePath).replaceAll('\\', '/'), sha256: inputSha256, dataVersion: source.data_version },
     topics: { path: relative(root, topicsPath).replaceAll('\\', '/'), sha256: hash(topicsPath), count: topics.length, matchesEmbeddedTaxonomy: true },
     beforeEntries: original.entries.length, afterEntries: data.entries.length,
-    replacedWords: entries.length, removedLevel1Phrases: oldLevel.filter(e => e.entryKind === 'phrase').length,
+    replacedWords: entries.filter(e => e.entryKind === 'word').length,
+    ...(level === 1 ? { removedLevel1Phrases: oldLevel.filter(e => e.entryKind === 'phrase').length } : {
+      replacedEntries: entries.length, replacedPhrases: entries.filter(e => e.entryKind === 'phrase').length,
+      removedLegacyExamples: oldEntries.flatMap(e => e.examples).filter(ex => !entries.some(e => e.examples.some(next => next.id === ex.id))).length,
+    }),
     preservedWordRecordings: entries.filter(e => e.audio).length,
-    preservedExampleIds: entries.flatMap(e => e.examples).filter(ex => oldWords.some(e => e.examples.some(old => old.id === ex.id))).length,
-    examples: entries.flatMap(e => e.examples).length, alignedHeadwords: entries.length, alignedExamples: 600,
+    preservedExampleIds: entries.flatMap(e => e.examples).filter(ex => oldEntries.some(e => e.examples.some(old => old.id === ex.id))).length,
+    examples: entries.flatMap(e => e.examples).length, alignedHeadwords: entries.length, alignedExamples: count * 2,
     primaryTopicCounts: Object.fromEntries(topics.map(t => [t.id, source.entries.filter(e => e.primary_topic_id === t.id).length])),
     secondaryTopicWords: source.entries.filter(e => e.topic_ids.length > 1).length,
     verification: source.verification,

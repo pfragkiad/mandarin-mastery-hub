@@ -7,7 +7,7 @@ const all = { collection: 'All collections', level: 'All levels', pos: 'All type
 
 describe('vocabularyFacetOptions', () => {
   it('narrows Types to the types recorded at the chosen level', () => {
-    const level = 'HSK 3.0 · 1';
+    const level = 'HSK 3.0 · 2';
     const expected = [...new Set(wordItems.filter(w => w.level === level).flatMap(partOfSpeechList))].sort((a, b) => a.localeCompare(b));
     const facets = vocabularyFacetOptions(wordItems, { ...all, level });
     expect(facets.pos).toEqual(expected);
