@@ -53,3 +53,5 @@
 - [x] Hanzi finder: gold radical-form matches (阝, ⺊) read "Component · Radical" so the label matches the colour
 - [x] Hanzi finder: the Radicals filter also shows component-radicals (阝) and character-radicals (门)
 - [x] Detail card Close returns to the page it was opened from (lesson, finder, Start…), skipping form switches; ‹ › arrows only when opened from the grid
+
+- [x] Detail card Back also skips same-card form switches (hidden when only forms are behind)

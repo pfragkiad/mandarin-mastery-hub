@@ -48,7 +48,9 @@ export function closeTarget(trail: TrailStep[], openedAt: number | null, current
 
 /**
  * Modal top-centred reference with a stationary bar:
- * - Back (only after following a link inside the window) returns to the previous details;
+ * - Back (only after following a link inside the window) returns to the previous details,
+ *   stepping over this card's own form switches exactly like Close, so switching forms
+ *   never changes where Back lands;
  * - "‹ 12 of 103 ›" steps to neighbour cards in the grid (not history) and resets Back;
  *   offered only when the window was opened from its grid (closeTarget null);
  * - Close behaves like Back to the page the window came from (closeTarget), except that
@@ -64,7 +66,9 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
   const returnFocus = useRef<HTMLElement | null>(null);
   const body = useRef<HTMLDivElement>(null);
   const trail = useSyncExternalStore(detailTrail.subscribe, detailTrail.get, detailTrail.get);
-  const back = trail.at(-1);
+  // Back's target is the newest step that is not this card's own form switch: a form
+  // switch only changes the shown form, so Back must land where Close would.
+  const back = [...trail].reverse().find(step => !step.sameCard);
   // Reset only the panel's scroll for a different record; also drop a Back step
   // once history has returned to it (our Back button or the browser's). Steps are
   // keyed by history entry, not URL: switching 亻 → 人 → 亻 by links is a new entry
@@ -82,6 +86,14 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
     const goal = closeTarget(detailTrail.get(), openedAt, now, window.location.pathname);
     if (goal && now !== undefined) { window.history.go(goal.index - now); return; }
     detailTrail.clear(); onClose();
+  };
+  const goBack = () => {
+    // Recomputed at click time: jump straight to the target entry so the same-card
+    // form-switch entries after it are skipped, never walked through one by one.
+    const now = historyPosition().index;
+    const step = [...detailTrail.get()].reverse().find(s => !s.sameCard);
+    if (step?.index !== undefined && now !== undefined && step.index < now) { window.history.go(step.index - now); return; }
+    window.history.back();
   };
   const fromGrid = !target;
   const step = (go?: () => void) => fromGrid && go ? () => { detailTrail.clear(); go(); } : undefined;
@@ -112,7 +124,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
       <DialogDescription className="sr-only">Record details</DialogDescription>
       <div className="detail-sheet-bar">
         <div className="detail-sheet-start">
-          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={() => window.history.back()}><ArrowLeft/><span>{back.label}</span></Button>}
+          {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={goBack}><ArrowLeft/><span>{back.label}</span></Button>}
         </div>
         {inList && <div className="detail-sheet-nav" role="group" aria-label="Neighbouring cards in this list">
           <Button variant="ghost" size="icon" aria-label="Previous card in this list" title="Previous card in this list" disabled={!previous} onClick={previous}><ChevronLeft/></Button>

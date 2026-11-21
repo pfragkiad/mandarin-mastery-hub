@@ -118,6 +118,30 @@ describe('Close returns where the window was opened from', () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
+  it('opened from a lesson: Back also steps over form switches on the same card', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/lessons/l1', 100);
+    detailTrail.replace({ label: 'Lesson (西)', href: window.location.href });
+    visit('/characters?tab=Radicals&id=Radicals:襾', 101);
+    const view = render(sheet(vi.fn(), 'Details for 襾', <div className="form-switch"><a href="/characters?tab=Radicals&id=Radicals:襾&variant=146-2" onClick={e => e.preventDefault()}>西</a></div>));
+    fireEvent.click(screen.getByText('西'));
+    visit('/characters?tab=Radicals&id=Radicals:襾&variant=146-2', 102);
+    view.rerender(sheet(vi.fn(), 'Details for 襾 146-2'));
+    // Back names the lesson, not the previous form of this same card.
+    fireEvent.click(screen.getByRole('button', { name: 'Back to Lesson (西)' }));
+    expect(go).toHaveBeenCalledWith(-2);
+  });
+
+  it('opened from its own grid: a form switch alone offers no Back', () => {
+    visit('/characters?tab=Radicals', 400);
+    visit('/characters?tab=Radicals&id=Radicals:襾', 401);
+    const view = render(sheet(vi.fn(), 'Details for 襾', <div className="form-switch"><a href="/characters?tab=Radicals&id=Radicals:襾&variant=146-2" onClick={e => e.preventDefault()}>西</a></div>));
+    fireEvent.click(screen.getByText('西'));
+    visit('/characters?tab=Radicals&id=Radicals:襾&variant=146-2', 402);
+    view.rerender(sheet(vi.fn(), 'Details for 襾 146-2'));
+    expect(screen.queryByRole('button', { name: /^Back to / })).not.toBeInTheDocument();
+  });
+
   it('reached from another card by a link: Close returns to that card', () => {
     const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
     visit('/characters?id=Characters:了', 200);
