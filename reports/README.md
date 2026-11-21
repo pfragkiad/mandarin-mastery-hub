@@ -8,6 +8,7 @@ Keep standalone audit, notes, and report JSON files here unless application load
 | [character-variants-42-lexical-web-audit.json](character-variants-42-lexical-web-audit.json) | Evidence report for those examples; [readable summary](character-variants-42-lexical-web-audit.md). |
 | [hsk-level1-import.json](hsk-level1-import.json) | Initial Level 1 replacement counts, input checksums, preserved recording/identity checks and source verification limits; [compatibility summary](hsk-level1-import.md). |
 | [hsk-level2-import.json](hsk-level2-import.json) | Initial Level 2 replacement: 200 entries, 400 styled examples, 200 retired legacy example IDs, shared topic checksum and source verification limits; [compatibility summary](hsk-level2-import.md). |
+| [hsk-level2-audio.json](hsk-level2-audio.json) | Exact word/reading audio coverage and pending CDN uploads; [source audit and Lovable handoff state](hsk-level2-audio.md). |
 | [etymology-association-audit.json](etymology-association-audit.json) | Generated Howell/Shuowen association coverage, unmatched/duplicate headwords, contextual review targets and BabelStone exclusions; [review guide](etymology-association-audit.md). No historical interpretation is marked verified. |
 
 The exception is [public/data/radical_variant_etymology_audit.json](../public/data/radical_variant_etymology_audit.json): `src/components/tutor/radical-variant-etymology.tsx` fetches it lazily for variant details. It also supplies the offline contextual-identity importer and its provenance tests, so its public URL remains unchanged.

@@ -77215,7 +77215,12 @@
                 "sourceId": "336"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b427e155-f200-4d41-b45a-e6f51e7061d7/cmn-f3ec06a631ad.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "02829e6b-72cc-5c27-8d57-fb852ce82363",
@@ -77361,7 +77366,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:15:56.202487Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",

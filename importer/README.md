@@ -4,6 +4,8 @@ Store importer-only source files under `importer/data/`, grouped by dataset. Imp
 
 The owner-supplied [HSK Level 1 and Level 2 handoffs](hsk/README.md) remain under `importer/hsk/` with their original raw bytes. Their shared topic sidecar is named [hsk3_topics.json](hsk/hsk3_topics.json). `scripts/import-hsk-level1.mjs` validates 300 Level 1 entries and 600 examples; `scripts/import-hsk-level2.mjs` validates 200 Level 2 entries and 400 examples through the same boundary. Each replaces only its selected level's study content. See that guide for audit/write commands and provenance limits.
 
+The [Level 2 word-audio handoff](data/hsk-audio/README.md) pins the original Shtooka metadata, exact reading matches and audio-cmn checksums. At the owner's request, verified MP3s are staged temporarily under `importer/data/hsk-audio/recordings/` for Lovable to upload; this is an explicit handoff exception, not runtime media storage. Follow [the Lovable upload instructions](data/hsk-audio/LOVABLE_HANDOFF.md) before attaching CDN URLs or removing the temporary files.
+
 ## Radical identities
 
 `scripts/import-radical-identities.py` reads these pinned inputs from `importer/data/radical-identities/`:
