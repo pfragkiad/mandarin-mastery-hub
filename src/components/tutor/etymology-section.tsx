@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ChevronDown, ScrollText } from 'lucide-react';
+import { ChevronDown, History } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
 import { HintBody, SourceInfo } from './source-info';
@@ -159,5 +159,5 @@ export function EtymologyIndicator({ recordId, hanzi }: { recordId: string; hanz
     return () => { live = false; };
   }, [current]);
   if (!current || !hasOwnEtymologyText(current, recordId, hanzi)) return null;
-  return <span title="Etymology notes available"><ScrollText className="catalog-source-icon" aria-label="Etymology notes available"/></span>;
+  return <span title="Etymology notes available"><History className="catalog-source-icon" aria-label="Etymology notes available"/></span>;
 }

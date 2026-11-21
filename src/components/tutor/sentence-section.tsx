@@ -1,5 +1,5 @@
 import { useId, useState, type ReactNode, type SyntheticEvent } from 'react';
-import { ArrowUpRight, ChevronDown, MessageSquareText } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
 
 /**
@@ -18,7 +18,7 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
   return <section className="glyph-usage-section sentence-section" aria-label="In a sentence">
     <div className="sentence-section-head">
-      <h3 className="eyebrow"><MessageSquareText size={13} aria-hidden="true"/>IN A SENTENCE</h3>
+      <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A SENTENCE</h3>
       {source && <a className="find-examples-link" href={source.url} target="_blank" rel="noopener noreferrer" title={`Search ${source.name} for example sentences with ${hanzi} (opens in a new window)`}>
         Find more examples<ExternalExamplesIcon/>
       </a>}
