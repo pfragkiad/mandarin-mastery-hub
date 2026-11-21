@@ -4118,12 +4118,24 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-cho
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
 html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitute { background: color-mix(in oklab, var(--substitute) 12%, var(--card)); border-color: var(--substitute); border-width: 2px; }
 
-/* Etymology section (etymology-section.tsx): each source entry is its own captioned block;
-   source text reads like a translation line, Classical Chinese in the hanzi face. */
-.etymology-section .etymology-entry { display: grid; gap: 4px; margin-top: 10px; }
-.etymology-section .etymology-entry:first-of-type { margin-top: 0; }
-.etymology-section p.glyph-usage-meaning { display: block; margin: 0; line-height: 1.6; }
-.etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 15px; }
+/* Etymology section (etymology-section.tsx): each source is its own softly tinted block with a
+   header row (source name, kind, and Shuowen's Advanced pill), then plain text. Shuowen's
+   Classical Chinese is larger and airier, folded behind the shared "show more" toggle. */
+.etymology-section .etymology-entries { display: grid; gap: 10px; }
+.etymology-section .etymology-entry { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: color-mix(in oklch, var(--muted) 45%, transparent); min-width: 0; }
+.etymology-section .etymology-entry-head { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 4px; }
+.etymology-section .etymology-source-name { font-size: 12px; font-weight: 600; color: var(--foreground); }
+.etymology-section .etymology-source-kind { font-size: 11px; color: var(--muted-foreground); }
+.etymology-section .etymology-level-pill { margin-left: auto; font-size: 9px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; color: var(--experimental); border: 1px solid color-mix(in oklch, var(--experimental) 45%, transparent); border-radius: 999px; padding: 2px 8px; background: transparent; cursor: pointer; transition: background .15s ease; }
+.etymology-section .etymology-level-pill:hover, .etymology-section .etymology-level-pill:focus-visible { background: color-mix(in oklch, var(--experimental) 14%, transparent); outline: none; }
+.etymology-section .etymology-text { margin: 0; font-size: 13px; line-height: 1.65; color: var(--foreground); overflow-wrap: anywhere; }
+.etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 18px; line-height: 1.8; letter-spacing: .06em; }
+.etymology-section .etymology-classical-toggle { justify-self: start; margin-top: 0; margin-left: -6px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-source-name { font-size: 14px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-source-kind { font-size: 13px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-text { font-size: 15px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-classical { font-size: 21px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-level-pill { font-size: 11px; letter-spacing: .5px; }
 .etymology-section .glyph-usage-reference { margin-top: 2px; }
 
 /* Loading placeholders for lazily filled detail sections (section-placeholder.tsx): soft

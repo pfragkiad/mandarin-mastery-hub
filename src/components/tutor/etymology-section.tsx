@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ScrollText } from 'lucide-react';
+import { ChevronDown, ScrollText } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { SourceInfo } from './source-info';
+import { HintBody, SourceInfo } from './source-info';
 import { SectionPlaceholder } from './section-placeholder';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
@@ -19,6 +20,7 @@ import { howellSegments, resolveEtymology, type EtymologyEntry, type EtymologyRe
  * *glossed* senses only gain emphasis), each entry keeps its own attribution, components and
  * radicals only link to the standalone character, and nothing here is ever spoken aloud.
  * The section is hidden when there is neither text nor a record to link (owner's choice).
+ * Each source is its own tinted block; Shuowen's Classical Chinese is marked Advanced and folded.
  */
 const SOURCE_LABEL: Record<EtymologyEntry['sourceId'], { name: string; kind: string }> = {
   howell: { name: 'Lawrence J. Howell', kind: 'author interpretation' },
@@ -30,10 +32,56 @@ const COVERAGE: Record<string, string> = {
   'shuowen-only': 'Only Shuowen Jiezi has this headword',
 };
 
+// Shuowen Jiezi's Classical Chinese starts folded (owner's choice); opening it once is
+// remembered on this device, read after mount so server and first client render agree.
+const CLASSICAL_OPEN_KEY = 'tutor.etymology.classicalOpen';
+function useClassicalOpen(): [boolean, () => void] {
+  const [open, setOpen] = useState(false);
+  useEffect(() => { try { setOpen(localStorage.getItem(CLASSICAL_OPEN_KEY) === '1'); } catch { /* storage unavailable */ } }, []);
+  const toggle = () => setOpen(prev => { try { localStorage.setItem(CLASSICAL_OPEN_KEY, prev ? '0' : '1'); } catch { /* ignore */ } return !prev; });
+  return [open, toggle];
+}
+
+/** "Advanced" level pill on the Shuowen block; tapping it explains why (works on touch, unlike a title). */
+function AdvancedPill({ withHowell }: { withHowell: boolean }) {
+  return <Popover>
+    <PopoverTrigger className="etymology-level-pill" aria-label="Advanced: about this text">Advanced</PopoverTrigger>
+    <PopoverContent className="source-info-popover" align="start"><HintBody>
+      Written in Classical Chinese (文言), the literary language of Xu Shen’s dictionary, compiled around 100 CE.<br/>
+      Its grammar and wording differ from modern Mandarin, so it is hard even for fluent readers.<br/>
+      {withHowell ? 'No modern translation is recorded here; Howell’s note is the learner-friendly reading.' : 'No modern translation is recorded here.'}
+    </HintBody></PopoverContent>
+  </Popover>;
+}
+
+/** One source block: source name + kind on a header row, then the text. Shuowen's Classical
+ *  Chinese is folded behind a remembered toggle and carries the Advanced pill. */
+function EtymologyEntryBlock({ entry, withHowell, classicalOpen, toggleClassical }: { entry: EtymologyEntry; withHowell: boolean; classicalOpen: boolean; toggleClassical: () => void }) {
+  const panelId = useId();
+  const label = SOURCE_LABEL[entry.sourceId];
+  const classical = entry.sourceId === 'shuowen';
+  return <div className={`etymology-entry etymology-entry-${entry.sourceId}`}>
+    <div className="etymology-entry-head">
+      <span className="etymology-source-name">{label.name}</span>
+      <span className="etymology-source-kind">{label.kind}</span>
+      {classical && <AdvancedPill withHowell={withHowell}/>}
+    </div>
+    {classical
+      ? <>
+          {classicalOpen && <p id={panelId} className="etymology-text etymology-classical more-examples-panel" lang="lzh">{entry.text}</p>}
+          <button type="button" className={`more-examples-toggle etymology-classical-toggle${classicalOpen ? ' is-open' : ''}`} aria-expanded={classicalOpen} aria-controls={classicalOpen ? panelId : undefined} onClick={toggleClassical}>
+            <ChevronDown className="more-examples-icon" aria-hidden="true"/>{classicalOpen ? 'Hide Classical Chinese' : 'Show Classical Chinese'}
+          </button>
+        </>
+      : <p className="etymology-text" lang="en">{howellSegments(entry.text).map((part, i) => part.emphasis ? <em key={i}>{part.text}</em> : <span key={i}>{part.text}</span>)}</p>}
+  </div>;
+}
+
 export function EtymologySection(request: EtymologyRequest) {
   const { recordId, glyph, familyId, formKey } = request;
   const [view, setView] = useState<EtymologyView | null | undefined>(undefined);
   const { preferences } = useWorkspace();
+  const [classicalOpen, toggleClassical] = useClassicalOpen();
   useEffect(() => {
     let live = true;
     setView(undefined);
@@ -63,12 +111,7 @@ export function EtymologySection(request: EtymologyRequest) {
   </SourceInfo>;
   let body;
   if (view.status === 'exact-headword') {
-    body = view.entries.map(entry => <div key={entry.id} className="etymology-entry">
-      <span className="variant-etymology-caption">{SOURCE_LABEL[entry.sourceId].name} · {SOURCE_LABEL[entry.sourceId].kind}</span>
-      {entry.sourceId === 'howell'
-        ? <p className="glyph-usage-meaning etymology-text" lang="en">{howellSegments(entry.text).map((part, i) => part.emphasis ? <em key={i}>{part.text}</em> : <span key={i}>{part.text}</span>)}</p>
-        : <p className="glyph-usage-meaning etymology-text etymology-classical" lang="lzh">{entry.text}</p>}
-    </div>);
+    body = <div className="etymology-entries">{view.entries.map(entry => <EtymologyEntryBlock key={entry.id} entry={entry} withHowell={view.entries.some(item => item.sourceId === 'howell')} classicalOpen={classicalOpen} toggleClassical={toggleClassical}/>)}</div>;
   } else if (view.status === 'context-review-required') {
     body = view.standalone && <div className="glyph-usage-reference">{recordLink(view.standalone, view.glyph)}<span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
   } else {

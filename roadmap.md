@@ -61,4 +61,4 @@
 
 - [x] Detail cards: Etymology section (Howell + Shuowen Jiezi), hidden when there is no text or related form to link
 
-- [ ] Etymology: Shuowen Jiezi (Classical Chinese) gets an "Advanced" hint for learners; improve Etymology section formatting
+- [x] Etymology: Shuowen Jiezi (Classical Chinese) gets an "Advanced" hint for learners; improve Etymology section formatting
