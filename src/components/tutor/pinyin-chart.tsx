@@ -12,7 +12,7 @@ import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
-import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
+import { historyEntry, historyPosition, soundChartArrival, soundTrail, visitAt } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
 /** The Sound card's five fixed tone slots, in column order. */
@@ -191,7 +191,20 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     if (keep !== undefined && hasRecording(data, base, keep)) void player.play(sound(base, keep));
   };
 
-  const narrow = useSoundWindowLayout(chartRef);
+  const windowLayout = useSoundWindowLayout(chartRef);
+  // Arrival from another page (Start, a glyph card or details, a lesson…) with a syllable
+  // already chosen: the card opens in the window at every width, like a details window,
+  // and Close returns through history to the page it came from. Decided once per mount
+  // from the history entry just before this one (recorded by the root), so later picks
+  // inside the window keep it open and Close still knows where to go back to.
+  const [arrival, setArrival] = useState<number | null>(null);
+  useEffect(() => {
+    const index = historyPosition().index;
+    if (!selected || index === undefined) return;
+    const before = visitAt(index - 1);
+    if (before && before.pathname !== window.location.pathname) setArrival(index - 1);
+  }, []);
+  const narrow = windowLayout || arrival !== null;
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
   // Previous/Next in the small-screen window walk the cards the grid shows, in grid order;
   // like a grid click they start a fresh Back trail.
@@ -250,11 +263,12 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
         onPrevious={position > 0 ? () => step(position - 1) : undefined} onNext={position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
-        onClose={() => { closedBase.current = syllable?.base ?? null; player.stop(); soundTrail.clear(); onSelect(undefined); }}
+        onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); window.history.go(arrival - now); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
         onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) { setRecent(base); requestAnimationFrame(() => revealTile(base, 'auto')); } }}>
         {panel(true)}
       </PinyinSoundSheet>
       : panel(false)}
+    {narrow && !windowLayout && <PinyinPlayerPanel data={data} player={player} syllable={undefined} tone={null} slow={slow} onSlow={onSlow} onTone={chooseTone} onPlayAll={() => {}} onSelect={selectAlike} onLeave={() => {}}/>}
   </div></div>;
 }
 
