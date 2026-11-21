@@ -4019,6 +4019,20 @@ html[data-display-size='comfortable'] .word-card[data-card-foot-step] .word-card
 .finder-hit-pinyin .pinyin-text { min-width: 0; }
 .finder-hit-meaning { font-size: 11px; color: var(--foreground); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 100%; }
 .finder-hit-open > .hit-kind { font-size: 10px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
+/* Comfortable: match tiles grow like the library cards (Compact 11px → Comfortable 15px text, about
+   ×1.35), so the board's results never stay Compact-sized while every other grid is enlarged. The
+   wider track keeps auto-fill dropping columns instead of squeezing the bigger tiles. */
+html[data-display-size='comfortable'] .finder-hits { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 14px; }
+html[data-display-size='comfortable'] .finder-hit { padding: 42px 10px 16px; }
+html[data-display-size='comfortable'] .finder-hit-glyph { width: 104px; height: 104px; }
+html[data-display-size='comfortable'] .finder-hit-glyph strong { font-size: 68px; }
+html[data-display-size='comfortable'] :is(.finder-hit-rank, .finder-hit-score) { top: 9px; font-size: 15px; }
+html[data-display-size='comfortable'] .finder-hit-rank { left: 12px; font-size: 13px; }
+html[data-display-size='comfortable'] .finder-hit-similar { top: 5px; right: 6px; width: 34px; height: 34px; }
+html[data-display-size='comfortable'] .finder-hit-similar svg { width: 18px; height: 18px; }
+html[data-display-size='comfortable'] .finder-hit-open > .pinyin { font-size: 15px; }
+html[data-display-size='comfortable'] .finder-hit-meaning { font-size: 15px; }
+html[data-display-size='comfortable'] .finder-hit-open > .hit-kind { font-size: 12px; }
 /* "Find similar" banner above the finder board: the source glyph in its card ink, as a bordered box. */
 .finder-similar-note { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: -6px 0 18px; color: var(--muted-foreground); font-size: 13px; }
 .finder-similar-glyph { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--card-ink, var(--foreground)); cursor: pointer; transition: border-color .2s; }
