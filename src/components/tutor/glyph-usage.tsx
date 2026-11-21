@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { Type } from 'lucide-react';
+import { Puzzle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
@@ -57,10 +57,10 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   // While the BabelStone sidecars load (up to ~20s on a first component card), show a pulsing
   // placeholder in the section's own shape; once loaded with no sourced parent characters, hide
   // the whole "In a character" section (owner choice).
-  if ((kind === 'Components' || kind === 'Radicals') && loadedParents === null) return <SectionPlaceholder heading={<><Type size={13} aria-hidden="true"/>IN A CHARACTER</>} label="In a character" shape="tiles"/>;
+  if ((kind === 'Components' || kind === 'Radicals') && loadedParents === null) return <SectionPlaceholder heading={<><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</>} label="In a character" shape="tiles"/>;
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
-    <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>
+    <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</h3>
     <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
       {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
       <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
