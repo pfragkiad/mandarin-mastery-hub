@@ -60,3 +60,5 @@
 - [x] Library cards: over-long translations drop trailing semicolon senses in every view (Compact grid 2-line clamp, Comfortable 3 lines), first sense always kept
 
 - [x] Detail cards: Etymology section (Howell + Shuowen Jiezi), hidden when there is no text or related form to link
+
+- [ ] Etymology: Shuowen Jiezi (Classical Chinese) gets an "Advanced" hint for learners; improve Etymology section formatting

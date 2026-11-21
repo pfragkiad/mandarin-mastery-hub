@@ -4125,3 +4125,14 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitu
 .etymology-section p.glyph-usage-meaning { display: block; margin: 0; line-height: 1.6; }
 .etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 15px; }
 .etymology-section .glyph-usage-reference { margin-top: 2px; }
+
+/* Loading placeholders for lazily filled detail sections (section-placeholder.tsx): soft
+   pulsing bars in the sections' own geometry; the tile matches the parent-character box. */
+.section-placeholder-row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.section-placeholder-lines { display: grid; gap: 7px; flex: 1; min-width: 0; }
+.section-placeholder-block { display: block; height: 10px; border-radius: 999px; background: color-mix(in oklch, var(--muted-foreground) 20%, transparent); animation: section-placeholder-pulse 1.4s ease-in-out infinite; }
+.section-placeholder-tile { width: 46px; height: 46px; flex-shrink: 0; border-radius: 8px; }
+html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); }
+.section-placeholder .section-placeholder-row:nth-child(2) .section-placeholder-block { animation-delay: .15s; }
+.section-placeholder .section-placeholder-row:nth-child(3) .section-placeholder-block { animation-delay: .3s; }
+@keyframes section-placeholder-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }

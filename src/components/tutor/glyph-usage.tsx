@@ -15,6 +15,7 @@ import { characterAudioRequest } from '@/lib/catalog-store';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
+import { SectionPlaceholder } from './section-placeholder';
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
 export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind | null, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
@@ -51,9 +52,12 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
-  const parents = (kind === 'Components' ? gSourceParents : radicalParents)?.slice(0, 6) ?? [];
-  // No sourced parent characters (or the BabelStone sidecars are still loading): hide the whole
-  // "In a character" section (owner choice).
+  const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;
+  const parents = loadedParents?.slice(0, 6) ?? [];
+  // While the BabelStone sidecars load (up to ~20s on a first component card), show a pulsing
+  // placeholder in the section's own shape; once loaded with no sourced parent characters, hide
+  // the whole "In a character" section (owner choice).
+  if ((kind === 'Components' || kind === 'Radicals') && loadedParents === null) return <SectionPlaceholder heading={<><Type size={13} aria-hidden="true"/>IN A CHARACTER</>} label="In a character" shape="tiles"/>;
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Type size={13} aria-hidden="true"/>IN A CHARACTER</h3>

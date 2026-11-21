@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from './source-info';
+import { SectionPlaceholder } from './section-placeholder';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
@@ -11,8 +12,9 @@ import { howellSegments, resolveEtymology, type EtymologyEntry, type EtymologyRe
 /**
  * ETYMOLOGY section of a glyph detail card (Characters, Components, Radicals and radical forms).
  * Inputs: the exact record ID + glyph, plus family ID / form key for a selected radical form.
- * State: the resolved EtymologyView (lib/etymology.ts), loaded lazily; nothing renders until it
- * arrives or when any identity/integrity check fails, so no unverified text ever shows.
+ * State: the resolved EtymologyView (lib/etymology.ts), loaded lazily; `undefined` while loading
+ * shows a pulsing placeholder, and `null` (no entry, or any identity/integrity check failed)
+ * renders nothing, so no unverified text ever shows.
  * Display rules follow public/data/etymology/README.md: source text is plain text (Howell's
  * *glossed* senses only gain emphasis), each entry keeps its own attribution, components and
  * radicals only link to the standalone character, and nothing here is ever spoken aloud.
@@ -30,14 +32,15 @@ const COVERAGE: Record<string, string> = {
 
 export function EtymologySection(request: EtymologyRequest) {
   const { recordId, glyph, familyId, formKey } = request;
-  const [view, setView] = useState<EtymologyView | null>(null);
+  const [view, setView] = useState<EtymologyView | null | undefined>(undefined);
   const { preferences } = useWorkspace();
   useEffect(() => {
     let live = true;
-    setView(null);
+    setView(undefined);
     void resolveEtymology({ recordId, glyph, familyId, formKey }).then(result => { if (live) setView(result); });
     return () => { live = false; };
   }, [recordId, glyph, familyId, formKey]);
+  if (view === undefined) return <SectionPlaceholder heading={<><ScrollText size={13} aria-hidden="true"/>ETYMOLOGY</>} label="Etymology" shape="text"/>;
   // Owner's rule: the section appears only with source text or a record to link to, so
   // absent or blocked states (发 with no related form, #96 jade 王) render nothing.
   if (!view || (view.status === 'exact-headword' ? !view.entries.length : view.status === 'context-review-required' ? !view.standalone : view.status === 'no-exact-headword' ? !view.related.length : true)) return null;
