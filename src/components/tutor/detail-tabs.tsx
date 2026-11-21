@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import { useRouterState } from '@tanstack/react-router';
+import { historyPosition } from '@/lib/detail-trail';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
@@ -30,13 +30,15 @@ const OPEN_KEY = 'tutor-detail-drawer-open';
 /** The tab remembered for this history entry's card, taking a pending link request first.
  *  `returned` is true when the entry already had a choice (a Back/Close return). */
 function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefined; returned: boolean } {
-  const historyKey = useRouterState({ select: s => (s.location.state as { __TSR_key?: string } | undefined)?.__TSR_key ?? '' });
+  // Read from history.state during render: a link or Back changes the card's search, so the
+  // card rerenders after the browser entry has already moved.
+  const historyKey = historyPosition().key ?? '';
   const entry = `${historyKey}|${cardKey}`;
   noteDetailEntry(historyKey, cardKey);
   // Decided once per arrival on an entry (the sheet can stay mounted across links/Back):
   // an entry that already had a choice is a return; otherwise a pending link request applies.
   const arrival = useRef<{ entry: string; returned: boolean } | null>(null);
-  if (arrival.current?.entry !== entry) arrival.current = { entry, returned: entryTabs.has(entry) };
+  if (arrival.current?.entry !== entry) arrival.current = { entry, returned: historyKey !== '' && entryTabs.has(entry) };
   if (!entryTabs.has(entry)) {
     const requested = takeRequestedTab(historyKey, cardKey);
     if (requested) entryTabs.set(entry, requested);
@@ -72,7 +74,7 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
   useEffect(() => {
     if (!returnedToEtymology || scrolledFor.current === remembered.entry) return;
     scrolledFor.current = remembered.entry;
-    rootRef.current?.scrollIntoView({ block: 'start' });
+    rootRef.current?.scrollIntoView?.({ block: 'start' });
   }, [returnedToEtymology, remembered.entry]);
   if (!tab) return null;
   const select = (next: DetailTab) => { entryTabs.set(remembered.entry, next); rerender(n => n + 1); setOpen(true); };
