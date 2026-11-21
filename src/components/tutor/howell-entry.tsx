@@ -1,5 +1,8 @@
 import { Fragment, useMemo } from 'react';
 import { Link } from '@tanstack/react-router';
+import { Info } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { HintBody } from './source-info';
 import { libraryDestination, libraryEntries } from '@/lib/character-library';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { howellInline, howellPresentation, type HowellToken } from '@/lib/howell-structure';
@@ -19,7 +22,9 @@ import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './rea
  *                 orphan plus ends a line; # marks stay on what they were written after;
  *   progression — "Meaning path": arrowed steps, (← …) reasons indented under their step;
  *   prose       — every other sentence at normal reading contrast (uncertainty kept visible);
- * then the symbol key and a disclosure with the exact original text for comparison.
+ * then a disclosure with the exact original text for comparison. The symbol key lives in
+ * HowellKeyInfo, an (i) popover beside the "author interpretation" label in the source header
+ * (etymology-section.tsx), so the note itself stays free of footnotes.
  * Inputs: the exact source `text` and `selfGlyph` (the card's own glyph, a plain dashed tile).
  * Every hanzi written in the text becomes a tile resolved by its exact written form only
  * (lessonGlyphHint: Characters, then Components, then a Radicals card of that same glyph — no
@@ -49,14 +54,28 @@ export function HowellEntry({ text, selfGlyph }: { text: string; selfGlyph: stri
         </li>)}</ol>
       </div>;
     })}
-    <p className="howell-key">
-      <span>→ leads to</span> · <span>← results from</span> · <span><HashMark/> gives sound as well as meaning</span> · <span><em className="howell-meaning">highlighted</em> Howell’s marked modern Japanese meanings</span>
-    </p>
     <details className="howell-original">
       <summary>Original text</summary>
       <p>{text}</p>
     </details>
   </div>;
+}
+
+/** The symbol key as an (i) popover, placed beside the "author interpretation" label in the
+ *  Howell source header (etymology-section.tsx). One row per symbol, same shared hint card
+ *  as every other (i) in the app. */
+export function HowellKeyInfo() {
+  return <Popover>
+    <PopoverTrigger className="source-info-trigger" aria-label="Howell’s symbol key"><Info aria-hidden="true"/></PopoverTrigger>
+    <PopoverContent className="source-info-popover howell-key" align="start" collisionPadding={12}>
+      <HintBody>
+        <span><span className="howell-arrow">→</span> leads to</span><br/>
+        <span><span className="howell-arrow">←</span> results from</span><br/>
+        <span><HashMark/> gives sound as well as meaning</span><br/>
+        <span><em className="howell-meaning">highlighted</em> — Howell’s marked modern Japanese meanings</span>
+      </HintBody>
+    </PopoverContent>
+  </Popover>;
 }
 
 /** Howell's # mark, focusable so its help reaches keyboard and touch users too. */

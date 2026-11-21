@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { ChevronDown, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from './source-info';
-import { HowellEntry } from './howell-entry';
+import { HowellEntry, HowellKeyInfo } from './howell-entry';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
@@ -51,6 +51,7 @@ function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string })
     <div className="etymology-entry-head">
       <span className="etymology-source-name">{SOURCE_LABEL.howell.name}</span>
       <span className="etymology-source-kind">{SOURCE_LABEL.howell.kind}</span>
+      <HowellKeyInfo/>
     </div>
     <HowellEntry text={entry.text} selfGlyph={glyph}/>
   </div>;
