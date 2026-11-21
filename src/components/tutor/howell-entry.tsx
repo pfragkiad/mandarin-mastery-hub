@@ -22,7 +22,8 @@ import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './rea
  *                 orphan plus ends a line; # marks stay on what they were written after;
  *   progression — "Meaning path": arrowed steps, (← …) reasons indented under their step;
  *   prose       — every other sentence at normal reading contrast (uncertainty kept visible);
- * then a disclosure with the exact original text for comparison. The symbol key lives in
+ * with no "Original text" disclosure (owner's choice: the structured layout is the only view;
+ * tests still prove it rebuilds the source exactly). The symbol key lives in
  * HowellKeyInfo, an (i) popover beside the "author interpretation" label in the source header
  * (etymology-section.tsx), so the note itself stays free of footnotes.
  * Inputs: the exact source `text` and `selfGlyph` (the card's own glyph, a plain dashed tile).
@@ -54,10 +55,6 @@ export function HowellEntry({ text, selfGlyph }: { text: string; selfGlyph: stri
         </li>)}</ol>
       </div>;
     })}
-    <details className="howell-original">
-      <summary>Original text</summary>
-      <p>{text}</p>
-    </details>
   </div>;
 }
 

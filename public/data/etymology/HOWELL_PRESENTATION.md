@@ -49,8 +49,9 @@ supported by that passage:
    Keep explanatory branches with the step they qualify.
 5. **Other meanings / discussion:** subsequent claims and sentences, preserving
    borrowing, confusion, comparisons, alternatives and uncertainty.
-6. **Notation help / original text:** concise accessible help and an available
-   literal view of the original `entry.text` for comparison.
+6. **Notation help:** concise accessible help (an (i) popover beside the source
+   label). Owner decision: no literal "original text" view is shown; the exact
+   reconstruction test below still guarantees nothing is lost.
 
 These are visual roles, not mandatory headings. Merge short adjacent context and
 prose naturally, omit empty sections, and allow multiple accounts or progressions

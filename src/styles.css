@@ -1338,7 +1338,11 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .source-info-popover > p { font-size: 11px; line-height: 1.6; }
 html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px; }
 .source-info-inline { display: none; }
-.source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 10px; border-radius: 999px; color: var(--muted-foreground); }
+/* Every (i) sits centred on the line it belongs to: no top margin by default (flex rows centre it,
+   inline text uses vertical-align), so a new label never needs its own alignment fix. Only the
+   stacked SourceInfo form (hidden note paragraph, then the button on its own line) keeps a gap. */
+.source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 0; vertical-align: middle; border-radius: 999px; color: var(--muted-foreground); }
+.source-info-inline + .source-info-trigger { margin-top: 10px; }
 .eyebrow .source-info-trigger { margin-top: 0; }
 .library-note:has(.source-info-trigger) { display: flex; align-items: center; gap: 6px; }
 .library-note .source-info-trigger { margin-top: 0; flex-shrink: 0; }
@@ -4150,7 +4154,7 @@ html[data-display-size='comfortable'] .etymology-section .etymology-advanced-act
 
 /* Howell (howell-entry.tsx, HOWELL_PRESENTATION.md roles): context preface, "Elements in
    Howell's account" cards joined by +, the arrowed meaning path with indented (← …)
-   reasons, later sentences at full contrast, the key and an "Original text" disclosure.
+   reasons and later sentences at full contrast (no "Original text" disclosure).
    Hanzi are small bordered tiles in their identity ink (--card-ink, card-ink.ts) with
    "(pinyin 🔊)" beside them; *meanings* are soft chips. */
 .howell { display: grid; gap: 10px; font-size: 13px; line-height: 1.6; color: var(--foreground); min-width: 0; }
@@ -4179,8 +4183,6 @@ html[data-display-size='comfortable'] .etymology-section .etymology-advanced-act
 .howell-reason .howell-meaning { background: transparent; font-weight: 500; }
 /* The symbol key popover beside the "author interpretation" label (HowellKeyInfo). */
 .howell-key { font-size: 12px; line-height: 1.5; color: var(--muted-foreground); }
-.howell-original summary { cursor: pointer; font-size: 11px; color: var(--muted-foreground); width: fit-content; }
-.howell-original p { margin: 4px 0 0; font-size: 12px; color: var(--muted-foreground); white-space: pre-wrap; overflow-wrap: anywhere; }
 .howell-inline-glyph { display: inline; white-space: nowrap; }
 .howell-glyph-wrap { display: inline-flex; align-items: center; gap: 3px; vertical-align: middle; white-space: nowrap; }
 .howell-glyph { display: inline-flex; align-items: center; justify-content: center; min-width: 1.75em; height: 1.75em; padding: 0 2px; font-family: var(--font-hanzi); font-size: 19px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--card-ink, var(--foreground)); text-decoration: none; transition: border-color .15s ease, background .15s ease; }
@@ -4194,7 +4196,6 @@ html[data-display-size='comfortable'] .howell { font-size: 15px; }
 html[data-display-size='comfortable'] .howell-label { font-size: 11px; }
 html[data-display-size='comfortable'] .howell-glyph { font-size: 23px; }
 html[data-display-size='comfortable'] :is(.howell-glyph-reading, .howell-glyph-reading .pinyin) { font-size: 13px; }
-html[data-display-size='comfortable'] .howell-original :is(summary, p) { font-size: 13px; }
 .etymology-section .glyph-usage-reference { margin-top: 2px; }
 
 /* Loading placeholders for lazily filled detail sections (section-placeholder.tsx): soft

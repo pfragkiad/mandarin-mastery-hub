@@ -32,7 +32,7 @@ describe('Glyph detail drawer tabs', () => {
     await flush();
     expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
-    expect(screen.getAllByText('ancient').length).toBeGreaterThan(0); // main account + Original text disclosure
+    expect(screen.getAllByText('ancient').length).toBeGreaterThan(0); // Howell's structured account
     rerender(<GlyphDetailTabs cardKey="Characters:口" decomposition={decomposition} etymology={{ recordId: 'Characters:口', glyph: '口' }}/>);
     await flush();
     expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
