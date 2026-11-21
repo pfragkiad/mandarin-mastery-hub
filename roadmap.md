@@ -55,3 +55,5 @@
 - [x] Detail card Close returns to the page it was opened from (lesson, finder, Start…), skipping form switches; ‹ › arrows only when opened from the grid
 
 - [x] Detail card Back also skips same-card form switches (hidden when only forms are behind)
+- [x] Detail card: Close at the end of the content + no scroll trap so a zoomed reader can pan to the header X
+- [x] Zoom fix applies on every device (laptop, desktop, tablet), not only touch screens
