@@ -4238,3 +4238,6 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
    drawer styles; the row sits where the Decomposition section used to, spaced like a section. */
 .catalog-detail .detail-tabs { margin-top: 28px; }
 .detail-drawer-etymology { margin-top: 20px; }
+
+/* Search hits: recorded part of speech before a word's meaning. */
+.hero-search-hit .hit-pos { font-style: italic; opacity: .8; }
