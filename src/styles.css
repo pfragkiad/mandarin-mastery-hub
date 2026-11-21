@@ -4209,6 +4209,28 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .section-placeholder .section-placeholder-row:nth-child(3) .section-placeholder-block { animation-delay: .3s; }
 @keyframes section-placeholder-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
 
+/* Library grid loading placeholder (section-placeholder.tsx GridCardPlaceholder): one card
+   skeleton in the grid's top-left slot while the catalogue is still fetching. It carries the
+   real card's own classes, so Compact and Comfortable size it with the existing card rules;
+   these lines only make it read as a skeleton — flat, unhoverable, with a gentler bar height
+   and the same staggered pulse the detail-section placeholders use. */
+.grid-card-placeholder { pointer-events: none; }
+.grid-card-placeholder:hover { border-color: var(--border); box-shadow: none; transform: none; }
+.grid-card-placeholder .section-placeholder-block { height: 8px; }
+/* The translation line holds two bars, so it has to stack them instead of clamping text. */
+.grid-card-placeholder .word-meaning.catalog-entry-meaning { display: grid; gap: 7px; }
+/* The footer's second bar stands in for the bookmark button: a small square, not a line. */
+.grid-card-placeholder .word-card-bottom > :last-child { height: 22px; border-radius: 6px; }
+.grid-card-placeholder .word-card-top .section-placeholder-block:nth-child(2),
+.grid-card-placeholder .word-card-bottom .section-placeholder-block:nth-child(2) { animation-delay: .15s; }
+.grid-card-placeholder .catalog-card-indicators .section-placeholder-block:nth-child(2) { animation-delay: .3s; }
+.grid-card-placeholder .word-meaning .section-placeholder-block:nth-child(2) { animation-delay: .3s; }
+/* While the grid holds only the skeleton, the library's auto-fit rule collapses every empty
+   track and stretches that one card across the whole row. auto-fill keeps the real tracks, so
+   the skeleton sits in the top-left slot at exactly the width a first card will have. List view
+   is left alone: there a card genuinely is one full-width row. */
+.library-page .catalog-entry-grid.is-loading:not(.library-list-view) { grid-template-columns: repeat(auto-fill,minmax(min(230px,calc((100% - 20px) / 2)),1fr)); }
+
 /* Glyph detail cards: Decomposition | Etymology drawer tabs (detail-tabs.tsx) reuse Practice's
    drawer styles; the row sits where the Decomposition section used to, spaced like a section. */
 .catalog-detail .detail-tabs { margin-top: 28px; }
