@@ -4119,23 +4119,76 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-cho
 html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitute { background: color-mix(in oklab, var(--substitute) 12%, var(--card)); border-color: var(--substitute); border-width: 2px; }
 
 /* Etymology section (etymology-section.tsx): each source is its own softly tinted block with a
-   header row (source name, kind, and Shuowen's Advanced pill), then plain text. Shuowen's
-   Classical Chinese is larger and airier, folded behind the shared "show more" toggle. */
+   header row (source name, kind). Howell's note is laid out by howell-entry.tsx; the whole
+   Shuowen subsection folds behind one Advanced toggle row, its Classical Chinese larger and airier. */
 .etymology-section .etymology-entries { display: grid; gap: 10px; }
 .etymology-section .etymology-entry { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: color-mix(in oklch, var(--muted) 45%, transparent); min-width: 0; }
 .etymology-section .etymology-entry-head { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 4px; }
 .etymology-section .etymology-source-name { font-size: 12px; font-weight: 600; color: var(--foreground); }
 .etymology-section .etymology-source-kind { font-size: 11px; color: var(--muted-foreground); }
-.etymology-section .etymology-level-pill { margin-left: auto; font-size: 9px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; color: var(--experimental); border: 1px solid color-mix(in oklch, var(--experimental) 45%, transparent); border-radius: 999px; padding: 2px 8px; background: transparent; cursor: pointer; transition: background .15s ease; }
-.etymology-section .etymology-level-pill:hover, .etymology-section .etymology-level-pill:focus-visible { background: color-mix(in oklch, var(--experimental) 14%, transparent); outline: none; }
+.etymology-section .etymology-level-pill { font-size: 9px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; color: var(--experimental); border: 1px solid color-mix(in oklch, var(--experimental) 45%, transparent); border-radius: 999px; padding: 2px 8px; }
 .etymology-section .etymology-text { margin: 0; font-size: 13px; line-height: 1.65; color: var(--foreground); overflow-wrap: anywhere; }
 .etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 18px; line-height: 1.8; letter-spacing: .06em; }
-.etymology-section .etymology-classical-toggle { justify-self: start; margin-top: 0; margin-left: -6px; }
+/* Shuowen: the row is the toggle (chevron, Advanced pill, source, Show/Hide); open, the body
+   explains the level, then the texts. Collapsed, the block is a dashed, untinted row. */
+.etymology-section .etymology-advanced:not(.is-open) { background: transparent; border-style: dashed; padding-block: 4px; }
+.etymology-section .etymology-advanced-toggle { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 4px; width: 100%; padding: 6px 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; }
+.etymology-section .etymology-advanced-toggle:focus-visible { outline: 2px solid var(--reveal-ring); outline-offset: 2px; border-radius: 4px; }
+.etymology-section .etymology-advanced-chevron { width: 14px; height: 14px; color: var(--muted-foreground); transform: rotate(-90deg); transition: transform .2s ease; flex: none; }
+.etymology-section .etymology-advanced.is-open .etymology-advanced-chevron { transform: none; }
+.etymology-section .etymology-advanced-action { margin-left: auto; font-size: 11px; color: var(--primary); }
+.etymology-section .etymology-advanced-toggle:hover .etymology-advanced-action { color: var(--terracotta); }
+.etymology-section .etymology-advanced-body { display: grid; gap: 8px; }
+.etymology-section .etymology-advanced-note { margin: 0; font-size: 12px; line-height: 1.55; color: var(--muted-foreground); }
 html[data-display-size='comfortable'] .etymology-section .etymology-source-name { font-size: 14px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-source-kind { font-size: 13px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-text { font-size: 15px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-classical { font-size: 21px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-level-pill { font-size: 11px; letter-spacing: .5px; }
+html[data-display-size='comfortable'] .etymology-section .etymology-advanced-note,
+html[data-display-size='comfortable'] .etymology-section .etymology-advanced-action { font-size: 13px; }
+
+/* Howell (howell-entry.tsx): "Built from" parts as bordered chips joined by +, then the
+   meaning path as an arrowed vertical list, later sentences as notes, and a small key.
+   Hanzi are small bordered tiles in their identity ink (--card-ink, card-ink.ts) with
+   "(pinyin 🔊)" beside them; *meanings* are soft chips, (← …) asides muted. */
+.howell { display: grid; gap: 10px; font-size: 13px; line-height: 1.6; color: var(--foreground); min-width: 0; }
+.howell-label { display: block; font-size: 10px; letter-spacing: .06em; font-weight: 600; color: var(--muted-foreground); margin-bottom: 4px; }
+.howell-parts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.howell-part { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; padding: 5px 10px 5px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); min-width: 0; max-width: 100%; }
+.howell-part.is-text { padding-left: 10px; color: var(--muted-foreground); }
+.howell-part-lead { font-size: 11px; color: var(--muted-foreground); font-style: italic; }
+.howell-part-glyphs { display: inline-flex; align-items: center; gap: 4px; }
+.howell-slash { color: var(--muted-foreground); }
+.howell-part-gloss { overflow-wrap: anywhere; }
+.howell-plus { font-size: 16px; font-weight: 600; color: var(--muted-foreground); }
+.howell-sound { font-size: 9px; letter-spacing: .5px; font-weight: 600; color: var(--sound-link); border: 1px solid color-mix(in oklch, var(--sound-link) 45%, transparent); border-radius: 999px; padding: 1px 6px; white-space: nowrap; }
+.howell-hash { font-size: 10px; font-weight: 700; color: var(--sound-link); margin-left: 1px; vertical-align: super; }
+.howell-path { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.howell-step { display: grid; grid-template-columns: 18px minmax(0, 1fr); align-items: baseline; gap: 4px; }
+.howell-step-arrow { color: var(--terracotta); font-weight: 600; text-align: center; }
+.howell-step-text, .howell-note { overflow-wrap: anywhere; }
+.howell-note { margin: 0; color: var(--foreground); }
+.howell-note:not(.howell-note-main) { padding-left: 10px; border-left: 2px solid var(--border); color: var(--muted-foreground); }
+.howell-meaning { font-style: normal; font-weight: 600; color: var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); border-radius: 4px; padding: 0 4px; }
+.howell-reason, .howell-meaning.is-reason, .howell-inline-glyph.is-reason { color: var(--muted-foreground); }
+.howell-meaning.is-reason { background: transparent; font-weight: 500; }
+.howell-key { margin: 2px 0 0; font-size: 10px; line-height: 1.5; color: var(--muted-foreground); }
+.howell-inline-glyph { display: inline; white-space: nowrap; }
+.howell-glyph-wrap { display: inline-flex; align-items: center; gap: 3px; vertical-align: middle; white-space: nowrap; }
+.howell-glyph { display: inline-flex; align-items: center; justify-content: center; min-width: 1.75em; height: 1.75em; padding: 0 2px; font-family: var(--font-hanzi); font-size: 19px; line-height: 1; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--card-ink, var(--foreground)); text-decoration: none; transition: border-color .15s ease, background .15s ease; }
+a.howell-glyph:hover, a.howell-glyph:focus-visible { border-color: var(--card-ink, var(--primary)); background: color-mix(in oklch, var(--card-ink, var(--primary)) 12%, var(--card)); outline: none; }
+.howell-glyph.is-self { border-style: dashed; }
+.howell-glyph-reading { display: inline-flex; align-items: center; gap: 1px; font-size: 11px; color: var(--muted-foreground); }
+.howell-glyph-reading .pinyin { font-size: 11px; }
+.howell-glyph-reading button { width: 20px; height: 20px; }
+.howell-glyph-reading button svg { width: 12px; height: 12px; }
+html[data-display-size='comfortable'] .howell { font-size: 15px; }
+html[data-display-size='comfortable'] .howell-label { font-size: 11px; }
+html[data-display-size='comfortable'] .howell-glyph { font-size: 23px; }
+html[data-display-size='comfortable'] :is(.howell-glyph-reading, .howell-glyph-reading .pinyin) { font-size: 13px; }
+html[data-display-size='comfortable'] .howell-key { font-size: 12px; }
+html[data-display-size='comfortable'] .howell-sound { font-size: 11px; }
 .etymology-section .glyph-usage-reference { margin-top: 2px; }
 
 /* Loading placeholders for lazily filled detail sections (section-placeholder.tsx): soft

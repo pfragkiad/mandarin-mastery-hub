@@ -103,9 +103,15 @@ shinjitai, Shuowen indexes/components and seal-font codes are not imported as
 Mandarin pronunciation, catalogue identity, graphical decomposition or geometry.
 
 Render source text as text, preserving notation, punctuation and cross-reference
-markers such as Howell's `#`. Do not execute markup, infer links from arbitrary
-characters, feed historical wording into Mandarin speech or overwrite lexical
-translations. Future structured historical claims need explicit source locators
+markers such as Howell's `#`. Do not execute markup, feed historical wording into
+Mandarin speech or overwrite lexical translations. Owner-approved exception for
+links: a hanzi written in Howell's text may link to the library record with exactly
+that written form (Characters, then Components, then a Radicals card of the same
+glyph; never a look-alike, canonical or related form), showing that record's own
+reading and audio. Such a link is navigation only, not an identity claim about the
+historical element Howell describes. Howell's notation (`+` parts, `→`/`←`, `#`,
+`*…*` modern Japanese meanings, per its Key to Symbols) may drive layout only;
+every character of the recorded text must remain displayed. Future structured historical claims need explicit source locators
 and a separate review process, rather than editing the original text.
 
 `comparison.coverage` reports `both`, `howell-only`, `shuowen-only` or `none`.

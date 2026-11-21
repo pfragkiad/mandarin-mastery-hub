@@ -1,13 +1,13 @@
 import { useEffect, useId, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ChevronDown, History } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { HintBody, SourceInfo } from './source-info';
+import { SourceInfo } from './source-info';
+import { HowellEntry } from './howell-entry';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { hasOwnEtymologyText, howellSegments, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView } from '@/lib/etymology';
+import { hasOwnEtymologyText, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView } from '@/lib/etymology';
 
 /**
  * Etymology tab content of a glyph detail card (Characters, Components, Radicals and radical
@@ -18,10 +18,11 @@ import { hasOwnEtymologyText, howellSegments, loadEtymologyIndex, resolveEtymolo
  * - etymologyHasContent(view): the owner's rule — only source text or a record to link counts;
  *   the tab hides when the resolved view has neither.
  * - EtymologyInfo / EtymologyPanel: the source ⓘ shown beside the tab and the tab's body.
- * Display rules follow public/data/etymology/README.md: source text is plain text (Howell's
- * *glossed* senses only gain emphasis), each entry keeps its own attribution, components and
- * radicals only link to the standalone character, and nothing here is ever spoken aloud.
- * Each source is its own tinted block; Shuowen's Classical Chinese is marked Advanced and folded.
+ * Display rules follow public/data/etymology/README.md: source text is never altered or spoken
+ * (Howell's note is only laid out from its own notation, see howell-entry.tsx, with its hanzi as
+ * exact-form tiles), each entry keeps its own attribution, and components and radicals only
+ * link to the standalone character. Each source is its own tinted block; the whole Shuowen
+ * subsection sits behind one remembered Advanced toggle.
  */
 const SOURCE_LABEL: Record<EtymologyEntry['sourceId'], { name: string; kind: string }> = {
   howell: { name: 'Lawrence J. Howell', kind: 'author interpretation' },
@@ -33,7 +34,7 @@ const COVERAGE: Record<string, string> = {
   'shuowen-only': 'Only Shuowen Jiezi has this headword',
 };
 
-// Shuowen Jiezi's Classical Chinese starts folded (owner's choice); opening it once is
+// The Shuowen Jiezi subsection starts folded (owner's choice); opening it once is
 // remembered on this device, read after mount so server and first client render agree.
 const CLASSICAL_OPEN_KEY = 'tutor.etymology.classicalOpen';
 function useClassicalOpen(): [boolean, () => void] {
@@ -43,38 +44,35 @@ function useClassicalOpen(): [boolean, () => void] {
   return [open, toggle];
 }
 
-/** "Advanced" level pill on the Shuowen block; tapping it explains why (works on touch, unlike a title). */
-function AdvancedPill({ withHowell }: { withHowell: boolean }) {
-  return <Popover>
-    <PopoverTrigger className="etymology-level-pill" aria-label="Advanced: about this text">Advanced</PopoverTrigger>
-    <PopoverContent className="source-info-popover" align="start"><HintBody>
-      Written in Classical Chinese (文言), the literary language of Xu Shen’s dictionary, compiled around 100 CE.<br/>
-      Its grammar and wording differ from modern Mandarin, so it is hard even for fluent readers.<br/>
-      {withHowell ? 'No modern translation is recorded here; Howell’s note is the learner-friendly reading.' : 'No modern translation is recorded here.'}
-    </HintBody></PopoverContent>
-  </Popover>;
+/** Howell's note: its own source header, then the structured layout (howell-entry.tsx). */
+function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string }) {
+  return <div className="etymology-entry etymology-entry-howell">
+    <div className="etymology-entry-head">
+      <span className="etymology-source-name">{SOURCE_LABEL.howell.name}</span>
+      <span className="etymology-source-kind">{SOURCE_LABEL.howell.kind}</span>
+    </div>
+    <HowellEntry text={entry.text} selfGlyph={glyph}/>
+  </div>;
 }
 
-/** One source block: source name + kind on a header row, then the text. Shuowen's Classical
- *  Chinese is folded behind a remembered toggle and carries the Advanced pill. */
-function EtymologyEntryBlock({ entry, withHowell, classicalOpen, toggleClassical }: { entry: EtymologyEntry; withHowell: boolean; classicalOpen: boolean; toggleClassical: () => void }) {
+/** The whole Shuowen Jiezi subsection behind one remembered "Advanced" toggle (owner's
+ *  choice): collapsed it is a single row naming the source; open it explains the level and
+ *  shows every Shuowen entry for this headword (舌 keeps both of its IDs as separate texts). */
+function ShuowenSection({ entries, withHowell }: { entries: EtymologyEntry[]; withHowell: boolean }) {
   const panelId = useId();
-  const label = SOURCE_LABEL[entry.sourceId];
-  const classical = entry.sourceId === 'shuowen';
-  return <div className={`etymology-entry etymology-entry-${entry.sourceId}`}>
-    <div className="etymology-entry-head">
-      <span className="etymology-source-name">{label.name}</span>
-      <span className="etymology-source-kind">{label.kind}</span>
-      {classical && <AdvancedPill withHowell={withHowell}/>}
-    </div>
-    {classical
-      ? <>
-          {classicalOpen && <p id={panelId} className="etymology-text etymology-classical more-examples-panel" lang="lzh">{entry.text}</p>}
-          <button type="button" className={`more-examples-toggle etymology-classical-toggle${classicalOpen ? ' is-open' : ''}`} aria-expanded={classicalOpen} aria-controls={classicalOpen ? panelId : undefined} onClick={toggleClassical}>
-            <ChevronDown className="more-examples-icon" aria-hidden="true"/>{classicalOpen ? 'Hide Classical Chinese' : 'Show Classical Chinese'}
-          </button>
-        </>
-      : <p className="etymology-text" lang="en">{howellSegments(entry.text).map((part, i) => part.emphasis ? <em key={i}>{part.text}</em> : <span key={i}>{part.text}</span>)}</p>}
+  const [open, toggle] = useClassicalOpen();
+  return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}`}>
+    <button type="button" className="etymology-advanced-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={toggle}>
+      <ChevronDown className="etymology-advanced-chevron" aria-hidden="true"/>
+      <span className="etymology-level-pill">Advanced</span>
+      <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
+      <span className="etymology-source-kind">{SOURCE_LABEL.shuowen.kind}</span>
+      <span className="etymology-advanced-action">{open ? 'Hide' : 'Show'}</span>
+    </button>
+    {open && <div id={panelId} className="etymology-advanced-body more-examples-panel">
+      <p className="etymology-advanced-note">Written in Classical Chinese (文言), the literary language of Xu Shen’s dictionary, compiled around 100 CE. Its grammar and wording differ from modern Mandarin, so it is hard even for fluent readers. {withHowell ? 'No modern translation is recorded here; Howell’s note above is the learner-friendly reading.' : 'No modern translation is recorded here.'}</p>
+      {entries.map(entry => <p key={entry.id} className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>)}
+    </div>}
   </div>;
 }
 
@@ -121,7 +119,6 @@ export function EtymologyInfo({ view }: { view: EtymologyView }) {
 /** The tab's body; `undefined` (still resolving) shows pulsing text lines. */
 export function EtymologyPanel({ view }: { view: EtymologyView | null | undefined }) {
   const { preferences } = useWorkspace();
-  const [classicalOpen, toggleClassical] = useClassicalOpen();
   if (view === undefined) return <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
   if (!etymologyHasContent(view)) return null;
   // Exact record links: the recorded ID wins; the glyph index only supplies its page.
@@ -133,7 +130,12 @@ export function EtymologyPanel({ view }: { view: EtymologyView | null | undefine
     return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(target) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} title={hint} aria-label={hint}><strong lang="zh-CN">{target}</strong></Link></Button>;
   };
   if (view.status === 'exact-headword') {
-    return <div className="etymology-entries">{view.entries.map(entry => <EtymologyEntryBlock key={entry.id} entry={entry} withHowell={view.entries.some(item => item.sourceId === 'howell')} classicalOpen={classicalOpen} toggleClassical={toggleClassical}/>)}</div>;
+    const howell = view.entries.filter(entry => entry.sourceId === 'howell');
+    const shuowen = view.entries.filter(entry => entry.sourceId === 'shuowen');
+    return <div className="etymology-entries">
+      {howell.map(entry => <HowellBlock key={entry.id} entry={entry} glyph={view.glyph}/>)}
+      {shuowen.length > 0 && <ShuowenSection entries={shuowen} withHowell={howell.length > 0}/>}
+    </div>;
   }
   if (view.status === 'context-review-required') {
     return view.standalone && <div className="glyph-usage-reference">{recordLink(view.standalone, view.glyph)}<span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
