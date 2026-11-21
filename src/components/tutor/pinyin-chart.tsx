@@ -206,6 +206,9 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     if (before && before.pathname !== window.location.pathname) setArrival(index - 1);
   }, []);
   const narrow = windowLayout || arrival !== null;
+  // Arrived from another page: the window behaves like a details window, so it shows no
+  // centred Previous/Next — those belong only to the chart's own small-screen window.
+  const detailsMode = arrival !== null;
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
   // Previous/Next in the small-screen window walk the cards the grid shows, in grid order;
   // like a grid click they start a fresh Back trail.
@@ -259,9 +262,9 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     </div>
     {/* Wide screens: the card sits beside the grid. Small screens: the same card opens in a
         top-anchored modal window (like the Glyphs details) only while a syllable is chosen. */}
-    {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={position} total={ordered.length}
+    {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={detailsMode ? -1 : position} total={detailsMode ? 0 : ordered.length}
         onBack={() => { player.stop(); window.history.back(); }}
-        onPrevious={position > 0 ? () => step(position - 1) : undefined} onNext={position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
+        onPrevious={!detailsMode && position > 0 ? () => step(position - 1) : undefined} onNext={!detailsMode && position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
         onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); window.history.go(arrival - now); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
