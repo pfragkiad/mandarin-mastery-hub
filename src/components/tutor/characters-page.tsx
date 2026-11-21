@@ -429,8 +429,9 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // stacks boxes / pinyin+audio / translation (styles.css "Library card body"). Same rules as the
   // Words/Phrases cards: pinyin and translation shrink a little before stacking, and once one card
   // of a grid row stacks, the whole row stacks so neighbours never mix layouts.
-  // A plain translation that would wrap past three lines (unclamped List cards) drops its last
-  // semicolon senses on the card; the popup, tooltip and detail card keep them all.
+  // A plain translation that overflows the card's line limit (two lines clamped in the Compact
+  // grid, three in Comfortable) drops its last semicolon senses on the card, keeping at least
+  // the first; the popup, tooltip and detail card keep them all.
   const plainMeaning = !pointerLines && formMeanings.length <= 1;
   const trimmedMeaning = useSenseTrim(tileRef, plainMeaning ? tileMeaning : '');
   const cardMeaningText = plainMeaning ? <MeaningText text={trimmedMeaning}/> : meaningText;

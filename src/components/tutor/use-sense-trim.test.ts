@@ -10,4 +10,15 @@ describe('card translation senses', () => {
   it('never splits at a semicolon inside brackets', () => {
     expect(splitSenses('to go (lit.; fig.); to leave')).toEqual(['to go (lit.; fig.)', 'to leave']);
   });
+  it('always keeps the first sense, even when everything past it is trimmed', () => {
+    const senses = splitSenses('west(ern); westward; occident');
+    // The hook renders senses.slice(0, Math.max(1, shown)): a single-entry translation is never removed.
+    expect(joinSenses(senses.slice(0, Math.max(1, 0)))).toBe('west(ern)');
+    expect(splitSenses('one single sense')).toHaveLength(1);
+  });
+  it('drops only trailing senses, so a long translation shortens from the end', () => {
+    const senses = splitSenses('to understand; bright, clear; clear-sighted; to look from afar');
+    expect(joinSenses(senses.slice(0, Math.max(1, senses.length - 1)))).toBe('to understand; bright, clear; clear-sighted');
+    expect(joinSenses(senses.slice(0, Math.max(1, senses.length - 3)))).toBe('to understand');
+  });
 });

@@ -57,3 +57,4 @@
 - [x] Detail card Back also skips same-card form switches (hidden when only forms are behind)
 - [x] Detail card: no scroll trap so a zoomed reader can pan to the header X
 - [x] Zoom fix applies on every device (laptop, desktop, tablet), not only touch screens
+- [x] Library cards: over-long translations drop trailing semicolon senses in every view (Compact grid 2-line clamp, Comfortable 3 lines), first sense always kept

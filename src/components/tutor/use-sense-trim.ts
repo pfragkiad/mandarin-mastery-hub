@@ -14,8 +14,10 @@ import { splitTopLevel } from '@/lib/vocabulary-meaning';
  * State: how many senses are shown. Returns the text to render.
  *
  * Tricky logic:
- * - Only unclamped translations are trimmed: grid cards already clamp with their own line limits
- *   (use-side-fit), and a clamped element still lays out its hidden lines.
+ * - Unclamped translations (Comfortable stacked cards) are measured by rendered line count.
+ * - Clamped translations (Compact grid's two lines, Comfortable side layout, few-forms' three)
+ *   trim when content is taller than the clamp (scrollHeight > clientHeight): the card shows
+ *   whole senses up to its line limit instead of cutting the text with an ellipsis.
  * - useSideFit may stack/unstack the body after this hook measured (row sync runs in a
  *   microtask), so a ResizeObserver on the translation re-checks; it only ever trims further,
  *   since trimming itself changes the height. The count resets to every sense only when the card
@@ -69,6 +71,9 @@ function meaningOf(body: HTMLElement | null): HTMLElement | null {
 function overLimit(meaning: HTMLElement, maxLines: number): boolean {
   const style = getComputedStyle(meaning) as CSSStyleDeclaration & { webkitLineClamp?: string };
   const clamp = style.webkitLineClamp ?? style.getPropertyValue('-webkit-line-clamp');
-  if (clamp && clamp !== 'none') return false;
+  if (clamp && clamp !== 'none') {
+    // Clamped card: hidden overflow means a trailing sense can drop (the clamp keeps the rest).
+    return meaning.scrollHeight > meaning.clientHeight + 1;
+  }
   return lineCount(meaning) > maxLines;
 }

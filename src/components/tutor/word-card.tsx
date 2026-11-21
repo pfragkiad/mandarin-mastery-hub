@@ -147,7 +147,8 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   const bodyRef = useRef<HTMLButtonElement>(null);
   // Before stacking, the pinyin and translation may shrink a few pixels; and once any card of a
   // grid row stacks, the whole row stacks so neighbouring cards never mix layouts.
-  // A translation that would wrap past three lines drops its last semicolon senses on the card only.
+  // A translation that overflows the card's line limit (two lines clamped in the Compact grid,
+  // three in Comfortable) drops its last semicolon senses on the card only; the first always stays.
   const cardMeaning = useSenseTrim(bodyRef, word.meaning);
   useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView], { shrinkText: true, rowSync: true });
   const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
