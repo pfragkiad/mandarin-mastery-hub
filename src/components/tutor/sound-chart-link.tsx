@@ -3,6 +3,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import { AudioLines } from 'lucide-react';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { soundChartTarget, toneMark } from '@/lib/pinyin-guide';
+import { soundOrigin } from '@/lib/selection-scroll';
 import { useSyllableInventory } from './use-syllable-inventory';
 
 // Sound chart link shown beside a glyph's speaker (Glyphs cards and details windows only,
@@ -32,11 +33,13 @@ export function SoundChartLink({ reading, from, variant }: { reading: string; fr
   if (variant === 'tile') {
     // Inside the card's own <button> a real <a> is invalid markup, so this is a role="link"
     // span that swallows activation (like TileSpeaker) and navigates through the router.
-    const open = (event: SyntheticEvent) => { event.stopPropagation(); event.preventDefault(); remember(); void navigate({ to: '/pinyin', search }); };
+    const open = (event: SyntheticEvent) => { event.stopPropagation(); event.preventDefault(); remember();
+      // Remember the grid card this came from, so closing the Sound card focuses it again.
+      soundOrigin.set((event.currentTarget as HTMLElement).closest<HTMLElement>('[data-entry-id]')?.dataset['entryId'] ?? null); void navigate({ to: '/pinyin', search }); };
     return <span role="link" tabIndex={0} className="sound-chart-link is-tile" aria-label={label} title={label}
       onClick={open} onKeyDown={event => { if (event.key === 'Enter') open(event); }}><AudioLines/></span>;
   }
   return <Link to="/pinyin" search={search} className="sound-chart-link" aria-label={label} title={label}
     // Only a plain click sets the Back step; opening in a new tab leaves this tab's trail alone.
-    onClick={event => { if (plainClick(event)) remember(); }}><AudioLines/></Link>;
+    onClick={event => { if (plainClick(event)) { remember(); soundOrigin.set(null); } }}><AudioLines/></Link>;
 }

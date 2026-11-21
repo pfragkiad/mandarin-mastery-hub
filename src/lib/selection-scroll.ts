@@ -72,3 +72,26 @@ export function focusRecordCard(id: string) {
   };
   requestAnimationFrame(attempt);
 }
+
+/**
+ * A card focused on return (Details, Practice, Sound card) keeps its outline only until the
+ * pointer moves onto a different card: hovering another card blurs it, so two cards never look
+ * selected at once. Installed once per page (browser only).
+ */
+if (typeof window !== 'undefined') {
+  window.addEventListener('pointerover', event => {
+    const active = document.activeElement as HTMLElement | null;
+    const focused = active?.closest<HTMLElement>('[data-entry-id]');
+    if (!focused || !(event.target instanceof Element)) return;
+    const hovered = event.target.closest<HTMLElement>('[data-entry-id]');
+    if (hovered && hovered !== focused) active?.blur();
+  }, { passive: true });
+}
+
+/** Grid card that opened the Sound chart (set by SoundChartLink tiles), focused again when the
+ *  Sound card's Close returns to that grid. Session-only, taken once. */
+let soundOriginCard: string | null = null;
+export const soundOrigin = {
+  set(id: string | null) { soundOriginCard = id; },
+  take() { const id = soundOriginCard; soundOriginCard = null; return id; },
+};

@@ -12,6 +12,7 @@ import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
+import { focusRecordCard, soundOrigin } from '@/lib/selection-scroll';
 import { historyEntry, historyPosition, soundChartArrival, soundTrail, visitAt } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
@@ -267,7 +268,7 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
         onPrevious={!detailsMode && position > 0 ? () => step(position - 1) : undefined} onNext={!detailsMode && position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
-        onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); window.history.go(arrival - now); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
+        onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); const origin = soundOrigin.take(); window.history.go(arrival - now); if (origin) focusRecordCard(origin); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
         onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) { setRecent(base); requestAnimationFrame(() => revealTile(base, 'auto')); } }}>
         {panel(true)}
       </PinyinSoundSheet>
