@@ -1450,6 +1450,11 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .detail-sheet-position { font-size: 12px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; padding: 0 6px; white-space: nowrap; }
 .detail-sheet-body { min-height: 0; overflow-y: auto; padding: 20px 24px 24px; overscroll-behavior: contain; }
 .detail-sheet .catalog-detail { border: 0; padding: 0; position: static; }
+/* Bottom Close: mirrors the top-bar X so a long card never needs a scroll back up. */
+.detail-sheet-foot { display: flex; justify-content: center; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); }
+/* Touch screens: no scroll trap, so a pinch-zoomed reader can pan past the card's top
+   edge up to its header bar (contain blocks that pan and strands the X off-screen). */
+@media (pointer: coarse) { .detail-sheet-body { overscroll-behavior: auto; } }
 
 @media(max-width:1500px) { .catalog-entry-grid, .vocab-word-grid:not(.list-view) { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 @media(max-width:1150px) { .catalog-entry-grid, .vocab-word-grid:not(.list-view), .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); } }

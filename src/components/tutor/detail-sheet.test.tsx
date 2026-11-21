@@ -191,3 +191,15 @@ describe('Close returns where the window was opened from', () => {
     expect(go).not.toHaveBeenCalled();
   });
 });
+
+describe('DetailSheet bottom Close', () => {
+  it('offers a second Close at the end of the content that closes like the X', async () => {
+    const { render, screen, fireEvent } = await import('@testing-library/react');
+    const { DetailSheet } = await import('./detail-sheet');
+    const { vi } = await import('vitest');
+    const onClose = vi.fn();
+    render(<DetailSheet open title="木" onClose={onClose}><p>body</p></DetailSheet>);
+    fireEvent.click(screen.getByRole('button', { name: /^Close$/ }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+});
