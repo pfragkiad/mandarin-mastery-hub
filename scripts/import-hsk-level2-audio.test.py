@@ -34,8 +34,10 @@ class AudioImportTests(unittest.TestCase):
 
     def test_existing_exact_word_clip_can_be_reused_without_touching_other_fields(self):
         before = copy.deepcopy(self.vocabulary)
+        # Clear Level 3 too: its 过去/站 entries now carry the Level 2 clips, and this
+        # fixture models the state before any Level 2 upload (only Level 1 reusable).
         for entry in before['entries']:
-            if entry['hskLevel'] == 2:
+            if entry['hskLevel'] in (2, 3):
                 entry['audio'] = None
         data, report = audio.import_audio(before, self.manifest)
         self.assertEqual(report['attached'], 1)
