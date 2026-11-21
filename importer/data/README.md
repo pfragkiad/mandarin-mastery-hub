@@ -5,6 +5,7 @@ Keep source files required only for offline data generation here, grouped by dat
 | Directory | Usage |
 | --- | --- |
 | [radical-identities/](radical-identities/README.md) | Supplied exact-identity review and pinned Unicode records consumed by `scripts/import-radical-identities.py`. |
+| [etymology/](etymology/README.md) | Pinned Howell and Shuowen sources, licenses and schema-versioned checksum manifest; acquired/audited by `scripts/download-etymology-sources.py`. Not loaded by the app. |
 
 Preserve raw source bytes, encoding, line endings, version information, and provenance: several output identities include SHA-256 hashes of these files. Importer scripts currently live under `scripts/`; this directory contains their inputs.
 

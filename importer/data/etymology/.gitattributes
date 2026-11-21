@@ -1,0 +1,5 @@
+# Raw source bytes are checksum-bound, including UTF-8 and original CRLFs.
+/manifest.json text eol=lf
+/manifest.schema.json text eol=lf
+/howell/* -text
+/shuowen/* -text

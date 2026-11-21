@@ -1,0 +1,2 @@
+# Shard bytes are hashed by index.json; keep them stable on every checkout.
+*.json text eol=lf
