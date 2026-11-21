@@ -52,12 +52,25 @@ describe('Character recording lookup', () => {
 });
 
 describe('Neutral-tone character readings', () => {
-  it('never plays a recording for a neutral-tone reading (吧 ba uses TTS)', () => {
+  it('never plays the catalogue binding for a neutral-tone reading', () => {
     hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5', 'bā': 'cmn-syl-ba1' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-ba1': { url: '/ba1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
-    expect(characterRecording('吧', 'ba')).toBeNull();
-    expect(audioCandidates(characterAudioRequest('吧', 'ba')).map(c => c.kind)).toEqual(['tts']);
+    expect(characterRecording('吧', 'ba')?.url).not.toBe('/french.mp3');
+    expect(audioCandidates(characterAudioRequest('了', 'le')).map(c => c.kind)).toEqual(['tts']);
     expect(characterRecording('吧', 'bā')?.url).toBe('/ba1.mp3');
     expect(isNeutralReading('ba')).toBe(true);
     expect(isNeutralReading('bā')).toBe(false);
+  });
+  it('reuses the exact neutral word recording only for that word in that toneless reading', () => {
+    hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+    const ba = characterRecording('吧', 'ba');
+    expect(ba?.url).toMatch(/cmn-5e672cf35336\.mp3$/);
+    expect(ba?.license).toBe('CC BY-SA 3.0 US');
+    expect(characterRecording('吗', 'ma')?.url).toMatch(/cmn-efb8320d2b52\.mp3$/);
+    // Another character with the same toneless syllable never borrows it.
+    expect(characterRecording('罢', 'ba')).toBeNull();
+    // A different reading of the recorded word never borrows it either.
+    expect(characterRecording('吧', 'bā')).toBeNull();
+    // Neutral words with no exact recording stay on TTS.
+    expect(characterRecording('了', 'le')).toBeNull();
   });
 });

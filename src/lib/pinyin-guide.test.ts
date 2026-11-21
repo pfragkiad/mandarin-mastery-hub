@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { allSounds, randomRecordedSyllable, recordedTones, checkTyped, hasRecording, missingRecordings, matchesInitial, matchesSyllable, parsePinyin, soundAlikes, toneMark, type PinyinData } from './pinyin-guide';
+import { recordingFor, allSounds, randomRecordedSyllable, recordedTones, checkTyped, hasRecording, missingRecordings, matchesInitial, matchesSyllable, parsePinyin, soundAlikes, toneMark, type PinyinData } from './pinyin-guide';
 
 const rec = { url: '/x.mp3', ms: 900 };
 const data: PinyinData = {
@@ -91,5 +91,27 @@ describe('Start page random sound', () => {
   });
   it('shuffles to a different syllable when another exists', () => {
     for (let i = 0; i < 20; i++) expect(randomRecordedSyllable(data, 'ji', () => i / 20)!.base).not.toBe('ji');
+  });
+});
+
+describe('neutral-tone recordings', () => {
+  const word = { url: '/ba.mp3', ms: 800, word: '吧', reading: 'ba', entryId: 'w', hskIndex: 4, source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
+  const withNeutral: PinyinData = { ...data, syllables: [...data.syllables, { base: 'ba', initial: 'b', final: 'a', tones: [1, 5], note: null }], recordings: { ...data.recordings, ba1: rec }, neutral: { ba5: word } };
+  it('plays a neutral tone only from a word recorded in that reading', () => {
+    expect(hasRecording(withNeutral, 'ba', 5)).toBe(true);
+    expect(recordingFor(withNeutral, 'ba', 5)?.url).toBe('/ba.mp3');
+    // A tone-5 clip in the syllable set (withdrawn by audio-cmn) still never counts.
+    expect(hasRecording(withNeutral, 'zhi', 5)).toBe(false);
+  });
+  it('keeps games and the Start card on tones 1-4', () => {
+    expect(allSounds(withNeutral).some(s => s.tone === 5)).toBe(false);
+    expect(recordedTones(withNeutral, withNeutral.syllables.at(-1)!)).toEqual([1]);
+  });
+});
+
+describe('neutral-audio.json', () => {
+  it('lists exactly the six single-character words recorded in a neutral reading', async () => {
+    const neutral = (await import('@/data/pinyin/neutral-audio.json')).default.recordings as Record<string, { word: string }>;
+    expect(Object.fromEntries(Object.entries(neutral).map(([id, r]) => [id, r.word]))).toEqual({ ba5: '吧', de5: '的', ma5: '吗', men5: '们', ne5: '呢', zhe5: '着' });
   });
 });

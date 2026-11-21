@@ -1,0 +1,74 @@
+{
+ "source": {
+  "policy": "Neutral-tone sounds come only from exact single-character word recordings in that toneless reading; no tone or voice is substituted.",
+  "generator": "scripts/import-neutral-pinyin-audio.py"
+ },
+ "recordings": {
+  "ba5": {
+   "word": "吧",
+   "reading": "ba",
+   "entryId": "c06da4c3-0c8a-42bd-833a-665644ee97ee",
+   "hskIndex": 4,
+   "url": "/__l5e/assets-v1/af5e76e9-3291-422a-9031-dca3e7b45c5a/cmn-5e672cf35336.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 800
+  },
+  "de5": {
+   "word": "的",
+   "reading": "de",
+   "entryId": "b9ae6bdc-ce00-41d3-921f-ba24971fea05",
+   "hskIndex": 30,
+   "url": "/__l5e/assets-v1/c7d12ab7-0c28-4e44-b8eb-3a4cc840e9d6/cmn-6b192093367f.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 750
+  },
+  "ma5": {
+   "word": "吗",
+   "reading": "ma",
+   "entryId": "150f43ba-52b6-4e4d-be24-70c5c75b40e4",
+   "hskIndex": 115,
+   "url": "/__l5e/assets-v1/e0610f8e-adfb-4609-a7eb-178012c3f232/cmn-efb8320d2b52.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 850
+  },
+  "men5": {
+   "word": "们",
+   "reading": "men",
+   "entryId": "a1467d3c-3d2a-4323-ace1-e1e9fce3f586",
+   "hskIndex": 124,
+   "url": "/__l5e/assets-v1/a5d30d73-9f40-4f2e-9cbf-aea7816fb5d2/cmn-6cd0858600a9.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 850
+  },
+  "ne5": {
+   "word": "呢",
+   "reading": "ne",
+   "entryId": "80b55e5a-78b0-46df-b319-82c201292838",
+   "hskIndex": 144,
+   "url": "/__l5e/assets-v1/34eb9036-7ec2-4e05-a516-d50ddea3a514/cmn-deeff7093f30.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 800
+  },
+  "zhe5": {
+   "word": "着",
+   "reading": "zhe",
+   "entryId": "d7aafcd0-b798-4e29-9d67-ab69145640a1",
+   "hskIndex": 490,
+   "url": "/__l5e/assets-v1/000d9740-20f5-473e-b4d2-44bd58e8345d/hsk2-d0c1708fa56e7cbf.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 800
+  }
+ }
+}

@@ -3,7 +3,7 @@
 // speed behave alike.
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { playRecordingUrl, stopRecording } from '@/lib/audio';
-import { hasRecording, soundId, type PinyinData, type PinyinSound, type Tone } from '@/lib/pinyin-guide';
+import { hasRecording, recordingFor, soundId, type PinyinData, type PinyinSound, type Tone } from '@/lib/pinyin-guide';
 
 /** Pitch contour of a tone (high level, rising, dipping, falling; neutral = a light dot). Decorative. */
 export function ToneContour({ tone, className = '' }: { tone: Tone; className?: string }) {
@@ -33,7 +33,7 @@ export function usePinyinPlayer(data: PinyinData | null, slow: boolean) {
     setSequencing(sounds.length > 1);
     for (const sound of sounds) {
       if (mine !== ticket.current) return;
-      const recording = data && hasRecording(data, sound.base, sound.tone) ? data.recordings[sound.id] : null;
+      const recording = data ? recordingFor(data, sound.base, sound.tone) : null;
       if (!recording) { idle(); setError('No recording exists for this sound.'); return; }
       setPlaying(sound.id);
       const finished = new Promise<void>(resolve => {

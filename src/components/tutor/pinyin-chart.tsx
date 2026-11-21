@@ -7,12 +7,12 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObj
 import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
+import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
-import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
+import { historyEntry, historyPosition, soundChartArrival, soundTrail, visitAt } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
 /** The Sound card's five fixed tone slots, in column order. */
@@ -60,7 +60,8 @@ export function FinalSelect({ value, onChange, available }: { value: string; onC
 /**
  * The tones a tile shows as dots: recorded tones filled, unrecorded attested tones hollow.
  * A fifth grey dot appears only when the dictionary attests a neutral tone for this
- * syllable (ma, le…); it stays hollow because no neutral recordings exist. Syllables
+ * syllable (ma, le…); it is filled only when a word recorded in that neutral reading gives it a
+ * sound (吗 for ma), otherwise hollow. Syllables
  * without a neutral tone (ping…) get no fifth dot at all.
  */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
@@ -191,7 +192,23 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     if (keep !== undefined && hasRecording(data, base, keep)) void player.play(sound(base, keep));
   };
 
-  const narrow = useSoundWindowLayout(chartRef);
+  const windowLayout = useSoundWindowLayout(chartRef);
+  // Arrival from another page (Start, a glyph card or details, a lesson…) with a syllable
+  // already chosen: the card opens in the window at every width, like a details window,
+  // and Close returns through history to the page it came from. Decided once per mount
+  // from the history entry just before this one (recorded by the root), so later picks
+  // inside the window keep it open and Close still knows where to go back to.
+  const [arrival, setArrival] = useState<number | null>(null);
+  useEffect(() => {
+    const index = historyPosition().index;
+    if (!selected || index === undefined) return;
+    const before = visitAt(index - 1);
+    if (before && before.pathname !== window.location.pathname) setArrival(index - 1);
+  }, []);
+  const narrow = windowLayout || arrival !== null;
+  // Arrived from another page: the window behaves like a details window, so it shows no
+  // centred Previous/Next — those belong only to the chart's own small-screen window.
+  const detailsMode = arrival !== null;
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
   // Previous/Next in the small-screen window walk the cards the grid shows, in grid order;
   // like a grid click they start a fresh Back trail.
@@ -245,16 +262,17 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     </div>
     {/* Wide screens: the card sits beside the grid. Small screens: the same card opens in a
         top-anchored modal window (like the Glyphs details) only while a syllable is chosen. */}
-    {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={position} total={ordered.length}
+    {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={detailsMode ? -1 : position} total={detailsMode ? 0 : ordered.length}
         onBack={() => { player.stop(); window.history.back(); }}
-        onPrevious={position > 0 ? () => step(position - 1) : undefined} onNext={position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
+        onPrevious={!detailsMode && position > 0 ? () => step(position - 1) : undefined} onNext={!detailsMode && position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
-        onClose={() => { closedBase.current = syllable?.base ?? null; player.stop(); soundTrail.clear(); onSelect(undefined); }}
+        onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); window.history.go(arrival - now); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
         onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) { setRecent(base); requestAnimationFrame(() => revealTile(base, 'auto')); } }}>
         {panel(true)}
       </PinyinSoundSheet>
       : panel(false)}
+    {narrow && !windowLayout && <PinyinPlayerPanel data={data} player={player} syllable={undefined} tone={null} slow={slow} onSlow={onSlow} onTone={chooseTone} onPlayAll={() => {}} onSelect={selectAlike} onLeave={() => {}}/>}
   </div></div>;
 }
 
@@ -319,6 +337,10 @@ function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone,
   const alikes = current !== null && hasRecording(data, syllable.base, current) ? soundAlikes(data, syllable.base, current) : [...new Set(recorded.flatMap(t => soundAlikes(data, syllable.base, t)))].sort();
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
+  // A neutral tone sounds through one word's own recording (吧 for ba): say which word is
+  // heard and credit its speaker, so the clip never reads as a syllable-set recording.
+  const neutral = current === 5 ? neutralRecording(data, syllable.base) : null;
+  const neutralNote = neutral && <> · <span title={`${neutral.source} · ${neutral.license}`}>recorded in <span lang="zh-CN">{neutral.word}</span></span></>;
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
     {/* Head, laid out like the other details windows: Back at the top left (the small-screen
         window's own bar carries it there instead). The row exists only while there is a Back. */}
@@ -334,7 +356,7 @@ function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone,
     </div>
     {/* The tone's description; an unrecorded tone adds an italic "no recording" here
         rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
-    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) && <> · <em>no recording</em></>}</> : 'Click a tone to hear it'}</p>
+    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}</p>
     {/* Five fixed slots (Tone 1–4, Neutral) so every tone keeps its column. A tone the
         syllable inventory doesn't list gets a quiet slashed, non-interactive slot — only the
         inventory decides this, never a guess — and number keys skip it (no recording). */}

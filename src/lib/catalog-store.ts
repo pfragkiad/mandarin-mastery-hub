@@ -2,7 +2,9 @@
 // separate glyph row files (see public/data/catalog.md). Reference data stays out of page bundles.
 // Rows are mutated in place so synchronous readers retain their array references.
 import type { CharacterScript } from './learning-preferences';
-import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest } from './audio';
+import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest, type CharacterReadingAudio } from './audio';
+// Tiny (six-entry) sidecar shared with the Sound chart: exact neutral-tone word recordings.
+import neutralAudio from '@/data/pinyin/neutral-audio.json';
 import type { DecompositionNode } from './character-library';
 import type { RadicalIdentityFile } from './radical-identities';
 import type { RadicalStrokeFile } from './radical-strokes';
@@ -113,16 +115,28 @@ export function loadCatalog(): Promise<void> {
 // across every glyph binding until its source audio is corrected; preserve raw
 // imported provenance and choose labelled Mandarin TTS before playback instead.
 const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
-// Neutral-tone syllables (no tone mark, e.g. 吧 ba, 啊 a) are never played from a
-// recording, matching the Sound chart's "no recording" rule: the imported tone-5
-// clips turned out to be unrelated French speech and were removed. Any neutral
-// reading therefore always uses labelled Mandarin TTS, even if a binding reappears.
+// Neutral-tone syllables (no tone mark, e.g. 吧 ba, 啊 a) never play the catalogue's
+// syllable bindings: the imported tone-5 clips turned out to be unrelated French speech
+// and were removed. The only neutral recordings are the Sound chart's exact word
+// recordings (neutral-audio.json: a single-character word recorded in that toneless
+// reading), so a glyph speaks one only when it IS that word and the reading matches
+// exactly (吧 ba → 吧's own recording); every other neutral reading stays labelled TTS.
 const TONE_MARK = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]|[\u0304\u0301\u030C\u0300]/i;
+type NeutralRecording = { word: string; reading: string; url: string; source: string; license: string; recordingKind?: string };
+/** Exact neutral word recordings keyed by their glyph; only the speaking word itself (never
+ * `alsoRecordedIn` words, whose own clips are not in the file) and only toneless readings. */
+const neutralWordAudio = new Map<string, CharacterReadingAudio[]>();
+for (const r of Object.values(neutralAudio.recordings as Record<string, NeutralRecording>)) {
+  if (!r.url || [...r.word].length !== 1 || !isNeutralReading(r.reading)) continue;
+  const entry: CharacterReadingAudio = { url: r.url, source: r.source, license: r.license, recordingKind: r.recordingKind ?? 'word', glyph: r.word, reading: r.reading.normalize('NFC') };
+  neutralWordAudio.set(r.word, [...(neutralWordAudio.get(r.word) ?? []), entry]);
+}
 export function isNeutralReading(reading: string) { return /[a-zü]/i.test(reading) && !TONE_MARK.test(reading.normalize('NFC')) && !TONE_MARK.test(reading.normalize('NFD')); }
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
   const chosen = reading ?? null;
   const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id && !excludedCharacterRecordings.has(id) && !isNeutralReading(r) ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
+  characterAudio.push(...(neutralWordAudio.get(glyph) ?? []));
   return { text: glyph, reading: chosen, characterAudio };
 }
 
