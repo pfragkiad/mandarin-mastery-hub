@@ -10,6 +10,7 @@ const TONE_MARKS: Record<string, [base: string, tone: string]> = {
   ō: ['o', '1'], ó: ['o', '2'], ǒ: ['o', '3'], ò: ['o', '4'],
   ū: ['u', '1'], ú: ['u', '2'], ǔ: ['u', '3'], ù: ['u', '4'],
   ǖ: ['ü', '1'], ǘ: ['ü', '2'], ǚ: ['ü', '3'], ǜ: ['ü', '4'],
+  ǹ: ['n', '4'],
 };
 
 const isVowel = (c: string) => 'aeiouü'.includes(c);
@@ -43,6 +44,7 @@ export function pinyinNumbered(value: string): string {
     }
     if (!/[a-zü]/.test(ch)) continue;
     if (tone) {
+      if (syllable === 'n' && coda === '' && ch === 'g') { syllable += ch; coda = 'ng'; continue; }
       // A vowel after the marked vowel continues the syllable (diphthongs like
       // ao in hǎo); a true syllable break before a vowel uses an apostrophe.
       if (isVowel(ch)) { syllable += ch; continue; }

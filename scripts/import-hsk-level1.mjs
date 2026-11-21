@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Adapt the versioned HSK example-pairs handoff to the vocabulary API shape.
- * Shared boundary for the pinned Level 1–3 handoffs; the CLI defaults to Level 1.
+ * Shared boundary for the pinned Level 1–4 handoffs; the CLI defaults to Level 1.
  * Audits by default; --write replaces the selected level's study content.
  * Recorded UUIDs, syllabus identities and audio survive exact ID/headword matches.
  * Pinyin tokenization uses the same fail-closed alignment as sentence rendering.
@@ -31,16 +31,18 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
 
 /** Preserve syllabus identities/kinds while replacing only the selected handoff's content.
  * Level 1 removes legacy unofficial phrases; Level 2 retains all 200 syllabus entries,
- * including its four explicitly classified phrases. Level 3 creates new syllabus records.
+ * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.6.1', 2: '1.0.3', 3: '1.0.4' };
+  const versions = { 1: '1.6.1', 2: '1.0.3', 3: '1.0.4', 4: '1.0.3' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
-  const count = level === 1 ? 300 : level === 2 ? 200 : 500;
-  const firstId = level === 1 ? 1 : level === 2 ? 301 : 501, lastId = firstId + count - 1;
+  const count = level === 1 ? 300 : level === 2 ? 200 : level === 3 ? 500 : 1000;
+  const firstId = level === 1 ? 1 : level === 2 ? 301 : level === 3 ? 501 : 1001, lastId = firstId + count - 1;
   const source = read(sourcePath), topics = read(topicsPath), original = read(vocabularyPath);
   const data = structuredClone(original);
   const inventory = new Set(read(inventoryPath).syllables.map(s => s.base));
+  const syllabicNg = source.entries.some(e => e.headword === '嗯' && e.pinyin?.normalize('NFC').toLowerCase() === 'ǹg');
+  if (syllabicNg) inventory.add('ng');
   requireThat(source.schema_version === 'hsk-example-pairs/1.2.0', 'Unsupported handoff schema');
   requireThat(source.data_version === versions[level] && source.syllabus.level === level && source.syllabus.edition === '2025-11', 'Unexpected dataset version or syllabus');
   requireThat(source.entries.length === count && source.syllabus.entry_count === count, `Expected ${count} entries`);
@@ -56,7 +58,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const oldLevel = original.entries.filter(e => e.hskLevel === level);
   const oldEntries = level === 1 ? oldLevel.filter(e => e.entryKind === 'word') : oldLevel;
   const byId = new Map(oldEntries.map(e => [e.hsk_index, e]));
-  requireThat(byId.size === oldEntries.length && (level === 3 ? oldEntries.length === 0 || oldEntries.length === count : oldEntries.length === count), `Existing Level ${level} identities must be complete and unique`);
+  requireThat(byId.size === oldEntries.length && (level >= 3 ? oldEntries.length === 0 || oldEntries.length === count : oldEntries.length === count), `Existing Level ${level} identities must be complete and unique`);
   requireThat(original.entries.every(e => e.hskLevel === level || e.hsk_index == null || e.hsk_index < firstId || e.hsk_index > lastId), `Level ${level} syllabus IDs already belong to another level`);
   const sourceRef = id => ({ sourceName: basename(sourcePath), sourceVersion: source.data_version, sourceId: String(id) });
   const inputSha256 = hash(sourcePath);
@@ -65,21 +67,24 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const categoryMap = new Map(topics.map((t, i) => [t.id, topicCategories[i].id]));
 
   function tokens(text, pinyin, context) {
-    // Hyphens in the supplied readings mark syllable boundaries, not syllable text.
-    const paired = alignPhrasePinyin(text, pinyin.replace(/-/g, ' '), inventory);
+    // The handoff's standalone erhua r joins its preceding syllable for alignment only.
+    const alignmentPinyin = pinyin.replace(/-/g, ' ').replace(/(\p{L})\s+r(?=[\s\p{P}]|$)/gu, '$1r');
+    const paired = alignPhrasePinyin(text, alignmentPinyin, inventory);
     requireThat(paired, `Ambiguous or mismatched pinyin: ${context}`);
     const readings = paired.tokens.flatMap(t => t.pieces.filter(p => p.pair != null).map(p => p.text));
     return Array.from(text).map((ch, index) => {
       const hanzi = /\p{Script=Han}/u.test(ch), space = /\s/u.test(ch);
       const pair = paired.glyphPairs[index];
       requireThat(!hanzi || (pair != null && readings[pair]), `Missing character reading: ${context}`);
+      const reading = hanzi ? readings[pair]?.normalize('NFC').toLowerCase() : null;
+      if (reading?.normalize('NFD').replace(/[\u0300\u0301\u0304\u030c]/g, '') === 'ng') requireThat(syllabicNg && ch === '嗯' && reading === 'ǹg', `Unsupported syllabic nasal: ${context}`);
       requireThat(hanzi || space || /\p{P}/u.test(ch), `Unsupported token character: ${context}`);
       return { kind: hanzi ? 'hanzi' : space ? 'space' : 'punctuation', text: ch, pinyin: hanzi ? readings[pair] : null, reviewed: false };
     });
   }
 
   const entries = source.entries.map(e => {
-    const old = byId.get(e.id) ?? (level === 3 && oldEntries.length === 0 ? {
+    const old = byId.get(e.id) ?? (level >= 3 && oldEntries.length === 0 ? {
       id: identity(`entry:${e.id}`, level),
       sourceId: String(e.id), sourceName: basename(sourcePath), sourceVersion: source.data_version,
       simplified: e.headword, traditional: null, entryKind: 'word', hskLevel: level,
@@ -133,7 +138,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   });
   const imported = new Map(entries.map(e => [e.id, e]));
   data.entries = original.entries.filter(e => level !== 1 || e.hskLevel !== 1 || e.entryKind === 'word').map(e => imported.get(e.id) ?? e);
-  if (level === 3 && oldEntries.length === 0) data.entries.push(...entries);
+  if (level >= 3 && oldEntries.length === 0) data.entries.push(...entries);
   const used = new Set(data.entries.flatMap(e => [e.categoryId, ...(e.categoryIds ?? [])]).filter(Boolean));
   // Topic IDs deliberately retain the Level 1 namespace: both levels share one taxonomy.
   // Drop only newly orphaned topics of this level; other-level rows stay exact.

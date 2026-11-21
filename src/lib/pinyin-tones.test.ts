@@ -11,6 +11,9 @@ describe('pinyinNumbered', () => {
   it('marks neutral syllables with 5', () => {
     expect(pinyinNumbered('yìsi')).toBe('yi4si5');
   });
+  it('keeps the tone on the recorded syllabic nasal', () => {
+    expect(pinyinNumbered('ǹg')).toBe('ng4');
+  });
 });
 
 describe('pinyinReadingMatches', () => {
@@ -38,6 +41,9 @@ describe('pinyinReadingMatches', () => {
     expect(pinyinReadingMatches('shí', 'shī', true)).toBe(false);
     expect(pinyinReadingMatches('shì', 'shī', false)).toBe(false);
     expect(pinyinReadingMatches('nǐ hǎo', 'nǐhǎo', true)).toBe(true);
+    expect(pinyinReadingMatches('ǹg', 'ǹg', true)).toBe(true);
+    expect(pinyinReadingMatches('ǹg', 'ng4', true)).toBe(true);
+    expect(pinyinReadingMatches('ǹg', 'ng2', true)).toBe(false);
   });
   it('accepts v for ü and ignores spaces', () => {
     expect(pinyinReadingMatches('nǚ', 'nv3', true)).toBe(true);

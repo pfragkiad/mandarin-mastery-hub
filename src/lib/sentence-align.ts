@@ -19,8 +19,8 @@ export interface SentencePair {
 }
 
 const HANZI = /[㐀-鿿豈-﫿]/;
-/** Pinyin letters including tone-marked vowels and ü; used to strip surrounding punctuation. */
-const PINYIN_LETTER = "a-zA-ZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüÜĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙǕǗǙǛ";
+/** Pinyin letters including tone-marked vowels and the sourced syllabic nasal ǹ. */
+const PINYIN_LETTER = "a-zA-ZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüÜǹǸĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙǕǗǙǛ";
 
 export function isHanziChar(ch: string): boolean {
   return HANZI.test(ch);

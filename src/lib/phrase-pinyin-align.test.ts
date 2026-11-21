@@ -21,6 +21,11 @@ describe('alignPhrasePinyin', () => {
     expect(syllableTexts('一点儿', 'yìdiǎnr')).toEqual([['0:yì', '1:diǎn', '2:r']]);
   });
 
+  it('retains the recorded syllabic nasal and its punctuation', () => {
+    const pairing = alignPhrasePinyin('嗯，好。', 'Ǹg, hǎo.', new Set([...syllables, 'ng']));
+    expect(pairing?.tokens[0]).toEqual({ leading: '', trailing: ',', pieces: [{ text: 'Ǹg', pair: 0 }] });
+  });
+
   it('treats an apostrophe as a syllable boundary', () => {
     expect(syllableTexts('西安', "Xī'ān")).toEqual([['0:Xī', '1:ān']]);
   });

@@ -6,7 +6,7 @@ describe('Official HSK syllabus id on word cards', () => {
   it('carries the official id exactly when the entry records one', () => {
     const adapted = vocabularyData.entries.map(e => entryToWord(e, vocabularyData.categories));
     expect(adapted.every(w => w.hskId === (vocabularyData.entries.find(e => e.id === w.id)?.hsk_index ?? null))).toBe(true);
-    expect(adapted.filter(w => w.hskId != null)).toHaveLength(1000);
+    expect(adapted.filter(w => w.hskId != null)).toHaveLength(2000);
     // Entries without an official id must stay empty, never show a placeholder.
     expect(adapted.filter(w => w.hskId == null)).toHaveLength(1);
     expect(words.every(w => w.hskId === (w.entry?.hsk_index ?? null))).toBe(true);
