@@ -2,7 +2,7 @@
 // Hosted preview uses the fixtures below; a local deployment can fetch the same shape from /api/vocabulary.
 import type { AudioAttachment } from './audio';
 import type { Word } from './mandarin';
-import vocabularyJson from '@/data/vocabulary.json';
+import vocabularyIndex from '@/data/vocabulary/index.json';
 
 export type TextToken = { kind: 'hanzi' | 'punctuation' | 'space'; text: string; pinyin: string | null; reviewed: boolean };
 export type SourceRef = { sourceName: string; sourceVersion: string; sourceId: string };
@@ -42,7 +42,19 @@ export const posLabel = (pos: string | null) => pos?.trim() || 'Unspecified';
 export const categoryName = (name: string) => name.replace(/^\d+\s+/, '');
 
 /** Imported vocabulary (exported from the Mandarin Tutor SQLite database in exact API shape). */
-export const vocabularyData = vocabularyJson as unknown as { categories: Category[]; entries: Entry[] };
+export const vocabularyData = { categories: vocabularyIndex.categories, entries: joinVocabularyParts() } as unknown as { categories: Category[]; entries: Entry[] };
+
+/** The vocabulary is stored split by HSK level (src/data/vocabulary/level-N.json, written by
+ *  scripts/vocabulary_store.py / vocabulary-store.mjs) so no file exceeds the repository's size
+ *  limit; index.json's `parts` restores the stored entry order. A missing part fails loudly. */
+function joinVocabularyParts(): unknown[] {
+  const parts = import.meta.glob<unknown[]>('../data/vocabulary/*.json', { eager: true, import: 'default' });
+  return vocabularyIndex.parts.flatMap(name => {
+    const part = parts[`../data/vocabulary/${name}`];
+    if (!part) throw new Error(`Vocabulary part missing: ${name}`);
+    return part;
+  });
+}
 
 /** Full-width sentence punctuation becomes its standard (Latin) equivalent in pinyin text. */
 const LATIN_PUNCTUATION: Record<string, string> = {

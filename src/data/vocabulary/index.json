@@ -1,0 +1,115 @@
+{
+    "categories": [
+        {
+            "id": "f260ae19-7b9f-4081-9c54-0387103c3999",
+            "name": "Sample collection"
+        },
+        {
+            "id": "5065c8ae-c6bd-5997-8a38-b482e14d2ec7",
+            "name": "Numbers & Quantities",
+            "description": "Counting, amounts, measurements, ordinals, and classifiers."
+        },
+        {
+            "id": "12c16c85-69d5-596d-836c-2ebdab8b115b",
+            "name": "Time & Calendar",
+            "description": "Dates, times of day, periods, age and scheduling."
+        },
+        {
+            "id": "5265f26d-ee8a-5f3a-967c-e34ec864d289",
+            "name": "Family & Relationships",
+            "description": "Relatives, family life, friendship, and relationships."
+        },
+        {
+            "id": "b19bf079-dbcc-5a51-b8c1-d8f19cbc13d5",
+            "name": "People & Identity",
+            "description": "People, gender, personal information, and forms of address."
+        },
+        {
+            "id": "441a7599-bac3-564b-b62a-d38055cb8f08",
+            "name": "Pronouns, Questions & Pointing",
+            "description": "Personal and demonstrative pronouns; asking and pointing."
+        },
+        {
+            "id": "9b08a0ef-85e0-57e6-8072-fd65aa63cc61",
+            "name": "Food, Drinks & Meals",
+            "description": "Meals, eating, drinking, ingredients, and restaurants."
+        },
+        {
+            "id": "6bc4a41a-e424-505e-9502-c33d1f3fbfee",
+            "name": "Education & Language",
+            "description": "Learning, school, teachers, reading, writing, and languages."
+        },
+        {
+            "id": "307a8fda-b210-5d65-9c18-651b5a217f67",
+            "name": "Work & Jobs",
+            "description": "Workplaces, occupations, and the working day."
+        },
+        {
+            "id": "dbf4b51a-bc7b-53c6-8e51-bc9379462a13",
+            "name": "Shopping & Money",
+            "description": "Stores, prices, buying, selling, and currency."
+        },
+        {
+            "id": "4b95b198-5b54-5ed9-89f5-50de54e3d435",
+            "name": "Home, Clothing & Objects",
+            "description": "Home interiors, everyday belongings, clothing, and household objects."
+        },
+        {
+            "id": "f9a23661-0c4b-5e47-9b22-d478f9552913",
+            "name": "Travel & Transport",
+            "description": "Vehicles, travel, driving, and going from place to place."
+        },
+        {
+            "id": "49ecba17-b14d-5f02-8479-f938e9e7861b",
+            "name": "Health & Wellbeing",
+            "description": "Illness, medical care, sleep, and rest."
+        },
+        {
+            "id": "5f65c07a-6388-575b-9f9c-0dc6e6a27e8b",
+            "name": "Animals & Weather",
+            "description": "Animals, weather conditions, and the natural environment."
+        },
+        {
+            "id": "88853daa-3545-5051-9307-17e12e65ccf4",
+            "name": "Daily Actions & Activities",
+            "description": "Common everyday actions, physical activities, and routines."
+        },
+        {
+            "id": "8461f6e9-c853-5a75-954d-2bc8a6ce8916",
+            "name": "Leisure, Music & Media",
+            "description": "Films, music, games, recreation, and entertainment."
+        },
+        {
+            "id": "1ee6a388-162d-5e08-8a09-6059955981a5",
+            "name": "Places, Position & Direction",
+            "description": "Countries, positions, directions, and spatial relations."
+        },
+        {
+            "id": "9b4a8310-9643-5c75-9c49-8619266402ab",
+            "name": "Communication & Social Language",
+            "description": "Greetings, requests, apologizing, thanking, and speaking with others."
+        },
+        {
+            "id": "22ba77b8-a2c1-5c20-93e2-d362a00c6aed",
+            "name": "Qualities, Feelings & Evaluation",
+            "description": "Descriptors, personal feelings, properties, and judgments."
+        },
+        {
+            "id": "60f65f0a-0194-53ce-885e-2be0da7071a5",
+            "name": "Grammar & Function Words",
+            "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain."
+        },
+        {
+            "id": "b133f1c8-f257-5390-a5be-0f12358d92cc",
+            "name": "Abstract & General Concepts",
+            "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning."
+        }
+    ],
+    "parts": [
+        "level-1.json",
+        "unlevelled.json",
+        "level-2.json",
+        "level-3.json",
+        "level-4.json"
+    ]
+}

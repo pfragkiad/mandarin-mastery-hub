@@ -1,10 +1,11 @@
 // Guards the phone font fix: the Words/Phrases font subsets must cover every character the
 // vocabulary shows, and the handwritten/print stacks must use them before the sliced web fonts.
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 const css = readFileSync('src/styles.css', 'utf8');
-const vocabulary = readFileSync('src/data/vocabulary.json', 'utf8');
+// Every level part of the split vocabulary (src/data/vocabulary/*.json).
+const vocabulary = readdirSync('src/data/vocabulary').map(name => readFileSync(`src/data/vocabulary/${name}`, 'utf8')).join('');
 
 function coverage(family: string): Set<number> {
   const faces = [...css.matchAll(new RegExp(`@font-face \\{ font-family: '${family}';[^}]*unicode-range: ([^;]+);`, 'g'))];

@@ -1,0 +1,52 @@
+[
+    {
+        "id": "63c1c762-a714-4778-a662-718f2872c8ef",
+        "sourceId": null,
+        "sourceName": null,
+        "sourceVersion": null,
+        "simplified": "我受够了",
+        "traditional": null,
+        "tokens": [
+            {
+                "kind": "hanzi",
+                "text": "我",
+                "pinyin": "wǒ",
+                "reviewed": true
+            },
+            {
+                "kind": "hanzi",
+                "text": "受",
+                "pinyin": "shòu",
+                "reviewed": true
+            },
+            {
+                "kind": "hanzi",
+                "text": "够",
+                "pinyin": "gòu",
+                "reviewed": true
+            },
+            {
+                "kind": "hanzi",
+                "text": "了",
+                "pinyin": "le",
+                "reviewed": true
+            }
+        ],
+        "pinyinDisplay": "wǒ shòu gòu le",
+        "meanings": [
+            "I’ve had enough"
+        ],
+        "entryKind": "phrase",
+        "hskLevel": null,
+        "hskVersion": null,
+        "hsk_index": null,
+        "hskSource": null,
+        "categoryId": "f260ae19-7b9f-4081-9c54-0387103c3999",
+        "partOfSpeech": "phrase",
+        "contentStatus": "reviewed",
+        "audio": null,
+        "examples": [],
+        "createdAt": "2026-10-14T20:28:26.096Z",
+        "updatedAt": "2026-10-14T22:22:47.366Z"
+    }
+]

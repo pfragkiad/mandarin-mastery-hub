@@ -15,6 +15,7 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -22,9 +23,13 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.dont_write_bytecode = True
+import vocabulary_store  # noqa: E402  (split-by-level vocabulary reader/writer)
+
 ROOT = Path(__file__).resolve().parent.parent
 INPUT = ROOT / 'importer/data/hsk-audio'
-VOCABULARY = ROOT / 'src/data/vocabulary.json'
+VOCABULARY = vocabulary_store.DIRECTORY
 HANDOFF = ROOT / 'importer/hsk/archive/hsk3_level2_1.0.2.json'
 COMMIT = 'f759a0f18f27690742957619e1248ed91e9b3f2c'
 BASE = 'https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/'
@@ -86,7 +91,7 @@ def prepare(cache):
     if tree.get('truncated'):
         raise ValueError('Incomplete audio-cmn tree')
     files = {item['path']: item for item in tree['tree'] if item['type'] == 'blob'}
-    vocabulary = read(VOCABULARY)
+    vocabulary = vocabulary_store.read_vocabulary(VOCABULARY)
     entries = [entry for entry in vocabulary['entries'] if entry['hskLevel'] == 2]
     handoff = read(HANDOFF)
     if {(entry['hsk_index'], entry['simplified'], entry['pinyinDisplay']) for entry in entries} != {
@@ -215,7 +220,7 @@ def upload(manifest, cache, uploads):
     if not executable:
         raise ValueError('lovable-assets is unavailable; no uploads attempted')
     uploads.mkdir(parents=True, exist_ok=True)
-    _, coverage = import_audio(read(VOCABULARY), manifest, uploads)
+    _, coverage = import_audio(vocabulary_store.read_vocabulary(VOCABULARY), manifest, uploads)
     pending = set(coverage['pendingUpload'])
     for recording in {row['recording']['gitBlob']: row['recording'] for row in manifest['entries'] if row['hskIndex'] in pending}.values():
         pointer_path = uploads / (recording['gitBlob'] + '.json')
@@ -253,9 +258,9 @@ def main():
         print(f'Staged {stage(manifest, args.cache)} verified MP3s for Lovable')
     if args.upload:
         upload(manifest, args.cache, args.uploads)
-    data, report = import_audio(read(VOCABULARY), manifest, args.uploads)
+    data, report = import_audio(vocabulary_store.read_vocabulary(VOCABULARY), manifest, args.uploads)
     if args.write:
-        VOCABULARY.write_text(json.dumps(data, ensure_ascii=False, indent=4) + '\n', 'utf-8')
+        vocabulary_store.write_vocabulary(data, VOCABULARY)
     if args.report:
         args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     print(json.dumps({'mode': 'written' if args.write else 'audit-only', **report}, ensure_ascii=False, indent=2))

@@ -16,7 +16,7 @@ class AudioImportTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.manifest = audio.load_manifest()
-        cls.vocabulary = audio.read(audio.VOCABULARY)
+        cls.vocabulary = audio.vocabulary_store.read_vocabulary()
 
     def test_exact_source_coverage_and_duplicate_form_readings(self):
         _, report = audio.import_audio(self.vocabulary, self.manifest)

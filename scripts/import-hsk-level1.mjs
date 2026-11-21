@@ -7,6 +7,7 @@
  */
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { readVocabulary, VOCABULARY_DIRECTORY, writeVocabulary } from './vocabulary-store.mjs';
 import { basename, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createJiti } from 'jiti';
@@ -38,7 +39,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
   const count = level === 1 ? 300 : level === 2 ? 200 : level === 3 ? 500 : 1000;
   const firstId = level === 1 ? 1 : level === 2 ? 301 : level === 3 ? 501 : 1001, lastId = firstId + count - 1;
-  const source = read(sourcePath), topics = read(topicsPath), original = read(vocabularyPath);
+  const source = read(sourcePath), topics = read(topicsPath), original = readVocabulary(vocabularyPath);
   const data = structuredClone(original);
   const inventory = new Set(read(inventoryPath).syllables.map(s => s.base));
   const syllabicNg = source.entries.some(e => e.headword === '嗯' && e.pinyin?.normalize('NFC').toLowerCase() === 'ǹg');
@@ -176,12 +177,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     if (key === '--write') options.write = true;
     else { requireThat(args[i + 1] && !args[i + 1].startsWith('--'), `Missing value: ${key}`); options[key.slice(2)] = args[++i]; }
   }
-  const vocabularyPath = resolve(options.vocabulary ?? 'src/data/vocabulary.json');
+  const vocabularyPath = resolve(options.vocabulary ?? VOCABULARY_DIRECTORY);
   const { data, report } = importLevel1({
     sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level1_1.6.1.json'),
     topicsPath: resolve(options.topics ?? 'importer/hsk/hsk3_topics.json'), vocabularyPath,
   });
-  if (options.write) writeFileSync(resolve(options.output ?? vocabularyPath), `${JSON.stringify(data, null, 4)}\n`);
+  if (options.write) writeVocabulary(resolve(options.output ?? vocabularyPath), data);
   if (options.report) writeFileSync(resolve(options.report), `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify({ mode: options.write ? 'written' : 'audit-only', ...report }, null, 2));
 }

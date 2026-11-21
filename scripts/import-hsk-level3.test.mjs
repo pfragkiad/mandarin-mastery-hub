@@ -5,11 +5,12 @@ import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { importLevel3 } from './import-hsk-level3.mjs';
+import { readVocabulary } from './vocabulary-store.mjs';
 
 const sourcePath = 'importer/hsk/hsk3_level3_1.0.4.json';
 const topicsPath = 'importer/hsk/hsk3_topics.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
-const vocabulary = JSON.parse(readFileSync('src/data/vocabulary.json', 'utf8'));
+const vocabulary = readVocabulary();
 
 function fixture(t, data = vocabulary) {
   const directory = mkdtempSync(join(tmpdir(), 'mandarin-hsk3-import-'));

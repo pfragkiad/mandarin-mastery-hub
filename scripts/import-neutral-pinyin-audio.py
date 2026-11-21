@@ -21,6 +21,11 @@ Rules (fail closed):
 Usage: python3 scripts/import-neutral-pinyin-audio.py --write [--base http://localhost:8080]
        python3 scripts/import-neutral-pinyin-audio.py --check
 """
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+_sys.dont_write_bytecode = True
+import vocabulary_store  # noqa: E402  (split-by-level vocabulary)
 import argparse, bz2, json, subprocess, sys, tempfile, unicodedata, urllib.request
 import xml.etree.ElementTree as ET
 
@@ -39,7 +44,7 @@ def shtooka_readings():
 
 def candidates():
     inventory = {nfc(s['base']): s['tones'] for s in json.load(open('src/data/pinyin/inventory.json', encoding='utf-8'))['syllables']}
-    entries = json.load(open('src/data/vocabulary.json', encoding='utf-8'))['entries']
+    entries = vocabulary_store.read_vocabulary()['entries']
     shtooka = shtooka_readings()
     found = {}
     for e in sorted(entries, key=lambda e: (e.get('hsk_index') is None, e.get('hsk_index') or 0)):

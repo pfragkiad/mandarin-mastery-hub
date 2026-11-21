@@ -1,6 +1,6 @@
 # HSK Level 3 word-audio audit
 
-The owner-supplied `hsk-level-3-audio.zip` carries a manifest bound to `importer/hsk/hsk3_level3_1.0.4.json` (SHA-256 `119cc398…dd5d`), the same Shtooka index and notice already preserved for Level 2, and 443 checksum-named MP3s. The manifest is kept byte for byte as [level3-manifest.json](../importer/data/hsk-audio/level3-manifest.json); `scripts/import-hsk-level3-audio.py` re-derives every row's status and source candidates from the preserved index and confirms all 500 IDs, headwords and readings match `src/data/vocabulary.json`.
+The owner-supplied `hsk-level-3-audio.zip` carries a manifest bound to `importer/hsk/hsk3_level3_1.0.4.json` (SHA-256 `119cc398…dd5d`), the same Shtooka index and notice already preserved for Level 2, and 443 checksum-named MP3s. The manifest is kept byte for byte as [level3-manifest.json](../importer/data/hsk-audio/level3-manifest.json); `scripts/import-hsk-word-audio.py --level 3` re-derives every row's status and source candidates from the preserved index and confirms all 500 IDs, headwords and readings match `src/data/vocabulary.json`.
 
 | Coverage | Entries |
 | --- | ---: |

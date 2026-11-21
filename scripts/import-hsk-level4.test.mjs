@@ -6,10 +6,11 @@ import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { importLevel4 } from './import-hsk-level4.mjs';
+import { readVocabulary } from './vocabulary-store.mjs';
 
 const sourceRaw = readFileSync('importer/hsk/hsk3_level4_1.0.3.json');
 const source = JSON.parse(sourceRaw);
-const vocabulary = JSON.parse(readFileSync('src/data/vocabulary.json'));
+const vocabulary = readVocabulary();
 const checksum = createHash('sha256').update(sourceRaw).digest('hex');
 
 function fixture(t, data = vocabulary, editSource = () => {}) {

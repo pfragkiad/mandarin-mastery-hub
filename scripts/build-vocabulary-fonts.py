@@ -3,7 +3,7 @@
 Why: phones have no KaiTi/Songti, so the handwritten and print styles come from Google's
 web fonts, which arrive in ~100 separate slices. On a phone connection a word's characters
 show in the system fallback (often mixed slice-by-slice) until every slice lands. These two
-files hold exactly the glyphs src/data/vocabulary.json uses — the same LXGW WenKai TC and
+files hold exactly the glyphs src/data/vocabulary/ uses — the same LXGW WenKai TC and
 Noto Serif SC designs, fetched through Google Fonts' `text=` subsetting — so a whole word
 switches style at once from one small download.
 
@@ -14,7 +14,9 @@ when the vocabulary gains a character the files lack)."""
 import io, re, sys, pathlib, urllib.parse, urllib.request
 
 out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True)
-text = (pathlib.Path(__file__).parent.parent / "src/data/vocabulary.json").read_text(encoding="utf8")
+sys.path.insert(0, str(pathlib.Path(__file__).parent)); sys.dont_write_bytecode = True
+import vocabulary_store  # split-by-level vocabulary
+text = vocabulary_store.read_text()
 
 def keep(c: str) -> bool:
     o = ord(c)  # Han blocks plus CJK and full-width punctuation used inside phrases
