@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 
 const css = readFileSync('src/styles.css', 'utf8');
 // Every level part of the split vocabulary (src/data/vocabulary/*.json).
-const vocabulary = readdirSync('src/data/vocabulary').map(name => readFileSync(`src/data/vocabulary/${name}`, 'utf8')).join('');
+const vocabulary = readdirSync('src/data/vocabulary').filter(name => name.endsWith('.json')).map(name => readFileSync(`src/data/vocabulary/${name}`, 'utf8')).join('');
 
 function coverage(family: string): Set<number> {
   const faces = [...css.matchAll(new RegExp(`@font-face \\{ font-family: '${family}';[^}]*unicode-range: ([^;]+);`, 'g'))];

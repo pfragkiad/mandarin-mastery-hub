@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle, alignSentenceEnding, examplePinyin } from './data-contract';
+import { entryToWord, fixtureEntries, fixtureCategories, posLabel, levelLabel, vocabularyData, orderVocabularyEntries, orderExamples, sentencePhraseEntries, phraseStyle, matchesPhraseStyle, alignSentenceEnding, examplePinyin } from './data-contract';
 import type { Example } from './data-contract';
 describe('Entry adapter', () => {
   const w = entryToWord(fixtureEntries[0]!, fixtureCategories);
@@ -15,6 +15,14 @@ describe('Entry adapter', () => {
       expect(pinyin, `${e.simplified} pinyin "${pinyin}"`).not.toMatch(/[。！？，、；：]/);
       expect(pinyin.endsWith('.')).toBe(true);
     }
+  });
+});
+
+describe('split vocabulary order', () => {
+  it('restores interleaved records and rejects invalid identities', () => {
+    const entries = ['a', 'c', 'b'].map(id => ({ ...fixtureEntries[0]!, id }));
+    expect(orderVocabularyEntries(entries, ['a', 'b', 'c']).map(entry => entry.id)).toEqual(['a', 'b', 'c']);
+    expect(() => orderVocabularyEntries(entries, ['a', 'b', 'missing'])).toThrow('Invalid vocabulary entry order');
   });
 });
 

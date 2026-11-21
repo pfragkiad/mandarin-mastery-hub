@@ -1,8 +1,8 @@
 // Node twin of scripts/vocabulary_store.py: the vocabulary is one { categories, entries }
 // object to importers, stored in src/data/vocabulary/ as index.json (top-level keys + ordered
 // `parts`) plus one part per HSK level (level-N.json, unlevelled.json), keeping every file
-// under the repository's per-file size limit. Parts follow each level's first appearance, so
-// a level's entries keep their relative order. A *.json path is one combined file (fixtures).
+// smaller than the original. An optional entryOrder preserves interleaved levels.
+// A *.json path is one combined file (fixtures).
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,8 +14,15 @@ export const partName = entry => (entry.hskLevel == null ? 'unlevelled.json' : `
 
 export function readVocabulary(path = VOCABULARY_DIRECTORY) {
   if (path.endsWith('.json')) return read(path);
-  const { parts, ...rest } = read(join(path, 'index.json'));
-  return { ...rest, entries: parts.flatMap(name => read(join(path, name))) };
+  const { parts, entryOrder, ...rest } = read(join(path, 'index.json'));
+  const entries = parts.flatMap(name => read(join(path, name)));
+  if (!entryOrder) return { ...rest, entries };
+  const byId = new Map(entries.map(entry => [entry.id, entry]));
+  if (byId.size !== entries.length || entryOrder.length !== entries.length ||
+      new Set(entryOrder).size !== entries.length || entryOrder.some(id => !byId.has(id))) {
+    throw new Error('Invalid vocabulary entry order');
+  }
+  return { ...rest, entries: entryOrder.map(id => byId.get(id)) };
 }
 
 export function writeVocabulary(path = VOCABULARY_DIRECTORY, data) {
@@ -26,9 +33,15 @@ export function writeVocabulary(path = VOCABULARY_DIRECTORY, data) {
     if (!parts.has(name)) parts.set(name, []);
     parts.get(name).push(entry);
   }
+  const grouped = [...parts.values()].flat();
+  const entryOrder = data.entries.map(entry => entry.id);
+  if (entryOrder.some(id => typeof id !== 'string') || new Set(entryOrder).size !== entryOrder.length) {
+    throw new Error('Vocabulary entries must have unique string IDs');
+  }
+  const interleaved = grouped.some((entry, index) => entry.id !== entryOrder[index]);
   if (!existsSync(path)) mkdirSync(path, { recursive: true });
   for (const stale of readdirSync(path).filter(name => name.endsWith('.json') && name !== 'index.json' && !parts.has(name))) unlinkSync(join(path, stale));
   for (const [name, entries] of parts) writeFileSync(join(path, name), dump(entries));
   const { entries: _entries, ...rest } = data;
-  writeFileSync(join(path, 'index.json'), dump({ ...rest, parts: [...parts.keys()] }));
+  writeFileSync(join(path, 'index.json'), dump({ ...rest, parts: [...parts.keys()], ...(interleaved ? { entryOrder } : {}) }));
 }

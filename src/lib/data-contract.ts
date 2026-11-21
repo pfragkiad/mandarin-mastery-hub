@@ -42,18 +42,30 @@ export const posLabel = (pos: string | null) => pos?.trim() || 'Unspecified';
 export const categoryName = (name: string) => name.replace(/^\d+\s+/, '');
 
 /** Imported vocabulary (exported from the Mandarin Tutor SQLite database in exact API shape). */
-export const vocabularyData = { categories: vocabularyIndex.categories, entries: joinVocabularyParts() } as unknown as { categories: Category[]; entries: Entry[] };
+const index: { categories: Category[]; parts: string[]; entryOrder?: string[] } = vocabularyIndex;
+export const vocabularyData = { categories: index.categories, entries: joinVocabularyParts() };
 
 /** The vocabulary is stored split by HSK level (src/data/vocabulary/level-N.json, written by
- *  scripts/vocabulary_store.py / vocabulary-store.mjs) so no file exceeds the repository's size
- *  limit; index.json's `parts` restores the stored entry order. A missing part fails loudly. */
-function joinVocabularyParts(): unknown[] {
-  const parts = import.meta.glob<unknown[]>('../data/vocabulary/*.json', { eager: true, import: 'default' });
-  return vocabularyIndex.parts.flatMap(name => {
+ *  scripts/vocabulary_store.py / vocabulary-store.mjs). The index records part order and,
+ *  when levels are interleaved, exact entry order. Missing or invalid data fails loudly. */
+function joinVocabularyParts(): Entry[] {
+  const parts = import.meta.glob<Entry[]>('../data/vocabulary/*.json', { eager: true, import: 'default' });
+  const entries = index.parts.flatMap(name => {
     const part = parts[`../data/vocabulary/${name}`];
     if (!part) throw new Error(`Vocabulary part missing: ${name}`);
     return part;
   });
+  return orderVocabularyEntries(entries, index.entryOrder);
+}
+
+export function orderVocabularyEntries(entries: Entry[], order?: string[]): Entry[] {
+  if (!order) return entries;
+  const byId = new Map(entries.map(entry => [entry.id, entry]));
+  if (byId.size !== entries.length || order.length !== entries.length ||
+      new Set(order).size !== entries.length || order.some(id => !byId.has(id))) {
+    throw new Error('Invalid vocabulary entry order');
+  }
+  return order.map(id => byId.get(id)!);
 }
 
 /** Full-width sentence punctuation becomes its standard (Latin) equivalent in pinyin text. */

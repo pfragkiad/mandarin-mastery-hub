@@ -22,7 +22,7 @@ Source SHA-256 values:
 From the repository root:
 
 ```sh
-# Validate and inspect the replacement without changing vocabulary.json.
+# Validate and inspect the replacement without changing vocabulary data.
 node scripts/import-hsk-level1.mjs
 
 # Replace all Level 1 records, including removing its old unofficial phrases.
@@ -48,7 +48,7 @@ node scripts/import-hsk-level4.mjs --write
 node --test scripts/import-hsk-level1.test.mjs scripts/import-hsk-level2.test.mjs scripts/import-hsk-level3.test.mjs scripts/import-hsk-level4.test.mjs
 ```
 
-Use `--source`, `--topics` and `--vocabulary` to supply alternate input paths; `--output` selects a candidate output with `--write`. The Level 2–4 CLIs call the shared boundary in `scripts/import-hsk-level1.mjs`. All importers support their pinned schema/version and fail before writing if identities, taxonomy references or readings are incompatible.
+Use `--source`, `--topics` and `--vocabulary` to supply alternate input paths; `--output` selects a candidate output with `--write`. Vocabulary paths may be a split directory or a combined `.json` file. The Level 2–4 CLIs call the shared boundary in `scripts/import-hsk-level1.mjs`. All importers support their pinned schema/version and fail before writing if identities, taxonomy references or readings are incompatible.
 
 Reimports match the existing syllabus ID **and exact headword**, retaining entry UUIDs, explicit word/phrase kinds, compatible entry recordings and existing syllabus provenance. Levels 3 and 4 create stable UUIDs from syllabus IDs and treat the supplied headwords as word entries, without inferring phrase kinds from length. They record the handoff itself as the syllabus source, rather than claiming independently verified primary-source provenance. Other levels remain unchanged; shared topics keep the same category UUIDs across all levels.
 
@@ -60,7 +60,7 @@ Word audio is a separate [checksum-bound source handoff](../data/hsk-audio/READM
 
 Pinyin is segmented with the shared [phrase-pinyin-align.ts](../../src/lib/phrase-pinyin-align.ts) and recorded [syllable inventory](../../src/data/pinyin/README.md). Every sentence must have one unique syllable split matching its Han characters. Hyphens and separated erhua `r` are adjusted for alignment only; original whole readings remain in `pinyinDisplay`. Level 4's sourced `ǹg` is accepted only for 嗯, without changing the syllable inventory. No dictionary reading is inserted. For `shéi / shuí`, the first reading supplies character tokens and both alternatives remain displayed. Tokens remain unreviewed and entries remain draft: successful alignment is structural validation, not native-speaker review.
 
-Generated output is [../../src/data/vocabulary.json](../../src/data/vocabulary.json), consumed through [data-contract.ts](../../src/lib/data-contract.ts). Optional reports belong under [../../reports/](../../reports/README.md); see the [Level 1 compatibility summary](../../reports/hsk-level1-import.md), [Level 1 initial report](../../reports/hsk-level1-import.json), [Level 2 compatibility summary](../../reports/hsk-level2-import.md) and [Level 2 initial report](../../reports/hsk-level2-import.json). Reimporting either unchanged handoff does not change vocabulary or timestamps. Reports reflect the input state: a repeat import reports zero retired legacy examples and 400 preserved Level 2 example IDs.
+Generated output is [../../src/data/vocabulary/](../../src/data/vocabulary/README.md), consumed through [data-contract.ts](../../src/lib/data-contract.ts). Optional reports belong under [../../reports/](../../reports/README.md); see the [Level 1 compatibility summary](../../reports/hsk-level1-import.md), [Level 1 initial report](../../reports/hsk-level1-import.json), [Level 2 compatibility summary](../../reports/hsk-level2-import.md) and [Level 2 initial report](../../reports/hsk-level2-import.json). Reimporting either unchanged handoff does not change vocabulary or timestamps. Reports reflect the input state: a repeat import reports zero retired legacy examples and 400 preserved Level 2 example IDs.
 
 ## Font coverage
 

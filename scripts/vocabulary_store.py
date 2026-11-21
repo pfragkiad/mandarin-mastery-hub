@@ -2,9 +2,8 @@
 
 src/data/vocabulary/ holds index.json (every top-level key except entries, plus the
 ordered `parts` list) and one part per HSK level (level-N.json, unlevelled.json for
-entries without a level). Each part stays well under the repository's per-file size
-limit as levels gain recordings. Parts are ordered by each level's first appearance,
-so a level's entries stay contiguous and in their original relative order.
+entries without a level). Parts are ordered by each level's first appearance; an
+optional entryOrder preserves the original order when levels are interleaved.
 
 A path ending in .json is read/written as one combined file (importer test fixtures).
 """
@@ -29,10 +28,17 @@ def read_vocabulary(path=DIRECTORY):
     if path.suffix == '.json':
         return json.loads(path.read_text('utf-8'))
     index = json.loads((path / 'index.json').read_text('utf-8'))
-    data = {key: value for key, value in index.items() if key != 'parts'}
+    data = {key: value for key, value in index.items() if key not in ('parts', 'entryOrder')}
     data['entries'] = []
     for name in index['parts']:
         data['entries'].extend(json.loads((path / name).read_text('utf-8')))
+    if 'entryOrder' in index:
+        entries = data['entries']
+        by_id = {entry['id']: entry for entry in entries}
+        order = index['entryOrder']
+        if len(by_id) != len(entries) or len(order) != len(entries) or len(set(order)) != len(entries) or any(entry_id not in by_id for entry_id in order):
+            raise ValueError('Invalid vocabulary entry order')
+        data['entries'] = [by_id[entry_id] for entry_id in order]
     return data
 
 
@@ -44,6 +50,10 @@ def write_vocabulary(data, path=DIRECTORY):
     parts = {}
     for entry in data['entries']:
         parts.setdefault(part_name(entry), []).append(entry)
+    order = [entry['id'] for entry in data['entries']]
+    if any(not isinstance(entry_id, str) for entry_id in order) or len(set(order)) != len(order):
+        raise ValueError('Vocabulary entries must have unique string IDs')
+    grouped = [entry['id'] for entries in parts.values() for entry in entries]
     path.mkdir(parents=True, exist_ok=True)
     for stale in set(p.name for p in path.glob('*.json')) - set(parts) - {'index.json'}:
         (path / stale).unlink()
@@ -51,6 +61,8 @@ def write_vocabulary(data, path=DIRECTORY):
         (path / name).write_text(dump(entries), 'utf-8')
     index = {key: value for key, value in data.items() if key != 'entries'}
     index['parts'] = list(parts)
+    if grouped != order:
+        index['entryOrder'] = order
     (path / 'index.json').write_text(dump(index), 'utf-8')
 
 

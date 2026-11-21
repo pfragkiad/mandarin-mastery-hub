@@ -11,7 +11,7 @@ same way: through an exact recording attached to a record, never a guessed or bo
 Rules (fail closed):
   * the word is one character, its recorded pinyin has no tone mark and is one syllable
     that the inventory attests with the neutral tone;
-  * the word already carries a CDN recording attachment (src/data/vocabulary.json);
+  * the word already carries a CDN recording attachment (src/data/vocabulary/);
   * for Shtooka (cmn-caen-tan) recordings, the preserved source index must list that exact
     word with that exact toneless reading, so a clip recorded in another tone never counts;
   * several words with one syllable: the lowest HSK index speaks it, the others are kept as
