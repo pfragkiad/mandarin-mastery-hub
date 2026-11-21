@@ -62,3 +62,5 @@
 - [x] Detail cards: Etymology section (Howell + Shuowen Jiezi), hidden when there is no text or related form to link
 
 - [x] Etymology: Shuowen Jiezi (Classical Chinese) gets an "Advanced" hint for learners; improve Etymology section formatting
+- [x] Glyph detail cards: Decomposition + Etymology as Practice-style drawer tabs (always opens on Decomposition, remembered collapse, nothing loads while collapsed, Etymology tab hidden when empty)
+- [x] Characters grid cards: scroll icon top-right when the card has its own etymology notes (book stays the Lessons icon)

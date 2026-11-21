@@ -4148,3 +4148,8 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .section-placeholder .section-placeholder-row:nth-child(2) .section-placeholder-block { animation-delay: .15s; }
 .section-placeholder .section-placeholder-row:nth-child(3) .section-placeholder-block { animation-delay: .3s; }
 @keyframes section-placeholder-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+
+/* Glyph detail cards: Decomposition | Etymology drawer tabs (detail-tabs.tsx) reuse Practice's
+   drawer styles; the row sits where the Decomposition section used to, spaced like a section. */
+.catalog-detail .detail-tabs { margin-top: 28px; }
+.detail-drawer-etymology { margin-top: 20px; }

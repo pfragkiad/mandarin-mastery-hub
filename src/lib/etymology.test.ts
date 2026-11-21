@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { etymologyTarget, etymologyView, howellSegments, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter } from './etymology';
+import { etymologyTarget, etymologyView, hasOwnEtymologyText, howellSegments, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter } from './etymology';
 
 // Real generated data, read from disk like the browser would fetch it.
 const dir = 'public/data/etymology/';
@@ -67,3 +67,17 @@ describe('howellSegments', () => {
     expect(howellSegments('十# ten * odd')).toEqual([{ text: '十# ten * odd', emphasis: false }]);
   });
 });
+
+describe('grid scroll marker', () => {
+  it('marks a character with its own notes (古) but not its component card or a character without notes', () => {
+    expect(hasOwnEtymologyText(index, 'Characters:古', '古')).toBe(true);
+    expect(hasOwnEtymologyText(index, 'Components:古', '古')).toBe(false);
+    const without = Object.entries(index.records).find(([id, record]) => id.startsWith('Characters:') && record.status === 'no-exact-headword');
+    expect(without).toBeDefined();
+    if (without) expect(hasOwnEtymologyText(index, without[0], without[1].glyph)).toBe(false);
+  });
+  it('never marks a record whose glyph disagrees with the index', () => {
+    expect(hasOwnEtymologyText(index, 'Characters:古', '口')).toBe(false);
+  });
+});
+

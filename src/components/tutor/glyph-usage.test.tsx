@@ -57,13 +57,13 @@ describe('Absent-record notes', () => {
     const mai: LibraryEntry = { id: 'Radicals:麥', hanzi: '麥', pinyin: 'mài', meaning: 'wheat', note: '11 strokes · Radical #199', kangxiIndex: 199, strokes: 11,
       decomposition: { root: { glyph: '⿱', position: 'root', children: [{ glyph: '來', position: 'top' }, { glyph: '夂', position: 'bottom' }] }, source: 'test', status: 'test' } };
     render(<CharacterDetails entry={mai} kind="Radicals" />);
-    expect(screen.getByRole('heading', { level: 3, name: /DECOMPOSITION/ })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
     expect(screen.getByRole('list', { name: 'Hanzi graphical structure' }).textContent).toContain('來');
   });
 
   it('omits the decomposition section for individual strokes', () => {
     render(<CharacterDetails entry={strokeForm} kind="Strokes" />);
-    expect(screen.queryByText('DECOMPOSITION')).toBeNull();
+    expect(screen.queryByRole('tab', { name: 'Decomposition' })).toBeNull();
     expect(screen.queryByText('Decomposition does not apply to an individual stroke.')).toBeNull();
   });
 });

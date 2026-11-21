@@ -70,6 +70,14 @@ export function etymologyTarget(index: EtymologyIndex, request: EtymologyRequest
   return record && record.glyph === request.glyph ? { ...record, id: request.recordId, radical: false as const } : null;
 }
 
+/** Grid-card marker (index only, no shard): a Characters record whose exact headword the index
+ *  routes to source text. Components/Radicals only ever link to a character's notes, and related
+ *  forms need the shard, so neither earns the marker. */
+export function hasOwnEtymologyText(index: EtymologyIndex, recordId: string, glyph: string) {
+  const record = index.records[recordId];
+  return recordId.startsWith('Characters:') && record?.glyph === glyph && record.status === 'exact-headword';
+}
+
 /** Pure status → display decision for one shard character (exported for tests). */
 export function etymologyView(index: EtymologyIndex, request: EtymologyRequest, character: EtymologyCharacter): EtymologyView | null {
   const target = etymologyTarget(index, request);
