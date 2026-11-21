@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObj
 import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
+import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { DraftFilterForm } from './filter-form';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
@@ -60,7 +60,8 @@ export function FinalSelect({ value, onChange, available }: { value: string; onC
 /**
  * The tones a tile shows as dots: recorded tones filled, unrecorded attested tones hollow.
  * A fifth grey dot appears only when the dictionary attests a neutral tone for this
- * syllable (ma, le…); it stays hollow because no neutral recordings exist. Syllables
+ * syllable (ma, le…); it is filled only when a word recorded in that neutral reading gives it a
+ * sound (吗 for ma), otherwise hollow. Syllables
  * without a neutral tone (ping…) get no fifth dot at all.
  */
 function TileTones({ data, syllable }: { data: PinyinData; syllable: PinyinSyllable }) {
@@ -333,6 +334,10 @@ function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone,
   const alikes = current !== null && hasRecording(data, syllable.base, current) ? soundAlikes(data, syllable.base, current) : [...new Set(recorded.flatMap(t => soundAlikes(data, syllable.base, t)))].sort();
   // Stop replaces Play all only for the sequence; single tones are too short to need it.
   const sequencePlaying = player.sequencing;
+  // A neutral tone sounds through one word's own recording (吧 for ba): say which word is
+  // heard and credit its speaker, so the clip never reads as a syllable-set recording.
+  const neutral = current === 5 ? neutralRecording(data, syllable.base) : null;
+  const neutralNote = neutral && <> · <span title={`${neutral.source} · ${neutral.license}`}>recorded in <span lang="zh-CN">{neutral.word}</span></span></>;
   return <aside className={`pinyin-player${inSheet ? ' in-sheet' : ''}`} aria-label="Selected syllable">
     {/* Head, laid out like the other details windows: Back at the top left (the small-screen
         window's own bar carries it there instead). The row exists only while there is a Back. */}
@@ -348,7 +353,7 @@ function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone,
     </div>
     {/* The tone's description; an unrecorded tone adds an italic "no recording" here
         rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
-    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) && <> · <em>no recording</em></>}</> : 'Click a tone to hear it'}</p>
+    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}</p>
     {/* Five fixed slots (Tone 1–4, Neutral) so every tone keeps its column. A tone the
         syllable inventory doesn't list gets a quiet slashed, non-interactive slot — only the
         inventory decides this, never a guess — and number keys skip it (no recording). */}

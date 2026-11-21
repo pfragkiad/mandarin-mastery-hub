@@ -4,8 +4,10 @@
 // Data rules:
 // - A syllable/tone exists only when the inventory attests it; a sound is
 //   playable only when a recording exists for that exact syllable + tone.
-// - The neutral tone (5) is listed when attested but never playable: the source
-//   withdrew those recordings, and no other tone or voice substitutes for them.
+// - The neutral tone (5) is listed when attested. audio-cmn withdrew its neutral clips, so
+//   it plays only from neutral-audio.json: exact single-character word recordings in that
+//   toneless reading (吧 ba), each with its own source. No other tone or voice substitutes.
+//   Games and the Start card keep tones 1–4 (SPOKEN_TONES), so their rounds are unchanged.
 // - Initial/final groups below are standard teaching groupings used only to
 //   arrange the chart and pick sound-alike options; they never create syllables.
 
@@ -13,10 +15,14 @@ export type Tone = 1 | 2 | 3 | 4 | 5;
 export const SPOKEN_TONES = [1, 2, 3, 4] as const;
 export type PinyinSyllable = { base: string; initial: string | null; final: string; tones: Tone[]; note: string | null };
 export type PinyinRecording = { url: string; ms: number };
+/** A neutral-tone sound: the exact recording of one single-character word read in that toneless syllable. */
+export type NeutralRecording = PinyinRecording & { word: string; reading: string; entryId: string; hskIndex: number | null; source: string; license: string; recordingKind: string; alsoRecordedIn?: string[] };
 export type PinyinSource = { name: string; url: string; license: string; [key: string]: unknown };
 export type PinyinData = {
   syllables: PinyinSyllable[];
   recordings: Record<string, PinyinRecording>;
+  /** Neutral-tone sounds by sound id (ba5), from neutral-audio.json; absent = none playable. */
+  neutral?: Record<string, NeutralRecording>;
   inventorySource: PinyinSource;
   audioSource: PinyinSource & { credits?: string; accent?: string; reviewed?: boolean; commit?: string };
 };
@@ -114,19 +120,27 @@ export function directSoundMatch(visible: readonly PinyinSyllable[], input: stri
   return only.base === query.base && only.tones.includes(query.tone) ? { base: only.base, tone: query.tone } : null;
 }
 
-/** Only an exact recording makes a sound playable; tone 5 never is. */
-export function hasRecording(data: Pick<PinyinData, 'recordings'>, base: string, tone: Tone): boolean {
-  return tone !== 5 && Boolean(data.recordings[soundId(base, tone)]);
+/** The exact recording for one syllable + tone: tones 1–4 from the syllable set, the
+ *  neutral tone only from a word recorded in that reading (never a tone-5 syllable clip). */
+export function recordingFor(data: Pick<PinyinData, 'recordings' | 'neutral'>, base: string, tone: Tone): PinyinRecording | NeutralRecording | null {
+  return (tone === 5 ? data.neutral?.[soundId(base, tone)] : data.recordings[soundId(base, tone)]) ?? null;
+}
+/** The word recording that gives a neutral tone its sound, if any (for labels and attribution). */
+export const neutralRecording = (data: Pick<PinyinData, 'neutral'>, base: string): NeutralRecording | null => data.neutral?.[soundId(base, 5)] ?? null;
+
+/** Only an exact recording makes a sound playable. */
+export function hasRecording(data: Pick<PinyinData, 'recordings' | 'neutral'>, base: string, tone: Tone): boolean {
+  return Boolean(recordingFor(data, base, tone));
 }
 
-/** Every playable sound, in chart order (initial, final, tone). */
+/** Every playable tone 1–4 sound, in chart order (initial, final, tone): the games' pool. */
 export function allSounds(data: PinyinData): PinyinSound[] {
-  return sortSyllables(data.syllables).flatMap(s => s.tones.filter(t => hasRecording(data, s.base, t)).map(tone => ({ id: soundId(s.base, tone), base: s.base, tone })));
+  return sortSyllables(data.syllables).flatMap(s => s.tones.filter(t => t !== 5 && hasRecording(data, s.base, t)).map(tone => ({ id: soundId(s.base, tone), base: s.base, tone })));
 }
 
-/** The recorded tones of one syllable, in tone order (never the neutral tone). */
-export function recordedTones(data: Pick<PinyinData, 'recordings'>, syllable: PinyinSyllable): Tone[] {
-  return syllable.tones.filter(t => hasRecording(data, syllable.base, t)).sort((a, b) => a - b);
+/** The recorded tones 1–4 of one syllable, in tone order (the Start card's chips). */
+export function recordedTones(data: Pick<PinyinData, 'recordings' | 'neutral'>, syllable: PinyinSyllable): Tone[] {
+  return syllable.tones.filter(t => t !== 5 && hasRecording(data, syllable.base, t)).sort((a, b) => a - b);
 }
 
 /**
@@ -285,10 +299,11 @@ export function loadSyllableInventory(): Promise<PinyinSyllable[]> {
 /** Lazily load both sidecars so ~1,300 recording entries never enter page bundles. */
 let loading: Promise<PinyinData> | null = null;
 export function loadPinyinData(): Promise<PinyinData> {
-  loading ??= Promise.all([import('@/data/pinyin/inventory.json'), import('@/data/pinyin/audio.json')]).then(([inventory, audio]) => {
+  loading ??= Promise.all([import('@/data/pinyin/inventory.json'), import('@/data/pinyin/audio.json'), import('@/data/pinyin/neutral-audio.json')]).then(([inventory, audio, neutral]) => {
     const data: PinyinData = {
       syllables: (inventory.default.syllables as PinyinSyllable[]),
       recordings: audio.default.recordings as Record<string, PinyinRecording>,
+      neutral: neutral.default.recordings as Record<string, NeutralRecording>,
       inventorySource: inventory.default.source,
       audioSource: audio.default.source,
     };

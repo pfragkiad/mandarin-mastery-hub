@@ -7,7 +7,7 @@
 // quiz page. Inputs:
 // the route's search values and navigation callbacks. State: the loaded data and
 // the shared player; the slow switch writes the global "Slower pronunciation" preference.
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Fragment, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { IncompletePinyinDataError, loadPinyinData, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import { useWorkspace } from './workspace';
@@ -26,6 +26,16 @@ type PinyinContext = { data: PinyinData; player: PinyinPlayer; slow: boolean; on
 
 // Older versions remembered answers in this browser; drop that leftover once.
 const RETIRED_PROGRESS_KEY = 'mandarin-pinyin-progress-v2';
+
+/** Neutral-tone attribution lines: one per recording source, listing the words heard (吧 吗 …). */
+function neutralCredits(data: PinyinData) {
+  const bySource = new Map<string, { source: string; license: string; words: string[] }>();
+  for (const r of Object.values(data.neutral ?? {})) {
+    const line = bySource.get(r.source) ?? { source: r.source, license: r.license, words: [] };
+    line.words.push(r.word); bySource.set(r.source, line);
+  }
+  return [...bySource.values()];
+}
 
 function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: PinyinContext) => ReactNode }) {
   const { preferences, setPreferences } = useWorkspace();
@@ -49,7 +59,8 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
         Recordings · <a href={data.audioSource.url} target="_blank" rel="noreferrer">audio-cmn{data.audioSource.commit ? ` (${String(data.audioSource.commit).slice(0, 7)})` : ''}</a> · {data.audioSource.license}<br/>
         {data.audioSource.credits}<br/>
         {data.audioSource.accent} · not listening-reviewed<br/>
-        Neutral-tone recordings withdrawn by the source<br/>
+        Neutral tones withdrawn by audio-cmn; heard instead in these word recordings:<br/>
+        {neutralCredits(data).map(line => <Fragment key={line.source}>{line.source} · {line.license} · <span lang="zh-CN">{line.words.join(' ')}</span><br/></Fragment>)}
         Syllables and tones · <a href={data.inventorySource.url} target="_blank" rel="noreferrer">CC-CEDICT</a> · {data.inventorySource.license}
       </SourceInfo>}</h1></div>
       {/* Games only (like the Hanzi games' 记/写); the Sound chart keeps its plain title. */}
