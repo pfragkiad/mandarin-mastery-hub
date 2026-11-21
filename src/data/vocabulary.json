@@ -69220,7 +69220,12 @@
                 "sourceId": "302"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ba6bf19c-a822-44cf-af58-e5b673cadaa5/hsk2-9caa607f80ad27da.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "2c30d13a-4842-5e6b-b60b-de8b2196a8dc",
@@ -69366,7 +69371,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.428824Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -69704,7 +69709,12 @@
                 "sourceId": "304"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/39d2cf52-958f-4c1d-8f48-a99f416f741e/hsk2-e707dcbc4405a9da.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "eee6dc03-943f-5578-994f-376b87df6b0d",
@@ -69844,7 +69854,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.428994Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -69923,7 +69933,12 @@
                 "sourceId": "305"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/5e74a361-ec09-4e6a-9f81-f4dc25a9cb90/hsk2-85634ca36ecd1952.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "25a7a0e5-851b-5ac2-a168-7f712b841429",
@@ -70081,7 +70096,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429107Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -70167,7 +70182,12 @@
                 "sourceId": "306"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8aab376c-b509-4be2-bb43-6ec0750fcbad/hsk2-09370be91a679b6c.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c0b2f999-df56-58fc-9754-7553fd14676e",
@@ -70337,7 +70357,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429200Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -70418,7 +70438,12 @@
                 "sourceId": "307"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/6dff5589-48ac-4781-b472-8ea528031613/hsk2-bc6ed654e9cfc20f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "e0645cf8-a1fa-577d-a245-f5228fb62985",
@@ -70582,7 +70607,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429287Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -70670,7 +70695,12 @@
                 "sourceId": "308"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/56cfb91b-f520-4f12-adbd-69d1b8705bb4/hsk2-9dc531c781a23f01.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "2fa4bd3c-c7af-5e64-8bab-f2ed12c718d5",
@@ -70822,7 +70852,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429371Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -70901,7 +70931,12 @@
                 "sourceId": "309"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0a0d1975-5e21-4db6-add7-cb5568486425/hsk2-1243eb3631f649b9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "39438e1f-8473-56d2-8918-e17bb80f176a",
@@ -71017,7 +71052,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429460Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -71099,7 +71134,12 @@
                 "sourceId": "310"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7f3b1f73-aac2-4a8d-be9b-2bcdc08c5d80/hsk2-193b31dc01b2e3df.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "1be865e6-d4ec-53bd-b2fc-4d866cf82539",
@@ -71227,7 +71267,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429543Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -71306,7 +71346,12 @@
                 "sourceId": "311"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/5dac762b-d3cd-4e5e-9c62-92905b6b08f7/hsk2-947ad08ece6f4c29.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "6f996627-e8a5-56a7-95da-84ef6a30e8e7",
@@ -71434,7 +71479,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429633Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -71518,7 +71563,12 @@
                 "sourceId": "312"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/24867485-8272-4214-b7ea-472d34547d24/hsk2-2d6bdaef0a0720de.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3c463ca9-c248-53b7-9bdc-9a7393a8684b",
@@ -71652,7 +71702,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429723Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -71749,7 +71799,12 @@
                 "sourceId": "313"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/47356813-8849-4b1f-accc-e9ef4e8abf4a/hsk2-aa8f91c5c9fd703b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "1c9c0b63-3277-575d-811c-3273dc398410",
@@ -71955,7 +72010,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429807Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -72311,7 +72366,12 @@
                 "sourceId": "315"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e2df97ce-2c5d-4442-a0d9-38a6346c57ab/hsk2-7b28021451d208f4.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "9d33ca8e-1ae0-5e24-9f9b-b61e82c568d3",
@@ -72451,7 +72511,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429891Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -72529,7 +72589,12 @@
                 "sourceId": "316"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7b888561-89da-43e1-b62a-ac761b2c6e2c/hsk2-f7e6efd271187b61.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0fea7c6f-1777-5958-a6ba-1cd9005b8287",
@@ -72669,7 +72734,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.429973Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -72969,7 +73034,12 @@
                 "sourceId": "318"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ad23ae5a-dc6c-4e70-abc7-4ee4736c06d0/hsk2-dcf9bf75ad99f501.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "d2c0d695-b635-5f01-a2d3-8adda8d2c169",
@@ -73109,7 +73179,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430155Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -73193,7 +73263,12 @@
                 "sourceId": "319"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/9895ed34-0949-4b33-8e7d-de5ca49c60c8/hsk2-1b35ae819b6e5e45.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "ac37b12c-e258-50ed-bfc3-ba232abe072d",
@@ -73339,7 +73414,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430317Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -73423,7 +73498,12 @@
                 "sourceId": "320"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f4673ccb-1e94-47f8-85e7-d6da89ddd171/hsk2-e7f6ca691228b2d8.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "22a73dc4-9b61-5e93-b120-e0f98c80c5fd",
@@ -73581,7 +73661,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430451Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -73658,7 +73738,12 @@
                 "sourceId": "321"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/595c9dec-5066-4b42-9b08-130012b38dcb/hsk2-c2d9b6c89d019d64.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f266d64b-fe68-5e35-8b95-61e72df48afb",
@@ -73798,7 +73883,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430541Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -73876,7 +73961,12 @@
                 "sourceId": "322"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8df63a9f-8eaa-4a0d-a4c8-339be3e70b79/hsk2-d77f781ec814d308.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "e882c692-28ad-5709-80c2-f3a29563002b",
@@ -74040,7 +74130,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430640Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -74119,7 +74209,12 @@
                 "sourceId": "323"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b91de199-f4e0-4e5e-a6eb-ee382e939019/hsk2-689e10e81a1fe22e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "42a88bff-a1b6-5ea8-8749-a4ba5e1c9b8f",
@@ -74259,7 +74354,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430731Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -74339,7 +74434,12 @@
                 "sourceId": "324"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/72b199f7-4ea4-44b0-8152-d4e29d4271ee/hsk2-d9ab336e31dc2a81.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "8e1afdb2-6459-5d7a-ac56-5bd6fae54f37",
@@ -74479,7 +74579,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430817Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -74565,7 +74665,12 @@
                 "sourceId": "325"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/2d09433c-1f50-44be-a1b2-25c82a2d7f5f/hsk2-52fb095977b720c5.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c427192d-e3a9-590e-a164-c1e079ec7410",
@@ -74705,7 +74810,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430902Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -74784,7 +74889,12 @@
                 "sourceId": "326"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ca2f2637-4fac-4542-a680-77b6182e678a/hsk2-85e4a6c91024d3d3.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f14562e7-acf9-564d-a292-5102924ad255",
@@ -74912,7 +75022,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.430997Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -74992,7 +75102,12 @@
                 "sourceId": "327"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7fc5b55f-9496-4efe-abd5-5a377d1e272e/hsk2-b248617abee64987.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "eb371291-c0ee-5248-9e27-b4e1bf163fef",
@@ -75144,7 +75259,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431129Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -75701,7 +75816,12 @@
                 "sourceId": "330"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/80669a77-58e4-4dd6-9fd8-754851ccc559/hsk2-aecf0db96d43b130.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "52a5fbea-1c1f-52ed-9896-9b0434db68d3",
@@ -75889,7 +76009,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431225Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -75975,7 +76095,12 @@
                 "sourceId": "331"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f306ae3f-9783-430d-be91-5350c63322c1/hsk2-f3f32008a480c6b1.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "ea042a60-eb7a-5174-9d49-b82d9a8c083f",
@@ -76169,7 +76294,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431313Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -76664,7 +76789,12 @@
                 "sourceId": "334"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a079bef9-4927-406d-8719-7c97a1b68c85/hsk2-a908cfb02924adec.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5685c63b-b0a7-5756-82ae-b1c885e3cef8",
@@ -76840,7 +76970,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431398Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -76924,7 +77054,12 @@
                 "sourceId": "335"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/384e838a-6a5a-4981-beb6-d0d81a5dea29/hsk2-3643be857552e1c8.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "848622a7-08d2-5818-a006-3ad6878a0715",
@@ -77136,7 +77271,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431482Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -77444,7 +77579,12 @@
                 "sourceId": "337"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b52214db-b4ce-4c8e-9c5e-0567ff0b7ecf/hsk2-a5fea23425ce4f6b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "42b0a82c-74a0-5b9a-9ad4-8222a8f98d25",
@@ -77584,7 +77724,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431579Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -77661,7 +77801,12 @@
                 "sourceId": "338"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c7e57e22-399a-4509-8312-96b7776060c4/hsk2-684276a96a52b7eb.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "d6bb9aed-f7eb-5b44-bdd7-1389c6307917",
@@ -77777,7 +77922,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431684Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -77861,7 +78006,12 @@
                 "sourceId": "339"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a32d8776-6d51-46d7-94c8-7000c74258c8/hsk2-40e206dbc5016b58.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3b1ae9cc-9627-5687-85cf-9613e5c89da2",
@@ -78019,7 +78169,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431777Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -78096,7 +78246,12 @@
                 "sourceId": "340"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b479b21c-7a56-42d9-83f7-fe7dada3c0dd/hsk2-1553df0fd566250d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0e18a399-b2cd-500e-aa4a-b30d06011cc4",
@@ -78224,7 +78379,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431860Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -78302,7 +78457,12 @@
                 "sourceId": "341"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/9c3f716a-f08e-4699-83bc-62fb91f633f9/hsk2-77f7a5b01604fb76.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "33dd0f77-b676-5bf5-9430-59d130867445",
@@ -78424,7 +78584,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.431942Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -78509,7 +78669,12 @@
                 "sourceId": "342"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/eb0b567c-64e4-43ad-aab1-a2878a46cdba/hsk2-afbf4eb2d19eecd3.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "44803bc6-7059-5232-9a92-97a8d2d09ffe",
@@ -78655,7 +78820,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432040Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -78739,7 +78904,12 @@
                 "sourceId": "343"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/3822ce8b-a5fe-449b-9074-cc2c397b2701/hsk2-a252b12e3aa78052.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "2f58efa3-c6ba-54c8-be6a-35b2853676bb",
@@ -78909,7 +79079,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432127Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -78993,7 +79163,12 @@
                 "sourceId": "344"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/48233b9e-5b90-4b65-8902-b1519924f3bf/hsk2-219cb53b73b7ba84.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "674dcc5e-3830-5cc5-a68c-1fc7ae66a192",
@@ -79133,7 +79308,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432210Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -79212,7 +79387,12 @@
                 "sourceId": "345"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0ff35e68-0eca-4c68-958b-6d2934716b1b/hsk2-825c243093335e08.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "71087de3-3fea-57b8-b4dd-33913a5c5ddc",
@@ -79346,7 +79526,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432293Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -79676,7 +79856,12 @@
                 "sourceId": "347"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/34de4d7c-b19b-4451-8218-c07b5e03be01/hsk2-f5ac8be7a8921563.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "b4c45e22-2c46-5910-ac4e-0be4e2d0fcce",
@@ -79840,7 +80025,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432382Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -79924,7 +80109,12 @@
                 "sourceId": "348"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/06e65ffd-21cd-451c-ab88-86b3be4d6394/hsk2-89d544e917665f63.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "08c4e9e8-272b-5b9d-8630-b8fdf8242ad9",
@@ -80052,7 +80242,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432552Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -80135,7 +80325,12 @@
                 "sourceId": "349"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/eb1e111c-d219-4ff0-ab60-f9d26fa5770a/hsk2-40d38d887e03f93d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "4b36559d-1fc4-5560-92fd-16c37ecb5050",
@@ -80275,7 +80470,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432655Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -80359,7 +80554,12 @@
                 "sourceId": "350"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ec748120-56d0-4ad2-a292-d803ba4979b1/hsk2-ff7df5356a7ca561.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "50744911-e468-5199-8f1d-3965cceb1a62",
@@ -80499,7 +80699,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432744Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -81312,7 +81512,12 @@
                 "sourceId": "354"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8e3eaff5-f13e-4ebd-85ae-5de97ecd733c/hsk2-65b75abf47b83cff.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3ba2e8b6-c093-58a2-b9a7-3a09a83ee8b7",
@@ -81464,7 +81669,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432829Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -82068,7 +82273,12 @@
                 "sourceId": "357"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7b03998a-8e66-456e-a882-d3c966a215dd/hsk2-5b892f82c6c15b52.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5460c1ff-0930-5d78-8225-b27ef0a3c6b1",
@@ -82226,7 +82436,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.432915Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -82305,7 +82515,12 @@
                 "sourceId": "358"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7b03998a-8e66-456e-a882-d3c966a215dd/hsk2-5b892f82c6c15b52.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "bee67a7e-61b2-5bc3-a2a6-43378d3ec41d",
@@ -82439,7 +82654,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433022Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -82518,7 +82733,12 @@
                 "sourceId": "359"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8149dc90-436e-4480-88b5-427549f5471d/hsk2-56a82d3d8198c683.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c09ec67a-bc32-5237-aa4d-25f541263a71",
@@ -82670,7 +82890,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433125Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -82750,7 +82970,12 @@
                 "sourceId": "360"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/fcf6754e-fc98-47c2-a731-90d4669ecc4f/hsk2-1f764eeb29fd1f83.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f1cd91df-a42e-513b-84a1-681ed376f80e",
@@ -82878,7 +83103,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433213Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -82962,7 +83187,12 @@
                 "sourceId": "361"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0ecebc07-60db-43b6-a75d-775e97570ae2/hsk2-5f9951e02ec43e4e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "26831394-2902-5fb9-baeb-0ba51cba873a",
@@ -83120,7 +83350,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433295Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -83204,7 +83434,12 @@
                 "sourceId": "362"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7518ffa8-67b3-4994-934c-bd5df3f3de28/hsk2-dd839853afa6eee7.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "84b45857-31ca-5a55-902c-42a2150dc5ec",
@@ -83356,7 +83591,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433378Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -83439,7 +83674,12 @@
                 "sourceId": "363"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/785b56cb-adeb-4806-9448-fadb8e7a90cf/hsk2-fba77f611f2ca0be.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c951a52b-af7b-543c-979c-c49f49168804",
@@ -83573,7 +83813,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433461Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -83898,7 +84138,12 @@
                 "sourceId": "365"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/11c9f044-08e6-4fd6-a255-bef00d9dfdf0/hsk2-05dae5e2d0c5bf8d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5428c8f2-5129-5588-b87c-3f98efcc9353",
@@ -84068,7 +84313,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433547Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -84146,7 +84391,12 @@
                 "sourceId": "366"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e64cc743-8a01-4ae9-b7aa-177c85416e8c/hsk2-37005848b8b2a976.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "70959a47-143c-5d5a-8ad3-012e44a62ce0",
@@ -84316,7 +84566,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433639Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -84393,7 +84643,12 @@
                 "sourceId": "367"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/756e5ae7-7b15-432a-b9b4-5846fef3f7ae/hsk2-4ef063a8cc4386cb.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c8b9e190-e37c-5862-a93a-859736b28544",
@@ -84539,7 +84794,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433729Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -84622,7 +84877,12 @@
                 "sourceId": "368"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/fe7f037d-9c0f-425c-ae7c-ba459eb8e304/hsk2-f1cac44c87644291.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "811be7c9-87be-5959-be74-e34384a831cb",
@@ -84762,7 +85022,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433824Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -84847,7 +85107,12 @@
                 "sourceId": "369"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/9466c995-d3ae-47d1-870b-40df925759f2/hsk2-9952fca6a0a991b6.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "b384f26a-ea8f-5d24-b185-4346261b6a34",
@@ -85017,7 +85282,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.433912Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -85096,7 +85361,12 @@
                 "sourceId": "370"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/45c40b1c-ca02-4a69-bfe3-53f29eee8f52/hsk2-80167d6783cc0b19.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c0307c82-5805-58a0-b51d-43bee3a8b028",
@@ -85290,7 +85560,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434020Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -85368,7 +85638,12 @@
                 "sourceId": "371"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/01b1997d-ef6a-4c69-9f13-e38d78ca24da/hsk2-66d65617bcc34a39.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "13e6b53f-2ae7-5c38-a17a-851e9f90b950",
@@ -85526,7 +85801,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434111Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -85609,7 +85884,12 @@
                 "sourceId": "372"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c0bc3e48-c420-4083-aff5-fc966ff79971/hsk2-ab34e7f9a7fcc716.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "7599f324-14cc-551d-bb4a-b33131189268",
@@ -85731,7 +86011,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434200Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -85814,7 +86094,12 @@
                 "sourceId": "373"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/21dad3f9-09c1-4475-ad71-14ab8f60407f/hsk2-6dd99735d1135479.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "fd11d18c-3020-5237-8f69-b046c36cd758",
@@ -85960,7 +86245,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434284Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -86045,7 +86330,12 @@
                 "sourceId": "374"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8e66384e-687c-45c2-a2e2-bf557516c350/hsk2-291745d8789be571.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "d038730e-3d87-5080-90ae-d067e1327b48",
@@ -86191,7 +86481,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434366Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -86275,7 +86565,12 @@
                 "sourceId": "375"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/aa2ec751-5804-49b9-9149-92dda97880bf/hsk2-9bf3743456afb0ac.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "ea08b5e6-bcb5-56b1-a619-9ebb323c1eeb",
@@ -86427,7 +86722,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434447Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -86508,7 +86803,12 @@
                 "sourceId": "376"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/9ba28cb7-da0e-4ff8-86a8-6ab0287bc21b/hsk2-9b4f8b714d5717ab.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "76edc6dc-b403-54e7-9014-b65f646b9874",
@@ -86630,7 +86930,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434527Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -86714,7 +87014,12 @@
                 "sourceId": "377"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/2f1ec041-b6d1-4f16-8218-cbd8a6f1c595/hsk2-c05483395b6480b9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "fee34aa5-8731-5654-864f-c666018c46bb",
@@ -86860,7 +87165,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434650Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -86944,7 +87249,12 @@
                 "sourceId": "378"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/17effa06-33f7-4c59-bcb1-86494897a267/hsk2-8195edc9839a404e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a9f69755-88d1-58ec-93d3-578541a7ca46",
@@ -87096,7 +87406,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434782Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -87181,7 +87491,12 @@
                 "sourceId": "379"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e64eee94-5ea3-42e5-83d6-7d5c9bb89881/hsk2-0c7c3736bb96d724.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "b422f08d-3b87-5f22-8edc-b12ecd46608e",
@@ -87321,7 +87636,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.434935Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -87399,7 +87714,12 @@
                 "sourceId": "380"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/963491f9-57f6-44c5-b2f0-e4da1175ca83/hsk2-d764a3307b312e8b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "30ed7ba5-704c-530b-b3a1-f972ff5afe7a",
@@ -87569,7 +87889,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435101Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -87654,7 +87974,12 @@
                 "sourceId": "381"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/76619b90-b44b-422e-972c-a5127e4033da/hsk2-2d677b852a992c0b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "7a889dc7-a8ec-53a9-8f08-fe418ab6da3f",
@@ -87800,7 +88125,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435263Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -87887,7 +88212,12 @@
                 "sourceId": "382"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b01619f6-6ff2-4353-bfd5-23c9a3844033/hsk2-10b69d20ceb50773.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3a0d9e06-f24e-5b11-aa9a-a8dbce933761",
@@ -88021,7 +88351,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435417Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -88113,7 +88443,12 @@
                 "sourceId": "383"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/5faf270e-f188-4945-929d-cdd0546a4913/hsk2-54c95fc544269eb3.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a21aa3ee-40eb-5fd5-81f1-6583fb22b08d",
@@ -88313,7 +88648,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435566Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -88392,7 +88727,12 @@
                 "sourceId": "384"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0b8264ec-9d1a-4649-abb4-75946bc8c4ef/hsk2-c31cb97f9a826b4b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "dfef1f11-c57e-5391-ae49-9d6ad2db69b2",
@@ -88514,7 +88854,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435729Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -88600,7 +88940,12 @@
                 "sourceId": "385"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b144c313-665e-412f-81d6-33f824579cd4/hsk2-dee312ead91ef331.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "50975b63-5233-59fe-859e-59d25aeacae3",
@@ -88740,7 +89085,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.435885Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -89035,7 +89380,12 @@
                 "sourceId": "387"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/1f6b557e-4697-48a0-a8a0-3b8b2664256f/hsk2-46cb4fdc5cffcd06.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "eba9733f-8c0c-510a-8df8-4157ae696ba6",
@@ -89187,7 +89537,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436062Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -89265,7 +89615,12 @@
                 "sourceId": "388"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0a7a0c97-ff9a-45d9-b104-ab6657c24a64/hsk2-ec0e04f19a98716f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "800482f8-3889-5170-93a5-f67aebc85096",
@@ -89405,7 +89760,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436224Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -89485,7 +89840,12 @@
                 "sourceId": "389"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/678d188b-6dc6-40f6-8826-93588b11786e/hsk2-33d80fa2f98f76d1.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "bf7eb583-1c1d-5b94-910d-08c2cafc9ccc",
@@ -89625,7 +89985,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436379Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -89711,7 +90071,12 @@
                 "sourceId": "390"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e1c55ed6-652e-44f0-82d7-892eab126121/hsk2-dff5cfecb8b1b0e5.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0006aa16-1f38-5452-9919-d8266f334d32",
@@ -89845,7 +90210,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436536Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -89924,7 +90289,12 @@
                 "sourceId": "391"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/1c68b62a-d624-4043-819e-a750804db44e/hsk2-5cb76d14de854d7f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "85d128cb-83b0-5887-aa65-05c4d1102235",
@@ -90052,7 +90422,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436685Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -90130,7 +90500,12 @@
                 "sourceId": "392"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/5aed118e-78b4-434f-8343-d5cccf9e9a68/hsk2-2df82517badd8998.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "26015dd1-2b95-5080-b5f5-076548e11c10",
@@ -90288,7 +90663,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436803Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -90373,7 +90748,12 @@
                 "sourceId": "393"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7cb21b17-e22b-4099-9740-598d834db2c5/hsk2-442f91428519231e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "8fcff9ea-5c62-55f5-92ed-bcb24b4f1dc2",
@@ -90507,7 +90887,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.436912Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -90592,7 +90972,12 @@
                 "sourceId": "394"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/d17a2324-12d9-439d-9d67-ed1dcee9c07d/hsk2-951787c76b4aa62c.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "4e54ce99-578b-5a0a-b5eb-71acacd5bcb4",
@@ -90744,7 +91129,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437028Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -91353,7 +91738,12 @@
                 "sourceId": "397"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/d292acde-81e5-49c5-9c61-1db8530bd51b/hsk2-ecfd362904d321fe.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "633a37b3-3207-56b5-8e50-86b0eb6da388",
@@ -91487,7 +91877,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437143Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -91577,7 +91967,12 @@
                 "sourceId": "398"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/022d8588-0911-4359-bccb-f962f4ebd0eb/hsk2-a9375903eebdb4ef.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "84a6de60-1934-5d72-a18f-1b89fd8efd18",
@@ -91729,7 +92124,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437279Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -91807,7 +92202,12 @@
                 "sourceId": "399"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7f7fb361-e3e7-4f4f-a639-b940cf032e8d/hsk2-e48915894d7506f4.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5d121bb3-af90-5517-ac13-fa60c67104e0",
@@ -91959,7 +92359,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437375Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -92040,7 +92440,12 @@
                 "sourceId": "400"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/42ed113a-98ed-4bb3-a6d2-5764b16b1a95/hsk2-27499561089864b1.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "bcc8eba0-f882-548e-b1b4-ceed7c3295e8",
@@ -92210,7 +92615,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437508Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -92295,7 +92700,12 @@
                 "sourceId": "401"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/17b5a7ac-19d2-4cf3-a5e2-7e3d18cc243a/hsk2-592a1c1dd86da507.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "641f6a9e-6405-5c6d-babc-173791329200",
@@ -92441,7 +92851,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437662Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -92762,7 +93172,12 @@
                 "sourceId": "403"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/88b5573f-a1f9-45f2-9f59-4d91276befc1/hsk2-4939d7e1537da719.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0d7fb7fb-f056-5efb-a442-fd9efe0f03ba",
@@ -92896,7 +93311,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437787Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -92975,7 +93390,12 @@
                 "sourceId": "404"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/74725135-66d7-474d-aaa3-8f3e3dbb3a8f/hsk2-d9c71f429674a854.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a320e5b7-01d8-5848-9f96-1908db704b8d",
@@ -93133,7 +93553,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437876Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -93215,7 +93635,12 @@
                 "sourceId": "405"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/72857dbf-6f2b-4ee1-83bc-5cff99046d4a/hsk2-318a8ec9ce09123b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "94b58b2f-69a8-5e03-ac42-ee6f69bb368e",
@@ -93337,7 +93762,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.437961Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -93422,7 +93847,12 @@
                 "sourceId": "406"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/978fafad-f65b-495e-b3ae-f165ee09eac8/hsk2-e705872ebcf3442f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f717e626-3fb4-5553-a86f-72f5a5b4e490",
@@ -93586,7 +94016,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438093Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -93674,7 +94104,12 @@
                 "sourceId": "407"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/50ed819e-0412-4808-a8a6-46f7267e4bd1/hsk2-bd37f5ebe81b2ac2.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a4effbfd-d320-520d-a02c-a96755a2d075",
@@ -93832,7 +94267,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438234Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -94156,7 +94591,12 @@
                 "sourceId": "409"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/3149921b-53a4-428e-b361-283bbdb1485f/hsk2-65e2b0354a70ee32.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "58af07cb-9f79-5ccd-8a07-404199e0ecee",
@@ -94314,7 +94754,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438327Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -94640,7 +95080,12 @@
                 "sourceId": "411"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ec2c0328-7ff2-4a7e-98a4-a16863ca8809/hsk2-459ae37179f4e39e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "d82add7d-dc2f-5a30-b61e-20e279f181c0",
@@ -94774,7 +95219,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438414Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -95135,7 +95580,12 @@
                 "sourceId": "413"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a6cef065-8445-4be4-ab07-ceec1342e80a/hsk2-f0fd9f658df96a5e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3f321a3d-e1cb-5e91-b993-920d4679c3c6",
@@ -95287,7 +95737,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438498Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -95364,7 +95814,12 @@
                 "sourceId": "414"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/fba50a4c-bb9b-457e-a0e1-9d604cac3124/hsk2-6e47a4281880bd8f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5a0fe486-0564-596f-8980-2a37ffc2a9cc",
@@ -95504,7 +95959,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438583Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -95588,7 +96043,12 @@
                 "sourceId": "415"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/563b6bb9-6937-476c-a2b2-4645f355a9a9/hsk2-c2b5db73dd347ca8.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3287dd30-0c23-52ab-bad2-2294b4d7ad8f",
@@ -95752,7 +96212,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438679Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -95829,7 +96289,12 @@
                 "sourceId": "416"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f6adfdc9-fc04-4722-942b-6995086123c0/hsk2-adba514ed583c0df.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "00997721-630a-5ad0-99aa-8c7debf95336",
@@ -95975,7 +96440,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438767Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -96058,7 +96523,12 @@
                 "sourceId": "417"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f86aede9-49eb-416e-bc08-1ac45af309d9/hsk2-5d01362fc4949617.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "aa6455cf-f71e-5811-838f-bdb1e9cd1aec",
@@ -96234,7 +96704,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438850Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -96319,7 +96789,12 @@
                 "sourceId": "418"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/62ae0a63-d025-4cef-b2d9-b945756db69e/hsk2-6073e5089a80496d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "23d1ec5e-334c-5191-9801-1a79cc63b286",
@@ -96501,7 +96976,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.438933Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -96857,7 +97332,12 @@
                 "sourceId": "420"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e8a81861-ad18-4307-947e-55a0fff34ebc/hsk2-55a66e2112576ff9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3f1ab306-bef8-56c4-9bb0-f4bf175d79cd",
@@ -97015,7 +97495,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439047Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -97092,7 +97572,12 @@
                 "sourceId": "421"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f4d88dac-0e26-4c07-be23-7572d9791b40/hsk2-4b94fdbb47ae82fc.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0333e2f8-f61c-576a-b3db-e006e2c2746a",
@@ -97226,7 +97711,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439151Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -97305,7 +97790,12 @@
                 "sourceId": "422"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c02d3c0b-d264-4d9b-bbc8-1a4cdb41d335/hsk2-e73b62682aec1a08.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "32aeb64d-077f-56c7-adbd-68aa89d01472",
@@ -97433,7 +97923,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439236Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -97510,7 +98000,12 @@
                 "sourceId": "423"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b059732b-1e06-45bb-8b2d-106674ae48b2/hsk2-ba31dded14b63134.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5e6aa4b8-5a08-5976-b1f7-06477e79ed34",
@@ -97656,7 +98151,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439319Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -97739,7 +98234,12 @@
                 "sourceId": "424"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/1e35f198-4c29-4b44-8a34-61c1ee10d63a/hsk2-2e2802988bdbb073.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "1c382e7b-d86d-5f90-9ca3-5e3fe2f80bd8",
@@ -97885,7 +98385,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439401Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -97968,7 +98468,12 @@
                 "sourceId": "425"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/d39ebafb-f804-413d-b4dd-2cd4ea446868/hsk2-3682073baba9d132.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "1a9c0a63-dea0-5bf7-8b91-b8c1edecdec9",
@@ -98102,7 +98607,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439517Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -98415,7 +98920,12 @@
                 "sourceId": "427"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/3e31fbf9-20e9-4fa3-b960-46979c9c46fa/hsk2-d77b1332ae0eae5e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "de7f79e6-593a-5a64-8879-dbe4d87befdc",
@@ -98543,7 +99053,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439624Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -98859,7 +99369,12 @@
                 "sourceId": "429"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/128f6163-744c-4afd-8df2-a0ad07f9ea36/hsk2-2401e029f34831ff.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "e9554ff5-cf4a-5a72-99e1-cdd9c7d73ad6",
@@ -99041,7 +99556,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439721Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -99364,7 +99879,12 @@
                 "sourceId": "431"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e7011e41-6caa-47fa-a8e4-b325781451f2/hsk2-6d152429c9229cb5.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "cb011ee1-7057-540b-951f-2b8afb56226c",
@@ -99504,7 +100024,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439807Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -99589,7 +100109,12 @@
                 "sourceId": "432"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8725f531-8b7f-42ac-b742-f18e5338effb/hsk2-79a7b3627134dbe6.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "60e8dfd6-70b7-55f4-9ded-497ebce171cc",
@@ -99771,7 +100296,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439891Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -99848,7 +100373,12 @@
                 "sourceId": "433"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/e734b867-9f0e-4760-967f-f082a260c2be/hsk2-c633b45081e8ca5b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "b9903401-bd1b-5cb6-b7a7-13a9a60571ed",
@@ -99976,7 +100506,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.439974Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -100060,7 +100590,12 @@
                 "sourceId": "434"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/dd0bf6de-6b8d-4222-a935-0c709f451129/hsk2-1b8b9e4de76bb72e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "235e18df-df9c-5e7a-8b34-6a06719e8f92",
@@ -100206,7 +100741,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440101Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -100291,7 +100826,12 @@
                 "sourceId": "435"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/96b08f3b-ee4e-4734-878d-42aafe70bd7c/hsk2-7477cdcaacedab53.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "4b13860b-7c72-53fa-a247-ef0e4d450d02",
@@ -100455,7 +100995,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440207Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -100540,7 +101080,12 @@
                 "sourceId": "436"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/183d300e-e258-4132-bfc8-52966d0b0b4c/hsk2-09a672ce9fbd4659.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "439c2a34-c83a-5a99-a5a3-c1e39b3b3916",
@@ -100710,7 +101255,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440302Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -100789,7 +101334,12 @@
                 "sourceId": "437"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/3e6a5824-69b3-4c7f-b788-a9042a0560d8/hsk2-9a97560effcd53d3.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "fd7421f6-3699-5f33-b5c0-b637291069a4",
@@ -100935,7 +101485,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440395Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -101019,7 +101569,12 @@
                 "sourceId": "438"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/707db957-4edd-4b6f-962f-ccf91ed2258d/hsk2-adebccf6ca0eb91f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "adb577f3-7eee-5461-9695-57de14f1e034",
@@ -101225,7 +101780,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440486Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -101309,7 +101864,12 @@
                 "sourceId": "439"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b4533c8d-b3ba-4dbd-bb36-5e4409abef36/hsk2-408fbfb35028662c.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "aa173848-65e1-590f-b85e-c63edef35aa2",
@@ -101503,7 +102063,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440576Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -101581,7 +102141,12 @@
                 "sourceId": "440"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c0737302-1ea4-4035-ac14-e97d9b6d1898/hsk2-7d74bda17fecf493.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "fd567fdb-cf1a-5694-bb0f-b7d98ea5f246",
@@ -101739,7 +102304,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440680Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -101816,7 +102381,12 @@
                 "sourceId": "441"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ac9c9df7-4ef7-4ac5-bf09-8d3ae8367ec4/hsk2-51dd160317670422.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c60805dc-4e1d-5854-bcc9-751b37057a35",
@@ -101980,7 +102550,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440773Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -102059,7 +102629,12 @@
                 "sourceId": "442"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/dc036e2e-d93b-4ea9-a48a-bf3f999c3f0a/hsk2-6d26f648d87f0d61.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "6c5782e3-9599-5d69-ba5a-4a042a33b8b2",
@@ -102199,7 +102774,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440867Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -102276,7 +102851,12 @@
                 "sourceId": "443"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/d6777096-8ce2-4e20-956a-259fd24342a7/hsk2-cee129012210b372.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "58def37a-497f-51b7-bc51-7e733266887c",
@@ -102404,7 +102984,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.440960Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -102487,7 +103067,12 @@
                 "sourceId": "444"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0342c464-edeb-4bb7-b5ae-5ed89f2c2c6c/hsk2-ceb764d907e003db.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f53e2068-ec26-5e3a-97df-9901f235a2b8",
@@ -102615,7 +103200,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441067Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -102692,7 +103277,12 @@
                 "sourceId": "445"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/6c58b224-6775-4459-b766-0cc4042d7048/hsk2-411c21e787566761.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "6ca9194e-33f6-52d1-9fbb-306933f6b379",
@@ -102820,7 +103410,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441168Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -102903,7 +103493,12 @@
                 "sourceId": "446"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/cb090b01-2c6e-4bb2-8a92-2ebb52aee400/hsk2-ce60790b2c208d22.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "09cf84a6-1137-51db-b45e-efff8ef26ff3",
@@ -103049,7 +103644,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441265Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -103333,7 +103928,12 @@
                 "sourceId": "448"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/60edb65f-f209-4ae8-9893-60514783454d/hsk2-2a451b0d24d73b65.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5f02b25e-c848-5208-8040-46d65b290146",
@@ -103485,7 +104085,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441358Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -103562,7 +104162,12 @@
                 "sourceId": "449"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ae9464e2-ea7c-48a5-a24f-2424d8a34f2d/hsk2-601b57d561d3e93f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "9c20488b-6603-53ff-81c7-6cad958c7381",
@@ -103714,7 +104319,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441449Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -103792,7 +104397,12 @@
                 "sourceId": "450"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/4e3d0a50-156b-4f1c-b602-29de5f77d453/hsk2-ee760b66d491d2fe.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "317ca38c-9535-579a-9c4d-63cf82dfa85e",
@@ -103968,7 +104578,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441537Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -104277,7 +104887,12 @@
                 "sourceId": "452"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/4234e13c-0cd1-4038-bd17-106d5360a8c1/hsk2-82e89cc5b44e9638.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "bdaf0178-9295-5e8b-8bf9-61bf0711ec01",
@@ -104387,7 +105002,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441636Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -104464,7 +105079,12 @@
                 "sourceId": "453"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/69a371a8-448e-4eec-b321-1656639413a2/hsk2-5a69ca3d9a17ab00.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "37d13e66-bf5b-5f26-8e5c-0dc053013e47",
@@ -104598,7 +105218,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441742Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -104688,7 +105308,12 @@
                 "sourceId": "454"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c67b411d-52cc-4f94-8fa8-be0648dbef65/hsk2-989d0558323e476a.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "140d19e8-863d-5130-b3b0-69499e85f351",
@@ -104840,7 +105465,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441835Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -104924,7 +105549,12 @@
                 "sourceId": "455"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/5b4c67d5-d99a-4a44-b3aa-be0ca55f6edb/hsk2-c8e3cad29aea7843.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "c00f5dc9-aa02-5dd5-b6eb-6ec657ffb764",
@@ -105082,7 +105712,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.441926Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -105159,7 +105789,12 @@
                 "sourceId": "456"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/d2b7954f-ce04-4a6c-b06d-6473afd1a53e/hsk2-19a774ab26fb844e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "db162b43-4663-5ccc-a632-e11046b5b7a0",
@@ -105275,7 +105910,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442031Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -105588,7 +106223,12 @@
                 "sourceId": "458"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/78a695bd-6527-4c29-846b-c4ec8ab698c0/hsk2-4931568dfd7e8739.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "f52f2aee-0193-5792-894d-081abbd41a1a",
@@ -105722,7 +106362,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442160Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -106036,7 +106676,12 @@
                 "sourceId": "460"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/76098799-1bb5-4bac-93dc-ae13c210576b/hsk2-847120110dce93aa.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "be668e36-995b-5bbb-aa2c-f3fc69428181",
@@ -106176,7 +106821,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442264Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -106266,7 +106911,12 @@
                 "sourceId": "461"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/9b561a60-4342-460d-a589-5512201007a0/hsk2-eaba162590a60594.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "697acd73-c129-55a7-880f-9f3029621a5a",
@@ -106418,7 +107068,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442353Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -106738,7 +107388,12 @@
                 "sourceId": "463"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a0b597d2-1009-4f0c-8e6f-34e5f3a4b8c0/hsk2-181e7c327cc51bcc.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "838c2b4c-2066-5e28-b53e-5b2ad3d09395",
@@ -106872,7 +107527,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442439Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -106950,7 +107605,12 @@
                 "sourceId": "464"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/b05049b1-0bb6-4dce-856c-fd3abd4f9f02/hsk2-a5d1dd105f6f7e9d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5a7cd976-e7d3-531c-95ed-6fd354b912bb",
@@ -107066,7 +107726,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442521Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -107151,7 +107811,12 @@
                 "sourceId": "465"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0074a7d5-08bf-4325-965e-a00bf23fce80/hsk2-05046c0f7a183ee7.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "df6ddbd1-4d44-52ab-82e0-f69730e56f28",
@@ -107315,7 +107980,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442604Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -107399,7 +108064,12 @@
                 "sourceId": "466"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/93cab7c4-eb48-468c-ae1e-42223e579a08/hsk2-7198b144d2711b61.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "79540520-5f85-5164-ab2b-c377af7e39a1",
@@ -107551,7 +108221,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442704Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -107637,7 +108307,12 @@
                 "sourceId": "467"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/403bc10e-14e7-44bc-bebb-27f3685c24d0/hsk2-2ef694283f2c5740.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a74551fe-1821-5b5b-b75b-544b5c964184",
@@ -107795,7 +108470,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442795Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -107874,7 +108549,12 @@
                 "sourceId": "468"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/3d197601-3ddd-4b23-8f28-b2da22db7fc4/hsk2-19b88aa8f43ef8a3.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "06a48839-1462-55a1-9c3b-535bc41d866c",
@@ -108008,7 +108688,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442878Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -108321,7 +109001,12 @@
                 "sourceId": "470"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c51f2507-680b-4eeb-b083-8c3069b42472/hsk2-2cee6d72754d665c.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3ee4c6cf-8ea3-5592-b2c1-9c604f0ab252",
@@ -108497,7 +109182,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.442962Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -108587,7 +109272,12 @@
                 "sourceId": "471"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/0900e24e-2d38-47d2-8dde-f982bda4efcf/hsk2-ec9b201a519c59a5.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "5ac611dd-dced-5e2a-a863-9905a0b8d743",
@@ -108739,7 +109429,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443078Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -109046,7 +109736,12 @@
                 "sourceId": "473"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/95dd13c8-b0fb-4221-902b-3543cc98df48/hsk2-40e11209de3952e0.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3d056405-5ac3-5932-8852-04d9561dde29",
@@ -109204,7 +109899,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443173Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -109290,7 +109985,12 @@
                 "sourceId": "474"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/1a464b52-edd2-428e-b177-2931797f68d8/hsk2-422c377326756b55.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "9a163d70-44ea-58a2-8063-315dad338431",
@@ -109454,7 +110154,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443257Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -109532,7 +110232,12 @@
                 "sourceId": "475"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/bf43eac2-003c-4ca0-9380-881739b6a677/hsk2-f606ff3bdbef5257.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "85b08e26-24ae-5a93-b27f-7e5c89dba3ab",
@@ -109684,7 +110389,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443341Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -109767,7 +110472,12 @@
                 "sourceId": "476"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ec9c3a46-4be6-4eb2-9e4e-556a68c82535/hsk2-619876c88b5fcfc6.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "e3dfea98-bb64-5d97-81e2-dcbe0b68c9de",
@@ -109979,7 +110689,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443424Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -110059,7 +110769,12 @@
                 "sourceId": "477"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/543e95e6-3200-47c6-b033-fb64f0694ae6/hsk2-c3300f450556a760.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "506db85f-3ff2-5fa7-89f0-210a5eb3f7d6",
@@ -110175,7 +110890,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443505Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -110259,7 +110974,12 @@
                 "sourceId": "478"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c174f3a6-ecc2-40a7-98f1-f83cd0a42ad8/hsk2-783cc443ba1d5355.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a4a4a313-df59-5c60-a111-e02816a0a4fc",
@@ -110405,7 +111125,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443585Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -110495,7 +111215,12 @@
                 "sourceId": "479"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/21137c84-0e95-4534-9590-24b763f2a130/hsk2-1af3cfb53ebdbbd5.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "aac91d03-644f-53d1-a001-a9f9f7afc6b1",
@@ -110659,7 +111384,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443678Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -110743,7 +111468,12 @@
                 "sourceId": "480"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8eecf958-cd5c-42ce-b707-632fa3698a0a/hsk2-0b298d74d4db6ac7.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "8b08f926-a576-5ba8-9a71-43cc01bdf7a1",
@@ -110883,7 +111613,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443762Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -110961,7 +111691,12 @@
                 "sourceId": "481"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/35578689-4ac2-449f-8133-9c84d20702e4/hsk2-73e078599711d131.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "0a4fb68f-1025-5754-81b8-791868800749",
@@ -111113,7 +111848,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443843Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -111197,7 +111932,12 @@
                 "sourceId": "482"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/839bb472-c570-4fbe-b20f-b1ec61cdd313/hsk2-f64958e27199c16b.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "8a65727d-4564-571c-9af4-165ff4024474",
@@ -111343,7 +112083,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.443924Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -111420,7 +112160,12 @@
                 "sourceId": "483"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/c2645fc4-b551-42b6-a4ea-e2fc17c9a732/hsk2-edb6b3cc4e81c0d1.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "792b0ae1-c8b5-5d54-812f-db81b90ddbd4",
@@ -111566,7 +112311,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444018Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -111644,7 +112389,12 @@
                 "sourceId": "484"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/98ffe0e4-87d7-411d-a2a0-e35c8e373d2b/hsk2-255d850a580244e9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "94318f1d-6274-556c-a400-19a049a4c998",
@@ -111772,7 +112522,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444113Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -111858,7 +112608,12 @@
                 "sourceId": "485"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f6696a5e-8509-4c93-98bc-59f6b9a4eefe/hsk2-567f5c4e7f258cd1.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "24c10093-3a55-5cf0-a341-76a8f46bf726",
@@ -112016,7 +112771,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444196Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -112097,7 +112852,12 @@
                 "sourceId": "486"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/62b59b19-3cd3-4857-afb5-96df85a751e8/hsk2-485058ea5b804956.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "947fbcf4-c674-5ffb-aefd-dd8e152837e5",
@@ -112255,7 +113015,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444276Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -112338,7 +113098,12 @@
                 "sourceId": "487"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/2ad09925-c080-4b11-b6d1-66bc2ca50371/hsk2-c79ef672a6dbcb4e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "d26b0b7a-1808-5752-9cd8-169131a5ea27",
@@ -112532,7 +113297,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444358Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -112617,7 +113382,12 @@
                 "sourceId": "488"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/ab2c884f-b8f5-4273-b6aa-e8403c90e6dc/hsk2-32610a25b2d6bd4c.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "b00ddcdb-9f9b-52b9-a4e7-9286b9484b28",
@@ -112775,7 +113545,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444440Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -112861,7 +113631,12 @@
                 "sourceId": "489"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/8eb4701c-e791-4c73-85d1-10bb8ece7f20/hsk2-2bd8938ac309a80e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "525964d2-ec81-58fc-99d8-b08d53b5eb61",
@@ -113013,7 +113788,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444521Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -113091,7 +113866,12 @@
                 "sourceId": "490"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/000d9740-20f5-473e-b4d2-44bd58e8345d/hsk2-d0c1708fa56e7cbf.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a6868787-be1d-5746-8ce8-2f554067d856",
@@ -113225,7 +114005,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444603Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -113303,7 +114083,12 @@
                 "sourceId": "491"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a86f85dc-6268-4fde-8721-a8bc2286a433/hsk2-21638c58bfa3b70f.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "7f34c822-95f2-5fd7-bfb1-ed3a403e20d7",
@@ -113437,7 +114222,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444695Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -113514,7 +114299,12 @@
                 "sourceId": "492"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/f6bead40-bfb5-48db-a13d-ce2a979ae09e/hsk2-0aca057e8dac430d.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "e4ea0445-f7f2-5dce-986c-42317ee3aa49",
@@ -113654,7 +114444,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444778Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -113739,7 +114529,12 @@
                 "sourceId": "493"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/949ae82f-cc33-454e-8bbe-de0df01fb87a/hsk2-26c0c80450e7658e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "3e39cf1e-9029-55e4-bc8b-4b4b4b65ae04",
@@ -113891,7 +114686,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444859Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -113976,7 +114771,12 @@
                 "sourceId": "494"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/a4618358-955b-493f-9020-54953e2cdc10/hsk2-b5d282b05013c91e.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "ac7f81d2-0f77-586c-bb4d-e9502bff1d39",
@@ -114116,7 +114916,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.444941Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -114194,7 +114994,12 @@
                 "sourceId": "495"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/23a3eae3-3599-4b83-ba75-bc400b24b520/hsk2-d4afd0b7446206f9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "9db6be8d-0177-50f7-84cc-28987deac6dd",
@@ -114328,7 +115133,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.445041Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -114653,7 +115458,12 @@
                 "sourceId": "497"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/70f1b866-f40a-40ad-bb84-f7bc68489935/hsk2-f45580f9ef193290.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "4032985c-17be-593e-a5d5-3aecc8ec6f3f",
@@ -114799,7 +115609,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.445128Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -114877,7 +115687,12 @@
                 "sourceId": "498"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/7b0951ea-30c7-42ea-a913-b34afa95878f/hsk2-1011c8f4005e925a.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "a74ab268-7620-547a-8c8e-5034d63ba7d7",
@@ -115035,7 +115850,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.445210Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -115113,7 +115928,12 @@
                 "sourceId": "499"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/fc1b87d1-fa9b-4609-81a4-9889dbe0740f/hsk2-cfb9360072d21195.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "ef6b6519-9404-5323-bffd-a64a1b8ce3da",
@@ -115229,7 +116049,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.445292Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",
@@ -115313,7 +116133,12 @@
                 "sourceId": "500"
             },
             "contentStatus": "draft",
-            "audio": null,
+            "audio": {
+                "url": "/__l5e/assets-v1/eb7c4890-f9ef-43b8-b42d-61ca8db6be87/hsk2-d06b2f2a64d166e9.mp3",
+                "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+                "license": "CC BY-SA 3.0 US",
+                "recordingKind": "word"
+            },
             "examples": [
                 {
                     "id": "6f7d375a-0f66-529a-bd98-5681011399f4",
@@ -115459,7 +116284,7 @@
                 }
             ],
             "createdAt": "2026-10-16T00:00:00Z",
-            "updatedAt": "2026-11-21T20:33:46.529Z",
+            "updatedAt": "2026-11-21T21:32:01.445376Z",
             "secondarySources": [
                 {
                     "sourceName": "HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx",

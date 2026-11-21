@@ -67,3 +67,5 @@
 - [x] Characters grid cards: scroll icon top-right when the card has its own etymology notes (book stays the Lessons icon)
 
 - [x] Cards opened from an Etymology link open on their Etymology tab; Back/Close returns to the previous card on Etymology
+
+- [x] HSK 2 word recordings: upload 164 verified clips to the CDN, attach 166 entries, verify playback, remove temporary MP3s

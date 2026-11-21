@@ -75,14 +75,27 @@ class AudioImportTests(unittest.TestCase):
         row = next(row for row in self.manifest['entries'] if row['hskIndex'] == 302)
         pointer = {'project_id': audio.PROJECT, 'size': row['recording']['bytes'], 'content_type': 'audio/mpeg',
                    'url': '/__l5e/assets-v1/12345678-1234-1234-1234-123456789abc/clip.mp3'}
+        # Start from unattached Level 2 records so the check stays meaningful after
+        # the real CDN attachments have been written to the vocabulary.
+        before = copy.deepcopy(self.vocabulary)
+        for entry in before['entries']:
+            if entry['hskLevel'] == 2:
+                entry['audio'] = None
         with tempfile.TemporaryDirectory(prefix='mandarin-audio-test-') as directory:
             uploads = Path(directory)
             (uploads / (row['recording']['gitBlob'] + '.json')).write_text(json.dumps(pointer), 'utf-8')
-            data, report = audio.import_audio(self.vocabulary, self.manifest, uploads)
+            data, report = audio.import_audio(before, self.manifest, uploads)
             self.assertEqual(next(entry for entry in data['entries'] if entry['hsk_index'] == 302)['audio']['url'], pointer['url'])
             self.assertNotIn(302, report['pendingUpload'])
             self.assertEqual([entry for entry in data['entries'] if entry['hskLevel'] != 2],
-                             [entry for entry in self.vocabulary['entries'] if entry['hskLevel'] != 2])
+                             [entry for entry in before['entries'] if entry['hskLevel'] != 2])
+
+    def test_committed_attachments_cover_exactly_the_eligible_entries(self):
+        _, report = audio.import_audio(self.vocabulary, self.manifest)
+        self.assertEqual((report['attached'], report['changed'], report['pendingUpload']), (166, 0, []))
+        attached = {entry['hsk_index'] for entry in self.vocabulary['entries'] if entry['hskLevel'] == 2 and entry.get('audio')}
+        for hsk_index in (301, 314, 332, 333, 351, 352, 356, 419, 426, 430, 447, 459, 472, 303, 496):
+            self.assertNotIn(hsk_index, attached)
 
 
 if __name__ == '__main__':
