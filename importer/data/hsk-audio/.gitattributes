@@ -1,5 +1,4 @@
-# Preserve the raw source notice/metadata and staged audio checksums across platforms.
+# Preserve the raw source notice/metadata checksums across platforms.
 cmn-caen-tan-index.xml.bz2 -text
 # The original license notice includes trailing spaces; preserve them byte for byte.
 cmn-caen-tan-readme.txt -text -whitespace
-recordings/*.mp3 -text

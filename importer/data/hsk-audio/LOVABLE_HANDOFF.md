@@ -1,8 +1,10 @@
 # Upload and attach Level 2 word audio
 
+**Status: completed.** 164 unique clips were uploaded once each, all 166 eligible entries are attached (`changed: 165`, repeat `changed: 0`), every URL matched its SHA-256 and playback was verified in the app. The staged `recordings/` MP3s were then removed; a re-import needs a fresh external `--cache` (`--prepare`).
+
 The owner requested these files be staged in the importer directory so Lovable can perform the CDN uploads. The preparation and exact-reading audit are complete. Do not regenerate or replace vocabulary content.
 
-1. Read [README.md](README.md), [recordings/README.md](recordings/README.md) and [the coverage report](../../../reports/hsk-level2-audio.md).
+1. Read [README.md](README.md) and [the coverage report](../../../reports/hsk-level2-audio.md).
 2. In the authenticated Lovable environment, run from the repository root:
 
    ```sh
