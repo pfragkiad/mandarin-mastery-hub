@@ -70,11 +70,10 @@ describe('alignSentenceEnding (translation ends with the pinyin terminal mark)',
   it('leaves the translation alone when the pinyin has no terminal mark', () => {
     expect(alignSentenceEnding('wǒ ài wǒ de jiā', 'I love my family!')).toBe('I love my family!');
   });
-  it('every recorded example already ends consistently (rule is a no-op on current data)', () => {
-    for (const entry of vocabularyData.entries) {
-      for (const example of entry.examples) {
-        expect(alignSentenceEnding(examplePinyin(example), example.english)).toBe(example.english);
-      }
-    }
+  it('aligns display punctuation without changing the source translation', () => {
+    const example = vocabularyData.entries.find(e => e.hsk_index === 550)!.examples[0]!;
+    expect(example.english).toBe('Could you look it up for me?');
+    expect(alignSentenceEnding(examplePinyin(example), example.english)).toBe('Could you look it up for me.');
+    expect(example.english).toBe('Could you look it up for me?');
   });
 });

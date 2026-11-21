@@ -22,7 +22,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   }
   const vocabularyPath = resolve(options.vocabulary ?? 'src/data/vocabulary.json');
   const { data, report } = importLevel2({
-    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level2_1.0.2.json'),
+    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level2_1.0.3.json'),
     topicsPath: resolve(options.topics ?? 'importer/hsk/hsk3_topics.json'), vocabularyPath,
   });
   if (options.write) writeFileSync(resolve(options.output ?? vocabularyPath), `${JSON.stringify(data, null, 4)}\n`);

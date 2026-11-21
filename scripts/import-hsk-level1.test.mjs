@@ -7,7 +7,7 @@ import { join, resolve } from 'node:path';
 import { importLevel1 } from './import-hsk-level1.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.6.0.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.6.1.json', 'utf8');
 const source = JSON.parse(sourceRaw);
 const topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = read('src/data/vocabulary.json');
@@ -20,7 +20,7 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level1_1.6.0.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  const paths = { sourcePath: join(directory, 'hsk3_level1_1.6.1.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }
@@ -68,4 +68,14 @@ test('rejects ambiguous or count-mismatched sentence pinyin', t => {
 test('rejects changed headword readings that need an audio review', t => {
   const paths = fixture(t, inputs => { inputs.source.entries[0].pinyin = 'āi'; });
   assert.throws(() => importLevel1(paths), /existing audio needs review/);
+});
+
+test('does not retain sentence audio when the same text has a changed reading', t => {
+  const paths = fixture(t, inputs => {
+    const example = inputs.vocabulary.entries.find(e => e.hsk_index === 1).examples[0];
+    example.pinyinDisplay = 'different reading';
+    example.audio = { url: 'old-recording' };
+  });
+  const { data } = importLevel1(paths);
+  assert.equal(data.entries.find(e => e.hsk_index === 1).examples[0].audio, null);
 });

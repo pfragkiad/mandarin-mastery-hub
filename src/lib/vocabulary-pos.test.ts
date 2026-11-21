@@ -2,12 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { vocabularyData, entryToWord } from './data-contract';
 
 describe('HSK recorded parts of speech', () => {
-  const l1 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level1_1.6.0.json');
-  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level2_1.0.2.json');
+  const l1 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level1_1.6.1.json');
+  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level2_1.0.3.json');
   it('enriches all 300 HSK 1 and 200 HSK 2 entries without adding duplicates', () => {
     expect(l1).toHaveLength(300);
     expect(l2).toHaveLength(200);
-    expect(vocabularyData.entries.filter(e => !e.phraseMetadata)).toHaveLength(501);
+    expect(vocabularyData.entries.filter(e => !e.phraseMetadata)).toHaveLength(1001);
     expect(l1.every(e => e.hskLevel === 1 && e.hskVersion === '3.0' && e.partOfSpeechSource?.sourceId === String(e.hsk_index))).toBe(true);
     expect(l2.every(e => e.hskLevel === 2 && e.hskVersion === '3.0' && e.partOfSpeechSource?.sourceId === String(e.hsk_index))).toBe(true);
   });

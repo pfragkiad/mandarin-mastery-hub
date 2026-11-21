@@ -1,6 +1,6 @@
 # Level 2 handoff compatibility
 
-The owner-prepared [v1.0.2 handoff](../importer/hsk/hsk3_level2_1.0.2.json) replaces only Level 2 study content in [vocabulary.json](../src/data/vocabulary.json). The [initial report](hsk-level2-import.json) records checksums, counts and the source's verification limits.
+The owner-prepared [v1.0.2 handoff](../importer/hsk/archive/hsk3_level2_1.0.2.json) replaced only Level 2 study content in [vocabulary.json](../src/data/vocabulary.json). The [initial report](hsk-level2-import.json) records checksums, counts and the source's verification limits.
 
 | Check | Result |
 | --- | --- |
