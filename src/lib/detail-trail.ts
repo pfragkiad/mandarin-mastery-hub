@@ -9,8 +9,34 @@
  * cards in the grid) and Close reset the trail, so Back never mixes with grid
  * navigation.
  */
-/** `lang` tags the Back label when it is not pinyin (a hanzi such as 了 when a glyph card opened the Sound chart). */
-export type TrailStep = { label: string; href: string; lang?: string };
+/** `lang` tags the Back label when it is not pinyin (a hanzi such as 了 when a glyph card opened the Sound chart).
+ *  `sameCard` marks a step left through the card's own form switch (襾 → 西): the next entry
+ *  is still this card, so Close steps over it. `index`/`key` are the history entry the step
+ *  was recorded at (filled in by push/replace), so Close can return to exactly that entry. */
+export type TrailStep = { label: string; href: string; lang?: string; sameCard?: boolean; index?: number; key?: string };
+
+/** The router's position for the current history entry (TanStack stores both in history.state). */
+export function historyPosition(): { index?: number; key?: string } {
+  const state = (typeof window === 'undefined' ? null : window.history.state) as { __TSR_index?: unknown; __TSR_key?: unknown } | null;
+  return {
+    ...(typeof state?.__TSR_index === 'number' ? { index: state.__TSR_index } : {}),
+    ...(typeof state?.__TSR_key === 'string' ? { key: state.__TSR_key } : {}),
+  };
+}
+const positioned = (step: TrailStep): TrailStep => ({ ...historyPosition(), ...step });
+
+/**
+ * Pages seen in this tab by history index (recorded by the root on every resolved
+ * navigation). A push overwrites its index, so entries at or before the current one
+ * always describe the live history; the details window reads the entry just before it
+ * opened to tell "opened from the grid" from "opened from another page" (Start, a game).
+ */
+const visits = new Map<number, { key?: string; pathname: string }>();
+export function recordVisit() {
+  const { index, key } = historyPosition();
+  if (index !== undefined) visits.set(index, { ...(key !== undefined ? { key } : {}), pathname: window.location.pathname });
+}
+export const visitAt = (index: number) => visits.get(index);
 
 /** One independent session trail; each window that offers Back owns its own instance. */
 export function createTrail() {
@@ -19,9 +45,9 @@ export function createTrail() {
   const emit = () => listeners.forEach(listener => listener());
   return {
     get: () => trail,
-    push(step: TrailStep) { trail = [...trail, step]; emit(); },
+    push(step: TrailStep) { trail = [...trail, positioned(step)]; emit(); },
     /** Replace the trail with a single return step (leaving Practice for a detail window). */
-    replace(step: TrailStep) { trail = [step]; emit(); },
+    replace(step: TrailStep) { trail = [positioned(step)]; emit(); },
     clear() { if (trail.length) { trail = []; emit(); } },
     /** Drop the top step once the browser is back at its URL (Back button or browser Back). */
     sync(href: string) {

@@ -1,7 +1,8 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DetailSheet } from './detail-sheet';
-import { detailTrail } from '@/lib/detail-trail';
+import { detailTrail, recordVisit } from '@/lib/detail-trail';
+import type { ReactNode } from 'react';
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
@@ -90,5 +91,79 @@ describe('Modal detail sheet', () => {
     } finally {
       detailTrail.clear();
     }
+  });
+});
+describe('Close returns where the window was opened from', () => {
+  // Simulates the router: each entry carries its index/key, and the root records the page.
+  const visit = (path: string, index: number) => { window.history.pushState({ __TSR_index: index, __TSR_key: `k${index}` }, '', path); recordVisit(); };
+  const sheet = (onClose: () => void, title = 'Details for 襾', children: ReactNode = <p>Record</p>) =>
+    <DetailSheet open title={title} label="襾" position={3} total={10} onClose={onClose} onNext={vi.fn()} onPrevious={vi.fn()}>{children}</DetailSheet>;
+  const closeButton = () => screen.getByRole('button', { name: /^Close and / });
+  afterEach(() => { detailTrail.clear(); vi.restoreAllMocks(); });
+
+  it('opened from a lesson: Close goes back to the lesson, stepping over form switches on the same card, with no grid arrows', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/lessons/l1', 100);
+    detailTrail.replace({ label: 'Lesson (西)', href: window.location.href });
+    visit('/characters?tab=Radicals&id=Radicals:襾', 101);
+    const onClose = vi.fn();
+    const view = render(sheet(onClose, 'Details for 襾', <div className="form-switch"><a href="/characters?tab=Radicals&id=Radicals:襾&variant=146-2" onClick={e => e.preventDefault()}>西</a></div>));
+    fireEvent.click(screen.getByText('西'));
+    visit('/characters?tab=Radicals&id=Radicals:襾&variant=146-2', 102);
+    view.rerender(sheet(onClose, 'Details for 襾 146-2'));
+    expect(screen.queryByRole('button', { name: 'Next card in this list' })).not.toBeInTheDocument();
+    expect(closeButton()).toHaveAccessibleName('Close and return to Lesson (西)');
+    fireEvent.click(closeButton());
+    expect(go).toHaveBeenCalledWith(-2);
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('reached from another card by a link: Close returns to that card', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/characters?id=Characters:了', 200);
+    const view = render(sheet(vi.fn(), 'Details for 了', <a href="/characters?id=Characters:瞭" onClick={e => e.preventDefault()}>瞭</a>));
+    fireEvent.click(screen.getByText('瞭'));
+    visit('/characters?id=Characters:瞭', 201);
+    view.rerender(sheet(vi.fn(), 'Details for 瞭'));
+    fireEvent.click(closeButton());
+    expect(go).toHaveBeenCalledWith(-1);
+  });
+
+  it('opened from another page without a recorded step (Start): Close goes back to it', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/', 300);
+    visit('/characters?id=Characters:日', 301);
+    render(sheet(vi.fn()));
+    expect(closeButton()).toHaveAccessibleName('Close and return to the previous page');
+    fireEvent.click(closeButton());
+    expect(go).toHaveBeenCalledWith(-1);
+  });
+
+  it('opened from its own grid: Close returns to the grid and the arrows stay, even after form switches', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/characters?tab=Radicals', 400);
+    visit('/characters?tab=Radicals&id=Radicals:襾', 401);
+    const onClose = vi.fn();
+    const view = render(sheet(onClose, 'Details for 襾', <div className="form-switch"><a href="/characters?tab=Radicals&id=Radicals:襾&variant=146-2" onClick={e => e.preventDefault()}>西</a></div>));
+    fireEvent.click(screen.getByText('西'));
+    visit('/characters?tab=Radicals&id=Radicals:襾&variant=146-2', 402);
+    view.rerender(sheet(onClose, 'Details for 襾 146-2'));
+    expect(screen.getByRole('button', { name: 'Next card in this list' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Close and show card in list' }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(go).not.toHaveBeenCalled();
+  });
+
+  it('ignores a stale step left before the window opened (Sound chart visited earlier)', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/pinyin?s=xi', 500);
+    detailTrail.replace({ label: 'xī', href: window.location.href });
+    visit('/characters', 501);
+    visit('/characters?id=Characters:西', 502);
+    const onClose = vi.fn();
+    render(sheet(onClose));
+    fireEvent.click(screen.getByRole('button', { name: 'Close and show card in list' }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(go).not.toHaveBeenCalled();
   });
 });

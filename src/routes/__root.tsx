@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { watchClipPaths } from "@/lib/svg-clip-paths";
+import { recordVisit } from "@/lib/detail-trail";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -138,6 +139,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   useEffect(() => watchClipPaths(), []);
+  // Remember which page each history entry shows, so a details window's Close can
+  // return to the page it was opened from (detail-trail.ts visits).
+  const router = useRouter();
+  useEffect(() => { recordVisit(); return router.subscribe('onResolved', recordVisit); }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>

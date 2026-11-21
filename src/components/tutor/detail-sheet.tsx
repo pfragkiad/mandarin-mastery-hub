@@ -4,7 +4,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NavigationShortcuts } from './navigation-shortcuts';
-import { detailTrail, historyEntry } from '@/lib/detail-trail';
+import { detailTrail, historyEntry, historyPosition, visitAt, type TrailStep } from '@/lib/detail-trail';
 
 /** True below the width where the library's side detail column stacks under the cards. */
 export function useNarrowLibrary(maxWidth = 850) {
@@ -20,12 +20,43 @@ export function useNarrowLibrary(maxWidth = 850) {
 }
 
 /**
+ * Where Close goes (pure, so the rule is testable):
+ * - the newest trail step that is not this card's own form switch (襾 → 西 steps are
+ *   skipped, so switching forms never makes Close walk back through them): the previous,
+ *   different card, or the page that recorded itself before opening the window (lesson,
+ *   Hanzi finder, Practice, Flashcards, Sound chart);
+ * - otherwise the entry just before the window opened, when it shows another page (Start,
+ *   a game, search from another page);
+ * - otherwise null: the window was opened from its own grid (or a fresh tab), so Close
+ *   returns to the grid as before.
+ * A step counts only when it lies inside this window's history (at or after the entry
+ * before it opened) and that entry still holds the same key, so a stale step left by an
+ * earlier visit never sends Close somewhere else.
+ */
+export function closeTarget(trail: TrailStep[], openedAt: number | null, current: number | undefined, pathname: string): { index: number; label: string | null } | null {
+  if (openedAt === null || current === undefined) return null;
+  for (let i = trail.length - 1; i >= 0; i -= 1) {
+    const step = trail[i]!;
+    if (step.sameCard) continue;
+    const live = step.index !== undefined && step.index >= openedAt - 1 && step.index < current && (step.key === undefined || visitAt(step.index)?.key === undefined || visitAt(step.index)?.key === step.key);
+    if (live) return { index: step.index!, label: step.label };
+    break;
+  }
+  const before = visitAt(openedAt - 1);
+  return before && before.pathname !== pathname && openedAt - 1 < current ? { index: openedAt - 1, label: null } : null;
+}
+
+/**
  * Modal top-centred reference with a stationary bar:
  * - Back (only after following a link inside the window) returns to the previous details;
  * - "‹ 12 of 103 ›" steps to neighbour cards in the grid (not history) and resets Back;
- * - Close returns to the grid and focuses this record's card, resetting Back.
+ *   offered only when the window was opened from its grid (closeTarget null);
+ * - Close behaves like Back to the page the window came from (closeTarget), except that
+ *   form switches on the same card are stepped over; opened from the grid it returns to
+ *   the grid and focuses this record's card, resetting Back.
  * Inputs: `label` (short glyph shown on Back for the next window), `position`/`total`
  * in the browsed list (position < 0 hides the grid arrows: record not in the list).
+ * State: `openedAt`, the history index of the entry where this window first appeared.
  */
 export function DetailSheet({ open, title, label, position = -1, total = 0, onClose, onPrevious, onNext, children }: {
   open: boolean; title: string; label?: string; position?: number; total?: number; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
@@ -39,10 +70,24 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
   // keyed by history entry, not URL: switching 亻 → 人 → 亻 by links is a new entry
   // for 亻 and must keep Back, not be mistaken for a return.
   useEffect(() => { body.current?.scrollTo?.({ top: 0 }); detailTrail.sync(historyEntry()); }, [title]);
-  const close = () => { detailTrail.clear(); onClose(); };
-  const step = (go?: () => void) => go && (() => { detailTrail.clear(); go(); });
+  // Read after mount (history is browser-only); the window keeps it while it stays open,
+  // through form switches, neighbour steps and links to other cards in the same library.
+  const [openedAt, setOpenedAt] = useState<number | null>(null);
+  useEffect(() => { setOpenedAt(historyPosition().index ?? null); }, []);
+  const current = openedAt === null ? undefined : historyPosition().index;
+  const target = closeTarget(trail, openedAt, current, typeof window === 'undefined' ? '' : window.location.pathname);
+  const close = () => {
+    // Recomputed at click time from the live history entry, never a stale render.
+    const now = historyPosition().index;
+    const goal = closeTarget(detailTrail.get(), openedAt, now, window.location.pathname);
+    if (goal && now !== undefined) { window.history.go(goal.index - now); return; }
+    detailTrail.clear(); onClose();
+  };
+  const fromGrid = !target;
+  const step = (go?: () => void) => fromGrid && go ? () => { detailTrail.clear(); go(); } : undefined;
   const previous = step(onPrevious), next = step(onNext);
-  const inList = position >= 0 && total > 0;
+  const inList = fromGrid && position >= 0 && total > 0;
+  const closeLabel = target ? `Close and return to ${target.label ?? 'the previous page'}` : 'Close and show card in list';
   return <Dialog modal open={open} onOpenChange={value => { if (!value) close(); }}>
     <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet"
       onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
@@ -76,7 +121,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         </div>}
         <div className="detail-sheet-end">
           {inList && <NavigationShortcuts context="records"/>}
-          <Button variant="ghost" size="icon" className="close-x" aria-label="Close and show card in list" title="Close and show card in list" onClick={close}><X/></Button>
+          <Button variant="ghost" size="icon" className="close-x" aria-label={closeLabel} title={closeLabel} onClick={close}><X/></Button>
         </div>
       </div>
       {/* A link followed inside the window remembers this record for Back. */}
@@ -85,7 +130,8 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
         // A link to the page already shown (the selected form tile) adds no history entry.
         if ((link as HTMLAnchorElement).href === window.location.href) return;
-        detailTrail.push({ label: label ?? title, href: historyEntry() });
+        // The card's own form switch keeps the same card: Close steps over that entry.
+        detailTrail.push({ label: label ?? title, href: historyEntry(), ...(link.closest('.form-switch') ? { sameCard: true } : {}) });
       }}>{children}</div>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
