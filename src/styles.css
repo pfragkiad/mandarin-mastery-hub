@@ -4117,3 +4117,11 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-cho
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute { border-color: transparent; background: transparent; }
 html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice.is-substitute:not(.is-selected):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--foreground) 5%, transparent); }
 html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitute { background: color-mix(in oklab, var(--substitute) 12%, var(--card)); border-color: var(--substitute); border-width: 2px; }
+
+/* Etymology section (etymology-section.tsx): each source entry is its own captioned block;
+   source text reads like a translation line, Classical Chinese in the hanzi face. */
+.etymology-section .etymology-entry { display: grid; gap: 4px; margin-top: 10px; }
+.etymology-section .etymology-entry:first-of-type { margin-top: 0; }
+.etymology-section p.glyph-usage-meaning { display: block; margin: 0; line-height: 1.6; }
+.etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 15px; }
+.etymology-section .glyph-usage-reference { margin-top: 2px; }

@@ -3,8 +3,9 @@
 This is a complementary, file-based dataset. It adds source explanations and
 association evidence without changing `catalog.json`, any section rows, record
 IDs, readings, meanings, radical identities, IDS trees or handwriting geometry.
-There is no hosted database. The frontend has not yet been connected to these
-files; this guide is its integration contract.
+There is no hosted database. The browser reads these files only through
+`src/lib/etymology.ts` (rendered by `src/components/tutor/etymology-section.tsx`
+on glyph detail cards); this guide is its integration contract.
 
 ## Files, consumers and generators
 

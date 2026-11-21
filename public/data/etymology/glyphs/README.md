@@ -17,6 +17,6 @@ comparison coverage and optional BabelStone textual occurrence evidence.
 The shared [schema](../etymology.schema.json) defines the envelope and the
 [frontend guide](../README.md) defines status/display rules.
 
-The browser should fetch only the needed shard after an etymology request. No
-application consumer is installed yet. Do not hand-edit generated shards, import
+The browser should fetch only the needed shard after an etymology request. The
+only application consumer is `src/lib/etymology.ts`. Do not hand-edit generated shards, import
 them into page bundles or use their structural references as stroke bindings.

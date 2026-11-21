@@ -46,6 +46,7 @@ import { cardMeaningPointers, meaningPointers } from '@/lib/meaning-pointers';
 import { CharacterDecomposition } from './character-enrichment';
 import { RadicalIdentityNote } from './radical-identity';
 import { RadicalVariantEtymology } from './radical-variant-etymology';
+import { EtymologySection } from './etymology-section';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { cardMeaning, cardReadingSplit, glyphPresentation } from '@/lib/glyph-presentation';
@@ -275,6 +276,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {kind !== 'Strokes' && entry.decomposition && <div className="decomposition-section"><h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION{entry.decomposition && <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>}</h3>
       {entry.decomposition ? <CharacterDecomposition character={entry.hanzi} tree={entry.decomposition.root} source={entry.decomposition.source} status={entry.decomposition.status}/> : <div className="record-gap"><p>No recorded decomposition available yet.</p><small>This record has no breakdown in the imported sources. None is inferred.</small></div>}
     </div>}
+    {/* Howell / Shuowen notes for this exact record or family-qualified radical form (etymology-section.tsx);
+        bookmarkId is the selected form's own ID (…:variant:146-2), never the heading's. */}
+    {kind !== 'Strokes' && <EtymologySection recordId={bookmarkId} glyph={entry.hanzi} familyId={radicalFamilyRecord?.id} formKey={form?.key ?? radicalFamilyRecord?.forms.find(item => item.character === heading.hanzi)?.key}/>}
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
     <div className="detail-reference-row"><DetailRecordActions practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }} hanzi={entry.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(bookmarkId)} similar={kind !== 'Strokes' && finderCoversGlyph(entry.hanzi) ? entry.hanzi : undefined}/></div>
   </section>;
