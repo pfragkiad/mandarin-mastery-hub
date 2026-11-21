@@ -147,7 +147,11 @@ provenance notice. Licenses remain source-specific. Preserve these when sharing
 JSON; do not reduce the notices to an MIT label or claim a font license.
 
 The original upstream file checksums preserve original bytes. Repository input
-fingerprints normalize CRLF to LF; structural envelope fingerprints use compact
+fingerprints and the embedded repository-authored structural notice normalize
+CRLF to LF, so Windows and Linux produce identical metadata. Downloaded upstream
+MIT/Apache notices retain their original source bytes inside the JSON strings.
+The importer tests simulate both notice checkouts without modifying source files.
+Structural envelope fingerprints use compact
 `JSON.stringify(envelope)` UTF-8 without a trailing newline. These are distinct
 from raw geometry hashes and are explicitly named `sidecarCanonicalSha256`.
 The original source manifest itself is LF-pinned. The index pins every generated

@@ -1,7 +1,10 @@
 """Boundary checks for the generated etymology handoff; Python standard library only."""
 import hashlib
 import json
+import os
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
 import zipfile
 
@@ -135,6 +138,43 @@ class EtymologyHandoffTests(unittest.TestCase):
             self.assertEqual(metadata['license_notices'], expected['license_notices'])
             self.assertEqual(metadata['import_date'], expected['import_date'])
             self.assertEqual(metadata['license'], 'source-specific')
+
+    def test_repository_notice_checkout_line_endings_do_not_change_export(self):
+        notice_path = ROOT / 'public/data/character-enrichment/THIRD_PARTY_NOTICES.md'
+        original = notice_path.read_bytes()
+        # Intercept reads of this one repository-authored notice inside the child
+        # process. This exercises the real exporter for both checkouts without
+        # rewriting sources, changing Git settings or hiding other differences.
+        preload = r'''
+const fs = require('node:fs');
+const { syncBuiltinESMExports } = require('node:module');
+const read = fs.readFileSync;
+fs.readFileSync = function(file, ...args) {
+  const raw = read.call(this, file, ...args);
+  const path = String(file).replaceAll('\\', '/');
+  if (!path.endsWith('/public/data/character-enrichment/THIRD_PARTY_NOTICES.md')) return raw;
+  const lf = raw.toString('utf8').replaceAll('\r\n', '\n');
+  const text = process.env.ETYM_TEST_LINE_ENDING === 'crlf' ? lf.replaceAll('\n', '\r\n') : lf;
+  return typeof raw === 'string' ? text : Buffer.from(text, 'utf8');
+};
+syncBuiltinESMExports();
+'''
+        with tempfile.TemporaryDirectory(prefix='etymology-line-endings-') as directory:
+            directory = Path(directory)
+            shim = directory / 'notice-checkout.cjs'
+            shim.write_text(preload, encoding='utf-8')
+            snapshots = []
+            for ending in ('lf', 'crlf'):
+                output = directory / f'{ending}.json'
+                subprocess.run(['node', '--require', str(shim), str(ROOT / 'scripts/export-etymology-context.mjs'), str(output)],
+                               cwd=ROOT, env={**os.environ, 'ETYM_TEST_LINE_ENDING': ending},
+                               check=True, capture_output=True)
+                snapshots.append(output.read_bytes())
+            self.assertEqual(snapshots[0], snapshots[1])
+            canonical = json.loads(snapshots[0])['structuralSource']['notice']
+            self.assertNotIn('\r', canonical)
+            self.assertEqual(canonical, original.decode('utf-8').replace('\r\n', '\n'))
+        self.assertEqual(notice_path.read_bytes(), original)
 
 
 if __name__ == '__main__':

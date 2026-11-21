@@ -12,6 +12,10 @@ if (process.argv.length !== 3)
   throw new Error("Usage: node scripts/export-etymology-context.mjs <snapshot.json>");
 const root = new URL("../", import.meta.url);
 const read = (path) => readFileSync(new URL(path, root));
+// Repository-authored text follows checkout line endings. Canonicalize both its
+// embedded presentation and input fingerprint; checksum-bound upstream notices
+// are handled separately by the source downloader and retain their raw bytes.
+const repositoryText = (path) => read(path).toString("utf8").replaceAll("\r\n", "\n");
 const json = (path) => JSON.parse(read(path).toString("utf8"));
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const jiti = createJiti(import.meta.url, {
@@ -154,13 +158,10 @@ writeFileSync(
     variants: json("public/data/character-variants-v1.4.0.json"),
     structuralSource: {
       ...enrichmentManifest.sources.babelstone,
-      notice: read("public/data/character-enrichment/THIRD_PARTY_NOTICES.md").toString("utf8"),
+      notice: repositoryText("public/data/character-enrichment/THIRD_PARTY_NOTICES.md"),
     },
     inputs: Object.fromEntries(
-      paths.map((path) => [
-        path,
-        digest(Buffer.from(read(path).toString("utf8").replaceAll("\r\n", "\n"), "utf8")),
-      ]),
+      paths.map((path) => [path, digest(Buffer.from(repositoryText(path), "utf8"))]),
     ),
   })}\n`,
   "utf8",

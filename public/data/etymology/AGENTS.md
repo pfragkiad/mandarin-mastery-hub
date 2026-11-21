@@ -29,6 +29,10 @@
 - Keep root dataset metadata and all full source-specific notices in every
   redistributed JSON. Packaging version, schema version and upstream commit are
   distinct; import date remains the actual acquisition date.
+- Normalize the repository-authored structural notice to LF when embedding it,
+  consistently with its input fingerprint. Preserve downloaded upstream license
+  bytes. The LF/CRLF exporter regression test must pass on either checkout;
+  never silence the check by ignoring arbitrary differences in generated JSON.
 - Update this guide, its schema and [the source guide](../../../importer/data/etymology/README.md)
   together when changing the data contract. Editorial review requires explicit,
   provenance-attached evidence; never infer verification from two-source presence.
