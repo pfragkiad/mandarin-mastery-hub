@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type HTMLAttributes, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState, type HTMLAttributes, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
+import { stableContext } from '@/lib/stable-context';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
@@ -37,7 +38,7 @@ export type HintWord = { hanzi: string; pinyin: string; meaning: string; search:
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
 type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; refFor: (glyph: string) => string | null };
 
-const Ctx = createContext<HintsContext | null>(null);
+const Ctx = stableContext<HintsContext | null>('lessonHints', null);
 export const useLessonHints = () => useContext(Ctx);
 
 const HAN_CHAR = /^\p{Script=Han}$/u;

@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { useContext, useEffect, useRef, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { stableContext } from '@/lib/stable-context';
 import { words, type Word } from '@/lib/mandarin';
 import { DrawingSessionProvider } from './drawing-session';
 import { FlashcardSessionProvider } from './flashcard-session';
@@ -7,11 +8,11 @@ import { defaultPreferences, defaultTheme, restoredTheme, restoredLibraryView, i
 type Workspace = { items: Word[]; addWord: (word: Word) => void; saved: string[]; toggleSaved: (id: string) => void; preferences: Preferences; setPreferences: (value: Preferences) => void; theme: 'light' | 'dark'; setTheme: (value: 'light' | 'dark') => void; catalogVersion: number };
 /** Independently subscribed, session-only reveals survive route unmounts without
  * rerendering the entire workspace or persisting record IDs in browser storage. */
-const CardRevealsContext = createContext<{ revealed: ReadonlySet<string>; setRevealed: Dispatch<SetStateAction<ReadonlySet<string>>> } | null>(null);
+const CardRevealsContext = stableContext<{ revealed: ReadonlySet<string>; setRevealed: Dispatch<SetStateAction<ReadonlySet<string>>> } | null>('workspace.cardReveals', null);
 export function useSessionCardReveals() { return useContext(CardRevealsContext); }
 // Shared session records/bookmarks and persisted display preferences live here;
 // page selections and applied filters belong to route search, not this context.
-const WorkspaceContext = createContext<Workspace | null>(null);
+const WorkspaceContext = stableContext<Workspace | null>('workspace', null);
 export function WorkspaceProvider({ children }: { children: ReactNode }) {
   // Imported records must stay live when corrected; only session additions belong in state.
   const [sessionItems, setSessionItems] = useState<Word[]>([]);

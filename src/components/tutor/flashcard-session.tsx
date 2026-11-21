@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import { useContext, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import { stableContext } from '@/lib/stable-context';
 import type { AudioAttachment } from '@/lib/audio';
 import type { CharacterScript } from '@/lib/learning-preferences';
 import type { LibraryKind } from '@/lib/character-library';
@@ -25,7 +26,7 @@ export type FlashcardSession = {
   isReview: boolean;
 };
 const empty: FlashcardSession = { direction: 'zh', showFrontPinyin: false, deckSize: 10, repeat: false, deck: null, index: 0, flipped: false, missed: [], round: 1, total: 0, ended: false, skipped: [], label: '', isReview: false };
-const Context = createContext<[FlashcardSession, Dispatch<SetStateAction<FlashcardSession>>] | null>(null);
+const Context = stableContext<[FlashcardSession, Dispatch<SetStateAction<FlashcardSession>>] | null>('flashcardSession', null);
 
 /** Root-owned, session-only round: opening a card's details and coming Back resumes
  * the same card (still turned over) without storing records in browser storage. */
