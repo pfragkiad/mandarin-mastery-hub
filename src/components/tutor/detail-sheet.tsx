@@ -145,9 +145,6 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         // The card's own form switch keeps the same card: Close steps over that entry.
         detailTrail.push({ label: label ?? title, href: historyEntry(), ...(link.closest('.form-switch') ? { sameCard: true } : {}) });
       }}>{children}
-        {/* A second Close at the end of the content: after reading down (or while pinch-zoomed)
-            the top bar is far away, so the same close target is offered where the reading ends. */}
-        <div className="detail-sheet-foot"><Button variant="outline" size="sm" title={closeLabel} onClick={close}><X/>Close</Button></div>
       </div>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
