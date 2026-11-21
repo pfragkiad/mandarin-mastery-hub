@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from 'react';
+import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { Link } from '@tanstack/react-router';
 import { ChevronDown, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -127,7 +128,7 @@ export function EtymologyPanel({ view }: { view: EtymologyView | null | undefine
     const destination = libraryDestination(target, preferences.includeTraditional);
     const search = destination && destination.id === id ? destination : { tab, id };
     const hint = openDetailsHint(target, tab);
-    return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(target) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} title={hint} aria-label={hint}><strong lang="zh-CN">{target}</strong></Link></Button>;
+    return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(target) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{target}</strong></Link></Button>;
   };
   if (view.status === 'exact-headword') {
     const howell = view.entries.filter(entry => entry.sourceId === 'howell');

@@ -1,7 +1,9 @@
-import { useEffect, useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useRouterState } from '@tanstack/react-router';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
+import { entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
 import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyView } from './etymology-section';
 
 /**
@@ -13,15 +15,34 @@ import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyView } 
  * - `etymology`: the exact etymology request, or null when etymology does not apply (strokes).
  * - `cardKey`: the card's identity (heading ID, so switching forms on one card keeps the tab).
  * State:
- * - open/collapsed is remembered on this device (owner's choice); the tab is not — every card
- *   opens on Decomposition (or the only tab offered).
+ * - open/collapsed is remembered on this device (owner's choice). A card opens on
+ *   Decomposition (or the only tab offered) unless (a) it was reached from an Etymology tile
+ *   link (requestDetailTab, consumed once by the next card), or (b) its history entry already
+ *   had a tab chosen — so Back/Close to the previous card returns to its Etymology tab and
+ *   scrolls the tabs into view. Choices live in memory per history entry + card, never saved.
  * - Nothing in a collapsed drawer mounts or downloads. While open, etymology resolves even on
  *   the Decomposition tab, so the Etymology tab can hide itself when the card has no notes
  *   (owner's choice: it may vanish a moment after opening). Unresolved, the tab stays offered.
  * When no tab remains (no breakdown, empty etymology) the whole drawer renders nothing.
  */
-type DetailTab = 'decomposition' | 'etymology';
 const OPEN_KEY = 'tutor-detail-drawer-open';
+
+/** The tab remembered for this history entry's card, taking a pending link request first.
+ *  `returned` is true when the entry already had a choice (a Back/Close return). */
+function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefined; returned: boolean } {
+  const historyKey = useRouterState({ select: s => (s.location.state as { __TSR_key?: string } | undefined)?.__TSR_key ?? '' });
+  const entry = `${historyKey}|${cardKey}`;
+  noteDetailEntry(historyKey, cardKey);
+  // Decided once per arrival on an entry (the sheet can stay mounted across links/Back):
+  // an entry that already had a choice is a return; otherwise a pending link request applies.
+  const arrival = useRef<{ entry: string; returned: boolean } | null>(null);
+  if (arrival.current?.entry !== entry) arrival.current = { entry, returned: entryTabs.has(entry) };
+  if (!entryTabs.has(entry)) {
+    const requested = takeRequestedTab(historyKey, cardKey);
+    if (requested) entryTabs.set(entry, requested);
+  }
+  return { entry, tab: entryTabs.get(entry), returned: arrival.current.returned };
+}
 
 /** Remembered open/collapsed flag, read after mount so server and first client render agree.
  *  `known` turns true once the saved choice is read: loading waits for it, so a remembered
@@ -40,16 +61,26 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
   // Offered while unresolved; hidden once resolved with nothing to show.
   const hasEtymology = Boolean(etymology) && (view === undefined || etymologyHasContent(view));
   const offered: DetailTab[] = [...(decomposition ? ['decomposition' as const] : []), ...(hasEtymology ? ['etymology' as const] : [])];
-  // The chosen tab belongs to one card; a new card (or a tab that vanished) falls back to the first offered.
-  const [chosen, setChosen] = useState<{ card: string; tab: DetailTab } | null>(null);
-  const tab: DetailTab | undefined = chosen && chosen.card === cardKey && offered.includes(chosen.tab) ? chosen.tab : offered[0];
+  // The chosen tab belongs to one history entry's card; a tab that vanished falls back to the first offered.
+  const remembered = useEntryTab(cardKey);
+  const [, rerender] = useState(0);
+  const tab: DetailTab | undefined = remembered.tab && offered.includes(remembered.tab) ? remembered.tab : offered[0];
+  const rootRef = useRef<HTMLDivElement>(null);
+  // Returning to a card left on Etymology: bring the tabs back into view once its notes resolve.
+  const scrolledFor = useRef('');
+  const returnedToEtymology = remembered.returned && remembered.tab === 'etymology' && tab === 'etymology' && view !== undefined;
+  useEffect(() => {
+    if (!returnedToEtymology || scrolledFor.current === remembered.entry) return;
+    scrolledFor.current = remembered.entry;
+    rootRef.current?.scrollIntoView({ block: 'start' });
+  }, [returnedToEtymology, remembered.entry]);
   if (!tab) return null;
-  const select = (next: DetailTab) => { setChosen({ card: cardKey, tab: next }); setOpen(true); };
+  const select = (next: DetailTab) => { entryTabs.set(remembered.entry, next); rerender(n => n + 1); setOpen(true); };
   const tabId = (name: DetailTab) => `${drawerId}-${name}`;
   // Until the saved choice is read, the row shows but no drawer mounts (its breakdown fetches its own data).
   const showDecomposition = known && open && tab === 'decomposition' && decomposition;
   const showEtymology = known && open && tab === 'etymology';
-  return <div className={`stroke-guide detail-tabs${open ? ' is-open' : ''}`}>
+  return <div ref={rootRef} className={`stroke-guide detail-tabs${open ? ' is-open' : ''}`}>
     <div className="stroke-tabs">
       <div className="stroke-tab-list" role="tablist" aria-label="Character notes">
         {decomposition && <span className="stroke-tab-item">

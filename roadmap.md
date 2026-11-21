@@ -65,3 +65,5 @@
 - [x] Glyph detail cards: Decomposition + Etymology as Practice-style drawer tabs (always opens on Decomposition, remembered collapse, nothing loads while collapsed, Etymology tab hidden when empty)
 - [x] Etymology: one Advanced toggle for the whole Shuowen subsection; structured Howell layout with exact-form clickable hanzi tiles + (pinyin 🔊)
 - [x] Characters grid cards: scroll icon top-right when the card has its own etymology notes (book stays the Lessons icon)
+
+- [x] Cards opened from an Etymology link open on their Etymology tab; Back/Close returns to the previous card on Etymology

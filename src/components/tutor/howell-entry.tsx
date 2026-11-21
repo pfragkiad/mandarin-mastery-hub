@@ -6,6 +6,7 @@ import { howellInline, howellPresentation, type HowellToken } from '@/lib/howell
 import { lessonGlyphHint } from '@/lib/lesson-hints';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { useWorkspace } from './workspace';
+import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 
 /**
@@ -91,7 +92,8 @@ function HowellInline({ text, selfGlyph }: { text: string; selfGlyph: string }) 
 
 /** One hanzi as a small bordered tile in its identity ink; links to the exact record's card
  *  (not for the card's own glyph) with "(pinyin 🔊)" beside it when a reading is recorded.
- *  The speaker sits outside the link so listening never navigates; `marked` puts Howell's #
+ *  Following the link opens that card on its Etymology tab (requestDetailTab), so reading
+ *  continues there and Back returns here. The speaker sits outside the link so listening never navigates; `marked` puts Howell's #
  *  right after the tile it was written after. */
 function HowellGlyph({ glyph, self, marked }: { glyph: string; self: boolean; marked: boolean }) {
   const { preferences, catalogVersion } = useWorkspace();
@@ -109,7 +111,7 @@ function HowellGlyph({ glyph, self, marked }: { glyph: string; self: boolean; ma
   const tileClass = `howell-glyph ${record?.ink ?? ''}${self ? ' is-self' : ''}`;
   const label = record ? openDetailsHint(glyph, record.hint.kind) : glyph;
   const tile = record && !self
-    ? <Link to="/characters" search={record.search} resetScroll={false} className={tileClass} title={label} aria-label={label} lang="zh-CN">{glyph}</Link>
+    ? <Link to="/characters" search={record.search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} className={tileClass} title={label} aria-label={label} lang="zh-CN">{glyph}</Link>
     : <span className={tileClass} lang="zh-CN">{glyph}</span>;
   const pinyin = record?.hint.pinyin;
   return <span className="howell-glyph-wrap">
