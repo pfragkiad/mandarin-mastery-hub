@@ -17,6 +17,7 @@ import { useKeyboardPaging } from '@/lib/keyboard-paging';
 import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { DetailLoading, useDetailLoading } from './detail-loading';
+import { GridCardPlaceholder } from './section-placeholder';
 import { DraftFilterForm } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
@@ -58,6 +59,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const activeFilters = Boolean(query || collection !== 'All collections' || level !== 'All levels' || pos !== 'All types' || style !== 'All styles' || py || status !== 'All words');
   const setStatus = (status: string) => onFiltersChange?.({ status });
   const [adding, setAdding] = useState(false);
+  // The word records are bundled with the app, so the grid's only loading window is the beat
+  // between the first (server-rendered) paint and mount. Show the same single top-left card
+  // skeleton the Glyphs grid uses for that beat, so the results area never reads as empty.
+  const [gridReady, setGridReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setGridReady(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
   const linkedWord = items.find(w => w.id === initialWordId);
   // Exact links determine their own Words/Phrases tab via explicit entry metadata,
   // never by glyph count. With no link, leave the reference window closed.
@@ -122,8 +131,9 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
     </>}</DraftFilterForm>
     <LibraryTools flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
-    <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`}>
-      {filtered.length ? <>
+    <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`} aria-busy={!gridReady}>
+      {!gridReady ? <div ref={gridRef} className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}><GridCardPlaceholder/></div>
+      : filtered.length ? <>
       <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
       <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} />
       <div ref={gridRef} className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}>{paged.entries.map(w => <WordCard word={w} key={w.id} panel initiallyOpen={w.id === initialWordId} revealed={peek.revealed.has(w.id)} {...(onWordOpen ? { open: w.id === selectedWord?.id, // Card clicks only peek in a Hide mode; the panel opens solely via the details button.

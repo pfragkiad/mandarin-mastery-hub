@@ -2,11 +2,12 @@ import type { CSSProperties, ReactNode } from 'react';
 
 /**
  * Library grid loading placeholder (section-placeholder.tsx): one card-shaped skeleton in the
- * grid's first (top-left) slot while the catalogue is still being fetched.
+ * grid's first (top-left) slot while the grid's records are not on screen yet.
  *
  * Purpose: an empty results area reads as "nothing to show", so the Glyphs grid would otherwise
- * flash a bare box (and the "No matching records" note) before its first records arrive. One
- * skeleton is enough to say "a card is coming here" without pretending the page is full.
+ * flash a bare box (and the "No matching records" note) before its fetched records arrive, and
+ * the Vocabulary grids would flash one before their bundled records mount. One skeleton is
+ * enough to say "a card is coming here" without pretending the page is full.
  *
  * Inputs: none — it carries no record, so it can never be read as a real entry. It mirrors the
  * real card's own structure (`.word-card` > `.word-card-top` / `.word-open.catalog-entry` /
