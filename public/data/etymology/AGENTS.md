@@ -2,6 +2,11 @@
 
 - Read [README.md](README.md) before frontend integration. It is the contract for
   exact-record lookup, status handling, source text and BabelStone evidence.
+- For Howell layout, follow [HOWELL_PRESENTATION.md](HOWELL_PRESENTATION.md).
+  Improve the existing frontend parser/renderer without rebuilding source/data
+  files. Keep prefaced and described elements, nested reasons, references and
+  uncertainty in scope; unknown passages remain faithful prose. Exact-character
+  links with recorded pinyin and independent audio are explicitly allowed.
 - This is a complementary static dataset. Do not add a hosted database, modify
   existing catalogue/section JSON, replace record IDs or mutate existing IDS,
   radical-family/contextual identities, pronunciation or stroke bindings.

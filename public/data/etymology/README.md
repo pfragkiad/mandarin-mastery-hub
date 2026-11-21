@@ -15,6 +15,7 @@ on glyph detail cards); this guide is its integration contract.
 | [glyphs/](glyphs/README.md) | On-demand JSON shards containing original source explanations, exact target associations, related-form suggestions and textual BabelStone occurrence references. |
 | [etymology.schema.json](etymology.schema.json) | JSON Schema 2020-12 for index, shard and audit envelopes. Each generated file's `$schema` selects its actual definition. |
 | [AGENTS.md](AGENTS.md) | Scoped instructions for agents modifying or integrating this dataset. |
+| [HOWELL_PRESENTATION.md](HOWELL_PRESENTATION.md) | Frontend rendering contract covering narrative/composition cases, nested notation, exact-character links and source-preservation checks; no dataset rebuild required. |
 | [.gitattributes](.gitattributes) | Keeps generated JSON at LF so index shard hashes survive checkout. |
 
 Generated from the [preserved source collection](../../../importer/data/etymology/README.md)
