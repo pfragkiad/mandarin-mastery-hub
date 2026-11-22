@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-health-and-rest",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -27,7 +27,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -38,7 +38,9 @@
     "三": "Characters:三",
     "上": "Characters:上",
     "下": "Characters:下",
+    "不": "Characters:不",
     "个": "Characters:个",
+    "么": "Characters:么",
     "九": "Characters:九",
     "了": "Characters:了",
     "今": "Characters:今",
@@ -46,6 +48,7 @@
     "以": "Characters:以",
     "休": "Characters:休",
     "作": "Characters:作",
+    "你": "Characters:你",
     "儿": "Characters:儿",
     "八": "Characters:八",
     "医": "Characters:医",
@@ -56,12 +59,14 @@
     "口": "Characters:口",
     "可": "Characters:可",
     "后": "Characters:后",
+    "吗": "Characters:吗",
     "喝": "Characters:喝",
     "在": "Characters:在",
     "多": "Characters:多",
     "天": "Characters:天",
     "她": "Characters:她",
     "好": "Characters:好",
+    "妈": "Characters:妈",
     "妹": "Characters:妹",
     "始": "Characters:始",
     "学": "Characters:学",
@@ -70,7 +75,11 @@
     "工": "Characters:工",
     "床": "Characters:床",
     "开": "Characters:开",
+    "弟": "Characters:弟",
     "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "怎": "Characters:怎",
     "息": "Characters:息",
     "想": "Characters:想",
     "我": "Characters:我",
@@ -84,6 +93,7 @@
     "水": "Characters:水",
     "没": "Characters:没",
     "点": "Characters:点",
+    "爸": "Characters:爸",
     "生": "Characters:生",
     "病": "Characters:病",
     "的": "Characters:的",
@@ -621,8 +631,200 @@
           "correct_choice_ids": [],
           "answer": "他的病好了。 (tā de bìng hǎo le.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Why does the speaker want to rest?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "They were very busy and went to sleep late.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Where does the speaker want to rest?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "At home.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Explain that you are unwell and want to rest.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我生病了，想休息。 (Wǒ shēngbìng le, xiǎng xiūxi.) — I am ill and would like to rest.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask whether someone is going to see a doctor.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你去看病吗？ (Nǐ qù kànbìng ma?) — Are you going to see a doctor?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Health and Rest",
+        "context_en": "A student is unwell, explains symptoms simply, and asks for time to rest.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你今天怎么了？",
+            "pinyin": "Nǐ jīntiān zěnme le?",
+            "english": "What is wrong today?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我生病了，想休息。",
+            "pinyin": "Wǒ shēngbìng le, xiǎng xiūxi.",
+            "english": "I am sick and want to rest."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你去医院看病吗？",
+            "pinyin": "Nǐ qù yīyuàn kànbìng ma?",
+            "english": "Are you going to the hospital to see a doctor?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "去，我下午去。",
+            "pinyin": "Qù, wǒ xiàwǔ qù.",
+            "english": "Yes, I am going this afternoon."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "A condition versus getting medical attention",
+          "explanation_en": "生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.",
+          "formula_en": "subject + 生病了; subject + 去 + 医院 + 看病",
+          "examples": [
+            {
+              "hanzi": "弟弟生病了。",
+              "pinyin": "Dìdi shēngbìng le.",
+              "english": "My younger brother is ill."
+            },
+            {
+              "hanzi": "妈妈去看病。",
+              "pinyin": "Māma qù kànbìng.",
+              "english": "Mom is going to see a doctor."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Rest and sleep",
+          "explanation_en": "休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.",
+          "formula_en": "time + verb + 了",
+          "examples": [
+            {
+              "hanzi": "我晚上十点睡觉。",
+              "pinyin": "Wǒ wǎnshang shí diǎn shuìjiào.",
+              "english": "I go to sleep at ten at night."
+            },
+            {
+              "hanzi": "他早上七点起床。",
+              "pinyin": "Tā zǎoshang qī diǎn qǐchuáng.",
+              "english": "He gets up at seven in the morning."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the person in a health statement.",
+        "model": {
+          "hanzi": "我生病了。",
+          "pinyin": "Wǒ shēngbìng le.",
+          "english": "I am ill."
+        },
+        "substitutions": [
+          {
+            "cue_en": "my younger sister",
+            "model_answer": {
+              "hanzi": "我妹妹生病了。",
+              "pinyin": "Wǒ mèimei shēngbìng le.",
+              "english": "My younger sister is ill."
+            }
+          },
+          {
+            "cue_en": "my father",
+            "model_answer": {
+              "hanzi": "我爸爸生病了。",
+              "pinyin": "Wǒ bàba shēngbìng le.",
+              "english": "My father is ill."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "昨天我很忙，晚上睡得很晚。今天早上我不想起床，想在家休息。",
+            "pinyin": "Zuótiān wǒ hěn máng, wǎnshang shuì de hěn wǎn. Jīntiān zǎoshang wǒ bù xiǎng qǐchuáng, xiǎng zài jiā xiūxi.",
+            "english": "I was very busy yesterday and slept late at night. This morning I do not want to get up; I want to rest at home."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Why does the speaker want to rest?",
+            "answer_en": "They were very busy and went to sleep late."
+          },
+          {
+            "prompt_en": "Where does the speaker want to rest?",
+            "answer_en": "At home."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain that you are unwell and want to rest.",
+          "model_answer": {
+            "hanzi": "我生病了，想休息。",
+            "pinyin": "Wǒ shēngbìng le, xiǎng xiūxi.",
+            "english": "I am ill and would like to rest."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask whether someone is going to see a doctor.",
+          "model_answer": {
+            "hanzi": "你去看病吗？",
+            "pinyin": "Nǐ qù kànbìng ma?",
+            "english": "Are you going to see a doctor?"
+          }
+        }
+      ],
+      "common_pitfall": "休息 (xiūxi) does not necessarily mean sleeping. To say “sleep,” use 睡觉 (shuìjiào).",
+      "pronunciation_focus": "休息 (xiūxi) has a neutral second syllable.",
+      "review": {
+        "can_do": [
+          "Express basic illness and health needs.",
+          "Recognize hospital and doctor vocabulary.",
+          "Talk about sleeping and resting."
+        ],
+        "entry_ids": [
+          12,
+          100,
+          161,
+          183,
+          194,
+          195,
+          246,
+          257
+        ]
+      }
     }
   }
 }

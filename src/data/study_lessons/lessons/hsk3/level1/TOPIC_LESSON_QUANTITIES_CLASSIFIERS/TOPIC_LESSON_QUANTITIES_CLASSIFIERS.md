@@ -2,9 +2,9 @@
 
 Count familiar objects and describe quantities with classifiers and expressions of amount.
 
-**Topics:** numbers-quantities, shopping-money
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Use common classifiers with familiar nouns.
 
@@ -12,257 +12,157 @@ Count familiar objects and describe quantities with classifiers and expressions 
 
 - Understand expressions of halves, a little and some.
 
-## Overview
+## 1. Conversation — Counting Real Things
 
-Count familiar objects and describe quantities with classifiers and expressions of amount.
+A shopper chooses books and clothing. Practise different classifiers and small amounts.
 
-Use common classifiers with familiar nouns.
+**A:** 你要买几本书？ (Nǐ yào mǎi jǐ běn shū?) — How many books do you want to buy?
 
-## Vocabulary and examples
+**B:** 我要买两本。 (Wǒ yào mǎi liǎng běn.) — I want to buy two.
 
-### 半 (bàn) — half
+**A:** 你还要衣服吗？ (Nǐ hái yào yīfu ma?) — Do you want clothes too?
 
-HSK entry: 7 · POS: numeral · introduced
+**B:** 要，我想买一件。 (Yào, wǒ xiǎng mǎi yí jiàn.) — Yes, I want to buy one item.
 
-**现在是八点半。**
-*xiànzài shì bā diǎn bàn.*
-It is half past eight now.
-**Usage:** 八点半 is the ordinary way to say 8:30; 半 means half an hour.
+## 2. How the language works
 
-**学校上午八点半上课。**
-*xuéxiào shàngwǔ bā diǎn bàn shàngkè.*
-Classes at the school start at 8:30 a.m.
+### Classifiers for countable objects
 
-Primarily the numeral “half” (半个小时, 八点半). Also has a restricted adverbial role meaning partly/half- in advanced patterns; that secondary role is not a Level 1 teaching priority.
+Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.
 
-### 本 (běn) — measure word for books
+**Pattern:** number + classifier + noun
 
-HSK entry: 10 · POS: classifier · introduced
+**桌子上有两本书。**
+*Zhuōzi shàng yǒu liǎng běn shū.*
+There are two books on the table.
 
-**我买了两本书。**
-*wǒ mǎi le liǎng běn shū.*
-I bought two books.
-**Usage:** 本 is the standard classifier for books; 两 normally precedes classifiers rather than 二.
+**我买了三件衣服。**
+*Wǒ mǎi le sān jiàn yīfu.*
+I bought three items of clothing.
 
-**学生每人有一本书。**
-*xuéshēng měi rén yǒu yì běn shū.*
-Every student has one book.
+### 两 (liǎng), 几 (jǐ), and 多少 (duōshao)
 
-### 第 (dì) — ordinal prefix
+两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.
 
-HSK entry: 31 · POS: prefix · introduced
+**Pattern:** 几 + classifier + noun?
 
-**这是第一课吗？**
-*zhè shì dì yī kè ma?*
-Is this the first lesson?
+**你有几个好朋友？**
+*Nǐ yǒu jǐ ge hǎo péngyou?*
+How many close friends do you have?
 
-**今天我们上第一课。**
-*jīntiān wǒmen shàng dì yī kè.*
-Today we are having our first lesson.
+**这本书多少钱？**
+*Zhè běn shū duōshao qián?*
+How much does this book cost?
 
-Ordinal prefix before numerals.
+## 3. Build new sentences
 
-### 个 (gè) — general measure word
+Use the appropriate classifier for different objects.
 
-HSK entry: 60 · POS: classifier · introduced
+**Worked model:** **我有两本书。**
+*Wǒ yǒu liǎng běn shū.*
+I have two books.
 
-**我有一个朋友。**
-*wǒ yǒu yí ge péngyou.*
-I have a friend.
-**Usage:** 个 is the common classifier for 朋友; 一 is normally pronounced yí before this neutral-tone 个.
+**Change 1: three pieces of clothing**
 
-**这个班有二十个学生。**
-*zhège bān yǒu èr shí gè xuéshēng.*
-There are twenty students in this class.
+*Model response:* **我有三件衣服。**
+*Wǒ yǒu sān jiàn yīfu.*
+I have three pieces of clothing.
 
-### 几 (jǐ) — how many
+**Change 2: two cats**
 
-HSK entry: 85 · POS: pronoun · introduced
+*Model response:* **我有两只猫。**
+*Wǒ yǒu liǎng zhī māo.*
+I have two cats.
 
-**你有几个朋友？**
-*nǐ yǒu jǐ gè péngyou?*
-How many friends do you have?
-**Usage:** 几 asks “how many” for a relatively small count and is followed by a classifier.
+## 4. Read for meaning — A short connected story
 
-**今天来了几个学生？**
-*jīntiān lái le jǐ gè xuéshēng?*
-How many students came today?
+**桌子上有五本书，两本是我的。姐姐买了三件衣服，妹妹只买了一件。**
+*Zhuōzi shàng yǒu wǔ běn shū, liǎng běn shì wǒ de. Jiějie mǎi le sān jiàn yīfu, mèimei zhǐ mǎi le yí jiàn.*
+There are five books on the table; two are mine. The older sister bought three pieces of clothing; the younger sister bought only one.
 
-Interrogative quantity pronoun/numeral meaning how many (几个人、几本书). 个 or 本 is the classifier; 几 is NOT a classifier.
+**Q1. How many books belong to the speaker?** Suggested answer: Two.
 
-### 件 (jiàn) — measure word for items
+**Q2. Who bought more clothing?** Suggested answer: The older sister.
 
-HSK entry: 89 · POS: classifier · introduced
+## 5. Speak and personalize
 
-**我买了一件衣服。**
-*wǒ mǎi le yí jiàn yīfu.*
-I bought an item of clothing.
-**Usage:** 件 is the measure word for individual items of clothing.
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**我有三件新衣服。**
-*wǒ yǒu sān jiàn xīn yīfu.*
-I have three new items of clothing.
+**Speaking 1:** Ask how many books someone has.
 
-### 两 (liǎng) — two (quantity)
+*Possible response:* **你有几本书？**
+*Nǐ yǒu jǐ běn shū?*
+How many books do you have?
 
-HSK entry: 111 · POS: numeral · introduced
+**Speaking 2:** Say you need a little water.
 
-**我有两个孩子。**
-*wǒ yǒu liǎng gè háizi.*
-I have two children.
-**Usage:** 两 is used before 个 and other classifiers to mean “two.”
+*Possible response:* **我想喝一点儿水。**
+*Wǒ xiǎng hē yìdiǎnr shuǐ.*
+I would like a little water.
 
-**学校有两个大教室。**
-*xuéxiào yǒu liǎng gè dà jiàoshì.*
-The school has two large classrooms.
+## 6. Watch out
 
-### 些 (xiē) — some
+Do not use the same classifier for all nouns. For a book use 本 (běn), not 件 (jiàn).
 
-HSK entry: 239 · POS: classifier · introduced
+**Pronunciation:** The contrast 二 (èr) versus 两 (liǎng) is especially important before classifiers: 两本 (liǎng běn).
 
-**我想买些水果。**
-*wǒ xiǎng mǎi xiē shuǐguǒ.*
-I would like to buy some fruit.
-**Usage:** 些 expresses an unspecified plural amount, here some fruit.
+## 7. Check what you can do
 
-**这里有些书，也有些电脑。**
-*zhèlǐ yǒuxiē shū, yě yǒuxiē diànnǎo.*
-There are some books here, as well as some computers.
+**Comprehension:** Reading comprehension: How many books belong to the speaker?
+**Answer:** Two.. Check against the connected reading passage, not the vocabulary cards.
 
-Indefinite quantity word, conventionally classified as a classifier/quantifier.
+**Comprehension:** Reading comprehension: Who bought more clothing?
+**Answer:** The older sister.. Check against the connected reading passage, not the vocabulary cards.
 
-### 一半 (yíbàn) — half
+**Production:** Say this aloud: Ask how many books someone has.
+**Answer:** 你有几本书？ (Nǐ yǒu jǐ běn shū?) — How many books do you have?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 258 · POS: numeral · introduced
+**Production:** Say this aloud: Say you need a little water.
+**Answer:** 我想喝一点儿水。 (Wǒ xiǎng hē yìdiǎnr shuǐ.) — I would like a little water.. Illustrative answer. Other natural responses may be correct.
 
-**这个苹果我吃了一半。**
-*zhège píngguǒ wǒ chī le yíbàn.*
-I ate half of this apple.
-**Usage:** The apple is introduced as the topic; 一半 states that half was eaten.
+## Review and next step
 
-**这本书我读了一半。**
-*zhè běn shū wǒ dú le yíbàn.*
-I've read half of this book.
+- Use common classifiers with familiar nouns.
 
-Fractional numeral phrase meaning one half.
+- Differentiate exact and approximate quantities.
 
-### 一下 (yíxià) — a moment; briefly
+- Understand expressions of halves, a little and some.
 
-HSK entry: 259 · POS: quantifier · introduced
+## Reference word bank (details on vocabulary cards)
 
-**请等一下。**
-*qǐng děng yíxià.*
-Please wait a moment.
-**Usage:** 等一下 is a polite request to wait a moment; 一下 softens the command.
+- 半 (bàn) — half [HSK entry 7]
 
-**“请看一下这个字。”老师说。**
-*“qǐng kàn yíxià zhège zì.” lǎoshī shuō.*
-"Please take a look at this character," the teacher said.
-**Usage:** Written dialogue: 一下 is used naturally in a spoken exchange, rather than forced into formal prose.
+- 本 (běn) — measure word for books [HSK entry 10]
 
-Verb-quantity complement meaning briefly/once; also adverbial in some uses.
+- 第 (dì) — ordinal prefix [HSK entry 31]
 
-### 一点儿 (yìdiǎnr) — a little
+- 个 (gè) — general measure word [HSK entry 60]
 
-HSK entry: 261 · POS: quantifier · introduced
+- 几 (jǐ) — how many [HSK entry 85]
 
-**我会说一点儿汉语。**
-*wǒ huì shuō yìdiǎnr Hànyǔ.*
-I can speak a little Chinese.
-**Usage:** 一点儿 means a little; the 儿 ending is written and pronounced in this form.
+- 件 (jiàn) — measure word for items [HSK entry 89]
 
-**请给我一点儿水。**
-*qǐng gěi wǒ yìdiǎnr shuǐ.*
-Please give me a little water.
+- 两 (liǎng) — two (quantity) [HSK entry 111]
 
-Quantity expression a little, typically used in object phrases.
+- 些 (xiē) — some [HSK entry 239]
 
-### 一些 (yìxiē) — some
+- 一半 (yíbàn) — half [HSK entry 258]
 
-HSK entry: 262 · POS: quantifier · introduced
+- 一下 (yíxià) — a moment; briefly [HSK entry 259]
 
-**我买了一些苹果。**
-*wǒ mǎi le yìxiē píngguǒ.*
-I bought some apples.
-**Usage:** 一些 means some or several; it precedes the noun 苹果.
+- 一点儿 (yìdiǎnr) — a little [HSK entry 261]
 
-**这里有一些中文书。**
-*zhèlǐ yǒu yìxiē Zhōngwén shū.*
-There are some books in Chinese here.
+- 一些 (yìxiē) — some [HSK entry 262]
 
-Quantity expression some.
+- 有的 (yǒude) — some [HSK entry 264]
 
-### 有的 (yǒude) — some
+- 有点儿 (yǒudiǎnr) — somewhat [HSK entry 265]
 
-HSK entry: 264 · POS: pronoun · introduced
+- 有些 (yǒuxiē) — some [HSK entry 266]
 
-**有的人喜欢茶。**
-*yǒude rén xǐhuan chá.*
-Some people like tea.
-**Usage:** 有的 before a noun means some members of a group, here some people.
+- 只 (zhī) — measure word for animals; only [HSK entry 287]
 
-**有的学生喜欢唱歌，有的喜欢读书。**
-*yǒude xuéshēng xǐhuan chàng gē, yǒude xǐhuan dúshū.*
-Some students like singing, while others like reading.
-
-Indefinite/pronominal expression meaning some of a group (有的人、有的学生). The Level 1 grammar outline groups 有的 among demonstrative pronouns; it is not a degree adverb.
-
-### 有点儿 (yǒudiǎnr) — somewhat
-
-HSK entry: 265 · POS: adverb · introduced
-
-**今天有点儿冷。**
-*jīntiān yǒudiǎnr lěng.*
-It is a little cold today.
-**Usage:** 有点儿 often introduces a slight, sometimes undesirable, condition such as cold.
-
-**这个饭店的菜有点儿贵。**
-*zhège fàndiàn de cài yǒudiǎnr guì.*
-The food at this restaurant is a little expensive.
-
-Degree adverb meaning a little; often conveys an undesirable degree.
-
-### 有些 (yǒuxiē) — some
-
-HSK entry: 266 · POS: pronoun · introduced
-
-**有些学生不在。**
-*yǒuxiē xuéshēng bú zài.*
-Some students are absent.
-**Usage:** 有些 means some; here it modifies the group of students.
-
-**有些孩子今天没有来上学。**
-*yǒuxiē háizi jīntiān méiyǒu lái shàngxué.*
-Some children didn't come to school today.
-
-At beginner level, pronominal/determiner use means some or certain (有些学生). A secondary degree-adverb use means somewhat (有些冷), included as later-level usage.
-
-### 只 (zhī) — measure word for animals; only
-
-HSK entry: 287 · POS: classifier · introduced
-
-**这里有两只猫。**
-*zhèlǐ yǒu liǎng zhī māo.*
-There are two cats here.
-**Usage:** 只 is the classifier for animals; here 两只猫 means two cats.
-
-**那只猫喜欢玩。**
-*nà zhī māo xǐhuan wán.*
-That cat likes playing.
-
-Classifier for animals and certain objects; not the adverb 只 (zhǐ) meaning only.
-
-## Usage and grammar
-
-### Numeral + classifier + noun
-
-A classifier typically links a number to a countable noun.
-
-### Two before classifiers
-
-The quantity two generally uses the special form before a classifier.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “half”?
 - a. 一些 (yìxiē) — 

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-quantities-classifiers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -47,6 +47,7 @@
     "买": "Characters:买",
     "了": "Characters:了",
     "二": "Characters:二",
+    "五": "Characters:五",
     "些": "Characters:些",
     "人": "Characters:人",
     "今": "Characters:今",
@@ -67,15 +68,21 @@
     "吗": "Characters:吗",
     "唱": "Characters:唱",
     "喜": "Characters:喜",
+    "喝": "Characters:喝",
     "在": "Characters:在",
+    "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
     "子": "Characters:子",
     "字": "Characters:字",
     "学": "Characters:学",
     "孩": "Characters:孩",
     "室": "Characters:室",
     "小": "Characters:小",
+    "少": "Characters:少",
     "师": "Characters:师",
     "店": "Characters:店",
     "想": "Characters:想",
@@ -92,6 +99,7 @@
     "来": "Characters:来",
     "果": "Characters:果",
     "校": "Characters:校",
+    "桌": "Characters:桌",
     "欢": "Characters:欢",
     "歌": "Characters:歌",
     "每": "Characters:每",
@@ -116,15 +124,18 @@
     "茶": "Characters:茶",
     "菜": "Characters:菜",
     "衣": "Characters:衣",
+    "要": "Characters:要",
     "语": "Characters:语",
     "说": "Characters:说",
     "请": "Characters:请",
     "读": "Characters:读",
     "课": "Characters:课",
     "贵": "Characters:贵",
+    "还": "Characters:还",
     "这": "Characters:这",
     "那": "Characters:那",
     "里": "Characters:里",
+    "钱": "Characters:钱",
     "饭": "Characters:饭"
   },
   "sections": {
@@ -903,8 +914,198 @@
           "correct_choice_ids": [],
           "answer": "学校上午八点半上课。 (xuéxiào shàngwǔ bā diǎn bàn shàngkè.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: How many books belong to the speaker?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Two.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who bought more clothing?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The older sister.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask how many books someone has.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你有几本书？ (Nǐ yǒu jǐ běn shū?) — How many books do you have?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say you need a little water.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想喝一点儿水。 (Wǒ xiǎng hē yìdiǎnr shuǐ.) — I would like a little water.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Counting Real Things",
+        "context_en": "A shopper chooses books and clothing. Practise different classifiers and small amounts.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你要买几本书？",
+            "pinyin": "Nǐ yào mǎi jǐ běn shū?",
+            "english": "How many books do you want to buy?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我要买两本。",
+            "pinyin": "Wǒ yào mǎi liǎng běn.",
+            "english": "I want to buy two."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你还要衣服吗？",
+            "pinyin": "Nǐ hái yào yīfu ma?",
+            "english": "Do you want clothes too?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "要，我想买一件。",
+            "pinyin": "Yào, wǒ xiǎng mǎi yí jiàn.",
+            "english": "Yes, I want to buy one item."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Classifiers for countable objects",
+          "explanation_en": "Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.",
+          "formula_en": "number + classifier + noun",
+          "examples": [
+            {
+              "hanzi": "桌子上有两本书。",
+              "pinyin": "Zhuōzi shàng yǒu liǎng běn shū.",
+              "english": "There are two books on the table."
+            },
+            {
+              "hanzi": "我买了三件衣服。",
+              "pinyin": "Wǒ mǎi le sān jiàn yīfu.",
+              "english": "I bought three items of clothing."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "两 (liǎng), 几 (jǐ), and 多少 (duōshao)",
+          "explanation_en": "两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.",
+          "formula_en": "几 + classifier + noun?",
+          "examples": [
+            {
+              "hanzi": "你有几个好朋友？",
+              "pinyin": "Nǐ yǒu jǐ ge hǎo péngyou?",
+              "english": "How many close friends do you have?"
+            },
+            {
+              "hanzi": "这本书多少钱？",
+              "pinyin": "Zhè běn shū duōshao qián?",
+              "english": "How much does this book cost?"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Use the appropriate classifier for different objects.",
+        "model": {
+          "hanzi": "我有两本书。",
+          "pinyin": "Wǒ yǒu liǎng běn shū.",
+          "english": "I have two books."
+        },
+        "substitutions": [
+          {
+            "cue_en": "three pieces of clothing",
+            "model_answer": {
+              "hanzi": "我有三件衣服。",
+              "pinyin": "Wǒ yǒu sān jiàn yīfu.",
+              "english": "I have three pieces of clothing."
+            }
+          },
+          {
+            "cue_en": "two cats",
+            "model_answer": {
+              "hanzi": "我有两只猫。",
+              "pinyin": "Wǒ yǒu liǎng zhī māo.",
+              "english": "I have two cats."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "桌子上有五本书，两本是我的。姐姐买了三件衣服，妹妹只买了一件。",
+            "pinyin": "Zhuōzi shàng yǒu wǔ běn shū, liǎng běn shì wǒ de. Jiějie mǎi le sān jiàn yīfu, mèimei zhǐ mǎi le yí jiàn.",
+            "english": "There are five books on the table; two are mine. The older sister bought three pieces of clothing; the younger sister bought only one."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "How many books belong to the speaker?",
+            "answer_en": "Two."
+          },
+          {
+            "prompt_en": "Who bought more clothing?",
+            "answer_en": "The older sister."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask how many books someone has.",
+          "model_answer": {
+            "hanzi": "你有几本书？",
+            "pinyin": "Nǐ yǒu jǐ běn shū?",
+            "english": "How many books do you have?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say you need a little water.",
+          "model_answer": {
+            "hanzi": "我想喝一点儿水。",
+            "pinyin": "Wǒ xiǎng hē yìdiǎnr shuǐ.",
+            "english": "I would like a little water."
+          }
+        }
+      ],
+      "common_pitfall": "Do not use the same classifier for all nouns. For a book use 本 (běn), not 件 (jiàn).",
+      "pronunciation_focus": "The contrast 二 (èr) versus 两 (liǎng) is especially important before classifiers: 两本 (liǎng běn).",
+      "review": {
+        "can_do": [
+          "Use common classifiers with familiar nouns.",
+          "Differentiate exact and approximate quantities.",
+          "Understand expressions of halves, a little and some."
+        ],
+        "entry_ids": [
+          10,
+          60,
+          85,
+          89,
+          111,
+          287
+        ]
+      }
     }
   }
 }

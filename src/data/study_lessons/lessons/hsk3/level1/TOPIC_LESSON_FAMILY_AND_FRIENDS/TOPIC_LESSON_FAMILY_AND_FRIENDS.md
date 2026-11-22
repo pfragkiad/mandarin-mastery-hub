@@ -2,9 +2,9 @@
 
 Introduce family members, friends and people close to you.
 
-**Topics:** family-relationships, people-identity
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Identify common relatives and relationship words.
 
@@ -12,235 +12,157 @@ Introduce family members, friends and people close to you.
 
 - Understand short descriptions of family life.
 
-## Overview
+## 1. Conversation — Introducing Family and Friends
 
-Introduce family members, friends and people close to you.
+Two new classmates introduce the people in their families and clarify family relationships.
 
-Identify common relatives and relationship words.
+**A:** 你家有几个人？ (Nǐ jiā yǒu jǐ ge rén?) — How many people are in your family?
 
-## Vocabulary and examples
+**B:** 有四个人：爸爸、妈妈、姐姐和我。 (Yǒu sì ge rén: bàba, māma, jiějie hé wǒ.) — Four: Dad, Mom, my older sister, and me.
 
-### 爱 (ài) — love; like
+**A:** 你姐姐是学生吗？ (Nǐ jiějie shì xuéshēng ma?) — Is your older sister a student?
 
-HSK entry: 1 · POS: verb · introduced
+**B:** 是，她在大学学习。 (Shì, tā zài dàxué xuéxí.) — Yes, she studies at university.
 
-**我爱我的家。**
-*wǒ ài wǒ de jiā.*
-I love my family.
-**Usage:** 爱 expresses strong affection here; 家 can refer both to the home and to one’s family.
+## 2. How the language works
 
-**爸爸爱看中文电影。**
-*bàba ài kàn Zhōngwén diànyǐng.*
-Dad loves watching Chinese-language movies.
+### Family ownership with 的 (de)
 
-### 爸爸 (bàba) — father
+Use 的 (de) after a possessor when emphasizing whose person or thing it is. In close family relationships 的 is often omitted in natural speech.
 
-HSK entry: 3 · POS: noun · introduced
+**Pattern:** person + 的 + noun
 
-**我爸爸是老师。**
-*wǒ bàba shì lǎoshī.*
-My father is a teacher.
-**Usage:** 爸爸 is a familiar kinship noun, and the possessive 的 is often omitted before close family terms.
+**这是我的哥哥。**
+*Zhè shì wǒ de gēge.*
+This is my older brother.
 
-**爸爸在家做饭。**
-*bàba zài jiā zuò fàn.*
-Dad is cooking at home.
+**我妈妈在家。**
+*Wǒ māma zài jiā.*
+My mom is at home.
 
-### 弟弟 (dìdi) — younger brother
+### Introducing a relationship
 
-HSK entry: 32 · POS: noun · introduced
+是 (shì) identifies someone; 有 (yǒu) tells what people or things someone has. Keep the predicates distinct.
 
-**我弟弟十岁。**
-*wǒ dìdi shí suì.*
-My younger brother is ten.
-**Usage:** Age is commonly stated as person + number + 岁, without 是.
+**Pattern:** X 是 Y / X 有 Y
 
-**弟弟和姐姐一起上学。**
-*dìdi hé jiějie yìqǐ shàngxué.*
-The younger brother and older sister go to school together.
+**她是我妹妹。**
+*Tā shì wǒ mèimei.*
+She is my younger sister.
 
-### 儿子 (érzi) — son
+**我有两个孩子。**
+*Wǒ yǒu liǎng ge háizi.*
+I have two children.
 
-HSK entry: 48 · POS: noun · introduced
+## 3. Build new sentences
 
-**我儿子喜欢猫。**
-*wǒ érzi xǐhuan māo.*
-My son likes cats.
-**Usage:** 儿子 specifies one’s son; 喜欢 is followed by the thing liked.
+Change the family relationship in your introduction.
 
-**他的儿子今年上小学。**
-*tā de érzi jīnnián shàng xiǎoxué.*
-His son is attending primary school this year.
+**Worked model:** **这是我姐姐。**
+*Zhè shì wǒ jiějie.*
+This is my older sister.
 
-### 哥哥 (gēge) — older brother
+**Change 1: younger brother**
 
-HSK entry: 59 · POS: noun · introduced
+*Model response:* **这是我弟弟。**
+*Zhè shì wǒ dìdi.*
+This is my younger brother.
 
-**我哥哥在工作。**
-*wǒ gēge zài gōngzuò.*
-My older brother is working.
-**Usage:** 在 before a verb marks ongoing activity; the brother is working now.
+**Change 2: older brother**
 
-**哥哥每天坐火车上班。**
-*gēge měitiān zuò huǒchē shàngbān.*
-The older brother takes the train to work every day.
+*Model response:* **这是我哥哥。**
+*Zhè shì wǒ gēge.*
+This is my older brother.
 
-### 孩子 (háizi) — child
+## 4. Read for meaning — A short connected story
 
-HSK entry: 68 · POS: noun · introduced
+**我有一个弟弟，也有一个妹妹。弟弟喜欢唱歌，妹妹喜欢看书。我们都是好朋友。**
+*Wǒ yǒu yí ge dìdi, yě yǒu yí ge mèimei. Dìdi xǐhuan chàng gē, mèimei xǐhuan kàn shū. Wǒmen dōu shì hǎo péngyou.*
+I have a younger brother and a younger sister. My brother likes singing, and my sister likes reading. We are all good friends.
 
-**那个孩子五岁。**
-*nàge háizi wǔ suì.*
-That child is five years old.
-**Usage:** 五岁 gives the child’s age; Chinese does not need a verb equivalent to “be.”
+**Q1. How many younger siblings does the speaker have?** Suggested answer: Two.
 
-**孩子们在学校学习。**
-*háizimen zài xuéxiào xuéxí.*
-The children study at school.
+**Q2. Who likes reading?** Suggested answer: The younger sister.
 
-### 家 (jiā) — home; family
+## 5. Speak and personalize
 
-HSK entry: 86 · POS: noun · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**我现在回家。**
-*wǒ xiànzài huí jiā.*
-I am going home now.
-**Usage:** 回家 means go back home, with no need for 在 before 家.
+**Speaking 1:** Introduce one family member.
 
-**我家有四个人。**
-*wǒ jiā yǒu sì gè rén.*
-There are four people in my family.
+*Possible response:* **这是我妈妈。**
+*Zhè shì wǒ māma.*
+This is my mom.
 
-Home/family noun; also a classifier for businesses/families.
+**Speaking 2:** Ask how many people are in someone’s family.
 
-### 家人 (jiārén) — family members
+*Possible response:* **你家有几个人？**
+*Nǐ jiā yǒu jǐ ge rén?*
+How many people are in your family?
 
-HSK entry: 87 · POS: noun · introduced
+## 6. Watch out
 
-**我的家人都很好。**
-*wǒ de jiārén dōu hěn hǎo.*
-My family members are all well.
-**Usage:** 家人 refers to family members; 都 confirms that the whole group is doing well.
+哥哥 (gēge) is an older brother; 弟弟 (dìdi) is a younger brother. Do not use them interchangeably.
 
-**我的家人都在中国。**
-*wǒ de jiārén dōu zài Zhōngguó.*
-All my family members are in China.
+**Pronunciation:** Many kinship words reduplicate with a neutral second syllable: māma, bàba, gēge, dìdi.
 
-### 姐姐 (jiějie) — older sister
+## 7. Check what you can do
 
-HSK entry: 92 · POS: noun · introduced
+**Comprehension:** Reading comprehension: How many younger siblings does the speaker have?
+**Answer:** Two.. Check against the connected reading passage, not the vocabulary cards.
 
-**我姐姐会开车。**
-*wǒ jiějie huì kāichē.*
-My older sister can drive.
-**Usage:** 会开车 indicates the learned ability to drive.
+**Comprehension:** Reading comprehension: Who likes reading?
+**Answer:** The younger sister.. Check against the connected reading passage, not the vocabulary cards.
 
-**我的姐姐今年二十岁。**
-*wǒ de jiějie jīnnián èr shí suì.*
-My older sister is twenty years old this year.
+**Production:** Say this aloud: Introduce one family member.
+**Answer:** 这是我妈妈。 (Zhè shì wǒ māma.) — This is my mom.. Illustrative answer. Other natural responses may be correct.
 
-### 妈妈 (māma) — mother
+**Production:** Say this aloud: Ask how many people are in someone’s family.
+**Answer:** 你家有几个人？ (Nǐ jiā yǒu jǐ ge rén?) — How many people are in your family?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 114 · POS: noun · introduced
+## Review and next step
 
-**我妈妈是医生。**
-*wǒ māma shì yīshēng.*
-My mother is a doctor.
-**Usage:** 妈妈 can be used directly before a description without a possessive 的.
+- Identify common relatives and relationship words.
 
-**妈妈每天晚上和我一起读书。**
-*māma měitiān wǎnshang hé wǒ yìqǐ dúshū.*
-Mom reads with me every evening.
+- Introduce friends and family members.
 
-### 妹妹 (mèimei) — younger sister
+- Understand short descriptions of family life.
 
-HSK entry: 123 · POS: noun · introduced
+## Reference word bank (details on vocabulary cards)
 
-**我妹妹是学生。**
-*wǒ mèimei shì xuéshēng.*
-My younger sister is a student.
-**Usage:** 妹妹 refers to one’s younger sister and is a familiar family term.
+- 爱 (ài) — love; like [HSK entry 1]
 
-**妹妹每天和姐姐一起上学。**
-*mèimei měitiān hé jiějie yìqǐ shàngxué.*
-The younger sister goes to school with her older sister every day.
+- 爸爸 (bàba) — father [HSK entry 3]
 
-### 男朋友 (nánpéngyou) — boyfriend
+- 弟弟 (dìdi) — younger brother [HSK entry 32]
 
-HSK entry: 143 · POS: noun · introduced
+- 儿子 (érzi) — son [HSK entry 48]
 
-**她的男朋友是医生。**
-*tā de nánpéngyou shì yīshēng.*
-Her boyfriend is a doctor.
-**Usage:** 男朋友 ordinarily means boyfriend, not merely a male friend.
+- 哥哥 (gēge) — older brother [HSK entry 59]
 
-**她的男朋友在医院上班。**
-*tā de nánpéngyou zài yīyuàn shàngbān.*
-Her boyfriend works at a hospital.
+- 孩子 (háizi) — child [HSK entry 68]
 
-### 女儿 (nǚ'ér) — daughter
+- 家 (jiā) — home; family [HSK entry 86]
 
-HSK entry: 153 · POS: noun · introduced
+- 家人 (jiārén) — family members [HSK entry 87]
 
-**我的女儿很喜欢书。**
-*wǒ de nǚ'ér hěn xǐhuan shū.*
-My daughter likes books very much.
-**Usage:** 女儿 means daughter; 很喜欢 increases the strength of the preference.
+- 姐姐 (jiějie) — older sister [HSK entry 92]
 
-**她的女儿今年五岁。**
-*tā de nǚ'ér jīnnián wǔ suì.*
-Her daughter is five years old this year.
+- 妈妈 (māma) — mother [HSK entry 114]
 
-### 女朋友 (nǚpéngyou) — girlfriend
+- 妹妹 (mèimei) — younger sister [HSK entry 123]
 
-HSK entry: 154 · POS: noun · introduced
+- 男朋友 (nánpéngyou) — boyfriend [HSK entry 143]
 
-**他的女朋友会说中文。**
-*tā de nǚpéngyou huì shuō Zhōngwén.*
-His girlfriend can speak Chinese.
-**Usage:** 女朋友 normally identifies a romantic partner.
+- 女儿 (nǚ'ér) — daughter [HSK entry 153]
 
-**他的女朋友也在这家公司工作。**
-*tā de nǚpéngyou yě zài zhè jiā gōngsī gōngzuò.*
-His girlfriend also works at this company.
+- 女朋友 (nǚpéngyou) — girlfriend [HSK entry 154]
 
-### 朋友 (péngyou) — friend
+- 朋友 (péngyou) — friend [HSK entry 156]
 
-HSK entry: 156 · POS: noun · introduced
+- 小朋友 (xiǎopéngyou) — child; little friend [HSK entry 235]
 
-**他是我的好朋友。**
-*tā shì wǒ de hǎo péngyou.*
-He is my good friend.
-**Usage:** 好朋友 means a good or close friend, not a romantic partner.
-
-**我的朋友住在学校旁边。**
-*wǒ de péngyou zhù zài xuéxiào pángbiān.*
-My friend lives next to the school.
-
-### 小朋友 (xiǎopéngyou) — child; little friend
-
-HSK entry: 235 · POS: noun · introduced
-
-**这些小朋友在玩。**
-*zhèxiē xiǎopéngyou zài wán.*
-These children are playing.
-**Usage:** 小朋友 is a friendly way to refer to young children.
-
-**小朋友们每天上午在学校学习。**
-*xiǎopéngyoumen měitiān shàngwǔ zài xuéxiào xuéxí.*
-The children study at school every morning.
-
-## Usage and grammar
-
-### Family terms as nouns
-
-A kinship term can follow a possessive pronoun directly.
-
-### Home or family
-
-The same noun can refer to a home or a family, depending on context.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “love”?
 - a. 爱 (ài) — 

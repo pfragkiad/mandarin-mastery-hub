@@ -2,9 +2,9 @@
 
 Talk about today, yesterday and tomorrow, days of the week, years and age.
 
-**Topics:** time-calendar, numbers-quantities
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Use day, month, year and week words.
 
@@ -12,224 +12,155 @@ Talk about today, yesterday and tomorrow, days of the week, years and age.
 
 - Understand simple dates and ages.
 
-## Overview
+## 1. Conversation — Days, Months and Years
 
-Talk about today, yesterday and tomorrow, days of the week, years and age.
+Make a simple plan by naming today, tomorrow and the date.
 
-Use day, month, year and week words.
+**A:** 今天星期几？ (Jīntiān xīngqī jǐ?) — What day of the week is it today?
 
-## Vocabulary and examples
+**B:** 今天星期三。 (Jīntiān xīngqī sān.) — It is Wednesday.
 
-### 号 (hào) — number; date
+**A:** 明天是几月几号？ (Míngtiān shì jǐ yuè jǐ hào?) — What month and day is tomorrow?
 
-HSK entry: 76 · POS: classifier · introduced
+**B:** 明天五月十号。 (Míngtiān wǔ yuè shí hào.) — Tomorrow is May 10.
 
-**今天是十月十四号。**
-*jīntiān shì shí yuè shísì hào.*
-Today is October 14.
-**Usage:** 号 is a common spoken way to state a day of the month; 月 identifies the month.
+## 2. How the language works
 
-**十月五号是星期一。**
-*shí yuè wǔ hào shì xīngqīyī.*
-October 5 is a Monday.
+### Dates: year, month, day
 
-### 今年 (jīnnián) — this year
+Chinese calendar dates move from larger to smaller units: 年 (nián), 月 (yuè), and 号 (hào) or 日 (rì). In speech, 号 (hào) is very common for the date.
 
-HSK entry: 93 · POS: noun · introduced
+**Pattern:** year + 年 + month + 月 + day + 号
 
-**我今年在学汉语。**
-*wǒ jīnnián zài xué Hànyǔ.*
-I'm studying Chinese this year.
-**Usage:** 今年 sets the time frame; 在学 marks learning in progress, rather than a finished action.
+**今天是八月三号。**
+*Jīntiān shì bā yuè sān hào.*
+Today is August 3.
 
-**今年学校有很多新学生。**
-*jīnnián xuéxiào yǒu hěn duō xīn xuéshēng.*
-There are many new students at the school this year.
+**明天是星期六。**
+*Míngtiān shì xīngqī liù.*
+Tomorrow is Saturday.
 
-### 今天 (jīntiān) — today
+### Relative days versus calendar days
 
-HSK entry: 94 · POS: noun · introduced
+昨天 (zuótiān), 今天 (jīntiān), 明天 (míngtiān) depend on when you speak. 星期 (xīngqī) names a week or a weekday according to context.
 
-**今天我有汉语课。**
-*jīntiān wǒ yǒu Hànyǔ kè.*
-I have Chinese class today.
-**Usage:** 今天 marks the current day; 汉语课 means Chinese-language class.
+**Pattern:** subject + day/time + verb
 
-**今天下午我们不上课。**
-*jīntiān xiàwǔ wǒmen bú shàngkè.*
-We don't have class this afternoon.
+**我昨天上课。**
+*Wǒ zuótiān shàngkè.*
+I attended class yesterday.
 
-### 明年 (míngnián) — next year
+**我们明天见。**
+*Wǒmen míngtiān jiàn.*
+See you tomorrow.
 
-HSK entry: 128 · POS: noun · introduced
+## 3. Build new sentences
 
-**明年我去中国。**
-*míngnián wǒ qù Zhōngguó.*
-Next year I will go to China.
-**Usage:** 明年 places the trip next year; Chinese verbs do not change for future tense.
+Replace the date in a scheduling statement.
 
-**明年学校有新的汉语课。**
-*míngnián xuéxiào yǒu xīn de Hànyǔ kè.*
-The school will have new Chinese-language classes next year.
+**Worked model:** **我们五月十号见。**
+*Wǒmen wǔ yuè shí hào jiàn.*
+We will meet on May 10.
 
-### 明天 (míngtiān) — tomorrow
+**Change 1: May 12**
 
-HSK entry: 129 · POS: noun · introduced
+*Model response:* **我们五月十二号见。**
+*Wǒmen wǔ yuè shí èr hào jiàn.*
+We will meet on May 12.
 
-**明天我们去学校。**
-*míngtiān wǒmen qù xuéxiào.*
-Tomorrow we are going to school.
-**Usage:** 明天 sets the time for a planned future action.
+**Change 2: June 2**
 
-**明天上午八点开始上课。**
-*míngtiān shàngwǔ bā diǎn kāishǐ shàngkè.*
-Class starts at eight tomorrow morning.
+*Model response:* **我们六月二号见。**
+*Wǒmen liù yuè èr hào jiàn.*
+We will meet on June 2.
 
-### 年 (nián) — year
+## 4. Read for meaning — A short connected story
 
-HSK entry: 149 · POS: noun · introduced
+**今天是星期五。小李明天不上班，想和朋友去看电影。星期日他要在家学习。**
+*Jīntiān shì xīngqī wǔ. Xiǎo Lǐ míngtiān bú shàngbān, xiǎng hé péngyou qù kàn diànyǐng. Xīngqīrì tā yào zài jiā xuéxí.*
+Today is Friday. Xiao Li does not work tomorrow and wants to see a movie with a friend. On Sunday he plans to study at home.
 
-**一年有十二个月。**
-*yì nián yǒu shí'èr ge yuè.*
-There are twelve months in a year.
-**Usage:** 年 is a unit for a year; twelve months make one year.
+**Q1. What does Xiao Li want to do on Saturday?** Suggested answer: Watch a movie with a friend.
 
-**我们在这里住了两年。**
-*wǒmen zài zhèlǐ zhù le liǎng nián.*
-We have lived here for two years.
+**Q2. What will he do on Sunday?** Suggested answer: Study at home.
 
-### 去年 (qùnián) — last year
+## 5. Speak and personalize
 
-HSK entry: 168 · POS: noun · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**去年我在中国。**
-*qùnián wǒ zài Zhōngguó.*
-Last year I was in China.
-**Usage:** 去年 is last year; the sentence reports a past location without verb inflection.
+**Speaking 1:** Ask someone what day of the week it is.
 
-**去年我在这个学校学习。**
-*qùnián wǒ zài zhège xuéxiào xuéxí.*
-I studied at this school last year.
+*Possible response:* **今天星期几？**
+*Jīntiān xīngqī jǐ?*
+What day is today?
 
-### 日 (rì) — day; sun
+**Speaking 2:** Say what day you will study.
 
-HSK entry: 172 · POS: classifier · introduced
+*Possible response:* **我星期六学习汉语。**
+*Wǒ xīngqī liù xuéxí Hànyǔ.*
+I study Chinese on Saturday.
 
-**今天是十月十四日。**
-*jīntiān shì shí yuè shísì rì.*
-Today is October 14.
-**Usage:** 日 is used for the day of a month in more formal or written dates; 号 is common in speech.
+## 6. Watch out
 
-**今天是五月一日。**
-*jīntiān shì wǔ yuè yī rì.*
-Today is May 1.
+Do not reverse the English month/day order: 十号五月 is not a normal calendar date. Say 五月十号 (wǔ yuè shí hào).
 
-Day/date word; also a measure word for dates.
+**Pronunciation:** Use 号 (hào) for an everyday spoken date; 日 (rì) is also used in written dates and formal contexts.
 
-### 岁 (suì) — years old
+## 7. Check what you can do
 
-HSK entry: 199 · POS: classifier · introduced
+**Comprehension:** Reading comprehension: What does Xiao Li want to do on Saturday?
+**Answer:** Watch a movie with a friend.. Check against the connected reading passage, not the vocabulary cards.
 
-**我今年二十岁。**
-*wǒ jīnnián èrshí suì.*
-I am twenty years old this year.
-**Usage:** 岁 expresses age; no 是 is used before the age number.
+**Comprehension:** Reading comprehension: What will he do on Sunday?
+**Answer:** Study at home.. Check against the connected reading passage, not the vocabulary cards.
 
-**这个孩子今年八岁。**
-*zhège háizi jīnnián bā suì.*
-This child is eight years old this year.
+**Production:** Say this aloud: Ask someone what day of the week it is.
+**Answer:** 今天星期几？ (Jīntiān xīngqī jǐ?) — What day is today?. Illustrative answer. Other natural responses may be correct.
 
-Measure word for age.
+**Production:** Say this aloud: Say what day you will study.
+**Answer:** 我星期六学习汉语。 (Wǒ xīngqī liù xuéxí Hànyǔ.) — I study Chinese on Saturday.. Illustrative answer. Other natural responses may be correct.
 
-### 天 (tiān) — day; sky
+## Review and next step
 
-HSK entry: 207 · POS: noun · introduced
+- Use day, month, year and week words.
 
-**我在这里住了三天。**
-*wǒ zài zhèlǐ zhù le sān tiān.*
-I stayed here for three days.
+- Talk about last, this and next year.
 
-**这个星期有三天不上课。**
-*zhège xīngqī yǒu sān tiān bú shàngkè.*
-We don't have class on three days this week.
+- Understand simple dates and ages.
 
-Day as a time noun; also a measure word for duration.
+## Reference word bank (details on vocabulary cards)
 
-### 星期 (xīngqī) — week
+- 号 (hào) — number; date [HSK entry 76]
 
-HSK entry: 243 · POS: noun · introduced
+- 今年 (jīnnián) — this year [HSK entry 93]
 
-**今天是星期三。**
-*jīntiān shì xīngqī sān.*
-Today is Wednesday.
-**Usage:** 星期三 is Wednesday; weekdays are numbered from Monday as one.
+- 今天 (jīntiān) — today [HSK entry 94]
 
-**这个星期有三天汉语课。**
-*zhège xīngqī yǒu sān tiān Hànyǔ kè.*
-We have Chinese classes on three days this week.
+- 明年 (míngnián) — next year [HSK entry 128]
 
-### 星期日 (xīngqīrì) — Sunday
+- 明天 (míngtiān) — tomorrow [HSK entry 129]
 
-HSK entry: 244 · POS: noun · introduced
+- 年 (nián) — year [HSK entry 149]
 
-**星期日我休息。**
-*xīngqīrì wǒ xiūxi.*
-I rest on Sunday.
-**Usage:** 星期日 is a standard way to say Sunday; 星期天 has the same meaning.
+- 去年 (qùnián) — last year [HSK entry 168]
 
-**学校星期日不上课。**
-*xuéxiào xīngqīrì bú shàngkè.*
-The school has no classes on Sundays.
+- 日 (rì) — day; sun [HSK entry 172]
 
-### 星期天 (xīngqītiān) — Sunday
+- 岁 (suì) — years old [HSK entry 199]
 
-HSK entry: 245 · POS: noun · introduced
+- 天 (tiān) — day; sky [HSK entry 207]
 
-**星期天我们去超市。**
-*xīngqītiān wǒmen qù chāoshì.*
-We're going to the supermarket on Sunday.
+- 星期 (xīngqī) — week [HSK entry 243]
 
-**这个星期天我们去看电影。**
-*zhège xīngqītiān wǒmen qù kàn diànyǐng.*
-We are going to watch a movie this Sunday.
+- 星期日 (xīngqīrì) — Sunday [HSK entry 244]
 
-### 月 (yuè) — month; moon
+- 星期天 (xīngqītiān) — Sunday [HSK entry 245]
 
-HSK entry: 269 · POS: noun · introduced
+- 月 (yuè) — month; moon [HSK entry 269]
 
-**下个月我去中国。**
-*xià gè yuè wǒ qù Zhōngguó.*
-I will go to China next month.
-**Usage:** 下个月 means next month; no future-tense inflection is needed.
+- 昨天 (zuótiān) — yesterday [HSK entry 297]
 
-**明年五月我们去中国。**
-*míngnián wǔ yuè wǒmen qù Zhōngguó.*
-We are going to China next May.
-
-### 昨天 (zuótiān) — yesterday
-
-HSK entry: 297 · POS: noun · introduced
-
-**昨天下雨了。**
-*zuótiān xià yǔ le.*
-It rained yesterday.
-**Usage:** 昨天 places a completed rain event on the previous day.
-
-**昨天上午我在学校上课。**
-*zuótiān shàngwǔ wǒ zài xuéxiào shàngkè.*
-I had class at school yesterday morning.
-
-## Usage and grammar
-
-### Naming months
-
-The month follows the number in a date expression.
-
-### Reference years
-
-Calendar expressions distinguish this, last and next year.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “number”?
 - a. 星期 (xīngqī) — 

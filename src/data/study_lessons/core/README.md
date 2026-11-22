@@ -1,4 +1,4 @@
-# Mandarin Tutor — Core package v3.0.1 (schema v3.0.0)
+# Mandarin Tutor — Core package v3.1.0 (topic teaching schema v3.1.0)
 
 **Purpose:** a multi-course Mandarin learning library that can support HSK 3.0, Pimsleur Mandarin, independent character-usage lessons and future courses without duplicate lesson content.
 
@@ -20,7 +20,7 @@
 | `lesson_common.schema.json` | Shared metadata and quiz definitions |
 | `character_lesson.schema.json` | Character lessons, supporting old v2.8 and new v3 |
 | `CHARACTER_LESSON_TEMPLATE.json`, `.md` | Character authoring templates |
-| `topic_lesson.schema.json` | Course-neutral topic/vocabulary lessons v3 |
+| `topic_lesson.schema.json` | Course-neutral topic/vocabulary lessons v3.0.0 and **teaching v3.1.0** |
 | `TOPIC_LESSON_TEMPLATE.json`, `.md` | Topic authoring templates and examples |
 | `general_lesson.schema.json` | Typed grammar, dialogue, review or generic lessons |
 | `GRAMMAR_…`, `DIALOGUE_…`, `REVIEW_…`, `GENERIC_…` JSON templates | New lesson-type examples |
@@ -31,6 +31,24 @@
 | `validate_core.py` | Schema, quiz, taxonomy, catalog and curriculum checks |
 | `generate_lesson.py` | v3 JSON → synchronized HTML, Markdown, and four-file ZIP for character, topic, grammar, dialogue, review, and generic lessons |
 | `legacy/…` | Previous schema snapshots for migration |
+
+## New in v3.1.0: lessons that teach, not duplicate cards
+
+The v3.1.0 topic template introduces required `sections.teaching_plan`. It presents, in this order:
+
+1. A situational dialogue of at least four original, contextual turns, each with Chinese, word-separated tone-marked pinyin and English.
+2. At least two explained grammar/usage patterns, each supported by two newly authored worked examples.
+3. Guided sentence production: one worked model and two controlled substitutions.
+4. A coherent reading passage with at least two comprehension checks.
+5. At least two open-ended speaking scenarios with suggested model answers.
+6. One specific common-pitfall note and pronunciation focus.
+7. Applied comprehension/production checks, followed by an optional original vocabulary-recall quiz and a review checklist.
+
+**Do not repeat existing word-card examples on lesson pages.** The canonical JSON retains these source pairs for backwards compatibility; HTML/Markdown shows a compact collapsible word bank with the exact HSK syllabus IDs. This means the lesson is useful even when the user has already studied the individual vocabulary cards.
+
+The v3.1.0 schema is intentionally stricter than v3.0.0; the generator keeps reading prior v3.0.0 topic/character/general lessons. The two independent lessons, 次 (cì) and 以 (yǐ), remain in their specialist character-usage format. The HSK manifest controls order, while shared categories and tags support browsing.
+
+**Scope and quality:** enriched HSK Level 1 lesson content is new draft educational writing (not official examples and not yet native-speaker certified). A JSON Schema pass does not certify tone accuracy, idiomaticity or level compliance; all three still require substantive review.
 
 ## Existing lessons and categories
 
@@ -61,7 +79,7 @@ Preserve the exact four-root-file contract for a finished lesson: `<LESSON_NAME>
 
 Run `python validate_core.py --self-test` (requires `jsonschema`). You can validate an authored lesson with `python validate_core.py --lesson lesson.json --schema character_lesson.schema.json --catalog-ids path/to/catalog_ids.json` or validate a course manifest with `--curriculum curriculum.json`.
 
-## v3 rendering example
+## v3.1 rendering example
 
 After extracting `core.zip`, keep the `catalog_ids.json` Project Source available at its actual location. For an authored v3 lesson JSON:
 

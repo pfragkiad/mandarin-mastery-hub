@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -38,27 +38,37 @@
     "一": "Characters:一",
     "上": "Characters:上",
     "下": "Characters:下",
+    "不": "Characters:不",
     "东": "Characters:东",
     "两": "Characters:两",
     "个": "Characters:个",
     "中": "Characters:中",
+    "么": "Characters:么",
     "也": "Characters:也",
     "书": "Characters:书",
     "买": "Characters:买",
+    "什": "Characters:什",
     "今": "Characters:今",
+    "他": "Characters:他",
     "以": "Characters:以",
     "们": "Characters:们",
     "件": "Characters:件",
     "休": "Characters:休",
     "会": "Characters:会",
+    "但": "Characters:但",
     "你": "Characters:你",
     "候": "Characters:候",
+    "做": "Characters:做",
     "儿": "Characters:儿",
     "八": "Characters:八",
     "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
     "可": "Characters:可",
     "吗": "Characters:吗",
+    "吧": "Characters:吧",
     "听": "Characters:听",
+    "和": "Characters:和",
     "唱": "Characters:唱",
     "喜": "Characters:喜",
     "喝": "Characters:喝",
@@ -73,10 +83,12 @@
     "子": "Characters:子",
     "学": "Characters:学",
     "孩": "Characters:孩",
+    "小": "Characters:小",
     "师": "Characters:师",
     "影": "Characters:影",
     "很": "Characters:很",
     "得": "Characters:得",
+    "忙": "Characters:忙",
     "息": "Characters:息",
     "想": "Characters:想",
     "我": "Characters:我",
@@ -85,8 +97,11 @@
     "新": "Characters:新",
     "旁": "Characters:旁",
     "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
     "晚": "Characters:晚",
     "有": "Characters:有",
+    "朋": "Characters:朋",
     "服": "Characters:服",
     "本": "Characters:本",
     "来": "Characters:来",
@@ -105,6 +120,7 @@
     "老": "Characters:老",
     "能": "Characters:能",
     "脑": "Characters:脑",
+    "茶": "Characters:茶",
     "衣": "Characters:衣",
     "西": "Characters:西",
     "要": "Characters:要",
@@ -114,9 +130,11 @@
     "语": "Characters:语",
     "说": "Characters:说",
     "课": "Characters:课",
+    "起": "Characters:起",
     "边": "Characters:边",
     "这": "Characters:这",
     "进": "Characters:进",
+    "那": "Characters:那",
     "里": "Characters:里",
     "间": "Characters:间",
     "院": "Characters:院"
@@ -805,8 +823,206 @@
           "correct_choice_ids": [],
           "answer": "我妹妹会唱歌。 (wǒ mèimei huì chàng gē.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Why can Xiaoming not go to the cinema today?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He is busy today.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: When does he want to go?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Tomorrow.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask a friend which activity they would like to do today.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你今天想做什么？ (Nǐ jīntiān xiǎng zuò shénme?) — What would you like to do today?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Explain a learned skill and one thing you cannot do today.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我会唱歌，但是我今天不能去。 (Wǒ huì chàng gē, dànshì wǒ jīntiān bù néng qù.) — I can sing, but I cannot go today.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "What I Can and Want to Do",
+        "context_en": "Two classmates are planning what to do after class. Notice how ability and desire lead to different answers.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你会唱歌吗？",
+            "pinyin": "Nǐ huì chàng gē ma?",
+            "english": "Can you sing?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会唱，但是我今天不想唱。",
+            "pinyin": "Wǒ huì chàng, dànshì wǒ jīntiān bù xiǎng chàng.",
+            "english": "I can sing, but I don't want to today."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那你想看电影吗？",
+            "pinyin": "Nà nǐ xiǎng kàn diànyǐng ma?",
+            "english": "Then would you like to watch a movie?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "想！我们一起去吧。",
+            "pinyin": "Xiǎng! Wǒmen yìqǐ qù ba.",
+            "english": "Yes! Let's go together."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Ability: 会 (huì) versus 能 (néng)",
+          "explanation_en": "会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.",
+          "formula_en": "Subject + 会/能 + verb",
+          "examples": [
+            {
+              "hanzi": "我也会说一点儿汉语。",
+              "pinyin": "Wǒ yě huì shuō yìdiǎnr Hànyǔ.",
+              "english": "I can also speak a little Chinese."
+            },
+            {
+              "hanzi": "我今天能去。",
+              "pinyin": "Wǒ jīntiān néng qù.",
+              "english": "I can go today (circumstances allow)."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Desire: 想 (xiǎng) versus 要 (yào)",
+          "explanation_en": "想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).",
+          "formula_en": "Subject + 想/要 + verb/noun",
+          "examples": [
+            {
+              "hanzi": "我想喝茶。",
+              "pinyin": "Wǒ xiǎng hē chá.",
+              "english": "I would like some tea."
+            },
+            {
+              "hanzi": "我要看这本书。",
+              "pinyin": "Wǒ yào kàn zhè běn shū.",
+              "english": "I want to read this book."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the activity while keeping the polite invitation.",
+        "model": {
+          "hanzi": "你想看电影吗？",
+          "pinyin": "Nǐ xiǎng kàn diànyǐng ma?",
+          "english": "Do you want to watch a movie?"
+        },
+        "substitutions": [
+          {
+            "cue_en": "sing",
+            "model_answer": {
+              "hanzi": "你想唱歌吗？",
+              "pinyin": "Nǐ xiǎng chàng gē ma?",
+              "english": "Do you want to sing?"
+            }
+          },
+          {
+            "cue_en": "drink tea",
+            "model_answer": {
+              "hanzi": "你想喝茶吗？",
+              "pinyin": "Nǐ xiǎng hē chá ma?",
+              "english": "Do you want to drink tea?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "小明会唱歌，也喜欢看电影。今天他很忙，不能去电影院。明天他想和朋友一起去。",
+            "pinyin": "Xiǎomíng huì chàng gē, yě xǐhuan kàn diànyǐng. Jīntiān tā hěn máng, bù néng qù diànyǐngyuàn. Míngtiān tā xiǎng hé péngyou yìqǐ qù.",
+            "english": "Xiaoming can sing and also likes movies. He is busy today and cannot go to the cinema. Tomorrow he wants to go with a friend."
+          },
+          {
+            "hanzi": "他今天不去电影院。",
+            "pinyin": "Tā jīntiān bú qù diànyǐngyuàn.",
+            "english": "He is not going to the cinema today."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Why can Xiaoming not go to the cinema today?",
+            "answer_en": "He is busy today."
+          },
+          {
+            "prompt_en": "When does he want to go?",
+            "answer_en": "Tomorrow."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask a friend which activity they would like to do today.",
+          "model_answer": {
+            "hanzi": "你今天想做什么？",
+            "pinyin": "Nǐ jīntiān xiǎng zuò shénme?",
+            "english": "What would you like to do today?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain a learned skill and one thing you cannot do today.",
+          "model_answer": {
+            "hanzi": "我会唱歌，但是我今天不能去。",
+            "pinyin": "Wǒ huì chàng gē, dànshì wǒ jīntiān bù néng qù.",
+            "english": "I can sing, but I cannot go today."
+          }
+        }
+      ],
+      "common_pitfall": "Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choose based on learned ability, circumstances, or desire.",
+      "pronunciation_focus": "Practise short replies: 会 (huì), 不会 (bú huì), 想 (xiǎng), 不想 (bù xiǎng).",
+      "review": {
+        "can_do": [
+          "Express ability and intention.",
+          "Talk about preferences and leisure activities.",
+          "Recognize movies, singing and entertainment terms."
+        ],
+        "entry_ids": [
+          82,
+          145,
+          225,
+          233,
+          252,
+          18,
+          38,
+          39,
+          58
+        ]
+      }
     }
   }
 }

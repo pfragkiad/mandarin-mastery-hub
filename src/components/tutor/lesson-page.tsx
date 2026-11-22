@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
-import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
+import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
 import type { Word } from '@/lib/mandarin';
@@ -42,6 +42,10 @@ import { useWorkspace } from './workspace';
  * examples, usage notes (grammar_points, each with its recorded example) and related words.
  * Each word's headword links to — and speaks with — the one Vocabulary record that shares
  * its recorded HSK entry number and headword (syllabusEntryFor); no match stays plain.
+ * v3.1 topic lessons (topic.plan, sections.teaching_plan) instead follow the teaching path:
+ * conversation, patterns, guided substitutions, reading, speaking, pitfalls/pronunciation,
+ * applied checks and review, with the words as a collapsed word bank (no repeated source
+ * examples) and the word-recall questions as an optional quiz.
  * Every v3 lesson also shows its learning objectives, and a lesson placed in a course shows
  * where it sits there (CoursePosition) with Previous/Next inside that level.
  */
@@ -140,7 +144,73 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>)}</div></> : null}
   </> });
 
-  if (topic) {
+  const plan = topic?.plan ?? null;
+  if (topic && plan) {
+    // v3.1 teaching path, in the generator's order (core/generate_lesson.py render_topic_v31).
+    // The words' own source examples stay on their Vocabulary cards and are not repeated here.
+    const p = plan;
+    const questions = S.practice?.enabled ? S.practice.questions : [];
+    const applied = questions.filter(q => q.id.startsWith('applied-'));
+    const recall = questions.filter(q => !q.id.startsWith('applied-'));
+    // Review words resolve only through a recorded syllabus entry ID on this lesson's own words.
+    const byEntry = new Map(topic.items.flatMap(item => item.syllabus_refs.map(ref => [ref.entry_id, item] as const)));
+    const reviewWords = p.review.entry_ids.flatMap(id => { const item = byEntry.get(id); return item ? [item] : []; });
+    if (p.dialogue.turns.length) sections.push({ id: 'conversation', title: 'Conversation', hint: p.dialogue.title, body: <>
+      {p.dialogue.context_en && <p className="lesson-note"><LessonText text={p.dialogue.context_en}/></p>}
+      <div className="lesson-dialogue">{p.dialogue.turns.map((t, i) => <div key={i} className="lesson-turn">
+        <span className="lesson-turn-speaker" aria-label={`Speaker ${t.speaker}`}>{t.speaker}</span>
+        <PlanSentence line={t}/>
+      </div>)}</div>
+    </> });
+    if (p.patterns.length) sections.push({ id: 'patterns', title: 'How the language works', hint: count(p.patterns.length, 'pattern'), body: <div className="lesson-stack">
+      {p.patterns.map(pat => <div key={pat.id} className="lesson-card lesson-pattern">
+        <p className="lesson-card-title"><LessonText text={pat.title}/></p>
+        <p className="lesson-muted"><LessonText text={pat.explanation_en}/></p>
+        {pat.formula_en && <p className="lesson-formula"><LessonText text={pat.formula_en}/></p>}
+        <div className="lesson-stack">{pat.examples.map((e, i) => <PlanSentence key={i} line={e}/>)}</div>
+      </div>)}
+    </div> });
+    if (p.guided_building.substitutions.length) sections.push({ id: 'build', title: 'Build new sentences', hint: count(p.guided_building.substitutions.length, 'change'), body: <>
+      <p className="lesson-note"><LessonText text={p.guided_building.instruction_en}/></p>
+      <div className="lesson-card lesson-task"><p className="lesson-task-label">Worked model</p><PlanSentence line={p.guided_building.model}/></div>
+      <div className="lesson-stack">{p.guided_building.substitutions.map((x, i) => <div key={i} className="lesson-card lesson-task">
+        <p className="lesson-card-title">Change {i + 1}: <LessonText text={x.cue_en}/></p>
+        <Reveal label="Show a model answer"><PlanSentence line={x.model_answer}/></Reveal>
+      </div>)}</div>
+    </> });
+    if (p.reading.paragraphs.length) sections.push({ id: 'reading', title: 'Read for meaning', hint: p.reading.title, body: <>
+      <p className="lesson-note">Read the passage, then answer in English or Mandarin.</p>
+      <div className="lesson-stack">{p.reading.paragraphs.map((e, i) => <div key={i} className="lesson-card"><PlanSentence line={e}/></div>)}</div>
+      <div className="lesson-stack">{p.reading.questions.map((q, i) => <div key={i} className="lesson-card lesson-task">
+        <p className="lesson-card-title">{i + 1}. <LessonText text={q.prompt_en}/></p>
+        <Reveal label="Show the answer"><p><LessonText text={q.answer_en}/></p></Reveal>
+      </div>)}</div>
+    </> });
+    if (p.speaking_tasks.length) sections.push({ id: 'speaking', title: 'Speak and personalise', hint: count(p.speaking_tasks.length, 'task'), body: <>
+      <p className="lesson-note">Answer aloud before opening the model, and adapt it to your own life.</p>
+      <div className="lesson-stack">{p.speaking_tasks.map((t, i) => <div key={t.id || i} className="lesson-card lesson-task">
+        <p className="lesson-card-title">{i + 1}. <LessonText text={t.scenario_en}/></p>
+        <Reveal label="Show one possible answer"><PlanSentence line={t.model_answer}/></Reveal>
+      </div>)}</div>
+    </> });
+    if (p.common_pitfall || p.pronunciation_focus) sections.push({ id: 'watch-out', title: 'Watch out', hint: 'A common pitfall and pronunciation', body: <div className="lesson-grid">
+      {p.common_pitfall && <div className="lesson-card"><h3>Common pitfall</h3><p><LessonText text={p.common_pitfall}/></p></div>}
+      {p.pronunciation_focus && <div className="lesson-card"><h3>Pronunciation</h3><p><LessonText text={p.pronunciation_focus}/></p></div>}
+    </div> });
+    if (applied.length) sections.push({ id: 'practice', title: 'Check what you can do', hint: count(applied.length, 'question'), body: <div className="lesson-stack">{applied.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
+    if (p.review.can_do.length || topic.items.length) sections.push({ id: 'review', title: 'Review', hint: 'What you can do now', body: <>
+      {p.review.can_do.length > 0 && <ul className="lesson-objectives">{p.review.can_do.map(x => <li key={x}><LessonText text={x}/></li>)}</ul>}
+      {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><div className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}</div></>}
+      {topic.items.length > 0 && <details className="lesson-details">
+        <summary>Word bank ({topic.items.length}) — examples are on each Vocabulary card</summary>
+        <div className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</div>
+      </details>}
+      {recall.length > 0 && <details className="lesson-details">
+        <summary>Optional word recall quiz ({recall.length})</summary>
+        <div className="lesson-stack">{recall.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div>
+      </details>}
+    </> });
+  } else if (topic) {
     const byId = new Map(topic.items.flatMap(item => item.examples.map(e => [e.id, { example: e, item }] as const)));
     const featured = (Array.isArray((S as Record<string, unknown>)['featured_example_ids']) ? (S as Record<string, unknown>)['featured_example_ids'] as string[] : []).flatMap(id => { const hit = byId.get(id); return hit ? [hit] : []; });
     if (featured.length) sections.push({ id: 'key-sentences', title: 'Key sentences', hint: count(featured.length, 'sentence'), body: <div className="lesson-stack">
@@ -214,7 +284,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {m.reason && <p className="lesson-muted"><LessonText text={m.reason}/></p>}
   </div>)}</div> });
 
-  if (S.practice?.enabled && S.practice.questions.length) sections.push({ id: 'practice', title: 'Check yourself', hint: count(S.practice.questions.length, 'question'), body: <div className="lesson-stack">{S.practice.questions.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
+  if (!plan && S.practice?.enabled && S.practice.questions.length) sections.push({ id: 'practice', title: 'Check yourself', hint: count(S.practice.questions.length, 'question'), body: <div className="lesson-stack">{S.practice.questions.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
 
   if (S.writing && (S.writing.mapping_note || S.writing.pronunciation_note || S.writing.pending_checks?.length)) sections.push({ id: 'writing', title: 'Forms and pronunciation', hint: 'Script forms and readings', body: <div className="lesson-grid">
     {S.writing.mapping_note && <div className="lesson-card"><h3>Forms</h3><p><LessonText text={S.writing.mapping_note}/></p></div>}
@@ -341,6 +411,26 @@ function CoursePosition({ position: p }: { position: LessonPosition }) {
       {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next</small>{p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
     </div>
   </nav>;
+}
+
+/** A teaching-plan sentence (hanzi, tone-marked pinyin, English) with the shared sentence
+ *  renderer, so its hanzi carry hints/links and its speaker uses the common audio pipeline. */
+function PlanSentence({ line }: { line: PlanLine }) {
+  return <SentenceExample sentence={line.hanzi} pinyin={line.pinyin} translation={line.english} heading=""/>;
+}
+
+/** Hidden model answer the learner opens after trying first (native disclosure; state is the element's own). */
+function Reveal({ label, children }: { label: string; children: ReactNode }) {
+  return <details className="lesson-details lesson-reveal"><summary>{label}</summary>{children}</details>;
+}
+
+/** Compact word-bank entry: linked headword with its record's audio and HSK number, no example sentences. */
+function WordBankCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
+  const hsk = record?.entry?.hskLevel && record.entry.hsk_index ? `HSK ${record.entry.hskLevel} · #${record.entry.hsk_index}` : '';
+  return <div className="lesson-card lesson-vocab">
+    {hsk && <div className="lesson-card-top"><span className="lesson-register is-hsk">{hsk}</span></div>}
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record}/>
+  </div>;
 }
 
 const styleLabel: Record<string, string> = { conversational: 'Conversational', written: 'Written' };

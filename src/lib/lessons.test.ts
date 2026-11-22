@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
+import { toTopicContent, buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
 import { lessonGlyphHintById } from './lesson-hints';
 
 // Rules for the study lessons: kinds come from the explicit schema id, categories only from
@@ -45,7 +45,9 @@ describe('lesson index', () => {
     expect(new Set(ids).size).toBe(23);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(21);
-    expect(lessonSummaries.every(s => s.schemaVersion.endsWith('/3.0.0'))).toBe(true);
+    // Topic lessons moved to the v3.1 teaching-plan schema; character lessons stay v3.0.0.
+    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.1.0')).toBe(true);
+    expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion.endsWith('/3.0.0'))).toBe(true);
   });
 });
 
@@ -147,5 +149,32 @@ describe('lesson files', () => {
       const headwordKind = /\/(CHARACTER|WORD|PHRASE)_LESSON_/.test(f);
       expect('headword' in json, `${f} headword`).toBe(headwordKind);
     }
+  });
+});
+
+// v3.1 topic lessons teach through sections.teaching_plan; every one must parse into the
+// path the page renders, and its review words must all be words this lesson carries.
+describe('v3.1 teaching plans', () => {
+  const root = 'src/data/study_lessons/lessons/hsk3/level1';
+  const plans = readdirSync(root).map(dir => {
+    const json = JSON.parse(readFileSync(join(root, dir, `${dir}.json`), 'utf8')) as { lesson_id: string; sections: Record<string, unknown> };
+    return { id: json.lesson_id, topic: toTopicContent(json.sections) };
+  });
+  it('all 21 topic lessons carry a complete plan', () => {
+    expect(plans.length).toBe(21);
+    for (const { id, topic } of plans) {
+      const p = topic.plan;
+      expect(p, id).not.toBeNull();
+      expect(p!.dialogue.turns.length, id).toBeGreaterThanOrEqual(4);
+      expect(p!.patterns.length, id).toBeGreaterThanOrEqual(2);
+      expect(p!.guided_building.substitutions.length, id).toBeGreaterThanOrEqual(2);
+      expect(p!.reading.questions.length, id).toBeGreaterThanOrEqual(2);
+      expect(p!.speaking_tasks.length, id).toBeGreaterThanOrEqual(2);
+      const entries = new Set(topic.items.flatMap(item => item.syllabus_refs.map(r => r.entry_id)));
+      expect(p!.review.entry_ids.every(n => entries.has(n)), id).toBe(true);
+    }
+  });
+  it('a lesson without a teaching plan keeps the word-list layout', () => {
+    expect(toTopicContent({ vocabulary: { items: [] } }).plan).toBeNull();
   });
 });

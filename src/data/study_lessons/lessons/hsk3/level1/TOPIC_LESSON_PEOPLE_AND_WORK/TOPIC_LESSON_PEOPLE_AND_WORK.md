@@ -2,9 +2,9 @@
 
 Describe who someone is and talk about workplaces and daily work.
 
-**Topics:** people-identity, work-jobs
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Introduce people by name or title.
 
@@ -12,156 +12,145 @@ Describe who someone is and talk about workplaces and daily work.
 
 - Understand when someone goes to work or finishes.
 
-## Overview
+## 1. Conversation — Introducing People and Work
 
-Describe who someone is and talk about workplaces and daily work.
+Two people introduce themselves at a workplace, including names, jobs, and simple schedules.
 
-Introduce people by name or title.
+**A:** 您好！您叫什么名字？ (Nín hǎo! Nín jiào shénme míngzi?) — Hello! What is your name?
 
-## Vocabulary and examples
+**B:** 我叫王明。您呢？ (Wǒ jiào Wáng Míng. Nín ne?) — My name is Wang Ming. And yours?
 
-### 名字 (míngzi) — name
+**A:** 我叫李华。你在哪儿工作？ (Wǒ jiào Lǐ Huá. Nǐ zài nǎr gōngzuò?) — My name is Li Hua. Where do you work?
 
-HSK entry: 130 · POS: noun · introduced
+**B:** 我在这家公司工作。 (Wǒ zài zhè jiā gōngsī gōngzuò.) — I work at this company.
 
-**你的名字是什么？**
-*nǐ de míngzi shì shénme?*
-What is your name?
-**Usage:** 你的名字是什么 is a direct question about someone’s name; 叫什么名字 is another common wording.
+## 2. How the language works
 
-**请在这里写名字。**
-*qǐng zài zhèlǐ xiě míngzi.*
-Please write your name here.
+### Asking and giving names
 
-### 男 (nán) — male
+叫 (jiào) introduces a name in 我叫… (wǒ jiào …). With 您 (nín), the question becomes more formal and respectful.
 
-HSK entry: 142 · POS: adjective · introduced
+**Pattern:** 我叫 + name; 您叫什么名字?
 
-**那个男学生是我的朋友。**
-*nàge nán xuéshēng shì wǒ de péngyou.*
-That male student is my friend.
-**Usage:** 男 is an adjective specifying a male student; more formal contexts may use 男性.
+**我叫小李。**
+*Wǒ jiào Xiǎo Lǐ.*
+My name is Xiao Li.
 
-**这个班有十个男学生。**
-*zhège bān yǒu shí gè nán xuéshēng.*
-There are ten male students in this class.
+**请问，您叫什么名字？**
+*Qǐngwèn, nín jiào shénme míngzi?*
+Excuse me, what is your name?
 
-### 女 (nǚ) — female
+### Where someone works and when
 
-HSK entry: 152 · POS: adjective · introduced
+在 (zài) introduces a workplace; 上班 (shàngbān) can mean going to work or being on duty; 下班 (xiàbān) means finishing work.
 
-**那个女学生在看书。**
-*nàge nǚ xuéshēng zài kàn shū.*
-That female student is reading a book.
-**Usage:** 女 modifies 学生 to specify a female student.
+**Pattern:** subject + 在 + place + 工作
 
-**这个班有八个女学生。**
-*zhège bān yǒu bā gè nǚ xuéshēng.*
-There are eight female students in this class.
+**我在学校工作。**
+*Wǒ zài xuéxiào gōngzuò.*
+I work at a school.
 
-### 女士 (nǚshì) — Ms.; lady
+**她下午六点下班。**
+*Tā xiàwǔ liù diǎn xiàbān.*
+She finishes work at six in the afternoon.
 
-HSK entry: 155 · POS: noun · introduced
+## 3. Build new sentences
 
-**这位女士是老师。**
-*zhè wèi nǚshì shì lǎoshī.*
-This lady is a teacher.
-**Usage:** 女士 is a respectful label for an adult woman, more formal than 女人.
+Keep the workplace statement but change the place.
 
-**那位女士会说汉语。**
-*nà wèi nǚshì huì shuō Hànyǔ.*
-That lady can speak Chinese.
+**Worked model:** **我在公司工作。**
+*Wǒ zài gōngsī gōngzuò.*
+I work at a company.
 
-### 人 (rén) — person
+**Change 1: school**
 
-HSK entry: 170 · POS: noun · introduced
+*Model response:* **我在学校工作。**
+*Wǒ zài xuéxiào gōngzuò.*
+I work at a school.
 
-**他是一个好人。**
-*tā shì yí ge hǎo rén.*
-He is a good person.
-**Usage:** 人 means a person; 一个好人 is one good person, with 个 as the classifier.
+**Change 2: hospital**
 
-**这家饭店里有很多人。**
-*zhè jiā fàndiàn lǐ yǒu hěn duō rén.*
-There are many people in this restaurant.
+*Model response:* **我在医院工作。**
+*Wǒ zài yīyuàn gōngzuò.*
+I work at a hospital.
 
-### 先生 (xiānsheng) — Mr.; sir
+## 4. Read for meaning — A short connected story
 
-HSK entry: 231 · POS: noun · introduced
+**王先生在公司上班。他每天早上八点去公司，下午五点下班。李女士在学校工作。**
+*Wáng xiānsheng zài gōngsī shàngbān. Tā měi tiān zǎoshang bā diǎn qù gōngsī, xiàwǔ wǔ diǎn xiàbān. Lǐ nǚshì zài xuéxiào gōngzuò.*
+Mr. Wang works at a company. He goes to the office every morning at eight and finishes at five. Ms. Li works at a school.
 
-**这位先生是医生。**
-*zhè wèi xiānsheng shì yīshēng.*
-This gentleman is a doctor.
+**Q1. Where does Mr. Wang work?** Suggested answer: At a company.
 
-**那位先生在学校工作。**
-*nà wèi xiānsheng zài xuéxiào gōngzuò.*
-That gentleman works at the school.
+**Q2. When does Mr. Wang finish work?** Suggested answer: At 5 p.m.
 
-### 公司 (gōngsī) — company
+## 5. Speak and personalize
 
-HSK entry: 62 · POS: noun · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**她在一家公司上班。**
-*tā zài yì jiā gōngsī shàngbān.*
-She works for a company.
-**Usage:** 家 classifies companies; 一 is pronounced yì before first-tone 家.
+**Speaking 1:** Introduce your name.
 
-**公司里有很多人。**
-*gōngsī lǐ yǒu hěn duō rén.*
-There are many people at the company.
+*Possible response:* **我叫李华。**
+*Wǒ jiào Lǐ Huá.*
+My name is Li Hua.
 
-### 工作 (gōngzuò) — work; job
+**Speaking 2:** Ask politely where someone works.
 
-HSK entry: 63 · POS: verb · introduced
+*Possible response:* **请问，您在哪儿工作？**
+*Qǐngwèn, nín zài nǎr gōngzuò?*
+Excuse me, where do you work?
 
-**我今天要工作。**
-*wǒ jīntiān yào gōngzuò.*
-I have to work today.
-**Usage:** 要 can express necessity or a planned action; context determines how strong “have to” is.
+## 6. Watch out
 
-**妈妈在医院工作。**
-*māma zài yīyuàn gōngzuò.*
-Mom works at a hospital.
+In an introduction, 我是 (wǒ shì) identifies a person or role; 我叫 (wǒ jiào) gives a name. Do not replace every 我叫 with 我是.
 
-Can be the verb work or the noun work/job.
+**Pronunciation:** 您 (nín) is a respectful alternative to 你 (nǐ), especially with someone unfamiliar or senior.
 
-### 上班 (shàngbān) — go to work
+## 7. Check what you can do
 
-HSK entry: 176 · POS: verb · introduced
+**Comprehension:** Reading comprehension: Where does Mr. Wang work?
+**Answer:** At a company.. Check against the connected reading passage, not the vocabulary cards.
 
-**我爸爸每天八点上班。**
-*wǒ bàba měitiān bā diǎn shàngbān.*
-My dad goes to work at eight every day.
-**Usage:** 上班 means go to work or start work, not simply enter a building.
+**Comprehension:** Reading comprehension: When does Mr. Wang finish work?
+**Answer:** At 5 p.m.. Check against the connected reading passage, not the vocabulary cards.
 
-**我的哥哥早上八点上班。**
-*wǒ de gēge zǎoshang bā diǎn shàngbān.*
-My older brother goes to work at eight in the morning.
+**Production:** Say this aloud: Introduce your name.
+**Answer:** 我叫李华。 (Wǒ jiào Lǐ Huá.) — My name is Li Hua.. Illustrative answer. Other natural responses may be correct.
 
-### 下班 (xiàbān) — finish work
+**Production:** Say this aloud: Ask politely where someone works.
+**Answer:** 请问，您在哪儿工作？ (Qǐngwèn, nín zài nǎr gōngzuò?) — Excuse me, where do you work?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 228 · POS: verb · introduced
+## Review and next step
 
-**我爸爸六点下班。**
-*wǒ bàba liù diǎn xiàbān.*
-My father finishes work at six.
-**Usage:** 下班 means finish the workday or leave work, here at six.
+- Introduce people by name or title.
 
-**下班后，我们去饭店吃饭。**
-*xiàbān hòu, wǒmen qù fàndiàn chī fàn.*
-After work, we go to a restaurant to eat.
+- Talk about work and companies.
 
-## Usage and grammar
+- Understand when someone goes to work or finishes.
 
-### Talking about work
+## Reference word bank (details on vocabulary cards)
 
-Use the common work verb or noun with a person or workplace.
+- 名字 (míngzi) — name [HSK entry 130]
 
-### Names and identity
+- 男 (nán) — male [HSK entry 142]
 
-Ask for or give a name using a familiar introductory expression.
+- 女 (nǚ) — female [HSK entry 152]
 
-## Practice
+- 女士 (nǚshì) — Ms.; lady [HSK entry 155]
+
+- 人 (rén) — person [HSK entry 170]
+
+- 先生 (xiānsheng) — Mr.; sir [HSK entry 231]
+
+- 公司 (gōngsī) — company [HSK entry 62]
+
+- 工作 (gōngzuò) — work; job [HSK entry 63]
+
+- 上班 (shàngbān) — go to work [HSK entry 176]
+
+- 下班 (xiàbān) — finish work [HSK entry 228]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “name”?
 - a. 上班 (shàngbān) — 

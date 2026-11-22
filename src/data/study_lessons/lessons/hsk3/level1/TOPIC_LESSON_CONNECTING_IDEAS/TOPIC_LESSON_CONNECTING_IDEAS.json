@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-connecting-ideas",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -37,6 +37,7 @@
   "catalog_character_refs": {
     "一": "Characters:一",
     "上": "Characters:上",
+    "中": "Characters:中",
     "也": "Characters:也",
     "习": "Characters:习",
     "书": "Characters:书",
@@ -47,20 +48,30 @@
     "以": "Characters:以",
     "们": "Characters:们",
     "件": "Characters:件",
+    "但": "Characters:但",
     "你": "Characters:你",
+    "做": "Characters:做",
     "兴": "Characters:兴",
     "再": "Characters:再",
+    "写": "Characters:写",
     "去": "Characters:去",
     "可": "Characters:可",
     "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
     "和": "Characters:和",
+    "哥": "Characters:哥",
     "商": "Characters:商",
     "喜": "Characters:喜",
+    "喝": "Characters:喝",
     "在": "Characters:在",
     "大": "Characters:大",
     "天": "Characters:天",
     "太": "Characters:太",
+    "她": "Characters:她",
     "好": "Characters:好",
+    "妹": "Characters:妹",
+    "字": "Characters:字",
     "学": "Characters:学",
     "室": "Characters:室",
     "家": "Characters:家",
@@ -68,9 +79,13 @@
     "常": "Characters:常",
     "店": "Characters:店",
     "开": "Characters:开",
+    "影": "Characters:影",
     "很": "Characters:很",
+    "忙": "Characters:忙",
+    "想": "Characters:想",
     "我": "Characters:我",
     "教": "Characters:教",
+    "文": "Characters:文",
     "明": "Characters:明",
     "是": "Characters:是",
     "有": "Characters:有",
@@ -80,12 +95,15 @@
     "校": "Characters:校",
     "次": "Characters:次",
     "欢": "Characters:欢",
+    "歌": "Characters:歌",
     "正": "Characters:正",
     "气": "Characters:气",
+    "水": "Characters:水",
     "没": "Characters:没",
     "漂": "Characters:漂",
     "热": "Characters:热",
     "生": "Characters:生",
+    "电": "Characters:电",
     "的": "Characters:的",
     "看": "Characters:看",
     "真": "Characters:真",
@@ -671,8 +689,200 @@
           "correct_choice_ids": [],
           "answer": "学生们都在教室里。 (xuéshēngmen dōu zài jiàoshì lǐ.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Where are the brother and sister?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Both are at home.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who is writing?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The younger sister.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Explain what you and a friend both like.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我们都喜欢看电影。 (Wǒmen dōu xǐhuan kàn diànyǐng.) — We both like watching movies.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Describe what someone is doing right now.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "他正在写字。 (Tā zhèngzài xiě zì.) — He is writing characters right now.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Connecting and Emphasizing Ideas",
+        "context_en": "Two students compare their activities. Practise linkers, emphasis, and the difference between 在 (zài) and 正在 (zhèngzài).",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你在看书吗？",
+            "pinyin": "Nǐ zài kàn shū ma?",
+            "english": "Are you reading?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是，我也在听歌。",
+            "pinyin": "Shì, wǒ yě zài tīng gē.",
+            "english": "Yes, and I am also listening to music."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你今天很忙吗？",
+            "pinyin": "Nǐ jīntiān hěn máng ma?",
+            "english": "Are you busy today?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "很忙，但是我还想看电影。",
+            "pinyin": "Hěn máng, dànshì wǒ hái xiǎng kàn diànyǐng.",
+            "english": "Very busy, but I still want to watch a movie."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Adding and combining information",
+          "explanation_en": "也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.",
+          "formula_en": "subject + 也 + verb; group + 都 + verb",
+          "examples": [
+            {
+              "hanzi": "妹妹也喜欢喝茶。",
+              "pinyin": "Mèimei yě xǐhuan hē chá.",
+              "english": "My younger sister also likes drinking tea."
+            },
+            {
+              "hanzi": "我们都喜欢中文。",
+              "pinyin": "Wǒmen dōu xǐhuan Zhōngwén.",
+              "english": "We all like Chinese."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Degree and ongoing actions",
+          "explanation_en": "很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.",
+          "formula_en": "subject + 正在 + verb",
+          "examples": [
+            {
+              "hanzi": "她正在做饭。",
+              "pinyin": "Tā zhèngzài zuò fàn.",
+              "english": "She is cooking right now."
+            },
+            {
+              "hanzi": "今天真热！",
+              "pinyin": "Jīntiān zhēn rè!",
+              "english": "It is really hot today!"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Use 也 to add another person doing the activity.",
+        "model": {
+          "hanzi": "我看书。她也看书。",
+          "pinyin": "Wǒ kàn shū. Tā yě kàn shū.",
+          "english": "I read. She reads too."
+        },
+        "substitutions": [
+          {
+            "cue_en": "studying",
+            "model_answer": {
+              "hanzi": "我学习。他也学习。",
+              "pinyin": "Wǒ xuéxí. Tā yě xuéxí.",
+              "english": "I study. He studies too."
+            }
+          },
+          {
+            "cue_en": "drinking water",
+            "model_answer": {
+              "hanzi": "我喝水。你也喝水。",
+              "pinyin": "Wǒ hē shuǐ. Nǐ yě hē shuǐ.",
+              "english": "I drink water. You drink water too."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "哥哥和妹妹都在家。哥哥正在看书，妹妹在写字。他们也听歌。",
+            "pinyin": "Gēge hé mèimei dōu zài jiā. Gēge zhèngzài kàn shū, mèimei zài xiě zì. Tāmen yě tīng gē.",
+            "english": "The older brother and younger sister are both at home. He is reading while she is writing. They also listen to songs."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Where are the brother and sister?",
+            "answer_en": "Both are at home."
+          },
+          {
+            "prompt_en": "Who is writing?",
+            "answer_en": "The younger sister."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain what you and a friend both like.",
+          "model_answer": {
+            "hanzi": "我们都喜欢看电影。",
+            "pinyin": "Wǒmen dōu xǐhuan kàn diànyǐng.",
+            "english": "We both like watching movies."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe what someone is doing right now.",
+          "model_answer": {
+            "hanzi": "他正在写字。",
+            "pinyin": "Tā zhèngzài xiě zì.",
+            "english": "He is writing characters right now."
+          }
+        }
+      ],
+      "common_pitfall": "和 (hé) normally joins nouns, not two independent clauses in the way English “and” does. Use a comma or appropriate connector instead.",
+      "pronunciation_focus": "Distinguish 在 (zài) as a location preposition from 在 (zài) as an aspect marker; word order supplies the interpretation.",
+      "review": {
+        "can_do": [
+          "Express degree and emphasis.",
+          "Recognize coordination and repetition.",
+          "Understand ongoing actions in simple sentences."
+        ],
+        "entry_ids": [
+          41,
+          67,
+          78,
+          79,
+          253,
+          271,
+          285,
+          286
+        ]
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-describing-feelings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -27,36 +27,48 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
+    "一": "Characters:一",
     "上": "Characters:上",
     "下": "Characters:下",
     "个": "Characters:个",
     "中": "Characters:中",
+    "也": "Characters:也",
     "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
     "亮": "Characters:亮",
     "人": "Characters:人",
     "今": "Characters:今",
     "们": "Characters:们",
     "件": "Characters:件",
+    "但": "Characters:但",
     "你": "Characters:你",
+    "儿": "Characters:儿",
     "兴": "Characters:兴",
     "到": "Characters:到",
     "午": "Characters:午",
     "只": "Characters:只",
+    "吃": "Characters:吃",
     "吗": "Characters:吗",
     "听": "Characters:听",
     "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "太": "Characters:太",
     "她": "Characters:她",
     "好": "Characters:好",
     "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
     "学": "Characters:学",
     "家": "Characters:家",
     "对": "Characters:对",
@@ -65,6 +77,7 @@
     "师": "Characters:师",
     "常": "Characters:常",
     "店": "Characters:店",
+    "影": "Characters:影",
     "很": "Characters:很",
     "得": "Characters:得",
     "忙": "Characters:忙",
@@ -80,27 +93,38 @@
     "服": "Characters:服",
     "本": "Characters:本",
     "来": "Characters:来",
+    "果": "Characters:果",
     "校": "Characters:校",
     "样": "Characters:样",
+    "欢": "Characters:欢",
     "歌": "Characters:歌",
     "漂": "Characters:漂",
+    "点": "Characters:点",
     "猫": "Characters:猫",
+    "现": "Characters:现",
     "生": "Characters:生",
+    "电": "Characters:电",
     "的": "Characters:的",
     "看": "Characters:看",
     "老": "Characters:老",
+    "色": "Characters:色",
     "花": "Characters:花",
+    "苹": "Characters:苹",
     "菜": "Characters:菜",
     "衣": "Characters:衣",
     "见": "Characters:见",
     "觉": "Characters:觉",
     "说": "Characters:说",
     "课": "Characters:课",
+    "贵": "Characters:贵",
     "这": "Characters:这",
+    "部": "Characters:部",
     "里": "Characters:里",
     "间": "Characters:间",
     "非": "Characters:非",
+    "颜": "Characters:颜",
     "饭": "Characters:饭",
+    "首": "Characters:首",
     "高": "Characters:高"
   },
   "sections": {
@@ -706,8 +730,201 @@
           "correct_choice_ids": [],
           "answer": "这个大学很大。 (zhège dàxué hěn dà.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What is new?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "An item of clothing.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What does the younger sister think about the price?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "It is a bit expensive.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Compliment the sound of a song.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这首歌很好听！ (Zhè shǒu gē hěn hǎotīng!) — This song sounds wonderful!",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say a room is too small.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这个房间太小了。 (Zhège fángjiān tài xiǎo le.) — This room is too small.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Describing People and Things",
+        "context_en": "A conversation about a new film shows how different evaluative adjectives convey more than just “good”.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这部电影好看吗？",
+            "pinyin": "Zhè bù diànyǐng hǎokàn ma?",
+            "english": "Is this film good to watch?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好看！歌也很好听。",
+            "pinyin": "Hǎokàn! Gē yě hěn hǎotīng.",
+            "english": "Yes! The songs are nice to listen to, too."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你高兴吗？",
+            "pinyin": "Nǐ gāoxìng ma?",
+            "english": "Are you happy?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "很高兴，但是现在有点儿忙。",
+            "pinyin": "Hěn gāoxìng, dànshì xiànzài yǒudiǎnr máng.",
+            "english": "Very happy, but a little busy right now."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Quality adjectives are specific",
+          "explanation_en": "好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.",
+          "formula_en": "subject + 很 + adjective",
+          "examples": [
+            {
+              "hanzi": "这首歌很好听。",
+              "pinyin": "Zhè shǒu gē hěn hǎotīng.",
+              "english": "This song sounds very nice."
+            },
+            {
+              "hanzi": "她的新衣服很漂亮。",
+              "pinyin": "Tā de xīn yīfu hěn piàoliang.",
+              "english": "Her new clothes are pretty."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Degree and contrasting sizes",
+          "explanation_en": "很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.",
+          "formula_en": "noun + 太 + adjective + 了",
+          "examples": [
+            {
+              "hanzi": "这个房间太小了。",
+              "pinyin": "Zhège fángjiān tài xiǎo le.",
+              "english": "This room is too small."
+            },
+            {
+              "hanzi": "这个苹果很大。",
+              "pinyin": "Zhège píngguǒ hěn dà.",
+              "english": "This apple is big."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change what you are evaluating and choose the matching adjective.",
+        "model": {
+          "hanzi": "这本中文书很好看。",
+          "pinyin": "Zhè běn Zhōngwén shū hěn hǎokàn.",
+          "english": "This Chinese book is a good read."
+        },
+        "substitutions": [
+          {
+            "cue_en": "song",
+            "model_answer": {
+              "hanzi": "这首歌很好听。",
+              "pinyin": "Zhè shǒu gē hěn hǎotīng.",
+              "english": "This song sounds good."
+            }
+          },
+          {
+            "cue_en": "food",
+            "model_answer": {
+              "hanzi": "这个菜很好吃。",
+              "pinyin": "Zhège cài hěn hǎochī.",
+              "english": "This dish tastes good."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "姐姐买了一件新衣服，颜色很好看。妹妹也喜欢，但是觉得有点儿贵。",
+            "pinyin": "Jiějie mǎi le yí jiàn xīn yīfu, yánsè hěn hǎokàn. Mèimei yě xǐhuan, dànshì juéde yǒudiǎnr guì.",
+            "english": "The older sister bought a new item of clothing; its color is nice. The younger sister likes it too, but thinks it is a bit expensive."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "What is new?",
+            "answer_en": "An item of clothing."
+          },
+          {
+            "prompt_en": "What does the younger sister think about the price?",
+            "answer_en": "It is a bit expensive."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Compliment the sound of a song.",
+          "model_answer": {
+            "hanzi": "这首歌很好听！",
+            "pinyin": "Zhè shǒu gē hěn hǎotīng!",
+            "english": "This song sounds wonderful!"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say a room is too small.",
+          "model_answer": {
+            "hanzi": "这个房间太小了。",
+            "pinyin": "Zhège fángjiān tài xiǎo le.",
+            "english": "This room is too small."
+          }
+        }
+      ],
+      "common_pitfall": "Do not use 好听 (hǎotīng) for food or 好吃 (hǎochī) for a song; each evaluation selects a different sense.",
+      "pronunciation_focus": "漂亮 (piàoliang) is often pronounced with a neutral second syllable, not liàng.",
+      "review": {
+        "can_do": [
+          "Describe appearance, size and quality.",
+          "Express simple evaluations and feelings.",
+          "Distinguish adjectives in natural context."
+        ],
+        "entry_ids": [
+          25,
+          57,
+          71,
+          73,
+          74,
+          118,
+          158,
+          234,
+          242
+        ]
+      }
     }
   }
 }

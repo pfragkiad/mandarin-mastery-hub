@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-people-and-work",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -40,6 +40,7 @@
     "个": "Characters:个",
     "么": "Characters:么",
     "书": "Characters:书",
+    "五": "Characters:五",
     "人": "Characters:人",
     "什": "Characters:什",
     "今": "Characters:今",
@@ -49,6 +50,7 @@
     "位": "Characters:位",
     "作": "Characters:作",
     "你": "Characters:你",
+    "儿": "Characters:儿",
     "先": "Characters:先",
     "八": "Characters:八",
     "公": "Characters:公",
@@ -56,6 +58,8 @@
     "写": "Characters:写",
     "医": "Characters:医",
     "十": "Characters:十",
+    "午": "Characters:午",
+    "华": "Characters:华",
     "去": "Characters:去",
     "友": "Characters:友",
     "叫": "Characters:叫",
@@ -63,7 +67,9 @@
     "吃": "Characters:吃",
     "名": "Characters:名",
     "后": "Characters:后",
+    "呢": "Characters:呢",
     "哥": "Characters:哥",
+    "哪": "Characters:哪",
     "在": "Characters:在",
     "士": "Characters:士",
     "多": "Characters:多",
@@ -75,21 +81,26 @@
     "字": "Characters:字",
     "学": "Characters:学",
     "家": "Characters:家",
+    "小": "Characters:小",
     "工": "Characters:工",
     "师": "Characters:师",
     "店": "Characters:店",
     "很": "Characters:很",
     "性": "Characters:性",
+    "您": "Characters:您",
     "我": "Characters:我",
     "早": "Characters:早",
+    "明": "Characters:明",
     "是": "Characters:是",
     "有": "Characters:有",
     "朋": "Characters:朋",
+    "李": "Characters:李",
     "校": "Characters:校",
     "每": "Characters:每",
     "汉": "Characters:汉",
     "点": "Characters:点",
     "爸": "Characters:爸",
+    "王": "Characters:王",
     "班": "Characters:班",
     "生": "Characters:生",
     "男": "Characters:男",
@@ -103,6 +114,7 @@
     "这": "Characters:这",
     "那": "Characters:那",
     "里": "Characters:里",
+    "问": "Characters:问",
     "院": "Characters:院",
     "饭": "Characters:饭"
   },
@@ -626,8 +638,200 @@
           "correct_choice_ids": [],
           "answer": "请在这里写名字。 (qǐng zài zhèlǐ xiě míngzi.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Where does Mr. Wang work?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "At a company.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: When does Mr. Wang finish work?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "At 5 p.m.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Introduce your name.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我叫李华。 (Wǒ jiào Lǐ Huá.) — My name is Li Hua.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask politely where someone works.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，您在哪儿工作？ (Qǐngwèn, nín zài nǎr gōngzuò?) — Excuse me, where do you work?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Introducing People and Work",
+        "context_en": "Two people introduce themselves at a workplace, including names, jobs, and simple schedules.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "您好！您叫什么名字？",
+            "pinyin": "Nín hǎo! Nín jiào shénme míngzi?",
+            "english": "Hello! What is your name?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我叫王明。您呢？",
+            "pinyin": "Wǒ jiào Wáng Míng. Nín ne?",
+            "english": "My name is Wang Ming. And yours?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我叫李华。你在哪儿工作？",
+            "pinyin": "Wǒ jiào Lǐ Huá. Nǐ zài nǎr gōngzuò?",
+            "english": "My name is Li Hua. Where do you work?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我在这家公司工作。",
+            "pinyin": "Wǒ zài zhè jiā gōngsī gōngzuò.",
+            "english": "I work at this company."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Asking and giving names",
+          "explanation_en": "叫 (jiào) introduces a name in 我叫… (wǒ jiào …). With 您 (nín), the question becomes more formal and respectful.",
+          "formula_en": "我叫 + name; 您叫什么名字?",
+          "examples": [
+            {
+              "hanzi": "我叫小李。",
+              "pinyin": "Wǒ jiào Xiǎo Lǐ.",
+              "english": "My name is Xiao Li."
+            },
+            {
+              "hanzi": "请问，您叫什么名字？",
+              "pinyin": "Qǐngwèn, nín jiào shénme míngzi?",
+              "english": "Excuse me, what is your name?"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Where someone works and when",
+          "explanation_en": "在 (zài) introduces a workplace; 上班 (shàngbān) can mean going to work or being on duty; 下班 (xiàbān) means finishing work.",
+          "formula_en": "subject + 在 + place + 工作",
+          "examples": [
+            {
+              "hanzi": "我在学校工作。",
+              "pinyin": "Wǒ zài xuéxiào gōngzuò.",
+              "english": "I work at a school."
+            },
+            {
+              "hanzi": "她下午六点下班。",
+              "pinyin": "Tā xiàwǔ liù diǎn xiàbān.",
+              "english": "She finishes work at six in the afternoon."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Keep the workplace statement but change the place.",
+        "model": {
+          "hanzi": "我在公司工作。",
+          "pinyin": "Wǒ zài gōngsī gōngzuò.",
+          "english": "I work at a company."
+        },
+        "substitutions": [
+          {
+            "cue_en": "school",
+            "model_answer": {
+              "hanzi": "我在学校工作。",
+              "pinyin": "Wǒ zài xuéxiào gōngzuò.",
+              "english": "I work at a school."
+            }
+          },
+          {
+            "cue_en": "hospital",
+            "model_answer": {
+              "hanzi": "我在医院工作。",
+              "pinyin": "Wǒ zài yīyuàn gōngzuò.",
+              "english": "I work at a hospital."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "王先生在公司上班。他每天早上八点去公司，下午五点下班。李女士在学校工作。",
+            "pinyin": "Wáng xiānsheng zài gōngsī shàngbān. Tā měi tiān zǎoshang bā diǎn qù gōngsī, xiàwǔ wǔ diǎn xiàbān. Lǐ nǚshì zài xuéxiào gōngzuò.",
+            "english": "Mr. Wang works at a company. He goes to the office every morning at eight and finishes at five. Ms. Li works at a school."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Where does Mr. Wang work?",
+            "answer_en": "At a company."
+          },
+          {
+            "prompt_en": "When does Mr. Wang finish work?",
+            "answer_en": "At 5 p.m."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Introduce your name.",
+          "model_answer": {
+            "hanzi": "我叫李华。",
+            "pinyin": "Wǒ jiào Lǐ Huá.",
+            "english": "My name is Li Hua."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask politely where someone works.",
+          "model_answer": {
+            "hanzi": "请问，您在哪儿工作？",
+            "pinyin": "Qǐngwèn, nín zài nǎr gōngzuò?",
+            "english": "Excuse me, where do you work?"
+          }
+        }
+      ],
+      "common_pitfall": "In an introduction, 我是 (wǒ shì) identifies a person or role; 我叫 (wǒ jiào) gives a name. Do not replace every 我叫 with 我是.",
+      "pronunciation_focus": "您 (nín) is a respectful alternative to 你 (nǐ), especially with someone unfamiliar or senior.",
+      "review": {
+        "can_do": [
+          "Introduce people by name or title.",
+          "Talk about work and companies.",
+          "Understand when someone goes to work or finishes."
+        ],
+        "entry_ids": [
+          130,
+          152,
+          155,
+          231,
+          62,
+          63,
+          176,
+          228
+        ]
+      }
     }
   }
 }

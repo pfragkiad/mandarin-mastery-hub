@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-basic-negation-particles",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -40,17 +40,20 @@
     "不": "Characters:不",
     "东": "Characters:东",
     "个": "Characters:个",
+    "习": "Characters:习",
     "书": "Characters:书",
     "了": "Characters:了",
     "今": "Characters:今",
     "他": "Characters:他",
     "们": "Characters:们",
     "会": "Characters:会",
+    "但": "Characters:但",
     "你": "Characters:你",
     "再": "Characters:再",
     "午": "Characters:午",
     "卖": "Characters:卖",
     "去": "Characters:去",
+    "友": "Characters:友",
     "吃": "Characters:吃",
     "吗": "Characters:吗",
     "吧": "Characters:吧",
@@ -60,7 +63,10 @@
     "在": "Characters:在",
     "天": "Characters:天",
     "她": "Characters:她",
+    "妹": "Characters:妹",
     "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
     "已": "Characters:已",
     "师": "Characters:师",
     "我": "Characters:我",
@@ -68,7 +74,9 @@
     "早": "Characters:早",
     "明": "Characters:明",
     "是": "Characters:是",
+    "晚": "Characters:晚",
     "有": "Characters:有",
+    "朋": "Characters:朋",
     "机": "Characters:机",
     "来": "Characters:来",
     "果": "Characters:果",
@@ -78,10 +86,14 @@
     "汉": "Characters:汉",
     "没": "Characters:没",
     "爸": "Characters:爸",
+    "王": "Characters:王",
+    "现": "Characters:现",
     "生": "Characters:生",
+    "电": "Characters:电",
     "的": "Characters:的",
     "经": "Characters:经",
     "老": "Characters:老",
+    "脑": "Characters:脑",
     "苹": "Characters:苹",
     "茶": "Characters:茶",
     "西": "Characters:西",
@@ -624,8 +636,200 @@
           "correct_choice_ids": [],
           "answer": "“明天再来吧。”老师说。 (“míngtiān zài lái ba.” lǎoshī shuō.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Is Xiao Wang a teacher?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "No, he is a student.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Where is he studying today?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "At home.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask whether your partner is a student, then answer.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你是学生吗？我是。 (Nǐ shì xuéshēng ma? Wǒ shì.) — Are you a student? Yes, I am.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask someone about their computer; respond negatively.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你有电脑吗？没有。 (Nǐ yǒu diànnǎo ma? Méiyǒu.) — Do you have a computer? No.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Making Basic Statements",
+        "context_en": "Listen to how small particles change the *function* of a sentence, not its main vocabulary.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你是老师吗？",
+            "pinyin": "Nǐ shì lǎoshī ma?",
+            "english": "Are you a teacher?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不是，我是学生。",
+            "pinyin": "Bú shì, wǒ shì xuéshēng.",
+            "english": "No, I am a student."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你有电脑吗？",
+            "pinyin": "Nǐ yǒu diànnǎo ma?",
+            "english": "Do you have a computer?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没有。你的呢？",
+            "pinyin": "Méiyǒu. Nǐ de ne?",
+            "english": "No. What about yours?"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "不 (bù) and 没有 (méiyǒu)",
+          "explanation_en": "不 (bù) typically negates identity, habitual actions, wants or future choices. 没有 (méiyǒu) negates possession and is used in common past-event negation.",
+          "formula_en": "不 + adjective/verb; 没有 + noun",
+          "examples": [
+            {
+              "hanzi": "我晚上不喝茶。",
+              "pinyin": "Wǒ wǎnshang bù hē chá.",
+              "english": "I do not drink tea in the evening."
+            },
+            {
+              "hanzi": "我妹妹没有手机。",
+              "pinyin": "Wǒ mèimei méiyǒu shǒujī.",
+              "english": "My younger sister does not have a mobile phone."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Particles for questions and responses",
+          "explanation_en": "吗 (ma) turns a statement into a yes/no question; 呢 (ne) often returns the topic to the listener; 吧 (ba) can soften a suggestion.",
+          "formula_en": "statement + 吗?; topic + 呢?; suggestion + 吧",
+          "examples": [
+            {
+              "hanzi": "她是学生吗？",
+              "pinyin": "Tā shì xuéshēng ma?",
+              "english": "Is she a student?"
+            },
+            {
+              "hanzi": "我们现在走吧。",
+              "pinyin": "Wǒmen xiànzài zǒu ba.",
+              "english": "Let’s go now."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make the affirmative statements negative with the appropriate word.",
+        "model": {
+          "hanzi": "我是老师。→ 我不是老师。",
+          "pinyin": "Wǒ shì lǎoshī. → Wǒ bú shì lǎoshī.",
+          "english": "I am a teacher. → I am not a teacher."
+        },
+        "substitutions": [
+          {
+            "cue_en": "possession",
+            "model_answer": {
+              "hanzi": "我有电脑。→ 我没有电脑。",
+              "pinyin": "Wǒ yǒu diànnǎo. → Wǒ méiyǒu diànnǎo.",
+              "english": "I have a computer. → I do not have a computer."
+            }
+          },
+          {
+            "cue_en": "habit",
+            "model_answer": {
+              "hanzi": "我喝茶。→ 我不喝茶。",
+              "pinyin": "Wǒ hē chá. → Wǒ bù hē chá.",
+              "english": "I drink tea. → I do not drink tea."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "小王不是老师，他是学生。他没有车，但是他的朋友有车。今天他不去学校，在家学习。",
+            "pinyin": "Xiǎo Wáng bú shì lǎoshī, tā shì xuéshēng. Tā méiyǒu chē, dànshì tā de péngyou yǒu chē. Jīntiān tā bú qù xuéxiào, zài jiā xuéxí.",
+            "english": "Xiao Wang is not a teacher; he is a student. He does not have a car, but his friend does. Today he is not going to school; he is studying at home."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Is Xiao Wang a teacher?",
+            "answer_en": "No, he is a student."
+          },
+          {
+            "prompt_en": "Where is he studying today?",
+            "answer_en": "At home."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask whether your partner is a student, then answer.",
+          "model_answer": {
+            "hanzi": "你是学生吗？我是。",
+            "pinyin": "Nǐ shì xuéshēng ma? Wǒ shì.",
+            "english": "Are you a student? Yes, I am."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask someone about their computer; respond negatively.",
+          "model_answer": {
+            "hanzi": "你有电脑吗？没有。",
+            "pinyin": "Nǐ yǒu diànnǎo ma? Méiyǒu.",
+            "english": "Do you have a computer? No."
+          }
+        }
+      ],
+      "common_pitfall": "Do not use 不有 to mean “do not have.” Use 没有 (méiyǒu) for lack of possession.",
+      "pronunciation_focus": "Before fourth tone, 不 (bù) changes to bú: 不是 (bú shì).",
+      "review": {
+        "can_do": [
+          "Negate a simple statement or request.",
+          "Recognize sentence-final particles.",
+          "Understand basic word order."
+        ],
+        "entry_ids": [
+          4,
+          13,
+          30,
+          115,
+          122,
+          124,
+          144,
+          188
+        ]
+      }
     }
   }
 }

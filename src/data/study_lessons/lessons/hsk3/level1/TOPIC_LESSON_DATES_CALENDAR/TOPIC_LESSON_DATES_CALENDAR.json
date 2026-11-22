@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-dates-calendar",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -47,14 +47,19 @@
     "二": "Characters:二",
     "五": "Characters:五",
     "今": "Characters:今",
+    "他": "Characters:他",
     "们": "Characters:们",
     "休": "Characters:休",
     "住": "Characters:住",
     "八": "Characters:八",
+    "六": "Characters:六",
+    "几": "Characters:几",
     "十": "Characters:十",
     "午": "Characters:午",
     "去": "Characters:去",
+    "友": "Characters:友",
     "号": "Characters:号",
+    "和": "Characters:和",
     "四": "Characters:四",
     "国": "Characters:国",
     "在": "Characters:在",
@@ -64,6 +69,8 @@
     "子": "Characters:子",
     "学": "Characters:学",
     "孩": "Characters:孩",
+    "家": "Characters:家",
+    "小": "Characters:小",
     "岁": "Characters:岁",
     "市": "Characters:市",
     "年": "Characters:年",
@@ -71,6 +78,7 @@
     "影": "Characters:影",
     "很": "Characters:很",
     "息": "Characters:息",
+    "想": "Characters:想",
     "我": "Characters:我",
     "新": "Characters:新",
     "日": "Characters:日",
@@ -80,14 +88,19 @@
     "是": "Characters:是",
     "月": "Characters:月",
     "有": "Characters:有",
+    "朋": "Characters:朋",
     "期": "Characters:期",
+    "李": "Characters:李",
     "校": "Characters:校",
     "汉": "Characters:汉",
     "点": "Characters:点",
+    "班": "Characters:班",
     "生": "Characters:生",
     "电": "Characters:电",
     "的": "Characters:的",
     "看": "Characters:看",
+    "要": "Characters:要",
+    "见": "Characters:见",
     "语": "Characters:语",
     "课": "Characters:课",
     "超": "Characters:超",
@@ -820,8 +833,201 @@
           "correct_choice_ids": [],
           "answer": "十月五号是星期一。 (shí yuè wǔ hào shì xīngqīyī.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What does Xiao Li want to do on Saturday?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Watch a movie with a friend.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What will he do on Sunday?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Study at home.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask someone what day of the week it is.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "今天星期几？ (Jīntiān xīngqī jǐ?) — What day is today?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say what day you will study.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我星期六学习汉语。 (Wǒ xīngqī liù xuéxí Hànyǔ.) — I study Chinese on Saturday.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Days, Months and Years",
+        "context_en": "Make a simple plan by naming today, tomorrow and the date.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天星期几？",
+            "pinyin": "Jīntiān xīngqī jǐ?",
+            "english": "What day of the week is it today?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "今天星期三。",
+            "pinyin": "Jīntiān xīngqī sān.",
+            "english": "It is Wednesday."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "明天是几月几号？",
+            "pinyin": "Míngtiān shì jǐ yuè jǐ hào?",
+            "english": "What month and day is tomorrow?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "明天五月十号。",
+            "pinyin": "Míngtiān wǔ yuè shí hào.",
+            "english": "Tomorrow is May 10."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Dates: year, month, day",
+          "explanation_en": "Chinese calendar dates move from larger to smaller units: 年 (nián), 月 (yuè), and 号 (hào) or 日 (rì). In speech, 号 (hào) is very common for the date.",
+          "formula_en": "year + 年 + month + 月 + day + 号",
+          "examples": [
+            {
+              "hanzi": "今天是八月三号。",
+              "pinyin": "Jīntiān shì bā yuè sān hào.",
+              "english": "Today is August 3."
+            },
+            {
+              "hanzi": "明天是星期六。",
+              "pinyin": "Míngtiān shì xīngqī liù.",
+              "english": "Tomorrow is Saturday."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Relative days versus calendar days",
+          "explanation_en": "昨天 (zuótiān), 今天 (jīntiān), 明天 (míngtiān) depend on when you speak. 星期 (xīngqī) names a week or a weekday according to context.",
+          "formula_en": "subject + day/time + verb",
+          "examples": [
+            {
+              "hanzi": "我昨天上课。",
+              "pinyin": "Wǒ zuótiān shàngkè.",
+              "english": "I attended class yesterday."
+            },
+            {
+              "hanzi": "我们明天见。",
+              "pinyin": "Wǒmen míngtiān jiàn.",
+              "english": "See you tomorrow."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Replace the date in a scheduling statement.",
+        "model": {
+          "hanzi": "我们五月十号见。",
+          "pinyin": "Wǒmen wǔ yuè shí hào jiàn.",
+          "english": "We will meet on May 10."
+        },
+        "substitutions": [
+          {
+            "cue_en": "May 12",
+            "model_answer": {
+              "hanzi": "我们五月十二号见。",
+              "pinyin": "Wǒmen wǔ yuè shí èr hào jiàn.",
+              "english": "We will meet on May 12."
+            }
+          },
+          {
+            "cue_en": "June 2",
+            "model_answer": {
+              "hanzi": "我们六月二号见。",
+              "pinyin": "Wǒmen liù yuè èr hào jiàn.",
+              "english": "We will meet on June 2."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "今天是星期五。小李明天不上班，想和朋友去看电影。星期日他要在家学习。",
+            "pinyin": "Jīntiān shì xīngqī wǔ. Xiǎo Lǐ míngtiān bú shàngbān, xiǎng hé péngyou qù kàn diànyǐng. Xīngqīrì tā yào zài jiā xuéxí.",
+            "english": "Today is Friday. Xiao Li does not work tomorrow and wants to see a movie with a friend. On Sunday he plans to study at home."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "What does Xiao Li want to do on Saturday?",
+            "answer_en": "Watch a movie with a friend."
+          },
+          {
+            "prompt_en": "What will he do on Sunday?",
+            "answer_en": "Study at home."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask someone what day of the week it is.",
+          "model_answer": {
+            "hanzi": "今天星期几？",
+            "pinyin": "Jīntiān xīngqī jǐ?",
+            "english": "What day is today?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say what day you will study.",
+          "model_answer": {
+            "hanzi": "我星期六学习汉语。",
+            "pinyin": "Wǒ xīngqī liù xuéxí Hànyǔ.",
+            "english": "I study Chinese on Saturday."
+          }
+        }
+      ],
+      "common_pitfall": "Do not reverse the English month/day order: 十号五月 is not a normal calendar date. Say 五月十号 (wǔ yuè shí hào).",
+      "pronunciation_focus": "Use 号 (hào) for an everyday spoken date; 日 (rì) is also used in written dates and formal contexts.",
+      "review": {
+        "can_do": [
+          "Use day, month, year and week words.",
+          "Talk about last, this and next year.",
+          "Understand simple dates and ages."
+        ],
+        "entry_ids": [
+          76,
+          94,
+          129,
+          172,
+          207,
+          243,
+          244,
+          269,
+          297
+        ]
+      }
     }
   }
 }

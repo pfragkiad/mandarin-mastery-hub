@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-counting-numbers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -26,7 +26,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -36,15 +36,18 @@
     "七": "Characters:七",
     "三": "Characters:三",
     "上": "Characters:上",
+    "两": "Characters:两",
     "个": "Characters:个",
     "中": "Characters:中",
     "九": "Characters:九",
     "书": "Characters:书",
+    "了": "Characters:了",
     "二": "Characters:二",
     "五": "Characters:五",
     "人": "Characters:人",
     "今": "Characters:今",
     "们": "Characters:们",
+    "元": "Characters:元",
     "八": "Characters:八",
     "六": "Characters:六",
     "十": "Characters:十",
@@ -52,8 +55,10 @@
     "午": "Characters:午",
     "去": "Characters:去",
     "友": "Characters:友",
+    "呢": "Characters:呢",
     "四": "Characters:四",
     "在": "Characters:在",
+    "多": "Characters:多",
     "天": "Characters:天",
     "始": "Characters:始",
     "姐": "Characters:姐",
@@ -61,6 +66,7 @@
     "学": "Characters:学",
     "室": "Characters:室",
     "家": "Characters:家",
+    "少": "Characters:少",
     "店": "Characters:店",
     "开": "Characters:开",
     "我": "Characters:我",
@@ -82,13 +88,16 @@
     "没": "Characters:没",
     "点": "Characters:点",
     "现": "Characters:现",
+    "班": "Characters:班",
     "生": "Characters:生",
     "百": "Characters:百",
     "看": "Characters:看",
     "苹": "Characters:苹",
     "课": "Characters:课",
     "这": "Characters:这",
+    "那": "Characters:那",
     "里": "Characters:里",
+    "钱": "Characters:钱",
     "间": "Characters:间",
     "零": "Characters:零"
   },
@@ -725,8 +734,202 @@
           "correct_choice_ids": [],
           "answer": "今天有八个学生上课。 (jīntiān yǒu bā gè xuéshēng shàngkè.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: How many people are in the class?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Twenty.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: How many students came today?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Eighteen.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Say the number 105 in Mandarin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "一百零五。 (Yì bǎi líng wǔ.) — One hundred and five.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Describe how many books you have.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我有两本书。 (Wǒ yǒu liǎng běn shū.) — I have two books.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Counting from One Upward",
+        "context_en": "Use prices, ages and quantities to practise number structure without memorizing an isolated list.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这本书多少钱？",
+            "pinyin": "Zhè běn shū duōshao qián?",
+            "english": "How much is this book?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "一百二十元。",
+            "pinyin": "Yì bǎi èr shí yuán.",
+            "english": "One hundred and twenty yuan."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那本呢？",
+            "pinyin": "Nà běn ne?",
+            "english": "What about that one?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "九十八元。",
+            "pinyin": "Jiǔ shí bā yuán.",
+            "english": "Ninety-eight yuan."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Building larger numbers",
+          "explanation_en": "Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ).",
+          "formula_en": "hundreds + tens + ones",
+          "examples": [
+            {
+              "hanzi": "二百三十六。",
+              "pinyin": "Èr bǎi sān shí liù.",
+              "english": "Two hundred and thirty-six."
+            },
+            {
+              "hanzi": "一千零二。",
+              "pinyin": "Yì qiān líng èr.",
+              "english": "One thousand and two."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Numbers with nouns",
+          "explanation_en": "Use a suitable classifier when counting most nouns. Do not put an English-style plural ending on the noun.",
+          "formula_en": "number + classifier + noun",
+          "examples": [
+            {
+              "hanzi": "三本书。",
+              "pinyin": "Sān běn shū.",
+              "english": "Three books."
+            },
+            {
+              "hanzi": "十个人。",
+              "pinyin": "Shí ge rén.",
+              "english": "Ten people."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the number, retaining the book classifier.",
+        "model": {
+          "hanzi": "我有三本书。",
+          "pinyin": "Wǒ yǒu sān běn shū.",
+          "english": "I have three books."
+        },
+        "substitutions": [
+          {
+            "cue_en": "five",
+            "model_answer": {
+              "hanzi": "我有五本书。",
+              "pinyin": "Wǒ yǒu wǔ běn shū.",
+              "english": "I have five books."
+            }
+          },
+          {
+            "cue_en": "ten",
+            "model_answer": {
+              "hanzi": "我现在有十本书。",
+              "pinyin": "Wǒ xiànzài yǒu shí běn shū.",
+              "english": "I now have ten books."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "学校里有三百个学生。我们班有二十个人。今天来了十八个学生。",
+            "pinyin": "Xuéxiào lǐ yǒu sān bǎi ge xuéshēng. Wǒmen bān yǒu èr shí ge rén. Jīntiān lái le shíbā ge xuéshēng.",
+            "english": "There are three hundred students in the school. Our class has twenty people. Eighteen students came today."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "How many people are in the class?",
+            "answer_en": "Twenty."
+          },
+          {
+            "prompt_en": "How many students came today?",
+            "answer_en": "Eighteen."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say the number 105 in Mandarin.",
+          "model_answer": {
+            "hanzi": "一百零五。",
+            "pinyin": "Yì bǎi líng wǔ.",
+            "english": "One hundred and five."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe how many books you have.",
+          "model_answer": {
+            "hanzi": "我有两本书。",
+            "pinyin": "Wǒ yǒu liǎng běn shū.",
+            "english": "I have two books."
+          }
+        }
+      ],
+      "common_pitfall": "A missing tens place may need 零 (líng): 一百零五 (yì bǎi líng wǔ), not 一百五 when you specifically mean 105.",
+      "pronunciation_focus": "Before a fourth-tone syllable, 一 (yī) normally sounds like yí; before a non-fourth tone, it often becomes yì. Displayed lexical pinyin may follow a different citation convention.",
+      "review": {
+        "can_do": [
+          "Read the digits and basic round numbers.",
+          "Understand how tens, hundreds and thousands are formed.",
+          "Recognize numbers in example sentences."
+        ],
+        "entry_ids": [
+          2,
+          6,
+          49,
+          95,
+          112,
+          113,
+          162,
+          173,
+          184,
+          254
+        ]
+      }
     }
   }
 }

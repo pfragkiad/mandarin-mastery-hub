@@ -2,9 +2,9 @@
 
 Say when activities happen, ask the time and identify parts of the day.
 
-**Topics:** time-calendar, daily-actions
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Tell the time with hours and minutes.
 
@@ -12,229 +12,155 @@ Say when activities happen, ask the time and identify parts of the day.
 
 - Describe when daily actions happen.
 
-## Overview
+## 1. Conversation — Talking About the Clock
 
-Say when activities happen, ask the time and identify parts of the day.
+A classmate asks about a meeting time. Learn to distinguish a clock reading from a duration.
 
-Tell the time with hours and minutes.
+**A:** 现在几点了？ (Xiànzài jǐ diǎn le?) — What time is it now?
 
-## Vocabulary and examples
+**B:** 上午九点半。 (Shàngwǔ jiǔ diǎn bàn.) — Half past nine in the morning.
 
-### 白天 (báitiān) — daytime
+**A:** 我们几点上课？ (Wǒmen jǐ diǎn shàngkè?) — What time does class start?
 
-HSK entry: 5 · POS: noun · introduced
+**B:** 十点，还有半个小时。 (Shí diǎn, hái yǒu bàn ge xiǎoshí.) — At ten; there is another half hour.
 
-**我白天上班。**
-*wǒ báitiān shàngbān.*
-I work during the day.
-**Usage:** 白天 contrasts with 晚上 and places the work in daytime hours.
+## 2. How the language works
 
-**白天我在学校学习。**
-*báitiān wǒ zài xuéxiào xuéxí.*
-I study at school during the day.
+### Asking and stating clock time
 
-### 点 (diǎn) — o'clock; point
+几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.
 
-HSK entry: 33 · POS: classifier · introduced
+**Pattern:** time + subject/verb or subject + time + verb
 
-**现在几点？**
-*xiànzài jǐ diǎn?*
-What time is it now?
-**Usage:** 几点 asks for the hour, while 现在 anchors the question to the present.
+**我们下午三点见。**
+*Wǒmen xiàwǔ sān diǎn jiàn.*
+Let’s meet at 3 p.m.
 
-**下午三点下课。**
-*xiàwǔ sān diǎn xiàkè.*
-Class ends at three in the afternoon.
+**现在八点十五分。**
+*Xiànzài bā diǎn shíwǔ fēn.*
+It is 8:15 now.
 
-Classifier and time unit in clock readings; also a noun for a point.
+### Time point versus duration
 
-### 分 (fēn) — minute; divide
+点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.
 
-HSK entry: 55 · POS: classifier · introduced
+**Pattern:** 九点 (clock) ≠ 九个小时 (duration)
 
-**现在是八点十分。**
-*xiànzài shì bā diǎn shí fēn.*
-It is 8:10 now.
-**Usage:** 八点十分 is 8:10, with 分 marking minutes after the hour.
+**我九点上班。**
+*Wǒ jiǔ diǎn shàngbān.*
+I start work at nine.
 
-**下午三点二十分上课。**
-*xiàwǔ sān diǎn èr shí fēn shàngkè.*
-Class starts at 3:20 p.m.
+**我学习两个小时。**
+*Wǒ xuéxí liǎng ge xiǎoshí.*
+I study for two hours.
 
-HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts.
+## 3. Build new sentences
 
-### 分钟 (fēnzhōng) — minute
+Change the meeting time in a complete invitation.
 
-HSK entry: 56 · POS: classifier · introduced
+**Worked model:** **我们三点见。**
+*Wǒmen sān diǎn jiàn.*
+Let us meet at three.
 
-**请等五分钟。**
-*qǐng děng wǔ fēnzhōng.*
-Please wait five minutes.
-**Usage:** 请 makes the request courteous; 五分钟 is a five-minute duration.
+**Change 1: four**
 
-**请十分钟后再来。**
-*qǐng shí fēnzhōng hòu zài lái.*
-Please come back in ten minutes.
+*Model response:* **我们四点见。**
+*Wǒmen sì diǎn jiàn.*
+Let us meet at four.
 
-Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time.
+**Change 2: half past five**
 
-### 上午 (shàngwǔ) — morning
+*Model response:* **我们五点半见。**
+*Wǒmen wǔ diǎn bàn jiàn.*
+Let us meet at five thirty.
 
-HSK entry: 178 · POS: noun · introduced
+## 4. Read for meaning — A short connected story
 
-**我上午有时间。**
-*wǒ shàngwǔ yǒu shíjiān.*
-I have time in the morning.
-**Usage:** 有时间 means have time or be available during the period mentioned.
+**妈妈下午两点下班，三点到家。她晚上七点吃晚饭。**
+*Māma xiàwǔ liǎng diǎn xiàbān, sān diǎn dào jiā. Tā wǎnshang qī diǎn chī wǎnfàn.*
+Mom finishes work at 2 p.m. and arrives home at three. She eats dinner at 7 p.m.
 
-**上午我们有汉语课。**
-*shàngwǔ wǒmen yǒu Hànyǔ kè.*
-We have Chinese-language class in the morning.
+**Q1. At what time does Mom finish work?** Suggested answer: 2 p.m.
 
-### 时候 (shíhou) — time; moment
+**Q2. At what time does she eat dinner?** Suggested answer: 7 p.m.
 
-HSK entry: 185 · POS: noun · introduced
+## 5. Speak and personalize
 
-**你什么时候来？**
-*nǐ shénme shíhou lái?*
-When will you come?
-**Usage:** 什么时候 asks when an event will happen, not merely for the clock time.
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**上课的时候不要说话。**
-*shàngkè de shíhou búyào shuōhuà.*
-Please don't talk during class.
+**Speaking 1:** Ask the current time and answer.
 
-### 时间 (shíjiān) — time
+*Possible response:* **现在几点？现在十点。**
+*Xiànzài jǐ diǎn? Xiànzài shí diǎn.*
+What time is it? It is ten.
 
-HSK entry: 186 · POS: noun · introduced
+**Speaking 2:** Say how many hours you study, not when you study.
 
-**我现在没有时间。**
-*wǒ xiànzài méiyǒu shíjiān.*
-I don't have time now.
-**Usage:** 没有时间 means lack time or be unavailable now.
+*Possible response:* **我学习两个小时。**
+*Wǒ xuéxí liǎng ge xiǎoshí.*
+I study for two hours.
 
-**上课时间是上午九点。**
-*shàngkè shíjiān shì shàngwǔ jiǔ diǎn.*
-Class starts at nine in the morning.
+## 6. Watch out
 
-### 晚 (wǎn) — late
+Do not confuse 三点 (sān diǎn, 3 o’clock) with 三个小时 (sān ge xiǎoshí, three hours).
 
-HSK entry: 215 · POS: adjective · introduced
+**Pronunciation:** Read 点 (diǎn) as third tone; in two third tones, 九点 (jiǔ diǎn) is pronounced with third-tone sandhi in connected speech.
 
-**我今天来晚了。**
-*wǒ jīntiān lái wǎn le.*
-I arrived late today.
-**Usage:** 来晚了 means arrive late; 晚 here is an adverbial description.
+## 7. Check what you can do
 
-**今天爸爸下班很晚。**
-*jīntiān bàba xiàbān hěn wǎn.*
-Dad gets off work very late today.
+**Comprehension:** Reading comprehension: At what time does Mom finish work?
+**Answer:** 2 p.m.. Check against the connected reading passage, not the vocabulary cards.
 
-### 晚上 (wǎnshang) — evening
+**Comprehension:** Reading comprehension: At what time does she eat dinner?
+**Answer:** 7 p.m.. Check against the connected reading passage, not the vocabulary cards.
 
-HSK entry: 217 · POS: noun · introduced
+**Production:** Say this aloud: Ask the current time and answer.
+**Answer:** 现在几点？现在十点。 (Xiànzài jǐ diǎn? Xiànzài shí diǎn.) — What time is it? It is ten.. Illustrative answer. Other natural responses may be correct.
 
-**晚上我在家看书。**
-*wǎnshang wǒ zài jiā kàn shū.*
-I read at home in the evening.
-**Usage:** 晚上 is evening or night; 在家 gives the location of reading.
+**Production:** Say this aloud: Say how many hours you study, not when you study.
+**Answer:** 我学习两个小时。 (Wǒ xuéxí liǎng ge xiǎoshí.) — I study for two hours.. Illustrative answer. Other natural responses may be correct.
 
-**晚上八点我们在家看电视。**
-*wǎnshang bā diǎn wǒmen zài jiā kàn diànshì.*
-We watch TV at home at eight in the evening.
+## Review and next step
 
-### 下午 (xiàwǔ) — afternoon
+- Tell the time with hours and minutes.
 
-HSK entry: 230 · POS: noun · introduced
+- Recognize morning, afternoon and evening.
 
-**我下午去商店。**
-*wǒ xiàwǔ qù shāngdiàn.*
-I will go to the store this afternoon.
-**Usage:** 下午 is the period after noon; context can make the planned visit future.
+- Describe when daily actions happen.
 
-**下午的课三点开始。**
-*xiàwǔ de kè sān diǎn kāishǐ.*
-The afternoon class starts at three.
+## Reference word bank (details on vocabulary cards)
 
-### 现在 (xiànzài) — now
+- 白天 (báitiān) — daytime [HSK entry 5]
 
-HSK entry: 232 · POS: noun · introduced
+- 点 (diǎn) — o'clock; point [HSK entry 33]
 
-**现在是上午十点。**
-*xiànzài shì shàngwǔ shí diǎn.*
-It is ten in the morning now.
-**Usage:** 上午十点 is 10 a.m.; 现在 gives the current time frame.
+- 分 (fēn) — minute; divide [HSK entry 55]
 
-**现在开始上课。**
-*xiànzài kāishǐ shàngkè.*
-Class starts now.
+- 分钟 (fēnzhōng) — minute [HSK entry 56]
 
-Temporal noun meaning now, not a verb.
+- 上午 (shàngwǔ) — morning [HSK entry 178]
 
-### 小时 (xiǎoshí) — hour
+- 时候 (shíhou) — time; moment [HSK entry 185]
 
-HSK entry: 236 · POS: noun · introduced
+- 时间 (shíjiān) — time [HSK entry 186]
 
-**我每天学习两个小时。**
-*wǒ měitiān xuéxí liǎng ge xiǎoshí.*
-I study for two hours every day.
-**Usage:** 小时 expresses duration in hours; 两个小时 means two hours.
+- 晚 (wǎn) — late [HSK entry 215]
 
-**下午我们要上两个小时的课。**
-*xiàwǔ wǒmen yào shàng liǎng gè xiǎoshí de kè.*
-We have two hours of class in the afternoon.
+- 晚上 (wǎnshang) — evening [HSK entry 217]
 
-### 早 (zǎo) — early
+- 下午 (xiàwǔ) — afternoon [HSK entry 230]
 
-HSK entry: 273 · POS: adjective · introduced
+- 现在 (xiànzài) — now [HSK entry 232]
 
-**我今天来得很早。**
-*wǒ jīntiān lái de hěn zǎo.*
-I came very early today.
-**Usage:** 来得很早 uses 得 to describe the manner or timing of arriving.
+- 小时 (xiǎoshí) — hour [HSK entry 236]
 
-**他每天很早起床。**
-*tā měitiān hěn zǎo qǐchuáng.*
-He gets up very early every day.
-**Usage:** 很早 means early; this avoids repeating 早 in the same sentence.
+- 早 (zǎo) — early [HSK entry 273]
 
-### 早上 (zǎoshang) — morning
+- 早上 (zǎoshang) — morning [HSK entry 275]
 
-HSK entry: 275 · POS: noun · introduced
+- 中午 (zhōngwǔ) — noon [HSK entry 291]
 
-**早上我喝茶。**
-*zǎoshang wǒ hē chá.*
-I drink tea in the morning.
-**Usage:** 早上 specifies the morning period; 喝茶 is the activity.
-
-**我们每天早上八点上课。**
-*wǒmen měitiān zǎoshang bā diǎn shàngkè.*
-We have class at eight every morning.
-
-### 中午 (zhōngwǔ) — noon
-
-HSK entry: 291 · POS: noun · introduced
-
-**我们中午吃饭。**
-*wǒmen zhōngwǔ chī fàn.*
-We have lunch at noon.
-**Usage:** 中午 means noon; 吃饭 can mean having lunch in this setting.
-
-**中午十二点到一点是午饭时间。**
-*zhōngwǔ shí èr diǎn dào yì diǎn shì wǔfàn shíjiān.*
-Lunch is from twelve to one.
-
-## Usage and grammar
-
-### Stating a clock time
-
-Clock expressions place the hour before the minute.
-
-### Durations in minutes
-
-A duration word differs from the minute marker inside a clock reading.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “daytime”?
 - a. 白天 (báitiān) — 

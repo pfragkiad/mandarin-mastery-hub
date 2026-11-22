@@ -3,7 +3,7 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The library uses core v3.0.1 (schema v3.0.0): 21 HSK 3.0 Level 1 topic lessons placed by
+The library uses core v3.1.0: 21 HSK 3.0 Level 1 topic lessons (schema mandarin-topic-lesson/3.1.0, whose required `sections.teaching_plan` the lesson page renders as its teaching path, with the words as a collapsed word bank) placed by
 a course manifest, plus two independent character lessons (次, 以). Learner content only;
 editorial references live in each lesson's `report.md`, which the app never loads.
 

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-questions-and-pointing",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -40,15 +40,21 @@
     "么": "Characters:么",
     "也": "Characters:也",
     "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
     "些": "Characters:些",
+    "亮": "Characters:亮",
     "人": "Characters:人",
     "什": "Characters:什",
     "今": "Characters:今",
     "他": "Characters:他",
     "以": "Characters:以",
+    "件": "Characters:件",
     "会": "Characters:会",
+    "但": "Characters:但",
     "住": "Characters:住",
     "你": "Characters:你",
+    "便": "Characters:便",
     "做": "Characters:做",
     "儿": "Characters:儿",
     "写": "Characters:写",
@@ -59,6 +65,7 @@
     "可": "Characters:可",
     "吃": "Characters:吃",
     "吗": "Characters:吗",
+    "呢": "Characters:呢",
     "哪": "Characters:哪",
     "商": "Characters:商",
     "喜": "Characters:喜",
@@ -67,12 +74,15 @@
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "太": "Characters:太",
     "她": "Characters:她",
     "好": "Characters:好",
     "字": "Characters:字",
     "学": "Characters:学",
+    "宜": "Characters:宜",
     "室": "Characters:室",
     "家": "Characters:家",
+    "小": "Characters:小",
     "少": "Characters:少",
     "师": "Characters:师",
     "店": "Characters:店",
@@ -81,13 +91,18 @@
     "怎": "Characters:怎",
     "想": "Characters:想",
     "我": "Characters:我",
+    "手": "Characters:手",
+    "找": "Characters:找",
     "教": "Characters:教",
     "文": "Characters:文",
     "新": "Characters:新",
     "是": "Characters:是",
     "有": "Characters:有",
     "朋": "Characters:朋",
+    "服": "Characters:服",
     "本": "Characters:本",
+    "机": "Characters:机",
+    "李": "Characters:李",
     "来": "Characters:来",
     "果": "Characters:果",
     "校": "Characters:校",
@@ -95,6 +110,8 @@
     "欢": "Characters:欢",
     "汉": "Characters:汉",
     "没": "Characters:没",
+    "漂": "Characters:漂",
+    "点": "Characters:点",
     "班": "Characters:班",
     "生": "Characters:生",
     "的": "Characters:的",
@@ -103,6 +120,7 @@
     "老": "Characters:老",
     "苹": "Characters:苹",
     "茶": "Characters:茶",
+    "衣": "Characters:衣",
     "要": "Characters:要",
     "觉": "Characters:觉",
     "语": "Characters:语",
@@ -110,6 +128,7 @@
     "请": "Characters:请",
     "读": "Characters:读",
     "谁": "Characters:谁",
+    "贵": "Characters:贵",
     "车": "Characters:车",
     "边": "Characters:边",
     "这": "Characters:这",
@@ -1124,8 +1143,199 @@
           "correct_choice_ids": [],
           "answer": "这个班有多少学生？ (zhège bān yǒu duōshao xuéshēng?)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What is Xiao Li shopping for?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A mobile phone.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Which phone is cheaper?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "That one.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask where the school is.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这个学校在哪里？ (Zhège xuéxiào zài nǎlǐ?) — Where is this school?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask which book someone wants.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你要哪本书？ (Nǐ yào nǎ běn shū?) — Which book do you want?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Asking and Pointing",
+        "context_en": "At a bookstore, one friend asks which object and where; the other uses near/far demonstratives.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你要哪本书？",
+            "pinyin": "Nǐ yào nǎ běn shū?",
+            "english": "Which book do you want?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我要这本。",
+            "pinyin": "Wǒ yào zhè běn.",
+            "english": "I want this one."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那本呢？",
+            "pinyin": "Nà běn ne?",
+            "english": "What about that one?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "那本太贵了。",
+            "pinyin": "Nà běn tài guì le.",
+            "english": "That one is too expensive."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "This versus that",
+          "explanation_en": "这 (zhè) points to something closer in the discourse or situation; 那 (nà) points to something more distant. Add a classifier when identifying a specific item.",
+          "formula_en": "这/那 + classifier + noun",
+          "examples": [
+            {
+              "hanzi": "这个苹果很好吃。",
+              "pinyin": "Zhège píngguǒ hěn hǎochī.",
+              "english": "This apple is tasty."
+            },
+            {
+              "hanzi": "那件衣服很漂亮。",
+              "pinyin": "Nà jiàn yīfu hěn piàoliang.",
+              "english": "That item of clothing is pretty."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Choose the right question word",
+          "explanation_en": "什么 (shénme) asks “what”; 谁 (shéi) asks “who”; 哪 (nǎ) asks “which”; 哪里 (nǎlǐ) asks “where”; 怎么 (zěnme) asks “how”.",
+          "formula_en": "谁 + verb? / 在 + 哪里?",
+          "examples": [
+            {
+              "hanzi": "谁是你的老师？",
+              "pinyin": "Shéi shì nǐ de lǎoshī?",
+              "english": "Who is your teacher?"
+            },
+            {
+              "hanzi": "你住在哪里？",
+              "pinyin": "Nǐ zhù zài nǎlǐ?",
+              "english": "Where do you live?"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Move from a general what-question to a which-question.",
+        "model": {
+          "hanzi": "你想买什么？",
+          "pinyin": "Nǐ xiǎng mǎi shénme?",
+          "english": "What do you want to buy?"
+        },
+        "substitutions": [
+          {
+            "cue_en": "which book",
+            "model_answer": {
+              "hanzi": "你想买哪本书？",
+              "pinyin": "Nǐ xiǎng mǎi nǎ běn shū?",
+              "english": "Which book do you want to buy?"
+            }
+          },
+          {
+            "cue_en": "which clothes",
+            "model_answer": {
+              "hanzi": "你想买哪件衣服？",
+              "pinyin": "Nǐ xiǎng mǎi nǎ jiàn yīfu?",
+              "english": "Which item of clothing do you want to buy?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "小李在商店里找手机。店里有很多手机。他喜欢这个，但是那个便宜一点儿。",
+            "pinyin": "Xiǎo Lǐ zài shāngdiàn lǐ zhǎo shǒujī. Diàn lǐ yǒu hěn duō shǒujī. Tā xǐhuan zhège, dànshì nàge piányi yìdiǎnr.",
+            "english": "Xiao Li is looking at phones in a store. There are many phones. He likes this one, but that one is a little cheaper."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "What is Xiao Li shopping for?",
+            "answer_en": "A mobile phone."
+          },
+          {
+            "prompt_en": "Which phone is cheaper?",
+            "answer_en": "That one."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask where the school is.",
+          "model_answer": {
+            "hanzi": "这个学校在哪里？",
+            "pinyin": "Zhège xuéxiào zài nǎlǐ?",
+            "english": "Where is this school?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask which book someone wants.",
+          "model_answer": {
+            "hanzi": "你要哪本书？",
+            "pinyin": "Nǐ yào nǎ běn shū?",
+            "english": "Which book do you want?"
+          }
+        }
+      ],
+      "common_pitfall": "哪 (nǎ, which) and 那 (nà, that) are different characters and tones. Do not write 那本 (nà běn) when asking “which book?”.",
+      "pronunciation_focus": "In spontaneous speech, 谁 has common readings shéi and shuí; avoid treating them as different words.",
+      "review": {
+        "can_do": [
+          "Ask basic information questions.",
+          "Use this/that and here/there naturally.",
+          "Choose a demonstrative expression for singular or plural things."
+        ],
+        "entry_ids": [
+          131,
+          133,
+          136,
+          138,
+          181,
+          279,
+          281
+        ]
+      }
     }
   }
 }

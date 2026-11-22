@@ -3688,6 +3688,16 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-priority { min-width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); color: var(--muted-foreground); }
 .lesson-priority.is-a { color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, transparent); }
 .lesson-priority.is-b { color: var(--rank-gold); border-color: color-mix(in oklab, var(--rank-gold) 45%, transparent); }
+/* v3.1 teaching plan: dialogue turns (speaker badge + sentence), pattern formula, tasks with hidden model answers. */
+.lesson-dialogue { display: grid; gap: 12px; }
+.lesson-turn { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: start; }
+.lesson-turn-speaker { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; border: 1px solid var(--border); font-size: 12px; font-weight: 600; color: var(--primary); }
+.lesson-formula { display: inline-block; font-size: 13px; padding: 3px 10px; border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent); border-radius: 999px; color: var(--primary); margin: 0 0 10px; }
+.lesson-task-label { font-size: 12px; color: var(--muted-foreground); margin: 0 0 6px; }
+.lesson-task + .lesson-stack { margin-top: 10px; }
+.lesson-section .lesson-stack + .lesson-stack { margin-top: 14px; }
+.lesson-reveal { margin-top: 8px; }
+.lesson-section .lesson-details + .lesson-details, .lesson-section .lesson-grid + .lesson-details, .lesson-section .lesson-objectives + .lesson-details { margin-top: 16px; }
 .lesson-pattern-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .lesson-pattern-line .lesson-hanzi { font-size: 24px; }
 .lesson-pattern-line .pinyin { font-size: 14px; }

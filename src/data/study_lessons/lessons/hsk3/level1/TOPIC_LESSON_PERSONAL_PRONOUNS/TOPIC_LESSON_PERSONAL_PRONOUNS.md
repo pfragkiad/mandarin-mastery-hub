@@ -2,9 +2,9 @@
 
 Refer to yourself and other people using Mandarin personal pronouns.
 
-**Topics:** reference-questions, people-identity
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Identify first-, second- and third-person pronouns.
 
@@ -12,181 +12,149 @@ Refer to yourself and other people using Mandarin personal pronouns.
 
 - Recognize polite forms of address.
 
-## Overview
+## 1. Conversation — Talking About People
 
-Refer to yourself and other people using Mandarin personal pronouns.
+A group of classmates identifies who is speaking, whom they address, and whom they refer to.
 
-Identify first-, second- and third-person pronouns.
+**A:** 你们是学生吗？ (Nǐmen shì xuéshēng ma?) — Are you all students?
 
-## Vocabulary and examples
+**B:** 是，我们都是学生。 (Shì, wǒmen dōu shì xuéshēng.) — Yes, we are all students.
 
-### 大家 (dàjiā) — everyone
+**A:** 她也是学生吗？ (Tā yě shì xuéshēng ma?) — Is she a student too?
 
-HSK entry: 26 · POS: pronoun · introduced
+**B:** 是，她是我同学。 (Shì, tā shì wǒ tóngxué.) — Yes, she is my classmate.
 
-**大家都来了。**
-*dàjiā dōu lái le.*
-Everyone has come.
-**Usage:** 大家 refers to everyone present or in the relevant group; 都 reinforces “all.”
+## 2. How the language works
 
-**大家下午两点来上课。**
-*dàjiā xiàwǔ liǎng diǎn lái shàngkè.*
-Everyone comes to class at two in the afternoon.
-**Usage:** A simple class schedule: 来上课 describes coming to attend a lesson.
+### Person and number
 
-### 你 (nǐ) — you
+我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.
 
-HSK entry: 146 · POS: pronoun · introduced
+**Pattern:** pronoun + 是 + identity
 
-**你好，你是新学生吗？**
-*nǐ hǎo, nǐ shì xīn xuéshēng ma?*
-Hello, are you a new student?
+**他们是老师。**
+*Tāmen shì lǎoshī.*
+They are teachers.
 
-**你可以在这里看书。**
-*nǐ kěyǐ zài zhèlǐ kàn shū.*
-You can read books here.
+**我们是朋友。**
+*Wǒmen shì péngyou.*
+We are friends.
 
-### 你们 (nǐmen) — you (plural)
+### Written 他 (tā), 她 (tā), 它 (tā)
 
-HSK entry: 148 · POS: pronoun · introduced
+These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.
 
-**你们今天上课吗？**
-*nǐmen jīntiān shàngkè ma?*
-Do you all have class today?
-**Usage:** 你们 addresses two or more people; 吗 marks a yes–no question.
+**Pattern:** 他/她/它 + verb
 
-**你们明天上午九点来。**
-*nǐmen míngtiān shàngwǔ jiǔ diǎn lái.*
-You all come tomorrow at nine in the morning.
+**她在看书。**
+*Tā zài kàn shū.*
+She is reading.
 
-### 您 (nín) — you (polite)
+**它是一只小猫。**
+*Tā shì yì zhī xiǎo māo.*
+It is a small cat.
 
-HSK entry: 150 · POS: pronoun · introduced
+## 3. Build new sentences
 
-**您好，请问您叫什么名字？**
-*nín hǎo, qǐngwèn nín jiào shénme míngzi?*
-Hello, may I ask your name?
-**Usage:** 您 is the respectful form of 你, useful when addressing an unfamiliar adult.
+Change the pronoun while keeping the identity predicate.
 
-**您好，请进。**
-*nín hǎo, qǐng jìn.*
-Hello, please come in.
+**Worked model:** **我是学生。**
+*Wǒ shì xuéshēng.*
+I am a student.
 
-### 他 (tā) — he
+**Change 1: we**
 
-HSK entry: 200 · POS: pronoun · introduced
+*Model response:* **我们是学生。**
+*Wǒmen shì xuéshēng.*
+We are students.
 
-**他是我的哥哥。**
-*tā shì wǒ de gēge.*
-He is my older brother.
-**Usage:** 他 is the third-person pronoun for a male person; 哥哥 is older brother.
+**Change 2: they**
 
-**他每天坐火车上班。**
-*tā měitiān zuò huǒchē shàngbān.*
-He takes the train to work every day.
+*Model response:* **他们是学生。**
+*Tāmen shì xuéshēng.*
+They are students.
 
-### 它 (tā) — it
+## 4. Read for meaning — A short connected story
 
-HSK entry: 201 · POS: pronoun · introduced
+**我和姐姐都是学生，我们在一个学校。她喜欢读书，我喜欢写汉字。我们每天一起去学校。**
+*Wǒ hé jiějie dōu shì xuéshēng, wǒmen zài yí ge xuéxiào. Tā xǐhuan dúshū, wǒ xǐhuan xiě Hànzì. Wǒmen měi tiān yìqǐ qù xuéxiào.*
+My older sister and I are both students at the same school. She likes reading, and I like writing Chinese characters. We go to school together every day.
 
-**它是一只猫。**
-*tā shì yì zhī māo.*
-It is a cat.
-**Usage:** 它 generally refers to animals or things in writing; 只 counts the cat.
+**Q1. Who does 我们 (wǒmen) refer to in this passage?** Suggested answer: The speaker and their older sister.
 
-**这只猫很小，它喜欢玩。**
-*zhè zhī māo hěn xiǎo, tā xǐhuan wán.*
-This cat is very small; it likes playing.
+**Q2. Are they at the same school?** Suggested answer: Yes.
 
-### 她 (tā) — she
+## 5. Speak and personalize
 
-HSK entry: 202 · POS: pronoun · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**她是我的姐姐。**
-*tā shì wǒ de jiějie.*
-She is my older sister.
-**Usage:** 她 is the written third-person pronoun for a female person.
+**Speaking 1:** Address several classmates with a yes/no question.
 
-**她会说中文，也会唱歌。**
-*tā huì shuō Zhōngwén, yě huì chàng gē.*
-She can speak Chinese and can also sing.
+*Possible response:* **你们是学生吗？**
+*Nǐmen shì xuéshēng ma?*
+Are you all students?
 
-### 他们 (tāmen) — they (male/mixed)
+**Speaking 2:** Point to a pet and say it is a cat.
 
-HSK entry: 203 · POS: pronoun · introduced
+*Possible response:* **它是一只小猫。**
+*Tā shì yì zhī xiǎo māo.*
+It is a small cat.
 
-**他们在学校。**
-*tāmen zài xuéxiào.*
-They are at school.
-**Usage:** 他们 is plural “they” for males or mixed groups in ordinary writing.
+## 6. Watch out
 
-**他们每天上午上课。**
-*tāmen měitiān shàngwǔ shàngkè.*
-They have class every morning.
+他 (tā), 她 (tā) and 它 (tā) have the same pronunciation, so written gender/animacy distinctions must not be treated as different sounds.
 
-### 它们 (tāmen) — they (nonhuman)
+**Pronunciation:** Practise third-tone sandhi in 你好 (nǐ hǎo), typically pronounced approximately ní hǎo in connected speech, while lexical pinyin remains nǐ hǎo.
 
-HSK entry: 204 · POS: pronoun · introduced
+## 7. Check what you can do
 
-**它们都是小猫。**
-*tāmen dōu shì xiǎomāo.*
-They are all kittens.
-**Usage:** 它们 is the written plural form for animals or things, here kittens.
+**Comprehension:** Reading comprehension: Who does 我们 (wǒmen) refer to in this passage?
+**Answer:** The speaker and their older sister.. Check against the connected reading passage, not the vocabulary cards.
 
-**这里有三只猫，它们都很小。**
-*zhèlǐ yǒu sān zhī māo, tāmen dōu hěn xiǎo.*
-There are three cats here; they are all small.
+**Comprehension:** Reading comprehension: Are they at the same school?
+**Answer:** Yes.. Check against the connected reading passage, not the vocabulary cards.
 
-### 她们 (tāmen) — they (female)
+**Production:** Say this aloud: Address several classmates with a yes/no question.
+**Answer:** 你们是学生吗？ (Nǐmen shì xuéshēng ma?) — Are you all students?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 205 · POS: pronoun · introduced
+**Production:** Say this aloud: Point to a pet and say it is a cat.
+**Answer:** 它是一只小猫。 (Tā shì yì zhī xiǎo māo.) — It is a small cat.. Illustrative answer. Other natural responses may be correct.
 
-**她们都是学生。**
-*tāmen dōu shì xuéshēng.*
-They are all students.
-**Usage:** 她们 refers to a group of women or girls in written Chinese.
+## Review and next step
 
-**她们喜欢一起读书。**
-*tāmen xǐhuan yìqǐ dúshū.*
-They [female] like reading together.
+- Identify first-, second- and third-person pronouns.
 
-### 我 (wǒ) — I; me
+- Distinguish singular and plural forms.
 
-HSK entry: 221 · POS: pronoun · introduced
+- Recognize polite forms of address.
 
-**我喜欢汉语。**
-*wǒ xǐhuan Hànyǔ.*
-I like Chinese.
-**Usage:** 我 is the first-person singular pronoun; the sentence states a personal preference.
+## Reference word bank (details on vocabulary cards)
 
-**我每天上午学习汉语。**
-*wǒ měitiān shàngwǔ xuéxí Hànyǔ.*
-I study Chinese every morning.
+- 大家 (dàjiā) — everyone [HSK entry 26]
 
-### 我们 (wǒmen) — we
+- 你 (nǐ) — you [HSK entry 146]
 
-HSK entry: 222 · POS: pronoun · introduced
+- 你们 (nǐmen) — you (plural) [HSK entry 148]
 
-**我们一起学习。**
-*wǒmen yìqǐ xuéxí.*
-We study together.
-**Usage:** 我们 is “we”; 一起 emphasizes acting as a group.
+- 您 (nín) — you (polite) [HSK entry 150]
 
-**我们每天一起读书。**
-*wǒmen měitiān yìqǐ dúshū.*
-We read together every day.
+- 他 (tā) — he [HSK entry 200]
 
-## Usage and grammar
+- 它 (tā) — it [HSK entry 201]
 
-### Direct address
+- 她 (tā) — she [HSK entry 202]
 
-Mandarin uses dedicated second-person pronouns and a polite form.
+- 他们 (tāmen) — they (male/mixed) [HSK entry 203]
 
-### Referring to yourself
+- 它们 (tāmen) — they (nonhuman) [HSK entry 204]
 
-Personal pronouns normally appear before the verb in a simple statement.
+- 她们 (tāmen) — they (female) [HSK entry 205]
 
-## Practice
+- 我 (wǒ) — I; me [HSK entry 221]
+
+- 我们 (wǒmen) — we [HSK entry 222]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “everyone”?
 - a. 大家 (dàjiā) — 

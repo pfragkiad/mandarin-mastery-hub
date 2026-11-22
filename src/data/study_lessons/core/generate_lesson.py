@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Mandarin Tutor v3.0.0: deterministic learner HTML/Markdown/ZIP generator.
+"""Mandarin Tutor v3.1.0: deterministic learner HTML/Markdown/ZIP generator.
 
-Supported schemas: mandarin-character-lesson/3.0.0, mandarin-topic-lesson/3.0.0,
+Supported schemas: mandarin-character-lesson/3.0.0, mandarin-topic-lesson/3.0.0 and /3.1.0,
 mandarin-general-lesson/3.0.0 (generic/grammar/dialogue/review).
 The JSON is authoritative. Provenance lives exclusively in report.md.
 No internet services, third-party fonts, or paid libraries are used.
@@ -26,7 +26,7 @@ h2{color:var(--navy);font-size:1.3rem;margin:1.5em 0 .6em;border-bottom:1px soli
 h3{color:var(--navy);margin:1.1em 0 .3em}.muted,.pinyin,.caption{color:var(--muted)}.eyebrow{text-transform:uppercase;font-size:.73rem;letter-spacing:.14em;color:var(--accent);font-weight:750}
 .hanzi,.hanzi-char{font-family:Kaiti SC,STKaiti,KaiTi,DFKai-SB,BiauKai,SimSun,serif}.hanzi{font-size:1.27em}.hanzi-char{cursor:default}
 [data-catalog-id]{border-bottom:1px dotted #77b4a9}code{white-space:break-spaces;font-size:.88em}p{margin:.45em 0 1em}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.card{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff}.card h3{margin:0}.number{font-size:.77rem;color:var(--accent);font-weight:750}
+.exchange{margin:11px 0;padding:12px 14px;border-left:3px solid #78a9bb;background:#f5f9fb;border-radius:0 9px 9px 0}.exchange p{margin:3px 0}.exchange .speaker{font-weight:700;color:var(--navy);font-size:.84em}.task{margin:12px 0;padding:15px;border:1px solid var(--line);border-radius:10px}.task .model{background:#f4faf8;padding:10px;border-radius:7px}.chip small{color:var(--muted)}.lesson-tip{border-left:3px solid #f1b85d;padding:12px;background:#fffaf1;border-radius:0 8px 8px 0}.smallbank{margin:12px 0;padding:10px;border:1px solid var(--line);border-radius:8px}.sectionlead{font-size:.93rem;color:var(--muted);margin-bottom:12px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.card{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff}.card h3{margin:0}.number{font-size:.77rem;color:var(--accent);font-weight:750}
 .example{border-left:3px solid #96cabe;padding:7px 13px;margin:9px 0;background:#f6faf9;border-radius:0 8px 8px 0}.example p{margin:.25em 0}.note{font-size:.87rem;color:var(--muted)}
 .term-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}.term-head .hanzi{font-size:1.55rem;font-weight:600}.term-head .pinyin{font-size:.9rem}
 .chip{display:inline-block;background:var(--mint);border-radius:99px;padding:2px 9px;margin:2px 5px 2px 0;font-size:.77rem;color:#235b59}
@@ -84,7 +84,87 @@ def header(data,refs):
     label=' · '.join(tags)
     return f'<header><div class="eyebrow">Mandarin tutor · {esc(data["lesson_type"].replace("_"," "))}</div><h1>{rich(l["title"],refs)}</h1><p>{rich(l.get("subtitle",l["description"]),refs)}</p><p class="muted small">{esc(label)}</p></header>'
 
+
+def render_topic_v31(data, refs):
+    """Instruction first: never repeat the 2 existing example sentences from each word detail card."""
+    s=data['sections'];t=s['teaching_plan'];old=s['practice']['questions']
+    a=['<h2>Your goal</h2><ul>']
+    m=[f'# {data["lesson"]["title"]}',data['lesson']['description'],'',
+       '> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.','',
+       '## Your goal']
+    for obj in data['learning_objectives']:
+        a.append(f'<li>{rich(obj,refs)}</li>')
+        m.append('- '+obj)
+    a.append('</ul>')
+    # Start with an independent dialogue rather than a vocabulary card.
+    d=t['dialogue']
+    a.append(f'<h2>1 · Conversation — {esc(d["title"])}</h2><p class="sectionlead">{rich(d["context_en"],refs)}</p>')
+    m+=['','## 1. Conversation — '+d['title'],d['context_en']]
+    for turn in d['turns']:
+        a.append(f'<div class="exchange"><div class="speaker">{esc(turn["speaker"])}</div><p>{pair(turn["hanzi"],turn["pinyin"],refs)}</p><p>{esc(turn["english"])}</p></div>')
+        m.append(f'**{turn["speaker"]}:** {turn["hanzi"]} ({turn["pinyin"]}) — {turn["english"]}')
+    # Explicit taught usage patterns with *fresh* worked sentences.
+    a.append('<h2>2 · How the language works</h2>')
+    m+=['','## 2. How the language works']
+    for pat in t['patterns']:
+        a.append(f'<h3>{rich(pat["title"],refs)}</h3><p>{rich(pat["explanation_en"],refs)}</p><p class="chip">{rich(pat["formula_en"],refs)}</p>')
+        m+=[f'### {pat["title"]}',pat['explanation_en'],'**Pattern:** '+pat['formula_en']]
+        for e in pat['examples']:
+            a.append(ex_html(e,refs));m.append(example_md(e))
+    # Scaffolding with shown model and concealed substitutions.
+    b=t['guided_building']
+    a.append(f'<h2>3 · Build new sentences</h2><p class="sectionlead">{rich(b["instruction_en"],refs)}</p><div class="task"><b>Worked model</b>{ex_html(b["model"],refs)}</div>')
+    m+=['','## 3. Build new sentences',b['instruction_en'],'**Worked model:** '+example_md(b['model'])]
+    for j,sub in enumerate(b['substitutions'],1):
+        a.append(f'<div class="task"><b>Change {j}: {esc(sub["cue_en"])}</b><details><summary>Reveal a model response</summary>{ex_html(sub["model_answer"],refs)}</details></div>')
+        m+=['',f'**Change {j}: {sub["cue_en"]}**',f'*Model response:* {example_md(sub["model_answer"])}']
+    # Contextual reading with comprehension rather than another sentence dump.
+    r=t['reading']
+    a.append(f'<h2>4 · Read for meaning — {rich(r["title"],refs)}</h2><p class="sectionlead">Read the passage, then answer in English or Mandarin.</p>')
+    m+=['','## 4. Read for meaning — '+r['title']]
+    for e in r['paragraphs']:
+        a.append(ex_html(e,refs));m.append(example_md(e))
+    for j,q in enumerate(r['questions'],1):
+        a.append(f'<div class="task"><b>{j}. {esc(q["prompt_en"])}</b><details><summary>Show the answer</summary><p>{esc(q["answer_en"])}</p></details></div>')
+        m.append(f'**Q{j}. {q["prompt_en"]}** Suggested answer: {q["answer_en"]}')
+    # Practice spontaneous answer (not merely translating headwords).
+    a.append('<h2>5 · Speak and personalize</h2><p class="sectionlead">Answer aloud before opening the model. Adapt each reply to your own life.</p>')
+    m+=['','## 5. Speak and personalize','Try to answer aloud before checking the sample; adapt it to your own situation.']
+    for j,sp in enumerate(t['speaking_tasks'],1):
+        a.append(f'<div class="task"><b>{j}. {rich(sp["scenario_en"],refs)}</b><details><summary>Show one possible response</summary>{ex_html(sp["model_answer"],refs)}</details></div>')
+        m+=['',f'**Speaking {j}:** '+sp['scenario_en'],'*Possible response:* '+example_md(sp['model_answer'])]
+    a.append('<h2>6 · Watch out</h2><div class="lesson-tip">'+rich(t['common_pitfall'],refs)+'</div>')
+    a.append('<h3>Pronunciation clinic</h3><p>'+rich(t['pronunciation_focus'],refs)+'</p>')
+    m+=['','## 6. Watch out',t['common_pitfall'],'**Pronunciation:** '+t['pronunciation_focus']]
+    # Applied checks first; preserve old headword recall as an optional appendix.
+    applied=[q for q in old if q['id'].startswith('applied-')]
+    recall=[q for q in old if not q['id'].startswith('applied-')]
+    a.append('<h2>7 · Check what you can do</h2>')
+    m+=['','## 7. Check what you can do']
+    for q in applied:a.append(question_html(q,refs));m+=['',question_md(q)]
+    a.append('<h2>Review and next step</h2><ul>')
+    m+=['','## Review and next step']
+    for text in t['review']['can_do']:
+        a.append(f'<li>{rich(text,refs)}</li>');m.append('- '+text)
+    a.append('</ul>')
+    # A compact word bank with stable data links; no source sentences duplicated.
+    a.append('<details class="smallbank"><summary>Reference word bank (already in vocabulary detail cards)</summary><div class="cards">')
+    m+=['','## Reference word bank (details on vocabulary cards)']
+    for v in s['vocabulary']['items']:
+        ref=v.get('syllabus_refs',[]);sid=ref[0].get('entry_id') if ref else None
+        a.append(f'<div class="card" data-syllabus-entry-id="{esc(sid if sid else "")}"><span class="small muted">{esc("HSK #"+str(sid) if sid else "Review")}</span><p>{pair(v["hanzi"],v["pinyin"],refs)} — {esc(v["meaning_en"])}</p></div>')
+        m.append(f'- {v["hanzi"]} ({v["pinyin"]}) — {v["meaning_en"]} [HSK entry {sid}]')
+    a.append('</div></details>')
+    if recall:
+        a.append('<details class="smallbank"><summary>Optional vocabulary recall quiz</summary>')
+        m+=['','## Optional vocabulary recall quiz']
+        for q in recall:a.append(question_html(q,refs));m+=['',question_md(q)]
+        a.append('</details>')
+    return ''.join(a),'\n\n'.join(x for x in m if x!='')+'\n'
+
 def render_topic(data,refs):
+    if data['schema_version']=='mandarin-topic-lesson/3.1.0':
+        return render_topic_v31(data,refs)
     sec=data['sections']; a=['<h2>Learning objectives</h2><ul>']
     for obj in data['learning_objectives']:a.append(f'<li>{rich(obj,refs)}</li>')
     a.append('</ul><h2>Overview</h2>')

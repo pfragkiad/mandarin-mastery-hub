@@ -2,9 +2,9 @@
 
 Name common pets and describe basic weather conditions.
 
-**Topics:** animals-weather
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Name a few familiar animals.
 
@@ -12,128 +12,141 @@ Name common pets and describe basic weather conditions.
 
 - Talk about rain and snow.
 
-## Overview
+## 1. Conversation — Animals and Weather
 
-Name common pets and describe basic weather conditions.
+Two friends decide whether to go outside and talk about the weather and a pet.
 
-Name a few familiar animals.
+**A:** 今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng?) — How is the weather today?
 
-## Vocabulary and examples
+**B:** 很冷，还下雨。 (Hěn lěng, hái xià yǔ.) — It is cold, and it is raining too.
 
-### 狗 (gǒu) — dog
+**A:** 那只猫在外边吗？ (Nà zhī māo zài wàibian ma?) — Is that cat outside?
 
-HSK entry: 64 · POS: noun · introduced
+**B:** 不在，它在家里。 (Bú zài, tā zài jiā lǐ.) — No, it is at home.
 
-**这只狗很小。**
-*zhè zhī gǒu hěn xiǎo.*
-This dog is very small.
+## 2. How the language works
 
-**这里有两只狗。**
-*zhèlǐ yǒu liǎng zhī gǒu.*
-There are two dogs here.
+### Describing weather
 
-### 冷 (lěng) — cold
+Use 天气 (tiānqì) for the weather, then an adjective or weather event. 下雨 (xià yǔ) functions as “to rain”; do not translate it word-for-word as “down rain”.
 
-HSK entry: 109 · POS: adjective · introduced
+**Pattern:** 今天 + 天气 + 很 + adjective; / 今天 + 下雨
 
-**今天很冷。**
-*jīntiān hěn lěng.*
+**今天天气很热。**
+*Jīntiān tiānqì hěn rè.*
+The weather is hot today.
+
+**明天可能下雨。**
+*Míngtiān kěnéng xià yǔ.*
+It may rain tomorrow.
+
+### Talking about animal location
+
+在 (zài) locates the subject. The animal classifier 只 (zhī) introduces an individual cat or dog.
+
+**Pattern:** [那/这] + 只 + animal + 在 + place
+
+**这只狗在房间里。**
+*Zhè zhī gǒu zài fángjiān lǐ.*
+This dog is in the room.
+
+**猫在桌子下边。**
+*Māo zài zhuōzi xiàbian.*
+The cat is under the table.
+
+## 3. Build new sentences
+
+Change the weather description, not the sentence structure.
+
+**Worked model:** **今天天气很冷。**
+*Jīntiān tiānqì hěn lěng.*
 It is cold today.
-**Usage:** 很 + 冷 describes cold weather; context supplies how cold it feels.
 
-**今天晚上比上午冷。**
-*jīntiān wǎnshang bǐ shàngwǔ lěng.*
-It is colder tonight than it was this morning.
+**Change 1: hot**
 
-### 猫 (māo) — cat
+*Model response:* **今天天气很热。**
+*Jīntiān tiānqì hěn rè.*
+It is hot today.
 
-HSK entry: 119 · POS: noun · introduced
+**Change 2: good**
 
-**我有一只猫。**
-*wǒ yǒu yì zhī māo.*
-I have a cat.
-**Usage:** 只 is the common animal classifier when counting cats.
+*Model response:* **今天下午天气很好。**
+*Jīntiān xiàwǔ tiānqì hěn hǎo.*
+The weather is good this afternoon.
 
-**这只猫喜欢睡觉。**
-*zhè zhī māo xǐhuan shuìjiào.*
-This cat likes sleeping.
+## 4. Read for meaning — A short connected story
 
-### 热 (rè) — hot
+**早上很冷，下午天气很好。妹妹想出去玩，但是家里的猫还在睡觉。**
+*Zǎoshang hěn lěng, xiàwǔ tiānqì hěn hǎo. Mèimei xiǎng chūqù wán, dànshì jiā lǐ de māo hái zài shuìjiào.*
+It is cold in the morning, but the weather is good in the afternoon. The younger sister wants to go out and play, but the family cat is still sleeping.
 
-HSK entry: 169 · POS: adjective · introduced
+**Q1. When is the weather good?** Suggested answer: In the afternoon.
 
-**今天太热了。**
-*jīntiān tài rè le.*
-It is too hot today.
-**Usage:** 太热了 expresses more heat than desired or expected.
+**Q2. What is the cat doing?** Suggested answer: Sleeping.
 
-**下午的天气很热。**
-*xiàwǔ de tiānqì hěn rè.*
-The weather is very hot in the afternoon.
+## 5. Speak and personalize
 
-### 天气 (tiānqì) — weather
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-HSK entry: 208 · POS: noun · introduced
+**Speaking 1:** Describe today’s weather to a friend.
 
-**今天天气很好。**
-*jīntiān tiānqì hěn hǎo.*
-The weather is very good today.
-**Usage:** 今天天气 is a common weather-topic phrase in everyday Chinese.
+*Possible response:* **今天下午天气很好。**
+*Jīntiān xiàwǔ tiānqì hěn hǎo.*
+The weather is good this afternoon.
 
-**今天的天气比昨天好。**
-*jīntiān de tiānqì bǐ zuótiān hǎo.*
-The weather today is better than yesterday's.
+**Speaking 2:** Say where a pet is.
 
-### 下雨 (xià yǔ) — rain
+*Possible response:* **我的猫在家里。**
+*Wǒ de māo zài jiā lǐ.*
+My cat is at home.
 
-HSK entry: 227 · POS: verb · introduced
+## 6. Watch out
 
-**今天下雨了。**
-*jīntiān xià yǔ le.*
-It rained today.
-**Usage:** 下雨 is the verb expression for rain; 了 can mark a new or completed event.
+A weather event such as 下雨 (xià yǔ) is not an adjective. Prefer 今天下雨 (Jīntiān xià yǔ) rather than 今天很下雨.
 
-**下雨的时候不要出去。**
-*xià yǔ de shíhou búyào chūqu.*
-Don't go outside when it rains.
+**Pronunciation:** Use a clear pause between 天气 (tiānqì) and the following description.
 
-### 雪 (xuě) — snow
+## 7. Check what you can do
 
-HSK entry: 251 · POS: noun · introduced
+**Comprehension:** Reading comprehension: When is the weather good?
+**Answer:** In the afternoon.. Check against the connected reading passage, not the vocabulary cards.
 
-**地上有雪。**
-*dìshang yǒu xuě.*
-There's snow on the ground.
-**Usage:** 地上有雪 states that there is snow on the ground, not merely that it is winter.
+**Comprehension:** Reading comprehension: What is the cat doing?
+**Answer:** Sleeping.. Check against the connected reading passage, not the vocabulary cards.
 
-**今天的雪很大。**
-*jīntiān de xuě hěn dà.*
-There's a lot of snow today.
+**Production:** Say this aloud: Describe today’s weather to a friend.
+**Answer:** 今天下午天气很好。 (Jīntiān xiàwǔ tiānqì hěn hǎo.) — The weather is good this afternoon.. Illustrative answer. Other natural responses may be correct.
 
-### 雨 (yǔ) — rain
+**Production:** Say this aloud: Say where a pet is.
+**Answer:** 我的猫在家里。 (Wǒ de māo zài jiā lǐ.) — My cat is at home.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 267 · POS: noun · introduced
+## Review and next step
 
-**今天雨很大。**
-*jīntiān yǔ hěn dà.*
-It's raining heavily today.
-**Usage:** 雨很大 describes heavy rain; 大 can describe rain intensity.
+- Name a few familiar animals.
 
-**昨天下午下了很多雨。**
-*zuótiān xiàwǔ xià le hěn duō yǔ.*
-It rained a lot yesterday afternoon.
+- Describe hot and cold weather.
 
-## Usage and grammar
+- Talk about rain and snow.
 
-### Discussing weather
+## Reference word bank (details on vocabulary cards)
 
-Use a weather noun as the topic of a simple description.
+- 狗 (gǒu) — dog [HSK entry 64]
 
-### Rain
+- 冷 (lěng) — cold [HSK entry 109]
 
-The verb-object weather expression describes rainfall.
+- 猫 (māo) — cat [HSK entry 119]
 
-## Practice
+- 热 (rè) — hot [HSK entry 169]
+
+- 天气 (tiānqì) — weather [HSK entry 208]
+
+- 下雨 (xià yǔ) — rain [HSK entry 227]
+
+- 雪 (xuě) — snow [HSK entry 251]
+
+- 雨 (yǔ) — rain [HSK entry 267]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “dog”?
 - a. 雨 (yǔ) — 

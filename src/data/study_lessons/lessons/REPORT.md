@@ -1,14 +1,13 @@
-# Build report — lesson library package v3.0.1
+# Level 1 upgrade report — 3.1.0
 
-- Source Level 1: `hsk3_level1_1.6.1(1).json` (300 entries, 600 examples).
-- Source categories: `hsk3_topics(1).json` (20 reusable categories).
-- Exact character references: user-provided `catalog_ids.json` (9,537 entries).
-- Prior character lessons: `CHARACTER_LESSON_CI.zip`, `CHARACTER_LESSON_YI.zip` (v2.7 source content).
-- Source entry IDs 1–300 are retained, but their official serial relationship remains unverified as noted in source dataset.
-- 21 focused thematic lessons; 2 independent character lessons.
-- Coverage: 300/300 introduced entry IDs; 600/600 source examples; no duplicate introductions; 105 new topic quiz questions.
-- Editorial regrouping, instructional objectives, two brief grammar prompts per lesson and quizzes are derived teaching material, not native-speaker or corpus certified.
-- One known source pinyin segmentation error corrected for entry 36: 我在电脑上学习。 (wǒ zài diànnǎo shàng xuéxí).
-- All lesson JSONs conform to v3 schemas and catalog ID checks; all nested lesson ZIPs contain exactly four root-level files.
-- HSK Level 2–4 materials are NOT yet generated as lessons; only Level 1 plus two independent character lessons are included.
-- Report provenance remains separate from learner JSON/HTML/Markdown.
+- 21 structured lessons; exactly 300 HSK Level 1 entries, 600 source card examples retained in JSON only.
+- 84 original conversation turns; 42 explained patterns with 84 worked usage examples; 42 guided-substitution items; 22 short reading paragraphs; 42 speaking situations; 189 quiz questions (105 preserved vocabulary recall, 84 new applied comprehension/production).
+- 2 independent character lessons remain unchanged.
+- Source provenance in each independent `report.md`; learner JSON and HTML/Markdown contain no processing metadata.
+- Course placements and official entry IDs retained; no separate Level 2–4 lessons are included.
+- Original source examples remain in JSON for backwards-compatible app use but are intentionally not printed on lesson pages.
+- Exact overlap of newly authored teaching example with one of the source detail sentences: 0. See report section below.
+
+## Quality status
+
+These are authored teaching drafts, not native-speaker-certified or exhaustive lexical-level-checked lessons. The validator checks schema, stable IDs, link integrity, quiz keys and rendering, not idiomaticity or pronunciation correctness.

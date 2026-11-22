@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-family-and-friends",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -27,7 +27,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -35,6 +35,7 @@
   "catalog_character_refs": {
     "一": "Characters:一",
     "上": "Characters:上",
+    "两": "Characters:两",
     "个": "Characters:个",
     "中": "Characters:中",
     "也": "Characters:也",
@@ -50,22 +51,27 @@
     "会": "Characters:会",
     "住": "Characters:住",
     "作": "Characters:作",
+    "你": "Characters:你",
     "做": "Characters:做",
     "儿": "Characters:儿",
     "公": "Characters:公",
+    "几": "Characters:几",
     "医": "Characters:医",
     "十": "Characters:十",
     "午": "Characters:午",
     "友": "Characters:友",
     "司": "Characters:司",
+    "吗": "Characters:吗",
     "和": "Characters:和",
     "哥": "Characters:哥",
+    "唱": "Characters:唱",
     "喜": "Characters:喜",
     "四": "Characters:四",
     "回": "Characters:回",
     "国": "Characters:国",
     "在": "Characters:在",
     "坐": "Characters:坐",
+    "大": "Characters:大",
     "天": "Characters:天",
     "女": "Characters:女",
     "她": "Characters:她",
@@ -95,6 +101,7 @@
     "朋": "Characters:朋",
     "校": "Characters:校",
     "欢": "Characters:欢",
+    "歌": "Characters:歌",
     "每": "Characters:每",
     "火": "Characters:火",
     "爱": "Characters:爱",
@@ -891,8 +898,201 @@
           "correct_choice_ids": [],
           "answer": "爸爸爱看中文电影。 (bàba ài kàn Zhōngwén diànyǐng.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: How many younger siblings does the speaker have?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Two.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who likes reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The younger sister.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Introduce one family member.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这是我妈妈。 (Zhè shì wǒ māma.) — This is my mom.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask how many people are in someone’s family.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你家有几个人？ (Nǐ jiā yǒu jǐ ge rén?) — How many people are in your family?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Introducing Family and Friends",
+        "context_en": "Two new classmates introduce the people in their families and clarify family relationships.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你家有几个人？",
+            "pinyin": "Nǐ jiā yǒu jǐ ge rén?",
+            "english": "How many people are in your family?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "有四个人：爸爸、妈妈、姐姐和我。",
+            "pinyin": "Yǒu sì ge rén: bàba, māma, jiějie hé wǒ.",
+            "english": "Four: Dad, Mom, my older sister, and me."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你姐姐是学生吗？",
+            "pinyin": "Nǐ jiějie shì xuéshēng ma?",
+            "english": "Is your older sister a student?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是，她在大学学习。",
+            "pinyin": "Shì, tā zài dàxué xuéxí.",
+            "english": "Yes, she studies at university."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Family ownership with 的 (de)",
+          "explanation_en": "Use 的 (de) after a possessor when emphasizing whose person or thing it is. In close family relationships 的 is often omitted in natural speech.",
+          "formula_en": "person + 的 + noun",
+          "examples": [
+            {
+              "hanzi": "这是我的哥哥。",
+              "pinyin": "Zhè shì wǒ de gēge.",
+              "english": "This is my older brother."
+            },
+            {
+              "hanzi": "我妈妈在家。",
+              "pinyin": "Wǒ māma zài jiā.",
+              "english": "My mom is at home."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Introducing a relationship",
+          "explanation_en": "是 (shì) identifies someone; 有 (yǒu) tells what people or things someone has. Keep the predicates distinct.",
+          "formula_en": "X 是 Y / X 有 Y",
+          "examples": [
+            {
+              "hanzi": "她是我妹妹。",
+              "pinyin": "Tā shì wǒ mèimei.",
+              "english": "She is my younger sister."
+            },
+            {
+              "hanzi": "我有两个孩子。",
+              "pinyin": "Wǒ yǒu liǎng ge háizi.",
+              "english": "I have two children."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the family relationship in your introduction.",
+        "model": {
+          "hanzi": "这是我姐姐。",
+          "pinyin": "Zhè shì wǒ jiějie.",
+          "english": "This is my older sister."
+        },
+        "substitutions": [
+          {
+            "cue_en": "younger brother",
+            "model_answer": {
+              "hanzi": "这是我弟弟。",
+              "pinyin": "Zhè shì wǒ dìdi.",
+              "english": "This is my younger brother."
+            }
+          },
+          {
+            "cue_en": "older brother",
+            "model_answer": {
+              "hanzi": "这是我哥哥。",
+              "pinyin": "Zhè shì wǒ gēge.",
+              "english": "This is my older brother."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "我有一个弟弟，也有一个妹妹。弟弟喜欢唱歌，妹妹喜欢看书。我们都是好朋友。",
+            "pinyin": "Wǒ yǒu yí ge dìdi, yě yǒu yí ge mèimei. Dìdi xǐhuan chàng gē, mèimei xǐhuan kàn shū. Wǒmen dōu shì hǎo péngyou.",
+            "english": "I have a younger brother and a younger sister. My brother likes singing, and my sister likes reading. We are all good friends."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "How many younger siblings does the speaker have?",
+            "answer_en": "Two."
+          },
+          {
+            "prompt_en": "Who likes reading?",
+            "answer_en": "The younger sister."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Introduce one family member.",
+          "model_answer": {
+            "hanzi": "这是我妈妈。",
+            "pinyin": "Zhè shì wǒ māma.",
+            "english": "This is my mom."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask how many people are in someone’s family.",
+          "model_answer": {
+            "hanzi": "你家有几个人？",
+            "pinyin": "Nǐ jiā yǒu jǐ ge rén?",
+            "english": "How many people are in your family?"
+          }
+        }
+      ],
+      "common_pitfall": "哥哥 (gēge) is an older brother; 弟弟 (dìdi) is a younger brother. Do not use them interchangeably.",
+      "pronunciation_focus": "Many kinship words reduplicate with a neutral second syllable: māma, bàba, gēge, dìdi.",
+      "review": {
+        "can_do": [
+          "Identify common relatives and relationship words.",
+          "Introduce friends and family members.",
+          "Understand short descriptions of family life."
+        ],
+        "entry_ids": [
+          3,
+          32,
+          59,
+          68,
+          86,
+          92,
+          114,
+          123,
+          156
+        ]
+      }
     }
   }
 }

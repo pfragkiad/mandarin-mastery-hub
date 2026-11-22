@@ -73,8 +73,40 @@ def checks_lesson(lesson,catalog=None):
             hanzi=lesson['headword']['hanzi']
             if len(hanzi)==1 and catalog.get(hanzi) and lesson['metadata']['catalog_character_id']!=catalog[hanzi]:
                 raise ValueError('headword catalog character ID mismatch')
+    # Pedagogical v3.1 integrity rules beyond JSON Schema.
+    if lesson['schema_version']=='mandarin-topic-lesson/3.1.0':
+        t=lesson['sections']['teaching_plan']
+        intro={ref['entry_id'] for v in lesson['sections']['vocabulary']['items']
+               for ref in v.get('syllabus_refs',[]) if v.get('learning_role')=='introduced'}
+        if not set(t['review']['entry_ids']).issubset(intro):
+            raise ValueError('review.entry_ids must refer to introduced vocabulary in this lesson')
+        for kind,parts in [('patterns',t['patterns']),('speaking_tasks',t['speaking_tasks'])]:
+            ids=[a['id'] for a in parts]
+            if len(ids)!=len(set(ids)):raise ValueError('duplicate '+kind+' IDs')
+        qs=lesson['sections']['practice']['questions']
+        qids=[q['id'] for q in qs]
+        if len(qids)!=len(set(qids)):raise ValueError('duplicate practice question ID')
+        if len([q for q in qs if q['kind'] in ('comprehension','production')])<4:
+            raise ValueError('v3.1 must include at least 4 applied comprehension/production questions')
+        if len(t['dialogue']['turns'])<4 or len(t['reading']['questions'])<2:
+            raise ValueError('v3.1 teaching content incomplete')
+        # The two upstream word-detail sentences remain in canonical JSON, but
+        # must not be copied verbatim as new teaching examples.
+        source_sentences={e['hanzi'] for v in lesson['sections']['vocabulary']['items'] for e in v['examples']}
+        fresh=[x for x in t['dialogue']['turns']]
+        fresh += [e for pattern in t['patterns'] for e in pattern['examples']]
+        fresh += t['reading']['paragraphs']
+        fresh += [t['guided_building']['model']]
+        fresh += [p['model_answer'] for p in t['guided_building']['substitutions']]
+        fresh += [p['model_answer'] for p in t['speaking_tasks']]
+        overlap={e['hanzi'] for e in fresh}&source_sentences
+        if overlap:raise ValueError('v3.1 new examples duplicate existing detail-card examples: '+repr(sorted(overlap)))
+        # All written learner-facing utterances are supplied with pinyin and translation.
+        for example in fresh:
+            if not example.get('pinyin') or not example.get('english'):
+                raise ValueError('missing pinyin/English in new teaching example')
     # Authoring: do not allow source/provenance in learner-facing source blocks.
-    if lesson['schema_version'].endswith('/3.0.0'):
+    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0')):
         forbidden={'report_intake','source_files','original_video','extraction_stats'}
         bad=[key for node in each_dict(lesson) for key in node if key in forbidden]
         if bad:raise ValueError('report-only field(s) in learner lesson: '+str(bad))

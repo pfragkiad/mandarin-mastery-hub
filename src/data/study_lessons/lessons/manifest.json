@@ -1,5 +1,5 @@
 {
-  "package_version": "3.0.1",
+  "package_version": "3.1.0",
   "curriculum_id": "hsk3-2025",
   "level": 1,
   "hsk_vocab_count": 300,
@@ -636,5 +636,6 @@
     }
   ],
   "catalog": "catalog_ids.json (external reference)",
-  "review_status": "draft_editorial_not_native_certified"
+  "review_status": "draft_editorial_not_native_certified",
+  "notes": "21 HSK1 instructional lessons (new original teaching plans). Existing vocabulary detail sentences remain in lesson JSON but are deliberately not rendered in HSK lesson HTML/Markdown. 2 independent character lessons unchanged."
 }

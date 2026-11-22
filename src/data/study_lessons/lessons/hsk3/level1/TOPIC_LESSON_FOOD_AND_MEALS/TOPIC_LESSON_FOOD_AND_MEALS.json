@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-food-and-meals",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -37,12 +37,17 @@
     "一": "Characters:一",
     "七": "Characters:七",
     "上": "Characters:上",
+    "不": "Characters:不",
     "个": "Characters:个",
     "中": "Characters:中",
+    "么": "Characters:么",
+    "了": "Characters:了",
     "二": "Characters:二",
     "人": "Characters:人",
+    "什": "Characters:什",
     "今": "Characters:今",
     "们": "Characters:们",
+    "你": "Characters:你",
     "便": "Characters:便",
     "做": "Characters:做",
     "儿": "Characters:儿",
@@ -53,6 +58,7 @@
     "半": "Characters:半",
     "卖": "Characters:卖",
     "吃": "Characters:吃",
+    "吗": "Characters:吗",
     "和": "Characters:和",
     "喜": "Characters:喜",
     "喝": "Characters:喝",
@@ -60,6 +66,7 @@
     "多": "Characters:多",
     "天": "Characters:天",
     "奶": "Characters:奶",
+    "她": "Characters:她",
     "好": "Characters:好",
     "妈": "Characters:妈",
     "始": "Characters:始",
@@ -77,6 +84,7 @@
     "晚": "Characters:晚",
     "有": "Characters:有",
     "条": "Characters:条",
+    "杯": "Characters:杯",
     "果": "Characters:果",
     "欢": "Characters:欢",
     "每": "Characters:每",
@@ -92,9 +100,12 @@
     "茶": "Characters:茶",
     "菜": "Characters:菜",
     "蛋": "Characters:蛋",
+    "要": "Characters:要",
     "请": "Characters:请",
+    "谢": "Characters:谢",
     "起": "Characters:起",
     "超": "Characters:超",
+    "还": "Characters:还",
     "这": "Characters:这",
     "里": "Characters:里",
     "门": "Characters:门",
@@ -1062,8 +1073,205 @@
           "correct_choice_ids": [],
           "answer": "这家店的包子很好吃。 (zhè jiā diàn de bāozi hěn hǎochī.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What does the speaker eat for breakfast?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Eggs and bread.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who cooks dinner?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Dad.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Order food and a drink.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想要米饭和一杯茶。 (Wǒ xiǎng yào mǐfàn hé yì bēi chá.) — I would like rice and a cup of tea.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Politely decline more food.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "不要了，谢谢！ (Bú yào le, xièxie!) — No more, thank you!",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Food and Drink",
+        "context_en": "Two friends order lunch and discuss what they do and do not want to eat.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想吃什么？",
+            "pinyin": "Nǐ xiǎng chī shénme?",
+            "english": "What would you like to eat?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想吃饺子，喝一杯茶。",
+            "pinyin": "Wǒ xiǎng chī jiǎozi, hē yì bēi chá.",
+            "english": "I would like dumplings and a cup of tea."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你还要米饭吗？",
+            "pinyin": "Nǐ hái yào mǐfàn ma?",
+            "english": "Would you like rice as well?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不要了，谢谢！",
+            "pinyin": "Bú yào le, xièxie!",
+            "english": "No more, thank you!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Food and drink verbs",
+          "explanation_en": "Use 吃 (chī) for eating and 喝 (hē) for drinking. 想 (xiǎng) makes a polite expression of what you would like.",
+          "formula_en": "我想 + 吃/喝 + food/drink",
+          "examples": [
+            {
+              "hanzi": "我晚上想吃面条儿。",
+              "pinyin": "Wǒ wǎnshang xiǎng chī miàntiáor.",
+              "english": "I would like noodles this evening."
+            },
+            {
+              "hanzi": "她想喝牛奶。",
+              "pinyin": "Tā xiǎng hē niúnǎi.",
+              "english": "She would like milk."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Offering and declining",
+          "explanation_en": "要 (yào) can indicate wanting an item. Adding 还 (hái) asks whether someone wants more; 不要了 (bú yào le) politely closes an offer.",
+          "formula_en": "还要 + item + 吗?",
+          "examples": [
+            {
+              "hanzi": "你还要水吗？",
+              "pinyin": "Nǐ hái yào shuǐ ma?",
+              "english": "Would you like more water?"
+            },
+            {
+              "hanzi": "我不要了，谢谢。",
+              "pinyin": "Wǒ bú yào le, xièxie.",
+              "english": "I do not want any more, thank you."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Keep the request frame, but change what is being ordered.",
+        "model": {
+          "hanzi": "我想喝一杯茶。",
+          "pinyin": "Wǒ xiǎng hē yì bēi chá.",
+          "english": "I would like a cup of tea."
+        },
+        "substitutions": [
+          {
+            "cue_en": "water",
+            "model_answer": {
+              "hanzi": "我想喝一杯水。",
+              "pinyin": "Wǒ xiǎng hē yì bēi shuǐ.",
+              "english": "I would like a glass of water."
+            }
+          },
+          {
+            "cue_en": "milk",
+            "model_answer": {
+              "hanzi": "我想喝一杯牛奶。",
+              "pinyin": "Wǒ xiǎng hē yì bēi niúnǎi.",
+              "english": "I would like a glass of milk."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "早上我吃鸡蛋和面包，中午吃米饭和菜。晚上爸爸做饭，妈妈和我一起吃。",
+            "pinyin": "Zǎoshang wǒ chī jīdàn hé miànbāo, zhōngwǔ chī mǐfàn hé cài. Wǎnshang bàba zuò fàn, māma hé wǒ yìqǐ chī.",
+            "english": "I eat eggs and bread in the morning, rice and dishes at noon. In the evening Dad cooks, and Mom and I eat together."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "What does the speaker eat for breakfast?",
+            "answer_en": "Eggs and bread."
+          },
+          {
+            "prompt_en": "Who cooks dinner?",
+            "answer_en": "Dad."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Order food and a drink.",
+          "model_answer": {
+            "hanzi": "我想要米饭和一杯茶。",
+            "pinyin": "Wǒ xiǎng yào mǐfàn hé yì bēi chá.",
+            "english": "I would like rice and a cup of tea."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Politely decline more food.",
+          "model_answer": {
+            "hanzi": "不要了，谢谢！",
+            "pinyin": "Bú yào le, xièxie!",
+            "english": "No more, thank you!"
+          }
+        }
+      ],
+      "common_pitfall": "吃 (chī) refers to eating and 喝 (hē) to drinking. “喝米饭” is not an ordinary way to describe eating rice.",
+      "pronunciation_focus": "A measure phrase such as 一杯 (yì bēi) uses yì before a first-tone word.",
+      "review": {
+        "can_do": [
+          "Identify foods, drinks and meals.",
+          "Describe eating and drinking.",
+          "Talk about meals and restaurants."
+        ],
+        "entry_ids": [
+          16,
+          17,
+          21,
+          50,
+          77,
+          84,
+          90,
+          125,
+          126,
+          127,
+          151,
+          192,
+          300
+        ]
+      }
     }
   }
 }

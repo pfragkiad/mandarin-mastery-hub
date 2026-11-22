@@ -102,7 +102,23 @@ export type SyllabusRef = { curriculum_id: string; entry_id: number };
 export type TopicVocabItem = { id: string; hanzi: string; pinyin: string; meaning_en: string; primary_pos_id: string; pos_ids: string[]; topic_ids: string[]; examples: TopicExample[]; learning_role: 'introduced' | 'reviewed' | string; syllabus_refs: SyllabusRef[] };
 /** A grammar note with the recorded example it points at (resolved by example ID; null when the ID is unknown). */
 export type TopicGrammarPoint = { id: string; title: string; explanation: string; example: TopicExample | null };
+/** A Mandarin line with its tone-marked pinyin and English (teaching-plan sentences). */
+export type PlanLine = { hanzi: string; pinyin: string; english: string };
+/** v3.1 `sections.teaching_plan`: the instructional path topic lessons teach before any word list
+ *  (dialogue → patterns → guided building → reading → speaking → pitfall/pronunciation → review). */
+export type TeachingPlan = {
+  dialogue: { title: string; context_en: string; turns: (PlanLine & { speaker: string })[] };
+  patterns: { id: string; title: string; explanation_en: string; formula_en: string; examples: PlanLine[] }[];
+  guided_building: { instruction_en: string; model: PlanLine; substitutions: { cue_en: string; model_answer: PlanLine }[] };
+  reading: { title: string; paragraphs: PlanLine[]; questions: { prompt_en: string; answer_en: string }[] };
+  speaking_tasks: { id: string; scenario_en: string; model_answer: PlanLine }[];
+  common_pitfall: string;
+  pronunciation_focus: string;
+  review: { can_do: string[]; entry_ids: number[] };
+};
 export type TopicContent = {
+  /** v3.1 teaching plan; null for v3.0 topic lessons (which keep the word-list layout). */
+  plan: TeachingPlan | null;
   description: string;
   focus: string;
   items: TopicVocabItem[];
@@ -224,11 +240,30 @@ export function toTopicContent(rawSections: unknown): TopicContent {
   const related = (Array.isArray(vocabulary['related_entries']) ? vocabulary['related_entries'] : []) as TopicVocabItem[];
   const examples = new Map(items.flatMap(item => (item.examples ?? []).map(e => [e.id, e] as const)));
   const grammar = (Array.isArray(s['grammar_points']) ? s['grammar_points'] : []) as { id: string; title: string; explanation: string; example_id?: string }[];
+  const rawPlan = s['teaching_plan'];
   return {
+    plan: rawPlan && typeof rawPlan === 'object' ? toTeachingPlan(rawPlan as Record<string, unknown>) : null,
     description: str(overview['topic_description']), focus: str(overview['focus']),
     items: items.map(item => ({ ...item, examples: item.examples ?? [], syllabus_refs: item.syllabus_refs ?? [], pos_ids: item.pos_ids ?? [], topic_ids: item.topic_ids ?? [] })),
     related: related.map(item => ({ ...item, examples: item.examples ?? [], syllabus_refs: item.syllabus_refs ?? [], pos_ids: item.pos_ids ?? [], topic_ids: item.topic_ids ?? [] })),
     grammar: grammar.map(g => ({ id: g.id, title: str(g.title), explanation: str(g.explanation), example: (g.example_id && examples.get(g.example_id)) || null })),
+  };
+}
+
+const arr = <T,>(value: unknown): T[] => (Array.isArray(value) ? value : []) as T[];
+const obj = (value: unknown): Record<string, unknown> => (value && typeof value === 'object' ? value : {}) as Record<string, unknown>;
+const line = (value: unknown): PlanLine => { const o = obj(value); return { hanzi: str(o['hanzi']), pinyin: str(o['pinyin']), english: str(o['english']) }; };
+/** The teaching plan as recorded; missing lists default to empty so a partial file never crashes the page. */
+export function toTeachingPlan(raw: Record<string, unknown>): TeachingPlan {
+  const d = obj(raw['dialogue']), b = obj(raw['guided_building']), r = obj(raw['reading']), rv = obj(raw['review']);
+  return {
+    dialogue: { title: str(d['title']), context_en: str(d['context_en']), turns: arr<unknown>(d['turns']).map(t => ({ ...line(t), speaker: str(obj(t)['speaker']) })) },
+    patterns: arr<Record<string, unknown>>(raw['patterns']).map(p => ({ id: str(p['id']), title: str(p['title']), explanation_en: str(p['explanation_en']), formula_en: str(p['formula_en']), examples: arr<unknown>(p['examples']).map(line) })),
+    guided_building: { instruction_en: str(b['instruction_en']), model: line(b['model']), substitutions: arr<Record<string, unknown>>(b['substitutions']).map(x => ({ cue_en: str(x['cue_en']), model_answer: line(x['model_answer']) })) },
+    reading: { title: str(r['title']), paragraphs: arr<unknown>(r['paragraphs']).map(line), questions: arr<Record<string, unknown>>(r['questions']).map(q => ({ prompt_en: str(q['prompt_en']), answer_en: str(q['answer_en']) })) },
+    speaking_tasks: arr<Record<string, unknown>>(raw['speaking_tasks']).map(t => ({ id: str(t['id']), scenario_en: str(t['scenario_en']), model_answer: line(t['model_answer']) })),
+    common_pitfall: str(raw['common_pitfall']), pronunciation_focus: str(raw['pronunciation_focus']),
+    review: { can_do: strList(rv['can_do']), entry_ids: arr<unknown>(rv['entry_ids']).filter((n): n is number => typeof n === 'number') },
   };
 }
 

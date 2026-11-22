@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-clock-and-day",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,13 +28,14 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
     "一": "Characters:一",
+    "七": "Characters:七",
     "三": "Characters:三",
     "上": "Characters:上",
     "下": "Characters:下",
@@ -62,13 +63,17 @@
     "到": "Characters:到",
     "十": "Characters:十",
     "午": "Characters:午",
+    "半": "Characters:半",
     "去": "Characters:去",
     "吃": "Characters:吃",
     "后": "Characters:后",
     "商": "Characters:商",
     "喝": "Characters:喝",
+    "四": "Characters:四",
     "在": "Characters:在",
     "天": "Characters:天",
+    "她": "Characters:她",
+    "妈": "Characters:妈",
     "始": "Characters:始",
     "学": "Characters:学",
     "家": "Characters:家",
@@ -100,6 +105,7 @@
     "等": "Characters:等",
     "茶": "Characters:茶",
     "要": "Characters:要",
+    "见": "Characters:见",
     "视": "Characters:视",
     "话": "Characters:话",
     "语": "Characters:语",
@@ -107,6 +113,7 @@
     "请": "Characters:请",
     "课": "Characters:课",
     "起": "Characters:起",
+    "还": "Characters:还",
     "钟": "Characters:钟",
     "间": "Characters:间",
     "饭": "Characters:饭"
@@ -835,8 +842,200 @@
           "correct_choice_ids": [],
           "answer": "白天我在学校学习。 (báitiān wǒ zài xuéxiào xuéxí.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: At what time does Mom finish work?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "2 p.m.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: At what time does she eat dinner?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "7 p.m.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask the current time and answer.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "现在几点？现在十点。 (Xiànzài jǐ diǎn? Xiànzài shí diǎn.) — What time is it? It is ten.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say how many hours you study, not when you study.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我学习两个小时。 (Wǒ xuéxí liǎng ge xiǎoshí.) — I study for two hours.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About the Clock",
+        "context_en": "A classmate asks about a meeting time. Learn to distinguish a clock reading from a duration.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "现在几点了？",
+            "pinyin": "Xiànzài jǐ diǎn le?",
+            "english": "What time is it now?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "上午九点半。",
+            "pinyin": "Shàngwǔ jiǔ diǎn bàn.",
+            "english": "Half past nine in the morning."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我们几点上课？",
+            "pinyin": "Wǒmen jǐ diǎn shàngkè?",
+            "english": "What time does class start?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "十点，还有半个小时。",
+            "pinyin": "Shí diǎn, hái yǒu bàn ge xiǎoshí.",
+            "english": "At ten; there is another half hour."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Asking and stating clock time",
+          "explanation_en": "几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.",
+          "formula_en": "time + subject/verb or subject + time + verb",
+          "examples": [
+            {
+              "hanzi": "我们下午三点见。",
+              "pinyin": "Wǒmen xiàwǔ sān diǎn jiàn.",
+              "english": "Let’s meet at 3 p.m."
+            },
+            {
+              "hanzi": "现在八点十五分。",
+              "pinyin": "Xiànzài bā diǎn shíwǔ fēn.",
+              "english": "It is 8:15 now."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Time point versus duration",
+          "explanation_en": "点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.",
+          "formula_en": "九点 (clock) ≠ 九个小时 (duration)",
+          "examples": [
+            {
+              "hanzi": "我九点上班。",
+              "pinyin": "Wǒ jiǔ diǎn shàngbān.",
+              "english": "I start work at nine."
+            },
+            {
+              "hanzi": "我学习两个小时。",
+              "pinyin": "Wǒ xuéxí liǎng ge xiǎoshí.",
+              "english": "I study for two hours."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the meeting time in a complete invitation.",
+        "model": {
+          "hanzi": "我们三点见。",
+          "pinyin": "Wǒmen sān diǎn jiàn.",
+          "english": "Let us meet at three."
+        },
+        "substitutions": [
+          {
+            "cue_en": "four",
+            "model_answer": {
+              "hanzi": "我们四点见。",
+              "pinyin": "Wǒmen sì diǎn jiàn.",
+              "english": "Let us meet at four."
+            }
+          },
+          {
+            "cue_en": "half past five",
+            "model_answer": {
+              "hanzi": "我们五点半见。",
+              "pinyin": "Wǒmen wǔ diǎn bàn jiàn.",
+              "english": "Let us meet at five thirty."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "妈妈下午两点下班，三点到家。她晚上七点吃晚饭。",
+            "pinyin": "Māma xiàwǔ liǎng diǎn xiàbān, sān diǎn dào jiā. Tā wǎnshang qī diǎn chī wǎnfàn.",
+            "english": "Mom finishes work at 2 p.m. and arrives home at three. She eats dinner at 7 p.m."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "At what time does Mom finish work?",
+            "answer_en": "2 p.m."
+          },
+          {
+            "prompt_en": "At what time does she eat dinner?",
+            "answer_en": "7 p.m."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask the current time and answer.",
+          "model_answer": {
+            "hanzi": "现在几点？现在十点。",
+            "pinyin": "Xiànzài jǐ diǎn? Xiànzài shí diǎn.",
+            "english": "What time is it? It is ten."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say how many hours you study, not when you study.",
+          "model_answer": {
+            "hanzi": "我学习两个小时。",
+            "pinyin": "Wǒ xuéxí liǎng ge xiǎoshí.",
+            "english": "I study for two hours."
+          }
+        }
+      ],
+      "common_pitfall": "Do not confuse 三点 (sān diǎn, 3 o’clock) with 三个小时 (sān ge xiǎoshí, three hours).",
+      "pronunciation_focus": "Read 点 (diǎn) as third tone; in two third tones, 九点 (jiǔ diǎn) is pronounced with third-tone sandhi in connected speech.",
+      "review": {
+        "can_do": [
+          "Tell the time with hours and minutes.",
+          "Recognize morning, afternoon and evening.",
+          "Describe when daily actions happen."
+        ],
+        "entry_ids": [
+          33,
+          55,
+          178,
+          215,
+          217,
+          230,
+          232,
+          236
+        ]
+      }
     }
   }
 }

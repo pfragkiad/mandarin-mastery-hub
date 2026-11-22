@@ -2,9 +2,9 @@
 
 Name everyday foods and drinks and describe eating, drinking and meal routines.
 
-**Topics:** food-drink, daily-actions
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Identify foods, drinks and meals.
 
@@ -12,298 +12,167 @@ Name everyday foods and drinks and describe eating, drinking and meal routines.
 
 - Talk about meals and restaurants.
 
-## Overview
+## 1. Conversation — Food and Drink
 
-Name everyday foods and drinks and describe eating, drinking and meal routines.
+Two friends order lunch and discuss what they do and do not want to eat.
 
-Identify foods, drinks and meals.
+**A:** 你想吃什么？ (Nǐ xiǎng chī shénme?) — What would you like to eat?
 
-## Vocabulary and examples
+**B:** 我想吃饺子，喝一杯茶。 (Wǒ xiǎng chī jiǎozi, hē yì bēi chá.) — I would like dumplings and a cup of tea.
 
-### 包子 (bāozi) — steamed bun
+**A:** 你还要米饭吗？ (Nǐ hái yào mǐfàn ma?) — Would you like rice as well?
 
-HSK entry: 8 · POS: noun · introduced
+**B:** 不要了，谢谢！ (Bú yào le, xièxie!) — No more, thank you!
 
-**我早上吃包子。**
-*wǒ zǎoshang chī bāozi.*
-I eat steamed buns in the morning.
-**Usage:** 包子 is a filled steamed bun; 早上 sets the morning time frame.
+## 2. How the language works
 
-**这家店的包子很好吃。**
-*zhè jiā diàn de bāozi hěn hǎochī.*
-The steamed buns at this shop are delicious.
+### Food and drink verbs
 
-### 菜 (cài) — vegetable; dish
+Use 吃 (chī) for eating and 喝 (hē) for drinking. 想 (xiǎng) makes a polite expression of what you would like.
 
-HSK entry: 16 · POS: noun · introduced
+**Pattern:** 我想 + 吃/喝 + food/drink
 
-**这个菜很好吃。**
-*zhège cài hěn hǎochī.*
-This dish is delicious.
-**Usage:** 菜 usually refers to a prepared dish here, and 好吃 describes how it tastes.
+**我晚上想吃面条儿。**
+*Wǒ wǎnshang xiǎng chī miàntiáor.*
+I would like noodles this evening.
 
-**饭店里有很多菜。**
-*fàndiàn lǐ yǒu hěn duō cài.*
-There are many dishes at the restaurant.
+**她想喝牛奶。**
+*Tā xiǎng hē niúnǎi.*
+She would like milk.
 
-### 茶 (chá) — tea
+### Offering and declining
 
-HSK entry: 17 · POS: noun · introduced
+要 (yào) can indicate wanting an item. Adding 还 (hái) asks whether someone wants more; 不要了 (bú yào le) politely closes an offer.
 
-**我喜欢喝茶。**
-*wǒ xǐhuan hē chá.*
-I like drinking tea.
-**Usage:** 喜欢 + verb expresses an enjoyable activity; 喝茶 is “drink tea.”
+**Pattern:** 还要 + item + 吗?
 
-**这家店卖茶。**
-*zhè jiā diàn mài chá.*
-This shop sells tea.
+**你还要水吗？**
+*Nǐ hái yào shuǐ ma?*
+Would you like more water?
 
-### 吃 (chī) — eat
+**我不要了，谢谢。**
+*Wǒ bú yào le, xièxie.*
+I do not want any more, thank you.
 
-HSK entry: 21 · POS: verb · introduced
+## 3. Build new sentences
 
-**我们一起吃饭。**
-*wǒmen yìqǐ chī fàn.*
-We eat together.
-**Usage:** 一起 emphasizes a shared activity; 吃饭 can mean having a meal in general.
+Keep the request frame, but change what is being ordered.
 
-**请在十二点吃午饭。**
-*qǐng zài shí èr diǎn chī wǔfàn.*
-Please have lunch at twelve o'clock.
+**Worked model:** **我想喝一杯茶。**
+*Wǒ xiǎng hē yì bēi chá.*
+I would like a cup of tea.
 
-### 饭 (fàn) — meal; cooked rice
+**Change 1: water**
 
-HSK entry: 50 · POS: noun · introduced
+*Model response:* **我想喝一杯水。**
+*Wǒ xiǎng hē yì bēi shuǐ.*
+I would like a glass of water.
 
-**今天的饭很好吃。**
-*jīntiān de fàn hěn hǎochī.*
-Today’s meal tastes delicious.
-**Usage:** 饭 can mean the whole cooked meal here, not just rice; 好吃 evaluates its taste.
+**Change 2: milk**
 
-**家人一起吃晚饭。**
-*jiārén yìqǐ chī wǎnfàn.*
-The family eats dinner together.
+*Model response:* **我想喝一杯牛奶。**
+*Wǒ xiǎng hē yì bēi niúnǎi.*
+I would like a glass of milk.
 
-### 饭店 (fàndiàn) — restaurant
+## 4. Read for meaning — A short connected story
 
-HSK entry: 51 · POS: noun · introduced
+**早上我吃鸡蛋和面包，中午吃米饭和菜。晚上爸爸做饭，妈妈和我一起吃。**
+*Zǎoshang wǒ chī jīdàn hé miànbāo, zhōngwǔ chī mǐfàn hé cài. Wǎnshang bàba zuò fàn, māma hé wǒ yìqǐ chī.*
+I eat eggs and bread in the morning, rice and dishes at noon. In the evening Dad cooks, and Mom and I eat together.
 
-**这家饭店的菜很好吃。**
-*zhè jiā fàndiàn de cài hěn hǎochī.*
-The food at this restaurant is delicious.
-**Usage:** 家 is a classifier for restaurants, and the praise is specifically about the food served there.
+**Q1. What does the speaker eat for breakfast?** Suggested answer: Eggs and bread.
 
-**这家饭店每天早上七点开门。**
-*zhè jiā fàndiàn měitiān zǎoshang qī diǎn kāimén.*
-This restaurant opens at seven every morning.
+**Q2. Who cooks dinner?** Suggested answer: Dad.
 
-### 好吃 (hǎochī) — tasty
+## 5. Speak and personalize
 
-HSK entry: 72 · POS: adjective · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**这个苹果很好吃。**
-*zhège píngguǒ hěn hǎochī.*
-This apple tastes good.
-**Usage:** 好吃 evaluates the taste of food, not its appearance.
+**Speaking 1:** Order food and a drink.
 
-**这家饭店的面条儿很好吃。**
-*zhè jiā fàndiàn de miàntiáor hěn hǎochī.*
-The noodles at this restaurant are delicious.
+*Possible response:* **我想要米饭和一杯茶。**
+*Wǒ xiǎng yào mǐfàn hé yì bēi chá.*
+I would like rice and a cup of tea.
 
-### 喝 (hē) — drink
+**Speaking 2:** Politely decline more food.
 
-HSK entry: 77 · POS: verb · introduced
+*Possible response:* **不要了，谢谢！**
+*Bú yào le, xièxie!*
+No more, thank you!
 
-**我想喝水。**
-*wǒ xiǎng hē shuǐ.*
-I want to drink water.
-**Usage:** 想 + verb expresses a wish; 想喝 is wanting to drink.
+## 6. Watch out
 
-**学生们每天喝水。**
-*xuéshēngmen měitiān hē shuǐ.*
-The students drink water every day.
+吃 (chī) refers to eating and 喝 (hē) to drinking. “喝米饭” is not an ordinary way to describe eating rice.
 
-### 鸡蛋 (jīdàn) — egg
+**Pronunciation:** A measure phrase such as 一杯 (yì bēi) uses yì before a first-tone word.
 
-HSK entry: 84 · POS: noun · introduced
+## 7. Check what you can do
 
-**我早饭吃鸡蛋。**
-*wǒ zǎofàn chī jīdàn.*
-I eat eggs for breakfast.
-**Usage:** 早饭 establishes the meal; 吃鸡蛋 names the food eaten.
+**Comprehension:** Reading comprehension: What does the speaker eat for breakfast?
+**Answer:** Eggs and bread.. Check against the connected reading passage, not the vocabulary cards.
 
-**今天的早饭有鸡蛋。**
-*jīntiān de zǎofàn yǒu jīdàn.*
-There are eggs for breakfast today.
+**Comprehension:** Reading comprehension: Who cooks dinner?
+**Answer:** Dad.. Check against the connected reading passage, not the vocabulary cards.
 
-### 饺子 (jiǎozi) — dumplings
+**Production:** Say this aloud: Order food and a drink.
+**Answer:** 我想要米饭和一杯茶。 (Wǒ xiǎng yào mǐfàn hé yì bēi chá.) — I would like rice and a cup of tea.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 90 · POS: noun · introduced
+**Production:** Say this aloud: Politely decline more food.
+**Answer:** 不要了，谢谢！ (Bú yào le, xièxie!) — No more, thank you!. Illustrative answer. Other natural responses may be correct.
 
-**我喜欢吃饺子。**
-*wǒ xǐhuan chī jiǎozi.*
-I like eating dumplings.
-**Usage:** 饺子 are dumplings; 喜欢吃 specifies enjoyment of eating them.
+## Review and next step
 
-**这家饭店卖饺子。**
-*zhè jiā fàndiàn mài jiǎozi.*
-This restaurant sells dumplings.
+- Identify foods, drinks and meals.
 
-### 米饭 (mǐfàn) — cooked rice
+- Describe eating and drinking.
 
-HSK entry: 125 · POS: noun · introduced
+- Talk about meals and restaurants.
 
-**我中午吃米饭。**
-*wǒ zhōngwǔ chī mǐfàn.*
-I eat rice at noon.
-**Usage:** 米饭 usually means cooked rice, not raw rice.
+## Reference word bank (details on vocabulary cards)
 
-**这家饭店中午有米饭。**
-*zhè jiā fàndiàn zhōngwǔ yǒu mǐfàn.*
-This restaurant serves rice at lunchtime.
+- 包子 (bāozi) — steamed bun [HSK entry 8]
 
-### 面包 (miànbāo) — bread
+- 菜 (cài) — vegetable; dish [HSK entry 16]
 
-HSK entry: 126 · POS: noun · introduced
+- 茶 (chá) — tea [HSK entry 17]
 
-**早饭我吃面包。**
-*zǎofàn wǒ chī miànbāo.*
-I eat bread for breakfast.
-**Usage:** 面包 means bread; 早饭 places the action at breakfast.
+- 吃 (chī) — eat [HSK entry 21]
 
-**早饭有面包和牛奶。**
-*zǎofàn yǒu miànbāo hé niúnǎi.*
-There is bread and milk for breakfast.
+- 饭 (fàn) — meal; cooked rice [HSK entry 50]
 
-### 面条儿 (miàntiáor) — noodles
+- 饭店 (fàndiàn) — restaurant [HSK entry 51]
 
-HSK entry: 127 · POS: noun · introduced
+- 好吃 (hǎochī) — tasty [HSK entry 72]
 
-**我想吃面条儿。**
-*wǒ xiǎng chī miàntiáor.*
-I want to eat noodles.
-**Usage:** 面条儿 contains a northern 儿 ending; 面条 is also widely used.
+- 喝 (hē) — drink [HSK entry 77]
 
-**这家店的面条儿很好吃。**
-*zhè jiā diàn de miàntiáor hěn hǎochī.*
-The noodles at this shop are delicious.
+- 鸡蛋 (jīdàn) — egg [HSK entry 84]
 
-### 牛奶 (niúnǎi) — milk
+- 饺子 (jiǎozi) — dumplings [HSK entry 90]
 
-HSK entry: 151 · POS: noun · introduced
+- 米饭 (mǐfàn) — cooked rice [HSK entry 125]
 
-**我每天喝牛奶。**
-*wǒ měitiān hē niúnǎi.*
-I drink milk every day.
-**Usage:** 每天 marks a daily routine; 喝牛奶 is a common verb-object phrase.
+- 面包 (miànbāo) — bread [HSK entry 126]
 
-**早饭有牛奶和面包。**
-*zǎofàn yǒu niúnǎi hé miànbāo.*
-There is milk and bread for breakfast.
+- 面条儿 (miàntiáor) — noodles [HSK entry 127]
 
-### 苹果 (píngguǒ) — apple
+- 牛奶 (niúnǎi) — milk [HSK entry 151]
 
-HSK entry: 159 · POS: noun · introduced
+- 苹果 (píngguǒ) — apple [HSK entry 159]
 
-**我每天吃一个苹果。**
-*wǒ měitiān chī yí ge píngguǒ.*
-I eat an apple every day.
-**Usage:** 一个苹果 counts one apple; 每天 makes the action habitual.
+- 水 (shuǐ) — water [HSK entry 192]
 
-**这家店的苹果很便宜。**
-*zhè jiā diàn de píngguǒ hěn piányi.*
-The apples at this shop are very cheap.
+- 水果 (shuǐguǒ) — fruit [HSK entry 193]
 
-### 水 (shuǐ) — water
+- 晚饭 (wǎnfàn) — dinner [HSK entry 216]
 
-HSK entry: 192 · POS: noun · introduced
+- 午饭 (wǔfàn) — lunch [HSK entry 224]
 
-**我每天喝很多水。**
-*wǒ měitiān hē hěn duō shuǐ.*
-I drink plenty of water every day.
-**Usage:** 水 means water; 喝很多水 expresses drinking plenty of water regularly.
+- 早饭 (zǎofàn) — breakfast [HSK entry 274]
 
-**今天很热，请多喝水。**
-*jīntiān hěn rè, qǐng duō hē shuǐ.*
-It's very hot today; please drink plenty of water.
+- 做饭 (zuò fàn) — cook [HSK entry 300]
 
-### 水果 (shuǐguǒ) — fruit
-
-HSK entry: 193 · POS: noun · introduced
-
-**我喜欢吃水果。**
-*wǒ xǐhuan chī shuǐguǒ.*
-I like eating fruit.
-**Usage:** 水果 refers to fruit as a food category, not necessarily a single piece.
-
-**这家超市卖很多水果。**
-*zhè jiā chāoshì mài hěn duō shuǐguǒ.*
-This supermarket sells lots of fruit.
-
-### 晚饭 (wǎnfàn) — dinner
-
-HSK entry: 216 · POS: noun · introduced
-
-**我们七点吃晚饭。**
-*wǒmen qī diǎn chī wǎnfàn.*
-We eat dinner at seven.
-**Usage:** 晚饭 is the evening meal; 七点 gives the meal time.
-
-**晚饭六点半开始。**
-*wǎnfàn liù diǎn bàn kāishǐ.*
-Dinner starts at six thirty.
-
-### 午饭 (wǔfàn) — lunch
-
-HSK entry: 224 · POS: noun · introduced
-
-**我们十二点吃午饭。**
-*wǒmen shí'èr diǎn chī wǔfàn.*
-We eat lunch at twelve.
-**Usage:** 午饭 means lunch, usually eaten around the middle of the day.
-
-**学生中午十二点吃午饭。**
-*xuéshēng zhōngwǔ shí èr diǎn chī wǔfàn.*
-The students eat lunch at twelve noon.
-
-### 早饭 (zǎofàn) — breakfast
-
-HSK entry: 274 · POS: noun · introduced
-
-**我七点吃早饭。**
-*wǒ qī diǎn chī zǎofàn.*
-I eat breakfast at seven.
-**Usage:** 吃早饭 means have breakfast, and 七点 gives the time.
-
-**今天的早饭有包子和鸡蛋。**
-*jīntiān de zǎofàn yǒu bāozi hé jīdàn.*
-There are steamed buns and eggs for breakfast today.
-
-### 做饭 (zuò fàn) — cook
-
-HSK entry: 300 · POS: verb · introduced
-
-**我爸爸在做饭。**
-*wǒ bàba zài zuò fàn.*
-My dad is cooking.
-**Usage:** 做饭 means prepare/cook a meal, not just eat rice.
-
-**妈妈每天晚上做饭。**
-*māma měitiān wǎnshang zuò fàn.*
-Mom cooks every evening.
-
-## Usage and grammar
-
-### Having a meal
-
-The eating verb appears in ordinary descriptions of meals.
-
-### Describing food
-
-A common adjective evaluates whether food tastes good.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “steamed bun”?
 - a. 包子 (bāozi) — 

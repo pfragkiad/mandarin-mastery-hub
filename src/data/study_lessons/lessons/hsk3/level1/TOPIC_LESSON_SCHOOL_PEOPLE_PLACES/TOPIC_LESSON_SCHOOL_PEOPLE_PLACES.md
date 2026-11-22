@@ -2,9 +2,9 @@
 
 Introduce schools, classes and people involved in education.
 
-**Topics:** school-language, people-identity
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Distinguish types of schools.
 
@@ -12,155 +12,145 @@ Introduce schools, classes and people involved in education.
 
 - Talk about attending school.
 
-## Overview
+## 1. Conversation — School and University
 
-Introduce schools, classes and people involved in education.
+A younger student and an older student compare which schools they attend.
 
-Distinguish types of schools.
+**A:** 你在哪儿上学？ (Nǐ zài nǎr shàngxué?) — Where do you go to school?
 
-## Vocabulary and examples
+**B:** 我在中学上学。 (Wǒ zài zhōngxué shàngxué.) — I go to middle school.
 
-### 大学 (dàxué) — university
+**A:** 你姐姐呢？ (Nǐ jiějie ne?) — What about your older sister?
 
-HSK entry: 27 · POS: noun · introduced
+**B:** 她是大学生，也学汉语。 (Tā shì dàxuéshēng, yě xué Hànyǔ.) — She is a university student and studies Chinese too.
 
-**我在大学学习中文。**
-*wǒ zài dàxué xuéxí Zhōngwén.*
-I study Chinese at university.
-**Usage:** 大学 is the institution; 在 + place gives the location of the study activity.
+## 2. How the language works
 
-**大学里有很多学生。**
-*dàxué lǐ yǒu hěn duō xuéshēng.*
-There are many students at the university.
+### School versus student
 
-### 大学生 (dàxuéshēng) — university student
+学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level.
 
-HSK entry: 28 · POS: noun · introduced
+**Pattern:** school name + 生 → student type
 
-**她是大学生。**
-*tā shì dàxuéshēng.*
-She is a university student.
-**Usage:** 大学生 refers to a university-level student, not an elementary-school pupil.
+**我弟弟是小学生。**
+*Wǒ dìdi shì xiǎoxuéshēng.*
+My younger brother is a primary-school pupil.
 
-**大学生也可以在这里读书。**
-*dàxuéshēng yě kěyǐ zài zhèlǐ dúshū.*
-University students can also study here.
+**她在大学学习。**
+*Tā zài dàxué xuéxí.*
+She studies at university.
 
-### 上学 (shàngxué) — go to school
+### Attending school: 上学 (shàngxué)
 
-HSK entry: 179 · POS: verb · introduced
+上学 (shàngxué) describes attending school; 上课 (shàngkè) describes having/attending a class. The two do not mean exactly the same thing.
 
-**孩子们每天上学。**
-*háizimen měitiān shàngxué.*
-The children go to school every day.
-**Usage:** 上学 means attend or go to school; 们 makes the group plural.
+**Pattern:** subject + 在 + place + 上学
 
-**孩子们早上八点上学。**
-*háizimen zǎoshang bā diǎn shàngxué.*
-The children go to school at eight in the morning.
+**我在北京上学。**
+*Wǒ zài Běijīng shàngxué.*
+I attend school in Beijing.
 
-### 同学 (tóngxué) — classmate
+**我们上午上课。**
+*Wǒmen shàngwǔ shàngkè.*
+We have class in the morning.
 
-HSK entry: 211 · POS: noun · introduced
+## 3. Build new sentences
 
-**他是我的同学。**
-*tā shì wǒ de tóngxué.*
-He is my classmate.
-**Usage:** 同学 is someone studying in the same class or school.
+Change only the school level while keeping the identity sentence.
 
-**我的同学们喜欢学中文。**
-*wǒ de tóngxuémen xǐhuan xué Zhōngwén.*
-My classmates like learning Chinese.
+**Worked model:** **我是中学生。**
+*Wǒ shì zhōngxuéshēng.*
+I am a middle-school student.
 
-### 小学 (xiǎoxué) — primary school
+**Change 1: university**
 
-HSK entry: 237 · POS: noun · introduced
+*Model response:* **我是大学生。**
+*Wǒ shì dàxuéshēng.*
+I am a university student.
 
-**我的孩子上小学。**
-*wǒ de háizi shàng xiǎoxué.*
-My child attends primary school.
-**Usage:** 上小学 refers to attending elementary or primary school.
+**Change 2: primary school**
 
-**小学早上八点上课。**
-*xiǎoxué zǎoshang bā diǎn shàngkè.*
-Primary school classes start at eight in the morning.
+*Model response:* **我是小学生。**
+*Wǒ shì xiǎoxuéshēng.*
+I am a primary-school pupil.
 
-### 小学生 (xiǎoxuéshēng) — primary pupil
+## 4. Read for meaning — A short connected story
 
-HSK entry: 238 · POS: noun · introduced
+**哥哥是中学生，妹妹是小学生。他们每天一起去学校，下午一起回家。**
+*Gēge shì zhōngxuéshēng, mèimei shì xiǎoxuéshēng. Tāmen měi tiān yìqǐ qù xuéxiào, xiàwǔ yìqǐ huí jiā.*
+The older brother is a middle-school student, and the younger sister is in primary school. They go to school together every day and return home together in the afternoon.
 
-**他是小学生。**
-*tā shì xiǎoxuéshēng.*
-He is a primary school pupil.
-**Usage:** 小学生 specifies a primary-school pupil, not a college student.
+**Q1. Which child is in primary school?** Suggested answer: The younger sister.
 
-**这些小学生正在上课。**
-*zhèxiē xiǎoxuéshēng zhèngzài shàngkè.*
-These primary school students are having class.
+**Q2. Do they travel to school together?** Suggested answer: Yes.
 
-### 学生 (xuéshēng) — student
+## 5. Speak and personalize
 
-HSK entry: 248 · POS: noun · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**他是学生。**
-*tā shì xuéshēng.*
-He is a student.
-**Usage:** 学生 is student in general; it does not by itself specify the school level.
+**Speaking 1:** Ask where someone attends school.
 
-**这里有二十个学生。**
-*zhèlǐ yǒu èr shí gè xuéshēng.*
-There are twenty students here.
+*Possible response:* **你在哪儿上学？**
+*Nǐ zài nǎr shàngxué?*
+Where do you go to school?
 
-### 学校 (xuéxiào) — school
+**Speaking 2:** Say a friend is a university student.
 
-HSK entry: 250 · POS: noun · introduced
+*Possible response:* **我的朋友是大学生。**
+*Wǒ de péngyou shì dàxuéshēng.*
+My friend is a university student.
 
-**我们的学校很大。**
-*wǒmen de xuéxiào hěn dà.*
-Our school is big.
-**Usage:** 学校 can refer to a school institution or its campus/buildings.
+## 6. Watch out
 
-**这个学校有很多老师。**
-*zhège xuéxiào yǒu hěn duō lǎoshī.*
-This school has many teachers.
+学校 (xuéxiào) names the institution; 学生 (xuéshēng) names the person. Adding 生 changes the meaning.
 
-### 中学 (zhōngxué) — middle school
+**Pronunciation:** 学习 (xuéxí) is a verb “study/learn”; 学校 (xuéxiào) is the place “school”.
 
-HSK entry: 292 · POS: noun · introduced
+## 7. Check what you can do
 
-**我弟弟上中学。**
-*wǒ dìdi shàng zhōngxué.*
-My younger brother attends middle school.
-**Usage:** 中学 generally denotes secondary or middle school.
+**Comprehension:** Reading comprehension: Which child is in primary school?
+**Answer:** The younger sister.. Check against the connected reading passage, not the vocabulary cards.
 
-**这个中学有很多老师。**
-*zhège zhōngxué yǒu hěn duō lǎoshī.*
-This middle school has many teachers.
+**Comprehension:** Reading comprehension: Do they travel to school together?
+**Answer:** Yes.. Check against the connected reading passage, not the vocabulary cards.
 
-### 中学生 (zhōngxuéshēng) — middle school student
+**Production:** Say this aloud: Ask where someone attends school.
+**Answer:** 你在哪儿上学？ (Nǐ zài nǎr shàngxué?) — Where do you go to school?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 293 · POS: noun · introduced
+**Production:** Say this aloud: Say a friend is a university student.
+**Answer:** 我的朋友是大学生。 (Wǒ de péngyou shì dàxuéshēng.) — My friend is a university student.. Illustrative answer. Other natural responses may be correct.
 
-**她是中学生。**
-*tā shì zhōngxuéshēng.*
-She is a middle school student.
-**Usage:** 中学生 is a secondary-school student, distinct from 小学生 and 大学生.
+## Review and next step
 
-**中学生上午八点上课。**
-*zhōngxuéshēng shàngwǔ bā diǎn shàngkè.*
-Middle school students have class at eight in the morning.
+- Distinguish types of schools.
 
-## Usage and grammar
+- Identify teachers, classmates and students.
 
-### Talking about schools
+- Talk about attending school.
 
-Use the name of an institution to say where someone studies.
+## Reference word bank (details on vocabulary cards)
 
-### Identifying students
+- 大学 (dàxué) — university [HSK entry 27]
 
-A student noun describes the person, not the activity.
+- 大学生 (dàxuéshēng) — university student [HSK entry 28]
 
-## Practice
+- 上学 (shàngxué) — go to school [HSK entry 179]
+
+- 同学 (tóngxué) — classmate [HSK entry 211]
+
+- 小学 (xiǎoxué) — primary school [HSK entry 237]
+
+- 小学生 (xiǎoxuéshēng) — primary pupil [HSK entry 238]
+
+- 学生 (xuéshēng) — student [HSK entry 248]
+
+- 学校 (xuéxiào) — school [HSK entry 250]
+
+- 中学 (zhōngxué) — middle school [HSK entry 292]
+
+- 中学生 (zhōngxuéshēng) — middle school student [HSK entry 293]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “university”?
 - a. 中学 (zhōngxué) — 

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-everyday-actions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -26,7 +26,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -35,9 +35,11 @@
     "一": "Characters:一",
     "上": "Characters:上",
     "下": "Characters:下",
+    "不": "Characters:不",
     "中": "Characters:中",
     "么": "Characters:么",
     "书": "Characters:书",
+    "了": "Characters:了",
     "什": "Characters:什",
     "今": "Characters:今",
     "从": "Characters:从",
@@ -50,10 +52,14 @@
     "儿": "Characters:儿",
     "八": "Characters:八",
     "冷": "Characters:冷",
+    "到": "Characters:到",
+    "包": "Characters:包",
     "去": "Characters:去",
+    "友": "Characters:友",
     "只": "Characters:只",
     "叫": "Characters:叫",
     "可": "Characters:可",
+    "同": "Characters:同",
     "名": "Characters:名",
     "后": "Characters:后",
     "吗": "Characters:吗",
@@ -71,12 +77,15 @@
     "学": "Characters:学",
     "孩": "Characters:孩",
     "室": "Characters:室",
+    "小": "Characters:小",
     "师": "Characters:师",
     "店": "Characters:店",
     "开": "Characters:开",
     "很": "Characters:很",
     "我": "Characters:我",
+    "所": "Characters:所",
     "手": "Characters:手",
+    "打": "Characters:打",
     "找": "Characters:找",
     "教": "Characters:教",
     "文": "Characters:文",
@@ -85,11 +94,14 @@
     "时": "Characters:时",
     "明": "Characters:明",
     "星": "Characters:星",
+    "朋": "Characters:朋",
     "服": "Characters:服",
     "期": "Characters:期",
     "本": "Characters:本",
     "机": "Characters:机",
     "校": "Characters:校",
+    "桌": "Characters:桌",
+    "正": "Characters:正",
     "气": "Characters:气",
     "水": "Characters:水",
     "点": "Characters:点",
@@ -97,11 +109,13 @@
     "玩": "Characters:玩",
     "现": "Characters:现",
     "生": "Characters:生",
+    "电": "Characters:电",
     "的": "Characters:的",
     "看": "Characters:看",
     "知": "Characters:知",
     "穿": "Characters:穿",
     "第": "Characters:第",
+    "红": "Characters:红",
     "给": "Characters:给",
     "老": "Characters:老",
     "衣": "Characters:衣",
@@ -109,12 +123,14 @@
     "见": "Characters:见",
     "认": "Characters:认",
     "识": "Characters:识",
+    "话": "Characters:话",
     "说": "Characters:说",
     "请": "Characters:请",
     "课": "Characters:课",
     "边": "Characters:边",
     "这": "Characters:这",
     "道": "Characters:道",
+    "那": "Characters:那",
     "里": "Characters:里",
     "门": "Characters:门",
     "题": "Characters:题"
@@ -762,8 +778,198 @@
           "correct_choice_ids": [],
           "answer": "天气冷的时候，请多穿衣服。 (tiānqì lěng de shíhou, qǐng duō chuān yīfu.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Why does Xiao Hong call a classmate?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "She cannot find her book.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Where is the book?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "In the classroom.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask if a friend has seen your book.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你看见我的书了吗？ (Nǐ kànjiàn wǒ de shū le ma?) — Have you seen my book?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask someone to hand you a book.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请给我那本书。 (Qǐng gěi wǒ nà běn shū.) — Please give me that book.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Things We Do Every Day",
+        "context_en": "Two people are getting ready to go out. Follow the order of activities and the difference between 看 (kàn) and 看见 (kànjiàn).",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你在做什么？",
+            "pinyin": "Nǐ zài zuò shénme?",
+            "english": "What are you doing?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我正在找我的手机。",
+            "pinyin": "Wǒ zhèngzài zhǎo wǒ de shǒujī.",
+            "english": "I am looking for my phone right now."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你看见了吗？",
+            "pinyin": "Nǐ kànjiàn le ma?",
+            "english": "Have you seen it?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "看见了，在桌子上。",
+            "pinyin": "Kànjiàn le, zài zhuōzi shàng.",
+            "english": "Yes, I have; it is on the table."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Looking versus seeing",
+          "explanation_en": "看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object.",
+          "formula_en": "look/search → result",
+          "examples": [
+            {
+              "hanzi": "我在看外边。",
+              "pinyin": "Wǒ zài kàn wàibian.",
+              "english": "I am looking outside."
+            },
+            {
+              "hanzi": "我看见那只猫了。",
+              "pinyin": "Wǒ kànjiàn nà zhī māo le.",
+              "english": "I spotted that cat."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Give and receive",
+          "explanation_en": "给 (gěi) can introduce a recipient before a noun phrase or, in simple requests, act as a verb meaning “give”.",
+          "formula_en": "给 + person + object",
+          "examples": [
+            {
+              "hanzi": "请给我那本书。",
+              "pinyin": "Qǐng gěi wǒ nà běn shū.",
+              "english": "Please give me that book."
+            },
+            {
+              "hanzi": "我给朋友打电话。",
+              "pinyin": "Wǒ gěi péngyou dǎ diànhuà.",
+              "english": "I call a friend."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Switch the searched-for item while keeping the question and answer natural.",
+        "model": {
+          "hanzi": "你看见我的书了吗？",
+          "pinyin": "Nǐ kànjiàn wǒ de shū le ma?",
+          "english": "Have you seen my book?"
+        },
+        "substitutions": [
+          {
+            "cue_en": "phone",
+            "model_answer": {
+              "hanzi": "你看见我的手机了吗？",
+              "pinyin": "Nǐ kànjiàn wǒ de shǒujī le ma?",
+              "english": "Have you seen my phone?"
+            }
+          },
+          {
+            "cue_en": "bag",
+            "model_answer": {
+              "hanzi": "你看见我的包了吗？",
+              "pinyin": "Nǐ kànjiàn wǒ de bāo le ma?",
+              "english": "Have you seen my bag?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "小红今天要去学校。她找不到书，所以给同学打电话。同学说书在教室里。",
+            "pinyin": "Xiǎo Hóng jīntiān yào qù xuéxiào. Tā zhǎo bú dào shū, suǒyǐ gěi tóngxué dǎ diànhuà. Tóngxué shuō shū zài jiàoshì lǐ.",
+            "english": "Xiao Hong is going to school today. She cannot find her book, so she calls a classmate. The classmate says it is in the classroom."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Why does Xiao Hong call a classmate?",
+            "answer_en": "She cannot find her book."
+          },
+          {
+            "prompt_en": "Where is the book?",
+            "answer_en": "In the classroom."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask if a friend has seen your book.",
+          "model_answer": {
+            "hanzi": "你看见我的书了吗？",
+            "pinyin": "Nǐ kànjiàn wǒ de shū le ma?",
+            "english": "Have you seen my book?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask someone to hand you a book.",
+          "model_answer": {
+            "hanzi": "请给我那本书。",
+            "pinyin": "Qǐng gěi wǒ nà běn shū.",
+            "english": "Please give me that book."
+          }
+        }
+      ],
+      "common_pitfall": "Do not confuse 看 (kàn, look) with 看见 (kànjiàn, perceive/see). The result is expressed in the latter.",
+      "pronunciation_focus": "In 找不到 (zhǎo bú dào), 不 becomes bú before the fourth-tone 到 (dào).",
+      "review": {
+        "can_do": [
+          "Describe common everyday actions.",
+          "Recognize actions of seeing, sitting, living and finding.",
+          "Distinguish related action verbs in context."
+        ],
+        "entry_ids": [
+          61,
+          88,
+          99,
+          101,
+          278,
+          299
+        ]
+      }
     }
   }
 }

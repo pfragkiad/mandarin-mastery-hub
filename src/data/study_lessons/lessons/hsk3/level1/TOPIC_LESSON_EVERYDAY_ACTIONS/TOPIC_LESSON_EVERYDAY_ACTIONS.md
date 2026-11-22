@@ -2,9 +2,9 @@
 
 Recognize and use common verbs for everyday actions and routines.
 
-**Topics:** daily-actions
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Describe common everyday actions.
 
@@ -12,193 +12,151 @@ Recognize and use common verbs for everyday actions and routines.
 
 - Distinguish related action verbs in context.
 
-## Overview
+## 1. Conversation — Things We Do Every Day
 
-Recognize and use common verbs for everyday actions and routines.
+Two people are getting ready to go out. Follow the order of activities and the difference between 看 (kàn) and 看见 (kànjiàn).
 
-Describe common everyday actions.
+**A:** 你在做什么？ (Nǐ zài zuò shénme?) — What are you doing?
 
-## Vocabulary and examples
+**B:** 我正在找我的手机。 (Wǒ zhèngzài zhǎo wǒ de shǒujī.) — I am looking for my phone right now.
 
-### 穿 (chuān) — wear
+**A:** 你看见了吗？ (Nǐ kànjiàn le ma?) — Have you seen it?
 
-HSK entry: 23 · POS: verb · introduced
+**B:** 看见了，在桌子上。 (Kànjiàn le, zài zhuōzi shàng.) — Yes, I have; it is on the table.
 
-**今天我穿新衣服。**
-*jīntiān wǒ chuān xīn yīfu.*
-I am wearing new clothes today.
-**Usage:** 穿 refers to wearing clothes; Chinese does not need a progressive form for the current outfit.
+## 2. How the language works
 
-**天气冷的时候，请多穿衣服。**
-*tiānqì lěng de shíhou, qǐng duō chuān yīfu.*
-When it is cold, please wear more clothes.
+### Looking versus seeing
 
-### 给 (gěi) — give; for
+看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object.
 
-HSK entry: 61 · POS: verb · introduced
+**Pattern:** look/search → result
 
-**可以给我一点儿水吗？**
-*kěyǐ gěi wǒ yìdiǎnr shuǐ ma?*
-Could you give me a little water?
+**我在看外边。**
+*Wǒ zài kàn wàibian.*
+I am looking outside.
 
-**老师给我们一本书。**
-*lǎoshī gěi wǒmen yì běn shū.*
-The teacher gives us a book.
+**我看见那只猫了。**
+*Wǒ kànjiàn nà zhī māo le.*
+I spotted that cat.
 
-Verb meaning give, and a coverb/preposition meaning for/to.
+### Give and receive
 
-### 见 (jiàn) — see; meet
+给 (gěi) can introduce a recipient before a noun phrase or, in simple requests, act as a verb meaning “give”.
 
-HSK entry: 88 · POS: verb · introduced
+**Pattern:** 给 + person + object
 
-**明天见！**
-*míngtiān jiàn!*
-See you tomorrow!
-**Usage:** 明天见 is a short, common parting expression meaning “see you tomorrow.”
+**请给我那本书。**
+*Qǐng gěi wǒ nà běn shū.*
+Please give me that book.
 
-**“星期一见！”她说。**
-*“xīngqīyī jiàn!” tā shuō.*
-"See you on Monday!" she said.
-**Usage:** Written dialogue: 见 is used naturally in a spoken exchange, rather than forced into formal prose.
+**我给朋友打电话。**
+*Wǒ gěi péngyou dǎ diànhuà.*
+I call a friend.
 
-### 叫 (jiào) — be called; call
+## 3. Build new sentences
 
-HSK entry: 91 · POS: verb · introduced
+Switch the searched-for item while keeping the question and answer natural.
 
-**你叫什么名字？**
-*nǐ jiào shénme míngzi?*
-What is your name?
+**Worked model:** **你看见我的书了吗？**
+*Nǐ kànjiàn wǒ de shū le ma?*
+Have you seen my book?
 
-**孩子们叫她妈妈。**
-*háizimen jiào tā māma.*
-The children call her Mom.
+**Change 1: phone**
 
-### 开 (kāi) — open
+*Model response:* **你看见我的手机了吗？**
+*Nǐ kànjiàn wǒ de shǒujī le ma?*
+Have you seen my phone?
 
-HSK entry: 97 · POS: verb · introduced
+**Change 2: bag**
 
-**请开门。**
-*qǐng kāi mén.*
-Please open the door.
-**Usage:** 请 softens the imperative; 开门 means open the door.
+*Model response:* **你看见我的包了吗？**
+*Nǐ kànjiàn wǒ de bāo le ma?*
+Have you seen my bag?
 
-**商店早上八点开门。**
-*shāngdiàn zǎoshang bā diǎn kāimén.*
-The shop opens at eight in the morning.
+## 4. Read for meaning — A short connected story
 
-### 看 (kàn) — look; watch
+**小红今天要去学校。她找不到书，所以给同学打电话。同学说书在教室里。**
+*Xiǎo Hóng jīntiān yào qù xuéxiào. Tā zhǎo bú dào shū, suǒyǐ gěi tóngxué dǎ diànhuà. Tóngxué shuō shū zài jiàoshì lǐ.*
+Xiao Hong is going to school today. She cannot find her book, so she calls a classmate. The classmate says it is in the classroom.
 
-HSK entry: 99 · POS: verb · introduced
+**Q1. Why does Xiao Hong call a classmate?** Suggested answer: She cannot find her book.
 
-**你看，这本书很好。**
-*nǐ kàn, zhè běn shū hěn hǎo.*
-Look, this book is very good.
+**Q2. Where is the book?** Suggested answer: In the classroom.
 
-**请看这本中文书。**
-*qǐng kàn zhè běn Zhōngwén shū.*
-Please look at this Chinese book.
+## 5. Speak and personalize
 
-### 看见 (kànjiàn) — catch sight of
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-HSK entry: 101 · POS: verb · introduced
+**Speaking 1:** Ask if a friend has seen your book.
 
-**我看见一只猫。**
-*wǒ kànjiàn yì zhī māo.*
-I see a cat.
-**Usage:** 看见 emphasizes successful visual perception; here the speaker spots a cat.
+*Possible response:* **你看见我的书了吗？**
+*Nǐ kànjiàn wǒ de shū le ma?*
+Have you seen my book?
 
-**从这里可以看见学校。**
-*cóng zhèlǐ kěyǐ kànjiàn xuéxiào.*
-You can see the school from here.
+**Speaking 2:** Ask someone to hand you a book.
 
-### 玩 (wán) — play
+*Possible response:* **请给我那本书。**
+*Qǐng gěi wǒ nà běn shū.*
+Please give me that book.
 
-HSK entry: 214 · POS: verb · introduced
+## 6. Watch out
 
-**孩子们在玩。**
-*háizimen zài wán.*
-The children are playing.
-**Usage:** 在 before 玩 marks ongoing play; 孩子们 refers to the children as a group.
+Do not confuse 看 (kàn, look) with 看见 (kànjiàn, perceive/see). The result is expressed in the latter.
 
-**学生们下课后在外边玩。**
-*xuéshēngmen xiàkè hòu zài wàibian wán.*
-The students play outside after class.
+**Pronunciation:** In 找不到 (zhǎo bú dào), 不 becomes bú before the fourth-tone 到 (dào).
 
-### 找 (zhǎo) — look for
+## 7. Check what you can do
 
-HSK entry: 278 · POS: verb · introduced
+**Comprehension:** Reading comprehension: Why does Xiao Hong call a classmate?
+**Answer:** She cannot find her book.. Check against the connected reading passage, not the vocabulary cards.
 
-**我在找我的手机。**
-*wǒ zài zhǎo wǒ de shǒujī.*
-I am looking for my phone.
-**Usage:** 在 + 找 signals a search that is currently in progress.
+**Comprehension:** Reading comprehension: Where is the book?
+**Answer:** In the classroom.. Check against the connected reading passage, not the vocabulary cards.
 
-**我去学校找老师。**
-*wǒ qù xuéxiào zhǎo lǎoshī.*
-I'm going to the school to find the teacher.
+**Production:** Say this aloud: Ask if a friend has seen your book.
+**Answer:** 你看见我的书了吗？ (Nǐ kànjiàn wǒ de shū le ma?) — Have you seen my book?. Illustrative answer. Other natural responses may be correct.
 
-### 知道 (zhīdào) — know
+**Production:** Say this aloud: Ask someone to hand you a book.
+**Answer:** 请给我那本书。 (Qǐng gěi wǒ nà běn shū.) — Please give me that book.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 288 · POS: verb · introduced
+## Review and next step
 
-**我知道你的名字。**
-*wǒ zhīdào nǐ de míngzi.*
-I know your name.
-**Usage:** 知道 means know a fact or piece of information, unlike 认识 for familiarity.
+- Describe common everyday actions.
 
-**老师知道我的名字。**
-*lǎoshī zhīdào wǒ de míngzi.*
-The teacher knows my name.
+- Recognize actions of seeing, sitting, living and finding.
 
-### 住 (zhù) — live; reside
+- Distinguish related action verbs in context.
 
-HSK entry: 294 · POS: verb · introduced
+## Reference word bank (details on vocabulary cards)
 
-**我住在这边。**
-*wǒ zhù zài zhèbiān.*
-I live over here.
+- 穿 (chuān) — wear [HSK entry 23]
 
-**现在很多学生住在学校里。**
-*xiànzài hěn duō xuéshēng zhù zài xuéxiào lǐ.*
-Many students now live at school.
+- 给 (gěi) — give; for [HSK entry 61]
 
-### 坐 (zuò) — sit
+- 见 (jiàn) — see; meet [HSK entry 88]
 
-HSK entry: 298 · POS: verb · introduced
+- 叫 (jiào) — be called; call [HSK entry 91]
 
-**请坐在这里。**
-*qǐng zuò zài zhèlǐ.*
-Please sit here.
-**Usage:** 请 makes the request polite; 坐在这里 includes an explicit location marker.
+- 开 (kāi) — open [HSK entry 97]
 
-**学生们坐在教室里。**
-*xuéshēngmen zuò zài jiàoshì lǐ.*
-The students are sitting in the classroom.
+- 看 (kàn) — look; watch [HSK entry 99]
 
-### 做 (zuò) — do; make
+- 看见 (kànjiàn) — catch sight of [HSK entry 101]
 
-HSK entry: 299 · POS: verb · introduced
+- 玩 (wán) — play [HSK entry 214]
 
-**我今天要做什么？**
-*wǒ jīntiān yào zuò shénme?*
-What do I have to do today?
-**Usage:** 做 means do or make; 什么 identifies the task not yet specified.
+- 找 (zhǎo) — look for [HSK entry 278]
 
-**现在做第一题。**
-*xiànzài zuò dì yī tí.*
-Now do question one.
+- 知道 (zhīdào) — know [HSK entry 288]
 
-## Usage and grammar
+- 住 (zhù) — live; reside [HSK entry 294]
 
-### Watching and looking
+- 坐 (zuò) — sit [HSK entry 298]
 
-The perception verb combines with different objects for common actions.
+- 做 (zuò) — do; make [HSK entry 299]
 
-### Doing actions
-
-A broad everyday verb can describe performing an activity or task.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “wear”?
 - a. 知道 (zhīdào) — 

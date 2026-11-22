@@ -1,4 +1,4 @@
-# v2.x / Topic v1 → v3 Migration Rules
+# v2.x / Topic v1 → v3 / v3.1 Migration Rules
 
 This is a **breaking model upgrade**, with schema compatibility for old character lessons.
 
@@ -20,3 +20,15 @@ This is a **breaking model upgrade**, with schema compatibility for old characte
 ## Rendering after migration
 
 Use the included `generate_lesson.py` rather than the older v2.7 generator. It validates each v3 lesson against its JSON schema and optional catalog IDs before creating HTML/Markdown/ZIP. Preserve independent `report.md` source provenance and keep curriculum placement JSON outside lesson ZIPs.
+
+## v3.0.0 topic → v3.1.0 instructional topic
+
+1. Change topic `schema_version` to `mandarin-topic-lesson/3.1.0` and `metadata.template_version` to `3.1.0`. Existing character/general lesson versions remain as before.
+2. Retain vocabulary identities and `sections.vocabulary.items[].examples` in canonical JSON **without changing the original example pairs**. Remove repetitive rendering, not source data.
+3. Populate `sections.teaching_plan` with an independent conversation, 2 explicit teaching patterns and worked examples, guided substitutions, reading/comprehension, speaking, pitfalls, pronunciation and review. Do not simply paraphrase the first two word-card examples.
+4. Append four new keyed `comprehension`/`production` tasks to `sections.practice.questions`. Existing five word-recall tasks remain optional/secondary.
+5. Recompute exact `catalog_character_refs` for new Hanzi used in new lesson sections from the external Project character catalog.
+6. Run `validate_core.py --self-test`, validate every lesson, regenerate both HTML/Markdown using v3.1 `generate_lesson.py`, and check the course manifest for exactly-once syllabus-introduction coverage.
+7. Record content-enrichment provenance, source corrections, and review status in each `report.md` only.
+
+The renderer deliberately does not infer dialogue lines or grammar explanations from source sentences; quality educational authoring is a separate, substantive task.

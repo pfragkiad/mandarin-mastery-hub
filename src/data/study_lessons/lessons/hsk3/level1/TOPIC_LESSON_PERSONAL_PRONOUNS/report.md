@@ -17,3 +17,12 @@
 - Boilerplate about dataset editing has been omitted from the learner-visible teaching notes; specific linguistic notes were retained.
 - Some notes may require linguistic review. No outside translation/source evidence was invented.
 - Every Chinese character used in learner-visible content resolves to a catalog ID.
+
+## v3.1.0 instructional enrichment
+
+- Unit: Talking About People (topic-personal-pronouns).
+- Original vocabulary, meanings, IDs, POS and the two original example sentences per entry have been retained in canonical JSON unchanged. The new lesson renderer displays *references* to vocabulary-detail cards instead of copying those sentences into the main teaching page.
+- Newly authored, draft teaching material: a four-turn contextual conversation; two explained grammar patterns with four worked example sentences; a guided sentence-transformation exercise; an original contextual reading and two comprehension checks; two speaking tasks with model responses; a usage pitfall, pronunciation guidance and an exit/review section.
+- Original five short word-recall questions preserved as optional practice; four more comprehension/production questions created.
+- Quality status: editorial draft only. Native-speaker review, full lexical level audit and final tone/word-segmentation proofreading remain necessary.
+- Any references to higher-level vocabulary in newly authored activities are scaffolding, not silently added Level 1 syllabus entries.

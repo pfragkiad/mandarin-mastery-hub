@@ -1,19 +1,14 @@
-# Core package changelog
+# Core changelog
 
-## Package v3.0.1 — 2026-11-22
+## 3.1.0 — 2026-11-22
+- Added `sections.teaching_plan` for instructional topic lessons: original dialogues, explained grammar patterns, guided substitutions, contextual reading/comprehension, speaking practice, pitfalls, pronunciation notes and review.
+- Made these sections **mandatory for `mandarin-topic-lesson/3.1.0`**, retaining support for `3.0.0` topic lessons and unchanged `3.0.0` character/general lessons.
+- Updated `generate_lesson.py`: renders the instructional sequence first; hides duplicate source vocabulary-card examples in the lesson page; exposes referenced vocabulary in a collapsed index.
+- Added stronger v3.1 semantic checks for review IDs, nonempty dialogue and quiz IDs, and unique module IDs.
+- Updated the reference topic template and documentation.
 
-- Added the missing reusable `generate_lesson.py` for the v3 schema family.
-- Generates synchronized learner-facing HTML and Markdown from canonical v3 lesson JSON.
-- Produces the agreed four-file per-lesson ZIP: lesson `.json`, `.html`, `.md`, and independent `report.md`.
-- Supports character usage, topic vocabulary, grammar, dialogue, review, and generic lesson types.
-- Restores extension tables and historical notes in both character-lesson rendered formats.
-- Renders catalog-backed written characters with `data-catalog-id` (no invented URLs), preferring Kai fonts.
-- Includes offline, no-CDN presentation and answer-reveal quizzes.
-- Keeps curriculum manifests and source provenance outside learner lesson packages.
-- **All JSON schema versions stay at `3.0.0`; this patch release changes the bundle's generator and documentation, not the data contract.**
+## 3.0.1 — 2026-11-22
+- Added deterministic HTML/Markdown renderer and documentation corrections.
 
-## Package v3.0.0 — 2026-11-22
-
-- Introduced separate course curricula, 20 shared topic categories, optional course-private topics and lesson-independent curriculum placements.
-- Added shared classification/tags and typed lesson templates.
-- Retained legacy schema snapshots for migration.
+## 3.0.0 — 2026-11-22
+- Introduced multi-course shared classification, curricula and independent lessons.

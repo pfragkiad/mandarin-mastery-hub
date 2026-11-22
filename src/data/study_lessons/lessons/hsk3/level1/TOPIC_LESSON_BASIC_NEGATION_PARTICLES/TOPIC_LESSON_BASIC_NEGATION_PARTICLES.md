@@ -2,9 +2,9 @@
 
 Build simple affirmative, negative and interrogative sentences using core function words.
 
-**Topics:** grammar-functions, communication-social
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Negate a simple statement or request.
 
@@ -12,175 +12,145 @@ Build simple affirmative, negative and interrogative sentences using core functi
 
 - Understand basic word order.
 
-## Overview
+## 1. Conversation — Making Basic Statements
 
-Build simple affirmative, negative and interrogative sentences using core function words.
+Listen to how small particles change the *function* of a sentence, not its main vocabulary.
 
-Negate a simple statement or request.
+**A:** 你是老师吗？ (Nǐ shì lǎoshī ma?) — Are you a teacher?
 
-## Vocabulary and examples
+**B:** 不是，我是学生。 (Bú shì, wǒ shì xuéshēng.) — No, I am a student.
 
-### 吧 (ba) — suggestion particle
+**A:** 你有电脑吗？ (Nǐ yǒu diànnǎo ma?) — Do you have a computer?
 
-HSK entry: 4 · POS: particle · introduced
+**B:** 没有。你的呢？ (Méiyǒu. Nǐ de ne?) — No. What about yours?
 
-**我们走吧。**
-*wǒmen zǒu ba.*
-Let's go.
-**Usage:** Sentence-final 吧 softens a proposal into a friendly suggestion to go together.
+## 2. How the language works
 
-**“明天再来吧。”老师说。**
-*“míngtiān zài lái ba.” lǎoshī shuō.*
-"Come back tomorrow," the teacher said.
-**Usage:** Written dialogue: 吧 is used naturally in a spoken exchange, rather than forced into formal prose.
+### 不 (bù) and 没有 (méiyǒu)
 
-Sentence-final suggestion or softening particle.
+不 (bù) typically negates identity, habitual actions, wants or future choices. 没有 (méiyǒu) negates possession and is used in common past-event negation.
 
-### 不 (bù) — not
+**Pattern:** 不 + adjective/verb; 没有 + noun
 
-HSK entry: 13 · POS: adverb · introduced
+**我晚上不喝茶。**
+*Wǒ wǎnshang bù hē chá.*
+I do not drink tea in the evening.
 
-**我不喝茶。**
-*wǒ bù hē chá.*
-I do not drink tea.
-**Usage:** 不 negates a general action or preference; there is no aspect marker for a habitual statement.
+**我妹妹没有手机。**
+*Wǒ mèimei méiyǒu shǒujī.*
+My younger sister does not have a mobile phone.
 
-**这里不卖茶。**
-*zhèlǐ bú mài chá.*
-Tea is not sold here.
+### Particles for questions and responses
 
-### 不要 (búyào) — do not want; don't
+吗 (ma) turns a statement into a yes/no question; 呢 (ne) often returns the topic to the listener; 吧 (ba) can soften a suggestion.
 
-HSK entry: 15 · POS: adverb · introduced
+**Pattern:** statement + 吗?; topic + 呢?; suggestion + 吧
 
-**我不要这个。**
-*wǒ bú yào zhège.*
-I don't want this one.
-**Usage:** 不要 directly rejects an offered object; in some contexts it can sound firm.
+**她是学生吗？**
+*Tā shì xuéshēng ma?*
+Is she a student?
 
-**请不要在这里吃东西。**
-*qǐng búyào zài zhèlǐ chī dōngxi.*
-Please don't eat here.
+**我们现在走吧。**
+*Wǒmen xiànzài zǒu ba.*
+Let’s go now.
 
-Negative request/prohibition: 不 + 要; an expression rather than a single lexical category.
+## 3. Build new sentences
 
-### 的 (de) — possessive particle
+Make the affirmative statements negative with the appropriate word.
 
-HSK entry: 30 · POS: particle · introduced
+**Worked model:** **我是老师。→ 我不是老师。**
+*Wǒ shì lǎoshī. → Wǒ bú shì lǎoshī.*
+I am a teacher. → I am not a teacher.
 
-**这是我的书。**
-*zhè shì wǒ de shū.*
-This is my book.
-**Usage:** 的 links the possessor 我 to the noun 书.
+**Change 1: possession**
 
-**爸爸的车在那边。**
-*bàba de chē zài nàbiān.*
-Dad's car is over there.
+*Model response:* **我有电脑。→ 我没有电脑。**
+*Wǒ yǒu diànnǎo. → Wǒ méiyǒu diànnǎo.*
+I have a computer. → I do not have a computer.
 
-Structural particle marking modification/possession and other constructions.
+**Change 2: habit**
 
-### 了 (le) — completion particle
+*Model response:* **我喝茶。→ 我不喝茶。**
+*Wǒ hē chá. → Wǒ bù hē chá.*
+I drink tea. → I do not drink tea.
 
-HSK entry: 108 · POS: particle · introduced
+## 4. Read for meaning — A short connected story
 
-**我吃了一个苹果。**
-*wǒ chī le yí ge píngguǒ.*
-I ate an apple.
-**Usage:** 了 after 吃 marks a completed event, not a past-tense conjugation.
+**小王不是老师，他是学生。他没有车，但是他的朋友有车。今天他不去学校，在家学习。**
+*Xiǎo Wáng bú shì lǎoshī, tā shì xuéshēng. Tā méiyǒu chē, dànshì tā de péngyou yǒu chē. Jīntiān tā bú qù xuéxiào, zài jiā xuéxí.*
+Xiao Wang is not a teacher; he is a student. He does not have a car, but his friend does. Today he is not going to school; he is studying at home.
 
-**我已经吃了早饭。**
-*wǒ yǐjīng chī le zǎofàn.*
-I have already eaten breakfast.
+**Q1. Is Xiao Wang a teacher?** Suggested answer: No, he is a student.
 
-Aspect particle after verbs and sentence-final particle are related but different uses.
+**Q2. Where is he studying today?** Suggested answer: At home.
 
-### 吗 (ma) — yes/no particle
+## 5. Speak and personalize
 
-HSK entry: 115 · POS: particle · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**你喜欢茶吗？**
-*nǐ xǐhuan chá ma?*
-Do you like tea?
-**Usage:** Sentence-final 吗 turns a statement into a yes–no question.
+**Speaking 1:** Ask whether your partner is a student, then answer.
 
-**今天上课吗？**
-*jīntiān shàngkè ma?*
-Do we have class today?
+*Possible response:* **你是学生吗？我是。**
+*Nǐ shì xuéshēng ma? Wǒ shì.*
+Are you a student? Yes, I am.
 
-Yes–no question particle.
+**Speaking 2:** Ask someone about their computer; respond negatively.
 
-### 没有 (méiyǒu) — do not have
+*Possible response:* **你有电脑吗？没有。**
+*Nǐ yǒu diànnǎo ma? Méiyǒu.*
+Do you have a computer? No.
 
-HSK entry: 122 · POS: verb · introduced
+## 6. Watch out
 
-**我没有手机。**
-*wǒ méiyǒu shǒujī.*
-I don't have a mobile phone.
-**Usage:** 没有 expresses non-possession; it is not combined with 不.
+Do not use 不有 to mean “do not have.” Use 没有 (méiyǒu) for lack of possession.
 
-**今天下午没有课。**
-*jīntiān xiàwǔ méiyǒu kè.*
-There is no class this afternoon.
+**Pronunciation:** Before fourth tone, 不 (bù) changes to bú: 不是 (bú shì).
 
-Verb expressing absence or non-possession (我没有手机); negative adverbial 没(有) before a verb expresses nonoccurrence (我没有去). Both roles are kept, but the current examples illustrate non-possession/absence.
+## 7. Check what you can do
 
-### 们 (men) — plural suffix
+**Comprehension:** Reading comprehension: Is Xiao Wang a teacher?
+**Answer:** No, he is a student.. Check against the connected reading passage, not the vocabulary cards.
 
-HSK entry: 124 · POS: suffix · introduced
+**Comprehension:** Reading comprehension: Where is he studying today?
+**Answer:** At home.. Check against the connected reading passage, not the vocabulary cards.
 
-**他们都是老师。**
-*tāmen dōu shì lǎoshī.*
-They are all teachers.
-**Usage:** 们 marks a plural group of people in pronouns such as 他们, but is not freely added to every noun.
+**Production:** Say this aloud: Ask whether your partner is a student, then answer.
+**Answer:** 你是学生吗？我是。 (Nǐ shì xuéshēng ma? Wǒ shì.) — Are you a student? Yes, I am.. Illustrative answer. Other natural responses may be correct.
 
-**老师们正在上课。**
-*lǎoshīmen zhèngzài shàngkè.*
-The teachers are having class.
+**Production:** Say this aloud: Ask someone about their computer; respond negatively.
+**Answer:** 你有电脑吗？没有。 (Nǐ yǒu diànnǎo ma? Méiyǒu.) — Do you have a computer? No.. Illustrative answer. Other natural responses may be correct.
 
-Plural suffix for personal pronouns and people nouns.
+## Review and next step
 
-### 呢 (ne) — question particle
+- Negate a simple statement or request.
 
-HSK entry: 144 · POS: particle · introduced
+- Recognize sentence-final particles.
 
-**你呢？**
-*nǐ ne?*
-And you?
-**Usage:** 你呢? is a compact way to return a question to the other person.
+- Understand basic word order.
 
-**“我会说汉语，你呢？”她问。**
-*“wǒ huì shuō Hànyǔ, nǐ ne?” tā wèn.*
-"I can speak Chinese. What about you?" she asked.
-**Usage:** Written dialogue: 呢 is used naturally in a spoken exchange, rather than forced into formal prose.
+## Reference word bank (details on vocabulary cards)
 
-Sentence-final particle for follow-up, topic continuation, or ongoing action.
+- 吧 (ba) — suggestion particle [HSK entry 4]
 
-### 是 (shì) — be
+- 不 (bù) — not [HSK entry 13]
 
-HSK entry: 188 · POS: verb · introduced
+- 不要 (búyào) — do not want; don't [HSK entry 15]
 
-**我是学生。**
-*wǒ shì xuéshēng.*
-I am a student.
-**Usage:** 是 links subject and noun predicate; no article is required before 学生.
+- 的 (de) — possessive particle [HSK entry 30]
 
-**这里是学校。**
-*zhèlǐ shì xuéxiào.*
-This is the school.
+- 了 (le) — completion particle [HSK entry 108]
 
-Copular verb, not a general-purpose adjective.
+- 吗 (ma) — yes/no particle [HSK entry 115]
 
-## Usage and grammar
+- 没有 (méiyǒu) — do not have [HSK entry 122]
 
-### Negating an ordinary action
+- 们 (men) — plural suffix [HSK entry 124]
 
-Use the negative adverb before a verb to negate a habitual action.
+- 呢 (ne) — question particle [HSK entry 144]
 
-### Yes/no questions
+- 是 (shì) — be [HSK entry 188]
 
-A sentence-final question particle changes a statement into a basic yes/no question.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “suggestion particle”?
 - a. 呢 (ne) — 

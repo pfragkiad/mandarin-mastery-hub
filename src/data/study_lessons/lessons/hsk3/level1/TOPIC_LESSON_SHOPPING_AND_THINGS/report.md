@@ -21,3 +21,12 @@
 ## Explicit pinyin correction
 
 - Source entry 36: `我在电脑上学习。` was stored with `wǒ zài diànnǎo shàngxué xí.` and is corrected to `wǒ zài diànnǎo shàng xuéxí.`. The sentence and translation are unchanged.
+
+## v3.1.0 instructional enrichment
+
+- Unit: Buying Everyday Things (topic-shopping-and-things).
+- Original vocabulary, meanings, IDs, POS and the two original example sentences per entry have been retained in canonical JSON unchanged. The new lesson renderer displays *references* to vocabulary-detail cards instead of copying those sentences into the main teaching page.
+- Newly authored, draft teaching material: a four-turn contextual conversation; two explained grammar patterns with four worked example sentences; a guided sentence-transformation exercise; an original contextual reading and two comprehension checks; two speaking tasks with model responses; a usage pitfall, pronunciation guidance and an exit/review section.
+- Original five short word-recall questions preserved as optional practice; four more comprehension/production questions created.
+- Quality status: editorial draft only. Native-speaker review, full lexical level audit and final tone/word-segmentation proofreading remain necessary.
+- Any references to higher-level vocabulary in newly authored activities are scaffolding, not silently added Level 1 syllabus entries.

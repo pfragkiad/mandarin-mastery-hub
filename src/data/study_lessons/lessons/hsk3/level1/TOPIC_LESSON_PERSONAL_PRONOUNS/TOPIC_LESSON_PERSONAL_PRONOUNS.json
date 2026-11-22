@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-personal-pronouns",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -27,7 +27,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -38,6 +38,7 @@
     "上": "Characters:上",
     "下": "Characters:下",
     "两": "Characters:两",
+    "个": "Characters:个",
     "中": "Characters:中",
     "么": "Characters:么",
     "九": "Characters:九",
@@ -52,12 +53,17 @@
     "们": "Characters:们",
     "会": "Characters:会",
     "你": "Characters:你",
+    "写": "Characters:写",
     "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
     "只": "Characters:只",
     "叫": "Characters:叫",
     "可": "Characters:可",
+    "同": "Characters:同",
     "名": "Characters:名",
     "吗": "Characters:吗",
+    "和": "Characters:和",
     "哥": "Characters:哥",
     "唱": "Characters:唱",
     "喜": "Characters:喜",
@@ -73,6 +79,7 @@
     "它": "Characters:它",
     "家": "Characters:家",
     "小": "Characters:小",
+    "师": "Characters:师",
     "很": "Characters:很",
     "您": "Characters:您",
     "我": "Characters:我",
@@ -81,6 +88,7 @@
     "明": "Characters:明",
     "是": "Characters:是",
     "有": "Characters:有",
+    "朋": "Characters:朋",
     "来": "Characters:来",
     "校": "Characters:校",
     "欢": "Characters:欢",
@@ -95,6 +103,7 @@
     "生": "Characters:生",
     "的": "Characters:的",
     "看": "Characters:看",
+    "老": "Characters:老",
     "语": "Characters:语",
     "说": "Characters:说",
     "请": "Characters:请",
@@ -701,8 +710,200 @@
           "correct_choice_ids": [],
           "answer": "大家下午两点来上课。 (dàjiā xiàwǔ liǎng diǎn lái shàngkè.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who does 我们 (wǒmen) refer to in this passage?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The speaker and their older sister.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Are they at the same school?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Yes.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Address several classmates with a yes/no question.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你们是学生吗？ (Nǐmen shì xuéshēng ma?) — Are you all students?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Point to a pet and say it is a cat.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "它是一只小猫。 (Tā shì yì zhī xiǎo māo.) — It is a small cat.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About People",
+        "context_en": "A group of classmates identifies who is speaking, whom they address, and whom they refer to.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你们是学生吗？",
+            "pinyin": "Nǐmen shì xuéshēng ma?",
+            "english": "Are you all students?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是，我们都是学生。",
+            "pinyin": "Shì, wǒmen dōu shì xuéshēng.",
+            "english": "Yes, we are all students."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "她也是学生吗？",
+            "pinyin": "Tā yě shì xuéshēng ma?",
+            "english": "Is she a student too?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是，她是我同学。",
+            "pinyin": "Shì, tā shì wǒ tóngxué.",
+            "english": "Yes, she is my classmate."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Person and number",
+          "explanation_en": "我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.",
+          "formula_en": "pronoun + 是 + identity",
+          "examples": [
+            {
+              "hanzi": "他们是老师。",
+              "pinyin": "Tāmen shì lǎoshī.",
+              "english": "They are teachers."
+            },
+            {
+              "hanzi": "我们是朋友。",
+              "pinyin": "Wǒmen shì péngyou.",
+              "english": "We are friends."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Written 他 (tā), 她 (tā), 它 (tā)",
+          "explanation_en": "These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.",
+          "formula_en": "他/她/它 + verb",
+          "examples": [
+            {
+              "hanzi": "她在看书。",
+              "pinyin": "Tā zài kàn shū.",
+              "english": "She is reading."
+            },
+            {
+              "hanzi": "它是一只小猫。",
+              "pinyin": "Tā shì yì zhī xiǎo māo.",
+              "english": "It is a small cat."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the pronoun while keeping the identity predicate.",
+        "model": {
+          "hanzi": "我是学生。",
+          "pinyin": "Wǒ shì xuéshēng.",
+          "english": "I am a student."
+        },
+        "substitutions": [
+          {
+            "cue_en": "we",
+            "model_answer": {
+              "hanzi": "我们是学生。",
+              "pinyin": "Wǒmen shì xuéshēng.",
+              "english": "We are students."
+            }
+          },
+          {
+            "cue_en": "they",
+            "model_answer": {
+              "hanzi": "他们是学生。",
+              "pinyin": "Tāmen shì xuéshēng.",
+              "english": "They are students."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "我和姐姐都是学生，我们在一个学校。她喜欢读书，我喜欢写汉字。我们每天一起去学校。",
+            "pinyin": "Wǒ hé jiějie dōu shì xuéshēng, wǒmen zài yí ge xuéxiào. Tā xǐhuan dúshū, wǒ xǐhuan xiě Hànzì. Wǒmen měi tiān yìqǐ qù xuéxiào.",
+            "english": "My older sister and I are both students at the same school. She likes reading, and I like writing Chinese characters. We go to school together every day."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Who does 我们 (wǒmen) refer to in this passage?",
+            "answer_en": "The speaker and their older sister."
+          },
+          {
+            "prompt_en": "Are they at the same school?",
+            "answer_en": "Yes."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Address several classmates with a yes/no question.",
+          "model_answer": {
+            "hanzi": "你们是学生吗？",
+            "pinyin": "Nǐmen shì xuéshēng ma?",
+            "english": "Are you all students?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Point to a pet and say it is a cat.",
+          "model_answer": {
+            "hanzi": "它是一只小猫。",
+            "pinyin": "Tā shì yì zhī xiǎo māo.",
+            "english": "It is a small cat."
+          }
+        }
+      ],
+      "common_pitfall": "他 (tā), 她 (tā) and 它 (tā) have the same pronunciation, so written gender/animacy distinctions must not be treated as different sounds.",
+      "pronunciation_focus": "Practise third-tone sandhi in 你好 (nǐ hǎo), typically pronounced approximately ní hǎo in connected speech, while lexical pinyin remains nǐ hǎo.",
+      "review": {
+        "can_do": [
+          "Identify first-, second- and third-person pronouns.",
+          "Distinguish singular and plural forms.",
+          "Recognize polite forms of address."
+        ],
+        "entry_ids": [
+          146,
+          148,
+          200,
+          201,
+          202,
+          203,
+          221,
+          222
+        ]
+      }
     }
   }
 }

@@ -2,9 +2,9 @@
 
 Use common function words for emphasis, coordination, repetition and progressive actions.
 
-**Topics:** grammar-functions, daily-actions
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Express degree and emphasis.
 
@@ -12,174 +12,147 @@ Use common function words for emphasis, coordination, repetition and progressive
 
 - Understand ongoing actions in simple sentences.
 
-## Overview
+## 1. Conversation — Connecting and Emphasizing Ideas
 
-Use common function words for emphasis, coordination, repetition and progressive actions.
+Two students compare their activities. Practise linkers, emphasis, and the difference between 在 (zài) and 正在 (zhèngzài).
 
-Express degree and emphasis.
+**A:** 你在看书吗？ (Nǐ zài kàn shū ma?) — Are you reading?
 
-## Vocabulary and examples
+**B:** 是，我也在听歌。 (Shì, wǒ yě zài tīng gē.) — Yes, and I am also listening to music.
 
-### 都 (dōu) — all; both
+**A:** 你今天很忙吗？ (Nǐ jīntiān hěn máng ma?) — Are you busy today?
 
-HSK entry: 41 · POS: adverb · introduced
+**B:** 很忙，但是我还想看电影。 (Hěn máng, dànshì wǒ hái xiǎng kàn diànyǐng.) — Very busy, but I still want to watch a movie.
 
-**我们都是学生。**
-*wǒmen dōu shì xuéshēng.*
-We are all students.
-**Usage:** 都 applies to everyone in the subject group; omit it and the “all” nuance disappears.
+## 2. How the language works
 
-**学生们都在教室里。**
-*xuéshēngmen dōu zài jiàoshì lǐ.*
-All the students are in the classroom.
+### Adding and combining information
 
-### 非常 (fēicháng) — extremely
+也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.
 
-HSK entry: 53 · POS: adverb · introduced
+**Pattern:** subject + 也 + verb; group + 都 + verb
 
-**我今天非常高兴。**
-*wǒ jīntiān fēicháng gāoxìng.*
-I am extremely happy today.
-**Usage:** 非常 intensifies 高兴 more strongly than the common degree word 很.
+**妹妹也喜欢喝茶。**
+*Mèimei yě xǐhuan hē chá.*
+My younger sister also likes drinking tea.
 
-**这件衣服非常漂亮。**
-*zhè jiàn yīfu fēicháng piàoliang.*
-This piece of clothing is very pretty.
+**我们都喜欢中文。**
+*Wǒmen dōu xǐhuan Zhōngwén.*
+We all like Chinese.
 
-### 还 (hái) — still; also
+### Degree and ongoing actions
 
-HSK entry: 67 · POS: adverb · introduced
+很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.
 
-**他还在学校。**
-*tā hái zài xuéxiào.*
-He is still at school.
-**Usage:** 还 means “still,” showing that the school situation continues.
+**Pattern:** subject + 正在 + verb
 
-**这家店还没有开门。**
-*zhè jiā diàn hái méiyǒu kāimén.*
-This shop hasn't opened yet.
+**她正在做饭。**
+*Tā zhèngzài zuò fàn.*
+She is cooking right now.
 
-### 和 (hé) — and; with
+**今天真热！**
+*Jīntiān zhēn rè!*
+It is really hot today!
 
-HSK entry: 78 · POS: conjunction · introduced
+## 3. Build new sentences
 
-**我和你一起去。**
-*wǒ hé nǐ yìqǐ qù.*
-I will go with you.
-**Usage:** 和 joins two people; 一起 clarifies that they go together.
+Use 也 to add another person doing the activity.
 
-**我们和老师一起学习。**
-*wǒmen hé lǎoshī yìqǐ xuéxí.*
-We study together with the teacher.
+**Worked model:** **我看书。她也看书。**
+*Wǒ kàn shū. Tā yě kàn shū.*
+I read. She reads too.
 
-Connects nouns and nominal phrases as and; with is a prepositional use.
+**Change 1: studying**
 
-### 很 (hěn) — very
+*Model response:* **我学习。他也学习。**
+*Wǒ xuéxí. Tā yě xuéxí.*
+I study. He studies too.
 
-HSK entry: 79 · POS: adverb · introduced
+**Change 2: drinking water**
 
-**他很高兴。**
-*tā hěn gāoxìng.*
-He is very happy.
-**Usage:** 很 often functions as a natural degree linker before adjectives, not an emphatic “very.”
+*Model response:* **我喝水。你也喝水。**
+*Wǒ hē shuǐ. Nǐ yě hē shuǐ.*
+I drink water. You drink water too.
 
-**这家商店很大。**
-*zhè jiā shāngdiàn hěn dà.*
-This shop is very big.
+## 4. Read for meaning — A short connected story
 
-### 太 (tài) — too; very
+**哥哥和妹妹都在家。哥哥正在看书，妹妹在写字。他们也听歌。**
+*Gēge hé mèimei dōu zài jiā. Gēge zhèngzài kàn shū, mèimei zài xiě zì. Tāmen yě tīng gē.*
+The older brother and younger sister are both at home. He is reading while she is writing. They also listen to songs.
 
-HSK entry: 206 · POS: adverb · introduced
+**Q1. Where are the brother and sister?** Suggested answer: Both are at home.
 
-**这本书太贵了。**
-*zhè běn shū tài guì le.*
-This book is too expensive.
-**Usage:** 太…了 indicates an excessive degree, not simply a high price.
+**Q2. Who is writing?** Suggested answer: The younger sister.
 
-**今天天气太热了。**
-*jīntiān tiānqì tài rè le.*
-The weather is too hot today.
+## 5. Speak and personalize
 
-### 也 (yě) — also
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-HSK entry: 253 · POS: adverb · introduced
+**Speaking 1:** Explain what you and a friend both like.
 
-**我也喜欢茶。**
-*wǒ yě xǐhuan chá.*
-I also like tea.
-**Usage:** 也 means also; it normally appears before the verb or adjective predicate.
+*Possible response:* **我们都喜欢看电影。**
+*Wǒmen dōu xǐhuan kàn diànyǐng.*
+We both like watching movies.
 
-**学生也可以在这里看书。**
-*xuéshēng yě kěyǐ zài zhèlǐ kàn shū.*
-Students can also read books here.
+**Speaking 2:** Describe what someone is doing right now.
 
-### 再 (zài) — again
+*Possible response:* **他正在写字。**
+*Tā zhèngzài xiě zì.*
+He is writing characters right now.
 
-HSK entry: 270 · POS: adverb · introduced
+## 6. Watch out
 
-**请再说一次。**
-*qǐng zài shuō yí cì.*
-Please say it again.
-**Usage:** 再 indicates repetition; 一次 is one occurrence, and 一 is pronounced yí before 次.
+和 (hé) normally joins nouns, not two independent clauses in the way English “and” does. Use a comma or appropriate connector instead.
 
-**请明天再来。**
-*qǐng míngtiān zài lái.*
-Please come back tomorrow.
+**Pronunciation:** Distinguish 在 (zài) as a location preposition from 在 (zài) as an aspect marker; word order supplies the interpretation.
 
-### 在 (zài) — at; in
+## 7. Check what you can do
 
-HSK entry: 271 · POS: verb · introduced
+**Comprehension:** Reading comprehension: Where are the brother and sister?
+**Answer:** Both are at home.. Check against the connected reading passage, not the vocabulary cards.
 
-**我在家。**
-*wǒ zài jiā.*
-I am at home.
-**Usage:** 在 + location states where the speaker is, not what they are doing.
+**Comprehension:** Reading comprehension: Who is writing?
+**Answer:** The younger sister.. Check against the connected reading passage, not the vocabulary cards.
 
-**我们在学校上课。**
-*wǒmen zài xuéxiào shàngkè.*
-We have class at school.
+**Production:** Say this aloud: Explain what you and a friend both like.
+**Answer:** 我们都喜欢看电影。 (Wǒmen dōu xǐhuan kàn diànyǐng.) — We both like watching movies.. Illustrative answer. Other natural responses may be correct.
 
-Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb.
+**Production:** Say this aloud: Describe what someone is doing right now.
+**Answer:** 他正在写字。 (Tā zhèngzài xiě zì.) — He is writing characters right now.. Illustrative answer. Other natural responses may be correct.
 
-### 真 (zhēn) — really
+## Review and next step
 
-HSK entry: 285 · POS: adverb · introduced
+- Express degree and emphasis.
 
-**今天天气真好！**
-*jīntiān tiānqì zhēn hǎo!*
-The weather is really nice today!
-**Usage:** 真 adds strong, spontaneous positive emphasis to 好.
+- Recognize coordination and repetition.
 
-**这家饭店的菜真好吃！**
-*zhè jiā fàndiàn de cài zhēn hǎochī!*
-The food at this restaurant is really delicious!
+- Understand ongoing actions in simple sentences.
 
-Degree adverb truly/really, sometimes adjectival.
+## Reference word bank (details on vocabulary cards)
 
-### 正在 (zhèngzài) — currently; in progress
+- 都 (dōu) — all; both [HSK entry 41]
 
-HSK entry: 286 · POS: adverb · introduced
+- 非常 (fēicháng) — extremely [HSK entry 53]
 
-**我正在看书。**
-*wǒ zhèngzài kàn shū.*
-I am reading a book right now.
-**Usage:** 正在 makes the ongoing action explicit: reading right now.
+- 还 (hái) — still; also [HSK entry 67]
 
-**学生们正在上课。**
-*xuéshēngmen zhèngzài shàngkè.*
-The students are having class right now.
+- 和 (hé) — and; with [HSK entry 78]
 
-## Usage and grammar
+- 很 (hěn) — very [HSK entry 79]
 
-### Doing something again
+- 太 (tài) — too; very [HSK entry 206]
 
-A repetition adverb can indicate a future or additional occurrence.
+- 也 (yě) — also [HSK entry 253]
 
-### Ongoing actions
+- 再 (zài) — again [HSK entry 270]
 
-A progressive marker before a verb highlights an action underway.
+- 在 (zài) — at; in [HSK entry 271]
 
-## Practice
+- 真 (zhēn) — really [HSK entry 285]
+
+- 正在 (zhèngzài) — currently; in progress [HSK entry 286]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “all”?
 - a. 都 (dōu) — 

@@ -2,9 +2,9 @@
 
 Talk about being unwell, healthcare, sleep and rest.
 
-**Topics:** health-wellbeing
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Express basic illness and health needs.
 
@@ -12,159 +12,145 @@ Talk about being unwell, healthcare, sleep and rest.
 
 - Talk about sleeping and resting.
 
-## Overview
+## 1. Conversation — Health and Rest
 
-Talk about being unwell, healthcare, sleep and rest.
+A student is unwell, explains symptoms simply, and asks for time to rest.
 
-Express basic illness and health needs.
+**A:** 你今天怎么了？ (Nǐ jīntiān zěnme le?) — What is wrong today?
 
-## Vocabulary and examples
+**B:** 我生病了，想休息。 (Wǒ shēngbìng le, xiǎng xiūxi.) — I am sick and want to rest.
 
-### 病 (bìng) — illness
+**A:** 你去医院看病吗？ (Nǐ qù yīyuàn kànbìng ma?) — Are you going to the hospital to see a doctor?
 
-HSK entry: 12 · POS: noun · introduced
+**B:** 去，我下午去。 (Qù, wǒ xiàwǔ qù.) — Yes, I am going this afternoon.
 
-**他生病了。**
-*tā shēngbìng le.*
-He is ill.
-**Usage:** 生病 is the ordinary way to say someone is ill; 有病 can sound judgmental in conversation.
+## 2. How the language works
 
-**他的病好了。**
-*tā de bìng hǎo le.*
-His illness has gotten better.
+### A condition versus getting medical attention
 
-Illness as a noun; also occurs in verbal uses.
+生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.
 
-### 看病 (kànbìng) — see a doctor
+**Pattern:** subject + 生病了; subject + 去 + 医院 + 看病
 
-HSK entry: 100 · POS: verb · introduced
+**弟弟生病了。**
+*Dìdi shēngbìng le.*
+My younger brother is ill.
 
-**我生病了，要去看病。**
-*wǒ shēngbìng le, yào qù kànbìng.*
-I am sick and need to see a doctor.
-**Usage:** 看病 means consult a doctor or seek medical care, not merely “look at illness.”
+**妈妈去看病。**
+*Māma qù kànbìng.*
+Mom is going to see a doctor.
 
-**医生上午九点开始看病。**
-*yīshēng shàngwǔ jiǔ diǎn kāishǐ kànbìng.*
-The doctor starts seeing patients at nine in the morning.
+### Rest and sleep
 
-### 口 (kǒu) — mouth
+休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.
 
-HSK entry: 104 · POS: noun · introduced
+**Pattern:** time + verb + 了
 
-**我喝了一口水。**
-*wǒ hē le yì kǒu shuǐ.*
-I took a sip of water.
-**Usage:** 口 acts as a measure word for a sip or mouthful, not the noun “mouth” here.
+**我晚上十点睡觉。**
+*Wǒ wǎnshang shí diǎn shuìjiào.*
+I go to sleep at ten at night.
 
-**他喝了三口水。**
-*tā hē le sān kǒu shuǐ.*
-He took three sips of water.
+**他早上七点起床。**
+*Tā zǎoshang qī diǎn qǐchuáng.*
+He gets up at seven in the morning.
 
-Noun for mouth; also classifier in expressions such as population count.
+## 3. Build new sentences
 
-### 起床 (qǐchuáng) — get up
+Change the person in a health statement.
 
-HSK entry: 161 · POS: verb · introduced
+**Worked model:** **我生病了。**
+*Wǒ shēngbìng le.*
+I am ill.
 
-**我早上七点起床。**
-*wǒ zǎoshang qī diǎn qǐchuáng.*
-I get up at seven in the morning.
-**Usage:** 起床 refers to getting out of bed; 七点 gives the hour.
+**Change 1: my younger sister**
 
-**起床后，我喝一点儿水。**
-*qǐchuáng hòu, wǒ hē yìdiǎnr shuǐ.*
-After getting up, I drink a little water.
+*Model response:* **我妹妹生病了。**
+*Wǒ mèimei shēngbìng le.*
+My younger sister is ill.
 
-### 生病 (shēngbìng) — fall ill
+**Change 2: my father**
 
-HSK entry: 183 · POS: verb · introduced
+*Model response:* **我爸爸生病了。**
+*Wǒ bàba shēngbìng le.*
+My father is ill.
 
-**我昨天生病了。**
-*wǒ zuótiān shēngbìng le.*
-I became ill yesterday.
-**Usage:** 生病了 describes a change to an ill state; 昨天 puts it in the past.
+## 4. Read for meaning — A short connected story
 
-**她昨天生病，没有上课。**
-*tā zuótiān shēngbìng, méiyǒu shàngkè.*
-She was sick yesterday and didn't go to class.
+**昨天我很忙，晚上睡得很晚。今天早上我不想起床，想在家休息。**
+*Zuótiān wǒ hěn máng, wǎnshang shuì de hěn wǎn. Jīntiān zǎoshang wǒ bù xiǎng qǐchuáng, xiǎng zài jiā xiūxi.*
+I was very busy yesterday and slept late at night. This morning I do not want to get up; I want to rest at home.
 
-### 睡 (shuì) — sleep
+**Q1. Why does the speaker want to rest?** Suggested answer: They were very busy and went to sleep late.
 
-HSK entry: 194 · POS: verb · introduced
+**Q2. Where does the speaker want to rest?** Suggested answer: At home.
 
-**我每天睡八个小时。**
-*wǒ měitiān shuì bā gè xiǎoshí.*
-I sleep eight hours every day.
-**Usage:** 每天 expresses habitual frequency and 八个小时 expresses duration of sleep.
+## 5. Speak and personalize
 
-**妹妹每天晚上九点睡。**
-*mèimei měitiān wǎnshang jiǔ diǎn shuì.*
-My younger sister goes to sleep at nine every night.
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-### 睡觉 (shuìjiào) — go to sleep
+**Speaking 1:** Explain that you are unwell and want to rest.
 
-HSK entry: 195 · POS: verb · introduced
+*Possible response:* **我生病了，想休息。**
+*Wǒ shēngbìng le, xiǎng xiūxi.*
+I am ill and would like to rest.
 
-**我十点睡觉。**
-*wǒ shí diǎn shuìjiào.*
-I go to bed at ten.
-**Usage:** 睡觉 can mean sleep or go to bed, depending on the situation.
+**Speaking 2:** Ask whether someone is going to see a doctor.
 
-**小朋友晚上九点睡觉。**
-*xiǎopéngyou wǎnshang jiǔ diǎn shuìjiào.*
-Young children go to bed at nine at night.
+*Possible response:* **你去看病吗？**
+*Nǐ qù kànbìng ma?*
+Are you going to see a doctor?
 
-### 休息 (xiūxi) — rest
+## 6. Watch out
 
-HSK entry: 246 · POS: verb · introduced
+休息 (xiūxi) does not necessarily mean sleeping. To say “sleep,” use 睡觉 (shuìjiào).
 
-**我今天想休息。**
-*wǒ jīntiān xiǎng xiūxi.*
-I want to rest today.
-**Usage:** 休息 means rest or take a break, not necessarily go to sleep.
+**Pronunciation:** 休息 (xiūxi) has a neutral second syllable.
 
-**学生下课后可以休息。**
-*xuéshēng xiàkè hòu kěyǐ xiūxi.*
-The students can rest after class.
+## 7. Check what you can do
 
-### 医生 (yīshēng) — doctor
+**Comprehension:** Reading comprehension: Why does the speaker want to rest?
+**Answer:** They were very busy and went to sleep late.. Check against the connected reading passage, not the vocabulary cards.
 
-HSK entry: 256 · POS: noun · introduced
+**Comprehension:** Reading comprehension: Where does the speaker want to rest?
+**Answer:** At home.. Check against the connected reading passage, not the vocabulary cards.
 
-**医生在医院工作。**
-*yīshēng zài yīyuàn gōngzuò.*
-Doctors work in hospitals.
-**Usage:** 医生 is a doctor; 工作 describes their profession’s activity.
+**Production:** Say this aloud: Explain that you are unwell and want to rest.
+**Answer:** 我生病了，想休息。 (Wǒ shēngbìng le, xiǎng xiūxi.) — I am ill and would like to rest.. Illustrative answer. Other natural responses may be correct.
 
-**这家医院有很多医生。**
-*zhè jiā yīyuàn yǒu hěn duō yīshēng.*
-This hospital has many doctors.
+**Production:** Say this aloud: Ask whether someone is going to see a doctor.
+**Answer:** 你去看病吗？ (Nǐ qù kànbìng ma?) — Are you going to see a doctor?. Illustrative answer. Other natural responses may be correct.
 
-### 医院 (yīyuàn) — hospital
+## Review and next step
 
-HSK entry: 257 · POS: noun · introduced
+- Express basic illness and health needs.
 
-**她今天去医院。**
-*tā jīntiān qù yīyuàn.*
-She goes to the hospital today.
-**Usage:** 医院 means hospital; 去 expresses going to that destination.
+- Recognize hospital and doctor vocabulary.
 
-**医院上午九点开始看病。**
-*yīyuàn shàngwǔ jiǔ diǎn kāishǐ kànbìng.*
-The hospital starts seeing patients at nine in the morning.
+- Talk about sleeping and resting.
 
-## Usage and grammar
+## Reference word bank (details on vocabulary cards)
 
-### Becoming ill
+- 病 (bìng) — illness [HSK entry 12]
 
-A common compound describes being sick.
+- 看病 (kànbìng) — see a doctor [HSK entry 100]
 
-### Taking a rest
+- 口 (kǒu) — mouth [HSK entry 104]
 
-A rest verb can be used independently for everyday needs.
+- 起床 (qǐchuáng) — get up [HSK entry 161]
 
-## Practice
+- 生病 (shēngbìng) — fall ill [HSK entry 183]
+
+- 睡 (shuì) — sleep [HSK entry 194]
+
+- 睡觉 (shuìjiào) — go to sleep [HSK entry 195]
+
+- 休息 (xiūxi) — rest [HSK entry 246]
+
+- 医生 (yīshēng) — doctor [HSK entry 256]
+
+- 医院 (yīyuàn) — hospital [HSK entry 257]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “illness”?
 - a. 病 (bìng) — 

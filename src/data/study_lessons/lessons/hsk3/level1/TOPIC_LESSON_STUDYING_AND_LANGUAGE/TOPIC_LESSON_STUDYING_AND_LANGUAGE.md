@@ -2,9 +2,9 @@
 
 Talk about lessons, language study, reading, speaking, listening and writing.
 
-**Topics:** school-language, communication-social
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Describe language learning activities.
 
@@ -12,271 +12,163 @@ Talk about lessons, language study, reading, speaking, listening and writing.
 
 - Distinguish reading, speaking, listening and writing verbs.
 
-## Overview
+## 1. Conversation — Learning Chinese
 
-Talk about lessons, language study, reading, speaking, listening and writing.
+Two classmates plan how to practise listening, speaking, reading and writing in Mandarin.
 
-Describe language learning activities.
+**A:** 你今天学什么？ (Nǐ jīntiān xué shénme?) — What are you studying today?
 
-## Vocabulary and examples
+**B:** 我学汉语，也喜欢说汉语。 (Wǒ xué Hànyǔ, yě xǐhuan shuō Hànyǔ.) — I study Chinese and also enjoy speaking it.
 
-### 读 (dú) — read
+**A:** 你会写汉字吗？ (Nǐ huì xiě Hànzì ma?) — Can you write Chinese characters?
 
-HSK entry: 42 · POS: verb · introduced
+**B:** 会一点儿，但是我写得很慢。 (Huì yìdiǎnr, dànshì wǒ xiě de hěn màn.) — A little, but I write slowly.
 
-**我会读汉字。**
-*wǒ huì dú Hànzì.*
-I can read Chinese characters.
-**Usage:** 读 refers to reading aloud or decoding written characters in this example.
+## 2. How the language works
 
-**请读这一课。**
-*qǐng dú zhè yí kè.*
-Please read this lesson.
+### Learning versus a class session
 
-### 读书 (dúshū) — read books
+学习 (xuéxí) means studying or learning; 上课 (shàngkè) means attending class; 下课 (xiàkè) means finishing class or the class period ending.
 
-HSK entry: 43 · POS: verb · introduced
+**Pattern:** person + 在 + verb + object
 
-**我每天读书。**
-*wǒ měitiān dúshū.*
-I read books every day.
-**Usage:** 读书 means read or study, depending on context; here it means read books.
+**我在学习中文。**
+*Wǒ zài xuéxí Zhōngwén.*
+I am studying Chinese.
 
-**学生们每天在学校读书。**
-*xuéshēngmen měitiān zài xuéxiào dúshū.*
-The students read at school every day.
+**我们上午九点上课。**
+*Wǒmen shàngwǔ jiǔ diǎn shàngkè.*
+We have class at 9 a.m.
 
-### 汉语 (Hànyǔ) — Chinese language
+### Four basic language skills
 
-HSK entry: 69 · POS: noun · introduced
+听 (tīng) is the act of listening and 听见 (tīngjiàn) is the result of hearing. Read with 读 (dú), speak with 说 (shuō), write with 写 (xiě).
 
-**我正在学汉语。**
-*wǒ zhèngzài xué Hànyǔ.*
-I am learning Chinese.
-**Usage:** 正在 explicitly indicates an action currently in progress.
+**Pattern:** 我 + skill verb + object
 
-**学校里有汉语课。**
-*xuéxiào lǐ yǒu Hànyǔ kè.*
-The school has Chinese-language classes.
+**我喜欢听汉语。**
+*Wǒ xǐhuan tīng Hànyǔ.*
+I like listening to Chinese.
 
-### 汉字 (Hànzì) — Chinese character
+**她每天读中文书。**
+*Tā měi tiān dú Zhōngwén shū.*
+She reads Chinese books every day.
 
-HSK entry: 70 · POS: noun · introduced
+## 3. Build new sentences
 
-**这个汉字怎么读？**
-*zhège Hànzì zěnme dú?*
-How is this Chinese character pronounced?
-**Usage:** 怎么读 asks for the reading or pronunciation of this written character.
+Change the language skill in a complete study statement.
 
-**学生会写一百个汉字。**
-*xuéshēng huì xiě yì bǎi gè Hànzì.*
-The student can write one hundred Chinese characters.
+**Worked model:** **我每天听汉语。**
+*Wǒ měi tiān tīng Hànyǔ.*
+I listen to Chinese every day.
 
-### 课 (kè) — lesson
+**Change 1: speak**
 
-HSK entry: 103 · POS: noun · introduced
+*Model response:* **我每天说汉语。**
+*Wǒ měi tiān shuō Hànyǔ.*
+I speak Chinese every day.
 
-**我们上午有汉语课。**
-*wǒmen shàngwǔ yǒu Hànyǔ kè.*
-We have Chinese class in the morning.
-**Usage:** 课 is a class or lesson; 有 + noun expresses having a scheduled class.
+**Change 2: write characters**
 
-**学校星期天没有课。**
-*xuéxiào xīngqītiān méiyǒu kè.*
-The school has no classes on Sundays.
+*Model response:* **我每天写汉字。**
+*Wǒ měi tiān xiě Hànzì.*
+I write Chinese characters every day.
 
-### 老师 (lǎoshī) — teacher
+## 4. Read for meaning — A short connected story
 
-HSK entry: 107 · POS: noun · introduced
+**小王每天早上听汉语，下午看书和写汉字。他晚上和朋友说中文。**
+*Xiǎo Wáng měi tiān zǎoshang tīng Hànyǔ, xiàwǔ kàn shū hé xiě Hànzì. Tā wǎnshang hé péngyou shuō Zhōngwén.*
+Xiao Wang listens to Chinese every morning, reads and writes Chinese characters in the afternoon, and speaks Chinese with friends in the evening.
 
-**我们的老师很好。**
-*wǒmen de lǎoshī hěn hǎo.*
-Our teacher is very good.
-**Usage:** 老师 denotes a teacher; 我们的 specifies the group’s teacher.
+**Q1. What does Xiao Wang do in the morning?** Suggested answer: Listens to Chinese.
 
-**老师在教室里。**
-*lǎoshī zài jiàoshì lǐ.*
-The teacher is in the classroom.
+**Q2. When does he speak Chinese with friends?** Suggested answer: In the evening.
 
-### 上课 (shàngkè) — attend class
+## 5. Speak and personalize
 
-HSK entry: 177 · POS: verb · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**我们九点上课。**
-*wǒmen jiǔ diǎn shàngkè.*
-We start class at nine.
-**Usage:** 上课 means start or attend class; the time gives when it begins.
+**Speaking 1:** Tell a friend which language skill you practise.
 
-**学生们每天上午九点上课。**
-*xuéshēngmen měitiān shàngwǔ jiǔ diǎn shàngkè.*
-The students have class at nine every morning.
+*Possible response:* **我每天读中文书。**
+*Wǒ měi tiān dú Zhōngwén shū.*
+I read Chinese books every day.
 
-### 书 (shū) — book
+**Speaking 2:** Ask a classmate whether they can write Chinese characters.
 
-HSK entry: 190 · POS: noun · introduced
+*Possible response:* **你会写汉字吗？**
+*Nǐ huì xiě Hànzì ma?*
+Can you write Chinese characters?
 
-**我喜欢看书。**
-*wǒ xǐhuan kàn shū.*
-I like reading books.
-**Usage:** 看书 means read a book; 看 has a broader range than English “look.”
+## 6. Watch out
 
-**这家书店有很多中文书。**
-*zhè jiā shūdiàn yǒu hěn duō Zhōngwén shū.*
-This bookstore has many books in Chinese.
+听 (tīng) describes trying to listen; 听见 (tīngjiàn) expresses actually hearing something.
 
-### 书店 (shūdiàn) — bookstore
+**Pronunciation:** The words 学习 (xuéxí) and 上学 (shàngxué) must retain their own word boundaries in pinyin. 学习 is not “学 习”.
 
-HSK entry: 191 · POS: noun · introduced
+## 7. Check what you can do
 
-**书店在学校旁边。**
-*shūdiàn zài xuéxiào pángbiān.*
-The bookstore is next to the school.
-**Usage:** 旁边 expresses the shop’s location beside the school.
+**Comprehension:** Reading comprehension: What does Xiao Wang do in the morning?
+**Answer:** Listens to Chinese.. Check against the connected reading passage, not the vocabulary cards.
 
-**书店每天早上九点开门。**
-*shūdiàn měitiān zǎoshang jiǔ diǎn kāimén.*
-The bookstore opens at nine every morning.
+**Comprehension:** Reading comprehension: When does he speak Chinese with friends?
+**Answer:** In the evening.. Check against the connected reading passage, not the vocabulary cards.
 
-### 说 (shuō) — say
+**Production:** Say this aloud: Tell a friend which language skill you practise.
+**Answer:** 我每天读中文书。 (Wǒ měi tiān dú Zhōngwén shū.) — I read Chinese books every day.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 196 · POS: verb · introduced
+**Production:** Say this aloud: Ask a classmate whether they can write Chinese characters.
+**Answer:** 你会写汉字吗？ (Nǐ huì xiě Hànzì ma?) — Can you write Chinese characters?. Illustrative answer. Other natural responses may be correct.
 
-**我会说一点儿中文。**
-*wǒ huì shuō yìdiǎnr Zhōngwén.*
-I can speak a little Chinese.
-**Usage:** 一点儿 expresses a small amount; 会 means an ability to speak the language.
+## Review and next step
 
-**今天老师说汉语。**
-*jīntiān lǎoshī shuō Hànyǔ.*
-The teacher speaks Chinese today.
+- Describe language learning activities.
 
-### 说话 (shuōhuà) — speak; talk
+- Understand classroom language.
 
-HSK entry: 197 · POS: verb · introduced
+- Distinguish reading, speaking, listening and writing verbs.
 
-**请不要说话。**
-*qǐng bú yào shuōhuà.*
-Please don't talk.
-**Usage:** 请不要… is a polite negative request, often heard in public or class settings.
+## Reference word bank (details on vocabulary cards)
 
-**上课的时候请不要说话。**
-*shàngkè de shíhou qǐng búyào shuōhuà.*
-Please don't talk during class.
+- 读 (dú) — read [HSK entry 42]
 
-### 听 (tīng) — listen
+- 读书 (dúshū) — read books [HSK entry 43]
 
-HSK entry: 209 · POS: verb · introduced
+- 汉语 (Hànyǔ) — Chinese language [HSK entry 69]
 
-**我喜欢听歌。**
-*wǒ xǐhuan tīng gē.*
-I like listening to songs.
-**Usage:** 听歌 means listen to songs or music; 听 takes sound as its object.
+- 汉字 (Hànzì) — Chinese character [HSK entry 70]
 
-**学生们在听老师说话。**
-*xuéshēngmen zài tīng lǎoshī shuōhuà.*
-The students are listening to the teacher speak.
+- 课 (kè) — lesson [HSK entry 103]
 
-### 听见 (tīngjiàn) — hear
+- 老师 (lǎoshī) — teacher [HSK entry 107]
 
-HSK entry: 210 · POS: verb · introduced
+- 上课 (shàngkè) — attend class [HSK entry 177]
 
-**我听见你说话了。**
-*wǒ tīngjiàn nǐ shuōhuà le.*
-I heard you speaking.
+- 书 (shū) — book [HSK entry 190]
 
-**在这里可以听见老师说话。**
-*zài zhèlǐ kěyǐ tīngjiàn lǎoshī shuōhuà.*
-You can hear the teacher speaking here.
+- 书店 (shūdiàn) — bookstore [HSK entry 191]
 
-### 下课 (xiàkè) — finish class
+- 说 (shuō) — say [HSK entry 196]
 
-HSK entry: 229 · POS: verb · introduced
+- 说话 (shuōhuà) — speak; talk [HSK entry 197]
 
-**我们四点下课。**
-*wǒmen sì diǎn xiàkè.*
-We finish class at four.
-**Usage:** 下课 means class has ended or is dismissed, here at four.
+- 听 (tīng) — listen [HSK entry 209]
 
-**下课后，我们去超市。**
-*xiàkè hòu, wǒmen qù chāoshì.*
-After class, we go to the supermarket.
+- 听见 (tīngjiàn) — hear [HSK entry 210]
 
-### 写 (xiě) — write
+- 下课 (xiàkè) — finish class [HSK entry 229]
 
-HSK entry: 240 · POS: verb · introduced
+- 写 (xiě) — write [HSK entry 240]
 
-**我会写这个字。**
-*wǒ huì xiě zhège zì.*
-I can write this character.
-**Usage:** 写 refers to writing a character; 会 indicates learned ability.
+- 学 (xué) — learn [HSK entry 247]
 
-**请写你的名字。**
-*qǐng xiě nǐ de míngzi.*
-Please write your name.
+- 学习 (xuéxí) — study [HSK entry 249]
 
-### 学 (xué) — learn
+- 中文 (Zhōngwén) — Chinese language [HSK entry 290]
 
-HSK entry: 247 · POS: verb · introduced
+- 字 (zì) — character; written word [HSK entry 296]
 
-**我正在学中文。**
-*wǒ zhèngzài xué Zhōngwén.*
-I am learning Chinese.
-**Usage:** 学 focuses on learning a subject; 正在 marks an ongoing process.
-
-**学生在学校学汉语。**
-*xuéshēng zài xuéxiào xué Hànyǔ.*
-The students learn Chinese at school.
-
-### 学习 (xuéxí) — study
-
-HSK entry: 249 · POS: verb · introduced
-
-**我每天学习汉语。**
-*wǒ měitiān xuéxí Hànyǔ.*
-I study Chinese every day.
-**Usage:** 学习 refers to studying or learning; 每天 makes it a repeated practice.
-
-**学生们每天在这里学习。**
-*xuéshēngmen měitiān zài zhèlǐ xuéxí.*
-The students study here every day.
-
-### 中文 (Zhōngwén) — Chinese language
-
-HSK entry: 290 · POS: noun · introduced
-
-**我会说中文。**
-*wǒ huì shuō Zhōngwén.*
-I can speak Chinese.
-**Usage:** 中文 refers to the Chinese language or writing; 会说 indicates speaking ability.
-
-**这里有很多中文书。**
-*zhèlǐ yǒu hěn duō Zhōngwén shū.*
-There are many Chinese-language books here.
-
-### 字 (zì) — character; written word
-
-HSK entry: 296 · POS: noun · introduced
-
-**这个字怎么读？**
-*zhège zì zěnme dú?*
-How is this character pronounced?
-**Usage:** 怎么读 asks how to pronounce or read this written character.
-
-**今天请写十个字。**
-*jīntiān qǐng xiě shí gè zì.*
-Please write ten characters today.
-
-## Usage and grammar
-
-### Listening
-
-The listening verb denotes the activity; the perception compound can express hearing.
-
-### Writing
-
-Use the writing verb with the thing written, such as characters.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “read”?
 - a. 读 (dú) — 

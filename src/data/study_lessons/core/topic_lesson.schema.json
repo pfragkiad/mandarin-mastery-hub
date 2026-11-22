@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin/v3/topic_lesson.schema.json",
-  "title": "Mandarin topic / vocabulary lesson — v3.0.0",
+  "$id": "https://example.invalid/mandarin/v3.1/topic_lesson.schema.json",
+  "title": "Mandarin topic / communicative lesson — v3.1.0 (reads v3.0.0)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -17,7 +17,10 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "mandarin-topic-lesson/3.0.0"
+      "enum": [
+        "mandarin-topic-lesson/3.0.0",
+        "mandarin-topic-lesson/3.1.0"
+      ]
     },
     "lesson_id": {
       "type": "string",
@@ -68,7 +71,10 @@
           ]
         },
         "template_version": {
-          "const": "3.0.0"
+          "enum": [
+            "3.0.0",
+            "3.1.0"
+          ]
         },
         "audience": {
           "type": "string",
@@ -185,6 +191,9 @@
               }
             }
           }
+        },
+        "teaching_plan": {
+          "$ref": "#/$defs/teaching_plan"
         }
       }
     },
@@ -708,7 +717,422 @@
           }
         }
       ]
+    },
+    "teaching_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vocabulary_display",
+        "dialogue",
+        "patterns",
+        "guided_building",
+        "reading",
+        "speaking_tasks",
+        "common_pitfall",
+        "pronunciation_focus",
+        "review"
+      ],
+      "properties": {
+        "vocabulary_display": {
+          "const": "reference_only",
+          "description": "Use existing word-detail cards as source examples; do not repeat them on the lesson page."
+        },
+        "dialogue": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "context_en",
+            "turns"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "context_en": {
+              "type": "string",
+              "minLength": 20
+            },
+            "turns": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "speaker",
+                  "hanzi",
+                  "pinyin",
+                  "english"
+                ],
+                "properties": {
+                  "speaker": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "hanzi": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pinyin": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "english": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "patterns": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "explanation_en",
+              "formula_en",
+              "examples"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": "string",
+                "minLength": 3
+              },
+              "explanation_en": {
+                "type": "string",
+                "minLength": 40
+              },
+              "formula_en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "examples": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 5,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "hanzi",
+                    "pinyin",
+                    "english"
+                  ],
+                  "properties": {
+                    "hanzi": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pinyin": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "english": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "guided_building": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instruction_en",
+            "model",
+            "substitutions"
+          ],
+          "properties": {
+            "instruction_en": {
+              "type": "string",
+              "minLength": 12
+            },
+            "model": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "hanzi",
+                "pinyin",
+                "english"
+              ],
+              "properties": {
+                "hanzi": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "pinyin": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "english": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "substitutions": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "cue_en",
+                  "model_answer"
+                ],
+                "properties": {
+                  "cue_en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "model_answer": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "hanzi",
+                      "pinyin",
+                      "english"
+                    ],
+                    "properties": {
+                      "hanzi": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "pinyin": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "english": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "reading": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "paragraphs",
+            "questions"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 3
+            },
+            "paragraphs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "hanzi",
+                  "pinyin",
+                  "english"
+                ],
+                "properties": {
+                  "hanzi": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pinyin": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "english": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 6,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "prompt_en",
+                  "answer_en"
+                ],
+                "properties": {
+                  "prompt_en": {
+                    "type": "string",
+                    "minLength": 5
+                  },
+                  "answer_en": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "speaking_tasks": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "scenario_en",
+              "model_answer"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario_en": {
+                "type": "string",
+                "minLength": 10
+              },
+              "model_answer": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "hanzi",
+                  "pinyin",
+                  "english"
+                ],
+                "properties": {
+                  "hanzi": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pinyin": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "english": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "common_pitfall": {
+          "type": "string",
+          "minLength": 20
+        },
+        "pronunciation_focus": {
+          "type": "string",
+          "minLength": 20
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "can_do",
+            "entry_ids"
+          ],
+          "properties": {
+            "can_do": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 3
+              }
+            },
+            "entry_ids": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      }
     }
   },
-  "description": "Course-neutral communicative topic lesson; sequence and curriculum membership are defined in curriculum manifests."
+  "description": "Lesson learning path: dialogue, explicit grammar, controlled production, contextual reading, speaking, and formative assessment. Source example pairs are stored as vocabulary-card data but not repeated in learner lesson views.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-topic-lesson/3.1.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.1.0"
+              }
+            }
+          },
+          "sections": {
+            "required": [
+              "teaching_plan"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-topic-lesson/3.0.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

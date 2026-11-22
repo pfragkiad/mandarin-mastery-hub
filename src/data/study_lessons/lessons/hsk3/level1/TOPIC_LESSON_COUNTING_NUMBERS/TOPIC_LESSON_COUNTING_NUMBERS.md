@@ -2,9 +2,9 @@
 
 Recognize the basic Chinese numerals and combine them to express quantities.
 
-**Topics:** numbers-quantities
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Read the digits and basic round numbers.
 
@@ -12,194 +12,151 @@ Recognize the basic Chinese numerals and combine them to express quantities.
 
 - Recognize numbers in example sentences.
 
-## Overview
+## 1. Conversation — Counting from One Upward
 
-Recognize the basic Chinese numerals and combine them to express quantities.
+Use prices, ages and quantities to practise number structure without memorizing an isolated list.
 
-Read the digits and basic round numbers.
+**A:** 这本书多少钱？ (Zhè běn shū duōshao qián?) — How much is this book?
 
-## Vocabulary and examples
+**B:** 一百二十元。 (Yì bǎi èr shí yuán.) — One hundred and twenty yuan.
 
-### 八 (bā) — eight
+**A:** 那本呢？ (Nà běn ne?) — What about that one?
 
-HSK entry: 2 · POS: numeral · introduced
+**B:** 九十八元。 (Jiǔ shí bā yuán.) — Ninety-eight yuan.
 
-**我有八本书。**
-*wǒ yǒu bā běn shū.*
-I have eight books.
-**Usage:** 八 gives the quantity; 本 is the classifier used for bound books.
+## 2. How the language works
 
-**今天有八个学生上课。**
-*jīntiān yǒu bā gè xuéshēng shàngkè.*
-Eight students have class today.
+### Building larger numbers
 
-### 百 (bǎi) — hundred
+Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ).
 
-HSK entry: 6 · POS: numeral · introduced
+**Pattern:** hundreds + tens + ones
 
-**这里有一百个人。**
-*zhèlǐ yǒu yì bǎi ge rén.*
-There are a hundred people here.
-**Usage:** 一百 means one hundred; 个 is the general classifier for people here.
+**二百三十六。**
+*Èr bǎi sān shí liù.*
+Two hundred and thirty-six.
 
-**这家书店有一百本中文书。**
-*zhè jiā shūdiàn yǒu yì bǎi běn Zhōngwén shū.*
-This bookstore has one hundred books in Chinese.
+**一千零二。**
+*Yì qiān líng èr.*
+One thousand and two.
 
-### 二 (èr) — two
+### Numbers with nouns
 
-HSK entry: 49 · POS: numeral · introduced
+Use a suitable classifier when counting most nouns. Do not put an English-style plural ending on the noun.
 
-**我有二十本书。**
-*wǒ yǒu èrshí běn shū.*
-I have twenty books.
-**Usage:** 二十 is the number twenty; 本 counts books.
+**Pattern:** number + classifier + noun
 
-**今天是二月二日。**
-*jīntiān shì èr yuè èr rì.*
-Today is February 2.
+**三本书。**
+*Sān běn shū.*
+Three books.
 
-### 九 (jiǔ) — nine
+**十个人。**
+*Shí ge rén.*
+Ten people.
 
-HSK entry: 95 · POS: numeral · introduced
+## 3. Build new sentences
 
-**我有九个苹果。**
-*wǒ yǒu jiǔ gè píngguǒ.*
-I have nine apples.
-**Usage:** 个 is the general classifier used when counting apples.
+Change the number, retaining the book classifier.
 
-**学校九点开始上课。**
-*xuéxiào jiǔ diǎn kāishǐ shàngkè.*
-Classes at the school start at nine o'clock.
+**Worked model:** **我有三本书。**
+*Wǒ yǒu sān běn shū.*
+I have three books.
 
-### 零 (líng) — zero
+**Change 1: five**
 
-HSK entry: 112 · POS: numeral · introduced
+*Model response:* **我有五本书。**
+*Wǒ yǒu wǔ běn shū.*
+I have five books.
 
-**现在是零点。**
-*xiànzài shì líng diǎn.*
-It is midnight.
+**Change 2: ten**
 
-**学校有一百零二个学生。**
-*xuéxiào yǒu yì bǎi líng èr gè xuéshēng.*
-The school has one hundred and two students.
+*Model response:* **我现在有十本书。**
+*Wǒ xiànzài yǒu shí běn shū.*
+I now have ten books.
 
-### 六 (liù) — six
+## 4. Read for meaning — A short connected story
 
-HSK entry: 113 · POS: numeral · introduced
+**学校里有三百个学生。我们班有二十个人。今天来了十八个学生。**
+*Xuéxiào lǐ yǒu sān bǎi ge xuéshēng. Wǒmen bān yǒu èr shí ge rén. Jīntiān lái le shíbā ge xuéshēng.*
+There are three hundred students in the school. Our class has twenty people. Eighteen students came today.
 
-**我有六本书。**
-*wǒ yǒu liù běn shū.*
-I have six books.
-**Usage:** 六 is a cardinal number used before the book classifier 本.
+**Q1. How many people are in the class?** Suggested answer: Twenty.
 
-**我们星期六去书店。**
-*wǒmen xīngqīliù qù shūdiàn.*
-We are going to the bookstore on Saturday.
+**Q2. How many students came today?** Suggested answer: Eighteen.
 
-### 七 (qī) — seven
+## 5. Speak and personalize
 
-HSK entry: 160 · POS: numeral · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**我有七个杯子。**
-*wǒ yǒu qī gè bēizi.*
-I have seven cups.
-**Usage:** 七 is the quantity, followed by the general classifier 个.
+**Speaking 1:** Say the number 105 in Mandarin.
 
-**七个学生在教室里。**
-*qī gè xuéshēng zài jiàoshì lǐ.*
-Seven students are in the classroom.
+*Possible response:* **一百零五。**
+*Yì bǎi líng wǔ.*
+One hundred and five.
 
-### 千 (qiān) — thousand
+**Speaking 2:** Describe how many books you have.
 
-HSK entry: 162 · POS: numeral · introduced
+*Possible response:* **我有两本书。**
+*Wǒ yǒu liǎng běn shū.*
+I have two books.
 
-**这里有一千本书。**
-*zhèlǐ yǒu yì qiān běn shū.*
-There are one thousand books here.
-**Usage:** 千 means a thousand; 一 is pronounced yì before qiān.
+## 6. Watch out
 
-**这个学校有一千个学生。**
-*zhège xuéxiào yǒu yì qiān gè xuéshēng.*
-This school has one thousand students.
+A missing tens place may need 零 (líng): 一百零五 (yì bǎi líng wǔ), not 一百五 when you specifically mean 105.
 
-### 三 (sān) — three
+**Pronunciation:** Before a fourth-tone syllable, 一 (yī) normally sounds like yí; before a non-fourth tone, it often becomes yì. Displayed lexical pinyin may follow a different citation convention.
 
-HSK entry: 173 · POS: numeral · introduced
+## 7. Check what you can do
 
-**我有三个朋友。**
-*wǒ yǒu sān gè péngyou.*
-I have three friends.
-**Usage:** 三 gives the count; 个 is the classifier for 朋友.
+**Comprehension:** Reading comprehension: How many people are in the class?
+**Answer:** Twenty.. Check against the connected reading passage, not the vocabulary cards.
 
-**三个学生在看书。**
-*sān gè xuéshēng zài kàn shū.*
-Three students are reading.
+**Comprehension:** Reading comprehension: How many students came today?
+**Answer:** Eighteen.. Check against the connected reading passage, not the vocabulary cards.
 
-### 十 (shí) — ten
+**Production:** Say this aloud: Say the number 105 in Mandarin.
+**Answer:** 一百零五。 (Yì bǎi líng wǔ.) — One hundred and five.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 184 · POS: numeral · introduced
+**Production:** Say this aloud: Describe how many books you have.
+**Answer:** 我有两本书。 (Wǒ yǒu liǎng běn shū.) — I have two books.. Illustrative answer. Other natural responses may be correct.
 
-**我有十本书。**
-*wǒ yǒu shí běn shū.*
-I have ten books.
-**Usage:** 十 counts the books; 本 is the required classifier.
+## Review and next step
 
-**上午十点我们上课。**
-*shàngwǔ shí diǎn wǒmen shàngkè.*
-We have class at ten in the morning.
+- Read the digits and basic round numbers.
 
-### 四 (sì) — four
+- Understand how tens, hundreds and thousands are formed.
 
-HSK entry: 198 · POS: numeral · introduced
+- Recognize numbers in example sentences.
 
-**我有四本书。**
-*wǒ yǒu sì běn shū.*
-I have four books.
-**Usage:** 四 is the number four, followed by 本 for books.
+## Reference word bank (details on vocabulary cards)
 
-**这个房间有四个人。**
-*zhège fángjiān yǒu sì gè rén.*
-There are four people in this room.
+- 八 (bā) — eight [HSK entry 2]
 
-### 五 (wǔ) — five
+- 百 (bǎi) — hundred [HSK entry 6]
 
-HSK entry: 223 · POS: numeral · introduced
+- 二 (èr) — two [HSK entry 49]
 
-**我有五个苹果。**
-*wǒ yǒu wǔ gè píngguǒ.*
-I have five apples.
-**Usage:** 五 gives the number, and 个 is the general classifier for apples.
+- 九 (jiǔ) — nine [HSK entry 95]
 
-**今天有五个学生没有来。**
-*jīntiān yǒu wǔ gè xuéshēng méiyǒu lái.*
-Five students did not come today.
+- 零 (líng) — zero [HSK entry 112]
 
-### 一 (yī) — one
+- 六 (liù) — six [HSK entry 113]
 
-HSK entry: 254 · POS: numeral · introduced
+- 七 (qī) — seven [HSK entry 160]
 
-**我有一个姐姐。**
-*wǒ yǒu yí ge jiějie.*
-I have one older sister.
-**Usage:** 一 counts one older sister and changes to yí before neutral-tone 个.
+- 千 (qiān) — thousand [HSK entry 162]
 
-**这里有一个学生。**
-*zhèlǐ yǒu yí ge xuéshēng.*
-There is one student here.
-**Usage:** 一 counts a single student with the measure word 个 in the common existential pattern 这里有… .
+- 三 (sān) — three [HSK entry 173]
 
-## Usage and grammar
+- 十 (shí) — ten [HSK entry 184]
 
-### Counting hundreds
+- 四 (sì) — four [HSK entry 198]
 
-Combine numerals to build larger numbers.
+- 五 (wǔ) — five [HSK entry 223]
 
-### Tens
+- 一 (yī) — one [HSK entry 254]
 
-The numeral for ten participates in larger numbers.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “eight”?
 - a. 八 (bā) — 

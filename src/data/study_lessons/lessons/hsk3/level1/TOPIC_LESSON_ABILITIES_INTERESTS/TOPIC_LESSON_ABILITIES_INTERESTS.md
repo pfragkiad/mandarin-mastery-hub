@@ -2,9 +2,9 @@
 
 Express what you can do, what you want and what you enjoy doing in free time.
 
-**Topics:** daily-actions, leisure-media
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Express ability and intention.
 
@@ -12,212 +12,157 @@ Express what you can do, what you want and what you enjoy doing in free time.
 
 - Recognize movies, singing and entertainment terms.
 
-## Overview
+## 1. Conversation — What I Can and Want to Do
 
-Express what you can do, what you want and what you enjoy doing in free time.
+Two classmates are planning what to do after class. Notice how ability and desire lead to different answers.
 
-Express ability and intention.
+**A:** 你会唱歌吗？ (Nǐ huì chàng gē ma?) — Can you sing?
 
-## Vocabulary and examples
+**B:** 我会唱，但是我今天不想唱。 (Wǒ huì chàng, dànshì wǒ jīntiān bù xiǎng chàng.) — I can sing, but I don't want to today.
 
-### 会 (huì) — can; know how
+**A:** 那你想看电影吗？ (Nà nǐ xiǎng kàn diànyǐng ma?) — Then would you like to watch a movie?
 
-HSK entry: 82 · POS: modal-verb · introduced
+**B:** 想！我们一起去吧。 (Xiǎng! Wǒmen yìqǐ qù ba.) — Yes! Let's go together.
 
-**我会说汉语。**
-*wǒ huì shuō Hànyǔ.*
-I can speak Chinese.
-**Usage:** 会 refers to an acquired skill, such as speaking a language.
+## 2. How the language works
 
-**我妹妹会唱歌。**
-*wǒ mèimei huì chàng gē.*
-My younger sister can sing.
+### Ability: 会 (huì) versus 能 (néng)
 
-Modal use for learned ability; the full word has other uses.
+会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.
 
-### 觉得 (juéde) — feel; think
+**Pattern:** Subject + 会/能 + verb
 
-HSK entry: 96 · POS: verb · introduced
+**我也会说一点儿汉语。**
+*Wǒ yě huì shuō yìdiǎnr Hànyǔ.*
+I can also speak a little Chinese.
 
-**我觉得这个很好。**
-*wǒ juéde zhège hěn hǎo.*
-I think this is good.
-**Usage:** 觉得 introduces a personal opinion or impression.
+**我今天能去。**
+*Wǒ jīntiān néng qù.*
+I can go today (circumstances allow).
 
-**学生觉得这本书很好。**
-*xuéshēng juéde zhè běn shū hěn hǎo.*
-The students think this book is good.
+### Desire: 想 (xiǎng) versus 要 (yào)
 
-### 可以 (kěyǐ) — may; can
+想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).
 
-HSK entry: 102 · POS: modal-verb · introduced
+**Pattern:** Subject + 想/要 + verb/noun
 
-**我可以坐这儿吗？**
-*wǒ kěyǐ zuò zhèr ma?*
-May I sit here?
-**Usage:** 可以…吗 requests permission. 坐这儿 is natural colloquial Mandarin; 坐在这里 is an alternative.
+**我想喝茶。**
+*Wǒ xiǎng hē chá.*
+I would like some tea.
 
-**这里可以看书，也可以休息。**
-*zhèlǐ kěyǐ kàn shū, yě kěyǐ xiūxi.*
-You can read books and rest here.
+**我要看这本书。**
+*Wǒ yào kàn zhè běn shū.*
+I want to read this book.
 
-Modal/verb expressing permission or possibility; some lexical sources also label adjectival use.
+## 3. Build new sentences
 
-### 能 (néng) — be able to
+Change the activity while keeping the polite invitation.
 
-HSK entry: 145 · POS: modal-verb · introduced
+**Worked model:** **你想看电影吗？**
+*Nǐ xiǎng kàn diànyǐng ma?*
+Do you want to watch a movie?
 
-**我能进来吗？**
-*wǒ néng jìnlái ma?*
-May I come in?
-**Usage:** 能…吗 can ask whether something is possible or permitted, here entering a room.
+**Change 1: sing**
 
-**今天下午你能来吗？**
-*jīntiān xiàwǔ nǐ néng lái ma?*
-Can you come this afternoon?
+*Model response:* **你想唱歌吗？**
+*Nǐ xiǎng chàng gē ma?*
+Do you want to sing?
 
-### 喜欢 (xǐhuan) — like
+**Change 2: drink tea**
 
-HSK entry: 225 · POS: verb · introduced
+*Model response:* **你想喝茶吗？**
+*Nǐ xiǎng hē chá ma?*
+Do you want to drink tea?
 
-**我喜欢这里。**
-*wǒ xǐhuan zhèlǐ.*
-I like it here.
+## 4. Read for meaning — A short connected story
 
-**很多孩子喜欢看电影。**
-*hěn duō háizi xǐhuan kàn diànyǐng.*
-Many children like watching movies.
+**小明会唱歌，也喜欢看电影。今天他很忙，不能去电影院。明天他想和朋友一起去。**
+*Xiǎomíng huì chàng gē, yě xǐhuan kàn diànyǐng. Jīntiān tā hěn máng, bù néng qù diànyǐngyuàn. Míngtiān tā xiǎng hé péngyou yìqǐ qù.*
+Xiaoming can sing and also likes movies. He is busy today and cannot go to the cinema. Tomorrow he wants to go with a friend.
 
-### 想 (xiǎng) — think; want
+**他今天不去电影院。**
+*Tā jīntiān bú qù diànyǐngyuàn.*
+He is not going to the cinema today.
 
-HSK entry: 233 · POS: modal-verb · introduced
+**Q1. Why can Xiaoming not go to the cinema today?** Suggested answer: He is busy today.
 
-**我想学汉语。**
-*wǒ xiǎng xué Hànyǔ.*
-I want to learn Chinese.
-**Usage:** 想 indicates desire or intention; 学汉语 means learn Chinese.
+**Q2. When does he want to go?** Suggested answer: Tomorrow.
 
-**我妈妈想买一件新衣服。**
-*wǒ māma xiǎng mǎi yí jiàn xīn yīfu.*
-My mom wants to buy a new item of clothing.
+## 5. Speak and personalize
 
-Modal sense want/would like, also lexical verb think/miss.
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-### 要 (yào) — want; will
+**Speaking 1:** Ask a friend which activity they would like to do today.
 
-HSK entry: 252 · POS: modal-verb · introduced
+*Possible response:* **你今天想做什么？**
+*Nǐ jīntiān xiǎng zuò shénme?*
+What would you like to do today?
 
-**我要喝水。**
-*wǒ yào hē shuǐ.*
-I want to drink water.
+**Speaking 2:** Explain a learned skill and one thing you cannot do today.
 
-**上课的时候要听老师说话。**
-*shàngkè de shíhou yào tīng lǎoshī shuōhuà.*
-You must listen to the teacher during class.
+*Possible response:* **我会唱歌，但是我今天不能去。**
+*Wǒ huì chàng gē, dànshì wǒ jīntiān bù néng qù.*
+I can sing, but I cannot go today.
 
-Modal of intention/need, also a lexical verb meaning want.
+## 6. Watch out
 
-### 有 (yǒu) — have
+Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choose based on learned ability, circumstances, or desire.
 
-HSK entry: 263 · POS: verb · introduced
+**Pronunciation:** Practise short replies: 会 (huì), 不会 (bú huì), 想 (xiǎng), 不想 (bù xiǎng).
 
-**我有两本书。**
-*wǒ yǒu liǎng běn shū.*
-I have two books.
-**Usage:** 有 expresses possession; 两 is used before the classifier 本.
+## 7. Check what you can do
 
-**学校里有很多学生。**
-*xuéxiào lǐ yǒu hěn duō xuéshēng.*
-There are many students at the school.
+**Comprehension:** Reading comprehension: Why can Xiaoming not go to the cinema today?
+**Answer:** He is busy today.. Check against the connected reading passage, not the vocabulary cards.
 
-### 唱 (chàng) — sing
+**Comprehension:** Reading comprehension: When does he want to go?
+**Answer:** Tomorrow.. Check against the connected reading passage, not the vocabulary cards.
 
-HSK entry: 18 · POS: verb · introduced
+**Production:** Say this aloud: Ask a friend which activity they would like to do today.
+**Answer:** 你今天想做什么？ (Nǐ jīntiān xiǎng zuò shénme?) — What would you like to do today?. Illustrative answer. Other natural responses may be correct.
 
-**她会唱中文歌。**
-*tā huì chàng Zhōngwén gē.*
-She can sing songs in Chinese.
-**Usage:** 会 marks learned ability; 中文歌 means songs sung in Chinese.
+**Production:** Say this aloud: Explain a learned skill and one thing you cannot do today.
+**Answer:** 我会唱歌，但是我今天不能去。 (Wǒ huì chàng gē, dànshì wǒ jīntiān bù néng qù.) — I can sing, but I cannot go today.. Illustrative answer. Other natural responses may be correct.
 
-**学生们在唱歌。**
-*xuéshēngmen zài chàng gē.*
-The students are singing.
+## Review and next step
 
-### 电视 (diànshì) — TV
+- Express ability and intention.
 
-HSK entry: 37 · POS: noun · introduced
+- Talk about preferences and leisure activities.
 
-**晚上我们看电视。**
-*wǎnshang wǒmen kàn diànshì.*
-We watch TV in the evening.
-**Usage:** 看电视 is the standard expression for watching television.
+- Recognize movies, singing and entertainment terms.
 
-**这个房间里有电视，也有电脑。**
-*zhège fángjiān lǐ yǒu diànshì, yě yǒu diànnǎo.*
-There is a television and a computer in this room.
-**Usage:** Location phrase 房间里 makes the description of equipment in a room explicit.
+## Reference word bank (details on vocabulary cards)
 
-### 电影 (diànyǐng) — film
+- 会 (huì) — can; know how [HSK entry 82]
 
-HSK entry: 38 · POS: noun · introduced
+- 觉得 (juéde) — feel; think [HSK entry 96]
 
-**今天晚上看电影吗？**
-*jīntiān wǎnshang kàn diànyǐng ma?*
-Shall we watch a movie tonight?
+- 可以 (kěyǐ) — may; can [HSK entry 102]
 
-**电影院今天有新电影。**
-*diànyǐngyuàn jīntiān yǒu xīn diànyǐng.*
-There is a new movie at the cinema today.
-**Usage:** Natural cinema listing; 新电影 means a new movie, with no advanced grammar.
+- 能 (néng) — be able to [HSK entry 145]
 
-### 电影院 (diànyǐngyuàn) — cinema
+- 喜欢 (xǐhuan) — like [HSK entry 225]
 
-HSK entry: 39 · POS: noun · introduced
+- 想 (xiǎng) — think; want [HSK entry 233]
 
-**电影院在学校旁边。**
-*diànyǐngyuàn zài xuéxiào pángbiān.*
-The cinema is next to the school.
-**Usage:** 旁边 means “beside” and functions as a location word after 学校.
+- 要 (yào) — want; will [HSK entry 252]
 
-**电影院晚上八点有电影。**
-*diànyǐngyuàn wǎnshang bā diǎn yǒu diànyǐng.*
-The cinema has a movie at eight tonight.
+- 有 (yǒu) — have [HSK entry 263]
 
-### 歌 (gē) — song
+- 唱 (chàng) — sing [HSK entry 18]
 
-HSK entry: 58 · POS: noun · introduced
+- 电视 (diànshì) — TV [HSK entry 37]
 
-**我喜欢唱歌。**
-*wǒ xǐhuan chàng gē.*
-I like singing.
+- 电影 (diànyǐng) — film [HSK entry 38]
 
-**学生们喜欢唱中文歌。**
-*xuéshēngmen xǐhuan chàng Zhōngwén gē.*
-The students like singing Chinese songs.
+- 电影院 (diànyǐngyuàn) — cinema [HSK entry 39]
 
-### 好玩儿 (hǎowánr) — fun
+- 歌 (gē) — song [HSK entry 58]
 
-HSK entry: 75 · POS: adjective · introduced
+- 好玩儿 (hǎowánr) — fun [HSK entry 75]
 
-**这里真好玩儿！**
-*zhèlǐ zhēn hǎowánr!*
-It's really fun here!
-
-**这里有很多好玩儿的东西。**
-*zhèlǐ yǒu hěn duō hǎowánr de dōngxi.*
-There are many fun things here.
-
-## Usage and grammar
-
-### Learned ability
-
-A modal verb can indicate ability acquired through learning.
-
-### Expressing likes
-
-A preference verb can take a noun or a verb phrase.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “can”?
 - a. 会 (huì) — 

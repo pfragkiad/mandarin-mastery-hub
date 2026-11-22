@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-school-people-places",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,13 +28,15 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
+    "一": "Characters:一",
     "上": "Characters:上",
+    "下": "Characters:下",
     "个": "Characters:个",
     "中": "Characters:中",
     "也": "Characters:也",
@@ -42,23 +44,36 @@
     "书": "Characters:书",
     "二": "Characters:二",
     "些": "Characters:些",
+    "京": "Characters:京",
     "他": "Characters:他",
     "以": "Characters:以",
     "们": "Characters:们",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
     "八": "Characters:八",
+    "北": "Characters:北",
     "十": "Characters:十",
     "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
     "可": "Characters:可",
     "同": "Characters:同",
+    "呢": "Characters:呢",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
     "喜": "Characters:喜",
+    "回": "Characters:回",
     "在": "Characters:在",
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
     "她": "Characters:她",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
     "子": "Characters:子",
     "学": "Characters:学",
     "孩": "Characters:孩",
+    "家": "Characters:家",
     "小": "Characters:小",
     "师": "Characters:师",
     "弟": "Characters:弟",
@@ -68,16 +83,20 @@
     "早": "Characters:早",
     "是": "Characters:是",
     "有": "Characters:有",
+    "朋": "Characters:朋",
     "校": "Characters:校",
     "欢": "Characters:欢",
     "正": "Characters:正",
     "每": "Characters:每",
+    "汉": "Characters:汉",
     "点": "Characters:点",
     "生": "Characters:生",
     "的": "Characters:的",
     "老": "Characters:老",
+    "语": "Characters:语",
     "读": "Characters:读",
     "课": "Characters:课",
+    "起": "Characters:起",
     "这": "Characters:这",
     "里": "Characters:里"
   },
@@ -602,8 +621,201 @@
           "correct_choice_ids": [],
           "answer": "大学里有很多学生。 (dàxué lǐ yǒu hěn duō xuéshēng.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Which child is in primary school?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The younger sister.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Do they travel to school together?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Yes.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask where someone attends school.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你在哪儿上学？ (Nǐ zài nǎr shàngxué?) — Where do you go to school?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say a friend is a university student.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我的朋友是大学生。 (Wǒ de péngyou shì dàxuéshēng.) — My friend is a university student.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "School and University",
+        "context_en": "A younger student and an older student compare which schools they attend.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你在哪儿上学？",
+            "pinyin": "Nǐ zài nǎr shàngxué?",
+            "english": "Where do you go to school?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我在中学上学。",
+            "pinyin": "Wǒ zài zhōngxué shàngxué.",
+            "english": "I go to middle school."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你姐姐呢？",
+            "pinyin": "Nǐ jiějie ne?",
+            "english": "What about your older sister?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "她是大学生，也学汉语。",
+            "pinyin": "Tā shì dàxuéshēng, yě xué Hànyǔ.",
+            "english": "She is a university student and studies Chinese too."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "School versus student",
+          "explanation_en": "学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level.",
+          "formula_en": "school name + 生 → student type",
+          "examples": [
+            {
+              "hanzi": "我弟弟是小学生。",
+              "pinyin": "Wǒ dìdi shì xiǎoxuéshēng.",
+              "english": "My younger brother is a primary-school pupil."
+            },
+            {
+              "hanzi": "她在大学学习。",
+              "pinyin": "Tā zài dàxué xuéxí.",
+              "english": "She studies at university."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Attending school: 上学 (shàngxué)",
+          "explanation_en": "上学 (shàngxué) describes attending school; 上课 (shàngkè) describes having/attending a class. The two do not mean exactly the same thing.",
+          "formula_en": "subject + 在 + place + 上学",
+          "examples": [
+            {
+              "hanzi": "我在北京上学。",
+              "pinyin": "Wǒ zài Běijīng shàngxué.",
+              "english": "I attend school in Beijing."
+            },
+            {
+              "hanzi": "我们上午上课。",
+              "pinyin": "Wǒmen shàngwǔ shàngkè.",
+              "english": "We have class in the morning."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change only the school level while keeping the identity sentence.",
+        "model": {
+          "hanzi": "我是中学生。",
+          "pinyin": "Wǒ shì zhōngxuéshēng.",
+          "english": "I am a middle-school student."
+        },
+        "substitutions": [
+          {
+            "cue_en": "university",
+            "model_answer": {
+              "hanzi": "我是大学生。",
+              "pinyin": "Wǒ shì dàxuéshēng.",
+              "english": "I am a university student."
+            }
+          },
+          {
+            "cue_en": "primary school",
+            "model_answer": {
+              "hanzi": "我是小学生。",
+              "pinyin": "Wǒ shì xiǎoxuéshēng.",
+              "english": "I am a primary-school pupil."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "哥哥是中学生，妹妹是小学生。他们每天一起去学校，下午一起回家。",
+            "pinyin": "Gēge shì zhōngxuéshēng, mèimei shì xiǎoxuéshēng. Tāmen měi tiān yìqǐ qù xuéxiào, xiàwǔ yìqǐ huí jiā.",
+            "english": "The older brother is a middle-school student, and the younger sister is in primary school. They go to school together every day and return home together in the afternoon."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Which child is in primary school?",
+            "answer_en": "The younger sister."
+          },
+          {
+            "prompt_en": "Do they travel to school together?",
+            "answer_en": "Yes."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask where someone attends school.",
+          "model_answer": {
+            "hanzi": "你在哪儿上学？",
+            "pinyin": "Nǐ zài nǎr shàngxué?",
+            "english": "Where do you go to school?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say a friend is a university student.",
+          "model_answer": {
+            "hanzi": "我的朋友是大学生。",
+            "pinyin": "Wǒ de péngyou shì dàxuéshēng.",
+            "english": "My friend is a university student."
+          }
+        }
+      ],
+      "common_pitfall": "学校 (xuéxiào) names the institution; 学生 (xuéshēng) names the person. Adding 生 changes the meaning.",
+      "pronunciation_focus": "学习 (xuéxí) is a verb “study/learn”; 学校 (xuéxiào) is the place “school”.",
+      "review": {
+        "can_do": [
+          "Distinguish types of schools.",
+          "Identify teachers, classmates and students.",
+          "Talk about attending school."
+        ],
+        "entry_ids": [
+          27,
+          28,
+          179,
+          237,
+          238,
+          248,
+          250,
+          292,
+          293
+        ]
+      }
     }
   }
 }

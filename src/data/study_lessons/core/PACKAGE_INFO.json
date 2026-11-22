@@ -1,9 +1,9 @@
 {
   "package_name": "mandarin-tutor-core",
-  "package_version": "3.0.1",
+  "package_version": "3.1.0",
   "lesson_schema_versions": [
     "mandarin-character-lesson/3.0.0",
-    "mandarin-topic-lesson/3.0.0",
+    "mandarin-topic-lesson/3.1.0",
     "mandarin-general-lesson/3.0.0"
   ],
   "curriculum_schema_version": "mandarin-curriculum/3.0.0",
@@ -11,5 +11,5 @@
   "validator": "validate_core.py",
   "category_registry": "lesson_categories.json",
   "catalog": "catalog_ids.json (external Project Source)",
-  "note": "Schema v3.0.0 is unchanged; core bundle v3.0.1 adds the renderer and fixes documentation."
+  "note": "Core v3.1 adds topic communicative teaching sections and a non-redundant lesson renderer. Older v3.0 character/general/topic lessons remain valid; character and general schemas unchanged."
 }

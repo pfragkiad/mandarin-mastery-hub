@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-getting-around",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -38,12 +38,14 @@
     "三": "Characters:三",
     "上": "Characters:上",
     "下": "Characters:下",
+    "不": "Characters:不",
     "两": "Characters:两",
     "个": "Characters:个",
     "中": "Characters:中",
     "九": "Characters:九",
     "书": "Characters:书",
     "了": "Characters:了",
+    "京": "Characters:京",
     "今": "Characters:今",
     "从": "Characters:从",
     "他": "Characters:他",
@@ -52,12 +54,14 @@
     "会": "Characters:会",
     "作": "Characters:作",
     "你": "Characters:你",
+    "儿": "Characters:儿",
     "公": "Characters:公",
     "六": "Characters:六",
     "出": "Characters:出",
     "到": "Characters:到",
     "前": "Characters:前",
     "包": "Characters:包",
+    "北": "Characters:北",
     "医": "Characters:医",
     "午": "Characters:午",
     "去": "Characters:去",
@@ -69,6 +73,7 @@
     "吗": "Characters:吗",
     "吧": "Characters:吧",
     "哥": "Characters:哥",
+    "哪": "Characters:哪",
     "商": "Characters:商",
     "回": "Characters:回",
     "国": "Characters:国",
@@ -79,6 +84,8 @@
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
     "子": "Characters:子",
     "学": "Characters:学",
     "室": "Characters:室",
@@ -91,9 +98,11 @@
     "很": "Characters:很",
     "想": "Characters:想",
     "我": "Characters:我",
+    "打": "Characters:打",
     "教": "Characters:教",
     "明": "Characters:明",
     "是": "Characters:是",
+    "晚": "Characters:晚",
     "有": "Characters:有",
     "朋": "Characters:朋",
     "机": "Characters:机",
@@ -112,17 +121,23 @@
     "的": "Characters:的",
     "看": "Characters:看",
     "租": "Characters:租",
+    "站": "Characters:站",
     "等": "Characters:等",
+    "给": "Characters:给",
     "苹": "Characters:苹",
+    "话": "Characters:话",
     "请": "Characters:请",
     "课": "Characters:课",
+    "走": "Characters:走",
     "超": "Characters:超",
     "车": "Characters:车",
     "边": "Characters:边",
+    "过": "Characters:过",
     "这": "Characters:这",
     "那": "Characters:那",
     "里": "Characters:里",
     "门": "Characters:门",
+    "问": "Characters:问",
     "院": "Characters:院",
     "雨": "Characters:雨",
     "面": "Characters:面",
@@ -1018,8 +1033,205 @@
           "correct_choice_ids": [],
           "answer": "学校门口有很多车。 (xuéxiào ménkǒu yǒu hěn duō chē.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Who takes a taxi?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Mom.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: How does the speaker return home?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "By train.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask where a place is.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，学校在哪儿？ (Qǐngwèn, xuéxiào zài nǎr?) — Excuse me, where is the school?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say how you get home.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我坐火车回家。 (Wǒ zuò huǒchē huí jiā.) — I take the train home.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Getting Around",
+        "context_en": "A traveler asks how to get to the station and distinguishes arriving, returning, and leaving.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，火车站在哪儿？",
+            "pinyin": "Qǐngwèn, huǒchēzhàn zài nǎr?",
+            "english": "Excuse me, where is the train station?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "在前边。你坐车去吗？",
+            "pinyin": "Zài qiánbian. Nǐ zuò chē qù ma?",
+            "english": "It is ahead. Are you taking a vehicle there?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "不，我走过去。",
+            "pinyin": "Bù, wǒ zǒu guòqu.",
+            "english": "No, I will walk over."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，到了以后给我打电话。",
+            "pinyin": "Hǎo, dào le yǐhòu gěi wǒ dǎ diànhuà.",
+            "english": "Okay, call me after you arrive."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Movement from the speaker’s viewpoint",
+          "explanation_en": "来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.",
+          "formula_en": "subject + 来/去/回 + place",
+          "examples": [
+            {
+              "hanzi": "朋友明天来我家。",
+              "pinyin": "Péngyou míngtiān lái wǒ jiā.",
+              "english": "A friend is coming to my home tomorrow."
+            },
+            {
+              "hanzi": "我下午回家。",
+              "pinyin": "Wǒ xiàwǔ huí jiā.",
+              "english": "I will go home this afternoon."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Places and destinations",
+          "explanation_en": "到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.",
+          "formula_en": "坐 + vehicle + 去 + place",
+          "examples": [
+            {
+              "hanzi": "我们坐火车去北京。",
+              "pinyin": "Wǒmen zuò huǒchē qù Běijīng.",
+              "english": "We are taking the train to Beijing."
+            },
+            {
+              "hanzi": "他晚上到学校。",
+              "pinyin": "Tā wǎnshang dào xuéxiào.",
+              "english": "He will arrive at school in the evening."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the means of transport but keep the destination.",
+        "model": {
+          "hanzi": "我坐火车去北京。",
+          "pinyin": "Wǒ zuò huǒchē qù Běijīng.",
+          "english": "I take the train to Beijing."
+        },
+        "substitutions": [
+          {
+            "cue_en": "plane",
+            "model_answer": {
+              "hanzi": "我坐飞机去北京。",
+              "pinyin": "Wǒ zuò fēijī qù Běijīng.",
+              "english": "I fly to Beijing."
+            }
+          },
+          {
+            "cue_en": "taxi",
+            "model_answer": {
+              "hanzi": "我坐出租车去北京。",
+              "pinyin": "Wǒ zuò chūzūchē qù Běijīng.",
+              "english": "I take a taxi to Beijing."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "爸爸今天开车去公司，妈妈坐出租车去医院。我下午坐火车回家。",
+            "pinyin": "Bàba jīntiān kāi chē qù gōngsī, māma zuò chūzūchē qù yīyuàn. Wǒ xiàwǔ zuò huǒchē huí jiā.",
+            "english": "Dad drives to work today; Mom takes a taxi to the hospital. I take the train home this afternoon."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "Who takes a taxi?",
+            "answer_en": "Mom."
+          },
+          {
+            "prompt_en": "How does the speaker return home?",
+            "answer_en": "By train."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask where a place is.",
+          "model_answer": {
+            "hanzi": "请问，学校在哪儿？",
+            "pinyin": "Qǐngwèn, xuéxiào zài nǎr?",
+            "english": "Excuse me, where is the school?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say how you get home.",
+          "model_answer": {
+            "hanzi": "我坐火车回家。",
+            "pinyin": "Wǒ zuò huǒchē huí jiā.",
+            "english": "I take the train home."
+          }
+        }
+      ],
+      "common_pitfall": "Do not reverse 来 (lái) and 去 (qù); choose the viewpoint before you speak.",
+      "pronunciation_focus": "For taking a vehicle, use 坐 (zuò) rather than 开 (kāi); 开车 (kāi chē) means driving.",
+      "review": {
+        "can_do": [
+          "Name common modes of transport.",
+          "Describe going, coming and returning.",
+          "Use basic spatial position words."
+        ],
+        "entry_ids": [
+          20,
+          22,
+          29,
+          81,
+          83,
+          98,
+          106,
+          167,
+          11,
+          80,
+          163,
+          175,
+          226
+        ]
+      }
     }
   }
 }

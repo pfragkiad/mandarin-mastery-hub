@@ -2,9 +2,9 @@
 
 Buy and describe common things, ask prices and talk about personal possessions.
 
-**Topics:** shopping-money, home-objects
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Ask and answer basic price questions.
 
@@ -12,273 +12,163 @@ Buy and describe common things, ask prices and talk about personal possessions.
 
 - Talk about buying and selling everyday items.
 
-## Overview
+## 1. Conversation — Buying Everyday Things
 
-Buy and describe common things, ask prices and talk about personal possessions.
+A shopper compares prices and decides what to buy for a room.
 
-Ask and answer basic price questions.
+**A:** 这个杯子多少钱？ (Zhège bēizi duōshao qián?) — How much is this cup?
 
-## Vocabulary and examples
+**B:** 二十块。 (Èr shí kuài.) — Twenty yuan.
 
-### 超市 (chāoshì) — supermarket
+**A:** 有便宜一点儿的吗？ (Yǒu piányi yìdiǎnr de ma?) — Do you have a slightly cheaper one?
 
-HSK entry: 19 · POS: noun · introduced
+**B:** 有，那个十五块。 (Yǒu, nàge shíwǔ kuài.) — Yes, that one is fifteen yuan.
 
-**我去超市买水果。**
-*wǒ qù chāoshì mǎi shuǐguǒ.*
-I go to the supermarket to buy fruit.
-**Usage:** 去 + place + verb expresses going somewhere in order to do something.
+## 2. How the language works
 
-**超市早上八点开门。**
-*chāoshì zǎoshang bā diǎn kāimén.*
-The supermarket opens at eight in the morning.
+### Prices: 元 (yuán) and 块 (kuài)
 
-### 店 (diàn) — shop
+元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.
 
-HSK entry: 34 · POS: noun · introduced
+**Pattern:** item + 多少钱? / number + 块
 
-**那家店很小。**
-*nà jiā diàn hěn xiǎo.*
-That shop is small.
-**Usage:** 家 can classify a shop or commercial establishment; 很小 describes its size.
+**这件衣服五十元。**
+*Zhè jiàn yīfu wǔ shí yuán.*
+This item of clothing is fifty yuan.
 
-**这家店早上九点开门。**
-*zhè jiā diàn zǎoshang jiǔ diǎn kāimén.*
-This shop opens at nine in the morning.
-
-### 贵 (guì) — expensive
-
-HSK entry: 65 · POS: adjective · introduced
-
-**这个手机太贵了。**
-*zhège shǒujī tài guì le.*
-This phone is too expensive.
-**Usage:** 太…了 often indicates an excessive degree, here a phone being too expensive.
-
-**这本中文书不贵。**
-*zhè běn Zhōngwén shū bú guì.*
-This Chinese book is not expensive.
-
-### 块 (kuài) — piece; yuan
-
-HSK entry: 105 · POS: classifier · introduced
-
-**这个苹果五块钱。**
-*zhège píngguǒ wǔ kuài qián.*
-This apple costs five yuan.
-**Usage:** 块钱 is a common spoken expression for an amount in yuan.
-
-**这本书二十块钱。**
-*zhè běn shū èr shí kuài qián.*
-This book costs twenty yuan.
-
-Classifier and colloquial monetary unit; also used for pieces.
-
-### 买 (mǎi) — buy
-
-HSK entry: 116 · POS: verb · introduced
-
-**我想买一点儿茶。**
-*wǒ xiǎng mǎi yìdiǎnr chá.*
-I want to buy some tea.
-
-**学生可以在这里买书。**
-*xuéshēng kěyǐ zài zhèlǐ mǎi shū.*
-Students can buy books here.
-
-### 卖 (mài) — sell
-
-HSK entry: 117 · POS: verb · introduced
-
-**这家店卖水果。**
-*zhè jiā diàn mài shuǐguǒ.*
-This shop sells fruit.
-**Usage:** 卖 is “sell,” in contrast to 买 “buy.”
-
-**学校外边的商店也卖书。**
-*xuéxiào wàibian de shāngdiàn yě mài shū.*
-The shop outside the school also sells books.
-
-### 便宜 (piányi) — cheap
-
-HSK entry: 157 · POS: adjective · introduced
-
-**这个苹果很便宜。**
-*zhège píngguǒ hěn piányi.*
-This apple is cheap.
-**Usage:** 便宜 describes a low price; it is not the same as bad quality.
-
-**这家店的衣服很便宜。**
-*zhè jiā diàn de yīfu hěn piányi.*
-The clothes at this shop are very cheap.
-
-### 钱 (qián) — money
-
-HSK entry: 164 · POS: noun · introduced
-
-**我没有钱。**
-*wǒ méiyǒu qián.*
-I don't have money.
-**Usage:** 没有钱 expresses the absence of money; 不有 is not grammatical here.
-
-**桌子上有二十块钱。**
-*zhuōzi shàng yǒu èr shí kuài qián.*
-There are twenty yuan on the table.
-**Usage:** Straightforward statement of where an amount of money is located.
-
-### 商店 (shāngdiàn) — store
-
-HSK entry: 174 · POS: noun · introduced
-
-**我们去商店买水。**
-*wǒmen qù shāngdiàn mǎi shuǐ.*
-We go to the store to buy water.
-**Usage:** 去商店买水 expresses purpose: go to the shop to buy water.
-
-**商店上午九点开门。**
-*shāngdiàn shàngwǔ jiǔ diǎn kāimén.*
-The shop opens at nine in the morning.
-
-### 元 (yuán) — yuan (currency)
-
-HSK entry: 268 · POS: classifier · introduced
-
-**这个杯子十元。**
-*zhège bēizi shí yuán.*
-This cup costs ten yuan.
-**Usage:** 元 is the currency unit yuan; price follows the item directly.
-
-**这本书二十元。**
-*zhè běn shū èr shí yuán.*
-This book costs twenty yuan.
-
-Currency unit yuan, functioning as a measure word.
-
-### 杯子 (bēizi) — cup
-
-HSK entry: 9 · POS: noun · introduced
-
-**这个杯子是我的。**
-*zhège bēizi shì wǒ de.*
-This cup is mine.
-**Usage:** The final 我的 stands for “my cup,” with the repeated noun left understood.
-
-**桌子上有三个杯子。**
-*zhuōzi shàng yǒu sān gè bēizi.*
-There are three cups on the table.
-
-### 电话 (diànhuà) — telephone
-
-HSK entry: 35 · POS: noun · introduced
-
-**请给我打电话。**
-*qǐng gěi wǒ dǎ diànhuà.*
-Please give me a call.
-
-**这是学校的电话。**
-*zhè shì xuéxiào de diànhuà.*
-This is the school's phone number.
-
-### 电脑 (diànnǎo) — computer
-
-HSK entry: 36 · POS: noun · introduced
-
-**我在电脑上学习。**
-*wǒ zài diànnǎo shàng xuéxí.*
-I study on the computer.
-
-**学校里有很多电脑。**
-*xuéxiào lǐ yǒu hěn duō diànnǎo.*
-There are many computers at school.
-
-### 东西 (dōngxi) — thing
-
-HSK entry: 40 · POS: noun · introduced
-
-**这些东西是谁的？**
-*zhèxiē dōngxi shì shéi de?*
-Whose things are these?
-**Usage:** 谁 asks about the owner; 谁 can be pronounced shéi or shuí, here read shéi.
-
-**请拿好你的东西。**
-*qǐng ná hǎo nǐ de dōngxi.*
-Please take care of your belongings.
-
-### 房间 (fángjiān) — room
-
-HSK entry: 52 · POS: noun · introduced
-
-**我的房间很小。**
-*wǒ de fángjiān hěn xiǎo.*
-My room is small.
-**Usage:** 房间 is a room; 很小 describes its physical size.
-
-**学校里有三个大房间。**
-*xuéxiào lǐ yǒu sān gè dà fángjiān.*
-There are three large rooms at the school.
-
-### 手机 (shǒujī) — mobile phone
-
-HSK entry: 189 · POS: noun · introduced
-
-**这是我的手机。**
-*zhè shì wǒ de shǒujī.*
-This is my mobile phone.
-**Usage:** 手机 is a mobile phone; 这 points to the device being identified.
-
-**上课的时候请不要玩手机。**
-*shàngkè de shíhou qǐng búyào wán shǒujī.*
-Please don't play with your phone during class.
-
-### 衣服 (yīfu) — clothes
-
-HSK entry: 255 · POS: noun · introduced
-
-**我今天买了新衣服。**
-*wǒ jīntiān mǎi le xīn yīfu.*
-I bought new clothes today.
-**Usage:** 衣服 refers broadly to clothes; it commonly takes no classifier in this statement.
-
-**这家店卖很多新衣服。**
-*zhè jiā diàn mài hěn duō xīn yīfu.*
-This shop sells many new clothes.
-
-### 椅子 (yǐzi) — chair
-
-HSK entry: 260 · POS: noun · introduced
-
-**这儿有椅子，请坐。**
-*zhèr yǒu yǐzi, qǐng zuò.*
-There are chairs here. Please sit down.
-
-**椅子在桌子旁边。**
-*yǐzi zài zhuōzi pángbiān.*
-The chair is next to the table.
-
-### 桌子 (zhuōzi) — table
-
-HSK entry: 295 · POS: noun · introduced
-
-**桌子上有一本书。**
-*zhuōzi shàng yǒu yì běn shū.*
-There is a book on the table.
-**Usage:** 桌子上 means on the table; 有 introduces something located there.
-
-**教室里有很多桌子。**
-*jiàoshì lǐ yǒu hěn duō zhuōzi.*
-There are many desks in the classroom.
-
-## Usage and grammar
-
-### Talking about money
-
-Use money vocabulary when asking about or stating a price.
+**那张桌子一百块。**
+*Nà zhāng zhuōzi yì bǎi kuài.*
+That table is one hundred yuan.
 
 ### Buying versus selling
 
-Distinguish the verb for buying from its related counterpart for selling.
+买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.
 
-## Practice
+**Pattern:** shop + 卖 + item; customer + 买 + item
+
+**这家商店卖手机。**
+*Zhè jiā shāngdiàn mài shǒujī.*
+This shop sells mobile phones.
+
+**我想买新电脑。**
+*Wǒ xiǎng mǎi xīn diànnǎo.*
+I want to buy a new computer.
+
+## 3. Build new sentences
+
+Change the item and ask its price.
+
+**Worked model:** **这个杯子多少钱？**
+*Zhège bēizi duōshao qián?*
+How much is this cup?
+
+**Change 1: phone**
+
+*Model response:* **这个手机多少钱？**
+*Zhège shǒujī duōshao qián?*
+How much is this phone?
+
+**Change 2: table**
+
+*Model response:* **这张桌子多少钱？**
+*Zhè zhāng zhuōzi duōshao qián?*
+How much is this table?
+
+## 4. Read for meaning — A short connected story
+
+**妈妈去商店买一把椅子和一张桌子。桌子有点儿贵，但是椅子很便宜。**
+*Māma qù shāngdiàn mǎi yì bǎ yǐzi hé yì zhāng zhuōzi. Zhuōzi yǒudiǎnr guì, dànshì yǐzi hěn piányi.*
+Mom goes to the shop to buy a chair and a table. The table is a little expensive, but the chair is cheap.
+
+**Q1. What two things does Mom want to buy?** Suggested answer: A chair and a table.
+
+**Q2. Which object is cheaper?** Suggested answer: The chair.
+
+## 5. Speak and personalize
+
+Try to answer aloud before checking the sample; adapt it to your own situation.
+
+**Speaking 1:** Ask for something less expensive.
+
+*Possible response:* **有便宜一点儿的吗？**
+*Yǒu piányi yìdiǎnr de ma?*
+Do you have a cheaper one?
+
+**Speaking 2:** Say you want to buy a phone.
+
+*Possible response:* **我想买手机。**
+*Wǒ xiǎng mǎi shǒujī.*
+I want to buy a phone.
+
+## 6. Watch out
+
+买 (mǎi, buy) and 卖 (mài, sell) look and sound similar but differ in tone and meaning.
+
+**Pronunciation:** Remember the price words 元 (yuán) and 块 (kuài) can both refer to yuan, with 块 being informal.
+
+## 7. Check what you can do
+
+**Comprehension:** Reading comprehension: What two things does Mom want to buy?
+**Answer:** A chair and a table.. Check against the connected reading passage, not the vocabulary cards.
+
+**Comprehension:** Reading comprehension: Which object is cheaper?
+**Answer:** The chair.. Check against the connected reading passage, not the vocabulary cards.
+
+**Production:** Say this aloud: Ask for something less expensive.
+**Answer:** 有便宜一点儿的吗？ (Yǒu piányi yìdiǎnr de ma?) — Do you have a cheaper one?. Illustrative answer. Other natural responses may be correct.
+
+**Production:** Say this aloud: Say you want to buy a phone.
+**Answer:** 我想买手机。 (Wǒ xiǎng mǎi shǒujī.) — I want to buy a phone.. Illustrative answer. Other natural responses may be correct.
+
+## Review and next step
+
+- Ask and answer basic price questions.
+
+- Identify common shops, furniture and devices.
+
+- Talk about buying and selling everyday items.
+
+## Reference word bank (details on vocabulary cards)
+
+- 超市 (chāoshì) — supermarket [HSK entry 19]
+
+- 店 (diàn) — shop [HSK entry 34]
+
+- 贵 (guì) — expensive [HSK entry 65]
+
+- 块 (kuài) — piece; yuan [HSK entry 105]
+
+- 买 (mǎi) — buy [HSK entry 116]
+
+- 卖 (mài) — sell [HSK entry 117]
+
+- 便宜 (piányi) — cheap [HSK entry 157]
+
+- 钱 (qián) — money [HSK entry 164]
+
+- 商店 (shāngdiàn) — store [HSK entry 174]
+
+- 元 (yuán) — yuan (currency) [HSK entry 268]
+
+- 杯子 (bēizi) — cup [HSK entry 9]
+
+- 电话 (diànhuà) — telephone [HSK entry 35]
+
+- 电脑 (diànnǎo) — computer [HSK entry 36]
+
+- 东西 (dōngxi) — thing [HSK entry 40]
+
+- 房间 (fángjiān) — room [HSK entry 52]
+
+- 手机 (shǒujī) — mobile phone [HSK entry 189]
+
+- 衣服 (yīfu) — clothes [HSK entry 255]
+
+- 椅子 (yǐzi) — chair [HSK entry 260]
+
+- 桌子 (zhuōzi) — table [HSK entry 295]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “supermarket”?
 - a. 电脑 (diànnǎo) — 

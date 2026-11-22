@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "schema_version": "mandarin-topic-lesson/3.1.0",
   "lesson_id": "topic-shopping-and-things",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -53,6 +53,8 @@
     "今": "Characters:今",
     "以": "Characters:以",
     "们": "Characters:们",
+    "件": "Characters:件",
+    "但": "Characters:但",
     "你": "Characters:你",
     "便": "Characters:便",
     "候": "Characters:候",
@@ -64,6 +66,8 @@
     "卖": "Characters:卖",
     "去": "Characters:去",
     "可": "Characters:可",
+    "吗": "Characters:吗",
+    "和": "Characters:和",
     "商": "Characters:商",
     "在": "Characters:在",
     "坐": "Characters:坐",
@@ -74,21 +78,25 @@
     "天": "Characters:天",
     "太": "Characters:太",
     "好": "Characters:好",
+    "妈": "Characters:妈",
     "子": "Characters:子",
     "学": "Characters:学",
     "宜": "Characters:宜",
     "室": "Characters:室",
     "家": "Characters:家",
     "小": "Characters:小",
+    "少": "Characters:少",
     "市": "Characters:市",
     "店": "Characters:店",
     "开": "Characters:开",
+    "张": "Characters:张",
     "很": "Characters:很",
     "想": "Characters:想",
     "我": "Characters:我",
     "房": "Characters:房",
     "手": "Characters:手",
     "打": "Characters:打",
+    "把": "Characters:把",
     "拿": "Characters:拿",
     "教": "Characters:教",
     "文": "Characters:文",
@@ -112,6 +120,7 @@
     "玩": "Characters:玩",
     "生": "Characters:生",
     "电": "Characters:电",
+    "百": "Characters:百",
     "的": "Characters:的",
     "给": "Characters:给",
     "脑": "Characters:脑",
@@ -1023,8 +1032,207 @@
           "correct_choice_ids": [],
           "answer": "超市早上八点开门。 (chāoshì zǎoshang bā diǎn kāimén.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        },
+        {
+          "id": "applied-reading-1",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: What two things does Mom want to buy?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A chair and a table.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-reading-2",
+          "kind": "comprehension",
+          "prompt": "Reading comprehension: Which object is cheaper?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The chair.",
+          "explanation": "Check against the connected reading passage, not the vocabulary cards."
+        },
+        {
+          "id": "applied-speaking-1",
+          "kind": "production",
+          "prompt": "Say this aloud: Ask for something less expensive.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "有便宜一点儿的吗？ (Yǒu piányi yìdiǎnr de ma?) — Do you have a cheaper one?",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
+        },
+        {
+          "id": "applied-speaking-2",
+          "kind": "production",
+          "prompt": "Say this aloud: Say you want to buy a phone.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想买手机。 (Wǒ xiǎng mǎi shǒujī.) — I want to buy a phone.",
+          "explanation": "Illustrative answer. Other natural responses may be correct."
         }
       ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Buying Everyday Things",
+        "context_en": "A shopper compares prices and decides what to buy for a room.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这个杯子多少钱？",
+            "pinyin": "Zhège bēizi duōshao qián?",
+            "english": "How much is this cup?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "二十块。",
+            "pinyin": "Èr shí kuài.",
+            "english": "Twenty yuan."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "有便宜一点儿的吗？",
+            "pinyin": "Yǒu piányi yìdiǎnr de ma?",
+            "english": "Do you have a slightly cheaper one?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "有，那个十五块。",
+            "pinyin": "Yǒu, nàge shíwǔ kuài.",
+            "english": "Yes, that one is fifteen yuan."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Prices: 元 (yuán) and 块 (kuài)",
+          "explanation_en": "元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.",
+          "formula_en": "item + 多少钱? / number + 块",
+          "examples": [
+            {
+              "hanzi": "这件衣服五十元。",
+              "pinyin": "Zhè jiàn yīfu wǔ shí yuán.",
+              "english": "This item of clothing is fifty yuan."
+            },
+            {
+              "hanzi": "那张桌子一百块。",
+              "pinyin": "Nà zhāng zhuōzi yì bǎi kuài.",
+              "english": "That table is one hundred yuan."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Buying versus selling",
+          "explanation_en": "买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.",
+          "formula_en": "shop + 卖 + item; customer + 买 + item",
+          "examples": [
+            {
+              "hanzi": "这家商店卖手机。",
+              "pinyin": "Zhè jiā shāngdiàn mài shǒujī.",
+              "english": "This shop sells mobile phones."
+            },
+            {
+              "hanzi": "我想买新电脑。",
+              "pinyin": "Wǒ xiǎng mǎi xīn diànnǎo.",
+              "english": "I want to buy a new computer."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Change the item and ask its price.",
+        "model": {
+          "hanzi": "这个杯子多少钱？",
+          "pinyin": "Zhège bēizi duōshao qián?",
+          "english": "How much is this cup?"
+        },
+        "substitutions": [
+          {
+            "cue_en": "phone",
+            "model_answer": {
+              "hanzi": "这个手机多少钱？",
+              "pinyin": "Zhège shǒujī duōshao qián?",
+              "english": "How much is this phone?"
+            }
+          },
+          {
+            "cue_en": "table",
+            "model_answer": {
+              "hanzi": "这张桌子多少钱？",
+              "pinyin": "Zhè zhāng zhuōzi duōshao qián?",
+              "english": "How much is this table?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A short connected story",
+        "paragraphs": [
+          {
+            "hanzi": "妈妈去商店买一把椅子和一张桌子。桌子有点儿贵，但是椅子很便宜。",
+            "pinyin": "Māma qù shāngdiàn mǎi yì bǎ yǐzi hé yì zhāng zhuōzi. Zhuōzi yǒudiǎnr guì, dànshì yǐzi hěn piányi.",
+            "english": "Mom goes to the shop to buy a chair and a table. The table is a little expensive, but the chair is cheap."
+          }
+        ],
+        "questions": [
+          {
+            "prompt_en": "What two things does Mom want to buy?",
+            "answer_en": "A chair and a table."
+          },
+          {
+            "prompt_en": "Which object is cheaper?",
+            "answer_en": "The chair."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask for something less expensive.",
+          "model_answer": {
+            "hanzi": "有便宜一点儿的吗？",
+            "pinyin": "Yǒu piányi yìdiǎnr de ma?",
+            "english": "Do you have a cheaper one?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say you want to buy a phone.",
+          "model_answer": {
+            "hanzi": "我想买手机。",
+            "pinyin": "Wǒ xiǎng mǎi shǒujī.",
+            "english": "I want to buy a phone."
+          }
+        }
+      ],
+      "common_pitfall": "买 (mǎi, buy) and 卖 (mài, sell) look and sound similar but differ in tone and meaning.",
+      "pronunciation_focus": "Remember the price words 元 (yuán) and 块 (kuài) can both refer to yuan, with 块 being informal.",
+      "review": {
+        "can_do": [
+          "Ask and answer basic price questions.",
+          "Identify common shops, furniture and devices.",
+          "Talk about buying and selling everyday items."
+        ],
+        "entry_ids": [
+          34,
+          65,
+          105,
+          116,
+          117,
+          157,
+          164,
+          174,
+          268,
+          9,
+          36,
+          189,
+          255,
+          260,
+          295
+        ]
+      }
     }
   }
 }

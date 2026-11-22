@@ -2,9 +2,9 @@
 
 Talk about travelling, moving between places and locating people and objects.
 
-**Topics:** travel-transport, places-directions
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Name common modes of transport.
 
@@ -12,283 +12,163 @@ Talk about travelling, moving between places and locating people and objects.
 
 - Use basic spatial position words.
 
-## Overview
+## 1. Conversation — Getting Around
 
-Talk about travelling, moving between places and locating people and objects.
+A traveler asks how to get to the station and distinguishes arriving, returning, and leaving.
 
-Name common modes of transport.
+**A:** 请问，火车站在哪儿？ (Qǐngwèn, huǒchēzhàn zài nǎr?) — Excuse me, where is the train station?
 
-## Vocabulary and examples
+**B:** 在前边。你坐车去吗？ (Zài qiánbian. Nǐ zuò chē qù ma?) — It is ahead. Are you taking a vehicle there?
 
-### 车 (chē) — vehicle
+**A:** 不，我走过去。 (Bù, wǒ zǒu guòqu.) — No, I will walk over.
 
-HSK entry: 20 · POS: noun · introduced
+**B:** 好，到了以后给我打电话。 (Hǎo, dào le yǐhòu gěi wǒ dǎ diànhuà.) — Okay, call me after you arrive.
 
-**这是我爸爸的车。**
-*zhè shì wǒ bàba de chē.*
-This is my dad's car.
+## 2. How the language works
 
-**学校门口有很多车。**
-*xuéxiào ménkǒu yǒu hěn duō chē.*
-There are many cars at the school entrance.
+### Movement from the speaker’s viewpoint
 
-### 出租车 (chūzūchē) — taxi
+来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.
 
-HSK entry: 22 · POS: noun · introduced
+**Pattern:** subject + 来/去/回 + place
 
-**我坐出租车去学校。**
-*wǒ zuò chūzūchē qù xuéxiào.*
-I take a taxi to school.
-**Usage:** 坐出租车 means travel by taxi, rather than literally sit in a taxi.
+**朋友明天来我家。**
+*Péngyou míngtiān lái wǒ jiā.*
+A friend is coming to my home tomorrow.
 
-**从学校到医院可以坐出租车。**
-*cóng xuéxiào dào yīyuàn kěyǐ zuò chūzūchē.*
-You can take a taxi from the school to the hospital.
+**我下午回家。**
+*Wǒ xiàwǔ huí jiā.*
+I will go home this afternoon.
 
-### 到 (dào) — arrive
+### Places and destinations
 
-HSK entry: 29 · POS: verb · introduced
+到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.
 
-**他九点到学校。**
-*tā jiǔ diǎn dào xuéxiào.*
-He arrives at school at nine.
-**Usage:** 九点 gives the arrival time; 到 indicates reaching the school.
+**Pattern:** 坐 + vehicle + 去 + place
 
-**从家到学校可以坐车。**
-*cóng jiā dào xuéxiào kěyǐ zuò chē.*
-You can go from home to school by car.
+**我们坐火车去北京。**
+*Wǒmen zuò huǒchē qù Běijīng.*
+We are taking the train to Beijing.
 
-### 飞机 (fēijī) — airplane
+**他晚上到学校。**
+*Tā wǎnshang dào xuéxiào.*
+He will arrive at school in the evening.
 
-HSK entry: 54 · POS: noun · introduced
+## 3. Build new sentences
 
-**他坐飞机去中国。**
-*tā zuò fēijī qù Zhōngguó.*
-He takes a plane to China.
-**Usage:** 坐飞机 means to travel by plane; 去中国 specifies the destination.
+Change the means of transport but keep the destination.
 
-**飞机下午三点到机场。**
-*fēijī xiàwǔ sān diǎn dào jīchǎng.*
-The plane arrives at the airport at three in the afternoon.
+**Worked model:** **我坐火车去北京。**
+*Wǒ zuò huǒchē qù Běijīng.*
+I take the train to Beijing.
 
-### 回 (huí) — return
+**Change 1: plane**
 
-HSK entry: 81 · POS: verb · introduced
+*Model response:* **我坐飞机去北京。**
+*Wǒ zuò fēijī qù Běijīng.*
+I fly to Beijing.
 
-**我明天回家。**
-*wǒ míngtiān huí jiā.*
-I will go home tomorrow.
-**Usage:** 回家 means return home; 明天 indicates the future without a future-tense ending.
+**Change 2: taxi**
 
-**他下午六点回家。**
-*tā xiàwǔ liù diǎn huí jiā.*
-He goes home at six in the afternoon.
+*Model response:* **我坐出租车去北京。**
+*Wǒ zuò chūzūchē qù Běijīng.*
+I take a taxi to Beijing.
 
-### 火车 (huǒchē) — train
+## 4. Read for meaning — A short connected story
 
-HSK entry: 83 · POS: noun · introduced
+**爸爸今天开车去公司，妈妈坐出租车去医院。我下午坐火车回家。**
+*Bàba jīntiān kāi chē qù gōngsī, māma zuò chūzūchē qù yīyuàn. Wǒ xiàwǔ zuò huǒchē huí jiā.*
+Dad drives to work today; Mom takes a taxi to the hospital. I take the train home this afternoon.
 
-**我坐火车去看朋友。**
-*wǒ zuò huǒchē qù kàn péngyou.*
-I take the train to visit a friend.
+**Q1. Who takes a taxi?** Suggested answer: Mom.
 
-**火车上午九点到。**
-*huǒchē shàngwǔ jiǔ diǎn dào.*
-The train arrives at nine in the morning.
+**Q2. How does the speaker return home?** Suggested answer: By train.
 
-### 开车 (kāichē) — drive
+## 5. Speak and personalize
 
-HSK entry: 98 · POS: verb · introduced
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-**我爸爸会开车。**
-*wǒ bàba huì kāichē.*
-My father can drive.
-**Usage:** 会 marks the skill of driving rather than permission to drive.
+**Speaking 1:** Ask where a place is.
 
-**今天爸爸开车去公司。**
-*jīntiān bàba kāichē qù gōngsī.*
-Dad drives to the company today.
+*Possible response:* **请问，学校在哪儿？**
+*Qǐngwèn, xuéxiào zài nǎr?*
+Excuse me, where is the school?
 
-### 来 (lái) — come
+**Speaking 2:** Say how you get home.
 
-HSK entry: 106 · POS: verb · introduced
+*Possible response:* **我坐火车回家。**
+*Wǒ zuò huǒchē huí jiā.*
+I take the train home.
 
-**你明天来吗？**
-*nǐ míngtiān lái ma?*
-Are you coming tomorrow?
-**Usage:** 来 indicates movement toward the speaker’s place or point of reference.
+## 6. Watch out
 
-**学生们明天上午来学校。**
-*xuéshēngmen míngtiān shàngwǔ lái xuéxiào.*
-The students will come to school tomorrow morning.
+Do not reverse 来 (lái) and 去 (qù); choose the viewpoint before you speak.
 
-### 去 (qù) — go
+**Pronunciation:** For taking a vehicle, use 坐 (zuò) rather than 开 (kāi); 开车 (kāi chē) means driving.
 
-HSK entry: 167 · POS: verb · introduced
+## 7. Check what you can do
 
-**我们现在去学校。**
-*wǒmen xiànzài qù xuéxiào.*
-We are going to school now.
-**Usage:** 去 indicates movement away from the speaker’s present location.
+**Comprehension:** Reading comprehension: Who takes a taxi?
+**Answer:** Mom.. Check against the connected reading passage, not the vocabulary cards.
 
-**学生们明天去电影院。**
-*xuéshēngmen míngtiān qù diànyǐngyuàn.*
-The students will go to the cinema tomorrow.
+**Comprehension:** Reading comprehension: How does the speaker return home?
+**Answer:** By train.. Check against the connected reading passage, not the vocabulary cards.
 
-### 边 (biān) — side; edge
+**Production:** Say this aloud: Ask where a place is.
+**Answer:** 请问，学校在哪儿？ (Qǐngwèn, xuéxiào zài nǎr?) — Excuse me, where is the school?. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 11 · POS: suffix · introduced
+**Production:** Say this aloud: Say how you get home.
+**Answer:** 我坐火车回家。 (Wǒ zuò huǒchē huí jiā.) — I take the train home.. Illustrative answer. Other natural responses may be correct.
 
-**你来这边坐吧。**
-*nǐ lái zhèbiān zuò ba.*
-Come sit over here.
+## Review and next step
 
-**学校在那边。**
-*xuéxiào zài nàbiān.*
-The school is over there.
+- Name common modes of transport.
 
-Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions.
+- Describe going, coming and returning.
 
-### 国 (guó) — country
+- Use basic spatial position words.
 
-HSK entry: 66 · POS: noun · introduced
+## Reference word bank (details on vocabulary cards)
 
-**中国是一个大国。**
-*Zhōngguó shì yí ge dàguó.*
-China is a large country.
-**Usage:** 大国 means a large or major country; 个 is a general classifier.
+- 车 (chē) — vehicle [HSK entry 20]
 
-**我哥哥在外国工作。**
-*wǒ gēge zài wàiguó gōngzuò.*
-My older brother works abroad.
-**Usage:** 外国 (“foreign country/abroad”) is a common compound containing 国.
+- 出租车 (chūzūchē) — taxi [HSK entry 22]
 
-### 后 (hòu) — after; behind
+- 到 (dào) — arrive [HSK entry 29]
 
-HSK entry: 80 · POS: localizer · introduced
+- 飞机 (fēijī) — airplane [HSK entry 54]
 
-**我坐在你后边。**
-*wǒ zuò zài nǐ hòubian.*
-I am sitting behind you.
-**Usage:** 后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker.
+- 回 (huí) — return [HSK entry 81]
 
-**我们下课后去书店。**
-*wǒmen xiàkè hòu qù shūdiàn.*
-We go to the bookstore after class.
+- 火车 (huǒchē) — train [HSK entry 83]
 
-After/behind: temporal or spatial localizer; can also be nominal.
+- 开车 (kāichē) — drive [HSK entry 98]
 
-### 里 (lǐ) — inside
+- 来 (lái) — come [HSK entry 106]
 
-HSK entry: 110 · POS: localizer · introduced
+- 去 (qù) — go [HSK entry 167]
 
-**书在包里。**
-*shū zài bāo lǐ.*
-The book is in the bag.
-**Usage:** 里 is a location word, showing that the book is inside the bag.
+- 边 (biān) — side; edge [HSK entry 11]
 
-**学生们在教室里上课。**
-*xuéshēngmen zài jiàoshì lǐ shàngkè.*
-The students are having class in the classroom.
+- 国 (guó) — country [HSK entry 66]
 
-Localizer meaning inside, traditionally also categorized as a location noun.
+- 后 (hòu) — after; behind [HSK entry 80]
 
-### 前 (qián) — before; front
+- 里 (lǐ) — inside [HSK entry 110]
 
-HSK entry: 163 · POS: localizer · introduced
+- 前 (qián) — before; front [HSK entry 163]
 
-**学校在商店前边。**
-*xuéxiào zài shāngdiàn qiánbian.*
-The school is in front of the shop.
-**Usage:** 前边 locates something in front of a landmark, here the shop.
+- 上 (shàng) — above; on [HSK entry 175]
 
-**上课前请看书。**
-*shàngkè qián qǐng kàn shū.*
-Please read the book before class.
+- 外 (wài) — outside [HSK entry 212]
 
-Before/in front of; a time or place localizer.
+- 外边 (wàibian) — outside [HSK entry 213]
 
-### 上 (shàng) — above; on
+- 下 (xià) — below; down; next [HSK entry 226]
 
-HSK entry: 175 · POS: localizer · introduced
+- 中国 (Zhōngguó) — China [HSK entry 289]
 
-**书在桌子上。**
-*shū zài zhuōzi shàng.*
-The book is on the table.
-**Usage:** 上 is a positional word meaning on top of or above something.
-
-**桌子上有两个苹果。**
-*zhuōzi shàng yǒu liǎng ge píngguǒ.*
-There are two apples on the table.
-
-On/above as a localizer or verb for ascending/attending, depending on context.
-
-### 外 (wài) — outside
-
-HSK entry: 212 · POS: localizer · introduced
-
-**他在门外。**
-*tā zài mén wài.*
-He is outside the door.
-**Usage:** 门外 locates someone outside the door; 外 means outside.
-
-**请在门外等一下。**
-*qǐng zài ménwài děng yíxià.*
-Please wait outside the door for a moment.
-
-### 外边 (wàibian) — outside
-
-HSK entry: 213 · POS: localizer · introduced
-
-**外边下雨了。**
-*wàibian xià yǔ le.*
-It is raining outside.
-**Usage:** 外边 means outside; 下雨了 describes the onset or current fact of rain.
-
-**学校外边有一个超市。**
-*xuéxiào wàibian yǒu yí ge chāoshì.*
-There is a supermarket outside the school.
-
-### 下 (xià) — below; down; next
-
-HSK entry: 226 · POS: localizer · introduced
-
-**猫在桌子下面。**
-*māo zài zhuōzi xià miàn.*
-The cat is under the table.
-**Usage:** 下面 is the full location expression below the table; 在 marks location.
-
-**书在椅子下。**
-*shū zài yǐzi xià.*
-The book is under the chair.
-**Usage:** A short, concrete location sentence: 在 indicates location, and 下 means beneath or below the chair.
-
-Below/under as a localizer, but verb and measure-word uses also exist.
-
-### 中国 (Zhōngguó) — China
-
-HSK entry: 289 · POS: noun · introduced
-
-**我想去中国。**
-*wǒ xiǎng qù Zhōngguó.*
-I want to go to China.
-**Usage:** 中国 is the country China; 去 indicates travel to it.
-
-**中国有很多大学。**
-*Zhōngguó yǒu hěn duō dàxué.*
-There are many universities in China.
-
-## Usage and grammar
-
-### Going to a destination
-
-The movement verb precedes the destination in a simple travel phrase.
-
-### Expressing position
-
-Location expressions identify where a person or thing is.
-
-## Practice
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “vehicle”?
 - a. 车 (chē) — 

@@ -2,9 +2,9 @@
 
 Use common adjectives and evaluative language to describe people and objects.
 
-**Topics:** qualities-feelings
+> A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
 
-## Learning objectives
+## Your goal
 
 - Describe appearance, size and quality.
 
@@ -12,182 +12,149 @@ Use common adjectives and evaluative language to describe people and objects.
 
 - Distinguish adjectives in natural context.
 
-## Overview
+## 1. Conversation — Describing People and Things
 
-Use common adjectives and evaluative language to describe people and objects.
+A conversation about a new film shows how different evaluative adjectives convey more than just “good”.
 
-Describe appearance, size and quality.
+**A:** 这部电影好看吗？ (Zhè bù diànyǐng hǎokàn ma?) — Is this film good to watch?
 
-## Vocabulary and examples
+**B:** 好看！歌也很好听。 (Hǎokàn! Gē yě hěn hǎotīng.) — Yes! The songs are nice to listen to, too.
 
-### 大 (dà) — big
+**A:** 你高兴吗？ (Nǐ gāoxìng ma?) — Are you happy?
 
-HSK entry: 25 · POS: adjective · introduced
+**B:** 很高兴，但是现在有点儿忙。 (Hěn gāoxìng, dànshì xiànzài yǒudiǎnr máng.) — Very happy, but a little busy right now.
 
-**这个房间很大。**
-*zhège fángjiān hěn dà.*
-This room is big.
-**Usage:** 很 appears naturally before a descriptive adjective such as 大, without necessarily meaning “very.”
+## 2. How the language works
 
-**这个大学很大。**
-*zhège dàxué hěn dà.*
-This university is very big.
+### Quality adjectives are specific
 
-### 对 (duì) — correct; toward
+好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.
 
-HSK entry: 44 · POS: adjective · introduced
+**Pattern:** subject + 很 + adjective
 
-**我说得对吗？**
-*wǒ shuō de duì ma?*
-Am I right?
+**这首歌很好听。**
+*Zhè shǒu gē hěn hǎotīng.*
+This song sounds very nice.
 
-**老师说：“对，是这样。”**
-*lǎoshī shuō: “duì, shì zhèyàng.”*
-The teacher said, "Yes, that's right."
-**Usage:** Written dialogue: 对 is used naturally in a spoken exchange, rather than forced into formal prose.
+**她的新衣服很漂亮。**
+*Tā de xīn yīfu hěn piàoliang.*
+Her new clothes are pretty.
 
-Primarily an adjective meaning correct here; also preposition/verb in other usages.
+### Degree and contrasting sizes
 
-### 多 (duō) — many; much
+很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.
 
-HSK entry: 46 · POS: adjective · introduced
+**Pattern:** noun + 太 + adjective + 了
 
-**这里有很多人。**
-*zhèlǐ yǒu hěn duō rén.*
-There are many people here.
-**Usage:** 很多 directly modifies 人 to express a large number of people.
+**这个房间太小了。**
+*Zhège fángjiān tài xiǎo le.*
+This room is too small.
 
-**下午来的人很多。**
-*xiàwǔ lái de rén hěn duō.*
-There are many people coming this afternoon.
+**这个苹果很大。**
+*Zhège píngguǒ hěn dà.*
+This apple is big.
 
-### 高兴 (gāoxìng) — happy
+## 3. Build new sentences
 
-HSK entry: 57 · POS: adjective · introduced
+Change what you are evaluating and choose the matching adjective.
 
-**见到你很高兴。**
-*jiàndào nǐ hěn gāoxìng.*
-Nice to meet you.
-**Usage:** 见到你很高兴 is a conventional greeting on meeting someone.
+**Worked model:** **这本中文书很好看。**
+*Zhè běn Zhōngwén shū hěn hǎokàn.*
+This Chinese book is a good read.
 
-**学生们今天非常高兴。**
-*xuéshēngmen jīntiān fēicháng gāoxìng.*
-The students are very happy today.
+**Change 1: song**
 
-### 好 (hǎo) — good
+*Model response:* **这首歌很好听。**
+*Zhè shǒu gē hěn hǎotīng.*
+This song sounds good.
 
-HSK entry: 71 · POS: adjective · introduced
+**Change 2: food**
 
-**这本书很好。**
-*zhè běn shū hěn hǎo.*
-This book is good.
-**Usage:** 好 is a broad positive adjective; 很好 can describe books, people, plans, or weather.
+*Model response:* **这个菜很好吃。**
+*Zhège cài hěn hǎochī.*
+This dish tastes good.
 
-**这家饭店的菜很好。**
-*zhè jiā fàndiàn de cài hěn hǎo.*
-The food at this restaurant is very good.
+## 4. Read for meaning — A short connected story
 
-### 好看 (hǎokàn) — good-looking
+**姐姐买了一件新衣服，颜色很好看。妹妹也喜欢，但是觉得有点儿贵。**
+*Jiějie mǎi le yí jiàn xīn yīfu, yánsè hěn hǎokàn. Mèimei yě xǐhuan, dànshì juéde yǒudiǎnr guì.*
+The older sister bought a new item of clothing; its color is nice. The younger sister likes it too, but thinks it is a bit expensive.
 
-HSK entry: 73 · POS: adjective · introduced
+**Q1. What is new?** Suggested answer: An item of clothing.
 
-**这件衣服很好看。**
-*zhè jiàn yīfu hěn hǎokàn.*
-This item of clothing looks nice.
-**Usage:** 件 is a classifier for clothing; 好看 describes how the garment looks.
+**Q2. What does the younger sister think about the price?** Suggested answer: It is a bit expensive.
 
-**这本书很好看。**
-*zhè běn shū hěn hǎokàn.*
-This book is very good to read.
+## 5. Speak and personalize
 
-### 好听 (hǎotīng) — pleasant to hear
+Try to answer aloud before checking the sample; adapt it to your own situation.
 
-HSK entry: 74 · POS: adjective · introduced
+**Speaking 1:** Compliment the sound of a song.
 
-**我觉得中文歌很好听。**
-*wǒ juéde Zhōngwén gē hěn hǎotīng.*
-I think Chinese songs sound really nice.
+*Possible response:* **这首歌很好听！**
+*Zhè shǒu gē hěn hǎotīng!*
+This song sounds wonderful!
 
-**她唱的歌很好听。**
-*tā chàng de gē hěn hǎotīng.*
-The songs she sings sound very nice.
+**Speaking 2:** Say a room is too small.
 
-### 忙 (máng) — busy
+*Possible response:* **这个房间太小了。**
+*Zhège fángjiān tài xiǎo le.*
+This room is too small.
 
-HSK entry: 118 · POS: adjective · introduced
+## 6. Watch out
 
-**我今天很忙。**
-*wǒ jīntiān hěn máng.*
-I am very busy today.
-**Usage:** 忙 is a state adjective; 很忙 is a natural predicate without 是.
+Do not use 好听 (hǎotīng) for food or 好吃 (hǎochī) for a song; each evaluation selects a different sense.
 
-**妈妈早上很忙，晚上有时间。**
-*māma zǎoshang hěn máng, wǎnshang yǒu shíjiān.*
-Mom is very busy in the morning but has time in the evening.
+**Pronunciation:** 漂亮 (piàoliang) is often pronounced with a neutral second syllable, not liàng.
 
-### 漂亮 (piàoliang) — beautiful
+## 7. Check what you can do
 
-HSK entry: 158 · POS: adjective · introduced
+**Comprehension:** Reading comprehension: What is new?
+**Answer:** An item of clothing.. Check against the connected reading passage, not the vocabulary cards.
 
-**这件衣服很漂亮。**
-*zhè jiàn yīfu hěn piàoliang.*
-This item of clothing is beautiful.
-**Usage:** 漂亮 describes attractive appearance, here that of clothing.
+**Comprehension:** Reading comprehension: What does the younger sister think about the price?
+**Answer:** It is a bit expensive.. Check against the connected reading passage, not the vocabulary cards.
 
-**学校里有很多漂亮的花。**
-*xuéxiào lǐ yǒu hěn duō piàoliang de huā.*
-There are many beautiful flowers at the school.
+**Production:** Say this aloud: Compliment the sound of a song.
+**Answer:** 这首歌很好听！ (Zhè shǒu gē hěn hǎotīng!) — This song sounds wonderful!. Illustrative answer. Other natural responses may be correct.
 
-### 少 (shǎo) — few; little
+**Production:** Say this aloud: Say a room is too small.
+**Answer:** 这个房间太小了。 (Zhège fángjiān tài xiǎo le.) — This room is too small.. Illustrative answer. Other natural responses may be correct.
 
-HSK entry: 180 · POS: adjective · introduced
+## Review and next step
 
-**这里的人很少。**
-*zhèlǐ de rén hěn shǎo.*
-There are very few people here.
-**Usage:** 很少 describes a small number of people at this location.
+- Describe appearance, size and quality.
 
-**今天来上课的学生很少。**
-*jīntiān lái shàngkè de xuéshēng hěn shǎo.*
-Very few students came to class today.
+- Express simple evaluations and feelings.
 
-### 小 (xiǎo) — small
+- Distinguish adjectives in natural context.
 
-HSK entry: 234 · POS: adjective · introduced
+## Reference word bank (details on vocabulary cards)
 
-**这只猫很小。**
-*zhè zhī māo hěn xiǎo.*
-This cat is very small.
-**Usage:** 只 is the animal classifier; 小 describes the cat’s size.
+- 大 (dà) — big [HSK entry 25]
 
-**这个房间很小。**
-*zhège fángjiān hěn xiǎo.*
-This room is very small.
+- 对 (duì) — correct; toward [HSK entry 44]
 
-### 新 (xīn) — new
+- 多 (duō) — many; much [HSK entry 46]
 
-HSK entry: 242 · POS: adjective · introduced
+- 高兴 (gāoxìng) — happy [HSK entry 57]
 
-**这是我的新书。**
-*zhè shì wǒ de xīn shū.*
-This is my new book.
-**Usage:** 新 modifies 书 to mean a new book.
+- 好 (hǎo) — good [HSK entry 71]
 
-**这家书店有很多新书。**
-*zhè jiā shūdiàn yǒu hěn duō xīn shū.*
-This bookstore has many new books.
+- 好看 (hǎokàn) — good-looking [HSK entry 73]
 
-## Usage and grammar
+- 好听 (hǎotīng) — pleasant to hear [HSK entry 74]
 
-### Describing size
+- 忙 (máng) — busy [HSK entry 118]
 
-In simple affirmative descriptive sentences, a degree word can appear naturally before the adjective.
+- 漂亮 (piàoliang) — beautiful [HSK entry 158]
 
-### Talking about feelings
+- 少 (shǎo) — few; little [HSK entry 180]
 
-Adjectives of feeling serve as predicates in simple descriptions.
+- 小 (xiǎo) — small [HSK entry 234]
 
-## Practice
+- 新 (xīn) — new [HSK entry 242]
+
+## Optional vocabulary recall quiz
 
 **Selection:** Which expression means “big”?
 - a. 少 (shǎo) — 
