@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { historyPosition } from '@/lib/detail-trail';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, GitBranch, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
 import { carryTabOnCardSwitch, entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
@@ -93,11 +93,11 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
     <div className="stroke-tabs">
       <div className="stroke-tab-list" role="tablist" aria-label="Character notes">
         {decomposition && <span className="stroke-tab-item">
-          <button type="button" role="tab" id={tabId('decomposition')} className="stroke-tab" aria-selected={Boolean(showDecomposition)} aria-controls={showDecomposition ? drawerId : undefined} title="Show the decomposition" onClick={() => select('decomposition')}>Decomposition</button>
+          <button type="button" role="tab" id={tabId('decomposition')} className="stroke-tab" aria-selected={Boolean(showDecomposition)} aria-controls={showDecomposition ? drawerId : undefined} title="Show the decomposition" onClick={() => select('decomposition')}><GitBranch size={13} aria-hidden="true"/>Decomposition</button>
           {showDecomposition && decomposition.info}
         </span>}
         {hasEtymology && <span className="stroke-tab-item">
-          <button type="button" role="tab" id={tabId('etymology')} className="stroke-tab" aria-selected={showEtymology} aria-controls={showEtymology ? drawerId : undefined} title="Show the etymology notes" onClick={() => select('etymology')}>Etymology</button>
+          <button type="button" role="tab" id={tabId('etymology')} className="stroke-tab" aria-selected={showEtymology} aria-controls={showEtymology ? drawerId : undefined} title="Show the etymology notes" onClick={() => select('etymology')}><History size={13} aria-hidden="true"/>Etymology</button>
           {showEtymology && view && <EtymologyInfo view={view}/>}
         </span>}
       </div>

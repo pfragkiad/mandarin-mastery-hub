@@ -10,7 +10,7 @@ import { accuracyGrade, type AccuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
 import type { CharacterEnrichment } from '@/lib/character-enrichment';
 import { useNavigate } from '@tanstack/react-router';
-import { Check, ChevronUp, ChevronDown, Play, Pause, RotateCcw, Eye, MoveUpRight, Volume2, StepForward, TriangleAlert } from 'lucide-react';
+import { Check, ChevronUp, ChevronDown, GitBranch, PenTool, Play, Pause, RotateCcw, Eye, MoveUpRight, Volume2, StepForward, TriangleAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
@@ -313,12 +313,12 @@ function StrokeGuide({ decomposition = null, panel, onPanelChange, locked = fals
       <div className="stroke-tabs">
         <div className="stroke-tab-list" role="tablist" aria-label="Character details">
           {hasStrokes && <span className="stroke-tab-item">
-            <button type="button" role="tab" id={tabId('strokes')} className="stroke-tab" aria-selected={showStrokes} aria-controls={showStrokes ? drawerId : undefined} disabled={locked} title={locked ? 'Stroke tiles are hidden in Recall so they can’t give the answer away' : `Show all ${strokes.length} stroke tiles`} onClick={() => onPanelChange('strokes')}>Strokes</button>
+            <button type="button" role="tab" id={tabId('strokes')} className="stroke-tab" aria-selected={showStrokes} aria-controls={showStrokes ? drawerId : undefined} disabled={locked} title={locked ? 'Stroke tiles are hidden in Recall so they can’t give the answer away' : `Show all ${strokes.length} stroke tiles`} onClick={() => onPanelChange('strokes')}><PenTool size={13} aria-hidden="true"/>Strokes</button>
             {showStrokes && strokesInfo}
             {showStrokes && derivedSource && <span className="stroke-derived-pill" title={`Stroke names assembled from this form's parts by ${derivedSource}; not checked against the official standard`}>Derived · unverified</span>}
           </span>}
           {decomposition && <span className="stroke-tab-item">
-            <button type="button" role="tab" id={tabId('decomposition')} className="stroke-tab" aria-selected={showDecomposition} aria-controls={showDecomposition ? drawerId : undefined} disabled={locked} title={locked ? 'Decomposition is hidden in Recall so it can’t give the answer away' : 'Show the decomposition'} onClick={() => onPanelChange('decomposition')}>Decomposition</button>
+            <button type="button" role="tab" id={tabId('decomposition')} className="stroke-tab" aria-selected={showDecomposition} aria-controls={showDecomposition ? drawerId : undefined} disabled={locked} title={locked ? 'Decomposition is hidden in Recall so it can’t give the answer away' : 'Show the decomposition'} onClick={() => onPanelChange('decomposition')}><GitBranch size={13} aria-hidden="true"/>Decomposition</button>
             {showDecomposition && decomposition.info}
           </span>}
         </div>
