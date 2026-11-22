@@ -19,7 +19,9 @@ import { VocabularyDecomposition, VocabularyDecompositionInfo } from './vocabula
 import { GlyphDetailTabs } from './detail-tabs';
 import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './lesson-links';
 import { SentenceExample } from './sentence-example';
-import { MoreExamples, SentenceSection, TileExamplesLink } from './sentence-section';
+import { MoreExamples, SentenceHints, SentenceSection, TileExamplesLink } from './sentence-section';
+import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
+import { isHanziChar } from '@/lib/sentence-align';
 import { RecordDetailTitle } from './record-detail-title';
 import { RadicalPill } from './radical-pill';
 import { wordInk, wordRadicalNumber } from '@/lib/card-ink';
@@ -37,6 +39,28 @@ function PhraseStylePill({ word }: { word: Word }) {
   const style = phraseStyle(word.entry);
   if (style === 'Unclassified') return null;
   return <span className="word-hsk-id phrase-style-pill" title={`${style} style, as recorded with the sentence`}>{style}</span>;
+}
+
+/**
+ * Detail heading glyphs of a multi-character word or phrase.
+ * Inputs: the record and its character ↔ syllable `pairing` (usePhrasePairing).
+ * Hover keeps the per-character pairing ring; with the remembered "Character hints" switch
+ * on, each Han character is also a quick-card target (the same popup as lessons and
+ * "In a sentence"), so a tap reaches that character's Characters/Components/Radicals cards.
+ * Word context: a word's characters sit in that exact record (shown unlinked, it is the open
+ * card); a phrase's characters get the words-first words it contains, never itself.
+ * Hints off: the plain pairing glyphs, unchanged.
+ */
+function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typeof usePhrasePairing> }) {
+  const hints = useLessonHints();
+  const phrase = vocabularyKind(word) === 'phrase';
+  const chars = Array.from(word.hanzi);
+  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: phrase ? 'phrase' : 'word', word: word.id }, audio: word.audio ?? null };
+  const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
+  if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
+  return <>{chars.map((ch, i) => isHanziChar(ch)
+    ? <HintChar key={i} glyph={ch} word={phrase ? contexts?.[i] ?? null : own} {...pairing.glyphProps(i)}/>
+    : pairing.glyph(ch, i))}</>;
 }
 
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
@@ -59,8 +83,12 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   // Multi-character words pair the same way; single glyphs have nothing to pair.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
   const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
-  return <>
-    <RecordDetailTitle hanzi={word.hanzi} {...(pairing.paired ? { glyphContent: Array.from(word.hanzi).map(pairing.glyph), pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : detailRadical !== undefined ? { pill: <span className="word-hsk-id" title="Sourced Kangxi radical identity of this character">Radical #{detailRadical}</span> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+  // Multi-character headings (and every phrase) become hint targets; one-character words
+  // are the record itself, so a popup there would only repeat the card.
+  const headwordHints = vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1;
+  // One hints provider for the whole card: the heading and "In a sentence" share one popup.
+  return <SentenceHints backLabel={word.hanzi}>
+    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : detailRadical !== undefined ? { pill: <span className="word-hsk-id" title="Sourced Kangxi radical identity of this character">Radical #{detailRadical}</span> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id hsk-level-pill" title={word.entry?.sentenceSource?.hskFromWord ? `HSK 3.0 ID recorded for ${word.entry.sentenceSource.hskFromWord}, the word this sentence comes from` : 'Official ID in the HSK 3.0 syllabus'}>ID {word.hskId}</span>}</dd></div>
@@ -85,7 +113,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
     <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
-  </>;
+  </SentenceHints>;
 }
 
 /**

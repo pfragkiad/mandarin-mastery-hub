@@ -80,8 +80,10 @@ export function TileExamplesLink({ hanzi }: { hanzi: string }) {
  * LessonHintsProvider, same remembered "Character hints" switch, absent = on), so tapping
  * a character in "In a sentence" opens its mini card with the containing word. Inside a
  * lesson (a provider already above) nothing is added, so there is never a second popup.
+ * Word/phrase detail cards wrap their whole content in it (word-card.tsx) so the heading's
+ * characters and the sentences share that one popup.
  */
-function SentenceHints({ backLabel, children }: { backLabel: string; children: ReactNode }) {
+export function SentenceHints({ backLabel, children }: { backLabel: string; children: ReactNode }) {
   const parent = useLessonHints();
   const { preferences } = useWorkspace();
   if (parent) return <>{children}</>;

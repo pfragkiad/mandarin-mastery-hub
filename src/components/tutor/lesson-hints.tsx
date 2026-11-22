@@ -40,7 +40,7 @@ import { MeaningText } from './meaning-text';
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string, wholeFirst?: boolean) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string, wholeFirst?: boolean, exclude?: string) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
 
 const Ctx = stableContext<HintsContext | null>('lessonHints', null);
 export const useLessonHints = () => useContext(Ctx);

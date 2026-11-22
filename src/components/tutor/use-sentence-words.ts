@@ -27,11 +27,13 @@ export function useSentenceWords() {
     const w = words.get(hanzi);
     return w ? { hanzi: w.hanzi, pinyin: w.pinyin, meaning: w.meaning, search: { tab: vocabularyKind(w), word: w.id }, audio: w.audio ?? null } : null;
   }, [words]);
-  const wordsFor = useCallback((text: string, wholeFirst = true): (SentenceWord | null)[] => {
+  // `exclude` (optional): one headword never matched — a phrase's own heading is split into
+  // the words it contains instead of matching itself as one block.
+  const wordsFor = useCallback((text: string, wholeFirst = true, exclude?: string): (SentenceWord | null)[] => {
     const whole = wholeFirst ? wordFor(text) : null;
     if (whole) return Array.from(text).map(() => whole);
     const out: (SentenceWord | null)[] = [];
-    for (const seg of segmentLessonExpression(text, h => words.get(h)?.id ?? null)) {
+    for (const seg of segmentLessonExpression(text, h => (h === exclude ? null : words.get(h)?.id ?? null))) {
       const w = seg.kind === 'word' ? wordFor(seg.text) : null;
       for (const _ of Array.from(seg.text)) out.push(w);
     }
