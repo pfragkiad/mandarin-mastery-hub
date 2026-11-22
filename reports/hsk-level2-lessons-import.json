@@ -1,0 +1,32 @@
+{
+  "lessons": {
+    "topic-making-plans-together": {
+      "package": "importer/data/lessons/TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "sha256": "a0cdd9b3cab411cfd9a6f2773e8d23d4b7c7d93fcfdcaeacb4df32fd2a86c7fd",
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_MAKING_PLANS_TOGETHER",
+      "introduced_entry_ids": [
+        302,
+        352,
+        388,
+        439,
+        471,
+        473,
+        485,
+        497,
+        498
+      ],
+      "reviewed_entry_ids": [
+        225,
+        233,
+        102,
+        263,
+        252,
+        211
+      ],
+      "examples_matched": 30,
+      "catalog_character_refs": 127,
+      "required_checkpoints": 25,
+      "optional_checkpoints": 3
+    }
+  }
+}

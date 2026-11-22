@@ -101,8 +101,16 @@ def checks_lesson(lesson,catalog=None):
         qs=lesson['sections']['practice']['questions']
         qids=[q['id'] for q in qs]
         if len(qids)!=len(set(qids)):raise ValueError('duplicate practice question ID')
-        if len([q for q in qs if q['kind'] in ('comprehension','production')])<4:
-            raise ValueError('v3.1 must include at least 4 applied comprehension/production questions')
+        # v3.3 lessons record which questions are core work: their practice checkpoints'
+        # `optional` flags (recall drills are optional). Applied questions are then the
+        # required ones, whatever their kind (an in-context selection counts). Lessons
+        # without checkpoints keep the v3.1 rule: comprehension/production questions only.
+        quiz_cps={c.get('target_id'):c for s in (lesson.get('progress') or {}).get('sections',[])
+                  for c in s['checkpoints'] if c.get('kind')=='practice'}
+        applied=([q for q in qs if q['id'] in quiz_cps and not quiz_cps[q['id']]['optional']] if quiz_cps
+                 else [q for q in qs if q['kind'] in ('comprehension','production')])
+        if len(applied)<4:
+            raise ValueError('topic lessons must include at least 4 applied (required) practice questions')
         if len(t['dialogue']['turns'])<4 or len(t['reading']['questions'])<2:
             raise ValueError('v3.1 teaching content incomplete')
         # The two upstream word-detail sentences remain in canonical JSON, but

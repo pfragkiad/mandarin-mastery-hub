@@ -10,7 +10,7 @@ Core schema version:
 
 | File | Purpose / consumer |
 | --- | --- |
-| `validate_core.py` | JSON Schema, quiz identities, exact catalog references, curriculum membership and parent/subtopic checks. Applies the existing teaching-plan rules to topic schemas v3.1/v3.2. Requires `jsonschema`. |
+| `validate_core.py` | JSON Schema, quiz identities, exact catalog references, curriculum membership and parent/subtopic checks. Applies the existing teaching-plan rules to topic schemas v3.1–v3.3; with checkpoints (v3.3) the 4+ applied questions are those whose practice checkpoint is required, otherwise comprehension/production questions. Requires `jsonschema`. |
 | `generate_lesson.py` | Generates HTML/Markdown and optional four-file ZIPs from canonical JSON. Topic v3.2 uses the same teaching-plan renderer as v3.1. Supplied lesson companions are imported without regeneration. |
 | `legacy/` | Earlier schema snapshots retained for reference; not application data. |
 

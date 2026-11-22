@@ -24,7 +24,7 @@ function ExperimentalTag() {
     </PopoverTrigger>
     <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
       <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
-      Still being built: the HSK 3.0 Level 1 path, a Conversational Mandarin course and two character lessons so far, all still drafts awaiting review. Later levels are not in the collection yet.
+      Still being built: the HSK 3.0 Level 1 path, the first HSK 3.0 Level 2 lesson, a Conversational Mandarin course and two character lessons so far, all still drafts awaiting review. Levels 3 and above are not in the collection yet.
     </HintBody></PopoverContent>
   </Popover>;
 }
@@ -143,9 +143,12 @@ function ProgressBar({ fraction }: { fraction: number }) {
 }
 
 /** Learner-facing caveats per course, shown behind the (i) beside the course note. */
-const courseCaveat = (c: Course) => c.kind.toLowerCase().includes('hsk') || c.id.startsWith('hsk')
-  ? 'A suggested order for learning the Level 1 words. It is not an official HSK sequence.'
-  : 'A suggested order. Lessons can be opened in any order.';
+const courseCaveat = (c: Course) => {
+  if (!(c.kind.toLowerCase().includes('hsk') || c.id.startsWith('hsk'))) return 'A suggested order. Lessons can be opened in any order.';
+  // Name the levels the course's own sections record (Level 1 and Level 2 are separate courses).
+  const levels = c.sections.flatMap(s => s.level == null ? [] : [s.level]);
+  return `A suggested order for learning the ${levels.length ? `Level ${levels.join(' and ')} ` : 'HSK '}words. It is not an official HSK sequence.`;
+};
 
 /** By course: every course, then the lessons no course places. */
 function CourseView({ progress }: { progress: LessonProgressMap }) {

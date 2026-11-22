@@ -133,3 +133,4 @@
 - [x] Lessons: designer sidebar (pinned progress card with ⋯ reset menu + inline confirm, scrolling list, pinned toggles) and phone strip with Sections/Settings sheets; Undo toast on every reset
 - [x] Lessons: "Start over" text link at the top (only with progress) + "Practice this lesson again" outline button at the end, same confirm + Undo
 - [x] Lessons: phone Settings "Reset this section" row under Progress (Undo toast)
+- [x] Lessons: first HSK 3.0 Level 2 lesson (Making Plans Together) in its own Level 2 course card after Level 1

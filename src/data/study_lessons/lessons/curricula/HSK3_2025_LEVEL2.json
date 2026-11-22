@@ -1,0 +1,106 @@
+{
+ "schema_version": "mandarin-curriculum/3.0.0",
+ "curriculum_id": "hsk3-2025-level2",
+ "title": "HSK 3.0 (2025) — Level 2 Learning Path",
+ "kind": "syllabus",
+ "language": "zh-CN",
+ "edition": "2025-11",
+ "status": "draft",
+ "description": "Build on Level 1 with thematic lessons for the 200 HSK 3.0 Level 2 words. Each lesson combines conversation, grammar, reading, speaking, and review, and reviews the Level 1 words it uses. More lessons are on the way.",
+ "course_topics": [
+  {
+   "id": "leisure-media",
+   "label": "Leisure, Music & Media",
+   "global_topic_ids": [
+    "leisure-media"
+   ]
+  },
+  {
+   "id": "daily-actions",
+   "label": "Daily Actions & Activities",
+   "global_topic_ids": [
+    "daily-actions"
+   ]
+  },
+  {
+   "id": "grammar-functions",
+   "label": "Grammar & Function Words",
+   "global_topic_ids": [
+    "grammar-functions"
+   ]
+  },
+  {
+   "id": "time-calendar",
+   "label": "Time & Calendar",
+   "global_topic_ids": [
+    "time-calendar"
+   ]
+  },
+  {
+   "id": "health-wellbeing",
+   "label": "Health & Wellbeing",
+   "global_topic_ids": [
+    "health-wellbeing"
+   ]
+  },
+  {
+   "id": "reference-questions",
+   "label": "Pronouns, Questions & Pointing",
+   "global_topic_ids": [
+    "reference-questions"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "section_id": "hsk3-l2",
+   "title": "HSK 3.0 Level 2",
+   "sequence": 1,
+   "level_number": 2,
+   "description": "Thematic lessons for the HSK 3.0 Level 2 words.",
+   "units": [
+    {
+     "unit_id": "hsk3-l2-u-01",
+     "title": "Plans and Free Time",
+     "sequence": 1,
+     "placements": [
+      {
+       "placement_id": "hsk3-l2-p-01",
+       "lesson_id": "topic-making-plans-together",
+       "sequence": 1,
+       "role": "core",
+       "prerequisite_lesson_ids": [],
+       "course_topic_ids": [
+        "leisure-media",
+        "daily-actions",
+        "grammar-functions",
+        "time-calendar",
+        "health-wellbeing",
+        "reference-questions"
+       ],
+       "introduced_syllabus_entry_ids": [
+        302,
+        352,
+        388,
+        439,
+        471,
+        473,
+        485,
+        497,
+        498
+       ],
+       "reviewed_syllabus_entry_ids": [
+        225,
+        233,
+        102,
+        263,
+        252,
+        211
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

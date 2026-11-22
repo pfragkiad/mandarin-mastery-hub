@@ -16,12 +16,15 @@ authoring inputs and are never loaded by the application.
 | [Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0.zip](Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0.zip) | Superseded first release: 21 HSK Level 1 lessons with `progress` checkpoints, built from a pre-vocab-v1.7.1 base: the importer keeps the current examples, questions and character refs and takes only the v3.3 fields (see [the regression report](../../../reports/lessons-3.3.0-example-regression.md)). | `fd3a1e9c870d7e0d7b829b4a4b4db55473bf1b8f47853758e262ce32dbd353f0` |
 | [Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip](Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip) | 15 conversational + 2 character lessons with checkpoints; curriculum descriptions keep their current learner-facing copy. | `ea113939b3a49cf0239f1181f047e97a634a6b986a331dbb49326d7726f2c6c6` |
 | [Mandarin_Progress_Migration_Report_v3.3.0.md](Mandarin_Progress_Migration_Report_v3.3.0.md) | The owner-supplied migration report for the three ZIPs above. | `6befa88693d07458747c5f7336aa8e9e8918e2a5ccf52a495eff6bd6b102ed2f` |
+| [TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip](TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip) | First HSK 3.0 Level 2 topic lesson (Making Plans Together; vocabulary Level 2 v1.1.1 + Level 1 v1.7.1), one four-file lesson ZIP. `scripts/import-hsk-level2-lessons.py` checks all 15 words and 30 examples against the runtime word cards and writes the separate Level 2 course ([audit](../../../reports/hsk-level2-lessons-import.json)). | `a0cdd9b3cab411cfd9a6f2773e8d23d4b7c7d93fcfdcaeacb4df32fd2a86c7fd` |
+| [TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_report.md](TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_report.md) | The owner-supplied build report for that lesson (same bytes as the report.md inside it). | `6a884e44e81572fa9f76bb151c10230fb9243f51574f869e2411243c2be6bc02` |
 | [conversational-mandarin/](conversational-mandarin/README.md) | Existing dialogue transcripts and extraction audit inputs; independent of the HSK update. | See its guide. |
 
 From the repository root, with Python and `jsonschema` available:
 
 ```sh
 python scripts/import-lessons-v3.3.py            # current (v3.3.0) handoff: audit; --write applies
+python scripts/import-hsk-level2-lessons.py       # HSK Level 2 lessons + course: audit; --write applies
 python scripts/import-lesson-core.py
 python scripts/import-hsk-level1-lessons.py
 # --write applies a fully validated handoff; --report records an optional audit.
