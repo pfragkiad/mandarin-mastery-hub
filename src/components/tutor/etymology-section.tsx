@@ -1,9 +1,10 @@
-import { useEffect, useId, useState } from 'react';
+import { Fragment, useEffect, useId, useState } from 'react';
 import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { Link } from '@tanstack/react-router';
-import { ChevronDown, History } from 'lucide-react';
+import { ChevronDown, History, TriangleAlert } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { SourceInfo } from './source-info';
+import { HintBody, SourceInfo } from './source-info';
 import { HowellEntry, HowellKeyInfo } from './howell-entry';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
@@ -57,40 +58,72 @@ function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string })
   </div>;
 }
 
-/** Separate drafts and supplied editorial readings from the unchanged Chinese.
- * Duplicate headwords retain source IDs; changed review headwords are disclosed
- * without changing library associations, pronunciation or geometry. */
 /** Per-entry review wording: English counts as corrected only when the supplied review
  * changed the translation itself; flag-only or assessment-only reviews leave it unchanged. */
 const corrected = (entry: EtymologyEntry) => entry.translation?.editorialReview?.changes.includes('translation') ?? false;
 const DECISION_LABEL = { clear: 'uncertainty flag cleared', revised_retained: 'English revised, uncertainty retained', checked_retained: 'checked, English unchanged, uncertainty retained' } as const;
 
+/** Warning triangle before an uncertain English passage (owner-requested, replacing the
+ *  visible uncertainty sentence). Its popup says whether the latest review checked the
+ *  passage, so checked and unchecked uncertainties stay distinguishable. */
+function UncertainMark({ checked }: { checked: boolean }) {
+  return <Popover>
+    <PopoverTrigger className="etymology-uncertain-trigger" aria-label="Uncertain translation"><TriangleAlert aria-hidden="true"/></PopoverTrigger>
+    <PopoverContent className="source-info-popover" align="start"><HintBody>
+      Uncertain translation<br/>
+      {checked ? 'The latest review checked this passage and kept the flag.' : 'Not checked in the latest review.'}<br/>
+      Compare with the original Chinese under Advanced.
+    </HintBody></PopoverContent>
+  </Popover>;
+}
+
+/** Every review note for the Shuowen block, one (i) row each (owner-requested: the visible
+ *  block keeps only the title, English and ⚠). Per passage: whether the supplied review
+ *  changed the English, a changed review headword, the editorial-reading note and the
+ *  reviewer's decision + reason. Several passages are numbered so notes stay attached. */
+function ShuowenReviewNotes({ entries }: { entries: EtymologyEntry[] }) {
+  const translated = entries.filter(entry => entry.translation);
+  const editorial = translated.some(entry => entry.translation?.editorialReview);
+  const many = translated.length > 1;
+  return <SourceInfo inline className="detail-footnote">
+    {editorial ? 'English · AI-generated draft, partly reviewed; not verified modern etymology' : 'English · AI-generated draft, not reviewed; not verified modern etymology'}
+    {translated.map((entry, index) => {
+      const review = entry.translation!.editorialReview;
+      const reading = review?.sourceReading;
+      const prefix = many ? `Passage ${index + 1}: ` : '';
+      return <Fragment key={entry.id}>
+        {editorial && <><br/>{prefix}{corrected(entry) ? 'English partly corrected in a supplied editorial review.' : review ? 'English unchanged by the supplied editorial review.' : 'Not reviewed.'}</>}
+        {reading && reading.headword !== entry.headword && <><br/>{prefix}Translated for the review headword <span lang="lzh">{reading.headword}</span>, not <span lang="lzh">{entry.headword}</span>.</>}
+        {reading && <><br/>{prefix}Editorial reading (shown under Advanced): {reading.note}</>}
+        {review?.caseEvidence && <><br/>{prefix}Supplied reviewer assessment · {DECISION_LABEL[review.caseEvidence.decision]}. {review.caseEvidence.reviewerNote}</>}
+      </Fragment>;
+    })}
+  </SourceInfo>;
+}
+
+/** Shuowen block, kept deliberately short (owner-requested simplification): visible = title
+ *  with a small "AI draft" tag (the handoff requires the draft label to stay visible) and the
+ *  review-notes (i), then each English passage (⚠ when uncertain). The unchanged Classical
+ *  Chinese, plus any editorial Chinese reading, sits behind the remembered Advanced toggle.
+ *  Duplicate headwords keep their own source IDs; review headwords never change library
+ *  associations, pronunciation or geometry. */
 export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   const panelId = useId();
   const [open, toggle] = useClassicalOpen();
   const translated = entries.some(entry => entry.translation);
-  const editorial = entries.some(entry => entry.translation?.editorialReview);
   const hasReading = entries.some(entry => entry.translation?.editorialReview?.sourceReading);
   return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}${translated ? ' has-translation' : ''}`}>
     <div className="etymology-entry-head">
       <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
-      <span className="etymology-source-kind">historical dictionary</span>
+      <span className="etymology-source-kind">{translated ? 'historical dictionary · English: AI draft' : 'historical dictionary'}</span>
+      {translated && <ShuowenReviewNotes entries={entries}/>}
     </div>
-    {translated && <>
-      <p className="etymology-advanced-note">{editorial ? 'English translation · AI-generated draft; not fully verified.' : 'English translation · AI-generated draft, not reviewed.'}</p>
-      {entries.map(entry => entry.translation && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
-        {entry.translation.editorialReview?.sourceReading && <p className="etymology-advanced-note">
-          This translation follows an editorial Chinese reading shown under Advanced.
-          {entry.translation.editorialReview.sourceReading.headword !== entry.headword && <> Review headword: <span lang="lzh">{entry.translation.editorialReview.sourceReading.headword}</span>; source headword: <span lang="lzh">{entry.headword}</span>. These notes concern the review headword.</>}
-        </p>}
-        <p className="etymology-text" lang="en">{entry.translation.text}</p>
-        {/* Only when some entry on this card was reviewed: each passage states its own status. */}
-        {editorial && <p className="etymology-advanced-note">{corrected(entry) ? 'English partly corrected in a supplied editorial review.' : entry.translation.editorialReview ? 'English unchanged by the supplied editorial review.' : 'Not reviewed.'}</p>}
-        {entry.translation.uncertain && <p className="etymology-advanced-note">{entry.translation.editorialReview?.caseEvidence
-          ? 'This passage is uncertain; the latest review checked it and kept the flag. Consult the original Chinese.'
-          : 'This passage is uncertain and was not checked in the latest review; consult the original Chinese.'}</p>}
-      </div>)}
-    </>}
+    {entries.map(entry => {
+      const t = entry.translation;
+      return t && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
+        <p className="etymology-text" lang="en">{t.uncertain && <UncertainMark checked={Boolean(t.editorialReview?.caseEvidence)}/>}{t.text}</p>
+      </div>;
+    })}
     <button type="button" className="etymology-advanced-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={toggle}>
       <ChevronDown className="etymology-advanced-chevron" aria-hidden="true"/>
       <span className="etymology-level-pill">Advanced</span>
@@ -98,19 +131,17 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
       <span className="etymology-advanced-action">{open ? 'Hide' : 'Show'}</span>
     </button>
     {open && <div id={panelId} className="etymology-advanced-body more-examples-panel">
-      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (hasReading ? ' English drafts follow the original entry or the separate editorial reading identified below. Historical accounts are not verified modern etymology.' : ' English drafts above are translations of these exact source entries, not verified modern etymology.')}</p>
-      {entries.map(entry => <div key={entry.id}>
-        <p className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>
-        {entry.translation?.editorialReview?.sourceReading && <>
-          <p className="etymology-advanced-note">Editorial reading · partial review · imported original above is unchanged</p>
-          <p className="etymology-text etymology-classical" lang="lzh">{entry.translation.editorialReview.sourceReading.headword} — {entry.translation.editorialReview.sourceReading.text}</p>
-          <p className="etymology-advanced-note">{entry.translation.editorialReview.sourceReading.note}</p>
-        </>}
-        {entry.translation?.editorialReview?.caseEvidence && <>
-          <p className="etymology-advanced-note">Supplied reviewer assessment · {DECISION_LABEL[entry.translation.editorialReview.caseEvidence.decision]}</p>
-          <p className="etymology-advanced-note">{entry.translation.editorialReview.caseEvidence.reviewerNote}</p>
-        </>}
-      </div>)}
+      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (hasReading ? ' Some English follows a separate editorial reading shown below.' : '')}</p>
+      {entries.map(entry => {
+        const reading = entry.translation?.editorialReview?.sourceReading;
+        return <div key={entry.id} className="etymology-classical-entry">
+          <p className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>
+          {reading && <>
+            <p className="etymology-advanced-note">Editorial reading · partial review · imported original above is unchanged</p>
+            <p className="etymology-text etymology-classical" lang="lzh">{reading.headword} — {reading.text}</p>
+          </>}
+        </div>;
+      })}
     </div>}
   </div>;
 }

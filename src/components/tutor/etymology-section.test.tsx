@@ -37,7 +37,11 @@ describe("Shuowen source and English disclosure", () => {
   it("shows labeled English while preserving Chinese behind its remembered toggle", () => {
     const { unmount } = render(<ShuowenSection entries={[entry]} />);
     expect(screen.getByText(entry.translation!.text)).toHaveAttribute("lang", "en");
+    expect(screen.getByText(/English: AI draft/)).toBeVisible();
+    expect(screen.queryByText(/AI-generated draft, not reviewed/)).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Source details" }));
     expect(screen.getByText(/AI-generated draft, not reviewed/)).toBeVisible();
+    fireEvent.keyDown(document.activeElement ?? document.body, { key: "Escape" });
     expect(screen.queryByText(entry.text)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(entry.text)).toHaveAttribute("lang", "lzh");
@@ -64,7 +68,12 @@ describe("Shuowen source and English disclosure", () => {
     expect(container.querySelector('[data-source-entry="shuowen:1437"]')).toHaveTextContent(
       second.translation!.text,
     );
-    expect(screen.getByText(/uncertain and was not checked in the latest review/)).toBeVisible();
+    // Only the uncertain passage carries the warning triangle; its popup says it was not checked.
+    const marks = screen.getAllByRole("button", { name: "Uncertain translation" });
+    expect(marks).toHaveLength(1);
+    expect(container.querySelector('[data-source-entry="shuowen:1437"]')).toContainElement(marks[0]!);
+    fireEvent.click(marks[0]!);
+    expect(screen.getByText("Not checked in the latest review.")).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(entry.text)).toBeVisible();
     expect(screen.getByText(second.text)).toBeVisible();
@@ -72,7 +81,8 @@ describe("Shuowen source and English disclosure", () => {
   it("retains access to the original when no usable English draft is available", () => {
     const { translation: _translation, ...original } = entry;
     render(<ShuowenSection entries={[original]} />);
-    expect(screen.queryByText(/AI-generated draft/)).toBeNull();
+    expect(screen.queryByText(/AI draft/)).toBeNull();
+    expect(screen.queryByRole("button", { name: "Source details" })).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(entry.text)).toBeVisible();
     expect(screen.queryByText(/English drafts above/)).toBeNull();
@@ -102,15 +112,18 @@ describe("Shuowen source and English disclosure", () => {
       },
     };
     render(<ShuowenSection entries={[reviewed]} />);
-    expect(screen.getByText(/AI-generated draft; not fully verified/)).toBeVisible();
+    // Every review note sits in the one (i) popup, not in the visible block.
+    expect(screen.queryByText(/Translated for the review headword/)).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Source details" }));
+    expect(screen.getByText(/AI-generated draft, partly reviewed/)).toBeVisible();
     expect(screen.getByText("English partly corrected in a supplied editorial review.")).toBeVisible();
-    expect(screen.getByText(/Review headword:/)).toHaveTextContent("䀘");
-    expect(screen.getByText(/Review headword:/)).toHaveTextContent("钉");
+    expect(screen.getByText(/Translated for the review headword/)).toHaveTextContent("䀘");
+    expect(screen.getByText(/Translated for the review headword/)).toHaveTextContent("钉");
+    expect(screen.getByText(/The supplied review identifies/)).toBeVisible();
     expect(screen.queryByText(reviewed.text)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(reviewed.text)).toBeVisible();
     expect(screen.getByText("䀘 — 蔽人視也。")).toBeVisible();
-    expect(screen.getByText(/The supplied review identifies/)).toBeVisible();
   });
   it("labels a revised-but-still-uncertain passage separately from a checked one", () => {
     const revised: EtymologyEntry = {
@@ -127,7 +140,7 @@ describe("Shuowen source and English disclosure", () => {
       },
     };
     render(<ShuowenSection entries={[revised]} />);
-    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Source details" }));
     expect(screen.getByText(/Supplied reviewer assessment/)).toHaveTextContent("English revised, uncertainty retained");
   });
   it("attributes a retained uncertainty assessment to the supplied reviewer", () => {
@@ -150,17 +163,20 @@ describe("Shuowen source and English disclosure", () => {
       },
     };
     render(<ShuowenSection entries={[reviewed]} />);
-    expect(screen.getByText(/latest review checked it and kept the flag/)).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Uncertain translation" }));
+    expect(screen.getByText("The latest review checked this passage and kept the flag.")).toBeVisible();
+    expect(screen.queryByText(/The final quoted phrase remains/)).toBeNull();
+    fireEvent.keyDown(document.activeElement ?? document.body, { key: "Escape" });
+    fireEvent.click(screen.getByRole("button", { name: "Source details" }));
     // An assessment-only review never claims the English was corrected.
     expect(screen.getByText("English unchanged by the supplied editorial review.")).toBeVisible();
     expect(screen.queryByText(/partly corrected/)).toBeNull();
-    expect(screen.queryByText(/The final quoted phrase remains/)).toBeNull();
-    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(/Supplied reviewer assessment/)).toHaveTextContent(
       "checked, English unchanged, uncertainty retained",
     );
-    // No editorial reading on this entry, so the intro never points to one.
-    expect(screen.queryByText(/separate editorial reading/)).toBeNull();
     expect(screen.getByText(/The final quoted phrase remains/)).toBeVisible();
+    // No editorial reading on this entry, so the Advanced intro never points to one.
+    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
+    expect(screen.queryByText(/separate editorial reading/)).toBeNull();
   });
 });

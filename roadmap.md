@@ -85,3 +85,4 @@
 - [x] Lessons: "Hide translations" side switch beside Hide pinyin
 - [x] Lessons: "Hide hanzi" side switch
 - [x] Lessons: sentence lines (conversation etc.) group hover/popups per identified word (学生)
+- [x] Shuowen section: English + ⚠ for uncertain passages visible; every review note in one (i) popup

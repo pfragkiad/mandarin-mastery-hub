@@ -4223,6 +4223,11 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitu
 .etymology-section .etymology-advanced-toggle:hover .etymology-advanced-action { color: var(--terracotta); }
 .etymology-section .etymology-advanced-body { display: grid; gap: 8px; }
 .etymology-section .etymology-advanced-note { margin: 0; font-size: 12px; line-height: 1.55; color: var(--muted-foreground); }
+/* Uncertain Shuowen English: an amber ⚠ button sits inline before the passage (popup explains). */
+.etymology-section .etymology-uncertain-trigger { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 6px; vertical-align: -4px; border-radius: 999px; color: var(--experimental); }
+.etymology-section .etymology-uncertain-trigger svg { width: 14px; height: 14px; }
+.etymology-section .etymology-uncertain-trigger:hover, .etymology-section .etymology-uncertain-trigger:focus-visible { background: color-mix(in oklch, var(--experimental) 16%, transparent); outline: none; }
+.etymology-section .etymology-classical-entry { display: grid; gap: 6px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-source-name { font-size: 14px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-source-kind { font-size: 13px; }
 html[data-display-size='comfortable'] .etymology-section .etymology-text { font-size: 15px; }
