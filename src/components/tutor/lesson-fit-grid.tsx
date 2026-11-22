@@ -34,7 +34,11 @@ export function LessonFitGrid({ className, children }: { className: string; chil
         if (!card) continue;
         const cs = getComputedStyle(card);
         const chrome = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
-        needed = Math.max(needed, reading.scrollWidth + chrome);
+        // Tile-layout cards put the reading beside the hanzi box, so the box and gap count too.
+        const term = reading.closest<HTMLElement>('.lesson-term.is-tile');
+        const box = term?.querySelector<HTMLElement>('.lesson-word-tile');
+        const beside = term && box ? box.offsetWidth + (parseFloat(getComputedStyle(term).columnGap) || 0) : 0;
+        needed = Math.max(needed, reading.scrollWidth + chrome + beside);
       }
       if (!needed || tracks < 1) return;
       // gridColumnsFor keeps cards strictly wider than its `needed`, so ask for a hair less.

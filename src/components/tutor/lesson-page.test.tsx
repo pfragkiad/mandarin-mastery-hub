@@ -3,7 +3,9 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { LessonPage } from './lesson-page';
 import { lessonSummaries, loadLesson } from '@/lib/lessons';
 
+const router = vi.hoisted(() => ({ navigate: vi.fn() }));
 vi.mock('@tanstack/react-router', () => ({
+  useNavigate: () => router.navigate,
   Link: ({ children, className, to }: { children?: React.ReactNode; className?: string; to?: string }) => <a className={className} data-to={to}>{children}</a>,
 }));
 const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, items: [] as unknown[] }));
@@ -21,7 +23,7 @@ describe('LessonPage', () => {
     expect(['mandarin-character-lesson/3.0.0', 'mandarin-topic-lesson/3.2.0', 'mandarin-general-lesson/3.0.0', 'mandarin-general-lesson/3.1.0']).toContain(lesson.summary.schemaVersion);
     if (lesson.topic?.plan) {
       // v3.1: teaching path first, every word once in the word bank, no source examples repeated.
-      expect(container.querySelectorAll('.lesson-bank-word')).toHaveLength(lesson.topic.items.length);
+      expect(container.querySelectorAll('.lesson-details .lesson-bank-word')).toHaveLength(lesson.topic.items.length);
       expect(container.querySelectorAll('.lesson-turn')).toHaveLength(lesson.topic.plan.dialogue.turns.length);
       expect(container.querySelector('.lesson-topic-word')).toBeNull();
     } else if (lesson.sections.blocks) {
@@ -31,7 +33,7 @@ describe('LessonPage', () => {
       expect(container.querySelectorAll('.lesson-turn')).toHaveLength(turns);
       expect(container.querySelectorAll('.lesson-vocab')).toHaveLength(expressions);
       expect(container.querySelectorAll('.lesson-question')).toHaveLength(lesson.sections.practice!.questions.length);
-      expect(container.textContent).toContain('Conversation lesson');
+      expect(container.querySelector('.lesson-hero .eyebrow')?.textContent).toContain('CONVERSATION LESSON');
     } else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
   });
@@ -42,13 +44,13 @@ describe('LessonPage', () => {
     const ref = item.syllabus_refs[0]!;
     const entry = (index: number, simplified: string) => ({ simplified, entryKind: 'word', hskVersion: '3.0', hskLevel: 1, hsk_index: index });
     prefs.items = [
-      { id: 'other-number', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: entry(ref.entry_id + 1, item.hanzi) },
-      { id: 'exact', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: entry(ref.entry_id, item.hanzi) },
+      { id: 'other-number', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, hskId: ref.entry_id + 1, entry: entry(ref.entry_id + 1, item.hanzi) },
+      { id: 'exact', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, hskId: ref.entry_id, entry: entry(ref.entry_id, item.hanzi) },
     ];
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
-    const card = container.querySelector('.lesson-bank-word')!;
+    const card = container.querySelector('.lesson-details .lesson-bank-word')!;
     expect(card.querySelector('a.lesson-word-link')?.getAttribute('data-to')).toBe('/vocabulary');
-    expect(card.textContent).toContain(`HSK 1 · #${ref.entry_id}`);
+    expect(card.textContent).toContain(`HSK L1/#${ref.entry_id}`);
   });
 
   it('a topic lesson word with no exact record stays plain text', async () => {
@@ -171,5 +173,20 @@ describe('LessonPage', () => {
     expect(question.querySelector('[data-lesson-hint]')).toBeNull();
     fireEvent.click(question.querySelectorAll('.lesson-choice')[1]!);
     expect(question.querySelector('[data-lesson-hint]')).not.toBeNull();
+  });
+
+  it('Complete lesson marks it done and returns to its course on the Lessons page', async () => {
+    const lesson = (await loadLesson('topic-personal-pronouns'))!;
+    router.navigate.mockClear();
+    render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Complete lesson' }));
+    expect(router.navigate).toHaveBeenCalledWith({ to: '/lessons' });
+    expect(decodeURIComponent(document.cookie)).toContain('"completed":true');
+  });
+
+  it('lesson titles carry no Draft pill', async () => {
+    const lesson = (await loadLesson('topic-personal-pronouns'))!;
+    render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(screen.queryByText('Draft')).toBeNull();
   });
 });

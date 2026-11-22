@@ -115,3 +115,8 @@
 - [x] Course path: connectors, Up next, dim not-started, collapsible units
 - [x] Learner copy; caveats in (i); no Pimsleur/ID notes
 - [ ] Estimated time — blocked: lessons record no duration
+- [x] Lesson Word bank / Words to review: simplified Vocabulary grid card look (hanzi box in card ink, reading + translation at its right, HSK pill)
+- [x] Lesson progress: Show answer then going back must not leave the course view at zero
+- [x] Lesson page: progress shown on the left while studying
+- [x] Complete lesson returns to the course/topic screen
+- [x] Remove the Draft pill from lessons

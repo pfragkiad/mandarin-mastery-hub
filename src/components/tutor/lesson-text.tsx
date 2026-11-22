@@ -197,8 +197,12 @@ const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
  * one heading (a hint click inside a link would open two things). The record's recording
  * is used only when its reading is the lesson's reading (ignoring spaces and case), so a
  * recording of another reading is never played under this pinyin.
+ *
+ * `tile` lays it out like a Vocabulary grid card: the hanzi in its own bordered box
+ * (coloured by `inkClass`, the record's card ink, foreground by default) with the reading
+ * and translation stacked to its right. Links, audio and hints are unchanged.
  */
-export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined }) {
+export function LessonWord({ hanzi, pinyin, meaning, record, tile = false, inkClass = '' }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined; tile?: boolean; inkClass?: string }) {
   const fallback = useHanziTarget(hanzi);
   const segments = useLessonSegments(hanzi);
   // On a lesson page an expression no single record matches uses the hint popups (word + arrow).
@@ -220,10 +224,16 @@ export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; 
       : record === undefined && segments.some(s => s.kind !== 'text')
         ? <span className="lesson-hanzi lesson-word-segments" lang="zh-CN">{hints ? pair.hanziBody : segments.map((s, i) => <SegmentLink key={i} segment={s}/>)}</span>
         : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
+  const reading = <span className="lesson-term-reading"><span className="pinyin">{segmented ? pair.pinyinBody : pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>;
+  const gloss = meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>;
+  if (tile) return <span className="lesson-term is-tile">
+    <span className={`lesson-word-tile${inkClass ? ` ${inkClass}` : ''}`}>{head}</span>
+    <span className="lesson-term-side">{reading}{gloss}</span>
+  </span>;
   return <span className="lesson-term is-lg">
     {head}
-    <span className="lesson-term-reading"><span className="pinyin">{segmented ? pair.pinyinBody : pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>
-    {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
+    {reading}
+    {gloss}
   </span>;
 }
 

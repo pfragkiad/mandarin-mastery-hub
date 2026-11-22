@@ -99,7 +99,9 @@ export function useLessonProgress(): LessonProgressMap {
     const read = () => setMap(readProgress());
     read();
     window.addEventListener(EVENT, read);
-    return () => window.removeEventListener(EVENT, read);
+    // A page restored from the browser's back/forward cache keeps its old state; re-read.
+    window.addEventListener('pageshow', read);
+    return () => { window.removeEventListener(EVENT, read); window.removeEventListener('pageshow', read); };
   }, []);
   return map;
 }

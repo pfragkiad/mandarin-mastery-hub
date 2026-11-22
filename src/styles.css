@@ -3798,7 +3798,6 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-topic-examples .lesson-card { background: var(--secondary); }
 .lesson-register.is-hsk { color: var(--primary); }
 a.lesson-word-link { text-decoration: none; }
-.lesson-draft-pill { color: var(--experimental); border-color: color-mix(in oklab, var(--experimental) 40%, transparent); margin-left: 8px; vertical-align: middle; }
 
 .lesson-page { container: lesson-page / inline-size; }
 .lesson-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted-foreground); text-decoration: none; margin-bottom: 18px; }
@@ -4608,3 +4607,37 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-finish-title svg { width: 18px; height: 18px; }
 .lesson-finish-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .lesson-finish-next { display: inline-flex; align-items: center; gap: 6px; color: var(--primary); font-weight: 600; text-decoration: none; }
+
+/* Lesson word cards (Words to review, Word bank): a simplified Vocabulary grid card. The
+   hanzi sits in its own bordered box in the record's card ink (foreground, radical gold,
+   Traditional purple), reading + translation stacked at its right, pills in the top row. */
+.lesson-details .lesson-grid > .lesson-card + .lesson-card { margin-top: 0; }
+.lesson-bank-word { gap: 10px; }
+.lesson-bank-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 20px; }
+.lesson-bank-top .word-hsk-id { font-size: 11px; letter-spacing: .5px; }
+.lesson-term.is-tile { display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; }
+.lesson-word-tile { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 60px; height: 60px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; color: var(--card-ink, var(--foreground)); transition: border-color .2s; }
+.lesson-word-tile:has(a:hover, a:focus-visible) { border-color: var(--card-ink, var(--primary)); }
+.lesson-term.is-tile .lesson-word-tile .lesson-hanzi { font-size: 36px; line-height: 1; white-space: nowrap; color: inherit; }
+.lesson-term.is-tile .lesson-word-tile a.lesson-hanzi:hover { color: var(--card-ink, var(--primary)); }
+.lesson-term-side { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
+.lesson-term.is-tile .lesson-term-meaning { flex-basis: auto; }
+@media (min-width: 851px) {
+  html[data-display-size='comfortable'] .lesson-word-tile { min-width: 70px; height: 70px; }
+  html[data-display-size='comfortable'] .lesson-term.is-tile .lesson-word-tile .lesson-hanzi { font-size: 42px; }
+  html[data-display-size='comfortable'] .lesson-bank-top .word-hsk-id { font-size: 14px; }
+}
+
+/* Lesson progress in the left lesson menu (wide layout): sticky with the menu, so the learner
+   sees it change while working; each section with tasks shows its own done count or a tick. */
+.lesson-toc-progress { display: flex; flex-direction: column; gap: 6px; padding: 12px; margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); font-size: 13px; color: var(--muted-foreground); }
+.lesson-toc-progress .eyebrow { margin-bottom: 0; }
+.lesson-toc-progress .lesson-progress-label { display: inline-flex; align-items: center; gap: 6px; color: var(--foreground); font-weight: 600; }
+.lesson-toc-progress .lesson-progress-label svg { width: 15px; height: 15px; }
+.lesson-toc-progress.is-done { border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); }
+.lesson-toc-progress.is-done .lesson-progress-label { color: var(--primary); }
+.lesson-toc-progress .lesson-reset { align-self: flex-start; margin-top: 2px; }
+.lesson-toc a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-right: 6px; }
+.lesson-toc-count { flex: none; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
+.lesson-toc-count.is-done { color: var(--primary); }
+.lesson-toc-count svg { width: 13px; height: 13px; }

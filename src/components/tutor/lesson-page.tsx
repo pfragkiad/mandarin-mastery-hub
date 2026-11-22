@@ -5,7 +5,8 @@ import { ResetProgressButton } from './reset-progress-button';
 
 /** Progress hook for QuestionCards and "Show answer" reveals: each reports its key once answered or opened. */
 const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
+import { setLessonFold } from '@/lib/lesson-fold';
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
@@ -13,6 +14,8 @@ import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanL
 import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
 import type { Word } from '@/lib/mandarin';
+import { WordIdentityPills } from './word-identity-pills';
+import { wordInk } from '@/lib/card-ink';
 import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
@@ -62,10 +65,6 @@ const lessonLabel = (summary: LessonSummary) => summary.kind === 'topic' && summ
 const mappingLabel: Record<string, string> = { same_written_form: 'Same form in both scripts', one_to_one: 'One traditional form', context_dependent: 'Traditional form depends on context', multiple_targets: 'Several traditional forms' };
 /** snake_case enum values read as plain words ("compositional_frequency_phrase" → "compositional frequency phrase"). */
 const plain = (value: string) => value.replace(/_/g, ' ');
-
-export function LessonStatusPill({ status }: { status: string }) {
-  return status === 'draft' ? <span className="word-hsk-id lesson-draft-pill" title="Draft lesson: not reviewed yet">Draft</span> : null;
-}
 
 type SectionDef = { id: string; title: string; hint: string; body: ReactNode };
 
@@ -134,6 +133,24 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // A reset remounts the lesson body, closing every reveal and clearing picked answers.
   const [round, setRound] = useState(0);
   const restart = () => { resetLesson(summary.id); setRound(r => r + 1); };
+  // Per-section task keys, for the left menu's "2/4" counts: reveals by their section prefix,
+  // graded questions in the practice section (the same keys requiredIds counts).
+  const sectionTasks: Record<string, string[]> = {};
+  for (const key of requiredIds) {
+    const section = key.startsWith('build-') ? 'build' : key.startsWith('reading-') ? 'reading' : key.startsWith('speaking-') ? 'speaking' : 'practice';
+    (sectionTasks[section] ??= []).push(key);
+  }
+  const answeredSet = new Set(progressEntry?.answered ?? []);
+  const lessonDone = Boolean(progressEntry?.completed);
+  // Complete lesson marks it done and returns to where it is listed: its course (the drawer
+  // is opened first so the course shows unfolded), or the topic view of its main topic.
+  const navigate = useNavigate();
+  const complete = () => {
+    markLessonCompleted(summary.id);
+    const course = positionsOf(summary.id)[0]?.course;
+    if (course) { setLessonFold(course.id, true); void navigate({ to: '/lessons' }); }
+    else void navigate({ to: '/lessons', search: summary.primaryCategory ? { view: 'topic', category: summary.primaryCategory.id } : { view: 'topic' } });
+  };
   const [hidePinyin, setHidePinyin] = useState(false);
   // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
   // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
@@ -229,7 +246,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (applied.length) sections.push({ id: 'practice', title: 'Check what you can do', hint: count(applied.length, 'question'), body: <div className="lesson-stack">{applied.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
     if (p.review.can_do.length || topic.items.length) sections.push({ id: 'review', title: 'Review', hint: 'What you can do now', body: <>
       {p.review.can_do.length > 0 && <ul className="lesson-objectives">{p.review.can_do.map(x => <li key={x}><LessonText text={x}/></li>)}</ul>}
-      {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><LessonFitGrid className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}</LessonFitGrid></>}
+      {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><LessonFitGrid className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid></>}
       {topic.items.length > 0 && <details className="lesson-details">
         <summary>Word bank ({topic.items.length}) — examples are on each Vocabulary card</summary>
         <LessonFitGrid className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid>
@@ -406,13 +423,13 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
         <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
-        <h1>{summary.title}<LessonStatusPill status={summary.status}/></h1>
+        <h1>{summary.title}</h1>
         {summary.subtitle && <p className="lesson-subtitle"><LessonText text={summary.subtitle}/></p>}
         {summary.description && <p className="lesson-description"><LessonText text={summary.description}/></p>}
         <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
       </div>
     </header>
-    <LessonProgressStrip entry={progressEntry} onReset={restart}/>
+    {narrow && <LessonProgressStrip entry={progressEntry} onReset={restart}/>}
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -421,10 +438,11 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>}
     <div className="lesson-layout">
       <nav ref={toc} className="lesson-toc" aria-label="Lesson sections">
+        {!narrow && <LessonTocProgress entry={progressEntry} onReset={restart}/>}
         <span className="eyebrow">IN THIS LESSON</span>
         {/* In-page jump links only (hash anchors scroll within this one page). In the
             narrow layout a pill also opens its collapsed section before the jump. */}
-        {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}</a>)}
+        {sections.map(s => { const tasks = sectionTasks[s.id]; const doneHere = tasks ? tasks.filter(k => answeredSet.has(k)).length : 0; return <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}{!narrow && tasks && tasks.length > 0 && <span className={`lesson-toc-count${lessonDone || doneHere === tasks.length ? ' is-done' : ''}`} aria-label={`${lessonDone ? tasks.length : doneHere} of ${tasks.length} done`}>{lessonDone || doneHere === tasks.length ? <Check aria-hidden="true"/> : `${doneHere}/${tasks.length}`}</span>}</a>; })}
         {!narrow && hanziToggle}
         {!narrow && pinyinToggle}
         {!narrow && translationsToggle}
@@ -442,7 +460,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
             <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}</div>
           </section>;
         })}
-        <LessonFinish entry={progressEntry} onComplete={() => markLessonCompleted(summary.id)} onReset={restart} next={positions[0]?.next}/>
+        <LessonFinish entry={progressEntry} onComplete={complete} onReset={restart} next={positions[0]?.next}/>
         <ReportProvenance lesson={lesson}/>
       </div>
     </div>
@@ -505,6 +523,22 @@ function LessonProgressStrip({ entry, onReset }: { entry: LessonProgressEntry | 
   </div>;
 }
 
+/** Progress at the top of the left lesson menu (wide layout), which stays in view while the
+ *  learner scrolls: "N of M tasks done" (or Completed) with a bar, and a small Reset once there
+ *  is something to clear. Before any task is done it still shows "0 of M" so the learner
+ *  knows progress is tracked. Inputs as LessonProgressStrip. */
+function LessonTocProgress({ entry, onReset }: { entry: LessonProgressEntry | undefined; onReset: () => void }) {
+  if (!entry || (entry.total === 0 && !entry.completed)) return null;
+  const { state, fraction } = lessonState(entry);
+  const done = Math.min(entry.answered.length, entry.total);
+  return <div className={`lesson-toc-progress is-${state}`}>
+    <span className="eyebrow">YOUR PROGRESS</span>
+    <span className="lesson-progress-label">{state === 'done' ? <><CheckCircle2 aria-hidden="true"/>Completed</> : `${done} of ${entry.total} ${entry.total === 1 ? 'task' : 'tasks'} done`}</span>
+    <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
+    {hasLessonProgress(entry) && <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>}
+  </div>;
+}
+
 /** End-of-lesson box: "Complete lesson" marks it done without opening every task; once done
  *  it reads Lesson complete with Reset progress and, in a course, the next lesson. */
 function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgressEntry | undefined; onComplete: () => void; onReset: () => void; next: LessonSummary | null | undefined }) {
@@ -523,12 +557,17 @@ function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgr
   </div>;
 }
 
-/** Compact word-bank entry: linked headword with its record's audio and HSK number, no example sentences. */
+/** Compact word card for Words to review and the Word bank, a simplified Vocabulary grid card:
+ *  top row with the record's part of speech and its own identity pills (HSK level/#, Radical),
+ *  then the hanzi in a bordered box wearing the record's card ink, with pinyin + speaker and
+ *  the translation to its right. No example sentences (those are on the Vocabulary card).
+ *  Inputs: the lesson item and its exact Vocabulary record (null when none matched, which
+ *  shows the lesson's own part of speech and no pills, so nothing is borrowed). */
 function WordBankCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
-  const hsk = record?.entry?.hskLevel && record.entry.hsk_index ? `HSK ${record.entry.hskLevel} · #${record.entry.hsk_index}` : '';
+  const pos = record?.type || plain(item.primary_pos_id.replace(/[-_]/g, ' '));
   return <div className="lesson-card lesson-vocab lesson-bank-word">
-    {hsk && <div className="lesson-card-top"><span className="lesson-register is-hsk">{hsk}</span></div>}
-    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record}/>
+    <div className="lesson-bank-top">{pos && <span className="lesson-register">{pos}</span>}{record && <WordIdentityPills word={record}/>}</div>
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/>
   </div>;
 }
 

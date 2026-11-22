@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { lessonCategories, lessonSummaries, lessonSummary, type LessonSummary } from '@/lib/lessons';
 import { courses, projectIndependentLessons, sectionPlacements, type Course } from '@/lib/lesson-curricula';
 import { LessonText } from './lesson-text';
-import { LessonStatusPill } from './lesson-page';
+import { readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
 import { HintBody, SourceInfo } from './source-info';
 import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
 import { ResetProgressButton } from './reset-progress-button';
@@ -95,24 +95,10 @@ export function LessonsIndex({ view, category, tag, q = '', scope, onSearch }: {
 /** Remembered open/collapsed flag for one course drawer. Drawers start COLLAPSED on a
  *  first visit (the list is long), then the visitor's own fold/unfold choice is kept in
  *  localStorage per drawer id. Read after mount so server and first client render agree. */
-const FOLD_KEY = 'lessons-fold-v1';
 function useLessonFold(id: string): [boolean, (open: boolean) => void] {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(FOLD_KEY);
-      if (saved) setOpen(Boolean((JSON.parse(saved) as Record<string, boolean>)[id]));
-    } catch { /* storage unavailable: stay collapsed */ }
-  }, [id]);
-  const update = (next: boolean) => {
-    setOpen(next);
-    try {
-      const saved = localStorage.getItem(FOLD_KEY);
-      const all = saved ? (JSON.parse(saved) as Record<string, boolean>) : {};
-      all[id] = next;
-      localStorage.setItem(FOLD_KEY, JSON.stringify(all));
-    } catch { /* ignore */ }
-  };
+  useEffect(() => { setOpen(Boolean(readLessonFolds()[id])); }, [id]);
+  const update = (next: boolean) => { setOpen(next); setLessonFold(id, next); };
   return [open, update];
 }
 
@@ -144,7 +130,7 @@ function ContinueCard({ progress }: { progress: LessonProgressMap }) {
   return <Link to="/lessons/$lessonId" params={{ lessonId: id }} className="lesson-continue">
     <LessonGlyph lesson={lesson}/>
     <span className="lesson-continue-copy">
-      <small>Continue where you left off{entry.total ? ` · ${entry.answered.length} of ${entry.total} questions` : ''}</small>
+      <small>Continue where you left off{entry.total ? ` · ${entry.answered.length} of ${entry.total} tasks` : ''}</small>
       <strong>{lesson.title}</strong>
       <ProgressBar fraction={fraction}/>
     </span>
@@ -180,12 +166,16 @@ const isDone = (p: LessonProgressMap, id: string) => lessonState(p[id]).state ==
 function CourseOutline({ course, progress }: { course: Course; progress: LessonProgressMap }) {
   const all = course.sections.flatMap(sectionPlacements);
   const done = all.filter(p => isDone(progress, p.lesson.id)).length;
+  // Partly done lessons count too, so one revealed answer already moves the course bar
+  // and the label names lessons in progress (a bar stuck at 0 read as "nothing saved").
+  const working = all.filter(p => lessonState(progress[p.lesson.id]).state === 'in-progress').length;
+  const fraction = all.length ? all.reduce((sum, p) => sum + lessonState(progress[p.lesson.id]).fraction, 0) / all.length : 0;
   const next = all.find(p => !isDone(progress, p.lesson.id))?.lesson.id;
   const ids = all.map(p => p.lesson.id);
   const started = ids.some(id => progress[id]);
   return <LessonFold id={course.id} title={course.title} note={course.description} info={courseCaveat(course)}
     tools={started ? <ResetProgressButton label="Reset course progress" title={`Reset ${course.title}?`} description="Every lesson in this course goes back to not started. Lessons outside this course keep their progress." onReset={() => resetCourseProgress(ids)}/> : undefined}
-    aside={<span className="lesson-course-progress"><small>{done} of {all.length} lessons done</small><ProgressBar fraction={all.length ? done / all.length : 0}/></span>}>
+    aside={<span className="lesson-course-progress"><small>{done} of {all.length} lessons done{working > 0 && ` · ${working} in progress`}</small><ProgressBar fraction={fraction}/></span>}>
     {course.sections.map(section => {
       const flat = sectionPlacements(section);
       return <div key={section.id} className="lessons-level">
@@ -273,7 +263,7 @@ export function LessonCard({ lesson, number, after = [], onTag, activeTag, extra
     <Link to="/lessons/$lessonId" params={{ lessonId: lesson.id }} className="lesson-index-card">
       <LessonGlyph lesson={lesson} number={number}/>
       <span className="lesson-index-copy">
-        <span className="lesson-index-meta">{number ? `Lesson ${number}` : kindLabel[lesson.kind]}{lesson.headword?.pinyin && <> · <span className="pinyin">{lesson.headword.pinyin}</span></>}{stateLabel && <> · <span className="lesson-state">{stateLabel}</span></>}<LessonStatusPill status={lesson.status}/></span>
+        <span className="lesson-index-meta">{number ? `Lesson ${number}` : kindLabel[lesson.kind]}{lesson.headword?.pinyin && <> · <span className="pinyin">{lesson.headword.pinyin}</span></>}{stateLabel && <> · <span className="lesson-state">{stateLabel}</span></>}</span>
         <strong>{lesson.title}</strong>
         {lesson.subtitle && <span className="lesson-index-subtitle"><LessonText text={lesson.subtitle}/></span>}
         {after.length > 0 && <small>After: {after.map(a => a.title).join(', ')}</small>}
