@@ -20,6 +20,8 @@ import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './less
 import { SentenceExample } from './sentence-example';
 import { MoreExamples, SentenceSection, TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
+import { RadicalPill } from './radical-pill';
+import { wordInk, wordRadicalNumber } from '@/lib/card-ink';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
 import { useCardTopRowFit } from './use-card-top-row-fit';
@@ -50,12 +52,14 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const bookmarked = saved.includes(word.id);
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
+  // Same Radical #N pill and gold ink as the grid card and the glyph's Characters card (card-ink.ts).
+  const detailRadical = wordRadicalNumber(word.hanzi);
   // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
   // Multi-character words pair the same way; single glyphs have nothing to pair.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
   const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
   return <>
-    <RecordDetailTitle hanzi={word.hanzi} {...(pairing.paired ? { glyphContent: Array.from(word.hanzi).map(pairing.glyph), pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(pairing.paired ? { glyphContent: Array.from(word.hanzi).map(pairing.glyph), pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : detailRadical !== undefined ? { pill: <span className="word-hsk-id" title="Sourced Kangxi radical identity of this character">Radical #{detailRadical}</span> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     <dl className="catalog-facts">
       <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id hsk-level-pill" title={word.entry?.sentenceSource?.hskFromWord ? `HSK 3.0 ID recorded for ${word.entry.sentenceSource.hskFromWord}, the word this sentence comes from` : 'Official ID in the HSK 3.0 syllabus'}>ID {word.hskId}</span>}</dd></div>
@@ -160,20 +164,24 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // A sentence phrase shows the level and syllabus index recorded for its owning parent word.
   const hskFrom = word.entry?.sentenceSource?.hskFromWord ?? null;
   const hskTitle = hskFrom ? `HSK 3.0 level and ID recorded for ${hskFrom}, the word this sentence comes from` : 'HSK 3.0 level / official ID in the syllabus';
+  // One-character words that are sourced radicals (八, 门) share their Characters card's gold
+  // ink and Radical #N pill (card-ink.ts wordInk/wordRadicalNumber, the one central rule).
+  const ink = wordInk(word);
+  const radicalNumber = wordRadicalNumber(word.hanzi);
   // Words/Phrases top rows keep one line too: the header font steps down before the row
-  // wraps (use-card-top-row-fit.ts). No Radical pill on these cards, so the abbreviation step
-  // is switched off and only the font steps apply.
+  // wraps (use-card-top-row-fit.ts). Only words with a Radical pill allow its abbreviation
+  // step; the rest use the font steps alone.
   const rowRef = useRef<HTMLSpanElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
-  useCardTopRowFit(rowRef, false, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
+  useCardTopRowFit(rowRef, radicalNumber !== undefined, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
   // The button row gets its own, independent attempt: a smaller button font before Recall and
   // the bookmark drop to a second line.
   useCardFooterFit(footerRef, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, comfortableView, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
-  return <><article data-entry-id={word.id} className={`word-card ${wordStyleTop ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${word.script === 'Traditional' ? 'is-traditional card-ink' : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
+  return <><article data-entry-id={word.id} className={`word-card ${wordStyleTop ? 'headword-card' : ''} ${comfortableWord ? 'comfortable-word-card' : ''} ${list ? 'word-list-item' : ''} ${ink ? `${ink} card-ink` : ''} ${open && panel ? 'is-selected' : ''} ${revealed ? 'is-revealed' : ''}`} onDoubleClick={event => { if (onDetails && isPlainCardDoubleClick(preferences.cardReveal, event.target)) onDetails(); }}>
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id hsk-level-pill" title={hskTitle}>{hskPill}</span> : word.hskId != null && <span className="word-hsk-id hsk-level-pill" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{isPhrase && <PhraseStylePill word={word}/>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
+    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id hsk-level-pill" title={hskTitle}>{hskPill}</span> : word.hskId != null && <span className="word-hsk-id hsk-level-pill" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{radicalNumber !== undefined && <RadicalPill number={radicalNumber} title="Sourced Kangxi radical identity of this character"/>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{isPhrase && <PhraseStylePill word={word}/>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}

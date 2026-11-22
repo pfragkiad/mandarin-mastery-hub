@@ -6,6 +6,7 @@ import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover'
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
 import { lessonGlyphHint, lessonGlyphHintById, lessonGlyphHints } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
+import { wordInk } from '@/lib/card-ink';
 import { useSentenceWords } from './use-sentence-words';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
@@ -155,11 +156,17 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const allHints = useMemo(() => lessonGlyphHints(glyph, preferences.includeTraditional), [glyph, preferences.includeTraditional, catalogVersion]);
   const rowIsCurrent = (id: string) => location.pathname === '/characters' && currentSearch['id'] === id;
+  // A one-character word that is itself a sourced radical (八) wears the same gold as its
+  // Words card (card-ink.ts wordInk); other words keep the link colouring. Traditional
+  // words are left to the row's own colour, so nothing new is implied for them.
+  const wordHanziInk = word && wordInk({ hanzi: word.hanzi }) === 'card-ink-radical' ? 'card-ink-radical' : '';
   const kindLabel = (kind: string) => kind === 'Components' ? 'As a component' : kind === 'Radicals' ? 'As a radical' : 'As a character';
   return <div className="lesson-hint-body">
     <button type="button" className="lesson-hint-close" aria-label="Close" onClick={onClose}><X size={14} aria-hidden="true"/></button>
     <div className="lesson-hint-head">
-      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''}${hint?.kind === 'Radicals' ? ' is-radical' : ''}`}>{glyph}</span>
+      {/* The glyph wears its record's identity ink (record-ink.ts), the same as its library card:
+          八 is gold whichever record the popup describes. */}
+      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''} ${hint?.ink ?? ''}`.trim()}>{glyph}</span>
       <div className="lesson-hint-reading">
         {(traditional || hint?.radicalNumber) && <span className="lesson-hint-pills">
           {traditional && <span className="lesson-hint-pill is-traditional">繁 Traditional</span>}
@@ -178,8 +185,8 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       <span className="lesson-hint-word-label">{Array.from(word.hanzi).length === 1 ? 'As a word' : 'In the word'}</span>
       <span className="lesson-hint-word-row">
         {wordIsCurrent
-          ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span></span>
-          : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
+          ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span></span>
+          : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
         {/* Speaker stays outside the link so listening never navigates. */}
         {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
       </span>
@@ -189,8 +196,8 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       <span className="lesson-hint-word-label">{kindLabel(row.kind)}</span>
       <span className="lesson-hint-word-row">
         {rowIsCurrent(row.search.id)
-          ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className="lesson-hint-word-hanzi">{row.glyph}</span></span>
-          : <Link to="/characters" search={row.search} className="lesson-hint-word-link" title={`Open the ${row.kind === 'Components' ? 'component' : row.kind === 'Radicals' ? 'radical' : 'character'} ${row.glyph}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{row.glyph}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
+          ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className={`lesson-hint-word-hanzi ${row.ink}`.trim()}>{row.glyph}</span></span>
+          : <Link to="/characters" search={row.search} className="lesson-hint-word-link" title={`Open the ${row.kind === 'Components' ? 'component' : row.kind === 'Radicals' ? 'radical' : 'character'} ${row.glyph}`} onClick={rememberReturn}><span lang="zh-CN" className={`lesson-hint-word-hanzi ${row.ink}`.trim()}>{row.glyph}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
       </span>
     </div>)}
   </div>;

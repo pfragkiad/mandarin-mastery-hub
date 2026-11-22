@@ -1505,6 +1505,9 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .card-ink-character { --card-ink: var(--primary); }
 .card-ink-component { --card-ink: var(--foreground); }
 .word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
+/* Words cards: a one-character word that is a sourced radical (八, 门; card-ink.ts wordInk)
+   wears the radical gold on its headword, like its Characters card. */
+.word-card.card-ink.card-ink-radical .word-hanzi-tile { color: var(--card-ink); }
 .word-card.card-ink:hover { border-color: var(--card-ink); }
 .word-card.card-ink.is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
 .word-card.card-ink.is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
@@ -3653,12 +3656,17 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hint-close:hover, .lesson-hint-close:focus-visible { color: var(--foreground); background: color-mix(in oklch, var(--primary) 10%, transparent); outline: none; }
 .lesson-hint-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; padding-right: 22px; }
 .lesson-hint-glyph { width: 68px; height: 68px; display: grid; place-items: center; font-family: var(--font-hanzi); font-size: 46px; line-height: 1; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
-.lesson-hint-glyph.is-radical:not(.traditional-character) { color: var(--rank-gold); }
+/* Popup glyph and row hanzi wear their record's identity ink (record-ink.ts): gold radicals,
+   green characters, foreground components, purple traditional — linked or not (a row for the
+   card you are on keeps its colour, it just isn't a link). */
+.lesson-hint-glyph:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute):not(.traditional-character) { color: var(--card-ink); }
+.lesson-hint-word-hanzi:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute, .is-traditional) { color: var(--card-ink); }
+.lesson-hint-word-link:is(:hover, :focus-visible) .lesson-hint-word-hanzi:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute, .is-traditional) { box-shadow: 0 0 0 1px var(--card-ink); }
 .lesson-hint-reading { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .lesson-hint-pills { display: flex; flex-wrap: wrap; gap: 4px; }
 .lesson-hint-pill { font-size: 11px; line-height: 18px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted-foreground); white-space: nowrap; }
 .lesson-hint-pill.is-traditional { color: var(--traditional); border-color: color-mix(in oklab, var(--traditional) 40%, transparent); }
-.lesson-hint-pill.is-radical { color: var(--rank-gold); border-color: color-mix(in oklab, var(--rank-gold) 40%, transparent); }
+.lesson-hint-pill.is-radical { color: var(--hsk-id); border-color: color-mix(in oklab, var(--hsk-id) 40%, transparent); }
 .lesson-hint-pinyin { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0 2px; white-space: nowrap; }
 .lesson-hint-pinyin .pinyin { font-size: 16px; }
 .lesson-hint-pinyin .example-listen { width: 28px; height: 28px; }

@@ -3,6 +3,8 @@ import { libraryEntries, radicalVariantFallback, type LibraryKind } from './char
 import { glyphPresentation } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 import { usageRank } from './usage-frequency';
+import { glyphRecordInk } from './record-ink';
+import type { CardInk } from './card-ink';
 import type { CharacterScript } from './learning-preferences';
 
 /**
@@ -33,6 +35,8 @@ export type LessonGlyphHint = {
   radicalNumber?: number | undefined;
   /** Full-card destination: the exact record ID (an explicit ID beats any page number). */
   search: { tab: LibraryKind; id: string };
+  /** The record's identity ink, the same one its library card wears (record-ink.ts). */
+  ink: CardInk;
 };
 
 const ORDER: LibraryKind[] = ['Characters', 'Components', 'Radicals'];
@@ -56,6 +60,7 @@ function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries
     script: entry.script,
     radicalNumber: entry.kangxiIndex ?? info.characterRadical?.number,
     search: { tab: kind, id: entry.id },
+    ink: glyphRecordInk(entry, kind),
   };
 }
 

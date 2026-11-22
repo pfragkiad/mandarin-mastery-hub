@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lessonGlyphHint, lessonGlyphHintById } from './lesson-hints';
+import { lessonGlyphHint, lessonGlyphHintById, lessonGlyphHints } from './lesson-hints';
 
 describe('lessonGlyphHint', () => {
   it('uses the exact Characters record before a radical card of the same form', () => {
@@ -31,5 +31,17 @@ describe('lessonGlyphHintById', () => {
     expect(lessonGlyphHintById('Words:次', false)).toBeNull();
     expect(lessonGlyphHintById('Characters', false)).toBeNull();
     expect(lessonGlyphHintById('Characters:次第', false)).toBeNull();
+  });
+});
+
+// Owner rule: popup rows keep each record's identity colour; 八 is a radical, so every row is gold.
+describe('lessonGlyphHints ink', () => {
+  it('colours every 八 record (character, component, radical) radical gold', () => {
+    const rows = lessonGlyphHints('八', false);
+    expect(rows.map(row => row.kind)).toEqual(['Characters', 'Components', 'Radicals']);
+    expect(rows.every(row => row.ink === 'card-ink-radical')).toBe(true);
+  });
+  it('colours an ordinary character green', () => {
+    expect(lessonGlyphHint('我', false)!.ink).toBe('card-ink-character');
   });
 });
