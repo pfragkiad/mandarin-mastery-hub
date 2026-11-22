@@ -8,6 +8,11 @@ vi.mock('@tanstack/react-router', () => ({
   Link: ({ children, ...props }: { children?: ReactNode } & Record<string, unknown>) => <a {...props}>{children}</a>,
 }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ preferences: { includeTraditional: false } }) }));
+const trail = vi.hoisted(() => ({ key: '' as string | undefined, index: undefined as number | undefined }));
+vi.mock('@/lib/detail-trail', async importOriginal => ({
+  ...(await importOriginal<typeof import('@/lib/detail-trail')>()),
+  historyPosition: () => ({ ...(trail.key ? { key: trail.key } : {}), ...(trail.index !== undefined ? { index: trail.index } : {}) }),
+}));
 const etymology = vi.hoisted(() => ({ result: null as unknown, calls: 0 }));
 vi.mock('@/lib/etymology', async importOriginal => ({
   ...(await importOriginal<typeof import('@/lib/etymology')>()),
@@ -36,6 +41,22 @@ describe('Glyph detail drawer tabs', () => {
     rerender(<GlyphDetailTabs cardKey="Characters:口" decomposition={decomposition} etymology={{ recordId: 'Characters:口', glyph: '口' }}/>);
     await flush();
     expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
+  });
+
+  it('keeps the Etymology tab when the form switch changes the card on the same history entry', async () => {
+    etymology.result = howellView;
+    trail.index = 7; trail.key = 'entry-1';
+    const { rerender } = render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
+    await flush();
+    fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
+    expect(screen.getByRole('tab', { name: 'Etymology', selected: true })).toBeInTheDocument();
+    // Form switch: a replace navigation — same history index, fresh key, different record
+    // (e.g. 襾 → 西, simplified → traditional).
+    trail.key = 'entry-1b';
+    rerender(<GlyphDetailTabs cardKey="Characters:口" decomposition={decomposition} etymology={{ recordId: 'Characters:口', glyph: '口' }}/>);
+    await flush();
+    expect(screen.getByRole('tab', { name: 'Etymology', selected: true })).toBeInTheDocument();
+    trail.index = undefined; trail.key = '';
   });
 
   it('remembers a collapsed drawer and loads nothing while collapsed', async () => {

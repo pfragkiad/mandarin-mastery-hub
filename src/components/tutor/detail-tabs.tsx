@@ -3,7 +3,7 @@ import { historyPosition } from '@/lib/detail-trail';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
-import { entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
+import { carryTabOnCardSwitch, entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
 import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyView } from './etymology-section';
 
 /**
@@ -32,8 +32,10 @@ const OPEN_KEY = 'tutor-detail-drawer-open';
 function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefined; returned: boolean } {
   // Read from history.state during render: a link or Back changes the card's search, so the
   // card rerenders after the browser entry has already moved.
-  const historyKey = historyPosition().key ?? '';
+  const position = historyPosition();
+  const historyKey = position.key ?? '';
   const entry = `${historyKey}|${cardKey}`;
+  carryTabOnCardSwitch(position.index, historyKey, cardKey);
   noteDetailEntry(historyKey, cardKey);
   // Decided once per arrival on an entry (the sheet can stay mounted across links/Back):
   // an entry that already had a choice is a return; otherwise a pending link request applies.

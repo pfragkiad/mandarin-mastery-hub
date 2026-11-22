@@ -7,6 +7,25 @@
  */
 export type DetailTab = 'decomposition' | 'etymology';
 export const entryTabs = new Map<string, DetailTab>();
+/** The card last seen at each history position, so a form-switch navigation (a `replace`
+ *  that keeps the same entry — 襾 → 西, simplified → traditional) can be told apart from
+ *  opening another card. Keyed by the router's history INDEX, not its key: a replace
+ *  navigation keeps the index but gets a fresh key. */
+const lastAtIndex = new Map<number, { key: string; card: string }>();
+/** A form switch replaces the current entry (same history index) with a new card: carry the
+ *  chosen tab to the new card's entry so Etymology stays selected. The replace also mints a
+ *  fresh history key, so the previous entry's key is tracked alongside its card. Opening a
+ *  different card pushes a new entry (index + 1), so it is never affected; without an index
+ *  (tests/SSR) this opts out. */
+export function carryTabOnCardSwitch(historyIndex: number | undefined, historyKey: string, cardKey: string) {
+  if (historyIndex === undefined) return;
+  const previous = lastAtIndex.get(historyIndex);
+  lastAtIndex.set(historyIndex, { key: historyKey, card: cardKey });
+  if (!previous || previous.card === cardKey) return;
+  const from = entryTabs.get(`${previous.key}|${previous.card}`);
+  const to = `${historyKey}|${cardKey}`;
+  if (from && !entryTabs.has(to)) entryTabs.set(to, from);
+}
 /** The request remembers the history entry it was made on: navigation can update the card and
  *  the history key in separate renders, so it is taken only once both have moved on. */
 let requested: { tab: DetailTab; historyKey: string; cardKey: string } | null = null;
