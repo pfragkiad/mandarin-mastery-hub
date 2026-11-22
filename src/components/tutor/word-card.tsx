@@ -57,6 +57,9 @@ function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typ
   const chars = Array.from(word.hanzi);
   const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: phrase ? 'phrase' : 'word', word: word.id }, audio: word.audio ?? null };
   const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
+  // One-character word: nothing to pair, so the lone glyph is the hint target; its popup
+  // shows this word (unlinked, the open card) plus the Character/Component/Radical rows.
+  if (!phrase && chars.length === 1) return hints?.enabled && isHanziChar(word.hanzi) ? <HintChar glyph={word.hanzi} word={own}/> : <>{word.hanzi}</>;
   if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
   return <>{chars.map((ch, i) => isHanziChar(ch)
     ? <HintChar key={i} glyph={ch} word={phrase ? contexts?.[i] ?? null : own} {...pairing.glyphProps(i)}/>
@@ -83,9 +86,9 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   // Multi-character words pair the same way; single glyphs have nothing to pair.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
   const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
-  // Multi-character headings (and every phrase) become hint targets; one-character words
-  // are the record itself, so a popup there would only repeat the card.
-  const headwordHints = vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1;
+  // Every heading is a hint target: multi-character headings per character, one-character
+  // words as a whole, so 八 reaches its Character/Component/Radical cards in one tap.
+  const headwordHints = true;
   // One hints provider for the whole card: the heading and "In a sentence" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
     <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : detailRadical !== undefined ? { pill: <span className="word-hsk-id" title="Sourced Kangxi radical identity of this character">Radical #{detailRadical}</span> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
