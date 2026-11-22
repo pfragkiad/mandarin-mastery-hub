@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "f1b5d30f7ae7ab52448d54cf5509d452662067411e8d7038912a839a09805481",
+    "created_date": "2026-11-22"
+  },
+  "batch": "089",
+  "translations": {
+    "shuowen:8801": {
+      "text": "The creature called 𧑐蟥, which sounds with its wings. Formed from 虫, with 并 indicating the sound.",
+      "sourceTextSha256": "74de478e7fafd5227a6f40f7c4607ac321c57c7cc37bdc0e423cdc1a85d2313e",
+      "uncertain": false
+    },
+    "shuowen:8802": {
+      "text": "The creature called 𧑐蟥. Formed from 虫, with 矞 indicating the sound.",
+      "sourceTextSha256": "67452b678d2ed2bcd7a61870825e108f21773777eaf54df55f010fe93c8a20da",
+      "uncertain": false
+    },
+    "shuowen:8803": {
+      "text": "The creature called 𧑐蟥. Formed from 虫, with 黃 indicating the sound.",
+      "sourceTextSha256": "38320c5170e4af4a7482ddeb9f68165de83000b519a32981dba0e8feed2eb950",
+      "uncertain": false
+    },
+    "shuowen:8804": {
+      "text": "蛄䗐 is the creature called 强芈. Formed from 虫, with 施 indicating the sound.",
+      "sourceTextSha256": "e554101d937986caba63802fb0e0d57eeb8f274b280906dc428a9a86709d16e6",
+      "uncertain": true
+    },
+    "shuowen:8805": {
+      "text": "蛅斯 is the creature called 墨. Formed from 虫, with 占 indicating the sound.",
+      "sourceTextSha256": "1283b73780fe7f23cf8d43b66b8a8b17a1d85e4599023d4527d7d9a8852fd771",
+      "uncertain": true
+    },
+    "shuowen:8806": {
+      "text": "The creature called 縊女. Formed from 虫, with 見 indicating the sound.",
+      "sourceTextSha256": "b8262572f2abc6cd1d87b4148925fcebe6537ba04e9b78a3d062b3de42641780",
+      "uncertain": true
+    },
+    "shuowen:8807": {
+      "text": "The creature called 盧蜰. Formed from 虫, with 肥 indicating the sound.",
+      "sourceTextSha256": "e2e957914bbf7deef2604c8a5ef931b529f94fc3370c0964c497eb0e97ada3ed",
+      "uncertain": false
+    },
+    "shuowen:8808": {
+      "text": "The creature called 渠䖼. Alternatively, 天社. Formed from 虫, with 却 indicating the sound.",
+      "sourceTextSha256": "0261e6658bf7913c57aa10b685cab2a6b727a668efbc9da1c1fc7af76233d39f",
+      "uncertain": true
+    },
+    "shuowen:8809": {
+      "text": "𧒘蠃, also called 蒲盧, is a slender-waisted earth wasp. By the nature of heaven and earth, slender-waisted creatures are entirely male and have no young. The Odes says: 'The 螟𧕅 has young; the 𧒘蠃 carries them.' Formed from 虫, with 𩰬 indicating the sound.",
+      "sourceTextSha256": "fe6bd9920df7e1bf1eb7655d333bb6e951bed35dfebb260fb7af23eeceb229f0",
+      "uncertain": false
+    },
+    "shuowen:8810": {
+      "text": "The creature called 蜾蠃. Formed from 虫, with 𣎆 indicating the sound. Alternatively, 虒蝓.",
+      "sourceTextSha256": "e614ea6f89e3d9ce53a59edd3e93f05de281f5d380fa5e5c8b10722508e64369",
+      "uncertain": true
+    },
+    "shuowen:8811": {
+      "text": "螟𧕅, a creature of mulberry trees. Formed from 虫, with 霝 indicating the sound.",
+      "sourceTextSha256": "7c387c3ac29f77f5528e032e1a54854e49b0e0ca8dd11606ccdbba9a1d2763d5",
+      "uncertain": false
+    },
+    "shuowen:8812": {
+      "text": "The creature called 蛺蜨. Formed from 虫, with 夾 indicating the sound.",
+      "sourceTextSha256": "8d9e976b8c193bb479276802781044e8ec05ee972a82a3cc0a3a8c6f3323e00f",
+      "uncertain": false
+    },
+    "shuowen:8813": {
+      "text": "The creature called 蛺蜨. Formed from 虫, with 疌 indicating the sound.",
+      "sourceTextSha256": "1c19830621a5edace97831bf959c0bc6fba4d96daa5441606bb20884fb53b3ce",
+      "uncertain": false
+    },
+    "shuowen:8814": {
+      "text": "A creature. Formed from 虫, with 之 indicating the sound.",
+      "sourceTextSha256": "00ceabf20db25a560506d7058f9e80e773ed10fd5f5df65364d0eb64fed8c8bc",
+      "uncertain": false
+    },
+    "shuowen:8815": {
+      "text": "螌蝥, a poisonous creature. Formed from 虫, with 般 indicating the sound.",
+      "sourceTextSha256": "bfb1a6e2a306cfc6ab97573f2c458c3ae06cfcd9c01d11a2374a6b3d46d18d67",
+      "uncertain": false
+    },
+    "shuowen:8816": {
+      "text": "The creature called 螌蝥. Formed from 虫, with 敄 indicating the sound.",
+      "sourceTextSha256": "38264dae7ee50d4160401501510a1f237c062768dfe31b6a48c7b210fbf7b57c",
+      "uncertain": false
+    },
+    "shuowen:8817": {
+      "text": "The creature called 鼠婦. Formed from 虫, with 番 indicating the sound.",
+      "sourceTextSha256": "036352deb029cd02da8246ea6e6421382949966af189211896ec168da769343e",
+      "uncertain": false
+    },
+    "shuowen:8818": {
+      "text": "蛜威 is 委黍; 委黍 is 鼠婦. Formed from 虫, with abbreviated 伊 indicating the sound.",
+      "sourceTextSha256": "6efef6866e4b7f2f469fc491bd1f574b605b7d6d541453958a17c93bbd705a8a",
+      "uncertain": false
+    },
+    "shuowen:8819": {
+      "text": "蜙蝑, a creature that sounds with its thighs. Formed from 虫, with 松 indicating the sound.",
+      "sourceTextSha256": "a20b3fe5d04ca965a3a4ff9a9e4db48a26ee7bcab24eeddf2617b08f2c76ebc3",
+      "uncertain": false
+    },
+    "shuowen:8820": {
+      "text": "The creature called 蜙蝑. Formed from 虫, with 胥 indicating the sound.",
+      "sourceTextSha256": "8982eccebdd53bcdef7ca671ec1de9925488f0ab13bbf22d93a827594479eaaf",
+      "uncertain": false
+    },
+    "shuowen:8821": {
+      "text": "A creature. Formed from 虫, with 庶 indicating the sound.",
+      "sourceTextSha256": "873c388e3029bc0b759227f201e5fb430136a07b00ced2b596565d5914c24d4f",
+      "uncertain": false
+    },
+    "shuowen:8822": {
+      "text": "A locust, 螽. Formed from 虫, with 皇 indicating the sound.",
+      "sourceTextSha256": "3bcc27d9d57ac4d2d636830f47ced9dc43c895508f20e5dca173216cdb7409be",
+      "uncertain": false
+    },
+    "shuowen:8823": {
+      "text": "A cicada. Formed from 虫, with 周 indicating the sound. The Odes says: 'In the fifth month the cicadas call.'",
+      "sourceTextSha256": "5cdbd84b1b102a0350f22741482d082ebd3416e33b461f54fbabc3dd23234685",
+      "uncertain": false
+    },
+    "shuowen:8824": {
+      "text": "A creature that sounds with its sides. Formed from 虫, with 單 indicating the sound.",
+      "sourceTextSha256": "bc66c9cb152a8fed4c04a6e7c1c9f39adde9fa2dcf5fa5607dd44204e9bcd69d",
+      "uncertain": false
+    },
+    "shuowen:8825": {
+      "text": "The cold-season cicada. Formed from 虫, with 兒 indicating the sound.",
+      "sourceTextSha256": "9ca86c1369265f494a7211de030ce98b3702324506b654effadb28125985a435",
+      "uncertain": false
+    },
+    "shuowen:8826": {
+      "text": "螇鹿 is the creature called 蛁蟟. Formed from 虫, with 奚 indicating the sound.",
+      "sourceTextSha256": "1bfc75599dbffc3c85109c5086164ba383ab6ddc79adeeccf800d2b50ab9d6f4",
+      "uncertain": false
+    },
+    "shuowen:8827": {
+      "text": "𧉅蚗 is the creature called 蛁蟟. Formed from 虫, with 夬 indicating the sound.",
+      "sourceTextSha256": "29c72664811b57c819d5781795cf20abf987c86bc2f8433102a346a9b2ce7926",
+      "uncertain": false
+    },
+    "shuowen:8828": {
+      "text": "𧉅蚗, a kind of cicada. Read like 赧, the Zhou Son of Heaven's name. Formed from 虫, with 丏 indicating the sound.",
+      "sourceTextSha256": "44f71891ff9d8e99fadc28dc517ce4a8aacc71a229594595485203424034844f",
+      "uncertain": false
+    },
+    "shuowen:8829": {
+      "text": "The creature called 蜻蛚. Formed from 虫, with 列 indicating the sound.",
+      "sourceTextSha256": "c7b620d22fe6ec7b833ac0b0a0cfc3dd866bece72c01077e66ca8b113a8e1510",
+      "uncertain": false
+    },
+    "shuowen:8830": {
+      "text": "The creature called 蜻蛚. Formed from 虫, with 青 indicating the sound.",
+      "sourceTextSha256": "5a43dcc3f78c098fc95736bf076cd5e89072858dc29208330d043a2e8f7089dd",
+      "uncertain": false
+    },
+    "shuowen:8831": {
+      "text": "The creature called 蜻蛉, also named 桑桹. Formed from 虫, with 令 indicating the sound.",
+      "sourceTextSha256": "2525d9cd76438e65f38e4bccaef0547f74c7a2ae18303eedbbdaa2e514bd78c2",
+      "uncertain": false
+    },
+    "shuowen:8832": {
+      "text": "The creature called 蠛蠓. Formed from 虫, with 蒙 indicating the sound.",
+      "sourceTextSha256": "ee0f2dbe68d6f5328ef7dcec9113dd9cac1d3ab653833f24b431deeaf7705bba",
+      "uncertain": false
+    },
+    "shuowen:8833": {
+      "text": "The creature called 螶𧎾; alternatively, 蜉游, born in the morning and dead by evening. Formed from 虫, with 𡭴 indicating the sound.",
+      "sourceTextSha256": "f7db3da4c48b3f86da43e7f1c5158c22f6ba82e0e57562a54ecd19d07c109c91",
+      "uncertain": false
+    },
+    "shuowen:8834": {
+      "text": "In Qin and Jin it is called 蜹; in Chu, 蚊. Formed from 虫, with 芮 indicating the sound.",
+      "sourceTextSha256": "31f8dd9ea6a4e1db024536ee6ece45fbfbf237abb48ea8b6b97c65dce38071a6",
+      "uncertain": false
+    },
+    "shuowen:8835": {
+      "text": "蟰蛸, a long-thighed creature. Formed from 虫, with 肅 indicating the sound.",
+      "sourceTextSha256": "c96e16e82d91586fa4c78486a4d3a87422d21d30f2407fc8f2dfd4067aa1b0aa",
+      "uncertain": false
+    },
+    "shuowen:8836": {
+      "text": "A creature. Formed from 虫, with 省 indicating the sound.",
+      "sourceTextSha256": "7a22b5cd7d4558f4674e84fa4822cae30e085c2cb30286413a5af9fb3158cb8b",
+      "uncertain": false
+    },
+    "shuowen:8837": {
+      "text": "The creature called 商何. Formed from 虫, with 寽 indicating the sound.",
+      "sourceTextSha256": "b040c0dc67c870ec15eb2f37a8647d082efa1fdc4ea33aeeb33ca81e75f5b35b",
+      "uncertain": true
+    },
+    "shuowen:8838": {
+      "text": "Fly larvae. The Rites of Zhou says: 'The 蜡 official oversees removal of exposed corpses.' Formed from 虫, with 昔 indicating the sound.",
+      "sourceTextSha256": "3bf32f49de3919be600324a8f133dd131573965ba15a52e2e75648a4d0e15615",
+      "uncertain": false
+    },
+    "shuowen:8839": {
+      "text": "To move or wriggle. Formed from 虫, with 耎 indicating the sound.",
+      "sourceTextSha256": "f25cf176fbfe1a6289f647ccae54753c8f09c6da23fd671d7834fecf4967d1cc",
+      "uncertain": false
+    },
+    "shuowen:8840": {
+      "text": "To move. Formed from 虫, with 支 indicating the sound.",
+      "sourceTextSha256": "f2eaf1e916d93d53706c0d6b26dfb5fb3ed28ec86ffac079e4c3715fd8930dd3",
+      "uncertain": false
+    },
+    "shuowen:8841": {
+      "text": "A creature moving. Formed from 虫, with 瞏 indicating the sound.",
+      "sourceTextSha256": "2ce23550cd513db0727e4fc2d4eb941be31390c03f723dc51a0136ba284f3e8f",
+      "uncertain": false
+    },
+    "shuowen:8842": {
+      "text": "A creature crawling along. Formed from 虫, with 屮 indicating the sound. Read like 騁.",
+      "sourceTextSha256": "7fc42b5056efae7a564477daf8302ec37da57ad1eb066ad3c40052ef398a4fe2",
+      "uncertain": false
+    },
+    "shuowen:8843": {
+      "text": "Locust-like creatures 螸: they let their bellies hang down. Formed from 虫, with 欲 indicating the sound.",
+      "sourceTextSha256": "4254ebbc57c8349b353013126001752d8551025ad17badb30a000a0ee6082ccf",
+      "uncertain": false
+    },
+    "shuowen:8844": {
+      "text": "Fly-like creatures 𧎥: they shake their wings. Formed from 虫, with 扇 indicating the sound.",
+      "sourceTextSha256": "4ed4fcb8c66b8a826346b64c48efde7ae973887ab317b6c6ac4b2ea78a93bbe2",
+      "uncertain": false
+    },
+    "shuowen:8845": {
+      "text": "The skin shed by snakes and cicadas. Formed from 虫 and abbreviated 捝.",
+      "sourceTextSha256": "86ac346d9ac650cfd79e5cc9d24ebdc0359806ee5e486d3715f5e27c165d71b9",
+      "uncertain": false
+    },
+    "shuowen:8846": {
+      "text": "To sting. Formed from 虫, with abbreviated 若 indicating the sound.",
+      "sourceTextSha256": "8b70fc856e52e869fe40fde5e71ad84ea20578afde6739b1829d1de80bc0353b",
+      "uncertain": false
+    },
+    "shuowen:8847": {
+      "text": "A creature delivering poison. Formed from 虫, with 赦 indicating the sound.",
+      "sourceTextSha256": "66b3f666ca7898642a159825017d962a69bc434fd3e4dafba386a841922a3331",
+      "uncertain": false
+    },
+    "shuowen:8848": {
+      "text": "The creature called 镻; its identity is unclear. Formed from 虫, with 亞 indicating the sound.",
+      "sourceTextSha256": "1dd69da9dd8f400a1a24e29c0d7d7f6a9ea99fe409fefb280daa31c4f97c9aa6",
+      "uncertain": true
+    },
+    "shuowen:8849": {
+      "text": "To itch and scratch. Formed from 虫, with 羊 indicating the sound.",
+      "sourceTextSha256": "4d271e136efc844600b390d47c2b9ff677ebd5e35804f4bebc94d352d830b4ee",
+      "uncertain": false
+    },
+    "shuowen:8850": {
+      "text": "A festering wound. Formed from 虫, 人, and 食; 食 also indicates the sound.",
+      "sourceTextSha256": "fde4890d7b3fe9d491963ccc8ed5e1f48a8c01cfa20b763f8bbec51e226c8892",
+      "uncertain": false
+    },
+    "shuowen:8851": {
+      "text": "A kind of dragon. When a pond's fish reach three thousand six hundred, a 蛟 comes to be their chief and can lead them in flight. Place a fish-trap in the water, and the 蛟 leaves. Formed from 虫, with 交 indicating the sound.",
+      "sourceTextSha256": "ce5f7f81e7f7aad0835b4a28ba1b7a96e9f9615100b4b7486d829d7c02dd3766",
+      "uncertain": false
+    },
+    "shuowen:8852": {
+      "text": "Like a dragon, but yellow; in the north called 地螻. Formed from 虫, with 离 indicating the sound. Some say a hornless dragon is called 螭.",
+      "sourceTextSha256": "e4169138396391d7e7f5f1f1df848a99edee9d1c2ce361964594208e3287d9d6",
+      "uncertain": false
+    },
+    "shuowen:8853": {
+      "text": "A horned young dragon. Formed from 虫, with 丩 indicating the sound.",
+      "sourceTextSha256": "4ac76085f04b0f506328144071b953393e62ef757806b21e1259e2f05f558659",
+      "uncertain": false
+    },
+    "shuowen:8854": {
+      "text": "A kind of snake, black, hiding in divine depths, able to raise wind and rain. Formed from 虫, with 侖 indicating the sound. Read like 戾 in 戾艸.",
+      "sourceTextSha256": "9c3c7621932ac1292925c53c8c50a3522df58887c0ff6b6a34513bc284bd21cc",
+      "uncertain": false
+    },
+    "shuowen:8855": {
+      "text": "A sea creature, one cun long and white, edible. Formed from 虫, with 兼 indicating the sound. Read like 嗛.",
+      "sourceTextSha256": "06f64394fe022a16ad2f9da31bea74a2ee6b130b6dfe8b2bb04601a26d068183",
+      "uncertain": false
+    },
+    "shuowen:8856": {
+      "text": "A pheasant enters the sea and transforms into a 蜃. Formed from 虫, with 辰 indicating the sound.",
+      "sourceTextSha256": "bc1294819d49c2233f580a81b013c6dcecf190785e276686e4bc2ceedfac5b13",
+      "uncertain": false
+    },
+    "shuowen:8857": {
+      "text": "A kind of 蜃; there are three, all born in the sea. At a thousand years it transforms into 𧊧, called 牡厲 in Qin. Another account says it is a swallow transformed at a hundred years. 魁𧊧, also named 復累, is transformed from an old bat. Formed from 虫, with 合 indicating the sound.",
+      "sourceTextSha256": "b3b86a53431b33fbf338ec35ff7753d17ccb6db742956a43e11b6827ff1d0357",
+      "uncertain": true
+    },
+    "shuowen:8858": {
+      "text": "A shellfish called 階. The elongated one is 螷; the round one is 蠇. Formed from 虫 and 庳.",
+      "sourceTextSha256": "83a223ac414153373f700fc7b19ae13ca2493484ab6263762da130f38942a989",
+      "uncertain": true
+    },
+    "shuowen:8859": {
+      "text": "The creature called 蝸蠃. Formed from 虫, with 咼 indicating the sound.",
+      "sourceTextSha256": "836ca9b42eda3ce038332631886c8e13a3962f6bad5f7307bb49c1d8661b2cc1",
+      "uncertain": false
+    },
+    "shuowen:8860": {
+      "text": "A kind of 蜃 shellfish. Formed from 虫, with 𡴀 indicating the sound.",
+      "sourceTextSha256": "8ec14e437a77c594876ebc3e70d30121883366a09daac820d875314ceabe9f0c",
+      "uncertain": false
+    },
+    "shuowen:8861": {
+      "text": "A kind of 蚌 shellfish, resembling 螊 but slightly larger, found in the sea and eaten by people today. Formed from 虫, with 萬 indicating the sound. Read like 賴.",
+      "sourceTextSha256": "78f0f746240e48ee8873929a1918c3ff37d372e65255c4e812e7dde94876ce4c",
+      "uncertain": false
+    },
+    "shuowen:8862": {
+      "text": "The creature called 虒蝓. Formed from 虫, with 俞 indicating the sound.",
+      "sourceTextSha256": "e3bed8ac51e0d8c25c39a1ba2c1ab5ee0a386f170e2721b8e30ea7a0d118fcc3",
+      "uncertain": false
+    },
+    "shuowen:8863": {
+      "text": "The condition expressed by 蜎, apparently curled or wriggling. Formed from 虫, with 肙 indicating the sound.",
+      "sourceTextSha256": "3504fa93b9689a83360f1009b2865c244a209b5f1e94486144b112f29831e318",
+      "uncertain": true
+    },
+    "shuowen:8864": {
+      "text": "The condition expressed by 夗蟺, apparently coiled or winding. Formed from 虫, with 亶 indicating the sound.",
+      "sourceTextSha256": "fb09695116ef622aa50220638a1b8fbf4178624e3eb9ae5b5976cd9fdc912042",
+      "uncertain": true
+    },
+    "shuowen:8865": {
+      "text": "The winding condition expressed by 𧍘蟉. Formed from 虫, with 幽 indicating the sound.",
+      "sourceTextSha256": "1221a4f0eadfd7dcd8bee111ae40022f750c68a02abe205595fd9f8b0c995484",
+      "uncertain": true
+    },
+    "shuowen:8866": {
+      "text": "The winding condition expressed by 𧍘蟉. Formed from 虫, with 翏 indicating the sound.",
+      "sourceTextSha256": "7106772ec6b0206c61cb7414155adff69e1d50f9d13e3ab6f29e8bc63cde720d",
+      "uncertain": true
+    },
+    "shuowen:8867": {
+      "text": "To hide away. Formed from 虫, with 執 indicating the sound.",
+      "sourceTextSha256": "c8a9d7b947f53311ae7ad1035363866146d6dbb87cfdb64d329657f736e31f3b",
+      "uncertain": false
+    },
+    "shuowen:8868": {
+      "text": "青蚨, an aquatic creature able to bring money back. Formed from 虫, with 夫 indicating the sound.",
+      "sourceTextSha256": "798a4537ea3baf7768e9db6c44fa7ec380d8f4b9cb46be527b83bc9c310f5120",
+      "uncertain": false
+    },
+    "shuowen:8869": {
+      "text": "䗇鼀, also called 詹諸, a creature that calls with its throat. Formed from 虫, with 匊 indicating the sound.",
+      "sourceTextSha256": "094a9ab1fb62debc605d6dd972b2ced41dc87ab18655d4a2833d0a0ce94b46f2",
+      "uncertain": false
+    },
+    "shuowen:8870": {
+      "text": "The creature called 蝦蟆. Formed from 虫, with 叚 indicating the sound.",
+      "sourceTextSha256": "990435b3058a108255dfa0ae78f75bfba76ee09eded493a37e79f4a9410896b3",
+      "uncertain": false
+    },
+    "shuowen:8871": {
+      "text": "The creature called 蝦蟆. Formed from 虫, with 莫 indicating the sound.",
+      "sourceTextSha256": "71e49db7a1d954f58ec0eb977992723a98365fe4f2b297eb8c8910bb6374e5a6",
+      "uncertain": false
+    },
+    "shuowen:8872": {
+      "text": "A great turtle that sounds with its stomach. Formed from 虫, with 巂 indicating the sound.",
+      "sourceTextSha256": "10252b537470d7efebde22cecca6be8c0548111ca1b6c70e750b76e83ece7022",
+      "uncertain": false
+    },
+    "shuowen:8873": {
+      "text": "The creature called 螹離. Formed from 虫, with abbreviated 漸 indicating the sound.",
+      "sourceTextSha256": "142b621f854f61ed3653547df1555da3547b247d553ade98772c29ea19ac2b6f",
+      "uncertain": false
+    },
+    "shuowen:8874": {
+      "text": "It has two claws and eight legs, moves sideways, and has no shelter except holes of snakes and 鮮 creatures. Formed from 虫, with 解 indicating the sound.",
+      "sourceTextSha256": "95601c4d773503b80fac022122e8a08f229b13bc7c71a98957bd18472797591d",
+      "uncertain": true
+    },
+    "shuowen:8875": {
+      "text": "A crab. Formed from 虫, with 危 indicating the sound.",
+      "sourceTextSha256": "f0896b4a5be57f86f9114a73d78d75d63816988c6812204302c29f56b0972025",
+      "uncertain": false
+    },
+    "shuowen:8876": {
+      "text": "The short fox: like a soft-shelled turtle, with three legs, shooting its breath to harm people. Formed from 虫, with 或 indicating the sound.",
+      "sourceTextSha256": "f64e83fa205d6cc1994292f453829ccbdd4123c4d3d357d5984fd7acfc5b3ebc",
+      "uncertain": false
+    },
+    "shuowen:8877": {
+      "text": "Like a lizard, one zhang long, submerged in water; after swallowing a person it floats. Found in 日南. Formed from 虫, with 屰 indicating the sound.",
+      "sourceTextSha256": "3ebd4eaac5ba353cf50eb3f582037a96a4fdf69ad5d2e1c21bf4932c21a21197",
+      "uncertain": false
+    },
+    "shuowen:8878": {
+      "text": "蛧蜽, spirits of mountains and rivers. The king of Huainan says: 蛧蜽 resemble three-year-old children, red-black, with red eyes, long ears, and beautiful hair. Formed from 虫, with 网 indicating the sound. The Discourses of the States says: 'The strange beings of wood and stone are 夔 and 蛧蜽.'",
+      "sourceTextSha256": "e4d7a6fc0fa70f0dc10ba147a281065746ec3ffc440b4b2c1ea2551394b5bb83",
+      "uncertain": false
+    },
+    "shuowen:8879": {
+      "text": "The spirit called 蛧蜽. Formed from 虫, with 兩 indicating the sound.",
+      "sourceTextSha256": "2fa8d1856cf29030a75ecda157bde0d21ea8f6ea331129aa84829e86b19a72ab",
+      "uncertain": false
+    },
+    "shuowen:8880": {
+      "text": "Skilled at climbing; a kind of 禺 ape. Formed from 虫, with 爰 indicating the sound.",
+      "sourceTextSha256": "93c294d1cbff88018c0d06c12a9dbb33ae507cd32d352695b57c247bc75f4a5a",
+      "uncertain": false
+    },
+    "shuowen:8881": {
+      "text": "A kind of 禺 ape. Formed from 虫, with 翟 indicating the sound.",
+      "sourceTextSha256": "5008038ef8c8780e6ddfde64740791d99b04616e95a2754fed22b5df47603a4e",
+      "uncertain": false
+    },
+    "shuowen:8882": {
+      "text": "Like a monkey, with an upturned nose and a long tail. Formed from 虫, with 隹 indicating the sound.",
+      "sourceTextSha256": "3196278cf0411f6ac847e2c8a338130233f49d90d057179da529719e2e2d388c",
+      "uncertain": false
+    },
+    "shuowen:8883": {
+      "text": "The northern 肓蚼 dog, which eats people. Formed from 虫, with 句 indicating the sound.",
+      "sourceTextSha256": "d2dddd74fe0ce4f6fbb4b5634b6134de8df20581001509abeb8013f09926b06d",
+      "uncertain": true
+    },
+    "shuowen:8884": {
+      "text": "蛩蛩, a beast. Alternatively, in Qin a cicada's shed skin is called 蛩. Formed from 虫, with 巩 indicating the sound.",
+      "sourceTextSha256": "9c8850ab12a7f4ac775535d8a1e450f14656c6b3e018dc2075bc49eec7f515ee",
+      "uncertain": false
+    },
+    "shuowen:8885": {
+      "text": "A mouse. Alternatively, in the west there is a beast with short forelegs, accompanying the 蛩蛩 and 巨虛, named 蟨. Formed from 虫, with 厥 indicating the sound.",
+      "sourceTextSha256": "1213a35df7c7e0e121678470718a49f8c8364a3cc12d3efb016ac9268bb89547",
+      "uncertain": false
+    },
+    "shuowen:8886": {
+      "text": "A bat, 蝙蝠. Formed from 虫, with 扁 indicating the sound.",
+      "sourceTextSha256": "e08a0e383d1a5f1836808f1d66b8029e9bcd836a023fde1957094e7d5d902ad7",
+      "uncertain": false
+    },
+    "shuowen:8887": {
+      "text": "A bat, 蝙蝠, also called 服翼. Formed from 虫, with 畐 indicating the sound.",
+      "sourceTextSha256": "2e8efa5bfa3b9a62637cf8999ed9200c35a551cb02bd6a89925d38f9025b20ab",
+      "uncertain": false
+    },
+    "shuowen:8888": {
+      "text": "The southern Man, described as of snake stock. Formed from 虫, with 䜌 indicating the sound.",
+      "sourceTextSha256": "81f8d4fdb8384204642572a88e6e78cd34c53c21cd01b32538210fd72da00077",
+      "uncertain": false
+    },
+    "shuowen:8889": {
+      "text": "The southeastern Yue, described as of snake stock. Formed from 虫, with 門 indicating the sound.",
+      "sourceTextSha256": "e160a4a9132c3ee8dbd775f1e6e3e907b640f4695d831199d85831f67907d81b",
+      "uncertain": false
+    },
+    "shuowen:8890": {
+      "text": "A rainbow, 螮蝀, shaped like a creature. Formed from 虫, with 工 indicating the sound. The Bright Hall's Monthly Ordinances says: 'The rainbow first appears.'",
+      "sourceTextSha256": "43be58ae5a98cd98b3cfaf5a5999c1fd429b07bf5c89d4897077d6801890f787",
+      "uncertain": false
+    },
+    "shuowen:8891": {
+      "text": "螮蝀 means rainbow. Formed from 虫, with 帶 indicating the sound.",
+      "sourceTextSha256": "6d42b81930bf29ea2abefab371c1fa895353dd213395c74b04a6c75b431ea1c1",
+      "uncertain": false
+    },
+    "shuowen:8892": {
+      "text": "The rainbow called 螮蝀. Formed from 虫, with 東 indicating the sound.",
+      "sourceTextSha256": "dc2ffd17975eebe17f3bd0b7ada39d69fcc1671e2931c045fe7723d2bc75f946",
+      "uncertain": false
+    },
+    "shuowen:8893": {
+      "text": "Portents in clothing, songs, grass, and trees are called 䄏; portents in birds, beasts, insects, and locusts are called 蠥. Formed from 虫, with 辥 indicating the sound.",
+      "sourceTextSha256": "76e4866784c434f84e178bfae5660ca55ff6ee7c87c5a2172e15dab9e4627780",
+      "uncertain": false
+    },
+    "shuowen:8894": {
+      "text": "Southern Yi people. Formed from 虫, with 延 indicating the sound.",
+      "sourceTextSha256": "b3f8ef12abcfd510e08d2e62d1028b714609fe31ee3ef2d25e3fcba39e97c4df",
+      "uncertain": false
+    },
+    "shuowen:8895": {
+      "text": "蟪蛄, a cicada. Formed from 虫, with 惠 indicating the sound.",
+      "sourceTextSha256": "bd9bdd65b7a649483eafa679686318246154b1e079233ee8e9aea2645502284a",
+      "uncertain": false
+    },
+    "shuowen:8896": {
+      "text": "蠛蠓, a tiny creature. Formed from 虫, with 蔑 indicating the sound.",
+      "sourceTextSha256": "12fd1663f800478c33a5f740592ec2726da8e78e79db360f672dfbdd07675fa2",
+      "uncertain": false
+    },
+    "shuowen:8897": {
+      "text": "虴蜢, a creature on grass. Formed from 虫, with 乇 indicating the sound.",
+      "sourceTextSha256": "2d70ff4c6a9ff5557bba50235a690c0186d66616404c8d3275614fb8b3adb476",
+      "uncertain": false
+    },
+    "shuowen:8898": {
+      "text": "The creature called 虴蜢. Formed from 虫, with 孟 indicating the sound.",
+      "sourceTextSha256": "04f8071d665ac079604082b72df628e40680cd24648eb317d62344b50f21e9e2",
+      "uncertain": false
+    },
+    "shuowen:8899": {
+      "text": "The creature called 蟋𧍓. Formed from 虫, with 悉 indicating the sound.",
+      "sourceTextSha256": "57e5377e490de90aac3acec4134804675ccc2fe418c177a65ecc24f213dec823",
+      "uncertain": false
+    },
+    "shuowen:8900": {
+      "text": "The creature called 螳蜋. Formed from 虫, with 堂 indicating the sound.",
+      "sourceTextSha256": "8c3a659822619688af5bc60b1c0f73c3125c62066bba117528d2f1ad098c5cb8",
+      "uncertain": false
+    }
+  }
+}

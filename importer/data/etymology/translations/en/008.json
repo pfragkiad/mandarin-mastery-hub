@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "566a399d3b09f0267a4e00815e596d9f231ca2109cd72f5e6417d472f8cd494e",
+    "created_date": "2026-11-22"
+  },
+  "batch": "008",
+  "translations": {
+    "shuowen:701": {
+      "text": "The sun is about to darken. Formed from 日 amid 茻.",
+      "sourceTextSha256": "d6b9ef83c6fa7a308484d7974e67d1a98f463b4ba1bcebd04a8354bd398e12cc",
+      "uncertain": false
+    },
+    "shuowen:702": {
+      "text": "In Nanchang, a dog adept at chasing rabbits in grass is called 莽. Formed from 犬 and 茻; 茻 also indicates the sound.",
+      "sourceTextSha256": "e621cd7b5a929d626815ccf1900e84e5f78906629c40704f3378dcc12aaaff98",
+      "uncertain": false
+    },
+    "shuowen:703": {
+      "text": "To conceal. Formed from 死 amid 茻; the 一 within is what provides bedding. The Changes says: “In ancient burials, they wrapped the dead thickly in firewood.”",
+      "sourceTextSha256": "14054f9f09540266a1a02ee8e569ff95fd85f7a40b7f94b4935c294506c3f607",
+      "uncertain": false
+    },
+    "shuowen:704": {
+      "text": "The minuteness of things. Formed from 八, with 丨 appearing and dividing it. All characters in the 小 category are formed from 小.",
+      "sourceTextSha256": "e84b77d18a797aaab330e3aae8e3e6a49cbe324d9a5215e98b4187c2fcad874b",
+      "uncertain": true
+    },
+    "shuowen:705": {
+      "text": "Not many. Formed from 小, with 丿 indicating the sound.",
+      "sourceTextSha256": "07bf2a3acb7a05ffb89887a10080011e724379b49a6dea703d03368d3d95bb8e",
+      "uncertain": false
+    },
+    "shuowen:706": {
+      "text": "Few. Formed from 小, with 乀 indicating the sound. Pronounced like 輟.",
+      "sourceTextSha256": "b474423293db7e5554d9f2711e1de884d6e041d72bc5160daae12729b729767e",
+      "uncertain": false
+    },
+    "shuowen:707": {
+      "text": "To separate. It depicts separation, with the parts facing away from each other. All characters in the 八 category are formed from 八.",
+      "sourceTextSha256": "48dee0a53489534d99fc1d9e68517f01204c129012b78850c61a1bb31b3c286b",
+      "uncertain": false
+    },
+    "shuowen:708": {
+      "text": "To separate. Formed from 八 and 刀: a knife separates things.",
+      "sourceTextSha256": "88ff2f0caf8b4e714343e2ea43fe72ef240770ff18219f32b58b216e95ce56e6",
+      "uncertain": false
+    },
+    "shuowen:709": {
+      "text": "A particle expressing certainty. Formed from 入, | and 八; 八 depicts the dispersal of vapor.",
+      "sourceTextSha256": "cdbba9ae630a91fc95a79aa8a259c900909f093f9cafb8dce1e95fa19282a489",
+      "uncertain": false
+    },
+    "shuowen:710": {
+      "text": "A particle drawing out speech. Formed from 八 and 曰, with 𡆧 indicating the sound.",
+      "sourceTextSha256": "44bf6efdc9d1aac9c5f1a6fd6f4197dcf08e1d6e35c5855cd222edf6d20ccb62",
+      "uncertain": false
+    },
+    "shuowen:711": {
+      "text": "To add further; nearly or hopefully. Formed from 八, with 向 indicating the sound.",
+      "sourceTextSha256": "7c7c16d44140ed5523eb1ec56dea9924ea267b0438fcb2c68aa29a82efcae305",
+      "uncertain": false
+    },
+    "shuowen:712": {
+      "text": "To follow one's intention. Formed from 八, with 豕 indicating the sound.",
+      "sourceTextSha256": "966b9a7a32fff6366eca7e9bcfd171ae6ee8fc433dee7c4f6b7c1cf4187e6183",
+      "uncertain": false
+    },
+    "shuowen:713": {
+      "text": "Much speech. Formed from 言, 八 and 厃.",
+      "sourceTextSha256": "d322bd2248aacc658b8cf9930bc46635e3487a30a050a382eafd3f0712535649",
+      "uncertain": false
+    },
+    "shuowen:714": {
+      "text": "A dividing line. Formed from 八 and 人. Each person has a boundary.",
+      "sourceTextSha256": "eefa6522232a472c89f26e79b4bfe392d686894ffcebad99470d9face078d8e4",
+      "uncertain": false
+    },
+    "shuowen:715": {
+      "text": "To divide. Formed from repeated 八. 八 means to separate and also indicates the sound. The Explanation of the Classic of Filial Piety says: “Thus superior and inferior have their distinctions.”",
+      "sourceTextSha256": "0d3ecf060bf38a355534170f875f729602dc056d44ee4132e22dbdb2fe5c3090",
+      "uncertain": false
+    },
+    "shuowen:716": {
+      "text": "To divide equally. Formed from 八 and 厶 (pronounced 司). 八 suggests turning one's back. Han Fei said: “Turning one's back on 厶, private interest, makes 公, public fairness.”",
+      "sourceTextSha256": "d30e2952a967761e5af9cc609dc38292f725c58b8d45fad9ef364548811272d2",
+      "uncertain": false
+    },
+    "shuowen:717": {
+      "text": "To divide to the utmost. Formed from 八 and 弋; 弋 also indicates the sound.",
+      "sourceTextSha256": "8be701cf2c215e1a36330ef160a2e4e3940173b244e399b73d734c2869ce0e53",
+      "uncertain": true
+    },
+    "shuowen:718": {
+      "text": "An extended utterance. Formed from 八, with abbreviated 舍 indicating the sound.",
+      "sourceTextSha256": "b3fc41a4ce8f3f250f0dbfacb910f0005f038c57d0d8de50ddb735f8db261b7f",
+      "uncertain": false
+    },
+    "shuowen:719": {
+      "text": "To distinguish. It depicts the separated toes and claws of a beast. All characters in the 釆 category are formed from 釆. Pronounced like 辨.",
+      "sourceTextSha256": "8274297b9ac520d4b622d95408d36da971d610bf2f1b205f533ce99456ca410e",
+      "uncertain": false
+    },
+    "shuowen:720": {
+      "text": "A beast's foot is called 番. Formed from 釆; 田 depicts its sole.",
+      "sourceTextSha256": "8af2f29451ef6012bc834318f84ebdd1104cd153f006e80bc5b42c72606c3b45",
+      "uncertain": false
+    },
+    "shuowen:721": {
+      "text": "To know fully; to understand with careful discernment. Formed from 宀 and 釆. Xu Kai says: “宀 means to cover; 釆, to distinguish. Encompassing something and distinguishing it deeply: 宷 means fully.”",
+      "sourceTextSha256": "0dd2270002f1b6cc79cb003fa340ff633ed438cf080a48d79cddfd7d04e9cecb",
+      "uncertain": false
+    },
+    "shuowen:722": {
+      "text": "Thorough and exhaustive. Formed from 心 and 釆.",
+      "sourceTextSha256": "6d70a37dd8faf2d1b81e2584919f5972fcc07fd3a76516ad37a700dcaa0e8fff",
+      "uncertain": false
+    },
+    "shuowen:723": {
+      "text": "To untie or explain. Formed from 釆, taking its sense of distinguishing things, with 睪 indicating the sound.",
+      "sourceTextSha256": "e492735bdb02e717d9475d40159488ad72d2f77c6ae5ba7247f5047c702f9da1",
+      "uncertain": false
+    },
+    "shuowen:724": {
+      "text": "To divide a thing through the middle. Formed from 八 and 牛: cattle are large things that can be divided. All characters in the 半 category are formed from 半.",
+      "sourceTextSha256": "4ba9ba4ae7ed99a4f85c69bcbd872882eaec49ffd5923726da49881f2fa43628",
+      "uncertain": false
+    },
+    "shuowen:725": {
+      "text": "Meat from half a body. Another explanation: broad flesh. Formed from 半 and 肉; 半 also indicates the sound.",
+      "sourceTextSha256": "869497f2f3cc0242a429e5b14ce2238e21cce728ed09f75cac92b3c8d77b6d53",
+      "uncertain": false
+    },
+    "shuowen:726": {
+      "text": "To split in half. Formed from 半, with 反 indicating the sound.",
+      "sourceTextSha256": "356213f47da214d0af7dab7e0c72b9137f6500f879089ed45e9149950387f832",
+      "uncertain": false
+    },
+    "shuowen:727": {
+      "text": "A large sacrificial animal. 牛 suggests 件; 件 means the ordering of affairs. It depicts horns, head, three parts, a raised back and tail. All characters in the 牛 category are formed from 牛. [The pictographic wording is uncertain.]",
+      "sourceTextSha256": "efd7615d46039a4cc19fc601b2c60a3a784d6842242ae94fe260dd46da4e13bc",
+      "uncertain": true
+    },
+    "shuowen:728": {
+      "text": "The male parent among livestock. Formed from 牛, with 土 indicating the sound.",
+      "sourceTextSha256": "a35c1e07d3cf0560416465d3a6a410a132665d294b057d96bc6a6e9d18d387c3",
+      "uncertain": false
+    },
+    "shuowen:729": {
+      "text": "A bull. Formed from 牛, with 岡 indicating the sound.",
+      "sourceTextSha256": "9ec3a70470aab1db55966a588527746ddedebd8276e968159ea36e11aaea8f94",
+      "uncertain": false
+    },
+    "shuowen:730": {
+      "text": "朴特, the male parent of cattle. Formed from 牛, with 寺 indicating the sound.",
+      "sourceTextSha256": "aa96aaf0e35ec38c1105751b869e73911d247ba72ab2b84c0cd5704804d87a26",
+      "uncertain": false
+    },
+    "shuowen:731": {
+      "text": "The female parent among livestock. Formed from 牛, with 匕 indicating the sound. The Changes says: “Rearing a cow is auspicious.”",
+      "sourceTextSha256": "1b96fb2116b1548996469fa4b7ed39fcdce888da37e2db143463a1360e123385",
+      "uncertain": false
+    },
+    "shuowen:732": {
+      "text": "A calf. Formed from 牛, with abbreviated 瀆 indicating the sound.",
+      "sourceTextSha256": "5fba0c16b011f044670f63b54694d2120d355783100d62f40c728c0e3c882928",
+      "uncertain": false
+    },
+    "shuowen:733": {
+      "text": "A two-year-old ox. Formed from 牛, with 巿 indicating the sound.",
+      "sourceTextSha256": "ce80b8f583ad7f7b93a9afb9c2c780800c455633cd0fcb083605e9037aa12170",
+      "uncertain": false
+    },
+    "shuowen:734": {
+      "text": "A three-year-old ox. Formed from 牛, with 參 indicating the sound.",
+      "sourceTextSha256": "feac765ff0c46a374d6143d9d6c652f129d1050dbaf7c1a03ab01d8fd1fcdd77",
+      "uncertain": false
+    },
+    "shuowen:735": {
+      "text": "A four-year-old ox. Formed from 牛 and 四; 四 also indicates the sound.",
+      "sourceTextSha256": "e2367f821e417ace526e30200250a772f13307957d1d544101f28f3b44f9aac6",
+      "uncertain": false
+    },
+    "shuowen:736": {
+      "text": "A castrated ox. Formed from 牛, with 害 indicating the sound.",
+      "sourceTextSha256": "3318cf7e7189772a32e0aa6e4d8766b94240c0289f39ddd3602d050d857d6de3",
+      "uncertain": false
+    },
+    "shuowen:737": {
+      "text": "An ox with mingled white and black hair. Formed from 牛, with 尨 indicating the sound.",
+      "sourceTextSha256": "a5d07d5e4187b58ddb1f9252e6922b204854aa0ee101fe0fcaeb63b8079e3b5c",
+      "uncertain": false
+    },
+    "shuowen:738": {
+      "text": "A mottled ox, 牻牛. Formed from 牛, with 京 indicating the sound. The Spring and Autumn commentary says: “牻㹁.”",
+      "sourceTextSha256": "24034f3ae791e0f413777b68d5ae9d183c30c92b31de3d44243e41d9ba68f447",
+      "uncertain": false
+    },
+    "shuowen:739": {
+      "text": "An ox with a white backbone. Formed from 牛, with 厲 indicating the sound.",
+      "sourceTextSha256": "a3c384bd114b32b603fdc7e0be445e3971625f947152bf98d7f42b9f0b11820d",
+      "uncertain": false
+    },
+    "shuowen:740": {
+      "text": "A yellow ox with tiger markings. Formed from 牛, with 余 indicating the sound. Pronounced like 塗.",
+      "sourceTextSha256": "a26fcd2525d50a0316050347795533dcd1132444d2b27659ea9f9a6e9244ca46",
+      "uncertain": false
+    },
+    "shuowen:741": {
+      "text": "A mottled ox. Formed from 牛, with abbreviated 勞 indicating the sound.",
+      "sourceTextSha256": "0ef0e54e08ddf4ddc049cdab0ad25da3fcc641e5678f2df2aedc64be968ea87a",
+      "uncertain": false
+    },
+    "shuowen:742": {
+      "text": "An ox with a white backbone. Formed from 牛, with 寽 indicating the sound.",
+      "sourceTextSha256": "8b944a99176fc82462933a65d014577d3e1b349a8b1b153d708aa02e3f52d864",
+      "uncertain": false
+    },
+    "shuowen:743": {
+      "text": "An ox with star-like patches. Formed from 牛, with 平 indicating the sound.",
+      "sourceTextSha256": "ac3d9fed47076b399b440ebb5fec421db4d39a390ec8416394bd3f64142f4254",
+      "uncertain": false
+    },
+    "shuowen:744": {
+      "text": "An ox of yellowish-white color. Formed from 牛, with 麃 indicating the sound.",
+      "sourceTextSha256": "99076efc8ad5f053d5ea039f8038326bca396ddf992e8e091f51d0cbc65c930d",
+      "uncertain": false
+    },
+    "shuowen:745": {
+      "text": "A yellow ox with black lips. Formed from 牛, with 𦎫 indicating the sound. The Odes says: “Ninety are his black-lipped oxen.”",
+      "sourceTextSha256": "8e010de086f0068bd5a6bd11fda83006cd941dcedb6083d31fe363cd42a8d6c1",
+      "uncertain": false
+    },
+    "shuowen:746": {
+      "text": "A white ox. Formed from 牛, with 隺 indicating the sound.",
+      "sourceTextSha256": "fb790f87f606e0f3ca3cc163dd1ab9463f9073eb5a266de152895f96976ad2d2",
+      "uncertain": false
+    },
+    "shuowen:747": {
+      "text": "An ox with a long backbone. Formed from 牛, with 畺 indicating the sound.",
+      "sourceTextSha256": "5cd8e1443d06e05764ec58b764233e56aefc9585c1d7b217ed1579187e26bd02",
+      "uncertain": false
+    },
+    "shuowen:748": {
+      "text": "An ox walking slowly. Formed from 牛, with 𠬢 indicating the sound. Pronounced like 滔.",
+      "sourceTextSha256": "21e37d3f22f2b35a88070d9a064f3137fd6dbdb98e92a23c5546c61c8c5211ba",
+      "uncertain": false
+    },
+    "shuowen:749": {
+      "text": "The sound of an ox breathing. Formed from 牛, with 雔 indicating the sound. Another explanation: the name of an ox.",
+      "sourceTextSha256": "5bd6ba5d7e322420d1afeced3c9a6c92fcd316c6ab4969b66955a15a885a6cc1",
+      "uncertain": false
+    },
+    "shuowen:750": {
+      "text": "The lowing of cattle. Formed from 牛, depicting its vocal breath issuing from its mouth.",
+      "sourceTextSha256": "2b005f38f447beb505ef6dc8e00f44572f64a2489c7ac1a2f62a1a095871557d",
+      "uncertain": false
+    },
+    "shuowen:751": {
+      "text": "Livestock of unblemished, uniform appearance. Formed from 牛, with 産 indicating the sound.",
+      "sourceTextSha256": "fdd6fcaac28d603aa51a2437ad6abb7dfe01c2b1b862c98d1f709e101f19bda6",
+      "uncertain": true
+    },
+    "shuowen:752": {
+      "text": "An ox complete and unblemished. Formed from 牛, with 生 indicating the sound.",
+      "sourceTextSha256": "83909b9f093a793ff060099843fed70bd38ce5c7d4e515fc9785fb95aa86597c",
+      "uncertain": false
+    },
+    "shuowen:753": {
+      "text": "An ox of uniform color. Formed from 牛, with 全 indicating the sound.",
+      "sourceTextSha256": "c310868c1bd799c2e2f6803b12a700ccc847cbb6060494f896cba8b2ff319651",
+      "uncertain": false
+    },
+    "shuowen:754": {
+      "text": "To lead forward. Formed from 牛, depicting the cord leading an ox. 玄 indicates the sound.",
+      "sourceTextSha256": "0bcdec2d04732d0ff814f12b40ae007bf411722571fef468b65f1cc4a186b9db",
+      "uncertain": false
+    },
+    "shuowen:755": {
+      "text": "A cattle-and-horse pen. Formed from 牛, with 告 indicating the sound. The Book of Zhou says: “Now pen the cattle and horses.”",
+      "sourceTextSha256": "aa5dd5870913ffd33e4e8abd40256c4063d947574785a2ee5ebd04eae40fb8bc",
+      "uncertain": false
+    },
+    "shuowen:756": {
+      "text": "An enclosure for rearing cattle and horses. Formed from 牛 and abbreviated 冬, taking its sense of surrounding on all four sides.",
+      "sourceTextSha256": "3a7498aefdf80ed625e0ca0699a5af9d155c0fdebdc6499119d4c71f0bbd1fa6",
+      "uncertain": false
+    },
+    "shuowen:757": {
+      "text": "To rear cattle on fodder stalks. Formed from 牛 and 芻; 芻 also indicates the sound. The Spring and Autumn Discourses of the States says: “How many fodder-fed and grain-fed animals？”",
+      "sourceTextSha256": "cd0ee49bd0c07e68fb1abab418da8d8680072068f519ee1d0b87989f54d5d482",
+      "uncertain": false
+    },
+    "shuowen:758": {
+      "text": "An ox gentle and tractable. Formed from 牛, with 夒 indicating the sound.",
+      "sourceTextSha256": "fb5ecf806f93b6b2e0e1ef8a2bface71b13762c84767ce75226ce8f0d5e42215",
+      "uncertain": false
+    },
+    "shuowen:759": {
+      "text": "The Changes says: “Yoke cattle and ride horses.” Formed from 牛, with 𤰈 indicating the sound.",
+      "sourceTextSha256": "126c9a0b012692b8b231b5ed66d306e4846739d0554a88d3c3f76e6492a4a677",
+      "uncertain": false
+    },
+    "shuowen:760": {
+      "text": "To plow. Formed from 牛, with 黎 indicating the sound.",
+      "sourceTextSha256": "275c18640b2c17691eed0b14de96ecb47eaa9d6f8e18d5dbba317be56cdd7a0e",
+      "uncertain": false
+    },
+    "shuowen:761": {
+      "text": "To plow both sides. Formed from 牛, with 非 indicating the sound. Another explanation: to plow over again and sow. Pronounced like 匪.",
+      "sourceTextSha256": "0ac681660a204969a4158f2cce08901717bcd7ae95a3a633947f6a9c6b7b0b67",
+      "uncertain": true
+    },
+    "shuowen:762": {
+      "text": "Cattle or sheep without offspring. Formed from 牛, with 𠷎 indicating the sound. Pronounced like 糗 in 糗糧, dry provisions.",
+      "sourceTextSha256": "f64c56d9800735b4b8709420a3fd03badf7e7248dc39b4cd67093abaeb6c389c",
+      "uncertain": false
+    },
+    "shuowen:763": {
+      "text": "To butt. Formed from 牛, with 氐 indicating the sound.",
+      "sourceTextSha256": "50bb9fdf65cd669a560e4cf51ca0c480afb2cd8968a0207fa3a6c6c8600141f1",
+      "uncertain": false
+    },
+    "shuowen:764": {
+      "text": "An ox kicking and butting, 踶𤜂. Formed from 牛, with 衞 indicating the sound.",
+      "sourceTextSha256": "1980c3e483272ff89f128f57c3e3fa7665672aa0aec877a1bc51bbbb759b3db0",
+      "uncertain": false
+    },
+    "shuowen:765": {
+      "text": "An obstinate ox that refuses to be led. Formed from 牛 and 臤; 臤 also indicates the sound. Another explanation: a large appearance. Pronounced like 賢.",
+      "sourceTextSha256": "36d0033f5bb2f1d5f7e7d38fc0282f2229ff265d759645a191aeb71d05c5e8ef",
+      "uncertain": false
+    },
+    "shuowen:766": {
+      "text": "The bone below an ox's knee. Formed from 牛, with 巠 indicating the sound. The Spring and Autumn commentary says: “Sima Keng of Song had the courtesy name Niu.”",
+      "sourceTextSha256": "186737072dd21420bb0b72a5b774b8eb911149975ad2f475b8053d2fcba0cd54",
+      "uncertain": false
+    },
+    "shuowen:767": {
+      "text": "A disease of an ox's tongue. Formed from 牛, with 今 indicating the sound.",
+      "sourceTextSha256": "e06d197025c469e41b5d5ef69649f895a7650d8e200b6da0a416b1e29101a15b",
+      "uncertain": false
+    },
+    "shuowen:768": {
+      "text": "A bovine beyond the southern frontier, resembling a pig, with one horn on its nose and one on its crown. Formed from 牛, with 㞑 indicating the sound.",
+      "sourceTextSha256": "8062e3b838eadd2f8702b12eab50ec5b0bab45a4febfa68bb2029c6f3d78aa8b",
+      "uncertain": false
+    },
+    "shuowen:769": {
+      "text": "牣 means full. Formed from 牛, with 刃 indicating the sound. The Odes says: “Ah, full of leaping fish!”",
+      "sourceTextSha256": "3c6553ac9ba6b43433ce56682c605b46187f040d1124420cbd99c04993be32a6",
+      "uncertain": false
+    },
+    "shuowen:770": {
+      "text": "The myriad things. Cattle are great things; the reckoning of heaven and earth begins at the Ox-Leader asterism, hence formed from 牛. 勿 indicates the sound.",
+      "sourceTextSha256": "2806b558f83e867fa982153df5ec6880e2164cb7e34d290495d1c091f639858e",
+      "uncertain": false
+    },
+    "shuowen:771": {
+      "text": "A sacrificial animal for the ancestral temple. Formed from 牛, with 羲 indicating the sound. Palace Attendant Jia explains: this is not an ancient character.",
+      "sourceTextSha256": "227ed480fef94a47b1ed712dbe4d7e744b682939fa5819371788c78afa6c8f7d",
+      "uncertain": false
+    },
+    "shuowen:772": {
+      "text": "A castrated ox. Formed from 牛, with 建 indicating the sound. Also the name of a commandery.",
+      "sourceTextSha256": "e522d1ac503bda7eec15dff9f4ad9df31e40e910b92b06a1232e103c2079429e",
+      "uncertain": false
+    },
+    "shuowen:773": {
+      "text": "An ox without horns. Formed from 牛, with 童 indicating the sound. Ancient usage also writes 僮.",
+      "sourceTextSha256": "5926ee36c39b201a36eb8f59c3551db5b5deacd4d075f2caea2a71eec0e6871b",
+      "uncertain": false
+    },
+    "shuowen:774": {
+      "text": "The long-haired ox of the southwestern Yi peoples. Formed from 牛, with 𠩺 indicating the sound. All characters in the 犛 category are formed from 犛.",
+      "sourceTextSha256": "f7455550d0d74415b1ba04105ff2fe227e90ed5eaa129b9af1f8c73b35f97f61",
+      "uncertain": false
+    },
+    "shuowen:775": {
+      "text": "A yak's tail. Formed from abbreviated 犛 and 毛.",
+      "sourceTextSha256": "e4d47d92c1246d9848be187c334c76c0f7e4984644ee52b1b883344c8e02029b",
+      "uncertain": false
+    },
+    "shuowen:776": {
+      "text": "Stiff, curled hair usable as padding to raise clothing. Formed from abbreviated 犛, with 來 indicating the sound.",
+      "sourceTextSha256": "75ce8805a09416a102e66ea98e56a80e2c5a295cae29fab1f66761936c4afdd1",
+      "uncertain": true
+    },
+    "shuowen:777": {
+      "text": "When an ox butts people, a crosspiece is attached to its horns to warn them. Formed from 口 and 牛. The Changes says: “The young ox's horn restraint.” All characters in the 告 category are formed from 告.",
+      "sourceTextSha256": "a7c8a85dcba15825d51644f47133daf527f21f82a6b9693dcb16294477ea325f",
+      "uncertain": false
+    },
+    "shuowen:778": {
+      "text": "An especially urgent announcement. Formed from 告, with abbreviated 學 indicating the sound.",
+      "sourceTextSha256": "a5569fd2058bbb3450d52cdc3cb615754cce19263ba189a1910bd57843b7adeb",
+      "uncertain": false
+    },
+    "shuowen:779": {
+      "text": "That by which people speak and eat. A pictograph. All characters in the 口 category are formed from 口.",
+      "sourceTextSha256": "000e224a1b688e495db86e7cb57aeaebbea5f31c47e12a287799620dd556f53b",
+      "uncertain": false
+    },
+    "shuowen:780": {
+      "text": "To roar. Formed from 口, with 敫 indicating the sound. Another explanation: 噭 means to call out.",
+      "sourceTextSha256": "e27e530ea507bd857307b3d99cd3f1e854d2126023cd121189f97df611ad4eec",
+      "uncertain": false
+    },
+    "shuowen:781": {
+      "text": "A beak. Formed from 口, with 蜀 indicating the sound.",
+      "sourceTextSha256": "90a34aad18ea199d84251d4d8ea0ed5652999cd2d799ab896ab98ccb501371ec",
+      "uncertain": false
+    },
+    "shuowen:782": {
+      "text": "A mouth. Formed from 口, with 彖 indicating the sound.",
+      "sourceTextSha256": "77b07d0996b5bc9ac7dfe18cdb3a34ded11212deb4550575ea30cc985ed42d07",
+      "uncertain": false
+    },
+    "shuowen:783": {
+      "text": "The edge of the mouth. Formed from 口, with 勿 indicating the sound.",
+      "sourceTextSha256": "1532c51820909f2a3b85e603cad00af02aa72c47c8a51f080e2b4feaa0a4a4d8",
+      "uncertain": false
+    },
+    "shuowen:784": {
+      "text": "The throat. Formed from 口, with 龍 indicating the sound.",
+      "sourceTextSha256": "4b349f10d035ba029c76fc7bb02a66f768275f60e0e838130d1a16ada203373f",
+      "uncertain": false
+    },
+    "shuowen:785": {
+      "text": "The throat, 咽. Formed from 口, with 侯 indicating the sound.",
+      "sourceTextSha256": "6d2c8042037b4c2cd422e5c8479d0db416cf450dc6cb923554fec1245d9d1ca5",
+      "uncertain": false
+    },
+    "shuowen:786": {
+      "text": "The throat, 咽. Formed from 口, with 會 indicating the sound. Pronounced like 快. Another explanation: 嚵 means 噲. [The final gloss is uncertain.]",
+      "sourceTextSha256": "66c82704c05d320169eb9c8baa350f3bc5f8e2349318d14a77ee7308ac2bf27b",
+      "uncertain": true
+    },
+    "shuowen:787": {
+      "text": "To swallow. Formed from 口, with 天 indicating the sound.",
+      "sourceTextSha256": "eff1449815362d56cbd3f7b7193b4411b95ab6e917c80e752a4be82d3ef2ab91",
+      "uncertain": false
+    },
+    "shuowen:788": {
+      "text": "The throat, 嗌. Formed from 口, with 因 indicating the sound.",
+      "sourceTextSha256": "58c4e42b5da1299647c18fcaba52aae21fec3c18806f80699ab0af2d728cf5bd",
+      "uncertain": false
+    },
+    "shuowen:789": {
+      "text": "The throat, 咽. Formed from 口, with 益 indicating the sound.",
+      "sourceTextSha256": "57d9120ad5a2b6662f0c3f77f5e308ace00d589d407f6570074cc1580ccf6d53",
+      "uncertain": false
+    },
+    "shuowen:790": {
+      "text": "A large mouth. Formed from 口, with 軍 indicating the sound.",
+      "sourceTextSha256": "dc98d82d399269f3d5bbdc98bea46fdeb2ea8620a06f1f693b0c67dbd8bbb9ba",
+      "uncertain": false
+    },
+    "shuowen:791": {
+      "text": "To open the mouth. Formed from 口, with 多 indicating the sound.",
+      "sourceTextSha256": "f8341fb1f4f9580f769f65d607e60af0686a4181dadfb023aec5d94b4ed31f81",
+      "uncertain": false
+    },
+    "shuowen:792": {
+      "text": "The sound of an infant crying. Formed from 口, with 瓜 indicating the sound. The Odes says: “Hou Ji cried.”",
+      "sourceTextSha256": "24a693860309528b5d7f197967740f95d029113ef6a30d980cdfce2d9bac72a8",
+      "uncertain": false
+    },
+    "shuowen:793": {
+      "text": "An infant's sound. Formed from 口, with 秋 indicating the sound.",
+      "sourceTextSha256": "c09b83498e7443b806fb8e0f5f109457288ef73c4ea5fe33205349bb0733c63b",
+      "uncertain": false
+    },
+    "shuowen:794": {
+      "text": "An infant's sound. Formed from 口, with 皇 indicating the sound. The Odes says: “Its crying was loud.”",
+      "sourceTextSha256": "3015fc4d1bfef2940b0b50fddbd78aea584e47e660ed7e6af853537316b23bc2",
+      "uncertain": false
+    },
+    "shuowen:795": {
+      "text": "In Chaoxian, an infant's unceasing crying is called 咺. Formed from 口, with abbreviated 宣 indicating the sound.",
+      "sourceTextSha256": "0e76ebe89058435450f880e49703acfa6ad8300fedeb04a68a4a8329531a345a",
+      "uncertain": false
+    },
+    "shuowen:796": {
+      "text": "In Qin and Jin, an infant's unceasing crying is called 唴. Formed from 口, with 羌 indicating the sound.",
+      "sourceTextSha256": "4a77769dbb63449c421bb96095d6ee206dd0c89dde525bd9ec95e4cc26e7fbf2",
+      "uncertain": false
+    },
+    "shuowen:797": {
+      "text": "In Chu, an infant's unceasing crying is called 噭咷. Formed from 口, with 兆 indicating the sound.",
+      "sourceTextSha256": "6c09edcdcdf4018268589451c0345ac37701bbb337853bee4302270692f873fa",
+      "uncertain": false
+    },
+    "shuowen:798": {
+      "text": "In Song and Qi, an infant's unceasing crying is called 喑. Formed from 口, with 音 indicating the sound.",
+      "sourceTextSha256": "e3e8ded585a418aaeafd6d408e524cd0d5eecbcee82f74c32ad9b1880f1d3a87",
+      "uncertain": false
+    },
+    "shuowen:799": {
+      "text": "An infant showing understanding. Formed from 口, with 疑 indicating the sound. The Odes says: “Able to be discerning and understanding.”",
+      "sourceTextSha256": "179426607735eae6472bb498cf47892917a4d388b6ae66e6221a588486ad6a58",
+      "uncertain": false
+    },
+    "shuowen:800": {
+      "text": "An infant laughing. Formed from 口, with 亥 indicating the sound.",
+      "sourceTextSha256": "2e1fe268dded13d2a42ba096eaf8e03b8401bd74dea38eec0a174dd6b1c3b138",
+      "uncertain": false
+    }
+  }
+}

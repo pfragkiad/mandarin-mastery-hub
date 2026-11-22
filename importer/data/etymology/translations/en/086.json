@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "59a5c0e83d7149b555ed41e82972367fee1ce0ea631d15826ede9b26ff40e144",
+    "created_date": "2026-11-22"
+  },
+  "batch": "086",
+  "translations": {
+    "shuowen:8501": {
+      "text": "When silk becomes worn, it is 紿, frayed or slack. Formed from 糸, with 台 indicating the sound.",
+      "sourceTextSha256": "88a95998c6c0aa8b0d7780d40377979142537684a90d2092245214193e6aaf63",
+      "uncertain": true
+    },
+    "shuowen:8502": {
+      "text": "Silk damp and clinging. Formed from 糸, with 内 indicating the sound.",
+      "sourceTextSha256": "3c43988968827f7421c4611a2cdb6307eed50d2eba29cf90060d066f29c3cf72",
+      "uncertain": true
+    },
+    "shuowen:8503": {
+      "text": "To work silk into a net, apparently. Formed from 糸, with 方 indicating the sound.",
+      "sourceTextSha256": "a745ac74c6d0dad60ac9091417b3211d74e9c3e8015f53d07f0530356b03ff97",
+      "uncertain": true
+    },
+    "shuowen:8504": {
+      "text": "To sever silk threads. Formed from 糸, 刀, and 卩.",
+      "sourceTextSha256": "f77da4e59ba63fe1c746c9930ee7190772407aab1aa85cb662eef1157348c349",
+      "uncertain": false
+    },
+    "shuowen:8505": {
+      "text": "To continue. Formed from 糸 and 㡭. Alternatively, reversed 𢇍 makes 繼.",
+      "sourceTextSha256": "7e2a06f2861bd030d235eb0cb0ff4d325f0e6d33ab3aca716f5491d18c10f873",
+      "uncertain": false
+    },
+    "shuowen:8506": {
+      "text": "To connect. Formed from 糸, with 賣 indicating the sound.",
+      "sourceTextSha256": "b29019b0b8bc5c18171d0a37d14d36765c65910ad4a4333a96c4a4ee48750be7",
+      "uncertain": false
+    },
+    "shuowen:8507": {
+      "text": "To continue. Formed from 糸, with 贊 indicating the sound.",
+      "sourceTextSha256": "93c02618432246519d9adcb668f44e72029566ef1d72a51f3faea2f802b3418b",
+      "uncertain": false
+    },
+    "shuowen:8508": {
+      "text": "To continue. Formed from 糸, with 召 indicating the sound. Alternatively, 紹 means tightly twisted.",
+      "sourceTextSha256": "9445e83aa954061be4a2e6e0f278a419b0740abb6eafa035323b3b610ae50595",
+      "uncertain": false
+    },
+    "shuowen:8509": {
+      "text": "Slack on one side. Formed from 糸, with 羨 indicating the sound.",
+      "sourceTextSha256": "8f842f35bf4558325b81a32ef88f4da8ce1144e3d24ca1c5213a845e3f3fc606",
+      "uncertain": false
+    },
+    "shuowen:8510": {
+      "text": "Loose. Formed from 糸, with 盈 indicating the sound. Pronounced the same as 聽.",
+      "sourceTextSha256": "6357e8a1874daf624573293b8a8cd88ee4bfec5ec37e5ea04f0cb0639ce46b3c",
+      "uncertain": false
+    },
+    "shuowen:8511": {
+      "text": "Loose. Alternatively, to release. Formed from 糸, with 從 indicating the sound.",
+      "sourceTextSha256": "75d93ac5a225de65ddd45d97ee0d1fc88449c3bdf16002985ef824d385cd47ca",
+      "uncertain": false
+    },
+    "shuowen:8512": {
+      "text": "Loose or relaxed. Formed from 糸, with 予 indicating the sound.",
+      "sourceTextSha256": "62950655b74f66fdcc31868c347a38792b82a6b5fe5dd298973ec8e5a4362839",
+      "uncertain": false
+    },
+    "shuowen:8513": {
+      "text": "Silk worn or tangled by working. Formed from 糸, with 然 indicating the sound.",
+      "sourceTextSha256": "ebfe0d7a6dddf68185d99ba02f62ee3794c38b2f686a54889f66fa65dc21f967",
+      "uncertain": true
+    },
+    "shuowen:8514": {
+      "text": "Bent. Formed from 糸, with 于 indicating the sound. Alternatively, coiled around.",
+      "sourceTextSha256": "0098a65f84c88ad1ab43576650aeed5120f640c9e2c4a00f26a0205e654cebbd",
+      "uncertain": false
+    },
+    "shuowen:8515": {
+      "text": "Straight. Formed from 糸, with 㚔 indicating the sound. Read like 陘.",
+      "sourceTextSha256": "8c16106191c2f5cb7d566470ea8728b9b23dfa53ec9b668673d4c46504c04abd",
+      "uncertain": false
+    },
+    "shuowen:8516": {
+      "text": "Fine. Formed from 糸, with 韱 indicating the sound.",
+      "sourceTextSha256": "bf697bf0e4b90e264cab9d352c1b8715d360d4e3305d0173e1b369b2f6f5655b",
+      "uncertain": false
+    },
+    "shuowen:8517": {
+      "text": "Minute or fine. Formed from 糸, with 囟 indicating the sound.",
+      "sourceTextSha256": "16d94781187e9061f4066060cc95c7f80b735f98e7f54564ccaf5f51ec94be1d",
+      "uncertain": false
+    },
+    "shuowen:8518": {
+      "text": "Silk for a yak-tail ornament. Formed from 糸, with 苗 indicating the sound. The Book of Zhou says: 'For the 緢 there is examination.'",
+      "sourceTextSha256": "a9ddf4e004cd9d07908b39d96baa8f9f8f104bd9cb295dedd8855871a80643d8",
+      "uncertain": true
+    },
+    "shuowen:8519": {
+      "text": "The unevenness expressed by 參縒. Formed from 糸, with 差 indicating the sound.",
+      "sourceTextSha256": "0c1f1e877c09e8b8fa85bcf47900a5cc66c71d78b0231f05a15a5e17baa372c2",
+      "uncertain": true
+    },
+    "shuowen:8520": {
+      "text": "A ceremonial cap, according to the recorded 冕 gloss. Formed from 糸, with 番 indicating the sound.",
+      "sourceTextSha256": "639ec522052be9a2cb304a31c4f06c16c7ab13947a560b1f96b8b23059c3c7b4",
+      "uncertain": true
+    },
+    "shuowen:8521": {
+      "text": "Disordered. Formed from 糸, with 宿 indicating the sound. Alternatively, to press or contract.",
+      "sourceTextSha256": "38688b630ca7b420b3914cb88dddcba994740f674e82854f9689c94f67c91b16",
+      "uncertain": false
+    },
+    "shuowen:8522": {
+      "text": "Disordered. Formed from 糸, with 文 indicating the sound. The Book of Shang says: 'Ordered and not confused.'",
+      "sourceTextSha256": "3736f1ba9eda816bac6ea176d2b6ccd4f8dada885b658018b73a195884b873ca",
+      "uncertain": false
+    },
+    "shuowen:8523": {
+      "text": "Successive grades of silk. Formed from 糸, with 及 indicating the sound.",
+      "sourceTextSha256": "1dc5de8775f8adefe4e48d7d0c6d53e47514b8f391f2e4453119ade5e6d42c15",
+      "uncertain": false
+    },
+    "shuowen:8524": {
+      "text": "To gather and bind. Formed from 糸, with 悤 indicating the sound.",
+      "sourceTextSha256": "9112bdb4058e26d351fc289beb5d94302f58cf5f6be2b780ef4b8be4f84c1ba4",
+      "uncertain": false
+    },
+    "shuowen:8525": {
+      "text": "To bind. Formed from 糸, with 具 indicating the sound.",
+      "sourceTextSha256": "3f4ca2ebecc78d6fab2d6bfe97413c73306f2a2ed59527ec016a98c862a8878e",
+      "uncertain": false
+    },
+    "shuowen:8526": {
+      "text": "To wrap and bind. Formed from 糸, with 勺 indicating the sound.",
+      "sourceTextSha256": "5cca62a523203e2d43b7609fa593e484731e97581f1fcbb82b7f027a1647a093",
+      "uncertain": false
+    },
+    "shuowen:8527": {
+      "text": "To wind around. Formed from 糸, with 𤋯 indicating the sound.",
+      "sourceTextSha256": "2d90519b935eea5e41a4a324941f72db3d2c96aa3215b5e619d4b554c9783b70",
+      "uncertain": false
+    },
+    "shuowen:8528": {
+      "text": "To coil around. Formed from 糸, with 廛 indicating the sound.",
+      "sourceTextSha256": "56a47465283aaa0501dd64ebd2498e0849f86c54a0a2605017ce5eb4d1e07d38",
+      "uncertain": false
+    },
+    "shuowen:8529": {
+      "text": "To wind around. Formed from 糸, with 堯 indicating the sound.",
+      "sourceTextSha256": "4ba7541f97029d2ab78914e49ee5dfb9a4b27feab8d1b12020129071ae69205c",
+      "uncertain": false
+    },
+    "shuowen:8530": {
+      "text": "To turn or twist. Formed from 糸, with 㐱 indicating the sound.",
+      "sourceTextSha256": "5d08b2fba4a409b5e5e1e5c24500bf621d5c376a82689d4a1321b9d41435b8c6",
+      "uncertain": false
+    },
+    "shuowen:8531": {
+      "text": "A snare or net. Formed from 糸, with 瞏 indicating the sound.",
+      "sourceTextSha256": "6e07dd64aa93041d7192f65e8d9eb3d33a7b1c3ca95c2a65abcd60b5a2693c0a",
+      "uncertain": true
+    },
+    "shuowen:8532": {
+      "text": "To intertwine. Formed from 糸, with 辡 indicating the sound.",
+      "sourceTextSha256": "24e8c1cdbc413a2ac3a81f7e6abb3ef45437642a4f701a5513ea1362ecad8ed8",
+      "uncertain": false
+    },
+    "shuowen:8533": {
+      "text": "To tie. Formed from 糸, with 吉 indicating the sound.",
+      "sourceTextSha256": "d135c41c88af340770fdd7a8ab2737adc6cdfe9877477779c029eb259b751aef",
+      "uncertain": false
+    },
+    "shuowen:8534": {
+      "text": "To knot. Formed from 糸, with 骨 indicating the sound.",
+      "sourceTextSha256": "e18b34f1b95b168cad67f6ae40afde6629a939f38651cbb48102facd538835b8",
+      "uncertain": false
+    },
+    "shuowen:8535": {
+      "text": "To tie so it does not come undone. Formed from 糸, with 帝 indicating the sound.",
+      "sourceTextSha256": "6fb452e27dd54b5e53b6a19e89a2affb0e6191b867bad85b60a7a29c26b5224a",
+      "uncertain": false
+    },
+    "shuowen:8536": {
+      "text": "To bind. Formed from 糸, with 尃 indicating the sound.",
+      "sourceTextSha256": "21f973bf1fb15535da7d8fd717eb04e45cbb5e3db2c96fabbb8ce9f2d6e36fa8",
+      "uncertain": false
+    },
+    "shuowen:8537": {
+      "text": "To bind. Formed from 糸, with 崩 indicating the sound. Mozi says: 'Yu was buried at Kuaiji in a paulownia coffin three cun thick, bound with kudzu.'",
+      "sourceTextSha256": "5758fcf6690b5e296db72ef38a25031bb5d00e4f91e3ca53bd9a2d80e795ec5c",
+      "uncertain": false
+    },
+    "shuowen:8538": {
+      "text": "Tight or urgent. Formed from 糸, with 求 indicating the sound. The Odes says: 'Neither competitive nor impatient.'",
+      "sourceTextSha256": "c3d308f339403f5ff5da2bf5177e363ec37df3a666821ce2fab29af995fb802b",
+      "uncertain": false
+    },
+    "shuowen:8539": {
+      "text": "To draw tight. Formed from 糸, with 冋 indicating the sound.",
+      "sourceTextSha256": "2e1d60b382295088706642cc5f3fea67115ba8eb91cb5a8be806d6a8fbc6b633",
+      "uncertain": false
+    },
+    "shuowen:8540": {
+      "text": "Loose silk threads. Formed from 糸, with 𠂢 indicating the sound.",
+      "sourceTextSha256": "11784c9fa24d463b30db4ab90181c206d8c45f3fd6f54b477b83804d1aff7a9b",
+      "uncertain": false
+    },
+    "shuowen:8541": {
+      "text": "Uneven. Formed from 糸, with 羸 indicating the sound.",
+      "sourceTextSha256": "65eff981c49a79f032805d1f5a29b49c148ca9c857ac3c3689d26a7b127a5daa",
+      "uncertain": false
+    },
+    "shuowen:8542": {
+      "text": "To provide enough for one another. Formed from 糸, with 合 indicating the sound.",
+      "sourceTextSha256": "3ed84de2072aea31001cfea265b84191316288f2e7b75ec98a3b8acbc227ea78",
+      "uncertain": false
+    },
+    "shuowen:8543": {
+      "text": "To stop. Formed from 糸, with 林 indicating the sound. Read like 郴.",
+      "sourceTextSha256": "8949706a3209281c2631eb7b48cf81004138948407b9b23a60a84c15d9a8ea23",
+      "uncertain": false
+    },
+    "shuowen:8544": {
+      "text": "To stop. Formed from 糸, with 畢 indicating the sound.",
+      "sourceTextSha256": "27850e968ec7219f679ef520a527a5f28aa515bf48b41f88353ca8a9b9edc3c2",
+      "uncertain": false
+    },
+    "shuowen:8545": {
+      "text": "Plain silk. Formed from 糸, with 丸 indicating the sound.",
+      "sourceTextSha256": "972c9c3447a9856d5f38dda3bb5e85a9a06ed56aaa2f21f28c0c3a5edd2c163f",
+      "uncertain": false
+    },
+    "shuowen:8546": {
+      "text": "To tighten or finish silk, as in 絿絲; the phrase is uncertain. Formed from 糸, with 冬 indicating the sound.",
+      "sourceTextSha256": "5a29fa812a4401addd56950f23032c8c8c9c6dca96cb5483658b2de0e88aeb4a",
+      "uncertain": true
+    },
+    "shuowen:8547": {
+      "text": "To join. Formed from 糸 and 集. Read like 捷.",
+      "sourceTextSha256": "e6f1d11b8c1f35f87640600e40ff74f27b92afa9b5a4f9339273e9ddb35a36df",
+      "uncertain": false
+    },
+    "shuowen:8548": {
+      "text": "Silk fabric. Formed from 糸, with 曾 indicating the sound.",
+      "sourceTextSha256": "70c080a5566a9a6ff783ce46b2975562b820549d2a90717aaa8dd6b4f378c41f",
+      "uncertain": false
+    },
+    "shuowen:8549": {
+      "text": "Silk fabric. Formed from 糸, with 胃 indicating the sound.",
+      "sourceTextSha256": "57d04e7e56e02b6bdd7b93c5b5cf94c24daf27356d3729f733a67e7a44a3648d",
+      "uncertain": false
+    },
+    "shuowen:8550": {
+      "text": "The thread count of patterned silk. The Han Statutes says: 'The silk-thread count of 綺 is called 絩; for cloth, 總; for sashes and braids, 首.' Formed from 糸, with 兆 indicating the sound.",
+      "sourceTextSha256": "4ec6bd1aba433eacfb71cd24b6bc286c2dad230af76c3a1013c9da14edf63b04",
+      "uncertain": false
+    },
+    "shuowen:8551": {
+      "text": "Patterned silk fabric. Formed from 糸, with 奇 indicating the sound.",
+      "sourceTextSha256": "003c957702c27eedf1c2a0c05d8f7b81202397872a765f2afde0dc3bbba3351a",
+      "uncertain": false
+    },
+    "shuowen:8552": {
+      "text": "Fine binding, as recorded in 細縛; the technical sense is uncertain. Formed from 糸, with 𣪊 indicating the sound.",
+      "sourceTextSha256": "3026dced028f3adc8099452a39cdfd2aca84cd37b36cedfeb3d51fda134459ef",
+      "uncertain": true
+    },
+    "shuowen:8553": {
+      "text": "A bright white color. Formed from 糸, with 專 indicating the sound.",
+      "sourceTextSha256": "5410a60372403c31d07f95b86c90d5c44e23e3efa693ac14c7bc45557a87d5d5",
+      "uncertain": false
+    },
+    "shuowen:8554": {
+      "text": "Silk fabric made with doubled threads. Formed from 糸, with 兼 indicating the sound.",
+      "sourceTextSha256": "52c48541d7ac1d4ff21961d8b67dd5b6cd42d8392fa4553875e8f6842b854ac9",
+      "uncertain": false
+    },
+    "shuowen:8555": {
+      "text": "Thick silk fabric. Formed from 糸, with 弟 indicating the sound.",
+      "sourceTextSha256": "c96184e522d71b3261d91c4ae9f9a457c64b93ce2cfd43a3fc3d65f2fc22b761",
+      "uncertain": false
+    },
+    "shuowen:8556": {
+      "text": "Scoured silk fabric. Formed from 糸, with 柬 indicating the sound.",
+      "sourceTextSha256": "fbd6042ef572c5c23582b836b0c9446db049d290646c3c8a3329b0fc53c9d60b",
+      "uncertain": false
+    },
+    "shuowen:8557": {
+      "text": "A bright color. Formed from 糸, with 高 indicating the sound.",
+      "sourceTextSha256": "c7fab4f03138d1fa6556bc30fc226313fc3991fa2b451143d9d3184dd252d770",
+      "uncertain": false
+    },
+    "shuowen:8558": {
+      "text": "Coarse thread ends. Formed from 糸, with 璽 indicating the sound.",
+      "sourceTextSha256": "c897655822683f229677a6cef56b43e5e52eba0ed3996267be861757c69d2fd5",
+      "uncertain": false
+    },
+    "shuowen:8559": {
+      "text": "Silk fabric made with thick threads. Formed from 糸, with 由 indicating the sound.",
+      "sourceTextSha256": "ede5b28d47e0e370a20ef92ec7c7848b9cad936abe900f509e063fdac451c5af",
+      "uncertain": false
+    },
+    "shuowen:8560": {
+      "text": "Pierced silk fabric, apparently. Alternatively, a small banner, a sign or token, with notches. Formed from 糸, with 𢼄 indicating the sound.",
+      "sourceTextSha256": "0f32a32ded15dcd770caff3431c8ec010ec1e2f9c5b02b86b7b2232d38bcb121",
+      "uncertain": true
+    },
+    "shuowen:8561": {
+      "text": "In eastern Qi, fine cloth and silk fabric is called 綾. Formed from 糸, with 夌 indicating the sound.",
+      "sourceTextSha256": "ff0e9fc13ed91bccd4083079af99e58914259fcb276845f5e3526c29d3d995f9",
+      "uncertain": false
+    },
+    "shuowen:8562": {
+      "text": "Silk fabric without a pattern. Formed from 糸, with 曼 indicating the sound. The Han Statutes says: 'Granted clothing has a plain outer layer and white lining.'",
+      "sourceTextSha256": "fa77f5983de8a444a312329ab1d9355ad7cef9225527a93c0ba7c9d75e109eb5",
+      "uncertain": false
+    },
+    "shuowen:8563": {
+      "text": "All five colors complete. Formed from 糸, with 肅 indicating the sound.",
+      "sourceTextSha256": "e1ead0ac4355399f0e7ca9454ddcb8690e1efcc435382960e402e9738e0950bc",
+      "uncertain": false
+    },
+    "shuowen:8564": {
+      "text": "The Odes says: 'Plain white serves to make the adornment.' Formed from 糸, with 旬 indicating the sound.",
+      "sourceTextSha256": "f9df6d860ac54559474eda808b114e46561a5f4a1837e1f3ec91916cc2eca2d1",
+      "uncertain": false
+    },
+    "shuowen:8565": {
+      "text": "Embroidery bringing together the five colors. The Book of Yu says: 'Mountains, dragons, and flowered creatures make the designs.' The Analects says: 'Painting comes after the plain ground.' Formed from 糸, with 會 indicating the sound.",
+      "sourceTextSha256": "ed987ab2afb85821f7cb5bffdab982c3db10c6bdc13ce40fff911de8c2009d3a",
+      "uncertain": false
+    },
+    "shuowen:8566": {
+      "text": "The appearance of white patterns. The Odes says: 'Patterned and variegated, they make this shell-patterned brocade.' Formed from 糸, with 妻 indicating the sound.",
+      "sourceTextSha256": "6929be6619ad0741cadd09c79e600ddac0791021a13a96587018a0347f2a1111",
+      "uncertain": false
+    },
+    "shuowen:8567": {
+      "text": "An embroidered pattern like gathered grains of fine rice. Formed from 糸 and 米; 米 also indicates the sound.",
+      "sourceTextSha256": "d804ebb50cd6d91123ee3492b19e47b6e4cb48a297120fa158b7c8a65b5241ad",
+      "uncertain": false
+    },
+    "shuowen:8568": {
+      "text": "Silk fabric resembling wheat stalks. Formed from 糸, with 肙 indicating the sound.",
+      "sourceTextSha256": "095de905901e987f85fd79ef7a5c9b7a1e54a055aff6b9305fecd66943b1186f",
+      "uncertain": true
+    },
+    "shuowen:8569": {
+      "text": "The blue-green and yellow color of silk. Formed from 糸, with 彔 indicating the sound.",
+      "sourceTextSha256": "d67071b5bd6ea535b67fe443f272c3d6ef8c25513ecb165ca86316e4fd8fa606",
+      "uncertain": false
+    },
+    "shuowen:8570": {
+      "text": "The blue-green and white color of silk. Formed from 糸, with 㶾 indicating the sound.",
+      "sourceTextSha256": "6542a0cf0162fe00f6dfbeef803ee488c57fc3832ed6d41f28bc63b32ac07bbe",
+      "uncertain": false
+    },
+    "shuowen:8571": {
+      "text": "Silk with blue-green warp and pale blue-green weft. Alternatively, dyeing from 育陽. Formed from 糸, with 育 indicating the sound.",
+      "sourceTextSha256": "9c8340c0fd2b14f2e3481ecf832c14b7c747811aec196a8c3fa1a0671505a4b9",
+      "uncertain": false
+    },
+    "shuowen:8572": {
+      "text": "Pure red. 丹朱 in the Book of Yu is like this. Formed from 糸, with 朱 indicating the sound.",
+      "sourceTextSha256": "937f0d4f417f09bd3353a9d430d11862ec1b8d0a9acd3fe0e051f9f1c14bf470",
+      "uncertain": false
+    },
+    "shuowen:8573": {
+      "text": "Pale crimson. Formed from 糸, with 熏 indicating the sound.",
+      "sourceTextSha256": "f453d52d45d329405fed4e886799cbada8b098356f7b6bab55602a0a0d21dc10",
+      "uncertain": false
+    },
+    "shuowen:8574": {
+      "text": "Crimson. Formed from 糸, with 出 indicating the sound.",
+      "sourceTextSha256": "e9847e013117ac26549328175e64a015d9ac0031dc28ee8fd678f6be76e2fefe",
+      "uncertain": false
+    },
+    "shuowen:8575": {
+      "text": "Deep red. Formed from 糸, with 夅 indicating the sound.",
+      "sourceTextSha256": "f117a6f48adc8d2804155dd58ac046f3b092a1a58d4c13f3947f1e2551d7ec25",
+      "uncertain": false
+    },
+    "shuowen:8576": {
+      "text": "Inferior; crimson. Formed from 糸, with 官 indicating the sound. Alternatively, raw silk. Read like 卵 in 雞卵.",
+      "sourceTextSha256": "5fb9a0f1dab261ae9425e7d095ecabd35f7705832b19607ea984515eaad8dbfb",
+      "uncertain": true
+    },
+    "shuowen:8577": {
+      "text": "The red color of silk. The Spring and Autumn Commentary has 'Jinyun clan'; the Rites has 'red edging.' Formed from 糸, with 晉 indicating the sound.",
+      "sourceTextSha256": "0192598f769b014ccf9e934a4b8c0444f8c94d7b1e2f15c85b421c2026699f0f",
+      "uncertain": false
+    },
+    "shuowen:8578": {
+      "text": "Red silk fabric. Because it is dyed with madder, 茜, it is called 綪. Formed from 糸, with 青 indicating the sound.",
+      "sourceTextSha256": "1d8408a1ca9e147cf5a902028d72747920e7366ffbb3c4e61dc001b5d5a50390",
+      "uncertain": false
+    },
+    "shuowen:8579": {
+      "text": "Silk of a cinnabar-yellow color. Formed from 糸, with 是 indicating the sound.",
+      "sourceTextSha256": "cd9dcbae9d8cb44848308dce44164efb96b08e43c151acfb51996f9356c1dedf",
+      "uncertain": false
+    },
+    "shuowen:8580": {
+      "text": "Silk of a red-yellow color. One dyeing is called 縓, two 䞓, and three 纁. Formed from 糸, with 原 indicating the sound.",
+      "sourceTextSha256": "3da0736ddd9a4dad32ccf7a3a317e991411a3c5e0ab6afa41cf111f51bc0c0a8",
+      "uncertain": false
+    },
+    "shuowen:8581": {
+      "text": "Silk of a blue-green and red color. Formed from 糸, with 此 indicating the sound.",
+      "sourceTextSha256": "448df6aa73e8113cca85830e4ae5fdf889e0d62f623f27a1facbe647629538eb",
+      "uncertain": false
+    },
+    "shuowen:8582": {
+      "text": "Silk of a red and white color. Formed from 糸, with 工 indicating the sound.",
+      "sourceTextSha256": "ecb476cfb5a6e9a31e6896755e580682b79399d853fd137312d20118fbbaa047",
+      "uncertain": false
+    },
+    "shuowen:8583": {
+      "text": "The blue-green color of silk. Formed from 糸, with 蔥 indicating the sound.",
+      "sourceTextSha256": "64c346765e9a339e81053e7297888d2fdf7d1d8a63160c735a5a7a2b7680854e",
+      "uncertain": false
+    },
+    "shuowen:8584": {
+      "text": "Silk of a deep blue-green color showing red. Formed from 糸, with 甘 indicating the sound.",
+      "sourceTextSha256": "b48ecb9826c261d5fe4b180b5d002d580693b73c37367a4a56a522dee3753c1f",
+      "uncertain": false
+    },
+    "shuowen:8585": {
+      "text": "Silk of a gray-green mugwort color. Formed from 糸, with 𢌿 indicating the sound. The Odes says: 'White silk clothes and a 綥 kerchief,' worn by an unmarried woman. Another explanation gives 不借綥, an obscure phrase.",
+      "sourceTextSha256": "055658ea057846a1663db8bc6e126e75edea3a73e9b4fb2eeac5fee0842d55fc",
+      "uncertain": true
+    },
+    "shuowen:8586": {
+      "text": "Silk of a color like 紺. Some say dark silk fabric. Formed from 糸, with 喿 indicating the sound. Read like 喿.",
+      "sourceTextSha256": "47f1c12950a40dcecf1abb84e614e53b31507af9a6319e92cc375968cc6f3137",
+      "uncertain": false
+    },
+    "shuowen:8587": {
+      "text": "The black color of silk. Formed from 糸, with 甾 indicating the sound.",
+      "sourceTextSha256": "1bab27f37988598d764d9e396279c882d64ae01e10220e64d79459839bd1d437",
+      "uncertain": false
+    },
+    "shuowen:8588": {
+      "text": "Silk the color of a sparrow's head. Alternatively, slightly black, like 紺. 纔 means light or pale. Read like 讒. Formed from 糸, with 毚 indicating the sound.",
+      "sourceTextSha256": "3d0fcaf2741552b5f4faf46ad9513bb8efb289793a8cb0021051be48cada65ba",
+      "uncertain": false
+    },
+    "shuowen:8589": {
+      "text": "Silk of a dapple-gray color. Formed from 糸, with 剡 indicating the sound. The Odes says: 'Feather-patterned clothes like 𦃖.'",
+      "sourceTextSha256": "9dcd239dadb8a2cd2647f0e001051a4128812738837cab4ccc1c42e2a533aaeb",
+      "uncertain": true
+    },
+    "shuowen:8590": {
+      "text": "Silk dyed with the 戾 plant. Formed from 糸, with 戾 indicating the sound.",
+      "sourceTextSha256": "3ef7f54e3a1ae8affa57c904db83eb0cddc0c4f96289acf0ca8be7ce079c5688",
+      "uncertain": false
+    },
+    "shuowen:8591": {
+      "text": "The appearance of bright white clothes. Formed from 糸, with 不 indicating the sound. The Odes says: 'How bright are the white clothes!'",
+      "sourceTextSha256": "99435c0c3bb300b38ef2d1b9db5d74ad0ab6b11133cb26274ddac73ee5b44569",
+      "uncertain": false
+    },
+    "shuowen:8592": {
+      "text": "The appearance of bright white clothes. Formed from 糸, with 炎 indicating the sound. This means the colors of clothing are brilliant.",
+      "sourceTextSha256": "a694819e3182c22a55f6b1c9206d6c980bdda6c954dd78053c463f3b8de68e6a",
+      "uncertain": false
+    },
+    "shuowen:8593": {
+      "text": "The colors of silk fabric. Formed from 糸, with 需 indicating the sound. Read like 繻 in the Changes' '繻 has clothes,' an uncertain quotation.",
+      "sourceTextSha256": "aee68cb9b62d4ae8861698fe3acd5042d1606c3a2ebb3acde8cb802eb2c15342",
+      "uncertain": true
+    },
+    "shuowen:8594": {
+      "text": "Rich and varied colors. Formed from 糸, with 辱 indicating the sound.",
+      "sourceTextSha256": "9e0952a337af06a764818e323a5267f67bb34b9100337f6f28f86af163fc9389",
+      "uncertain": false
+    },
+    "shuowen:8595": {
+      "text": "The woven cloth of a cap. Formed from 糸, with 麗 indicating the sound.",
+      "sourceTextSha256": "1c455490715a6bda80dba26d9c70afa4afb7d43532b8a9f7a398a52d56dadc69",
+      "uncertain": false
+    },
+    "shuowen:8596": {
+      "text": "A cap's cord or rolled edging. Formed from 糸, with 厷 indicating the sound.",
+      "sourceTextSha256": "d88f6ff4d8f088692e8807a6101d5bea9639f47ab5c57b9246e91aa1866bde88",
+      "uncertain": true
+    },
+    "shuowen:8597": {
+      "text": "What hangs from a ceremonial cap to stop the ears. Formed from 糸, with 冘 indicating the sound.",
+      "sourceTextSha256": "5634d8e6fae6fe03827135be4bfb7dcc71ba8836b6a06a2331947aa95b0a5ec3",
+      "uncertain": false
+    },
+    "shuowen:8598": {
+      "text": "A cap's fastening cord. Formed from 糸, with 嬰 indicating the sound.",
+      "sourceTextSha256": "f5d4d5add4c05cc773a18efa736b983b5717a0012e9cbc11c9541235404775ee",
+      "uncertain": false
+    },
+    "shuowen:8599": {
+      "text": "The rolled part of a cap cord, apparently. Formed from 糸, with 央 indicating the sound.",
+      "sourceTextSha256": "7328e174ca53b46947d86f22fbe0fdc5112b59bd214e03178662b9b46f071e42",
+      "uncertain": true
+    },
+    "shuowen:8600": {
+      "text": "To tie a cap's fastening cord. Formed from 糸, with 委 indicating the sound.",
+      "sourceTextSha256": "3038cfc24730952e44d59989358e89596cbfa8293e92f4d0aaa047e232f1ece2",
+      "uncertain": false
+    }
+  }
+}

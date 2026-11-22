@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "f7248ebe40a2e47333387aac96a90843c0bc8c617e41023bbef839c8b21528e2",
+    "created_date": "2026-11-22"
+  },
+  "batch": "096",
+  "translations": {
+    "shuowen:9501": {
+      "text": "Where the spokes gather. Formed from 車, with 𣪊 indicating the sound.",
+      "sourceTextSha256": "d37aab4601e8e0549bd465db7d72db3d75145d9bc16fdb53b1dab1f322e3e790",
+      "uncertain": false
+    },
+    "shuowen:9502": {
+      "text": "The appearance of hubs being level and equal. Formed from 車, with 昆 indicating the sound. The Rites of Zhou says: 'Looking at the hubs, one wants them even.'",
+      "sourceTextSha256": "050123aa2ecfc38a09b56d0e525972260304c11578d1e8449f814fae1f4c0c0b",
+      "uncertain": false
+    },
+    "shuowen:9503": {
+      "text": "The end or covering of a long hub, bound in red. Formed from 車, with 氏 indicating the sound. The Odes says: 'Bound hubs and decorated crossbars.'",
+      "sourceTextSha256": "3a04b7a720151befb59e7791375c0238d7f1e946509b0fcc5ce38e8a4f026066",
+      "uncertain": true
+    },
+    "shuowen:9504": {
+      "text": "A small opening in a wheel. Formed from 車, with 只 indicating the sound.",
+      "sourceTextSha256": "bac3c18ee8686f7be7e5908a538ff5f0cd2ff73761c1dd6cef08e747b1acb030",
+      "uncertain": false
+    },
+    "shuowen:9505": {
+      "text": "The end of a carriage axle. Formed from 車; a pictograph. Du Lin's explanation.",
+      "sourceTextSha256": "f13a324c66174f9239f17164e26291568368f224bad72e65e374fbd92bdb171f",
+      "uncertain": false
+    },
+    "shuowen:9506": {
+      "text": "A wheel's spokes. Formed from 車, with 畐 indicating the sound.",
+      "sourceTextSha256": "b00320b79555b00003dc88802b71d8007be8fa61029ce275ffecefbdb3c04f01",
+      "uncertain": false
+    },
+    "shuowen:9507": {
+      "text": "The ribs of a canopy. Alternatively, wheel spokes. Formed from 車, with 𤋯 indicating the sound.",
+      "sourceTextSha256": "18b7c4267057ab9eca5636cc54202725e393af89b5e5f8f60f03d906bb9b1f11",
+      "uncertain": false
+    },
+    "shuowen:9508": {
+      "text": "An axle-end sleeve. Formed from 車, with 大 indicating the sound.",
+      "sourceTextSha256": "d40501801ca99b5f88d969e538bf6f9867502b6ab1ec2c2b28cd62fd0a4bdd43",
+      "uncertain": false
+    },
+    "shuowen:9509": {
+      "text": "A sleeve fitted over the end of a hub. Formed from 車, with 官 indicating the sound.",
+      "sourceTextSha256": "c2e6ae26bf7f49a627b3cd3dee2a8b8e1f9075e62bf7927d8c3ffef09f9ce461",
+      "uncertain": false
+    },
+    "shuowen:9510": {
+      "text": "A carriage shaft. Formed from 車, with 袁 indicating the sound.",
+      "sourceTextSha256": "86943ae36db96e41a0813c58cc0b4891aa4845c20b428339b3b107bda3ea7efb",
+      "uncertain": false
+    },
+    "shuowen:9511": {
+      "text": "A carriage shaft. Formed from 車, with 舟 indicating the sound.",
+      "sourceTextSha256": "7ba4fd981c1dc8aa98d96fba75eff2f14e7b45f8bbc8dd0d9f0babd8f822161d",
+      "uncertain": false
+    },
+    "shuowen:9512": {
+      "text": "The 纩 fitting of a straight-shafted carriage; the technical term is unclear. Formed from 車, with 具 indicating the sound.",
+      "sourceTextSha256": "fc1eee2d8f1dc2eea9bb7472fc277063572bc916453a666e4f93fc1735e58eae",
+      "uncertain": true
+    },
+    "shuowen:9513": {
+      "text": "What holds the crossbar at the end of a carriage shaft. Formed from 車, with 元 indicating the sound.",
+      "sourceTextSha256": "150e32915604c1e5104e3992a442ffe84ba11d2d07d61feb9e6832b3f88baba4",
+      "uncertain": false
+    },
+    "shuowen:9514": {
+      "text": "The front of a carriage shaft. Formed from 車, with 戹 indicating the sound.",
+      "sourceTextSha256": "b8ea34452335d548a4b6787b5b0a5e28ec9f58a2b9dbc23eb89c13253e9dde1f",
+      "uncertain": false
+    },
+    "shuowen:9515": {
+      "text": "The curved fitting of a yoke. Formed from 車, with 軍 indicating the sound.",
+      "sourceTextSha256": "4768fb15374f9da143c0db7095a05e07b6d80e86b3214ee2708f067637f19443",
+      "uncertain": false
+    },
+    "shuowen:9516": {
+      "text": "The curved part beneath a yoke. Formed from 車, with 句 indicating the sound.",
+      "sourceTextSha256": "a6257bf52841cf975cddec4821a3ddd1c6644c2c54ac9d8048279631f18da92a",
+      "uncertain": false
+    },
+    "shuowen:9517": {
+      "text": "What carries the reins on a carriage crossbar. Formed from 車, with 義 indicating the sound.",
+      "sourceTextSha256": "2149167947ab8972430b7159120bf718f43f10b55183355df828362c8331044a",
+      "uncertain": false
+    },
+    "shuowen:9518": {
+      "text": "The inner reins of the outside horses, fastened before the carriage crossbar. Formed from 車, with 内 indicating the sound. The Odes says: 'Moisten it to 𧥎 the inner reins,' as the obscure source quotation records.",
+      "sourceTextSha256": "0d9518b4fcfb1576bc24a87e0ca2986539b97a3cf8af698ef922166fe71dd00b",
+      "uncertain": true
+    },
+    "shuowen:9519": {
+      "text": "A carriage shaking. Formed from 車 and 行. Alternatively, abbreviated 衍 indicates the sound.",
+      "sourceTextSha256": "ed598f7b0e874cae10459613472da481e7b5e201c5e193d13c335e410cd1dd0c",
+      "uncertain": false
+    },
+    "shuowen:9520": {
+      "text": "The rear step of a light carriage. Formed from 車, with 丞 indicating the sound. Read like 抍 in the Changes' 抍馬.",
+      "sourceTextSha256": "a7d71c4cc3efbfce002c7a03626fdd900eb8f6958d6038179673b2598f9cc14f",
+      "uncertain": false
+    },
+    "shuowen:9521": {
+      "text": "To ride or carry. Formed from 車, with 𢦔 indicating the sound.",
+      "sourceTextSha256": "9a3a3d81ed552d17aed8e14d23f3196acc1b7cbbc252645345bf9508101ce10c",
+      "uncertain": false
+    },
+    "shuowen:9522": {
+      "text": "To encircle. Four thousand men make a 軍. Formed from 車 and abbreviated 包. 軍 means war carriages.",
+      "sourceTextSha256": "aed0386d1a388dac997707ab268c27d5c87653e9fce793d0d7d32d842bb1fed7",
+      "uncertain": false
+    },
+    "shuowen:9523": {
+      "text": "Before setting out on a journey, one must first announce it to the road deity, making an altar open in four directions and planting thatch for the deity to rest upon: this is 軷. After sacrificing, one drives over the victim and departs: this is 範軷. The Odes says: 'Take a ram for the road sacrifice.' Formed from 車, with 犮 indicating the sound.",
+      "sourceTextSha256": "66e3aabd35d1d19a1fcd6a8c488b53eccbf95d734637722ee4d3d5811f2881cf",
+      "uncertain": false
+    },
+    "shuowen:9524": {
+      "text": "The driving-over expressed by 範軷. Formed from 車, with abbreviated 笵 indicating the sound. Pronounced the same as 犯.",
+      "sourceTextSha256": "9060154a4e2f9229886b4937878f87b374107a123d3157ed9d11aaa7708db567",
+      "uncertain": false
+    },
+    "shuowen:9525": {
+      "text": "The appearance of a high load. Formed from 車, with abbreviated 𣡌 indicating the sound.",
+      "sourceTextSha256": "1655342d8b4ecc1779e711d28b7f4a42c86a845130a571c2a7033bd61aaec2b0",
+      "uncertain": false
+    },
+    "shuowen:9526": {
+      "text": "The sound of a carriage. Formed from 車, with 害 indicating the sound. Alternatively, 轄 means a fastening pin.",
+      "sourceTextSha256": "3f304ec1d56f2c005d83e0166a488fee3683bc0e65ba271a889027874aefe5c8",
+      "uncertain": false
+    },
+    "shuowen:9527": {
+      "text": "To turn or convey. Formed from 車, with 專 indicating the sound.",
+      "sourceTextSha256": "36483beb6f21b74c936b374d3a62e599a1ad31eedf07af0393c47695b9780bea",
+      "uncertain": false
+    },
+    "shuowen:9528": {
+      "text": "To convey and deliver. Formed from 車, with 俞 indicating the sound.",
+      "sourceTextSha256": "2fe5f26a6a30e14adaeeb172fc155eba970da354f3c4e463117800e8569f2201",
+      "uncertain": false
+    },
+    "shuowen:9529": {
+      "text": "Heavy. Formed from 車, with 周 indicating the sound.",
+      "sourceTextSha256": "c62c61c5d4d83116d7812fecd3e97008e33007d1f9b94ff1730e558755a06826",
+      "uncertain": false
+    },
+    "shuowen:9530": {
+      "text": "When an army dispatches carriages, one hundred vehicles form one 輩. Formed from 車, with 非 indicating the sound.",
+      "sourceTextSha256": "0d53fd55c7425404b0daf0e6dd3076ee0e2ce23105a74df4e31726962dc8b6be",
+      "uncertain": false
+    },
+    "shuowen:9531": {
+      "text": "To crush by rolling over. Formed from 車, with 乙 indicating the sound.",
+      "sourceTextSha256": "ca707f19bc861fc3a738533f3bfaeeea11148296af3e0a9d75f034e1894834e0",
+      "uncertain": false
+    },
+    "shuowen:9532": {
+      "text": "To run over. Formed from 車, with 㞋 indicating the sound.",
+      "sourceTextSha256": "f55988ef4600cb5be2f7961c83a6f1bc36995a932a30ea71b9a220013de4fccd",
+      "uncertain": false
+    },
+    "shuowen:9533": {
+      "text": "What a carriage treads upon. Formed from 車, with 樂 indicating the sound.",
+      "sourceTextSha256": "946ac8aed1890ac0035ed4d7f7b9a78c390c713dc59edbcbb30ab749e389c378",
+      "uncertain": false
+    },
+    "shuowen:9534": {
+      "text": "A carriage's tracks. Formed from 車, with 九 indicating the sound.",
+      "sourceTextSha256": "f0e2f2e6bc558ccfa48522a26841df343c0f58de073666882075e8d2339509eb",
+      "uncertain": false
+    },
+    "shuowen:9535": {
+      "text": "A carriage's tracks. Formed from 車, with abbreviated 從 indicating the sound.",
+      "sourceTextSha256": "9d5629cbd44cae468e905f8debafb8c46a418491a094306ff6e568c5e0f42aeb",
+      "uncertain": false
+    },
+    "shuowen:9536": {
+      "text": "Carriages passing one another. Formed from 車, with 失 indicating the sound.",
+      "sourceTextSha256": "ad6be62c8d5d66af39542326f49f819e88a9d29e728cb0e1a401d284e2a1a075",
+      "uncertain": false
+    },
+    "shuowen:9537": {
+      "text": "The carriage fitting or sound called 䡩𨥺; the technical sense is unclear. Formed from 車, with 眞 indicating the sound. Read like 鏗 in the Analects' 'With a clang he set aside his zither and rose'; also read like 掔.",
+      "sourceTextSha256": "7c9ded25ecaa52b5477a24265c7bbb37f84087f036f0908385b8e8ad74418432",
+      "uncertain": true
+    },
+    "shuowen:9538": {
+      "text": "To press against. Formed from 車, with 埶 indicating the sound.",
+      "sourceTextSha256": "5b9735cd389219e388c5158027f18679881f20b10f64471b101d8f51b752dd21",
+      "uncertain": false
+    },
+    "shuowen:9539": {
+      "text": "A carriage being twisted or awry. Formed from 車, with 匡 indicating the sound.",
+      "sourceTextSha256": "1fa5fa59403681f1a11dee796bf15291f987146eb91d88e26d325440eba3e7d4",
+      "uncertain": false
+    },
+    "shuowen:9540": {
+      "text": "A carriage with a small break that is joined again. Formed from 車, with 叕 indicating the sound.",
+      "sourceTextSha256": "ba1d1e264dc0bc0b18285d65565c1d2b5c2674021126039bcab1c86bf83ac0c1",
+      "uncertain": false
+    },
+    "shuowen:9541": {
+      "text": "To obstruct. Formed from 車, with 多 indicating the sound.",
+      "sourceTextSha256": "802cb0d62d70028367743e40c10b492d65132c093b617939fda541492ec628f3",
+      "uncertain": false
+    },
+    "shuowen:9542": {
+      "text": "Carriage axle-pins striking each other. Formed from 車 and 毄; 毄 also indicates the sound. The Rites of Zhou says: 'Boats and carriages striking one another.'",
+      "sourceTextSha256": "442810a6f58c6eeff07571e174b46e43441213ef79b32745bf3a4d7202afc944",
+      "uncertain": false
+    },
+    "shuowen:9543": {
+      "text": "To work on a carriage axle. Formed from 車, with 算 indicating the sound.",
+      "sourceTextSha256": "84a00c226bb19d8eed24f1796bda87fcea158a20a6cfd615a825d71c64ff159c",
+      "uncertain": false
+    },
+    "shuowen:9544": {
+      "text": "A carriage with a joined axle. Formed from 車, with 可 indicating the sound.",
+      "sourceTextSha256": "35b780d4cb07cdf00391a0bb5bd3ebf8c06f48ac60ae025c4b4ea6bb369597c2",
+      "uncertain": false
+    },
+    "shuowen:9545": {
+      "text": "A carriage being sturdy. Formed from 車, with 殸 indicating the sound.",
+      "sourceTextSha256": "b9607040c7d39ec3c5e4bf066e4fc07689ea527da5a571fe177b55660de0f000",
+      "uncertain": false
+    },
+    "shuowen:9546": {
+      "text": "To push a carriage backward so that it reaches a place of delivery. Formed from 車 and 付. Read like 胥.",
+      "sourceTextSha256": "e5e563c77b593e454515bfae9cf2b7f39f42357b46b40229f0791ec9abdbb2c8",
+      "uncertain": true
+    },
+    "shuowen:9547": {
+      "text": "With spokes it is called 輪; without spokes, 輇. Formed from 車, with 侖 indicating the sound.",
+      "sourceTextSha256": "b2469ce3ea509787ec2d9d0bca58e1624698096ddb565227e8470b1d6dfe141f",
+      "uncertain": false
+    },
+    "shuowen:9548": {
+      "text": "The low wheel beneath a screened carriage. Alternatively, a wheel without spokes. Formed from 車, with 全 indicating the sound. Read like 饌.",
+      "sourceTextSha256": "897641f7e55ed1c17f8557ec385c034b1c919e8ec20abdb116e1f39c82cae304",
+      "uncertain": true
+    },
+    "shuowen:9549": {
+      "text": "What holds the crossbar at the shaft-end of a large carriage. Formed from 車, with 兒 indicating the sound.",
+      "sourceTextSha256": "774f6ab717d3c595e9f557782004db91526000dab7befbf9f5fdc33a2c282c6a",
+      "uncertain": false
+    },
+    "shuowen:9550": {
+      "text": "The rear of a large carriage. Formed from 車, with 氐 indicating the sound.",
+      "sourceTextSha256": "0050a860e29f765ab54a2fcf063cb40d5e158e764cecff74f95aecf2d32505d2",
+      "uncertain": false
+    },
+    "shuowen:9551": {
+      "text": "The matting of a large carriage. Formed from 車, with 秦 indicating the sound. Read like 臻.",
+      "sourceTextSha256": "cf1d911d184b3fd492263db07baa4c5ed9009619c05b2cac5d0ef30f0866c6ec",
+      "uncertain": false
+    },
+    "shuowen:9552": {
+      "text": "In 淮陽, a carriage's arched top is called 轒. Formed from 車, with 賁 indicating the sound.",
+      "sourceTextSha256": "3c8778e5491313e9c6fe31a38344edc613b688f8c7bd656ee1f01538b1434908",
+      "uncertain": true
+    },
+    "shuowen:9553": {
+      "text": "A weight at the rear of a large carriage. Formed from 車, with 宛 indicating the sound.",
+      "sourceTextSha256": "f68206ce2db557ffb9015f1898d523a36aec9ff4840004a6dfa828f4d695cac6",
+      "uncertain": true
+    },
+    "shuowen:9554": {
+      "text": "A large horse-drawn carriage. Formed from 車, with 共 indicating the sound.",
+      "sourceTextSha256": "78abb14a47d9373205c671612679574b59bca41119d0414969eed89ea0488942",
+      "uncertain": false
+    },
+    "shuowen:9555": {
+      "text": "Linked carriages. Alternatively, backing a carriage against the hall is called 𨌅. Formed from 車, with abbreviated 差 indicating the sound. Read like 遟.",
+      "sourceTextSha256": "d99aa3ecdf0ed7d3afec6462de004bf89b686ab53bcbfc639698fcb1a18c11d1",
+      "uncertain": true
+    },
+    "shuowen:9556": {
+      "text": "A hand-drawn carriage. Formed from 車 and 㚘 pulling it from the front.",
+      "sourceTextSha256": "5662a05a5518ac8d9c482236675ff608baac9093daddb8495857d425acc93005",
+      "uncertain": false
+    },
+    "shuowen:9557": {
+      "text": "To pull it. Formed from 車, with 免 indicating the sound.",
+      "sourceTextSha256": "5c6bdcc89aa2734b61a8af2b320bddad39cdc18c2f425347f21a43152c749069",
+      "uncertain": false
+    },
+    "shuowen:9558": {
+      "text": "A spinning wheel. Alternatively, a one-wheeled carriage. Formed from 車, with 㞷 indicating the sound. Read like 狂.",
+      "sourceTextSha256": "8af265f7f12a3ac8a5ec36044734bcd1e27bfa3762306949552fb7645daf4965",
+      "uncertain": false
+    },
+    "shuowen:9559": {
+      "text": "To tear a person apart with carriages. Formed from 車, with 瞏 indicating the sound. The Spring and Autumn Commentary says: 'Tear them apart with carriages at the Li gate.'",
+      "sourceTextSha256": "5ab82eea1dda09943b2de82465c0a6d18d4a6c04ca27e5ff59ed16757d2cae2e",
+      "uncertain": true
+    },
+    "shuowen:9560": {
+      "text": "To sever. Formed from 車 and 斤. The punishment of 斬 is tearing apart by carriages.",
+      "sourceTextSha256": "3ce1758617af8aa21602d0ef77aa355570b1773ba22058a04a6a4635ac4a1fea",
+      "uncertain": true
+    },
+    "shuowen:9561": {
+      "text": "A funeral carriage. Formed from 車, with 而 indicating the sound.",
+      "sourceTextSha256": "3084fbf20e49ebd601d9be965fbd2fa3fc2a1b98ddca5dbf52acd525b697f42e",
+      "uncertain": false
+    },
+    "shuowen:9562": {
+      "text": "A person's jawbones. Formed from 車, with 甫 indicating the sound.",
+      "sourceTextSha256": "93eea7697e3b1dead0a1a5098ac7be846dc396bce49be225a735e5fb5c2057ac",
+      "uncertain": false
+    },
+    "shuowen:9563": {
+      "text": "The sound of many carriages. Formed from three 車.",
+      "sourceTextSha256": "36a88642dd831a9cb404a05218c7d87eaf14962d9203af37f8185a9eb2dd4d6c",
+      "uncertain": false
+    },
+    "shuowen:9564": {
+      "text": "A carriage's name. Formed from 車, with 孱 indicating the sound.",
+      "sourceTextSha256": "cdc369bc899b3350cb39b4693a89ef2fb03ecd36b867e22e9ead283c50f77a60",
+      "uncertain": false
+    },
+    "shuowen:9565": {
+      "text": "The sound of carriages. Formed from 車, with 粦 indicating the sound.",
+      "sourceTextSha256": "12158ade913568386af25327f77a2b2d10d54e5506e3f5926d633515210a20c6",
+      "uncertain": false
+    },
+    "shuowen:9566": {
+      "text": "A carriage's tracks. Formed from 車, with abbreviated 徹 indicating the sound. Originally 徹 was used interchangeably; later people added this character.",
+      "sourceTextSha256": "08dc2890c8aea13bfcc87c276b3b48d7ab21f4deb18ec382dd221e3728c86926",
+      "uncertain": false
+    },
+    "shuowen:9567": {
+      "text": "A small hill. A pictograph. All characters in this group are formed from 𠂤.",
+      "sourceTextSha256": "88c956103cab9db0e844f00c7ed52805dc72d9890d6eff1b65fe43be5454f33f",
+      "uncertain": false
+    },
+    "shuowen:9568": {
+      "text": "Precariously high. Formed from 𠂤, with 屮 indicating the sound. Read like 臬.",
+      "sourceTextSha256": "b5455857780957d0e67ea1074bf3389497dd588e0acecb88a4339333ffb81760",
+      "uncertain": false
+    },
+    "shuowen:9569": {
+      "text": "An official who serves the ruler. Formed from 宀 and 𠂤. 𠂤 signifies a multitude; the same conception as 師.",
+      "sourceTextSha256": "e181c0b3838fc53aabaf23386d8a05f64bb2543074dcef9a4a5e71c4c3b206f7",
+      "uncertain": false
+    },
+    "shuowen:9570": {
+      "text": "A large tract of raised land; a mountain without rocks. A pictograph. All characters in this group are formed from 𨸏.",
+      "sourceTextSha256": "6796da9b53c178f5a176929ccebdb34b53be53edf0868e7aab2d53b0a263dcf9",
+      "uncertain": false
+    },
+    "shuowen:9571": {
+      "text": "A great hill. Formed from 𨸏, with 夌 indicating the sound.",
+      "sourceTextSha256": "025b52e44ccb6f119bcb8860498e2610185264c16703a9256346e84163e53e2d",
+      "uncertain": false
+    },
+    "shuowen:9572": {
+      "text": "A great hill. Formed from 𨸏, with 鯀 indicating the sound.",
+      "sourceTextSha256": "5059b68c48bafa6bb1ab70935f78aaccc025cae0fbee022202eec1b0e01a6042",
+      "uncertain": false
+    },
+    "shuowen:9573": {
+      "text": "The veins or structure of the earth. Formed from 𨸏, with 力 indicating the sound.",
+      "sourceTextSha256": "c9a2d4ff536ba0adebb9503d14dbf78b34f3d1920923bf762696a98e8fca1984",
+      "uncertain": false
+    },
+    "shuowen:9574": {
+      "text": "Dark: the south side of water and north side of a mountain. Formed from 𨸏, with 侌 indicating the sound.",
+      "sourceTextSha256": "46defd3d87820621a074e72623a7a7e04d78aca5b290731f9140de6262cdee5a",
+      "uncertain": false
+    },
+    "shuowen:9575": {
+      "text": "High and bright. Formed from 𨸏, with 昜 indicating the sound.",
+      "sourceTextSha256": "9b8dd54351e75e2867f76f606129f101eb7abe5ee08d251ebe1a8ffaf9a4ec17",
+      "uncertain": false
+    },
+    "shuowen:9576": {
+      "text": "High, level ground. Formed from 𨸏 and 坴; 坴 also indicates the sound.",
+      "sourceTextSha256": "91f306d4f84764fac52ec67e4a1ad47201c5be25799894d8a9b93e4566477823",
+      "uncertain": false
+    },
+    "shuowen:9577": {
+      "text": "A great hill. Alternatively, a curved hill. Formed from 𨸏, with 可 indicating the sound.",
+      "sourceTextSha256": "10ec2bc2a056155452f4158a29c4e5bdd9e84fec600f4babeae1b39924c4a61f",
+      "uncertain": false
+    },
+    "shuowen:9578": {
+      "text": "A slope. Alternatively, a spreading branch of water. Formed from 𨸏, with 皮 indicating the sound.",
+      "sourceTextSha256": "775488af73defa3c6e5f8d0c6bedfe31df32a8c7951b8eb806feb6888fc76393",
+      "uncertain": true
+    },
+    "shuowen:9579": {
+      "text": "Sloping ground is called 阪. Alternatively, a barrier in a marsh; alternatively, a mountainside. Formed from 𨸏, with 反 indicating the sound.",
+      "sourceTextSha256": "6c7d4d47e9b3907ef2bf1c8423cbc8415df4fa42912f7dd3addb3298f0bfe258",
+      "uncertain": false
+    },
+    "shuowen:9580": {
+      "text": "A corner of a slope. Formed from 𨸏, with 取 indicating the sound.",
+      "sourceTextSha256": "86ca761bb471223b06cb2142d8069af4ca6ae538a28cd0d702bf59c599b9ed5d",
+      "uncertain": false
+    },
+    "shuowen:9581": {
+      "text": "A corner. Formed from 𨸏, with 禺 indicating the sound.",
+      "sourceTextSha256": "bc89c91c03372ea5d3db57e5e24e8995da425a82252074da4d0a7e44c9f4c125",
+      "uncertain": false
+    },
+    "shuowen:9582": {
+      "text": "Obstructed and difficult. Formed from 𨸏, with 僉 indicating the sound.",
+      "sourceTextSha256": "29d1e10f31415613e70879e91a3d2e432a414913ea6f27d3d37528ad692c6e0c",
+      "uncertain": false
+    },
+    "shuowen:9583": {
+      "text": "To obstruct. Alternatively, a threshold. Formed from 𨸏, with 艮 indicating the sound.",
+      "sourceTextSha256": "556b3456b0a56e900fd56c322605f9ed523cbabea71b3a97f89e30aecfaaeda7",
+      "uncertain": false
+    },
+    "shuowen:9584": {
+      "text": "Difficult or dangerous. Formed from 𨸏, with 且 indicating the sound.",
+      "sourceTextSha256": "70a5b20acbd0af9d53b9c4b094a76656a6a345225148631310ed5913ed45c553",
+      "uncertain": false
+    },
+    "shuowen:9585": {
+      "text": "陮隗 means high. Formed from 𨸏, with 隹 indicating the sound.",
+      "sourceTextSha256": "f545730e9f5e72f4f3a5cefc596e07e9c9ad7777d430cc3e6537e55deeeb0b85",
+      "uncertain": false
+    },
+    "shuowen:9586": {
+      "text": "The height expressed by 陮隗. Formed from 𨸏, with 鬼 indicating the sound.",
+      "sourceTextSha256": "981e3680d6a24be6dfad99f8666ba7903955734344eb90c055da38adcadedf5d",
+      "uncertain": false
+    },
+    "shuowen:9587": {
+      "text": "High. Alternatively, stone. Formed from 𨸏, with 允 indicating the sound.",
+      "sourceTextSha256": "e1608f86031c98651c9067d9fdd0e73c3a83e75aac99c8fd6be1108394a136f6",
+      "uncertain": false
+    },
+    "shuowen:9588": {
+      "text": "Stones piled up. Formed from 𨸏, with 𠂹 indicating the sound.",
+      "sourceTextSha256": "7e6d57584064cfb179c596327d1ac3acdfdccaefd6249837480f348be63ffe54",
+      "uncertain": true
+    },
+    "shuowen:9589": {
+      "text": "Steep. Formed from 𨸏, with 肖 indicating the sound.",
+      "sourceTextSha256": "3d20d1d04eec9e41e2053bee1b8a91126159e652366b3204457b4c0076631385",
+      "uncertain": false
+    },
+    "shuowen:9590": {
+      "text": "Steep and high. Formed from 𨸏, with 夋 indicating the sound.",
+      "sourceTextSha256": "e82bb8e129564e9a9e9f051ffd02f1b7c5639db18c8c6f2900885deb2e070769",
+      "uncertain": false
+    },
+    "shuowen:9591": {
+      "text": "To look or rise upward. Formed from 𨸏, with 登 indicating the sound.",
+      "sourceTextSha256": "e044bb1aba49cdf2716d817dbfb367fcd7d5f5d045877ce69e6937f1ac645211",
+      "uncertain": false
+    },
+    "shuowen:9592": {
+      "text": "Cramped and narrow. Formed from 𨸏, with 㔷 indicating the sound.",
+      "sourceTextSha256": "76b5ed8e1b898b60b5f54d5eebe854c5dbccd52ef8ecdfba55d776b610c4e2b3",
+      "uncertain": false
+    },
+    "shuowen:9593": {
+      "text": "Narrow. Formed from 𨸏, with 夾 indicating the sound.",
+      "sourceTextSha256": "972f15afa4e781614951e1e444b40a3933677e74c78b23273c24fc0b746c3c43",
+      "uncertain": false
+    },
+    "shuowen:9594": {
+      "text": "To ascend. Formed from 𨸏 and 步.",
+      "sourceTextSha256": "41a2f2273532c037f70b2b8e36ef40edf0dc79c1af536218c2d36e1e4f698aa3",
+      "uncertain": false
+    },
+    "shuowen:9595": {
+      "text": "To descend from high to low. Alternatively, to fall. Formed from 𨸏 and 臽; 臽 also indicates the sound.",
+      "sourceTextSha256": "6ead17368c4ecefbc06e5194b887b64ea9514b2725ce9e27436e322d23276c5e",
+      "uncertain": true
+    },
+    "shuowen:9596": {
+      "text": "Wet ground below a slope. Formed from 𨸏, with 㬎 indicating the sound.",
+      "sourceTextSha256": "c611cc9d9d272c3d03081f56222730bb7dbf3cb87cc0795fdc83b0eb6618af86",
+      "uncertain": false
+    },
+    "shuowen:9597": {
+      "text": "The condition expressed by 𢼮; its sense is unclear. Formed from 𨸏, with 區 indicating the sound.",
+      "sourceTextSha256": "1aac8c323133b8c25dd74def5531185de12837131310f99b89abda50f8876ff5",
+      "uncertain": true
+    },
+    "shuowen:9598": {
+      "text": "To fall downward. Formed from 𨸏, with 貴 indicating the sound.",
+      "sourceTextSha256": "79fbc523ab7633c3f5bc72dadf605a72217018f8d55b3842c112e59b9c984802",
+      "uncertain": false
+    },
+    "shuowen:9599": {
+      "text": "To fall from a height. Formed from 𨸏, with 㒸 indicating the sound.",
+      "sourceTextSha256": "9d1b8f0f988ab832c5acf5054959e3c849f53054023da5cad87e9f81f776aae8",
+      "uncertain": false
+    },
+    "shuowen:9600": {
+      "text": "To descend. Formed from 𨸏, with 夅 indicating the sound.",
+      "sourceTextSha256": "00f687c1afe177e8dea7e1deeda3b6c10ab49ea0fcf7bfd379e9247678d8b03a",
+      "uncertain": false
+    }
+  }
+}

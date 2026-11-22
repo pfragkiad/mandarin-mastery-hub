@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "8b7392c7efa049879d6240a6428c575fb570cfa8090a2acebc8542ad8813477d",
+    "created_date": "2026-11-22"
+  },
+  "batch": "042",
+  "translations": {
+    "shuowen:4101": {
+      "text": "A place name. Formed from 邑, with 少 indicating the sound.",
+      "sourceTextSha256": "f75ace655238e727f6d32e202388880fcc798e34a60b6c2ff5b0f3562c2431bf",
+      "uncertain": false
+    },
+    "shuowen:4102": {
+      "text": "A place name. Formed from 邑, with 臣 indicating the sound.",
+      "sourceTextSha256": "c0904e2ce1ee532d774064e1fe90d1cee0ce1b0bc7f607724be37cbac93cd0b1",
+      "uncertain": false
+    },
+    "shuowen:4103": {
+      "text": "A place in Song. Formed from 邑, with 毚 indicating the sound. Read like 讒.",
+      "sourceTextSha256": "d8eb59ec0bcd73d0699c2733206ca7929e7cc4d5034cbac2aaf85c7d72a5cb7c",
+      "uncertain": false
+    },
+    "shuowen:4104": {
+      "text": "A place between Song and Lu. Formed from 邑, with 晉 indicating the sound.",
+      "sourceTextSha256": "34009f0326631de1ca8bddd58b3023ccd13f72f142ef6306eb77f89b5d602d1b",
+      "uncertain": false
+    },
+    "shuowen:4105": {
+      "text": "The state enfeoffed to a son of King Wen of Zhou. Formed from 邑, with 告 indicating the sound.",
+      "sourceTextSha256": "03caee873980fa51677fe6c5818088ea78dc4c922ae02a6e694376593922c96f",
+      "uncertain": false
+    },
+    "shuowen:4106": {
+      "text": "A place in Wei, now Juancheng in Jiyin. Formed from 邑, with 垔 indicating the sound.",
+      "sourceTextSha256": "ef42447794df301b58cdcf91a8f20c12ca64f7a32318603b65db624efa1729ea",
+      "uncertain": false
+    },
+    "shuowen:4107": {
+      "text": "Qiong territory, in Jiyin County. Formed from 邑, with 工 indicating the sound.",
+      "sourceTextSha256": "998db712f87e41706137b9c7d9b1040d2ca5637933af7eca80f7965ea70063d5",
+      "uncertain": false
+    },
+    "shuowen:4108": {
+      "text": "The fief of Zhurong’s descendants of the Yun surname, between the Zhen and Wei rivers. Zheng destroyed it. Formed from 邑, with 會 indicating the sound.",
+      "sourceTextSha256": "9ab63383496303ab7f5262705b3c45fd912c1d8413b98725d6cec17778a719cc",
+      "uncertain": false
+    },
+    "shuowen:4109": {
+      "text": "A Zheng settlement. Formed from 邑, with 元 indicating the sound.",
+      "sourceTextSha256": "cc977ae276c4145dc76d7f301c1e687f00262c6b4f1a87c2a641f36244af358d",
+      "uncertain": false
+    },
+    "shuowen:4110": {
+      "text": "A place in Zheng. Formed from 邑, with 延 indicating the sound.",
+      "sourceTextSha256": "f7db942a8cb47cd3afd222711f22dec06fd08a919c119c04695e293dcfab50d6",
+      "uncertain": false
+    },
+    "shuowen:4111": {
+      "text": "A Ju settlement in Langya. Formed from 邑, with 更 indicating the sound. The Spring and Autumn Commentary says: “Capture Geng.”",
+      "sourceTextSha256": "1be04be601abb5562da8797b5b3277274617d41f476eeb30f5401e7cb6c43aa1",
+      "uncertain": false
+    },
+    "shuowen:4112": {
+      "text": "A state of the Yun surname. Formed from 邑, with 禹 indicating the sound. The Spring and Autumn Commentary says: “The people of Yu worked their rice fields.” Read like 榘 in 規榘.",
+      "sourceTextSha256": "6da46512aaa278be0a8cf6acbbcc48f040d1e77369c0b4f9b84981588d3717c3",
+      "uncertain": false
+    },
+    "shuowen:4113": {
+      "text": "A county in Lu, the ancient state of Zhu, enfeoffed to Emperor Zhuanxu’s descendants. Formed from 邑, with 芻 indicating the sound.",
+      "sourceTextSha256": "18020323264621e87fa0b366cf8a577faaab1fc1fec91424bcc5f6533a174e67",
+      "uncertain": false
+    },
+    "shuowen:4114": {
+      "text": "A lower settlement of Zhu. Formed from 邑, with 余 indicating the sound. East of Lu is 䣄 City. Read like 塗.",
+      "sourceTextSha256": "1d57ca444f18895ca145fe2ffedcde7b1f5ff1ff7cb83feb4c4d93fa69c68956",
+      "uncertain": false
+    },
+    "shuowen:4115": {
+      "text": "A dependent state at Shi Pavilion in Kangfu, Dongping. Formed from 邑, with 寺 indicating the sound. The Spring and Autumn Commentary says: “Capture Shi.”",
+      "sourceTextSha256": "1b490bb933c9d466929ffc9ee647ecb173c9482b4eecdba254b9d4fbd023ea94",
+      "uncertain": false
+    },
+    "shuowen:4116": {
+      "text": "A lower settlement of Lu, Confucius’s home township. Formed from 邑, with 取 indicating the sound.",
+      "sourceTextSha256": "e80f12b48838b2fa8afad58ca9c49865886fafb85c5e98accd147692f598f004",
+      "uncertain": false
+    },
+    "shuowen:4117": {
+      "text": "A settlement of Lu’s Meng clan. Formed from 邑, with 成 indicating the sound.",
+      "sourceTextSha256": "ca7603210463c1030558163a7111fadb8f5b8024c23da9248007d12f7f3e2ee3",
+      "uncertain": false
+    },
+    "shuowen:4118": {
+      "text": "The state of 䣍, punished by the Duke of Zhou, in Lu. Formed from 邑, with 奄 indicating the sound.",
+      "sourceTextSha256": "96d540818087793151214089402c0bcd0322a7e4333dabcc2688cf38b2522b36",
+      "uncertain": false
+    },
+    "shuowen:4119": {
+      "text": "A lower settlement of Lu. Formed from 邑, with 雚 indicating the sound. The Spring and Autumn Commentary says: “The men of Qi came to return Huan.”",
+      "sourceTextSha256": "1056ed57744b85e1924f4e129f2a98f2937cea9f818dc12460c7746d2dc75eae",
+      "uncertain": false
+    },
+    "shuowen:4120": {
+      "text": "A pavilion in Lu. Formed from 邑, with 良 indicating the sound.",
+      "sourceTextSha256": "5232562e01905b815e05f7a7ea434e91d40190baeecc1f982c1f5f554faf918e",
+      "uncertain": false
+    },
+    "shuowen:4121": {
+      "text": "The state enfeoffed to Zhonghui, Tang’s left minister and a descendant of Xizhong, in Xue County, 辥, Lu. Formed from 邑, with 丕 indicating the sound.",
+      "sourceTextSha256": "136c1a3fc53990548d807fb0c69f77600941c8dff58ad767f4fe80a97bd87211",
+      "uncertain": false
+    },
+    "shuowen:4122": {
+      "text": "A Ji settlement. Formed from 邑, with 章 indicating the sound.",
+      "sourceTextSha256": "f3f75d99ac8dc679d79050338ff2988264599744261450da49c1dd249dd9caa7",
+      "uncertain": false
+    },
+    "shuowen:4123": {
+      "text": "A state now belonging to Linhuai. Formed from 邑, with 干 indicating the sound. Another explanation: Han originally belonged to Wu.",
+      "sourceTextSha256": "aba41c6b8d04860affa12c9fc99d665bc3164342dcc026cdc97714bc2def59c9",
+      "uncertain": false
+    },
+    "shuowen:4124": {
+      "text": "A place in Xu, Linhuai. Formed from 邑, with 義 indicating the sound. The Spring and Autumn Commentary says: “Xu 䣡 Chu”; the wording is uncertain.",
+      "sourceTextSha256": "f1e4374d4a5189488286be1d2d7c9a5d8a1a00806f1c10e6014128ea9a768fd7",
+      "uncertain": true
+    },
+    "shuowen:4125": {
+      "text": "A township in Wuyan, Dongping. Formed from 邑, with 后 indicating the sound.",
+      "sourceTextSha256": "901298fb79f7ce98772e123825367bde95ed117d08e6a140ca49525ee0135d1b",
+      "uncertain": false
+    },
+    "shuowen:4126": {
+      "text": "A county in Donghai, enfeoffed to Emperor Shaohao’s descendants. Formed from 邑, with 炎 indicating the sound.",
+      "sourceTextSha256": "7f53954f321917f9cbe9f7239b3c97aa9d435764b2d68a17bf440eb6dd56ff43",
+      "uncertain": false
+    },
+    "shuowen:4127": {
+      "text": "A county in Donghai, formerly a settlement of the Marquis of Ji. Formed from 邑, with 吾 indicating the sound.",
+      "sourceTextSha256": "ce3b7b5c2eb85fe28f78c453deab8c1da19e6cd3988565b006e6f9b1d20f070b",
+      "uncertain": false
+    },
+    "shuowen:4128": {
+      "text": "A settlement in Donghai. Formed from 邑, with 巂 indicating the sound.",
+      "sourceTextSha256": "b229d3a9b8a97d141f9925b55b06333893b82235f0204e86603d54558b9de17f",
+      "uncertain": false
+    },
+    "shuowen:4129": {
+      "text": "A state of the Si surname, in Donghai. Formed from 邑, with 曾 indicating the sound.",
+      "sourceTextSha256": "e5d3e726ceebec59627f60061cc10d72c769ae8513bbed2bd1f6353ad28ae325",
+      "uncertain": false
+    },
+    "shuowen:4130": {
+      "text": "Langya Commandery, 琅邪. Formed from 邑, with 牙 indicating the sound.",
+      "sourceTextSha256": "2959e1d6c98715dbffbf48daca7188790aee00dac62d9e6b4ac023896b7db4fd",
+      "uncertain": false
+    },
+    "shuowen:4131": {
+      "text": "A county in Langya, also called Chunde. Formed from 邑, with 夫 indicating the sound.",
+      "sourceTextSha256": "9696a8e66faa3323fd083cd1d7de8fb92fa6dbeb1f30589d8a6c332b91c7cc9f",
+      "uncertain": false
+    },
+    "shuowen:4132": {
+      "text": "A place in Qi. Formed from 邑, with 桼 indicating the sound.",
+      "sourceTextSha256": "6142d9aaf52157d082145b8b827b522848f1f69f0abc8cb18eb7916d76b0efd2",
+      "uncertain": false
+    },
+    "shuowen:4133": {
+      "text": "The ruins of Qi’s Guo clan. They approved of good men but could not promote them, and hated evil men but could not remove them; thus their state perished. Formed from 邑, with 𩫏 indicating the sound.",
+      "sourceTextSha256": "b48b4abd7475ea0320e9bfbbe5127a72a88b30cf97e63842e4c3205b50c58930",
+      "uncertain": false
+    },
+    "shuowen:4134": {
+      "text": "A place in Qi. Formed from 邑, with 兒 indicating the sound. The Spring and Autumn Commentary says: “Gao Hou of Qi settled the fields of Ni.”",
+      "sourceTextSha256": "b3b0306bc17f66875fe1e244349ae9443b8fd195a884016e7fc0c8fcc808bd8d",
+      "uncertain": false
+    },
+    "shuowen:4135": {
+      "text": "Bohai territory, 郣海. Formed from 邑, with 孛 indicating the sound. Another explanation: a rise in the ground is 郣.",
+      "sourceTextSha256": "d8b2f8bf0f8558f4544408918f79a98f4134542c0f832b6417afcec63d2496e0",
+      "uncertain": false
+    },
+    "shuowen:4136": {
+      "text": "A state destroyed by Duke Huan of Qi. Formed from 邑, with 覃 indicating the sound.",
+      "sourceTextSha256": "638b980ff3676de6d42592401f856803455d07ccef8e622cf702936a0851400c",
+      "uncertain": false
+    },
+    "shuowen:4137": {
+      "text": "A place name. Formed from 邑, with 句 indicating the sound.",
+      "sourceTextSha256": "acc9f62bc358d27d6f306e1986005c11a5884e4eb2c03a02362d749dad687f52",
+      "uncertain": false
+    },
+    "shuowen:4138": {
+      "text": "A township in Chenliu. Formed from 邑, with 亥 indicating the sound.",
+      "sourceTextSha256": "4bff35880527d670a0438b77eeb65b33fc9cb3c839811439a5dcd4923fd3d748",
+      "uncertain": false
+    },
+    "shuowen:4139": {
+      "text": "A former state in Chenliu. Formed from 邑, with 𢦔 indicating the sound.",
+      "sourceTextSha256": "b540702d074615637cf399fdcba3a0d65f7e0aaa88b530fd94d9aa51cc5aaa2c",
+      "uncertain": false
+    },
+    "shuowen:4140": {
+      "text": "A place name. Formed from 邑, with 燕 indicating the sound.",
+      "sourceTextSha256": "0fbc405e0e469de07f649dfa8380ba49736dca03e00d9bbd9f530c98f0131419",
+      "uncertain": false
+    },
+    "shuowen:4141": {
+      "text": "A place name. Formed from 邑, with 丘 indicating the sound.",
+      "sourceTextSha256": "da041f15056c6b5fad54a023248b73c0af80ea782db4b875281f655a5aa3ebf8",
+      "uncertain": false
+    },
+    "shuowen:4142": {
+      "text": "A place name. Formed from 邑, with 如 indicating the sound.",
+      "sourceTextSha256": "3961121e5affaf962b84ab0febbac53add39bb206ada3a6ed01b465cd2d8d717",
+      "uncertain": false
+    },
+    "shuowen:4143": {
+      "text": "A place name. Formed from 邑, with 丑 indicating the sound.",
+      "sourceTextSha256": "f534f270ab999198d2a702059335bd2c3e04545bd52565bd6c81220a0e894ffc",
+      "uncertain": false
+    },
+    "shuowen:4144": {
+      "text": "A place name. Formed from 邑, with 几 indicating the sound.",
+      "sourceTextSha256": "854d8640ea289690a13b2b50a6a7954704b76c414fd9f2cbbb550d4c04f1bc43",
+      "uncertain": false
+    },
+    "shuowen:4145": {
+      "text": "A place name. Formed from 邑, with 翕 indicating the sound.",
+      "sourceTextSha256": "d90379adb527170330da0f52bf01ba190cc0c41241a3c56d4c9f9f3f9bfc555d",
+      "uncertain": false
+    },
+    "shuowen:4146": {
+      "text": "A place name. Formed from 邑, with 求 indicating the sound.",
+      "sourceTextSha256": "bd57aa3325d379fbf0f969e1bd943d842d6f313756cfdfb3b63a1b8f5e3233c6",
+      "uncertain": false
+    },
+    "shuowen:4147": {
+      "text": "A place name. Formed from 邑, with 嬰 indicating the sound.",
+      "sourceTextSha256": "268b66231e0f1d58848fe27c5f106ff90d63c85c9970baae746ff5394c8c5063",
+      "uncertain": false
+    },
+    "shuowen:4148": {
+      "text": "A place name. Formed from 邑, with 尚 indicating the sound.",
+      "sourceTextSha256": "fb2f7f1c46e2dcd282f6c5f7e923476665b7f48fb22ded2eed3089ffde79fd4b",
+      "uncertain": false
+    },
+    "shuowen:4149": {
+      "text": "A place name. Formed from 邑, with 并 indicating the sound.",
+      "sourceTextSha256": "018e50903b7d1b234ddb454ea150605eee79cf6739ca29d4b068398814a4615b",
+      "uncertain": false
+    },
+    "shuowen:4150": {
+      "text": "A place name. Formed from 邑, with 虖 indicating the sound.",
+      "sourceTextSha256": "36bddde8ebff0c4773e4db93c08807d853b7b21dcc331c02f168bc1b677a596c",
+      "uncertain": false
+    },
+    "shuowen:4151": {
+      "text": "A place name. Formed from 邑, with 火 indicating the sound.",
+      "sourceTextSha256": "91d3c57bd3f92f6a68a7f9b9990e7dab816ad5c0f206a180da04e787e9b0a08d",
+      "uncertain": false
+    },
+    "shuowen:4152": {
+      "text": "A place name. Formed from 邑, with 翏 indicating the sound.",
+      "sourceTextSha256": "fc49c507c028a0fafc54e698c7e81211bed14bcb7bc3503018fc50fb010a8e6f",
+      "uncertain": false
+    },
+    "shuowen:4153": {
+      "text": "A place name. Formed from 邑, with 爲 indicating the sound.",
+      "sourceTextSha256": "369bfb4c598b138a1a5f30ffc694620f62538da3edf19348b56f258067bba4b9",
+      "uncertain": false
+    },
+    "shuowen:4154": {
+      "text": "A place name. Formed from 邑, with 屯 indicating the sound.",
+      "sourceTextSha256": "305683e195225105c24b62a2bcc1bb0fda8b96c944755db60cf7411b28c2c6fc",
+      "uncertain": false
+    },
+    "shuowen:4155": {
+      "text": "A place name. Formed from 邑, with 舍 indicating the sound.",
+      "sourceTextSha256": "2855965af7e73c6e3a7070cae8cd878d0c3f5fc0fd9fefba50ed8ae880c3ca19",
+      "uncertain": false
+    },
+    "shuowen:4156": {
+      "text": "A place name. Formed from 邑, with 盍 indicating the sound.",
+      "sourceTextSha256": "9bba934f0a2a196f166b1003131df070b0d3eb9322f0a4d2a86361c6939bcdf4",
+      "uncertain": false
+    },
+    "shuowen:4157": {
+      "text": "A place name. Formed from 邑, with 乾 indicating the sound.",
+      "sourceTextSha256": "11558635f0ca0158a7b6c40e9de0491ae03b5ad7bf771dec63972efcedfc1b16",
+      "uncertain": false
+    },
+    "shuowen:4158": {
+      "text": "A place name. Formed from 邑, with 𤎭 indicating the sound. Read like 淫.",
+      "sourceTextSha256": "0495f5d64d0981e2e1c1413ac4ea6898ed3aea2a4bae22f5ed0300b4e5494c0a",
+      "uncertain": false
+    },
+    "shuowen:4159": {
+      "text": "A place name. Formed from 邑, with 山 indicating the sound.",
+      "sourceTextSha256": "91a81b2184a660403cbf34c5c22e3634b255b7d942e21bc229496247eaea2fda",
+      "uncertain": false
+    },
+    "shuowen:4160": {
+      "text": "A place name. Formed from 邑, with 㙶 indicating the sound; 㙶 is the ancient graph 堂.",
+      "sourceTextSha256": "2c383c82c20d4ec8713b7bfad0132dbfc42edcb5a17978359daf7751d3c3a988",
+      "uncertain": false
+    },
+    "shuowen:4161": {
+      "text": "A state of the Ji surname. Formed from 邑, with 馮 indicating the sound.",
+      "sourceTextSha256": "cc0dd1a5c3917e82f49c66d1f7b205006ab228d65a45ad31852a10cf5a4a713f",
+      "uncertain": false
+    },
+    "shuowen:4162": {
+      "text": "A township in Anyang, Runan. Formed from 邑, with abbreviated 𦳋 indicating the sound.",
+      "sourceTextSha256": "1686e6b52122a4d23c20adf8fef968f4b5df75603164830b49a6512ff38cf163",
+      "uncertain": false
+    },
+    "shuowen:4163": {
+      "text": "A pavilion in Shangcai, Runan. Formed from 邑, with 甫 indicating the sound.",
+      "sourceTextSha256": "b30ebc654c31395a67d26a95dfadce7754dd840374e1c2ff2195524f575924c2",
+      "uncertain": false
+    },
+    "shuowen:4164": {
+      "text": "A county in Nanyang. Formed from 邑, with 麗 indicating the sound.",
+      "sourceTextSha256": "620cfd81a68757e2760eeb78be2b4814bcfc609e8a8b9c6f77f196c23c5cf42d",
+      "uncertain": false
+    },
+    "shuowen:4165": {
+      "text": "A place name. Formed from 邑, with 𠨧 indicating the sound.",
+      "sourceTextSha256": "7695923522929202cd701748aeba0ac794252e13038a90b2247bbaaa80fe3730",
+      "uncertain": false
+    },
+    "shuowen:4166": {
+      "text": "Formed from reversed 邑. The graph 𨛜 follows this. Further explanation is missing.",
+      "sourceTextSha256": "c2555f8dc1c71633cc2e5b6d7cb93e4149366942572d9bbf31db912a63e8fc04",
+      "uncertain": false
+    },
+    "shuowen:4167": {
+      "text": "A neighborhood road. Formed from 邑 and 𨙨. All characters in this group follow 𨛜. Further explanation is missing. The present clerical transformation is 𨙵.",
+      "sourceTextSha256": "c5e4d370f1413af3180e2b3fa527dc3d4596667a626bbb36685517734ab39961",
+      "uncertain": false
+    },
+    "shuowen:4168": {
+      "text": "Outlying settlements of a state, the townships where people are allotted land. Agricultural officers administer them separately. Within the boundary are six townships, administered as six townships. Formed from 𨛜, with 皀 indicating the sound; the administrative wording is uncertain.",
+      "sourceTextSha256": "a9d3150caea24947b1b694543a2d2c1365c6482119800235fd137ec47854b486",
+      "uncertain": true
+    },
+    "shuowen:4169": {
+      "text": "A road within a neighborhood. Formed from 𨛜 and 共: something shared by all within the settlement.",
+      "sourceTextSha256": "928eeee87d6896d14d8cb2c64cc1044a140ad08d6284f37c07eb72676ba0e537",
+      "uncertain": false
+    },
+    "shuowen:4170": {
+      "text": "Fullness: the essence of the great yang does not diminish. Formed from 囗 and 一; pictographic. All characters in this group follow 日.",
+      "sourceTextSha256": "0d78643c080f3d6cbe7ae5620b20584fec32cf84466a422652dbd38bd46ba81f",
+      "uncertain": false
+    },
+    "shuowen:4171": {
+      "text": "The autumn sky. Formed from 日, with 文 indicating the sound. The Book of Yu says: “When benevolently covering those below with compassion, it is called 旻天.”",
+      "sourceTextSha256": "82e494b1a2f95fc74d80403d62128bcf11211370c435233b3dc5b06245381f11",
+      "uncertain": false
+    },
+    "shuowen:4172": {
+      "text": "The four seasons. Formed from 日, with 寺 indicating the sound.",
+      "sourceTextSha256": "e21843dd62965adc573c8f5798dd98048f94586709459899370fec2bcfb67d30",
+      "uncertain": false
+    },
+    "shuowen:4173": {
+      "text": "Morning. Formed from 日 above 甲.",
+      "sourceTextSha256": "15ed26d43eb1f9e77a9ddf60e0640dd036dcaefa1b8c19750f3170b525b71e9e",
+      "uncertain": false
+    },
+    "shuowen:4174": {
+      "text": "Still dark. Formed from 日, with 勿 indicating the sound.",
+      "sourceTextSha256": "a55e2fc6d36fcc8a221c349475d0bbdee863c7811db131b7f75d1269695f1ea3",
+      "uncertain": false
+    },
+    "shuowen:4175": {
+      "text": "昧爽, the light of dawn. Formed from 日, with 未 indicating the sound. Another explanation: dark.",
+      "sourceTextSha256": "10691c30158558fe324e9495b5866430bf724853bcacf2bc1feefde34f8e69bb",
+      "uncertain": false
+    },
+    "shuowen:4176": {
+      "text": "The light of dawn. Formed from 日, with 者 indicating the sound.",
+      "sourceTextSha256": "a7f08034ea6b78fd42d13b6ccc136dabd398e2f7015b2213c8b7b699dd051b9b",
+      "uncertain": false
+    },
+    "shuowen:4177": {
+      "text": "昭晣, bright. Formed from 日, with 折 indicating the sound. The Rites says: “Conduct affairs when light has dawned.”",
+      "sourceTextSha256": "2da16b24138e86f5c1f3143de92fd8161582b95c0ef44eae97f9d145cf0c3817",
+      "uncertain": false
+    },
+    "shuowen:4178": {
+      "text": "The sun’s brightness. Formed from 日, with 召 indicating the sound.",
+      "sourceTextSha256": "88a44b1a098fcbbb6d3043f3e3dc110f39781f9569182b04daafe45efa31a61c",
+      "uncertain": false
+    },
+    "shuowen:4179": {
+      "text": "Bright. Formed from 日, with 吾 indicating the sound. The Odes says: “Awake, beating the breast” (晤辟有摽); interpretation of the recorded quotation is uncertain.",
+      "sourceTextSha256": "5785d4e0fc8ed42fd72e0f182cfe1c2fe24f173a431d9309ae36a317f17c9b3c",
+      "uncertain": true
+    },
+    "shuowen:4180": {
+      "text": "Bright. Formed from 日, with 勺 indicating the sound. The Changes says: “It is a white-marked forehead.”",
+      "sourceTextSha256": "a52a0803b5e7ec72de88ce5a4d00a63560cce3a8ca0d93cabc425e20941dbaed",
+      "uncertain": false
+    },
+    "shuowen:4181": {
+      "text": "Bright. Formed from 日, with 光 indicating the sound.",
+      "sourceTextSha256": "2906301b5dfa02ce3cfc4ec8e5e05a1ef63e3cdff9e461fef640263fcaec5358",
+      "uncertain": false
+    },
+    "shuowen:4182": {
+      "text": "Bright. Formed from 日, with 廣 indicating the sound.",
+      "sourceTextSha256": "bde3433755049a6fc67f3888067df582f07d96f10e7aeda2eb76e9b9b5176662",
+      "uncertain": false
+    },
+    "shuowen:4183": {
+      "text": "The appearance of the sun rising at dawn. Formed from 日, with 九 indicating the sound. Read like 勖. Another explanation: bright.",
+      "sourceTextSha256": "f064ddecb76cafa5e0fec11c680dddd92a190b6de8836523edfca7abf9e9dc48",
+      "uncertain": false
+    },
+    "shuowen:4184": {
+      "text": "To advance. When the sun rises, all things advance. Formed from 日 and 臸. The Changes says: “Brightness emerges above the earth: 㬜.”",
+      "sourceTextSha256": "668465f98baec90959200ff56c6a17d190f69384ec077bfaf1a88f2b8045e2e7",
+      "uncertain": false
+    },
+    "shuowen:4185": {
+      "text": "The sun rising. Formed from 日, with 昜 indicating the sound. The Book of Yu says: “Sunrise Valley.”",
+      "sourceTextSha256": "7f654917cba06cbdc95e6749a32a9c2bfd6476bed0d87fbd938a633c7a2fecac",
+      "uncertain": false
+    },
+    "shuowen:4186": {
+      "text": "The sky clearing by day after rain. Formed from 日, with abbreviated 啓 indicating the sound.",
+      "sourceTextSha256": "a8d1f3f14355502dfd20fd3b1f823e0d23e7bc7e15c4776ba68ddd88892fe3c1",
+      "uncertain": false
+    },
+    "shuowen:4187": {
+      "text": "The sun briefly appearing through covering clouds. Formed from 日, with 易 indicating the sound.",
+      "sourceTextSha256": "ba44164103f256a2568dafa7aa4a351f03660aba7ab261587b1998f14d23b04f",
+      "uncertain": false
+    },
+    "shuowen:4188": {
+      "text": "Warmth from the rising sun. Formed from 日, with 句 indicating the sound. Beidi has Xuyan County, 昫衍.",
+      "sourceTextSha256": "2fd6d345a8232569cc62328000a7f658ef4eab09b88fb2ea83fac60acdc7957b",
+      "uncertain": false
+    },
+    "shuowen:4189": {
+      "text": "The sun appearing. Formed from 日 and 見; 見 also indicates the sound. The Odes says: “When sunlight appears, it melts.”",
+      "sourceTextSha256": "5c59bb6a48eec49ab3d7dc9a5a5df0df6ee1596cf21858c90502008be5c1499b",
+      "uncertain": false
+    },
+    "shuowen:4190": {
+      "text": "The sky clear. Formed from 日, with 安 indicating the sound.",
+      "sourceTextSha256": "caa894438779efb559ca44651b4dc33f8d641589eb13ab4e580acee64c958791",
+      "uncertain": false
+    },
+    "shuowen:4191": {
+      "text": "Stars visible without clouds. Formed from 日, with 燕 indicating the sound.",
+      "sourceTextSha256": "9211663ca7222fdd611a01d704c28956e1028dcd9068a2df81e36d5d55e743c1",
+      "uncertain": false
+    },
+    "shuowen:4192": {
+      "text": "Light. Formed from 日, with 京 indicating the sound.",
+      "sourceTextSha256": "f2deeb2f5a720690cb00fdf72fa99c3afa24035e7399b25f9c08f5a83f41e154",
+      "uncertain": false
+    },
+    "shuowen:4193": {
+      "text": "The appearance of the rising sun. Formed from 日, with 告 indicating the sound.",
+      "sourceTextSha256": "b6180c120223092263c713eb715690863d25c5acfb99ecf186b4c17f3843b56d",
+      "uncertain": false
+    },
+    "shuowen:4194": {
+      "text": "晧旰, bright. Formed from 日, with 臯 indicating the sound.",
+      "sourceTextSha256": "e15abd50447514ccef3e1956023128888ef2d2b377e625ad14fc7f1eca86fe49",
+      "uncertain": false
+    },
+    "shuowen:4195": {
+      "text": "Light. Formed from 日 and 𠌶.",
+      "sourceTextSha256": "dbcba3a1c234f2c6d0250d0c94b3d5736ba9199b74ed101e4f9624c393407123",
+      "uncertain": false
+    },
+    "shuowen:4196": {
+      "text": "Light. Formed from 日, with 軍 indicating the sound.",
+      "sourceTextSha256": "e3224460b580fe6b330d76c77531c5f47232956f797c4b517ad94c46a04a07b6",
+      "uncertain": false
+    },
+    "shuowen:4197": {
+      "text": "Late in the day. Formed from 日, with 干 indicating the sound. The Spring and Autumn Commentary says: “The day is late and the ruler is weary.”",
+      "sourceTextSha256": "52e748b471a7f9c888a369cf49bd4a618242ce302da01c0eb5aa99d91e69a665",
+      "uncertain": false
+    },
+    "shuowen:4198": {
+      "text": "The sun moving slowly, 暆暆. Formed from 日, with 施 indicating the sound. Lelang has Dongyi County, 東暆. Read like 酏.",
+      "sourceTextSha256": "f7f9405079e0974b35c388b6f40dced120f87c0fb47ce4c1fa6791ec44b93c3a",
+      "uncertain": false
+    },
+    "shuowen:4199": {
+      "text": "The sun’s shadow. Formed from 日, with 咎 indicating the sound.",
+      "sourceTextSha256": "5edaabe87b6425adcf46fd500e129a5a13c251b8b02c8f9487d7f8677d745294",
+      "uncertain": false
+    },
+    "shuowen:4200": {
+      "text": "When the sun is in the west: slanting. Formed from 日, with 仄 indicating the sound. The Changes says: “The slanting sun’s brightness.”",
+      "sourceTextSha256": "d05eb61f066948438ddce795ddf844a16eecfcc0295d098b21434bcc5a0f5668",
+      "uncertain": false
+    }
+  }
+}

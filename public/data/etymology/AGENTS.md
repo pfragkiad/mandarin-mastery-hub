@@ -23,6 +23,15 @@
 - Written-form suggestions do not authorize inherited explanations. In particular,
   发 never automatically receives 發 or 髮 text, and the jade 王-shaped variant
   never receives the standalone 王 explanation.
+- Shuowen English is a separate owner-requested AI draft layer, authored in
+  [translation batches](../../../importer/data/etymology/translations/README.md).
+  Preserve each original `text` and source ID; attach `translation` only to that
+  entry and its exact Chinese-text SHA-256. Never borrow Howell wording, merge
+  duplicate headwords, or substitute a modern dictionary gloss. English is shown
+  with “AI-generated draft, not reviewed”; uncertainty remains visible. Keep the
+  unchanged Classical Chinese behind its remembered Advanced disclosure. No
+  pronunciation or geometry may be generated from either text. The importer
+  requires complete coverage and rejects stale or corrupted batches.
 - BabelStone references describe graphical membership only. Keep raw tokens,
   regional qualifiers, occurrence paths and tree checksum checks. Numbered/PUA
   forms retain source identities; descriptions/substitutions are not lexical IDs.

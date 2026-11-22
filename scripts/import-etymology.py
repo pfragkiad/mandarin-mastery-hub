@@ -6,6 +6,8 @@ python scripts/import-etymology.py --check
 Original source bytes and all catalogue/IDS/geometry files are read-only. The Node
 bridge owns library and radical-form identity construction and BabelStone parsing.
 Python preserves source text/locators and makes deterministic JSON shards/reports.
+Separately authored English drafts must cover every original Shuowen ID and bind
+to its unchanged Chinese text; they remain explicitly AI-generated/unreviewed.
 """
 import argparse
 from collections import Counter, defaultdict
@@ -108,6 +110,67 @@ def shard_for(glyph):
     return f'glyphs/{ord(glyph) >> 8:04x}.json'
 
 
+def attach_shuowen_translations(entries, manifest):
+    """Attach only complete, source-bound English drafts; keep Chinese text intact."""
+    expected = {entry['id']: entry for notes in entries.values() for entry in notes if entry['sourceId'] == 'shuowen'}
+    seen = set()
+    inputs = {}
+    uncertain = 0
+    directory = SOURCES / 'translations'
+    upstream = next(item for item in manifest['sources'] if item['id'] == 'shuowen')
+    archive = next(item for item in upstream['files'] if item['path'].endswith('/upstream.zip'))
+    provenance = {'source_url': upstream['repository'], 'source_revision': upstream['revision'],
+                  'source_archive_sha256': archive['sha256'], 'license': 'Apache-2.0',
+                  'license_notices': [notice for notice in manifest['dataset_metadata']['license_notices'] if notice['source_id'] == 'shuowen'],
+                  'import_date': manifest['dataset_metadata']['import_date'], 'version': '1.0.0'}
+    for path in sorted((directory / 'en').glob('*.json')):
+        if not re.fullmatch(r'[0-9]{3}\.json', path.name):
+            raise ValueError(f'Unexpected translation batch: {path.name}')
+        source_path = directory / 'source-batches' / path.name
+        source_raw = source_path.read_bytes()
+        source = json.loads(source_raw)
+        payload = json.loads(path.read_text(encoding='utf-8'))
+        meta = payload['dataset_metadata']
+        if source['format'] != 'mandarin-shuowen-translation-source-batch' or source['schemaVersion'] != 1 or source['batch'] != path.stem:
+            raise ValueError(f'Invalid translation source envelope: {path.name}')
+        if payload['format'] != 'mandarin-shuowen-english-draft-batch' or payload['schemaVersion'] != 1 or payload['batch'] != path.stem:
+            raise ValueError(f'Invalid translation envelope: {path.name}')
+        if any(meta.get(key) != value or source['dataset_metadata'].get(key) != value for key, value in provenance.items()):
+            raise ValueError(f'Translation source provenance or license changed: {path.name}')
+        if meta['source_batch_sha256'] != digest(source_raw) or meta['language'] != 'en' or meta['method'] != 'ai-generated' or meta['review_status'] != 'unreviewed-ai-draft':
+            raise ValueError(f'Unbound or incorrectly labeled translation batch: {path.name}')
+        source_records = {record['id']: record for record in source['records']}
+        if len(source_records) != len(source['records']):
+            raise ValueError(f'Duplicate translation source identity: {path.name}')
+        if set(payload['translations']) != set(source_records):
+            raise ValueError(f'Incomplete translation batch: {path.name}')
+        for entry_id, draft in payload['translations'].items():
+            if entry_id in seen or entry_id not in expected:
+                raise ValueError(f'Duplicate or unknown translation identity: {entry_id}')
+            seen.add(entry_id)
+            entry = expected[entry_id]
+            original = source_records[entry_id]
+            source_hash = digest(entry['text'].encode('utf-8'))
+            if original['headword'] != entry['headword'] or original['text'] != entry['text'] or original['sourceTextSha256'] != source_hash or draft['sourceTextSha256'] != source_hash:
+                raise ValueError(f'Translation is bound to changed Chinese text: {entry_id}')
+            text = draft['text']
+            if not isinstance(text, str) or not text.strip() or not re.search('[A-Za-z]', text) or text == entry['text']:
+                raise ValueError(f'Missing English translation: {entry_id}')
+            if re.search(r'(?<!\w)\?|\?(?=\w)', text) or '\ufffd' in text:
+                raise ValueError(f'Possible encoding loss in English translation: {entry_id}')
+            if type(draft['uncertain']) is not bool:
+                raise ValueError(f'Invalid uncertainty flag: {entry_id}')
+            uncertain += int(draft['uncertain'])
+            entry['translation'] = {'language': 'en', 'text': text, 'method': 'ai-generated',
+                'reviewStatus': 'unreviewed-ai-draft', 'sourceTextSha256': source_hash, 'uncertain': draft['uncertain']}
+        inputs[path.relative_to(ROOT).as_posix()] = digest(path.read_bytes())
+        inputs[source_path.relative_to(ROOT).as_posix()] = digest(source_raw)
+    if seen != set(expected):
+        raise ValueError(f'English translation collection incomplete: {len(seen)}/{len(expected)} records; {len(set(expected) - seen)} missing')
+    return inputs, {'language': 'en', 'method': 'ai-generated', 'review_status': 'unreviewed-ai-draft',
+                    'record_count': len(seen), 'uncertain_record_count': uncertain, 'version': '1.0.0'}
+
+
 def association(target, entries):
     matched = entries.get(target['glyph'], [])
     contextual = bool(target.get('contextualIdentity'))
@@ -141,7 +204,10 @@ def related_suggestions(snapshot, entries):
 
 def build(snapshot, manifest):
     entries = source_entries(manifest)
+    translation_inputs, translation_summary = attach_shuowen_translations(entries, manifest)
     metadata = copy.deepcopy(manifest['dataset_metadata'])
+    metadata['version'] = '1.1.0'
+    metadata['translation_layer'] = translation_summary
     metadata['source_name'] = 'Mandarin etymology association handoff'
     metadata['license_scope'] += ' Graphical references retain separate BabelStone provenance; no font rights or stroke bindings are granted by this export.'
     metadata['structural_source'] = snapshot['structuralSource']
@@ -197,7 +263,7 @@ def build(snapshot, manifest):
         glyph = record['glyph']
         record_index[record['id']] = {'glyph': glyph, 'status': record['status'], 'file': shard_for(glyph)}
     form_index = {f'{form["familyId"]}/{form["formKey"]}': {**form, 'file': shard_for(form['glyph'])} for form in forms}
-    inputs = {**snapshot['inputs'],
+    inputs = {**snapshot['inputs'], **translation_inputs,
         'importer/data/etymology/manifest.json': digest((SOURCES / 'manifest.json').read_bytes().replace(b'\r\n', b'\n')),
         'public/data/etymology/etymology.schema.json': digest((OUTPUT / 'etymology.schema.json').read_bytes().replace(b'\r\n', b'\n')),
         'scripts/import-etymology.py': digest(Path(__file__).read_bytes().replace(b'\r\n', b'\n'))}
@@ -214,6 +280,8 @@ def build(snapshot, manifest):
         'format': 'mandarin-etymology-association-audit', 'schemaVersion': 1, 'dataset_metadata': metadata,
         'inputs': inputs, 'summary': {
             'sourceEntries': dict(Counter(entry['sourceId'] for notes in entries.values() for entry in notes)),
+            'shuowenEnglishDrafts': translation_summary['record_count'],
+            'uncertainShuowenEnglishDrafts': translation_summary['uncertain_record_count'],
             'catalogueRecords': dict(Counter(record['kind'] for record in records)), 'radicalFormRecords': len(forms),
             'associationStatuses': dict(Counter(record['status'] for record in records)),
             'formStatuses': dict(Counter(form['status'] for form in forms)),
@@ -236,7 +304,7 @@ def build(snapshot, manifest):
             'Component and radical roles require review; exact-headword associations alone never establish those roles.',
             'Only current-tree-bound direct-G graphical relations are exported. Geometry is not loaded, validated or exported.',
             'Numbered/unknown tokens are not lexical identities; suggested substitutions are never applied.',
-            'No source text is translated; Chinese historical wording and English source notation remain unchanged.']}
+            'Original source text remains unchanged. Shuowen English is a separately source-bound AI draft, not scholarly reviewed.']}
     outputs[REPORT] = serialized(report)
     return outputs, report
 

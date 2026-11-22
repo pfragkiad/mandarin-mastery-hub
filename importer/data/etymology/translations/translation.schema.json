@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shuowen source and English draft translation batches",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/sourceBatch"
+    },
+    {
+      "$ref": "#/$defs/draftBatch"
+    }
+  ],
+  "$defs": {
+    "sourceBatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "schemaVersion", "dataset_metadata", "batch", "records"],
+      "properties": {
+        "format": {
+          "const": "mandarin-shuowen-translation-source-batch"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "dataset_metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_name",
+            "source_url",
+            "source_revision",
+            "source_archive_sha256",
+            "license",
+            "license_notices",
+            "version",
+            "import_date",
+            "disclaimer"
+          ],
+          "properties": {
+            "source_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "source_revision": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            "source_archive_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "license": {
+              "const": "Apache-2.0"
+            },
+            "license_notices": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "version": {
+              "const": "1.0.0"
+            },
+            "import_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "disclaimer": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "batch": {
+          "type": "string",
+          "pattern": "^[0-9]{3}$"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "headword", "text", "sourceTextSha256"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^shuowen:[0-9]+$"
+              },
+              "headword": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "text": {
+                "type": "string"
+              },
+              "sourceTextSha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "draftBatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "schemaVersion", "dataset_metadata", "batch", "translations"],
+      "properties": {
+        "format": {
+          "const": "mandarin-shuowen-english-draft-batch"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "dataset_metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_name",
+            "source_url",
+            "source_revision",
+            "source_archive_sha256",
+            "license",
+            "license_notices",
+            "version",
+            "import_date",
+            "disclaimer",
+            "language",
+            "method",
+            "review_status",
+            "source_batch_sha256",
+            "created_date"
+          ],
+          "properties": {
+            "source_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "source_revision": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            "source_archive_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "license": {
+              "const": "Apache-2.0"
+            },
+            "license_notices": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "version": {
+              "const": "1.0.0"
+            },
+            "import_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "disclaimer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "language": {
+              "const": "en"
+            },
+            "method": {
+              "const": "ai-generated"
+            },
+            "review_status": {
+              "const": "unreviewed-ai-draft"
+            },
+            "source_batch_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "created_date": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "batch": {
+          "type": "string",
+          "pattern": "^[0-9]{3}$"
+        },
+        "translations": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^shuowen:[0-9]+$"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "sourceTextSha256", "uncertain"],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sourceTextSha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "uncertain": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

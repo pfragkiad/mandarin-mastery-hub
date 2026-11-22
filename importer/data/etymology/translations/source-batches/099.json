@@ -1,0 +1,227 @@
+{
+  "format": "mandarin-shuowen-translation-source-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology."
+  },
+  "batch": "099",
+  "records": [
+    {
+      "id": "shuowen:9801",
+      "headword": "醺",
+      "text": "醉也。从酉熏聲。《詩》曰：“公尸來燕醺醺。”",
+      "sourceTextSha256": "11acd173981955ccb4454a25267483a25213ff5c326e6a2092decfbc7434991e"
+    },
+    {
+      "id": "shuowen:9802",
+      "headword": "醟",
+      "text": "䣱也。从酉，熒省聲。",
+      "sourceTextSha256": "b221db17606150217fb94d20abc01a826228756be1af70499c347750c0aed0d9"
+    },
+    {
+      "id": "shuowen:9803",
+      "headword": "䣱",
+      "text": "醉醟也。从酉句聲。",
+      "sourceTextSha256": "0470afdadeb2612db28d0f903e9188378819613b897917151de2d9497fc46492"
+    },
+    {
+      "id": "shuowen:9804",
+      "headword": "酲",
+      "text": "病酒也。一曰醉而覺也。从酉呈聲。",
+      "sourceTextSha256": "4b2dc39abebcbbd0fece0a4c98ac79beb264d5717862a610915ccd871383c4d1"
+    },
+    {
+      "id": "shuowen:9805",
+      "headword": "醫",
+      "text": "治病工也。殹，惡姿也；醫之性然。得酒而使，从酉。王育說。一曰殹，病聲。酒所以治病也。《周禮》有醫酒。古者巫彭初作醫。",
+      "sourceTextSha256": "cc90cb2744ee176486f90cf59af76e976b9f724aa9ba901a36b3e294b1fee207"
+    },
+    {
+      "id": "shuowen:9806",
+      "headword": "莤",
+      "text": "禮祭，束茅，加于祼圭，而灌鬯酒，是爲莤。象神歆之也。一曰莤，榼上塞也。从酉从艸。《春秋傳》曰：“尔貢包茅不入，王祭不供，無以莤酒。”",
+      "sourceTextSha256": "1ed9d719867ceffc568b182a851c1ea211b44fa9bb6b37737e8dd30906441939"
+    },
+    {
+      "id": "shuowen:9807",
+      "headword": "醨",
+      "text": "薄酒也。从酉离聲。讀若離。",
+      "sourceTextSha256": "8ac8454d7e50e866d4e2331711dbb60087c5dca6131daf06676b23156a258bba"
+    },
+    {
+      "id": "shuowen:9808",
+      "headword": "䤘",
+      "text": "酢也。从酉韱聲。",
+      "sourceTextSha256": "d3c352e2ad97db6c2b96a0ecb989b9a0e5386141a6d44b9a6bffbf102087b1e2"
+    },
+    {
+      "id": "shuowen:9809",
+      "headword": "酸",
+      "text": "酢也。从酉夋聲。關東謂酢曰酸。",
+      "sourceTextSha256": "0d2590d3946940093ff9a05979874b238bdc0f8ace637adfd60413ef67651ae9"
+    },
+    {
+      "id": "shuowen:9810",
+      "headword": "酨",
+      "text": "酢𤖅也。从酉𢦔聲。",
+      "sourceTextSha256": "4f36af1edc2b96a901c32f9c1f307f37babfeb68fd13a65fd00f24c215a599f7"
+    },
+    {
+      "id": "shuowen:9811",
+      "headword": "醶",
+      "text": "酢𤖅也。从酉僉聲。",
+      "sourceTextSha256": "4197a791abb7c7ed1384d5daf0eef92c9433c771ba06118b640f92042c6ff693"
+    },
+    {
+      "id": "shuowen:9812",
+      "headword": "酢",
+      "text": "醶也。 从酉乍聲。",
+      "sourceTextSha256": "fca698f25bbae6d4e3a86470afe3aafe8447a60259cb3a615d7f93f01c382cd2"
+    },
+    {
+      "id": "shuowen:9813",
+      "headword": "酏",
+      "text": "黍酒也。从酉也聲。一曰甜也。賈侍中說：酏爲鬻清。",
+      "sourceTextSha256": "2be2193050172e594816ccadff6d812f2291615b27f800a82e07b408caa3781c"
+    },
+    {
+      "id": "shuowen:9814",
+      "headword": "𨡓",
+      "text": "盬也。从肉从酉，酒以和𨡓也；爿聲。",
+      "sourceTextSha256": "81a2ccf4669d7b6334cc27c7fe7f2241464a47137dd177b66f0b8619e356689f"
+    },
+    {
+      "id": "shuowen:9815",
+      "headword": "醢",
+      "text": "肉𨡓也。从酉、𥁓。",
+      "sourceTextSha256": "86049a9fe022754523f8435aabe7d4ecb766adbf72df46bacda9d74c17916a2b"
+    },
+    {
+      "id": "shuowen:9816",
+      "headword": "𨡭",
+      "text": "𨡭䤅，榆𨡓也。从酉敄聲。",
+      "sourceTextSha256": "c22e42cfcde2d2314117ce5f6d99548789b2e3708d795cc428b1e2c238f344eb"
+    },
+    {
+      "id": "shuowen:9817",
+      "headword": "䤅",
+      "text": "𨡭䤅也。从酉俞聲。",
+      "sourceTextSha256": "4a2a476d8348ac5525a1351d193a5e5469199f3ee088c46eebd578cbe051e87f"
+    },
+    {
+      "id": "shuowen:9818",
+      "headword": "酹",
+      "text": "餟祭也。从酉寽聲。",
+      "sourceTextSha256": "37d2c2913a53ca7445c90ec5479a4e921ad9a44b7bebaf4de1ff325deaaecab5"
+    },
+    {
+      "id": "shuowen:9819",
+      "headword": "𨢡",
+      "text": "擣榆𨡓也。从酉畢聲。",
+      "sourceTextSha256": "a469284f764035de1f68da26d1da6379924c4ec65038e8ca10a29ee7aa209603"
+    },
+    {
+      "id": "shuowen:9820",
+      "headword": "䤎",
+      "text": "𨡓也。从酉矞聲。",
+      "sourceTextSha256": "123199dd63cffadf6f772fbc994c1500d249f8dd87609891555d701cb48a102b"
+    },
+    {
+      "id": "shuowen:9821",
+      "headword": "䣼",
+      "text": "雜味也。从酉京聲。",
+      "sourceTextSha256": "049c0d92e1d55db5b56786f68a7b3cd1f8979c3af74ba385affe1acc2bb74ba9"
+    },
+    {
+      "id": "shuowen:9822",
+      "headword": "䤔",
+      "text": "闕。",
+      "sourceTextSha256": "5d45d36377286653f8b29564f4271c709cce0413831257b30af6d9e307097087"
+    },
+    {
+      "id": "shuowen:9823",
+      "headword": "䣸",
+      "text": "闕。",
+      "sourceTextSha256": "5d45d36377286653f8b29564f4271c709cce0413831257b30af6d9e307097087"
+    },
+    {
+      "id": "shuowen:9824",
+      "headword": "酪",
+      "text": "乳𤖅也。从酉各聲。",
+      "sourceTextSha256": "c9dbe72c15a16f8777906361bfffa1f0ea78c032976fcda903325e2e2ab04cb0"
+    },
+    {
+      "id": "shuowen:9825",
+      "headword": "醐",
+      "text": "醍醐，酪之精者也。从酉胡聲。",
+      "sourceTextSha256": "f9d768435412275eb9f5ca4c49cafe6b3de16f5d9404e8b313b5a3b4092b0dbf"
+    },
+    {
+      "id": "shuowen:9826",
+      "headword": "酩",
+      "text": "酩酊，醉也。从酉名聲。",
+      "sourceTextSha256": "71cbd85bf4029244b2d77b8ef2469750beedfc4eb052a76db8424f73a511740d"
+    },
+    {
+      "id": "shuowen:9827",
+      "headword": "酊",
+      "text": "酩酊也。从酉丁聲。",
+      "sourceTextSha256": "cf31eb93b39a70eb31b112280dd7bd62f3b8b742914a62df1f8e6f92690646f2"
+    },
+    {
+      "id": "shuowen:9828",
+      "headword": "醒",
+      "text": "醉解也。从酉星聲。按：酲字注云：一曰醉而覺也。則古酲，亦音醒也。",
+      "sourceTextSha256": "8a623963631639455fc76d57576ee42428ce845ec5dde6a8cd42727d7c6a40ea"
+    },
+    {
+      "id": "shuowen:9829",
+      "headword": "醍",
+      "text": "清酒也。从酉是聲。",
+      "sourceTextSha256": "8d5266937ce3153aa6154c7add8a50d54aed855cbe6bf51d4dee26d68fe1e268"
+    },
+    {
+      "id": "shuowen:9830",
+      "headword": "酋",
+      "text": "繹酒也。从酉，水半見於上。《禮》有“大酋”，掌酒官也。凡酋之屬皆从酋。",
+      "sourceTextSha256": "d5f8ad314383e40cc614c0d22730c4c0f92b75a7babe1c47aee2b158e8cc9ac7"
+    },
+    {
+      "id": "shuowen:9831",
+      "headword": "𢍜",
+      "text": "酒器也。从酋，廾以奉之。《周禮》六尊：犧尊、象尊、著尊、壺尊、太尊、山尊，以待祭祀賓客之禮。",
+      "sourceTextSha256": "ac69ef92ed1dbc19f117b401b4c9fdd2942f701cf5a4e4f601ef2371ee2c7585"
+    },
+    {
+      "id": "shuowen:9832",
+      "headword": "戌",
+      "text": "滅也。九月，陽气微，萬物畢成，陽下入地也。五行，土生於戊，盛於戌。从戊含一。凡戌之屬皆从戌。",
+      "sourceTextSha256": "4ea6f596baa22f36d83e1ff5d6758a983df94c966510696e9272df3a08713bc9"
+    },
+    {
+      "id": "shuowen:9833",
+      "headword": "亥",
+      "text": "荄也。十月，微陽起，接盛陰。从二，二，古文上字。一人男，一人女也。从乙，象褢子咳咳之形。《春秋傳》曰：“亥有二首六身。”凡亥之屬皆从亥。",
+      "sourceTextSha256": "39f8f34c2eb23e47c6d09e2629ef23cb3e54c2afe70e74b939dc8172b8ca5054"
+    }
+  ]
+}

@@ -1,0 +1,629 @@
+{
+  "format": "mandarin-shuowen-translation-source-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology."
+  },
+  "batch": "079",
+  "records": [
+    {
+      "id": "shuowen:7801",
+      "headword": "攘",
+      "text": "推也。从手襄聲。",
+      "sourceTextSha256": "acd0d949211ca636ba9fa3cfa73ba624c22d0c5aac0ada7279d6b20efe78141c"
+    },
+    {
+      "id": "shuowen:7802",
+      "headword": "拱",
+      "text": "斂手也。从手共聲。",
+      "sourceTextSha256": "e53a05ad7562c8aa45b88f9ede5f189ca5672b6b6d4ee931edcf426321d87e5a"
+    },
+    {
+      "id": "shuowen:7803",
+      "headword": "撿",
+      "text": "拱也。从手僉聲。",
+      "sourceTextSha256": "e3dfe89b8270c67f1e90c51ec1c01e05eda0dade3c7797ca2423797475977656"
+    },
+    {
+      "id": "shuowen:7804",
+      "headword": "𢳎",
+      "text": "首至地也。从手、𠦪。𠦪音忽。",
+      "sourceTextSha256": "3542a47cd995a605847f73b3ec9e1e235991a0981cb896b1d80a070e96b19b5e"
+    },
+    {
+      "id": "shuowen:7805",
+      "headword": "捾",
+      "text": "搯捾也。从手官聲。一曰援也。",
+      "sourceTextSha256": "441e1481bee5d46bff400b511303d2d0174f1e3fd82b02f4a071e7406d60ba6b"
+    },
+    {
+      "id": "shuowen:7806",
+      "headword": "搯",
+      "text": "捾也。从手舀聲。《周書》曰：“師乃搯。”搯者，拔兵刃以習擊刺。《詩》曰：“左旋右搯。”",
+      "sourceTextSha256": "6f980100013f030d842b69c1847074fafa563f82750939f6374e7d4d20a0b90e"
+    },
+    {
+      "id": "shuowen:7807",
+      "headword": "㧬",
+      "text": "𢹬也。从手𢀜聲。",
+      "sourceTextSha256": "e24006537172ebfea0de8a966009bab0a89b5585d7d7dd2a40cc76b16784c81e"
+    },
+    {
+      "id": "shuowen:7808",
+      "headword": "推",
+      "text": "排也。从手隹聲。",
+      "sourceTextSha256": "ab4a431dd6f68fdbaacee5462c1803323277651118d2bd4830fb81d8a2c75184"
+    },
+    {
+      "id": "shuowen:7809",
+      "headword": "捘",
+      "text": "推也。从手夋聲。《春秋傳》曰：“捘衞侯之手。”",
+      "sourceTextSha256": "8d2a86e0bae3311c7c9506bdc7153bde226cfdee3600dddd2ca21d729ecad088"
+    },
+    {
+      "id": "shuowen:7810",
+      "headword": "排",
+      "text": "擠也。从手非聲。",
+      "sourceTextSha256": "103265fb3cbefc3fddf8a9180f5817ece4fdeb0e287ff876779cb0c3022c2109"
+    },
+    {
+      "id": "shuowen:7811",
+      "headword": "擠",
+      "text": "排也。从手齊聲。",
+      "sourceTextSha256": "ac25db4330d90068aefae5ee2da40684884f07183b8d7232ef78219c90fcfe1c"
+    },
+    {
+      "id": "shuowen:7812",
+      "headword": "抵",
+      "text": "擠也。从手氐聲。",
+      "sourceTextSha256": "cc034e54dfc004fca0abbcaa8b580c19413a3c2c95d2f03390e567d4873976e8"
+    },
+    {
+      "id": "shuowen:7813",
+      "headword": "摧",
+      "text": "擠也。从手崔聲。一曰挏也，一曰折也。",
+      "sourceTextSha256": "900f50a29e23fe1e7e78e093c119af067ad002cd45fb1ab276bfc78822ca8231"
+    },
+    {
+      "id": "shuowen:7814",
+      "headword": "拉",
+      "text": "摧也。从手立聲。",
+      "sourceTextSha256": "6c38e36af54eae272f2775c503492080599d9c9cf713570a2541e62879b183d3"
+    },
+    {
+      "id": "shuowen:7815",
+      "headword": "挫",
+      "text": "摧也。从手𡋲聲。",
+      "sourceTextSha256": "34c9c31ed5137f1259034df68ce8127a35a826b7fd6a10ed6cc60d5f7392afe5"
+    },
+    {
+      "id": "shuowen:7816",
+      "headword": "扶",
+      "text": "左也。从手夫聲。",
+      "sourceTextSha256": "735b982e7583bc1fcaf3c5af20024c6e5c966efc70ca372a6455ab23897d2b50"
+    },
+    {
+      "id": "shuowen:7817",
+      "headword": "𢪇",
+      "text": "扶也。从手爿聲。",
+      "sourceTextSha256": "26fcb4794805642bb6449d83a34e0a4805ce3a1a830ca54a3468f389d12ca4e1"
+    },
+    {
+      "id": "shuowen:7818",
+      "headword": "持",
+      "text": "握也。从手寺聲。",
+      "sourceTextSha256": "3d37781a928be377c649f7ba252431fcde2bcfc0e0c7fd7ef6794425a4031e45"
+    },
+    {
+      "id": "shuowen:7819",
+      "headword": "挈",
+      "text": "縣持也。从手㓞聲。",
+      "sourceTextSha256": "983379d3319201cdd787a3d26765a6a590dfcdc95b076489dc2ea3f3e983368e"
+    },
+    {
+      "id": "shuowen:7820",
+      "headword": "拑",
+      "text": "脅持也。从手甘聲。",
+      "sourceTextSha256": "aebf9d9dbec30420f87c5750ee522d9dcfa52dcf7a405c09bdbcaf76c8628765"
+    },
+    {
+      "id": "shuowen:7821",
+      "headword": "揲",
+      "text": "閱持也。从手枼聲。",
+      "sourceTextSha256": "775c10a1b082be78ab0bbe06b7d8af675801ae38bf537b6be76844b1db6ae450"
+    },
+    {
+      "id": "shuowen:7822",
+      "headword": "摯",
+      "text": "握持也。从手从執。",
+      "sourceTextSha256": "ad5e91f527bc89ba85763730742a21ed46a499475a5e39d6eb1787bce4fc1a10"
+    },
+    {
+      "id": "shuowen:7823",
+      "headword": "操",
+      "text": "把持也。从手喿聲。",
+      "sourceTextSha256": "e6e97fce4355ba5448d1a90d4354d4626b2315e1962ab4cf26fa0472f9f05252"
+    },
+    {
+      "id": "shuowen:7824",
+      "headword": "㩴",
+      "text": "爪持也。从手瞿聲。",
+      "sourceTextSha256": "d5027f8c8391f5ae3c769acf7de819fe774611c815d7a72dd677207f4814fd7a"
+    },
+    {
+      "id": "shuowen:7825",
+      "headword": "捦",
+      "text": "急持衣䘳也。从手金聲。",
+      "sourceTextSha256": "3a21d676b90e9adcb32ea63c55d3483718d9a26ae8d850cd244950c1fe1e49a5"
+    },
+    {
+      "id": "shuowen:7826",
+      "headword": "搏",
+      "text": "索持也。一曰至也。从手尃聲。",
+      "sourceTextSha256": "1de9bd21a6028d3c7cfdadff96c79b7a1752b4057011053d0bca6930262887cc"
+    },
+    {
+      "id": "shuowen:7827",
+      "headword": "據",
+      "text": "杖持也。从手豦聲。",
+      "sourceTextSha256": "eec78ed10e1c03bb97242067a5d576c4077d555bbe5e75252e0aa50f648a4ac3"
+    },
+    {
+      "id": "shuowen:7828",
+      "headword": "攝",
+      "text": "引持也。从手聶聲。",
+      "sourceTextSha256": "135f6d18efc4777c5e8ab855d6cdeb921a5a7be975311a59ae85c88ff9705843"
+    },
+    {
+      "id": "shuowen:7829",
+      "headword": "𢪈",
+      "text": "并持也。从手冄聲。",
+      "sourceTextSha256": "2c78a91f148bb6d473c3feb595f1e9412394e107adc55587f4ac3322e3eaa09a"
+    },
+    {
+      "id": "shuowen:7830",
+      "headword": "抪",
+      "text": "捫持也。从手布聲。",
+      "sourceTextSha256": "0b564023a61699126ac96bf6579577a4cd5ab82c40a5068bb7d67a6e6d5836a5"
+    },
+    {
+      "id": "shuowen:7831",
+      "headword": "挾",
+      "text": "俾持也。从手夾聲。",
+      "sourceTextSha256": "34012556d583ca0ed5ddffa586165bb996f6158bc9216be0c3200ca943cf6188"
+    },
+    {
+      "id": "shuowen:7832",
+      "headword": "捫",
+      "text": "撫持也。从手門聲。《詩》曰：“莫捫朕舌。”",
+      "sourceTextSha256": "9c0634f14ffa95c65875ae8ace4e6f575da5c73d90bacc46eb6b16875ce209d4"
+    },
+    {
+      "id": "shuowen:7833",
+      "headword": "㩜",
+      "text": "撮持也。从手監聲。",
+      "sourceTextSha256": "e15dfb8a8cc3f4adaa0b079ee2a509d354cd108f63ceebddc7d68b99a180f5cc"
+    },
+    {
+      "id": "shuowen:7834",
+      "headword": "擸",
+      "text": "理持也。从手巤聲。",
+      "sourceTextSha256": "cbba73ab533d71cb81fa9859b8dc5ed749af9742dc3dc10c870024b4048c04e2"
+    },
+    {
+      "id": "shuowen:7835",
+      "headword": "握",
+      "text": "搤持也。从手屋聲。",
+      "sourceTextSha256": "884cf370185a22014b87817f5c1b4d96c5a09683505f625fe2b5f1d0bcabada4"
+    },
+    {
+      "id": "shuowen:7836",
+      "headword": "撣",
+      "text": "提持也。从手單聲。讀若行遟驒驒。",
+      "sourceTextSha256": "ab2ada8b83cbae3c75ff5b4d921529713e8e8b2115da1526804d50fe137fc416"
+    },
+    {
+      "id": "shuowen:7837",
+      "headword": "把",
+      "text": "握也。从手巴聲。",
+      "sourceTextSha256": "08cf690e788a04a87947b2e299e2ce8786babc3d06b8485b4a032589407583ab"
+    },
+    {
+      "id": "shuowen:7838",
+      "headword": "搹",
+      "text": "把也。从手鬲聲。",
+      "sourceTextSha256": "c87f9c8a9a4394a3005e51d627ed923816830250ac1e9c400cdca0191d13f7f7"
+    },
+    {
+      "id": "shuowen:7839",
+      "headword": "拏",
+      "text": "牽引也。从手奴聲。",
+      "sourceTextSha256": "98ceb0f8c4561e572a457e482967fc5f556cbb348ba0d38e9bed30bfafaeab1f"
+    },
+    {
+      "id": "shuowen:7840",
+      "headword": "攜",
+      "text": "提也。从手雟聲。",
+      "sourceTextSha256": "6d744265b2cab077ac34a89cca0c6cca214dc6e9c2ec9b1a59dd9fee61d658d2"
+    },
+    {
+      "id": "shuowen:7841",
+      "headword": "提",
+      "text": "挈也。从手是聲。",
+      "sourceTextSha256": "396d447aa4549113135a1689a91bb442b7ef1fafb2aac7a1511072ab8fffbfe2"
+    },
+    {
+      "id": "shuowen:7842",
+      "headword": "𢬴",
+      "text": "拈也。从手𦔮聲。",
+      "sourceTextSha256": "867d68182860116adac75f575024faa50b009641fa57d818640c111f55679240"
+    },
+    {
+      "id": "shuowen:7843",
+      "headword": "拈",
+      "text": "𢬴也。从手占聲。",
+      "sourceTextSha256": "2f2a00be6b460dcf84f6a34b2ef00b1b2131b5c11c56d3cfff27d9f47ba283f3"
+    },
+    {
+      "id": "shuowen:7844",
+      "headword": "摛",
+      "text": "舒也。从手离聲。",
+      "sourceTextSha256": "0bd0e7574a4e7db43ada6782498c36d290453959117eafe09cfdd168f65d6804"
+    },
+    {
+      "id": "shuowen:7845",
+      "headword": "捨",
+      "text": "釋也。从手舍聲。",
+      "sourceTextSha256": "3736a3cef87e3dddfba6190e1159329c05cee5daee98054bf8ce3a7b69b06ce1"
+    },
+    {
+      "id": "shuowen:7846",
+      "headword": "擪",
+      "text": "一指按也。从手厭聲。",
+      "sourceTextSha256": "38e54ae09a75bcdbbecb5afc27aaa83d36e9517cac20e61d9cec48613e36ce12"
+    },
+    {
+      "id": "shuowen:7847",
+      "headword": "按",
+      "text": "下也。从手安聲。",
+      "sourceTextSha256": "8a3a0d77ba1850316ecdbc352d1a3b21d49e23da0e8980d33ca9a5cc40d98f95"
+    },
+    {
+      "id": "shuowen:7848",
+      "headword": "控",
+      "text": "引也。从手空聲。《詩》曰：“控于大邦。”匈奴名引弓控弦。",
+      "sourceTextSha256": "40418be69e8ee21e7aa0d0916509a057596dc615b59017a6bac9bff83b9cbbc8"
+    },
+    {
+      "id": "shuowen:7849",
+      "headword": "揗",
+      "text": "摩也。从手盾聲。",
+      "sourceTextSha256": "2419d4d76dbdac54f75bc15023ab59186ccf7981895b85b780462bcb114c0291"
+    },
+    {
+      "id": "shuowen:7850",
+      "headword": "掾",
+      "text": "緣也。从手彖聲。",
+      "sourceTextSha256": "64631e3cf6a8859945933c93798e35a1741e1c0c9ac656a4e1d34a840809e003"
+    },
+    {
+      "id": "shuowen:7851",
+      "headword": "𢫦",
+      "text": "拊也。从手百聲。",
+      "sourceTextSha256": "e45d3b0a0c51b4a51a60cf9e8c63a4502879894bc00831493bb206fb902df808"
+    },
+    {
+      "id": "shuowen:7852",
+      "headword": "拊",
+      "text": "揗也。从手付聲。",
+      "sourceTextSha256": "c208b2d796419f83739c6816f9a88e6fdd860eaedbf28d02ac06b7b08d2cfdba"
+    },
+    {
+      "id": "shuowen:7853",
+      "headword": "掊",
+      "text": "把也。今鹽官入水取鹽爲掊。从手咅聲。",
+      "sourceTextSha256": "b9bffa3571e204bcb12a876b93ded74da2af82fe945153b9e0ddc4ff93e7d63e"
+    },
+    {
+      "id": "shuowen:7854",
+      "headword": "捋",
+      "text": "取易也。从手寽聲。",
+      "sourceTextSha256": "623a97284a3787b961a8156f8abb301f1c8f0d03aa162e0c2c010289e46a190b"
+    },
+    {
+      "id": "shuowen:7855",
+      "headword": "撩",
+      "text": "理也。从手尞聲。",
+      "sourceTextSha256": "4eacf151870a3be617dde456589dd1cd88d8bcdefe8681ac1116d8a07dd5ee2b"
+    },
+    {
+      "id": "shuowen:7856",
+      "headword": "措",
+      "text": "置也。从手昔聲。",
+      "sourceTextSha256": "10443c16444613a2e2b78ad8ed93a73974d00dff8f6f0306f771aadd6f739832"
+    },
+    {
+      "id": "shuowen:7857",
+      "headword": "插",
+      "text": "刺肉也。从手从臿。",
+      "sourceTextSha256": "289410bdc40ecf4ba38c90e2cd2be7fc4f62423340a16622b621cabb1d5feda0"
+    },
+    {
+      "id": "shuowen:7858",
+      "headword": "掄",
+      "text": "擇也。从手侖聲。",
+      "sourceTextSha256": "93501b1f31ed57f8e6276afe1a8c3b61b6488e73ee1b6440f75818636545e8b2"
+    },
+    {
+      "id": "shuowen:7859",
+      "headword": "擇",
+      "text": "柬選也。从手睪聲。",
+      "sourceTextSha256": "bf29af6f5d7e4bd6485c214c92f928a6b2bae1f35093b92602ae400dc557adc7"
+    },
+    {
+      "id": "shuowen:7860",
+      "headword": "捉",
+      "text": "搤也。从手足聲。一曰握也。",
+      "sourceTextSha256": "cdcb90bf435dbca1cf34b13cbce3ad5573aef3cde3d4ce85a550753f6f883a24"
+    },
+    {
+      "id": "shuowen:7861",
+      "headword": "搤",
+      "text": "捉也。从手益聲。",
+      "sourceTextSha256": "cd7bde77c8c50f243c3ed3f187c3d122142c44494dde2bdf783de054ad359bb6"
+    },
+    {
+      "id": "shuowen:7862",
+      "headword": "挻",
+      "text": "長也。从手从延，延亦聲。",
+      "sourceTextSha256": "7898b2c9f4605ba184c14b425c11b307cd1dc0087de68f917e0e2936aa8992dc"
+    },
+    {
+      "id": "shuowen:7863",
+      "headword": "揃",
+      "text": "搣也。从手前聲。",
+      "sourceTextSha256": "2dd2591ab795fae6692315277a377e2388305ebd3ef0e8c6351726d4abbffc76"
+    },
+    {
+      "id": "shuowen:7864",
+      "headword": "搣",
+      "text": "㧗也。从手烕聲。",
+      "sourceTextSha256": "2f0ca5f620b400689fa0da10387e6e6e220f8ffb01e7647469ebb4fc4a21b031"
+    },
+    {
+      "id": "shuowen:7865",
+      "headword": "㧗",
+      "text": "捽也。从手此聲。",
+      "sourceTextSha256": "23d20e98e572a89d0e89ac901e643d62adc2840f897131fe9f9873257d8ac495"
+    },
+    {
+      "id": "shuowen:7866",
+      "headword": "揤",
+      "text": "捽也。从手卽聲。魏郡有揤裴侯國。",
+      "sourceTextSha256": "be7ea1d5949cbff6ab8c5d75c91b0555188ae728a04dc741d6d60d8229de3165"
+    },
+    {
+      "id": "shuowen:7867",
+      "headword": "捽",
+      "text": "持頭髮也。从手卒聲。",
+      "sourceTextSha256": "243094d4d4bb0119b08d4fb20cc0e4d1031d638f8b1d5dd495f28efd5693d6cf"
+    },
+    {
+      "id": "shuowen:7868",
+      "headword": "撮",
+      "text": "四圭也。一曰兩指撮也。从手最聲。",
+      "sourceTextSha256": "dfc46537954e6380cb2b06307234d25318d5d3e9c069f3198a2600fc9a2d01e5"
+    },
+    {
+      "id": "shuowen:7869",
+      "headword": "𡙳",
+      "text": "撮也。从手，𥷤省聲。",
+      "sourceTextSha256": "fb37169d23568786e937942ae183141aec695df12013cac8e9be29007a632abe"
+    },
+    {
+      "id": "shuowen:7870",
+      "headword": "摕",
+      "text": "撮取也。从手帶聲。讀若《詩》曰“螮蝀在東”。",
+      "sourceTextSha256": "cd80d4d3a45acd9e504fb7562181b7dea356cde49fc8d5de5fb2f0ae4aa7c733"
+    },
+    {
+      "id": "shuowen:7871",
+      "headword": "捊",
+      "text": "引取也。从手孚聲。",
+      "sourceTextSha256": "76318ebed0a9d3f3ac3bdc78bb9d2d27c83955141f97f919f1782695ed3ba662"
+    },
+    {
+      "id": "shuowen:7872",
+      "headword": "揜",
+      "text": "自關以東謂取曰揜。一曰覆也。从手弇聲。",
+      "sourceTextSha256": "a49d3d0aec4e56521f5128dfc1e9a936805024b7c192ea998697ec89f8ed0120"
+    },
+    {
+      "id": "shuowen:7873",
+      "headword": "授",
+      "text": "予也。从手从受，受亦聲。",
+      "sourceTextSha256": "6c3078933f073aa85a645651de76227c9e4f833e8e6f30728061ededcab4a0f4"
+    },
+    {
+      "id": "shuowen:7874",
+      "headword": "承",
+      "text": "奉也。受也。从手从卪从𠬞。",
+      "sourceTextSha256": "4b17ce7f1e4f2f4628f1027f36158ad135db5572a8cc091643e2bc952e6fbc7d"
+    },
+    {
+      "id": "shuowen:7875",
+      "headword": "挋",
+      "text": "給也。从手臣聲。一曰約也。",
+      "sourceTextSha256": "ec42d84c8063e098f3df3874075b17e24b69be01e9ef0acf2bc8e2fbb1e5e9b8"
+    },
+    {
+      "id": "shuowen:7876",
+      "headword": "㨷",
+      "text": "拭也。从手堇聲。",
+      "sourceTextSha256": "c72b4704bc804542c76438a0fce4d259a004607e42db637a58f1d2489db20682"
+    },
+    {
+      "id": "shuowen:7877",
+      "headword": "攩",
+      "text": "朋羣也。从手黨聲。",
+      "sourceTextSha256": "56770cd84d6a57d64010328b1a6baeafbc3d9c4f752f174698c2eda23cfb1b56"
+    },
+    {
+      "id": "shuowen:7878",
+      "headword": "接",
+      "text": "交也。从手妾聲。",
+      "sourceTextSha256": "8907c1597a0d92b1a4671392ab4d3f20e7ee1bb408fdcbba70d3e5a6bfbf6fda"
+    },
+    {
+      "id": "shuowen:7879",
+      "headword": "㧊",
+      "text": "㨷也。从手巿聲。",
+      "sourceTextSha256": "0b7feb22a0c5baf62b8c4db5a2c3b3e68cfccca2b220bf7d0ca59122f7e0ff71"
+    },
+    {
+      "id": "shuowen:7880",
+      "headword": "挏",
+      "text": "𢹬引也。漢有挏馬官，作馬酒。从手同聲。",
+      "sourceTextSha256": "448cbdff0d123131bd1ee091df7f0115ebad2f88cd13e8537f7ca2049ffeaef6"
+    },
+    {
+      "id": "shuowen:7881",
+      "headword": "招",
+      "text": "手呼也。从手、召。",
+      "sourceTextSha256": "0239e3d58ad9bdb32e68de3e5d0149766f62ef98447a9bec355c0e6718839536"
+    },
+    {
+      "id": "shuowen:7882",
+      "headword": "撫",
+      "text": "安也。从手無聲。一曰循也。",
+      "sourceTextSha256": "2791802f7b5011f419258d6c85cbbc47d55c4af68b35b6e698cf63d4e472624c"
+    },
+    {
+      "id": "shuowen:7883",
+      "headword": "捪",
+      "text": "撫也。从手昏聲。一曰摹也。",
+      "sourceTextSha256": "c199766984d1bc2fb634d17dbe83f8a232ebe0931783d31f7c789fd9b3429005"
+    },
+    {
+      "id": "shuowen:7884",
+      "headword": "揣",
+      "text": "量也。从手耑聲。度高曰揣。一曰捶之。",
+      "sourceTextSha256": "a761996f23080924e52509733f884e083198c9b7a774e85e0ee4ed1be4a7e2e5"
+    },
+    {
+      "id": "shuowen:7885",
+      "headword": "抧",
+      "text": "開也。从手只聲。讀若抵掌之抵。",
+      "sourceTextSha256": "20689c1b89178acb61a292b73f7cb9d14688a90a3fc79e0effb50dda757fc48c"
+    },
+    {
+      "id": "shuowen:7886",
+      "headword": "摜",
+      "text": "習也。从手貫聲。《春秋傳》曰：“摜瀆鬼神。”",
+      "sourceTextSha256": "217f6cb87c5341a277ca2a3698a5c79fbe1b4d7070ab885bdc600a086ecf678b"
+    },
+    {
+      "id": "shuowen:7887",
+      "headword": "投",
+      "text": "擿也。从手从殳。",
+      "sourceTextSha256": "c0100909d0bbc38667e2638a9e5501c33e2abc91d846f83eba7d342760741ca7"
+    },
+    {
+      "id": "shuowen:7888",
+      "headword": "擿",
+      "text": "搔也。从手適聲。一曰投也。",
+      "sourceTextSha256": "c73f490c00bcf8f28867c0ca35fe59835f6b32f26507cf7153b2438106931ed8"
+    },
+    {
+      "id": "shuowen:7889",
+      "headword": "搔",
+      "text": "括也。从手蚤聲。",
+      "sourceTextSha256": "aaaff41818304c82de6a3f3ae8b8ee351750565da4d152d4434087f30faeb31a"
+    },
+    {
+      "id": "shuowen:7890",
+      "headword": "扴",
+      "text": "刮也。从手介聲。",
+      "sourceTextSha256": "08d17ec1b06c608350d4ffc2117e6d3913f87073d8b26942ded5e3514e5a486f"
+    },
+    {
+      "id": "shuowen:7891",
+      "headword": "摽",
+      "text": "擊也。从手票聲。一曰挈門壯也。",
+      "sourceTextSha256": "d1a471362bc52bd818a4a64a1b5faf68665494275351177c651824f6a5783e63"
+    },
+    {
+      "id": "shuowen:7892",
+      "headword": "挑",
+      "text": "撓也。从手兆聲。一曰摷也。《國語》曰：“卻至挑夭。”",
+      "sourceTextSha256": "5bcad705c4c9cc25434523384c9f4edb1ebb904c641ba90bf75a83452aff3f73"
+    },
+    {
+      "id": "shuowen:7893",
+      "headword": "抉",
+      "text": "挑也。从手夬聲。",
+      "sourceTextSha256": "ecd5e147da49ea4341b0259bf83698040406cfda208e4f0be386101f334d2679"
+    },
+    {
+      "id": "shuowen:7894",
+      "headword": "撓",
+      "text": "擾也。从手堯聲。一曰捄也。",
+      "sourceTextSha256": "45bd4c9fe8521bf8aaeed0490c0e9214ba635e82d56d178195632d12bdf23c9c"
+    },
+    {
+      "id": "shuowen:7895",
+      "headword": "𢹎",
+      "text": "煩也。从手夒聲。",
+      "sourceTextSha256": "21f42495b7d67af3b5a7c05b584870bdd54b9d34ac5ad96d773967c9bbdd519b"
+    },
+    {
+      "id": "shuowen:7896",
+      "headword": "挶",
+      "text": "𢧢持也。从手局聲。",
+      "sourceTextSha256": "63d10597db764198f8cf1460635f7837440a4f3694c2006079b47aa4015b957a"
+    },
+    {
+      "id": "shuowen:7897",
+      "headword": "据",
+      "text": "𢧢挶也。从手居聲。",
+      "sourceTextSha256": "0f10c47601d17a3905f281f3b7c20737de80b718643f17cebbb34d2ef5fb7db7"
+    },
+    {
+      "id": "shuowen:7898",
+      "headword": "擖",
+      "text": "刮也。从手葛聲。一曰撻也。",
+      "sourceTextSha256": "bdafb1e9a3d0d482cc2e4367904f741bb30e39df178ecebda1903074790e66e5"
+    },
+    {
+      "id": "shuowen:7899",
+      "headword": "摘",
+      "text": "拓果樹實也。从手啻聲。一曰指近之也。",
+      "sourceTextSha256": "d377e6e079ea3ef73a1ce60c5e65458cb027ae504fa7f19296a33ac4d6b679f7"
+    },
+    {
+      "id": "shuowen:7900",
+      "headword": "搳",
+      "text": "擖也。从手害聲。",
+      "sourceTextSha256": "936efbe9b00399494788d5ad6c0ab6de2fb69b6b02d28fc6b3dbad70aa276461"
+    }
+  ]
+}

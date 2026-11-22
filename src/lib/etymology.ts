@@ -30,8 +30,11 @@ const indexSchema = z.object({ format: z.literal('mandarin-etymology-index'), sc
   shards: z.record(z.string(), z.object({ sha256: checksum, bytes: z.number().int().positive() }).passthrough()),
   records: z.record(z.string(), recordTarget), radicalForms: z.record(z.string(), formTarget) });
 export type EtymologyIndex = z.infer<typeof indexSchema>;
+const translationSchema = z.object({ language: z.literal('en'), text: z.string().min(1), method: z.literal('ai-generated'),
+  reviewStatus: z.literal('unreviewed-ai-draft'), sourceTextSha256: checksum, uncertain: z.boolean() });
 const entrySchema = z.object({ id: z.string(), sourceId: z.enum(['howell', 'shuowen']), headword: z.string(),
-  contentKind: z.string(), language: z.string(), text: z.string(), reviewStatus: z.string(), sourceUrl: z.string() }).passthrough();
+  contentKind: z.string(), language: z.string(), text: z.string(), reviewStatus: z.string(), sourceUrl: z.string(),
+  translation: translationSchema.optional() }).passthrough();
 export type EtymologyEntry = z.infer<typeof entrySchema>;
 const association = z.object({ id: z.string(), kind: z.string(), glyph: z.string(), status, entryIds: z.array(z.string()) }).passthrough();
 const formAssociation = association.extend({ headingId: z.string(), familyId: z.number().int(), formKey: z.string() });
@@ -159,6 +162,18 @@ function loadShard(index: EtymologyIndex, file: string) {
   shards.set(file, promise);
   return promise;
 }
+/** English drafts are usable only for their exact original Chinese text. A stale
+ * draft is dropped independently, preserving the source and its original identity. */
+export async function validateEtymologyTranslations(character: EtymologyCharacter): Promise<EtymologyCharacter> {
+  const entries = await Promise.all(character.entries.map(async entry => {
+    if (!entry.translation) return entry;
+    if (entry.sourceId === 'shuowen' && await sha256(new TextEncoder().encode(entry.text).buffer) === entry.translation.sourceTextSha256) return entry;
+    const { translation: _translation, ...original } = entry;
+    return original;
+  }));
+  return { ...character, entries };
+}
+
 /** Full lookup for the detail card; resolves null whenever any identity or integrity check fails. */
 export async function resolveEtymology(request: EtymologyRequest): Promise<EtymologyView | null> {
   try {
@@ -167,6 +182,6 @@ export async function resolveEtymology(request: EtymologyRequest): Promise<Etymo
     if (!target) return null;
     const characters = await loadShard(index, target.file);
     const parsed = characterSchema.safeParse(characters[request.glyph]);
-    return parsed.success ? etymologyView(index, request, parsed.data) : null;
+    return parsed.success ? etymologyView(index, request, await validateEtymologyTranslations(parsed.data)) : null;
   } catch { return null; }
 }

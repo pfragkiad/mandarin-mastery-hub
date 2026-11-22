@@ -1,0 +1,2 @@
+# In-progress atomic English batch saves are not dataset inputs.
+*.json.tmp

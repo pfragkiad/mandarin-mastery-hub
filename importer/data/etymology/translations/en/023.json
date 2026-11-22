@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "968dce22bacfe344ed2d1d9d25c48e73cada4c0a132c8fcec6a3a26591b574c2",
+    "created_date": "2026-11-22"
+  },
+  "batch": "023",
+  "translations": {
+    "shuowen:2201": {
+      "text": "The upper and lower eyelids. From 目; 僉 supplies the sound.",
+      "sourceTextSha256": "2902ac49ac3509583d9f40c80b9f0a56401d9dec21cbdb24ded51b3a3c812486",
+      "uncertain": false
+    },
+    "shuowen:2202": {
+      "text": "To move the eyes. From 目; 乏 supplies the sound.",
+      "sourceTextSha256": "b7f9838e3f8e4992ff7caee85e2f55490b5c3aa20002959e9ab1231b4b2c40bd",
+      "uncertain": false
+    },
+    "shuowen:2203": {
+      "text": "Deep-set eyes; also a surname. From 目; 圭 supplies the sound.",
+      "sourceTextSha256": "5fb13d2e1e0609e31ea101ebf4a38f81121248c42dce682b20bd1d0237f5bf94",
+      "uncertain": false
+    },
+    "shuowen:2204": {
+      "text": "The pupil or brightness of the eye. From 目; 灷 supplies the sound. Note: 勝 and 賸 both take their sound from 朕; perhaps anciently 朕 was used for 眹.",
+      "sourceTextSha256": "ae306b743df09dbf2ff80b643e8e1feca041267ff924f42d23201e3d2816a91c",
+      "uncertain": false
+    },
+    "shuowen:2205": {
+      "text": "The eye's pupil. From 目; 牟 supplies the sound. The Shuowen simply writes 牟.",
+      "sourceTextSha256": "f5d74e57a6eac871f36af06a4740c18942bcee721f9c08f07bd8e4123c3f5d9e",
+      "uncertain": false
+    },
+    "shuowen:2206": {
+      "text": "The edge of the eye. From 目 and 厓.",
+      "sourceTextSha256": "f95cb9784aadf6f2ea7b9356122341f0467fc1ac9009bd5d7fd0b2f341dba29e",
+      "uncertain": false
+    },
+    "shuowen:2207": {
+      "text": "To look left and right. From two 目. All graphs in this category contain 䀠. Pronounced like 拘; also like 瞿瞿 in “the worthy man looks alertly.”",
+      "sourceTextSha256": "9f1169bb27d55a92015d23d70291c2e411d79af86d7e1fd3f5d047687953c2cb",
+      "uncertain": false
+    },
+    "shuowen:2208": {
+      "text": "The enclosure of the eyes. From 䀠 and 纾. Pronounced like 卷 in 書卷. Ancient writing uses it for 醜. [The precise sense of 目圍 is uncertain.]",
+      "sourceTextSha256": "dcc5e6f03cc559a647c9b8b3f5a44cd27b091bdaa79736582be736a57f7197e1",
+      "uncertain": true
+    },
+    "shuowen:2209": {
+      "text": "Eyes looking sideways. From 䀠 and 大; 大 is a person.",
+      "sourceTextSha256": "e92beee983e7518585c99d04edf3bfd875005bd2dd8ae13c28d2d6d7417c96d5",
+      "uncertain": false
+    },
+    "shuowen:2210": {
+      "text": "Hair above the eyes. From 目, depicting an eyebrow; the upper part depicts the forehead's texture. All graphs in this category contain 眉.",
+      "sourceTextSha256": "7cba1da777c725814a1289c6af267b35d1e4b9b7073923faa2d53504152f0cf7",
+      "uncertain": false
+    },
+    "shuowen:2211": {
+      "text": "To inspect. From abbreviated 眉 and 屮.",
+      "sourceTextSha256": "6837d58a0cac4237e5cebf186a76be6717d08b6b356d22ee3724b2141c14a3f5",
+      "uncertain": false
+    },
+    "shuowen:2212": {
+      "text": "A shield, 瞂, used to protect the body and cover the eyes. A pictograph. All graphs in this category contain 盾.",
+      "sourceTextSha256": "4ec135004256ae16e2d2c16cb6399c70971ca019821482a5d7676d677537c52c",
+      "uncertain": false
+    },
+    "shuowen:2213": {
+      "text": "A shield. From 盾; 犮 supplies the sound.",
+      "sourceTextSha256": "8409ce2281a9d0e35fb25266e1ce9a4c6d0e568371a833913f559d5754d0fe4e",
+      "uncertain": false
+    },
+    "shuowen:2214": {
+      "text": "The grip of a shield. From 盾; 圭 supplies the sound.",
+      "sourceTextSha256": "e19d01903d7f35629947572750060b523f275acdeb938d52b601c961f7bc93a8",
+      "uncertain": false
+    },
+    "shuowen:2215": {
+      "text": "The nose. It depicts a nose. All graphs in this category contain 自.",
+      "sourceTextSha256": "dc66e7a14578068f80dc7a201b7c5bd9c7bf79bbe82635a4542ed30fba4f736d",
+      "uncertain": false
+    },
+    "shuowen:2216": {
+      "text": "A palace or chamber not seen. The explanation is missing. [The recorded gloss 宮不見 is difficult.]",
+      "sourceTextSha256": "c35c2ba5fb2339619e0b89a8d928047c536c50e9b4ef4463f814587a07bfff51",
+      "uncertain": true
+    },
+    "shuowen:2217": {
+      "text": "This too is 自, abbreviated: the breath of speech emerges from the nose and assists the mouth. All graphs in this category contain 𪞶.",
+      "sourceTextSha256": "db685463b73fa80de998fc15ece4af49a07a2158ae598484b557353b6ced61a2",
+      "uncertain": false
+    },
+    "shuowen:2218": {
+      "text": "A word meaning all together. From 比 and 𪞶.",
+      "sourceTextSha256": "05bf222c7fb714e20f2fd76d8328eaa7b9d117ecb2e8956fcfb0d49af33b6a2d",
+      "uncertain": false
+    },
+    "shuowen:2219": {
+      "text": "A word meaning dull. From 白; abbreviated 鮺 supplies the sound. The Analects says: “Shen is dull.”",
+      "sourceTextSha256": "c101cf8fb1c36119258e230fe274f100d2ca44a979147713a0cf589d79577605",
+      "uncertain": false
+    },
+    "shuowen:2220": {
+      "text": "A particle distinguishing matters. From 𪞶; 纺 supplies the sound. 纺 is the ancient form of 旅. [The unusual recorded component is preserved.]",
+      "sourceTextSha256": "83b262ea9d3bfdc3d33fff2fa0e5d3358f16281e3dbc5e15dc55506e6f39fb6b",
+      "uncertain": true
+    },
+    "shuowen:2221": {
+      "text": "A particle. From 𪞶; 𢏚 supplies the sound. 𢏚 is the same as 疇. The Book of Yu says: “The emperor said: 𤾊咨.” [Tentatively: “Who, ah, who？”]",
+      "sourceTextSha256": "4232a6ee5e300a507411e553b53a10200e0871e1e8323cbf11175b582b3598fb",
+      "uncertain": true
+    },
+    "shuowen:2222": {
+      "text": "A particle of recognition. From 𪞶, 亏 and 知.",
+      "sourceTextSha256": "d939aeb5c078292b095fc0c84df5f86306a1495c5b932c25405d9f1eda58c5dc",
+      "uncertain": false
+    },
+    "shuowen:2223": {
+      "text": "Ten tens. From 一 and 𪞶. In counting, ten hundreds make one string, displaying one another. [The final explanatory clause is uncertain.]",
+      "sourceTextSha256": "1f7b2d3be10665410bbfdec5ff4befe26e4f1ceea36c1ac92bbb30842739980b",
+      "uncertain": true
+    },
+    "shuowen:2224": {
+      "text": "To draw breath through 𢌿. From 自 and 𢌿. All graphs in this category contain 鼻. [The use of 𢌿 in the gloss is unexplained.]",
+      "sourceTextSha256": "2f3ba3413b1e8694eae6f1426fd17a840e675e3e384a25d2164289e8ade006df",
+      "uncertain": true
+    },
+    "shuowen:2225": {
+      "text": "To approach an odor with the nose. From 鼻 and 臭; 臭 also supplies the sound. Pronounced like 畜 in 畜牲.",
+      "sourceTextSha256": "368a70be111a6d0c48a23376480afa31a2e130ac53681379529016875f2ea7ce",
+      "uncertain": false
+    },
+    "shuowen:2226": {
+      "text": "Breathing while lying asleep. From 鼻; 干 supplies the sound. Pronounced like 汗.",
+      "sourceTextSha256": "244bbe48bb682da7324b600a15396cc453d0e5c6a1dd619a1dcd8e90948f39e3",
+      "uncertain": false
+    },
+    "shuowen:2227": {
+      "text": "A cold illness blocking the nose. From 鼻; 九 supplies the sound.",
+      "sourceTextSha256": "43d5d1d69f154be870f63adf0844e61994dbfd3de2793a531b94a40ecbaef40a",
+      "uncertain": false
+    },
+    "shuowen:2228": {
+      "text": "Breathing while lying asleep. From 鼻; 隶 supplies the sound. Pronounced like 虺.",
+      "sourceTextSha256": "b7c87ad10d0b075592ff2d1ffc3cf435c2a7ab6dafb25af08caea173ce3c5e85",
+      "uncertain": false
+    },
+    "shuowen:2229": {
+      "text": "Two hundred. All graphs in this category contain 皕. Pronounced like 祕.",
+      "sourceTextSha256": "ca75cfc199fd010f081b95ea05ac592d5fdcec00a8e8d4ba64340f29b440ace6",
+      "uncertain": false
+    },
+    "shuowen:2230": {
+      "text": "Abundant. From 大 and 皕; 皕 also supplies the sound. This was the name of Duke Shao of Yan. Pronounced like 郝. The Scribe's Primer calls it 醜.",
+      "sourceTextSha256": "a07a619b112f1ecaef3981f79d3c30b0b01b0ddae2d73355ebbc284b9a3d1146",
+      "uncertain": false
+    },
+    "shuowen:2231": {
+      "text": "To fly repeatedly. From 羽 and 白. All graphs in this category contain 習.",
+      "sourceTextSha256": "a8a10f33dadf0ee235287c667accd7f51e08f3fca048530371a07abaa9ed765e",
+      "uncertain": false
+    },
+    "shuowen:2232": {
+      "text": "Familiarity leading to weariness. From 習; 元 supplies the sound. The Spring and Autumn commentary says: “Wasting years and idling away days.”",
+      "sourceTextSha256": "69758ce4efa5cdb7898d5dfcb5703c9a1ad436e3686cd2d2e9bad26cb2860e71",
+      "uncertain": false
+    },
+    "shuowen:2233": {
+      "text": "A bird's long feathers. A pictograph. All graphs in this category contain 羽.",
+      "sourceTextSha256": "34616c710c9d1d8747d6d8712695340ed81f17380c1aa62d4140bef34800a38f",
+      "uncertain": false
+    },
+    "shuowen:2234": {
+      "text": "A bird with strong feathers and a fierce disposition. From 羽; 是 supplies the sound.",
+      "sourceTextSha256": "0e0d7a41c4808fdc98dfc72a1d1c338a8607b75c5ec6a2a210b28a5cb0012932",
+      "uncertain": false
+    },
+    "shuowen:2235": {
+      "text": "The red-feathered heavenly fowl. From 羽; 倝 supplies the sound. The Lost Book of Zhou says: “The great 翰 resembles a colorful pheasant, also called 鷐風. In King Cheng of Zhou's time the people of Shu presented it.”",
+      "sourceTextSha256": "40f6e5e3e7ad7e6f81eb9afdfb45a6107ef8432cb9dcf06819f5c252c3a2208a",
+      "uncertain": false
+    },
+    "shuowen:2236": {
+      "text": "A mountain pheasant with a long tail. From 羽 and 隹.",
+      "sourceTextSha256": "5b9010e0463ba9d8714f7def8a617843bade5704c75caf90053d2672fcc39cb0",
+      "uncertain": false
+    },
+    "shuowen:2237": {
+      "text": "A red-feathered bird from Yulin. From 羽; 非 supplies the sound.",
+      "sourceTextSha256": "7caa3020866a8b83205a8d1786e2a769bbdaeed16e4653fa02e08c91b799f79e",
+      "uncertain": false
+    },
+    "shuowen:2238": {
+      "text": "A blue-green-feathered bird from Yulin. From 羽; 卒 supplies the sound.",
+      "sourceTextSha256": "a77804bb694e8159b3a1e137c541020f03ec1b19abc610868545b64a260d6ed3",
+      "uncertain": false
+    },
+    "shuowen:2239": {
+      "text": "Feathers growing. Another explanation: 𠂕羽, apparently shedding or cutting feathers. From 羽; 前 supplies the sound. [The rare gloss is uncertain.]",
+      "sourceTextSha256": "5566ec5723baab65f74611b946e2b5c3648022c6016452331d3bab1085f958d7",
+      "uncertain": true
+    },
+    "shuowen:2240": {
+      "text": "Neck feathers. From 羽; 公 supplies the sound.",
+      "sourceTextSha256": "4f38abc5ebd8ec681a4f0dca92f5ca2699b8001f6a03c55e04d3861edc9866e2",
+      "uncertain": false
+    },
+    "shuowen:2241": {
+      "text": "A wing. From 羽; 支 supplies the sound.",
+      "sourceTextSha256": "4579b12340d0d42038ca7e7856c83b396cf8104390e56e0857eba67ca2530bb2",
+      "uncertain": false
+    },
+    "shuowen:2242": {
+      "text": "A wing. From 羽; 革 supplies the sound.",
+      "sourceTextSha256": "20d4d5f88421e0e40da1054ab99715257e16d07984db8028ff34db863301a652",
+      "uncertain": false
+    },
+    "shuowen:2243": {
+      "text": "Long tail feathers. From 羽; 堯 supplies the sound.",
+      "sourceTextSha256": "93e51acbdb2f489631baeb24e61849096c6d1ff4babc4876ded80781d0f13829",
+      "uncertain": false
+    },
+    "shuowen:2244": {
+      "text": "The base of a feather. Another explanation: the appearance of feathers first growing. From 羽; 矦 supplies the sound.",
+      "sourceTextSha256": "998e3bcf9f79752182d353e31b725689a40a35dc4b7c95c8cd0c97dcf7288bf9",
+      "uncertain": false
+    },
+    "shuowen:2245": {
+      "text": "The shaft of a feather. From 羽; 鬲 supplies the sound.",
+      "sourceTextSha256": "8cc987b9b9fddaadd02f491c285a31e3f52694236e2b3d751e5c87e3f51be040",
+      "uncertain": false
+    },
+    "shuowen:2246": {
+      "text": "A curved feather. From 羽; 句 supplies the sound.",
+      "sourceTextSha256": "d177b0c8ff65bd9df90ebb129bf10e63964708e659034363ef2bc8af9e0b2202",
+      "uncertain": false
+    },
+    "shuowen:2247": {
+      "text": "Feathers fanning the wind; also an ancient feudal lord. Another explanation: an archery master. From 羽; 幵 supplies the sound. [The opening action is uncertain.]",
+      "sourceTextSha256": "48fd4ed4b0994675b82bc61b43582aad9f3b5017168b24521aca7fc3402d4581",
+      "uncertain": true
+    },
+    "shuowen:2248": {
+      "text": "To rise in flight. From 羽; 者 supplies the sound.",
+      "sourceTextSha256": "80c14cf225e5381d77ed4400b94989cd8d09d466bf83bc69f17ba3177b4641d5",
+      "uncertain": false
+    },
+    "shuowen:2249": {
+      "text": "To rise. From 羽; 合 supplies the sound.",
+      "sourceTextSha256": "d2d7b3a5f7f49b6361fb362397a138cf4e2db5cf5c66292361563edf4920d960",
+      "uncertain": false
+    },
+    "shuowen:2250": {
+      "text": "To fly a little. From 羽; 瞏 supplies the sound.",
+      "sourceTextSha256": "ae61d31968b21015798e80290214c901353ae9ea254dd8369772ca772a8bf98d",
+      "uncertain": false
+    },
+    "shuowen:2251": {
+      "text": "To fly broadly. From 羽; 軍 supplies the sound. Another explanation: south of the Yi and Luo, a pheasant displaying all five colors is called 翬. The Odes says: “Like a pheasant taking flight.”",
+      "sourceTextSha256": "10423b7a3416286be32cc3c3f8f90a43e25648a82fdc9e36896a944eaf1c60e9",
+      "uncertain": false
+    },
+    "shuowen:2252": {
+      "text": "To fly high. From 羽 and 㐱.",
+      "sourceTextSha256": "88b23b32dbc5dfb13580b377b188bee3567013fea08bfd3831fc89abcee18479",
+      "uncertain": false
+    },
+    "shuowen:2253": {
+      "text": "To fly swiftly. From 羽; 扁 supplies the sound.",
+      "sourceTextSha256": "8b10dead02a4bc3cd5495ba17169b010360d293428309055a1250d643b6d495e",
+      "uncertain": false
+    },
+    "shuowen:2254": {
+      "text": "Nimble: rapid flight. From 羽; 夾 supplies the sound. Pronounced like 瀒. Another explanation: to flank or assist, 俠.",
+      "sourceTextSha256": "432f513d83080ec7cecf3e060c72440b1018697c679c1ecf05063e3048528b74",
+      "uncertain": true
+    },
+    "shuowen:2255": {
+      "text": "The appearance of flight. From 羽; 立 supplies the sound.",
+      "sourceTextSha256": "04e7553b899ad7cbe6db3a1fb5094ae82239c8303fb67ef8ec1c770607ac5723",
+      "uncertain": false
+    },
+    "shuowen:2256": {
+      "text": "The appearance of vigorous flight. From 羽 and 冃.",
+      "sourceTextSha256": "80fb84aa8897fa2ddcdef44f727476fd156ead4f657afd9cad35d8e0e478b7c1",
+      "uncertain": false
+    },
+    "shuowen:2257": {
+      "text": "The appearance of vigorous flight. From 羽; 之 supplies the sound.",
+      "sourceTextSha256": "35a988de1d695feae8beb6b268a0482a0955194a94b68340080965850365e3e2",
+      "uncertain": false
+    },
+    "shuowen:2258": {
+      "text": "To soar, 翱翔. From 羽; 皐 supplies the sound.",
+      "sourceTextSha256": "88e9c452ce0ef97082585d38cea2631d6b41978e0147752cf5b125defa43e97a",
+      "uncertain": false
+    },
+    "shuowen:2259": {
+      "text": "To fly in circles. From 羽; 羊 supplies the sound.",
+      "sourceTextSha256": "e92b3dd93a88bdcd7e8223c6d9d1e0e4cd22ac710c3f827a70b24a804f5915a1",
+      "uncertain": false
+    },
+    "shuowen:2260": {
+      "text": "The sound of flight. From 羽; 歲 supplies the sound. The Odes says: “The phoenix flies, its feathers rustling.”",
+      "sourceTextSha256": "2180ca32cbb30e25ba15df137f55aac0179901fd40a906169cfc384ce5cdb481",
+      "uncertain": false
+    },
+    "shuowen:2261": {
+      "text": "A bird's white, plump, glossy appearance. From 羽; 高 supplies the sound. The Odes says: “White birds, plump and shining.”",
+      "sourceTextSha256": "0de764eedf59993d09d2b13862a4a2b9e59f5c4d29ba127593ac5edfb733f6e2",
+      "uncertain": false
+    },
+    "shuowen:2262": {
+      "text": "A musical dance: feathers are bound to cover the head in sacrifice to the stars. From 羽; 王 supplies the sound. Pronounced like 皇. [The source's 纣 is unusual.]",
+      "sourceTextSha256": "37af46c014671e3e107f19988a990dac6cd7219cb5d977a84f79cab884bbe5bb",
+      "uncertain": true
+    },
+    "shuowen:2263": {
+      "text": "A musical dance holding complete feathers to sacrifice to the altars of soil and grain. From 羽; 犮 supplies the sound. Pronounced like 紱.",
+      "sourceTextSha256": "292b424ab87d2619f1229d26fb1ced027d9f98bda3dade65e54874868a916b43",
+      "uncertain": false
+    },
+    "shuowen:2264": {
+      "text": "A feather screen used in dancing. From 羽; 𣪐 supplies the sound. The Odes says: “Holding a feather screen in the left hand.”",
+      "sourceTextSha256": "60d20e3b7612a6dce3d37a447b3859b65cff19118c9ad62998f528e722f99c0b",
+      "uncertain": false
+    },
+    "shuowen:2265": {
+      "text": "An ornate canopy. From 羽; 殹 supplies the sound.",
+      "sourceTextSha256": "75d54da930020bacacf816aa46440832cdc36444aa39d2f2f8ad19a7a28fd6f8",
+      "uncertain": false
+    },
+    "shuowen:2266": {
+      "text": "Feather ornaments hanging down from a coffin: eight for the Son of Heaven, six for lords, four for grandees, two for scholars. From 羽; 妾 supplies the sound.",
+      "sourceTextSha256": "0a49bf9398628f12869dba937adb3d2f4aa3f5709b9b83f3d4b8d2ae78ecf1c5",
+      "uncertain": false
+    },
+    "shuowen:2267": {
+      "text": "To fly. From 羽; 番 supplies the sound. Alternatively from 飛.",
+      "sourceTextSha256": "dc3e36cba3fa24b48fc6130401d6da1d63dd2255e8efe62bfccab6da49a3afda",
+      "uncertain": false
+    },
+    "shuowen:2268": {
+      "text": "A feather. From 羽; 令 supplies the sound.",
+      "sourceTextSha256": "9abc22ff9fa54ec4d44786877a7751646f83d61a02a90df2a37bf63ce9e01538",
+      "uncertain": false
+    },
+    "shuowen:2269": {
+      "text": "The sound of flight. From 羽; 工 supplies the sound.",
+      "sourceTextSha256": "51580597cfa634dfbf72e909f186cd91d4e94f24c1af558229969c3b4c5302c1",
+      "uncertain": false
+    },
+    "shuowen:2270": {
+      "text": "A general name for short-tailed birds. A pictograph. All graphs in this category contain 隹.",
+      "sourceTextSha256": "704a378df969d113552afae716d7d22aa07d3485b8e4939af1752350bd73b51e",
+      "uncertain": false
+    },
+    "shuowen:2271": {
+      "text": "The Chu crow, also called 鸒 and 卑居; Qin calls it 雅. From 隹; 牙 supplies the sound.",
+      "sourceTextSha256": "31e3ca5bb986019a8837ad9219929120813581711caec9581fbee471b5e88ae2",
+      "uncertain": false
+    },
+    "shuowen:2272": {
+      "text": "One bird. From 又 holding 隹. Holding one 隹 is 隻; two 隹 is 雙.",
+      "sourceTextSha256": "ef446b21b3d53c2d109f07d087890df34721c1c3ac0c8a83e7fb088f25e76413",
+      "uncertain": false
+    },
+    "shuowen:2273": {
+      "text": "The bird 鵋䳢. From 隹; 各 supplies the sound.",
+      "sourceTextSha256": "01129da041c6ca8f7730ce08db0c9f96ed563b3fe12c990e83bfede69611b877",
+      "uncertain": false
+    },
+    "shuowen:2274": {
+      "text": "The bird 今閵, resembling a myna but yellow. From 隹; abbreviated 𨳏 supplies the sound.",
+      "sourceTextSha256": "932048b824e5490ffcd6c70f5752d1d9b7478c67dc5d74c8c330de2803257f7d",
+      "uncertain": false
+    },
+    "shuowen:2275": {
+      "text": "The 周燕 bird. From 隹; 屮 depicts its crest, and 㕯 supplies the sound. Another account: King Wangdi of Shu had intercourse with his minister's wife; ashamed, he fled and became the 子巂 bird. Thus when Shu people hear its call they all rise and say “Wangdi.”",
+      "sourceTextSha256": "73a1460bd700ce2ee3ce25895b8b72fe778c37d638b0528ee10b7ce97d74fef3",
+      "uncertain": false
+    },
+    "shuowen:2276": {
+      "text": "A bird. From 隹; 方 supplies the sound. Pronounced like 方.",
+      "sourceTextSha256": "c20207a1c025176f074d04a40fe14754bcf655b2fb8d280b55c839261a75cdcd",
+      "uncertain": false
+    },
+    "shuowen:2277": {
+      "text": "A small bird that lives near people. From 小 and 隹. Pronounced the same as 爵.",
+      "sourceTextSha256": "cb7671d3f7fbd534c9f8dd9e168cb636ed7f6a6f782b3e6e9015b7b5eb38eaaa",
+      "uncertain": false
+    },
+    "shuowen:2278": {
+      "text": "A bird. From 隹; 犬 supplies the sound. Suiyang has the Ya River.",
+      "sourceTextSha256": "40a675842751c682b067c1ea36b03b317688c1541b31c5f594f1976324f87aad",
+      "uncertain": false
+    },
+    "shuowen:2279": {
+      "text": "The bird 雗鷽. From 隹; 倝 supplies the sound.",
+      "sourceTextSha256": "50d402676046d559257d0998b6a9c5bf7b7ecaf8a1ad809970bde2fdc90fbb10",
+      "uncertain": false
+    },
+    "shuowen:2280": {
+      "text": "There are fourteen kinds: 盧諸雉, 喬雉, 鳪雉, 鷩雉, 秩秩海雉, 翟山雉, 翰雉 and 卓雉; south of the Yi and Luo, 翬; south of the Yangtze and Huai, 搖; in the south, 𢏚; east, 钕; north, 稀; west, 蹲. From 隹; 矢 supplies the sound.",
+      "sourceTextSha256": "f601e313b7d9829603239788ee3b35b8d91482d10092ab2404b77c4e785e36c6",
+      "uncertain": true
+    },
+    "shuowen:2281": {
+      "text": "Male and female calling. When thunder first stirs, pheasants call and extend their necks. From 隹 and 句; 句 also supplies the sound.",
+      "sourceTextSha256": "cf3326b0fb91ac9d5310f7f5ddecbd8f53e119fed4ecba65d666d3d9d663cbb7",
+      "uncertain": false
+    },
+    "shuowen:2282": {
+      "text": "A domestic creature that knows the time. From 隹; 奚 supplies the sound.",
+      "sourceTextSha256": "f0a57fbb1d794ba5c02314772148ecd49dcce3c1b5318e80b2ac6d36da593317",
+      "uncertain": false
+    },
+    "shuowen:2283": {
+      "text": "A chick. From 隹; 芻 supplies the sound.",
+      "sourceTextSha256": "b4254203a5f94576b718d06f473d5d88279e4d65803ea1cde60930ebde69d5b1",
+      "uncertain": false
+    },
+    "shuowen:2284": {
+      "text": "A large young bird. From 隹; 翏 supplies the sound. Another explanation: a pheasant's late-hatched young are called 雡.",
+      "sourceTextSha256": "cb0d37a86f9b3eac34738c87bf98ad224770abc874ef28805131595e2a35d423",
+      "uncertain": false
+    },
+    "shuowen:2285": {
+      "text": "The yellow 倉庚 bird. When it calls, silkworms hatch. From 隹; 离 supplies the sound.",
+      "sourceTextSha256": "8ab14727f419837d5013e17734be487f7cdeee267f3f629406b0ace3b172ef46",
+      "uncertain": false
+    },
+    "shuowen:2286": {
+      "text": "The bird 鷻. From 隹; 周 supplies the sound.",
+      "sourceTextSha256": "12a4e80bee88455d42a3d96052fe685344bad5c14607bcdbdc0a6790b738f65f",
+      "uncertain": false
+    },
+    "shuowen:2287": {
+      "text": "A bird. From 隹; abbreviated 瘖 supplies the sound. Alternatively from 人, which also supplies the sound.",
+      "sourceTextSha256": "59b151008cbbe607099ae1916cdafbb8404cc4284ddca0c3e7f3ad63e2088ff4",
+      "uncertain": false
+    },
+    "shuowen:2288": {
+      "text": "The bird 𨿠. From 隹; 氐 supplies the sound.",
+      "sourceTextSha256": "e28eaac594b3dcb12986482fc25a262ff402590efa927b258a0fad4c237d2825",
+      "uncertain": false
+    },
+    "shuowen:2289": {
+      "text": "The bird 𨾦. From 隹; 垂 supplies the sound.",
+      "sourceTextSha256": "1f0f00249efffd15c270c7a9c6d643cd84656976d6a582262e347d97583531cc",
+      "uncertain": false
+    },
+    "shuowen:2290": {
+      "text": "A stone bird, also called 雝𪆫. Another name is 精𠛱. From 隹; 幵 supplies the sound. The Spring and Autumn commentary says: “Qin had Shi Jian.”",
+      "sourceTextSha256": "2edfd538c3c6555e294c3524ab494a8b71f2136646b10855cb8b744a67b4d52e",
+      "uncertain": true
+    },
+    "shuowen:2291": {
+      "text": "The bird 雝𪆫. From 隹; 邕 supplies the sound.",
+      "sourceTextSha256": "e7c2abc31cf4aa74d30cec0691b1477f5f6f5529162ca469221c0095e8f19e22",
+      "uncertain": false
+    },
+    "shuowen:2292": {
+      "text": "A bird. From 隹; 今 supplies the sound. The Spring and Autumn commentary has Prince Ku Qian.",
+      "sourceTextSha256": "8bd4d9749bb7c958a58a8d73de973ec128f5df65b8555c2e094b75495c47ad0f",
+      "uncertain": false
+    },
+    "shuowen:2293": {
+      "text": "A bird. From 隹 and 人; 厂 supplies the sound. Pronounced like 鴈.",
+      "sourceTextSha256": "6339bf3691cf048db2cdc051f7d9e16ed96de2d45bdd15539429a9645e71934d",
+      "uncertain": false
+    },
+    "shuowen:2294": {
+      "text": "𩁟黃. From 隹; 黎 supplies the sound. Another explanation: the Chu bird, its color dark black and yellow.",
+      "sourceTextSha256": "1f94f6d082ca86b49a39412611b5d5ea55355694163499f1c36925fdd33afbfb",
+      "uncertain": false
+    },
+    "shuowen:2295": {
+      "text": "A bird. From 隹; 虍 supplies the sound.",
+      "sourceTextSha256": "008de367e9a3454bfeb91cdc1df248dee143efa65ed342fdee276762e78bb9a3",
+      "uncertain": false
+    },
+    "shuowen:2296": {
+      "text": "The bird 牟母. From 隹; 奴 supplies the sound.",
+      "sourceTextSha256": "92ce2c088e5a1219465ae7708dab4bb27d348584034101aa36b55e968841bb9c",
+      "uncertain": false
+    },
+    "shuowen:2297": {
+      "text": "The nine 雇 birds mark farming and silkworm seasons, guarding the people against excess. From 隹; 戶 supplies the sound. Spring 雇 is 鳻盾; summer, 竊玄; autumn, 竊藍; winter, 竊黃; thorn 雇, 竊丹; traveling 雇, 唶唶; night 雇, 嘖嘖; mulberry 雇, 竊脂; old 雇, 鷃.",
+      "sourceTextSha256": "366f6bdce2ce23b9a420bca8219aecdcd44eeef35a1dafed4751ce3c0f250234",
+      "uncertain": true
+    },
+    "shuowen:2298": {
+      "text": "A kind of 䨄. From 隹; 𦎫 supplies the sound.",
+      "sourceTextSha256": "292048fee79587507279222e266db2ffeccbf4d801b7ccacce37e027fc2d47ec",
+      "uncertain": false
+    },
+    "shuowen:2299": {
+      "text": "A kind of 𩁛. From 隹; 酓 supplies the sound.",
+      "sourceTextSha256": "3fcb27503cab99965909391d6d8f25b86c2992ac6c994c41c88812c9f3cb6727",
+      "uncertain": false
+    },
+    "shuowen:2300": {
+      "text": "A bird. From 隹; 支 supplies the sound. Another explanation: 䧴度, a bird name.",
+      "sourceTextSha256": "c2691512af90591a79fb3bbd13e5bd424c871209a02aa591eec16a49586a21d8",
+      "uncertain": false
+    }
+  }
+}

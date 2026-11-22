@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "45e7cbfa06bb3f2179d8fd441871e226f6397823445b03ca5b79a60f7bc48785",
+    "created_date": "2026-11-21"
+  },
+  "batch": "006",
+  "translations": {
+    "shuowen:501": {
+      "text": "Yellow flowers. Formed from 艸, with 黊 indicating the sound. Pronounced like 壞.",
+      "sourceTextSha256": "0bccd9c96a629ac2d6644ba16a7fb0eef445a69e6d68a4e87e87d0967b2326a8",
+      "uncertain": false
+    },
+    "shuowen:502": {
+      "text": "The yellow flowers of 苕. Formed from 艸, with 𤐫 indicating the sound. Another explanation: the tip.",
+      "sourceTextSha256": "688344bb5fee4f379db5de286545dfef846cd76eb5114f1a4a33ca31cad71210",
+      "uncertain": false
+    },
+    "shuowen:503": {
+      "text": "A plant that flowers but does not bear fruit. Another explanation: yellow blossoms. Formed from 艸, with 央 indicating the sound.",
+      "sourceTextSha256": "ef38d886173e6726c5c0d735a1df0a9073f42a9422a0a956551a6895b79a1f47",
+      "uncertain": false
+    },
+    "shuowen:504": {
+      "text": "Abundant flowers. Formed from 艸, with 爾 indicating the sound. The Odes says: “What is that flourishing thing？”",
+      "sourceTextSha256": "59082c0adf1426f6d3a944f9be2c12d303a2b4d741900f3ccd6ef3cb439212f0",
+      "uncertain": false
+    },
+    "shuowen:505": {
+      "text": "Luxuriant plants. Formed from 艸, with 妻 indicating the sound. The Odes says: “Lush and luxuriant.”",
+      "sourceTextSha256": "d62db94c1e8ad6907b980dcff4c2e8e9ba0a554ad686b9a9ffe0f6fd783b4fa1",
+      "uncertain": false
+    },
+    "shuowen:506": {
+      "text": "Luxuriant plants. Formed from 艸, with 奉 indicating the sound.",
+      "sourceTextSha256": "c450a070d0372112354277088573a337c9e6d3f76113b9faa8224b4d17fe62f2",
+      "uncertain": false
+    },
+    "shuowen:507": {
+      "text": "Luxuriant. Formed from 艸, with 疑 indicating the sound. The Odes says: “Millets grow luxuriantly.”",
+      "sourceTextSha256": "23a243c7de27ced7fe64305c0b949014d521cf1bb0a3984bbc9b695fc74189e8",
+      "uncertain": false
+    },
+    "shuowen:508": {
+      "text": "The appearance of flowers hanging from plants and trees. Formed from 艸, with 甤 indicating the sound.",
+      "sourceTextSha256": "544ef20dff737ff1b04919ed046df84bb6d31af2356f68ac6d109945d9ef2cdd",
+      "uncertain": false
+    },
+    "shuowen:509": {
+      "text": "In Qing, Qi, Yan and Ji, fine tree branches are called 葼. Formed from 艸, with 㚇 indicating the sound.",
+      "sourceTextSha256": "0114f869ed21d61c1650899bc867bcb9842c84c032e101fcc1e11685033d7c52",
+      "uncertain": false
+    },
+    "shuowen:510": {
+      "text": "Plants wilting and drooping. Formed from 艸, with 移 indicating the sound.",
+      "sourceTextSha256": "a2630fd14f9217e06e77dfddf46a22a5c635b80b27839fb5c52f47f76dd02c54",
+      "uncertain": false
+    },
+    "shuowen:511": {
+      "text": "The form of plants and trees. Formed from 艸, with 原 indicating the sound.",
+      "sourceTextSha256": "601fece8e21f929733ee31b6ffbb96ee791400c1d1c4fe0ec558d1fa7d661023",
+      "uncertain": false
+    },
+    "shuowen:512": {
+      "text": "Plant fruit or seed pods. Formed from 艸, with 夾 indicating the sound.",
+      "sourceTextSha256": "6a8a887172aa6faad45d7c382f605c0ce1fff657b281ee9be6498d728d5796cf",
+      "uncertain": false
+    },
+    "shuowen:513": {
+      "text": "The tip of a plant. Formed from 艸, with 亾 indicating the sound.",
+      "sourceTextSha256": "109c267247de9faafe204d7a5505a900267c37b474f3ad126ad5d32251313446",
+      "uncertain": false
+    },
+    "shuowen:514": {
+      "text": "The flowering head of 藍蓼. Formed from 艸, with abbreviated 隨 indicating the sound.",
+      "sourceTextSha256": "a86223353bb9f6824ec204cb3827f35fc29870f1d7d1dc8f94275e9246f3fd8c",
+      "uncertain": false
+    },
+    "shuowen:515": {
+      "text": "The attachment of a melon. Formed from 艸, with 帶 indicating the sound.",
+      "sourceTextSha256": "6a7d94c7c1abdbfacab390ad6da1d64e258a5db627f99ea5c7c92928c212faec",
+      "uncertain": true
+    },
+    "shuowen:516": {
+      "text": "Plant roots. Formed from 艸, with 亥 indicating the sound.",
+      "sourceTextSha256": "2a337cb9749d9b361e4889abc3385767177e29f51a004567e21e961cb012b6ec",
+      "uncertain": false
+    },
+    "shuowen:517": {
+      "text": "Roots, 茇; the roots of 茅 grass. Formed from 艸, with 均 indicating the sound.",
+      "sourceTextSha256": "284fb5e1a400370ebc94b4ee91d5453d38101ad8add7840e7f4177bfc6b1b284",
+      "uncertain": false
+    },
+    "shuowen:518": {
+      "text": "Plant roots. Formed from 艸, with 犮 indicating the sound. In spring, pulling dry plant roots lifts the soil, called 撥; hence they are called 茇. Another explanation calls a plant's white flowers 茇.",
+      "sourceTextSha256": "f7fc80c178c3f5b2116c5359aa0cd80ab6eebb7aa9815c2b17fcf140d3eedec9",
+      "uncertain": false
+    },
+    "shuowen:519": {
+      "text": "Luxuriant plants. Formed from 艸, with 凡 indicating the sound. The Odes says: “Luxuriant millet seedlings.”",
+      "sourceTextSha256": "eaeee256fe4d90e276b667e82a23d5227fc35b0c10051094e638e1677c4dbe53",
+      "uncertain": false
+    },
+    "shuowen:520": {
+      "text": "Flowers and leaves spreading out. Formed from 艸, with 傅 indicating the sound. Pronounced like 傅.",
+      "sourceTextSha256": "e4bbac58bd0136d54a29e0a30e0f4365c78b2b0101bd83cdca1c01e079da37fe",
+      "uncertain": false
+    },
+    "shuowen:521": {
+      "text": "Plants and trees failing to grow. Another explanation: 茅 grass shoots. Formed from 艸, with 執 indicating the sound.",
+      "sourceTextSha256": "cdf046300637c807e69601bc4d4c2812b8b1f7d8a909f53a286dba83aac40508",
+      "uncertain": false
+    },
+    "shuowen:522": {
+      "text": "The appearance of abundant plants. Formed from 艸, with 㹞 indicating the sound. Pingchun in Jiangxia has a 䓄 station.",
+      "sourceTextSha256": "24132ad576a95059a5c246225448581bc8f8cfdc2511a5ffe338635e628018d1",
+      "uncertain": false
+    },
+    "shuowen:523": {
+      "text": "Plants growing abundantly and luxuriantly. Formed from 艸, with 戊 indicating the sound.",
+      "sourceTextSha256": "723a47ecb627cf302b8d21a840dde86035f724328406189ef69c18a37dcce8e6",
+      "uncertain": false
+    },
+    "shuowen:524": {
+      "text": "Luxuriant plants. Formed from 艸, with 畼 indicating the sound.",
+      "sourceTextSha256": "74ddb2ee7cda3db6f615f87af42791f453102b0d5bf4280369204dfdd8d7ef4d",
+      "uncertain": false
+    },
+    "shuowen:525": {
+      "text": "Ground shaded by plants. Formed from 艸, with 陰 indicating the sound.",
+      "sourceTextSha256": "9faab7baa2240d7b89a24bff23a7915fe9cfd0d11193bbe6aad12e405427ea20",
+      "uncertain": false
+    },
+    "shuowen:526": {
+      "text": "The appearance of plants. Formed from 艸, with 造 indicating the sound.",
+      "sourceTextSha256": "1a3dd28e154b5de4c6fefa6bd9ccbe70d4d3f49c084b782386e8d7a1b07b537e",
+      "uncertain": false
+    },
+    "shuowen:527": {
+      "text": "Plants and trees increasing in abundance. Formed from 艸, with abbreviated 兹 indicating the sound.",
+      "sourceTextSha256": "cc7ca116d7ba8d0fc1cfc6b9666c4962f52ee78ff7dad801398e40735d73394d",
+      "uncertain": false
+    },
+    "shuowen:528": {
+      "text": "Plants completely withered by drought. Formed from 艸, with 俶 indicating the sound. The Odes says: “Parched are the mountains and rivers.”",
+      "sourceTextSha256": "313bee9bf9b862198871563386d9bf4a9e0561ef2ce43e1755a46be0f1c70858",
+      "uncertain": false
+    },
+    "shuowen:529": {
+      "text": "The appearance of plants. Formed from 艸, with 歊 indicating the sound. The Rites of Zhou says: “The hub is worn but does not warp.”",
+      "sourceTextSha256": "c95c4a420e5d4bb0cea25400c2dbd2e170960f447c6076d3fee2d498adb3ce0a",
+      "uncertain": false
+    },
+    "shuowen:530": {
+      "text": "The appearance of abundant plants. Formed from 艸, with 旣 indicating the sound.",
+      "sourceTextSha256": "2412cb570632857cdf310b5f552defb1f073630bfaf02edfd7ef44740530c1b0",
+      "uncertain": false
+    },
+    "shuowen:531": {
+      "text": "The appearance of abundant plants. Formed from 艸, with 資 indicating the sound.",
+      "sourceTextSha256": "7bcdafc5d682ddeefddeb676e95784f3a7b426f70d1d53d7d77e965378cb0d02",
+      "uncertain": false
+    },
+    "shuowen:532": {
+      "text": "The appearance of luxuriant plants. Formed from 艸, with 秦 indicating the sound.",
+      "sourceTextSha256": "0ee3e4788e13ff1a9ce28be910f64816986369c2655b1fb922c19e1583929b48",
+      "uncertain": false
+    },
+    "shuowen:533": {
+      "text": "The appearance of noxious weeds. Formed from 艸, with 肖 indicating the sound.",
+      "sourceTextSha256": "e9333f040caa34f89c9ca2866c4104f85dce2b25b7f85fac86d71f02c9a002ff",
+      "uncertain": false
+    },
+    "shuowen:534": {
+      "text": "芮芮: the appearance of plants growing. Formed from 艸, with 内 indicating the sound. Pronounced like 汭.",
+      "sourceTextSha256": "0bd51996063867708b60f251565bcc33c0c4aa7cf4c0e3e216fc92797d07139c",
+      "uncertain": false
+    },
+    "shuowen:535": {
+      "text": "The appearance of plants. Formed from 艸, with 在 indicating the sound. Jibei has Chiping county.",
+      "sourceTextSha256": "75ee70a5ad013c2730ed0eeb2f3739cb099018ba302060468a749a5ae7f9cffe",
+      "uncertain": false
+    },
+    "shuowen:536": {
+      "text": "The appearance of abundant plants. Formed from 艸, with 會 indicating the sound. The Odes says: “Thickly gathered and luxuriant.”",
+      "sourceTextSha256": "037352aea5516981a415307d77e19b95d507c117583d35ccd1af1138cacdb4a5",
+      "uncertain": false
+    },
+    "shuowen:537": {
+      "text": "Fine grasses growing in clumps. Formed from 艸, with 敄 indicating the sound.",
+      "sourceTextSha256": "fdef6da98115de218ead676873e8787863cc642c9592fc7d1ef430ec70f4a604",
+      "uncertain": false
+    },
+    "shuowen:538": {
+      "text": "Plants covering and spreading. Formed from 艸, with 毛 indicating the sound. The Odes says: “Gather it to left and right.”",
+      "sourceTextSha256": "885be79520dc2aa36af8371fd2c8121d9fa5e9808b93b27f14d466ca0741e2d6",
+      "uncertain": true
+    },
+    "shuowen:539": {
+      "text": "The color of plants. Formed from 艸, with 倉 indicating the sound.",
+      "sourceTextSha256": "7873ee1639a7f51b5bb3bfcd22957bf1a5311fc555850e1c15c37ae61c6acec1",
+      "uncertain": false
+    },
+    "shuowen:540": {
+      "text": "The appearance of plants receiving the wind. Formed from 艸 and 風. Pronounced like 婪.",
+      "sourceTextSha256": "92c3b398a377a65ab980c55c5db781215ef0ce1cfe78d7ba04e5f3063c59c709",
+      "uncertain": false
+    },
+    "shuowen:541": {
+      "text": "The appearance of plants. Formed from 艸, with 卒 indicating the sound. Pronounced like 瘁.",
+      "sourceTextSha256": "87d2744d85877375a4ada3ba3a7ed64254f872df5767548bf84e536a86d180b1",
+      "uncertain": false
+    },
+    "shuowen:542": {
+      "text": "To transplant separately. Formed from 艸, with 時 indicating the sound.",
+      "sourceTextSha256": "686a05f5fd2b0cacdd31f41427f3536faf3953b0e73fc8895524ffffed7e7678",
+      "uncertain": false
+    },
+    "shuowen:543": {
+      "text": "Plants growing in a field. Formed from 艸 and 田.",
+      "sourceTextSha256": "671c4cb825ab134abc85f3e0344b86e4149de5a7f3d9c52d849d0b746b6d4d40",
+      "uncertain": false
+    },
+    "shuowen:544": {
+      "text": "Small plants. Formed from 艸, with 可 indicating the sound.",
+      "sourceTextSha256": "9955a68af9a58e5c8766d89e5df9859429d4d49cc165cb6b186d68d9c1c46321",
+      "uncertain": false
+    },
+    "shuowen:545": {
+      "text": "Weedy overgrowth, 薉. Formed from 艸, with 無 indicating the sound.",
+      "sourceTextSha256": "b9a88181ba6add82d7b0f5c2e64131f0f100e250144a83492bd5bdb550327837",
+      "uncertain": false
+    },
+    "shuowen:546": {
+      "text": "Weedy overgrowth, 蕪. Formed from 艸, with 歲 indicating the sound.",
+      "sourceTextSha256": "c67bd6b657d72abbffb61bf767c00b042387acaa4c60ac9b8428349dcc585ae6",
+      "uncertain": false
+    },
+    "shuowen:547": {
+      "text": "Weedy overgrowth. Formed from 艸, with 㠩 indicating the sound. Another explanation: plants covering the ground.",
+      "sourceTextSha256": "ce97338baad93ebd21a4359bca6fb5ae9f16dea438a3aad7688c085649889696",
+      "uncertain": false
+    },
+    "shuowen:548": {
+      "text": "Plants in disorder. Formed from 艸, with 寍 indicating the sound. Du Lin explains: the tangled appearance of plants, 𦱊𦺝.",
+      "sourceTextSha256": "e082e99ade1059ee542b51bbe1bf47c79c35e93c2c51bc6f2b8d4423a9548cfd",
+      "uncertain": false
+    },
+    "shuowen:549": {
+      "text": "The tangled appearance called 𦱊𦺝. Formed from 艸, with 爭 indicating the sound.",
+      "sourceTextSha256": "846cae37cfd6ff984d52397d37fd80a52ff8902584f5e0cde5c0a2c14bef91fe",
+      "uncertain": false
+    },
+    "shuowen:550": {
+      "text": "For herbaceous plants, falling is called 零; for trees, 落. Formed from 艸, with 洛 indicating the sound.",
+      "sourceTextSha256": "d01589876bddf16b2fc81eac5985f171b068cdc856741651b60d973de4efe42d",
+      "uncertain": false
+    },
+    "shuowen:551": {
+      "text": "蔽蔽: small plants. Formed from 艸, with 敝 indicating the sound.",
+      "sourceTextSha256": "d38263fa08c5be0f5a86c4b6b892912fd65f9c11d66080d82c4a5602161d42b9",
+      "uncertain": false
+    },
+    "shuowen:552": {
+      "text": "Bark and leaves of plants and trees fallen to the ground are called 蘀. Formed from 艸, with 擇 indicating the sound. The Odes says: “In the tenth month leaves fall.”",
+      "sourceTextSha256": "c3d4c2a6fb48dc970ee88e9c9bf9aa9826a8bc60bef30d94556c6053f0331dcc",
+      "uncertain": false
+    },
+    "shuowen:553": {
+      "text": "To accumulate. Formed from 艸, with 温 indicating the sound. The Spring and Autumn commentary says: “Accumulating profit produces evil.”",
+      "sourceTextSha256": "d53fd055e478db568db178a7d814e36199cd5b4fac7bd8b170ad91c4a4b4f210",
+      "uncertain": false
+    },
+    "shuowen:554": {
+      "text": "Withered, 菸. Formed from 艸, with 焉 indicating the sound.",
+      "sourceTextSha256": "34b51da6188aeeebded46611661b1d5bf32e51cd45d74e5d95bbde73cba98daf",
+      "uncertain": false
+    },
+    "shuowen:555": {
+      "text": "Stifled or withered. Formed from 艸, with 於 indicating the sound. Another explanation: wilted, 𣨙.",
+      "sourceTextSha256": "4fbb6d5d915eb5e266020384ac4dad491248d224d09a44926d0c23295d20a0f9",
+      "uncertain": true
+    },
+    "shuowen:556": {
+      "text": "The appearance of plants winding around. Formed from 艸, with 榮 indicating the sound. The Odes says: “Kudzu vines wind around it.”",
+      "sourceTextSha256": "af26decb916fb8f68e258cd68a0b3e56b682eefddd62365352c6018fb6786f86",
+      "uncertain": false
+    },
+    "shuowen:557": {
+      "text": "A plant. Formed from 艸, with 祭 indicating the sound.",
+      "sourceTextSha256": "9631eb582c8814b51408afb6abe3de4e728aa0860e5a229a5794e8caf7bb8b37",
+      "uncertain": false
+    },
+    "shuowen:558": {
+      "text": "Plants with many leaves. Formed from 艸, with 伐 indicating the sound. The Spring and Autumn commentary says: “Di Fa of Jin.”",
+      "sourceTextSha256": "c81545e365d2390f3e599305e193b9c46930e2b89bbe73eb70c5ba0d502e579b",
+      "uncertain": false
+    },
+    "shuowen:559": {
+      "text": "Edible plants. Formed from 艸, with 采 indicating the sound.",
+      "sourceTextSha256": "73a4707674cc0371ef45162cf5fd1bedca819b2773c8c348bffe09fc63250d96",
+      "uncertain": false
+    },
+    "shuowen:560": {
+      "text": "The appearance of plants with many leaves. Formed from 艸, with 而 indicating the sound. Chengfu in Pei has a Yanger station.",
+      "sourceTextSha256": "21da84e2e9018e1aab99806f0087eadc84578be1284fcf7a50cb183b2859d4d1",
+      "uncertain": false
+    },
+    "shuowen:561": {
+      "text": "The appearance of plants floating in water. Formed from 艸, with 乏 indicating the sound.",
+      "sourceTextSha256": "1e2c741fe96f86a73398cf93f82bcf683a855b1deee68f00f7e96ed9d3ec420e",
+      "uncertain": false
+    },
+    "shuowen:562": {
+      "text": "A wooded thicket. Another explanation: a silkworm tray. Formed from 艸, with 溥 indicating the sound.",
+      "sourceTextSha256": "29573a5bcc0362226046c8bf136261491606613e72b60498dcb41fa79658128f",
+      "uncertain": false
+    },
+    "shuowen:563": {
+      "text": "A place for rearing birds and beasts. Formed from 艸, with 夗 indicating the sound.",
+      "sourceTextSha256": "3c1bc50515312eb9fd69d90f833091019f273d98080d6168ed4cc8d44c2628c7",
+      "uncertain": false
+    },
+    "shuowen:564": {
+      "text": "A great marsh. Formed from 艸, with 𢿙 indicating the sound. The marshes of the nine provinces are: Juqu in Yangzhou, Yunmeng in Jingzhou, Futian in Yuzhou, Mengzhu in Qingzhou, Daye in Yanzhou, Xianpu in Yongzhou, Xiyang in Youzhou, Yangyu in Jizhou, and Zhaoyuqi in Bingzhou.",
+      "sourceTextSha256": "07fb79c885adfcf3d1d7065246fb7c7ca85ee9e766b7f0a965ee5e9d69f8fb9d",
+      "uncertain": false
+    },
+    "shuowen:565": {
+      "text": "Uncultivated land. Formed from 艸 and 甾. The Changes says: “Without clearing new fields or cultivating old ones.”",
+      "sourceTextSha256": "f16abe9732dd739eaf02b2c09e57957a283faf23f6e6e12fd1fc889bd9770393",
+      "uncertain": false
+    },
+    "shuowen:566": {
+      "text": "The appearance of luxuriant plants. Formed from 艸, with 繇 indicating the sound. The Book of Xia says: “Its plants were luxuriant.”",
+      "sourceTextSha256": "ee525ddd457997c6fb150da2c601f3a8dbb808b3e5be7893a4781609f9f2705c",
+      "uncertain": false
+    },
+    "shuowen:567": {
+      "text": "To remove plants. The Bright Hall Monthly Ordinances says: “In late summer burn the cut vegetation.” Formed from 艸, with 雉 indicating the sound.",
+      "sourceTextSha256": "006091fd74c789c5771d2273a05406747adc41e53cfb6ab152dd34e3d1a708be",
+      "uncertain": false
+    },
+    "shuowen:568": {
+      "text": "To plow ground thick with plants. Formed from 艸 and 耒; 耒 also indicates the sound.",
+      "sourceTextSha256": "dfa4d3c08db8593e43295fa607c2fea09f72ffbbf2c3abe9416b65ac463e7fdc",
+      "uncertain": true
+    },
+    "shuowen:569": {
+      "text": "Large plants. Formed from 艸, with 致 indicating the sound.",
+      "sourceTextSha256": "18aa35eb7a94755e27a5d5dc8304ad1c9c815287a7c4525002af6df58c0e0ecd",
+      "uncertain": false
+    },
+    "shuowen:570": {
+      "text": "Plants growing together in enclosing clusters. Formed from 艸, with 斬 indicating the sound. The Documents says: “Plants and trees grow in clusters.” [The precise sense of 蔪苞 is uncertain.]",
+      "sourceTextSha256": "cf400f9359f6d5a9ec9476537533883408c5f4d16334915f8f066e7183f0d4d5",
+      "uncertain": true
+    },
+    "shuowen:571": {
+      "text": "A road so overgrown with plants that it cannot be traveled. Formed from 艸, with 弗 indicating the sound.",
+      "sourceTextSha256": "eae8c64de20f9bbeaa804be17ee2069f2122543ad9ceccffbbb8a05a7166f629",
+      "uncertain": false
+    },
+    "shuowen:572": {
+      "text": "Fragrant. Formed from 艸, with 必 indicating the sound.",
+      "sourceTextSha256": "0f0df1462ea9ddc56b53e130f29a7290a570fd9dece275ae6c44bc8016f8670e",
+      "uncertain": false
+    },
+    "shuowen:573": {
+      "text": "A fragrant plant. Formed from 艸, with 設 indicating the sound.",
+      "sourceTextSha256": "7488b8cf6dc472400df94d49be2ba65823d61b9c3fd47096f22f4d887ada2943",
+      "uncertain": false
+    },
+    "shuowen:574": {
+      "text": "A fragrant plant. Formed from 艸, with 方 indicating the sound.",
+      "sourceTextSha256": "87d83e50fbe540534d39f462b070dadfa9a8f9c95f5507fe3f5ce180ff48a63f",
+      "uncertain": false
+    },
+    "shuowen:575": {
+      "text": "Mixed fragrant plants. Formed from 艸, with 賁 indicating the sound.",
+      "sourceTextSha256": "8c4c1c2cff0489ba0749227a026bbec2cd96ba2beb3f2816b1de73d91e2f528d",
+      "uncertain": false
+    },
+    "shuowen:576": {
+      "text": "Plants for treating illness. Formed from 艸, with 樂 indicating the sound.",
+      "sourceTextSha256": "d2e0955e42001315535f7c7e5b27a3a7b2ddc3435c3207d19cad6772a5aeae16",
+      "uncertain": false
+    },
+    "shuowen:577": {
+      "text": "Plants and trees growing attached to the soil. Formed from 艸, with 麗 indicating the sound. The Changes says: “The hundred grains, plants and trees cling to the earth.”",
+      "sourceTextSha256": "95f5f51b2db290a4b1a2bbb89eff200a9744c3e27e4e5d9a9df933b95d40e3e3",
+      "uncertain": false
+    },
+    "shuowen:578": {
+      "text": "Broad and abundant. Formed from 艸, with 席 indicating the sound.",
+      "sourceTextSha256": "de1a205a318571e9b694c7160b7172fa196a30db4cd52801087aa2ee74e63174",
+      "uncertain": false
+    },
+    "shuowen:579": {
+      "text": "To cut plants. Formed from 艸 and 殳.",
+      "sourceTextSha256": "0877422a129eb37d58dc5345f4520bc5e350eb9d2e2e58d69c47484f82badaca",
+      "uncertain": false
+    },
+    "shuowen:580": {
+      "text": "A mat or bedding. Formed from 艸, with 存 indicating the sound.",
+      "sourceTextSha256": "121b8d9ff71b773e651e6de7324761d77a1081a157975fd783d24e1a7acd22d3",
+      "uncertain": false
+    },
+    "shuowen:581": {
+      "text": "Bedding for a sacrifice. Another explanation: unplaited plants lying scattered. Formed from 艸, with 耤 indicating the sound.",
+      "sourceTextSha256": "fb0f8f048c321d4080f9547d3c63593e623cc8ba6fd854d29fc52f23361d9c09",
+      "uncertain": false
+    },
+    "shuowen:582": {
+      "text": "A bedding of white grass. Formed from 艸, with 租 indicating the sound. The Rites says: “Enfeoff lords with earth, bedding it in white 茅 grass.”",
+      "sourceTextSha256": "4a4a41bd8920f2e356aaaab01a9d6e1e86cdd144207af3ac73e633a7a56ad269",
+      "uncertain": false
+    },
+    "shuowen:583": {
+      "text": "At court assemblies, bundles of 茅 marking positions are called 蕝. Formed from 艸, with 絕 indicating the sound. The Spring and Autumn Discourses of the States says: “Set out reed bundles to mark the seats.”",
+      "sourceTextSha256": "ff97a966a756912e248931b8418967416146e7480cf75c62d35d92b9131c1b1c",
+      "uncertain": false
+    },
+    "shuowen:584": {
+      "text": "To roof a house with grass and reeds. Formed from 艸, with 次 indicating the sound.",
+      "sourceTextSha256": "9732b0800498d514bc3cb1c4bfb23c523eaf5254e69024cebce5ff633de455d7",
+      "uncertain": false
+    },
+    "shuowen:585": {
+      "text": "To thatch, 茨. Formed from 艸, with 咠 indicating the sound.",
+      "sourceTextSha256": "8b6a13b754a652fc173940e0f1a564c003173beb253b956dbac59c8d4141c8d8",
+      "uncertain": false
+    },
+    "shuowen:586": {
+      "text": "A thatch covering. Formed from 艸, with 盇 indicating the sound.",
+      "sourceTextSha256": "3c50ba5e2697831912ab83df31ce12658ab821b8e05c1cded8e2e246faec1abe",
+      "uncertain": false
+    },
+    "shuowen:587": {
+      "text": "A covering. Formed from 艸, with 占 indicating the sound.",
+      "sourceTextSha256": "0383bd2c723df1022c5f729215e3269e45944c9e1142dcd3972ca8153b03f7ee",
+      "uncertain": false
+    },
+    "shuowen:588": {
+      "text": "A covering. Formed from 艸, with 渴 indicating the sound.",
+      "sourceTextSha256": "f1c57f36e405fb899c4ca6ddd42d90b110a5bc7071b4f708a04db72985f9f8e8",
+      "uncertain": false
+    },
+    "shuowen:589": {
+      "text": "A brush. Formed from 艸, with 屈 indicating the sound.",
+      "sourceTextSha256": "d71aa946c386c18c28c14445e9286f554517f1d33eb053ef67d3d3f3fb41fc75",
+      "uncertain": false
+    },
+    "shuowen:590": {
+      "text": "A screen or barrier. Formed from 艸, with 潘 indicating the sound.",
+      "sourceTextSha256": "53fac549782ff32a130e0fe5c3720ab3f13f997fc91ec78a0a59df67759555f8",
+      "uncertain": false
+    },
+    "shuowen:591": {
+      "text": "Pickled vegetables. Formed from 艸, with 沮 indicating the sound.",
+      "sourceTextSha256": "5b46e0da89a1ea8cfd65778155a7e6c11b51a95d38972951b45739a758dda41f",
+      "uncertain": false
+    },
+    "shuowen:592": {
+      "text": "Crisp pickled mustard. Formed from 艸, with 全 indicating the sound.",
+      "sourceTextSha256": "966ddd7f4812720b4e1446a7c9cea123f196e7efb79b111c98c9b1f79de99ed2",
+      "uncertain": true
+    },
+    "shuowen:593": {
+      "text": "Preserved chives. Formed from 艸, with 酤 indicating the sound.",
+      "sourceTextSha256": "f0ac5f89c48f464c00d6f6eee9e959a4886fe66696e67bf5b8248c87c2a70799",
+      "uncertain": true
+    },
+    "shuowen:594": {
+      "text": "Pickled melon. Formed from 艸, with 監 indicating the sound.",
+      "sourceTextSha256": "a8a55529ed76c6a688bdf44bd7a13aa79d827273d13e2e98ca82b022d8107440",
+      "uncertain": false
+    },
+    "shuowen:595": {
+      "text": "Pickled vegetables. Formed from 艸, with 泜 indicating the sound.",
+      "sourceTextSha256": "57d33f84aa0d32a874d87d7f2438fb64c3bdf63843a45f4106c51e147068a84c",
+      "uncertain": false
+    },
+    "shuowen:596": {
+      "text": "A kind of dried plum. Formed from 艸, with 橑 indicating the sound. The Rites of Zhou says: “The bamboo baskets for food offerings contain dried 䕩.” In the Later Han, the king of Changsha first boiled plants to make 䕩.",
+      "sourceTextSha256": "ca04d34a3f69f2816fdefb7a84796fdb249417e49b11dcb261a3d856e0d66c86",
+      "uncertain": false
+    },
+    "shuowen:597": {
+      "text": "Boiled-down 茱萸. Formed from 艸, with 𩕺 indicating the sound. Han regulations: Kuaiji presents one peck of 𧆈.",
+      "sourceTextSha256": "e2cb6e30e1b3f80e532c3bc6ea1f864059808772a5c6bdea79839d58e872aced",
+      "uncertain": true
+    },
+    "shuowen:598": {
+      "text": "Vegetables for soup. Formed from 艸, with 宰 indicating the sound.",
+      "sourceTextSha256": "7aa07a7c5f66dcfd04af10aa16761f56e8f7e0f27745c9a68d4feea47f0d2aec",
+      "uncertain": false
+    },
+    "shuowen:599": {
+      "text": "To select vegetables. Formed from 艸 and 右; 右 is a hand. Another explanation: 杜若, a fragrant plant.",
+      "sourceTextSha256": "c57e08ee7887fa4733609f5030f4047e3d62837165865dba5840145cb0bad5b2",
+      "uncertain": false
+    },
+    "shuowen:600": {
+      "text": "A clump of 蒲 reeds. Formed from 艸, with 專 indicating the sound.",
+      "sourceTextSha256": "216d535a1b230965738150de53efda961e5bb2e13f0e9a8f122a3ba5dbee2baf",
+      "uncertain": false
+    }
+  }
+}

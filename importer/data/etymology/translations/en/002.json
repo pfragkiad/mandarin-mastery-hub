@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "5b899e328602d95fbe2ebc1a9db2a1eb447d679f390dc8a8428ca8bbc93206a2",
+    "created_date": "2026-11-21"
+  },
+  "batch": "002",
+  "translations": {
+    "shuowen:101": {
+      "text": "Jade of three colors. Formed from 玉, with 無 indicating the sound.",
+      "sourceTextSha256": "78c93bb70cf2b56454654c73d94e349f65c76109e3bd242238372d9427bf456e",
+      "uncertain": false
+    },
+    "shuowen:102": {
+      "text": "Decayed jade. Formed from 玉, with 有 indicating the sound. Pronounced like 畜 in 畜牧, livestock husbandry.",
+      "sourceTextSha256": "5041fb0499774b1785c8a5c5b2565bd678b1fc4c00a19f15449b01940a27f625",
+      "uncertain": false
+    },
+    "shuowen:103": {
+      "text": "Beautiful jade. Formed from 玉, with 睿 indicating the sound. The Spring and Autumn commentary says: “A jade cap and jade tassels.”",
+      "sourceTextSha256": "d892d2584d3772490ac698610aa13076d7d838943f497cd2df5d444dc9eee040",
+      "uncertain": false
+    },
+    "shuowen:104": {
+      "text": "The sound of jade. Formed from 玉, with 求 indicating the sound.",
+      "sourceTextSha256": "11bd45b0ebe0cc8782a842b025a4302c69d593b51e93b2075eb40122525eb45f",
+      "uncertain": false
+    },
+    "shuowen:105": {
+      "text": "Beautiful jade. Formed from 玉, with 林 indicating the sound.",
+      "sourceTextSha256": "e5ee2ab1058743123f036ac90c9541b508bd083e560d96fdc48c3c7e0555a161",
+      "uncertain": false
+    },
+    "shuowen:106": {
+      "text": "A round ceremonial jade. Formed from 玉, with 辟 indicating the sound.",
+      "sourceTextSha256": "d48c56d060e8951224e4453f98b035e0b9aba7d7c774fcddf56fb5839da14737",
+      "uncertain": false
+    },
+    "shuowen:107": {
+      "text": "A jade disc with a large hole, used to assist a ruler ascending steps. Formed from 玉, with 爰 indicating the sound. The Erya says: “When the hole is twice the solid rim, it is 瑗; when the rim is twice the hole, it is 璧.”",
+      "sourceTextSha256": "726f276e83910ea65d244f6ccb0dce2efb2f221273198b2f3345a19006a7eb8d",
+      "uncertain": false
+    },
+    "shuowen:108": {
+      "text": "A jade disc; when rim and hole are equal, it is called 環. Formed from 玉, with 睘 indicating the sound.",
+      "sourceTextSha256": "ac0aff67c5ce357f9e0cb010ef251bea18bf369259901b6ee2be8e80b321ab08",
+      "uncertain": false
+    },
+    "shuowen:109": {
+      "text": "Half a jade disc. Formed from 玉, with 黃 indicating the sound.",
+      "sourceTextSha256": "96bdbfc973ad5d978b0c90df629d3fee5400889bb04ce2d5ee8a95b57c30f978",
+      "uncertain": false
+    },
+    "shuowen:110": {
+      "text": "A ceremonial jade, eight inches across, resembling a chariot's axle bushing. Formed from 玉, with 宗 indicating the sound.",
+      "sourceTextSha256": "bfc90a4353666d31240c655df8a22d811257074126a5935d726a43359b0bc88b",
+      "uncertain": false
+    },
+    "shuowen:111": {
+      "text": "A ceremonial jade for dispatching troops, patterned as a tiger. Formed from 玉 and 虎; 虎 also indicates the sound. The Spring and Autumn commentary says: “He bestowed a pair of 琥 on Zijia.”",
+      "sourceTextSha256": "6383e812d3846110fac203f23bc5e72ad5a7581cd1e3f4e0b1273efe5d8936e7",
+      "uncertain": false
+    },
+    "shuowen:112": {
+      "text": "A jade used in prayers during drought, bearing a dragon pattern. Formed from 玉 and 龍; 龍 also indicates the sound.",
+      "sourceTextSha256": "be18bb559b01c5b55c54bc77fb62e2445dbad5476ed9ded147ba3929b6fbea15",
+      "uncertain": false
+    },
+    "shuowen:113": {
+      "text": "A jade tablet with a rounded end. Formed from 玉, with 宛 indicating the sound.",
+      "sourceTextSha256": "ea9ec983c718b8afe204faf0d61467a7465c9e8ee2670dfd6d44155aeaff3bbf",
+      "uncertain": true
+    },
+    "shuowen:114": {
+      "text": "A tablet sharpened at the top is 圭; half a 圭 is 璋. Formed from 玉, with 章 indicating the sound. The Rites lists six paired gifts: 圭 with horses, 璋 with hides, 璧 with silk, 琮 with brocade, 琥 with embroidery, 璜 with axe-patterned cloth.",
+      "sourceTextSha256": "9257126dd03200643cbba17ed8a68f7910ad188630e4fadbddafae50995bf7f5",
+      "uncertain": false
+    },
+    "shuowen:115": {
+      "text": "Beautiful coloring rising on a jade disc. Formed from 玉, with 炎 indicating the sound.",
+      "sourceTextSha256": "62e6e3a687e34cd80e7572b43e43114c02fcb065736753f9c7ae4013e4b1b7c4",
+      "uncertain": false
+    },
+    "shuowen:116": {
+      "text": "A large jade tablet. Formed from 玉, with 介 indicating the sound. The Book of Zhou says: “He raised and respectfully presented a great jade tablet.”",
+      "sourceTextSha256": "9c554d5c4a8e51b7f641420524e8fde3193d1a4c931d8b09f90f4c67f5e9a467",
+      "uncertain": false
+    },
+    "shuowen:117": {
+      "text": "A jade tablet one foot two inches long, fitted with a libation ladle for sacrifices in the ancestral temple. Formed from 玉, with 昜 indicating the sound.",
+      "sourceTextSha256": "0f626c23a59a09fbafd901a81f8f99ab8c9505db3542f2b949ddee5514ea43d7",
+      "uncertain": false
+    },
+    "shuowen:118": {
+      "text": "The 桓 jade tablet held by dukes. Formed from 玉, with 獻 indicating the sound.",
+      "sourceTextSha256": "10e9c3f12a2f9e52e14c4ac0badfcc187adfc3afb44a954ced84c24c0b1c06df",
+      "uncertain": false
+    },
+    "shuowen:119": {
+      "text": "A great jade tablet, three feet long, tapered above, with a mallet-shaped head. Formed from 玉, with 廷 indicating the sound.",
+      "sourceTextSha256": "2b625fbdc1ac74751fae75add0afea02ea619547f42a7c298f76279781f1575b",
+      "uncertain": false
+    },
+    "shuowen:120": {
+      "text": "When feudal lords hold jade tablets in audience with the Son of Heaven, he holds a jade to cap them, resembling a plow's cap. The Rites of Zhou says: “The Son of Heaven holds a four-inch 瑁.” Formed from 玉 and 冒; 冒 also indicates the sound.",
+      "sourceTextSha256": "b6b947b2d88cd1bd172183a6cbb0374b77b1e4fa54d556b3172998e1bac3c400",
+      "uncertain": false
+    },
+    "shuowen:121": {
+      "text": "A jade pendant. Formed from 玉, with 敫 indicating the sound.",
+      "sourceTextSha256": "6a9e0e83b7344dfc2d6db85f2bb58ca63d45fca4a313c7540202ae15ece4b257",
+      "uncertain": false
+    },
+    "shuowen:122": {
+      "text": "The upper jade of a pendant set, used to regulate walking and stopping. Formed from 玉, with 行 indicating the sound.",
+      "sourceTextSha256": "2cb3a0029cfebc326f5bed3a6930e9453b8367bdafe988813ea552ee78a9509a",
+      "uncertain": false
+    },
+    "shuowen:123": {
+      "text": "A jade pendant. Formed from 玉, with 夬 indicating the sound.",
+      "sourceTextSha256": "50c640410fddc6a561ca168bd72b6789782224e6288bf897215bc50aab0e12e6",
+      "uncertain": false
+    },
+    "shuowen:124": {
+      "text": "To use jade as a token of authority. Formed from 玉 and 耑.",
+      "sourceTextSha256": "540a50737f1290b20f7b30d3e2d1ee004b43152e07d9cf48a7c22743246adb9a",
+      "uncertain": false
+    },
+    "shuowen:125": {
+      "text": "An ear ornament. Formed from 玉 and 耳; 耳 also indicates the sound.",
+      "sourceTextSha256": "7bd893fe3bfd3e16e6e4b3d1d3f1e66a153a1d57c54c1e7e432b44799177f98c",
+      "uncertain": false
+    },
+    "shuowen:126": {
+      "text": "To fill the ears with jade ornaments. Formed from 玉, with 眞 indicating the sound. The Odes says: “Those jade ear ornaments!”",
+      "sourceTextSha256": "7bb4cd4d4c19b4a6b4d8422b2b619f91e873c99c80131a1d5722ec59f879ac7a",
+      "uncertain": false
+    },
+    "shuowen:127": {
+      "text": "The upper fitting of a worn knife. The Son of Heaven uses jade; feudal lords use gold. Formed from 玉, with 奉 indicating the sound.",
+      "sourceTextSha256": "81938e47e00b12049d859a863516bcb65563efacc4b16c74db548953a7061c47",
+      "uncertain": false
+    },
+    "shuowen:128": {
+      "text": "The lower fitting of a worn knife. The Son of Heaven uses jade. Formed from 玉, with 必 indicating the sound.",
+      "sourceTextSha256": "f182554dd183b09177f9ecd6591fdc554b654ea8bdeb415327de2597bc56829b",
+      "uncertain": false
+    },
+    "shuowen:129": {
+      "text": "Jade on a sword's suspension lug. Formed from 玉, with 彘 indicating the sound.",
+      "sourceTextSha256": "369dddee5e3b588f2d22700699655f3442c60d57a2708bb29483e70ab050e3d4",
+      "uncertain": false
+    },
+    "shuowen:130": {
+      "text": "Jade claws on a carriage canopy. Formed from 玉, with 蚤 indicating the sound.",
+      "sourceTextSha256": "58e7cf681f2b7dcd35bde8e6d73749e5530a08b8556afe8c38bb0cb293fc9ccd",
+      "uncertain": false
+    },
+    "shuowen:131": {
+      "text": "Raised patterned carving on jade tablets and discs. Formed from 玉, with abbreviated 篆 indicating the sound. The Rites of Zhou says: “Carved jade tablets and discs.”",
+      "sourceTextSha256": "27efd3d01b0d92298e3fce3c1ba99eb388c1819020396f33227cc77e2a90df26",
+      "uncertain": false
+    },
+    "shuowen:132": {
+      "text": "The carved pattern on a 琮 jade. Formed from 玉, with 且 indicating the sound.",
+      "sourceTextSha256": "47439afa51333ce45599058ab31fd15398e1931baa6c62320746a1514d58c0c9",
+      "uncertain": false
+    },
+    "shuowen:133": {
+      "text": "Cap ornamentation, capped here and there with jade. Formed from 玉, with 綦 indicating the sound.",
+      "sourceTextSha256": "0b1cd43759b57ff7668aa52e8087be25d7be2613c0820888fe298267f2fed9b2",
+      "uncertain": false
+    },
+    "shuowen:134": {
+      "text": "Jade ornamentation patterned like aquatic plants. Formed from 玉, with 喿 indicating the sound. The Book of Yu says: “Aquatic plants, fire and grains of rice.”",
+      "sourceTextSha256": "500576b48e488115ec9d38dc14ab456920cfcc3710253adefc937b17fcc3ed5e",
+      "uncertain": false
+    },
+    "shuowen:135": {
+      "text": "Hanging jade ornaments of a ceremonial crown. Formed from 玉, with 流 indicating the sound.",
+      "sourceTextSha256": "5825965f971ec4e5a58a7b61ce8722baecf77a63bc35ceb06bfe758cdabf3c5d",
+      "uncertain": false
+    },
+    "shuowen:136": {
+      "text": "A jade vessel. Formed from 玉, with 𠷎 indicating the sound. Pronounced like 淑.",
+      "sourceTextSha256": "038b4929f790e1a8e4fc0f5337577aeba878b945948323254a7d66feadd75a38",
+      "uncertain": false
+    },
+    "shuowen:137": {
+      "text": "A jade vessel. Formed from 玉, with 畾 indicating the sound.",
+      "sourceTextSha256": "5caed1d08df6c1d54fedec1c50f70ffa7d95626529e9cea07d0d4d487038a405",
+      "uncertain": false
+    },
+    "shuowen:138": {
+      "text": "Bright white jade coloring. Formed from 玉, with 差 indicating the sound.",
+      "sourceTextSha256": "1a2c3d84d13738498fe50520ef36f1b00c625cb316a7b398093a0f18f58b231f",
+      "uncertain": false
+    },
+    "shuowen:139": {
+      "text": "Brilliant jade coloring. Formed from 玉, with 此 indicating the sound. The Odes says: “The new terrace has brilliance.”",
+      "sourceTextSha256": "96a5ecfa4fb700c853240a73bd0f4065c5505291e1a4874fd0c754408f7d8dd9",
+      "uncertain": false
+    },
+    "shuowen:140": {
+      "text": "Jade's brilliance linked together like the strings of a zither. Formed from 玉, with 瑟 indicating the sound. The Odes says: “Lustrous is that jade libation ladle.”",
+      "sourceTextSha256": "db77d3847e3c9ec291ca688ce9dbf1c2c5b0774890ed7e326cbb05da6800fb1c",
+      "uncertain": false
+    },
+    "shuowen:141": {
+      "text": "Jade's brilliance arrayed in orderly ranks. Formed from 玉, with 㮚 indicating the sound. The Lost Analects says: “The jade glitters lustrously; its 𤩰 is vigorous.” [The final description is uncertain.]",
+      "sourceTextSha256": "18ab833a54c10fd0df360a127c2d1daacd81238421f8748dc7cac50e9e281e13",
+      "uncertain": true
+    },
+    "shuowen:142": {
+      "text": "The coloring of jade. Formed from 玉, with abbreviated 熒 indicating the sound. Another explanation: stone next in quality to jade. The Lost Analects says: “Like the luster of jade.”",
+      "sourceTextSha256": "eacf441efa34fca7cd241d813c276ad12842eaf6dba6975ed5e1a5e4cd907097",
+      "uncertain": false
+    },
+    "shuowen:143": {
+      "text": "Reddish jade coloring. Formed from 玉, with 㒼 indicating the sound. Red grain seedlings are called 虋; 璊 says the jade's color resembles them.",
+      "sourceTextSha256": "1400f02fbd39d7dec2a60735eb6805495a76fc8115b89fcd1b0258fb2c3f7317",
+      "uncertain": false
+    },
+    "shuowen:144": {
+      "text": "A small red blemish in jade. Formed from 玉, with 叚 indicating the sound.",
+      "sourceTextSha256": "b6c9a3c194f1389216da3afe7732be8e80db24a49b71608bd68ab1d501c38aec",
+      "uncertain": false
+    },
+    "shuowen:145": {
+      "text": "To work jade. Formed from 玉, with 豖 indicating the sound.",
+      "sourceTextSha256": "17661b31b77610293b8c1c50406d34b4336d2d6f031a9b164f6796810a335ed8",
+      "uncertain": false
+    },
+    "shuowen:146": {
+      "text": "To work jade. Another explanation: stone resembling jade. Formed from 玉, with 周 indicating the sound.",
+      "sourceTextSha256": "2ad928149236b981cace869d2c7eb876eef0ddd076ee31737b232a024fd844ab",
+      "uncertain": false
+    },
+    "shuowen:147": {
+      "text": "To work jade. Formed from 玉, with 里 indicating the sound.",
+      "sourceTextSha256": "bceef7110867be9ad850cf32178e76e742834703c54b097a19b527692a7bda3b",
+      "uncertain": false
+    },
+    "shuowen:148": {
+      "text": "A treasure. Formed from 玉, with 㐱 indicating the sound.",
+      "sourceTextSha256": "dd3025e06ecb4db7a4ef7f6ac7def0a136b5e8e7064dfb1d58d96483105edd3e",
+      "uncertain": false
+    },
+    "shuowen:149": {
+      "text": "To play with or handle. Formed from 玉, with 元 indicating the sound.",
+      "sourceTextSha256": "f15d7fe093c61a01c6851d069f560f81325fc2ab565a64a33f22da72ec0350d4",
+      "uncertain": false
+    },
+    "shuowen:150": {
+      "text": "The sound of jade. Formed from 玉, with 令 indicating the sound.",
+      "sourceTextSha256": "07a5a6c3a2fcc0c3f891cb3ac44819cd08347351f592f52ae5798afcbba8175d",
+      "uncertain": false
+    },
+    "shuowen:151": {
+      "text": "The sound of jade. Formed from 玉, with 倉 indicating the sound. The Odes says: “The leather reins ring with ornaments.”",
+      "sourceTextSha256": "700dbd3990306ba12b6eaa1d48bdb14b555f91a07e2d662e750be0ce3486134e",
+      "uncertain": false
+    },
+    "shuowen:152": {
+      "text": "The sound of jade. Formed from 玉, with 丁 indicating the sound. Ji, son of Taigong of Qi, was posthumously called Duke 玎.",
+      "sourceTextSha256": "284618cd1ef60a79937571ab81712aa177ad47132f8818fd705f4a1ffb999e5e",
+      "uncertain": false
+    },
+    "shuowen:153": {
+      "text": "The sound of jade. Formed from 玉, with 爭 indicating the sound.",
+      "sourceTextSha256": "4870cc53668de3af29a5daf24b6496d3e39c090ca0a6996c46c185a187c3c9e3",
+      "uncertain": false
+    },
+    "shuowen:154": {
+      "text": "The sound of jade. Formed from 玉, with 𧴪 indicating the sound.",
+      "sourceTextSha256": "fa6e106f9648c01eeb3dd792288dc2fc64bc96ace17c798cf81be46ecf171bf7",
+      "uncertain": false
+    },
+    "shuowen:155": {
+      "text": "The sound of jade. Formed from 玉, with 皇 indicating the sound.",
+      "sourceTextSha256": "72fe30c8fd277785be652679281823286f0a3bf8405952e676bec1ea1866d5f1",
+      "uncertain": false
+    },
+    "shuowen:156": {
+      "text": "Stone resembling jade. Formed from 玉, with 禹 indicating the sound.",
+      "sourceTextSha256": "02282f4ce87bb19d371b50de9e9fc0cc9d2060cdbea5a0e49788b5d4e0945f71",
+      "uncertain": false
+    },
+    "shuowen:157": {
+      "text": "Stone next in quality to jade, used to suspend a jade disc. Formed from 玉, with 丰 indicating the sound. Pronounced like 菶菶 in the Odes' “Melons and little melons flourish.” Another pronunciation is like 蚌 in 𧊧蚌.",
+      "sourceTextSha256": "076942f86fbe29ed02bcd8e6b6b4835ec071b6c76657fc1f11c5f8b51346cdbd",
+      "uncertain": false
+    },
+    "shuowen:158": {
+      "text": "玪𤨙: stone next in quality to jade. Formed from 玉, with 今 indicating the sound.",
+      "sourceTextSha256": "0460e664596ccb801a8427bc7a32aec558a161ea324d7376ab33ff2f19a22f7e",
+      "uncertain": false
+    },
+    "shuowen:159": {
+      "text": "The stone called 玪𤨙. Formed from 玉, with 勒 indicating the sound.",
+      "sourceTextSha256": "63e31608db4ac7acea0e1185418fbb38dabbbd6e2d9aaa90524d8e363bfaa3f3",
+      "uncertain": false
+    },
+    "shuowen:160": {
+      "text": "The jade ornament 瓊琚. Formed from 玉, with 居 indicating the sound. The Odes says: “I repay it with 瓊琚.”",
+      "sourceTextSha256": "0f78a7236141131d79fe4f21a028bc1538331f176adeecf6cc2d28c4e1730aec",
+      "uncertain": false
+    },
+    "shuowen:161": {
+      "text": "Stone next in quality to jade. Formed from 玉, with 莠 indicating the sound. The Odes says: “Ear ornaments of 璓 and 瑩.”",
+      "sourceTextSha256": "827405fda7801b3309003f3d70012c4db146426d8039a6dd780b2fd25544446c",
+      "uncertain": false
+    },
+    "shuowen:162": {
+      "text": "A black stone next in quality to jade. Formed from 玉, with 久 indicating the sound. The Odes says: “She gives me pendant 玖.” Pronounced like 芑; some say like 句 in “a person's bent spine,” 句脊.",
+      "sourceTextSha256": "2b0756f02661c54917e092f54fe25b2c5816b91ee25b3fb99136c253de82056f",
+      "uncertain": false
+    },
+    "shuowen:163": {
+      "text": "Stone resembling jade. Formed from 玉, with 𦣞 indicating the sound. Pronounced like 貽.",
+      "sourceTextSha256": "fff68a76be367071383170d1e7050b77f8b08d90c794792a4aff0b66abe29f87",
+      "uncertain": false
+    },
+    "shuowen:164": {
+      "text": "Stone resembling jade. Formed from 玉, with 艮 indicating the sound.",
+      "sourceTextSha256": "3ebfe754d9c65bc674a14efc264fc8e4a6370fff38600e5042dfa0dcac892d3b",
+      "uncertain": false
+    },
+    "shuowen:165": {
+      "text": "Stone resembling jade. Formed from 玉, with 曳 indicating the sound.",
+      "sourceTextSha256": "c09cf0e20b7e212b1911458efdc66e8b1e6b96819b6419b97b51b7c3583029f7",
+      "uncertain": false
+    },
+    "shuowen:166": {
+      "text": "Stone resembling jade. Formed from 玉, with 巢 indicating the sound.",
+      "sourceTextSha256": "475375412bf8b7242f608decccfcec7269d9a6354adb6c9ee378a2ecea7ab626",
+      "uncertain": false
+    },
+    "shuowen:167": {
+      "text": "Stone resembling jade. Formed from 玉, with 進 indicating the sound. Pronounced like 津.",
+      "sourceTextSha256": "51f9da70e5e1f87dc394857d2887c7273bd9c562f746b2fa25eb278358d65868",
+      "uncertain": false
+    },
+    "shuowen:168": {
+      "text": "Stone resembling jade. Formed from 玉, with 朁 indicating the sound.",
+      "sourceTextSha256": "7c4cb03f70e96be4631d2986ead6c64435450d77e5ae31680567d5a442be49df",
+      "uncertain": false
+    },
+    "shuowen:169": {
+      "text": "Stone resembling jade. Formed from 玉, with 悤 indicating the sound. Pronounced like 蔥.",
+      "sourceTextSha256": "246e43e76e17df515519618d58ed9936d4328d724fcc934919bc763e7a071514",
+      "uncertain": false
+    },
+    "shuowen:170": {
+      "text": "Stone resembling jade. Formed from 玉, with 號 indicating the sound. Pronounced like 鎬.",
+      "sourceTextSha256": "39762f12841dd65716b01c73674a1a6c5f6900bfa97947e847e65202a009c3c5",
+      "uncertain": false
+    },
+    "shuowen:171": {
+      "text": "Stone resembling jade. Formed from 玉, with 舝 indicating the sound. Pronounced like 曷.",
+      "sourceTextSha256": "74d27948878676626554ed3432bb12d8d1ac58b1517ae0c958c9ad7a4c398aa4",
+      "uncertain": false
+    },
+    "shuowen:172": {
+      "text": "Stone resembling jade. Formed from 玉, with 𥄗 indicating the sound.",
+      "sourceTextSha256": "6a574ae06779a23fc36f3cf690221bcca786dff98d510e84ca2f9954f0c5537d",
+      "uncertain": false
+    },
+    "shuowen:173": {
+      "text": "Stone next in quality to jade. Formed from 玉, with 燮 indicating the sound.",
+      "sourceTextSha256": "4959b3a502cc877fb46ab4833814a836873d3452d9cd887ff9d7592bd683cacf",
+      "uncertain": false
+    },
+    "shuowen:174": {
+      "text": "Stone next in quality to jade. Formed from 玉, with 句 indicating the sound. Pronounced like 苟.",
+      "sourceTextSha256": "c5faf0cd0564b96201bc55f521adbda5d8aaa59910aac781673099df1fd7c8a0",
+      "uncertain": false
+    },
+    "shuowen:175": {
+      "text": "Stone resembling jade. Formed from 玉, with 言 indicating the sound.",
+      "sourceTextSha256": "e370bde41a4c5a91dc08a9fe5c89f2e2acb39098f9d5e054a1df8e01b65459b5",
+      "uncertain": false
+    },
+    "shuowen:176": {
+      "text": "Stone resembling jade. Formed from 玉, with 盡 indicating the sound.",
+      "sourceTextSha256": "475f4cf2c361854b9a47edb3f059009b693ebfe83b792fad7afd76f202e0c167",
+      "uncertain": false
+    },
+    "shuowen:177": {
+      "text": "Stone resembling jade. Formed from 玉, with 隹 indicating the sound. Pronounced like 維.",
+      "sourceTextSha256": "d58b24c5e6683a3890b657e9ec6a51264e9e8acfc69ea2ca96bdd3a853453899",
+      "uncertain": false
+    },
+    "shuowen:178": {
+      "text": "Stone resembling jade. Formed from 玉, with 烏 indicating the sound.",
+      "sourceTextSha256": "cd68909f4c13a97f80ab89111010efd470afa84aba29105878ab1fcdcfb43e65",
+      "uncertain": false
+    },
+    "shuowen:179": {
+      "text": "Stone resembling jade. Formed from 玉, with 眉 indicating the sound. Pronounced like 眉.",
+      "sourceTextSha256": "84274aed2299b20310c16a38a3b0c655b7fa95685c3f397824d96e6b1ab563c2",
+      "uncertain": false
+    },
+    "shuowen:180": {
+      "text": "Stone resembling jade. Formed from 玉, with 登 indicating the sound.",
+      "sourceTextSha256": "8455145b459348b8b7dd98f587e799a44af15383071294a01787f6222c1bfc36",
+      "uncertain": false
+    },
+    "shuowen:181": {
+      "text": "Stone resembling jade. Formed from 玉, with 厶 indicating the sound. Pronounced the same as 私.",
+      "sourceTextSha256": "e34c797ff11842356a0eaaa3d69ecff4da7e20daa5e6553e812f623478b3be2a",
+      "uncertain": false
+    },
+    "shuowen:182": {
+      "text": "Stone resembling jade. Formed from 玉, with 于 indicating the sound.",
+      "sourceTextSha256": "726942cccc69768f6c373c605f175235676e0e52e1cb281b5717e3c853f3e356",
+      "uncertain": false
+    },
+    "shuowen:183": {
+      "text": "A kind of jade. Formed from 玉, with 𠬸 indicating the sound. Pronounced like 沒.",
+      "sourceTextSha256": "38e490e5298a446184e99471e7b86f3371f6144d54c11ec65fec15e0ac4c47ec",
+      "uncertain": false
+    },
+    "shuowen:184": {
+      "text": "A black stone resembling jade. Formed from 玉, with 皆 indicating the sound. Pronounced like 諧.",
+      "sourceTextSha256": "770c8d4e12956c57e313a45bd797067ba8d439c26b56476a238b6b4d93dab70e",
+      "uncertain": false
+    },
+    "shuowen:185": {
+      "text": "Beautiful blue-green stone. Formed from 玉 and 石, with 白 indicating the sound.",
+      "sourceTextSha256": "1ba62c99ce326a11f56d2b4f00bcd565fd05fa8758cc0077a9800c18abdf39ab",
+      "uncertain": false
+    },
+    "shuowen:186": {
+      "text": "Beautiful stone. Formed from 玉, with 昆 indicating the sound. The Book of Yu says: “Yangzhou offers 瑤 and 琨 as tribute.”",
+      "sourceTextSha256": "e03f7ec5923328441f305e9add223892d191d530c423e6721e9a2ad6d42996b4",
+      "uncertain": false
+    },
+    "shuowen:187": {
+      "text": "Beautiful stone. Formed from 玉, with 民 indicating the sound.",
+      "sourceTextSha256": "493d248773723917494a47ff1d170da33010841b3921801fb123de48dd01fc53",
+      "uncertain": false
+    },
+    "shuowen:188": {
+      "text": "Beautiful jade. Formed from 玉, with 䍃 indicating the sound. The Odes says: “I repay it with 瓊瑤.”",
+      "sourceTextSha256": "3f2ca8b775041f5dddfc09f37560414965248372862ecd0261a5f608899080a5",
+      "uncertain": false
+    },
+    "shuowen:189": {
+      "text": "The yin essence of a clam. Formed from 玉, with 朱 indicating the sound. This is what the Spring and Autumn Discourses of the States means by “Pearls ward off fire disasters.”",
+      "sourceTextSha256": "72e53136513405700f45044853609d462018fe2e8b42295c104f23ffc96a0ed3",
+      "uncertain": false
+    },
+    "shuowen:190": {
+      "text": "玓瓅: the brilliance of a luminous pearl. Formed from 玉, with 勺 indicating the sound.",
+      "sourceTextSha256": "ffe54bfd5efc38605cad9895c2dbe7f3cf23a224a81167e417c49999fe7fcad8",
+      "uncertain": false
+    },
+    "shuowen:191": {
+      "text": "The brilliance called 玓瓅. Formed from 玉, with 樂 indicating the sound.",
+      "sourceTextSha256": "ef2f8a989a902edbe35609324c27103ea16da4b9d0c623f72e91c402e28d2371",
+      "uncertain": false
+    },
+    "shuowen:192": {
+      "text": "A pearl. Formed from 玉, with 比 indicating the sound. Song Hong says: “玭 pearls occur in the Huai River.” 玭 is a pearl that makes a sound.",
+      "sourceTextSha256": "621fa806ec0b8e4d31bdc7eedd857a0e6596ecd8def7040d98d52bb4711216ed",
+      "uncertain": true
+    },
+    "shuowen:193": {
+      "text": "A kind of clam. Formed from 玉, with 劦 indicating the sound. The Rites says: “For a scholar's worn knife, the upper fitting is 珕 and the lower 珧.”",
+      "sourceTextSha256": "b89df0a3b11507b2d765d30cc9be7a4315938581e0e2d68ece8d5a2d26835258",
+      "uncertain": false
+    },
+    "shuowen:194": {
+      "text": "A clam shell, used to ornament objects. Formed from 玉, with 兆 indicating the sound. The Rites says: “For the Son of Heaven's worn knife, the upper fitting is jade and the lower 珧.”",
+      "sourceTextSha256": "3994a4190151ed398303f923b7f99216f2a997393215d0f5eb9bd4448ae3732a",
+      "uncertain": false
+    },
+    "shuowen:195": {
+      "text": "The precious material 火齊, namely 玫瑰. Another explanation: beautiful stone. Formed from 玉, with 文 indicating the sound.",
+      "sourceTextSha256": "61cf414ef68436d15c2e2e9b400148691783aeb33b8b35852bb346122bc6da54",
+      "uncertain": true
+    },
+    "shuowen:196": {
+      "text": "The precious stone 玟瑰. Formed from 玉, with 鬼 indicating the sound. Another explanation: a round central hole.",
+      "sourceTextSha256": "6d0625d039e90d9a0f866802331c4e2f4681a3096b187da494845e6d0b13d4f8",
+      "uncertain": false
+    },
+    "shuowen:197": {
+      "text": "A pearl that is not round. Formed from 玉, with 幾 indicating the sound.",
+      "sourceTextSha256": "5aa077c9e35e77557aebf584777b7edc079b0cd34b4fa7690b2609989b9dbb56",
+      "uncertain": false
+    },
+    "shuowen:198": {
+      "text": "琅玕: something resembling pearls. Formed from 玉, with 良 indicating the sound.",
+      "sourceTextSha256": "3f2b1a4bc5a706d9be1d246946a4fe5b664d17c06c8b8acde1c94f5d30a2be32",
+      "uncertain": false
+    },
+    "shuowen:199": {
+      "text": "The material 琅玕. Formed from 玉, with 干 indicating the sound. The Tribute of Yu says: “Yongzhou: 球, 琳 and 琅玕.”",
+      "sourceTextSha256": "2afd0a0f6c719f7e196d806864f53d19b7e9726e42438c7467992f9ec5352fde",
+      "uncertain": false
+    },
+    "shuowen:200": {
+      "text": "Coral: red, growing in the sea, or sometimes in mountains. Formed from 玉, with abbreviated 刪 indicating the sound.",
+      "sourceTextSha256": "23f0f23684112401b84546884dbefb8d9f76e4913305fcf5bd93a494e8612b8e",
+      "uncertain": false
+    }
+  }
+}

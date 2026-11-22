@@ -1,0 +1,2 @@
+# Batch hashes bind original explanations and authored English across platforms.
+*.json text eol=lf

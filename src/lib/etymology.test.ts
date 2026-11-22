@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
-import { etymologyTarget, etymologyView, hasOwnEtymologyText, howellSegments, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter } from './etymology';
+import { createHash, webcrypto } from 'node:crypto';
+import { etymologyTarget, etymologyView, hasOwnEtymologyText, howellSegments, validateEtymologyTranslations, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter, type EtymologyEntry } from './etymology';
 
 // Real generated data, read from disk like the browser would fetch it.
 const dir = 'public/data/etymology/';
@@ -78,6 +78,46 @@ describe('grid scroll marker', () => {
   });
   it('never marks a record whose glyph disagrees with the index', () => {
     expect(hasOwnEtymologyText(index, 'Characters:古', '口')).toBe(false);
+  });
+});
+
+describe('source-bound Shuowen English', () => {
+  afterEach(() => vi.unstubAllGlobals());
+  function record(): EtymologyCharacter {
+    const entry: EtymologyEntry = { id: 'shuowen:941', sourceId: 'shuowen', headword: '舌',
+      contentKind: 'historical-dictionary', language: 'lzh', text: '在口所以言也。',
+      reviewStatus: 'unreviewed-source-material', sourceUrl: 'https://example.test/source/941',
+      translation: { language: 'en', text: 'That within the mouth by which one speaks.',
+        method: 'ai-generated', reviewStatus: 'unreviewed-ai-draft', uncertain: false,
+        sourceTextSha256: createHash('sha256').update('在口所以言也。').digest('hex') } };
+    return { glyph: '舌', entries: [entry], associations: [], radicalForms: [], relatedFormSuggestions: [],
+      comparison: { coverage: 'shuowen-only', interpretationStatus: 'not-compared' } };
+  }
+  it('keeps a draft bound to the exact original Chinese bytes', async () => {
+    vi.stubGlobal('crypto', webcrypto);
+    const input = record();
+    const checked = await validateEtymologyTranslations(input);
+    expect(checked.entries[0]?.translation).toEqual(input.entries[0]?.translation);
+    expect(checked.entries[0]?.text).toBe('在口所以言也。');
+  });
+  it('drops only a stale draft while keeping the source and a second independent entry', async () => {
+    vi.stubGlobal('crypto', webcrypto);
+    const input = record();
+    const second = { ...input.entries[0]!, id: 'shuowen:1437' };
+    input.entries[0]!.text += '變';
+    input.entries.push(second);
+    const checked = await validateEtymologyTranslations(input);
+    expect(checked.entries[0]?.translation).toBeUndefined();
+    expect(checked.entries[0]?.id).toBe('shuowen:941');
+    expect(checked.entries[0]?.text).toBe('在口所以言也。變');
+    expect(checked.entries[1]?.translation).toEqual(second.translation);
+    expect(input.entries[0]?.translation).toBeDefined();
+  });
+  it('never attaches Shuowen English to a Howell entry', async () => {
+    vi.stubGlobal('crypto', webcrypto);
+    const input = record();
+    input.entries[0]!.sourceId = 'howell';
+    expect((await validateEtymologyTranslations(input)).entries[0]?.translation).toBeUndefined();
   });
 });
 

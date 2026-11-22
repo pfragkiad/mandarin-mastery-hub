@@ -146,7 +146,7 @@
           "format": "date"
         },
         "version": {
-          "const": "1.0.0"
+          "enum": ["1.0.0", "1.1.0"]
         },
         "disclaimer": {
           "type": "string",
@@ -161,6 +161,40 @@
         },
         "structural_source": {
           "$ref": "#/$defs/structuralSource"
+        },
+        "translation_layer": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "language",
+            "method",
+            "review_status",
+            "record_count",
+            "uncertain_record_count",
+            "version"
+          ],
+          "properties": {
+            "language": {
+              "const": "en"
+            },
+            "method": {
+              "const": "ai-generated"
+            },
+            "review_status": {
+              "const": "unreviewed-ai-draft"
+            },
+            "record_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "uncertain_record_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "version": {
+              "const": "1.0.0"
+            }
+          }
         }
       }
     },
@@ -369,6 +403,9 @@
         "sourceUrl": {
           "type": "string",
           "format": "uri"
+        },
+        "translation": {
+          "$ref": "#/$defs/translation"
         }
       }
     },
@@ -696,6 +733,14 @@
         "shardCount": {
           "type": "integer",
           "minimum": 1
+        },
+        "shuowenEnglishDrafts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertainShuowenEnglishDrafts": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -982,6 +1027,33 @@
             "type": "string",
             "minLength": 1
           }
+        }
+      }
+    },
+    "translation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "text", "method", "reviewStatus", "sourceTextSha256", "uncertain"],
+      "properties": {
+        "language": {
+          "const": "en"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "const": "ai-generated"
+        },
+        "reviewStatus": {
+          "const": "unreviewed-ai-draft"
+        },
+        "sourceTextSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "uncertain": {
+          "type": "boolean"
         }
       }
     }

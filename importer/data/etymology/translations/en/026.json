@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "38a29891b0823a6baa511815e5997ac4357b6fb512282ac9ffd11b7ee08e262c",
+    "created_date": "2026-11-22"
+  },
+  "batch": "026",
+  "translations": {
+    "shuowen:2501": {
+      "text": "To stretch out. From 舍 and 予; 予 also supplies the sound. Another explanation: 舒 means slow or relaxed.",
+      "sourceTextSha256": "1a99bf1c58a59c0fb74d8521ffa32e887444976f4c663d79b97b285476abe094",
+      "uncertain": false
+    },
+    "shuowen:2502": {
+      "text": "To deceive and bewilder one another. From reversed 予. The Book of Zhou says: “Let none fabricate deceptions to create illusions.”",
+      "sourceTextSha256": "6da0ef9d79db95c856eb6c0cf7e47e50d0dc99d6eae87b1d358a3e809cbe97be",
+      "uncertain": false
+    },
+    "shuowen:2503": {
+      "text": "To drive away. From 攴; 方 supplies the sound. All graphs in this category contain 放.",
+      "sourceTextSha256": "21cc938a0a4636323c91a48086a408ff01cb8af867435e0a17f68e2bf55c82b2",
+      "uncertain": false
+    },
+    "shuowen:2504": {
+      "text": "To go out roaming. From 出 and 放.",
+      "sourceTextSha256": "4098b3093007c217731dc7a4c11cc6a2d89766ffa312557da33fd4a85ec260d9",
+      "uncertain": false
+    },
+    "shuowen:2505": {
+      "text": "Light and shadows flowing. From 白 and 放. Pronounced like 龠.",
+      "sourceTextSha256": "3d414fa05b3a29f4b1b705d7485cef795c331ba5a25f75ad2a17e6a59e70caa1",
+      "uncertain": false
+    },
+    "shuowen:2506": {
+      "text": "Things falling; passing something between above and below. From 爪 and 又. All graphs in this category contain 𠬪. Pronounced like 摽 in the Odes' “Plums are falling.”",
+      "sourceTextSha256": "c3cdf7e072ada1e4bce3d3eee5a0d6efdbedde2ecbe654b7d6b1d728675e205e",
+      "uncertain": false
+    },
+    "shuowen:2507": {
+      "text": "To draw or pull. From 𠬪 and 于. Large-seal writing uses it for the carriage-shaft character 轅.",
+      "sourceTextSha256": "d0ec698178bcfb54089ebc14f081f3c9d1dd94d6cabad54d5af4d4c0c927a003",
+      "uncertain": false
+    },
+    "shuowen:2508": {
+      "text": "To put in order: little children in disorder, with 𠬪 ordering them. Pronounced the same as 亂. Another explanation: to arrange.",
+      "sourceTextSha256": "aa79a143cfddfb653f5317c2682d1417e20230bf696060aff984c7a381e3b1c9",
+      "uncertain": false
+    },
+    "shuowen:2509": {
+      "text": "To hand to one another. From 𠬪; abbreviated 舟 supplies the sound.",
+      "sourceTextSha256": "89087cdca6819fbb94e1a6a1169e012681716590bbe89c9f0da5836ffdf2701a",
+      "uncertain": false
+    },
+    "shuowen:2510": {
+      "text": "To gather in a pinch. From 𠬪 and 己.",
+      "sourceTextSha256": "acb84a74b0bbd31d9be62b5e9288e65eecff0ffbda0433fb231524968f34e03b",
+      "uncertain": false
+    },
+    "shuowen:2511": {
+      "text": "To pull. From 𠬪 and 𠂆.",
+      "sourceTextSha256": "13fe53249e8840d93d98aa070956760f52cfa0dcb20705e6d21bcaea8c76359a",
+      "uncertain": false
+    },
+    "shuowen:2512": {
+      "text": "That on which one relies. From 𠬪 and 工. Pronounced the same as 隱.",
+      "sourceTextSha256": "a2c821657ddd72b34920fe60770cc290c997b9773a3c554491355efd114d4bbf",
+      "uncertain": false
+    },
+    "shuowen:2513": {
+      "text": "To hold with five fingers. From 𠬪; 一 supplies the sound. Pronounced like 律.",
+      "sourceTextSha256": "49889f01508f62ee2d21d0260524ec4212117c3216bd8e0ccbaf83730010e4e1",
+      "uncertain": false
+    },
+    "shuowen:2514": {
+      "text": "To advance and take. From 𠬪; 古 supplies the sound.",
+      "sourceTextSha256": "1ff3be861b90cb72404e325988e365925f3de915d75915b6fff0db57a4651246",
+      "uncertain": false
+    },
+    "shuowen:2515": {
+      "text": "To damage and pierce. From 又 and 歺. All graphs in this category contain 𣦼. Pronounced like 殘.",
+      "sourceTextSha256": "1d87e66f0c2d9e655926304a980525011366305ea29a31ee3c6a98182e7f42ba",
+      "uncertain": false
+    },
+    "shuowen:2516": {
+      "text": "A ditch. From 𣦼 and 谷. Pronounced like 郝.",
+      "sourceTextSha256": "dba94cf39da11e308941c7aafc5cd820c99b42a6c84840a4d1e5229332d0abd8",
+      "uncertain": false
+    },
+    "shuowen:2517": {
+      "text": "The intention of probing something hard. From 𣦼 and 貝; 貝 is a hard treasure. Pronounced like 概. [The opening phrase 𣦼探堅 is uncertain.]",
+      "sourceTextSha256": "3b993e9513769a8ed5de131e9703298d49dde1635d6f6354c0839781d463c3e9",
+      "uncertain": true
+    },
+    "shuowen:2518": {
+      "text": "A pit. From 𣦼 and 井; 井 also supplies the sound.",
+      "sourceTextSha256": "f7b996b9ac597dbf6a8628eb35ed309bc6c5e5d5e3976e1841d53ae11f5fc3ce",
+      "uncertain": false
+    },
+    "shuowen:2519": {
+      "text": "Deep understanding; penetration. From 𣦼, 目 and abbreviated 谷.",
+      "sourceTextSha256": "97925eaa76e8764d07c2e163772712ae713f2e11c248ede503d1d7d1baf9a7fa",
+      "uncertain": false
+    },
+    "shuowen:2520": {
+      "text": "The remains of split bones. From half of 冎. All graphs in this category contain 歺. Pronounced like 櫱 in 櫱岸.",
+      "sourceTextSha256": "78d46a58fbbc1eaf1a59682c8ce3135ccf42cd26b32878fe1d77f0a97749838c",
+      "uncertain": true
+    },
+    "shuowen:2521": {
+      "text": "Illness. From 歺; 委 supplies the sound.",
+      "sourceTextSha256": "c59b37590adc2f26c84d43ec0355a1e75a21548e00ff393749573f9576f45910",
+      "uncertain": false
+    },
+    "shuowen:2522": {
+      "text": "Dazed or confused. From 歺; 昬 supplies the sound.",
+      "sourceTextSha256": "1ad4fc640f3570780bd2d20b9f937e1cb21ada74781d70475ea0e91dafdccbde",
+      "uncertain": false
+    },
+    "shuowen:2523": {
+      "text": "A fetus failing or perishing. From 歺; 𧶠 supplies the sound.",
+      "sourceTextSha256": "087068b56e434aaba6edeadb878f135b23d4ed5c62ad7aca55eb1374651c4929",
+      "uncertain": false
+    },
+    "shuowen:2524": {
+      "text": "To end. From 歺; 勿 supplies the sound.",
+      "sourceTextSha256": "e508f35aa0ab4f4b7bc2b3a80f2c4c0f300a91d113b598156382d62d8932af4f",
+      "uncertain": false
+    },
+    "shuowen:2525": {
+      "text": "The death of a grandee is called 𣨛. From 歺; 卒 supplies the sound.",
+      "sourceTextSha256": "33806326001309a4862fbbf6310d9c5eb4ffe46a5d6ae2abf701e74af2f347a2",
+      "uncertain": false
+    },
+    "shuowen:2526": {
+      "text": "To die or be put to death. From 歺; 朱 supplies the sound. Han ordinances say: “When a chief of the Man or Yi has committed a crime, he should be put to death.”",
+      "sourceTextSha256": "7a76af23b5f96bb678ec7ef5dcf32c9789a1dced1eda8feddab4257fc3d348cb",
+      "uncertain": false
+    },
+    "shuowen:2527": {
+      "text": "A fetus failing or perishing. From 歺; 𥁕 supplies the sound.",
+      "sourceTextSha256": "f1a9ec496b56c8bd088f92c1f7c8741757ab66e31f5abc95285a1e3d8d73c9b6",
+      "uncertain": false
+    },
+    "shuowen:2528": {
+      "text": "Not reaching adulthood. Death at nineteen through sixteen is “upper 殤”; fifteen through twelve, “middle 殤”; eleven through eight, “lower 殤.” From 歺; abbreviated 傷 supplies the sound.",
+      "sourceTextSha256": "846cd3d8884e4fe196b3e5a67c6ec0d81e5157997cd587ebe872db9d103e6e12",
+      "uncertain": false
+    },
+    "shuowen:2529": {
+      "text": "To depart, to die. From 歺; 且 supplies the sound. The Book of Yu says: “Xun then died.”",
+      "sourceTextSha256": "8488b12e14229a2fd9c0bf092963fe614b788d6b26210aed7c1f827f6fcba3d8",
+      "uncertain": false
+    },
+    "shuowen:2530": {
+      "text": "To put to death. From 歺; 亟 supplies the sound. The Book of Yu says: “He executed Gun at Mount Yu.”",
+      "sourceTextSha256": "8e5b09235b32e736355ab5261336bd35286f12c64e1bd0e9133738a78945a432",
+      "uncertain": false
+    },
+    "shuowen:2531": {
+      "text": "To die. From 歺; 壹 supplies the sound.",
+      "sourceTextSha256": "6f1f72e0fd3063a66b1c1d02143525da9e7fa106bb07ce45513ca59c6bde689f",
+      "uncertain": false
+    },
+    "shuowen:2532": {
+      "text": "The desolation and silence of death. From 歺; 莫 supplies the sound.",
+      "sourceTextSha256": "f877e829f5690e3cc8561cac8935e657d1a8e1d118dcd6786056a03b9704fb42",
+      "uncertain": false
+    },
+    "shuowen:2533": {
+      "text": "The dead in a coffin awaiting removal for burial, treated as a guest. From 歺 and 賓; 賓 also supplies the sound. The Xia placed the coffin at the eastern steps, the Yin between the two pillars, and the Zhou at the guest steps.",
+      "sourceTextSha256": "524c45aefa64f40b9768381a2fe64ad1baa3cc750e993006abeb64c0c19a0fef",
+      "uncertain": false
+    },
+    "shuowen:2534": {
+      "text": "To bury. From 歺; 隶 supplies the sound.",
+      "sourceTextSha256": "c78b90131c8279879bd97269a1d6d2f083286cbaf809149a2b0ea045c090f864",
+      "uncertain": false
+    },
+    "shuowen:2535": {
+      "text": "A dead person on the road whom someone covers. From 歺; 堇 supplies the sound. The Odes says: “When a dead person lies on the road, someone may yet cover them.”",
+      "sourceTextSha256": "016d7356a410501e75e789cb055eef548e0b93e5ad68c8a7e92718736eabf760",
+      "uncertain": false
+    },
+    "shuowen:2536": {
+      "text": "The smell of decay. From 歺; 臭 supplies the sound.",
+      "sourceTextSha256": "280807ecddd6e81f5a6325ba32aa47a42c1d2776e87dd3d10da344cfcb60b289",
+      "uncertain": false
+    },
+    "shuowen:2537": {
+      "text": "To rot. From 歺; 貴 supplies the sound.",
+      "sourceTextSha256": "1f2cfad254e01843c92f5a6d936ec0e1760f7b0d662e0fb2b0e3dfef6460e398",
+      "uncertain": false
+    },
+    "shuowen:2538": {
+      "text": "To decay. From 歺; 丂 supplies the sound.",
+      "sourceTextSha256": "9ae69bc8c3ed571c9202eb80c7d80953e98b4b4ae021bf140038df0d954cb75c",
+      "uncertain": false
+    },
+    "shuowen:2539": {
+      "text": "Danger. From 歺; 台 supplies the sound.",
+      "sourceTextSha256": "d95e13098109b45d180c3eb211effcd0b80b852d4d7296781ae7e1975915fe47",
+      "uncertain": false
+    },
+    "shuowen:2540": {
+      "text": "Calamity or blame. From 歺; 央 supplies the sound.",
+      "sourceTextSha256": "e16fc78eb5ec0fd4785a438a30ae9bb4ab9aab5f0db9d104b9d441b3d8a60ac7",
+      "uncertain": false
+    },
+    "shuowen:2541": {
+      "text": "To harm. From 歺; 戔 supplies the sound.",
+      "sourceTextSha256": "fcf38229d1ea8e6ec73536729b82f27801b9739f9e80b09cd0319a871300fa17",
+      "uncertain": false
+    },
+    "shuowen:2542": {
+      "text": "To exhaust or destroy completely. From 歺; 㐱 supplies the sound.",
+      "sourceTextSha256": "6ba486477fb9154720796bbe0e0e6520b9782927d41a8de74e2e88f699ff3de0",
+      "uncertain": false
+    },
+    "shuowen:2543": {
+      "text": "To destroy even the smallest remainder. From 歺; 韱 supplies the sound. The Spring and Autumn commentary says: “The Qi men were annihilated at Sui.”",
+      "sourceTextSha256": "82b219acea83bf108d324cf1f66737f0c77cd861dba25c05bb2d408f5faafc0d",
+      "uncertain": false
+    },
+    "shuowen:2544": {
+      "text": "To exhaust completely. From 歺; 單 supplies the sound.",
+      "sourceTextSha256": "3c80ae8e7c4b420f8ea90cb3e069187ff865ad48110396ccd8c3a2696a692681",
+      "uncertain": false
+    },
+    "shuowen:2545": {
+      "text": "To ruin. From 歺; 睪 supplies the sound. The Book of Shang says: “The constant human relations were ruined.”",
+      "sourceTextSha256": "56aec8feb81e31f2c55a6668822bb20d052b8595ac27cf57591650818b10a849",
+      "uncertain": false
+    },
+    "shuowen:2546": {
+      "text": "An epidemic illness of livestock. From 歺 and 羸.",
+      "sourceTextSha256": "7da979eed21f435a366d85e28a8127f82f4ae871c23db289d5fa8083bdcbe7f9",
+      "uncertain": false
+    },
+    "shuowen:2547": {
+      "text": "To kill a sheep and remove its fetus. From 歺; 豈 supplies the sound.",
+      "sourceTextSha256": "b88ea73f7828f64fd784384fe57378dd3f4850b5f92dea86a5cf2eb7fd5b122d",
+      "uncertain": false
+    },
+    "shuowen:2548": {
+      "text": "Remains left after birds and beasts have eaten. From 歺 and 肉.",
+      "sourceTextSha256": "8ea90dd4537ca23878c4a29fd2003bbebf964be76afe7e81d2579fa99be73149",
+      "uncertain": false
+    },
+    "shuowen:2549": {
+      "text": "Fat and grease left a long time, apparently decaying. From 歺; 直 supplies the sound. [The precise sense of 久殖 is uncertain.]",
+      "sourceTextSha256": "6408bae4365ab198bcff1290cad6db389938e22fd6d6357cfb4bfea7d9651f65",
+      "uncertain": true
+    },
+    "shuowen:2550": {
+      "text": "Withered. From 歺; 古 supplies the sound.",
+      "sourceTextSha256": "92ca73a1e61ed3d1c8486f3d5abd6370e240422e03337e05ef9ffa9dfb294fa0",
+      "uncertain": false
+    },
+    "shuowen:2551": {
+      "text": "To abandon. From 歺; 奇 supplies the sound. Common speech calls death 大㱦.",
+      "sourceTextSha256": "3c542ce25e050fa6464f656069017906c5e595f0b09a6c6ce6b8bcdfa4a86946",
+      "uncertain": false
+    },
+    "shuowen:2552": {
+      "text": "To be extinguished: that from which a person departs. From 歺 and 人. All graphs in this category contain 死.",
+      "sourceTextSha256": "4e00eb9e260f6fe79a82ee8432269049ed41a438d8f3b0c7139104ad90b20d7c",
+      "uncertain": false
+    },
+    "shuowen:2553": {
+      "text": "The death of a duke or marquis. From 死; abbreviated 瞢 supplies the sound.",
+      "sourceTextSha256": "20518fca83e3c6d84ff07542fa109899e08028f751151dd7842de313cb4aa051",
+      "uncertain": false
+    },
+    "shuowen:2554": {
+      "text": "The dwelling place of the dead. From 死; abbreviated 蒿 supplies the sound.",
+      "sourceTextSha256": "da56a860983a98aea443145a61f4bed50bd03c198c7ee18ce3ba7898ad2ae9e4",
+      "uncertain": false
+    },
+    "shuowen:2555": {
+      "text": "Seeing blood in battle is called injury; derangement may be called unconsciousness; dying and returning to life is 𣣌. From 死; 次 supplies the sound.",
+      "sourceTextSha256": "62c5b71cdf24d4d1989e0816ebc7c6a426daccc871d7c9dab30624b2894595db",
+      "uncertain": true
+    },
+    "shuowen:2556": {
+      "text": "To strip off a person's flesh and leave the bones. A pictograph, with the projecting head-bone. All graphs in this category contain 冎.",
+      "sourceTextSha256": "d2dc0622db59db3c38d543c056b8d31662aeaa3148aa622789a098b9c2813b99",
+      "uncertain": true
+    },
+    "shuowen:2557": {
+      "text": "To divide and dismember. From 冎 and 刀.",
+      "sourceTextSha256": "d18e425cd80d0682766b697e9ad0d0761ba8121057ca6d9290e00d073945c263",
+      "uncertain": false
+    },
+    "shuowen:2558": {
+      "text": "To separate. From 冎; 卑 supplies the sound. Pronounced like 罷.",
+      "sourceTextSha256": "c9531c2ea3eaf50ac6355abde44a4f8a38a5eb7c377054f2b477d32ac6bf805a",
+      "uncertain": false
+    },
+    "shuowen:2559": {
+      "text": "The core of flesh. From 冎 with 肉. All graphs in this category contain 骨.",
+      "sourceTextSha256": "0b4b37fa1108c5473c3db9198b9e8f0329eff7a4e6c4b575bedee4b18efb69ba",
+      "uncertain": false
+    },
+    "shuowen:2560": {
+      "text": "髑髏: the skull. From 骨; 蜀 supplies the sound.",
+      "sourceTextSha256": "05803ebf0c8b3b54641442ce5620fb4edd490eb8dc8dce2f2ae93bfe5f7224de",
+      "uncertain": false
+    },
+    "shuowen:2561": {
+      "text": "The skull, 髑髏. From 骨; 婁 supplies the sound.",
+      "sourceTextSha256": "20ed1d107a3a8d572890d35c5d021333a4cb9ec0588483d45b09639d39d6f255",
+      "uncertain": false
+    },
+    "shuowen:2562": {
+      "text": "The shoulder blade. From 骨; 尃 supplies the sound.",
+      "sourceTextSha256": "b90d4ee6bc5ac0597c4cfc23c30e2d9a6b9659694380a80e00d8c9ad1226a4ea",
+      "uncertain": false
+    },
+    "shuowen:2563": {
+      "text": "The front of the shoulder. From 骨; 禺 supplies the sound.",
+      "sourceTextSha256": "006f2415ae499e790fab3e1fa44a9e319c48b1a59fd3051b57634d76ac1f33a3",
+      "uncertain": false
+    },
+    "shuowen:2564": {
+      "text": "Joined ribs. From 骨; 并 supplies the sound. Duke Wen of Jin had joined ribs.",
+      "sourceTextSha256": "a9890257c18d3650696ff9326b891743dca11a2a7e65b92619193079dc5709f3",
+      "uncertain": false
+    },
+    "shuowen:2565": {
+      "text": "The thigh. From 骨; 卑 supplies the sound.",
+      "sourceTextSha256": "86a8e8262f0579d6908ee2388050f2a16a2e3f38c8e3e905596890358b0b770c",
+      "uncertain": false
+    },
+    "shuowen:2566": {
+      "text": "The thighbone. From 骨; 果 supplies the sound.",
+      "sourceTextSha256": "312ded6aa1e82d3900679e2578af54d3bb1d1798fe5ffebebb5120722bdfc07f",
+      "uncertain": false
+    },
+    "shuowen:2567": {
+      "text": "The buttock bone. From 骨; 厥 supplies the sound.",
+      "sourceTextSha256": "aa9a4c32b07fcbed95f0e13d01d37437ffe2cb089a93ca53a3538441928ef8e5",
+      "uncertain": false
+    },
+    "shuowen:2568": {
+      "text": "The region above the thigh. From 骨; 寬 supplies the sound.",
+      "sourceTextSha256": "f5be141272e95bde01da50747da969df0a8d21c23485512c47558e6b7c8380ba",
+      "uncertain": false
+    },
+    "shuowen:2569": {
+      "text": "The tip of the knee. From 骨; 賓 supplies the sound.",
+      "sourceTextSha256": "fc5639576d2bf2c5f331e0c08fd4266c56c4de6af185eb30ffab13cedc890ecb",
+      "uncertain": false
+    },
+    "shuowen:2570": {
+      "text": "The end of a bone. From 骨; 𠯑 supplies the sound.",
+      "sourceTextSha256": "dd44450f148e97a51d1a1a090fb004ccb9115843996f607bf1a483e32610f4fe",
+      "uncertain": false
+    },
+    "shuowen:2571": {
+      "text": "The bone between knee and shank. From 骨; 䝿 supplies the sound.",
+      "sourceTextSha256": "6bcdebe49ffb6f133abfdc5213afcdd3d944318929d37e5eac02851f60a559e0",
+      "uncertain": false
+    },
+    "shuowen:2572": {
+      "text": "The shank. From 骨; 交 supplies the sound.",
+      "sourceTextSha256": "7ef517bbda5f0e4d045610ae3cb95d384340ed0992d9f382b887f5d861144800",
+      "uncertain": false
+    },
+    "shuowen:2573": {
+      "text": "The shank, 骹. From 骨; 干 supplies the sound.",
+      "sourceTextSha256": "fcbb9a5cbb8342ba31a32d99a522ffde516d1d5a783db32a1bb72d8967944578",
+      "uncertain": false
+    },
+    "shuowen:2574": {
+      "text": "The shinbone. From 骨; 亥 supplies the sound.",
+      "sourceTextSha256": "00eaa6fb50baab3a24eac47d1cddfdc8e03467cbaf92451adfe9c8d7029bcfa4",
+      "uncertain": false
+    },
+    "shuowen:2575": {
+      "text": "Fat within bone. From 骨; 隓 supplies the sound.",
+      "sourceTextSha256": "ab8541bcece28920d4abd889cd6e156b518464ceb99dd86134f51e840e37804f",
+      "uncertain": false
+    },
+    "shuowen:2576": {
+      "text": "Yellow fluid between bones. From 骨; 易 supplies the sound. Pronounced like 惕 in the Changes' “At evening, vigilant as if in danger.”",
+      "sourceTextSha256": "caac15e9d7f2b80f5619a25e7f561e8d9ae88e76b2a3a8b3678a9a3204bc2604",
+      "uncertain": false
+    },
+    "shuowen:2577": {
+      "text": "The totality of the twelve bodily divisions. From 骨; 豊 supplies the sound.",
+      "sourceTextSha256": "3e0f16a7c9e96dc7831e2bd75b3bafbcc59b12411cd6aaad87c1a459a6516ccb",
+      "uncertain": false
+    },
+    "shuowen:2578": {
+      "text": "Paralysis affecting one side. From 骨; 麻 supplies the sound.",
+      "sourceTextSha256": "ebc1195e723d6821dd40f9f727956054944764f83c6ed2923613e724cc614bc5",
+      "uncertain": false
+    },
+    "shuowen:2579": {
+      "text": "A food bone lodged in the throat. From 骨; 㪅 supplies the sound.",
+      "sourceTextSha256": "d96d522ad48d63dec3f43a28a93625e64978efa5c270960bab37ff69305b22c7",
+      "uncertain": false
+    },
+    "shuowen:2580": {
+      "text": "The bones of birds and beasts are called 骼. From 骨; 各 supplies the sound.",
+      "sourceTextSha256": "ef975a2f8353f9e14ccbe679d13ec85f45c32061ab1b3363adb33ec87fe6074b",
+      "uncertain": false
+    },
+    "shuowen:2581": {
+      "text": "The remaining bones of birds and beasts are called 骴; 骴 suggests repulsiveness. From 骨; 此 supplies the sound. The Bright Hall Monthly Ordinances says: “Cover exposed bones and bury remains.” 骴 is alternatively formed from 肉.",
+      "sourceTextSha256": "d59261833660d5f70b036b30e825af47afee6c5f81b22717d1eca8d246a6985a",
+      "uncertain": false
+    },
+    "shuowen:2582": {
+      "text": "A curved or crooked bone-end, 骫奊. From 骨; 丸 supplies the sound.",
+      "sourceTextSha256": "9336d19019411be64b2882db84029689e14fe71b8c308fe2bb574c49d0993dea",
+      "uncertain": true
+    },
+    "shuowen:2583": {
+      "text": "A bone pin that gathers the hair. From 骨; 會 supplies the sound. The Odes says: “The jeweled cap pins are like stars.”",
+      "sourceTextSha256": "9e477847a1e560edeafb0cc67c1c15b463caa924b57d212d6eaae73107252828",
+      "uncertain": false
+    },
+    "shuowen:2584": {
+      "text": "Cut flesh. A pictograph. All graphs in this category contain 肉.",
+      "sourceTextSha256": "40951a528dd86fc79cbf3828c53af667d3407af58b7e6e344520623c84ed0acd",
+      "uncertain": false
+    },
+    "shuowen:2585": {
+      "text": "The first signs of a woman's pregnancy. From 肉; 某 supplies the sound.",
+      "sourceTextSha256": "bc5bcd2fef8a34aa8256ff726226beadce331997bba85d5263fa20b5d758cb22",
+      "uncertain": false
+    },
+    "shuowen:2586": {
+      "text": "A woman's pregnancy at one month. From 肉; 不 supplies the sound.",
+      "sourceTextSha256": "fd966b9bf42126ce16e052f40c4b3d3ebffd063f22ffc3a8c9e4cd3f3fc35df6",
+      "uncertain": false
+    },
+    "shuowen:2587": {
+      "text": "A woman's pregnancy at three months. From 肉; 台 supplies the sound.",
+      "sourceTextSha256": "87fa31fa74e172564f7143f0b532aa6c519173fe0fad13be6a55629a3bc4a7de",
+      "uncertain": false
+    },
+    "shuowen:2588": {
+      "text": "Flesh. From 肉; 几 supplies the sound.",
+      "sourceTextSha256": "df1b779c96a187765d1f782e930f155f8b58abb25ce788449e54240d7dc1385a",
+      "uncertain": false
+    },
+    "shuowen:2589": {
+      "text": "Skin. From 肉; 盧 supplies the sound.",
+      "sourceTextSha256": "d767959f1a8eba4dff85baa2bd2855cde30d9c109729b178c2b094f472c47533",
+      "uncertain": false
+    },
+    "shuowen:2590": {
+      "text": "The cheek region of the face. From 肉; 屯 supplies the sound.",
+      "sourceTextSha256": "7d2035a545e8412caecbbdbe56bd80a4d77bc79a546af6489012a6a920b83ca6",
+      "uncertain": true
+    },
+    "shuowen:2591": {
+      "text": "Cheek flesh. From 肉; 幾 supplies the sound. Pronounced like 畿.",
+      "sourceTextSha256": "ef064833c279b955c0d5ad185784075d3239661520cf81941e2535fb304402c5",
+      "uncertain": false
+    },
+    "shuowen:2592": {
+      "text": "The edge of the mouth. From 肉; 辰 supplies the sound.",
+      "sourceTextSha256": "43d1d4f02df17aadae95336be6f18d47e527069b39a44008ac443f7095e3eb1d",
+      "uncertain": false
+    },
+    "shuowen:2593": {
+      "text": "The neck. From 肉; 豆 supplies the sound.",
+      "sourceTextSha256": "856e644ffdda0d01b0fde96da0ca79b67c855ed45c06fbbb4a10ba783e64f82c",
+      "uncertain": false
+    },
+    "shuowen:2594": {
+      "text": "Above the heart and below the diaphragm. From 肉; 亡 supplies the sound. The Spring and Autumn commentary says: “The disease is below the 肓.”",
+      "sourceTextSha256": "17a0a9dfd3b96213b121ef2e7dd05db4c376110114d9bbf785e61bc0f663e960",
+      "uncertain": false
+    },
+    "shuowen:2595": {
+      "text": "The organ of water. From 肉; 臤 supplies the sound.",
+      "sourceTextSha256": "d66ed42960475c0f74c7ed8fedbc0d73af7c8b8b7cccd44b1925d3a59ad4232a",
+      "uncertain": false
+    },
+    "shuowen:2596": {
+      "text": "The organ of metal. From 肉; 巿 supplies the sound.",
+      "sourceTextSha256": "0f507c5f203ec69f243c4e09b41760e97a2aa9bdf042ae201a63c7910661c797",
+      "uncertain": false
+    },
+    "shuowen:2597": {
+      "text": "The organ of earth. From 肉; 卑 supplies the sound.",
+      "sourceTextSha256": "6750adb07b1f85e34845ec154c864aad0ccdc842913dee765a134722472ffaf6",
+      "uncertain": false
+    },
+    "shuowen:2598": {
+      "text": "The organ of wood. From 肉; 干 supplies the sound.",
+      "sourceTextSha256": "ef15a80daff8995c16bda3604e09329b468e3a13205a133fdfdc5360dcc93192",
+      "uncertain": false
+    },
+    "shuowen:2599": {
+      "text": "The repository connected to the liver. From 肉; 詹 supplies the sound.",
+      "sourceTextSha256": "5e11cf4d7396bcc027d2ac369e775a50f59188168816cacd9473288dd6885e4d",
+      "uncertain": false
+    },
+    "shuowen:2600": {
+      "text": "The repository of grain. From 肉; 纻 is pictographic. [The unusual recorded component 纻 is preserved.]",
+      "sourceTextSha256": "79dc4e6354c08821c97252051f0fa0e58c3a87ae674a314806968d45982a77f2",
+      "uncertain": true
+    }
+  }
+}

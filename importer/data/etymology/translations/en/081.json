@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "d86bfa05cc38c0316031eb0a162b6f087c193cbd10aedb9fb15c86bd5c2c4aa9",
+    "created_date": "2026-11-22"
+  },
+  "batch": "081",
+  "translations": {
+    "shuowen:8001": {
+      "text": "To break. Formed from 手, with 月 indicating the sound.",
+      "sourceTextSha256": "dc9faaa3a5a5cafd018fb549d924ab70a1161a525d4a6f7dd9112b5d3bc65842",
+      "uncertain": false
+    },
+    "shuowen:8002": {
+      "text": "To bind and kill. Formed from 手, with 翏 indicating the sound.",
+      "sourceTextSha256": "ee403144329fcf4e672e5ca7ef023c0df60b63c7adbc4329698a69dd041b20e4",
+      "uncertain": false
+    },
+    "shuowen:8003": {
+      "text": "At the district drinking ceremony, disrespect is punished by striking the offender's back. Formed from 手, with 達 indicating the sound.",
+      "sourceTextSha256": "d89b0818f7d5d4734e065aa40704d39302239964ce812597be62a68a370a384f",
+      "uncertain": false
+    },
+    "shuowen:8004": {
+      "text": "To stop a horse. Formed from 手, with 夌 indicating the sound.",
+      "sourceTextSha256": "454cc09f652f81ae8c9eb2c102ceff9e84e3b357a05cb45a5d9560556db0c5d3",
+      "uncertain": false
+    },
+    "shuowen:8005": {
+      "text": "To beat or flick. Formed from 手, with 平 indicating the sound.",
+      "sourceTextSha256": "e31f280b9d80ed9a5eeede0057dafd9d1747558520eba0c748ec2bae45ad4003",
+      "uncertain": true
+    },
+    "shuowen:8006": {
+      "text": "Vigor or imposing force. Formed from 手, with 卷 indicating the sound. The Discourses of the States says: 'Possessing vigorous courage.' Alternatively, 捲 means to gather in.",
+      "sourceTextSha256": "62c44222ed31f819d649230fd779e9ed1fe6a87e80c1579e3dbcc5ef18d1df05",
+      "uncertain": false
+    },
+    "shuowen:8007": {
+      "text": "To gather in. Formed from 手, with 及 indicating the sound.",
+      "sourceTextSha256": "ca44da98f7d813d1f9689e862d8fc3d89717d7e3339c86e8868c92ac4b98a7cd",
+      "uncertain": false
+    },
+    "shuowen:8008": {
+      "text": "To restrain and strike. Formed from 手, with 巢 indicating the sound.",
+      "sourceTextSha256": "0419b7a14b0a019fccab2ad9d582d0862c8900cadbbe4f242ae5bd8246b47f4a",
+      "uncertain": false
+    },
+    "shuowen:8009": {
+      "text": "To strike the back. Formed from 手, with 矣 indicating the sound.",
+      "sourceTextSha256": "d142f348c1f976ec10cebd73933fd727666ff695cae6c3c02e3bfd5e67d1ed4f",
+      "uncertain": false
+    },
+    "shuowen:8010": {
+      "text": "To strike the back. Formed from 手, with 菐 indicating the sound.",
+      "sourceTextSha256": "781f6fccbe63dc2a96c55c10b4c0607a0eaf7ae2976ebde597c42ef1b7f3d12d",
+      "uncertain": false
+    },
+    "shuowen:8011": {
+      "text": "To strike from the side. Formed from 手, with 敫 indicating the sound.",
+      "sourceTextSha256": "1759f937e9e7a24df5a6e3c7965dd09a726f41d0751c043664c4bbb82820de77",
+      "uncertain": false
+    },
+    "shuowen:8012": {
+      "text": "To strike swiftly. Formed from 手, with 勺 indicating the sound.",
+      "sourceTextSha256": "30ffd4d1d0a2a3f58d926a37df90d949795691a7b43560e8fc386d091107d926",
+      "uncertain": false
+    },
+    "shuowen:8013": {
+      "text": "To beat with a rod. Formed from 手, with 失 indicating the sound.",
+      "sourceTextSha256": "b02e76eae83abdfdc072232fd823c22262d73b8a0cb790d1209cb52db5707102",
+      "uncertain": false
+    },
+    "shuowen:8014": {
+      "text": "To strike sideways. Formed from 手, with 氏 indicating the sound.",
+      "sourceTextSha256": "44e81050635e065383dbcd01a38ffe776097c9df50c4102899240e39f5ff7148",
+      "uncertain": false
+    },
+    "shuowen:8015": {
+      "text": "To strike with a carriage's neck-strap. Formed from 手, with 央 indicating the sound.",
+      "sourceTextSha256": "8e3a5dd88c20c50f1a7bdc5e523294d385ec27a5ac2777b298bd4ae94d530231",
+      "uncertain": false
+    },
+    "shuowen:8016": {
+      "text": "To strike over clothing. Formed from 手, with 𠈃 indicating the sound.",
+      "sourceTextSha256": "6c0efa24c5066b185a4d4ab7fc182fc26f66ac568bbf2fe05491fcb29de9b8e7",
+      "uncertain": false
+    },
+    "shuowen:8017": {
+      "text": "To strike with both hands. Formed from 手, with 卑 indicating the sound.",
+      "sourceTextSha256": "d46e0399645d5ccaf13e1fcccd79a4d4db98a031bae52b1dfdc6e3691cf154f5",
+      "uncertain": false
+    },
+    "shuowen:8018": {
+      "text": "To strike with a staff. Formed from 手, with 垂 indicating the sound.",
+      "sourceTextSha256": "73bcb86ef0cf09b05ddafe7d6284ea295b12a8846e1524ebfaec54da6377c66c",
+      "uncertain": false
+    },
+    "shuowen:8019": {
+      "text": "To knock or strike. Formed from 手, with 隺 indicating the sound.",
+      "sourceTextSha256": "e2113cb8398ac531377aad8ea83b9ef1daad0be2b2197b30d2e4bab193ace2bc",
+      "uncertain": false
+    },
+    "shuowen:8020": {
+      "text": "To strike the middle or strike home. Formed from 手, with 竟 indicating the sound.",
+      "sourceTextSha256": "410d68e790ff96bdfb4189ff4e958df4f4353d4e812b363c2f30018770c9af3e",
+      "uncertain": true
+    },
+    "shuowen:8021": {
+      "text": "To brush past and strike. Formed from 手, with 弗 indicating the sound.",
+      "sourceTextSha256": "acd6dcf686c8c89325a8fd005010586e56564f3f71b81b45e15901205442a6a6",
+      "uncertain": false
+    },
+    "shuowen:8022": {
+      "text": "To strike the head. Formed from 手, with 堅 indicating the sound. Read like 鏗 in 'With a clang he set aside his zither and rose.'",
+      "sourceTextSha256": "d4b9c506308db5a301119dda0504035b32096cea52a9aa91c8c0e2fbc2290683",
+      "uncertain": false
+    },
+    "shuowen:8023": {
+      "text": "To strike deeply. Formed from 手, with 冘 indicating the sound. Read like 抌, the term for reporting words incorrectly.",
+      "sourceTextSha256": "b4252830595f341c5f003a308a740330c9cc0a416ba8110618e6b4f46e9c86c4",
+      "uncertain": true
+    },
+    "shuowen:8024": {
+      "text": "To injure by striking. Formed from 手 and 毀; 毀 also indicates the sound.",
+      "sourceTextSha256": "86e346cddc027c7377a8d9ab6e94904518460737fd7635ccba16f20570e32b75",
+      "uncertain": false
+    },
+    "shuowen:8025": {
+      "text": "To strike. Formed from 手, with 毄 indicating the sound.",
+      "sourceTextSha256": "738737d8f84474164a4277d61f7d52132f9de66120bb19e6cb4252bb8df350db",
+      "uncertain": false
+    },
+    "shuowen:8026": {
+      "text": "To resist obstinately. Formed from 手, with 干 indicating the sound.",
+      "sourceTextSha256": "445292020b15982bf9eaf3e7759f56ecd52c9a1ae53cbe2de823331771b0df81",
+      "uncertain": false
+    },
+    "shuowen:8027": {
+      "text": "To resist. Formed from 手, with 亢 indicating the sound.",
+      "sourceTextSha256": "c97e5a1a52cfd2eb5e3d4e60443c3c5a60be74f3c8ddc9dcf861532d420c6f63",
+      "uncertain": false
+    },
+    "shuowen:8028": {
+      "text": "To take or capture. Formed from 手, with 甫 indicating the sound.",
+      "sourceTextSha256": "3de0dbbf978b4d8fed5a87767451feecf1dadff60784c61f69e4c55f4e4660e6",
+      "uncertain": false
+    },
+    "shuowen:8029": {
+      "text": "To spear. Formed from 手, with abbreviated 籍 indicating the sound. The Rites of Zhou says: 'Spear fish and turtles.'",
+      "sourceTextSha256": "267dc1cbb8c7cd9a855332f928b0c15a3c6891d233ecec8c4e28c0b56ebd24bb",
+      "uncertain": false
+    },
+    "shuowen:8030": {
+      "text": "To hold. Formed from 手, with 然 indicating the sound. Alternatively, to tread or rub.",
+      "sourceTextSha256": "b7d0a01f53f4669c4bf2e388ee91063de0dbb3ae3002190dde867499696b0e6e",
+      "uncertain": false
+    },
+    "shuowen:8031": {
+      "text": "To mark or delineate. Formed from 手, with 圭 indicating the sound.",
+      "sourceTextSha256": "52cefc85772d2158d235ba76f4f64b57074ad7823888b0fbd95c5d8b58917558",
+      "uncertain": true
+    },
+    "shuowen:8032": {
+      "text": "To drag. Formed from 手, with 它 indicating the sound.",
+      "sourceTextSha256": "e69df7f457aeb2819f2e568b9b49e816b94c25159a26bf900dfb37b86e8185c9",
+      "uncertain": false
+    },
+    "shuowen:8033": {
+      "text": "To pull horizontally while lying down. Formed from 手, with 余 indicating the sound.",
+      "sourceTextSha256": "9e5349cf85d3e61521d5cd0373a63bb6f84d577fbb30cf700e9d90c5ad54e727",
+      "uncertain": true
+    },
+    "shuowen:8034": {
+      "text": "To pull horizontally. Formed from 手, with 世 indicating the sound.",
+      "sourceTextSha256": "664afb6a4af2d648de39693806293eb7232d99dac9c892bcb0c992a0e460eddb",
+      "uncertain": false
+    },
+    "shuowen:8035": {
+      "text": "To stroke. Formed from 手, with 扁 indicating the sound.",
+      "sourceTextSha256": "38c9240b6ed96f4eb9e840dec2a9fcbd68a760edc755adfad8430f14ddedeb71",
+      "uncertain": false
+    },
+    "shuowen:8036": {
+      "text": "To grasp something with the hand. Formed from 手, with 厥 indicating the sound.",
+      "sourceTextSha256": "2b4b3b8eddee810ddcb2b0f10ca694e5ce0b0ad57ac8dfb0a14be03ad951b021",
+      "uncertain": false
+    },
+    "shuowen:8037": {
+      "text": "To grasp and hold. Formed from 手, with 盧 indicating the sound.",
+      "sourceTextSha256": "e1441001f9254aafcfa319b75e39bd91b5eeaa2e14c4b7825ffcd8ff179695d9",
+      "uncertain": false
+    },
+    "shuowen:8038": {
+      "text": "To hold. Formed from 手, with 如 indicating the sound.",
+      "sourceTextSha256": "6461eef4ffeccd9de6bb71e16c160a3b59a51043d6e427063482ffe4a9c0ad71",
+      "uncertain": false
+    },
+    "shuowen:8039": {
+      "text": "To immerse. Formed from 手, with 𥁕 indicating the sound.",
+      "sourceTextSha256": "0e6df9db9de9778bbceeb9d6a23304b31b91dd9c187ed97157347f8c7b0b0085",
+      "uncertain": false
+    },
+    "shuowen:8040": {
+      "text": "To cover. Formed from 手, with 㫄 indicating the sound.",
+      "sourceTextSha256": "e2e4c57a328e281a3663cdcd1860ab959c558e9c950d8528c28c5855d936d11d",
+      "uncertain": false
+    },
+    "shuowen:8041": {
+      "text": "To strike. Formed from 手, with 各 indicating the sound.",
+      "sourceTextSha256": "6ec2bdd0cbeef4852df8a013487bd624dace0d9c8b05769ef64a36ed9e0a4930",
+      "uncertain": false
+    },
+    "shuowen:8042": {
+      "text": "Both hands in the same fetter. Formed from 手 and 共; 共 also indicates the sound. The Rites of Zhou says: 'For the gravest offense, handcuff both hands together and shackle the feet.'",
+      "sourceTextSha256": "d1a724ca1ebdf76b5af92ba2eb04393f8193f4b4d6b2341fb46935003fb90e79",
+      "uncertain": false
+    },
+    "shuowen:8043": {
+      "text": "To keep watch by night, ready to strike. Formed from 手, with 取 indicating the sound. The Spring and Autumn Commentary says: 'The guest will make the night-watch rounds.'",
+      "sourceTextSha256": "074b98d6917615025c2dad5e13b80adc36c55623672ea018147623eeaac6609d",
+      "uncertain": false
+    },
+    "shuowen:8044": {
+      "text": "To discard. Formed from 手, with 肙 indicating the sound.",
+      "sourceTextSha256": "eeaafba98dea164650aca5e695f42f525a9fa73caa3add5e111359c005c7b0c4",
+      "uncertain": false
+    },
+    "shuowen:8045": {
+      "text": "A cover for arrows. Formed from 手, with 朋 indicating the sound. The Odes says: 'Then remove the quiver cover.'",
+      "sourceTextSha256": "c81549f007cd42bbcb59a5c437fd21505c5d8559cdbe551b4d6f025563064a82",
+      "uncertain": false
+    },
+    "shuowen:8046": {
+      "text": "To direct with gestures. Formed from 手, with 亏 indicating the sound.",
+      "sourceTextSha256": "1d478a3c4aea6073ee67887b8efd721efd61899a063645525851b62059a87b05",
+      "uncertain": false
+    },
+    "shuowen:8047": {
+      "text": "A banner, used to give directions. Formed from 手, with 靡 indicating the sound.",
+      "sourceTextSha256": "a8abd0c64812d397d653c008072ea03af4f088c8fc37859de4c48bb8085711b8",
+      "uncertain": false
+    },
+    "shuowen:8048": {
+      "text": "A capture, or what an army obtains. Formed from 手, with 疌 indicating the sound. The Spring and Autumn Commentary says: 'The people of Qi came to present their spoils from the Rong.'",
+      "sourceTextSha256": "7b443cba2d7bcec2a318409303d2a0b728c6e03cc999bf0f264b32d3e0b6b9dc",
+      "uncertain": false
+    },
+    "shuowen:8049": {
+      "text": "To lead a horse. Formed from 手, with 口 indicating the sound.",
+      "sourceTextSha256": "5cff64bbe2abcd74ac231210870028b87120eb803aac889bf1070ae5230d8328",
+      "uncertain": false
+    },
+    "shuowen:8050": {
+      "text": "The same; to unite. Formed from 手, with 昆 indicating the sound.",
+      "sourceTextSha256": "b99303d50a983ae07db5f9d8965efe3c217d2a1cacdc92386f7c6a950531e5b7",
+      "uncertain": true
+    },
+    "shuowen:8051": {
+      "text": "The idea of a multitude. Alternatively, to seek. Formed from 手, with 叜 indicating the sound. The Odes says: 'The bundled arrows are numerous.'",
+      "sourceTextSha256": "d4c5658ff94f33cd51452cc81a87895264fdbf99c917404ffa13b4c5a34250d9",
+      "uncertain": true
+    },
+    "shuowen:8052": {
+      "text": "To exchange. Formed from 手, with 奐 indicating the sound.",
+      "sourceTextSha256": "f00d6f8508a525e7f538d322cd3b52ce6798eb04b935461b0ab12cdc83ece7c3",
+      "uncertain": false
+    },
+    "shuowen:8053": {
+      "text": "To seize a person's arm with the hand and throw them to the ground. Formed from 手, with 夜 indicating the sound. Alternatively, beneath the arm.",
+      "sourceTextSha256": "28e4e033063ec81be9a535076c7a262365399adb3ecaf0f2df3dbf1f1a4ed697",
+      "uncertain": false
+    },
+    "shuowen:8054": {
+      "text": "Broad across. Formed from 手, with 瓠 indicating the sound.",
+      "sourceTextSha256": "f36bd68574bb3cab7796c7f48acf5196dc400b9abbfe03700c7221eaae342849",
+      "uncertain": false
+    },
+    "shuowen:8055": {
+      "text": "To stab. Formed from 手, with 毚 indicating the sound.",
+      "sourceTextSha256": "f47f8321fbd70932b236960ecec4ec70a31ce162011c95cd852a860ddd303d96",
+      "uncertain": false
+    },
+    "shuowen:8056": {
+      "text": "To insert. Formed from 手, with 晉 indicating the sound. Earlier histories all write 搢紳 as 薦紳.",
+      "sourceTextSha256": "82907e81ac2b90c65a7e36f3f701cf3a78c58778b1e52a11375b845f6413b0e6",
+      "uncertain": false
+    },
+    "shuowen:8057": {
+      "text": "To seize and take. Formed from 手, with 京 indicating the sound. Its original pronunciation is like 亮. The Tang Rhymes sometimes writes it 擽.",
+      "sourceTextSha256": "bf6db286d81534bf5ed066949ceff54b9770c43415a5301e83b371e8eff0d825",
+      "uncertain": false
+    },
+    "shuowen:8058": {
+      "text": "To pierce with the nails. Formed from 手, with 臽 indicating the sound.",
+      "sourceTextSha256": "f6de281f398e0a6842aa3b9ec91482296cdb61e315614617a1ee825ec903a770",
+      "uncertain": false
+    },
+    "shuowen:8059": {
+      "text": "To pinch with the fingers. Formed from 手, with 念 indicating the sound.",
+      "sourceTextSha256": "376d14913b3cb7a34747943f4942d7cd6fb4005ab7ee29c477c204d31b10b1b2",
+      "uncertain": false
+    },
+    "shuowen:8060": {
+      "text": "To pull or break with the hand. Formed from 手, with 幼 indicating the sound.",
+      "sourceTextSha256": "72e82ad520b4cd76dcf2c4d9c8def4c277a830603e2306a15141695ee693db55",
+      "uncertain": false
+    },
+    "shuowen:8061": {
+      "text": "To take from above, as in 捎. Formed from 手, with 戚 indicating the sound.",
+      "sourceTextSha256": "746558d1a23d2121b771f12848c3598a352f3320cad03b6530e1f5c0e2a7cd98",
+      "uncertain": false
+    },
+    "shuowen:8062": {
+      "text": "The Regional Expressions says: 'A toothless rake.' Formed from 手, with 別 indicating the sound.",
+      "sourceTextSha256": "7fcb4e165e9ca3e1ff73346d8223976b99fbd161965826e2442780ab94decdb5",
+      "uncertain": false
+    },
+    "shuowen:8063": {
+      "text": "To open or spread out. Formed from 手, with 難 indicating the sound.",
+      "sourceTextSha256": "1b14d2b717fa2ae8a037962e51e088caddf3381143ae6886194b2d011668e2a3",
+      "uncertain": false
+    },
+    "shuowen:8064": {
+      "text": "To discard. Formed from 手, 尤, and 力; alternatively, from 手 with 𠠵 indicating the sound. Note: Zuo's Commentary uses 摽 interchangeably. The Odes says: 'Falling plums.' 摽 means to fall, so the sense is also the same.",
+      "sourceTextSha256": "62c229ae19455331f8799f294bfd4385af6aedc17d9ed49ecc5fa1a56f72fb38",
+      "uncertain": false
+    },
+    "shuowen:8065": {
+      "text": "To spread out. Also, 摴蒲 is a game. Formed from 手, with 雩 indicating the sound.",
+      "sourceTextSha256": "c4d00cc4e16e957e6f7c405e991cffb7794049b36724f68d9bf0a793a484d862",
+      "uncertain": false
+    },
+    "shuowen:8066": {
+      "text": "To strike. Formed from 手, with 丁 indicating the sound.",
+      "sourceTextSha256": "e4cbb01cea1a97094823aefcc5c6c6f3637222419236004fef9a3c62ce3f97c1",
+      "uncertain": false
+    },
+    "shuowen:8067": {
+      "text": "The backbone. It depicts the ribs at the sides. All characters in this group are formed from 𠦬.",
+      "sourceTextSha256": "852725e6000e2ec1b8c3b887ec5c01aa6e2de466f776e6a2be5bbec1ff3b780d",
+      "uncertain": false
+    },
+    "shuowen:8068": {
+      "text": "The backbone. Formed from 𠦬 and 肉.",
+      "sourceTextSha256": "6a3309c83d5f510ec6e15b6455c359f3c847a6709a5c7ae3433b002475427133",
+      "uncertain": false
+    },
+    "shuowen:8069": {
+      "text": "A woman. A pictograph; Wang Yu's explanation. All characters in this group are formed from 女.",
+      "sourceTextSha256": "a0882fa259c515c3ae5a4e408e11987bb2faae4190f083763baa6644f0cfd57e",
+      "uncertain": false
+    },
+    "shuowen:8070": {
+      "text": "That from which a person is born. In antiquity, the mothers of divine sages conceived children through Heaven's influence; hence the title Son of Heaven. Formed from 女 and 生; 生 also indicates the sound. The Spring and Autumn Commentary says: 'The Son of Heaven grants surnames according to birth.'",
+      "sourceTextSha256": "72a5970bbd138341eb915a903a13cc7c36cd59deaa960cebe8134ed0d8a05b85",
+      "uncertain": false
+    },
+    "shuowen:8071": {
+      "text": "Shennong lived by the 姜 water and took it as his surname. Formed from 女, with 羊 indicating the sound.",
+      "sourceTextSha256": "dfa1530609d2083a37c29a11b4f79e5c63a783d1dcf7b5ad98ffd35097b9fe6e",
+      "uncertain": false
+    },
+    "shuowen:8072": {
+      "text": "The Yellow Emperor lived by the 姬 water and took it as his surname. Formed from 女, with 𦣞 indicating the sound.",
+      "sourceTextSha256": "45007215991875e850bd1a32506b5d2d721595e3b241bd96f83a72da8e198baa",
+      "uncertain": false
+    },
+    "shuowen:8073": {
+      "text": "A surname among the Yellow Emperor's descendants, in the obscure source wording 百䱔姓; the clan of Houji's wife. Formed from 女, with 吉 indicating the sound.",
+      "sourceTextSha256": "92cabfbb5b1d9e62f231970e304e68dc8afb6a3a1042d90c48a94b42f556b163",
+      "uncertain": true
+    },
+    "shuowen:8074": {
+      "text": "The surname of Shaohao. Formed from 女, with abbreviated 羸 indicating the sound.",
+      "sourceTextSha256": "0de1792891e5cfd2f84ec228ba23a2315fd11bc9e2ac69d5748e3e705752f8d5",
+      "uncertain": false
+    },
+    "shuowen:8075": {
+      "text": "Shun of Yu lived at 姚虛 and accordingly took it as his surname. Formed from 女, with 兆 indicating the sound. Alternatively, 姚 means enchanting. The Scribe's Primer takes 姚 to mean easy or changeable.",
+      "sourceTextSha256": "9f58d652f1eb1b5c4972fa47c92f85804e481017b1a118f241c536ab478f6c7e",
+      "uncertain": true
+    },
+    "shuowen:8076": {
+      "text": "Shun of Yu lived at 嬀汭 and accordingly took it as his clan name. Formed from 女, with 爲 indicating the sound.",
+      "sourceTextSha256": "affd8c3b64612d8ed0ead24906992c1f6d59f16c9fd659068f689929776bb04b",
+      "uncertain": false
+    },
+    "shuowen:8077": {
+      "text": "A surname of Zhurong's descendants. Formed from 女, with 云 indicating the sound.",
+      "sourceTextSha256": "f5326ddfca506d0a2f302329f159c9730d4ffb9eee981180834545d8551f1c3f",
+      "uncertain": false
+    },
+    "shuowen:8078": {
+      "text": "A feudal lord of Yin who rebelled; probably a surname. Formed from 女, with 先 indicating the sound. The Spring and Autumn Commentary says: 'Shang had Xian and Pi.'",
+      "sourceTextSha256": "5f400cdf6e5bc4f60cdfa6ea3d3a4432cb50f6964d603b36959d3d53705bba41",
+      "uncertain": false
+    },
+    "shuowen:8079": {
+      "text": "A person's surname. Formed from 女, with 然 indicating the sound.",
+      "sourceTextSha256": "907412eabaabe4a5e613a62b9ac7c531e66688690b4d7058833f1fce2976cad9",
+      "uncertain": false
+    },
+    "shuowen:8080": {
+      "text": "A person's surname. Formed from 女, with 丑 indicating the sound. The Book of Shang says: 'Do not engage in 𡚽,' apparently disgraceful conduct.",
+      "sourceTextSha256": "70d5cb72cc9db87e9cdb573146cfdd1cb5a3209ea20069f65efbad3592560da6",
+      "uncertain": true
+    },
+    "shuowen:8081": {
+      "text": "A person's surname. Formed from 女, with 其 indicating the sound. Du Lin says: '娸 means ugly.'",
+      "sourceTextSha256": "cb7cb0db8f09ce6dfc1bf60efd0c9a8e05736449abdf561963c5cc872c516852",
+      "uncertain": false
+    },
+    "shuowen:8082": {
+      "text": "A young woman. Formed from 女, with 乇 indicating the sound.",
+      "sourceTextSha256": "a352a453602bd610077d0e31bf4d03399d7c2c9a7a4c1b1d897406d9363c4911",
+      "uncertain": false
+    },
+    "shuowen:8083": {
+      "text": "To plan: to plan the union of two surnames. Formed from 女, with 某 indicating the sound.",
+      "sourceTextSha256": "2b9f2e7eec55ea5f420e45653e5b480413892e049f740989ff0f233a5e9d77d3",
+      "uncertain": false
+    },
+    "shuowen:8084": {
+      "text": "To weigh and consider: to deliberate over two surnames. Formed from 女, with 勺 indicating the sound.",
+      "sourceTextSha256": "930dac86d80fbede843ea26cde5941ee72645e4d943fa767a392c86a019cf3ae",
+      "uncertain": false
+    },
+    "shuowen:8085": {
+      "text": "A woman going to marry someone. Formed from 女, with 家 indicating the sound.",
+      "sourceTextSha256": "8464fd279dd303728968bd790b6ed95b129e42316624a2deea24586757df10aa",
+      "uncertain": false
+    },
+    "shuowen:8086": {
+      "text": "To take a wife. Formed from 女 and 取; 取 also indicates the sound.",
+      "sourceTextSha256": "91c769679a7d5e9da25d1c5d8233443e4d6c1ddcbc2b2db646d6d4ea77f4c550",
+      "uncertain": false
+    },
+    "shuowen:8087": {
+      "text": "The wife's family. According to ritual, a wife is taken at dusk, since a woman is yin; hence 婚. Formed from 女 and 昏; 昏 also indicates the sound.",
+      "sourceTextSha256": "865b6aef35b74a1753a94712974f3f0916d276b0f41c93c3fcd26c91a8853eee",
+      "uncertain": false
+    },
+    "shuowen:8088": {
+      "text": "The husband's family. It is what the woman relies upon, hence 姻. Formed from 女 and 因; 因 also indicates the sound.",
+      "sourceTextSha256": "21d78bb5c41458509d5a835a793cab1d405f5bc412551f83c01cb4adac540ff6",
+      "uncertain": false
+    },
+    "shuowen:8089": {
+      "text": "A woman equal to her husband. Formed from 女, 屮, and 又. 又 means managing affairs, the wife's duty.",
+      "sourceTextSha256": "917e22105c2240cb3a28792a0e8e221ed59ef9cd08858d9095493a3d1549ac27",
+      "uncertain": false
+    },
+    "shuowen:8090": {
+      "text": "To serve or submit. Formed from 女 holding 帚, sprinkling and sweeping.",
+      "sourceTextSha256": "00895fe52216fa2f1654601280b91c0f2ed13a134bf5d8a45141d86620e194c6",
+      "uncertain": false
+    },
+    "shuowen:8091": {
+      "text": "A mate. Formed from 女, with 己 indicating the sound.",
+      "sourceTextSha256": "325df9e4e68e585b62b9309780efcb27f5143b7bcba9e8caeddca9bd9ac956e8",
+      "uncertain": false
+    },
+    "shuowen:8092": {
+      "text": "A mate. Formed from 女, with 𣬉 indicating the sound.",
+      "sourceTextSha256": "80d83a206514bbcd07d55262cad661fa774fa5f35db8e4317846127fd92a730e",
+      "uncertain": false
+    },
+    "shuowen:8093": {
+      "text": "Pregnant. Formed from 女 and 壬; 壬 also indicates the sound.",
+      "sourceTextSha256": "523fbb31b415b9d63e6248d84381f659a10d533a612ba3c071fbcf1471f90d6a",
+      "uncertain": false
+    },
+    "shuowen:8094": {
+      "text": "A pregnant woman's body moving. Formed from 女, with 辰 indicating the sound. The Spring and Autumn Commentary says: 'Hou Min was then pregnant.' Alternatively, palace maidservants and female bondspeople are called 娠.",
+      "sourceTextSha256": "5c84829e7e5808b854d05681b2feec56615e71a2c7542cce3b03652fbdf39760",
+      "uncertain": false
+    },
+    "shuowen:8095": {
+      "text": "A woman being pregnant. Formed from 女, with 芻 indicating the sound. The Book of Zhou says: 'Even pregnant women.'",
+      "sourceTextSha256": "5d0c9cd336a03d8b492f30d437189a66094300d8d5d234c9e61555bba95b260d",
+      "uncertain": false
+    },
+    "shuowen:8096": {
+      "text": "Bearing children evenly or equally, apparently. Formed from 女 and 生, with 免 indicating the sound.",
+      "sourceTextSha256": "9d8468e552f1c9df5e21a19fa8e107ca13d5cbdca97c7a24786d07f220220bee",
+      "uncertain": true
+    },
+    "shuowen:8097": {
+      "text": "The condition expressed by 婗, apparently a newborn's state. Formed from 女, with 殹 indicating the sound.",
+      "sourceTextSha256": "aedec5fb2a412d9c0111f5e3964513131e15558f2d79ab31b57088e494c89f2b",
+      "uncertain": true
+    },
+    "shuowen:8098": {
+      "text": "The condition expressed by 嫛婗, apparently a newborn's state. Formed from 女, with 兒 indicating the sound. Alternatively, a woman's ugly appearance.",
+      "sourceTextSha256": "382ecf523af482c02f05df1ae68e3195f1b4307328755fde1ee837b36cb03ea6",
+      "uncertain": true
+    },
+    "shuowen:8099": {
+      "text": "To nurture. Formed from 女, depicting holding a child. Alternatively, it depicts nursing a child.",
+      "sourceTextSha256": "fd184ff981bcec65d93ff2c94ece83dbeb66b4a6c6972c36f19b1f97172c1665",
+      "uncertain": false
+    },
+    "shuowen:8100": {
+      "text": "A mother. Formed from 女, with 區 indicating the sound.",
+      "sourceTextSha256": "f357fc17aea22fc8289395539827834e87e132f1faad1410afd93ce6248f5d7c",
+      "uncertain": false
+    }
+  }
+}

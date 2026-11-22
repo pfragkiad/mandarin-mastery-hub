@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "3ef9ad1b9efbb0da505d6f9d244d5cde802847f269033f71ed1669a4021eb618",
+    "created_date": "2026-11-21"
+  },
+  "batch": "074",
+  "translations": {
+    "shuowen:7301": {
+      "text": "Water exhausted. Formed from 水, with 斯 indicating the sound.",
+      "sourceTextSha256": "d34917c49920e17028ce525702353c460c22c42e4d9bd5afefe6a0487683d6e2",
+      "uncertain": false
+    },
+    "shuowen:7302": {
+      "text": "Water dried up. Some say tears falling. Formed from 水, with 气 indicating the sound. The Odes says: 'We may perhaps have a little repose.'",
+      "sourceTextSha256": "1064c70c921c6e0c266e7baf341956919b9ae905bb6b752116df4767be68a107",
+      "uncertain": false
+    },
+    "shuowen:7303": {
+      "text": "Dried up. Formed from 水, with 固 indicating the sound. Read like 貈 in 狐貈.",
+      "sourceTextSha256": "d1a173a52a09bc311060af617e36ac7d36b9f06a50511e0764fb1dd3eb58e5a9",
+      "uncertain": false
+    },
+    "shuowen:7304": {
+      "text": "To be exhausted. Formed from 水, with 肖 indicating the sound.",
+      "sourceTextSha256": "926cd01b166a537fda3d6a35f136a3edae7b084c86a11d49d19cd7063bbb2f78",
+      "uncertain": false
+    },
+    "shuowen:7305": {
+      "text": "To be exhausted. Formed from 水, with 焦 indicating the sound.",
+      "sourceTextSha256": "09bdc93a92ff138592b669922d588477deeecc5a3c7d39b5c18fff33c4219a2d",
+      "uncertain": false
+    },
+    "shuowen:7306": {
+      "text": "To be exhausted. Formed from 水, with 曷 indicating the sound.",
+      "sourceTextSha256": "60099cf3d99eb440b403c64cace8cd9ea1989c3b9ecb0ae9735e81d8e4e06207",
+      "uncertain": false
+    },
+    "shuowen:7307": {
+      "text": "Water emptied out. Formed from 水, with 康 indicating the sound.",
+      "sourceTextSha256": "d7a866a6567af6e81fabf66dc4f006d32f1590242e1d57ab799b05c8c7f728fa",
+      "uncertain": false
+    },
+    "shuowen:7308": {
+      "text": "Hidden dampness. Formed from 水; 一 is a covering: covered and containing earth, it is therefore damp. Abbreviated 㬎 indicates the sound.",
+      "sourceTextSha256": "834052cd1458d2349da7ff6cc398906f463cccc0a2680a40d21806fe3761f49b",
+      "uncertain": false
+    },
+    "shuowen:7309": {
+      "text": "Hidden dampness. Formed from 水, with 音 indicating the sound.",
+      "sourceTextSha256": "75a35133fecf0ca202121c5f2dbc3290acb3027ef6867ed27406f479a218bfba",
+      "uncertain": false
+    },
+    "shuowen:7310": {
+      "text": "Turbid water that does not flow. Alternatively, low-lying ground. Formed from 水, with 夸 indicating the sound.",
+      "sourceTextSha256": "e9f104a8b95b10e5a71193b4f04fa7d7c1c94c26fa12bf0ba33a1ca7b38e5a0c",
+      "uncertain": false
+    },
+    "shuowen:7311": {
+      "text": "To soil. Formed from 水, with 免 indicating the sound. The Odes says: 'The 河's waters flow broadly.' Mencius says: 'How could you soil me!'",
+      "sourceTextSha256": "a02746e41b6f0850396ccf32553185b9bee9dc263a5fbb126d0d74ac4d35497b",
+      "uncertain": true
+    },
+    "shuowen:7312": {
+      "text": "Filthy. Alternatively, a small pool is called 汙; alternatively, to smear. Formed from 水, with 于 indicating the sound.",
+      "sourceTextSha256": "e4db0909a6cd171d1310ec42329af729f307ce5c2960804d028d923f067bc756",
+      "uncertain": false
+    },
+    "shuowen:7313": {
+      "text": "Cramped and low. Alternatively, there is a 湫 river in Zhou territory. The Spring and Autumn Commentary says: 'Yanzi's residence is low and cramped.' There is a 湫 spring at 朝𨙻 in 安定. Formed from 水, with 秋 indicating the sound.",
+      "sourceTextSha256": "f9bdd9247a99d3b4ac60d0033140a25a1b314f4965839b6473b51b504c3802d0",
+      "uncertain": false
+    },
+    "shuowen:7314": {
+      "text": "Water is said to moisten and descend. Formed from 水, with 閏 indicating the sound.",
+      "sourceTextSha256": "c8149bdadf51eacb7116e73e61c976882ac32f2ca61fccd5f9b5cf9c4d62723a",
+      "uncertain": false
+    },
+    "shuowen:7315": {
+      "text": "Level. Formed from 水, with 隼 indicating the sound.",
+      "sourceTextSha256": "0cf5135b1ca5f4e0adaeebe4d178ede43809707761fae13049f0922fb8a0e82a",
+      "uncertain": false
+    },
+    "shuowen:7316": {
+      "text": "Level. Formed from 水, with 丁 indicating the sound.",
+      "sourceTextSha256": "31a843b73647b21f5112d1b0f0996305bf15a80cab39a72c577d285352ee8ea9",
+      "uncertain": false
+    },
+    "shuowen:7317": {
+      "text": "The source's phrase 水吏 is unclear, perhaps water thickening; also, warm. Formed from 水, with 丑 indicating the sound.",
+      "sourceTextSha256": "3d3866db4a3dc34ac9dc505d546b96fee7bce96035a178f2d72a04202a5bcf53",
+      "uncertain": true
+    },
+    "shuowen:7318": {
+      "text": "Water seeping through. Formed from 水, with 糞 indicating the sound. The Erya says: 'A 瀵 emerges greatly beneath the tail,' an obscure description of a spring.",
+      "sourceTextSha256": "d20c127e185492adb764b0bca48c1fd3713be1b738cdd3279d794313c1d97ff8",
+      "uncertain": true
+    },
+    "shuowen:7319": {
+      "text": "New or fresh. Formed from 水, with 辠 indicating the sound.",
+      "sourceTextSha256": "8a9ac14201cb3b1a400be2d2754e3c08756b75f35e17415a2bc218100a690ff6",
+      "uncertain": false
+    },
+    "shuowen:7320": {
+      "text": "Free from grime and filth. Formed from 水, with 靜 indicating the sound.",
+      "sourceTextSha256": "e52fc10f9dd45b967cde496b85301687adf2dc301ecb0b5134823b90013de600",
+      "uncertain": false
+    },
+    "shuowen:7321": {
+      "text": "The appearance of wiping away. Formed from 水, with 蔑 indicating the sound.",
+      "sourceTextSha256": "f7a91b1cfc47dbd0c71e87967ac5a2908a9c3a8824bd8de8a67c03a076b3117d",
+      "uncertain": true
+    },
+    "shuowen:7322": {
+      "text": "The wiping expressed by 瀎泧. Formed from 水, with 戉 indicating the sound. Read like 樧 in 椒樧.",
+      "sourceTextSha256": "3da7c4dcce1a951599cdff58616c8a723e1d995f6fc87ae698d597c12a6551e1",
+      "uncertain": true
+    },
+    "shuowen:7323": {
+      "text": "To pour water into a cauldron. Formed from 水, with 自 indicating the sound.",
+      "sourceTextSha256": "2b5e36be538fe1b4e6e1820768113f4b00f16b02127ce541c2045a9fc62a9547",
+      "uncertain": false
+    },
+    "shuowen:7324": {
+      "text": "Hot water. Formed from 水, with 昜 indicating the sound.",
+      "sourceTextSha256": "fbd316a7555f533ecde57cd522679944b270a02fd726bc301286749cd4422a1a",
+      "uncertain": false
+    },
+    "shuowen:7325": {
+      "text": "Hot water. Formed from 水, with 耎 indicating the sound.",
+      "sourceTextSha256": "73ac1b9de55268e358c3f48234bb2fab6e7d08f8fa9748caf30397a90061b145",
+      "uncertain": false
+    },
+    "shuowen:7326": {
+      "text": "Warm water. Formed from 水, with 安 indicating the sound.",
+      "sourceTextSha256": "7d07da54b7bf415086b9a1db2383a49c3e0f34f6fd238df86dea8007944757b8",
+      "uncertain": false
+    },
+    "shuowen:7327": {
+      "text": "Warm water. Alternatively, cooked through. Formed from 水, with 而 indicating the sound.",
+      "sourceTextSha256": "72eb9f36c345582783f12346ffbf8105dd6de9bbeeacbb713c35f4078a4b3441",
+      "uncertain": false
+    },
+    "shuowen:7328": {
+      "text": "Slightly warm water. Formed from 水, with 兌 indicating the sound. The Rites of Zhou says: 'Soak its silk in warm water.'",
+      "sourceTextSha256": "d10421a9a7871665e499c420cad62ace74496d5366cabf5c3e96f483dba806d2",
+      "uncertain": false
+    },
+    "shuowen:7329": {
+      "text": "To boil. Formed from 水, with 官 indicating the sound. There is a 樂涫 county in 酒泉.",
+      "sourceTextSha256": "a1b7d7b30825bfe24cd8cb3cfa2e1afab69200a050193be30641bdea374e440e",
+      "uncertain": false
+    },
+    "shuowen:7330": {
+      "text": "To boil over. In present-day 河朔 speech, boiling over is called 涾. Formed from 水, with 沓 indicating the sound.",
+      "sourceTextSha256": "1a046ceb9e78484bea3da2f9c917d45cd8c9462240b2919eff90dd000326f4e1",
+      "uncertain": false
+    },
+    "shuowen:7331": {
+      "text": "To wash or rinse, as in 淅𤃦. Formed from 水, with 大 indicating the sound.",
+      "sourceTextSha256": "4b59438747b65a6ffbb23cbf56c2df821253b76c801ee4108e84c75cb259d429",
+      "uncertain": false
+    },
+    "shuowen:7332": {
+      "text": "To rinse or drain. Formed from 水, with 簡 indicating the sound.",
+      "sourceTextSha256": "6adc5707ebcf9be66ea744d9dc87930761da3043277fea456c5e2d8a0e0a807c",
+      "uncertain": true
+    },
+    "shuowen:7333": {
+      "text": "To wash rice. Formed from 水, with 析 indicating the sound.",
+      "sourceTextSha256": "25b3e958f38908e523d257e42a8aa30fba00faac0966c6213f12e8a37f5398ae",
+      "uncertain": false
+    },
+    "shuowen:7334": {
+      "text": "To drain soaked rice dry. Formed from 水, with 竟 indicating the sound. Mencius says: 'When the Master left Qi, he drained his washed rice and departed.'",
+      "sourceTextSha256": "4fa745f6f49e7aa4b7c260fc89117d6a2aa9345031bc7697ed439e9fa200f0e9",
+      "uncertain": false
+    },
+    "shuowen:7335": {
+      "text": "To soak and irrigate. Formed from 水, with 叜 indicating the sound.",
+      "sourceTextSha256": "98306f19c3302e6171aa1464c81a81e423ee758ec14a859cca3b25e5889d66d9",
+      "uncertain": false
+    },
+    "shuowen:7336": {
+      "text": "To draw off water. Formed from 水, with 夋 indicating the sound.",
+      "sourceTextSha256": "02b5ed551e611e337d30b889262270ac9ed6b2d0209a8442f289979f66d95f08",
+      "uncertain": false
+    },
+    "shuowen:7337": {
+      "text": "To drain. Formed from 水, with 歷 indicating the sound. Alternatively, water dripping downward.",
+      "sourceTextSha256": "9c860314550c223ea355eb447b9c2c51f95232f95fad53b2c8e68c51e1c806e4",
+      "uncertain": false
+    },
+    "shuowen:7338": {
+      "text": "To drain. Formed from 水, with 鹿 indicating the sound.",
+      "sourceTextSha256": "91f6649049d8331f25df6ec7fff901c7fed23b5ff74d5cd78b0278b8caa3d285",
+      "uncertain": false
+    },
+    "shuowen:7339": {
+      "text": "Rice-washing water. Alternatively, a river's name, in 滎陽, Henan. Formed from 水, with 番 indicating the sound.",
+      "sourceTextSha256": "c9c654b940f3b40d456469f1866ae35e650804ff2a00c4131df03fc9bfc63045",
+      "uncertain": false
+    },
+    "shuowen:7340": {
+      "text": "Rice-washing water. Formed from 水, with 蘭 indicating the sound.",
+      "sourceTextSha256": "605e1d445fcaef6b06b0a2fffbdc0ac7813add64384a3593732e402c70534fa5",
+      "uncertain": false
+    },
+    "shuowen:7341": {
+      "text": "In Zhou, rice-washing water is called 泔. Formed from 水, with 甘 indicating the sound.",
+      "sourceTextSha256": "58e522f8b89423baf62609a9bb026cc3974f2c4a82561ef333615086c839e2ef",
+      "uncertain": false
+    },
+    "shuowen:7342": {
+      "text": "Rice-washing water kept a long time. Formed from 水, with 脩 indicating the sound.",
+      "sourceTextSha256": "bc51255715b3c2da1f8f28ea96d1720ee17bf97c28da3d4dda121a344ece105b",
+      "uncertain": false
+    },
+    "shuowen:7343": {
+      "text": "Sediment or dregs. Formed from 水, with 殿 indicating the sound.",
+      "sourceTextSha256": "293031d9dab1c4d4aea2fe9cde333f73b72b0a9277d78bab725b328c40e1a1d2",
+      "uncertain": true
+    },
+    "shuowen:7344": {
+      "text": "Sediment and dregs; turbid mud. Formed from 水, with 於 indicating the sound.",
+      "sourceTextSha256": "e8eb4cb47aee1e26418be28ce8f2af9e11ed4d4ccba47d30556996412fb32a2b",
+      "uncertain": false
+    },
+    "shuowen:7345": {
+      "text": "Sediment. Formed from 水, with 宰 indicating the sound.",
+      "sourceTextSha256": "fdd486a7c6959b6335331c1e3f86a749796781e44b9c11c1c82a49a4d164d97b",
+      "uncertain": false
+    },
+    "shuowen:7346": {
+      "text": "Turbid. Formed from 水, with 念 indicating the sound.",
+      "sourceTextSha256": "a4202414688bfea17b49941ce1b48e08ab4e70f0e60682a2e1dca177f1ae9298",
+      "uncertain": false
+    },
+    "shuowen:7347": {
+      "text": "To soak. Formed from 水, with 龠 indicating the sound.",
+      "sourceTextSha256": "7e6210b08095e39403d1f8464ccccbdc5a7b368ebad31317a1cce8a56432ac52",
+      "uncertain": false
+    },
+    "shuowen:7348": {
+      "text": "To strain wine. Alternatively, to drain. Formed from 网 and 水, with 焦 indicating the sound. Read like 勦 in the Book of Xia's 'Heaven thereby cuts off and destroys.'",
+      "sourceTextSha256": "5ac8dca86a5bd883195369d3138ca7011aa888ecb909608b2c171528e54d75c0",
+      "uncertain": false
+    },
+    "shuowen:7349": {
+      "text": "A spring issuing sideways. Formed from 水, with 殸 indicating the sound. 殸 is the large-seal form of 磬.",
+      "sourceTextSha256": "3579af7abd0f76b77a3d660f7b760bb5cac011278526b8dc992471ec029a883e",
+      "uncertain": false
+    },
+    "shuowen:7350": {
+      "text": "To strain wine through thatch. Alternatively, to drain; alternatively, the appearance of dew. Formed from 水, with 胥 indicating the sound. The Odes says: 'There is wine; strain it for me'; also: 'The falling dew glistens.'",
+      "sourceTextSha256": "b8c12307e8b46d20e2c665640b27520348d91897629c9c26e4ddddfab917c30d",
+      "uncertain": false
+    },
+    "shuowen:7351": {
+      "text": "To be submerged in wine. Formed from 水, with 面 indicating the sound. The Book of Zhou says: 'None dared immerse himself in wine.'",
+      "sourceTextSha256": "43fddedf3f59bbfcdb82029202721ed777452ebd7c8f8b643029ecad3d1c6ec8",
+      "uncertain": false
+    },
+    "shuowen:7352": {
+      "text": "A sour sauce, apparently, as in 酢𤖅. Formed from 水, with abbreviated 將 indicating the sound.",
+      "sourceTextSha256": "ae088025b3e9b908759bbfb7fe6c0b6450f113e34069b4bc0f87d78153ec9b0d",
+      "uncertain": true
+    },
+    "shuowen:7353": {
+      "text": "Thin or slight. Formed from 水, with 京 indicating the sound.",
+      "sourceTextSha256": "e18e196579123929f4440c6bc2a19a173f1f9d2b5286632129357401f61d1a71",
+      "uncertain": false
+    },
+    "shuowen:7354": {
+      "text": "A slight flavor. Formed from 水, with 炎 indicating the sound.",
+      "sourceTextSha256": "48c106f8cc6363635602beffa109bf0e5323342ee12f35feff5a9d4def6225ca",
+      "uncertain": false
+    },
+    "shuowen:7355": {
+      "text": "To eat and then vomit it back up. Formed from 水, with 君 indicating the sound. The Erya says: 'When the Year Star is in 申, it is called 涒灘.'",
+      "sourceTextSha256": "1d0560f6ac30d77471ae13b5b00d4e04ffb64bf08a3da1596db879232a1d0ec4",
+      "uncertain": false
+    },
+    "shuowen:7356": {
+      "text": "To pour or irrigate. Formed from 水, with 堯 indicating the sound.",
+      "sourceTextSha256": "057b9d9b2107e37ac5c7d19088a6c296ed33feef5c11d3f1d63618e4f4758055",
+      "uncertain": false
+    },
+    "shuowen:7357": {
+      "text": "Fluid, as in 𧗁. Formed from 水, with 夜 indicating the sound.",
+      "sourceTextSha256": "4d532980af738aa88a0f206f01dde71043b5b5b94e2048f87b212f42fba9c80a",
+      "uncertain": true
+    },
+    "shuowen:7358": {
+      "text": "Liquid. Formed from 水, with 十 indicating the sound.",
+      "sourceTextSha256": "52954608998bdad7d18519c26f2a301783adbdde2c26ccd362a4f7a3ae62923f",
+      "uncertain": false
+    },
+    "shuowen:7359": {
+      "text": "Having abundant juice. Formed from 水, with 哥 indicating the sound. Read like 哥.",
+      "sourceTextSha256": "243852d29a73be3a0a20198e3f4e79a9809c92619f46de88c9ed46acbb6feb05",
+      "uncertain": false
+    },
+    "shuowen:7360": {
+      "text": "Bean juice. Formed from 水, with 顥 indicating the sound.",
+      "sourceTextSha256": "64b06872e71183334be2b056bb64ee04681728b6edcb72e06d03f9e03073e12d",
+      "uncertain": false
+    },
+    "shuowen:7361": {
+      "text": "A vessel becoming full. Formed from 水, with 益 indicating the sound.",
+      "sourceTextSha256": "0af6e8c55fb1a4f20daab364b7da5467406332cc7e56e254ea43028e52eb2bfa",
+      "uncertain": false
+    },
+    "shuowen:7362": {
+      "text": "To wash. Formed from 水, with 西 indicating the sound. In ancient script it serves as the character for sprinkling and sweeping.",
+      "sourceTextSha256": "0dea2ee9e67354afa8d63918868990d628d2672e45c27256442cc82078aee250",
+      "uncertain": false
+    },
+    "shuowen:7363": {
+      "text": "To wash. Formed from 水, with 條 indicating the sound.",
+      "sourceTextSha256": "a0311d67d6a2f597ba2fe0d9c1d8a8e4bb15cbb25cfa1d11010c17b5a09133f9",
+      "uncertain": false
+    },
+    "shuowen:7364": {
+      "text": "Harmonious. Formed from 水, with 戢 indicating the sound.",
+      "sourceTextSha256": "0e61d7b02d27346f0a06d9d215bf32bb3a230bc269361923c182cadae0d111cc",
+      "uncertain": false
+    },
+    "shuowen:7365": {
+      "text": "Juice. Formed from 水, with 審 indicating the sound. The Spring and Autumn Commentary says: 'Like picking up spilled juice.'",
+      "sourceTextSha256": "81d4ab08b2e3bd5fb0efefdf39b3e90864de2c7406e06c39e171819ee45d16c8",
+      "uncertain": false
+    },
+    "shuowen:7366": {
+      "text": "To drink. Formed from 水, with 弭 indicating the sound.",
+      "sourceTextSha256": "36b8ddeacd6e2dfecdb8a46b0fd940b5352fb5d4300d1700e33190af378777ba",
+      "uncertain": false
+    },
+    "shuowen:7367": {
+      "text": "To sip blood in an oath. Alternatively, to suck. Formed from 水, with 算 indicating the sound.",
+      "sourceTextSha256": "ccc733a127bda29561a56002d4e60e32024af210de8ca3d8d5e9c6d2ee717c6a",
+      "uncertain": true
+    },
+    "shuowen:7368": {
+      "text": "To rinse the mouth. Formed from 水, with 欶 indicating the sound.",
+      "sourceTextSha256": "9fb76f3f54b59406436043718f1ffb825d1ac6578cd04ce3029f7d40c6cc372b",
+      "uncertain": false
+    },
+    "shuowen:7369": {
+      "text": "Cold. Formed from 水, with 冋 indicating the sound.",
+      "sourceTextSha256": "68d944fe3734b25ad2342992ec6ef77912f9be28079f4d9c2f5f354b41c315f3",
+      "uncertain": false
+    },
+    "shuowen:7370": {
+      "text": "Cold. Formed from 水, with 倉 indicating the sound.",
+      "sourceTextSha256": "7c644dfef240893a342cf9ef24d1dc04d83ec405795dcbfd1cdf283e4110153c",
+      "uncertain": false
+    },
+    "shuowen:7371": {
+      "text": "Chilly and cold. Formed from 水, with 靚 indicating the sound.",
+      "sourceTextSha256": "b83cb7b23740cafa4879b30592ccdad8a6a6eb9273eed0d5eea12e3f34b63a99",
+      "uncertain": false
+    },
+    "shuowen:7372": {
+      "text": "A vessel for extinguishing fire. Formed from 水, with 卒 indicating the sound.",
+      "sourceTextSha256": "d47f0072f6542cfc3101644aab4bf0edfbffc983930c7866a008977610e45898",
+      "uncertain": false
+    },
+    "shuowen:7373": {
+      "text": "To wash the hair. Formed from 水, with 木 indicating the sound.",
+      "sourceTextSha256": "aad2dd75be6b3644b134ef02605544d0f82ab0e37671a8c06f14b9cff908a23f",
+      "uncertain": false
+    },
+    "shuowen:7374": {
+      "text": "To wash the face. Formed from 水, with 未 indicating the sound.",
+      "sourceTextSha256": "67690f938f8274295145ccabb0efab20d3393ca82ac6dfd4ad0a593a02c4d57b",
+      "uncertain": false
+    },
+    "shuowen:7375": {
+      "text": "To wash the body. Formed from 水, with 谷 indicating the sound.",
+      "sourceTextSha256": "8a808b009fb98f95a70402dfa23aca95b8b56415218c4cc00db10f20019d76c2",
+      "uncertain": false
+    },
+    "shuowen:7376": {
+      "text": "To wash the hands. Formed from 水, with 喿 indicating the sound.",
+      "sourceTextSha256": "05ebf91ee21de8878dea8c1a250c4b751e609c1aec42e27fd7ade2b5c3be9db7",
+      "uncertain": false
+    },
+    "shuowen:7377": {
+      "text": "To wash the feet. Formed from 水, with 先 indicating the sound.",
+      "sourceTextSha256": "66a7862911938668fcc1d600f460964b71c6b77b32d93d5362d12427ab13536f",
+      "uncertain": false
+    },
+    "shuowen:7378": {
+      "text": "To draw water from a well. Formed from 水 and 及; 及 also indicates the sound.",
+      "sourceTextSha256": "49b823ddf2097ac5217b0be709bfb745c8bc8aa4639c990e518749bb86164331",
+      "uncertain": false
+    },
+    "shuowen:7379": {
+      "text": "To filter, as in 渌. Formed from 水, with 𦎫 indicating the sound.",
+      "sourceTextSha256": "7cb69f68bfdf2dd21684e7deaa10002e354f5a365c231038bf6f37786a1f03c9",
+      "uncertain": true
+    },
+    "shuowen:7380": {
+      "text": "To pour water over something. Formed from 水, with 林 indicating the sound. Alternatively, 淋淋 describes water below a mountain.",
+      "sourceTextSha256": "94116a844fcdf9b9f36d83b8736d68ebaaa9995ff10dcc723a96d600d07e58c7",
+      "uncertain": false
+    },
+    "shuowen:7381": {
+      "text": "To remove. Formed from 水, with 枼 indicating the sound.",
+      "sourceTextSha256": "fef47892e009940a021794fc0b7d2e21342cb66b39a88f58f80dbe04a33c7278",
+      "uncertain": false
+    },
+    "shuowen:7382": {
+      "text": "To wash dirt from clothes. Formed from 水, with 𧹳 indicating the sound.",
+      "sourceTextSha256": "0ec8c7ab71b2eb071518512c8fc78de88248bf04d89d5e07bf26f49a9da52d8a",
+      "uncertain": false
+    },
+    "shuowen:7383": {
+      "text": "To wash dirt away. Formed from 水, with 翟 indicating the sound.",
+      "sourceTextSha256": "f5657aa423c59bf1df2624d403f3d12161fd848abbf431db6faf6df39e9ad192",
+      "uncertain": false
+    },
+    "shuowen:7384": {
+      "text": "To wash dirt away. Formed from 水, with 束 indicating the sound. There is a 涑 river in 河東.",
+      "sourceTextSha256": "5f36b0db81107248cb2a7d39456d6dca370bb9a1458bdf9129462fc6eda74f00",
+      "uncertain": false
+    },
+    "shuowen:7385": {
+      "text": "To beat silk floss in water. Formed from 水, with 敝 indicating the sound.",
+      "sourceTextSha256": "8ae33d6b4d3eab1ad8dff3b583cdda625ebfb3acf425366413662d90fac1d76e",
+      "uncertain": false
+    },
+    "shuowen:7386": {
+      "text": "To smear. Formed from 水 and 土, with 尨 indicating the sound. Read like 隴.",
+      "sourceTextSha256": "fd7ca8d251fe80becd6970111d6f0fffa724f658c4673fa250be7a3d90f57190",
+      "uncertain": false
+    },
+    "shuowen:7387": {
+      "text": "To sprinkle. Formed from 水, with 麗 indicating the sound.",
+      "sourceTextSha256": "c354232dab2d008bbd66602c6958ee2b3d922af0953b1ba0e81f59a6ad692039",
+      "uncertain": false
+    },
+    "shuowen:7388": {
+      "text": "To sprinkle. Formed from 水, with 卂 indicating the sound.",
+      "sourceTextSha256": "4b8f8707f636e3c784ab1e0cf545e60383028d1a11309b964576af203471e0bc",
+      "uncertain": false
+    },
+    "shuowen:7389": {
+      "text": "To dye silk fabrics, giving them color. Formed from 水, with 杂 indicating the sound.",
+      "sourceTextSha256": "dbd57563e7325963c0a8ac8b2c21748efc1ae67f3f8177862cbddf3c63bd898e",
+      "uncertain": false
+    },
+    "shuowen:7390": {
+      "text": "Slippery or smooth. Formed from 廾 and 水, with 大 indicating the sound.",
+      "sourceTextSha256": "526a1ae97ac9c6fe2fe9877be0cdd4dd51a6baec6c1940022c7f293ab298f90c",
+      "uncertain": false
+    },
+    "shuowen:7391": {
+      "text": "Between the sea and Mount Dai, soiling one another is called 㶄. Formed from 水, with 閻 indicating the sound.",
+      "sourceTextSha256": "8ce269cfe72234458cc2ed51c8aae41ecc4bcb20c5bb00e1efb12ff589aaeae8",
+      "uncertain": false
+    },
+    "shuowen:7392": {
+      "text": "To splash and soil. Alternatively, a person in water. Formed from 水, with 贊 indicating the sound.",
+      "sourceTextSha256": "98f8fe70aadf71b8a35fdf7d8d4bbd1ad585e0059da8c47c9111af36c355b8d5",
+      "uncertain": true
+    },
+    "shuowen:7393": {
+      "text": "Having watery vapor in the abdomen. Formed from 水 and 愁; 愁 also indicates the sound.",
+      "sourceTextSha256": "eb16aae64f0afc58013ed5dcbf2c3923a7986ad742aac5a8cf1ac18cf7890f66",
+      "uncertain": false
+    },
+    "shuowen:7394": {
+      "text": "Milk. Formed from 水, with 重 indicating the sound.",
+      "sourceTextSha256": "eab46f9accb7bbf58997ab42552316d907baa7b52d42847df177a71cf9f7f7ce",
+      "uncertain": false
+    },
+    "shuowen:7395": {
+      "text": "Nasal fluid. Formed from 水, with 夷 indicating the sound.",
+      "sourceTextSha256": "42125a580d879902e96df50c63a016a5cddead62909a20cbf084eb4bd4f05132",
+      "uncertain": false
+    },
+    "shuowen:7396": {
+      "text": "The appearance of streaming tears. Formed from 水, with abbreviated 𢿱 indicating the sound. The Odes says: 'Tears stream forth.'",
+      "sourceTextSha256": "b41363c6ecb2832edce428f60d3bc79011b8ffada4fc724d922af592f6d58ac3",
+      "uncertain": false
+    },
+    "shuowen:7397": {
+      "text": "Human bodily fluid. Formed from 水, with 干 indicating the sound.",
+      "sourceTextSha256": "2dd41edb530938b1939aba3009dd184e9ea41be51664acb418654a50efcfbd8d",
+      "uncertain": false
+    },
+    "shuowen:7398": {
+      "text": "Shedding tears without sound is called 泣. Formed from 水, with 立 indicating the sound.",
+      "sourceTextSha256": "b450d362bed8e1fca509b31ec22ecdf6297ad4a3cf0bec226cc57ca2c837f4ea",
+      "uncertain": false
+    },
+    "shuowen:7399": {
+      "text": "Weeping. Formed from 水, with 弟 indicating the sound.",
+      "sourceTextSha256": "b87570e3b0e9f986df714422797c7c8477c07f004d698f07e7bb3e8328e08302",
+      "uncertain": false
+    },
+    "shuowen:7400": {
+      "text": "To rinse or drain, as in 㶕. Formed from 水, with 柬 indicating the sound.",
+      "sourceTextSha256": "ddb31bc8502752396a58da71d2d2ec9c2c2fa83bb46ec9cdd10603c05db07b5d",
+      "uncertain": true
+    }
+  }
+}

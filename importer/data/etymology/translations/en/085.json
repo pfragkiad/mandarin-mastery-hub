@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "79b38f86a1246d3f73e4e39ead29301cc52e1e25f12df4fa30d96f436fa6fa5e",
+    "created_date": "2026-11-22"
+  },
+  "batch": "085",
+  "translations": {
+    "shuowen:8401": {
+      "text": "It depicts a curved vessel receiving things. Some explain 曲 as a silkworm tray. All characters in this group are formed from 曲.",
+      "sourceTextSha256": "cbdf77c5ae366685e085c4f3386017dce4b5cc9d2262f60ab8a263406829ab17",
+      "uncertain": false
+    },
+    "shuowen:8402": {
+      "text": "Bent or crooked. Formed from 曲, with 玉 indicating the sound.",
+      "sourceTextSha256": "08ca490765b3b0ba5c3d7b07ea474d076201fbf2c2f766517ef266d5c5966af2",
+      "uncertain": false
+    },
+    "shuowen:8403": {
+      "text": "An ancient vessel. Formed from 曲, with 舀 indicating the sound.",
+      "sourceTextSha256": "a5b20954e1681e3ce55293532ef1fc496a5738ae415a93ec7b32cb28002c4621",
+      "uncertain": false
+    },
+    "shuowen:8404": {
+      "text": "In eastern Chu, a 缶 jar is called 甾. A pictograph. All characters in this group are formed from 甾.",
+      "sourceTextSha256": "880d0399cb38b10ed2b53de3e170afe436d9002517e2c773770722d3dda85b4b",
+      "uncertain": false
+    },
+    "shuowen:8405": {
+      "text": "A 𣂀, an ancient agricultural implement. Formed from 甾, with 疌 indicating the sound.",
+      "sourceTextSha256": "cc0f33b94a8d7bf5829225b8a415fe8282ee72a5dc269f7f7c4fe89d617f3bdd",
+      "uncertain": false
+    },
+    "shuowen:8406": {
+      "text": "A kind of 𤳊, a rush vessel used to hold seed grain. Formed from 甾, with 弁 indicating the sound.",
+      "sourceTextSha256": "8c298fed3511d82dfd2c75cb934f678b63f888f2c1bcad2d275471c1943bee74",
+      "uncertain": false
+    },
+    "shuowen:8407": {
+      "text": "A 㠷 basket. Formed from 甾, with 并 indicating the sound. Du Lin takes it as a bamboo basket; Yang Xiong as a rush vessel. Read like 軿.",
+      "sourceTextSha256": "472dc8f90823befd9cc8a9c8fe9cf6d07838917d0ce8c4ecf7f458edba04794d",
+      "uncertain": true
+    },
+    "shuowen:8408": {
+      "text": "A 𦉈 vessel. Formed from 甾, with 虍 indicating the sound. Read like 盧.",
+      "sourceTextSha256": "5cebb2c64c924f3e5607f5ec16bd55e850cfe0f306e6b764013c27626fb0b1fd",
+      "uncertain": true
+    },
+    "shuowen:8409": {
+      "text": "The general name for earthen vessels already fired. A pictograph. All characters in this group are formed from 瓦.",
+      "sourceTextSha256": "dbf73ebbba92d90be0c16f799b6c5d98e8d6a6f1198cf011bdb847d695b552b4",
+      "uncertain": false
+    },
+    "shuowen:8410": {
+      "text": "The Zhou household's craftsman who shapes clay. Formed from 瓦, with 方 indicating the sound. Read like 㧚 in 㧚破, 'break.'",
+      "sourceTextSha256": "123c9287de84da5fa8de5a3a5074a58281dbecaa21bf70eb43199ba42ca3be9d",
+      "uncertain": false
+    },
+    "shuowen:8411": {
+      "text": "To make pottery. Formed from 瓦, with 垔 indicating the sound.",
+      "sourceTextSha256": "b3c44da824865b272036b9c870011be9b3c651174cba9d549b8b89c27e305c89",
+      "uncertain": false
+    },
+    "shuowen:8412": {
+      "text": "A roof ridge. Formed from 瓦, with abbreviated 夢 indicating the sound.",
+      "sourceTextSha256": "8f4e69831656a100f9ce7dde46929811e8e2a54b8b50467a578abc14c6193269",
+      "uncertain": false
+    },
+    "shuowen:8413": {
+      "text": "A steamer. Formed from 瓦, with 曾 indicating the sound.",
+      "sourceTextSha256": "dc8ec3b21797a8d5322d41926307c58568caa90753e5221295eb5ca8dac7f968",
+      "uncertain": false
+    },
+    "shuowen:8414": {
+      "text": "A steamer. Alternatively, a perforation. Formed from 瓦, with 鬳 indicating the sound. Read like 言.",
+      "sourceTextSha256": "ad8046abcdcf91511653495ec954617785fe260b76a4cc07bcfb449cb0a6a9df",
+      "uncertain": false
+    },
+    "shuowen:8415": {
+      "text": "An 甌瓿 vessel is called 瓵. Formed from 瓦, with 台 indicating the sound.",
+      "sourceTextSha256": "46a5ebf67fde863d380b0ee4b1c4f821696b9f687d1aab80abd72c9dbd6a3b81",
+      "uncertain": false
+    },
+    "shuowen:8416": {
+      "text": "A large basin. Formed from 瓦, with 尚 indicating the sound.",
+      "sourceTextSha256": "7c48fe687c12cf9b44fc0b0c482b3e32efce28ebbccf1e5503919010d2f56eb3",
+      "uncertain": false
+    },
+    "shuowen:8417": {
+      "text": "A small basin. Formed from 瓦, with 區 indicating the sound.",
+      "sourceTextSha256": "7ce3be7db42a77b639c092941a0aca9e7e68f5199ab51ca31ddd9e45401e6dd4",
+      "uncertain": false
+    },
+    "shuowen:8418": {
+      "text": "An urn. Formed from 瓦, with 公 indicating the sound.",
+      "sourceTextSha256": "bd34fc5c10ec2f7ef60fdbfabb02d8ae2905019d996c79eb9067ad8f0daacc96",
+      "uncertain": false
+    },
+    "shuowen:8419": {
+      "text": "Like an urn, with a long neck, holding ten sheng. Read like 洪. Formed from 瓦, with 工 indicating the sound.",
+      "sourceTextSha256": "f9e71148c9050e23566d27ed43212de21b67044218676e0dea66c531579db7f0",
+      "uncertain": false
+    },
+    "shuowen:8420": {
+      "text": "A small bowl. Formed from 瓦, with 夗 indicating the sound.",
+      "sourceTextSha256": "9c03da040e737106e9847ec90a96bc56787dbb3e9d14575a0245c2f5b49e63a0",
+      "uncertain": false
+    },
+    "shuowen:8421": {
+      "text": "An urn resembling a bottle. Formed from 瓦, with 令 indicating the sound.",
+      "sourceTextSha256": "60bb14343e2fef97626d65aafdf9d3c4b2610567095d3463939f65b09a1c6975",
+      "uncertain": false
+    },
+    "shuowen:8422": {
+      "text": "An urn is called 㼰. Formed from 瓦, with 卑 indicating the sound.",
+      "sourceTextSha256": "eb39714b4efaf0909a1e0ba9dbf52431537ff8e63377b00cb1b7843ecc6cf388",
+      "uncertain": false
+    },
+    "shuowen:8423": {
+      "text": "Like a small 瓿 jar, wide-mouthed and low, used for eating. Formed from 瓦, with 扁 indicating the sound.",
+      "sourceTextSha256": "843e5f9c6ce5828050d58df536ee8eb021d6b28d64b2b2a8fca8f07e37d0f95b",
+      "uncertain": false
+    },
+    "shuowen:8424": {
+      "text": "A low, wide-mouthed vessel. Formed from 瓦, with 咅 indicating the sound.",
+      "sourceTextSha256": "2f65ac33b5b15e6f3faba017bb440d27ef2be7a45430439b31acecfa9cb45af9",
+      "uncertain": false
+    },
+    "shuowen:8425": {
+      "text": "A vessel. Formed from 瓦, with 容 indicating the sound.",
+      "sourceTextSha256": "14c6918e7698c109238a94f426b268ee70519b8aa0fabaa68e7c6504250763af",
+      "uncertain": false
+    },
+    "shuowen:8426": {
+      "text": "The brick or tile called 瓴甓. Formed from 瓦, with 辟 indicating the sound. The Odes says: 'The courtyard path has bricks.'",
+      "sourceTextSha256": "611b1a21caddd554f54935351a4f4c23105818eb0593753a374d7bddf92d4b23",
+      "uncertain": true
+    },
+    "shuowen:8427": {
+      "text": "A well's lining. Formed from 瓦, with 秋 indicating the sound.",
+      "sourceTextSha256": "30c512276128ab75165c21d6dc1f8efab2bf90cf0913b6587764c14832d98746",
+      "uncertain": false
+    },
+    "shuowen:8428": {
+      "text": "A 康瓠, a broken urn. Formed from 瓦, with 臬 indicating the sound.",
+      "sourceTextSha256": "8567df663ed062cf92f7bdb7d442ec31ba1baa62fcb71df3c7177395bcfa3406",
+      "uncertain": false
+    },
+    "shuowen:8429": {
+      "text": "Tile or stone used to scour dirt. Formed from 瓦, with 爽 indicating the sound.",
+      "sourceTextSha256": "4b01d23d6a229f1e86165555e3df991892e0e48e413b8c7e4e9e5189b80ff893",
+      "uncertain": false
+    },
+    "shuowen:8430": {
+      "text": "The sound of stepping on tiles. Formed from 瓦, with 耎 indicating the sound.",
+      "sourceTextSha256": "0928cc2cca949c21229307ae54c3ecfddb2a69a9e1558bf0cd3ca0bfad0b6b92",
+      "uncertain": false
+    },
+    "shuowen:8431": {
+      "text": "To work on the shaft of a bellows, apparently. Formed from 瓦, with 今 indicating the sound.",
+      "sourceTextSha256": "a57b67bb5a932499a9e0676fe8589687bae6db56473457b8d49085e3fb0c7f56",
+      "uncertain": true
+    },
+    "shuowen:8432": {
+      "text": "To break. Formed from 瓦, with 卒 indicating the sound.",
+      "sourceTextSha256": "3e3ca92a1cf24ab7f0d2d7a2d7cefa5228906fdead0b24135f494a46c5995e2a",
+      "uncertain": false
+    },
+    "shuowen:8433": {
+      "text": "Broken or ruined. Formed from 瓦, with 反 indicating the sound.",
+      "sourceTextSha256": "b21f14ed5866c59b63a8b1fca4e7f906c6e6f14c0aeca522b8374cd842fb8460",
+      "uncertain": false
+    },
+    "shuowen:8434": {
+      "text": "An earthen vessel. Formed from 瓦, with 次 indicating the sound.",
+      "sourceTextSha256": "7076e3b1e082e032bb2ff01777a06ca4db75fe7b2c26636cf379c94ec6b3e883",
+      "uncertain": false
+    },
+    "shuowen:8435": {
+      "text": "A wine vessel. Formed from 瓦, with abbreviated 稀 indicating the sound.",
+      "sourceTextSha256": "99c62414fae375377897a959d69bb94cc320e63944f8b4b483c3b6b8ed1e7c89",
+      "uncertain": false
+    },
+    "shuowen:8436": {
+      "text": "With something near, to reach far. A pictograph. In antiquity Hui made bows. The Rites of Zhou lists six bows: 王 and 弧 bows for shooting very hard armor and leather; 夾 and 庾 bows for shields, targets, birds, and beasts; 唐 and 大 bows for learners of archery. All characters in this group are formed from 弓.",
+      "sourceTextSha256": "10b357aec628edbf27c0b1bd1c0d1a20a09d94991fd4a5eefe92fd77cf82cdb8",
+      "uncertain": true
+    },
+    "shuowen:8437": {
+      "text": "A painted bow. Formed from 弓, with 𦎫 indicating the sound.",
+      "sourceTextSha256": "6eff37c2429557555690fcdc1fb265f3a57af14628b70c486ec2e93506b06910",
+      "uncertain": false
+    },
+    "shuowen:8438": {
+      "text": "A bow without binding, whose end can untangle bridle cords. Formed from 弓, with 耳 indicating the sound.",
+      "sourceTextSha256": "f5e8da42a9a98294b14636f6efebd3c0c80f2bcfaeab4f311334d63cdd79a065",
+      "uncertain": true
+    },
+    "shuowen:8439": {
+      "text": "A horn bow; in Luoyang a crossbow is called 弲. Formed from 弓, with 肙 indicating the sound.",
+      "sourceTextSha256": "1383ec3fc86b3b66f8fa275beee39e115df6b8a2a89dc91dbef9605734e00236",
+      "uncertain": false
+    },
+    "shuowen:8440": {
+      "text": "A wooden bow. Formed from 弓, with 瓜 indicating the sound. Alternatively, a bow with little outward curve and much inward curve is called 弧.",
+      "sourceTextSha256": "0ea5876063d64d0bb728992fb7ab983cb2b1d382e11e9f083a0644668f7dfe74",
+      "uncertain": true
+    },
+    "shuowen:8441": {
+      "text": "A bow bending back. Formed from 弓, with 召 indicating the sound. The Odes says: 'The red bow is bent back.'",
+      "sourceTextSha256": "9f51c0accbf8d415ffc8397005d95e630deeaf88c46aee75c45535dea9b73c14",
+      "uncertain": false
+    },
+    "shuowen:8442": {
+      "text": "A bow's curve. Formed from 弓, with 雚 indicating the sound.",
+      "sourceTextSha256": "c41bb55cf21e2719ebffafcc5dbda43f509672c1e7918d9d38d83363bf27db07",
+      "uncertain": false
+    },
+    "shuowen:8443": {
+      "text": "The end of a bow or crossbow where the string rests. Formed from 弓, with 區 indicating the sound.",
+      "sourceTextSha256": "e75bd1d6d32ac2cd93ca90ab64c180b193602fa9319f18bcea689829840f013c",
+      "uncertain": false
+    },
+    "shuowen:8444": {
+      "text": "A bow being handy and effective. Formed from 弓, with 䌛 indicating the sound. Read like 燒.",
+      "sourceTextSha256": "608f6378a128a65d25f92678fa844cdb7d0f66b452add187c03fb3c4c675d59e",
+      "uncertain": false
+    },
+    "shuowen:8445": {
+      "text": "To fit a bowstring. Formed from 弓, with 長 indicating the sound.",
+      "sourceTextSha256": "2aeaed3a2e09bac71fcf91bb72c2b423d1a2425bcab525884c581e1b9afbdcba",
+      "uncertain": false
+    },
+    "shuowen:8446": {
+      "text": "To draw a bow taut. Formed from 弓, with 矍 indicating the sound.",
+      "sourceTextSha256": "51936a1639830b68eca0261ca8c577eca8012dff56d1572463bdf583e4ffc482",
+      "uncertain": false
+    },
+    "shuowen:8447": {
+      "text": "A bow's strong appearance. Formed from 弓, with 朋 indicating the sound.",
+      "sourceTextSha256": "a290173af37fccacf8dd80738507a96212c85a0cf1dd066592288b945508f540",
+      "uncertain": false
+    },
+    "shuowen:8448": {
+      "text": "A bow possessing strength. Formed from 弓, with 畺 indicating the sound.",
+      "sourceTextSha256": "ab33934e8400a782092d63235a07a12d42449344e017b37e546eef36b67edf78",
+      "uncertain": false
+    },
+    "shuowen:8449": {
+      "text": "To hold a bow and notch an arrow. Formed from 弓, with 䜌 indicating the sound.",
+      "sourceTextSha256": "d9108277c28a0d04afc5f4e47c0b78b08f9992de5d19bb68dc4a834a6ddf0e3f",
+      "uncertain": false
+    },
+    "shuowen:8450": {
+      "text": "To draw a bow. Formed from 弓 and 丨.",
+      "sourceTextSha256": "5e227b9f4bb387d5f10f9c51da8c99aa8b8c29b209ade9d90cf038ef2fc6781b",
+      "uncertain": false
+    },
+    "shuowen:8451": {
+      "text": "To draw a bow fully toward something. Formed from 弓, with 于 indicating the sound.",
+      "sourceTextSha256": "75c27b11c153d3e6444142ae5fd173e204adcdac264cf154d64678442afa8eac",
+      "uncertain": false
+    },
+    "shuowen:8452": {
+      "text": "A bow's sound. Formed from 弓, with 厶 indicating the sound. 厶 is the ancient-script character 肱.",
+      "sourceTextSha256": "150540a2dd2dbc97e48d72c2b5244e52df743c8e0ffc836a6bc1765a244f4d6c",
+      "uncertain": false
+    },
+    "shuowen:8453": {
+      "text": "To loosen a bow. Formed from 弓, with 璽 indicating the sound.",
+      "sourceTextSha256": "5c3df58e95a6e27db49762e986b9006adfd681a4ffb20361e897ded8042ad6e4",
+      "uncertain": false
+    },
+    "shuowen:8454": {
+      "text": "A bow becoming unstrung or relaxed. Formed from 弓 and 也.",
+      "sourceTextSha256": "1cf172e3ec6b4f3dd71e79638e393f104d5bbbbfccd1f4525d87a69eee140447",
+      "uncertain": false
+    },
+    "shuowen:8455": {
+      "text": "A bow cover. Formed from 弓 and 𠬢. 𠬢 is a hanging ornament, with the same conception as 𡔷.",
+      "sourceTextSha256": "e894e05048716431fac4a245e7cf878f9cdbabe06e63b91ff196787265085fdb",
+      "uncertain": true
+    },
+    "shuowen:8456": {
+      "text": "A bow with a stock. The Rites of Zhou lists four crossbows: 夾, 庾, 唐, and 大. Formed from 弓, with 奴 indicating the sound.",
+      "sourceTextSha256": "50a5bb65d4e78af3a729df90cff4c7e71edf7eee001cb7f6ec9c091c012386a6",
+      "uncertain": false
+    },
+    "shuowen:8457": {
+      "text": "To draw a crossbow. Formed from 弓, with 𣪊 indicating the sound.",
+      "sourceTextSha256": "b216d3942a738e568827877f6ff38f4651c6fc6cd6ea0299e37b80a36096ffa0",
+      "uncertain": false
+    },
+    "shuowen:8458": {
+      "text": "A crossbow fully drawn. Formed from 弓, with 黃 indicating the sound. Read like 郭.",
+      "sourceTextSha256": "c65adf9ab6b38326c696e490a589d21bf5eb2fc3302ed3f10a5d3eb24e236333",
+      "uncertain": false
+    },
+    "shuowen:8459": {
+      "text": "To shoot. Formed from 弓, with 畢 indicating the sound. The Songs of Chu says: 'Yi shot the sun there.'",
+      "sourceTextSha256": "1b1cd8b184b1d2578821fe8151b9d56975c4f007808b90ccd82803cda0940bf8",
+      "uncertain": false
+    },
+    "shuowen:8460": {
+      "text": "To propel a pellet. Formed from 弓, with 單 indicating the sound.",
+      "sourceTextSha256": "7f75b6d97cadad81b080382b7bf9adabec861b972f9baae5492028e434014cbf",
+      "uncertain": false
+    },
+    "shuowen:8461": {
+      "text": "To release a shot. Formed from 弓, with 癹 indicating the sound.",
+      "sourceTextSha256": "3e9b27dd4edb1c8fe695ddb70b9e4815af5c3bd26e66f66dfb9a891047a5475d",
+      "uncertain": false
+    },
+    "shuowen:8462": {
+      "text": "Emperor Ku's archery official, destroyed by Shaokang of Xia. Formed from 弓, with 幵 indicating the sound. The Analects says: 'Yi was skilled at archery.'",
+      "sourceTextSha256": "99a38679083a8f2597d41bb2d8e3c107ddd015ae0307b75fc1a98b9775cd1b39",
+      "uncertain": false
+    },
+    "shuowen:8463": {
+      "text": "Strong. Formed from two 弓. All characters in this group are formed from 弜.",
+      "sourceTextSha256": "f595846266d7fd308a8d916ebc990125b16e202b4dd8f6908c9ef84fdc529e09",
+      "uncertain": false
+    },
+    "shuowen:8464": {
+      "text": "To assist; to reinforce. Formed from 弜, with 㐁 indicating the sound.",
+      "sourceTextSha256": "15ca1f02a18174cad52048cee78cf1962f4c40a617040dcede35d3b7289d7724",
+      "uncertain": false
+    },
+    "shuowen:8465": {
+      "text": "A bowstring. Formed from 弓, depicting silk twisted together. All characters in this group are formed from 弦.",
+      "sourceTextSha256": "970aa866fc7e5ef9f53d014b7f2c276ba979ad179b1d8678fb0db55865d6e825",
+      "uncertain": true
+    },
+    "shuowen:8466": {
+      "text": "Crooked or perverse, as in 弻戾. Formed from abbreviated 弦 and 盩. Read like 戾.",
+      "sourceTextSha256": "49268fcc61a8495a6e16cbbbadec5974fe2cc3dd301e65317efe623851623dab",
+      "uncertain": true
+    },
+    "shuowen:8467": {
+      "text": "Tightly twisted. Formed from abbreviated 弦, with 少 indicating the sound.",
+      "sourceTextSha256": "8ddf71986f9faf81bb84cddc0a247405f8796e03046046b58c7d1ad19d2eccc6",
+      "uncertain": false
+    },
+    "shuowen:8468": {
+      "text": "Not completed, thus tightly twisted, apparently. Formed from abbreviated 弦, with 曷 indicating the sound. Read like 瘞 in 瘞葬, 'bury.'",
+      "sourceTextSha256": "382f9f1ed8a5129210c9cebe5278eb562760e0201e9d8b229556a107f60166f7",
+      "uncertain": true
+    },
+    "shuowen:8469": {
+      "text": "To tie or bind. Formed from 糸, with 丿 indicating the sound. All characters in this group are formed from 系.",
+      "sourceTextSha256": "ef843787a82c27c2711fd344f035d1987d1f83a4b0e467e37fa42b9fa3f6de4f",
+      "uncertain": false
+    },
+    "shuowen:8470": {
+      "text": "A child's child is called 孫. Formed from 子 and 系. 系 means to continue.",
+      "sourceTextSha256": "78350a0490bf873fb3aa28ca8277311531da744764d4d83764a997beb3831d42",
+      "uncertain": false
+    },
+    "shuowen:8471": {
+      "text": "Connected finely. Formed from 系 and 帛.",
+      "sourceTextSha256": "301f9f13a845ad0effc12e51e1ffc8e8cca090bbbad1fb6a11e3ce48dde0de03",
+      "uncertain": true
+    },
+    "shuowen:8472": {
+      "text": "To follow along. Formed from 系, with 䚻 indicating the sound.",
+      "sourceTextSha256": "21d8dd69e7022ff5024a6ec36468512bc12b076cd95ed170e619e5004d0e5176",
+      "uncertain": false
+    },
+    "shuowen:8473": {
+      "text": "Fine silk. It depicts bundled silk threads. All characters in this group are formed from 糸. Read like 覛.",
+      "sourceTextSha256": "7eeea91838485b395dea6aeca05bcc70a8acab07fb7f36f06e1960047231d7ce",
+      "uncertain": false
+    },
+    "shuowen:8474": {
+      "text": "A silkworm's covering. Formed from 糸, 虫, and abbreviated 黹.",
+      "sourceTextSha256": "1411901a33683af108dd41242035d68cbf69a210ecb366b5d5ffe871df757fda",
+      "uncertain": false
+    },
+    "shuowen:8475": {
+      "text": "To unwind a cocoon into silk thread. Formed from 糸, with 巢 indicating the sound.",
+      "sourceTextSha256": "f1b4f2d26aac5f67c4735eb0044c78052bd514206bbdef70d171d56097dc56a6",
+      "uncertain": false
+    },
+    "shuowen:8476": {
+      "text": "To draw out silk thread. Formed from 糸, with 睪 indicating the sound.",
+      "sourceTextSha256": "b2b6a0af8735813edcb944e0c73578f9ca58547cfe60c1136bc029d91deb70bf",
+      "uncertain": false
+    },
+    "shuowen:8477": {
+      "text": "The end of a silk thread. Formed from 糸, with 者 indicating the sound.",
+      "sourceTextSha256": "b51c37465404bdd9b34b517f87e32ca31d95d9c05a19e4aacea3bcdb198120f8",
+      "uncertain": false
+    },
+    "shuowen:8478": {
+      "text": "Fine silk thread. Formed from 糸, with 面 indicating the sound.",
+      "sourceTextSha256": "f405bd04100aaa42ff3ba33500f1b4dc85ce248f146859567ae40ebb2f0b0e64",
+      "uncertain": false
+    },
+    "shuowen:8479": {
+      "text": "Silk. Formed from 糸, with 屯 indicating the sound. The Analects says: 'Nowadays it is silk; that is economical.'",
+      "sourceTextSha256": "5508d25eaa71ac0ab9ee4a8b51b6807c43623c2e1c4654fd1918ae79af3e84aa",
+      "uncertain": false
+    },
+    "shuowen:8480": {
+      "text": "Raw silk. Formed from 糸, with 肖 indicating the sound.",
+      "sourceTextSha256": "7dcf0ae72c76f8cd7c6ac1dc35623d50a7c7920df338acc872c60db814c694e1",
+      "uncertain": false
+    },
+    "shuowen:8481": {
+      "text": "Thick silk thread. Formed from 糸, with 皆 indicating the sound.",
+      "sourceTextSha256": "c9992bc94cd0f307756e7e546a37c911664e8b2d1e7d3fe302047129532e5ed7",
+      "uncertain": false
+    },
+    "shuowen:8482": {
+      "text": "Silk extending continuously. Formed from 糸, with 巟 indicating the sound.",
+      "sourceTextSha256": "904ee19d3292a8dde782569ba2556caaabf9f53aa64dcd4e88783943678c40f2",
+      "uncertain": false
+    },
+    "shuowen:8483": {
+      "text": "Inferior silk. Formed from 糸, with 气 indicating the sound. The Spring and Autumn Commentary mentions Zangsun He.",
+      "sourceTextSha256": "8e45a9011e7a8c5de047bcf730c20df94399eef47d2f8adf2e62165deab8d376",
+      "uncertain": false
+    },
+    "shuowen:8484": {
+      "text": "Silk waste. Formed from 糸, with 氐 indicating the sound.",
+      "sourceTextSha256": "b46f56c986dcdac333edf389df15803078c63173eaf174699449c9365b7b7864",
+      "uncertain": false
+    },
+    "shuowen:8485": {
+      "text": "Cocoon waste, the tangled ends. Alternatively, silk floss refined in a bag. Formed from 糸, with 圭 indicating the sound.",
+      "sourceTextSha256": "223205fe3e6d4933dfd2412ce947499bff636e1960dd09051112ca0434d84857",
+      "uncertain": true
+    },
+    "shuowen:8486": {
+      "text": "The color of silk. Formed from 糸, with 樂 indicating the sound.",
+      "sourceTextSha256": "c84dbd8af2f542cbdddafb301e41e67fe3136cdef9290106c7e71f4e0618c5da",
+      "uncertain": false
+    },
+    "shuowen:8487": {
+      "text": "To put silk onto a reeling wheel. Formed from 糸, with 崔 indicating the sound.",
+      "sourceTextSha256": "1a63ae111970130b253605c9656ecf16f6f5c902a9de256d7d1893611a3ccf65",
+      "uncertain": false
+    },
+    "shuowen:8488": {
+      "text": "To weave. Formed from 糸, with 巠 indicating the sound.",
+      "sourceTextSha256": "009a2c9bf5f63cdfcb6624a119fe1398cd0126d359c892a8dc56de0abe331c8b",
+      "uncertain": false
+    },
+    "shuowen:8489": {
+      "text": "The general term for making cloth and silk fabric. Formed from 糸, with 戠 indicating the sound.",
+      "sourceTextSha256": "188a2647536f411e9e3f44783447a7efaa7e0cab3b28adf4e688771643215664",
+      "uncertain": false
+    },
+    "shuowen:8490": {
+      "text": "A weaving expression recorded in a 樂浪 regulation, apparently; the wording 樂浪挈令織 is obscure. Formed from 糸 and 式.",
+      "sourceTextSha256": "a597512c8b06fd6148cf1ee7306119c0273dc052fbd1009a1e69544266a8c125",
+      "uncertain": true
+    },
+    "shuowen:8491": {
+      "text": "Loom threads. Formed from 糸, with 壬 indicating the sound.",
+      "sourceTextSha256": "cd18b9dabdc9a357e0dead0d5079fed9d33fce936cf74864846f1baf60c4b9c4",
+      "uncertain": false
+    },
+    "shuowen:8492": {
+      "text": "Loom threads. Formed from 糸, with 宗 indicating the sound.",
+      "sourceTextSha256": "1bd99f26b53bc3495f361a83cb3f39cd4a31a962505e3d13aecce3372b5b726c",
+      "uncertain": false
+    },
+    "shuowen:8493": {
+      "text": "Ten weft threads make a 綹. Formed from 糸, with 咎 indicating the sound. Read like 柳.",
+      "sourceTextSha256": "2fa05271c1ea45efa30f4455b179df6370aebc7427e4a0624a5bbfaf3dc22e13",
+      "uncertain": false
+    },
+    "shuowen:8494": {
+      "text": "The crosswise silk threads in weaving. Formed from 糸, with 韋 indicating the sound.",
+      "sourceTextSha256": "bfb6b0cd5fe7c0a551d50d30d3e2711913e951148599bef9af6de4e4de2177f1",
+      "uncertain": false
+    },
+    "shuowen:8495": {
+      "text": "Weft. Formed from 糸, with 軍 indicating the sound.",
+      "sourceTextSha256": "a0407fc8ee64536333e27b69122f63cb967ecc27b88bfc26a67d1447e08c81c6",
+      "uncertain": false
+    },
+    "shuowen:8496": {
+      "text": "The remainder from weaving. Formed from 糸, with 貴 indicating the sound.",
+      "sourceTextSha256": "47ddcf8b4dfda6be189cb333131c0877093df55c4c8c8e78db0af65c900295b0",
+      "uncertain": false
+    },
+    "shuowen:8497": {
+      "text": "To order or organize threads. Formed from 糸, with 充 indicating the sound.",
+      "sourceTextSha256": "43e6434f5b1dcdd7ee99082ad8a143e84cb9c00535961cdf360f517efc42501a",
+      "uncertain": false
+    },
+    "shuowen:8498": {
+      "text": "To separate silk threads. Formed from 糸, with 己 indicating the sound.",
+      "sourceTextSha256": "607351a72c2f3f3a6126bc73317e3c7e520c6aeb7311779ec315f3fcc5f10400",
+      "uncertain": false
+    },
+    "shuowen:8499": {
+      "text": "Coarse knots in silk. Formed from 糸, with 强 indicating the sound.",
+      "sourceTextSha256": "b00a5cb56e75ca8216aa8c35e500171bf6c9309ca03ab7d64d9644209536f7ba",
+      "uncertain": false
+    },
+    "shuowen:8500": {
+      "text": "A knot in silk. Formed from 糸, with 頪 indicating the sound.",
+      "sourceTextSha256": "a0ad50d10fdf8d66ade754b0dc7f14b636b6d4e4cb06cf64cb6937320561bbb9",
+      "uncertain": false
+    }
+  }
+}

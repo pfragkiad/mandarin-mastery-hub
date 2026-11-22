@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "c94ab9afe3e9ab11d1c1456d8ae230280cc9f09ff6e50866374d58df5f5fae4a",
+    "created_date": "2026-11-22"
+  },
+  "batch": "030",
+  "translations": {
+    "shuowen:2901": {
+      "text": "籧篨, a coarse bamboo mat. From 竹; 遽 supplies the sound.",
+      "sourceTextSha256": "0db6892a9881a45d07c22df5ba9b9af070cad8bb72660ee4ab4237117c99edb8",
+      "uncertain": false
+    },
+    "shuowen:2902": {
+      "text": "The coarse bamboo mat 籧篨. From 竹; 除 supplies the sound.",
+      "sourceTextSha256": "cc8d6c66a3759cfb73e7bb09f6bd9e04329181e7f36c714db71fb4ed75bd7dd8",
+      "uncertain": false
+    },
+    "shuowen:2903": {
+      "text": "A bamboo implement that retains coarse material and removes fine material. From 竹; 麗 supplies the sound.",
+      "sourceTextSha256": "4ca9287dff766e90f4174ada11956a27e5161ce80b36ad20ca07024f52285540",
+      "uncertain": false
+    },
+    "shuowen:2904": {
+      "text": "A large winnowing basket. From 竹; 潘 supplies the sound. Another explanation: a screen.",
+      "sourceTextSha256": "5eaa716151b1732a1eec8ba27187411ac20e5e9b7067bddefee48f6025458664",
+      "uncertain": false
+    },
+    "shuowen:2905": {
+      "text": "A sieve for draining rice. From 竹; 奥 supplies the sound.",
+      "sourceTextSha256": "768e96656febcd22564672d21745e30d2c66c7d4bc607a107e9dc9519499f759",
+      "uncertain": false
+    },
+    "shuowen:2906": {
+      "text": "A cooking sieve, 䉛. From 竹; 數 supplies the sound.",
+      "sourceTextSha256": "7995b32835b97f141680b7ad91316c2e8c9b76f584c9f1aa9d6e01f5f0d86e8b",
+      "uncertain": false
+    },
+    "shuowen:2907": {
+      "text": "A covering used to cover the bottom of a steamer. From 竹; 𢌿 supplies the sound.",
+      "sourceTextSha256": "124f2ef33c3ed7842f264e7f63c2b0943c814574bb8e8fd730a4a694bb85afd0",
+      "uncertain": false
+    },
+    "shuowen:2908": {
+      "text": "A rice basket holding five sheng. From 竹; 稍 supplies the sound. Qin calls the 筥 𥳓.",
+      "sourceTextSha256": "3bf58c0d11909497311bdd7433570d68e5004cf8260275a0c5a23510c5de78a6",
+      "uncertain": false
+    },
+    "shuowen:2909": {
+      "text": "In Chenliu, a rice brush is called 䈰. From 竹; 捎 supplies the sound. Another explanation: a rice vessel holding five sheng; another: Song and Wei call a chopstick tube 䈰.",
+      "sourceTextSha256": "fc797cd937cd1f2c5c53e09437b180d641b08924e6cb21998e6e6f105ecd1b87",
+      "uncertain": false
+    },
+    "shuowen:2910": {
+      "text": "The vessel 䈰. From 竹; 呂 supplies the sound.",
+      "sourceTextSha256": "7374ae92e8383cb1bcd254fcf8a12936159f50f24b0d9f629217c850a815c749",
+      "uncertain": false
+    },
+    "shuowen:2911": {
+      "text": "A container for rice and clothing. From 竹; 司 supplies the sound.",
+      "sourceTextSha256": "89fb31d0de22465b3adf288d1f59e611b23c00a489a774e5ad0a487a70388f5f",
+      "uncertain": false
+    },
+    "shuowen:2912": {
+      "text": "A container, 笥. From 竹; 單 supplies the sound. Han ford ordinances: 簞 is a small basket. The Commentary says: “A basket of food and a jug of drink.”",
+      "sourceTextSha256": "2c4b76177c3153dc88d524f7d9d0ab493d7620f7b9f72b80e716ed3ebbf44da7",
+      "uncertain": false
+    },
+    "shuowen:2913": {
+      "text": "簁箄, a bamboo implement. From 竹; 徙 supplies the sound.",
+      "sourceTextSha256": "565266fcfa1181b0da30e47768d776a7c4729dc26d69179defe318058fc7ecad",
+      "uncertain": false
+    },
+    "shuowen:2914": {
+      "text": "The bamboo implement 簁箄. From 竹; 卑 supplies the sound.",
+      "sourceTextSha256": "015ecb0c3e61c84b91859d70ca5e4744dd8373074a28558b331a2735204713a8",
+      "uncertain": false
+    },
+    "shuowen:2915": {
+      "text": "A round bamboo implement. From 竹; 專 supplies the sound.",
+      "sourceTextSha256": "6588b9daa479ddb2af2e28807de05ada9e996678ff3443a8bdae933a0203d164",
+      "uncertain": false
+    },
+    "shuowen:2916": {
+      "text": "An implement for lifting rice. From 竹; 者 supplies the sound. [The gloss 飯攲 is uncertain.]",
+      "sourceTextSha256": "589505be215fd7434c8a0c21768805779a14f2d19733afa743cba563b0bca232",
+      "uncertain": true
+    },
+    "shuowen:2917": {
+      "text": "A bamboo basket. From 竹; 婁 supplies the sound.",
+      "sourceTextSha256": "bdb8721a38890b1381fc9dc18c94e15eebc2fea1c63564ca25c21e964763b695",
+      "uncertain": false
+    },
+    "shuowen:2918": {
+      "text": "A basket, 籃. From 竹; 良 supplies the sound.",
+      "sourceTextSha256": "164c262b2536d40dc59e4639ef7604836c3171f670ddd45989993cb168d58128",
+      "uncertain": false
+    },
+    "shuowen:2919": {
+      "text": "A large basket frame, 篝. From 竹; 監 supplies the sound.",
+      "sourceTextSha256": "2a1a359df5e3c9005b22d3e44347a875090ec113d50e4e0654f2ef132b71411b",
+      "uncertain": false
+    },
+    "shuowen:2920": {
+      "text": "A basket frame, 笿, usable for perfuming clothes. From 竹; 冓 supplies the sound. In Song and Chu, a bamboo frame used as an enclosure for dwelling is called 篝.",
+      "sourceTextSha256": "fe8fa8898ed2122c9a4abe5ad62c4dd48140f2c091cdd5049baf13c816640821",
+      "uncertain": true
+    },
+    "shuowen:2921": {
+      "text": "A basket for cups. From 竹; 各 supplies the sound.",
+      "sourceTextSha256": "56deb7a0af752efccaac2c54a2b8ef1624445b72b2d3148c3fe81cdc666ec88a",
+      "uncertain": false
+    },
+    "shuowen:2922": {
+      "text": "A basket for cups. From 竹; 夅 supplies the sound. Some say a basket holding chopsticks.",
+      "sourceTextSha256": "065745c0a8f07ae991dc78ae630755db790892a505b974dcc688e7cbf61e7626",
+      "uncertain": false
+    },
+    "shuowen:2923": {
+      "text": "A mirror case. From 竹; 斂 supplies the sound.",
+      "sourceTextSha256": "7e317e90c4b3c52bb826afbcac505543b20ecd4073737b55355392ff5f246d14",
+      "uncertain": false
+    },
+    "shuowen:2924": {
+      "text": "A bamboo implement. From 竹; 贊 supplies the sound. Pronounced like 纂. Another explanation: a cluster.",
+      "sourceTextSha256": "f169c4b934ce77da99192985c434fdbe6c9765cd97cc7d73f580f333bd6d3ef5",
+      "uncertain": true
+    },
+    "shuowen:2925": {
+      "text": "A basket or case, 笭. From 竹; 贏 supplies the sound.",
+      "sourceTextSha256": "1ccca459ce1d06a8350cc0426afa04f2211b3fc6eef47a8db06aa34eb132a1f6",
+      "uncertain": false
+    },
+    "shuowen:2926": {
+      "text": "A bamboo implement. From 竹; 𠛹 supplies the sound.",
+      "sourceTextSha256": "35f02d8118c0581261b8e21b8e215286c2446d68e14a33c7f1a371ca62d59510",
+      "uncertain": false
+    },
+    "shuowen:2927": {
+      "text": "A square vessel for millet. From 竹, 皿 and 皀.",
+      "sourceTextSha256": "40c31d56dcff88197d5076c83133981e21bd5f551dd6774e29e5f36b6e9ba169",
+      "uncertain": false
+    },
+    "shuowen:2928": {
+      "text": "A round vessel for millet. From 竹 and 皿; 甫 supplies the sound.",
+      "sourceTextSha256": "452cec5fcc0f11fcc1a4016ea8d71bfb5abd9de1bb4ab065e797fff348a9000d",
+      "uncertain": false
+    },
+    "shuowen:2929": {
+      "text": "A bamboo pedestal dish. From 竹; 邊 supplies the sound.",
+      "sourceTextSha256": "312c551405e6dc0a5a408d7d0051d18b13c70ee05349ddc7d037351d55aa8211",
+      "uncertain": false
+    },
+    "shuowen:2930": {
+      "text": "The grain container 篅. From 竹; 屯 supplies the sound.",
+      "sourceTextSha256": "0e507cab0440feb4305862ffa61b0e17f92b28b301f92490fc7343a0919387ef",
+      "uncertain": false
+    },
+    "shuowen:2931": {
+      "text": "A round container made of split bamboo for holding grain. From 竹; 耑 supplies the sound.",
+      "sourceTextSha256": "3def4f12a241498ed50037f7c6c2e644edfde7df39136274409a609bd212cf32",
+      "uncertain": false
+    },
+    "shuowen:2932": {
+      "text": "A tall bamboo chest. From 竹; 鹿 supplies the sound.",
+      "sourceTextSha256": "0c09714358beaa86a8c551ce81850d2e97ebc1077a6232885e307a35fb621d32",
+      "uncertain": false
+    },
+    "shuowen:2933": {
+      "text": "A large bamboo tube. From 竹; 昜 supplies the sound.",
+      "sourceTextSha256": "65f1850263a5d26f4ac9356ecfda9d77a598561bad0b7daeceb9ec86dbe1c1d8",
+      "uncertain": false
+    },
+    "shuowen:2934": {
+      "text": "A cut section of bamboo. From 竹; 甬 supplies the sound.",
+      "sourceTextSha256": "270a640cbdeac3c123004152d6736f02f3c528091afdb275edd4b4e90ab5c22e",
+      "uncertain": false
+    },
+    "shuowen:2935": {
+      "text": "A bamboo carriage or litter. From 竹; 便 supplies the sound.",
+      "sourceTextSha256": "d9bf070b6d7b6635b6f8dc986c304db37d6e1e19f86b991666613efdfb0c703b",
+      "uncertain": false
+    },
+    "shuowen:2936": {
+      "text": "A bird cage. From 竹; 奴 supplies the sound.",
+      "sourceTextSha256": "08be74fcf5f18e35256d759da167e3223103cae46863ebb1f5ea74b2d1080b75",
+      "uncertain": false
+    },
+    "shuowen:2937": {
+      "text": "A bamboo pole. From 竹; 干 supplies the sound.",
+      "sourceTextSha256": "f9cb443abd72ebe4404e7b77718476f50722da7457f92bf629a12e9234bc469d",
+      "uncertain": false
+    },
+    "shuowen:2938": {
+      "text": "An implement for trapping fish beneath a cover. From 竹; 靃 supplies the sound.",
+      "sourceTextSha256": "42e1a4d3e2851140ccd2b203a435ee1ba4c2e6f9f6fb78a5ce1140b72f6fa1c0",
+      "uncertain": false
+    },
+    "shuowen:2939": {
+      "text": "One piece of bamboo. From 竹; 固 supplies the sound.",
+      "sourceTextSha256": "398be452e43967a2a3adfd91da3fb8d1d9589f0b833040abcbf7d7bbdd8c6815",
+      "uncertain": false
+    },
+    "shuowen:2940": {
+      "text": "A bamboo rope. From 竹; 交 supplies the sound.",
+      "sourceTextSha256": "2191a703840072dcd7d19cc2207ea39d4694cc4b6008ea96f6a04cafa0f7460e",
+      "uncertain": false
+    },
+    "shuowen:2941": {
+      "text": "A bamboo rope, 筊. From 竹; 作 supplies the sound.",
+      "sourceTextSha256": "aa8a2e4a1c6c616d383adeda849d7f26ccfd6c527f257907882e4d7ef591fe62",
+      "uncertain": false
+    },
+    "shuowen:2942": {
+      "text": "A mat covering padding. From 竹; 沾 supplies the sound. Pronounced like 錢.",
+      "sourceTextSha256": "1a1bb951a448381cdb3ad1f45e91108da5eb10537f09f154b35fbf8bc905ee2d",
+      "uncertain": true
+    },
+    "shuowen:2943": {
+      "text": "A fan. From 竹; 疌 supplies the sound.",
+      "sourceTextSha256": "e8fc032ff12184066611ff989eb59c291dcf1f86efb3ae46599d615e71654857",
+      "uncertain": false
+    },
+    "shuowen:2944": {
+      "text": "A vessel for carrying earth. Another explanation: a basket, 笭. From 竹; 龍 supplies the sound.",
+      "sourceTextSha256": "c49ebd3b2918f9120289640dc87f9dbc431626290f1fc5776586755c61e6774d",
+      "uncertain": false
+    },
+    "shuowen:2945": {
+      "text": "A carrying basket or wrapping container, 袌. From 竹; 襄 supplies the sound. [The exact object is uncertain.]",
+      "sourceTextSha256": "007606af0f555dba96462a73d7977364643d707d37d8ea768f62c8dbac404dd8",
+      "uncertain": true
+    },
+    "shuowen:2946": {
+      "text": "That which can wind up rope. From 竹, pictographic; the middle depicts what a hand pushes and grasps.",
+      "sourceTextSha256": "5a2cb509515754f99572e0f7b90e14cc19834f5faa1e83056edab9c15af1f365",
+      "uncertain": false
+    },
+    "shuowen:2947": {
+      "text": "A bamboo vessel holding meat in ancestral temples. From 竹; 尞 supplies the sound. The Rites of Zhou says: “Provide basins and 簝 to await service.”",
+      "sourceTextSha256": "94358d288ed24b42947a6f66baaa8f62c43b188cd35a99b0c8e888c700c98007",
+      "uncertain": false
+    },
+    "shuowen:2948": {
+      "text": "A basket for watering cattle. From 竹; 豦 supplies the sound. Square ones are 筐; round ones are 𥴧.",
+      "sourceTextSha256": "76f424a704a3e2b007d61d8cc64929a74135a53cd5808f9e81f0a3265af3b51f",
+      "uncertain": false
+    },
+    "shuowen:2949": {
+      "text": "A vessel for watering horses. From 竹; 兜 supplies the sound.",
+      "sourceTextSha256": "a0f18d4dbeacf969b05fca7a71f19f3e8871e23d042b174a204f2def0bb36201",
+      "uncertain": false
+    },
+    "shuowen:2950": {
+      "text": "Layered bamboo shafts for spears and halberds. From 竹; 盧 supplies the sound. The Spring and Autumn Discourses of the States says: “A dwarf supports the 籚.”",
+      "sourceTextSha256": "94862b72e2c6655e079015c7ac76475866614681cc5195cd123a41f009fd8463",
+      "uncertain": false
+    },
+    "shuowen:2951": {
+      "text": "Pincers, 籋. From 竹; 拑 supplies the sound.",
+      "sourceTextSha256": "bc8c390c29c823f7d725879bdba877785063d4e26e7417b4801a3a0940531b23",
+      "uncertain": false
+    },
+    "shuowen:2952": {
+      "text": "Pincers, 箝. From 竹; 爾 supplies the sound.",
+      "sourceTextSha256": "b520cd2015957add2016c5649bf86150c6f715f42931e7dc70cc737494fe1edf",
+      "uncertain": false
+    },
+    "shuowen:2953": {
+      "text": "A canopy like a broad hat. From 竹; 登 supplies the sound.",
+      "sourceTextSha256": "2873b3809e349ea481f4608c7b2e1c206ee375cc6635df5b144f35211bec8fb2",
+      "uncertain": false
+    },
+    "shuowen:2954": {
+      "text": "A 簦 without a handle, a hat. From 竹; 立 supplies the sound.",
+      "sourceTextSha256": "38bed126487c6735ef03f7ac140860f43e37bf96333cf738822f97ea6a25d771",
+      "uncertain": false
+    },
+    "shuowen:2955": {
+      "text": "The receiving compartment of a large cart. From 竹; 相 supplies the sound. [The vehicle term 牝服 is uncertain.]",
+      "sourceTextSha256": "186bf17f8edbad222231d3333e74363968ce7b44debcbba43d11dc1445aafc26",
+      "uncertain": true
+    },
+    "shuowen:2956": {
+      "text": "A carriage basket or rail. From 竹; 匪 supplies the sound.",
+      "sourceTextSha256": "23ad4d699df72884d4ccbd2bd1aef1d4978e1860205f1350638a84cb5c4bc735",
+      "uncertain": false
+    },
+    "shuowen:2957": {
+      "text": "A carriage basket or rail. From 竹; 令 supplies the sound. Another explanation: a case, 籯.",
+      "sourceTextSha256": "55496dd5a133cad876246f070f0ee0e1705e995ea3f5e0c49abc5ff07c1be0c3",
+      "uncertain": false
+    },
+    "shuowen:2958": {
+      "text": "To curry a horse. From 竹; 剡 supplies the sound.",
+      "sourceTextSha256": "b7a039a90f4d2baf64a59c0e4e03877e0b86cef3f53e09ae76070a471033992d",
+      "uncertain": false
+    },
+    "shuowen:2959": {
+      "text": "A horsewhip. From 竹; 朿 supplies the sound.",
+      "sourceTextSha256": "0ef2e8167a3a2fbe693d3fe23626898d835b0e2a30c5791473d71df18c234b77",
+      "uncertain": false
+    },
+    "shuowen:2960": {
+      "text": "To strike a horse. From 竹; 𡍮 supplies the sound.",
+      "sourceTextSha256": "68b7d8773e377e43d133eb2360a8f341594628d68033a77c195b11e65473aa30",
+      "uncertain": false
+    },
+    "shuowen:2961": {
+      "text": "A whip. From 竹; 朵 supplies the sound.",
+      "sourceTextSha256": "7aa1623598bbb8d23e34603deddde1c6c87d125e70a7e6dd97c5b97b53b6d7e7",
+      "uncertain": false
+    },
+    "shuowen:2962": {
+      "text": "The driver's whip for a sheep-drawn carriage, with a needle half a fen long fixed at its tip. From 竹; 内 supplies the sound.",
+      "sourceTextSha256": "29535b2a0299d4f1e5b8df5c8389fa8eb02d42ef538e68db4090de3642470651",
+      "uncertain": false
+    },
+    "shuowen:2963": {
+      "text": "A container for crossbow bolts, carried on a person's back. From 竹; 闌 supplies the sound.",
+      "sourceTextSha256": "e9d32f5ad97feac28c42fd284a75d725489216168b4f41d58ca4595379d267f7",
+      "uncertain": false
+    },
+    "shuowen:2964": {
+      "text": "A crossbow-bolt case. From 竹; 服 supplies the sound. The Rites of Zhou says: “In mid-autumn present arrows and cases.”",
+      "sourceTextSha256": "f1ef80e99cd93e6ed13f1a3cfb8de964d1b719ab7a80219b73d15be439c3e61c",
+      "uncertain": false
+    },
+    "shuowen:2965": {
+      "text": "The object 栙雙, apparently a bamboo sail or frame. From 竹; 朱 supplies the sound. [The rare gloss is uncertain.]",
+      "sourceTextSha256": "a37d4dc6c458fe33130cadaa4218e261e1f7c57bc5fc2562e5c7502a0f3898c9",
+      "uncertain": true
+    },
+    "shuowen:2966": {
+      "text": "A rod of split bamboo. From 竹; 占 supplies the sound. Yingchuan people call the tablets children write on 笘.",
+      "sourceTextSha256": "6204ac02317b910a0baed7b9f9bebc3b3984f69d964712c15f886b872eb62e4d",
+      "uncertain": false
+    },
+    "shuowen:2967": {
+      "text": "To beat with a bamboo rod. From 竹; 旦 supplies the sound.",
+      "sourceTextSha256": "9922a209495717b788949804b9b3396956526db33aa34ed041872cccebf48742",
+      "uncertain": false
+    },
+    "shuowen:2968": {
+      "text": "To strike. From 竹; 台 supplies the sound.",
+      "sourceTextSha256": "a5c208e0a7197f2bd2306e8b3b3102aea7132fb93b87020e462a59b00b05afaf",
+      "uncertain": false
+    },
+    "shuowen:2969": {
+      "text": "To verify. Another explanation: sharp; to pierce through. From 竹; 韱 supplies the sound.",
+      "sourceTextSha256": "c8615074e53a20376cda059fc796f7f7c12b6306fac7901d9195c02fc71eefcc",
+      "uncertain": false
+    },
+    "shuowen:2970": {
+      "text": "A board or placard. From 竹; 殿 supplies the sound.",
+      "sourceTextSha256": "8b2a9e452d897958058c3b1f061185431176851dc8be4287002c5d3a418ff9c9",
+      "uncertain": true
+    },
+    "shuowen:2971": {
+      "text": "A needle for stitching clothing. From 竹; 咸 supplies the sound.",
+      "sourceTextSha256": "2bafa27c1558a4c6b9b6ca9b058077db2ee6a86a3b5f91f466aad35a09c1effe",
+      "uncertain": false
+    },
+    "shuowen:2972": {
+      "text": "To strike a person with a pole. From 竹; 削 supplies the sound. The music of Shun of Yu was called 箾韶.",
+      "sourceTextSha256": "2ee3a9131fda43bff164d05aa05ba7e337cdf2b6e5a3329c079db31fab6b2511",
+      "uncertain": false
+    },
+    "shuowen:2973": {
+      "text": "A pipe instrument with thirty-six reeds. From 竹; 亏 supplies the sound.",
+      "sourceTextSha256": "3f4f9198e47ae96c49c2e9bd50cfd5a9b816bc79afefad6e91af6e03c394767e",
+      "uncertain": false
+    },
+    "shuowen:2974": {
+      "text": "Thirteen reeds, resembling a phoenix's body. 笙 is the sound of the first month; things are born then, hence its name. The large is called 巢, the small 和. From 竹; 生 supplies the sound. Anciently Sui made the 笙.",
+      "sourceTextSha256": "59d165703497d4ac8c4e170a36d18e2363ca1c954aca5925315af5f9607be82e",
+      "uncertain": false
+    },
+    "shuowen:2975": {
+      "text": "The reed inside a 笙. From 竹; 黃 supplies the sound. Anciently Nüwa made the 簧.",
+      "sourceTextSha256": "9eed63f45d598e93332ebfb2be9e395851159a46b3ab1b2ebf8ec8158200c193",
+      "uncertain": false
+    },
+    "shuowen:2976": {
+      "text": "A kind of reed instrument. From 竹; 是 supplies the sound.",
+      "sourceTextSha256": "35e7090387a6ba480d58a9c451a7b9934a6857b745393d4510a1c74f5c2b22be",
+      "uncertain": false
+    },
+    "shuowen:2977": {
+      "text": "A musical instrument of pipes of unequal lengths, resembling a phoenix's wings. From 竹; 肅 supplies the sound.",
+      "sourceTextSha256": "6c1dc1ae6f8bf52c449d5f24ce359ccfbe1a936266f316595b30730d0ea467ff",
+      "uncertain": false
+    },
+    "shuowen:2978": {
+      "text": "A through-pipe flute. From 竹; 同 supplies the sound.",
+      "sourceTextSha256": "27060a28017d4f478701b38f7084ab30133810e581a42c7d21cb83caa6e7e428",
+      "uncertain": true
+    },
+    "shuowen:2979": {
+      "text": "A three-holed pipe: the large is called 笙, the middle 籟, the small 箹. From 竹; 賴 supplies the sound.",
+      "sourceTextSha256": "fc76f82138994e0ced2c20dcbf4a118e7b227218d983cfa83865478c5f814bb0",
+      "uncertain": false
+    },
+    "shuowen:2980": {
+      "text": "A small 籟 pipe. From 竹; 約 supplies the sound.",
+      "sourceTextSha256": "d393ee4d3e77920d01bf2ac70c71f91eb3c38d68398413be9518f28091483118",
+      "uncertain": false
+    },
+    "shuowen:2981": {
+      "text": "Like a 篪, with six holes. The sound of the twelfth month, when things open the earth and sprout, hence called 管. From 竹; 官 supplies the sound.",
+      "sourceTextSha256": "3d6ebe85422f783ed707af6aea5acdb5e451fe7e2f8142145eb06b875fd18ca7",
+      "uncertain": false
+    },
+    "shuowen:2982": {
+      "text": "A small pipe is called 篎. From 竹; 眇 supplies the sound.",
+      "sourceTextSha256": "b5fd1e3f6445cbd9ac9a2f0304dcba93b749f45da44b4b7ba6c92ec8581ccb8b",
+      "uncertain": false
+    },
+    "shuowen:2983": {
+      "text": "A seven-holed tube. From 竹; 由 supplies the sound. The Qiang flute has three holes.",
+      "sourceTextSha256": "63015e2f434c3d268d8dbf4fe631232e9c9a5c6b28fd25394dcbfbd4b9c2a148",
+      "uncertain": false
+    },
+    "shuowen:2984": {
+      "text": "A five-stringed musical instrument with bent bamboo. From 竹 and 𢀜; 𢀜 means to hold it. 竹 also supplies the sound.",
+      "sourceTextSha256": "bfbd55161a57d1d80de33f8cca0eb327177699a63863bd8387d3da1f34f61786",
+      "uncertain": true
+    },
+    "shuowen:2985": {
+      "text": "A musical instrument with plucked strings and a bamboo body. From 竹; 爭 supplies the sound.",
+      "sourceTextSha256": "9a4cc69860f1972a9db66db7553a550e7850420f406f6bab140a85565966cb3e",
+      "uncertain": false
+    },
+    "shuowen:2986": {
+      "text": "A blowing tube called 吹鞭. From 竹; 孤 supplies the sound. [The exact instrument is uncertain.]",
+      "sourceTextSha256": "1baaad53f7a9c8b87fd522dd6710518bfd58b9c29d92d2e08c8f580671f58a17",
+      "uncertain": true
+    },
+    "shuowen:2987": {
+      "text": "A tube to blow into. From 竹; 秋 supplies the sound.",
+      "sourceTextSha256": "42aa63125d4b29619497b49cf704cd34ffed0ca32bb38a1af0116578d397dc71",
+      "uncertain": false
+    },
+    "shuowen:2988": {
+      "text": "Arrows used in pitch-pot. From 竹; 壽 supplies the sound.",
+      "sourceTextSha256": "df1b3674c964e8edfc02018394e50681969f2da568298bd3030262c6a310dbea",
+      "uncertain": false
+    },
+    "shuowen:2989": {
+      "text": "Moving game pieces so as to block one another is called 簺. From 竹 and 塞; 塞 also supplies the sound.",
+      "sourceTextSha256": "6be39697c96ba40d73269e08e4957960fa93a327d92433185be9f27bebee369e",
+      "uncertain": false
+    },
+    "shuowen:2990": {
+      "text": "A board game with six throwing rods and twelve pieces. From 竹; 博 supplies the sound. Anciently Wuzhou invented it.",
+      "sourceTextSha256": "74289d17a8a7a0089c215cf78578fc1f8b9e81baf03e7b4db76fd0f74a2fe4d8",
+      "uncertain": false
+    },
+    "shuowen:2991": {
+      "text": "A fence. From 竹; 畢 supplies the sound. The Spring and Autumn commentary says: “A wicker gate and a narrow opening.”",
+      "sourceTextSha256": "3381cea4d74b68eeabffc552cc0c3024482851f086b400970b405a1568d3c7a1",
+      "uncertain": false
+    },
+    "shuowen:2992": {
+      "text": "To cover so something cannot be seen. From 竹; 愛 supplies the sound.",
+      "sourceTextSha256": "ff621071c08fd37b7afa53f55993d1d13edf3f5fe5f9c49c9dc1ef762adb11bd",
+      "uncertain": false
+    },
+    "shuowen:2993": {
+      "text": "A screen used when shooting with corded arrows. From 竹; 嚴 supplies the sound.",
+      "sourceTextSha256": "a95ef4b7251f67c038ccf53e70c91c32e750561269d26875ea068059af4f27c1",
+      "uncertain": false
+    },
+    "shuowen:2994": {
+      "text": "A restricted park. From 竹; 御 supplies the sound. The Spring and Autumn commentary says: “The marsh's 目篽.” [The quoted expression is uncertain.]",
+      "sourceTextSha256": "a8107f8d06954ddbd6765f7a7ee2f5a0413b6ae0bb163828d074823688a04c2f",
+      "uncertain": true
+    },
+    "shuowen:2995": {
+      "text": "Six inches long, used for calendrical calculations. From 竹 and 弄: only through constant handling does one avoid errors.",
+      "sourceTextSha256": "333966a00c4e6ab43effd20e2b87b6bd2b230a563fad922ce2cf64d01a5d2c87",
+      "uncertain": false
+    },
+    "shuowen:2996": {
+      "text": "To calculate. From 竹 and 具. Pronounced like 筭.",
+      "sourceTextSha256": "f0c7851feb9819997abc3f02dc9eabaa9bb9a24dd05e010293c64f25cd5f1ce0",
+      "uncertain": false
+    },
+    "shuowen:2997": {
+      "text": "This character was originally missing.",
+      "sourceTextSha256": "56d7ec09b08a7c8625c8f8595465b4e796a2c7e6c3d1e174f72f18742ae0aaba",
+      "uncertain": false
+    },
+    "shuowen:2998": {
+      "text": "A small room beside an upper gallery. From 竹; 移 supplies the sound. The Shuowen also uses 誃.",
+      "sourceTextSha256": "ffcdedeb1a5044f87f81e4d9a33e43065ac7c42fcff8651513dcf361f5ff2f0d",
+      "uncertain": false
+    },
+    "shuowen:2999": {
+      "text": "The skin of bamboo. From 竹; 均 supplies the sound.",
+      "sourceTextSha256": "5d5776dda180cd0508c5ca420fff49e593c1b5ca930679391df8bfad5f5a6d5b",
+      "uncertain": false
+    },
+    "shuowen:3000": {
+      "text": "What dukes and scholars tuck into their belts. From 竹; 勿 supplies the sound. Note: the large-seal form is 𡇉, pictographic. Its meaning is “worn at the belt”; anciently the 笏 was worn there. This character was added by later people.",
+      "sourceTextSha256": "b32fadc61364e8c58460dd21301fd45d58be9a2a3d2f8d0ad316746adc77a7da",
+      "uncertain": false
+    }
+  }
+}

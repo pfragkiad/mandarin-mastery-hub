@@ -98,6 +98,28 @@ class EtymologyHandoffTests(unittest.TestCase):
         ids = {entry['id'] for entry in self.characters['舌']['entries']}
         self.assertTrue({'shuowen:941', 'shuowen:1437'} <= ids)
 
+    def test_all_english_drafts_are_separate_and_bound_to_exact_chinese(self):
+        drafts = 0
+        uncertain = 0
+        for entry in self.entries.values():
+            if entry['sourceId'] == 'howell':
+                self.assertNotIn('translation', entry)
+                continue
+            draft = entry['translation']
+            drafts += 1
+            uncertain += int(draft['uncertain'])
+            self.assertEqual(draft['language'], 'en')
+            self.assertEqual(draft['method'], 'ai-generated')
+            self.assertEqual(draft['reviewStatus'], 'unreviewed-ai-draft')
+            self.assertEqual(draft['sourceTextSha256'], hashlib.sha256(entry['text'].encode('utf-8')).hexdigest())
+            self.assertNotEqual(draft['text'], entry['text'])
+            self.assertTrue(draft['text'].strip())
+        self.assertEqual(drafts, 9833)
+        meta = self.index['dataset_metadata']['translation_layer']
+        self.assertEqual(meta['record_count'], drafts)
+        self.assertEqual(meta['uncertain_record_count'], uncertain)
+        self.assertEqual(self.index['dataset_metadata']['version'], '1.1.0')
+
     def test_babelstone_paths_tokens_regions_and_fail_closed_boundaries(self):
         for character in self.characters.values():
             structure = character['babelstone']

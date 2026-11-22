@@ -10,6 +10,7 @@ imports; the application does not currently fetch or display them.
 | [manifest.schema.json](manifest.schema.json) | JSON Schema 2020-12 for the actual manifest, requiring dataset metadata, complete-notice fields and the unreviewed-source status. Authoring/validation only. |
 | [howell/](howell/README.md) | English author interpretations, original PDF, extracted text and both MIT notices. |
 | [shuowen/](shuowen/README.md) | Original upstream archive containing individually identified Chinese JSON records, Apache-2.0 notice and source-format documentation. |
+| [translations/](translations/README.md) | Separate, newly AI-authored English Shuowen drafts, exact-source hashes and schema; original Chinese stays unchanged. |
 | [.gitattributes](.gitattributes) | Prevents Git line-ending conversion of checksum-bound source files. |
 
 ## Acquire and verify

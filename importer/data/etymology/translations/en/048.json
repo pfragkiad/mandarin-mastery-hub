@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "ce038199def2da1fd3b4d20cc7e9aae6a749d6a30dde4868849778f02c275d38",
+    "created_date": "2026-11-22"
+  },
+  "batch": "048",
+  "translations": {
+    "shuowen:4701": {
+      "text": "A crooked mouth, 𤺉. Formed from 疒, with abbreviated 決 indicating the sound.",
+      "sourceTextSha256": "4ef5b61d436291d6ac82e41238f14877397c5012899742704776adaa3608375b",
+      "uncertain": false
+    },
+    "shuowen:4702": {
+      "text": "Unable to speak. Formed from 疒, with 音 indicating the sound.",
+      "sourceTextSha256": "34dbdaa2b471d65f4bd573c1f167344cb379bfbc837623edb19a33005394819a",
+      "uncertain": false
+    },
+    "shuowen:4703": {
+      "text": "A lump on the neck. Formed from 疒, with 嬰 indicating the sound.",
+      "sourceTextSha256": "c2e4ef17fb711edf80b31aa3dc75389202c1908b45939a266e4236a0a232b77d",
+      "uncertain": false
+    },
+    "shuowen:4704": {
+      "text": "Swelling of the neck. Formed from 疒, with 婁 indicating the sound.",
+      "sourceTextSha256": "42c03d7afe02088a6d56cea8516642671bedb2d011b1b94608278c3f31f2d8ec",
+      "uncertain": false
+    },
+    "shuowen:4705": {
+      "text": "To tremble. Formed from 疒, with 又 indicating the sound.",
+      "sourceTextSha256": "4a1775bab32eaa82948493968b2c0db5a41b0e5dd8bb6877266093777b990d98",
+      "uncertain": false
+    },
+    "shuowen:4706": {
+      "text": "Accumulated blood. Formed from 疒, with 於 indicating the sound.",
+      "sourceTextSha256": "e54d51445aa9def6eb0ac5c00c5e6bc4af40c5cf1398e5d4db9d00005322a6bb",
+      "uncertain": false
+    },
+    "shuowen:4707": {
+      "text": "Abdominal pain. Formed from 疒, with 山 indicating the sound.",
+      "sourceTextSha256": "c9f5594d21b77d51a732f9aadd51615c83765873ef20b3394b55934115d12dbd",
+      "uncertain": false
+    },
+    "shuowen:4708": {
+      "text": "An ailment of the lower abdomen. Formed from 疒, with abbreviated 肘 indicating the sound.",
+      "sourceTextSha256": "df412a67cd4b6d95f345e9eea40f9da5fe1c75418d846c7a6590428e62b986c7",
+      "uncertain": false
+    },
+    "shuowen:4709": {
+      "text": "Fullness. Formed from 疒, with 𡚤 indicating the sound.",
+      "sourceTextSha256": "f6ff27b2a498a42ed1d9dc66424ceca493da386cf434115526a6ce2d144c2b16",
+      "uncertain": false
+    },
+    "shuowen:4710": {
+      "text": "An illness causing one to bend forward. Formed from 疒, with 付 indicating the sound.",
+      "sourceTextSha256": "3de6c5dbcd555c05359d32f90a8e50864ff14aef7f59d18eff21c54d4ce3e11d",
+      "uncertain": false
+    },
+    "shuowen:4711": {
+      "text": "A curved spine. Formed from 疒, with 句 indicating the sound.",
+      "sourceTextSha256": "6b6df8a13649c49b83ccd16818e3fb64198129867a19e1c569e81ab6932445a2",
+      "uncertain": false
+    },
+    "shuowen:4712": {
+      "text": "Qi moving contrary to its course. Formed from 疒, 屰 and 欠.",
+      "sourceTextSha256": "ac4d807b68f5469b81e575039ff92359bb39677111c9a0f413f4b2d013066ba1",
+      "uncertain": false
+    },
+    "shuowen:4713": {
+      "text": "Unsettled qi. Formed from 疒, with 季 indicating the sound.",
+      "sourceTextSha256": "d19cf87c39d75b38a5106d4ffc0f77f9a10ec8f5cc2fd84bfeebae5ed5443eec",
+      "uncertain": false
+    },
+    "shuowen:4714": {
+      "text": "A wind ailment. Formed from 疒, with 非 indicating the sound.",
+      "sourceTextSha256": "d21aba57ffd6847b09ffd957b5091a2c3537c482ee85e7631d1d4ba1cb1ca3eb",
+      "uncertain": false
+    },
+    "shuowen:4715": {
+      "text": "A swelling. Formed from 疒, with 畱 indicating the sound.",
+      "sourceTextSha256": "5ae9048129b58c07649eadd5505d43029c4036bdc4579df955318da0f54dadb6",
+      "uncertain": false
+    },
+    "shuowen:4716": {
+      "text": "A small swelling. Formed from 疒, with 坐 indicating the sound. Another explanation: clustered swellings, 族絫.",
+      "sourceTextSha256": "0a34d9641c9cbf00d2680cd6a4da3393c286e87c38800cdb5fb05c68fac5c5b6",
+      "uncertain": false
+    },
+    "shuowen:4717": {
+      "text": "An abscess. Formed from 疒, with 且 indicating the sound.",
+      "sourceTextSha256": "f8d72ce7efaf1f85accdf8340fc305bb7aa624197054a2c954158d1815cc8408",
+      "uncertain": false
+    },
+    "shuowen:4718": {
+      "text": "An abscess. Formed from 疒, with 麗 indicating the sound. Another explanation: emaciated and dark. Read like 隸.",
+      "sourceTextSha256": "e3562f9c4e5625673d1146aff557af6a3431e00f8985b5f7a227d2004c6f91d3",
+      "uncertain": false
+    },
+    "shuowen:4719": {
+      "text": "A swelling. Formed from 疒, with 雝 indicating the sound.",
+      "sourceTextSha256": "7f275c79225e7bf1b362952fc90b2841e13baea443a7386228a9d1913db5bdfc",
+      "uncertain": false
+    },
+    "shuowen:4720": {
+      "text": "An extraneous growth of flesh. Formed from 疒, with 息 indicating the sound.",
+      "sourceTextSha256": "d5fa8d4696b373d0a14e266ff7af3c88dfbfb63a7f7a066c385d2cec9552fafd",
+      "uncertain": false
+    },
+    "shuowen:4721": {
+      "text": "A dry sore. Formed from 疒, with 鮮 indicating the sound.",
+      "sourceTextSha256": "c726a6d40a10d5cfe0cf8823a665644f342d3b84dd06f88ffafc87fbcfb961bc",
+      "uncertain": false
+    },
+    "shuowen:4722": {
+      "text": "Itching or scratching. Formed from 疒, with 介 indicating the sound.",
+      "sourceTextSha256": "697f078db2233007817d75cd024c4d512adfc4b15007cc29376d5cad1259d8b9",
+      "uncertain": false
+    },
+    "shuowen:4723": {
+      "text": "An itching eruption, 疥. Formed from 疒, with 加 indicating the sound.",
+      "sourceTextSha256": "510220f3dd332ff6dcc0b780b37ec7fbbd50b2c581e1ebd055226b121c413746",
+      "uncertain": false
+    },
+    "shuowen:4724": {
+      "text": "A woman’s ailment. Formed from 疒, with 叚 indicating the sound.",
+      "sourceTextSha256": "1ebc28a73f7082f6cf4fa063ec4689e7c95cd2157c55cf7802ec2d3950ca8724",
+      "uncertain": false
+    },
+    "shuowen:4725": {
+      "text": "A malignant illness. Formed from 疒, with abbreviated 蠆 indicating the sound.",
+      "sourceTextSha256": "8084037efd84e2db9567122ba5079adf4e5ca3f8765f16b07bf2bdbb4aa8f5a0",
+      "uncertain": false
+    },
+    "shuowen:4726": {
+      "text": "Heat and cold recurring with intervals of rest. Formed from 疒 and 虐; 虐 also indicates the sound.",
+      "sourceTextSha256": "2a994b340f2ebf36c1ad915cfe4a89ae651ecbdfc915e92f53eb63dfd0f23ccb",
+      "uncertain": false
+    },
+    "shuowen:4727": {
+      "text": "A recurring fever with heat. Formed from 疒, with 占 indicating the sound. The Spring and Autumn Commentary says: “The Marquis of Qi had an itching eruption, then a fever.”",
+      "sourceTextSha256": "e58755ece7ae8cecca612322bc43adeae2e5167af3255d4fb04bf916ff1e7038",
+      "uncertain": false
+    },
+    "shuowen:4728": {
+      "text": "A fever recurring every two days. Formed from 疒, with 亥 indicating the sound.",
+      "sourceTextSha256": "7dc8b880097e66b21a11d5205b988e83c9d1b6957376749ec5bd2bcd9b52089c",
+      "uncertain": false
+    },
+    "shuowen:4729": {
+      "text": "An abdominal ailment, 疝. Formed from 疒, with 林 indicating the sound.",
+      "sourceTextSha256": "9e39d623b9311bfeed8c52ccd6674d13027737fc2ad0116fa6d709912e09f229",
+      "uncertain": false
+    },
+    "shuowen:4730": {
+      "text": "An ailment of the rear. Formed from 疒, with 寺 indicating the sound.",
+      "sourceTextSha256": "2ed3da56f880736a963a014238e73aca9968db98714db30d99d8bb9e190f9d6a",
+      "uncertain": false
+    },
+    "shuowen:4731": {
+      "text": "Numbness or obstruction, 痹. Formed from 疒, with 委 indicating the sound.",
+      "sourceTextSha256": "e0a4308309c64da1ed63f6751977d9ef50ade05113ea7ed636588e2956d49631",
+      "uncertain": false
+    },
+    "shuowen:4732": {
+      "text": "An illness caused by dampness. Formed from 疒, with 𢌿 indicating the sound.",
+      "sourceTextSha256": "830ac6615664c9e076c2f9d4978ad7995e400bf1dfd46297afabdaca05447410",
+      "uncertain": false
+    },
+    "shuowen:4733": {
+      "text": "Qi failing to reach the feet. Formed from 疒, with 畢 indicating the sound.",
+      "sourceTextSha256": "ae46b6f2bbd58c5aac7e6593823af73a409419bdc0c617a8aa8b43223932f72d",
+      "uncertain": false
+    },
+    "shuowen:4734": {
+      "text": "A swollen lump from exposure to cold. Formed from 疒, with 豖 indicating the sound.",
+      "sourceTextSha256": "d093bd915165f2eb9735c20555415a5aeda6c7e0b1a86b03c89a21cb58e9d42e",
+      "uncertain": false
+    },
+    "shuowen:4735": {
+      "text": "One side withered or paralyzed. Formed from 疒, with 扁 indicating the sound.",
+      "sourceTextSha256": "655a69c6d77d3c1c3df8b6c89607c18c938a2608da68df9c38a7b5c231453b83",
+      "uncertain": false
+    },
+    "shuowen:4736": {
+      "text": "Qi in the shins and swelling of the feet. Formed from 疒, with 童 indicating the sound. The Odes says: “Both frail and swollen.”",
+      "sourceTextSha256": "ce0bdd52135c4d24270ed654165c0ad8eafeca229896e98141897b455e4d51ae",
+      "uncertain": false
+    },
+    "shuowen:4737": {
+      "text": "An ailment causing lameness. Formed from 疒, with 盍 indicating the sound. Read like 脅, or like 掩.",
+      "sourceTextSha256": "dc2fda6904dc81c6daab64cf8088b956f00aa6124aabda3a15b0dfda375e0b93",
+      "uncertain": false
+    },
+    "shuowen:4738": {
+      "text": "Injury from a beating. Formed from 疒, with 只 indicating the sound.",
+      "sourceTextSha256": "cc6b90276ec7dfbf885ac38cee7ea001e3b00036233e63ac34c0ad8f133c1825",
+      "uncertain": false
+    },
+    "shuowen:4739": {
+      "text": "Beating injuries, 疻痏. Formed from 疒, with 有 indicating the sound.",
+      "sourceTextSha256": "8d819b64c529b39ebdf3108346c08fa80ac14093ac9dff8731e106f9d03348e1",
+      "uncertain": false
+    },
+    "shuowen:4740": {
+      "text": "A wound splitting open. Another explanation: 疾𤼒, an ailment; this gloss is uncertain. Formed from 疒, with 巂 indicating the sound.",
+      "sourceTextSha256": "9351e20196cda49f90ab3042f416222af83b8950c9a547b33f9d8a2a17df6fff",
+      "uncertain": true
+    },
+    "shuowen:4741": {
+      "text": "Skin peeling off. Formed from 疒, with 冄 indicating the sound.",
+      "sourceTextSha256": "b61714d4895f6657968f8f8eed7fe0c541d451e91a334c82ff79ece3c7fa63ec",
+      "uncertain": false
+    },
+    "shuowen:4742": {
+      "text": "Pain. Formed from 疒, with 䢉 indicating the sound.",
+      "sourceTextSha256": "a46f5d7d93a75ac9c0151f6b73f12b2e9b34950ccf50d34f494595f43a11baf1",
+      "uncertain": false
+    },
+    "shuowen:4743": {
+      "text": "Injury. Formed from 疒, with 夷 indicating the sound.",
+      "sourceTextSha256": "15154c69687b0604439ba05c6f54a18b4f8b598d10076a525b2d98a65b67f226",
+      "uncertain": false
+    },
+    "shuowen:4744": {
+      "text": "An injury or scar. Formed from 疒, with 般 indicating the sound.",
+      "sourceTextSha256": "298addaa6f5dc708364023f5c7b8ae0a1e91014f2158e7db481710572c808e07",
+      "uncertain": false
+    },
+    "shuowen:4745": {
+      "text": "A callus or scar. Formed from 疒, with 艮 indicating the sound.",
+      "sourceTextSha256": "efca49e870400086034bc2f50eac854ca08d6f08adc9269835f657db468e8f4c",
+      "uncertain": false
+    },
+    "shuowen:4746": {
+      "text": "Stiffness and contraction. Formed from 疒, with 巠 indicating the sound.",
+      "sourceTextSha256": "9067ff7f0c0bacbb52c8a8ab75a6d2762ac0412753efd549f61fc9661e9d3b15",
+      "uncertain": false
+    },
+    "shuowen:4747": {
+      "text": "An ailment involving movement. Formed from 疒, with abbreviated 蟲 indicating the sound.",
+      "sourceTextSha256": "733b68ded5cb916583fb5d43228afd320c982b7ad24dc5b8eb328e3eaeccfff4",
+      "uncertain": false
+    },
+    "shuowen:4748": {
+      "text": "Emaciated. Formed from 疒, with 叜 indicating the sound.",
+      "sourceTextSha256": "a885a91afdbfcfe8c95335ff2895d31d47958fcddfd735420647b7d0e1bcd33f",
+      "uncertain": false
+    },
+    "shuowen:4749": {
+      "text": "A heat illness. Formed from 疒 and 火.",
+      "sourceTextSha256": "797ce8891205eab5ba0a48b01c310270b2f64a97fe6c2a9187ecf676121436bb",
+      "uncertain": false
+    },
+    "shuowen:4750": {
+      "text": "An illness from exertion. Formed from 疒, with 單 indicating the sound.",
+      "sourceTextSha256": "00445b5daf904c2f891244fda24615601b169ac12e0f882dfb05788e5db12c94",
+      "uncertain": false
+    },
+    "shuowen:4751": {
+      "text": "A yellowing illness. Formed from 疒, with 旦 indicating the sound.",
+      "sourceTextSha256": "f4e73b2f7b2914c250a8b5fd1903a26ef07e9eeaa07813ee1cd00573df745306",
+      "uncertain": false
+    },
+    "shuowen:4752": {
+      "text": "Labored breathing in illness. Formed from 疒, with 夾 indicating the sound.",
+      "sourceTextSha256": "4822b6ad92a9695da1691eb4de4336ffdb5689cc16286978badee98081939053",
+      "uncertain": false
+    },
+    "shuowen:4753": {
+      "text": "Pain. Formed from 疒, with 否 indicating the sound.",
+      "sourceTextSha256": "27491ac2bba7ea7ae80989daee61f08c48641b8faabdbcdf38b05ca4296d844b",
+      "uncertain": false
+    },
+    "shuowen:4754": {
+      "text": "A vessel ailment, 脈痬; the self-referential gloss is uncertain. Formed from 疒, with 易 indicating the sound.",
+      "sourceTextSha256": "db37e3f6d9f3fbc20d0f31883b7dc310bd71fcbf751c0feaa62d68d21495b3a0",
+      "uncertain": true
+    },
+    "shuowen:4755": {
+      "text": "To run wildly. Formed from 疒, with 术 indicating the sound. Read like 欻.",
+      "sourceTextSha256": "d1d045d76381af3803f0bab3461a11f8c055c89a0b427aa7797eb969014f03cc",
+      "uncertain": false
+    },
+    "shuowen:4756": {
+      "text": "Weary. Formed from 疒, with 皮 indicating the sound.",
+      "sourceTextSha256": "a35a99af8cdb7a95cb539e399d96878f14864241ae65db30a68b2baa0fe1cbbd",
+      "uncertain": false
+    },
+    "shuowen:4757": {
+      "text": "A flaw. Formed from 疒, with 𠂔 indicating the sound.",
+      "sourceTextSha256": "b0d604979c9513e12a51e10337fd06714b18f44590f86f5bdfbc14586ea00356",
+      "uncertain": false
+    },
+    "shuowen:4758": {
+      "text": "Illness. Formed from 疒, with 氏 indicating the sound.",
+      "sourceTextSha256": "77da51dfc975233125aa0d3741b38484d0258a95d509624676d67d5648cca069",
+      "uncertain": false
+    },
+    "shuowen:4759": {
+      "text": "Weakened by illness. Formed from 疒, with 及 indicating the sound.",
+      "sourceTextSha256": "c5f6bbd3c50fce13f733c3d6364006a281f632327d3148227532246881b45dd6",
+      "uncertain": false
+    },
+    "shuowen:4760": {
+      "text": "A severe or intense sound; the gloss 劇聲 is uncertain. Formed from 疒, with 殹 indicating the sound.",
+      "sourceTextSha256": "c3fddceb285dc2afb9a9c9afe4cc5e6818ff2ca57a5d873f608e3785a501fdb2",
+      "uncertain": true
+    },
+    "shuowen:4761": {
+      "text": "Debilitated by illness. Formed from 疒, with 隆 indicating the sound.",
+      "sourceTextSha256": "eacfef223d989033023a426e1287aac88e9e235c02bacbd0796f0f7a2a279ac8",
+      "uncertain": false
+    },
+    "shuowen:4762": {
+      "text": "The people all becoming ill. Formed from 疒, with abbreviated 役 indicating the sound.",
+      "sourceTextSha256": "28a954335bc789bded344d417d9749f817051b1a1b5d45a82da7d03fe52d58d7",
+      "uncertain": false
+    },
+    "shuowen:4763": {
+      "text": "Children’s convulsive illness, 瘛瘲. Formed from 疒, with 恝 indicating the sound.",
+      "sourceTextSha256": "1df695f7dab34ad921ee61d8dac3b5a127c1f7fe9973b092cd6009a8510f7008",
+      "uncertain": false
+    },
+    "shuowen:4764": {
+      "text": "An ailment of horses. Formed from 疒, with 多 indicating the sound. The Odes says: “Weary are the white horses with black manes.”",
+      "sourceTextSha256": "5edfa144fbd272542b7b16594c7f0f9f4c8a74e6731a06435c8ad8d707d39d99",
+      "uncertain": false
+    },
+    "shuowen:4765": {
+      "text": "A sore on a horse’s shin. Formed from 疒, with 兌 indicating the sound. Another explanation: about to be injured.",
+      "sourceTextSha256": "8267fbeda048f42ed91fe65b8b8453b8259b4b97f185a67a84030aeeee8646b9",
+      "uncertain": false
+    },
+    "shuowen:4766": {
+      "text": "To treat or cure. Formed from 疒, with 樂 indicating the sound.",
+      "sourceTextSha256": "11e349ddcf3c7bcdbeec67de10fa8e7d43d635a13e0d14b89353be048a881dff",
+      "uncertain": false
+    },
+    "shuowen:4767": {
+      "text": "Long illness. Formed from 疒, with 古 indicating the sound.",
+      "sourceTextSha256": "db917fb455e34cd9b63ade785b3f530fb738974eb5e1dada979966996c113ec5",
+      "uncertain": false
+    },
+    "shuowen:4768": {
+      "text": "Chu people call the toxicity of medicine 痛瘌. Formed from 疒, with 剌 indicating the sound.",
+      "sourceTextSha256": "5a8a65ec91ab3e010e2233e13bf3682933204327d79f38cf647ad36efc8216ba",
+      "uncertain": false
+    },
+    "shuowen:4769": {
+      "text": "Joseon calls the toxicity of medicine 癆. Formed from 疒, with 勞 indicating the sound.",
+      "sourceTextSha256": "b8ed5a29ddcd1d3a5106d175a9d1aef33b54de04efdec7fcb4d5da31aa090f6e",
+      "uncertain": false
+    },
+    "shuowen:4770": {
+      "text": "To recover. Formed from 疒, with 𢀩 indicating the sound.",
+      "sourceTextSha256": "d16b3ab88c8d2c101673d91e6e129628da609d47fd232aa56e69c8d452915b99",
+      "uncertain": false
+    },
+    "shuowen:4771": {
+      "text": "To lessen. Formed from 疒, with 衰 indicating the sound. Another explanation: to diminish.",
+      "sourceTextSha256": "cf7967e5b230eda82d1d7740fcef2aa782feb3fafb97cb7970eb41e8f2136507",
+      "uncertain": false
+    },
+    "shuowen:4772": {
+      "text": "Illness healing. Formed from 疒, with 俞 indicating the sound.",
+      "sourceTextSha256": "1bafd48c7064d4770a1c4943d3b202cf5d3f37b80d73df30a18ca0e5193c5370",
+      "uncertain": false
+    },
+    "shuowen:4773": {
+      "text": "To recover from illness. Formed from 疒, with 翏 indicating the sound.",
+      "sourceTextSha256": "8e4371fc7de2675c190ffe06357dcd2920851d57b295ca206e423dd93e1858f2",
+      "uncertain": false
+    },
+    "shuowen:4774": {
+      "text": "Not intelligent. Formed from 疒, with 疑 indicating the sound.",
+      "sourceTextSha256": "2766c637a4292ee0b28692626b79b638efe066f45754f427a3ccd0a3c910cf34",
+      "uncertain": false
+    },
+    "shuowen:4775": {
+      "text": "To cover. Formed from 一 hanging down. All characters in this group follow 冖.",
+      "sourceTextSha256": "20a3cfb9a15ac79232deab66f74f6810ead8851af6cadd0ca5b8d36a1455c765",
+      "uncertain": false
+    },
+    "shuowen:4776": {
+      "text": "A binding, used to bind the hair; the general name for caps and ceremonial crowns. Formed from 冂 and 元; 元 also indicates the sound. A crown has regulated forms, hence 寸.",
+      "sourceTextSha256": "284e894601693650336c06db98b8959c5e2a6d2f40cb49f8eb5413dbbba143c5",
+      "uncertain": false
+    },
+    "shuowen:4777": {
+      "text": "To accumulate. Formed from 冂 and 取; 取 also indicates the sound.",
+      "sourceTextSha256": "8f3e8d43d78c44b8599e142c3f9c750016560bab8a0d368645948d04a5059278",
+      "uncertain": false
+    },
+    "shuowen:4778": {
+      "text": "To set down a cup of wine as an offering. Formed from 冂, with 託 indicating the sound. The Book of Zhou says: “The king lodged three nights, sacrificed three times and offered wine three times.”",
+      "sourceTextSha256": "dd1f2b7f7e2aba74ea14027e0851eb5045f60bce0295aa556d404c560d3bd4d0",
+      "uncertain": false
+    },
+    "shuowen:4779": {
+      "text": "A double covering. Formed from 冂 and 一. All characters in this group follow 𠔼. Read like 苺 in 艸苺苺.",
+      "sourceTextSha256": "a6eb7248097100ec3a6e5a2c3646ce1e94882a9ce2bd02e108ea5a1f422eb0c2",
+      "uncertain": false
+    },
+    "shuowen:4780": {
+      "text": "To join together. Formed from 𠔼 and 口.",
+      "sourceTextSha256": "4dc23585258ed0007321d06ef669afe2cb356aee2765aa2983d03cf1d7b58e9c",
+      "uncertain": false
+    },
+    "shuowen:4781": {
+      "text": "The image of a curtained canopy. Formed from 𠔼; 㞢 is its ornament.",
+      "sourceTextSha256": "26d87b7f587fd443872f08fb3fe71001bdee4ae17ba02eb1aa32829479a24521",
+      "uncertain": false
+    },
+    "shuowen:4782": {
+      "text": "To cover. Formed from 𠔼 and 豕.",
+      "sourceTextSha256": "497950d9e3ad1e8e50f040138c0292dbf35227d92f6c83de27bd29c4e59dbfb9",
+      "uncertain": false
+    },
+    "shuowen:4783": {
+      "text": "Headwear of children and the Man and Yi peoples. Formed from 冂; 二 is its ornament. All characters in this group follow 冃.",
+      "sourceTextSha256": "c5f74959ec58ed37ddbff06807129d7fd502e957f03b2c51a192bd7795e08ca6",
+      "uncertain": false
+    },
+    "shuowen:4784": {
+      "text": "The crown of grand officers and above, with a deep projecting board, hanging pendants and cords with floss ear-stoppers. Formed from 冃, with 免 indicating the sound. In antiquity the Yellow Emperor first made it.",
+      "sourceTextSha256": "a7c30f3ffffd2fd92679b26b89ad908ff70f7d801b87240faab295dae750bf33",
+      "uncertain": false
+    },
+    "shuowen:4785": {
+      "text": "A helmet. Formed from 冃, with 由 indicating the sound.",
+      "sourceTextSha256": "cf4de2cc7ccd4a6ef07f67ac15a46f44e7dba443f4f69e7eb17d96deb0d6f3b7",
+      "uncertain": false
+    },
+    "shuowen:4786": {
+      "text": "To go forward while covered. Formed from 冃 and 目.",
+      "sourceTextSha256": "ce067fbddd18cc1113f1339f483cd3875961ab634ce27cb2d86afee488977a31",
+      "uncertain": false
+    },
+    "shuowen:4787": {
+      "text": "To violate and seize. Formed from 冃 and 取.",
+      "sourceTextSha256": "fd7c7215f3d8dcb76092a15029aa5930211cdec0efe00002d47f0bb09c440370",
+      "uncertain": false
+    },
+    "shuowen:4788": {
+      "text": "Twice. Formed from 冂; further analysis is missing. The Changes says: “Give Heaven three and Earth two.” All characters in this group follow 㒳.",
+      "sourceTextSha256": "43addfba433f4917549174e18d4232a281d619da13a6f8b2fcdbc5e34c004364",
+      "uncertain": false
+    },
+    "shuowen:4789": {
+      "text": "Twenty-four zhu make one liang. Formed from 一 and 㒳, equal division; 㒳 also indicates the sound.",
+      "sourceTextSha256": "c669bcc28f694cab39d56814b683fe1c568ce96cbf6a13fd5651a445f37cd0c2",
+      "uncertain": false
+    },
+    "shuowen:4790": {
+      "text": "Even or level. Formed from 廿, the number of the five phases; twenty divisions make one 辰. 㒳 conveys evenness. Read like 蠻. The numerical explanation is uncertain.",
+      "sourceTextSha256": "cba973c38b1dda6bc9db3ed3e20e88288f8509bdeba8e7317cb40259b3cc7d2e",
+      "uncertain": true
+    },
+    "shuowen:4791": {
+      "text": "The knotted cords with which Paoxi fished. Formed from 冂, with the lower part depicting a net’s crossing strands. All characters in this group follow 网. The classics now use the clerically transformed 䍏.",
+      "sourceTextSha256": "fce4b5c28327de027fc60680bcd20adc0fc3a8a7eac99945fe0f16bc758c62e0",
+      "uncertain": false
+    },
+    "shuowen:4792": {
+      "text": "A net, 䍑. Formed from 网, with 奄 indicating the sound.",
+      "sourceTextSha256": "cdb7ce3575aab40c59ed2d7181426138047c33d3e977f5cd04f9254bc1a1a056",
+      "uncertain": false
+    },
+    "shuowen:4793": {
+      "text": "A net. Formed from 网, with 干 indicating the sound.",
+      "sourceTextSha256": "743c546914e1452e28199b6b90bb484916129ab3eab5ff2d0d4c8289e9383ab7",
+      "uncertain": false
+    },
+    "shuowen:4794": {
+      "text": "A net. Formed from 网 and 繯; 繯 also indicates the sound. Another explanation: to tie up.",
+      "sourceTextSha256": "534ed862ff00f1734180f61d95ab6b66826ded797febb61847c2719154a89e50",
+      "uncertain": false
+    },
+    "shuowen:4795": {
+      "text": "A net. Formed from 网, with 𣫭 indicating the sound.",
+      "sourceTextSha256": "0c1d893cd32d8242609e332bbb988f61bde2e1aed55abede34405e83c24da0c2",
+      "uncertain": false
+    },
+    "shuowen:4796": {
+      "text": "A net. Formed from 网, with 巽 indicating the sound.",
+      "sourceTextSha256": "2b98a30bb590659ec7eb6ac0bb5a6107473d741d53e8f846c9ac2a2ca0022b7e",
+      "uncertain": false
+    },
+    "shuowen:4797": {
+      "text": "To travel all around. Formed from 网, with 米 indicating the sound. The Odes says: “They spread into its difficult places.”",
+      "sourceTextSha256": "43db61c5398fcfb3b1295f13948a307e5fcfaddd56cfbfec62c54888f963b0ae",
+      "uncertain": false
+    },
+    "shuowen:4798": {
+      "text": "A fish-catching device. Formed from 网, with 卓 indicating the sound.",
+      "sourceTextSha256": "ce50a61fc4f2a36009a42a5538f62745375f516fcbfb13655513e2154ac318f2",
+      "uncertain": false
+    },
+    "shuowen:4799": {
+      "text": "A fishing net. Formed from 网, with 曾 indicating the sound.",
+      "sourceTextSha256": "5a8eb55ed6f755e34a3c3f79560b01aa1b28463162920f8fb005ffad59c379a3",
+      "uncertain": false
+    },
+    "shuowen:4800": {
+      "text": "A bamboo fishing net. Formed from 网 and 非. Qin used 罪 for the graph 辠.",
+      "sourceTextSha256": "a396cb53a5af4c9d1e898d01988a52a72f989cefca2695eab31a5d9d0063f1f6",
+      "uncertain": false
+    }
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "92e4371b156bdfecb8d3bbb652edfdb0ea238eb4021e81750905dae65c0ba589",
+    "created_date": "2026-11-22"
+  },
+  "batch": "043",
+  "translations": {
+    "shuowen:4201": {
+      "text": "Evening. Formed from 日, with 免 indicating the sound.",
+      "sourceTextSha256": "ffb35402041a73620d02c52d9671ac60745dfa9a02ae0899c45ccfaddcecc0c8",
+      "uncertain": false
+    },
+    "shuowen:4202": {
+      "text": "The sun darkening. Formed from 日 and abbreviated 氐; 氐 means below. Another explanation: 民 indicates the sound.",
+      "sourceTextSha256": "20da104ffae634f911c833091c709a2c94eef711e08c6a8399abd13ef6be2094",
+      "uncertain": false
+    },
+    "shuowen:4203": {
+      "text": "The time of dawn or dusk; the wording 日旦昏時 is uncertain. Formed from 日, with 䜌 indicating the sound. Read like 䜌 in 新城䜌中.",
+      "sourceTextSha256": "6511ac292ef3ce2c9584ef0a071e8b768632f97a1444f08172b965d1238a021e",
+      "uncertain": true
+    },
+    "shuowen:4204": {
+      "text": "Not bright. Formed from 日, with 奄 indicating the sound.",
+      "sourceTextSha256": "75cac5d2bc4085e3530c39fcc0ac24ba370fd1df909b785480c8f2a88df49b7a",
+      "uncertain": false
+    },
+    "shuowen:4205": {
+      "text": "The sun without light. Formed from 日, with 音 indicating the sound.",
+      "sourceTextSha256": "e661f0a74e765baa2953cc4248a0d0ef60d249d457466a8fdaf52ec7634a12ab",
+      "uncertain": false
+    },
+    "shuowen:4206": {
+      "text": "The end of the lunar month. Formed from 日, with 每 indicating the sound.",
+      "sourceTextSha256": "e11256b2f1be805d6cfebfd2f5ca4c2329f2060ed0aea58608af204f55338a6d",
+      "uncertain": false
+    },
+    "shuowen:4207": {
+      "text": "埃𣉘, the sun without light. Formed from 日, with 能 indicating the sound.",
+      "sourceTextSha256": "7007f6b515de565bf5dc7a6f3165df999c39c3a4c8ae4cb9af873dc6f027f049",
+      "uncertain": false
+    },
+    "shuowen:4208": {
+      "text": "Overcast and windy. Formed from 日, with 壹 indicating the sound. The Odes says: “Wind all day, and overcast.”",
+      "sourceTextSha256": "ab67c5c71806d4dbefd1f83b6835bf6354e0c698eefcf67297db1b27fc9ae4aa",
+      "uncertain": false
+    },
+    "shuowen:4209": {
+      "text": "No rain. Formed from 日, with 干 indicating the sound.",
+      "sourceTextSha256": "88ef6045f690f41aea300d61b3d7304522895a86d28bc70601ace05adab780cf",
+      "uncertain": false
+    },
+    "shuowen:4210": {
+      "text": "Distant things merging in the view. Formed from 日 and 匕; 匕 means joining. Read like 窈 in 窈窕.",
+      "sourceTextSha256": "c1047dc6c480a76fecbb12300be4680964c15eaa0f19d41b5ba2ea60fd1bb383",
+      "uncertain": false
+    },
+    "shuowen:4211": {
+      "text": "A stellar mansion of the White Tiger. Formed from 日, with 卯 indicating the sound.",
+      "sourceTextSha256": "682d67dfa3d30e3226ad860992b82b50d4d25504acca23d04582033b714d9581",
+      "uncertain": false
+    },
+    "shuowen:4212": {
+      "text": "Not long ago. Formed from 日, with 鄉 indicating the sound. The Spring and Autumn Commentary says: “In the third month of the earlier campaign.”",
+      "sourceTextSha256": "76862473a14e8e6fbc3f4baf72ae58f190a072d50f30c8dd15822e5e48ed1cf3",
+      "uncertain": false
+    },
+    "shuowen:4213": {
+      "text": "Previously, 曏. Formed from 日, with 襄 indicating the sound.",
+      "sourceTextSha256": "ba08c69e4ff49dec98dc4903a73862abb6cc1b4f159d9dac22e166aab21751cb",
+      "uncertain": false
+    },
+    "shuowen:4214": {
+      "text": "Accumulated days. Formed from 日, with 乍 indicating the sound.",
+      "sourceTextSha256": "ffe55f5541ce403952bbe86252d8f3a2e7cb813df1edf7e1fd318b41bfa40c12",
+      "uncertain": false
+    },
+    "shuowen:4215": {
+      "text": "Leisure. Formed from 日, with 叚 indicating the sound.",
+      "sourceTextSha256": "cf88d7b2565a1473b020617e4ddbacd526cc5365900746fd2582bd2717d1c49f",
+      "uncertain": false
+    },
+    "shuowen:4216": {
+      "text": "Not lasting long. Formed from 日, with 斬 indicating the sound.",
+      "sourceTextSha256": "490078d04e3a78b490558da234b0d20c8bbab1b23b7beb81d414751f8d87769c",
+      "uncertain": false
+    },
+    "shuowen:4217": {
+      "text": "A joyful appearance. Formed from 日, with 弁 indicating the sound.",
+      "sourceTextSha256": "042f8c28b9e7548212c40dd598ae7b9b9e2d8865765b2d43e4fcf943c6b48245",
+      "uncertain": false
+    },
+    "shuowen:4218": {
+      "text": "Fine words. Formed from 日 and 曰. Another explanation: sunlight. The Odes says: “The east is bright.”",
+      "sourceTextSha256": "014f72e161237fbbd0b5d6af82c21f4bb4d9a48ac323273b4359187a257b9316",
+      "uncertain": false
+    },
+    "shuowen:4219": {
+      "text": "Beautiful light. Formed from 日, with 往 indicating the sound.",
+      "sourceTextSha256": "96cc37b6bc7692f338406e881ff19ceac6a6730fcf8bf3e18717b435e7b928ca",
+      "uncertain": false
+    },
+    "shuowen:4220": {
+      "text": "Great. Formed from 日, with 反 indicating the sound.",
+      "sourceTextSha256": "e3fb8b8f64ed19177bef21daa4610870a135d25fceff4b199702eb5a01cba71f",
+      "uncertain": false
+    },
+    "shuowen:4221": {
+      "text": "The next day. Formed from 日, with 立 indicating the sound.",
+      "sourceTextSha256": "c72ee498ac8b2e731349cf7b82677c66451504150ad7cd663c2b3f6b57a00dba",
+      "uncertain": false
+    },
+    "shuowen:4222": {
+      "text": "Warm and damp. Formed from 日, with abbreviated 赧 indicating the sound. Pronounced the same as 赧.",
+      "sourceTextSha256": "1c2b5b823c885b128ce8f48e77479706ec758c61459559cf68f9f1706fe9c9b4",
+      "uncertain": false
+    },
+    "shuowen:4223": {
+      "text": "Injured by summer heat. Formed from 日, with 曷 indicating the sound.",
+      "sourceTextSha256": "f8f77c359fd8cce662124702b7fb3f0b70bf39044f81fc1bec449c076647b049",
+      "uncertain": false
+    },
+    "shuowen:4224": {
+      "text": "Hot. Formed from 日, with 者 indicating the sound.",
+      "sourceTextSha256": "71be8f2331eb40afc530550da25ce3b745f7128bfebf64cc1c1fb1ef7ae1e294",
+      "uncertain": false
+    },
+    "shuowen:4225": {
+      "text": "安㬮, warm. Formed from 日, with 難 indicating the sound.",
+      "sourceTextSha256": "a3eccbd77753b045de53a17f8ea55f56c1d699fcd37bfd4eab4c0e6312f0df6c",
+      "uncertain": false
+    },
+    "shuowen:4226": {
+      "text": "Many tiny ends. Formed from looking at silk in sunlight. The ancient script uses it for 顯. Some explain it as many mouths. Read like 唫唫. Some take it as 繭, a cocoon: small cocoons occur here and there within silk floss.",
+      "sourceTextSha256": "2078b80d20b1c85ddd9642d71bfcd063c263ba8e1f4a6b8025e62d99bdcda66f",
+      "uncertain": false
+    },
+    "shuowen:4227": {
+      "text": "To dry in the sun. Formed from 日, 出, 𠬞 and 米.",
+      "sourceTextSha256": "8632602176a342a05a11ca6507e183afd1d48822459a6d43900a6c29a23fb62a",
+      "uncertain": false
+    },
+    "shuowen:4228": {
+      "text": "To expose to the sun. Formed from 日, with 麗 indicating the sound.",
+      "sourceTextSha256": "98994a502e9a346e7e29bac7be983bc35e8098eea9213e7df4d42b74b49d544a",
+      "uncertain": false
+    },
+    "shuowen:4229": {
+      "text": "To dry. Plowing and exposing a field to the sun is 暵. Formed from 日, with 堇 indicating the sound. The Changes says: “For drying all things, nothing exceeds Li.”",
+      "sourceTextSha256": "059faa5d1bf01ae91b965b4c846dd460c80c70be68f74379809d9ecaa3d8dd7c",
+      "uncertain": false
+    },
+    "shuowen:4230": {
+      "text": "To dry. Formed from 日, with 希 indicating the sound.",
+      "sourceTextSha256": "27ce998fa7605147f264e2c393ecd688883b80561ccf10183037bca20e716457",
+      "uncertain": false
+    },
+    "shuowen:4231": {
+      "text": "Dried meat. Formed from pieces of meat, with 日 drying them. It uses the same principle as 俎.",
+      "sourceTextSha256": "dfea433ac0515672953e93ecaa15775d131cda51bc59345d9b51819d61638c73",
+      "uncertain": false
+    },
+    "shuowen:4232": {
+      "text": "To grow closer daily. Formed from 日, with 匿 indicating the sound. The Spring and Autumn Commentary says: “Privately descending to intimate feasts”; the quoted phrase 私降暱燕 is uncertain.",
+      "sourceTextSha256": "88a547bd39f5ba1cc3e0313ac79a1d6fec100817b2e51218785faaf34f56ab91",
+      "uncertain": true
+    },
+    "shuowen:4233": {
+      "text": "Daily familiarity leading to mutual disrespect. Formed from 日, with 執 indicating the sound.",
+      "sourceTextSha256": "c9c020ed244b7a08f929cc087c4976409c220facc2b0fe769aba09acf7fd6af8",
+      "uncertain": false
+    },
+    "shuowen:4234": {
+      "text": "Not visible. Formed from 日, with abbreviated 否 indicating the sound.",
+      "sourceTextSha256": "f3155406d0b2eec151855b5b2025672e84ad6bbde0040f52bf04d4e56044f4e3",
+      "uncertain": false
+    },
+    "shuowen:4235": {
+      "text": "The same or together. Formed from 日 and 比.",
+      "sourceTextSha256": "aec9614b46e9f4e5b135072d2d8c6572a06cba52b0cf8c6d56ed4ff3eab1d898",
+      "uncertain": false
+    },
+    "shuowen:4236": {
+      "text": "To encompass together. Formed from 日, with 亥 indicating the sound.",
+      "sourceTextSha256": "06c3504f07a1f32fda69a64c0cb5734a7376bd592d5f52e47a82e48670b987e6",
+      "uncertain": false
+    },
+    "shuowen:4237": {
+      "text": "The sun without color. Formed from 日 and 並.",
+      "sourceTextSha256": "92e91aa3af05cbb5f297ccd807efe1713df5388975edc219d5fc6c7893811654",
+      "uncertain": false
+    },
+    "shuowen:4238": {
+      "text": "Bright. Formed from 日, with 堯 indicating the sound.",
+      "sourceTextSha256": "98f4c0bcf8cd6fd24e4f0c6809d38868ba455c8b064b76afa25499dd4f8f0db2",
+      "uncertain": false
+    },
+    "shuowen:4239": {
+      "text": "Dawn light, when the sun is about to rise. Formed from 日, with 斤 indicating the sound. Read like 希.",
+      "sourceTextSha256": "e3c8c586e1d521119a67260e0d151aaea4cd1e1d43b1878fe80b218a103ecb72",
+      "uncertain": false
+    },
+    "shuowen:4240": {
+      "text": "曈曨, when the sun is about to brighten. Formed from 日, with 童 indicating the sound.",
+      "sourceTextSha256": "a762000b92188d41c8dcf808085df3c604a15549d3c30e44902cb1c2574855e8",
+      "uncertain": false
+    },
+    "shuowen:4241": {
+      "text": "曈曨, the light before sunrise. Formed from 日, with 龍 indicating the sound.",
+      "sourceTextSha256": "078c524ffb5ef6cab084d508cd96649de66478c6b5a5b115aab8185f9646b2af",
+      "uncertain": false
+    },
+    "shuowen:4242": {
+      "text": "Bright. Formed from 日, with 戶 indicating the sound.",
+      "sourceTextSha256": "448215a7c962806621b5703d08b6b629fed67011c11a8f1071af5ce2c420834d",
+      "uncertain": false
+    },
+    "shuowen:4243": {
+      "text": "Bright. Formed from 日, with 方 indicating the sound.",
+      "sourceTextSha256": "0edf0b3a9c2bb8ddc85b256fe4689c2598ba3364a669d9ca0db60cf9de42ac09",
+      "uncertain": false
+    },
+    "shuowen:4244": {
+      "text": "Bright. Formed from 日, with 夋 indicating the sound.",
+      "sourceTextSha256": "d9d7fcd8a2c78cf5110965a81a5c94ef02adce2a28f24f5ccdf620f2325cb1e6",
+      "uncertain": false
+    },
+    "shuowen:4245": {
+      "text": "Bright. Formed from 日, with 成 indicating the sound.",
+      "sourceTextSha256": "ddc23eb7a57b060aeac6bc5a9724660094f8c19956e87c4d9f1006d6dc6d2ef1",
+      "uncertain": false
+    },
+    "shuowen:4246": {
+      "text": "A long day. Formed from 日 and 永, combining their meanings.",
+      "sourceTextSha256": "55075edd50c7749d303daf784506a17a712aa5fdd4d9b794f20e8a32cc4961c3",
+      "uncertain": false
+    },
+    "shuowen:4247": {
+      "text": "Vapor around the sun or moon. Formed from 日, with 軍 indicating the sound.",
+      "sourceTextSha256": "c2753dae1a91c6cd7e4508684ba8b63192dd89d585c4dda33084ff04252c5897",
+      "uncertain": false
+    },
+    "shuowen:4248": {
+      "text": "A complete year. Formed from 日 and 卒; 卒 also indicates the sound.",
+      "sourceTextSha256": "2fc376f9d390e19ab4562c137185ee4be9e5167085f886448d05e16aa8ee4b56",
+      "uncertain": false
+    },
+    "shuowen:4249": {
+      "text": "Bright; concealed. Formed from 日, with 央 indicating the sound.",
+      "sourceTextSha256": "228bf2704e31004ed797039ff6a4ffaced6af9a354fb6a745d1e2833fa9d93ab",
+      "uncertain": false
+    },
+    "shuowen:4250": {
+      "text": "Dawn. Formed from 日, with 署 indicating the sound.",
+      "sourceTextSha256": "c0081fe6d5e96f5a2e1d09d4ae699171df98024c76d34796aae82908140efd1c",
+      "uncertain": false
+    },
+    "shuowen:4251": {
+      "text": "The sun slanting westward, 𣅦. Formed from 日, with 失 indicating the sound.",
+      "sourceTextSha256": "f8f86f260ffe3b55abbd50beaeffcc9dfeeefe4f07d422c5146dbe745d73ab32",
+      "uncertain": false
+    },
+    "shuowen:4252": {
+      "text": "Clouds spreading. Formed from 日 and 雲, combining their meanings.",
+      "sourceTextSha256": "389859a56f41c764e75f84e7c7417f70b94a5a8e95c4aa5cdf3a01f153ab7e5a",
+      "uncertain": false
+    },
+    "shuowen:4253": {
+      "text": "To calculate the celestial phenomena. Formed from 日, with 厤 indicating the sound. The Records of the Historian also uses 歷.",
+      "sourceTextSha256": "187e5a774377289cbb3e798b679111f58367a67c2af9680abb58792550435b83",
+      "uncertain": false
+    },
+    "shuowen:4254": {
+      "text": "To raise. Formed from 日, with 卬 indicating the sound.",
+      "sourceTextSha256": "7b19f31166e75ca5b3186cd6184d689dd4304b1156ebdd2b68711f21630032a8",
+      "uncertain": false
+    },
+    "shuowen:4255": {
+      "text": "The sun rising. Formed from 日, with 升 indicating the sound. Ancient writing used only 升.",
+      "sourceTextSha256": "f501ef28862eac385cfb877ae11203b856d6a7924c8ec82a045ed81a496580b5",
+      "uncertain": false
+    },
+    "shuowen:4256": {
+      "text": "Bright. Formed from 日 appearing above 一; 一 is the ground. All characters in this group follow 旦.",
+      "sourceTextSha256": "42cd9dd567058851b94a4cea5583c97d053064141ae90a0577378dfe8587e88b",
+      "uncertain": false
+    },
+    "shuowen:4257": {
+      "text": "The sun partly visible. Formed from 旦, with 旣 indicating the sound.",
+      "sourceTextSha256": "328e550791835deec9ff58259d2ad2bbb255fac1d3bb68e4b4f375a9aa2000b9",
+      "uncertain": false
+    },
+    "shuowen:4258": {
+      "text": "The sun first rising, its light 倝倝. Formed from 旦, with 㫃 indicating the sound. All characters in this group follow 倝.",
+      "sourceTextSha256": "fa5af699dd466604f6b698a469702aaa148cb915c7eb5ee4d1a4681c6c161c97",
+      "uncertain": false
+    },
+    "shuowen:4259": {
+      "text": "The explanation is missing.",
+      "sourceTextSha256": "5d45d36377286653f8b29564f4271c709cce0413831257b30af6d9e307097087",
+      "uncertain": false
+    },
+    "shuowen:4260": {
+      "text": "Dawn. Formed from 倝, with 舟 indicating the sound.",
+      "sourceTextSha256": "a9063b70d9bf2e1c70430b7805afd1f21fddcf912f1d16f55572535e6c38cb38",
+      "uncertain": false
+    },
+    "shuowen:4261": {
+      "text": "A banner’s streamers, fluttering and trailing, 㫃蹇. Formed from 屮, bent downward, with hanging streamers passing in and out. Read like 偃. An ancient man named 㫃 had the courtesy name Ziyou. All characters in the 㫃人 group follow 㫃.",
+      "sourceTextSha256": "ab353be8f73f1cbede7617cd047ed7c517f9355ae42a334055905cf441ced0a0",
+      "uncertain": false
+    },
+    "shuowen:4262": {
+      "text": "A tortoise-and-snake banner with four streamers, representing the Ying-shi constellation; the streamers trail long. Formed from 㫃, with 兆 indicating the sound. The Rites of Zhou says: “Counties and border districts set up 旐.”",
+      "sourceTextSha256": "517610746f893eb190553ff86300341c74b494a337954a5e4b1abc211ce9b4b3",
+      "uncertain": false
+    },
+    "shuowen:4263": {
+      "text": "A bear banner with five streamers, representing the Fa stars; soldiers use it as a rallying signal. Formed from 㫃, with 其 indicating the sound. The Rites of Zhou says: “Those leading the du settlements set up 旗.”",
+      "sourceTextSha256": "a31961049652af4faaa9a129b47edf42d43831e9d70f273de6a0d72d40e50c3e",
+      "uncertain": false
+    },
+    "shuowen:4264": {
+      "text": "A banner following the 旐, hanging abundantly. Formed from 㫃, with 𣎵 indicating the sound.",
+      "sourceTextSha256": "f2e4228569b97661d6db71e9b104a138180b7afd67452a9ddd2fb8f499222326",
+      "uncertain": false
+    },
+    "shuowen:4265": {
+      "text": "A roving chariot bears a 旌, made by attaching split feathers to the head of a yak-tail standard, to encourage the soldiers. Formed from 㫃, with 生 indicating the sound.",
+      "sourceTextSha256": "d4fb65a91335d9cdd71741abc11a2f27cc9400c9b3a198310b2c42b06eef2bf2",
+      "uncertain": false
+    },
+    "shuowen:4266": {
+      "text": "A banner of pieced leather with a bird painted on it, to encourage the troops. 旟旟 means numerous. Formed from 㫃, with 與 indicating the sound. The Rites of Zhou says: “Districts and neighborhoods set up 旟.”",
+      "sourceTextSha256": "00daa65d8d203a2b4edb318df1ddc5b6b691f97d64729c4d0fe0d90dcd48a5b0",
+      "uncertain": false
+    },
+    "shuowen:4267": {
+      "text": "A banner with many bells for directing the troops. Formed from 㫃, with 斤 indicating the sound.",
+      "sourceTextSha256": "4c7436581a3b4997d5ce4c1aaf29f1122965bda029f3c60b1d6f956350b8dc22",
+      "uncertain": false
+    },
+    "shuowen:4268": {
+      "text": "What a leading chariot carries: whole feathers make its 允; 允 means advancing. Formed from 㫃, with 遂 indicating the sound. The technical term 允 is uncertain.",
+      "sourceTextSha256": "79b7675b066099c708cf302411818488dcf8c15e2f1c4f5d6bd1b2b23a18690f",
+      "uncertain": true
+    },
+    "shuowen:4269": {
+      "text": "A great timber is erected with stones upon it, released by a trigger to pursue the enemy. Formed from 㫃, with 會 indicating the sound. The Spring and Autumn Commentary says: “When the 旝 moves, beat the drums.” The Odes says: “Their 旝 are like a forest.”",
+      "sourceTextSha256": "bfba8d3f05396fc6692497d1e39ff67942715db3aad5124465574b4cc0d4f88a",
+      "uncertain": false
+    },
+    "shuowen:4270": {
+      "text": "A banner with a curved handle, used to mark the troops. Formed from 㫃, with 丹 indicating the sound. The Rites of Zhou says: “A single unadorned silk cloth is 旃.”",
+      "sourceTextSha256": "269c5fa5f4c692d300e82310f6d02af03841d64416f98af8713c05d1c8a26eb1",
+      "uncertain": false
+    },
+    "shuowen:4271": {
+      "text": "A banner’s trailing streamer. Formed from 㫃, with 攸 indicating the sound.",
+      "sourceTextSha256": "3ef0169da8d9d7687beb9304d26b0c3eed7df81b756672e7bdad23fd58eebcbf",
+      "uncertain": false
+    },
+    "shuowen:4272": {
+      "text": "A kind of banner. Formed from 㫃, with 要 indicating the sound.",
+      "sourceTextSha256": "a192182161cc51ebd0cab549421960a51ed23ef15db000ca6d00f8c79c055617",
+      "uncertain": false
+    },
+    "shuowen:4273": {
+      "text": "A banner’s appearance. Formed from 㫃, with 也 indicating the sound. Luan Shi of Qi had the courtesy name Ziqi, showing that 施 means banner.",
+      "sourceTextSha256": "ebbd089004b4b18d263a476acc6bfad09268f4350af5b9a773a7fbef09255332",
+      "uncertain": false
+    },
+    "shuowen:4274": {
+      "text": "A banner flowing, 旖施. Formed from 㫃, with 奇 indicating the sound.",
+      "sourceTextSha256": "d0d7bec6ea5647e76f02c64cde97e901202564d428ec3ed48d8a2dacbc8f2555",
+      "uncertain": false
+    },
+    "shuowen:4275": {
+      "text": "A banner fluttering, 旚繇. Formed from 㫃, with 票 indicating the sound.",
+      "sourceTextSha256": "6ff6f20462943d345229d608a5a09712d1b8aff521165b995c637a1be0f56eb9",
+      "uncertain": false
+    },
+    "shuowen:4276": {
+      "text": "The appearance of banners flying aloft. Formed from 㫃, with 猋 indicating the sound.",
+      "sourceTextSha256": "9648850a9b0a961ef0fc0db680782ca721ca96e55ceb6bd3cbb78869228334c2",
+      "uncertain": false
+    },
+    "shuowen:4277": {
+      "text": "A banner’s trailing streamer. Formed from 㫃, with 汓 indicating the sound.",
+      "sourceTextSha256": "1337b5fdb46e3bb4db24170fa12deacac3a1a74e5a3dfa9d4a408ad8fe49aea5",
+      "uncertain": false
+    },
+    "shuowen:4278": {
+      "text": "Banners bending and trailing. Formed from 㫃, with 皮 indicating the sound.",
+      "sourceTextSha256": "7a37a10dc2cddf1f7518bbeeea9f5d8cc3098e60c6b40dd67581d2771193fcb8",
+      "uncertain": false
+    },
+    "shuowen:4279": {
+      "text": "Turning about: signaling with banners. Formed from 㫃 and 疋; 疋 means foot.",
+      "sourceTextSha256": "ce971a3d8dbc8283696e279056a06d258b2c76b0b634a4c47b6408cd044cf934",
+      "uncertain": false
+    },
+    "shuowen:4280": {
+      "text": "A yak-tail standard. Formed from 㫃 and 毛; 毛 also indicates the sound.",
+      "sourceTextSha256": "99ecfbf549ee09f9932bc8a27dd1998d3339022fbb6152b3e68c0b5546d8a31a",
+      "uncertain": false
+    },
+    "shuowen:4281": {
+      "text": "A hanging banner, 幅胡. Formed from 㫃, with 番 indicating the sound.",
+      "sourceTextSha256": "71b185dec6934eca329d7d29a109bedeecad9c0d546e237f82c204f530ea0891",
+      "uncertain": false
+    },
+    "shuowen:4282": {
+      "text": "Five hundred men of an army make a 旅. Formed from 㫃 and 从; 从 means together.",
+      "sourceTextSha256": "c53656688d4d0bb29d308d786fd03419713d3372e67b0f1d8ccb4538a3f22fe1",
+      "uncertain": false
+    },
+    "shuowen:4283": {
+      "text": "Arrow points, closely clustered when bundled. Formed from 㫃 and 矢.",
+      "sourceTextSha256": "b102305bbf077a69030dfc9e3cbed0b8f183d41494786b6ada764f51fcc282c4",
+      "uncertain": false
+    },
+    "shuowen:4284": {
+      "text": "Dark. Formed from 日 and 六, with 冖 indicating the sound. The count of days is ten; on the sixteenth day the moon begins to wane and darken. All characters in this group follow 冥.",
+      "sourceTextSha256": "da819c45891b3f7c9baff6932ecf8359bc36bda614560da83447ec060ddc4da8",
+      "uncertain": false
+    },
+    "shuowen:4285": {
+      "text": "Dark. Formed from 冥, with 黽 indicating the sound. Read like 黽 in 黽蛙.",
+      "sourceTextSha256": "cae26cb64ca592949f0a783dc84643d929dca4dfde708daee14efcc25b23923e",
+      "uncertain": false
+    },
+    "shuowen:4286": {
+      "text": "Pure brilliance. Formed from three 日. All characters in this group follow 晶.",
+      "sourceTextSha256": "9f62a42e265e27256d2c82fe05a5def028b0f3eb64bad40e6f21eaca6da2ff7d",
+      "uncertain": false
+    },
+    "shuowen:4287": {
+      "text": "The essences of all things become the arrayed stars above. Formed from 晶, with 生 indicating the sound. Another explanation: pictographic, using 口; ancient 口 had a mark added inside, thus matching 日.",
+      "sourceTextSha256": "fcfdaaa11d8af95df8c8c0343bdea3e104611201995d672b34b4d4dd3e0c5abe",
+      "uncertain": false
+    },
+    "shuowen:4288": {
+      "text": "The Shang star. Formed from 晶, with 㐱 indicating the sound.",
+      "sourceTextSha256": "b43587285233c2e4e4f48c3818859607f31a15138bf149788119f992de789f12",
+      "uncertain": false
+    },
+    "shuowen:4289": {
+      "text": "The Fang stars, which determine the people’s farming seasons. Formed from 晶, with 辰 indicating the sound.",
+      "sourceTextSha256": "92be98bf9c72fdb1f0c915e45e1653232a9ad20961cd0be41774c4166ff9fabf",
+      "uncertain": false
+    },
+    "shuowen:4290": {
+      "text": "Yang Xiong explains: ancient judicial officers decided a sentence and, after three days, carried it out once its appropriateness was established. Formed from 晶 and 宜. The fallen Xin dynasty considered three 日 in 曡 too excessive and changed them to three 田.",
+      "sourceTextSha256": "74e4e477ea80920e2fe5af0a08c5f0dc1691c22b8dfb950f8a2578b4c612ac85",
+      "uncertain": false
+    },
+    "shuowen:4291": {
+      "text": "Deficient or waning: the essence of the great yin. Pictographic. All characters in this group follow 月.",
+      "sourceTextSha256": "259ee3222c39eadf5788a28d72a92464f0ddedbdcb031edbef00e798e6d8f8c6",
+      "uncertain": false
+    },
+    "shuowen:4292": {
+      "text": "The moon first revives on the first day of the month. Formed from 月, with 屰 indicating the sound.",
+      "sourceTextSha256": "3a55b299c801b9d3d1057a7c6516f1151eb3e345b3686a7553d05cd44614296a",
+      "uncertain": false
+    },
+    "shuowen:4293": {
+      "text": "The moon’s light before it becomes full. Formed from 月 and 出. The Book of Zhou says: “On bingwu, the first crescent.”",
+      "sourceTextSha256": "cba6ac59db3283b60ea4011d7b78d71c2225e386a9af0b6c82c6607af00e7753",
+      "uncertain": false
+    },
+    "shuowen:4294": {
+      "text": "The moon first appearing, dimly: on the second day after a long month, the third after a short month. Formed from 月, with 䨣 indicating the sound. The Book of Zhou says: “When the lunar light first appeared.”",
+      "sourceTextSha256": "9b4d133932a7c12dad08a99c4bca0bd5bafcc17a25015db297e837354f495929",
+      "uncertain": false
+    },
+    "shuowen:4295": {
+      "text": "Bright. Formed from 月, with 良 indicating the sound.",
+      "sourceTextSha256": "aa6e45a38c49bc642a29a5d9db794bda568dea2cbaf6c95d24f5687bf0a23b0e",
+      "uncertain": false
+    },
+    "shuowen:4296": {
+      "text": "The moon appearing in the west on the last day of the month is 朓. Formed from 月, with 兆 indicating the sound.",
+      "sourceTextSha256": "f6b81e2299ee34a2c1b48bdadf6b2a906ac72b815120b4c9b2eb5f6a95b72bb6",
+      "uncertain": false
+    },
+    "shuowen:4297": {
+      "text": "The moon appearing in the east on the first day of the month is 縮肭. Formed from 月, with 内 indicating the sound.",
+      "sourceTextSha256": "3d3d06f56eb2656657772cd57454130ac947b07dc6db353f26a28335c4e1e200",
+      "uncertain": false
+    },
+    "shuowen:4298": {
+      "text": "To meet. Formed from 月, with 其 indicating the sound.",
+      "sourceTextSha256": "530a3b189bca0931bcc97da0ea71b162bac6c5beccd35634dce88ad272cbb641",
+      "uncertain": false
+    },
+    "shuowen:4299": {
+      "text": "The moon hazy, 朦朧. Formed from 月, with 蒙 indicating the sound.",
+      "sourceTextSha256": "85e81ca27643872720793ae28cc2dde514b012698602cc6fea395bac3500c925",
+      "uncertain": false
+    },
+    "shuowen:4300": {
+      "text": "Hazy, 朦朧. Formed from 月, with 龍 indicating the sound.",
+      "sourceTextSha256": "c8198c8ca480a3a881f6ad771e707cda5ac3fe5e973ff00bfc16049109442d0b",
+      "uncertain": false
+    }
+  }
+}

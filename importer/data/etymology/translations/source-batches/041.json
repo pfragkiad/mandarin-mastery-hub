@@ -1,0 +1,629 @@
+{
+  "format": "mandarin-shuowen-translation-source-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology."
+  },
+  "batch": "041",
+  "records": [
+    {
+      "id": "shuowen:4001",
+      "headword": "邰",
+      "text": "炎帝之後，姜姓所封，周棄外家國。从邑台聲。右扶風斄縣是也。《詩》曰：“有邰家室。”",
+      "sourceTextSha256": "5059a0d00497a6c281980a23d91fbc176c66f61711e833b194ba9eb22789de4d"
+    },
+    {
+      "id": "shuowen:4002",
+      "headword": "𨙸",
+      "text": "周文王所封。在右扶風美陽中水鄉。从邑支聲。",
+      "sourceTextSha256": "1946122fc38c2d358351eee144fbd10cb84e5176ceb58a2f2eb91a3111e2991e"
+    },
+    {
+      "id": "shuowen:4003",
+      "headword": "邠",
+      "text": "周太王國。在右扶風美陽。从邑分聲。",
+      "sourceTextSha256": "93d4f3194969f2509afbc4d34a148a6b57e4a82d4a5ee02d3c418c2074f19b1d"
+    },
+    {
+      "id": "shuowen:4004",
+      "headword": "郿",
+      "text": "右扶風縣。从邑眉聲。",
+      "sourceTextSha256": "4dd4e52eec3edfa00bb6cfeb9674745726494a2f0fc9dc7cc890ec7ac5c23d64"
+    },
+    {
+      "id": "shuowen:4005",
+      "headword": "郁",
+      "text": "右扶風郁夷也。从邑有聲。",
+      "sourceTextSha256": "3223be87a6984a6fd8a48d4144495d5628bb239df5febe138915b18d972ff27b"
+    },
+    {
+      "id": "shuowen:4006",
+      "headword": "鄠",
+      "text": "右扶風縣名。从邑雩聲。",
+      "sourceTextSha256": "411fac39fa798b7aa48da39451ba596a903c128266fea528c72476313467944a"
+    },
+    {
+      "id": "shuowen:4007",
+      "headword": "扈",
+      "text": "夏后同姓所封，戰於甘者。在鄠，有扈谷、甘亭。从邑戶聲。",
+      "sourceTextSha256": "99236faa5c381eb984abbbfdacfd17a4e0918eb5acfa61bff03da3502349bafa"
+    },
+    {
+      "id": "shuowen:4008",
+      "headword": "䣙",
+      "text": "右扶風鄠鄉。从邑崩聲。沛城父有䣙鄉。讀若陪。",
+      "sourceTextSha256": "b77005b44362e35c2cbcbb20825163267cf9935805dcee73ebd237186edc54ec"
+    },
+    {
+      "id": "shuowen:4009",
+      "headword": "䢸",
+      "text": "右扶風鄠鄉。从邑且聲。",
+      "sourceTextSha256": "9feafe297fa13a33ea8795c9182957c7a75bdd7e714ea570619931857a2ac1f7"
+    },
+    {
+      "id": "shuowen:4010",
+      "headword": "郝",
+      "text": "右扶風鄠、盩厔鄉。从邑赤聲。",
+      "sourceTextSha256": "6479b555cc4bee704057cb0f7a85e455af910141fcb399dca86b544d12e72c9e"
+    },
+    {
+      "id": "shuowen:4011",
+      "headword": "酆",
+      "text": "周文王所都。在京兆杜陵西南。从邑豐聲。",
+      "sourceTextSha256": "ec712b5a86838c5980a3011a673c1fcf76689d0919bc54a2349eb30d06dc5b23"
+    },
+    {
+      "id": "shuowen:4012",
+      "headword": "鄭",
+      "text": "京兆縣。周厲王子友所封。从邑奠聲。宗周之滅，鄭徙潧洧之上，今新鄭是也。",
+      "sourceTextSha256": "b196365ad1b86c51014198491fa3b0069c0d4e8b3afd2f4113f70865f19e0d89"
+    },
+    {
+      "id": "shuowen:4013",
+      "headword": "郃",
+      "text": "左馮翊郃陽縣。从邑合聲。《詩》曰：“在郃之陽。”",
+      "sourceTextSha256": "fbc0c50ac87ad7bc1be3cca47396f8c14308a45561a1594136454f329b7112c7"
+    },
+    {
+      "id": "shuowen:4014",
+      "headword": "𨙫",
+      "text": "京兆藍田鄉。从邑口聲。",
+      "sourceTextSha256": "8a287b1dc668be0a94ac6bd4681742858fa4ad6963814542d1d866d682200cd8"
+    },
+    {
+      "id": "shuowen:4015",
+      "headword": "𨟄",
+      "text": "京兆杜陵鄉。从邑樊聲。",
+      "sourceTextSha256": "a133e20a81efede05e0055ed6281016a53db0a5a723d16d2276e16c88d153613"
+    },
+    {
+      "id": "shuowen:4016",
+      "headword": "𨞻",
+      "text": "左馮翊縣。从邑麃聲。",
+      "sourceTextSha256": "f0af9f0da479a48abc19df3014b3663a2a887c5d2f2e613485763856fb0dbbca"
+    },
+    {
+      "id": "shuowen:4017",
+      "headword": "䣝",
+      "text": "左馮翊䣝陽亭。从邑屠聲。",
+      "sourceTextSha256": "a1fc69ddde71b056909ed978eb893bd6c467e54c8724b476453e099abeae98ad"
+    },
+    {
+      "id": "shuowen:4018",
+      "headword": "邮",
+      "text": "左馮翊高陵。从邑由聲。",
+      "sourceTextSha256": "557caed1062b813f228f785fccfd3827b8317e113db6b6d6e7727901c1fc1f87"
+    },
+    {
+      "id": "shuowen:4019",
+      "headword": "𨛲",
+      "text": "左馮翊谷口鄉。从邑秊聲。讀若寕。",
+      "sourceTextSha256": "f86d728e736d14b38cd6295ab22ed6e7a2a5de33e78b36f880b29ff7a9c6b523"
+    },
+    {
+      "id": "shuowen:4020",
+      "headword": "邽",
+      "text": "隴西上邽也。从邑圭聲。",
+      "sourceTextSha256": "79356843a6ebb84ecf44e3a30a24cd1713f831230f71b9bfb0544c1be1dbc05b"
+    },
+    {
+      "id": "shuowen:4021",
+      "headword": "部",
+      "text": "天水狄部。从邑咅聲。",
+      "sourceTextSha256": "ef8b9f3bf626c98a950a00a5407b42655edb5a5055d757a5aad95341bc954a4f"
+    },
+    {
+      "id": "shuowen:4022",
+      "headword": "郖",
+      "text": "弘農縣庾地。从邑豆聲。",
+      "sourceTextSha256": "dfbdce86b7c10d057a67c0e25ad1231be76f462fd26f0835641baa3c8686cbd5"
+    },
+    {
+      "id": "shuowen:4023",
+      "headword": "鄏",
+      "text": "河南縣直城門官陌地也。从邑辱聲。《春秋傳》曰：“成王定鼎于郟鄏。”",
+      "sourceTextSha256": "36d9d36ba8dabd1b414ee67f77584663e7e2c8205c17d10058a342e68dbc644d"
+    },
+    {
+      "id": "shuowen:4024",
+      "headword": "鄻",
+      "text": "周邑也。从邑輦聲。",
+      "sourceTextSha256": "4da0a50122c71767afa6ee5dda65fd1916ef2a62a1c25c3c2465d9eacacf614e"
+    },
+    {
+      "id": "shuowen:4025",
+      "headword": "𨝋",
+      "text": "周邑也。从邑祭聲。",
+      "sourceTextSha256": "778142a16c76bab6c80cd4428b2a55f8156579cf46ee43d5762a95b8ac73a911"
+    },
+    {
+      "id": "shuowen:4026",
+      "headword": "邙",
+      "text": "河南洛陽北亡山上邑。从邑亡聲。",
+      "sourceTextSha256": "dcbd8eab38e65d82d39f0324c7df0001c56a306e11a464c7b22e278b6fee88fa"
+    },
+    {
+      "id": "shuowen:4027",
+      "headword": "鄩",
+      "text": "周邑也。从邑尋聲。",
+      "sourceTextSha256": "66096890a931686917d8382d882929697c74891e310e1ead70d16f901a80d105"
+    },
+    {
+      "id": "shuowen:4028",
+      "headword": "郗",
+      "text": "周邑也。在河内。从邑希聲。",
+      "sourceTextSha256": "78760506669bf7a7e3de4d6e1882edfd4542cf856394c0a38e305b657674a5d2"
+    },
+    {
+      "id": "shuowen:4029",
+      "headword": "鄆",
+      "text": "河内沁水鄉。从邑軍聲。魯有鄆地。",
+      "sourceTextSha256": "db9680c782c228d3c500785fb22fab7e63658c49eadfe7ba6fc40545d5a34134"
+    },
+    {
+      "id": "shuowen:4030",
+      "headword": "邶",
+      "text": "故商邑。自河内朝歌以北是也。从邑北聲。",
+      "sourceTextSha256": "70f7b95977f3ca9a1348c60cdd932720b04bd629dca3205020c40b6b7faa8765"
+    },
+    {
+      "id": "shuowen:4031",
+      "headword": "邘",
+      "text": "周武王子所封。在河内野王是也。从邑于聲。又讀若區。",
+      "sourceTextSha256": "aa5e6f79aa4b6a99b46ac4271dd4cadf07e069e8900072320771c9b4830a8bc9"
+    },
+    {
+      "id": "shuowen:4032",
+      "headword": "𨛫",
+      "text": "殷諸侯國。在上黨東北。从邑𥝢聲。𥝢，古文利。《商書》：“西伯戡𨛫。”",
+      "sourceTextSha256": "d5a8e3c9faf8d2943054683f71f1fc81aaa62a007b20b3008ba6cf3c7067646c"
+    },
+    {
+      "id": "shuowen:4033",
+      "headword": "邵",
+      "text": "晉邑也。从邑召聲。",
+      "sourceTextSha256": "a9714df85d9c3f7078f3aa9439afe37c981bb53c01b6b5a5a4542612de424201"
+    },
+    {
+      "id": "shuowen:4034",
+      "headword": "鄍",
+      "text": "晉邑也。从邑冥聲。《春秋傳》曰：“伐鄍三門。”",
+      "sourceTextSha256": "88834638cbb469d8ba547750dc21dfd5abffefae7180b89b21f2069e0dc24ba5"
+    },
+    {
+      "id": "shuowen:4035",
+      "headword": "鄐",
+      "text": "晉邢矦邑。从邑畜聲。",
+      "sourceTextSha256": "2760cc39a4c199ec92f612c79cd3fe292521f1a0ed09ea1192da3de86a4de1a5"
+    },
+    {
+      "id": "shuowen:4036",
+      "headword": "𨜫",
+      "text": "晉之溫地。从邑侯聲。《春秋傳》曰：“爭𨜫田。”",
+      "sourceTextSha256": "5c605f277286ecb8c96391f327ba25b345eb6a8655f1dc797d6c5c40570eec32"
+    },
+    {
+      "id": "shuowen:4037",
+      "headword": "邲",
+      "text": "晉邑也。从邑必聲。《春秋傳》曰：“晋楚戰于邲。”",
+      "sourceTextSha256": "d85b7c46e05e964a43a44519394968758a923c10580d21a5c54794d70e87017e"
+    },
+    {
+      "id": "shuowen:4038",
+      "headword": "郤",
+      "text": "晉大夫叔虎邑也。从邑谷聲。",
+      "sourceTextSha256": "b76a357edb204179eb22460f2ccd2771923f6e523c21b7784ca8eb4d126dfd7c"
+    },
+    {
+      "id": "shuowen:4039",
+      "headword": "𨛬",
+      "text": "河東聞喜縣。从邑非聲。",
+      "sourceTextSha256": "3865b5cf0fc8c840cc2081a07ad5d3e9ae58eb6242d94fd346ec63fdd18f7271"
+    },
+    {
+      "id": "shuowen:4040",
+      "headword": "𨜻",
+      "text": "河東聞喜聚。从邑虔聲。",
+      "sourceTextSha256": "01b8c9da03c534ed467c7f3f0dd71d13fd10875650a94fb6bcb45ab1a90cabc6"
+    },
+    {
+      "id": "shuowen:4041",
+      "headword": "邼",
+      "text": "河東聞喜鄉。从邑匡聲。",
+      "sourceTextSha256": "e689a08ad1481a6aef23b1d4047176fdece3b608cabd8f45d8ef5f0c3623fde5"
+    },
+    {
+      "id": "shuowen:4042",
+      "headword": "鄈",
+      "text": "河東臨汾地，即漢之所祭后土處。从邑癸聲。",
+      "sourceTextSha256": "de5786ebafc33ca097995bbefd6b239cc685e1db16b72d8e7a82c6766cba275a"
+    },
+    {
+      "id": "shuowen:4043",
+      "headword": "郉",
+      "text": "周公子所封，地近河内懷。从邑幵聲。",
+      "sourceTextSha256": "31e87eaee6d5a835f0023822f9ed958e52ca4c837dd48ee132650298f88ab2f1"
+    },
+    {
+      "id": "shuowen:4044",
+      "headword": "鄔",
+      "text": "太原縣。从邑烏聲。",
+      "sourceTextSha256": "d4b60c65dbdd4a7727157f62291fd544d71a2ac45645d1567004e6f6725bc557"
+    },
+    {
+      "id": "shuowen:4045",
+      "headword": "祁",
+      "text": "太原縣。从邑示聲。",
+      "sourceTextSha256": "7cbb40c9ba651736f840f9bea241c3d71287dd4bbcc2002a52b91e857c86da68"
+    },
+    {
+      "id": "shuowen:4046",
+      "headword": "鄴",
+      "text": "魏郡縣。从邑業聲。",
+      "sourceTextSha256": "0e66f1027d68093236f4091cb79b8c9cbe930544b114132b6b21dd8279ee5524"
+    },
+    {
+      "id": "shuowen:4047",
+      "headword": "𨙷",
+      "text": "鄭地𨙷亭。从邑井聲。",
+      "sourceTextSha256": "9ec7e19258eda7efeb6de98024037a77d984be3483cea90100460b701a0d4d9e"
+    },
+    {
+      "id": "shuowen:4048",
+      "headword": "邯",
+      "text": "趙邯鄲縣。从邑甘聲。",
+      "sourceTextSha256": "6cc81c18708091d18fafc9964fb584924aff4db6ac667b210621592979e84487"
+    },
+    {
+      "id": "shuowen:4049",
+      "headword": "鄲",
+      "text": "邯鄲縣。从邑單聲。",
+      "sourceTextSha256": "1373cf77f3abaa154af300591670bc38376b2a67c9bcd78c7cbd48f97cf03270"
+    },
+    {
+      "id": "shuowen:4050",
+      "headword": "郇",
+      "text": "周武王子所封國，在晉地。从邑旬聲。讀若泓。",
+      "sourceTextSha256": "14c7816b7f5a30c24daf791d8b4b30e75ebf9c2465df71c29d4b6d021052aab1"
+    },
+    {
+      "id": "shuowen:4051",
+      "headword": "鄃",
+      "text": "清河縣。从邑俞聲。",
+      "sourceTextSha256": "c060da459839590f44ba99fc0dd6c51b708101d3a061a8aae3a978116589f782"
+    },
+    {
+      "id": "shuowen:4052",
+      "headword": "鄗",
+      "text": "常山縣。丗祖所卽位，今爲高邑。从邑高聲。",
+      "sourceTextSha256": "d9ea22477a6a04edb642f863b74a9f4a33436c0da5ec6241b34eb259661a56bc"
+    },
+    {
+      "id": "shuowen:4053",
+      "headword": "鄡",
+      "text": "鉅鹿縣。从邑梟聲。",
+      "sourceTextSha256": "f308515f133b57a8eb2ccef8868c2d10de8b8f4b50b54479fc5a3e534f067285"
+    },
+    {
+      "id": "shuowen:4054",
+      "headword": "鄚",
+      "text": "涿郡縣。从邑莫聲。",
+      "sourceTextSha256": "7eed496b09c5f1c77b2eb13040fba13a9fcb7b0cfeec91d3c63689123bb82e07"
+    },
+    {
+      "id": "shuowen:4055",
+      "headword": "郅",
+      "text": "北地郁郅縣。从邑至聲。",
+      "sourceTextSha256": "35657d26c5a936f09538b08fea740e2e82c8e10ad44ceefcd03afe43afaad087"
+    },
+    {
+      "id": "shuowen:4056",
+      "headword": "𨜛",
+      "text": "北方長狄國也。在夏爲防風氏，在殷爲汪茫氏。从邑叜聲。《春秋傳》曰：“𨜛瞞侵齊。”",
+      "sourceTextSha256": "f01b631a1c58ef124d01265c9a93b6ef5b37b7d2d6f2c8b265b965af1ccceee5"
+    },
+    {
+      "id": "shuowen:4057",
+      "headword": "鄦",
+      "text": "炎帝太嶽之胤，甫矦所封，在潁川。从邑無聲。讀若許。",
+      "sourceTextSha256": "484c353e5f38948cfe501b5a2baf7aec4e360855b9e0edb30b6b13ae2be505e9"
+    },
+    {
+      "id": "shuowen:4058",
+      "headword": "邟",
+      "text": "潁川縣。从邑亢聲。",
+      "sourceTextSha256": "592605488ee4a5ea49249aef058337d941a795a308ca37768872832818f52c7e"
+    },
+    {
+      "id": "shuowen:4059",
+      "headword": "郾",
+      "text": "潁川縣。从邑匽聲。",
+      "sourceTextSha256": "43a157ea0e330bd7ef66d43eb7fcb341bb8a1f42a21e47b65d9e61295bf547ab"
+    },
+    {
+      "id": "shuowen:4060",
+      "headword": "郟",
+      "text": "潁川縣。从邑夾聲。",
+      "sourceTextSha256": "375dd7479b79b370700c1c2aa9a7141c7bbcfc3f29219f29fb06d012423847f0"
+    },
+    {
+      "id": "shuowen:4061",
+      "headword": "郪",
+      "text": "新郪，汝南縣。从邑妻聲。",
+      "sourceTextSha256": "b7977a7b3c357068942eaad3b0271fc3a7bb237ee4642e669d2876ece4eddbca"
+    },
+    {
+      "id": "shuowen:4062",
+      "headword": "鄎",
+      "text": "姬姓之國，在淮北。从邑息聲。今汝南新鄎。",
+      "sourceTextSha256": "90db2b523151849ca0bd7b6b98c444d4c8e413e542c4a562eaf01ccd19187b7a"
+    },
+    {
+      "id": "shuowen:4063",
+      "headword": "郋",
+      "text": "汝南邵陵里。从邑自聲。讀若奚。",
+      "sourceTextSha256": "215bf0bd70c9e5e3b5508363fd730ea682329f40c0b46649273f1a92ea69e85f"
+    },
+    {
+      "id": "shuowen:4064",
+      "headword": "𨜷",
+      "text": "汝南鮦陽亭。从邑㫄聲。",
+      "sourceTextSha256": "ba54c9b4ec9344a0182963902030628a427f0af1b96ad7346ad8bbb2f4ad67eb"
+    },
+    {
+      "id": "shuowen:4065",
+      "headword": "郹",
+      "text": "蔡邑也。从邑狊聲。《春秋傳》曰：“郹陽封人之女奔之。”",
+      "sourceTextSha256": "4dc9689b4410eea722c5de9e7e9f6eb87dd6f8fe096fe6c202ad546fee461b95"
+    },
+    {
+      "id": "shuowen:4066",
+      "headword": "鄧",
+      "text": "曼姓之國。今屬南陽。从邑登聲。",
+      "sourceTextSha256": "464e0c1bc24ff84e067fe1db412da018cdb06ae7717f9a5f275bb69ab1248f5a"
+    },
+    {
+      "id": "shuowen:4067",
+      "headword": "鄾",
+      "text": "鄧國地也。从邑憂聲。《春秋傳》曰：“鄧南鄙鄾人攻之。”",
+      "sourceTextSha256": "28bdcff1742e87b96e2cd5d0c4d53bdc3b6a65838400f2a2f39149f8ed600153"
+    },
+    {
+      "id": "shuowen:4068",
+      "headword": "𨚙",
+      "text": "南陽淯陽鄉。从邑号聲。",
+      "sourceTextSha256": "db9afdce1d89cf3bf52c46a19cad93682d82b2e0ca0aebbdb5e32722268bcaaa"
+    },
+    {
+      "id": "shuowen:4069",
+      "headword": "鄛",
+      "text": "南陽棗陽鄉。从邑巢聲。",
+      "sourceTextSha256": "412aee509c60846dc4194c3f7b17bd9488ff3b594d9ee905a0f0cda1cd9ad0e2"
+    },
+    {
+      "id": "shuowen:4070",
+      "headword": "𨟚",
+      "text": "今南陽穰縣是。从邑襄聲。",
+      "sourceTextSha256": "21db8c21073f3740d9a050c415dc579ac6df60d92ea4097174f1b2e92b6b545b"
+    },
+    {
+      "id": "shuowen:4071",
+      "headword": "䣚",
+      "text": "南陽穰鄉。从邑婁聲。",
+      "sourceTextSha256": "208c73c926c57a7f49864505eb7653232bbf1f350fcd61053cea054afc091112"
+    },
+    {
+      "id": "shuowen:4072",
+      "headword": "𨛋",
+      "text": "南陽西鄂亭。从邑里聲。",
+      "sourceTextSha256": "e9100055e124d569657dafeba56d6301bd95af881b37cd1bcf33b89a1328488d"
+    },
+    {
+      "id": "shuowen:4073",
+      "headword": "䣁",
+      "text": "南陽舞陰亭。从邑羽聲。",
+      "sourceTextSha256": "fa3ced186d94dbf17c5e731cb2a5c5d74d2ce370f8536d039746544487a39aaa"
+    },
+    {
+      "id": "shuowen:4074",
+      "headword": "郢",
+      "text": "故楚都。在南郡江陵北十里。从邑呈聲。",
+      "sourceTextSha256": "24fe5a2e98a68430e2cb3acf855994680dd91074ba41b238a07f0d37a38ac2ed"
+    },
+    {
+      "id": "shuowen:4075",
+      "headword": "鄢",
+      "text": "南郡縣。孝惠三年改名宜城。从邑焉聲。",
+      "sourceTextSha256": "9140c65e06d291880c64c8e7e7ff5edb025d3b3593a841b0b9320ee2fb0bf1cb"
+    },
+    {
+      "id": "shuowen:4076",
+      "headword": "鄳",
+      "text": "江夏縣。从邑𪓑聲。",
+      "sourceTextSha256": "00a5fe1eb17866cd30f58dbd01de831c1b612ceeff05e3aa516a226d6448615b"
+    },
+    {
+      "id": "shuowen:4077",
+      "headword": "𨞛",
+      "text": "南陽陰鄉。从邑葛聲。",
+      "sourceTextSha256": "4ec6fb04880ed101e1eccdf9cea5c7b7860bbc73e4fdf5c3a063e3fe3ad49681"
+    },
+    {
+      "id": "shuowen:4078",
+      "headword": "鄂",
+      "text": "江夏縣。从邑㖾聲。",
+      "sourceTextSha256": "2106a32f378d5cfcba2d43dbb0f1d4f480c70c90cc39c0a986d220cda641fdbc"
+    },
+    {
+      "id": "shuowen:4079",
+      "headword": "邔",
+      "text": "南陽縣。从邑己聲。",
+      "sourceTextSha256": "73d84fd0cf740f1f046a0e0cd44cc1ffdcfee6f9dde8601903c13b1850480e91"
+    },
+    {
+      "id": "shuowen:4080",
+      "headword": "邾",
+      "text": "江夏縣。从邑朱聲。",
+      "sourceTextSha256": "d7dba375470cb76cd4d9ccf053b611f96dd2b06882d5a30a563b71fe0b40317d"
+    },
+    {
+      "id": "shuowen:4081",
+      "headword": "鄖",
+      "text": "漢南之國。从邑員聲。漢中有鄖關。",
+      "sourceTextSha256": "6a52227f3165efe9b28fe4132c7959b8d899c2b9c8db4aa5f97a99a674ce70d6"
+    },
+    {
+      "id": "shuowen:4082",
+      "headword": "鄘",
+      "text": "南夷國。从邑庸聲。",
+      "sourceTextSha256": "f208b7be3cd232977e93222367920c974960539705c16755771a4c16b6c5449d"
+    },
+    {
+      "id": "shuowen:4083",
+      "headword": "郫",
+      "text": "蜀縣也。从邑卑聲。",
+      "sourceTextSha256": "872f77309896088db5d6429d8fd883cf31929856901b6509d3f25b88249d64ad"
+    },
+    {
+      "id": "shuowen:4084",
+      "headword": "𨞪",
+      "text": "蜀江原地。从邑壽聲。",
+      "sourceTextSha256": "48a8cbd27bb27d8e640cf006d490d51d675a3cc1d5723c5ec5933609a082d364"
+    },
+    {
+      "id": "shuowen:4085",
+      "headword": "䣢",
+      "text": "蜀地也。从邑耤聲。",
+      "sourceTextSha256": "153d712fa8e84cb3790d452aead52631ecb4749ecd20f890ed7e8e59e79a9665"
+    },
+    {
+      "id": "shuowen:4086",
+      "headword": "𨞼",
+      "text": "蜀廣漢鄉也。从邑蔓聲。讀若蔓。",
+      "sourceTextSha256": "cb5f3c7ebe3935d76c054c606a3f99b698bfa6c9c8e31031dfdca205b49fd0ab"
+    },
+    {
+      "id": "shuowen:4087",
+      "headword": "邡",
+      "text": "什邡，廣漢縣。从邑方聲。",
+      "sourceTextSha256": "5c5a3c2298f4c10f7afeec4177c41f8f215e9f1d105721ddcf2a6a033fe50e49"
+    },
+    {
+      "id": "shuowen:4088",
+      "headword": "䣕",
+      "text": "存䣕，犍爲縣。从邑馬聲。",
+      "sourceTextSha256": "cca8729ae819c4a46347dabc41d385de80e2920f23cf76a2d6e89ab975552ae4"
+    },
+    {
+      "id": "shuowen:4089",
+      "headword": "鄨",
+      "text": "䍧牱縣。从邑敝聲。讀若鷩雉之鷩。",
+      "sourceTextSha256": "56fe720a574bfa0dca16fb004a9bcf88380c83ed67936313915069dba80d52a2"
+    },
+    {
+      "id": "shuowen:4090",
+      "headword": "𨚔",
+      "text": "地名。从邑包聲。",
+      "sourceTextSha256": "2ae0dd24f18c51ada009bd47bf9cea48a38a496a55b66414e54f5f784db0b2ed"
+    },
+    {
+      "id": "shuowen:4091",
+      "headword": "𨙻",
+      "text": "西夷國。从邑冄聲。安定有朝𨙻縣。",
+      "sourceTextSha256": "9ba84d09a95b565d23fd2c2709ff0f8ca67f778a833b3f993c98396772e844a3"
+    },
+    {
+      "id": "shuowen:4092",
+      "headword": "鄱",
+      "text": "鄱陽，豫章縣。从邑番聲。",
+      "sourceTextSha256": "1d6ddd7c819d97bd631b28a8904e22b1bc1e4de09d5f866cdd4e348b9664f9ee"
+    },
+    {
+      "id": "shuowen:4093",
+      "headword": "酃",
+      "text": "長沙縣。从邑霝聲。",
+      "sourceTextSha256": "ed5cb72da748a47b0bc161fb4ce5a1e60e230fdf790632d439037f9612a0c1a7"
+    },
+    {
+      "id": "shuowen:4094",
+      "headword": "郴",
+      "text": "桂陽縣。从邑林聲。",
+      "sourceTextSha256": "4f403547ecac1975b14f7a55b7e35ed8856d10b2e7d0e4051d12d9a5172381c7"
+    },
+    {
+      "id": "shuowen:4095",
+      "headword": "䣂",
+      "text": "今桂陽䣂陽縣。从邑耒聲。",
+      "sourceTextSha256": "997075ffadb04f2c29e7aa4b304123ce6d54963ae093703958ce86f86249255c"
+    },
+    {
+      "id": "shuowen:4096",
+      "headword": "鄮",
+      "text": "會稽縣。从邑貿聲。",
+      "sourceTextSha256": "718c4afe113d61f9e056d34ed3c455395f5a9469be1e89c68da6ac14ff2ed750"
+    },
+    {
+      "id": "shuowen:4097",
+      "headword": "鄞",
+      "text": "會稽縣。从邑堇聲。",
+      "sourceTextSha256": "1b21990569e39f9d2f13fb3d2d6578cc953dcf4fad8c47141893f60250a0c8cf"
+    },
+    {
+      "id": "shuowen:4098",
+      "headword": "𨙶",
+      "text": "沛郡。从邑巿聲。",
+      "sourceTextSha256": "d42e0d53c1fd72ca7fd8589699b4c1f5f727cff9a3df7ddc2e41f29872d51723"
+    },
+    {
+      "id": "shuowen:4099",
+      "headword": "邴",
+      "text": "宋下邑。从邑丙聲。",
+      "sourceTextSha256": "5e9aadee276fb6fdfbd1df0d602a744291758cb57b4101846eea95b20566058d"
+    },
+    {
+      "id": "shuowen:4100",
+      "headword": "䣜",
+      "text": "沛國縣。从邑虘聲。",
+      "sourceTextSha256": "3dafbc8a125de96df38d282c750800c767bd96232bf94a9f385c7b667baca495"
+    }
+  ]
+}

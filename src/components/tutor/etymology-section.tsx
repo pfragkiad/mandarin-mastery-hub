@@ -22,8 +22,8 @@ import { hasOwnEtymologyText, loadEtymologyIndex, resolveEtymology, type Etymolo
  * Display rules follow public/data/etymology/README.md: source text is never altered or spoken
  * (Howell's note is only laid out from its own notation, see howell-entry.tsx, with its hanzi as
  * exact-form tiles), each entry keeps its own attribution, and components and radicals only
- * link to the standalone character. Each source is its own tinted block; the whole Shuowen
- * subsection sits behind one remembered Advanced toggle.
+ * link to the standalone character. Shuowen English is a source-bound, unreviewed AI draft;
+ * the original Chinese stays behind the remembered Advanced disclosure.
  */
 const SOURCE_LABEL: Record<EtymologyEntry['sourceId'], { name: string; kind: string }> = {
   howell: { name: 'Lawrence J. Howell', kind: 'author interpretation' },
@@ -35,7 +35,7 @@ const COVERAGE: Record<string, string> = {
   'shuowen-only': 'Only Shuowen Jiezi has this headword',
 };
 
-// The Shuowen Jiezi subsection starts folded (owner's choice); opening it once is
+// The original Chinese starts folded; opening it once is
 // remembered on this device, read after mount so server and first client render agree.
 const CLASSICAL_OPEN_KEY = 'tutor.etymology.classicalOpen';
 function useClassicalOpen(): [boolean, () => void] {
@@ -57,22 +57,32 @@ function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string })
   </div>;
 }
 
-/** The whole Shuowen Jiezi subsection behind one remembered "Advanced" toggle (owner's
- *  choice): collapsed it is a single row naming the source; open it explains the level and
- *  shows every Shuowen entry for this headword (舌 keeps both of its IDs as separate texts). */
-function ShuowenSection({ entries, withHowell }: { entries: EtymologyEntry[]; withHowell: boolean }) {
+/** Separate AI English drafts from the unchanged Classical Chinese. Duplicate
+ * headwords keep independent source IDs in both views; no reading is invented. */
+export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   const panelId = useId();
   const [open, toggle] = useClassicalOpen();
-  return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}`}>
+  const translated = entries.some(entry => entry.translation);
+  return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}${translated ? ' has-translation' : ''}`}>
+    <div className="etymology-entry-head">
+      <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
+      <span className="etymology-source-kind">historical dictionary</span>
+    </div>
+    {translated && <>
+      <p className="etymology-advanced-note">English translation · AI-generated draft, not reviewed.</p>
+      {entries.map(entry => entry.translation && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
+        <p className="etymology-text" lang="en">{entry.translation.text}</p>
+        {entry.translation.uncertain && <p className="etymology-advanced-note">This passage is uncertain; consult the original Chinese.</p>}
+      </div>)}
+    </>}
     <button type="button" className="etymology-advanced-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={toggle}>
       <ChevronDown className="etymology-advanced-chevron" aria-hidden="true"/>
       <span className="etymology-level-pill">Advanced</span>
-      <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
-      <span className="etymology-source-kind">{SOURCE_LABEL.shuowen.kind}</span>
+      <span className="etymology-source-kind">Original Classical Chinese</span>
       <span className="etymology-advanced-action">{open ? 'Hide' : 'Show'}</span>
     </button>
     {open && <div id={panelId} className="etymology-advanced-body more-examples-panel">
-      <p className="etymology-advanced-note">Written in Classical Chinese (文言), the literary language of Xu Shen’s dictionary, compiled around 100 CE. Its grammar and wording differ from modern Mandarin, so it is hard even for fluent readers. {withHowell ? 'No modern translation is recorded here; Howell’s note above is the learner-friendly reading.' : 'No modern translation is recorded here.'}</p>
+      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && ' English drafts above are translations of these exact source entries, not verified modern etymology.'}</p>
       {entries.map(entry => <p key={entry.id} className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>)}
     </div>}
   </div>;
@@ -113,6 +123,7 @@ export function EtymologyInfo({ view }: { view: EtymologyView }) {
     {meta.disclaimer}<br/>
     {COVERAGE[view.coverage] && <>{COVERAGE[view.coverage]}<br/></>}
     {view.entries.map(entry => <span key={entry.id}>{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
+    {view.entries.some(entry => entry.translation) && <>Shuowen English · AI-generated draft, not reviewed<br/></>}
     {licenses.join(' · ')}<br/>
     Imported {meta.import_date}
   </SourceInfo>;
@@ -136,7 +147,7 @@ export function EtymologyPanel({ view }: { view: EtymologyView | null | undefine
     const shuowen = view.entries.filter(entry => entry.sourceId === 'shuowen');
     return <div className="etymology-entries">
       {howell.map(entry => <HowellBlock key={entry.id} entry={entry} glyph={view.glyph}/>)}
-      {shuowen.length > 0 && <ShuowenSection entries={shuowen} withHowell={howell.length > 0}/>}
+      {shuowen.length > 0 && <ShuowenSection entries={shuowen}/>}
     </div>;
   }
   if (view.status === 'context-review-required') {

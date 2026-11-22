@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "ba190ce173fcec8394f92aedf142cd9f360e845530165c6197c843c4ed00d7f8",
+    "created_date": "2026-11-22"
+  },
+  "batch": "041",
+  "translations": {
+    "shuowen:4001": {
+      "text": "The fief of Yandi’s descendants of the Jiang surname, and the state of Zhou Qi’s maternal family: Tai County, 斄, in Right Fufeng. Formed from 邑, with 台 indicating the sound. The Odes says: “He established his household at Tai.”",
+      "sourceTextSha256": "5059a0d00497a6c281980a23d91fbc176c66f61711e833b194ba9eb22789de4d",
+      "uncertain": false
+    },
+    "shuowen:4002": {
+      "text": "King Wen of Zhou’s fief, in Zhongshui Township, Meiyang, Right Fufeng. Formed from 邑, with 支 indicating the sound.",
+      "sourceTextSha256": "1946122fc38c2d358351eee144fbd10cb84e5176ceb58a2f2eb91a3111e2991e",
+      "uncertain": false
+    },
+    "shuowen:4003": {
+      "text": "King Tai of Zhou’s state, in Meiyang, Right Fufeng. Formed from 邑, with 分 indicating the sound.",
+      "sourceTextSha256": "93d4f3194969f2509afbc4d34a148a6b57e4a82d4a5ee02d3c418c2074f19b1d",
+      "uncertain": false
+    },
+    "shuowen:4004": {
+      "text": "A county in Right Fufeng. Formed from 邑, with 眉 indicating the sound.",
+      "sourceTextSha256": "4dd4e52eec3edfa00bb6cfeb9674745726494a2f0fc9dc7cc890ec7ac5c23d64",
+      "uncertain": false
+    },
+    "shuowen:4005": {
+      "text": "Yuyi, 郁夷, in Right Fufeng. Formed from 邑, with 有 indicating the sound.",
+      "sourceTextSha256": "3223be87a6984a6fd8a48d4144495d5628bb239df5febe138915b18d972ff27b",
+      "uncertain": false
+    },
+    "shuowen:4006": {
+      "text": "A county name in Right Fufeng. Formed from 邑, with 雩 indicating the sound.",
+      "sourceTextSha256": "411fac39fa798b7aa48da39451ba596a903c128266fea528c72476313467944a",
+      "uncertain": false
+    },
+    "shuowen:4007": {
+      "text": "The fief of a clan sharing the Xia rulers’ surname, which fought at Gan. In Hu, 鄠, are Hu Valley and Gan Pavilion. Formed from 邑, with 戶 indicating the sound.",
+      "sourceTextSha256": "99236faa5c381eb984abbbfdacfd17a4e0918eb5acfa61bff03da3502349bafa",
+      "uncertain": false
+    },
+    "shuowen:4008": {
+      "text": "A township in Hu, Right Fufeng. Formed from 邑, with 崩 indicating the sound. Chengfu in Pei also has a 䣙 Township. Read like 陪.",
+      "sourceTextSha256": "b77005b44362e35c2cbcbb20825163267cf9935805dcee73ebd237186edc54ec",
+      "uncertain": false
+    },
+    "shuowen:4009": {
+      "text": "A township in Hu, Right Fufeng. Formed from 邑, with 且 indicating the sound.",
+      "sourceTextSha256": "9feafe297fa13a33ea8795c9182957c7a75bdd7e714ea570619931857a2ac1f7",
+      "uncertain": false
+    },
+    "shuowen:4010": {
+      "text": "A township in Hu and Zhouzhi, Right Fufeng. Formed from 邑, with 赤 indicating the sound.",
+      "sourceTextSha256": "6479b555cc4bee704057cb0f7a85e455af910141fcb399dca86b544d12e72c9e",
+      "uncertain": false
+    },
+    "shuowen:4011": {
+      "text": "King Wen of Zhou’s capital, southwest of Duling, Jingzhao. Formed from 邑, with 豐 indicating the sound.",
+      "sourceTextSha256": "ec712b5a86838c5980a3011a673c1fcf76689d0919bc54a2349eb30d06dc5b23",
+      "uncertain": false
+    },
+    "shuowen:4012": {
+      "text": "A county in Jingzhao, the fief of You, son of King Li of Zhou. Formed from 邑, with 奠 indicating the sound. When Zongzhou fell, Zheng moved to the Zhen and Wei rivers; this is the present Xinzheng.",
+      "sourceTextSha256": "b196365ad1b86c51014198491fa3b0069c0d4e8b3afd2f4113f70865f19e0d89",
+      "uncertain": false
+    },
+    "shuowen:4013": {
+      "text": "Heyang County, 郃陽, in Left Pingyi. Formed from 邑, with 合 indicating the sound. The Odes says: “On the sunny side of the He.”",
+      "sourceTextSha256": "fbc0c50ac87ad7bc1be3cca47396f8c14308a45561a1594136454f329b7112c7",
+      "uncertain": false
+    },
+    "shuowen:4014": {
+      "text": "A township in Lantian, Jingzhao. Formed from 邑, with 口 indicating the sound.",
+      "sourceTextSha256": "8a287b1dc668be0a94ac6bd4681742858fa4ad6963814542d1d866d682200cd8",
+      "uncertain": false
+    },
+    "shuowen:4015": {
+      "text": "A township in Duling, Jingzhao. Formed from 邑, with 樊 indicating the sound.",
+      "sourceTextSha256": "a133e20a81efede05e0055ed6281016a53db0a5a723d16d2276e16c88d153613",
+      "uncertain": false
+    },
+    "shuowen:4016": {
+      "text": "A county in Left Pingyi. Formed from 邑, with 麃 indicating the sound.",
+      "sourceTextSha256": "f0af9f0da479a48abc19df3014b3663a2a887c5d2f2e613485763856fb0dbbca",
+      "uncertain": false
+    },
+    "shuowen:4017": {
+      "text": "䣝陽 Pavilion in Left Pingyi. Formed from 邑, with 屠 indicating the sound.",
+      "sourceTextSha256": "a1fc69ddde71b056909ed978eb893bd6c467e54c8724b476453e099abeae98ad",
+      "uncertain": false
+    },
+    "shuowen:4018": {
+      "text": "A place in Gaoling, Left Pingyi. Formed from 邑, with 由 indicating the sound.",
+      "sourceTextSha256": "557caed1062b813f228f785fccfd3827b8317e113db6b6d6e7727901c1fc1f87",
+      "uncertain": false
+    },
+    "shuowen:4019": {
+      "text": "A township in Gukou, Left Pingyi. Formed from 邑, with 秊 indicating the sound. Read like 寕.",
+      "sourceTextSha256": "f86d728e736d14b38cd6295ab22ed6e7a2a5de33e78b36f880b29ff7a9c6b523",
+      "uncertain": false
+    },
+    "shuowen:4020": {
+      "text": "Shanggui, 上邽, in Longxi. Formed from 邑, with 圭 indicating the sound.",
+      "sourceTextSha256": "79356843a6ebb84ecf44e3a30a24cd1713f831230f71b9bfb0544c1be1dbc05b",
+      "uncertain": false
+    },
+    "shuowen:4021": {
+      "text": "Dibu, 狄部, in Tianshui. Formed from 邑, with 咅 indicating the sound.",
+      "sourceTextSha256": "ef8b9f3bf626c98a950a00a5407b42655edb5a5055d757a5aad95341bc954a4f",
+      "uncertain": false
+    },
+    "shuowen:4022": {
+      "text": "A granary site in Hongnong County. Formed from 邑, with 豆 indicating the sound.",
+      "sourceTextSha256": "dfbdce86b7c10d057a67c0e25ad1231be76f462fd26f0835641baa3c8686cbd5",
+      "uncertain": false
+    },
+    "shuowen:4023": {
+      "text": "A place on an official road directly facing the city gate in Henan County. Formed from 邑, with 辱 indicating the sound. The Spring and Autumn Commentary says: “King Cheng established the tripods at Jiaru, 郟鄏.”",
+      "sourceTextSha256": "36d9d36ba8dabd1b414ee67f77584663e7e2c8205c17d10058a342e68dbc644d",
+      "uncertain": false
+    },
+    "shuowen:4024": {
+      "text": "A Zhou settlement. Formed from 邑, with 輦 indicating the sound.",
+      "sourceTextSha256": "4da0a50122c71767afa6ee5dda65fd1916ef2a62a1c25c3c2465d9eacacf614e",
+      "uncertain": false
+    },
+    "shuowen:4025": {
+      "text": "A Zhou settlement. Formed from 邑, with 祭 indicating the sound.",
+      "sourceTextSha256": "778142a16c76bab6c80cd4428b2a55f8156579cf46ee43d5762a95b8ac73a911",
+      "uncertain": false
+    },
+    "shuowen:4026": {
+      "text": "A settlement on Mount Mang north of Luoyang, Henan. Formed from 邑, with 亡 indicating the sound.",
+      "sourceTextSha256": "dcbd8eab38e65d82d39f0324c7df0001c56a306e11a464c7b22e278b6fee88fa",
+      "uncertain": false
+    },
+    "shuowen:4027": {
+      "text": "A Zhou settlement. Formed from 邑, with 尋 indicating the sound.",
+      "sourceTextSha256": "66096890a931686917d8382d882929697c74891e310e1ead70d16f901a80d105",
+      "uncertain": false
+    },
+    "shuowen:4028": {
+      "text": "A Zhou settlement in Henei. Formed from 邑, with 希 indicating the sound.",
+      "sourceTextSha256": "78760506669bf7a7e3de4d6e1882edfd4542cf856394c0a38e305b657674a5d2",
+      "uncertain": false
+    },
+    "shuowen:4029": {
+      "text": "A township in Qinshui, Henei. Formed from 邑, with 軍 indicating the sound. Lu also has a place called 鄆.",
+      "sourceTextSha256": "db9680c782c228d3c500785fb22fab7e63658c49eadfe7ba6fc40545d5a34134",
+      "uncertain": false
+    },
+    "shuowen:4030": {
+      "text": "An old Shang settlement, the area north from Chaoge in Henei. Formed from 邑, with 北 indicating the sound.",
+      "sourceTextSha256": "70f7b95977f3ca9a1348c60cdd932720b04bd629dca3205020c40b6b7faa8765",
+      "uncertain": false
+    },
+    "shuowen:4031": {
+      "text": "The fief of a son of King Wu of Zhou, in Yewang, Henei. Formed from 邑, with 于 indicating the sound. Also read like 區.",
+      "sourceTextSha256": "aa5e6f79aa4b6a99b46ac4271dd4cadf07e069e8900072320771c9b4830a8bc9",
+      "uncertain": false
+    },
+    "shuowen:4032": {
+      "text": "A feudal state under Yin, northeast of Shangdang. Formed from 邑, with 𥝢 indicating the sound; 𥝢 is ancient-script 利. The Book of Shang says: “The Earl of the West subdued 𨛫.”",
+      "sourceTextSha256": "d5a8e3c9faf8d2943054683f71f1fc81aaa62a007b20b3008ba6cf3c7067646c",
+      "uncertain": false
+    },
+    "shuowen:4033": {
+      "text": "A Jin settlement. Formed from 邑, with 召 indicating the sound.",
+      "sourceTextSha256": "a9714df85d9c3f7078f3aa9439afe37c981bb53c01b6b5a5a4542612de424201",
+      "uncertain": false
+    },
+    "shuowen:4034": {
+      "text": "A Jin settlement. Formed from 邑, with 冥 indicating the sound. The Spring and Autumn Commentary says: “Attack Ming’s three gates.”",
+      "sourceTextSha256": "88834638cbb469d8ba547750dc21dfd5abffefae7180b89b21f2069e0dc24ba5",
+      "uncertain": false
+    },
+    "shuowen:4035": {
+      "text": "A settlement of Jin’s Marquis of Xing. Formed from 邑, with 畜 indicating the sound.",
+      "sourceTextSha256": "2760cc39a4c199ec92f612c79cd3fe292521f1a0ed09ea1192da3de86a4de1a5",
+      "uncertain": false
+    },
+    "shuowen:4036": {
+      "text": "A place in Wen, Jin. Formed from 邑, with 侯 indicating the sound. The Spring and Autumn Commentary says: “Dispute over the fields of 𨜫.”",
+      "sourceTextSha256": "5c605f277286ecb8c96391f327ba25b345eb6a8655f1dc797d6c5c40570eec32",
+      "uncertain": false
+    },
+    "shuowen:4037": {
+      "text": "A Jin settlement. Formed from 邑, with 必 indicating the sound. The Spring and Autumn Commentary says: “Jin and Chu fought at Bi.”",
+      "sourceTextSha256": "d85b7c46e05e964a43a44519394968758a923c10580d21a5c54794d70e87017e",
+      "uncertain": false
+    },
+    "shuowen:4038": {
+      "text": "The settlement of Shuhu, a grand officer of Jin. Formed from 邑, with 谷 indicating the sound.",
+      "sourceTextSha256": "b76a357edb204179eb22460f2ccd2771923f6e523c21b7784ca8eb4d126dfd7c",
+      "uncertain": false
+    },
+    "shuowen:4039": {
+      "text": "A place in Wenxi County, Hedong. Formed from 邑, with 非 indicating the sound.",
+      "sourceTextSha256": "3865b5cf0fc8c840cc2081a07ad5d3e9ae58eb6242d94fd346ec63fdd18f7271",
+      "uncertain": false
+    },
+    "shuowen:4040": {
+      "text": "A village in Wenxi, Hedong. Formed from 邑, with 虔 indicating the sound.",
+      "sourceTextSha256": "01b8c9da03c534ed467c7f3f0dd71d13fd10875650a94fb6bcb45ab1a90cabc6",
+      "uncertain": false
+    },
+    "shuowen:4041": {
+      "text": "A township in Wenxi, Hedong. Formed from 邑, with 匡 indicating the sound.",
+      "sourceTextSha256": "e689a08ad1481a6aef23b1d4047176fdece3b608cabd8f45d8ef5f0c3623fde5",
+      "uncertain": false
+    },
+    "shuowen:4042": {
+      "text": "A place in Linfen, Hedong, where the Han sacrifices to Sovereign Earth. Formed from 邑, with 癸 indicating the sound.",
+      "sourceTextSha256": "de5786ebafc33ca097995bbefd6b239cc685e1db16b72d8e7a82c6766cba275a",
+      "uncertain": false
+    },
+    "shuowen:4043": {
+      "text": "The fief of a son of the Duke of Zhou, near Huai in Henei. Formed from 邑, with 幵 indicating the sound.",
+      "sourceTextSha256": "31e87eaee6d5a835f0023822f9ed958e52ca4c837dd48ee132650298f88ab2f1",
+      "uncertain": false
+    },
+    "shuowen:4044": {
+      "text": "A county in Taiyuan. Formed from 邑, with 烏 indicating the sound.",
+      "sourceTextSha256": "d4b60c65dbdd4a7727157f62291fd544d71a2ac45645d1567004e6f6725bc557",
+      "uncertain": false
+    },
+    "shuowen:4045": {
+      "text": "A county in Taiyuan. Formed from 邑, with 示 indicating the sound.",
+      "sourceTextSha256": "7cbb40c9ba651736f840f9bea241c3d71287dd4bbcc2002a52b91e857c86da68",
+      "uncertain": false
+    },
+    "shuowen:4046": {
+      "text": "A county in Wei Commandery. Formed from 邑, with 業 indicating the sound.",
+      "sourceTextSha256": "0e66f1027d68093236f4091cb79b8c9cbe930544b114132b6b21dd8279ee5524",
+      "uncertain": false
+    },
+    "shuowen:4047": {
+      "text": "𨙷 Pavilion in Zheng territory. Formed from 邑, with 井 indicating the sound.",
+      "sourceTextSha256": "9ec7e19258eda7efeb6de98024037a77d984be3483cea90100460b701a0d4d9e",
+      "uncertain": false
+    },
+    "shuowen:4048": {
+      "text": "Handan County, 邯鄲, in Zhao. Formed from 邑, with 甘 indicating the sound.",
+      "sourceTextSha256": "6cc81c18708091d18fafc9964fb584924aff4db6ac667b210621592979e84487",
+      "uncertain": false
+    },
+    "shuowen:4049": {
+      "text": "Handan County, 邯鄲. Formed from 邑, with 單 indicating the sound.",
+      "sourceTextSha256": "1373cf77f3abaa154af300591670bc38376b2a67c9bcd78c7cbd48f97cf03270",
+      "uncertain": false
+    },
+    "shuowen:4050": {
+      "text": "A state enfeoffed to a son of King Wu of Zhou, in Jin territory. Formed from 邑, with 旬 indicating the sound. Read like 泓.",
+      "sourceTextSha256": "14c7816b7f5a30c24daf791d8b4b30e75ebf9c2465df71c29d4b6d021052aab1",
+      "uncertain": false
+    },
+    "shuowen:4051": {
+      "text": "A county in Qinghe. Formed from 邑, with 俞 indicating the sound.",
+      "sourceTextSha256": "c060da459839590f44ba99fc0dd6c51b708101d3a061a8aae3a978116589f782",
+      "uncertain": false
+    },
+    "shuowen:4052": {
+      "text": "A county in Changshan, where the Founding Ancestor took the throne; now called Gaoyi. Formed from 邑, with 高 indicating the sound.",
+      "sourceTextSha256": "d9ea22477a6a04edb642f863b74a9f4a33436c0da5ec6241b34eb259661a56bc",
+      "uncertain": false
+    },
+    "shuowen:4053": {
+      "text": "A county in Julu. Formed from 邑, with 梟 indicating the sound.",
+      "sourceTextSha256": "f308515f133b57a8eb2ccef8868c2d10de8b8f4b50b54479fc5a3e534f067285",
+      "uncertain": false
+    },
+    "shuowen:4054": {
+      "text": "A county in Zhuo Commandery. Formed from 邑, with 莫 indicating the sound.",
+      "sourceTextSha256": "7eed496b09c5f1c77b2eb13040fba13a9fcb7b0cfeec91d3c63689123bb82e07",
+      "uncertain": false
+    },
+    "shuowen:4055": {
+      "text": "Yuzhi County, 郁郅, in Beidi. Formed from 邑, with 至 indicating the sound.",
+      "sourceTextSha256": "35657d26c5a936f09538b08fea740e2e82c8e10ad44ceefcd03afe43afaad087",
+      "uncertain": false
+    },
+    "shuowen:4056": {
+      "text": "A northern state of the Tall Di, called the Fangfeng clan under Xia and the Wangmang clan under Yin. Formed from 邑, with 叜 indicating the sound. The Spring and Autumn Commentary says: “The 𨜛 Man invaded Qi.”",
+      "sourceTextSha256": "f01b631a1c58ef124d01265c9a93b6ef5b37b7d2d6f2c8b265b965af1ccceee5",
+      "uncertain": false
+    },
+    "shuowen:4057": {
+      "text": "The fief of the Marquis of Fu, descended from Yandi’s Taiyue, in Yingchuan. Formed from 邑, with 無 indicating the sound. Read like 許.",
+      "sourceTextSha256": "484c353e5f38948cfe501b5a2baf7aec4e360855b9e0edb30b6b13ae2be505e9",
+      "uncertain": false
+    },
+    "shuowen:4058": {
+      "text": "A county in Yingchuan. Formed from 邑, with 亢 indicating the sound.",
+      "sourceTextSha256": "592605488ee4a5ea49249aef058337d941a795a308ca37768872832818f52c7e",
+      "uncertain": false
+    },
+    "shuowen:4059": {
+      "text": "A county in Yingchuan. Formed from 邑, with 匽 indicating the sound.",
+      "sourceTextSha256": "43a157ea0e330bd7ef66d43eb7fcb341bb8a1f42a21e47b65d9e61295bf547ab",
+      "uncertain": false
+    },
+    "shuowen:4060": {
+      "text": "A county in Yingchuan. Formed from 邑, with 夾 indicating the sound.",
+      "sourceTextSha256": "375dd7479b79b370700c1c2aa9a7141c7bbcfc3f29219f29fb06d012423847f0",
+      "uncertain": false
+    },
+    "shuowen:4061": {
+      "text": "Xinqi, 新郪, a county in Runan. Formed from 邑, with 妻 indicating the sound.",
+      "sourceTextSha256": "b7977a7b3c357068942eaad3b0271fc3a7bb237ee4642e669d2876ece4eddbca",
+      "uncertain": false
+    },
+    "shuowen:4062": {
+      "text": "A state of the Ji surname north of the Huai; now Xinxi, 新鄎, in Runan. Formed from 邑, with 息 indicating the sound.",
+      "sourceTextSha256": "90db2b523151849ca0bd7b6b98c444d4c8e413e542c4a562eaf01ccd19187b7a",
+      "uncertain": false
+    },
+    "shuowen:4063": {
+      "text": "A neighborhood in Shaoling, Runan. Formed from 邑, with 自 indicating the sound. Read like 奚.",
+      "sourceTextSha256": "215bf0bd70c9e5e3b5508363fd730ea682329f40c0b46649273f1a92ea69e85f",
+      "uncertain": false
+    },
+    "shuowen:4064": {
+      "text": "A pavilion in Tongyang, Runan. Formed from 邑, with 㫄 indicating the sound.",
+      "sourceTextSha256": "ba54c9b4ec9344a0182963902030628a427f0af1b96ad7346ad8bbb2f4ad67eb",
+      "uncertain": false
+    },
+    "shuowen:4065": {
+      "text": "A Cai settlement. Formed from 邑, with 狊 indicating the sound. The Spring and Autumn Commentary says: “The daughter of the boundary officer of Juyang fled to him.”",
+      "sourceTextSha256": "4dc9689b4410eea722c5de9e7e9f6eb87dd6f8fe096fe6c202ad546fee461b95",
+      "uncertain": false
+    },
+    "shuowen:4066": {
+      "text": "A state of the Man surname, now belonging to Nanyang. Formed from 邑, with 登 indicating the sound.",
+      "sourceTextSha256": "464e0c1bc24ff84e067fe1db412da018cdb06ae7717f9a5f275bb69ab1248f5a",
+      "uncertain": false
+    },
+    "shuowen:4067": {
+      "text": "A place in Deng state. Formed from 邑, with 憂 indicating the sound. The Spring and Autumn Commentary says: “The people of You, on Deng’s southern border, attacked them.”",
+      "sourceTextSha256": "28bdcff1742e87b96e2cd5d0c4d53bdc3b6a65838400f2a2f39149f8ed600153",
+      "uncertain": false
+    },
+    "shuowen:4068": {
+      "text": "A township in Yuyang, Nanyang. Formed from 邑, with 号 indicating the sound.",
+      "sourceTextSha256": "db9afdce1d89cf3bf52c46a19cad93682d82b2e0ca0aebbdb5e32722268bcaaa",
+      "uncertain": false
+    },
+    "shuowen:4069": {
+      "text": "A township in Zaoyang, Nanyang. Formed from 邑, with 巢 indicating the sound.",
+      "sourceTextSha256": "412aee509c60846dc4194c3f7b17bd9488ff3b594d9ee905a0f0cda1cd9ad0e2",
+      "uncertain": false
+    },
+    "shuowen:4070": {
+      "text": "The present Rang County in Nanyang. Formed from 邑, with 襄 indicating the sound.",
+      "sourceTextSha256": "21db8c21073f3740d9a050c415dc579ac6df60d92ea4097174f1b2e92b6b545b",
+      "uncertain": false
+    },
+    "shuowen:4071": {
+      "text": "A township in Rang, Nanyang. Formed from 邑, with 婁 indicating the sound.",
+      "sourceTextSha256": "208c73c926c57a7f49864505eb7653232bbf1f350fcd61053cea054afc091112",
+      "uncertain": false
+    },
+    "shuowen:4072": {
+      "text": "A pavilion in Xi’e, Nanyang. Formed from 邑, with 里 indicating the sound.",
+      "sourceTextSha256": "e9100055e124d569657dafeba56d6301bd95af881b37cd1bcf33b89a1328488d",
+      "uncertain": false
+    },
+    "shuowen:4073": {
+      "text": "A pavilion in Wuyin, Nanyang. Formed from 邑, with 羽 indicating the sound.",
+      "sourceTextSha256": "fa3ced186d94dbf17c5e731cb2a5c5d74d2ce370f8536d039746544487a39aaa",
+      "uncertain": false
+    },
+    "shuowen:4074": {
+      "text": "Chu’s former capital, ten li north of Jiangling in Nan Commandery. Formed from 邑, with 呈 indicating the sound.",
+      "sourceTextSha256": "24fe5a2e98a68430e2cb3acf855994680dd91074ba41b238a07f0d37a38ac2ed",
+      "uncertain": false
+    },
+    "shuowen:4075": {
+      "text": "A county in Nan Commandery, renamed Yicheng in Xiaohui’s third year. Formed from 邑, with 焉 indicating the sound.",
+      "sourceTextSha256": "9140c65e06d291880c64c8e7e7ff5edb025d3b3593a841b0b9320ee2fb0bf1cb",
+      "uncertain": false
+    },
+    "shuowen:4076": {
+      "text": "A county in Jiangxia. Formed from 邑, with 𪓑 indicating the sound.",
+      "sourceTextSha256": "00a5fe1eb17866cd30f58dbd01de831c1b612ceeff05e3aa516a226d6448615b",
+      "uncertain": false
+    },
+    "shuowen:4077": {
+      "text": "A township in Yin, Nanyang. Formed from 邑, with 葛 indicating the sound.",
+      "sourceTextSha256": "4ec6fb04880ed101e1eccdf9cea5c7b7860bbc73e4fdf5c3a063e3fe3ad49681",
+      "uncertain": false
+    },
+    "shuowen:4078": {
+      "text": "A county in Jiangxia. Formed from 邑, with 㖾 indicating the sound.",
+      "sourceTextSha256": "2106a32f378d5cfcba2d43dbb0f1d4f480c70c90cc39c0a986d220cda641fdbc",
+      "uncertain": false
+    },
+    "shuowen:4079": {
+      "text": "A county in Nanyang. Formed from 邑, with 己 indicating the sound.",
+      "sourceTextSha256": "73d84fd0cf740f1f046a0e0cd44cc1ffdcfee6f9dde8601903c13b1850480e91",
+      "uncertain": false
+    },
+    "shuowen:4080": {
+      "text": "A county in Jiangxia. Formed from 邑, with 朱 indicating the sound.",
+      "sourceTextSha256": "d7dba375470cb76cd4d9ccf053b611f96dd2b06882d5a30a563b71fe0b40317d",
+      "uncertain": false
+    },
+    "shuowen:4081": {
+      "text": "A state south of the Han. Formed from 邑, with 員 indicating the sound. Hanzhong has Yun Pass, 鄖關.",
+      "sourceTextSha256": "6a52227f3165efe9b28fe4132c7959b8d899c2b9c8db4aa5f97a99a674ce70d6",
+      "uncertain": false
+    },
+    "shuowen:4082": {
+      "text": "A state of the southern Yi. Formed from 邑, with 庸 indicating the sound.",
+      "sourceTextSha256": "f208b7be3cd232977e93222367920c974960539705c16755771a4c16b6c5449d",
+      "uncertain": false
+    },
+    "shuowen:4083": {
+      "text": "A county in Shu. Formed from 邑, with 卑 indicating the sound.",
+      "sourceTextSha256": "872f77309896088db5d6429d8fd883cf31929856901b6509d3f25b88249d64ad",
+      "uncertain": false
+    },
+    "shuowen:4084": {
+      "text": "A place in Jiangyuan, Shu. Formed from 邑, with 壽 indicating the sound.",
+      "sourceTextSha256": "48a8cbd27bb27d8e640cf006d490d51d675a3cc1d5723c5ec5933609a082d364",
+      "uncertain": false
+    },
+    "shuowen:4085": {
+      "text": "A place in Shu. Formed from 邑, with 耤 indicating the sound.",
+      "sourceTextSha256": "153d712fa8e84cb3790d452aead52631ecb4749ecd20f890ed7e8e59e79a9665",
+      "uncertain": false
+    },
+    "shuowen:4086": {
+      "text": "A township in Guanghan, Shu. Formed from 邑, with 蔓 indicating the sound. Read like 蔓.",
+      "sourceTextSha256": "cb5f3c7ebe3935d76c054c606a3f99b698bfa6c9c8e31031dfdca205b49fd0ab",
+      "uncertain": false
+    },
+    "shuowen:4087": {
+      "text": "Shifang, 什邡, a county in Guanghan. Formed from 邑, with 方 indicating the sound.",
+      "sourceTextSha256": "5c5a3c2298f4c10f7afeec4177c41f8f215e9f1d105721ddcf2a6a033fe50e49",
+      "uncertain": false
+    },
+    "shuowen:4088": {
+      "text": "存䣕, a county in Qianwei. Formed from 邑, with 馬 indicating the sound.",
+      "sourceTextSha256": "cca8729ae819c4a46347dabc41d385de80e2920f23cf76a2d6e89ab975552ae4",
+      "uncertain": false
+    },
+    "shuowen:4089": {
+      "text": "A county in Zangke, 䍧牱. Formed from 邑, with 敝 indicating the sound. Read like 鷩 in 鷩雉.",
+      "sourceTextSha256": "56fe720a574bfa0dca16fb004a9bcf88380c83ed67936313915069dba80d52a2",
+      "uncertain": false
+    },
+    "shuowen:4090": {
+      "text": "A place name. Formed from 邑, with 包 indicating the sound.",
+      "sourceTextSha256": "2ae0dd24f18c51ada009bd47bf9cea48a38a496a55b66414e54f5f784db0b2ed",
+      "uncertain": false
+    },
+    "shuowen:4091": {
+      "text": "A state of the western Yi. Formed from 邑, with 冄 indicating the sound. Anding has Chaona County, 朝𨙻.",
+      "sourceTextSha256": "9ba84d09a95b565d23fd2c2709ff0f8ca67f778a833b3f993c98396772e844a3",
+      "uncertain": false
+    },
+    "shuowen:4092": {
+      "text": "Poyang, 鄱陽, a county in Yuzhang. Formed from 邑, with 番 indicating the sound.",
+      "sourceTextSha256": "1d6ddd7c819d97bd631b28a8904e22b1bc1e4de09d5f866cdd4e348b9664f9ee",
+      "uncertain": false
+    },
+    "shuowen:4093": {
+      "text": "A county in Changsha. Formed from 邑, with 霝 indicating the sound.",
+      "sourceTextSha256": "ed5cb72da748a47b0bc161fb4ce5a1e60e230fdf790632d439037f9612a0c1a7",
+      "uncertain": false
+    },
+    "shuowen:4094": {
+      "text": "A county in Guiyang. Formed from 邑, with 林 indicating the sound.",
+      "sourceTextSha256": "4f403547ecac1975b14f7a55b7e35ed8856d10b2e7d0e4051d12d9a5172381c7",
+      "uncertain": false
+    },
+    "shuowen:4095": {
+      "text": "The present 䣂陽 County in Guiyang. Formed from 邑, with 耒 indicating the sound.",
+      "sourceTextSha256": "997075ffadb04f2c29e7aa4b304123ce6d54963ae093703958ce86f86249255c",
+      "uncertain": false
+    },
+    "shuowen:4096": {
+      "text": "A county in Kuaiji. Formed from 邑, with 貿 indicating the sound.",
+      "sourceTextSha256": "718c4afe113d61f9e056d34ed3c455395f5a9469be1e89c68da6ac14ff2ed750",
+      "uncertain": false
+    },
+    "shuowen:4097": {
+      "text": "A county in Kuaiji. Formed from 邑, with 堇 indicating the sound.",
+      "sourceTextSha256": "1b21990569e39f9d2f13fb3d2d6578cc953dcf4fad8c47141893f60250a0c8cf",
+      "uncertain": false
+    },
+    "shuowen:4098": {
+      "text": "Pei Commandery. Formed from 邑, with 巿 indicating the sound.",
+      "sourceTextSha256": "d42e0d53c1fd72ca7fd8589699b4c1f5f727cff9a3df7ddc2e41f29872d51723",
+      "uncertain": false
+    },
+    "shuowen:4099": {
+      "text": "A lower settlement of Song. Formed from 邑, with 丙 indicating the sound.",
+      "sourceTextSha256": "5e9aadee276fb6fdfbd1df0d602a744291758cb57b4101846eea95b20566058d",
+      "uncertain": false
+    },
+    "shuowen:4100": {
+      "text": "A county in Pei state. Formed from 邑, with 虘 indicating the sound.",
+      "sourceTextSha256": "3dafbc8a125de96df38d282c750800c767bd96232bf94a9f385c7b667baca495",
+      "uncertain": false
+    }
+  }
+}

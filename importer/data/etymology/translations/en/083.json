@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "c7cc334e001923384168e415f25ec8e5978ade59e7495e76bcb768c218a6d468",
+    "created_date": "2026-11-22"
+  },
+  "batch": "083",
+  "translations": {
+    "shuowen:8201": {
+      "text": "Correct or attentive, as in 諟. Formed from 女, with 染 indicating the sound.",
+      "sourceTextSha256": "81d3f88090769c37b15c29c30bbd7d3be6a710a783432b8f00d3af8fa53356a9",
+      "uncertain": true
+    },
+    "shuowen:8202": {
+      "text": "Single or undivided. Formed from 女, with 專 indicating the sound. Another explanation gives the expression 嫥嫥.",
+      "sourceTextSha256": "b09655d2f0ee8c4eb64d44903e2cfab76c8dece886d7067be9d8dce7cf276338",
+      "uncertain": false
+    },
+    "shuowen:8203": {
+      "text": "To follow along. Formed from 女 and 口.",
+      "sourceTextSha256": "5e331460471c45dd42eb14bc6edbc56b73dd28338c886e7dcb2fea4f8d88160a",
+      "uncertain": false
+    },
+    "shuowen:8204": {
+      "text": "Even or orderly. Formed from 女, with 責 indicating the sound.",
+      "sourceTextSha256": "99271117f090ff0a69a5a8aa9b56dc4c073cc22ab4f0ca9401e4048b64ba0a47",
+      "uncertain": false
+    },
+    "shuowen:8205": {
+      "text": "Careful. Formed from 女, with 束 indicating the sound. Read like 敕 in 謹敕數數, 'carefully admonishing repeatedly.'",
+      "sourceTextSha256": "03a55d4bf2cd3e80a35a0ab26cf6967411c65d8379d8b22a4fb66a12e92a0c9b",
+      "uncertain": false
+    },
+    "shuowen:8206": {
+      "text": "Quick and alert. Alternatively, a solemn and respectful appearance. Formed from 女, with 僉 indicating the sound.",
+      "sourceTextSha256": "7adf4ae8693543aa4ff6dce4eee8f13d014905da62463cf069fa801d5b408654",
+      "uncertain": false
+    },
+    "shuowen:8207": {
+      "text": "To serve. Formed from 女, with 賓 indicating the sound.",
+      "sourceTextSha256": "4b7621bac2095882c338bf2a2a062d79070c03126dacd5de75fc604195916c48",
+      "uncertain": false
+    },
+    "shuowen:8208": {
+      "text": "To arrive. Formed from 女, with 執 indicating the sound. The Book of Zhou says: 'The great mandate does not arrive again.' Pronounced like 摯. Another explanation cites 雉𡠗 in the Book of Yu.",
+      "sourceTextSha256": "2e84da43c6d52ad54394cd7c03decb32b5cb32bcaede997f3d173e51f1dbb314",
+      "uncertain": true
+    },
+    "shuowen:8209": {
+      "text": "To bow and prostrate oneself. Formed from 女, with 沓 indicating the sound. Alternatively, to submit one's will.",
+      "sourceTextSha256": "1ccf6da3cff0ebccd406dd3236424e3dceb4a2e687f06432dbc230467de0931c",
+      "uncertain": false
+    },
+    "shuowen:8210": {
+      "text": "At peace. Formed from 女 and 日. The Odes says: 'To give peace to father and mother.'",
+      "sourceTextSha256": "c492f4ccac879b05d0107f2d62a50a34b113fbe2be242b2acc37c3ad3f9e08de",
+      "uncertain": false
+    },
+    "shuowen:8211": {
+      "text": "Slow or relaxed. Formed from 女, with 亶 indicating the sound. Alternatively, to transmit.",
+      "sourceTextSha256": "e3d0adaf3d5aac209dba901df48907da584e184686a1eedc93855880c4382a60",
+      "uncertain": false
+    },
+    "shuowen:8212": {
+      "text": "To guarantee or undertake responsibility. Formed from 女, with 辜 indicating the sound.",
+      "sourceTextSha256": "7456773da37d0598aac41fa95b73b432d23f7e9a42567bc9ba9e5d30b33f4c58",
+      "uncertain": false
+    },
+    "shuowen:8213": {
+      "text": "Extravagant or expansive. Formed from 女, with 般 indicating the sound.",
+      "sourceTextSha256": "0aefc8ec86a03b4f3b71eae694f601ea4645955b1247ed324f45bb74f6cdc275",
+      "uncertain": false
+    },
+    "shuowen:8214": {
+      "text": "To dance. Formed from 女, with 沙 indicating the sound. The Odes says: 'In the marketplace they dance about.'",
+      "sourceTextSha256": "740129819d9550566608cd8dbfa946d2b96e9c3f5b6567f6264b78a942d206ce",
+      "uncertain": false
+    },
+    "shuowen:8215": {
+      "text": "A partner. Formed from 女, with 有 indicating the sound. Read like 祐.",
+      "sourceTextSha256": "8ce6595d693f1cfbd3fcc80304bc9f6503dd136711be0c39f962321ae9b6360b",
+      "uncertain": false
+    },
+    "shuowen:8216": {
+      "text": "Equally matched: a man and woman paired together. Formed from 女, with 旬 indicating the sound.",
+      "sourceTextSha256": "40378257aff3f39f7c26704b766e444dc56923a2032134ae90e0e14c96097769",
+      "uncertain": false
+    },
+    "shuowen:8217": {
+      "text": "A woman's small or petty manner, apparently. Formed from 女, with 此 indicating the sound. The Odes says: 'Repeatedly dancing in a fluttering manner.'",
+      "sourceTextSha256": "2c8347362eaab336d1a952b39d539eb74fbf2ad0a975184ab54c89ca956ab215",
+      "uncertain": true
+    },
+    "shuowen:8218": {
+      "text": "A woman's small or petty manner, apparently. Formed from 女, with 支 indicating the sound. Read like 跂 in 跂行.",
+      "sourceTextSha256": "97ee145124b82c6e34b1bbef2ddf8ad754c44689dc7517726ce1c7adf999788b",
+      "uncertain": true
+    },
+    "shuowen:8219": {
+      "text": "A neck ornament. Formed from 女 and 賏. 賏 represents its linked pieces.",
+      "sourceTextSha256": "4e951ed80f8ba9908b46943f29d00972ce41372d18af1c6c6f1cd33f6ed4f786",
+      "uncertain": false
+    },
+    "shuowen:8220": {
+      "text": "Three women constitute 𡛝. 𡛝 means beauty. Formed from 女, with abbreviated 𣦼 indicating the sound.",
+      "sourceTextSha256": "dc90961816484b6ff8caf0d253687e304e3c42b2c8ce55426cd36e8d89030599",
+      "uncertain": false
+    },
+    "shuowen:8221": {
+      "text": "A beautiful woman, one whom people draw toward. Formed from 女 and 爰. 爰 means to draw. The Odes says: 'A beautiful woman of the state.'",
+      "sourceTextSha256": "6fccf80e5998af02b2ee6a0db10976412f432938aaeb44e96db077756d0bf6d1",
+      "uncertain": false
+    },
+    "shuowen:8222": {
+      "text": "To inquire. Formed from 女, with 甹 indicating the sound.",
+      "sourceTextSha256": "bd313d81fbbdcda7bbebebde7577bbfa22455a39b284f17689aa10590a791617",
+      "uncertain": false
+    },
+    "shuowen:8223": {
+      "text": "To follow along. Formed from 女, with 彔 indicating the sound.",
+      "sourceTextSha256": "8d312cb76d7cb667bc21a04e17ddb61b55daa528183dbd87539745c5a648d38c",
+      "uncertain": false
+    },
+    "shuowen:8224": {
+      "text": "To adorn. Formed from 女, with abbreviated 牀 indicating the sound.",
+      "sourceTextSha256": "1a93491933f86740773a88eb2356d82c33411922a52f631496d0e5cec3ceeab1",
+      "uncertain": false
+    },
+    "shuowen:8225": {
+      "text": "To yearn for. Formed from 女, with 䜌 indicating the sound.",
+      "sourceTextSha256": "3e9c05126fedc72507302fcb6820d24ef39815d402346e266b600278fc05c010",
+      "uncertain": false
+    },
+    "shuowen:8226": {
+      "text": "To treat with disrespectful familiarity. Formed from 女, with 枼 indicating the sound.",
+      "sourceTextSha256": "59f6a3c55dc18633b02b9e6f027cc801fe17f556b0e58c8e66b30e6543be655e",
+      "uncertain": false
+    },
+    "shuowen:8227": {
+      "text": "The disrespectful familiarity expressed by 媟嬻. Formed from 女, with 賣 indicating the sound.",
+      "sourceTextSha256": "57f852b4e08bcef1671d6276fdcbccec2d6547defc07a61858ca78e2d9d08cde",
+      "uncertain": false
+    },
+    "shuowen:8228": {
+      "text": "A short face. Formed from 女, with 窡 indicating the sound.",
+      "sourceTextSha256": "5f4a27a44231dc3ca1f86bf6ef427a7287181b7f8b96174dc7109b12940235ee",
+      "uncertain": false
+    },
+    "shuowen:8229": {
+      "text": "A favorite; to love. Formed from 女, with 辟 indicating the sound.",
+      "sourceTextSha256": "4fff972ab4e8853212dbb58bd4438c0d20cc2be8aaed0d69c861bd155c644e8d",
+      "uncertain": false
+    },
+    "shuowen:8230": {
+      "text": "Difficult. Formed from 女, with 毄 indicating the sound.",
+      "sourceTextSha256": "14ac6c13bb9c72bdb825856dcb8646ed33e7a857c2ac98d194d1dd22be55f8fb",
+      "uncertain": false
+    },
+    "shuowen:8231": {
+      "text": "Jealous. Formed from 女, with 介 indicating the sound.",
+      "sourceTextSha256": "212a09cefa7842ebd5207afcf550ccaac1741c1f821c35baa951f538c6efd849",
+      "uncertain": false
+    },
+    "shuowen:8232": {
+      "text": "A wife being jealous over her husband. Formed from 女, with 戶 indicating the sound.",
+      "sourceTextSha256": "c0ff2988fa40c05a227367e361e4cb1908de54fe415cb98c3cdab48741b7cefb",
+      "uncertain": false
+    },
+    "shuowen:8233": {
+      "text": "A husband being jealous over his wife. Formed from 女, with 冒 indicating the sound. Alternatively, to look at one another.",
+      "sourceTextSha256": "05bb235a02366ae63b34fcad51201938423c924c0c9ed5991ef78182c59a6420",
+      "uncertain": false
+    },
+    "shuowen:8234": {
+      "text": "Clever or charming. Alternatively, a woman's smiling appearance. The Odes says: 'The peach tree is young and flourishing.' Formed from 女, with 芺 indicating the sound.",
+      "sourceTextSha256": "f3b28da8b1af6338f3fa664654c7e62257cad1fb84fd88d61f2044e48d9c5fb2",
+      "uncertain": true
+    },
+    "shuowen:8235": {
+      "text": "Highly skilled in clever flattery. Formed from 女 and abbreviated 信.",
+      "sourceTextSha256": "62169dd8992cfc4d005f9f5df8abe9ec52b49e9851b5be97e6957fb2bae16a4b",
+      "uncertain": false
+    },
+    "shuowen:8236": {
+      "text": "A cautious disposition. Formed from 女, with abbreviated 熒 indicating the sound.",
+      "sourceTextSha256": "afb138aaff667b6e5c2bd6bbe01aacabcd89d93e0ea2f4ec8f62c8399df23b71",
+      "uncertain": false
+    },
+    "shuowen:8237": {
+      "text": "Attached or reluctant to part, as in 婟. Formed from 女, with 翏 indicating the sound.",
+      "sourceTextSha256": "803969d7175c93f975069da34e08974e0cd407b92d72f10b939562dd1da22503",
+      "uncertain": true
+    },
+    "shuowen:8238": {
+      "text": "Attached or reluctant to part, as in 嫪. Formed from 女, with 固 indicating the sound.",
+      "sourceTextSha256": "6b984798ceffcff98345ff902a088154892d746261e1655457c9ab1ba14d2140",
+      "uncertain": true
+    },
+    "shuowen:8239": {
+      "text": "Bearing or manner. Formed from 女, with 次 indicating the sound.",
+      "sourceTextSha256": "84604ec68d0f1d09469628ede59d6656095aa66e8d1182bc1a53006ba671fd25",
+      "uncertain": false
+    },
+    "shuowen:8240": {
+      "text": "Proud or pampered. Formed from 女, with 虘 indicating the sound.",
+      "sourceTextSha256": "8c9c6f9bca3bfc814311ef7c0a62cc6489a9d13fa2a988f97b92d81fd6d577dc",
+      "uncertain": true
+    },
+    "shuowen:8241": {
+      "text": "To harm or hinder. Formed from 女, with 方 indicating the sound.",
+      "sourceTextSha256": "e2437e94f929fb09566860692a8b66726aa300e54a3316ebce9febdda4632d35",
+      "uncertain": false
+    },
+    "shuowen:8242": {
+      "text": "Disorderly. Formed from 女, with 亡 indicating the sound.",
+      "sourceTextSha256": "b92623634eb931c2570dadd43dd57393940682e59a8933cd00a6838c338d8519",
+      "uncertain": false
+    },
+    "shuowen:8243": {
+      "text": "Clever and sly. Formed from 女, with 俞 indicating the sound.",
+      "sourceTextSha256": "202d4906e32c7df7e3bd0c061a98ce66982ce4ab3f300d33673abbe40c42302a",
+      "uncertain": false
+    },
+    "shuowen:8244": {
+      "text": "𡜂鹵 means greedy. Formed from 女, with 污 indicating the sound.",
+      "sourceTextSha256": "86ab0a32b0ab822ad370a8f99429c06df4b8a31d4f21833c33f3ed8c824ea6c6",
+      "uncertain": false
+    },
+    "shuowen:8245": {
+      "text": "To encroach little by little. Formed from 女, with 肖 indicating the sound.",
+      "sourceTextSha256": "a37632a2ea87767246b906ddf1ebd3d4989b4f0975e66c256d240e824da5d135",
+      "uncertain": false
+    },
+    "shuowen:8246": {
+      "text": "To measure or estimate. Formed from 女, with 朶 indicating the sound.",
+      "sourceTextSha256": "194bbf976169d76b7aa1350e764bfafcbbbad5c3555df7805d2b265b15b735b8",
+      "uncertain": false
+    },
+    "shuowen:8247": {
+      "text": "To move. Formed from 女, with 由 indicating the sound.",
+      "sourceTextSha256": "483511e777cc314fe34fb1910d377c01f81dfdba76cf8a1b6652e8664a957ff0",
+      "uncertain": false
+    },
+    "shuowen:8248": {
+      "text": "Unevenness or dissatisfaction in the heart. Alternatively, doubt. Formed from 女, with 兼 indicating the sound.",
+      "sourceTextSha256": "a09e9936b74bff4e49c551688b42fbf1fb354ee8323df766dc73c1fc31899e96",
+      "uncertain": false
+    },
+    "shuowen:8249": {
+      "text": "To diminish. Formed from 女, with 省 indicating the sound.",
+      "sourceTextSha256": "58421b88049271301623c193ec7573f6ed1e617dbb5a2b668c91f27ac9c3fbbf",
+      "uncertain": false
+    },
+    "shuowen:8250": {
+      "text": "Uncompliant. Formed from 女, with 若 indicating the sound. The Spring and Autumn Commentary says: 'Shusun Ruo.'",
+      "sourceTextSha256": "6f3745e120196065a2f8ab3315607037bb23557d8839798b72b19acbf57a66b0",
+      "uncertain": false
+    },
+    "shuowen:8251": {
+      "text": "Obstinate. Formed from 女, with 幸 indicating the sound. The Songs of Chu says: 'Gun was stubbornly upright.'",
+      "sourceTextSha256": "5c3fb7e323d3ff4714562329fc281cc643c4061b23f4405400fd7530277a0a7c",
+      "uncertain": false
+    },
+    "shuowen:8252": {
+      "text": "Easily made angry. Formed from 女, with 敝 indicating the sound. Read like 撆 in 擊撆.",
+      "sourceTextSha256": "a53b418ba993455d4c7ac5c1aad9880251bfeb280860ab4f607cd7ceb012db21",
+      "uncertain": false
+    },
+    "shuowen:8253": {
+      "text": "Fond of obstructing other people's words. Alternatively, to begrudge or mock. Formed from 女, with 善 indicating the sound.",
+      "sourceTextSha256": "1858f56376bf42d6789a6f412c2477847241c505163d725fc101297cdcacb7c1",
+      "uncertain": false
+    },
+    "shuowen:8254": {
+      "text": "Quick and fierce. Formed from 女, with 叕 indicating the sound. Read like 唾.",
+      "sourceTextSha256": "2d56b02db9dc346b7758e024d025e84c7ddb11d559f758faafbc5a264d9a68f3",
+      "uncertain": false
+    },
+    "shuowen:8255": {
+      "text": "To harbor anger. Alternatively, hard to understand. Formed from 女, with 酓 indicating the sound. The Odes says: 'Large and imposing, and also 㜝.'",
+      "sourceTextSha256": "d5836bfe37a43bda23f0bb1399ffc5bd0b4718d9bc6b6f4fdeb02df01cc826ea",
+      "uncertain": true
+    },
+    "shuowen:8256": {
+      "text": "The hesitant condition expressed by 媕娿. Formed from 女, with 阿 indicating the sound.",
+      "sourceTextSha256": "12bb6bef47cefcd14bdc13e3d6009e30ca0663bba2e1dcc04c3aa1545d4152e4",
+      "uncertain": false
+    },
+    "shuowen:8257": {
+      "text": "Skillful. Alternatively, not examining or recording affairs; alternatively, hard to encroach upon; alternatively, kind or intelligent; alternatively, peaceful. Formed from 女, with 幵 indicating the sound. Read like 研.",
+      "sourceTextSha256": "00d0877aed49453a447a7150b22a3a2a53eb776a1d1850dbd36f18329cdf448a",
+      "uncertain": true
+    },
+    "shuowen:8258": {
+      "text": "The appearance of round, deep-set eyes. Some say that between Wu and Chu, beauty is called 娃. Formed from 女, with 圭 indicating the sound.",
+      "sourceTextSha256": "2e681a8e30bc238a64c47a70365c36cd86bcf4c651857b26e260e3190ca9d5f6",
+      "uncertain": false
+    },
+    "shuowen:8259": {
+      "text": "Not graceful: the back-and-forth movement expressed by 𨻤𨻤. Formed from 女, with 陝 indicating the sound.",
+      "sourceTextSha256": "09235dcf180c3d8ef7a194b6e4668a03736fd4996579321455d4c3910fb9fff8",
+      "uncertain": true
+    },
+    "shuowen:8260": {
+      "text": "The appearance between nose and eyes. Read like 炔 in 煙火炔炔, 'smoke and fire blazing.' Formed from 女, with abbreviated 決 indicating the sound.",
+      "sourceTextSha256": "9ab8e27df2b6c3ad98cee8aae4b5af29b3649cb765fc2806b4b25c84147b5acf",
+      "uncertain": true
+    },
+    "shuowen:8261": {
+      "text": "Foolish and obtuse, with many mannerisms. Formed from 女, with 巂 indicating the sound. Read like 隓.",
+      "sourceTextSha256": "e4363442fd8c878b48da1fc0bdd13477125f92ae9680666b55dc6c8f9d284fe6",
+      "uncertain": false
+    },
+    "shuowen:8262": {
+      "text": "Displeased. Formed from 女, with 恚 indicating the sound.",
+      "sourceTextSha256": "82b5d785fcd62a3bf02f340001c51d8e58d3d28a4b114a28c57f160f7e0049bd",
+      "uncertain": false
+    },
+    "shuowen:8263": {
+      "text": "An angry appearance. Formed from 女, with 黑 indicating the sound.",
+      "sourceTextSha256": "cdbc08db67b076a5bd4a927b8685af7833dfeedf971844301c5c70b494398544",
+      "uncertain": false
+    },
+    "shuowen:8264": {
+      "text": "Light or frivolous. Formed from 女, with 戉 indicating the sound.",
+      "sourceTextSha256": "858a2e7fde7c8e15b116d2014ea64fc2bdb7244e584a0f60af981a2a16363a33",
+      "uncertain": false
+    },
+    "shuowen:8265": {
+      "text": "Light or frivolous. Formed from 女, with 𤐫 indicating the sound.",
+      "sourceTextSha256": "d2e3477ea643cc40581e3a5ebf762cbbdeb201cdb44ba8893142f6da1f915f52",
+      "uncertain": false
+    },
+    "shuowen:8266": {
+      "text": "Restless and quick. Formed from 女, with 𡋲 indicating the sound.",
+      "sourceTextSha256": "b6124073a9a915e32928ff39084c287f3e0ba1a93b1f6b986b5cc10698deb8ee",
+      "uncertain": true
+    },
+    "shuowen:8267": {
+      "text": "A woman's self-designation, meaning 'I.' Formed from 女, with 央 indicating the sound.",
+      "sourceTextSha256": "a48a371fb90a98004877ed6fd1afb0c0a7349973b93c409084f1a4c548ddb145",
+      "uncertain": false
+    },
+    "shuowen:8268": {
+      "text": "A displeased appearance. Formed from 女, with 韋 indicating the sound.",
+      "sourceTextSha256": "1c61e5f2a1a548eaa4ea62eaf6fc963b1fefc78a30c49bccccb27101fa563281",
+      "uncertain": false
+    },
+    "shuowen:8269": {
+      "text": "姿婎 means bearing or manner. Formed from 女 and 隹. Alternatively, ugly.",
+      "sourceTextSha256": "992ebeed5c8cbee06809e99b8ba10d6bd1da9a30d0f09c105bd698257de69ec2",
+      "uncertain": false
+    },
+    "shuowen:8270": {
+      "text": "Possessing steadfastness. Formed from 女, with 弦 indicating the sound.",
+      "sourceTextSha256": "536502f56438b33559b8b8ff46ca642e4789eaac3a77602430042f89a97cbb5c",
+      "uncertain": false
+    },
+    "shuowen:8271": {
+      "text": "A light or nimble appearance. Formed from 女, with 扁 indicating the sound.",
+      "sourceTextSha256": "dde6d7907dc3efe2b30369f8c044903b4066cf1d951d9d188f1b84a0e6dcdac3",
+      "uncertain": false
+    },
+    "shuowen:8272": {
+      "text": "To insult or slight. Formed from 女, with 曼 indicating the sound.",
+      "sourceTextSha256": "9182328360369c0e8140aa2263aeb6558dfd10323faa980221eec23a7116d839",
+      "uncertain": false
+    },
+    "shuowen:8273": {
+      "text": "To speak rapidly and out of order. Formed from 女, with 臿 indicating the sound. Read like 懾.",
+      "sourceTextSha256": "2c626f7bb410e07544eda6db1b4ecc07489d1fe5efedbe56fe22f9da3ba4f2c2",
+      "uncertain": false
+    },
+    "shuowen:8274": {
+      "text": "Weak. Alternatively, a secondary wife. Formed from 女, with 需 indicating the sound.",
+      "sourceTextSha256": "2c5c04131cb1cf55ffd9b82f74decdb8ad2f019ddb540df8b7d4870d990b49c1",
+      "uncertain": false
+    },
+    "shuowen:8275": {
+      "text": "Unworthy. Formed from 女, with 否 indicating the sound. Read like 箁, 'bamboo skin.'",
+      "sourceTextSha256": "e6a3a55cc65ff9273e2ed3e4ae4aee187dab02d41f034ab10f2a6c31b382edb7",
+      "uncertain": false
+    },
+    "shuowen:8276": {
+      "text": "Slow and dull. Formed from 女, with 臺 indicating the sound. 闒嬯 has the same sense.",
+      "sourceTextSha256": "693e4f3e5e60c224a5ea8c64bc4852897b660fa42609c9f2f97e5d7ef3ae7658",
+      "uncertain": false
+    },
+    "shuowen:8277": {
+      "text": "Low in aspiration, greedy and obstinate. Formed from 女, with 覃 indicating the sound. Read like 深.",
+      "sourceTextSha256": "965a283776a604a52acc1e0a836282b898c881f55fc9ba8f704e74796dce7816",
+      "uncertain": false
+    },
+    "shuowen:8278": {
+      "text": "Greedy. Formed from 女, with 參 indicating the sound.",
+      "sourceTextSha256": "e3a75ee52d4734c8b765d8974384bb438ddffd909e0fa95e4bf0f4fa0cd6ea5e",
+      "uncertain": false
+    },
+    "shuowen:8279": {
+      "text": "Greedy. Formed from 女, with 林 indicating the sound. Du Lin says: diviners colluding to fabricate confirmations is called 婪. Read like 潭.",
+      "sourceTextSha256": "fb7e9de478224d44fbcfc8dc05ac76d3d377f1d3c7aedc2e899449b8c5cabe5c",
+      "uncertain": false
+    },
+    "shuowen:8280": {
+      "text": "Slack and idle. Alternatively, lying down. Formed from 女, with 賴 indicating the sound.",
+      "sourceTextSha256": "b0412c843ecd3d1a94bfca1d70bfcb9c812b30fe43126ac2dd93a44aae1407af",
+      "uncertain": false
+    },
+    "shuowen:8281": {
+      "text": "Empty. Formed from 母, 中, and 女, expressing emptiness. Alternatively, 婁 means to work or attend to affairs.",
+      "sourceTextSha256": "e868beb6678d69ef3245e74ee9a4b7e88cb2f776bc50ac6ad1af25ad4fb54ebf",
+      "uncertain": false
+    },
+    "shuowen:8282": {
+      "text": "The condition expressed by 娎㛍, apparently pleased or satisfied. Formed from 女, with 折 indicating the sound.",
+      "sourceTextSha256": "37f264f824772e994d24769e314183db7a630df119c7f1af81f3cc7ed6a1fa54",
+      "uncertain": true
+    },
+    "shuowen:8283": {
+      "text": "The satisfied appearance of attaining one's wishes. Alternatively, 㛍息, breathing; alternatively, short of breath. Formed from 女, with 夾 indicating the sound.",
+      "sourceTextSha256": "d75dfc390f27ef920f60d70a8a5ee82b97c32f69c717eb5ac9a3f01062781c27",
+      "uncertain": true
+    },
+    "shuowen:8284": {
+      "text": "Harsh or troublesome. Alternatively, to disturb, play, or tease; alternatively, the quality expressed by 嬥. Formed from 女, with 堯 indicating the sound.",
+      "sourceTextSha256": "6727363b47eb3e3644ff7d1d2bfd0f7a627aa81093699c8beb7f66b03042c571",
+      "uncertain": true
+    },
+    "shuowen:8285": {
+      "text": "Ugly or bad. Alternatively, a person's appearance. Formed from 女, with 毀 indicating the sound.",
+      "sourceTextSha256": "3f332aa2219827b8d005ee2365f646abf3de6d0480c8f56a4c6ddb94554f24ee",
+      "uncertain": false
+    },
+    "shuowen:8286": {
+      "text": "To disparage. Alternatively, the phrase 翼便, perhaps deft movement. Formed from 女, with abbreviated 𠛹 indicating the sound.",
+      "sourceTextSha256": "0067b82ce76eed8ca68a648e4c09b92c889abb8c064455876e942b768f970052",
+      "uncertain": true
+    },
+    "shuowen:8287": {
+      "text": "Ugly. Alternatively, an old woman. Formed from 女, with 酋 indicating the sound. Read like 蹴.",
+      "sourceTextSha256": "e832710e9620748166fbf72ec21cc40317212c700fc5996bbafb1b626f41045a",
+      "uncertain": false
+    },
+    "shuowen:8288": {
+      "text": "𡠜母 means altogether ugly. Formed from 女, with 莫 indicating the sound.",
+      "sourceTextSha256": "f635065a161a2c764a00791b1957889789da757fb7593d1116d77d56d68152fa",
+      "uncertain": true
+    },
+    "shuowen:8289": {
+      "text": "Coming and going continually. Alternatively, an ugly appearance. Formed from 女, with 非 indicating the sound.",
+      "sourceTextSha256": "f05847b43f5022a9c38ddf2806fc01c1a5df35fb138eeb0ed6bcf997a2ce836d",
+      "uncertain": false
+    },
+    "shuowen:8290": {
+      "text": "To trouble or disturb. Alternatively, fat and large. Formed from 女, with 襄 indicating the sound.",
+      "sourceTextSha256": "dae372f4f2560827e181ce1e915c89889ac03c2db96d3ec0eb835ee7a5b662a3",
+      "uncertain": false
+    },
+    "shuowen:8291": {
+      "text": "A woman's dark complexion. Formed from 女, with 會 indicating the sound. The Odes says: 'Dark and clouded.'",
+      "sourceTextSha256": "1c0f73634b8de595b6204b6455bcaee1684129f34e7d1aa7973c8c8be9ec642f",
+      "uncertain": false
+    },
+    "shuowen:8292": {
+      "text": "A beautiful appearance. Formed from 女, with 耎 indicating the sound.",
+      "sourceTextSha256": "74014070c42f5d6c0535d9bac1c50c4bc565d7edb588997088d449c0de764b94",
+      "uncertain": false
+    },
+    "shuowen:8293": {
+      "text": "To slander and embroil. Formed from 女, with 奄 indicating the sound.",
+      "sourceTextSha256": "55822dc60e176c313d122eb2aa5aee279f47ce12197b677c704621e92c57f406",
+      "uncertain": true
+    },
+    "shuowen:8294": {
+      "text": "To exceed the proper bounds. Formed from 女, with 監 indicating the sound. The Analects says: 'The petty man, when distressed, then oversteps the bounds.'",
+      "sourceTextSha256": "8ef46dc5a0e7e4ef43f959f293fa60739572bd68294020446585765d3689cda3",
+      "uncertain": false
+    },
+    "shuowen:8295": {
+      "text": "To insult or slight. Formed from 女, with 敖 indicating the sound.",
+      "sourceTextSha256": "1e305081fb3bd554587cb1338f2136b743a526bb5d0882104dfb349ca69ee00f",
+      "uncertain": false
+    },
+    "shuowen:8296": {
+      "text": "Private licentiousness. Formed from 女, with 㸒 indicating the sound.",
+      "sourceTextSha256": "cf4089de300a937f5d035c2f371dd758738004eb7b63131b6a400d5d083cf50a",
+      "uncertain": false
+    },
+    "shuowen:8297": {
+      "text": "To remove. The Han Statutes says: 'People of Qi call illicit relations with a wife or maidservant 姘,' apparently; the wording 予妻婢 is uncertain. Formed from 女, with 幷 indicating the sound.",
+      "sourceTextSha256": "3d853c61928b5a9f2fe0025f98d56c5ed25ebb3ed89c4bf94e40711a57506509",
+      "uncertain": true
+    },
+    "shuowen:8298": {
+      "text": "To commit sexual misconduct. Formed from 女 and 干; 干 also indicates the sound.",
+      "sourceTextSha256": "11ae689f08ff61cc029daf46ffeec88754ff66d36ee48e87759d0fa0e894a4f0",
+      "uncertain": false
+    },
+    "shuowen:8299": {
+      "text": "A woman's discharge. Formed from 女, with 半 indicating the sound. The Han Statutes says: 'One who has experienced a 姅 change may not attend the sacrifice.'",
+      "sourceTextSha256": "fcccd985aad8d873a20b465052378e697901474017aa904e80a103166c947f66",
+      "uncertain": true
+    },
+    "shuowen:8300": {
+      "text": "A woman's childbirth ailment, apparently. Formed from 女, with 廷 indicating the sound.",
+      "sourceTextSha256": "6372a1eeb01f35a0111214ca5f96cb092ea8ba2d7c472aa01fc9659b13b3ff78",
+      "uncertain": true
+    }
+  }
+}

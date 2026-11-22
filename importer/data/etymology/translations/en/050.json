@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "a7a472ef2d8a86c1ac8e9ae8f45613dcfb54f27773e7bbce5713ae7bfbfcf253",
+    "created_date": "2026-11-22"
+  },
+  "batch": "050",
+  "translations": {
+    "shuowen:4901": {
+      "text": "A cloth wrap, 帊. Formed from 巾, with 菐 indicating the sound.",
+      "sourceTextSha256": "b16bb4d867dfbad6450ab9bc0a120edf5c58c84c0636ba3a39aac95983075b22",
+      "uncertain": false
+    },
+    "shuowen:4902": {
+      "text": "A carriage curtain. Formed from 巾, with 憲 indicating the sound.",
+      "sourceTextSha256": "dad6c259ba4f987f2d90c7619e36f3afc0cfa3be554167e265209d984b86a2d1",
+      "uncertain": false
+    },
+    "shuowen:4903": {
+      "text": "A ceremonial apron. In remote antiquity clothing only covered the front; 巿 depicts this. The Son of Heaven has a vermilion apron, feudal lords a red one, grand officers a green crosspiece. Formed from 巾, depicting an attached belt. All characters in this group follow 巿.",
+      "sourceTextSha256": "aec1355af945e55cbc584f771472be2b6f82e499d2ee2ca7a4ce2bf1668083b1",
+      "uncertain": false
+    },
+    "shuowen:4904": {
+      "text": "Officers have no 巿 but have 𢂷, shaped like 榼 with four corners cut away. With the jue-cap costume it is madder-red; lower rank may not match the skirt’s color. The Minister of Agriculture says: “The skirt is light red.” Formed from 巿, with 合 indicating the sound. The comparison to 榼 is uncertain.",
+      "sourceTextSha256": "508522bd5f8929fd93f736273219f8ef0c50c03ec5def80b66d6af2cf49dd4f3",
+      "uncertain": true
+    },
+    "shuowen:4905": {
+      "text": "Silk fabric. Formed from 巾, with 白 indicating the sound. All characters in this group follow 帛.",
+      "sourceTextSha256": "da3141cd46e4e662772c0faec2a7fa0c8ad175fd44e71e767b18ad094ca56fdc",
+      "uncertain": false
+    },
+    "shuowen:4906": {
+      "text": "Patterned weaving from Xiangyi. Formed from 帛, with 金 indicating the sound.",
+      "sourceTextSha256": "71623527b81003255b70cb2d2f9379a23e8c0230a9b98c077cfbf86d2ff551ae",
+      "uncertain": false
+    },
+    "shuowen:4907": {
+      "text": "The color of the west. When yin governs, things turn white. Formed from 入 joined with 二; 二 is a yin number. All characters in this group follow 白.",
+      "sourceTextSha256": "7155983999f7e5bb54e7c57948c0c85973a4628b81b88f64c855d2fc0d8ea569",
+      "uncertain": false
+    },
+    "shuowen:4908": {
+      "text": "The whiteness of the moon. Formed from 白, with 交 indicating the sound. The Odes says: “The moon rises white and bright.”",
+      "sourceTextSha256": "01e4a5c684fecf2700a3e9441ddf6660fc99ae0d2e511db2578cb305439d73eb",
+      "uncertain": false
+    },
+    "shuowen:4909": {
+      "text": "The whiteness of the sun. Formed from 白, with 堯 indicating the sound.",
+      "sourceTextSha256": "fdac8d1801837a27f454786a5ce69e9e9448ddd709ad43d7b83869a8158ee187",
+      "uncertain": false
+    },
+    "shuowen:4910": {
+      "text": "A person’s complexion white. Formed from 白, with 析 indicating the sound.",
+      "sourceTextSha256": "891502fa914b02f806f60611db029b38ca40f6fb8b2f07b4db31f7eb9eff81bf",
+      "uncertain": false
+    },
+    "shuowen:4911": {
+      "text": "The whiteness of old people. Formed from 白, with 番 indicating the sound. The Changes says: “Adorned, yet white.”",
+      "sourceTextSha256": "ea9e778cd6e69c76599a2e518dc7e1259028b050df230501e6138eb86c9a9eea",
+      "uncertain": false
+    },
+    "shuowen:4912": {
+      "text": "The whiteness of birds. Formed from 白, with 隺 indicating the sound.",
+      "sourceTextSha256": "c5b82999761c6a151fad0627f6a649dada202f09ffa617dd30873ee9aa18150b",
+      "uncertain": false
+    },
+    "shuowen:4913": {
+      "text": "The whiteness of frost and snow. Formed from 白, with 豈 indicating the sound.",
+      "sourceTextSha256": "ce9bf64d42427a16bdab06992d3424cd207d4e885bc4a808ba59884457944ad5",
+      "uncertain": false
+    },
+    "shuowen:4914": {
+      "text": "The whiteness of plant flowers. Formed from 白, with 巴 indicating the sound.",
+      "sourceTextSha256": "5f6d66bcd03c88f8a9a24419a0cfdd333dc851e84d9d5b95eb8c8659129d3d26",
+      "uncertain": false
+    },
+    "shuowen:4915": {
+      "text": "The whiteness of jade and stone. Formed from 白, with 敫 indicating the sound.",
+      "sourceTextSha256": "0df346eebe947bfcd6d49b404106d5f5d8460ebab0f978d29e50b11fad0d2547",
+      "uncertain": false
+    },
+    "shuowen:4916": {
+      "text": "White light seen through a gap. Formed from 白, with small portions visible above and below.",
+      "sourceTextSha256": "1d4454f3adeff5105ad0ab6784a8c1093495de38a78a7859893b0c65581ce18a",
+      "uncertain": false
+    },
+    "shuowen:4917": {
+      "text": "Manifest or bright. Formed from three 白. Read like 皎.",
+      "sourceTextSha256": "7d4a8354107c13a6d0abd3cbd991cbaa2406603542f3b8e7ca046d7fc5cfd282",
+      "uncertain": false
+    },
+    "shuowen:4918": {
+      "text": "Worn-out clothing. Formed from 巾, depicting clothing worn out. All characters in this group follow 㡀.",
+      "sourceTextSha256": "f285d612a69bcee1f9233d02b5b547e9d25d044f1191ba0bba24819150f2ec77",
+      "uncertain": false
+    },
+    "shuowen:4919": {
+      "text": "A cloth, 帗. Another explanation: worn-out clothing. Formed from 攴 and 㡀; 㡀 also indicates the sound.",
+      "sourceTextSha256": "71f6a684458e767e3fe712abbd686a35455a522e6efd54e2364aade409e74944",
+      "uncertain": false
+    },
+    "shuowen:4920": {
+      "text": "Sewing clothing with needle and thread. Formed from 㡀 and abbreviated 丵. All characters in this group follow 黹.",
+      "sourceTextSha256": "7422a9bef684afd9c91d3f408c5fb29e614522070ea24de1e1b6b3376e4d0281",
+      "uncertain": false
+    },
+    "shuowen:4921": {
+      "text": "Combining the bright colors of the five hues. Formed from 黹, with 虘 indicating the sound. The Odes says: “The garments are brilliantly colored.”",
+      "sourceTextSha256": "fa4fd619993be0335f507ef2e3dd9e3f29420d80c81a41defaaec159b9585d85",
+      "uncertain": false
+    },
+    "shuowen:4922": {
+      "text": "A pattern alternating white and black. Formed from 黹, with 甫 indicating the sound.",
+      "sourceTextSha256": "0fcac439fdfcd70342f8cac2d1c1cffef931d31f50d3b3cff11c7b7e23dc6053",
+      "uncertain": false
+    },
+    "shuowen:4923": {
+      "text": "A pattern alternating black and blue-green. Formed from 黹, with 犮 indicating the sound.",
+      "sourceTextSha256": "e30386c7f81d301c55a8b783a301ccf059c90a6d114f10f22f0cd495eab230d7",
+      "uncertain": false
+    },
+    "shuowen:4924": {
+      "text": "Combining silk colors of the five hues. Formed from 黹, with abbreviated 綷 indicating the sound.",
+      "sourceTextSha256": "e525c99db12eccc53a7c19fb45319b4d855fe63538e396ebf71bd4b00b0229a8",
+      "uncertain": false
+    },
+    "shuowen:4925": {
+      "text": "Mountains, dragons and pheasants on ceremonial robes: 黺 means painting with powder. Formed from 黹 and abbreviated 粉. This is Wei Hong’s explanation.",
+      "sourceTextSha256": "5056feef9be57409fd1534560413990b21db86077e85b52bca6213e74642e8b5",
+      "uncertain": false
+    },
+    "shuowen:4926": {
+      "text": "The most precious being endowed by Heaven and Earth. This is the large-seal form, depicting arms and shins. All characters in this group follow 人.",
+      "sourceTextSha256": "92e53160e48c469bf63b36c3df7d4cf1c5c8979d93f02d9150a0bb6551265f24",
+      "uncertain": false
+    },
+    "shuowen:4927": {
+      "text": "Not yet capped as an adult. Formed from 人, with 童 indicating the sound.",
+      "sourceTextSha256": "611c2b4a0bee9b5e2dd8539b1cfbd938caf2c201007172055a4525c300382458",
+      "uncertain": false
+    },
+    "shuowen:4928": {
+      "text": "To nurture. Formed from 人 and abbreviated 𤓽; 𤓽 is ancient-script 孚.",
+      "sourceTextSha256": "14090f8c880de8c642fe046f36f6d65ecdbac7de603fd72289c05b213cfa405d",
+      "uncertain": false
+    },
+    "shuowen:4929": {
+      "text": "Affection or closeness. Formed from 人 and 二.",
+      "sourceTextSha256": "d2f54809175811096fb60caf739412fb748610fe4bd86d36ebc4184797947021",
+      "uncertain": false
+    },
+    "shuowen:4930": {
+      "text": "To raise the heels. Formed from 人, with 止 indicating the sound.",
+      "sourceTextSha256": "8b47c440e69d5868f2e91388f52eddd686de94ba44f04ec63c44f00cfd585b99",
+      "uncertain": false
+    },
+    "shuowen:4931": {
+      "text": "The span of outstretched arms, one xun: eight chi. Formed from 人, with 刃 indicating the sound.",
+      "sourceTextSha256": "90c92a787abb1a8fa83dca92c71e6854ed913f9aa93b9731768c318f90cd579f",
+      "uncertain": false
+    },
+    "shuowen:4932": {
+      "text": "To learn. Formed from 人 and 士.",
+      "sourceTextSha256": "d4a83bf9f1162e0d1fe6c250789106f9413cabf274e789bfc3151502bab8fae0",
+      "uncertain": false
+    },
+    "shuowen:4933": {
+      "text": "To associate. Formed from 人 and 交.",
+      "sourceTextSha256": "509f386621a9d8d872640e420139250218b6f2115e8c0b4f1e251514b654dbc9",
+      "uncertain": false
+    },
+    "shuowen:4934": {
+      "text": "Complete or equipped. Formed from 人, with 巽 indicating the sound.",
+      "sourceTextSha256": "37afae9424fadf4154762d3d6d8fd559decbfb5034f0ecdc154102064a2eb002",
+      "uncertain": false
+    },
+    "shuowen:4935": {
+      "text": "The appearance of an adorned cap. Formed from 人, with 求 indicating the sound. The Odes says: “Caps and robes, well adorned.”",
+      "sourceTextSha256": "1e02f4eab24527ef35f31fd0037db62e4900803e146286e9a2e363149b425ccd",
+      "uncertain": false
+    },
+    "shuowen:4936": {
+      "text": "A pendant on the great belt. Formed from 人, 凡 and 巾. A pendant must have a cloth, called its ornament.",
+      "sourceTextSha256": "376c98f418b0ecf6fb60833c6c53fbc7843d56de2c89e0317bb018957cfaab90",
+      "uncertain": false
+    },
+    "shuowen:4937": {
+      "text": "Gentle; a designation for learned practitioners. Formed from 人, with 需 indicating the sound.",
+      "sourceTextSha256": "29388b3f1df94063dd9e0c816ced3dc6cb28a894973b25ac8bc9602cf08af948",
+      "uncertain": false
+    },
+    "shuowen:4938": {
+      "text": "Having the talent of a thousand people. Formed from 人, with 夋 indicating the sound.",
+      "sourceTextSha256": "d131a9eb0617125ee304a8d2cf1537621ff2d6fb152644c7f06f5443fec02b0f",
+      "uncertain": false
+    },
+    "shuowen:4939": {
+      "text": "Proud. Formed from 人, with 桀 indicating the sound.",
+      "sourceTextSha256": "c84d6352a0c34c1a5ad3e0c5e8f8d959f4c2490b10ed45dfac00632126d8b907",
+      "uncertain": false
+    },
+    "shuowen:4940": {
+      "text": "A surname. Formed from 人, with 軍 indicating the sound.",
+      "sourceTextSha256": "0cb0b51245df03906b500d99fecb2c5278d4f3c7f9356417e7a8ea6cb7a33be7",
+      "uncertain": false
+    },
+    "shuowen:4941": {
+      "text": "A personal name. Formed from 人, with 及 indicating the sound.",
+      "sourceTextSha256": "4efde4d316c4249efb8d76dc8548f4fd70901e5b84734a912327739a8e7f4f58",
+      "uncertain": false
+    },
+    "shuowen:4942": {
+      "text": "A personal name. Formed from 人, with 亢 indicating the sound. The Analects mentions Chen Kang, 陳伉.",
+      "sourceTextSha256": "97a375bdcd485225f857a45345453d89bae87019b56a09d3f0385f166a845168",
+      "uncertain": false
+    },
+    "shuowen:4943": {
+      "text": "Senior or eldest. Formed from 人, with 白 indicating the sound.",
+      "sourceTextSha256": "592a494a42fa00e4f042acbae424ef6322ba07f7f27c1ecf165656e5e927516e",
+      "uncertain": false
+    },
+    "shuowen:4944": {
+      "text": "Middle. Formed from 人 and 中; 中 also indicates the sound.",
+      "sourceTextSha256": "0e931f7b7703ab8f032fa8a850af22cc2d35ff10a0a03f0f2540efbff3ec04b3",
+      "uncertain": false
+    },
+    "shuowen:4945": {
+      "text": "Yin’s sage minister Aheng, who governed all under Heaven. Formed from 人 and 尹.",
+      "sourceTextSha256": "d3bef5041c7156e3f3ca1d21fe7f492e62edb2159f1f67ec937ef7d6a74fe2e1",
+      "uncertain": false
+    },
+    "shuowen:4946": {
+      "text": "A son of the Gaoxin ruler, Yao’s Minister of Education and ancestor of Yin. Formed from 人, with 契 indicating the sound.",
+      "sourceTextSha256": "87901a5340583e573dd7b79cf4b115fc44d2e1c8105397403256bc6a4cf60ab8",
+      "uncertain": false
+    },
+    "shuowen:4947": {
+      "text": "A person’s courtesy name. Formed from 人, with 青 indicating the sound. Eastern Qi calls a son-in-law 倩.",
+      "sourceTextSha256": "05e4c37f8bed583bde8671475621019dad6a16771bd9759c0a4935d33d383dcd",
+      "uncertain": false
+    },
+    "shuowen:4948": {
+      "text": "A female official. Formed from 人, with 予 indicating the sound.",
+      "sourceTextSha256": "4be91cc2d579c2816efc2f65e2f875915758ff5e46e65958a5bac94cffef1e9b",
+      "uncertain": false
+    },
+    "shuowen:4949": {
+      "text": "Intent extending to the multitude. Formed from 人, with 公 indicating the sound.",
+      "sourceTextSha256": "8007d0df32945442b8ab7c5e58b750872791ec0cd17f85c5d19e5fd1811e40ab",
+      "uncertain": false
+    },
+    "shuowen:4950": {
+      "text": "Clever. Formed from 人, with 瞏 indicating the sound.",
+      "sourceTextSha256": "53d82b9895e567ec5b6a7d67c47cc116f490ea1be2579d0fbfdfa3ea47333b76",
+      "uncertain": false
+    },
+    "shuowen:4951": {
+      "text": "At peace. Formed from 人, with 炎 indicating the sound. Read like 談.",
+      "sourceTextSha256": "4e895da3bd892ca04a40939d16555f56141296729c61974ff1a145e9a83bd55d",
+      "uncertain": false
+    },
+    "shuowen:4952": {
+      "text": "Swift. Formed from 人, with 旬 indicating the sound.",
+      "sourceTextSha256": "2ad8d4451ff63030b2b6eda81e21f12e6570a45279f594bd3e82a81d65d1d63c",
+      "uncertain": false
+    },
+    "shuowen:4953": {
+      "text": "Unsettled. Formed from 人, with 容 indicating the sound. Another explanation: splendid.",
+      "sourceTextSha256": "813c8ef71ec46526927739aa7a5ede46ebb9b1c533ce859227ecf56a82458f77",
+      "uncertain": false
+    },
+    "shuowen:4954": {
+      "text": "Between Song and Wei, splendor is called 僷僷. Formed from 人, with 葉 indicating the sound.",
+      "sourceTextSha256": "c93572108616dd86f4a9e15aba3237c431e727922838fa68c636301d5c0e365c",
+      "uncertain": false
+    },
+    "shuowen:4955": {
+      "text": "Good. Formed from 人, with 圭 indicating the sound.",
+      "sourceTextSha256": "cea9bd662067d8d6e8fe2a875c9b32a13a42a933e2a42bcad8ca745201ecdf78",
+      "uncertain": false
+    },
+    "shuowen:4956": {
+      "text": "奇侅, extraordinary. Formed from 人, with 亥 indicating the sound.",
+      "sourceTextSha256": "ef8190dd073dbc74fe4a4ae4fc21c3a2c8c444a8922096b9a7592b7292a622a4",
+      "uncertain": false
+    },
+    "shuowen:4957": {
+      "text": "Remarkable. Formed from 人, with 鬼 indicating the sound. The Rites of Zhou says: “Great marvels and anomalies.”",
+      "sourceTextSha256": "55a8f55d64359129c4e8732c8e57c1bf0f9c683f4cfd0c4786733f7492871738",
+      "uncertain": false
+    },
+    "shuowen:4958": {
+      "text": "Extraordinary. Formed from 人, with 韋 indicating the sound.",
+      "sourceTextSha256": "58ce7a074fbb60d2d211cc04018e24a64eda221a3135ad755aa59b5a48130d59",
+      "uncertain": false
+    },
+    "shuowen:4959": {
+      "text": "Refinement and substance encroaching upon one another; the recorded gloss 文質僣 is uncertain. Formed from 人, with 分 indicating the sound. The Analects says: “Refinement and substance in balanced harmony.”",
+      "sourceTextSha256": "fc9641d575081aae9c9b7c49993df0050deaa3f6d07f83116d63eceafae38991",
+      "uncertain": true
+    },
+    "shuowen:4960": {
+      "text": "A pleasing appearance. Formed from 人, with 尞 indicating the sound.",
+      "sourceTextSha256": "36d3dde6275941a56277d0e2075c6a1f3c0fc4de087da031c1556c89928eac50",
+      "uncertain": false
+    },
+    "shuowen:4961": {
+      "text": "Dignified bearing. Formed from 人, with 必 indicating the sound. The Odes says: “Their bearing is dignified.”",
+      "sourceTextSha256": "5ab4f076b37a6871c1378fe2cf93184551584f7b6bbd53c4d10bc93b0872283d",
+      "uncertain": false
+    },
+    "shuowen:4962": {
+      "text": "Complete. Formed from 人, with 孨 indicating the sound. Read like the 𣹏 River in Runan. The Book of Yu says: “Seek widely for complete achievement.”",
+      "sourceTextSha256": "fc054892b6183972e520ac5547f4b8e0c998a5e1ed3c64301a15edc3b6a3f902",
+      "uncertain": false
+    },
+    "shuowen:4963": {
+      "text": "Tall and strong, 儠巤. Formed from 人, with 巤 indicating the sound. The Spring and Autumn Commentary says: “Let a tall and strong man assist him.”",
+      "sourceTextSha256": "89ca872e5826d6cbe9dd7e2cf73bdcf73ad311d26bac48444ace03ebd664fba5",
+      "uncertain": false
+    },
+    "shuowen:4964": {
+      "text": "A manner of walking. Formed from 人, with 麃 indicating the sound. The Odes says: “Travelers walk in crowds.”",
+      "sourceTextSha256": "03e3946d388d68dce3d192268b7624f2d602b37ef07911669032bb4aea224187",
+      "uncertain": false
+    },
+    "shuowen:4965": {
+      "text": "The measured pace of a walker. Formed from 人, with 難 indicating the sound. The Odes says: “The measured movement of the jade pendants.”",
+      "sourceTextSha256": "dd276daf0e5046a15b427ca969236d155696538add6fb0b40b0788b36dd601dc",
+      "uncertain": false
+    },
+    "shuowen:4966": {
+      "text": "A compliant or winding appearance. Formed from 人, with 委 indicating the sound. The Odes says: “The Zhou road winds gently.”",
+      "sourceTextSha256": "c35021948c3f39510ab52750108612f439c80ee875a471b7608ce37aba48a2c3",
+      "uncertain": false
+    },
+    "shuowen:4967": {
+      "text": "Refined or practiced. Formed from 人, with 貴 indicating the sound. Another explanation: a tall appearance.",
+      "sourceTextSha256": "4a5337006186f836d6db170eb2922fc568939a20fbfe046a6139eb310076c6cb",
+      "uncertain": false
+    },
+    "shuowen:4968": {
+      "text": "High. Formed from 人, with 喬 indicating the sound.",
+      "sourceTextSha256": "a27d57565056336e544ff7a50cfe144bf5312e0e5057c2db5679b9fe18703413",
+      "uncertain": false
+    },
+    "shuowen:4969": {
+      "text": "Large. Formed from 人, with 矣 indicating the sound. The Odes says: “Strong and grand.”",
+      "sourceTextSha256": "c0d43e1f141b89a5f5d7cd596029e81c75a81ba0c1ffc51d5fd759f0324972fa",
+      "uncertain": false
+    },
+    "shuowen:4970": {
+      "text": "A large appearance. Formed from 人, with 同 indicating the sound. The Odes says: “The spirit is not so unknowing.”",
+      "sourceTextSha256": "ac7c0ee7cf871c1d47e316137a46dd590941c60fa86077739f3604a82ce7fe29",
+      "uncertain": false
+    },
+    "shuowen:4971": {
+      "text": "Upright. Formed from 人, with 吉 indicating the sound. The Odes says: “Both sturdy and trained.”",
+      "sourceTextSha256": "028a4bfe64d7b9447f1fcdb17d39f703038e5e8ebfb7f4396e29d397abbbd7f3",
+      "uncertain": false
+    },
+    "shuowen:4972": {
+      "text": "Large. Formed from 人, with 吳 indicating the sound. The Odes says: “The great man is grand.”",
+      "sourceTextSha256": "f5a2cada1a2442b33f52281cf9db44453c906d3d7d3c3c0d764f3d3650690042",
+      "uncertain": false
+    },
+    "shuowen:4973": {
+      "text": "A large belly. Formed from 人, with 工 indicating the sound. Read like 紅.",
+      "sourceTextSha256": "0c8cd0c56817006fcf66febc81f0789e9c950c1074c5e4bf41d974cf4e9b6733",
+      "uncertain": false
+    },
+    "shuowen:4974": {
+      "text": "Swift. Formed from 人, with 單 indicating the sound. The Rites of Zhou says: “Hooked weapons should have no 僤,” perhaps uncontrolled movement; the technical sense is uncertain.",
+      "sourceTextSha256": "aa820f6403638adc5214f5762413442e2091bdcfe68451520c04b28455de0c84",
+      "uncertain": true
+    },
+    "shuowen:4975": {
+      "text": "Strong or a match for another. Formed from 人, with 建 indicating the sound.",
+      "sourceTextSha256": "b6dbdc0440b454626221ead52de6b67f12975a7d61cb929a5ce299cb1e45b56e",
+      "uncertain": false
+    },
+    "shuowen:4976": {
+      "text": "Strong. Formed from 人, with 京 indicating the sound.",
+      "sourceTextSha256": "bfc102d062c979fc79160ccad95c0577663fc2b431647f8e638bbda1c7a24b58",
+      "uncertain": false
+    },
+    "shuowen:4977": {
+      "text": "Arrogant. Formed from 人, with 敖 indicating the sound.",
+      "sourceTextSha256": "95f23adb91923fca831567b0a20b3bd2ba6853a8977507ac917cb4e6f31894c5",
+      "uncertain": false
+    },
+    "shuowen:4978": {
+      "text": "Brave and strong. Formed from 人, with 气 indicating the sound. The Book of Zhou says: “Stalwart brave men.”",
+      "sourceTextSha256": "49e9677d6e7a3ca3d629c7d93a9eaf1a8b36d73ed9d11b1c51be91d2e214e90c",
+      "uncertain": false
+    },
+    "shuowen:4979": {
+      "text": "Disrespectful. Formed from 人, with 居 indicating the sound.",
+      "sourceTextSha256": "68cb70e638c570a0b6adc63fe17da47d770345c956955c69456015926a907f7c",
+      "uncertain": false
+    },
+    "shuowen:4980": {
+      "text": "To raise the head. Formed from 人, with 嚴 indicating the sound. Another explanation: a pleasing appearance.",
+      "sourceTextSha256": "274f68643407f86f74410f48098c853b39127cb07f928cf93b6cc1eaa2f8926c",
+      "uncertain": false
+    },
+    "shuowen:4981": {
+      "text": "A pleasing appearance. Formed from 人, with 參 indicating the sound.",
+      "sourceTextSha256": "2524cb1e4ac86e83b5eed3e48729d9f1cf70fefe5db26ea2c20b08b2da564d26",
+      "uncertain": false
+    },
+    "shuowen:4982": {
+      "text": "To rely upon or get by, 聊. Formed from 人, with 里 indicating the sound.",
+      "sourceTextSha256": "dc226d5bc539f64ae5cf31e83355645cf9d4416f6ebc66517dcec8c407fd9399",
+      "uncertain": false
+    },
+    "shuowen:4983": {
+      "text": "A large appearance. Formed from 人, with 半 indicating the sound.",
+      "sourceTextSha256": "31a9daab915b2a9ac63f76f8b95f756a5652227a141c4b3b6937255755a5daed",
+      "uncertain": false
+    },
+    "shuowen:4984": {
+      "text": "Large. Formed from 人, with 奄 indicating the sound.",
+      "sourceTextSha256": "56bb3fc351da07458c17016e4b8eaaf1fa3aeed1b27acfc5631738aeb2cff20e",
+      "uncertain": false
+    },
+    "shuowen:4985": {
+      "text": "A martial appearance. Formed from 人, with 閒 indicating the sound. The Odes says: “Solemn and martial.”",
+      "sourceTextSha256": "10b6ad39028f67668f4194ca749b809586ac611d5d8332581637c88f758e2bff",
+      "uncertain": false
+    },
+    "shuowen:4986": {
+      "text": "Having strength. Formed from 人, with 丕 indicating the sound. The Odes says: “With carts, powerfully.”",
+      "sourceTextSha256": "fed07884c427430108372c6506901fdef6ac68c307f0f429bc289ca4f3ddfcb1",
+      "uncertain": false
+    },
+    "shuowen:4987": {
+      "text": "Strong and forceful. Formed from 人, with 思 indicating the sound. The Odes says: “That man is handsome and strong.”",
+      "sourceTextSha256": "414cff98048b8c847ca53aac0f4a3150a1b7febfa4ef4bd0a6a9126e837e7cb7",
+      "uncertain": false
+    },
+    "shuowen:4988": {
+      "text": "Prominent and great. Formed from 人, with 㔬 indicating the sound. The Odes says: “Prominent is that Milky Way.”",
+      "sourceTextSha256": "b908c0f4a0d77f395ceb8f3fb8c24acd5357f753f9776542e027f65d9f346c3a",
+      "uncertain": false
+    },
+    "shuowen:4989": {
+      "text": "A tall appearance. Another explanation: touching the ground. Another: to replace. Formed from 人, with 廷 indicating the sound.",
+      "sourceTextSha256": "d1a9b167e5db9239583dd62dca3185afb13feb98f31d2abede9be0e93fed572e",
+      "uncertain": false
+    },
+    "shuowen:4990": {
+      "text": "To assist. Formed from 人, with 朋 indicating the sound. Read like 陪 in 陪位.",
+      "sourceTextSha256": "a9530d5d0767eba6b725dc7c48bd127a1cb1ca8dae5bcd5f9b8cc116302082d9",
+      "uncertain": false
+    },
+    "shuowen:4991": {
+      "text": "Blazing and flourishing. Formed from 人, with 扇 indicating the sound. The Odes says: “The beautiful wife, in full power, occupies her place.”",
+      "sourceTextSha256": "c324f6271d07ffd49f9c15f5131953c296515eddb2eca5f94d58ce1477920926",
+      "uncertain": false
+    },
+    "shuowen:4992": {
+      "text": "To warn. Formed from 人, with 敬 indicating the sound. The Spring and Autumn Commentary says: “Put the palace on guard.”",
+      "sourceTextSha256": "226945ea79ea85ca8966feff4dda3cf80dbb119eb088bb2c23ddd75a02ab17d6",
+      "uncertain": false
+    },
+    "shuowen:4993": {
+      "text": "Good. Formed from 人, with 叔 indicating the sound. The Odes says: “A good ending has a good beginning.” Another explanation: beginning.",
+      "sourceTextSha256": "054e9543b2d84b499ee579bde1257ef7dab73fb28c0345097bef85ce78c884d4",
+      "uncertain": false
+    },
+    "shuowen:4994": {
+      "text": "Even and straight. Formed from 人, with 庸 indicating the sound.",
+      "sourceTextSha256": "52dcc734efc47766bcc485a1730771953d9a5623bc7401785e55b278b152f73d",
+      "uncertain": false
+    },
+    "shuowen:4995": {
+      "text": "Indistinctly perceived. Formed from 人, with 愛 indicating the sound. The Odes says: “Dimly felt, yet not seen.”",
+      "sourceTextSha256": "e92a581f3f45e31b55e129dbd4b35607a319dc5e2ae6fb9ad725f87b76858691",
+      "uncertain": false
+    },
+    "shuowen:4996": {
+      "text": "Similar to one another. Formed from 人, with 方 indicating the sound.",
+      "sourceTextSha256": "6331bd9f60d6936e6e8c084078f89e3e77667575d832f1b9fbdc4508c245c68a",
+      "uncertain": false
+    },
+    "shuowen:4997": {
+      "text": "Not seeing clearly. Formed from 人, with 弗 indicating the sound.",
+      "sourceTextSha256": "2ed988e31de85e4febb159eae5f696b23db719196bbc06a650884a3f3051a0a2",
+      "uncertain": false
+    },
+    "shuowen:4998": {
+      "text": "A sound. Formed from 人, with 悉 indicating the sound. Read like 㞕.",
+      "sourceTextSha256": "0ec6274b630c0a1755ab7ccd16d416bbc317a94e18e9394b1e4efbc3906fd28f",
+      "uncertain": false
+    },
+    "shuowen:4999": {
+      "text": "Exact and careful. Formed from 人, with 幾 indicating the sound. The Bright Hall Monthly Ordinances says: “The count is about to reach its precise end.”",
+      "sourceTextSha256": "6efa39f3cab4e4242e8e59ad0a17dfdb10e0be68ec4341a096238c14186d7ed0",
+      "uncertain": false
+    },
+    "shuowen:5000": {
+      "text": "To carry a load. Formed from 人, with 它 indicating the sound.",
+      "sourceTextSha256": "9a8986ae3c14047b24b66885ee492ad882dd93c72188a5ecc0fb3fe66ddc7593",
+      "uncertain": false
+    }
+  }
+}

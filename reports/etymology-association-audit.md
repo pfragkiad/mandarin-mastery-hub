@@ -11,6 +11,12 @@ application. The frontend consumes the separate
 - Source downloads match their recorded original-byte hashes and upstream pins.
 - Howell explanations and Shuowen headword explanations retain original text,
   entry locators and independent source IDs. Shuowen duplicate headwords survive.
+- Separate English AI drafts bind to exact original Shuowen text hashes and
+  individual IDs, including duplicate headwords. `shuowenEnglishDrafts` and
+  `uncertainShuowenEnglishDrafts` count coverage and flagged passages. Completeness
+  and checksum checks establish attachment integrity, not translation accuracy;
+  all English remains unreviewed. See the
+  [translation guide](../importer/data/etymology/translations/README.md).
 - Application record IDs and family-qualified forms come from current shared
   adapters. All associations use exact written forms, without normalization or
   dictionary/index/shape-based substitutions.

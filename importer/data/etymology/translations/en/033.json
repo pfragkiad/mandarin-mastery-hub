@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "cc4b63bfd19f5f601bb4f9a475965f953edcd936335b6f18c95aa9365bd44c88",
+    "created_date": "2026-11-22"
+  },
+  "batch": "033",
+  "translations": {
+    "shuowen:3201": {
+      "text": "Dry provisions, 𩝍. From 食; 非 supplies the sound. Between Chen and Chu, visiting one another to eat cooked wheat is called 餥.",
+      "sourceTextSha256": "947e7fbf76d98fa80e1b3b2a97603bf6509222bfda8e605b53469568299c3c28",
+      "uncertain": false
+    },
+    "shuowen:3202": {
+      "text": "Wine and food. From 食; 喜 supplies the sound. The Odes says: “With it one can steam grain and prepare wine and food.”",
+      "sourceTextSha256": "ffc5275bc45db869a7890a15b7e4dc894b7a8291508be653d5e9df777ceba31e",
+      "uncertain": false
+    },
+    "shuowen:3203": {
+      "text": "To provide food. From 食; 算 supplies the sound.",
+      "sourceTextSha256": "f7d0950613750cf0bf95883375e233c04fa7feaf90b61b7034bc6fa377933129",
+      "uncertain": false
+    },
+    "shuowen:3204": {
+      "text": "To provide sustenance. From 食; 羊 supplies the sound.",
+      "sourceTextSha256": "4d3c04a8dd8f96802795420688353c1e2f3402a7afad1de31c5eff1aedc0603b",
+      "uncertain": false
+    },
+    "shuowen:3205": {
+      "text": "To eat. From 食; 反 supplies the sound.",
+      "sourceTextSha256": "85b8398849f19ac94cdd279a95a4334b70cbd37d13b8be11c61e55ab452f2676",
+      "uncertain": false
+    },
+    "shuowen:3206": {
+      "text": "Mixed rice. From 食; 丑 supplies the sound.",
+      "sourceTextSha256": "fcf698d7957a9f82115d2ed07858e6b14e88105f66afb54d03f9b7092c9b336d",
+      "uncertain": false
+    },
+    "shuowen:3207": {
+      "text": "Provisions. From 人 and 食.",
+      "sourceTextSha256": "e84a7a41c4e2e6f05fb38a04b2f89e98ec55be7eebb43d3caa179dd4410615fc",
+      "uncertain": false
+    },
+    "shuowen:3208": {
+      "text": "To pour soup over rice. From 食; 贊 supplies the sound.",
+      "sourceTextSha256": "2a3f2e834950c94d3e9bae860678158cbcb0939f8739e205c8a780911a1097a5",
+      "uncertain": false
+    },
+    "shuowen:3209": {
+      "text": "A midday meal. From 食; 象 supplies the sound.",
+      "sourceTextSha256": "de4bb718fabf68aa4e5334e629aef586acc6b0f63c3325ba05cd61af04c306eb",
+      "uncertain": false
+    },
+    "shuowen:3210": {
+      "text": "An afternoon or evening meal, 餔. From 夕 and 食.",
+      "sourceTextSha256": "553287296717c8d3713537912d0a0b6a68ad79e70687174223beda31060fb00a",
+      "uncertain": false
+    },
+    "shuowen:3211": {
+      "text": "To eat when the day reaches the shen hour. From 食; 甫 supplies the sound.",
+      "sourceTextSha256": "99c4d8fe9f0cd5a32be7ed861d549539eef0d0fc0bc24bb95e2a8cdf64ca6f86",
+      "uncertain": false
+    },
+    "shuowen:3212": {
+      "text": "To swallow. From 食; 𣦼 supplies the sound.",
+      "sourceTextSha256": "8f0b7b61537b30886ba88090c9421498cb18c718c771e874534f267a246e9966",
+      "uncertain": false
+    },
+    "shuowen:3213": {
+      "text": "To eat a little. From 食; 兼 supplies the sound. Pronounced like 溓溓 in “the wind 溓溓.” Another explanation: incorruptible and pure.",
+      "sourceTextSha256": "141cde07f5312d6546f1accff63a410829e14e87e3b21d4a46a1a559f45f20d8",
+      "uncertain": true
+    },
+    "shuowen:3214": {
+      "text": "To bring food to the fields. From 食; 盍 supplies the sound. The Odes says: “Bring food to those southern fields.”",
+      "sourceTextSha256": "80841cdd04fe5c27f31252124acb21d1c4fb30861158c461fb73ac0b802e8da8",
+      "uncertain": false
+    },
+    "shuowen:3215": {
+      "text": "The Zhou call bringing food 餉 by the word 饟. From 食; 襄 supplies the sound.",
+      "sourceTextSha256": "1e9b17c81be395d7f097076570177cede6cc9b488759505217c688c29513ba35",
+      "uncertain": false
+    },
+    "shuowen:3216": {
+      "text": "To bring food, 饟. From 食; 向 supplies the sound.",
+      "sourceTextSha256": "354562cf1348d136bcf5a8db923c8394f1ab791ad2a087e3c8993d3804923356",
+      "uncertain": false
+    },
+    "shuowen:3217": {
+      "text": "To bring food. From 食; 貴 supplies the sound.",
+      "sourceTextSha256": "bcbfa6e26c60ccf38bef45835ccbbf86634fa34f8ca56343ff2504ad0087402f",
+      "uncertain": false
+    },
+    "shuowen:3218": {
+      "text": "People of a district drinking wine together. From 食 and 鄉; 鄉 also supplies the sound.",
+      "sourceTextSha256": "ea8f0a9486c3cf80a61678e28b222142360ca36755bda66e3aa1c457f79b86ff",
+      "uncertain": false
+    },
+    "shuowen:3219": {
+      "text": "The appearance of a serving vessel filled full. From 食; 蒙 supplies the sound. The Odes says: “Full is the bowl of food.”",
+      "sourceTextSha256": "38c145d823a90eb2f019b73e9f184c2e08a75191ec288553b5e71507b2860ad5",
+      "uncertain": false
+    },
+    "shuowen:3220": {
+      "text": "People of Chu call visiting one another to eat wheat 飵. From 食; 乍 supplies the sound.",
+      "sourceTextSha256": "03e5032998c7602fb74a2c1cc8f0a0e4ffb830b06fa930c0934a58c29a838965",
+      "uncertain": false
+    },
+    "shuowen:3221": {
+      "text": "To visit one another and eat wheat. From 食; 占 supplies the sound.",
+      "sourceTextSha256": "512864aca95180ef48e4dac4071816227781ac3886b3932a7a8bae8b6d770932",
+      "uncertain": false
+    },
+    "shuowen:3222": {
+      "text": "People of Qin call visiting one another and eating wheat 䭡䭓. From 食; 㥯 supplies the sound.",
+      "sourceTextSha256": "87082961c0aea59d92f355c31f434a567d769e398ed3c3c225aca26a8a3bafb1",
+      "uncertain": false
+    },
+    "shuowen:3223": {
+      "text": "The visiting and wheat-eating called 䭡䭓. From 食; 豈 supplies the sound.",
+      "sourceTextSha256": "5ac2de1c2952296cd549e79f93855f64f940a0b56bd8da600d6194ce7e2d91a1",
+      "uncertain": false
+    },
+    "shuowen:3224": {
+      "text": "To depend on others for food. From 食; 胡 supplies the sound.",
+      "sourceTextSha256": "0724cea95910af153afba5315673783d6ceafa1360244b2a9e7c66bc51838786",
+      "uncertain": false
+    },
+    "shuowen:3225": {
+      "text": "The fragrance of food. From 食; 必 supplies the sound. The Odes says: “Fragrant is its aroma.”",
+      "sourceTextSha256": "4dd6976d0a6361cf560797fa85ba13326e7b9b90c30df3184be18ccd114c41be",
+      "uncertain": false
+    },
+    "shuowen:3226": {
+      "text": "To feast. From 食; 芺 supplies the sound. The Odes says: “The feasting with wine.”",
+      "sourceTextSha256": "69410b74a4e86a333df7088f05cd3d376bcd16d3e453a2de34e36fc02ee87786",
+      "uncertain": false
+    },
+    "shuowen:3227": {
+      "text": "Satiated. From 食; 包 supplies the sound.",
+      "sourceTextSha256": "491bdb8ac0fb47879f4d5e939aa478ac48bbd6da683428aa5bb8b99558cd0d6f",
+      "uncertain": false
+    },
+    "shuowen:3228": {
+      "text": "Satiated. From 食; 肙 supplies the sound.",
+      "sourceTextSha256": "80b8b43f4bb7de5d7ca6bcd1fd5e9478817102d7f715893028fd05efea2ae252",
+      "uncertain": false
+    },
+    "shuowen:3229": {
+      "text": "Full or well fed. From 食; 堯 supplies the sound.",
+      "sourceTextSha256": "211de33432c731518b15211bbf4dba105f28a431c0219e2738705d79c8b4740d",
+      "uncertain": false
+    },
+    "shuowen:3230": {
+      "text": "Abundance or surplus. From 食; 余 supplies the sound.",
+      "sourceTextSha256": "fffcfc77b875ff78a8ed5e8cb6e498468da3ce259f5c59b7dc51172e63f6c8ef",
+      "uncertain": false
+    },
+    "shuowen:3231": {
+      "text": "The odor of food. From 食; 艾 supplies the sound. The Erya says: “餀 is called 喙.”",
+      "sourceTextSha256": "38303427a9b9ddbe76b1decb9a85887c1334d6ede6621d5098f735d7cb4b7a40",
+      "uncertain": true
+    },
+    "shuowen:3232": {
+      "text": "To send someone off. From 食; 戔 supplies the sound. The Odes says: “Xianfu gave him a farewell feast.”",
+      "sourceTextSha256": "b8de4d718b04ea22e7bb9bc9af8ed191fa42304588025430c27e2dc3b135e92b",
+      "uncertain": false
+    },
+    "shuowen:3233": {
+      "text": "Providing food in the open country is called 餫. From 食; 軍 supplies the sound.",
+      "sourceTextSha256": "d148acd0e52bdf0e56a101aed5da562d235e86115d85f6f87cf3ab677b4e2f8b",
+      "uncertain": false
+    },
+    "shuowen:3234": {
+      "text": "A guest lodging. From 食; 官 supplies the sound. The Rites of Zhou: every fifty li there is a market, with a guesthouse and provisions to receive visitors coming for court audiences and diplomatic calls.",
+      "sourceTextSha256": "82289f0f85cfb5f59d26bee61f7602f37c6880299e77b08e8322139d9da8d1e1",
+      "uncertain": false
+    },
+    "shuowen:3235": {
+      "text": "Greedy. From 食; 號 supplies the sound.",
+      "sourceTextSha256": "f42819217fdb016760d7410e271be9ceed87f6ec37df27c2d6376e68bff1f4d3",
+      "uncertain": false
+    },
+    "shuowen:3236": {
+      "text": "Greedy. From 食; abbreviated 殄 supplies the sound. The Spring and Autumn commentary says: “Called 饕飻.”",
+      "sourceTextSha256": "000f096b77d1f933e927e9bc2435698cd7ff0be5fbd2611cbd029661451a2006",
+      "uncertain": false
+    },
+    "shuowen:3237": {
+      "text": "Rice spoiled by heat. From 食; 歲 supplies the sound.",
+      "sourceTextSha256": "661e3c406671210dec3756b90c680740590cea3d7d55d71705a2718a293cd9e1",
+      "uncertain": false
+    },
+    "shuowen:3238": {
+      "text": "Rice spoiled by dampness. From 食; 壹 supplies the sound.",
+      "sourceTextSha256": "995cddd42e63415aa1f167267cc29e85f83c80b43a3dc5ba000bee9a214c7816",
+      "uncertain": false
+    },
+    "shuowen:3239": {
+      "text": "Rice gone sour or spoiled. From 食; 曷 supplies the sound. The Analects says: “Food damp-spoiled and sour.”",
+      "sourceTextSha256": "e3cecf9cc689ad2d879a267387b52691277ba832db47e1d4cef473fa92a61399",
+      "uncertain": false
+    },
+    "shuowen:3240": {
+      "text": "When grain fails to ripen, this is 饑. From 食; 幾 supplies the sound.",
+      "sourceTextSha256": "95ffdb7a7acb9c159e88bb5122ef83d6ef88df16079967c3838d532b94075990",
+      "uncertain": false
+    },
+    "shuowen:3241": {
+      "text": "When vegetables fail to ripen, this is 饉. From 食; 堇 supplies the sound.",
+      "sourceTextSha256": "ec40331461fa297a3b2efa912b12ca1a16c2b89c10091d1599e35b412fc99a0c",
+      "uncertain": false
+    },
+    "shuowen:3242": {
+      "text": "Hunger. From 食; 戹 supplies the sound. Pronounced like the Chu expression for being angry with someone.",
+      "sourceTextSha256": "f67c5ee0375dee3e81adea477bca74222c06e86916c47aba349cc76f805ee5e7",
+      "uncertain": true
+    },
+    "shuowen:3243": {
+      "text": "Hunger. From 食; 委 supplies the sound. Another explanation: spoiled fish is called 餧.",
+      "sourceTextSha256": "9bb5dd8db2e2dfc052891d90e78218e3e839700bd159482b3fd06d72193596fd",
+      "uncertain": false
+    },
+    "shuowen:3244": {
+      "text": "Hunger. From 食; 几 supplies the sound.",
+      "sourceTextSha256": "67080e5d1940c5d7da5bf7b9948db3e66e0b8656fa39a4ccbc6c5ca7a6b3d157",
+      "uncertain": false
+    },
+    "shuowen:3245": {
+      "text": "Hunger. From 食; 我 supplies the sound.",
+      "sourceTextSha256": "761ff8cbf230a4a9ff54511d915d185c63d5f8ea92e48b05ef97495e278c0410",
+      "uncertain": false
+    },
+    "shuowen:3246": {
+      "text": "People of Wu call sacrificing 餽. From 食 and 鬼; 鬼 also supplies the sound.",
+      "sourceTextSha256": "d500164eb9bab1bb5928b90ae4c5baacb8aaf014f5088c5a58b5090350f2dcef",
+      "uncertain": false
+    },
+    "shuowen:3247": {
+      "text": "A sacrificial libation. From 食; 叕 supplies the sound.",
+      "sourceTextSha256": "56e13507695b8389b2f4e4524e64845de9157d98c1faf94db088c2adb16fbce9",
+      "uncertain": false
+    },
+    "shuowen:3248": {
+      "text": "A small libation offering. From 食; 兌 supplies the sound.",
+      "sourceTextSha256": "b5a6b1a8989ab3989683be6c028e2c63afa936f2a22c755db983493e8feed812",
+      "uncertain": false
+    },
+    "shuowen:3249": {
+      "text": "When a horse eats much grain, its qi flows down on all sides. From 食; 夌 supplies the sound. [The physiological description is uncertain.]",
+      "sourceTextSha256": "babf97821c3067dd106c4d569c488f014d5b0755aee9b703ec76bbfca2dc4994",
+      "uncertain": true
+    },
+    "shuowen:3250": {
+      "text": "To feed grain to a horse. From 食; 末 supplies the sound.",
+      "sourceTextSha256": "565f62b109c5d7239d033b69a7b78c9312de81ddf45d70350a06a3d29debb42f",
+      "uncertain": false
+    },
+    "shuowen:3251": {
+      "text": "What remains after eating. From 食; 夋 supplies the sound.",
+      "sourceTextSha256": "3db70c9bb5f89a3ca3d3364e759da23bb6b1730e100977cef3a5e8e620af461d",
+      "uncertain": false
+    },
+    "shuowen:3252": {
+      "text": "A kind of cake. From 食; 羔 supplies the sound.",
+      "sourceTextSha256": "77c115a028fbc9bb33d6785e772fe58162a4d5036aa3276754bf0645d9a0af51",
+      "uncertain": false
+    },
+    "shuowen:3253": {
+      "text": "Three joining together. From 入 and 一, depicting the union of three. All graphs in this category contain 亼. Pronounced like 集.",
+      "sourceTextSha256": "0d33721713271e6ef84cb61ec49525d2ca1a2256bdadcd75a0ec817f8ce37955",
+      "uncertain": false
+    },
+    "shuowen:3254": {
+      "text": "To close the mouth. From 亼 and 口.",
+      "sourceTextSha256": "5c29f4a7dbfa505c264695982c5c56f78a6abc14fe7fed631f6e034e19c7b8b7",
+      "uncertain": false
+    },
+    "shuowen:3255": {
+      "text": "All. From 亼, 吅 and 从. The Book of Yu says: “All said, Boyi.”",
+      "sourceTextSha256": "22603c04bcc4521a36cd444843f942b406a53a1e23a51bb857230ea34662b520",
+      "uncertain": false
+    },
+    "shuowen:3256": {
+      "text": "Thought. From 亼 and 冊.",
+      "sourceTextSha256": "0bf0597dfd768239515bfd2e8442f84c3ca7aa6522f99a10123b8fa14f27bf27",
+      "uncertain": false
+    },
+    "shuowen:3257": {
+      "text": "This time, now. From 亼 and 绁; 绁 is the ancient form of 及. [The unusual recorded component is preserved.]",
+      "sourceTextSha256": "4812b535736378d6e73772b45f2a4928964a0cc0d20a69d78292cc12de87654d",
+      "uncertain": true
+    },
+    "shuowen:3258": {
+      "text": "A dwelling in a market is called 舍. From 亼 and 屮, depicting a house; 口 depicts its built foundation.",
+      "sourceTextSha256": "f5acef1c9d1b08e3f1ab1cb46b9cb5fd4c75d4a6a91cdcab072f027bf8a347f5",
+      "uncertain": true
+    },
+    "shuowen:3259": {
+      "text": "To join. From 亼 and abbreviated 曾; 曾 means to increase. All graphs in this category contain 會.",
+      "sourceTextSha256": "381b8eba54280412acb8fe218133d348c9a92773178354800f555ff6b61e0708",
+      "uncertain": false
+    },
+    "shuowen:3260": {
+      "text": "To increase. From 會; 卑 supplies the sound.",
+      "sourceTextSha256": "75b46a33584059531853d379f545b5499a13ca79daf413c4a34408d8b11bfd4b",
+      "uncertain": false
+    },
+    "shuowen:3261": {
+      "text": "The sun and moon sharing a lodge and following the celestial station. From 會 and 辰; 辰 also supplies the sound. [The clause 合宿从辰 is uncertain.]",
+      "sourceTextSha256": "baab552719a7d5a4fd36077df40de40ad3dcbb7a80a0f3c568670a18b0c86de7",
+      "uncertain": true
+    },
+    "shuowen:3262": {
+      "text": "A storehouse for grain. Grain is hastily taken and stored, hence called 倉. From abbreviated 食; 口 depicts the granary's shape. All graphs in this category contain 倉.",
+      "sourceTextSha256": "8e2c97caa7ecc56bc6a4ac2d0dab3be662ee0b2fb425c556428f4ef6186375e2",
+      "uncertain": false
+    },
+    "shuowen:3263": {
+      "text": "The sound of birds and beasts coming to eat. From 倉; 爿 supplies the sound. The Book of Yu says: “Birds and beasts come together noisily.”",
+      "sourceTextSha256": "04cfa9871687c0336c19e35b2f129f9932d9690580c0e8564df221aed11f0e81",
+      "uncertain": false
+    },
+    "shuowen:3264": {
+      "text": "To enter. It depicts going down together from above. All graphs in this category contain 入.",
+      "sourceTextSha256": "b058787705c6e0a83a12d6e58d28a0be1d3c38a61733f2b0c0f9f6fec429d252",
+      "uncertain": false
+    },
+    "shuowen:3265": {
+      "text": "To enter. From 口, entering from outside.",
+      "sourceTextSha256": "c222671e2d4f46f85b92ac1124db71a4b40fee6612ea9afcc47856e45771f8d8",
+      "uncertain": false
+    },
+    "shuowen:3266": {
+      "text": "To enter deeply into a mountain. From 山 and 入. The explanation is incomplete.",
+      "sourceTextSha256": "d5673eb04b2a6f294a32e7198d2d1e4a46a22e60eb7b2107945ac54d70c9f0b2",
+      "uncertain": false
+    },
+    "shuowen:3267": {
+      "text": "To buy grain. From 入 and 䊮.",
+      "sourceTextSha256": "f9d4816c0f5f99a80719e7ed3a7f2b0dac840f9dd422cb0e40ff3fe307d08859",
+      "uncertain": false
+    },
+    "shuowen:3268": {
+      "text": "Whole or complete. From 入 and 工.",
+      "sourceTextSha256": "c0e32c838e0974d8f5c7ae5f529a176c05134c9a8c6ccb75d3c101cda3b9b049",
+      "uncertain": false
+    },
+    "shuowen:3269": {
+      "text": "Two 入. 兩 is formed from this. The explanation is incomplete.",
+      "sourceTextSha256": "903bbb1b8a00c14ec69e13123df33a50d589cffc83b5b60f96cf3ac47b8bbc18",
+      "uncertain": false
+    },
+    "shuowen:3270": {
+      "text": "An earthenware vessel for holding wine and other liquid. People of Qin beat it to mark the rhythm of songs. A pictograph. All graphs in this category contain 缶. [The word 𤖅 in the liquid description is uncertain.]",
+      "sourceTextSha256": "0b98d0b5ab1b805345cac812b6eb83adf5ae18cc9b37ca2c3a1cdcbb2f63f1a7",
+      "uncertain": true
+    },
+    "shuowen:3271": {
+      "text": "An unfired earthenware vessel. From 缶; 𣪊 supplies the sound. Pronounced like 莩 in 筩莩. [The recorded pronunciation phrase is unusual.]",
+      "sourceTextSha256": "ef06b37e1fa62313f284628d8c09bc87df8686732ff742209303c9827f959144",
+      "uncertain": true
+    },
+    "shuowen:3272": {
+      "text": "An earthenware vessel. From 缶; abbreviated 包 supplies the sound. Anciently Kunwu made pottery. Note: the Scribe's Primer pronounces it the same as 缶.",
+      "sourceTextSha256": "a4006f8a8e87dc9f04271ac09737ca765dab876008a6f083566ade6f974d9527",
+      "uncertain": false
+    },
+    "shuowen:3273": {
+      "text": "A jar. From 缶; 賏 supplies the sound.",
+      "sourceTextSha256": "85af0f67e57b8cdf46ae57b66486c752e458b570df23e529917a561c1e8e865b",
+      "uncertain": false
+    },
+    "shuowen:3274": {
+      "text": "A jar with a small mouth. From 缶; 𠂹 supplies the sound.",
+      "sourceTextSha256": "1fd7199d6ea9273471e4fae8d36920fded51da91a1892ed9f48ba693fc632645",
+      "uncertain": false
+    },
+    "shuowen:3275": {
+      "text": "A small earthenware jar. From 缶; 咅 supplies the sound.",
+      "sourceTextSha256": "e896047215c8848a3118bbc10eeeead559b9a3a80596ce11ba3ec72e894d8ce0",
+      "uncertain": false
+    },
+    "shuowen:3276": {
+      "text": "A water-drawing jar, 𦉥. From 缶; 幷 supplies the sound.",
+      "sourceTextSha256": "be67e885cb0a440c5cf19221d179c82515a1cede66cf54fb6db4d0e9b0038d91",
+      "uncertain": false
+    },
+    "shuowen:3277": {
+      "text": "A jar for drawing water. From 缶; 雝 supplies the sound.",
+      "sourceTextSha256": "ef832cc89486b340aaf34b7c8fc3103fbc6863c20e5c2c07e3854e4fb4dba66f",
+      "uncertain": false
+    },
+    "shuowen:3278": {
+      "text": "An earthenware vessel flat underneath. From 缶; 乏 supplies the sound. Pronounced like 𦐇.",
+      "sourceTextSha256": "f6401ef084ef8bdbddd54f7207e3a292094b9b72663aae8527b54863b842450f",
+      "uncertain": false
+    },
+    "shuowen:3279": {
+      "text": "A long-necked jar kept in readiness for fire. From 缶; abbreviated 熒 supplies the sound.",
+      "sourceTextSha256": "fb90c0344f01b8bb414b839d3e99c06931ffa7b6fb5208de90bb88e9374d748a",
+      "uncertain": false
+    },
+    "shuowen:3280": {
+      "text": "An earthenware object. From 缶; 工 supplies the sound.",
+      "sourceTextSha256": "000e6aaf9e9c0d81bd4300d3156798889f51324d4e19bb86f8d38b631baee82a",
+      "uncertain": false
+    },
+    "shuowen:3281": {
+      "text": "An earthenware vessel. From 缶; 或 supplies the sound.",
+      "sourceTextSha256": "ebabb96bfd618f7226a454b77e3354c0bdfdfb06e395fe66715aba6583b634af",
+      "uncertain": false
+    },
+    "shuowen:3282": {
+      "text": "An earthenware vessel. From 缶; 薦 supplies the sound.",
+      "sourceTextSha256": "8c1a51d8ec77c65ffcdc4ef43b10383ccb12cce9e5ec11db9f36b0368fb62b82",
+      "uncertain": false
+    },
+    "shuowen:3283": {
+      "text": "An earthenware vessel. From 缶; 肉 supplies the sound.",
+      "sourceTextSha256": "b3bfb44abe894ee1701ff494bb36aa79825a3f0bce24535a845b65768d3e9f30",
+      "uncertain": false
+    },
+    "shuowen:3284": {
+      "text": "An earthenware vessel. From 缶; 霝 supplies the sound.",
+      "sourceTextSha256": "ec09c62c6374c7492335b76b1887b150fed578e90f20c8c4b677e324a10159e2",
+      "uncertain": false
+    },
+    "shuowen:3285": {
+      "text": "A chip or defect. From 缶; 占 supplies the sound.",
+      "sourceTextSha256": "9ab2a3914216c189f2221013eb5842a2f3d04bb37f40df57f3c63cfc53ee4999",
+      "uncertain": false
+    },
+    "shuowen:3286": {
+      "text": "A vessel broken. From 缶; abbreviated 決 supplies the sound.",
+      "sourceTextSha256": "abe56cb8bbcdb62d6b1b4a6fec2718235539e58ef222265d86e7c223d2f60726",
+      "uncertain": false
+    },
+    "shuowen:3287": {
+      "text": "A crack. From 缶; 虖 supplies the sound. Earthenware vessels readily crack in firing.",
+      "sourceTextSha256": "3e2f460646639fdf92c05861b795ef86dab5538003bd2d45b30bee1b73caa5fa",
+      "uncertain": false
+    },
+    "shuowen:3288": {
+      "text": "A vessel empty inside. From 缶; 殸 supplies the sound. 殸 is the ancient form of 磬. The Odes says: “The jar is empty.”",
+      "sourceTextSha256": "06f4469d8405889dcb1b4728ab651ee04c5535b2b988eca80fceda0849a1297d",
+      "uncertain": false
+    },
+    "shuowen:3289": {
+      "text": "A vessel's contents exhausted. From 缶; 𣪠 supplies the sound.",
+      "sourceTextSha256": "b0f213679fcd6ecd8b3d300a6ba700af416f534aff222199b0a9014cdf8a61c3",
+      "uncertain": false
+    },
+    "shuowen:3290": {
+      "text": "A vessel for receiving money. From 缶; 后 supplies the sound. Anciently made of earthenware; now of bamboo.",
+      "sourceTextSha256": "08a278007688521ed4902c5c74c0a7af86d03fb7a44c6cac3cfdd8dfad13c55f",
+      "uncertain": false
+    },
+    "shuowen:3291": {
+      "text": "A vessel. From 缶; 雚 supplies the sound.",
+      "sourceTextSha256": "a3e9d3955d391a420d32b9459e72c9f5a9dc507f54d304b522cc47174ef22114",
+      "uncertain": false
+    },
+    "shuowen:3292": {
+      "text": "Arrows for bows and crossbows. From 入, depicting the point, nock and feathers. Anciently Yimou first made arrows. All graphs in this category contain 矢.",
+      "sourceTextSha256": "ba6371be826c492a3f4c531dc94a588e0ab7c223e24a408275950728b9e0ce1f",
+      "uncertain": false
+    },
+    "shuowen:3293": {
+      "text": "A bow or crossbow discharging from near the body and hitting at a distance. From 矢 and 身.",
+      "sourceTextSha256": "ad87fef891022ab979ec5002e9d5a088d1cd726dffd7e07930bf45166f61412a",
+      "uncertain": false
+    },
+    "shuowen:3294": {
+      "text": "A clamp for bending and straightening arrows. From 矢; 喬 supplies the sound.",
+      "sourceTextSha256": "e0020e9a7f54ddd028f6c21ecc5e10211b58ea8d4136dc3f1f6e593db130aec7",
+      "uncertain": false
+    },
+    "shuowen:3295": {
+      "text": "An arrow for shooting birds with a cord. From 矢; 曾 supplies the sound.",
+      "sourceTextSha256": "33ae99490919bcadf325099e15b049699a580ab46a988dbf1d48387c1649a06c",
+      "uncertain": false
+    },
+    "shuowen:3296": {
+      "text": "The target shot at in the spring banquet. From 人 and 厂, depicting stretched cloth, with 矢 below. The Son of Heaven shoots bear, tiger and leopard targets, subduing ferocity; lords shoot bear, pig and tiger; grandees shoot deer, 麋 suggesting confusion; scholars shoot deer and pig, removing harm from the fields. The invocation says: “Do not be like an unruly lord who will not attend the king's court; therefore we oppose and shoot you.”",
+      "sourceTextSha256": "ef7b67cb4f90e7c2edd8d82d61c8873f9da702b51138beb1461df0ab322e5008",
+      "uncertain": true
+    },
+    "shuowen:3297": {
+      "text": "To injure. From 矢; 昜 supplies the sound.",
+      "sourceTextSha256": "24f5c4d9c5d7f177b5396aa5d5d76a739eada1f6bbaaa35e052ed5d2aa33bd8e",
+      "uncertain": false
+    },
+    "shuowen:3298": {
+      "text": "Things have length and shortness, with an arrow as the standard. From 矢; 豆 supplies the sound.",
+      "sourceTextSha256": "51ca92b1756a179d13bba7d341f21095db59a432a9ad490cfea47cab78b92aef",
+      "uncertain": false
+    },
+    "shuowen:3299": {
+      "text": "“How much more”: a particle. From 矢; abbreviated 引 supplies the sound. 矢 is used because words travel toward their object like an arrow.",
+      "sourceTextSha256": "9fafa03107f4e5c7a41035e87875cb087df8754644b8006026af8f4f53edced5",
+      "uncertain": false
+    },
+    "shuowen:3300": {
+      "text": "A word or utterance. From 口 and 矢.",
+      "sourceTextSha256": "0451c874afe3ded510a722846e40e4b40cefd66fb49d8e62ef3d718c8311ea4e",
+      "uncertain": false
+    }
+  }
+}

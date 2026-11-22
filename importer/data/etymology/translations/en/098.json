@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "bb4f8ce34d33fe3c071046336ba060346227d114599d5948749be68756875aa7",
+    "created_date": "2026-11-22"
+  },
+  "batch": "098",
+  "translations": {
+    "shuowen:9701": {
+      "text": "The central palace. It depicts all things opening, storing away, and bending. 己 follows 戊 and depicts a person's abdomen. All characters in this group are formed from 己.",
+      "sourceTextSha256": "90ae3664479da923d0b8eda19dfac13f356d9b061598a24e45d8b800fb87d7d5",
+      "uncertain": false
+    },
+    "shuowen:9702": {
+      "text": "To conduct oneself carefully while receiving something. Formed from 己 and 丞. Read like 己 in the Odes' 'Red shoes, steady and dignified.'",
+      "sourceTextSha256": "5d8f8e741633f27abc4a1f6efb3931b12c3ceb5857d6d5ec94b759010589dcd2",
+      "uncertain": true
+    },
+    "shuowen:9703": {
+      "text": "To sit long with legs spread. Formed from 己, with 其 indicating the sound. Read like 杞.",
+      "sourceTextSha256": "03af1151be23fb5b1464d548b130f23877725428058aab542a113daa7dd710ab",
+      "uncertain": false
+    },
+    "shuowen:9704": {
+      "text": "A creature. Some say a snake that eats elephants. A pictograph. All characters in this group are formed from 巴.",
+      "sourceTextSha256": "75960e278b9f0eb7bf0daed1f643c0d9c2597bd2bb17437bd56d249f876c73d9",
+      "uncertain": false
+    },
+    "shuowen:9705": {
+      "text": "To strike backhanded. Formed from 巴 and 帚; further explanation is lacking.",
+      "sourceTextSha256": "2bed63bc615f8d2539089d1132b7498338aee93469d54fe1dd2b25419a1ef702",
+      "uncertain": true
+    },
+    "shuowen:9706": {
+      "text": "Its position is in the west, depicting all things in autumn firm and substantial. 庚 follows 己 and depicts a person's 𪗇, apparently the navel. All characters in this group are formed from 庚.",
+      "sourceTextSha256": "1ce6e0e4e5c3c9b23b28144ec3451bffe9521b2e866c9ecd3640452b1eb87013",
+      "uncertain": true
+    },
+    "shuowen:9707": {
+      "text": "In autumn all things mature and ripen; metal is hard, the flavor acrid, and acrid pain brings tears. Formed from 一 and 䇂. 䇂 means an offense. 辛 follows 庚 and depicts a person's thighs. All characters in this group are formed from 辛.",
+      "sourceTextSha256": "8dfb661249820ba99f0347ccca9021f2bc7f34ce787f2e338a99279ca2d7ba41",
+      "uncertain": false
+    },
+    "shuowen:9708": {
+      "text": "To break the law. Formed from 辛 and 自, expressing the offender's wrinkled nose and bitter, painful distress. Qin changed it to 罪 because 辠 resembled 皇.",
+      "sourceTextSha256": "502060060f06b9b13e092d5cb7dd98b881dea69e5a2e9fd4452efa8f87ac7b3d",
+      "uncertain": false
+    },
+    "shuowen:9709": {
+      "text": "An offense. Formed from 辛, with 古 indicating the sound.",
+      "sourceTextSha256": "ca68aeb4a6eb0f77920f970ca996abb0746c28db05f2d59fc9bc297384d0c40a",
+      "uncertain": false
+    },
+    "shuowen:9710": {
+      "text": "An offense. Formed from 辛, with 𡴎 indicating the sound.",
+      "sourceTextSha256": "a6b40e0e382cb2f30931f2e2eee9b1b52adec9723b7cf9d5248890494d1894fe",
+      "uncertain": false
+    },
+    "shuowen:9711": {
+      "text": "Not to accept. Formed from 辛 and 受: when receiving hardship, one should decline it.",
+      "sourceTextSha256": "41d65f902632fc697facef0e3d566882f52c29e9e828760ce91b1fb293ea3ea1",
+      "uncertain": false
+    },
+    "shuowen:9712": {
+      "text": "To litigate. Formed from 𤔔, which is like adjudicating offenses. 𤔔 means to put in order.",
+      "sourceTextSha256": "c9e3b0811226fc3ffa530d2c2f8fcc642d6f5296db7976a0d9abd800ddbdc27b",
+      "uncertain": true
+    },
+    "shuowen:9713": {
+      "text": "Offenders litigating with one another. Formed from two 辛. All characters in this group are formed from 辡.",
+      "sourceTextSha256": "c354ad3f3cacaf72de10688f56a918e81e88c083f91863f46afae482980db875",
+      "uncertain": false
+    },
+    "shuowen:9714": {
+      "text": "To adjudicate or put in order. Formed from 言 between the two 辛 of 辡.",
+      "sourceTextSha256": "d737d5c8436f1cdae3096f9a7f7f7ad4b6620069da91ede44d51b45c1226836e",
+      "uncertain": false
+    },
+    "shuowen:9715": {
+      "text": "Its position is in the north. Yin reaches its utmost and yang is born; thus the Changes says: 'Dragons fight in the fields.' Fighting means joining. It depicts a person carrying a pregnancy. Following 亥, 壬 is succeeded by 子, the sequence of birth. The same conception as 巫. 壬 follows 辛 and depicts a person's shins, which support the body. All characters in this group are formed from 壬.",
+      "sourceTextSha256": "57eecf892cd70b5836f3e4aa4228a8b5fcfc53583fdc731f02b8bda8aecc4941",
+      "uncertain": true
+    },
+    "shuowen:9716": {
+      "text": "In winter water and earth are level and can be measured. It depicts water flowing from four directions into the earth. 癸 follows 壬 and depicts a person's feet. All characters in this group are formed from 癸.",
+      "sourceTextSha256": "8736e9a81f45a70aade9d7c8d6dc68a9585d540b5fba0ba74a6fa9f1ec47d774",
+      "uncertain": false
+    },
+    "shuowen:9717": {
+      "text": "In the eleventh month yang vital energy moves and all things increase; people use this term for it. A pictograph. All characters in this group are formed from 子. Li Yangbing says: 'A child in swaddling clothes, with feet together.'",
+      "sourceTextSha256": "b34d9dc8d6a95bbc710cefb6579a7d549fedc0139651a5f2f20408d8338f0540",
+      "uncertain": true
+    },
+    "shuowen:9718": {
+      "text": "To carry a child in the womb. Formed from 子 and 几.",
+      "sourceTextSha256": "af59c1f0635b929c6c8dfc652980c8dc949aacb36ceba1d25990c88b0821571a",
+      "uncertain": false
+    },
+    "shuowen:9719": {
+      "text": "To give birth and free the body. Formed from 子 and 免.",
+      "sourceTextSha256": "ac296e37dae68d69055566281129b66cf8335d842c6ecd2c219d344061d5558d",
+      "uncertain": false
+    },
+    "shuowen:9720": {
+      "text": "To bear or nurture a child. Formed from 子 beneath 宀; 子 also indicates the sound.",
+      "sourceTextSha256": "edc04ceaea9d22830e813e1861c5a010c3991e4a40118332e59f52aa3d50fd09",
+      "uncertain": false
+    },
+    "shuowen:9721": {
+      "text": "To bear or nurse a child. Formed from 子, with 𣪊 indicating the sound. Alternatively, the condition expressed by 㝅瞀.",
+      "sourceTextSha256": "ebbceae572c4e8ce281799b3be0a10c3ac9d0c2db093167cd1dcc95c0a7cf2a1",
+      "uncertain": true
+    },
+    "shuowen:9722": {
+      "text": "Two children from one birth. Formed from 子, with 䜌 indicating the sound.",
+      "sourceTextSha256": "4b8281e4890adb35cf3dc8907a47edd6a02070aeb5831ae5c70ad9770751667b",
+      "uncertain": false
+    },
+    "shuowen:9723": {
+      "text": "A nursing child. Alternatively, 輸, explained as still small. Formed from 子, with 需 indicating the sound.",
+      "sourceTextSha256": "ccf52cffb07592f6996d339d33a375e8b7bb578ba123bd5a112fed1bbe37ce84",
+      "uncertain": true
+    },
+    "shuowen:9724": {
+      "text": "A designation for the youngest. Formed from 子 and abbreviated 稚; 稚 also indicates the sound.",
+      "sourceTextSha256": "ff0c7ca0c289f743a230fc8907bfb538a502807557f113fe299424474760c00b",
+      "uncertain": false
+    },
+    "shuowen:9725": {
+      "text": "The eldest. Formed from 子, with 皿 indicating the sound.",
+      "sourceTextSha256": "7818fc30b8368c9cc2339a508f715b2577f5c5999662c26b1c93b0fd076206f9",
+      "uncertain": false
+    },
+    "shuowen:9726": {
+      "text": "A secondary wife's son. Formed from 子, with 辥 indicating the sound.",
+      "sourceTextSha256": "c5ac334f3bd764cf4e7c1e1c558038923dce169cb20b743f28d47925f15b38ce",
+      "uncertain": false
+    },
+    "shuowen:9727": {
+      "text": "To bring forth assiduously. Formed from 子, with 兹 indicating the sound.",
+      "sourceTextSha256": "b043b66298204db0a132e685fc5d0c84d83c5a013280b691e96d91d958fa47fc",
+      "uncertain": false
+    },
+    "shuowen:9728": {
+      "text": "Without a father. Formed from 子, with 瓜 indicating the sound.",
+      "sourceTextSha256": "6d2cbec2fa780c40002cb46f3340737d44cc8d13e72c5dfe6793b263e57decdc",
+      "uncertain": false
+    },
+    "shuowen:9729": {
+      "text": "To care for and inquire after. Formed from 子, with 才 indicating the sound.",
+      "sourceTextSha256": "0fd0c029fade2f737cf4d6ff90253b97033f4eed064b692dc3e14a88fcdc3fed",
+      "uncertain": false
+    },
+    "shuowen:9730": {
+      "text": "To release or let go. Formed from 子, with 爻 indicating the sound.",
+      "sourceTextSha256": "b1cbca6e43ca0bb4c2bf758dd9e9c6ab7960f9fa02bae901bd9cc96a30b92fcc",
+      "uncertain": false
+    },
+    "shuowen:9731": {
+      "text": "Doubt or confusion. Formed from 子, 止, and 匕, with 矢 indicating the sound.",
+      "sourceTextSha256": "0f65b88ddba4490ede0642a107ee742f6580435664e04d34c2c815af8fb6bef9",
+      "uncertain": false
+    },
+    "shuowen:9732": {
+      "text": "Bent or intertwined, as in 尦. Formed from 子 without arms; a pictograph. All characters in this group are formed from 了.",
+      "sourceTextSha256": "350c3278adc1e7c00208e8cdee5a4850ee58d407e44116135eaf05c346e5dd84",
+      "uncertain": true
+    },
+    "shuowen:9733": {
+      "text": "Without a right arm. Formed from 了, with 乚 depicting the shape.",
+      "sourceTextSha256": "95c55dafb7c8a85f690fb8120a24548acd09c9ba380e6d792a7d454ae90c851c",
+      "uncertain": false
+    },
+    "shuowen:9734": {
+      "text": "Without a left arm. Formed from 了, with 丿 depicting the shape.",
+      "sourceTextSha256": "215d42f052f122a2bb52ba59be449eb4d8ccc00b6305b499579263b429a6647e",
+      "uncertain": false
+    },
+    "shuowen:9735": {
+      "text": "Careful. Formed from three 子. All characters in this group are formed from 孨. Read like 翦.",
+      "sourceTextSha256": "01dbc57c54dde28a27583e5f4242ff7bc1f0dd26261c7248a774978fa83a600f",
+      "uncertain": false
+    },
+    "shuowen:9736": {
+      "text": "Cramped. Alternatively, groaning. Formed from 孨 beneath 尸.",
+      "sourceTextSha256": "7b19f59d7f8ee5f14b8a57f692be67606b5d2c97f7a3b7ed5b96671900cd8c98",
+      "uncertain": false
+    },
+    "shuowen:9737": {
+      "text": "An abundant appearance. Formed from 孨 and 曰. Read like 薿 in 薿薿; alternatively, like 存.",
+      "sourceTextSha256": "00559a0d8726d84047416e3a8d89121eb2d56403cfd50e9107cc610df6420e7e",
+      "uncertain": false
+    },
+    "shuowen:9738": {
+      "text": "To emerge suddenly and disobediently. Formed from reversed 子. The Changes says: 'Suddenly it comes.' An unfilial child bursts out, not accommodated within. All characters in this group are formed from 𠫓.",
+      "sourceTextSha256": "56c13f93665e5ea78cf4e8f64d1845a00766cab8649e428c8c3663c621d42170",
+      "uncertain": false
+    },
+    "shuowen:9739": {
+      "text": "To rear children so that they do good. Formed from 𠫓, with 肉 indicating the sound. The Book of Yu says: 'Teach and rear the children.'",
+      "sourceTextSha256": "5aea749a986b9ba29f8bddab6dd90723f9e502931a2a71c25638081a6fac5131",
+      "uncertain": false
+    },
+    "shuowen:9740": {
+      "text": "To pass through. Formed from 𡿮 and 疋; 疋 also indicates the sound.",
+      "sourceTextSha256": "914d18fc0cbe69f07ef435903049e22746f3e38917578ba906d839573fb62177",
+      "uncertain": false
+    },
+    "shuowen:9741": {
+      "text": "A bond or knot. In the twelfth month all things stir and begin their work. It depicts a hand. When the time reaches 丑, it is also time to raise the hands. All characters in this group are formed from 丑.",
+      "sourceTextSha256": "32666c975eca5bdacc94b9f41c0526d38a261e9cb60e12902138b2779a8dad28",
+      "uncertain": true
+    },
+    "shuowen:9742": {
+      "text": "To eat meat. Formed from 丑 and 肉.",
+      "sourceTextSha256": "a0aed4eafc36eda60e251a16f6df16250377be6ab31dba358ffc1c1fd6fd2325",
+      "uncertain": false
+    },
+    "shuowen:9743": {
+      "text": "To present an offering. Formed from 羊, the thing presented, and 丑; 丑 also indicates the sound.",
+      "sourceTextSha256": "6944bc40b08781c0cbb77d199373c51acbee0e69c0b6a862f51e64c986175f71",
+      "uncertain": false
+    },
+    "shuowen:9744": {
+      "text": "Constrained, as in 髕. In the first month yang vital energy stirs and leaves the Yellow Springs, wanting to emerge upward; yin remains strong. It depicts being unable to pass through 宀, constrained below. All characters in this group are formed from 寅.",
+      "sourceTextSha256": "6d91a69c99d9ce690af0d91bdefb258c33b7a17c44ff5b8190cbd011e0045dd6",
+      "uncertain": true
+    },
+    "shuowen:9745": {
+      "text": "To emerge or cover. In the second month all things push through the earth and emerge. It depicts an open gate; hence the second month is Heaven's Gate. All characters in this group are formed from 卯.",
+      "sourceTextSha256": "62590558aae8bf82be68617ae3951563e0f0cc46631f265813d324618d143ef1",
+      "uncertain": false
+    },
+    "shuowen:9746": {
+      "text": "To shake. In the third month yang vital energy stirs, thunder and lightning shake, and it is the people's farming season. All things grow: 乙 and 匕 depict shoots coming through; 厂 indicates the sound. 辰 is the 房 star, a heavenly seasonal marker. Includes 二, ancient-script 上. All characters in this group are formed from 辰.",
+      "sourceTextSha256": "f3aff093ff9f438b0bf89c8188de767f993a8d174baa42f12c033355b4bca8e5",
+      "uncertain": true
+    },
+    "shuowen:9747": {
+      "text": "Disgrace. Formed from 寸 below 辰. Those who miss plowing time are punished at the territorial boundary. 辰 is the farming season; hence the 房 star is 辰, the fields' seasonal marker.",
+      "sourceTextSha256": "14e2e657841d0624a34e836ceb82b471d92af74562c862a857615d27e4f683ab",
+      "uncertain": false
+    },
+    "shuowen:9748": {
+      "text": "Already or completed. In the fourth month yang vital energy has emerged and yin has hidden; all things appear and develop patterned forms. Thus 巳 represents a snake; a pictograph. All characters in this group are formed from 巳.",
+      "sourceTextSha256": "2e5688313f158cd6f58688077798cee5cebddb4134ad25d56a81a82258560444",
+      "uncertain": false
+    },
+    "shuowen:9749": {
+      "text": "To use. Formed from reversed 巳. Attendant Jia says: 巳 conveys already full or substantial. A pictograph.",
+      "sourceTextSha256": "432577b958fcc9f69ccadedcda1c72eeecff9db1b7e81b9cd4e6d423e20c7d5f",
+      "uncertain": true
+    },
+    "shuowen:9750": {
+      "text": "To oppose. In the fifth month yin vital energy opposes yang and emerges through the earth. The same conception as 予 and 矢. All characters in this group are formed from 午.",
+      "sourceTextSha256": "da0b68bff140c0e45f1f95729066443e0528046e97ca42b3edecb6e176ccd716",
+      "uncertain": true
+    },
+    "shuowen:9751": {
+      "text": "To oppose. Formed from 午, with 吾 indicating the sound.",
+      "sourceTextSha256": "bece13e1ece579851f28727d6fd63df6492ec8761e9ab7ea54648a835f8d7722",
+      "uncertain": false
+    },
+    "shuowen:9752": {
+      "text": "Flavor. In the sixth month flavors develop. Among the five phases, wood grows old at 未. It depicts a tree with repeated branches and leaves. All characters in this group are formed from 未.",
+      "sourceTextSha256": "e8572091e018835439b5e25ba3600bed4a7ceed0d9841fe4ef26278ba5fcd11a",
+      "uncertain": false
+    },
+    "shuowen:9753": {
+      "text": "Divine or spiritual. In the seventh month yin vital energy takes form, and bodies draw in and constrain themselves. Formed from 臼, holding itself. Officials hear business at the afternoon meal and renew the morning's governance; the source records 吏臣, with Duan's note changing 臣 to 以. All characters in this group are formed from 申.",
+      "sourceTextSha256": "d21c95517bd57d4c6cc8deb0a51bdc7d6e28b2ebbfd6c224fb3e4910cbe21cbd",
+      "uncertain": true
+    },
+    "shuowen:9754": {
+      "text": "To strike a small drum and lead the musical sound. Formed from 申, with 柬 indicating the sound.",
+      "sourceTextSha256": "10dc930ab081ed6abbac26f8dc4d9b24d867656d9ecf23f496e3825a10ce5186",
+      "uncertain": false
+    },
+    "shuowen:9755": {
+      "text": "Being bound, seized, and dragged is called 臾. Formed from 申 and 乙.",
+      "sourceTextSha256": "20c3d722308616cdf4461265bea48503f66c1d2fc9d16b255d56f81779d75a28",
+      "uncertain": true
+    },
+    "shuowen:9756": {
+      "text": "The dragging expressed by 臾曳. Formed from 申, with 丿 indicating the sound.",
+      "sourceTextSha256": "77c81b0d2080fc75450cdea3e5c103dc52de137afd1708b9698d7eca2a6abbc7",
+      "uncertain": false
+    },
+    "shuowen:9757": {
+      "text": "To complete. In the eighth month millet matures and can make repeatedly brewed wine. It depicts the ancient-script 酉. All characters in this group are formed from 酉.",
+      "sourceTextSha256": "e7121983da08f257ce9081f3250da6b17344f2f14fa25151c8f5e66aa77740fc",
+      "uncertain": false
+    },
+    "shuowen:9758": {
+      "text": "To bring to completion: that which brings out the good and evil of human nature. Formed from 水 and 酉; 酉 also indicates the sound. Alternatively, to bring about, since good and ill arise from it. In antiquity Yidi made fermented liquor; Yu tasted it and found it good, then distanced Yidi. Du Kang made glutinous-grain wine.",
+      "sourceTextSha256": "26c2df22bdf333f7bc1c2c64338ec8c5606aad3312a5219fe4c8f153fe0c7306",
+      "uncertain": false
+    },
+    "shuowen:9759": {
+      "text": "Fermenting grain growing a coating. Formed from 酉, with 冡 indicating the sound.",
+      "sourceTextSha256": "c63cb752bf18bcb6da3f7dce665f867b0cd05783a70d6212e9524bca633b15cd",
+      "uncertain": true
+    },
+    "shuowen:9760": {
+      "text": "Ripened fermenting grain. Formed from 酉, with 甚 indicating the sound.",
+      "sourceTextSha256": "fa82b2c41d44b5186732bdf895fac385e8764aa257a1a8fb3ae7e0a2760e7cad",
+      "uncertain": false
+    },
+    "shuowen:9761": {
+      "text": "To ferment: making wine is called 釀. Formed from 酉, with 襄 indicating the sound.",
+      "sourceTextSha256": "f76a9aab04ce40278c97587e3f014cddc40e77bd4ef9615d0db84d05f70163e7",
+      "uncertain": false
+    },
+    "shuowen:9762": {
+      "text": "To brew or ferment. Formed from 酉, with 𥁕 indicating the sound.",
+      "sourceTextSha256": "25a41f485a8bf842836b1b1411f7da283523e97f1d13d1855057013ab7f46def",
+      "uncertain": false
+    },
+    "shuowen:9763": {
+      "text": "Wine ripening quickly. Formed from 酉, with 弁 indicating the sound.",
+      "sourceTextSha256": "9c3e5c4f8e7c72c6ab7538d7e554606e3437f5d91e9f063efd163b48c9ecefe9",
+      "uncertain": false
+    },
+    "shuowen:9764": {
+      "text": "The starter of wine. Formed from 酉, with 余 indicating the sound. Read like 廬.",
+      "sourceTextSha256": "0be44b0c76b93f26f840a1034007d35ff10b50ba10881b22e9a874a1efc9d794",
+      "uncertain": false
+    },
+    "shuowen:9765": {
+      "text": "To draw off wine. Alternatively, unadulterated wine. Formed from 酉, with 麗 indicating the sound.",
+      "sourceTextSha256": "824dd8c8cc9f5cece69ec5ebe927e5be4c193d47315f2dbe2ecfdc3d4ccab7c4",
+      "uncertain": false
+    },
+    "shuowen:9766": {
+      "text": "To strain wine. Formed from 酉, with 肙 indicating the sound.",
+      "sourceTextSha256": "cf6bf6e78b5966610d0a3d3377c481f07e7f25bb81057830acaf8cce6d1e8538",
+      "uncertain": false
+    },
+    "shuowen:9767": {
+      "text": "To strain wine. Formed from 酉, with 鬲 indicating the sound.",
+      "sourceTextSha256": "9d5d0c867007e1890be1b8576851aed86dad2327696a20040cfc4dba271d8a0b",
+      "uncertain": false
+    },
+    "shuowen:9768": {
+      "text": "Wine ripened in one night. Formed from 酉, with 豊 indicating the sound.",
+      "sourceTextSha256": "f96ba764837823f3ac9846f0b048203df8074f037bc39e46b7ac9594e55fa4df",
+      "uncertain": false
+    },
+    "shuowen:9769": {
+      "text": "Wine containing liquid and dregs. Formed from 酉, with 翏 indicating the sound.",
+      "sourceTextSha256": "0942ad4db20dc3642090c329aeb8cd4d6c420c1920ea229c50db05afa007bfc1",
+      "uncertain": false
+    },
+    "shuowen:9770": {
+      "text": "Wine that has not been diluted. Formed from 酉, with 𦎫 indicating the sound.",
+      "sourceTextSha256": "817de2b8c0c2736320d184eae1a0721e55190906bb8285f5da323b2d3ff919cc",
+      "uncertain": false
+    },
+    "shuowen:9771": {
+      "text": "Rich, thick wine. Formed from 酉, with 需 indicating the sound. The Odes says: 'Wine and sweet wine are rich.'",
+      "sourceTextSha256": "4e561afb0b185753d70bbb0c7b0d60de780fa452ce7d00859f2c34e54607f8fa",
+      "uncertain": false
+    },
+    "shuowen:9772": {
+      "text": "Unadulterated wine brewed three times. Formed from 酉 and abbreviated 時. The Bright Hall's Monthly Ordinances says: 'In the first autumn month the Son of Heaven drinks 酎.'",
+      "sourceTextSha256": "bf303ca07dc28d64630c90e57265aa411893ddfc8b75db5346d3e2c82f5fcc8b",
+      "uncertain": false
+    },
+    "shuowen:9773": {
+      "text": "Turbid wine. Formed from 酉, with 盎 indicating the sound.",
+      "sourceTextSha256": "713d76136dd0bbbba2e8b17fa3694046e8e4880f43232b8e05e14e21702c93c6",
+      "uncertain": false
+    },
+    "shuowen:9774": {
+      "text": "Rich, thick wine. Formed from 酉, with 農 indicating the sound.",
+      "sourceTextSha256": "9c2bfdbfa2a849760ee5be7959da5252aaad807bd9794199f824eb5b3fa181ff",
+      "uncertain": false
+    },
+    "shuowen:9775": {
+      "text": "Wine. Formed from 酉, with 茸 indicating the sound.",
+      "sourceTextSha256": "7e7c738569c8cf9840c17c0403f797c7585a9cb200a76982cb3dcb6f0fe53469",
+      "uncertain": false
+    },
+    "shuowen:9776": {
+      "text": "Wine made in one night. Alternatively, to buy wine. Formed from 酉, with 古 indicating the sound.",
+      "sourceTextSha256": "b5f7c2fc796f06652b71ac1f9b6848af97ff3532f9568303c11b1c60f6464465",
+      "uncertain": false
+    },
+    "shuowen:9777": {
+      "text": "Wine. Formed from 酉 and abbreviated 𥏼.",
+      "sourceTextSha256": "a171d3ff4901cfdd8398948149f84583ac632062e82768c5bd0b14a69e09ec5b",
+      "uncertain": false
+    },
+    "shuowen:9778": {
+      "text": "The floating fermentation grade, 泛齊; wine in use or circulation, as recorded by 行酒. Formed from 酉, with 監 indicating the sound.",
+      "sourceTextSha256": "09b314f9c9dca286b9d74078f9373aab125a93079604ffba7272b7e542eb854a",
+      "uncertain": true
+    },
+    "shuowen:9779": {
+      "text": "Wine flavor being excessive or rich. Formed from 酉, with abbreviated 竷 indicating the sound. Read like 豔 in the Spring and Autumn Commentary's 'Beautiful and alluring.'",
+      "sourceTextSha256": "5585e742b5a3eea0c03f2bc385fd55dfb9bd0a4cfa26959716f9d8ea1b43aaca",
+      "uncertain": true
+    },
+    "shuowen:9780": {
+      "text": "A rich flavor of wine. Formed from 酉, with 告 indicating the sound.",
+      "sourceTextSha256": "6990eaa1bbdbaffe9d69f64787d77f6a690a409c291e9fd54ce4a803c6ddd559",
+      "uncertain": false
+    },
+    "shuowen:9781": {
+      "text": "Wine tasting bitter. Formed from 酉, with 覃 indicating the sound.",
+      "sourceTextSha256": "b32f7afadcecbafbdd7c70c3ddde75f21b49c4fdc2cfba713ee88f09c668c3c1",
+      "uncertain": false
+    },
+    "shuowen:9782": {
+      "text": "The color of wine. Formed from 酉, with 巿 indicating the sound.",
+      "sourceTextSha256": "9e1c1453a4050093a1184c0b658f63b3982930a89889a3c7e8dde247379fcaa6",
+      "uncertain": false
+    },
+    "shuowen:9783": {
+      "text": "The color of wine. Formed from 酉, with 己 indicating the sound.",
+      "sourceTextSha256": "12c1c16e07a2d73a86bc05b33d6cd8d977222d2c2ce4d4c4d83a09b176900926",
+      "uncertain": false
+    },
+    "shuowen:9784": {
+      "text": "The color of wine. Formed from 酉, with 弋 indicating the sound.",
+      "sourceTextSha256": "8e45b958f835e0159ae5018d6cb77aaf7fbef8ffcd514b1924d78d7aa38dcad6",
+      "uncertain": false
+    },
+    "shuowen:9785": {
+      "text": "A wine cup. Alternatively, wine turbid but slightly clear. Formed from 酉, with 戔 indicating the sound.",
+      "sourceTextSha256": "0b0b7f2e6bd1ecc8b8e6ff9a854fdc755de96deb1df51906491d6d41a876147e",
+      "uncertain": false
+    },
+    "shuowen:9786": {
+      "text": "To fill wine and pass the cup. Formed from 酉, with 勺 indicating the sound.",
+      "sourceTextSha256": "d8a66d0ecbd21a72e33473612a9d6cc2598be187a1c5c356fdeeddc2b130672a",
+      "uncertain": false
+    },
+    "shuowen:9787": {
+      "text": "A sacrifice in the capping and marriage rites. Formed from 酉, with 焦 indicating the sound.",
+      "sourceTextSha256": "04e2b1405ae83b7f1f2cfa05e13434e3d944710381201e97b958b4a6434b97e7",
+      "uncertain": false
+    },
+    "shuowen:9788": {
+      "text": "To sip wine. Formed from 酉, with 朁 indicating the sound.",
+      "sourceTextSha256": "ca00f18b32ca48e0c427a042081d508b661ea6f1565e5f1a858198d42dea6c3d",
+      "uncertain": false
+    },
+    "shuowen:9789": {
+      "text": "To drink little by little. Formed from 酉, with 勻 indicating the sound.",
+      "sourceTextSha256": "10c8d4bd9b6f303cbd622bfa90e78602531b383b50d3e25b42aeef8b53aaa216",
+      "uncertain": false
+    },
+    "shuowen:9790": {
+      "text": "The host offering wine to the guest. Formed from 酉, with 𠷎 indicating the sound.",
+      "sourceTextSha256": "bb10b94557b1826e27cda690b8127107ef651f99173d42be1067529ec8839f4f",
+      "uncertain": false
+    },
+    "shuowen:9791": {
+      "text": "The guest pouring wine for the host. Formed from 酉, with 昔 indicating the sound.",
+      "sourceTextSha256": "2896fa19cfc3ee6a0b17a45f82e60cb8e62738c9eef587055b5e59a454984f10",
+      "uncertain": false
+    },
+    "shuowen:9792": {
+      "text": "To drink wine and finish it together. Formed from 酉, with 𥁑 indicating the sound.",
+      "sourceTextSha256": "d8dae9b73056f2017ccce06a8e8182eab1809cbd3176879d8dde4b4085d56889",
+      "uncertain": false
+    },
+    "shuowen:9793": {
+      "text": "To finish drinking the wine. Formed from 酉, with abbreviated 嚼 indicating the sound.",
+      "sourceTextSha256": "8d2ef43135cfe3eee0136917d92ebb9cc37bad51fdd4856b77492362007aa5b2",
+      "uncertain": false
+    },
+    "shuowen:9794": {
+      "text": "To enjoy wine. Formed from 酉 and 甘; 甘 also indicates the sound.",
+      "sourceTextSha256": "3adc28445877b9c43e75664a0a5d5ce90eba10c78bda865e79694bb0f74f1af4",
+      "uncertain": false
+    },
+    "shuowen:9795": {
+      "text": "To delight in wine. Formed from 酉, with 冘 indicating the sound.",
+      "sourceTextSha256": "4d26117dd0bdfa658ca47145915e5b8b06bb8364f03f8ae21f1fec5449442357",
+      "uncertain": false
+    },
+    "shuowen:9796": {
+      "text": "To drink at a private banquet. Formed from 酉, with 區 indicating the sound.",
+      "sourceTextSha256": "90ff695e006c38d2ff7c90035186348c10208369cac62f1119a6a09297ca3cfa",
+      "uncertain": false
+    },
+    "shuowen:9797": {
+      "text": "To gather together to drink wine. Formed from 酉, with 豦 indicating the sound.",
+      "sourceTextSha256": "228a6ffb3e88efb35ae4e525855f0830c2a996316732113f9b3ff2a7791644f6",
+      "uncertain": false
+    },
+    "shuowen:9798": {
+      "text": "The king's virtue being spread abroad through a great public drinking feast. Formed from 酉, with 甫 indicating the sound.",
+      "sourceTextSha256": "7d77d45f389495d33c7457e4ed1f406fa11c99559408d6321803fc58d2391495",
+      "uncertain": false
+    },
+    "shuowen:9799": {
+      "text": "Drunk and full. Formed from 酉, with 咅 indicating the sound.",
+      "sourceTextSha256": "d294fe9342e0851e65f517d879f11e4a088c25018522241a81941985e689f0ef",
+      "uncertain": false
+    },
+    "shuowen:9800": {
+      "text": "To finish: to complete one's measured allowance without reaching disorder. Alternatively, to collapse. Formed from 酉 and 卒.",
+      "sourceTextSha256": "3733fa6656c4626eaf21cd5b58fab66d11fa3821a4c20094dfcb52000738aea0",
+      "uncertain": false
+    }
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "97b6f185fbb812141c7b154a91a64af9d0b436d753471c5052882c07b3df38e2",
+    "created_date": "2026-11-22"
+  },
+  "batch": "064",
+  "translations": {
+    "shuowen:6301": {
+      "text": "A dog fierce and unapproachable. Formed from 犬, with 廣 indicating the sound. There is a 獷平 county in 漁陽.",
+      "sourceTextSha256": "33c372e7a9fe055c7d52c957b5ef0220870cb690c35e4ce24d282765c7b3f8a2",
+      "uncertain": false
+    },
+    "shuowen:6302": {
+      "text": "A dog's shape. Formed from 犬, with 爿 indicating the sound.",
+      "sourceTextSha256": "cc063a3f5a8bf1418393c5a8804e3e233af3db8b43f7a7278d940d53b91ea1fc",
+      "uncertain": false
+    },
+    "shuowen:6303": {
+      "text": "A recklessly fierce dog. Formed from 犬 and 壯; 壯 also indicates the sound.",
+      "sourceTextSha256": "1deaeffb678798c9ffca12674e6ce49e5ef6ae9a907eb75e0d3b1c4d9c642420",
+      "uncertain": false
+    },
+    "shuowen:6304": {
+      "text": "A dog that understands a person's intentions and can be commanded. Formed from 犬, with 敖 indicating the sound. The Spring and Autumn Commentary says: 'The duke set that mastiff on him.'",
+      "sourceTextSha256": "ddacbb98230d4222944dba4215e80f2b1d11e8ea67b60151fed5ca85ccb97782",
+      "uncertain": false
+    },
+    "shuowen:6305": {
+      "text": "A dog's angry appearance. Formed from 犬, with 需 indicating the sound. Read like 槈.",
+      "sourceTextSha256": "59cb700045dcd4b18e5c8fea3ab269b6d891b2064ab8894243bfd4d101d8bc86",
+      "uncertain": false
+    },
+    "shuowen:6306": {
+      "text": "A dog eating. Formed from 犬 and 舌. Read like 鲽, the flatfish.",
+      "sourceTextSha256": "83cbfb853a2e817c7726041d1d52dc3cdc0cbf526482dc8f503960163c87f44e",
+      "uncertain": false
+    },
+    "shuowen:6307": {
+      "text": "A dog that can be trained or familiarized. Formed from 犬, with 甲 indicating the sound.",
+      "sourceTextSha256": "4036d659afc52518852952e136e891f8d3f04ff0614fc2fc61976aa4d657bd20",
+      "uncertain": false
+    },
+    "shuowen:6308": {
+      "text": "A dog's arrogant nature. Formed from 犬, with 丑 indicating the sound.",
+      "sourceTextSha256": "ebec71840caa51b433061b7a44e768307d125029a863f8e5495f37bbfcbffe57",
+      "uncertain": false
+    },
+    "shuowen:6309": {
+      "text": "To encroach. Formed from 犬, with 巳 indicating the sound; Duan's commentary changes 巳 to 㔾.",
+      "sourceTextSha256": "f850ebe1fca750c6620d1721e144821775be5845a95bc5958d44507c3f546484",
+      "uncertain": false
+    },
+    "shuowen:6310": {
+      "text": "Resentful malice. Formed from 犬, with 青 indicating the sound.",
+      "sourceTextSha256": "d86431dc5e78ae5189b218bab3df39d762bae7bedb856e146b887d3ac31574d5",
+      "uncertain": true
+    },
+    "shuowen:6311": {
+      "text": "A strong dog. Formed from 犬, with 孟 indicating the sound.",
+      "sourceTextSha256": "8102c8f7cd08822724c001b7994fab3b8c1327fcf33d7ceee6ca98a43193a436",
+      "uncertain": false
+    },
+    "shuowen:6312": {
+      "text": "A strong dog. Formed from 犬, with 亢 indicating the sound.",
+      "sourceTextSha256": "778e79eb91c67c7b3c1e8beef587d7d77350201cd15af74981d58289201bf8f6",
+      "uncertain": false
+    },
+    "shuowen:6313": {
+      "text": "Very fearful. Formed from 犬, with 去 indicating the sound.",
+      "sourceTextSha256": "2899c671ca34457b81931501091219a19ebb2df4db8628e08a0a0cbae2eb4aa7",
+      "uncertain": false
+    },
+    "shuowen:6314": {
+      "text": "Strong. Formed from 犬, with 粦 indicating the sound. The Odes says: 'The black hound is strong.'",
+      "sourceTextSha256": "3fc3fda525b1f4898af00db62663596f4c90d31a6ff63bbfbc9672af8e43da2a",
+      "uncertain": false
+    },
+    "shuowen:6315": {
+      "text": "To leap swiftly. Alternatively, urgent. Formed from 犬, with 瞏 indicating the sound.",
+      "sourceTextSha256": "c279ace6c3f19c7ed04f6fd67d6cd43d37691897df9a8ac969192f05461dd7e4",
+      "uncertain": false
+    },
+    "shuowen:6316": {
+      "text": "To run. Formed from 犬, with 攸 indicating the sound. Read like 叔.",
+      "sourceTextSha256": "4e033efb0f8de08d71baf078ae149f384aa0ddf96f6fb0db8b5aebb53ff72528",
+      "uncertain": false
+    },
+    "shuowen:6317": {
+      "text": "A dog walking. Formed from 犬, with 亘 indicating the sound. The Rites of Zhou says: 'Esteeming steady movement,' expressed by 狟狟.",
+      "sourceTextSha256": "51f413a3d56acc70e3032cf1effd493d07c466870281bab933fc871cb9a20aa6",
+      "uncertain": true
+    },
+    "shuowen:6318": {
+      "text": "To pass without taking. Formed from 犬, with 巿 indicating the sound. Read like 孛.",
+      "sourceTextSha256": "41f4814cd12b4d815462ea85db77ea2fc74e569c556fe7559b15fe1186567936",
+      "uncertain": true
+    },
+    "shuowen:6319": {
+      "text": "A dog pricking up its ears. Formed from 犬, with 易 indicating the sound.",
+      "sourceTextSha256": "a55e6e5079b532096fad08d21150e87e2ddbd0e0270369784ffc3aa1565b6ca2",
+      "uncertain": false
+    },
+    "shuowen:6320": {
+      "text": "A dog baring its gums in anger. Formed from 犬, with 來 indicating the sound. Also read like 銀.",
+      "sourceTextSha256": "227adefbf701d6d5425e8336d0dc90727eb8c48c09d55dc42721c79cbf28c932",
+      "uncertain": false
+    },
+    "shuowen:6321": {
+      "text": "A running dog's appearance. Formed from 犬 with 丿 across it. Pulling its foot makes it stumble or splay, as in 剌犮.",
+      "sourceTextSha256": "0656f953bf697d6a86b9d70b3b167fd2ecf8662a4a92668864dfa417dd29b50a",
+      "uncertain": true
+    },
+    "shuowen:6322": {
+      "text": "Bent or twisted. Formed from 犬 coming out beneath 戶: its body is bent and twisted.",
+      "sourceTextSha256": "c3044bed719e5ff28598f36ce1072af063cf334bc34798cf1b09750d9fdfbb55",
+      "uncertain": false
+    },
+    "shuowen:6323": {
+      "text": "Dogs meeting and fighting. Formed from 犬, with 蜀 indicating the sound. Sheep form flocks; dogs are solitary. Alternatively, Mount 北嚻 has a beast called 獨𤞞, like a tiger, white-bodied, with pig's bristles and a horse's tail.",
+      "sourceTextSha256": "56411bc41eba70a026fbd416ecf65f6b4cfcbb38e99140f441b114df35714508",
+      "uncertain": false
+    },
+    "shuowen:6324": {
+      "text": "獨𤞞, a beast. Formed from 犬, with 谷 indicating the sound.",
+      "sourceTextSha256": "765432d3d345decfc77ca346d2658c1e19bd9b6facff6f681c3bd25e5ad33783",
+      "uncertain": false
+    },
+    "shuowen:6325": {
+      "text": "Autumn hunting. Formed from 犬, with 璽 indicating the sound.",
+      "sourceTextSha256": "fa226e8c5eae77a7dfcb8df3d402c877bfbceeaf5507b891909100552289e1ec",
+      "uncertain": false
+    },
+    "shuowen:6326": {
+      "text": "To let loose in hunting and pursue game. Formed from 犬, with 巤 indicating the sound.",
+      "sourceTextSha256": "0aa2bdd28a4723d0d3a40c2260a887bbb55047ea4b8da3e34d82a0a669ef93e9",
+      "uncertain": false
+    },
+    "shuowen:6327": {
+      "text": "To hunt. Formed from 犬, with 尞 indicating the sound.",
+      "sourceTextSha256": "57c849112dda988e2dc1c551f9b98d836d9d7086aa242bd207c1126b7f8b4310",
+      "uncertain": false
+    },
+    "shuowen:6328": {
+      "text": "To hunt with dogs. Formed from 犬, with 守 indicating the sound. The Changes says: 'Mingyi, on a southern hunt.'",
+      "sourceTextSha256": "d3e4de3b650df79e9050d85973499e147425e8e7d5e2c0dd90500cd33f323d18",
+      "uncertain": false
+    },
+    "shuowen:6329": {
+      "text": "When game runs, the dog is what knows its tracks by smelling. Formed from 犬 and 自.",
+      "sourceTextSha256": "1c7fd564b2310405365b4765ebc37211b4cf75385dde29b0f002b5c56bbe1455",
+      "uncertain": false
+    },
+    "shuowen:6330": {
+      "text": "What is obtained in hunting. Formed from 犬, with 蒦 indicating the sound.",
+      "sourceTextSha256": "2f3cf2801f1a7aef505ff55a77865fd599f3d43e5e50809c5e3ae795b25b43c5",
+      "uncertain": false
+    },
+    "shuowen:6331": {
+      "text": "To collapse suddenly. Formed from 犬, with 敝 indicating the sound. The Spring and Autumn Commentary says: 'He gave it to the dog, and the dog collapsed.'",
+      "sourceTextSha256": "00c950cd1c81421ebdbe58c714253112cd29ddf7fe2bb13ea38d953c86d1e1f7",
+      "uncertain": false
+    },
+    "shuowen:6332": {
+      "text": "The temple dog is named 羹獻; fat dogs are presented as offerings. Formed from 犬, with 鬳 indicating the sound.",
+      "sourceTextSha256": "e661ef44c11c8180a2ef44cb082e026c2fa182a0e30d2d93bf24b870d814fd77",
+      "uncertain": true
+    },
+    "shuowen:6333": {
+      "text": "A fierce dog, 獟. Formed from 犬, with 幵 indicating the sound. Alternatively, a dog that pursues tigers.",
+      "sourceTextSha256": "e366965022c26a3fde70b2cf10308d6ba8ff09a249019393239621c75134b7d7",
+      "uncertain": true
+    },
+    "shuowen:6334": {
+      "text": "A fierce dog, 𤜵. Formed from 犬, with 堯 indicating the sound.",
+      "sourceTextSha256": "a0889ac995da1c88df4f09ee6c1d91e04e25292d7939ce87a79d61337ddc1cef",
+      "uncertain": true
+    },
+    "shuowen:6335": {
+      "text": "A mad dog. Formed from 犬, with 折 indicating the sound. The Spring and Autumn Commentary says: 'A mad dog entered Hua Chen's gate.'",
+      "sourceTextSha256": "c0c162fb33e1aa1e59801f7a3b385414fa83295af1a42b82361373b37eb0a8e0",
+      "uncertain": false
+    },
+    "shuowen:6336": {
+      "text": "A mad dog. Formed from 犬, with 㞷 indicating the sound.",
+      "sourceTextSha256": "d1dae3a3ff7117914321d4befb4e0f23633f5d7b7a17a9a624e1e9deb82de658",
+      "uncertain": false
+    },
+    "shuowen:6337": {
+      "text": "Members of a kind resemble each other, especially dogs. Formed from 犬, with 頪 indicating the sound.",
+      "sourceTextSha256": "3426f884f43b848845b1087df0bc8f7709e13fa896a5a23b5dc3e6fd2e827a82",
+      "uncertain": false
+    },
+    "shuowen:6338": {
+      "text": "The Red Di, described as originally dog stock. The word 狄 conveys licentiousness and perversity. Formed from 犬, with abbreviated 亦 indicating the sound.",
+      "sourceTextSha256": "c5851e5c15e15cfd0cf557dca923724cd3ba9bf8faadc87496bd74e45c64f1c0",
+      "uncertain": false
+    },
+    "shuowen:6339": {
+      "text": "狻麑, like a 虦貓, eating tigers and leopards. Formed from 犬, with 夋 indicating the sound. See the Erya.",
+      "sourceTextSha256": "ad61d92785bd37f801ace10f626b006bd9d71933d3732d8c5bc58ba3f724ad67",
+      "uncertain": true
+    },
+    "shuowen:6340": {
+      "text": "A monkey. Formed from 犬, with 矍 indicating the sound. The Erya says: 'The 玃父 is good at turning to look.' It seizes and holds people.",
+      "sourceTextSha256": "7bff94d6e05dd4a78753b5b3869034df780576cc16f8f341b6d4a1df847e51ec",
+      "uncertain": false
+    },
+    "shuowen:6341": {
+      "text": "A kind of 玃. Formed from 犬, with 酋 indicating the sound. Alternatively, in 隴西 a puppy is called 猷.",
+      "sourceTextSha256": "5b650908afc050f26e0c6a0c7f8287827f04722abb75000543dd45aa7cf03ae9",
+      "uncertain": false
+    },
+    "shuowen:6342": {
+      "text": "A kind of 玃. Formed from 犬, with 且 indicating the sound. Alternatively, a dog that briefly bites people; alternatively, a dog that does not bite people.",
+      "sourceTextSha256": "c2ad40858068ab7875e7650c20c7066f9cf0e8eaac54900f94c7f6bbd31bc6ac",
+      "uncertain": false
+    },
+    "shuowen:6343": {
+      "text": "An ape or monkey, 夒. Formed from 犬, with 矦 indicating the sound.",
+      "sourceTextSha256": "08b2b922a07b6f12243af6dcb5d519ee0049a89566f04fcaf7735939fada48f3",
+      "uncertain": false
+    },
+    "shuowen:6344": {
+      "text": "A kind of dog, yellow above the waist and black below, eating monkeys. Formed from 犬, with 𣪊 indicating the sound. Read like 構. Some say it resembles a ewe, occurs in Shu's Mount 北嚻, and has a dog's head and horse's tail.",
+      "sourceTextSha256": "100d677de2c8ead4d6864faaf70aed43ece70e955fa5c1ddb64974c421dd6d09",
+      "uncertain": false
+    },
+    "shuowen:6345": {
+      "text": "Like a dog, pointed-headed and white-cheeked, high in front and broad behind. Formed from 犬, with 良 indicating the sound.",
+      "sourceTextSha256": "8b553f4796a5ca52c8bf7a018c90889ef765fea3fa3ce6510488fb3e3ba31acb",
+      "uncertain": false
+    },
+    "shuowen:6346": {
+      "text": "Like a wolf, good at driving sheep. Formed from 犬, with 白 indicating the sound. Read like 蘗; Ning Yan reads it like 泊 in 淺泊.",
+      "sourceTextSha256": "d725569b363c3d925eebf19dbbe30b158504341e7de8b0d91fabe3be079751c2",
+      "uncertain": false
+    },
+    "shuowen:6347": {
+      "text": "A kind of wolf. Formed from 犬, with 曼 indicating the sound. The Erya says: '貙獌 resembles a 貍.'",
+      "sourceTextSha256": "11b552a55a6e5e453096e5c97603016c67f01504a7f0051c934673fbd4061d42",
+      "uncertain": false
+    },
+    "shuowen:6348": {
+      "text": "An uncanny beast ridden by ghosts. It has three virtues: its coloring is balanced; small in front and large behind; when dying it turns its head toward its home mound. Formed from 犬, with 瓜 indicating the sound.",
+      "sourceTextSha256": "6978bdf2819898e0f020c42ceed4fe5f348708433a98c50eec207af785e47aff",
+      "uncertain": true
+    },
+    "shuowen:6349": {
+      "text": "Like a small dog, dwelling in water and eating fish. Formed from 犬, with 賴 indicating the sound.",
+      "sourceTextSha256": "6628910ba607fe46a2b0bc5474f886c6ca916d9fe74a7a87b005a14ab7227e33",
+      "uncertain": false
+    },
+    "shuowen:6350": {
+      "text": "A kind of otter. Formed from 犬, with 扁 indicating the sound.",
+      "sourceTextSha256": "bc6cccd0f27c2bb395a1ef85f06c23da45c85cf8ce599935e6131343ba1a8fa3",
+      "uncertain": false
+    },
+    "shuowen:6351": {
+      "text": "The appearance of dogs running. Formed from three 犬.",
+      "sourceTextSha256": "23ad2a26f56b9deae52d84defbcf5ee6bf9e26a50691f39d4e1e49760a23132b",
+      "uncertain": false
+    },
+    "shuowen:6352": {
+      "text": "The appearance of beasts running. Formed from 犬, with 戉 indicating the sound.",
+      "sourceTextSha256": "eb53322adb72735402cf282a1f3984633e2f795b2586506f05fc1d960c576eec",
+      "uncertain": false
+    },
+    "shuowen:6353": {
+      "text": "A beast's name. Formed from 犬, with 軍 indicating the sound.",
+      "sourceTextSha256": "be3ef2e81146fccbf4bfba9581704927b5b3d928cf231972b153c1f95b1436ae",
+      "uncertain": false
+    },
+    "shuowen:6354": {
+      "text": "Narrow-minded and hasty. Formed from 犬, with 肙 indicating the sound.",
+      "sourceTextSha256": "3e2bbc6016fc57831c3380e3a7ed4b90f7e5db411a9a78d332d87437f0306f53",
+      "uncertain": false
+    },
+    "shuowen:6355": {
+      "text": "猰㺄, a beast's name. Formed from 犬, with 契 indicating the sound.",
+      "sourceTextSha256": "78471c8676129f0f8265f2d592f22442181e325e64362aebcbe8c777effe09b5",
+      "uncertain": false
+    },
+    "shuowen:6356": {
+      "text": "Two dogs biting each other. Formed from two 犬. All characters in this group are formed from 㹜.",
+      "sourceTextSha256": "17da3026df9840bfff40e17d75d3ef29edfeb270b0e00d2295b2dc2976800b35",
+      "uncertain": false
+    },
+    "shuowen:6357": {
+      "text": "The minister of works, 司空. Formed from 㹜, with 𦣞 indicating the sound. Another explanation refers to the prison's 司空; the wording is compressed and uncertain.",
+      "sourceTextSha256": "dcb646593d1b00d9187f5e960e47f3ee9049330cce2f65ae28c879159cfa523e",
+      "uncertain": true
+    },
+    "shuowen:6358": {
+      "text": "Firm or certain. Formed from 㹜 and 言. The two dogs are for guarding.",
+      "sourceTextSha256": "9942c45316011df225b03a08b556fac8e5deb18bc4551bb3f1921a6f20202d6c",
+      "uncertain": true
+    },
+    "shuowen:6359": {
+      "text": "The general name for burrowing creatures. A pictograph. All characters in this group are formed from 鼠.",
+      "sourceTextSha256": "fe359be6996a5564951d20220d92cef855d4f0d47b959321200fde97087339fb",
+      "uncertain": false
+    },
+    "shuowen:6360": {
+      "text": "A mouse-like creature. Formed from 鼠, with 番 indicating the sound. Read like 樊. Some say 鼠婦.",
+      "sourceTextSha256": "0dbee55399886b49cd4ab992fc1a0b49429ab5eba12c618895e9d752f538d0e1",
+      "uncertain": false
+    },
+    "shuowen:6361": {
+      "text": "A mouse-like creature from Hu territory, whose skin can make fur robes. Formed from 鼠, with 各 indicating the sound.",
+      "sourceTextSha256": "4a7f50d95763aa8b3c4ae4451acb8666eaa23929fa515c2f39ad10990f305cd4",
+      "uncertain": false
+    },
+    "shuowen:6362": {
+      "text": "A ground-burrowing mouse, produced by the shrike. Alternatively, the 偃 mouse. Formed from 鼠, with 分 indicating the sound.",
+      "sourceTextSha256": "081378dfaa8302a861d9540dc4695dcdee3d640411c438ba3a88364928e5f464",
+      "uncertain": false
+    },
+    "shuowen:6363": {
+      "text": "The mouse called 䶄令. Formed from 鼠, with 平 indicating the sound.",
+      "sourceTextSha256": "f42a18ad50eb69a8f9726ac663d75f9a429a0858b53b141e745860bf2021c538",
+      "uncertain": false
+    },
+    "shuowen:6364": {
+      "text": "A mouse-like creature. Formed from 鼠, with 虒 indicating the sound.",
+      "sourceTextSha256": "692e0854e03442cf574ff9332e99346d581928f736b1b824a5536f1a7c6e280b",
+      "uncertain": false
+    },
+    "shuowen:6365": {
+      "text": "A bamboo rat, described incompletely as 'like large.' Formed from 鼠, with abbreviated 畱 indicating the sound.",
+      "sourceTextSha256": "980f9f14fbbc9f9a8fe2587f2564ba2d75544ad76771cbbc014bad8b00ba16c5",
+      "uncertain": true
+    },
+    "shuowen:6366": {
+      "text": "The five-skilled mouse: it can fly but cannot pass a roof; climb but not reach a tree's top; swim but not cross a valley; burrow but not conceal its body; run but not outpace a person. Formed from 鼠, with 石 indicating the sound.",
+      "sourceTextSha256": "24ead0673547438baf3e99f5f913275186821684a6871b4b925783753f35d81c",
+      "uncertain": false
+    },
+    "shuowen:6367": {
+      "text": "A mouse with leopard-like markings. Formed from 鼠, with 冬 indicating the sound.",
+      "sourceTextSha256": "239f2c017f85b3b0c0a7a2f3ce903c0de5a80ba22e27c5af0097d96bd126e647",
+      "uncertain": false
+    },
+    "shuowen:6368": {
+      "text": "A kind of mouse. Formed from 鼠, with 益 indicating the sound.",
+      "sourceTextSha256": "284e8e356661a853e7f5be991697377caa52ef82267215e20017da2beb542f6c",
+      "uncertain": false
+    },
+    "shuowen:6369": {
+      "text": "A small mouse. Formed from 鼠, with 奚 indicating the sound.",
+      "sourceTextSha256": "0a65874fbc29331f2d2fb0e055332c212399b051b8680f3a627401cdd0af728f",
+      "uncertain": false
+    },
+    "shuowen:6370": {
+      "text": "The mouse called 精鼩. Formed from 鼠, with 句 indicating the sound.",
+      "sourceTextSha256": "ed88c7d4d465436305a73ef5c588c39d8a105d93199072731782c5f2d1860b96",
+      "uncertain": true
+    },
+    "shuowen:6371": {
+      "text": "The creature called 䶃. Formed from 鼠, with 兼 indicating the sound.",
+      "sourceTextSha256": "6a39985e6ef31046b7ce41e401589284fd1ac0920ff87d1a1619c4f9dcd5e69c",
+      "uncertain": false
+    },
+    "shuowen:6372": {
+      "text": "A kind of mouse. Formed from 鼠, with 今 indicating the sound. Read like 含.",
+      "sourceTextSha256": "a267a314e376b9f03c8485042a60cc3dbc59ce99eb5091b24bfedf8f96c6388c",
+      "uncertain": false
+    },
+    "shuowen:6373": {
+      "text": "Like a mouse, red-yellow and large, eating mice. Formed from 鼠, with 由 indicating the sound.",
+      "sourceTextSha256": "99a0ffb15b504c2af938aafbd1f59b729e86d4bbd16f330cfff96d766fdbe025",
+      "uncertain": false
+    },
+    "shuowen:6374": {
+      "text": "A wind-mouse of Hu territory. Formed from 鼠, with 勺 indicating the sound.",
+      "sourceTextSha256": "67dfc9a212660c66cfc56292ced5aa3cf7684b73eb99e2e66965172dfb004e6d",
+      "uncertain": true
+    },
+    "shuowen:6375": {
+      "text": "A kind of mouse. Formed from 鼠, with 宂 indicating the sound.",
+      "sourceTextSha256": "bfcc5f0e3f4f1a788e4c7c177b40bf7cfec60911df55aa14cb960e6f9742af0b",
+      "uncertain": false
+    },
+    "shuowen:6376": {
+      "text": "A mouse-like creature resembling a chicken, with a mouse's tail. Formed from 鼠, with 此 indicating the sound.",
+      "sourceTextSha256": "2f7a0e4c8f0f561ac4bfc6014722f31b55b42fc3a08f8203f253eb0f57520045",
+      "uncertain": true
+    },
+    "shuowen:6377": {
+      "text": "A mouse-like creature from the Dingling Hu, whose skin can make fur clothing, 𧚍. Formed from 鼠, with 軍 indicating the sound.",
+      "sourceTextSha256": "3b4ae6a33fdbc39f19e4273f1de91fb4b5ca2df59e06e7ee19822a8a1487172c",
+      "uncertain": false
+    },
+    "shuowen:6378": {
+      "text": "The 斬𪕮 mouse: black-bodied, white-waisted like a belt; long white hair on its hands resembles holding a tablet. Like the 蝯 and 蜼 kinds. Formed from 鼠, with 胡 indicating the sound.",
+      "sourceTextSha256": "284af1679f92f3102faa46e51ff0765abbfe8d601b06bfbd6a9abe52bd50f3de",
+      "uncertain": true
+    },
+    "shuowen:6379": {
+      "text": "A kind of bear, with feet like a deer's. Formed from 肉, with 㠯 indicating the sound. Because this beast is firm within, the capable are called 賢能; because it is strong, the outstanding are called 能傑. All characters in this group are formed from 能.",
+      "sourceTextSha256": "645a4d26bbdc4625a7b6ee998db5f9a46c26061cffd93f1021a8c0ae6298ee2a",
+      "uncertain": true
+    },
+    "shuowen:6380": {
+      "text": "A beast resembling a pig, living in mountains and hibernating in winter. Formed from 能, with abbreviated 炎 indicating the sound. All characters in this group are formed from 熊.",
+      "sourceTextSha256": "08a1a419fa7a11166533448814ae7ad8b6c924fc2a09f707692255881e677459",
+      "uncertain": false
+    },
+    "shuowen:6381": {
+      "text": "Like a bear, with yellow and white markings. Formed from 熊, with abbreviated 罷 indicating the sound.",
+      "sourceTextSha256": "a2e3607461b2440de82c2163f70185847859b24e010eaf2b7e11ea3889890ac5",
+      "uncertain": false
+    },
+    "shuowen:6382": {
+      "text": "To burn. The phase associated with the south, blazing upward. A pictograph. All characters in this group are formed from 火.",
+      "sourceTextSha256": "da6aafee2b64861802582c25ef4122974404d70c0a12dfb703c81ed0535b368f",
+      "uncertain": false
+    },
+    "shuowen:6383": {
+      "text": "The reigning emperor's tabooed personal name.",
+      "sourceTextSha256": "98ba7f36cf4b570d61335cb6f2003cad79ad2c9e7bc2664470466a41100147e0",
+      "uncertain": false
+    },
+    "shuowen:6384": {
+      "text": "Fire. Formed from 火, with 尾 indicating the sound. The Odes says: 'The royal house is like a fire.'",
+      "sourceTextSha256": "2935bd464008444164e13dbc82e219e086d4cae1c2ad7bd08e0ae7cefa584968",
+      "uncertain": false
+    },
+    "shuowen:6385": {
+      "text": "Fire. Formed from 火, with 毀 indicating the sound. The Spring and Autumn Commentary says: 'Duke Hui of Wei.'",
+      "sourceTextSha256": "2ca3dceaad65a0f18c4ea5193817d9263be9f455cadf17159e5892c5bcf0a04b",
+      "uncertain": false
+    },
+    "shuowen:6386": {
+      "text": "Fire. Formed from 火, with 豩 indicating the sound.",
+      "sourceTextSha256": "800531e89aca1d52be14cf0fb7f769091be4f452bcf55eb6f282e8402dedd7d4",
+      "uncertain": false
+    },
+    "shuowen:6387": {
+      "text": "To kindle fire. Formed from 火, with 夋 indicating the sound. The Rites of Zhou says: 'Then blow on its kindled fire.' The kindled fire is placed in front, and the heated implement scorches the divination turtle.",
+      "sourceTextSha256": "68a365964749b34c0f31cc83813669e31ff2b1ce07df564245c6de3a716ea2b7",
+      "uncertain": true
+    },
+    "shuowen:6388": {
+      "text": "To burn wood in sacrifice to heaven. Formed from 火 and 眘, ancient-script 愼: sacrificing to heaven is done reverently.",
+      "sourceTextSha256": "286ff6122dcb87a22eeaaf4edfe351884450eb4473c2d72d2be9bf807303fdef",
+      "uncertain": false
+    },
+    "shuowen:6389": {
+      "text": "To burn. Formed from 火, with 肰 indicating the sound.",
+      "sourceTextSha256": "5dcd7e6e72be929f589a1c0f2c81c917cc38eccc2b32e0078da15a0e5aca164a",
+      "uncertain": false
+    },
+    "shuowen:6390": {
+      "text": "To burn. Formed from 火, with 蓺 indicating the sound. The Spring and Autumn Commentary says: 'Burn Xi Fuji.'",
+      "sourceTextSha256": "ad92bbba656d22dfce75557e1bd967bcc55154fd1681f5939a0ed5ef608a512b",
+      "uncertain": false
+    },
+    "shuowen:6391": {
+      "text": "To burn. Formed from 火, with 番 indicating the sound.",
+      "sourceTextSha256": "0202c3029749f54aab1e769610783576833c76212f8dbf18a0d3bbc81fd0161a",
+      "uncertain": false
+    },
+    "shuowen:6392": {
+      "text": "To burn. Formed from 火, with 堯 indicating the sound.",
+      "sourceTextSha256": "e90caa890691fd2a95be8d1b4f394b7ca8a116c9cedc264ef66c5d9ed07da24a",
+      "uncertain": false
+    },
+    "shuowen:6393": {
+      "text": "Fire being fierce. Formed from 火, with 𠛱 indicating the sound.",
+      "sourceTextSha256": "08f7f985583a50cb4eb58147da1a2172df73dc0df6c04569a30fbf7316e057dc",
+      "uncertain": false
+    },
+    "shuowen:6394": {
+      "text": "Firelight. Formed from 火, with 出 indicating the sound. The Book of Shang says: 'I too have 炪 plans,' the quoted sense being uncertain. Read like 拙 in 巧拙.",
+      "sourceTextSha256": "e21a4d1289c52701a3402960e153a3c972923ab0e7ba3bb88817fece5adaf173",
+      "uncertain": true
+    },
+    "shuowen:6395": {
+      "text": "熚𤒓 describes fire's appearance. Formed from 火, with 畢 indicating the sound.",
+      "sourceTextSha256": "3141cbc3857be3294fa9e25207ea1b60c248935bdfd2dbd4bf500f1a381b8671",
+      "uncertain": false
+    },
+    "shuowen:6396": {
+      "text": "The fiery appearance expressed by 熚𤒓. Formed from 火, with 𢨋 indicating the sound. 𢨋 is the large-seal character 悖.",
+      "sourceTextSha256": "2f89b3551a3f28a9bc68c5f393c85ca6065c62902841209f8fcef4fcbf36fd17",
+      "uncertain": false
+    },
+    "shuowen:6397": {
+      "text": "Fire vapor rising upward. Formed from 火, with 丞 indicating the sound.",
+      "sourceTextSha256": "46b6b67249d0a1a3872714c0ec0f1d1f4ffe39ef4c758ff333367396b8628a6f",
+      "uncertain": false
+    },
+    "shuowen:6398": {
+      "text": "To steam or rise as vapor. Formed from 火, with 孚 indicating the sound. The Odes says: 'Steam it, vapor rising.'",
+      "sourceTextSha256": "003343c5b7e1a447b25916b9a7f4e662f4822316865edbcfdc67d70bc0c67b27",
+      "uncertain": false
+    },
+    "shuowen:6399": {
+      "text": "To steam or rise as vapor. Alternatively, a red appearance; alternatively, warm and moist. Formed from 火, with 昫 indicating the sound.",
+      "sourceTextSha256": "e99d354dfccd803023238e561e8afe705a269dd3b8e0db0bed5759081756ff9d",
+      "uncertain": false
+    },
+    "shuowen:6400": {
+      "text": "A dry appearance. Formed from 火, with abbreviated 漢 indicating the sound. The Odes says: 'I am greatly parched.' ",
+      "sourceTextSha256": "cfbe38655c1b77e98da434b9f22a69b18a3937667b85e931173f362ad150afdb",
+      "uncertain": false
+    }
+  }
+}

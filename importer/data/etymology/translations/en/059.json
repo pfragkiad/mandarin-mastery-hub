@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "7545ea033fef6b49177035994ac4cfdf5f84e0a600427e82feac9a4b32811463",
+    "created_date": "2026-11-22"
+  },
+  "batch": "059",
+  "translations": {
+    "shuowen:5801": {
+      "text": "Ghost-related customs. Formed from 鬼, with 幾 indicating the sound. The Huainan Commentary says: “The people of Wu are 鬼; the people of Yue, 𩴪.” The distinction in this quotation is uncertain.",
+      "sourceTextSha256": "d94890e9014a129880568e4f4204b7f3f7a8d18ee355b1b9fc52a63a836aeeb0",
+      "uncertain": true
+    },
+    "shuowen:5802": {
+      "text": "The sound of ghosts and spirits, 䰰䰰 without stopping. Formed from 鬼, with 需 indicating the sound.",
+      "sourceTextSha256": "9fe480b49830a53f991db813ad6cab52c39bb3cc2c1d7a25f30a72710ed384fd",
+      "uncertain": false
+    },
+    "shuowen:5803": {
+      "text": "A ghost’s transformation. Formed from 鬼, with 化 indicating the sound.",
+      "sourceTextSha256": "7c8f7eb312b8a64f0c0930455d506b147686398026f5dd2cf17e0c2aede1d1c6",
+      "uncertain": false
+    },
+    "shuowen:5804": {
+      "text": "An exclamation on being startled by a ghost. Formed from 鬼, with abbreviated 難 indicating the sound. Read like 儺 in the Odes’ “Receive blessings without weariness.”",
+      "sourceTextSha256": "7e9043c48154e3411a844aaab8b36e6dd1adc2601c584d79d36bf70ac0d211cb",
+      "uncertain": false
+    },
+    "shuowen:5805": {
+      "text": "A ghost’s appearance. Formed from 鬼, with 賓 indicating the sound.",
+      "sourceTextSha256": "b04394899603bbd35420aafde981fef248605e4e37dc6fd5d87ea84dfcb1b0a3",
+      "uncertain": false
+    },
+    "shuowen:5806": {
+      "text": "Hateful. Formed from 鬼, with 酉 indicating the sound.",
+      "sourceTextSha256": "18f50bc0873efb5206819b6cf766c9750356bcf6bf356c798e79fe34973179de",
+      "uncertain": false
+    },
+    "shuowen:5807": {
+      "text": "A divine beast. Formed from 鬼, with 隹 indicating the sound.",
+      "sourceTextSha256": "029053a2484b1870d1b35e5aae1ba7ee6a62523b848c7aace8819eb41bfc0e3c",
+      "uncertain": false
+    },
+    "shuowen:5808": {
+      "text": "A kind of ghost. Formed from 鬼 and 离; 离 also indicates the sound.",
+      "sourceTextSha256": "3845ef854a3e694d66a7416dda45fbe562c53296eb1eb7b2e2c220c9dfd9a25a",
+      "uncertain": false
+    },
+    "shuowen:5809": {
+      "text": "A ghost. Formed from 鬼, with 麻 indicating the sound.",
+      "sourceTextSha256": "59c8da4bb306f9928061571941e95f60b0a42f8f7ebede1f518f846143f956ee",
+      "uncertain": false
+    },
+    "shuowen:5810": {
+      "text": "Fright in a dream. Formed from 鬼, with 厭 indicating the sound.",
+      "sourceTextSha256": "f2181f156e68d258d9186b190b6ec78fa25808880511ba42838cdc0a216a7cfe",
+      "uncertain": false
+    },
+    "shuowen:5811": {
+      "text": "A ghost’s head. Pictographic. All characters in this group follow 甶.",
+      "sourceTextSha256": "3d53febcfb35911ace5a53b7b8405d5e968ee72f96a008f73bbb7bd6393ddf23",
+      "uncertain": false
+    },
+    "shuowen:5812": {
+      "text": "Aversion or fear. Formed from 甶 and abbreviated 虎: a ghost’s head and tiger’s claws are fearful.",
+      "sourceTextSha256": "30bf0861ec72a31a7981a75b654594482dc58f1d9e76fbb90e006d8a61497d7c",
+      "uncertain": false
+    },
+    "shuowen:5813": {
+      "text": "A kind of monkey, its head resembling a ghost’s. Formed from 甶 and 禸.",
+      "sourceTextSha256": "b53d4ba2a4c228bdf2951c9a2cdba61e3e4491e117c6de1baa220cc6bdbbf4be",
+      "uncertain": false
+    },
+    "shuowen:5814": {
+      "text": "Wicked and crooked. Han Fei says: “When Cangjie made characters, acting for oneself was 厶.” All characters in this group follow 厶.",
+      "sourceTextSha256": "38317479548773c8db43f57943b2572f719bf58aa896f9e42e9086a67a5ad59d",
+      "uncertain": false
+    },
+    "shuowen:5815": {
+      "text": "Taking by force against rightful order is 篡. Formed from 厶, with 算 indicating the sound.",
+      "sourceTextSha256": "927e236a6962aa45b1dba3b398ca526f4021eec9aae38ffb5d4383dfcb6515b3",
+      "uncertain": false
+    },
+    "shuowen:5816": {
+      "text": "To entice and call to one another. Formed from 厶 and 羑.",
+      "sourceTextSha256": "95681c26fceff3dac6f7ec1fa46e456f5ac9da6d86f3009217062e6d0cc5963d",
+      "uncertain": false
+    },
+    "shuowen:5817": {
+      "text": "High and uneven. Formed from 山, with 鬼 indicating the sound. All characters in this group follow 嵬.",
+      "sourceTextSha256": "76ec1aeca51bf67ea6b47b762947419baa83d95632f682801809488124b8b70d",
+      "uncertain": false
+    },
+    "shuowen:5818": {
+      "text": "High. Formed from 嵬, with 委 indicating the sound.",
+      "sourceTextSha256": "46fabe6ed3dadeb4b6d05d3d19e0a4258a35280a618f0cedf083298a54a3b342",
+      "uncertain": false
+    },
+    "shuowen:5819": {
+      "text": "To spread: spreading qi, dispersing it and producing all things; stony and high. Pictographic. All characters in this group follow 山.",
+      "sourceTextSha256": "f9df28f9699c6362f22a787fc62fdb45beba629ac78280f6f7757bcfe5348053",
+      "uncertain": false
+    },
+    "shuowen:5820": {
+      "text": "The sacred peaks: east, 岱; south, 靃; west, 華; north, 恆; center, 泰室. These are where the king arrives on inspection tours. Formed from 山, with 獄 indicating the sound.",
+      "sourceTextSha256": "6ec52f999eddea6dd172fc21a7c02036079d516c2227c8dd690cfcd1071ad789",
+      "uncertain": false
+    },
+    "shuowen:5821": {
+      "text": "Mount Tai. Formed from 山, with 代 indicating the sound.",
+      "sourceTextSha256": "2dca43712a3344f873771e196147ebf87987e5a33b93c15a1dd7ab2770acdf37",
+      "uncertain": false
+    },
+    "shuowen:5822": {
+      "text": "Mountains occurring in the sea where one may stop and rest are 㠀. Formed from 山, with 鳥 indicating the sound. Read like 蔦 in the Odes’ “Dodder and lichen.”",
+      "sourceTextSha256": "f85302031c043bef67b19cbf9cd2f5ff0276a0ee9ea3409a8dcdc7a54e208390",
+      "uncertain": false
+    },
+    "shuowen:5823": {
+      "text": "A mountain in Qi territory. Formed from 山, with 狃 indicating the sound. The Odes says: “You met me among the hills of Nao.”",
+      "sourceTextSha256": "c512210727ff040fab6f61d9da7a17bb54c45c4deb4afa646067a1ddd25356eb",
+      "uncertain": false
+    },
+    "shuowen:5824": {
+      "text": "Mount Geyi in Xiapi, Donghai. Formed from 山, with 睪 indicating the sound. The Book of Xia says: “The solitary paulownias on Yi’s sunny slopes.”",
+      "sourceTextSha256": "b3ef26afe54b2a7c67d7a696b1883db651d4d4a76803a42bbb7fb041ced063d5",
+      "uncertain": false
+    },
+    "shuowen:5825": {
+      "text": "Mount Fengyu between Wu and Chu, in the state of Wangmang. Formed from 山, with 禺 indicating the sound.",
+      "sourceTextSha256": "ed659d587db94381532395ac5aa53d7c535f728f8a8cb6c844d079fbc266e0a0",
+      "uncertain": false
+    },
+    "shuowen:5826": {
+      "text": "Mount Jiuyi, where Shun is buried, in Yingdao, Lingling. Formed from 山, with 疑 indicating the sound.",
+      "sourceTextSha256": "fee4a92d6165587d7d8f7a5b53c6c9d96c1ddc432d6c29f5994ce73886d33298",
+      "uncertain": false
+    },
+    "shuowen:5827": {
+      "text": "A mountain beyond the western frontier of Jiandi, Shu. Formed from 山, with 𢽹 indicating the sound.",
+      "sourceTextSha256": "701dc6e1065f083670093a8f22db24b1a371da50a4afe5cc35e45917ab0a58e6",
+      "uncertain": false
+    },
+    "shuowen:5828": {
+      "text": "A mountain. Some say it is the source of the Weak River. Formed from 山, with 几 indicating the sound.",
+      "sourceTextSha256": "a1f7f949f8b9307c2047ece07f1796d066ce08242ef07802227b93f9faca04aa",
+      "uncertain": false
+    },
+    "shuowen:5829": {
+      "text": "Mount 巀𡾦 in Chiyang, Pingyi. Formed from 山, with 𢧵 indicating the sound.",
+      "sourceTextSha256": "1ebbe354270cacd389573b719cd9e48514ee88817b7e02c20f194fa0452f1f96",
+      "uncertain": false
+    },
+    "shuowen:5830": {
+      "text": "Mount 巀𡾦. Formed from 山, with 辥 indicating the sound.",
+      "sourceTextSha256": "616f6fe1e89a1686d6ad8b55dcb05bd018347c5104a34dacb166a446591df59c",
+      "uncertain": false
+    },
+    "shuowen:5831": {
+      "text": "A mountain in Huayin, Hongnong. Formed from 山, with abbreviated 華 indicating the sound.",
+      "sourceTextSha256": "a67bebe45bb6563d0589071622debf9074679fe5c4806fa13419f402ba962cd3",
+      "uncertain": false
+    },
+    "shuowen:5832": {
+      "text": "A mountain in Yanmen. Formed from 山, with 𩫖 indicating the sound.",
+      "sourceTextSha256": "3cd7618c3199df603423c455130804536be6a3f52ebb482e18088eb7e50712fd",
+      "uncertain": false
+    },
+    "shuowen:5833": {
+      "text": "Mount Yang in Liaoxi. Formed from 山, with 昜 indicating the sound. Another explanation: 嵎鐵崵谷, a valley location whose precise wording is uncertain.",
+      "sourceTextSha256": "8f4b15ec5ba44f3274ca84cd707aa440c7703030cdccbe3db601dd38a99cf32c",
+      "uncertain": true
+    },
+    "shuowen:5834": {
+      "text": "A mountain with vegetation. Formed from 山, with 古 indicating the sound. The Odes says: “Climb that wooded hill.”",
+      "sourceTextSha256": "4728a0cd2dfb637162caa5b811a34a43fc0e475e42b01c05eae91effcec85dec",
+      "uncertain": false
+    },
+    "shuowen:5835": {
+      "text": "A mountain without vegetation. Formed from 山, with 己 indicating the sound. The Odes says: “Climb that bare hill.”",
+      "sourceTextSha256": "2e0e2cd1ffcac6feb978d8be4541b11719bc5d8671eec4854bc3a2cc7f3172e3",
+      "uncertain": false
+    },
+    "shuowen:5836": {
+      "text": "A mountain with many large stones. Formed from 山, with abbreviated 學 indicating the sound.",
+      "sourceTextSha256": "10d58794b2bde1afbace5dea4fd159513860374857c687ee2e4a828b2f034dbf",
+      "uncertain": false
+    },
+    "shuowen:5837": {
+      "text": "A mountain with many small stones. Formed from 山, with 敖 indicating the sound.",
+      "sourceTextSha256": "1ae82a2f2bae65ad307af58194621a403ea23ecd7dff1f6256d5ab34155e4531",
+      "uncertain": false
+    },
+    "shuowen:5838": {
+      "text": "Rock bearing earth on top. Formed from 山, with 且 indicating the sound. The Odes says: “Climb that rocky hill.”",
+      "sourceTextSha256": "e1d151c094cf56d6c8431528e38f5bd7c89e5f01e9f9c05913bf3492133047cb",
+      "uncertain": false
+    },
+    "shuowen:5839": {
+      "text": "A mountain’s backbone. Formed from 山, with 网 indicating the sound.",
+      "sourceTextSha256": "ceff00d33bda1c62d1a59959fa903efea949e1db13f090a27317329989f7f6ae",
+      "uncertain": false
+    },
+    "shuowen:5840": {
+      "text": "A small but high mountain. Formed from 山, with 今 indicating the sound.",
+      "sourceTextSha256": "fcf3472ea96177b318dffd68c6ff502c7042887b62a9c02a3e9b6ab9b41154e8",
+      "uncertain": false
+    },
+    "shuowen:5841": {
+      "text": "A mountain rising high, 岑崟. Formed from 山, with 金 indicating the sound.",
+      "sourceTextSha256": "15594303e113b18bd06ed693042ad0901bc52a0033d98eddb82970dcdd619834",
+      "uncertain": false
+    },
+    "shuowen:5842": {
+      "text": "Precipitous and high. Formed from 山, with 卒 indicating the sound.",
+      "sourceTextSha256": "39ef6d629359c9f076b440bcc0124a9f231b292bccd470e855b15fbd78ea52bd",
+      "uncertain": false
+    },
+    "shuowen:5843": {
+      "text": "A small, pointed mountain. Formed from 山, with 䜌 indicating the sound.",
+      "sourceTextSha256": "7cc5ef09d5e8773f0f14d9322367f66a3a5bad9f7c6157938b496390300db80c",
+      "uncertain": false
+    },
+    "shuowen:5844": {
+      "text": "A mountain resembling a hall. Formed from 山, with 宓 indicating the sound.",
+      "sourceTextSha256": "bbabbfc0e4c3357f3b2530133e2a388e61c5f69b6fb09a5182decee6c51db06b",
+      "uncertain": false
+    },
+    "shuowen:5845": {
+      "text": "A mountain cave. Formed from 山, with 由 indicating the sound.",
+      "sourceTextSha256": "9df2b84e104203e6f5ef00735f0280e0ff8441ff0dc7732b360d01fa6b4ea198",
+      "uncertain": false
+    },
+    "shuowen:5846": {
+      "text": "High. Formed from 山, with 陖 indicating the sound.",
+      "sourceTextSha256": "1017a1cbabc566064b5f573a2e5a7e6ffcac1ade4e4a6e3317f97a3436b3a05d",
+      "uncertain": false
+    },
+    "shuowen:5847": {
+      "text": "Mountains lying low, 墮墮; the precise appearance is uncertain. Formed from 山, with abbreviated 憜 indicating the sound. Read like 憜 in pushing one another down.",
+      "sourceTextSha256": "7112f055dc06071a7528fc5fcf82a3ed0f29afb64eba3646485bcf344085ccd7",
+      "uncertain": true
+    },
+    "shuowen:5848": {
+      "text": "Exceptionally high. Formed from 山, with 棧 indicating the sound.",
+      "sourceTextSha256": "aed97438fc2d6ec3ea2998c8779852d0f38a11bbe6371634a7a4be41a45b8d98",
+      "uncertain": false
+    },
+    "shuowen:5849": {
+      "text": "A short, high mountain. Formed from 山, with 屈 indicating the sound.",
+      "sourceTextSha256": "dce190a8718b38e085e81a62e581bd445a81bc15cb888d48ed7cae9646afa50d",
+      "uncertain": false
+    },
+    "shuowen:5850": {
+      "text": "Lofty and high. Formed from 山, with 蠆 indicating the sound. Read like 厲.",
+      "sourceTextSha256": "8f7d6e93563778fea6c837a2ca543bb892779dbcb810c58d4e88f1d79c69832c",
+      "uncertain": false
+    },
+    "shuowen:5851": {
+      "text": "A mountain’s summit. Formed from 山, with 夆 indicating the sound.",
+      "sourceTextSha256": "4ccd8709caf33380f38202145a647a7b3a594edd177685449dc1f30e007f68e5",
+      "uncertain": false
+    },
+    "shuowen:5852": {
+      "text": "A cliff. Formed from 山, with 嚴 indicating the sound.",
+      "sourceTextSha256": "0031b6bce009e7de723a5448b8da578c0e39f20db0aebda44401f7825d11b86a",
+      "uncertain": false
+    },
+    "shuowen:5853": {
+      "text": "A mountain crag. Formed from 山 and 品. Read like 吟.",
+      "sourceTextSha256": "406c2d4040f5e538ee20cb45f076b9596a30b5edffb15459fd3f4124c74783b1",
+      "uncertain": false
+    },
+    "shuowen:5854": {
+      "text": "A mountain appearance, 𡽕. Formed from 山, with 絫 indicating the sound.",
+      "sourceTextSha256": "b5ecabc804d12a0a011a1d60185bb5fa9ab3caa7fa9b05371268a9920c264dae",
+      "uncertain": false
+    },
+    "shuowen:5855": {
+      "text": "A mountain’s appearance. Formed from 山, with 辠 indicating the sound.",
+      "sourceTextSha256": "c10153bbee90e7f4d89899fbd7f89be82270642d05d523792a2f5c70d687fbde",
+      "uncertain": false
+    },
+    "shuowen:5856": {
+      "text": "A mountain’s appearance. Another explanation: a mountain name. Formed from 山, with 告 indicating the sound.",
+      "sourceTextSha256": "89a455871506fd17bb537ace4f295f3ec20dc242722d11460ddfe41d59893e7f",
+      "uncertain": false
+    },
+    "shuowen:5857": {
+      "text": "A mountain’s appearance. Formed from 山, with 隓 indicating the sound.",
+      "sourceTextSha256": "e526d4bad2112a169a0e0ce94830ea9f3226cb222f0912ad1d013d70edd4d15f",
+      "uncertain": false
+    },
+    "shuowen:5858": {
+      "text": "A mountain’s appearance. Formed from 山, with 𢀩 indicating the sound.",
+      "sourceTextSha256": "eafb7cf50414f00fb1adf4e6cae510e68a1d8f78055b5e6934f2a8f9800e790d",
+      "uncertain": false
+    },
+    "shuowen:5859": {
+      "text": "Towering, 嵯峨. Formed from 山, with 我 indicating the sound.",
+      "sourceTextSha256": "1e35587451f61d10ad8a95577afeed0ac7ee7d191b0a45eea63868073e772966",
+      "uncertain": false
+    },
+    "shuowen:5860": {
+      "text": "Towering, 嶸. Formed from 山, with 青 indicating the sound.",
+      "sourceTextSha256": "f601e34f4bf4ce8e3089635842b854b06b1d32086af8c4c9b24707c760e02cf5",
+      "uncertain": false
+    },
+    "shuowen:5861": {
+      "text": "Towering, 崝嶸. Formed from 山, with 榮 indicating the sound.",
+      "sourceTextSha256": "1a50a07271123265c67b26922c2a7e7175d089dd3924a096572ad72eb8376021",
+      "uncertain": false
+    },
+    "shuowen:5862": {
+      "text": "A valley. Formed from 山, with 坙 indicating the sound.",
+      "sourceTextSha256": "b9fd31eba3d22aaf9b1db0a40219a1a0ae445ba3d47cbe23988a98abef464c2f",
+      "uncertain": false
+    },
+    "shuowen:5863": {
+      "text": "A mountain collapsing. Formed from 山, with 朋 indicating the sound.",
+      "sourceTextSha256": "0cb352afbf2d4930d7c5b6a2bab4e5deab119db8a7b7f063be40d32a3c6783f4",
+      "uncertain": false
+    },
+    "shuowen:5864": {
+      "text": "A road along a mountain’s side. Formed from 山, with 弗 indicating the sound.",
+      "sourceTextSha256": "28ffefe3e33d88f34d58c1dfcfe08a0664108cafe47a5dc57ab95e4f5d8b0235",
+      "uncertain": false
+    },
+    "shuowen:5865": {
+      "text": "A mountain name. Formed from 山, with 敄 indicating the sound.",
+      "sourceTextSha256": "fae1da08af89d900a74424c7165fce1e61acede0c3aaf43e75f407f211cac79e",
+      "uncertain": false
+    },
+    "shuowen:5866": {
+      "text": "焦嶢, the appearance of a high mountain. Formed from 山, with 堯 indicating the sound.",
+      "sourceTextSha256": "d96e9066194cf7fbe35038fb68c6742a6ffb9eccbbc569d4aca7005cbc2767a6",
+      "uncertain": false
+    },
+    "shuowen:5867": {
+      "text": "A mountain high, 𡺲. Formed from 山, with 戕 indicating the sound.",
+      "sourceTextSha256": "4d4748a6956f208000c5117959bb7fcdcc57cae0295ef06a5d8a48a2f6e71daf",
+      "uncertain": false
+    },
+    "shuowen:5868": {
+      "text": "Mount Jiuzong in Gukou, Pingyi. Formed from 山, with 㚇 indicating the sound.",
+      "sourceTextSha256": "f9cb27d70daf3b2b267a751556a826fea40218ccb998f53ba9fe20ae0fe4702e",
+      "uncertain": false
+    },
+    "shuowen:5869": {
+      "text": "A corner or recess, a joint of a high mountain. Formed from 山 and 卪.",
+      "sourceTextSha256": "a02abab4fc673927bd765fad0c3cb003622485961febabc1067c4c10fb542a34",
+      "uncertain": false
+    },
+    "shuowen:5870": {
+      "text": "Lofty and high. Formed from 山, with 宗 indicating the sound.",
+      "sourceTextSha256": "0d4529b708d951138bc69861b3ba975b3ab32bd32aee234c96ac03024079a64c",
+      "uncertain": false
+    },
+    "shuowen:5871": {
+      "text": "Great and high. Formed from 山, with 隹 indicating the sound.",
+      "sourceTextSha256": "6a74f1917c9e1526bbb8939456acaadaf281ce5fa592dabadb99153ecdad635a",
+      "uncertain": false
+    },
+    "shuowen:5872": {
+      "text": "嶙峋, the appearance of deep cliffs. Formed from 山, with 粦 indicating the sound.",
+      "sourceTextSha256": "c885ce1924ee94d45a2475a757992cd4081f27ec8db95c253c5e89692f80dcb3",
+      "uncertain": false
+    },
+    "shuowen:5873": {
+      "text": "The cliff appearance 嶙峋. Formed from 山, with 旬 indicating the sound.",
+      "sourceTextSha256": "0712be741bdbe4f95591b4f664833d2078e38adf8dfeaf6fff35687c4e922a83",
+      "uncertain": false
+    },
+    "shuowen:5874": {
+      "text": "A mountain’s high appearance. Formed from 山, with 及 indicating the sound.",
+      "sourceTextSha256": "11eb8c02551198326fa65ec33c8275b17d7d9fb0e37658f7823fa8f2f823c5c7",
+      "uncertain": false
+    },
+    "shuowen:5875": {
+      "text": "A pointed, high mountain. Formed from 山, with 喬 indicating the sound. Ancient writing also uses 喬.",
+      "sourceTextSha256": "687fcbd4b1b9265d2422171db70d3ca52bb9a3289a1c343559dfc02ca10ddcd4",
+      "uncertain": false
+    },
+    "shuowen:5876": {
+      "text": "A mountain’s deep appearance. Formed from 山, with abbreviated 歁 indicating the sound.",
+      "sourceTextSha256": "ada44c4138964effc115195a44de2a12c7d434c1aec1c7d6144260e7aef8318d",
+      "uncertain": false
+    },
+    "shuowen:5877": {
+      "text": "An island. Formed from 山, with 與 indicating the sound.",
+      "sourceTextSha256": "10767afc4376b4bb35054e9d0e721c5bde20c6c5be8bba9dfbfdb142e970dbd5",
+      "uncertain": false
+    },
+    "shuowen:5878": {
+      "text": "A mountain road. Formed from 山, with 領 indicating the sound.",
+      "sourceTextSha256": "cfca9b60125ef6be3028a0f2193682f6fb9cda2ae55e0e5fb4f19eb49ff88cae",
+      "uncertain": false
+    },
+    "shuowen:5879": {
+      "text": "A mountain name. Formed from 山, with abbreviated 葻 indicating the sound.",
+      "sourceTextSha256": "07432d17de8a23314519d32744211f99c6d1bff1e5d44cb27d2e4c3da538e9d0",
+      "uncertain": false
+    },
+    "shuowen:5880": {
+      "text": "The central sacred peak, Mount Songgao. Formed from 山 and 高; some forms use 松. Wei Zhao’s commentary on the Discourses of the States says: “Ancient writing also uses 崇.”",
+      "sourceTextSha256": "841280e182174effc357d2def64eb5e7973ead917feec668ecdeab30818f163f",
+      "uncertain": false
+    },
+    "shuowen:5881": {
+      "text": "Kunlun, a mountain name. Formed from 山, with 昆 indicating the sound. Yang Xiong’s writings in the Book of Han also use 昆侖.",
+      "sourceTextSha256": "1c5e6742aed3f23211a09b34c404128dba34999c7ce78692dfe849ad55f68d74",
+      "uncertain": false
+    },
+    "shuowen:5882": {
+      "text": "The mountain 崑崙. Formed from 山, with 侖 indicating the sound.",
+      "sourceTextSha256": "255934b55c2c3fed6ff730c09ebdcac8a59a2008be4741bbdc8e2935cf61091e",
+      "uncertain": false
+    },
+    "shuowen:5883": {
+      "text": "A mountain name. Formed from 山, with abbreviated 稽 indicating the sound. The Xi clan specially invented this graph when fleeing danger; it is not ancient.",
+      "sourceTextSha256": "361631feb547a9e6758a7fad55ffbce8e2f383bbea3a8a32844951e3d2cc0179",
+      "uncertain": false
+    },
+    "shuowen:5884": {
+      "text": "Two mountains. All characters in this group follow 屾.",
+      "sourceTextSha256": "de3e6c51129494f3b0d9f5170b603668b76ff87cf93046cf0f2fe85fd04b7dda",
+      "uncertain": false
+    },
+    "shuowen:5885": {
+      "text": "A mountain in Kuaiji. Another explanation: Dangtu, 當嵞, in Jiujiang. People marry on xin, ren, gui and jia days. Formed from 屾, with 余 indicating the sound. The Book of Yu says: “I married at Mount Tu.”",
+      "sourceTextSha256": "9a02b7d1ae1a2b19d2365735bda3facc3e77d0dd186a41bc74594b1ebbe17252",
+      "uncertain": false
+    },
+    "shuowen:5886": {
+      "text": "A high bank. Formed from 山 and 厂; 厂 also indicates the sound. All characters in this group follow 屵.",
+      "sourceTextSha256": "fc360b6059aaf553c7a55e58181a74a7bf4ae299cbae40810a5f670b29b9f90b",
+      "uncertain": false
+    },
+    "shuowen:5887": {
+      "text": "A high waterside cliff. Formed from 屵, with 干 indicating the sound.",
+      "sourceTextSha256": "07aea4ddb187fc79dcd6fce654832595784363758a4d6f0faa31063bb08062ab",
+      "uncertain": false
+    },
+    "shuowen:5888": {
+      "text": "A high edge. Formed from 屵, with 圭 indicating the sound.",
+      "sourceTextSha256": "e8ec78fded87f82c5708691e9ed351522b5009962d31d038bb43198529a4bcb3",
+      "uncertain": false
+    },
+    "shuowen:5889": {
+      "text": "High. Formed from 屵, with 隹 indicating the sound.",
+      "sourceTextSha256": "f2d4ee310c6fe10942ff97970ca6af62838cb3af5725c8104e0c4ea668c7406c",
+      "uncertain": false
+    },
+    "shuowen:5890": {
+      "text": "To collapse. Formed from 屵, with 肥 indicating the sound.",
+      "sourceTextSha256": "f0ec7ed5195ccd70c082e3ad2061e26c3ae55094531ae92d54b72af80ad39a91",
+      "uncertain": false
+    },
+    "shuowen:5891": {
+      "text": "The sound of collapse. Formed from 屵, with 配 indicating the sound. Read like 費.",
+      "sourceTextSha256": "e94ae56da8535385e749ddeae4e310619429e4c8a8dabfc04133b8b357e40198",
+      "uncertain": false
+    },
+    "shuowen:5892": {
+      "text": "Making a dwelling against a shelter, depicting a tall building facing and projecting outward; the graphical wording is uncertain. All characters in this group follow 广. Read like 儼 in 儼然.",
+      "sourceTextSha256": "63a276de16009d4d3e0ddce31991caee6fe8585ede477c15112c59657f62e959",
+      "uncertain": true
+    },
+    "shuowen:5893": {
+      "text": "A store for documents. Formed from 广, with 付 indicating the sound.",
+      "sourceTextSha256": "32f1b56d2407e35fdac0b4a6dff7c6889a7f64c1ac3ad01f0ed73ab106128519",
+      "uncertain": false
+    },
+    "shuowen:5894": {
+      "text": "The Son of Heaven’s Biyong hall for ceremonial feasting. Formed from 广, with 雝 indicating the sound.",
+      "sourceTextSha256": "1d51d3867daa0f3a65960d109b89933a98f9f2e903a6e17b4897d0e91535ff90",
+      "uncertain": false
+    },
+    "shuowen:5895": {
+      "text": "Where ritual officials care for the aged. Xia called it 校, Yin 庠, Zhou 序. Formed from 广, with 羊 indicating the sound.",
+      "sourceTextSha256": "0e5010fe49cd1efbbb2898d69a0e32d1a0f86138adfd6ff67086e548a3efbbf6",
+      "uncertain": false
+    },
+    "shuowen:5896": {
+      "text": "A temporary dwelling, left in autumn and winter and inhabited in spring and summer. Formed from 广, with 盧 indicating the sound.",
+      "sourceTextSha256": "9ba8689836de0d3e32897e067cc1a645e0838601f2fe5facf9c2f857ca43aac9",
+      "uncertain": false
+    },
+    "shuowen:5897": {
+      "text": "The interior of a palace. Formed from 广, with 廷 indicating the sound.",
+      "sourceTextSha256": "95dea0baca1217a051dbb94b8caf8aa9b47cf46a2b4f74bbe4162765eb5c8722",
+      "uncertain": false
+    },
+    "shuowen:5898": {
+      "text": "A central courtyard. Formed from 广, with 畱 indicating the sound.",
+      "sourceTextSha256": "2acc1433e5a937167967cd32b55fd505af1ff5ebe55c738e3ddc7545cd3d841e",
+      "uncertain": false
+    },
+    "shuowen:5899": {
+      "text": "The wall of a multistory building. Formed from 广, with 屯 indicating the sound.",
+      "sourceTextSha256": "45b9ec9b150517eb0993c5ddaa8b8dea837a8adf993393b7a86a00e04bffdd2a",
+      "uncertain": false
+    },
+    "shuowen:5900": {
+      "text": "A covered gallery. Formed from 广, with 牙 indicating the sound. The Rites of Zhou says: “In summer shelter the horses in a gallery.”",
+      "sourceTextSha256": "794515229958f6ca6a9792b2fdf219b56fef3fe454302018f107aa09129d5c60",
+      "uncertain": false
+    }
+  }
+}

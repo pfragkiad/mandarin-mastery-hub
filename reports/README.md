@@ -11,7 +11,7 @@ Keep standalone audit, notes, and report JSON files here unless application load
 | [hsk-level4-audio.json](hsk-level4-audio.json) | Level 4 exact word/reading audio coverage; [audit and upload state](hsk-level4-audio.md). |
 | [hsk-level3-audio.json](hsk-level3-audio.json) | Level 3 exact word/reading audio coverage; [audit and upload state](hsk-level3-audio.md). |
 | [hsk-level2-audio.json](hsk-level2-audio.json) | Exact word/reading audio coverage and pending CDN uploads; [source audit and Lovable handoff state](hsk-level2-audio.md). |
-| [etymology-association-audit.json](etymology-association-audit.json) | Generated Howell/Shuowen association coverage, unmatched/duplicate headwords, contextual review targets and BabelStone exclusions; [review guide](etymology-association-audit.md). No historical interpretation is marked verified. |
+| [etymology-association-audit.json](etymology-association-audit.json) | Generated Howell/Shuowen associations, English draft coverage/uncertainty counts, unmatched/duplicate headwords, contextual review targets and BabelStone exclusions; [review guide](etymology-association-audit.md). No historical interpretation or English draft is marked verified. |
 
 The exception is [public/data/radical_variant_etymology_audit.json](../public/data/radical_variant_etymology_audit.json): `src/components/tutor/radical-variant-etymology.tsx` fetches it lazily for variant details. It also supplies the offline contextual-identity importer and its provenance tests, so its public URL remains unchanged.
 

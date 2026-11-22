@@ -1,0 +1,629 @@
+{
+  "format": "mandarin-shuowen-translation-source-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology."
+  },
+  "batch": "072",
+  "records": [
+    {
+      "id": "shuowen:7101",
+      "headword": "衍",
+      "text": "水朝宗于海也。从水从行。",
+      "sourceTextSha256": "0cda849057802a91e151f1ca39dcb86b589d4dd0c6ff613e70e7ddbcecb341ad"
+    },
+    {
+      "id": "shuowen:7102",
+      "headword": "𣶃",
+      "text": "水朝宗于海。从水，朝省。",
+      "sourceTextSha256": "faf0896384524d0e275878ef6be9265b8ffcfb6c524ae0a066bdee086b4456a4"
+    },
+    {
+      "id": "shuowen:7103",
+      "headword": "濥",
+      "text": "水脈行地中濥濥也。从水夤聲。",
+      "sourceTextSha256": "347985ae8e9d3c4a1bcbfd5e7577dde110cd0b6277aeeb6b6ea070b8b888852f"
+    },
+    {
+      "id": "shuowen:7104",
+      "headword": "滔",
+      "text": "水漫漫大皃。从水舀聲。",
+      "sourceTextSha256": "d715ef63c21d91f0a869a281460892d8edf75eaf408f9a46a8e0b183ffc085bc"
+    },
+    {
+      "id": "shuowen:7105",
+      "headword": "涓",
+      "text": "小流也。从水肙聲。《爾雅》曰：“汝爲涓。”",
+      "sourceTextSha256": "b07695c0f02faf202749a7cff5c0b37248c04e9b8a625c64b00651bb4d89c688"
+    },
+    {
+      "id": "shuowen:7106",
+      "headword": "混",
+      "text": "豐流也。从水昆聲。",
+      "sourceTextSha256": "12ead0efd78b8ebf0fc70bdb599dd21316584624547f327a89832e677c546feb"
+    },
+    {
+      "id": "shuowen:7107",
+      "headword": "潒",
+      "text": "水潒瀁也。从水象聲。讀若蕩。",
+      "sourceTextSha256": "4c1de2fee29b520c9b052da08cd78ae9536e572fd3c8dde676d33f95b4bf8f05"
+    },
+    {
+      "id": "shuowen:7108",
+      "headword": "漦",
+      "text": "順流也。一曰水名。从水𠩺聲。",
+      "sourceTextSha256": "e149ee1a2afafb16ace99706ce77bf094c49d1c51c41e1fd49c83933f3fcf0f6"
+    },
+    {
+      "id": "shuowen:7109",
+      "headword": "汭",
+      "text": "水相入也。从水从内，内亦聲。",
+      "sourceTextSha256": "8155ad7f48f3e93252eab242ba34583d4f3ee8cd6ed49bdfe64b9f7229dbbe3c"
+    },
+    {
+      "id": "shuowen:7110",
+      "headword": "潚",
+      "text": "深清也。从水肅聲。",
+      "sourceTextSha256": "e310264dc0fb4d9d8354bda4987a9b14d2584896b4caa510a8e60633619e4352"
+    },
+    {
+      "id": "shuowen:7111",
+      "headword": "演",
+      "text": "長流也。一曰水名。从水寅聲。",
+      "sourceTextSha256": "c57c4c6a2f2118aa21b8248d8a1cfbd0200d17b2b5a64c507d98f35fb6523e45"
+    },
+    {
+      "id": "shuowen:7112",
+      "headword": "渙",
+      "text": "流𢿱也。从水奐聲。",
+      "sourceTextSha256": "b8c57901aa5ead45ab1898971780ecb963c0d4f1a2156d42f3975cc5c19c276c"
+    },
+    {
+      "id": "shuowen:7113",
+      "headword": "泌",
+      "text": "俠流也。从水必聲。",
+      "sourceTextSha256": "b99da828ba21820fa435cee0c78c27906f1b78ddc5a1c35a5ea06d869643050b"
+    },
+    {
+      "id": "shuowen:7114",
+      "headword": "活",
+      "text": "水流聲。从水𠯑聲。",
+      "sourceTextSha256": "01a863dea1d10ada6dd97c0913e0c01ec7aa94f43011db7cae65e0474329e450"
+    },
+    {
+      "id": "shuowen:7115",
+      "headword": "湝",
+      "text": "水流湝湝也。从水皆聲。一曰湝湝，寒也。《詩》曰：“風雨湝湝。”",
+      "sourceTextSha256": "f02b0198a03d8ed389122c797b4887b8df26e4600b08565dd2347ddc84b69ca4"
+    },
+    {
+      "id": "shuowen:7116",
+      "headword": "泫",
+      "text": "湝流也。从水玄聲。上黨有泫氏縣。",
+      "sourceTextSha256": "c0dfd4f320a903dffc74f8115d8019204a66a1976c5c8566056393a7956b34c7"
+    },
+    {
+      "id": "shuowen:7117",
+      "headword": "淲",
+      "text": "水流皃。从水，彪省聲。《詩》曰：“淲沱北流。”",
+      "sourceTextSha256": "0497293bed4a79f2123f20f0c78e39f411c9d08b2b9e3b7f59145c65cb46ca4c"
+    },
+    {
+      "id": "shuowen:7118",
+      "headword": "淢",
+      "text": "疾流也。从水或聲。",
+      "sourceTextSha256": "64a9cf5172558f564c30088cd2f6ad4a78c7ba5db86ea5b71b8fae822303a998"
+    },
+    {
+      "id": "shuowen:7119",
+      "headword": "瀏",
+      "text": "流清皃。从水劉聲。《詩》曰：“𤄉其清矣。”",
+      "sourceTextSha256": "ee3284e4790372dbbfff8aa3705e45ed05e57afeffb74786149a37c845b5acd7"
+    },
+    {
+      "id": "shuowen:7120",
+      "headword": "𤃴",
+      "text": "礙流也。从水薉聲。《詩》云：“施罟𤃴𤃴。”",
+      "sourceTextSha256": "35b1c858e9308fa42038009c9880aa2d8c6eb2380e517c012d37178265a4fb92"
+    },
+    {
+      "id": "shuowen:7121",
+      "headword": "滂",
+      "text": "沛也。从水㫄聲。",
+      "sourceTextSha256": "c1df3146bfe244e6b5e8aca2f77f312824253e13f3191c68b73860cecb6006c7"
+    },
+    {
+      "id": "shuowen:7122",
+      "headword": "汪",
+      "text": "深廣也。从水王聲。一曰汪，池也。",
+      "sourceTextSha256": "ba44db3d0a45782831a5ba93b6231f103e5465d4948a6e08339420794fdf0048"
+    },
+    {
+      "id": "shuowen:7123",
+      "headword": "漻",
+      "text": "清深也。从水翏聲。",
+      "sourceTextSha256": "4d309c9f02ff16e2efe0d12887511965374f280ec1e8d593c6789956176fb419"
+    },
+    {
+      "id": "shuowen:7124",
+      "headword": "泚",
+      "text": "清也。从水此聲。",
+      "sourceTextSha256": "f873b577ae3a8c8ff892f31cb1ca49be24678525a4d2b6bb962b2de03f4c4bf3"
+    },
+    {
+      "id": "shuowen:7125",
+      "headword": "況",
+      "text": "寒水也。从水兄聲。",
+      "sourceTextSha256": "3111254b128489047414d34ff324f4ccfa948610486f7039d093be668ba77dd2"
+    },
+    {
+      "id": "shuowen:7126",
+      "headword": "沖",
+      "text": "涌搖也。从水、中。讀若動。",
+      "sourceTextSha256": "100b84689ff9070ae1356aa8a0ae4a898a585dbab15d916cfc5839c062cddba3"
+    },
+    {
+      "id": "shuowen:7127",
+      "headword": "汎",
+      "text": "浮皃。从水凡聲。",
+      "sourceTextSha256": "0b4bc4d1cfc550870f928d58dc586e0a3f9c6ef2df05708e5d16ef474a511e5c"
+    },
+    {
+      "id": "shuowen:7128",
+      "headword": "沄",
+      "text": "轉流也。从水云聲。讀若混。",
+      "sourceTextSha256": "f23954d1d8bad46165d5d2c0b72259a9dca5564f0d4d4345714d7674c25e1d5c"
+    },
+    {
+      "id": "shuowen:7129",
+      "headword": "浩",
+      "text": "澆也。从水告聲。《虞書》曰：“洪水浩浩。”",
+      "sourceTextSha256": "b8b86d20e97e1592a8f7f655964660a09508176df605b1f452bfe9894c676b91"
+    },
+    {
+      "id": "shuowen:7130",
+      "headword": "沆",
+      "text": "莽沆，大水也。从水亢聲。一曰大澤皃。",
+      "sourceTextSha256": "9abee5dff1c9fb45cbac2a14f75618820dd0bb4f51a688f918eb0bc8e3fea0ff"
+    },
+    {
+      "id": "shuowen:7131",
+      "headword": "泬",
+      "text": "水从孔穴疾出也。从水从穴，穴亦聲。",
+      "sourceTextSha256": "eac32db67e9bdc722e654f04a23c9a1175fa4bd4e19076f412a93604b07391b6"
+    },
+    {
+      "id": "shuowen:7132",
+      "headword": "濞",
+      "text": "水暴至聲。从水鼻聲。",
+      "sourceTextSha256": "4dabc097e40e98e1f4ea422a7b483922c0a213b8ce6ae6a80b3044d052c34ed1"
+    },
+    {
+      "id": "shuowen:7133",
+      "headword": "灂",
+      "text": "水小聲。从水爵聲。",
+      "sourceTextSha256": "eb0ef8dfff68817b984705d982e3b55bea6bf51ce591a18a7cda7af84256f68a"
+    },
+    {
+      "id": "shuowen:7134",
+      "headword": "潝",
+      "text": "水疾聲。从水翕聲。",
+      "sourceTextSha256": "d84176afc56cc3ef08ac377331f6aeaed87a967b088cc88e4e6c97fcf2f6ea93"
+    },
+    {
+      "id": "shuowen:7135",
+      "headword": "滕",
+      "text": "水超涌也。从水朕聲。",
+      "sourceTextSha256": "759bc8a23939c0b6321ef1b3bf45c75103f0a46b72a35820098e7c42b6430c38"
+    },
+    {
+      "id": "shuowen:7136",
+      "headword": "潏",
+      "text": "涌出也。一曰水中坻，人所爲，爲潏。一曰潏，水名，在京兆杜陵。从水矞聲。",
+      "sourceTextSha256": "0c01d9595b95f03894a6b0a370a4a3382243a528320d6d2b763882cbec753199"
+    },
+    {
+      "id": "shuowen:7137",
+      "headword": "洸",
+      "text": "水涌光也。从水从光，光亦聲。《詩》曰：“有洸有潰。”",
+      "sourceTextSha256": "81fa34f5eb6d285b2c16cd3e254f0caa6c4896ad06a7160628f42c8fc7b9d194"
+    },
+    {
+      "id": "shuowen:7138",
+      "headword": "波",
+      "text": "水涌流也。从水皮聲。",
+      "sourceTextSha256": "e2e8dd9fbcfad47e0a1027b0f5f451a1b2e85e4515d1ebde61455ab39eafc3d3"
+    },
+    {
+      "id": "shuowen:7139",
+      "headword": "澐",
+      "text": "江水大波謂之澐。从水雲聲。",
+      "sourceTextSha256": "e5884b29e55c4bd67d8cd1dcfdda375ac6ffd9b61a0b56ce6978a34f7f504465"
+    },
+    {
+      "id": "shuowen:7140",
+      "headword": "瀾",
+      "text": "大波爲瀾。从水闌聲。",
+      "sourceTextSha256": "0b51c2a2698187004d85858065dbc2164e02eb2896b9e047d11a339a57b25b75"
+    },
+    {
+      "id": "shuowen:7141",
+      "headword": "淪",
+      "text": "小波爲淪。从水侖聲。《詩》曰：“河水清且淪漪。”一曰没也。",
+      "sourceTextSha256": "49e3b93a5db9a8c463f20a135da3dc5960c896e8c10eb41a081bc74aea8250c3"
+    },
+    {
+      "id": "shuowen:7142",
+      "headword": "漂",
+      "text": "浮也。从水票聲。",
+      "sourceTextSha256": "aebc0a0089a686e66fe525ad8cdcee89c23d299a6d33b2e33e7929cfac067014"
+    },
+    {
+      "id": "shuowen:7143",
+      "headword": "浮",
+      "text": "氾也。从水孚聲。",
+      "sourceTextSha256": "a6bf5ffe47cf158a27c79a7d805b98de0d0446184aa248fcc246590f47987b84"
+    },
+    {
+      "id": "shuowen:7144",
+      "headword": "濫",
+      "text": "氾也。从水監聲。一曰濡上及下也。《詩》曰：“𧥑沸濫泉。”一曰清也。",
+      "sourceTextSha256": "01bd49c06c0ccaec74518c0cd8c1664f0cf0df76ecf73b41285d3be1b2f0d0ae"
+    },
+    {
+      "id": "shuowen:7145",
+      "headword": "氾",
+      "text": "濫也。从水㔾聲。",
+      "sourceTextSha256": "f45de914e6c63b6960d35fbe4669d116492b3c8c6085499413c3277a75e4db93"
+    },
+    {
+      "id": "shuowen:7146",
+      "headword": "泓",
+      "text": "下深皃。从水弘聲。",
+      "sourceTextSha256": "84e87caa1f3435a72c84d67536dc23b07aeeab6df4fdf335cc24c6194f705b93"
+    },
+    {
+      "id": "shuowen:7147",
+      "headword": "湋",
+      "text": "回也。从水韋聲。",
+      "sourceTextSha256": "b5ef7b77bcb95a0dd33509a739dc87d5438719157de40dac7f8fd200b076eaec"
+    },
+    {
+      "id": "shuowen:7148",
+      "headword": "測",
+      "text": "深所至也。从水則聲。",
+      "sourceTextSha256": "c7760b2ed7780d275c2cdcf75fd82cd48c9ce29149730c15f87856e27cdeda3f"
+    },
+    {
+      "id": "shuowen:7149",
+      "headword": "湍",
+      "text": "疾瀨也。从水耑聲。",
+      "sourceTextSha256": "262d6233b855c8b8e94b246df7bf2bc93c33de49930f44a2dd4d44145299e0d5"
+    },
+    {
+      "id": "shuowen:7150",
+      "headword": "淙",
+      "text": "水聲也。从水宗聲。",
+      "sourceTextSha256": "cb24d10848d6b5ec043f1c9da4c94234d67779ac320a958d1b0172d00d1fdd61"
+    },
+    {
+      "id": "shuowen:7151",
+      "headword": "激",
+      "text": "水礙衺疾波也。从水敫聲。一曰半遮也。",
+      "sourceTextSha256": "3e2eab9558e2896dd999e14ed0e572d28862eb26de49263c2fd2117d717eefb5"
+    },
+    {
+      "id": "shuowen:7152",
+      "headword": "洞",
+      "text": "疾流也。从水同聲。",
+      "sourceTextSha256": "e2a9e9540a47acd430024f58c9be937447e6c8acd570953799f03440c842f78f"
+    },
+    {
+      "id": "shuowen:7153",
+      "headword": "𤄫",
+      "text": "大波也。从水旛聲。",
+      "sourceTextSha256": "3c89b14f01debc9d5ab73a3506c5d176644e8e5d8f41cacaae1e6cbc5ad05c3b"
+    },
+    {
+      "id": "shuowen:7154",
+      "headword": "洶",
+      "text": "涌也。从水匈聲。",
+      "sourceTextSha256": "b7e7898facf001d653bd19d8d533c627e97559df3520c10c7d55ac1708011931"
+    },
+    {
+      "id": "shuowen:7155",
+      "headword": "涌",
+      "text": "滕也。从水甬聲。一曰涌水，在楚國。",
+      "sourceTextSha256": "4fc298a6c8c150d00e20328aa7103df85c3b250cc9db9d08c6f9d9bf092bf235"
+    },
+    {
+      "id": "shuowen:7156",
+      "headword": "湁",
+      "text": "湁湒，𩰾也。从水拾聲。",
+      "sourceTextSha256": "3561b1cec5241b2a36a928152c8289e235776ae02c549b180eb571c35316bb37"
+    },
+    {
+      "id": "shuowen:7157",
+      "headword": "涳",
+      "text": "直流也。从水空聲。",
+      "sourceTextSha256": "df65b37185f654d1b07f6e30dd2c7487444ea794efd504d7150d2f5f88b60a0e"
+    },
+    {
+      "id": "shuowen:7158",
+      "headword": "汋",
+      "text": "激水聲也。从水勺聲。井一有水、一無水，謂之瀱汋。",
+      "sourceTextSha256": "2522287dd665bac148c509ff6a8db4d2553b9e12b77171050642706aaa51f6ed"
+    },
+    {
+      "id": "shuowen:7159",
+      "headword": "瀱",
+      "text": "井一有水、一無水，謂之瀱汋。从水罽聲。",
+      "sourceTextSha256": "d8588c601449c7696776318edddb2bd3280f887cb75ac682c1e99403abfb3db9"
+    },
+    {
+      "id": "shuowen:7160",
+      "headword": "渾",
+      "text": "混流聲也。从水軍聲。一曰洿下皃。",
+      "sourceTextSha256": "3fb171547a1018b9a734ae8fd8176555ba876218ff84055ef1beee494075327e"
+    },
+    {
+      "id": "shuowen:7161",
+      "headword": "洌",
+      "text": "水清也。从水列聲。《易》曰：“井𣸟，寒泉，食。”",
+      "sourceTextSha256": "98b857411bf9bb0acf0b7d9d35c6966716e5f400e451c90d4377ac12f12b68a0"
+    },
+    {
+      "id": "shuowen:7162",
+      "headword": "淑",
+      "text": "清湛也。从水叔聲。",
+      "sourceTextSha256": "a688d146c65a0ba9218f5a7f1f706caad021355f9bfe56443a8a524db87440cb"
+    },
+    {
+      "id": "shuowen:7163",
+      "headword": "溶",
+      "text": "水盛也。从水容聲。",
+      "sourceTextSha256": "8c06a218364f9026c6eb39ebcc89794ed58da2f90365eefb71626dd7679bae0c"
+    },
+    {
+      "id": "shuowen:7164",
+      "headword": "澂",
+      "text": "清也。从水，徵省聲。",
+      "sourceTextSha256": "fd83f6c332e9cf9e66e40e82424f63fda378b8fce29a232601f35f818df3e2fe"
+    },
+    {
+      "id": "shuowen:7165",
+      "headword": "清",
+      "text": "朖也。澂水之皃。从水青聲。",
+      "sourceTextSha256": "6bd33cf58d1de65e8e193117daf8f4f8308887214faf6dceda55a0c138252587"
+    },
+    {
+      "id": "shuowen:7166",
+      "headword": "湜",
+      "text": "水清底見也。从水是聲。《詩》曰：“湜湜其止。”",
+      "sourceTextSha256": "5a85eb648fe3e688f67264a78340bfc9b04d76c3fc949e14b3f1e333350c8950"
+    },
+    {
+      "id": "shuowen:7167",
+      "headword": "潣",
+      "text": "水流浼浼皃。从水閔聲。",
+      "sourceTextSha256": "285d4c57c31bc5d9f866e58ce9620add6c1b0ec1aa40d8800b48c4adb4421de6"
+    },
+    {
+      "id": "shuowen:7168",
+      "headword": "滲",
+      "text": "下漉也。从水參聲。",
+      "sourceTextSha256": "6bfa785a7b8e64f1e53e3b4dcc4ee688316403c1ab647c73fd01b73be87505a5"
+    },
+    {
+      "id": "shuowen:7169",
+      "headword": "潿",
+      "text": "不流濁也。从水圍聲。",
+      "sourceTextSha256": "5a550955539556cc0a431348034e264395c2bcdc3a3ba2156d669a4c9d3e6952"
+    },
+    {
+      "id": "shuowen:7170",
+      "headword": "溷",
+      "text": "亂也。一曰水濁皃。从水圂聲。",
+      "sourceTextSha256": "1bbfa2057f9f082f210433834a738b9e3d0ca7972cdd59c072a9dc50477443ae"
+    },
+    {
+      "id": "shuowen:7171",
+      "headword": "淈",
+      "text": "濁也。从水屈聲。一曰滒泥。一曰水出皃。",
+      "sourceTextSha256": "fae6b65fd3af6db8d2caf2b0b2bd65d7fb3a7d1b9dfb86a5741d7eb003f8c8dd"
+    },
+    {
+      "id": "shuowen:7172",
+      "headword": "㳬",
+      "text": "回泉也。从水，旋省聲。",
+      "sourceTextSha256": "a2ace9b8568bb43759d73cfba8f6a16aac77225be02c29d4b5c77c3eff9b3ea6"
+    },
+    {
+      "id": "shuowen:7173",
+      "headword": "漼",
+      "text": "深也。从水崔聲。《詩》曰：“有漼者淵。”",
+      "sourceTextSha256": "d5cebb82e035b90b798ff082de1cd1636b4a884b9eec061be43a61966417953f"
+    },
+    {
+      "id": "shuowen:7174",
+      "headword": "淵",
+      "text": "回水也。从水，象形。左右，岸也。中象水皃。",
+      "sourceTextSha256": "9f6363c805dbb6ec489820d31e759655661eca1e3c3cbd2b98cf016e86275ae7"
+    },
+    {
+      "id": "shuowen:7175",
+      "headword": "濔",
+      "text": "滿也。从水爾聲。",
+      "sourceTextSha256": "db5a21a89f292232f406ebee720827dcaab67ef321b8b8fb6b8621f25e9d8911"
+    },
+    {
+      "id": "shuowen:7176",
+      "headword": "澹",
+      "text": "水搖也。从水詹聲。",
+      "sourceTextSha256": "ce3cc603aceef9c101b469a61108808f55f803f1df06609bdcd8587cd45b5ed9"
+    },
+    {
+      "id": "shuowen:7177",
+      "headword": "潯",
+      "text": "㫄深也。从水尋聲。",
+      "sourceTextSha256": "1357019c0dc70f3f3e76ea783d656fb8d20a4bb28b105ea5a7aef584fd4f0b2d"
+    },
+    {
+      "id": "shuowen:7178",
+      "headword": "泙",
+      "text": "谷也。从水平聲。",
+      "sourceTextSha256": "94efc9cde027c44e8ac8313c55b3bb46bedb220bd37b40266f02d57b1bda0f16"
+    },
+    {
+      "id": "shuowen:7179",
+      "headword": "泏",
+      "text": "水皃。从水出聲。讀若窋。",
+      "sourceTextSha256": "b05a4141472cd70ee5859f3b818978d78aaaf5efa7e266cbfd7d8126dfa42b18"
+    },
+    {
+      "id": "shuowen:7180",
+      "headword": "瀳",
+      "text": "水至也。从水薦聲。讀若尊。",
+      "sourceTextSha256": "8ff7d19d36a39ad841adc99d2a060ae06ba01d1075233ba91ef0eb2a62862a83"
+    },
+    {
+      "id": "shuowen:7181",
+      "headword": "𤁰",
+      "text": "土得水沮也。从水𥏼聲。讀若䵂。",
+      "sourceTextSha256": "a6fa671b62d73607cdb1a67ab870b9f2f9cc2d114b23c3cd3d1d7483928592dd"
+    },
+    {
+      "id": "shuowen:7182",
+      "headword": "滿",
+      "text": "盈溢也。从水㒼聲。",
+      "sourceTextSha256": "312b8821ed24ded9f17d587cdbd966df3c465019739dc095b69b73a61551693b"
+    },
+    {
+      "id": "shuowen:7183",
+      "headword": "滑",
+      "text": "利也。从水骨聲。",
+      "sourceTextSha256": "6ad99801d2c6ee8705759860d21df17a551f10c91f44f96f2f31931be979e992"
+    },
+    {
+      "id": "shuowen:7184",
+      "headword": "濇",
+      "text": "不滑也。从水嗇聲。",
+      "sourceTextSha256": "e6dc85b4e877c5de60d50d2c998bbd2eaf367768bb3d8075af95b59e54191cff"
+    },
+    {
+      "id": "shuowen:7185",
+      "headword": "澤",
+      "text": "光潤也。从水睪聲。",
+      "sourceTextSha256": "b71633b4d7e8fae03ab8e20ddeb1d358434987371de47a6a7541363dc8e6e56f"
+    },
+    {
+      "id": "shuowen:7186",
+      "headword": "淫",
+      "text": "侵淫隨理也。从水㸒聲。一曰久雨爲淫。",
+      "sourceTextSha256": "ef0391925a1bbd18609acc6f9b5bd6a873def9d8bbb41b7d2084e84d3be26410"
+    },
+    {
+      "id": "shuowen:7187",
+      "headword": "瀸",
+      "text": "漬也。从水韱聲。《爾雅》曰：“泉一見一否爲瀸。”",
+      "sourceTextSha256": "1373f295c7f5156c4db3f3e716b096b4c105ae356ea28d001c40fd6e26e916bd"
+    },
+    {
+      "id": "shuowen:7188",
+      "headword": "泆",
+      "text": "水所蕩泆也。从水失聲。",
+      "sourceTextSha256": "ea079c7fc97b27b1ca3c5242e037305454dbf8cd909e3bdf3aa3459b1a9710b2"
+    },
+    {
+      "id": "shuowen:7189",
+      "headword": "潰",
+      "text": "漏也。从水貴聲。",
+      "sourceTextSha256": "7d2f5dcc16e199f2356f3c7d476e6f0fc4b06bea10e1265cc144bfcb59ff94dc"
+    },
+    {
+      "id": "shuowen:7190",
+      "headword": "沴",
+      "text": "水不利也。从水㐱聲。《五行傳》曰：“若其沴作。”",
+      "sourceTextSha256": "dddee3dbad79221234f99f7a02b1bed4a8e3560c6801020d24b91b29c696ab2a"
+    },
+    {
+      "id": "shuowen:7191",
+      "headword": "淺",
+      "text": "不深也。从水戔聲。",
+      "sourceTextSha256": "82d8f1a31623591c440d6a33c677a50c521acf31bcbc31cb3cca156ccad7309f"
+    },
+    {
+      "id": "shuowen:7192",
+      "headword": "洔",
+      "text": "水暫益且止，未減也。从水寺聲。",
+      "sourceTextSha256": "d1272c895c4d07582d3907a54703ed20322b1d71f6ec2c2cd77ca046f956cde3"
+    },
+    {
+      "id": "shuowen:7193",
+      "headword": "渻",
+      "text": "少減也。一曰水門。又，水出丘前謂之渻丘。从水省聲。",
+      "sourceTextSha256": "d15a6e0e6c2e6544fe6ed7ad5f6248e87a2087181552fd6db4db62bf54460249"
+    },
+    {
+      "id": "shuowen:7194",
+      "headword": "淖",
+      "text": "泥也。从水卓聲。",
+      "sourceTextSha256": "fbd15ec6dd1c890fddeead37bbfe8b65683645d9a855727e1d46e1df90166174"
+    },
+    {
+      "id": "shuowen:7195",
+      "headword": "濢",
+      "text": "小溼也。从水翠聲。",
+      "sourceTextSha256": "4869b33c42c063a519e22dda5d8efa917ded26595e02d6c3694c15144aeee76c"
+    },
+    {
+      "id": "shuowen:7196",
+      "headword": "溽",
+      "text": "溼暑也。从水辱聲。",
+      "sourceTextSha256": "46d0d80a3bf78f57ab6540721dda9910ba0dde6da8118157b14745c15d694719"
+    },
+    {
+      "id": "shuowen:7197",
+      "headword": "涅",
+      "text": "黑土在水中也。从水从土，日聲。",
+      "sourceTextSha256": "128088981dbbe532ebaebbea3295108fe948f29364d39c1242001c815c9c1999"
+    },
+    {
+      "id": "shuowen:7198",
+      "headword": "滋",
+      "text": "益也。从水兹聲。一曰滋水，出牛飲山白陘谷，東入呼沱。",
+      "sourceTextSha256": "e75d895f509abd6b18b39ddc8e94ad746e9897019974e2b1d8009aba311f7280"
+    },
+    {
+      "id": "shuowen:7199",
+      "headword": "㳷",
+      "text": "青黑色。从水曶聲。",
+      "sourceTextSha256": "dc7cc192b9f2ec316ef0a693d88b1c1e7c9379f2733dce0f23cb7f6aac37d89f"
+    },
+    {
+      "id": "shuowen:7200",
+      "headword": "浥",
+      "text": "溼也。从水邑聲。",
+      "sourceTextSha256": "a398c947feb03a429023de82297f588e1620b4e809314672471827f3fdd7d25c"
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "99a5405ad003010597992afc450a4477ce19cb8a608694a6648f47a6e613b345",
+    "created_date": "2026-11-22"
+  },
+  "batch": "044",
+  "translations": {
+    "shuowen:4301": {
+      "text": "Something that ought not to occur. The Spring and Autumn Commentary says: “The sun or moon suffers an eclipse.” Formed from 月, with 又 indicating the sound. All characters in this group follow 有.",
+      "sourceTextSha256": "31fc3a61de0c60933bd0506a8ddf8d2c43bf5e7cab8990e785ba380bd305a05b",
+      "uncertain": false
+    },
+    "shuowen:4302": {
+      "text": "Having patterned ornament. Formed from 有, with 𡿿 indicating the sound.",
+      "sourceTextSha256": "2d86dd419b4e291438d390d66bf35a94200fbd76753bbb624d8911078db0f164",
+      "uncertain": false
+    },
+    "shuowen:4303": {
+      "text": "To possess together. Formed from 有, with 龍 indicating the sound. Read like 聾.",
+      "sourceTextSha256": "ecbce7ad47df641ce32d1f565f021eca49b3837c88f5f4045d49f9e582781dd3",
+      "uncertain": false
+    },
+    "shuowen:4304": {
+      "text": "To illuminate. Formed from 月 and 囧. All characters in this group follow 朙.",
+      "sourceTextSha256": "8ca4a864cd57349ffa77d04411c52f82e20284aa495f2c5834ef7c2fdcb7426a",
+      "uncertain": false
+    },
+    "shuowen:4305": {
+      "text": "The following day. Formed from 明, with 亡 indicating the sound.",
+      "sourceTextSha256": "4dcf808a2dcec73e281e35ddaf5bfe0e8e7a39fcd970c95e24ff3d38b219a3da",
+      "uncertain": false
+    },
+    "shuowen:4306": {
+      "text": "A lattice window opened to the light. Pictographic. All characters in this group follow 囧. Read like 獷. Attendant Jia says it is pronounced the same as 明.",
+      "sourceTextSha256": "eeed93f26e90cd304a113468efae9675bb417625fd33a8e0fe03972c86d4f3a9",
+      "uncertain": false
+    },
+    "shuowen:4307": {
+      "text": "The Rites of Zhou says: “When the state has doubts, make a covenant.” Feudal lords meet one another twice, with one covenant every twelve years. Facing north they address Heaven’s Directors of Vigilance and Destinies. For the covenant, they slaughter a victim and smear blood on their lips, using a red tray and jade vessel to set up the ox’s ear. Formed from 囧 and 血.",
+      "sourceTextSha256": "7839afcc4e056c04e4187e78af180f56b23427d33300e23c8fd7b6bd973062e2",
+      "uncertain": false
+    },
+    "shuowen:4308": {
+      "text": "Evening. Formed from half-visible 月. All characters in this group follow 夕.",
+      "sourceTextSha256": "f7e2c9950dfeda0e2a909252eb11aa85df3aeaa8639d32352a2d0f8bdcb2dd36",
+      "uncertain": false
+    },
+    "shuowen:4309": {
+      "text": "Resting: all under Heaven rest. Formed from 夕, with abbreviated 亦 indicating the sound.",
+      "sourceTextSha256": "6c5f7aa208b25538e9fcd64c1d004ae40c9f387b79941d239ff67e3ad69aaf69",
+      "uncertain": false
+    },
+    "shuowen:4310": {
+      "text": "Not clear. Formed from 夕, with abbreviated 瞢 indicating the sound.",
+      "sourceTextSha256": "6454798ab10c79589dc34bb170fa97c1bf1830aeda10caa57ed053accc61f7f1",
+      "uncertain": false
+    },
+    "shuowen:4311": {
+      "text": "To turn while lying down. Formed from 夕 and 卪; lying down has its joints or regulated postures.",
+      "sourceTextSha256": "3360cbf15fefc4f83fa12beb53cd5d418e368ff46920abba732bc25f915ba2cf",
+      "uncertain": false
+    },
+    "shuowen:4312": {
+      "text": "Respectfully vigilant. Formed from 夕, with 寅 indicating the sound. The Changes says: “Vigilant at evening, as if in awe.”",
+      "sourceTextSha256": "3b95178e36ace948b5fa1aa72cca641ed710a453d965a50375c09d88b78c75f7",
+      "uncertain": false
+    },
+    "shuowen:4313": {
+      "text": "Rain clearing at night so that stars appear. Formed from 夕, with 生 indicating the sound.",
+      "sourceTextSha256": "29d9e0a27cc2600022b4f55db701eb0ea379ec2b589e7aa50cd53158dad16703",
+      "uncertain": false
+    },
+    "shuowen:4314": {
+      "text": "Distant or outside. Divination favors dawn; to divine now at evening is outside the proper business.",
+      "sourceTextSha256": "6bbe2c7cce6cbd967b4366e6c93bb5023dfcf2b7eaccfbd975c89835093c164d",
+      "uncertain": false
+    },
+    "shuowen:4315": {
+      "text": "Diligent reverence. Formed from 丮, holding to one’s task: not resting even at evening is diligent reverence.",
+      "sourceTextSha256": "d4a4248156504660bb342a73dac93f0870f8427c27fdc757cd5f050234f01d34",
+      "uncertain": false
+    },
+    "shuowen:4316": {
+      "text": "Still or lonely, 𡧯. Formed from 夕, with 莫 indicating the sound.",
+      "sourceTextSha256": "4825df76f813e8c465964c7e73a0a2db9576fbab1a1e047b1f54a4574e733376",
+      "uncertain": false
+    },
+    "shuowen:4317": {
+      "text": "Repeated. Formed from repeated 夕; 夕 succeeds another, hence “many.” Repeated 夕 makes 多; repeated 日 makes 曡. All characters in this group follow 多.",
+      "sourceTextSha256": "000a71188dcff62eee87ed949939d7ea6cacd9d4110ecd27eb132dddeede04e2",
+      "uncertain": false
+    },
+    "shuowen:4318": {
+      "text": "Qi calls “many” 夥. Formed from 多, with 果 indicating the sound.",
+      "sourceTextSha256": "62b094889be0027473e82634c4213c2a66488b72c71a7b41d5a38bb20d2e7496",
+      "uncertain": false
+    },
+    "shuowen:4319": {
+      "text": "Large. Formed from 多, with 圣 indicating the sound.",
+      "sourceTextSha256": "dbebb83f8b1b5506774bedd737dc050a0e85e9880c73417b7385992d8191ed85",
+      "uncertain": false
+    },
+    "shuowen:4320": {
+      "text": "The appearance of thick lips. Formed from 多 and 尚.",
+      "sourceTextSha256": "a1bd85d705a9117ef20043ceeb0547e9b918c02be64ab4fe0253b247d0356328",
+      "uncertain": false
+    },
+    "shuowen:4321": {
+      "text": "To pierce something and hold it. A single horizontal stroke pierces through, depicting valuables. All characters in this group follow 毌. Read like 冠.",
+      "sourceTextSha256": "70862b1a8dd1c0b8ab541c3f9eef82ad6fc6ae904d793e968eec069003365002",
+      "uncertain": false
+    },
+    "shuowen:4322": {
+      "text": "A string of coins or shells. Formed from 毌 and 貝.",
+      "sourceTextSha256": "4a84b066d15b99f71115eb80cc71de7a9402606f01dc83edbf20f1354c2f1e56",
+      "uncertain": false
+    },
+    "shuowen:4323": {
+      "text": "To capture. Formed from 毌 and 力, with 虍 indicating the sound.",
+      "sourceTextSha256": "5da3b827dcbe1b7bba6b1ae795fbc8a2dc0fc82a13e67fa46069f351dc019e21",
+      "uncertain": false
+    },
+    "shuowen:4324": {
+      "text": "Contained, 嘾: plant flowers still unopened and enclosed. Pictographic. All characters in this group follow 𢎘. Read like 含.",
+      "sourceTextSha256": "b8ef9a28516f3ec313682100fb6ec9d7595706a36cd021def5b47f2e8513c584",
+      "uncertain": false
+    },
+    "shuowen:4325": {
+      "text": "A tongue. Pictographic; the tongue’s form is 𢎘. The text further says “𢎘 follows 𢎘,” which also indicates the sound; this repeated analysis is uncertain.",
+      "sourceTextSha256": "b6b1a7104cde5c3942d1731622d96288b6ace13b3445f7444cadb9a6c75b74f0",
+      "uncertain": true
+    },
+    "shuowen:4326": {
+      "text": "A tree producing shoots. Formed from 𢎘, with 由 indicating the sound. The Book of Shang says: “Like a fallen tree having 织枿”; the ancient text writes 由枿. The recorded phrase is uncertain.",
+      "sourceTextSha256": "98e5bcd569973c063d3170f06e576de2bf9f0ae8615493ddb730266b12ec9467",
+      "uncertain": true
+    },
+    "shuowen:4327": {
+      "text": "Plant flowers flourishing, 甬甬. Formed from 𢎘, with 用 indicating the sound.",
+      "sourceTextSha256": "a8cced1fa39cf0c241300a172961465d7eeab3d8e0dc0c2837413f9f61268957",
+      "uncertain": false
+    },
+    "shuowen:4328": {
+      "text": "Plant buds flourishing. Formed from two 𢎘.",
+      "sourceTextSha256": "dba224e26091a6ab7d19df8561b94a739079179f8922b2b23f2b07aad33654d1",
+      "uncertain": false
+    },
+    "shuowen:4329": {
+      "text": "A tree with drooping flowers and fruit. Formed from 木 and 𢎘; 𢎘 also indicates the sound. All characters in this group follow 𣐺.",
+      "sourceTextSha256": "fd308d39c5f625f61ae49032fba0122acf9682f1b1ffd9f1f1d37933be39865a",
+      "uncertain": false
+    },
+    "shuowen:4330": {
+      "text": "To bind. Formed from 𣐺, with 韋 indicating the sound.",
+      "sourceTextSha256": "868cbd1bb9726aa8be11a93dfc76f89bfcf24bdfc6844b47b0de6628338766ea",
+      "uncertain": false
+    },
+    "shuowen:4331": {
+      "text": "Plant fruits hanging down, 𠧪𠧪. Pictographic. All characters in this group follow 𠧪. Read like 調.",
+      "sourceTextSha256": "30ac39dd6f649d929932aeea4fd5222811b5c1116568b121806cad36ebaf7033",
+      "uncertain": false
+    },
+    "shuowen:4332": {
+      "text": "A tree. Formed from 木; because its fruit hangs down, it uses 𠧪.",
+      "sourceTextSha256": "e937e2aab8902edddda5e99a2776e4adfec02ac41a26ea1860e327506be82e39",
+      "uncertain": false
+    },
+    "shuowen:4333": {
+      "text": "The grain of a fine cereal. Formed from 𠧪 and 米. Confucius says: “𥻆 conveys the meaning of continuation.”",
+      "sourceTextSha256": "1efc35879a0dbe698cd7f8880fb37a1ea8c234b5cf825463fdfc78fb34940cc3",
+      "uncertain": false
+    },
+    "shuowen:4334": {
+      "text": "Grain and wheat sending out ears level at the top. Pictographic. All characters in the 亝 group follow 亝.",
+      "sourceTextSha256": "2a9e6084f0c98324bcef5abae3860843765bd23d46c4ad018517a15b6534ed3f",
+      "uncertain": false
+    },
+    "shuowen:4335": {
+      "text": "Equal. Formed from 亝, with 妻 indicating the sound.",
+      "sourceTextSha256": "e636f1a0e4a5b45dd9de9890ff43fd3b1f597b7a362f31637637f2ba6ee57b08",
+      "uncertain": false
+    },
+    "shuowen:4336": {
+      "text": "A tree’s thorn. Pictographic. All characters in this group follow 朿. Read like 刺.",
+      "sourceTextSha256": "d288e7146bd5b801b7d344ae1ddbab639f388a4b5db8f94a54a2cb40f1a4e6d5",
+      "uncertain": false
+    },
+    "shuowen:4337": {
+      "text": "Sheep jujube. Formed from repeated 朿.",
+      "sourceTextSha256": "404a65ac0903c02f00ac494bd59a9a4acb3be5276224f28a5563cf096f00d420",
+      "uncertain": false
+    },
+    "shuowen:4338": {
+      "text": "Small jujubes growing in thickets. Formed from side-by-side 朿.",
+      "sourceTextSha256": "42391c31b754341709a40f9ba0fb3f9415a2defc292f745e4458d9486906486c",
+      "uncertain": false
+    },
+    "shuowen:4339": {
+      "text": "Split wood. Formed from half of 木. All characters in this group follow 片.",
+      "sourceTextSha256": "ba0c8e9aee190a98353292dc0ec0c5d14448b6a6b894f37966944bac3c662bac",
+      "uncertain": false
+    },
+    "shuowen:4340": {
+      "text": "A split piece. Formed from 片, with 反 indicating the sound.",
+      "sourceTextSha256": "cd9cae18dad995663d2236443fe1e02e03ee0145f76b7872ad283a54d127e678",
+      "uncertain": false
+    },
+    "shuowen:4341": {
+      "text": "A split piece. Formed from 片, with 畐 indicating the sound.",
+      "sourceTextSha256": "6ccbd1395ddb82464af6d4505a7140352f6b4892500a38b04a19228a490ed8e7",
+      "uncertain": false
+    },
+    "shuowen:4342": {
+      "text": "A writing board. Formed from 片, with 賣 indicating the sound.",
+      "sourceTextSha256": "7a4faf09f90126d1c53c79d973f276427549e5d8505ed40bf02b10a4fd6096f8",
+      "uncertain": false
+    },
+    "shuowen:4343": {
+      "text": "A writing slip. Formed from 片, with 枼 indicating the sound.",
+      "sourceTextSha256": "cccfa6d912a49196ddbab92289d39b5280733a25474298c151a2567f1d181e4e",
+      "uncertain": false
+    },
+    "shuowen:4344": {
+      "text": "Bed boards. Formed from 片, with 扁 indicating the sound. Read like 邊.",
+      "sourceTextSha256": "52a9bd9ed40031662252d0315e44681e74c7f4e6ccf96aa7d50f834b805c463b",
+      "uncertain": false
+    },
+    "shuowen:4345": {
+      "text": "An opening through a wall with crossed wood forming a window. Formed from 片, 戶 and 甫. Tan Chang considers the element above 甫 to be 日, not 戶: a window lets one see the sun.",
+      "sourceTextSha256": "ebc905fa0b4f375915b843e015227cb7d70f2c55c8e171c567b457ea93378f59",
+      "uncertain": false
+    },
+    "shuowen:4346": {
+      "text": "Short boards for building rammed-earth walls. Formed from 片, with 俞 indicating the sound. Read like 俞; alternatively like 紐.",
+      "sourceTextSha256": "ac61a9c8c0c69ba3e8a9905278575f776e2f02b1e22de053c782880f0b14bce5",
+      "uncertain": false
+    },
+    "shuowen:4347": {
+      "text": "A precious vessel with three legs and two handles for blending the five flavors. Long ago Yu collected metal from the nine regional governors and cast tripods beneath Mount Jing; entering mountains, forests, rivers and marshes, one would encounter none of the 螭, 魅 or 蝄蜽 spirits, thereby receiving Heaven’s blessings in harmony. In the Changes, Xun-wood below makes the 鼎 hexagram, depicting split wood for cooking. The large-seal script uses 鼎 for 貞. All characters in this group follow 鼎.",
+      "sourceTextSha256": "435fe34fd4359fff43f0369d0c0ad58e3ea11b50d4d5ad8bb9d0505c249514d7",
+      "uncertain": false
+    },
+    "shuowen:4348": {
+      "text": "A tripod with a rounded, narrowed top. Formed from 鼎, with 才 indicating the sound. The Odes says: “鼐 tripods, 鼎 tripods and 鼒.”",
+      "sourceTextSha256": "914392df02761025049bc3af63424f7d3b355efac1dd29e2b2e745e6fc3baeaf",
+      "uncertain": false
+    },
+    "shuowen:4349": {
+      "text": "An exceptionally large tripod. Formed from 鼎, with 乃 indicating the sound. The Lu Odes explanation says 鼐 is a small tripod.",
+      "sourceTextSha256": "fd23f4356dc4bbbddb245a7fb62e57e295097bb50f1ac09479d573d98cfc30da",
+      "uncertain": false
+    },
+    "shuowen:4350": {
+      "text": "A wooden bar passed across through a tripod’s handles to lift it. Formed from 鼎, with 冂 indicating the sound. The Rites of Zhou says: “The temple gate admits seven large lifting bars.” This is the Changes’ “Jade lifting bars: great good fortune.”",
+      "sourceTextSha256": "e070659af5edd60d1581fd4dd21cecdcc9c54fed43b274f0df3519efd09f3bf7",
+      "uncertain": false
+    },
+    "shuowen:4351": {
+      "text": "To shoulder. Depicts cutting wood beneath a roof. All characters in this group follow 克.",
+      "sourceTextSha256": "6a79b5ec2143577fa7500afbfbdb2d3c5608df508a073e5d4b7aafeafd68ad05",
+      "uncertain": false
+    },
+    "shuowen:4352": {
+      "text": "Carving wood, 录录. Pictographic. All characters in the 录 group follow 录.",
+      "sourceTextSha256": "f16793e41d3d16e0ea1c70b50bb8f26a4c496af082190bfb03d0c852440f1f32",
+      "uncertain": false
+    },
+    "shuowen:4353": {
+      "text": "A fine cereal. It begins growing in the second month and ripens in the eighth, obtaining the seasonal mean, hence called 禾. Grain belongs to Wood: it grows when Wood rules and dies when Metal rules. Formed from 木 and abbreviated 𠂹; 𠂹 depicts its ear. All characters in this group follow 禾.",
+      "sourceTextSha256": "c52a4e7096ea0f8c07cdcec9a5b6b0de49841fe52b0ab42f25c467644ae9df1a",
+      "uncertain": false
+    },
+    "shuowen:4354": {
+      "text": "An imperial taboo: the personal name of Emperor Guangwu of Han.",
+      "sourceTextSha256": "22814ffb07b14531bf0113d25713c2f455e1625bf7d571358d60e42b96650732",
+      "uncertain": false
+    },
+    "shuowen:4355": {
+      "text": "The flowering ears and grain are 稼; the jointed stalks are 禾. Formed from 禾, with 家 indicating the sound. Another explanation: 稼 is household work. Another: crops in the fields are 稼.",
+      "sourceTextSha256": "5b066c83648bc055a4d555fe95eb16e3c150ee5336c9622c0edb9c59769629c3",
+      "uncertain": false
+    },
+    "shuowen:4356": {
+      "text": "Grain ready for harvest is called 穡. Formed from 禾, with 𠾂 indicating the sound.",
+      "sourceTextSha256": "50f9ab62e671397f2c94efe431b36c2b02877d55937bbd3925a7596da9abdc7f",
+      "uncertain": false
+    },
+    "shuowen:4357": {
+      "text": "To plant. Formed from 禾, with 童 indicating the sound.",
+      "sourceTextSha256": "b4945c9e4c26a837bd5d38b9a8ab727cadcb2eb768213bec2987bf524252a050",
+      "uncertain": false
+    },
+    "shuowen:4358": {
+      "text": "Early-sown crops. Formed from 禾, with 直 indicating the sound. The Odes says: “Early and late crops, beans and wheat.”",
+      "sourceTextSha256": "194aa010c065bf612fa9d41a4689de1f8202356f7e4201cf0266b8d8e11d16ba",
+      "uncertain": false
+    },
+    "shuowen:4359": {
+      "text": "Sown early but ripening late. Formed from 禾, with 重 indicating the sound.",
+      "sourceTextSha256": "c7d4bf8db0553f2b320bc9642ff49105878cd07591945ea06b82f74169c15fc7",
+      "uncertain": false
+    },
+    "shuowen:4360": {
+      "text": "Quick-ripening crops. Formed from 禾, with 坴 indicating the sound. The Odes says: “Millet and grain, late- and early-ripening.”",
+      "sourceTextSha256": "b2d9deff52a18de09bbc981cb0656bacf3a2482209ad847b26bc74c5fb2906cc",
+      "uncertain": false
+    },
+    "shuowen:4361": {
+      "text": "Young grain. Formed from 禾, with 屖 indicating the sound.",
+      "sourceTextSha256": "d674293fda1bbaeaa9b821db6b720efd47deff110f0171d48628c638e3331248",
+      "uncertain": false
+    },
+    "shuowen:4362": {
+      "text": "To plant densely. Formed from 禾, with 眞 indicating the sound. The Rites of Zhou says: “Dense-grained and firm.”",
+      "sourceTextSha256": "f0e3885dfe72363a959771d1ba0556fa501ee00a23eb34ead9d0323437f8cdc9",
+      "uncertain": false
+    },
+    "shuowen:4363": {
+      "text": "Numerous. Formed from 禾, with 周 indicating the sound.",
+      "sourceTextSha256": "0c7d38ab74990de64bcaea859f2249f724b563e72214c16e62c132881beadfdc",
+      "uncertain": false
+    },
+    "shuowen:4364": {
+      "text": "Dense. Formed from 禾, with 旣 indicating the sound.",
+      "sourceTextSha256": "9f11f8dd3551b2415bcdbf3970225d2d628788bf9e8ebabc6bf34ab3907bdfd1",
+      "uncertain": false
+    },
+    "shuowen:4365": {
+      "text": "Sparse. Formed from 禾, with 希 indicating the sound.",
+      "sourceTextSha256": "1ae0d399b429a02e575a9698a76799cf862637ca723649cc85989afe0e29423d",
+      "uncertain": false
+    },
+    "shuowen:4366": {
+      "text": "A cereal. Formed from 禾, with 蔑 indicating the sound.",
+      "sourceTextSha256": "2a920601cd03a3196f1fd56780158b62e30fa26b7ffe8141694292670f302891",
+      "uncertain": false
+    },
+    "shuowen:4367": {
+      "text": "A cereal. Formed from 禾, with 㣎 indicating the sound.",
+      "sourceTextSha256": "f0082f22b5cd4278e3f37d75752fa08cbb7f30d94fb359a136c4a9faacc16ee4",
+      "uncertain": false
+    },
+    "shuowen:4368": {
+      "text": "A cereal. Formed from 禾, with 厶 indicating the sound. In northern regions the owner of grain is called 私主人.",
+      "sourceTextSha256": "5a4e70eb3071701e8f935af12f521da726f635dbde73a90b871b9241513b1fb5",
+      "uncertain": false
+    },
+    "shuowen:4369": {
+      "text": "Rice with purple stalks, not sticky. Formed from 禾, with 糞 indicating the sound. Read like 靡.",
+      "sourceTextSha256": "ab0d4c63681cfe99efffb0fa786bd9e14d4a3344e88b51bead0b73e8580dd299",
+      "uncertain": false
+    },
+    "shuowen:4370": {
+      "text": "The cereal 𪗉, foremost of the five grains. Formed from 禾, with 畟 indicating the sound.",
+      "sourceTextSha256": "75895bad4a3313e5a40b0da97052fa1f4ecd2ec98c46e98c5bb7df3b0321bc06",
+      "uncertain": false
+    },
+    "shuowen:4371": {
+      "text": "The cereal 稷. Formed from 禾, with 亝 indicating the sound.",
+      "sourceTextSha256": "8a94c964876a15bae96e79e404b051aa7414ccefea3cb1bc76d2e8134ecf44c1",
+      "uncertain": false
+    },
+    "shuowen:4372": {
+      "text": "The sticky kind of 稷. Formed from 禾; 术 is pictographic.",
+      "sourceTextSha256": "882948ea123641dc5bffe96a1d1dddc81f361e6eb4b716afcba53f8c8ece1ff8",
+      "uncertain": false
+    },
+    "shuowen:4373": {
+      "text": "The cereal 𪎭. Formed from 禾, with 祭 indicating the sound.",
+      "sourceTextSha256": "bd4bf6b30d594ad68176c4fbc42b88161e691676628fe19b99b19b3dc6b66098",
+      "uncertain": false
+    },
+    "shuowen:4374": {
+      "text": "Rice, 稌. Formed from 禾, with 舀 indicating the sound.",
+      "sourceTextSha256": "cc1f095b23069ebdc02f88ca0edf6ab8763418430226b410718ce634d07cfc0b",
+      "uncertain": false
+    },
+    "shuowen:4375": {
+      "text": "Rice. Formed from 禾, with 余 indicating the sound. The Rites of Zhou says: “Beef suits rice.”",
+      "sourceTextSha256": "318556a13e2a5feeda1eba35569d84fa337376b5f6132dfbc4ebd6362ace1068",
+      "uncertain": false
+    },
+    "shuowen:4376": {
+      "text": "In Pei state, rice is called 稬. Formed from 禾, with 耎 indicating the sound.",
+      "sourceTextSha256": "75f86109043d65fce1d9786c6219995bd09c7dadda279580d4de9a5ef23dd2c8",
+      "uncertain": false
+    },
+    "shuowen:4377": {
+      "text": "Nonsticky rice. Formed from 禾, with 兼 indicating the sound. Read like 廉 in 風廉.",
+      "sourceTextSha256": "4734ddb44b0612663ae7ba797bfdd51884ae71ff9865a16710dc9782a981ea6a",
+      "uncertain": false
+    },
+    "shuowen:4378": {
+      "text": "A kind of rice. Formed from 禾, with 亢 indicating the sound.",
+      "sourceTextSha256": "97e19a6754344721d759598263d7091dc2e32ffb22ae75f53c927bc56124ea14",
+      "uncertain": false
+    },
+    "shuowen:4379": {
+      "text": "A kind of rice. Formed from 禾, with 毛 indicating the sound. Yi Yin says: “Among fine cooked grains are the grain of Mount Xuan and the 秏 of the Southern Sea.”",
+      "sourceTextSha256": "d32db509c34268d6b79c1e871eedfbf98339664c08784b307b1a1d4cd61b3610",
+      "uncertain": false
+    },
+    "shuowen:4380": {
+      "text": "Awned grain. Formed from 禾, with 廣 indicating the sound.",
+      "sourceTextSha256": "b9913ebec4d6e9ea8ae67fbabf140ffff83e5678397531c1d3ce6d9086c2de64",
+      "uncertain": false
+    },
+    "shuowen:4381": {
+      "text": "Rice shed this year that grows by itself next year is 秜. Formed from 禾, with 尼 indicating the sound.",
+      "sourceTextSha256": "3001999a6f7c002a59014e70ee488a0d96f07ae53370128e54bd40fd885a2bc8",
+      "uncertain": false
+    },
+    "shuowen:4382": {
+      "text": "A distinct kind of grain. Formed from 禾, with 卑 indicating the sound. Langya has a county called 稗.",
+      "sourceTextSha256": "99d5f92a0c61ec1efda1c6950bbf6b1d13f164fe8bd22d49caad6234bbc21707",
+      "uncertain": false
+    },
+    "shuowen:4383": {
+      "text": "Grain plants leaning on one another. Formed from 禾, with 多 indicating the sound. Another explanation: a cereal name.",
+      "sourceTextSha256": "e72a62f3348f621dcf296b38d267ffe8f1afcb9732fba36ba0190f3ea0049512",
+      "uncertain": false
+    },
+    "shuowen:4384": {
+      "text": "The tip of a grain plant. Formed from 禾, with 頃 indicating the sound. The Odes says: “The grain ears hang luxuriantly.”",
+      "sourceTextSha256": "594af5a7015f5c15b04e0d08ec600e480d53e64b8b2324e345087920d2a5f3d8",
+      "uncertain": false
+    },
+    "shuowen:4385": {
+      "text": "Qi calls wheat 䅘. Formed from 禾, with 來 indicating the sound.",
+      "sourceTextSha256": "4050d3dcfa9cbc47e0c64eafa13b9b734602855788739276767f25fca07cb619",
+      "uncertain": false
+    },
+    "shuowen:4386": {
+      "text": "Grain coming into ear, which people harvest. Formed from 爪 and 禾.",
+      "sourceTextSha256": "1515455d1782ded213356855a4942c1066f307cbfabcc146b982a4f7f4032cd4",
+      "uncertain": false
+    },
+    "shuowen:4387": {
+      "text": "Grain with high-standing ears. Formed from 禾, with 勺 indicating the sound.",
+      "sourceTextSha256": "446862051459daf10ce10f178a82b48407d152d2fee5eda9c089322d51b3feeb",
+      "uncertain": false
+    },
+    "shuowen:4388": {
+      "text": "The appearance of grain coming into ear, 𥝩. Formed from 禾, with 遂 indicating the sound. The Odes says: “The grain ears hang luxuriantly.”",
+      "sourceTextSha256": "a69f5bb13004ab586315ddacdff0386d7b0cbc388080c830ea8eb574c9fda825",
+      "uncertain": false
+    },
+    "shuowen:4389": {
+      "text": "Grain hanging down. Formed from 禾, with 耑 indicating the sound. Read like 端.",
+      "sourceTextSha256": "dd9adec79c2cd37528f94ee85676a19465eff5986fc12dd43d2371ff1ff9cc2e",
+      "uncertain": false
+    },
+    "shuowen:4390": {
+      "text": "Grain raising and sending out shoots. Formed from 禾, with 曷 indicating the sound.",
+      "sourceTextSha256": "006076fefd9296dfefab3b405787e1eeb8243b144bded15e83717a618c20a4a3",
+      "uncertain": false
+    },
+    "shuowen:4391": {
+      "text": "The awns of grain. Formed from 禾, with 少 indicating the sound.",
+      "sourceTextSha256": "9df13bdb79680fd948c78b205e19201818e3146ecd698612d32fb54478eb0810",
+      "uncertain": false
+    },
+    "shuowen:4392": {
+      "text": "The 穖 of grain, perhaps its awns; the self-referential gloss is uncertain. Formed from 禾, with 幾 indicating the sound.",
+      "sourceTextSha256": "e8335ed3f705ccf4b1fd3069ed29ccd0ea1942eb2abce83ae674e658f0b71420",
+      "uncertain": true
+    },
+    "shuowen:4393": {
+      "text": "Two grains in one husk. Formed from 禾, with 丕 indicating the sound. The Odes says: “He sent down fine grains, black millet and double-grained millet.” These are Heaven’s fine grains bestowed on Hou Ji.",
+      "sourceTextSha256": "85a4367f623d2cad574968c526dd1e011ba23c71ab6cbef3ceefdda32542b6be",
+      "uncertain": false
+    },
+    "shuowen:4394": {
+      "text": "Grain swaying. Formed from 禾, with 乍 indicating the sound. Read like 昨.",
+      "sourceTextSha256": "a6ea5e22126dd0fd83b116fec38b86fdf89d793daa4f2d0af0a2d8212fd9dc51",
+      "uncertain": false
+    },
+    "shuowen:4395": {
+      "text": "To cultivate between grain plants. Formed from 禾, with 麃 indicating the sound. The Spring and Autumn Commentary says: “They weed and mound the soil.”",
+      "sourceTextSha256": "38ff19b7ab3b7938885ce4c8562159e62a3f9b9ef6576ae1f72755c685f4698b",
+      "uncertain": false
+    },
+    "shuowen:4396": {
+      "text": "To tread or roll over grain. Formed from 禾, with 安 indicating the sound.",
+      "sourceTextSha256": "e91be2f0299bfad5c64c09bcf49b3f657541ebf0fb7768ddcb8e71fb86a3b7ae",
+      "uncertain": false
+    },
+    "shuowen:4397": {
+      "text": "To heap earth around the base of grain plants. Formed from 禾, with 子 indicating the sound.",
+      "sourceTextSha256": "8a18f34b21600b888a2081e5f5cb2ec510168c8e37ab9ae245eafb5de8138f71",
+      "uncertain": false
+    },
+    "shuowen:4398": {
+      "text": "To harvest and reap. Another explanation: to gather in a handful. Formed from 禾, with 齊 indicating the sound.",
+      "sourceTextSha256": "43226f9bb2cfb55696d96e60c198c6c4174a9533b6a744f2dfd88fc9a6e9f90d",
+      "uncertain": false
+    },
+    "shuowen:4399": {
+      "text": "To reap grain. Formed from 禾, with 蒦 indicating the sound.",
+      "sourceTextSha256": "956b1469ce8ed462f623e669a1710fc6ae40a98a8e695d7bdac912aa72c626aa",
+      "uncertain": false
+    },
+    "shuowen:4400": {
+      "text": "To pile up grain. Formed from 禾, with 資 indicating the sound. The Odes says: “Pile it up in orderly heaps.”",
+      "sourceTextSha256": "71dfc67a8ed6408a63dfabfd4a97ea65a672c8fab684cec6b1751391f391f2df",
+      "uncertain": false
+    }
+  }
+}

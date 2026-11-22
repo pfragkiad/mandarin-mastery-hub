@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "14f3d0d7694019be3469377f9a2f69110b58b3db7272c3a727122746a875325e",
+    "created_date": "2026-11-22"
+  },
+  "batch": "028",
+  "translations": {
+    "shuowen:2701": {
+      "text": "Meat soup. From 肉; 賁 supplies the sound.",
+      "sourceTextSha256": "0e91cae9d253e14fa13c853bc34ca687c0dc9c74fca5d9d182bf0e4a571a06e3",
+      "uncertain": false
+    },
+    "shuowen:2702": {
+      "text": "Meat soup. From 肉; 雋 supplies the sound. Pronounced like 纂.",
+      "sourceTextSha256": "cafa00314258733ef3152d797f415812f5679c1911fc72a2301bfb9cb37eae5b",
+      "uncertain": false
+    },
+    "shuowen:2703": {
+      "text": "A large piece of cut meat. From 肉; 𢦔 supplies the sound.",
+      "sourceTextSha256": "ef432509de016c59a480f275863f31ba85ee9e1a89f785574c43007e90093138",
+      "uncertain": false
+    },
+    "shuowen:2704": {
+      "text": "Thinly sliced meat. From 肉; 枼 supplies the sound.",
+      "sourceTextSha256": "1fddd64a4cd7dd8cf1cbf18ab0ad255da27f3fbba46c41dba36041f69eb5ae67",
+      "uncertain": false
+    },
+    "shuowen:2705": {
+      "text": "Finely cut meat. From 肉; 會 supplies the sound.",
+      "sourceTextSha256": "c2f204594a7c803ca04582a5d2ec0876d93eb125c31feb77181bb82be5c9ef53",
+      "uncertain": false
+    },
+    "shuowen:2706": {
+      "text": "Meat steeped or cured in liquid. From 肉; 奄 supplies the sound.",
+      "sourceTextSha256": "368bca93ab38cf16575292d29dcdee26aa2f3c827309fd7151a86704369b8628",
+      "uncertain": false
+    },
+    "shuowen:2707": {
+      "text": "Small, soft and easily broken. From 肉 and abbreviated 絕.",
+      "sourceTextSha256": "6212837d66a260d11e7f1f53245260768415d632cde7a3e02ddc5c18eb0cc9a1",
+      "uncertain": false
+    },
+    "shuowen:2708": {
+      "text": "Soft and easily broken. From 肉; 毳 supplies the sound.",
+      "sourceTextSha256": "5167edc6cec44178e04aca54f86f5b7b31388c643c4779096cc5b7579f62fe76",
+      "uncertain": false
+    },
+    "shuowen:2709": {
+      "text": "Mixed meat. From 肉; 㪔 supplies the sound.",
+      "sourceTextSha256": "733eae59cdc3346954de34371238b36bf88d7789b2fdf9cd853b5f19009403b1",
+      "uncertain": false
+    },
+    "shuowen:2710": {
+      "text": "Cut meat. From 肉; 專 supplies the sound.",
+      "sourceTextSha256": "fdd2b289587cbd8725d1e3d5f08ebbf06526aa18d360c385c4a0a5f85cf0c733",
+      "uncertain": false
+    },
+    "shuowen:2711": {
+      "text": "To pick meat from between bones. From 肉; 叕 supplies the sound. Pronounced like 啜 in the Odes' “Sobbing in tears.”",
+      "sourceTextSha256": "1bf87bce2aafce074c2183a48295737d1ada0229d93817c6b19e3c3e4386f9a8",
+      "uncertain": false
+    },
+    "shuowen:2712": {
+      "text": "What is left after eating. From 肉; 仕 supplies the sound. The Changes says: “Biting dried leftover meat.”",
+      "sourceTextSha256": "19d6c17959184f6829eeb8706230a809ff363c6bb815c53c01edf815cff56091",
+      "uncertain": false
+    },
+    "shuowen:2713": {
+      "text": "To eat meat without becoming satisfied. From 肉; 臽 supplies the sound. Pronounced like 陷.",
+      "sourceTextSha256": "a63e22b027c1a9394fcace7c044183cd6ffa380616aea82208fc9d68e58f2c79",
+      "uncertain": false
+    },
+    "shuowen:2714": {
+      "text": "Dog meat. From 犬 and 肉. Pronounced like 然.",
+      "sourceTextSha256": "b9db29f38e58dacdc71f24423fc5b0bed1c795c8f3303a1ae3bcbc928c79f00e",
+      "uncertain": false
+    },
+    "shuowen:2715": {
+      "text": "To rise or swell. From 肉; 眞 supplies the sound.",
+      "sourceTextSha256": "da69ac4315577cc1151e6478c686cfdaa22011ac018a358406015e29506ae863",
+      "uncertain": false
+    },
+    "shuowen:2716": {
+      "text": "Sediment in meat juices. From 肉; 冘 supplies the sound.",
+      "sourceTextSha256": "94fd603b04c88cfad705bbfd76db362a72138ca36e91a94661e5bb4581a75825",
+      "uncertain": false
+    },
+    "shuowen:2717": {
+      "text": "To adhere closely; it is made from hides. From 肉; 翏 supplies the sound.",
+      "sourceTextSha256": "bb4899d6b5e249e12a6facb9ef6951acca2877c5fb5271ccb9c63b98479833a5",
+      "uncertain": false
+    },
+    "shuowen:2718": {
+      "text": "Some say it is the name of an animal and pictographic. The explanation is missing.",
+      "sourceTextSha256": "f86220d5c9dd9bf8b1e85b8b60d896690f89a7ad76f38abe3eec90bf9b484010",
+      "uncertain": true
+    },
+    "shuowen:2719": {
+      "text": "Flies breeding in meat. From 肉; 且 supplies the sound.",
+      "sourceTextSha256": "0aa360e41d3f6cfc61d2d2f2e625cceaf467ed7a80ce89ca253dd6100401e5f2",
+      "uncertain": false
+    },
+    "shuowen:2720": {
+      "text": "A small worm. From 肉; 囗 supplies the sound. Another explanation: empty.",
+      "sourceTextSha256": "4759222447a0159ef9b9da144911c5a9096543ef9c4f0515c81ae2633aa08618",
+      "uncertain": false
+    },
+    "shuowen:2721": {
+      "text": "Rotten. From 肉; 府 supplies the sound.",
+      "sourceTextSha256": "af394f062da488bd734efd9acf612449c66b4a499a3abdf0bfc1cc850c0c59f5",
+      "uncertain": false
+    },
+    "shuowen:2722": {
+      "text": "Flesh attached closely between bones. From 肉 and abbreviated 冎. Another explanation: bone without flesh.",
+      "sourceTextSha256": "3105815ebee799c1904b6c0a85dd2735803a433831fa4cd225d7f507f1b21b88",
+      "uncertain": true
+    },
+    "shuowen:2723": {
+      "text": "Having much flesh. From 肉 and 卪.",
+      "sourceTextSha256": "74b0000f3bc49e551ac55402dbcc767078daefa8e0344d62283f7d5cd3ef431e",
+      "uncertain": false
+    },
+    "shuowen:2724": {
+      "text": "Fat intestines. From 肉; abbreviated 啓 supplies the sound.",
+      "sourceTextSha256": "7df8e2f24dc02f800f0cf40c5bac8e7042b0bbbe55649bc0e53e06ceb8d4dbf3",
+      "uncertain": false
+    },
+    "shuowen:2725": {
+      "text": "An infant's genitals. From 肉; 夋 supplies the sound. Alternatively from 血.",
+      "sourceTextSha256": "5eed4355ef686ae8a7c77334dc536a4afe678b3201816302c0c45e5131904b4f",
+      "uncertain": false
+    },
+    "shuowen:2726": {
+      "text": "Hollow within. From 肉 and 空; 空 also supplies the sound.",
+      "sourceTextSha256": "cb9dfbc1f66c056dd827f1aa8e64a4acbeffec3c44b5b77226ef9d3badf5925e",
+      "uncertain": false
+    },
+    "shuowen:2727": {
+      "text": "𦚧䏰, an insect name. Hanzhong has 𦚧䏰 county; many such insects occur underground there, hence its name. From 肉; 旬 supplies the sound. Considering its meaning, it should be written 潤蠢.",
+      "sourceTextSha256": "4f79fcc09490a913595ffb8337f310c858db904f3b90b5fc19337d53c241a4b3",
+      "uncertain": false
+    },
+    "shuowen:2728": {
+      "text": "The insect 𦚧䏰. From 肉; 忍 supplies the sound.",
+      "sourceTextSha256": "4ed8671acf4627b83b3ceb2497d64ab68db59909720b10c7ab3a6bcd9995df18",
+      "uncertain": false
+    },
+    "shuowen:2729": {
+      "text": "The strength of flesh. From 力, 肉 and 竹; bamboo is a thing with many sinewy fibers. All graphs in this category contain 筋.",
+      "sourceTextSha256": "c8da45fee17955465707dbba6fe6b8570ded8a04b72b08b7e94f40885bbadb51",
+      "uncertain": false
+    },
+    "shuowen:2730": {
+      "text": "The base of a sinew. From 筋; abbreviated 夗 supplies the sound.",
+      "sourceTextSha256": "c047ed03542252c13ffb6e88961dc5c0b5bc8967e5d93d09f36e6f0e9ce740fb",
+      "uncertain": false
+    },
+    "shuowen:2731": {
+      "text": "The cracking of finger and toe joints. From abbreviated 筋; 勺 supplies the sound.",
+      "sourceTextSha256": "f6958adff8264c752ae9b04ce746fb107ee413701047432a286311a8adf908c1",
+      "uncertain": false
+    },
+    "shuowen:2732": {
+      "text": "A weapon. A pictograph. All graphs in this category contain 刀.",
+      "sourceTextSha256": "e468e3fad4430825358afc0b03045904950e4d602ca016ff66d12303c8f3d8ce",
+      "uncertain": false
+    },
+    "shuowen:2733": {
+      "text": "The grip of a knife. From 刀; 缶 supplies the sound.",
+      "sourceTextSha256": "ac6384619705baad98a0accea44c644ee0d50fcfac974f239d0fb51ddc754d2a",
+      "uncertain": false
+    },
+    "shuowen:2734": {
+      "text": "The edge of a knife or sword. From 刀; 㖾 supplies the sound.",
+      "sourceTextSha256": "b182cad1af5ce5e9f8d07efd15b3ac249a49ed2f4ffb33ffe397c872dac7a42e",
+      "uncertain": false
+    },
+    "shuowen:2735": {
+      "text": "A sheath. Another explanation: to split. From 刀; 肖 supplies the sound.",
+      "sourceTextSha256": "d55528889f492086e1ee83ad751584f972d69bfa53e437af287614056d5356af",
+      "uncertain": false
+    },
+    "shuowen:2736": {
+      "text": "A sickle. From 刀; 句 supplies the sound.",
+      "sourceTextSha256": "543dd997ae47c7a98f308248b00c8b887cba6a568d0b77e311c2af8feced2286",
+      "uncertain": false
+    },
+    "shuowen:2737": {
+      "text": "A large sickle. Another explanation: to rub or grind. From 刀; 豈 supplies the sound.",
+      "sourceTextSha256": "5d08521698549473a25fd13376c6236e000cfdc332e6b4a85d989c31ca21b977",
+      "uncertain": false
+    },
+    "shuowen:2738": {
+      "text": "剞𠜾, a curved knife. From 刀; 奇 supplies the sound.",
+      "sourceTextSha256": "b636267ffb944068a2c282bb95f9f59e1050309e27bbeeed4e4a02a214c7f62f",
+      "uncertain": false
+    },
+    "shuowen:2739": {
+      "text": "The curved knife 剞𠜾. From 刀; 屈 supplies the sound.",
+      "sourceTextSha256": "d45b452b054b790f27af291531da1eb253c70b84421a1ad69a450692bd8cfc59",
+      "uncertain": false
+    },
+    "shuowen:2740": {
+      "text": "Sharp. From 刀. Only after harmony comes benefit, hence from abbreviated 和. The Changes says: “Benefit is the harmony of righteousness.”",
+      "sourceTextSha256": "95ba7dc2d681c719163cc6d3630ae2e6feeb0b5a99beb5a2eb90bb564da6dc57",
+      "uncertain": false
+    },
+    "shuowen:2741": {
+      "text": "Sharp. From 刀; 炎 supplies the sound.",
+      "sourceTextSha256": "a673e4cc8dca37626a2e4addb29a07601dc6191021f20742d85b573f57f1305d",
+      "uncertain": false
+    },
+    "shuowen:2742": {
+      "text": "Beginning. From 刀 and 衣: the beginning of cutting clothing.",
+      "sourceTextSha256": "c35ce3a763f27573a7e411132d9ea2095972d573c12448b1126b1e7959839dc1",
+      "uncertain": false
+    },
+    "shuowen:2743": {
+      "text": "To cut evenly through. From 刀; 歬 supplies the sound.",
+      "sourceTextSha256": "ba805c075401d3038d2c889ee6a3b7c1f131a13513d6f039fe4d756427dec066",
+      "uncertain": false
+    },
+    "shuowen:2744": {
+      "text": "To grade and mark out things. From 刀 and 貝; 貝 was the wealth of antiquity.",
+      "sourceTextSha256": "b05d332949672fde53b2dc7c4dcbbdaab1c7c4ea063c93feeae220752fa0ac87",
+      "uncertain": true
+    },
+    "shuowen:2745": {
+      "text": "Firmly decisive. From 刀; 岡 supplies the sound.",
+      "sourceTextSha256": "cfcb6f52f438909f89aad5b8f61b4e886cfea3de6c4ccd782ef6e49d03f2cb1f",
+      "uncertain": false
+    },
+    "shuowen:2746": {
+      "text": "To cut evenly. From 刀; 耑 supplies the sound.",
+      "sourceTextSha256": "e91802342a7f88f856e56e1f122c563d0845e8ecfe9b641be30f0284e3458a4c",
+      "uncertain": false
+    },
+    "shuowen:2747": {
+      "text": "To cut off. From 刀; 會 supplies the sound.",
+      "sourceTextSha256": "660dadb8444105271a0f03df50da0134ceb4292057cd332e72df17854fe1d3fe",
+      "uncertain": false
+    },
+    "shuowen:2748": {
+      "text": "To cut. From 刀; 七 supplies the sound.",
+      "sourceTextSha256": "c589489c88df1f4c1764d36215c2237dedb63448ded65cb3e8747c627ef3705e",
+      "uncertain": false
+    },
+    "shuowen:2749": {
+      "text": "To cut. From 刀; 寸 supplies the sound.",
+      "sourceTextSha256": "4d1b56cf4a227f2e553059a0a3d4f22358c50f604b91c152760a4a20ec583f29",
+      "uncertain": false
+    },
+    "shuowen:2750": {
+      "text": "To sever. From 刀; 嶭 supplies the sound.",
+      "sourceTextSha256": "c89bbe3f0183cdcf2313e09af0a6db3d2cf062dbb17042468f92df347cb5c895",
+      "uncertain": false
+    },
+    "shuowen:2751": {
+      "text": "To cut and wound. From 刀; 气 supplies the sound. Another explanation: to sever. Also pronounced like 㱯. Another explanation: when a knife is dull, grind it on tile or stone.",
+      "sourceTextSha256": "3174170146a64b084dafc67fc422ed6ce2aeef65b99952c4cc74ef8cbf1979b3",
+      "uncertain": false
+    },
+    "shuowen:2752": {
+      "text": "To wound with a sharp edge. From 刀; 歲 supplies the sound.",
+      "sourceTextSha256": "a97491572f60ea168cfff9bdd4129c370da785182b79b7911a680d2b2e42226e",
+      "uncertain": false
+    },
+    "shuowen:2753": {
+      "text": "To carve. From 刀; 亥 supplies the sound.",
+      "sourceTextSha256": "19171ebcf5ccfca2c703024c764d0a1337cc67c19b26bbd02c2e8639a8211500",
+      "uncertain": false
+    },
+    "shuowen:2754": {
+      "text": "To split. From 刀; 畐 supplies the sound. The Rites of Zhou says: “A sacrifice with split and dismembered victims.”",
+      "sourceTextSha256": "52c824982a785e9322e32c29283f2d7151a57e6ebad00bd10ddc57a9bd017597",
+      "uncertain": false
+    },
+    "shuowen:2755": {
+      "text": "To split. From 刀; 咅 supplies the sound.",
+      "sourceTextSha256": "9faf7639e106185c792b231b6a291c2ac613fd9f4361dac5aae769dd01dfecc2",
+      "uncertain": false
+    },
+    "shuowen:2756": {
+      "text": "To divide or distinguish. From 刀; 辡 supplies the sound.",
+      "sourceTextSha256": "2800b07dce0c37d6d7f0eaa1d5241dc20e2a5c5fb3914df59f7fa20355213820",
+      "uncertain": false
+    },
+    "shuowen:2757": {
+      "text": "To divide. From 刀; 半 supplies the sound.",
+      "sourceTextSha256": "e2513d0c9a692c665da8a5a325a22bf439f197ea6e69e2cfc49be7d91fdaceac",
+      "uncertain": false
+    },
+    "shuowen:2758": {
+      "text": "To split. From 刀; 度 supplies the sound.",
+      "sourceTextSha256": "ab365e71ffd8d5fd5599bfa504b5ba81b16add6153295ae64642b27cba481812",
+      "uncertain": false
+    },
+    "shuowen:2759": {
+      "text": "To split open. From 刀; 夸 supplies the sound.",
+      "sourceTextSha256": "1d3e83144591da2b49934a0f70ba0c69bdde740b8d8e09acf896e1a9f3b99e56",
+      "uncertain": false
+    },
+    "shuowen:2760": {
+      "text": "To divide and separate. From 刀; 𡿪 supplies the sound.",
+      "sourceTextSha256": "7227fde205a05374bc0b5e24637939b325ea108043cc39d5840debf6d71dc664",
+      "uncertain": false
+    },
+    "shuowen:2761": {
+      "text": "To cut away. From 刀; 干 supplies the sound.",
+      "sourceTextSha256": "42aedfbbbba78dd4c459770f8385430f6cef9949d4c6a034f282b37a5451736f",
+      "uncertain": false
+    },
+    "shuowen:2762": {
+      "text": "To cut away. From 刀; 叕 supplies the sound.",
+      "sourceTextSha256": "9ca7227e8785314c7153b3360aae8fa867c86a28cb543eb5026a383c3a995d20",
+      "uncertain": false
+    },
+    "shuowen:2763": {
+      "text": "To cut away. From 刀 and 冊; 冊 is a written book.",
+      "sourceTextSha256": "059d689ceeac4c174787ebd48162977206d7ba3a46700f82391acc31a3c01cb9",
+      "uncertain": false
+    },
+    "shuowen:2764": {
+      "text": "To break or split. From 刀; 辟 supplies the sound.",
+      "sourceTextSha256": "03ca33ba4ca89370d3e56c296ede5d8209b200e703fa193fa8d2b162f05e8559",
+      "uncertain": false
+    },
+    "shuowen:2765": {
+      "text": "To split or strip. From 刀 and 录; 录 means to carve and cut, and also supplies the sound.",
+      "sourceTextSha256": "f80bdc624078c972bccca632a2fcfb18f6f630bb07cb752827a90138f800fa0b",
+      "uncertain": false
+    },
+    "shuowen:2766": {
+      "text": "To strip or cut away. From 刀; 害 supplies the sound.",
+      "sourceTextSha256": "088101b105689e8c07b5b484bda1967ed0e17887c98096be457223bb7cc6ca40",
+      "uncertain": false
+    },
+    "shuowen:2767": {
+      "text": "To strip; to incise. From 刀; 𠩺 supplies the sound.",
+      "sourceTextSha256": "4f11392ab5dd2f4d946db23605d43ba620bf6d3ac11f3e13f146fcf14273d2aa",
+      "uncertain": false
+    },
+    "shuowen:2768": {
+      "text": "An awl-knife is called 劃. From 刀 and 畫; 畫 also supplies the sound.",
+      "sourceTextSha256": "bb1fb9642580e80d3ab0367d6a913827f1e772e5e9b1acb74f386f239ed296e7",
+      "uncertain": true
+    },
+    "shuowen:2769": {
+      "text": "To pick out and take. From 刀; 肙 supplies the sound. Another explanation: a hollow, 窐.",
+      "sourceTextSha256": "7d89eb65bad46765d122897d3cfe64a4c2e00c610978180e6bec55d6676572f9",
+      "uncertain": true
+    },
+    "shuowen:2770": {
+      "text": "To scrape away diseased flesh from a sore. From 刀; 矞 supplies the sound. The Rites of Zhou says: “The preparations for scraping and destroying diseased tissue.”",
+      "sourceTextSha256": "30f6433854ed2fd92454d7bc029349d38ce0d61e2a8d0e96ae350eabd6ebd533",
+      "uncertain": false
+    },
+    "shuowen:2771": {
+      "text": "To make even. From 刀 and 齊; 齊 also supplies the sound.",
+      "sourceTextSha256": "0c105a0bb21a8356a8fa820d67d80e3d0d7687848590752dcf985450fd51e304",
+      "uncertain": false
+    },
+    "shuowen:2772": {
+      "text": "To scrape. From 刀; abbreviated 㕞 supplies the sound. The Rites says: “A cloth wiping towel.”",
+      "sourceTextSha256": "4583d10377f76e411a7dfe0b62d342f384f009e2d00cb47d8b7e0156c5783814",
+      "uncertain": false
+    },
+    "shuowen:2773": {
+      "text": "To scrape or gather with the hand. From 刀; 𠯑 supplies the sound. [The expression 掊把 is uncertain.]",
+      "sourceTextSha256": "99eb222054ca42693cadc7c6e0a6355d81272ed53e39570c6ac84cd3dcf04f7b",
+      "uncertain": true
+    },
+    "shuowen:2774": {
+      "text": "To pierce with a stone needle. From 刀; 𤐫 supplies the sound. Another explanation: 剽 means to rob people.",
+      "sourceTextSha256": "4f146cd3ac6c497f98cc97824d66efc50a25d839de00059cbd7acdf2aa4e703b",
+      "uncertain": false
+    },
+    "shuowen:2775": {
+      "text": "To stab. From 刀; 圭 supplies the sound. The Changes says: “The man stabs a sheep.”",
+      "sourceTextSha256": "3d5bcc9065725300ea7daaae56b46a2368dedd52943dfc5d699a5e36ff9e84af",
+      "uncertain": false
+    },
+    "shuowen:2776": {
+      "text": "To break and injure. From 刀; 坐 supplies the sound.",
+      "sourceTextSha256": "fd016741b756f961d1bc9f3c11f40fa0e609d83654418c19b0dfcdd9435f1e22",
+      "uncertain": false
+    },
+    "shuowen:2777": {
+      "text": "To cut off. From 刀; 喿 supplies the sound. The Book of Zhou says: “Heaven thereby cuts off their mandate.”",
+      "sourceTextSha256": "fae78342f8554e96cd278ca58c319f45ae4e6f86051dfaf3affa26a18d285346",
+      "uncertain": false
+    },
+    "shuowen:2778": {
+      "text": "To cut off. From 刀; 月 supplies the sound.",
+      "sourceTextSha256": "f7738a9bd6a92fff92ff5b1315adfda5fdf2fa5122468221e1c0325a2df86e75",
+      "uncertain": false
+    },
+    "shuowen:2779": {
+      "text": "To strike. From 刀; 弗 supplies the sound.",
+      "sourceTextSha256": "206994205392c33b7d666c91f367ffac8f0fefce1fa49990e6c15267336e854b",
+      "uncertain": false
+    },
+    "shuowen:2780": {
+      "text": "To injure. From 刀; 桼 supplies the sound.",
+      "sourceTextSha256": "fd251849f928e5f174aae0043eae814ee0e05e238ada59d31c80f80a3bfbe174",
+      "uncertain": false
+    },
+    "shuowen:2781": {
+      "text": "To sever. From 刀; 毚 supplies the sound. Another explanation: to cut or shave, 剽 and 釗.",
+      "sourceTextSha256": "0a97b9a79c752dc67a341e1ee792fd15bb7c43d3b889990aefd9d84e3aeaa87b",
+      "uncertain": true
+    },
+    "shuowen:2782": {
+      "text": "To cut. From 刀; 元 supplies the sound. Another explanation: to make even.",
+      "sourceTextSha256": "bc7574e1fefe6303b2a5f7e95ddd9e383ad63c3a294aa0b5cd76f774023f7489",
+      "uncertain": false
+    },
+    "shuowen:2783": {
+      "text": "To cut or shave. From 刀 and 金. The personal name of King Kang of Zhou.",
+      "sourceTextSha256": "9556fb426919f431d3422225f75dcddf45897cfaa7d70d0217e130e8d2cb2b76",
+      "uncertain": false
+    },
+    "shuowen:2784": {
+      "text": "To cut to shape. From 刀 and 未; 未 means things have matured and acquired flavor and can be cut. Another explanation: to stop.",
+      "sourceTextSha256": "3ac934316fa27bc88d2a7dd13644f65d33440b6ff91a0a8ec986978cdf314caa",
+      "uncertain": false
+    },
+    "shuowen:2785": {
+      "text": "A chip or flaw. From 刀; 占 supplies the sound. The Odes says: “A flaw in a white jade tablet.”",
+      "sourceTextSha256": "40b7c7a739ee48f585c2b1793586701d9573916a2b33ce53bba0600b7b78a70f",
+      "uncertain": false
+    },
+    "shuowen:2786": {
+      "text": "A lesser offense: without yet harming anyone with the knife, merely holding it and reviling someone still merits punishment. From 刀 and 詈.",
+      "sourceTextSha256": "aa67edde9e7fa44f7d7dd0169f91bfa0aa1778da5c4ef47aaf8f9d9bb06f4b73",
+      "uncertain": false
+    },
+    "shuowen:2787": {
+      "text": "To cut off an ear. From 刀 and 耳.",
+      "sourceTextSha256": "e3bbb1d30f16224b43f5ef30c39b778a3061524a63321dbd4a6b35f936fe38ed",
+      "uncertain": false
+    },
+    "shuowen:2788": {
+      "text": "The punishment of cutting the nose. From 刀; 臬 supplies the sound. The Changes says: “Heaven will also cut off his nose.”",
+      "sourceTextSha256": "a6e9139cdb83cbd8097def9c045eea043498aea9391283ddcc6673f7b92cadd0",
+      "uncertain": false
+    },
+    "shuowen:2789": {
+      "text": "To cut the throat. From 刀; 幵 supplies the sound.",
+      "sourceTextSha256": "946b39f743d4a7c91cca120a99ea639aa52a93666e5b0565a931c7889fd6c109",
+      "uncertain": false
+    },
+    "shuowen:2790": {
+      "text": "To cut the throat. From 刀; 坙 supplies the sound.",
+      "sourceTextSha256": "64f82e2f458798f91da934a1159726d96bd305da7ef33e7d6fa2844f65c56260",
+      "uncertain": false
+    },
+    "shuowen:2791": {
+      "text": "To reduce. From 刀; 尊 supplies the sound.",
+      "sourceTextSha256": "5cbe3b23aca44bba10df56b07295dc9b4efef6aea1267d47dfd50e58cce34312",
+      "uncertain": false
+    },
+    "shuowen:2792": {
+      "text": "The Chu term for preparing fish. From 刀 and 魚. Pronounced like 鍥.",
+      "sourceTextSha256": "3981628cfc39bd604f34e23fda3a92097344a714ec001b4a92bc735909f21895",
+      "uncertain": false
+    },
+    "shuowen:2793": {
+      "text": "A contract. From 刀; 𢍏 supplies the sound. A document of divided contract tallies has notches cut at its side with a knife, hence called 契券.",
+      "sourceTextSha256": "1c3f853b28ce1037eb5e8dbe5e3b7e3e64d617bb2c3e3b138c0003f20c5a8924",
+      "uncertain": false
+    },
+    "shuowen:2794": {
+      "text": "A ruler killing a grandee is called 刺; 刺 means to wound directly. From 刀 and 朿; 朿 also supplies the sound.",
+      "sourceTextSha256": "e7247c9b74175aec32b2883988f07b2a6c921b97beaf8d48c587a6f11166d571",
+      "uncertain": false
+    },
+    "shuowen:2795": {
+      "text": "To separate flesh from bone. From 刀; 易 supplies the sound.",
+      "sourceTextSha256": "306c443e650df4dd4f7c95944aff8025d2897b3e728457b6e30c8cd1a213cc72",
+      "uncertain": false
+    },
+    "shuowen:2796": {
+      "text": "To cut the throat. From 刀; 勿 supplies the sound.",
+      "sourceTextSha256": "b1e8c6ab24f1aa6591618db5d5b636168da79d7906bb2cbf58a7c3bee1b7546e",
+      "uncertain": false
+    },
+    "shuowen:2797": {
+      "text": "To cut or scoop away. From 刀; 宛 supplies the sound.",
+      "sourceTextSha256": "bd6a3bec2b654cd130758758aa57ecf566694624cf467ffd813ff4dd5cc6eda8",
+      "uncertain": false
+    },
+    "shuowen:2798": {
+      "text": "Especially intense or severe. Its formation from 刀 is unexplained. 豦 supplies the sound.",
+      "sourceTextSha256": "53f24649a70b51601978e98702dca74751215a970bc2175dde5394a8b52ef19a",
+      "uncertain": false
+    },
+    "shuowen:2799": {
+      "text": "A pillar. Its formation from 刀 is unexplained. Abbreviated 殺 supplies the sound.",
+      "sourceTextSha256": "153b547a04afa32287b615ffc8ae563c58a9aafafca986843025bf362cb5a3bf",
+      "uncertain": true
+    },
+    "shuowen:2800": {
+      "text": "The hard edge of a knife. It depicts a knife with an edge. All graphs in this category contain 刃.",
+      "sourceTextSha256": "128d9982d15c14035458a39f4794210505c45a6180b778b020cd74753a98e67c",
+      "uncertain": false
+    }
+  }
+}

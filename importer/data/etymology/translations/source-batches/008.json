@@ -1,0 +1,629 @@
+{
+  "format": "mandarin-shuowen-translation-source-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology."
+  },
+  "batch": "008",
+  "records": [
+    {
+      "id": "shuowen:701",
+      "headword": "莫",
+      "text": "日且冥也。从日在茻中。",
+      "sourceTextSha256": "d6b9ef83c6fa7a308484d7974e67d1a98f463b4ba1bcebd04a8354bd398e12cc"
+    },
+    {
+      "id": "shuowen:702",
+      "headword": "莽",
+      "text": "南昌謂犬善逐菟艸中爲莽。从犬从茻，茻亦聲。",
+      "sourceTextSha256": "e621cd7b5a929d626815ccf1900e84e5f78906629c40704f3378dcc12aaaff98"
+    },
+    {
+      "id": "shuowen:703",
+      "headword": "葬",
+      "text": "藏也。从死在茻中；一其中，所以薦之。《易》曰：“古之葬者，厚衣之以薪。”",
+      "sourceTextSha256": "14054f9f09540266a1a02ee8e569ff95fd85f7a40b7f94b4935c294506c3f607"
+    },
+    {
+      "id": "shuowen:704",
+      "headword": "小",
+      "text": "物之微也。从八，丨見而分之。凡小之屬皆从小。",
+      "sourceTextSha256": "e84b77d18a797aaab330e3aae8e3e6a49cbe324d9a5215e98b4187c2fcad874b"
+    },
+    {
+      "id": "shuowen:705",
+      "headword": "少",
+      "text": "不多也。从小丿聲。",
+      "sourceTextSha256": "07bf2a3acb7a05ffb89887a10080011e724379b49a6dea703d03368d3d95bb8e"
+    },
+    {
+      "id": "shuowen:706",
+      "headword": "尐",
+      "text": "少也。从小乀聲。讀若輟。",
+      "sourceTextSha256": "b474423293db7e5554d9f2711e1de884d6e041d72bc5160daae12729b729767e"
+    },
+    {
+      "id": "shuowen:707",
+      "headword": "八",
+      "text": "別也。象分別相背之形。凡八之屬皆从八。",
+      "sourceTextSha256": "48dee0a53489534d99fc1d9e68517f01204c129012b78850c61a1bb31b3c286b"
+    },
+    {
+      "id": "shuowen:708",
+      "headword": "分",
+      "text": "別也。从八从刀，刀以分別物也。",
+      "sourceTextSha256": "88ff2f0caf8b4e714343e2ea43fe72ef240770ff18219f32b58b216e95ce56e6"
+    },
+    {
+      "id": "shuowen:709",
+      "headword": "尒",
+      "text": "詞之必然也。从入、|、八。八象气之分散。",
+      "sourceTextSha256": "cdbba9ae630a91fc95a79aa8a259c900909f093f9cafb8dce1e95fa19282a489"
+    },
+    {
+      "id": "shuowen:710",
+      "headword": "曾",
+      "text": "詞之舒也。从八从曰，𡆧聲。",
+      "sourceTextSha256": "44bf6efdc9d1aac9c5f1a6fd6f4197dcf08e1d6e35c5855cd222edf6d20ccb62"
+    },
+    {
+      "id": "shuowen:711",
+      "headword": "尚",
+      "text": "曾也。庶幾也。从八向聲。",
+      "sourceTextSha256": "7c7c16d44140ed5523eb1ec56dea9924ea267b0438fcb2c68aa29a82efcae305"
+    },
+    {
+      "id": "shuowen:712",
+      "headword": "㒸",
+      "text": "从意也。从八豕聲。",
+      "sourceTextSha256": "966b9a7a32fff6366eca7e9bcfd171ae6ee8fc433dee7c4f6b7c1cf4187e6183"
+    },
+    {
+      "id": "shuowen:713",
+      "headword": "詹",
+      "text": "多言也。从言从八从厃。",
+      "sourceTextSha256": "d322bd2248aacc658b8cf9930bc46635e3487a30a050a382eafd3f0712535649"
+    },
+    {
+      "id": "shuowen:714",
+      "headword": "介",
+      "text": "畫也。从八从人。人各有介。",
+      "sourceTextSha256": "eefa6522232a472c89f26e79b4bfe392d686894ffcebad99470d9face078d8e4"
+    },
+    {
+      "id": "shuowen:715",
+      "headword": "𠔁",
+      "text": "分也。从重八。八，別也。亦聲。《孝經說》曰：“故上下有別。”",
+      "sourceTextSha256": "0d3ecf060bf38a355534170f875f729602dc056d44ee4132e22dbdb2fe5c3090"
+    },
+    {
+      "id": "shuowen:716",
+      "headword": "公",
+      "text": "平分也。从八从厶。(音司。)八猶背也。韓非曰：背厶爲公。",
+      "sourceTextSha256": "d30e2952a967761e5af9cc609dc38292f725c58b8d45fad9ef364548811272d2"
+    },
+    {
+      "id": "shuowen:717",
+      "headword": "必",
+      "text": "分極也。从八、弋，弋亦聲。",
+      "sourceTextSha256": "8be701cf2c215e1a36330ef160a2e4e3940173b244e399b73d734c2869ce0e53"
+    },
+    {
+      "id": "shuowen:718",
+      "headword": "余",
+      "text": "語之舒也。从八，舍省聲。",
+      "sourceTextSha256": "b3fc41a4ce8f3f250f0dbfacb910f0005f038c57d0d8de50ddb735f8db261b7f"
+    },
+    {
+      "id": "shuowen:719",
+      "headword": "釆",
+      "text": "辨別也。象獸指爪分別也。凡釆之屬皆从釆。讀若辨。",
+      "sourceTextSha256": "8274297b9ac520d4b622d95408d36da971d610bf2f1b205f533ce99456ca410e"
+    },
+    {
+      "id": "shuowen:720",
+      "headword": "番",
+      "text": "獸足謂之番。从釆；田，象其掌。",
+      "sourceTextSha256": "8af2f29451ef6012bc834318f84ebdd1104cd153f006e80bc5b42c72606c3b45"
+    },
+    {
+      "id": "shuowen:721",
+      "headword": "宷",
+      "text": "悉也。知宷諦也。从宀从釆。徐锴曰：“宀，覆也。釆，别也。包覆而深别之。宷，悉也。”",
+      "sourceTextSha256": "0dd2270002f1b6cc79cb003fa340ff633ed438cf080a48d79cddfd7d04e9cecb"
+    },
+    {
+      "id": "shuowen:722",
+      "headword": "悉",
+      "text": "詳盡也。从心从釆。",
+      "sourceTextSha256": "6d70a37dd8faf2d1b81e2584919f5972fcc07fd3a76516ad37a700dcaa0e8fff"
+    },
+    {
+      "id": "shuowen:723",
+      "headword": "釋",
+      "text": "解也。从釆；釆，取其分別物也。从睪聲。",
+      "sourceTextSha256": "e492735bdb02e717d9475d40159488ad72d2f77c6ae5ba7247f5047c702f9da1"
+    },
+    {
+      "id": "shuowen:724",
+      "headword": "半",
+      "text": "物中分也。从八从牛。牛爲物大，可以分也。凡半之屬皆从半。",
+      "sourceTextSha256": "4ba9ba4ae7ed99a4f85c69bcbd872882eaec49ffd5923726da49881f2fa43628"
+    },
+    {
+      "id": "shuowen:725",
+      "headword": "胖",
+      "text": "半體肉也。一曰廣肉。从半从肉，半亦聲。",
+      "sourceTextSha256": "869497f2f3cc0242a429e5b14ce2238e21cce728ed09f75cac92b3c8d77b6d53"
+    },
+    {
+      "id": "shuowen:726",
+      "headword": "叛",
+      "text": "半也。从半反聲。",
+      "sourceTextSha256": "356213f47da214d0af7dab7e0c72b9137f6500f879089ed45e9149950387f832"
+    },
+    {
+      "id": "shuowen:727",
+      "headword": "牛",
+      "text": "大牲也。牛，件也；件，事理也。象角頭三、封㞑之形。凡牛之屬皆从牛。",
+      "sourceTextSha256": "efd7615d46039a4cc19fc601b2c60a3a784d6842242ae94fe260dd46da4e13bc"
+    },
+    {
+      "id": "shuowen:728",
+      "headword": "牡",
+      "text": "畜父也。从牛土聲。",
+      "sourceTextSha256": "a35c1e07d3cf0560416465d3a6a410a132665d294b057d96bc6a6e9d18d387c3"
+    },
+    {
+      "id": "shuowen:729",
+      "headword": "犅",
+      "text": "特牛也。从牛岡聲。",
+      "sourceTextSha256": "9ec3a70470aab1db55966a588527746ddedebd8276e968159ea36e11aaea8f94"
+    },
+    {
+      "id": "shuowen:730",
+      "headword": "特",
+      "text": "朴特，牛父也。从牛寺聲。",
+      "sourceTextSha256": "aa96aaf0e35ec38c1105751b869e73911d247ba72ab2b84c0cd5704804d87a26"
+    },
+    {
+      "id": "shuowen:731",
+      "headword": "牝",
+      "text": "畜母也。从牛匕聲。《易》曰：“畜牝牛，吉。”",
+      "sourceTextSha256": "1b96fb2116b1548996469fa4b7ed39fcdce888da37e2db143463a1360e123385"
+    },
+    {
+      "id": "shuowen:732",
+      "headword": "犢",
+      "text": "牛子也。从牛，瀆省聲。",
+      "sourceTextSha256": "5fba0c16b011f044670f63b54694d2120d355783100d62f40c728c0e3c882928"
+    },
+    {
+      "id": "shuowen:733",
+      "headword": "㸬",
+      "text": "二歲牛。从牛巿聲。",
+      "sourceTextSha256": "ce80b8f583ad7f7b93a9afb9c2c780800c455633cd0fcb083605e9037aa12170"
+    },
+    {
+      "id": "shuowen:734",
+      "headword": "犙",
+      "text": "三歲牛。从牛參聲。",
+      "sourceTextSha256": "feac765ff0c46a374d6143d9d6c652f129d1050dbaf7c1a03ab01d8fd1fcdd77"
+    },
+    {
+      "id": "shuowen:735",
+      "headword": "牭",
+      "text": "四歲牛。从牛从四，四亦聲。",
+      "sourceTextSha256": "e2367f821e417ace526e30200250a772f13307957d1d544101f28f3b44f9aac6"
+    },
+    {
+      "id": "shuowen:736",
+      "headword": "犗",
+      "text": "騬牛也。从牛害聲。",
+      "sourceTextSha256": "3318cf7e7189772a32e0aa6e4d8766b94240c0289f39ddd3602d050d857d6de3"
+    },
+    {
+      "id": "shuowen:737",
+      "headword": "牻",
+      "text": "白黑雜毛牛。从牛尨聲。",
+      "sourceTextSha256": "a5d07d5e4187b58ddb1f9252e6922b204854aa0ee101fe0fcaeb63b8079e3b5c"
+    },
+    {
+      "id": "shuowen:738",
+      "headword": "㹁",
+      "text": "牻牛也。从牛京聲。《春秋傳》曰：“牻㹁。”",
+      "sourceTextSha256": "24034f3ae791e0f413777b68d5ae9d183c30c92b31de3d44243e41d9ba68f447"
+    },
+    {
+      "id": "shuowen:739",
+      "headword": "犡",
+      "text": "牛白𦟝也。从牛厲聲。",
+      "sourceTextSha256": "a3c384bd114b32b603fdc7e0be445e3971625f947152bf98d7f42b9f0b11820d"
+    },
+    {
+      "id": "shuowen:740",
+      "headword": "𤙛",
+      "text": "黃牛虎文。从牛余聲。讀若塗。",
+      "sourceTextSha256": "a26fcd2525d50a0316050347795533dcd1132444d2b27659ea9f9a6e9244ca46"
+    },
+    {
+      "id": "shuowen:741",
+      "headword": "犖",
+      "text": "駁牛也。从牛，勞省聲。",
+      "sourceTextSha256": "0ef0e54e08ddf4ddc049cdab0ad25da3fcc641e5678f2df2aedc64be968ea87a"
+    },
+    {
+      "id": "shuowen:742",
+      "headword": "㸹",
+      "text": "牛白𦟝也。从牛寽聲。",
+      "sourceTextSha256": "8b944a99176fc82462933a65d014577d3e1b349a8b1b153d708aa02e3f52d864"
+    },
+    {
+      "id": "shuowen:743",
+      "headword": "𤘾",
+      "text": "牛駁如星。从牛平聲。",
+      "sourceTextSha256": "ac3d9fed47076b399b440ebb5fec421db4d39a390ec8416394bd3f64142f4254"
+    },
+    {
+      "id": "shuowen:744",
+      "headword": "犥",
+      "text": "牛黃白色。从牛麃聲。",
+      "sourceTextSha256": "99076efc8ad5f053d5ea039f8038326bca396ddf992e8e091f51d0cbc65c930d"
+    },
+    {
+      "id": "shuowen:745",
+      "headword": "犉",
+      "text": "黃牛黑脣也。从牛𦎫聲。《詩》曰：“九十其犉。”",
+      "sourceTextSha256": "8e010de086f0068bd5a6bd11fda83006cd941dcedb6083d31fe363cd42a8d6c1"
+    },
+    {
+      "id": "shuowen:746",
+      "headword": "㹊",
+      "text": "白牛也。从牛隺聲。",
+      "sourceTextSha256": "fb790f87f606e0f3ca3cc163dd1ab9463f9073eb5a266de152895f96976ad2d2"
+    },
+    {
+      "id": "shuowen:747",
+      "headword": "㹔",
+      "text": "牛長𦟝也。从牛畺聲。",
+      "sourceTextSha256": "5cd8e1443d06e05764ec58b764233e56aefc9585c1d7b217ed1579187e26bd02"
+    },
+    {
+      "id": "shuowen:748",
+      "headword": "𤘸",
+      "text": "牛徐行也。从牛𠬢聲。讀若滔。",
+      "sourceTextSha256": "21e37d3f22f2b35a88070d9a064f3137fd6dbdb98e92a23c5546c61c8c5211ba"
+    },
+    {
+      "id": "shuowen:749",
+      "headword": "犨",
+      "text": "牛息聲。从牛雔聲。一曰牛名。",
+      "sourceTextSha256": "5bd6ba5d7e322420d1afeced3c9a6c92fcd316c6ab4969b66955a15a885a6cc1"
+    },
+    {
+      "id": "shuowen:750",
+      "headword": "牟",
+      "text": "牛鳴也。从牛，象其聲气从口出。",
+      "sourceTextSha256": "2b005f38f447beb505ef6dc8e00f44572f64a2489c7ac1a2f62a1a095871557d"
+    },
+    {
+      "id": "shuowen:751",
+      "headword": "㹌",
+      "text": "畜牷也。从牛産聲。",
+      "sourceTextSha256": "fdd6fcaac28d603aa51a2437ad6abb7dfe01c2b1b862c98d1f709e101f19bda6"
+    },
+    {
+      "id": "shuowen:752",
+      "headword": "牲",
+      "text": "牛完全。从牛生聲。",
+      "sourceTextSha256": "83909b9f093a793ff060099843fed70bd38ce5c7d4e515fc9785fb95aa86597c"
+    },
+    {
+      "id": "shuowen:753",
+      "headword": "牷",
+      "text": "牛純色。从牛全聲。",
+      "sourceTextSha256": "c310868c1bd799c2e2f6803b12a700ccc847cbb6060494f896cba8b2ff319651"
+    },
+    {
+      "id": "shuowen:754",
+      "headword": "牽",
+      "text": "引前也。从牛，象引牛之縻也。玄聲。",
+      "sourceTextSha256": "0bcdec2d04732d0ff814f12b40ae007bf411722571fef468b65f1cc4a186b9db"
+    },
+    {
+      "id": "shuowen:755",
+      "headword": "牿",
+      "text": "牛馬牢也。从牛告聲。《周書》曰：“今惟牿牛馬。”",
+      "sourceTextSha256": "aa5dd5870913ffd33e4e8abd40256c4063d947574785a2ee5ebd04eae40fb8bc"
+    },
+    {
+      "id": "shuowen:756",
+      "headword": "牢",
+      "text": "閑，養牛馬圈也。从牛，冬省。取其四周帀也。",
+      "sourceTextSha256": "3a7498aefdf80ed625e0ca0699a5af9d155c0fdebdc6499119d4c71f0bbd1fa6"
+    },
+    {
+      "id": "shuowen:757",
+      "headword": "犓",
+      "text": "以芻莖養牛也。从牛、芻，芻亦聲。《春秋國語》曰：“犓豢幾何。”",
+      "sourceTextSha256": "cd0ee49bd0c07e68fb1abab418da8d8680072068f519ee1d0b87989f54d5d482"
+    },
+    {
+      "id": "shuowen:758",
+      "headword": "㹛",
+      "text": "牛柔謹也。从牛夒聲。",
+      "sourceTextSha256": "fb5ecf806f93b6b2e0e1ef8a2bface71b13762c84767ce75226ce8f0d5e42215"
+    },
+    {
+      "id": "shuowen:759",
+      "headword": "𤛟",
+      "text": "《易》曰：“𤛟牛乘馬。”从牛𤰈聲。",
+      "sourceTextSha256": "126c9a0b012692b8b231b5ed66d306e4846739d0554a88d3c3f76e6492a4a677"
+    },
+    {
+      "id": "shuowen:760",
+      "headword": "𤛿",
+      "text": "耕也。从牛黎聲。",
+      "sourceTextSha256": "275c18640b2c17691eed0b14de96ecb47eaa9d6f8e18d5dbba317be56cdd7a0e"
+    },
+    {
+      "id": "shuowen:761",
+      "headword": "㹃",
+      "text": "兩壁耕也。从牛非聲。一曰覆耕穜也。讀若匪。",
+      "sourceTextSha256": "0ac681660a204969a4158f2cce08901717bcd7ae95a3a633947f6a9c6b7b0b67"
+    },
+    {
+      "id": "shuowen:762",
+      "headword": "㹗",
+      "text": "牛羊無子也。从牛𠷎聲。讀若糗糧之糗。",
+      "sourceTextSha256": "f64c56d9800735b4b8709420a3fd03badf7e7248dc39b4cd67093abaeb6c389c"
+    },
+    {
+      "id": "shuowen:763",
+      "headword": "牴",
+      "text": "觸也。从牛氐聲。",
+      "sourceTextSha256": "50bb9fdf65cd669a560e4cf51ca0c480afb2cd8968a0207fa3a6c6c8600141f1"
+    },
+    {
+      "id": "shuowen:764",
+      "headword": "𤜂",
+      "text": "牛踶𤜂也。从牛衞聲。",
+      "sourceTextSha256": "1980c3e483272ff89f128f57c3e3fa7665672aa0aec877a1bc51bbbb759b3db0"
+    },
+    {
+      "id": "shuowen:765",
+      "headword": "㹂",
+      "text": "牛很不從引也。从牛从臤，臤亦聲。一曰大皃。讀若賢。",
+      "sourceTextSha256": "36d0033f5bb2f1d5f7e7d38fc0282f2229ff265d759645a191aeb71d05c5e8ef"
+    },
+    {
+      "id": "shuowen:766",
+      "headword": "牼",
+      "text": "牛厀下骨也。从牛巠聲。《春秋傳》曰：“宋司馬牼字牛。”",
+      "sourceTextSha256": "186737072dd21420bb0b72a5b774b8eb911149975ad2f475b8053d2fcba0cd54"
+    },
+    {
+      "id": "shuowen:767",
+      "headword": "𤘡",
+      "text": "牛舌病也。从牛今聲。",
+      "sourceTextSha256": "e06d197025c469e41b5d5ef69649f895a7650d8e200b6da0a416b1e29101a15b"
+    },
+    {
+      "id": "shuowen:768",
+      "headword": "犀",
+      "text": "南徼外牛。一角在鼻，一角在頂，似豕。从牛㞑聲。",
+      "sourceTextSha256": "8062e3b838eadd2f8702b12eab50ec5b0bab45a4febfa68bb2029c6f3d78aa8b"
+    },
+    {
+      "id": "shuowen:769",
+      "headword": "牣",
+      "text": "牣，滿也。从牛刃聲。《詩》曰：“於牣魚躍。”",
+      "sourceTextSha256": "3c6553ac9ba6b43433ce56682c605b46187f040d1124420cbd99c04993be32a6"
+    },
+    {
+      "id": "shuowen:770",
+      "headword": "物",
+      "text": "萬物也。牛爲大物；天地之𢿙，起於牽牛，故从牛。勿聲。",
+      "sourceTextSha256": "2806b558f83e867fa982153df5ec6880e2164cb7e34d290495d1c091f639858e"
+    },
+    {
+      "id": "shuowen:771",
+      "headword": "犧",
+      "text": "宗廟之牲也。从牛羲聲。賈侍中說：此非古字。",
+      "sourceTextSha256": "227ed480fef94a47b1ed712dbe4d7e744b682939fa5819371788c78afa6c8f7d"
+    },
+    {
+      "id": "shuowen:772",
+      "headword": "犍",
+      "text": "犗牛也。从牛建聲。亦郡名。",
+      "sourceTextSha256": "e522d1ac503bda7eec15dff9f4ad9df31e40e910b92b06a1232e103c2079429e"
+    },
+    {
+      "id": "shuowen:773",
+      "headword": "犝",
+      "text": "無角牛也。从牛童聲。古通用僮。",
+      "sourceTextSha256": "5926ee36c39b201a36eb8f59c3551db5b5deacd4d075f2caea2a71eec0e6871b"
+    },
+    {
+      "id": "shuowen:774",
+      "headword": "犛",
+      "text": "西南夷長髦牛也。从牛𠩺聲。凡犛之屬皆从犛。",
+      "sourceTextSha256": "f7455550d0d74415b1ba04105ff2fe227e90ed5eaa129b9af1f8c73b35f97f61"
+    },
+    {
+      "id": "shuowen:775",
+      "headword": "氂",
+      "text": "犛牛尾也。从犛省，从毛。",
+      "sourceTextSha256": "e4d47d92c1246d9848be187c334c76c0f7e4984644ee52b1b883344c8e02029b"
+    },
+    {
+      "id": "shuowen:776",
+      "headword": "斄",
+      "text": "彊曲毛，可以箸起衣。从犛省，來聲。",
+      "sourceTextSha256": "75ce8805a09416a102e66ea98e56a80e2c5a295cae29fab1f66761936c4afdd1"
+    },
+    {
+      "id": "shuowen:777",
+      "headword": "告",
+      "text": "牛觸人，角箸橫木，所以告人也。从口从牛。《易》曰：“僮牛之告。”凡告之屬皆从告。",
+      "sourceTextSha256": "a7c8a85dcba15825d51644f47133daf527f21f82a6b9693dcb16294477ea325f"
+    },
+    {
+      "id": "shuowen:778",
+      "headword": "嚳",
+      "text": "急告之甚也。从告，學省聲。",
+      "sourceTextSha256": "a5569fd2058bbb3450d52cdc3cb615754cce19263ba189a1910bd57843b7adeb"
+    },
+    {
+      "id": "shuowen:779",
+      "headword": "口",
+      "text": "人所以言食也。象形。凡口之屬皆从口。",
+      "sourceTextSha256": "000e224a1b688e495db86e7cb57aeaebbea5f31c47e12a287799620dd556f53b"
+    },
+    {
+      "id": "shuowen:780",
+      "headword": "噭",
+      "text": "吼也。从口敫聲。一曰噭，呼也。",
+      "sourceTextSha256": "e27e530ea507bd857307b3d99cd3f1e854d2126023cd121189f97df611ad4eec"
+    },
+    {
+      "id": "shuowen:781",
+      "headword": "噣",
+      "text": "喙也。从口蜀聲。",
+      "sourceTextSha256": "90a34aad18ea199d84251d4d8ea0ed5652999cd2d799ab896ab98ccb501371ec"
+    },
+    {
+      "id": "shuowen:782",
+      "headword": "喙",
+      "text": "口也。从口彖聲。",
+      "sourceTextSha256": "77b07d0996b5bc9ac7dfe18cdb3a34ded11212deb4550575ea30cc985ed42d07"
+    },
+    {
+      "id": "shuowen:783",
+      "headword": "吻",
+      "text": "口邊也。从口勿聲。",
+      "sourceTextSha256": "1532c51820909f2a3b85e603cad00af02aa72c47c8a51f080e2b4feaa0a4a4d8"
+    },
+    {
+      "id": "shuowen:784",
+      "headword": "嚨",
+      "text": "喉也。从口龍聲。",
+      "sourceTextSha256": "4b349f10d035ba029c76fc7bb02a66f768275f60e0e838130d1a16ada203373f"
+    },
+    {
+      "id": "shuowen:785",
+      "headword": "㗋",
+      "text": "咽也。从口侯聲。",
+      "sourceTextSha256": "6d2c8042037b4c2cd422e5c8479d0db416cf450dc6cb923554fec1245d9d1ca5"
+    },
+    {
+      "id": "shuowen:786",
+      "headword": "噲",
+      "text": "咽也。从口會聲。讀若快。一曰嚵，噲也。",
+      "sourceTextSha256": "66c82704c05d320169eb9c8baa350f3bc5f8e2349318d14a77ee7308ac2bf27b"
+    },
+    {
+      "id": "shuowen:787",
+      "headword": "吞",
+      "text": "咽也。从口天聲。",
+      "sourceTextSha256": "eff1449815362d56cbd3f7b7193b4411b95ab6e917c80e752a4be82d3ef2ab91"
+    },
+    {
+      "id": "shuowen:788",
+      "headword": "咽",
+      "text": "嗌也。从口因聲。",
+      "sourceTextSha256": "58c4e42b5da1299647c18fcaba52aae21fec3c18806f80699ab0af2d728cf5bd"
+    },
+    {
+      "id": "shuowen:789",
+      "headword": "嗌",
+      "text": "咽也。从口益聲。",
+      "sourceTextSha256": "57d9120ad5a2b6662f0c3f77f5e308ace00d589d407f6570074cc1580ccf6d53"
+    },
+    {
+      "id": "shuowen:790",
+      "headword": "喗",
+      "text": "大口也。从口軍聲。",
+      "sourceTextSha256": "dc98d82d399269f3d5bbdc98bea46fdeb2ea8620a06f1f693b0c67dbd8bbb9ba"
+    },
+    {
+      "id": "shuowen:791",
+      "headword": "哆",
+      "text": "張口也。从口多聲。",
+      "sourceTextSha256": "f8341fb1f4f9580f769f65d607e60af0686a4181dadfb023aec5d94b4ed31f81"
+    },
+    {
+      "id": "shuowen:792",
+      "headword": "呱",
+      "text": "小兒嗁聲。从口瓜聲。《詩》曰：“后稷呱矣。”",
+      "sourceTextSha256": "24a693860309528b5d7f197967740f95d029113ef6a30d980cdfce2d9bac72a8"
+    },
+    {
+      "id": "shuowen:793",
+      "headword": "啾",
+      "text": "小兒聲也。从口秋聲。",
+      "sourceTextSha256": "c09b83498e7443b806fb8e0f5f109457288ef73c4ea5fe33205349bb0733c63b"
+    },
+    {
+      "id": "shuowen:794",
+      "headword": "喤",
+      "text": "小兒聲。从口皇聲。《詩》曰：“其泣喤喤。”",
+      "sourceTextSha256": "3015fc4d1bfef2940b0b50fddbd78aea584e47e660ed7e6af853537316b23bc2"
+    },
+    {
+      "id": "shuowen:795",
+      "headword": "咺",
+      "text": "朝鮮謂兒泣不止曰咺。从口，宣省聲。",
+      "sourceTextSha256": "0e76ebe89058435450f880e49703acfa6ad8300fedeb04a68a4a8329531a345a"
+    },
+    {
+      "id": "shuowen:796",
+      "headword": "唴",
+      "text": "秦晉謂兒泣不止曰唴。从口羌聲。",
+      "sourceTextSha256": "4a77769dbb63449c421bb96095d6ee206dd0c89dde525bd9ec95e4cc26e7fbf2"
+    },
+    {
+      "id": "shuowen:797",
+      "headword": "咷",
+      "text": "楚謂兒泣不止曰噭咷。从口兆聲。",
+      "sourceTextSha256": "6c09edcdcdf4018268589451c0345ac37701bbb337853bee4302270692f873fa"
+    },
+    {
+      "id": "shuowen:798",
+      "headword": "喑",
+      "text": "宋齊謂兒泣不止曰喑。从口音聲。",
+      "sourceTextSha256": "e3e8ded585a418aaeafd6d408e524cd0d5eecbcee82f74c32ad9b1880f1d3a87"
+    },
+    {
+      "id": "shuowen:799",
+      "headword": "㘈",
+      "text": "小兒有知也。从口疑聲。《詩》曰：“克岐克㘈。”",
+      "sourceTextSha256": "179426607735eae6472bb498cf47892917a4d388b6ae66e6221a588486ad6a58"
+    },
+    {
+      "id": "shuowen:800",
+      "headword": "咳",
+      "text": "小兒笑也。从口亥聲。",
+      "sourceTextSha256": "2e1fe268dded13d2a42ba096eaf8e03b8401bd74dea38eec0a174dd6b1c3b138"
+    }
+  ]
+}

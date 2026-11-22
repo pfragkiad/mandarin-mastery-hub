@@ -4196,9 +4196,9 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-substitu
 .etymology-section .etymology-level-pill { font-size: 9px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; color: var(--experimental); border: 1px solid color-mix(in oklch, var(--experimental) 45%, transparent); border-radius: 999px; padding: 2px 8px; }
 .etymology-section .etymology-text { margin: 0; font-size: 13px; line-height: 1.65; color: var(--foreground); overflow-wrap: anywhere; }
 .etymology-section .etymology-classical { font-family: var(--font-hanzi); font-size: 18px; line-height: 1.8; letter-spacing: .06em; }
-/* Shuowen: the row is the toggle (chevron, Advanced pill, source, Show/Hide); open, the body
-   explains the level, then the texts. Collapsed, the block is a dashed, untinted row. */
-.etymology-section .etymology-advanced:not(.is-open) { background: transparent; border-style: dashed; padding-block: 4px; }
+/* Shuowen English drafts remain visible; the Advanced row toggles original Chinese.
+   A source-only fallback without English keeps the compact dashed presentation. */
+.etymology-section .etymology-advanced:not(.is-open):not(.has-translation) { background: transparent; border-style: dashed; padding-block: 4px; }
 .etymology-section .etymology-advanced-toggle { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 4px; width: 100%; padding: 6px 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; }
 .etymology-section .etymology-advanced-toggle:focus-visible { outline: 2px solid var(--reveal-ring); outline-offset: 2px; border-radius: 4px; }
 .etymology-section .etymology-advanced-chevron { width: 14px; height: 14px; color: var(--muted-foreground); transform: rotate(-90deg); transition: transform .2s ease; flex: none; }

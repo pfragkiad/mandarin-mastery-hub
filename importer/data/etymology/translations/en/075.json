@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "25216dfae835a7692364fb5960a1b30adb294d37551f55ae861eb64386e71f2a",
+    "created_date": "2026-11-22"
+  },
+  "batch": "075",
+  "translations": {
+    "shuowen:7401": {
+      "text": "To deliberate on an offense. Formed from 水 and 獻, with the same conception as 法.",
+      "sourceTextSha256": "3c562d6f6e8344c2cc2362a8e5eb3f519ff1a78f004c8ce696af6180998e1926",
+      "uncertain": false
+    },
+    "shuowen:7402": {
+      "text": "To change and become soiled. Formed from 水, with 俞 indicating the sound. Alternatively, the 渝 river is at 臨俞 in 遼西 and flows east beyond the frontier.",
+      "sourceTextSha256": "ff2cc44fbebd6c814af2c690c627bcee0c5a009fe209c5a0df981852fc7f7e75",
+      "uncertain": false
+    },
+    "shuowen:7403": {
+      "text": "To diminish. Formed from 水, with 咸 indicating the sound.",
+      "sourceTextSha256": "5cf14feaed810fc052a67436024db52ed019702209dce172702e8737281442eb",
+      "uncertain": false
+    },
+    "shuowen:7404": {
+      "text": "To be exhausted or extinguished. Formed from 水, with 𤇳 indicating the sound.",
+      "sourceTextSha256": "ed5e410d13308b83b7a8fbac869db54d97759336160e74c1e6b977c16381abb6",
+      "uncertain": false
+    },
+    "shuowen:7405": {
+      "text": "To transport by water, as by turning a cart's hub. Alternatively, what people ride, including boats. Formed from 水, with 曹 indicating the sound.",
+      "sourceTextSha256": "87c2f6696f0e883f65f88fb9078078485569fedd061cc17f38646e6404778f57",
+      "uncertain": true
+    },
+    "shuowen:7406": {
+      "text": "The palace where feudal lords hold the district archery ceremony: water lies to the southwest and walls to the northeast. Formed from 水 and 半; 半 also indicates the sound.",
+      "sourceTextSha256": "5348aecec866a34812813bc702525bc96ee8a401b824195eb5cad46cdd87890c",
+      "uncertain": false
+    },
+    "shuowen:7407": {
+      "text": "A bronze vessel receives water, with divisions marked: day and night comprise one hundred divisions. Formed from 水, with 屚 indicating the sound.",
+      "sourceTextSha256": "6368344a9e944dd398383a9395ae37aab5bfe48c197d562fc9d276b8b9a7edcc",
+      "uncertain": false
+    },
+    "shuowen:7408": {
+      "text": "What cinnabar transforms into: mercury. Formed from 水, with 項 indicating the sound.",
+      "sourceTextSha256": "3661ecfc27637f9a63fd0890cbb93f8584e73a9c969b5f535048a773e712d7ab",
+      "uncertain": false
+    },
+    "shuowen:7409": {
+      "text": "苹, an aquatic plant. Formed from 水 and 苹; 苹 also indicates the sound.",
+      "sourceTextSha256": "faf48cf01060afa920111cc60d0f4c50ab12d7cfbf0671a90e0fb1e7222f1868",
+      "uncertain": false
+    },
+    "shuowen:7410": {
+      "text": "The appearance of abundant water. Formed from 水, with 歲 indicating the sound.",
+      "sourceTextSha256": "1336e8da989aa36679782514cbf09cac254caa509e9f5f1c8b1b2c6c88d627b2",
+      "uncertain": false
+    },
+    "shuowen:7411": {
+      "text": "To regulate water. Formed from 水, with 曰 indicating the sound.",
+      "sourceTextSha256": "7fdec30740451f523efff7b1519872a2cf3e6f95587150b29f6bbb9f23b919a0",
+      "uncertain": false
+    },
+    "shuowen:7412": {
+      "text": "The appearance of thick dew. Formed from 水, with 襄 indicating the sound.",
+      "sourceTextSha256": "5a347245d809062bd9a3b88e50aa1d5cc9b1a9d53736f93e6892a0d2fc74bc78",
+      "uncertain": false
+    },
+    "shuowen:7413": {
+      "text": "The appearance of dew. Formed from 水, with 專 indicating the sound.",
+      "sourceTextSha256": "537148a346958da4138af84ab8b73d0841cb9ea6ae0ad2df1d914ae48a0f20c4",
+      "uncertain": false
+    },
+    "shuowen:7414": {
+      "text": "The appearance of weeping tears. Formed from 水, with 丸 indicating the sound.",
+      "sourceTextSha256": "f7b1a38172878048cbc2bacdb8b7608724d25f7f497671eb4b47ad41499f5bbd",
+      "uncertain": false
+    },
+    "shuowen:7415": {
+      "text": "To disappear or be extinguished. Formed from 水, with 民 indicating the sound.",
+      "sourceTextSha256": "7995a533db612ac9dea6de84942ccba49754677ce2c8a5607f0e237135e4d5b0",
+      "uncertain": false
+    },
+    "shuowen:7416": {
+      "text": "沆韰 is vapor. Formed from 水, with abbreviated 䪥 indicating the sound.",
+      "sourceTextSha256": "453868a9d1614d2956ff07d20176628343ee5bc9402b04f851355256a9ad5f82",
+      "uncertain": false
+    },
+    "shuowen:7417": {
+      "text": "A river's name. Formed from 水, with 盧 indicating the sound.",
+      "sourceTextSha256": "c026212684543fe1b26998f17c33da94e3b46f11503e1676418b7801fd98cd79",
+      "uncertain": false
+    },
+    "shuowen:7418": {
+      "text": "A river's name. Formed from 水, with 蕭 indicating the sound.",
+      "sourceTextSha256": "34f887ab1dd4558746acfda351ca02ab0e579893e2e6f796cfb12455df6a8f61",
+      "uncertain": false
+    },
+    "shuowen:7419": {
+      "text": "A river's name. Formed from 水, with 嬴 indicating the sound.",
+      "sourceTextSha256": "c5cce3fe2bbff2905f596f619ea1c680d458b8f4115982f4d30649f29bab3cb3",
+      "uncertain": false
+    },
+    "shuowen:7420": {
+      "text": "A river's name. Formed from 水, with 除 indicating the sound.",
+      "sourceTextSha256": "4a7977abe182111f3fba1a4c714fbdb0f23f15e9b407959661c81dfd74a9e8de",
+      "uncertain": false
+    },
+    "shuowen:7421": {
+      "text": "A river's name. Formed from 水, with 名 indicating the sound.",
+      "sourceTextSha256": "dd7cbeaf45a25bf6318f37fea1f4db104da6bd51bb8d4d0e0bf8934e36e571cb",
+      "uncertain": false
+    },
+    "shuowen:7422": {
+      "text": "The sound of water. Formed from 水, with 孱 indicating the sound.",
+      "sourceTextSha256": "cd76bae159ca87694a58a8de789cb69deb957ce299e22c0119743a6ec71386af",
+      "uncertain": false
+    },
+    "shuowen:7423": {
+      "text": "潺湲 is the sound of water. Formed from 水, with 爰 indicating the sound.",
+      "sourceTextSha256": "414260544de946ecdc29e5e1be25fa1a177c37ca661c653373feaf971691c6f6",
+      "uncertain": false
+    },
+    "shuowen:7424": {
+      "text": "A great wave. Formed from 水, with 壽 indicating the sound.",
+      "sourceTextSha256": "27b84ffa12a0b71c77a31548ae1a1a40e6e068474c95bfb5513b40481e5148ee",
+      "uncertain": false
+    },
+    "shuowen:7425": {
+      "text": "A waterside. Formed from 水, with 敘 indicating the sound.",
+      "sourceTextSha256": "c1c3306c29b2f7d72d043681abfb797f633082ecd1b61b9408ab0d901a3f215c",
+      "uncertain": false
+    },
+    "shuowen:7426": {
+      "text": "A branch of water. Formed from 水, with 䢽 indicating the sound.",
+      "sourceTextSha256": "9411b9ee04d9c9dd722e143d71a1a1d2054dd32a0d709274d01f29155c715f11",
+      "uncertain": false
+    },
+    "shuowen:7427": {
+      "text": "Where water stays or gathers. Formed from 水, with 豬 indicating the sound.",
+      "sourceTextSha256": "35e68150d90ac11a014c1f7fc6f0a0737842bcc84eeec75b024f6e4476b59413",
+      "uncertain": false
+    },
+    "shuowen:7428": {
+      "text": "Vast waters. Formed from 水, with 镾 indicating the sound.",
+      "sourceTextSha256": "c950fa07938cc9de2eca6924e68dc7938e299eed232c47512f997df35b81ac39",
+      "uncertain": false
+    },
+    "shuowen:7429": {
+      "text": "Vast waters. Formed from three 水. Also written 渺.",
+      "sourceTextSha256": "41a8ba658543d6ad24404671d6df8ba9cae8367876f058f1787a96f8c4b8a8ac",
+      "uncertain": false
+    },
+    "shuowen:7430": {
+      "text": "Clean. Formed from 水, with 絜 indicating the sound.",
+      "sourceTextSha256": "75fccaa5d2f3a41f30321869ed9616f1b4c60ae8cc05f919fb6274566b934c3a",
+      "uncertain": false
+    },
+    "shuowen:7431": {
+      "text": "To moisten thoroughly. The source adds the incomplete phrase 'formed from.' Formed from 水, with 夾 indicating the sound.",
+      "sourceTextSha256": "66ffbcb764576c3fff29fb4c7c980886146b93f3fcd88208c105274bea96eea4",
+      "uncertain": true
+    },
+    "shuowen:7432": {
+      "text": "Sudden or abrupt. Formed from 水, with 盍 indicating the sound.",
+      "sourceTextSha256": "547631ee84f5cfc880cbbd7dc32d498a0b3597162407692c967e45abc2ef3f72",
+      "uncertain": false
+    },
+    "shuowen:7433": {
+      "text": "To hold water in the mouth and spray it. Formed from 水, with 巽 indicating the sound.",
+      "sourceTextSha256": "b5e223a29179a54a2081699e693d94ee0503e8eab4797e0004177c01364b439d",
+      "uncertain": false
+    },
+    "shuowen:7434": {
+      "text": "The edge of water. Formed from 水 and 厓; 厓 also indicates the sound.",
+      "sourceTextSha256": "735090cadec13e69b68033c5222aa67bbed446612d84413eb61b16aa1a26402d",
+      "uncertain": false
+    },
+    "shuowen:7435": {
+      "text": "Two waters. The explanation is lacking. All characters in the 沝 group are formed from 沝.",
+      "sourceTextSha256": "cd76258d3fe843bc0cb82671076241d7715dc1ea7b5cd938c3bfd7e8bf3fad26",
+      "uncertain": false
+    },
+    "shuowen:7436": {
+      "text": "Water moving. Formed from 沝 and 㐬. 㐬 means sudden or abrupt.",
+      "sourceTextSha256": "d0d641b16e1d0a1ede55f7659f0b1a43470c47fb9407e8b2db99ecf6af33508c",
+      "uncertain": false
+    },
+    "shuowen:7437": {
+      "text": "To wade through water on foot. Formed from 沝 and 步.",
+      "sourceTextSha256": "8dd0e5d2dbfd95447fa671b82f9687700a5e61bc08063a1276aa46eefac746f4",
+      "uncertain": false
+    },
+    "shuowen:7438": {
+      "text": "A riverbank, where people draw close, frowning and shrinking back, stopping without advancing. Formed from 頁 and 涉. All characters in the 頻 group are formed from 頻.",
+      "sourceTextSha256": "2979225e06c4626b1027d6229634f7b2d01967af6d9c6806a53c608373df4e49",
+      "uncertain": true
+    },
+    "shuowen:7439": {
+      "text": "To frown and shrink back while crossing water. Formed from 頻, with 卑 indicating the sound.",
+      "sourceTextSha256": "fe2db27cf99c0cce9c41a7e10146354cf9cd3b5193147774cf669af5edf9e9f2",
+      "uncertain": false
+    },
+    "shuowen:7440": {
+      "text": "A small stream. The Rites of Zhou says: 'The craftsman makes ditches and channels. A plow blade is five cun wide; two blades form a pair. A furrow cut by one pair, one chi wide and one chi deep, is called 𡿨.' Twice a 𡿨 is a 遂; twice a 遂 is a 溝; twice a 溝 is a 洫; twice a 洫 is a 巜. All characters in this group are formed from 𡿨.",
+      "sourceTextSha256": "3c3e7232987619ec1abee472512167eceb7934300f340341606308df4d564820",
+      "uncertain": false
+    },
+    "shuowen:7441": {
+      "text": "Water flowing copiously. A square hundred li constitutes a 巜 district, with a channel two xun wide and two ren deep. All characters in this group are formed from 巜.",
+      "sourceTextSha256": "8711a9b699b528af553358922059f0d8ba7007ee1b448015d61b222c214d5221",
+      "uncertain": false
+    },
+    "shuowen:7442": {
+      "text": "Water emerging and glistening between rocks along a bank. Formed from 巜, with 粦 indicating the sound.",
+      "sourceTextSha256": "7d53e8d4f676177649bf0c926711291d036f3925e087a0160b566078fa8848a0",
+      "uncertain": false
+    },
+    "shuowen:7443": {
+      "text": "Water flowing through a continuous channel. The Book of Yu says: 'Deepen the く and 巜, leading them to the rivers.' This means deepening these waters so that they join to form rivers. All characters in this group are formed from 川.",
+      "sourceTextSha256": "908d81c349cede56fc651a671f96a361d2ce4c1a68dc3716ebb0e7bcc5f27a7a",
+      "uncertain": true
+    },
+    "shuowen:7444": {
+      "text": "An underground water vein. Formed from 川 beneath 一. 一 is the earth. Abbreviated 壬 indicates the sound. Alternatively, water moving unseen along its courses.",
+      "sourceTextSha256": "e5f7bc382ec83318e822cbfc4bdca74f9fe1f956fe26e591cdb16c7811a69374",
+      "uncertain": true
+    },
+    "shuowen:7445": {
+      "text": "Broad waters. Formed from 川, with 亡 indicating the sound. The Changes says: 'Embrace the waste and use crossing the river on foot.'",
+      "sourceTextSha256": "258c2e94876b133907d765373821fee1a8217c6ef481de43f27bec6c475c344b",
+      "uncertain": true
+    },
+    "shuowen:7446": {
+      "text": "Flowing water. Formed from 川, with 或 indicating the sound.",
+      "sourceTextSha256": "18d796f8c9ef1350672a7a603a1a87530d00c2504a8c4c5709c09b8ad8377013",
+      "uncertain": false
+    },
+    "shuowen:7447": {
+      "text": "Flowing water. Formed from 川, with 曰 indicating the sound.",
+      "sourceTextSha256": "0eb26df038c3983509119dc3eff95c3c256c3e7d0f94f4a78dbea14cc00a2fe3",
+      "uncertain": false
+    },
+    "shuowen:7448": {
+      "text": "Water flowing in streams. Formed from 川, with abbreviated 列 indicating the sound.",
+      "sourceTextSha256": "ed5921a8861f8a3b67042a05dc5bfd7e6104d107b826fb48facdc12ef234325e",
+      "uncertain": false
+    },
+    "shuowen:7449": {
+      "text": "Having water on all four sides, itself forming a city's moat. Formed from 川 and 邑.",
+      "sourceTextSha256": "80e84f28ddfa8bcdbafc95e23571f292a270ec0113becf30a5fb4ba210d733d5",
+      "uncertain": false
+    },
+    "shuowen:7450": {
+      "text": "Harm. Formed from 一 blocking 川. The Spring and Autumn Commentary says: 'When a river is blocked and becomes a marsh, it is ominous.'",
+      "sourceTextSha256": "2f5d19bd8099f468b84aab286af71d44bde91fa2e6ef4edf233ec775aee3c145",
+      "uncertain": false
+    },
+    "shuowen:7451": {
+      "text": "Firm and upright. Formed from 㐰, ancient-script 信, and 川, taking its unceasing flow by day and night. The Analects says: 'Zilu was firm and forthright.'",
+      "sourceTextSha256": "26346c2becbbac98f0a1c45af8ba2ef56b075cfd368d556050379fbe8ca2b0e3",
+      "uncertain": false
+    },
+    "shuowen:7452": {
+      "text": "Habitable ground amid water is called 州; water surrounds its sides, hence repeated 川. In ancient times Yao encountered a flood and people lived on high ground amid water; some call these the Nine Provinces. The Odes says: 'On an islet in the 河.' Alternatively, 州 means a division: people divide their land and live from it.",
+      "sourceTextSha256": "f44eb2ef15dcb5c967a77c57984e6f7e5e3660b9c25a17c7a7f9ff0952d9a902",
+      "uncertain": false
+    },
+    "shuowen:7453": {
+      "text": "A water source. It depicts water flowing out and forming a stream. All characters in this group are formed from 泉.",
+      "sourceTextSha256": "7c74a5e1553934b4d92cc622fac4597a1aba2549dcc7c1f62180f124e3fb9124",
+      "uncertain": false
+    },
+    "shuowen:7454": {
+      "text": "Spring water. Formed from 泉, with 緐 indicating the sound. Read like 飯.",
+      "sourceTextSha256": "e84930b4f7a383310e234ed04ce60bd409b7fe0489f921e5ef38fc405d4bdc05",
+      "uncertain": false
+    },
+    "shuowen:7455": {
+      "text": "Three springs. The explanation is lacking. All characters in this group are formed from 灥.",
+      "sourceTextSha256": "6385ad894e7b6f1d05a14ace6ab1cfbf2f7b021256192fe135b07733cb19701b",
+      "uncertain": false
+    },
+    "shuowen:7456": {
+      "text": "The source of a spring. Formed from 灥 emerging beneath 厂.",
+      "sourceTextSha256": "25075cfd22345289845a68ae74fe67282522c5d2480e59e1996cbe984214ea79",
+      "uncertain": false
+    },
+    "shuowen:7457": {
+      "text": "Long. It depicts the length of water's coursing channels. The Odes says: 'How long is the 江!' All characters in this group are formed from 永.",
+      "sourceTextSha256": "a66847f794435d7c9077eac8ad8a3d57244ccd16604929d2e362b78303d61a2c",
+      "uncertain": false
+    },
+    "shuowen:7458": {
+      "text": "A long stretch of water. Formed from 永, with 羊 indicating the sound. The Odes says: 'How long is the 江!'",
+      "sourceTextSha256": "7934d230726e8342c389c5a17cdd2e85584736783ee8b133609d131b70126913",
+      "uncertain": false
+    },
+    "shuowen:7459": {
+      "text": "An oblique watercourse branching off. Formed from reversed 永. All characters in this group are formed from 𠂢. Read like the name 稗 county.",
+      "sourceTextSha256": "f33e5b6c7addf0ab07dc558a3e22a181210daca60b8cfa21c33a217885580b87",
+      "uncertain": false
+    },
+    "shuowen:7460": {
+      "text": "Blood vessels branching and coursing obliquely through the body. Formed from 𠂢 and 血.",
+      "sourceTextSha256": "131c4e2bb0b61bc39b6b1abfd95c0c0f8190967fb37528280d32ce59fa14732e",
+      "uncertain": false
+    },
+    "shuowen:7461": {
+      "text": "To look sideways. Formed from 𠂢 and 見.",
+      "sourceTextSha256": "f347520f486c0c36c9e88c96deaa0dbc84d7d90ab2469a358266df427174c30a",
+      "uncertain": false
+    },
+    "shuowen:7462": {
+      "text": "Where a spring emerges and connects with a river is a 谷. Formed from 水, water half visible, emerging through 口. All characters in this group are formed from 谷.",
+      "sourceTextSha256": "db42c452b1217fb4d672b6d880477dd59bfe0dd922ea5e956a38ee2059ef3a94",
+      "uncertain": false
+    },
+    "shuowen:7463": {
+      "text": "A mountain channel with no outlet. Formed from 谷, with 奚 indicating the sound.",
+      "sourceTextSha256": "a44e16175bb782834be599d1dfedf40b94ffd42a60ff8d86d5ca95543821a348",
+      "uncertain": false
+    },
+    "shuowen:7464": {
+      "text": "An open valley giving passage. Formed from 谷, with 害 indicating the sound.",
+      "sourceTextSha256": "e32a35c0c411f400b422b539fb0957f9bcf4eee47fdb7425b8e2c2b8dc16d94e",
+      "uncertain": false
+    },
+    "shuowen:7465": {
+      "text": "An empty valley. Formed from 谷, with 翏 indicating the sound.",
+      "sourceTextSha256": "6129865e9b10bad584fee66fccf8cad4f5664b600520c7753f26198edf3802f7",
+      "uncertain": false
+    },
+    "shuowen:7466": {
+      "text": "A large, long valley. Formed from 谷, with 龍 indicating the sound. Read like 聾.",
+      "sourceTextSha256": "c2eaa3f34e39ccfe5ae48e27c3405fe53316e9ca31d0984a04224afd8ca75469",
+      "uncertain": false
+    },
+    "shuowen:7467": {
+      "text": "An echo in a valley. Formed from 谷, with 厷 indicating the sound.",
+      "sourceTextSha256": "f89158bc2310fecd26d241ae8ad41ebe3d590570b99d49bdbac2bed08efb5a69",
+      "uncertain": false
+    },
+    "shuowen:7468": {
+      "text": "To deepen a channel and connect it with a river. Formed from 谷 and 𣦵. 𣦵 is damaged earth, conveying pits and hollows. The Book of Yu says: 'Deepen the furrows and channels, leading them to rivers.'",
+      "sourceTextSha256": "fcbb464190164381bb71f8a93d5efc78431ab4462a85968e5ac5f2b11ed27d1c",
+      "uncertain": false
+    },
+    "shuowen:7469": {
+      "text": "The green appearance of mountains and valleys seen from afar. Formed from 谷, with 千 indicating the sound.",
+      "sourceTextSha256": "86426e8a21706d87d40361060d6a750caa3b5b7603e190bf19950efcab478037",
+      "uncertain": false
+    },
+    "shuowen:7470": {
+      "text": "Frozen. It depicts water congealing. All characters in this group are formed from 仌.",
+      "sourceTextSha256": "858aa8fa3abc04802e05cc9208c762593ab9aca746ed1ebed3dce14e8d818613",
+      "uncertain": false
+    },
+    "shuowen:7471": {
+      "text": "Water hardened. Formed from 仌 and 水.",
+      "sourceTextSha256": "6987ad753dc85fb275105db5442c248fc5f5e7d9123f0ca851ea084ed9ecc7f5",
+      "uncertain": false
+    },
+    "shuowen:7472": {
+      "text": "Cold. Formed from 仌, with 廩 indicating the sound.",
+      "sourceTextSha256": "a68d8a9ac911f440137bc476238b1d5b5f57b27fbc783f80df9015fef8bd7d0a",
+      "uncertain": false
+    },
+    "shuowen:7473": {
+      "text": "Cold. Formed from 仌, with 青 indicating the sound.",
+      "sourceTextSha256": "b1a989f2c60881b0dca4e31c8d9290f9f634d37f703bac361b86c2180a94d8f0",
+      "uncertain": false
+    },
+    "shuowen:7474": {
+      "text": "Ice. Formed from 仌, with 東 indicating the sound.",
+      "sourceTextSha256": "bdee4e6f693ea80a28451128c6072f4f50135f945d5a71c034dcf5782ef640d2",
+      "uncertain": false
+    },
+    "shuowen:7475": {
+      "text": "Ice brought out. Formed from 仌, with 朕 indicating the sound. The Odes says: 'Put it into the icehouse.'",
+      "sourceTextSha256": "2d78c1db7c188b7a77411ee449475129dc8260bb1e7e6518fadaa172369534bb",
+      "uncertain": true
+    },
+    "shuowen:7476": {
+      "text": "Floating ice. Formed from 仌, with 斯 indicating the sound.",
+      "sourceTextSha256": "fc1c2824134b0f0b994fc0bdb352b5c70c575577b25d64a16ff950c6b43283da",
+      "uncertain": false
+    },
+    "shuowen:7477": {
+      "text": "Partly damaged or withered. Formed from 仌, with 周 indicating the sound.",
+      "sourceTextSha256": "bf6eec0054238410767bd2247e72ebe64064fc1a3b9b824b5f2c1e67e789953b",
+      "uncertain": false
+    },
+    "shuowen:7478": {
+      "text": "The end of the four seasons. Formed from 仌 and 夂. 夂 is the ancient-script character 終.",
+      "sourceTextSha256": "76e8361b5458107490e342a224d31d7c244a12e05d6ccbf9af8dbfbe7749bf09",
+      "uncertain": false
+    },
+    "shuowen:7479": {
+      "text": "To melt. Formed from 仌, with 台 indicating the sound.",
+      "sourceTextSha256": "21127205ece3d859cdebfb27f77c380d85fce3cf099a287d7be157b3a8ca3040",
+      "uncertain": false
+    },
+    "shuowen:7480": {
+      "text": "Cold. Formed from 仌, with 倉 indicating the sound.",
+      "sourceTextSha256": "8be74dc549029852acf6b0523cd13559b11b225130a9639c4555468e7e4de252",
+      "uncertain": false
+    },
+    "shuowen:7481": {
+      "text": "Cold. Formed from 仌, with 令 indicating the sound.",
+      "sourceTextSha256": "0c609643bb3f296be4ed37f627278de552adc6f2fcfbc6db0047bc283f763af0",
+      "uncertain": false
+    },
+    "shuowen:7482": {
+      "text": "Cold. Formed from 仌, with 圅 indicating the sound.",
+      "sourceTextSha256": "b066b9f6ea53ef2a133570692910184cf1ce072c37b491ec6d064d27161a1569",
+      "uncertain": false
+    },
+    "shuowen:7483": {
+      "text": "Cold wind. Formed from 仌, with 畢 indicating the sound.",
+      "sourceTextSha256": "162638360ddbc9308ac80ed34a5a02419e822c6e667e40d65e7f7032b92599c2",
+      "uncertain": false
+    },
+    "shuowen:7484": {
+      "text": "'In the first month, the wind is cold,' expressed by 㓖冹. Formed from 仌, with 犮 indicating the sound.",
+      "sourceTextSha256": "639f9e9aebb850095eeb64405f746de16e2024c54c7732373e919b06eaf1e7e7",
+      "uncertain": true
+    },
+    "shuowen:7485": {
+      "text": "Cold. Formed from 仌, with 栗 indicating the sound.",
+      "sourceTextSha256": "faab8b3b795c286ee6ef043b49d853d98340b75ac9a159eadc71c12f3d015a32",
+      "uncertain": false
+    },
+    "shuowen:7486": {
+      "text": "Cold. Formed from 仌, with 賴 indicating the sound.",
+      "sourceTextSha256": "60d8ceb008e1c6f751757f1327c8817af2da576c0df676436651c6b939623133",
+      "uncertain": false
+    },
+    "shuowen:7487": {
+      "text": "Water falling from clouds. 一 depicts heaven, 冂 depicts clouds, and water falls between them. All characters in this group are formed from 雨.",
+      "sourceTextSha256": "f4a93a945f4e1caadf2ec0957b09cf3c3bd2d744f2e30472304d0bbc32808405",
+      "uncertain": false
+    },
+    "shuowen:7488": {
+      "text": "Yin and yang press against one another and stir, producing thunder and rain that bring things to life. Formed from 雨; 畾 depicts a revolving shape.",
+      "sourceTextSha256": "e8eeaa0b9c092a6ba205f7ed0461e5ff9dcd95ed9be513010946701832035f42",
+      "uncertain": false
+    },
+    "shuowen:7489": {
+      "text": "Rain. People of Qi call thunder 霣. Formed from 雨, with 員 indicating the sound. Alternatively, clouds turning and rising.",
+      "sourceTextSha256": "9e415af7b86fa4e5462e8080483d15e2cc31c53592ad7e8b6ab4f97237db626a",
+      "uncertain": false
+    },
+    "shuowen:7490": {
+      "text": "The lingering ringing sound of thunder, which thrusts all things forth. Formed from 雨, with 廷 indicating the sound.",
+      "sourceTextSha256": "9ffce02730a29c7e16dc14ee7347a8f249de94dc280157f635523ad180ac4666",
+      "uncertain": false
+    },
+    "shuowen:7491": {
+      "text": "霅霅 is the appearance of thunder and lightning. Alternatively, many voices. Formed from 雨, with abbreviated 譶 indicating the sound.",
+      "sourceTextSha256": "d5351552f32d33799f7acedd0814e93eae988bf772a2bd27308ed08972a2a9ea",
+      "uncertain": false
+    },
+    "shuowen:7492": {
+      "text": "The flashing brilliance caused by yin and yang striking together. Formed from 雨 and 申.",
+      "sourceTextSha256": "a208e7c09a71955c09182add5906b206627b9b109e85533ad5da5e7c615f409a",
+      "uncertain": false
+    },
+    "shuowen:7493": {
+      "text": "A thunderclap that shakes things. Formed from 雨, with 辰 indicating the sound. The Spring and Autumn Commentary says: 'Lightning struck Yibo's temple.'",
+      "sourceTextSha256": "522c3b04069f47378b069dea5cf84951cb83343a70802bb3a7736005fcd26eba",
+      "uncertain": false
+    },
+    "shuowen:7494": {
+      "text": "Congealed rain that delights things. Formed from 雨, with 彗 indicating the sound.",
+      "sourceTextSha256": "40d2cfb9757c50313bf9a5e84d52a8309d79178f2b1e8d82587afdae6924e5c5",
+      "uncertain": true
+    },
+    "shuowen:7495": {
+      "text": "Falling sleet is called 霄. Formed from 雨, with 肖 indicating the sound. This is Qi speech.",
+      "sourceTextSha256": "4c56c0e7885364cc1cf08ebe3bf854d31fed9dae673510755bcda8607c13323a",
+      "uncertain": true
+    },
+    "shuowen:7496": {
+      "text": "Millet-like snow. Formed from 雨, with 𢿱 indicating the sound.",
+      "sourceTextSha256": "de498ad51ea931855f0fc197c77bebb90b17f11e08932169a307231ccdd2ebb5",
+      "uncertain": false
+    },
+    "shuowen:7497": {
+      "text": "Rain of ice. Formed from 雨, with 包 indicating the sound.",
+      "sourceTextSha256": "23dc57492a866d340e7c963792c7858f2b7527704fd73e0f9c93e3a8b99f907f",
+      "uncertain": false
+    },
+    "shuowen:7498": {
+      "text": "Rain falling. Formed from 雨; 𠱠 depicts 𩂣, falling rain. The Odes says: 'The falling rain is fine and misty.'",
+      "sourceTextSha256": "5a4cc3f221360d47e5fa7219bb7fc400669a2c308e8956ec2c76bcda405fc66e",
+      "uncertain": false
+    },
+    "shuowen:7499": {
+      "text": "Rain falling. Formed from 雨, with 各 indicating the sound.",
+      "sourceTextSha256": "0c40e2b81082955d92039aef5765e0835a89c8c2cf56986ba3a984829633e8a6",
+      "uncertain": false
+    },
+    "shuowen:7500": {
+      "text": "Remaining rain. Formed from 雨, with 令 indicating the sound.",
+      "sourceTextSha256": "a49eaddb12d9f2c02459f4f58b1d45781c3067f4798d72825c45e9184eade99d",
+      "uncertain": false
+    }
+  }
+}

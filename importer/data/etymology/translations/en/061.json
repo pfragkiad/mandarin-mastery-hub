@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "006a0bb7e1f0674aea7999fa759c1a46b648dc5f31d9088c7232f56a1deac3de",
+    "created_date": "2026-11-22"
+  },
+  "batch": "061",
+  "translations": {
+    "shuowen:6001": {
+      "text": "What remains hard. Formed from 石 and abbreviated 堅.",
+      "sourceTextSha256": "0ab811ab1f6eb8b41bd800120cfbdc0ade2524cb30e3c19427387d40ccc96154",
+      "uncertain": false
+    },
+    "shuowen:6002": {
+      "text": "The sound of stones. Formed from 石, with 厤 indicating the sound.",
+      "sourceTextSha256": "f6a934e5c2917499a53a7e8bbccaa0076b85ceb6cac671731c19de0be940db63",
+      "uncertain": false
+    },
+    "shuowen:6003": {
+      "text": "A crag, 礹: stone. Formed from 石, with 斬 indicating the sound.",
+      "sourceTextSha256": "960c61014c9fb73278a3b779305f459d9667025cb27b3d1fe20531fa3d3fbd6d",
+      "uncertain": false
+    },
+    "shuowen:6004": {
+      "text": "A rocky mountain. Formed from 石, with 嚴 indicating the sound.",
+      "sourceTextSha256": "3b7990a23c30f3cac1d7d2a406d8376f92af1c5b5ce8f9ac3d3196cbe8cdda11",
+      "uncertain": false
+    },
+    "shuowen:6005": {
+      "text": "Hard. Formed from 石, with 毄 indicating the sound.",
+      "sourceTextSha256": "910efe1aff8d3ad18d7e169151decab2f5d7413a29b437505f91291b55c5463d",
+      "uncertain": false
+    },
+    "shuowen:6006": {
+      "text": "Hard stone. Formed from 石, with 角 indicating the sound.",
+      "sourceTextSha256": "ce4bcad17216f38a49649941f3b5952f67484ffc9c08c0f67fb2a1fde29c8f8c",
+      "uncertain": false
+    },
+    "shuowen:6007": {
+      "text": "Hard stone. Formed from 石, with 堯 indicating the sound.",
+      "sourceTextSha256": "7aa861a00f469ce0ef9aabccd08007bd75e8407022539e231f12a477f5019725",
+      "uncertain": false
+    },
+    "shuowen:6008": {
+      "text": "A rocky crag. Formed from 石, with 我 indicating the sound.",
+      "sourceTextSha256": "4c05afd1ee59169b42ec7d5d89d1e0d37db9821292efb504515d2cd24db50b4e",
+      "uncertain": false
+    },
+    "shuowen:6009": {
+      "text": "A crag, 磛嵒. Formed from 石 and 品. The Book of Zhou says: “Fear the people’s precipitous temper.” Pronounced the same as 巖.",
+      "sourceTextSha256": "f043cca7b7d9b89e2f195b8a86a940521e7287908be4f6f25373e2817d283884",
+      "uncertain": false
+    },
+    "shuowen:6010": {
+      "text": "A musical stone. Formed from 石 and 殸, depicting suspension from a frame; 殳 strikes it. In antiquity the Muju clan made the chime stone.",
+      "sourceTextSha256": "c9a11f809df6eff54293dffdfe8fdb41f26bd5df168edacc8018f00116794c96",
+      "uncertain": false
+    },
+    "shuowen:6011": {
+      "text": "To stop. Formed from 石, with 疑 indicating the sound.",
+      "sourceTextSha256": "069fc002272547fa0a52221a388f2ce00cf9d2ef79e2dbad2fd78a76f4aff897",
+      "uncertain": false
+    },
+    "shuowen:6012": {
+      "text": "To pick 空青 mineral and coral from a cliff above and dislodge them; the recorded activity is uncertain. Formed from 石, with 折 indicating the sound. The Rites of Zhou has the 硩蔟 officer.",
+      "sourceTextSha256": "9e6513063b5095cfcf9797843d8b00dae92ace3214be98d30a3f5fb9d5a1954f",
+      "uncertain": true
+    },
+    "shuowen:6013": {
+      "text": "To smooth silk with stone. Formed from 石, with 延 indicating the sound.",
+      "sourceTextSha256": "531b191de90f6f4e9d17f0ca1642e107e7228b1b3b104f88b26a374c849a7671",
+      "uncertain": false
+    },
+    "shuowen:6014": {
+      "text": "To grind. Formed from 石, with 卒 indicating the sound.",
+      "sourceTextSha256": "384da75f009c717ac2ef8b12550712f02fbad34b605f7dc337511dc30b43dfd6",
+      "uncertain": false
+    },
+    "shuowen:6015": {
+      "text": "Stone broken. Formed from 石, with 皮 indicating the sound.",
+      "sourceTextSha256": "982bc7e03c28c1071b8484c4278eabb1951ef8bf34710408e40fa15f852faef9",
+      "uncertain": false
+    },
+    "shuowen:6016": {
+      "text": "To grind smooth. Formed from 石, with 龍 indicating the sound. The Son of Heaven’s rafters are hewn and then polished.",
+      "sourceTextSha256": "e21297d7fa986440f1afc42d590981b76c55b9a3c05df4a473482e157fbf452d",
+      "uncertain": false
+    },
+    "shuowen:6017": {
+      "text": "To grind. Formed from 石, with 幵 indicating the sound.",
+      "sourceTextSha256": "2e8c362a52eda40b7dcac60401af5d106bab63274066428b22716e327470d974",
+      "uncertain": false
+    },
+    "shuowen:6018": {
+      "text": "A stone mill. Formed from 石, with 靡 indicating the sound.",
+      "sourceTextSha256": "4a1e62c781d6e86cd64d26eff78d5ab6b23a10dbfe7f8f8576e2654b0c53de91",
+      "uncertain": false
+    },
+    "shuowen:6019": {
+      "text": "A mill. Formed from 石, with 豈 indicating the sound. In antiquity Gongshu Ban made the mill.",
+      "sourceTextSha256": "ba8d7d7a8c0cad561c4f2de3c5c6f37c685c9e33a3d33457127d7bc2f87ed7bb",
+      "uncertain": false
+    },
+    "shuowen:6020": {
+      "text": "To pound grain. Formed from 石, with 隹 indicating the sound.",
+      "sourceTextSha256": "1cc85e80ff5791002d3667f807aaf0b2b409b173183dcb2e5e49f5c23da2f660",
+      "uncertain": false
+    },
+    "shuowen:6021": {
+      "text": "Pounding again after the grain has already been pounded is 䂿. Formed from 石, with 沓 indicating the sound.",
+      "sourceTextSha256": "32aed3549c41a311d35eee1f14d0531b0b4757ff3f749b55bfadda2b7b1e9b76",
+      "uncertain": false
+    },
+    "shuowen:6022": {
+      "text": "A stone attached to the cord of a shooting arrow. Formed from 石, with 番 indicating the sound.",
+      "sourceTextSha256": "ff0d400a80f2f219edc906b77db02b2d98e94140f170285afc6ed63143e681c7",
+      "uncertain": false
+    },
+    "shuowen:6023": {
+      "text": "To chop. Formed from 石, with 箸 indicating the sound.",
+      "sourceTextSha256": "4aaac37914809b457b04e4d8889c6bb53b628202be989d396695f8f6ffdf09a9",
+      "uncertain": false
+    },
+    "shuowen:6024": {
+      "text": "A smooth stone. Formed from 石, with 見 indicating the sound.",
+      "sourceTextSha256": "4d7d65dec9502e04ead79a620b497b67d96f504c808c7aa32524c47046dd77bf",
+      "uncertain": false
+    },
+    "shuowen:6025": {
+      "text": "To puncture an afflicted part with stone. Formed from 石, with 乏 indicating the sound.",
+      "sourceTextSha256": "efc860ea097b57b58ccca629bfa73ea8e1f846703f709ce3cd32b039e19a229b",
+      "uncertain": false
+    },
+    "shuowen:6026": {
+      "text": "Stone; poor or bad. Formed from 石, with 鬲 indicating the sound.",
+      "sourceTextSha256": "d2ffa7f363f6a26f3ef97436d3e055760012b39f0aea5106d88242c9fb6fed52",
+      "uncertain": false
+    },
+    "shuowen:6027": {
+      "text": "Stones in a heap, 磊砢. Formed from 石, with 可 indicating the sound.",
+      "sourceTextSha256": "a98298bdf22da1e5a8296db00ffb8078750f323936e9ead241ae1def3c20e001",
+      "uncertain": false
+    },
+    "shuowen:6028": {
+      "text": "Many stones. Formed from three 石.",
+      "sourceTextSha256": "fb1ad92a1f35671e14834c71522235c8632b470df33156c56c42cc01e76e27ed",
+      "uncertain": false
+    },
+    "shuowen:6029": {
+      "text": "To grind or sharpen. Formed from 石, with 厲 indicating the sound. The classics also use 厲.",
+      "sourceTextSha256": "251fde9c224b7af6c64701e6c90b89daf793a7b402a4e0cfb7fa6d049d19a108",
+      "uncertain": false
+    },
+    "shuowen:6030": {
+      "text": "The Zuo Commentary mentions “Shi Que, a grand officer of Wei.” The Tangyun says it means respectful. Formed from 石; further details are unknown. 昔 indicates the sound.",
+      "sourceTextSha256": "96d682e73b3783c5d823dd84a44d2002e22457cd6315edc9f40bf14038f5e73e",
+      "uncertain": false
+    },
+    "shuowen:6031": {
+      "text": "A large rock against which water surges. Formed from 石, with 幾 indicating the sound.",
+      "sourceTextSha256": "a486fa02aab8cad01a169c61eb8de09e8ace91be442702352aa882f497d48bb4",
+      "uncertain": false
+    },
+    "shuowen:6032": {
+      "text": "The appearance of stone. Formed from 石, with 彔 indicating the sound.",
+      "sourceTextSha256": "0ae7799e1179a6572cd9f51079004bc6250727336a820e0dcb441cb745b24e18",
+      "uncertain": false
+    },
+    "shuowen:6033": {
+      "text": "A stone supporting block. Formed from 石, with 占 indicating the sound.",
+      "sourceTextSha256": "fd23d1fd0e4004fc9613e4b83ddfcb9203f1b8d595cbed182e6b3190b77a675b",
+      "uncertain": false
+    },
+    "shuowen:6034": {
+      "text": "Masonry on steps. Formed from 石, with 切 indicating the sound.",
+      "sourceTextSha256": "7455253e9604f2aced5391b7c362aada3256220854bdf289675324f9f5f7ad14",
+      "uncertain": false
+    },
+    "shuowen:6035": {
+      "text": "A stone beneath a pillar. Formed from 石, with 質 indicating the sound.",
+      "sourceTextSha256": "3b1751a159cd2d11ccb3396e4def148fd9f20b2d0a84799f3f8770495d7a1959",
+      "uncertain": false
+    },
+    "shuowen:6036": {
+      "text": "A pillar-base stone, 礩. Formed from 石, with 楚 indicating the sound.",
+      "sourceTextSha256": "62dd60ecbd117fa9a6daa05eed44773e52ff7e9dfc0eb5c74a1953806d13283a",
+      "uncertain": false
+    },
+    "shuowen:6037": {
+      "text": "To pound. Formed from 石, with 垂 indicating the sound.",
+      "sourceTextSha256": "af913461160886c9b932dee6a4c2d9edd8fbf852ac241f8e66b6f00769f70594",
+      "uncertain": false
+    },
+    "shuowen:6038": {
+      "text": "Long in time or distance. Formed from 兀 and 匕; 兀 conveys height and distance. Over time things change. 亾 indicates the sound; 纼 is inverted 亾. All characters in this group follow 長. The recorded identification of 纼 is uncertain.",
+      "sourceTextSha256": "b4f1f304e780a836476645712427ce15eb8b0a4c6c79c16b13ebcf29400433d6",
+      "uncertain": true
+    },
+    "shuowen:6039": {
+      "text": "An utmost limit; to set out. Formed from 長, with 隶 indicating the sound.",
+      "sourceTextSha256": "84db6071c3ded95f2b28aca54b0ca061b9aeae0bedad7115854b0caebb203e38",
+      "uncertain": false
+    },
+    "shuowen:6040": {
+      "text": "Long-lasting. Formed from 長, with 爾 indicating the sound.",
+      "sourceTextSha256": "6cdd21b497c4d9fa8536c279cad83c4352fe1d4c340f8d08e74c7c560c38dcdc",
+      "uncertain": false
+    },
+    "shuowen:6041": {
+      "text": "A snake’s virulent poison extending; the wording 惡毒長 is uncertain. Formed from 長, with 失 indicating the sound.",
+      "sourceTextSha256": "28bbb084788eeb721dd740d30ab82a4a7cd79dde966881f84695a148456fd652",
+      "uncertain": true
+    },
+    "shuowen:6042": {
+      "text": "A flag erected in districts and neighborhoods. Depicts its staff and three streamers, of mixed silks with each half-width different. It urges the people on; hence haste is called 勿勿. All characters in this group follow 勿.",
+      "sourceTextSha256": "05e6b86f560c80360bd0723bcf470a98af79901668f86ceeaa6baeed87db4f69",
+      "uncertain": false
+    },
+    "shuowen:6043": {
+      "text": "To open. Formed from 日, 一 and 勿. Another explanation: to fly aloft. Another: long. Another: the appearance of many strong people.",
+      "sourceTextSha256": "c052faeb7ca8efdc619addaa8fedcf330bd5c06baabd726c7ef86d8056428663",
+      "uncertain": false
+    },
+    "shuowen:6044": {
+      "text": "Hair drooping, 冄冄. Pictographic. All characters in this group follow 冄.",
+      "sourceTextSha256": "32a344bd5c844024d7dc62c9ba7ec600de0efdc05935ba7d2e5daacd4c12b27f",
+      "uncertain": false
+    },
+    "shuowen:6045": {
+      "text": "Cheek hair. Depicts hair. The Rites of Zhou says: “Make its scales and its beard.” All characters in this group follow 而.",
+      "sourceTextSha256": "7f745b12e1a81946677c9e0987bbdb880b9610a65830fbd39bfc9ba2e0a3a710",
+      "uncertain": false
+    },
+    "shuowen:6046": {
+      "text": "A punishment not severe enough to require shaving the head. Formed from 而 and 彡.",
+      "sourceTextSha256": "8c1cb47f20b74b8f9ba158adab4aca19b5a3897b499c3b01212a17bcc8a7c009",
+      "uncertain": false
+    },
+    "shuowen:6047": {
+      "text": "A pig, 彘. Its tail ends, hence called 豕; the phrase 竭其尾 is uncertain. Depicts hair, feet and a tail behind. Pronounced the same as 豨. Note: contemporary writing wrongly uses 豕 for 彘 and 彘 for 豕. How is this clear? 啄 and 琢 follow 豕, while 蟸 follows 彘; all take their sounds from these, making the distinction clear. All characters in this group follow 豕.",
+      "sourceTextSha256": "56b11da3ceeeaed569f161d73b3d3d9db5623b6f90e69bf65378a99590046c14",
+      "uncertain": true
+    },
+    "shuowen:6048": {
+      "text": "A pig whose hairs cluster in threes. Formed from 豕, with 者 indicating the sound.",
+      "sourceTextSha256": "dc7c8c6cb1b4fc66c8e82e216746d82475b015660c7f8794e1344a8ff1dd58e3",
+      "uncertain": false
+    },
+    "shuowen:6049": {
+      "text": "A small piglet. Formed from 豕, with 𣪎 indicating the sound.",
+      "sourceTextSha256": "e48130b0f11cfd926e820ab22aa8c974d411e23e4e797001ff676fbadc674d99",
+      "uncertain": false
+    },
+    "shuowen:6050": {
+      "text": "A three-month-old piglet, its belly bulging, 豯豯. Formed from 豕, with 奚 indicating the sound.",
+      "sourceTextSha256": "333799c8e7235a9db0e9f89c659da482ad000b7be4e4cf768be3fd75246734a7",
+      "uncertain": false
+    },
+    "shuowen:6051": {
+      "text": "A six-month-old piglet. Formed from 豕, with 從 indicating the sound. Another explanation: a one-year-old pig, still gathering in a group.",
+      "sourceTextSha256": "fb88c4baa9dbd01f41f8e8fe95606e8313efa316360c285d7d15224f9a5720d8",
+      "uncertain": false
+    },
+    "shuowen:6052": {
+      "text": "A sow. Formed from 豕, with 巴 indicating the sound. Another explanation: a one-year-old pig able to seize or grapple with another. The Odes says: “One shot, five sows.”",
+      "sourceTextSha256": "051bfd605695307b26f67141cc86fe1c2c362f1055115318d17e6601f47c217a",
+      "uncertain": false
+    },
+    "shuowen:6053": {
+      "text": "A three-year-old pig, its shoulders having reached full height. Formed from 豕, with 幵 indicating the sound. The Odes says: “Drive side by side after two three-year-old boars.”",
+      "sourceTextSha256": "1b93f0bcc3c9874b369b6bddde6a8f858bbd255e1f30c94c1c03b58a4ca084d6",
+      "uncertain": false
+    },
+    "shuowen:6054": {
+      "text": "A castrated pig. Formed from 豕, with 賁 indicating the sound.",
+      "sourceTextSha256": "960e0f6cfb1aca7b50ecd2c159a0023c54c4fffb7f710dffc419fb9686bda251",
+      "uncertain": false
+    },
+    "shuowen:6055": {
+      "text": "A male pig. Formed from 豕, with 叚 indicating the sound.",
+      "sourceTextSha256": "d2b6cec8e7f754057fa34c526bca7acc3b91d8fbdb8692f4e3615e4278db36b8",
+      "uncertain": false
+    },
+    "shuowen:6056": {
+      "text": "Shanggu’s name for a boar. Formed from 豕, with abbreviated 役 indicating the sound.",
+      "sourceTextSha256": "01312b6567b782a1f4947b0e8d5fd43f1e7284ffbbf2be8bbe4041d02b79b3c2",
+      "uncertain": false
+    },
+    "shuowen:6057": {
+      "text": "A castrated pig. Formed from 豕, with 隋 indicating the sound.",
+      "sourceTextSha256": "b93cdb6a4771695b8b1f366bda7617be5fa26662a7ada5772882f0d4b3159f8e",
+      "uncertain": false
+    },
+    "shuowen:6058": {
+      "text": "To bite. Formed from 豕, with 𥃩 indicating the sound.",
+      "sourceTextSha256": "ac24df0f2abac39be988c20783ebc1dd053e2f5cec84f86cbcfb6a07646ff16d",
+      "uncertain": false
+    },
+    "shuowen:6059": {
+      "text": "A pig’s breathing. Formed from 豕, with 壹 indicating the sound. The Spring and Autumn Commentary says: “He begot Ao and Yi.”",
+      "sourceTextSha256": "3f08e476f2da356893d68415170194296b55384fccca29a68b090f3a88afdd9b",
+      "uncertain": false
+    },
+    "shuowen:6060": {
+      "text": "A pig’s breathing. Formed from 豕, with 甫 indicating the sound.",
+      "sourceTextSha256": "5a4fd41b669e0a3479a5ea3f349de65644b4ed4b689d2ef479416fd3e93ac6f3",
+      "uncertain": false
+    },
+    "shuowen:6061": {
+      "text": "To raise pigs in pens on grain. Formed from 豕, with 𢍏 indicating the sound.",
+      "sourceTextSha256": "ac731825cb276c1ac8ea2e6d0a6dbc4e737410f76f8ffea4f51cf322f2fb2db4",
+      "uncertain": false
+    },
+    "shuowen:6062": {
+      "text": "A kind of pig. Formed from 豕, with 且 indicating the sound.",
+      "sourceTextSha256": "09f8839ce7e48c896abd7a4b8c6fb1f0b39d812aa7b9944848bd09ccae986c27",
+      "uncertain": false
+    },
+    "shuowen:6063": {
+      "text": "To escape or run free. Formed from 豕, with 原 indicating the sound. The Book of Zhou says: “The 豲 has claws but dares not scratch with them.” Read like 桓.",
+      "sourceTextSha256": "76233aee111ae41ce02f8c56273f1d951c62fec7ec2ac93ef28c3af1553cc57c",
+      "uncertain": false
+    },
+    "shuowen:6064": {
+      "text": "A pig running, 豨豨. Formed from 豕, with 希 indicating the sound. In antiquity there was the scourge of giant boars and long snakes.",
+      "sourceTextSha256": "42d7a46f68ac6eeec5f03bc7085de35e1e402c2e3de7aac5a428e7b45fd961cc",
+      "uncertain": false
+    },
+    "shuowen:6065": {
+      "text": "A pig walking with bound feet, 豖豖. Formed from 豕 with two feet tied.",
+      "sourceTextSha256": "baab64fee48a46042214ed61d200c614b5f9f9490d0c79f0ce85241e9c2c4c05",
+      "uncertain": false
+    },
+    "shuowen:6066": {
+      "text": "To fight locked together without separating. Formed from 豕 and 虍: a pig and tiger fighting without separating. Read like 蘮 in the plant name 蘮蒘. Sima Xiangru says 豦 is a kind of giant boar. Another explanation: a tiger raising two feet.",
+      "sourceTextSha256": "2eaa194f4d07d05fe72154a7db7b29f93c77f7c31e2865335ace7b82b51a2696",
+      "uncertain": false
+    },
+    "shuowen:6067": {
+      "text": "A pig angry with its hairs erect. Another explanation: to cut down or destroy. Formed from 豕 and 辛.",
+      "sourceTextSha256": "be5bffafc5c8ebf1353c1c946ea784cce0c98a4758c03b3324597c3776f3ccaf",
+      "uncertain": false
+    },
+    "shuowen:6068": {
+      "text": "Two pigs. 豳 follows this element. Further explanation is missing.",
+      "sourceTextSha256": "60fcc250305cb4ca9ceed94dc37f0f6b06ff508c3f1565abb2bca9f5a30d5443",
+      "uncertain": false
+    },
+    "shuowen:6069": {
+      "text": "A long-bristled beast. Another explanation: Henei’s name for a pig. Formed from 彑, with the lower part depicting hairy feet. All characters in this group follow 㣇. Read like 弟.",
+      "sourceTextSha256": "d39ecb2065bc8b4ab8820efdefdb56a4592a3dcddb4b86c7596c778794467ea8",
+      "uncertain": false
+    },
+    "shuowen:6070": {
+      "text": "A kind of pig. Formed from 㣇, with 曶 indicating the sound.",
+      "sourceTextSha256": "2b05c098b0ebc96d108c37d094214d53af5787c528bd7e72a747fe67a35acacb",
+      "uncertain": false
+    },
+    "shuowen:6071": {
+      "text": "A pig whose bristles resemble brush tubes, from Nan Commandery. Formed from 㣇, with 高 indicating the sound.",
+      "sourceTextSha256": "2f41b0c92a8456ab488ced355813ef42c4da6cd9e290a9cb3523378fc819f7c8",
+      "uncertain": false
+    },
+    "shuowen:6072": {
+      "text": "A creature resembling a porcupine. Formed from 㣇, with abbreviated 胃 indicating the sound.",
+      "sourceTextSha256": "6c27dd9a097542962f5494fb618baf3487bb7789177581f640ca83a070afe8aa",
+      "uncertain": false
+    },
+    "shuowen:6073": {
+      "text": "A kind of 㣇 beast. Formed from two 㣇.",
+      "sourceTextSha256": "5d87523e8bcc783e0c862335faf381639e66baf308a6beb9c810bbdd64197807",
+      "uncertain": false
+    },
+    "shuowen:6074": {
+      "text": "A pig’s head, depicting its pointed shape seen above. All characters in this group follow 彑. Read like 罽.",
+      "sourceTextSha256": "627b2adda2e5856682a297c9c7c3704c18c5d3e500c4292de70ee35d3a396c60",
+      "uncertain": false
+    },
+    "shuowen:6075": {
+      "text": "A pig. A pig with disabled rear hooves is called 彘. Formed from 彑, with 矢 indicating the sound, and two 匕: a pig’s feet are the same as a deer’s.",
+      "sourceTextSha256": "b72fd434fa5a17468c92498355649aadabde5238c201908acf3727904c4837bb",
+      "uncertain": false
+    },
+    "shuowen:6076": {
+      "text": "A pig. Formed from 彑 and 豕. Read like 弛.",
+      "sourceTextSha256": "6b9e040672789340e5c6aeb11e672c1847f012703eb070a8f863909e6c613cc3",
+      "uncertain": false
+    },
+    "shuowen:6077": {
+      "text": "A pig. Formed from 彑, with the lower part depicting its feet. Read like 瑕.",
+      "sourceTextSha256": "fafcc0f70cabb582d6a756fe2bc44138c86fd32fb224da6622f17f9cc58b049d",
+      "uncertain": false
+    },
+    "shuowen:6078": {
+      "text": "A pig running. Formed from 彑 and abbreviated 豕.",
+      "sourceTextSha256": "46bb741ad8a7f248b7f6b6ea9b6a76feb204fb04ff78dfd39dbedd64aaf4a53f",
+      "uncertain": false
+    },
+    "shuowen:6079": {
+      "text": "A small pig. Formed from abbreviated 彖; pictographic. Also formed from 又 holding 肉, to supply sacrifices. All characters in this group follow 豚.",
+      "sourceTextSha256": "86a80efc56715812cc6d7e1963221117f912f19b2fa2ead1d1c7be0d940c0658",
+      "uncertain": false
+    },
+    "shuowen:6080": {
+      "text": "A kind of piglet. Formed from 豚, with 衞 indicating the sound. Read like 罽.",
+      "sourceTextSha256": "fd67eb1043c90e0e82aec1925a704192867f57cc4a5b97ae8ec7f62841f63af0",
+      "uncertain": false
+    },
+    "shuowen:6081": {
+      "text": "A long-backed beast moving stealthily, 豸豸, as if watching to kill something. All characters in this group follow 豸. In 司殺, 司 is read like 伺 in 伺候.",
+      "sourceTextSha256": "22a5d99332ca3d764a85a4c9a3554574b39ade303662cecb023d3fb3a39aa244",
+      "uncertain": false
+    },
+    "shuowen:6082": {
+      "text": "Resembles a tiger, with round markings. Formed from 豸, with 勺 indicating the sound.",
+      "sourceTextSha256": "7749b91d4cc3efb5934989708b3b51aec1cbf18218724a11559e5d23721987a7",
+      "uncertain": false
+    },
+    "shuowen:6083": {
+      "text": "貙獌, resembling a 貍 beast. Formed from 豸, with 區 indicating the sound.",
+      "sourceTextSha256": "acb200566bc438b27c37535034141c01d725feecea6156d7e85d1c824bb892c4",
+      "uncertain": false
+    },
+    "shuowen:6084": {
+      "text": "A kind of 貙 beast. Formed from 豸, with 單 indicating the sound.",
+      "sourceTextSha256": "01640e16a7ca34f7946d3f7b96ab3aa7617ef84e9eb56b439c1c57f0fe0f1f32",
+      "uncertain": false
+    },
+    "shuowen:6085": {
+      "text": "A leopard-like beast from Mo country, 貉國. Formed from 豸, with 𣬉 indicating the sound. The Odes says: “Present its 貔 skin.” The Book of Zhou says: “Like tigers, like 貔.” 貔 is a fierce beast.",
+      "sourceTextSha256": "aba049b3da0c0f656808923f9e6b359aef8cf2024b827601a74fb42eb097b01e",
+      "uncertain": false
+    },
+    "shuowen:6086": {
+      "text": "A wolf-like beast with a dog’s voice. Formed from 豸, with 才 indicating the sound.",
+      "sourceTextSha256": "057daec705d2817bca63415a6e3c4555ac5ab94851a084070118b01e8b0f6597",
+      "uncertain": false
+    },
+    "shuowen:6087": {
+      "text": "猰貐, resembling a 貙, with tiger’s claws; it eats people and runs swiftly. Formed from 豸, with 俞 indicating the sound.",
+      "sourceTextSha256": "c8f2a9d4b47680944c594f711109bebf64e6b3d1940740642ca2f6afd4099918",
+      "uncertain": false
+    },
+    "shuowen:6088": {
+      "text": "Resembles a bear, yellow and black, from Shu. Formed from 豸, with 莫 indicating the sound.",
+      "sourceTextSha256": "dbf59a193ff2176b6677d078493486e5a9b7bcb5017e69c4c8bf6dbf54ec7220",
+      "uncertain": false
+    },
+    "shuowen:6089": {
+      "text": "A fierce beast. Formed from 豸, with 庸 indicating the sound.",
+      "sourceTextSha256": "c91857938f378cedea6a07aed372c5cd38b71a1c14c6381fc4bf6a64efde0bf5",
+      "uncertain": false
+    },
+    "shuowen:6090": {
+      "text": "纱玃, perhaps a large ape; the recorded animal name is uncertain. Formed from 豸, with 矍 indicating the sound.",
+      "sourceTextSha256": "05143c7bdffdb37f2afb78bb59b15286284de3687cb5130ca26f17af119ab935",
+      "uncertain": true
+    },
+    "shuowen:6091": {
+      "text": "A beast without forefeet. Formed from 豸, with 出 indicating the sound. Han law: “For catching a jackal or 貀, a reward of one hundred coins.”",
+      "sourceTextSha256": "06529f7b7f4cc9d771bcadd170be71fa2ce2ebd795f20ad93ce7c07fe033fd19",
+      "uncertain": false
+    },
+    "shuowen:6092": {
+      "text": "A fox-like beast fond of sleeping. Formed from 豸, with 舟 indicating the sound. The Analects says: “Thick fox and 貈 furs for dwelling at home.”",
+      "sourceTextSha256": "2c460f317c549ccd2b919ffaac99dc243161322cda806ce802a1a6d1ea028736",
+      "uncertain": false
+    },
+    "shuowen:6093": {
+      "text": "A wild dog of Hu territory. Formed from 豸, with 干 indicating the sound.",
+      "sourceTextSha256": "cb3424b79584d00b3f511713d904bd463a7f53f057659dd1a19da70a4bdde0fd",
+      "uncertain": false
+    },
+    "shuowen:6094": {
+      "text": "A rodent-like beast, large, yellow and black, from the Hu state of Dingling. Formed from 豸, with 召 indicating the sound.",
+      "sourceTextSha256": "5ffa6563c22a15d7fe2b1eaa24b6fd62844f8e2cfcfebeefcd172d31f7597653",
+      "uncertain": false
+    },
+    "shuowen:6095": {
+      "text": "A northern kind of beast. Formed from 豸, with 各 indicating the sound. Confucius says: “貉 conveys the meaning of evil.”",
+      "sourceTextSha256": "b0f25f17a781cde887cd6a717af5349d121dc238afe7943e22998264bd914b4d",
+      "uncertain": false
+    },
+    "shuowen:6096": {
+      "text": "A kind of 貉 beast. Formed from 豸, with 亘 indicating the sound.",
+      "sourceTextSha256": "975973ef6223e31dd631841b035538970acc6e9a0bf440f3cef0cd64a767a1e8",
+      "uncertain": false
+    },
+    "shuowen:6097": {
+      "text": "A lurking beast resembling a 貙. Formed from 豸, with 里 indicating the sound.",
+      "sourceTextSha256": "828b5a9c28f4162c02efd963f14be17a2c8f8f7a206c60adbefd2927e8b8b7fe",
+      "uncertain": false
+    },
+    "shuowen:6098": {
+      "text": "A beast. Formed from 豸, with 耑 indicating the sound. Read like 湍.",
+      "sourceTextSha256": "8048f5e9cfae4cb5b498b31a9dd06dd315200c000df66a5fae8ae89ddb3957f4",
+      "uncertain": false
+    },
+    "shuowen:6099": {
+      "text": "A wild pig. Formed from 豸, with 雚 indicating the sound.",
+      "sourceTextSha256": "1812e277338447693d65a04ec347bced7bef41424409ecc6d0b51805045a25a6",
+      "uncertain": false
+    },
+    "shuowen:6100": {
+      "text": "A rodent-like beast, good at turning about. Formed from 豸, with 穴 indicating the sound.",
+      "sourceTextSha256": "ee599f69da35376c1ac7f0c7cb0d9b7ea3540b97e96bbbda3c6ff0136c961b68",
+      "uncertain": false
+    }
+  }
+}

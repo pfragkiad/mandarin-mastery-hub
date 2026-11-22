@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "8132cfac2d6c37e905954f601498171e9563d9473d8353317182541f4cca7404",
+    "created_date": "2026-11-22"
+  },
+  "batch": "049",
+  "translations": {
+    "shuowen:4801": {
+      "text": "A fishing net. Formed from 网, with 㓹 indicating the sound; 㓹 is large-seal 銳.",
+      "sourceTextSha256": "92cb554506456af4b97f91c927d04a807cc0726dab77f08e0d4d179bb556408b",
+      "uncertain": false
+    },
+    "shuowen:4802": {
+      "text": "A fishing net. Formed from 网, with 瓜 indicating the sound. The Odes says: “Cast the great net with a splashing sound.”",
+      "sourceTextSha256": "eb0bea68ec818512972ac6e7a09ba787b68f7576278e36096efc107ad7311510",
+      "uncertain": false
+    },
+    "shuowen:4803": {
+      "text": "A net. Formed from 网, with 古 indicating the sound.",
+      "sourceTextSha256": "08d1dfc930d7a75573545442b74a759256486d4f07f3841f1c5f6cae16ffcbdc",
+      "uncertain": false
+    },
+    "shuowen:4804": {
+      "text": "A bent fish-weir and a widow’s fish basket, where fish are detained. Formed from 网 and 畱; 畱 also indicates the sound.",
+      "sourceTextSha256": "7af24016a1d78b352769bd3c4b51030f82e986bce6616e0b941c8f198afca4d7",
+      "uncertain": false
+    },
+    "shuowen:4805": {
+      "text": "罜䍡, a fishing net. Formed from 网, with 主 indicating the sound.",
+      "sourceTextSha256": "392a7feab48c2f4257e15ec8320c35daf0e7dc2dfb423573d0945128d5fb49b4",
+      "uncertain": false
+    },
+    "shuowen:4806": {
+      "text": "The net 罜䍡. Formed from 网, with 鹿 indicating the sound.",
+      "sourceTextSha256": "7a572b238ce1b82e55046fe653f1404db2ebdb06895df65a1ba93d7f9a8d8867",
+      "uncertain": false
+    },
+    "shuowen:4807": {
+      "text": "To pile brushwood in water to gather fish. Formed from 网, with 林 indicating the sound.",
+      "sourceTextSha256": "46298755c23aeaa70509f0ef961bbe36a7ca040a1827e4a51a86b3be268b204e",
+      "uncertain": false
+    },
+    "shuowen:4808": {
+      "text": "To fish with a hook. Formed from 网, with 民 indicating the sound.",
+      "sourceTextSha256": "b4aab6bffff199d8db0f68d1326e6c6cb6862e9917c83942b1ec3d951d636f70",
+      "uncertain": false
+    },
+    "shuowen:4809": {
+      "text": "To net birds with silk thread. Formed from 网 and 維. In antiquity the Mang clan first made this net.",
+      "sourceTextSha256": "9c128a6b669138f6811e90f8c7deaca573abe877b61e5db878d37df4c7d3a325",
+      "uncertain": false
+    },
+    "shuowen:4810": {
+      "text": "An overturning trap for catching birds. Formed from 网, with 叕 indicating the sound.",
+      "sourceTextSha256": "ab5492118c8817b37ee028e933ebb05db331693085b97168d3e7501896d660b3",
+      "uncertain": false
+    },
+    "shuowen:4811": {
+      "text": "An overturning bird trap, 罬. Formed from 网, with 童 indicating the sound.",
+      "sourceTextSha256": "3db323e026f33d1b6e0980b675ea92fa264484989b6782a69dc9788bfa7634c4",
+      "uncertain": false
+    },
+    "shuowen:4812": {
+      "text": "An overturning trap. Formed from 网, with 包 indicating the sound. The Odes says: “The pheasant is caught in the trap.”",
+      "sourceTextSha256": "57cc02b350a35cd03ff6e2da56c2f780eb69df1061cd29a48308e806f7ec9d81",
+      "uncertain": false
+    },
+    "shuowen:4813": {
+      "text": "A bird-catching net. Formed from 网, with 𤈫 indicating the sound.",
+      "sourceTextSha256": "6b5405113c141e7125379cdd3f67bd13f25f6bf6f248a963c106b526d3b72a71",
+      "uncertain": false
+    },
+    "shuowen:4814": {
+      "text": "A hare-catching net. Formed from 网, with 否 indicating the sound.",
+      "sourceTextSha256": "6f40d1c2db9d621f46cab69e0dbe9de9187e5b00d88b7d29d22471dbce94392a",
+      "uncertain": false
+    },
+    "shuowen:4815": {
+      "text": "A net. Formed from 网, with 互 indicating the sound.",
+      "sourceTextSha256": "6e9deb9f84782529db89c4ca4f41a138c93b6953d1c807ee22c10588be079411",
+      "uncertain": false
+    },
+    "shuowen:4816": {
+      "text": "A hare net. Formed from 网, with 且 indicating the sound.",
+      "sourceTextSha256": "86ae2f385c9a43fbd0dec10cdcd90e4c8161985fc4a75122cdb52d64304e21d0",
+      "uncertain": false
+    },
+    "shuowen:4817": {
+      "text": "A net within a window. Formed from 网, with 舞 indicating the sound.",
+      "sourceTextSha256": "b5b1f73c3f7a4a18e99686d31dd2be581480850896c9fdaeb114e5c9da2080dc",
+      "uncertain": false
+    },
+    "shuowen:4818": {
+      "text": "To arrange and assign, connecting things as in a net. Formed from 网, with 者 indicating the sound.",
+      "sourceTextSha256": "19d22e3c644c0ac2995cf291cd8b9f42145480a21953f35a5b5e96f7c9413acc",
+      "uncertain": false
+    },
+    "shuowen:4819": {
+      "text": "To release a guilty person. Formed from 网 and 能: one has worth and ability but falls into the net, then is released. The Rites of Zhou says: “Deliberate on the punishment of the able.”",
+      "sourceTextSha256": "05da9dffdfd7916554cc6ea3f5f83807bd7575d2aa1a5419619607b6c08e31eb",
+      "uncertain": false
+    },
+    "shuowen:4820": {
+      "text": "To pardon. Formed from 网 and 直.",
+      "sourceTextSha256": "3cc12b2843307027a4fbe044deac1f5307cef5ffb7610aa8f809c359a81e4dbc",
+      "uncertain": false
+    },
+    "shuowen:4821": {
+      "text": "To cover. Formed from 网, with 音 indicating the sound.",
+      "sourceTextSha256": "feb55cbc91009fa7d3832c64e051efa9b7e598052fe62225d64b91728af538df",
+      "uncertain": false
+    },
+    "shuowen:4822": {
+      "text": "To curse. Formed from 网 and 言; 网 represents a guilty person.",
+      "sourceTextSha256": "9b3f0843c0c6552a352a80188d2b5f5b4ada6e05850dff646e48978bd96030ca",
+      "uncertain": false
+    },
+    "shuowen:4823": {
+      "text": "To curse. Formed from 网, with 馬 indicating the sound.",
+      "sourceTextSha256": "e2e5e5ae9ba4f004b4c9d21dd2bd82939146e63a63385524afda5b7e80ad16be",
+      "uncertain": false
+    },
+    "shuowen:4824": {
+      "text": "A horse’s headstall. Formed from 网 and 𩡧; 𩡧 means horse hobbles.",
+      "sourceTextSha256": "df67e292b63f5c2e3bda9b5b63d7ecbeec3aabca6a62db7e75e4b0df2c160018",
+      "uncertain": false
+    },
+    "shuowen:4825": {
+      "text": "A fishing net. Formed from 网, with 或 indicating the sound.",
+      "sourceTextSha256": "eb2ba083ea2b9eaaa868712363103beb94920295eb14b13940c50310d4253550",
+      "uncertain": false
+    },
+    "shuowen:4826": {
+      "text": "罘罳, a screen. Formed from 网, with 思 indicating the sound.",
+      "sourceTextSha256": "26b35641f546be0d3183ac875886a56d64fe995048f0e1faaf52f460e8a56008",
+      "uncertain": false
+    },
+    "shuowen:4827": {
+      "text": "Sorrow in the heart. Formed from 网; further details are unknown. Ancient writing often also uses 離.",
+      "sourceTextSha256": "f522b3e182b38c226d79273996c45d1a3158a8bd0649101e58d5e5c151ff2ab2",
+      "uncertain": false
+    },
+    "shuowen:4828": {
+      "text": "To cover. Formed from 冂, covered above and below. All characters in this group follow 襾. Read like 𣇩.",
+      "sourceTextSha256": "828aa04dc2701a32d1aff56435f25a07af361a087153f308a8305a70caef5a51",
+      "uncertain": false
+    },
+    "shuowen:4829": {
+      "text": "To turn over and over. Formed from 襾, with 乏 indicating the sound.",
+      "sourceTextSha256": "541cbe3ba8b5addfec1133e8022b433ae69a94dfc747a9166a048aeee75060cd",
+      "uncertain": false
+    },
+    "shuowen:4830": {
+      "text": "The truth. In investigating affairs, enclosing, pressing and obstructing a statement until its truth is obtained is 覈. Formed from 襾, with 敫 indicating the sound.",
+      "sourceTextSha256": "7924cd7481c5f06bc7a0316a3687712892f7924b63c34f370b903ab7a5bb38bf",
+      "uncertain": false
+    },
+    "shuowen:4831": {
+      "text": "To overturn, 覂. Another explanation: to cover. Formed from 襾, with 復 indicating the sound.",
+      "sourceTextSha256": "37447f3f6213c19e42f7b91fd623d4c6ef77012c820f410afa32f8193f960e44",
+      "uncertain": false
+    },
+    "shuowen:4832": {
+      "text": "A cloth worn at the belt. Formed from 冂, with 丨 depicting thread. All characters in this group follow 巾.",
+      "sourceTextSha256": "9d8e0ae2680ddcde808dd7b5886cefcc29c33f5cf00ac6f5a7805826eb6a3dc5",
+      "uncertain": false
+    },
+    "shuowen:4833": {
+      "text": "Chu calls a large cloth 𢁥. Formed from 巾, with 分 indicating the sound.",
+      "sourceTextSha256": "80fe87c27e816851803cb96254d5b8eb2dd6016b3ec6d714ee257c8cae8318ab",
+      "uncertain": false
+    },
+    "shuowen:4834": {
+      "text": "A cloth worn at the belt. Formed from 巾 and 𠂤.",
+      "sourceTextSha256": "422ea41372c1e0ca6764c949df6e90e984143325eb4644d42ca51afb085f2634",
+      "uncertain": false
+    },
+    "shuowen:4835": {
+      "text": "A ceremonial cloth. Formed from 巾 and 執.",
+      "sourceTextSha256": "55d2c111cd77e1f189cdde292924156f13ccfc67d857379bfd779225f18dfb16",
+      "uncertain": false
+    },
+    "shuowen:4836": {
+      "text": "A cloth one width across. Formed from 巾, with 犮 indicating the sound. Read like 撥.",
+      "sourceTextSha256": "32ba35a893acf1720b26aa1dca5f086a8517a911dbecba5700ca00f2c30e0691",
+      "uncertain": false
+    },
+    "shuowen:4837": {
+      "text": "A pillow cloth. Formed from 巾, with 刃 indicating the sound.",
+      "sourceTextSha256": "1cf89de5f6c191aa36f6d462bda1edc889adafadc58d29674952980abdd9fcd4",
+      "uncertain": false
+    },
+    "shuowen:4838": {
+      "text": "A large cloth covering clothing. Formed from 巾, with 般 indicating the sound. Some take it as a head wrap, 首鞶.",
+      "sourceTextSha256": "4feee93af5a8798e994a70cf7ff12e420910e82e89ed820f87633897e6b35b9f",
+      "uncertain": false
+    },
+    "shuowen:4839": {
+      "text": "A lining cloth, 巾帤. Formed from 巾, with 如 indicating the sound. Another explanation: a worn cloth.",
+      "sourceTextSha256": "3040a9cf1554220bbf2ef600253fb07170c6ec0bb72bab0232f4ff3bed269b43",
+      "uncertain": false
+    },
+    "shuowen:4840": {
+      "text": "Silk cloth. Formed from 巾, with 敝 indicating the sound.",
+      "sourceTextSha256": "bcbde8cc81655a9effdb678f4f68e4a9f5c8e6455a61a08b11c9ab40e3f589b8",
+      "uncertain": false
+    },
+    "shuowen:4841": {
+      "text": "The width of cloth or silk. Formed from 巾, with 畐 indicating the sound.",
+      "sourceTextSha256": "88d79bc9aafc7e8f0b06bad876e7f7d2eb86eaeef5f846fd80ce91e06bace7ba",
+      "uncertain": false
+    },
+    "shuowen:4842": {
+      "text": "A coloring craftsman who processes silk and scours it. Formed from 巾, with 𡿬 indicating the sound. Another explanation: 𢂩隔, a covering or partition; the term is uncertain. Read like 荒.",
+      "sourceTextSha256": "06e131e3f79c2175566bdbb3daa2190757f494179ca132ff04023b43c4cc67af",
+      "uncertain": true
+    },
+    "shuowen:4843": {
+      "text": "A sash. Men wear leather belts, women silk ones. Depicts tying on pendants. A pendant must have a cloth, hence 巾.",
+      "sourceTextSha256": "1c058c97e4891b893325898434db8dc25bdc0410b3b2f633e08fcb4fc31b2f6c",
+      "uncertain": false
+    },
+    "shuowen:4844": {
+      "text": "Hair covered with a cloth is called 幘. Formed from 巾, with 責 indicating the sound.",
+      "sourceTextSha256": "c7fb1d110867805e18e330e629c77b59834054b4988aab9958d4c2473dc114a9",
+      "uncertain": false
+    },
+    "shuowen:4845": {
+      "text": "The end of a collar. Formed from 巾, with 旬 indicating the sound.",
+      "sourceTextSha256": "9206cb3da6edcac8cc05e7249250e131ff447907848bcaf505db19de8963781b",
+      "uncertain": false
+    },
+    "shuowen:4846": {
+      "text": "Hongnong calls a skirt 帔. Formed from 巾, with 皮 indicating the sound.",
+      "sourceTextSha256": "b9919bdb46d4cc0954983a99c2bf0a7340c95ee6adc43f4e0a87560a4fd89a95",
+      "uncertain": false
+    },
+    "shuowen:4847": {
+      "text": "A lower skirt. Formed from 巾, with 尚 indicating the sound.",
+      "sourceTextSha256": "77f5356561a526e45a4a475795bd4d904a0a1d5d6dc1ba70e5569d6132d0b688",
+      "uncertain": false
+    },
+    "shuowen:4848": {
+      "text": "A lower garment. Formed from 巾, with 君 indicating the sound.",
+      "sourceTextSha256": "311ba55bce6421886046e38587bcfe10328501f8c37d37ad0365ae202005556b",
+      "uncertain": false
+    },
+    "shuowen:4849": {
+      "text": "A skirt. Another explanation: a single-width cloth, 帗. Another: a woman’s side garment. Formed from 巾, with 戔 indicating the sound. Read like 殺 in 末殺.",
+      "sourceTextSha256": "8459f754b65833ee27b75f98ff54d71c031aa54bfa48db5f058974c3a18c9fda",
+      "uncertain": false
+    },
+    "shuowen:4850": {
+      "text": "The garment 𢃭. Formed from 巾, with 軍 indicating the sound.",
+      "sourceTextSha256": "e61ff83dcb7204a262afd31d22c595ae4f7b1468a0308c28891b1c75d71d7c99",
+      "uncertain": false
+    },
+    "shuowen:4851": {
+      "text": "The garment 㡓. Formed from 巾, with 怱 indicating the sound. Another explanation: a book wrapper.",
+      "sourceTextSha256": "2c24e5992d9b95549836620e1575201a861249e1805be9d87b6f66eededb5231",
+      "uncertain": false
+    },
+    "shuowen:4852": {
+      "text": "Chu calls an unhemmed garment 𢅡. Formed from 巾, with 監 indicating the sound.",
+      "sourceTextSha256": "e62813b535c143b06f11c81a2e98d5969e9e55c8dd9fb1772335c68dd92d9139",
+      "uncertain": false
+    },
+    "shuowen:4853": {
+      "text": "A curtain. Formed from 巾, with 冥 indicating the sound. The Rites of Zhou mentions a “幎 officer.”",
+      "sourceTextSha256": "e25a64c9af0c01ef487c1541788d9b0adbe1516e94989bbc4a895f7cc6eb046a",
+      "uncertain": false
+    },
+    "shuowen:4854": {
+      "text": "A curtain or canopy. Formed from 巾, with 曼 indicating the sound.",
+      "sourceTextSha256": "f77fb00b8e19bce4afc73557502412bc3a8e83463c5dfe54645aae87fd902cdb",
+      "uncertain": false
+    },
+    "shuowen:4855": {
+      "text": "A single-layer curtain. Formed from 巾, with 𠷎 indicating the sound.",
+      "sourceTextSha256": "2c29294ddfa22ce442674bb3096cbd0f6b769aeb71a5003d16d96a3c582a1af4",
+      "uncertain": false
+    },
+    "shuowen:4856": {
+      "text": "A side curtain. Formed from 巾, with 兼 indicating the sound.",
+      "sourceTextSha256": "38091445f3738ed9bf9201a4bef8e9ecf78511d1f841552b1a707040310673de",
+      "uncertain": false
+    },
+    "shuowen:4857": {
+      "text": "A curtain at the side is 帷. Formed from 巾, with 隹 indicating the sound.",
+      "sourceTextSha256": "ce628e1e79f598993480e50c3ce203af8e4b0e03cdd1784b5585effaf0dc509b",
+      "uncertain": false
+    },
+    "shuowen:4858": {
+      "text": "To spread out. Formed from 巾, with 長 indicating the sound.",
+      "sourceTextSha256": "62ac783e4bd07ee7395585fbafa0af24d147281e27a3fe4d57f4a69facc6cd4d",
+      "uncertain": false
+    },
+    "shuowen:4859": {
+      "text": "A curtain above is 幕; a covering over a food table is also 幕. Formed from 巾, with 莫 indicating the sound.",
+      "sourceTextSha256": "a35c0a5f104a5226c6dfbfd1adade25e28d9d881fb558a6e499c539570805d58",
+      "uncertain": false
+    },
+    "shuowen:4860": {
+      "text": "Torn remnants. Formed from 巾, with 匕 indicating the sound.",
+      "sourceTextSha256": "1709152f34eba374dce01634a09a70be297e822f43e613f93e2d4a54774d5dae",
+      "uncertain": false
+    },
+    "shuowen:4861": {
+      "text": "Remnant silk. Formed from 巾, with 祭 indicating the sound.",
+      "sourceTextSha256": "b8b0cb9ee8ad62877965ce78e65bd58de7d0272197a765e65c1618f30a25333d",
+      "uncertain": false
+    },
+    "shuowen:4862": {
+      "text": "To tear neatly across the end. Formed from 巾, with 俞 indicating the sound.",
+      "sourceTextSha256": "8ee28751f62b883ffd462f7595fb40514ec851e0715ac6836dd5d42a2890c759",
+      "uncertain": false
+    },
+    "shuowen:4863": {
+      "text": "A written endorsement on silk. Formed from 巾, with 占 indicating the sound.",
+      "sourceTextSha256": "536c06d6409c6a4c018caa18272012325e3b0f903505bc05cbf47017c63d3009",
+      "uncertain": false
+    },
+    "shuowen:4864": {
+      "text": "A covering for books. Formed from 巾, with 失 indicating the sound.",
+      "sourceTextSha256": "26f200b7df5df92dd5cd328f48b50243e9adab8eee7e1a214e53c5cfb440a3dd",
+      "uncertain": false
+    },
+    "shuowen:4865": {
+      "text": "A banner or standard. Formed from 巾, with 前 indicating the sound.",
+      "sourceTextSha256": "40114302dc3fae2b5a98b12aef9a4d431e395e723661fde2d08fa1864671259a",
+      "uncertain": false
+    },
+    "shuowen:4866": {
+      "text": "A distinguishing mark: red silk attached to the back. Formed from 巾, with abbreviated 微 indicating the sound. The Spring and Autumn Commentary says: “Those raising the marks are the duke’s troops.”",
+      "sourceTextSha256": "0e34f7e2cb9fcdd7b4716d67570c4ef73ea3c9d6263c9bb42672e264463311a0",
+      "uncertain": false
+    },
+    "shuowen:4867": {
+      "text": "A standard. Formed from 巾, with 𤐫 indicating the sound.",
+      "sourceTextSha256": "cc0dc3c3e0a81759ad4d298da5ad9da9fa6069796c2a4eea6918c559e3b7a9ae",
+      "uncertain": false
+    },
+    "shuowen:4868": {
+      "text": "A banner. Formed from 巾, with 夗 indicating the sound.",
+      "sourceTextSha256": "f003cd31946c06e760fad6bfe2b5e0d4c3b71c102f25e8a72d8fa020379fced0",
+      "uncertain": false
+    },
+    "shuowen:4869": {
+      "text": "A cloth used by a writing boy to wipe writing tablets. Formed from 巾, with 番 indicating the sound.",
+      "sourceTextSha256": "77b223f3a8358c53856271a73368e4626f964a2b130762e1e134e3f44e7ed6e8",
+      "uncertain": false
+    },
+    "shuowen:4870": {
+      "text": "To brush or sweep off, 刜. Formed from 巾, with 剌 indicating the sound.",
+      "sourceTextSha256": "4fc749388f25fecacb8dd9e65b782592ed0974424801a0164540f93fc17c6a51",
+      "uncertain": false
+    },
+    "shuowen:4871": {
+      "text": "To wipe. Formed from 巾, with 韱 indicating the sound.",
+      "sourceTextSha256": "e56b1d04330e68cbd3e55cd0fc4b21d131931658c01ee4ce11394c4575e0beb7",
+      "uncertain": false
+    },
+    "shuowen:4872": {
+      "text": "The worn-out appearance of a cart. Formed from 巾, with 單 indicating the sound. The Odes says: “The sandalwood cart is worn out.”",
+      "sourceTextSha256": "4610867d1c43728f28421118df884b4ab9583033601d04b191411664a1d7411a",
+      "uncertain": false
+    },
+    "shuowen:4873": {
+      "text": "A covering garment. Formed from 巾, with 冡 indicating the sound.",
+      "sourceTextSha256": "c92882770a7d3ac0dcd47ff4d679d9a5b7cdfbfb9238ad9e5e8b7bc09d0eb279",
+      "uncertain": false
+    },
+    "shuowen:4874": {
+      "text": "A canopy covering. Formed from 巾, with 蔑 indicating the sound. Another explanation: a single-layer quilt.",
+      "sourceTextSha256": "b11335f20198fc22eef921b7fabe8bbbf3208286f39ff9590c541c09e140a842",
+      "uncertain": false
+    },
+    "shuowen:4875": {
+      "text": "To cover. Formed from 巾, with 無 indicating the sound.",
+      "sourceTextSha256": "6d065ce1a7f98d27eb365fda1178921ceb97ffd2df66fef2df2ffb4e5006f0af",
+      "uncertain": false
+    },
+    "shuowen:4876": {
+      "text": "To brush. Formed from 巾 and 人, with 食 indicating the sound. Read like 式. Another explanation: adornment.",
+      "sourceTextSha256": "11e6bea946f041440afb0637a274420b5ff9c21a089532a2e2409e41199d3a14",
+      "uncertain": false
+    },
+    "shuowen:4877": {
+      "text": "A bag. Formed from 巾, with 韋 indicating the sound.",
+      "sourceTextSha256": "84377d91400a3b0b873dafb5450eec8e12a7e3bef751f1fcd8423378897c6daa",
+      "uncertain": false
+    },
+    "shuowen:4878": {
+      "text": "A bag; in the present salt administration, three hu make one 帣. Formed from 巾, with 𢍏 indicating the sound.",
+      "sourceTextSha256": "3d67150c21826fcbff1c70577e6a320137d6200a4a94bfccc1612eb442bc58da",
+      "uncertain": false
+    },
+    "shuowen:4879": {
+      "text": "To sweep away dirt. Formed from 又 holding 巾, sweeping inside 冂. In antiquity Shaokang first made the winnowing basket, broom and millet wine. Shaokang is Dukang, buried at Changyuan.",
+      "sourceTextSha256": "6098884f0ae0baf212d6e1ae9706c41d220427c3f1fa6ffe2f63e9dfaa96f01b",
+      "uncertain": false
+    },
+    "shuowen:4880": {
+      "text": "A mat. According to the Rites, the Son of Heaven’s and feudal lords’ mats have axe-patterned and embroidered borders. Formed from 巾 and abbreviated 庶.",
+      "sourceTextSha256": "c17fd74ceb6fea1d0830ff7b2bc9fd58016c0491abc207c81e89319faf4e6554",
+      "uncertain": false
+    },
+    "shuowen:4881": {
+      "text": "A bag. Formed from 巾, with 朕 indicating the sound.",
+      "sourceTextSha256": "65608b21f502239168b8c8344895380025db199c72e5f967b5e6e6b8c5a20f54",
+      "uncertain": false
+    },
+    "shuowen:4882": {
+      "text": "To fill a bag with grain until it is overfull and splits. Formed from 巾, with 奮 indicating the sound.",
+      "sourceTextSha256": "e0f5c08131c9b7853a07a07f616bda70ce8ed03e63f400d086ee3daeeb6438f3",
+      "uncertain": false
+    },
+    "shuowen:4883": {
+      "text": "A container for carrying grain. Formed from 巾, with 盾 indicating the sound. Read like 屯, the Changes hexagram.",
+      "sourceTextSha256": "ec127b780460ba0462ebeb1b0710fc783c5aaed4249c9b236056c4ca833c8d57",
+      "uncertain": false
+    },
+    "shuowen:4884": {
+      "text": "A cattail-mat container. Formed from 巾, with 及 indicating the sound. Read like 蛤.",
+      "sourceTextSha256": "dd8124f01e8c5f64127485230e7880643b087002553f93714845da648ac8d73d",
+      "uncertain": false
+    },
+    "shuowen:4885": {
+      "text": "Cloth wound around a horse’s bit to fan away sweat. Formed from 巾, with 賁 indicating the sound. The Odes says: “The red bit-cloths are splendid.”",
+      "sourceTextSha256": "f33824343c0752c743e8211a1b1d3edd5dc2af50ca99685a9132e1ae9e13fb0c",
+      "uncertain": false
+    },
+    "shuowen:4886": {
+      "text": "To sweep the ground and wipe it with a cloth. Formed from 巾, with 夒 indicating the sound. Read like 㬮 in 水溫㬮, referring to warm water; the reading phrase is uncertain. Another explanation: to attach.",
+      "sourceTextSha256": "891096bed19e7d97b1e7c2de8861732b7f93ae07f1a23782861c164a9637f3ec",
+      "uncertain": true
+    },
+    "shuowen:4887": {
+      "text": "Where gold and valuables are stored. Formed from 巾, with 奴 indicating the sound.",
+      "sourceTextSha256": "582454c54b5774b57f57cf27a9fe034cd6b5f564cd643db80b07519e1b2ed520",
+      "uncertain": false
+    },
+    "shuowen:4888": {
+      "text": "Woven hemp. Formed from 巾, with 父 indicating the sound.",
+      "sourceTextSha256": "cd52cbb462b435a588bf0e75f564d2b5b8164520085b868c0d623fac5a20df39",
+      "uncertain": false
+    },
+    "shuowen:4889": {
+      "text": "Tribute cloth of the Man and Yi peoples of Nan Commandery. Formed from 巾, with 家 indicating the sound.",
+      "sourceTextSha256": "050db099e94aa06c2a91d71db6b47db7b99e19469b7a3a61613a6b5077efc49b",
+      "uncertain": false
+    },
+    "shuowen:4890": {
+      "text": "Cloth produced in Donglai. Formed from 巾, with 弦 indicating the sound.",
+      "sourceTextSha256": "bc23e17cbd809d0d92543dbffb2803a20352c4c331bcc2c8b4b5e61a3f95ab7f",
+      "uncertain": false
+    },
+    "shuowen:4891": {
+      "text": "Lacquering cloth. Another explanation: a covering for the crossbar on a cart. Formed from 巾, with 敄 indicating the sound. Read like 頊.",
+      "sourceTextSha256": "d855dac3ab1d9bd8d12801a5e90dae8118ae60c48fe0e7aafef3c757c59a6008",
+      "uncertain": false
+    },
+    "shuowen:4892": {
+      "text": "Lacquering cloth. Formed from 巾, with 辟 indicating the sound. The Rites of Zhou says: “The mang carriage has a large covering.”",
+      "sourceTextSha256": "0f75d067cd5bb5510f232991e3d2ab8458798dadb4fbe5a9420fc6f215031e4c",
+      "uncertain": false
+    },
+    "shuowen:4893": {
+      "text": "The end of a collar. Formed from 巾, with 𦔮 indicating the sound.",
+      "sourceTextSha256": "a1eaee820374d327fe57bae3fa00aa746e26599f08c0c7460e16539a4af2cf57",
+      "uncertain": false
+    },
+    "shuowen:4894": {
+      "text": "A kind of banner or standard. Formed from 巾, with 童 indicating the sound.",
+      "sourceTextSha256": "64b92c30031cd2b08ac816aa83cf38d705228d08a12fcd3316bfc065112033e3",
+      "uncertain": false
+    },
+    "shuowen:4895": {
+      "text": "A kind of banner or standard. Formed from 巾, with 戠 indicating the sound.",
+      "sourceTextSha256": "9f0890721cb471f4d697d431e20902fce932dcb6124a520a955d951dd84f2c40",
+      "uncertain": false
+    },
+    "shuowen:4896": {
+      "text": "A covering above is 帟. Formed from 巾, with 亦 indicating the sound.",
+      "sourceTextSha256": "c999c772bd02c3ae15cfe8c62ccc98b3b8756b974def5da08da53f4a2a35ca3c",
+      "uncertain": false
+    },
+    "shuowen:4897": {
+      "text": "A woman’s head ornament. Formed from 巾, with 國 indicating the sound.",
+      "sourceTextSha256": "f218c9dbc9d6b5fbab9750000f72bc7b21969fd4c0b3fc96c854034072171f51",
+      "uncertain": false
+    },
+    "shuowen:4898": {
+      "text": "To gather the hair. Formed from 巾, with 喿 indicating the sound.",
+      "sourceTextSha256": "7052f8c0b26fd1339ad4c061a1faaf440e1951885f6040cdef670db6a5aee8b7",
+      "uncertain": false
+    },
+    "shuowen:4899": {
+      "text": "A bag. Formed from 巾, with 代 indicating the sound. Some forms use 衣.",
+      "sourceTextSha256": "519f0af197613612834ef9e328f9b52e9727f7e2e89d74872dabb11e1fc133d3",
+      "uncertain": false
+    },
+    "shuowen:4900": {
+      "text": "Three widths of silk are called 帊. Formed from 巾, with 巴 indicating the sound.",
+      "sourceTextSha256": "e1dd845e93ceb9be29803fc13c7dfecabd45a13f758dd89f6eb0eeed0725f1ec",
+      "uncertain": false
+    }
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "3c34d848a29a810e225f9a3ee067bc0baef48d2df2142452767384a471cda0e0",
+    "created_date": "2026-11-22"
+  },
+  "batch": "016",
+  "translations": {
+    "shuowen:1501": {
+      "text": "To argue a case. The Commentary says: “Stern and upright was Confucius's demeanor.” Formed from 言, with 各 indicating the sound.",
+      "sourceTextSha256": "3df7bd1604c2af040cff0d348829dc26e90219d4279e99213152d358c16b7532",
+      "uncertain": false
+    },
+    "shuowen:1502": {
+      "text": "To remonstrate agreeably and harmoniously. Formed from 言, with 門 indicating the sound.",
+      "sourceTextSha256": "2349c94f139f6b33428e2213dd6b5d32acc961083a54cd84e4dda901ee55c61a",
+      "uncertain": false
+    },
+    "shuowen:1503": {
+      "text": "To consider difficulties is called 謀. Formed from 言, with 某 indicating the sound.",
+      "sourceTextSha256": "a590611dab25581f7c9b3160f89e7c140df489c864423fd5fc946138b53815d4",
+      "uncertain": false
+    },
+    "shuowen:1504": {
+      "text": "To deliberate and plan. Formed from 言, with 莫 indicating the sound. The Book of Yu says: “Gao Yao's counsels.”",
+      "sourceTextSha256": "76da26c4bee38a26de199731899d083934693b1d4cfb903d25b51d1c75ef290d",
+      "uncertain": false
+    },
+    "shuowen:1505": {
+      "text": "To consult widely is called 訪. Formed from 言, with 方 indicating the sound.",
+      "sourceTextSha256": "214b62d8fbf2501cedad597a3c4176d4695bc81dbdad6f8e606614fac536c589",
+      "uncertain": false
+    },
+    "shuowen:1506": {
+      "text": "To gather and deliberate. Formed from 言, with 取 indicating the sound.",
+      "sourceTextSha256": "b1a0068e21c8ddddbf7feee73feac7e4d950313c99789338466a3d71e4ce8302",
+      "uncertain": false
+    },
+    "shuowen:1507": {
+      "text": "To deliberate. Formed from 言, with 侖 indicating the sound.",
+      "sourceTextSha256": "b71979a500ea1e05927ec84242bc294b0d66e527bb049b87196781c3ffbd42a9",
+      "uncertain": false
+    },
+    "shuowen:1508": {
+      "text": "To speak or discuss. Formed from 言, with 義 indicating the sound.",
+      "sourceTextSha256": "e454d5b180fe1976994426abd49a154378feb71a02f349bb44e447f01b855b61",
+      "uncertain": false
+    },
+    "shuowen:1509": {
+      "text": "To deliberate impartially. Formed from 言, with 丁 indicating the sound.",
+      "sourceTextSha256": "43d13270b555a7d0f75ff19773e0b5b96dd734a0abe2ac193a93796fe1333dba",
+      "uncertain": false
+    },
+    "shuowen:1510": {
+      "text": "To deliberate carefully. Formed from 言, with 羊 indicating the sound.",
+      "sourceTextSha256": "1a857dcb7996c9de87ffc6b4477d2d55dec8bdb479078b04e06ec37cecba6ff4",
+      "uncertain": false
+    },
+    "shuowen:1511": {
+      "text": "Order or principle. Formed from 言, with 是 indicating the sound.",
+      "sourceTextSha256": "b5c83b69dc6ec40131abf2a65b17fbe2357e3469243dbca6f8991340a37b7a9f",
+      "uncertain": false
+    },
+    "shuowen:1512": {
+      "text": "To examine carefully. Formed from 言, with 帝 indicating the sound.",
+      "sourceTextSha256": "808fb9408f3f8bdcf598ecce037de9a588e9e0178a50b225d1f29fb84f9f1dc7",
+      "uncertain": false
+    },
+    "shuowen:1513": {
+      "text": "Constancy. Another explanation: to know. Formed from 言, with 戠 indicating the sound.",
+      "sourceTextSha256": "c98ca53361da78fbcd04d5a556de6080612b17b859ee8126bbbffb0002e1afb2",
+      "uncertain": false
+    },
+    "shuowen:1514": {
+      "text": "To ask. Formed from 言, with 卂 indicating the sound.",
+      "sourceTextSha256": "0084a17cf82b9a56ed6e624be522a5406e85bfa2956faabb347285bcd277b86a",
+      "uncertain": false
+    },
+    "shuowen:1515": {
+      "text": "To scrutinize the subtle particulars of speech closely. Formed from 言, with abbreviated 察 indicating the sound. [The wording of the gloss is uncertain.]",
+      "sourceTextSha256": "899605bfb593a44fe3f122d7b86cacc84b9753104c7ae5f0b3df6181d04f0989",
+      "uncertain": true
+    },
+    "shuowen:1516": {
+      "text": "Cautious. Formed from 言, with 堇 indicating the sound.",
+      "sourceTextSha256": "795c84cf3e78bdfc4eb1b1a6d5535523adda085209ae649ad46a03f276ded08f",
+      "uncertain": false
+    },
+    "shuowen:1517": {
+      "text": "Substantial or generous. Formed from 言, with 乃 indicating the sound.",
+      "sourceTextSha256": "39de355d439db9ca1198549844e37d73e0cc168754bde2fd0620273c070edaab",
+      "uncertain": false
+    },
+    "shuowen:1518": {
+      "text": "Sincere and true. Formed from 言, with 甚 indicating the sound. The Odes says: “Heaven is hard to trust.”",
+      "sourceTextSha256": "66c4790797ad71c116d1b171ba818fc380029494d8cfc369b0d17aed0e381144",
+      "uncertain": false
+    },
+    "shuowen:1519": {
+      "text": "Sincerity. Formed from 人 and 言, combining their meanings.",
+      "sourceTextSha256": "469a74d497411c9ce9c12ef20600f792e7e6770cf83359a91afaca95fb439789",
+      "uncertain": false
+    },
+    "shuowen:1520": {
+      "text": "In Yan, Dai and eastern Qi, trustworthiness is called 訦. Formed from 言, with 冘 indicating the sound.",
+      "sourceTextSha256": "b00011da9914bb72f73032ef6bcf033238430e74499ca14eb241dfc34a9d45cb",
+      "uncertain": false
+    },
+    "shuowen:1521": {
+      "text": "Trustworthiness. Formed from 言, with 成 indicating the sound.",
+      "sourceTextSha256": "0d9b5118f8e0a8b24f05f65c943c72897095a4ca50f00492ece17c42cb452f34",
+      "uncertain": false
+    },
+    "shuowen:1522": {
+      "text": "To admonish. Formed from 言, with 戒 indicating the sound.",
+      "sourceTextSha256": "729eb326197d3f73c39bd2ceee02adc39d7c6bee056f5dd08837fc28b4f818e5",
+      "uncertain": false
+    },
+    "shuowen:1523": {
+      "text": "To admonish. Formed from 言, with 忌 indicating the sound.",
+      "sourceTextSha256": "169c3f95fba7a0fa4eeba6e6426b4110dfb7dc9a174d04100ebf3c77e91ad8c9",
+      "uncertain": false
+    },
+    "shuowen:1524": {
+      "text": "A prohibition or taboo. Formed from 言, with 韋 indicating the sound.",
+      "sourceTextSha256": "b9002b816965e28b8f0d8a378c76e41cb14305f958abd10ec3bc75f60156cb73",
+      "uncertain": false
+    },
+    "shuowen:1525": {
+      "text": "To announce. Formed from 言, with 告 indicating the sound.",
+      "sourceTextSha256": "104a143c9c8a8fe3ad4b350968c946b153ee562bcae1b95afd08e574c5db6745",
+      "uncertain": false
+    },
+    "shuowen:1526": {
+      "text": "To announce. Formed from 言 and 召; 召 also indicates the sound.",
+      "sourceTextSha256": "d1a80d152dc342cda24825087a74fa4aef203b14ced7480dc327254b62d417da",
+      "uncertain": false
+    },
+    "shuowen:1527": {
+      "text": "A binding agreement. Formed from 言, with 折 indicating the sound.",
+      "sourceTextSha256": "ef00a3a52539e2577eff30f93b38cd1794b15e337cabd63aac0029f19cd4d134",
+      "uncertain": false
+    },
+    "shuowen:1528": {
+      "text": "To question. Formed from 言, with 僉 indicating the sound. The Book of Zhou says: “Do not use this to question people.”",
+      "sourceTextSha256": "7a2b53266b763779206dd918e788faf04351a0e28e0cdc4ee520d13ffa7a969a",
+      "uncertain": false
+    },
+    "shuowen:1529": {
+      "text": "To explain old words. Formed from 言, with 古 indicating the sound. The Odes refers to 詁訓, explanations of words.",
+      "sourceTextSha256": "cc5c3e1c14707049655eaabf9ff6abc4445f5a67f82c0ef5a364080986806d62",
+      "uncertain": false
+    },
+    "shuowen:1530": {
+      "text": "The excellence of a minister exerting his full strength. Formed from 言, with 葛 indicating the sound. The Odes says: “Abundant are the king's worthy officers.”",
+      "sourceTextSha256": "639357825ab6be2d02aede9a19c14dc84674294d00ee7f20960e5453777efd11",
+      "uncertain": false
+    },
+    "shuowen:1531": {
+      "text": "An urgent summons to return, 餔旋促. Formed from 言, with 束 indicating the sound. [The gloss is textually difficult and uncertain.]",
+      "sourceTextSha256": "8dd4b67f3c1f8c0097c62abc10b11922f4086b883caab9d6a371136e20b40f27",
+      "uncertain": true
+    },
+    "shuowen:1532": {
+      "text": "Knowledge. Formed from 言, with 胥 indicating the sound.",
+      "sourceTextSha256": "23cd1562215d1e3ba084e4e824aff55d3195ee27915c537ec345e0482ee3270e",
+      "uncertain": false
+    },
+    "shuowen:1533": {
+      "text": "To remonstrate. Formed from 言, with 正 indicating the sound.",
+      "sourceTextSha256": "a516e64f7e18d77449dc144d154ce7aee5a7a8a82f48cefe76d6bb8151aeb7c4",
+      "uncertain": false
+    },
+    "shuowen:1534": {
+      "text": "To remonstrate. Formed from 言, with 柬 indicating the sound.",
+      "sourceTextSha256": "c8f05b4023ac4d1e2ad4e51a6f1e2cefd87c5a742e40b60479fe8c664d0c2b22",
+      "uncertain": false
+    },
+    "shuowen:1535": {
+      "text": "To remonstrate earnestly. Formed from 言, with 念 indicating the sound. The Spring and Autumn commentary says: “Xin Bo remonstrated with Duke Huan of Zhou.”",
+      "sourceTextSha256": "94a1334490c6e5628f5670e8c07848d7b94f76eefac7eefc24b6785f358db8e6",
+      "uncertain": false
+    },
+    "shuowen:1536": {
+      "text": "To test. Formed from 言, with 果 indicating the sound.",
+      "sourceTextSha256": "dc49b0b4edd8b411f0e67be4e09b87806e1cb8b09748920615d8d3993f9e05ec",
+      "uncertain": false
+    },
+    "shuowen:1537": {
+      "text": "To employ or try. Formed from 言, with 式 indicating the sound. The Book of Yu says: “Clearly test them by their achievements.”",
+      "sourceTextSha256": "4526123e1d2b28897f1da0d1029f38b191209c42577c07e15221acb9a27db441",
+      "uncertain": false
+    },
+    "shuowen:1538": {
+      "text": "Harmony. Formed from 言, with 咸 indicating the sound. The Book of Zhou says: “Unable to harmonize with the common people.”",
+      "sourceTextSha256": "a80d2361ce8971356438a7c4162661c36c6646e3e9f6f20abbd9bb9f5fa715f6",
+      "uncertain": false
+    },
+    "shuowen:1539": {
+      "text": "To sing without instrumental accompaniment. Formed from 言 and 肉.",
+      "sourceTextSha256": "4415daba323441479d2a90ec8f0c3466c09415ca750daf3b3813faa7439131af",
+      "uncertain": false
+    },
+    "shuowen:1540": {
+      "text": "Complete. Formed from 言, with 全 indicating the sound.",
+      "sourceTextSha256": "ac9ac361f1df469c14240551d0d02bd2f03accfd40a9c5c80425a1392f5fb01b",
+      "uncertain": false
+    },
+    "shuowen:1541": {
+      "text": "Joy. Formed from 言, with 斤 indicating the sound.",
+      "sourceTextSha256": "5e519d733f56920a31aa6586fcf0b849a11c5a3e97e5beee766208981eb42a53",
+      "uncertain": false
+    },
+    "shuowen:1542": {
+      "text": "說 means to explain. Formed from 言 and 兌. Another explanation: conversation or exposition.",
+      "sourceTextSha256": "fc7a64dfd037d8f3e996ddfdbbcd1c87a2fe6770beed9f4e7cf5adf1100c1ff6",
+      "uncertain": false
+    },
+    "shuowen:1543": {
+      "text": "To reckon together; to calculate. Formed from 言 and 十.",
+      "sourceTextSha256": "972b26a8d0022f5d10da5cc877a35cbb330f5e3b56f298f4b8960ce01222caa8",
+      "uncertain": false
+    },
+    "shuowen:1544": {
+      "text": "Harmony, 詥. Formed from 言, with 皆 indicating the sound.",
+      "sourceTextSha256": "5522536eb3df50a641bcf319e6f07509295fab11901107e0ffd7fafcd4ecc017",
+      "uncertain": false
+    },
+    "shuowen:1545": {
+      "text": "Harmony, 諧. Formed from 言, with 合 indicating the sound.",
+      "sourceTextSha256": "938d9ae3aecc434748fb851f172797784889f1210b35eb6cf8bad6d75bddb739",
+      "uncertain": false
+    },
+    "shuowen:1546": {
+      "text": "To harmonize. Formed from 言, with 周 indicating the sound.",
+      "sourceTextSha256": "906191d42437ee3c060ec8bf449e47629c85ebe1b0ff02c55a0d2106f9c0e8a7",
+      "uncertain": false
+    },
+    "shuowen:1547": {
+      "text": "To assemble good words together. Formed from 言, with 𠯑 indicating the sound. The Commentary says: “Tell him good counsel.”",
+      "sourceTextSha256": "dab7fbc5a219619b08a63f47d2edabaa2b5c399a9f6851bb2577c56b70d3e5fb",
+      "uncertain": false
+    },
+    "shuowen:1548": {
+      "text": "諈諉: to burden or implicate. Formed from 言, with 𡍮 indicating the sound.",
+      "sourceTextSha256": "18d57f648f71928471e9292a318e02f2b4b6bb67baf17f22ca75239cf6fc5336",
+      "uncertain": false
+    },
+    "shuowen:1549": {
+      "text": "To burden or implicate. Formed from 言, with 委 indicating the sound.",
+      "sourceTextSha256": "c42d37f3fbc1ce206bb19db59411543bd07ad9b9df511dfebfc98cedc7ef0f8f",
+      "uncertain": false
+    },
+    "shuowen:1550": {
+      "text": "To warn. Formed from 言 and 敬; 敬 also indicates the sound.",
+      "sourceTextSha256": "9d6d9153c9dea7443f911f2334d6757fa0d4471b0b4e457b271f595c9ad3666c",
+      "uncertain": false
+    },
+    "shuowen:1551": {
+      "text": "Quiet speech. Formed from 言, with 𥁑 indicating the sound. Another explanation: without sound.",
+      "sourceTextSha256": "9db7eb666d8c9392b61e922b10ebd5c257b267f2203aa47d0095ba69a4093315",
+      "uncertain": false
+    },
+    "shuowen:1552": {
+      "text": "Respect. Formed from 言, with 兼 indicating the sound.",
+      "sourceTextSha256": "b984ea57bfb0c197422f6d2a2130b06228663edd152cc1b824d9317211f4f2fb",
+      "uncertain": false
+    },
+    "shuowen:1553": {
+      "text": "What is fitting for a person. Formed from 言 and 宜; 宜 also indicates the sound.",
+      "sourceTextSha256": "c81db80657b31dbf0fb24edefac14b6fc78749a1a2bcf98cd4d3f39e3368400b",
+      "uncertain": false
+    },
+    "shuowen:1554": {
+      "text": "Grand speech. Formed from 言, with 羽 indicating the sound.",
+      "sourceTextSha256": "888503cb0dec81159f5677087c628e6a38a56f1a8c8efe5c4ff78765c434f2c8",
+      "uncertain": false
+    },
+    "shuowen:1555": {
+      "text": "Good speech. Formed from 言, with 戔 indicating the sound. Another explanation: joking.",
+      "sourceTextSha256": "820774c9c786eaeef5d9457824689294bb65f1616ce8e53e56002a0f8268f1bd",
+      "uncertain": false
+    },
+    "shuowen:1556": {
+      "text": "To praise goodness. Formed from 言, with 我 indicating the sound. The Odes says: “Praise me, and praise me beyond measure.”",
+      "sourceTextSha256": "85928b57119ebb7d0bc0a337486466d1b7a566aba53fa4185277b473bdc80678",
+      "uncertain": false
+    },
+    "shuowen:1557": {
+      "text": "Together or shared. Another explanation: to shout or boast, 譀. Formed from 言, with 同 indicating the sound. The Book of Zhou says: “In the shared affairs of the Xia sovereign.”",
+      "sourceTextSha256": "6df4f586bcf052c73d36e23fb92fcc624516dffdb0ec37ac8f6e3c14565568bf",
+      "uncertain": true
+    },
+    "shuowen:1558": {
+      "text": "To arrange and set out. Formed from 言 and 殳; 殳 means to direct people.",
+      "sourceTextSha256": "a308fa10de1a7e32f75fee1bec420cb2eb196f39f3b0ffa13367e28a19403609",
+      "uncertain": false
+    },
+    "shuowen:1559": {
+      "text": "To rescue and watch over. Formed from 言, with 蒦 indicating the sound.",
+      "sourceTextSha256": "41f819086dd4c4cdc53567579c1f30018af404142b23227c2a344289358a2939",
+      "uncertain": false
+    },
+    "shuowen:1560": {
+      "text": "譞 means wise. Formed from 言, with abbreviated 圜 indicating the sound.",
+      "sourceTextSha256": "490db3f052cdbce1fba4205efd333f2e8e67f358bbeaa3fd63632a9b8cd21f2e",
+      "uncertain": false
+    },
+    "shuowen:1561": {
+      "text": "Great. Another explanation: people assisting one another. Formed from 言, with 甫 indicating the sound. Pronounced like 逋.",
+      "sourceTextSha256": "675c4dbd07dea25cf1cf77fd094c49810ddc5c7d8e958f2de03fff87d87dea81",
+      "uncertain": false
+    },
+    "shuowen:1562": {
+      "text": "The intention of thinking. Formed from 言 and 思.",
+      "sourceTextSha256": "667482adddd39f65b46e54c761c05e765c12def62101ceb7f327293e14f7acf8",
+      "uncertain": false
+    },
+    "shuowen:1563": {
+      "text": "To entrust. Formed from 言, with 乇 indicating the sound.",
+      "sourceTextSha256": "1dedc972d01ddd5ee589403391a05ff185f7dffef5321b62ed1e49c2ce3ee426",
+      "uncertain": false
+    },
+    "shuowen:1564": {
+      "text": "To record. Formed from 言, with 己 indicating the sound.",
+      "sourceTextSha256": "92328508e628e3ff4b13db15a496b77f94fcd4b4f7e457ac85c5f2d0201dcc37",
+      "uncertain": false
+    },
+    "shuowen:1565": {
+      "text": "The source gloss is “纤” in parentheses, apparently textually corrupt; tentatively, fine or slender. Formed from 言, with 與 indicating the sound. [The intended gloss cannot be established here.]",
+      "sourceTextSha256": "e4e4efee6b41b23f4382aa7643f4ffcfc9c546d9d6d1f555c2def76ebb5a7275",
+      "uncertain": true
+    },
+    "shuowen:1566": {
+      "text": "To spread or proclaim, 𢾭. Formed from 言, with 番 indicating the sound. The Book of Shang says: “The king proclaimed and announced it.”",
+      "sourceTextSha256": "1e3cc96ec428e31b036894f70f91b1664704b44e7ae879041e014f3916ccc911",
+      "uncertain": false
+    },
+    "shuowen:1567": {
+      "text": "To take leave in words. Formed from 言, with 䠶 indicating the sound.",
+      "sourceTextSha256": "9f1a3e1cf5c7438b799ac13149e0a6201aef4711376e432d1ce414c3fd0745df",
+      "uncertain": false
+    },
+    "shuowen:1568": {
+      "text": "To sing together in unison. Formed from 言, with 區 indicating the sound.",
+      "sourceTextSha256": "c96ceadc283bc9525f676b244a85d908773f9b73d7e0d600199efdf4da8d4636",
+      "uncertain": false
+    },
+    "shuowen:1569": {
+      "text": "To sing. Formed from 言, with 永 indicating the sound.",
+      "sourceTextSha256": "250a2531be685287fea14ac9a8156fa3ad24a1e3cf0d20143b927e254da584ce",
+      "uncertain": false
+    },
+    "shuowen:1570": {
+      "text": "To stop or restrain. Formed from 言, with 爭 indicating the sound.",
+      "sourceTextSha256": "7774c023127fba4cb2d36a7eba01f7be3abb8003041f77f2af5ddec2ee0181e1",
+      "uncertain": false
+    },
+    "shuowen:1571": {
+      "text": "To call. Formed from 言, with 乎 indicating the sound.",
+      "sourceTextSha256": "339d8fd7a3d905e0dd1b62c8f6b43450a5b9b025712f3fcd72dfa58f26ffbf7e",
+      "uncertain": false
+    },
+    "shuowen:1572": {
+      "text": "Calling aloud, 𧦝謼. Formed from 言, with 虖 indicating the sound.",
+      "sourceTextSha256": "d57c813810935b937a54f07544f97937f106300caca4ef560158191a90e0ef4d",
+      "uncertain": false
+    },
+    "shuowen:1573": {
+      "text": "To stop. Formed from 言, with 气 indicating the sound.",
+      "sourceTextSha256": "cd3f1594d2c4ace4f2cd39c7ac5783209180d0e3bb84d329ab2b54c8e5c9fcd7",
+      "uncertain": false
+    },
+    "shuowen:1574": {
+      "text": "A transmitted saying. Formed from 言, with 彥 indicating the sound.",
+      "sourceTextSha256": "b37dd4e5d38ed32d01775847b2d12db054504d5b2181fba1ce6b3dd8a3183c94",
+      "uncertain": false
+    },
+    "shuowen:1575": {
+      "text": "To receive one another. Formed from 言, with 牙 indicating the sound. The Rites of Zhou says: “Feudal lords have a minister to receive arrivals.”",
+      "sourceTextSha256": "fd90e7d2cbd76b1322ae0d6db7d05bc7009e0f5fccb2a4824e34e91fe8b9b755",
+      "uncertain": true
+    },
+    "shuowen:1576": {
+      "text": "To attend and arrive. Formed from 言, with 旨 indicating the sound.",
+      "sourceTextSha256": "b620417533cf22942df733b0c7a2e457c798a3098009fc2faee066591c4dfc69",
+      "uncertain": true
+    },
+    "shuowen:1577": {
+      "text": "To reconcile. Formed from 言, with 冓 indicating the sound.",
+      "sourceTextSha256": "776bcd9623f44024768eed2b5fc2183f69c50d08cab3173bc0e5a7aedeab4ac9",
+      "uncertain": false
+    },
+    "shuowen:1578": {
+      "text": "To copy writing. Formed from 言, with 朕 indicating the sound.",
+      "sourceTextSha256": "9ccfade11122f55e3ddadddbc534ad04087a46f086f4d1f19223f6672e90648e",
+      "uncertain": false
+    },
+    "shuowen:1579": {
+      "text": "To hesitate. Formed from 言, with 刃 indicating the sound. The Analects says: “His speech is hesitant.”",
+      "sourceTextSha256": "a3cabc0d72b9df16e11a0ec2c4992c97eb06e3514abc2351b5d77494483276f7",
+      "uncertain": false
+    },
+    "shuowen:1580": {
+      "text": "Difficulty speaking. Formed from 言 and 内.",
+      "sourceTextSha256": "5edfd2ac755a6949f556de0fcb842f1174984fd752e22ae5fc894b4f15f32170",
+      "uncertain": false
+    },
+    "shuowen:1581": {
+      "text": "謯 means 娽, apparently attentive or repeated speech. Formed from 言, with 虘 indicating the sound. [The rare cross-gloss is uncertain.]",
+      "sourceTextSha256": "538d37e62ba3e6c5fdabf341ac5217cd47cd1da0b7b1d744ccdee3cfb49011bf",
+      "uncertain": true
+    },
+    "shuowen:1582": {
+      "text": "To wait. Formed from 言, with 伿 indicating the sound. Pronounced like 䭆.",
+      "sourceTextSha256": "abf13daffcab8ad098ad8480c86f33e08cadcd2284b03b95dd030036cb8b9190",
+      "uncertain": false
+    },
+    "shuowen:1583": {
+      "text": "To cry out in pain. Formed from 言, with 敫 indicating the sound.",
+      "sourceTextSha256": "205346fca7cd44fb8a00da5ccb84cb1c875671fcebc9946c935fb87d8cd248fc",
+      "uncertain": false
+    },
+    "shuowen:1584": {
+      "text": "To shout angrily. Formed from 言, with 堯 indicating the sound.",
+      "sourceTextSha256": "13dab773c2f72847dc636e754732987225f00bc227f2eac44ee42a4614826e55",
+      "uncertain": false
+    },
+    "shuowen:1585": {
+      "text": "A small sound. Formed from 言, with abbreviated 熒 indicating the sound. The Odes says: “Buzzing blue flies.”",
+      "sourceTextSha256": "d9d70f5a4f5a0c58b07e8e6c4249d94875533bb2ea52e9e90ec70f9eb5fcc020",
+      "uncertain": false
+    },
+    "shuowen:1586": {
+      "text": "A loud sound. Formed from 言, with 昔 indicating the sound. Pronounced like 笮.",
+      "sourceTextSha256": "ba59e7b466b7ea89b572514877a6975cdbccc547a9dcf5bd161407818657d425",
+      "uncertain": false
+    },
+    "shuowen:1587": {
+      "text": "To flatter. Formed from 言, with 㬰 indicating the sound.",
+      "sourceTextSha256": "c0ff7167e7e5def738a7fd568db849614b0a901ba0afb705453999842bb0b319",
+      "uncertain": false
+    },
+    "shuowen:1588": {
+      "text": "To flatter. Formed from 言, with 閻 indicating the sound.",
+      "sourceTextSha256": "f0ae6498df9627f122f55b81c5afeb87b565a882d47b355750f2f47d2b507d67",
+      "uncertain": false
+    },
+    "shuowen:1589": {
+      "text": "To deceive. Formed from 言, with 爰 indicating the sound.",
+      "sourceTextSha256": "a122bbb5add1731e9ecae33c0603247b4579d983c42543ea744ca541d867d3af",
+      "uncertain": false
+    },
+    "shuowen:1590": {
+      "text": "An unworthy person. Formed from 言, with 敖 indicating the sound. Another explanation: ceaseless crying, a sorrowful 謷謷 sound.",
+      "sourceTextSha256": "a65b94eeffc2633a4337e871cc1cad6ca17198948bfa39e387f9cb1b137fd571",
+      "uncertain": false
+    },
+    "shuowen:1591": {
+      "text": "To entice. Formed from 言, with 术 indicating the sound.",
+      "sourceTextSha256": "3fa07fd4996c1ce0751d3b797d22823f527cd7ef76c0915dfcca0849c35a22b7",
+      "uncertain": false
+    },
+    "shuowen:1592": {
+      "text": "In Yanzhou, deception is called 詑. Formed from 言, with 它 indicating the sound.",
+      "sourceTextSha256": "35c6de0604b238c05fb079a76b0808a953174574b250d0a8d4c4963262908e06",
+      "uncertain": false
+    },
+    "shuowen:1593": {
+      "text": "To deceive. Formed from 言, with 曼 indicating the sound.",
+      "sourceTextSha256": "f37a2c6b49da389ccf77adda088c691bb3019c04390130f5d798eba9357b6644",
+      "uncertain": false
+    },
+    "shuowen:1594": {
+      "text": "譇拏: ashamed and at a loss. Formed from 言, with 奢 indicating the sound.",
+      "sourceTextSha256": "b8b152df7b79089dadc4f8b1f5b1a34c6ec9dfe66822ef9707bda083e4a4a5d1",
+      "uncertain": false
+    },
+    "shuowen:1595": {
+      "text": "Ashamed speech. Formed from 言, with 作 indicating the sound.",
+      "sourceTextSha256": "da15bdb023b420ca5cc314d1b9ccb2ed7b66a4a806604d905197c0d5194fa160",
+      "uncertain": false
+    },
+    "shuowen:1596": {
+      "text": "The expression 謺讘, apparently repeated or whispered speech. Formed from 言, with 執 indicating the sound. [The descriptive sense is uncertain.]",
+      "sourceTextSha256": "794541d4ae065595e2f9689479ebf4b68218e95e27bd4a7b01e4c401f2495a18",
+      "uncertain": true
+    },
+    "shuowen:1597": {
+      "text": "The expression 謰謱, apparently entangled or rambling speech. Formed from 言, with 連 indicating the sound. [The descriptive sense is uncertain.]",
+      "sourceTextSha256": "f4d7fe18fdddb48f0617cea0f1945e391ca467560021e4ae958a3f508bbcbecf",
+      "uncertain": true
+    },
+    "shuowen:1598": {
+      "text": "The expression 謰謱, apparently entangled or rambling speech. Formed from 言, with 婁 indicating the sound. [The descriptive sense is uncertain.]",
+      "sourceTextSha256": "f9d28132b5a6d3e314662c51b3072c4371eec4d3e08b700341bdd700c8d25ca0",
+      "uncertain": true
+    },
+    "shuowen:1599": {
+      "text": "To deceive one another. Another explanation: to give or leave behind. Formed from 言, with 台 indicating the sound.",
+      "sourceTextSha256": "e65c46c860a37e6b8a0ace9c54cb9a39183658c9f77c406859a527eac231ec3b",
+      "uncertain": false
+    },
+    "shuowen:1600": {
+      "text": "To order one another angrily. Formed from 言, with 參 indicating the sound.",
+      "sourceTextSha256": "ce15addf05a2d2a77c43005995fff4a97dc9fca09ce85f4c21ca65200f5ef4c7",
+      "uncertain": true
+    }
+  }
+}

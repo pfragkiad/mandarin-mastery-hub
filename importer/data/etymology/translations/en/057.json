@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "45c6e32911346d6687006a590ea18529eef546e292f976bf259c72c3535567bb",
+    "created_date": "2026-11-22"
+  },
+  "batch": "057",
+  "translations": {
+    "shuowen:5601": {
+      "text": "A large head. Formed from 頁, with 石 indicating the sound.",
+      "sourceTextSha256": "3c6bb1c66f2c33bf611f0b4ca59164f867a50c88b6cb89b22aa26b1bce1f1162",
+      "uncertain": false
+    },
+    "shuowen:5602": {
+      "text": "A large head. Formed from 頁, with 分 indicating the sound. Another explanation: temple hair. The Odes says: “Large is its head.”",
+      "sourceTextSha256": "20552714a0e21893f29da30b17dd07e9f69ea80eb34806824c43eba8f46990d6",
+      "uncertain": false
+    },
+    "shuowen:5603": {
+      "text": "A large head. Formed from 頁, with 禺 indicating the sound. The Odes says: “Its size is grand.”",
+      "sourceTextSha256": "82a2da3b7f0d66d3c7d333a6619289ba1e7b9d9d7b24b18c212e4507da020feb",
+      "uncertain": false
+    },
+    "shuowen:5604": {
+      "text": "A large head. Formed from 頁, with 羔 indicating the sound.",
+      "sourceTextSha256": "5364e3697dd1d8e782159a6306cb18f21f520d6b566a524231f7cf7c1d81f996",
+      "uncertain": false
+    },
+    "shuowen:5605": {
+      "text": "A large head. Formed from 頁, with 骨 indicating the sound. Read like 魁.",
+      "sourceTextSha256": "5f9461fb072efb14851c8fbad9e19868868e6b2067aac76ed934158d52372f46",
+      "uncertain": false
+    },
+    "shuowen:5606": {
+      "text": "A large head. Formed from 頁, with 原 indicating the sound.",
+      "sourceTextSha256": "12d8ef9164377e59e9877443c616359ccae47adf41f0e76a3270c49a9aa6e4e1",
+      "uncertain": false
+    },
+    "shuowen:5607": {
+      "text": "A high, long head. Formed from 頁, with 堯 indicating the sound.",
+      "sourceTextSha256": "554fed7aeff545e54ee03c9bb220a68f4ddb61602544a9f6889ef4dde637378e",
+      "uncertain": false
+    },
+    "shuowen:5608": {
+      "text": "𩕀顤, high. Formed from 頁, with 敖 indicating the sound.",
+      "sourceTextSha256": "b71f4df7a66080edaca106639bcfd222d8b5bbd05b33cf8ac0da123c0c6d08a1",
+      "uncertain": false
+    },
+    "shuowen:5609": {
+      "text": "The front of the face prominent and lofty, 岳岳. Formed from 頁, with 岳 indicating the sound.",
+      "sourceTextSha256": "4736dae3e883a51fcdaabc5a86ce02d8a65972f9cccba252d24b873b911f77d4",
+      "uncertain": false
+    },
+    "shuowen:5610": {
+      "text": "Obscured in front, 昧前; the gloss is uncertain. Formed from 頁, with 𡿯 indicating the sound. Read like 昧.",
+      "sourceTextSha256": "7b1edd77b775b080c9d7b8d4e84f7642c97921288bee508b56247cd79b5cb122",
+      "uncertain": true
+    },
+    "shuowen:5611": {
+      "text": "The face thin and shallow, 𩖊𩖊. Formed from 頁, with 霝 indicating the sound.",
+      "sourceTextSha256": "4bc19eee20e7f49e4d91057f42ff6ca85a74fb9400ff51a0e7befd5d51c613d5",
+      "uncertain": false
+    },
+    "shuowen:5612": {
+      "text": "The head covered, 𩔀; the repeated gloss is uncertain. Formed from 頁, with 㒸 indicating the sound.",
+      "sourceTextSha256": "8885d793fbf76cf54b670776f63062cf7ec328474f9b6773b639772b1bcdea2a",
+      "uncertain": true
+    },
+    "shuowen:5613": {
+      "text": "A solid, rounded head, 㮯頭; the precise description is uncertain. Formed from 頁, with 元 indicating the sound.",
+      "sourceTextSha256": "75e864b9494170301296385fd54ccac524dd92047971b36561f1913ad8fe06b8",
+      "uncertain": true
+    },
+    "shuowen:5614": {
+      "text": "A small head, 𩓸𩓸. Formed from 頁, with 枝 indicating the sound. Read like 規.",
+      "sourceTextSha256": "2ebf6c7ab98f6f0178e665579d1a4f36a9f86599d7dc47e5e18157b9b7f5186d",
+      "uncertain": false
+    },
+    "shuowen:5615": {
+      "text": "A small head. Formed from 頁, with 果 indicating the sound.",
+      "sourceTextSha256": "f2debf324fce22fa28ed9d48b7df0bf227c176dd94a24536f45963256bd6e896",
+      "uncertain": false
+    },
+    "shuowen:5616": {
+      "text": "A short face. Formed from 頁, with 𠯑 indicating the sound.",
+      "sourceTextSha256": "45d071419afaf90056643de7320433c97a492e20bcafb724d6d9d6a600a9b3cb",
+      "uncertain": false
+    },
+    "shuowen:5617": {
+      "text": "A narrow head. Formed from 頁, with 廷 indicating the sound.",
+      "sourceTextSha256": "c2d02322f620c62a3c0d7d68223d3c7a30bc2004c4482bca19790e1e2e6a4770",
+      "uncertain": false
+    },
+    "shuowen:5618": {
+      "text": "The head composed and practiced in bearing. Formed from 頁, with 危 indicating the sound.",
+      "sourceTextSha256": "0c8ea8abae5166cd44213537487969fb71d26b28b0921f7353048cf6c1a85394",
+      "uncertain": false
+    },
+    "shuowen:5619": {
+      "text": "A yellow face. Formed from 頁, with 含 indicating the sound.",
+      "sourceTextSha256": "deda89e559d9b677ce4ba72e0cea2e5a7a674c907a0173bbd9855d6bb230ec69",
+      "uncertain": false
+    },
+    "shuowen:5620": {
+      "text": "A face not straight. Formed from 頁, with 爰 indicating the sound.",
+      "sourceTextSha256": "40538f84cc9d20171115688e7d0854edf5f8650493a53124a42fdbe1a70ac550",
+      "uncertain": false
+    },
+    "shuowen:5621": {
+      "text": "To raise the head. Formed from 頁, with 支 indicating the sound. The Odes says: “The cap stands raised.”",
+      "sourceTextSha256": "bbae4d2b3f365135883d808b106724ad66cb8c11fb9206f737f03f22f5a8e8d9",
+      "uncertain": false
+    },
+    "shuowen:5622": {
+      "text": "To put the head into water. Formed from 頁 and 𠬸; 𠬸 also indicates the sound.",
+      "sourceTextSha256": "9d4a31d6f2952a42fcc71af1dfb5454da4115bd132a09b5f6ef8ed451d53c186",
+      "uncertain": false
+    },
+    "shuowen:5623": {
+      "text": "To turn and look back. Formed from 頁, with 雇 indicating the sound.",
+      "sourceTextSha256": "d252de668cc252c90ef8b65f5e3e6bfb784a420fcdd69a13ec7a95e6f2622ad4",
+      "uncertain": false
+    },
+    "shuowen:5624": {
+      "text": "Orderly or in accord. Formed from 頁 and 巛.",
+      "sourceTextSha256": "5c39f940da94c0226627d538418e9b7f40542735a65a283f58c64604fa4dc503",
+      "uncertain": false
+    },
+    "shuowen:5625": {
+      "text": "A 䪾䫰 facial expression, showing care in affairs. Formed from 頁, with 㐱 indicating the sound.",
+      "sourceTextSha256": "7d0ea623fc93cd6879131a38cd9d07cf73d26df84f67b601a9fa3cf531afa8ab",
+      "uncertain": false
+    },
+    "shuowen:5626": {
+      "text": "The expression 䪾䫰. Formed from 頁, with 粦 indicating the sound. Another explanation: little hair on the head.",
+      "sourceTextSha256": "41b851bd90b6917cdd149feb449ee6c05a0134e7c55847dc1d1486212fc6817f",
+      "uncertain": false
+    },
+    "shuowen:5627": {
+      "text": "The head showing a cautious manner, 顓顓. Formed from 頁, with 耑 indicating the sound.",
+      "sourceTextSha256": "211cc8309d6657911effce4ab031a58edbb2a7b68ac4952cf6ffe0b084f9a712",
+      "uncertain": false
+    },
+    "shuowen:5628": {
+      "text": "The head showing a cautious manner, 頊頊. Formed from 頁, with 玉 indicating the sound.",
+      "sourceTextSha256": "d48891277ee4c84e52c6199b7d7fb39d258a839c787ba7c3f3d3c62a8c3ef54a",
+      "uncertain": false
+    },
+    "shuowen:5629": {
+      "text": "To lower the head. Formed from 頁, with 金 indicating the sound. The Spring and Autumn Commentary says: “He welcomed him at the gate and merely nodded.”",
+      "sourceTextSha256": "ed358216ac01856c69dc9c7ffe71367dd539a8d76eaf30fdcf60654214694831",
+      "uncertain": false
+    },
+    "shuowen:5630": {
+      "text": "To lower the head. Formed from 頁, with 屯 indicating the sound.",
+      "sourceTextSha256": "bc73be5911cedbb3d73bfd12a2c1fe55108c808cab422a771b73bdc9cf14ac31",
+      "uncertain": false
+    },
+    "shuowen:5631": {
+      "text": "To lower the head. Formed from 頁 and abbreviated 逃. The Grand Historian’s divination writings use this form for 頫 in “looking down and up.” Yang Xiong says: “A person’s face looks downward.”",
+      "sourceTextSha256": "9f9e41561d3c0fe3af9a95670434a7176b2b5629654db210cfd1b5e6a4051821",
+      "uncertain": false
+    },
+    "shuowen:5632": {
+      "text": "To raise the eyes and look at someone. Formed from 頁, with 臣 indicating the sound.",
+      "sourceTextSha256": "1b2fe1ce6e82e0f802d1e0bc8bd9bff814b6b0ccc697520e4dba881efb3b2644",
+      "uncertain": false
+    },
+    "shuowen:5633": {
+      "text": "To look arrogantly at someone. Formed from 頁, with 善 indicating the sound.",
+      "sourceTextSha256": "a964a15fb7a27458ecc7bb0d9946ac54b1badda591f22809786226ad33ce2de4",
+      "uncertain": false
+    },
+    "shuowen:5634": {
+      "text": "To straighten the neck. Formed from 頁, with 吉 indicating the sound.",
+      "sourceTextSha256": "7839129c3fb1c919b6622969618fb22c15d72d3186e4708bf786c240143d5a8d",
+      "uncertain": false
+    },
+    "shuowen:5635": {
+      "text": "The head held upright, 頡䪼. Formed from 頁, with 出 indicating the sound. Also read like 骨.",
+      "sourceTextSha256": "11fa38b23ac504fbf7fb942b136721b1f16d5b26b4c12c443f2ebac5a1162473",
+      "uncertain": false
+    },
+    "shuowen:5636": {
+      "text": "A white appearance. Formed from 頁 and 景. The Songs of Chu says: “Heaven is white and bright.” The four Hao of the Southern Mountain were white-headed men.",
+      "sourceTextSha256": "42e02d1966a61f4b105d06cb70e432d92fa2bdb1d8e28df1efe692cc8aa47cf1",
+      "uncertain": false
+    },
+    "shuowen:5637": {
+      "text": "An extremely ugly appearance. Formed from 頁, with 樊 indicating the sound.",
+      "sourceTextSha256": "216edc11b34d49792d5141cb81535812b542162a9de491c1f31411dca9b1a4f1",
+      "uncertain": false
+    },
+    "shuowen:5638": {
+      "text": "A handsome appearance. Formed from 頁, with 爭 indicating the sound. This is what the Odes calls a “𩓞 head.”",
+      "sourceTextSha256": "19730f869261f293dd360e31df77be5534f7384efe0e476d6e147b6a875480f2",
+      "uncertain": false
+    },
+    "shuowen:5639": {
+      "text": "A beautiful head. Formed from 頁, with abbreviated 翩 indicating the sound. Read like 翩.",
+      "sourceTextSha256": "a4d9c6682b57331cd7380628ec4b97287e55bb6736bb2c59e7c7a7bb1e976c68",
+      "uncertain": false
+    },
+    "shuowen:5640": {
+      "text": "A cautious, dignified appearance. Formed from 頁, with 豈 indicating the sound.",
+      "sourceTextSha256": "9ff07e5cb8cf2e7fafd291127e6d50076e20408dc6d5d29dd95d9111189525f7",
+      "uncertain": false
+    },
+    "shuowen:5641": {
+      "text": "Little hair on the head and temples. Formed from 頁, with 肩 indicating the sound. The Rites of Zhou says: “Many eyes and a 顅 neck”; the quoted phrase is uncertain.",
+      "sourceTextSha256": "962765e9418e562fd9028e420a97394c9b3d5bac0447b7c4f0da2ca003fe4551",
+      "uncertain": true
+    },
+    "shuowen:5642": {
+      "text": "Without hair. Another explanation: the opening of the ear. Formed from 頁, with 囷 indicating the sound.",
+      "sourceTextSha256": "5188f59f884fb4e17600a6b5d1ecca4e0007d7792318dfcf1d33e18195b4e23f",
+      "uncertain": false
+    },
+    "shuowen:5643": {
+      "text": "Bald. Formed from 頁, with 气 indicating the sound.",
+      "sourceTextSha256": "5ba10d976d14a427b28c8a7e3b0fc6ab176de9a906113d07a2b1baded62c5e57",
+      "uncertain": false
+    },
+    "shuowen:5644": {
+      "text": "The head not upright. Formed from 頁 and 耒; 耒 depicts the head inclined. Also read like 齧 in the Spring and Autumn’s Xia Nie of Chen.",
+      "sourceTextSha256": "71f028ce9e6e8df6606a6301f1173601dd7940bbd7fbc3ed6f3f38ab12dcde60",
+      "uncertain": false
+    },
+    "shuowen:5645": {
+      "text": "To incline the head. Formed from 頁, with 卑 indicating the sound.",
+      "sourceTextSha256": "3f8cce61215796b1d31919e7051a75f73c614f707b78cf422cf348b22f8134bf",
+      "uncertain": false
+    },
+    "shuowen:5646": {
+      "text": "To watch a person. Another explanation: fearful. Formed from 頁, with 契 indicating the sound. Read like 褉.",
+      "sourceTextSha256": "3b447c774e0b3855e9d2caea4660baa7585de3390a712dca23cc880777241f19",
+      "uncertain": false
+    },
+    "shuowen:5647": {
+      "text": "The head not upright. Formed from 頁, with 鬼 indicating the sound.",
+      "sourceTextSha256": "eb6040af8356307160803a9621689b208fea270ded38c397f938c80bae82d3fb",
+      "uncertain": false
+    },
+    "shuowen:5648": {
+      "text": "The head tilted to one side. Formed from 頁, with 皮 indicating the sound.",
+      "sourceTextSha256": "0ae247f1deca5ee2d2122882596acf87e920a7deb2e962c3f7d406c7ce72715a",
+      "uncertain": false
+    },
+    "shuowen:5649": {
+      "text": "To tremble. Formed from 頁, with 尤 indicating the sound.",
+      "sourceTextSha256": "9d1ddf52dd62cdfba0778502ef178b84bbf4963ba576d06dc5b292b26f5a2a01",
+      "uncertain": false
+    },
+    "shuowen:5650": {
+      "text": "The head not upright. Formed from 頁, with 亶 indicating the sound.",
+      "sourceTextSha256": "17223e3dc5ed61fb873559a8147121139655ad0ea8e3dc0d852e11b89c235eb5",
+      "uncertain": false
+    },
+    "shuowen:5651": {
+      "text": "Not getting enough food, with a yellow face and lines appearing; the wording 起行 is uncertain. Formed from 頁, with 咸 indicating the sound. Read like 戇.",
+      "sourceTextSha256": "6e4ecbb36bace73ffee6eed5e27f9b712f603d954e5d7a0d2590f96ed58ea380",
+      "uncertain": true
+    },
+    "shuowen:5652": {
+      "text": "The face gaunt or discolored, 䫲顲; the precise expression is uncertain. Formed from 頁, with 𤎭 indicating the sound.",
+      "sourceTextSha256": "abf99b34ad61357be85e63ef6988ca599568ec8b87d38db3e625d46da85f2c61",
+      "uncertain": true
+    },
+    "shuowen:5653": {
+      "text": "A feverish headache. Formed from 頁 and 火. Another explanation: abbreviated 焚 indicates the sound.",
+      "sourceTextSha256": "b7948a69e9b7b0635f438a7a51bf308be599b876349a61745d601a9072513bad",
+      "uncertain": false
+    },
+    "shuowen:5654": {
+      "text": "Foolish, neither perceptive nor clear-minded. Formed from 頁, with 𧱏 indicating the sound.",
+      "sourceTextSha256": "4cc584bda3849d47182d203327a565382e42c9de3e9474bf05ff4ace268c9409",
+      "uncertain": false
+    },
+    "shuowen:5655": {
+      "text": "Hard to understand. Formed from 頁 and 米. Another explanation: a fresh white appearance, using abbreviated 粉.",
+      "sourceTextSha256": "ba9e459030c3da020f6b3f806c4f47989d39c8e829a2198cc4a2550e18b80f69",
+      "uncertain": false
+    },
+    "shuowen:5656": {
+      "text": "Haggard, 顦顇. Formed from 頁, with 焦 indicating the sound.",
+      "sourceTextSha256": "be26411fe67b951866e13f378b574943bd78e10c6267387760f1f309f0f1a752",
+      "uncertain": false
+    },
+    "shuowen:5657": {
+      "text": "Haggard, 顦顇. Formed from 頁, with 卒 indicating the sound.",
+      "sourceTextSha256": "5717e143d6663f0fb5d8749a6affe4f6b9d31d0974acc5091a91a576ad3a0612",
+      "uncertain": false
+    },
+    "shuowen:5658": {
+      "text": "The head constricted and faint, 繫頭殟; the gloss is uncertain. Formed from 頁, with 昏 indicating the sound.",
+      "sourceTextSha256": "8374b54e9888b53f32d9d26301cddb6eccc0fee6d751204526851856f361ff24",
+      "uncertain": true
+    },
+    "shuowen:5659": {
+      "text": "Ugly. Formed from 頁, with 亥 indicating the sound.",
+      "sourceTextSha256": "364d09ba68d008b2b70a9534871d1a1726b28aafed2cabdea24f8aed0a86554f",
+      "uncertain": false
+    },
+    "shuowen:5660": {
+      "text": "Ugly. Formed from 頁, with 其 indicating the sound. Present-day expulsion of pestilence uses 䫏 masks.",
+      "sourceTextSha256": "d81f7caefbe1ddbb2806a936588dd534c8840032263079a46831f08701f97ec4",
+      "uncertain": false
+    },
+    "shuowen:5661": {
+      "text": "To call out. Formed from 頁, with 籥 indicating the sound. Pronounced the same as 籥. The Book of Shang says: “Lead and call together the many relatives.”",
+      "sourceTextSha256": "c5fbe5c1468a7bc8d3834449f4acc4220733590342bd6b8ad90d3e8ea6f931c1",
+      "uncertain": false
+    },
+    "shuowen:5662": {
+      "text": "Bright ornament on the head. Formed from 頁, with 㬎 indicating the sound.",
+      "sourceTextSha256": "4973374f18bd0d1cc55ea2f9fac2b4a6161130b77ea1944501632dc757a46c82",
+      "uncertain": false
+    },
+    "shuowen:5663": {
+      "text": "To select and equip, 選具; the gloss is uncertain. Formed from two 頁.",
+      "sourceTextSha256": "c4e8b370d7f857a7c73424ff901776c937d3258500ce50d4f3c384803271fcf9",
+      "uncertain": true
+    },
+    "shuowen:5664": {
+      "text": "At ease. Note: the classics also use 豫. Formed from 頁; further details are unknown.",
+      "sourceTextSha256": "048ae01220730d1521b9f2100c31062de72e9463fe4fe31844632d59164e05a3",
+      "uncertain": false
+    },
+    "shuowen:5665": {
+      "text": "The head. Pictographic. All characters in this group follow 𦣻.",
+      "sourceTextSha256": "c1cab63f8ce0bf0db52ba6e9d60a169ed85a9e3f8cd26c5ad8ad8dc0962e695b",
+      "uncertain": false
+    },
+    "shuowen:5666": {
+      "text": "A gentle facial expression. Formed from 𦣻 and 肉. Read like 柔.",
+      "sourceTextSha256": "6830a7a5e66bf57576a76b1e24ed443b5ff0fa3d4bcfe11c02dc90dd86dc9ea8",
+      "uncertain": false
+    },
+    "shuowen:5667": {
+      "text": "The front of the head. Formed from 𦣻, depicting a person’s face. All characters in this group follow 面.",
+      "sourceTextSha256": "1e3e73dc1835851414f3e642ca6f9eaf2ef3082f96f52b268158a562bdfc8df9",
+      "uncertain": false
+    },
+    "shuowen:5668": {
+      "text": "The face visible. Formed from 面 and 見; 見 also indicates the sound. The Odes says: “Showing that face and those eyes.”",
+      "sourceTextSha256": "7c0248756f4fcaaaad83b146fc5eaac99deec2059921a72913af8cfab1c6f554",
+      "uncertain": false
+    },
+    "shuowen:5669": {
+      "text": "The cheek. Formed from 面, with 甫 indicating the sound.",
+      "sourceTextSha256": "b8b70926fb378598690e8cb29c90a269850c062d53e5030b647572430c1e9e19",
+      "uncertain": false
+    },
+    "shuowen:5670": {
+      "text": "The face scorched, withered and small. Formed from 面 and 焦.",
+      "sourceTextSha256": "763cd107fef93b0d104c652759b1fce44e00ffe348653a48bf8dce1690ee23f8",
+      "uncertain": false
+    },
+    "shuowen:5671": {
+      "text": "Beauty or graceful appearance. Formed from 面, with 厭 indicating the sound.",
+      "sourceTextSha256": "256e0adef23ae313da84c0e89189e6fb80c187d854695276321ce71a98411c83",
+      "uncertain": false
+    },
+    "shuowen:5672": {
+      "text": "Not visible. Depicts obstruction and covering. All characters in this group follow 丏.",
+      "sourceTextSha256": "64c36e2c51439071a724ce43b83b36d41771a8d6d1fa137c5dd51697510d27ea",
+      "uncertain": false
+    },
+    "shuowen:5673": {
+      "text": "The same as 𦣻, the ancient graph 𦣻. 巛 depicts hair, called 鬊; 鬊 is 巛. All characters in the 𩠐 group follow 𩠐.",
+      "sourceTextSha256": "c68c6270f1df74ecdeeb408425cdcd940c0c49e67932b871eba5f2a8f23e43a7",
+      "uncertain": false
+    },
+    "shuowen:5674": {
+      "text": "To lower the head. Formed from 𩠐, with 旨 indicating the sound.",
+      "sourceTextSha256": "406384bba037f089cffc0a097385d56258ecad2e3f2b070d7bd7e275a710338f",
+      "uncertain": false
+    },
+    "shuowen:5675": {
+      "text": "To pierce, 戳. Formed from 𩠐 and 斷.",
+      "sourceTextSha256": "be005f3e5ee0ed19913097a4dfb460250a2c7d6d093ef28687b3a9dd26f0954f",
+      "uncertain": false
+    },
+    "shuowen:5676": {
+      "text": "An inverted head. Attendant Jia says this graph means a severed head hung upside down. All characters in this group follow 𥄉.",
+      "sourceTextSha256": "a74c3d8074a736bcc9874dfe143f0ca19b83bfecde79c1e4ede77257e6f78892",
+      "uncertain": false
+    },
+    "shuowen:5677": {
+      "text": "To suspend. Formed from 系 holding 𥄉.",
+      "sourceTextSha256": "728f1e6f27e7bb72d00551e7a253cc9dd68abc95875ed8ae2c8f1ea33da8a9d5",
+      "uncertain": false
+    },
+    "shuowen:5678": {
+      "text": "Facial hair. Formed from 頁 and 彡. All characters in this group follow 須.",
+      "sourceTextSha256": "b9b3f1019a6ba5760f39fa69a0bc43f2ac7f3494d73a5662be025546a53e1265",
+      "uncertain": false
+    },
+    "shuowen:5679": {
+      "text": "Hair above the mouth. Formed from 須, with 此 indicating the sound.",
+      "sourceTextSha256": "76febc2d504a02f41aa853dcb75807f43c91cd5cfc7be7c006e509cd0f67f9f2",
+      "uncertain": false
+    },
+    "shuowen:5680": {
+      "text": "Cheek hair. Formed from 須 and 冄; 冄 also indicates the sound.",
+      "sourceTextSha256": "fada2e6f3e75c05843d0b6d5e18c212e218a5f987f612b3b9715ef59c93829b6",
+      "uncertain": false
+    },
+    "shuowen:5681": {
+      "text": "Beard and hair half white. Formed from 須, with 卑 indicating the sound.",
+      "sourceTextSha256": "6923b41adfe4b837207c71d510a0aa9d0bc9524c1591a48d84c228dfde93ec79",
+      "uncertain": false
+    },
+    "shuowen:5682": {
+      "text": "The appearance of short beard and hair. Formed from 須, with 否 indicating the sound.",
+      "sourceTextSha256": "2782d27f9904e3b03d84b3ccad02f5a1051a4be1a1cbb103182e924b2dd462d6",
+      "uncertain": false
+    },
+    "shuowen:5683": {
+      "text": "Hair ornaments and painted patterns. Pictographic. All characters in this group follow 彡.",
+      "sourceTextSha256": "409177bce6ba4689e11129596498e310028b7dcd9f2b1901e94fcc7a3435b7a1",
+      "uncertain": false
+    },
+    "shuowen:5684": {
+      "text": "Shape or representation. Formed from 彡, with 幵 indicating the sound.",
+      "sourceTextSha256": "529efd44e5cc1df24a745a5bb099dc8f0951719c6efc179f6f6da21ad519f9b1",
+      "uncertain": false
+    },
+    "shuowen:5685": {
+      "text": "Thick hair. Formed from 彡 and 人. The Odes says: “Thick hair like clouds.”",
+      "sourceTextSha256": "d3e185146b1bace5fe2b9d4962ba340c6bb294c00e77612a6033e5d4f2646f05",
+      "uncertain": false
+    },
+    "shuowen:5686": {
+      "text": "To adorn. Formed from 彡, with 攸 indicating the sound.",
+      "sourceTextSha256": "861d43f64d1ce922e1fbb2c14274d93adc3731dbc67543ccc5278cf2f88b7ac4",
+      "uncertain": false
+    },
+    "shuowen:5687": {
+      "text": "A pattern made manifest. Formed from 彡 and 章; 章 also indicates the sound.",
+      "sourceTextSha256": "f53f99f7ad7e1766d0a115045124602e32b8d1abbef3b9778a4f38e6bd95a0c4",
+      "uncertain": false
+    },
+    "shuowen:5688": {
+      "text": "To carve patterns. Formed from 彡, with 周 indicating the sound.",
+      "sourceTextSha256": "54d127791ec1da1e991bdfb1819f622f4ab4c3c970dcb3c41fe082efd776d693",
+      "uncertain": false
+    },
+    "shuowen:5689": {
+      "text": "Pure or bright ornament. Formed from 彡, with 青 indicating the sound.",
+      "sourceTextSha256": "f0f505f72b2a1c466285a2c5c56755c1a03bb8d36b1c06dde3ca0c30ef08a652",
+      "uncertain": false
+    },
+    "shuowen:5690": {
+      "text": "Fine patterns. Formed from 彡, with abbreviated 𡭴 indicating the sound.",
+      "sourceTextSha256": "d94ce90a184eb0a3c61b395f606892e324dbeb87315a90c77175d4b1b2f4b523",
+      "uncertain": false
+    },
+    "shuowen:5691": {
+      "text": "Pliant or bent. The upper part depicts bending; 彡 depicts hair’s pliancy and weakness. Weak things occur together, hence two 𢎥.",
+      "sourceTextSha256": "95e1aba96b8a83f2af0d2d1cde76c11c7cf4cdac60640d82cb4b39302f05eee0",
+      "uncertain": false
+    },
+    "shuowen:5692": {
+      "text": "Patterned ornament. Formed from 彡, with 采 indicating the sound.",
+      "sourceTextSha256": "cf0252e8271d045008efd120db0f37c92452fb620c51cc62b5bf8dcd8fbc9a63",
+      "uncertain": false
+    },
+    "shuowen:5693": {
+      "text": "Patterned or adorned. Formed from 彡 and 文. All characters in this group follow 彣.",
+      "sourceTextSha256": "8076a1439952e51e4c76ba5ab80c1c4e5b23c6ea2f5b6df658d112e4ea5113a2",
+      "uncertain": false
+    },
+    "shuowen:5694": {
+      "text": "A fine man of refinement, spoken of by people. Formed from 彣, with 厂 indicating the sound.",
+      "sourceTextSha256": "f0a80d4c10996e74b7f135a2a4561a11d8dc7dfad1eba925462b3a1cf9ea8c98",
+      "uncertain": false
+    },
+    "shuowen:5695": {
+      "text": "Intersecting strokes. Depicts crossing patterns. All characters in this group follow 文.",
+      "sourceTextSha256": "fb76c9378542b8a4a5b7dc85cac9b3103a4cbe1cfed800327d4c235f5f7bdd6e",
+      "uncertain": false
+    },
+    "shuowen:5696": {
+      "text": "Distinctly patterned. Formed from 文, with 非 indicating the sound. The Changes says: “The gentleman changes like a leopard; his pattern is distinct.”",
+      "sourceTextSha256": "ed059a7b0c394d3e7a73c1db5be9072a63b633215711af3546d869c2eeb791e1",
+      "uncertain": false
+    },
+    "shuowen:5697": {
+      "text": "A mottled pattern. Formed from 文, with 辡 indicating the sound.",
+      "sourceTextSha256": "3b51ded91526c665ed40995086222fc70e28fdae6db63ff3bb083afa7e18a4fc",
+      "uncertain": false
+    },
+    "shuowen:5698": {
+      "text": "Fine strokes. Formed from 文, with 𠩺 indicating the sound.",
+      "sourceTextSha256": "8671f688b4ab51a7851be36e61537a0fc55a973a3071606ede43cd15015478fd",
+      "uncertain": false
+    },
+    "shuowen:5699": {
+      "text": "Long hair flowing, 猋猋. Formed from 長 and 彡. All characters in this group follow 髟.",
+      "sourceTextSha256": "aef8f6122770cfabd822591ee303a9517f841972563ea81af6a39171d619d6b2",
+      "uncertain": false
+    },
+    "shuowen:5700": {
+      "text": "A root. Formed from 髟, with 犮 indicating the sound.",
+      "sourceTextSha256": "096593b2e3011a0cecafdf870503f44f193ca6b3e70597e96ebd1fae8e7602c3",
+      "uncertain": false
+    }
+  }
+}

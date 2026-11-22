@@ -12,7 +12,7 @@ on glyph detail cards); this guide is its integration contract.
 | File or directory | Purpose and consumer |
 | --- | --- |
 | [index.json](index.json) | Lazily fetched availability/routing index for exact library record IDs and family-qualified radical forms; includes shard integrity hashes, input fingerprints and full source notices. |
-| [glyphs/](glyphs/README.md) | On-demand JSON shards containing original source explanations, exact target associations, related-form suggestions and textual BabelStone occurrence references. |
+| [glyphs/](glyphs/README.md) | On-demand JSON shards containing original source explanations, separate English Shuowen drafts, exact target associations, related-form suggestions and textual BabelStone occurrence references. |
 | [etymology.schema.json](etymology.schema.json) | JSON Schema 2020-12 for index, shard and audit envelopes. Each generated file's `$schema` selects its actual definition. |
 | [AGENTS.md](AGENTS.md) | Scoped instructions for agents modifying or integrating this dataset. |
 | [HOWELL_PRESENTATION.md](HOWELL_PRESENTATION.md) | Frontend rendering contract covering narrative/composition cases, nested notation, exact-character links and source-preservation checks; no dataset rebuild required. |
@@ -27,6 +27,7 @@ python scripts/download-etymology-sources.py --check
 python scripts/import-etymology.py --write
 python scripts/import-etymology.py --check
 python scripts/import-etymology.test.py
+python scripts/shuowen-translations.test.py
 ```
 
 Run from the repository root. Node uses the existing project's `jiti` dependency;
@@ -97,11 +98,28 @@ actual numeric IDs as `shuowen:<id>`; locators retain archive member and origina
 member SHA-256. Neither source's entry IDs replace catalogue IDs.
 
 Howell text is English author interpretation (`author-interpretation`, `en`).
-Shuowen text is the original historical Chinese explanation
-(`historical-dictionary`, `lzh`), without an invented English translation. Other
+Shuowen `text` is the original historical Chinese explanation
+(`historical-dictionary`, `lzh`). A separate `translation` holds a newly authored
+English AI draft, with `language: "en"`, `method: "ai-generated"`,
+`reviewStatus: "unreviewed-ai-draft"`, `sourceTextSha256` and `uncertain`.
+The text hash binds English to that exact original entry; the browser drops a
+stale translation while retaining the original. Show “AI-generated draft, not
+reviewed” beside English and any uncertainty note. Keep the unchanged Chinese
+behind its remembered Advanced disclosure. These drafts translate the historical
+source; they are not verified modern etymology. See the
+[translation guide](../../../importer/data/etymology/translations/README.md).
+Root metadata's `translation_layer` records method, status and coverage; original
+acquisition dates remain distinct from English batch creation dates. Other
 original fields/commentary stay in the archived sources. Japanese readings,
 shinjitai, Shuowen indexes/components and seal-font codes are not imported as
 Mandarin pronunciation, catalogue identity, graphical decomposition or geometry.
+
+The handoff packaging version is `1.1.0`; the independent translation layer is
+`1.0.0`, and the JSON envelope `schemaVersion` remains `1`. The source collection's
+own version/revision is preserved separately. Regeneration requires complete
+English coverage of the 9,833 original Shuowen IDs, including source-only forms.
+Translation fields remain additive/optional in schema version 1 for older
+payloads; the `1.1.0` generator and coverage tests require the complete new layer.
 
 Render source text as text, preserving notation, punctuation and cross-reference
 markers such as Howell's `#`. Do not execute markup, feed historical wording into
@@ -118,7 +136,8 @@ and a separate review process, rather than editing the original text.
 `comparison.coverage` reports `both`, `howell-only`, `shuowen-only` or `none`.
 Shared headwords have `interpretationStatus: unreviewed`; others are `not-compared`.
 These are operational coverage checks, not computed historical agreement scores.
-No automatic translation or text-similarity judgment has been performed.
+English drafts do not constitute a two-source comparison. No text-similarity
+judgment or scholarly agreement review has been performed.
 
 ## BabelStone graphical evidence
 

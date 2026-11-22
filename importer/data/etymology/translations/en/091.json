@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "336dac73a9c8caba54a0a2278ef2d002f0c601611f3cb0c0987eeb6eca9b6fe5",
+    "created_date": "2026-11-22"
+  },
+  "batch": "091",
+  "translations": {
+    "shuowen:9001": {
+      "text": "A wall being high. The Odes says: 'The lofty walls rise high.' Formed from 土, with 乞 indicating the sound.",
+      "sourceTextSha256": "7adb439a8dea200e3d7bed1d0aaa863358244cbad9bfc7a4456dab8242af30bf",
+      "uncertain": false
+    },
+    "shuowen:9002": {
+      "text": "A wall. Five construction boards make one 堵. Formed from 土, with 者 indicating the sound.",
+      "sourceTextSha256": "5910b8d035ff84b45bf9eba0f7e9b53686301d84086299c475e9e8462d05ea38",
+      "uncertain": false
+    },
+    "shuowen:9003": {
+      "text": "A wall. Formed from 土, with 辟 indicating the sound.",
+      "sourceTextSha256": "8b6de1c762bec7ed0cd7b6c92e98245ba7cdcb97f7e63746c3e866f728e334a3",
+      "uncertain": false
+    },
+    "shuowen:9004": {
+      "text": "A surrounding wall. Formed from 土, with 尞 indicating the sound.",
+      "sourceTextSha256": "ebc2fec832a3657b16d348d857aa2faec36704d4789c34267cfb48e328e794f4",
+      "uncertain": false
+    },
+    "shuowen:9005": {
+      "text": "A gap in a wall. Formed from 土, with 曷 indicating the sound. Read like 謁.",
+      "sourceTextSha256": "02ce4deda8437c71c8e71c91dbeb5de95560afcec2c54121744cb8b818d0f1ad",
+      "uncertain": false
+    },
+    "shuowen:9006": {
+      "text": "A low wall. Formed from 土, with 寽 indicating the sound.",
+      "sourceTextSha256": "c79c5db047bd75b4dc5f19fa8629301584d8079bc3a633d9c3194daf44efa6a3",
+      "uncertain": false
+    },
+    "shuowen:9007": {
+      "text": "Raised ground. Formed from 土, with 甚 indicating the sound.",
+      "sourceTextSha256": "9ba918c9df1dd51fee17e20a5212a6f767c1ba06600d09a24faa3a995f5fdb89",
+      "uncertain": false
+    },
+    "shuowen:9008": {
+      "text": "To protrude or emerge. The Odes says: 'The mayfly emerges from its hole.' Formed from 土, with abbreviated 屈 indicating the sound.",
+      "sourceTextSha256": "04ecded257e9c73753208c99c773abf6a5d26dba3663e80db047534a0b050971",
+      "uncertain": true
+    },
+    "shuowen:9009": {
+      "text": "A hall. Formed from 土, with 尚 indicating the sound.",
+      "sourceTextSha256": "6b78926a07836199443b46d37afb41a5cb563ed3b736dae330a6eab7d0cf6c51",
+      "uncertain": false
+    },
+    "shuowen:9010": {
+      "text": "A side chamber of a hall. Formed from 土, with 朵 indicating the sound.",
+      "sourceTextSha256": "9c961297bafbc9f52d0af2673f9ce91828ff96ba91bb8a6daa0245127543b39f",
+      "uncertain": true
+    },
+    "shuowen:9011": {
+      "text": "A screen or barrier. Formed from 土, with 占 indicating the sound.",
+      "sourceTextSha256": "e7f3c17e267be7ef217c0005408e672d5a503a36d5d9e335c56951eaedef65e6",
+      "uncertain": true
+    },
+    "shuowen:9012": {
+      "text": "To plaster. Formed from 土, with 浝 indicating the sound.",
+      "sourceTextSha256": "fe4437431db2ce6a6e322d7c879728ba64f5953926c39663ffaebedb4622f1e0",
+      "uncertain": false
+    },
+    "shuowen:9013": {
+      "text": "To plaster. Formed from 土, with 見 indicating the sound.",
+      "sourceTextSha256": "f01eb7560869b383767fee9b7d1ed98f8fdbab440fddeb5b2d1d6922bf632368",
+      "uncertain": false
+    },
+    "shuowen:9014": {
+      "text": "To plaster. Formed from 土, with 堇 indicating the sound.",
+      "sourceTextSha256": "fd0c6949a4ab4215d8f38c901048524bf6d59cd1b81f5bdced9755898d131825",
+      "uncertain": false
+    },
+    "shuowen:9015": {
+      "text": "To plaster overhead. Formed from 土, with 旣 indicating the sound.",
+      "sourceTextSha256": "414d1f82e158a69cd2c38543868f3ce15595abb3eaaf2394b68b62e4d3dd9ba4",
+      "uncertain": false
+    },
+    "shuowen:9016": {
+      "text": "White plaster. Formed from 土, with 亞 indicating the sound.",
+      "sourceTextSha256": "5878c15f9dc40e75250bf6f7912e2d7eaae403fb02646549b9a04c1bf806dbc9",
+      "uncertain": false
+    },
+    "shuowen:9017": {
+      "text": "To coat the ground. Formed from 土, with 犀 indicating the sound. The Rites says: 'The Son of Heaven has a red-coated courtyard.'",
+      "sourceTextSha256": "77e76355325a2c2ba6005bd38d9af9bb36171893d20094299ea90b46dcec5fb1",
+      "uncertain": false
+    },
+    "shuowen:9018": {
+      "text": "A kind of tile or brick, expressed by 瓴適. Alternatively, not yet fired. Formed from 土, with 毄 indicating the sound.",
+      "sourceTextSha256": "fcd0e7c4f96b4fd5bedcae206d846dbefc6b81b73af1ffd4e54af9a2dbed5ad9",
+      "uncertain": true
+    },
+    "shuowen:9019": {
+      "text": "To sweep away. Formed from 土, with 弁 indicating the sound. Read like 糞.",
+      "sourceTextSha256": "133f94291942bed590438d84ea4f1111b0909b564afb06baff51561f61e2f97e",
+      "uncertain": false
+    },
+    "shuowen:9020": {
+      "text": "To discard. Formed from 土 and 帚.",
+      "sourceTextSha256": "2ec416fbb4fedf11a88dccda06d23270f4f97d97824ca3660c712407e45130e4",
+      "uncertain": false
+    },
+    "shuowen:9021": {
+      "text": "To exist. Formed from 土, with 才 indicating the sound.",
+      "sourceTextSha256": "e975978b07259ae2b155e9ddb07cfb56d2edea934feb4b64331821ad19b2965b",
+      "uncertain": false
+    },
+    "shuowen:9022": {
+      "text": "To stay or stop. Formed from 土 and abbreviated 畱. 土 is where one stays; this has the same conception as 畱.",
+      "sourceTextSha256": "aa0a240b1201eac6b10082b88da0f15ff175c1952cdc3e7899e69539a3b6fedb",
+      "uncertain": false
+    },
+    "shuowen:9023": {
+      "text": "To adhere or rest upon. Formed from 土, with 氏 indicating the sound.",
+      "sourceTextSha256": "5380d2f20b207e30dcaa1c2dd4935c2d08171e702d6d6829929cfe7ef9b97168",
+      "uncertain": false
+    },
+    "shuowen:9024": {
+      "text": "To fill or block. Formed from 土, with 眞 indicating the sound.",
+      "sourceTextSha256": "f3f26363b93144b70c9d4f01c55ab805bd950ad1bdf8127f7933b9667c2f9baa",
+      "uncertain": false
+    },
+    "shuowen:9025": {
+      "text": "At ease. Formed from 土, with 旦 indicating the sound.",
+      "sourceTextSha256": "f43cabfb343fca6589395afba58e3fcc90cfe2f770d19737d716c574b731027c",
+      "uncertain": false
+    },
+    "shuowen:9026": {
+      "text": "Land adjoining in sequence. The great officer Zhenzi of Wei was named 坒. Formed from 土, with 比 indicating the sound.",
+      "sourceTextSha256": "47f3b94edcd5fc0f19665da6985da572ec06de83369a25183d5deb88d8bdf7cf",
+      "uncertain": false
+    },
+    "shuowen:9027": {
+      "text": "To hold back or obstruct. Formed from 土, with 是 indicating the sound.",
+      "sourceTextSha256": "3ac0733643eee0946ae29bfbf24a354472decb377c2eaed836870f42442d891c",
+      "uncertain": false
+    },
+    "shuowen:9028": {
+      "text": "A musical instrument made of earth, with six holes. Formed from 土, with 熏 indicating the sound.",
+      "sourceTextSha256": "ff9575062139aa2a9a875bfabdf0eccd2288981829ab26955aa2c5a37e585c34",
+      "uncertain": false
+    },
+    "shuowen:9029": {
+      "text": "Land granted by rank to feudal lords. Formed from 之, 土, and 寸, preserving its prescribed measures: dukes and marquises, one hundred li; earls, seventy li; viscounts and barons, fifty li.",
+      "sourceTextSha256": "9886af93f17687fe8b146879586d2fca073f4d7aead40acf866ec50bd0e255af",
+      "uncertain": true
+    },
+    "shuowen:9030": {
+      "text": "The king's seal, by which he governs the land. Formed from 土, with 爾 indicating the sound.",
+      "sourceTextSha256": "d757632ab6a6e781a6360d8ab9012e2e71ac70a787d29974bdb3b51abfd987c6",
+      "uncertain": false
+    },
+    "shuowen:9031": {
+      "text": "Writing ink. Formed from 土 and 黑; 黑 also indicates the sound.",
+      "sourceTextSha256": "ef8b043b8a3ceedfe953bd86348032ebcf596a357ec5bd8cd3a3ac098a276922",
+      "uncertain": false
+    },
+    "shuowen:9032": {
+      "text": "To mix lacquer with ash and coat something. Formed from 土, with 完 indicating the sound. Alternatively, to mend or patch.",
+      "sourceTextSha256": "0532f415eb49fe53585502cfd3d8f482b0d252b579b8d09a148876943efbc73a",
+      "uncertain": true
+    },
+    "shuowen:9033": {
+      "text": "A mold for casting vessels. Formed from 土, with 刑 indicating the sound.",
+      "sourceTextSha256": "d1c0c39534b1eb561713e296884d64f4d7af664a2f8fece4922571c04da4819a",
+      "uncertain": false
+    },
+    "shuowen:9034": {
+      "text": "An archery target. Formed from 土, with 𦎫 indicating the sound. Read like 準.",
+      "sourceTextSha256": "40b17bfb97ddcf4eff57b8f1435e95582d41c812585ab43a2185f8605e06f7fe",
+      "uncertain": false
+    },
+    "shuowen:9035": {
+      "text": "A wall where chickens roost is called 塒. Formed from 土, with 時 indicating the sound.",
+      "sourceTextSha256": "7e4c794465c10ed8c6329adc7d6b38b8e30f75c5d4eac7a82f2ba67c3be0d0a7",
+      "uncertain": false
+    },
+    "shuowen:9036": {
+      "text": "That which contains the people. Formed from 土 and 成; 成 also indicates the sound.",
+      "sourceTextSha256": "e1a18b495144c53332b67bc10766592d5720021d3631b4dbb6d95a6808b7801e",
+      "uncertain": false
+    },
+    "shuowen:9037": {
+      "text": "A city wall. Formed from 土, with 庸 indicating the sound.",
+      "sourceTextSha256": "691d192eb582af0c71b7537ae0835ab8d672162e0fad1d2e6a01c77f5ba570c9",
+      "uncertain": false
+    },
+    "shuowen:9038": {
+      "text": "A parapet atop a city wall. Formed from 土, with 葉 indicating the sound.",
+      "sourceTextSha256": "8982eead3e947f9132ae6d01609669e971ec0f1c669c627cf05600cca4f2d15d",
+      "uncertain": false
+    },
+    "shuowen:9039": {
+      "text": "A pit or depression. Formed from 土, with 欠 indicating the sound.",
+      "sourceTextSha256": "356db268d76b2d8a288315b82c7c5d28aedbfb282a4f974ea288d8cd687bd5f8",
+      "uncertain": false
+    },
+    "shuowen:9040": {
+      "text": "Low-lying. The Spring and Autumn Commentary says: 'Low and cramped.' Formed from 土, with 執 indicating the sound.",
+      "sourceTextSha256": "4f160b177b17bff09e4a74fd99d39f9d012c3c42484cf566b8abf77fbd29c4f7",
+      "uncertain": false
+    },
+    "shuowen:9041": {
+      "text": "A small islet. The Odes says: 'As though on an islet in the water.' Formed from 土, with 氐 indicating the sound.",
+      "sourceTextSha256": "cb2eaf33624fd8e629bd810ae2d680679db1d68b084771e41bfc678e2cc79183",
+      "uncertain": false
+    },
+    "shuowen:9042": {
+      "text": "To enter downward. Formed from 土, with 㬎 indicating the sound.",
+      "sourceTextSha256": "bce6e4f8bb522df7ba0434b5a0a1f7eddb816fe9c3fe006421cfbe94604709a7",
+      "uncertain": false
+    },
+    "shuowen:9043": {
+      "text": "Water dried away. Alternatively, firm. Formed from 土, with 各 indicating the sound.",
+      "sourceTextSha256": "070fad0b5c9ad8cd88b836a5e8a7aa951e5281a4d78fff04a9bde41929dc8c5e",
+      "uncertain": false
+    },
+    "shuowen:9044": {
+      "text": "To add earth onto a main road. Formed from 土, with 次 indicating the sound.",
+      "sourceTextSha256": "6dff12e561a31efed9217d8e0b32f845cca285a7de7658ec20ff78375ce8d9ed",
+      "uncertain": false
+    },
+    "shuowen:9045": {
+      "text": "To increase. Formed from 土, with 曾 indicating the sound.",
+      "sourceTextSha256": "f67fd560e4b4066dc29cd37dfcf679fecf2545d49da7b07c7af2932e54c24182",
+      "uncertain": false
+    },
+    "shuowen:9046": {
+      "text": "To increase. Formed from 土, with 卑 indicating the sound.",
+      "sourceTextSha256": "f49a14111cf34463bd71ff1b6b288a83d1fc83128e53736f26ca1c7f5080f1df",
+      "uncertain": false
+    },
+    "shuowen:9047": {
+      "text": "To increase. Formed from 土, with 付 indicating the sound.",
+      "sourceTextSha256": "0d0c1c545502f34625e32e1d085e6c623ad807aa19f692019dfb43729fa09ed6",
+      "uncertain": false
+    },
+    "shuowen:9048": {
+      "text": "To separate or block. Formed from 土 and 𡨄.",
+      "sourceTextSha256": "573b5569f13a059bc64ede3ae87797c0ff8d5f56613231004f44bc9302186208",
+      "uncertain": false
+    },
+    "shuowen:9049": {
+      "text": "Between 汝 and 潁, applying one's strength to the earth is called 圣. Formed from 土 and 又. Read like 窟 in 兔窟.",
+      "sourceTextSha256": "f16063b9985e0b07e42a767ddf23849b1f08c5ebfe8a10bb7cc2748086454734",
+      "uncertain": false
+    },
+    "shuowen:9050": {
+      "text": "Hard earth. Formed from 土, with 自 indicating the sound. Read like 臮.",
+      "sourceTextSha256": "1c041d08e87a44a045b259816bf05636380cf25f7fb2f411d9fedf4c6337e0cb",
+      "uncertain": false
+    },
+    "shuowen:9051": {
+      "text": "Vapor emerging from the earth. Alternatively, to begin. Formed from 土, with 叔 indicating the sound.",
+      "sourceTextSha256": "80512cdd0a56a094ee3e01d8298566e6b639ce3c7befdbc8634b37f351fb82e3",
+      "uncertain": false
+    },
+    "shuowen:9052": {
+      "text": "Hard earth. Formed from 土, with 𡍮 indicating the sound. Read like 朵.",
+      "sourceTextSha256": "65c89654ed1054189633e1b497b26e2727a7f7118cb9475904f0df76cbe0b5ad",
+      "uncertain": false
+    },
+    "shuowen:9053": {
+      "text": "Ground. Formed from 土, with 练 indicating the sound.",
+      "sourceTextSha256": "3a522502b6c8b3ad151ea1449a781d8cf93c636bb8b9f50e3ce068f6460b9c35",
+      "uncertain": true
+    },
+    "shuowen:9054": {
+      "text": "A heap of earth. Formed from 土 and abbreviated 聚.",
+      "sourceTextSha256": "845ce568408e0f0f896fdf73e568bc250ef56b36a59408d9aa602271c41e97d3",
+      "uncertain": false
+    },
+    "shuowen:9055": {
+      "text": "A fort or protection; high earth. Formed from 土, with 𠷎 indicating the sound. Read like 毒.",
+      "sourceTextSha256": "ac4b5f766e51e68f75504ccc182a0166be08a99cffc96ff4bfaf17d452917b3d",
+      "uncertain": false
+    },
+    "shuowen:9056": {
+      "text": "培敦 refers to land, fields, mountains, and rivers; the precise phrase is obscure. Formed from 土, with 咅 indicating the sound.",
+      "sourceTextSha256": "bcc22e4b2c7c144164db44e3d55af6b81e15f06e01b80fdd947061c7103da719",
+      "uncertain": true
+    },
+    "shuowen:9057": {
+      "text": "To put in order. Formed from 土, with 爭 indicating the sound.",
+      "sourceTextSha256": "bcac44c09f25e4e19ce200dc4c4e6b2720b5f121879319c6863f4911cfcf0ade",
+      "uncertain": false
+    },
+    "shuowen:9058": {
+      "text": "To surround or block. Formed from 土, with 章 indicating the sound.",
+      "sourceTextSha256": "9b99eb25207c3f485ba16cbb6bb642b4ed15fd9c92bc43c06fdea0d01400a211",
+      "uncertain": false
+    },
+    "shuowen:9059": {
+      "text": "To obstruct and block. Formed from 土, with 則 indicating the sound.",
+      "sourceTextSha256": "01a5d0394dfedf54c3a0f3d107aa341e012b2c72684cefd57ae08acabed4ff48",
+      "uncertain": false
+    },
+    "shuowen:9060": {
+      "text": "A boundary of land. Alternatively, a bank. Formed from 土, with 艮 indicating the sound.",
+      "sourceTextSha256": "c57a04301e0a2bff0c738d988111eedd4575bc3f379a39ddfa0f54e59a187f25",
+      "uncertain": false
+    },
+    "shuowen:9061": {
+      "text": "Open ground in the countryside. Formed from 土, with 單 indicating the sound.",
+      "sourceTextSha256": "d1c20746f4c5ae9505dfd5aa4908fbcbdc511a3f289375c1094df09425fa6e07",
+      "uncertain": false
+    },
+    "shuowen:9062": {
+      "text": "To rely on. Formed from 土, with 多 indicating the sound.",
+      "sourceTextSha256": "77b9135a9e0d0ee339d8e7341573476bc97e654fbfffec960f3e887a61692f4f",
+      "uncertain": true
+    },
+    "shuowen:9063": {
+      "text": "An army's fortification. Formed from 土, with 畾 indicating the sound.",
+      "sourceTextSha256": "9974315ffe55f0a7505d370b1e5d4d2698d5a10296ff09c038a64a2526e9ad36",
+      "uncertain": false
+    },
+    "shuowen:9064": {
+      "text": "A ruined wall. Formed from 土, with 危 indicating the sound. The Odes says: 'Climb that ruined wall.'",
+      "sourceTextSha256": "18415bd2c369e24d7f68b77e209cca79dc8bcbb41cc7f1b180cd092663cc33c9",
+      "uncertain": false
+    },
+    "shuowen:9065": {
+      "text": "To destroy. The Book of Yu says: 'Defying commands and ruining the clan.' Formed from 土, with 己 indicating the sound.",
+      "sourceTextSha256": "a2071bd9046386f9ef023b02097d3d1c30e0c4f7fab69553f1e58ee734a16969",
+      "uncertain": false
+    },
+    "shuowen:9066": {
+      "text": "To block. The Book of Documents says: 'Gun blocked the floodwaters.' Formed from 土, with 西 indicating the sound.",
+      "sourceTextSha256": "a2d047692622462071fb80c08978120b69a336ac21d566ef84d43480a4cebde9",
+      "uncertain": false
+    },
+    "shuowen:9067": {
+      "text": "A ditch. Alternatively, large. Formed from 土, with 斬 indicating the sound.",
+      "sourceTextSha256": "1e64f95dda6f4559dc50c57d0cb080ae8224454d22890d0dde9af47dd2422f0b",
+      "uncertain": false
+    },
+    "shuowen:9068": {
+      "text": "In Qin, a ditch is called 埂. Formed from 土, with 更 indicating the sound. Read like 綆, the rope for drawing from a well.",
+      "sourceTextSha256": "0ada8e29ff0b1a5ee6c19a4ab214719d5167fed3d53dd2cda44e7a6f756d94ea",
+      "uncertain": false
+    },
+    "shuowen:9069": {
+      "text": "A pit or excavation. Alternatively, large. Formed from 土, with 廣 indicating the sound.",
+      "sourceTextSha256": "6ec6edabbc832b8e879b4ef77493e7c43f315395a9b3e43be8a3adb9c33c8fbd",
+      "uncertain": false
+    },
+    "shuowen:9070": {
+      "text": "High and dry. Formed from 土, with 豈 indicating the sound.",
+      "sourceTextSha256": "eb83e3204a353e4555994cd013dbc1cadc20a054328846136bcd59651a5ebcc3",
+      "uncertain": false
+    },
+    "shuowen:9071": {
+      "text": "To damage or leave incomplete. Formed from 土, with abbreviated 毇 indicating the sound.",
+      "sourceTextSha256": "39b74c2ffd1191f3b441d5ab3ddf3e4389016e58905a31bccd6785c873468c96",
+      "uncertain": false
+    },
+    "shuowen:9072": {
+      "text": "To break down. Alternatively, to block up and mend. Formed from 土, with 厭 indicating the sound.",
+      "sourceTextSha256": "878302becbba6521b1a8b4a971c8d64bcc92ccca6ac8ae61d5afc37b7985c98c",
+      "uncertain": false
+    },
+    "shuowen:9073": {
+      "text": "To ruin. Formed from 土, with 褱 indicating the sound.",
+      "sourceTextSha256": "9d27d0618e166ab68c4dabdfc313883c3801afc2f52364b3c7668ec72f340d81",
+      "uncertain": false
+    },
+    "shuowen:9074": {
+      "text": "The unevenness expressed by 坎坷. There is a 坷 pavilion in 寕陵, Liang state. Formed from 土, with 可 indicating the sound.",
+      "sourceTextSha256": "cf54de26ccf0352094a92c1d9d0ec0bcaea4eca4e40fc8d79b55fca21bd539ed",
+      "uncertain": false
+    },
+    "shuowen:9075": {
+      "text": "To split, as in 𡍩. Formed from 土, with 虖 indicating the sound.",
+      "sourceTextSha256": "9dd6049486ae819964e08015b828765f6bb6dd544763dee982ec5c9cf9730e2a",
+      "uncertain": false
+    },
+    "shuowen:9076": {
+      "text": "To split. The Odes says: 'Neither split nor cleaved.' Formed from 土, with 㡿 indicating the sound.",
+      "sourceTextSha256": "dc403a7c39e8e27165311245461b3f93e837bb921129cc5d12801f3781def92f",
+      "uncertain": false
+    },
+    "shuowen:9077": {
+      "text": "Dust. Formed from 土, with 央 indicating the sound.",
+      "sourceTextSha256": "b703026390da97971151c11b4b9afd7f664f6d61a50618258943fd5e7ea8d59a",
+      "uncertain": false
+    },
+    "shuowen:9078": {
+      "text": "Dust. Formed from 土, with 麻 indicating the sound.",
+      "sourceTextSha256": "8ab962b16f85554c699f5dfc9797f2f789a91335f07fa75659dc0dd88255e754",
+      "uncertain": false
+    },
+    "shuowen:9079": {
+      "text": "Dusty earth. Formed from 土, with 婁 indicating the sound.",
+      "sourceTextSha256": "9281a3df81f85fbed7c0c471c3f2d069b5225eb1b2e9752798cc26cd865efb06",
+      "uncertain": false
+    },
+    "shuowen:9080": {
+      "text": "Dust. Formed from 土, with 分 indicating the sound. Alternatively, a great embankment.",
+      "sourceTextSha256": "a7ad345ee212cc02feed0086a8b1ab2fc28945ff73b0210a90572c8bd864e066",
+      "uncertain": false
+    },
+    "shuowen:9081": {
+      "text": "Dust. Formed from 土, with 非 indicating the sound.",
+      "sourceTextSha256": "f588659a75043b2068c6b36c1cdee403b67568e3ad0f420ea1c31fc84e82ee2c",
+      "uncertain": false
+    },
+    "shuowen:9082": {
+      "text": "Dust. Formed from 土, with 矣 indicating the sound.",
+      "sourceTextSha256": "d3f24399b61e4d6342274421e02412f6da85342ab5dd6d09e74c4f208eb4d699",
+      "uncertain": false
+    },
+    "shuowen:9083": {
+      "text": "Dust. Formed from 土, with 殹 indicating the sound.",
+      "sourceTextSha256": "bd69327760ccf1530f182847936dbd4b93fa7e19fb91ced4670cdbeaebd40da7",
+      "uncertain": false
+    },
+    "shuowen:9084": {
+      "text": "Sediment. Formed from 土, with 沂 indicating the sound.",
+      "sourceTextSha256": "9c1351726aac516b9135b2940084755854bbb6d22a4a43edc19bc3abe0937a1d",
+      "uncertain": false
+    },
+    "shuowen:9085": {
+      "text": "Dirty or turbid. Formed from 土, with 后 indicating the sound.",
+      "sourceTextSha256": "a9855435e7bf6d7505fc6f51ecddeb893fb76f5ec0625f2a76235c7031aaa553",
+      "uncertain": false
+    },
+    "shuowen:9086": {
+      "text": "The sky being overcast and dusty. The Odes says: 'Darkly overcast.' Formed from 土, with 壹 indicating the sound.",
+      "sourceTextSha256": "e2b7c09572e5aac2c78e7a92882c0cf0470da8b4a01bf13d1f8e47ec7d43ab70",
+      "uncertain": true
+    },
+    "shuowen:9087": {
+      "text": "A hill with two tiers. Alternatively, pottery not yet fired. Formed from 土, with 不 indicating the sound.",
+      "sourceTextSha256": "a3bacbdd003eb1dc989034ed4359fb6e53484c05f531b9b630655c3e1a7e5a07",
+      "uncertain": false
+    },
+    "shuowen:9088": {
+      "text": "An anthill. The Odes says: 'The crane calls on the anthill.' Formed from 土, with 至 indicating the sound.",
+      "sourceTextSha256": "cdd8f0531ef64a06debb5a4bf8aadac1b66e3a7a95815ca2046310377d103220",
+      "uncertain": false
+    },
+    "shuowen:9089": {
+      "text": "In the Yi province region, an earthworm's cast is called 坥. Formed from 土, with 且 indicating the sound.",
+      "sourceTextSha256": "d223c8f4ca37eafe5bc11470e767b4b88692b004ef3402b3d91b881730587ecf",
+      "uncertain": false
+    },
+    "shuowen:9090": {
+      "text": "Where penal bondservants reside. Alternatively, a women's prison; alternatively, a pavilion's district. Formed from 土, with 肙 indicating the sound.",
+      "sourceTextSha256": "c1176c9869b43777f1ce20723f67516cbb881fbd3baf7f500522e832a2589160",
+      "uncertain": true
+    },
+    "shuowen:9091": {
+      "text": "A prisoner breaking out. Formed from 土, with 㕢 indicating the sound.",
+      "sourceTextSha256": "005a0858957be7887d9927e3fbdad88261370c9bb37b06983a7f0fa5e9eb87e9",
+      "uncertain": true
+    },
+    "shuowen:9092": {
+      "text": "To bury out of sight. Formed from 土, with 㾜 indicating the sound.",
+      "sourceTextSha256": "6a678634c4b7c13f6f4f21fd7ddfdb0841a70c997a7b567d466692cbce90aa74",
+      "uncertain": false
+    },
+    "shuowen:9093": {
+      "text": "To lower a burial into the earth. Formed from 土, with 朋 indicating the sound. The Spring and Autumn Commentary says: 'In the morning they lowered the coffin.' The Rites calls this 封; the Offices of Zhou, 窆. The Book of Yu says: '堋淫 in the household,' an obscure quotation.",
+      "sourceTextSha256": "128d6e71859f1ac5221cdbc3c613e53a05f15ae925d8531711e4393a7099c9b7",
+      "uncertain": true
+    },
+    "shuowen:9094": {
+      "text": "A boundary: marking off the four sacrificial precincts and sacrificing within them. The Rites of Zhou says: 'Mark out precincts for the Five Emperors in the four suburbs.' Formed from 土, with 兆 indicating the sound.",
+      "sourceTextSha256": "fa5d15f936c79ffc073a978e8f2a02edd4a81115c91643eb61ecf175d17dda66",
+      "uncertain": true
+    },
+    "shuowen:9095": {
+      "text": "A grave. Formed from 土, with abbreviated 熒 indicating the sound.",
+      "sourceTextSha256": "0b9ef5cc4dba2c49c25347ef0ca7b6d9f7043af90fa490284deeea5b070c1a2a",
+      "uncertain": false
+    },
+    "shuowen:9096": {
+      "text": "A mound. Formed from 土, with 莫 indicating the sound.",
+      "sourceTextSha256": "45bea6c29d34b392b18225ef6f0f04873d59d6c249b8816738c86740fa256c91",
+      "uncertain": false
+    },
+    "shuowen:9097": {
+      "text": "A grave. Formed from 土, with 賁 indicating the sound.",
+      "sourceTextSha256": "b7a4838a923606be321d9878cfcfa670a52f3f50509b9cb0187d0b8b85860a8f",
+      "uncertain": false
+    },
+    "shuowen:9098": {
+      "text": "A mound or hillock. Formed from 土, with 龍 indicating the sound.",
+      "sourceTextSha256": "999bf40768fb1f4f5562bd76efef81970e773ae578650629e54c66b426cacd27",
+      "uncertain": false
+    },
+    "shuowen:9099": {
+      "text": "A sacrificial ground. Formed from 土, with 亶 indicating the sound.",
+      "sourceTextSha256": "611ea85ae9c961504a06df90845b72f54379dbc4ea7ee4309967a1ef74c889b8",
+      "uncertain": false
+    },
+    "shuowen:9100": {
+      "text": "A place for sacrificing to spirits. Alternatively, an unplowed field; alternatively, ground for processing grain. Formed from 土, with 昜 indicating the sound.",
+      "sourceTextSha256": "21d693bf5f433b3d18d0fdc82b41d45110c3020e017feee74cc713ce29367cf1",
+      "uncertain": false
+    }
+  }
+}

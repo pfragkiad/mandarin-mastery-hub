@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "e9615e54c75e3bf23661839af455347b29db6ae1510621be39ecb0f07f5cd1f0",
+    "created_date": "2026-11-22"
+  },
+  "batch": "010",
+  "translations": {
+    "shuowen:901": {
+      "text": "A singing sound, 嗙喻. Formed from 口, with 㫄 indicating the sound. Sima Xiangru explains it as the 嗙喻 accompaniment to dances of Huainan, Song and Cai.",
+      "sourceTextSha256": "1f8a3236330c1178528cb481547d83820cece409147918d988ddbb8f69ee33ba",
+      "uncertain": true
+    },
+    "shuowen:902": {
+      "text": "Lofty-spirited, excessive speech. Formed from 口, with abbreviated 蠆 indicating the sound. The Spring and Autumn commentary says: “噧 speech.”",
+      "sourceTextSha256": "2851a33ddc4503c207d445a55ffe26c1198046e53f85b7cbc0f40d45850ee0dd",
+      "uncertain": false
+    },
+    "shuowen:903": {
+      "text": "A lofty spirit or raised breath. Formed from 口, with 九 indicating the sound. Linhuai has Qiuyou county.",
+      "sourceTextSha256": "584b580afc010dbed8eb60f351a1b07145ac9a4ad7888c03ff6ea20fbade7c5a",
+      "uncertain": false
+    },
+    "shuowen:904": {
+      "text": "嘮呶: noisy clamoring. Formed from 口, with 勞 indicating the sound.",
+      "sourceTextSha256": "88992fb61b378637f8d2fa76cf76699eb57ba99e716abc8178f1b93457a09a4e",
+      "uncertain": false
+    },
+    "shuowen:905": {
+      "text": "A clamorous sound. Formed from 口, with 奴 indicating the sound. The Odes says: “Now shouting, now clamoring.”",
+      "sourceTextSha256": "bde60da2f349997d8a09664634800ecd79d5b7719ca026f74be02df042537142",
+      "uncertain": false
+    },
+    "shuowen:906": {
+      "text": "To scold. Formed from 口, with 七 indicating the sound.",
+      "sourceTextSha256": "53e782969f3fa769df5da38ba1c6e0459369e2b6c616c9238fb20a9cbfcc9438",
+      "uncertain": false
+    },
+    "shuowen:907": {
+      "text": "To snort or cry out, 吒. Formed from 口, with 賁 indicating the sound. Another explanation: to flare the nostrils.",
+      "sourceTextSha256": "24909964328b1b3603f95165d2081924f2dfb80b29e8d91a2cc7da8dc8310173",
+      "uncertain": false
+    },
+    "shuowen:908": {
+      "text": "To snort; to scold angrily. Formed from 口, with 乇 indicating the sound.",
+      "sourceTextSha256": "e879bfae858d55442aa69ce6757fab6e5fca87cef9956d3a6f05553a228bf506",
+      "uncertain": false
+    },
+    "shuowen:909": {
+      "text": "Danger. Formed from 口, with 矞 indicating the sound.",
+      "sourceTextSha256": "f09613dc7cec9ffa27138544cbf2f49e2475a85b3f2e537d75aef4cf3b6bcdb4",
+      "uncertain": false
+    },
+    "shuowen:910": {
+      "text": "Alarm. Formed from 口, with 卒 indicating the sound.",
+      "sourceTextSha256": "e0daa474b2182b35d69bb7eefd6746235584c324964c2d5851dd7016fb941b07",
+      "uncertain": false
+    },
+    "shuowen:911": {
+      "text": "Alarm. Formed from 口, with 辰 indicating the sound.",
+      "sourceTextSha256": "844e1b0aea022c2700d0441eaced73e1d9200c5ad78ed17fc0b8eeb88a5adf9c",
+      "uncertain": false
+    },
+    "shuowen:912": {
+      "text": "Alarm. Formed from 口, with 于 indicating the sound.",
+      "sourceTextSha256": "5698e7bf627708ede67b0ba6bcff94fa7c60442f5b7fe501d84052eec2a6458d",
+      "uncertain": false
+    },
+    "shuowen:913": {
+      "text": "Fear. Formed from 口, with 堯 indicating the sound. The Odes says: “Only my voice cries fearfully.”",
+      "sourceTextSha256": "4d7748ad3242c4fe668398f22f4140dc4fb37de627bfd1cd4ea89a0f8258b2d2",
+      "uncertain": false
+    },
+    "shuowen:914": {
+      "text": "To shout loudly. Formed from 口, with 責 indicating the sound.",
+      "sourceTextSha256": "450bc992c59920c6c62de015adb822e056b129ec754206db0ab50f4515537256",
+      "uncertain": false
+    },
+    "shuowen:915": {
+      "text": "Many mouths expressing sorrow. Formed from 口, with 敖 indicating the sound. The Odes says: “Crying mournfully, 嗷嗷.”",
+      "sourceTextSha256": "d4d6cd6dbf319720bc4edb43300ccbee6e1f9853c15c18c6a440c701ebaa2411",
+      "uncertain": false
+    },
+    "shuowen:916": {
+      "text": "The groaning sound 㕧. Formed from 口, with 念 indicating the sound. The Odes says: “The people are groaning.”",
+      "sourceTextSha256": "c7ba9feacac01b233443d2239f712e458855dc055cbd0debe38ffee2399a139a",
+      "uncertain": false
+    },
+    "shuowen:917": {
+      "text": "唸㕧: to groan. Formed from 口, with 尸 indicating the sound.",
+      "sourceTextSha256": "10128f3f266be115970d5f5839d4633911ea96698c585bdb259608cb8fd792b2",
+      "uncertain": false
+    },
+    "shuowen:918": {
+      "text": "To groan. Formed from 口, with 嚴 indicating the sound.",
+      "sourceTextSha256": "fd6a18a9c0b4628fe97133b7fa5f7f09170f51d0f6211a843c0cca28a7ca7e33",
+      "uncertain": false
+    },
+    "shuowen:919": {
+      "text": "To moan, 吟. Formed from 口, with 申 indicating the sound.",
+      "sourceTextSha256": "b788e704394b6f33d97e0bfe6bd417b9c1e936e672dcd081fd85be8d21384f8e",
+      "uncertain": false
+    },
+    "shuowen:920": {
+      "text": "To moan, 呻. Formed from 口, with 今 indicating the sound.",
+      "sourceTextSha256": "f6b38dcfc0d4e2bc22bfda33f7dca8b6df72965843b74da69bf4a7b6b2f2e835",
+      "uncertain": false
+    },
+    "shuowen:921": {
+      "text": "To sigh. Formed from 口, with 兹 indicating the sound.",
+      "sourceTextSha256": "779e525e2d058b314f06ba642e5560453adfb74819725758bd20ee7ec0009292",
+      "uncertain": false
+    },
+    "shuowen:922": {
+      "text": "Strange or divergent speech. Formed from 口, with 尨 indicating the sound. Another explanation: mixed speech. Pronounced like 尨.",
+      "sourceTextSha256": "ace554b39b290d3f270be6ebdd57cd31db245d5f1c5171fc6d144f70b6f15d31",
+      "uncertain": false
+    },
+    "shuowen:923": {
+      "text": "To call out. Formed from 口, with 丩 indicating the sound.",
+      "sourceTextSha256": "841fd66cdf46d87e3a763c8508b6b00a35a2555d70ffde4e8befc3642aecfd85",
+      "uncertain": false
+    },
+    "shuowen:924": {
+      "text": "To sigh. Formed from 口, with 旣 indicating the sound. The Odes says: “Deeply he sighs.”",
+      "sourceTextSha256": "6683cbc67ffc88bfaaea42111a5d2314244371821f735400bb7f105bf0b47bba",
+      "uncertain": false
+    },
+    "shuowen:925": {
+      "text": "To utter a drawn-out sigh. Formed from 口, with 延 indicating the sound.",
+      "sourceTextSha256": "57337fee5792f9729fc88210388c189c27b65e0ea79f6554a5fb5f031cfb728d",
+      "uncertain": false
+    },
+    "shuowen:926": {
+      "text": "To sigh with swallowed breath. Formed from 口, with abbreviated 歎 indicating the sound. Another explanation: a deep sigh.",
+      "sourceTextSha256": "b7a0d99fc39edae6e15dddfc822bada0350a11bb54d95d9c174668e08a75f4c1",
+      "uncertain": true
+    },
+    "shuowen:927": {
+      "text": "Thirst, 㵣. Formed from 口, with 曷 indicating the sound.",
+      "sourceTextSha256": "f42c78590e683ebc003474b88d3082fc3e15dcb7308924e02c8351b0965a5d86",
+      "uncertain": false
+    },
+    "shuowen:928": {
+      "text": "Unable to contain or accommodate. Formed from 口, with 肖 indicating the sound.",
+      "sourceTextSha256": "3c4aa4e0d24454f4d6e6aa980d26101ce27528798460638d325df2c3dab1eead",
+      "uncertain": true
+    },
+    "shuowen:929": {
+      "text": "To move. Formed from 口, with 化 indicating the sound. The Odes says: “Still sleeping, without stirring.”",
+      "sourceTextSha256": "c60a17cdd963e53a0208a40ab6c4ae339920eaa4026b76f72acc2a228c264ef1",
+      "uncertain": false
+    },
+    "shuowen:930": {
+      "text": "To hold in the mouth. Formed from 口, with 朁 indicating the sound.",
+      "sourceTextSha256": "8bd4ce8ec078ed9474ffe436e5b360e3b24087fa95a8b0cc7e374e27d7af9242",
+      "uncertain": false
+    },
+    "shuowen:931": {
+      "text": "To regret and begrudge. Formed from 口, with 文 indicating the sound. The Changes says: “Going on brings regret.”",
+      "sourceTextSha256": "4ce67a229620bfe882fe516d090bc682acb948d2b9bb5c08bc5d7665e48dee8c",
+      "uncertain": false
+    },
+    "shuowen:932": {
+      "text": "A word of difference. Formed from 口 and 夊. 夊 means one advances but is stopped; they do not heed each other.",
+      "sourceTextSha256": "3869c81bc02bae1eba7a5777803961f427c4cc838f1b6db6a08798ee640c5f17",
+      "uncertain": false
+    },
+    "shuowen:933": {
+      "text": "No. Formed from 口 and 不.",
+      "sourceTextSha256": "f578bdb224cf057d8f7dee6d2384b010e2e25a352a271a794567e86df747cd68",
+      "uncertain": false
+    },
+    "shuowen:934": {
+      "text": "To offer condolences to the living. Formed from 口, with 言 indicating the sound. The Odes says: “Return to console the lord of Wei.”",
+      "sourceTextSha256": "a207b7c2bb9b763abcb58761d8d30fc2c758569459926fed7a729e31c912f901",
+      "uncertain": false
+    },
+    "shuowen:935": {
+      "text": "To pity or grieve. Formed from 口, with 衣 indicating the sound.",
+      "sourceTextSha256": "5576cf1e76b5fd3a63db5f237f7707a6553e033b57f690d811dd33d959b69347",
+      "uncertain": false
+    },
+    "shuowen:936": {
+      "text": "To wail. Formed from 口, with 虒 indicating the sound.",
+      "sourceTextSha256": "8d0dc5b6acc443cce0c6a6c2d52760c35bc877460c16cdd9bdff133c69042544",
+      "uncertain": false
+    },
+    "shuowen:937": {
+      "text": "The appearance of vomiting. Formed from 口, with 㱿 indicating the sound. The Spring and Autumn commentary says: “The ruler will vomit it up.”",
+      "sourceTextSha256": "0496c0cd1fe2f14ada431f4231f97eb25ecbe9e04b5960e65f84c6f214916f2e",
+      "uncertain": false
+    },
+    "shuowen:938": {
+      "text": "The mouth twisted and not straight. Formed from 口, with 冎 indicating the sound.",
+      "sourceTextSha256": "4d0171fa1016342fbb3ecedceca087e37225edb8bd7ef87247115a47876cd406",
+      "uncertain": false
+    },
+    "shuowen:939": {
+      "text": "The state 嗼, silence. Formed from 口, with 叔 indicating the sound.",
+      "sourceTextSha256": "51fc039319c9de8dba8a784edfb6c7b1490f67efccd97f286fbea7c9175ce061",
+      "uncertain": true
+    },
+    "shuowen:940": {
+      "text": "𠴫嗼, a state of silence. Formed from 口, with 莫 indicating the sound.",
+      "sourceTextSha256": "1a559faea81356777a46a6146171de4878ddca5e5a6447ccfb46bbc597dfb645",
+      "uncertain": true
+    },
+    "shuowen:941": {
+      "text": "That which blocks the mouth. Formed from 口, with abbreviated 氒 indicating the sound. 氒 is pronounced 厥.",
+      "sourceTextSha256": "6fd3583f30c9034fb394508c09d00fc7c950fd5578bba979504bb5d74cae4207",
+      "uncertain": false
+    },
+    "shuowen:942": {
+      "text": "The sound used to command a dog. Formed from 口, with 族 indicating the sound. The Spring and Autumn commentary says: “The duke set that mastiff on him.”",
+      "sourceTextSha256": "25db8b01757195d65afee139cc30a2e41a816d9ee407371b61c07cd345e76204",
+      "uncertain": false
+    },
+    "shuowen:943": {
+      "text": "A dog's cry. Formed from 犬 and 口.",
+      "sourceTextSha256": "61d8ff9ec0496c6f21e4dbc07e55d440bc62c37bbed9b00870e582cdc578fa9a",
+      "uncertain": false
+    },
+    "shuowen:944": {
+      "text": "To howl, 噑. Formed from 口, with 包 indicating the sound.",
+      "sourceTextSha256": "bd915c0d1e42ed85bf2c5afc10d93d0a1c43e5d835274937f8d6d79c2518621c",
+      "uncertain": false
+    },
+    "shuowen:945": {
+      "text": "To howl, 咆. Formed from 口, with 皐 indicating the sound.",
+      "sourceTextSha256": "500a5bde2629389c699ed92de275a3fedeee6423589549747a5d16ffad470a9a",
+      "uncertain": false
+    },
+    "shuowen:946": {
+      "text": "The sound of a bird calling. Formed from 口, with 皆 indicating the sound. Another explanation: the phoenix's call, 喈喈.",
+      "sourceTextSha256": "f651a8ebca9c0fa7b9e53d35bf07166ace715edbe01e30ceac06307dc48c5ce5",
+      "uncertain": false
+    },
+    "shuowen:947": {
+      "text": "The sound of a frightened pig. Formed from 口, with 孝 indicating the sound.",
+      "sourceTextSha256": "8fdea4aca4e9d8961da878811a8fb7089cdc40276f420b8e4a3f4af460f3496e",
+      "uncertain": false
+    },
+    "shuowen:948": {
+      "text": "The sound of a chicken. Formed from 口, with 屋 indicating the sound.",
+      "sourceTextSha256": "c6468841cc9e395bebefdd7b90c6c12c757c56b074c55da302c5c5437177ac19",
+      "uncertain": false
+    },
+    "shuowen:949": {
+      "text": "A chicken's cry, 喔. Formed from 口, with 戹 indicating the sound.",
+      "sourceTextSha256": "b9cc7664d05291fbabe99db0a0e875d61acc92b8b1f20c3b71067426ceee5188",
+      "uncertain": false
+    },
+    "shuowen:950": {
+      "text": "A bird's mouth. Formed from 口, with 朱 indicating the sound.",
+      "sourceTextSha256": "d40a6ebd26a169ef5974a0defff04d1ef24610ed59bd44446c328c081e75055a",
+      "uncertain": false
+    },
+    "shuowen:951": {
+      "text": "Birdsong. Formed from 口, with 嬰 indicating the sound.",
+      "sourceTextSha256": "56096207da8daf013671e8ea9a0373e1bf1fa2f6e5ea7ed84a55b273cbe2d68e",
+      "uncertain": false
+    },
+    "shuowen:952": {
+      "text": "A bird eating. Formed from 口, with 豖 indicating the sound.",
+      "sourceTextSha256": "c0b2c4028f0646c58a173c2aa20fb82112b928b1f73a456786e4a4af5b96e589",
+      "uncertain": false
+    },
+    "shuowen:953": {
+      "text": "A crying sound. Another explanation: a tiger's sound. Formed from 口 and 虎. Pronounced like 暠.",
+      "sourceTextSha256": "218a5cda6613669a21bd88c129f876228b82c9c7d61bf6033faf73f820c9d18d",
+      "uncertain": false
+    },
+    "shuowen:954": {
+      "text": "The sound of a deer calling. Formed from 口, with 幼 indicating the sound.",
+      "sourceTextSha256": "e09ce4a9fbffdd8bab48104f0e157e2a8b0996bf49bfcb94a566fdb754ebdc2b",
+      "uncertain": false
+    },
+    "shuowen:955": {
+      "text": "The appearance of herds of deer gathering their mouths together. Formed from 口, with 虞 indicating the sound. The Odes says: “The does gather, 噳噳.”",
+      "sourceTextSha256": "a0f35558ead25900511fd585eac009594b48ea8fe5580f40d0e5dabf59ab22b6",
+      "uncertain": true
+    },
+    "shuowen:956": {
+      "text": "A fish's mouth appearing above the water. Formed from 口, with 禺 indicating the sound.",
+      "sourceTextSha256": "f1bbcfbd3f2b4d595bfcd4c8a528e1559c7a142347db108ca5ed209e7b71f76d",
+      "uncertain": false
+    },
+    "shuowen:957": {
+      "text": "Constrained. Formed from 口 beneath 尺, enclosing it again. Another explanation: a gaming board on which pieces move; a pictograph.",
+      "sourceTextSha256": "19743b06929f30ce05d5a6cf55b5ed517a53db51a78dd1a25fc4264ee93ed747",
+      "uncertain": false
+    },
+    "shuowen:958": {
+      "text": "Sunken muddy ground between mountains. Formed from 口 and the appearance of water breaking down the ground. Pronounced like 沇 in Yanzhou. This is the wet land of the nine provinces, hence named 沇.",
+      "sourceTextSha256": "7a326d34ddb047b7c85cd8e1299a377d11021647cff41e5ca9753514dde1755d",
+      "uncertain": true
+    },
+    "shuowen:959": {
+      "text": "To chant or moan. Formed from 口, with 我 indicating the sound.",
+      "sourceTextSha256": "24236d2bd9ec2809df3908f47e6cd7e3c64c0a4dfe61be590262dd4ab084448a",
+      "uncertain": false
+    },
+    "shuowen:960": {
+      "text": "嗃嗃: a stern, harsh appearance. Formed from 口, with 高 indicating the sound.",
+      "sourceTextSha256": "f8bc1a018d6a014ff6b2f099ed00d527a49e4cdbc791e3368cc2d15f44f1dcda",
+      "uncertain": false
+    },
+    "shuowen:961": {
+      "text": "To sell something out of one's hands. Formed from 口, with abbreviated 雔 indicating the sound. The Odes says: “Offering it for sale, it remains unsold.”",
+      "sourceTextSha256": "03801af493835f8bfc14db3b1e7e73dbefdeb5aa900a1489f38d228daf3934c9",
+      "uncertain": false
+    },
+    "shuowen:962": {
+      "text": "噞喁: fish mouths appearing above the water. Formed from 口, with 僉 indicating the sound.",
+      "sourceTextSha256": "ffcf820aef9fdbd7767f05365394f3e85447751be7e1a4fc36d1476c8dc9abd0",
+      "uncertain": false
+    },
+    "shuowen:963": {
+      "text": "A crane's cry. Formed from 口, with 戾 indicating the sound.",
+      "sourceTextSha256": "34f4accf296418faae4fe2c8b00834307a60f59c69fee149fd7a43bea8353200",
+      "uncertain": false
+    },
+    "shuowen:964": {
+      "text": "To eat. Formed from 口, with 契 indicating the sound.",
+      "sourceTextSha256": "9044aaa5f9a40ab1c9baa300db928f74bfd23664eab420e1a83333691e12f953",
+      "uncertain": false
+    },
+    "shuowen:965": {
+      "text": "To call, 𧦝. Formed from 口, with 奐 indicating the sound. In ancient usage 奐 could stand for it.",
+      "sourceTextSha256": "99c865c7ad65e8ab8e784aaebde4c1f545579121156630b2a803e101eddcb138",
+      "uncertain": false
+    },
+    "shuowen:966": {
+      "text": "To laugh mockingly. Formed from 口 and 台.",
+      "sourceTextSha256": "b896bc39ab2d3d8af8b872f327a5e32cf7b0fc75e0d953dd9c173c3cd554628c",
+      "uncertain": false
+    },
+    "shuowen:967": {
+      "text": "To jest or mock. Formed from 口, with 朝 indicating the sound. The Book of Han also writes 啁.",
+      "sourceTextSha256": "6fe7192d3b67fca4f24a61f36684165dfa81cc75de800660c3bd30fd114a6eaf",
+      "uncertain": false
+    },
+    "shuowen:968": {
+      "text": "The appearance of an open mouth. Formed from 口, with 牙 indicating the sound.",
+      "sourceTextSha256": "7f7ba174eb1a3cdbc89c3adeb7bed5d75e7bc073764564f74a0fec00c31cafd8",
+      "uncertain": false
+    },
+    "shuowen:969": {
+      "text": "An open mouth. A pictograph. All characters in the 凵 category are formed from 凵.",
+      "sourceTextSha256": "b813df1b7d5d819d4f71d621d42f6dedaa0a7278acc86dcd7ecc4e5d4d9b5855",
+      "uncertain": false
+    },
+    "shuowen:970": {
+      "text": "To cry out in alarm. Formed from two 口. All characters in the 吅 category are formed from 吅. Pronounced like 讙.",
+      "sourceTextSha256": "1bf7a57c376736f269501f0fb421be6a651608b576676824417fa90e6ec76a7a",
+      "uncertain": false
+    },
+    "shuowen:971": {
+      "text": "Disorder. Formed from 爻, 工, 交 and 吅. Another explanation: obstruction, 窒𤕦. Pronounced like 禳.",
+      "sourceTextSha256": "e2cfd50f105faa7b4b3c07a6a31402edf6fd5f90bd45dcd080d6e39533cf4a8c",
+      "uncertain": true
+    },
+    "shuowen:972": {
+      "text": "Urgency in instruction and commands. Formed from 吅, with 𠪚 indicating the sound.",
+      "sourceTextSha256": "ddaafe358e732e1cc31a7ab63952b422b6b81e2613cc26fd2c334c6c68f531d6",
+      "uncertain": false
+    },
+    "shuowen:973": {
+      "text": "Clamorous disputation. Formed from 吅, with 屰 indicating the sound.",
+      "sourceTextSha256": "7fa3eca4aa46c8c53432b54c5775d2b43e10a82680570b8df6fd75e72a0cfa15",
+      "uncertain": false
+    },
+    "shuowen:974": {
+      "text": "Great. Formed from 吅 and 红; 吅 also indicates the sound. The explanation is incomplete.",
+      "sourceTextSha256": "2778d398af897be9c48520b55fd6dff1d80687e8256d6e79015b4b99d68699cd",
+      "uncertain": true
+    },
+    "shuowen:975": {
+      "text": "A repeated call to chickens. Formed from 吅, with 州 indicating the sound. Pronounced like 祝.",
+      "sourceTextSha256": "2b8a24066832975b866b81f04ab589d13d88855457dc5591e12dc40d1e791f6a",
+      "uncertain": false
+    },
+    "shuowen:976": {
+      "text": "A sound of grief. Formed from 吅, with abbreviated 獄 indicating the sound. All characters in the 哭 category are formed from 哭.",
+      "sourceTextSha256": "650fc107ba93644637147b253cc150325b0219c0428af7ea2c1e56969cfd34e0",
+      "uncertain": false
+    },
+    "shuowen:977": {
+      "text": "To perish. Formed from 哭 and 亾, combining their meanings; 亾 also indicates the sound.",
+      "sourceTextSha256": "49953c764d6f3f1ca0e9e20337ea6027ee785df59c81bc7ed8c5c5ba580a59a1",
+      "uncertain": false
+    },
+    "shuowen:978": {
+      "text": "To run. Formed from 夭 and 止; 夭止 expresses bending. All characters in the 走 category are formed from 走.",
+      "sourceTextSha256": "02de44a2412f28ddfa8cfeea14b4a20a1b61bbc4f8379d066b2c86db8c404ff2",
+      "uncertain": false
+    },
+    "shuowen:979": {
+      "text": "To run. Formed from 走, with 芻 indicating the sound.",
+      "sourceTextSha256": "27470c2ed8cf5191427f7a47dbadd74643e73ccf26f1c17a5970e4b97069ea9d",
+      "uncertain": false
+    },
+    "shuowen:980": {
+      "text": "To hasten. Formed from 走, with abbreviated 仆 indicating the sound.",
+      "sourceTextSha256": "f427e4733abef27d4c2adcf2bd9872b02713e0baebdeb61e15a33858c48d9497",
+      "uncertain": false
+    },
+    "shuowen:981": {
+      "text": "Swift. Formed from 走, with 取 indicating the sound.",
+      "sourceTextSha256": "996a4c908b2aa8f1d1201fbb82116600a5e64c64da0a8cc0998b617ecffedd46",
+      "uncertain": false
+    },
+    "shuowen:982": {
+      "text": "To leap. Formed from 走, with 召 indicating the sound.",
+      "sourceTextSha256": "c2cfe48ed57e95bf7dec13d1e0e2fc881867e276fe96983ab96c296daa0efd03",
+      "uncertain": false
+    },
+    "shuowen:983": {
+      "text": "Skill and ability at climbing trees and running. Formed from 走, with 喬 indicating the sound. Pronounced like 蹻 in Wangzi Qiao.",
+      "sourceTextSha256": "20d29fcf4f4c2502fe47cc6e030597f2ce4820b72709287cc43adc401ed3fc3c",
+      "uncertain": false
+    },
+    "shuowen:984": {
+      "text": "Nimble, strong, and endowed with strength and ability. Formed from 走, with 丩 indicating the sound. Pronounced like 鐈.",
+      "sourceTextSha256": "58987ea6e09ecdea3f5f63fca450f93baaa329b800a5c866a5bc9f20cb42c0e4",
+      "uncertain": false
+    },
+    "shuowen:985": {
+      "text": "To climb a large tree. Another explanation: a manner of walking. Formed from 走, with 支 indicating the sound.",
+      "sourceTextSha256": "26282668971f452f86be446a32e59f9e9978162f69171004c70838f8e3099108",
+      "uncertain": false
+    },
+    "shuowen:986": {
+      "text": "Swift. Formed from 走, with 喿 indicating the sound.",
+      "sourceTextSha256": "1fba982981d35bf2ff0d77d0ceff4e29632343a40005eddc8023a39093efed18",
+      "uncertain": false
+    },
+    "shuowen:987": {
+      "text": "To leap. Formed from 走, with 翟 indicating the sound.",
+      "sourceTextSha256": "0cc251641a0be0beec9658b5dc47c4e20cc4bc68f7ca7df4996c7ab8075a5e0d",
+      "uncertain": false
+    },
+    "shuowen:988": {
+      "text": "To tread. Formed from 走, with 厥 indicating the sound.",
+      "sourceTextSha256": "18dfeab4233f0c84f2f415b6c908ae265eb51a3e9d45dc8bef76ecd6148cb292",
+      "uncertain": false
+    },
+    "shuowen:989": {
+      "text": "To cross over. Formed from 走, with 戉 indicating the sound.",
+      "sourceTextSha256": "b8a320988b76bb5b441b7911fcb866aa9fb6e9c4090742bcd17549b5ef60d60f",
+      "uncertain": false
+    },
+    "shuowen:990": {
+      "text": "To follow or pursue, 𧾍. Formed from 走, with 㐱 indicating the sound. Pronounced like 塵.",
+      "sourceTextSha256": "fb44b377e2f035ae4bc6d729e9523912e76fa5338caa490582c5ca95c519e4f0",
+      "uncertain": true
+    },
+    "shuowen:991": {
+      "text": "To follow or pursue, 趁. Formed from 走, with 亶 indicating the sound.",
+      "sourceTextSha256": "0278e266b6776b5c2632d8fa588eb2f4db8ad6b1d49431aa4a419901e5c2a447",
+      "uncertain": true
+    },
+    "shuowen:992": {
+      "text": "The manner 趞趞. Another explanation: a manner of walking. Formed from 走, with 昔 indicating the sound.",
+      "sourceTextSha256": "aab97ee5a8e865f2d72ad49b30f13093d2f14750c96b4a6eddc5766fa71bb9ee",
+      "uncertain": true
+    },
+    "shuowen:993": {
+      "text": "The appearance of walking lightly. Another explanation: 趬 means to raise a foot. Formed from 走, with 堯 indicating the sound.",
+      "sourceTextSha256": "bd00c98215e51b7385b42d79e0fb15f902a6f07b1099aeb0a1fe6536cc6cda1c",
+      "uncertain": false
+    },
+    "shuowen:994": {
+      "text": "To run hurriedly. Formed from 走, with 弦 indicating the sound.",
+      "sourceTextSha256": "07bc5eac4729bcd0379ee0f5c58abef2f7ab0e9a8ea81401158e352e3540655b",
+      "uncertain": false
+    },
+    "shuowen:995": {
+      "text": "Hasty or sudden. Formed from 走, with 𠂔 indicating the sound. Pronounced like 資.",
+      "sourceTextSha256": "5f34876e22985b57627a092670a053a4d92ef1cc21662f5ec9201137cede4086",
+      "uncertain": false
+    },
+    "shuowen:996": {
+      "text": "To walk lightly. Formed from 走, with 票 indicating the sound.",
+      "sourceTextSha256": "d5caa75072db556e9f48036bed8cf083eafbe36707383a2214d9da85c040bac3",
+      "uncertain": false
+    },
+    "shuowen:997": {
+      "text": "A manner of walking. Formed from 走, with 臤 indicating the sound. Pronounced like 菣.",
+      "sourceTextSha256": "16ae49c43332a658a42038d40cb291060e7726129deb0acc0e0c9eb19d03a75e",
+      "uncertain": false
+    },
+    "shuowen:998": {
+      "text": "A manner of walking. Formed from 走, with 酋 indicating the sound.",
+      "sourceTextSha256": "c767e2e8554c22eb47f45315227a7c270d4c0311769a0b4e0991609a027d0bcc",
+      "uncertain": false
+    },
+    "shuowen:999": {
+      "text": "A manner of walking. Formed from 走, with 蜀 indicating the sound. Pronounced like 燭.",
+      "sourceTextSha256": "e5aef4ed191c4d1eadbf3d004501705df21d6f1b50ee4b3b11a5d90c53032631",
+      "uncertain": false
+    },
+    "shuowen:1000": {
+      "text": "A manner of walking. Formed from 走, with 匠 indicating the sound. Pronounced like 匠.",
+      "sourceTextSha256": "446341390990df5ba19109b2b6b995677f46cf642f997472e7e22de00fb0dbdc",
+      "uncertain": false
+    }
+  }
+}

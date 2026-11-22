@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "872c9a6189a897282cd94e0b0b65a8e28dea2744422c89f29731554da9b1efbd",
+    "created_date": "2026-11-21"
+  },
+  "batch": "068",
+  "translations": {
+    "shuowen:6701": {
+      "text": "Intelligent. From 心, with 尞 as phonetic.",
+      "sourceTextSha256": "d3fb9d8c20a51c9f3848f101cc4ac63b467d05bfccf4128d4363e7a0d08818cb",
+      "uncertain": false
+    },
+    "shuowen:6702": {
+      "text": "Intelligent. From 心, with 交 as phonetic.",
+      "sourceTextSha256": "ecb9ff3a829d0c3fe48dcdf7423e6bd9107fa2166e0063759474b99836b2c8c9",
+      "uncertain": false
+    },
+    "shuowen:6703": {
+      "text": "Quiet. From 心, with 㾜 as phonetic.",
+      "sourceTextSha256": "e95f21d1c797faec34be476596e458405f196311e205a7ff1dcc1e9b5d21205b",
+      "uncertain": false
+    },
+    "shuowen:6704": {
+      "text": "Reverent. From 心, with 折 as phonetic.",
+      "sourceTextSha256": "7747064c9c7eced800b9f2734225db439ab985d4d05cc28bb609732306ccb257",
+      "uncertain": false
+    },
+    "shuowen:6705": {
+      "text": "Joyful. From 心, with 宗 as phonetic.",
+      "sourceTextSha256": "4ad1953d80a4e660fe983d2a80bdc606938a753a73a5ad964db8710b7f52186a",
+      "uncertain": false
+    },
+    "shuowen:6706": {
+      "text": "At ease. From 心, with abbreviated 甛 as phonetic.",
+      "sourceTextSha256": "b7312e19b1cc95018a119b26b92c621c382128ee5fcfc8b700c37f98990e83ff",
+      "uncertain": false
+    },
+    "shuowen:6707": {
+      "text": "Great. From 心, with 灰 as phonetic.",
+      "sourceTextSha256": "5031c41814d9199ef06a0f3d345c712c2d2f4b530ba76882410dfbe4516a9a94",
+      "uncertain": false
+    },
+    "shuowen:6708": {
+      "text": "Respectful. From 心, with 共 as phonetic.",
+      "sourceTextSha256": "3b98a7da67b3ed5e9dcc1a5b193523afc184f3222a244dac7f0569c6372e6ba2",
+      "uncertain": false
+    },
+    "shuowen:6709": {
+      "text": "Reverent. From 心 and 敬; 敬 is also phonetic.",
+      "sourceTextSha256": "40012048cf3f120c4a93235b19a96bd99e83744aeb7d6f54f3b08334810ed562",
+      "uncertain": false
+    },
+    "shuowen:6710": {
+      "text": "Benevolent. From 心, with 如 as phonetic.",
+      "sourceTextSha256": "f1eaabb5b9bc4aefa303bb6fcd11bf1b4e7af6ff04d7dba9d8f136115a4cd873",
+      "uncertain": false
+    },
+    "shuowen:6711": {
+      "text": "Harmonious. From 心, with 台 as phonetic.",
+      "sourceTextSha256": "b24bdb04d12d0dd509d0989c06a28255d4acf98f45cc958cf6c2b788df0ab2ed",
+      "uncertain": false
+    },
+    "shuowen:6712": {
+      "text": "To love. From 心, with 兹 as phonetic.",
+      "sourceTextSha256": "d7690711b4705e32e04906326ae0dcab26513d2df266db0ad260c9cf3fad6382",
+      "uncertain": false
+    },
+    "shuowen:6713": {
+      "text": "To love. From 心, with 氏 as phonetic.",
+      "sourceTextSha256": "89b191b7afc102998ccaa2115b8c7346fbdb8cc78b0de5c7a8bb7cc2e113d1a2",
+      "uncertain": false
+    },
+    "shuowen:6714": {
+      "text": "忯㥴 means not worrying about affairs. From 心, with 虒 as phonetic. Read like 移.",
+      "sourceTextSha256": "df2e5ed29514c44bdd4a65f8659aaa9d0d40ad0cbfa9f3e19e2f1883660c22da",
+      "uncertain": false
+    },
+    "shuowen:6715": {
+      "text": "Careful. From 心, with 全 as phonetic.",
+      "sourceTextSha256": "49ecd101c04bd9b0452811412d46f821b8b628e911cfaac3ef85dd8ca6d80607",
+      "uncertain": false
+    },
+    "shuowen:6716": {
+      "text": "Kindness. From 心, with 因 as phonetic.",
+      "sourceTextSha256": "d6665c1de2cf4eaa567a91f6a1be7ed1e3622d0096afc0e70d0a43816187f337",
+      "uncertain": false
+    },
+    "shuowen:6717": {
+      "text": "High. Alternatively, extreme; alternatively, distressed and weak. From 心, with 帶 as phonetic.",
+      "sourceTextSha256": "d61913bc841ac9e2c7afe0e53361eac51ab0ffeb733c40b1da4046e4e271e174",
+      "uncertain": false
+    },
+    "shuowen:6718": {
+      "text": "To ask; to be cautious and respectful. From 心, with 猌 as phonetic. Alternatively, pleased; alternatively, willing. The Spring and Autumn Commentary says: 'Vast Heaven does not show kindness'; also: 'The officers of both rulers were not yet willing.'",
+      "sourceTextSha256": "4956d4a2c098af7cd4c082a586ccfaed282b387c7ca08cb344fdac199dc2992e",
+      "uncertain": true
+    },
+    "shuowen:6719": {
+      "text": "Broad. Alternatively, extensive or great; alternatively, generous. From 心 and 廣; 廣 is also phonetic.",
+      "sourceTextSha256": "39bd20bf3c54ebbbbb5b7adb3047de64ef882c4c7524ee7e242dcad99fb2cbcf",
+      "uncertain": false
+    },
+    "shuowen:6720": {
+      "text": "To adorn. From 心, with 戒 as phonetic. The Methods of the Sima says: 'The lord of Yu ordered and adorned the central states.'",
+      "sourceTextSha256": "41e77f8a245a43a2f6001b77be20cd805069afc70ce0b9f4fa4d027db30643fd",
+      "uncertain": true
+    },
+    "shuowen:6721": {
+      "text": "Careful. From 心, with 𤔌 as phonetic.",
+      "sourceTextSha256": "25fd1309e5acaa515f7904b6034e10ab6c32acb845b69ddf56731cb19d2c1d7a",
+      "uncertain": false
+    },
+    "shuowen:6722": {
+      "text": "To go to congratulate someone. From 心 and 夂. Auspicious ceremonies use deerskins as presentation gifts, so it includes abbreviated 鹿.",
+      "sourceTextSha256": "3faec7bed4f099b8370913ccde9081f92162e2a6e35be837384870eb0b7728c8",
+      "uncertain": false
+    },
+    "shuowen:6723": {
+      "text": "An appearance of being broad-minded and at ease within. From 心, with 宣 as phonetic. The Odes says: 'Illustrious and serene.'",
+      "sourceTextSha256": "cb53363a6da64dc5d0ff1e35a61aef3ccf39b50613b6307c47d46b68ef7c3f7c",
+      "uncertain": false
+    },
+    "shuowen:6724": {
+      "text": "Compliant. From 心, with 孫 as phonetic. The Book of Tang says: 'The five relationships are not harmonious.'",
+      "sourceTextSha256": "af857d5c05bdfeda03ffeb1c34bd287cb18814c68e10a0702fa49c299c4ca1ca",
+      "uncertain": false
+    },
+    "shuowen:6725": {
+      "text": "Solid or substantial. From 心, with abbreviated 塞 as phonetic. The Book of Yu says: 'Firm yet substantial.'",
+      "sourceTextSha256": "b63259c6df228ceae8bf5e056d198c2651d228dab42f4d586d18c5cddfb2b08e",
+      "uncertain": false
+    },
+    "shuowen:6726": {
+      "text": "A trusting heart. From 心, with 旬 as phonetic.",
+      "sourceTextSha256": "c8907bf6b511724b2cd4facc0606950b30302c29d47e196c2985bc7358654f98",
+      "uncertain": false
+    },
+    "shuowen:6727": {
+      "text": "Sincere. From 心, with 冘 as phonetic. The Odes says: 'Heaven's mandate is not dependable.'",
+      "sourceTextSha256": "ef7d17e7a11912c2e44ab27cf758f4a3106ad41d4580869a80e14f19320df7c8",
+      "uncertain": false
+    },
+    "shuowen:6728": {
+      "text": "Thinking in general. From 心, with 隹 as phonetic.",
+      "sourceTextSha256": "46349fa3429c7d38c86f327804e2c5512981450ceebd52ae33b24fb6346bbc7d",
+      "uncertain": false
+    },
+    "shuowen:6729": {
+      "text": "To remember and think of. From 心, with 褱 as phonetic.",
+      "sourceTextSha256": "0f3a1a4defc3a8f09eb8df9804534affbda6dc0244d1567f069d1f19981dffe8",
+      "uncertain": false
+    },
+    "shuowen:6730": {
+      "text": "The appearance of wanting to know. From 心, with 侖 as phonetic.",
+      "sourceTextSha256": "ac92ad076a83a310b0ac73e1e2faabfb4640ce5947cf61d2b118aacb0488b8f8",
+      "uncertain": false
+    },
+    "shuowen:6731": {
+      "text": "To think with longing. From 心, with 相 as phonetic.",
+      "sourceTextSha256": "9aa5998f6661366a20170eb130a86b448618e8fe9b89d7be18c7631ec2da99d3",
+      "uncertain": false
+    },
+    "shuowen:6732": {
+      "text": "Deep. From 心, with 㒸 as phonetic.",
+      "sourceTextSha256": "7719a6c6cce9210371129ee707adfaae18bd66751d079f551c2d1ef63e9fadd5",
+      "uncertain": false
+    },
+    "shuowen:6733": {
+      "text": "To raise up. From 心, with 畜 as phonetic. The Odes says: 'You will not support me.'",
+      "sourceTextSha256": "79bf09c7bb8dc1537a7bc22765b774b3463d12b3d3cdf69e4e026324469ab69e",
+      "uncertain": false
+    },
+    "shuowen:6734": {
+      "text": "Full. From 心, with 𠶷 as phonetic. Another explanation: one hundred thousand is called 𠶷.",
+      "sourceTextSha256": "80524290fe5f0fe0132cdc55004875b340d44d6b3806b1289ef85df1e396c619",
+      "uncertain": false
+    },
+    "shuowen:6735": {
+      "text": "To worry. From 心, with 官 as phonetic.",
+      "sourceTextSha256": "c7dc71546917aa6a8ffbe4a32037212e4643383b6cbf60c11832b757dda105db",
+      "uncertain": false
+    },
+    "shuowen:6736": {
+      "text": "Being 憀然, apparently dispirited. From 心, with 翏 as phonetic.",
+      "sourceTextSha256": "ed8713e696653674c6a19173ed154b6a136304dc5eff31a6f32dc3f3308f5f95",
+      "uncertain": true
+    },
+    "shuowen:6737": {
+      "text": "Reverent. From 心, with 客 as phonetic. The Spring and Autumn Commentary says: 'With Chen to complete the three honored guests.'",
+      "sourceTextSha256": "3144bf9665bfacdb66e31ae7f66142b20a5b73a601ad41e57645bd77b0b0b820",
+      "uncertain": false
+    },
+    "shuowen:6738": {
+      "text": "Fearful. From 心, with abbreviated 雙 as phonetic. The Spring and Autumn Commentary says: 'The Si clan was afraid.'",
+      "sourceTextSha256": "bd84417184bd333e707932e43a13cb4dcba99a28b7dfaab7bef94802ffa2b42f",
+      "uncertain": false
+    },
+    "shuowen:6739": {
+      "text": "Afraid. From 心, with 瞿 as phonetic.",
+      "sourceTextSha256": "c3377407e17477f8419558a7393bea19a174142badd337444bcff034b67f7cdd",
+      "uncertain": false
+    },
+    "shuowen:6740": {
+      "text": "To rely on. From 心, with 古 as phonetic.",
+      "sourceTextSha256": "44169f721c4c000273c37165da4dc512342f48bfbb0798a6388d7dec606d0007",
+      "uncertain": false
+    },
+    "shuowen:6741": {
+      "text": "To depend on. From 心, with 寺 as phonetic.",
+      "sourceTextSha256": "acc9fd902cb966afc6b9b0d198ed81d0ffb0d8f5fa3b56254434409239864561",
+      "uncertain": false
+    },
+    "shuowen:6742": {
+      "text": "To consider. From 心, with 曹 as phonetic.",
+      "sourceTextSha256": "f9ad2f9d98def4e14716573ff3f4aad2181fb1d73b674cbbd26015b256c3d289",
+      "uncertain": false
+    },
+    "shuowen:6743": {
+      "text": "To awaken or understand. From 心, with 吾 as phonetic.",
+      "sourceTextSha256": "c3707921c7b5861895650b57bc7fadc09d9e9fa8d41315c47bf166e3d2b25aad",
+      "uncertain": false
+    },
+    "shuowen:6744": {
+      "text": "To love; Han and Zheng use 憮. Alternatively, unmoving. From 心, with 無 as phonetic.",
+      "sourceTextSha256": "fffae2cf8affb3bffb1675523f79720956c2258269b0afb6427a492962f3dae9",
+      "uncertain": false
+    },
+    "shuowen:6745": {
+      "text": "Kindness. From 心, with 先 as phonetic.",
+      "sourceTextSha256": "9be01e84c42835926bf051576b866e3e66572d9174155c2f6671164379e1bf7a",
+      "uncertain": false
+    },
+    "shuowen:6746": {
+      "text": "To know. From 心, with 胥 as phonetic.",
+      "sourceTextSha256": "6e2d76d5b30ae68cc06e146c97b2d4327f385cd2cf83e590f5cffa84a1b3696c",
+      "uncertain": false
+    },
+    "shuowen:6747": {
+      "text": "To comfort. From 心, with 尉 as phonetic. Alternatively, angry resentment.",
+      "sourceTextSha256": "18a1c1a5b02dfdd2f60d552ca005d3a77e6e5a2642d8eb5e635216ddeb178855",
+      "uncertain": false
+    },
+    "shuowen:6748": {
+      "text": "Careful. From 心, with 𠭥 as phonetic. Read like 毳.",
+      "sourceTextSha256": "1462f71bfb2dfc027f3d13a5189c6e7f377e8983bb53b0a9d650e8e9ac0bb198",
+      "uncertain": false
+    },
+    "shuowen:6749": {
+      "text": "To deliberate, as in 𥲅箸. From 心, with 钇 as phonetic.",
+      "sourceTextSha256": "ac574b9895ea4fccec3141d3d180e4b60bd5fc77d53bf2c7f4cb69a5bd012938",
+      "uncertain": true
+    },
+    "shuowen:6750": {
+      "text": "Clear or bright. From 心, with 由 as phonetic. The Odes says: 'My troubled heart is also 怞.'",
+      "sourceTextSha256": "4aead44fb9ccabc15ee4ce6f7177919196f0fb65d501a887551c32fb89b00aba",
+      "uncertain": true
+    },
+    "shuowen:6751": {
+      "text": "To soothe or stroke. From 心, with 某 as phonetic. Read like 侮.",
+      "sourceTextSha256": "76726bc0050df445690e74b287679a3c83d97af90f463e7e9bec98d060294749",
+      "uncertain": false
+    },
+    "shuowen:6752": {
+      "text": "Strong. From 心, with 文 as phonetic. The Book of Zhou says: 'In Shou's virtue he exerted himself.' Read like 旻.",
+      "sourceTextSha256": "fb77ffb59f305877b41b2e40ce4d23a0185acc6820b229626191e1e3accbe7a4",
+      "uncertain": true
+    },
+    "shuowen:6753": {
+      "text": "To exert oneself. From 心, with 莫 as phonetic.",
+      "sourceTextSha256": "3bc81944e9daf6c74aa8fa015ebb1113c5694ac8d280cd18e81e087ec66b99ec",
+      "uncertain": false
+    },
+    "shuowen:6754": {
+      "text": "To exert oneself. From 心, with 面 as phonetic.",
+      "sourceTextSha256": "743a10530b5ece61720c0b61f887c91ebaec565a9dcdbe090507c526b61c56cd",
+      "uncertain": false
+    },
+    "shuowen:6755": {
+      "text": "To practice or become accustomed. From 心, with 曳 as phonetic.",
+      "sourceTextSha256": "bb18611ceef7d836debd20fce638a7693157223957e3dd6a9e98fd9625b35e1b",
+      "uncertain": false
+    },
+    "shuowen:6756": {
+      "text": "To exert oneself. From 心, with 楙 as phonetic. The Book of Yu says: 'Be diligent in this!'",
+      "sourceTextSha256": "daa2a1f2c3a799a9804fbbe0bba728ec265b407fb94651fbd0793af891dcce0c",
+      "uncertain": false
+    },
+    "shuowen:6757": {
+      "text": "To practice or become accustomed. From 心, with 莫 as phonetic.",
+      "sourceTextSha256": "bdb65a3b1a74c66e3db34d47a6867f27dfbfb70815f4785c75fe72612943a6c5",
+      "uncertain": false
+    },
+    "shuowen:6758": {
+      "text": "To stop. From 心, with 夋 as phonetic.",
+      "sourceTextSha256": "fe3401277f0880f045213442c434676cbbab725da9bbc58e7a14b5ee0e6df59f",
+      "uncertain": false
+    },
+    "shuowen:6759": {
+      "text": "Unrestrained. From 心, with 隶 as phonetic.",
+      "sourceTextSha256": "b416a3aa275ed79ec3d39a3ac83d032778a4e7a029048dab42a16642d6012f74",
+      "uncertain": false
+    },
+    "shuowen:6760": {
+      "text": "The hurried gait expressed by 㦛㦛. From 心, with 與 as phonetic.",
+      "sourceTextSha256": "7a14b99a762a20b1b149a3a352788eabeaadf746a8e1307bfdedf7e27336d086",
+      "uncertain": false
+    },
+    "shuowen:6761": {
+      "text": "Pleased. From 心, with 舀 as phonetic.",
+      "sourceTextSha256": "9668ef7da478801e5767efdaacaacee72cffcf3736989cfd239a410644774b5b",
+      "uncertain": false
+    },
+    "shuowen:6762": {
+      "text": "At ease. From 心, with 厭 as phonetic. The Odes says: 'At ease they drink at night.'",
+      "sourceTextSha256": "91b9e6ea49b1664212041bd6e6de3636d2106548c5854d1e7b6c14aa37973892",
+      "uncertain": false
+    },
+    "shuowen:6763": {
+      "text": "At ease. From 心, with 詹 as phonetic.",
+      "sourceTextSha256": "31767aa6ce83447ab42266942a324feb498a6081d030bce5d7862df38d6253ed",
+      "uncertain": false
+    },
+    "shuowen:6764": {
+      "text": "Doing nothing. From 心, with 白 as phonetic.",
+      "sourceTextSha256": "f63e1ade828d9ed99e101eee4e8d6501a84938212fda0c553b33b10dd9213c0d",
+      "uncertain": false
+    },
+    "shuowen:6765": {
+      "text": "To worry; to gather in. From 心, with 血 as phonetic.",
+      "sourceTextSha256": "bf5b0547eddf700abae0dfb0fb74cd431b86c7866f12da4e7476cf42f65d8a6d",
+      "uncertain": false
+    },
+    "shuowen:6766": {
+      "text": "Extreme. From 心, with 干 as phonetic.",
+      "sourceTextSha256": "0b421d0176fe21a878e47388b1c13b4e65a928e0242327c4b8cb7467ca360397",
+      "uncertain": false
+    },
+    "shuowen:6767": {
+      "text": "Joyful delight. From 心, with 雚 as phonetic. The Erya says: '懽懽愮愮 means being distressed with no one to tell.'",
+      "sourceTextSha256": "820ac03a3574f5dec71d0171cb22f55cf68eb8044bb40d2a57405342b3502f2a",
+      "uncertain": true
+    },
+    "shuowen:6768": {
+      "text": "Joyful. There is a 㥥 pavilion in Zhuxu, Langye. From 心, with 禺 as phonetic.",
+      "sourceTextSha256": "92b83a87f0b6fcbf314769e2c931aee3272f14a275bd9ad8044c13efe0be1068",
+      "uncertain": false
+    },
+    "shuowen:6769": {
+      "text": "Hungry or starving. Alternatively, anxious. From 心, with 叔 as phonetic. The Odes says: 'Yearning as with morning hunger.'",
+      "sourceTextSha256": "5507e6101c812fa02c847d3006d529e67f70c807eca99ca532e7e89ccc99ce8d",
+      "uncertain": false
+    },
+    "shuowen:6770": {
+      "text": "Weary. From 心, with 卻 as phonetic.",
+      "sourceTextSha256": "9f2bce6e7ef19aa9eb38af302e36c9dc6849b0253f5d7445faeb521eb3dff4d0",
+      "uncertain": false
+    },
+    "shuowen:6771": {
+      "text": "Crafty and biased: seeking advantage from superiors, a flatterer. From 心, with 僉 as phonetic.",
+      "sourceTextSha256": "310fa342e80be57aa50bb0b7b82b9cfdb918ff79d97be9c3b05b069a52916682",
+      "uncertain": false
+    },
+    "shuowen:6772": {
+      "text": "To rest. From 心, with 曷 as phonetic.",
+      "sourceTextSha256": "775041cf54b08ae28dd5817442e418fb50bddb425501820026b63b558995e45f",
+      "uncertain": false
+    },
+    "shuowen:6773": {
+      "text": "Single-minded and blunt, perhaps. From 心, with 毳 as phonetic.",
+      "sourceTextSha256": "c894d647953cfebafc6f6962e7969286dea517af5f18bf9ee751bfc5ff619367",
+      "uncertain": true
+    },
+    "shuowen:6774": {
+      "text": "Quick and glib of tongue. From 心 and 冊. The Odes says: 'Observe these 𢘁 people.'",
+      "sourceTextSha256": "33409abbef060d75b61ba67d1bcfa8710fa57c1084ff436bf6c9a632b113a524",
+      "uncertain": true
+    },
+    "shuowen:6775": {
+      "text": "Narrow or constricted. From 心, with 及 as phonetic.",
+      "sourceTextSha256": "dc034efbaf1d452b7f547689c3c5314498adacedb70c72c68500a04c711a26b3",
+      "uncertain": false
+    },
+    "shuowen:6776": {
+      "text": "Worried. From 心, with 辡 as phonetic. Alternatively, urgent.",
+      "sourceTextSha256": "801530dd8373a2dfa0964076c9a8013f6f55f9575fc84f4d5c5e369125cc558e",
+      "uncertain": false
+    },
+    "shuowen:6777": {
+      "text": "Swift. From 心, with 亟 as phonetic. Alternatively, a cautious and serious appearance.",
+      "sourceTextSha256": "bdd9d5c5180587984438144b9dc02c8b65656f7ea94f8c568874e4582af8e1c2",
+      "uncertain": false
+    },
+    "shuowen:6778": {
+      "text": "Urgent. From 心, with 瞏 as phonetic. Read like 絹.",
+      "sourceTextSha256": "72f301499d16fb3184e34e02a4d40f88944c6e2bae3417c77c6a7f9abb382b6e",
+      "uncertain": false
+    },
+    "shuowen:6779": {
+      "text": "Resentment. From 心, with 坙 as phonetic.",
+      "sourceTextSha256": "739c22efcf5f542a80413c3795e985172b05d100ec64458a2ffa4e22bda58c46",
+      "uncertain": false
+    },
+    "shuowen:6780": {
+      "text": "Urgent. From 心 and 弦; 弦 is also phonetic. There is a 𢛆 pavilion in Mi county, Henan.",
+      "sourceTextSha256": "bb4f784f29d96ab0244d5e7b1465c71788fb7da2861ecdbc1ae1b58b2418cfb1",
+      "uncertain": false
+    },
+    "shuowen:6781": {
+      "text": "Swift. From 心, with 票 as phonetic.",
+      "sourceTextSha256": "b311ad5dfe28895617d6c27dfc386d419346332b812c3103f5269a4daad4eed2",
+      "uncertain": false
+    },
+    "shuowen:6782": {
+      "text": "A dull and weak person. From 心, with 需 as phonetic.",
+      "sourceTextSha256": "d90d02e8b663132e6c9e4fc7a612a54da05561b5f6bbac891164d64710ea0da3",
+      "uncertain": false
+    },
+    "shuowen:6783": {
+      "text": "To provide supplies to those below, perhaps. From 心, with 任 as phonetic.",
+      "sourceTextSha256": "b87e5f87377a2b6ac00f7b4c9b964f56131909669031e16ab1acb411e05fa031",
+      "uncertain": true
+    },
+    "shuowen:6784": {
+      "text": "To lose one's normal state. From 心, with 代 as phonetic.",
+      "sourceTextSha256": "af47eb83b1da88124ebf4b2f50a3d006c7dfd7d8182c07d9b157d4c3959c3e1f",
+      "uncertain": false
+    },
+    "shuowen:6785": {
+      "text": "Arrogant. From 心, with 且 as phonetic.",
+      "sourceTextSha256": "d3ff0cfa276edb0b1103910e161bcf6fe8584fc604d5feba3433cd407c1b8266",
+      "uncertain": false
+    },
+    "shuowen:6786": {
+      "text": "Uneasy. From 心, with 邑 as phonetic.",
+      "sourceTextSha256": "e43e5ae5c7b6697d43f86fbeda90fed53b1430909691af84723142a1ca91306d",
+      "uncertain": false
+    },
+    "shuowen:6787": {
+      "text": "To forget; to crave. From 心, with 余 as phonetic. The Book of Zhou says: 'He was ill and not 悆.' 悆 means happy.",
+      "sourceTextSha256": "866ef7e4d778454c2d5f4ed71cedef46c7b1662819276f0c7143f465f5d94924",
+      "uncertain": true
+    },
+    "shuowen:6788": {
+      "text": "To change. From 心, with 弋 as phonetic.",
+      "sourceTextSha256": "a5baa152a0efaf28a1420832ccc243f934c7f61dd5c169b90bfe6d77eb89a365",
+      "uncertain": false
+    },
+    "shuowen:6789": {
+      "text": "Relaxed. From 心, with 閒 as phonetic.",
+      "sourceTextSha256": "3fb967241d007e80d073a60b4ad3ea683cd951a3a7b010c052351e4a41d8f619",
+      "uncertain": true
+    },
+    "shuowen:6790": {
+      "text": "Thin or slight. From 心, with 俞 as phonetic. The Analects says: 'At the private audience he was relaxed and agreeable.'",
+      "sourceTextSha256": "9aa8248ccd860b51579c78440a5960a18f5e0969b8f9bdb055c86862b29f31db",
+      "uncertain": true
+    },
+    "shuowen:6791": {
+      "text": "To slight or despise. From 心, with 蔑 as phonetic. The Book of Shang says: 'Thereby they oppress and slight one another.'",
+      "sourceTextSha256": "140017e860f9ab5d723f33174804340510f2585bb7470b8829cc0ae224f0a81f",
+      "uncertain": false
+    },
+    "shuowen:6792": {
+      "text": "Foolish. From 心 and 禺. 禺 is a kind of monkey, a foolish animal.",
+      "sourceTextSha256": "b62ad1504f1a2701cea5827e6dad9f754a40eb8efd0f714d70042a1cb48534fc",
+      "uncertain": false
+    },
+    "shuowen:6793": {
+      "text": "Foolish. From 心, with 𥫔 as phonetic.",
+      "sourceTextSha256": "750ba75036d6dc2bf6c5cf116d08a699810b1bea935ce20b3670dbfc4498a571",
+      "uncertain": false
+    },
+    "shuowen:6794": {
+      "text": "Wicked. From 心, with 采 as phonetic.",
+      "sourceTextSha256": "49b1de76591482cb093d49834ecd4fd449feef75b2d457ddf529d15b33a0e13d",
+      "uncertain": false
+    },
+    "shuowen:6795": {
+      "text": "Foolish. From 心, with 舂 as phonetic.",
+      "sourceTextSha256": "6ac70fcd7781dc522251ba964f951a6f19d546b20442d45237d7774ebe275bb0",
+      "uncertain": false
+    },
+    "shuowen:6796": {
+      "text": "Stupid. From 心 and 疑; 疑 is also phonetic. Alternatively, frightened.",
+      "sourceTextSha256": "6f1335ce149abd5993f2f4b377451820d954efa10117c1d1441c6128b5b092b1",
+      "uncertain": false
+    },
+    "shuowen:6797": {
+      "text": "Obstinate. From 心, with 支 as phonetic.",
+      "sourceTextSha256": "bd298375f0f6702aaddc0d781aea8cf005b8016667d8142c19b6c5a16c1cb8f9",
+      "uncertain": false
+    },
+    "shuowen:6798": {
+      "text": "Brave. From 心, with 旱 as phonetic.",
+      "sourceTextSha256": "ae0458bd7f6e9e74f065e9f3828725ea44d35a902b39e79c43d33d17853804b1",
+      "uncertain": false
+    },
+    "shuowen:6799": {
+      "text": "Intention or disposition. From 心 and 能.",
+      "sourceTextSha256": "00193ebde40d1e1fc0520ab88562b30297af44456a072cf46ca0d4b2e3d7de9d",
+      "uncertain": false
+    },
+    "shuowen:6800": {
+      "text": "Strange or unusual. From 心, with 圣 as phonetic.",
+      "sourceTextSha256": "799efb37ccb587e3358d04296a468a676ed1026a46fbdb554c18144cf4c8ab8e",
+      "uncertain": false
+    }
+  }
+}

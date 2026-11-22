@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "e4d8fddb13f42ee5f903d197e789685e2d2e49c072f6cac6114364a1bbeef9fd",
+    "created_date": "2026-11-22"
+  },
+  "batch": "062",
+  "translations": {
+    "shuowen:6101": {
+      "text": "A kind of 貍 beast. Formed from 豸, with 苗 indicating the sound.",
+      "sourceTextSha256": "b85b508b0a131a1da50a1be61d5cc08b419d6818466f12f33d1c6dbd94d46bda",
+      "uncertain": false
+    },
+    "shuowen:6102": {
+      "text": "Like a wild ox, but blue-green. Pictographic; its head is the same as in 禽 and 离. All characters in this group follow 𤉡.",
+      "sourceTextSha256": "9678f5ac4c4af3201ca450bdb136c7fbcb06022d30fc1b916004d1dd2685bd8a",
+      "uncertain": false
+    },
+    "shuowen:6103": {
+      "text": "The lizard, 蜥易 or 蝘蜓, also called 守宮. Pictographic. The Secret Writings explains: 日 and 月 make 易, representing yin and yang. Another explanation: it follows 勿. All characters in this group follow 易.",
+      "sourceTextSha256": "2a64dd8c33770e04161e67d8d2581732c47c2569b62d95ebf9cb04423da83f05",
+      "uncertain": false
+    },
+    "shuowen:6104": {
+      "text": "A great beast of Southern Yue with a long trunk and tusks, bearing young once in three years. Depicts ears, tusks and four feet. All characters in this group follow 象.",
+      "sourceTextSha256": "f5628aec8b79ff17bd8a85bf00be98bc5e08e00be41fd554cfa1565d0c799669",
+      "uncertain": false
+    },
+    "shuowen:6105": {
+      "text": "A large elephant. Attendant Jia explains: not harming other things. Formed from 象, with 予 indicating the sound.",
+      "sourceTextSha256": "6f0554e580c24926071dd8c096c8bcf80d64249fecf9d969bde4e4df14802b6a",
+      "uncertain": false
+    },
+    "shuowen:6106": {
+      "text": "Anger; martial strength. Depicts a horse’s head, mane, tail and four feet. All characters in this group follow 馬.",
+      "sourceTextSha256": "5c620f964406451c35ec54932c7346559127b5264d291e39e624e21547bd759c",
+      "uncertain": false
+    },
+    "shuowen:6107": {
+      "text": "A stallion. Formed from 馬, with 陟 indicating the sound. Read like 郅.",
+      "sourceTextSha256": "84f6c8c1f1a754b60287ca282f13deaffc08761ed2487fb059343bab34d109f9",
+      "uncertain": false
+    },
+    "shuowen:6108": {
+      "text": "A one-year-old horse. Formed from 馬, with 一 hobbling its feet. Read like 弦, or alternatively like 環.",
+      "sourceTextSha256": "29c143aa69705b1cae6637f10a38f2e91ab3f12b67fd4331b9039cebbf410083",
+      "uncertain": false
+    },
+    "shuowen:6109": {
+      "text": "A two-year-old horse is 駒; a three-year-old, 駣. Formed from 馬, with 句 indicating the sound.",
+      "sourceTextSha256": "c2b1cf13377e5164c374f7db0de2eb75003216a4b222076c8e2f4b981ba1ffa8",
+      "uncertain": false
+    },
+    "shuowen:6110": {
+      "text": "An eight-year-old horse. Formed from 馬 and 八.",
+      "sourceTextSha256": "4f0d36c85ae9f93d6beb15776f5bf7dec7b8084d13553b45dfdb72f2cd18f0a4",
+      "uncertain": false
+    },
+    "shuowen:6111": {
+      "text": "A horse with one white eye is 𩦂; with two white eyes, 魚. Formed from 馬, with 閒 indicating the sound.",
+      "sourceTextSha256": "24ccf9d9feda10678ca01e815e1768f3ba989daa02013c9222e568af32440581",
+      "uncertain": false
+    },
+    "shuowen:6112": {
+      "text": "A blue-black horse with markings like a gaming board. Formed from 馬, with 其 indicating the sound.",
+      "sourceTextSha256": "a02871acc5584224889da36731ef46beb6fb59767c1c5ca17f3e557a7a3c7692",
+      "uncertain": false
+    },
+    "shuowen:6113": {
+      "text": "A deep-black horse. Formed from 馬, with 麗 indicating the sound.",
+      "sourceTextSha256": "7692a93df9f0dfe6466b79c85a03f8015e4de8329e6101ac340b450ed377c5d7",
+      "uncertain": false
+    },
+    "shuowen:6114": {
+      "text": "A blue-black horse. Formed from 馬, with 肙 indicating the sound. The Odes says: “Well fed are that team of blue-black horses.”",
+      "sourceTextSha256": "2ffdea2016d3dda079abf9fde6ce68676427f1e178e72f087cf6c346af231711",
+      "uncertain": false
+    },
+    "shuowen:6115": {
+      "text": "A light-black horse. Formed from 馬, with 鬼 indicating the sound.",
+      "sourceTextSha256": "4d0aba037673771633c72fc6369fa93ce2d5eb846b2b6c76e72c19aa15752e51",
+      "uncertain": false
+    },
+    "shuowen:6116": {
+      "text": "A red horse with black mane and tail. Formed from 馬, with 畱 indicating the sound.",
+      "sourceTextSha256": "44f95065120cdb9f420d291c504d15539dd51532d8e87bc2d9b9f5cd056ad6b7",
+      "uncertain": false
+    },
+    "shuowen:6117": {
+      "text": "A horse with mixed red and white hair. Formed from 馬, with 叚 indicating the sound, referring to a color resembling shrimp.",
+      "sourceTextSha256": "eb52c41cfd52a59483526f01857445477b5b31b7b933ba4744d7f6c77082f9e1",
+      "uncertain": false
+    },
+    "shuowen:6118": {
+      "text": "A horse with mixed blue-gray and black hair. Formed from 馬, with 隹 indicating the sound.",
+      "sourceTextSha256": "c2343d15d8a098f7f96ebc8a386eee9bbe15013a104466796706f8c0463d4209",
+      "uncertain": false
+    },
+    "shuowen:6119": {
+      "text": "A white horse with black mane and tail. Formed from 馬, with 各 indicating the sound.",
+      "sourceTextSha256": "2c274befe82858dbbfb13842748561425479107c629cbbc3afd3638cddd774e4",
+      "uncertain": false
+    },
+    "shuowen:6120": {
+      "text": "A horse with mixed dark and white hair: black. Formed from 馬, with 因 indicating the sound. The Odes says: “There are 駰 and 騢 horses.”",
+      "sourceTextSha256": "c41a4ab2a34541aeb3da37a9d1355e1c8589867c5242e175a50f7b52f511e277",
+      "uncertain": false
+    },
+    "shuowen:6121": {
+      "text": "A horse with mixed blue-gray and white hair. Formed from 馬, with 悤 indicating the sound.",
+      "sourceTextSha256": "a6dcc73122106afac637cec02768a817befee2ea60ce4db839b80e32df1259fd",
+      "uncertain": false
+    },
+    "shuowen:6122": {
+      "text": "A black horse with white flanks. Formed from 馬, with 矞 indicating the sound. The Odes says: “There are 驈 and 騜 horses.”",
+      "sourceTextSha256": "3483d6b5dd41e248faacc4bfd966f2245ca25586fed2cc2ea1f9fdbffad9b99a",
+      "uncertain": false
+    },
+    "shuowen:6123": {
+      "text": "A horse with face and forehead both white. Formed from 馬, with 尨 indicating the sound.",
+      "sourceTextSha256": "745f466d918887d50aa2e4ed10fb1790eb1a04dfd87a8240b2101e5005c4517f",
+      "uncertain": false
+    },
+    "shuowen:6124": {
+      "text": "A yellow horse with a black muzzle. Formed from 馬, with 咼 indicating the sound.",
+      "sourceTextSha256": "4269543ae5a1cfa62667740c5610bb6be54f2a345d9c68881e5936a5f55a6eb9",
+      "uncertain": false
+    },
+    "shuowen:6125": {
+      "text": "A yellow horse showing white. Another explanation: with white mane and tail. Formed from 馬, with 𤐫 indicating the sound.",
+      "sourceTextSha256": "4dd16fb434373b131f8b9e33f0a44aadf8a2d2d95d1956deb6bb1d5a839ed830",
+      "uncertain": false
+    },
+    "shuowen:6126": {
+      "text": "A yellow horse with white hair. Formed from 馬, with 丕 indicating the sound.",
+      "sourceTextSha256": "33556f3fc68d18412ed635bc351564d5eb6b5a0b0adfaae6c7b2addcf26c7831",
+      "uncertain": false
+    },
+    "shuowen:6127": {
+      "text": "A red-black horse. Formed from 馬, with 𢧜 indicating the sound. The Odes says: “Four red-black horses, very large.”",
+      "sourceTextSha256": "3847e8f487090e750a547103685fb42162f450163b066dcfac09eb4068d80f60",
+      "uncertain": false
+    },
+    "shuowen:6128": {
+      "text": "A horse with red hair on its head. Formed from 馬, with 岸 indicating the sound.",
+      "sourceTextSha256": "e6c99fb3f7a022416327d14b7bc15137656ea05f4a7768a9d1f37f80c5d936c4",
+      "uncertain": false
+    },
+    "shuowen:6129": {
+      "text": "A horse with a white forehead. Formed from 馬, with abbreviated 的 indicating the sound. Another explanation: a fine horse. The Changes says: “It is a white-marked forehead.”",
+      "sourceTextSha256": "73df1d2a9e4b9491d463ddaac56d6d924f7b00719260a98359c1e7511a63ffdf",
+      "uncertain": false
+    },
+    "shuowen:6130": {
+      "text": "A horse of mixed color. Formed from 馬, with 爻 indicating the sound.",
+      "sourceTextSha256": "793a8e56fda992f4a504b4f6a9c32035429c24c8cb93b430c48f97f2d58486bb",
+      "uncertain": false
+    },
+    "shuowen:6131": {
+      "text": "A horse with a white left hind foot. Formed from 馬, with 二 marking its feet. Read like 注.",
+      "sourceTextSha256": "4f4b842b24faba36cca3951066ff3fc76e0829bc2f40d645995d523329f65e33",
+      "uncertain": false
+    },
+    "shuowen:6132": {
+      "text": "A black horse with a yellow back. Formed from 馬, with 覃 indicating the sound. Read like 簟.",
+      "sourceTextSha256": "84d3813daf2425e4bca75df2a4f46166768c9533a712f91dd2272e083000054f",
+      "uncertain": false
+    },
+    "shuowen:6133": {
+      "text": "A horse with a white rear, written 州 in the recorded gloss; that wording is uncertain. Formed from 馬, with 燕 indicating the sound.",
+      "sourceTextSha256": "25b88f2e8c94ec1427e20a819ea0ad3aa0d147765052fefab60b010e35a0ff39",
+      "uncertain": true
+    },
+    "shuowen:6134": {
+      "text": "A horse with hairy shins. Formed from 馬, with 習 indicating the sound.",
+      "sourceTextSha256": "15843e264f5e519122b6009875dedd7dc02dffe93ff1d4257f2fcd11fb27d34f",
+      "uncertain": false
+    },
+    "shuowen:6135": {
+      "text": "A horse with long hair. Formed from 馬, with 倝 indicating the sound.",
+      "sourceTextSha256": "e07bf1a7ece9215e39b809d2e71309a49057958936dd7ae409ea1f843b25564d",
+      "uncertain": false
+    },
+    "shuowen:6136": {
+      "text": "A horse swift of foot. Formed from 馬 and 飛. The Methods of the Minister of War says: “Swiftly guard this chariot.”",
+      "sourceTextSha256": "d0437d6bc3fcf4fca8cefb4289f1a46ebab8a2693499c73814ce7bd06a14ec24",
+      "uncertain": false
+    },
+    "shuowen:6137": {
+      "text": "A fine horse. It dies on a renshen day; riders avoid this taboo. Formed from 馬, with 敖 indicating the sound.",
+      "sourceTextSha256": "c2f62e1ab8c56d32a2a5b565acbda42c046f1ee6ed3c2b55bee1d4b117d378f1",
+      "uncertain": false
+    },
+    "shuowen:6138": {
+      "text": "A thousand-li horse, of the kind Sun Yang judged. Formed from 馬, with 冀 indicating the sound. Tianshui has Ji County, 驥.",
+      "sourceTextSha256": "bbeb8d56b37b02ed32b29ffecbdffc72902788da527df115c7fec0085c5ab152",
+      "uncertain": false
+    },
+    "shuowen:6139": {
+      "text": "A horse of excellent ability. Formed from 馬, with 夋 indicating the sound.",
+      "sourceTextSha256": "7d682a325217dfe165edfa53f6fafcfdf7254fead9af4c689c0d5eb2b996992f",
+      "uncertain": false
+    },
+    "shuowen:6140": {
+      "text": "A good horse. Formed from 馬, with 堯 indicating the sound.",
+      "sourceTextSha256": "09a2d19b9b29708707abf2910b66604899ea59e99fa0a7011cef53a5c45c49f8",
+      "uncertain": false
+    },
+    "shuowen:6141": {
+      "text": "The appearance of a small horse. Formed from 馬, with 垂 indicating the sound. Read like 箠.",
+      "sourceTextSha256": "dff247bf65deac5c3a4c9fca880581af42c37dc7185d143d9478b2b732fcb210",
+      "uncertain": false
+    },
+    "shuowen:6142": {
+      "text": "A horse six chi high is 驕. Formed from 馬, with 喬 indicating the sound. The Odes says: “My horses are tall.” Another explanation: a wild horse.",
+      "sourceTextSha256": "0d7e321e72459ec4b4ef390c6be740f984c745e225596c20f9b460d0633120a8",
+      "uncertain": false
+    },
+    "shuowen:6143": {
+      "text": "A horse seven chi high is 騋; eight chi, 龍. Formed from 馬, with 來 indicating the sound. The Odes says: “Tall mares and black stallions.”",
+      "sourceTextSha256": "d40d9073230c1042a8477a4e088d0329c77f3e7d7e9449f4c88e83dbdac343b3",
+      "uncertain": false
+    },
+    "shuowen:6144": {
+      "text": "A horse’s name. Formed from 馬, with 雚 indicating the sound.",
+      "sourceTextSha256": "60556ad4ed5248dbd14909adde99e68860540bff8db062ac77d7c54b8b46c28b",
+      "uncertain": false
+    },
+    "shuowen:6145": {
+      "text": "A horse’s name. Formed from 馬, with 僉 indicating the sound.",
+      "sourceTextSha256": "1b2c4c35f9841dbb8702a845b9642dc66f9009e43c496f41bd4c0debc316ca2b",
+      "uncertain": false
+    },
+    "shuowen:6146": {
+      "text": "A horse’s name. Formed from 馬, with 此 indicating the sound.",
+      "sourceTextSha256": "564aa29d8dcd5496a28939ede70633a3598cbdd62fdd1cdd1af142cda1ffca4a",
+      "uncertain": false
+    },
+    "shuowen:6147": {
+      "text": "A horse’s name. Formed from 馬, with 休 indicating the sound.",
+      "sourceTextSha256": "afeef9b1f7c05299ec176b7fd62e7cfb90599fbd2e6866cbd1fb833b3151aacd",
+      "uncertain": false
+    },
+    "shuowen:6148": {
+      "text": "A horse with a red mane, white body and eyes like gold is called 𩢌. Jihuang’s mount; in King Wen of Zhou’s time, the Quanrong presented it. Formed from 馬 and 文; 文 also indicates the sound. The Spring and Autumn Commentary says: “A hundred teams of 𩢌 horses,” meaning patterned horses. The Earl of the West presented them to King Zhou of Shang (紂) to preserve himself.",
+      "sourceTextSha256": "e2001c340848cee02693a697a4ab004c77232eb2293fdaa036b48a50004cd709",
+      "uncertain": false
+    },
+    "shuowen:6149": {
+      "text": "A strong horse. Formed from 馬, with 支 indicating the sound.",
+      "sourceTextSha256": "c9004ffe3dc71dd515ce9de22291dbee78965a45e78e120991f3d910b16c6c78",
+      "uncertain": false
+    },
+    "shuowen:6150": {
+      "text": "A well-fed horse. Formed from 馬, with 必 indicating the sound. The Odes says: “Well fed, well fed.”",
+      "sourceTextSha256": "09f737167d61574f2de07e0cdd7a417c7bbe6595ed6d549eb5e406fb3a32f59e",
+      "uncertain": false
+    },
+    "shuowen:6151": {
+      "text": "A flourishing, fat horse. Formed from 馬, with 光 indicating the sound. The Odes says: “The four stallions are fat and strong.”",
+      "sourceTextSha256": "b98cdc3ac4cd8a02c2aac1378534f4e062f2281dba423081d2fe24b9d405d0f6",
+      "uncertain": false
+    },
+    "shuowen:6152": {
+      "text": "Horses flourishing. Formed from 馬, with 㫄 indicating the sound. The Odes says: “The four stallions are vigorous.”",
+      "sourceTextSha256": "f749845939c41e756d125d2805273a190a110d32d7e2fab81f3a6678636a118a",
+      "uncertain": false
+    },
+    "shuowen:6153": {
+      "text": "䭹䭹, a horse’s angry appearance. Formed from 馬, with 卬 indicating the sound.",
+      "sourceTextSha256": "aba77c47d924ab2d753dc808e6b5f510e042897aae413155390f5470f4fb855f",
+      "uncertain": false
+    },
+    "shuowen:6154": {
+      "text": "A horse lowering and raising its head. Formed from 馬, with 襄 indicating the sound.",
+      "sourceTextSha256": "87369ea08218065f947be3203318f787095544ea24b3567b9a58736cfd443fbb",
+      "uncertain": false
+    },
+    "shuowen:6155": {
+      "text": "To mount a horse. Formed from 馬, with 莫 indicating the sound.",
+      "sourceTextSha256": "c040c0ace55f7b73dc70f3a166238c621de8e749a333a5215511c3e72bfe6c91",
+      "uncertain": false
+    },
+    "shuowen:6156": {
+      "text": "To straddle a horse. Formed from 馬, with 奇 indicating the sound.",
+      "sourceTextSha256": "651c063d6fdfe7ad8d34b8a86c1fda3c5c3ff25feaf4e1f74f8c964b04dfce2a",
+      "uncertain": false
+    },
+    "shuowen:6157": {
+      "text": "A horse within the yoke. Formed from 馬, with 加 indicating the sound.",
+      "sourceTextSha256": "eeaabeeb8978336fcb59600ccfbde3b759c874ce43ee1d426c40e4e4ce90c80b",
+      "uncertain": false
+    },
+    "shuowen:6158": {
+      "text": "An outrunner, a horse at the side. Formed from 馬, with 非 indicating the sound.",
+      "sourceTextSha256": "4c20512afdbea670ec42d8a85d5b51702bd1cbb478f3ce6d5eadf7feacae3b9f",
+      "uncertain": false
+    },
+    "shuowen:6159": {
+      "text": "To harness two horses. Formed from 馬, with 并 indicating the sound.",
+      "sourceTextSha256": "cffd91e938541dedb13da05c98e99b66edc334729ef0daa3d7ffe15675ebc73a",
+      "uncertain": false
+    },
+    "shuowen:6160": {
+      "text": "To harness three horses. Formed from 馬, with 參 indicating the sound.",
+      "sourceTextSha256": "fd20e7db32a707c64d3d3d3390b2f576babb673f49eb875a468408cd0ffca96c",
+      "uncertain": false
+    },
+    "shuowen:6161": {
+      "text": "A team of horses. Formed from 馬, with 四 indicating the sound.",
+      "sourceTextSha256": "0f8a996e7fe7abce42647b474955e10ea7a78d509dfc99589d37a5816ef44ae4",
+      "uncertain": false
+    },
+    "shuowen:6162": {
+      "text": "A reserve horse. Formed from 馬, with 付 indicating the sound. Another explanation: near. Another: swift.",
+      "sourceTextSha256": "33d23f7716a952f275651df538144187ffea91932c96b3fc22073aff56a34d04",
+      "uncertain": false
+    },
+    "shuowen:6163": {
+      "text": "A horse compliant or harmonious. Formed from 馬, with 皆 indicating the sound.",
+      "sourceTextSha256": "8938f3bc0ac88a042016da61cf5a24eab181f116bbfa7e91a5e4dfa826f4cd82",
+      "uncertain": false
+    },
+    "shuowen:6164": {
+      "text": "A horse shaking its head. Formed from 馬, with 我 indicating the sound.",
+      "sourceTextSha256": "78a33efd7f19252d5603a5b6ce4d0750e8017e92d55de9cf3c4c658364f33228",
+      "uncertain": false
+    },
+    "shuowen:6165": {
+      "text": "Head-shaking, 駊騀. Formed from 馬, with 皮 indicating the sound.",
+      "sourceTextSha256": "b29120e00af0e23a6cbc23b5e40a649653c2aacd36b2ba2fdd4c774444cd7a73",
+      "uncertain": false
+    },
+    "shuowen:6166": {
+      "text": "A horse’s manner of moving. Formed from 馬, with 舀 indicating the sound.",
+      "sourceTextSha256": "21859fdf0ab5f8f04b807c3b0c49d3dfd3404847c5e0cf77ca397558d67d392b",
+      "uncertain": false
+    },
+    "shuowen:6167": {
+      "text": "A horse moving slowly and haltingly. Formed from 馬, with 竹 indicating the sound.",
+      "sourceTextSha256": "73d8c0154d1cfb7aa3ccbdd5e86102bce218608a7bd2cfe5ddfe95a8619b5362",
+      "uncertain": false
+    },
+    "shuowen:6168": {
+      "text": "A horse moving with dignified bearing. Formed from 馬, with 癸 indicating the sound. The Odes says: “The four stallions move majestically.”",
+      "sourceTextSha256": "54d9811912744b1966e2dc11bc9f29bbc8724a80fa286299a840ebeeb30b5e97",
+      "uncertain": false
+    },
+    "shuowen:6169": {
+      "text": "A horse moving slowly yet swiftly. Formed from 馬, with abbreviated 學 indicating the sound.",
+      "sourceTextSha256": "8b79368a163bbc08df3bc451f5efcd591f72c59d37348a90588e935a6ad5bf93",
+      "uncertain": false
+    },
+    "shuowen:6170": {
+      "text": "A horse moving swiftly. Formed from 馬, with abbreviated 㑴 indicating the sound. The Odes says: “Then galloping, swiftly onward.”",
+      "sourceTextSha256": "9928bc0214273ca9a82bb66310e8ebb1d3e319f4134c143e209c107552e3a718",
+      "uncertain": false
+    },
+    "shuowen:6171": {
+      "text": "Horses catching up with one another. Formed from 馬 and 及. The reading is referred to the Erya’s “Small mountains: 馺; large mountains: 峘.”",
+      "sourceTextSha256": "279e137515d4fa5303bb01ce8363261686388557e2c5696d61126cf969c61128",
+      "uncertain": false
+    },
+    "shuowen:6172": {
+      "text": "A horse moving swiftly. Formed from 馬, with 冫 indicating the sound.",
+      "sourceTextSha256": "67fd4fa6fd6b13c8b75493bdda468ca5b4b4078b205fa9824e0277160c443c53",
+      "uncertain": false
+    },
+    "shuowen:6173": {
+      "text": "A horse stepping swiftly. Formed from 馬, with 耴 indicating the sound.",
+      "sourceTextSha256": "3319882f5eac5c59347d9777f93b5a6af6fc7f3f5bdd51f7d925d79356a6a44e",
+      "uncertain": false
+    },
+    "shuowen:6174": {
+      "text": "A horse moving vigorously, 㐹㐹. Formed from 馬, with 矣 indicating the sound.",
+      "sourceTextSha256": "d3f264841606bbc4b81fddf6f147b2c05eaf78620838951c1230ec461902a8c5",
+      "uncertain": false
+    },
+    "shuowen:6175": {
+      "text": "A horse’s rapid steps. Formed from 馬, with 聚 indicating the sound.",
+      "sourceTextSha256": "022636737e288a7eee45ddcb39d3f0a784042f29918991bd3c0ee68b9172a2de",
+      "uncertain": false
+    },
+    "shuowen:6176": {
+      "text": "A horse running swiftly. Formed from 馬, with 匃 indicating the sound.",
+      "sourceTextSha256": "45a5d737eef307c70f31c2e80e1e9ba92fe9b2a2d349bfec58b867c29ce70baa",
+      "uncertain": false
+    },
+    "shuowen:6177": {
+      "text": "A horse’s rapid steps. Formed from 馬, with 風 indicating the sound.",
+      "sourceTextSha256": "5fec66dca8deec729b0a4df51dc62ab8b10b6e76adff000bcc0baac02856028d",
+      "uncertain": false
+    },
+    "shuowen:6178": {
+      "text": "A horse galloping. Formed from 馬, with 區 indicating the sound.",
+      "sourceTextSha256": "f30c5aabd180cc513eaf70b24f84e22ffb9088defa6c8439fe32d3325e0899b4",
+      "uncertain": false
+    },
+    "shuowen:6179": {
+      "text": "A great gallop. Formed from 馬, with 也 indicating the sound.",
+      "sourceTextSha256": "e9fa2b0da7d114b6ec1ea5eb595e0867190ca4974bd218fe07a285e7ad711da9",
+      "uncertain": false
+    },
+    "shuowen:6180": {
+      "text": "To gallop in disorder. Formed from 馬, with 敄 indicating the sound.",
+      "sourceTextSha256": "5b07e36dbac2a033ee08950dbc4d72dba01b15a8f893f9cbf227d5d423a64aa6",
+      "uncertain": false
+    },
+    "shuowen:6181": {
+      "text": "To gallop in successive order. Formed from 馬, with 𠛱 indicating the sound.",
+      "sourceTextSha256": "2ef7fef4493da2624f2a084dd1726cfbefa34eed464d304edda6852ab1bfaee9",
+      "uncertain": false
+    },
+    "shuowen:6182": {
+      "text": "To gallop straight ahead. Formed from 馬, with 甹 indicating the sound.",
+      "sourceTextSha256": "eabae7ade66f0d56913b3f617633452c40abb6742fb09feb959040af68d0807d",
+      "uncertain": false
+    },
+    "shuowen:6183": {
+      "text": "A horse coming swiftly. Formed from 馬, with 兌 indicating the sound. The Odes says: “The Kunyi sped away.”",
+      "sourceTextSha256": "5841b11a4d9b2755182a95111e7bd2cb3734b5fb16e653c56981960cda319cfe",
+      "uncertain": false
+    },
+    "shuowen:6184": {
+      "text": "A horse with swift feet. Formed from 馬, with 失 indicating the sound.",
+      "sourceTextSha256": "89dc8ae0388749f43657e800b78a92d972c2cea75a144788ae81216d24478de3",
+      "uncertain": false
+    },
+    "shuowen:6185": {
+      "text": "A horse charging suddenly. Formed from 馬, with 旱 indicating the sound.",
+      "sourceTextSha256": "63cc24cfb7e067b9a5bbbe2e54d4cc054e3636fe9b2d52147841fd6c44b3d176",
+      "uncertain": false
+    },
+    "shuowen:6186": {
+      "text": "To gallop a horse straight away. Formed from 馬, with 同 indicating the sound.",
+      "sourceTextSha256": "89b8e700bf17b41a3896159c549e8eb024f235abe42e4f3609ff9074383f924b",
+      "uncertain": false
+    },
+    "shuowen:6187": {
+      "text": "A horse frightened. Formed from 馬, with 敬 indicating the sound.",
+      "sourceTextSha256": "e7daa52bf203de82e40d0f7f8f4fb1732ce2a650e5efed7f4ac402ed2df5bdb5",
+      "uncertain": false
+    },
+    "shuowen:6188": {
+      "text": "Frightened. Formed from 馬, with 亥 indicating the sound.",
+      "sourceTextSha256": "018cdd6147323fd0843067df959e14d3f61f427d9c26231610feec31e74b7126",
+      "uncertain": false
+    },
+    "shuowen:6189": {
+      "text": "A horse bolting. Formed from 馬, with 巟 indicating the sound.",
+      "sourceTextSha256": "68d87964e31e7e2a0c852651f70e5be6fa41fe447972afa1472f029973128939",
+      "uncertain": false
+    },
+    "shuowen:6190": {
+      "text": "A horse’s belly bound or constricted. Formed from 馬, with abbreviated 寒 indicating the sound.",
+      "sourceTextSha256": "0ffb3105ab61f19887b43e1d21845fcae7356264443781343a0e194327bbaf55",
+      "uncertain": false
+    },
+    "shuowen:6191": {
+      "text": "A horse standing still. Formed from 馬, with 主 indicating the sound.",
+      "sourceTextSha256": "92b8e8ea37814eed00a807bc1afeecec49087dec0e87aee17eca9d7d7f40d33c",
+      "uncertain": false
+    },
+    "shuowen:6192": {
+      "text": "A horse obedient. Formed from 馬, with 川 indicating the sound.",
+      "sourceTextSha256": "c9ad6f587bd13f79626655f8bff44a87d3946dd2bd5050cba48a1bca72c91290",
+      "uncertain": false
+    },
+    "shuowen:6193": {
+      "text": "A horse having difficulty bearing a heavy load. Formed from 馬, with 㐱 indicating the sound.",
+      "sourceTextSha256": "7a13f7a7aa8727dfa17f50cbc47aa9fc4dac6536eeb4f0b3f1930ce38de9e184",
+      "uncertain": false
+    },
+    "shuowen:6194": {
+      "text": "Laboring under a load, 駗驙. Formed from 馬, with 亶 indicating the sound. The Changes says: “The team of horses strains onward.”",
+      "sourceTextSha256": "7394aed781f55f5e7ddb74e078747bb45a20d722264385c5831a785685954fdf",
+      "uncertain": false
+    },
+    "shuowen:6195": {
+      "text": "A horse’s burdened appearance. Formed from 馬, with 執 indicating the sound.",
+      "sourceTextSha256": "21dbb6f71fc63b601a913510195f42a580284eb8f39545f93c8cf4893c7dd949",
+      "uncertain": false
+    },
+    "shuowen:6196": {
+      "text": "A horse with a curved back. Formed from 馬, with 鞠 indicating the sound.",
+      "sourceTextSha256": "a1b75fe1ae9e8f4aa5d00cef5ace2f005891652b41299977bf4fd7d9256948ff",
+      "uncertain": false
+    },
+    "shuowen:6197": {
+      "text": "A castrated horse. Formed from 馬, with 乘 indicating the sound.",
+      "sourceTextSha256": "3725ff216080a0790f22918dacd8c0ece3d015c15fd5ef165af25ae7622e7c82",
+      "uncertain": false
+    },
+    "shuowen:6198": {
+      "text": "To tie a horse’s tail. Formed from 馬, with 介 indicating the sound.",
+      "sourceTextSha256": "1a8452f2de6d530eeff9001964f6a6110449e2bc1acfb9b0dfab147b7944c083",
+      "uncertain": false
+    },
+    "shuowen:6199": {
+      "text": "To disturb. Another explanation: to rub a horse. Formed from 馬, with 蚤 indicating the sound.",
+      "sourceTextSha256": "49723871aba1679dae270e3b4afbfbd9d674034b0d03d5a9c38bebec99bb923d",
+      "uncertain": false
+    },
+    "shuowen:6200": {
+      "text": "To hobble a horse. Formed from 馬, enclosing its feet with 囗. The Spring and Autumn Commentary says: “Han Jue held the hobbles and went forward.” Read like 輒.",
+      "sourceTextSha256": "15b9e31fa2b1494bbf2f827ecb70baad569d28f3e61f785d67109c2a8fa7d1b2",
+      "uncertain": false
+    }
+  }
+}

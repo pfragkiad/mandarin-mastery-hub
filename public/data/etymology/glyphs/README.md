@@ -14,6 +14,8 @@ Numbered tokens and unsupported notation never use this lexical lookup.
 Each shard contains root dataset metadata and full source notices, original text
 entries, exact target associations, unreviewed written-form suggestions, source
 comparison coverage and optional BabelStone textual occurrence evidence.
+Shuowen entries additionally carry separate unreviewed English AI drafts, bound
+to their original Chinese text hashes; the original `text` remains unchanged.
 The shared [schema](../etymology.schema.json) defines the envelope and the
 [frontend guide](../README.md) defines status/display rules.
 

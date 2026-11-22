@@ -1,0 +1,534 @@
+{
+  "format": "mandarin-shuowen-english-draft-batch",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "Shuowen Jiezi English translation drafts",
+    "source_url": "https://github.com/shuowenjiezi/shuowen",
+    "source_revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "source_archive_sha256": "737ecb6f1a7de474bc0b8ff4cd95b9064441090d6360f6ad9632881edb63426d",
+    "license": "Apache-2.0",
+    "license_notices": [
+      {
+        "source_id": "shuowen",
+        "license": "Apache-2.0",
+        "source_path": "shuowen/LICENSE",
+        "source_url": "https://raw.githubusercontent.com/shuowenjiezi/shuowen/6553a350763ce4feca2c5d1cc2cad7e594dc2975/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "copyright_source_path": "shuowen/upstream-README.md",
+        "copyright_notice": "Copyright [2019] [Shuowen.org]",
+        "notice": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      }
+    ],
+    "version": "1.0.0",
+    "import_date": "2026-11-21",
+    "disclaimer": "New AI-generated English drafts of the recorded Classical Chinese; not scholarly reviewed. Original source interpretations are not verified geometry or modern etymology.",
+    "language": "en",
+    "method": "ai-generated",
+    "review_status": "unreviewed-ai-draft",
+    "source_batch_sha256": "a5418e6f62fc492686504cdcedd7090e3f792db666ce543737499e499166526b",
+    "created_date": "2026-11-21"
+  },
+  "batch": "001",
+  "translations": {
+    "shuowen:1": {
+      "text": "At the primordial beginning, the Way was established in One; it created and divided heaven and earth, transforming and completing the myriad things. All characters in the 一 category are formed from 一.",
+      "sourceTextSha256": "3452db35136a3a0cdc7c9a604aabf6e67a47e3a66d528ebf1450f4cda97694bc",
+      "uncertain": false
+    },
+    "shuowen:2": {
+      "text": "Beginning. Formed from 一 and 兀.",
+      "sourceTextSha256": "bf5110355295f67be6868b2edf0f73c5f770188da982e5c01ca85ce4b604de33",
+      "uncertain": false
+    },
+    "shuowen:3": {
+      "text": "The summit; supremely high, with nothing above it. Formed from 一 and 大.",
+      "sourceTextSha256": "2fb6713db9b91b76a4778d7790a34548f208db2fed571c548622d70f46ba6a43",
+      "uncertain": false
+    },
+    "shuowen:4": {
+      "text": "Great. Formed from 一, with 不 indicating the sound.",
+      "sourceTextSha256": "ccd81f00c45ecd121f237cf3539e506552481db16852a24bf7134bcfe67904f8",
+      "uncertain": false
+    },
+    "shuowen:5": {
+      "text": "One who governs people. Formed from 一 and 史; 史 also indicates the sound.",
+      "sourceTextSha256": "a7c8564ec84f802527e1fc143024a838171ca63662f2437760eeb07dbe749246",
+      "uncertain": false
+    },
+    "shuowen:6": {
+      "text": "High. This is the ancient form of 上, an indicative graph. All characters in the 丄 category are formed from 丄.",
+      "sourceTextSha256": "a10b54c3fff255ca4da90c08e322acc48c178fdc4ce0920c0a8fa30f304fe8f5",
+      "uncertain": false
+    },
+    "shuowen:7": {
+      "text": "Discerning; the title of the ruler of all under heaven. Formed from 丄, with 朿 indicating the sound.",
+      "sourceTextSha256": "d0585d5e8b7a10ca5294d4f4a4bcc69af481699b123ea5b9f2a3f194cf454810",
+      "uncertain": false
+    },
+    "shuowen:8": {
+      "text": "Extensive. Formed from 二; the explanation is missing. 方 indicates the sound.",
+      "sourceTextSha256": "3acb914a139e99093e2523cbb2a7915f496fa3ae17adb659b604f3a24acc1d10",
+      "uncertain": false
+    },
+    "shuowen:9": {
+      "text": "The bottom. An indicative graph.",
+      "sourceTextSha256": "4a934cc09dd086316ed045fef0357c733d79d9b2b020cebcef32316293f4ba64",
+      "uncertain": false
+    },
+    "shuowen:10": {
+      "text": "Heaven displays signs revealing good and ill fortune, thereby instructing people. Formed from 二 (the ancient form of 上). The three hanging strokes are the sun, moon and stars. Observing heavenly patterns reveals seasonal changes. 示 concerns divine affairs. All characters in the 示 category are formed from 示.",
+      "sourceTextSha256": "59b3895d1955da32751f6e95feb9707667dcc11cb842d11c0ace86605f1b816d",
+      "uncertain": false
+    },
+    "shuowen:11": {
+      "text": "The reigning sovereign's taboo personal name.",
+      "sourceTextSha256": "98ba7f36cf4b570d61335cb6f2003cad79ad2c9e7bc2664470466a41100147e0",
+      "uncertain": false
+    },
+    "shuowen:12": {
+      "text": "To tread or carry out; that by which one serves the spirits and brings blessings. Formed from 示 and 豊; 豊 also indicates the sound.",
+      "sourceTextSha256": "b7ffd5c23ff70e10b5ab22bbfe23c22a3468347861a89f206f7b999f139ecb78",
+      "uncertain": false
+    },
+    "shuowen:13": {
+      "text": "Auspicious ritual. Formed from 示, with 喜 indicating the sound.",
+      "sourceTextSha256": "9cdb48577efee211b0d8f45ca2772e4a5b2e2cf00f27923b23778e65993b7019",
+      "uncertain": false
+    },
+    "shuowen:14": {
+      "text": "To receive blessings through sincerity. Formed from 示, with 眞 indicating the sound.",
+      "sourceTextSha256": "0f3cab7001433bd7afd46103d42649cdbf6753babf69be18e0720fb00fb8102e",
+      "uncertain": false
+    },
+    "shuowen:15": {
+      "text": "Blessing. Formed from 示, with 彔 indicating the sound.",
+      "sourceTextSha256": "b9460753ec0e9fce642b88e291f57d4f8e85ca63aeb62a24b3e07e9716a1292e",
+      "uncertain": false
+    },
+    "shuowen:16": {
+      "text": "Blessing. Formed from 示, with 虒 indicating the sound.",
+      "sourceTextSha256": "f1991a01369e69ceaea6a29feba63e53909253564a288b1fe0994ad8b8fc3eb3",
+      "uncertain": false
+    },
+    "shuowen:17": {
+      "text": "An auspicious sign. Formed from 示, with 貞 indicating the sound.",
+      "sourceTextSha256": "bc28cca3696dfa6199b1c88c3abf30434e158a5ad58223dc8f436b751101cb05",
+      "uncertain": false
+    },
+    "shuowen:18": {
+      "text": "Blessing. Formed from 示, with 羊 indicating the sound. Another explanation says: good.",
+      "sourceTextSha256": "4785abccf4e0f709e1a0c0c375d0efc436ff2f20fadd0cf6d86e515d7bd4719a",
+      "uncertain": false
+    },
+    "shuowen:19": {
+      "text": "Blessing. Formed from 示, with 止 indicating the sound.",
+      "sourceTextSha256": "7fa5ffe504b1ebf756782712565b59824faf56d0d1c37125f05d6bedca1f643c",
+      "uncertain": false
+    },
+    "shuowen:20": {
+      "text": "Divine aid. Formed from 示, with 畐 indicating the sound.",
+      "sourceTextSha256": "8a57931913d2fb540fdc2354c50d41728c7366c770d4c28707b1124e6beb172c",
+      "uncertain": false
+    },
+    "shuowen:21": {
+      "text": "Assistance. Formed from 示, with 右 indicating the sound.",
+      "sourceTextSha256": "cc79845320da9a532c39a6ccaba4e9b0a7c708f532a470f52a35ec531b177053",
+      "uncertain": false
+    },
+    "shuowen:22": {
+      "text": "Auspicious. Formed from 示, with 其 indicating the sound.",
+      "sourceTextSha256": "8590e05d6fe301d205f71954ac6ae9fc323acab3c5222e12dc49f4aa86f5237d",
+      "uncertain": false
+    },
+    "shuowen:23": {
+      "text": "Respect. Formed from 示, with 氐 indicating the sound.",
+      "sourceTextSha256": "3e61aa18f6a76e2d74f874581a2f7b88b7a2577df64ae13fa91ad9527005e292",
+      "uncertain": false
+    },
+    "shuowen:24": {
+      "text": "Peace and blessing. Formed from 示, with 是 indicating the sound. The Changes says: “Peace and blessing have already been established.”",
+      "sourceTextSha256": "a1e4c10f7b3fb3b27b9c911a9e024955f09ea2fe06ad99f8c48058d52a61060d",
+      "uncertain": false
+    },
+    "shuowen:25": {
+      "text": "Heavenly spirits, which draw forth the myriad things. Formed from 示 and 申.",
+      "sourceTextSha256": "75df23c5da94d028f87861ec25e94c5a34169c8309543aa07607a6ce6e9d99c6",
+      "uncertain": false
+    },
+    "shuowen:26": {
+      "text": "Earth spirits, which raise forth the myriad things. Formed from 示, with 氏 indicating the sound.",
+      "sourceTextSha256": "d3b32804c5ed7e50dc62232b9bc46fcfebab85d938bb7c5c8bd9c3ad1b811fc1",
+      "uncertain": false
+    },
+    "shuowen:27": {
+      "text": "Divine or mysterious. Formed from 示, with 必 indicating the sound.",
+      "sourceTextSha256": "fedfb23a4afcd42b84d509a451f99e9a5b8a36924c372a0db7fe7f33109e1ed4",
+      "uncertain": false
+    },
+    "shuowen:28": {
+      "text": "Abstinence and purification. Formed from 示, with an abbreviated 齊 indicating the sound.",
+      "sourceTextSha256": "76fefa1ecaaee0126c8a0a5095f87b1baf5cb9a1740b2c7bacc100a5c004e560",
+      "uncertain": false
+    },
+    "shuowen:29": {
+      "text": "A pure sacrifice. Another explanation calls offering with concentrated intent 禋. Formed from 示, with 垔 indicating the sound.",
+      "sourceTextSha256": "7e6cf6c89207f315ba515aaaf19b34555406b237a892ab3c57a47258ebfb1e9a",
+      "uncertain": false
+    },
+    "shuowen:30": {
+      "text": "To offer sacrifice. Formed from 示 and a hand holding meat.",
+      "sourceTextSha256": "d3e39f7edaf2f92cd8e1c2c3eda95b1158f4939fd9cacf7a6540b63141f6fe89",
+      "uncertain": false
+    },
+    "shuowen:31": {
+      "text": "To sacrifice without ceasing. Formed from 示, with 巳 indicating the sound.",
+      "sourceTextSha256": "618fa6fc3abb6c6ceb5e9b91dcd079a021ae70e8d3fdfb8d5ef2ff230d94a9b1",
+      "uncertain": false
+    },
+    "shuowen:32": {
+      "text": "To burn firewood in a blaze as a sacrifice to heavenly spirits. Formed from 示, with 此 indicating the sound. The Book of Yu says: “Arriving at Daizong, he offered the firewood sacrifice.”",
+      "sourceTextSha256": "917f816c816c45f6bc7fdfece9629cb619322a8774d0673379207bc8d07ff37f",
+      "uncertain": false
+    },
+    "shuowen:33": {
+      "text": "To sacrifice to heavenly spirits according to the category of the occasion. Formed from 示, with 類 indicating the sound.",
+      "sourceTextSha256": "eab2e5dbd465ab77ce4695bc9a09ec07b45c668df36237e087476a13194f2eb5",
+      "uncertain": false
+    },
+    "shuowen:34": {
+      "text": "祔 and 祪 concern ancestors. Formed from 示, with 危 indicating the sound.",
+      "sourceTextSha256": "dc800666f9a3fe32577f9bbd985704ea613f7c687bb269aee3b52a219272c49f",
+      "uncertain": true
+    },
+    "shuowen:35": {
+      "text": "For one who has died later to share sacrificial offerings with earlier ancestors. Formed from 示, with 付 indicating the sound.",
+      "sourceTextSha256": "dd37356552de45e38f1936739af38a15e4c527009cb087078bad10a2c06464f3",
+      "uncertain": false
+    },
+    "shuowen:36": {
+      "text": "The founding ancestral temple. Formed from 示, with 且 indicating the sound.",
+      "sourceTextSha256": "d2a0b9d77920e63676391c323b257e76fde7c377085ea264f4649502d341a6fd",
+      "uncertain": false
+    },
+    "shuowen:37": {
+      "text": "A sacrifice inside the gate, where the ancestors linger. Formed from 示, with 彭 indicating the sound. The Odes says: “The invocator sacrifices at the 𥛱.”",
+      "sourceTextSha256": "2aae8b33086e023e24ac28a5ccfb4f1ca36b1bc1fee78348c32cb49beace556b",
+      "uncertain": false
+    },
+    "shuowen:38": {
+      "text": "A sacrifice announcing a matter. Formed from 示, with 告 indicating the sound.",
+      "sourceTextSha256": "626a7c32b2c8fec9236dbe3eff06038717c72a696996dcacdc5b99914f5041e6",
+      "uncertain": false
+    },
+    "shuowen:39": {
+      "text": "An ancestral-temple spirit tablet. The Rites of Zhou has suburban, ancestral and stone chambers. Another explanation says that grandees use stone for their tablets. Formed from 示 and 石; 石 also indicates the sound.",
+      "sourceTextSha256": "c7f4051711b81ec6ca528839628d099293457b95df59d71b15113547d8162aba",
+      "uncertain": false
+    },
+    "shuowen:40": {
+      "text": "To sacrifice a piglet to the Director of Destinies. Formed from 示, with 比 indicating the sound. Han law says: “Offer the piglet sacrifice to the Director of Destinies.”",
+      "sourceTextSha256": "f5afe6ec697071b4901565208014ad0d5c55353d4e5b248cad44dbd7531e3ef6",
+      "uncertain": false
+    },
+    "shuowen:41": {
+      "text": "The spring sacrifice is called 祠: its offerings are few, but its ritual words many. Formed from 示, with 司 indicating the sound. In mid-spring this sacrifice uses no animal victims, but jade tablets and discs, hides and silk.",
+      "sourceTextSha256": "b0766f57a6702d2402411480ed4a70089b05c085d5bb1e4b93f670fcd66245a5",
+      "uncertain": false
+    },
+    "shuowen:42": {
+      "text": "The summer sacrifice. Formed from 示, with 勺 indicating the sound.",
+      "sourceTextSha256": "4eec0c64462002df81ed9e7f47f11d5db44595438fa662f120241deb0fb3bc87",
+      "uncertain": false
+    },
+    "shuowen:43": {
+      "text": "A discerning sacrifice. Formed from 示, with 帝 indicating the sound. The Rites of Zhou says: “One 禘 every five years.”",
+      "sourceTextSha256": "0175ec989c6dea4cbb0ff4c8a617b38b6b48a7c9a794eb02f467b36cbe41e143",
+      "uncertain": false
+    },
+    "shuowen:44": {
+      "text": "A great joint sacrifice to ancestors, close and distant in kinship and time. Formed from 示 and 合. The Rites of Zhou says: “One 祫 every three years.”",
+      "sourceTextSha256": "633022cd7c38cd7eae2ee8a5d12dd96ad0a64ad78366dbcac8d2bab437967ecd",
+      "uncertain": false
+    },
+    "shuowen:45": {
+      "text": "A libation sacrifice. Formed from 示, with 果 indicating the sound.",
+      "sourceTextSha256": "2a98689b00556ef0412318fe4e7794891be54f643b8d5176c6c8acbd35c17f5b",
+      "uncertain": false
+    },
+    "shuowen:46": {
+      "text": "Repeated sacrifices. Formed from 示, with 毳 indicating the sound. Pronounced like 䄟 in “pounding wheat into 䄟.”",
+      "sourceTextSha256": "694f923245d8112d2da350131fbc88451a075720cc43ef4e64a1c36352ccef8c",
+      "uncertain": false
+    },
+    "shuowen:47": {
+      "text": "The officiant who assists with the words at a sacrifice. Formed from 示 and a person's mouth. Another explanation derives it from abbreviated 兌. The Changes says: “兌 represents the mouth and the shaman.”",
+      "sourceTextSha256": "c100c4bf2ed09973880398b5d76ea0d2efa14e9b4b5f2ce543ba1baa356566e2",
+      "uncertain": false
+    },
+    "shuowen:48": {
+      "text": "The expression 祝𥛽, a ritual invocation. Formed from 示, with 畱 indicating the sound.",
+      "sourceTextSha256": "cb72baca760408250bf20de6911ec62fdd0190ec251b0c8a8a5a50deb9612ebc",
+      "uncertain": true
+    },
+    "shuowen:49": {
+      "text": "A sacrifice to remove evil. Formed from 示, with 犮 indicating the sound.",
+      "sourceTextSha256": "5bb88f2a2f377b6b81f094082d1b6df8a04681d84fee3f4cf69ac7cd39c05522",
+      "uncertain": false
+    },
+    "shuowen:50": {
+      "text": "To seek blessings. Formed from 示, with 斤 indicating the sound.",
+      "sourceTextSha256": "8c08a853f93fceb5d1bfa8f22fe5ad5425a46a26367f142ca1a1041102afa44d",
+      "uncertain": false
+    },
+    "shuowen:51": {
+      "text": "To report a matter and seek blessings. Formed from 示, with 壽 indicating the sound.",
+      "sourceTextSha256": "765597d877837227ac8e8a7c32da85508229a3c3bc8977488df739d8473270ed",
+      "uncertain": false
+    },
+    "shuowen:52": {
+      "text": "To mark out an enclosure with cord and bundled reeds, imploring sun, moon, stars, mountains and rivers to avert wind, rain, snow, frost, flood, drought and epidemic. Formed from 示, with abbreviated 榮 indicating the sound. Another explanation: 禜 means to guard, preventing disasters. The Record of Rites says: “雩 and 禜: sacrifices concerning flood and drought.”",
+      "sourceTextSha256": "4e5b4709aafe6469ed75c5a8137b8c3c4453b731d574898706239ef12a1ca5a2",
+      "uncertain": false
+    },
+    "shuowen:53": {
+      "text": "An expiatory sacrifice with dismembered victims, removing pestilence and calamity. In antiquity it was devised by Yingzi of the Suiren clan. Formed from 示, with 襄 indicating the sound.",
+      "sourceTextSha256": "fd266c2d33d5bb94ad7b874df56e5145588226dd5ec64e00c3f699ac94893cb8",
+      "uncertain": true
+    },
+    "shuowen:54": {
+      "text": "A sacrifice gathering blessings. Formed from 示 and 會; 會 also indicates the sound. The Rites of Zhou says: “The invocations used in the 禬 sacrifice.”",
+      "sourceTextSha256": "f423aa47ab34fcb241066a8ac6e51a45b1e7f72440e9c8cd7a53c3bc34821774",
+      "uncertain": false
+    },
+    "shuowen:55": {
+      "text": "To sacrifice to Heaven. Formed from 示, with 單 indicating the sound.",
+      "sourceTextSha256": "00596deb3fdb0f33210a382886eae3352bf2f7519eb0825de8e60bbabfdffc3c",
+      "uncertain": false
+    },
+    "shuowen:56": {
+      "text": "To sacrifice. Formed from 示, with 御 indicating the sound.",
+      "sourceTextSha256": "94f91fc34411689a25d65cd32abc82d9809e86c24b202a374e188402c92c4a0e",
+      "uncertain": false
+    },
+    "shuowen:57": {
+      "text": "To sacrifice. Formed from 示, with 𠯑 indicating the sound.",
+      "sourceTextSha256": "1df083e09df2230408901d6fde2cf869f273d9c8f1028eb68998a2969ed4c9b6",
+      "uncertain": false
+    },
+    "shuowen:58": {
+      "text": "A sacrifice. Formed from 示, with 某 indicating the sound.",
+      "sourceTextSha256": "8262ad72a9cac6a0338f18dd40b6c2629fc5ddd1fcf9245142fda23b468de662",
+      "uncertain": false
+    },
+    "shuowen:59": {
+      "text": "Sacrificial equipment. Formed from 示, with 胥 indicating the sound.",
+      "sourceTextSha256": "36fea5f444ac227d0fd582e4d18ae361aa0233afc098a3d0fd6588ee1c02ad73",
+      "uncertain": false
+    },
+    "shuowen:60": {
+      "text": "Meat from the earth-altar sacrifice, placed in a clam shell, hence called 祳. The Son of Heaven personally sends it to people of his own surname. Formed from 示, with 辰 indicating the sound. The Spring and Autumn commentary says: “Shi Shang came to deliver 祳.”",
+      "sourceTextSha256": "adb5b75cac74e41073cbef9cdf5d0e507a1456ca7db47b71463d5835aa5b9b10",
+      "uncertain": false
+    },
+    "shuowen:61": {
+      "text": "To perform the 祴 music in the ancestral temple. Formed from 示, with 戒 indicating the sound.",
+      "sourceTextSha256": "879ea55381fbc20a0bc5090abe813fbb1b63d321a9d0309ca5bdbad374760535",
+      "uncertain": false
+    },
+    "shuowen:62": {
+      "text": "When an army halts on campaign, fearing disrespect toward the local spirit, its members dismount and sacrifice; this is called 禡. Formed from 示, with 馬 indicating the sound. The Rites of Zhou says: “Perform 禡 in the land being attacked.”",
+      "sourceTextSha256": "d59a0d6d137411a76487ab995b6e5a661fdd64718b7c812b1ddfe848c0ce7750",
+      "uncertain": false
+    },
+    "shuowen:63": {
+      "text": "A prayer sacrifice concerning livestock and horses. Formed from 示, with 周 indicating the sound. The Odes says: “Having performed 禡 and 禂.”",
+      "sourceTextSha256": "63ffdc8fbdc5ab3aea1f5dda50f37b2d09b0148c44c8f8e8f9ee03dbe6f73fb5",
+      "uncertain": false
+    },
+    "shuowen:64": {
+      "text": "The lord of the soil. Formed from 示 and 土. The Spring and Autumn commentary says: “Gonggong's son Goulong became the earth-altar spirit.” The Rites of Zhou says: “Twenty-five households form an earth-altar community; each plants a tree suited to its soil.”",
+      "sourceTextSha256": "2ef4b07aa705233c5e66efa6bb93e9f5ded37086d64082109391503c02f01f66",
+      "uncertain": false
+    },
+    "shuowen:65": {
+      "text": "A sacrifice on the road. Formed from 示, with 昜 indicating the sound.",
+      "sourceTextSha256": "5fc54907f3b2f1b98a122a3f5f8b1efc323742950795a64f5db396ba83302304",
+      "uncertain": false
+    },
+    "shuowen:66": {
+      "text": "Essential vapors responding as portents. Formed from 示, with abbreviated 㑴 indicating the sound. The Spring and Autumn commentary says: “He saw red and black 𥛆 vapors.”",
+      "sourceTextSha256": "76485b27ec89b89c2a24163791d0c7fcff0c60316bcad5b7019462211735cd57",
+      "uncertain": true
+    },
+    "shuowen:67": {
+      "text": "Harm: the spirits do not bestow blessing. Formed from 示, with 咼 indicating the sound.",
+      "sourceTextSha256": "8d426c8fd2bf69b90d55d2b4a1c78ebbd8ce148614cc47c9ce79ec57b7ad24c4",
+      "uncertain": false
+    },
+    "shuowen:68": {
+      "text": "A calamity caused by spirits. Formed from 示 and 出.",
+      "sourceTextSha256": "3413da31abb520d90c8f8cddd967b8364374daf54b64328e5ce5d85aea3da74a",
+      "uncertain": false
+    },
+    "shuowen:69": {
+      "text": "When the earth produces things contrary to their normal nature, this is 䄏. Formed from 示, with 芺 indicating the sound.",
+      "sourceTextSha256": "2dacebcbaae34cd2e23496be9a5044ef0a15eb2c02939b5cb1ff8a17243e0598",
+      "uncertain": false
+    },
+    "shuowen:70": {
+      "text": "To examine clearly and calculate. Formed from two 示. The Lost Book of Zhou says: “The officers apportion the people's 祘”; that is, divide equally by calculation. Pronounced like 筭.",
+      "sourceTextSha256": "0cb96c63b8e542a130d39edf5794a20aaf663fde04ef37e51b0001599d442553",
+      "uncertain": false
+    },
+    "shuowen:71": {
+      "text": "Taboos concerning good and ill fortune. Formed from 示, with 林 indicating the sound.",
+      "sourceTextSha256": "8aa04585dc9f6c1d6045ebddec1c37e1604b9eaa840c1e305966159096d7bfca",
+      "uncertain": false
+    },
+    "shuowen:72": {
+      "text": "A sacrifice on removing mourning dress. Formed from 示, with 覃 indicating the sound.",
+      "sourceTextSha256": "4e1035b6742755e532613aab63871c0c8875fd7a5f190799c2d22cc80bd7e617",
+      "uncertain": false
+    },
+    "shuowen:73": {
+      "text": "The temple of one's immediate ancestor. Formed from 示, with 爾 indicating the sound. One edition says it is the ancient form 𥜬.",
+      "sourceTextSha256": "087dbcd441970f90ccf2feeba421474a7c81c4f2b751a5b71bd1f6578d445c4c",
+      "uncertain": false
+    },
+    "shuowen:74": {
+      "text": "A temple to which ancestral tablets are transferred. Formed from 示, with 兆 indicating the sound.",
+      "sourceTextSha256": "995b585626240a50bb1226975eb3ec664233f0e78809ade1f83982341e082fca",
+      "uncertain": false
+    },
+    "shuowen:75": {
+      "text": "A deity of the Hu peoples. Formed from 示, with 天 indicating the sound.",
+      "sourceTextSha256": "bb5bd777bd4f5606829065fab3fa1a229363aa7f09171c402a2e059858a0190c",
+      "uncertain": false
+    },
+    "shuowen:76": {
+      "text": "Blessing. Formed from 示, with 乍 indicating the sound.",
+      "sourceTextSha256": "6b0ccafcacbff6474c1ed9ed49103c108b123ad1ad1bc4f259b843f169834b7d",
+      "uncertain": false
+    },
+    "shuowen:77": {
+      "text": "The way of heaven, earth and humanity. Formed from the number three. All characters in the 三 category are formed from 三.",
+      "sourceTextSha256": "23bfdeff3666c8ad8402c6269c5fddd96710a42e0eba15d415627819f847dc0e",
+      "uncertain": false
+    },
+    "shuowen:78": {
+      "text": "That to which all under heaven turn. Dong Zhongshu said: “The ancient makers of writing called three strokes joined through their middle 王. The three are heaven, earth and humanity; the king connects all three.” Confucius said: “One stroke running through three makes 王.” All characters in the 王 category are formed from 王. [Li Yangbing said: “The middle stroke is close to the upper one: the king models himself on Heaven.”]",
+      "sourceTextSha256": "d1183472a4d64dccb465cb64a1aca4f5597a842059501775cdeb510d8a0fb0e0",
+      "uncertain": false
+    },
+    "shuowen:79": {
+      "text": "The month of the surplus fraction; there are two intercalations in five years. During the rite announcing the new moon, the Son of Heaven occupies the ancestral temple; in an intercalary month he occupies the gateway. Formed from 王 inside 門. The Rites of Zhou says: “In an intercalary month the king occupies the gateway throughout the month.”",
+      "sourceTextSha256": "785961b4ea938076a42b557a8642efa4c51c9d323245aec162a860feca4057b9",
+      "uncertain": false
+    },
+    "shuowen:80": {
+      "text": "Great. Formed from 自. 自 means beginning. The earliest sovereigns were the Three Sovereigns, great rulers. 自 is pronounced like 鼻; common speech now calls the firstborn child 鼻子.",
+      "sourceTextSha256": "7c4a248060fff637303d74c392512072bdf63fa4697360e723c1c728085db91a",
+      "uncertain": false
+    },
+    "shuowen:81": {
+      "text": "Beautiful stone. It has five virtues: warm moist luster embodies benevolence; its internal texture can be known from outside, embodying righteousness; its expansive, spreading sound is heard afar, embodying wisdom; breaking rather than bending embodies courage; sharp edges that do not injure embody purity. It depicts three linked pieces of jade; | is their string. All characters in the 玉 category are formed from 玉. [Yangbing said: “The three strokes are evenly spaced, like strung jade.”]",
+      "sourceTextSha256": "7c29662aa9b022d866e6100f58a8c2e89d6c1e7615b40250389cc578a052b198",
+      "uncertain": false
+    },
+    "shuowen:82": {
+      "text": "Jade. Formed from 玉, with 尞 indicating the sound.",
+      "sourceTextSha256": "78b4a8a6cf7eed23dd9d9b1db7b0f02d93c99b4ce55a13490edcdb740674ef86",
+      "uncertain": false
+    },
+    "shuowen:83": {
+      "text": "Jade. Formed from 玉, with 雚 indicating the sound. The Spring and Autumn commentary says: “A 瓘 jade cup.”",
+      "sourceTextSha256": "181f5cb8f259d4b8e5be6f3b467f0daaeef193296ecb4f13d4efa70f800f713e",
+      "uncertain": false
+    },
+    "shuowen:84": {
+      "text": "Jade. Formed from 玉, with 敬 indicating the sound.",
+      "sourceTextSha256": "e6701110897a852564815b96a0273a22fdb567ce888a57d4eff9436ec109b02c",
+      "uncertain": false
+    },
+    "shuowen:85": {
+      "text": "Jade. Formed from 玉, with 典 indicating the sound.",
+      "sourceTextSha256": "8c0e56a2393cb1f2637d0bf2ee6e33cd7d4425fe0107206d950c6ed371600888",
+      "uncertain": false
+    },
+    "shuowen:86": {
+      "text": "Jade. Formed from 玉, with 夒 indicating the sound. Pronounced like 柔.",
+      "sourceTextSha256": "d21569cbe7b3885c13d678cff4272123f4d69f7e9272369520612a1282762eb0",
+      "uncertain": false
+    },
+    "shuowen:87": {
+      "text": "Jade. Formed from 玉, with 毄 indicating the sound. Pronounced like 鬲.",
+      "sourceTextSha256": "af89cf9296b401afa8df37f5eae893394e996ee6c5e6a9b9e4c922898784ba7f",
+      "uncertain": false
+    },
+    "shuowen:88": {
+      "text": "璵璠, the precious jade of Lu. Formed from 玉, with 番 indicating the sound. Confucius said: “Beautiful is 璵璠! Seen from afar, it is radiant; viewed closely, it is lustrous. In one respect its texture excels; in another its luster excels.”",
+      "sourceTextSha256": "1a0fde27cf1442d01a8bf8b79d468c06682ae15a67a9a5f64d98ea0bb9db3f80",
+      "uncertain": true
+    },
+    "shuowen:89": {
+      "text": "The jade called 璵璠. Formed from 玉, with 與 indicating the sound.",
+      "sourceTextSha256": "9fb45d5b061c5b54af83ab73cfc40e975636dc4b17b50e5f3652a200c2a087a1",
+      "uncertain": false
+    },
+    "shuowen:90": {
+      "text": "瑾瑜: beautiful jade. Formed from 玉, with 堇 indicating the sound.",
+      "sourceTextSha256": "2fa5582af9a9d64b09dc7d2770aca9bb16111b780ae08e0c8fc6ee24f6c9b4dc",
+      "uncertain": false
+    },
+    "shuowen:91": {
+      "text": "瑾瑜: beautiful jade. Formed from 玉, with 俞 indicating the sound.",
+      "sourceTextSha256": "e5268490908cdf5780d50ea5e76d93a6685a85439abcdbe2dda1ad4e5b5e7266",
+      "uncertain": false
+    },
+    "shuowen:92": {
+      "text": "Jade. Formed from 玉, with 工 indicating the sound.",
+      "sourceTextSha256": "e9f9aeedcb812992388c82edaebce8ef49c3e4d800d0efa6533b533886cd7ed3",
+      "uncertain": false
+    },
+    "shuowen:93": {
+      "text": "𤦃瓄, a kind of jade. Formed from 玉, with 來 indicating the sound.",
+      "sourceTextSha256": "44a6dfff21502003ac9bf000297b58b5459b68cc1269614d61b21122893ae2ae",
+      "uncertain": false
+    },
+    "shuowen:94": {
+      "text": "Red jade. Formed from 玉, with 敻 indicating the sound.",
+      "sourceTextSha256": "4631f207faa6aeaf46562fe669bc30d8fc85cd89b22d7c98de929cbe15776411",
+      "uncertain": false
+    },
+    "shuowen:95": {
+      "text": "Jade. Formed from 玉, with 向 indicating the sound.",
+      "sourceTextSha256": "8583ffd7691e50ac54b78a58d1659a95c9226884f6940c48c6b0a628a2ff3751",
+      "uncertain": false
+    },
+    "shuowen:96": {
+      "text": "Jade. Formed from 玉, with 剌 indicating the sound.",
+      "sourceTextSha256": "fb31f90ea606f5e291b1e273d57f88b447226158c1521a1a502a848c0be0b655",
+      "uncertain": false
+    },
+    "shuowen:97": {
+      "text": "The 珣玗琪 of Yiwulü, called “Yi jade” in the Book of Zhou. Formed from 玉, with 旬 indicating the sound. Another explanation says a vessel, pronounced like 宣.",
+      "sourceTextSha256": "00d7bc8d6fbfec699a0fdfb58ace51ebe4a2f48cef21b948216bc7f0ff0b0216",
+      "uncertain": false
+    },
+    "shuowen:98": {
+      "text": "Jade. Formed from 玉, with 路 indicating the sound.",
+      "sourceTextSha256": "3fa274734776e5993642ab828d1a0a47baeab7905ec36a0df8cb77549c54e281",
+      "uncertain": false
+    },
+    "shuowen:99": {
+      "text": "Three parts jade and two parts stone. Formed from 玉, with 贊 indicating the sound. The Rites says: “The Son of Heaven uses 全, pure jade; high dukes use 駹, four parts jade and one stone; marquises use 瓚; earls use 埒, equal parts jade and stone.”",
+      "sourceTextSha256": "af9e5f8a4d60d10dfd7d68a74d2102b2febb479694dc8e229455c5a08e6e72d4",
+      "uncertain": false
+    },
+    "shuowen:100": {
+      "text": "The radiance of jade. Formed from 玉, with 英 indicating the sound.",
+      "sourceTextSha256": "b9b97b6b5d492d87d789fbe4feee32dde18a51135dcc6c0f3e85e8d9f93b48e8",
+      "uncertain": false
+    }
+  }
+}
