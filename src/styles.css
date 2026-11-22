@@ -3854,6 +3854,11 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hanzi { font-family: var(--font-hanzi); color: inherit; text-decoration: none; }
 .lesson-hanzi.is-linked { color: var(--primary); border-radius: 4px; }
 .lesson-hanzi.is-linked:hover, .lesson-hanzi.is-linked:focus-visible { background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
+/* The word-bank card's headword keeps the grid card's hover behaviour: the card's own
+   border/ink reacts (below), but the character itself never picks up a background tint or
+   a colour change — the Vocabulary grid card's headword has neither. */
+.lesson-bank-word .lesson-hanzi.is-linked:hover,
+.lesson-bank-word .lesson-hanzi.is-linked:focus-visible { background: transparent; color: inherit; }
 .lesson-inline-hanzi { font-family: var(--font-hanzi); }
 /* Lesson character hints (lesson-hints.tsx): every hanzi rings on hover/focus and while its
    quick card is open (data-hint-active). A box-shadow ring, never a border, so text never moves. */
@@ -4617,9 +4622,14 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-bank-top .word-hsk-id { font-size: 11px; letter-spacing: .5px; }
 .lesson-term.is-tile { display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; }
 .lesson-word-tile { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 60px; height: 60px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; color: var(--card-ink, var(--foreground)); transition: border-color .2s; }
-.lesson-word-tile:has(a:hover, a:focus-visible) { border-color: var(--card-ink, var(--primary)); }
 .lesson-term.is-tile .lesson-word-tile .lesson-hanzi { font-size: 36px; line-height: 1; white-space: nowrap; color: inherit; }
-.lesson-term.is-tile .lesson-word-tile a.lesson-hanzi:hover { color: var(--card-ink, var(--primary)); }
+/* The box's own ink reaction on hover mirrors the Vocabulary grid card's border; the
+   character itself never changes colour or picks up a tint (see the .lesson-bank-word
+   override above), so the headword behaves exactly like the grid card's. */
+.lesson-word-tile:has(a:hover, a:focus-visible) { border-color: var(--card-ink, var(--primary)); }
+.lesson-term.is-tile .lesson-word-tile a.lesson-hanzi { color: inherit; }
+.lesson-term.is-tile .lesson-word-tile a.lesson-hanzi:hover,
+.lesson-term.is-tile .lesson-word-tile a.lesson-hanzi:focus-visible { color: inherit; background: transparent; }
 .lesson-term-side { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
 .lesson-term.is-tile .lesson-term-meaning { flex-basis: auto; }
 @media (min-width: 851px) {
