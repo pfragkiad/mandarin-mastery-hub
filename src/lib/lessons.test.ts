@@ -57,6 +57,14 @@ describe('lesson index', () => {
   });
 });
 
+describe('topic registry v3.2', () => {
+  it('offers the 22 active top-level topics, never subtopics, for lesson grouping', () => {
+    expect(lessonCategories.length).toBe(22);
+    expect(lessonCategories.map(c => c.id)).toEqual(expect.arrayContaining(['science-technology', 'society-government-law']));
+    expect(lessonCategories.some(c => c.id === 'animals-wildlife' || c.id === 'digital-technology')).toBe(false);
+  });
+});
+
 describe('lessons on character records', () => {
   const plain = summarizeLesson(raw(), cats)!;
   const pinned = summarizeLesson(raw({ lesson_id: 'char-pinned', metadata: { status: 'reviewed', catalog_character_id: 'Characters:次' } }), cats)!;
@@ -192,7 +200,8 @@ describe('conversational lessons', () => {
   it('are 15 general dialogue lessons whose blocks are all kinds the page renders', () => {
     expect(docs.length).toBe(15);
     for (const d of docs) {
-      expect(d.schema_version).toBe('mandarin-general-lesson/3.0.0');
+      // Two lessons were reclassified under general schema v3.1.0; the rest stay v3.0.0.
+      expect(['mandarin-general-lesson/3.0.0', 'mandarin-general-lesson/3.1.0']).toContain(d.schema_version);
       expect(d.lesson_type).toBe('dialogue');
       expect(d.sections.blocks.every(b => ['explanation', 'dialogue', 'grammar_pattern', 'review_set'].includes(b.kind))).toBe(true);
     }

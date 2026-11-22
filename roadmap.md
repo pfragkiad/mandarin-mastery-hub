@@ -101,3 +101,9 @@
 - [x] Rename the "Collection" dropdown to "Topic" on Flashcards, Drawing and Vocabulary
 - [x] Detail cards: lines only around the facts row and above the action buttons
 - [x] Detail cards: one section gap; half gap after facts line, before and after the action line
+- [x] Lessons: import v3.2.0 taxonomy-v2 sync (core registry + 21 HSK L1 + 2 conversational lessons)
+- [x] Vocabulary: Subtopic dropdown beside Topic, filtering by recorded subtopic IDs
+- [x] Lessons: Key expressions cards wrap so long pinyin never overflows
+- [x] Lessons: one search box with scope (All lessons / one course), matching everything in each lesson (titles, topics, hanzi, pinyin, English)
+- [x] Lesson search: numbered pinyin queries (ma1, xue2sheng1, lv4) match tone-marked text
+- [x] Lessons: speaker (TTS) buttons don't play on lesson pages (e.g. convm-choices-alternatives)

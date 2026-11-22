@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
+import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions, wordSubtopicIds } from '@/lib/vocabulary-subtopics';
 import { matchesPhraseStyle } from '@/lib/data-contract';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
@@ -45,18 +46,18 @@ function ExperimentalTag() {
     </HintBody></PopoverContent>
   </Popover>;
 }
-type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
+type Filters = { q?: string; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 // Adding words is hidden: without storage or accounts, additions would vanish on reload.
 // The dialog and session-only addWord stay in place so it can return when storage exists.
 const ADD_WORD_ENABLED = false;
 
-export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
+export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', subtopic = ALL_SUBTOPICS, level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
   const detailLoading = useDetailLoading();
   const query = initialQuery;
-  const appliedFilters = { q: query, collection, level, pos, py, style };
-  const activeFilters = Boolean(query || collection !== 'All collections' || level !== 'All levels' || pos !== 'All types' || style !== 'All styles' || py || status !== 'All words');
+  const appliedFilters = { q: query, collection, subtopic, level, pos, py, style };
+  const activeFilters = Boolean(query || collection !== 'All collections' || subtopic !== ALL_SUBTOPICS || level !== 'All levels' || pos !== 'All types' || style !== 'All styles' || py || status !== 'All words');
   const setStatus = (status: string) => onFiltersChange?.({ status });
   const [adding, setAdding] = useState(false);
   // The word records are bundled with the app, so the grid's only loading window is the beat
@@ -88,7 +89,10 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // each other from the form's current (draft) picks, so e.g. choosing a level
   // leaves only the styles and types recorded at that level.
   const facetBase = useMemo(() => filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kindItems, query, status, saved, py]);
-  const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact'), initialWordId);
+  const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
+  // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
+  const hasSubtopics = useMemo(() => kindItems.some(w => wordSubtopicIds(w).length > 0), [kindItems]);
+  const appliedSubtopic = subtopicById(subtopic);
   // Keep a directly linked entry reachable even when old browsing filters would
   // exclude it; pagination uses that same pool for reference-window navigation.
   const density = useLibraryDensity(() => onPageChange?.(1));
@@ -118,12 +122,27 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     if (previous === null || previous === (page ?? 1) || initialWordId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, initialWordId]);
-  const reset = () => { const empty = { q: '', collection: 'All collections', level: 'All levels', py: undefined, pos: 'All types', style: 'All styles' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
+  const reset = () => { const empty = { q: '', collection: 'All collections', subtopic: ALL_SUBTOPICS, level: 'All levels', py: undefined, pos: 'All types', style: 'All styles' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
     <TabsContent value={kind}>
-    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections' } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => { const facets = vocabularyFacetOptions(facetBase, { collection: draft.collection ?? 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: kind === 'phrase' ? draft.style ?? facetStyle : 'All styles' }); return <>
-      <select className="filter-select" aria-label="Topic" value={draft.collection} onChange={e => patch({ collection: e.target.value })}><option value="All collections">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
+    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
+      // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed
+      // by every other draft pick (topic, level, type) but never by themselves.
+      const draftTopic = draft.collection ?? 'All collections';
+      const draftSubtopic = draft.subtopic ?? ALL_SUBTOPICS;
+      const facets = vocabularyFacetOptions(facetBase.filter(w => inSubtopic(w, draftSubtopic)), { collection: draftTopic, level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: kind === 'phrase' ? draft.style ?? facetStyle : 'All styles' });
+      const subtopics = subtopicOptions(filterWords(facetBase, '', draftTopic, draft.level ?? 'All levels', 'All words', [], false, draft.pos ?? 'All types'), draftTopic, draftSubtopic);
+      // Picking a topic that does not own the current subtopic clears the subtopic.
+      const pickTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
+      return <>
+      <select className="filter-select" aria-label="Topic" value={draft.collection} onChange={e => pickTopic(e.target.value)}><option value="All collections">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
+      {hasSubtopics && <select className="filter-select" aria-label="Subtopic" value={draftSubtopic} disabled={!subtopics.length && draftSubtopic === ALL_SUBTOPICS} onChange={e => patch({ subtopic: e.target.value })}>
+        <option value={ALL_SUBTOPICS}>{subtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics'}</option>
+        {draftTopic !== 'All collections'
+          ? subtopics.map(st => <option key={st.id} value={st.id}>{st.label}</option>)
+          : [...new Set(subtopics.map(st => st.parentLabel))].map(parent => <optgroup key={parent} label={parent}>{subtopics.filter(st => st.parentLabel === parent).map(st => <option key={st.id} value={st.id}>{st.label}</option>)}</optgroup>)}
+      </select>}
       <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.pos.map(p => <option key={p}>{p}</option>)}</select>
       {kind === 'phrase' && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? 'All styles'} onChange={e => patch({ style: e.target.value })}><option>All styles</option>{facets.styles.map(s => <option key={s}>{s}</option>)}</select>}

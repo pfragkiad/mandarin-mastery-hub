@@ -1,3 +1,4 @@
 # Preserve the supplied lesson audit bytes across platforms.
-hsk-level1-lessons-classification-changes.csv -text
+# Keep the original CSV's supplied line endings without whitespace normalization.
+hsk-level1-lessons-classification-changes.csv -text -whitespace
 hsk-level1-lessons-source-example-discrepancies.json -text

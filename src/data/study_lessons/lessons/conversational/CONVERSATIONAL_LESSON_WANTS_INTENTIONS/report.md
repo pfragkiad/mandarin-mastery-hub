@@ -27,3 +27,11 @@
 | 我要现在吃午饭 | Track 10, 17:38 (line 184) | source-extracted |
 | 我不要吃 | Track 15, 15:05 (line 156) | source-extracted |
 | 你想什么时候吃 | Track 6, 18:29 (line 176) | source-extracted |
+
+## Source-taxonomy synchronization (2026-11-22)
+- JSON Schema and Core version unchanged at v3.2.0.
+- Shared taxonomy synchronized with user-supplied hsk-topics/2.0.0 (25 active subtopics).
+- All original communicative teaching material, stable lesson IDs, and curriculum placements preserved.
+- Only topic/subtopic classifications were synchronized. Original word-card example pairs were not rewritten.
+- Classification and teaching-content validation passed.
+

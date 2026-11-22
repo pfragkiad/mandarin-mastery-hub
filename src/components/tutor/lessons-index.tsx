@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { BookText, FlaskConical, Library, Tags, X } from 'lucide-react';
+import { BookText, FlaskConical, Library, Search, Tags, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { lessonCategories, lessonSummaries, type LessonSummary } from '@/lib/lessons';
@@ -8,6 +8,8 @@ import { courses, projectIndependentLessons, sectionPlacements, type Course } fr
 import { LessonText } from './lesson-text';
 import { LessonStatusPill } from './lesson-page';
 import { HintBody } from './source-info';
+import { DraftFilterForm } from './filter-form';
+import { LessonSearchResults, lessonScopeLabel, lessonScopes } from './lesson-search-results';
 
 /** Lessons' status pill in the page heading: the collection is partial material, so the
  *  tag says so and opens the shared hint card explaining exactly what is missing. No
@@ -26,6 +28,32 @@ function ExperimentalTag() {
 }
 
 export type LessonsView = 'course' | 'topic';
+/** One Lessons URL state: browsing view/topic/tag plus an applied search (`q`, `scope`). */
+export type LessonsNav = { view?: 'topic'; category?: string; tag?: string; q?: string; scope?: string };
+
+type LessonSearchDraft = { q: string; scope: string };
+/**
+ * The Lessons search box with its scope dropdown (All lessons, one course, or Independent
+ * lessons). Inputs: the applied `q`/`scope` from the URL and `onApply`, which pushes the new
+ * search into the URL so Back restores it. Drafts live inside the shared DraftFilterForm,
+ * so typing never rerenders the lesson list; results come only on Apply/Enter, and the
+ * scope alone (with no text) never offers Apply, since it searches nothing by itself.
+ */
+function LessonSearchForm({ q, scope, onApply }: { q: string; scope: string | undefined; onApply: (next: LessonSearchDraft) => void }) {
+  const applied = { q, scope: scope ?? '' };
+  const label = lessonScopeLabel(scope);
+  return <div className="lesson-search">
+    <DraftFilterForm searchKey="q" searchModeKey="scope" applied={applied} active={q.trim() !== ''} count={0} showCount={false}
+      onApply={onApply} onClear={() => { const empty = { q: '', scope: '' }; onApply(empty); return empty; }}
+      chips={q.trim() && label ? [{ label, clear: { scope: '' } }] : []}
+      filterFields={({ draft, patch }) => <select className="filter-select" aria-label="Search in" value={draft.scope} onChange={e => patch({ scope: e.target.value })}>
+        <option value="">All lessons</option>
+        {lessonScopes.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
+      </select>}>
+      {({ draft, patch }) => <div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label="Search lessons" placeholder="Search lessons: 学生, xue2sheng1, xuesheng, student…" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}
+    </DraftFilterForm>
+  </div>;
+}
 
 /**
  * The Lessons index (/lessons), with two ways to browse the same lessons:
@@ -36,18 +64,27 @@ export type LessonsView = 'course' | 'topic';
  *   filter also matches secondary topics, and a lesson's tags filter the list by that tag.
  * Lessons are only referenced — one lesson placed in two courses is still one lesson.
  *
- * Inputs: the URL-backed `view`, `category` (registry topic id) and `tag`, and `onSearch`,
+ * A search box above both views (LessonSearchForm) searches every lesson's text, in all
+ * lessons or one course; while a search is applied its results replace the list.
+ *
+ * Inputs: the URL-backed `view`, `category` (registry topic id), `tag`, `q` and `scope`, and `onSearch`,
  * which pushes a change into the URL so Back restores it. No other state.
  */
-export function LessonsIndex({ view, category, tag, onSearch }: { view: LessonsView; category: string | undefined; tag: string | undefined; onSearch: (next: { view?: 'topic'; category?: string; tag?: string }) => void }) {
+export function LessonsIndex({ view, category, tag, q = '', scope, onSearch }: { view: LessonsView; category: string | undefined; tag: string | undefined; q?: string; scope?: string | undefined; onSearch: (next: LessonsNav) => void }) {
+  // View, topic and tag changes keep an applied search; the search form keeps the browsing view.
+  const keep = { ...(q.trim() ? { q } : {}), ...(q.trim() && scope ? { scope } : {}) };
+  const browse = (next: LessonsNav) => onSearch({ ...next, ...keep });
+  const browsing = { ...(view === 'topic' ? { view: 'topic' as const } : {}), ...(category ? { category } : {}), ...(tag ? { tag } : {}) };
+  const searching = q.trim() !== '';
   return <div className="lessons-index library-page">
     <div className="page-heading library-heading"><div><div className="eyebrow">READ · LISTEN · CHECK YOURSELF</div><h1>Lessons</h1><p>Short guided lessons on how characters, words and patterns are really used, with examples to listen to and questions to check yourself.</p></div><ExperimentalTag/></div>
+    <LessonSearchForm q={q} scope={scope} onApply={(next) => onSearch({ ...browsing, ...(next.q.trim() ? { q: next.q } : {}), ...(next.q.trim() && next.scope ? { scope: next.scope } : {}) })}/>
     <div className="lesson-view-switch writer-speed-options" role="group" aria-label="Browse lessons">
-      <Button variant="ghost" size="sm" type="button" className={view === 'course' ? 'active' : ''} aria-pressed={view === 'course'} onClick={() => onSearch({})}><Library aria-hidden="true"/>By course</Button>
-      <Button variant="ghost" size="sm" type="button" className={view === 'topic' ? 'active' : ''} aria-pressed={view === 'topic'} onClick={() => onSearch({ view: 'topic' })}><Tags aria-hidden="true"/>By topic</Button>
+      <Button variant="ghost" size="sm" type="button" className={view === 'course' ? 'active' : ''} aria-pressed={view === 'course'} onClick={() => browse({})}><Library aria-hidden="true"/>By course</Button>
+      <Button variant="ghost" size="sm" type="button" className={view === 'topic' ? 'active' : ''} aria-pressed={view === 'topic'} onClick={() => browse({ view: 'topic' })}><Tags aria-hidden="true"/>By topic</Button>
     </div>
     {lessonSummaries.length === 0 && <div className="record-gap"><p>No lessons recorded yet.</p></div>}
-    {view === 'course' ? <CourseView/> : <TopicView category={category} tag={tag} onSearch={onSearch}/>}
+    {searching ? <LessonSearchResults query={q} scope={scope}/> : view === 'course' ? <CourseView/> : <TopicView category={category} tag={tag} onSearch={browse}/>}
   </div>;
 }
 
@@ -119,7 +156,7 @@ function CourseOutline({ course }: { course: Course }) {
 
 /** By topic: lessons under their primary registry topic; a topic filter also matches
  *  secondary topics, and a tag filter keeps only lessons carrying that exact tag. */
-function TopicView({ category, tag, onSearch }: { category: string | undefined; tag: string | undefined; onSearch: (next: { view?: 'topic'; category?: string; tag?: string }) => void }) {
+function TopicView({ category, tag, onSearch }: { category: string | undefined; tag: string | undefined; onSearch: (next: LessonsNav) => void }) {
   const inTopic = (s: LessonSummary, id: string) => s.categories.some(c => c.id === id);
   const matching = lessonSummaries.filter(s => (!category || inTopic(s, category)) && (!tag || s.tags.includes(tag)));
   const used = lessonCategories.filter(c => lessonSummaries.some(s => inTopic(s, c.id)));
@@ -153,7 +190,7 @@ const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character
  * `onTag` shows the lesson's tags as buttons that filter the topic view (the card link and
  * the tag buttons are siblings, never nested interactive elements).
  */
-export function LessonCard({ lesson, number, after = [], onTag, activeTag }: { lesson: LessonSummary; number?: number; after?: LessonSummary[]; onTag?: (tag: string) => void; activeTag?: string | undefined }) {
+export function LessonCard({ lesson, number, after = [], onTag, activeTag, extra }: { lesson: LessonSummary; number?: number; after?: LessonSummary[]; onTag?: (tag: string) => void; activeTag?: string | undefined; extra?: React.ReactNode }) {
   const box = lesson.headword ? <span lang="zh-CN">{lesson.headword.hanzi}</span> : number ? <span className="lesson-index-number">{number}</span> : <BookText/>;
   return <div className="lesson-index-item">
     <Link to="/lessons/$lessonId" params={{ lessonId: lesson.id }} className="lesson-index-card">
@@ -164,6 +201,7 @@ export function LessonCard({ lesson, number, after = [], onTag, activeTag }: { l
         {lesson.subtitle && <span className="lesson-index-subtitle"><LessonText text={lesson.subtitle}/></span>}
         {after.length > 0 && <small>After: {after.map(a => a.title).join(', ')}</small>}
         {!number && lesson.audience && <small>{lesson.audience}</small>}
+        {extra}
       </span>
     </Link>
     {onTag && lesson.tags.length > 0 && <div className="lesson-index-tags" aria-label={`Tags for ${lesson.title}`}>

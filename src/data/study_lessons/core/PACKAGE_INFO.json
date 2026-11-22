@@ -1,15 +1,15 @@
 {
   "package_name": "mandarin-tutor-core",
-  "package_version": "3.1.0",
+  "package_version": "3.2.0",
   "lesson_schema_versions": [
-    "mandarin-character-lesson/3.0.0",
-    "mandarin-topic-lesson/3.1.0",
-    "mandarin-general-lesson/3.0.0"
+    "mandarin-character-lesson/3.1.0",
+    "mandarin-topic-lesson/3.2.0",
+    "mandarin-general-lesson/3.1.0"
   ],
   "curriculum_schema_version": "mandarin-curriculum/3.0.0",
   "renderer": "generate_lesson.py",
   "validator": "validate_core.py",
   "category_registry": "lesson_categories.json",
   "catalog": "catalog_ids.json (external Project Source)",
-  "note": "Core v3.1 adds topic communicative teaching sections and a non-redundant lesson renderer. Older v3.0 character/general/topic lessons remain valid; character and general schemas unchanged."
+  "note": "Core v3.2 adds optional global subtopics (primary_subtopic_id, subtopic_ids) and syncs lesson_categories.json with hsk-topics/2.0.0: 22 active topics, 25 parented subtopics. Older v3.0/v3.1 lessons remain valid. generate_lesson.py and validate_core.py here are the v3.1 tools; the v3.2 Project Sources package ships only schemas, templates and the registry."
 }

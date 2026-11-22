@@ -171,9 +171,11 @@ export function lessonKindFor(schemaVersion: string): LessonKind {
   return 'topic';
 }
 
-export const lessonCategories: LessonCategory[] = (categoryRegistry.categories ?? [])
-  // Subtopics remain recorded separately and never become top-level topic filters.
-  .filter(c => c.status === 'active' && c.kind === 'topic')
+/* Registry v3.2 lists top-level topics and their parented subtopics side by side (`kind`).
+   Lessons are grouped and filtered by top-level topics only; an entry without `kind`
+   (registries before v3.2) is a topic. */
+export const lessonCategories: LessonCategory[] = (categoryRegistry.categories as { id: string; label: string; description: string; status: string; kind?: string }[] ?? [])
+  .filter(c => c.status === 'active' && (c.kind ?? 'topic') === 'topic')
   .map(c => ({ id: c.id, label: c.label, description: c.description }));
 
 /** One summary from a lesson's top-level keys; categories resolve only through the shared registry. */
@@ -354,4 +356,16 @@ export async function loadLesson(id: string): Promise<LessonDocument | null> {
   const load = path ? loaders[path] : undefined;
   if (!summary || !load) return null;
   return toLessonDocument(await load(), summary);
+}
+
+/** Every lesson's whole raw JSON (each its own lazy chunk), loaded once and only for search
+ *  (src/lib/lesson-search.ts). Lessons that fail to load are left out, never guessed. */
+let allRaw: Promise<{ summary: LessonSummary; raw: unknown }[]> | null = null;
+export function loadAllLessonsForSearch(): Promise<{ summary: LessonSummary; raw: unknown }[]> {
+  allRaw ??= Promise.all(lessonSummaries.map(async summary => {
+    const path = index.pathById.get(summary.id);
+    const load = path ? loaders[path] : undefined;
+    try { return load ? [{ summary, raw: await load() as unknown }] : []; } catch { return []; }
+  })).then(list => list.flat());
+  return allRaw;
 }
